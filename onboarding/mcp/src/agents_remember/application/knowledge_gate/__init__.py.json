@@ -1,0 +1,41 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_gate/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The package docstring: the rule, the six modules and where each route calls the gate.\n\nAnchor: \"Invariant work is mandatory, never report-only (D5).\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d044599b0d12328da1b22fa1eb4018e1353276cd",
+            "content": "sha256:f7026e30304f9733cb8434021145c1b24d8f8b3a3f90d17e89498ea9a15c73f3",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The public surface.\n\nAnchor: \"from agents_remember.application.knowledge_gate.adapter import KnowledgeGate\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d044599b0d12328da1b22fa1eb4018e1353276cd",
+            "content": "sha256:1f5b4b647ce23a33d93e36ee0a0039636be364c7b9cd6cdb7a401ac30794af02",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 26
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,22 @@
+{
+  "path": "dashboard/src/cockpit/role-launcher/useLauncherSelectionRepair.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The test file asserts seeded document correction payloads, first-invalid document order, document-arrival scheduling and quiescent valid selections; catalog override-pruning cases are removed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb5c2cb3d111c0f84b20e6db76e7efc1a92699d9",
+            "content": "sha256:ab714771ae415f42ebe38b8183c27d8302404a5c9542706f0035fcbe020e78b7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

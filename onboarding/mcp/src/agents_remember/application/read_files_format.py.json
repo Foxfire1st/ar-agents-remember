@@ -1,0 +1,120 @@
+{
+  "path": "mcp/src/agents_remember/application/read_files_format.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The format is decided by the layout marker.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e205b6901715509bfd25313dc4a389e5a7f45427",
+            "content": "sha256:525e943813ad7f452188b51dae51b429d6795e8e1f8dc3d64c19c856da113ddb",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_format"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e205b6901715509bfd25313dc4a389e5a7f45427",
+            "content": "sha256:e9b3a6ab7b82913329c251f39fccec6bd697a6974df603e45a249ddadbb4656b",
+            "locator": {
+              "kind": "symbol",
+              "name": "TEXT_FORMAT"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e205b6901715509bfd25313dc4a389e5a7f45427",
+            "content": "sha256:a75bffc8672d9c63609dc16d5f9df17d83fa3d9601aaef5a8e3fb044344eede5",
+            "locator": {
+              "kind": "symbol",
+              "name": "LEGACY_FORMAT"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "An unconverted tree's knowledge section names both conversion routes.\n\nAnchor: `legacy_published_intent`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e205b6901715509bfd25313dc4a389e5a7f45427",
+            "content": "sha256:0ca57880f59cc9f8021c933139b5d8db9d88b2d816febfdd48165479aeb8a7b7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A converted card's sidecar and resolved references.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e205b6901715509bfd25313dc4a389e5a7f45427",
+            "content": "sha256:8135a1645c156c32cd131dc041fe9b689c02dae9d8bd898ca235b326c67fddf2",
+            "locator": {
+              "kind": "symbol",
+              "name": "converted_card_parts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e205b6901715509bfd25313dc4a389e5a7f45427",
+            "content": "sha256:a44d8fe2514ec92bc915dab8a80b221d89ef96f136a9697cb1cfe5b8d2c93d1a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record_summary"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The call site in the entry point.\n\nAnchor: `_read_one`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "235bbb664d2f527abfdfa47f8cbbcb96c8714650",
+            "content": "sha256:6eccfc7bad90429057021cc74333df2047d6908f67136c2d9faf1624ddae3a75",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/read_files.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "read_ar_files names the converted records that govern a path - existence, the card's location and the records' states - and carries none of their text; an unconverted tree is answered as unconverted rather than with a knowledge section.\n\nAnchor: `test_read_ar_files_returns_legacy_format_or_resolved_references`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c1c7d17344cd9be8f9ea3dbac4d826343761c185",
+            "content": "sha256:28fd122ff2c33d1107d06aa386bb795f4dba57257da61e80f4c61dd118335d22",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_conversion_toolchain.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

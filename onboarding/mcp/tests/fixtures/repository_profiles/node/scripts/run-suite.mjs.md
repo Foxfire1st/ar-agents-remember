@@ -1,15 +1,5 @@
 # mcp/tests/fixtures/repository_profiles/node/scripts/run-suite.mjs
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/fixtures/repository_profiles/node/scripts/run-suite.mjs` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
-| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
-| governingOverview | `../../../../overview.md` |
-
 ## Governing Overview
 
 [mcp/tests overview](../../../../overview.md)
@@ -36,7 +26,9 @@ spawned status on failure, then writes the suite artifact
 - The rail runs only the exact selected tests the profile passes; there is no fallback suite.
 - Fixture-only; no product code path invokes it.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 CCR-R22@v1 classifies Gate 2 as the configured ordinary test suite publishing its complete
 exact-candidate result artifacts; prerequisites and artifact flow cannot point backward.
@@ -46,12 +38,6 @@ Gate 2 contains the configured ordinary test suite and publishes its complete ex
 The governing CCR-R22@v1 packet is a task artifact, so this requirement fact is
 recorded as prose here (task artifact paths are not repo-relative citations).
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Fixture suite rail publishing suite and coverage artifacts. | `selectedTests` | mcp/tests/fixtures/repository_profiles/node/scripts/run-suite.mjs:1-23; mcp/tests/fixtures/repository_profiles/node/scripts/coverage-check.mjs:1-7 |
-
-## Update History
-
-- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): created the sidecar for the new Node fixture suite rail.
+- Fixture suite rail publishing suite and coverage artifacts. [1]

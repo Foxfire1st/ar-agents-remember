@@ -1,0 +1,2131 @@
+{
+  "path": "dashboard/src/data",
+  "references": {
+    "1": {
+      "note": "The mirrored change types and the entry's optional facts.\n\nAnchor: \"change_kinds?: ReviewFamilyChanges;\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bab377598568b8e05a49c6269ef6aa6a559f6c83",
+            "content": "sha256:cfdc38c8a205eae017d16bee399919ce85eceac54ce1e7a1a109ee9cb1441c31",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewMemberChange"
+            },
+            "path": "dashboard/src/data/reviewFamily.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bab377598568b8e05a49c6269ef6aa6a559f6c83",
+            "content": "sha256:eda31ec526822901962a3a4e5ab79ebed7c3263c207c1b0b247c42e71eeef236",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewFamilyChanges"
+            },
+            "path": "dashboard/src/data/reviewFamily.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bab377598568b8e05a49c6269ef6aa6a559f6c83",
+            "content": "sha256:f7d45420cd7d2c250a5a21ef27a56271fecf06588c9ff6e0bfadf4d4d4fbd831",
+            "locator": {
+              "end": 259,
+              "kind": "line_range",
+              "start": 259
+            },
+            "path": "dashboard/src/data/reviewFamily.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "100": {
+      "note": "Lane missing values become unavailable; undefined comparison suppresses the lane hook's request, while the marker client remains promise-based.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7a5f2e16883465216bc2170e7e5df96b58e72a6e",
+            "content": "sha256:899b2a9e8ec6be0f995ce1a6ae41fcae5bda1749fbaf8e489de391f7921fc627",
+            "locator": {
+              "end": 210,
+              "kind": "line_range",
+              "start": 205
+            },
+            "path": "dashboard/src/data/reviewLane.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7a5f2e16883465216bc2170e7e5df96b58e72a6e",
+            "content": "sha256:7a6edf9b56b9290a93fb635cd5be841cca0c286dcc93a8600383f3352fb37284",
+            "locator": {
+              "end": 279,
+              "kind": "line_range",
+              "start": 251
+            },
+            "path": "dashboard/src/data/reviewLane.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "101": {
+      "note": "Entry intent counts and attribution share one response with distinct counted/partial/unavailable states.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1b88a5d8391b7e00d3ee0155a662a004bca0654c",
+            "content": "sha256:e3e29f1ee56ea27d732abf6b5417cb2c0e5b5c420834d3cdb951f6990ccc4a89",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 49
+            },
+            "path": "dashboard/src/data/reviewIntentSummary.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "102": {
+      "note": "Family change facts and source locator meanings are mirrored rather than recomputed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bab377598568b8e05a49c6269ef6aa6a559f6c83",
+            "content": "sha256:e6a0545e61865480c8b99354a7eaf8de24b661527abe1181e8faf663aca79a62",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 48
+            },
+            "path": "dashboard/src/data/reviewFamily.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bab377598568b8e05a49c6269ef6aa6a559f6c83",
+            "content": "sha256:ee49e333c946209a5254c5e837616aa3e0be21d463f6b1508c2f851253cc5231",
+            "locator": {
+              "end": 241,
+              "kind": "line_range",
+              "start": 180
+            },
+            "path": "dashboard/src/data/reviewFamily.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "103": {
+      "note": "Leaf-wide tree retry is bounded and its hook aborts/sequence-guards superseded reads; the card-entry hook shares in-flight acquisitions without aborting them, suppresses callbacks after cleanup and returns only its current question's cached answer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e69a371f1c81dd1fdb854476f50f1d23c43a8cf",
+            "content": "sha256:6b3c3f3c8a9be8bb0421c6d68a40b40c86e38f3389a798efdf8a71709119805e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/reviewTrees.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "104": {
+      "note": "Browser selection keys carry the server entry key verbatim, rather than reconstructing a hierarchy or partially stamped creation ordering.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62a20f9e70cd4f0fce12131c2c8aaa5103ee7f5b",
+            "content": "sha256:50274195c24a58bd49806a1768684914b088c8cb7d3af6c802c22b090ac412d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "taskEntrySelectionKey"
+            },
+            "path": "dashboard/src/data/taskReference.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "105": {
+      "note": "Volatile-age equality includes elapsedSeconds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66d20f4008239bf7a9afcd90dfd2fd6ad191d7f4",
+            "content": "sha256:cba418e64719cf24af612a5a571612d9de1f7857eae0760fa88646e3c802982c",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "dashboard/src/data/servedAges.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dba4715382062ade57f75405fa7fcae034b1953f",
+            "content": "sha256:7167d802018c691c0cc3de7659d70516afa06d247e39775df693b559b3dd7148",
+            "locator": {
+              "end": 53,
+              "kind": "line_range",
+              "start": 35
+            },
+            "path": "mcp/src/agents_remember/serving/delta.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dba4715382062ade57f75405fa7fcae034b1953f",
+            "content": "sha256:7167d802018c691c0cc3de7659d70516afa06d247e39775df693b559b3dd7148",
+            "locator": {
+              "end": 53,
+              "kind": "line_range",
+              "start": 35
+            },
+            "path": "mcp/src/agents_remember/serving/delta.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "106": {
+      "note": "Full scenario reset increments generation once and clears closeout queues.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f4687b5092789e0a1d4182e803092af73f123537",
+            "content": "sha256:6ae77bdf6abb146eeb71ad12c45aa458951015f18c3e53cf3fa6a85396de8a63",
+            "locator": {
+              "end": 354,
+              "kind": "line_range",
+              "start": 335
+            },
+            "path": "dashboard/src/data/store.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f4687b5092789e0a1d4182e803092af73f123537",
+            "content": "sha256:ae5ff59699df0618b75b26c987e3744acc4f393fec19459e2afe9c42067e0d2b",
+            "locator": {
+              "end": 392,
+              "kind": "line_range",
+              "start": 388
+            },
+            "path": "dashboard/src/data/store.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "107": {
+      "note": "Drift display consumes reporting counts; `selectors.ts` defines no provider groupings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45703aad8672ac0bd3f53a1e3be16aef2ad16336",
+            "content": "sha256:da5a35423042928d46a28f0316f729fec9e6f690b6e9b0163724db2fdd19532a",
+            "locator": {
+              "end": 113,
+              "kind": "line_range",
+              "start": 61
+            },
+            "path": "dashboard/src/data/selectors.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "45703aad8672ac0bd3f53a1e3be16aef2ad16336",
+            "content": "sha256:c4350d4ce7d697996903291c68a6930ec392c097d56c81080de3fa3cbbff1301",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 72
+            },
+            "path": "dashboard/src/data/selectors.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "108": {
+      "note": "The store owns task-document resources and separate bounded conditional-read caches for change-set lists, files and intent summaries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f4687b5092789e0a1d4182e803092af73f123537",
+            "content": "sha256:9e75a6091a7a3a3ae07b97946eb4c9096dff054d990f7eb7ee663613c694a3d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "emptyWorkspace"
+            },
+            "path": "dashboard/src/data/store.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "109": {
+      "note": "The leaf-wide tree answer carries optional currentness, worklist, implementation facts and focused entries, not an aggregate memory-diff field.\n\nAnchor: `ReviewTreesResult`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e69a371f1c81dd1fdb854476f50f1d23c43a8cf",
+            "content": "sha256:6b3c3f3c8a9be8bb0421c6d68a40b40c86e38f3389a798efdf8a71709119805e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/reviewTrees.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "110": {
+      "note": "The card store admits stable answers and retries transient read failures instead of retaining them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e69a371f1c81dd1fdb854476f50f1d23c43a8cf",
+            "content": "sha256:7542b756f670622abecdec2079bad7f41224088d2623e8a53db6a0a24c57e9e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "keepableCardAnswer"
+            },
+            "path": "dashboard/src/data/reviewTrees.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "111": {
+      "note": "Shown-set card reads sort and deduplicate at most500 IDs per chunk and merge in chunk order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e69a371f1c81dd1fdb854476f50f1d23c43a8cf",
+            "content": "sha256:f445d9876c6071b239be4d7baaa1ca91615b50dfec52f16a97fff7f744d85b9a",
+            "locator": {
+              "kind": "symbol",
+              "name": "CARD_CHUNK"
+            },
+            "path": "dashboard/src/data/reviewTrees.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0e69a371f1c81dd1fdb854476f50f1d23c43a8cf",
+            "content": "sha256:35addcb9192d92b8086d49ae0d6a3db7778e0ed7b0fde48a9ca802a794bd1120",
+            "locator": {
+              "kind": "symbol",
+              "name": "cardChunks"
+            },
+            "path": "dashboard/src/data/reviewTrees.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0e69a371f1c81dd1fdb854476f50f1d23c43a8cf",
+            "content": "sha256:97b55869fcad9deb90967ac5e381293c2453c8330113711936df324e6afbdf6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "useChangeSetCards"
+            },
+            "path": "dashboard/src/data/reviewTrees.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "112": {
+      "note": "The catalogue request transmits optional recorded comparison identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
+            "content": "sha256:e470c7af378ec882122a77bf080a3c8d115848d26b0bbe570bf422af45d7c4bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "intentReviewEntries"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "113": {
+      "note": "Catalogue local keys include the optional number and forward it to the request.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73fa1d355d2dc4410a2b30bb85fd00413dbd9452",
+            "content": "sha256:780491a1b7a07a5c0592961ed3caf204693ee543c04870c0e337bbc9af03b168",
+            "locator": {
+              "kind": "symbol",
+              "name": "useReviewCatalogue"
+            },
+            "path": "dashboard/src/data/useReviewCatalogue.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "114": {
+      "note": "Intent summaries carry optional comparison identity and can wait until a number is known.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1b88a5d8391b7e00d3ee0155a662a004bca0654c",
+            "content": "sha256:fc0b2a4a6595c5054589f2997e066b4a854324579e47638a14e0737f5a13cc53",
+            "locator": {
+              "kind": "symbol",
+              "name": "summaryUrl"
+            },
+            "path": "dashboard/src/data/reviewIntentSummary.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1b88a5d8391b7e00d3ee0155a662a004bca0654c",
+            "content": "sha256:f10a5068b1d1409adc09525b4af0bf8f0459f4254c4e3d20d4c5abb459b6283e",
+            "locator": {
+              "kind": "symbol",
+              "name": "useIntentReviewSummary"
+            },
+            "path": "dashboard/src/data/reviewIntentSummary.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "115": {
+      "note": "The family mirror carries selected display versions and recorded writer observations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bab377598568b8e05a49c6269ef6aa6a559f6c83",
+            "content": "sha256:1d4eb393aac21ae08c0342c362cd3dead4c7d32f35680a6bb6d7b26309ae3198",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewRevisionWriter"
+            },
+            "path": "dashboard/src/data/reviewFamily.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bab377598568b8e05a49c6269ef6aa6a559f6c83",
+            "content": "sha256:d5f2846e5a7615aaf88a5dbbf0dde5ecf26660822bf34c645c23b09480023a6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewRevisionSelection"
+            },
+            "path": "dashboard/src/data/reviewFamily.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "117": {
+      "note": "The existing state stream also carries review.explainer.moved. Its listener ignores a stopped or replaced EventSource, marks a current event alive and publishes the supplied move or clear notice. The moved subscriber set is keyed by the exact repository, master and leaf; it opens no connection or model turn. ReviewSurface owns whether the notice offers Update or renews the deterministic live reads. Anchor: `publishReviewExplainerMoved`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d07a34e704f66d30bdfda13f53b076f4073e0482",
+            "content": "sha256:168a8e29b08af6b526c429e795bc6f3438753e9969dbe93386c0c9ccb816dce6",
+            "locator": {
+              "end": 126,
+              "kind": "line_range",
+              "start": 122
+            },
+            "path": "dashboard/src/data/stream.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0ba9b634c8dc962571424e64723fc44a8335f134",
+            "content": "sha256:b55f251c8ecba4fcd2908d0bc618eb94632539a5ea22a2c435d0e2915250972f",
+            "locator": {
+              "end": 114,
+              "kind": "line_range",
+              "start": 87
+            },
+            "path": "dashboard/src/data/reviewMemoryWatch.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The three locator declarations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bab377598568b8e05a49c6269ef6aa6a559f6c83",
+            "content": "sha256:4d9b98fee7a48498685ef440e0a8a0d3c15f4c33c0d9991740c47dc0efc6aade",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSourceLocator"
+            },
+            "path": "dashboard/src/data/reviewFamily.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bab377598568b8e05a49c6269ef6aa6a559f6c83",
+            "content": "sha256:7579e6163c0ca902594f7dd86155a1e0ef920e4b508461056eed377578545cab",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSourceLocatorState"
+            },
+            "path": "dashboard/src/data/reviewFamily.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The member source carrying them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bab377598568b8e05a49c6269ef6aa6a559f6c83",
+            "content": "sha256:368a9962fc941889a9a3e78455d523832b0fbf9b232784a19b76d2a7bf6fa703",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewFamilyMemberSource"
+            },
+            "path": "dashboard/src/data/reviewFamily.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "`useReviewCatalogue` owns the behavior described above.\n\nAnchor: `useReviewCatalogue`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73fa1d355d2dc4410a2b30bb85fd00413dbd9452",
+            "content": "sha256:93636c1b2d30a2760d953db6f7ab43c584c69412119977a471cac57465de3e3b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/useReviewCatalogue.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The entry's summary read and its re-validation generation.\n\nAnchor: `useIntentReviewSummary` `IntentEntryRevalidation`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1b88a5d8391b7e00d3ee0155a662a004bca0654c",
+            "content": "sha256:d941fa3af6524428310e539882abc72e61a348d7a29ec299cb6ad5888fdab8fb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/reviewIntentSummary.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3feb8a1751db6eca58b6b0be0a1878f10d95367",
+            "content": "sha256:4486c07e2039f9d8c818172245856b6ded5424acdccaf459a890889d823bf8b1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/intentEntryRevalidation.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "One file's classification as a single read; a transport failure is `unavailable`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7a5f2e16883465216bc2170e7e5df96b58e72a6e",
+            "content": "sha256:3ab1fb18ca09c216fe1c383361d6ed98476f8a2756d27a6f27df31eddca8b5a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "readFileClassification"
+            },
+            "path": "dashboard/src/data/reviewLane.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "The server builds one native task forest from declared child rows; the browser no longer runs the removed creation-order hierarchy helper.\n\nAnchor: `build_task_entries`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "content": "sha256:6c429c875db19fdc9ee8d700401a84c60ec6f922410d1526babcd79dbdcc0f52",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "The one full scenario-store reset restores every projected collection, including `closeoutQueues`, in one transaction and is invoked by the development scenario player.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f4687b5092789e0a1d4182e803092af73f123537",
+            "content": "sha256:9e75a6091a7a3a3ae07b97946eb4c9096dff054d990f7eb7ee663613c694a3d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "emptyWorkspace"
+            },
+            "path": "dashboard/src/data/store.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f4687b5092789e0a1d4182e803092af73f123537",
+            "content": "sha256:aff2d7fe87df5231806b8623410ce3eda8d0bb1912968bcc421581512eadf443",
+            "locator": {
+              "end": 392,
+              "kind": "line_range",
+              "start": 386
+            },
+            "path": "dashboard/src/data/store.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8a496ea3787ae9c16702581c81e2793eb459d67e",
+            "content": "sha256:838e060d2d5550940c54e73ce183cc8ebdc6990d13e71fb25f059f3d5c707b1b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/dev/ScenarioPlayer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "The served TaskEntry mirror carries optional document reference, identity, state, parent/children and counts; no separate series-child consumer union is part of the native entry model.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
+            "content": "sha256:2676eab498252894c4dd259864476e85018ca8cc75e55f1504a3856583ff3abd",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskEntry"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "Membership links each child to one deterministic parent and rejects a cycle; the removed series creation-sort builder is not the current producer.\n\nAnchor: `_Membership`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "content": "sha256:6c429c875db19fdc9ee8d700401a84c60ec6f922410d1526babcd79dbdcc0f52",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "The generated projection mirror this route's suites build fixtures from, the manual sample used for coverage, and the fixture/projection stale gates.\n\nAnchor: Contract direction rationale, fixture provenance, generator header and full check/dispatch bodies",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9f5518c01093d319450274b1110efb3863c2d4b",
+            "content": "sha256:1b22f1cce75f1642901ce4793b6c0b4c0ae87371505e3f2ad2e3e20c7362a7e5",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 14
+            },
+            "path": "dashboard/src/test/contract.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a129de9436ae3d8f076d34f4eabb33240781dedf",
+            "content": "sha256:f69a6b22129dca8243632068064d9b6114a4fe667815ec9360a06735a3657769",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
+            "content": "sha256:278e8f8d38ff16a96bd0f517049952be7cf84b529f633413369ad76d2d713420",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a679628bfc97d851c7d3246fbeddcdcd95364844",
+            "content": "sha256:b7406c17cc72921b4db23c556877f4445defbd89af6bd62340ffc15b0d513c18",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 46
+            },
+            "path": "scripts/sync-projection-types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a679628bfc97d851c7d3246fbeddcdcd95364844",
+            "content": "sha256:c18f31c577f41468edd16e036b0729ca9394f2cda2fe7364274e3f716a20df86",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 57
+            },
+            "path": "scripts/sync-projection-types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a9f5518c01093d319450274b1110efb3863c2d4b",
+            "content": "sha256:1b22f1cce75f1642901ce4793b6c0b4c0ae87371505e3f2ad2e3e20c7362a7e5",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 14
+            },
+            "path": "dashboard/src/test/contract.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a129de9436ae3d8f076d34f4eabb33240781dedf",
+            "content": "sha256:f69a6b22129dca8243632068064d9b6114a4fe667815ec9360a06735a3657769",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
+            "content": "sha256:278e8f8d38ff16a96bd0f517049952be7cf84b529f633413369ad76d2d713420",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "The route's read-only client and its comparison call.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
+            "content": "sha256:faef4dafa9f822bbd133039f932b85f3ed53963e045da9f0fe5d9d5c12e62e89",
+            "locator": {
+              "end": 435,
+              "kind": "line_range",
+              "start": 435
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The scope that keeps it per surface, only for a tree comparison.\n\nAnchor: \"comparison === undefined ? null : readFileClassification(repo, master, leaf, comparison, path),\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "605d887c62f5bfc95cefbf1ab2b8fb104586d1cb",
+            "content": "sha256:b4de4cacb6a3d60b886bdac02c57d0fbfe97046151afac25168afdcd10e212f2",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 96
+            },
+            "path": "dashboard/src/panels/review/intentMarkerScope.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "The catalogue call carries task context and an optional recorded comparison number; it requests navigation identities without a subject selector.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
+            "content": "sha256:e470c7af378ec882122a77bf080a3c8d115848d26b0bbe570bf422af45d7c4bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "intentReviewEntries"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "**The reviewed subject as the server's catalogue lists it — presence beside the label, the count field deleted (`ICR-R09@v1`), still the entry's only legitimate selector source, with no path field on purpose.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
+            "content": "sha256:cfc7befc6219e0e7c595423f21071ccb794f0c8622a50e6090535c95f0a6dcc7",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewEntry"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
+            "content": "sha256:494d09652a67833a98c55a7fa7f5647a9630d71c6355a7cb85d093dc166ba880",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSubjectPresence"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
+            "content": "sha256:24c209e91cf40031f894eb6d0385fc2b83a75e687b0061b6ffdbe464622a4708",
+            "locator": {
+              "end": 583,
+              "kind": "line_range",
+              "start": 583
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "**The entry read's typed envelope, whose refused form carries a refusal and no entries rather than throwing, and whose answered form carries the labelled totals of the whole catalogue.**\n\nAnchor: `ReviewEntryListResult`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
+            "content": "sha256:3a72132f0e91797658680ee56804a30bd93c76a74d449d6f3d58b4e7c0b8e002",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "The closed selector union, the two kinds the server admits.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
+            "content": "sha256:c6674657db0814be58796a9bc79afe11430ad85e446b4dcbb9ede76ed2ef88a9",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 67
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "The no-store-mutation boundary, stated in the module header.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
+            "content": "sha256:9b1b00c8d99758ebca583aad6b9dd2478b4631ba89c975e3b1d9626474386b90",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 4
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "The typed result the client returns unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
+            "content": "sha256:120ee0b56342b5eef6994cc6b88801676ac536ccce4757950a23d7d01ca2c02e",
+            "locator": {
+              "end": 401,
+              "kind": "line_range",
+              "start": 401
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "The TypeScript interfaces declare a client display projection, not a field-for-field Python mirror: ReviewSourcePane omits relationships, unknown_attribution_changed_paths and attribution; ReviewMovement is a common displayed subset. This is not a claim of runtime field loss.\n\nAnchor: Python source-pane fields",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
+            "content": "sha256:8180393cd0c5609e7551fcae068f9d4a94397f6829ea5768ff30b8c98aec0f40",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSourcePane"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
+            "content": "sha256:9ae896a10dad7d4c5f4f7cab603a529c3c5e41269f3c6d22f6128aae1e8f54dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewMovement"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e02f9598b6bfebef7bb44697138a77410c5cda1",
+            "content": "sha256:d1973580a516d150e34d1095c7be8fe9530dc577e4218732d485b4428c294280",
+            "locator": {
+              "end": 262,
+              "kind": "line_range",
+              "start": 246
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_source.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "**The inventory's wire types, including the byte form of a name this surface cannot print.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
+            "content": "sha256:f0562673993cbc1b914392217debb15c996e78e15fd7ad216ed341d97623e366",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewChangedFile"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
+            "content": "sha256:fa61b803b77cd44bd7425f4b38c5153b6416be5ea89e7fc711f68ffaa35c0541",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewUnrepresentablePath"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
+            "content": "sha256:950d3b870b93a5113e6a5ee6a9023583438a80b65df212ca5ca4dbe31e289909",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSourceInventory"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "39": {
+      "note": "**The comparison identity that states whether knowledge was compared, and the staleness union that gained the task-context state.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
+            "content": "sha256:8c360500d2f45ded1ac5c1873960483d26dd7dccd7e48a99c18bc5ec20b176b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonIdentity"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
+            "content": "sha256:0d1fc3fb34c2a83ac997a203c89912e95c91fddf442d21f980b500da2b9f12c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewStaleness"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The adapter's own statement: the server classifies once and this file only carries the answer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7a5f2e16883465216bc2170e7e5df96b58e72a6e",
+            "content": "sha256:e3e612114faf1e0e5a02a7cf6829e77627e7d4f9bd8ceaef6d3e943393d47b1a",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/data/reviewLane.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "40": {
+      "note": "The payload whose comparison may be absent, and the pane that says which question was answered.\n\nAnchor: `ReviewPayload` `ReviewKnowledgePane`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
+            "content": "sha256:3a72132f0e91797658680ee56804a30bd93c76a74d449d6f3d58b4e7c0b8e002",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "41": {
+      "note": "**The request that omits the selector when there is none — the task-context entry.**\n\nAnchor: `intentReview`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
+            "content": "sha256:3a72132f0e91797658680ee56804a30bd93c76a74d449d6f3d58b4e7c0b8e002",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "42": {
+      "note": "Changed-file navigation uses ChangeList in the existing comparison viewer; review openers bind its recorded comparison and retain a named unavailable-range answer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f573a5c5c9d295de071c004326eb932c2d61dd8d",
+            "content": "sha256:8e3dc14b56c971b106e75dff7e72407f165fa28801829cf68d27165906c1a86d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangeList"
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "43": {
+      "note": "The retained Python source-content model declares six side states; its side validator requires text for present, permits text only for textual states, and keeps absent objects and textless truncation invalid.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
+            "content": "sha256:3df3bff746bde383b406b3741ba46e14f4d56695d025bffa61336eb44ae94531",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSourceSideState"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_source_content.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
+            "content": "sha256:4238ed779a8790fb8f72c024a28bd7ddc31a1f7240d482a695d6b0feec7d83b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSourceSide"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_source_content.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "44": {
+      "note": "The retained backend expansion carries both requested tree identities, both side values, currentness, path-bound measurement and admission.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
+            "content": "sha256:3a3dc099eb0b876ca6894e60776ea0f172e0feb5e9711146d9b0302d0a7be502",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSourceExpansion"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_source_content.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "45": {
+      "note": "The retained backend content/refused envelope enforces one expansion or one refusal, never both.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
+            "content": "sha256:e99cc7aa6d8c6656ea4b600fc2b0a5c9fd81255d5c93edca94086ab9e8a1c984",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSourceContentResult"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_source_content.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "46": {
+      "note": "The retained source-content endpoint serializes its port result and preserves unwired and incomplete-generation responses; the removed dashboard source-content client is historical.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:a7e5ba6f8331c12effad7c41e71338de141f4769efb00994a3181bf88c33f1b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "api_review_intent_source_content"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:1272bac5ce2f7595b1d3bf178f8f23fceb8ae7c37096a6de10d8d163257da323",
+            "locator": {
+              "kind": "symbol",
+              "name": "_source_content_response"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "47": {
+      "note": "The retained backend request requires task context, path and both exact tree identities; the response assembly echoes the requested pair.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
+            "content": "sha256:0b63a74d8f3e792c4d24782b4f54ee357c448b75b20688f3a50a47f5329d2bd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSourceContentRequest"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_source_content.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
+            "content": "sha256:ebb5f7773a87fded477bec63545ebd293f8b42fc91309cf6768a7b61a2436f74",
+            "locator": {
+              "kind": "symbol",
+              "name": "_content"
+            },
+            "path": "mcp/src/agents_remember/application/review_source_content.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "49": {
+      "note": "The retained backend reader distinguishes an absent endpoint entry from an unreadable lookup, then classifies an entry's kind before its bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
+            "content": "sha256:103ec757f203445b2f0689d878c3ca2af1f58bea986b1bc09b54a2b8285f8fa5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_side_content"
+            },
+            "path": "mcp/src/agents_remember/application/review_source_content.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
+            "content": "sha256:a5a422ceed02ef1b4316876f67da1f6a7cce1d44a555e16cd3bae81a6742a484",
+            "locator": {
+              "kind": "symbol",
+              "name": "_entry_content"
+            },
+            "path": "mcp/src/agents_remember/application/review_source_content.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The lane hook and the per-file single read share the classification transport; a dataset review names no tree comparison.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7a5f2e16883465216bc2170e7e5df96b58e72a6e",
+            "content": "sha256:ca044fb554d86b53ee7a9f656cea4fe94166872e1b7e6a168623a2f29fb13b6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "useReviewLane"
+            },
+            "path": "dashboard/src/data/reviewLane.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7a5f2e16883465216bc2170e7e5df96b58e72a6e",
+            "content": "sha256:3ab1fb18ca09c216fe1c383361d6ed98476f8a2756d27a6f27df31eddca8b5a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "readFileClassification"
+            },
+            "path": "dashboard/src/data/reviewLane.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "54": {
+      "note": "**The generation pins, the published generation identity, and the pins threaded through both master reads.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
+            "content": "sha256:518ba97a2e876a750a674facde42ec49d1f01b376028d44f80204506341ecca1",
+            "locator": {
+              "kind": "symbol",
+              "name": "MasterNetPins"
+            },
+            "path": "dashboard/src/data/changeset.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
+            "content": "sha256:e2a13520375f7b850be1252be1a1a0852a60585640444d8778b26b8651a29b2c",
+            "locator": {
+              "kind": "symbol",
+              "name": "MasterNetGeneration"
+            },
+            "path": "dashboard/src/data/changeset.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
+            "content": "sha256:5916c4a623a8d92d33dd2e79fe2de9624a4b08b8f31d531a8769a86d5dda886a",
+            "locator": {
+              "kind": "symbol",
+              "name": "masterFileDiff"
+            },
+            "path": "dashboard/src/data/changeset.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
+            "content": "sha256:6e718064d432e3f615529ebd114610cc6182210cdbbaf5888f87bfa3102c05a1",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 76
+            },
+            "path": "dashboard/src/data/changeset.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "55": {
+      "note": "**The new family mirror module, and the re-export that keeps `data/review.ts` the route's one public entry.**\n\nAnchor: `ReviewFamilyContext`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
+            "content": "sha256:114a20ea3c0c3d3fa220bd8e7c7a5daa2f3ef8dc752f24577b7d6d4dfac5dc82",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 33
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bab377598568b8e05a49c6269ef6aa6a559f6c83",
+            "content": "sha256:46f2c4cf33f251383273f11b9ffa08c0bd7027a890dff7ad4c6e33f4082c2316",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/reviewFamily.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "56": {
+      "note": "**The bounded-collection union that lists `family_members` because the server accepts it, and the mirror that never narrows it.**\n\nAnchor: `ReviewPagedCollection`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
+            "content": "sha256:3a72132f0e91797658680ee56804a30bd93c76a74d449d6f3d58b4e7c0b8e002",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "57": {
+      "note": "**The set a request may name with no cursor, and the reason `family_members` is not in it.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
+            "content": "sha256:137525d41889415ab9ccb0afdfa3865247a8fc7ad6da62a549ee88672da90b15",
+            "locator": {
+              "end": 105,
+              "kind": "line_range",
+              "start": 99
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "58": {
+      "note": "**The optional family context whose absence says the body did not come from this route.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
+            "content": "sha256:bfb55936f3767abe2ffe70c120e449eea1f901a74fe802942dccde0fa063dc1a",
+            "locator": {
+              "kind": "symbol",
+              "name": "family_context"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "59": {
+      "note": "An incoming link may carry the record its history-row source is about.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ec5f222a6d97528f9484c56a1ff060446b461ff",
+            "content": "sha256:66cb63de23c042cf0174db4b81d76f32c98e9bd39c3c51a84e4d85a82997e4f8",
+            "locator": {
+              "end": 252,
+              "kind": "line_range",
+              "start": 240
+            },
+            "path": "dashboard/src/data/knowledgeReader.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The summary carries the lane's count on both answered states.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1b88a5d8391b7e00d3ee0155a662a004bca0654c",
+            "content": "sha256:0f36c0ea9e663573f6d0914c1295d9108cb9b49078c0f9bdfbb9d299c436014e",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 79
+            },
+            "path": "dashboard/src/data/reviewIntentSummary.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "60": {
+      "note": "The module comment: what the adapter carries and the three answers it keeps apart.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e69a371f1c81dd1fdb854476f50f1d23c43a8cf",
+            "content": "sha256:cf5519e02414956742c682ebaa184de29ca2a1237035f55f7b64e0df2eeab89e",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/data/reviewTrees.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "61": {
+      "note": "The answer of the route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e69a371f1c81dd1fdb854476f50f1d23c43a8cf",
+            "content": "sha256:6b3c3f3c8a9be8bb0421c6d68a40b40c86e38f3389a798efdf8a71709119805e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/reviewTrees.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "62": {
+      "note": "One entry on both code sides.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e69a371f1c81dd1fdb854476f50f1d23c43a8cf",
+            "content": "sha256:6b3c3f3c8a9be8bb0421c6d68a40b40c86e38f3389a798efdf8a71709119805e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/reviewTrees.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "63": {
+      "note": "The request, addressed by number, recorded or invariants, with the optional signal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e69a371f1c81dd1fdb854476f50f1d23c43a8cf",
+            "content": "sha256:6b3c3f3c8a9be8bb0421c6d68a40b40c86e38f3389a798efdf8a71709119805e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/reviewTrees.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "64": {
+      "note": "The transient codes and the retry delays.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e69a371f1c81dd1fdb854476f50f1d23c43a8cf",
+            "content": "sha256:6b05bb6f8f5397db18de287811001a9b61522792739f52b9d17d44795c1f7924",
+            "locator": {
+              "end": 355,
+              "kind": "line_range",
+              "start": 353
+            },
+            "path": "dashboard/src/data/reviewTrees.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "65": {
+      "note": "The bounded retry of a transient refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e69a371f1c81dd1fdb854476f50f1d23c43a8cf",
+            "content": "sha256:6b3c3f3c8a9be8bb0421c6d68a40b40c86e38f3389a798efdf8a71709119805e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/reviewTrees.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "66": {
+      "note": "One answer as a read state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e69a371f1c81dd1fdb854476f50f1d23c43a8cf",
+            "content": "sha256:6b3c3f3c8a9be8bb0421c6d68a40b40c86e38f3389a798efdf8a71709119805e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/reviewTrees.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "67": {
+      "note": "The comparison a payload names; without it no tree read is made.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e69a371f1c81dd1fdb854476f50f1d23c43a8cf",
+            "content": "sha256:6b3c3f3c8a9be8bb0421c6d68a40b40c86e38f3389a798efdf8a71709119805e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/reviewTrees.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "68": {
+      "note": "useChangeSetCards reads the page's shown invariant set in sorted distinct chunks of at most 500 and shares only admitted stable answers and in-flight acquisitions; inactive/unbound reads return null.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e69a371f1c81dd1fdb854476f50f1d23c43a8cf",
+            "content": "sha256:97b55869fcad9deb90967ac5e381293c2453c8330113711936df324e6afbdf6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "useChangeSetCards"
+            },
+            "path": "dashboard/src/data/reviewTrees.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0e69a371f1c81dd1fdb854476f50f1d23c43a8cf",
+            "content": "sha256:5d63650957fd9323b60edd88bc1925525d8422f17dc6d0b31659174031f5977f",
+            "locator": {
+              "end": 562,
+              "kind": "line_range",
+              "start": 474
+            },
+            "path": "dashboard/src/data/reviewTrees.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "69": {
+      "note": "The leaf-wide hook: abort on cleanup, sequence number, retry, and the enabled flag.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e69a371f1c81dd1fdb854476f50f1d23c43a8cf",
+            "content": "sha256:6b3c3f3c8a9be8bb0421c6d68a40b40c86e38f3389a798efdf8a71709119805e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/reviewTrees.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The shareable hash, read and written.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ec5f222a6d97528f9484c56a1ff060446b461ff",
+            "content": "sha256:eda6257fecd133947c26ef85ac6ee28147c69d3f84870f1fc64117e4b907ba15",
+            "locator": {
+              "kind": "symbol",
+              "name": "parseReaderHash"
+            },
+            "path": "dashboard/src/data/knowledgeReader.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8ec5f222a6d97528f9484c56a1ff060446b461ff",
+            "content": "sha256:15f70b6870a24452a148a06dfa75248f9a6c960d88c355baa91e2ed88cc975c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "readerHash"
+            },
+            "path": "dashboard/src/data/knowledgeReader.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "72": {
+      "note": "Loading stays shown during the retries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4525d62a68bc2073bf6b8583506a094332291854",
+            "content": "sha256:b6818013d07cbbdb1e24315b2a7fc49d274c35a2fecb9239429abca70d563ef4",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 115
+            },
+            "path": "dashboard/src/data/reviewTrees.supersede.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "73": {
+      "note": "Unavailable is shown only after the bounded number of retries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4525d62a68bc2073bf6b8583506a094332291854",
+            "content": "sha256:3f96c4620e98330349b152c75a905e3983c3942a7d131963b5aafec57657c3b5",
+            "locator": {
+              "end": 151,
+              "kind": "line_range",
+              "start": 141
+            },
+            "path": "dashboard/src/data/reviewTrees.supersede.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "74": {
+      "note": "No camelCase key in the real body.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7cb79f025ffabce1162052d97c84f0331da5e31a",
+            "content": "sha256:a35ba85e062c62ddd6d186bf3ea64d5e33e70720369b544e0efde3693b197709",
+            "locator": {
+              "end": 126,
+              "kind": "line_range",
+              "start": 112
+            },
+            "path": "dashboard/src/data/reviewTrees.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "75": {
+      "note": "The module comment: one decode per read, nothing selected or substituted, and getJson unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f3302a8f0d3f3743960dbb22069270aecf18300",
+            "content": "sha256:7b9fe6175f1d844ad530843fa9ed0f9d23c69e1763a7f719181b8dc227269084",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/data/reviewTransport.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "76": {
+      "note": "The tokens a reader can be shown.\n\nAnchor: `ReviewFailureToken`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f3302a8f0d3f3743960dbb22069270aecf18300",
+            "content": "sha256:926bec36aa5d3aa3b9e56da95657348563f04036e913943aa3fab0f7c682a750",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/reviewTransport.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "77": {
+      "note": "The codes and their tokens, with the two transient codes of the leaf-wide view.\n\nAnchor: `TOKEN_BY_CODE`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f3302a8f0d3f3743960dbb22069270aecf18300",
+            "content": "sha256:926bec36aa5d3aa3b9e56da95657348563f04036e913943aa3fab0f7c682a750",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/reviewTransport.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "78": {
+      "note": "An unknown code is carried as domain-refused.\n\nAnchor: `reviewFailureToken`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f3302a8f0d3f3743960dbb22069270aecf18300",
+            "content": "sha256:926bec36aa5d3aa3b9e56da95657348563f04036e913943aa3fab0f7c682a750",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/reviewTransport.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "79": {
+      "note": "The one GET: the optional abort signal, the body read whatever the status, and the two failures.\n\nAnchor: `getReviewJson`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f3302a8f0d3f3743960dbb22069270aecf18300",
+            "content": "sha256:926bec36aa5d3aa3b9e56da95657348563f04036e913943aa3fab0f7c682a750",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/reviewTransport.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "A typed answer returned whatever its status; only transport failures throw.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ec5f222a6d97528f9484c56a1ff060446b461ff",
+            "content": "sha256:401af838b2b066012b5e87e515034b4ab0dbfc47e5e7cd4c083f380638672d2f",
+            "locator": {
+              "kind": "symbol",
+              "name": "readerGet"
+            },
+            "path": "dashboard/src/data/knowledgeReader.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "80": {
+      "note": "The review client imports and re-exports the transport surface.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
+            "content": "sha256:b71314fb5e5acaa72506630b980bfc48c5715f9e6250aaa6030c670511ec0301",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "81": {
+      "note": "A 404 typed refusal resolves through the review client with the refusal intact.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b743f0cc40d0d1fa48a7abc9a7c92ac75d640ef",
+            "content": "sha256:7ce922dacb14d14136004d944fed2be6bdf9e9966ad2e480139ce8eba245f6b5",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 136
+            },
+            "path": "dashboard/src/data/reviewTransport.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "82": {
+      "note": "The same body is dropped by getJson: the shared client's semantics are unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b743f0cc40d0d1fa48a7abc9a7c92ac75d640ef",
+            "content": "sha256:be605aa7ebd5f50727d335966a1906dca4eebae03ff9764b638d32fa98614200",
+            "locator": {
+              "end": 164,
+              "kind": "line_range",
+              "start": 149
+            },
+            "path": "dashboard/src/data/reviewTransport.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "83": {
+      "note": "driftSegments reads snapshot counts, returns no segments for a zero total, orders known classifications before unanticipated ones, and emits counts with rounded percentages. This is source ownership, not executed visual proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45703aad8672ac0bd3f53a1e3be16aef2ad16336",
+            "content": "sha256:c4350d4ce7d697996903291c68a6930ec392c097d56c81080de3fa3cbbff1301",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 72
+            },
+            "path": "dashboard/src/data/selectors.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "84": {
+      "note": "driftSegments reads snapshot counts, orders known classifications before additional supplied classes and computes rounded percentages. EngineRoomImpl separately consumes stable process and ledger slices; this is source ownership, not fresh executed visual proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45703aad8672ac0bd3f53a1e3be16aef2ad16336",
+            "content": "sha256:c4e790c693c8e625cadede8d9d2c21c7aa4ed08fff32e5b36b8d64347cd73295",
+            "locator": {
+              "end": 101,
+              "kind": "line_range",
+              "start": 72
+            },
+            "path": "dashboard/src/data/selectors.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c89382b7530853796de958e287f52a05bf0222f3",
+            "content": "sha256:134c99fa47cf8e4962b59a99cda4f61bbdc6088fee960e16bce22c8180394b8b",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 107
+            },
+            "path": "dashboard/src/panels/EngineRoom.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "85": {
+      "note": "The review wire mirror transports recorded meaning steps with their own attempts/revisions and distinguishes readable none from unavailable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
+            "content": "sha256:3a72132f0e91797658680ee56804a30bd93c76a74d449d6f3d58b4e7c0b8e002",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "87": {
+      "note": "Present paging excludes records and allows only knowledge without a cursor.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
+            "content": "sha256:aa41a3bc886f40d6b6e027809b5283b42d9fdf16d291b0472d2fe1a6473f715d",
+            "locator": {
+              "end": 105,
+              "kind": "line_range",
+              "start": 76
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "89": {
+      "note": "Refresh empty-string normalization is specific, rather than universal query normalization.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
+            "content": "sha256:0fd9b133872cdd857136be3e3c2930c47bf8c4fa8c691cc1ea5d6901170701ec",
+            "locator": {
+              "end": 502,
+              "kind": "line_range",
+              "start": 468
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The selection block every answer carries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ec5f222a6d97528f9484c56a1ff060446b461ff",
+            "content": "sha256:7bc8633a1ba277589e8b7476efd0234a310b96c8e6c431070b4cdf98e734c94d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReaderSelection"
+            },
+            "path": "dashboard/src/data/knowledgeReader.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "90": {
+      "note": "Catalogue history/generation remain local keying inputs, while an optional comparison number is transmitted and included in the request identity; entries/totals can be locally defaulted, and incompatible semantic fields are quarantined.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73fa1d355d2dc4410a2b30bb85fd00413dbd9452",
+            "content": "sha256:780491a1b7a07a5c0592961ed3caf204693ee543c04870c0e337bbc9af03b168",
+            "locator": {
+              "kind": "symbol",
+              "name": "useReviewCatalogue"
+            },
+            "path": "dashboard/src/data/useReviewCatalogue.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "91": {
+      "note": "Change-set refusal reasons are carried by the current decoder.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
+            "content": "sha256:ac8d022d7e770b84eaf514687701d00d66ee5bf7bdff00f0963ed28381e70877",
+            "locator": {
+              "end": 169,
+              "kind": "line_range",
+              "start": 123
+            },
+            "path": "dashboard/src/data/changeset.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "92": {
+      "note": "Requirement reads forward context and a path; registered address resolution is listing-based.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6804a766caa5f3a903d673cff23f59847af2df0b",
+            "content": "sha256:6b85bed15f7badaf77eedfd46b60df85afdd2d21f2d0efd61ea37da902a29670",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": "dashboard/src/data/requirements.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "93": {
+      "note": "Artifact reader targets also include task reports and decisions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f433d3c79bfc376fb5c5b05f30f881a81adced4d",
+            "content": "sha256:f6240fd7fb2e9beff332d5ece55ba873a40ec088e7f6bd18ca8209b5eff2cb34",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "dashboard/src/data/taskArtifacts.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "98": {
+      "note": "Reader transport uses a 120-second bound and accepts a string-state body across statuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ec5f222a6d97528f9484c56a1ff060446b461ff",
+            "content": "sha256:85a81c40eeaf85406352c6b0411ec95907c7be98590ec7ab0832b419fc8cabdb",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 17
+            },
+            "path": "dashboard/src/data/knowledgeReader.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8ec5f222a6d97528f9484c56a1ff060446b461ff",
+            "content": "sha256:751f7cd53a91de65b6ef2785c51e8bcc709b664c9236f4ae17de31587b3f4cc5",
+            "locator": {
+              "end": 455,
+              "kind": "line_range",
+              "start": 437
+            },
+            "path": "dashboard/src/data/knowledgeReader.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "99": {
+      "note": "Reader hash writer omits empty subject keys while preserving explicit repository/commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ec5f222a6d97528f9484c56a1ff060446b461ff",
+            "content": "sha256:7c135bcd48aeda9f4f62462d9b05b5ae5dacdc3cf39adb3af7f144071b9711db",
+            "locator": {
+              "end": 423,
+              "kind": "line_range",
+              "start": 399
+            },
+            "path": "dashboard/src/data/knowledgeReader.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

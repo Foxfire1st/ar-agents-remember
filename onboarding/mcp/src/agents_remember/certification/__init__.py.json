@@ -1,0 +1,75 @@
+{
+  "path": "mcp/src/agents_remember/certification/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Core certificates and non-certifying diagnostics\n\nAnchor: `compile_certification_admission`; `ContentAddressedCertificateStore`; `DiagnosticManifestStore`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "04d023138a7dc257185ea1caa76dd9ec1b513d59",
+            "content": "sha256:18c28190bf4dcf89819f1045c25b09dd8bf9d7f93891fffd6e167a1272ffb647",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Final-Codex and typed lifecycle interfaces",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "04d023138a7dc257185ea1caa76dd9ec1b513d59",
+            "content": "sha256:b3aca1d8543a5aa756e53e30c190bcec41df2b9ca26c9962bd0296ddf18a3a7a",
+            "locator": {
+              "end": 339,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Accumulated measured-replay surface",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "04d023138a7dc257185ea1caa76dd9ec1b513d59",
+            "content": "sha256:1c16c2c8645aeacc309b84c97954f38dc638349f16ab7627126737583aac579e",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 103
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Telemetry imports and explicit public exports",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "04d023138a7dc257185ea1caa76dd9ec1b513d59",
+            "content": "sha256:e1b78603feab1a6f4e06392b5561b64d6b78c2d3bb9394ee60f8c03280a4244f",
+            "locator": {
+              "end": 339,
+              "kind": "line_range",
+              "start": 186
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

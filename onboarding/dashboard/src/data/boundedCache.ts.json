@@ -1,0 +1,42 @@
+{
+  "path": "dashboard/src/data/boundedCache.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "6e02c0e7424012cb0e4a480c83a7e2c2d25647cd",
+        "content": "sha256:8f98dbabb9eea53ff32c18265b12ea977b5d9d9c9703da6d92f0ee6bb2dbd742",
+        "locator": {
+          "kind": "symbol",
+          "name": "BoundedCache"
+        }
+      },
+      "id": "RLZ-AREP9K",
+      "invariant": "INV-GDWJKR",
+      "origin": {
+        "handoffEntry": "L168-W-R168-07",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "The browser cache enforces entry/byte limits and LRU eviction.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Implementation",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6e02c0e7424012cb0e4a480c83a7e2c2d25647cd",
+            "content": "sha256:8f98dbabb9eea53ff32c18265b12ea977b5d9d9c9703da6d92f0ee6bb2dbd742",
+            "locator": {
+              "kind": "symbol",
+              "name": "BoundedCache"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

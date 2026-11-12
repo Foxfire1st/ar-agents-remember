@@ -2,13 +2,7 @@
 
 | Field                  | Value                                            |
 | ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/notes-reader/`             |
-| doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-05T06:21+00:00 |
-| lastVerifiedCommitHash | `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7` |
-| lastVerifiedCommitDate | 2026-09-28T20:30:48+02:00|
-| governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
 
@@ -16,139 +10,68 @@
 
 ## Purpose
 
-`notes-reader/` is the **Notes Reader** (agent-orchestration L17): the L9 coordination-notes reading
-experience rebuilt on the SAME full-view pattern the File Viewer / Change-Set Viewer use. It is a
-task-scoped **takeover** — `CockpitShell` renders it full-bleed in place of the railed Operations body — and
-it is the frontend consumer of the **unchanged** L9 read-only notes API (`GET /api/notes/{list,read}`,
-served by `serving/notes.py`). It reuses the L2 File Viewer content primitive (`file-viewer/DualPane`, which
-itself composes `FilePane` + `grammar/Markdown`) and the L4 Change-Set Viewer takeover chrome (sticky back
-header + `react-resizable-panels` rail+pane). It **replaces** the retired inline `TaskNotes` reading pane;
-the compact `TaskNotes` list + resolved references remain the ENTRY surfaces that open it.
+`notes-reader/` provides the task-artifact reading screen: coordination notes, registered requirement packets, recorded task reports, supplied role reports, and the whole decision log. Cockpit opens the task-artifact screen as a full-bleed takeover. The compact `TaskNotes` surface remains an entry point through its Notes explorer link, resolved references, and recorded reports; task-reader prose can open registered requirements through the same takeover.
 
-## Route Model
+The screen shares the File Viewer's `DualPane` content primitive and the rail-and-pane layout pattern used by the Change-Set Viewer. Notes and requirements have selection rails; reports and the whole decision log use the content area without a rail.
 
-- `NotesReaderViewer.tsx` — the screen. LEFT RAIL = the master's notes tree from `/api/notes/list`
-  (`reports/` included), one clickable row per note (path + byte size) with the open note in an amber/cyan
-  **active wash** (the Change-Set Viewer row idiom); the server's `truncated` flag surfaces a muted
-  "beyond the list cap" hint. CONTENT PANE = the opened note (`/api/notes/read`) rendered by **reusing
-  `DualPane`**: a markdown note takes DualPane's partnerless-markdown path (the File Viewer's route-overview
-  treatment), a text note renders through DualPane's `CodeSide` (read-only CodeMirror), a binary note
-  degrades to the byte-count placeholder; loading/failed show a local `note-status` placeholder. The view is
-  **controlled** — the open `path` + rail `onSelectNote` are lifted to `CockpitShell`, so a rail click
-  switches the pane in place and the selection survives back/forward (the reader stays mounted-hidden after
-  Back, like the File Viewer). A sticky back link (`notes-reader-back`) restores the railed Operations body.
-
-260707-HFX2-L13 changes only `NotesReaderViewer.test.tsx` in this child route. Its shared `fetch`
-fixture now recognizes `/api/task-document` because the surrounding detail/task-reader composition
-loads the visible task body on demand before or alongside notes requests. The production Notes Reader
-component, its `/api/notes/{list,read}` transport, takeover state, and `DualPane` rendering are
-unchanged; the fixture branch prevents the parent reader's new request from leaking into or
-invalidating the notes-specific assertions.
-
-## Invariants And Boundaries
-
-- Read-only over the **unchanged** L9 `/api/notes/*` server contract (allow-listing, confinement,
-  binary/oversize all stay server-side); no store mutation — the screen owns its own listing/content fetch
-  via `data/notes.ts`.
-- **No second bespoke reader** — the content pane IS the File Viewer's `DualPane`; only the flat notes rail
-  (the ChangeSetViewer column idiom) and the takeover chrome are local. Panda CSS owns looks; no CSS
-  animation (GSAP/Motion only — master invariant).
-- Opened as a Cockpit **takeover** (rails hidden, full-bleed), not a standing mode-bar tab; Back — or a
-  mode-bar switch / a node `open()` — hides it. Unlike the Change-Set takeover, the reader is retained
-  mounted-hidden (not discarded) so its listing + selection persist.
+The common reader header shows the shared left-sidebar toggle only for a target with a rail. Its Notes/Requirements label follows the artifact kind. One `notes` left-side state controls the mounted rail panel and its resize handle together, leaving the toggle in the header outside the hidden rail. Reports and the whole decision log draw no rail toggle.
 
 ## Hot Path Summary
 
-`NotesReaderViewer.tsx` is the shared task-artifact takeover: `kind: notes` uses `/api/notes/{list,read}`, while `kind: requirements` uses the canonical task-document-selected `/api/requirements/{list,read}` endpoints. The tree rail and `DualPane` are shared; kind-aware labels prevent requirement packets from being presented as ordinary notes.
+The whole decision log shares the task-page authored row, newest-first recorded-time ordering and oldest-based authored numbering. Product records contribute to neither authored counts nor numbers; a muted counted end disclosure retains them unnumbered. Exact/prefix text provenance remains classification, not an impossibility guarantee against authored collisions.
 
-## Repo-Internal References
+An entry surface opens a typed artifact target in Cockpit. Notes load folders lazily through `ExplorerTree`; requirements load their task-document-selected flat listing. Selection updates the controlled target and fetches the selected content for `DualPane`. Recorded reports fetch their scoped report, supplied reports render directly, and decisions render their supplied log. The screen header and `data-artifact-kind` identify the artifact kind; Back hides the retained takeover.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The read-only notes routes. | `register_notes_routes`; `list_notes`; `read_note` | mcp/src/agents_remember/serving/notes.py:209-220; mcp/src/agents_remember/serving/notes.py:223-247; mcp/src/agents_remember/serving/notes.py:279-288 |
-| The same-origin notes client (`listNotes`/`readNote`/`resolveNoteReference`). | `listNotes`; `readNote`; `resolveNoteReference` | dashboard/src/data/notes.ts:32-33; dashboard/src/data/notes.ts:35-41; dashboard/src/data/notes.ts:52-65 |
-| The reused File Viewer content pane maps both notes and requirement packets to markdown/code/placeholder rendering. | "function noteAsFileContent("; "function dualPaneProps("; "<DualPane {...dualPaneProps(note)} split={false} />" | dashboard/src/panels/notes-reader/NotesReaderViewer.tsx:120-137; dashboard/src/panels/notes-reader/NotesReaderViewer.tsx:204-204 |
-| Cockpit defines the note-opening callback. | "const openNotes = useCallback((target: NotesReaderTarget) => {" | dashboard/src/cockpit/Cockpit.tsx:531-535 |
-| Cockpit defines the note-selection callback. | "const selectNote = useCallback(" | dashboard/src/cockpit/Cockpit.tsx:538-541 |
-| Cockpit renders NotesReaderViewer. | "<NotesReaderViewer" | dashboard/src/cockpit/Cockpit.tsx:625-625 |
-| TaskNotes resolves registered requirement references first; a requirement address never falls through to a note target. | "function ReferenceList({" | dashboard/src/panels/TaskNotes.tsx:75-129 |
+## Construction
 
-## Current L5I Route State
+`NotesReaderViewer.tsx` dispatches the discriminated `TaskArtifactReaderTarget`. `useNotesFolderCache.ts` owns the retained folder store, stable paging callbacks, fill/vanish recovery and LRU protection; NotesTree wires it to the shared ExplorerTree. Notes use `data/notes.ts` to request one folder at a time from `/api/notes/folder` and an opened file from `/api/notes/read`. Reference resolution belongs to the entry surface and uses one `POST /api/notes/resolve` request for the document's references. Requirements use `data/requirements.ts` and the target's task-document selector to call `/api/requirements/list` and `/api/requirements/read`.
 
-The current source-backed Notes Reader integration is recorded by the repository-local references
-above.
+The notes rail reuses `ExplorerTree`. It opens ancestors of the selected note, fetches successive folder parts until that note is found or the folder is exhausted, and offers a synthetic row to load another part. A vanished folder clears its cached entries and preserves the server's reason. The folder cache refreshes access order and attempts least-recently-used eviction above 32 folders, protecting the open note's ancestor folders and the folder being inserted. It can exceed 32 when no eligible eviction candidate remains. Requirements use a separate flat button rail populated from their listing.
 
-## 260831-CCR-L23 Task-Artifact Reader (notes + requirements)
+Fetched notes, requirements, and reports share `DualPane`: markdown occupies its partnerless markdown pane, other text uses its read-only `FilePane`, and binary content produces a byte-count placeholder. `NotePane` supplies local failure and empty/loading placeholders and adds the truncation banner for truncated markdown.
 
-L23 widened this child route from a notes-only reader to a discriminated
-task-artifact reader. `NotesReaderViewer.tsx` now takes the shared
-`TaskArtifactReaderTarget` (`data/taskArtifacts.ts`) with a `kind`
-member: `notes` keeps the unchanged `/api/notes/{list,read}` transport,
-and the new `requirements` kind reads the task-local packet root over
-`/api/requirements/{list,read}` (listing/content hooks branch on the kind and
-map packets into the existing rail/pane). Rail headers, the open-path label, failure
-copy, and the screen root (`data-artifact-kind`) are kind-aware; rendering still
-reuses the File Viewer `DualPane`. Entry surfaces (task prose via
-`Markdown`, `TaskNotes` references, the `DetailPanel` reader) open
-registered requirement packets through the same takeover.
+A `task-report` target fetches its recorded report through `readRoleReport`, using the role, request ID, and task-document reference. A supplied `role-report` renders the content already passed to the component. The decisions target renders the supplied whole log, with authored rows newest-first and product records in a separate muted counted end disclosure.
 
-## Update History
-- 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No route impact: L55 bounded the notes listing inside `serving/notes.py` without changing its routes, the `NotesListing` wire shape or the reader's behaviour (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). I re-read the reopened `list_notes` claim and kept its wording. Re-pointed the three ranges, two of which were already stale at base, to the candidate extents. No stamp was advanced.
-- 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`dashboard/src/cockpit/Cockpit.tsx`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "<NotesReaderViewer" repointed to dashboard/src/cockpit/Cockpit.tsx:624-624. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "<NotesReaderViewer" repointed to dashboard/src/cockpit/Cockpit.tsx:615-615. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T16:13:35+00:00: Generated citation repair: "<NotesReaderViewer" repointed to dashboard/src/cockpit/Cockpit.tsx:613-613. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
+Cockpit owns the target and selection callbacks. Selecting a note clears folder-open mode; selecting a requirement changes its path. Back hides the takeover without clearing its target, and Cockpit retains the reader mounted with `display: none`. A mode-bar change, node opening, or Change-Set opening also hides it. Retention preserves component state while that reader remains mounted; it is not browser-history persistence.
+
+The local notes API fixture recognizes `/api/task-document`, looks up the requested path in the dashboard's native `tasks` map and returns that entry's `summary`, or a 404 with null when it is absent. The cockpit fixture is seeded through the shared `projection`, `taskEntry` and `taskSummary` builders with a native reference, stage and activity; it does not rebuild an analytics.taskDocuments/series world or supply a fallback master for an unknown path. This describes fixture construction, not the production endpoint contract or executed verification.
+
+## Invariants And Boundaries
+
+- The notes routes read coordination files without mutating them. Server-side selector checks and path confinement govern access; folder replies have stable ordering and at most 200 entries per part, and note content is binary-tolerant and capped for display at 2 MiB. The extracted cache owns folder reads and the screen keeps content reads via `data/notes.ts`, rather than mutating the dashboard store.
+- Notes, requirements, and report content reuse `DualPane`; the decisions log has its own list rendering. The notes tree reuses `ExplorerTree`, while requirements have a flat rail. There is no second bespoke notes content reader or notes tree.
+- Requirement references resolve against registered requirement entries before notes references are considered. A reference containing a requirement address cannot fall through to a note target.
+- The reader uses Panda CSS for its local styling. Its header contains the Back button; the note rail header is sticky. The inherited intent is no CSS animation (GSAP/Motion only); the reused DualPane currently has a CSS background transition. This is an implementation/intent discrepancy, not authority here to withdraw that wider policy.
+- Kind-aware screen headings and open-path labels do not imply fully kind-aware status text: `NotePane` still says “Select a note from the tree.” when content is absent, and its failure text distinguishes notes from everything else as “requirement.”
+
+## Retained Status Metadata
+
+The current source-backed Notes Reader integration is recorded by the repository-local references below. This retained status sentence does not establish a verified lifecycle or review state.
+
+## Evidence
+
+- The read-only notes routes. [1]
+- The same-origin notes client (`listFolder`/`readNote`/`resolveNoteReferences`). [2]
+
+- The reused File Viewer content pane maps both notes and requirement packets to markdown/code/placeholder rendering. [3]
 
 
-
-- 2026-09-05T06:21+00:00 — Re-read the reopened affected citation claims against the frozen source, corrected their current wording/ranges, and replaced ambiguous symbols with exact declaration anchors. Verification records this source-backed claim review; it is not a code acceptance or final Gate-5 verdict.
-
-- 2026-09-05T06:12+00:00 — Preserved the original reader knowledge and updated the hot path to its notes/requirements discriminator.
-
-- 2026-09-04T01:06+02:00 - 260831-CCR-L23 Gate-5 route impact: the notes-reader child route became a task-artifact reader (notes + task-local requirements packets) over `/api/requirements/{list,read}`; file-level detail in the `NotesReaderViewer.tsx` and `NotesReaderViewer.test.tsx` sidecars.
+- Cockpit defines the note-opening callback. [4]
 
 
-- 2026-08-20T05:06+02:00 — No route impact: 260815-DAG-L14 only added `seats: []` to the
-  `NotesReaderViewer` test fixture factory; the notes-reader route purpose is unchanged.
+
+- Cockpit defines the note-selection callback. [5]
 
 
-- 2026-08-15T02:16:50+02:00 — No route impact: the notes-reader test fixture now supplies empty
-  `executionWaves`; notes-reader behavior and ownership are unchanged.
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this route against the frontend-rail change set. No route impact: NotesReaderViewer.tsx changed only by behavior-preserving lint remediation.
 
-- 2026-08-04T11:39:21+02:00 — 260731-EFA-L6 S18-B09 curator: reconciled the frozen-source ledger and repaired scoped citations; unsupported source claims were narrowed or removed, and the landing provenance mismatch remains an explicit Tier-3 item.
-- 2026-08-01T13:20+02:00 — No route impact: 260731-EFA-L4's single change under this route is
-  `NotesReaderViewer.test.tsx`, and the entire diff is one import plus the two cockpit-takeover seed
-  helpers — `masterDoc()` dropped its trailing `as unknown as TaskDocNode` (the literal is otherwise
-  unchanged field for field; the cast was gratuitous over an already-complete node), `seedMaster()`
-  swapped `as unknown as WorkspaceProjection` for `satisfies WorkspaceProjection`, and its `metrics`
-  moved from a hand-listed six-field literal to `metricsFor([])`. I read the whole diff: no `it(...)`
-  body, no assertion, no `/api/notes/{list,read}` or `/api/task-document` fetch-stub branch, and no
-  Notes Reader source changed. The route model this overview describes is expressed nowhere in that
-  seed — the takeover state, the controlled `path` + `onSelectNote` lift to `CockpitShell`, the reused
-  `DualPane` content paths, and the mounted-hidden retention are all driven by props and the stubbed
-  notes API; the seeded projection exists only so the Operations sidebar has one selectable master row
-  for the takeover cases to click. Checked the one way the retype could have been consequential:
-  `metricsFor([])` is a superset of the literal it replaced (same `lifecycleCount: 0`, `totalTokens: 0`,
-  empty `stalenessHistogram`, with the per-state buckets now derived from `ACTIVE_STATES` instead of
-  hand-listed), and no assertion in this file reads `metrics` at all. Suite runs green. Verification
-  metadata pinned until closeout stamps the commit.
+- Cockpit renders NotesReaderViewer. [6]
 
-- 2026-07-24T13:17:17Z — Curator: documented the persistent-reader memo boundary. Verification
-  metadata remains pre-commit.
 
-- 2026-07-10T01:27+02:00 — No route impact: reviewed 260707-HFX2-L13's changed
-  `NotesReaderViewer.test.tsx` fixture. It now serves the parent detail reader's on-demand
-  `/api/task-document` request, but no Notes Reader runtime source, notes endpoint, takeover state, or
-  rendering invariant changed. Verification metadata remains pinned until closeout stamps the
-  eventual L13 code commit.
+- TaskNotes resolves registered requirement references first; a requirement address never falls through to a note target. [7]
 
-- 2026-07-07T18:40+02:00 — No route impact: 260703-L18 finding 2 renders the "Showing the first 2 MiB"
-  truncation banner above the DualPane for a truncated markdown note (DualPane's banner lives only in
-  CodeSide, which the markdown path never reaches); the Notes Reader takeover this overview describes is
-  unchanged (detail in the file sidecar).
-- 2026-07-07T14:00+02:00 — Created for agent-orchestration L17 (Notes reader v2): the Notes Reader child
-  route — a task-scoped takeover over the unchanged L9 `/api/notes/*` API (a notes-tree rail with
-  highlight-follows-selection + reports/, a content pane that REUSES `DualPane`), replacing the retired
-  inline `TaskNotes` reading pane; the compact `TaskNotes` list + references stay as the entry surfaces.
-  Verification metadata pinned until closeout stamps the L17 commit.
+
+- The task-body fixture returns the path-addressed native entry summary or 404; the cockpit seed uses canonical native wire fixture builders. [8]
+
+- ReaderLayout exposes the shared left toggle only for a present rail and applies the same visibility state to the panel and handle. [9]
+
+

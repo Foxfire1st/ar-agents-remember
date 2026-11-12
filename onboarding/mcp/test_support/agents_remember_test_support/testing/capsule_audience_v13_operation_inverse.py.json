@@ -1,0 +1,41 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/capsule_audience_v13_operation_inverse.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The table maps each of the nine operations to its current/earlier span pairs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d20217cca6dbd942bf0d92015aef548ade870d62",
+            "content": "sha256:64af0f882e5691b8b0407e6912183047f939d586fe67a728068943e96b7a0869",
+            "locator": {
+              "kind": "symbol",
+              "name": "V13_OPERATION_SHORT_RULE_INVERSE"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The importer takes each operation's spans from this table.\n\nAnchor: `V13_OPERATION_SHORT_RULE_INVERSE`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90b6cf7f44f028f14437706319906e5553901024",
+            "content": "sha256:08aa779d363a7f6267283fc8e0412750f7494287492da5ae8e5e10b4442774ad",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/capsule_audience_v13_fixtures.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

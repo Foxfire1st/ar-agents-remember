@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Archiving a master at finalization moves the folder a sprint still names, so the sprint's topology breaks, and it runs the archive hook that deletes artifacts irreversibly although nobody asked to get rid of the master."
+  },
+  "applicability": "Finalizing a master, with or without a sprint that commands it.",
+  "conditions": [
+    "The finalizer completes the master document and, where a sprint commands it, its sprint row."
+  ],
+  "exclusions": [
+    "Retiring an individual master, which archives only that master.",
+    "Archiving a whole sprint with its moving commanded masters."
+  ],
+  "id": "INV-D91D5G",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "requirements/MIK-R41-v3-abandoned-leaves-do-not-block-a-master.md; notes/reports/260928-MIK-L41-worker-R3.md; notes/reports/260928-MIK-L41-review-R4.md"
+      ],
+      "path": "notes/reports/260928-MIK-L41-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R41@v3-finalize-never-archives",
+    "leaf": "260928-MIK-L41",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "Finalizing a master never archives its folder; explicit retire_master is the individual-master archive route and archive_sprint is the whole-sprint route: a root task folder that holds a series contract stays in place, and the result says why, naming the commanding sprint or the explicit operation.",
+  "status": "proposed",
+  "supersedes": []
+}

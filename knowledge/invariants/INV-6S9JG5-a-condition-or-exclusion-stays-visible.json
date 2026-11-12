@@ -1,0 +1,39 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The focused word-diff proofs guard hiding a removed condition or its changed words behind a collection summary, a costly semantic-review omission."
+  },
+  "applicability": "Conditions and exclusions in the selected subject intent word diff, including removed, added and paired changed items.",
+  "conditions": [
+    "Every item has its own expandable state; Enter orSpace toggles the focused line.",
+    "Before/after marks remain on the visible line when closed, including both halves of a paired side-by-side item.",
+    "A rewrite keeps the existing wording-layout switch and explicit inline offer; collection-level summary folding and a new disclosure class are not introduced."
+  ],
+  "exclusions": [
+    "Turning the whole condition collection into one summary disclosure.",
+    "Hiding changed words until expansion.",
+    "A requirement that all subject content fit the first screen."
+  ],
+  "id": "INV-6S9JG5",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 249, exact id L89-R1-048; disposition retained verbatim in the review map.",
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 264, exact id ruling d9a1ec8f; disposition retained verbatim in the review map.",
+        "Immutable reviewer producer list role-reports/reviewer/ba078073-6b85-5233-8d65-cb6fbc7a2d44/round3/curator-handoff-list.json SHA-256 3d6fdce6235b4e08486515f77329985fe62b4397b644d60f325f706eb1ca9028, ordinal0 47, exact id L89-R1-048; disposition retained verbatim in the review map.",
+        "A4-F5 code tree 25756231aa86f63ba59f91bec01146d27461e470, base cd0e68f0410f2de2d1955ecdbee6628630631d9a, captured change SHA-256 936825218f4a7144e0d0ba68901733c25f0b82ae32fbf8946a2f57df389032a0; static source and assertion reading only, no new test execution or browser acceptance. This entry is an explicitly NEW Curator projection, separate from immutable producer data."
+      ],
+      "path": "authoring-wave5.corrected-input.json"
+    },
+    "handoffEntry": "RP12",
+    "leaf": "260928-MIK-L89",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A condition or exclusion stays visible on its own ellipsized line with its before/after word marks, and opening that line shows its complete content in place without hiding other items.",
+  "status": "proposed",
+  "supersedes": []
+}

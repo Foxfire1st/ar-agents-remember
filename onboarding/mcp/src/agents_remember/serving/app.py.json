@@ -1,0 +1,126 @@
+{
+  "path": "mcp/src/agents_remember/serving/app.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "79366831b556a7cf512bc53d396ac55a43734666",
+        "content": "sha256:d59ff148a41b13ec9104f58c10d25a3c17ca8f515680e0083ad04d24f6c5b595",
+        "locator": {
+          "kind": "symbol",
+          "name": "create_app"
+        }
+      },
+      "id": "RLZ-5YRHHQ",
+      "invariant": "INV-HDXPMA",
+      "origin": {
+        "handoffEntry": "MIK-R104-r15-request-guards",
+        "leaf": "260928-MIK-L104"
+      },
+      "rationale": "Both guards are installed here before the static mount, so no later route escapes them.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "79366831b556a7cf512bc53d396ac55a43734666",
+        "content": "sha256:ce420730463b6f8b0ebb68ac51cde958f9401616bde6ddb051ddfd69664c1039",
+        "locator": {
+          "end": 136,
+          "kind": "line_range",
+          "start": 86
+        }
+      },
+      "id": "RLZ-K8504A",
+      "invariant": "INV-BMZ47D",
+      "origin": {
+        "handoffEntry": "MIK-R165@v1 §3",
+        "leaf": "260928-MIK-L166"
+      },
+      "rationale": "Constructs one shared landing refresher and binds it to the owning Projector before background startup.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "79366831b556a7cf512bc53d396ac55a43734666",
+        "content": "sha256:594e15b9b4fbc0139d61473bf108a57d9edcf8058d3d535c0c2ff0e90e8b6d51",
+        "locator": {
+          "kind": "symbol",
+          "name": "refuse_replaced_canvas_authoring"
+        }
+      },
+      "id": "RLZ-TC5XTD",
+      "invariant": "INV-Y6YAT0",
+      "origin": {
+        "handoffEntry": "L183-retired-authoring-routes",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Typed409 refusal routes are registered before canvas routes, so first-match routing refuses old authoring while retained reads keep their owners; explainer routes are wired only through explicit collaborators.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "79366831b556a7cf512bc53d396ac55a43734666",
+        "content": "sha256:decaea3d124e3ac2a1f9513e96461c781b4020cbf241bf594f7dbb8a94077f52",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-Y1MRCM",
+      "invariant": "INV-BCXFH9",
+      "origin": {
+        "handoffEntry": "NEW-LIMIT-FROM-REPORT-ONLY",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The app is the composition root, so the collaborators' wiring is realized here.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "33": {
+      "note": "Lifespan/gzip, shared changeset cache, built-in and optional routes precede the static mount.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79366831b556a7cf512bc53d396ac55a43734666",
+            "content": "sha256:decaea3d124e3ac2a1f9513e96461c781b4020cbf241bf594f7dbb8a94077f52",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "`create_app` registers the canvas host and the presenter surface through `register_canvas_routes` after the API routes and before the static mount, then installs `RefuseCrossOriginWrites` and `RefuseForeignHosts`, so both surfaces sit behind the origin and host guards. \\[35]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79366831b556a7cf512bc53d396ac55a43734666",
+            "content": "sha256:decaea3d124e3ac2a1f9513e96461c781b4020cbf241bf594f7dbb8a94077f52",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "Typed409 refusal routes are registered before canvas routes, so first-match routing refuses old authoring while retained reads keep their owners; explainer routes are wired only through explicit collaborators.\n\nAnchor: `refuse_replaced_canvas_authoring`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79366831b556a7cf512bc53d396ac55a43734666",
+            "content": "sha256:decaea3d124e3ac2a1f9513e96461c781b4020cbf241bf594f7dbb8a94077f52",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

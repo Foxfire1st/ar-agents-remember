@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/panels/lifecycle-list/signals.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "67b970d373b054a824efc6465b9c28a3baf87049",
+        "content": "sha256:001662af8ba2ab194f29e5419cfd56735a4f10bdc8a863e88ae0804dd5c6da76",
+        "locator": {
+          "kind": "symbol",
+          "name": "row and page share host-time age through deltas and a later page mount"
+        }
+      },
+      "facet": "The source-defined fake-clock case asserts identical row/page works and paused words/ages through a later page mount and task delta, with one display interval.",
+      "id": "PRF-1A20PB",
+      "invariant": "INV-XZYGEB",
+      "origin": {
+        "handoffEntry": "L168-W-R167-04",
+        "leaf": "260928-MIK-L168"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The Operations-signals suite.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67b970d373b054a824efc6465b9c28a3baf87049",
+            "content": "sha256:126c49611e8e49e66acb27800b3f8e5abe3fdd3d5023c8ac00f576732fd6d206",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Parameterized native row/page cases expect the shared started word for unknown activity and keep attention severity separate.\n\nAnchor: Current source assertions",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67b970d373b054a824efc6465b9c28a3baf87049",
+            "content": "sha256:4ece7586aed7f94e01cd8275cd0a7d10fcd93ee5a61a8b6f2864da68897ab761",
+            "locator": {
+              "end": 208,
+              "kind": "line_range",
+              "start": 149
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

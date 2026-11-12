@@ -1,0 +1,166 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/startup/leaf_ref_start.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "LeafRefResolutionError and resolve_leaf_ref are the live shared failure and resolution owners; removed terminal-seat modules supply no current type or route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b555b5f62a631803d7a2e8a66f6f1fc85a305913",
+            "content": "sha256:db2b0eae047cc97474e39b38127c77dd16417e2ef657d8d6a5c92f83a0958d91",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeafRefResolutionError"
+            },
+            "path": "mcp/src/agents_remember/worktrees/leaf_refs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b555b5f62a631803d7a2e8a66f6f1fc85a305913",
+            "content": "sha256:6f7e573fe79d9f4d925406648783d32f0dcc57de7de80db4367bd2a6e2f3326d",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_leaf_ref"
+            },
+            "path": "mcp/src/agents_remember/worktrees/leaf_refs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Start contract builder that calls these helpers.  Anchor: `build_start_contract`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b33bc33f160f5a34a1f71f94e4f021f8a85cbad4",
+            "content": "sha256:b0119b570d38b871b3aa00d1c0a6635f73778c5478a69736b48c08bb7a6e6af2",
+            "locator": {
+              "end": 850,
+              "kind": "line_range",
+              "start": 818
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/startup/start_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`ContractError`, `_task_vocabulary` and the six-cell vocabulary the second refusal reports on.  Anchor: `ContractError` `_task_vocabulary` `ContractCells`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "758a00879439672a413425ed6c40686fe3626bd9",
+            "content": "sha256:d691052aa2ddd33bb7e551016a406704876a55fe73978c266b4c70fcb015b0ac",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 97
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "758a00879439672a413425ed6c40686fe3626bd9",
+            "content": "sha256:4ad4ee1d7ce035aa8b4626b3e4c1274f186852a2b51da62504c9f51ba31b40e7",
+            "locator": {
+              "end": 187,
+              "kind": "line_range",
+              "start": 168
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "758a00879439672a413425ed6c40686fe3626bd9",
+            "content": "sha256:81837d1072d78bda8af3de79925baa82d5f7044b97d3863d87534344dfa02a4a",
+            "locator": {
+              "end": 209,
+              "kind": "line_range",
+              "start": 190
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "758a00879439672a413425ed6c40686fe3626bd9",
+            "content": "sha256:b701690fa31ab142e0b84c9ec93e4cf3f74d8eafc5e0b94a771f65ff7216d53a",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 93
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "758a00879439672a413425ed6c40686fe3626bd9",
+            "content": "sha256:c36973447a984987b2c1eff20f85d946ed00cded00f21df2358d95cd70fd78a5",
+            "locator": {
+              "end": 182,
+              "kind": "line_range",
+              "start": 165
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "758a00879439672a413425ed6c40686fe3626bd9",
+            "content": "sha256:0749af96a39a4f9c9c3e6f215ae2d6c41515e5938ca0cfe68edd204dd337733c",
+            "locator": {
+              "end": 200,
+              "kind": "line_range",
+              "start": 185
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "758a00879439672a413425ed6c40686fe3626bd9",
+            "content": "sha256:4c2efdf973ccb8a0607e01898fe2edfde5f0e1dcd78d4bd70c09e518f2287a88",
+            "locator": {
+              "end": 243,
+              "kind": "line_range",
+              "start": 97
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Caller parent is an assertion against canonical task topology; a mismatch returns corrected operation inputs before publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56033cbab370647c1152aefbc52572442f49be9d",
+            "content": "sha256:22f75cfc02317350cbd45a3133408cf775b56a57d6c8f134c48d8b6c1dc9fd70",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

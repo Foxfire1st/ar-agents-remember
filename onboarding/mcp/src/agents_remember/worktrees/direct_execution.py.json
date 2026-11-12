@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/direct_execution.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Supplies an in-work direct leaf name to lower-layer integration refusal text",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12469d59929369135920ffbd5fe078d1ad2d0097",
+            "content": "sha256:30f73a657c8987b9fb778b865f01e6121936eafb6d1c0af4db4ec7481ae014cd",
+            "locator": {
+              "end": 152,
+              "kind": "line_range",
+              "start": 126
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

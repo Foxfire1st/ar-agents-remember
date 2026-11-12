@@ -1,0 +1,22 @@
+{
+  "path": "mcp/src/agents_remember/application/lifecycle/lifecycle_control_authority.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Completed disposition requires orchestrator at the exact enclosing sprint or architect at the exact standalone master; both role and document must match.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fe8bbec830d9a140e90544c4130a91974a37bfae",
+            "content": "sha256:4861bb81869b6c6b69ade2ab5a5983a365f4955f0549ecc4a4a083c076a123c9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

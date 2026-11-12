@@ -1,0 +1,55 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_paths.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The existing artifact layout is derived from one leaf contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f9803f99ec17984b37829a2d4af77fd2a521764a",
+            "content": "sha256:ccc3a8dd0d56e5f4dc20bef22f1e2972a1a423b411b32fab6cb5c51fe815ba76",
+            "locator": {
+              "kind": "symbol",
+              "name": "curator_coherence_paths"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Applicability is structural and does not demand a live directory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f9803f99ec17984b37829a2d4af77fd2a521764a",
+            "content": "sha256:25b943ad4111ccc4d7cc54a97b354b5070a6cb385cdddc99ea6952af65739531",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_leaf_external_memory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Explicit namespaces and confinement are enforced once.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f9803f99ec17984b37829a2d4af77fd2a521764a",
+            "content": "sha256:94a463dec1d3656f96c82e8488484c140b7605c0496bdcdc3613af08dfcdd303",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_curator_evidence_ref"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

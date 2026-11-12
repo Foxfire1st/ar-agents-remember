@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Durable repair-verification obligation from R1 findings fixed on W02 and sealed in R2 (verdict b8956ffd, eleven-dispositions 42a8ec7a); ReviewSurface.worklistRepair.test.tsx; browser/report.md one group/10family/12member entries and exact digests"
+  },
+  "applicability": "Entry identifiers for the shown review page card-read entries.",
+  "conditions": [
+    "One list enumerates every supplied card-read entry once, retaining each before/after blob and content digest."
+  ],
+  "exclusions": [
+    "Per-card identifier-list repetition."
+  ],
+  "id": "INV-9VPYCZ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "ReviewSurface.worklistRepair.test.tsx; browser/report.md one group/10family/12member entries and exact digests"
+      ],
+      "path": "notes/reports/l86-curator-W03/handoff-phase1.json"
+    },
+    "handoffEntry": "L86-CODE-R1-F07",
+    "leaf": "260928-MIK-L86",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "The review page has one entry-identifiers list inside its Technical details provenance fold, containing every supplied card-read realization/proof identifier and its per-side blob and content digest.",
+  "status": "proposed",
+  "supersedes": []
+}

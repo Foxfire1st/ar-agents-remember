@@ -1,0 +1,81 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Both rejected designs were built, one in the candidate and one as version 1's approved rule, before the review showed their cost to the reader; later changes to the memo's key or to the lookup's recording have to keep the view bound to its own reads."
+  },
+  "alternatives": [
+    {
+      "option": "The memo's key and its currentness check use only the task documents the view actually read, taken from the recorded reads; a relevant write during the computation gives one recomputation, and a second change gives the answer inputs_changing.",
+      "reason": "The memo must depend only on what the view read, and a caller must never get a misleading refusal (rule 9 of version 2 of the requirement).",
+      "status": "chosen"
+    },
+    {
+      "option": "Key the view on every JSON file of the master's task folder.",
+      "reason": "Writes to documents the view never read discarded it, and a computation that read no task document was refused although nothing had changed.",
+      "reconsider_when": "The worklist starts to depend on task documents through a path the read recorder does not see, so that the recorded reads are not the whole set of its inputs any more.",
+      "status": "rejected"
+    },
+    {
+      "option": "Answer a relevant write during the computation with the currentness refusal and no retry (version 1 of the requirement).",
+      "reason": "An ordinary concurrent write to a task document gave the reader a candidate_unresolved refusal that named no real fault.",
+      "reconsider_when": "One automatic recomputation becomes worse for the reader than an immediate, accurate refusal, for example because a recomputation takes a large part of the request's deadline.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "When the strict lookup established a claimant, a write to another leaf's document, a new sibling document and an edit of the master's task.json leave a kept view in place; when the lookup found no claimant, those files are recorded inputs and the view is recomputed.",
+    "The strict leaf lookup passes on only the rows of the leaf's own document and of files it could not rule out when it established a claimant; when it found no claimant it passes on every row it opened, each sibling read in full and the exact direct JSON listing included.",
+    "A view is computed at most twice for one request."
+  ],
+  "context": "The candidate's view memo keyed a view on every JSON file of the master's task folder. Any task-document write under the master forced a full recomputation (about 9 s on a large leaf), a write during the computation returned a candidate_unresolved refusal, and a worklist that read no task document was refused as if one had changed.",
+  "decider": "the architect under DEVELOPER-DIRECTION D47 (the rulings of leaf L42's third round, recorded as MIK-R42@v2 rule 9)",
+  "id": "DEC-8M7TBC",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-BBPPS5"
+    },
+    {
+      "relation": "explains",
+      "target": {
+        "blob": "595dc264b1f1d539adcf8b55289d50b1ee67ba40",
+        "content": "sha256:a2ca06cddf2a7ba940f3d1a44f9a74cede81f53b5a46821547dadbc438d66392",
+        "locator": {
+          "kind": "symbol",
+          "name": "strict_leaf_doc"
+        },
+        "path": "mcp/src/agents_remember/tasks/leaf_decisions.py"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "id": "MIK-R42",
+        "packet": "requirements/MIK-R42-v2-isolated-reviewer-worklist-computation.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v2"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "the rulings of leaf L42's third round under DEVELOPER-DIRECTION D47; requirements/MIK-R42-v2-isolated-reviewer-worklist-computation.md Problem, rule 9 and Revision History"
+      ],
+      "path": "notes/reports/260928-MIK-L42-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "RULING-R42v2-memo-follows-reads",
+    "leaf": "260928-MIK-L42",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

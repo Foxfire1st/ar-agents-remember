@@ -1,0 +1,23 @@
+{
+  "path": "dashboard/src/grammar/markdownParseCache.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Implementation",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82fc4e9dae168f5119b5e5dd8419105da6bcaadf",
+            "content": "sha256:da774a245419a63766bf3b9c4dd983187302098d572192e19467c01ca9c90f7c",
+            "locator": {
+              "kind": "symbol",
+              "name": "remarkCachedParse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

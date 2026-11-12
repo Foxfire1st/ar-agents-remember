@@ -1,0 +1,110 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_write_route.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "28609cb56fc37a22b7f120e629c7d3b968d23072",
+        "content": "sha256:2105ef345d9479c31408dee38a5ba1f1a03b627d81fdd3e6e7e8a00228bd4682",
+        "locator": {
+          "kind": "symbol",
+          "name": "LeafQuestions._open"
+        }
+      },
+      "id": "RLZ-BS7E38",
+      "invariant": "INV-F2EQDR",
+      "origin": {
+        "handoffEntry": "MIK-R54@v1 rule 6",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "This lazy CLI boundary loads the MCP authority settings, refuses a coordination-root mismatch with the leaf contract, and constructs the task-owned question port only after the roots agree.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "28609cb56fc37a22b7f120e629c7d3b968d23072",
+        "content": "sha256:4939767aced256f099dd7694079880510d556e4bd949f9526b61adcb5a6a7531",
+        "locator": {
+          "kind": "symbol",
+          "name": "leaf_write_report"
+        }
+      },
+      "id": "RLZ-P0P9C1",
+      "invariant": "INV-AG8G8C",
+      "origin": {
+        "handoffEntry": "R73-R1",
+        "leaf": "260928-MIK-L73"
+      },
+      "rationale": "Both entry points run this: the leaf's contract, converted-tree check, worklist and question port are assembled once here, so the tool cannot acquire a path the command lacks.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "28609cb56fc37a22b7f120e629c7d3b968d23072",
+        "content": "sha256:f2d33b0a8d65e2b5cb81516998f3280a3eb04dfa627971261b56bd36633d0f8f",
+        "locator": {
+          "kind": "symbol",
+          "name": "unconverted_write_refusal"
+        }
+      },
+      "id": "RLZ-TWXJK6",
+      "invariant": "INV-JT28KJ",
+      "origin": {
+        "handoffEntry": "L37-cutover-lock",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Is knowledge-ingest's route to the unconverted-line refusal for a leaf's memory worktree, and through it to the lock.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The raise question's port is built from the mounted settings or from the command's own route, and only the command half's refusal names another route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28609cb56fc37a22b7f120e629c7d3b968d23072",
+            "content": "sha256:2105ef345d9479c31408dee38a5ba1f1a03b627d81fdd3e6e7e8a00228bd4682",
+            "locator": {
+              "kind": "symbol",
+              "name": "_open"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A command route whose loader answers a clause is refused with the mounted `knowledge_write` call, and a loaded settings root that differs keeps its own refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28609cb56fc37a22b7f120e629c7d3b968d23072",
+            "content": "sha256:ae24b893172283fbc98e8fd3f76b9c9387a5d6f7c85b71a7f8cf3aa8e6ba3389",
+            "locator": {
+              "kind": "symbol",
+              "name": "_command"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "One leaf write runs the same guard, worklist checks and writer for the command and the mounted tool, differing only in the route that supplies the question port.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28609cb56fc37a22b7f120e629c7d3b968d23072",
+            "content": "sha256:4939767aced256f099dd7694079880510d556e4bd949f9526b61adcb5a6a7531",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_write_report"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

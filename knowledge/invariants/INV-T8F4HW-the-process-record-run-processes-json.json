@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake",
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "A reused PID or forged matching identity must not authorize killing an unrelated child; the record path proves the dashboard command, settings and cwd before identity-based signalling."
+  },
+  "applicability": "Dashboard identities accepted from the sandbox process record for PNT observations and stop.",
+  "conditions": [
+    "The selected sandbox command is running on Linux with readable process or source observations; otherwise its named refusal applies."
+  ],
+  "exclusions": [
+    "A proc check followed by signalling is not an atomic kernel process handle.",
+    "A dashboard started manually with a relative settings argument may not be recognized."
+  ],
+  "id": "INV-T8F4HW",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_pnt_sandbox_processes.py::StartAndStopTests::test_stop_signals_only_the_process_start_recorded; review R2 [41-f7-edited-record]"
+      ],
+      "path": "notes/curation/261005-MIK-PNT-curator-handoff.json"
+    },
+    "handoffEntry": "PNT-R11@v1 FR-3 (dashboard record) / F7 / F20",
+    "leaf": "260928-MIK-L90",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The process record `run/processes.json` is never trusted on its word: a recorded dashboard is trusted or signalled only while `/proc` shows that process id with the recorded start time and command line, running `agents_remember.cli dashboard --config <this sandbox's settings file>` with the sandbox directory as its working directory; a record of another boot names nothing, and a record without a boot id (the earlier tooling's) is read and proven the same way.",
+  "status": "proposed",
+  "supersedes": []
+}

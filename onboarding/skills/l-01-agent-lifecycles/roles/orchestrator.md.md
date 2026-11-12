@@ -1,253 +1,78 @@
 # skills/l-01-agent-lifecycles/roles/orchestrator.md
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | skills/l-01-agent-lifecycles/roles/orchestrator.md |
-| doc_type | file-level-onboarding |
-| lastUpdated | 2026-09-19T17:09+02:00 |
-| lastVerifiedCommitHash | `562cef4ca64de5b11712d5165d24e78c9a035312`|
-| lastVerifiedCommitDate | 2026-09-19T17:51:43+02:00|
-| governingOverview | skills/l-01-agent-lifecycles/roles/overview.md |
+## Permission notices and addressing
+
+When a send answers `held` because a child waits at a permission prompt, or a wait returns `permission-pending`, the Orchestrator follows the coordination operation's permission-notice relay for the upward route, child identity and supplied permission facts; held delivery itself follows the every-role held-delivery rule. Sprint/master containment, Manager coordination, ordinary role/task returns and actual-parent-ID developer questions retain their distinct authority.
+
+## Message/file transport and return addressing
+
+Messages are short wake-ups naming work and files; report/verdict/evidence content travels in file-only `body` or existing-file `attach`, not pasted text. Within a shared task the files stay in its record and a leaf workspace exposes the folder link. Wake text uses the settings limit without a pinned number. Ordinary report-written notices and final report-path returns use the supplied parent role/task address, including an instructed reporting-recipient change. Developer-needed questions remain addressed to the actual parent/instructed-recipient ID. These are distinct message purposes, not an ID exception to the return rule. Fixed launch-parent identity and existing role/peer/write/acceptance boundaries remain preserved.
 
 ## Governing Overview
 
-[l-01 role overview](overview.md)
+[overview](overview.md)
 
 ## Purpose
 
-This source defines the sprint-bound orchestrator as a **spawned backend portfolio seat that runs one
-sprint's backend as an event loop over durable task state, not a conversation** (`:8-11`). It routes
-backend events — an architect dispatch, a manager handover, a worker report, a verdict, or its own
-finding — into portfolio and orchestration work, releases only the ready generation a valid
-projection admits, lands the super integration branch, and **never converses with the developer**:
-every developer-worthy item leaves as one decision item to the architect. The architect ordinarily
-creates this seat, while an identity-free developer launcher may target it only for an explicit
-task-seat takeover.
+This source defines the sprint-bound orchestrator: it coordinates one selected sprint when two or more masters are worked on at the same time, or when the developer explicitly asks for one above a single master. It reuses each Architect-named Manager, starts one Manager for each other master, verifies Manager delivery with separately addressed evidence, and hands the master exit over. It operates at Projects altitude; a Paseo agent's state is not an AR acceptance ledger.
+
+## Coordination default and reporting duty
+
+The role text selects the Orchestrator when two or more masters are worked on at the same time, or when the developer explicitly asks for one above a single master; it reuses each existing Manager the Architect names and starts one Manager for each other master. The Orchestrator decides ordinary requirement readings and operational rulings itself, keeps its rulings record, requirement-change list and status file under the selected task's notes for the Architect to read, and messages the Architect only for the five developer-needed categories, the permission notices from children and one final report-path notice.
 
 ## Code Commentary
 
-### The Function Shape
+### The Current Shape
 
-The file is now one self-contained role page in the corpus's function shape — `## Inputs` (`:13-31`),
-`## Process` (`:33-117`), `## Outputs` (`:119-150`), `## What you may do` (`:152-172`), `## What you
-must not do` (`:174-190`) and `## Stop and escalate — the architect is your ceiling` (`:192-228`).
-The seat handbook this card previously described — the Job P / Job O listings, the standalone
-hat-collapse rule, the invariant ladder, the `## Knobs` block and the role table — is gone: those
-duties are now numbered items inside `## Process`, and the generic event loop is no longer restated
-here.
+The file is one role page: `## Work from canonical truth` (`:12-18`), `## Coordinate role agents` (`:20-36`), `## Record operational decisions` (`:38-48`), `## Handle blockers and independent investigations` (`:50-54`), `## Communicate with the Architect` (`:56-70`), `## Changes to the plan` (`:72-79`), `## Verify and hand over` (`:81-97`), `## Result contract` (`:99-107`), `## Messages` (`:109-111`), `## Continue the assigned work` (`:113-115`), `## Organise your own work` (`:117-127`), `## Developer questions and answers` (`:129-131`) and `## Questions received from children` (`:133-137`). The page keeps sprint coordination, verification without loop takeover, the plan-change spirit test and the whole owed result; procedures sit behind "Before you …, read" pointers to `templates/manager-brief.md`, `operations/coordination.md`, `operations/closeout.md`, `operations/recovery.md`, `operations/orientation.md` and the detail files `reference/coordination/shared/seat-recovery.md`, `reference/coordination/shared/master-state.md`, `reference/coordination/shared/child-questions.md`, `reference/tasks/document-authoring.md`, `reference/knowledge/commands.md`, `reference/message-handover.md` and `reference/sandbox-actors.md`.
 
-**Inputs (`:13-31`).** The canonical JSON-primary sprint/master/leaf documents read from durable
-state (never a transcript, including the rung-up documents the seat must not mutate); the
-architect-ruled plan — the adopted orchestration task, or the record of a developer-sanctioned
-strategist skip — with its requirement-corpus references, reasoned topology choice, every commanded
-master's `executionNature` and any `executionGraph`; the control plane's mechanical facts (graph
-validity, derived waves, completed predecessors, current closeout-door generations, closeout-
-projection validity, lineage, gates, and changed routes/seams) against this seat's own judgment
-inputs (the accepted priority grade and any recorded urgency change); the review mode with its
-sealed baseline, preceding result and outstanding IDs when a seam was requested; the resolved memory
-layer; and the templates/catalogs the seat compiles from. A brief missing one is incomplete and is
-refused, never repaired by guessing.
+**Work from canonical truth (`:12-18`).** Resolve the sprint and only the documents needed for current decisions, read the rendered task-document files named in the handover, and change documents through `task_doc` first; never fabricate refs.
 
-**Process (`:33-117`).** The generic event loop has a single home — `../operations/coordination.md`
-— which owns routing an event by what exists and what is asked, building the legal frontier,
-selecting from current truth rather than a queue row, the recompute triggers, and the one-item
-developer relay, and **governs where the two files disagree** (`:35-38`). On top of it this page
-carries the opening move (converge on the canonical `(sprint document, orchestrator)` seat, run the
-trust checkpoint, `lifecycle_start`, orient and say the portfolio back before asking anyone to
-decide, then route the event), the standing authority the developer's plan acceptance gives the
-subordinate edges (the seat does not stop merely because an operation creates a commit, advances a
-lifecycle, cleans up a spent worktree, or fast-forwards a subordinate branch), and **eight portfolio
-duties**: the topology and its single home (`:55-62`), priority judgment recorded before it changes
-selection (`:63-66`), release and landing per execution nature (`:67-73`), the spirit test
-(`:74-80`), master exit through the one open `master-handover-approval` gate (`:81-87`), four
-failure rules (`:88-95`), processing and acking the signals the seat is woken with (`:96-100`), and
-no native sub-agents on this seat (`:101-104`). It also fixes **the children and the dispatch** —
-managers, system-specialists and the same-sprint super-exit reviewer are this seat's; the
-strategist, a separate designer chair and the plan reviewer are architect children, and leaf/route
-and master-exit reviewers are manager children (`:106-112`) — and **role-seat immutability**: a
-dashboard-owned orchestrator session stays an orchestrator for its lifetime, a pasted brief for
-another role is refused and escalated to the architect, and roles expand horizontally rather than as
-native sub-agents (`:114-117`). The single structural dispatch transaction is `dispatch_agent` once
-with the target's real task document, the role and one complete brief, where `dispatched` and
-`dispatch-queued` both mean the brief is durable.
+**Coordinate role agents and record decisions (`:20-48`).** Reuse Architect-named Managers and start one Manager per other master with `role_start`; those Managers coordinate their Workers, Reviewers, Curators and Investigators. Decide ordinary requirement readings and operational rulings itself, keeping the rulings record, requirement sentences and status file; message the Architect only for developer decisions plus one final report-path notice.
 
-**Outputs (`:119-150`).** The super-exit packet plus demo notes — shape authority
-`../templates/conversation-handover-packet.md`, and it must offer a reviewable environment and carry
-"what changed visibly" demo notes per master; the adopted orchestration task with its adoption
-decision-log entry; **the producers' curator hand-off list handed over unparaphrased** (`:127-131`);
-durable notes and reports with decision-log entries; and the self-improvement close stated as
-proposals only. A turn ends when its artifact is written and nothing is pending, and a resumed
-successor reconstructs everything from durable state alone.
+**Verify and hand over (`:81-97`).** Verify each Manager's delivery and aggregate evidence without taking over the loop; the Worker's and Reviewer's Curator hand-off lists go directly to the Curator, which this seat never relays.
 
-**Permissions and limits (`:152-190`).** `task_doc` authoring; the master-handover `gate_decide`
-plus `gate_list`/`lifecycle_gate` and `dispatch_agent`/`retire_child` for direct children — never a
-strategist on this seat's own authority; the closeout, landing, lifecycle and message tools; the
-by-hand portfolio-wide retire authority as an exceptional case (`:165-169`); and read-only
-retrieval. Never converse with the developer, never pull the designer hat, never dispatch the
-strategist on this seat's own authority, never build a seat-local watcher, and never set the
-operator knobs.
+In the same section, a test file that fails at collection or does not import is a regression of a landed leaf, routed for repair at once rather than left as a mark, and the Manager sends a Worker's skeleton to the Architect at once; the Worker writes the bodies after the Architect answers.
 
-**Stop and escalate (`:192-228`).** The architect is the ceiling, and the **quo-vadis test** — not
-being stumped — decides what goes up; a high-blast-radius truth goes up immediately as a four-field
-decision item, and never a second developer item while the first is unresolved. The hand-off
-junctions and the gate kind each carries are `../operations/closeout.md`'s table, and provider
-degradation has a fixed four-step response ending in the always-legal provider teardown when the
-issue is not fixable in session (`:214-224`).
+**Changes to the plan (`:72-79`).** Only the Orchestrator applies the spirit test: a change within the spirit of what the Architect and developer accepted is made and recorded in the task's decision log; one against it goes to the Architect and developer for a joint decision. During fix verification the test cannot add a fix leaf, reopen a resolved issue or widen the sealed findings list.
+
+**Result contract (`:99-107`).** The owed result is collected whole here: rulings record, requirement-change list, status paths, decision messages, finished-or-unfinishable report-path message, blocker records, verified Manager delivery and pending questions.
+
+**Organise, ask, escalate (`:109-137`).** Seat-owned harness freedom with boundary acts; developer questions follow the orientation operation's route; children's questions and the developer's answers follow `reference/coordination/shared/child-questions.md`.
 
 ### Invariants And Boundaries
 
-- The seat is a spawned backend seat: it never converses with the developer and never wears another
-  role's hat.
-- The generic event loop belongs to `../operations/coordination.md`; where the two disagree, that
-  file wins.
-- Only the first-ready generation a `valid-built` projection admits is released, priority judgment
-  is recorded before it changes selection, and integration branches are not workbenches.
+- A parent-started seat does not converse with the developer; a dashboard-started Orchestrator has no
+  parent and puts developer decisions in its own chat. It never wears another role's hat.
+- Start, intake, message and permission-relay procedures belong to `../operations/coordination.md`.
 - No seat-local watcher, polling, nudging, or timer loop; a finding held only in a chat is a bug.
-- Canonical lifecycle doctrine owns canonical skill content; generated copies are synchronization
-  outputs. Dispatch proof remains exact-session and fail-closed; plane refusal never becomes an
-  ambient retry.
-
-
-## 260805-ARG-L1 Completion Cleanup And Quality Retry — as the rewrite leaves it
-
-The master-to-super integration duty keeps manager/orchestrator owners out of automatic cleanup
-while retiring exact-leaf worker/reviewer/curator seats only after their durable report is present;
-the rewritten file carries that as the by-hand portfolio-wide retire authority plus
-`retirement.autoCloseCompletedSeats=false` restoring the previous landed/archive behavior for the
-three automatic leaf-altitude roles (`:165-169`). **Correction (260915-KS-L28):** the cheap-first
-ordering and content-addressed retry contract this entry also recorded is no longer stated in this
-file — the function-shape rewrite leaves the landing mechanics to `../operations/closeout.md`
-(`:67-68`) — and the transaction paragraph survives as the seat consuming worker targeted checks and
-the curator's **complete** memory-quality result as the edge's prerequisite evidence (`:67-73`).
 
 ## CCR-R12@v5 Transaction Boundary
 
-This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full code quality, full tests, certification, and independent review are explicit operations only; memory quality is the curator's standing exception — the curator always runs it complete, and that result travels with the landing edge as prerequisite evidence, never relabelled as full green. Requested reviews retain the sealed finding list and monotonic three-round limit.
+This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full code quality, full tests, certification, and independent review are explicit operations only; memory quality is the curator's standing exception — the curator always runs it complete, and that result travels with the landing edge as prerequisite evidence, never relabelled as full green. Requested reviews retain the sealed finding list under the settings round limit.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No relevant documentation was configured in the resolved source registry; task artifacts and the final candidate are the direct evidence.
 
-## Repo-Internal References
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The seat's self-definition is an event loop over durable task state that never converses with the developer. | "You run one sprint's backend as an event loop over durable task state, not a conversation." | skills/l-01-agent-lifecycles/roles/orchestrator.md:8-11 |
-| The generic event loop is owned by the coordination operation, which wins on disagreement. | "The event loop itself is" | skills/l-01-agent-lifecycles/roles/orchestrator.md:35-38 |
-| The topology duty fixes super off `main`, organizational vs atomic masters, and the waiting final push. | "**The topology, single home.**" | skills/l-01-agent-lifecycles/roles/orchestrator.md:55-62 |
-| Priority judgment is recorded before it changes selection. | "**Priority judgment is recorded before it changes selection**" | skills/l-01-agent-lifecycles/roles/orchestrator.md:63-66 |
-| Release and landing follow execution nature, with worker checks and the curator's complete result as prerequisite evidence. | "**Release and land per execution nature**" | skills/l-01-agent-lifecycles/roles/orchestrator.md:67-73 |
-| The spirit test is this seat's alone and cannot widen a fix-verification scope. | "**The spirit test — this seat only.**" | skills/l-01-agent-lifecycles/roles/orchestrator.md:74-80 |
-| Master exit decides one open manager handover gate and never treats a verdict as the decision. | "**Master exit.**" | skills/l-01-agent-lifecycles/roles/orchestrator.md:81-87 |
-| The seat owns the portfolio bird's-eye through eight numbered duties. | "**Four failure rules.**"; "**No native sub-agents on this seat.**" | skills/l-01-agent-lifecycles/roles/orchestrator.md:88-104 |
-| The seat's children are enumerated with the manager/system-specialist/super-exit reviewer split. | "**Your children and their dispatch.**" | skills/l-01-agent-lifecycles/roles/orchestrator.md:106-112 |
-| Role-seat immutability refuses a pasted brief for another role. | "**Role-seat immutability.**" | skills/l-01-agent-lifecycles/roles/orchestrator.md:114-117 |
-| The producers' curator hand-off list is passed through to the curator unparaphrased. | "**The producers' hand-off list, handed to the curator unparaphrased.**" | skills/l-01-agent-lifecycles/roles/orchestrator.md:127-131 |
-| The by-hand portfolio-wide retire authority is exceptional and the write surface is enumerated. | "**The portfolio-wide retire authority, exceptional cases only.**" | skills/l-01-agent-lifecycles/roles/orchestrator.md:152-172 |
-| The seat's prohibitions and the architect ceiling with its four-field decision item are explicit. | "**The developer-worthy wait is a decision item**" | skills/l-01-agent-lifecycles/roles/orchestrator.md:174-204 |
-| Provider degradation has a fixed four-step response that ends in the always-legal teardown. | "**Provider degradation — your own four-step response.**" | skills/l-01-agent-lifecycles/roles/orchestrator.md:214-224 |
-
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references.
 
-## 260713-TES-L5 Current Delta — Idle Safety Via The State-Signal Relay
+## Investigator assignment
 
-The orchestrator's idle-safety line now says silence is supervised by the agent-notifier sweep
-and the state-signal relay; the escalation ladder is no longer part of the supervision story.
-Ending a turn with nothing pending remains correct.
+The Orchestrator coordinates concurrent masters through their Managers and may start Investigator on its own sprint, or on its sprint and one of its masters, for a concern or check belonging to no leaf. Leaf checks stay with their Worker and Reviewer. A refusal preserves actual parent routing or the parentless blocker; no invented Architect or recipient identity replaces it.
 
-## R39 Generic Orchestrator Doctrine
+## Evidence
 
-The canonical orchestrator role resolves quality mechanics from the active repository memory and
-keeps acceptance at leaf closeout and master integration only. Repository-specific Dagger/retry
-instructions no longer leak into generic orchestration.
+- Orchestrator coordinates one selected sprint through its Managers, follows started work through canonical facts and verifies delivery without taking over the Manager's leaf diff, repair and evidence loop. [16]
 
-## 260815-DAG-L2 Ready-Frontier And Landing Authority
+- The Orchestrator Result contract names its rulings and status artifacts, developer-decision and final report-path messages, verified Manager delivery and separately addressed reports, findings, review, curation and publication. [17]
 
-The orchestrator mechanically recomputes the ready frontier after candidate, blocker, landing, or
-accepted-priority changes, then applies explicit priority judgment with canonical graph node order
-only as the deterministic equal-priority tie-break. Every queue judgment records rationale,
-evidence, author, confidence, and supersession before it changes selection; ordinary bounded
-reprioritization stays here, while a substantial graph/classification reshape is proposed through
-the architect-owned strategist loop.
+- A parent-started Orchestrator sends upward only developer-needed matters, permission notices and one final report-path message, continues independent work when delivery is held or refused, and uses its own chat for developer decisions when dashboard-started without a parent. [18]
 
-Organizational leaves land directly on super as released; the final leaf is combined with prior
-contributions into the exact proposed final candidate and receives the one full master gate before
-super moves. Atomic masters expose no intermediate leaf state to super, but source-pair selection
-may pause one live master and select another without retiring either durable branch. The separate
-landing authority serializes only conflicting protected-ref movement. Integration refs are not
-feature/fix workbenches, and super-exit repairs return to an owning, reopened, or newly scoped leaf.
+- Orchestrator may assign an Investigator a concern under its own sprint or sprint/master, never a leaf; the scoped concern is its first message to the returned Investigator ID. [19]
 
-## IAS Activation, Queue, And Reconciliation Boundary
-
-Before a manager or worker receives implementation exposure for an atomic master, the control
-plane selects its exact code/memory source pair as `reconciling`, auto-pauses the former selection,
-reconciles both recorded bases, and publishes `active`. Reviewer and curator inspection does not
-switch selection. Chats, processes, worktrees, contracts, and claimed lifecycle journals remain
-intact across a logical pause.
-
-Task authoring is not subordinate to selection or queue state. Valid task mutations publish first,
-then invalidate/rebuild affected disposable projections. Queue rows merely observe
-active/reconciling/paused/vacant facts and own no lifecycle or commit evidence. A malformed selector
-fails closed only for affected projection/admission and is replaced with archived evidence by an
-exact selecting operation; there is no contract-presence fallback.
-
-Retained sync or integration conflicts are agent-owned when current requirements, code, tests, and
-decisions determine a resolution. Continue or cancel the contract-addressed operation through its
-advertised API; escalate only genuine semantic ambiguity through the architect.
-
-**Correction (260915-KS-L28):** the function-shape rewrite no longer carries this section's
-source-pair and queue doctrine in this file. The generic event loop and its selection duty now live
-in `../operations/coordination.md` — "selecting from current truth rather than a queue row"
-(`:35-36`) — the seat receives closeout-door generations, closeout-projection validity, lineage and
-gates as control-plane inputs (`:22-25`), and the file forbids leaving an intrinsically valid task
-write undone because a closeout generation exists and forbids mutating an old queue row
-(`:184-185`). The paragraphs above are kept as the historical record of the pre-rewrite file.
-
-## Update History
-- 2026-09-19T17:09+02:00 — 260915-KS-L28 curator (uncommitted change set on `ar/260915-ks-l28`): re-read this card against the source at `d0c1d1cfa9b576fd117ac2a0c05c5defe0089678` (previous verification stamp `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`). **This is a rewrite, not an increment:** the diff replaces the whole 614-line `Lifecycle — Orchestrator` seat handbook with a 228-line self-contained role page in the corpus's function shape — `## Inputs` (`:13-31`), `## Process` (`:33-117`, whose generic event loop now lives in `../operations/coordination.md`), `## Outputs` (`:119-150`), `## What you may do` (`:152-172`), `## What you must not do` (`:174-190`), `## Stop and escalate — the architect is your ceiling` (`:192-228`) — and adds **the producers' curator hand-off list passed to the curator unparaphrased** (`:127-131`). Body: replaced the Purpose and the whole Code Commentary with a re-derived account of the current text (inputs; the coordination-owned event loop and the eight portfolio duties; the children/dispatch split; role-seat immutability; outputs; permissions; the architect ceiling with its four-field decision item and the provider-degradation response), corrected the CCR-R12@v5 boundary's "full memory quality … explicit operations only" clause (the curator's complete result travels with the edge as prerequisite evidence, `:67-73`), and folded the 260805-ARG-L1 section into a corrected dated note — its still-true retirement fact is kept, while the cheap-first/content-addressed retry paragraph it recorded is no longer stated in this file after the rewrite. The IAS section carries the same treatment: its source-pair/queue doctrine is no longer in this file and is marked as the pre-rewrite record. Citations: this card was prose-only, so a Repo-Internal References table was **added** with fourteen rows, each anchor verified inside its cited extent at HEAD (seat definition `:8-11`; coordination-owned loop `:35-38`; topology `:55-62`; priority `:63-66`; release/land `:67-73`; spirit test `:74-80`; master exit `:81-87`; the eight duties `:88-104`; children `:106-112`; immutability `:114-117`; hand-off list `:127-131`; retire authority `:152-172`; prohibitions and decision item `:174-204`; provider degradation `:214-224`).
-- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
-
-- 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: documented the
-  orchestrator-stamped sprint super reviewer and its separation from the architect plan-review
-  generation. Verification remains closeout-owned.
-
-- 2026-08-30T12:57+02:00 — 260821-ARSPAWN-L3 review correction: replaced create/replace
-  takeover wording with idempotent canonical-seat convergence. Verification remains
-  closeout-owned.
-
-- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 recorded the orchestrator as a plane-hosted caller
-  and explicit ambient-takeover target, removed caller-visible readiness sequencing, and kept its
-  structural authority outside settings. Verification remains closeout-owned.
-
-- 2026-08-26T08:35+02:00 — Restored the required navigable governing-overview link while
-  reconciling orchestrator activation doctrine.
-
-- 2026-08-26T05:20+02:00 — Replaced the global exclusive-blocker reading with exact source-pair
-  selection plus separate landing authority; documented pause preservation, task-authoring
-  primacy, disposable queue projection, and agent-owned resumable conflict resolution.
-  Verification remains post-Dagger/closeout-owned.
-
-- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
-
-- 2026-08-15T04:32+02:00 — 260815-DAG-L2: recorded ready-frontier recomputation, auditable queue
-  judgment, organizational direct landing, atomic blockers, and no-workbench repair routing.
-  Verification remains closeout-owned.
-
-- 2026-08-14T11:29+02:00 — R39 curator: reconciled canonical orchestrator guidance with generic
-  repository-resolved policy. Verification remains closeout-owned.
-
-- 2026-08-14T09:37+02:00 — Reopened L23 cadence: recorded the exact leaf-closeout/master-integration
-  acceptance owners and the pull-request-only non-test GitHub boundary.
-- 2026-08-10T07:30+02:00 — 260805-ARG-L1: recorded exact-leaf subordinate completion cleanup and
-  the cheap-first/content-addressed quality retry doctrine. Verification metadata remains blank
-  until closeout stamps the code commit.
-
-- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the idle-safety wording — silence
-  is supervised by the agent-notifier sweep and the state-signal relay; the escalation ladder
-  is no longer part of the supervision story. Verification metadata pinned until closeout
-  stamps the 260713-TES-L5 commit.
-- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round 2 (curator): No content impact: the supervisor -> agent-notifier rename does not change the behavior this sidecar documents; reviewed current against the changed source. Verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
-- 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
+- Orchestrator keeps canonical sprint/master containment, Manager leaf ownership, separately addressed review/publication evidence and actual-parent developer questions. Held child permissions use the coordination notice route; covered correct-write recovery is separate from product guards. [20]

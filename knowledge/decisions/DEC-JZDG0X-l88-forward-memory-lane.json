@@ -1,0 +1,45 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "Historical count attribution would invent tries and change the available allowance."
+  },
+  "alternatives": [
+    {
+      "option": "Use a new typed independent memory lane only for reviews begun after landing; existing underway reviews finish as begun.",
+      "reason": "Historical count attribution would invent tries and change the available allowance.",
+      "status": "chosen"
+    },
+    {
+      "option": "Backfill old mixed/code rounds into memory tries or reset passed code to count memory repairs.",
+      "reason": "Historical count attribution would invent tries and change the available allowance.",
+      "reconsider_when": "Only a later developer-approved requirement that explicitly revises this boundary and names independently checked replacement safeguards can reopen it; implementation drift, prettier text or a budget pass alone cannot.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Historical count attribution would invent tries and change the available allowance."
+  ],
+  "context": "The product needs independent memory repair counts without rewriting accepted code history.",
+  "decider": "Developer-approved requirement corpus and L88 signed rulings",
+  "id": "DEC-JZDG0X",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "route:mcp/src/agents_remember/worktrees"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "whole-curation.json"
+    },
+    "handoffEntry": "L88-forward-memory-lane",
+    "leaf": "260928-MIK-L88",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

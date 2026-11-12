@@ -1,0 +1,39 @@
+{
+  "path": "dashboard/src/panels/review/explainer/explainerGradeParser.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A grade the reviewer set survives a refetch that carried a staler one, because the two are merged rather than replaced.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6edeed9e91f9966db8702ca3f0189558d6152a63",
+            "content": "sha256:8c3b5657a7303daa8672811df00cb2a22c0aed7d5ed934b4203acfc3f9c80410",
+            "locator": {
+              "kind": "symbol",
+              "name": "mergeGradeWithStale"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Categories are read out of whichever answer shape carried them, so a shape change does not empty the reviewer's list.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6edeed9e91f9966db8702ca3f0189558d6152a63",
+            "content": "sha256:eb63ff2cd48b6eec261964a255ae99a80a56504c24e0e77270c52732dd2b8994",
+            "locator": {
+              "kind": "symbol",
+              "name": "readCategories"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The inputs are named in the composition root and enforced in the serving store, and the reuse cases fail when the stamp check, the parity check or either bound is removed."
+  },
+  "applicability": "The reviewer's reads of a recorded comparison: its task-context intent, its entries and its tree view.",
+  "conditions": [
+    "A live comparison is not a recorded one and is never served from this store.",
+    "An answer is kept only when observations taken before and after its computation agree."
+  ],
+  "exclusions": [
+    "A live comparison's answers, computed on every read.",
+    "The change-set cache's own accepted gap, which this statement does not extend."
+  ],
+  "id": "INV-YTPBCF",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "L177-A8-fix-verification-verdict.md: 05 and 06 fixed; the removed-recorded-tree case and the reuse-parity cases pass."
+      ],
+      "path": "l177-handoff.json"
+    },
+    "handoffEntry": "L177-INV-RECORDED-ANSWER-REUSE",
+    "leaf": "260928-MIK-L177",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A recorded comparison's answers are served again unchanged only while every input they are a function of still holds — its record's bytes, its generation directories, its worklist and the readability of every recorded tree — and the kept answer is byte-identical to a fresh computation of those inputs, while a live comparison is computed on every read.",
+  "status": "proposed",
+  "supersedes": []
+}

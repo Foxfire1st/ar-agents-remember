@@ -1,0 +1,149 @@
+{
+  "path": "mcp/src/agents_remember/application/review_revision_writers.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "61db38544c9f6c09c6b3a1d27d8f61a7dc2bd043",
+        "content": "sha256:507e1a0654303a0e66bf616aeb92ada7073031078bdd3d42f4474cbfd39886e2",
+        "locator": {
+          "kind": "symbol",
+          "name": "with_revision_writers"
+        }
+      },
+      "id": "RLZ-566HP7",
+      "invariant": "INV-MRHE25",
+      "origin": {
+        "handoffEntry": "RP21_REVISION_WRITER",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Enriches only an explicit selected subject pair with independent before/after writers from the already-open comparison-side indexes; it leaves a missing selection unchanged.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "61db38544c9f6c09c6b3a1d27d8f61a7dc2bd043",
+        "content": "sha256:78ff226644165d9600c798fd09739a52302f34325d8747946ecaa775bcf3bb12",
+        "locator": {
+          "kind": "symbol",
+          "name": "_side_writer"
+        }
+      },
+      "id": "RLZ-57C067",
+      "invariant": "INV-MRHE25",
+      "origin": {
+        "handoffEntry": "RP21_REVISION_WRITER",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Omits an absent/unaddressed selected side, but reports legacy/unopened/unreadable indexes as unavailable rather than inventing an owner.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "61db38544c9f6c09c6b3a1d27d8f61a7dc2bd043",
+        "content": "sha256:9aa50d868d5f5444d546f7f64b7de5b48a77501e5bad9e780b6c9a59bd1c6c60",
+        "locator": {
+          "kind": "symbol",
+          "name": "_wrote"
+        }
+      },
+      "id": "RLZ-AQQND1",
+      "invariant": "INV-MRHE25",
+      "origin": {
+        "handoffEntry": "RP21_REVISION_WRITER",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "A writer row must be changed and name exactly the selected record's revision. A no_impact or other disposition at the same revision is a judgment, not a writer.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "61db38544c9f6c09c6b3a1d27d8f61a7dc2bd043",
+        "content": "sha256:241ea343551d05897131d39ab1aa0a55767f8c81dc6a7502960948a878993dbb",
+        "locator": {
+          "kind": "symbol",
+          "name": "_read_writer"
+        }
+      },
+      "id": "RLZ-AYKFMQ",
+      "invariant": "INV-MRHE25",
+      "origin": {
+        "handoffEntry": "RP21_REVISION_WRITER",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Requires a complete side index, reads the selected record revision and keeps the distinct owners of changed rows at that exact revision. Only unclaimed revision1 may use its introducing origin; no other missing writer is inferred.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "61db38544c9f6c09c6b3a1d27d8f61a7dc2bd043",
+        "content": "sha256:3fc3aa1559e6787b834b4452036e9e867d59c8efc9537fb981251d45d1bbd93c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_introducer"
+        }
+      },
+      "id": "RLZ-DZVYB5",
+      "invariant": "INV-MRHE25",
+      "origin": {
+        "handoffEntry": "RP21_REVISION_WRITER",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "For the revision1 fallback only, reads the first nonempty recorded origin leaf, wave or task string; it never substitutes Git, dates or the reviewed task.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Selected-side composition and unavailable boundaries\n\nAnchor: \"def with_revision_writers(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "61db38544c9f6c09c6b3a1d27d8f61a7dc2bd043",
+            "content": "sha256:25f19fc9da5b4da83cb4ee749ef2417130f01479b92b0888f7e4e5b46eeed6cf",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 40
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Complete-history requirement, changed-row owners and first introduction\n\nAnchor: \"def _read_writer(index: KnowledgeIndex, addressed: str, side: str) -> ReviewRevisionWriter:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "61db38544c9f6c09c6b3a1d27d8f61a7dc2bd043",
+            "content": "sha256:241ea343551d05897131d39ab1aa0a55767f8c81dc6a7502960948a878993dbb",
+            "locator": {
+              "end": 108,
+              "kind": "line_range",
+              "start": 77
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Exact writing predicate and origin precedence\n\nAnchor: \"def _wrote(row: HistoryRow, revision: int) -> bool:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "61db38544c9f6c09c6b3a1d27d8f61a7dc2bd043",
+            "content": "sha256:8ec08010046e8ec2e1be10b8604035803ec26b7126dc2d8503659f7dc4b3abe1",
+            "locator": {
+              "end": 128,
+              "kind": "line_range",
+              "start": 111
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

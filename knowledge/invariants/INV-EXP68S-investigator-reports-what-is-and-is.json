@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "An investigative observation could otherwise turn into an unapproved code, memory or process duty merely because its report phrases a fix imperatively."
+  },
+  "applicability": "Every Investigator report of a scoped concern.",
+  "conditions": [
+    "Preserve actual starter/parent routing and the existing read/report-only mutation boundary."
+  ],
+  "exclusions": [
+    "An investigator recommendation becoming an instruction to apply.",
+    "Acquiring Worker or Curator authority by describing a needed repair."
+  ],
+  "id": "INV-EXP68S",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Admitted code tree 6db7c75557a5d040db6cc2938c3f8a53f658bebe; unchanged source meanings and exact locators renewed from the6414 rehearsal by native Git blob equality.",
+        "Current Worker producer list: /home/firefox/projects/ar-coordination/worktrees/agents-remember/62_instructions-and-documentation-descri-e8e4920fc1-ar/role-reports/worker/db30bb98-270f-4b0e-aefe-8aa8f1202292/role-launch/producer-successor-6db7c755/producer-list.json sha256:0a86fcdbcecf101f39edb967a3d79bcb4b70f73b00196f88e58e6c20d2b1a152",
+        "Source analysis inputs and exact per-locator renewal are recorded in /home/firefox/projects/ar-coordination/worktrees/agents-remember/62_instructions-and-documentation-descri-e8e4920fc1-ar/scratch/curator/73230181-c727-4e12-9a7d-59bcc4479653/combined-knowledge-6db.review.json"
+      ],
+      "path": "L62-final6db-curation"
+    },
+    "handoffEntry": "L62-CUR-6414-investigator-evidence",
+    "leaf": "260928-MIK-L62",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Investigator reports what is and is not with evidence, states no requirement, ruling or duty of its own, and names a proposed change as an open parent question.",
+  "status": "proposed",
+  "supersedes": []
+}

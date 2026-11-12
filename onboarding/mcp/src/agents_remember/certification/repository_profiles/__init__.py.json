@@ -1,0 +1,35 @@
+{
+  "path": "mcp/src/agents_remember/certification/repository_profiles/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The facade exports the full selection-result surface added by L19.\n\nAnchor: `RepositorySelectionResult`; `build_repository_selection_result`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47cf15b50a0eeda29a90c8e8a1a988bc0ffa0ac8",
+            "content": "sha256:5576845267916db1ae37742ddd064b4a94bb6bd9dd9a93e64258556aeba534c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "47cf15b50a0eeda29a90c8e8a1a988bc0ffa0ac8",
+            "content": "sha256:048c18a19898a010ec0e7c6b7273fad29bf8b2cd442f563a056450562dada1d2",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 26
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

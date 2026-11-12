@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "A complete classified advertisement joins registrar enforcement and the central declarations; otherwise an omitted/mistyped hint can imply purity for a tool capable of report/capture/freshness writes."
+  },
+  "applicability": "Annotations on the complete registered public MCP tool surface.",
+  "conditions": [
+    "Annotation application follows registration from the product factory."
+  ],
+  "exclusions": [
+    "Treating readOnlyHint as sandbox permissions, global runtime purity, semantic approval or proof that a test ran.",
+    "Restoring the removed public resolve_context tool."
+  ],
+  "id": "INV-QCMCJX",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "l109e-helper-epoch-source-deltas.json; current source-owner cards and the exact successor native plan"
+      ],
+      "path": "l109e-source-contracts.json"
+    },
+    "handoffEntry": "L109-source-read-only-annotations",
+    "leaf": "260928-MIK-L109",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Every registered public tool receives its readOnlyHint from the central read-only classification; an unclassified registration refuses. The hint describes declared capability, not a semantic verdict or proof of host-wide purity: knowledge_diff report/capture and context_packet freshness capability are marked false, while the two naming readers read_ar_files and knowledge_read are marked true.",
+  "status": "proposed",
+  "supersedes": []
+}

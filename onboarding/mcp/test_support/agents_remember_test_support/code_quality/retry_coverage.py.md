@@ -1,15 +1,5 @@
 # mcp/test_support/agents_remember_test_support/code_quality/retry_coverage.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/test_support/agents_remember_test_support/code_quality/retry_coverage.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Python quality verification overview](overview.md)
@@ -53,27 +43,20 @@ JSON result.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external domain contract is configured. The implementation uses Coverage.py's installed public
 `CoverageData` and `Coverage` APIs.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Context proof requires branch arcs and pytest runtime contexts. | `validate_context_proof` | mcp/test_support/agents_remember_test_support/code_quality/retry_coverage.py:18-24 |
-| Unchanged contexts are extracted to a separate retained database. | `retain_unchanged_contexts` | mcp/test_support/agents_remember_test_support/code_quality/retry_coverage.py:27-53 |
-| Retained and fresh evidence are merged and atomically republished fail closed. | `merge_delta_artifacts` | mcp/test_support/agents_remember_test_support/code_quality/retry_coverage.py:56-99 |
-| Focused forcing proves successful composition, a known-empty retained subset, and two-artifact cleanup on failure. | `test_retained_and_delta_contexts_merge_before_json_is_scored`; `test_empty_retained_subset_merges_only_fresh_delta_contexts`; `test_merge_failure_removes_both_public_artifacts` | mcp/tests/test_retry_coverage.py:11-140 |
+- Context proof requires branch arcs and pytest runtime contexts. [1]
+- Unchanged contexts are extracted to a separate retained database. [2]
+- Retained and fresh evidence are merged and atomically republished fail closed. [3]
+- Focused forcing proves successful composition, a known-empty retained subset, and two-artifact cleanup on failure. [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 None. Retry artifacts remain inside the Dagger-owned cache/report boundary.
-
-## Update History
-
-- 2026-08-27T19:13+02:00 — Distinguished a legitimately empty retained-context subset from a
-  missing expected database after the real matrix exercised an all-contexts-affected delta.
-- 2026-08-27T18:33+02:00 — Created after the real retry matrix exposed pytest-cov/xdist replacing
-  an in-place retained database. Verification metadata remains empty until governed closeout.

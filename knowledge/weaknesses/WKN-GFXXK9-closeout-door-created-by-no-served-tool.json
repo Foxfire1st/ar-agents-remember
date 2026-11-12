@@ -1,0 +1,29 @@
+{
+  "anchor": {
+    "blob": "11aeb55a4be379e46af58941c5ef0641b5eda362",
+    "content": "sha256:498b7d9b7726d51c79015ca1ab0e7df80c25c71c0c8794bd4dc492042c7fbb65",
+    "locator": {
+      "kind": "symbol",
+      "name": "closeout_door_tool"
+    },
+    "path": "mcp/src/agents_remember/worktrees/integration/closeout/door_control.py"
+  },
+  "id": "WKN-GFXXK9",
+  "kind": "fault",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-a004"
+    },
+    "handoffEntry": "L97-weakness-19",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L97"
+  },
+  "state": "open",
+  "statement": "The tool that declares a closeout door, closeout_door_tool, is registered with no server and only tests call it, so no served call creates a door, worktree_closeout_apply reads none, and the closeout queue lists no task."
+}

@@ -1,0 +1,252 @@
+{
+  "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "37ab580eba70b23a3dc4f9db4357667028194c78",
+        "content": "sha256:43e781cd70db5dd7af87d8387c7e2f2a5ed4f2b3b95198411684225bfba0d35a",
+        "locator": {
+          "kind": "symbol",
+          "name": "FamilyMemberContext"
+        }
+      },
+      "id": "RLZ-1PT6BEVC",
+      "invariant": "INV-VPX81HXV",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Use the surviving exact family roster/context bound rather than a large shifted center dispatch range.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "37ab580eba70b23a3dc4f9db4357667028194c78",
+        "content": "sha256:913d39b55cd6ce67a7218a0d3c95d476d2cfb1bc09a9793952956fd975531045",
+        "locator": {
+          "kind": "symbol",
+          "name": "inModelOrder"
+        }
+      },
+      "id": "RLZ-52661X",
+      "invariant": "INV-719D48",
+      "origin": {
+        "handoffEntry": "MIK-L154 center follows tree order",
+        "leaf": "260928-MIK-L154"
+      },
+      "rationale": "Ranks each member by the invariant identity order provided by the page change-set model; members absent from that order follow stably. FamilyDetails supplies its current family model order.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "37ab580eba70b23a3dc4f9db4357667028194c78",
+        "content": "sha256:d4f22731cfa1e5407d957305bc4a5a8b8a476d18a1cebb878ff4069f66dc79bf",
+        "locator": {
+          "kind": "symbol",
+          "name": "FamilyDetails"
+        }
+      },
+      "id": "RLZ-JJ82KX",
+      "invariant": "INV-719D48",
+      "origin": {
+        "handoffEntry": "MIK-L154 center follows tree order",
+        "leaf": "260928-MIK-L154"
+      },
+      "rationale": "Builds distinct member revisions using the retained outline/entry order and then applies the current ReadingContext family-member order, so the page list follows its single model while other readers retain the outline path.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "37ab580eba70b23a3dc4f9db4357667028194c78",
+        "content": "sha256:342de7ee0b0ac20377882f8fab5e007c11318857593e649b26183a57f436013e",
+        "locator": {
+          "kind": "symbol",
+          "name": "SelectedCenter"
+        }
+      },
+      "id": "RLZ-KPXX9Y7G",
+      "invariant": "INV-BR5MTSTY",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Routes every selected invariant through MemberContent and MemberDetails even when no family entry exists; optional family context is omitted without inventing membership.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "37ab580eba70b23a3dc4f9db4357667028194c78",
+        "content": "sha256:feb5db552449af49bcf9db44a9f719ea45a7d58b6daf7c188c829ea4ab4a4784",
+        "locator": {
+          "kind": "symbol",
+          "name": "MemberDetails"
+        }
+      },
+      "id": "RLZ-NF0112J4",
+      "invariant": "INV-H8EM1VJR",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Keeps the selected member optional family guarantee, loaded realization/membership context and subject knowledge as open main-page detail after its code.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "37ab580eba70b23a3dc4f9db4357667028194c78",
+        "content": "sha256:0adf96fb18bd0e3727a0566a99fd2df88c11ea5758e20be9b8da788e7c684cae",
+        "locator": {
+          "kind": "symbol",
+          "name": "UnselectedCenter"
+        }
+      },
+      "id": "RLZ-QW4BVS",
+      "invariant": "INV-76C676",
+      "origin": {
+        "handoffEntry": "L43-C-recorded-effect-consumer-closures",
+        "leaf": "260928-MIK-L43"
+      },
+      "rationale": "The unselected center rejects a missing current meaning field while retaining a valid empty no-subject answer.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "37ab580eba70b23a3dc4f9db4357667028194c78",
+        "content": "sha256:9227f3e20934ff85ef4e0dd17475c5b2301b14aac1f3fbc7a3f7beb149c8e014",
+        "locator": {
+          "kind": "symbol",
+          "name": "FamilyContent"
+        }
+      },
+      "id": "RLZ-SNB6VM",
+      "invariant": "INV-76C676",
+      "origin": {
+        "handoffEntry": "L43-C-recorded-effect-consumer-closures",
+        "leaf": "260928-MIK-L43"
+      },
+      "rationale": "Places MeaningBlock for this family immediately after the same family guarantee comparison and before its judgment.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "37ab580eba70b23a3dc4f9db4357667028194c78",
+        "content": "sha256:82b12541db763fd15594100311f1562bf38d7501c303868451a6ab6f555d06c5",
+        "locator": {
+          "kind": "symbol",
+          "name": "FamilyReviewCenter"
+        }
+      },
+      "id": "RLZ-Y4FPEE",
+      "invariant": "INV-777108",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 rule 10",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "It renders the guarantee, member meaning and reasons in the reading area rather than repeating them in navigation.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "37ab580eba70b23a3dc4f9db4357667028194c78",
+        "content": "sha256:7d311ac9e82ffae01ff0c6f68952199ccd7a9b40288d55b0e58098878a7ea502",
+        "locator": {
+          "kind": "symbol",
+          "name": "UnavailableMember"
+        }
+      },
+      "id": "RLZ-YVFVW1",
+      "invariant": "INV-76C676",
+      "origin": {
+        "handoffEntry": "L43-C-recorded-effect-consumer-closures",
+        "leaf": "260928-MIK-L43"
+      },
+      "rationale": "The unaddressable-member center enforces the missing-field failure without borrowing a different record’s steps.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "41": {
+      "note": "FamilyReviewCenter.tsx current behavior at this source owner.\n\nAnchor: \"function SelectedCenter({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37ab580eba70b23a3dc4f9db4357667028194c78",
+            "content": "sha256:ebd91dd9e62dfbee0b1ab07747becc921486fcc761480780a0761af952bb3b17",
+            "locator": {
+              "end": 873,
+              "kind": "line_range",
+              "start": 858
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "42": {
+      "note": "FamilyReviewCenter.tsx current behavior at this source owner.\n\nAnchor: \"export type CenterPart = 'whole' \\| 'content' \\| 'after-code';\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37ab580eba70b23a3dc4f9db4357667028194c78",
+            "content": "sha256:24e7e4c1c2e08cba96162694f62ceea2b44264b011d5a0f8713660d0d441d907",
+            "locator": {
+              "end": 533,
+              "kind": "line_range",
+              "start": 497
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "43": {
+      "note": "FamilyReviewCenter.tsx current behavior at this source owner.\n\nAnchor: \"function membersComplete(entry: ReviewFamilyContextEntry): boolean {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37ab580eba70b23a3dc4f9db4357667028194c78",
+            "content": "sha256:7bb6daa8b6f8d6f892975264d08a3387dd0e6b51add96c11f5c2d2abd5a83c9b",
+            "locator": {
+              "end": 586,
+              "kind": "line_range",
+              "start": 347
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "44": {
+      "note": "FamilyReviewCenter.tsx current behavior at this source owner.\n\nAnchor: \"function RealizationClaims({ member }: { member: ReviewFamilyMember }) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37ab580eba70b23a3dc4f9db4357667028194c78",
+            "content": "sha256:e39f4aff2b3e5d7221efc2f4c06591210be022ba332b73fe30aa39ba61fa9905",
+            "locator": {
+              "end": 345,
+              "kind": "line_range",
+              "start": 56
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "45": {
+      "note": "FamilyReviewCenter.tsx current behavior at this source owner.\n\nAnchor: \"function IndependentFacts({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37ab580eba70b23a3dc4f9db4357667028194c78",
+            "content": "sha256:72358f90b79519250e37fe248747c5bc73abe8e9f3f13d08c483891d64ea4dd2",
+            "locator": {
+              "end": 1018,
+              "kind": "line_range",
+              "start": 588
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/evidence.py",
+  "realizes": [],
+  "references": {
+    "23": {
+      "note": "The surviving response requires judgment, source and knowledge panes; it carries no old evidence pane or multi-class channel.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
+            "content": "sha256:0e006f842e6954082a9d752be51896858f6970f40ff39161b5d4046e191a8da0",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeReviewPayload"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

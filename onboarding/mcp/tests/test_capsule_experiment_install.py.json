@@ -1,0 +1,264 @@
+{
+  "path": "mcp/tests/test_capsule_experiment_install.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The no-persistence guard digests every regular file under the coordination root before and after the selected run.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e354fcb36b56dbadbed9d0f83b4868351990ed82",
+            "content": "sha256:c7505afd3991b0081249b9a481d21207f1781f9c61d391e876a05c795038eabe",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_selection_is_recorded_per_run_and_never_persisted"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The retired startup files are planted with the legacy fingerprint and must all be absent afterwards.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e354fcb36b56dbadbed9d0f83b4868351990ed82",
+            "content": "sha256:7f427fb820468e928c6cbbddb5660d3bce7e4b76a0a644dd791ec3d7b3269497",
+            "locator": {
+              "kind": "symbol",
+              "name": "plant_retired_startup_files"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "An unselected run removes planted startup files.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e354fcb36b56dbadbed9d0f83b4868351990ed82",
+            "content": "sha256:5cd80a90394094cf079605ad6a776ead849da2aa066f6b158de0ffab9f0527e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unselected_run_leaves_no_retired_startup_files"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Its preview reports the planted startup files without removing any.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e354fcb36b56dbadbed9d0f83b4868351990ed82",
+            "content": "sha256:f05a60ef6230eaebd8674281faf2cb9a1d4cdd5def95671a3558c73d508c028d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unselected_preview_reports_retirement_without_removing_files"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The module docstring must say that an unselected (`legacy`) run keeps the old startup chain's install path while the cutover still retires the `AGENTS.md` copies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e354fcb36b56dbadbed9d0f83b4868351990ed82",
+            "content": "sha256:766594bf2331c151977cceb388835470f8dec5ee005c6e45ecc6260bf0de96c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_module_states_that_an_unselected_install_still_retires_startup_files"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The benchmark asset sync retires the same startup files.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e354fcb36b56dbadbed9d0f83b4868351990ed82",
+            "content": "sha256:f37094a2942b39c4a9c53f302dece4c94a28a46f8fcbfea60f427afc37b4058a",
+            "locator": {
+              "end": 826,
+              "kind": "line_range",
+              "start": 815
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A selected install leaves no coordination-root skill tree or received startup targets; the corpus remains package-served.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e354fcb36b56dbadbed9d0f83b4868351990ed82",
+            "content": "sha256:0e3f3bf103063d34a9ae0c7e32f941c0d73818f32b9ff94ed1be062f297fbe10",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_installed_root_carries_the_canonical_corpus_only_as_authored_source"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The registered tool takes the selection as this run's own input and the record names the input that won.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e354fcb36b56dbadbed9d0f83b4868351990ed82",
+            "content": "sha256:d14da8f6cd5a1b9b6eb13015e0b1b6e7aef8cafa1fb49d56adfbba1563c12c6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_registered_tool_takes_the_selection_as_this_run_s_own_input"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The module drives the real installer end to end and reads its results back from the files it wrote: removal of the retired startup files in both modes, the capsule cutover and the per-run selection record, with the install source tree left byte-identical.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e354fcb36b56dbadbed9d0f83b4868351990ed82",
+            "content": "sha256:55a68487f6cee94035afd20ae697e8a51490693c5e6e48329546cd3987ff4b53",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "An actual selected install reports an empty startup rollback and leaves no retired startup file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e354fcb36b56dbadbed9d0f83b4868351990ed82",
+            "content": "sha256:db83a658a4a89834ac51046b654a2c9f6a8be80650931768d4d104bc109119a3",
+            "locator": {
+              "end": 714,
+              "kind": "line_range",
+              "start": 707
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The current lifecycle catalog declares test_capsule_experiment_install.py among the exact consumers of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. These current declarations establish no invocation or addition event. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_capsule_experiment_install.py` as an exact consumer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0556945441335e93cd0b1783dba11d3b2eb279a7",
+            "content": "sha256:47b49a980e21ca82d698c1909f7cac222aa0d7893e037c8a24dc51a4aaaec938",
+            "locator": {
+              "end": 165,
+              "kind": "line_range",
+              "start": 65
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0556945441335e93cd0b1783dba11d3b2eb279a7",
+            "content": "sha256:6b9c567fdf1e708aa69e315d5077883bf0eee69bf33602d1b95c2ca16a0d25b4",
+            "locator": {
+              "end": 2487,
+              "kind": "line_range",
+              "start": 2387
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The current lifecycle catalog declares test_capsule_experiment_install.py among the exact consumers of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. These current declarations establish no invocation or addition event. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_capsule_experiment_install.py` as an exact consumer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0556945441335e93cd0b1783dba11d3b2eb279a7",
+            "content": "sha256:47b49a980e21ca82d698c1909f7cac222aa0d7893e037c8a24dc51a4aaaec938",
+            "locator": {
+              "end": 165,
+              "kind": "line_range",
+              "start": 65
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0556945441335e93cd0b1783dba11d3b2eb279a7",
+            "content": "sha256:6b9c567fdf1e708aa69e315d5077883bf0eee69bf33602d1b95c2ca16a0d25b4",
+            "locator": {
+              "end": 2487,
+              "kind": "line_range",
+              "start": 2387
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Private machine settings pre-exist both installations and retain their bytes.\n\nAnchor: `user_settings_path_for_write`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e354fcb36b56dbadbed9d0f83b4868351990ed82",
+            "content": "sha256:c7505afd3991b0081249b9a481d21207f1781f9c61d391e876a05c795038eabe",
+            "locator": {
+              "end": 604,
+              "kind": "line_range",
+              "start": 529
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Selected-run facts are asserted from the retained logged whole result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e354fcb36b56dbadbed9d0f83b4868351990ed82",
+            "content": "sha256:d14da8f6cd5a1b9b6eb13015e0b1b6e7aef8cafa1fb49d56adfbba1563c12c6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_registered_tool_takes_the_selection_as_this_run_s_own_input"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

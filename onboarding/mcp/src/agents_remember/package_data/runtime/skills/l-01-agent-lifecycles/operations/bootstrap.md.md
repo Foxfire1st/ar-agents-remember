@@ -1,14 +1,4 @@
-# l-01-agent-lifecycles/operations/bootstrap.md
-
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                            |
-| path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/bootstrap.md` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-16T17:59+02:00 |
-| lastVerifiedCommitHash | `09329a7ee598920c519b06305b73ba8e48d72c88` |
-| lastVerifiedCommitDate | 2026-09-26T00:58:43+02:00|
-| governingOverview      | `../../../../../../../overview.md` |
+# operations/bootstrap.md
 
 ## Governing Overview
 
@@ -16,175 +6,95 @@
 
 ## Purpose
 
-The **bootstrap** operation: the new user's first hour, end to end, with the memory repository as
-its centre of gravity. It is one of the nine operation-scoped blocks in
-`skills/l-01-agent-lifecycles/operations/`, and it is the one the tenth role carries and no other
-role does.
+The instruction for the session-bootstrap operation: the new user's first hour around the memory repository —
+what Agents Remember is, the developer-only decisions, the user settings, memory-root initialization, what the
+memory root already carries, the first attributed baseline, result verification, and the handover that names the
+Architect as the next step. First onboarding and the knowledge foundation are that Architect's regular work, not
+stages of this operation.
 
-It owns the ordered workflow, the failure-state inventory, the conformance-evidence standard and
-the authority gates. It **runs** the surface that owns each step and **points at** the `c-*` skill
-that documents it; it never restates the skill's procedure.
+## Current Contract
+
+**When it is selected.** A repository has no working memory root yet, or has one that does not resolve: no memory
+root, a memory root with no baseline, or a coordination root that will not resolve. With an attributed baseline and
+resolving context, ordinary work belongs to the lifecycle roles, and this operation is never re-entered to maintain
+or tidy a working installation. A resolving repository without a recorded knowledge foundation uses step 8 instead
+of re-entry.
+
+**How the carrier is started.** As a free agent, not a task seat, with no task document and no brief. The absence
+of a task document is the shape of the operation, not a repairable error, and `bootstrap` is its only carrier.
+
+**Required inputs.** Workspace facts rather than task facts: the code repository the developer means and its
+absolute root; the resolved `coordinationRoot` and `workspaceRoot` from `server_info` on the `agents-remember-task`
+server; whether a memory root already resolves and in what state; and the developer's two decisions — which branch
+is the foundation (the spear), and whether they are scaffolding a new memory repo or pointing at an existing one.
+
+**The workflow, each step on its owning surface.** Say what Agents Remember is and what setup will change; establish
+the resolved context or name the missing fact; take the spear-branch decision and record it as the memory repo's
+initial branch name; write the user's settings once through `user_settings_init`, previewing with `dry_run=true` and
+reading the state back; initialize or repair the memory root through `memory_init`, also previewed; read what the
+baseline will carry and author none of it; adopt the first attributed baseline through `memory_baseline_adopt` with
+`memory_baseline_status` read before and after and the drift decision put to the developer; and report the
+knowledge foundation's state and hand its making to the Architect.
+
+**One harness per role, chosen once.** Ask which harness each role should use, offering only the harnesses the host
+runs, and let one harness serve every role if that is the answer — at least one is required. Model, effort and the
+rest stay unset on purpose, so a role whose settings name only a harness starts on that harness's own defaults. An
+existing settings file that holds its own choices is read and reported, never overwritten, merged or completed: a
+harness-only file is a valid start, so an existing file is not a gap. A refused write is reported with its path and
+reason, and this seat changes no mode.
+
+**Handoff.** The operation ends when the surfaces establish the resolved roots, the foundation branch, the user
+settings path and what initialization did, the baseline's existence and commit, whether onboarding exists (read,
+never authored here), the knowledge foundation's recorded identity or the named state that says it is not, and
+every skipped step's reason. The one next step it names is the Architect, whose first regular work is the
+foundation through `c-14`'s registered-leaf task route (`reference/bootstrap/foundation-state.md`).
+
+## Conventions
+
+Each step names its owning surface and its `c-*` procedure — `c-00-initialize-memory-repo` for the memory root,
+`c-10-adopt-memory-baseline` for the baseline, `c-14-knowledge-bootstrap` for the foundation — and points at it
+rather than restating its procedure. The tools named are called on the `agents-remember-task` tool server. The two
+detail references, the foundation handover and the failure states, are read when their step is reached, not before.
+
+## Invariants And Boundaries
+
+- The carrier has no task document, no worktree, no gate and no task altitude, and that is its shape rather than a
+  gap: it creates none, dispatches nothing, and does not acquire authority by having set the workspace up.
+- It never commits code, lands, pushes, runs closeout or integration. The memory content commit that adoption
+  performs is the setup surface's own designed effect.
+- It writes to the memory layer only through the setup surfaces and their `c-*` procedures: no onboarding of its
+  own, no refresh of existing onboarding, no citation fixer, and no memory edit made to pass a check.
+- It does not author the knowledge foundation; it reads and reports that foundation's state and hands the authoring
+  on, never running the knowledge writer, inventing invariants or populating a database.
+- It asks before anything irreversible, and it reports rather than repairs a removed `ar-memory/` layout.
 
 ## Code Commentary
 
 ### Logic
 
-**Selection.** The operation applies when a repository has no working memory root yet, or has one
-that does not resolve: no memory root, a memory root with no baseline, the removed repo-local
-layout, a coordination root that will not resolve, or providers configured but not indexing. Once a
-repository has an attributed baseline and a resolving context, ordinary work belongs to the
-lifecycle roles — this operation is not a maintenance posture, and re-entering it to "tidy" a
-working installation is out of scope.
-
-**The carrier is a free agent.** The block states its own start route rather than leaving it to the
-role card: a regular session opens a session with `role=bootstrap` and **no task document**, the
-role travels into the new session's environment as `AR_SPAWN_ROLE`, and the role is admitted by name
-as a taskless seat so the call opens rather than refusing. There is no brief because nothing
-dispatches it; the operation's instructions reach that session as the compiled capsule. It
-therefore never waits for a task document to appear and never treats its absence as a condition to
-repair. The `## Who carries it, and their job` table names exactly one carrier.
-
-**Required inputs are facts about a workspace, not about a task**: which code repository and its
-absolute root, the resolved `coordinationRoot`/`workspaceRoot` from `server_info`, whether a memory
-root already resolves and its state, and the developer's three decisions asked one at a time —
-which code branch is the **spear** the memory is founded on, new versus existing memory repo, and
-index now versus defer.
-
-**The workflow is seven ordered steps**, each naming its owning surface: say what Agents Remember is
-and what the setup will change before asking anything; establish the resolved context or report the
-exact missing fact; take and confirm the decisions; initialize or repair the memory root through
-`memory_init` with `dry_run=true` first; scaffold the first onboarding through
-`c-03-repo-bootstrap`; adopt the first attributed baseline through `memory_baseline_adopt` with
-`memory_baseline_status` read before and after and the drift-acceptance decision put to the
-developer; and configure indexing or say plainly that it is deferred.
-
-**The failure inventory is seven rows**, each with the surface it is observed from: no memory root,
-unsupported topology, dirty memory repo before adoption, missing providers, unresolvable
-coordination root, memory root that is not a Git repository, and baseline already adopted. Two are
-worth naming here because they are the ones a reader is most likely to get wrong. *Unsupported
-topology* is refused by name and never substituted, and an existing repo-local `ar-memory/` root is
-**reported with its exact path and never migrated, rewritten or deleted**. *Dirty memory repo before
-adoption* records that adoption commits the content it finds, so uncommitted work becomes the
-baseline — read the tree, not the drift report, and get explicit agreement before adopting.
-
-### Conventions
-
-- The operation block carries no procedure copy. Every step names the surface that owns it and the
-  `c-*` skill that documents it.
-- **Every effectful step is previewed with `dry_run=true`, and every mutating step is followed by a
-  call that states the resulting state.** A step that was applied but never read back is not
-  complete.
-- The report is written to a durable, developer-visible path, and the report's own first line
-  states that exact path, because nothing dispatches this agent and nothing names a path for it.
+Conformance is evidenced by the reader's ability to re-derive every report claim from its named surface without
+asking the agent: the surface, the exact arguments and the result that was read back. This agent has no independent
+acceptor — no task document, no gate, no reviewer in its loop — so its report is completion truth about itself and
+never an acceptance, and is stated as such. Every effectful step is previewed with `dry_run=true` and followed by a
+call that states the resulting state; a step applied but never read back is not complete. A failure is reported as
+a failure, with the real output in the report's own "Steps Skipped Or Failed" section.
 
 ### Invariants And Boundaries
 
-- **One carrier, and it is a free agent.** No other role carries this operation; a seat already in a
-  sprint, master or leaf does not become a bootstrap seat to fix its own context — it resolves
-  context through `c-08-ar-coordination-context-resolver` and, if setup is genuinely missing, says
-  so and stops.
-- **The conformance standard is re-derivability, not acceptance.** This agent has no independent
-  acceptor: no task document, no gate, no reviewer in its loop. Its report is *completion truth* —
-  a claim by the seat about itself — and must never be presented as an acceptance.
-- **A failure is reported as a failure.** The report's own "Steps Skipped Or Failed" section carries
-  the real output; a report with an empty failure section and a success claim that cannot be
-  re-derived is the defect this standard exists to catch.
-- **The absent task altitude, worktree and gate are the shape, not a gap to close.** The block says
-  so explicitly and forbids adding a task altitude to make the seat look like the other roles.
-- **The capsule delivery gap is stated, not smoothed**: the capsule that is this agent's only
-  instruction source is delivered to a launch by separate work, and until then a started session is
-  booted with no instructions.
+A developer who will not answer a decision is a stop, not a guess: without a foundation branch setup cannot pass
+step 3; an unanswered memory-repo question is resolved from `context_packet` and reported; an unnamed repository stops
+the operation, because there is no default repository. A failed step is reported with the server's own refusal, is not
+retried under a different flag, and is never described as the intended outcome. A capability that does not exist is
+named as absent, stating which half of a route is unexercised — the instruction channel's own case is wired end to
+end and covered by `mcp/tests/test_capsule_launch_wiring.py`, whose free-agent case reads the compiled capsule out
+of the session's first prompt, while a launch that cannot compile a capsule refuses by name. A contradiction
+between this instruction and the system being set up is reported as a finding about the instruction.
 
-### Todos
+## Evidence
 
-None recorded.
-
-## Docs References
-
-No external or domain documentation governs this repository-local operation block.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant documentation found after checking live sources. | n/a | n/a |
-
-## Repo-Internal References
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Canonical source this package-data copy is sync-propagated from. | `# Operation — Session Bootstrap` | skills/l-01-agent-lifecycles/operations/bootstrap.md:1-1 |
-| Selection rule, carrier start route, and the one-carrier table. | "When it is selected:" | skills/l-01-agent-lifecycles/operations/bootstrap.md:8-8 |
-| Required inputs, including the three developer decisions. | "Required inputs" | skills/l-01-agent-lifecycles/operations/bootstrap.md:33-33 |
-| The seven-step ordered workflow, each step naming its owner. | "Normal workflow" | skills/l-01-agent-lifecycles/operations/bootstrap.md:49-49 |
-| The seven-row failure inventory a new user actually hits. | "The failure states a new user actually hits" | skills/l-01-agent-lifecycles/operations/bootstrap.md:98-98 |
-| The conformance standard: re-derivability, no independent acceptor, failures reported as failures. | "How conformance is evidenced" | skills/l-01-agent-lifecycles/operations/bootstrap.md:117-117 |
-| The authority gates, including the absent-altitude-is-the-shape rule. | "Authority gates" | skills/l-01-agent-lifecycles/operations/bootstrap.md:137-137 |
-| The two known failure-handling rows, including the capsule-delivery gap. | "Failure handling" | skills/l-01-agent-lifecycles/operations/bootstrap.md:158-158 |
-| The manifest entry binding this operation to its single carrier. | "applies_to_roles" | skills/l-01-agent-lifecycles/composition-manifest.json:127-132 |
-| The operation vocabulary extension that publishes `bootstrap` as the ninth operation. | `CAPSULE_OPERATIONS` | mcp/src/agents_remember/models/role_capsules/vocabulary.py:98-110 |
-| The role card this operation is the procedure for. | `# Bootstrap` | skills/l-01-agent-lifecycles/roles/bootstrap.md:6-148 |
-
-## Cross-Repo References
-
-No sibling-repository contract defines this operation block.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
-
-## 260921-ICR-L27 The Operation's Sixth Step Reaches The Knowledge Foundation
-
-`260921-ICR-L27` (`ICR-R27@v1`) inserts a new step 6 — *Reach the repository's knowledge foundation* —
-into this operation and renumbers the steps around it (baseline adoption becomes 7, provider indexing
-becomes 8). "What it covers" gains the foundation among the first hour's stages, and "When it is
-selected" records that a repository which resolves but whose knowledge foundation is not recorded is
-reached by **step 6** rather than by a re-entry.
-
-The step states the seat gate in the code's own vocabulary, and `260921-ICR-L32` changed it on the
-developer's 2026-09-24 ruling: the roles admitted without a task document are the taskless seats
-`chat`, `terminal`, `bootstrap` **and `curator`**, while every other role is refused (`400
-task-binding-required`, "named role scope is required"). So this seat reads the state, reports which of
-the four states it is, and hands the authoring on — to a **taskless curator session** for a repository
-with no task at all, which authors the foundation under the curator's own rules; it **authors no
-records** itself. The step is also explicitly **not conditional** on the operation's other steps:
-it needs a memory line that resolves `HEAD`, not an onboarding corpus and not an adopted baseline, so a
-repository whose knowledge begins before its onboarding is a supported order rather than a defect.
-> **Seat-policy note at L27's bytes (dated 2026-09-24).** This records the policy of the candidate that curation read: code base `06ed70cfcde7e3860ee5b53435727e7512e4335c` plus that leaf's working-tree delta, where a document-less `curator` session was refused `task-binding-required` because `TASKLESS_SEAT_ROLES` was `{"chat", "terminal", "bootstrap"}`. That was true of those bytes and is **superseded** — whether `curator` joined the set was then a product decision under revision, and it was taken in `260921-ICR-L32`.
->
-> **Seat-policy note at these bytes (L32 curation, dated 2026-09-24T17:20+02:00).** At the bytes this curation read — code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus this leaf's working-tree delta — `TASKLESS_SEAT_ROLES` is `{"chat", "terminal", "bootstrap", "curator"}`: a document-less `curator` session is **admitted** and receives the curator capsule, while every other role is still refused `task-binding-required`. Read the sentences above as the policy **at these bytes**, not as a permanent property of the product.
-
-The failure table gains four knowledge rows, and their whole point is that the states stay distinct:
-`not-recorded` (step 6's real work, not a failure), `recorded` (read it before extending it; never
-reinitialize), `unusable` with the shipped refusal code (`selected_input_unavailable` when there is no
-file to open, `snapshot_unavailable` when the bytes are not the expected dataset — report state, path and
-code, and never delete, overwrite or migrate it, and never report it as `not-recorded`), and
-`context-not-admitted` as an **admission failure that is not a knowledge state at all**. The prohibition
-list gains "It does not author the knowledge foundation", and the completion sentence now requires the
-foundation's state — recorded at an identity, or the named state that says it is not.
-
-**This card describes a generated copy**, propagated from
-`skills/l-01-agent-lifecycles/operations/bootstrap.md` by `scripts/sync-skills.py` into this package-owned
-copy and the eight harness starter packages.
-
-## Update History
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "Required inputs" repointed to skills/l-01-agent-lifecycles/operations/bootstrap.md:33-33. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "Normal workflow" repointed to skills/l-01-agent-lifecycles/operations/bootstrap.md:49-49. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "The failure states a new user actually hits" repointed to skills/l-01-agent-lifecycles/operations/bootstrap.md:98-98. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "How conformance is evidenced" repointed to skills/l-01-agent-lifecycles/operations/bootstrap.md:117-117. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "Authority gates" repointed to skills/l-01-agent-lifecycles/operations/bootstrap.md:137-137. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "Failure handling" repointed to skills/l-01-agent-lifecycles/operations/bootstrap.md:158-158. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **body update — the step's seat gate changes.** The step now states that the roles admitted without a task document are `chat`, `terminal`, this operation's own carrier and `curator` (the developer's 2026-09-24 ruling), and that it hands the authoring to a taskless curator session for a repository with no task; the L27 note is retained as true at its own bytes with a second dated note for these bytes. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
-- 2026-09-24T12:44:00+02:00 — 260921-ICR-L27 curator (uncommitted change set on `ar/260921-icr-l27-ar`, code base `06ed70cfcde7e3860ee5b53435727e7512e4335c`): **body update: step 6 and the four knowledge rows.** The new step, the renumbered 7/8, the "reached by this operation's step 6 rather than by a re-entry" selection note, the four failure-table rows that keep `not-recorded` / `recorded` / `unusable` / a refused admission distinct, the prohibition on authoring the foundation, and the completion sentence that now carries its state. **Citation accounting:** the rows this card carries were re-read against this candidate and re-anchored to the lines that now carry each construct. No verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the real stamp.
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `# Lifecycle — Bootstrap` repointed to skills/l-01-agent-lifecycles/roles/bootstrap.md:6-231. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-17T19:30+02:00 — 260915-CAPS-L20 curator: **dead governing-overview body link repaired, and the field brought into agreement with it.** The field named `../../../../../../../overview.md` — which resolves, but only under the onboarding root rather than against this card's own route — while the body link named `../../../../../../overview.md` and resolved card-relative to nothing, so a reader clicking it landed nowhere and the two declarations disagreed. Both now name `../../../../../../../overview.md`, the route-local overview of this card's own directory, so the field and the link agree by construction. Recorded under `260915-CAPS-L20` as this leaf's **S3** (D3, the packaged `l-01-agent-lifecycles` family) and **S4** (D16, govern-or-remove per card). The checker that previously reported this corpus clean now resolves both declarations, so this card reaches the curator's gated repair set instead of passing silently; that is the gap this leaf closed. Superseded history entries above stand unedited — including any entry that asserted an earlier repair this card did not in fact carry, which is the finding rather than an error to erase. No prose, anchor, range or verification stamp was otherwise changed.
-- 2026-09-17T12:55+02:00 — 260915-CAPS-L14 curator: **D3 dead governing-overview link repaired.** This card's `governingOverview` was one directory level short, so it resolved to a path that does not exist instead of the `mcp/` route overview. The card directory sits seven levels below `onboarding/`, so seven `../` steps reach `onboarding/` and the correct target is `../../../../../../../overview.md` (→ `onboarding/mcp/overview.md`). Reversed here: `../../../../../overview.md` (which resolved to the nonexistent `mcp/src/agents_remember/overview.md`) or `../../../../../../overview.md` (→ the nonexistent `mcp/src/overview.md`) → **`../../../../../../../overview.md`**. The body's own `[mcp/overview.md](…)` link was re-pointed with it. No prose, anchor, range or verification stamp was otherwise changed.
-
-- 2026-09-16T17:59+02:00 — 260915-CAPS-L13 curator: created this card for the operation block the leaf
-  added (`CAPS-R13@v1`). It records the selection rule, the free-agent start route stated inside the
-  block itself, the seven ordered steps with their owning surfaces, the seven-row failure inventory
-  (including the unsupported-topology refusal that must never migrate an `ar-memory/` root), the
-  re-derivability conformance standard with its no-independent-acceptor rule, and the authority gates
-  that forbid "fixing" the absent task altitude. Companion card: `roles/bootstrap.md.md`. Verification
-  metadata is left at the leaf base commit because the source is uncommitted — the governed closeout
-  stamps the real code commit, and no hash or fingerprint was invented here.
+- The operation's coverage, selection conditions, free-agent carrier and the removal of any task document.
+- The two developer decisions, the required workspace inputs, and the step that owns each setup surface.
+- The one harness-per-role settings write, its preview and read-back, and the existing file left untouched.
+- The authority gates that keep this seat out of tasks, commits, onboarding and knowledge authoring.
+- The evidence standard (re-derivable claims, preview and read-back, failures reported as failures) and the
+  handoff that names the Architect as the one next step.

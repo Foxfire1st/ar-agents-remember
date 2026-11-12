@@ -1,0 +1,95 @@
+{
+  "path": "mcp/src/agents_remember/models/read_files.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The strict response base and `ToolResponse`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6e13076db126a04a1f38984bfb6dc23884bff6a",
+            "content": "sha256:ca5199c1cb508e337fc2b88eb8e795ae0ed267b3f32f4e4224ae759f0e28db6f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolResponse"
+            },
+            "path": "mcp/src/agents_remember/models/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The module that fills a read result's format fields: a converted tree's `text/v2` card format, sidecar and resolved references, and an unconverted tree's `legacy-format` knowledge section that resolves nothing from sidecars.\n\nAnchor: `FileRead` `converted_card_parts` `legacy_published_intent`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef10b35504e856788e45bc5b3988c4bab198da2f",
+            "content": "sha256:c6d5370cb33984aa7c8997c56fe3af7e65b2ada4e24f4414e62fb0636600b25b",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e205b6901715509bfd25313dc4a389e5a7f45427",
+            "content": "sha256:0ca57880f59cc9f8021c933139b5d8db9d88b2d816febfdd48165479aeb8a7b7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/read_files_format.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The registry mapping `read_ar_files` to this response model (L120).\n\nAnchor: `read_ar_files`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "content": "sha256:3288c8742a935a86092795c9e6cb2278cf5decf5274226c2bc643cff00c18429",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 86
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Frozen implementation of ReadArFilesResponse supporting the stated file behavior.\n\nAnchor: `ReadArFilesResponse`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef10b35504e856788e45bc5b3988c4bab198da2f",
+            "content": "sha256:c6d5370cb33984aa7c8997c56fe3af7e65b2ada4e24f4414e62fb0636600b25b",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ef10b35504e856788e45bc5b3988c4bab198da2f",
+            "content": "sha256:3b5c7df8fc3fd18cbaf2b25613c6cc348de6fbb8fa153e6ccf3e3307af61f0b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReadArFilesResponse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

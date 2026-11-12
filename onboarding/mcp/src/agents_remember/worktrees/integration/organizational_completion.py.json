@@ -1,0 +1,255 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/organizational_completion.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The retained completion plan binds the actual code/memory pair and sibling facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1371516a7452f284d8c1c1ab98bc3f4700ab7f46",
+            "content": "sha256:a222a9a6a76b435d2ccc26e511189676100ac1df0a905f68da2e2ee43b7b800f",
+            "locator": {
+              "kind": "symbol",
+              "name": "organizational_completion_plan"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Pair or ownership failures use the completion error family.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1371516a7452f284d8c1c1ab98bc3f4700ab7f46",
+            "content": "sha256:8bea8f11b3ec88493bc658091ca3146d4ab90d4cc8b03ebfb583ab8d2ac1b911",
+            "locator": {
+              "kind": "symbol",
+              "name": "OrganizationalCompletionError"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Publication conflicts retain exact expected/observed evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1371516a7452f284d8c1c1ab98bc3f4700ab7f46",
+            "content": "sha256:eb9f81b1083e792e20e4e1629fd3928f557c3b92f6ca607b5b543c01e0fa0811",
+            "locator": {
+              "kind": "symbol",
+              "name": "OrganizationalCompletionPublicationError"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1371516a7452f284d8c1c1ab98bc3f4700ab7f46",
+            "content": "sha256:dbb6a8247d73800a6becf36a9344a04dd307a412d65f587ab344926e863481a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "OrganizationalCompletionPublicationState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Classification distinguishes convergent, published and conflicting task bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1371516a7452f284d8c1c1ab98bc3f4700ab7f46",
+            "content": "sha256:dbb6a8247d73800a6becf36a9344a04dd307a412d65f587ab344926e863481a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "OrganizationalCompletionPublicationState"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1371516a7452f284d8c1c1ab98bc3f4700ab7f46",
+            "content": "sha256:b3d7c8eabade500812493d0720240744b9f9c290730f4c56a9958e0ec0def846",
+            "locator": {
+              "kind": "symbol",
+              "name": "classify_organizational_master_completion"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Scope validation pins execution nature, owning master and canonical child.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1371516a7452f284d8c1c1ab98bc3f4700ab7f46",
+            "content": "sha256:15fb21d69d506e4f3243722c0664c58bad16c65273aabc326e66f23a2e9ebdee",
+            "locator": {
+              "kind": "symbol",
+              "name": "_completion_scope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Sibling contracts require exact identities, code ancestry and any external-memory proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1371516a7452f284d8c1c1ab98bc3f4700ab7f46",
+            "content": "sha256:a6e1471526a937d31c808d55f7d106bb0f90c885c371268014e9f924f4c63b01",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_landed_sibling"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1371516a7452f284d8c1c1ab98bc3f4700ab7f46",
+            "content": "sha256:8b44be4452ace9e2311b975ae6d319515a782f6ff1f558d7625f45e0b3c7875d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_sibling_memory_ancestry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "External memory must name the same repository and exact accepted/integrated content commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1371516a7452f284d8c1c1ab98bc3f4700ab7f46",
+            "content": "sha256:7c30bfd7657e72db69cb0ef7ddb5b735830f295c976248cf3379bbdbe6d4ee54",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_sibling_memory_identity"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1371516a7452f284d8c1c1ab98bc3f4700ab7f46",
+            "content": "sha256:fb132d2f9f45fdc76733b45114874661af3da3eb5e924647531a21604b848af1",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_content_commit"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The sibling memory commit must descend from its base and reach the completing source base.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1371516a7452f284d8c1c1ab98bc3f4700ab7f46",
+            "content": "sha256:8b44be4452ace9e2311b975ae6d319515a782f6ff1f558d7625f45e0b3c7875d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_sibling_memory_ancestry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Task-byte preparation binds accepted and intended JSON/Markdown.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1371516a7452f284d8c1c1ab98bc3f4700ab7f46",
+            "content": "sha256:8fd0eac8a5aaead2b081402c80a90a6ae6dc5df969732f62a7beebaeeb578fee",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_organizational_master_completion"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Publication accepts only the exact journaled before/after task byte states.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1371516a7452f284d8c1c1ab98bc3f4700ab7f46",
+            "content": "sha256:eebdff3db0e69354770d5958b5f18dcede0191f5286c9590b9a8874c11ee189c",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_organizational_master_completion"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1371516a7452f284d8c1c1ab98bc3f4700ab7f46",
+            "content": "sha256:dbb6a8247d73800a6becf36a9344a04dd307a412d65f587ab344926e863481a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "OrganizationalCompletionPublicationState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The helper requires Completed status, with a distinct abandonment refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1371516a7452f284d8c1c1ab98bc3f4700ab7f46",
+            "content": "sha256:e5084e8fc5747fadf601f3a1416126ab28bc1efada38803de59d39943e049ae8",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_published_organizational_master_completion"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The live integration classifier reads retained organizational publication state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b26f43d88347635ce856b78d9a72db582cf78e25",
+            "content": "sha256:5544aa3c5f805daf3ce453a97df2429c53ed49e8b38d95c047328da187fad069",
+            "locator": {
+              "kind": "symbol",
+              "name": "classify_integration_operation"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/integration_operation_decision.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

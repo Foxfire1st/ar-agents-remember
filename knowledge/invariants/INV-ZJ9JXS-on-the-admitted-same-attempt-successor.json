@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Proved by the 28-case focused suite on the final bytes (three new repeat cases: dry absence, real completion, branch-gone completion) plus the R2 fix-verification PASS; without it the only supported recovery from an interrupted cleanup raises UnboundLocalError."
+  },
+  "applicability": "Archive-ready repeats of terminal cleanup admitted by a matching operation/arguments archive in a non-completed state.",
+  "conditions": [
+    "A terminal archive is present with matching worktree_cleanup operation and arguments",
+    "The terminal state is other than cleanup-completed",
+    "kept_line is consumed only as the optional landedTips attach, which nothing else requires"
+  ],
+  "exclusions": [
+    "Completed-cleanup and argument-mismatch replays, which return before the branch",
+    "No-remains enclosures on the MIK-R82 rule 5 path",
+    "The first-run gate judgement, which is judged once and never re-judged on repeat"
+  ],
+  "id": "INV-ZJ9JXS",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/260928-MIK-L129-requirement-attempt-journal.md#reviewer-record-l129-code-r2-reviewer-01; notes/reports/role-launch/260928-MIK-L129-reviewer-35a3655d-bd5d-439f-82c8-067a4cd3406c-code-r2.md"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L129-curator-12520929-8d36-45c2-a521-13372a4906f0.handoff-list-R2.json"
+    },
+    "handoffEntry": "MIK-R129@v1",
+    "leaf": "260928-MIK-L129",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "On the admitted same-Attempt successor, archive-ready cleanup does not rejudge the accepted gate or invent an absent judgement record, and repeated cleanup including the branch-gone case completes with verified bound before/after evidence.",
+  "status": "proposed",
+  "supersedes": []
+}

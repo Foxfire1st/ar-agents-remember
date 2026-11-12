@@ -1,0 +1,230 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L178",
+  "rows": [
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CFN8CS",
+      "items": [
+        "sha256:8e364eb8f2abe96331ab27de4169df2aefc344c61d08d418890883fda6fd7da6"
+      ],
+      "reason": "The test route's population, lanes and ownership are unchanged; one existing case is renamed and re-parametrised inside an existing module, and no test file is added, removed or re-laned.",
+      "sources": [
+        {
+          "blob": "f3ea385c073b1b0ac82157d901dc5a333c2b7d76",
+          "path": "mcp/tests/test_knowledge_history_files.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FT6VTY",
+      "items": [
+        "sha256:d2c1b993340270ab1cc871e91657ef52426f9d974bad45e2f5749c4892fa699f"
+      ],
+      "reason": "The card names the renamed case and its five file/base/route shapes, and it qualifies the token population by route: at a master checkpoint, a master-level landing or a sync a closed file is outside it whether or not a comparison base holds it closed, while at a leaf publication the leaf's own file stays inside it even when the base is absent or holds it open. The former (closed, open) case is described by its missing publication operand, where the file is no longer selected, instead of claiming no commit route produces it.",
+      "sources": [
+        {
+          "blob": "f3ea385c073b1b0ac82157d901dc5a333c2b7d76",
+          "path": "mcp/tests/test_knowledge_history_files.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_knowledge_history_files.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "7ffaef8b58255dfc3467752fe1cda9d82a13be34",
+            "content": "sha256:8a0b8746cd68f22807648e94f41704cccbc8c7c1abc64ad7a815e39e7d7a081c",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_history_rows"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py"
+          },
+          "before": {
+            "blob": "9ca50792c587d875db42b43a4db1b343156d7541",
+            "content": "sha256:bbfb4e5fc19d3289284ad490ee82a85cd37c316601ebe390509c83520ac15239",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_history_rows"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py"
+          },
+          "id": "RLZ-W32FSC"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-RN6SSK",
+      "items": [
+        "sha256:e6204da5e050f2bb2c9c0f2066fd2d7bca486c2516aaf71a228b0704cebbab68"
+      ],
+      "reason": "The record's promise does not change: item-token validation still judges strictly the history rows a route publishes, and stored closed-base bytes stay readable. What changed is the population it judges. Its realization RLZ-W32FSC sits inside the item loop of check_history_rows, which now iterates checked_history_files instead of filtering every parsed file on a comparison base, so the stored rationale — that it retained 'the exact closed-base exemption' — no longer describes the code. The entry keeps its ID and is re-anchored at the candidate with a rationale that states the shared population.",
+      "revision": 1,
+      "subject": "INV-THFEVY"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "7ffaef8b58255dfc3467752fe1cda9d82a13be34",
+            "content": "sha256:a59ebf04e95dbaa0142160d540a903daae6d73891059a7e42bc8e2c8eb182ec4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py"
+          },
+          "before": {
+            "blob": "9ca50792c587d875db42b43a4db1b343156d7541",
+            "content": "sha256:ea140ba0179b98af54a300e8acf282f285b7c1d453c44cbaf1f355aa1477dc93",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py"
+          },
+          "id": "RLZ-X21JJV"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-SFVQSS",
+      "items": [
+        "sha256:cdaab1392c22fef32004e9ee0420b84b7d0c5cbd1513c5db2d46f97ba0cc63f9"
+      ],
+      "reason": "The record stays retired and its statement does not change: the rule-text hunks it once bound to the rule entries' obligations are the same places. Its file-level realization RLZ-X21JJV is the whole-file entry for this module's rule text, and this leaf rewrote that text — the docstring bullet that says which files the two history checks read and the item loop's own comment — so the entry is re-anchored at the candidate and keeps its ID.",
+      "revision": 1,
+      "subject": "INV-MKZ0EA"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-VGSXY5",
+      "items": [
+        "sha256:ad9f7dcb32b5ada320afdd5ccfc2fb9849d7035c4955cb8d7939736db2e20c01"
+      ],
+      "reason": "The card states the item check's scope as the re-anchor check's population, with the frozen-closeout case, the MIK-R52 rule 5 cover at master routes and the negative consequence for a closed file outside the AR routes. Citation groups 6, 7 and 19 now bind to the constructs their captions claim - the merge_reports rule body, both registrations with writer_reports=True and merge_reports=True, and the leaf-publication refusal beside the merge deferral - after seven targets that named unknown-subject text were removed.",
+      "sources": [
+        {
+          "blob": "7ffaef8b58255dfc3467752fe1cda9d82a13be34",
+          "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "examined": [
+        {
+          "id": "INV-0T84PZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-0XMNQZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-2Q8RPR",
+          "revision": 4
+        },
+        {
+          "id": "INV-49E649",
+          "revision": 5
+        },
+        {
+          "id": "INV-656CYW",
+          "revision": 2
+        },
+        {
+          "id": "INV-89A5AN",
+          "revision": 1
+        },
+        {
+          "id": "INV-9ZBTVA",
+          "revision": 1
+        },
+        {
+          "id": "INV-ANKPPE",
+          "revision": 1
+        },
+        {
+          "id": "INV-BEYEV2",
+          "revision": 1
+        },
+        {
+          "id": "INV-D2HZQ8",
+          "revision": 1
+        },
+        {
+          "id": "INV-FYZQK0",
+          "revision": 1
+        },
+        {
+          "id": "INV-G0Y4VR",
+          "revision": 2
+        },
+        {
+          "id": "INV-GSEMMW",
+          "revision": 3
+        },
+        {
+          "id": "INV-HR2JKQ",
+          "revision": 1
+        },
+        {
+          "id": "INV-HWAWFT",
+          "revision": 4
+        },
+        {
+          "id": "INV-KTMBMN",
+          "revision": 1
+        },
+        {
+          "id": "INV-MS9BMJ",
+          "revision": 4
+        },
+        {
+          "id": "INV-N5RBFK",
+          "revision": 1
+        },
+        {
+          "id": "INV-WV1YQE",
+          "revision": 3
+        },
+        {
+          "id": "INV-XN0FG8",
+          "revision": 3
+        },
+        {
+          "id": "INV-YZ45D7",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZGFZXT",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-ZA7NJ3",
+      "items": [],
+      "reason": "Examined the family's guarantee and all twenty-one members at their current revisions. The joint guarantee is unchanged: it already requires that gate-input reuse and frozen history remain exact. The member list now also names INV-HR2JKQ, which states that half for the item check — a leaf's own history file is judged at its publication, and a closed file of one of the master's leaves is not judged again at a master checkpoint, a master-level landing or a sync. No route changed.",
+      "revision": 7,
+      "subject": "FAM-61DY2V"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ZXG0AT",
+      "items": [
+        "sha256:014188d6932d44fe62527bf1fe5dc0f095627bf50f6d479d5ef75821480fbcb6"
+      ],
+      "reason": "The route registers the same rules with the same reporting policy and the same entry point; the change moves one rule's file scope inside an existing module, so no route meaning, member or entry point is added, moved or removed. The overview's history-row paragraph speaks about re-anchor reading and stays true, and the item scope is stated in the file card.",
+      "sources": [
+        {
+          "blob": "7ffaef8b58255dfc3467752fe1cda9d82a13be34",
+          "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/overview"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

@@ -1,0 +1,39 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The worklist and pure stored-item rule must preserve the same supersession semantics; otherwise an already adopted alternative reopens a closed developer decision and blocks unrelated leaf publication."
+  },
+  "applicability": "Reconsideration of base decisions in a converted leaf and the pure satisfying function applied with that evaluation's supplied superseded-decision set.",
+  "conditions": [
+    "Supersession is derived from decision records of both the base and candidate; reconsider_on evaluation itself ranges only over base decisions.",
+    "The fresh worklist skips each superseded base decision before constructing items; a supplied superseded set closes a stored item with a matching parsed decision ID.",
+    "Gate and direct judging use the worklist computed for their exact current evaluation; the registered two-argument predicate retains its empty default."
+  ],
+  "exclusions": [
+    "A new candidate decision raises no reconsideration item merely by being new.",
+    "An unrelated candidate decision or an omitted superseded context does not suppress an unsuperseded item.",
+    "No new trigger, transitive reconsideration, evaluation of reconsider_when prose, or changed still_rejected/raise meaning.",
+    "No promise to close a manually constructed historical item through the unchanged two-argument registered predicate."
+  ],
+  "id": "INV-83YJKE",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/reviewer/d2a83c4f-1c11-5b23-8b93-8ae61419c671/round2-record-correction/verdict.md; journal #l148-r002-c01-reviewer-record; unchanged A002 plus L148-A002-correction-01; all CODE findings closed."
+      ],
+      "path": "knowledge-wave1-rebound.json"
+    },
+    "handoffEntry": "MIK-R148@v1",
+    "leaf": "260928-MIK-L148",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A decision superseded in the same leaf raises no reconsideration item.",
+  "status": "accepted",
+  "supersedes": []
+}

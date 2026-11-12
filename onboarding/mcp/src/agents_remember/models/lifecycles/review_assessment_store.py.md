@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/lifecycles/review_assessment_store.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/lifecycles/review_assessment_store.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T04:20+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [lifecycles overview](overview.md)
@@ -75,16 +65,16 @@ self-invalidating sequence.
 - **The assessed database is not this record's home.** The record persists through the coherence
   authority; no knowledge-store table, column or payload was added for it.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The exact inputs one assessment examined, every field an identity the coherence observation already captured. | `AssessmentInputs` | mcp/src/agents_remember/models/lifecycles/review_assessment_store.py:87-108 |
-| The declaration builder and the required-kind policy it validates against. | `examined_input_declaration` | mcp/src/agents_remember/models/lifecycles/review_assessment_store.py:111-157 |
-| The persistence entry that stamps the authenticated author and role. | `bind_assessment` | mcp/src/agents_remember/models/lifecycles/review_assessment_store.py:159-196 |
-| The collection-level currentness reads and the identification refusal. | `require_assessments_are_identified`; `assessment_currentness_for_record`; `require_current_assessments` | mcp/src/agents_remember/models/lifecycles/review_assessment_store.py:197-214; mcp/src/agents_remember/models/lifecycles/review_assessment_store.py:215-230; mcp/src/agents_remember/models/lifecycles/review_assessment_store.py:231-252 |
-| The record's own edge per stored assessment, and the edge-name spelling a reader resolves. | `review_record_edges`; `assessment_edge_name` | mcp/src/agents_remember/models/lifecycles/review_assessment_store.py:287-309; mcp/src/agents_remember/models/lifecycles/review_assessment_store.py:310-327 |
-| The evidence-dependency contract and policy registry this module declares against. | `build_evidence_dependencies`; `dependency`; `canonical_sha256` | mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:243-252; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:255-302; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:354-358 |
+### Repo-Internal References
+
+- The exact inputs one assessment examined, every field an identity the coherence observation already captured. [1]
+- The declaration builder and the required-kind policy it validates against. [2]
+- The persistence entry that stamps the authenticated author and role. [3]
+- The collection-level currentness reads and the identification refusal. [4]
+- The record's own edge per stored assessment, and the edge-name spelling a reader resolves. [5]
+- The evidence-dependency contract and policy registry this module declares against. [6]
 
 ## KS-R15@v1 Assessment Collection
 
@@ -96,14 +86,3 @@ the assessed database.
 Delivery note carried here so a later reader does not have to re-derive it: the declaration a
 validator re-checks is the same one a reader resolves the evidence bytes through, which is why the
 `evidence-bytes` edges are derived from the recorded bytes rather than from the citations.
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-
-- 2026-09-18T06:05+02:00 — 260915-KS-L15 curator (uncommitted change set on `ar/260915-ks-l15`, base
-  `e963a01c`): created this card for the assessment-collection module the leaf added — the exact
-  examined-input declaration under the new `review-assessment/v1` policy, the authenticated-authorship
-  stamp, the collection-level currentness reads, the record-side `review-record` edge that keeps the
-  binding out of the self-invalidating sequence, and the boundaries that exact coverage stays in the
-  model module and persisting endorses nothing. Verification metadata remains closeout-owned; no
-  acceptance or certification claim is made.

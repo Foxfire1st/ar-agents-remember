@@ -1,0 +1,208 @@
+{
+  "path": "dashboard/src/panels/review/KnowledgeStatements.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "fe55994283f7075d41a5b4845f429dd0d76df6b5",
+        "content": "sha256:0367e06be6d7063c922e36f84c6fa143abc6bc39d41d1cc779f6da1fa2bee0e3",
+        "locator": {
+          "kind": "symbol",
+          "name": "oneSidedDiff"
+        }
+      },
+      "id": "RLZ-0JSFAD",
+      "invariant": "INV-811GC5",
+      "origin": {
+        "handoffEntry": "RP09",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The known-absence statement diff passes fit without introducing an internal pane height cap.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "fe55994283f7075d41a5b4845f429dd0d76df6b5",
+        "content": "sha256:db4b8a0a32ca0af3703ce484e4dd4ec7391704cfc72775053fd80622eca6f381",
+        "locator": {
+          "kind": "symbol",
+          "name": "availableContent"
+        }
+      },
+      "id": "RLZ-NYGXRB",
+      "invariant": "INV-811GC5",
+      "origin": {
+        "handoffEntry": "RP09",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The available statement beside an unreadable operand passes fit to FilePane rather than creating another scroll box.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "fe55994283f7075d41a5b4845f429dd0d76df6b5",
+        "content": "sha256:251bdb1175b093c9b53325d620615c4a1d08aed32b7ac62459f2d383154acae2",
+        "locator": {
+          "kind": "symbol",
+          "name": "bothPresent"
+        }
+      },
+      "id": "RLZ-SR0E5K",
+      "invariant": "INV-811GC5",
+      "origin": {
+        "handoffEntry": "RP09",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The two present recorded statements pass fit to DiffPane so their content belongs to the page scroll owner.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "fe55994283f7075d41a5b4845f429dd0d76df6b5",
+        "content": "sha256:a667fc3ff593802fe44012abfe3ffac077cc366db14fe4ddade1cf72080370b8",
+        "locator": {
+          "kind": "symbol",
+          "name": "KnowledgeStatements"
+        }
+      },
+      "id": "RLZ-WC4GB0",
+      "invariant": "INV-6P3WZF",
+      "origin": {
+        "handoffEntry": "MIK-L154 knowledge one-sided statements",
+        "leaf": "260928-MIK-L154"
+      },
+      "rationale": "KnowledgeStatements chooses the content/diff path by the two declared side states, preserving available words and named absence without manufacturing an unreadable operand.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "22": {
+      "note": "The exported component counts declared-present sides and retains both state lines outside its two-sided branch.\n\nAnchor: `KnowledgeStatements`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fe55994283f7075d41a5b4845f429dd0d76df6b5",
+            "content": "sha256:f7ee053e85c0e265023f7d0d267a21981d0df64f2a3f58e175ad3fad515ffa87",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "The shared two-sided and one-sided diff calls preserve operand language and layout; the available-content call explicitly refuses a diff; all three request fit panes.\n\nAnchor: lines 32-94",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fe55994283f7075d41a5b4845f429dd0d76df6b5",
+            "content": "sha256:2186a0444295a637601addbc32a0d48572917fd08682d8bcc9d06feb98eb1232",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 32
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "Supporting current owner mcp/src/agents_remember/models/knowledge/review.py\n\nAnchor: `ReviewSideContent`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
+            "content": "sha256:4d0b65fa6dad1cd50ffccbef6a9438db99bd5d650c265f6820bac0cf5e6bf315",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "Supporting current owner mcp/src/agents_remember/application/review_statement_sides.py\n\nAnchor: `side_content`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a2cdf1b16e61a977a5f7246ee6647b6114f1413d",
+            "content": "sha256:77b2dd0bb6c24c9d35c29ad70bec1e7b9d25270df8c4c135d518fef6673f6ecf",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/review_statement_sides.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "Supporting current owner dashboard/src/panels/review/SubjectReview.tsx\n\nAnchor: `SelectedStatement`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65da80233c61fee36508e14b7c87ed65437a34a7",
+            "content": "sha256:b9c5a10b14f877688caa72fb3a2ee6248b43005dc3fcd20eac47e4496bc67037",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/SubjectReview.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "Supporting current owner dashboard/src/panels/review/IntentWordDiff.tsx\n\nAnchor: `OneSidedStatement`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44feb721874f617dff2c7f015005def20ce3d63c",
+            "content": "sha256:44c7ca6227ae8c7184ae08bd065c56b15a8eb7193fe6b29b0f6fc025be4e85b2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/IntentWordDiff.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "Supporting current owner dashboard/src/panels/review/IntentWordDiff.tsx\n\nAnchor: `IntentStatementBody`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44feb721874f617dff2c7f015005def20ce3d63c",
+            "content": "sha256:44c7ca6227ae8c7184ae08bd065c56b15a8eb7193fe6b29b0f6fc025be4e85b2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/IntentWordDiff.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "Supporting current owner dashboard/src/panels/review/KnowledgeStatements.test.tsx\n\nAnchor: file",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "260d7c2a75a75150a56ab0c840a253df4f94ff68",
+            "content": "sha256:9c2cfe866785f203e1788107fe2467c8e09a5109385b461b4f91d5dd6c9cf117",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/KnowledgeStatements.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

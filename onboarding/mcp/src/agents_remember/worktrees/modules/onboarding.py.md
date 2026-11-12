@@ -1,275 +1,129 @@
 # mcp/src/agents_remember/worktrees/modules/onboarding.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/worktrees/modules/onboarding.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-15T00:53 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
-[Governing route overview](overview.md)
+[overview](overview.md)
 
 ## Purpose
 
-Plans and applies closeout-time onboarding metadata, route overview metadata,
-route index, and entity fingerprint refreshes for changed code paths.
+Plans changed-source onboarding coverage and performs entity fingerprint and generated route-index refresh. Its converted source-bound trace entry reports current onboarding answers and named repair findings.
 
-## CCR-R12@v5 Current Refresh Boundary
-
-The normal closeout transaction uses the raw refresh helpers to stamp existing sidecar and route
-overview verification metadata, refresh entity fingerprints, and regenerate route indexes after
-the accepted code commit. `refresh_onboarding_metadata_for_context` and
-`refresh_route_overview_metadata_for_context` do not perform memory-quality, curator-coherence, or
-semantic body validation on this path; those validators remain explicit preparation/curation
-owners. This separation lets closeout publish mechanical metadata while keeping semantic review
-outside the transaction. Full suites and quality checks are explicit developer actions.
 
 ## Code Commentary
 
 ### Logic
 
-`contract_memory_verified_commit` chooses the accepted memory-content commit, or the task memory base before a closeout has recorded one. A ledger-cache commit is never a body-review baseline. This keeps the existing dirty-plus-committed memory membership tied to real memory content.
+`onboarding_refresh_plan_for_context` resolves each changed source through the exact context storage rules. Disabled sources are skipped. A dependent document is not a source: the planner also takes the dependent document paths (`dependent_documents`, read from the memory root's `knowledge/dependents` when none are handed in) and skips any changed path one of them names, so a document with a dependent record still gets no card and no entry (MIK-R124 rules 1 and 6). `onboarding_refresh_plan` reads the dependents of both memory sides through `leaf_onboarding_trace_sides` and raises when either side cannot be read, and the trace gate turns that into its named incomplete finding. Unsupported or missing working-path cards block; committed-range gaps are reported as `unonboarded`. `working_paths=None` treats every changed path as working. Long-path-safe filesystem probes determine presence.
 
-The module finds changed source sidecars — gating each changed source on the
-boolean `resolver.is_sidecar_storage(storage)` predicate (sidecar-backed storage
-modes only) — validates required verification metadata, updates
-`lastVerifiedCommitHash` and `lastVerifiedCommitDate`, parses
-route overview metadata, updates affected route overviews, runs generated route
-index refreshes, parses repo entity fingerprint tables, computes
-`git-blob-set-v1` fingerprints, and updates affected entity rows after the code
-commit exists. The shared metadata/route parsing helpers
-(`onboarding_metadata_row`, `markdown_table_cells`, `table_metadata`,
-`normalize_route`, `route_contains_changed_path`, `ROUTE_OVERVIEW_DOC_TYPES`)
-live in `kernel/onboarding_doc.py` and are re-exported here as a facade.
+`onboarding_trace_gate_for_context` takes one `OnboardingTraceInputs` value carrying the candidate `code_blobs` mapping, the leaf worklist run's identical-copy groups and the working paths, delegates source-current answer evaluation to `onboarding_trace_result`, and returns repair findings. `_require_onboarded_sources` raises `RuntimeError` for missing/unsupported cards and otherwise returns its plan; the gate catches that error and prepends the corresponding missing/unsupported-card finding without discarding trace findings. Curator controller dispatch reports incomplete when converted sides are unavailable; no legacy body/history fallback remains.
 
-`refresh_onboarding_metadata_for_context` also stamps the task's regenerated citation documents
-(`_refresh_regenerated_documents`, 260731-EFA-L16): the citation gate clears a changed claim by
-making its citation CURRENT, which the fixer achieves without the document's own source file
-changing, so those documents are outside the changed-source plan — any onboarding document the
-task touched in the memory worktree that carries verification metadata advances to the new code
-commit here, except route overviews and entity catalogs (their own refresh passes own them).
+`identical_changes_from_run` is the one strict reader of a run's `identicalChanges` (MIK-R177): a non-mapping map, a non-string or empty key, a non-list entry, a member that is not a non-empty string, an empty member list, or a group that omits its own representative each raise `IdenticalChangesUnreadable` naming the entry. Nothing is dropped or coerced, so a malformed group can never shorten into a one-source item, and a genuine empty mapping stays empty. The gate groups its items with exactly the groups `worklist_onboarding` uses, so an item a card row answers in the worklist is the item the gate raises; `identical_changes` carries no default, so no caller can judge ungrouped items by omission.
 
-`onboarding_refresh_plan_for_context` carries the two-tier responsibility split
-(issue #83) through its keyword-only `working_paths`: paths in the working set
-without onboarding land in the blocking `missing`/`unsupported` buckets exactly
-as before, while committed-range paths (transported merges, pre-committed
-slices) without onboarding collect in the non-blocking `unonboarded` list, so
-already-onboarded artifacts gate regardless of author but never-onboarded files
-are not blanket-onboarded at closeout. `working_paths=None` keeps the strict
-legacy semantics. `contract_memory_verified_commit(contract)` resolves the
-body-gate baseline (`memory_content_commit` →
-`memory_base_commit`), `_changed_memory_paths` widens gate membership to dirty
-∪ committed-since-verified memory paths, and `_joined_sample` caps gate error
-path joins at `PATH_SAMPLE_LIMIT`.
+Entity refresh parses the catalog table into rows and plans by three rules: a row is in scope when
+its evidence touches a changed path, when its evidence list differs from the same row at the leaf's
+memory base (`entity_evidence_at_base`), or when the base holds no such row. A row in scope whose
+algorithm is not `git-blob-set-v1` is reported unsupported rather than planned.
+`entity_fingerprint_plan_problems` asks **every** catalog row, planned or not, for evidence paths the
+code candidate tree does not hold, and that absence check is the unconditional one. The other two
+diagnostics stay with the plan: an unsupported algorithm is read from the plan's unsupported rows,
+and a missing fingerprint value is reported only for a row the plan requires. One line per row
+carries every fault that applies to it, with its remedy;
+`entity_fingerprint_plan_refusal` renders those lines as the one refusal, and both the closeout's
+candidate verdict and the refresh before the memory commit ask it. The missing-fingerprint and
+unsupported-algorithm remedies, the refresh's missing-fingerprint refusal and the missing-card
+refusal of `_require_onboarded_sources` all direct the operator to run the `l-01-agent-lifecycles`
+Curator procedure and then rerun the closeout. A value is `git-blob-set-v1` over
+the sorted path/blob identities at the **code commit's tree**
+(`compute_git_blob_set_fingerprint(..., tree=...)`), never at `HEAD`. `_tree_paths` reads the
+candidate tree's path set once, and an unreadable tree, base or commit refuses by name with its step
+and the identity it read (`_commit_tree`, `_row_fingerprint`).
 
-It also enforces the closeout content gate. `classify_sidecar_updates` sorts
-each changed source's sidecar by meaningful body change (content outside the
-verification metadata rows and Update History, vs the last verified memory
-commit via `commit_text_or_none` — `memory_verified_commit`, falling back to
-HEAD when empty) and new Update History lines into four cases:
-body+history passes; body without history is `untraced` (traceability);
-history-only still recognizes a historical `No content impact:` marked entry and is collected as
-`attested_no_impact`; everything else (unchanged, metadata-only, unmarked history-only) is
-`stale`. The verified-commit baseline means sidecar
-work already committed in the memory worktree before closeout still classifies
-honestly, and a new sidecar committed early passes like an untracked one
-(absent at the baseline). `require_updated_sidecar_content` first applies the exact accepted
-no-content identities supplied by the current curator-coherence authority, then raises on any
-remaining `stale`/`untraced` content. Only a matching `stale` identity can move to
-`attested_no_impact`; `untraced` content remains closed. The check returns the attested source
-paths so closeout payloads can surface them and accepts an explicit `memory_tree` (the
-worktree wrapper passes the memory worktree) and safely skips sidecars that do
-not resolve under that tree rather than reporting false stale findings;
-`validate_onboarding_refresh_plan_for_context` wires it into the worktree
-closeout path before the code commit.
+The curator side of the same rows is read-only:
+`entity_evidence_findings_for_candidate(context, code_worktree)` captures the leaf's own candidate
+tree and returns one finding per (catalog row, absent path), naming the file, the row and the path
+and the clearing action; a candidate Git cannot read returns one incomplete finding rather than an
+empty pass.
 
-Route overviews get the same body gate scoped by domain evidence. The refresh
-plan includes both overviews whose `sourceRoute` contains a current-leaf code
-path and overview documents changed in the memory worktree since the task's
-verified memory baseline. The latter closes the synced-source deadlock: a
-curator may repair older route drift during this task even when the source
-change predates the leaf's current code range, and closeout will validate and
-stamp that authored overview in the same transaction.
-
-`validate_memory_refresh_attestations` composes the existing sidecar and nearest-governing
-route-overview body gates independently, aggregates both classifications, and raises one
-refresh-validation error if either surface refuses (`onboarding.py:865-943`). Curator
-preparation and closeout therefore share the same current-memory body/history/no-impact
-checks instead of accepting a green result from only one surface.
-
-Direct task editing is itself domain evidence for those baseline-relative
-overview candidates. Their body/history gate therefore still rejects an
-unchanged or metadata-only document and requires substantive route prose plus
-history (or the existing specific no-route-impact disposition); it does not
-turn changed-memory membership into a blanket attestation. The one generated
-exception is a pure citation-coordinate refresh: `_citation_coordinates_only_changed`
-normalizes only complete final reference-table cells shaped as
-`path:line[-line]`, so a sanctioned citation-fixer range shift can be stamped
-without inventing an Update History claim. Any changed prose, anchor, path,
-table shape, non-reference cell, or other body content remains visible and
-therefore still needs truthful history.
-
-`_nearest_governing_route` picks the longest matched route per changed path
-(`.` loses to any deeper route); `classify_route_overview_updates` classifies
-only those nearest-governing overviews as stale / untraced / attested (including still-recognized
-historical `No route impact:` markers), while ancestor-matched overviews — including the repo-root
-overview matched by happenstance — are collected as
-`stamped_without_body_review` (skipped when their body was reviewed anyway) and
-never gate closeout.
-
-Since 260731-EFA-L2 that classification is three named steps, and
-`classify_route_overview_updates` is just the loop that appends each returned bucket name:
-
-- `_overview_revision(overview_path, *, memory_root, baseline_ref, changed_memory)` → `(body
-  meaningfully changed, history lines added, citation-coordinates-only) | None`. **`None` is not a verdict** — it means the
-  overview is outside the memory tree or absent from the baseline, neither of which is a stale
-  signal, so those overviews drop out of the classification entirely.
-- `_governing_overview_bucket(..., allow_citation_only, citation_only)` → the gating bucket for
-  a domain-evident overview: `None` once it is properly updated (body changed *and* history added),
-  or for an allowed task-edited citation-coordinate-only refresh; otherwise
-  `untraced` / `attested_no_impact` / `stale`.
-- `_route_overview_bucket(overview_path, *, memory_root, baseline_ref, changed_memory,
-  evidence)` → the bucket for one matched overview. Source and task-edited evidence
-  classify like a sidecar, with the citation-only exception restricted to the
-  latter; an ancestor match returns
-  `stamped_without_body_review` when its body went unreviewed, and `None` otherwise.
-
-`OnboardingBodyGateEvidence` groups the memory tree, verified-memory baseline, and candidate-bound
-accepted identities at the body-gate boundary. `refresh_onboarding_metadata(contract, change)`,
-`refresh_onboarding_metadata_for_context(context, change, *, memory_tree=None,
-memory_verified_commit="", accepted_no_impact=...)` and
-`refresh_route_overview_metadata_for_context(context, change, *, memory_tree=None,
-memory_verified_commit="", accepted_no_impact=...)` all take a `VerifiedChange` (from
-`modules.models`)
-in place of the separate `changed_paths` / `verified_commit` / `verified_date` / `working_paths`
-arguments, so a refresher cannot stamp one commit's hash beside another's path list.
-`require_updated_route_overview_content` applies only matching candidate-bound no-route-impact
-decisions, then raises on remaining stale/untraced content and returns accepted routes;
-`validate_route_overview_refresh_plan_for_context` runs it (with `memory_tree`
-and `memory_verified_commit` plumbed from the worktree wrapper) before the code
-commit. New overview files absent from the verified baseline pass without
-classification.
-
-MX-FIX-4 keeps route-index authority attached to that same resolved context:
-both preview and apply pass `context.storage` explicitly to
-`build_route_indexes()`. Closeout therefore cannot generate derived memory
-using a different path-rule interpretation from the refresh plan it validated.
+Route-index preview and apply pass explicit roots, repository and `context.storage` to `build_route_indexes`; derived indexes cannot select a different path-rule authority. `route_index_refresh_problems` asks that same planner as a dry run and returns one line naming the step, the offending input and the error when it cannot read or render them, which is the route-index half of the closeout's candidate verdict.
 
 ### Conventions
 
-This module owns closeout orchestration and classification; shared Markdown
-parsing stays in `kernel/onboarding_doc.py`, deterministic source census stays
-in `kernel/route_index_census.py`, and rendering stays in
-`kernel/route_index.py`.
+This module owns coverage planning, the curator trace entry and derived entity/index refresh. Shared Markdown parsing remains in kernel; source census and index rendering retain their separate kernel owners.
 
 #### Invariants And Boundaries
 
-- Sidecar and nearest-governing overview body/history gates run before code
-  commit; ancestor overviews are reported but do not become false blockers.
-- A route overview changed since the verified memory baseline is planned and
-  body-reviewed even when its source drift predates the current leaf code range.
-- Baseline-relative membership supplies domain evidence, not permission for a
-  metadata-only stamp; stale and untraced authored overviews still refuse.
-- Only task-edited overview changes confined to generated citation coordinates
-  may pass without invented history; substantive body and reference-identity
-  changes remain gate-visible.
-- Working-tree missing onboarding blocks, while transported committed-range
-  gaps remain explicitly reported as `unonboarded`.
-- Route-index preview and apply must use the exact `context.storage` authority
-  resolved for the refresh plan; no builder default may replace it.
-- Generated indexes and entity fingerprints are derived after their owning
-  authored bodies are validated.
+- Blocking missing/unsupported onboarding is limited to working paths; transported committed gaps remain reported.
+- Source-current `updated` rows require counted Markdown/reference edits; `no_impact` answers unchanged contracts, and later source movement reopens an answer. Realizes/proves-only and mechanical anchor edits do not count.
+- Curator-coherence no-impact does not substitute for the onboarding row.
+- Route-index preview and apply use the exact resolved context storage authority.
+- Entity fingerprints and route indexes are derived data, not semantic acceptance or verification stamps.
 
 ### Todos
 
-None known for the MX-FIX-4 closeout caller boundary.
+None known.
 
-## Docs References
+## Converted Onboarding Traces
+
+The converted curator trace entry remains source-bound. It requires one `OnboardingTraceInputs` value — candidate blobs, the run's identical-copy groups and the working paths — returns trace and missing-card repair findings, and never falls back to legacy history/stamps. Missing converted comparison sides are incomplete.
+
+
+## Evidence
+
+- Every catalog row is evidence-checked against the code candidate tree, planned or not; absent evidence is the unconditional check, while an unsupported algorithm and a missing fingerprint value are diagnosed from the plan's rows. [15]
+
+- Route-index refresh accepts the resolved storage authority and consumes one deterministic source snapshot. (`build_route_indexes`; `route_index_source_snapshot`) [12]
+
+- Source-current rows govern converted onboarding; updated needs a counted Markdown/reference edit and current candidate blob binding. [7]
+
+
+- The trace wrapper keeps the trace's repair findings, calls _require_onboarded_sources, catches its RuntimeError for missing or unsupported sidecars and prepends that finding. [3]
+
+
+
+
+
+- The one entity refusal the closeout asks before the code commit and again before the memory commit. [16]
+- A row's value is computed over the code commit's own tree, not `HEAD`. [17]
+- The candidate tree's path set is read once, and an unreadable tree refuses by name. [18]
+- A row is in scope when its evidence list differs from the same row at the leaf's memory base, or the base holds no such row. [19]
+- The route-index refresh's own deterministic refusals, asked through its planner. [20]
+- The curator's memory-quality finding for a row citing a path the candidate lacks, never raising on an unreadable candidate. [21]
+
+### Docs References
 
 No external Domain Documentation source is configured for this slice. The current behavior is repository-owned and is supported by the source references below.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured external source applies. | — | — |
+No configured external source applies.
 
-## Repo-Internal References
-
-The following current source boundaries establish the ledger-retirement behavior.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `contract_memory_verified_commit` chooses accepted memory content or the task base as the review baseline. | `contract_memory_verified_commit` | mcp/src/agents_remember/worktrees/modules/onboarding.py:55-57 |
-| `_changed_memory_paths` combines dirty and committed-since-verified paths from that baseline. | `_changed_memory_paths` | mcp/src/agents_remember/worktrees/modules/onboarding.py:60-71 |
-
-Current production closeout refuses missing or unsupported source sidecars before memory commit (`validate_onboarding_refresh_plan_for_context`, mcp/src/agents_remember/worktrees/modules/onboarding.py:826-864). The metadata wrapper passes the verified change and accepted no-impact set into the context refresh (`refresh_onboarding_metadata`, mcp/src/agents_remember/worktrees/modules/onboarding.py:1069-1081). External closeout refreshes entity fingerprints before memory-content publication (`_refresh_external_memory`, mcp/src/agents_remember/worktrees/modules/closeout_external.py:121-147); the downstream cache is derived from attributed Git history and is not a body-review baseline. These contracts are source-backed; the removed support slices are not current test evidence.
+### Repo-Internal References
 
 
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Drift checking verifies the same sidecar and entity fingerprint metadata maintained here. (`classify_entity_fingerprint`; `classify_sidecar_onboarding_units`) | `classify_entity_fingerprint` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py:337-395 |
-| Route-index refresh accepts the resolved storage authority and consumes one deterministic source snapshot. (`build_route_indexes`; `route_index_source_snapshot`) | `build_route_indexes` | mcp/src/agents_remember/kernel/route_index.py:184-235 |
+Cache data is not a review baseline or an additional output.
 
-| Sidecar and route-overview attestations are checked independently and aggregated before refresh publication. (`validate_memory_refresh_attestations`) | L867-L942 | [mcp/src/agents_remember/worktrees/modules/onboarding.py](mcp/src/agents_remember/worktrees/modules/onboarding.py) |
 
-## Cross-Repo References
+
+
+### Cross-Repo References
 
 Closeout can coordinate code and external-memory worktrees, but no external
 implementation governs this module.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No additional cross-repository evidence applies. | — | — |
+No additional cross-repository evidence applies.
 
-## Update History
 
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): clamped mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py:337-343 to mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py:337-342, the range the cited construct now occupies
-- 2026-09-15T00:53 UTC — LCA-L9 working-candidate curation: retired ledger Git authority in this file-specific boundary; preserved real Git and lifecycle safeguards and prior history. Source and diff reviewed, source-sha256=f8508321721044ce85bb464c13146d4ff9a93843f25c858575bda1d3bad10c1a. Existing verification commit/date remain unchanged until an actual source commit is available; no test or acceptance claim.
 
-- 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
 
-- 2026-09-10T00:00+02:00 — CCR-L42 current-candidate curation: documented the shared sidecar and route-overview attestation composition used by curator preparation and closeout; verification metadata remains closeout-owned.
-- 2026-09-08T14:39:58+00:00: Generated citation repair: `classify_sidecar_onboarding_units`; `classify_entity_fingerprint` repointed to mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py:289-342; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py:337-395. No content impact: mechanical anchor-range projection bound to citation source snapshot 5911742cfcc7a53db92b36b80bac02ee49a67204b190c0311a81bcc2e388ad59; claim bytes unchanged; generated by ccr-r10@v1.
 
-- 2026-09-05T08:46+02:00 — L31 scoped MCP curator: reviewed 1 declined citation claim against frozen code `ea35964985f30080488270e71ac81657ac40682b`. Separated four forcing tests and replaced one-line anchors with complete behavioral evidence. Existing verification hash/date are retained; this scoped source read and citation repair do not certify the entire card or a gate.
+- Converted-tree classification is layout-marker based at the knowledge-gate owner, not in this module. [1]
 
-- 2026-08-29T18:29+02:00 — Routed candidate-bound no-content/no-route decisions through the body
-  validation and refresh boundaries. Only unchanged stale content is eligible; untraced edits
-  remain fail-closed.
+- The missing-fingerprint remedy directs the operator to the `l-01-agent-lifecycles` Curator procedure. [22]
+- The missing-card refusal directs the operator to the Curator procedure before rerunning closeout. [23]
 
-- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1 candidate-11 curation rebind: refreshed formatter-moved source coordinates against accepted tree `4241908c`; where applicable, replaced a deleted coordinator anchor with the sole current owner. Verification metadata remains pinned until governed closeout.
 
-- 2026-08-12T22:45+02:00 — 260731-EFA-L23 curator follow-up: documented the final citation-only distinction for task-edited route overviews. Complete generated `path:line[-line]` coordinate shifts may pass without fabricated history, while prose, anchor, path, table-shape, metadata-only, and other untraced changes remain fail-closed. Verification remains closeout-owned.
-- 2026-08-12T22:36+02:00 — 260731-EFA-L23 pre-commit type-check follow-up: aligned `_route_overview_bucket`'s source docstring with its typed `ancestor` / `source` / `task-edited` evidence contract and the task-edited citation-coordinate-only exception. Runtime behavior is unchanged. Verification remains closeout-owned.
-- 2026-08-12T22:25+02:00 — 260731-EFA-L23 curator follow-up: documented baseline-relative task-edited route inclusion and its fail-closed body/history classification. This closes the synced-source closeout deadlock without allowing metadata-only or untraced overview refreshes. Verification remains closeout-owned.
-- 2026-08-05T23:20+02:00 — 260731-EFA-L16 curator: recorded `_refresh_regenerated_documents` — the metadata refresh now also stamps onboarding documents the task touched (memory worktree diff) that carry verification metadata, so citations the fixer regenerated against the working tree do not stay pinned to a commit whose constructs no longer exist; route overviews and entity catalogs keep their own refresh passes. Verification metadata stays pinned until closeout stamps the L16 commit.
-- 2026-08-04T18:47+02:00 — 260731-EFA-L6 S18-B17 curator: corrected the four drifted test ranges
-  in the worktree-tests row (long-sidecar 1573-1592, metadata refresh 1631-1673, missing-sidecar
-  blocking 1674-1694, entity fingerprint 2041-2094) and narrowed the claim: the "explicit
-  initialized-memory storage authority" sub-claim is evidenced by none of the four cited tests, so
-  it was dropped rather than pointed at an unrelated route-index test.
-- 2026-08-03T10:55+02:00 — 260731-EFA-L6 W3-B07 curator: repaired all 7 assigned citation findings (3 missing anchors and 4 malformed sources); final scoped check is clean.
+- The converted memory-quality entry point takes one inputs value, forwards the candidate blobs and the run's identical-copy groups, and returns the trace's repair findings. [4]
 
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `C901`/`PLR0912`/`PLR0913` armed with no
-  exemptions): `classify_route_overview_updates`'s body was extracted into `_overview_revision`,
-  `_governing_overview_bucket` and `_route_overview_bucket`, leaving the public function as the
-  loop that appends each returned bucket; and `refresh_onboarding_metadata`,
-  `refresh_onboarding_metadata_for_context` and `refresh_route_overview_metadata_for_context` were
-  re-signed onto `VerifiedChange`. Classification outcomes and stamped metadata are unchanged.
-  Verification metadata pinned until closeout stamps the L2 commit.
-- 2026-07-18T20:03+02:00 — FEUI-MX-FIX-4: route-index preview and apply now pass the resolved
-  `context.storage` authority explicitly into deterministic generation.
-- 2026-06-12T19:06+02:00 — Issue #83: two-tier plan split via `working_paths` (blocking `missing`/`unsupported` scoped to working paths, committed-range gaps collected as non-blocking `unonboarded`), body gates re-baselined on `contract_memory_verified_commit` via `commit_text_or_none` with `_changed_memory_paths` membership, and `_joined_sample` capping gate error joins.
-- 2026-06-10T05:20+02:00 — Issue #56 sub-task 2: added the route-overview body gate (`_nearest_governing_route`, `classify_route_overview_updates`, `require_updated_route_overview_content` with the `No route impact:` marker) wired into `validate_route_overview_refresh_plan_for_context`; ancestor matches report as `stamped_without_body_review` instead of failing.
-- 2026-06-10T04:47+02:00 — Issue #56 sub-task 1: moved shared metadata/route helpers to `kernel/onboarding_doc.py` (facade re-exports kept) and rebuilt the content gate as the four-case body/history classification (`classify_sidecar_updates` + `require_updated_sidecar_content` returning marker-attested paths): untraced body edits and unmarked history-only edits now fail; `No content impact:` entries pass and are surfaced.
-- 2026-06-02T16:24+02:00: User-facing closeout content-gate error messages now say "Run the `c-05-create-or-update-onboarding-files` skill" (was "Run C-05 create-or-update-onboarding-files"). Reference-style normalization; behavior unchanged.
-- 2026-05-31T12:50+02:00 — `onboarding_refresh_plan_for_context` now gates the sidecar-storage check on the boolean `resolver.is_sidecar_storage(storage)` predicate, replacing the label-returning `resolver.sidecar_storage_label(storage)`; behavior-preserving (truthiness unchanged). Added a Code Commentary note naming the predicate (1.0.0 review remediation).
-- 2026-05-29T18:35+02:00: Gave the refresh-plan producers precise `TypedDict` return types and removed the now-redundant `isinstance` guards in `require_updated_sidecar_content`; behavior-preserving (commits `0549b28`, `e3dab63`).
-- 2026-05-29T07:36+02:00: Added `require_updated_sidecar_content` and wired it into `validate_onboarding_refresh_plan_for_context` (direct and worktree) so a changed source file with an unmodified sidecar body fails closeout instead of receiving a metadata-only verification refresh.
-- 2026-05-28T15:24+02:00: Updated after closeout began refreshing route overview metadata and generated route indexes before memory quality and memory commits. Verification metadata remains pinned until closeout commits the source change.
-- 2026-05-25T20:41+02:00: Created during worktree manager module extraction.
+
+- The gate reads a run's groups through one strict reader: a malformed or representative-omitting group raises rather than shortening into a single source. (`identical_changes_from_run`; `IdenticalChangesUnreadable`) [14]
+
+- The curator trace entry takes the candidate blobs and the run's identical-copy groups through one OnboardingTraceInputs value. [13]

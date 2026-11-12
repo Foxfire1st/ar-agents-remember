@@ -1,0 +1,387 @@
+{
+  "path": "dashboard/src/grammar",
+  "references": {
+    "1": {
+      "note": "The Panda runtime these primitives import (`css`/`cva`/`cx`).\n\nAnchor: `export default defineConfig`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90e8e5f30e2b11529dc15cae0f19b20a9cf4be1c",
+            "content": "sha256:b2cecb144a46f5dcf12a6169fceed7695e8294b090de76f3661cdd0249300147",
+            "locator": {
+              "end": 3,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "dashboard/panda.config.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "ModeBar and the launcher's controls share the visual definition without sharing selection or permission policy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "606cd459608eefcdc3a1c7e164d9e2f497cfcd1c",
+            "content": "sha256:605fc078a7ebdf203071ff6345b8e3df803bfbd50760ed1bb3d3ced874e3ef8a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/grammar/viewTabLook.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Eligible large Markdown uses shared retained syntax, clones before later transforms, and opts out for short text or supplied component overrides.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a65bd4444779518a555e2e38d8ca30fa0df9f3a",
+            "content": "sha256:ab79e1ea58eb045f61ecb41bd5878c890eebfe71e4cf089b04064a8fa96cd76f",
+            "locator": {
+              "kind": "symbol",
+              "name": "markdownPlugins"
+            },
+            "path": "dashboard/src/grammar/Markdown.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "82fc4e9dae168f5119b5e5dd8419105da6bcaadf",
+            "content": "sha256:da774a245419a63766bf3b9c4dd983187302098d572192e19467c01ca9c90f7c",
+            "locator": {
+              "kind": "symbol",
+              "name": "remarkCachedParse"
+            },
+            "path": "dashboard/src/grammar/markdownParseCache.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1a65bd4444779518a555e2e38d8ca30fa0df9f3a",
+            "content": "sha256:fdf7bb4dfed79550be128183d2031dc6c19d41941539a31bc4c621cf421a9f8d",
+            "locator": {
+              "end": 205,
+              "kind": "line_range",
+              "start": 170
+            },
+            "path": "dashboard/src/grammar/Markdown.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Cache assertion source checks parse-once across view remounts, transform isolation and the returned view's fresh requirement callback, not execution acceptance.\n\nAnchor: \"retained Markdown syntax\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "654f7d064beee420b8cdfcf2743407f4cf38da47",
+            "content": "sha256:18a1425bd81821d8837d5d7ff3ddb46c60ae159b550192be0c56520e868de4dd",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 17
+            },
+            "path": "dashboard/src/grammar/Markdown.cache.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "Shared sidebar state uses independent page/side keys and optional persistence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e696ca5b2ebe948a00eedcdfd5893b121074fad",
+            "content": "sha256:0dbb21f019aea950c7fda0e89a710b698f228c2e6c63ccf5eeac7fc8a2ef802b",
+            "locator": {
+              "kind": "symbol",
+              "name": "sidebarKey"
+            },
+            "path": "dashboard/src/grammar/SidebarToggle.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e696ca5b2ebe948a00eedcdfd5893b121074fad",
+            "content": "sha256:8008b51e5e6bde95003b2dced8908986e23dbd13bb8e4ac561d4eab73d5fcfe7",
+            "locator": {
+              "kind": "symbol",
+              "name": "useSidebar"
+            },
+            "path": "dashboard/src/grammar/SidebarToggle.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Hidden panel and handle props preserve mounted state while leaving layout and reachability.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e696ca5b2ebe948a00eedcdfd5893b121074fad",
+            "content": "sha256:2a996d4ae1a4fec70f96b26dd952717b2ed8896cf2ca3af5347ccde8c290721f",
+            "locator": {
+              "kind": "symbol",
+              "name": "sidebarPanelProps"
+            },
+            "path": "dashboard/src/grammar/SidebarToggle.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e696ca5b2ebe948a00eedcdfd5893b121074fad",
+            "content": "sha256:809122a7e20f9531f7fcc8300a6c87d3cb25221e0e745acd52ed23ed48bd09eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "sidebarHandleProps"
+            },
+            "path": "dashboard/src/grammar/SidebarToggle.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The shared native button exposes supplied sidebar identity and expanded state with a side-aware icon.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e696ca5b2ebe948a00eedcdfd5893b121074fad",
+            "content": "sha256:5f28c53827723bfb872e35bb22501f7b5afcbde7ca58bf77d9dbcd19d440ba35",
+            "locator": {
+              "kind": "symbol",
+              "name": "SidebarToggle"
+            },
+            "path": "dashboard/src/grammar/SidebarToggle.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Local assertion source covers activation, accessible state and remembered or unremembered visibility.\n\nAnchor: `sidebarKey`; `useSidebar`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eed7754afd2294da2ba93cb6992cbc0a1f4d02e3",
+            "content": "sha256:1de55df441930d3ae3a8d7fa2bf91017d04768efca79533e586e7df3b59c8c3b",
+            "locator": {
+              "kind": "symbol",
+              "name": "onToggle"
+            },
+            "path": "dashboard/src/grammar/SidebarToggle.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The React Aria condition reconciliation (data-hovered/-focused).\n\nAnchor: `[data-hovered]`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90e8e5f30e2b11529dc15cae0f19b20a9cf4be1c",
+            "content": "sha256:e16b47be0657b66a2213fd936a17a7e8131a744184a51d01c57aacf6ac1d678b",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "dashboard/panda.config.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The route's React Aria owner wraps the viewport toggle group with the shared visual class.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bcc511bf68fd8d89365ba2b47d20c43a86469f44",
+            "content": "sha256:d9b40b9f1755c22b5b14b21e3a04540df2b3534594cb64506e9c69909dabcd38",
+            "locator": {
+              "kind": "symbol",
+              "name": "ModeBar"
+            },
+            "path": "dashboard/src/grammar/ModeBar.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The action-availability shape `Affordance` renders.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9fb22cc5f4b41d80db68b8648a6041886c13c80",
+            "content": "sha256:6fe14c2299ba2fab63251972715c6b52f48438fb251c2e676543aa3126dabdb8",
+            "locator": {
+              "kind": "symbol",
+              "name": "Affordance"
+            },
+            "path": "dashboard/src/grammar/Affordance.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Dot covers the queue's attention severities, with a recipe-derived vocabulary, typed glyph table and resting-appearance assertions; not the removed lifecycle-state vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad18738b0d781e04a5a6ed715ccbd1f67f02b34b",
+            "content": "sha256:ab0482c579d3c4f2bc618bd18acc0d0aa39a46ef3e0321030d5e58d36a636d04",
+            "locator": {
+              "kind": "symbol",
+              "name": "DOT_VARIANTS"
+            },
+            "path": "dashboard/src/grammar/Dot.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ad18738b0d781e04a5a6ed715ccbd1f67f02b34b",
+            "content": "sha256:01577f610bf204daad32aa1dd7d3206467f6999978da359472222e63ee6794b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "DOT_GLYPHS"
+            },
+            "path": "dashboard/src/grammar/Dot.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
+            "content": "sha256:dd55d08ef804af44cbb330442d1401ec6e37afd5e55b9b8eb9969cf751223fed",
+            "locator": {
+              "kind": "symbol",
+              "name": "ATTENTION_SEVERITIES"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "abe657a609e6b8169b65273494d0e5dab54df810",
+            "content": "sha256:5268a5a44830d4ccc8b8f882aee8f2b01688a8f67faf6794e4aeec6f9426d3e2",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 39
+            },
+            "path": "dashboard/src/grammar/Dot.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Topology's distinct current native-entry-to-tone mapping does not reinstate its former State table or couple its vocabulary to Dot.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "046383e5c526185a26684c0f11200956456de65e",
+            "content": "sha256:0f3dc25316fcb99e356aa1370a90f39e2c263aca80e424025f95e1679793b4fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "CONSTEL_STATUSES"
+            },
+            "path": "dashboard/src/topology/model.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "046383e5c526185a26684c0f11200956456de65e",
+            "content": "sha256:d6c061b2bf9f32b160e796212e1d8d724a8d4a57d15d7f18803d71dc3c1d3caa",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktreeStatus"
+            },
+            "path": "dashboard/src/topology/model.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Alarm Dot uses pulse with reduced-motion suppression; shared CSS defines that pulse and the effects-off freeze, not a current awaiting-developer Dot animation.\n\nAnchor: `alarm`; `@keyframes pulse`; \"html[data-effects=\"off\"]\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad18738b0d781e04a5a6ed715ccbd1f67f02b34b",
+            "content": "sha256:a04269242455bbc287cc381faa1644ed47a02980e3c4d0eba3cad2e49792f9fa",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "dashboard/src/grammar/Dot.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "319b14c211d7a499f34bc89014be9d0a17ca8dea",
+            "content": "sha256:c35337d62d2f2a26aabe815e3415684960915a266cba82e4bb7a9652d35d357e",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "dashboard/src/index.css"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "319b14c211d7a499f34bc89014be9d0a17ca8dea",
+            "content": "sha256:ee651322f63e29055b498b204265d269034c027569f05df9d14168819512900d",
+            "locator": {
+              "end": 96,
+              "kind": "line_range",
+              "start": 88
+            },
+            "path": "dashboard/src/index.css"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The task column's pivot header mounts AttentionQueue; a severity mark is not an old handoff/lifecycle state mark.\n\nAnchor: `TaskPivotBar`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83b4bd442bbeab34f2f4e4d7d95140c60cc3bee6",
+            "content": "sha256:516806e520f6bd8d636878384426d04e668a123e7f41a38d5c9f21372a2776e2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/columnPresentation.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

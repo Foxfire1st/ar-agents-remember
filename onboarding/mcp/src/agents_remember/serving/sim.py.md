@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/sim.py
 
-| Field                  | Value                                     |
-| ---------------------- | ----------------------------------------- |
-| repository             | agents-remember                           |
-| path                   | `mcp/src/agents_remember/serving/sim.py`  |
-| doc_type               | `file-level-onboarding`                   |
-| lastUpdated            | 2026-06-14T11:30+02:00                    |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
-| governingOverview      | `overview.md`                             |
-
 ## Governing Overview
 
 [overview.md](overview.md)
@@ -26,7 +16,7 @@ serving path.
 `build_sim(config, fixture_dir, *, speed)` loads the sorted fixture events,
 creates a fresh temporary root, removes copied observer-log directories, and
 returns a `SimSetup` whose replaced config points at that root. An empty
-fixture raises `SimError`.
+fixture raises `SimError`. `load_fixture` reads only the workspace `EventStore`, then sorts recorded timestamps. Copied structural fixtures do not synthesize paused session lifecycles; replay does not restore a removed lifecycle-log source. The fresh simulation excludes both copied workspace logs and copied lifecycle gate logs: the feeder replays workspace events only, and the lifecycle gate logs are not replay inputs.
 
 `ReplayClock` maps wall-clock elapsed time to fixture time and freezes at the
 start when speed is non-positive. `ReplayFeeder.feed` appends each due event
@@ -44,22 +34,11 @@ feeder so the root remains alive for the setup's lifetime.
 - **The module does not create a second event-transport implementation; it
   prepares replay inputs for the existing serving path.**
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Fixture loading and temporary-root setup. | `build_sim`; `load_fixture`; `_materialize_surfaces` | mcp/src/agents_remember/serving/sim.py:64-69; mcp/src/agents_remember/serving/sim.py:123-134; mcp/src/agents_remember/serving/sim.py:137-148 |
-| Replay clock and speed parsing. | `ReplayClock`; `parse_sim_speed` | mcp/src/agents_remember/serving/sim.py:51-61; mcp/src/agents_remember/serving/sim.py:72-84 |
-| Progressive event feeding and remaining-tail state. | `ReplayFeeder` | mcp/src/agents_remember/serving/sim.py:87-106 |
-| Setup lifetime retains the temporary root. | `SimSetup` | mcp/src/agents_remember/serving/sim.py:109-120 |
+### Repo-Internal References
 
-## Update History
-- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-04T08:03:35+02:00 — 260731-EFA-L6 S18-B07 curator: repaired the bounded citation findings from the recovered Avicenna and Kuhn ledgers, splitting or narrowing claims to the frozen source and normalizing scoped citation ranges.
-
-- 2026-06-14T23:30+02:00 — Slice 05 (5c): `build_sim` now calls `_materialize_surfaces` to copy the fixture's structural surfaces (contracts / task docs / provider state / ledgers / drift) into the sim root — not just replay event logs — so the rich sim can exercise the whole projection. Verification metadata pinned until closeout stamps the 5c code commit.
-- 2026-06-14T11:30+02:00 — Created for slice 04 commit 4b: sim mode — `build_sim` +
-  `ReplayClock` + progressive `ReplayFeeder` + `parse_sim_speed`, driving the live path via the
-  projector's `now` / `before_tick` seams over a throwaway temp root. Verification metadata
-  pinned until closeout stamps the 4b code commit.
+- Fixture loading and temporary-root setup. [1]
+- Replay clock and speed parsing. [2]
+- Progressive event feeding and remaining-tail state. [3]
+- Setup lifetime retains the temporary root. [4]

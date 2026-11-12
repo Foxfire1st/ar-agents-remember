@@ -1,0 +1,37 @@
+{
+  "path": "mcp/tests/fixtures/repository_profiles/rust/Cargo.toml",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Rust fixture manifest with its lockfile and test layout.\n\nAnchor: \"repository-profile-rust-fixture\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8dbbb44feb4a750203dfeaa4bf9f48b7e9e18db4",
+            "content": "sha256:84e60a8c862ecb0bf545984fdc0ec6a4473af0c1e4b4b3f5e0d2badc7953e5db",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6f6cedf72fdf73fad410c9023e8764db7ef4ca58",
+            "content": "sha256:681e944e67a7209db73972de559533a393d58fb1ef9eb388e3318fc9f88fe382",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/fixtures/repository_profiles/rust/Cargo.lock"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

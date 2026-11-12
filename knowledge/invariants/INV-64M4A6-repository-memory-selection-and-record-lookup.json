@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A header that hides a failed read or shows it as a smaller truth would make an index problem invisible; the one-line header that names it prevents that costly misreading."
+  },
+  "applicability": "The single-line header of the Knowledge reader at every width.",
+  "conditions": [
+    "Repository, memory tree and the record lookup render on the left.",
+    "The memory and code tree identifiers and the pin render small on the right.",
+    "An index problem is still shown in full at the top of the document."
+  ],
+  "exclusions": [
+    "The document body and the tree pane."
+  ],
+  "id": "INV-64M4A6",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "260928-MIK-L79-worker-88460df7-a6b5-42e9-b947-943345fd39b0.md; 260928-MIK-L79-worker-88460df7-a6b5-42e9-b947-943345fd39b0-evidence/r1-post-L51-repair-20261006/manifest.json"
+      ],
+      "path": "handoff.json"
+    },
+    "handoffEntry": "MIK-R79@v1 required behavior 2",
+    "leaf": "260928-MIK-L79",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Repository, memory selection and record lookup stay in one header line, while index problems remain fully visible in the document.",
+  "status": "proposed",
+  "supersedes": []
+}

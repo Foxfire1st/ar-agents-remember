@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/terminal_cleanup_completion.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "4088daf0d7efe33caa32fcbe2ad0c11eb0ef83bd",
+        "content": "sha256:27426fbf8d2120bde75e9abfeebdf81c1e1ed4ce171b960b948b1b187e020398",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-WG5SX2",
+      "invariant": "INV-BDYV4D",
+      "origin": {
+        "handoffEntry": "L198-F-mcp-src-agents_remember-worktrees-integration-terminal_cleanup_completion",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The terminal cleanup completion is the completion record a root's proof is read from, and its own ending removes the generation's root.",
+      "role": "support"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

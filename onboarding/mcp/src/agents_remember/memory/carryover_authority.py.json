@@ -1,0 +1,67 @@
+{
+  "path": "mcp/src/agents_remember/memory/carryover_authority.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The internal carryover apply owner checks configured and protected-checkout authority before obtaining target storage, then passes that storage to apply_converted, whose route-index refresh uses it for target onboarding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f2012e3d1b6cfcf742adc9b3bf25460b4073950",
+            "content": "sha256:c3fc919d01bb913f4bf764082750154658ab29a904fb56ae72b550665436cb5b",
+            "locator": {
+              "end": 337,
+              "kind": "line_range",
+              "start": 315
+            },
+            "path": "mcp/src/agents_remember/memory/carryover.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f2012e3d1b6cfcf742adc9b3bf25460b4073950",
+            "content": "sha256:9bc2d54959a43945ded07f5ace35dba5cd83b82f62b9d6b59f3d33fd66ac7a6e",
+            "locator": {
+              "end": 384,
+              "kind": "line_range",
+              "start": 381
+            },
+            "path": "mcp/src/agents_remember/memory/carryover.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9686c82c42aa92ccb30902e632de9bc6f3dfc207",
+            "content": "sha256:fd4bc56da5a49d954fc2f04ab7cc7608daa71a3b0ba5f98806810dc55c8ce6da",
+            "locator": {
+              "end": 259,
+              "kind": "line_range",
+              "start": 244
+            },
+            "path": "mcp/src/agents_remember/memory/carryover_apply.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The raw preflight exposes the required target storage authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7017d03dd3293689706598705718baf9f1d23d1f",
+            "content": "sha256:5a9c9649a42bf93672b5c8bde46a3b0f2e6a06ee23f880f7cdaf0dbd95d978b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "required_target_storage"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

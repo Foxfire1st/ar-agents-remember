@@ -1,0 +1,45 @@
+{
+  "path": "mcp/src/agents_remember/certification/repository_profiles/source_selection/models.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Declarations and observations enforce canonical inputs; decisions recompute matching and both digest domains.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dff5fe7cea9d34427080499a2c3d746ae635734e",
+            "content": "sha256:197f768bfa6fe75a22cd9ad9e01220c0b16876debb38b6614a2a7dc4b4891dec",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourcePathApplicability"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dff5fe7cea9d34427080499a2c3d746ae635734e",
+            "content": "sha256:1384c1731cd08360acfdc77c2386684c6cf6961e6a3f4101d3255565a4dc04c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "CandidateSourceSelection"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dff5fe7cea9d34427080499a2c3d746ae635734e",
+            "content": "sha256:cd48b218c9b1ace5ca54c80b79e80dbf489c37877d951e351eb9ea62b6c87bf7",
+            "locator": {
+              "kind": "symbol",
+              "name": "RailSourceSelection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

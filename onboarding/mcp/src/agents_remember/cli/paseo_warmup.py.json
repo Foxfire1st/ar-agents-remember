@@ -1,0 +1,95 @@
+{
+  "path": "mcp/src/agents_remember/cli/paseo_warmup.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "29bb5137456bd658ad4c32ae410ebdd8e500a8b4",
+        "content": "sha256:4bcfb50317177298a29872dc1c8e95835aab6ef8c03427a916e792ededae4822",
+        "locator": {
+          "end": 336,
+          "kind": "line_range",
+          "start": 285
+        }
+      },
+      "id": "RLZ-AJJHFC",
+      "invariant": "INV-7D1DKQ",
+      "origin": {
+        "handoffEntry": "L81-R1-F25",
+        "leaf": "260928-MIK-L81"
+      },
+      "rationale": "The existing tree-chat intake recognizes authoritative start identity and retries incomplete intake before admission.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "29bb5137456bd658ad4c32ae410ebdd8e500a8b4",
+        "content": "sha256:842ecb7f0b54c004ef33e512586e12626fbed10242f7ad5ecfcf699e74b82f84",
+        "locator": {
+          "end": 84,
+          "kind": "line_range",
+          "start": 65
+        }
+      },
+      "id": "RLZ-BQ33S1",
+      "invariant": "INV-AA2N76",
+      "origin": {
+        "handoffEntry": "MIK-R145@v1-bounded-resume-admission",
+        "leaf": "260928-MIK-L81"
+      },
+      "rationale": "This transport issues only the timeline-read resume command and preserves the host refusal.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "29bb5137456bd658ad4c32ae410ebdd8e500a8b4",
+        "content": "sha256:5d252ee6f35f4bebc6c8c13eaaf4b3bc2a1b85573ede9070f3a9d2c3964888c5",
+        "locator": {
+          "kind": "symbol",
+          "name": "tree_agent_ids"
+        }
+      },
+      "id": "RLZ-Z10WMV",
+      "invariant": "INV-EV2BJZ",
+      "origin": {
+        "handoffEntry": "L183-settings-seat-launch-and-lazy-resume",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Warmup removes all explainer_seat_ids derived from environments after collecting ordinary role ids; a host restart does not load those seats.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Intake the configured host's real process start and eligible tree agents once through the shared OS claim; expose progress through the existing role-launch read route. Unknown process identity does not consume a start. Unreadable daemon-home or task-root intake retries while the give-up window is open; when that failure reaches the configured window, it consumes that exact start and records a `given-up` outcome with its reason. Claim-publication, candidate-read and initial-progress failures use separate retry/release paths and are not subject to this branch's give-up check. The transport performs only a timeline resume, not a message, refresh, interruption or unarchive.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29bb5137456bd658ad4c32ae410ebdd8e500a8b4",
+            "content": "sha256:3f386b2c5cee92657f13c0fd5d4cc2c96000c359069d53b90ad52fe05599f9ae",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Warmup removes all explainer_seat_ids derived from environments after collecting ordinary role ids; a host restart does not load those seats.\n\nAnchor: `tree_agent_ids`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29bb5137456bd658ad4c32ae410ebdd8e500a8b4",
+            "content": "sha256:3f386b2c5cee92657f13c0fd5d4cc2c96000c359069d53b90ad52fe05599f9ae",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

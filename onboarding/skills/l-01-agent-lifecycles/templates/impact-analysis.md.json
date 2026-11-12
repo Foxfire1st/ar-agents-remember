@@ -1,0 +1,129 @@
+{
+  "path": "skills/l-01-agent-lifecycles/templates/impact-analysis.md",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The Reviewer uses the template for planned-work conflicts and risks to landed work and owns its helper's contribution; the spawning agent alone changes AR state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3184d622a6b8badcd2ec4dcc4b56609509eebb04",
+            "content": "sha256:22cbc5117252ff96a4ad45d9907f480b55e9736d3cd10a83500a6c6729b2cdc6",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Both collision and regression axes need evidence and per-finding limits; the report never decides.\n\nAnchor: `This is a report, not a decision`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3184d622a6b8badcd2ec4dcc4b56609509eebb04",
+            "content": "sha256:d85bc8f43a94ea418f6d32dd5571e3c3f227b73632b514f28a781e694fc3f8be",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 7
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Recipient, author, subject and timestamp are report fields, with analytical rather than occupant authorship.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3184d622a6b8badcd2ec4dcc4b56609509eebb04",
+            "content": "sha256:cfe303c451b842226410de2dac4fe68d5e7d51a8568258d71e51e7b27bded2d8",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 21
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Scope, current/future collisions, resolution suggestions and landed regression risks are retained.\n\nAnchor: `## Planned-vs-Planned`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3184d622a6b8badcd2ec4dcc4b56609509eebb04",
+            "content": "sha256:46a0f3449dd7e3a52b43dbcdf0a5d5175766436b6a97715dd46dd55f79b8a9dd",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 30
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The evidence inventory records `read_ar_files` identifiers and card paths and the natively opened files, and the actions section performs no mutation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3184d622a6b8badcd2ec4dcc4b56609509eebb04",
+            "content": "sha256:13f066958586e1b510ac7be9120b5377a2f263a672a86ff361946d1806e315d7",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 43
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Harness helpers hold no AR seat; boundary acts and one Curator writer remain with the seat.\n\nAnchor: `A sub-agent holds no AR seat`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
+            "content": "sha256:349e8630cdb780d1cffca9c046cb75c2eaf259d769e87f9fb0814123aa25ecc9",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 37
+            },
+            "path": "skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Orchestrator verifies Manager delivery while leaving the Manager's leaf diff, repair and evidence loop intact, and keeps reports, findings, review, curation and Git publication separately addressed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+            "content": "sha256:187dc47fd4a1b243ad4b98627067d966a10aa40e26113af740e94455c58e5642",
+            "locator": {
+              "end": 93,
+              "kind": "line_range",
+              "start": 89
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

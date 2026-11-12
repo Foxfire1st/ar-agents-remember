@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The exclusive create lives in the settings initializer while the host-authority block is written by its own authority primitive, so the no-overwrite promise needs both places to hold."
+  },
+  "applicability": "Every creation of the user settings file through the initializer's exclusive write.",
+  "conditions": [
+    "Creation is exclusive and is the only writer, with no temporary sibling and no replacement step, so a destination that appears after the preview is refused rather than replaced.",
+    "A symlink at the destination, or at a sibling temporary path, is neither followed nor truncated."
+  ],
+  "exclusions": [
+    "An existing regular file, which is reported rather than written."
+  ],
+  "id": "INV-7T4ENM",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "a2/native-review.md N5; final-a3/source-witnesses.md. This is source-level writer analysis; held discriminators never ran."
+      ],
+      "path": "handoff-draft.json"
+    },
+    "handoffEntry": "L188-B04",
+    "leaf": "260928-MIK-L188",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Settings initialization never follows or truncates an existing sibling temporary path or overwrites a destination that appears after preview.",
+  "status": "proposed",
+  "supersedes": []
+}

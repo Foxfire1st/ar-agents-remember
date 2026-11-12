@@ -1,0 +1,128 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/continuation.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c9ee896d7f0fda0c9ef3bf516a3aafd8278d6076",
+        "content": "sha256:3ec9ad79579f46890c2c9804e63cb3d7244bd0a5accaa781a16fa7fa8c7a5880",
+        "locator": {
+          "kind": "symbol",
+          "name": "KnowledgeContinuation"
+        }
+      },
+      "id": "RLZ-78SGTM",
+      "invariant": "INV-09H4VC",
+      "origin": {
+        "handoffEntry": "R73-R7",
+        "leaf": "260928-MIK-L73"
+      },
+      "rationale": "The token states the walk's code state, so a later page knows what it is resuming over rather than assuming a commit.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The module statement: every binding the token carries.\n\nAnchor: \"The one continuation every bounded read of a memory tree mints\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9ee896d7f0fda0c9ef3bf516a3aafd8278d6076",
+            "content": "sha256:a6b8abcff95c9bdb50ed23165b2210bc53863f08fa63520f9d1dd5eb5bfbfd05",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The format, prefix and bounds; the queue cap public since MIK-R01.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9ee896d7f0fda0c9ef3bf516a3aafd8278d6076",
+            "content": "sha256:6a7763bb8e565991d0a53f419a5bd338b550a1f05ba0dc2665c38dd6ccf5630e",
+            "locator": {
+              "kind": "symbol",
+              "name": "CONTINUATION_PREFIX"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c9ee896d7f0fda0c9ef3bf516a3aafd8278d6076",
+            "content": "sha256:bf3cad005d06f07cd04205d885e66833974bd7dbc04a13963e491ad6f14ed8ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "MAX_QUEUED_SEEDS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The paged responses, `leaf` added by MIK-R01.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9ee896d7f0fda0c9ef3bf516a3aafd8278d6076",
+            "content": "sha256:c9cdda8d487892759fbe6c1834fcf1d162ce14318fd850dc62355584e001f2a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "PagedResponse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The bound fields and their short aliases.\n\nAnchor: `KnowledgeContinuation`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9ee896d7f0fda0c9ef3bf516a3aafd8278d6076",
+            "content": "sha256:ee8f8d59b1a604820ccee09e8554fbdd84dd42fbc6ba7a9c37b9d94ac907d651",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Encoding and bounded decoding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9ee896d7f0fda0c9ef3bf516a3aafd8278d6076",
+            "content": "sha256:e45234098edf129d61d6fa9249f82eb9cc36ff92f84e07bcf6985ad2d00d8c0c",
+            "locator": {
+              "kind": "symbol",
+              "name": "encode_continuation"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c9ee896d7f0fda0c9ef3bf516a3aafd8278d6076",
+            "content": "sha256:c8dbebe5bf0b0e9c8359351b06065978ebb6acbe09edf5d54434d7897acfc77e",
+            "locator": {
+              "kind": "symbol",
+              "name": "decode_continuation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

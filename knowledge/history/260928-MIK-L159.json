@@ -1,0 +1,1109 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L159",
+  "rows": [
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "69ed8af35d0b9bfbe4ce42d96c344fe83a60a494",
+            "content": "sha256:7aa15b4bf7f4660739228c01bfe25b4d448297e8db40d2b0062c000fd6db4c8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "InvestigatorTests.test_task_listing_is_bounded_task_owned_and_result_exact"
+            },
+            "path": "mcp/tests/test_investigator.py"
+          },
+          "before": {
+            "blob": "d773173a9bc086e4d0244d727c4ba8eea967be53",
+            "content": "sha256:1130794d69601258c781c489dbd490b81ed474af5d29d4fccc6d1e89440f6c2c",
+            "locator": {
+              "kind": "symbol",
+              "name": "InvestigatorTests.test_task_listing_is_bounded_task_owned_and_result_exact"
+            },
+            "path": "mcp/tests/test_investigator.py"
+          },
+          "id": "PRF-MJPAP4"
+        },
+        {
+          "after": {
+            "blob": "69ed8af35d0b9bfbe4ce42d96c344fe83a60a494",
+            "content": "sha256:4ae78471983abc6a70df613aa0a69ef04812e053524f4b8fa5bc97951eecfc69",
+            "locator": {
+              "kind": "symbol",
+              "name": "InvestigatorTests.test_ninth_refuses_exact_ids_and_archiving_frees_capacity"
+            },
+            "path": "mcp/tests/test_investigator.py"
+          },
+          "before": {
+            "blob": "d773173a9bc086e4d0244d727c4ba8eea967be53",
+            "content": "sha256:4ae78471983abc6a70df613aa0a69ef04812e053524f4b8fa5bc97951eecfc69",
+            "locator": {
+              "kind": "symbol",
+              "name": "InvestigatorTests.test_ninth_refuses_exact_ids_and_archiving_frees_capacity"
+            },
+            "path": "mcp/tests/test_investigator.py"
+          },
+          "id": "PRF-Z047QV"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-00WG5H",
+      "items": [
+        "sha256:488fcc52b31b28798c66db00fb1d571e73e52bdbe6f44568087d45e19da4adb4"
+      ],
+      "reason": "Far-future fixture dates isolate newest-fifty ordering from the wall month; complete open-set ambiguity, eight-slot ownership and exact-request result/replay assertions retain their meaning.",
+      "revision": 1,
+      "subject": "INV-VZJRTM"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-35N3JS",
+      "items": [
+        "sha256:7b4a29490125dd04afe3d5a612cd0eca9ccf4fc70f743e368aaaba4c088b1d58"
+      ],
+      "reason": "The new sweep-cursor and tool-writer adapters delegate to the resource owners already named by the process register. This local reset wiring preserves the existing closed-register obligation, rather than introducing a separate invariant for two helper functions.",
+      "subject": "hunk:sha256:7b4a29490125dd04afe3d5a612cd0eca9ccf4fc70f743e368aaaba4c088b1d58"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "6a6807ea32cb60ac7a9838ae361ac9657caded1f",
+            "content": "sha256:2200041761481afb1a77501bfcdb24006626a7641f1a37c9bc4b85a1fc79e8d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "RepeatAndConflictTests.test_a_repeated_request_converges_on_the_same_agent"
+            },
+            "path": "mcp/tests/test_paseo_launch.py"
+          },
+          "before": {
+            "blob": "a253470d7743f8b4dbd62644b280d55dceea2625",
+            "content": "sha256:2200041761481afb1a77501bfcdb24006626a7641f1a37c9bc4b85a1fc79e8d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "RepeatAndConflictTests.test_a_repeated_request_converges_on_the_same_agent"
+            },
+            "path": "mcp/tests/test_paseo_launch.py"
+          },
+          "id": "PRF-CZPXMP"
+        },
+        {
+          "after": {
+            "blob": "6a6807ea32cb60ac7a9838ae361ac9657caded1f",
+            "content": "sha256:edc316ce9924e9bb77f69e74ec335183849a3fd6e667a357ce4936b207bdbba9",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleFolderAndIdentityTests.test_each_role_class_gets_one_agent_in_its_folder_with_title_and_labels"
+            },
+            "path": "mcp/tests/test_paseo_launch.py"
+          },
+          "before": {
+            "blob": "a253470d7743f8b4dbd62644b280d55dceea2625",
+            "content": "sha256:8a7e15e7cc437e5cad674cb9bbbc949a93d5794d4e176be94a159e5562abc012",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleFolderAndIdentityTests.test_each_role_class_gets_one_agent_in_its_folder_with_title_and_labels"
+            },
+            "path": "mcp/tests/test_paseo_launch.py"
+          },
+          "id": "PRF-TZXFK2"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-4Y2YMY",
+      "items": [
+        "sha256:4e3fd66d7d76603642734f361d9603cfacb2379536ab49dbf9bf14889184dbd6"
+      ],
+      "reason": "Assertion extraction and exact fixture/task-copy inventory preserve the pre-call starting receipt, stable UUID and stored launch payload. Later refusal subcases re-establish their runtime fixture; launch identity meaning does not change.",
+      "revision": 1,
+      "subject": "INV-FMB2AG"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-7E8W9Y",
+      "items": [
+        "sha256:5a07524f0650480fdbe119e11c2c4e3100d7281fb526e014528af993469f121b"
+      ],
+      "reason": "Only load-independent complexity comments change; exact maps and the ten-second assertions are not weakened. The card’s pairing and structural-merge account is unchanged.",
+      "subject": "onboarding:mcp/tests/test_knowledge_crossing.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "1a68c7a81775f27549e988aa5d11cc504e980fc6",
+            "content": "sha256:758c3058ac56076e2d6a6a002a25b460c283aa28c7e7d0d7de2fff972b8f7757",
+            "locator": {
+              "kind": "symbol",
+              "name": "BridgeScriptTests.test_script_failures_are_named_and_another_daemon_is_refused"
+            },
+            "path": "mcp/tests/test_paseo_bridge.py"
+          },
+          "before": {
+            "blob": "cbef2a1c654534569644855860be90210bf72a23",
+            "content": "sha256:758c3058ac56076e2d6a6a002a25b460c283aa28c7e7d0d7de2fff972b8f7757",
+            "locator": {
+              "kind": "symbol",
+              "name": "BridgeScriptTests.test_script_failures_are_named_and_another_daemon_is_refused"
+            },
+            "path": "mcp/tests/test_paseo_bridge.py"
+          },
+          "id": "PRF-7PZS43"
+        },
+        {
+          "after": {
+            "blob": "1a68c7a81775f27549e988aa5d11cc504e980fc6",
+            "content": "sha256:e581f6fb5d955923dc82167737ef738270ccbef667166b020ef88fb587bb3899",
+            "locator": {
+              "kind": "symbol",
+              "name": "BridgeProcessTests.test_unconfigured_or_never_started_runtime_refuses_before_any_process"
+            },
+            "path": "mcp/tests/test_paseo_bridge.py"
+          },
+          "before": {
+            "blob": "cbef2a1c654534569644855860be90210bf72a23",
+            "content": "sha256:e3274b9de9f2e09757fa8f558e3093f05dd9487c5741c5ef830e2931053e5184",
+            "locator": {
+              "kind": "symbol",
+              "name": "BridgeProcessTests.test_unconfigured_or_never_started_runtime_refuses_before_any_process"
+            },
+            "path": "mcp/tests/test_paseo_bridge.py"
+          },
+          "id": "PRF-G01FCX"
+        },
+        {
+          "after": {
+            "blob": "1a68c7a81775f27549e988aa5d11cc504e980fc6",
+            "content": "sha256:d668c67be23f2f5d57ca0fca445560bd24178605a932e1ac5f449effb3b97aca",
+            "locator": {
+              "kind": "symbol",
+              "name": "BridgeProcessTests.test_the_script_is_pointed_at_the_configured_runtime_and_no_other"
+            },
+            "path": "mcp/tests/test_paseo_bridge.py"
+          },
+          "before": {
+            "blob": "cbef2a1c654534569644855860be90210bf72a23",
+            "content": "sha256:59ec754e59b4faaafa50466b23c4acbaede5df2a01510e3935ca5d9b8deb9b7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "BridgeProcessTests.test_the_script_is_pointed_at_the_configured_runtime_and_no_other"
+            },
+            "path": "mcp/tests/test_paseo_bridge.py"
+          },
+          "id": "PRF-MDJK7B"
+        },
+        {
+          "after": {
+            "blob": "cf9cb6a47cb546f52431f0736c31b4db7e28f6ca",
+            "content": "sha256:773f6528c0313df70b181925f552765ca75485f7368e6d53d10dbc13e95a2c7c",
+            "locator": {
+              "kind": "symbol",
+              "name": "connect"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+          },
+          "before": {
+            "blob": "0d43e8a1a40136cd8fc3c2e45fed9adf10aef7c5",
+            "content": "sha256:773f6528c0313df70b181925f552765ca75485f7368e6d53d10dbc13e95a2c7c",
+            "locator": {
+              "kind": "symbol",
+              "name": "connect"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+          },
+          "id": "RLZ-YH1Y0Z"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-A63XHS",
+      "items": [
+        "sha256:f747761899cde0ee03e663b6f1d78a17b70ed7b8e318c3d60e4332de71d59802"
+      ],
+      "reason": "Per-subcase settings preparation and isolated XDG discovery reach the intended no-process/runtime refusal and exact environment assertions. Endpoint identity and inherited-variable filtering remain unchanged.",
+      "revision": 1,
+      "subject": "INV-VV0B2G"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "6bf756483b33912bea98854a304d88a26cd9138b",
+            "content": "sha256:c6fb821bf499e5de4f9f7645b820b8484caf40ba50e59c9c37e1a84afefcee2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROCESS_MUTABLE_STATES"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+          },
+          "before": {
+            "blob": "010f854fb6bc835d89a1c480867a26fff0ec9943",
+            "content": "sha256:3cf48d489814b0c8e73e1ae721b7548e13f1f24c6f114ff679b11fe07453faab",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROCESS_MUTABLE_STATES"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+          },
+          "id": "RLZ-1563PY"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-BFHSR9",
+      "items": [
+        "sha256:96c894875bc7db7c8e2959a8ca5712993233a9eb65e63d6df7dfea9ea2a21adf"
+      ],
+      "reason": "The source register expands its implementation population to answer budgets, held sweep walks, message counters, in-flight temporary paths and the installed writer; owner delegation preserves loaded-only reset. The closed-register obligation and scanner exclusions remain unchanged.",
+      "revision": 1,
+      "subject": "INV-KE2ZHT"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5779b2e79b35fba9711313ec9ebadb3417ee36b4",
+            "content": "sha256:c7595c0bb5b500de4d9627dc19ea4a980ef5551e556109576dd469ac9a9313d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_abandoned_rows_without_enclosures_and_with_unlanded_enclosures_pass"
+            },
+            "path": "mcp/tests/test_abandoned_series_closeout.py"
+          },
+          "before": {
+            "blob": "2a6ff701f935e41e2e3ada07519a187dff1790d7",
+            "content": "sha256:f437d15386e07f6e47e75ea3c2afdb9dc63ee0fbb0110e24a10a9d071bca5977",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_abandoned_rows_without_enclosures_and_with_unlanded_enclosures_pass"
+            },
+            "path": "mcp/tests/test_abandoned_series_closeout.py"
+          },
+          "id": "PRF-RJEMEH"
+        },
+        {
+          "after": {
+            "blob": "5779b2e79b35fba9711313ec9ebadb3417ee36b4",
+            "content": "sha256:7b21884c7527022e3b68b1769f18268589d9e55e2d608be29ed92ad912cf28cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_landed_abandoned_row_refuses_with_named_remedy"
+            },
+            "path": "mcp/tests/test_abandoned_series_closeout.py"
+          },
+          "before": {
+            "blob": "2a6ff701f935e41e2e3ada07519a187dff1790d7",
+            "content": "sha256:f818235e44ba7642bb9563e33df1cb10010c190f7c45d0345a1fdb8e73fb3086",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_landed_abandoned_row_refuses_with_named_remedy"
+            },
+            "path": "mcp/tests/test_abandoned_series_closeout.py"
+          },
+          "id": "PRF-W9J82X"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-BN0T1T",
+      "items": [
+        "sha256:93308c7112483bd875405c442eb0e7419da12d79ab12cb44c5bfd98c9acb941b"
+      ],
+      "reason": "The fixtures carry external-memory repositories and mirrored completed landing legs. The abandoned-row exclusions, unchanged master bytes and named landed contradiction remain the assertion subjects; no memoryless route is restored.",
+      "revision": 1,
+      "subject": "INV-B9EZM6"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0J9FS1",
+          "revision": 1
+        },
+        {
+          "id": "INV-ADT7XM",
+          "revision": 1
+        },
+        {
+          "id": "INV-B644A4",
+          "revision": 1
+        },
+        {
+          "id": "INV-CRWXXC",
+          "revision": 1
+        },
+        {
+          "id": "INV-F8QQYN",
+          "revision": 1
+        },
+        {
+          "id": "INV-FRG5GT",
+          "revision": 1
+        },
+        {
+          "id": "INV-MXFA2F",
+          "revision": 1
+        },
+        {
+          "id": "INV-Q0NS0N",
+          "revision": 1
+        },
+        {
+          "id": "INV-W6QBYB",
+          "revision": 1
+        },
+        {
+          "id": "INV-XHSR3S",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-CD3FRT",
+      "items": [
+        "sha256:b6d603837921869527b9a932fc77fd77747ff8a3bcc19f02c9b02916e0331bcf"
+      ],
+      "reason": "All ten members were examined. The two pairing comments change no exact map or limit; number allocation, marker remapping, true conflicts, skip reasons, reporting and determinism remain their distinct joint obligations. Retain the guarantee and routes; no hand renumbering is admitted.",
+      "revision": 1,
+      "subject": "FAM-Q0MQAE"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-27SPEH",
+          "revision": 1
+        },
+        {
+          "id": "INV-76C676",
+          "revision": 1
+        },
+        {
+          "id": "INV-777108",
+          "revision": 1
+        },
+        {
+          "id": "INV-AY7A8V",
+          "revision": 1
+        },
+        {
+          "id": "INV-CZVMX3",
+          "revision": 1
+        },
+        {
+          "id": "INV-DEDX8T",
+          "revision": 1
+        },
+        {
+          "id": "INV-MGXG8S",
+          "revision": 1
+        },
+        {
+          "id": "INV-PKFP2R",
+          "revision": 2
+        },
+        {
+          "id": "INV-QAR0F3",
+          "revision": 1
+        },
+        {
+          "id": "INV-S34RA5",
+          "revision": 1
+        },
+        {
+          "id": "INV-S44D2D",
+          "revision": 1
+        },
+        {
+          "id": "INV-W09GQM",
+          "revision": 2
+        },
+        {
+          "id": "INV-WR2WAJ",
+          "revision": 1
+        },
+        {
+          "id": "INV-Z2XTN1",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-CKWGC3",
+      "items": [
+        "sha256:1837e29f3977653e047711360dee08b1f066fe667f1826d74dce26663d6c4c64"
+      ],
+      "reason": "All fourteen members were examined against the current recorded-meaning index fault-injection repair and native member read. Invalid half-recorded history still yields unavailable rather than absence; one-line navigation, own effect sequence and preserved traversal do not change. Retain guarantee, membership and routes.",
+      "revision": 2,
+      "subject": "FAM-A3YKR5"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-5YPFVJ",
+          "revision": 1
+        },
+        {
+          "id": "INV-KE2ZHT",
+          "revision": 1
+        },
+        {
+          "id": "INV-KJN5GP",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-CPF01F",
+      "items": [
+        "sha256:5bcb3376a8c3b4be1269415156e56d59af939bf353de2e35b255a1e68214d676"
+      ],
+      "reason": "All three members were examined. New registered reset owners and owner-delegation test doubles preserve module cleanup, closed census and private-resource boundaries jointly. No membership, guarantee or route change is justified.",
+      "revision": 1,
+      "subject": "FAM-3FTGSA"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CZZ4KH",
+      "items": [
+        "sha256:dab22e616838c7f052dcf682f1af868c62149bfd2789b877008ddf183b5c0171"
+      ],
+      "reason": "Package transport/application/model/domain ownership and bounded answer versus whole function result already govern the catalog field repair and test adaptations; no new package or authority route is introduced.",
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-B9EZM6",
+          "revision": 1
+        },
+        {
+          "id": "INV-E20AY2",
+          "revision": 1
+        },
+        {
+          "id": "INV-YZVCB8",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-DACTC0",
+      "items": [
+        "sha256:e806f57327a8875d5f392228b701d7201004d09c706c9f2f0e2c2e221dce434a"
+      ],
+      "reason": "All three members were examined. External-memory paired fixtures now reach atomic closeout and organizational transition under the current world. Abandoned-but-landed truth and finalization ownership stay separate and unchanged; retain the joint guarantee and its routes.",
+      "revision": 1,
+      "subject": "FAM-E5BHSB"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9720554cfd7ec64db5e9f0513a80af88d50750fc",
+            "content": "sha256:6f685b7a11bb4c60621e8365f520f18116903dbf708128b3096ac5d59125de54",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "9f531a435a1fd56b7f666cc82ab09a99e5c6386e",
+            "content": "sha256:9a0b2b131f9b008d9db1cb3b33a359ac9889475f4acbe9f0f20aece6bba5fc8b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GRTJG0"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-J2JGDY",
+      "items": [
+        "sha256:5d57035ad0655de5dbe1a627a3cb6ec49001e4e0547bea82e52b0bc719a4811d"
+      ],
+      "reason": "The retired whole-catalog historical witness receives current anchor currency only. Live consumer additions neither revive its old exact-two-lines snapshot as a current obligation nor change its retired status.",
+      "revision": 1,
+      "subject": "INV-MSCRAN"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2591458016a34aa15a4f686c84ee79ecdb4f4736",
+            "content": "sha256:9239de933cea9c69b2ce9cef766f8a34e71080785d4d8bbe08cd7413fec75807",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/kernel/_agentic_settings_core.py"
+          },
+          "before": {
+            "blob": "e9db2163f4d7a768918193e6c5889cd487ea2dde",
+            "content": "sha256:506ecd9150e5f0a86fbfb009d5abb814aec2d5119ec6381ccbf36b5cdbd6e35c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/kernel/_agentic_settings_core.py"
+          },
+          "id": "RLZ-KN3CBB"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-JWNG15",
+      "items": [
+        "sha256:064698c862150e32e3f097f7696ed9ff8eaa1b922ed39091b66e82c1527fd376"
+      ],
+      "reason": "Comment wording removes provider names only; accepted settings keys, authorization-layer refusal and repository authority remain unchanged.",
+      "revision": 1,
+      "subject": "INV-VKTCC4"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c73f0012e6fd46865f13556d2b1c7ad6a84b791c",
+            "content": "sha256:02d022c6e60c6fd9474d9afd392ffdf647b966f73a9ecaec14c1795c482d1aff",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_explanations_cover_the_vocabulary_on_both_sides_of_the_wire"
+            },
+            "path": "mcp/tests/test_review_meaning_effects.py"
+          },
+          "before": {
+            "blob": "d1b4d41c144f1f5d52f74d05f5169feb22797d61",
+            "content": "sha256:02d022c6e60c6fd9474d9afd392ffdf647b966f73a9ecaec14c1795c482d1aff",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_explanations_cover_the_vocabulary_on_both_sides_of_the_wire"
+            },
+            "path": "mcp/tests/test_review_meaning_effects.py"
+          },
+          "id": "PRF-044H6R"
+        },
+        {
+          "after": {
+            "blob": "c73f0012e6fd46865f13556d2b1c7ad6a84b791c",
+            "content": "sha256:16ae2f7ece06c6c44132e113d42a8df0d2a49b2ac9f54f149a94e1131ad99603",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_roster_continuation_carries_the_steps_of_the_members_it_returns"
+            },
+            "path": "mcp/tests/test_review_meaning_effects.py"
+          },
+          "before": {
+            "blob": "d1b4d41c144f1f5d52f74d05f5169feb22797d61",
+            "content": "sha256:16ae2f7ece06c6c44132e113d42a8df0d2a49b2ac9f54f149a94e1131ad99603",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_roster_continuation_carries_the_steps_of_the_members_it_returns"
+            },
+            "path": "mcp/tests/test_review_meaning_effects.py"
+          },
+          "id": "PRF-5ZQYM4"
+        },
+        {
+          "after": {
+            "blob": "c73f0012e6fd46865f13556d2b1c7ad6a84b791c",
+            "content": "sha256:ef9ee181d47d8b69668bc800215d7f4be5ccb66963530dca70fd6ce5e45de5ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_retired_selection_reads_its_steps_through_compose"
+            },
+            "path": "mcp/tests/test_review_meaning_effects.py"
+          },
+          "before": {
+            "blob": "d1b4d41c144f1f5d52f74d05f5169feb22797d61",
+            "content": "sha256:ef9ee181d47d8b69668bc800215d7f4be5ccb66963530dca70fd6ce5e45de5ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_retired_selection_reads_its_steps_through_compose"
+            },
+            "path": "mcp/tests/test_review_meaning_effects.py"
+          },
+          "id": "PRF-9K17ND"
+        },
+        {
+          "after": {
+            "blob": "c73f0012e6fd46865f13556d2b1c7ad6a84b791c",
+            "content": "sha256:7a1cd131c7b74ca30beaeb4abc4e7b52470e2a4ba00bf9bd02ecad4499d3fec0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_family_steps_carry_the_rows_own_revision"
+            },
+            "path": "mcp/tests/test_review_meaning_effects.py"
+          },
+          "before": {
+            "blob": "d1b4d41c144f1f5d52f74d05f5169feb22797d61",
+            "content": "sha256:7a1cd131c7b74ca30beaeb4abc4e7b52470e2a4ba00bf9bd02ecad4499d3fec0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_family_steps_carry_the_rows_own_revision"
+            },
+            "path": "mcp/tests/test_review_meaning_effects.py"
+          },
+          "id": "PRF-E7MCVR"
+        },
+        {
+          "after": {
+            "blob": "c73f0012e6fd46865f13556d2b1c7ad6a84b791c",
+            "content": "sha256:8f81b93c7acd385755d5035ef7d19bc19128a0680f65c7e12afc8bf17d391782",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_another_owners_row_is_never_a_step"
+            },
+            "path": "mcp/tests/test_review_meaning_effects.py"
+          },
+          "before": {
+            "blob": "d1b4d41c144f1f5d52f74d05f5169feb22797d61",
+            "content": "sha256:8f81b93c7acd385755d5035ef7d19bc19128a0680f65c7e12afc8bf17d391782",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_another_owners_row_is_never_a_step"
+            },
+            "path": "mcp/tests/test_review_meaning_effects.py"
+          },
+          "id": "PRF-NBWHMJ"
+        },
+        {
+          "after": {
+            "blob": "c73f0012e6fd46865f13556d2b1c7ad6a84b791c",
+            "content": "sha256:106ec2ea5627b0986006186ab0f5af541b9b4f3c18892f47d30f7f056ef10831",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_outline_labels_equal_the_review_steps_for_a_read_family"
+            },
+            "path": "mcp/tests/test_review_meaning_effects.py"
+          },
+          "before": {
+            "blob": "d1b4d41c144f1f5d52f74d05f5169feb22797d61",
+            "content": "sha256:106ec2ea5627b0986006186ab0f5af541b9b4f3c18892f47d30f7f056ef10831",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_outline_labels_equal_the_review_steps_for_a_read_family"
+            },
+            "path": "mcp/tests/test_review_meaning_effects.py"
+          },
+          "id": "PRF-RC7VHT"
+        },
+        {
+          "after": {
+            "blob": "c73f0012e6fd46865f13556d2b1c7ad6a84b791c",
+            "content": "sha256:6e56d1d906085b5bb7cdd272e5381526e538198cc26d60a105dcce74bc7c9469",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_half_recorded_family_row_makes_the_display_unavailable"
+            },
+            "path": "mcp/tests/test_review_meaning_effects.py"
+          },
+          "before": {
+            "blob": "d1b4d41c144f1f5d52f74d05f5169feb22797d61",
+            "content": "sha256:84e53799262ceb615beb921aedf2ddfb3c8be5d6980f34f7b66ce29788d8cfd8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_half_recorded_family_row_makes_the_display_unavailable"
+            },
+            "path": "mcp/tests/test_review_meaning_effects.py"
+          },
+          "id": "PRF-RQ2Q1E"
+        },
+        {
+          "after": {
+            "blob": "c73f0012e6fd46865f13556d2b1c7ad6a84b791c",
+            "content": "sha256:ffe1c26347505159de76f5a9d6a6334be6553c9ecb3feb9b34ec4d77d9560806",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_attempts_read_in_attempt_order_not_row_or_revision_order"
+            },
+            "path": "mcp/tests/test_review_meaning_effects.py"
+          },
+          "before": {
+            "blob": "d1b4d41c144f1f5d52f74d05f5169feb22797d61",
+            "content": "sha256:ffe1c26347505159de76f5a9d6a6334be6553c9ecb3feb9b34ec4d77d9560806",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_attempts_read_in_attempt_order_not_row_or_revision_order"
+            },
+            "path": "mcp/tests/test_review_meaning_effects.py"
+          },
+          "id": "PRF-TWWF2D"
+        },
+        {
+          "after": {
+            "blob": "c73f0012e6fd46865f13556d2b1c7ad6a84b791c",
+            "content": "sha256:e8aa8f433b807b318d4a5a87aab2522bc72a4a07368e713a14a05f7afc65131c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_incomplete_index_is_unavailable_never_none"
+            },
+            "path": "mcp/tests/test_review_meaning_effects.py"
+          },
+          "before": {
+            "blob": "d1b4d41c144f1f5d52f74d05f5169feb22797d61",
+            "content": "sha256:e8aa8f433b807b318d4a5a87aab2522bc72a4a07368e713a14a05f7afc65131c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_incomplete_index_is_unavailable_never_none"
+            },
+            "path": "mcp/tests/test_review_meaning_effects.py"
+          },
+          "id": "PRF-YCC2M5"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-M017E2",
+      "items": [
+        "sha256:7f2db74d4ff9a3d5fd36730cafec74a1b4d075096c4bc51030bf0ee4c066d32d"
+      ],
+      "reason": "The text-staged history row is corrupted only in a copied derived index, after exact-row UPDATE verification. Unavailable-with-row-name remains the proof facet; recorded owner/attempt/effect semantics and all other witnesses are unchanged.",
+      "revision": 1,
+      "subject": "INV-76C676"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "cf9cb6a47cb546f52431f0736c31b4db7e28f6ca",
+            "content": "sha256:b6fe755a426528b19ea0c85bd3143cbd00df84472173cccabf3f138973cf3f7b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+          },
+          "before": {
+            "blob": "0d43e8a1a40136cd8fc3c2e45fed9adf10aef7c5",
+            "content": "sha256:262739f1032c809fa2da9adc05658317a83a19af295b33f98faef37df86e2447",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+          },
+          "id": "RLZ-7J6Y4G"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-MZVFMY",
+      "items": [
+        "sha256:e15c46b00803780de56f9c384231947744c907593ecddad7359c92089063b84c"
+      ],
+      "reason": "The still-loading provider projection now retains discovered modes/defaultModeId/fetchedAt. This repairs capability-field propagation inside the existing host-catalog obligation without changing its statement, scope or provider authority.",
+      "revision": 1,
+      "subject": "INV-AFTG56"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-N1CZDG",
+      "items": [
+        "sha256:87bdbc69364cc060be43727ed93bd95726d78e477cb1e40e960b3766d39998b8"
+      ],
+      "reason": "The diff changes comments only. Typed settings, defaults, positive-value parsing, permission classification and repository-layer boundaries in the card remain intact.",
+      "subject": "onboarding:mcp/src/agents_remember/kernel/_agentic_settings_core.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-N68FHP",
+      "items": [
+        "sha256:8808b09f9c39e8e12cca134e0b843e900feca5efdda1f1d28bb302d36586bcad"
+      ],
+      "reason": "Shared hang guards bound thread release/join, and the comment explains the already-unblocked local hold. The card’s protected-read/compaction interleaving, no-write cursor and no-loss assertions remain unchanged.",
+      "subject": "onboarding:mcp/tests/test_f07_missing_lock_cursor.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-RQ3MS0",
+      "items": [
+        "sha256:752673e4b13166a8df7662dd6ff201f071d4274bab9469b89b2c4efade639df4"
+      ],
+      "reason": "Only completed fixture timestamps change to sort above live requests independent of the wall month. The card’s newest-fifty versus full open-set and exact-request contracts remain true.",
+      "subject": "onboarding:mcp/tests/test_investigator.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-RYRTGK",
+      "items": [
+        "sha256:24c8ded9fe1a9c8b403b1e63f614bb7477a2c6468145f82430319f4c31b30349"
+      ],
+      "reason": "Fresh temporary configuration and the explicit taskReportAccessRoot correct fixture prerequisites. The existing card’s dispatch/replay, report access and exact taskless identity contracts already hold.",
+      "subject": "onboarding:mcp/tests/test_role_launch_routes.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-002A1G",
+          "revision": 1
+        },
+        {
+          "id": "INV-1Q4W04",
+          "revision": 1
+        },
+        {
+          "id": "INV-7DMXZ3",
+          "revision": 1
+        },
+        {
+          "id": "INV-AFTG56",
+          "revision": 1
+        },
+        {
+          "id": "INV-N9D91D",
+          "revision": 2
+        },
+        {
+          "id": "INV-VKTCC4",
+          "revision": 1
+        },
+        {
+          "id": "INV-WT3VCM",
+          "revision": 1
+        },
+        {
+          "id": "INV-YDDMGJ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-SPD354",
+      "items": [
+        "sha256:2b552c50444d335ea5cda6caed550002c76873d49c5144f75fb1063d595fdb85"
+      ],
+      "reason": "All eight members were examined. Pending catalog rows preserve already-discovered mode fields, while cosmetic settings comments and test-mode/feature assertions preserve authorized resolution and payload propagation. Host-actual exclusion/first consumption remains explicitly uncredited. Retain the guarantee, membership and routes.",
+      "revision": 2,
+      "subject": "FAM-N17BB4"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0EASG7",
+          "revision": 1
+        },
+        {
+          "id": "INV-68QN0P",
+          "revision": 1
+        },
+        {
+          "id": "INV-A0240E",
+          "revision": 1
+        },
+        {
+          "id": "INV-BS7TH8",
+          "revision": 1
+        },
+        {
+          "id": "INV-VZJRTM",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-TBBPDT",
+      "items": [
+        "sha256:47e2ec6193fcc972ec891b5ff194bc696dee85a0acf8a247e95711819415a873"
+      ],
+      "reason": "All five members were examined. Only fixture completion dates change; authorized scope, complete eight-slot/open set, exact request restoration and primary-coordinator preservation still compose unchanged. Retain guarantee, members and local routes.",
+      "revision": 1,
+      "subject": "FAM-3NG1K9"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-VX1NGM",
+      "items": [
+        "sha256:a4a7be8b45b4799598f7f6e6c6003e8115c0b621d0957d41f1a92481d11e0406"
+      ],
+      "reason": "The new reset rows and delegated cleanup remain within the overview’s closed-register, loaded-owner module-boundary cleanup model; ordinary/certifying authority and catalog ownership are unchanged.",
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "75b3b6f08417759dc92d8258c00af88e139f9426",
+            "content": "sha256:1c042369542c247c7065e299bd7e24a21aabc21cecf4973788a6ba2eaf948f81",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_pairing_prefers_content_over_the_same_number"
+            },
+            "path": "mcp/tests/test_knowledge_crossing.py"
+          },
+          "before": {
+            "blob": "db9c35fdb20211fac752fa0117c19135551706d2",
+            "content": "sha256:1c042369542c247c7065e299bd7e24a21aabc21cecf4973788a6ba2eaf948f81",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_pairing_prefers_content_over_the_same_number"
+            },
+            "path": "mcp/tests/test_knowledge_crossing.py"
+          },
+          "id": "PRF-3Q3V16"
+        },
+        {
+          "after": {
+            "blob": "75b3b6f08417759dc92d8258c00af88e139f9426",
+            "content": "sha256:771f935ee323eba80597566f214b8febcaf39f7e48f0cee09b513154ca5b6a58",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_alignment_pairs_the_singleton_between_paired_neighbours"
+            },
+            "path": "mcp/tests/test_knowledge_crossing.py"
+          },
+          "before": {
+            "blob": "db9c35fdb20211fac752fa0117c19135551706d2",
+            "content": "sha256:771f935ee323eba80597566f214b8febcaf39f7e48f0cee09b513154ca5b6a58",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_alignment_pairs_the_singleton_between_paired_neighbours"
+            },
+            "path": "mcp/tests/test_knowledge_crossing.py"
+          },
+          "id": "PRF-92B17C"
+        },
+        {
+          "after": {
+            "blob": "75b3b6f08417759dc92d8258c00af88e139f9426",
+            "content": "sha256:d22118d26c37a44908e886427aeb12019c7c321a91eec2f9a14066f141e619ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_gap_pairing_scales_near_linearly_on_fully_paired_inputs"
+            },
+            "path": "mcp/tests/test_knowledge_crossing.py"
+          },
+          "before": {
+            "blob": "db9c35fdb20211fac752fa0117c19135551706d2",
+            "content": "sha256:ea0d77923e399d4c77a8526b6281ac1e00d331ed46a079ce6b9c766e67b7d869",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_gap_pairing_scales_near_linearly_on_fully_paired_inputs"
+            },
+            "path": "mcp/tests/test_knowledge_crossing.py"
+          },
+          "id": "PRF-B1B6TS"
+        },
+        {
+          "after": {
+            "blob": "75b3b6f08417759dc92d8258c00af88e139f9426",
+            "content": "sha256:d984fd7a09bd18d9dd0942e6848571073ca39223cfe15e8983fb9ecb15838bf9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_rule_2b_pairs_same_numbers_when_content_cannot"
+            },
+            "path": "mcp/tests/test_knowledge_crossing.py"
+          },
+          "before": {
+            "blob": "db9c35fdb20211fac752fa0117c19135551706d2",
+            "content": "sha256:d984fd7a09bd18d9dd0942e6848571073ca39223cfe15e8983fb9ecb15838bf9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_rule_2b_pairs_same_numbers_when_content_cannot"
+            },
+            "path": "mcp/tests/test_knowledge_crossing.py"
+          },
+          "id": "PRF-DJB09P"
+        },
+        {
+          "after": {
+            "blob": "75b3b6f08417759dc92d8258c00af88e139f9426",
+            "content": "sha256:4a39b7424756d323d7e177f22061ae8488346988f550c280ceca9f69874edbea",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_alignment_pairs_same_numbers_when_content_moved"
+            },
+            "path": "mcp/tests/test_knowledge_crossing.py"
+          },
+          "before": {
+            "blob": "db9c35fdb20211fac752fa0117c19135551706d2",
+            "content": "sha256:4a39b7424756d323d7e177f22061ae8488346988f550c280ceca9f69874edbea",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_alignment_pairs_same_numbers_when_content_moved"
+            },
+            "path": "mcp/tests/test_knowledge_crossing.py"
+          },
+          "id": "PRF-GZ6BP1"
+        },
+        {
+          "after": {
+            "blob": "75b3b6f08417759dc92d8258c00af88e139f9426",
+            "content": "sha256:d6de3577725d378277ee2b1783f68dcc4728fb5e18aef2a6b245feb7a70d3f84",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_gap_pairing_scales_on_crossed_fully_paired_inputs"
+            },
+            "path": "mcp/tests/test_knowledge_crossing.py"
+          },
+          "before": {
+            "blob": "db9c35fdb20211fac752fa0117c19135551706d2",
+            "content": "sha256:1142ca38c350ad6bf07d140e466786d872bd817a4b8b9da111f242177a4c600d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_gap_pairing_scales_on_crossed_fully_paired_inputs"
+            },
+            "path": "mcp/tests/test_knowledge_crossing.py"
+          },
+          "id": "PRF-RQZ8SM"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-W2GV6V",
+      "items": [
+        "sha256:7f5705e0c6d7868d1b0538b3fbe0d47fa327080014ab3e0ebf0471d4743a37e3"
+      ],
+      "reason": "Only comments identify the existing ten-second assertions as complexity bounds. Exact pairing maps, order, at-most-once pairing and structural-merge meaning remain unchanged.",
+      "revision": 1,
+      "subject": "INV-Q0NS0N"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c9b187d1789b1bcd27e27139879beeb3df25a676",
+            "content": "sha256:4406b47cbf4b3cbd32b40ca2ef048dfd49a9ca91d73de8e5fdb0d133f1dbb0c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_maximum_coherence_publication_validates_at_capacity"
+            },
+            "path": "mcp/tests/test_evidence_dependency_bounds.py"
+          },
+          "before": {
+            "blob": "c58585dc2fa421f819dc8a88ea3153b268692e9f",
+            "content": "sha256:4406b47cbf4b3cbd32b40ca2ef048dfd49a9ca91d73de8e5fdb0d133f1dbb0c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_maximum_coherence_publication_validates_at_capacity"
+            },
+            "path": "mcp/tests/test_evidence_dependency_bounds.py"
+          },
+          "id": "PRF-B4QRXX"
+        },
+        {
+          "after": {
+            "blob": "c9b187d1789b1bcd27e27139879beeb3df25a676",
+            "content": "sha256:173de7dd97bc483fae19f33c9ebad04344a302efbf658c69ecf2e67eb8295e24",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_old_coherence_record_still_loads"
+            },
+            "path": "mcp/tests/test_evidence_dependency_bounds.py"
+          },
+          "before": {
+            "blob": "c58585dc2fa421f819dc8a88ea3153b268692e9f",
+            "content": "sha256:9d09b49479a9cc27a5cf74d5048e42cd4d828b4179857182bd6ae6dbcef2aa25",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_old_coherence_record_still_loads"
+            },
+            "path": "mcp/tests/test_evidence_dependency_bounds.py"
+          },
+          "id": "PRF-R5ZKGD"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-XTVNGD",
+      "items": [
+        "sha256:fb54d08569cfb0bcbf04180586c4852d3d770b3abb00943e88a2f71d4bcf1e13"
+      ],
+      "reason": "The loading test now declares the translated historical-record derivative and its pin mismatch. Production-model parsing and dependency-bound assertions remain, without an exact-original-bytes or live-coherence claim.",
+      "revision": 1,
+      "subject": "INV-SRS98B"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-XWFGX4",
+      "items": [
+        "sha256:0c55debdfdfa4fa9c00d5a6a87b3c955dc02f28ee03a5283c4231ab5eabf9083"
+      ],
+      "reason": "The updated assertion distinguishes authoring refusals from the one fully unreadable sidecar. The card already states complete preflight and named card refusal without claiming both sidecars enter the unreadable list.",
+      "subject": "onboarding:mcp/tests/test_knowledge_conversion_toolchain.py"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

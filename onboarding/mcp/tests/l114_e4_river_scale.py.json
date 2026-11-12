@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/l114_e4_river_scale.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The scale probe drives both loads with live-stream capture.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a15b4e3b0378a6ccfb21b20980f99193cc1b296",
+            "content": "sha256:efccf75ece198776c9bff2aa6646906de852662eae800aa7ac8510530dad514b",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,101 @@
+{
+  "path": "mcp/tests/test_sync_cancel_deletions.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "82588ccbe84b14fe8b8fa895b8a6066f680449c5",
+        "content": "sha256:fefc9929709350b20cc0d84cb2203e59ace8ae60abd12072979f492f5cb06d3f",
+        "locator": {
+          "kind": "symbol",
+          "name": "CancelDeletionTests.test_cancel_saves_unstaged_deletion_and_restores_parked_partition"
+        }
+      },
+      "facet": "The unstaged preservation control restores the original unstaged parked deletion, keeps later deletion only in unstaged.patch and proves saved owner-state replay plus unchanged unrelated stash census.",
+      "id": "PRF-1695SY",
+      "invariant": "INV-ECDX9Z",
+      "origin": {
+        "handoffEntry": "MIK-R61@v1 rule12 staged-deletion successor S8",
+        "leaf": "260928-MIK-L61"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "82588ccbe84b14fe8b8fa895b8a6066f680449c5",
+        "content": "sha256:019746aec0897772f636ab97f845ef6e52908f2f8e445a1bbf621188f278d029",
+        "locator": {
+          "kind": "symbol",
+          "name": "CancelDeletionTests.test_cancel_saves_staged_deletion_and_restores_parked_partition"
+        }
+      },
+      "facet": "Product cancel after retained reapply and source movement restores the original staged parked deletion and full parked partition, saves later deletion only in staged.patch, preserves genuine untracked binary bytes, names saved digests and replays saved owner state exactly.",
+      "id": "PRF-CY47Q7",
+      "invariant": "INV-ECDX9Z",
+      "origin": {
+        "handoffEntry": "MIK-R61@v1 rule12 staged-deletion successor S8",
+        "leaf": "260928-MIK-L61"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Staged deletion cancellation returns the original parked partition and preserves later state through saved patches and binary mirrors.\n\nAnchor: `CancelDeletionTests.test_cancel_saves_staged_deletion_and_restores_parked_partition`; `CancelDeletionTests._cancel_deletion`; `CancelDeletionTests._assert_replay`; `CancelDeletionTests._assert_saved_deletion`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82588ccbe84b14fe8b8fa895b8a6066f680449c5",
+            "content": "sha256:019746aec0897772f636ab97f845ef6e52908f2f8e445a1bbf621188f278d029",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 47
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "82588ccbe84b14fe8b8fa895b8a6066f680449c5",
+            "content": "sha256:6cf2a9969167fc1a66e49e46a2865bc26758d3b2ebfc100373d9d3637e6d0086",
+            "locator": {
+              "end": 156,
+              "kind": "line_range",
+              "start": 53
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Unstaged deletion cancellation preserves its original index/worktree partition through the same real operation and replay assertions.\n\nAnchor: `CancelDeletionTests.test_cancel_saves_unstaged_deletion_and_restores_parked_partition`; `CancelDeletionTests._cancel_deletion`; `CancelDeletionTests._assert_replay`; `CancelDeletionTests._assert_saved_deletion`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82588ccbe84b14fe8b8fa895b8a6066f680449c5",
+            "content": "sha256:fefc9929709350b20cc0d84cb2203e59ace8ae60abd12072979f492f5cb06d3f",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 50
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "82588ccbe84b14fe8b8fa895b8a6066f680449c5",
+            "content": "sha256:6cf2a9969167fc1a66e49e46a2865bc26758d3b2ebfc100373d9d3637e6d0086",
+            "locator": {
+              "end": 156,
+              "kind": "line_range",
+              "start": 53
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

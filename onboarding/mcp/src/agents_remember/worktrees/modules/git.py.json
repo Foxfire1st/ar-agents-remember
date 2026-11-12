@@ -1,0 +1,858 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/git.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+        "content": "sha256:a5c1ee4adf4c1c93f7e11dc1cf2c29ffdc506405cc4c3272db2c584f0f8c04a6",
+        "locator": {
+          "kind": "symbol",
+          "name": "publish_tree_commit"
+        }
+      },
+      "id": "RLZ-08YAZW",
+      "invariant": "INV-ANKPPE",
+      "origin": {
+        "handoffEntry": "R3 note 11a",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The order of these checks prevents write-tree from obscuring the intended refusal.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+        "content": "sha256:103e227873dd44c7a39e41d3501ffd4894d3bf88901ee6f9c4003e40c0290f60",
+        "locator": {
+          "kind": "symbol",
+          "name": "_require_git_with_index"
+        }
+      },
+      "id": "RLZ-1Y8HJX",
+      "invariant": "INV-DZB7MC",
+      "origin": {
+        "handoffEntry": "L44-C1-03",
+        "leaf": "260928-MIK-L44"
+      },
+      "rationale": "Runs one Git command against the private index file and keeps the failure name, so every staging step of the interval addresses the copy instead of the worktree index.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+        "content": "sha256:b1bff66ce31f00a3e25ff2e50d3c6a4f3d2ace0229322eb2bf102aca69cfe16f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_move_admitted_ref"
+        }
+      },
+      "id": "RLZ-2F1J87",
+      "invariant": "INV-J6PAD2",
+      "origin": {
+        "handoffEntry": "R3 Note 12",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The second compare-and-swap protects a concurrent foreign commit.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+        "content": "sha256:4a019192b889ba5cf0845cd636dced6093f739b662c16ac927926c9bf4d0472f",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-3T98VE",
+      "invariant": "INV-5FC4T6",
+      "origin": {
+        "handoffEntry": "R3 Finding 10",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The module whose helpers were removed; absence is the evidence.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+        "content": "sha256:8dd6441d3b115c68f9b1289f703a029d9723e42576feaea6304deca280f2fb59",
+        "locator": {
+          "kind": "symbol",
+          "name": "_tree_from_head"
+        }
+      },
+      "id": "RLZ-98370Y",
+      "invariant": "INV-EKE1RV",
+      "origin": {
+        "handoffEntry": "L40-private-index-support-attribution",
+        "leaf": "260928-MIK-L40"
+      },
+      "rationale": "The existing full capture branch seeds and writes only its separate private index, preserving real-index isolation when the optimized copied-index path cannot answer.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+        "content": "sha256:b1bff66ce31f00a3e25ff2e50d3c6a4f3d2ace0229322eb2bf102aca69cfe16f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_move_admitted_ref"
+        }
+      },
+      "id": "RLZ-9RTXE8",
+      "invariant": "INV-BEYEV2",
+      "origin": {
+        "handoffEntry": "R3 note 12, publication half",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The second compare-and-swap protects a concurrent foreign commit.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+        "content": "sha256:a5c1ee4adf4c1c93f7e11dc1cf2c29ffdc506405cc4c3272db2c584f0f8c04a6",
+        "locator": {
+          "kind": "symbol",
+          "name": "publish_tree_commit"
+        }
+      },
+      "id": "RLZ-C5MD2G",
+      "invariant": "INV-YZ45D7",
+      "origin": {
+        "handoffEntry": "L26-R1-F01",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "Binds the admitted parent and intended ref in the publication transaction.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+        "content": "sha256:b1bff66ce31f00a3e25ff2e50d3c6a4f3d2ace0229322eb2bf102aca69cfe16f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_move_admitted_ref"
+        }
+      },
+      "id": "RLZ-GJZS85",
+      "invariant": "INV-FYZQK0",
+      "origin": {
+        "handoffEntry": "R4-O2",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The failed expected-old take-back leaves the moved ref reachable.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+        "content": "sha256:a5c1ee4adf4c1c93f7e11dc1cf2c29ffdc506405cc4c3272db2c584f0f8c04a6",
+        "locator": {
+          "kind": "symbol",
+          "name": "publish_tree_commit"
+        }
+      },
+      "id": "RLZ-KGZHZY",
+      "invariant": "INV-GSEMMW",
+      "origin": {
+        "handoffEntry": "R3 Note 11",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The shared commit-object publication path binds the message, index and hook behavior.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+        "content": "sha256:103e227873dd44c7a39e41d3501ffd4894d3bf88901ee6f9c4003e40c0290f60",
+        "locator": {
+          "kind": "symbol",
+          "name": "_require_git_with_index"
+        }
+      },
+      "id": "RLZ-MS9XRW",
+      "invariant": "INV-ZCRMS7",
+      "origin": {
+        "handoffEntry": "L44-M1-01",
+        "leaf": "260928-MIK-L44"
+      },
+      "rationale": "Runs one Git command against the private index file and keeps the failure name, so every staging step of the interval addresses the copy instead of the worktree index.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+        "content": "sha256:464218c7cff86018061e344e5d5a53fd14ad3754b647e995dd80144b4559fdcb",
+        "locator": {
+          "kind": "symbol",
+          "name": "worktree_candidate_tree"
+        }
+      },
+      "id": "RLZ-MTQB5G",
+      "invariant": "INV-EKE1RV",
+      "origin": {
+        "handoffEntry": "L40-shared-capture-isolation",
+        "leaf": "260928-MIK-L40"
+      },
+      "rationale": "All reviewer, gate, preview and closeout callers share this capture entry point; its per-observation temporary index prevents captures from writing the real index.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+        "content": "sha256:4db92bb6277ae2bbf7288903a7351835ee366648856b722649ca901233ad400f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_publication_lock"
+        }
+      },
+      "id": "RLZ-SMB7P7",
+      "invariant": "INV-0XMNQZ",
+      "origin": {
+        "handoffEntry": "R3 note 11g",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "This owner distinguishes contention from errors waiting cannot cure.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+        "content": "sha256:b97684cc2ac76c4fccebf4b9798b3174f988a5b6ff37fa0aa659ddeafa089b67",
+        "locator": {
+          "kind": "symbol",
+          "name": "stage_tree"
+        }
+      },
+      "id": "RLZ-V3EGC6",
+      "invariant": "INV-49E649",
+      "origin": {
+        "handoffEntry": "L37-judged-tree-commit",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Retargets only differing index entries with cached diff-index/update-index, reads no working file and restores flags while retaining unchanged stat data. write-tree remains the judged tree; later working writes stay uncommitted, not committed through read-tree.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+        "content": "sha256:b1bff66ce31f00a3e25ff2e50d3c6a4f3d2ace0229322eb2bf102aca69cfe16f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_move_admitted_ref"
+        }
+      },
+      "id": "RLZ-VSE4FH",
+      "invariant": "INV-0T84PZ",
+      "origin": {
+        "handoffEntry": "R3 note 11d",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "This owner rereads the intended ref and keeps the native reason for refusal.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+        "content": "sha256:a5c1ee4adf4c1c93f7e11dc1cf2c29ffdc506405cc4c3272db2c584f0f8c04a6",
+        "locator": {
+          "kind": "symbol",
+          "name": "publish_tree_commit"
+        }
+      },
+      "id": "RLZ-XMGREQ",
+      "invariant": "INV-2Q8RPR",
+      "origin": {
+        "handoffEntry": "R3 note 11f",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The shared commit-object publication path aligns all lifecycle routes.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+        "content": "sha256:b1bff66ce31f00a3e25ff2e50d3c6a4f3d2ace0229322eb2bf102aca69cfe16f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_move_admitted_ref"
+        }
+      },
+      "id": "RLZ-Y3ZQ4N",
+      "invariant": "INV-JZD1F5",
+      "origin": {
+        "handoffEntry": "R4-O2 (post-takeover documentation)",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The unchanged take-back mechanism the docstring describes.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+        "content": "sha256:b97684cc2ac76c4fccebf4b9798b3174f988a5b6ff37fa0aa659ddeafa089b67",
+        "locator": {
+          "kind": "symbol",
+          "name": "stage_tree"
+        }
+      },
+      "id": "RLZ-ZAY1M2",
+      "invariant": "INV-89A5AN",
+      "origin": {
+        "handoffEntry": "R3 note 11e",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "This owner replaces only differing index entries and restores the shape no tree records.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "10": {
+      "note": "`worktree_candidate_tree` implements the retained boundary described above.\n\nAnchor: `worktree_candidate_tree`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+            "content": "sha256:4a019192b889ba5cf0845cd636dced6093f739b662c16ac927926c9bf4d0472f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+            "content": "sha256:464218c7cff86018061e344e5d5a53fd14ad3754b647e995dd80144b4559fdcb",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_candidate_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "`stage_tree` implements the retained boundary described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+            "content": "sha256:b97684cc2ac76c4fccebf4b9798b3174f988a5b6ff37fa0aa659ddeafa089b67",
+            "locator": {
+              "kind": "symbol",
+              "name": "stage_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "`publish_tree_commit` implements the retained boundary described above.\n\nAnchor: `publish_tree_commit`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+            "content": "sha256:4a019192b889ba5cf0845cd636dced6093f739b662c16ac927926c9bf4d0472f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+            "content": "sha256:a5c1ee4adf4c1c93f7e11dc1cf2c29ffdc506405cc4c3272db2c584f0f8c04a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_tree_commit"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "`_move_admitted_ref` implements the retained boundary described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+            "content": "sha256:b1bff66ce31f00a3e25ff2e50d3c6a4f3d2ace0229322eb2bf102aca69cfe16f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_move_admitted_ref"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "One Git command runs against a private index file; a failure keeps its name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+            "content": "sha256:103e227873dd44c7a39e41d3501ffd4894d3bf88901ee6f9c4003e40c0290f60",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_git_with_index"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Staging writes a private index file when asked; otherwise the worktree's own index.\n\nAnchor: `stage_worktree_content`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+            "content": "sha256:4a019192b889ba5cf0845cd636dced6093f739b662c16ac927926c9bf4d0472f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+            "content": "sha256:f3289bb535ddc8dac5e1c007bfbee06aeb8a0fda33591b76a15080ad8550e442",
+            "locator": {
+              "kind": "symbol",
+              "name": "stage_worktree_content"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Ref/repository identity and transport-safe errors have shared implementations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+            "content": "sha256:5777bc0b0c3621a8045a8da3a987b5244a609c00b57b01cd3ceffa06cc74901a",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_git"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Candidate trees use private indices and exact derived-path exclusions.\n\nAnchor: `worktree_candidate_tree`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+            "content": "sha256:4a019192b889ba5cf0845cd636dced6093f739b662c16ac927926c9bf4d0472f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+            "content": "sha256:464218c7cff86018061e344e5d5a53fd14ad3754b647e995dd80144b4559fdcb",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_candidate_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The exact cache pathspec is defined beside the consumer filename.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "125f9e150c83c61988656ca8750c0ee9e6c7563b",
+            "content": "sha256:fe8c801c1101f2ea09438c141664d03f55189cd2474a9e9ffd57d075d423f5bf",
+            "locator": {
+              "kind": "symbol",
+              "name": "MEMORY_CACHE_EXCLUDE"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_ledger.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "`stage_tree` makes the index exactly one tree and reads nothing from the working tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+            "content": "sha256:b97684cc2ac76c4fccebf4b9798b3174f988a5b6ff37fa0aa659ddeafa089b67",
+            "locator": {
+              "kind": "symbol",
+              "name": "stage_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "checkout_holding_branch reads git worktree list --porcelain and selects the first non-detached, non-bare checkout holding the exact refs/heads branch, returning None if unavailable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+            "content": "sha256:bd0cfb45af719e50c0af82bc21deb1cf32751ffe7543dffd0e6d693878866898",
+            "locator": {
+              "end": 200,
+              "kind": "line_range",
+              "start": 160
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+            "content": "sha256:4a019192b889ba5cf0845cd636dced6093f739b662c16ac927926c9bf4d0472f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "Capture orchestration delegates private-copy materialization and exclusion pathspecs to their actual owner.\n\nAnchor: `worktree_candidate_tree` `_tree_from_index_copy` `_add_all_args`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+            "content": "sha256:4a019192b889ba5cf0845cd636dced6093f739b662c16ac927926c9bf4d0472f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8f53c952d51eb1b83c2d97993768dbc0809cc6ea",
+            "content": "sha256:0a06f9c025ff6aa48b239ca0893bc992df4b397782bb8e5930acf3f69bed7c7b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/capture_index.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+            "content": "sha256:464218c7cff86018061e344e5d5a53fd14ad3754b647e995dd80144b4559fdcb",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_candidate_tree"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8f53c952d51eb1b83c2d97993768dbc0809cc6ea",
+            "content": "sha256:8699b57a3d2f03599cb0115133681e0e30af288ae093b1ac52d64d5f24cd62f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tree_from_index_copy"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/capture_index.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8f53c952d51eb1b83c2d97993768dbc0809cc6ea",
+            "content": "sha256:ba7e3b6f4fa1ec85042fe087ade5f0162d69d3b9bcbc29c6d39e4b1c9671b793",
+            "locator": {
+              "kind": "symbol",
+              "name": "_add_all_args"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/capture_index.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "The serving count reader retains deletion/rename/binary path facts outside this mutation module.\n\nAnchor: `changed_files_with_counts`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ea106246ac1a8053fa263b23190863c57ebd295",
+            "content": "sha256:83e37400860eadb6a861d04f8903f8a187caf59aec360961d3a98d2ab9f3cab5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_reads.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0ea106246ac1a8053fa263b23190863c57ebd295",
+            "content": "sha256:466d3853142e9f8f7eba582f33a15200367fc6e2f56ca624340d62ab1df1d47d",
+            "locator": {
+              "kind": "symbol",
+              "name": "changed_files_with_counts"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_reads.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "Native NUL-delimited statuses/counts live in `git_changes`; the serving wrapper caches that one implementation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ea106246ac1a8053fa263b23190863c57ebd295",
+            "content": "sha256:466d3853142e9f8f7eba582f33a15200367fc6e2f56ca624340d62ab1df1d47d",
+            "locator": {
+              "kind": "symbol",
+              "name": "changed_files_with_counts"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_reads.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0ea106246ac1a8053fa263b23190863c57ebd295",
+            "content": "sha256:ad4b61e7390a940b0e324744a2f640308551f688bf3169ed1a26bf50c26fdd1b",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_reads.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7811241b103c8c1b3f9f931a62c42f51a8bc3742",
+            "content": "sha256:78b91576ec7a8c2a2ff860653666904d8cc35881aea13fa3d1d2695dbff5b579",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git_changes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7811241b103c8c1b3f9f931a62c42f51a8bc3742",
+            "content": "sha256:868cceba358df705e894864d6ecc17a750a328ae788c89cc4fb803b32930a54f",
+            "locator": {
+              "kind": "symbol",
+              "name": "changed_files_with_counts"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git_changes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "Only the change-set wrapper adds diff.autoRefreshIndex=false; the native landing worklist keeps ordinary Git refresh behavior, and the existing identical-byte/native-stage regression asserts an empty worklist.\n\nAnchor: native-stage regression",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+            "content": "sha256:1195728b19af21f629571abbfeb4fded7ff821b5d4e5eaa5b03576e2bdf0cb6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_nul_git"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+            "content": "sha256:09041fbb1dc62ffbb3e5d7e1edc8feb428539e8c960cd11661e8c32767ef56b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "changed_worktree_paths"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7811241b103c8c1b3f9f931a62c42f51a8bc3742",
+            "content": "sha256:18e608c3f1400a83796ed494079304faa02fbf672491f6b4d259a1d6747f6cda",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git_changes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "content": "sha256:1ce13ae86c3b7f29490adfe9da0eab9d81ab15abd2f98117395ea1fc9f14d683",
+            "locator": {
+              "end": 164,
+              "kind": "line_range",
+              "start": 152
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cb3b9f4243e5856d4a5a30813fc27c97c515c489",
+            "content": "sha256:2c79c3b514ec9eb6abb1f6b979d3fc080ab73a76af897ff3584bed10d22ce78a",
+            "locator": {
+              "end": 658,
+              "kind": "line_range",
+              "start": 646
+            },
+            "path": "mcp/tests/test_changeset_cache.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "content": "sha256:ede69db9a6a83701b6ff1391da1e3ff7578f3387510f13def4187f7a7af9d53b",
+            "locator": {
+              "end": 155,
+              "kind": "line_range",
+              "start": 143
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cb3b9f4243e5856d4a5a30813fc27c97c515c489",
+            "content": "sha256:0d534bb3f33fe58247a8a23e5caead8e79c523ecc16d7605730a86464bdb15ea",
+            "locator": {
+              "end": 570,
+              "kind": "line_range",
+              "start": 558
+            },
+            "path": "mcp/tests/test_changeset_cache.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "One shared entry owns copied-index and existing full capture.\n\nAnchor: `worktree_candidate_tree`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+            "content": "sha256:4a019192b889ba5cf0845cd636dced6093f739b662c16ac927926c9bf4d0472f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+            "content": "sha256:464218c7cff86018061e344e5d5a53fd14ad3754b647e995dd80144b4559fdcb",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_candidate_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The copied index is normalized without changing real-index state.\n\nAnchor: `_tree_from_index_copy`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f53c952d51eb1b83c2d97993768dbc0809cc6ea",
+            "content": "sha256:0a06f9c025ff6aa48b239ca0893bc992df4b397782bb8e5930acf3f69bed7c7b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/capture_index.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8f53c952d51eb1b83c2d97993768dbc0809cc6ea",
+            "content": "sha256:8699b57a3d2f03599cb0115133681e0e30af288ae093b1ac52d64d5f24cd62f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tree_from_index_copy"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/capture_index.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Flag clearing uses the worktree top-level and one option per command.\n\nAnchor: `_clear_trust_flags`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f53c952d51eb1b83c2d97993768dbc0809cc6ea",
+            "content": "sha256:0a06f9c025ff6aa48b239ca0893bc992df4b397782bb8e5930acf3f69bed7c7b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/capture_index.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8f53c952d51eb1b83c2d97993768dbc0809cc6ea",
+            "content": "sha256:ea47180569e725ae23c44efa5a74e06605bcc0927ae0a399577b870c77652032",
+            "locator": {
+              "kind": "symbol",
+              "name": "_clear_trust_flags"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/capture_index.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

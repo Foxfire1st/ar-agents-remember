@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The regression prevents a repository shape or citation eligibility decision from aborting the check or hiding content drift."
+  },
+  "applicability": "Full synchronous memory-quality runs on converted memory paired with a Git code repository.",
+  "conditions": [
+    "Git supplies tracked and non-ignored untracked paths.",
+    "The source reader belongs to one check invocation."
+  ],
+  "exclusions": [
+    "Persistent citation indexes.",
+    "Onboarding eligibility and storage selection."
+  ],
+  "id": "INV-WTF0AW",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "freeze-A3.md; A3-v3-checks.md; A3-v3-candidate-manifest.json"
+      ],
+      "path": "curator-handoff-v2.json"
+    },
+    "handoffEntry": "MIK-R212@v3 rules 2 and 4",
+    "leaf": "260928-MIK-L202",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The synchronous source listing uses Git and names unreadable files without retaining uncited bodies or restoring the retired source index.",
+  "status": "proposed",
+  "supersedes": []
+}

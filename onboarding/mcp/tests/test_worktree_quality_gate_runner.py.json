@@ -1,0 +1,39 @@
+{
+  "path": "mcp/tests/test_worktree_quality_gate_runner.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Host quality execution refuses before running a profile",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1616f6eb52cc7177b636fd601d6147cb6e1867b1",
+            "content": "sha256:9940076c75b965b313583a272fdb33fed9e95af48140f5857e191ef34b0ba668",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_host_quality_execution_refuses_before_running_a_profile"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Interrupted gate keeps the previous completed test report",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1616f6eb52cc7177b636fd601d6147cb6e1867b1",
+            "content": "sha256:cfe716281299861ec5b0a0dff973a161170c3c04fa056aa81f583637feb45bde",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_interrupted_gate_keeps_the_previous_completed_test_report"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

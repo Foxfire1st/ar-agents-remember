@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/panels/review/reading/readingContext.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Share target/repository identity, comparison, planning, code layout/context, selection/group state, subject slots and family order.\n\nAnchor: \"export interface ReviewPlace {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c5c68cb71ac9b042ad009c56fb3e7e7949dc85a",
+            "content": "sha256:066666d6454d2baa69d74c6d114d2bec0158116f7f29e6b3f24fb368078fd264",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 14
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Share target/repository identity, comparison, planning, code layout/context, selection/group state, subject slots and family order.\n\nAnchor: \"export interface ReadingContextValue {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c5c68cb71ac9b042ad009c56fb3e7e7949dc85a",
+            "content": "sha256:059c1caf50f51fb912413c01f22683f13240c18f2cf60d34719c7a801b636986",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 21
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Share target/repository identity, comparison, planning, code layout/context, selection/group state, subject slots and family order.\n\nAnchor: \"export const ReadingContext = createContext<ReadingContextValue \\| null>(null);\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c5c68cb71ac9b042ad009c56fb3e7e7949dc85a",
+            "content": "sha256:079a77ca715b3f9bb9ee95a0e4837b87b46a676f0b65305ac9c431a13cecfb06",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 45
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

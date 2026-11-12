@@ -1,0 +1,364 @@
+{
+  "path": "mcp/src/agents_remember/models/role_capsule_resources.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A declared tool set is an observation, never a permission channel.\n\nAnchor: `declared_allowed_tools`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dedd3c7307afdbd303da1409b5aabd3363ea93fb",
+            "content": "sha256:739ea9814e5104ad474541966c82470c4cb545e7f7647280c3ef6f713ff5a955",
+            "locator": {
+              "end": 285,
+              "kind": "line_range",
+              "start": 270
+            },
+            "path": "mcp/src/agents_remember/models/skill_resources.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The case that executes the no-grant guarantee on a served skill's declared tools.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f19d88280cca899c0a34b54b0faae2717a4fdaf",
+            "content": "sha256:e8181a0720290a24893083991566ddd792976aeb263d08e9046d7d6ef75c9097",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_reading_a_skill_does_not_grant_the_tools_its_frontmatter_names"
+            },
+            "path": "mcp/tests/test_capsule_serving.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6f19d88280cca899c0a34b54b0faae2717a4fdaf",
+            "content": "sha256:323b5ad262c99244d1d9b74f77ba55747862d16bd5450aa0424bb1b47e255482",
+            "locator": {
+              "end": 843,
+              "kind": "line_range",
+              "start": 809
+            },
+            "path": "mcp/tests/test_capsule_serving.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The current response registry omits former capsule/catalog tools; retained response types are not public tool exposure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "content": "sha256:015dd69a8ec93bc92cd005517a4efc8a96ce678bfdb302a9e9977c5cf247b557",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 82
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Launch copies detail files, substitutes paths, and records frozen revisions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
+            "content": "sha256:95473e1da9c3027a19991c55617d9011c5c561e7d847352b7f7a018f5f21ea66",
+            "locator": {
+              "kind": "symbol",
+              "name": "compose_launch_instructions"
+            },
+            "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Replay validates regular opened files and frozen revisions at deterministic detail names beside the saved handover in its recorded canonical folder, not mutable corpus sources.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
+            "content": "sha256:013fd35cb59b3e2dfca99d5eed0a2db2ae42048952a03b6a87761f58fbdd9087",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_instruction_detail_artifacts"
+            },
+            "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Per-request detail artifacts use exact admitted bytes beside the handover and write-once publication.\n\nAnchor: L59–L74",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a25806bf819c4fcfb46827a42776588021e88e7a",
+            "content": "sha256:53ae089e7b885fad8e278a7a4540e98ab4b52f03f6e60ecbb8260f070081a4d4",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 114
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L43–L68",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6df57ae981982e091e8dd11888f3f8af12865542",
+            "content": "sha256:bd96fae93cb70f90e464c4bf8fc7ff480d27af72aaa602f023f34fe5630cf942",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 43
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L105–L128",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6df57ae981982e091e8dd11888f3f8af12865542",
+            "content": "sha256:4c3f6a960857a9ac55dcb5ea441d04ff0bc5e110f741e816f6e71bde59dcc48d",
+            "locator": {
+              "end": 128,
+              "kind": "line_range",
+              "start": 105
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The per-read provenance block whose trust statement is a fixed string.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dedd3c7307afdbd303da1409b5aabd3363ea93fb",
+            "content": "sha256:6939f4f8d09e89a5ae6b22a6b79a0cf13ad562a7d44efb6314f593bbc452ce8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "skill_meta"
+            },
+            "path": "mcp/src/agents_remember/models/skill_resources.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The capsule envelope: required explanation, optional identity/provenance, and the refusal fields.\n\nAnchor: `RoleCapsuleResponse`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6df57ae981982e091e8dd11888f3f8af12865542",
+            "content": "sha256:b5773c433bf7281a0a3d1ef2939c9b0cb57f452e341b5ce6271d6521ebbe1481",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The nested capsule payloads, one per fact family.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6df57ae981982e091e8dd11888f3f8af12865542",
+            "content": "sha256:8b883b05e20766a840eff477bf779fc50239d23af3cee8e6d5cbbf282648bf0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleInstructionBlockPayload"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6df57ae981982e091e8dd11888f3f8af12865542",
+            "content": "sha256:69557d94bd303d745183303df14a686ac1ee1f02092e3a6d14ccfe6828f7ad7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleSkillReferencePayload"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6df57ae981982e091e8dd11888f3f8af12865542",
+            "content": "sha256:062cb7da95cf73e6ab824030f88ac0b9281c2cd0366596427a4b5cc8c51a2ea8",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleRequestedToolPayload"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6df57ae981982e091e8dd11888f3f8af12865542",
+            "content": "sha256:af04ffa5cd26e0aa9de65eb1046e85c6987a504a1dca6845dee896f8d659bdc4",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleTaskContextPayload"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6df57ae981982e091e8dd11888f3f8af12865542",
+            "content": "sha256:a79f319b9c278ec2e19f75c0dec6fb51fe1b1206f3ba116f0b20b24cc2a2df17",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleSourceRecordPayload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The listing carries relative file names and no content; the read carries two distinct revisions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6df57ae981982e091e8dd11888f3f8af12865542",
+            "content": "sha256:bc95fa13ef8cc409e46127730bf166002ad6108931c2c4e91a5f12a0061516b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "SkillCatalogEntryPayload"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6df57ae981982e091e8dd11888f3f8af12865542",
+            "content": "sha256:c3fcf3648ee9a334adea687e5219d8eaa03852026cc43e2a36e5c481ef8a5cd1",
+            "locator": {
+              "kind": "symbol",
+              "name": "SkillCatalogListResponse"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6df57ae981982e091e8dd11888f3f8af12865542",
+            "content": "sha256:101b00e18d3e8cfe9badf6f0a19c0b0bd84063be7b88c8504e56a399b33234c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "SkillCatalogReadResponse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The constant trust statement every served file declares.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6df57ae981982e091e8dd11888f3f8af12865542",
+            "content": "sha256:e2bed5eb9ba75146d7e2bd781cb38307db5b90b91663f16f75bfa7d5e8016403",
+            "locator": {
+              "kind": "symbol",
+              "name": "SERVER_SUPPLIED_CONTENT_TRUST"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The builder that fills these contracts from owner-produced values only.\n\nAnchor: `role_capsule_response` `_fill_manifest`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f9008e97604943a305aca323ecb9410f0e66057",
+            "content": "sha256:fba14f2ddb26d1fec29fa3d44f98a77c83610b3c19ea132676d2d9434b15be6f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/skill_resources/responses.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The requested-versus-granted boundary the compiler narrows against: the policy type is declared in the `models` leaf, and the operation snapshots the published roster into it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8673a0cc0f664527b38318f5c02481ab5826e739",
+            "content": "sha256:4b407a4db5a6f1bee881e948f14ada7d20478e608329d406a8ce2e243128e4a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleToolPolicy"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c6a03cb33adb566e7cf8b84f07ab8c3061e46a19",
+            "content": "sha256:555b110693e8fd5bcd0c9de05489a4ef1b674ae4aa306f634a858400c38200c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "admitted_tool_policy"
+            },
+            "path": "mcp/src/agents_remember/application/skill_resources/capsule.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c6a03cb33adb566e7cf8b84f07ab8c3061e46a19",
+            "content": "sha256:3d3894a6b6ff5a3922fa96b7fa0ced80cb7f1422b8efb0e7b7180c982798aaee",
+            "locator": {
+              "end": 427,
+              "kind": "line_range",
+              "start": 412
+            },
+            "path": "mcp/src/agents_remember/application/skill_resources/capsule.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

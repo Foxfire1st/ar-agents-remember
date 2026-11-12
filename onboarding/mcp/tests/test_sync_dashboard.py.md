@@ -1,15 +1,5 @@
 # mcp/tests/test_sync_dashboard.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_sync_dashboard.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-17T23:30+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [mcp/tests overview](overview.md)
@@ -72,39 +62,26 @@ fixture.
 - **`--check` does not replace the release write path.** The fingerprint sidecar is still written only
   by the build step, and the bundle is still placed only there.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository; the script and the bundle it places
 are repository-owned.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured `Domain Documentation` source applies; the subject is the repository's own build script. | — | — |
+No configured `Domain Documentation` source applies; the subject is the repository's own build script.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The script whose check mode this module pins. | `main` | scripts/sync-dashboard.py:251-262 |
-| The entry point the case invokes with `--check`. | `main` | scripts/sync-dashboard.py:251-262 |
-| The write path that `--check` must leave unchanged. | `sync` | scripts/sync-dashboard.py:227-248 |
-| The fingerprint the check recomputes from the source tree. | `source_fingerprint` | scripts/sync-dashboard.py:99-112 |
-| The predicate that decides whether the placed bundle is still current. | `bundle_is_current` | scripts/sync-dashboard.py:115-125 |
-| The path constants the fixture re-points, and the fingerprint sidecar the write path owns. | `SOURCE`; `TARGET`; `SOURCE_TREE`; `FINGERPRINT_FILE` | scripts/sync-dashboard.py:45-45; scripts/sync-dashboard.py:46-46; scripts/sync-dashboard.py:52-52; scripts/sync-dashboard.py:53-53 |
+- The script whose check mode this module pins. [1]
+- The entry point the case invokes with `--check`. [2]
+- The write path that `--check` must leave unchanged. [3]
+- The fingerprint the check recomputes from the source tree. [4]
+- The predicate that decides whether the placed bundle is still current. [5]
+- The path constants the fixture re-points, and the fingerprint sidecar the write path owns. [6]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No external repository boundary is exercised; the fixture root is a throwaway directory the case owns.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-17T23:30+02:00 — 260915-CAPS-L21 curator: created this card for a source file **new in this
-  leaf** (S6a's read-only `--check` mode). The anchor set is the script's own entry points and the
-  module-level path constants the case re-points; `bundle_is_current` is quoted as an anchor because it
-  is the predicate that answers the check's question. Anchors and ranges were read from the current
-  worktree source; the file is untracked at this tip, so verification metadata is pinned to this leaf's
-  code base commit `997305a9` and the governed closeout stamps the real code commit. No hash or
-  fingerprint was invented here.
+No meaningful cross-repo references found.

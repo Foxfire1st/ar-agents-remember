@@ -1,0 +1,38 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The obligation spans the shared route, the mounted payload, the registration and the CLI's settings discovery, and two registered cases assert the mounted refusal before writing and the answer rows; without it the tool and the command can drift into different guards, which is the defect the requirement records."
+  },
+  "applicability": "Every write of a leaf's memory, of a crossing's conflicted record, or of a taskless wave, through either the mounted tool or the CLI.",
+  "conditions": [
+    "The memory tree is converted (it holds knowledge/layout.json).",
+    "The caller supplies an authorization reference."
+  ],
+  "exclusions": [
+    "An unconverted tree: refused by name, because the canonical database writer is retired.",
+    "Without commit: the run plans, validates and reports, and writes nothing.",
+    "A raise row without usable settings: refused, not published by another route."
+  ],
+  "id": "INV-AG8G8C",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "MIK-R73@v1 rule 1 and MIK-R54's writer report; the two registered cases named here",
+        "test source 253-255: bound_for(\"knowledge_write\") > 0 and bound_for(\"knowledge_read\") > 0",
+        "the invariant's authored statement, restored after a proof-shaped entry replaced it; the two proofs carry narrowed facets"
+      ],
+      "path": "handoff-draft-4.json"
+    },
+    "handoffEntry": "R73-R1",
+    "leaf": "260928-MIK-L73",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The mounted writer is the command's writer: knowledge_write runs the same leaf, crossing and wave functions as the CLI under the same contract guard, authorization reference and refusals, and only --commit writes.",
+  "status": "proposed",
+  "supersedes": []
+}

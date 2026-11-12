@@ -1,0 +1,246 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/route_review.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+        "content": "sha256:512501ba84472e1e0959748d4f3ec953e95de1a59795606374f39bc423ecec8c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_tree_change_after_images"
+        }
+      },
+      "id": "RLZ-44RDZ1",
+      "invariant": "INV-X22A1K",
+      "origin": {
+        "handoffEntry": "L170-curator-clean-sync-review-gate",
+        "leaf": "260928-MIK-L170"
+      },
+      "rationale": "The raw NUL-record reader retains bytes as path keys and mode/blob after-images, refusing failed or malformed observations rather than comparing normalized path strings.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+        "content": "sha256:1bd5705068bb818ead3f9c2ddb232ebe3c68e5fa177ac13beb9f65a064808341",
+        "locator": {
+          "kind": "symbol",
+          "name": "build_route_review"
+        }
+      },
+      "id": "RLZ-7T6SDY",
+      "invariant": "INV-X22A1K",
+      "origin": {
+        "handoffEntry": "L170-curator-clean-sync-review-gate",
+        "leaf": "260928-MIK-L170"
+      },
+      "rationale": "Leaf construction stamps the contract code base before computing the record digest, so the comparison uses a plane-supplied base rather than a reviewer-authored value.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+        "content": "sha256:7a65b3a43ec9a86839f97e43234988f11363361deea0709be2ff20d9a481fe43",
+        "locator": {
+          "kind": "symbol",
+          "name": "clean_sync_keeps_route_review"
+        }
+      },
+      "id": "RLZ-PY1DZY",
+      "invariant": "INV-X22A1K",
+      "origin": {
+        "handoffEntry": "L170-curator-clean-sync-review-gate",
+        "leaf": "260928-MIK-L170"
+      },
+      "rationale": "This predicate proves ancestry, disjoint raw path sets and exact equality of reviewed/current after-image maps; a missing base stamp grants no exception.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The plane stamps candidate and base, while the evidence-byte owner confines and hashes task files.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+            "content": "sha256:1bd5705068bb818ead3f9c2ddb232ebe3c68e5fa177ac13beb9f65a064808341",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_route_review"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+            "content": "sha256:b61da9d6eda573fbd5100bb19f4708ea5534f3c5a374f540ce3cc7cf6f9b0d67",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_evidence_files"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+            "content": "sha256:26d60589ac252eb92e2edc8cf906f276e6416f1d43d82828aedc6b56cb107eb3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_evidence_file_sha256"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Series altitude is excluded before leaf resolution; changed leaves require a passing record for the current candidate tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+            "content": "sha256:a11f53195360d144843350f7167e02b86bfeecb424c1539d6c9b9e3dc7230f82",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_current_route_review"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "R03 evidence digests and declared dependency currentness keep their distinct source owners.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+            "content": "sha256:b71d1bb12180b822420f827acd2350e1bd839ad85a5622c6fec4536d0af43d88",
+            "locator": {
+              "kind": "symbol",
+              "name": "_stamp_evidence_digests"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+            "content": "sha256:1028f4d426807d513b9afabcfb1bb176bb6873d278d279c2a0237aee915e7cce",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_current_dependencies"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+            "content": "sha256:26d60589ac252eb92e2edc8cf906f276e6416f1d43d82828aedc6b56cb107eb3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_evidence_file_sha256"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "CCR-R25 maps observed route-review refusals into bounded structured recovery guidance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+            "content": "sha256:4778720b359f5a687cb5cde88a581f4504fb43fea9379b03d92723aa20e864b6",
+            "locator": {
+              "end": 253,
+              "kind": "line_range",
+              "start": 184
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+            "content": "sha256:0aa1777f692d1221d9ff36fe608a862949d251aabdc2c03151ced2180003e929",
+            "locator": {
+              "end": 275,
+              "kind": "line_range",
+              "start": 260
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The route-review record's content-addressed fields and self-digest validator.\n\nAnchor: `RouteReviewRecord`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c2275b9792d563997e82c391c04d0f6d885acd58",
+            "content": "sha256:dec1e870f6476ae35e3eb90c61301c71553bf75141daf92defe26a0422a24f71",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/tasks/route_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Inspection guidance and mutation guidance are separate. inspect_task_document for a task_doc plan names taskDocumentPath and file-reading prose, with no nextTool/nextArgs invoking a removed read. record_route_review alone carries the mutating task_doc address and required review value. Currentness and developer-decision mappings remain governed by their existing owners; file reading does not record an intent verdict.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+            "content": "sha256:28f91e1f645dd0e8946a9e15c5b3dcd0fd513bc4342a259de6fcc55edc1a594f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The helper admits only ancestral, path-disjoint sync with an identical reviewed after-image map.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+            "content": "sha256:7a65b3a43ec9a86839f97e43234988f11363361deea0709be2ff20d9a481fe43",
+            "locator": {
+              "kind": "symbol",
+              "name": "clean_sync_keeps_route_review"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Raw diff records preserve byte pathname keys, modes and object IDs; malformed observations raise.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+            "content": "sha256:512501ba84472e1e0959748d4f3ec953e95de1a59795606374f39bc423ecec8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tree_change_after_images"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,56 @@
+{
+  "path": "mcp/src/agents_remember/models/declared_caller.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The strict bounded shape of a request-carried ambient identity.\n\nAnchor: `DeclaredCaller` `_nonblank_role`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb536beb1fbe2309c6ef176e7a9a34dfb2987275",
+            "content": "sha256:184ed5e31a83c2c5ee4fd6134a45cde8ca9527848e3e2c3e6bfb13da8ad4de2f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Consumed by the closeout-queue ambient fallback.\n\nAnchor: `_declared_queue_actor`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "722fb3802ab8976d280ff37de4824015cd5bece7",
+            "content": "sha256:28fb60f2f8125ed4ae12e9f761bd073e3cea5e7f11f08600eed04187dccfb216",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/closeout_queue.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The request field that carries the declaration on the queue wire model.\n\nAnchor: \"caller: DeclaredCaller\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b83d0c29c6a7bdaeb0ec909283439c284a251dad",
+            "content": "sha256:a435e8bcc54a68a9ef81f5455194bfe62623640f9627b880d32e3992f6824adf",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 37
+            },
+            "path": "mcp/src/agents_remember/models/queue/closeout_queue.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

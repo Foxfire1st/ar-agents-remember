@@ -1,0 +1,476 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/queue",
+  "references": {
+    "1": {
+      "note": "Recovery proves the accepted code and memory outputs without a cache lookup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "087633e817b9197311ac844320b1bc70e48c0288",
+            "content": "sha256:9a29e5ed527c5587233cfc90ef255470ccc36cafca5122584a3ffd0709152adf",
+            "locator": {
+              "kind": "symbol",
+              "name": "resume_external_commits"
+            },
+            "path": "mcp/src/agents_remember/worktrees/queue/closeout_recovery.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "087633e817b9197311ac844320b1bc70e48c0288",
+            "content": "sha256:4ec7e5239cb2836f0be017bc1d72d991a80014f4b1494dee12da1c692c9a904b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_prove_memory_output"
+            },
+            "path": "mcp/src/agents_remember/worktrees/queue/closeout_recovery.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Canonical census, readiness, source planes, and immutable snapshots construct fresh membership.\n\nAnchor: mcp/src/agents_remember/worktrees/queue/closeout_projection.py; mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py; mcp/src/agents_remember/worktrees/queue/closeout_projection_source_facts.py; mcp/src/agents_remember/worktrees/queue/closeout_projection_snapshot.py",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3e069851661179ed1c44ff11d7044e62432f23be",
+            "content": "sha256:23a15d08b92545f09732df9f02e2d711d860a495140f9744e4765a18639169e2",
+            "locator": {
+              "end": 238,
+              "kind": "line_range",
+              "start": 138
+            },
+            "path": "mcp/src/agents_remember/worktrees/queue/closeout_projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3e069851661179ed1c44ff11d7044e62432f23be",
+            "content": "sha256:29da68441bfce618f28fe9a621b9059b8ec6eb32e5f322d6c4815c5d72226818",
+            "locator": {
+              "end": 308,
+              "kind": "line_range",
+              "start": 291
+            },
+            "path": "mcp/src/agents_remember/worktrees/queue/closeout_projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3e069851661179ed1c44ff11d7044e62432f23be",
+            "content": "sha256:632f8879ab1db038a5865e8e750993e9318570e2cba2b6972e4082208bcea115",
+            "locator": {
+              "end": 568,
+              "kind": "line_range",
+              "start": 464
+            },
+            "path": "mcp/src/agents_remember/worktrees/queue/closeout_projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b5d120de09128b72ce518321cc008426a1384f97",
+            "content": "sha256:fcfae41502276adb71063ef1c9db97aaa78fe0649f7f7e9186cb665035d3a4a1",
+            "locator": {
+              "end": 135,
+              "kind": "line_range",
+              "start": 48
+            },
+            "path": "mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "06855bcdc14bcc2751f96e57b06101c24db978dd",
+            "content": "sha256:319a648e9fafb9ed0b47ceaa8c828362dfa96c3e5963315ff1b2c09f5a9f0c11",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 27
+            },
+            "path": "mcp/src/agents_remember/worktrees/queue/closeout_projection_source_facts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0968195a670e5002466561ef85e27b1b22c445ae",
+            "content": "sha256:9cc22c285f07be160aab945fdb0033168e43edb567cdd4c07052def60d505eaf",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "mcp/src/agents_remember/worktrees/queue/closeout_projection_snapshot.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Canonical publication precedes projection refresh; exact-current publication and first-ready admission do not give projection rows lifecycle authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "476c1c24ac02e05fb96b654322bf771287e6cbff",
+            "content": "sha256:873bfa7e9bb1ff261a9dfc0625155358eaa48d5f7670595f53ed6e592cecf852",
+            "locator": {
+              "end": 99,
+              "kind": "line_range",
+              "start": 39
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_fact_publication.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "82fefcaace2946165b5c0ed8bc77bedecedd8fe9",
+            "content": "sha256:75a3392da07aa59ab20dcb9d4de515cb59d3664e9bd717f0ffb2802665475948",
+            "locator": {
+              "end": 272,
+              "kind": "line_range",
+              "start": 107
+            },
+            "path": "mcp/src/agents_remember/controlplane/closeout_queue_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b814692a49df324c2495b8abf40a050f54a211f5",
+            "content": "sha256:73986e8b7566352a49296c5493a85577e6e0ad1a30237b723bb1038d84e2d24c",
+            "locator": {
+              "end": 113,
+              "kind": "line_range",
+              "start": 33
+            },
+            "path": "mcp/src/agents_remember/worktrees/queue/closeout_queue.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6b36b051ca23a33cea3fdae5d8e787d82936b6ed",
+            "content": "sha256:d38a4c8dcfb39ba470cd1a06757edff9f2c1a403d8015d9afbbca40fd82f8817",
+            "locator": {
+              "end": 478,
+              "kind": "line_range",
+              "start": 372
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "11aeb55a4be379e46af58941c5ef0641b5eda362",
+            "content": "sha256:66655788639b659bb8ef48fd31ae1363f846249eee5d10cf12b29ec595ddcabb",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 39
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/door_control.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Graph resolution uses the task terminal predicate; activation and capacity classifications retain their own deciding owners.\n\nAnchor: mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py; mcp/src/agents_remember/tasks/readiness.py; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py; mcp/src/agents_remember/worktrees/queue/closeout_queue_errors.py",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e7e289de6f8e2c65b3e67f4c2a4380e2b2a9d1be",
+            "content": "sha256:fdfda271d1dd93111ffa22f81efcc425573a6723d939468affafa9cba303af39",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 66
+            },
+            "path": "mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e7e289de6f8e2c65b3e67f4c2a4380e2b2a9d1be",
+            "content": "sha256:ad47a65953a7201970c7449453b94dc87fe22814c332355de6a07fd358151d29",
+            "locator": {
+              "end": 368,
+              "kind": "line_range",
+              "start": 339
+            },
+            "path": "mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a4dadaca3d9016d1bb15ecc4b32f28703d8697b",
+            "content": "sha256:7f28306c886b1b52741e3ebc61fe68455459adcd69b875eed46a30bd2b01c491",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 17
+            },
+            "path": "mcp/src/agents_remember/tasks/readiness.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74c0cad8eea0efbf34e6484bc10c8d3f7324cb40",
+            "content": "sha256:b486d5df4c2f752199a2e6dfad9b29d11d0e3422a04656f1d0cde7f811ba01ba",
+            "locator": {
+              "end": 153,
+              "kind": "line_range",
+              "start": 130
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74c0cad8eea0efbf34e6484bc10c8d3f7324cb40",
+            "content": "sha256:8d331baa92154236aa026e36e51fabad08df1b13cbd4339cbadf7680987c5f3f",
+            "locator": {
+              "end": 434,
+              "kind": "line_range",
+              "start": 335
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "699fdb65949037cd2321c2070e0ebb21d86f9530",
+            "content": "sha256:5990274157643c8a1bfe889198fe79851f904e6cdb40dd64d95ab89ff2d18f34",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 28
+            },
+            "path": "mcp/src/agents_remember/worktrees/queue/closeout_projection_activation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96ffcb05fe02a8a986bc0414eed1b37a90df8b7a",
+            "content": "sha256:3280356dc9949ba6442a6934924e8d982d0f0ccb3d6726505c2eaa83aa35ab07",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 29
+            },
+            "path": "mcp/src/agents_remember/worktrees/queue/closeout_queue_errors.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3e069851661179ed1c44ff11d7044e62432f23be",
+            "content": "sha256:003b86d6fe3abfa9ea13355608b7c094cb061acaddd63d1014e231b483634951",
+            "locator": {
+              "end": 884,
+              "kind": "line_range",
+              "start": 827
+            },
+            "path": "mcp/src/agents_remember/worktrees/queue/closeout_projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Curator evidence comes from the structured currentness validator and is consumed as door candidate provenance.\n\nAnchor: mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py; mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6327e089b3c2ef77df1cb26ed8516bd6a23a48a3",
+            "content": "sha256:b9d36126b04a0a47d1b6eb66f9ccf3f53146c9eaa2c71f004a51a6cf554cb99e",
+            "locator": {
+              "end": 108,
+              "kind": "line_range",
+              "start": 82
+            },
+            "path": "mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a61bb8710773ccee56c8016d87b57de1d750388c",
+            "content": "sha256:7e096998b9aa6648eb1863bb59a9729779e15d19c63b1f8fb70db7ee4e18686f",
+            "locator": {
+              "end": 346,
+              "kind": "line_range",
+              "start": 229
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a61bb8710773ccee56c8016d87b57de1d750388c",
+            "content": "sha256:07570f44cdca5c621a00386f4add3a1f40941941e40d47002b103931e5d17420",
+            "locator": {
+              "end": 504,
+              "kind": "line_range",
+              "start": 503
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0940b70289d43e211b8e08dbeafc3769dc23b64",
+            "content": "sha256:3e43129fbf26254597b8c4c4e647998feaae10acb2e37cffe5c0a0ac12334e26",
+            "locator": {
+              "end": 170,
+              "kind": "line_range",
+              "start": 110
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Preview, exact Git-output recovery, cache handling, explicitly selected staged quality, ordinary invariant-gated memory publication and protected-ref integration have separate owners; disposable scheduling projection grants none of their publication or certification authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "afd3e04e6f97eed9e8fb84f61f2e587708c814b4",
+            "content": "sha256:5c3b00bb34cdd419790a7a885cbc9c4ff55a8fb476b0d3144faa167ae5d2d024",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 9
+            },
+            "path": "mcp/src/agents_remember/worktrees/queue/closeout_preview.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "087633e817b9197311ac844320b1bc70e48c0288",
+            "content": "sha256:2f01100f2ef97206aa8956b06d16e4b8befd9d761e02bb9146f1ce7e26ec096d",
+            "locator": {
+              "end": 243,
+              "kind": "line_range",
+              "start": 107
+            },
+            "path": "mcp/src/agents_remember/worktrees/queue/closeout_recovery.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7a62e25249db9a1da4bcc623e29b4af7faaf91e9",
+            "content": "sha256:96ae9335ae286992d4ea73970d01135bd2b0adb2a33343b86ab34c5bd3129125",
+            "locator": {
+              "end": 133,
+              "kind": "line_range",
+              "start": 87
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_cache.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "18634fac33fb932b08876aab377c40c076e39b72",
+            "content": "sha256:9a80ff633c459e0b81a886c8b9c7f8af16b117b9e84e218e869dff27474802e8",
+            "locator": {
+              "end": 165,
+              "kind": "line_range",
+              "start": 90
+            },
+            "path": "mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:ed5c156b596e3fc22f63b820167b53a26bcdc91d1480a687c5ac8bee6e61bb08",
+            "locator": {
+              "end": 121,
+              "kind": "line_range",
+              "start": 73
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:79fec98037c3509a80d22b24330369c983220e3f50ff48aac5289491f5fc9257",
+            "locator": {
+              "end": 619,
+              "kind": "line_range",
+              "start": 484
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+            "content": "sha256:0dea96a726455405845cbf45a7b8569bc8b409a1790058d485bcb0685d70cc41",
+            "locator": {
+              "end": 979,
+              "kind": "line_range",
+              "start": 900
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e45cbd6127d560f2f834a2b326c1f9a481c697ac",
+            "content": "sha256:1cb6adda389fe576da272f5a5eeb1d3e94bedd6d0108b24c2d8d833d174389d8",
+            "locator": {
+              "end": 237,
+              "kind": "line_range",
+              "start": 104
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c62c700c4a20f4dd0b17d1dd95a68c03136291af",
+            "content": "sha256:57b0c55c056e57a5a3b837cb4124732b561e6a5083a6ac698c80893dab6550fa",
+            "locator": {
+              "end": 235,
+              "kind": "line_range",
+              "start": 192
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/certification_records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

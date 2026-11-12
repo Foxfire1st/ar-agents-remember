@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Warmup progress and click priority shared by product servers for the same configured host. Losing this boundary would fabricate currentness, attribute another owner's work, hide an external change, or repeat an unsafe host/landing action rather than exposing the actual observation."
+  },
+  "applicability": "Warmup progress and click priority shared by product servers for the same configured host.",
+  "conditions": [
+    "One lease/record owns loading; foreign servers observe the exact process-start record.",
+    "Pending, in-flight, loaded, failed and skipped states retain their distinct reasons."
+  ],
+  "exclusions": [
+    "Unknown progress is not loaded or no-agent state."
+  ],
+  "id": "INV-3NWM5P",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "F28-F29-native-witness-manifest.json"
+      ],
+      "path": "curator-handoff-L81-A001-b1fd-03.json"
+    },
+    "handoffEntry": "L81-R1-F28",
+    "leaf": "260928-MIK-L81",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Two product servers share one loading record and click priority, with truthful stopped-memory, pending, in-flight and failure states through completion.",
+  "status": "proposed",
+  "supersedes": []
+}

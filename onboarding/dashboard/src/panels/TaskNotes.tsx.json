@@ -1,0 +1,288 @@
+{
+  "path": "dashboard/src/panels/TaskNotes.tsx",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f02c66bf634f3db709b05706fd41125d90092f39",
+        "content": "sha256:268aaa77dc1b552dbc9360dcac3865c38fef9366f2213c2e986ff926600f5d7d",
+        "locator": {
+          "end": 204,
+          "kind": "line_range",
+          "start": 151
+        }
+      },
+      "id": "RLZ-26N9GM",
+      "invariant": "INV-7JFCAF",
+      "origin": {
+        "handoffEntry": "curator-bounded-summary-and-own-view",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Bounded recorded-start rows retain the counted complete explorer link.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f02c66bf634f3db709b05706fd41125d90092f39",
+        "content": "sha256:cd701df369ce2b4945dadf6575293fe93ec053552aaa60bb6095648743ec0cc3",
+        "locator": {
+          "kind": "symbol",
+          "name": "TaskReferencesAndReports"
+        }
+      },
+      "id": "RLZ-8VD0T2",
+      "invariant": "INV-ANN2YJ",
+      "origin": {
+        "handoffEntry": "MIK-R127@v1 rule 10 (e)",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "The one block that draws references and reports under one heading, 'References and reports'.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "f02c66bf634f3db709b05706fd41125d90092f39",
+        "content": "sha256:dd42f8568cf691d1a33e5c8ebf0283b47f782376ed0d1ab103a166feadfe00a8",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReferenceRow"
+        }
+      },
+      "id": "RLZ-C7X56M",
+      "invariant": "INV-E9DYQ7",
+      "origin": {
+        "handoffEntry": "MIK-R127@v1 rule 10 (f)",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Draws a reference as its words carrying the link and its path as plain text beside it.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "f02c66bf634f3db709b05706fd41125d90092f39",
+        "content": "sha256:d60d750a89d77ac02d7426bd0146003ebc9b949f939a9914c705ae02294ded7d",
+        "locator": {
+          "kind": "symbol",
+          "name": "TaskNotes"
+        }
+      },
+      "id": "RLZ-MM7B05",
+      "invariant": "INV-RKYCEP",
+      "origin": {
+        "handoffEntry": "MIK-R126@v1 rule 3",
+        "leaf": "260928-MIK-L126"
+      },
+      "rationale": "This component draws the Notes line from the root folder total only, and opens the folder target the reader understands.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "f02c66bf634f3db709b05706fd41125d90092f39",
+        "content": "sha256:44092296cea2440c514fed6c75569bba587801576fb40501b033b7203993778d",
+        "locator": {
+          "end": 127,
+          "kind": "line_range",
+          "start": 96
+        }
+      },
+      "id": "RLZ-VTYFGA",
+      "invariant": "INV-7JFCAF",
+      "origin": {
+        "handoffEntry": "curator-bounded-summary-and-own-view",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Complete reference rows retain actual provider/server-resolved navigation.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The data client with the folder and reference resolvers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e23e68eb2a31165781bb22894b445d6d8bc18b66",
+            "content": "sha256:2d24c867ca31e1b03d8f8e8a739931b87d1d7942b4cf007041b870ea2b1b29a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "listFolder"
+            },
+            "path": "dashboard/src/data/notes.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The surface passes a shared discriminated artifact target.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f433d3c79bfc376fb5c5b05f30f881a81adced4d",
+            "content": "sha256:4d11b60e1e6de76747f98193a4ee65f90bc79d5b23c2020c9e201a292217a258",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskArtifactReaderTarget"
+            },
+            "path": "dashboard/src/data/taskArtifacts.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "TaskNotes imports the shared target under its existing local NotesReaderTarget name.\n\nAnchor: \"import type { TaskArtifactReaderTarget as NotesReaderTarget }\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f02c66bf634f3db709b05706fd41125d90092f39",
+            "content": "sha256:40d20102cd94a91b127838a0ee32e7e23ff85564542f9374d67f8267f7e2e7db",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 23
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The shared markdown renderer (inline reference rendering).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a65bd4444779518a555e2e38d8ca30fa0df9f3a",
+            "content": "sha256:eff54d0360b790954af018d92a06694c3a335b1849a5d2a028b89a7d2a0e225b",
+            "locator": {
+              "kind": "symbol",
+              "name": "Markdown"
+            },
+            "path": "dashboard/src/grammar/Markdown.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1a65bd4444779518a555e2e38d8ca30fa0df9f3a",
+            "content": "sha256:64b656a9984283197cc301fc4a52b12707baca3cd7e424a7640c2301382c86d1",
+            "locator": {
+              "end": 122,
+              "kind": "line_range",
+              "start": 119
+            },
+            "path": "dashboard/src/grammar/Markdown.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1a65bd4444779518a555e2e38d8ca30fa0df9f3a",
+            "content": "sha256:dbbcb27210f3e352d08d6ba242aaa61621f03500d95beccbb45dbe266bda2ae3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/grammar/Markdown.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The task reader’s overview and task-specific notes/reference/report islands thread the shared `onOpenNotes` artifact callback.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d25262c3e75cb900805602c122e9f8f6605ec733",
+            "content": "sha256:0925bd92d68f648a62c62432c01fbe37f66ba3bc6f6cb85c195ca7cfe6007fb8",
+            "locator": {
+              "end": 180,
+              "kind": "line_range",
+              "start": 172
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d25262c3e75cb900805602c122e9f8f6605ec733",
+            "content": "sha256:1467093f1230940e33bb15fb11a0828e46b0ba7800ec389a7277ee805c0efe85",
+            "locator": {
+              "end": 245,
+              "kind": "line_range",
+              "start": 203
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The folder, resolve and read endpoints behind the client.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+            "content": "sha256:588ddec25312110e5e0f19ec9721f196c744466d8edea4c97b9f100cd90cab6e",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_folder"
+            },
+            "path": "mcp/src/agents_remember/serving/notes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The component test suite.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3070c20a72bc518963b29b04d09db5b95b740dc8",
+            "content": "sha256:ec3cff00e71fd4bd5aebef6f30d83de579d14afeb3ab802a0955ce31e4e3e68d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/TaskNotes.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The page shows one Notes line with the root count and no tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f02c66bf634f3db709b05706fd41125d90092f39",
+            "content": "sha256:d60d750a89d77ac02d7426bd0146003ebc9b949f939a9914c705ae02294ded7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskNotes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "References resolve through one request; reports read newest-first capped at twenty.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f02c66bf634f3db709b05706fd41125d90092f39",
+            "content": "sha256:86768c2f73aaf4211588f49da8c710642ab6022be7819a385f6c57cfec332997",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

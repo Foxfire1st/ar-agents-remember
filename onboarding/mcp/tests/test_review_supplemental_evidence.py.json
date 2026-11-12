@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_review_supplemental_evidence.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Supplemental evidence admission preserves whole source identity and the authority to re-read",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69f9c3954fdc7f2d6798feb42db577152fac3e4b",
+            "content": "sha256:36f5a99ffd17b3f11df2822c2e4f1b107b2beae5592dab581ef0040f9bb1a027",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_f06_a_supplemental_receipt_binds_the_bytes_it_admits"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

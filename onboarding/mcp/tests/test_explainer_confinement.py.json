@@ -1,0 +1,141 @@
+{
+  "path": "mcp/tests/test_explainer_confinement.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "78d516a665fb9f206f16b17adfe387b74c4c497a",
+        "content": "sha256:da56c288363001c17f933fb7a4de502088650d753e90976c408ea2fd699fc030",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_every_metadata_writer_refuses_a_planted_task_folder_ancestor_link"
+        }
+      },
+      "facet": "Every writer of the environment's durable facts refuses a planted ancestor link and changes no byte behind it.",
+      "id": "PRF-5G8AGZ",
+      "invariant": "INV-GWMA1V",
+      "origin": {
+        "handoffEntry": "L183-A-1",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "78d516a665fb9f206f16b17adfe387b74c4c497a",
+        "content": "sha256:da56c288363001c17f933fb7a4de502088650d753e90976c408ea2fd699fc030",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_every_metadata_writer_refuses_a_planted_task_folder_ancestor_link"
+        }
+      },
+      "facet": "Binding, marker, generation and request/inflight ledger writers all refuse a planted explainer-task ancestor link and leave the outside byte contents and file-name set unchanged.",
+      "id": "PRF-72E0M7",
+      "invariant": "INV-8JY29Q",
+      "origin": {
+        "handoffEntry": "the-explainers-folder-is-confined",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "78d516a665fb9f206f16b17adfe387b74c4c497a",
+        "content": "sha256:790ec254cca7ceaaa16b691d4175be0632e42c63602cb7fae26ff41aa88f71e4",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_workspace_removal_holds_a_nested_link_instead_of_rmtree_following_it"
+        }
+      },
+      "facet": "Workspace cleanup retains a nested link and its outside target rather than following it, while ordinary owned children are removed.",
+      "id": "PRF-CB2FJT",
+      "invariant": "INV-8JY29Q",
+      "origin": {
+        "handoffEntry": "the-explainers-folder-is-confined",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "78d516a665fb9f206f16b17adfe387b74c4c497a",
+        "content": "sha256:90abcc35111befc7b851cb65f371e31a074bdfc4efea524a83c142a8e607fc9c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_seat_lock_refuses_a_planted_lock_link_before_locking"
+        }
+      },
+      "facet": "The seat lock path guard refuses a planted link before lock acquisition, preserving outside bytes and creating no outside lock.",
+      "id": "PRF-S9WGTD",
+      "invariant": "INV-8JY29Q",
+      "origin": {
+        "handoffEntry": "the-explainers-folder-is-confined",
+        "leaf": "260928-MIK-L183"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The case `test_every_metadata_writer_refuses_a_planted_task_folder_ancestor_link` protects a symlinked task folder refusing every writer with no outside effect.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78d516a665fb9f206f16b17adfe387b74c4c497a",
+            "content": "sha256:da56c288363001c17f933fb7a4de502088650d753e90976c408ea2fd699fc030",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_metadata_writer_refuses_a_planted_task_folder_ancestor_link"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The case `test_the_generation_writers_refuse_a_planted_counter_link` protects a symlinked counter being refused while the outside file keeps its bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78d516a665fb9f206f16b17adfe387b74c4c497a",
+            "content": "sha256:b53ee28a141b5f33109256dc0bd2d5533fdff72c1b22919e1387f0b3044d9bad",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_generation_writers_refuse_a_planted_counter_link"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The case `test_the_seat_lock_refuses_a_planted_lock_link_before_locking` protects a symlinked lock file being admitted physically before the kernel opens it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78d516a665fb9f206f16b17adfe387b74c4c497a",
+            "content": "sha256:90abcc35111befc7b851cb65f371e31a074bdfc4efea524a83c142a8e607fc9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_seat_lock_refuses_a_planted_lock_link_before_locking"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The case `test_workspace_removal_holds_a_nested_link_instead_of_rmtree_following_it` protects a nested link holding a workspace removal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78d516a665fb9f206f16b17adfe387b74c4c497a",
+            "content": "sha256:790ec254cca7ceaaa16b691d4175be0632e42c63602cb7fae26ff41aa88f71e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_workspace_removal_holds_a_nested_link_instead_of_rmtree_following_it"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

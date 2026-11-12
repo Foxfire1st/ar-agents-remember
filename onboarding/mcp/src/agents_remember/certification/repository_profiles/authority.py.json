@@ -1,0 +1,132 @@
+{
+  "path": "mcp/src/agents_remember/certification/repository_profiles/authority.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Resolution/read/canonicalize/validate before any rail: the complete admission sequence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f68a57c94ffbd97a17bf284feb0f5345c496377b",
+            "content": "sha256:fa9fa6a2fb3e9db7129f222b5a51e9c6625903e47672614ab81e7cb196a8c4d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_repository_profile"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Confined one-file resolution with symlink and escape refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f68a57c94ffbd97a17bf284feb0f5345c496377b",
+            "content": "sha256:d7c4137cc5ef085dcebef33f63297b65bdd2c5600defe0611ae6910fbd568216",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_repository_profile_path"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f68a57c94ffbd97a17bf284feb0f5345c496377b",
+            "content": "sha256:84eeb32a1cd96a0e97d9587338f7f0116fee7e0c45ba9fe87fc8a08d02f94c1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reject_symlink_components"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "8 MiB budget and eager JSON parse for the admitted bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f68a57c94ffbd97a17bf284feb0f5345c496377b",
+            "content": "sha256:54c9beb0dd487ed5c06897857af29df3163d979fc7de4068abfdc38deadae1dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_profile_bytes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Settings parsing binds one canonical relative path per repository.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:374dd6906e27adc8c4a7f1c5ff0dd73fffa1f7faa558a02bae2df7bc751ce8e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_optional_repository_profile_reference"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:b02dd9def066cebe22558f3731f0f1e09767396a5f481804b34c80d0b650caf2",
+            "locator": {
+              "end": 461,
+              "kind": "line_range",
+              "start": 434
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The gate admits the repository profile selection from its declared authority.\n\nAnchor: \"def _admitted_selection\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
+            "content": "sha256:1ff9bce01dddda1c3f38b2917221ab9dea479b2b31b75488b80d75d47b593eab",
+            "locator": {
+              "end": 638,
+              "kind": "line_range",
+              "start": 624
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The sandbox admits the profile execution against its prepared candidate tree.\n\nAnchor: \"def _admit_prepared_profile\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee971f9439bb92610e7057de9349aa72968a2eab",
+            "content": "sha256:2909c7c1992a9a2014a465dac364f98e3596222c250335a3dd64c791443401c9",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 42
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/execution/sandbox.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

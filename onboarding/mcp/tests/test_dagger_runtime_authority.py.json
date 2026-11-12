@@ -1,0 +1,39 @@
+{
+  "path": "mcp/tests/test_dagger_runtime_authority.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Admits one shared authority and binds a deterministic snapshot.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8474ba74c0b76f75a960e0448767474a91fb7ab5",
+            "content": "sha256:2f5efb3bde30857fae56a2e2a767a3e36b7c9875a5822e907c058b8840ccdf31",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_admits_one_shared_authority_and_binds_a_deterministic_snapshot"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Release only the exact owner and reject stale or foreign owners.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8474ba74c0b76f75a960e0448767474a91fb7ab5",
+            "content": "sha256:c84c6d46015bfb196ee8671168ff481150cd2cce3bccfb1fb56accae876bf638",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_release_only_the_exact_owner_and_reject_stale_or_foreign_owners"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

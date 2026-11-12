@@ -1,0 +1,57 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_records.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a30702a05dc231f91eb11d5b9a8ad2ba2162b5f5",
+        "content": "sha256:17e77530d516e2e345e5fd3c2f4de2e5a5bc51bf9d0eba206e5a8319096588fd",
+        "locator": {
+          "kind": "symbol",
+          "name": "read_curator_coherence_generation"
+        }
+      },
+      "id": "RLZ-FX68NT3K",
+      "invariant": "INV-453ZPCZ5",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Is the integrity reader for one immutable curator generation. It requires an exact SHA-256 address, checks the record bytes against it, checks that the record names this leaf and contract, and checks that the Markdown report equals the rendered record and its digest. It then collects the retained attestation, judgment and assessment evidence through their owners, reading only the retained generation files rather than live quality files.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "One content-addressed generation is validated through its own retained inputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a30702a05dc231f91eb11d5b9a8ad2ba2162b5f5",
+            "content": "sha256:17e77530d516e2e345e5fd3c2f4de2e5a5bc51bf9d0eba206e5a8319096588fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_curator_coherence_generation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The exact durable attestation copy and recorded dependency binding are required.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a30702a05dc231f91eb11d5b9a8ad2ba2162b5f5",
+            "content": "sha256:0436c556493cd176a38f8c9935fc19ee51c5425b20e429add8ff002ab845a774",
+            "locator": {
+              "kind": "symbol",
+              "name": "_attestation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

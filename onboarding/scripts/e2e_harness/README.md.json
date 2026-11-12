@@ -1,0 +1,108 @@
+{
+  "path": "scripts/e2e_harness/README.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The document has the fresh-user acceptance run on the host through the product's own entry points, and records a step that cannot run as blocked with its reason rather than completed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2073d9a22cadf9104eaef85931b2148531baae8",
+            "content": "sha256:9bb05335ab7a8a928ea29f36629f2b1192f33ba691106d28a5c31825e2020da6",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The run reads and writes nothing outside its run root, which is a fresh temporary directory unless --work-root names one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2073d9a22cadf9104eaef85931b2148531baae8",
+            "content": "sha256:1dc60fd6f16d32ebbcc16715d45950ab3b47dbe569b3db9985188a12ae3f572d",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 11
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Every step records the exact call it made and the real result it got, and a step that cannot run is recorded as blocked with its reason, never as completed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2073d9a22cadf9104eaef85931b2148531baae8",
+            "content": "sha256:1e617c0b24e50abc01d43d5917fb08aa1ee8652b9c0be34710709f582fa4015e",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 17
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The document names no sibling repository as implementation authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2073d9a22cadf9104eaef85931b2148531baae8",
+            "content": "sha256:f68df3464ac3202a786710e6b24a3f2cdd90da4d32b711efcd1b0c52c7427fa4",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The current README documents the fresh-user host entry, fixtures, scenario, recorder and distinction between shape tests and acceptance. [7]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2073d9a22cadf9104eaef85931b2148531baae8",
+            "content": "sha256:f68df3464ac3202a786710e6b24a3f2cdd90da4d32b711efcd1b0c52c7427fa4",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The current host main writes fresh-user-acceptance/run.json under the supplied reports destination and derives failure from invariant/checkpoint statuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57d707d85cd92b037c1dc86bfb3a310db97446eb",
+            "content": "sha256:440f3fd8fe4d19a66afa3ecddf13c0f91c9fb2f4726ac8c020ede725dd828257",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 49
+            },
+            "path": "scripts/e2e_harness/run_fresh_user.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

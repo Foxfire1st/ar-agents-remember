@@ -1,0 +1,4421 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L185",
+  "rows": [
+    {
+      "disposition": "updated",
+      "id": "ROW-0N0G3P",
+      "items": [
+        "sha256:10286a3d7a075943c4f6742c37c2909c01e796a9a437d00efac62227ce66e7f3"
+      ],
+      "reason": "The card now carries a current account of the preparer's own boundary: it assembles a launch's inputs and calls role_brief_message.brief_prompt for the message text and the complete hand-over's content, publishes neither file, and sends nothing — role_launch_routes calls publish_handover_files before the start. The earlier sentence sits in the explicitly superseded history, and the new account also states the shared SPLIT_WORK_DIRECTION the module carries.",
+      "sources": [
+        {
+          "blob": "8d3f59bbf61c7dafad84e97e4dcf61dcd02b52fd",
+          "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_launch_preparation.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-0RTX6A",
+      "items": [
+        "sha256:58f02d6afcb35bda7b3b5d107da2e250eb2af4901f842749b44930da49867685"
+      ],
+      "reason": "The root overview describes what the repository is; a launch's first-message shape is a detail of one subsystem and does not change that account.",
+      "sources": [
+        {
+          "blob": "5bf7a216d28ae3daba83299a0b6a0ab6addca90e",
+          "path": ".agents/skills/l-01-agent-lifecycles/capsule-budgets.json"
+        },
+        {
+          "blob": "e7bf8919f6e0f4a2918e849bb6598bc0a650d47c",
+          "path": ".agents/skills/l-01-agent-lifecycles/operations/coordination.md"
+        },
+        {
+          "blob": "385e50d77ae251a70756cbfd7674d0c7d973012b",
+          "path": ".agents/skills/l-01-agent-lifecycles/operations/curation.md"
+        },
+        {
+          "blob": "9ebdee8141a018420e8edba3c96161db8a2e5297",
+          "path": ".agents/skills/l-01-agent-lifecycles/operations/implementation.md"
+        },
+        {
+          "blob": "e5545375ff6ae1cca5c2c6a0580d1779332b1e9a",
+          "path": ".agents/skills/l-01-agent-lifecycles/reference/curator-intake-details.md"
+        },
+        {
+          "blob": "c6c9cfb51430bc2995590fde9f7d075a95f154e4",
+          "path": ".agents/skills/l-01-agent-lifecycles/roles/reviewer.md"
+        },
+        {
+          "blob": "afe92e859d1ad2b0df2d15676cbac104260be4df",
+          "path": ".agents/skills/l-01-agent-lifecycles/roles/worker.md"
+        },
+        {
+          "blob": "5bf7a216d28ae3daba83299a0b6a0ab6addca90e",
+          "path": ".claude/skills/l-01-agent-lifecycles/capsule-budgets.json"
+        },
+        {
+          "blob": "e7bf8919f6e0f4a2918e849bb6598bc0a650d47c",
+          "path": ".claude/skills/l-01-agent-lifecycles/operations/coordination.md"
+        },
+        {
+          "blob": "385e50d77ae251a70756cbfd7674d0c7d973012b",
+          "path": ".claude/skills/l-01-agent-lifecycles/operations/curation.md"
+        },
+        {
+          "blob": "9ebdee8141a018420e8edba3c96161db8a2e5297",
+          "path": ".claude/skills/l-01-agent-lifecycles/operations/implementation.md"
+        },
+        {
+          "blob": "e5545375ff6ae1cca5c2c6a0580d1779332b1e9a",
+          "path": ".claude/skills/l-01-agent-lifecycles/reference/curator-intake-details.md"
+        },
+        {
+          "blob": "c6c9cfb51430bc2995590fde9f7d075a95f154e4",
+          "path": ".claude/skills/l-01-agent-lifecycles/roles/reviewer.md"
+        },
+        {
+          "blob": "afe92e859d1ad2b0df2d15676cbac104260be4df",
+          "path": ".claude/skills/l-01-agent-lifecycles/roles/worker.md"
+        },
+        {
+          "blob": "5bf7a216d28ae3daba83299a0b6a0ab6addca90e",
+          "path": ".codex/skills/l-01-agent-lifecycles/capsule-budgets.json"
+        },
+        {
+          "blob": "e7bf8919f6e0f4a2918e849bb6598bc0a650d47c",
+          "path": ".codex/skills/l-01-agent-lifecycles/operations/coordination.md"
+        },
+        {
+          "blob": "385e50d77ae251a70756cbfd7674d0c7d973012b",
+          "path": ".codex/skills/l-01-agent-lifecycles/operations/curation.md"
+        },
+        {
+          "blob": "9ebdee8141a018420e8edba3c96161db8a2e5297",
+          "path": ".codex/skills/l-01-agent-lifecycles/operations/implementation.md"
+        },
+        {
+          "blob": "e5545375ff6ae1cca5c2c6a0580d1779332b1e9a",
+          "path": ".codex/skills/l-01-agent-lifecycles/reference/curator-intake-details.md"
+        },
+        {
+          "blob": "c6c9cfb51430bc2995590fde9f7d075a95f154e4",
+          "path": ".codex/skills/l-01-agent-lifecycles/roles/reviewer.md"
+        },
+        {
+          "blob": "afe92e859d1ad2b0df2d15676cbac104260be4df",
+          "path": ".codex/skills/l-01-agent-lifecycles/roles/worker.md"
+        },
+        {
+          "blob": "5bf7a216d28ae3daba83299a0b6a0ab6addca90e",
+          "path": ".cursor/skills/l-01-agent-lifecycles/capsule-budgets.json"
+        },
+        {
+          "blob": "e7bf8919f6e0f4a2918e849bb6598bc0a650d47c",
+          "path": ".cursor/skills/l-01-agent-lifecycles/operations/coordination.md"
+        },
+        {
+          "blob": "385e50d77ae251a70756cbfd7674d0c7d973012b",
+          "path": ".cursor/skills/l-01-agent-lifecycles/operations/curation.md"
+        },
+        {
+          "blob": "9ebdee8141a018420e8edba3c96161db8a2e5297",
+          "path": ".cursor/skills/l-01-agent-lifecycles/operations/implementation.md"
+        },
+        {
+          "blob": "e5545375ff6ae1cca5c2c6a0580d1779332b1e9a",
+          "path": ".cursor/skills/l-01-agent-lifecycles/reference/curator-intake-details.md"
+        },
+        {
+          "blob": "c6c9cfb51430bc2995590fde9f7d075a95f154e4",
+          "path": ".cursor/skills/l-01-agent-lifecycles/roles/reviewer.md"
+        },
+        {
+          "blob": "afe92e859d1ad2b0df2d15676cbac104260be4df",
+          "path": ".cursor/skills/l-01-agent-lifecycles/roles/worker.md"
+        },
+        {
+          "blob": "5bf7a216d28ae3daba83299a0b6a0ab6addca90e",
+          "path": ".github-vscode/skills/l-01-agent-lifecycles/capsule-budgets.json"
+        },
+        {
+          "blob": "e7bf8919f6e0f4a2918e849bb6598bc0a650d47c",
+          "path": ".github-vscode/skills/l-01-agent-lifecycles/operations/coordination.md"
+        },
+        {
+          "blob": "385e50d77ae251a70756cbfd7674d0c7d973012b",
+          "path": ".github-vscode/skills/l-01-agent-lifecycles/operations/curation.md"
+        },
+        {
+          "blob": "9ebdee8141a018420e8edba3c96161db8a2e5297",
+          "path": ".github-vscode/skills/l-01-agent-lifecycles/operations/implementation.md"
+        },
+        {
+          "blob": "e5545375ff6ae1cca5c2c6a0580d1779332b1e9a",
+          "path": ".github-vscode/skills/l-01-agent-lifecycles/reference/curator-intake-details.md"
+        },
+        {
+          "blob": "c6c9cfb51430bc2995590fde9f7d075a95f154e4",
+          "path": ".github-vscode/skills/l-01-agent-lifecycles/roles/reviewer.md"
+        },
+        {
+          "blob": "afe92e859d1ad2b0df2d15676cbac104260be4df",
+          "path": ".github-vscode/skills/l-01-agent-lifecycles/roles/worker.md"
+        },
+        {
+          "blob": "5bf7a216d28ae3daba83299a0b6a0ab6addca90e",
+          "path": ".hermes/skills/l-01-agent-lifecycles/capsule-budgets.json"
+        },
+        {
+          "blob": "e7bf8919f6e0f4a2918e849bb6598bc0a650d47c",
+          "path": ".hermes/skills/l-01-agent-lifecycles/operations/coordination.md"
+        },
+        {
+          "blob": "385e50d77ae251a70756cbfd7674d0c7d973012b",
+          "path": ".hermes/skills/l-01-agent-lifecycles/operations/curation.md"
+        },
+        {
+          "blob": "9ebdee8141a018420e8edba3c96161db8a2e5297",
+          "path": ".hermes/skills/l-01-agent-lifecycles/operations/implementation.md"
+        },
+        {
+          "blob": "e5545375ff6ae1cca5c2c6a0580d1779332b1e9a",
+          "path": ".hermes/skills/l-01-agent-lifecycles/reference/curator-intake-details.md"
+        },
+        {
+          "blob": "c6c9cfb51430bc2995590fde9f7d075a95f154e4",
+          "path": ".hermes/skills/l-01-agent-lifecycles/roles/reviewer.md"
+        },
+        {
+          "blob": "afe92e859d1ad2b0df2d15676cbac104260be4df",
+          "path": ".hermes/skills/l-01-agent-lifecycles/roles/worker.md"
+        },
+        {
+          "blob": "5bf7a216d28ae3daba83299a0b6a0ab6addca90e",
+          "path": ".openclaw/workspace/skills/l-01-agent-lifecycles/capsule-budgets.json"
+        },
+        {
+          "blob": "e7bf8919f6e0f4a2918e849bb6598bc0a650d47c",
+          "path": ".openclaw/workspace/skills/l-01-agent-lifecycles/operations/coordination.md"
+        },
+        {
+          "blob": "385e50d77ae251a70756cbfd7674d0c7d973012b",
+          "path": ".openclaw/workspace/skills/l-01-agent-lifecycles/operations/curation.md"
+        },
+        {
+          "blob": "9ebdee8141a018420e8edba3c96161db8a2e5297",
+          "path": ".openclaw/workspace/skills/l-01-agent-lifecycles/operations/implementation.md"
+        },
+        {
+          "blob": "e5545375ff6ae1cca5c2c6a0580d1779332b1e9a",
+          "path": ".openclaw/workspace/skills/l-01-agent-lifecycles/reference/curator-intake-details.md"
+        },
+        {
+          "blob": "c6c9cfb51430bc2995590fde9f7d075a95f154e4",
+          "path": ".openclaw/workspace/skills/l-01-agent-lifecycles/roles/reviewer.md"
+        },
+        {
+          "blob": "afe92e859d1ad2b0df2d15676cbac104260be4df",
+          "path": ".openclaw/workspace/skills/l-01-agent-lifecycles/roles/worker.md"
+        },
+        {
+          "blob": "5bf7a216d28ae3daba83299a0b6a0ab6addca90e",
+          "path": ".pi/skills/l-01-agent-lifecycles/capsule-budgets.json"
+        },
+        {
+          "blob": "e7bf8919f6e0f4a2918e849bb6598bc0a650d47c",
+          "path": ".pi/skills/l-01-agent-lifecycles/operations/coordination.md"
+        },
+        {
+          "blob": "385e50d77ae251a70756cbfd7674d0c7d973012b",
+          "path": ".pi/skills/l-01-agent-lifecycles/operations/curation.md"
+        },
+        {
+          "blob": "9ebdee8141a018420e8edba3c96161db8a2e5297",
+          "path": ".pi/skills/l-01-agent-lifecycles/operations/implementation.md"
+        },
+        {
+          "blob": "e5545375ff6ae1cca5c2c6a0580d1779332b1e9a",
+          "path": ".pi/skills/l-01-agent-lifecycles/reference/curator-intake-details.md"
+        },
+        {
+          "blob": "c6c9cfb51430bc2995590fde9f7d075a95f154e4",
+          "path": ".pi/skills/l-01-agent-lifecycles/roles/reviewer.md"
+        },
+        {
+          "blob": "afe92e859d1ad2b0df2d15676cbac104260be4df",
+          "path": ".pi/skills/l-01-agent-lifecycles/roles/worker.md"
+        }
+      ],
+      "subject": "onboarding:overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-18GMCC",
+      "items": [
+        "sha256:b72635b87c1f7cd47ee4ceba97179fab769646ff5c4b53fdab96c38cdea8b752"
+      ],
+      "reason": "The card now names the real partial owners: artifact_line composes the whole line before the message — the text file, and the complete hand-over when the reference carries it — calling handover_file_line for that second file's path/digest fragment and keeping the legacy one-file line otherwise; the module also writes and restores the text artifact. Rendering, planning, publishing and restoring the complete hand-over live in role_handover_file.py.",
+      "sources": [
+        {
+          "blob": "0a738ef87e1909fbdd064952c671d72ef09844f8",
+          "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_handover_artifacts.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "186dcf05f4e5e23d4b29a391c089bc88eecf0849",
+            "content": "sha256:83e497ba18994d97c7f5bbeee8ef549b1f783b55552217b933fa80b07095b463",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
+            "content": "sha256:bded51c6252aef1e28b26c9df757f4208f54d73f670c5aca2f7d9e1361971140",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-0TFF0B"
+        },
+        {
+          "after": {
+            "blob": "e7bf8919f6e0f4a2918e849bb6598bc0a650d47c",
+            "content": "sha256:ea70ef513d87d7d323249ac4213969380061c7ad35d6d248ebdcee88bf250316",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "before": {
+            "blob": "f17aa445d3c5fc1b8b1f18ed2be48b8be8b6df7d",
+            "content": "sha256:cf493f936208176596c3c4236d6b340db2bfc43a7da45174fa3f346c4578ccbc",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "id": "RLZ-H0W6SX"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-1KWH6J",
+      "items": [
+        "sha256:c6bbf3a587681b2512ae70f963950694b924375e8c226199ae45fc0be8a5fb95"
+      ],
+      "reason": "The candidate changed code inside the constructs this record is realized by or proved by, so its entries re-anchor at the candidate; the statement, its scope and its meaning are unchanged.",
+      "revision": 4,
+      "subject": "INV-5KBX7C"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f7688864570af338c6298031f7782f9b75856ee4",
+            "content": "sha256:2200041761481afb1a77501bfcdb24006626a7641f1a37c9bc4b85a1fc79e8d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "RepeatAndConflictTests.test_a_repeated_request_converges_on_the_same_agent"
+            },
+            "path": "mcp/tests/test_paseo_launch.py"
+          },
+          "before": {
+            "blob": "c61467d651e72d83077f8fbb194de03113a4981f",
+            "content": "sha256:2200041761481afb1a77501bfcdb24006626a7641f1a37c9bc4b85a1fc79e8d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "RepeatAndConflictTests.test_a_repeated_request_converges_on_the_same_agent"
+            },
+            "path": "mcp/tests/test_paseo_launch.py"
+          },
+          "id": "PRF-23W75T"
+        },
+        {
+          "after": {
+            "blob": "2694c998b2fd2067d6492610e36afce83681a273",
+            "content": "sha256:f1353abee29eab16fbb0ba69a94223c6c561fca9fc12e1221d3444a1df625fa6",
+            "locator": {
+              "kind": "symbol",
+              "name": "RepeatAfterChangeTests.test_a_repeat_is_answered_from_its_receipt_whatever_changed_since_the_launch"
+            },
+            "path": "mcp/tests/test_paseo_launch_repeat.py"
+          },
+          "before": {
+            "blob": "a92a500c47b2ef1e93e7bcb0fa8c75068e1453f7",
+            "content": "sha256:f1353abee29eab16fbb0ba69a94223c6c561fca9fc12e1221d3444a1df625fa6",
+            "locator": {
+              "kind": "symbol",
+              "name": "RepeatAfterChangeTests.test_a_repeat_is_answered_from_its_receipt_whatever_changed_since_the_launch"
+            },
+            "path": "mcp/tests/test_paseo_launch_repeat.py"
+          },
+          "id": "PRF-H6XEA4"
+        },
+        {
+          "after": {
+            "blob": "2a0f7531418049179e1ad020e0b8fed6314c73d1",
+            "content": "sha256:e5a6159e125ad5f9700f3da219ee09af0124bd46de52a42b4596f168edf5216d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_start_execution"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "before": {
+            "blob": "7303f44f0642307a880a1f2556003aeb50f98dfe",
+            "content": "sha256:e5a6159e125ad5f9700f3da219ee09af0124bd46de52a42b4596f168edf5216d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_start_execution"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "id": "RLZ-9REQ6E"
+        },
+        {
+          "after": {
+            "blob": "e9c70170273adb869a20f49d2a6b0aef92fe392a",
+            "content": "sha256:7a9557ef2b745716432e6d9d01020b09af0fd70d0f7439f8a49da8b9467ba548",
+            "locator": {
+              "kind": "symbol",
+              "name": "_execute_prepared_launch"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "before": {
+            "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
+            "content": "sha256:60b0a18c662d3085df362bfa4222460a4715f1dc3cfd134e7970ad2c13be5641",
+            "locator": {
+              "kind": "symbol",
+              "name": "_execute_prepared_launch"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "id": "RLZ-QCS3DH"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-28B2MM",
+      "items": [
+        "sha256:9eaeb13af7175dba78451b929ab91a0924dcdeea0f0adb8fed791b9100b3a24a"
+      ],
+      "reason": "The candidate changed code inside the constructs this record is realized by or proved by, so its entries re-anchor at the candidate; the statement, its scope and its meaning are unchanged.",
+      "revision": 3,
+      "subject": "INV-ZD9BK1"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "186dcf05f4e5e23d4b29a391c089bc88eecf0849",
+            "content": "sha256:83e497ba18994d97c7f5bbeee8ef549b1f783b55552217b933fa80b07095b463",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
+            "content": "sha256:bded51c6252aef1e28b26c9df757f4208f54d73f670c5aca2f7d9e1361971140",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-4FX9HW"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-2HTPQP",
+      "items": [
+        "sha256:88f539ee242000889e25656bb9c67d110ad392f6ba8222095121421487fd6d00"
+      ],
+      "reason": "The candidate changed code inside the constructs this record is realized by or proved by, so its entries re-anchor at the candidate; the statement, its scope and its meaning are unchanged.",
+      "revision": 2,
+      "subject": "INV-683GA3"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-32QYSX",
+      "items": [
+        "sha256:1ee15b5a684c3de3e19c5774ed24fbe9230503c175b3812d5f5118577ccab96e"
+      ],
+      "reason": "The overview states what the test area preserves; this leaf added a test file and cases and removed none, so its account holds.",
+      "sources": [
+        {
+          "blob": "49cd0f48cc9915569a8158e8af630809210ce99f",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "185077f1b3a1c9f751070722507da6387397ae80",
+          "path": "mcp/tests/paseo_launch_test_support.py"
+        },
+        {
+          "blob": "4b1e9228874a3f1336bf209dab020ab50020130a",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "a02e919bbcb629ea05ef129f7d23e22354927a8f",
+          "path": "mcp/tests/test_paseo_agent_tools.py"
+        },
+        {
+          "blob": "f7688864570af338c6298031f7782f9b75856ee4",
+          "path": "mcp/tests/test_paseo_launch.py"
+        },
+        {
+          "blob": "2694c998b2fd2067d6492610e36afce83681a273",
+          "path": "mcp/tests/test_paseo_launch_repeat.py"
+        },
+        {
+          "blob": "ab5b086fa50534a6cfefd0d7ac1086a60419adff",
+          "path": "mcp/tests/test_paseo_role_tools.py"
+        },
+        {
+          "blob": "f8a9f18b7c8e9abd6ee9ee2be02accba4d939449",
+          "path": "mcp/tests/test_role_capsule_audiences.py"
+        },
+        {
+          "blob": "80541d32901dd78fc8e695e51b301d8a34df2d39",
+          "path": "mcp/tests/test_role_first_message.py"
+        },
+        {
+          "blob": "e8b00de5102e686e2204b5e863cb20ede8b9f6f2",
+          "path": "mcp/tests/test_role_handover_binding.py"
+        },
+        {
+          "blob": "186dcf05f4e5e23d4b29a391c089bc88eecf0849",
+          "path": "mcp/tests/test_role_instruction_wording.py"
+        },
+        {
+          "blob": "18fe6f617413cf0af2643fdf3a5cf1aa3b699523",
+          "path": "mcp/tests/test_worktree_support.py"
+        },
+        {
+          "blob": "21b59be05d2c75fdeffe4fd8d18ccb85c6626d6a",
+          "path": "mcp/tests/tool_answer_l111_test_support.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-3BFWNG",
+      "items": [
+        "sha256:31a237ab26a55f19eb2546ef20d39f7b379e79d821a74b9376b800fcf04baa4b",
+        "sha256:4fe9fb191c352f07030d265ca2d9bb84ac4f2c0ef2ff7f531a7939ec41313a83"
+      ],
+      "reason": "New card: one immutable artifact file created by hard link, reused only on equal bytes, never followed at its own name, with the preflight that lets a caller refuse before writing.",
+      "sources": [
+        {
+          "blob": "7bd945c58e535cd8a19c801e8f5c645ad20bf40e",
+          "path": "mcp/src/agents_remember/cli/immutable_artifact.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/immutable_artifact.py"
+    },
+    {
+      "considered": [
+        "FAM-7AEA19",
+        "FAM-83BTBD",
+        "FAM-GDXSJG",
+        "FAM-N17BB4",
+        "FAM-PNH1QS",
+        "FAM-XX4TGY",
+        "FAM-YGXZTQ"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-3GJK1J",
+      "items": [],
+      "reason": "None of the families examined states a joint promise this record adds to: the hand-over projection, its publication, its refusal type, its recorded budgets and its send-time path check each carry an obligation of their own.",
+      "revision": 1,
+      "subject": "membership:INV-JKD5DE"
+    },
+    {
+      "considered": [
+        "FAM-7AEA19",
+        "FAM-83BTBD",
+        "FAM-GDXSJG",
+        "FAM-N17BB4",
+        "FAM-PNH1QS",
+        "FAM-XX4TGY",
+        "FAM-YGXZTQ"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-3H8V13",
+      "items": [],
+      "reason": "None of the families examined states a joint promise this record adds to: the hand-over projection, its publication, its refusal type, its recorded budgets and its send-time path check each carry an obligation of their own.",
+      "revision": 1,
+      "subject": "membership:INV-8AQ8DT"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2a0f7531418049179e1ad020e0b8fed6314c73d1",
+            "content": "sha256:31a81d5eebc1095448432a35ed5d4c70cf904a3774dbd827570416918f82fe5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_launch_prepared_role_session"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "before": {
+            "blob": "7303f44f0642307a880a1f2556003aeb50f98dfe",
+            "content": "sha256:090e98ca37320670e693cf1ab002f7843e54d0ffd9767329aac1b25347af212b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_launch_prepared_role_session"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "id": "RLZ-XG75PH"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-3P2CM2",
+      "items": [
+        "sha256:6e17f684c1cd5724e959464831d8b10fa04cb3c9843efda615f01f603382a2d3"
+      ],
+      "reason": "The candidate changed code inside the constructs this record is realized by, so its entries re-anchor at the candidate; the statement, its scope and its meaning are unchanged.",
+      "revision": 1,
+      "subject": "INV-HE16XQ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4C7CRC",
+      "items": [
+        "sha256:b0f6cd7ca54b0c50b403d6af785854c8e2d06afa2337a04255a92a6ac67727d8"
+      ],
+      "reason": "The card now says the operation carries no Messages section: that passage has one home in roles/worker.md, whose capsule compiles it.",
+      "sources": [
+        {
+          "blob": "9ebdee8141a018420e8edba3c96161db8a2e5297",
+          "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/operations/implementation.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5bf7a216d28ae3daba83299a0b6a0ab6addca90e",
+            "content": "sha256:285e91b3db243ea3b745da102237f8906833f5013480077f994298b21107a13a",
+            "locator": {
+              "end": 692,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets.json"
+          },
+          "before": {
+            "blob": "01d5a745b9137e7c934b5816b52838cc7f451b34",
+            "content": "sha256:5233c096af17da3001c262864dc33762284224da0b9387b61e2d24ff0c8c2832",
+            "locator": {
+              "end": 692,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets.json"
+          },
+          "id": "RLZ-9FX5WR"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-4X2EC5",
+      "items": [
+        "sha256:6c03f5aa282a3daa10c432bd3ac17845123d7231a837b053ca39d55cdb834bf8"
+      ],
+      "reason": "The candidate changed code inside the constructs this record is realized by, so its entries re-anchor at the candidate; the statement, its scope and its meaning are unchanged.",
+      "revision": 3,
+      "subject": "INV-Y6GVZ7"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-55B0QH",
+      "items": [
+        "sha256:6fa7a8315b139e7a20b3eb8695d614efe50894dbf0b5f6fe54dc1d7530335526"
+      ],
+      "reason": "The overview states what the role files own; two sentences inside two of them changed, and their file cards carry that.",
+      "sources": [
+        {
+          "blob": "c6c9cfb51430bc2995590fde9f7d075a95f154e4",
+          "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+        },
+        {
+          "blob": "afe92e859d1ad2b0df2d15676cbac104260be4df",
+          "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7FMDAS",
+          "revision": 2
+        },
+        {
+          "id": "INV-82ZTHK",
+          "revision": 3
+        },
+        {
+          "id": "INV-8AMSGV",
+          "revision": 4
+        },
+        {
+          "id": "INV-9S49CW",
+          "revision": 2
+        },
+        {
+          "id": "INV-HGSFJ8",
+          "revision": 3
+        }
+      ],
+      "id": "ROW-5NBE7R",
+      "items": [
+        "sha256:a94bd1985098cb43d3fe9899054f3ae0455e779f3e327354033394d45e6461b9"
+      ],
+      "reason": "The developer question chain keeps its routes and its authority: what this leaf changed is where the routes stand, not what they promise.",
+      "revision": 2,
+      "subject": "FAM-7AEA19"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5QWF9R",
+      "items": [
+        "sha256:047fc6a5d2972cc334bfb3d9f60b299792b04754b0b69f7286c9e9a77a45ebc6"
+      ],
+      "reason": "New card: the first message assembled in one order, once each, with no file written and the optional shared block written only when the compilation carries text.",
+      "sources": [
+        {
+          "blob": "5afd69406b3cd0b91707240fdeca1842bf62f314",
+          "path": "mcp/src/agents_remember/cli/role_brief_message.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_brief_message.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-5SFMQ5",
+      "items": [
+        "sha256:b267172a6ea282df19d29a98acd9056895778f38a08f80e71c094038b35af67a"
+      ],
+      "reason": "The card states what the answer-shape support provides; one field was added to a shape it builds, and the support's guarantee is unchanged.",
+      "sources": [
+        {
+          "blob": "21b59be05d2c75fdeffe4fd8d18ccb85c6626d6a",
+          "path": "mcp/tests/tool_answer_l111_test_support.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/tool_answer_l111_test_support.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-66BWT9",
+      "items": [
+        "sha256:ce06d3d16a39883fea56fd5449a6db55caf6055824161a7f1e4524d29a3af4ec"
+      ],
+      "reason": "The card now says both hand-over files are published before the start is sent and that a launch which cannot publish them sends nothing.",
+      "sources": [
+        {
+          "blob": "2a0f7531418049179e1ad020e0b8fed6314c73d1",
+          "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_launch_routes.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-6A87NS",
+      "items": [
+        "sha256:828887f62241cf36430eb3157cf75e1e1acc3aef2759dc3551119736d1851658",
+        "sha256:b81701b4270a8fe0a9e36abd11f9c26af43fc72e07f4bf60cc7aab797395b659"
+      ],
+      "reason": "The card now says the capsule carries the compilation's shared block through to the message builder.",
+      "sources": [
+        {
+          "blob": "29fcf81063bb258507e45da4a75c16d0a9db554f",
+          "path": "mcp/src/agents_remember/serving/launch_capsule.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/launch_capsule.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "385e50d77ae251a70756cbfd7674d0c7d973012b",
+            "content": "sha256:e4e43a4a9022d9519496fef3bea0110276f676a446a273b0537104c417522496",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "before": {
+            "blob": "11b8ef10c8763f50ed20180a7e8e41c2cb9aeb0b",
+            "content": "sha256:ad72247f425470c0e4ce57be3cb9828cf976d89df52c7299886639e3aca431f3",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "id": "RLZ-090539"
+        },
+        {
+          "after": {
+            "blob": "385e50d77ae251a70756cbfd7674d0c7d973012b",
+            "content": "sha256:e4e43a4a9022d9519496fef3bea0110276f676a446a273b0537104c417522496",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "before": {
+            "blob": "11b8ef10c8763f50ed20180a7e8e41c2cb9aeb0b",
+            "content": "sha256:ad72247f425470c0e4ce57be3cb9828cf976d89df52c7299886639e3aca431f3",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "id": "RLZ-X79EQQ"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-6F77AV",
+      "items": [
+        "sha256:4e0c2ff732fe675a8979b1a73dc57a0000b80ca42d8aae964177eb31fa9ba2bc"
+      ],
+      "reason": "The candidate changed code inside the constructs this record is realized by, so its entries re-anchor at the candidate; the statement, its scope and its meaning are unchanged.",
+      "revision": 1,
+      "subject": "INV-C8SVFY"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b1e11e24577989dc6ddb4add1820c5591d0a50d6",
+            "content": "sha256:18d2ce8a3fcb641a2a66fd339db8f4ab84ad824861caefdbd6341035b82ca697",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_terminal_mark_refuses_prepared_start_and_settles_returned_creation"
+            },
+            "path": "mcp/tests/test_leaf_agent_archive.py"
+          },
+          "before": {
+            "blob": "b1e11e24577989dc6ddb4add1820c5591d0a50d6",
+            "content": "sha256:18d2ce8a3fcb641a2a66fd339db8f4ab84ad824861caefdbd6341035b82ca697",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_terminal_mark_refuses_prepared_start_and_settles_returned_creation"
+            },
+            "path": "mcp/tests/test_leaf_agent_archive.py"
+          },
+          "id": "PRF-8FMB4A"
+        },
+        {
+          "after": {
+            "blob": "b1e11e24577989dc6ddb4add1820c5591d0a50d6",
+            "content": "sha256:528ac6eac7b764f7ece5e9177d34a6a9e1c382dc018fd49e808bb7f027752f00",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_stale_publication_keeps_archive_and_only_exact_leaf_mark_refuses"
+            },
+            "path": "mcp/tests/test_leaf_agent_archive.py"
+          },
+          "before": {
+            "blob": "b1e11e24577989dc6ddb4add1820c5591d0a50d6",
+            "content": "sha256:528ac6eac7b764f7ece5e9177d34a6a9e1c382dc018fd49e808bb7f027752f00",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_stale_publication_keeps_archive_and_only_exact_leaf_mark_refuses"
+            },
+            "path": "mcp/tests/test_leaf_agent_archive.py"
+          },
+          "id": "PRF-M82ZGQ"
+        },
+        {
+          "after": {
+            "blob": "ceadcc22b6dfa25d676932c800e9a78078e36165",
+            "content": "sha256:92facad0be82b7aab807336afdf1be61a44b2254fd0e6a342a871bbc7fd706f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeafAgentArchive.archive"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_archive.py"
+          },
+          "before": {
+            "blob": "ceadcc22b6dfa25d676932c800e9a78078e36165",
+            "content": "sha256:92facad0be82b7aab807336afdf1be61a44b2254fd0e6a342a871bbc7fd706f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeafAgentArchive.archive"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_archive.py"
+          },
+          "id": "RLZ-1945F7"
+        },
+        {
+          "after": {
+            "blob": "6c5d030703b806f56bcd3589e5e715b3df06c01e",
+            "content": "sha256:bc2764b0d63093e46e4fb47591faebae59cb74380b1ce675f3379b937855590e",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_launch_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "before": {
+            "blob": "6c5d030703b806f56bcd3589e5e715b3df06c01e",
+            "content": "sha256:bc2764b0d63093e46e4fb47591faebae59cb74380b1ce675f3379b937855590e",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_launch_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "id": "RLZ-2MSXRD"
+        },
+        {
+          "after": {
+            "blob": "ceadcc22b6dfa25d676932c800e9a78078e36165",
+            "content": "sha256:66bd4301fb6a797acbd6cef9743d922afded60af5ecd62deb7cd4300647a713e",
+            "locator": {
+              "kind": "symbol",
+              "name": "refuse_retired_start"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_archive.py"
+          },
+          "before": {
+            "blob": "ceadcc22b6dfa25d676932c800e9a78078e36165",
+            "content": "sha256:66bd4301fb6a797acbd6cef9743d922afded60af5ecd62deb7cd4300647a713e",
+            "locator": {
+              "kind": "symbol",
+              "name": "refuse_retired_start"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_archive.py"
+          },
+          "id": "RLZ-5VCJGH"
+        },
+        {
+          "after": {
+            "blob": "e9c70170273adb869a20f49d2a6b0aef92fe392a",
+            "content": "sha256:7a9557ef2b745716432e6d9d01020b09af0fd70d0f7439f8a49da8b9467ba548",
+            "locator": {
+              "kind": "symbol",
+              "name": "_execute_prepared_launch"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "before": {
+            "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
+            "content": "sha256:60b0a18c662d3085df362bfa4222460a4715f1dc3cfd134e7970ad2c13be5641",
+            "locator": {
+              "kind": "symbol",
+              "name": "_execute_prepared_launch"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "id": "RLZ-5Z2YB3"
+        },
+        {
+          "after": {
+            "blob": "e9c70170273adb869a20f49d2a6b0aef92fe392a",
+            "content": "sha256:7074260c5abeecf94e3db69e79ef974b3cff0f80807c7a583086aa612f46bc8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_receipt"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "before": {
+            "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
+            "content": "sha256:7074260c5abeecf94e3db69e79ef974b3cff0f80807c7a583086aa612f46bc8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_receipt"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "id": "RLZ-RFNY7Y"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-6VTXM2",
+      "items": [
+        "sha256:6dd58cb99585c3a953910505dd561badd9b9d92602f08f3206a53365c5ac4c07"
+      ],
+      "reason": "The candidate changed code inside the constructs this record is realized by or proved by, so its entries re-anchor at the candidate; the statement, its scope and its meaning are unchanged.",
+      "revision": 1,
+      "subject": "INV-AJKQV2"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-783R77",
+      "items": [
+        "sha256:b023a4cf237bedb2f6dda5e72540b3a3801f49d15cc9d6b5b2d6d28ef66b88c9"
+      ],
+      "reason": "A delete-only hunk: this region left the module when the write-once helpers and the second file's publication moved to immutable_artifact.py and role_handover_file.py, where the same records are realized. Nothing about the change is stated by an invariant at this site.",
+      "subject": "hunk:sha256:b023a4cf237bedb2f6dda5e72540b3a3801f49d15cc9d6b5b2d6d28ef66b88c9"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-7B16N7",
+      "items": [
+        "sha256:c67e1f040712742cbe8dcf1d30d8b833212d28ca506abf6d9c43d32e269dcf19"
+      ],
+      "reason": "New card: a saved launch restored from the receipt alone, with one refusal type the held opener and the retry route both recognise.",
+      "sources": [
+        {
+          "blob": "801d3be936028d93ae5201e4bccc6c0814e1da0e",
+          "path": "mcp/src/agents_remember/cli/role_handover_restore.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_handover_restore.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "186dcf05f4e5e23d4b29a391c089bc88eecf0849",
+            "content": "sha256:83e497ba18994d97c7f5bbeee8ef549b1f783b55552217b933fa80b07095b463",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
+            "content": "sha256:bded51c6252aef1e28b26c9df757f4208f54d73f670c5aca2f7d9e1361971140",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-D682YJ"
+        },
+        {
+          "after": {
+            "blob": "70bb5757b6f36200ece074f47b219868173729ae",
+            "content": "sha256:1bc0a41af7223cbc91ea2f78270614076e6727ab0f503209ac75b70b830453f1",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 112
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "70bb5757b6f36200ece074f47b219868173729ae",
+            "content": "sha256:1bc0a41af7223cbc91ea2f78270614076e6727ab0f503209ac75b70b830453f1",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 112
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-DT71R6"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-7NBK7K",
+      "items": [
+        "sha256:65d23717157e74d925c6728731f72e5e65f51d5b331e6c4e0a3fc8cfdb262a7f"
+      ],
+      "reason": "The candidate changed code inside the constructs this record is realized by or proved by, so its entries re-anchor at the candidate; the statement, its scope and its meaning are unchanged.",
+      "revision": 2,
+      "subject": "INV-208SQT"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "afe92e859d1ad2b0df2d15676cbac104260be4df",
+            "content": "sha256:c9e4ec21e3b43360e42db9f7fc8297b081953d341d9b3e6da604e79d1fc2b850",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "before": {
+            "blob": "0af01ea2d279b6c3a5f5d41480143de61e8cae1f",
+            "content": "sha256:5379650548a22cd2f33240274083f90976d871e2d92d6b6d626137d5127b7fa1",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "id": "RLZ-19NZ18"
+        },
+        {
+          "after": {
+            "blob": "c6c9cfb51430bc2995590fde9f7d075a95f154e4",
+            "content": "sha256:f29c3b68f1fe08fb47d4d5121a626c8e0de5835c712aa0ee4f18d66705c9c47e",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "d8db6ab3f23f35a78d5972d5615bd1d506476e7f",
+            "content": "sha256:08b6e62e72026faf423a4c8ab349bf91fc2ad1ceaef5cf3e2f71a1a9f82eb2f9",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-PC6PG7"
+        },
+        {
+          "after": {
+            "blob": "385e50d77ae251a70756cbfd7674d0c7d973012b",
+            "content": "sha256:fa0535d108d0a99c4580bae426744eefab90eb8dcb7fe523660e3e5a584f9e9c",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "before": {
+            "blob": "11b8ef10c8763f50ed20180a7e8e41c2cb9aeb0b",
+            "content": "sha256:bd9199ee230847819c4e49879ece45e85ee855b573e6d73d25fe8784a590ce5e",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "id": "RLZ-PFT43W"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-7QCQNM",
+      "items": [
+        "sha256:8166a6de84e0ee97f4137fa5ff22baafa1cf60ec650d4b8268dfe8e70d034501"
+      ],
+      "reason": "The candidate changed code inside the constructs this record is realized by, so its entries re-anchor at the candidate; the statement, its scope and its meaning are unchanged.",
+      "revision": 2,
+      "subject": "INV-K6Q2R4"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-869J33",
+      "items": [
+        "sha256:d30c72c0993f17dc788049592f82e4d9f0b882fb86860b7613b16ceb6cdc420b"
+      ],
+      "reason": "The card now says the intake sentence names the task-read arguments by their dotted path, documents[0].taskDocReadArgs.",
+      "sources": [
+        {
+          "blob": "385e50d77ae251a70756cbfd7674d0c7d973012b",
+          "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/operations/curation.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a02e919bbcb629ea05ef129f7d23e22354927a8f",
+            "content": "sha256:88ecec4dd65503f1c54ee16384abb8df0c3e80d639a9ae19e9850df2f58b6448",
+            "locator": {
+              "kind": "symbol",
+              "name": "HandoverArtifactTests.test_the_artifact_is_written_once_beside_the_report_and_named_by_one_line"
+            },
+            "path": "mcp/tests/test_paseo_agent_tools.py"
+          },
+          "before": {
+            "blob": "92d47bab1d7b32e75d1b90df160b7d90df78662a",
+            "content": "sha256:88ecec4dd65503f1c54ee16384abb8df0c3e80d639a9ae19e9850df2f58b6448",
+            "locator": {
+              "kind": "symbol",
+              "name": "HandoverArtifactTests.test_the_artifact_is_written_once_beside_the_report_and_named_by_one_line"
+            },
+            "path": "mcp/tests/test_paseo_agent_tools.py"
+          },
+          "id": "PRF-0V86KJ"
+        },
+        {
+          "after": {
+            "blob": "a02e919bbcb629ea05ef129f7d23e22354927a8f",
+            "content": "sha256:3be784b682d17a0d01ae3b40071d847264f7777c4d62ec48665cca2020d9af22",
+            "locator": {
+              "kind": "symbol",
+              "name": "HandoverArtifactTests.test_the_artifact_is_a_regular_file_of_bounded_size"
+            },
+            "path": "mcp/tests/test_paseo_agent_tools.py"
+          },
+          "before": {
+            "blob": "92d47bab1d7b32e75d1b90df160b7d90df78662a",
+            "content": "sha256:3be784b682d17a0d01ae3b40071d847264f7777c4d62ec48665cca2020d9af22",
+            "locator": {
+              "kind": "symbol",
+              "name": "HandoverArtifactTests.test_the_artifact_is_a_regular_file_of_bounded_size"
+            },
+            "path": "mcp/tests/test_paseo_agent_tools.py"
+          },
+          "id": "PRF-HCQE56"
+        },
+        {
+          "after": {
+            "blob": "2a0f7531418049179e1ad020e0b8fed6314c73d1",
+            "content": "sha256:31a81d5eebc1095448432a35ed5d4c70cf904a3774dbd827570416918f82fe5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_launch_prepared_role_session"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "before": {
+            "blob": "7303f44f0642307a880a1f2556003aeb50f98dfe",
+            "content": "sha256:090e98ca37320670e693cf1ab002f7843e54d0ffd9767329aac1b25347af212b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_launch_prepared_role_session"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "id": "RLZ-3WT1SY"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "85b470bea18f2548365b969746fd9e7ef5ea00cf",
+            "content": "sha256:8f388258dd27b4c67e47f903f6d0f19c2461e31ff5f7285f5c28ee8b6950c031",
+            "locator": {
+              "kind": "symbol",
+              "name": "_canonical"
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
+          },
+          "id": "RLZ-461FCZ"
+        },
+        {
+          "after": {
+            "blob": "0a738ef87e1909fbdd064952c671d72ef09844f8",
+            "content": "sha256:4d158d7807677ce446035b0b40d8495340ce484326df1d3ba8aa9092da0e1810",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_handover_artifact"
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
+          },
+          "before": {
+            "blob": "85b470bea18f2548365b969746fd9e7ef5ea00cf",
+            "content": "sha256:8e25c8959d3e9788f2045e1b977523336d8613b098f6b2ad053c25a9a924858d",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_handover_artifact"
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
+          },
+          "id": "RLZ-70KS6M"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "85b470bea18f2548365b969746fd9e7ef5ea00cf",
+            "content": "sha256:11201fa4812cd40bba10bc1e30029075c24e47cb6e611e89157cf5d07407560b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_once"
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
+          },
+          "id": "RLZ-CBVRYX"
+        },
+        {
+          "after": {
+            "blob": "0a738ef87e1909fbdd064952c671d72ef09844f8",
+            "content": "sha256:468cf5d69e9e32e595bc71baf3a59fda94f6496a954745fe729b3d206492f5bf",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
+          },
+          "before": "absent",
+          "id": "RLZ-MXZRHV"
+        },
+        {
+          "after": {
+            "blob": "8d3f59bbf61c7dafad84e97e4dcf61dcd02b52fd",
+            "content": "sha256:fa258d45d55ab49ae278b6ce245a8f18ce42afb2c09a786655d822934f749693",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": "absent",
+          "id": "RLZ-T0T191"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-86E2FR",
+      "items": [
+        "sha256:9c2a82c5bd00806bf7b9521c225e526e9652be1af9d4170851dd1a0adb55c049"
+      ],
+      "reason": "The record carried only the text artifact. The launch now stores the complete hand-over as a second file under the same write-once rules, preflights the pair before writing either, and the receipt keeps its text so a lost file can be restored. The declaration asked for this replacement.",
+      "revision": 2,
+      "subject": "INV-X9GE8J"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-8EHNPE",
+      "items": [
+        "sha256:17b448ed7335853a7a0ab0657499787cf0f6107f962151e2f1f9017b2e8d8eb7",
+        "sha256:32c1714256a2917cc7c54da58288f95da7811b5aaa5a9863c78d392946960aa5",
+        "sha256:774bb77d345420183e81e5340fadc17e089ff50783d8225b25ae081aa1987d7d",
+        "sha256:d60c99d2a7c12d2cdb99fc0260ee3e8f0309b1aa600066201287cba2b978dd45",
+        "sha256:e78c4bf6d40bd2d511f37ce72fdbcb2104299d171eb6b42c70339fde3e5681ac"
+      ],
+      "reason": "The card states what the repeat and conflict cases protect; this leaf adjusted how a saved launch is restored, which those cases now cover.",
+      "sources": [
+        {
+          "blob": "2694c998b2fd2067d6492610e36afce83681a273",
+          "path": "mcp/tests/test_paseo_launch_repeat.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_paseo_launch_repeat.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-948G4N",
+      "items": [
+        "sha256:6fa9e6a5339cfceccfbc2a7aff3d4f0e588a83657bb43ae5089cc552b54be0c0"
+      ],
+      "reason": "New card: the projected fields defined once, the parts left to the file named, and the projection counted as the message carries it.",
+      "sources": [
+        {
+          "blob": "440da9316af5a6fc3306c164088b1b97d8b42e90",
+          "path": "mcp/src/agents_remember/cli/role_handover_projection.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_handover_projection.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-95WN06",
+      "items": [
+        "sha256:9de69ca4fdde8361bdc35974bd2ddbb79cbf8071d6ae2de5890b6faf4881807f"
+      ],
+      "reason": "The card now says the seat-list sentence names the sibling routes a role's own seat list gives for the role addressed, because three readers carry no leafSeats.",
+      "sources": [
+        {
+          "blob": "e7bf8919f6e0f4a2918e849bb6598bc0a650d47c",
+          "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/operations/coordination.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9B2092",
+      "items": [
+        "sha256:85ffb8c97460e50e87a47e7b3f6153dd97c594bab1d830addcb10c2def02fe3d",
+        "sha256:b5326db7d5d6253b0e840dba1a73436bd98a5dba3e47a15c11d8cd1131f61550"
+      ],
+      "reason": "The card now gives knowledge_read's memory root as workspace.memoryRoot, the dotted name the projection carries.",
+      "sources": [
+        {
+          "blob": "e5545375ff6ae1cca5c2c6a0580d1779332b1e9a",
+          "path": "skills/l-01-agent-lifecycles/reference/curator-intake-details.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/reference/curator-intake-details.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-9DAVNV",
+      "items": [
+        "sha256:08872274ad89e2733a961835d7ea49078ae84efecf112a3b7dae46009a7e4653",
+        "sha256:af5618de6a2ab559dc169fecca62824ac6f6f96d2cfb9169cbbde6e4b4f27b9c"
+      ],
+      "reason": "The card states what the role-tool cases protect; one case line was added and no guarantee changed.",
+      "sources": [
+        {
+          "blob": "ab5b086fa50534a6cfefd0d7ac1086a60419adff",
+          "path": "mcp/tests/test_paseo_role_tools.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_paseo_role_tools.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-002A1G",
+          "revision": 1
+        },
+        {
+          "id": "INV-1Q4W04",
+          "revision": 1
+        },
+        {
+          "id": "INV-7DMXZ3",
+          "revision": 2
+        },
+        {
+          "id": "INV-AFTG56",
+          "revision": 2
+        },
+        {
+          "id": "INV-N9D91D",
+          "revision": 2
+        },
+        {
+          "id": "INV-VKTCC4",
+          "revision": 1
+        },
+        {
+          "id": "INV-WT3VCM",
+          "revision": 1
+        },
+        {
+          "id": "INV-YDDMGJ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-9QKTQV",
+      "items": [
+        "sha256:ea1b5733707ee4639fbb6c231835aff11282231cd972367d368b7b28d96f770a"
+      ],
+      "reason": "Launch choices still resolve against the host's own offerings; the record this leaf touched re-anchored on an unchanged guarantee.",
+      "revision": 2,
+      "subject": "FAM-N17BB4"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-AAX0VH",
+      "items": [
+        "sha256:7dfa20f0d718693627296ee41ff5d8187b8cae3798a3d7d8d76bbbd232abb0f3",
+        "sha256:a239e9a35c9b6c45ffef69b861c7521414a4d21a752a1555bfb5af84ed3f85cb"
+      ],
+      "reason": "The card now names shared_block as the slot a later leaf fills, with empty or absent text writing no block.",
+      "sources": [
+        {
+          "blob": "0de84f83644c391b29759b1623034309cabc8c72",
+          "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/role_capsules/compilation.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b1e11e24577989dc6ddb4add1820c5591d0a50d6",
+            "content": "sha256:528ac6eac7b764f7ece5e9177d34a6a9e1c382dc018fd49e808bb7f027752f00",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_stale_publication_keeps_archive_and_only_exact_leaf_mark_refuses"
+            },
+            "path": "mcp/tests/test_leaf_agent_archive.py"
+          },
+          "before": {
+            "blob": "b1e11e24577989dc6ddb4add1820c5591d0a50d6",
+            "content": "sha256:528ac6eac7b764f7ece5e9177d34a6a9e1c382dc018fd49e808bb7f027752f00",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_stale_publication_keeps_archive_and_only_exact_leaf_mark_refuses"
+            },
+            "path": "mcp/tests/test_leaf_agent_archive.py"
+          },
+          "id": "PRF-0BYMEG"
+        },
+        {
+          "after": {
+            "blob": "b1e11e24577989dc6ddb4add1820c5591d0a50d6",
+            "content": "sha256:b0130c48fddbfe3e1e7ecb1282c5f4538457f6608479a33755a8e613746769cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_marked_same_request_replay_refuses_without_creation_and_keeps_debt"
+            },
+            "path": "mcp/tests/test_leaf_agent_archive.py"
+          },
+          "before": {
+            "blob": "b1e11e24577989dc6ddb4add1820c5591d0a50d6",
+            "content": "sha256:b0130c48fddbfe3e1e7ecb1282c5f4538457f6608479a33755a8e613746769cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_marked_same_request_replay_refuses_without_creation_and_keeps_debt"
+            },
+            "path": "mcp/tests/test_leaf_agent_archive.py"
+          },
+          "id": "PRF-4VV5ZT"
+        },
+        {
+          "after": {
+            "blob": "b1e11e24577989dc6ddb4add1820c5591d0a50d6",
+            "content": "sha256:18d2ce8a3fcb641a2a66fd339db8f4ab84ad824861caefdbd6341035b82ca697",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_terminal_mark_refuses_prepared_start_and_settles_returned_creation"
+            },
+            "path": "mcp/tests/test_leaf_agent_archive.py"
+          },
+          "before": {
+            "blob": "b1e11e24577989dc6ddb4add1820c5591d0a50d6",
+            "content": "sha256:18d2ce8a3fcb641a2a66fd339db8f4ab84ad824861caefdbd6341035b82ca697",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_terminal_mark_refuses_prepared_start_and_settles_returned_creation"
+            },
+            "path": "mcp/tests/test_leaf_agent_archive.py"
+          },
+          "id": "PRF-6V4Q8G"
+        },
+        {
+          "after": {
+            "blob": "b1e11e24577989dc6ddb4add1820c5591d0a50d6",
+            "content": "sha256:cee50f53233cb103ee53b83c0907fa26698eab2368d32191a50e0c89dc60331f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_terminal_mark_covers_other_prepared_roles_before_host_calls"
+            },
+            "path": "mcp/tests/test_leaf_agent_archive.py"
+          },
+          "before": {
+            "blob": "b1e11e24577989dc6ddb4add1820c5591d0a50d6",
+            "content": "sha256:cee50f53233cb103ee53b83c0907fa26698eab2368d32191a50e0c89dc60331f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_terminal_mark_covers_other_prepared_roles_before_host_calls"
+            },
+            "path": "mcp/tests/test_leaf_agent_archive.py"
+          },
+          "id": "PRF-D9RW2K"
+        },
+        {
+          "after": {
+            "blob": "ceadcc22b6dfa25d676932c800e9a78078e36165",
+            "content": "sha256:92facad0be82b7aab807336afdf1be61a44b2254fd0e6a342a871bbc7fd706f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeafAgentArchive.archive"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_archive.py"
+          },
+          "before": {
+            "blob": "ceadcc22b6dfa25d676932c800e9a78078e36165",
+            "content": "sha256:92facad0be82b7aab807336afdf1be61a44b2254fd0e6a342a871bbc7fd706f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeafAgentArchive.archive"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_archive.py"
+          },
+          "id": "RLZ-72NQ8V"
+        },
+        {
+          "after": {
+            "blob": "ceadcc22b6dfa25d676932c800e9a78078e36165",
+            "content": "sha256:66bd4301fb6a797acbd6cef9743d922afded60af5ecd62deb7cd4300647a713e",
+            "locator": {
+              "kind": "symbol",
+              "name": "refuse_retired_start"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_archive.py"
+          },
+          "before": {
+            "blob": "ceadcc22b6dfa25d676932c800e9a78078e36165",
+            "content": "sha256:66bd4301fb6a797acbd6cef9743d922afded60af5ecd62deb7cd4300647a713e",
+            "locator": {
+              "kind": "symbol",
+              "name": "refuse_retired_start"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_archive.py"
+          },
+          "id": "RLZ-DBTE97"
+        },
+        {
+          "after": {
+            "blob": "6c5d030703b806f56bcd3589e5e715b3df06c01e",
+            "content": "sha256:bc2764b0d63093e46e4fb47591faebae59cb74380b1ce675f3379b937855590e",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_launch_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "before": {
+            "blob": "6c5d030703b806f56bcd3589e5e715b3df06c01e",
+            "content": "sha256:bc2764b0d63093e46e4fb47591faebae59cb74380b1ce675f3379b937855590e",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_launch_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "id": "RLZ-PMMCQ0"
+        },
+        {
+          "after": {
+            "blob": "e9c70170273adb869a20f49d2a6b0aef92fe392a",
+            "content": "sha256:7074260c5abeecf94e3db69e79ef974b3cff0f80807c7a583086aa612f46bc8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_receipt"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "before": {
+            "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
+            "content": "sha256:7074260c5abeecf94e3db69e79ef974b3cff0f80807c7a583086aa612f46bc8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_receipt"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "id": "RLZ-S018M9"
+        },
+        {
+          "after": {
+            "blob": "e9c70170273adb869a20f49d2a6b0aef92fe392a",
+            "content": "sha256:7a9557ef2b745716432e6d9d01020b09af0fd70d0f7439f8a49da8b9467ba548",
+            "locator": {
+              "kind": "symbol",
+              "name": "_execute_prepared_launch"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "before": {
+            "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
+            "content": "sha256:60b0a18c662d3085df362bfa4222460a4715f1dc3cfd134e7970ad2c13be5641",
+            "locator": {
+              "kind": "symbol",
+              "name": "_execute_prepared_launch"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "id": "RLZ-T387A9"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-AD5XMS",
+      "items": [
+        "sha256:2c2033af9946cb546929fe268051b29d7173fbcadcb85e102d33767720fa7b36"
+      ],
+      "reason": "The candidate changed code inside the constructs this record is realized by or proved by, so its entries re-anchor at the candidate; the statement, its scope and its meaning are unchanged.",
+      "revision": 1,
+      "subject": "INV-VPXD65"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ADP42T",
+      "items": [
+        "sha256:0e63ec4d61d22acc120c6953b444031355e8425ba4f0d3454ab71af4e4e25515"
+      ],
+      "reason": "The overview states what the lifecycle skill owns; the edited sentences stay inside the roles and operations it already names, and their cards carry the change.",
+      "sources": [
+        {
+          "blob": "5bf7a216d28ae3daba83299a0b6a0ab6addca90e",
+          "path": "skills/l-01-agent-lifecycles/capsule-budgets.json"
+        },
+        {
+          "blob": "e7bf8919f6e0f4a2918e849bb6598bc0a650d47c",
+          "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+        },
+        {
+          "blob": "385e50d77ae251a70756cbfd7674d0c7d973012b",
+          "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+        },
+        {
+          "blob": "9ebdee8141a018420e8edba3c96161db8a2e5297",
+          "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
+        },
+        {
+          "blob": "e5545375ff6ae1cca5c2c6a0580d1779332b1e9a",
+          "path": "skills/l-01-agent-lifecycles/reference/curator-intake-details.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-BGGT62",
+      "items": [
+        "sha256:12cb3c5240266e92da1a3816f27989b48caf1178feaf143dbe4161c69242f281"
+      ],
+      "reason": "The card now says the role text names hand-over values by their dotted path, documents[0].taskDocReadArgs and workspace.memoryRoot.",
+      "sources": [
+        {
+          "blob": "afe92e859d1ad2b0df2d15676cbac104260be4df",
+          "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/worker.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-BQNNP8",
+      "items": [
+        "sha256:18841b8b93071296a09a5bc89dbc4422a92e2c2a85125cae0f1d2fe9c84da9e4",
+        "sha256:1a2a38b81d62bf5422f28ee7a501e575f725b8de0d657e0004aa2de36fee2da5",
+        "sha256:1fad59c3d10208300609a608944f3fc4b383e3e30bc1c55185e9ebaba4cfdad2",
+        "sha256:3034fcc88f70b73880a867b946a5c07e731c3e99eb55de0617f3e4cbbd5498d4",
+        "sha256:4bfd8d22663bfdf0e5fff738767b6d95731bc688a826ae8f5f326570099bf433",
+        "sha256:5cf7a80b2cfc5fe8c0203f963e630ceff801daa52788e23e56e945795ece48fb",
+        "sha256:b60604a95bb531780b6f2ed577fe7b6df295d144c4bbce2561d2fbd4f196390c",
+        "sha256:c30631d6650d6fc6b8c9ebe2ca25c71c31a105ac2cc61dde228c5f4af158f345"
+      ],
+      "reason": "The card now says the fixture imports the production artifact_line for the first message and adds handover_object/planned_handover plus the RequestId protocol, so its assertions share the production formatting; the independent claim it no longer has is removed. What stays independent is the data the fixture derives — the hand-over object and the file reference — not the line's formatting.",
+      "sources": [
+        {
+          "blob": "185077f1b3a1c9f751070722507da6387397ae80",
+          "path": "mcp/tests/paseo_launch_test_support.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/paseo_launch_test_support.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-BSNJBN",
+      "items": [
+        "sha256:05bac470d5e1060beef72df79ad09a3b42f68c4ba47c66f243af72ffaacd2269",
+        "sha256:1190c638da6ce50fa045f371b3ccc8fe3b6e9a4251edf10b5636353380b2e955",
+        "sha256:78f749eadf8d134342e46683a19c3f3855c2129d7fd8f38cd3a08957c808b870",
+        "sha256:bdb9f13f46a4212e6dfd6aba49c29ad1389b6a59024fffc2f1f7ffd6e3e4d7e7",
+        "sha256:f1a776658ea285e2111de09c4265f334c453c90c6bcc430247c8a7319da2003a"
+      ],
+      "reason": "The card states what the binding cases protect; the projection assertions were extended and no stated guarantee changed.",
+      "sources": [
+        {
+          "blob": "e8b00de5102e686e2204b5e863cb20ede8b9f6f2",
+          "path": "mcp/tests/test_role_handover_binding.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_handover_binding.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "186dcf05f4e5e23d4b29a391c089bc88eecf0849",
+            "content": "sha256:83e497ba18994d97c7f5bbeee8ef549b1f783b55552217b933fa80b07095b463",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
+            "content": "sha256:bded51c6252aef1e28b26c9df757f4208f54d73f670c5aca2f7d9e1361971140",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-RFP8Q1"
+        },
+        {
+          "after": {
+            "blob": "6ad3461df40df313b315fdae9146c2fa44a20c76",
+            "content": "sha256:184be4c9aa3c4cd62631168539645c00782089e88da946d19316e220c770cf03",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 29
+            },
+            "path": "skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "before": {
+            "blob": "6ad3461df40df313b315fdae9146c2fa44a20c76",
+            "content": "sha256:184be4c9aa3c4cd62631168539645c00782089e88da946d19316e220c770cf03",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 29
+            },
+            "path": "skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "id": "RLZ-1FAAAK"
+        },
+        {
+          "after": {
+            "blob": "cc7e59bf17a8a0035c77438223ac6d0faace923d",
+            "content": "sha256:4a9dc567094ef1b313f0aa20658894f0313277c6e1e16e7c914234496a883352",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "cc7e59bf17a8a0035c77438223ac6d0faace923d",
+            "content": "sha256:4a9dc567094ef1b313f0aa20658894f0313277c6e1e16e7c914234496a883352",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-MJ0SZ8"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-C896KC",
+      "items": [
+        "sha256:d3cd44c7823ad4435d1150a8216ffd5ce150e93e6fe502ca8edce4f6261e0f06"
+      ],
+      "reason": "The candidate changed code inside the constructs this record is realized by or proved by, so its entries re-anchor at the candidate; the statement, its scope and its meaning are unchanged.",
+      "revision": 1,
+      "subject": "INV-PEVJ6G"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "186dcf05f4e5e23d4b29a391c089bc88eecf0849",
+            "content": "sha256:83e497ba18994d97c7f5bbeee8ef549b1f783b55552217b933fa80b07095b463",
+            "locator": {
+              "end": 303,
+              "kind": "line_range",
+              "start": 233
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
+            "content": "sha256:bded51c6252aef1e28b26c9df757f4208f54d73f670c5aca2f7d9e1361971140",
+            "locator": {
+              "end": 303,
+              "kind": "line_range",
+              "start": 233
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-0DCHVF"
+        },
+        {
+          "after": {
+            "blob": "6ba05488eb248f84bc128d538e99e4c2472add5d",
+            "content": "sha256:3647b684a59d9600cd02ab256881a639829eb9c6a0569b1ea86eadb0e3337846",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "before": {
+            "blob": "6ba05488eb248f84bc128d538e99e4c2472add5d",
+            "content": "sha256:3647b684a59d9600cd02ab256881a639829eb9c6a0569b1ea86eadb0e3337846",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "id": "RLZ-09EQRE"
+        },
+        {
+          "after": {
+            "blob": "6ba05488eb248f84bc128d538e99e4c2472add5d",
+            "content": "sha256:d44774695ba017e537e1be312da408ff6d6c5b3a6decd3e9b258c4834072ec9c",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 30
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "before": {
+            "blob": "6ba05488eb248f84bc128d538e99e4c2472add5d",
+            "content": "sha256:d44774695ba017e537e1be312da408ff6d6c5b3a6decd3e9b258c4834072ec9c",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 30
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "id": "RLZ-JY5TEM"
+        },
+        {
+          "after": {
+            "blob": "6ba05488eb248f84bc128d538e99e4c2472add5d",
+            "content": "sha256:ba8abd9f9e0f35351dd58583f8e4ee11986a44b0458ca8427339b40a6cdf3502",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "before": {
+            "blob": "6ba05488eb248f84bc128d538e99e4c2472add5d",
+            "content": "sha256:ba8abd9f9e0f35351dd58583f8e4ee11986a44b0458ca8427339b40a6cdf3502",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "id": "RLZ-M2NFTB"
+        },
+        {
+          "after": {
+            "blob": "6ad3461df40df313b315fdae9146c2fa44a20c76",
+            "content": "sha256:184be4c9aa3c4cd62631168539645c00782089e88da946d19316e220c770cf03",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 29
+            },
+            "path": "skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "before": {
+            "blob": "6ad3461df40df313b315fdae9146c2fa44a20c76",
+            "content": "sha256:184be4c9aa3c4cd62631168539645c00782089e88da946d19316e220c770cf03",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 29
+            },
+            "path": "skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "id": "RLZ-T4ZSC9"
+        },
+        {
+          "after": {
+            "blob": "cc7e59bf17a8a0035c77438223ac6d0faace923d",
+            "content": "sha256:4b2c97839463054b2f5307414e25c52bc948a6e1929f9f1a2b90ef7baf9d2a19",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "cc7e59bf17a8a0035c77438223ac6d0faace923d",
+            "content": "sha256:4b2c97839463054b2f5307414e25c52bc948a6e1929f9f1a2b90ef7baf9d2a19",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-Y1FRYJ"
+        },
+        {
+          "after": {
+            "blob": "2d58c15304831b65be687127ce05ace5c0f87cec",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "before": {
+            "blob": "2d58c15304831b65be687127ce05ace5c0f87cec",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "id": "RLZ-YF74AS"
+        },
+        {
+          "after": {
+            "blob": "2d58c15304831b65be687127ce05ace5c0f87cec",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "before": {
+            "blob": "2d58c15304831b65be687127ce05ace5c0f87cec",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "id": "RLZ-ZP7734"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-CBT4X0",
+      "items": [
+        "sha256:e55c1f134844fe0920840e7afa82c281bc0593d27b85fb1375505dd5d0a4d039"
+      ],
+      "reason": "The candidate changed code inside the constructs this record is realized by or proved by, so its entries re-anchor at the candidate; the statement, its scope and its meaning are unchanged.",
+      "revision": 1,
+      "subject": "INV-NFV5VJ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-CME113",
+      "items": [
+        "sha256:44cd0e8e21e9bb4cfacdf4bd9fde941a00cf1ed7fed5e8ff2fa54f14de46f964"
+      ],
+      "reason": "New card: the two hand-over files published as one act, every target preflighted before the first write.",
+      "sources": [
+        {
+          "blob": "185c92fc0b914807833c6d68054454f3490b58a7",
+          "path": "mcp/src/agents_remember/cli/role_handover_publication.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_handover_publication.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-CVG8S2",
+      "items": [
+        "sha256:39d189e381813c8f32c14eae4d9f99bdfac68d08106eed344d85ba0c2202d16e"
+      ],
+      "reason": "New card: the lasting first-message matrix, its send-time path check and the single predicate that decides which emitted paths must exist.",
+      "sources": [
+        {
+          "blob": "80541d32901dd78fc8e695e51b301d8a34df2d39",
+          "path": "mcp/tests/test_role_first_message.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_first_message.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-8AMSGV",
+          "revision": 4
+        },
+        {
+          "id": "INV-A6GAKX",
+          "revision": 1
+        },
+        {
+          "id": "INV-NFV5VJ",
+          "revision": 1
+        },
+        {
+          "id": "INV-P2WRNQ",
+          "revision": 2
+        },
+        {
+          "id": "INV-PEVJ6G",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-DGDDA5",
+      "items": [
+        "sha256:71c6fb4b09027a90df0f7fed749f317eaf1f021cdc3f5d3b76a67a714b5fcef8"
+      ],
+      "reason": "One coordinating agent under the architect is unchanged; the developer-question, peer and parent routes keep their meaning and now also stand in the projection.",
+      "revision": 2,
+      "subject": "FAM-PNH1QS"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-DY8G1W",
+      "items": [
+        "sha256:af760af038cdc0549cd87a5e409279a937c2492f00b8fd49f78ca3b41debc82f"
+      ],
+      "reason": "The overview states what the serving package composes; the capsule change is one field carried through, and the file card carries it.",
+      "sources": [
+        {
+          "blob": "29fcf81063bb258507e45da4a75c16d0a9db554f",
+          "path": "mcp/src/agents_remember/serving/launch_capsule.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-E6PFZG",
+      "items": [
+        "sha256:f764281e7104e45e9a6013cd2d8aeeb383d4835de7b729554d1f6027c5a8d547"
+      ],
+      "reason": "New card: the complete hand-over object as the immutable JSON file the message names, planned without writing and restored from the receipt alone.",
+      "sources": [
+        {
+          "blob": "ef4a777f258e408def37c9a00eba870bb6180bd5",
+          "path": "mcp/src/agents_remember/cli/role_handover_file.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_handover_file.py"
+    },
+    {
+      "disposition": "realized_elsewhere",
+      "id": "ROW-EF1TH8",
+      "items": [
+        "sha256:94a686559248e1a1d6d9c81ce828b78bb2d08eaa857e27c176102f3ea6204746"
+      ],
+      "reason": "The record introduced here states the promise the declared effect names: the projection only, within its recorded budget, nothing said twice, and every name it carries reachable.",
+      "ref": {
+        "invariant": "INV-ZVD184"
+      },
+      "subject": "planned:new:a-roles-first-message-is-bounded-said-once-and-reachable#introduce"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e9c70170273adb869a20f49d2a6b0aef92fe392a",
+            "content": "sha256:7a9557ef2b745716432e6d9d01020b09af0fd70d0f7439f8a49da8b9467ba548",
+            "locator": {
+              "kind": "symbol",
+              "name": "_execute_prepared_launch"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "before": {
+            "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
+            "content": "sha256:60b0a18c662d3085df362bfa4222460a4715f1dc3cfd134e7970ad2c13be5641",
+            "locator": {
+              "kind": "symbol",
+              "name": "_execute_prepared_launch"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "id": "RLZ-A3NNS7"
+        },
+        {
+          "after": {
+            "blob": "aa67492c22dfb0af1fca1cc4c454ffcac086b375",
+            "content": "sha256:9035e82bab1136ccd84d80a21b58606e5d5eba6443a28f89d6804dab6c769cd1",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_launch_choices"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_choices.py"
+          },
+          "before": {
+            "blob": "aa67492c22dfb0af1fca1cc4c454ffcac086b375",
+            "content": "sha256:9035e82bab1136ccd84d80a21b58606e5d5eba6443a28f89d6804dab6c769cd1",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_launch_choices"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_choices.py"
+          },
+          "id": "RLZ-Q1N4P2"
+        },
+        {
+          "after": {
+            "blob": "e9c70170273adb869a20f49d2a6b0aef92fe392a",
+            "content": "sha256:6e1e9914f4cc0d0fbe3a0f34fc74430708e260aa16b1b528ff2fca05686bbe4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_request_digest"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "before": {
+            "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
+            "content": "sha256:6e1e9914f4cc0d0fbe3a0f34fc74430708e260aa16b1b528ff2fca05686bbe4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_request_digest"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "id": "RLZ-S4B768"
+        },
+        {
+          "after": {
+            "blob": "6c5d030703b806f56bcd3589e5e715b3df06c01e",
+            "content": "sha256:869ba0e34d204f45aa60de6eddb1993abcb818aaee5acfd7127c836749ab75c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_launch_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "before": {
+            "blob": "6c5d030703b806f56bcd3589e5e715b3df06c01e",
+            "content": "sha256:869ba0e34d204f45aa60de6eddb1993abcb818aaee5acfd7127c836749ab75c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_launch_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "id": "RLZ-V0EBT3"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-EKVV82",
+      "items": [
+        "sha256:9e4b80f6335000cae6de44640b17e4221fff53e8ef413147fb04ab34ad50f2c2"
+      ],
+      "reason": "The candidate changed code inside the constructs this record is realized by or proved by, so its entries re-anchor at the candidate; the statement, its scope and its meaning are unchanged.",
+      "revision": 1,
+      "subject": "INV-YDDMGJ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-EPHR7J",
+      "items": [
+        "sha256:2fc06a62e5a85c891f9f3bf278870a7fb3a4f5c70bf2f480273855a2a78e1f00"
+      ],
+      "reason": "The card now names handoverFilePath in the role-start success shape beside handoverArtifactPath.",
+      "sources": [
+        {
+          "blob": "9ea9969706c694e53bdfc6626e96727722f9a7ce",
+          "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/landing_answer_shapes.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f7688864570af338c6298031f7782f9b75856ee4",
+            "content": "sha256:2200041761481afb1a77501bfcdb24006626a7641f1a37c9bc4b85a1fc79e8d9",
+            "locator": {
+              "end": 995,
+              "kind": "line_range",
+              "start": 955
+            },
+            "path": "mcp/tests/test_paseo_launch.py"
+          },
+          "before": {
+            "blob": "c61467d651e72d83077f8fbb194de03113a4981f",
+            "content": "sha256:2200041761481afb1a77501bfcdb24006626a7641f1a37c9bc4b85a1fc79e8d9",
+            "locator": {
+              "end": 991,
+              "kind": "line_range",
+              "start": 951
+            },
+            "path": "mcp/tests/test_paseo_launch.py"
+          },
+          "id": "PRF-CZPXMP"
+        },
+        {
+          "after": {
+            "blob": "f7688864570af338c6298031f7782f9b75856ee4",
+            "content": "sha256:dc39973ad6cc6c8bcaee9721a1b19304787f6ab454f8e7d5742d20131a430d64",
+            "locator": {
+              "end": 599,
+              "kind": "line_range",
+              "start": 423
+            },
+            "path": "mcp/tests/test_paseo_launch.py"
+          },
+          "before": {
+            "blob": "c61467d651e72d83077f8fbb194de03113a4981f",
+            "content": "sha256:0d18b8e9ea4ec158848fe67930673bdabc230ec691d3c2bc0bbeedfb216bae65",
+            "locator": {
+              "end": 599,
+              "kind": "line_range",
+              "start": 423
+            },
+            "path": "mcp/tests/test_paseo_launch.py"
+          },
+          "id": "PRF-TZXFK2"
+        },
+        {
+          "after": {
+            "blob": "2a0f7531418049179e1ad020e0b8fed6314c73d1",
+            "content": "sha256:31a81d5eebc1095448432a35ed5d4c70cf904a3774dbd827570416918f82fe5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_launch_prepared_role_session"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "before": {
+            "blob": "7303f44f0642307a880a1f2556003aeb50f98dfe",
+            "content": "sha256:090e98ca37320670e693cf1ab002f7843e54d0ffd9767329aac1b25347af212b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_launch_prepared_role_session"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "id": "RLZ-8H3HVX"
+        },
+        {
+          "after": {
+            "blob": "e9c70170273adb869a20f49d2a6b0aef92fe392a",
+            "content": "sha256:e9e967ca283364db610815410bd4c44c92806dd3617fc94747f2a5d2247bf81a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_create_receipt"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "before": {
+            "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
+            "content": "sha256:e9e967ca283364db610815410bd4c44c92806dd3617fc94747f2a5d2247bf81a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_create_receipt"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "id": "RLZ-E1BBP0"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-G8KHK3",
+      "items": [
+        "sha256:8d8f0c3cbe2f616fcf132f7194eff16b3f3c0eff0dc7c146ac8c20a2897a5959"
+      ],
+      "reason": "The candidate changed code inside the constructs this record is realized by or proved by, so its entries re-anchor at the candidate; the statement, its scope and its meaning are unchanged.",
+      "revision": 1,
+      "subject": "INV-FMB2AG"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "8d3f59bbf61c7dafad84e97e4dcf61dcd02b52fd",
+            "content": "sha256:1a6920158daeb820f8807df7f4c7d958b033f6823ee0f933068eca39484a036a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "c9f8ba03e5e1d604196d32f8c737808565896625",
+            "content": "sha256:ff2be6ec2a1459b1f663d264834d85c6b0555c72aa4be851edff07de33a90c01",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-KABSJ7"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-GQCT4W",
+      "items": [
+        "sha256:2587dae8a496c9cd7059c9ddfb701b7d23aa765c42096d47d9a648c348970599"
+      ],
+      "reason": "The candidate changed code inside the constructs this record is realized by, so its entries re-anchor at the candidate; the statement, its scope and its meaning are unchanged.",
+      "revision": 1,
+      "subject": "INV-QZP9PM"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "186dcf05f4e5e23d4b29a391c089bc88eecf0849",
+            "content": "sha256:83e497ba18994d97c7f5bbeee8ef549b1f783b55552217b933fa80b07095b463",
+            "locator": {
+              "end": 303,
+              "kind": "line_range",
+              "start": 233
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
+            "content": "sha256:bded51c6252aef1e28b26c9df757f4208f54d73f670c5aca2f7d9e1361971140",
+            "locator": {
+              "end": 303,
+              "kind": "line_range",
+              "start": 233
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-EP4JYF"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-HCRPQ6",
+      "items": [
+        "sha256:57f0f0e7c6911a5326a9ef6e519c32293a15713f8f44dfbf5c5661432b08d7a3"
+      ],
+      "reason": "The candidate changed code inside the constructs this record is realized by or proved by, so its entries re-anchor at the candidate; the statement, its scope and its meaning are unchanged.",
+      "revision": 1,
+      "subject": "INV-NC6F6V"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2a0f7531418049179e1ad020e0b8fed6314c73d1",
+            "content": "sha256:7de5153ec9c20c97e49c46e454d8782a7c7ca6c2d95724c0e8667dab04c6da5e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "before": {
+            "blob": "7303f44f0642307a880a1f2556003aeb50f98dfe",
+            "content": "sha256:5d866b3d3cf73004262b0fe261ea0cfc2e06c1db78e36a5230461fe1cc34c25d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "id": "RLZ-WSAM04"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-HKFJ32",
+      "items": [
+        "sha256:0ec07f1a6237cf481dd745490a39e8ce0d1b4fa1958832b07eda9870af38efb0"
+      ],
+      "reason": "The candidate changed code inside the constructs this record is realized by, so its entries re-anchor at the candidate; the statement, its scope and its meaning are unchanged.",
+      "revision": 2,
+      "subject": "INV-7DMXZ3"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-8WCSQ7",
+          "revision": 1
+        },
+        {
+          "id": "INV-9VQQ7W",
+          "revision": 1
+        },
+        {
+          "id": "INV-AJKQV2",
+          "revision": 1
+        },
+        {
+          "id": "INV-F1TY2E",
+          "revision": 1
+        },
+        {
+          "id": "INV-FEB6Y6",
+          "revision": 1
+        },
+        {
+          "id": "INV-GM5MS3",
+          "revision": 1
+        },
+        {
+          "id": "INV-K43DJZ",
+          "revision": 2
+        },
+        {
+          "id": "INV-PRP52X",
+          "revision": 1
+        },
+        {
+          "id": "INV-VPXD65",
+          "revision": 1
+        },
+        {
+          "id": "INV-W41C85",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-HWNKRR",
+      "items": [
+        "sha256:99ed69d11c80bd194b92276ee4ce29f9b735d997f3fcfa79d80cd62ac2d2edfa"
+      ],
+      "reason": "A closed leaf still archives exactly its recorded role agents and reports the truth about every archived, already-archived, gone, owed and left-alone target; this leaf moved where a launch's complete hand-over is written and restored and changed nothing about archival, the closing mark or the refusal of a prepared start. The family's own limit stands: it promises no instantaneous no-live state while an entered creation's archival is still owed, and a start whose creation is already entered is not waited for — its minted target stays receipt-owned debt until the returned agent is archived and the start refused.",
+      "revision": 2,
+      "subject": "FAM-VNK792"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-208SQT",
+          "revision": 2
+        },
+        {
+          "id": "INV-CXEEF4",
+          "revision": 1
+        },
+        {
+          "id": "INV-K5SFG7",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-KNQJK6",
+      "items": [
+        "sha256:cc4716721ee161a4adf658a428f8d585834393b57e60571f1dc7191bcef64c76"
+      ],
+      "reason": "The guarded surfaces still hold: the edited sentences kept their meaning, the seals were regenerated by the repository's own steps, and the curator's worklist duty is unchanged.",
+      "revision": 1,
+      "subject": "FAM-YGXZTQ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-KY7CC6",
+      "items": [
+        "sha256:58b8cd067204ebdb7d6d9bc2590d2663d8457e31b7c40318097650e8f2f17832"
+      ],
+      "reason": "The card now says the role text names hand-over values by their dotted path and carries no bare nested name.",
+      "sources": [
+        {
+          "blob": "c6c9cfb51430bc2995590fde9f7d075a95f154e4",
+          "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/reviewer.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-MGH8FW",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "The card states the catalog's purpose and membership duty; this leaf added one consumer declaration and removed none.",
+      "sources": [
+        {
+          "blob": "49cd0f48cc9915569a8158e8af630809210ce99f",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "considered": [
+        "FAM-7AEA19",
+        "FAM-83BTBD",
+        "FAM-GDXSJG",
+        "FAM-N17BB4",
+        "FAM-PNH1QS",
+        "FAM-XX4TGY",
+        "FAM-YGXZTQ"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-N5VHG9",
+      "items": [],
+      "reason": "None of the families examined states a joint promise this record adds to: the hand-over projection, its publication, its refusal type, its recorded budgets and its send-time path check each carry an obligation of their own.",
+      "revision": 1,
+      "subject": "membership:INV-SRBWN3"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-N84X16",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "The card states the lane catalog's purpose; this leaf added one registration line beside the upstream one, and the catalog still holds.",
+      "sources": [
+        {
+          "blob": "4b1e9228874a3f1336bf209dab020ab50020130a",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-N8TKXW",
+      "items": [
+        "sha256:4f7650b71ce94e68df31cb827eca01fe242bbf3af7d021701de532975791b3fe"
+      ],
+      "reason": "The weakness stands: this leaf edited the role text's task-read sentences and named the hand-over fields by dotted path; it changed nothing about a landing that removes or renames a module, and its anchor still describes the duty it records.",
+      "revision": 1,
+      "subject": "WKN-H8X5EX"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-NPYSH0",
+      "items": [
+        "sha256:7fb6eaf9c000bf3bed5c25a3ff4cbbd45f7fc33041e7258cb03f85472970e556"
+      ],
+      "reason": "The card now names handoverFilePath beside handoverArtifactPath in the start answer's kept shape.",
+      "sources": [
+        {
+          "blob": "e7e287c3dc19a859efa58586d1c442a12ef6ec66",
+          "path": "mcp/src/agents_remember/models/role_agents.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/role_agents.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NYWRET",
+      "items": [
+        "sha256:272e09cccb69dc004f6ad8a45ef2afb7728b2a87c9855b769e3bea6753663ab1"
+      ],
+      "reason": "A delete-only hunk: the Messages passage was removed here because it has one home in roles/worker.md, which the Worker's capsule compiles. The clause record states the one-home requirement; the removed text itself carries no invariant.",
+      "subject": "hunk:sha256:272e09cccb69dc004f6ad8a45ef2afb7728b2a87c9855b769e3bea6753663ab1"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-1Q4W04",
+          "revision": 1
+        },
+        {
+          "id": "INV-QZP9PM",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-PA5FTP",
+      "items": [
+        "sha256:f73fe831d168e5d5fb032f061ede1763c0976c73bed31e02fbc40bad0dfda51d"
+      ],
+      "reason": "Instruction text is still composed as plain text from admitted sources with no authority change; the record this leaf touched re-anchored.",
+      "revision": 1,
+      "subject": "FAM-XX4TGY"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "afe92e859d1ad2b0df2d15676cbac104260be4df",
+            "content": "sha256:05743cee4e9013385259219ed7f9a0a2d542ce0f8bac4e9d35d31cd019454b17",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "before": {
+            "blob": "0af01ea2d279b6c3a5f5d41480143de61e8cae1f",
+            "content": "sha256:036b81d5b83480974f262189d459755995a46692992cd14603c67de5b98c01af",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "id": "RLZ-02MMZJ"
+        },
+        {
+          "after": {
+            "blob": "385e50d77ae251a70756cbfd7674d0c7d973012b",
+            "content": "sha256:fa0535d108d0a99c4580bae426744eefab90eb8dcb7fe523660e3e5a584f9e9c",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "before": {
+            "blob": "11b8ef10c8763f50ed20180a7e8e41c2cb9aeb0b",
+            "content": "sha256:bd9199ee230847819c4e49879ece45e85ee855b573e6d73d25fe8784a590ce5e",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "id": "RLZ-0GEXHP"
+        },
+        {
+          "after": {
+            "blob": "9ebdee8141a018420e8edba3c96161db8a2e5297",
+            "content": "sha256:7bd690349781880ab353668530859c3965c75536e8586dd6cd793256018a3a81",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 4
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
+          },
+          "before": {
+            "blob": "df42532960b926133aa1c1f01a73c4ec8c405018",
+            "content": "sha256:7bd690349781880ab353668530859c3965c75536e8586dd6cd793256018a3a81",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 4
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
+          },
+          "id": "RLZ-1AP8C0"
+        },
+        {
+          "after": {
+            "blob": "4c63ecfe34377812e17da8bcc7e8ff6ed032bfd5",
+            "content": "sha256:8b62dd2493353e052b5677bb853a49f60fdb3bda3a734cddc4b187f624a3d73e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
+          },
+          "before": {
+            "blob": "4c63ecfe34377812e17da8bcc7e8ff6ed032bfd5",
+            "content": "sha256:8b62dd2493353e052b5677bb853a49f60fdb3bda3a734cddc4b187f624a3d73e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
+          },
+          "id": "RLZ-3QBDFJ"
+        },
+        {
+          "after": {
+            "blob": "cc7e59bf17a8a0035c77438223ac6d0faace923d",
+            "content": "sha256:680b220cf8d9071c9ead8d889ada63fe807e1d2d3ed3ac562bf81e097bb7dfcb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "cc7e59bf17a8a0035c77438223ac6d0faace923d",
+            "content": "sha256:680b220cf8d9071c9ead8d889ada63fe807e1d2d3ed3ac562bf81e097bb7dfcb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-59K606"
+        },
+        {
+          "after": {
+            "blob": "cc7e59bf17a8a0035c77438223ac6d0faace923d",
+            "content": "sha256:680b220cf8d9071c9ead8d889ada63fe807e1d2d3ed3ac562bf81e097bb7dfcb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "cc7e59bf17a8a0035c77438223ac6d0faace923d",
+            "content": "sha256:680b220cf8d9071c9ead8d889ada63fe807e1d2d3ed3ac562bf81e097bb7dfcb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-5WT1RY"
+        },
+        {
+          "after": {
+            "blob": "6ebeba78dcb06d9111cec33fcaba5afd0c79979b",
+            "content": "sha256:fb5de159bb4cbe0df7e9f61dcd0a487181219e95c2fa68515c886b807dd6e050",
+            "locator": {
+              "end": 252,
+              "kind": "line_range",
+              "start": 234
+            },
+            "path": "skills/c-13-install-and-onboard/SKILL.md"
+          },
+          "before": {
+            "blob": "6ebeba78dcb06d9111cec33fcaba5afd0c79979b",
+            "content": "sha256:fb5de159bb4cbe0df7e9f61dcd0a487181219e95c2fa68515c886b807dd6e050",
+            "locator": {
+              "end": 252,
+              "kind": "line_range",
+              "start": 234
+            },
+            "path": "skills/c-13-install-and-onboard/SKILL.md"
+          },
+          "id": "RLZ-88JBV4"
+        },
+        {
+          "after": {
+            "blob": "61e88989c300f3783c4e50987a0ec98378fc2ab0",
+            "content": "sha256:4cf9656f8621f433e4db4c68b65f2b168fc66cab629ded109fdc9b473357f82e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "before": {
+            "blob": "61e88989c300f3783c4e50987a0ec98378fc2ab0",
+            "content": "sha256:4cf9656f8621f433e4db4c68b65f2b168fc66cab629ded109fdc9b473357f82e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "id": "RLZ-ABKXPC"
+        },
+        {
+          "after": {
+            "blob": "28cbe55d2100b6fb6780c7126fab86611025738a",
+            "content": "sha256:e3da6f98ec29ec9b204b950e17c80b8a9ff13ec621467ab71a6b901582061377",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/strategist.md"
+          },
+          "before": {
+            "blob": "28cbe55d2100b6fb6780c7126fab86611025738a",
+            "content": "sha256:e3da6f98ec29ec9b204b950e17c80b8a9ff13ec621467ab71a6b901582061377",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/strategist.md"
+          },
+          "id": "RLZ-BAA5KM"
+        },
+        {
+          "after": {
+            "blob": "c6c9cfb51430bc2995590fde9f7d075a95f154e4",
+            "content": "sha256:65ab088623bdeeb361400d0cd265a4d43b9ce6e1bf581487a84a01c976fa8202",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "d8db6ab3f23f35a78d5972d5615bd1d506476e7f",
+            "content": "sha256:42a57ef95d86ec6143a7a4dda4c8dafbcb4ed38a315d3747a3cfe30edc1872f0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-BKYWR9"
+        },
+        {
+          "after": {
+            "blob": "c6c9cfb51430bc2995590fde9f7d075a95f154e4",
+            "content": "sha256:f29c3b68f1fe08fb47d4d5121a626c8e0de5835c712aa0ee4f18d66705c9c47e",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "d8db6ab3f23f35a78d5972d5615bd1d506476e7f",
+            "content": "sha256:08b6e62e72026faf423a4c8ab349bf91fc2ad1ceaef5cf3e2f71a1a9f82eb2f9",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-CG94JY"
+        },
+        {
+          "after": {
+            "blob": "61e88989c300f3783c4e50987a0ec98378fc2ab0",
+            "content": "sha256:4cf9656f8621f433e4db4c68b65f2b168fc66cab629ded109fdc9b473357f82e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "before": {
+            "blob": "61e88989c300f3783c4e50987a0ec98378fc2ab0",
+            "content": "sha256:4cf9656f8621f433e4db4c68b65f2b168fc66cab629ded109fdc9b473357f82e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "id": "RLZ-D1DKW9"
+        },
+        {
+          "after": {
+            "blob": "9ebdee8141a018420e8edba3c96161db8a2e5297",
+            "content": "sha256:7bd690349781880ab353668530859c3965c75536e8586dd6cd793256018a3a81",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 4
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
+          },
+          "before": {
+            "blob": "df42532960b926133aa1c1f01a73c4ec8c405018",
+            "content": "sha256:7bd690349781880ab353668530859c3965c75536e8586dd6cd793256018a3a81",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 4
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
+          },
+          "id": "RLZ-DRT32D"
+        },
+        {
+          "after": {
+            "blob": "70bb5757b6f36200ece074f47b219868173729ae",
+            "content": "sha256:edc0f1b1d327bd5bc0981f6d93803d470a7c249c9ea1c189edc51b9ccda90915",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "70bb5757b6f36200ece074f47b219868173729ae",
+            "content": "sha256:edc0f1b1d327bd5bc0981f6d93803d470a7c249c9ea1c189edc51b9ccda90915",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-EK6J3B"
+        },
+        {
+          "after": {
+            "blob": "6ba05488eb248f84bc128d538e99e4c2472add5d",
+            "content": "sha256:76cbc7846c513c07d1fb28a9bf1abda59aeff7f4356d477124b11802dbe8bf0b",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "before": {
+            "blob": "6ba05488eb248f84bc128d538e99e4c2472add5d",
+            "content": "sha256:76cbc7846c513c07d1fb28a9bf1abda59aeff7f4356d477124b11802dbe8bf0b",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "id": "RLZ-EQZH1P"
+        },
+        {
+          "after": {
+            "blob": "afe92e859d1ad2b0df2d15676cbac104260be4df",
+            "content": "sha256:c9e4ec21e3b43360e42db9f7fc8297b081953d341d9b3e6da604e79d1fc2b850",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "before": {
+            "blob": "0af01ea2d279b6c3a5f5d41480143de61e8cae1f",
+            "content": "sha256:5379650548a22cd2f33240274083f90976d871e2d92d6b6d626137d5127b7fa1",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "id": "RLZ-GRG1X8"
+        },
+        {
+          "after": {
+            "blob": "385e50d77ae251a70756cbfd7674d0c7d973012b",
+            "content": "sha256:397e398fac2550880380009410da4d9280ebcdce91bbe52734bdeba597f96ab1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "before": {
+            "blob": "11b8ef10c8763f50ed20180a7e8e41c2cb9aeb0b",
+            "content": "sha256:a6c5d828cd3dd7d19cf24719239879ad1e56b823cd715a944bf9ddd24163eb6e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "id": "RLZ-JSEK7Q"
+        },
+        {
+          "after": {
+            "blob": "6ebeba78dcb06d9111cec33fcaba5afd0c79979b",
+            "content": "sha256:ddc59c2889521fcce228c11d72802d6e842db5c31295c30f968158b4a886fa8a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md"
+          },
+          "before": {
+            "blob": "6ebeba78dcb06d9111cec33fcaba5afd0c79979b",
+            "content": "sha256:ddc59c2889521fcce228c11d72802d6e842db5c31295c30f968158b4a886fa8a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md"
+          },
+          "id": "RLZ-K2M1WN"
+        },
+        {
+          "after": {
+            "blob": "541f15fba478277772b410bd15974fb889feaabc",
+            "content": "sha256:743206fd0aa45bc40d42fdaa4c664eb1ceeee8b594a9f3bc20e95988ed500d8f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/orientation.md"
+          },
+          "before": {
+            "blob": "541f15fba478277772b410bd15974fb889feaabc",
+            "content": "sha256:743206fd0aa45bc40d42fdaa4c664eb1ceeee8b594a9f3bc20e95988ed500d8f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/orientation.md"
+          },
+          "id": "RLZ-K6HJZY"
+        },
+        {
+          "after": {
+            "blob": "28cbe55d2100b6fb6780c7126fab86611025738a",
+            "content": "sha256:e3da6f98ec29ec9b204b950e17c80b8a9ff13ec621467ab71a6b901582061377",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/strategist.md"
+          },
+          "before": {
+            "blob": "28cbe55d2100b6fb6780c7126fab86611025738a",
+            "content": "sha256:e3da6f98ec29ec9b204b950e17c80b8a9ff13ec621467ab71a6b901582061377",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/strategist.md"
+          },
+          "id": "RLZ-M42H5N"
+        },
+        {
+          "after": {
+            "blob": "6ba05488eb248f84bc128d538e99e4c2472add5d",
+            "content": "sha256:6868c233cc81075a62d7000c1a3814ed5a7d7a2704d1e7bc3d764ed1b1f80944",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "before": {
+            "blob": "6ba05488eb248f84bc128d538e99e4c2472add5d",
+            "content": "sha256:6868c233cc81075a62d7000c1a3814ed5a7d7a2704d1e7bc3d764ed1b1f80944",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "id": "RLZ-MA5C8F"
+        },
+        {
+          "after": {
+            "blob": "4c63ecfe34377812e17da8bcc7e8ff6ed032bfd5",
+            "content": "sha256:8b62dd2493353e052b5677bb853a49f60fdb3bda3a734cddc4b187f624a3d73e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/bootstrap.md"
+          },
+          "before": {
+            "blob": "4c63ecfe34377812e17da8bcc7e8ff6ed032bfd5",
+            "content": "sha256:8b62dd2493353e052b5677bb853a49f60fdb3bda3a734cddc4b187f624a3d73e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/bootstrap.md"
+          },
+          "id": "RLZ-NVBKRR"
+        },
+        {
+          "after": {
+            "blob": "541f15fba478277772b410bd15974fb889feaabc",
+            "content": "sha256:c011e78b94b97cccdcf45e5fc1da33852adad5ee8b7a50f9fa6bc1d876a02383",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
+          },
+          "before": {
+            "blob": "541f15fba478277772b410bd15974fb889feaabc",
+            "content": "sha256:c011e78b94b97cccdcf45e5fc1da33852adad5ee8b7a50f9fa6bc1d876a02383",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
+          },
+          "id": "RLZ-Q1RJX3"
+        },
+        {
+          "after": {
+            "blob": "2d58c15304831b65be687127ce05ace5c0f87cec",
+            "content": "sha256:e1a2eef2ab61b6c4b36edb85b55641d0b0460fb89690d702aaf89192901bd682",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "before": {
+            "blob": "2d58c15304831b65be687127ce05ace5c0f87cec",
+            "content": "sha256:e1a2eef2ab61b6c4b36edb85b55641d0b0460fb89690d702aaf89192901bd682",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "id": "RLZ-RT5KYP"
+        },
+        {
+          "after": {
+            "blob": "996720cf82edf70b0777cfbc9fe3a594268303b8",
+            "content": "sha256:a5e12d548f019cc9130f7264821096beafa731a7e49930e6be72d4f1b303e6a5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/designer.md"
+          },
+          "before": {
+            "blob": "996720cf82edf70b0777cfbc9fe3a594268303b8",
+            "content": "sha256:a5e12d548f019cc9130f7264821096beafa731a7e49930e6be72d4f1b303e6a5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/designer.md"
+          },
+          "id": "RLZ-V9KYKV"
+        },
+        {
+          "after": {
+            "blob": "385e50d77ae251a70756cbfd7674d0c7d973012b",
+            "content": "sha256:e4e43a4a9022d9519496fef3bea0110276f676a446a273b0537104c417522496",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "before": {
+            "blob": "11b8ef10c8763f50ed20180a7e8e41c2cb9aeb0b",
+            "content": "sha256:ad72247f425470c0e4ce57be3cb9828cf976d89df52c7299886639e3aca431f3",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "id": "RLZ-VXHQMN"
+        },
+        {
+          "after": {
+            "blob": "996720cf82edf70b0777cfbc9fe3a594268303b8",
+            "content": "sha256:a5e12d548f019cc9130f7264821096beafa731a7e49930e6be72d4f1b303e6a5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/designer.md"
+          },
+          "before": {
+            "blob": "996720cf82edf70b0777cfbc9fe3a594268303b8",
+            "content": "sha256:a5e12d548f019cc9130f7264821096beafa731a7e49930e6be72d4f1b303e6a5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/designer.md"
+          },
+          "id": "RLZ-YPZ7CB"
+        },
+        {
+          "after": {
+            "blob": "2d58c15304831b65be687127ce05ace5c0f87cec",
+            "content": "sha256:e1a2eef2ab61b6c4b36edb85b55641d0b0460fb89690d702aaf89192901bd682",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "before": {
+            "blob": "2d58c15304831b65be687127ce05ace5c0f87cec",
+            "content": "sha256:e1a2eef2ab61b6c4b36edb85b55641d0b0460fb89690d702aaf89192901bd682",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "id": "RLZ-YVX677"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-PKB5WC",
+      "items": [
+        "sha256:5afa0e021628fd2589b64d0e2fd59425427c338d6d0414c089170be9864ecc26"
+      ],
+      "reason": "The candidate changed code inside the constructs this record is realized by or proved by, so its entries re-anchor at the candidate; the statement, its scope and its meaning are unchanged.",
+      "revision": 1,
+      "subject": "INV-NNQR91"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "49cd0f48cc9915569a8158e8af630809210ce99f",
+            "content": "sha256:538baa64a86c41d9419571d2b663924d82bbf2227677d0e3486cd6df9784c83e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "ba800d605e5fb5c8b3dda49b40d7d9185f310acd",
+            "content": "sha256:3c2fd8a6d7b31f4966e96f2f0c9598e0ead74ce998bd6d1cedd6a5c20df477ff",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-8RHQED"
+        },
+        {
+          "after": {
+            "blob": "4b1e9228874a3f1336bf209dab020ab50020130a",
+            "content": "sha256:160eaa413cd0b6287f2288a7323f03bb711a5cc70f329c9e1ed80a73fe3e38f7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "0e16e2bbc800340c4b8bb1b7d3f9d72173fc3888",
+            "content": "sha256:d16af395e7c90cf683c2fd23bf5290e01e60d577058a8f9b2d5e23a736996620",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-MC12B0"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-PVSW44",
+      "items": [
+        "sha256:a50e1084c435b53c4443fe71bdcda01085276fd86b7aa91d9c0d78759461ed9e"
+      ],
+      "reason": "The candidate changed code inside the constructs this record is realized by or proved by, so its entries re-anchor at the candidate; the statement, its scope and its meaning are unchanged.",
+      "revision": 1,
+      "subject": "INV-H1BCMX"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "186dcf05f4e5e23d4b29a391c089bc88eecf0849",
+            "content": "sha256:83e497ba18994d97c7f5bbeee8ef549b1f783b55552217b933fa80b07095b463",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
+            "content": "sha256:bded51c6252aef1e28b26c9df757f4208f54d73f670c5aca2f7d9e1361971140",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-5448EZ"
+        },
+        {
+          "after": {
+            "blob": "186dcf05f4e5e23d4b29a391c089bc88eecf0849",
+            "content": "sha256:28aac27c230d76a939bdc2c1e3dee09453f6a7cb32fee0323483570048cf9c17",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_direct_closeout_keeps_the_architect_and_its_existing_gates"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
+            "content": "sha256:28aac27c230d76a939bdc2c1e3dee09453f6a7cb32fee0323483570048cf9c17",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_direct_closeout_keeps_the_architect_and_its_existing_gates"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-H64HF6"
+        },
+        {
+          "after": {
+            "blob": "cc7e59bf17a8a0035c77438223ac6d0faace923d",
+            "content": "sha256:04f85c885112f262597c83158ab41e4fde68690d0a3ab55b439757ab78c7aa24",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 54
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "cc7e59bf17a8a0035c77438223ac6d0faace923d",
+            "content": "sha256:04f85c885112f262597c83158ab41e4fde68690d0a3ab55b439757ab78c7aa24",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 54
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-1GCP9C"
+        },
+        {
+          "after": {
+            "blob": "cc7e59bf17a8a0035c77438223ac6d0faace923d",
+            "content": "sha256:64b014bf72a3ddf76a265ac494a328b3a6dd7cefdbc2e4057605d5664f140527",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "cc7e59bf17a8a0035c77438223ac6d0faace923d",
+            "content": "sha256:64b014bf72a3ddf76a265ac494a328b3a6dd7cefdbc2e4057605d5664f140527",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-418WGG"
+        },
+        {
+          "after": {
+            "blob": "797c78c090a39734d316d12fab86fd41820ab528",
+            "content": "sha256:b6c519a318ad0d8dc83be28af50e49d54421306a428b6ed696a09c0ba98a6736",
+            "locator": {
+              "end": 3,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/closeout.md"
+          },
+          "before": {
+            "blob": "797c78c090a39734d316d12fab86fd41820ab528",
+            "content": "sha256:b6c519a318ad0d8dc83be28af50e49d54421306a428b6ed696a09c0ba98a6736",
+            "locator": {
+              "end": 3,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/closeout.md"
+          },
+          "id": "RLZ-DHZW33"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-Q1ZMV6",
+      "items": [
+        "sha256:22973cc0c9a98e4d7f1f9e458d2758fa8d32ec1cba443038118130eeaa33d4f0"
+      ],
+      "reason": "The candidate changed code inside the constructs this record is realized by or proved by, so its entries re-anchor at the candidate; the statement, its scope and its meaning are unchanged.",
+      "revision": 2,
+      "subject": "INV-P2WRNQ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-QDWFR5",
+      "items": [
+        "sha256:9e8629633870610e25a080bf951088fd3ca2952fc59f898657af3649d8fd8622"
+      ],
+      "reason": "The card now says a retry restores both files through role_handover_restore.py before sending, and that a receipt without the second reference keeps the text file's rules alone.",
+      "sources": [
+        {
+          "blob": "e9c70170273adb869a20f49d2a6b0aef92fe392a",
+          "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_launch_receipts.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-QTE0GK",
+      "items": [
+        "sha256:051e0da915057f31d77426a387a91a562e3f5b77b8629af9cedabbf7811a47d1",
+        "sha256:07b5cf84f7d3c6f31b757bbdc180530390541e149ddc1718056eff2aecdf55c6",
+        "sha256:0a1c15df435068f70edb4cd16196ae96a52f1ddd3ff5e915a85cedf873eef757",
+        "sha256:185109ad6749718cffc11b533ec57603cdf62e970b93c94f2d0c1d8323e71685",
+        "sha256:2432aacf051ebd3554db9c9f0460ea4c2fc425e038273277cdd18ac3832ce9c1",
+        "sha256:5cc72b112d77e52f0fe5eb588f4565a655e1bf989b12b2ffc5304d1d1c94f7d6",
+        "sha256:5fcae23b0b5037ff227a62193e73f8b938f47d6658f32becb986157dbe69975c",
+        "sha256:60905eba7e6ac24ada5a0bddb264079a4f42bc2ece30376bac069d6368df07f3",
+        "sha256:b72febab5758e281ab69873615251abe2be8d6f67df495b41e501bf9b599fd37",
+        "sha256:ca9575d921fa12431c579c71c29c3c85991c4969c11afcffa69ac81bf3e27455",
+        "sha256:d1fcd08d80e8d1798173e3fb9f5e2547996a7331eb0f45212be9cbda6cfc3e24",
+        "sha256:dfa654d1fcb45c76ee6b6bff4e714fee522b2ffe0e4b19c5b4aa90bee747bc6e",
+        "sha256:f515da63d5d4394bf8bc5c1a1153d5fa4640f8e9808b4c398a039c15792d3f01",
+        "sha256:fe22c5e2fa3df8beb03cefdf10ec3e7435ee0f8e758151f00ce1f48e471253c8"
+      ],
+      "reason": "The card states what the route-level tool cases protect; the new first-message cases extend that protection and contradict nothing it says.",
+      "sources": [
+        {
+          "blob": "a02e919bbcb629ea05ef129f7d23e22354927a8f",
+          "path": "mcp/tests/test_paseo_agent_tools.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_paseo_agent_tools.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-R1T10R",
+      "items": [
+        "sha256:043a6b7d138f66719756850901d7a54a0103ebbd03c925e36a4f4796638ddab3",
+        "sha256:089b5674a4cb7f3c71ddd19af9e8b8f28060c109196687b9e594f7fccf14a158",
+        "sha256:27a94168b6ba486f2e36d93ed44a04c4edc1c75bad92438b647dd43a91dab60d",
+        "sha256:35c0db907297aa13ee9da625e4f4974ec868f9ba4f038c472ffe79893eb627c4",
+        "sha256:5e2ff641e089e94c9f1289d2512b60fedc61897b4727f9dd8dd7d905a181c596"
+      ],
+      "reason": "The card now says the launch reads the shared block from the compilation it holds and carries it into the message, the path a task-bound start takes.",
+      "sources": [
+        {
+          "blob": "9ed77cba4caacd019fd87b683ea11e0653cb7ad1",
+          "path": "mcp/src/agents_remember/application/role_capsules/launch.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/role_capsules/launch.py"
+    },
+    {
+      "considered": [
+        "FAM-7AEA19",
+        "FAM-83BTBD",
+        "FAM-GDXSJG",
+        "FAM-N17BB4",
+        "FAM-PNH1QS",
+        "FAM-XX4TGY",
+        "FAM-YGXZTQ"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-RAHJ77",
+      "items": [],
+      "reason": "None of the families examined states a joint promise this record adds to: the hand-over projection, its publication, its refusal type, its recorded budgets and its send-time path check each carry an obligation of their own.",
+      "revision": 1,
+      "subject": "membership:INV-5H5VR2"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-RN0QCS",
+      "items": [
+        "sha256:f5ba0a751da18ee43e0e5f19429705571ac9c15964c741124526f7c04a79ec73"
+      ],
+      "reason": "The card now records the handover budget per started role: the size is that role's largest legal projection and the budget is the smaller of ceil(size x 11 / 10) and 3,300 tokens.",
+      "sources": [
+        {
+          "blob": "5bf7a216d28ae3daba83299a0b6a0ab6addca90e",
+          "path": "skills/l-01-agent-lifecycles/capsule-budgets.json"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/capsule-budgets.json"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "8d3f59bbf61c7dafad84e97e4dcf61dcd02b52fd",
+            "content": "sha256:1a6920158daeb820f8807df7f4c7d958b033f6823ee0f933068eca39484a036a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "c9f8ba03e5e1d604196d32f8c737808565896625",
+            "content": "sha256:ff2be6ec2a1459b1f663d264834d85c6b0555c72aa4be851edff07de33a90c01",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-5DAQEC"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-RYS9XB",
+      "items": [
+        "sha256:4165b0bae8df571a93be253c19394c6a758020e053e637702cac2ddb9c128f1b"
+      ],
+      "reason": "The candidate changed code inside the constructs this record is realized by, so its entries re-anchor at the candidate; the statement, its scope and its meaning are unchanged.",
+      "revision": 2,
+      "subject": "INV-W58B84"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e7bf8919f6e0f4a2918e849bb6598bc0a650d47c",
+            "content": "sha256:017d4210c6b2df011e624d6f36452c0f70465e73a5fe8fcaae6fb74dc79572ad",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "before": {
+            "blob": "f17aa445d3c5fc1b8b1f18ed2be48b8be8b6df7d",
+            "content": "sha256:7d156e870cf26b72d3219775f720cffc7f4c756e75dfe1f0d42e1756d796f2f0",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "id": "RLZ-XF8A3Q"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-RZHYDY",
+      "items": [
+        "sha256:e80aef0d82190aea37f21dcafa7ef44a21c9b150677fe8c89050d5f150d1d2e9"
+      ],
+      "reason": "The candidate changed code inside the constructs this record is realized by, so its entries re-anchor at the candidate; the statement, its scope and its meaning are unchanged.",
+      "revision": 1,
+      "subject": "INV-ZNJ14G"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e7bf8919f6e0f4a2918e849bb6598bc0a650d47c",
+            "content": "sha256:ea70ef513d87d7d323249ac4213969380061c7ad35d6d248ebdcee88bf250316",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "before": {
+            "blob": "f17aa445d3c5fc1b8b1f18ed2be48b8be8b6df7d",
+            "content": "sha256:cf493f936208176596c3c4236d6b340db2bfc43a7da45174fa3f346c4578ccbc",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "id": "RLZ-JF7EP8"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-S1AZCM",
+      "items": [
+        "sha256:577d9f0d5b646ba66f6ac7aec70ece0d4b8fde02391aa944144697c0d093c984"
+      ],
+      "reason": "The candidate changed code inside the constructs this record is realized by, so its entries re-anchor at the candidate; the statement, its scope and its meaning are unchanged.",
+      "revision": 1,
+      "subject": "INV-MTRR08"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-SPXNFR",
+      "items": [
+        "sha256:16957731d3cac884b4adccecf21caf9f6ad31a8176573465651bb4225132ef3d",
+        "sha256:33a07af3aa4c57ea26afb50a5764b191db85e356229b9df16a262f61b2108306",
+        "sha256:78f43c5c58cf361bf781ae94d962bb0c419c6470aa1e12591e2958bd26576555",
+        "sha256:cd963e4eb06a8fe15bf23c6c5b7e0284193c2ddc21773b1de21c9af15d17d0dc",
+        "sha256:d189920f6b6c6df22849a74e2634a3dbbd13dd98273b28040c3e0c4a91062f7c"
+      ],
+      "reason": "The card states what the audience pins protect, and that protection is unchanged. The diff renews two digest pins — coordination and implementation — and widens one assertion from `memoryRoot` to `workspace.memoryRoot`; the other pins stand. Two pins and one assertion, not three pins.",
+      "sources": [
+        {
+          "blob": "f8a9f18b7c8e9abd6ee9ee2be02accba4d939449",
+          "path": "mcp/tests/test_role_capsule_audiences.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_capsule_audiences.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "afe92e859d1ad2b0df2d15676cbac104260be4df",
+            "content": "sha256:78d6689ae7281dd57765c7da06b03983d3d132367cac686a3a1be3e34cf01fc8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "before": {
+            "blob": "0af01ea2d279b6c3a5f5d41480143de61e8cae1f",
+            "content": "sha256:f661e7ac41b45de78b5dc762bc3cc66b469c28c545b6bb6bf5ffca10d41facb3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "id": "RLZ-896AMD"
+        },
+        {
+          "after": {
+            "blob": "c6c9cfb51430bc2995590fde9f7d075a95f154e4",
+            "content": "sha256:65ab088623bdeeb361400d0cd265a4d43b9ce6e1bf581487a84a01c976fa8202",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "d8db6ab3f23f35a78d5972d5615bd1d506476e7f",
+            "content": "sha256:42a57ef95d86ec6143a7a4dda4c8dafbcb4ed38a315d3747a3cfe30edc1872f0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-PDE8EW"
+        },
+        {
+          "after": {
+            "blob": "8d3f59bbf61c7dafad84e97e4dcf61dcd02b52fd",
+            "content": "sha256:1a6920158daeb820f8807df7f4c7d958b033f6823ee0f933068eca39484a036a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "c9f8ba03e5e1d604196d32f8c737808565896625",
+            "content": "sha256:ff2be6ec2a1459b1f663d264834d85c6b0555c72aa4be851edff07de33a90c01",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-TRMKTB"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-SX7QS9",
+      "items": [
+        "sha256:7056f89cba9d22b74b874d7cc448dd6ceb01900422492ebd64c639bf8aab3d55"
+      ],
+      "reason": "The candidate changed code inside the constructs this record is realized by, so its entries re-anchor at the candidate; the statement, its scope and its meaning are unchanged.",
+      "revision": 1,
+      "subject": "INV-QZW2X2"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "186dcf05f4e5e23d4b29a391c089bc88eecf0849",
+            "content": "sha256:2784247703adc1e43cba86b6ac1f4f9a4319aaf49d06b318f6c2465ae04c16ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_manifest_descriptions_follow_the_coordination_default"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
+            "content": "sha256:2784247703adc1e43cba86b6ac1f4f9a4319aaf49d06b318f6c2465ae04c16ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_manifest_descriptions_follow_the_coordination_default"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-0E0V75"
+        },
+        {
+          "after": {
+            "blob": "186dcf05f4e5e23d4b29a391c089bc88eecf0849",
+            "content": "sha256:83e497ba18994d97c7f5bbeee8ef549b1f783b55552217b933fa80b07095b463",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
+            "content": "sha256:bded51c6252aef1e28b26c9df757f4208f54d73f670c5aca2f7d9e1361971140",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-0YJ58R"
+        },
+        {
+          "after": {
+            "blob": "259ed1508440ade327c5265fd38e41e3a2344140",
+            "content": "sha256:f0e5f1ddda35f33ad0d76ff1c2fe6870a84e9a567b5aca9d8c3003a70d1f4843",
+            "locator": {
+              "end": 233,
+              "kind": "line_range",
+              "start": 233
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "before": {
+            "blob": "259ed1508440ade327c5265fd38e41e3a2344140",
+            "content": "sha256:f0e5f1ddda35f33ad0d76ff1c2fe6870a84e9a567b5aca9d8c3003a70d1f4843",
+            "locator": {
+              "end": 233,
+              "kind": "line_range",
+              "start": 233
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "id": "RLZ-031YY4"
+        },
+        {
+          "after": {
+            "blob": "259ed1508440ade327c5265fd38e41e3a2344140",
+            "content": "sha256:2fa7b5ec23e247702fc2471a649873e5be15b3bf2f7940224fab1131e612af55",
+            "locator": {
+              "end": 338,
+              "kind": "line_range",
+              "start": 338
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "before": {
+            "blob": "259ed1508440ade327c5265fd38e41e3a2344140",
+            "content": "sha256:2fa7b5ec23e247702fc2471a649873e5be15b3bf2f7940224fab1131e612af55",
+            "locator": {
+              "end": 338,
+              "kind": "line_range",
+              "start": 338
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "id": "RLZ-5G6AGC"
+        },
+        {
+          "after": {
+            "blob": "6ba05488eb248f84bc128d538e99e4c2472add5d",
+            "content": "sha256:d98606f040ac27eea89b8ae26808b500633327a2f24dbdc3ea15c5320e941113",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "before": {
+            "blob": "6ba05488eb248f84bc128d538e99e4c2472add5d",
+            "content": "sha256:d98606f040ac27eea89b8ae26808b500633327a2f24dbdc3ea15c5320e941113",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "id": "RLZ-85MKD0"
+        },
+        {
+          "after": {
+            "blob": "2d58c15304831b65be687127ce05ace5c0f87cec",
+            "content": "sha256:48db0f66afbbe06e68d88b492073362b6bfe09bc1da519a689ff19dfb0efab6c",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "before": {
+            "blob": "2d58c15304831b65be687127ce05ace5c0f87cec",
+            "content": "sha256:48db0f66afbbe06e68d88b492073362b6bfe09bc1da519a689ff19dfb0efab6c",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "id": "RLZ-ATVKJ4"
+        },
+        {
+          "after": {
+            "blob": "259ed1508440ade327c5265fd38e41e3a2344140",
+            "content": "sha256:049e07153602a51202aa82c5e8a72bf741f8b30e6dac36373c2c308edc359ff2",
+            "locator": {
+              "end": 187,
+              "kind": "line_range",
+              "start": 187
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "before": {
+            "blob": "259ed1508440ade327c5265fd38e41e3a2344140",
+            "content": "sha256:049e07153602a51202aa82c5e8a72bf741f8b30e6dac36373c2c308edc359ff2",
+            "locator": {
+              "end": 187,
+              "kind": "line_range",
+              "start": 187
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "id": "RLZ-HGSMDT"
+        },
+        {
+          "after": {
+            "blob": "6ad3461df40df313b315fdae9146c2fa44a20c76",
+            "content": "sha256:241bf94e72190110e5074bf81927a22771bc9fc3371f360d4d236ee211590b8b",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 31
+            },
+            "path": "skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "before": {
+            "blob": "6ad3461df40df313b315fdae9146c2fa44a20c76",
+            "content": "sha256:241bf94e72190110e5074bf81927a22771bc9fc3371f360d4d236ee211590b8b",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 31
+            },
+            "path": "skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "id": "RLZ-R0YSNZ"
+        },
+        {
+          "after": {
+            "blob": "cc7e59bf17a8a0035c77438223ac6d0faace923d",
+            "content": "sha256:beb680d06c4adf9d4d1fa54719c8035f522b3291e395fe1ceded3bba42016d85",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "cc7e59bf17a8a0035c77438223ac6d0faace923d",
+            "content": "sha256:beb680d06c4adf9d4d1fa54719c8035f522b3291e395fe1ceded3bba42016d85",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-SV2W4A"
+        },
+        {
+          "after": {
+            "blob": "e7bf8919f6e0f4a2918e849bb6598bc0a650d47c",
+            "content": "sha256:59e877c574495767f31cf0b20fa0a22d6f52860614cfc0e1def7045aa6fab7d2",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 6
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "before": {
+            "blob": "f17aa445d3c5fc1b8b1f18ed2be48b8be8b6df7d",
+            "content": "sha256:59e877c574495767f31cf0b20fa0a22d6f52860614cfc0e1def7045aa6fab7d2",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 6
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "id": "RLZ-VHD2RF"
+        },
+        {
+          "after": {
+            "blob": "259ed1508440ade327c5265fd38e41e3a2344140",
+            "content": "sha256:28505dbb3f7e2ed85116de1c35f58e92c921b4259d27ba9e27b961993fc25988",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 58
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "before": {
+            "blob": "259ed1508440ade327c5265fd38e41e3a2344140",
+            "content": "sha256:28505dbb3f7e2ed85116de1c35f58e92c921b4259d27ba9e27b961993fc25988",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 58
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "id": "RLZ-WTKS9R"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-T33XKM",
+      "items": [
+        "sha256:697507a45ad896d55d661825c4b8c49e7b734b7036b153fc408293d3c141ef54"
+      ],
+      "reason": "The candidate changed code inside the constructs this record is realized by or proved by, so its entries re-anchor at the candidate; the statement, its scope and its meaning are unchanged.",
+      "revision": 1,
+      "subject": "INV-A6GAKX"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-TGHV18",
+      "items": [
+        "sha256:8491162f28262efddca1be047073bd0aa43f393ceb83211479ea1cb642948c6d"
+      ],
+      "reason": "The overview describes what the package contains at route level; the new modules sit under the cli route whose purpose is unchanged and whose file cards carry the change.",
+      "sources": [
+        {
+          "blob": "7bd945c58e535cd8a19c801e8f5c645ad20bf40e",
+          "path": "mcp/src/agents_remember/cli/immutable_artifact.py"
+        },
+        {
+          "blob": "5afd69406b3cd0b91707240fdeca1842bf62f314",
+          "path": "mcp/src/agents_remember/cli/role_brief_message.py"
+        },
+        {
+          "blob": "0a738ef87e1909fbdd064952c671d72ef09844f8",
+          "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
+        },
+        {
+          "blob": "ef4a777f258e408def37c9a00eba870bb6180bd5",
+          "path": "mcp/src/agents_remember/cli/role_handover_file.py"
+        },
+        {
+          "blob": "440da9316af5a6fc3306c164088b1b97d8b42e90",
+          "path": "mcp/src/agents_remember/cli/role_handover_projection.py"
+        },
+        {
+          "blob": "185c92fc0b914807833c6d68054454f3490b58a7",
+          "path": "mcp/src/agents_remember/cli/role_handover_publication.py"
+        },
+        {
+          "blob": "801d3be936028d93ae5201e4bccc6c0814e1da0e",
+          "path": "mcp/src/agents_remember/cli/role_handover_restore.py"
+        },
+        {
+          "blob": "8d3f59bbf61c7dafad84e97e4dcf61dcd02b52fd",
+          "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+        },
+        {
+          "blob": "e9c70170273adb869a20f49d2a6b0aef92fe392a",
+          "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+        },
+        {
+          "blob": "2a0f7531418049179e1ad020e0b8fed6314c73d1",
+          "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+        },
+        {
+          "blob": "d1b7f7545f22c9ea803e9a3b5cb7e1782c7ba2fa",
+          "path": "mcp/src/agents_remember/cli/role_start_answer.py"
+        },
+        {
+          "blob": "5bf7a216d28ae3daba83299a0b6a0ab6addca90e",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/capsule-budgets.json"
+        },
+        {
+          "blob": "e7bf8919f6e0f4a2918e849bb6598bc0a650d47c",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/coordination.md"
+        },
+        {
+          "blob": "385e50d77ae251a70756cbfd7674d0c7d973012b",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md"
+        },
+        {
+          "blob": "9ebdee8141a018420e8edba3c96161db8a2e5297",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/implementation.md"
+        },
+        {
+          "blob": "e5545375ff6ae1cca5c2c6a0580d1779332b1e9a",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/reference/curator-intake-details.md"
+        },
+        {
+          "blob": "c6c9cfb51430bc2995590fde9f7d075a95f154e4",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
+        },
+        {
+          "blob": "afe92e859d1ad2b0df2d15676cbac104260be4df",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-V0PA2H",
+      "items": [
+        "sha256:0a16d3d0844ff28e5dd57b9c90629781f0a84ad7d0e7b3bc7b5889391807cc8f",
+        "sha256:45f06bc21e51bac478491a731dfcfc7b35223ca3f61bf4358da2bd1296bded30"
+      ],
+      "reason": "The card states what the wording tests pin; the pins moved with the edited sentences and protect the same obligations.",
+      "sources": [
+        {
+          "blob": "186dcf05f4e5e23d4b29a391c089bc88eecf0849",
+          "path": "mcp/tests/test_role_instruction_wording.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_instruction_wording.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "examined": [
+        {
+          "id": "INV-63Z0MN",
+          "revision": 3
+        },
+        {
+          "id": "INV-DKN3CG",
+          "revision": 2
+        },
+        {
+          "id": "INV-NNQR91",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-V1M094",
+      "items": [
+        "sha256:a24123db7e504090b1a3f11f3b81e219b3b2a952808703cb4b4105e568795bef"
+      ],
+      "reason": "Ruling ba1f8c2d narrowed the family because its former sentence was broader than its three members and the breadth was not deliberate. At r4 each surface is bound to its member's change: the dashboard launcher (INV-63Z0MN) to launch choices, the settings reference (INV-DKN3CG) to accepted settings keys, and every shipped skill mirror (INV-NNQR91) to the canonical role, operation and onboarding text, with every affected surface updated in the same change. Under that guarantee this leaf's mirrors were regenerated by the public generator in this change, and it changes no settings model, no dashboard source and no docs/reference file.",
+      "revision": 4,
+      "subject": "FAM-GDXSJG"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-WDWT89",
+      "items": [
+        "sha256:f0cf5a70d46e6a2f158f884ad12f6c452abf2418feca2c54fdbbf4ee2b898630",
+        "sha256:f6f9a9f9635786da7de70b29346353f1f12dbf98e67f0a9e90d6c578a11f70a2"
+      ],
+      "reason": "The card states what the launch cases protect; the change adds an assertion and removes no guarantee.",
+      "sources": [
+        {
+          "blob": "f7688864570af338c6298031f7782f9b75856ee4",
+          "path": "mcp/tests/test_paseo_launch.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_paseo_launch.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a02e919bbcb629ea05ef129f7d23e22354927a8f",
+            "content": "sha256:c91655741efadd40220b7f41f50ca6925d6875a173a05a62367738ae0ac9b53a",
+            "locator": {
+              "kind": "symbol",
+              "name": "HandoverArtifactOnTheRouteTests.test_a_retry_over_a_changed_or_lost_artifact_says_and_does_what_gets_it_through"
+            },
+            "path": "mcp/tests/test_paseo_agent_tools.py"
+          },
+          "before": {
+            "blob": "92d47bab1d7b32e75d1b90df160b7d90df78662a",
+            "content": "sha256:c91655741efadd40220b7f41f50ca6925d6875a173a05a62367738ae0ac9b53a",
+            "locator": {
+              "kind": "symbol",
+              "name": "HandoverArtifactOnTheRouteTests.test_a_retry_over_a_changed_or_lost_artifact_says_and_does_what_gets_it_through"
+            },
+            "path": "mcp/tests/test_paseo_agent_tools.py"
+          },
+          "id": "PRF-E4EDZV"
+        },
+        {
+          "after": {
+            "blob": "0a738ef87e1909fbdd064952c671d72ef09844f8",
+            "content": "sha256:dbdcdb6ae268dfb4b540af3751a7ca161c6a211dd870fd1d914ba783c1090c9f",
+            "locator": {
+              "kind": "symbol",
+              "name": "restore_handover_artifact"
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
+          },
+          "before": {
+            "blob": "85b470bea18f2548365b969746fd9e7ef5ea00cf",
+            "content": "sha256:d511c296efb2f506a713204e19ca5f85845323e27cc8b30ba8f41d6cd4296903",
+            "locator": {
+              "kind": "symbol",
+              "name": "restore_handover_artifact"
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
+          },
+          "id": "RLZ-7Q796E"
+        },
+        {
+          "after": {
+            "blob": "e9c70170273adb869a20f49d2a6b0aef92fe392a",
+            "content": "sha256:e08154c185afc4568a9c151f6ec848a40847b339eae2ce3694ade6d1156edaa9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_saved_first_message"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "before": {
+            "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
+            "content": "sha256:e08154c185afc4568a9c151f6ec848a40847b339eae2ce3694ade6d1156edaa9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_saved_first_message"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "id": "RLZ-G892DG"
+        },
+        {
+          "after": {
+            "blob": "e9c70170273adb869a20f49d2a6b0aef92fe392a",
+            "content": "sha256:7a9557ef2b745716432e6d9d01020b09af0fd70d0f7439f8a49da8b9467ba548",
+            "locator": {
+              "kind": "symbol",
+              "name": "_execute_prepared_launch"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "before": {
+            "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
+            "content": "sha256:60b0a18c662d3085df362bfa4222460a4715f1dc3cfd134e7970ad2c13be5641",
+            "locator": {
+              "kind": "symbol",
+              "name": "_execute_prepared_launch"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "id": "RLZ-PDSMW4"
+        },
+        {
+          "after": {
+            "blob": "e9c70170273adb869a20f49d2a6b0aef92fe392a",
+            "content": "sha256:ffc20e2dec30f1f93866504618b82b39b2d8712089bfca060d1420d0aec5117f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "before": "absent",
+          "id": "RLZ-SA35BD"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-XTF2ZP",
+      "items": [
+        "sha256:364371e68fba6305e86e783bf1a556576213dde380ac6ec05b412a239a3e602d"
+      ],
+      "reason": "A saved launch now has two files, so the retry checks the pair: it restores a lost file from the receipt's own text, refuses a changed or moved file, and refuses a message that does not name the recorded complete hand-over, all before either file is written.",
+      "revision": 2,
+      "subject": "INV-87JRHY"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-XZWA38",
+      "items": [
+        "sha256:11b464f15fe8fc3a3e1c2ae0f806d0d5a71c45486c03ecdd6a48121db3e5ee2e",
+        "sha256:5a37d11670eac16d4f8d173841153aaf19db6ea0aba9f2da617a948a32660456"
+      ],
+      "reason": "The card now names the complete hand-over's path in the start answer beside the text artifact's.",
+      "sources": [
+        {
+          "blob": "d1b7f7545f22c9ea803e9a3b5cb7e1782c7ba2fa",
+          "path": "mcp/src/agents_remember/cli/role_start_answer.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_start_answer.py"
+    },
+    {
+      "considered": [
+        "FAM-7AEA19",
+        "FAM-83BTBD",
+        "FAM-GDXSJG",
+        "FAM-N17BB4",
+        "FAM-PNH1QS",
+        "FAM-XX4TGY",
+        "FAM-YGXZTQ"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-Y0RWS8",
+      "items": [],
+      "reason": "None of the families examined states a joint promise this record adds to: the hand-over projection, its publication, its refusal type, its recorded budgets and its send-time path check each carry an obligation of their own.",
+      "revision": 1,
+      "subject": "membership:INV-ZVD184"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "186dcf05f4e5e23d4b29a391c089bc88eecf0849",
+            "content": "sha256:bfd543f8f89f301f5c3eab6e35f8bba6a78a2237bbedc36f5b3ecdf48a3d3901",
+            "locator": {
+              "kind": "symbol",
+              "name": "HandoverTextWordingTests.test_developer_question_channel_matches_role_and_parent"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
+            "content": "sha256:bfd543f8f89f301f5c3eab6e35f8bba6a78a2237bbedc36f5b3ecdf48a3d3901",
+            "locator": {
+              "kind": "symbol",
+              "name": "HandoverTextWordingTests.test_developer_question_channel_matches_role_and_parent"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-18H967"
+        },
+        {
+          "after": {
+            "blob": "186dcf05f4e5e23d4b29a391c089bc88eecf0849",
+            "content": "sha256:dbe83380a7200a4eda70ee23ad653d9b1ab76db30abdbf0fd4452d79a118cdb4",
+            "locator": {
+              "kind": "symbol",
+              "name": "HandoverTextWordingTests.test_owner_relation_routes_developer_questions_and_preserves_coordinators"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
+            "content": "sha256:e944e2475231c300197a31170bd096ac3b947ddef3d0cf0e9148f9e2a89bfc2a",
+            "locator": {
+              "kind": "symbol",
+              "name": "HandoverTextWordingTests.test_owner_relation_routes_developer_questions_and_preserves_coordinators"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-8AD3VX"
+        },
+        {
+          "after": {
+            "blob": "b76fd5126da4c8aabfd318bd6ad9fc20b6a48315",
+            "content": "sha256:feb497f5846ac4fefd8dfeb12f419f02f3fd18ca884682e332b423036f00f58d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_leaf_owner_relation_keeps_peer_results_and_named_parent_occasions"
+            },
+            "path": "mcp/tests/test_developer_question_wording.py"
+          },
+          "before": {
+            "blob": "b76fd5126da4c8aabfd318bd6ad9fc20b6a48315",
+            "content": "sha256:feb497f5846ac4fefd8dfeb12f419f02f3fd18ca884682e332b423036f00f58d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_leaf_owner_relation_keeps_peer_results_and_named_parent_occasions"
+            },
+            "path": "mcp/tests/test_developer_question_wording.py"
+          },
+          "id": "PRF-WW6328"
+        },
+        {
+          "after": {
+            "blob": "8d3f59bbf61c7dafad84e97e4dcf61dcd02b52fd",
+            "content": "sha256:1a6920158daeb820f8807df7f4c7d958b033f6823ee0f933068eca39484a036a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "c9f8ba03e5e1d604196d32f8c737808565896625",
+            "content": "sha256:ff2be6ec2a1459b1f663d264834d85c6b0555c72aa4be851edff07de33a90c01",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-2E88NK"
+        },
+        {
+          "after": {
+            "blob": "8d3f59bbf61c7dafad84e97e4dcf61dcd02b52fd",
+            "content": "sha256:7239e89abf19a0e115b20e40550cab8f02158f841b9f839ba1434cfb9191030a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_owner_relation"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "c9f8ba03e5e1d604196d32f8c737808565896625",
+            "content": "sha256:f6e58c4a8bcea51f06271c778c45e582eb7b3f4e60ae4ebd9809c6e20e49e668",
+            "locator": {
+              "kind": "symbol",
+              "name": "_owner_relation"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-Y18EZK"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-YV8GZ4",
+      "items": [
+        "sha256:f64a9d2b01c10f940582cabeef96308aed608c415672d2454c865c9da055f228"
+      ],
+      "reason": "The routes keep their meaning: the parent route, the developer-question route and the leaf peer routes are what they were. The clarification says where they stand — in the projection, so a seat reads who it reports to before its first tool call — rather than only in the complete hand-over file.",
+      "revision": 4,
+      "subject": "INV-8AMSGV"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-YXSMV8",
+      "items": [
+        "sha256:8a2df4d82e106d901c8f991701725f65c74c74a4ecf915c7bcbecfb8cde08130"
+      ],
+      "reason": "The overview states what the application layer composes; this leaf added a field and a carried block inside it and changed no composition boundary, so the account still holds.",
+      "sources": [
+        {
+          "blob": "9ea9969706c694e53bdfc6626e96727722f9a7ce",
+          "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
+        },
+        {
+          "blob": "0de84f83644c391b29759b1623034309cabc8c72",
+          "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
+        },
+        {
+          "blob": "9ed77cba4caacd019fd87b683ea11e0653cb7ad1",
+          "path": "mcp/src/agents_remember/application/role_capsules/launch.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7E3JNX",
+          "revision": 1
+        },
+        {
+          "id": "INV-RKGNF8",
+          "revision": 1
+        },
+        {
+          "id": "INV-V7M37D",
+          "revision": 3
+        },
+        {
+          "id": "INV-W24J6Q",
+          "revision": 2
+        },
+        {
+          "id": "INV-W58B84",
+          "revision": 2
+        },
+        {
+          "id": "INV-ZNJ14G",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-Z1YHR4",
+      "items": [
+        "sha256:f18375920ee94e8de5c5e0ce7fa7c60611946cb94d78b3fe727777d550a1ddb2"
+      ],
+      "reason": "The leaf's seats still run their loop directly; the records this leaf touched only re-anchored.",
+      "revision": 1,
+      "subject": "FAM-83BTBD"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Z3VA9M",
+      "items": [
+        "sha256:ce3a221e806fa29eba36b2639ff6318b07cd1d89c4e360e473491c96675eae2e"
+      ],
+      "reason": "The overview's stated contract is capsule audience selection, which this leaf did not touch; the model card carries the one added field.",
+      "sources": [
+        {
+          "blob": "e7e287c3dc19a859efa58586d1c442a12ef6ec66",
+          "path": "mcp/src/agents_remember/models/role_agents.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ZEXV0T",
+      "items": [
+        "sha256:0981b43080e066909785207d4af4cca24e7092cacab4fbf7651fadbd88324846",
+        "sha256:541213a981ff3e5d43af4ada8bd08b80003869ab60f876b8445fa5dde9afba9f",
+        "sha256:57e619c17188fa30ca2c163c31973defff7a153738f09b932b22ff199d25c49c",
+        "sha256:729721bf87f1c28f32f8fa270296d63e99fb129aac1adcb3fc6bbf952c7f9a16",
+        "sha256:8a2709b82cc2d48ac61395c5f536da5699919ccd93fd3cbcf924e7b9c80ea1f1",
+        "sha256:964479b76c577537f4a4695bfcc3c85c61ffaef548ffa1e39617a166d93135ce",
+        "sha256:c4d03f33a9e88c6767234e82f5fcd90e0acc5b11f7b443e1f0a8d777a88e996f",
+        "sha256:daa14ff1811e718fc0e08f52fbb3aa90eeccc305d8f078149e6ca4af913ad4f5",
+        "sha256:f3de53fb193b0b28ebf8d50c06f56207b0ffc3a79464297c3ba1570927eab1cf"
+      ],
+      "reason": "The card states what the converted-fixture support provides, which is unchanged: the diff adds FixtureNames with the short defaults and threads it through open_external_contract_fixture so a proof that measures a first message can pass names as long as the ones it measures (rule 5). No validator consumer set is involved.",
+      "sources": [
+        {
+          "blob": "18fe6f617413cf0af2643fdf3a5cf1aa3b699523",
+          "path": "mcp/tests/test_worktree_support.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_worktree_support.py"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

@@ -1,0 +1,43 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The obligation is spread over the module that owns the place, the publication and removal callers, the contract and manifest models and the role hand-over, and mcp/tests/test_outside_scratch_root.py pins each part with its own case."
+  },
+  "applicability": "Cleanup, abandon and finalize, including an exact already-completed retry, and a dry run.",
+  "conditions": [
+    "A root recorded in the contract or in the generation's manifest is the only subject; an absent or aged-away root is not a blocker.",
+    "A dry run reports the removal it would make and performs none.",
+    "An already-clean answer keeps its removal in the report."
+  ],
+  "exclusions": [
+    "The enclosure's own scratch deletion, which is unchanged.",
+    "Folders an agent created by hand outside the managed parent."
+  ],
+  "id": "INV-BDYV4D",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_outside_scratch_root.py pins the behaviour with 34 cases on candidate tree f8f92ae2; the leaf's test lane records 5 failed and 6025 passed with no candidate-only failure (Worker A3 report).",
+        "The terminal cleanup completion is the completion record a root's proof is read from, and its own ending removes the generation's root.",
+        "The changed lines of this file at candidate tree f8f92ae2 are this leaf's call into, record in, or test of the outside scratch mechanisms; mcp/tests/test_outside_scratch_root.py covers the behaviour.",
+        "Abandonment removes the generation's recorded outside scratch root and reports it, or refuses while it remains.",
+        "Cleanup removes the generation's recorded outside scratch root and reports the removal or the blocker.",
+        "The cleanup report lists the outside scratch removal or the blocker in the same inventory it prints for every other owned artifact.",
+        "Finalize removes the generation's recorded root on its completed path and reports what it removed and what the sweep left.",
+        "The terminal inventory names the outside scratch root beside the enclosure scratch it already reported, so an ending answer lists both."
+      ],
+      "path": "pass1.json"
+    },
+    "handoffEntry": "L198-INV-B",
+    "leaf": "260928-MIK-L198",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Every path that ends an enclosure generation — cleanup, abandon, finalize and their completed fast paths — removes the generation's recorded outside scratch root or refuses to answer while it remains, lists the removal or the blocker in the cleanup report, and answers a root another remover already took as already-absent rather than as a failure.",
+  "status": "proposed",
+  "supersedes": []
+}

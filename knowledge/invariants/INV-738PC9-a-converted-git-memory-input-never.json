@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A converted Git memory input materializing its historical canonical database would resurrect two sources of truth."
+  },
+  "applicability": "A converted Git memory input.",
+  "conditions": [
+    "The tree carries the conversion marker."
+  ],
+  "exclusions": [
+    "An unconverted input, which the crossing sync converts first."
+  ],
+  "id": "INV-738PC9",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_knowledge_crossing.py; test_worktree_sync_knowledge_merge.py; early tree.converted return; notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.md"
+      ],
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "L26-R1-F02",
+    "leaf": "260928-MIK-L26",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A converted Git memory input never materializes its historical canonical database.",
+  "status": "proposed",
+  "supersedes": []
+}

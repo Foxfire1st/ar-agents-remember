@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "family_guarantee"
+    ],
+    "justification": "Spans both note routes (overwrite/append): neither may change tool grants or settings authority, which is the authority-preservation half of FAM-N17BB4's launch guarantee; plain-text composition is the enforced mechanism."
+  },
+  "applicability": "Every composition of role instruction text for a launch.",
+  "conditions": [
+    "At most the first nonempty overwrite tag selects the overwrite route.",
+    "Append is the default route."
+  ],
+  "exclusions": [
+    "Tool grants and settings authority, which neither text route changes.",
+    "The structural capsule and assignment outside the host instruction block."
+  ],
+  "id": "INV-1Q4W04",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/role-launch/260928-MIK-L71-worker-d508f3cc-d109-host-readers/source-current-a1b7/source26-public-sync/generation15-five-pin-successor/expanded-evidence.md"
+      ],
+      "path": "l71-handoff-list.json"
+    },
+    "handoffEntry": "L71-CURRENT242-W-06",
+    "leaf": "260928-MIK-L71",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Role notes remain plain text: the first nonempty overwrite tag replaces only the host instruction block, append remains the default, and neither text route changes tool grants or settings authority.",
+  "status": "proposed",
+  "supersedes": []
+}

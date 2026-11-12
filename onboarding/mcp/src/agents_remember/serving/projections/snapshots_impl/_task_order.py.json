@@ -1,0 +1,100 @@
+{
+  "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_order.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "438d84c0d09d0074e5914af96d7e5babdb5a4eaf",
+        "content": "sha256:8bcd5215a5e3295bd54b46a14005c316002cc7da9ca3a04d7d32d3faf907143d",
+        "locator": {
+          "end": 49,
+          "kind": "line_range",
+          "start": 43
+        }
+      },
+      "id": "RLZ-4JWQGP",
+      "invariant": "INV-DQ11Q9",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 recovery gone prerequisite",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "Publishes id/title and gone only for synthetic missing-task state, with a canonical reference only when a file-bearing document exists; native abandoned tasks do not become synthetic gone.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "438d84c0d09d0074e5914af96d7e5babdb5a4eaf",
+        "content": "sha256:2418f13dcbe3c56d8bd734befdae7c889bb5f417ce6dcb0e56ac5cc5003728f3",
+        "locator": {
+          "end": 134,
+          "kind": "line_range",
+          "start": 95
+        }
+      },
+      "id": "RLZ-A87D83",
+      "invariant": "INV-DQ11Q9",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 recovery gone prerequisite",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "Builds graph and dependency directions from the addressed master/task population; a missing document supplies no fabricated task state or navigation reference.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "438d84c0d09d0074e5914af96d7e5babdb5a4eaf",
+        "content": "sha256:dd94032a5dfc13ca09014f4aa8443c8c4b4da32a782487403ae46714aba8fe2c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_graph"
+        }
+      },
+      "id": "RLZ-DHJSXY",
+      "invariant": "INV-R7YJ4E",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 recovery legacy cycle",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This graph adapter carries supplied computed waves and full stored-cycle flags, including Completed members, into the shared graph DTO. Cyclic inProgress members are not placed in the special in-flight state; Completed members remain landed with their cycle annotation. It materializes ready_ids once as a set for graph membership. Cycle identity is derived upstream, not repaired here.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "438d84c0d09d0074e5914af96d7e5babdb5a4eaf",
+        "content": "sha256:2418f13dcbe3c56d8bd734befdae7c889bb5f417ce6dcb0e56ac5cc5003728f3",
+        "locator": {
+          "end": 134,
+          "kind": "line_range",
+          "start": 95
+        }
+      },
+      "id": "RLZ-PH0PGN",
+      "invariant": "INV-WHBGH5",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 rule 4",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "Derives both dependency directions from the declared sibling population and emits id/title, an optional document reference and gone; file-less rows do not acquire an entry reference.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Named ordinary-master/listed-child reads derive informational dependency fields, explicitly filter newly read dicts by raw task schema before tolerant parsing, and index graph ready membership once. These predicates are not universal body-byte parity or start authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "438d84c0d09d0074e5914af96d7e5babdb5a4eaf",
+            "content": "sha256:beeb38bc336309cdb74fce0d4d25bf6fba93e55efce3a5d6bcb630b727d2a7ec",
+            "locator": {
+              "end": 158,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,39 @@
+{
+  "path": "mcp/src/agents_remember/serving/heap_diag.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The app lifespan starts the diagnostic and trim loops only when their flags are enabled. Anchor: `start_heap_tracing`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
+            "content": "sha256:81939dd35f5d6f385a67f306affb51114302d250fa126965be46657b7907d66f",
+            "locator": {
+              "end": 565,
+              "kind": "line_range",
+              "start": 557
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
+            "content": "sha256:9f91f08e1abd86715bc1d8eadca91c9dc43002d75ef4ddf6056d6d0a460aef6d",
+            "locator": {
+              "end": 256,
+              "kind": "line_range",
+              "start": 256
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

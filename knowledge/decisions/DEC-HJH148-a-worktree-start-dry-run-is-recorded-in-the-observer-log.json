@@ -1,0 +1,53 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives"
+    ],
+    "justification": "Two designs were weighed against each other - a log of requests and a log of effects - and the choice decides what every later reader of the log may infer from a missing row."
+  },
+  "alternatives": [
+    {
+      "option": "Record every worktree_start call, dry run included, in the observer log",
+      "reason": "The log is the record of what agents asked; a preview is something an agent asked, and a gap in the record is indistinguishable from a call that was never made.",
+      "status": "chosen"
+    },
+    {
+      "option": "Skip the log entry for a dry run, so a preview leaves no trace",
+      "reason": "It would make the log a record of effects rather than of requests, and a reader could no longer tell a preview from silence.",
+      "reconsider_when": "a caller needs a preview indistinguishable from a call that never happened, for example a conformance proof that a preview has no effect and cannot tolerate a log line.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The worktree_start description states both sentences: the dry run changes nothing, and the call is logged."
+  ],
+  "context": "A worktree_start dry run changes no task document, no contract, no Git ref and no worktree, yet the observer log records every tool call. The packet had to say whether a preview is itself a call for the log's purposes.",
+  "decider": "the developer, under D47, as MIK-R83@v1 rule 8 states it",
+  "id": "DEC-HJH148",
+  "links": [
+    {
+      "relation": "explains",
+      "target": {
+        "id": "MIK-R83",
+        "packet": "requirements/MIK-R83-v1-task-file-discovery-and-truthful-reads.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "handoff-draft-2.json"
+    },
+    "handoffEntry": "dry-run-logged",
+    "leaf": "260928-MIK-L73",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

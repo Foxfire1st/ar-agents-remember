@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A claim that outruns the AR start advertises work no seat began, and a close before the pushes reports a delivery the remote does not hold; the conditional sentence binds both acts to the AR events they depend on and leaves the absent-file case publishing nothing."
+  },
+  "applicability": "A leaf's published issue, from the Manager's claim before the AR start to the close after the landing and both authorized branch pushes.",
+  "conditions": [
+    "The resolved memory layer carries `system/task-publication.md` at its root."
+  ],
+  "exclusions": [
+    "A resolved memory without that file: nothing is published.",
+    "The stages themselves: the pointer routes to the instruction file, which states the claim, close, board and refusal cases.",
+    "Any authority the role text does not already hold: an issue write never decides an AR stage, requirement, review, landing or acceptance."
+  ],
+  "id": "INV-K50JTR",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Compiled-capsule presence for manager/orientation, review, curation, coordination, authorized-closeout and recovery in evidence/capsule-measurements.json; part of the same 14-suite focused run (169 passed, 792 subtests passed).",
+        "roles/manager.md:24 at frozen A6 433d07d9."
+      ],
+      "path": "l194-curator-handoff.json"
+    },
+    "handoffEntry": "MIK-R202@v1 §1 manager-claim-and-close-pointer",
+    "leaf": "260928-MIK-L194",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The Manager's publication sentence binds the claim and In progress before the AR start and the close after the landing and both authorized pushes, with the mechanism in the resolved memory's system/task-publication.md.",
+  "status": "retired",
+  "supersedes": []
+}

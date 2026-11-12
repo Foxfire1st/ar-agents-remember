@@ -1,0 +1,155 @@
+{
+  "path": "dashboard/src/panels/review/LeafKnowledgeNotice.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The pending, unavailable and unconverted worklist reads, each shown through a status role.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7a2dc69a4a6d5be62212e183d2e3cc81126a0db",
+            "content": "sha256:2ac24aeabf0e5114538cf4387b27267d9d974030f9edf0fd8864cbb275a23f0a",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 28
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The delivered worklist items and file links, with the identifiers-only disclosure and the click callbacks the case invokes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7a2dc69a4a6d5be62212e183d2e3cc81126a0db",
+            "content": "sha256:3620312307af2595afb1ee00495bc332de187cd2d81d5459b6899c271c3c3eaf",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 35
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Record-specific items, the honest empty wording and the comparison-mismatch refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7a2dc69a4a6d5be62212e183d2e3cc81126a0db",
+            "content": "sha256:c2f77980b754bf0ff59bcf44a5ad91f93c0feec30dfe9066fcb3817975ac925e",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 56
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The components under test: `LeafWorklistView` and `SubjectWorklistItems`.\n\nAnchor: `LeafKnowledgeNotice`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08853db6854ab477ec058722dfab0bf4a553bd04",
+            "content": "sha256:a457c15f0fd46a72dcd8c6e05cd1a1e0afcb97fd1ae9ea96d2b4e3c93e967af3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/LeafKnowledgeChanges.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The current worklist-view case renders loading, unavailable and not-converted inputs directly and checks their visible status text. The earlier held-read and mounted-surface continuity account is historical; this case does not assert it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7a2dc69a4a6d5be62212e183d2e3cc81126a0db",
+            "content": "sha256:0858d228e59987c048c9bb8b43dcba72c09681ec270167ccca0c3d9f2e84dc20",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Leaf-wide tree fixture for notice states",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7a2dc69a4a6d5be62212e183d2e3cc81126a0db",
+            "content": "sha256:b9f6eef55ad33e4d7f2a4d97fd381c3c9e3986341e58b2d1c87ae7b20cd2b5b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "trees"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Notice mount helper for read states",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7a2dc69a4a6d5be62212e183d2e3cc81126a0db",
+            "content": "sha256:379e6f86ad024297759f7e1336a6a77a33f9c47d1fc0d1e02a6ccc503c01331d",
+            "locator": {
+              "kind": "symbol",
+              "name": "open"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Changed paths with items for file links",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7a2dc69a4a6d5be62212e183d2e3cc81126a0db",
+            "content": "sha256:ee8ecb224bee063a82f693db6d97b3fe5db95e285e6fd69ca3fac0f8f6174693",
+            "locator": {
+              "kind": "symbol",
+              "name": "changes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Record-only fixture for the honest empty state",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7a2dc69a4a6d5be62212e183d2e3cc81126a0db",
+            "content": "sha256:c89afe76d25d4d821d1f544a1e845c961704b20567db4d7afd5891f84d055c7a",
+            "locator": {
+              "kind": "symbol",
+              "name": "record"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

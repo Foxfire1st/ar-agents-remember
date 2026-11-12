@@ -1,0 +1,245 @@
+{
+  "path": "mcp/tests/test_closeout_projection_source_classification.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "One node past the master bound, every node a well-formed master reference.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8782b8087fda99980b7af7701739e7ff9a3541f3",
+            "content": "sha256:a2df8e6f0cedf7e4dadf0f5dfc31fdaa2cadc8d667694cedffe70eb91edaff7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_oversized_graph"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The integration lane row the fail-closed manifest requires. Source caption: \"mcp/tests/test_closeout_projection_source_classification.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5691b694e756469475d783c426d9781ef14c8633",
+            "content": "sha256:f2f7882c560a46435e5dc6a031595cd7f97f4385083121decc311cfead18b409",
+            "locator": {
+              "end": 668,
+              "kind": "line_range",
+              "start": 668
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The fixture's repositories are real temporary Git repositories created per case, not mocks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f27f3f9481bcec71a96b43b685f239067d8f56a6",
+            "content": "sha256:8152e6a4d868803287c8564f0f256429d97aa4579380f2f284344cb4cebd99dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "QueueFixture"
+            },
+            "path": "mcp/tests/test_closeout_queue.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The fixture's repositories are real temporary Git repositories created per case, not mocks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f27f3f9481bcec71a96b43b685f239067d8f56a6",
+            "content": "sha256:8152e6a4d868803287c8564f0f256429d97aa4579380f2f284344cb4cebd99dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "QueueFixture"
+            },
+            "path": "mcp/tests/test_closeout_queue.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The real raiser refuses the sprint's own authored graph, and its declared code classifies `invalid`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8782b8087fda99980b7af7701739e7ff9a3541f3",
+            "content": "sha256:350a63aff9751c01adea17e3d7a56e652beadce3b5e48ddedc3561d4f58b7659",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_graph_past_its_bound_refuses_by_its_own_declared_code"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The ordinary source stays readable with no problems, and unreadable sources still report `unreadable`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8782b8087fda99980b7af7701739e7ff9a3541f3",
+            "content": "sha256:fb644c9fdc3fd5ad942d814620e116885059d7c6bb87bc37da8153ed40fcc985",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unreadable_source_and_the_ordinary_case_are_unchanged"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Every declared capacity code classifies `invalid`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8782b8087fda99980b7af7701739e7ff9a3541f3",
+            "content": "sha256:9d4b6e717e143e04c5bae6820abb28d8565d55c0749db9efe21bebe7e47da788",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_declared_capacity_code_classifies_as_invalid"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The classification the module pins: membership of the declared set, with the other vocabularies' markers untouched.\n\nAnchor: \"error_type in CAPACITY_REFUSAL_CODES\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3e069851661179ed1c44ff11d7044e62432f23be",
+            "content": "sha256:9e2c4586cfa4767dc641dc8f7525d26b2f6cdff84d6d304c5f4183a238ccf1bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_problem"
+            },
+            "path": "mcp/src/agents_remember/worktrees/queue/closeout_projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The single declaration that owns the capacity codes and their classification.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "96ffcb05fe02a8a986bc0414eed1b37a90df8b7a",
+            "content": "sha256:ab997ab1555fa24cf63ea3a1f5c00f8c46cbe05f0ce34504bd45ff9476c4d007",
+            "locator": {
+              "kind": "symbol",
+              "name": "CAPACITY_REFUSAL_CODES"
+            },
+            "path": "mcp/src/agents_remember/worktrees/queue/closeout_queue_errors.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96ffcb05fe02a8a986bc0414eed1b37a90df8b7a",
+            "content": "sha256:36669672e1883df064c9e4f87c56185a88bd4bf6302c2aa08c6c258805273433",
+            "locator": {
+              "kind": "symbol",
+              "name": "MASTER_CAPACITY_EXCEEDED"
+            },
+            "path": "mcp/src/agents_remember/worktrees/queue/closeout_queue_errors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The raiser that publishes the code the first case reads back.\n\nAnchor: `MASTER_CAPACITY_EXCEEDED`; `EDGE_CAPACITY_EXCEEDED`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e7e289de6f8e2c65b3e67f4c2a4380e2b2a9d1be",
+            "content": "sha256:ecb4973bc3d3156c6eef920ddc47460a5012fbc4179902a928afa6ec20a7cca7",
+            "locator": {
+              "end": 175,
+              "kind": "line_range",
+              "start": 166
+            },
+            "path": "mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The fixture constants this module composes. The fixture this module composes instead of rebuilding the world.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f27f3f9481bcec71a96b43b685f239067d8f56a6",
+            "content": "sha256:f40f91721ef63ccd60878bf41fbde04857b0a319dc11883acf140d00a5cfb55b",
+            "locator": {
+              "kind": "symbol",
+              "name": "SPRINT"
+            },
+            "path": "mcp/tests/test_closeout_queue.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f27f3f9481bcec71a96b43b685f239067d8f56a6",
+            "content": "sha256:8152e6a4d868803287c8564f0f256429d97aa4579380f2f284344cb4cebd99dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "QueueFixture"
+            },
+            "path": "mcp/tests/test_closeout_queue.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f27f3f9481bcec71a96b43b685f239067d8f56a6",
+            "content": "sha256:910790e222ac3e8bfc7ada5a2211c67caf04d4ace58f37d95f461738f55c3c3c",
+            "locator": {
+              "kind": "symbol",
+              "name": "REPO"
+            },
+            "path": "mcp/tests/test_closeout_queue.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The current lifecycle catalog declares this module as an exact consumer on four artifact rows: _user_settings_guard.py, curator_coherence_test_support.py, the Node package-lock fixture and writer_worklist_test_support.py. These are dependency declarations, not runtime fixture-consumption or execution evidence. The `curator_coherence_test_support.py` artifact row declares `test_closeout_projection_source_classification.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_closeout_projection_source_classification.py` as an exact consumer. The `writer_worklist_test_support.py` artifact row declares `test_closeout_projection_source_classification.py` as an exact consumer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0556945441335e93cd0b1783dba11d3b2eb279a7",
+            "content": "sha256:f3c97cea90d6874137c31a702bc9f64c898199a273c0aede415fdef641e6c6c7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

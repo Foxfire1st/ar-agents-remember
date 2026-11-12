@@ -1,0 +1,154 @@
+{
+  "path": "mcp/tests/test_memory_ledger.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Data round-trip and current-versus-historical lookup semantics.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b2a7785167b5b1fae642f49cf94d95ae263f57c",
+            "content": "sha256:77cbf5b9a6a19d462114b223b57de4e007318c92cd6e13d1794b049f0a75e0af",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_roundtrip_preserves_newest_same_code_history"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Actual attributed fixtures, cache forgery, cache misses, and exact local-ref selection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b2a7785167b5b1fae642f49cf94d95ae263f57c",
+            "content": "sha256:5517b23aa82a205a89bf0cdb5a51249c170459ba454025a5cebd4856e385a217",
+            "locator": {
+              "kind": "symbol",
+              "name": "source_rows"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5b2a7785167b5b1fae642f49cf94d95ae263f57c",
+            "content": "sha256:b058f96c73f94fefb1220563a85cdbc7630c4b4375238fc0de5d917c5caa54dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cache_misses_preserve_contract_and_named_ref_history"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Unattributed and partially attributed histories cannot inherit cached pairs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b2a7785167b5b1fae642f49cf94d95ae263f57c",
+            "content": "sha256:b87e9839b6a9711b350b3cb31a5ef01da2caad92c5a10773358be8f43eaeec17",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_projection_recomputes_metadata_and_rejects_an_unattributed_pair"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Invalid targets are reported and superseding order comes from actual history.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b2a7785167b5b1fae642f49cf94d95ae263f57c",
+            "content": "sha256:f39bc0c4be36f6b36b6730105186fbce9ca6b00aa775d499a51b1fcd9bfcd5ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_invalid_source_and_branch_code_attributions_are_reported"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The real writer/reader round trip and merged-in attribution stay covered.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b2a7785167b5b1fae642f49cf94d95ae263f57c",
+            "content": "sha256:30746d4806b2439de8caaad3c786e9af8abe15f4626494615f4c457b7c5a741c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_rendered_trailer_is_the_one_the_reader_parses"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5b2a7785167b5b1fae642f49cf94d95ae263f57c",
+            "content": "sha256:b455b2bf0a8776a4449f37d26e3e822b32135496bc100d0f13436980f7618573",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_attribution_reads_a_mapping_that_arrived_through_a_merge"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Unattributed and partially attributed histories cannot inherit cached pairs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b2a7785167b5b1fae642f49cf94d95ae263f57c",
+            "content": "sha256:a31ac3c4b46a4403ff8514e13cacdac876b2e848f1790c7fff8ab035f7b56f62",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_read_answers_from_the_trailers_and_never_from_the_table"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The runtime projection under test separates computed mappings from cache observations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4928d1695e5b94efd6ce1e9eedcebf1c1caa9da5",
+            "content": "sha256:075c604f68bbcdc38ab786bf1d991f36cd4b86e8ab3f3e72b6daa87321d35cd2",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_ledger_source"
+            },
+            "path": "mcp/src/agents_remember/worktrees/ledger_projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4928d1695e5b94efd6ce1e9eedcebf1c1caa9da5",
+            "content": "sha256:9e30e79b8728efb0c832238963bc46494a5a530ebf66b46ee8e58eadbaa39073",
+            "locator": {
+              "kind": "symbol",
+              "name": "inspect_ledger_projection"
+            },
+            "path": "mcp/src/agents_remember/worktrees/ledger_projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,71 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`queued_operation_record` retains accepted candidate/task identity and initializes kind-specific evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51a9188dad28815812b0eb2d21e66cd431a59911",
+            "content": "sha256:20645ae5252fb6a886f24a7c8a45325d614dc3c19c071607b8dc2364996655ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "queued_operation_record"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`snapshot_integration_authority` captures actual code/memory target tips and accepted content outputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51a9188dad28815812b0eb2d21e66cd431a59911",
+            "content": "sha256:79440cb03a070e4c2f2302f3dca90f497df21ce3470fb6d2ad2794e20d1ab2e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "snapshot_integration_authority"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Queued records retain candidate/task identity and initialize kind-specific evidence. (`queued_operation_record`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51a9188dad28815812b0eb2d21e66cd431a59911",
+            "content": "sha256:20645ae5252fb6a886f24a7c8a45325d614dc3c19c071607b8dc2364996655ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "queued_operation_record"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Integration authority is captured from completed output and current target refs, with explicit replay boundaries. (`snapshot_integration_authority`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51a9188dad28815812b0eb2d21e66cd431a59911",
+            "content": "sha256:79440cb03a070e4c2f2302f3dca90f497df21ce3470fb6d2ad2794e20d1ab2e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "snapshot_integration_authority"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

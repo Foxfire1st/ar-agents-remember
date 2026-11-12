@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/runtime/startup.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/runtime/startup.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T19:24+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [overview](overview.md)
@@ -25,30 +15,29 @@ produced it.
 
 ### Logic
 
-`initialize_mcp_application` migrates recognized durable logs without the dashboard-owned notifier
-log, then installs ambient lifecycle state. `mcp_serving_build_payload` converts the cached serving
+`initialize_mcp_application` installs the workspace-river tool writer (`build_tool_event_writer`)
+without installing ambient session state or reading or migrating removed durable stores: the launch binding and its task
+document are snapshotted once here, so a server started a second ago writes at its first
+call; an unreadable binding changes nothing about startup. `mcp_serving_build_payload` converts the cached serving
 stamp to the strict shared wire model at the application boundary; MCP registration never imports
-the serving domain directly. Dashboard autostart remains a separate startup hook.
+the serving domain directly. The tool-event writer stays at startup as boot-time caller identity capture: its ToolEventWriter and EventStore constructors retain references, a lock and a counter; those constructors start no thread, poll or write. This account is bounded to these collaborators.
 
-`measuring_build_stamp` (`:36-51`) is the second reader of that same process-cached identity, and it
+`measuring_build_stamp` is the second reader of that same process-cached identity, and it
 exists because of the measurement D-33 recorded: the MCP surface answers a tool call from a **fixed**
 serving build while the candidate under curation may carry different code, and until this stamp existed
 a checklist reader could not tell a candidate-ruler count from a serving-build-ruler count. It returns
 `{"servingBuild": <resolved payload as wire JSON>}` — a dict copy of the identity
 `process_serving_build()` resolved once per process, not a probe — with `dirty` riding along so an
-uncommitted serving tree reads as such instead of being taken for the commit it names. Its consumers are
-the memory-quality controller's three public entry points and the two citation tools; the omission of
-`drift_check` is deliberate, because a tree-integrity count is not a curation count.
+uncommitted serving tree reads as such instead of being taken for the commit it names. Its current uses include the memory-quality controller's public entry points, citation census, citation note revision, the pre-baseline and unconverted-refusal branches of citation fixing, and the knowledge-gate memo's build identity. The converted-leaf citation-fix result does not add the stamp, and `drift_check` does not call it.
 
 ### Conventions
 
-Migration runs before any strict store can parse current records; ownership boundaries determine
-which process may migrate which log.
+MCP process ownership is declared before authority settings load. `prepare_mcp_process()` only repeats that declaration. After producing a tools/list answer, the server schedules `start_after_discovery(config)` with `loop.call_soon`; a client that never lists reaches the same owner at its first tool call. `_PostDiscoveryStartLatch` marks one process attempt under a lock, starts the outside-scratch reconciliation, and then invokes optional dashboard autostart only when a config is present. The sweep starts even for a bare no-config server, which consumes the same latch; without a config it starts no dashboard. Later lists or calls launch neither piece again. Application collaborator installation is not a removed-store migration path.
 
 ### Invariants And Boundaries
 
-- Migration is one-way, idempotent deployment work.
-- MCP startup does not mutate the dashboard-owned notifier log.
+- MCP startup neither reads nor migrates the retired notifier/seat stores. The post-discovery outside-scratch reconciliation reads product root markers and retained terminal records in its child process to decide which generations are proven ended.
+- The workspace Event River writer is the application collaborator; session lifecycle state is not installed.
 - No dual-schema reader is installed.
 - MCP transport reaches serving identity through this application entry point only.
 
@@ -56,36 +45,22 @@ which process may migrate which log.
 
 None.
 
-## Docs References
+## Evidence
 
-No Domain Documentation source is configured.
+- The workspace tool writer installs without an ambient lifecycle or removed-store migration. [1]
+- Tool-event startup retains boot-time caller identity through light constructors, with no constructor write or thread. [3]
 
-## Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| MCP startup migrates its owned logs before ambient installation. | `initialize_mcp_application` | mcp/src/agents_remember/application/runtime/startup.py:22-27 |
-| The application boundary returns the one cached, strict serving-build payload. | `mcp_serving_build_payload` | mcp/src/agents_remember/application/runtime/startup.py:30-33 |
+## Outside-scratch reconciliation
 
-## Cross-Repo References
+`start_after_discovery` reaches `start_outside_scratch_reconcile()` once after discovery or through the first-call fallback. The latter starts the daemon thread named `outside-scratch-reconcile`. Its wrapper calls `reconcile_outside_scratch_roots()`, which runs the heavy worktree-owned sweep in a one-shot child process through the same Python executable, with stdin disconnected from the MCP transport, a 600-second timeout and a captured JSON report. The heavy worktree import occurs in that child, so this serving process does not import the package as part of the sweep. Thread-launch and sweep failures are caught and logged rather than refusing server service; a nonzero child result is raised into that contained wrapper. A pass deletes a root only when its marker, the retained contract record and a terminal-archived locator agree that the generation ended; other roots are reported with a reason and retained. Sorted JSON is logged only when the report contains removed or reported roots.
 
-No cross-repository implementation dependency governs this file.
 
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 
-- 2026-09-18T19:24+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): **recorded the second serving-build reader this leaf's item 26 added, which this card did not mention.** `measuring_build_stamp` (`:36-51`) returns the process's resolved boot identity as `{"servingBuild": …}` wire JSON — a dict copy of the identity `process_serving_build()` caches once per process, `dirty` included — and is consumed by the memory-quality controller's three public entry points and by `citation_fix_tool`/`citation_migrate_tool`; the Purpose and `### Logic` sections now state it and its reason (D-33: a fixed serving build measuring a different candidate, indistinguishable in the output). It is a stamp, not a second resolution, and it does not move `initialize_mcp_application` or `mcp_serving_build_payload`. Read against the delivered but **uncommitted** working tree, so the verification stamp is not advanced: no commit carries these bytes and closeout owns the real stamp; the reference rows are left to the citation-range repair pass that owns them.
-- 2026-08-30T17:08:05+02:00 — ARSPAWN-L4 Dagger repair: added the application-owned serving-build
-  payload gateway so MCP transport no longer imports the serving domain directly. Verification
-  remains closeout-owned.
+- Process preparation only declares ownership. A produced tools/list answer schedules the one joint post-discovery start; a first tool call is its fallback. The first attempt starts the sweep even without config and consumes the latch; dashboard supervision needs config and respects autoStart. The sweep runs in a child with MCP stdin disconnected, keeping the heavy worktree owner out of the serving process.
 
-- 2026-08-13T08:40+02:00 — L23 integration-gate repair: moved this preserved startup card with its source into the cohesive `application/runtime/` package and rebound all current citations; startup behavior is unchanged. Verification metadata remains closeout-owned.
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/mcp/server.py:93-127 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit dc03c64a91947cee470622c560c516854eec86b5. Retired means the anchor no longer stands, not that the cited subject was deleted [2]
 
-- 2026-08-11T19:58+02:00 — Aligned the current application-layer card for `server_startup.py` with qualified seat resolution and terminal/session orchestration boundaries.
-- 2026-08-10T18:31+02:00 — 260731-EFA-L21: split out the idempotent pre-config MCP trust
-  declaration while preserving `prepare_mcp_process` as the supervision operation. Verification
-  metadata remains pinned until approved closeout.
+## Retirements
 
-- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/mcp/server.py:93-127 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit dc03c64a91947cee470622c560c516854eec86b5. Retired means the anchor no longer stands, not that the cited subject was deleted.

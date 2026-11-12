@@ -1,0 +1,202 @@
+{
+  "path": "mcp/src/agents_remember/tasks/route_review.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c2275b9792d563997e82c391c04d0f6d885acd58",
+        "content": "sha256:2b63dc4bd23b7c214c53dd58bcdbe6a86ec7684474d276169ceb513a2f5a163b",
+        "locator": {
+          "end": 215,
+          "kind": "line_range",
+          "start": 211
+        }
+      },
+      "id": "RLZ-NS6VWT",
+      "invariant": "INV-X22A1K",
+      "origin": {
+        "handoffEntry": "L170-curator-clean-sync-review-gate",
+        "leaf": "260928-MIK-L170"
+      },
+      "rationale": "The persisted review declares an optional object-ID-shaped baseCommit; an absent stamp remains legacy evidence and supplies no changed-tree exception.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "c2275b9792d563997e82c391c04d0f6d885acd58",
+        "content": "sha256:b963a9650ea973956f73bae4d1fd5f8d06d994fd6abf2772092395c89aaf232b",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewApproval"
+        }
+      },
+      "id": "RLZ-WDS7XN",
+      "invariant": "INV-AW14ZP",
+      "origin": {
+        "handoffEntry": "L116-W3-beyond-limit-approval",
+        "leaf": "260928-MIK-L116"
+      },
+      "rationale": "This model carries the recorded approval shape that the gate writes and later reads back.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Route and child-intent model shapes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c2275b9792d563997e82c391c04d0f6d885acd58",
+            "content": "sha256:50e93ee6d6a95ce3372308f2f3ce9df40517b33a420ab5f076da862e136d3697",
+            "locator": {
+              "kind": "symbol",
+              "name": "RouteReviewUnit"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c2275b9792d563997e82c391c04d0f6d885acd58",
+            "content": "sha256:7f9fc5da30d8d786e759086820d40acf7ca95b7ec2e193c95bf7a104763fec9a",
+            "locator": {
+              "kind": "symbol",
+              "name": "RouteReviewChildIntent"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c2275b9792d563997e82c391c04d0f6d885acd58",
+            "content": "sha256:1645a2a76bcb3106fb9b53e5eabd8bf7ca382da58edf1228a78d8d991730e892",
+            "locator": {
+              "kind": "symbol",
+              "name": "RouteReviewScope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Fixed-list finding, round-cap permission fields, and review-state validation.\n\nAnchor: `ReviewFinding` `ReviewState`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c2275b9792d563997e82c391c04d0f6d885acd58",
+            "content": "sha256:dec1e870f6476ae35e3eb90c61301c71553bf75141daf92defe26a0422a24f71",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The route record carries the optional base stamp and keeps all-or-nothing digest coherence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c2275b9792d563997e82c391c04d0f6d885acd58",
+            "content": "sha256:bd0e6fe4943fbe368d04f63206bc9f889341d54fa1f9b32a6c60a0ad89548662",
+            "locator": {
+              "kind": "symbol",
+              "name": "RouteReviewRecord"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Worker/Curator typed review census, record-only exclusion and unknown history.\n\nAnchor: L175–L240",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+            "content": "sha256:89c09fd0491880de2f7b715bffbe2d6b0605a6dea7400689519c43f40f7b119d",
+            "locator": {
+              "end": 240,
+              "kind": "line_range",
+              "start": 175
+            },
+            "path": "mcp/src/agents_remember/worktrees/review_history.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Reason admission, threshold and differing-harness/model inheritance boundary.\n\nAnchor: L23–L84",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f341c13a99f485178e73c4ff8bf4de16267ee662",
+            "content": "sha256:5a3727f4901933c44cd5f7edc8b16220285a82a9e080326edf482cbb126f0b2f",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "mcp/src/agents_remember/cli/role_step_up.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Record-only memory identity comes from memory authority, never the sibling code root.\n\nAnchor: L251–L296",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+            "content": "sha256:90f0dd1b3aad214ad2d499dda3753cc514d16cabd606ee0021a9a7c6e84ed456",
+            "locator": {
+              "end": 296,
+              "kind": "line_range",
+              "start": 251
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_route_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L114–L205",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c2275b9792d563997e82c391c04d0f6d885acd58",
+            "content": "sha256:00acf35ffc9e071896f529c88e8ed018e60b92c83aea837e5879b86b1644f262",
+            "locator": {
+              "end": 205,
+              "kind": "line_range",
+              "start": 114
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Leaf record construction stamps the contract code base before computing the record digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+            "content": "sha256:1bd5705068bb818ead3f9c2ddb232ebe3c68e5fa177ac13beb9f65a064808341",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_route_review"
+            },
+            "path": "mcp/src/agents_remember/worktrees/route_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

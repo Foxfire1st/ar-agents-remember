@@ -1,0 +1,258 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/git_worktree_manager.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "MCP worktree start writes temporary lifecycle settings and passes them to this module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "content": "sha256:f3ed2e52076e73a9b6230c5dee0b28cff962c346883dabf2f6f3ce005823b347",
+            "locator": {
+              "end": 311,
+              "kind": "line_range",
+              "start": 202
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "content": "sha256:b18ba66e4ecc1620f05579c2557d837eaa4cd1321b1d95bc76f5f0350c9aca66",
+            "locator": {
+              "end": 204,
+              "kind": "line_range",
+              "start": 204
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "content": "sha256:657ed5b4ea4d698c3a5ae1f0f660c49f68daca417d0c7ecbbd108690b025bbf3",
+            "locator": {
+              "end": 214,
+              "kind": "line_range",
+              "start": 214
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "content": "sha256:3b8a57447d3cd319123cc504187d09d3953f9f307d73a104e4e864555cc99288",
+            "locator": {
+              "end": 219,
+              "kind": "line_range",
+              "start": 215
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "content": "sha256:d45aa1785cf5eb85f9b0e36a3f3205802d150161a09b9c2c6aa487f0d7d8a716",
+            "locator": {
+              "end": 231,
+              "kind": "line_range",
+              "start": 220
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The retained worktree setup configuration reaches the existing provider helpers, but generated lifecycle settings are disabled/empty and both retired identities are never enabled; no ordinary CGC/GrepAI seed or runtime preparation is established.\n\nAnchor: `WorktreeProviderSetupConfig`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d2b3ea0cd51a15c2ec8828868eb9c03a98b0991b",
+            "content": "sha256:ed908d4b26865a91717a59fb120b1ce44121b9f55e8aa502f7a3623e5584ba55",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycle_settings_from_config"
+            },
+            "path": "mcp/src/agents_remember/providers/settings.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80950be36296616946275f2d5e7cc7e752fd4185",
+            "content": "sha256:44435c7691ac61a8330bd6183744c49519d1b4d716fe52e6600eb03d0aa6cc79",
+            "locator": {
+              "kind": "symbol",
+              "name": "provider_enabled"
+            },
+            "path": "mcp/src/agents_remember/providers/setup_common.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5ac272c408cc58c4f2a7d8cf98b30da3abf86280",
+            "content": "sha256:014b352f04cb7276e6a67b68c60a49fe5d0a1c2a458082faf8e9d01525f997b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_enabled_providers"
+            },
+            "path": "mcp/src/agents_remember/providers/provider_setup.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Worktree status packets project lifecycle payloads into context packets.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16d78e38cc8ac2f8fe9aeec56ac35b664c5e8988",
+            "content": "sha256:1178f685feb181073285f1905be1da7df392287846aa5176dc75bf4b54b3c7ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_status_packet"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_status.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Worktree contract serialization lives in the package worktree contract module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "758a00879439672a413425ed6c40686fe3626bd9",
+            "content": "sha256:b52ed062161b9c5d45e5088c38146ca084ceadd5859e230bf977b07b67cffe05",
+            "locator": {
+              "end": 877,
+              "kind": "line_range",
+              "start": 825
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The facade declares its public worktree lifecycle result exports, including the pull-request landing recorder, the checkpoint landing route and the stop-only pause.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7bc03a9ceb2a78f7bfe09c9a66097cdff2e7cf97",
+            "content": "sha256:3c294d3a17340e4e6b985100c020ae9fffb142f3cdcc949ab058f591828caf6d",
+            "locator": {
+              "end": 161,
+              "kind": "line_range",
+              "start": 93
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The pause's result function is imported from its own module and listed in the facade's public export surface, so the stop route is reachable through the stable facade path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7bc03a9ceb2a78f7bfe09c9a66097cdff2e7cf97",
+            "content": "sha256:439df8d0b48a3e65681462f053ba23a4f12cea06bf25d4e402afb92b1554ce0a",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 80
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7bc03a9ceb2a78f7bfe09c9a66097cdff2e7cf97",
+            "content": "sha256:743832ef54cd8c2ae6d843051c22abe08677f39c38da6df1ea34a33901609b39",
+            "locator": {
+              "end": 146,
+              "kind": "line_range",
+              "start": 146
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Terminal lifecycle finalization is implemented in the extracted module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dcbcb92eb8805a1f241603ea248fdac21fb64a9d",
+            "content": "sha256:52b5c0761eb8d202bf1a85e9e7aee1041bb145fcefaa0de93e0be6ea0a9c9664",
+            "locator": {
+              "end": 133,
+              "kind": "line_range",
+              "start": 40
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Long-path-safe filesystem wrappers live in the kernel filesystem helper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a134fcdc07997c9dc931f9f9c835c8cf0fb5906",
+            "content": "sha256:f56a47f8b8deb72d8df0140d21635a01192981c43e1827447d26d78f204c6a94",
+            "locator": {
+              "kind": "symbol",
+              "name": "extended_path"
+            },
+            "path": "mcp/src/agents_remember/kernel/filesystem.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8a134fcdc07997c9dc931f9f9c835c8cf0fb5906",
+            "content": "sha256:bc23ed7e3aa324bf33065e1783c06f5aa5e980913544dcbb5327f47f3190fbe4",
+            "locator": {
+              "kind": "symbol",
+              "name": "exists"
+            },
+            "path": "mcp/src/agents_remember/kernel/filesystem.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8a134fcdc07997c9dc931f9f9c835c8cf0fb5906",
+            "content": "sha256:31248ad7e33576149eef72818d20bf9fda1a5e0c29ec936d31a162515ad9671e",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_file"
+            },
+            "path": "mcp/src/agents_remember/kernel/filesystem.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

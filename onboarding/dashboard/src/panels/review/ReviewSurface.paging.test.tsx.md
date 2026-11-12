@@ -1,138 +1,178 @@
 # dashboard/src/panels/review/ReviewSurface.paging.test.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/review/ReviewSurface.paging.test.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-28T21:38:58+02:00 |
-| lastVerifiedCommitHash | `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6` |
-| lastVerifiedCommitDate | 2026-09-28T22:11:57+02:00|
-| governingOverview | `dashboard/src/panels/overview.md` |
-
 ## Governing Overview
 
-[dashboard/src/panels route overview](../overview.md)
+[Owning route overview](overview.md)
 
 ## Purpose
 
-The mounted-surface cases for `ICR-R10@v1`'s page control: the **real** `ReviewSurface` over the
-**real** review client, with only `fetch` stubbed. Every request is built by the shipped client and
-every response travels the way the browser's does — status, body, the shared decode in
-`data/reviewTransport.ts`, the component tree — and no assertion reads a prop the test itself passed.
-
-The defect these cases catch is the packet's own non-conforming example: the surface used to render a
-remainder (its `locations_remaining`, and now any page's `remaining`) with **no control that reached the
-rest of the collection**. The module's header names the two wrong repairs it also fails against: a
-"next page" button that re-sends the cursor it is already standing on (so the page never advances), and
-one that offers itself for a body that published no cursor at all (so the button fetches nothing).
+Mounted paging controls preserve opaque continuation cursors, collection bounds and code-specific reset wording.
 
 ## Code Commentary
 
 ### Logic
 
-The comparison-focused cases isolate the shared catalogue hook so its additional request cannot consume a comparison fixture. The ordinary-entry catalogue/comparison interaction is covered separately by ReviewSurface.navigation.test.tsx. Assertions follow the compact labels, central display controls and changed-region default without weakening the existing record, paging or refusal contracts.
-
-**The request is asserted, not just the render.** The advancing case asserts that the *second* request
-carries the cursor the server published rather than the one the client was standing on, and that the
-bounds move from `16 of 103` to `32 of 103` — the two facts that separate a working control from a
-button that re-fetches its own page.
-
-**A refused page renders the refusal rather than an empty state.** The refusal case consumes
-`RECORDS_PAGE_REFUSAL_RESPONSE` — a **captured** server body (see
-`recordsPageRefusal.captured.ts`) — and asserts the key's *absence* before rendering it, then the code,
-both of the owner's digests read out of the captured body, the live first-page action, the absence of
-the bounds sentence, and that "no remainder to reach" appears nowhere. The capture matters because the
-route serializes with `exclude_none=True`: a refused page **omits** the `page` key, and a hand-built
-body sending `page: null` hid exactly that difference from the round-1 case.
-
-**One normaliser owns the two spellings of "no page".** The component reads `carriedPage(payload)`
-instead of touching `payload.page`, so no consumer can reintroduce the `!== null` comparison that made
-the mounted refusal unreachable for every real response.
-
-**A reset is worded from its own refusal code.** `RESET_GLOSS` distinguishes "this comparison moved"
-(`comparison_page_reset`) from "that cursor is not this collection's" (`comparison_page_unreadable`),
-so a foreign cursor is never called a moved comparison.
-
-**The two collections' totals are worded apart.** `total_basis` is the page's own field — `selection`
-for the comparison, `walk` for the view — and the case asserts both spellings, because one rendered
-sentence carrying two meanings is how `total` came to mean two different numbers.
-
-### Conventions
-
-- Only `fetch` is stubbed; the client, the decode and the component are the shipped ones.
-- Page bodies are the measured shape of the real route's answer in this leaf's evidence run, and the two
-  cursors are the server's own opaque strings — the client neither constructs nor parses one.
-- Each case is named for the behavior it protects, and the header states the defects it fails against.
+- Typed synthetic review replies feed the shipped client and ReviewSurface while the catalogue hook is isolated. Page bounds name returned, remaining and scope; the next action exists only for a published cursor.
+- Advancing returns exactly the published cursor in the same knowledge collection and draws the next bounds. Choosing a collection or First page sends no continuation. A foreign-cursor reset is worded separately from a moved comparison.
+- The picker offers knowledge and whole review, never the retired records collection; even a synthetic stale records selection emits no records request. Walk totals remain distinct from selection totals, and an unpaged whole review retains the selected invariant parameters.
+- Opening also reads summary, outline, trees and lane. The changed helper filters only /api/review/intent calls before counting page reads and inspecting their URLs; the advancing stub refuses unrelated opening reads instead of letting them consume page one.
 
 ### Invariants And Boundaries
 
-- **No next action without a published cursor.** A body with a remainder and no cursor renders no
-  `review-next-page` control, whatever it reported.
-- The captured body is typed `unknown` on purpose: the route sends three fields this client's review
-  mirror does not declare (`evidence.channels`, `knowledge.revision_selection`, `source.attribution`),
-  so annotating it would need either a cast or a lossy projection of the bytes under test.
-- Not covered here: browser keyboard/focus traversal and the finished cockpit interaction
-  (`ICR-R24@v1` owns those), and the assembled A16 acceptance (`ICR-R25@v1`).
+Typed payloads and opaque literal cursors are synthetic controls, including a shortened cursor literal. This read-only analysis did not execute the suite, certify a native cursor or test browser keyboard/focus geometry.
 
-### Todos
+## Evidence
 
-None recorded.
+- Declared check and its fixture assertions. [22]
+- Declared check and its fixture assertions. [23]
+- Declared check and its fixture assertions. [24]
+- Declared check and its fixture assertions. [25]
+- Declared check and its fixture assertions. [26]
+- Declared check and its fixture assertions. [27]
+- Declared check and its fixture assertions. [28]
+- Declared check and its fixture assertions.
 
-## Docs References
+## Historical predecessor account
 
-No domain documentation source is configured for this repository (`system/sources.md` carries no
-`Domain Documentation` entries). The statements below are grounded in repository source only.
+The earlier account follows as provenance. Current assertions and removed journeys are described above.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+> # dashboard/src/panels/review/ReviewSurface.paging.test.tsx
+>
+> ## Governing Overview
+>
+> [dashboard/src/panels route overview](overview.md)
+>
+> ## Purpose
+>
+> The mounted-surface cases for `ICR-R10@v1`'s page control: the **real** `ReviewSurface` over the
+> **real** review client, with `fetch` stubbed and the catalogue hook isolated for comparison-focused cases. Every request is built by the shipped client and
+> every response travels the way the browser's does — status, body, the shared decode in
+> `data/reviewTransport.ts`, the component tree — and no assertion reads a prop the test itself passed.
+>
+> The defect these cases catch is the packet's own non-conforming example: the surface used to render a
+> remainder (its `locations_remaining`, and now any page's `remaining`) with **no control that reached the
+> rest of the collection**. The module's header names the two wrong repairs it also fails against: a
+> "next page" button that re-sends the cursor it is already standing on (so the page never advances), and
+> one that offers itself for a body that published no cursor at all (so the button fetches nothing).
+>
+> ## Code Commentary
+>
+> ### Logic
+>
+> The comparison-focused cases isolate the shared catalogue hook so its additional request cannot consume a comparison fixture. The ordinary-entry catalogue/comparison interaction is covered separately by ReviewSurface.navigation.test.tsx. Assertions follow the compact labels, central display controls and changed-region default without weakening the existing record, paging or refusal contracts.
+>
+> **The request is asserted, not just the render.** The advancing case asserts that the *second* request
+> carries the cursor the server published rather than the one the client was standing on, and that the
+> bounds move from `16 of 103` to `32 of 103` — the two facts that separate a working control from a
+> button that re-fetches its own page.
+>
+> **The retired records collection cannot be asked for: the control is gone and no such request goes out.** The picker offers `knowledge` only — `records` left with the review matrix (MIK-R74 rule 1) — and the case asserts no `pageOf=records` request is ever issued; a stale attempt resolves to the whole review with no collection paged and no refusal rendered. The reset case asks `pageOf=knowledge` deliberately and states the reset as its own action, with the first page one click away.
+>
+> **One normaliser owns the two spellings of "no page".** The component reads `carriedPage(payload)`
+> instead of touching `payload.page`, so no consumer can reintroduce the `!== null` comparison that made
+> the mounted refusal unreachable for every real response.
+>
+> **A reset is worded from its own refusal code.** `RESET_GLOSS` distinguishes "this comparison moved"
+> (`comparison_page_reset`) from "that cursor is not this collection's" (`comparison_page_unreadable`),
+> so a foreign cursor is never called a moved comparison.
+>
+> **The two total bases are worded apart on knowledge pages.** `total_basis` is the page's own field — `selection`
+> for the comparison, `walk` for the view — and the case asserts both spellings, because one rendered
+> sentence carrying two meanings is how `total` came to mean two different numbers.
+>
+> ### Conventions
+>
+> - `fetch` and the comparison-focused catalogue hook are isolated; the review client, decode and component are the shipped ones.
+> - Page bodies are typed synthetic `ReviewPayload` fixtures carrying judgment. The two cursor literals are treated as opaque strings; the client neither constructs nor parses them. The shortened `KNOWLEDGE_CURSOR` literal does not establish verbatim native-cursor provenance.
+> - Each case is named for the behavior it protects, and the header states the defects it fails against.
+>
+> ### Invariants And Boundaries
+>
+> - **No next action without a published cursor.** A body with a remainder and no cursor renders no
+>   `review-next-page` control, whatever it reported.
+> - `payloadWith(page)` returns `ReviewPayload` and supplies a `judgment` object. These synthetic payloads exercise the mounted paging behavior.
+> - Not covered here: browser keyboard/focus traversal and the finished cockpit interaction
+>   (`ICR-R24@v1` owns those), and the assembled A16 acceptance (`ICR-R25@v1`).
+>
+> ### Todos
+>
+> None recorded.
+>
+> Cursor fixtures supply opaque strings through a typed fetch signature. `RECORDS_CURSOR` is reused as the next knowledge cursor. Cases assert bounds lines, control labels, knowledge continuation, reset wording from refusal codes, and the retired records collection earning no request or refusal. The closing case carries the selector on an unpaged whole-review request.
+> ## Evidence
+>
+> ### Docs References
+>
+> No domain documentation source is configured for this repository (`system/sources.md` carries no
+> `Domain Documentation` entries). The statements below are grounded in repository source only.
+>
+> No configured domain documentation could be checked.
+>
+> ### Repo-Internal References
+>
+>
+> - The mounted cases use the shipped ReviewSurface and review client with fetch stubbed; useReviewCatalogue is additionally isolated for comparison-focused cases. (historical reference 1)
+>
+>
+> - The paging fixtures retain KNOWLEDGE_CURSOR and RECORDS_CURSOR as opaque strings; no client-side cursor decoding is asserted. (historical reference 2)
+>
+> - No captured refused-records body exists: the retired collection earns no request, so no refusal is rendered from a capture.
+>
+> - **The bounds, the scope and the one action that reaches the rest.** (historical reference 4)
+>
+>
+> - **The advancing case: the second request carries the cursor the server published, and the bounds move.** (historical reference 5)
+>
+>
+> - **No next action for a body that published no cursor, whatever it reported.** (historical reference 6)
+>
+>
+> - A named collection asked for deliberately, and a reset stated as its own action. (historical reference 7)
+>
+>
+> - The retired records page earns no request and renders no refusal: records left with the review matrix (MIK-R74 rule 1). (historical reference 8)
+>
+>
+> - **A reset worded from its refusal code, so a foreign cursor is not called a moved comparison.** (historical reference 9)
+>
+>
+> - The bounds sentence distinguishes walk from selection totals on the surviving knowledge collection. (historical reference 10)
+>
+>
+>
+>
+> - **The one normaliser of the two spellings of "no page", and the bounds sentence built from the page's own basis.** (historical reference 12)
+>
+>
+> - The page contract on the client, including the basis field and the separate refusal. (historical reference 13)
+>
+>
+> - **The control the cases drive: the page picker, the actions, the bounds line and the refusal block.** (historical reference 14)
+>
+>
+> - The read target key includes page position, making a page change a distinct read. (historical reference 15)
+>
+>
+> - The published page shape these bodies have: the surface's own page value and its two refusal codes. (historical reference 16)
+>
+>
+> ### Cross-Repo References
+>
+> No cross-repository behavior is exercised in this file: the component, the client and the decode are all
+> this repository's, and `fetch` is the only boundary crossed.
+>
+> No meaningful cross-repo references found.
+>
+>
+>
+> - Typed fetch signature for paged requests (historical reference 19)
+>
+>
+> - The stubbed published-shape case distinguishes foreign-cursor reset wording from a moved comparison; it does not test an automatic repair journey. (historical reference 21)
+>
+> - Despite its historical test title, the closing case supplies a null page, asserts whole-review bounds and absent paging controls, and requires selector parameters with no pageOf parameter. (historical reference 11)
+> - RECORDS_CURSOR is an opaque fixture literal reused as the continuation of the second knowledge page; it does not demonstrate a records-page journey. (historical reference 17)
+> - payloadWith returns a typed synthetic ReviewPayload, including judgment and a nullable page. (historical reference 18)
+> - mountSubject supplies repository, master, leaf and invariant selector props without an initial page selection; cases use it for both paging and whole-review checks. (historical reference 20)
 
-## Repo-Internal References
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The module's own statement of what it exercises, of the defect it catches, and of the two wrong repairs it also fails against.** | `ReviewSurface`; `intentReview` | dashboard/src/panels/review/ReviewSurface.paging.test.tsx:1-19 |
-| The two opaque cursors, verbatim from the evidence run: one per collection, which is why mixing them up would be a defect. | `KNOWLEDGE_CURSOR`; `RECORDS_CURSOR` | dashboard/src/panels/review/ReviewSurface.paging.test.tsx:46-48 |
-| The captured server body the refusal case renders. | `RECORDS_PAGE_REFUSAL_RESPONSE` | dashboard/src/panels/review/recordsPageRefusal.captured.ts:29-399 |
-| **The bounds, the scope and the one action that reaches the rest.** | "states the bounds and scope of a page and offers the one action that reaches the rest" | dashboard/src/panels/review/ReviewSurface.paging.test.tsx:160-189 |
-| **The advancing case: the second request carries the cursor the server published, and the bounds move.** | "advances with the cursor the server published, and keeps the same collection" | dashboard/src/panels/review/ReviewSurface.paging.test.tsx:190-235 |
-| **No next action for a body that published no cursor, whatever it reported.** | "offers no next action for a page that published no cursor, whatever it reported" | dashboard/src/panels/review/ReviewSurface.paging.test.tsx:236-267 |
-| A named collection asked for deliberately, and a reset stated as its own action. | "asks for a named collection deliberately, and states a reset as its own action" | dashboard/src/panels/review/ReviewSurface.paging.test.tsx:268-315 |
-| **The refused records page rendered from the CAPTURED body, with its code, both identities and a live first-page action.** | "states a refused records page from the CAPTURED server body, with its code, identities and a live first-page action" | dashboard/src/panels/review/ReviewSurface.paging.test.tsx:316-373 |
-| **A reset worded from its refusal code, so a foreign cursor is not called a moved comparison.** | "words a reset from its refusal code, so a foreign cursor is not called a moved comparison" | dashboard/src/panels/review/ReviewSurface.paging.test.tsx:374-442 |
-| **The two collections' totals kept apart in the sentence the reader sees.** | "keeps the two collections' totals apart in the sentence the reader sees" | dashboard/src/panels/review/ReviewSurface.paging.test.tsx:443-498 |
-| The whole review stays reachable and the selector travels through a paged request. | "keeps the whole review reachable and carries the selector through a paged request" | dashboard/src/panels/review/ReviewSurface.paging.test.tsx:499-514 |
-| **The one normaliser of the two spellings of "no page", and the bounds sentence built from the page's own basis.** | `carriedPage`; `pageBounds`; `continuationOf`; `RESET_GLOSS` | dashboard/src/data/review.ts:663-665; dashboard/src/data/review.ts:676-680; dashboard/src/data/review.ts:633-654; dashboard/src/data/review.ts:622-628 |
-| The page contract on the client, including the basis field and the separate refusal. | `ReviewCollectionPage` |dashboard/src/data/review.ts:479-498|
-| **The control the cases drive: the page picker, the actions, the bounds line and the refusal block.** | `PageControls`; `PagePicker`; `PageActions`; `PageBoundsLine`; `PageRefusalBlock` | dashboard/src/panels/review/ReviewSurface.tsx:254-293; dashboard/src/panels/review/ReviewSurface.tsx:149-182; dashboard/src/panels/review/ReviewSurface.tsx:184-219; dashboard/src/panels/review/ReviewSurface.tsx:230-252; dashboard/src/panels/review/ReviewSurface.tsx:105-147; dashboard/src/panels/review/ReviewSurface.tsx:300-357 |
-| The read target key includes page position, making a page change a distinct read. | `targetKeyOf` | dashboard/src/panels/review/ReviewReadCycle.ts:82-100 |
-| The published page shape these bodies have: the surface's own page value and its two refusal codes. | `ReviewCollectionPage`; `comparison_page_reset`; `comparison_page_unreadable` | mcp/src/agents_remember/models/knowledge/review.py:418-492; mcp/src/agents_remember/models/knowledge/review.py:157-158; mcp/src/agents_remember/models/knowledge/review.py:152-162 |
-
-## Cross-Repo References
-
-No cross-repository behavior is exercised in this file: the component, the client and the decode are all
-this repository's, and `fetch` is the only boundary crossed.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-28T21:38:58+02:00 — 260921-ICR-L48 curator (uncommitted candidate tree `ac73216e2a763b72844a63b8c36c81f9a8b5f0e8` over code base `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7`): **citation repair after the surface split — no content impact on this module's claims.** The page controls (`PageControls`, `PagePicker`, `PageActions`, `PageBoundsLine`, `PageRefusalBlock`) stayed in `ReviewSurface.tsx` unchanged and only moved up the file when the record panes left for `ReviewRecordPanes.tsx`; each range was re-derived from its declaration, the mount point is now `ReviewPanes` (which renders the controls only for the payload that answers the subject on screen), and the moved `targetKeyOf` row was re-pointed. A paged question is still its own read and is never kept by the L48 cache (only whole-subject answers are). No verification stamp was advanced.
-- 2026-09-28T12:38:10+02:00 — 260921-ICR-L43 curator (uncommitted candidate tree `990a5c1a3afab15d04881475b2501ed98cddf908` over code base `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`): No content impact: citation ranges into files this leaf changed (`dashboard/src/data/review.ts`, `dashboard/src/panels/review/SourceContent.test.tsx`, `mcp/tests/test-evidence-lanes.toml`, `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test_knowledge_review_source_content.py`) were re-pointed to where the same anchors now sit, each row checked valid at the base, invalid at the candidate, and valid after the base-to-candidate line mapping; claim wording unchanged. No stamp advanced.
-- 2026-09-26T21:10:33+00:00: Generated citation repair: `KNOWLEDGE_CURSOR`; `RECORDS_CURSOR` repointed to dashboard/src/panels/review/ReviewSurface.paging.test.tsx:46-47; dashboard/src/panels/review/ReviewSurface.paging.test.tsx:48-48. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-26T21:10:33+00:00: Generated citation repair: `ReviewCollectionPage` repointed to dashboard/src/data/review.ts:479-498. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.
-- 2026-09-26T19:49:05Z — The comparison-focused cases isolate the shared catalogue hook so its additional request cannot consume a comparison fixture. The ordinary-entry catalogue/comparison interaction is covered separately by ReviewSurface.navigation.test.tsx. Assertions follow the compact labels, central display controls and changed-region default without weakening the existing record, paging or refusal contracts.
-- 2026-09-24T00:43:00+02:00 — 260921-ICR-L24 curator (memory worktree only; no code changed; no commits; leaf base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta): **five enforced citation rows re-cited to the constructs they name, wording unchanged.** The client row's four ranges followed their constructs down `data/review.ts` — `pageBounds` `611-632`, `continuationOf` `600-606`, `carriedPage` `641-643`, `RESET_GLOSS` `654-658`, each verified to carry the anchor it is cited for — and the control row's last range was re-pointed to `PagePicker`'s own declaration extent `542-575`, which is what that claim needed: the picker's declaration line now falls inside a cited range, so the claim is no longer reopened. Contributing ranges (`ReviewCollectionPage` `406-425`, the four control ranges, `targetKeyOf` `22-22`) are kept verbatim and no claim was reworded or dropped. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted (base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta) and governed closeout owns the real stamp.
-- 2026-09-23T00:15:00+02:00 — 260921-ICR-L10 curator: **created.** The module is new in this leaf
-  (`ICR-R10@v1`) and this is its one-to-one card. It records the two design facts a later reader would
-  otherwise have to rediscover — the refusal case is pointed at a **captured** server body because the
-  route omits the `page` key rather than sending `null`, and one normaliser (`carriedPage`) owns both
-  spellings of "no page" so no consumer can compare against `null` again — plus the boundary this
-  module leaves to others: `ICR-R24@v1` owns keyboard/focus traversal and the finished cockpit
-  interaction, and `ICR-R25@v1` assembles A16. **Stamp accounting:** the verification pair names the
-  **production line at this leaf's base** `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`
-  (2026-09-22T20:08:58+02:00); the module and the component it drives are **uncommitted**, so closeout
-  owns the real stamp.
+- Retired at the fifth freeze d59c3493: dashboard/src/panels/review/ReviewSurface.paging.test.tsx:483-498 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit ad0c3a1296eae9863f6505d3fabc0c73e17bd166. Retired means the anchor no longer stands, not that the cited subject was deleted.

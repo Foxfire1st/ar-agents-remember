@@ -1,15 +1,5 @@
 # dashboard/src/panels/engine-room/useShouldAnimate.test.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/panels/engine-room/useShouldAnimate.test.ts` |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-16T01:55                                 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [engine-room overview](overview.md)
@@ -33,16 +23,10 @@ No exports; one `describe("shouldAnimate")` block over three cases, with a `setR
 - Pure-unit only: no React render, no timers; it exercises the imperative `shouldAnimate()` against stubbed DOM globals.
 - `setReduce` fully replaces `window.matchMedia` with a minimal `MediaQueryList` stub so the result is deterministic regardless of jsdom; `afterEach` removes `data-effects` so cases don't leak into each other.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `shouldAnimate` under test | `shouldAnimate` | dashboard/src/panels/engine-room/useShouldAnimate.ts:12-16 |
-| `setReduce` matchMedia stub | `setReduce` | dashboard/src/panels/engine-room/useShouldAnimate.test.ts:5-16 |
-| The three gate cases (data-effects / reduce / both-off) | "is false when data-effects=off"; "is true only when effects are on and reduced-motion is off" | dashboard/src/panels/engine-room/useShouldAnimate.test.ts:23-27; dashboard/src/panels/engine-room/useShouldAnimate.test.ts:35-39 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-08-02T16:55+02:00 — 260731-EFA-L6 W1-B08 curator: repaired 1 repo-internal citation row and preserved verification metadata.
-
-- 2026-06-16T01:55 — Created for slice 5f S0: vitest pinning the `shouldAnimate()` gate truth table (data-effects / reduced-motion). Verification metadata pinned until closeout stamps the S0 code commit.
+- `shouldAnimate` under test [1]
+- `setReduce` matchMedia stub [2]
+- The three gate cases (data-effects / reduce / both-off) [3]

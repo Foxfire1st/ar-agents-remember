@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/cli/provider_limit_drain.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "edf195a0285cdb34259d89dedf60c5f5a40deaa0",
+        "content": "sha256:b02c54876ffd21e5e46ed68f288099cc7187aad6ee54bc66a26203bd595b98b0",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-3FFFJ8",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "INV-1ZKP4R",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The drain is what turns a reset into a delivery, so the release rule is realized here.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

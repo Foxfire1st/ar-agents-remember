@@ -1,26 +1,34 @@
 # mcp/src/agents_remember/models/read_files.py
 
-| Field                  | Value                                       |
-| ---------------------- | ------------------------------------------- |
-| repository             | agents-remember                             |
-| path                   | `mcp/src/agents_remember/models/read_files.py` |
-| doc_type               | `file-level-onboarding`                     |
-| lastUpdated | 2026-09-21T15:14+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
-| governingOverview      | `overview.md`                               |
-
 ## Governing Overview
+
+> Historical paired-document contract only: FileReadStatus, FileRead, carried source/onboarding/format/references/published_intent and lifecycle-deduplicated overview bodies are not current response fields or owners. Strict validation and token stamping survive under the current NamedRecord/NamedFile naming model above.
 
 [overview.md](overview.md)
 
+## Current naming-reader contract — MIK-R109
+
+`NamedRecord` names only action-asking records by ID, kind, state and heading (with disclosed titleFallback). `NamedFile` names source existence, governing card location, card state, per-state counts and action records, plus two one-line counts where they are non-zero: `openWeaknesses` (open weaknesses anchored to that file) and `dependentDocuments` (documents whose dependent record stands on it). A confined-row refusal carries unknown existence and a reason, without dropping valid siblings. `ReadArFilesResponse` is strict, `state` is named/refused, `codeState`/`codeTree` say the observed code and `memoryState` says whether memory can be named. Governing overview locations are once per call, nearest first. No source/onboarding/overview text, sidecar/reference document, published_intent block, session dedup or continuation is in this model. Token stamping remains at the shared choke. The paired-read paragraphs below are historical only.
+
+## Current source contract evidence
+
+
+- Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance.
+
+
 ## Purpose
+
+> Historical paired-document contract only: FileReadStatus, FileRead, carried source/onboarding/format/references/published_intent and lifecycle-deduplicated overview bodies are not current response fields or owners. Strict validation and token stamping survive under the current NamedRecord/NamedFile naming model above.
 
 `read_files.py` defines the AR-owned, strict response contract for the
 `read_ar_files` tool (slice 07): one batch of paired source+onboarding reads plus
-the auto-attached, session-deduplicated overview front-door.
+the auto-attached overview front-door deduplicated by lifecycle and code/onboarding root.
+
+Defines the strict paired source/onboarding read response.
 
 ## Code Commentary
+
+> Historical paired-document contract only: FileReadStatus, FileRead, carried source/onboarding/format/references/published_intent and lifecycle-deduplicated overview bodies are not current response fields or owners. Strict validation and token stamping survive under the current NamedRecord/NamedFile naming model above.
 
 `FileReadStatus` is the onboarding-lookup outcome Literal
 (`found | missing | disabled | unsupported | not_requested`) — the *onboarding*
@@ -37,7 +45,7 @@ This module also derives `VALID_FILE_READ_STATUSES` from the alias by `get_args`
 (cit:([`VALID_FILE_READ_STATUSES`], mcp/src/agents_remember/models/read_files.py:32-32)),
 and `test_wire_vocabulary_exhaustiveness` asserts the set `_resolve_onboarding`
 actually returns *equals* it. `FileRead`
-(cit:([`FileRead`], mcp/src/agents_remember/models/read_files.py:35-47), a
+(cit:([`FileRead`], mcp/src/agents_remember/models/read_files.py:35-53), a
 `StrictResponseModel`, `extra="forbid"`) is one requested file's result: `path`,
 `status`, an optional
 `source` (the full file or the exact requested line range, omitted when the file
@@ -45,25 +53,41 @@ is absent or binary/non-decodable), and an optional `onboarding` body (the
 `meaningful_body` when `status == found`, omitted otherwise) — so `source` is
 independent of `status`.
 
-cit:([`ReadArFilesResponse`], mcp/src/agents_remember/models/read_files.py:50-74) subclasses `ToolResponse` (strict): `operation`
+Since MIK-R24 (rules 5 and 9) `FileRead` has three more optional fields, set only when the file's onboarding
+was returned. `format` is `"text/v2"` for a converted memory tree or `"legacy-format"` for an unconverted
+one. `sidecar` is the converted card's sidecar document, and `references` its resolved references, both
+for a converted tree only. On an unconverted tree the card is returned as it is, with nothing resolved.
+Their content is decided by `application/read_files_format.py`; this model only admits them.
+
+cit:([`ReadArFilesResponse`], mcp/src/agents_remember/models/read_files.py:56-80) subclasses `ToolResponse` (strict): `operation`
 (`"read_ar_files"`), `repoId`, the `files` list, the optional
 `repository_overview` / `route_overviews` dicts, and the optional `published_intent` dict. The two
 overview dicts are the
-session-deduplicated front door — each served once per lifecycle, or again when
+front door — each served once per lifecycle and resolved code/onboarding root pair, or again when
 its content changed, and omitted when already served unchanged (or when
 onboarding was suppressed for every file). Token fields are stamped by
 `finalize_payload_tokens` at the `_tool_payload` choke point — this module never
 sets them.
 
-`published_intent` cit:([`published_intent`], mcp/src/agents_remember/models/read_files.py:74-74) is the repository's published intent
+`published_intent` cit:([`published_intent`], mcp/src/agents_remember/models/read_files.py:80-80) is the repository's published intent
 read through the existing selective read (ICR-R19@v1). It is deliberately **always present**, because its
 own `state` is the answer: `recorded` carries the dataset identity, the snapshot and one bounded page per
-seed, while `not-recorded` and `unusable` name why no publication could be read. Its shape is owned by
+seed, while `not-recorded` and `unusable` name why no publication could be read. Since MIK-R24 an unconverted memory tree
+gets the state `legacy-format` instead: no knowledge section is read, and the block names the routes by
+which such a tree converts. The model is unchanged by that, because it carries the block as a dict. Its shape is owned by
 `application.published_intent` — the route that selects, seeds and names the absences — so this model
 carries it as a dict rather than re-declaring a second contract for the same read, exactly as
 `repository_overview` and `route_overviews` are carried for the front door.
 
+### Role Runtime and Scope
+
+> Historical paired-document contract only: FileReadStatus, FileRead, carried source/onboarding/format/references/published_intent and lifecycle-deduplicated overview bodies are not current response fields or owners. Strict validation and token stamping survive under the current NamedRecord/NamedFile naming model above.
+
+The documented front-door dedup extent is lifecycle plus code/onboarding root, matching the application change. The strict response fields, independent source/status relationship, published-intent block and shared token choke point remain unchanged. Preserve the existing field explanations; update only the former lifecycle-only dedup sentence.
+
 ## Invariants And Boundaries
+
+> Historical paired-document contract only: FileReadStatus, FileRead, carried source/onboarding/format/references/published_intent and lifecycle-deduplicated overview bodies are not current response fields or owners. Strict validation and token stamping survive under the current NamedRecord/NamedFile naming model above.
 
 - STRICT AR-owned shape: both models forbid extra fields. `ReadArFilesResponse` is
   registered in `tool_registry.PUBLIC_TOOL_RESPONSE_MODELS` and exercised by the
@@ -80,49 +104,23 @@ carries it as a dict rather than re-declaring a second contract for the same rea
   state the route produces. The model declares no field of that block, so the selection contract stays in
   `application/published_intent.py` and this module cannot drift into a second spelling of it.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The strict response base and `ToolResponse`. | `ToolResponse` | mcp/src/agents_remember/models/base.py:91-94 |
-| **The new field, and the owning module that decides its shape.** | `published_intent`; `published_intent_block` | mcp/src/agents_remember/models/read_files.py:74-74; mcp/src/agents_remember/application/published_intent.py:271-286 |
-| The application entry point producing the dict this validates; it imports `FileReadStatus` from this module, and `_resolve_onboarding` returns the narrowed type. | `_resolve_onboarding` | mcp/src/agents_remember/application/read_files.py:235-267 |
-| The registry mapping `read_ar_files` to this response model (L120). | `read_ar_files` | mcp/src/agents_remember/models/tools/tool_registry.py:167-167 |
+> Historical paired-document contract only: FileReadStatus, FileRead, carried source/onboarding/format/references/published_intent and lifecycle-deduplicated overview bodies are not current response fields or owners. Strict validation and token stamping survive under the current NamedRecord/NamedFile naming model above.
 
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-21T15:14+02:00 — 260921-ICR-L19 curator (uncommitted change set on `ar/260921-icr-l19`, code base `0fca5c69`): **body updated — this response gained a field.** `ReadArFilesResponse` now declares `published_intent: dict[str, Any] | None` at `:74` (ICR-R19@v1), the repository's published intent read through the existing selective read at one exact snapshot; the class docstring states the field's contract and the body records that the shape is owned by `application.published_intent` rather than re-declared here, plus an invariant that this model carries the block and does not own its selection. The `ReadArFilesResponse` citation extent was re-derived to `:50-74` and the `_resolve_onboarding` reference row to `read_files.py:235-267` (was `:209-238`) because this leaf's insertions moved that declaration; a reference row was added for the new field and its owning module. No claim was re-worded to fit a stale pointer. **Stamp accounting:** the recorded working candidate names this leaf's candidate; `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are retained exactly as recorded, because no commit contains the body as it now stands and the governed closeout owns the real stamp. No commit was made.
-- 2026-09-18T13:36:47+00:00: Generated citation repair: `read_ar_files` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:167-167. No content impact: mechanical anchor-range projection bound to citation source snapshot 468e47519c1a75ea8349538fbc4903207afc60f299e5295d1631f1f15f11a5ef; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `read_ar_files` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:160-160. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-13T17:20:55+00:00: Generated citation repair: `read_ar_files` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:154-154. No content impact: mechanical anchor-range projection bound to citation source snapshot 27fb62d06e30428d8072f72f17b576fb89ccd41fd08d4f26b1a4a9e383adc055; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-12T01:06:15+00:00: Generated citation repair: `read_ar_files` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:153-153. No content impact: mechanical anchor-range projection bound to citation source snapshot 1740540b8733028dd833a3538d739271e8925ea5f51911a0f8dcd8c49e7e1c13; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-11T23:44:56+00:00: Generated citation repair: `read_ar_files` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:152-152. No content impact: mechanical anchor-range projection bound to citation source snapshot fc36bf81fd36002f552f72a34a44e9713fa47fc86ced6632de3215e5011793d3; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `read_ar_files` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:151-151. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-05T06:24:16+00:00: Generated citation repair: `read_ar_files` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:155-155. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
+### Repo-Internal References
 
-- 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: citation-only repair repointed moved lifecycle, tool-model, direct-landing, legacy, or startup evidence to its canonical committed source path; this card's own documented behavior is unchanged.
+> Historical paired-document contract only: FileReadStatus, FileRead, carried source/onboarding/format/references/published_intent and lifecycle-deduplicated overview bodies are not current response fields or owners. Strict validation and token stamping survive under the current NamedRecord/NamedFile naming model above.
 
-- 2026-08-20T09:35+02:00 — 260815-DAG-L16 curator: re-anchored citation range(s) to current source after the L16 line movement (cited files changed, card source unchanged); verification metadata unchanged.
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
+- The strict response base and `ToolResponse`. [1]
 
-- 2026-08-04T18:20+02:00 — 260731-EFA-L6 S18-B15 curator: resolved 8 citation findings and repaired the
-  reversal this card had self-flagged. `FileReadStatus` is declared in this module at line 29 and
-  `VALID_FILE_READ_STATUSES` is derived here at line 32; the body, the vocabulary invariant, and the two
-  reference rows now state the model → producer direction (`application.read_files` imports the
-  alias; `_resolve_onboarding` at 209-238 decides the value). The exhaustiveness row follows the
-  renamed `test_every_onboarding_status_the_read_entry_point_returns_validates` (778-785). Scoped
-  recheck clean.
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — No route impact from the rename itself: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`; the references and the vocabulary here follow ("the application layer" for the package, "an application entry point" for one function). **FLAGGED, NOT FIXED — this body is stale for a reason that is NOT the rename, and the curator who owns that change should repair it.** A separate staged change in the same code worktree moved `FileReadStatus` and `VALID_FILE_READ_STATUSES` back INTO this module (L29 and L32); `application/read_files.py` now imports the alias at L43. That reverses the 260731-EFA-L4 decision recorded below, so the "`FileReadStatus` is imported from `application.read_files`; this module must ..." invariant and the reference row calling `application/read_files.py` "the DECLARER of `FileReadStatus` with its derived `VALID_FILE_READ_STATUSES`" are both false against the current worktree, as are the L54/L57/L216-L218 anchors in that row. The claims are left verbatim rather than rewritten into something plausible, because the intent behind the reversal belongs to that change, not to this one. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-01T09:38+02:00 — 260731-EFA-L4 curator: body corrected. The card described
-  `FileReadStatus` as this module's Literal; it is now imported from
-  `controllers.read_files` L54, the module whose `_resolve_onboarding` is the only function that
-  decides the value. Recorded the derived `VALID_FILE_READ_STATUSES` and the exhaustiveness test
-  that asserts produced == declared, and added the producer-owns-the-vocabulary invariant plus the
-  explicit note that `found` with an absent `source` is not a contradiction. Citations: `FileRead`
-  pinned to L26-L38, `ReadArFilesResponse` to L41-L54, the import to L18-L22; the controller
-  reference row gained `FileReadStatus` L54 / `VALID_FILE_READ_STATUSES` L57 /
-  `_resolve_onboarding` L216-L218, the registry row gained L120, and a row was added for the
-  exhaustiveness suite. Verification metadata pinned until closeout stamps the L4 commit.
+- The module that fills a read result's format fields: a converted tree's `text/v2` card format, sidecar and resolved references, and an unconverted tree's `legacy-format` knowledge section that resolves nothing from sidecars. [4]
 
-- 2026-06-22T22:33+02:00 — Created for slice 07: the `FileRead` + `ReadArFilesResponse` strict response contract for `read_ar_files`. Verification metadata pinned until closeout stamps the slice-07 code commit.
+- The registry mapping `read_ar_files` to this response model (L120). [5]
+
+### Runtime Source References
+
+> Historical paired-document contract only: FileReadStatus, FileRead, carried source/onboarding/format/references/published_intent and lifecycle-deduplicated overview bodies are not current response fields or owners. Strict validation and token stamping survive under the current NamedRecord/NamedFile naming model above.
+
+
+- Frozen implementation of ReadArFilesResponse supporting the stated file behavior. [6]

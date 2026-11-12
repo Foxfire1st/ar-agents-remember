@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/application/review_leaf_facts.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The child joins the shared code-fact and gate-verdict owners with the same held run context.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "94392ed5199ef0341db4b3bc949aef80787f44e7",
+            "content": "sha256:2820083e42c69def6590551e0207c27d650222aec2e0ba85bce531e02e88034c",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_facts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

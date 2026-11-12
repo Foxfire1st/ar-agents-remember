@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_kept_capture_index.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The kept capture names the fresh capture tree through every change, witnessed by test_the_kept_capture_names_the_fresh_capture_tree_through_every_change",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79c175764b6cf09293ad35f037957ebf22514e2e",
+            "content": "sha256:e637e9e8fb0410f34257f6c4e6708aee885d2967aacea8822281b7e4264d9cba",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_kept_capture_names_the_fresh_capture_tree_through_every_change"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "An agent that does not know the caller's environment is not the server's repeats the incident: its role starts land on the developer's live Paseo host and leave projects and agents there."
+  },
+  "applicability": "The tool-server section of scripts/pnt_sandbox/README.md.",
+  "conditions": [
+    "An agent drives a sandbox through the helper with a request file."
+  ],
+  "exclusions": [
+    "The section states the helper's boundary and is not OS containment."
+  ],
+  "id": "INV-JAC809",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "scripts/pnt_sandbox/README.md §The tool server, cited in the freeze report §What was done 4"
+      ],
+      "path": "l179-handoff.json"
+    },
+    "handoffEntry": "MIK-R181@v2 §4",
+    "leaf": "260928-MIK-L179",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The sandbox README's tool-server section states how an agent drives a sandbox: the request file and its sandbox and port, that the caller's environment is not the server's, that the helper refuses another host, and that the sandbox must be started for its host to answer.",
+  "status": "accepted",
+  "supersedes": []
+}

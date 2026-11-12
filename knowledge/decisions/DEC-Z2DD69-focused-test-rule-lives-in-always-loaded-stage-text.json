@@ -1,0 +1,71 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives"
+    ],
+    "justification": "A detail-file home and an enforcing product check were each weighed against always-loaded stage text and rejected on stated grounds, with the condition that would reopen each."
+  },
+  "alternatives": [
+    {
+      "option": "State the selection rule in the Worker's and the Reviewer's always-loaded stage text.",
+      "reason": "A stage that must apply the rule reads its own text on every launch, so the duty is present when the freeze and the baseline are prepared.",
+      "status": "chosen"
+    },
+    {
+      "option": "Keep the rule in a detail file that the stage text points to.",
+      "reason": "Agents often do not open offered files; the Worker that exposed the gap never opened the detail it was sent to.",
+      "reconsider_when": "Every build and review stage is measured to open the detail that carries its selection rule before choosing tests.",
+      "status": "rejected"
+    },
+    {
+      "option": "Enforce the selection with a product tool or check.",
+      "reason": "No tool or check enforces the rule; the architect's landing check stays the gate before the merge.",
+      "reconsider_when": "A product surface can compare a freeze's recorded file list with a search over the candidate and name the unrun matches.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Every freeze now carries a repeatable search record, and a baseline review reruns it. The rule adds a few sentences to two always-loaded stages within their existing ceilings, and the baseline detail points to the rule instead of restating it. Repair rounds repeat the search over the repair's own names without turning fix-verification into a sweep."
+  ],
+  "context": "The lifecycle texts never said how a Worker chooses its focused tests. A Worker picked a hand-selected suite, and it ran none of the eight tests that named the changed text of the leaf that exposed the gap; those tests failed the landing check after both review lanes had passed. The baseline-review detail carried its own one-line instruction, read only in a baseline review.",
+  "decider": "the developer, rulings D738, D739 and D740",
+  "id": "DEC-Z2DD69",
+  "links": [
+    {
+      "relation": "explains",
+      "target": "INV-972YFR"
+    },
+    {
+      "relation": "explains",
+      "target": "INV-93DBZJ"
+    },
+    {
+      "relation": "explains",
+      "target": "INV-TCZP9Y"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R218",
+        "packet": "requirements/MIK-R218-v1-focused-tests-are-chosen-by-what-the-change-touches.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "l205-producer-list"
+    },
+    "handoffEntry": "d-focused-test-home",
+    "leaf": "260928-MIK-L205",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

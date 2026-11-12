@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "A model supplied without an agent is the one shape that would otherwise invent a provider; binding it to the caller's honest harness is what keeps the override honest."
+  },
+  "applicability": "A Bootstrap start that supplies a model without naming an agent.",
+  "conditions": [
+    "The provider comes from an honest caller-harness signal, and validation runs through the existing selection owner.",
+    "Other roles keep refusing a model that arrives without its agent.",
+    "When the caller's harness cannot be hosted and no agent is named, the start is refused and lists the harnesses the host can run instead of selecting the first one."
+  ],
+  "exclusions": [
+    "Guessing a provider when the harness signal is absent."
+  ],
+  "id": "INV-RNPZRD",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "a2/native-review.md N11; final-a3/source-witnesses.md."
+      ],
+      "path": "handoff-draft.json"
+    },
+    "handoffEntry": "L188-B09",
+    "leaf": "260928-MIK-L188",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A Bootstrap model-only override binds the honest caller provider and validates through the existing selection owner without weakening other-role binding.",
+  "status": "proposed",
+  "supersedes": []
+}

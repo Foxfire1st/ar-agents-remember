@@ -1,0 +1,53 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Preparing every seat once preserves direct peer identity without charging idle siblings an opening turn."
+  },
+  "alternatives": [
+    {
+      "option": "One Manager prepares sibling seats; only seats with work open.",
+      "reason": "Preparing every seat once preserves direct peer identity without charging idle siblings an opening turn.",
+      "status": "chosen"
+    },
+    {
+      "option": "Stagger Worker/Reviewer and create Curator at first freeze.",
+      "reason": "Staggered creation makes peer presence depend on relay timing and opens early idle seats needlessly.",
+      "reconsider_when": "A changed approved leaf-role topology or host creation contract makes dormant prepared seats unsuitable.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Ordinary single-role starts and the may-start matrix remain; the owning Manager uses the public set operation."
+  ],
+  "context": "Early Reviewer value and stale idle opening turns require one coherent leaf-start shape.",
+  "decider": "Developer D88, implemented under MIK-R100@v1 rules 1-3",
+  "id": "DEC-9VV7Q0",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "route:mcp/src/agents_remember/cli"
+    },
+    {
+      "relation": "constrains",
+      "target": "route:skills/l-01-agent-lifecycles"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_role_start_set.py and held-message suites pass on 3c2285d1; sealed round-1 closure carried through rounds 2-6 verdicts"
+      ],
+      "path": "l100-knowledge-handoff.json"
+    },
+    "handoffEntry": "L100-R100-set-start-and-held-seats",
+    "leaf": "260928-MIK-L100",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

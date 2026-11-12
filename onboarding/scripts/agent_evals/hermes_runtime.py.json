@@ -1,0 +1,40 @@
+{
+  "path": "scripts/agent_evals/hermes_runtime.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d96c2dd387833d12eb725774ba1ebc17b310dd03",
+        "content": "sha256:71d9f149c6b34eac453e3c98fd6ec1606eee1db8a490ac3605b6dd5c903d81d9",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-K1VXG6",
+      "invariant": "INV-MDPBX0",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-hermes-profile",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "It derives the prepared launcher from the observed published runtime instead of changing the developer installation.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d96c2dd387833d12eb725774ba1ebc17b310dd03",
+            "content": "sha256:71d9f149c6b34eac453e3c98fd6ec1606eee1db8a490ac3605b6dd5c903d81d9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

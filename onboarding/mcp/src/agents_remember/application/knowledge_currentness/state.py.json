@@ -1,0 +1,179 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_currentness/state.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The one function, its consumers, the rule-2 order and the visibility rule.\n\nAnchor: \"The first rule that applies wins\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64ad4159e9a2a8a547b63dec71f20ba36e2ba9f3",
+            "content": "sha256:420efdfc8746573c34e5f2de73b44e1301a6ca3583f636ac2839e104567643eb",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The stale-proof cases.\n\nAnchor: `test_a_proof_whose_test_changed_or_disappeared_is_flagged_stale`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c64091cd2f1a3a0d73504db0df74632caf04d235",
+            "content": "sha256:b8fe1b612c4a4d2852e14ba1cdd4e8afb3014a60c205d1f6f560e72115f39daf",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_currentness.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The per-side computation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c64091cd2f1a3a0d73504db0df74632caf04d235",
+            "content": "sha256:60b320f601e7c8aa1bb63fbb20ff9286b0e7f505071fb2c7e3b361d8cbb22e39",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_one_function_computes_each_side_of_a_comparison"
+            },
+            "path": "mcp/tests/test_knowledge_currentness.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64ad4159e9a2a8a547b63dec71f20ba36e2ba9f3",
+            "content": "sha256:98215fa1b132b04514ec883edb4392d8b9cfa4f79d0d51ea3baf3ff55493a2fb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The state vocabulary in count order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64ad4159e9a2a8a547b63dec71f20ba36e2ba9f3",
+            "content": "sha256:2e96a274286e994a9a12540f854a34ff4a97b0fff1b0eb6a8307b1cc5ca8fd39",
+            "locator": {
+              "kind": "symbol",
+              "name": "InvariantState"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "64ad4159e9a2a8a547b63dec71f20ba36e2ba9f3",
+            "content": "sha256:1ea3dae5e184984850f05b206d0f41d3095af3dd4298600057f61e9be9bd46e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "INVARIANT_STATES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Rule 2: stale, then unverifiable, then unrealized (proofs do not count), then current.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64ad4159e9a2a8a547b63dec71f20ba36e2ba9f3",
+            "content": "sha256:64561530bfbd39466037f711f36681dd0117cbf4fb4e283a2096002bd22aa2b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "invariant_state"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "One invariant's complete observed entry list, compact when a read-wide reason explains it; `differing` remains the non-current subset.\n\nAnchor: `InvariantCurrentness` `differing`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64ad4159e9a2a8a547b63dec71f20ba36e2ba9f3",
+            "content": "sha256:98215fa1b132b04514ec883edb4392d8b9cfa4f79d0d51ea3baf3ff55493a2fb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The family header with its stale members.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64ad4159e9a2a8a547b63dec71f20ba36e2ba9f3",
+            "content": "sha256:d068fd57d2a4fb12c5b26042d170a680430fcfc2467988823c7b593cbf1fc186",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyCurrentness"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The block, its counts and the read-wide reason.\n\nAnchor: `unverifiableReason`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64ad4159e9a2a8a547b63dec71f20ba36e2ba9f3",
+            "content": "sha256:091bf6b71ea561b3c32ad2a0fedbb7ed081b6e9ca415a19bc773879778c8b6b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "Currentness"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Precedence cases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c64091cd2f1a3a0d73504db0df74632caf04d235",
+            "content": "sha256:33ede548960e0a284c923df27a572df43a517aef48c54fddb10366218fcea731",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_precedence_stale_before_unverifiable_before_unrealized"
+            },
+            "path": "mcp/tests/test_knowledge_currentness.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

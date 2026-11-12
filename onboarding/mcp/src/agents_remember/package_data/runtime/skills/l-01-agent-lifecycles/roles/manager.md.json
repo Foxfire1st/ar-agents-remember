@@ -1,0 +1,198 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+        "content": "sha256:874a2947ebc58481582c0cb1f00dc08901b017156fc95bb5d90df975ba0786e7",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-EQZH1P",
+      "invariant": "INV-NNQR91",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-19",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The mcp/src/agents_remember/package_data/runtime shipped copy propagates the skills/l-01-agent-lifecycles/roles/manager.md instructions to that installation surface; it is generated output and does not independently set role/task or permission authority.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+        "content": "sha256:467bcf23afce8f34cd2d973855a638951417860401fe5f6548616b2c5e30d6ed",
+        "locator": {
+          "end": 60,
+          "kind": "line_range",
+          "start": 60
+        }
+      },
+      "id": "RLZ-KYFQZV",
+      "invariant": "INV-25E23P",
+      "origin": {
+        "handoffEntry": "L84-CUR-07",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The packaged Manager role is byte-equal.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The Manager assigns a check or investigation that belongs to no leaf to an Investigator on its own sprint and master, never a leaf, and sends the scoped concern as its first role_message to the returned agent identifier.\n\nAnchor: `role_message`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "content": "sha256:be78eb8e209956630db522fbb6e96c8f2983d147f068cb93861610641510c5e2",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 70
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The packaged Manager coordinates one selected master and does not own the portfolio; when another agent starts it, it reports to that agent's role with its task references.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "content": "sha256:e813a8cb5ba071e8323562245c7d58e50823b0bf8c24a68b225f1b0cbd1afac7",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The Manager uses the exact sprint and master references, requirement packets, execution choice, candidate and report paths in its handover and reads only the selected master and the leaf documents needed for the current decision.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "content": "sha256:b77c58711527228737f64010e66afeec55a3a0b65ffd34524ca0a9dacc5aee49",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 16
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The Manager calls role_start once per stage: Worker first at build, Reviewer at the freeze, and Curator when curation begins after code review passes.\n\nAnchor: `role_start`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50f942047109e8b83e0f6f81b66509d0431bf296",
+            "content": "sha256:457a0873b95525c26702398458f3d36d47d9670c5619775b7c319669cfd07cff",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 36
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The canonical source owns this doctrine.\n\nAnchor: `l-01-agent-lifecycles-role-manager`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "content": "sha256:4e568132297bd1cba5578b07d8fd196d1b317e7048f927a07b9ed5290cdd4297",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "MCP package data is copied from canonical skills and checked for drift.\n\nAnchor: `l-01-agent-lifecycles-role-manager`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "content": "sha256:4e568132297bd1cba5578b07d8fd196d1b317e7048f927a07b9ed5290cdd4297",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The Manager decides paired closeout and integration within its delegated authority and, for a round beyond the settings limit, requests approval through its reporting route and records the approval.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "content": "sha256:f68bc00efe413ccf9455a4cc124fd33f109229d2100c8aa249adc9e68c6a852e",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 66
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The Manager hands over a whole stage with its exactness at agent starts, sync to the master's line, closeout, integration and task completion, and repairs its own mistaken records, wrong agent addresses, misread reports and faulty-input refusals through the same tool.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "content": "sha256:455f8bcbbd3f9120fc0f9a9d7035d3d25db1cb294c73f84eed41346a9d1f0a72",
+            "locator": {
+              "end": 125,
+              "kind": "line_range",
+              "start": 123
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The generated Manager role directs handovers, repair loops, review rounds, memory passes and relays through the shared leaf coordination procedures.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "content": "sha256:d0b821bea307e3d4f014b58185412fad3dc935d0e8d89b85ed9b6b37af4515c1",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 52
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

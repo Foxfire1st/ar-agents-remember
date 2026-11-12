@@ -1,0 +1,244 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "efbba31da935e0aee9b2b8cfb41d6565fb0195ec",
+        "content": "sha256:dfd6425f4100d327b5028d4c89ab11499500bb2ce487d53dcaa689c2b14e3666",
+        "locator": {
+          "kind": "symbol",
+          "name": "RETIRED_CURATION_STATEMENTS"
+        }
+      },
+      "id": "RLZ-886S55",
+      "invariant": "INV-K5SFG7",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-retired-wording-register",
+        "leaf": "260928-MIK-L72"
+      },
+      "rationale": "This registry is the shipped-sentence census: each row carries the exact statement, the files that shipped it, its probe and its current reason, and the sweep is the canonical tree plus the generated copies.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "efbba31da935e0aee9b2b8cfb41d6565fb0195ec",
+        "content": "sha256:dfd6425f4100d327b5028d4c89ab11499500bb2ce487d53dcaa689c2b14e3666",
+        "locator": {
+          "kind": "symbol",
+          "name": "RETIRED_CURATION_STATEMENTS"
+        }
+      },
+      "id": "RLZ-CBJ82Y",
+      "invariant": "INV-MGQKGC",
+      "origin": {
+        "handoffEntry": "MIK-R98@v1 §12",
+        "leaf": "260928-MIK-L98"
+      },
+      "rationale": "The existing retirement registry owns named rejected fragments.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "efbba31da935e0aee9b2b8cfb41d6565fb0195ec",
+        "content": "sha256:dfd6425f4100d327b5028d4c89ab11499500bb2ce487d53dcaa689c2b14e3666",
+        "locator": {
+          "kind": "symbol",
+          "name": "RETIRED_CURATION_STATEMENTS"
+        }
+      },
+      "id": "RLZ-HE14MT",
+      "invariant": "INV-HGSFJ8",
+      "origin": {
+        "handoffEntry": "MIK-R93@v1 rules6,11,13",
+        "leaf": "260928-MIK-L93"
+      },
+      "rationale": "The declared-source retirement census now includes the historical fourteen replacement clauses and additional R93/R98 and later groups; it is not a current exactly-fourteen-only inventory. The guard cases remain source-specific controls, not native evidence.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "efbba31da935e0aee9b2b8cfb41d6565fb0195ec",
+        "content": "sha256:3659fd2d0978bf74bc0402c6b69bea03dd81b2c7c2e6765977a54c8bd65a88ff",
+        "locator": {
+          "kind": "symbol",
+          "name": "CURATION_POLICY_STATEMENTS"
+        }
+      },
+      "id": "RLZ-JGHMRV",
+      "invariant": "INV-GWA6VR",
+      "origin": {
+        "handoffEntry": "MIK-R60@v7.1-2",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Requires each Curator pointer sentence to name the AR tool it asks for, so a role text that drops the tool name fails the corpus guard.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "efbba31da935e0aee9b2b8cfb41d6565fb0195ec",
+        "content": "sha256:8f981c11f1290686733d9086a5107bdf08e1dfc3328aa7937b4143a226db6598",
+        "locator": {
+          "end": 571,
+          "kind": "line_range",
+          "start": 555
+        }
+      },
+      "id": "RLZ-MNMZ2H",
+      "invariant": "INV-MTRR08",
+      "origin": {
+        "handoffEntry": "L100-R100-doctrine-coherence",
+        "leaf": "260928-MIK-L100"
+      },
+      "rationale": "The three obsolete sentences are registered retired with source-confined probes, so reinsertion is caught.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The retired-sentence registry carries the exact statement, its shipped sources, its probe and its reason.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "efbba31da935e0aee9b2b8cfb41d6565fb0195ec",
+            "content": "sha256:dfd6425f4100d327b5028d4c89ab11499500bb2ce487d53dcaa689c2b14e3666",
+            "locator": {
+              "kind": "symbol",
+              "name": "RETIRED_CURATION_STATEMENTS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The required-rule table names the exact clauses each compact curation source must state, keyed by shipped path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "efbba31da935e0aee9b2b8cfb41d6565fb0195ec",
+            "content": "sha256:3659fd2d0978bf74bc0402c6b69bea03dd81b2c7c2e6765977a54c8bd65a88ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "CURATION_POLICY_STATEMENTS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The sweep adds canonical skills to every target from the generated-copy declaration, currently the single packaged runtime tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "efbba31da935e0aee9b2b8cfb41d6565fb0195ec",
+            "content": "sha256:80e23f169ad36abba8bc3cc96a01cb023726735e99839b386125c1821c2b0461",
+            "locator": {
+              "kind": "symbol",
+              "name": "CURATION_DOCTRINE_SURFACES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The readers answer the per-surface and per-tree questions separately, and the completeness reader is the required-rule half, requiring every declared clause.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "efbba31da935e0aee9b2b8cfb41d6565fb0195ec",
+            "content": "sha256:debeac8cac97a796bf8a8abb553c6449ce20d0ebe002c6f53f4f7a95202fdee2",
+            "locator": {
+              "kind": "symbol",
+              "name": "missing_curation_policy_statements"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The consuming cases and the seeded re-insertion that proves the guard can fail.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcea192008fd1214a3a615afe58b187b5c3eaaf7",
+            "content": "sha256:a299d712543a1c91d213a2773ed8b56ea87dd0a171a76de1a75d2bd980aa02e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_one_seeded_old_sentence_is_observed_to_fail_the_guard"
+            },
+            "path": "mcp/tests/test_role_instruction_corpus.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The repository sync script checks the declared package projection against canonical skills.\n\nAnchor: skill_targets",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:753adb3ef38e223969853a4fa937b2e7eeda92d641fe862b8ea7ec19e6bbbe28",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The generated skill census is derived from the canonical declaration through its parser rather than a duplicated tuple.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "efbba31da935e0aee9b2b8cfb41d6565fb0195ec",
+            "content": "sha256:47e847ec3a92737fe465f022a2037299013b89d5f11fe48345571a8a93b54840",
+            "locator": {
+              "kind": "symbol",
+              "name": "GENERATED_SKILL_COPIES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The operation tuple carries `COMPLETE_CURATION_RULE` and the six other curation clauses; the Curator tuple carries two pointer sentences into the operation's sections.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "efbba31da935e0aee9b2b8cfb41d6565fb0195ec",
+            "content": "sha256:3659fd2d0978bf74bc0402c6b69bea03dd81b2c7c2e6765977a54c8bd65a88ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "CURATION_POLICY_STATEMENTS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "A compact source passes only when every declared clause is present.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "efbba31da935e0aee9b2b8cfb41d6565fb0195ec",
+            "content": "sha256:debeac8cac97a796bf8a8abb553c6449ce20d0ebe002c6f53f4f7a95202fdee2",
+            "locator": {
+              "kind": "symbol",
+              "name": "missing_curation_policy_statements"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

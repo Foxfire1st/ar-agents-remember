@@ -1,533 +1,69 @@
 # mcp/src/agents_remember/worktrees/modules/start.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/worktrees/modules/start.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-09T14:45+02:00|
-| lastVerifiedCommitHash | `47570cd827428c171613c8cb01e01f0b1cb26f73` |
-| lastVerifiedCommitDate | 2026-09-20T01:58:41+02:00|
-| governingOverview      | `overview.md`                              |
-
 ## Governing Overview
 
 [worktree modules overview](overview.md)
 
 ## Purpose
 
-Owns worktree start, attach, status result construction, and startup preparation
-for external memory and providers. Attach now reselects and reconciles an atomic leaf's parent
-series before it exposes the existing workbench. Since L11 the existing-contract branch recreates
-fresh for `cleanup in {abandoned, reopened}` (a reopened leaf keeps its exact leaf
-id), and after writing a leaf contract start restamps the leaf doc's `lifecycleId`
-via `tasks.leaf_doc` so the doc follows the enclosure's fresh lifecycle.
+Owns worktree start, attach, status result construction, and startup preparation for external memory and providers. Memory cannot be disabled for a task: every start runs in `external` mode, and a start that names the removed `disabled` mode — or the removed `disabled-memory` recovery answer — is refused by name before any worktree exists.
+
+## Same-request planned parent in public preview
+
+`start_result` consumes a `StartContractPlan`: the leaf contract plus the exact parent already validated by `ensure_master_series_contract`. Only dry-run construction carries that parent. The value passes through preflight, lineage recognition and enclosure planning to `require_parent_series`; a missing filename alone never establishes this special authority. An existing parent still goes through its normal reader/identity guard.
+
+Apply carries no preview-parent substitute and retains the existing locked bootstrap, source/activation reconciliation, persisted-parent checks and materialization. Preview is not a reservation: later apply recomputes current facts, records this generation's outside scratch root, and keeps existing refusal/recovery/CAS behavior. Organizational direct-super and ordinary standalone routes retain their existing meanings.
+
+The moved plan/result records and memory/provider blocked projections have one home in [startup/start_plan.py](startup/start_plan.py.md). Their blocked-result vocabulary and reconciled-memory-base projection are preserved there; the removed disabled-memory projection is not restored. Startup-owned dry-run storage/ref/worktree/index state is unchanged. A registered preview still writes the daily tool-call log and, when its answer completes, the workspace-river event. There is no current ambient-lifecycle alternative event-file route. These call records are not startup publication, reservations or apply authority. The first-leaf proof checks the records rather than dropping the logs subtree from observation, so this card makes no universal no-I/O claim.
+
+
+
+
+
 
 ## Code Commentary
 
-Every entry point and helper takes the typed `WorktreeArgs` dataclass (imported
-from `agents_remember.worktrees.modules.args`), replacing the former
-`argparse.Namespace`; `import argparse` is gone.
-
-`attach_result` rejects a series contract as a workbench, admits the ordinary leaf contract and its
-exact lifecycle location, then resolves any parent series. The series branch itself now lives in
-`startup/series_attach.py` as `series_attach_result`, moved there verbatim under the size rail, and
-this module calls it (`:174-175`): it resumes a live series whose integration branch still exists and
-otherwise refuses with `series-terminal` (the contract's cleanup is already terminal) or
-`series-branch-missing` (the work branch is gone locally). When a parent exists it calls
-`activate_atomic_series_contract` before source-lineage projection: that call transitions the
-requested parent's OWN activation record (`reconciling`, reconcile its pinned source pair, then
-`active`) because the record is keyed per series contract, not per protected source pair. No other
-master is named, selected, or paused on this contract's behalf, and attach returns the selecting
-transaction's conflict/refusal rather than exposing stale implementation.
-Only an active/current parent reaches the existing lineage check and `attached` result. Dry-run
-activation remains observation-only.
-
-**260831-LOCR-L36 re-keyed the activation record from per protected source pair to per series
-contract.** Start/attach/dispatch/sync still share one selecting transaction, but the record it
-writes is addressed by `contract_fingerprint(contract)`; a foreign master's record is read only by
-that foreign contract, so two atomic masters that share one sprint's code/memory source branches
-hold independent records and both may be `active`. `activation_waiting_reason(observation)` now
-takes the observation alone and returns only `atomic-series-reconciling`; a vacant record, an
-`active` record, and a foreign master are all explicitly not waiting reasons. Genuine wave
-dependencies remain with the sprint execution graph's own `predecessor-incomplete:` reasons.
-
-**The child-admission seal is gone, so this module's parent-series guards are resolution only
-(260831-LOCR seal removal).** Both call sites — `attach_result` (code line 177) and the apply-time
-start preflight inside `_plan_start_enclosure` (code line 703) — now import and call
-`require_parent_series` cit:([`require_parent_series`], mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:309-330)
-instead of `require_parent_series_accepting_leaves`. The helper still resolves and validates the
-leaf's exact parent series (organizational direct-super work under a sprint graph returns `None`;
-`_require_atomic_master` refuses a non-atomic master; a missing parent contract and a stale series
-identity still raise), but it no longer decides whether that series accepts leaves. The guard it
-used to call, `worktrees/atomic_series_seal.py::require_series_accepting_leaves`, is deleted with its
-module: it read the parent's `(closeout_status, integration_status, cleanup)` cells as a seal, which
-once `checkpointed` existed also sealed every master that took a checkpoint landing. A master is
-meant to be paused and resumed, never locked by its own landing, so neither `worktree_attach` nor
-`worktree_start` refuses a leaf because of a lifecycle cell.
-
-`mcp/tests/test_lifecycle_playthrough_end_to_end.py` is the regression proof: it walks master open →
-leaf start → leaf closeout → leaf landing → checkpoint → pause → attach, then starts a leaf commanded
-*after* the landing.
-
-**`start_result()` is now four lines (260731-EFA-L2)** — resolve context, build the contract, then
-three stages, each of which owns one decision and can return early:
-
-1. `_existing_contract_result(context, contract, args) -> WorktreeCommandResult | None` — attach to
-   a live contract at this path instead of recreating its worktrees. Returns `None` (recreate
-   fresh) when no contract exists, or when the one on disk is `abandoned` (a tombstone) or
-   `reopened` (a reset) — either way its worktrees and branches are gone. With
-   `args.retry_provider_setup` a live contract routes to `_retry_provider_setup_result`.
-2. `_preflighted_contract(context, contract, args) -> WorktreeContract | WorktreeCommandResult` —
-   the pre-creation preflights: stale base (records a `stale-base-blocked` beat, then refuses), the
-   fast-forward rebuild, and the Windows long-path check. **The returned contract is the one the
-   caller must use** — a `fast-forward` recovery may have moved the source branches, so the
-   contract is rebuilt inside this stage and the fresh one is returned.
-3. `_create_start_enclosure(context, contract, args)` — create the code worktree, prepare memory,
-   plan providers, write the contract, and launch setup. Apply holds repository integration
-   authority across its final exact source-lineage, parent-series, and workbench rechecks and every mutation. Preview runs
-   those same read-only guards without opening the filesystem lock (which would itself violate
-   dry-run byte preservation); apply always revalidates under the lock before acting.
-
-**The three blocked returns use `recovery_guidance`, not `next_guidance` (260731-EFA-L4).**
-`_blocked_memory_start_result` (`choose_memory_recovery`), `_blocked_provider_start_result`
-(`choose_provider_setup_recovery`) and `_stale_base_preflight` (`choose_stale_base_recovery`) are
-three of the five `RecoveryOperation` members, and all three pass `tool="worktree_start"`. The keys
-they emit and their order are unchanged, so nothing on the wire moved; the split is in the type.
-`next_guidance` is now narrowed to the phase machine's `NextOperation`/`NextTool` `Literal`s, which
-`models.worktree.WorktreeSummary` imports — and none of these three payloads is a lifecycle phase.
-They are blocks, rendered as a `FlexibleToolResponse`, so widening the phase vocabulary to hold
-"blocked on a stale base" would have put it into the set the context packet's `nextOperation` claims
-to be. `start.py` imports **both** builders: `status_result` still goes through the phase machine.
-
-`status_result` returns `WorktreeCommandResult(0, dict(status_payload(contract)))` — `status_payload`
-now returns the `WorktreeStatusPayload` `TypedDict`, and `WorktreeCommandResult.payload` is a plain
-`dict[str, object]`, which a `TypedDict` is not assignable to; the `dict(...)` is that widening,
-performed as a shallow copy.
-
-CCR-R25 keeps the status entry point read-only while adding the series activation fact: when the
-loaded contract is a series, `status_result` attaches `atomic_series_status_projection`; leaves
-remain on the ordinary worktree status payload. Attach and start continue to delegate activation
-and source synchronization to the selecting transaction, so this facade does not publish, repair,
-or infer a live process from selector state.
-
-`_contract_after_memory_start`'s disabled-memory branch now writes `memory_mode` through the typed
-record: `amend_contract(replace(contract, memory_repo_path=None, …, memory_state="disabled"),
-ContractCells(memory_mode="disabled"))`. The two look alike in the front matter and are not alike in
-the type system — `memory_state` is free text, `memory_mode` is one of the six persisted
-vocabularies — and `dataclasses.replace` types `**changes` as `Any`, so it checked neither. The
-resulting contract is identical.
-
-This stage split is why the memory/provider blocked returns and their start-progress beats all sit
-in stage 3 while the stale-base beat sits in stage 2. `start_result()` itself
-resolves context, asks `start_contract.build_start_contract` for the normalized contract, and then
-runs the three stages: prepare code and optional memory
-worktrees, run the synchronous provider preflight, write the contract for
-real starts, and then LAUNCH provider setup in the background (GitHub #53).
-The ordering is deliberate: the contract is the durable anchor
-`worktree_status` polls while the setup thread runs, so it must exist before
-the launch. `plan_providers_for_start` is the sync preflight (skip /
-enablement / settings checks — config-level failures still block the start
-fast); `run_or_launch_provider_setup` keeps dry runs fully synchronous
-(`planned`, unchanged shape) and otherwise delegates to
-`provider_async.launch_provider_setup`, passing a
-`provider_async.ProviderSetupJob(request=…, contract=…, write_state_file=…, settings_cleanup=…)`
-and returning `starting` with the progress
-file. The settings path transfers to the launcher's cleanup only when
-`provider_setup_config.unlink_settings_after_setup` is set (the application entry point's
-temp-file ownership handshake). `prepare_providers_for_start` remains as the
-facade/CLI wrapper composing both halves in one call. Contract construction moved
-out to `start_contract.py`: it validates `args.leaf_id or args.worktree_name`
-through the shared leaf-ref resolver, persists the canonical task doc id into
-the leaf contract, and returns a loud `leaf-ref-not-found` / `leaf-ref-ambiguous`
-`WorktreeCommandResult` before any worktree write when the ref cannot resolve.
-`_provider_start_paths` asserts
-`args.provider_setup_config` is non-`None`, before use. Provider setup remains typed through `ProviderSetupRequest`; there is
-no coordinator script or host-binary fallback path here. `provider_setup.load_settings`
-and `provider_setup.settings_path` are now called with the settings path alone
-(the `target_coordination_root` argument was dropped). CLIVE L2 moves provider enablement and
-settings-readability classification to
-`start_provider_preflight.provider_enablement_state`; `start.py` consumes that focused result
-instead of retaining a private enablement helper.
-
-Slice 5e (§5.4) adds pre-contract start observability: the start path calls `_record_start_block` at
-each of the three blocked early returns — stale-base (`stale-base-blocked`), external-memory
-(`memory-blocked`), and provider-plan (`provider-blocked`) — writing a transient `start-progress.json`
-(via `worktrees/start_progress.write_start_progress`) so a start gated *before* its contract exists is
-visible to the dashboard; `_clear_start_block` removes it once `write_contract` lands (the contract
-then anchors the enclosure). Slice 5f S6 (§9) closes the happy-path gap: `_record_start_progress`
-(non-blocked, `blocked_reason` stays None) emits a beat at the two pre-contract success points —
-`preflight` (after the preflights pass) and `code-worktree` (after `ensure_worktree`) — so the
-enclosure is observable assembling rather than popping in at contract-write. All three helpers are
-best-effort and skipped on dry runs, so the start flow never fails on observability.
-
-Since 260731-EFA-L2 both recorders take a `StartBeat` (from `worktrees.start_progress`) instead of
-loose `phase`/`reason`/`completed`/`choices` keywords —
-`_record_start_block(context, contract, args, beat)` and
-`_record_start_progress(context, contract, args, beat)` — and the enclosure half of the payload is
-built once by `_starting_enclosure(contract, worktree_name) -> StartingEnclosure`, the contract's
-own front-matter facts for a start that has not written a contract yet. A blocked beat is a
-`StartBeat` whose `blocked_reason` is set; a happy-path beat leaves it `None`. The two recorders
-are otherwise identical, which is exactly what the shared beat type makes visible.
-
-When an existing contract is found on disk, `_existing_contract_result` checks its
-`cleanup` field: if `cleanup` is `abandoned` (a tombstone) or `reopened` (a reset) its
-worktrees and branches were already discarded, so start recreates fresh rather
-than attaching to the dead binding. With `args.retry_provider_setup` set, an
-existing live contract routes to `_retry_provider_setup_result` instead of
-attaching: refused (exit 2, poll hint) while
-`provider_async.provider_setup_running` reports a fresh heartbeat, otherwise
-the preflight + launch re-run against the existing contract and the result is
-`provider-setup-retried` — the recovery path for failed or stale background
-setups.
-
-The stale-base preflight (issue #54) runs inside `_preflighted_contract`, after the
-existing-contract short-circuit and before the long-path preflight: `_stale_base_preflight`
-reads `kernel.git_freshness` for the code source branch and (external mode)
-the memory source branch, and blocks (exit 2,
-`choose_stale_base_recovery`, required arg `stale_base_choice`) when either is
-`behind` or `diverged` from its upstream — a stale base produces wrong code
-and silently defeats the CGC seed fast-path. `unknown` (offline fetch) and
-`no-upstream` never block. Recoveries: `proceed-stale` skips the check;
-`fast-forward` routes through `_fast_forward_stale_branches` (checked-out
-branch → `merge --ff-only`; parked branch → `branch -f`, safe because state
-`behind` proves ancestry; diverged or worktree-pinned branches land back in
-`staleBases` with a `recovery_error`). After a fast-forward recovery
-`_preflighted_contract` rebuilds the contract so recorded base commits reflect the
-recovered tips, and returns the rebuilt one.
-
-`prepare_memory_for_start` opens with `_memory_source_state(contract, args)` (260731-EFA-L2) — the
-state that settles the memory side **before its ledger is ever read**: either there is no external
-memory repo to prepare (`internal` / `disabled`), or the one configured cannot be started from
-(absent → `_missing_memory_repo_state`, or dirty in its official checkout →
-`_dirty_memory_source_state`). A non-`None` return is the whole result; `None` means proceed to the
-ledger.
-
-The **ledger-mapping gate** in `prepare_memory_for_start`: when `find_mapping(ledger,
-code_base_commit)` is `None` (the code base is a SHA the ledger never recorded — e.g. two
-code-only owner commits ahead of the last memory closeout), `_rebased_on_mapped_commit(contract,
-ledger, args)` owns the recovery and returns either the rebound `(contract, ledger)` pair or the
-`dict` state that blocks the start. It
-consumes BOTH advertised choices (260703-L18 finding 7 / friction F-R; previously only
-`disabled-memory` was wired and `reconciliation`/`custom` dead-ended). `disabled-memory`
-drops external memory; `memory_choice="reconciliation"` calls `_reconcile_missing_mapping`,
-which FIRST requires the official memory repo's checked-out branch to BE the contract's memory
-source branch (PR #100 review, Codex P1: the worktree is created FROM that branch, so committing
-to whatever is checked out would leave the source branch unmapped while start reports compatible —
-it refuses loudly with a `LedgerError` naming both branches), then records the mapping the way
-closeout ledger syncs do — `prepend_mapping(ledger,
-code_base_commit, ledger.last_memory_content_commit)` (memory CONTENT tip unchanged; header
-`lastVerifiedCodeCommit` advances) written to the OFFICIAL memory repo's `memory.md`, `git
-add` + a `[<task_id>] Ledger sync: <code> -> <memory>` commit in the memory SOURCE repo
-(mirroring `memory/carryover.py` and the owner's hand precedent, memory commit `af50a05`) —
-then advances the contract's `memory_base_commit` to the post-reconciliation tip (threaded
-back via `reconciledMemoryBaseCommit` → `_contract_after_memory_start`) and PROCEEDS to a
-started worktree on the now-present mapping. `_missing_mapping_state` advertises only the two
-executable choices (`custom`, wired nowhere, was removed). A dry-run reconciliation records
-nothing and just reports `compatible`.
-
-`_ensure_memory_source_branch` (issue #54) runs inside
-`prepare_memory_for_start` after the ledger mapping gate: a missing external
-memory source branch is auto-created at the validated official checkout tip
-(`memory_base_commit`) using the code source branch name as template,
-reported as `memorySourceBranch` (`existing` /
-`created-from-official-tip` / dry-run `would-create-from-official-tip`) —
-previously agents had to create that branch by hand or `ensure_worktree`
-raised.
-
-`prepare_memory_for_start` now also calls `_sync_worktree_memory_mtimes` after
-preparing the memory worktree. `git checkout` stamps every file with the current
-time; GrepAI's watcher skips unchanged files by `ModTime`, so brand-new mtimes
-make every file look modified and force a full re-embed — defeating the DB clone.
-`_sync_worktree_memory_mtimes` walks the freshly checked-out memory worktree,
-finds each file's counterpart in the source memory repo, and calls `os.utime` to
-copy the source mtime onto the worktree file. Files absent in the source are left
-untouched and counted as `filesMissingInSource`. The `.git` subtree is skipped.
-Since 260707-HFX-L2 files whose CONTENT diverges between the worktree checkout
-and the source checkout are deliberately LEFT with their fresh checkout
-mtimes: stamping the source's old mtime onto changed content made the watcher
-skip exactly the delta — silent staleness — while fresh mtimes make GrepAI's
-incremental scan re-embed precisely the divergence (a small diff becomes an
-index UPDATE, never a full re-embed and never silent staleness).
-`_memory_divergence_paths(source, target)` computes that changed-path set via
-`git diff --name-only` of the two HEADs run in the source repo (worktrees
-share its object database); equal heads yield the empty set, and `None`
-(unrelatable heads) falls back to syncing everything — the pre-L2 behavior —
-with a `divergenceState` note in the result rather than guessing. The guard's
-scope is deliberately HEAD vs HEAD: uncommitted changes in the SOURCE
-checkout sit outside it, and the mtime copied from such a dirty file is at
-least as new as its content, so the watcher still re-embeds it —
-over-embedding, never silent staleness. The payload
-counts `divergentLeftFresh` beside `filesSynced`/`filesMissingInSource` and is
-returned as `mtimeSync` in the `prepare_memory_for_start` payload.
-
-## Docs References
-
-No external Domain Documentation source is configured for this memory repo.
-
-## Repo-Internal References
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Attach activates and reconciles an atomic leaf's exact parent before returning the workbench. | `attach_result` | mcp/src/agents_remember/worktrees/modules/start.py:168-208 |
-| The renamed parent-series resolver both start-side guards now call (attach at code line 177, the `_plan_start_enclosure` preflight at code line 703); it resolves and validates the exact parent series and no longer accepts or refuses leaves. | "parent_series = require_parent_series("; "require_parent_series(contract, operation=\"worktree_start\")" | mcp/src/agents_remember/worktrees/modules/start.py:177-179; mcp/src/agents_remember/worktrees/modules/start.py:703-703; mcp/src/agents_remember/worktrees/modules/start.py:205-205; mcp/src/agents_remember/worktrees/modules/start.py:758-758 |
-| The end-to-end playthrough that proves a leaf commanded after a checkpoint landing still starts. | `LifecyclePlaythroughTests` | mcp/tests/test_lifecycle_playthrough_end_to_end.py:62-173 |
-| Series status carries a read-only activation observation while the facade leaves selection mutation to the transaction. | `status_result`; "def atomic_series_status_projection(" | mcp/src/agents_remember/worktrees/modules/start.py:138-165; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:434-445 |
-| The selecting transaction owns the per-contract reconciling-to-active transition rather than this public facade. | `activate_atomic_series_contract`; `_sync_selected_atomic_series_under_authority` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:55-100; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:164-226 |
-| Defines the `WorktreeArgs` dataclass that types every start/attach/status input. | `WorktreeArgs` | mcp/src/agents_remember/worktrees/modules/args.py:32-113 |
-| Provider setup requests are implemented by the providers package. | `ProviderSetupRequest`, `run_provider_setup` | mcp/src/agents_remember/providers/provider_setup.py:57-120; mcp/src/agents_remember/providers/provider_setup.py:547-555 |
-| Background launcher and status projection. | `ProviderSetupJob`, `launch_provider_setup`, `provider_setup_status`, `provider_setup_running` | mcp/src/agents_remember/application/provider_runtime.py:59-70; mcp/src/agents_remember/application/provider_runtime.py:73-121; mcp/src/agents_remember/application/provider_runtime.py:124-147; mcp/src/agents_remember/application/provider_runtime.py:150-155 |
-| Branch freshness facts come from the shared kernel. | `read_branch_freshness`, `freshness_to_packet` | mcp/src/agents_remember/kernel/git_freshness.py:98-112; mcp/src/agents_remember/kernel/git_freshness.py:158-169 |
-| `recovery_guidance` and the `RecoveryOperation` vocabulary the three blocked starts belong to, plus `next_guidance`/`status_payload` for the phase side. | `RecoveryOperation`, `recovery_guidance`, `next_guidance`, `status_payload` | mcp/src/agents_remember/worktrees/modules/guidance.py:36-168; mcp/src/agents_remember/worktrees/modules/guidance.py:563-571 |
-| `ContractCells` / `amend_contract`, the typed path every vocabulary-cell write takes. | `ContractCells`, `amend_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:179-194; mcp/src/agents_remember/worktrees/worktree_contract.py:197-225 |
-
-## Cross-Repo References
-
-No meaningful cross-repository reference applies beyond the explicitly configured code/memory
-pair already documented by the repository-owned contract.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-
-## Series-Contract Notes
-
-For master task starts, `start_contract.py` creates or loads the root series contract, creates the
-integration branch from the protected/source branch, selects and reconciles that exact series, and
-only then builds the leaf contract from the integration branch with canonical doc-id `leaf_id`
-recorded. Multiple root series contracts may remain live; selection is that one contract's own
-`reconciling -> active` activation transition — never a global contract census, and never a claim on
-a shared protected source pair. Both root and leaf `memory_base_commit` values come from
-`memory_base_for_source` — the tip of the **memory source branch** the worktree is created from, not
-the memory repo's ambient HEAD.
-
-## L23 Pre-Mutation Lineage Gate
-
-Attach, existing-contract reuse, and leaf start now prove applicable ancestry
-before stale context is resumed or start state is mutated. Parent lineage runs
-before the separate stale-base preflight, so `proceed-stale` cannot override a
-super-to-master structural gap; blocked progress is recorded as
-`source-lineage-blocked`.
-
-## 260815-DAG-L3 Start Publication, Replaced By Task CAS
-
-Leaf start still restamps the current lifecycle id, but CLIVE removed the queue-bound publisher.
-Start now competes only with task-plane mutations such as discard-unstarted under the short task CAS;
-after accepted task truth publishes, affected projections are refreshed independently.
-
-## 260815-DAG-L4 Integration-Authority Impact
-
-Task-derived integration refs remain mechanically non-ordinary. The exact configured locator and
-task CAS remain the leaf publication boundary; the parent atomic series is separately selected and
-reconciled under repository integration authority in its own contract-keyed activation record before
-start/attach exposes the leaf. A mutable queue lane is absent from both decisions.
-
-## 260821-CLIVE-L2 Current Contract
-
-The current source seams include `ProviderStartPaths`, `load_contract_from_args`, `contract_path_from_args`. New enclosures publish the strict root manifest, canonical journal directory, and locked address-only locator before exposure or operation admission. Pre-existing readable enclosures require the explicit adoption route; start never infers or falls back.
-
-### Reconciled Source Evidence
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The current module exposes `ProviderStartPaths`, `load_contract_from_args`, `contract_path_from_args` at this ownership boundary. | `ProviderStartPaths`; `load_contract_from_args`; `contract_path_from_args` | mcp/src/agents_remember/worktrees/modules/start.py:93-102; mcp/src/agents_remember/worktrees/modules/start.py:105-106; mcp/src/agents_remember/worktrees/modules/start.py:109-134; mcp/src/agents_remember/worktrees/modules/start.py:103-112 |
-
-## 260821-CLIVE Start Reservation And Task-CAS Boundary
-
-Leaf publication still competes with discard-unstarted under the short task-publication CAS. It proves the exact
-current parent/leaf binding and reserves the configured contract locator before code, memory,
-provider, or lifecycle task mutation. Parent-series selection is a preceding contract-keyed activation
-operation, not part of this task-authoring CAS.
-Memory preparation must reproduce the reserved contract bytes or refuse. Lifecycle task restamping
-uses the shared task-fact publisher and returns independent projection effects. Retry converges on
-the same reservation; conflicts name task-authority or recovery actions. A successor start requires
-the exact restartable terminal predecessor, never an inferred missing root.
-
-## Update History
-- 2026-09-20T00:28+02:00 — 260918-TSIP-L11 closing seat (memory worktree `84152b9e`, code `79fa817f`): re-read and re-derived 1 claim row(s) on the merged tip. Every row was read against the construct it cites before its range was regenerated: the merged `mcp/tests/test-evidence-lanes.toml` was read at the line that carries each lane anchor, `pyproject.toml` was read at its declaration, and every renamed or consolidated case was re-anchored on the successor whose own docstring records the consolidation. No range was produced by adding a delta to an old number and the product's mechanical fixer was not run, so **no projection bullet is written and no claim is reopened on this edit's account**. Rows: `start.py.md:281` (status_payload) — re-read the claim against the current source: the construct moved, and the range was re-derived from its real extent in the file the claim already cites.
-- 2026-09-18T19:51:00+02:00 — 260915-KS-L23 residue clearance, seat B (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **cleared the one enforced `citation_anchor_absent_from_range` row in this document.** The blocked-start row's `status_payload` cell cited `guidance.py:493-495`, the tail of `base_freshness`; the `def status_payload` this leaf's moves left at `563-565` is what the cell cites now. The `36-168` range that carries `recovery_guidance` and `next_guidance` is unchanged. No claim was re-worded, no anchor or range was dropped to silence a row, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-17T07:33:51+00:00: Generated citation repair: `RecoveryOperation`; `recovery_guidance`; `next_guidance`; `status_payload` repointed to mcp/src/agents_remember/worktrees/modules/guidance.py:36-47; mcp/src/agents_remember/worktrees/modules/guidance.py:145-168; mcp/src/agents_remember/worktrees/modules/guidance.py:128-142; mcp/src/agents_remember/worktrees/modules/guidance.py:493-495. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `next_guidance` in the row 281 of this card from mcp/src/agents_remember/worktrees/modules/guidance.py:493-494 to mcp/src/agents_remember/worktrees/modules/guidance.py:128, the extent of the construct the claim is about (the checker named line(s) [128, 154, 156] as its live location); re-pointed `status_payload` in the row 281 of this card from mcp/src/agents_remember/worktrees/modules/guidance.py:128 to mcp/src/agents_remember/worktrees/modules/guidance.py:493, the extent of the construct the claim is about (the checker named line(s) [493] as its live location)
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `next_guidance` in the row 281 of this card from mcp/src/agents_remember/worktrees/modules/guidance.py:145-151 to mcp/src/agents_remember/worktrees/modules/guidance.py:128-134, the extent of the construct the claim is about (the checker named line(s) [128, 154, 156] as its live location); re-pointed `status_payload` in the row 281 of this card from mcp/src/agents_remember/worktrees/modules/guidance.py:128-134 to mcp/src/agents_remember/worktrees/modules/guidance.py:493-494, the extent of the construct the claim is about (the checker named line(s) [493] as its live location)
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `next_guidance` in the row 281 of this card from mcp/src/agents_remember/worktrees/modules/guidance.py:493-494 to mcp/src/agents_remember/worktrees/modules/guidance.py:128-134, the extent of the construct the claim is about (the checker named line(s) [128, 154, 156] as its live location); re-pointed `recovery_guidance` in the row 281 of this card from mcp/src/agents_remember/worktrees/modules/guidance.py:128-134 to mcp/src/agents_remember/worktrees/modules/guidance.py:145-151, the extent of the construct the claim is about (the checker named line(s) [145] as its live location)
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): kept one copy of the repeated citation mcp/src/agents_remember/worktrees/modules/guidance.py:145-151 in the row 281 of this card; the repetition added no pooled evidence
-- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the series-attach
-  extraction removed 55 lines, so the two guard call sites moved to `:177` and `:703`,
-  `status_result` now spans `:138-165` and `attach_result` `:168-208`. Repointed every one of them,
-  plus the playthrough row to `:62-173`. Verification metadata remains closeout-owned.
-- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the frozen source
-  extracted its series-attach branch into `startup/series_attach.py` as `series_attach_result`,
-  moved verbatim and renamed, and now calls it from `attach_result` (`:174-175`). Recorded that in
-  the attach paragraph, with the two refusal states that branch owns; every other claim about this
-  module still holds and the cited ranges were re-read. Verification metadata remains
-  closeout-owned.
-- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (provenance repair): the gate could not compare
-  this claim with its verification provenance because one or more of its anchors resolved more than
-  once at the verification commit, so no historical location was unique. Repaired the citation, not
-  the claim: each anchor that named a construct by bare name now names its exact declaration text,
-  which resolves once in the code tree, and any range that had drifted off its construct was re-read
-  at the declaration. The claim wording is unchanged, and the construct each range covers is the one
-  the claim is about. Verification metadata remains closeout-owned.
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the source moved since
-  the recorded verification commit (the parent-series resolver rename and the deleted seal). Re-read
-  the card: its rename claim and call-site references hold at the current source. Note that this
-  file also carries another worker's in-flight edit, so on-disk line numbers may differ from the
-  committed ones; no card claim depends on the shifted region. Verification metadata remains
-  closeout-owned.
-- 2026-09-13T20:42+02:00 — Child-admission seal removal (uncommitted change set on
-  `ar/260831_lifecycle-owned-completion-relay`): recorded that both start-side parent-series guards —
-  `attach_result` (code line 176) and the apply-time preflight inside `_plan_start_enclosure` (code
-  line 757) — now call `require_parent_series` instead of `require_parent_series_accepting_leaves`,
-  that the guard they replace (`worktrees/atomic_series_seal.py::require_series_accepting_leaves`) is
-  deleted with its module, and that neither `worktree_attach` nor `worktree_start` can now refuse a
-  leaf because of a parent lifecycle cell. Added the reference row and the playthrough module as the
-  regression proof. Verification metadata remains closeout-owned; no acceptance claim and no
-  verification stamp advanced.
-
-- 2026-09-13T14:21:11+02:00 — 260831-LOCR-L36: re-keyed the atomic-series activation account from per protected source pair to per series contract. Attach/start now describe `activate_atomic_series_contract` as transitioning the requested parent's OWN contract-keyed activation record to `reconciling` and then `active`, with no foreign master paused, selected, or named as a reason to wait; `activation_waiting_reason` takes the observation alone and returns only `atomic-series-reconciling`. Corrected the Series-Contract Notes claim that selection is "disposable source-pair authority", the DAG-L4 "source-pair integration authority" wording, and the CLIVE "source-pair operation" wording. Rebound two stale reference rows: `atomic_series_status_projection` now cites `atomic_series_activation.py:434-445` (was `502-502`, where the symbol no longer appears) and `status_payload` now cites `guidance.py:502-504` (was `494-496`, which is `projected_status_payload`'s range); the guidance row's source order was aligned with its anchors. This records source documentation only; verification metadata remains closeout-owned and no acceptance claim is made.
-
-- 2026-09-12T00:52:39+02:00 — 260831-LOCR-L29 curator: corrected three stale reference rows against the current source — `status_payload` now cites `guidance.py:472-474`, `amend_contract` cites `worktree_contract.py:197-227`, and this module's public start boundary cites `start.py:94-102; 105-106; 109-134`. This leaf replaced the unconditional `kind == "series"` attach refusal with `_attach_series_result`, which is the state-grounded resume; that behaviour is recorded in the attach row rather than added here. Verification metadata remains closeout-owned.
-
-- 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
-- 2026-09-09T12:22:46+00:00: Generated citation repair: `status_result`; "def atomic_series_status_projection(" repointed to mcp/src/agents_remember/worktrees/modules/start.py:136-163; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:502-502. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-08T18:54:49+02:00 — CCR-L38 CQ01 preparation rebound the status facade's activation projection citation to its current bounded-detail definition; status remains read-only and no acceptance claim is made.
-- 2026-09-08T17:47:39+02:00 — CCR-L38 source-grounded preparation rebound the status projection citation to its current definition after the admission projection split. Verification metadata remains closeout-owned; no acceptance claim.
-- 2026-09-08T16:45:00+02:00 — CCR-L38 final preparation repair: repointed frozen-source citations after the final contract diagnostic; no behavioral prose change, no verification or acceptance claim.
-- 2026-09-08T16:24:06+02:00 — CCR-L38 preparation range refresh: narrowed the start-module public seam coordinates to the current definitions. This is a mechanical source-range correction; verification metadata remains closeout-owned.
-- 2026-09-08T16:05:21+02:00 — CCR-L38 source-grounded candidate pass: recorded series activation evidence on read-only status and preserved the existing attach/start transaction boundary. Verification metadata remains closeout-owned; no Gate 5 or acceptance claim.
-
-- 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.
-
-
-- 2026-08-26T08:45+02:00 — Restored the canonical Cross-Repo reference section for this changed
-  start-operation card.
-
-- 2026-08-26T03:37+02:00 — Documented attach-time parent-series selection and
-  reconciliation-before-exposure, and separated that source-pair authority from leaf task CAS and
-  disposable queue state. Verification remains post-Dagger/closeout-owned.
-
-- 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: merged start-versus-discard CAS, exact locator reservation, memory convergence, and task projection effects. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
-
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
-
-- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1 candidate-11 curation rebind: refreshed formatter-moved source coordinates against accepted tree `4241908c`; where applicable, replaced a deleted coordinator anchor with the sole current owner. Verification metadata remains pinned until governed closeout.
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
-
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
-
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
-
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
-
-
-- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
-
-- 2026-08-16T05:27+02:00 — L4 exact-review repair: factored one start-lineage refusal owner and
-  reruns it inside apply's repository-authority lock before memory/worktree mutation, closing the
-  preflight-to-lock source-tip race while retaining read-only dry-run parity.
-- 2026-08-16T05:18+02:00 — Dagger repair: dry-run start retains the exact parent-series and protected-workbench admission checks without creating the repository authority lock file; real start still rechecks and mutates only while holding that authority.
-- 2026-08-15T23:38+02:00 — Reconciled this worktree owner's role in task-derived protected-ref authority, exact named-ref movement, and crash-safe recovery. Verification metadata remains closeout-owned.
-
-- 2026-08-15T09:10+02:00 — L3 content update: documented queue-governed lifecycle restamping at
-  worktree start; verification remains closeout-owned.
-- 2026-08-14T06:36+02:00 — L23 final candidate review: start admission proves transitive lineage
-  before mutation, routes cleaned completed leaves through task-reopen planning, and delegates
-  result projection to `start_result.py`. Verification remains closeout-owned.
-- 2026-08-12T20:10+02:00 — L23 curator: documented fail-closed ancestry admission before attach/start state changes; verification remains closeout-owned.
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-02T21:14+02:00 — W2-B03 curator: resolved 20 initial citation findings (10 anchor, 0 prose, 10 source); scoped recheck PASS (0 findings). Verification metadata unchanged.
-
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-01T09:47+02:00 — 260731-EFA-L4 curator: unlike L3's one-import diff, this leaf changed
-  three things in the file and the card described none. (1) All three blocked returns —
-  `_blocked_memory_start_result`, `_blocked_provider_start_result`, `_stale_base_preflight` — now
-  call `recovery_guidance` instead of `next_guidance`; the module imports both, because
-  `status_result` still goes through the phase machine. Recorded why the split exists: identical
-  keys on the wire, but `next_guidance` is now narrowed to the vocabulary `WorktreeSummary`
-  publishes, and these three payloads are blocks rendered as a `FlexibleToolResponse`, never
-  lifecycle phases. (2) `status_result` wraps its payload in `dict(...)` because `status_payload`
-  now returns a `TypedDict` and `WorktreeCommandResult.payload` is `dict[str, object]`, which a
-  `TypedDict` is not assignable to. (3) `_contract_after_memory_start` writes `memory_mode` through
-  `amend_contract(replace(contract, …), ContractCells(memory_mode="disabled"))` while `memory_state`
-  stays on `replace` — the two look alike in the front matter, but only one has a vocabulary, and
-  `replace` types `**changes` as `Any`. The contract produced is identical. Everything else — the
-  three L2 stages, the stale-base recoveries, the ledger-mapping gate and reconciliation, the mtime
-  sync and its divergence guard — was re-read against the current file and is unchanged. Added two
-  reference rows. Verification metadata pinned until closeout stamps the L4 commit.
-- 2026-07-31T21:01+02:00 — 260731-EFA-L3 curator: No content impact: the leaf's whole diff to
-  `start.py` is one import line — `run_git` moved out of the `modules.git` import block to
-  `agents_remember.kernel.git_command`; `current_branch`, `head_commit`,
-  `longest_tracked_path_length` and `require_git` still come from `modules.git`. This sidecar names
-  no runner, subprocess style or timeout, so nothing in it became false. I re-verified the two body
-  claims that do name git commands against the current file: `_fast_forward_stale_branches` still
-  does `merge --ff-only` for the checked-out branch and `branch -f` for a parked one, still
-  collecting a non-zero return into `staleBases` as `recovery_error`; and
-  `_memory_divergence_paths` still computes the changed-path set with
-  `run_git(source, ["diff", "--name-only", source_head, target_head])` in the source repo. Both
-  still describe the code exactly.
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `C901`/`PLR0912`/`PLR0915`/`PLR0913`
-  armed with no exemptions): `start_result` was split into `_existing_contract_result` (attach vs
-  recreate), `_preflighted_contract` (stale-base, fast-forward rebuild, long-path — returns the
-  possibly-rebuilt contract) and `_create_start_enclosure` (worktrees, memory, contract write,
-  provider launch). `prepare_memory_for_start` gained `_memory_source_state` (the pre-ledger
-  settling states) and `_rebased_on_mapped_commit` (the missing-mapping recovery).
-  `_record_start_block` / `_record_start_progress` now take a `StartBeat`, with the enclosure half
-  built once by the new `_starting_enclosure` helper; `run_or_launch_provider_setup` passes a
-  `provider_async.ProviderSetupJob`. Every blocked payload, recovery choice and start-progress beat
-  is unchanged. Verification metadata pinned until closeout stamps the L2 commit.
-- 2026-07-07T23:45+02:00 — 260707-HFX-L4R2: `start.py` now imports the public
-  `start_contract.memory_base_for_source` helper for the reconciliation path instead of reaching across
-  modules for a private helper. Verification metadata pinned until closeout stamps the 260707-HFX-L4
-  commit.
-- 2026-07-07T20:50+02:00 — 260707-HFX-L4: refactored worktree-start contract construction and
-  leaf-ref normalization out of `start.py` into `start_contract.py`/`leaf_ref_start.py`; `start.py`
-  now only calls the extracted builder and returns its leaf-ref refusal payloads. The file shrank rather
-  than grew. Verification metadata pinned until closeout stamps the 260707-HFX-L4 commit.
-- 2026-07-07T20:45+02:00 — 260707-HFX-L2 review follow-up: the mtime-sync narration makes the
-  guard's HEAD-vs-HEAD scope explicit — uncommitted SOURCE-checkout changes sit outside it and
-  can only over-embed (their copied mtimes are at least as new as their content), never go
-  silently stale. Documentation nuance on the source docstring; behavior unchanged from the
-  19:30 entry.
-- 2026-07-07T19:30+02:00 — 260707-HFX-L2 (index lifecycle): `_sync_worktree_memory_mtimes` now
-  leaves DIVERGENT-content files with their fresh checkout mtimes (new
-  `_memory_divergence_paths` via git diff of the two heads in the source repo; `None` →
-  sync-all fallback with a `divergenceState` note; payload gains `divergentLeftFresh`) — stamping
-  old mtimes onto changed content made the watcher skip exactly the delta (silent staleness);
-  fresh mtimes make grepai re-embed precisely the divergence. Verification metadata pinned until
-  closeout stamps the HFX-L2 commit.
-- 2026-07-07T18:40+02:00 — 260703-L18 (review fix batch, finding 7 / friction F-R): implemented the
-  missing-mapping recovery `memory_choice="reconciliation"` (`_reconcile_missing_mapping`) — records
-  the unmapped code base -> the ledger's memory content tip in the OFFICIAL memory repo the same way
-  closeout ledger syncs do (header advance + newest-first row + a `Ledger sync` commit in the memory
-  source repo; mirrors the owner's hand precedent `af50a05`), advances the contract's
-  `memory_base_commit` (via `reconciledMemoryBaseCommit` → `_contract_after_memory_start`), and
-  proceeds to a started worktree. The missing-mapping block now also consumes `disabled-memory` and
-  advertises ONLY those two executable choices (`custom`, wired nowhere, removed). Tests: every
-  advertised choice is consumable; reconciliation produces a valid mapping + a started worktree.
-  Verification metadata pinned until closeout stamps the L18 commit.
-- 2026-07-07T06:10+02:00 — PR #100 review fix (Codex P1, merge `e358c4a`): `_reconcile_missing_mapping`
-  gained a memory-source-branch guard — reconciliation refuses (`LedgerError` naming both branches)
-  when the official memory repo is checked out on a branch other than the contract's memory source
-  branch, instead of committing the mapping to the wrong branch. Body updated; post-merge onboarding
-  refresh (developer-approved) verified against main @ e358c4a.
-- 2026-07-03T00:30+02:00 — L11: recreate-fresh admits `cleanup: reopened` beside `abandoned`, and a post-write hook restamps the existing leaf doc's lifecycleId with the newly minted lifecycle (explicit linkage across restarts).
-- 2026-06-29T23:18+02:00 — Memory-base fix (L3): `start.py` now derives both the root and leaf `memory_base_commit` from the memory source branch tip via `_memory_base_for_source` (mirroring the code base) instead of the memory repo HEAD, so a memory repo checked out on an unrelated branch no longer records a divergent base that breaks closeout's "memory source branch moved" preflight. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: start now creates or loads a root series contract for master tasks, creates the integration branch from the protected/source branch, starts each leaf from that integration branch, writes leaf contracts under `enclosures/<leaf-id>/series-contract.md`, and reports `enclosure_path`/`leaf_id`. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-16T03:25 — Slice 5f S6 (§9): added `_record_start_progress` and called it at the two happy-path pre-contract success points (`preflight`, `code-worktree`) so a non-blocked start emits start-progress (previously only blocked early returns did); best-effort, dry-run-skipped, cleared by the existing `_clear_start_block` on contract write. Verification metadata pinned until closeout stamps the S6 code commit.
-- 2026-06-15T19:35 — Slice 5e (§5.4): `start_result` records a transient start-progress file at the three pre-contract blocked returns (stale-base / memory / provider) via `_record_start_block`, and clears it on contract write via `_clear_start_block` — best-effort, dry-run-skipped — so a start gated before its contract is observable. Verification metadata pinned until closeout stamps the 5e code commit.
-- 2026-06-13T18:45+02:00 — Slice 2c: `_build_start_contract` stamps `args.lifecycle_id` into the built contract (the observable-lifecycle enclosure anchor; `worktree_start_tool` resolves it and the controller promotes/adopts after start). Verification metadata pinned until closeout stamps the 2c code commit.
-- 2026-06-10T09:30+02:00 — Issue #54 sub-task B: added `_stale_base_preflight` (+ `_branch_freshness_findings`, `_fast_forward_stale_branches`) blocking starts on behind/diverged source branches with `stale_base_choice` recoveries, contract rebuild after fast-forward recovery, and `_ensure_memory_source_branch` auto-creating a missing memory source branch at the official tip.
-- 2026-06-10T07:30+02:00 — GitHub #53: provider setup moved to a background launch. `prepare_providers_for_start` split into `plan_providers_for_start` (sync preflight) + `run_or_launch_provider_setup` (dry-run sync / real launch via `provider_async`); the contract write moved BEFORE the launch; `_run_provider_setup` became the request builder `_provider_setup_request`; `_started_result` summary names the background poll loop; added the `retry_provider_setup` path on existing contracts.
-- 2026-06-10T00:40+02:00 — Added the Windows long-path preflight: on hosts with `LongPathsEnabled=0`, `start_result` blocks (exit 2) before creating worktrees when the projected worktree path plus the longest tracked path in the code or external-memory repo exceeds `WINDOWS_MAX_PATH_BUDGET` (250). The block payload reports the computed lengths and both remedies (enable long paths / shorter worktree name). `long_path_block_payload` is the pure, platform-independent decision; `_windows_long_paths_enabled` reads the registry and returns True off-Windows. Existing-contract attach still short-circuits before the preflight.
-- 2026-06-02T16:24+02:00: Normalized skill references in this module to full lowercase skill names; the missing-external-memory guidance names `c-00-initialize-memory-repo` (confirmed in source `_missing_memory_repo_state`). Reference-style normalization; behavior unchanged.
-- 2026-06-01T00:00+02:00 — `start_result` now detects abandoned contracts and recreates instead of reattaching. `prepare_memory_for_start` calls `_sync_worktree_memory_mtimes` to mirror source-repo file mtimes onto the freshly checked-out memory worktree, enabling GrepAI clone reuse. Updated Code Commentary.
-- 2026-05-31T12:50+02:00 — Re-typed every `args` param from `argparse.Namespace` to the new `WorktreeArgs` dataclass (dropping `import argparse`), added `task_name`/`worktree_name`/`provider_setup_config` non-`None` asserts, switched `provider_setup.load_settings`/`settings_path` to the path-only signature, and removed the dead `_cgc_enablement_state` helper; corrected Code Commentary and added the args.py reference (1.0.0 review remediation).
-- 2026-05-29T18:35+02:00: `_load_memory_ledger` returns `MemoryLedger | dict[str, object]` so `prepare_memory_for_start` narrows the ledger before `find_mapping`/attribute access; behavior-preserving (commit `0549b28`).
-- 2026-05-25T20:41+02:00: Created during worktree manager module extraction.
+Start refuses before contract creation and repeats the check at enclosure creation. Attach gates a planning leaf only; an already inProgress/later enclosure may be re-entered. Refusal nextAction is ask-architect.
+
+`start_result` refuses removed vocabulary first, at the top, because there it has no worktree, branch, contract, or task binding to unwind: `_removed_vocabulary_result` answers a removed `memory_mode` or `topology` (other than `disabled`) with the `memory-mode-unsupported` typed result and never substitutes `external` for what was asked; `disabled` is refused just below with its own opt-out refusal, never with the `internal` text; and `_unknown_choice_result` answers any other unknown `memory_choice` as an invalid request in the same shape as every mistyped start argument. The CLI no longer offers `disabled-memory` as a choice, so it still parses only so the start can refuse it by name.
+
+A no-directive start still attaches to its live disabled leaf before new-parent admission: `_live_disabled_leaf_attach_result` fires only when the request names no memory directive at all and a live disabled leaf contract already exists at the requested address, returning the existing-contract result instead of letting fresh-contract admission refuse first. Genuinely new leaves, explicit disabled requests, and explicit conversions all keep the build path and its refusals.
+
+The rest of the path is unchanged, except that an apply records this generation's outside scratch root in the contract before planning while a dry run records none. `start_result` consumes a request-scoped `StartContractPlan` (leaf contract plus the owner-validated preview-only parent, carried only for dry-run preview) through three stages — existing-contract reuse (a tombstone or reset recreates fresh), pre-creation preflights (stale base, fast-forward rebuild, Windows long-path check), and enclosure creation. Attach reselects and reconciles an atomic leaf's parent series before exposing the workbench; a series contract is never a workbench. The stale-base preflight blocks on `behind`/`diverged` with `choose_stale_base_recovery` (`proceed-stale` or `fast-forward`); `unknown` and `no-upstream` never block. The retained background launch seam runs only for an enabled provider plan after contract write. Both retired IDs, `codegraphcontext-code` and `grepai-memory`, are always disabled by the shared enablement gate, so their normal start plan is skipped and no provider setup launches. Existing progress artifacts can still be read by `worktree_status`. Start/create and existing-start reuse delegate binding plus task-stage publication to `publish_start_task_facts`; explicit attach passes `started=False`, preserving the existing stage. The shared owner promotes a planned start to `inProgress`, mirrors its master row, revalidates and reads back the exact enclosure binding, and keeps exact retries no-ops. The persisted `lifecycleId` remains an enclosure identity, not host activity or another task-status authority. Enclosure creation makes `<enclosure>/logs/` outside both worktrees and outside Git.
+
+### Outside scratch generation
+
+`_prepare_start_enclosure` now replaces the contract with a recorded one on its first line, before `_plan_start_enclosure` and `_materialize_start_enclosure` run. `_start_contract_with_outside_scratch` calls `outside_scratch.with_root_record`, which reuses a record the enclosure's published manifest holds or the contract already carries, and otherwise computes one from the repository, the exact contract path and the predecessor's generation. It reads the predecessor through `_restartable_start_predecessor` and passes `recorded_generation(predecessor.contract_path)` with `new_generation=True` only when that predecessor exists, so a successor generation never shares its terminal predecessor's root. A dry run returns the contract unchanged, so a preview allocates no directory and records nothing. The record is in the contract before the exact contract text is written, which is what puts it in the manifest and the locator the publication pins.
+
+## Evidence
+
+- Removed vocabulary refused before anything is created [16]
+- Unknown recovery answer is invalid, never opt-out [17]
+- No-directive start keeps its live disabled leaf [18]
+- Refusal chain runs before context resolution [19]
+- Live contract attaches, tombstone recreates [20]
+
+- Attach delegates with started=False and retains typed binding refusal. [26]
+- The shared publisher promotes start, preserves attach stage, mirrors the row and reads binding back. [27]
+
+- Completed answers use the one workspace event writer, with no ambient-lifecycle alternative. [22]
+- The public result path carries the owner-validated start plan. [23]
+- Only the actually carried preview parent qualifies for planned-lineage recognition. [24]
+- Preview admission and memory preparation use the exact admitted parent. [25]
+
+- Start refuses before contract creation and repeats the check at enclosure creation. Attach gates a planning leaf only; an already inProgress/later enclosure may be re-entered. Refusal nextAction is ask-architect. [28]
+
+## Historical provider-surface wording
+
+The following earlier wording is retained as provenance, not a current consumer or operation contract:
+
+> Provider setup launches in the background after the contract is written, with `worktree_status` polling until a terminal state.
+
+## Current retirement-boundary evidence
+
+- The preflight returns skipped state when neither provider is enabled. [29]
+- The shared enablement predicate always disables CGC and GrepAI, regardless of legacy settings. [30]
+
+- The retained launch seam returns non-enabled plans without starting a setup job. [31]
+
+- A tool call records its daily line and required detail under the retained log owner. [21]

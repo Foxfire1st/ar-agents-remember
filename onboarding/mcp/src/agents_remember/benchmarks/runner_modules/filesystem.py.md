@@ -1,18 +1,8 @@
 # mcp/src/agents_remember/benchmarks/runner_modules/filesystem.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/benchmarks/runner_modules/filesystem.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-22T10:39+02:00 |
-| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5`
-| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
-| governingOverview      | `overview.md`                              |
-
 ## Governing Overview
 
-[runner_modules overview](overview.md)
+[overview](overview.md)
 
 ## Purpose
 
@@ -24,10 +14,10 @@ exposure.
 ### Logic
 
 `filesystem.py` owns safe path removal, copying packaged
-runtime/provider assets, rendering root markers, creating benchmark-local
-coordination scaffolding, and exposing skills into the benchmark
-`.codex/skills` tree. Cross-platform long-path normalization (the Windows
-`\\?\` prefix logic) is no longer inlined here; both `removable_path` and the
+provider assets, removing the retired coordinator startup files, rendering root markers, creating benchmark-local
+coordination scaffolding. Skills reach the workspace harness from the tool server's
+package copy; no benchmark-local skill tree is written. Cross-platform long-path normalization (the Windows
+`\\?\` prefix logic) is not inlined here; both `removable_path` and the
 copy helpers delegate to the shared `long_path` helper imported from
 `agents_remember.install.assets`. The benchmark runtime scaffold creates central
 `logs/mcp` and `logs/providers/...` directories alongside provider data and
@@ -38,33 +28,30 @@ runner roots.
 - Copy/remove helpers are benchmark workspace mechanics, not general repository mutation policy.
 - Benchmark workspaces should mirror the MCP runtime log layout with central
   `logs/` directories instead of legacy `providers/logs`.
-- Skill exposure remains copy-only or disabled; no shell/symlink installer fallback belongs here.
+- No skill tree is mirrored into a benchmark workspace: its harness reads the skills the tool server serves from the package copy.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured for this memory repo.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The public benchmark facade re-exports this module's public functions and classes for compatibility. | "from agents_remember.benchmarks.runner_modules.filesystem import *" | mcp/src/agents_remember/benchmarks/runner.py:18-18 |
-| The route-local overview summarizes how this module fits into the benchmark runner split. | `# mcp/src/agents_remember/benchmarks/runner_modules Overview` | onboarding/mcp/src/agents_remember/benchmarks/runner_modules/overview.md:1-137 |
+- The public benchmark facade re-exports this module's public functions and classes for compatibility. [1]
+The [route overview](overview.md) describes the benchmark runner split; it is a discovery companion rather than a repository source target.
 
-## Cross-Repo References
+### Cross-Repo References
 
 No configured sibling repository is required for this module.
 
-## Update History
+## Runtime assets without a skill copy
 
-- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1 candidate-11 curation rebind: refreshed formatter-moved source coordinates against accepted tree `4241908c`; where applicable, replaced a deleted coordinator anchor with the sole current owner. Verification metadata remains pinned until governed closeout.
+`sync_runtime_assets` removes each retired coordinator startup file (`install.experiment.RETIRED_STARTUP_TARGETS`: `AGENTS.md`, `system/AGENTS.md`, `tasks/AGENTS.md`) from the coordination root, or prints the removal under `dry_run`, and then replaces the provider assets; it writes no instruction file. No helper copies a skill tree, because a coordination-root or `.codex` skill folder would be a second distribution surface with no reader.
 
-- 2026-08-04T18:20+02:00 — 260731-EFA-L6 S18-B15 curator: resolved 1 citation finding:
-  `test_changed_worktree_paths_includes_long_files` moved to `test_worktree_support.py:1541-1554`.
-  Scoped recheck clean.
+- The runtime-asset sync that writes no skill tree. [3]
 
-- 2026-08-02T21:02:09+02:00 — 260731-EFA-L6 curator W2-B10: repaired 6 citation findings (3 reference rows); scoped recheck clean.
+- The sync removes the retired coordinator startup files before replacing provider assets [5]
 
-- 2026-05-31T12:50+02:00 — `removable_path` stopped inlining the Windows `\\?\` long-path logic and now delegates to the shared `long_path` helper (imported from `agents_remember.install.assets`); corrected Logic prose to drop "across platforms" ownership and note the delegation (1.0.0 review remediation).
-- 2026-05-28T12:32+02:00: Updated after benchmark workspace scaffolding moved MCP/provider logs under the central `logs/` tree.
-- 2026-05-26T02:26+02:00: Created when `benchmarks/runner.py` was split into focused implementation modules.
+
+- The benchmark scaffold creates the central `logs/mcp` and `logs/providers/...` directories beside provider data and runner roots. [4]

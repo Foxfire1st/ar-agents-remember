@@ -1,0 +1,73 @@
+{
+  "path": "mcp/tests/test_python_runtime_contract.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "69debfc33e84f9ff25e6669f7bd3ecd30eb3fab5",
+        "content": "sha256:8dc43e1a3027e3e54e6c4d335297d3addf82f4b14d3e24198a16d6bb5e4ff7cc",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_unsupported_version_is_named_before_importing_new_stdlib_modules"
+        }
+      },
+      "facet": "The checker ends in the exact named refusal, with empty stdout, before it can import a standard-library module the interpreter lacks.",
+      "id": "PRF-2Y3QFT",
+      "invariant": "INV-Y2SXDZ",
+      "origin": {
+        "handoffEntry": "MIK-R91@v1-checker-names-unsupported-version",
+        "leaf": "260928-MIK-L91"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Runtime builder is fully cloned atomically published and reused",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69debfc33e84f9ff25e6669f7bd3ecd30eb3fab5",
+            "content": "sha256:6113fc67bbd8947f6a8188eafbc25c401083dc984e717cc0452c7da81fb8a68b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_runtime_builder_is_fully_cloned_atomically_published_and_reused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Existing foreign builder is refused and preserved",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69debfc33e84f9ff25e6669f7bd3ecd30eb3fab5",
+            "content": "sha256:0cf273e554c9aa942ef912af9876e49b520b03bce8f6974a2bbcbb6a1b6ae3cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_existing_foreign_builder_is_refused_and_preserved"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The negative admission witness proves the named refusal precedes any newer standard-library import.\n\nAnchor: `test_unsupported_version_is_named_before_importing_new_stdlib_modules`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69debfc33e84f9ff25e6669f7bd3ecd30eb3fab5",
+            "content": "sha256:3fc3cb2ac06c35bff06ea04435e9e54f121f15a8ab5c1ff25b121f5eb29627dd",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

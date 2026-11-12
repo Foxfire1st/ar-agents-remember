@@ -1,0 +1,128 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Both shapes were live (old sidebar vs tree); every later rail change must keep one-line rows and keep texts out of the sidebar."
+  },
+  "alternatives": [
+    {
+      "option": "One-line family and invariant navigation, each subject's changed-location rows and up to two counted closed group rows, with one short reason chosen by the active sort. Changed remains the default with All one switch away; complete statements, rationales, reasons and records remain in the reading column.",
+      "reason": "D48's one-line navigation density and main-page record texts remain. Approved MIK-R86 v2 rules 1-5 add changed-location rows, two group exceptions and one sort-dependent reason while preserving the Changed default; MIK-R89 v2 rule 3 keeps one shared tree/reading order.",
+      "status": "chosen"
+    },
+    {
+      "option": "Keep the prose sidebar with guarantee/member statements, breakdown lines and per-row disclosures in the rail.",
+      "reason": "D48 rules it out: 24,713 px and 183 disclosures beside a main page showing the same texts.",
+      "reconsider_when": "A named reader workflow proves it must judge change kinds from inside the rail without opening the main page.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Every family, subject, changed-location and group row stays one line. A row has one short active-sort reason; a family may also say kept. Complete statements and record explanations stay in the reading column.",
+    "A subject has up to two counted closed group rows for unchanged and not-comparable locations, drawn only for nonzero groups. Activating one opens and scrolls to that group in the reading column; it expands no rows in the tree.",
+    "Changed remains the default, All is one switch away, and a deterministic active sort orders the tree and reading column together. The rejected prose-sidebar alternative and its recorded reconsideration condition remain historical decision evidence."
+  ],
+  "context": "Developer direction D48 on the L86 reviewer sidebar (2026-10-04): a simple tree of one-line entries with the full lines in the main page, everything collapsed open by default, and the installed primitives reused instead of redeveloped. Approved MIK-R86 v2 rules 1-5 and MIK-R89 v2 rule 3 amend the current row and group account for L89; the original D48 sidebar observation remains historical.",
+  "decider": "Developer direction D48 (2026-10-04). Approved MIK-R86 v2 rules 1-5 and MIK-R89 v2 rule 3 amend the current row and group account for L89; the original D48 sidebar observation remains historical.",
+  "id": "DEC-NEKGJE",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "838aa8e5684f00138e3b3bebcb79a8f336adb52f",
+        "content": "sha256:19403aa9050ac653f6f0e58a1029e770bab668c29d2d1268549a5c31c8ff7fc0",
+        "locator": {
+          "kind": "symbol",
+          "name": "FamilyRow"
+        },
+        "path": "dashboard/src/panels/review/tree/TreeRows.tsx"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "838aa8e5684f00138e3b3bebcb79a8f336adb52f",
+        "content": "sha256:14ee9057b8f633a0b8b64aa4ad0a801803f448ab285ffe7f74178ea286dfb3e3",
+        "locator": {
+          "kind": "symbol",
+          "name": "SubjectRow"
+        },
+        "path": "dashboard/src/panels/review/tree/TreeRows.tsx"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "838aa8e5684f00138e3b3bebcb79a8f336adb52f",
+        "content": "sha256:05056ac5fdd981a3db249868e7512a211feb21c60caa1828969b9cce7b253a71",
+        "locator": {
+          "kind": "symbol",
+          "name": "LocationRow"
+        },
+        "path": "dashboard/src/panels/review/tree/TreeRows.tsx"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "838aa8e5684f00138e3b3bebcb79a8f336adb52f",
+        "content": "sha256:8bd2f99ca37b934629e933652302a875cd2e614718d9fdd967ccbc222a5b3d3f",
+        "locator": {
+          "kind": "symbol",
+          "name": "GroupRows"
+        },
+        "path": "dashboard/src/panels/review/tree/TreeRows.tsx"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "a7f09a3accb0258e6f0a70c187684abca69cfbae",
+        "content": "sha256:d427fe717baf44ecac0664d40b37f18c6adbb7aa69db9e1af7929af6d60e514b",
+        "locator": {
+          "kind": "symbol",
+          "name": "readTreeView"
+        },
+        "path": "dashboard/src/panels/review/triageViewPreference.ts"
+      }
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R86",
+        "packet": "requirements/MIK-R86-v2-the-reviewers-sidebar-is-a-navigation-tree.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v2"
+      }
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R89",
+        "packet": "requirements/MIK-R89-v2-the-intent-review-page-reads-a-change-set-from-its-changes.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v2"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "notes/reports/l86-curator-W03/handoff-phase1.json"
+    },
+    "handoffEntry": "DEC-D47-tree",
+    "leaf": "260928-MIK-L86",
+    "task": "260928-MIK"
+  },
+  "revision": 3,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The obligation's realizations in more than one file are what its statement binds together."
+  },
+  "applicability": "The Knowledge view whenever it is selected in the dashboard.",
+  "conditions": [
+    "The Knowledge view is `fullBleed` and kept mounted while another view is shown.",
+    "The reader holds its address in the URL hash, so the shell keeps no document state."
+  ],
+  "exclusions": [
+    "The four retained pages outside the product bar (Engine Room, Memory, Topology, Hangar).",
+    "The File Viewer layout the Knowledge page reuses, which this obligation does not change."
+  ],
+  "id": "INV-6QQ5FE",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "260928-MIK-L79-worker-88460df7-a6b5-42e9-b947-943345fd39b0.md; 260928-MIK-L79-worker-88460df7-a6b5-42e9-b947-943345fd39b0-evidence/r1-post-L51-repair-20261006/manifest.json"
+      ],
+      "path": "handoff.json"
+    },
+    "handoffEntry": "MIK-R79@v1 required behavior 1",
+    "leaf": "260928-MIK-L79",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Knowledge occupies the full dashboard width and retains its document and reading position across tab switches.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,86 @@
+{
+  "path": "dashboard/src/panels/file-viewer/lineNumbering.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The gutter: plain for line 1, offset otherwise.\n\nAnchor: \"export function numberedFrom(first = 1): Extension {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b961de3b6888c054c469b9d0c25747c41a0b8cc4",
+            "content": "sha256:0b4f1e982725f2acda23ff71ef826be806b6751c2f48b3f384ae29907a989a2b",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 7
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The file pane's use, through its optional first line.\n\nAnchor: \"numberedFrom(firstLine),\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
+            "content": "sha256:f5ecba83b753dfb9318732d0817adf55b044dc333a1e8bd0919ee19f03ed21a6",
+            "locator": {
+              "end": 71,
+              "kind": "line_range",
+              "start": 71
+            },
+            "path": "dashboard/src/panels/file-viewer/FilePane.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The diff pane's use, one first line per side.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
+            "content": "sha256:b88a7d7d75284f3cb992d91bdebd8579329c9ba9e3eea6467190d1ef0e17e6d1",
+            "locator": {
+              "end": 82,
+              "kind": "line_range",
+              "start": 82
+            },
+            "path": "dashboard/src/panels/changeset/DiffPane.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
+            "content": "sha256:859d2d5bfe3ffae74d5f84c096f56bc751b91d93ac72f278f3bd809ac9b26902",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 86
+            },
+            "path": "dashboard/src/panels/changeset/DiffPane.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
+            "content": "sha256:47e6050b0708f223f848ada7795cb3838b746b6b377773314a41b714268627d6",
+            "locator": {
+              "end": 237,
+              "kind": "line_range",
+              "start": 237
+            },
+            "path": "dashboard/src/panels/changeset/DiffPane.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

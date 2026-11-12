@@ -1,0 +1,49 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "One immutable FIFO delivery preserves order across senders and avoids needless extra turns; accepted sizes are lower bounds, not capacity ceilings."
+  },
+  "alternatives": [
+    {
+      "option": "Combine all waiting work in FIFO order, split only to the host’s admitted size.",
+      "reason": "One immutable FIFO delivery preserves order across senders and avoids needless extra turns; accepted sizes are lower bounds, not capacity ceilings.",
+      "status": "chosen"
+    },
+    {
+      "option": "Send each waiting message or sender separately.",
+      "reason": "Separate deliveries add avoidable turns and permit later work to overtake an in-flight batch without recipient serialization.",
+      "reconsider_when": "An approved host contract requires independent message transactions rather than combined addressed text.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "One claim owns recipient delivery; later admissions wait behind it and recovery reuses member-derived IDs."
+  ],
+  "context": "Multiple held senders can be ready at the same recipient boundary.",
+  "decider": "Developer D114, MIK-R100@v1 rule 4b",
+  "id": "DEC-K31DM9",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "route:mcp/src/agents_remember/cli"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_held_queue.py variable-length two-delivery and six-message three-delivery tests pass; scratch/worker/5e0b3a10-7a35-4c5e-9f11-100000000001/xdg/r6-probe-after.txt sha 628ed08eb73c: 214-byte witness accepted [191,214] actual=2"
+      ],
+      "path": "l100-knowledge-handoff.json"
+    },
+    "handoffEntry": "L100-R100-4b-minimum-partition",
+    "leaf": "260928-MIK-L100",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

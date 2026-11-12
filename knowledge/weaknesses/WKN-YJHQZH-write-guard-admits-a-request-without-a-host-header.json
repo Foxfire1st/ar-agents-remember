@@ -1,0 +1,29 @@
+{
+  "anchor": {
+    "blob": "11960a98eead6a9c175e735a90d526443314a73a",
+    "content": "sha256:cae27435a536fd410de74f3a20d6180c97e73f6fd12dc1975de1047991ba1eb2",
+    "locator": {
+      "kind": "symbol",
+      "name": "host_refusal"
+    },
+    "path": "mcp/src/agents_remember/serving/write_guard.py"
+  },
+  "id": "WKN-YJHQZH",
+  "kind": "fault",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-a004"
+    },
+    "handoffEntry": "L97-weakness-29",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L97"
+  },
+  "state": "open",
+  "statement": "The write guard checks the Host header only when a request carries one, so a request without a Host header is admitted."
+}

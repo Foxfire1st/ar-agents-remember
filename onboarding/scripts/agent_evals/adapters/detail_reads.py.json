@@ -1,0 +1,40 @@
+{
+  "path": "scripts/agent_evals/adapters/detail_reads.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b104c9af37052bc41feb6d80174649da708ba356",
+        "content": "sha256:3a62768f2c702d8b85050cd73fa666e574874af59a6b21f814e0d067052cc6da",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-1GBPGT",
+      "invariant": "INV-HXTSVY",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-text-delivery",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "It observes detail reads through retained native calls and body witnesses without treating incomplete observation as a measured zero.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b104c9af37052bc41feb6d80174649da708ba356",
+            "content": "sha256:3a62768f2c702d8b85050cd73fa666e574874af59a6b21f814e0d067052cc6da",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

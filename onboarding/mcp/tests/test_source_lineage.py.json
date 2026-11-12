@@ -1,0 +1,295 @@
+{
+  "path": "mcp/tests/test_source_lineage.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Leaf identity proves code and memory transitively",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5193af350917937439c3bff06695f42f14858a7d",
+            "content": "sha256:c67e30f62dbcb268e3bda6e74dcedad3c384287e00692f9dc579902b2ca9c36d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_leaf_identity_proves_code_and_memory_transitively"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5193af350917937439c3bff06695f42f14858a7d",
+            "content": "sha256:69aba568e3b54b5c1682c2752b0b1a28fd43fb6ef1ca517eac1a987496f9e970",
+            "locator": {
+              "end": 78,
+              "kind": "line_range",
+              "start": 60
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "A leaf that owns its own commit is carried (merge, not refusal).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5193af350917937439c3bff06695f42f14858a7d",
+            "content": "sha256:5adc4a3c4508cb7a6511df6429706ddb32cff6836cf29e14c07a96766a95dfd8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_closeout_boundary_carries_a_leaf_that_owns_its_own_commit"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "An unprovable break escalates to the human developer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5193af350917937439c3bff06695f42f14858a7d",
+            "content": "sha256:0c7541925a8d090d4dfe4ce69d47db061606345b16cfc62f41168a409b6e06db",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unprovable_lineage_escalates_to_the_human_developer"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "A retained sync conflict hands back both worktrees and their duties.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5193af350917937439c3bff06695f42f14858a7d",
+            "content": "sha256:32c039af9dd029d0c97615eba599a81513545e30ccb038cba14e025d31102155",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_retained_sync_conflict_hands_back_both_worktrees_and_their_duties"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "A dirty (uncommitted) candidate is parked, carried, and returned by the closeout boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5193af350917937439c3bff06695f42f14858a7d",
+            "content": "sha256:b4dda508d68987761117f1519b8cb0d5084212a571c9452246a7e2f00d18ac19",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_closeout_boundary_carries_an_uncommitted_candidate"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "A parked-candidate reapply conflict surfaces as `source-lineage-sync-conflict` with the candidate recoverable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5193af350917937439c3bff06695f42f14858a7d",
+            "content": "sha256:008f93e788a7bbf0fa2b98f6a4a238668ea323bdeec7d967bcab77c94295c350",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_closeout_boundary_retains_a_parked_candidate_conflict"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The moved-source integration guidance routes through the sync.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5193af350917937439c3bff06695f42f14858a7d",
+            "content": "sha256:bb00e3b379548898abb19c3f136df69d55dafa22bba4e09895efda5dd5f7989d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_source_moved_integration_guidance_routes_through_the_sync"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Organizational super move blocks the leaf boundary",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5193af350917937439c3bff06695f42f14858a7d",
+            "content": "sha256:94c0ca724e879ac26711a4d16c7be767a5c8899d0461d99853b277f69fa9e3a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_organizational_super_move_blocks_the_leaf_boundary"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5193af350917937439c3bff06695f42f14858a7d",
+            "content": "sha256:bf2156a7c5261f905a5cabd2b984e6b197c20e037e199927a904f3cb7a6012a6",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 80
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Start rechecks exact source tips before start effects",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5193af350917937439c3bff06695f42f14858a7d",
+            "content": "sha256:96da59186087ffd851e136797566b4c6b185e9a7c9d3df4bae6997017fb702dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_start_rechecks_exact_source_tips_before_start_effects"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5193af350917937439c3bff06695f42f14858a7d",
+            "content": "sha256:da730d241989c1d41f258af9c9a2f2ea1f5fd2080d2ed3f9f425c377c1f31255",
+            "locator": {
+              "end": 127,
+              "kind": "line_range",
+              "start": 96
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Attach refuses before stale task context is resumed",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5193af350917937439c3bff06695f42f14858a7d",
+            "content": "sha256:cbd95e5acc5ca19e86d7187aac362e36d770576690dbc96d8b666dadf81764c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_attach_refuses_before_stale_task_context_is_resumed"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5193af350917937439c3bff06695f42f14858a7d",
+            "content": "sha256:1e7af144ecfca03d27f99005acd443f28b8f520435a2843d37c73cc891b0c28a",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 129
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Parent and leaf paths may be sibling worktrees of one repository",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5193af350917937439c3bff06695f42f14858a7d",
+            "content": "sha256:ac913249dc4dcf981205fc3a1808ccd247cf04b5db26708929744a4afa0dbe8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_parent_and_leaf_paths_may_be_sibling_worktrees_of_one_repository"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Lifecycle boundary requires the full transitive chain",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5193af350917937439c3bff06695f42f14858a7d",
+            "content": "sha256:c2c593d004407585eb79f4c72474d1327d797085cdb3165a868ce768cc4b8a76",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_lifecycle_boundary_requires_the_full_transitive_chain"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The closeout-boundary class proves the self-healing source-lineage guard.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5193af350917937439c3bff06695f42f14858a7d",
+            "content": "sha256:093c7578ca90ace54ec9033f10319c231991cf7d59ee58d7fc97fc22261440d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "CloseoutSourceLineageHealTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "A plain fast-forward break is carried by the closeout boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5193af350917937439c3bff06695f42f14858a7d",
+            "content": "sha256:a63e0da2b69e5f3201e562cc80aad66e3f04963832f69b43e06cb8be8612b094",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_closeout_boundary_heals_a_plain_fast_forward_break"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "A `dry_run` closeout refuses with the preview duty and moves nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5193af350917937439c3bff06695f42f14858a7d",
+            "content": "sha256:f4f96f0add3015ecca10828e4559e6bc600d536876290ade7beca3b99f58e023",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_closeout_preview_refuses_without_moving_the_break"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

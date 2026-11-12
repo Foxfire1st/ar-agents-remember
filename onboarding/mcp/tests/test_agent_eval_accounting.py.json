@@ -1,0 +1,40 @@
+{
+  "path": "mcp/tests/test_agent_eval_accounting.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "eb8f184bd012e413f757718a89dc74562da9d4df",
+        "content": "sha256:bed799c2abe26b0ba66fda6585f09eefca9d49d5a7f81d311f2be266d2f52ef7",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-N1GTEJ",
+      "invariant": "INV-EC2JFV",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-accounting",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "This regression module checks this obligation through test_real_dispatch_with_controlled_actor_deadline_records_no_liveness_claim, test_helper_liveness_deadline_is_its_own_ungraded_state, test_tooling_smoke_retains_usage_without_becoming_measurement_evidence, test_tooling_checks_cannot_clear_a_failure_or_consume_a_final_full and its remaining test cases.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8f184bd012e413f757718a89dc74562da9d4df",
+            "content": "sha256:bed799c2abe26b0ba66fda6585f09eefca9d49d5a7f81d311f2be266d2f52ef7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

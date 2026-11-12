@@ -1,0 +1,67 @@
+{
+  "path": "mcp/tests/test_provider_containment.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Stale armed snapshot is vetoed by disk",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f0703a055f6214cd9a5bfde29f9c640a1dfa2d4",
+            "content": "sha256:dea67cd0dea03a2ccbca36ade60efa475519727d1f91f576708dcf8bc5332eff",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_stale_armed_snapshot_is_vetoed_by_disk"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2f0703a055f6214cd9a5bfde29f9c640a1dfa2d4",
+            "content": "sha256:e1ddf69dbeae5c29e948c77387bfd63de2f96f99c582c61a6a0f7d81018b7fef",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 35
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "On-disk unconfigured authority vetoes a stale armed snapshot.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f0703a055f6214cd9a5bfde29f9c640a1dfa2d4",
+            "content": "sha256:dea67cd0dea03a2ccbca36ade60efa475519727d1f91f576708dcf8bc5332eff",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_stale_armed_snapshot_is_vetoed_by_disk"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Start result explicitly names the Requires check it did not perform.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f0703a055f6214cd9a5bfde29f9c640a1dfa2d4",
+            "content": "sha256:829b5939d5f5b0296ff9bc30a8f4592dee25884e1c72a853b639bb1da896f1fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_start_result_reports_that_the_declared_dependencies_were_not_checked"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

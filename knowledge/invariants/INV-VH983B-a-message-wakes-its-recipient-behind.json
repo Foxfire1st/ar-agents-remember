@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Keeping body/evidence out of wake text prevents an unbounded payload from consuming the recipient context."
+  },
+  "applicability": "The native text payload of a filed role_message delivery.",
+  "conditions": [
+    "A complete message file was published before the send."
+  ],
+  "exclusions": [
+    "role_start assignment briefs",
+    "Developer chat text and native host chat display",
+    "Messages via removed earlier orchestration tools",
+    "A body/attachment-free wake-up receives no file pointer line."
+  ],
+  "id": "INV-VH983B",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_paseo_role_messages.py (messageFile/sha, wake/file-line composition, self-message); checks-attempt4/pytest-focused.log; worker report Attempt 4"
+      ],
+      "path": "ingest-wave1.json"
+    },
+    "handoffEntry": "L117-R04",
+    "leaf": "260928-MIK-L117",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A message wakes its recipient behind a sender line with the wake text and, where a file belongs, one last line naming the file and its SHA-256; the payload itself travels as files.",
+  "status": "proposed",
+  "supersedes": []
+}

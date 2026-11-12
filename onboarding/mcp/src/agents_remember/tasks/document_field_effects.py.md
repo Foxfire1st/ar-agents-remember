@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/tasks/document_field_effects.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/tasks/document_field_effects.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-09T14:45+02:00|
-| lastVerifiedCommitHash |  `723fd2f1becc130d85d7a6b285b93115be0df852`|
-| lastVerifiedCommitDate |  2026-09-13T02:07:03+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Tasks overview](overview.md)
@@ -23,6 +13,8 @@ from using whole-document bytes as a proxy for one semantic concern and refuses 
 until the new field is classified.
 
 ## Code Commentary
+
+intentReview and its state/decisionRef/agreedRevision, plus revisionId/sha256/packetVersions, are NORMATIVE fields.
 
 ### Logic
 
@@ -52,6 +44,14 @@ without task-driven queue refresh. `validate_task_document_mutation_classes` ref
 vocabulary change without a corresponding mutation class, and unclassified schema models refuse
 before write.
 
+The new root memberships are exact: `completedAt` is `AUDIT`, `waitsFor` is `STRUCTURAL`, and `nonGoals`/`acceptance` are `NORMATIVE`. Consequently a time-only change is operational-audit, a dependency change topology, and fixed-prose changes intent. Classification still follows the complete recursive delta, not an operation name. Major-only display counting does not remove nested step/substep progress/readiness field memberships or change all-unit completion checks.
+
+The taxonomy declares `SubTaskRef.retirement`, the fields of `MasterRetirementProof`, and the endpoints
+of `RetirementEdgeSelection` as `AUDIT`. Exact mutation classification also includes nested model effects:
+`TaskDocumentRef.repository` and `.path` are normative and structural. Adding or changing a proof can
+therefore contribute those effects; an identical retry contributes no delta. Projection invalidation
+follows the complete classified delta, not the retirement operation's name.
+
 ### Conventions
 
 - Effect wire values use stable kebab-case names.
@@ -72,12 +72,46 @@ before write.
   missing or stale mappings refuse classification before write.
 - `invalidates_projection` is a derived fact of the classified delta: topology/intent/completion
   changes invalidate, acceptance-evidence and operational-audit changes alone never do.
+- **`knowledgeMaintenanceScope` is `LIFECYCLE` (MIK-R08, architect ruling 4).** Like `lifecycleId`, it
+  records how the leaf is run, not what it intends: classifying it `NORMATIVE` would require a
+  `task-intent/v1` schema change, because `_validate_allowlisted_classifications` refuses a normative slot
+  outside the intent. As a `LIFECYCLE` field, a change to it is an `operational-audit` mutation and never
+  invalidates a closeout projection.
+- **`expectedKnowledgeEffects` is `NORMATIVE` (MIK-R11 rule 1: `NORMATIVE_INTENT`).** Unlike
+  `knowledgeMaintenanceScope`, a leaf's declared knowledge effects are part of what it intends, so the field
+  and the three fields of `ExpectedKnowledgeEffect` (`subject`, `effect`, `requirementRef`) are classified
+  `NORMATIVE`, and MIK-R11 adds the matching optional slot to `task-intent/v1` (`task_intent.py`), which keeps
+  `_validate_allowlisted_classifications` symmetric. A change to it is an `intent` mutation.
 
 ### Todos
 
 None.
 
-## Docs References
+## Current Contract
+
+memoryReviewState is classified EVIDENCE, as are ReviewState.recordedRounds and every ReviewRound field (round, kind, findingsRemain, verdictRef). Recursive classification therefore handles the new nested model and pure review-evidence deltas remain acceptance-evidence rather than topology/intent/readiness invalidation. Exhaustiveness remains fail-closed; classification itself does not authenticate verdicts or choose launch escalation.
+
+
+The governing workflow opens an independent memory review after CODE PASS on the same task using begin_review/record_review with reviewKind=memory. It has its own immutable baseline and shrinking IDs, under the same settings limit and extra-round approval rule, and never resets code reviewState. The signed rollout applies only to memory reviews begun after L88 lands; already-underway reviews (L168, L56, L57, L59) finish with their sealed-report workflow, with no migration/backfill. This describes the candidate contract, not a claim that the serving build already supports it.
+
+This account is bound to the candidate source, not a claim of a running serving build or a fresh execution/acceptance verdict. Existing historical accounts remain historical.
+
+## Review-base evidence classification
+
+RouteReviewRecord.baseCommit is classified EVIDENCE beside candidateTree. The field changes review evidence, not task intent or structural topology. The exhaustive schema check remains fail-closed: registration is necessary for the new field, not evidence of a new lifecycle or projection-invalidation grant.
+
+## Evidence
+
+- The new review-base stamp belongs to the existing evidence plane. [16]
+
+
+
+- Worker/Curator typed review census, record-only exclusion and unknown history. [12]
+- Reason admission, threshold and differing-harness/model inheritance boundary. [13]
+- Record-only memory identity comes from memory authority, never the sibling code root. [14]
+- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [15]
+
+### Docs References
 
 No external Domain Documentation source is configured; the schema taxonomy and mutation
 classification are repository-owned. The governing CCR-R04@v1 packet is the task authority for
@@ -86,46 +120,39 @@ the classification and invalidation semantics this file implements:
 It is an authority link, not a resolved dependency-version source; current behavior is
 evidenced by the repository-owned references below.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| R04's exhaustive mutation taxonomy and task-first projection boundary are implemented by the closed effect map and canonical scope resolver. | `TASK_DOCUMENT_FIELD_EFFECTS`; "def classify_task_document_mutation("; `resolve_projection_scope_union` | mcp/src/agents_remember/tasks/document_field_effects.py:144-358; mcp/src/agents_remember/tasks/document_field_effects.py:345-358; mcp/src/agents_remember/application/task_docs/task_doc_queue_scope.py:38-86 |
 
-## Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The closed effect vocabulary and projector are declared together. | `TaskDocumentFieldEffect`; `TaskDocumentFieldEffectProjector` | mcp/src/agents_remember/tasks/document_field_effects.py:50-59; mcp/src/agents_remember/tasks/document_field_effects.py:101-122 |
-| The taxonomy explicitly covers the root and every nested persisted model, including evidence-dependency and task-intent contracts. | `TASK_DOCUMENT_FIELD_EFFECTS` | mcp/src/agents_remember/tasks/document_field_effects.py:140-303 |
-| The effect-to-mutation-class map and the exact before/candidate classifier drive projection invalidation decisions. | `FIELD_EFFECT_MUTATION_CLASSES`; `classify_task_document_mutation`; `TaskDocumentMutationClassification` | mcp/src/agents_remember/tasks/document_field_effects.py:345-358; mcp/src/agents_remember/tasks/document_field_effects.py:334-342; mcp/src/agents_remember/tasks/document_field_effects.py:80-95 |
-| Missing or stale mutation mappings and unclassified models refuse before write. | `validate_task_document_mutation_classes`; `_changed_model_effects` | mcp/src/agents_remember/tasks/document_field_effects.py:361-371; mcp/src/agents_remember/tasks/document_field_effects.py:374-394 |
-| Runtime schema discovery refuses missing, stale, or empty classifications. | `task_document_schema_models`; `validate_task_document_field_effects` | mcp/src/agents_remember/tasks/document_field_effects.py:442-456; mcp/src/agents_remember/tasks/document_field_effects.py:487-502 |
-| Effect projection retains only fields classified for the requested plane. | `fields_with_effect`; `project_model_field_effect` | mcp/src/agents_remember/tasks/document_field_effects.py:518-528; mcp/src/agents_remember/tasks/document_field_effects.py:531-542 |
+- R04 taxonomy and task-first projection scope remain separate owners; the root map now classifies completedAt as audit, waitsFor as topology, and nonGoals/acceptance as intent. Invalidation follows recursive classified deltas, never operation-name inference. [1]
 
-## Cross-Repo References
+
+
+
+### Repo-Internal References
+
+- MIK-R08's task-document field is classified with the lifecycle plane. [2]
+- MIK-R11's declaration and its nested fields are classified normative. [3]
+- The closed effect vocabulary and projector are declared together. [4]
+
+
+- The exhaustive map covers root and nested persisted models, including the four new root fields; display-only major counting does not weaken nested readiness memberships. [5]
+
+
+
+- The effect-to-mutation-class map and the exact before/candidate classifier drive projection invalidation decisions. [6]
+- Missing or stale mutation mappings and unclassified models refuse before write. [7]
+- Runtime schema discovery refuses missing, stale, or empty classifications. 
+- Effect projection retains only fields classified for the requested plane. [9]
+
+### Cross-Repo References
 
 None; this is the task-schema authority inside agents-remember.
 
-## Update History
+- The retirement proof, its edge selection and the row's `retirement` field are classified as audit. [10]
 
-- 2026-09-13T00:40+02:00 — 260831-LOCR-L33 curator: recorded the classification of the new persisted
-  `Step.note` field as `AUDIT`, and used it as the worked example of the taxonomy's exhaustive,
-  fail-closed rule (a persisted field without a classification refuses before write). No mutation-class
-  mapping or projection policy changed, because `AUDIT` already maps to `operational-audit`.
-  Verification metadata remains closeout-owned; no acceptance claim.
+- Exact mutation effects recurse through nested models; identical inputs have no delta. [11]
 
-- 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
+- intentReview and its state/decisionRef/agreedRevision, plus revisionId/sha256/packetVersions, are NORMATIVE fields. [17]
 
-- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for
-  3e276f2b2052b641afbee180a472259f21b500df (CCR-R04@v1/L04): recorded the mutation-classification
-  half added by L04 — `TaskDocumentMutationClass`,
-  `TaskDocumentMutationClassification`, `FIELD_EFFECT_MUTATION_CLASSES`,
-  `classify_task_document_mutation`, `validate_task_document_mutation_classes`, and the recursive
-  changed-value helpers — and extended the taxonomy account to the evidence-dependency and
-  task-intent contracts it now covers. Verification is pinned to the owning commit.
+- Runtime schema discovery refuses missing, stale, or empty classifications. [8]
 
-- 2026-09-01T08:13+02:00 — Corrected the leaf-identity boundary to the implemented dual
-  classification of `TaskDocument.id` and `TaskDocument.kind`; no nonexistent parallel identity
-  constant is implied. Verification remains closeout-owned.
-
-- 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: created the file card for the exhaustive
-  task-document field-effect taxonomy. Verification remains closeout-owned.
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/tasks/document_field_effects.py::validate_task_document_field_effects - the bytes it recorded now occur 8 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

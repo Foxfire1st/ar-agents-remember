@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "A held `j` can outrun the answer that brings the next family. \"No later change in this tree\" then stands beside a later change and tells the reader the walk is over when it is not. A status cleared by an update made while rendering comes back, because React can apply a queued status after that render. The rule is realized in the traversal hook and in the tree component, and a case on the hook alone and mounted cases guard it."
+  },
+  "applicability": "The j/k block traversal status of the review page.",
+  "conditions": [
+    "The status key is the ordered key sequence of actual drawn block stops, including lane hunk stops.",
+    "The first render with a different stop key gates out the old status and a layout effect clears it; rendering updates no status state.",
+    "Repeating the same message for the same stop key is a no-op; a selected stop clears the status, and an end retains the selection."
+  ],
+  "exclusions": [
+    "Tree-only filter/view changes that preserve the same actual stops do not promise status invalidation.",
+    "Continuation groups are places rather than traversal stops."
+  ],
+  "id": "INV-CK3PTB",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "requirements/MIK-R39-v1-keyboard-traversal-keeps-the-walked-tree.md rule 11; notes/reports/260928-MIK-L39-worker.md; notes/reports/260928-MIK-L39-review-R1.md, -R2.md and -R3.md"
+      ],
+      "path": "notes/reports/260928-MIK-L39-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R39@v1-end-message-belongs-to-its-rows",
+    "leaf": "260928-MIK-L39",
+    "task": "260928-MIK"
+  },
+  "revision": 3,
+  "schema": "ar-invariant/v1",
+  "statement": "A traversal end message is shown only for the ordered drawn block stops it described; once different stops have been shown it is cleared and does not return when the same stops return.",
+  "status": "proposed",
+  "supersedes": []
+}

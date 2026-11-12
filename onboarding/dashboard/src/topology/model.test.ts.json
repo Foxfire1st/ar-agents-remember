@@ -1,0 +1,42 @@
+{
+  "path": "dashboard/src/topology/model.test.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d2c3873c70ee6c993468fb850829c0acd0558cd3",
+        "content": "sha256:fa137e9bbd27800a3b40fdd0721eab815cab0a637579e431c4c3d0f17006abdf",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-X34AKJ",
+      "invariant": "INV-XZYGEB",
+      "origin": {
+        "handoffEntry": "INV-XZYGEB",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The topology model is where the label's text is chosen, so its test holds the no-clock form.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "7": {
+      "note": "The current topology tests cover native task/worktree identity and status, shared limits, active groups and repository parenting, and assert only ws/repo/wt node kinds with no provider satellites.\n\nAnchor: `describe('entry worktrees in the topology', () => {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d2c3873c70ee6c993468fb850829c0acd0558cd3",
+            "content": "sha256:75c02f58645cf790509b912ae8b4f8fe9088765cb4ee4ce926ec2d4539a61483",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 46
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

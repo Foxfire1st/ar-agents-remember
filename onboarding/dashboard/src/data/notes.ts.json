@@ -1,0 +1,85 @@
+{
+  "path": "dashboard/src/data/notes.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The folder, resolve and read endpoints this client wraps.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+            "content": "sha256:588ddec25312110e5e0f19ec9721f196c744466d8edea4c97b9f100cd90cab6e",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_folder"
+            },
+            "path": "mcp/src/agents_remember/serving/notes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The shared transport (`getJson`, `qs`, `FilesApiError`) reused here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5114f5644a55359a177e60b5dbfa197f8a1f271a",
+            "content": "sha256:11bda74086b107d0f8086147192b1bb72ed321ba4a7307b33e0cba67e2a3ad2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "qs"
+            },
+            "path": "dashboard/src/data/files.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5114f5644a55359a177e60b5dbfa197f8a1f271a",
+            "content": "sha256:68f2cd9abb8c8495ee64946161bcf0b427cbf2099261e7064010023677b47eb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "FilesApiError"
+            },
+            "path": "dashboard/src/data/files.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The task page owns the Notes line and delegates reader opening.\n\nAnchor: `TaskNotes`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f02c66bf634f3db709b05706fd41125d90092f39",
+            "content": "sha256:86768c2f73aaf4211588f49da8c710642ab6022be7819a385f6c57cfec332997",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/TaskNotes.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The test suite for this module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7dea914b7612ec922cac513d3a3384c174847442",
+            "content": "sha256:ca42a1560773ed80909cbf6a88e12d75945d9e27b991cbe4111c0a9b73654b15",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/notes.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

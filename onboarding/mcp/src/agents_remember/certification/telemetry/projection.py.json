@@ -1,0 +1,121 @@
+{
+  "path": "mcp/src/agents_remember/certification/telemetry/projection.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The fold turns the durable event stream into one lossless boundary/gate projection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b25744813eebf8bee4c809cf8953be790dc834bc",
+            "content": "sha256:5f4e0e30eac9d4ce3c2217b34915e236c2d9161bc6bd467f0607fc3c90a792f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_execution_telemetry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The projection model is digest-bound and requires exactly five gates.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b25744813eebf8bee4c809cf8953be790dc834bc",
+            "content": "sha256:8ee03de9c5813c593218a4f8826402620b0417f6e596bbbccbc4f3660a96fed4",
+            "locator": {
+              "kind": "symbol",
+              "name": "TelemetryProjection"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b25744813eebf8bee4c809cf8953be790dc834bc",
+            "content": "sha256:4aac848efb038b1324d6f3b18f98f3009a1a5eae98e154dfa8d6555bd51bf26b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_verify_digest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Per-gate fold branches reconstruct rail history, catalogs, certificate decisions, blocking, and invalidation from events alone.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b25744813eebf8bee4c809cf8953be790dc834bc",
+            "content": "sha256:237c0bc485bc79433aa728f77075e0a6554724191cfc2ddf656c3a40e921ae14",
+            "locator": {
+              "kind": "symbol",
+              "name": "_fold_gate_state"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b25744813eebf8bee4c809cf8953be790dc834bc",
+            "content": "sha256:97c60698ecdcc2b06c2b84ca2141b634a74598d8208fd1c15db797b3c677fd7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_fold_catalog_complete"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b25744813eebf8bee4c809cf8953be790dc834bc",
+            "content": "sha256:d475c120bb2e0a469a6f0227963d6765cb073a96da0c95f5490f437084a98023",
+            "locator": {
+              "kind": "symbol",
+              "name": "_fold_certificate_invalidated"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Gate history for one gate is exposed without a full-stream fold.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b25744813eebf8bee4c809cf8953be790dc834bc",
+            "content": "sha256:00c702be29811930b95d3eac4e4b43e9b45147778d0aa89208b6f3e1efb456e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_gate_history"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Span totals aggregate the events' spans without double counting overlap.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44254dc28868d306abe218a6362867bf90b1341d",
+            "content": "sha256:ec5a4cd5e03e12606a96b2a81f26a3025b034e37e632ddf0ee80639e1bbc31df",
+            "locator": {
+              "kind": "symbol",
+              "name": "aggregate_span_totals"
+            },
+            "path": "mcp/src/agents_remember/certification/telemetry/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

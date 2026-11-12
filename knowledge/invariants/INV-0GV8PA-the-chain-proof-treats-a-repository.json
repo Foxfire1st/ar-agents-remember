@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "Position collection and step admission sit in the spine walk and the merge-admission module, so one statement keeps a default-line crossing from failing the chain proof."
+  },
+  "applicability": "The chain proof over a master line that was synchronized from the repository default branch.",
+  "conditions": [
+    "The sync log entry records from, to and source position pairs."
+  ],
+  "exclusions": [
+    "Master lines that never synchronized from the default branch."
+  ],
+  "id": "INV-0GV8PA",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_publication_merge_shape.py::test_a_default_line_crossing_passes_the_chain_proof and siblings; rehearsal landing steps"
+      ],
+      "path": "l60-plan4"
+    },
+    "handoffEntry": "L60-chain-default-sync-positions",
+    "leaf": "260928-MIK-L60",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The chain proof treats a repository-default sync's recorded source pair as an official position: a sync-log entry contributes its from, to and source pairs, a step admits history up to a position it reaches but does not start beyond, and the landing source positions include codeSourceCommit and memorySourceCommit.",
+  "status": "proposed",
+  "supersedes": []
+}

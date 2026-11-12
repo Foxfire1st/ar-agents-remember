@@ -1,0 +1,145 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge_index/cache.py",
+  "realizes": [],
+  "references": {
+    "2": {
+      "note": "The chosen location and eviction defaults.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69cdf53fcee74f39532de9beb47c69eac568778b",
+            "content": "sha256:e1edb9c0000b5af1a403e9bf1a822a4bcd8ea7846b5af47dcd8ccf84e67aa97c",
+            "locator": {
+              "kind": "symbol",
+              "name": "CACHE_DIRECTORY_PARTS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69cdf53fcee74f39532de9beb47c69eac568778b",
+            "content": "sha256:c2a8d161f346fb4f777e75b89cf8cc9fb971a3296a960a95bd67a2465031abb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "DEFAULT_MAX_AGE_SECONDS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69cdf53fcee74f39532de9beb47c69eac568778b",
+            "content": "sha256:a86e9b04cf2b0c189f9121360acdb900a16e9c3fd5f929c81931e23eb7161584",
+            "locator": {
+              "kind": "symbol",
+              "name": "DEFAULT_MAX_BYTES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69cdf53fcee74f39532de9beb47c69eac568778b",
+            "content": "sha256:2ed879b0f9b7814345cc200e0a0f193f95d3a71131cd5fdad1f9ecc9abc70951",
+            "locator": {
+              "kind": "symbol",
+              "name": "default_cache_directory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Lookups recompute the key and reuse or build.\n\nAnchor: `for_directory` `for_git_tree`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69cdf53fcee74f39532de9beb47c69eac568778b",
+            "content": "sha256:648f87b3358b802b3e2b5f6ce7c536e835386e45a97789256d040d6a518fbe04",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Reuse only for the matching key and format; build through a temporary file and a rename.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69cdf53fcee74f39532de9beb47c69eac568778b",
+            "content": "sha256:81dc260e4d59f7baba1a4af5dd7bdefc3b9012cce7511d36121548387e0fb955",
+            "locator": {
+              "kind": "symbol",
+              "name": "CacheOutcome"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The cache cases: reuse, rebuild and deletion, eviction, and the working-tree refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21d471fd2afb3c773c9c4b2b4eeeabecb946fb1c",
+            "content": "sha256:ccd626cf9b37cd415c7884de3676c23a4063275d726554246aec0865768aa106",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_cache_reuses_rebuilds_and_loses_nothing_when_deleted"
+            },
+            "path": "mcp/tests/test_knowledge_index.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "21d471fd2afb3c773c9c4b2b4eeeabecb946fb1c",
+            "content": "sha256:f6cc02aeae7ad68edf6715db1a5657f50ed03633b5677c517b4cf0d854a232a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_old_and_excess_index_files_are_evicted"
+            },
+            "path": "mcp/tests/test_knowledge_index.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "21d471fd2afb3c773c9c4b2b4eeeabecb946fb1c",
+            "content": "sha256:f2001808a18864adeafdddb1615972f8aad215d103b38d9f0b49748d5f6b6859",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_cache_is_never_placed_inside_a_git_working_tree"
+            },
+            "path": "mcp/tests/test_knowledge_index.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "An edited working tree is never answered from the previous content.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21d471fd2afb3c773c9c4b2b4eeeabecb946fb1c",
+            "content": "sha256:ba9a51bb05419c5c919c4516d9bfb58c2c822519aa7098289778528e6d48114f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_edited_working_tree_is_never_answered_from_the_previous_content"
+            },
+            "path": "mcp/tests/test_knowledge_index.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

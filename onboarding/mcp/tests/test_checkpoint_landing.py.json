@@ -1,0 +1,103 @@
+{
+  "path": "mcp/tests/test_checkpoint_landing.py",
+  "realizes": [],
+  "references": {
+    "10": {
+      "note": "Completed masters refused the weaker route; stale candidates refused",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d02c4faec8b47837264a67c6a8b6548d8599da3",
+            "content": "sha256:cca4da551af705df9595490b07cd6ac7daa55e52e5f9fcf894151847a5e46386",
+            "locator": {
+              "kind": "symbol",
+              "name": "SeriesCheckpointAuthorityTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Landed masters cannot be abandoned; never-integrated terminal case allowed",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d02c4faec8b47837264a67c6a8b6548d8599da3",
+            "content": "sha256:d4f8ceadcb0e8a0051500672bd33269f77ff6e685f75fa897ccaf505646f259b",
+            "locator": {
+              "kind": "symbol",
+              "name": "SeriesAbandonGuardTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Real memory repository backing the fixture",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d02c4faec8b47837264a67c6a8b6548d8599da3",
+            "content": "sha256:939a4ff1bfb4eeb6c133624e00742e7d97f3e98ba77a9f70124b5d062aaee114",
+            "locator": {
+              "kind": "symbol",
+              "name": "_memory_repo"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Fixture is an external-memory series contract over both repos",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d02c4faec8b47837264a67c6a8b6548d8599da3",
+            "content": "sha256:84d4aed461b43057dcc4f57827ce4f417c3534bd71ea4597c5746d232950ac9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_fixture"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Checkpoint records state and leaves cleanup untouched",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d02c4faec8b47837264a67c6a8b6548d8599da3",
+            "content": "sha256:bce4587c5faf7f54a7c90a4de6a9a4b57db7cc82d139bde003006d007fc14739",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntegrationCellRecordingTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Checkpoint result keeps prior cleanup through status projection",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d02c4faec8b47837264a67c6a8b6548d8599da3",
+            "content": "sha256:3ddcc5b760945537d24cbbadf41ba4de29cda7b008c6c9981331446ce9ae548b",
+            "locator": {
+              "kind": "symbol",
+              "name": "CheckpointResultTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/test_support/agents_remember_test_support/code_quality/post_coverage.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/test_support/agents_remember_test_support/code_quality/post_coverage.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T21:35:26+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489`|
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Quality support overview](overview.md)
@@ -42,37 +32,24 @@ percentage failure. Targeted runs with no production modules are explicitly not 
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured for this repository-local quality policy.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external domain contract governs these post-pytest calculations. | — | — |
+No external domain contract governs these post-pytest calculations.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The source owners below establish these file-local behaviors; this read does not claim a test or certification pass.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Report integrity failures versus diagnostic high scores | `run_crap_calculator` | mcp/test_support/agents_remember_test_support/code_quality/post_coverage.py:36-101 |
-| Locate findings without required coverage percentages | `crap_failure_line` | mcp/test_support/agents_remember_test_support/code_quality/post_coverage.py:104-113 |
-| Diagnostic measured coverage and explicit nonmeasured states | `run_diff_coverage` | mcp/test_support/agents_remember_test_support/code_quality/post_coverage.py:116-162 |
+- Report integrity failures versus diagnostic high scores [1]
+- Locate findings without required coverage percentages [2]
+- Diagnostic measured coverage and explicit nonmeasured states [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository boundary is owned by this module.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Both rails read only the current repository and the wrapper-produced artifact. | — | — |
-
-## Update History
-
-- 2026-09-06T21:35:26+00:00 — Reconciled the d3610903 test-policy reduction against the current source, preserved integrity/ownership boundaries, and replaced stale forcing-suite citations with current owner evidence. Existing verification hash/date retained; source comparison is not final acceptance.
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-
-- 2026-08-10T07:30+02:00 — Created when the unchanged post-pytest rail behavior was extracted
-  from `check.py` during retry-pipeline implementation. Verification metadata remains blank until
-  closeout stamps the code commit.
+Both rails read only the current repository and the wrapper-produced artifact.

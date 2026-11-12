@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "First-error retention and recount are proved by the named passing final-measure case; single-file member of the family."
+  },
+  "applicability": "Every short form built after a log or detail write failure, including late line failures.",
+  "conditions": [
+    "The first attached error stays and rides every rebuilt short.",
+    "Retry failures count as dropped and re-trigger the guard."
+  ],
+  "exclusions": [
+    "Successful writes, which carry log instead of logError.",
+    "Exception text, paths and numbers, which no logError ever holds."
+  ],
+  "id": "INV-MDE1ZN",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_tool_answer_table.py::ToolAnswerFinalMeasureTests::test_two_late_failures_keep_first_error_and_recount (passing in the R6 run)"
+      ],
+      "path": "handoff-2.json"
+    },
+    "handoffEntry": "MIK-R108@v1 §4 logError-fixed",
+    "leaf": "260928-MIK-L108",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Every logError is one of the fixed sentences carrying no path, no exception text and no numbers; the first attached error stays and retry failures only count as dropped before the re-guard.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,292 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L59",
+  "rows": [
+    {
+      "disposition": "updated",
+      "id": "ROW-1BV3MZ",
+      "items": [
+        "sha256:36e7b2b3e5541a04cc274c9e7b80aed77ec9b4796b0bee61910645929c9e024d",
+        "sha256:77543c0e128d32721258bfb0fbbdb822fb8a6643cf715e607ac31eb8526cdb02",
+        "sha256:cb0c7c13b1c1d07ddfe8eeef23e795603df56b24d47661569e770ef3827acade"
+      ],
+      "reason": "Card describes the shared inclusive-range helper over unmodified split lines and preserved terminators/bounds errors.",
+      "sources": [
+        {
+          "blob": "6ab59bcfe206b710044ff478c9b3c3bd53a1f2b5",
+          "path": "mcp/src/agents_remember/models/knowledge_files/anchor_content.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/knowledge_files/anchor_content.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-2WRYSA",
+      "items": [
+        "sha256:7c8bc5b72276c7d5a82f1a608604ece38d5a326f131164065638809c86cab4e9",
+        "sha256:84c33d1cca8775339696255458a91589e90b2bd55ead8b795bd3a87f38ed7b16",
+        "sha256:992a20e0c5852379cf8546aefad1cb3465e02e1296eb944a461eba9c035cd628",
+        "sha256:dc47f559096a9bb19ec6b06a4709130210d096b00c172295f19adbd9e0828999",
+        "sha256:def1c60dca86e47d7c95e255f97cd59995bd51b6b56a2b2d4bf11e9389ba676e",
+        "sha256:f051df17bf371869fb2131b3706c6a506ba68793e58ed096b69fe2262a2e310d"
+      ],
+      "reason": "Card explains one eligible-line scan, stored divider reuse, compatible direct Row construction and preserved table termination/cell behavior.",
+      "sources": [
+        {
+          "blob": "540d50ddada32e2569227e6f005c454b6891f5eb",
+          "path": "mcp/src/agents_remember/memory_quality/style/document_shape/tables.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/style/document_shape/tables.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-4WRMFJ",
+      "items": [
+        "sha256:b95b5dcaedd4a67e581950c9308ba12f2e6c3d08dc2be36a7320f0f3f43df0bb"
+      ],
+      "reason": "The overview retains conversion as a pure pinned-format operation and read-only object resolution; local split reuse changes no route owner, output format, index cache or publication boundary.",
+      "sources": [
+        {
+          "blob": "7a1bc697c90301cd12a587a99b0fc71d2bce4c75",
+          "path": "mcp/src/agents_remember/memory/conversion/code_objects.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-5ER52X",
+      "items": [
+        "sha256:5cdf7da6b0e9100097754336a32e8f67facec37b399751febf75926e86aeaa80"
+      ],
+      "reason": "The shared anchor-content promise remains exact bytes, LF-only splitting, one-based inclusive ranges and no decoding. A reusable helper changes no format, model ownership or anchor meaning.",
+      "sources": [
+        {
+          "blob": "6ab59bcfe206b710044ff478c9b3c3bd53a1f2b5",
+          "path": "mcp/src/agents_remember/models/knowledge_files/anchor_content.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6AP0F4",
+      "items": [
+        "sha256:d2a2dc6738c9ec07fee779a22a211a1462854f35b1433cd8e1203441b0c9f3ee"
+      ],
+      "reason": "Only exact consumer declarations for the retained scan/split module are added; card distinguishes unchanged artifact authority/lifetime from declaration and execution. This hunk adds no independent invariant or revision to the existing catalog/budget obligations.",
+      "subject": "hunk:sha256:d2a2dc6738c9ec07fee779a22a211a1462854f35b1433cd8e1203441b0c9f3ee"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7S0CHJ",
+      "items": [
+        "sha256:b4963d7069a3f4f898649bad0e9f13eb1d931a1d50d4e3bd9d817114743917ca"
+      ],
+      "reason": "Card/reference renews the preserved escaped-pipe assertions through the live cell-spans caller after dead wrapper removal; no new census or test-run claim. This hunk adds no independent invariant or revision to the existing catalog/budget obligations.",
+      "subject": "hunk:sha256:b4963d7069a3f4f898649bad0e9f13eb1d931a1d50d4e3bd9d817114743917ca"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-BNJC7V",
+      "items": [
+        "sha256:41e39b6a5e197458b349a431aadacfa83b1127d3e258c445c4dc435277b5bbc1",
+        "sha256:61bd1af9a7ea2949e38dbfb7187e4901e7a2fcad3811d82ca2910934b1bef72a"
+      ],
+      "reason": "Card/reference renews the preserved Windows-cell three-column/full-document assertion through live cell_spans after dead wrapper removal.",
+      "sources": [
+        {
+          "blob": "9e81f3dd47337d23e215f54aa166552d7da2ab9b",
+          "path": "mcp/tests/test_memory_document_shape.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_memory_document_shape.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BTJDGD",
+      "items": [
+        "sha256:cf078316fd7a9d4eb8819bb5eaa5c569a4590286db7a658bb3c1ebb55fe80bc9"
+      ],
+      "reason": "Card names the retained conversion-cost module in unit-regression, with no new lane, case-budget or execution claim. This hunk adds no independent invariant or revision to the existing catalog/budget obligations.",
+      "subject": "hunk:sha256:cf078316fd7a9d4eb8819bb5eaa5c569a4590286db7a658bb3c1ebb55fe80bc9"
+    },
+    {
+      "considered": [
+        "FAM-VDDPC6",
+        "FAM-Q0MQAE",
+        "FAM-DBX1PN"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-BTX406",
+      "items": [],
+      "reason": "Examined converted-first adoption, structural reference merge and checked test-catalog composition. None has a joint guarantee about conversion scan/split reuse: adding this invariant would broaden unrelated guarantees merely because routes overlap. Its own combined cross-location obligation and three proofs stand without a family; no new joint guarantee beyond that invariant is justified.",
+      "revision": 1,
+      "subject": "membership:INV-V2QBEP"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-DY7TEX",
+      "items": [
+        "sha256:4c0eaa49577306784765a1ca0c6dd8f222c05e8d4d54ba027e57ee03ffbadd26",
+        "sha256:7d974e70855dec1a4289dc57beb4a56b1497b0dbf57c39beb837ba2e0a290cb1",
+        "sha256:8b16cce1a367f2afe8760e98b12e44222eaaa7b26214c0e33d730a03f1b471e6",
+        "sha256:918c968e6b9787a0afa7c2488946b1054b4565c3ae42188bccb57080cbc7cbba"
+      ],
+      "reason": "Card documents supplied-boundary span reuse, locates the no-pipe skip in the rows_of caller and retires the now-deleted split_row definition/export account without losing cell semantics.",
+      "sources": [
+        {
+          "blob": "feb330826f111adec42f9e4703be0f1f052b5ce5",
+          "path": "mcp/src/agents_remember/memory_quality/style/document_shape/inline_scan.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/style/document_shape/inline_scan.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-J522ZW",
+      "items": [
+        "sha256:7ac82550447c90b5bc67a4710e7d8481b9ec3300ac254fdb4605a17f5f91def1"
+      ],
+      "reason": "The overview already describes operation/failure regression protection and declaration-versus-execution boundaries. Three deterministic guards and two retained assertion-path moves change no route purpose, lane policy, fixture authority or budget.",
+      "sources": [
+        {
+          "blob": "1bfb00308241e515a92cac106e6bdc5895b64d83",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "5f7f934e1389e66c3015e24d99780bbe886a7360",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "45175638120aa0d65cfac15d7846fd8f67cbd7e6",
+          "path": "mcp/tests/test_conversion_cost_scans.py"
+        },
+        {
+          "blob": "200a80a5a86766acda65bb578ad829157530397f",
+          "path": "mcp/tests/test_memory_citation_agreement.py"
+        },
+        {
+          "blob": "9e81f3dd47337d23e215f54aa166552d7da2ab9b",
+          "path": "mcp/tests/test_memory_document_shape.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MHXKNT",
+      "items": [
+        "sha256:4cd81b531743603d96cf333027554f39e2eed4c5fcb7143bf45f6ad9d30e98ae"
+      ],
+      "reason": "Import plumbing selects the shared byte-line owner and pre-split range helper for the retained conversion reuse. The semantic reuse obligation is authored on CodeObjects; these import names carry no independent invariant.",
+      "subject": "hunk:sha256:4cd81b531743603d96cf333027554f39e2eed4c5fcb7143bf45f6ad9d30e98ae"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-NW33JY",
+      "items": [
+        "sha256:9d71b9d4614f028416f3445145533e85c7f378b71a0c41e9fb74490da90c1ee0",
+        "sha256:a4dbf975c16b8235ccf81254365e6e450e0ae6d46ede92a3404b97b222832c37"
+      ],
+      "reason": "New ordinary card describes all three deterministic guards and their byte/table and measurement limits; source-bound trace answers the uncovered added-file hunk.",
+      "sources": [
+        {
+          "blob": "45175638120aa0d65cfac15d7846fd8f67cbd7e6",
+          "path": "mcp/tests/test_conversion_cost_scans.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_conversion_cost_scans.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-NZKJ6N",
+      "items": [
+        "sha256:6ad53be2d6b7f925c3f43dc93a7051f8d76171943d320420df94ae7e3dcca318"
+      ],
+      "reason": "The overview distinguishes mechanical checks, source-bound traces and authored judgment; row scan reuse preserves table findings and introduces no new check, gate, certification or ownership.",
+      "sources": [
+        {
+          "blob": "feb330826f111adec42f9e4703be0f1f052b5ce5",
+          "path": "mcp/src/agents_remember/memory_quality/style/document_shape/inline_scan.py"
+        },
+        {
+          "blob": "540d50ddada32e2569227e6f005c454b6891f5eb",
+          "path": "mcp/src/agents_remember/memory_quality/style/document_shape/tables.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-SDC8VM",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "Only exact consumer declarations for the retained scan/split module are added; card distinguishes unchanged artifact authority/lifetime from declaration and execution.",
+      "sources": [
+        {
+          "blob": "1bfb00308241e515a92cac106e6bdc5895b64d83",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-V15F1C",
+      "items": [
+        "sha256:34033d91853ca4d15ef571cfd0954b2298d314904d9f65cc519e3e63f4624bf4"
+      ],
+      "reason": "Card now explains instance-local blob-line reuse, unchanged content semantics and the unmeasured extra representation retained alongside raw blobs.",
+      "sources": [
+        {
+          "blob": "7a1bc697c90301cd12a587a99b0fc71d2bce4c75",
+          "path": "mcp/src/agents_remember/memory/conversion/code_objects.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory/conversion/code_objects.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-XK1P5E",
+      "items": [
+        "sha256:6c05e64799f4b588d4962e3b4ca69b87dba0400a11ac0031fcb780ad011ef383"
+      ],
+      "reason": "Import plumbing selects the shared byte-line owner and pre-split range helper for the retained conversion reuse. The semantic reuse obligation is authored on CodeObjects; these import names carry no independent invariant.",
+      "subject": "hunk:sha256:6c05e64799f4b588d4962e3b4ca69b87dba0400a11ac0031fcb780ad011ef383"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-YFP0PD",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "Card names the retained conversion-cost module in unit-regression, with no new lane, case-budget or execution claim.",
+      "sources": [
+        {
+          "blob": "5f7f934e1389e66c3015e24d99780bbe886a7360",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ZA0A2B",
+      "items": [
+        "sha256:4f3912bee3de0a1e9108483177b58cef92ebef1a1194e4c3da2ea543b691b78a"
+      ],
+      "reason": "Card/reference renews the preserved escaped-pipe assertions through the live cell-spans caller after dead wrapper removal; no new census or test-run claim.",
+      "sources": [
+        {
+          "blob": "200a80a5a86766acda65bb578ad829157530397f",
+          "path": "mcp/tests/test_memory_citation_agreement.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_memory_citation_agreement.py"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

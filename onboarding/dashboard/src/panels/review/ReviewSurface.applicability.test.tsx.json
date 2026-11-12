@@ -1,0 +1,56 @@
+{
+  "path": "dashboard/src/panels/review/ReviewSurface.applicability.test.tsx",
+  "realizes": [],
+  "references": {
+    "16": {
+      "note": "ReviewMainFacts renders changed fields, unresolved references, remaining counts, staleness and submission facts; ReviewRecordIdentities renders comparison, retained revision, expansion and judgment identifiers in Technical details.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49343b438babb334380943fd5a5b14179143b0fe",
+            "content": "sha256:60beda532f522ae1f9cb7eb98ca79ef70e6311dac829a3a6e1ca1e6dfd8d0695",
+            "locator": {
+              "end": 96,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "dashboard/src/panels/review/ReviewRecordPanes.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "49343b438babb334380943fd5a5b14179143b0fe",
+            "content": "sha256:917c026631dfd4c2823996d7f7719305986fb068cd3454434462ff7a8a899d0c",
+            "locator": {
+              "end": 141,
+              "kind": "line_range",
+              "start": 98
+            },
+            "path": "dashboard/src/panels/review/ReviewRecordPanes.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The controlled current sibling test filters leaf judgment rows and excludes the sibling row; it does not revive the removed applicability surface.\n\nAnchor: Surviving-source boundary only",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f76474a70d8b76d40e6c4921c381c8800f9aa29",
+            "content": "sha256:ab8fe4ffc72881f95d3fa7e0bbd03c99cb061b74db5bc335fb6f04c0cfb83230",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "mcp/tests/test_knowledge_review_subject_isolation.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

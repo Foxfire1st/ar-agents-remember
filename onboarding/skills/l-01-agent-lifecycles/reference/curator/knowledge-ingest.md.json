@@ -1,0 +1,96 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/curator/knowledge-ingest.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "1d1dbea7805343e927f75a6c80baf51aa9daa1ff",
+        "content": "sha256:e3bfaeb21b51b048ab12c962b509b43e65844b1225d913da94377881e25a5fd7",
+        "locator": {
+          "end": 11,
+          "kind": "line_range",
+          "start": 5
+        }
+      },
+      "id": "RLZ-K569QYAK",
+      "invariant": "INV-0FBA8M52",
+      "origin": {
+        "leaf": "260921-ICR-L45"
+      },
+      "rationale": "The Curator's ingest preparation sends the curator to the producer entry contract for target rationale, says every target needs its own authored rationale and an optional role, and says the writer never generates a rationale and refuses an unexplained target. This holds before ingest.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "1d1dbea7805343e927f75a6c80baf51aa9daa1ff",
+        "content": "sha256:c6208edcec7dde297b1e7aaeceab4e2f157b02b6029d6426c42062b44aeca10b",
+        "locator": {
+          "end": 13,
+          "kind": "line_range",
+          "start": 11
+        }
+      },
+      "id": "RLZ-S7NDWV",
+      "invariant": "INV-945YZ4",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-945YZ4",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The ingest detail requires an authored rationale on every target and the writer for sidecar JSON. It says what the writer writes and points to the serving-build binding for command-line runs.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Authored knowledge follows the hand-off templates, and each target carries its own rationale.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d1dbea7805343e927f75a6c80baf51aa9daa1ff",
+            "content": "sha256:e3bfaeb21b51b048ab12c962b509b43e65844b1225d913da94377881e25a5fd7",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The writer owns sidecar JSON and the history file, after the serving-build binding.\n\nAnchor: `serving-build.md`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d1dbea7805343e927f75a6c80baf51aa9daa1ff",
+            "content": "sha256:776283630fab47b97774510debc61cc4edefdfaf114f590e5d962bab4701162a",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Plan without commit until free of refusals, then write once; unchanged statements are quoted exactly.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d1dbea7805343e927f75a6c80baf51aa9daa1ff",
+            "content": "sha256:dc83c6afd90033548ad3bbb93f858f2ce6f07210b574adb85ee9e4c1e0bd302a",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 17
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

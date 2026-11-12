@@ -1,0 +1,59 @@
+{
+  "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.test.ts",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "6fd6a527f97a6ec111010f689376cf6e48953acd",
+        "content": "sha256:36e5a29048d3494742df3cf098be07ca0fc9ba9af00581bd2ad78f3ae1d98c1a",
+        "locator": {
+          "kind": "symbol",
+          "name": "F06: incomplete pagination never admits a seat wake; a complete listing does"
+        }
+      },
+      "facet": "Only an exhausted host listing admits a seat wake; a missing or repeated cursor and the page cap leave the seat alone and preserve the parent's line.",
+      "id": "PRF-6MFPDJ",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "MIK-R183@v5/INV-1ZKP4R",
+        "leaf": "260928-MIK-L181"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "6fd6a527f97a6ec111010f689376cf6e48953acd",
+        "content": "sha256:d000522e536fee48193f5eda65bdc74438f0887b0acb47fc122f8e12d2c4bfaf",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-H55V5C",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "INV-1ZKP4R",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The event handler's cost bound is asserted here, which is where a write for timeline traffic would show.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The contributed adapter admits a seat wake only from an exhausted host listing; every incomplete walk leaves the seat alone and preserves the parent's line.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6fd6a527f97a6ec111010f689376cf6e48953acd",
+            "content": "sha256:d000522e536fee48193f5eda65bdc74438f0887b0acb47fc122f8e12d2c4bfaf",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

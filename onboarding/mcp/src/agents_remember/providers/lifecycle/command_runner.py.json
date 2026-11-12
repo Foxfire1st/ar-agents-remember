@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/providers/lifecycle/command_runner.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Runtime environment defaults come from the lifecycle environment module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db36d9a91f2fd8a599c33befdaf138081e456afe",
+            "content": "sha256:9886eed1edb70f95dc6d339cf9ba9939d1a2631df9bf041e86d574f481180c18",
+            "locator": {
+              "kind": "symbol",
+              "name": "subprocess_env"
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/runtime_environment.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

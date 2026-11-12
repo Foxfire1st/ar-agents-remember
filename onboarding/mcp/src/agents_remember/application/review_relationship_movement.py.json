@@ -1,0 +1,86 @@
+{
+  "path": "mcp/src/agents_remember/application/review_relationship_movement.py",
+  "realizes": [],
+  "references": {
+    "17": {
+      "note": "One traversal over the union both snapshots record\n\nAnchor: `relationship_movements`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8810b5f2e85378847113d9ea6246a4fb96def91f",
+            "content": "sha256:31b4506c1ef62e6c77c68efb52f668b00415b0725a84ff746be8e9adbd222cae",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Pairing by the same recorded row, one movement per relationship",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8810b5f2e85378847113d9ea6246a4fb96def91f",
+            "content": "sha256:aec603aba535df52494cf8a07345d717a0a7446e1b81df6ff1372ed2d6823399",
+            "locator": {
+              "kind": "symbol",
+              "name": "_movements"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The search published for a one-sided sentence",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8810b5f2e85378847113d9ea6246a4fb96def91f",
+            "content": "sha256:e63cb0e1884f10bf1baf211781b92cd7acd854a006c2c96a9a8912a2da0735a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_search_of"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Same-citation matching without authored lines",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8810b5f2e85378847113d9ea6246a4fb96def91f",
+            "content": "sha256:568cabb776accefef69576f5c767b8cd42d028928a5d71a70a0fa7647d9f00e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_same_citation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "Continuation by recorded rows only",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8810b5f2e85378847113d9ea6246a4fb96def91f",
+            "content": "sha256:f8fe44e0eb0e1ad4a63a61709655df5fa51539621474b89d22c129f35b7af403",
+            "locator": {
+              "kind": "symbol",
+              "name": "_continues"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,360 @@
+{
+  "path": "mcp/tests/test_knowledge_history_files.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "f3ea385c073b1b0ac82157d901dc5a333c2b7d76",
+        "content": "sha256:5a0149cbb7bdcf94daadfa94c66a0c65642b4f014ef56734465489b0c4f91517",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_writer_history_items_refuse_non_sha256_worklist_ids"
+        }
+      },
+      "facet": "Source-defined regression check; not executed by Curator: Newly authored item labels reject malformed non-sha256 identities.",
+      "id": "PRF-DJERGG",
+      "invariant": "INV-THFEVY",
+      "origin": {
+        "handoffEntry": "L54-curator-proof-MIK-R54-v1-rule-11-wave-76",
+        "leaf": "260928-MIK-L54"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f3ea385c073b1b0ac82157d901dc5a333c2b7d76",
+        "content": "sha256:19c5e23af672d98b91c1e8cd880b0f848935486ca73c419a8339de1cf7fcfb0d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_short_items_are_judged_only_in_the_files_the_reanchor_check_reads"
+        }
+      },
+      "facet": "Five file/base/route shapes show the item population equals the re-anchor scope: an open file judged (also with an open base), the leaf's own closed file judged at its publication, a closed file at a master route not judged, and a file closed by an earlier frozen closeout not judged.",
+      "id": "PRF-HAX9JQ",
+      "invariant": "INV-HR2JKQ",
+      "origin": {
+        "handoffEntry": "MIK-R180@v1",
+        "leaf": "260928-MIK-L178"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f3ea385c073b1b0ac82157d901dc5a333c2b7d76",
+        "content": "sha256:0c2644af9e53ff91013f9faa163c6ca0567eba4fff8afeffff280751d66255d9",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_revision_binding_for_invariant_and_family_rows"
+        }
+      },
+      "facet": "The three rule functions on their own: which dispositions may govern a changed invariant and a family with a changed guarantee, and that a changed row at an unchanged revision is accepted only when an earlier changed row sits at that revision.",
+      "id": "PRF-Q5RMGC",
+      "invariant": "INV-XN0FG8",
+      "origin": {
+        "handoffEntry": "L37-changed-row-governs",
+        "leaf": "260928-MIK-L37"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The conforming example and the owner path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3ea385c073b1b0ac82157d901dc5a333c2b7d76",
+            "content": "sha256:f5519846d66872753a0207719bd947dc068feccb064a8338b98ed6a9aafd75ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_conforming_example_parses_at_its_owner_path_and_formats_canonically"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "Lane registration.  Anchor: \"mcp/tests/test_knowledge_history_files.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5691b694e756469475d783c426d9781ef14c8633",
+            "content": "sha256:2625134fcfb83406e5b418d78ad93206a4edd00e8b5bd448da21ece7e92e0138",
+            "locator": {
+              "end": 232,
+              "kind": "line_range",
+              "start": 232
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The governing-row rules for a changed invariant and a family with a changed guarantee.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3ea385c073b1b0ac82157d901dc5a333c2b7d76",
+            "content": "sha256:0c2644af9e53ff91013f9faa163c6ca0567eba4fff8afeffff280751d66255d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_revision_binding_for_invariant_and_family_rows"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Current source delta inspected statically: Repair six-kind registry and unclaimed-decision prose/caption against exact current assertions; retain set semantics, model/revision/freeze facets and historical execution limits.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3ea385c073b1b0ac82157d901dc5a333c2b7d76",
+            "content": "sha256:b96117176092298c1e55b92efa507f7ac23a7f57e0bbe3c154ac846594151515",
+            "locator": {
+              "end": 297,
+              "kind": "line_range",
+              "start": 288
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f3ea385c073b1b0ac82157d901dc5a333c2b7d76",
+            "content": "sha256:475050a2497b6fc1197f5a08a5e351cb9ef240d510ccab1b8700eed403f7c30e",
+            "locator": {
+              "end": 305,
+              "kind": "line_range",
+              "start": 302
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "Writer and validator token tests distinguish new full-hash admission.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3ea385c073b1b0ac82157d901dc5a333c2b7d76",
+            "content": "sha256:5a0149cbb7bdcf94daadfa94c66a0c65642b4f014ef56734465489b0c4f91517",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_writer_history_items_refuse_non_sha256_worklist_ids"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "Stored closed comparison-base legacy items parse, validate and round-trip unchanged. \\",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3ea385c073b1b0ac82157d901dc5a333c2b7d76",
+            "content": "sha256:6248169899fd855ea15af9f6f86e9b83bb6633f9ec380c75a229e7f70611ae3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_closed_in_comparison_base_legacy_items_parse_and_validate_unchanged"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Item tokens are judged only in the files the re-anchor check reads: five file/base/route shapes. \\",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3ea385c073b1b0ac82157d901dc5a333c2b7d76",
+            "content": "sha256:19c5e23af672d98b91c1e8cd880b0f848935486ca73c419a8339de1cf7fcfb0d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_short_items_are_judged_only_in_the_files_the_reanchor_check_reads"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "File shape, owner and uniqueness.\n\nAnchor: `test_file_shape_owner_and_row_uniqueness_are_enforced`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3ea385c073b1b0ac82157d901dc5a333c2b7d76",
+            "content": "sha256:80099bd1895ac78f78af99defb2566178b0475eb3e251b105839ab62ea68e626",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f3ea385c073b1b0ac82157d901dc5a333c2b7d76",
+            "content": "sha256:d322e562e45f7898083e943e51f7cb2a7f00c2ec3fba081467cfe5c11e5506c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_file_shape_owner_and_row_uniqueness_are_enforced"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The registry set includes eight kinds, with MIK-R53 membership/record; decision dispatch and unclaimed hunk/legacy invariant subjects are explicit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3ea385c073b1b0ac82157d901dc5a333c2b7d76",
+            "content": "sha256:c864971d4f609cc259949d436c717d00a04ae679e2174ddd86d874fba5007cec",
+            "locator": {
+              "end": 330,
+              "kind": "line_range",
+              "start": 283
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f3ea385c073b1b0ac82157d901dc5a333c2b7d76",
+            "content": "sha256:b96117176092298c1e55b92efa507f7ac23a7f57e0bbe3c154ac846594151515",
+            "locator": {
+              "end": 297,
+              "kind": "line_range",
+              "start": 288
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f3ea385c073b1b0ac82157d901dc5a333c2b7d76",
+            "content": "sha256:475050a2497b6fc1197f5a08a5e351cb9ef240d510ccab1b8700eed403f7c30e",
+            "locator": {
+              "end": 305,
+              "kind": "line_range",
+              "start": 302
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Invariant dispositions, covers and effects.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3ea385c073b1b0ac82157d901dc5a333c2b7d76",
+            "content": "sha256:a5253795907644a91a27781cdadecd95ef26ea6bdf7e82b3f4030d9af2563674",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_invariant_row_dispositions_and_shape"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Family rows.\n\nAnchor: `test_family_row_dispositions_and_examined_members`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3ea385c073b1b0ac82157d901dc5a333c2b7d76",
+            "content": "sha256:80099bd1895ac78f78af99defb2566178b0475eb3e251b105839ab62ea68e626",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f3ea385c073b1b0ac82157d901dc5a333c2b7d76",
+            "content": "sha256:5a1fe6d3b0cad1619b4fb2facb8483a8c36255275a9f3ddbe85db6be2f62d677",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_family_row_dispositions_and_examined_members"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Re-anchoring against the candidate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3ea385c073b1b0ac82157d901dc5a333c2b7d76",
+            "content": "sha256:9af3bb5491effb15fefc11368cb5123763b72fdd07df71e2e392b42506d2d7ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_after_anchor_must_equal_the_entry_anchor_in_the_candidate"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The revision binding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3ea385c073b1b0ac82157d901dc5a333c2b7d76",
+            "content": "sha256:0c2644af9e53ff91013f9faa163c6ca0567eba4fff8afeffff280751d66255d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_revision_binding_for_invariant_and_family_rows"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The freeze predicate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3ea385c073b1b0ac82157d901dc5a333c2b7d76",
+            "content": "sha256:cc07275c03ffc4de7ac31092738e9c078adbe1e07f614d48baafd7615173367e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_closed_in_base_implies_byte_identical_in_candidate"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The parallel merge in a real repository.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3ea385c073b1b0ac82157d901dc5a333c2b7d76",
+            "content": "sha256:ccadf67bf45823113abfc3b08498d7233dc827a2239af4a335fb18b7d962ba7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_two_parallel_leaves_merge_their_history_files_without_conflict"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

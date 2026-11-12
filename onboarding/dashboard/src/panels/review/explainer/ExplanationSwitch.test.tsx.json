@@ -1,0 +1,41 @@
+{
+  "path": "dashboard/src/panels/review/explainer/ExplanationSwitch.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The two views are labelled and `aria-selected` reports which one is shown\n\nAnchor: `labels the two views and reports which one is shown`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "110427e878372ac0c22fc28673e1c0d46c7476e9",
+            "content": "sha256:411de13987bb7b9302e35e171c2b15e90cf70df0c2d64f88095a033debe9dd39",
+            "locator": {
+              "end": 181,
+              "kind": "line_range",
+              "start": 41
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Pressing the explanation tab reports the switch, and a retired explainer is named in the label\n\nAnchor: `switches on the developer’s press, and says when the explainer is retired`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "110427e878372ac0c22fc28673e1c0d46c7476e9",
+            "content": "sha256:61395766180fe647fa0256a815449656a53e066608c89e0e4aa49a78268b6d55",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 71
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

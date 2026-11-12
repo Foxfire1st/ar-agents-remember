@@ -1,0 +1,39 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "The member obligations together keep execution prose out, failures actionable and reports reachable by exact request identity. Whole-control wrapping may change row height with available space or control count, but reply length cannot change it."
+  },
+  "guarantee": "The role launcher remains a control strip whose height does not follow reply length; controls wrap whole when they cannot fit, with no reply text, execution-detail prose or report paths. Alongside compact receipt-derived step-up identification, it may show the bounded saved catalog receipt while a fresh answer is pending and the selected parts’ saved or unanswered provenance specified by INV-6SGHBB. It starts exactly its admitted canonical selection, shows the shared preparation truth and keeps failures in one actionable line; Result preserves the selected execution’s exact request identity and opens its report in the existing reader. Ordinary singleton and Projects rows retain their open-request second-start prohibition; selected sprint/master Investigator rows admit separate requests under the shared capacity owner and retain each selected UUID through recovery and remount.",
+  "id": "FAM-RT2XDA",
+  "members": [
+    "INV-6SGHBB",
+    "INV-43CXH6",
+    "INV-C7AT8R",
+    "INV-DH5NRM",
+    "INV-TA2JW5",
+    "INV-EFDE52",
+    "INV-5MP23G",
+    "INV-ZVQ7E3",
+    "INV-8J056T"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "handoff.json"
+    },
+    "handoffEntry": "L75-launcher-strip-carries-no-execution-prose",
+    "leaf": "260928-MIK-L75",
+    "task": "260928-MIK"
+  },
+  "revision": 7,
+  "routes": [
+    "dashboard/src/cockpit",
+    "dashboard/src/data",
+    "dashboard/src/panels/notes-reader",
+    "mcp/src/agents_remember"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "The launcher strip carries no execution prose and keeps the report one action away"
+}

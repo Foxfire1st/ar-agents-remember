@@ -1,0 +1,199 @@
+{
+  "path": "mcp/src/agents_remember/controlplane/attention_dismissals.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b8fc8a5487a7d0bfd52efcf027cbcd3607d671f9",
+        "content": "sha256:0a7bc5a96c604f4fa5eda34411cd1f051bd79e89f5f61210472af06892927215",
+        "locator": {
+          "kind": "symbol",
+          "name": "AttentionObservation"
+        }
+      },
+      "id": "RLZ-C2MYQB",
+      "invariant": "INV-TT5CTW",
+      "origin": {
+        "handoffEntry": "L168-W-R166-03",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "This observed source proof defines recurrence/coverage rather than check timestamps or assumed activity.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "b8fc8a5487a7d0bfd52efcf027cbcd3607d671f9",
+        "content": "sha256:27613be17c429e3017b4b88958e9ae658e9c81d1993c1d424ecf5ca8002c0c0b",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-PJE2J1",
+      "invariant": "INV-EQGQ9G",
+      "origin": {
+        "handoffEntry": "L192-W-R199-13",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "Dismissal admission rejects the retired kinds and physically reclaims rows a tolerant read drops, while current-claim and lock semantics are unchanged.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b8fc8a5487a7d0bfd52efcf027cbcd3607d671f9",
+        "content": "sha256:3b08dcaeba81c516d6d4b82e8ed1b16408e50c635d09faedd0f4c450d88176a4",
+        "locator": {
+          "kind": "symbol",
+          "name": "AttentionDismissalStore.reconcile"
+        }
+      },
+      "id": "RLZ-RNDG0J",
+      "invariant": "INV-D9T2BC",
+      "origin": {
+        "handoffEntry": "L168-W-R166-05-06",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "The locked fold applies only complete per-kind evidence and retains unread/failed kinds.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b8fc8a5487a7d0bfd52efcf027cbcd3607d671f9",
+        "content": "sha256:1dcc68f7fdbb8adf76fff8050d44630c2189d288412b92924a06e90d728f74a5",
+        "locator": {
+          "kind": "symbol",
+          "name": "AttentionDismissalStore.dismiss"
+        }
+      },
+      "id": "RLZ-VTC59E",
+      "invariant": "INV-QYB9GY",
+      "origin": {
+        "handoffEntry": "C1 occurrence identity",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Writes one acknowledgement keyed by the published occurrence id, so the identity is the only thing that can hide an occurrence.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b8fc8a5487a7d0bfd52efcf027cbcd3607d671f9",
+        "content": "sha256:745a400fe7fc55f2ec747a69b1ead24437bffa3efa0e9a6c0f7979be2839db80",
+        "locator": {
+          "kind": "symbol",
+          "name": "AttentionDismissalStore"
+        }
+      },
+      "id": "RLZ-Y0E9E1",
+      "invariant": "INV-1ZZNZ6",
+      "origin": {
+        "handoffEntry": "L168-W-R166-07",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "The single locked current set folds duplicates, reclaims observed obsolete rows and skips unchanged physical rewrites.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "b8fc8a5487a7d0bfd52efcf027cbcd3607d671f9",
+        "content": "sha256:27613be17c429e3017b4b88958e9ae658e9c81d1993c1d424ecf5ca8002c0c0b",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-Z8520A",
+      "invariant": "INV-KZE8P3",
+      "origin": {
+        "handoffEntry": "L190-R1-F07",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Compact acknowledgement ownership admits notice occurrences while protecting live causes and partial-refresh acknowledgement retention.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Projection input refreshers collect native per-kind AttentionObservations and reconcile acknowledgements through AttentionDismissalStore. A record is reclaimed for source absence, healthy recovery or a changed known fingerprint only when the observation is complete and started no earlier than its dismissal, and the first complete fingerprint is instead adopted; unread or incomplete kinds retain their acknowledgements. Reconciliation is locked, skips unchanged physical writes, returns the prior current set if the rewrite fails, and then bounds the kept rows, the oldest leaving first.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7441ab31d2dbb655e2be4d5a04571166c9ee1a2a",
+            "content": "sha256:6eab6a92cc74865b69bebe5842f18d02e8b884da4dc36d46198a49b9665259b9",
+            "locator": {
+              "end": 400,
+              "kind": "line_range",
+              "start": 395
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7441ab31d2dbb655e2be4d5a04571166c9ee1a2a",
+            "content": "sha256:8436c4fba7d70574cea8d96196073b5d538c533dff77ef994a41a6b98a3bec4f",
+            "locator": {
+              "end": 717,
+              "kind": "line_range",
+              "start": 674
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8fc8a5487a7d0bfd52efcf027cbcd3607d671f9",
+            "content": "sha256:0a7bc5a96c604f4fa5eda34411cd1f051bd79e89f5f61210472af06892927215",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 83
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8fc8a5487a7d0bfd52efcf027cbcd3607d671f9",
+            "content": "sha256:be335d19d80d08383760cb07137bbeff2d85f5ad2b9aee8afec8d270e1ac8173",
+            "locator": {
+              "end": 205,
+              "kind": "line_range",
+              "start": 178
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Whole read/rewrite exclusion and cleanup-failure retention preserve concurrent acknowledgements.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8fc8a5487a7d0bfd52efcf027cbcd3607d671f9",
+            "content": "sha256:bad9940cecf6194524cd6cb1c2a28a735c9afbe9f4a9169fbe2290912f64cda4",
+            "locator": {
+              "end": 149,
+              "kind": "line_range",
+              "start": 130
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8fc8a5487a7d0bfd52efcf027cbcd3607d671f9",
+            "content": "sha256:95126393f33719793e8cd3ad2567e071e28f2d10f7feca9bc574a196fa4e514a",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 125
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

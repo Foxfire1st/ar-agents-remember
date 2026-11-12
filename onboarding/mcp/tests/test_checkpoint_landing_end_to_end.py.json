@@ -1,0 +1,132 @@
+{
+  "path": "mcp/tests/test_checkpoint_landing_end_to_end.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Initial live-pair capture, source merge, and source divergence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc77ba298b7490c140a1ea88a143cf2c5edc1c04",
+            "content": "sha256:7aafc8dcfc0dc4452b2aa156fbfad690b7abf3ffb7c43cd594eb9702963e1ff3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unfinished_master_checkpoints_its_own_refs_end_to_end"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cc77ba298b7490c140a1ea88a143cf2c5edc1c04",
+            "content": "sha256:2fa86bd1e7b83534ae9df91230a7ddf97840579858061c62334576864a1384ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_master_line_that_merged_its_source_still_checkpoints"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cc77ba298b7490c140a1ea88a143cf2c5edc1c04",
+            "content": "sha256:3217e64e900a0008dfa52f66514e37ec7a7ee5f557a3db196cb6a145e18d3022",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_source_memory_divergence_still_blocks_preview_and_apply"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "**Retained historical source account — superseded by the current contract:** Retry, continued work, and final-route completion semantics.\n\nAnchor: `test_retry_is_idempotent_and_continued_work_checkpoints_again` `test_the_checkpoint_is_the_only_route_that_admits_an_unclosed_master` `test_the_closeout_preview_refuses_what_the_closeout_apply_refuses` `test_a_leaf_closeout_preview_is_untouched_by_the_series_completion_gate` `test_a_leaf_that_has_not_closed_out_is_still_refused_by_integrate` `test_the_open_master_refusal_names_the_route_that_can_land_it`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc77ba298b7490c140a1ea88a143cf2c5edc1c04",
+            "content": "sha256:62fc1958b02ed49fd1481b49e4e613b4f6782f656912ff96039a5af881427370",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Ordinary leaf cache absence and bare code-advance leaf-chain refusal are asserted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc77ba298b7490c140a1ea88a143cf2c5edc1c04",
+            "content": "sha256:8177a85e3f132ed885e2b1210968559f3cb5edb612146b21d17b2d32256a4f68",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_ordinary_leaf_route_lands_without_a_cache_file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cc77ba298b7490c140a1ea88a143cf2c5edc1c04",
+            "content": "sha256:42d04bfca4a6f4d2a903c192224b1533e3f3e12094a20d74300f463e7813e1eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_code_advance_without_memory_attribution_can_checkpoint"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "**Retained historical source account — superseded by the current contract:** Source-cache damage does not block; real approval/master/race guards survive.\n\nAnchor: `test_missing_stale_or_malformed_source_cache_cannot_block_checkpoint` `test_a_completed_master_is_still_refused_by_the_checkpoint` `test_a_ref_race_names_the_checkpoint_as_the_tool_to_rerun` `test_checkpoint_landing_requires_explicit_developer_approval`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc77ba298b7490c140a1ea88a143cf2c5edc1c04",
+            "content": "sha256:62fc1958b02ed49fd1481b49e4e613b4f6782f656912ff96039a5af881427370",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "**Retained historical source account — superseded by the current contract:** Checkpoint publication remains distinct from pause.\n\nAnchor: `test_the_landing_does_not_pose_as_a_pause` `CheckpointPausesAnUnfinishedMasterTests`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc77ba298b7490c140a1ea88a143cf2c5edc1c04",
+            "content": "sha256:62fc1958b02ed49fd1481b49e4e613b4f6782f656912ff96039a5af881427370",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The module defines 18 scenario methods. Its retained Git/ref/cache/approval checks now also assert answered closeout-incomplete, atomic-series-closeout-master-incomplete and checkpoint-master-complete outcomes, children-not-retired cleanup, and abandoned-master preview/apply refusal with worktree_abandon guidance. The repeated-checkpoint assertion remains in a genuinely still-unclosed frame. These are source assertions, not a newly run landing or a sync-behavior finding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc77ba298b7490c140a1ea88a143cf2c5edc1c04",
+            "content": "sha256:62fc1958b02ed49fd1481b49e4e613b4f6782f656912ff96039a5af881427370",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

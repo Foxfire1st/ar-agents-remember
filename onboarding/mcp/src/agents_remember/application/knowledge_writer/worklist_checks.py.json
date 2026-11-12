@@ -1,0 +1,288 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_writer/worklist_checks.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "bc2b865ceab0e645f6665f038d5f4dc34413e95a",
+        "content": "sha256:4380ec2959c2319a0a7fd7e3b0589bf8c8ec9ba8ce640c5f2485ceb10b068710",
+        "locator": {
+          "kind": "symbol",
+          "name": "_subject_problems"
+        }
+      },
+      "id": "RLZ-4N3YR1",
+      "invariant": "INV-A6571D",
+      "origin": {
+        "handoffEntry": "L170-curator-writer-enforcement",
+        "leaf": "260928-MIK-L170"
+      },
+      "rationale": "This predicate keeps the existing subject and raise boundaries and distinguishes a fresh unnecessary own-leaf judgment from renewal of a subject already held before authoring.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "bc2b865ceab0e645f6665f038d5f4dc34413e95a",
+        "content": "sha256:c785dd5564fac750aaa590aece466d24d216bb4f6f2b5080260317e256d35d03",
+        "locator": {
+          "kind": "symbol",
+          "name": "worklist_problems"
+        }
+      },
+      "id": "RLZ-F1CZ1X",
+      "invariant": "INV-A6571D",
+      "origin": {
+        "handoffEntry": "MIK-R54@v1 rule 1",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "This boundary requires a persisted leaf worklist and composes exact subject and governing-row checks before publication.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "bc2b865ceab0e645f6665f038d5f4dc34413e95a",
+        "content": "sha256:1205eb547720474a083ac0d512f5e58c732a504ef49a075749f5872c5f0d26ae",
+        "locator": {
+          "kind": "symbol",
+          "name": "_hidden_change"
+        }
+      },
+      "id": "RLZ-HJJARM",
+      "invariant": "INV-A6571D",
+      "origin": {
+        "handoffEntry": "L54-curator-MIK-R54-v1-rule-1-actual-guards",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "Every matching subject comparison is checked until a real changed-row violation; an earlier missing comparison cannot suppress a later one.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "bc2b865ceab0e645f6665f038d5f4dc34413e95a",
+        "content": "sha256:fcdc15294058db7a1b5a94bb1707b39d91e6aca239750906067538ecd0a94903",
+        "locator": {
+          "kind": "symbol",
+          "name": "_prior_own_subjects"
+        }
+      },
+      "id": "RLZ-NVH84R",
+      "invariant": "INV-A6571D",
+      "origin": {
+        "handoffEntry": "L170-curator-writer-enforcement",
+        "leaf": "260928-MIK-L170"
+      },
+      "rationale": "This collector reads only captured input history matching the leaf's native owner paths and parsed identity; new virtual rows, foreign owners and unreadable history grant no renewal admission.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "bc2b865ceab0e645f6665f038d5f4dc34413e95a",
+        "content": "sha256:ecf4806c9b242eb716bd3ac9b6a7d1bbe4aa9b31d49750914261351b595d8b0e",
+        "locator": {
+          "kind": "symbol",
+          "name": "worklist_shape_problem"
+        }
+      },
+      "id": "RLZ-WFXDG1",
+      "invariant": "INV-A6571D",
+      "origin": {
+        "handoffEntry": "L54-curator-MIK-R54-v1-rule-1-actual-guards",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "This public boundary refuses the missing or unreadable consumed worklist shape before virtual authoring.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Missing or malformed consumed worklist shapes receive a named compute/recompute refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc2b865ceab0e645f6665f038d5f4dc34413e95a",
+            "content": "sha256:ecf4806c9b242eb716bd3ac9b6a7d1bbe4aa9b31d49750914261351b595d8b0e",
+            "locator": {
+              "kind": "symbol",
+              "name": "worklist_shape_problem"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Renewal eligibility comes from parseable pre-authoring own-leaf history bytes; current-operation rows, foreign history and unreadable documents grant none.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc2b865ceab0e645f6665f038d5f4dc34413e95a",
+            "content": "sha256:fcdc15294058db7a1b5a94bb1707b39d91e6aca239750906067538ecd0a94903",
+            "locator": {
+              "kind": "symbol",
+              "name": "_prior_own_subjects"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Item scalar types, actual integer base revisions and consumed collection shapes are checked without claiming full-schema validation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc2b865ceab0e645f6665f038d5f4dc34413e95a",
+            "content": "sha256:4059e5075681b8662f89f1cae8c12640fb303872d653ca43504b3a13352f0bd6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unreadable_item"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Own-origin records need a worklist subject for a genuinely new judgment; trusted pre-operation same-owner history permits existing-row renewal without authorizing candidate-created or foreign rows.\n\nAnchor: `_subject_problems`, `_prior_own_subjects`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc2b865ceab0e645f6665f038d5f4dc34413e95a",
+            "content": "sha256:4380ec2959c2319a0a7fd7e3b0589bf8c8ec9ba8ce640c5f2485ceb10b068710",
+            "locator": {
+              "kind": "symbol",
+              "name": "_subject_problems"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bc2b865ceab0e645f6665f038d5f4dc34413e95a",
+            "content": "sha256:fcdc15294058db7a1b5a94bb1707b39d91e6aca239750906067538ecd0a94903",
+            "locator": {
+              "kind": "symbol",
+              "name": "_prior_own_subjects"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Only newly authored history rows are passed through the same-run governing-row check.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc2b865ceab0e645f6665f038d5f4dc34413e95a",
+            "content": "sha256:f311b7f3346d1e980728908c06c6b9dda2ad6592540273d1b0908d4b5b22817e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_judgment_problems"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Every matching stale/touched/family item is examined until a genuine shared-predicate violation is found.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc2b865ceab0e645f6665f038d5f4dc34413e95a",
+            "content": "sha256:1205eb547720474a083ac0d512f5e58c732a504ef49a075749f5872c5f0d26ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "_hidden_change"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The writer performs leaf shape admission and collects worklist problems after virtual authoring, before publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
+            "content": "sha256:7bd60dc68e05905537c9cf0e470e2a2acdd23b49dc0659c8b610c352aaee40a3",
+            "locator": {
+              "end": 186,
+              "kind": "line_range",
+              "start": 137
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
+            "content": "sha256:c4a68e02cb3d37ad4dd2e17db3b4bacc830ee76cf3c04607564c51823a20517b",
+            "locator": {
+              "end": 184,
+              "kind": "line_range",
+              "start": 135
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The retained CLI fixture orders both stale/touched items and then reverses them; each refused disposition preserves both current memory bytes and the closed attempt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0f6b560a8bb165ff2303ba062a149f660c8e1cb",
+            "content": "sha256:1775065562b8d6fc23cedd76da7a4e95dd9e94ab2aeda1355276ff1a5449f0fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_real_ingest_refuses_a_row_hiding_closed_attempt_change"
+            },
+            "path": "mcp/tests/test_writer_correction_history.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The family fixture requires refusal of no_impact and assigned judgments over a changed guarantee.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0f6b560a8bb165ff2303ba062a149f660c8e1cb",
+            "content": "sha256:8bfd1ef812435d01c8df456df50e7af5ef4e5490f127203802484879b8b30f07",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_reached_family_guarantee_change_needs_changed_row"
+            },
+            "path": "mcp/tests/test_writer_correction_history.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "A leaf without a persisted worklist is refused with memory_quality_check guidance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "efcb4035a030d70f17dd239206c420e275325530",
+            "content": "sha256:bb6a610e2f2d2f945db19077e1c88524085bcfe18e33ca6028b69d03e3cb9248",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_leaf_without_worklist_is_told_to_compute_it"
+            },
+            "path": "mcp/tests/test_writer_corrections.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

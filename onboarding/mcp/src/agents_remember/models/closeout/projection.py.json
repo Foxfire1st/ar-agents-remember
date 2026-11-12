@@ -1,0 +1,82 @@
+{
+  "path": "mcp/src/agents_remember/models/closeout/projection.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "No external domain source is required to establish this repository-owned implementation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58c6cf225952ef2944941dea08dccae36e33b7de",
+            "content": "sha256:48df112304d78ac3b5e94115badc87f474d583046b76835a93bf862e5e96f9cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "MAX_CLOSEOUT_SOURCE_PROBLEMS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The module's concrete API, control flow, and validation boundary are implemented here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58c6cf225952ef2944941dea08dccae36e33b7de",
+            "content": "sha256:48df112304d78ac3b5e94115badc87f474d583046b76835a93bf862e5e96f9cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "MAX_CLOSEOUT_SOURCE_PROBLEMS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Persisted projection state carries an unbounded `members` list beside its bounded `sourceProblems`; membership uniqueness is enforced by validator, not by a population ceiling.\n\nAnchor: `sourceProblems`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58c6cf225952ef2944941dea08dccae36e33b7de",
+            "content": "sha256:eef966e1f776af201c8aa741ff18ef25b3f72f2a22383f300a5b731915c8cbe1",
+            "locator": {
+              "kind": "symbol",
+              "name": "members"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "58c6cf225952ef2944941dea08dccae36e33b7de",
+            "content": "sha256:338cca4feb2dcd65d170ca496e2458af4608f75aaad7bb1aef7d02e48c0c5e88",
+            "locator": {
+              "kind": "symbol",
+              "name": "_condition_is_exact"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "No meaningful cross-repository reference applies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58c6cf225952ef2944941dea08dccae36e33b7de",
+            "content": "sha256:48df112304d78ac3b5e94115badc87f474d583046b76835a93bf862e5e96f9cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "MAX_CLOSEOUT_SOURCE_PROBLEMS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

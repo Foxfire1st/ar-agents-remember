@@ -1,0 +1,95 @@
+{
+  "path": "mcp/src/agents_remember/serving/review_summary.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "31014e2a2cd4f9774512f7ab5460f73f88377e4c",
+        "content": "sha256:5cb2a1311973f0f2c20e3b1b5731ef3be2d407567b9d5f93a9741c585f5905e1",
+        "locator": {
+          "end": 93,
+          "kind": "line_range",
+          "start": 55
+        }
+      },
+      "id": "RLZ-GJM2AWPM",
+      "invariant": "INV-8BYGSPZF",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "The registered summary route delegates to IntentSummaryCache: body-bearing counted, partial and unavailable typed answers use HTTP 200; a matching conditional validation returns an empty 304 with ETag for retained bytes. A process without the summary port returns the named 503 refusal. Transport validation errors are not claimed to be enumerated by these typed-result cases.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "31014e2a2cd4f9774512f7ab5460f73f88377e4c",
+        "content": "sha256:7c34d1b852b629d61d6d6c8f5248c2af331217a08b91b79fee07a5432e5ab73e",
+        "locator": {
+          "kind": "symbol",
+          "name": "register_review_summary_route"
+        }
+      },
+      "id": "RLZ-ZC5XSH",
+      "invariant": "INV-HAJ9SH",
+      "origin": {
+        "handoffEntry": "RP11",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The summary route forwards the selected number, preserving typed 200 unavailable responses even for a negative recorded-comparison query.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "7": {
+      "note": "Wired/default/numbered transport and negative-number response preserve typed status behavior.\n\nAnchor: \"def register_review_summary_route(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "31014e2a2cd4f9774512f7ab5460f73f88377e4c",
+            "content": "sha256:7c34d1b852b629d61d6d6c8f5248c2af331217a08b91b79fee07a5432e5ab73e",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 57
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Negative numbers become a named unavailable comparison answer with no count.\n\nAnchor: \"def _negative_comparison(repo: str, master: str, leaf: str, comparison: int) -> dict[str, Any]:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "31014e2a2cd4f9774512f7ab5460f73f88377e4c",
+            "content": "sha256:aec8ced4afe9ba4f92850647755206e7cce7fdb3b803d827c7dc19db9aac9e38",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 80
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Unwired is a named process-level failure rather than zero counts.\n\nAnchor: \"KNOWLEDGE_REVIEW_SUMMARY_ROUTE = \"/api/review/intent/summary\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "31014e2a2cd4f9774512f7ab5460f73f88377e4c",
+            "content": "sha256:4185ac43cfba9d11ccc39c509ccc51da3ada610dfb08c54c4fd91e8e192b68b1",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 43
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Guards against another task or evidence-copy contract aborting a canonical task-document publication, while preserving a named fail-closed path when own copy ownership cannot be established."
+  },
+  "applicability": "Task-document copy refresh for contracts with a readable, nonempty task_artifact cell.",
+  "conditions": [
+    "A publication supplies the written JSON/Markdown paths; selection tests their path spellings before full contract loading."
+  ],
+  "exclusions": [
+    "Files lacking a readable artifact cell: the separate conditional unrecognized-file rule applies.",
+    "Other task folders are not traversed by this refresh.",
+    "Copy contents/placement remain the existing publication contract."
+  ],
+  "id": "INV-85JCY6",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_task_document_copies.py::TaskDocumentCopyMembershipTests::test_sibling_leaf_contract_is_never_loaded, test_broken_sibling_contract_does_not_stop_real_write, test_destroyed_own_contract_fails_write_and_restores_sources, test_unreadable_file_beside_refreshed_own_is_named_not_raised, test_unreadable_only_enclosure_fails_and_names_the_file, test_master_write_with_enclosures_present_succeeds_without_copies; r4-focused.log (27 passed)"
+      ],
+      "path": "l134-knowledge-ingest.json"
+    },
+    "handoffEntry": "L134-R1",
+    "leaf": "260928-MIK-L134",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "After a task-document write, only enclosures whose raw task_artifact cell names a written document are loaded; sibling contracts in the same task folder are never loaded.",
+  "status": "accepted",
+  "supersedes": []
+}

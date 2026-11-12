@@ -1,0 +1,40 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The envelope control fails each stowed envelope field on its own subTest and the bypass control names its smuggled key; both ran green on the final candidate."
+  },
+  "applicability": "Every delivered answer the sweep judges.",
+  "conditions": [
+    "The shaping allowances are the product's own framework keys and the MIK-R108 rule-6 table, never a second test-world list."
+  ],
+  "exclusions": [
+    "The whole detail result beside the log, which keeps everything the answer drops.",
+    "Producer, model, registry, shaping, log and guard changes, which this task excludes."
+  ],
+  "id": "INV-T8FDTX",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "ChokePointControlTests envelope control; ChokePointControlTests bypass control; D55 sweep+controls whole plus valid-progression integration on bytes e6f32045",
+        "world:228-253 rejects a wrapper at its matched place whenever len(whole) <= TOOL_ANSWER_LIST_MAX before admitting product-derived wrapper keys; legitimate over-limit wrappers retain recursive item checking. controls:234-253 constructs a counterfeit wrapper over the real uncut server_info.allowedRepoIds list and requires unvalidatable with its path.",
+        "world:102-107 excludes shaped next from generic string navigation;162-180 adds next only when _actionable_next accepts its mapping. controls:271-292 adds nonempty guidance-only string next to the bare negatives while255-269 retains code and genuine mapping-next positive controls.",
+        "R3 verdict + world:162-180 predicate; controls:255-292",
+        "R3 verdict; sweep:11-26",
+        "R3 verdict + F02 entry; world:147-159",
+        "CODE PASS verdict notes/reports/role-launch/260928-MIK-L130-reviewer-b8c837d4-b77a-4233-821a-8b7ee65e9624.code-r3.md; sweep+controls whole on passed bytes: 24 passed, 157 subtests passed, exit 0 (PID 2433640); proof freeze6/proof-evidence.md",
+        "CODE PASS verdict notes/reports/role-launch/260928-MIK-L130-reviewer-b8c837d4-b77a-4233-821a-8b7ee65e9624.code-r3.md; controls whole on passed bytes within PID 2433640 run, exit 0; proof freeze6/proof-evidence.md"
+      ],
+      "path": "l130-handoff-list.json"
+    },
+    "handoffEntry": "MIK-R130@v1 rule 2",
+    "leaf": "260928-MIK-L130",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A delivered tool answer holds none of the four envelope fields, and any other key the whole result does not hold at the same place and the shaping's framework keys do not add makes the call unvalidatable with the key named; whether a caller can act on a refusal is read from the delivered answer.",
+  "status": "proposed",
+  "supersedes": []
+}

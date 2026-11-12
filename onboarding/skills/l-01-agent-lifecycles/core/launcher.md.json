@@ -1,0 +1,148 @@
+{
+  "path": "skills/l-01-agent-lifecycles/core/launcher.md",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "3903efa8f0713c724e5bcb650130d538b0ec4be8",
+        "content": "sha256:08d7ac8bc44d256776de89e0dbcc1c097e9f8448707cf063a24db68d1a8bcb2d",
+        "locator": {
+          "end": 22,
+          "kind": "line_range",
+          "start": 5
+        }
+      },
+      "id": "RLZ-EDMVAT",
+      "invariant": "INV-85VB61",
+      "origin": {
+        "handoffEntry": "MIK-R113@v1 rule 6",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "The launcher reference is the text for a chat without a role. It answers research-only questions inline, writes the request into the sprint document, calls role_start once to start an Architect with no brief and no document, and tells the developer that the agent is in the dashboard and which sprint document holds the request.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "10": {
+      "note": "Only an explicitly developer-named role and task takes the bounded takeover route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3903efa8f0713c724e5bcb650130d538b0ec4be8",
+            "content": "sha256:a4d1702b9c6a9b3ffecf65bdd1adc3379bcc11b77ce820a0553ce031ead44b66",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 26
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "No other start or message route and no local work after start is permitted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3903efa8f0713c724e5bcb650130d538b0ec4be8",
+            "content": "sha256:f5006efe88892423512fd1bd4f6060f6365541918aa37754acaf663afb43365c",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 32
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The launcher remains outside roles because it is not a role seat.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3903efa8f0713c724e5bcb650130d538b0ec4be8",
+            "content": "sha256:65262dc7f264fa8b770af9f8507a60980867770dd40340f0dba03ff5cdf06914",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 38
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The manifest retains ambient-launcher metadata outside the role registry; this is not the native routing-condition set.\n\nAnchor: `is_role`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:7ff90fe1949d4460c9e3194ffff4cba7453c9c642f5756423b1a5c9984660dfd",
+            "locator": {
+              "end": 528,
+              "kind": "line_range",
+              "start": 515
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The source assertions exclude launcher from roles, retain ambient metadata and separately check the two native routing conditions; this is not an executed PASS.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcea192008fd1214a3a615afe58b187b5c3eaaf7",
+            "content": "sha256:e685768c8a9255765f66be0003aca7d1eeec7069e3441ec540bc025ad19b3ff1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_manifest_resolves_every_role_and_operation_source"
+            },
+            "path": "mcp/tests/test_role_instruction_corpus.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Unbound free chat has no role binding or worktree; research stays inline and does not become a role.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3903efa8f0713c724e5bcb650130d538b0ec4be8",
+            "content": "sha256:dd96ffced9938f6479df7a6238d4ba7175b6d2d01cd6d03b58771e6ceba94a3b",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Managed work is written into the sprint before one parentless Architect start without a brief or document reference.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3903efa8f0713c724e5bcb650130d538b0ec4be8",
+            "content": "sha256:975d2a451b84999118d770f178f6a8ca55195826818e543a26718d8a77695a71",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

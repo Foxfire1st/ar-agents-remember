@@ -1,0 +1,42 @@
+{
+  "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/subagents.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "4f087ca2c4a81881c17a0a75921d8858c36f04de",
+        "content": "sha256:7376ad80894ecf5ecaf1ab8895b287b56bc1f3f3ab74d0b0e95fe70fdfc18efc",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-6B0SS8",
+      "invariant": "INV-VDWN33",
+      "origin": {
+        "handoffEntry": "INV-VDWN33",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The tracker is where the list and the events are reconciled, so the one-generation rule is realized here.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "4f087ca2c4a81881c17a0a75921d8858c36f04de",
+        "content": "sha256:17a96b187625bfcc6c87da16c6d629055050b55a60487ce26dd2e48fa22a1e01",
+        "locator": {
+          "kind": "symbol",
+          "name": "SubagentTracker.onNativeProvider"
+        }
+      },
+      "id": "RLZ-JKMV2G",
+      "invariant": "INV-G841F9",
+      "origin": {
+        "handoffEntry": "MIK-R216@v1",
+        "leaf": "260928-MIK-L203"
+      },
+      "rationale": "This sink is how a natively-reporting provider drops out whatever the helper's parent is, before the parent is even read.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A brief that restates role rules competes with the role and operation files; the brief must carry only the master's values and defer to them."
+  },
+  "applicability": "The two brief templates (manager, curator) and their value rows.",
+  "conditions": [
+    "Brief rows carry leaf values; role and operation texts win on disagreement.",
+    "Only the approved message-carrier guidance is repeated across templates; no fixed limit or new role/start/write grant is introduced."
+  ],
+  "exclusions": [
+    "Role and operation texts, which own the rules."
+  ],
+  "id": "INV-WHEFVS",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "manager/worker/curator/architect brief cuts in rule1-table (goes rows); worker-brief gloss names bounded L-R/L-S exception per guideline rule 6"
+      ],
+      "path": "notes/reports/260928-MIK-L101-curator-handoff-list.json"
+    },
+    "handoffEntry": "MIK-R101@v1 rule 5",
+    "leaf": "260928-MIK-L101",
+    "task": "260928-MIK"
+  },
+  "revision": 3,
+  "schema": "ar-invariant/v1",
+  "statement": "Brief templates carry handed-over inputs and requested outputs; role/operation sources keep procedural authority. The specifically approved message/file/body/attach/settings/return guidance is a bounded shared transport exception, not permission to duplicate other role procedures.",
+  "status": "proposed",
+  "supersedes": []
+}

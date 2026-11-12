@@ -1,0 +1,58 @@
+{
+  "path": "mcp/tests/test_review_answer_reuse.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "e62f978ce1eb5cac679d49cc002bf00db0f5b091",
+        "content": "sha256:f676efd0fce110dd583509783e998c7838c8d3d212487161933f3350a2677f34",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_kept_answer_is_byte_identical_to_a_fresh_computation"
+        }
+      },
+      "facet": "An answer a store returns equals a fresh computation of the same inputs, byte for byte.",
+      "id": "PRF-MWVS30",
+      "invariant": "INV-YTPBCF",
+      "origin": {
+        "handoffEntry": "L177-INV-RECORDED-ANSWER-REUSE",
+        "leaf": "260928-MIK-L177"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "An answer a fresh store returns is byte-identical to a fresh computation of the same inputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e62f978ce1eb5cac679d49cc002bf00db0f5b091",
+            "content": "sha256:f676efd0fce110dd583509783e998c7838c8d3d212487161933f3350a2677f34",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_kept_answer_is_byte_identical_to_a_fresh_computation"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A changed input is never served from the kept answer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e62f978ce1eb5cac679d49cc002bf00db0f5b091",
+            "content": "sha256:a21a677bc7bebefbeb0da91c627accb1789447a22b6ecdf2582e96cb07ae136a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_changed_input_invalidates_the_kept_answer"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,22 @@
+{
+  "path": "mcp/src/agents_remember/models/sprint_archive.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Sprint-owned record and master-entry models bound the archive claim and its repeat comparison.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db67d9f7d22983495eefabb8de13a33d5b145487",
+            "content": "sha256:6be4aea210d3bbb421243ec3ef3ad7ea5f2683b4542cc32db9b51fecc0ee4f5a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

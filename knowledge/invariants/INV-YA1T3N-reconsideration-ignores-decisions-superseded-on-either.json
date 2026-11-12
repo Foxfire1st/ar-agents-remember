@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake",
+      "spans_locations"
+    ],
+    "justification": "A future reconsideration refactor could silence a vanished directory without a row or accept a stale refreshed link merely because a judgment row exists. The evaluator and gate must preserve these two distinct recovery boundaries."
+  },
+  "applicability": "Converted-leaf reconsider_on evaluation of base decisions and current gate judgment of a changed candidate reconsideration anchor.",
+  "conditions": [
+    "Supersession is derived from decisions on both memory sides; base decisions alone supply reconsider_on links to evaluate.",
+    "A directory holding a base file and no candidate file fires route_absent without needing a history row. A family route equal to or inside the directory participates in the family-row fallback, including changed rows only when its routes differ.",
+    "A different candidate reconsider_on anchor that is not current fires refresh_not_current; ordinary history does not answer it. The current gate requires a current anchor or the exact base target restored, subject to supersession."
+  ],
+  "exclusions": [
+    "INV-83YJKE remains the independent narrower supersession guarantee; this record does not replace or revise it.",
+    "No transitive reconsideration, prose reconsider_when evaluation, candidate-new decision triggering or claim that an ordinary satisfying row repairs a noncurrent refreshed anchor."
+  ],
+  "id": "INV-YA1T3N",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/worker/0e651ec5-2eed-4b58-b19f-e2336d4978ca/repair-freeze-0a36ddc4/builder-report.md#mik-r55-rule-3",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/54_writer-and-validator-corrections-a4b3b3af8d-ar/role-reports/curator/1ad64580-9e4a-42ce-adc0-169869767dba/wave-76/proof-source-review.json"
+      ],
+      "path": "wave-33-complete-history.json"
+    },
+    "handoffEntry": "MIK-R55@v1 rule 3",
+    "leaf": "260928-MIK-L54",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Reconsideration ignores decisions superseded on either memory side, detects route absence and descendant rerouting, and keeps changed stale refresh links open until current or restored.",
+  "status": "proposed",
+  "supersedes": []
+}

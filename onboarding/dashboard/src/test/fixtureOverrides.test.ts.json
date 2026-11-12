@@ -1,0 +1,242 @@
+{
+  "path": "dashboard/src/test/fixtureOverrides.test.ts",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`ts.Program#getSemanticDiagnostics` and `ts.flattenDiagnosticMessageText` are the documented compiler-API surface these assertions read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a8e7c68ec7ffbfd48d47afb359d1fee9f46db41f",
+            "content": "sha256:5e286e66701bd587b708f01893739a9cfcc99fe62e91f353a4796d0dc99b4655",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 82
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The builders whose parameters are being pinned: `projection`, `taskEntry`, `taskSummary`, `action` and `observerEvent`, each taking an `Overrides<O, Node>`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a129de9436ae3d8f076d34f4eabb33240781dedf",
+            "content": "sha256:ca949a7feaa7e40320e660e3b58629780946c36e8dab87a8d4b3ba5d0dc952ab",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The excess-property probe supplies undeclared refusedPolarity to taskEntry and createdAtButMisspelled to taskSummary. Its regression expects exactly two diagnostics, checks each offending name and requires the unknown-property message for both; lifecycle/taskDoc are not the builders used in this probe.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a8e7c68ec7ffbfd48d47afb359d1fee9f46db41f",
+            "content": "sha256:6b6515259ef6e880529387771cc66a706ad4fc286a537b39736106dc95220047",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 38
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a8e7c68ec7ffbfd48d47afb359d1fee9f46db41f",
+            "content": "sha256:9c0877c53e64ae6620ccd99197756efe3aa6fd71f8f0ac43864b968ef35ee32c",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 96
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "Probe imports resolve to retained wire builders; the enclosure.repoName replacement preserves the required-undefined control.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a8e7c68ec7ffbfd48d47afb359d1fee9f46db41f",
+            "content": "sha256:ee7b220dcc5bfddb42e482b629b320330b0cdff30354d5a2cc1693cd802f3c3d",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROBE_FILES"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "With `exactOptionalPropertyTypes` off, an optional property implicitly admits `undefined` — the rule that makes a bare `Partial<T>` override able to state that a required field is absent.\n\nAnchor: `exactOptionalPropertyTypes`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a8e7c68ec7ffbfd48d47afb359d1fee9f46db41f",
+            "content": "sha256:53664f361037866ac39bc5d2343d194230bd87a7e5f2ca2200aa31dff112ffd3",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 15
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The header: what no guard rule can see, and why running over the guard's flag-free program is the point.\n\nAnchor: `PROBE_FILES` `GUARD_COMPILER_OPTIONS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a8e7c68ec7ffbfd48d47afb359d1fee9f46db41f",
+            "content": "sha256:1c8e89d576fa911d1745c142a49830526eeda7a4e1042f3a3bdf5c358624f25b",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "content": "sha256:e4fe33b5ab72d1e360b6cfbbd87f7bd59677a983c32e6ab2acded3d1af7a2105",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The four impossible calls, the two excess-property calls, and the nine honest shapes.\n\nAnchor: `PROBE_FILES`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a8e7c68ec7ffbfd48d47afb359d1fee9f46db41f",
+            "content": "sha256:1c8e89d576fa911d1745c142a49830526eeda7a4e1042f3a3bdf5c358624f25b",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The three exact-count assertions and their message checks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a8e7c68ec7ffbfd48d47afb359d1fee9f46db41f",
+            "content": "sha256:5f75b8a2e310fc4f4df6c5b5a38f49bac5942524b071a8b8795d9e26e4312c84",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 86
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The residue asserted as a known pass: a pre-widened `Partial<TaskEntry>` override still compiles.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a8e7c68ec7ffbfd48d47afb359d1fee9f46db41f",
+            "content": "sha256:f7078c3fd8e02dea99d841ddc4806842fd5c4476b59e0a64e42518a714fb0bdc",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 69
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The constraint under test, and the three limits it documents.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c1728908f2e1d3aa121a935b106bb55590cb0bbc",
+            "content": "sha256:6f0551e6feea6c5ac5293a4de3eb72fdfe92c5864c12eb7f96bba1c5da212696",
+            "locator": {
+              "kind": "symbol",
+              "name": "Overrides"
+            },
+            "path": "dashboard/src/test/fixtures/overrides.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "`buildProgramWithVirtualFiles` and `GUARD_COMPILER_OPTIONS` — the harness these probes borrow, whose option set is strict/bundler/`resolveJsonModule` and contains no `exactOptionalPropertyTypes` entry.\n\nAnchor: `buildProgramWithVirtualFiles`, `GUARD_COMPILER_OPTIONS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "content": "sha256:8ecca33cdfb7e0b823d4923484faf52c8b455c7c8c5b93334df94dc82f59e9c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "buildProgramWithVirtualFiles"
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "content": "sha256:0c1963e5cd5a238d452bac7b1ed7c6deadd83bafbf1164e771793307a2c6165b",
+            "locator": {
+              "kind": "symbol",
+              "name": "GUARD_COMPILER_OPTIONS"
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The guard's own statement of the same hole — item 5, \"A VALUE\" — which names this file as the answer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "content": "sha256:9db2fdcb1887f4bd52cdb376fab7a79a7be3748ebb8ef70a334678f487c9c115",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 70
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

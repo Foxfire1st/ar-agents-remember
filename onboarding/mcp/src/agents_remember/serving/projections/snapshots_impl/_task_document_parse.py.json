@@ -1,0 +1,22 @@
+{
+  "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_document_parse.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Read-side extra-field pruning is bounded, location-specific and distinct from raw-schema admission and strict authoring.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c7f9860a40aaff1cb52f2b1c2c8b62be034bc3c",
+            "content": "sha256:aa5b59f5de7eb81fbac25be57c24c293b0d3dc28dd42b9e6a2ac9fad520be61d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,22 +1,9 @@
 # mcp/src/agents_remember/worktrees/modules/abandon.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/worktrees/modules/abandon.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-14T15:05+02:00 |
-| lastVerifiedCommitHash | `74c6c693b8c5a5863ce15f016793192931f4adc1` |
-| lastVerifiedCommitDate | 2026-09-20T06:22:08+02:00|
-| governingOverview      | `overview.md`                              |
-
 ## Purpose
 
 `abandon.py` is the discard-without-integration lifecycle operation for
-worktree-backed tasks. Unlike `cleanup.py` (which requires a completed
-integration), abandon runs at any lifecycle stage and reclaims the isolated
-provider stack, removes code and memory worktrees, deletes task branches, and
-removes the worktree group directory.
+worktree-backed tasks. Unlike `cleanup.py` (which requires a completed integration), abandon runs at any lifecycle stage and reclaims the isolated provider stack, removes code and memory worktrees, deletes task branches, removes the worktree group directory, and removes the enclosure generation's outside scratch root.
 
 Successful series abandonment and exact already-abandoned terminal replay pass through
 `with_terminal_atomic_series_release` after lifecycle locks are gone. Release is conditional on the
@@ -26,18 +13,17 @@ or queue state. Leaves, dry-runs, and blocked abandon results do not mutate the 
 
 ## Code Commentary
 
+### Current Contract
+
+Abandon evaluates provider liveness and terminal blockers for dry run as well as apply. A blocked preview returns abandon-blocked/blocked with the original coded blockers rather than would-abandon where the real call refuses. Force keeps its existing discard override; explicit approval, check order and unrecognized fail-closed exceptions retain their owners. Recognized terminal-state failures are answered before mutation, not generalized to every RuntimeError.
+
+Abandon now publishes the admitted contract cleanup result, canonical task stage `abandoned` and mirrored master row through `publish_abandoned_task`. That shared helper plans/validates exact task candidates, publishes stage then contract under `guard.complete`, and restores both if its publication fails; returned projection effects are included in the result. The no-remains route checks `plan_task_stage` before provider teardown and reports the typed task-stage refusal rather than beginning destructive work with invalid task authority. This is an ownership/publication boundary, not permission to call abandon from documentation.
+
 `_abandon_outputs_result` now passes `preview=args.dry_run` into terminal result validation, matching cleanup. A planned worktree or directory removal therefore stays a preview result. Shared preflight and removal owners treat only the external-memory root ledger as disposable; real uncommitted content and unmerged branch commits remain protected unless explicitly forced.
 
 ### Logic
 
-`abandon_result(args: WorktreeArgs)` requires explicit approval (or dry-run),
-then delegates to four sub-operations: `teardown_worktree_providers` reclaims
-Docker containers, networks, and the `provider-runtime/` tree; `_abandon_worktrees`
-calls `remove_registered_worktree` with the `force` flag passed through;
-`_abandon_branches` calls `_abandon_branch` for the code work branch, memory
-work branch, and memory integration branch; `_abandon_directories` removes the
-worktree group dir (force-removes with `remove_tree` when `force=True`,
-otherwise `remove_empty_dir`).
+`_abandon_result(args: WorktreeArgs)` requires explicit approval (or dry-run), then delegates to four sub-operations: `teardown_worktree_providers` reclaims Docker containers, networks, and the `provider-runtime/` tree; `_abandon_worktrees` calls `remove_registered_worktree` with the `force` flag passed through; `_abandon_branches` calls `_abandon_branch` for the code work branch, memory work branch, and memory integration branch; `_abandon_directories` removes the worktree group dir (force-removes with `remove_tree` when `force=True`, otherwise `remove_empty_dir`) and the recorded outside scratch root, while `abandon_result` wraps that answer with the outside-scratch reconcile. `_abandon_terminal_outputs` collects group reports before provider teardown, recording a collection failure instead of removing; `_abandon_directories` removes the group's role folders and merges them into the planned-removal set. Non-force leaf removal also removes reserved `logs/`, exposes its result under `directories.logs`, and includes removed/would-remove logs in the empty-group plan. Series removal removes its reserved `logs/` before returning, retains the `reports` and `lifecycle` response keys, and merges the optional `outside_scratch` removal entry when a root is recorded. Both pass `dry_run` through; preview leaves log bytes in place. Force leaf removal reclaims logs as part of the whole group.
 
 `_abandon_branch` checks for unmerged commits via `git log --oneline
 <base>..<branch>`. Without `force` it refuses to delete a branch that has
@@ -45,19 +31,21 @@ unmerged commits, recording them in the result under `unmergedCommits` with a
 `hint`. With `force` it calls `delete_branch_force` (which uses `git branch
 -D`). An already-absent branch is always a no-op.
 
-`_abandon_blockers` collects worktrees and branches that are neither removed
-nor would-remove — i.e. kept because of a real blocking reason. If any blockers
-exist, the contract is not marked `cleanup="abandoned"` and the state is
-`"abandon-blocked"`. On a clean run the contract is stamped and state is
-`"abandoned"`. Dry-run yields `"would-abandon"`.
+> **Retained historical source account — superseded by the current contract:**
+> `_abandon_blockers` collects worktrees and branches that are neither removed
+> nor would-remove — i.e. kept because of a real blocking reason. If any blockers
+> exist, the contract is not marked `cleanup="abandoned"` and the state is
+> `"abandon-blocked"`. On a clean run the contract is stamped and state is
+> `"abandoned"`. Dry-run yields `"would-abandon"`.
 
-**Terminal result validation (260913-LCA-L8).** `_abandon_outputs_result` and each staged step of
-`_abandon_terminal_outputs` pass their outputs to the terminal validator as a `TerminalResult`
-rather than as loose keyword collections. Every blockage it can report names its component and a
-non-empty reason, and a result item that reports no usable reason is answered in operator language
-instead of reaching an operator as `reason: null`. Abandon's own contract is unchanged: a
-genuinely blocked abandon still blocks with its own reason, and the dry run still reports
-`would-abandon` where the apply reports `abandon-blocked`.
+> **Retained historical source account — superseded by the current contract:**
+> **Terminal result validation (260913-LCA-L8).** `_abandon_outputs_result` and each staged step of
+> `_abandon_terminal_outputs` pass their outputs to the terminal validator as a `TerminalResult`
+> rather than as loose keyword collections. Every blockage it can report names its component and a
+> non-empty reason, and a result item that reports no usable reason is answered in operator language
+> instead of reaching an operator as `reason: null`. Abandon's own contract is unchanged: a
+> genuinely blocked abandon still blocks with its own reason, and the dry run still reports
+> `would-abandon` where the apply reports `abandon-blocked`.
 
 Non-force abandon removes the reserved `<worktree_group>/reports` tree before its empty-group check, so
 the operational curator checklist cannot keep an otherwise reclaimable enclosure alive. Since
@@ -98,30 +86,68 @@ is unchanged.
 - The docstring points at the `l-01-agent-lifecycles` skill's
   read-only/abandon exit as the lifecycle entry that drives this operation.
 
-## Docs References
+## Admitted abandon with agent archive (MIK-R76)
+
+`_abandon_reserved` delegates to `terminal_abandon._abandon_with_guard`, which archives the leaf's
+recorded agents through `archive_terminal_agents` after terminal admission and before the
+destructive outputs. The already-abandoned terminal path also archives before returning, and a
+non-empty `agentArchive` report is merged into the result payload. The module keeps its own result,
+blocker and contract-stamp behavior.
+
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured for this memory repo.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Successful abandon and exact terminal replay are wrapped with exact source-pair release. | `abandon_result` | mcp/src/agents_remember/worktrees/modules/abandon.py:85-144 |
-| The terminal bridge preserves missing, unreadable, or different selection and never clears a newer owner. | `with_terminal_atomic_series_release` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_terminal.py:17-65 |
-| No relevant external documentation found. | n/a | n/a |
 
-## Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Abandon passes its dry-run flag into terminal result validation. | `_abandon_outputs_result`; `_abandon_terminal_outputs` | mcp/src/agents_remember/worktrees/modules/abandon.py:290-339; mcp/src/agents_remember/worktrees/modules/abandon.py:384-445 |
-| Provider teardown is delegated to the provider-runtime teardown function. | `teardown_worktree_providers` | mcp/src/agents_remember/application/provider_runtime.py:161-180 |
-| `remove_registered_worktree`, `delete_branch_if_merged`, `delete_branch_force`, and `remove_empty_dir` are reused from cleanup. | `remove_registered_worktree`; `delete_branch_if_merged`; `delete_branch_force`; `remove_empty_dir` | mcp/src/agents_remember/worktrees/modules/cleanup.py:183-207; mcp/src/agents_remember/worktrees/modules/cleanup.py:210-232; mcp/src/agents_remember/worktrees/modules/cleanup.py:274-300; mcp/src/agents_remember/worktrees/modules/cleanup.py:452-467 |
-| `WorktreeArgs` types the abandon input. | `WorktreeArgs` | mcp/src/agents_remember/worktrees/modules/args.py:33-113 |
-| The closeout registrar exposes `worktree_abandon` with `force` forwarded from the MCP layer. | "def worktree_abandon" | mcp/src/agents_remember/mcp/registration/closeout.py:284-284 |
-| Series reports-tree preservation is decided by the legacy child-enclosure guard imported from terminal validation. | `legacy_series_reports_is_child_enclosure` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:74-85 |
-| The cleanup vocabulary includes abandoned and reopened as declared terminal/reopen states. | "CleanupStatus = Literal[" | mcp/src/agents_remember/models/worktree.py:45-45 |
-| The typed contract amendment record holds the six optional vocabulary cells. | "class ContractCells:" | mcp/src/agents_remember/worktrees/worktree_contract.py:185-185 |
-| The typed amendment helper preserves unspecified cells and applies supplied vocabulary values. | "def amend_contract(" | mcp/src/agents_remember/worktrees/worktree_contract.py:202-202 |
+> Retained earlier citation wording: - Successful abandon and exact terminal replay are wrapped with exact source-pair release. [1]
 
+
+- The terminal bridge preserves missing, unreadable, or different selection and never clears a newer owner. [2]
+No relevant external documentation found.
+
+### Repo-Internal References
+
+
+- Abandon passes its dry-run flag into terminal result validation. [3]
+
+- Provider teardown is delegated to the provider-runtime teardown function. [4]
+
+- `remove_registered_worktree` (from cleanup), `delete_branch_if_merged`, `delete_branch_force` (from `terminal_branch_retirement`), and `remove_empty_dir` are reused through the terminal owners. [5]
+
+
+- `remove_registered_worktree` (from cleanup), `delete_branch_if_merged`, `delete_branch_force` (from `terminal_branch_retirement`), and `remove_empty_dir` are reused through the terminal owners. [13]
+
+
+
+> Retained earlier citation wording: - `remove_registered_worktree` (from cleanup), `delete_branch_if_merged`, `delete_branch_force` (from `terminal_branch_retirement`), and `remove_empty_dir` are reused through the terminal owners. [14]
+
+
+
+- `WorktreeArgs` types the abandon input. [6]
+
+
+- `WorktreeArgs` types the abandon input. [15]
+
+- The closeout registrar exposes `worktree_abandon` with `force` forwarded from the MCP layer. [7]
+- Series reports-tree preservation is decided by the legacy child-enclosure guard imported from terminal validation. [8]
+
+
+> Retained earlier citation wording: - The cleanup vocabulary includes abandoned and reopened as declared terminal/reopen states. [9]
+
+
+- The typed contract amendment record holds the six optional vocabulary cells. [10]
+
+
+> Retained earlier citation wording: - The typed amendment helper preserves unspecified cells and applies supplied vocabulary values. [11]
+
+
+
+### Cross-Repo References
+
+This file owns no ambient cross-repository authority. Any external-memory repository it reaches remains explicitly contract-addressed.
 ## 260815-DAG-L4 Authority History, Reconciled By CLIVE
 
 Task-derived integration refs remain mechanically non-ordinary, but final terminal admission is not
@@ -140,9 +166,11 @@ The current source seams include `abandon_result`. The public module consumes cl
 
 ### Reconciled Source Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The current module exposes `abandon_result` at this ownership boundary. | `abandon_result` | mcp/src/agents_remember/worktrees/modules/abandon.py:85-144 |
+
+
+> Retained earlier citation wording: - The current module exposes `abandon_result` at this ownership boundary. [12]
+
+
 
 ## 260821-CLIVE Archive-Before-Abandon
 
@@ -153,121 +181,41 @@ exact terminal retry/status works after the live root is gone. Atomic series req
 terminal release capability, never a persistent queue blocker. Already-abandoned results retain and
 surface terminal archive proof.
 
-## Update History
-- 2026-09-20T03:57:45+00:00: Generated citation repair: "CleanupStatus = Literal[" repointed to mcp/src/agents_remember/models/worktree.py:45-45. No content impact: mechanical anchor-range projection bound to citation source snapshot ef4a9932e0393a408ecd0f26b5bc2e0e1e335ad90b9e47a16092ffd6f3403af3; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: "def worktree_abandon" repointed to mcp/src/agents_remember/mcp/registration/closeout.py:284-284. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: "class ContractCells:" repointed to mcp/src/agents_remember/worktrees/worktree_contract.py:185-185. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: "def amend_contract(" repointed to mcp/src/agents_remember/worktrees/worktree_contract.py:202-202. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-17T06:49:47+00:00: Generated citation repair: "def worktree_abandon" repointed to mcp/src/agents_remember/mcp/registration/closeout.py:284-284. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): stamped the untimestamped Update History entries with this document's own commit clock
-
-- 2026-09-17T03:31:11+02:00 — 2026-09-15 — LCA L9 terminal delivery: `_abandon_outputs_result` now passes `preview=args.dry_run` into terminal result validation, matching cleanup. A planned worktree or directory removal therefore stays a preview result. Shared preflight and removal owners treat only the external-memory root ledger as disposable; real uncommitted content and unmerged branch commits remain protected unless explicitly forced.
-- 2026-09-15T06:37:50+02:00 — LCA L9 terminal delivery: `_abandon_outputs_result` now passes `preview=args.dry_run` into terminal result validation, matching cleanup. A planned worktree or directory removal therefore stays a preview result. Shared preflight and removal owners treat only the external-memory root ledger as disposable; real uncommitted content and unmerged branch commits remain protected unless explicitly forced.
-
-- 2026-09-14T15:05+02:00 — 260913-LCA-L8 curator: recorded that `_abandon_outputs_result` and the
-  staged steps of `_abandon_terminal_outputs` hand their outputs to the terminal validator as a
-  `TerminalResult`, and that every blockage it can report names its component and a non-empty
-  reason while a reasonless result item is answered in operator language. Abandon's own contract is
-  unchanged: a genuinely blocked abandon still blocks with its own reason. Re-derived the anchors
-  this card keeps against the current file — `abandon_result` 84-143 → 85-144 (both places), the
-  reused `cleanup.py` helper rows 177-198/201-223/265-291/443-458 →
-  178-199/202-224/266-292/444-459, the `_abandon_branches` row 482-482 → 480-480, and corrected the
-  already-stale `WorktreeArgs` row 31-103 → 33-113. Verification metadata remains closeout-owned.
-- 2026-09-13T12:29:52+00:00: Generated citation repair: "CleanupStatus = Literal[" repointed to mcp/src/agents_remember/models/worktree.py:39-39. No content impact: mechanical anchor-range projection bound to citation source snapshot 608ec827a174d194b141ff2daa61dd8e3b6b44611d03fb561dc0b7bb0223223f; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
-- 2026-09-13T08:49:05+00:00: Generated citation repair: "def worktree_abandon" repointed to mcp/src/agents_remember/mcp/registration/closeout.py:293-293. No content impact: mechanical anchor-range projection bound to citation source snapshot 498749c8248ef2a3c982edf27ca50b4962c9d2c9f9bdc470553967a3be375341; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-12T20:53:11+00:00: Generated citation repair: "CleanupStatus = Literal[" repointed to mcp/src/agents_remember/models/worktree.py:40-40. No content impact: mechanical anchor-range projection bound to citation source snapshot cbb452b5d35b5c1c088ad26c07bb5da009aa64032684a124b62b2b598ff0be0a; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-12T01:06:15+00:00: Generated citation repair: "def worktree_abandon" repointed to mcp/src/agents_remember/mcp/registration/closeout.py:291-291. No content impact: mechanical anchor-range projection bound to citation source snapshot 1740540b8733028dd833a3538d739271e8925ea5f51911a0f8dcd8c49e7e1c13; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-12T01:06:15+00:00: Generated citation repair: "CleanupStatus = Literal[" repointed to mcp/src/agents_remember/models/worktree.py:39-39. No content impact: mechanical anchor-range projection bound to citation source snapshot 1740540b8733028dd833a3538d739271e8925ea5f51911a0f8dcd8c49e7e1c13; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `abandon_result` repointed to mcp/src/agents_remember/worktrees/modules/abandon.py:84-143. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: "def worktree_abandon" repointed to mcp/src/agents_remember/mcp/registration/closeout.py:266-266. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: "class ContractCells:" repointed to mcp/src/agents_remember/worktrees/worktree_contract.py:180-180. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: "def amend_contract(" repointed to mcp/src/agents_remember/worktrees/worktree_contract.py:197-197. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `abandon_result` repointed to mcp/src/agents_remember/worktrees/modules/abandon.py:84-143. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-10T07:41:10+00:00: Generated citation repair: "def worktree_abandon" repointed to mcp/src/agents_remember/mcp/registration/closeout.py:276-276. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-09T12:22:46+00:00: Generated citation repair: "def worktree_abandon" repointed to mcp/src/agents_remember/mcp/registration/closeout.py:283-283. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-08T16:45:00+02:00 — CCR-L38 final preparation repair: repointed frozen-source citations after the final contract diagnostic; no behavioral prose change, no verification or acceptance claim.
-- 2026-09-06T22:41:21+00:00: Generated citation repair: "def worktree_abandon" repointed to mcp/src/agents_remember/mcp/registration/closeout.py:281-281. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-05T08:46+02:00 — L31 scoped MCP curator: reviewed 1 declined citation claim against frozen code `ea35964985f30080488270e71ac81657ac40682b`. Separated cleanup vocabulary, amendment data, and mutation helper into exact source claims. Existing verification hash/date are retained; this scoped source read and citation repair do not certify the entire card or a gate.
-
-- 2026-08-31T20:30+02:00 — No content impact: repointed the `worktree_abandon` registration
-  citation after the direct-landing tool description shifted its source line. Abandon behavior is
-  unchanged.
-
-- 2026-08-29T17:23+02:00 — No content impact: reviewed the Python 3.13 type-alias syntax migration for terminal abandon outputs and confirmed that the documented abandon contract is unchanged. Verification remains closeout-owned.
-
-- 2026-08-26T03:37+02:00 — Added exact post-terminal atomic-series selection release to abandon
-  and terminal replay documentation. Selection remains disposable and separate from abandon
-  authority. Verification remains post-Dagger/closeout-owned.
-
-- 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: merged exact terminal archive, typed force replay, and atomic terminal authority into abandon. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
-
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
-
-- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: curated against accepted candidate tree `4241908c`; verification metadata remains pinned until governed closeout stamps the landed code commit.
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
-
-
-- 2026-08-20T09:35+02:00 — 260815-DAG-L16 curator: re-anchored citation range(s) to current source after the L16 line movement (cited files changed, card source unchanged); verification metadata unchanged.
-
-- 2026-08-20T05:12+02:00 — L13 landed-wave refresh: the series closeout-report routing
-  commit (0a746c9f) touched this source; card re-verified against the current file, verification
-  stamp advanced to 0a746c9f. Body unchanged — the documented contract still holds.
-
-
-- 2026-08-19T04:05+02:00 — 260815-DAG-L10 curator: the independent reports sweep now targets the
-  contract's `<worktree_group>/reports` tree, which for a series contract is the master worktree
-  group's reports (not a task-enclosure child); preservation is narrowed to legacy series
-  contracts through the renamed `legacy_series_reports_is_child_enclosure` guard. Verification
-  metadata stamped at the landed code commit `e41ea31d`.
-- 2026-08-16T00:45+02:00 — Recorded the explicit atomic-series queue-release preflight and expiring publication permit after the Dagger import-cycle repair. Verification remains closeout-owned.
-- 2026-08-15T23:38+02:00 — Reconciled this worktree owner's role in task-derived protected-ref authority, exact named-ref movement, and crash-safe recovery. Verification metadata remains closeout-owned.
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-
-- 2026-08-11T16:54+02:00 — Made non-force abandon garbage-collect the reserved enclosure report
-  tree; force abandon continues to remove it through the whole-group operation.
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B22 curator: regenerated the reused-cleanup
-  helper ranges and the closeout registrar row via the scoped fixer; exact non-fixing check
-  returns zero findings.
-
-- 2026-08-02T20:42:26+02:00 — W2-B07 curator: repaired 5 repository-reference citations (5/5 anchored and sourced; scoped citation check clean).
-
-- 2026-08-01T09:52+02:00 — 260731-EFA-L4 curator: the `cleanup="abandoned"` stamp changed mechanism.
-  `abandon_result` now writes `amend_contract(contract, ContractCells(cleanup="abandoned"))`, the
-  `from dataclasses import replace` import is gone, and `ContractCells` / `amend_contract` were
-  added to the `worktree_contract` import block. Recorded it and tightened the matching invariant:
-  `cleanup` is one of the six persisted vocabularies, and `dataclasses.replace` types `**changes` as
-  `Any`, so the old call was checked by nothing — not by pyright and not against the wire model that
-  reports the value. Behaviour and the written contract are unchanged, so every other claim in this
-  card still stands; I re-verified `_abandon_branch`'s unmerged probe, the force path
-  (`delete_branch_force`, `remove_registered_worktree(force=True)`) and the
-  `abandoned`/`abandon-blocked`/`would-abandon` states against the current file. Added the
-  `worktree_contract.py` reference row. Verification metadata pinned until closeout stamps the L4
-  commit.
-- 2026-07-31T20:59+02:00 — 260731-EFA-L3 curator: No content impact: the leaf's whole diff to
-  `abandon.py` is one import line — `run_git` moved from `modules.git` to
-  `agents_remember.kernel.git_command`, `branch_exists` still comes from `modules.git` — and this
-  sidecar never described a git runner, a subprocess style or a timeout, so it had nothing to
-  correct. Re-verified every behavioural claim against the current file: `_abandon_branch`'s
-  unmerged probe is still `run_git(repo, ["log", "--oneline", f"{base_branch}..{branch}"])`
-  (`_unmerged_commits`), the force path still routes to `delete_branch_force` (`git branch -D`) and
-  `remove_registered_worktree(..., force=True)` (`git worktree remove --force`), and
-  `_abandon_blockers` / `_abandon_state` still produce `abandoned` / `abandon-blocked` /
-  `would-abandon` unchanged. The shared runner's guard and timeout classes are documented on their
-  owner, `kernel/git_command.py`, and on `modules/git.py` which lost the local copy.
-- 2026-07-05T01:32+02:00 - L9 lifecycle convergence: docstring vocabulary updated to the l-01-agent-lifecycles orchestrator read-only/abandon exit; behavior unchanged. Verification metadata pinned until closeout stamps the L9 commit.
-- 2026-06-10T07:30+02:00 — `abandon_result` blocks (exit 2) without `force` while a live background provider setup owns the worktree (fresh heartbeat); `force=true` overrides, and a stale heartbeat does not block (GitHub #53).
-- 2026-06-02T16:24+02:00: Docstring now references the `l-01-agent-lifecycles` skill in full for the read-only/abandon exit (was "L-01"). Reference-style normalization; behavior unchanged.
-- 2026-06-01T00:00+02:00 — Created onboarding for the new abandon module.
+Rule 5 no-remains exception: with no locator, no worktree folder, no work branches and no recorded outside scratch root still on disk, abandon finishes directly with nothing to archive and nothing to delete, persisting its reason in the surviving contract with a readback. A leaf with uncommitted changes or unlanded branch commits is given up only with `force` and the explicit approval, without a sync of its master.
 
 ## Governing Overview
 
 [governing overview](overview.md)
-## Cross-Repo References
 
-This file owns no ambient cross-repository authority. Any external-memory repository it reaches remains explicitly contract-addressed.
+
+> Retained earlier citation wording: - Abandon evaluates provider liveness and terminal blockers for dry run as well as apply. A blocked preview returns abandon-blocked/blocked with the original coded blockers rather than would-abandon where the real call refuses. Force keeps its existing discard override; explicit approval, check order and unrecognized fail-closed exceptions retain their owners. Recognized terminal-state failures are answered before mutation, not generalized to every RuntimeError. [16]
+
+
+- No-remains abandon validates task-stage authority before teardown. [17]
+> Retained earlier citation wording: - The normal publication returns shared task/contract projection effects. [18]
+
+- One shared owner publishes/restores task stage and contract under the terminal guard. [19]
+
+## 260928-MIK-L198 — Abandon removes the root and records its completion
+
+`abandon_result` is now a wrapper that returns `with_outside_scratch_reconcile(_abandon_result(args), dry_run=args.dry_run)`, so an abandon run also sweeps the product parent and carries `outsideScratchReconcile` when the sweep removed or reported a root. `_abandon_directories` publishes the root's entry under the `outside_scratch` key through `outside_scratch.removal_entry_for(contract, dry_run=dry_run)` on the series path, the leaf path and the `force` path. `_already_abandoned` now takes `dry_run` and asks `outside_scratch.terminal_blocker`; a root it could not remove returns return code 2 with state `abandon-blocked`, the summary "The worktree is already recorded as abandoned but its outside scratch root could not be removed." and the failure under `blockers`, while a removed or already-absent root is carried as `outsideScratch`. After the abandoned contract and task row are published and read back, `_publish_abandon` calls `write_completion_record(contract, updated, operation="worktree_abandon")`.
+
+- Successful abandon and exact terminal replay are wrapped with exact source-pair release.  Anchor: `abandon_result` [1]
+
+
+- The typed amendment helper preserves unspecified cells and applies supplied vocabulary values. [11]
+
+
+- The current module exposes `abandon_result` at this ownership boundary.  Anchor: `abandon_result` [12]
+
+
+- `remove_registered_worktree` (from cleanup), `delete_branch_if_merged`, `delete_branch_force` (from `terminal_branch_retirement`), and `remove_empty_dir` are reused through the terminal owners. [14]
+
+
+- Abandon evaluates provider liveness and terminal blockers for dry run as well as apply. A blocked preview returns abandon-blocked/blocked with the original coded blockers rather than would-abandon where the real call refuses. Force keeps its existing discard override; explicit approval, check order and unrecognized fail-closed exceptions retain their owners. Recognized terminal-state failures are answered before mutation, not generalized to every RuntimeError. [16]
+
+
+- The normal publication returns shared task/contract projection effects. [18]
+
+
+- The cleanup vocabulary includes abandoned and reopened as declared terminal/reopen states. [9]

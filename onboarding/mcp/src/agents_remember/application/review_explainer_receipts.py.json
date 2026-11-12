@@ -1,0 +1,94 @@
+{
+  "path": "mcp/src/agents_remember/application/review_explainer_receipts.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "5688805898786f4a637bb0bedbdb3a3ae0c55595",
+        "content": "sha256:e3b4e7b8550700407aadb9bf9f1b6455341405a0e340fe3fbf985620ab311512",
+        "locator": {
+          "kind": "symbol",
+          "name": "compose_receipts"
+        }
+      },
+      "id": "RLZ-J55C8Z",
+      "invariant": "INV-0ZE4W6",
+      "origin": {
+        "handoffEntry": "the-explainers-evidence-is-prepared-for-the-bound-comparison",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Every packet enumerates the leaf’s named packets, own documents, reference files and the verified agreed manifest as source-bound supplemental receipts; read limits and missing sources remain explicit receipts.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Every source one build or Update carries is receipted through the task that owns it\n\nAnchor: `def compose_receipts(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5688805898786f4a637bb0bedbdb3a3ae0c55595",
+            "content": "sha256:e3b4e7b8550700407aadb9bf9f1b6455341405a0e340fe3fbf985620ab311512",
+            "locator": {
+              "end": 167,
+              "kind": "line_range",
+              "start": 134
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "An agreed revision that does not resolve or verify yields an unavailable receipt with its reason\n\nAnchor: `def _agreed_manifest_entry(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5688805898786f4a637bb0bedbdb3a3ae0c55595",
+            "content": "sha256:2adaed590787f2e98f407a2cb2e5518121afb77e5943710441530f4527381b81",
+            "locator": {
+              "end": 122,
+              "kind": "line_range",
+              "start": 98
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The requirement files are taken from the leaf's own document in the order it names them\n\nAnchor: `def requirement_paths(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5688805898786f4a637bb0bedbdb3a3ae0c55595",
+            "content": "sha256:6ceaab0d2c88bc30b4811a44b214480c39d3b362bf28e87a075fb0936f7d93a0",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 44
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A source past the ceiling reads as a truncated-read omission, never as a read file\n\nAnchor: `def _build_receipt(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5688805898786f4a637bb0bedbdb3a3ae0c55595",
+            "content": "sha256:d54e486ec19386d639e210e92d9950005eaf40a315b41a68a098421878c3f7de",
+            "locator": {
+              "end": 198,
+              "kind": "line_range",
+              "start": 170
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

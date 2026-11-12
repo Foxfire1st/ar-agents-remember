@@ -1,0 +1,42 @@
+{
+  "path": "mcp/src/agents_remember/canvas/sessions.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "463f5d42482415a98b7acd08b6be102c6dc95af2",
+        "content": "sha256:beb3e797793e1e64ac27445fecd496bdc7be35e566a4fba285c45b4a375e3d4f",
+        "locator": {
+          "kind": "symbol",
+          "name": "revoke"
+        }
+      },
+      "id": "RLZ-40Z0EH",
+      "invariant": "INV-ESF2CT",
+      "origin": {
+        "handoffEntry": "MIK-R104-r3-document-bound-channel",
+        "leaf": "260928-MIK-L104"
+      },
+      "rationale": "Revocation is the host's side of departure: it ends the channel and keeps the reason rather than the content.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "2": {
+      "note": "Revocation names its reason and keeps no content.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "463f5d42482415a98b7acd08b6be102c6dc95af2",
+            "content": "sha256:beb3e797793e1e64ac27445fecd496bdc7be35e566a4fba285c45b4a375e3d4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "revoke"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

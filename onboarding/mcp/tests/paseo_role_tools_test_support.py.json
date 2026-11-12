@@ -1,0 +1,37 @@
+{
+  "path": "mcp/tests/paseo_role_tools_test_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The fake host refuses by class: absent, archived, closed, permission-pending, and a running provider that takes no steer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "abd4443ea5714aa0d574a981046b6d5ca16786bd",
+            "content": "sha256:469eba3eff867e64adb374e6234a6d9269902bf2532b0722c5a872bc3c598398",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "One fixture serves both case modules, with the role tables and request helpers defined once.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "abd4443ea5714aa0d574a981046b6d5ca16786bd",
+            "content": "sha256:469eba3eff867e64adb374e6234a6d9269902bf2532b0722c5a872bc3c598398",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

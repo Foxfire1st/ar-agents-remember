@@ -1,0 +1,264 @@
+{
+  "path": "mcp/tests/test_changeset_cache.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "cb3b9f4243e5856d4a5a30813fc27c97c515c489",
+        "content": "sha256:a0823ffbd48068b8c6fd2a94d4c5f503d68dff38a97f8017e81f91a76ac23287",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_landed_list_file_and_master_reuse_native_bytes_without_git"
+        }
+      },
+      "facet": "The source-defined landed HTTP case compares native list/file payloads and identical retained response bytes.",
+      "id": "PRF-9DZ6CH",
+      "invariant": "INV-ZNXX7H",
+      "origin": {
+        "handoffEntry": "L168-W-R168-PRESERVATION",
+        "leaf": "260928-MIK-L168"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "cb3b9f4243e5856d4a5a30813fc27c97c515c489",
+        "content": "sha256:9080b128b77ad7f119255942b413602825731eff58731947f1168d6f48f112a0",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_working_view_has_no_cache_and_no_freshness_check"
+        }
+      },
+      "facet": "A working view is computed natively on every read; no freshness-only reuse is attempted.",
+      "id": "PRF-D121D0",
+      "invariant": "INV-7TMGB0",
+      "origin": {
+        "handoffEntry": "L174-7T-READS",
+        "leaf": "260928-MIK-L174"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "cb3b9f4243e5856d4a5a30813fc27c97c515c489",
+        "content": "sha256:1f84e9636a2f47fdb701938025b3f24b289aa2b23c40349daec33a23870c0b41",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_unreadable_key_and_racing_input_are_computed_uncached"
+        }
+      },
+      "facet": "A changing input is not retained; unprovable snapshots cause each subsequent computation and leave retained results empty.",
+      "id": "PRF-FYWAH7",
+      "invariant": "INV-ZNXX7H",
+      "origin": {
+        "handoffEntry": "L168-W-R168-PRESERVATION",
+        "leaf": "260928-MIK-L168"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "cb3b9f4243e5856d4a5a30813fc27c97c515c489",
+        "content": "sha256:ad3fb13cf791df7da962a6a53e271a8925fc00ef9a90e8c26ba01456499792ce",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_working_content_edit_with_the_same_status_letter_is_seen"
+        }
+      },
+      "facet": "A same-letter content edit changes the working result.",
+      "id": "PRF-GEQF6H",
+      "invariant": "INV-7TMGB0",
+      "origin": {
+        "handoffEntry": "L174-7T-READS",
+        "leaf": "260928-MIK-L174"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "cb3b9f4243e5856d4a5a30813fc27c97c515c489",
+        "content": "sha256:a0823ffbd48068b8c6fd2a94d4c5f503d68dff38a97f8017e81f91a76ac23287",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_landed_list_file_and_master_reuse_native_bytes_without_git"
+        }
+      },
+      "facet": "The source-defined fixture HTTP cases compare native landed list/file results, repeat identical response bytes without observed Git children and receive empty conditional 304s for leaf/master reads.",
+      "id": "PRF-QXF71E",
+      "invariant": "INV-7TMGB0",
+      "origin": {
+        "handoffEntry": "L168-W-R168-02",
+        "leaf": "260928-MIK-L168"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "cb3b9f4243e5856d4a5a30813fc27c97c515c489",
+        "content": "sha256:e09c686343d78b5bc69126cf054f038abdbd3eb2790a3444b8027cce3f920e59",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_one_long_read_also_bounds_its_pending_values_and_input_observations"
+        }
+      },
+      "facet": "The parameterized growing-history fixture asserts both per-read observations and pending values remain at the named capacity and final retained results remain bounded.",
+      "id": "PRF-STKKBV",
+      "invariant": "INV-GDWJKR",
+      "origin": {
+        "handoffEntry": "L168-W-R168-07",
+        "leaf": "260928-MIK-L168"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Task/file/master routes retain exact native bytes and conditional responses without repeat Git children.\n\nAnchor: `test_landed_list_file_and_master_reuse_native_bytes_without_git`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb3b9f4243e5856d4a5a30813fc27c97c515c489",
+            "content": "sha256:a95376ca1e98cdcbbeaf4d6b1dbbb27a36a8b7037d6c708353ea8e0f3b447059",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "Unrelated sibling activity and packed-ref removal preserve relevant cached results.\n\nAnchor: `test_sibling_commit_and_unrelated_packed_ref_removal_keep_other_results`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb3b9f4243e5856d4a5a30813fc27c97c515c489",
+            "content": "sha256:a95376ca1e98cdcbbeaf4d6b1dbbb27a36a8b7037d6c708353ea8e0f3b447059",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Working reads detect restored-mtime edits and leave native index bytes and identity unchanged.\n\nAnchor: `test_working_bytes_and_unchanged_poll_then_restored_mtime_edit`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb3b9f4243e5856d4a5a30813fc27c97c515c489",
+            "content": "sha256:a95376ca1e98cdcbbeaf4d6b1dbbb27a36a8b7037d6c708353ea8e0f3b447059",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Rename/delete/replace/add/index/HEAD/symlink mutations force fresh native equality.\n\nAnchor: `test_working_generation_covers_each_native_input`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb3b9f4243e5856d4a5a30813fc27c97c515c489",
+            "content": "sha256:a95376ca1e98cdcbbeaf4d6b1dbbb27a36a8b7037d6c708353ea8e0f3b447059",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Missing commits preserve refusal and later restoration becomes visible.\n\nAnchor: `test_lost_recorded_commit_can_be_restored_after_repeated_refusals`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb3b9f4243e5856d4a5a30813fc27c97c515c489",
+            "content": "sha256:a95376ca1e98cdcbbeaf4d6b1dbbb27a36a8b7037d6c708353ea8e0f3b447059",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Sidecar appearance/disappearance updates live without rerunning Git.\n\nAnchor: `test_sidecar_presence_stays_live_around_kept_git_list`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb3b9f4243e5856d4a5a30813fc27c97c515c489",
+            "content": "sha256:a95376ca1e98cdcbbeaf4d6b1dbbb27a36a8b7037d6c708353ea8e0f3b447059",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Unstable or unavailable observations are not retained.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb3b9f4243e5856d4a5a30813fc27c97c515c489",
+            "content": "sha256:1f84e9636a2f47fdb701938025b3f24b289aa2b23c40349daec33a23870c0b41",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unreadable_key_and_racing_input_are_computed_uncached"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Growing result histories retain the configured bound and evict least-recent results.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb3b9f4243e5856d4a5a30813fc27c97c515c489",
+            "content": "sha256:f0aed9919384c4362a04512dbc0dd172eeb1351d7f386aaa5ae51ed6e91c6c45",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_long_history_reclaims_least_recent_results"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "One long read also bounds pending values and input observations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb3b9f4243e5856d4a5a30813fc27c97c515c489",
+            "content": "sha256:e09c686343d78b5bc69126cf054f038abdbd3eb2790a3444b8027cce3f920e59",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_one_long_read_also_bounds_its_pending_values_and_input_observations"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Worktree/info/XDG attributes affect committed native results.\n\nAnchor: `test_landed_attributes_use_every_native_source`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb3b9f4243e5856d4a5a30813fc27c97c515c489",
+            "content": "sha256:a95376ca1e98cdcbbeaf4d6b1dbbb27a36a8b7037d6c708353ea8e0f3b447059",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

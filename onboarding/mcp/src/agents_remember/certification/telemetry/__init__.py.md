@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/certification/telemetry/__init__.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/certification/telemetry/__init__.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-05T07:08:26+00:00 |
-| lastVerifiedCommitHash | `2cd360d8f45ccdcf640dc9c5d14b941ac2f0f8eb` |
-| lastVerifiedCommitDate | 2026-09-04T12:20:39+02:00 |
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [Certification overview](../overview.md)
@@ -58,7 +48,9 @@ public here only if its owning module defines it.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this memory root. The governing documentary
 artifacts for this change scope are the CCR-R16@v3 requirement packet
@@ -68,25 +60,12 @@ those facts are recorded as prose here: the packet normatively requires one exec
 durable stream whose cost, order, zero-start barriers, recovery, and public state are
 reconstructable without ephemeral-log parsing, and the leaf owns exactly that manifestation.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The package re-exports the public telemetry surface from five owning modules. | `TelemetryExecutionContext`; `TelemetryEvent`; `TelemetryProjection`; `DurableTelemetryStore`; `TelemetryReadiness` | mcp/src/agents_remember/certification/telemetry/__init__.py:3-103 |
-| `__all__` fixes the complete public telemetry surface. | `__all__` | mcp/src/agents_remember/certification/telemetry/__init__.py:105-197 |
-| The certification facade imports the telemetry surface through this package. | "from agents_remember.certification.telemetry import (" | mcp/src/agents_remember/certification/__init__.py:146-184 |
+- The package re-exports the public telemetry surface from five owning modules. [1]
+- `__all__` fixes the complete public telemetry surface. [2]
+- The certification facade imports the telemetry surface through this package. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation boundary is owned here.
-
-## Update History
-
-- 2026-09-05T07:08:26+00:00 — L31 final residual curation against frozen code `ea35964985f30080488270e71ac81657ac40682b`: Replaced multiply resolved telemetry names with the unique facade import block; telemetry facade claim unchanged. This scoped repair does not promote the card's verification stamp or certify a gate.
-
-- 2026-09-05T06:39:59+00:00 — L31 scoped citation curation against frozen ea359649: repaired facade anchors and import coordinates; corrected the owning-module count from four to five as directly enumerated by the imports. No runtime behavior claim changed; source verification metadata was not advanced.
-
-- 2026-09-04T12:30+02:00 - 260831-CCR-L16 Gate-5: created for the CCR-R16@v3 durable gate and
-  rail telemetry package surface (leaf 260831-CCR-L16, certified commit
-  `2cd360d8f45ccdcf640dc9c5d14b941ac2f0f8eb`). Verification stamp advanced to the certified code
-  commit.

@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Three publishing routes share one identity builder, and a subject taken from the shared master artifact would tell the developer a leaf landed when its master did — or the reverse. The per-leaf subject cases pin each route's identity against a real contract."
+  },
+  "applicability": "Terminal-notice subjects and occurrence identities for leaf enclosures, ordinary series contracts and admitted direct leaf generations.",
+  "conditions": [
+    "A leaf enclosure names its own canonical leaf document and never borrows its master when unresolved; an ordinary series contract names its own master document. A direct landing names the immutable admitted leaf reference rather than its enclosing series master.",
+    "Identity carries the resolved subject key plus the native occurrence discriminator, so exact retries retain identity and distinct direct generations stay distinct.",
+    "A notice for a task the queue cannot name is not written at all."
+  ],
+  "exclusions": [
+    "Attributing a leaf's landing or abandonment to its master.",
+    "Inventing a document reference for a taskless subject.",
+    "Changing a completed native publication because a notice could not be written."
+  ],
+  "id": "INV-6S5SQ5",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/reviewer/267804e5-dd71-51e8-8f1d-d975effaaeaf/role-launch/round4/L190-fix-verification-R4.json#L190-R1-F05; Prior sealed closure retained; not reopened in fixed-list R4."
+      ],
+      "path": "ingest-runA.json"
+    },
+    "handoffEntry": "L190-R1-F05",
+    "leaf": "260928-MIK-L190",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A terminal notice names the publishing task's canonical document: its own leaf for a leaf enclosure or direct leaf generation, and its own master for an ordinary series contract.",
+  "status": "proposed",
+  "supersedes": []
+}

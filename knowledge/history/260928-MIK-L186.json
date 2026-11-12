@@ -1,0 +1,2952 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L186",
+  "rows": [
+    {
+      "disposition": "updated",
+      "id": "ROW-0422MA",
+      "items": [
+        "sha256:3b088bce1096c3b1f6f688111286884671d360d0631d1b4bda9b2325e2b57b92"
+      ],
+      "reason": "The roles overview's authoring-route account now names the mounted knowledge_write beside the command, as the corrected role text does.",
+      "sources": [
+        {
+          "blob": "a602c903e6382a89023cdd7692950e3a0b1e3061",
+          "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-0B1NFY",
+      "items": [
+        "sha256:55b4d3fedf0c96396ec251838c7c246f83a420e7c2d3ad0ded3d959f534406df",
+        "sha256:6e29018aa5910d2ee7f20911873892396b7a25386e1ffc135f4b258b3ed270dd",
+        "sha256:7b27ce61b8633d01c124643c5f5db71ea40547b6162de0dd729f488a9bdd0209",
+        "sha256:a31da678eddc78b14eb6e0d067176c7801b1dc26d00805a8172601940099f795",
+        "sha256:accc273f7ec2004e7728e758df2493ebdf0fe85a733d28bd4e52c3a63e246e41",
+        "sha256:bb4c10d86c0d296e11f69a9320b8b36c30e8dce191404ba1f931a151305405e4",
+        "sha256:c0308641814103c2cd4c8e5a31e46fa7295594060cc830feccfc167f1522f4fc"
+      ],
+      "reason": "Round-1 memory repair (L186-M1-F11): the card's active statement contradicted the passed candidate and is corrected, and its reference was re-resolved where the property it carried was false.",
+      "sources": [
+        {
+          "blob": "7a78bd431734fd758e40bbd22a3dbcad0d2810a8",
+          "path": "skills/l-01-agent-lifecycles/reference/curator-worklist-details.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/reference/curator-worklist-details.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1484F9",
+      "items": [
+        "sha256:f5fc3e87ad8385df96a85c49a5bbd94dc1a1f260f2baf43bb7c4bf424d2dc694"
+      ],
+      "reason": "The proof write now returns the paired titles and routes a range proof through its own module; the proof obligation is carried by the proof-route invariants, and this hunk only calls them.",
+      "subject": "hunk:sha256:f5fc3e87ad8385df96a85c49a5bbd94dc1a1f260f2baf43bb7c4bf424d2dc694"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-18XE9D",
+      "items": [
+        "sha256:131b7aea1b5c2f82aa4fac7cf22caad27fe7539859c6395beb8fbdb24f957c19"
+      ],
+      "reason": "The card was brought up to date with this file's current contract: the new behaviour is described and its citations re-anchored at the candidate.",
+      "sources": [
+        {
+          "blob": "8cb6c14f708f9f545ca4827e9fb456b7a3bf51ae",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/test_case_ranges.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/style/citations/test_case_ranges.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "3b5193512f0b66e5ba722fb0a6c0252239058682",
+            "content": "sha256:dbe83380a7200a4eda70ee23ad653d9b1ab76db30abdbf0fd4452d79a118cdb4",
+            "locator": {
+              "kind": "symbol",
+              "name": "HandoverTextWordingTests.test_owner_relation_routes_developer_questions_and_preserves_coordinators"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "186dcf05f4e5e23d4b29a391c089bc88eecf0849",
+            "content": "sha256:dbe83380a7200a4eda70ee23ad653d9b1ab76db30abdbf0fd4452d79a118cdb4",
+            "locator": {
+              "kind": "symbol",
+              "name": "HandoverTextWordingTests.test_owner_relation_routes_developer_questions_and_preserves_coordinators"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-8AD3VX"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-22S76C",
+      "items": [
+        "sha256:fbdbfd10ffb95d4496c35f04d89f02d2951eab19e284a5f513747a0ce1641f2a"
+      ],
+      "reason": "The A7 format pass re-anchored this record's proof; the entry's line moved and its anchor is re-resolved at the new code tree.",
+      "revision": 4,
+      "subject": "INV-8AMSGV"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2DP9ZQ",
+      "items": [
+        "sha256:77d89a1bfd00952eb34ed2e0d888fab5aaba7a597d278396fd3341ccf0f54582"
+      ],
+      "reason": "The stored re-point shape and its uniqueness rule are the shape half of one obligation, carried by the re-point invariant.",
+      "subject": "hunk:sha256:77d89a1bfd00952eb34ed2e0d888fab5aaba7a597d278396fd3341ccf0f54582"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-2G3FH4",
+      "items": [
+        "sha256:8f786152229cbdc7534961b386598209819d03db30dd766e5dc061e0beb71f5a"
+      ],
+      "reason": "L186-M1-F09 (round 2): the Purpose paragraph no longer claims the command cannot publish any raise or reach its task document, and no longer claims the route modules keep only calls.",
+      "sources": [
+        {
+          "blob": "e25778094b4d4e23d7c30c0823713d84f26bfa75",
+          "path": "mcp/src/agents_remember/application/knowledge_write_command.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_write_command.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "adf9b5a6fa1244eb38e099643fe8e5ff6e1defba",
+            "content": "sha256:1c37c333461ea486df03ee23330e489e0a7a14b8e54beb5340a36e54f8def7c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_curator_instruction_wording.py"
+          },
+          "before": {
+            "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
+            "content": "sha256:bded51c6252aef1e28b26c9df757f4208f54d73f670c5aca2f7d9e1361971140",
+            "locator": {
+              "end": 303,
+              "kind": "line_range",
+              "start": 233
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-EP4JYF"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-2TG4VR",
+      "items": [
+        "sha256:82c8467135757086afc7348dbdfba8633e752090484bbbadd89ce132b67834b2"
+      ],
+      "reason": "The Investigator assignment and the parent-chain rule are unchanged; the pin's proof is now the one moved case that states them.",
+      "revision": 1,
+      "subject": "INV-NC6F6V"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-2ZKAQ2",
+      "items": [
+        "sha256:0a16d3d0844ff28e5dd57b9c90629781f0a84ad7d0e7b3bc7b5889391807cc8f"
+      ],
+      "reason": "The A7 format pass changed this source after the earlier row; the card's citations were re-anchored at the new tree and the row re-binds the current blobs.",
+      "sources": [
+        {
+          "blob": "3b5193512f0b66e5ba722fb0a6c0252239058682",
+          "path": "mcp/tests/test_role_instruction_wording.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_instruction_wording.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-32PZGW",
+      "items": [
+        "sha256:16d250b7bdb2129b13791bfadedb729f3ab8ab6b3ef1207a193d6a79429182dc",
+        "sha256:2d15bf41d5156620da4a2b6e64186f044f4b0232ad37703ac231310b88e326db",
+        "sha256:335fb55b1c88d111f97d315b85a3a06368bb458ccdbd2a30bc677b8cebdad919",
+        "sha256:3c52834441b272fa84ed72759d65f85fc31b7ab0a381f79553265eb3dbaa0f37",
+        "sha256:408960f79ea1b641f7d64b3be7bbf373c625b18776b798c1e616aac277636d4f",
+        "sha256:5736537c1a2aec5417e5183e6e935bbb3cf11029daabd0ed7a12376b1151e739",
+        "sha256:602ce8228f0a5b727bff1303bd5da0ae83d855490a41ec509204bfb5b990d924",
+        "sha256:614bea466d1d1c4b3c50cb8a63862e39e274a0cd7e511841523116dcc11ff0e3",
+        "sha256:63cacbf2cd78d66b943c551fd23a82ea5c29d8fdc6e6e5af4e29148b47ab77d7",
+        "sha256:7478815a6268f6c7d9d351be24f78f4592895e9b9d3f2eda2d1b431784b0062d",
+        "sha256:7d6b0de203cbc6eb93695ede23afe2fb3daf7d2732c7c3662e93ad5b41516f27",
+        "sha256:88debb588011078560db6644786b4f6649a46ccae11e6992cf8ca642e29d0c5e",
+        "sha256:912d00f29004f1e34587522085988580d949559b5a7cda98ea93d0c3d796df0d",
+        "sha256:943faf5beb0613a3aec3a3a3e1516d4806e517ee2c51aee4780c87824a8dde0a",
+        "sha256:aa67977a597a30dc7004be000e01952f868afd39a4ca00f6dbae013dcda74835",
+        "sha256:ba7774889d44ebe07a54b1bcb6ff41b3dd7842edb38b24b1fee3c5b9155b2f83",
+        "sha256:f164afb526d54fcaf64eebcb65ca9289d937f7088b6831fb0499f10d0000b0a6",
+        "sha256:f43dd7aa8d5a20b7949249e38bf12434fa5c82a2b159b5f5f4d63a3e119bf97d",
+        "sha256:feb8d21519463441c0231a5b688b1793a5d669f56e6c5cc6438f2892dc918f4d"
+      ],
+      "reason": "Round-1 memory repair (L186-M1-F03): the card's active statement contradicted the passed candidate and is corrected, and its reference was re-resolved where the property it carried was false.",
+      "sources": [
+        {
+          "blob": "a9640d916bc1fb5ff79c2a85ca957b2ed07fccfb",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/reconsideration.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_writer/reconsideration.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-330QSR",
+      "items": [
+        "sha256:776b0d15180cc37748712acecbb1c169bd5c2c3721e979d91e8f9fca08a36792"
+      ],
+      "reason": "The stored re-point shape and its uniqueness rule are the shape half of one obligation, carried by the re-point invariant.",
+      "subject": "hunk:sha256:776b0d15180cc37748712acecbb1c169bd5c2c3721e979d91e8f9fca08a36792"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3C22Y8",
+      "items": [
+        "sha256:9dd9f276584f6245e56c2b88573ec3bd1053e5b73c20afeb1937fa6021481af8"
+      ],
+      "reason": "The template's new paragraphs state the writer's proof, re-point and raise routes; that instruction obligation is carried by INV-CKJ6AZ and the role-text invariant.",
+      "subject": "hunk:sha256:9dd9f276584f6245e56c2b88573ec3bd1053e5b73c20afeb1937fa6021481af8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3R9S63",
+      "items": [
+        "sha256:dc94eac73b9a21546ddf1cefac8c7f0c9a3e8694b609a6b6fa1a9a04d04aff51"
+      ],
+      "reason": "The refusal and modifier texts changed to name real modifiers and offer the exact lines; that diagnostic obligation is carried by the proof-refusal invariant, not by a new one.",
+      "subject": "hunk:sha256:dc94eac73b9a21546ddf1cefac8c7f0c9a3e8694b609a6b6fa1a9a04d04aff51"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-3TQA5D",
+      "items": [],
+      "reason": "The card was brought up to date with this file's current contract: its statements about the command's raise route, --config or the mounted writer were false and are corrected.",
+      "sources": [
+        {
+          "blob": "8639d356981b156cf326c00c80e903f16d1761e7",
+          "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/registration/knowledge.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "adf9b5a6fa1244eb38e099643fe8e5ff6e1defba",
+            "content": "sha256:1c37c333461ea486df03ee23330e489e0a7a14b8e54beb5340a36e54f8def7c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_curator_instruction_wording.py"
+          },
+          "before": {
+            "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
+            "content": "sha256:bded51c6252aef1e28b26c9df757f4208f54d73f670c5aca2f7d9e1361971140",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-0TFF0B"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-3WC758",
+      "items": [
+        "sha256:2034fd41aefac2ea40ef6235584c2c7f9c4b2568614d6f5abe26f6060baaf5f8"
+      ],
+      "reason": "The repaired leaf loop and its evidence duty are unchanged; the wording pin moved with its proof to the new test module.",
+      "revision": 4,
+      "subject": "INV-5KBX7C"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-3WEGF3",
+      "items": [
+        "sha256:bfdf5893a6523352240ba2158283f33adac44faf9e6e4f77117618c20d93576e"
+      ],
+      "reason": "Reviewed: it already declares the mounted knowledge_write in the current roster, and this leaf adds no tool name and removes none.",
+      "sources": [
+        {
+          "blob": "17a7fa6f65e138b2e9443d952932013a30658963",
+          "path": "mcp/src/agents_remember/cli/knowledge_ingest.py"
+        },
+        {
+          "blob": "f8295e26dca6a63ac93655d7708654f113aaa4ec",
+          "path": "mcp/src/agents_remember/cli/knowledge_write_route.py"
+        },
+        {
+          "blob": "f282452741c4fb76df6b7d6b469519c7ea2cb936",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/composition-manifest.json"
+        },
+        {
+          "blob": "38daf6f3a9e1766c06dbbe2cc50c5b44db32d5f1",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/onboarding-memory.md"
+        },
+        {
+          "blob": "7a78bd431734fd758e40bbd22a3dbcad0d2810a8",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/reference/curator-worklist-details.md"
+        },
+        {
+          "blob": "a602c903e6382a89023cdd7692950e3a0b1e3061",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md"
+        },
+        {
+          "blob": "74366459d4451f38bd8c063ce635036c8a947c19",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "changed",
+      "effect": "strengthen",
+      "examined": [
+        {
+          "id": "INV-1XKX9ERN",
+          "revision": 7
+        },
+        {
+          "id": "INV-753SKJFF",
+          "revision": 3
+        },
+        {
+          "id": "INV-QN53GPRB",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-44VQP4",
+      "items": [
+        "sha256:d71eada45ba3658a3b5849264132e3508f2b2bbea5bd95d8e737d92c99bc48b3"
+      ],
+      "reason": "The family's guarantee named the two commands as the authoring routes. It now names the mounted knowledge_write as the third admitted route, states that it runs the same writer with the same arguments, and keeps the one-root and no-canonical-dataset promises. All three members were examined: INV-1XKX9ERN states the routes, and INV-753SKJFF and INV-QN53GPRB keep their own obligations unchanged. The routes stay as they were.",
+      "revision": 5,
+      "subject": "FAM-7B6N3Y4Q"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4EE0QV",
+      "items": [
+        "sha256:9d4ec3fef7112e8486a07421a1952f8322ef66a5205397389b502cf9237bd9f0"
+      ],
+      "reason": "The stored re-point shape and its uniqueness rule are the shape half of one obligation, carried by the re-point invariant.",
+      "subject": "hunk:sha256:9d4ec3fef7112e8486a07421a1952f8322ef66a5205397389b502cf9237bd9f0"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4HAKYY",
+      "items": [
+        "sha256:0fa05a4d3e670be61bebf940208b5d391c5d5aac6dae49ccf235f303643e02d8",
+        "sha256:247bfd81eeef77eedd2e420979e66d6182b7dbb69600cfbf4e77cee39c590cc3",
+        "sha256:30ce46fe38c3d146de3d3298888821dffed4ee6433d358ad3b0eb2b9ce52f6d9",
+        "sha256:3dc081eabc7bcca7c863b58fdc901baea2e751aa9ffe1a2b7c666ef367e0c769",
+        "sha256:4706faa2f5f1b8fceb196438b6a2654c84307e9ecee137d145e82c57c1d0f359",
+        "sha256:4d796f4f63e23033160306d4896858860382dda518cca6f33abe5f5f3817ce5d",
+        "sha256:88f1a650133d37c6eda69bf485d8fc2cbe2f821d7f1b6030d0cf923f3899569f",
+        "sha256:af940d3f2d228791c7df52b17a164df6e3f7a0cf9d9ce7c29f778cd784108c85",
+        "sha256:bb0cd1fc74553bf24cc83ceb01f8429d070fed5e561db2aa0495435f7f4444bf",
+        "sha256:cc45b29ffd65e879afd98c3d3c4360e16313031db87823d2be67b54524086cff",
+        "sha256:fad75cc0d82bd23e040aa7702bea1a00c7caadc447116f8c930df3d01c2cf2f5"
+      ],
+      "reason": "Round-1 memory repair (L186-M1-F10): the card's active statement contradicted the passed candidate and is corrected, and its reference was re-resolved where the property it carried was false.",
+      "sources": [
+        {
+          "blob": "f8295e26dca6a63ac93655d7708654f113aaa4ec",
+          "path": "mcp/src/agents_remember/cli/knowledge_write_route.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/knowledge_write_route.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-4VGCW0",
+      "items": [
+        "sha256:58efd4facb2ebe339bfd16651fc208020c1cd5e6a836e2b153946df924746ce0"
+      ],
+      "reason": "Reviewed: the checkout guard's decision is unchanged; only its rule was extracted for a test to run, and the file card says so.",
+      "sources": [
+        {
+          "blob": "f46c901c30e3cecad97dcf399005a5a768c8eb61",
+          "path": "mcp/src/agents_remember/kernel/primitives/checkout_coordination.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/kernel/primitives/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-561WAZ",
+      "items": [
+        "sha256:fc1f794cdcb52a28882d4f7b4d3b78588ce1b83a27945b2ac47983a96f31df77"
+      ],
+      "reason": "The raise question's opener is split into the mounted half and the command half; the refusal it produces is stated by the command-raise invariant, so this hunk re-shapes one obligation and adds none.",
+      "subject": "hunk:sha256:fc1f794cdcb52a28882d4f7b4d3b78588ce1b83a27945b2ac47983a96f31df77"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5Q00BZ",
+      "items": [
+        "sha256:7dffebc824974b9ddbac783f3d9b109f174cd503108f2ea9d4c1bb62806933b9"
+      ],
+      "reason": "The removed --config option and its usage line are command surface; the obligation they belonged to is the command-raise invariant, which the parser refusal now carries.",
+      "subject": "hunk:sha256:7dffebc824974b9ddbac783f3d9b109f174cd503108f2ea9d4c1bb62806933b9"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-6GFZNR",
+      "items": [
+        "sha256:12c96f15299cca7a2410c3977c772ac67eb7c9604b6f5c4ec7eb9acfe857eb4c"
+      ],
+      "reason": "The A7 format pass changed this source after the earlier row; the card's citations were re-anchored at the new tree and the row re-binds the current blobs.",
+      "sources": [
+        {
+          "blob": "e25778094b4d4e23d7c30c0823713d84f26bfa75",
+          "path": "mcp/src/agents_remember/application/knowledge_write_command.py"
+        },
+        {
+          "blob": "28609cb56fc37a22b7f120e629c7d3b968d23072",
+          "path": "mcp/src/agents_remember/application/knowledge_write_route.py"
+        },
+        {
+          "blob": "26e24ad345fcd041e170c653e207a2e7837f40c3",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/authoring.py"
+        },
+        {
+          "blob": "f2877a8f215264bdc76c3b8bd580f41b65b78b9a",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/case_proof.py"
+        },
+        {
+          "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/handoff.py"
+        },
+        {
+          "blob": "a9640d916bc1fb5ff79c2a85ca957b2ed07fccfb",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/reconsideration.py"
+        },
+        {
+          "blob": "f6dd3fa6bb431ea9ffec7301f9ab7bd2bda866df",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/repoint.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6T6ZDA",
+      "items": [
+        "sha256:056a1aabaa87400a9aefc70a39d9481f9dd5f4c33b33c6104f71de9a9e548a78"
+      ],
+      "reason": "The template's new paragraphs state the writer's proof, re-point and raise routes; that instruction obligation is carried by INV-CKJ6AZ and the role-text invariant.",
+      "subject": "hunk:sha256:056a1aabaa87400a9aefc70a39d9481f9dd5f4c33b33c6104f71de9a9e548a78"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-6ZP8MD",
+      "items": [
+        "sha256:82dd5dd2bcfd31ec64cecb65c764ea7a0c42a05b057696e4d7be4a176ab8427c"
+      ],
+      "reason": "The A7 format pass changed this source after the earlier row; the card's citations were re-anchored at the new tree and the row re-binds the current blobs.",
+      "sources": [
+        {
+          "blob": "a8d170d06edbab3222572e1bdcace16a938c185e",
+          "path": "mcp/tests/test_writer_command_raise.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_writer_command_raise.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-771PTN",
+      "items": [
+        "sha256:f7938581f4af3eeaeeb5dab5661b3abc52daa3a951b04f82005ce363d5fb424b"
+      ],
+      "reason": "Round-1 memory repair (L186-M1-F01 and F03): the card's active statement contradicted the passed candidate and is corrected, and its reference was re-resolved where the property it carried was false.",
+      "sources": [
+        {
+          "blob": "f282452741c4fb76df6b7d6b469519c7ea2cb936",
+          "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+        },
+        {
+          "blob": "38daf6f3a9e1766c06dbbe2cc50c5b44db32d5f1",
+          "path": "skills/l-01-agent-lifecycles/criteria/onboarding-memory.md"
+        },
+        {
+          "blob": "7a78bd431734fd758e40bbd22a3dbcad0d2810a8",
+          "path": "skills/l-01-agent-lifecycles/reference/curator-worklist-details.md"
+        },
+        {
+          "blob": "74366459d4451f38bd8c063ce635036c8a947c19",
+          "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-7KKPKP",
+      "items": [
+        "sha256:76298e0b6203d383c22766e1d8eff0560cae4d10a15bdf382e6a02823a83ea70"
+      ],
+      "reason": "The card was brought up to date with this file's current contract: the new behaviour is described and its citations re-anchored at the candidate.",
+      "sources": [
+        {
+          "blob": "f46c901c30e3cecad97dcf399005a5a768c8eb61",
+          "path": "mcp/src/agents_remember/kernel/primitives/checkout_coordination.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/kernel/primitives/checkout_coordination.py"
+    },
+    {
+      "considered": [
+        "FAM-YGXZTQ",
+        "FAM-7B6N3Y4Q"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-80A4SE",
+      "items": [],
+      "reason": "No family's joint guarantee covers this obligation on its own: it is one writer or instruction promise, and the families examined promise the route, the propagation or the guarded maintenance around it rather than this obligation.",
+      "revision": 1,
+      "subject": "membership:INV-ZG887T"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "fb97a77f84daaaa046467094d301350bc4e97ec6",
+            "content": "sha256:19f171f8385aa7395f27d9956e0fa3e3fc60313d2f3c11a98b91ffc51d9a8893",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_case_that_runs_and_that_no_name_reaches_is_admitted"
+            },
+            "path": "mcp/tests/test_memory_case_ranges.py"
+          },
+          "before": "absent",
+          "id": "PRF-9P13MX"
+        },
+        {
+          "after": {
+            "blob": "fb97a77f84daaaa046467094d301350bc4e97ec6",
+            "content": "sha256:b29790627708be593242db38ead622b3756dd21220ef3c56308db2241041282c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_parameterised_case_is_admitted_by_its_whole_extent"
+            },
+            "path": "mcp/tests/test_memory_case_ranges.py"
+          },
+          "before": "absent",
+          "id": "PRF-G5NZ04"
+        },
+        {
+          "after": {
+            "blob": "fb97a77f84daaaa046467094d301350bc4e97ec6",
+            "content": "sha256:2d040fcac88e04d29331fa91d793251e0022e77195acba3e938b5e7e7ccbc564",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_inner_call_of_a_parameterised_case_is_no_case"
+            },
+            "path": "mcp/tests/test_memory_case_ranges.py"
+          },
+          "before": "absent",
+          "id": "PRF-GEXNR5"
+        },
+        {
+          "after": {
+            "blob": "643d3010c1fc3af542650e4ea271f1c2019d4cc4",
+            "content": "sha256:3520149758545390c4194dae0e5c571f76dca7107d2a0932454a4318d083ddfc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_case_that_does_not_run_is_refused_with_its_real_modifier"
+            },
+            "path": "mcp/tests/test_memory_case_ranges.py"
+          },
+          "before": "absent",
+          "id": "PRF-NDQVWB"
+        },
+        {
+          "after": {
+            "blob": "8cb6c14f708f9f545ca4827e9fb456b7a3bf51ae",
+            "content": "sha256:dadb4ee177e4631c3e6624cae4d9b9bf89657139e81327943b08bcb04f816646",
+            "locator": {
+              "kind": "symbol",
+              "name": "case_at"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/test_case_ranges.py"
+          },
+          "before": "absent",
+          "id": "RLZ-7PRHCX"
+        },
+        {
+          "after": {
+            "blob": "116f5734ffc67bc3a0562f76cd9608a80db7ffb4",
+            "content": "sha256:5952f6096541f54daa7e5f3606b7a6c96416c1507776f5d7fe931b8e6f208a2b",
+            "locator": {
+              "end": 292,
+              "kind": "line_range",
+              "start": 262
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/test_cases.py"
+          },
+          "before": "absent",
+          "id": "RLZ-K557YT"
+        },
+        {
+          "after": {
+            "blob": "f2877a8f215264bdc76c3b8bd580f41b65b78b9a",
+            "content": "sha256:bf7b281388fd9bdf14847fd42909e75ca4286ba961540e6d830fc77efd84d0ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "range_proof"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/case_proof.py"
+          },
+          "before": "absent",
+          "id": "RLZ-ZDG4KC"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-86SHBJ",
+      "items": [],
+      "reason": "L186-M1-F15: the record's statement stands; its realization at the refusal function gave a rationale the code does not support (an exact offer for every unnamed form) and is corrected to the modifier/computed branches and the placeholder fallback.",
+      "revision": 1,
+      "subject": "INV-N5KQ73"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-8AMSGV",
+          "revision": 4
+        },
+        {
+          "id": "INV-A6GAKX",
+          "revision": 1
+        },
+        {
+          "id": "INV-NFV5VJ",
+          "revision": 1
+        },
+        {
+          "id": "INV-P2WRNQ",
+          "revision": 2
+        },
+        {
+          "id": "INV-PEVJ6G",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-88RBAF",
+      "items": [
+        "sha256:91780cefd394fb389185f969320a44877e09ed68272e07572e5a544e4a28ff58"
+      ],
+      "reason": "Every member was examined and none is changed by this leaf; the A7 format pass moved member lines only, so the family row records the current revisions.",
+      "revision": 2,
+      "subject": "FAM-PNH1QS"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-923JVR",
+      "items": [
+        "sha256:87edf0d3968436b59a15ab255e8be5bb0d3b7f60bf80307dd301eac1fec954f8"
+      ],
+      "reason": "The A7 format pass changed this source after the earlier row; the card's citations were re-anchored at the new tree and the row re-binds the current blobs.",
+      "sources": [
+        {
+          "blob": "f6dd3fa6bb431ea9ffec7301f9ab7bd2bda866df",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/repoint.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_writer/repoint.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-96WR6X",
+      "items": [
+        "sha256:f4b3d851816c8efe0f87581282c6b881bfdd47311c1d3d32bd140dd8da4b5c8a"
+      ],
+      "reason": "L186-M1-F15 (round 2): the named current paragraph now limits the exact line_range offer to a modifier or computed title and records the S/E placeholder fallback.",
+      "sources": [
+        {
+          "blob": "116f5734ffc67bc3a0562f76cd9608a80db7ffb4",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/test_cases.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/style/citations/test_cases.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "adf9b5a6fa1244eb38e099643fe8e5ff6e1defba",
+            "content": "sha256:1c37c333461ea486df03ee23330e489e0a7a14b8e54beb5340a36e54f8def7c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_curator_instruction_wording.py"
+          },
+          "before": {
+            "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
+            "content": "sha256:bded51c6252aef1e28b26c9df757f4208f54d73f670c5aca2f7d9e1361971140",
+            "locator": {
+              "end": 303,
+              "kind": "line_range",
+              "start": 233
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-0DCHVF"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-98SJYM",
+      "items": [
+        "sha256:f350a2b00e45c07fab526977632984811a29bd34d34bf84218f8261d0bf3b3f3"
+      ],
+      "reason": "The coordinating agent's decisions and its answers to its own role agents are unchanged; the pin's proof is now the one moved case that states them.",
+      "revision": 1,
+      "subject": "INV-NFV5VJ"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-99PTGJ",
+      "items": [
+        "sha256:95f4af6403b5171b7af890fab8837693b6b01c377b00bae86f0b07898c2ad883"
+      ],
+      "reason": "The curator entry's requested tool list gains one name; the list requests tools and the obligation is stated by the instruction invariant, so the manifest row carries no invariant of its own.",
+      "subject": "hunk:sha256:95f4af6403b5171b7af890fab8837693b6b01c377b00bae86f0b07898c2ad883"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9CRGSA",
+      "items": [
+        "sha256:0f36fe0becc55ef6bd7090bd9ee157a515c3d8735bf570bf4296db5c21d7b13f"
+      ],
+      "reason": "The A7 format pass changed this source after the earlier row; the card's citations were re-anchored at the new tree and the row re-binds the current blobs.",
+      "sources": [
+        {
+          "blob": "f2877a8f215264bdc76c3b8bd580f41b65b78b9a",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/case_proof.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_writer/case_proof.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "28609cb56fc37a22b7f120e629c7d3b968d23072",
+            "content": "sha256:4939767aced256f099dd7694079880510d556e4bd949f9526b61adcb5a6a7531",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_write_report"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_write_route.py"
+          },
+          "before": {
+            "blob": "8edf1fd52b71a129b4edb48be215ec86443b3d9f",
+            "content": "sha256:ec18815cbe04b35747c833f7f6dfd9ed5394ac01945d7ab9939879dbf616f779",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_write_report"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_write_route.py"
+          },
+          "id": "RLZ-P0P9C1"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-9E4HSS",
+      "items": [
+        "sha256:4d05342716b4e115719d6c452ef43d125f0fc6a402d6c2a074957a5f160eb2db"
+      ],
+      "reason": "The mounted writer still runs the command's functions under the same contract guard, authorization reference and refusals; the shared entry point's anchor moved with the route value and is re-anchored at the candidate.",
+      "revision": 1,
+      "subject": "INV-AG8G8C"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-208SQT",
+          "revision": 2
+        },
+        {
+          "id": "INV-CXEEF4",
+          "revision": 1
+        },
+        {
+          "id": "INV-K5SFG7",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-9RZGC7",
+      "items": [
+        "sha256:cc4716721ee161a4adf658a428f8d585834393b57e60571f1dc7191bcef64c76"
+      ],
+      "reason": "The guarded-instruction-maintenance guarantee still holds: this leaf's instruction edits change wording this governing leaf owns, no protected sentence was restored from the retired register, and the three curated capsules measured no growth. All three members were examined.",
+      "revision": 1,
+      "subject": "FAM-YGXZTQ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-A366PQ",
+      "items": [
+        "sha256:0a82f39062f61cd3831abbf5715b92ea06ad06d32508fec006e8dac395783cb8"
+      ],
+      "reason": "Round-1 memory repair (L186-M1-F02): the card's active statement contradicted the passed candidate and is corrected, and its reference was re-resolved where the property it carried was false.",
+      "sources": [
+        {
+          "blob": "74366459d4451f38bd8c063ce635036c8a947c19",
+          "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+    },
+    {
+      "considered": [
+        "FAM-7B6N3Y4Q"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-A9HAW9",
+      "items": [],
+      "reason": "No family's joint guarantee covers this obligation on its own: it is one writer or instruction promise, and the families examined promise the route, the propagation or the guarded maintenance around it rather than this obligation.",
+      "revision": 1,
+      "subject": "membership:INV-S5VHSM"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-AGMGPP",
+      "items": [],
+      "reason": "The card was brought up to date with this file's current contract: its statements about the command's raise route, --config or the mounted writer were false and are corrected.",
+      "sources": [
+        {
+          "blob": "0e1c84f88f3d212ffcd4d47b3b346de09d7e1da6",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/open_questions.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_writer/open_questions.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "adf9b5a6fa1244eb38e099643fe8e5ff6e1defba",
+            "content": "sha256:1c37c333461ea486df03ee23330e489e0a7a14b8e54beb5340a36e54f8def7c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_curator_instruction_wording.py"
+          },
+          "before": {
+            "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
+            "content": "sha256:bded51c6252aef1e28b26c9df757f4208f54d73f670c5aca2f7d9e1361971140",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-RFP8Q1"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-AHF5N2",
+      "items": [
+        "sha256:b8ae08290960b7a2acd2d87d56de5d910bbc32f8b4409f051444331d1266c4ad"
+      ],
+      "reason": "The answer-first reading of a developer message and the role-agent line are unchanged; the moved wording proof is now the new module's case.",
+      "revision": 1,
+      "subject": "INV-PEVJ6G"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "43748c0ad97393f71e479365e57be2ddf9b415aa",
+            "content": "sha256:3fb1e111e155493f6d2d06aeacdeeb4deb085f1b698d74109fd28963cf152911",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_loaded_settings_root_mismatch_refuses_raise_before_publication"
+            },
+            "path": "mcp/tests/test_writer_question_publication.py"
+          },
+          "before": {
+            "blob": "37e11f8ad9c8e840df5369dcf52cf9950b7e8185",
+            "content": "sha256:5eb510e43eeebb3ab771a5accf201ac6abf253c389062ed83491e2fba7e7ede7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_loaded_settings_root_mismatch_refuses_raise_before_publication"
+            },
+            "path": "mcp/tests/test_writer_question_publication.py"
+          },
+          "id": "PRF-X3GZVB"
+        },
+        {
+          "after": {
+            "blob": "28609cb56fc37a22b7f120e629c7d3b968d23072",
+            "content": "sha256:2105ef345d9479c31408dee38a5ba1f1a03b627d81fdd3e6e7e8a00228bd4682",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeafQuestions._open"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_write_route.py"
+          },
+          "before": {
+            "blob": "8edf1fd52b71a129b4edb48be215ec86443b3d9f",
+            "content": "sha256:677b8341ac7bd7d9cef35f9b6079b2489657321b13d2523a3c37584fec4deed6",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeafQuestions._open"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_write_route.py"
+          },
+          "id": "RLZ-BS7E38"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-AJJA6A",
+      "items": [
+        "sha256:c607d4653a62eb2b3cd07cbcb10586db927dec48e6a6636b2dd541dc70477626"
+      ],
+      "reason": "Raised questions are still published by keyed task-owner insertion and a mismatched loaded root still refuses before publication. The port's opener is split for the command route's cause clauses, so its realization is re-anchored and the still-loading mismatch test keeps its proof.",
+      "revision": 1,
+      "subject": "INV-F2EQDR"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "adf9b5a6fa1244eb38e099643fe8e5ff6e1defba",
+            "content": "sha256:2784247703adc1e43cba86b6ac1f4f9a4319aaf49d06b318f6c2465ae04c16ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorInstructionWordingTests.test_manifest_descriptions_follow_the_coordination_default"
+            },
+            "path": "mcp/tests/test_curator_instruction_wording.py"
+          },
+          "before": {
+            "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
+            "content": "sha256:2784247703adc1e43cba86b6ac1f4f9a4319aaf49d06b318f6c2465ae04c16ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_manifest_descriptions_follow_the_coordination_default"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-0E0V75"
+        },
+        {
+          "after": {
+            "blob": "adf9b5a6fa1244eb38e099643fe8e5ff6e1defba",
+            "content": "sha256:1c37c333461ea486df03ee23330e489e0a7a14b8e54beb5340a36e54f8def7c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_curator_instruction_wording.py"
+          },
+          "before": {
+            "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
+            "content": "sha256:bded51c6252aef1e28b26c9df757f4208f54d73f670c5aca2f7d9e1361971140",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-0YJ58R"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-ANRZEP",
+      "items": [
+        "sha256:b015d9696fa4217e74ec9b05ff072e1edd2f2c86d4d939ffbb3562dde005cf98"
+      ],
+      "reason": "The one-coordinating-agent default and its two developer choices are unchanged; both wording pins moved with their proofs, and the manifest realizations sit outside the changed lines.",
+      "revision": 1,
+      "subject": "INV-A6GAKX"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-B950RZ",
+      "items": [
+        "sha256:c1fbb05f5f5b89471b11fef39c32cf069d1c055219ada97cfb4afd1036b91d36"
+      ],
+      "reason": "Round-1 memory repair (L186-M1-F01): the card's active statement contradicted the passed candidate and is corrected, and its reference was re-resolved where the property it carried was false.",
+      "sources": [
+        {
+          "blob": "17a7fa6f65e138b2e9443d952932013a30658963",
+          "path": "mcp/src/agents_remember/cli/knowledge_ingest.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/knowledge_ingest.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-C65VH0",
+      "items": [
+        "sha256:f9db9663a15b3c229c5a62fe0d6eadc33f4cecd4b9cfabb2c566f264199f64cb"
+      ],
+      "reason": "The A7 format pass changed this source after the earlier row; the card's citations were re-anchored at the new tree and the row re-binds the current blobs.",
+      "sources": [
+        {
+          "blob": "2743ff9bd106812ba2c85e77f85b47621a937e0e",
+          "path": "mcp/tests/test_reconsideration_recovery.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_reconsideration_recovery.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a602c903e6382a89023cdd7692950e3a0b1e3061",
+            "content": "sha256:6234ee03e6d37fec1895595e6fb7a4440ebf34660139c5a1f56f321a7cade932",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "70bb5757b6f36200ece074f47b219868173729ae",
+            "content": "sha256:edc0f1b1d327bd5bc0981f6d93803d470a7c249c9ea1c189edc51b9ccda90915",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-EK6J3B"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-CVRXSM",
+      "items": [
+        "sha256:01b5778eabc87a5d96e338be52eaff08a1bd25f4d4fd6530af9b9b746f1945b2"
+      ],
+      "reason": "The shipped mirrors are still produced by the existing public generator from the canonical text; this leaf changes the canonical curator text and the generator's copies, and the packaged copy's whole-file realization is re-anchored.",
+      "revision": 1,
+      "subject": "INV-NNQR91"
+    },
+    {
+      "considered": [
+        "FAM-7B6N3Y4Q"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-D62BRV",
+      "items": [],
+      "reason": "No family's joint guarantee covers this obligation on its own: it is one writer or instruction promise, and the families examined promise the route, the propagation or the guarded maintenance around it rather than this obligation.",
+      "revision": 1,
+      "subject": "membership:INV-WK39V1"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R194",
+          "packet": "requirements/MIK-R194-v1-the-writer-admits-a-parameterised-case-proof-and-a-judged-re-point.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "adf9b5a6fa1244eb38e099643fe8e5ff6e1defba",
+            "content": "sha256:1c37c333461ea486df03ee23330e489e0a7a14b8e54beb5340a36e54f8def7c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_curator_instruction_wording.py"
+          },
+          "before": "absent",
+          "id": "PRF-N575P7"
+        },
+        {
+          "after": {
+            "blob": "adf9b5a6fa1244eb38e099643fe8e5ff6e1defba",
+            "content": "sha256:786d40cfcfd97dcd5208520a128537823ba6ef478d2abfbaee5e3b18c2aa53fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorInstructionWordingTests.test_the_curator_writer_is_admitted_for_the_selected_runtime"
+            },
+            "path": "mcp/tests/test_curator_instruction_wording.py"
+          },
+          "before": "absent",
+          "id": "PRF-S4JV63"
+        },
+        {
+          "after": {
+            "blob": "a602c903e6382a89023cdd7692950e3a0b1e3061",
+            "content": "sha256:c210f1cd4085c85d6bab67a1d67d489d2fba9caa74519af1ca26ec369cbf750c",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 108
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": "absent",
+          "id": "RLZ-J4K6S5"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-D9YR1A",
+      "items": [],
+      "reason": "L186-M1-F08: the applicability is the Curator role text alone, the standing criterion realization moves to the record whose statement it states, and the admission no longer claims a manifest grant or a range of locations it does not have.",
+      "revision": 1,
+      "subject": "INV-945YZ4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DNRBHE",
+      "items": [
+        "sha256:55d652ceab9b7cdcea4d9688e69eafc229e4211869f719b95f1a1c6ca2d2f7e0"
+      ],
+      "reason": "The stored re-point shape and its uniqueness rule are the shape half of one obligation, carried by the re-point invariant.",
+      "subject": "hunk:sha256:55d652ceab9b7cdcea4d9688e69eafc229e4211869f719b95f1a1c6ca2d2f7e0"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-DVZRF1",
+      "items": [
+        "sha256:df409861d4a675d4295acf8c88d624d96b52b96a072eed7cff5f921e2c11f47a"
+      ],
+      "reason": "The A7 format pass changed this source after the earlier row; the card's citations were re-anchored at the new tree and the row re-binds the current blobs.",
+      "sources": [
+        {
+          "blob": "c17c7f10f65a39025b5d67ddd571a3264de8526f",
+          "path": "mcp/tests/test_writer_command_layouts.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_writer_command_layouts.py"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R194",
+          "packet": "requirements/MIK-R194-v1-the-writer-admits-a-parameterised-case-proof-and-a-judged-re-point.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "26c670be25ba72aef9ca22a6ca4e2633e5878b6a",
+            "content": "sha256:1bfa2171e3b9b8edb4eb7e2a3678112985b7a62e87d077489acfc7f9404d61ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_repoint_answers_an_earlier_refresh_that_no_longer_stands"
+            },
+            "path": "mcp/tests/test_reconsideration_repoint.py"
+          },
+          "before": "absent",
+          "id": "PRF-4YDTQB"
+        },
+        {
+          "after": {
+            "blob": "59e2195889d8a7ccce80db594fa67cd98903147b",
+            "content": "sha256:347d55f7a991f9b8c0ddb95cdb7b8ef25f3fceea0a959828a02f6287765bd271",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_rerun_of_the_same_repoint_writes_the_same_bytes_and_bumps_nothing"
+            },
+            "path": "mcp/tests/test_reconsideration_repoint.py"
+          },
+          "before": "absent",
+          "id": "PRF-9EDT96"
+        },
+        {
+          "after": {
+            "blob": "59e2195889d8a7ccce80db594fa67cd98903147b",
+            "content": "sha256:d9c5b071314c5d74d5ab08defd7c5c1e070e8371d51d4a40be6203456966d471",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_still_rejected_row_repoints_the_link_whose_code_is_gone"
+            },
+            "path": "mcp/tests/test_reconsideration_repoint.py"
+          },
+          "before": "absent",
+          "id": "PRF-MNHMHB"
+        },
+        {
+          "after": {
+            "blob": "883dc748c08fbd631020b50d34ea959d2a72eb8b",
+            "content": "sha256:a4fe56aef5fd967e6bbf54548d1651e081cb950633fdb3f99ef1a47ad61f7c6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "RepointRowAuthoring"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/repoint.py"
+          },
+          "before": "absent",
+          "id": "RLZ-F68R5F"
+        },
+        {
+          "after": {
+            "blob": "f6dd3fa6bb431ea9ffec7301f9ab7bd2bda866df",
+            "content": "sha256:a1bd209053c8abea172f1af9b1c0d3028b3850c691bd9b3f702084cdba8fbfea",
+            "locator": {
+              "kind": "symbol",
+              "name": "repointed_links"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/repoint.py"
+          },
+          "before": "absent",
+          "id": "RLZ-T10S32"
+        },
+        {
+          "after": {
+            "blob": "be65f7f2f73bbabec6d57403384bcae971bd56b2",
+            "content": "sha256:1d7ff8f9c6792b6170a43cd7dc93ca3f94987150fedb08c532066986765c1d6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "Repoint"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge_files/reconsideration.py"
+          },
+          "before": "absent",
+          "id": "RLZ-V0TQVV"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-E4Z806",
+      "items": [],
+      "reason": "L186-M1-F05 (round 2): the statement no longer opens on an unqualified no-image restriction; each trigger states its own admission, so refresh_not_current is not described by the anchor rule.",
+      "revision": 1,
+      "subject": "INV-J7YKSB"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-E8VKNB",
+      "items": [
+        "sha256:358014b9bc978a310e498d944cc0bc74d3e0ea787b6125ee036eea6fd2a67ebf"
+      ],
+      "reason": "The refusal and modifier texts changed to name real modifiers and offer the exact lines; that diagnostic obligation is carried by the proof-refusal invariant, not by a new one.",
+      "subject": "hunk:sha256:358014b9bc978a310e498d944cc0bc74d3e0ea787b6125ee036eea6fd2a67ebf"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-E9HMTW",
+      "items": [
+        "sha256:b65d65055c39daedd19cda1aaecf40cda60e8f86cb9a542bcdeda96702e99636"
+      ],
+      "reason": "The raise question's opener is split into the mounted half and the command half; the refusal it produces is stated by the command-raise invariant, so this hunk re-shapes one obligation and adds none.",
+      "subject": "hunk:sha256:b65d65055c39daedd19cda1aaecf40cda60e8f86cb9a542bcdeda96702e99636"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EGWSNH",
+      "items": [
+        "sha256:27953d4dce120143281ee846b41f2fd8b10d4bd71864acfc765b4cb8410b37c7"
+      ],
+      "reason": "The raise question's opener is split into the mounted half and the command half; the refusal it produces is stated by the command-raise invariant, so this hunk re-shapes one obligation and adds none.",
+      "subject": "hunk:sha256:27953d4dce120143281ee846b41f2fd8b10d4bd71864acfc765b4cb8410b37c7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EH4T5J",
+      "items": [
+        "sha256:7d27eea196369fb45002a221d98fef051597fcd12a09739f20ed20ed2dfdbd3a"
+      ],
+      "reason": "The removed --config option and its usage line are command surface; the obligation they belonged to is the command-raise invariant, which the parser refusal now carries.",
+      "subject": "hunk:sha256:7d27eea196369fb45002a221d98fef051597fcd12a09739f20ed20ed2dfdbd3a"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "1435671a186f06d0b0f425f8f10cf87304bab84d",
+            "content": "sha256:a9d362f7266e9528f93b05eac8f4003cf009e417273dd0977f3d97f8d8e38688",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "49cd0f48cc9915569a8158e8af630809210ce99f",
+            "content": "sha256:538baa64a86c41d9419571d2b663924d82bbf2227677d0e3486cd6df9784c83e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-8RHQED"
+        },
+        {
+          "after": {
+            "blob": "22611db7ab69ea7703828f6cac7173f9b75fa1b8",
+            "content": "sha256:082e4fbbe4e244bd0e0647558cea9a4d26fe6addae855b383f86920140298b2c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "4b1e9228874a3f1336bf209dab020ab50020130a",
+            "content": "sha256:160eaa413cd0b6287f2288a7323f03bb711a5cc70f329c9e1ed80a73fe3e38f7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-MC12B0"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-EV5SG8",
+      "items": [
+        "sha256:b34f5621c112e748df37049781a8c3925f14bbeb2e1a6d3867166b5c71ec9aa5"
+      ],
+      "reason": "The A7 format pass moved the lines this row's entries cover; each anchor is re-resolved at the new code tree and the record's meaning is unchanged.",
+      "revision": 1,
+      "subject": "INV-H1BCMX"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FKWD0E",
+      "items": [
+        "sha256:ad8ce5f33f67c21021fb41129a3e9d07208ee8152864992872a67aa150bc6799",
+        "sha256:bcc80742e9c27896bc7d3eef9537ca52acaeaee10af6048102b74df08b30f8fa"
+      ],
+      "reason": "The card was brought up to date with this file's current contract: the new behaviour is described and its citations re-anchored at the candidate.",
+      "sources": [
+        {
+          "blob": "38daf6f3a9e1766c06dbbe2cc50c5b44db32d5f1",
+          "path": "skills/l-01-agent-lifecycles/criteria/onboarding-memory.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/criteria/onboarding-memory.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FMHSV6",
+      "items": [
+        "sha256:8150c1db0019b0bd824efe4b0d84373d66401fc72901d8c4c43618a661f1d2b7"
+      ],
+      "reason": "The refusal and modifier texts changed to name real modifiers and offer the exact lines; that diagnostic obligation is carried by the proof-refusal invariant, not by a new one.",
+      "subject": "hunk:sha256:8150c1db0019b0bd824efe4b0d84373d66401fc72901d8c4c43618a661f1d2b7"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R194",
+          "packet": "requirements/MIK-R194-v1-the-writer-admits-a-parameterised-case-proof-and-a-judged-re-point.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "7d0eb57c81eacf9b61885708a730ae2064b7e61b",
+            "content": "sha256:d3bcb000ffce2b786a663b6dcf9adbec8d71214b3398f501fd677f859f33e0ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_computed_title_evidence_stays_unresolvable_and_the_proof_is_written"
+            },
+            "path": "mcp/tests/test_writer_case_proofs.py"
+          },
+          "before": "absent",
+          "id": "PRF-B0M940"
+        },
+        {
+          "after": {
+            "blob": "a47f685838be75554f034d52522abfee9d9cc521",
+            "content": "sha256:3ad54d7979c01dd2e317c523c1f2571ef6836568d4408e5f8d34698deaf65b4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unsupported_test_title_names_why_and_may_offer_a_line_range"
+            },
+            "path": "mcp/tests/test_writer_integrations.py"
+          },
+          "before": {
+            "blob": "16f0a1b9e5a8b891ea7d06e2ad723e2dfd1bdb5a",
+            "content": "sha256:c970b58998004d54af95bd75b6dff146720a334ca2776967f9b69ccde89e4d19",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unsupported_test_title_names_why_and_line_range"
+            },
+            "path": "mcp/tests/test_writer_integrations.py"
+          },
+          "id": "PRF-MYSKWD"
+        },
+        {
+          "after": {
+            "blob": "7d0eb57c81eacf9b61885708a730ae2064b7e61b",
+            "content": "sha256:799326b157fbeb4df83ce24311c1a568e5473a44d9312407395369a2fe1bae9f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_proof_by_lines_writes_a_line_range_anchor_and_pairs_the_evidence"
+            },
+            "path": "mcp/tests/test_writer_case_proofs.py"
+          },
+          "before": "absent",
+          "id": "PRF-SQH15R"
+        },
+        {
+          "after": {
+            "blob": "efcb4035a030d70f17dd239206c420e275325530",
+            "content": "sha256:888cd406a5a54b7d675b00b1305b784daf2e716f5af5df995afeafad93ae9495",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_quoted_typescript_case_evidence_and_proof_keep_title"
+            },
+            "path": "mcp/tests/test_writer_corrections.py"
+          },
+          "before": {
+            "blob": "efcb4035a030d70f17dd239206c420e275325530",
+            "content": "sha256:888cd406a5a54b7d675b00b1305b784daf2e716f5af5df995afeafad93ae9495",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_quoted_typescript_case_evidence_and_proof_keep_title"
+            },
+            "path": "mcp/tests/test_writer_corrections.py"
+          },
+          "id": "PRF-VVFNY2"
+        },
+        {
+          "after": {
+            "blob": "efcb4035a030d70f17dd239206c420e275325530",
+            "content": "sha256:e78a86d184f23715b797cfcadc351e09173f9b7e44f668d8f6ae8252ce798a7e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_equivalent_unicode_titles_refuse_ambiguous_writer_proof"
+            },
+            "path": "mcp/tests/test_writer_corrections.py"
+          },
+          "before": {
+            "blob": "efcb4035a030d70f17dd239206c420e275325530",
+            "content": "sha256:e78a86d184f23715b797cfcadc351e09173f9b7e44f668d8f6ae8252ce798a7e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_equivalent_unicode_titles_refuse_ambiguous_writer_proof"
+            },
+            "path": "mcp/tests/test_writer_corrections.py"
+          },
+          "id": "PRF-VWA21J"
+        },
+        {
+          "after": {
+            "blob": "00c487c023255a663f0ff6e9ffe68d65da3a8202",
+            "content": "sha256:44560f69157a8e4c415357e36a9724de9d9a3b03f7c865be19a5df27910960e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "qualified_spans"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/extents.py"
+          },
+          "before": {
+            "blob": "00c487c023255a663f0ff6e9ffe68d65da3a8202",
+            "content": "sha256:44560f69157a8e4c415357e36a9724de9d9a3b03f7c865be19a5df27910960e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "qualified_spans"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/extents.py"
+          },
+          "id": "RLZ-071CY8"
+        },
+        {
+          "after": {
+            "blob": "116f5734ffc67bc3a0562f76cd9608a80db7ffb4",
+            "content": "sha256:0829b81aa35335c0b35c946d40a2a7dc71809de9ddfa398560cf893b68e6b434",
+            "locator": {
+              "kind": "symbol",
+              "name": "refusal"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/test_cases.py"
+          },
+          "before": {
+            "blob": "be126bd9425f1f3ccb96635960fb086727ed249d",
+            "content": "sha256:9130df728070c27cdb6fe55530ad76ab6b2d12af706ad128ba66c3305429f6cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "refusal"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/test_cases.py"
+          },
+          "id": "RLZ-17R8AR"
+        },
+        {
+          "after": {
+            "blob": "7bf880c7344a3a3ef3599aa9e118dc714b9e66c2",
+            "content": "sha256:b86800614660c0353f07906f67306271930fedbd5c9f4cbcb08d798f974e4612",
+            "locator": {
+              "kind": "symbol",
+              "name": "bindings"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+          },
+          "before": {
+            "blob": "59259ade716dbf2550b95b09ee2212b7da245605",
+            "content": "sha256:b86800614660c0353f07906f67306271930fedbd5c9f4cbcb08d798f974e4612",
+            "locator": {
+              "kind": "symbol",
+              "name": "bindings"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+          },
+          "id": "RLZ-28F8AE"
+        },
+        {
+          "after": {
+            "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
+            "content": "sha256:b2bb98729f08af1c1d9912329a04b6550719237d072d2bdf91dae09ecc9621f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "TestRangeReference"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/handoff.py"
+          },
+          "before": "absent",
+          "id": "RLZ-DACZSK"
+        },
+        {
+          "after": {
+            "blob": "116f5734ffc67bc3a0562f76cd9608a80db7ffb4",
+            "content": "sha256:7f425a0ce67ac1f9bbca2f92e82da642e0b41ad6cbad614f6ae300326f85c255",
+            "locator": {
+              "kind": "symbol",
+              "name": "case_names"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/test_cases.py"
+          },
+          "before": {
+            "blob": "be126bd9425f1f3ccb96635960fb086727ed249d",
+            "content": "sha256:2366165651ae4a3eb3c9b2fec297299a6d79a645b7b31c372431043f3bc1b66a",
+            "locator": {
+              "kind": "symbol",
+              "name": "case_names"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/test_cases.py"
+          },
+          "id": "RLZ-H0DZTB"
+        },
+        {
+          "after": {
+            "blob": "14c36233cc407eb063ea278c91cbec6ae3a40f9e",
+            "content": "sha256:07b81f0136f2f18fe7a929ff4408d7777e26872918dbb99868c2e519ac3597c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_decided_without_resolving"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_currentness/observe.py"
+          },
+          "before": {
+            "blob": "14c36233cc407eb063ea278c91cbec6ae3a40f9e",
+            "content": "sha256:07b81f0136f2f18fe7a929ff4408d7777e26872918dbb99868c2e519ac3597c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_decided_without_resolving"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_currentness/observe.py"
+          },
+          "id": "RLZ-QGXEMP"
+        },
+        {
+          "after": {
+            "blob": "116f5734ffc67bc3a0562f76cd9608a80db7ffb4",
+            "content": "sha256:7e508e2016831235b383860fa15a3124446da0847ba4c3600466b872f5d728b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "title_of"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/test_cases.py"
+          },
+          "before": {
+            "blob": "be126bd9425f1f3ccb96635960fb086727ed249d",
+            "content": "sha256:70c72c71b8626b08a4bfd6028916453c559f971f11a3ae1f9bb22e8928dcd742",
+            "locator": {
+              "kind": "symbol",
+              "name": "_title"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/test_cases.py"
+          },
+          "id": "RLZ-TERZMS"
+        },
+        {
+          "after": {
+            "blob": "26e24ad345fcd041e170c653e207a2e7837f40c3",
+            "content": "sha256:a4c41d3c98ce6a56172c053956a57f3597e2120040c6efbda688f3669e299cf0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_proof"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/authoring.py"
+          },
+          "before": "absent",
+          "id": "RLZ-VV6ANV"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-G91ZXJ",
+      "items": [
+        "sha256:3abfa2254200b02933221e300b72c9d7eaee244fafbb96d0c8a37e7030cc8801"
+      ],
+      "reason": "The A7 format pass moved the lines this row's entries cover; each anchor is re-resolved at the new code tree and the record's meaning is unchanged.",
+      "revision": 2,
+      "subject": "INV-B37MWR"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GHCYHM",
+      "items": [
+        "sha256:f45dffd0010ee443d8d6e4cce92ea7643333e6dfec1ed7f04888713cc3af9a81"
+      ],
+      "reason": "The hunk deletes lines only; the file's own card carries the change and no invariant governs the removed lines.",
+      "subject": "hunk:sha256:f45dffd0010ee443d8d6e4cce92ea7643333e6dfec1ed7f04888713cc3af9a81"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
+            "content": "sha256:e479229e390480e45139ef071f72d388dcd648c2025f34f1cb08be559ada9ec9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/handoff.py"
+          },
+          "before": {
+            "blob": "26d0863739ecfde71b4476e27fc37676e28a6f0b",
+            "content": "sha256:367d7960c57e12fe0066ece884cfe427e5b0d27eff3f8bf5dff6119a78b236db",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/handoff.py"
+          },
+          "id": "RLZ-ZKPQ4B"
+        },
+        {
+          "after": {
+            "blob": "d7c13e7df1327acccc4ecd9c10b2da7c4c70c59b",
+            "content": "sha256:4b7dffd4bda58cfd2a781cfb3b8de936e3c443882a44b44ea55838e1aeaecfdc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
+          },
+          "before": {
+            "blob": "cc966901ffa6d3381f59972d9ea67dde6b05d04c",
+            "content": "sha256:488dd3d6909dce02510096a7f7f5d35102bf19f1833be9d3f2abf9dedbab5f7d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
+          },
+          "id": "RLZ-ZPN2WQ"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-GNBY1H",
+      "items": [
+        "sha256:8435efe8812d8576c6b43ef11ac85c94fda0fc1a382749bbae282d2260b06b0c"
+      ],
+      "reason": "The A7 format pass moved the lines this row's entries cover; each anchor is re-resolved at the new code tree and the record's meaning is unchanged.",
+      "revision": 1,
+      "subject": "INV-MKZ0EA"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-GNDCBK",
+      "items": [
+        "sha256:3d7f82f0ed5b726cf68e582d0229b20f313aecfdf491a037f52c78ffe6fcef22"
+      ],
+      "reason": "The A7 format pass changed this source after the earlier row; the card's citations were re-anchored at the new tree and the row re-binds the current blobs.",
+      "sources": [
+        {
+          "blob": "26e24ad345fcd041e170c653e207a2e7837f40c3",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/authoring.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_writer/authoring.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-GY3MV4",
+      "items": [
+        "sha256:2dacfbe6f0b4a8801e3dac1a0394622ec4cd302af7f625730f4e8f56f19eb178"
+      ],
+      "reason": "Round-1 memory repair (L186-M1-F12): the card's active statement contradicted the passed candidate and is corrected, and its reference was re-resolved where the property it carried was false.",
+      "sources": [
+        {
+          "blob": "be65f7f2f73bbabec6d57403384bcae971bd56b2",
+          "path": "mcp/src/agents_remember/models/knowledge_files/reconsideration.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/knowledge_files/reconsideration.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GZ6F7Y",
+      "items": [
+        "sha256:75a452b151bf54bf383ffe4e1ac37b5ea89e1e43be5eb7d9afb66e64764c3be6"
+      ],
+      "reason": "The debt still stands where it stood: a history row an earlier run wrote cannot be withdrawn, and this leaf adds a row field and its validator without changing withdrawal. Its anchor is the whole file, and the file's bytes changed only by the added field.",
+      "revision": 1,
+      "subject": "WKN-J9VT2X"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-H1CAHE",
+      "items": [
+        "sha256:6337f5917f5b9558cb24f13573ca515ade74919408f2ffbfcd8059c84c419b92"
+      ],
+      "reason": "The card was brought up to date with this file's current contract: its statements about the command's raise route, --config or the mounted writer were false and are corrected.",
+      "sources": [
+        {
+          "blob": "a602c903e6382a89023cdd7692950e3a0b1e3061",
+          "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-H1GK3C",
+      "items": [
+        "sha256:4b35d2e8c4022a1fbe7d87afe262b3d166f95aaa4ac1cb19cda3c103419db42d"
+      ],
+      "reason": "Round-1 memory repair (L186-M1-F04): the card's active statement contradicted the passed candidate and is corrected, and its reference was re-resolved where the property it carried was false.",
+      "sources": [
+        {
+          "blob": "d7c13e7df1327acccc4ecd9c10b2da7c4c70c59b",
+          "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/knowledge_files/history.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "adf9b5a6fa1244eb38e099643fe8e5ff6e1defba",
+            "content": "sha256:1c37c333461ea486df03ee23330e489e0a7a14b8e54beb5340a36e54f8def7c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_curator_instruction_wording.py"
+          },
+          "before": {
+            "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
+            "content": "sha256:bded51c6252aef1e28b26c9df757f4208f54d73f670c5aca2f7d9e1361971140",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-4FX9HW"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-H83DW7",
+      "items": [
+        "sha256:964c348c122a3c01ad5556dca27a713519ee5317378bcc24feba60f5438aae76"
+      ],
+      "reason": "The second-master Orchestrator route is unchanged; the wording pin moved with its proof to the new test module.",
+      "revision": 2,
+      "subject": "INV-683GA3"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-H83P6D",
+      "items": [
+        "sha256:b423e51abfb8a25f8996a438cb04ab31114215631bcf6ea58dceecf6c25658b0"
+      ],
+      "reason": "The A7 format pass changed this source after the earlier row; the card's citations were re-anchored at the new tree and the row re-binds the current blobs.",
+      "sources": [
+        {
+          "blob": "fb97a77f84daaaa046467094d301350bc4e97ec6",
+          "path": "mcp/tests/test_memory_case_ranges.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_memory_case_ranges.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HKZ4M4",
+      "items": [
+        "sha256:c46970405bca61bb96dcc64a45a7ff464bb988224fb2e115738bd6ed82733938"
+      ],
+      "reason": "The proof write now returns the paired titles and routes a range proof through its own module; the proof obligation is carried by the proof-route invariants, and this hunk only calls them.",
+      "subject": "hunk:sha256:c46970405bca61bb96dcc64a45a7ff464bb988224fb2e115738bd6ed82733938"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R194",
+          "packet": "requirements/MIK-R194-v1-the-writer-admits-a-parameterised-case-proof-and-a-judged-re-point.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "77a2299ac39b573d6e0a4333fdc7a4017f6ac3d6",
+            "content": "sha256:54c02a8a07744a59b20665565bdf34db967790dbbf1642bba353c0c2a22088a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_refresh_refusals_advice_names_a_route_that_works"
+            },
+            "path": "mcp/tests/test_reconsideration_recovery.py"
+          },
+          "before": "absent",
+          "id": "PRF-TT2HV9"
+        },
+        {
+          "after": {
+            "blob": "2743ff9bd106812ba2c85e77f85b47621a937e0e",
+            "content": "sha256:6646ed03e923979a9d3d61edea40e00cb9f99b7eaf97bf963a6522dba1684b7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_re_authored_refusals_advice_restores_the_link_and_admits"
+            },
+            "path": "mcp/tests/test_reconsideration_recovery.py"
+          },
+          "before": "absent",
+          "id": "PRF-VFBJVX"
+        },
+        {
+          "after": {
+            "blob": "a9640d916bc1fb5ff79c2a85ca957b2ed07fccfb",
+            "content": "sha256:c91648d84cbb51f27b9fc8693334587ec5f575fd1ec8a1c7e777ddef3d5f9d33",
+            "locator": {
+              "kind": "symbol",
+              "name": "refreshed_links"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/reconsideration.py"
+          },
+          "before": "absent",
+          "id": "RLZ-6EYPHJ"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-HPYP35",
+      "items": [],
+      "reason": "L186-M1-F06: the three refusal branches are stated separately — unmappable to repoint or raise, re-authored to restore-base or raise, an earlier refresh or a stale item to recompute — and the admission now says what each cited case proves instead of claiming that both follow through to an admitted row.",
+      "revision": 1,
+      "subject": "INV-ZG887T"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HQVCH2",
+      "items": [
+        "sha256:ba66599ec43edb25e384850b8ba4737cfbfef74774dedbb6bb61b0c25c8cacbd"
+      ],
+      "reason": "The grammar gains its one range entry and shares one span rule with the case module; the extent obligation is carried by the case-extent invariant on the new functions.",
+      "subject": "hunk:sha256:ba66599ec43edb25e384850b8ba4737cfbfef74774dedbb6bb61b0c25c8cacbd"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HYY42N",
+      "items": [
+        "sha256:3902e47d522d97da6cfcefea7c7449cab46558f44e693e383cd6e88531b521f1",
+        "sha256:3cbb7605b6a6d05f9e11ee6fad3537d3f98a61028a62c4dde19260f5760c1e61"
+      ],
+      "reason": "Round-1 memory repair (L186-M1-F02): the card's active statement contradicted the passed candidate and is corrected, and its reference was re-resolved where the property it carried was false.",
+      "sources": [
+        {
+          "blob": "a47f685838be75554f034d52522abfee9d9cc521",
+          "path": "mcp/tests/test_writer_integrations.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_writer_integrations.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-J0AX24",
+      "items": [
+        "sha256:06f8a00e17c588752ea9227ac21061c9f9e3b78fc35cbc9cc35fc99c089ac9b4",
+        "sha256:a3274418846ac632cc79a712a33cc09e509c76d07907c50e3833310c3df1db0d",
+        "sha256:c55db29d9cf79296133bf9e1e7b4bc583968fab995eb0258a4aaeead4e4aa651"
+      ],
+      "reason": "Round-1 memory repair (L186-M1-F14): the card's active statement contradicted the passed candidate and is corrected, and its reference was re-resolved where the property it carried was false.",
+      "sources": [
+        {
+          "blob": "43748c0ad97393f71e479365e57be2ddf9b415aa",
+          "path": "mcp/tests/test_writer_question_publication.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_writer_question_publication.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-J33BNQ",
+      "items": [
+        "sha256:aae90a68ac6c97ad330ef8676f5bc0a8c1416d84050bd20c892685c2cee9d5f6"
+      ],
+      "reason": "The raise question's opener is split into the mounted half and the command half; the refusal it produces is stated by the command-raise invariant, so this hunk re-shapes one obligation and adds none.",
+      "subject": "hunk:sha256:aae90a68ac6c97ad330ef8676f5bc0a8c1416d84050bd20c892685c2cee9d5f6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JJZ1FE",
+      "items": [
+        "sha256:a3232e93977a51c06cfc03122842eaee7466757f1f2e07e8e7eb8d4aa342151b"
+      ],
+      "reason": "The raise question's opener is split into the mounted half and the command half; the refusal it produces is stated by the command-raise invariant, so this hunk re-shapes one obligation and adds none.",
+      "subject": "hunk:sha256:a3232e93977a51c06cfc03122842eaee7466757f1f2e07e8e7eb8d4aa342151b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JND20P",
+      "items": [
+        "sha256:994bd189e5d8d8915efb87f7f7422014572dd240bfd90c008a2369cbe8c12bb2"
+      ],
+      "reason": "The raise question's opener is split into the mounted half and the command half; the refusal it produces is stated by the command-raise invariant, so this hunk re-shapes one obligation and adds none.",
+      "subject": "hunk:sha256:994bd189e5d8d8915efb87f7f7422014572dd240bfd90c008a2369cbe8c12bb2"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-JR60KW",
+      "items": [
+        "sha256:049743e15c02ebf8e61a02b75ad9e9cd9dd0ce32d9b4231dd32fc7bd7e34170d"
+      ],
+      "reason": "The A7 format pass changed this source after the earlier row; the card's citations were re-anchored at the new tree and the row re-binds the current blobs.",
+      "sources": [
+        {
+          "blob": "59e2195889d8a7ccce80db594fa67cd98903147b",
+          "path": "mcp/tests/test_reconsideration_repoint.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_reconsideration_repoint.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-JW0AQK",
+      "items": [
+        "sha256:d4b37b3fc36e8e403437279eae95db0e1d08c327b01d29ccc94bc64fc216e297"
+      ],
+      "reason": "Round-1 memory repair (L186-M1-F12): the card's active statement contradicted the passed candidate and is corrected, and its reference was re-resolved where the property it carried was false.",
+      "sources": [
+        {
+          "blob": "f282452741c4fb76df6b7d6b469519c7ea2cb936",
+          "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/composition-manifest.json"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JW0D2J",
+      "items": [
+        "sha256:a48eed8657af9f9f48a977ba26b2c5d31bb0328a24ca32708821443df7f8aa46"
+      ],
+      "reason": "The hunk deletes lines only; the file's own card carries the change and no invariant governs the removed lines.",
+      "subject": "hunk:sha256:a48eed8657af9f9f48a977ba26b2c5d31bb0328a24ca32708821443df7f8aa46"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-K1YE7T",
+      "items": [
+        "sha256:838f5afcc58a716683d2b4d35954441026eeb1f98bea9171e54a1b0cb79d90df"
+      ],
+      "reason": "The A7 format pass changed this source after the earlier row; the card's citations were re-anchored at the new tree and the row re-binds the current blobs.",
+      "sources": [
+        {
+          "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/handoff.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_writer/handoff.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-K7RS1C",
+      "items": [
+        "sha256:6ae6438a1cb575062b49b8a7b40dfa6ed3c4d83f531ffa7899299f1e80656cc7",
+        "sha256:efcd91367773ed8ed2e275a52117cee979176d1d510f5b6bc97441b5d0c93ac5"
+      ],
+      "reason": "The card was brought up to date with this file's current contract: the new behaviour is described and its citations re-anchored at the candidate.",
+      "sources": [
+        {
+          "blob": "1176f3ca1d7d895f188bac1a18b73621a5897e93",
+          "path": "mcp/tests/test_reconsideration_surfacing.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_reconsideration_surfacing.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f46c901c30e3cecad97dcf399005a5a768c8eb61",
+            "content": "sha256:60d6a22455fc9fd968357b89f6570f559b327bdcc2578df2a131bfb550f02c9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "checkout_cli_location"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/checkout_coordination.py"
+          },
+          "before": {
+            "blob": "b34c1e5974f6955bad288d8dd1a542473be46f29",
+            "content": "sha256:b5b8684cc53062377655e44bed5142bf84b630ddb852378fa116129e07a1829f",
+            "locator": {
+              "kind": "symbol",
+              "name": "checkout_cli_location"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/checkout_coordination.py"
+          },
+          "id": "RLZ-P8A63K5E"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-K9F4AR",
+      "items": [
+        "sha256:98b89e3c3453b5b917a2216fe08a1995f90f3dcf300da32247d1e67aa52e4611"
+      ],
+      "reason": "The checkout guard's decision is unchanged: the declared-mode bypass and the primary-checkout refusal moved into one extracted rule, and both realizations are re-anchored at the candidate.",
+      "revision": 2,
+      "subject": "INV-WSD92WBN"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-M2YV2C",
+      "items": [
+        "sha256:2a6a07bcec1dff3a6461c4dc175a5a36af30efad2eeb6e79be35b3d15d623668"
+      ],
+      "reason": "Reviewed: the checklist, worklist rendering and validator accounts are unchanged; the new case-extent module is described by the citations route's own cards.",
+      "sources": [
+        {
+          "blob": "7bf880c7344a3a3ef3599aa9e118dc714b9e66c2",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+        },
+        {
+          "blob": "8cb6c14f708f9f545ca4827e9fb456b7a3bf51ae",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/test_case_ranges.py"
+        },
+        {
+          "blob": "116f5734ffc67bc3a0562f76cd9608a80db7ffb4",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/test_cases.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/overview"
+    },
+    {
+      "considered": [
+        "FAM-7B6N3Y4Q",
+        "FAM-GDXSJG",
+        "FAM-YGXZTQ"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-MHGJC1",
+      "items": [],
+      "reason": "No family's joint guarantee covers this obligation on its own: it is one writer or instruction promise, and the families examined promise the route, the propagation or the guarded maintenance around it rather than this obligation.",
+      "revision": 1,
+      "subject": "membership:INV-945YZ4"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "adf9b5a6fa1244eb38e099643fe8e5ff6e1defba",
+            "content": "sha256:1c37c333461ea486df03ee23330e489e0a7a14b8e54beb5340a36e54f8def7c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_curator_instruction_wording.py"
+          },
+          "before": {
+            "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
+            "content": "sha256:bded51c6252aef1e28b26c9df757f4208f54d73f670c5aca2f7d9e1361971140",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-5448EZ"
+        },
+        {
+          "after": {
+            "blob": "3b5193512f0b66e5ba722fb0a6c0252239058682",
+            "content": "sha256:28aac27c230d76a939bdc2c1e3dee09453f6a7cb32fee0323483570048cf9c17",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_direct_closeout_keeps_the_architect_and_its_existing_gates"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
+            "content": "sha256:28aac27c230d76a939bdc2c1e3dee09453f6a7cb32fee0323483570048cf9c17",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_direct_closeout_keeps_the_architect_and_its_existing_gates"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-H64HF6"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-MPK3G2",
+      "items": [
+        "sha256:15f11dd72259e258e62fd80e85af6be6af225219eb06c93271f0ac18e2fe7412"
+      ],
+      "reason": "The Architect's checking and sandbox freedom with its custody limits is unchanged; the moved wording proof is now the new module's case, and the kept closeout proof is re-anchored at the candidate.",
+      "revision": 2,
+      "subject": "INV-P2WRNQ"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-NXDNPJ",
+      "items": [
+        "sha256:6a70c6d5d9f68a1b20f8b61139c63b527b74701263069cda47e1f7c0c371f3b2"
+      ],
+      "reason": "Reviewed: the model roster already names the mounted knowledge_write, and the new stored shapes are described by their file cards.",
+      "sources": [
+        {
+          "blob": "d7c13e7df1327acccc4ecd9c10b2da7c4c70c59b",
+          "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
+        },
+        {
+          "blob": "be65f7f2f73bbabec6d57403384bcae971bd56b2",
+          "path": "mcp/src/agents_remember/models/knowledge_files/reconsideration.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-NYX61W",
+      "items": [
+        "sha256:8e39598bbfdbae2cb6037c240fd0979012d569d8fa26f77ac42ab231f2f45319"
+      ],
+      "reason": "The A7 format pass changed this source after the earlier row; the card's citations were re-anchored at the new tree and the row re-binds the current blobs.",
+      "sources": [
+        {
+          "blob": "1435671a186f06d0b0f425f8f10cf87304bab84d",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "22611db7ab69ea7703828f6cac7173f9b75fa1b8",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "adf9b5a6fa1244eb38e099643fe8e5ff6e1defba",
+          "path": "mcp/tests/test_curator_instruction_wording.py"
+        },
+        {
+          "blob": "fb97a77f84daaaa046467094d301350bc4e97ec6",
+          "path": "mcp/tests/test_memory_case_ranges.py"
+        },
+        {
+          "blob": "bee9db13f5bd8fe68d7e98deb0704663998efc1d",
+          "path": "mcp/tests/test_memory_citation_grammars.py"
+        },
+        {
+          "blob": "2743ff9bd106812ba2c85e77f85b47621a937e0e",
+          "path": "mcp/tests/test_reconsideration_recovery.py"
+        },
+        {
+          "blob": "59e2195889d8a7ccce80db594fa67cd98903147b",
+          "path": "mcp/tests/test_reconsideration_repoint.py"
+        },
+        {
+          "blob": "1176f3ca1d7d895f188bac1a18b73621a5897e93",
+          "path": "mcp/tests/test_reconsideration_surfacing.py"
+        },
+        {
+          "blob": "3b5193512f0b66e5ba722fb0a6c0252239058682",
+          "path": "mcp/tests/test_role_instruction_wording.py"
+        },
+        {
+          "blob": "7d0eb57c81eacf9b61885708a730ae2064b7e61b",
+          "path": "mcp/tests/test_writer_case_proofs.py"
+        },
+        {
+          "blob": "c17c7f10f65a39025b5d67ddd571a3264de8526f",
+          "path": "mcp/tests/test_writer_command_layouts.py"
+        },
+        {
+          "blob": "a8d170d06edbab3222572e1bdcace16a938c185e",
+          "path": "mcp/tests/test_writer_command_raise.py"
+        },
+        {
+          "blob": "a47f685838be75554f034d52522abfee9d9cc521",
+          "path": "mcp/tests/test_writer_integrations.py"
+        },
+        {
+          "blob": "43748c0ad97393f71e479365e57be2ddf9b415aa",
+          "path": "mcp/tests/test_writer_question_publication.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-NZW94V",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "The A7 format pass changed this source after the earlier row; the card's citations were re-anchored at the new tree and the row re-binds the current blobs.",
+      "sources": [
+        {
+          "blob": "22611db7ab69ea7703828f6cac7173f9b75fa1b8",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-P6MJNQ",
+      "items": [
+        "sha256:4b6e3c94856886c3c650576ecb418827e06eb99f9c59c161e814764e976b8edd"
+      ],
+      "reason": "The raise question's opener is split into the mounted half and the command half; the refusal it produces is stated by the command-raise invariant, so this hunk re-shapes one obligation and adds none.",
+      "subject": "hunk:sha256:4b6e3c94856886c3c650576ecb418827e06eb99f9c59c161e814764e976b8edd"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-PE5Z4P",
+      "items": [
+        "sha256:0e630ca1749815df35798e5f85f875ac99f5dccfaf23f4eed2922ea31387be20"
+      ],
+      "reason": "The card was brought up to date with this file's current contract: the new behaviour is described and its citations re-anchored at the candidate.",
+      "sources": [
+        {
+          "blob": "7bf880c7344a3a3ef3599aa9e118dc714b9e66c2",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R194",
+          "packet": "requirements/MIK-R194-v1-the-writer-admits-a-parameterised-case-proof-and-a-judged-re-point.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "f46c901c30e3cecad97dcf399005a5a768c8eb61",
+            "content": "sha256:60d6a22455fc9fd968357b89f6570f559b327bdcc2578df2a131bfb550f02c9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "checkout_cli_location"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/checkout_coordination.py"
+          },
+          "before": {
+            "blob": "b34c1e5974f6955bad288d8dd1a542473be46f29",
+            "content": "sha256:b5b8684cc53062377655e44bed5142bf84b630ddb852378fa116129e07a1829f",
+            "locator": {
+              "kind": "symbol",
+              "name": "checkout_cli_location"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/checkout_coordination.py"
+          },
+          "id": "RLZ-86TVNJBC"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-PPCY8D",
+      "items": [
+        "sha256:54548ebd43f414c1b2d6150fe5d368a34dbee0cdb32f50d02b66ff61074648f4"
+      ],
+      "reason": "MIK-R194 rule 10 states the three admitted authoring routes and keeps the unconverted-root refusal and the no-canonical-dataset promise; the curator's role text and the composition manifest's requested tool list now name the mounted route.",
+      "revision": 7,
+      "subject": "INV-1XKX9ERN"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PT8XXT",
+      "items": [
+        "sha256:5546cb8397c3a384cf872862aec56db5c31f20ac4246803b9bc1c54a38b842f2"
+      ],
+      "reason": "The raise question's opener is split into the mounted half and the command half; the refusal it produces is stated by the command-raise invariant, so this hunk re-shapes one obligation and adds none.",
+      "subject": "hunk:sha256:5546cb8397c3a384cf872862aec56db5c31f20ac4246803b9bc1c54a38b842f2"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "74366459d4451f38bd8c063ce635036c8a947c19",
+            "content": "sha256:08e8a1ad620e2e10614403e2ad8572800ca1704ccfa6c41676ef81346c1f016c",
+            "locator": {
+              "end": 453,
+              "kind": "line_range",
+              "start": 426
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+          },
+          "before": {
+            "blob": "cd3eaf7745e850bdbd17023c09033bcef4bf6479",
+            "content": "sha256:104f746a08fdcb5f2c5738145fac5bf2e54dee7e39dcfd741c1b8e755e2313e0",
+            "locator": {
+              "end": 447,
+              "kind": "line_range",
+              "start": 426
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+          },
+          "id": "RLZ-AA8X6M"
+        },
+        {
+          "after": {
+            "blob": "38daf6f3a9e1766c06dbbe2cc50c5b44db32d5f1",
+            "content": "sha256:a76c9cdea1f77370a24a981ea0206e261c9c6fcb754015a6965003a494e5a0b9",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 51
+            },
+            "path": "skills/l-01-agent-lifecycles/criteria/onboarding-memory.md"
+          },
+          "before": "absent",
+          "id": "RLZ-SYBPB2"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-QT5BW2",
+      "items": [
+        "sha256:d568726f57924d33b8814b8468fe847072ffdfa658b698b2a30409250c818a11"
+      ],
+      "reason": "L186-M1-F08: the record's statement is unchanged; the OM-5 criterion that judges a re-point's target and reason is now a realization of this record, which states that instruction duty. Evidence (MIK-R194@v1 rule 6 — the re-point judgment criterion): skills/l-01-agent-lifecycles/criteria/onboarding-memory.md OM-5, read at the candidate; the criterion binds converted memory only",
+      "revision": 2,
+      "subject": "INV-CKJ6AZ"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a602c903e6382a89023cdd7692950e3a0b1e3061",
+            "content": "sha256:6234ee03e6d37fec1895595e6fb7a4440ebf34660139c5a1f56f321a7cade932",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "70bb5757b6f36200ece074f47b219868173729ae",
+            "content": "sha256:edc0f1b1d327bd5bc0981f6d93803d470a7c249c9ea1c189edc51b9ccda90915",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-CV8RK3"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-R9754V",
+      "items": [
+        "sha256:09ea9e8f6aaa86cb227398452a26c96164da12738d6a795aa14772e02264bb97"
+      ],
+      "reason": "The return rule for a role agent's hand-over is unchanged; the curator role text's bytes moved, so its whole-file realization is re-anchored.",
+      "revision": 1,
+      "subject": "INV-QZW2X2"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-RBARN0",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "The A7 format pass changed this source after the earlier row; the card's citations were re-anchored at the new tree and the row re-binds the current blobs.",
+      "sources": [
+        {
+          "blob": "1435671a186f06d0b0f425f8f10cf87304bab84d",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RBZWJW",
+      "items": [
+        "sha256:54f5a303945267d11ac30a6c5f17df4bcc602bd981f027186f56b041498b8e57"
+      ],
+      "reason": "The stored re-point shape and its uniqueness rule are the shape half of one obligation, carried by the re-point invariant.",
+      "subject": "hunk:sha256:54f5a303945267d11ac30a6c5f17df4bcc602bd981f027186f56b041498b8e57"
+    },
+    {
+      "considered": [
+        "FAM-7B6N3Y4Q",
+        "FAM-YGXZTQ"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-RPA008",
+      "items": [],
+      "reason": "No family's joint guarantee covers this obligation on its own: it is one writer or instruction promise, and the families examined promise the route, the propagation or the guarded maintenance around it rather than this obligation.",
+      "revision": 1,
+      "subject": "membership:INV-J7YKSB"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RPZJ8B",
+      "items": [
+        "sha256:de9e4ab4f961460807c976a40be5c47c4d329809d776af6a5e48af54b15d0e02"
+      ],
+      "reason": "The raise question's opener is split into the mounted half and the command half; the refusal it produces is stated by the command-raise invariant, so this hunk re-shapes one obligation and adds none.",
+      "subject": "hunk:sha256:de9e4ab4f961460807c976a40be5c47c4d329809d776af6a5e48af54b15d0e02"
+    },
+    {
+      "considered": [
+        "FAM-7B6N3Y4Q",
+        "FAM-YGXZTQ"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-RWD0JN",
+      "items": [],
+      "reason": "No family's joint guarantee covers this obligation on its own: it is one writer or instruction promise, and the families examined promise the route, the propagation or the guarded maintenance around it rather than this obligation.",
+      "revision": 1,
+      "subject": "membership:INV-054R7P"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-S13F41",
+      "items": [
+        "sha256:4b5dfb339bd98786915144a175e245daaa9ee5e3cd421b634e749fbbd4529830"
+      ],
+      "reason": "The hunk deletes lines only; the file's own card carries the change and no invariant governs the removed lines.",
+      "subject": "hunk:sha256:4b5dfb339bd98786915144a175e245daaa9ee5e3cd421b634e749fbbd4529830"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-S538FH",
+      "items": [
+        "sha256:9e4fce2b5ea57f59270db0a7416b3fe418748276fa3a0826551afa4c03de6df1"
+      ],
+      "reason": "The raise question's opener is split into the mounted half and the command half; the refusal it produces is stated by the command-raise invariant, so this hunk re-shapes one obligation and adds none.",
+      "subject": "hunk:sha256:9e4fce2b5ea57f59270db0a7416b3fe418748276fa3a0826551afa4c03de6df1"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-S9ZGJD",
+      "items": [
+        "sha256:585a05e3ab1e22e9923a5cfe474544669b0275c7467354eece655a438cb270cd"
+      ],
+      "reason": "The A7 format pass changed this source after the earlier row; the card's citations were re-anchored at the new tree and the row re-binds the current blobs.",
+      "sources": [
+        {
+          "blob": "7d0eb57c81eacf9b61885708a730ae2064b7e61b",
+          "path": "mcp/tests/test_writer_case_proofs.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_writer_case_proofs.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-SA0RFY",
+      "items": [
+        "sha256:9d617bf3f0f52edf0fd7bd0e33fa270d57978c94300bda8697ac565c11dbe74b"
+      ],
+      "reason": "Round-1 memory repair (L186-M1-F10): the card's active statement contradicted the passed candidate and is corrected, and its reference was re-resolved where the property it carried was false.",
+      "sources": [
+        {
+          "blob": "28609cb56fc37a22b7f120e629c7d3b968d23072",
+          "path": "mcp/src/agents_remember/application/knowledge_write_route.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_write_route.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "adf9b5a6fa1244eb38e099643fe8e5ff6e1defba",
+            "content": "sha256:1c37c333461ea486df03ee23330e489e0a7a14b8e54beb5340a36e54f8def7c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_curator_instruction_wording.py"
+          },
+          "before": {
+            "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
+            "content": "sha256:bded51c6252aef1e28b26c9df757f4208f54d73f670c5aca2f7d9e1361971140",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-D682YJ"
+        },
+        {
+          "after": {
+            "blob": "a602c903e6382a89023cdd7692950e3a0b1e3061",
+            "content": "sha256:1bc0a41af7223cbc91ea2f78270614076e6727ab0f503209ac75b70b830453f1",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 111
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "70bb5757b6f36200ece074f47b219868173729ae",
+            "content": "sha256:1bc0a41af7223cbc91ea2f78270614076e6727ab0f503209ac75b70b830453f1",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 112
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-DT71R6"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-T4EVEX",
+      "items": [
+        "sha256:ee7363efdf006e7ac4b367ac7d9fa8a635cc0c19ddfa2fc1a1c8d046b6b9889f"
+      ],
+      "reason": "The Curator's full-intake worklist duty is unchanged; its instruction pin moved to the new test module with its proof, and the role text's realized bullet moved with the edit and is re-anchored.",
+      "revision": 2,
+      "subject": "INV-208SQT"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "26e24ad345fcd041e170c653e207a2e7837f40c3",
+            "content": "sha256:4eab549c53312b7b079fc4578037f1da236dfa3714448183c95b8d394b1eaa6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "Authoring"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/authoring.py"
+          },
+          "before": {
+            "blob": "41b02f411570ff669ba735f2cb3a1e1af53d1a4c",
+            "content": "sha256:68ee900f8c0c7b302a039a834b04bdd957d9df79ea186f5d8ab6a2da1c08e897",
+            "locator": {
+              "kind": "symbol",
+              "name": "Authoring"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/authoring.py"
+          },
+          "id": "RLZ-87J2WX"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-V16KJS",
+      "items": [
+        "sha256:b8f347b56b151a9e26a58a6d24858705e1be32fe47f5bd5d845a220820070600"
+      ],
+      "reason": "The A7 format pass moved the lines this row's entries cover; each anchor is re-resolved at the new code tree and the record's meaning is unchanged.",
+      "revision": 1,
+      "subject": "INV-VWRJR7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VA0V28",
+      "items": [
+        "sha256:c6dd657480c463f18175a486eaf1c6e84f20d98f203e6547ee40b00b9bb7f01f"
+      ],
+      "reason": "The refusal and modifier texts changed to name real modifiers and offer the exact lines; that diagnostic obligation is carried by the proof-refusal invariant, not by a new one.",
+      "subject": "hunk:sha256:c6dd657480c463f18175a486eaf1c6e84f20d98f203e6547ee40b00b9bb7f01f"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7FMDAS",
+          "revision": 2
+        },
+        {
+          "id": "INV-82ZTHK",
+          "revision": 3
+        },
+        {
+          "id": "INV-8AMSGV",
+          "revision": 4
+        },
+        {
+          "id": "INV-9S49CW",
+          "revision": 2
+        },
+        {
+          "id": "INV-HGSFJ8",
+          "revision": 3
+        }
+      ],
+      "id": "ROW-VJCEV1",
+      "items": [
+        "sha256:76a448b881d4f7bbcae3993aeedef90e184e65bd5ad066de978a59b36539e918"
+      ],
+      "reason": "Every member was examined and none is changed by this leaf; the A7 format pass moved member lines only, so the family row records the current revisions.",
+      "revision": 2,
+      "subject": "FAM-7AEA19"
+    },
+    {
+      "considered": [
+        "FAM-7B6N3Y4Q"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-VPV1FY",
+      "items": [],
+      "reason": "No family's joint guarantee covers this obligation on its own: it is one writer or instruction promise, and the families examined promise the route, the propagation or the guarded maintenance around it rather than this obligation.",
+      "revision": 1,
+      "subject": "membership:INV-N5KQ73"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WJ7GR7",
+      "items": [
+        "sha256:8481b7042a7266bd287fa539cd3c246739d197937538383cf4df2071d4c492a2"
+      ],
+      "reason": "The grammar gains its one range entry and shares one span rule with the case module; the extent obligation is carried by the case-extent invariant on the new functions.",
+      "subject": "hunk:sha256:8481b7042a7266bd287fa539cd3c246739d197937538383cf4df2071d4c492a2"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WNTMM1",
+      "items": [
+        "sha256:cab42f5a2c1bea4ea098f0bcdf9c29870726751f4cfa4996b77b6483cecd299e"
+      ],
+      "reason": "The grammar gains its one range entry and shares one span rule with the case module; the extent obligation is carried by the case-extent invariant on the new functions.",
+      "subject": "hunk:sha256:cab42f5a2c1bea4ea098f0bcdf9c29870726751f4cfa4996b77b6483cecd299e"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-WPEKQ9",
+      "items": [
+        "sha256:88feb184effff82b663efe4a99d6b83001338ef4fe4a3aa2495031e93e408a9f"
+      ],
+      "reason": "The A7 format pass changed this source after the earlier row; the card's citations were re-anchored at the new tree and the row re-binds the current blobs.",
+      "sources": [
+        {
+          "blob": "adf9b5a6fa1244eb38e099643fe8e5ff6e1defba",
+          "path": "mcp/tests/test_curator_instruction_wording.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_curator_instruction_wording.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "74366459d4451f38bd8c063ce635036c8a947c19",
+            "content": "sha256:b1f90c30b9cd69f046dafe91ffbd7aaea0141d1fef18564502cc44d00f7d9208",
+            "locator": {
+              "end": 437,
+              "kind": "line_range",
+              "start": 426
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+          },
+          "before": {
+            "blob": "cd3eaf7745e850bdbd17023c09033bcef4bf6479",
+            "content": "sha256:104f746a08fdcb5f2c5738145fac5bf2e54dee7e39dcfd741c1b8e755e2313e0",
+            "locator": {
+              "end": 447,
+              "kind": "line_range",
+              "start": 426
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+          },
+          "id": "RLZ-ZBPWGR"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-WQ574Z",
+      "items": [
+        "sha256:77f85a18feb2a93261db9f3e6301d067f6582291af757e4bd6fa711dc9a4c390"
+      ],
+      "reason": "The guidance obligation is unchanged: the template still states the writer's contracts and curation still records each by-design choice. The paragraph it realizes now ends before the new raise-route paragraph, so its extent is narrowed to that paragraph.",
+      "revision": 1,
+      "subject": "INV-37TMDD"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WTPV9K",
+      "items": [
+        "sha256:1c0b2cce81968ee49e6ed9e999c45e557d3b4b082cca52c93165402fefe6d1cc"
+      ],
+      "reason": "The stored re-point shape and its uniqueness rule are the shape half of one obligation, carried by the re-point invariant.",
+      "subject": "hunk:sha256:1c0b2cce81968ee49e6ed9e999c45e557d3b4b082cca52c93165402fefe6d1cc"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-XHGATQ",
+      "items": [
+        "sha256:5cfbc0adda413cc351edb5308d8a0d3671ddb107e98668ba55db1552f7832cb0"
+      ],
+      "reason": "Reviewed: the root account of memory text, readers and retrieval is unchanged by this leaf, and the changed routes and cards carry the new writer behaviour.",
+      "sources": [
+        {
+          "blob": "f282452741c4fb76df6b7d6b469519c7ea2cb936",
+          "path": ".agents/skills/l-01-agent-lifecycles/composition-manifest.json"
+        },
+        {
+          "blob": "38daf6f3a9e1766c06dbbe2cc50c5b44db32d5f1",
+          "path": ".agents/skills/l-01-agent-lifecycles/criteria/onboarding-memory.md"
+        },
+        {
+          "blob": "7a78bd431734fd758e40bbd22a3dbcad0d2810a8",
+          "path": ".agents/skills/l-01-agent-lifecycles/reference/curator-worklist-details.md"
+        },
+        {
+          "blob": "a602c903e6382a89023cdd7692950e3a0b1e3061",
+          "path": ".agents/skills/l-01-agent-lifecycles/roles/curator.md"
+        },
+        {
+          "blob": "74366459d4451f38bd8c063ce635036c8a947c19",
+          "path": ".agents/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+        },
+        {
+          "blob": "f282452741c4fb76df6b7d6b469519c7ea2cb936",
+          "path": ".claude/skills/l-01-agent-lifecycles/composition-manifest.json"
+        },
+        {
+          "blob": "38daf6f3a9e1766c06dbbe2cc50c5b44db32d5f1",
+          "path": ".claude/skills/l-01-agent-lifecycles/criteria/onboarding-memory.md"
+        },
+        {
+          "blob": "7a78bd431734fd758e40bbd22a3dbcad0d2810a8",
+          "path": ".claude/skills/l-01-agent-lifecycles/reference/curator-worklist-details.md"
+        },
+        {
+          "blob": "a602c903e6382a89023cdd7692950e3a0b1e3061",
+          "path": ".claude/skills/l-01-agent-lifecycles/roles/curator.md"
+        },
+        {
+          "blob": "74366459d4451f38bd8c063ce635036c8a947c19",
+          "path": ".claude/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+        },
+        {
+          "blob": "f282452741c4fb76df6b7d6b469519c7ea2cb936",
+          "path": ".codex/skills/l-01-agent-lifecycles/composition-manifest.json"
+        },
+        {
+          "blob": "38daf6f3a9e1766c06dbbe2cc50c5b44db32d5f1",
+          "path": ".codex/skills/l-01-agent-lifecycles/criteria/onboarding-memory.md"
+        },
+        {
+          "blob": "7a78bd431734fd758e40bbd22a3dbcad0d2810a8",
+          "path": ".codex/skills/l-01-agent-lifecycles/reference/curator-worklist-details.md"
+        },
+        {
+          "blob": "a602c903e6382a89023cdd7692950e3a0b1e3061",
+          "path": ".codex/skills/l-01-agent-lifecycles/roles/curator.md"
+        },
+        {
+          "blob": "74366459d4451f38bd8c063ce635036c8a947c19",
+          "path": ".codex/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+        },
+        {
+          "blob": "f282452741c4fb76df6b7d6b469519c7ea2cb936",
+          "path": ".cursor/skills/l-01-agent-lifecycles/composition-manifest.json"
+        },
+        {
+          "blob": "38daf6f3a9e1766c06dbbe2cc50c5b44db32d5f1",
+          "path": ".cursor/skills/l-01-agent-lifecycles/criteria/onboarding-memory.md"
+        },
+        {
+          "blob": "7a78bd431734fd758e40bbd22a3dbcad0d2810a8",
+          "path": ".cursor/skills/l-01-agent-lifecycles/reference/curator-worklist-details.md"
+        },
+        {
+          "blob": "a602c903e6382a89023cdd7692950e3a0b1e3061",
+          "path": ".cursor/skills/l-01-agent-lifecycles/roles/curator.md"
+        },
+        {
+          "blob": "74366459d4451f38bd8c063ce635036c8a947c19",
+          "path": ".cursor/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+        },
+        {
+          "blob": "f282452741c4fb76df6b7d6b469519c7ea2cb936",
+          "path": ".github-vscode/skills/l-01-agent-lifecycles/composition-manifest.json"
+        },
+        {
+          "blob": "38daf6f3a9e1766c06dbbe2cc50c5b44db32d5f1",
+          "path": ".github-vscode/skills/l-01-agent-lifecycles/criteria/onboarding-memory.md"
+        },
+        {
+          "blob": "7a78bd431734fd758e40bbd22a3dbcad0d2810a8",
+          "path": ".github-vscode/skills/l-01-agent-lifecycles/reference/curator-worklist-details.md"
+        },
+        {
+          "blob": "a602c903e6382a89023cdd7692950e3a0b1e3061",
+          "path": ".github-vscode/skills/l-01-agent-lifecycles/roles/curator.md"
+        },
+        {
+          "blob": "74366459d4451f38bd8c063ce635036c8a947c19",
+          "path": ".github-vscode/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+        },
+        {
+          "blob": "f282452741c4fb76df6b7d6b469519c7ea2cb936",
+          "path": ".hermes/skills/l-01-agent-lifecycles/composition-manifest.json"
+        },
+        {
+          "blob": "38daf6f3a9e1766c06dbbe2cc50c5b44db32d5f1",
+          "path": ".hermes/skills/l-01-agent-lifecycles/criteria/onboarding-memory.md"
+        },
+        {
+          "blob": "7a78bd431734fd758e40bbd22a3dbcad0d2810a8",
+          "path": ".hermes/skills/l-01-agent-lifecycles/reference/curator-worklist-details.md"
+        },
+        {
+          "blob": "a602c903e6382a89023cdd7692950e3a0b1e3061",
+          "path": ".hermes/skills/l-01-agent-lifecycles/roles/curator.md"
+        },
+        {
+          "blob": "74366459d4451f38bd8c063ce635036c8a947c19",
+          "path": ".hermes/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+        },
+        {
+          "blob": "f282452741c4fb76df6b7d6b469519c7ea2cb936",
+          "path": ".openclaw/workspace/skills/l-01-agent-lifecycles/composition-manifest.json"
+        },
+        {
+          "blob": "38daf6f3a9e1766c06dbbe2cc50c5b44db32d5f1",
+          "path": ".openclaw/workspace/skills/l-01-agent-lifecycles/criteria/onboarding-memory.md"
+        },
+        {
+          "blob": "7a78bd431734fd758e40bbd22a3dbcad0d2810a8",
+          "path": ".openclaw/workspace/skills/l-01-agent-lifecycles/reference/curator-worklist-details.md"
+        },
+        {
+          "blob": "a602c903e6382a89023cdd7692950e3a0b1e3061",
+          "path": ".openclaw/workspace/skills/l-01-agent-lifecycles/roles/curator.md"
+        },
+        {
+          "blob": "74366459d4451f38bd8c063ce635036c8a947c19",
+          "path": ".openclaw/workspace/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+        },
+        {
+          "blob": "f282452741c4fb76df6b7d6b469519c7ea2cb936",
+          "path": ".pi/skills/l-01-agent-lifecycles/composition-manifest.json"
+        },
+        {
+          "blob": "38daf6f3a9e1766c06dbbe2cc50c5b44db32d5f1",
+          "path": ".pi/skills/l-01-agent-lifecycles/criteria/onboarding-memory.md"
+        },
+        {
+          "blob": "7a78bd431734fd758e40bbd22a3dbcad0d2810a8",
+          "path": ".pi/skills/l-01-agent-lifecycles/reference/curator-worklist-details.md"
+        },
+        {
+          "blob": "a602c903e6382a89023cdd7692950e3a0b1e3061",
+          "path": ".pi/skills/l-01-agent-lifecycles/roles/curator.md"
+        },
+        {
+          "blob": "74366459d4451f38bd8c063ce635036c8a947c19",
+          "path": ".pi/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+        }
+      ],
+      "subject": "onboarding:overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-XJBAHZ",
+      "items": [
+        "sha256:40357a8e4640cc2dccd7591462f59532adef6180f4c434a6b4b8d59cbd3fc1b5"
+      ],
+      "reason": "The raise question's opener is split into the mounted half and the command half; the refusal it produces is stated by the command-raise invariant, so this hunk re-shapes one obligation and adds none.",
+      "subject": "hunk:sha256:40357a8e4640cc2dccd7591462f59532adef6180f4c434a6b4b8d59cbd3fc1b5"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-63Z0MN",
+          "revision": 3
+        },
+        {
+          "id": "INV-DKN3CG",
+          "revision": 2
+        },
+        {
+          "id": "INV-NNQR91",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-Y3TT4Q",
+      "items": [
+        "sha256:a24123db7e504090b1a3f11f3b81e219b3b2a952808703cb4b4105e568795bef"
+      ],
+      "reason": "Every member was examined and none is changed by this leaf; the A7 format pass moved member lines only, so the family row records the current revisions.",
+      "revision": 4,
+      "subject": "FAM-GDXSJG"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-YTQTJK",
+      "items": [
+        "sha256:c034272aea49f0a1c3ee7e5c8507ae34ef9a0aa1a6ce1990ef03a7fa0cad5abc",
+        "sha256:e73cbe1b9db43df113385d8732bcf38b3555f33667ed25fcf05c4541db06b6c6",
+        "sha256:fdfe6502e48231915bf838336c4c32669faa0982eb37db788bd83e0983783e9d"
+      ],
+      "reason": "Round-1 memory repair (L186-M1-F02): the card's active statement contradicted the passed candidate and is corrected, and its reference was re-resolved where the property it carried was false.",
+      "sources": [
+        {
+          "blob": "bee9db13f5bd8fe68d7e98deb0704663998efc1d",
+          "path": "mcp/tests/test_memory_citation_grammars.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_memory_citation_grammars.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Z14REV",
+      "items": [
+        "sha256:5220af705e11723f7bcdbcd4e7931691c15b0998d87d3692013d2759504a202d"
+      ],
+      "reason": "The template's new paragraphs state the writer's proof, re-point and raise routes; that instruction obligation is carried by INV-CKJ6AZ and the role-text invariant.",
+      "subject": "hunk:sha256:5220af705e11723f7bcdbcd4e7931691c15b0998d87d3692013d2759504a202d"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZA4767",
+      "items": [
+        "sha256:473e51aba05349ea10d92d783097f029efb8bc0c2571080d98ed99a04de218f0"
+      ],
+      "reason": "The proof write now returns the paired titles and routes a range proof through its own module; the proof obligation is carried by the proof-route invariants, and this hunk only calls them.",
+      "subject": "hunk:sha256:473e51aba05349ea10d92d783097f029efb8bc0c2571080d98ed99a04de218f0"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

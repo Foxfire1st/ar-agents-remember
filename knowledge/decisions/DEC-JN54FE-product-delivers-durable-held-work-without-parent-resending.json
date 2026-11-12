@@ -1,0 +1,57 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Durable product holding preserves the permission guard and avoids asking a parent or developer to repeat work whose acceptance can be uncertain."
+  },
+  "alternatives": [
+    {
+      "option": "Take unavailable-recipient work into a bounded recipient-workspace store and deliver it later.",
+      "reason": "Durable product holding preserves the permission guard and avoids asking a parent or developer to repeat work whose acceptance can be uncertain.",
+      "status": "chosen"
+    },
+    {
+      "option": "Refuse unavailable recipients and require parents to resend on later turns.",
+      "reason": "Manual retries have no reliable prompt/turn-ready signal and can duplicate already taken work.",
+      "reconsider_when": "The native host supplies a durable ordered queue with equivalent permission protection and workspace reclamation.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Waiting text is limited to twenty messages, has no time expiry, and ends with compact receipt custody rather than permanent text retention."
+  ],
+  "context": "A host message at a permission prompt would deny it; between-turn-only recipients also cannot take peers while working.",
+  "decider": "Developer D90/D96/D111, MIK-R100@v1 rules 4a/4b",
+  "id": "DEC-JN54FE",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "route:mcp/src/agents_remember/cli"
+    },
+    {
+      "relation": "constrains",
+      "target": "route:mcp/src/agents_remember/serving"
+    },
+    {
+      "relation": "constrains",
+      "target": "route:skills/l-01-agent-lifecycles"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_held_queue.py::HeldQueueRecoveryTests zero-counter and delete-before-stage tests pass; scratch/worker/5e0b3a10-7a35-4c5e-9f11-100000000001/xdg/r6-probe-final0.txt sha c484e288071f: F03 swept=1 delivered=1, terminal=1 pending empty received once"
+      ],
+      "path": "l100-knowledge-handoff.json"
+    },
+    "handoffEntry": "L100-R100-4a-recovery",
+    "leaf": "260928-MIK-L100",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

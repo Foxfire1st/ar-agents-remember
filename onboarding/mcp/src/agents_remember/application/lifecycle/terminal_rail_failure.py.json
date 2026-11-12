@@ -1,0 +1,240 @@
+{
+  "path": "mcp/src/agents_remember/application/lifecycle/terminal_rail_failure.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "No external domain source is required for this repository-owned terminal envelope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "352d896a77b6b2f7a980cab40dc2f0736ed4553e",
+            "content": "sha256:e269fab6e5aa7d465dc99ccd4b3ea99c2aced1fe104c72c9451eae67c9bbab71",
+            "locator": {
+              "kind": "symbol",
+              "name": "TERMINAL_RAIL_FAILURE_SCHEMA_VERSION"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The module's concrete API, envelope contract, and bounded census are implemented here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "352d896a77b6b2f7a980cab40dc2f0736ed4553e",
+            "content": "sha256:09aad643d05563e620208cef073ee9418222b16a5f282a5dded5da640e803403",
+            "locator": {
+              "kind": "symbol",
+              "name": "terminal_worker_failure_result"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "352d896a77b6b2f7a980cab40dc2f0736ed4553e",
+            "content": "sha256:2d7f575ed85650c0c2a808399c18caa7820e3f3995d9144a4329ede4fa7004b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "352d896a77b6b2f7a980cab40dc2f0736ed4553e",
+            "content": "sha256:ae5be26fc5bce44245bcb65e02ea7ca4ad56dd31bb2a9ad1ac6fc9f59322f42a",
+            "locator": {
+              "end": 195,
+              "kind": "line_range",
+              "start": 147
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A published candidate-matched rail report becomes a typed gate-result envelope with its full rail catalog.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "352d896a77b6b2f7a980cab40dc2f0736ed4553e",
+            "content": "sha256:760bed1bc206499f8320d4c2e595924efa2ac509eb478fa950d74a8e25ce0a71",
+            "locator": {
+              "kind": "symbol",
+              "name": "_gate_result_envelope"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "352d896a77b6b2f7a980cab40dc2f0736ed4553e",
+            "content": "sha256:88dabca9209f1731860e29d50f067c2c0ebd5b8389a0af442dd068c3a2b8601d",
+            "locator": {
+              "end": 340,
+              "kind": "line_range",
+              "start": 283
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Missing, unreadable, or candidate-mismatched rail evidence becomes a typed unavailable envelope without fabricated outcomes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "352d896a77b6b2f7a980cab40dc2f0736ed4553e",
+            "content": "sha256:184ea5e00c93961d3a5a2563bce101224b2a2b6fd7c647b6fa5db308058546b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unavailable_envelope"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "352d896a77b6b2f7a980cab40dc2f0736ed4553e",
+            "content": "sha256:fd5e236284430cda811b0651570c59d52fcb7efa544f82bb1ee8bac34f97deba",
+            "locator": {
+              "end": 367,
+              "kind": "line_range",
+              "start": 343
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A worker crash before rail publication is censused, never collapsed to a generic exception.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "352d896a77b6b2f7a980cab40dc2f0736ed4553e",
+            "content": "sha256:33b444a6b3eb388d508ed4b0d2e2e1071352c84db5e581fe13c2c213b8765fa5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_worker_error_census"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "352d896a77b6b2f7a980cab40dc2f0736ed4553e",
+            "content": "sha256:9f51a4965bc53d0efbe4ddb91006f55c80737e3a398558e7f586cc175317ba9a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unclassified_envelope"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "352d896a77b6b2f7a980cab40dc2f0736ed4553e",
+            "content": "sha256:75162726c847eca82cc145fc9be24a3740a7e5d47021daa9239703ac2d89a2d7",
+            "locator": {
+              "end": 905,
+              "kind": "line_range",
+              "start": 846
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "352d896a77b6b2f7a980cab40dc2f0736ed4553e",
+            "content": "sha256:d953f0406a3aeea8127e9756f283511e590d283da56d0f59b3ea1951b36a27e6",
+            "locator": {
+              "end": 396,
+              "kind": "line_range",
+              "start": 370
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The terminal identity and closed class mirror the CCR-R16 operation-terminal payload.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "352d896a77b6b2f7a980cab40dc2f0736ed4553e",
+            "content": "sha256:a6381c9db484e044f0af5fb5d442044ab3f5244a3eb35e8f33e9d2d002dab0ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "telemetry_terminal_facts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "352d896a77b6b2f7a980cab40dc2f0736ed4553e",
+            "content": "sha256:bc370a8af4a82bd30c1ff586980c2f35d5b1b3ca99c4da74bb33222d779c3226",
+            "locator": {
+              "kind": "symbol",
+              "name": "worker_failure_result_class"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "352d896a77b6b2f7a980cab40dc2f0736ed4553e",
+            "content": "sha256:30b879e34e312fa6c82cf5ef30b6a4cc4ebb64b6e966f856699857915bc08537",
+            "locator": {
+              "end": 990,
+              "kind": "line_range",
+              "start": 966
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The typed rail-failure envelope keeps its public producer, but its detached-worker caller was deleted with the operation plane (commit `173bb01e`); `terminal_worker_failure_result` has no remaining production caller in `mcp/src`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "352d896a77b6b2f7a980cab40dc2f0736ed4553e",
+            "content": "sha256:09aad643d05563e620208cef073ee9418222b16a5f282a5dded5da640e803403",
+            "locator": {
+              "kind": "symbol",
+              "name": "terminal_worker_failure_result"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "No meaningful cross-repository reference applies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "352d896a77b6b2f7a980cab40dc2f0736ed4553e",
+            "content": "sha256:e269fab6e5aa7d465dc99ccd4b3ea99c2aced1fe104c72c9451eae67c9bbab71",
+            "locator": {
+              "kind": "symbol",
+              "name": "TERMINAL_RAIL_FAILURE_SCHEMA_VERSION"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

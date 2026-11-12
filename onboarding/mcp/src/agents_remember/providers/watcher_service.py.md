@@ -1,14 +1,31 @@
 # mcp/src/agents_remember/providers/watcher_service.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/providers/watcher_service.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
-| governingOverview | `../../../overview.md` |
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- Current call uses parameterless write_lifecycle_settings().
+- Wrapper still delegates and unlinks its owned temporary file.
+- The stop reads the authority settings file when it exists: `run_configured_watchers`
+  passes `config.config_path` to the stop-class service, and uses an owned generated
+  document only when that file is absent. Reading the authority block is a stop input
+  only, and with no authority file nothing is selected.
+
+### Superseded inventory
+
+- Pre-repair card claim: Card says run_configured_watchers gets temporary settings derived from live config. This is superseded archival wording, not a current prescription.
+
+### Source and authority bounds
+
+- Source comparison: `mcp/src/agents_remember/providers/watcher_service.py:19-47`.
+- Source comparison: `mcp/src/agents_remember/providers/settings.py:11-26`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
 
 ## Governing Overview
 
@@ -24,7 +41,7 @@ Configured provider-watcher lifecycle service shared by upper performers.
 
 Module-level surface:
 
-- `run_configured_watchers` (function, lines 16-43) — Run one watcher action against temporary settings derived from live config.
+- `run_configured_watchers` (function, lines 16-43) — Run one watcher action against temporary settings derived from live config. The answer carries the aggregated state built in memory with `currentStateFile: None`: status files none (rule 6).
 
 ### Conventions
 
@@ -38,16 +55,14 @@ Module-level definitions follow the package conventions; names prefixed with `_`
 
 None.
 
-## Repo-Internal References
+## Evidence
+
+### Repo-Internal References
 
 This module defines the top-level symbols cited below; each row points at the exact source range holding the anchor.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Defines the function `run_configured_watchers` (lines 16-43) — Run one watcher action against temporary settings derived from live config.. | `run_configured_watchers` | mcp/src/agents_remember/providers/watcher_service.py:16-43 |
 
-## Update History
+- Defines the function `run_configured_watchers` — run one watcher action against temporary settings derived from live config. [1]
 
-- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 
-- 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.
+</details>

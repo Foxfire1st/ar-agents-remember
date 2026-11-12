@@ -1,0 +1,41 @@
+{
+  "path": "dashboard/src/panels/review/reading/selectionRestore.test.ts",
+  "realizes": [],
+  "references": {
+    "4": {
+      "note": "Synthetic comparison, lane path and exact added/deleted hunk facts.\n\nAnchor: \"const PATH = 'dashboard/src/added.ts';\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c39cbb54a7cc64549afd3c514805db4f684bb9a",
+            "content": "sha256:eeedcf1d699afcb1bdda1c448870a2c4b435b09e341031d98d9b8206995e50e8",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 10
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Wait/select/outside decisions preserve exact spans, file failures and comparison identity.\n\nAnchor: \"describe('a hunk the link names', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c39cbb54a7cc64549afd3c514805db4f684bb9a",
+            "content": "sha256:f92ffca102e1edda72f0fd323f08eab1ade41c0aa92039a4688ba0fe1d179472",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 59
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,83 @@
+{
+  "path": "mcp/src/agents_remember/application/task_docs/task_sprint_context.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "5": {
+      "note": "Sprint admission uses the shared model predicate and captures accepted sources.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3eac2f250183dcad51cc9ef6846d7f4053faf7de",
+            "content": "sha256:1dc07ce49fd98c1207ef50bab225b81b1f8afc170a5bf23db7cc2afa56e5f7f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_sprint_context"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "A master with command membership or a retained retirement row is a sprint.\n\nAnchor: `TaskDocument.is_sprint`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:8419d7988572743009192b4adb159c9a92a197f8300f9f62c3e8b55c3ae61083",
+            "locator": {
+              "end": 879,
+              "kind": "line_range",
+              "start": 868
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:80ef05a2017c1dd74aff6dc8eb9893564a5b796f64de7e32b2e03f3f0f5cc68c",
+            "locator": {
+              "end": 1237,
+              "kind": "line_range",
+              "start": 1226
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:577548ba26577563f7a9c800103d88fb16c0f8f6ae1322ba87d0cdab8bf275bc",
+            "locator": {
+              "end": 824,
+              "kind": "line_range",
+              "start": 813
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "SprintLinkageRequest threads the optional configuration to linkage-report destination resolution. Fact collection edits no tasks. A real linkage_report still needs a resolvable report/log root and can refuse with linkage-report-unwritable; dry run computes facts without writing its per-call JSON report. Absence of config is not a promise of a successful no-file apply.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3eac2f250183dcad51cc9ef6846d7f4053faf7de",
+            "content": "sha256:3256aebe343be59dfaacad233edb618791ab8f162665152f9f77588e57a3c9e9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

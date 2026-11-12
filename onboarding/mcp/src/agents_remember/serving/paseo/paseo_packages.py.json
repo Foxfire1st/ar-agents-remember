@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/serving/paseo/paseo_packages.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The lock equality check against the packaged lock.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e1394f3d0c3b22a9671ff5f57aa253a68b38a8b",
+            "content": "sha256:443d6dc3fe1ba145694a141c7fa447bd0116b0bf846c7a3a27cf2e8bbe199716",
+            "locator": {
+              "kind": "symbol",
+              "name": "installed_lock_matches"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

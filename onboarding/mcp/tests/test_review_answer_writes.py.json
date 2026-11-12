@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_review_answer_writes.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A response is answered while its answer is still being stored, so storing never delays the page",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc66d8807547ac7eccf6868b1fb998afef7f0065",
+            "content": "sha256:e1bdc6d61082832f36e18df9b5c0924037b451ea9570a7c7d209cf1ff28f88bf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_response_is_answered_while_its_answer_is_still_being_stored"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

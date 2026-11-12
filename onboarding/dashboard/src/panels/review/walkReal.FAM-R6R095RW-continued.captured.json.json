@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/walkReal.FAM-R6R095RW-continued.captured.json",
+  "realizes": [],
+  "references": {
+    "3": {
+      "note": "The current retained JSON input supplies the literal identities, response states and populations summarized above; these are fixture facts, not live project knowledge or fresh execution evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6e558ebd2a8540778374e7699e2056c3f2ce02dc",
+            "content": "sha256:80f46d70b20b020493be4a56938e71c6fc4c20f5e86b4c70e0e166d75483f497",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

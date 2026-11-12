@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/controlplane/stamps.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Defines the function `age_seconds` (lines 22-35) — Seconds between an ISO-8601 ``stamp`` and ``now``; ``None`` when unparseable..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35893ecd2b60c2f73d8d59bd85966045b0f60356",
+            "content": "sha256:ef97c60e5372125bff2b3b50c5a0a1c49e405da08332967feeac58f34ea10a9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "age_seconds"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

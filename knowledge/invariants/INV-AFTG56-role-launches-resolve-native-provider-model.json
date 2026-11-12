@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "family_guarantee"
+    ],
+    "justification": "Spans host catalog and create call: resolving provider/model/effort/speed against the catalog and carrying accepted fields onto the call is the core obligation of FAM-N17BB4's joint launch guarantee."
+  },
+  "applicability": "Every role-agent launch that carries host provider, model, effort or speed choices.",
+  "conditions": [
+    "The host catalog names the offering being resolved.",
+    "Resolution runs before the actual create call."
+  ],
+  "exclusions": [
+    "The retained built-in agent-ID/settings compatibility vocabulary, which does not restore the removed native adapter registry.",
+    "Dated candidate credits, which this invariant does not restate."
+  ],
+  "id": "INV-AFTG56",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/role-launch/260928-MIK-L71-worker-d508f3cc-d109-host-readers/source-current-a1b7/source26-public-sync/generation15-five-pin-successor/expanded-evidence.md"
+      ],
+      "path": "l71-handoff-list.json"
+    },
+    "handoffEntry": "L71-CURRENT242-W-01",
+    "leaf": "260928-MIK-L71",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "Role launches resolve provider, model, effort and speed choices against the host catalog and carry accepted fields onto the actual create call; the retained AR built-in agent-ID/settings vocabulary is not a native adapter catalog or execution fallback.",
+  "status": "proposed",
+  "supersedes": []
+}

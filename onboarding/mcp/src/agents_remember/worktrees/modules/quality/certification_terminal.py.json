@@ -1,0 +1,191 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/quality/certification_terminal.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A terminal binds exact original references; generation rendering stays separate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ad582e28b720638911ddaaf33f4f7f151fb69ae",
+            "content": "sha256:7973dc5d6f5b49ca584fb4178cd5e83519b1a4dd567759cc1ed3c1e46a4f80e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecordedGateTerminal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Typed selection inputs and presentation grouping have distinct fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ad582e28b720638911ddaaf33f4f7f151fb69ae",
+            "content": "sha256:f6a4021928f623707c6652618a78bd21af4e29de755515310f33dd45f0c59d80",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecordedCertificationGeneration"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4ad582e28b720638911ddaaf33f4f7f151fb69ae",
+            "content": "sha256:f44f728d55f424f09f1f98c43104346386f7a8742e2cbcdc7dc308ebc7f9fc6e",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 38
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Gate catalog parsing bounds rows and rejects malformed or duplicate integer identities.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ad582e28b720638911ddaaf33f4f7f151fb69ae",
+            "content": "sha256:86cc02f65361342bb00ff4eaa4ed58460c1e290cfc1bb9920362ccd20ed84c79",
+            "locator": {
+              "kind": "symbol",
+              "name": "catalog_gates"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4ad582e28b720638911ddaaf33f4f7f151fb69ae",
+            "content": "sha256:3ef24ac92183bfdd858aed3f14496a9e6e42bc22dee338b1168a6a79fe3b3395",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 81
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Rail observations must equal the exact planned identity population.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ad582e28b720638911ddaaf33f4f7f151fb69ae",
+            "content": "sha256:afe4fb3e5015ab3add02dbb82ae85733bc85e5bc363198378dfa6aee16880cef",
+            "locator": {
+              "kind": "symbol",
+              "name": "terminal_results"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4ad582e28b720638911ddaaf33f4f7f151fb69ae",
+            "content": "sha256:936befcae4d9f469421143c67d7495594ef64ed35bb6499c46cc9c7531927fd7",
+            "locator": {
+              "end": 227,
+              "kind": "line_range",
+              "start": 172
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Codes preserve supplied failures or derive a deterministic status label.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ad582e28b720638911ddaaf33f4f7f151fb69ae",
+            "content": "sha256:e26160325810676a8ae91081df30b9387535e1a1996ba006a062665d5f479d12",
+            "locator": {
+              "kind": "symbol",
+              "name": "_terminal_code"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4ad582e28b720638911ddaaf33f4f7f151fb69ae",
+            "content": "sha256:ec2a6929b2697e7349cb58e53c0320fb33e90e1f913d87d698aec114c83c82a5",
+            "locator": {
+              "end": 236,
+              "kind": "line_range",
+              "start": 230
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Blockers resolve only against the planned same-gate rails.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ad582e28b720638911ddaaf33f4f7f151fb69ae",
+            "content": "sha256:3d59eb0ae7cb54f206db3e38a244b4b70cc6d4cd964f34443d9aa6d31ec864e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_terminal_blocked_by"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4ad582e28b720638911ddaaf33f4f7f151fb69ae",
+            "content": "sha256:35cb78f5242d4f571be544734504aac2b0b11049808f9abf474cc4a93bf138e2",
+            "locator": {
+              "end": 249,
+              "kind": "line_range",
+              "start": 239
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Refused records carry no certificate or result-manifest authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ad582e28b720638911ddaaf33f4f7f151fb69ae",
+            "content": "sha256:5805e480efe43628c7477f7d2bf94bc49719772e970c0da2c4802bec35be5fd7",
+            "locator": {
+              "kind": "symbol",
+              "name": "refused_record"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4ad582e28b720638911ddaaf33f4f7f151fb69ae",
+            "content": "sha256:141a8bd1d0c01773cfba6d6e9ce8540e248739a68df1d11124fecbf6610b4e84",
+            "locator": {
+              "end": 78,
+              "kind": "line_range",
+              "start": 67
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

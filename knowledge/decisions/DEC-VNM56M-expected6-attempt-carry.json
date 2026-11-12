@@ -1,0 +1,65 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "It records this leaf's admitted interrupted attempt and the Manager-owned item-7 proof obligation; it states no cause and no rule for later leaves."
+  },
+  "alternatives": [
+    {
+      "option": "Record the attempt with its raw material and the cause as far as it was found, carry the reciprocal proof to item 7 on the first real leaf, and do not hold the leaf for a live exchange.",
+      "reason": "The cause was not established; the current 78B packet admits the attempt to its observed extent and keeps the reciprocal proof owed on the first leaf started under the landed texts.",
+      "status": "chosen"
+    },
+    {
+      "option": "Hold the leaf until a successful live exchange completes.",
+      "reason": "An unestablished tool failure would hold a fully reviewed candidate indefinitely.",
+      "reconsider_when": "The item-7 proof on the first real leaf shows the sandbox exchange is the only reliable evidence for the addressing model.",
+      "status": "rejected"
+    },
+    {
+      "option": "Start a second paid fixture attempt with a different runtime shape.",
+      "reason": "The first cause was not established, so a second attempt would risk the same unknown failure at further cost.",
+      "reconsider_when": "A later leaf diagnoses a concrete tooling cause that a retry with a named change would remove.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Expected Evidence 6 stays this leaf's admitted attempt, never a success.",
+    "The Manager owns this leaf's item-7 reciprocal proof after landing.",
+    "The disposition is this leaf's, and states no cause and no rule for later leaves."
+  ],
+  "context": "Expected Evidence 6 asks for one real Codex exchange on the repository's sandbox: the Worker's hand-over reaches the Reviewer by the arguments of its handover. The attempt started one Reviewer actor and one interrupted turn whose first task_doc.get exec never returned; the cause was not established and no exchange completed.",
+  "decider": "the run-3 architect on the developer's direction; the packet's amended Expected Evidence 6",
+  "id": "DEC-VNM56M",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "route:skills/l-01-agent-lifecycles"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R99",
+        "packet": "requirements/MIK-R99-v1-a-leafs-agents-hand-over-to-each-other.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "notes/files/l99-curation-20261007/handoff.json"
+    },
+    "handoffEntry": "DEC-expected6-carry",
+    "leaf": "260928-MIK-L99",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

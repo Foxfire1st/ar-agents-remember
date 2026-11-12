@@ -1,0 +1,42 @@
+{
+  "path": "mcp/src/agents_remember/providers/lifecycle/__init__.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "2": {
+      "note": "CGC exports are grouped behind the CGC package facade.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c3fe573530750be048927d921f4fe6ea1e9304c",
+            "content": "sha256:ff711aa0ae0a8d14442e05d182e9df4fe1693987ce21fcd9761138a5b5b3df78",
+            "locator": {
+              "kind": "symbol",
+              "name": "_EXPORT_MODULES"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "GrepAI exports are grouped behind the Docker-owned GrepAI package facade.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1b42b4e40bef082465ee9ebba788429c6ad408e2",
+            "content": "sha256:2220bb5058fb820aeeecb989660c8d8073cccda280f41a2a790229044a75bad1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_EXPORT_MODULES"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

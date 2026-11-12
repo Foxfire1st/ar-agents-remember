@@ -1,0 +1,53 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/pause.py",
+  "realizes": [],
+  "references": {
+    "14": {
+      "note": "Disabled contract refused before the kind check\n\nAnchor: `pause_result`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d04298e98df4d5f82d3f636b06a324307aff3ac",
+            "content": "sha256:f3b7b1b5f3399297953ade6c23f1e975da21c5d4a0a7570b2b06066c3dab1b0a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Only a re-observed vacant record reports stopped\n\nAnchor: `_already_stopped_result`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d04298e98df4d5f82d3f636b06a324307aff3ac",
+            "content": "sha256:f3b7b1b5f3399297953ade6c23f1e975da21c5d4a0a7570b2b06066c3dab1b0a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Refusals propose no next call either",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d04298e98df4d5f82d3f636b06a324307aff3ac",
+            "content": "sha256:5bc2d278972523eb4526c5d9ba295a99aaa1295dad55df112c88658dc3cf155d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refusal_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

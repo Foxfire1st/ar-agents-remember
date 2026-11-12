@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "family_guarantee"
+    ],
+    "justification": "The knowledge-write-and-publication family needs reads to select the same resolved canonical text root as writes, so an index failure cannot silently substitute another memory layer or a canonical database."
+  },
+  "applicability": "Ordinary published-intent selection for the resolved repository or canonical leaf.",
+  "conditions": [
+    "The resolved memory root holds knowledge/layout.json.",
+    "The derived index can be built or read for the selected memory tree; failure remains an explicit unusable selection."
+  ],
+  "exclusions": [
+    "Historical canonical database publication and its former not-recorded converted result.",
+    "A sibling memory layer or derived index cache as an alternative source of truth."
+  ],
+  "id": "INV-753SKJFF",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Hand-off kind: clause.",
+        "Producer's disposition: satisfied.",
+        "Evidence: Measured by this run at 71a17079 through the shipped resolver: with no enclosure in scope the ordinary read route answers /home/firefox/projects/ar-coordination/memory-repos/ar-agents-remember/knowledge.sqlite, and resolve_context on this leaf's enclosure contract answers that leaf's memory worktree instead."
+      ]
+    },
+    "leaf": "260921-ICR-L30",
+    "legacyId": "3ac4c376-9a30-4aff-a219-9ade903d183e",
+    "task": "260921-ICR"
+  },
+  "revision": 3,
+  "schema": "ar-invariant/v1",
+  "statement": "Published intent is selected from the one resolved converted memory root: the official external memory root outside an enclosure and the leaf's memory worktree inside it. Its text records are canonical; reads select the derived index of that exact tree. An unconverted root is refused as legacy-format, and no canonical knowledge database publication destination is selected.",
+  "status": "proposed",
+  "supersedes": []
+}

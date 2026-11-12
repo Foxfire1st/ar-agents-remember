@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Guards the costly error this statement names: A dry run of a retirement lists every file a real run writes, also after a death inside the sprint edit, where it lists the sprint's document and its rendered page again."
+  },
+  "applicability": "A dry run of a retirement after a death inside the sprint edit.",
+  "conditions": [
+    "The sprint edit had begun so the sprint document and its rendered form are among the files a real run writes."
+  ],
+  "exclusions": [
+    "Dry runs before any write began."
+  ],
+  "id": "INV-CC0VTQ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L41-reviewer-acd0dccb-066d-41e9-ab45-b3d7e19e742f.md; probe x13_state_probes.out; two killed mutations under sealed id 6"
+      ],
+      "path": "entries-list.json"
+    },
+    "handoffEntry": "L41-R7 finding 6",
+    "leaf": "260928-MIK-L41",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A dry run of a retirement lists every file a real run writes, also after a death inside the sprint edit, where it lists the sprint's document and its rendered page again.",
+  "status": "proposed",
+  "supersedes": []
+}

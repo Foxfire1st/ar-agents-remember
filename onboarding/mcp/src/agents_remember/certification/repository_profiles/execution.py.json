@@ -1,0 +1,88 @@
+{
+  "path": "mcp/src/agents_remember/certification/repository_profiles/execution.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`admit_repository_profile_execution` carries the current contract described above.\n\nAnchor: \"def admit_repository_profile_execution\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87d4a3a26b8d87fd2d3cd3db86a5df20752d200d",
+            "content": "sha256:cf09d6d5ad01e3d7a8820d7597501c5e9eee0978446fd2b1a0d440fca7007bdc",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 41
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "One-call selection/plan/executor/decoder/artifact admission for an exact candidate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87d4a3a26b8d87fd2d3cd3db86a5df20752d200d",
+            "content": "sha256:cf09d6d5ad01e3d7a8820d7597501c5e9eee0978446fd2b1a0d440fca7007bdc",
+            "locator": {
+              "kind": "symbol",
+              "name": "admit_repository_profile_execution"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "87d4a3a26b8d87fd2d3cd3db86a5df20752d200d",
+            "content": "sha256:9b56aa6246ea69dbc1c42e4800f29cfee52b0b83084085d5f47c942c75f01bb4",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 38
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The sandbox admits the profile execution against its prepared candidate tree.\n\nAnchor: \"def _admit_prepared_profile\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee971f9439bb92610e7057de9349aa72968a2eab",
+            "content": "sha256:2909c7c1992a9a2014a465dac364f98e3596222c250335a3dd64c791443401c9",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 42
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/execution/sandbox.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The sandbox manifest records profile execution and frozen runtime authority.\n\nAnchor: \"def _write_sandbox_manifest\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee971f9439bb92610e7057de9349aa72968a2eab",
+            "content": "sha256:97f912523050da24c93a235f60224743586f1a519bce530b458fbe1bafc4d5f4",
+            "locator": {
+              "end": 169,
+              "kind": "line_range",
+              "start": 121
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/execution/sandbox.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

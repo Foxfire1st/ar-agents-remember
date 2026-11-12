@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "An optimistic or refused/unreachable grant overwrite could display authorization the external store did not give; the hook must retain actual state and the served position while pending. Its one-file anchor does not establish cross-file proof."
+  },
+  "applicability": "The planning-subTask direct-execution hook behind the selected own-page switch.",
+  "conditions": [
+    "A Give/Revoke request uses the existing canonical route against the current served grant."
+  ],
+  "exclusions": [
+    "Backend grant storage/permission ownership and task JSON authoring."
+  ],
+  "id": "INV-JNYJAG",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "directGrantControl.test.tsx give, pending, refusal and refused-revoke cases"
+      ],
+      "path": "post-sync-structured-wave-v2.json"
+    },
+    "handoffEntry": "L150-R11",
+    "leaf": "260928-MIK-L150",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A click changes the grant through the L94 route: disabled while pending with position kept, served state on success, real state plus server words on refusal or unreachable.",
+  "status": "proposed",
+  "supersedes": []
+}

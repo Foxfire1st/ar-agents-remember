@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Serving warmup driver retirement and lifespan exit. Losing this boundary would fabricate currentness, attribute another owner's work, hide an external change, or repeat an unsafe host/landing action rather than exposing the actual observation."
+  },
+  "applicability": "Serving warmup driver retirement and lifespan exit.",
+  "conditions": [
+    "Owned intake and resume tasks drain before their exact claim lease is closed.",
+    "A not-yet-started admitted pass is marked ended but not a consumed host start."
+  ],
+  "exclusions": [
+    "Old in-flight resumes may not overlap a newly admitted two-lane pass."
+  ],
+  "id": "INV-YYNNF1",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_paseo_warmup_operations.py::test_cancelled_watch_intake_releases_admitted_claim_after_worker_drains"
+      ],
+      "path": "curator-handoff-L81-A001-b1fd-03.json"
+    },
+    "handoffEntry": "L81-R1-F26",
+    "leaf": "260928-MIK-L81",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "After cancelled watch intake and all owned tasks have drained, the driver closes the exact admitted unstarted claim as ended without consuming the host start; it holds the real lease while intake is still running.",
+  "status": "proposed",
+  "supersedes": []
+}

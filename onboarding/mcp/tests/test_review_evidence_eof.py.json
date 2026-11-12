@@ -1,0 +1,75 @@
+{
+  "path": "mcp/tests/test_review_evidence_eof.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "5c95125cbe06e217f9644af4a4e9089462e97099",
+        "content": "sha256:ec43ab143d01494e85c8d46743e31d4563f0e5e78dcf503d79b663973b7a55bb",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f03_r182_a_start_line_one_past_the_object_end_is_a_measured_absence"
+        }
+      },
+      "facet": "A start line one past a two-line object's end is a measured range absence whose detail states the object holds two lines.",
+      "id": "PRF-12D2JA",
+      "invariant": "INV-18QNN3",
+      "origin": {
+        "handoffEntry": "MIK-R182@v1",
+        "leaf": "260928-MIK-L180"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5c95125cbe06e217f9644af4a4e9089462e97099",
+        "content": "sha256:0c460407e0245581362a5e5ba8d37368af18320b74dbe6821d294a3d55b8c432",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f03_r182_a_read_past_the_object_end_is_present_at_its_last_line"
+        }
+      },
+      "facet": "A six-line object read at lines 1-100 is present at line 6 with zero remaining, no continuation and no limit, and a detail that names that line.",
+      "id": "PRF-3D3S3E",
+      "invariant": "INV-18QNN3",
+      "origin": {
+        "handoffEntry": "MIK-R182@v1",
+        "leaf": "260928-MIK-L180"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The six-line object read at lines 1–100 is present at its last line, with no remaining line, continuation or limit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c95125cbe06e217f9644af4a4e9089462e97099",
+            "content": "sha256:0c460407e0245581362a5e5ba8d37368af18320b74dbe6821d294a3d55b8c432",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_f03_r182_a_read_past_the_object_end_is_present_at_its_last_line"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "A start line one past the object's end is also a measured range absence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c95125cbe06e217f9644af4a4e9089462e97099",
+            "content": "sha256:ec43ab143d01494e85c8d46743e31d4563f0e5e78dcf503d79b663973b7a55bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_f03_r182_a_start_line_one_past_the_object_end_is_a_measured_absence"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

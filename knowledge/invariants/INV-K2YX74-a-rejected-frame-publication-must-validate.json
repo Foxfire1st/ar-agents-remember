@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "A refused publication that already reclaimed bytes would destroy the last ready output, and one that wrote store state before validating would leave state no accepted publication explains."
+  },
+  "applicability": "A publication request that fails its binding, manifest, ancestry or ceiling checks.",
+  "conditions": [
+    "The lineage already holds one or more ready revisions (at-cap preservation): the refusal leaves every one of them byte-identical, with no reclamation before validation.",
+    "The lineage is empty (first publication): the refusal still validates the binding, manifest, ancestry and limits before it creates any durable store state."
+  ],
+  "exclusions": [
+    "A request that passes every check: this invariant describes refusals, not successful publications."
+  ],
+  "id": "INV-K2YX74",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Recorded A3/prior closure; unchanged-source custody and A4 focused preservation controls"
+      ],
+      "path": "l102-curator-list.json"
+    },
+    "handoffEntry": "L102-F14",
+    "leaf": "260928-MIK-L102",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A rejected frame publication must validate its binding/manifest/limits before reclaiming prior durable revisions or creating durable store state.",
+  "status": "proposed",
+  "supersedes": []
+}

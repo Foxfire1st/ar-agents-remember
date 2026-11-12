@@ -1,0 +1,31 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "The reader fixture's own composition alone still leaves a wait that can hang, and a bounded wait alone still hangs when the request never reaches a dispatcher; only together do they promise that these protocol waits end at a limit and that the sweep's limit is a named failure rather than a raiser."
+  },
+  "guarantee": "The reader protocol test composes its own server through the product factory instead of inheriting another test's process state. The protocol waits of the reader exercise and of the tool sweep — the reader's exchange and its Git status observations, and the sweep's session initialization, tool response and session cleanup — each end at a limit, and the sweep's limit is a named failure that is not classified as a product raiser. The fixtures' shared Git helpers — `git`/`init_repo` in `mcp/tests/test_worktree_support.py` and the sweep's `_git` — carry no timeout of their own and are outside this guarantee. Where the event-loop runner can shut down, no earlier test and no unanswered tool leaves these waits blocking the run; LIM-81M7T1 records where it cannot.",
+  "id": "FAM-TG3WK0",
+  "members": [
+    "INV-X0BRG0",
+    "INV-2S0FEY",
+    "INV-W4XGR4"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "notes/reports/260928-MIK-L70-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "L70-four-tests-cannot-block",
+    "leaf": "260928-MIK-L70",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp/tests",
+    "mcp/src/agents_remember/mcp/registration"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "The reader and sweep protocol waits end at a limit"
+}

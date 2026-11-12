@@ -1,0 +1,77 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/review_intent_summary.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e475e37acb0871bfbf9a2dce8acdb6f76d42e801",
+        "content": "sha256:cffe69107170bdfcfa44782d92ea955fd145dd4c20cf07566b3fee2480bfd609",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewIntentSummaryResult"
+        }
+      },
+      "id": "RLZ-47N0FGAH",
+      "invariant": "INV-R93S8Y30",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "The result validator enforces declared authored-intent outcome consistency: unavailable carries its refusal and no counts; counted/partial carry counts and no refusal; partial is equivalent to positive unresolved. Independent attribution/stored-open fields do not become authored-intent totals. This constrains the declared state and values, not actual I/O or authenticity of the comparison.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "10": {
+      "note": "Outcome validation and optional attribution/open/comparison fields retain independent meanings.\n\nAnchor: \"class ReviewIntentSummaryResult(KnowledgeModel):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e475e37acb0871bfbf9a2dce8acdb6f76d42e801",
+            "content": "sha256:cffe69107170bdfcfa44782d92ea955fd145dd4c20cf07566b3fee2480bfd609",
+            "locator": {
+              "end": 127,
+              "kind": "line_range",
+              "start": 93
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The tree producer attaches its number and separate lane/stored-open facts.\n\nAnchor: \"def summarize_review(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "381116756a49c43ba3161b123d2f65708d31334c",
+            "content": "sha256:674871b6d55c8ca9bca48c6646bfb18bc2d4803efe437858e39857762981bb31",
+            "locator": {
+              "end": 180,
+              "kind": "line_range",
+              "start": 150
+            },
+            "path": "mcp/src/agents_remember/application/review_intent_summary.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Declared head-count totals equal invariant/guarantee parts and keep relationship-only counts separate.\n\nAnchor: \"class IntentHeadChanges(KnowledgeModel):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e475e37acb0871bfbf9a2dce8acdb6f76d42e801",
+            "content": "sha256:e45fba62ad54ecf6cca277d506b0ca85db70261def361106c53bf3807fa79da9",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 51
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

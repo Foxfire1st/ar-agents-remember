@@ -1,0 +1,187 @@
+{
+  "path": "mcp/tests/test_direct_landing.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "e5e2ee915969059ef9c62381725c0e2f73f229d0",
+        "content": "sha256:5efaa63befdc35b2582e174d5ccbbc7190a1772ef73335a2a5b82d33b27e1c00",
+        "locator": {
+          "kind": "symbol",
+          "name": "DirectLandingTests.test_public_recover_control_completes_cut_generation"
+        }
+      },
+      "facet": "Public recover completes the same admitted cut generation without another code commit.",
+      "id": "PRF-030VJ8",
+      "invariant": "INV-ZVQ6Z5",
+      "origin": {
+        "handoffEntry": "L94-CODE-F04",
+        "leaf": "260928-MIK-L94"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e5e2ee915969059ef9c62381725c0e2f73f229d0",
+        "content": "sha256:ac362e9805d4a9dfc370fc10a74b73d1ace7a275588b9762a7441566afd4a326",
+        "locator": {
+          "kind": "symbol",
+          "name": "DirectLandingTests.test_create_precode_census_pins_each_row"
+        }
+      },
+      "facet": "Pins the complete pre-code census, grant/message/tree refusals and admitted leaf/code proof with no door/task-intent fallback.",
+      "id": "PRF-7V24S0",
+      "invariant": "INV-NQKEQS",
+      "origin": {
+        "handoffEntry": "L94-CODE-F01",
+        "leaf": "260928-MIK-L94"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e5e2ee915969059ef9c62381725c0e2f73f229d0",
+        "content": "sha256:ccf8fa003a46c6e1685defc41ebecabff013a5a85c0e219f2f2fdf29fa894904",
+        "locator": {
+          "kind": "symbol",
+          "name": "DirectLandingTests.test_a_request_refused_any_number_of_times_lands_on_the_next_plain_retry"
+        }
+      },
+      "facet": "A repeated unpublished refusal leaves the request admissible and the next plain retry lands.",
+      "id": "PRF-JVVPJZ",
+      "invariant": "INV-ZGFZXT",
+      "origin": {
+        "handoffEntry": "R3 finding 1",
+        "leaf": "260928-MIK-L26"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e5e2ee915969059ef9c62381725c0e2f73f229d0",
+        "content": "sha256:0bddc2d1a3886b19007f80173191bb05660bd2297513d270b2299fefeb7ee9a4",
+        "locator": {
+          "kind": "symbol",
+          "name": "DirectLandingTests.test_a_late_change_at_the_commit_boundary_refuses_restores_and_the_request_lands"
+        }
+      },
+      "facet": "A late unpublished change refuses, restores and the request still lands.",
+      "id": "PRF-QV0HXZ",
+      "invariant": "INV-9ZBTVA",
+      "origin": {
+        "handoffEntry": "R3 finding 4",
+        "leaf": "260928-MIK-L26"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e5e2ee915969059ef9c62381725c0e2f73f229d0",
+        "content": "sha256:40c9e5d3e12b81630dd62b90a301a01654e45ffc37e38a223555441a266de505",
+        "locator": {
+          "kind": "symbol",
+          "name": "DirectLandingTests.test_converted_direct_landing_commits_the_judged_tree_and_requires_governing_row"
+        }
+      },
+      "facet": "Failing pre-commit refuses; passing retry lands the judged tree without commit-msg.",
+      "id": "PRF-V6ZJ9B",
+      "invariant": "INV-2Q8RPR",
+      "origin": {
+        "handoffEntry": "L61-qualified-replacement-PRF-AZBPJ8",
+        "leaf": "260928-MIK-L61"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The fixture owns real temporary code/memory refs and an admitted series contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5e2ee915969059ef9c62381725c0e2f73f229d0",
+            "content": "sha256:6c79cc36e0f04fb0c6194710d51ec4d313b71ecf3872cad7c43e206080fb916e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_series_fixture"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The retained scenario proves one content commit and reads its attribution from Git.\n\nAnchor: `test_direct_landing_publishes_memory_and_recovers_independently_of_cache`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5e2ee915969059ef9c62381725c0e2f73f229d0",
+            "content": "sha256:6e58c8410298d7d88cd213b6be058805b71d47020449fc6d3fcc168bdcce4564",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Converted paired-commit/replay guarantees and retained interrupted-receipt recovery",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5e2ee915969059ef9c62381725c0e2f73f229d0",
+            "content": "sha256:1c1440bf4223cec18452d070bbfbacee091357bef06eadc48964996e3b788b09",
+            "locator": {
+              "end": 2483,
+              "kind": "line_range",
+              "start": 2435
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e5e2ee915969059ef9c62381725c0e2f73f229d0",
+            "content": "sha256:2fc2a0195a767b1af8fed1ebb5286a0f1850a2b12aee75fb92c60a12415b59cc",
+            "locator": {
+              "end": 2394,
+              "kind": "line_range",
+              "start": 2320
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The lifecycle recovery owner performs the required same-generation resumption.\n\nAnchor: `recover_direct_landing_under_authority`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b458a3bcd123b06f0fe42ba8cbba04d34e3c277",
+            "content": "sha256:c21dac48de58598b7a2ce95207e878e025ab9be68c8b77e297fa84ad9d728911",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_recovery.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The pre-code census case performs grant controls before real edit, reanchor and source-bound trace computation.\n\nAnchor: `DirectLandingTests.test_create_precode_census_pins_each_row`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5e2ee915969059ef9c62381725c0e2f73f229d0",
+            "content": "sha256:ac362e9805d4a9dfc370fc10a74b73d1ace7a275588b9762a7441566afd4a326",
+            "locator": {
+              "end": 1077,
+              "kind": "line_range",
+              "start": 1004
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

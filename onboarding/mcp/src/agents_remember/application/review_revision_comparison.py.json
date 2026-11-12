@@ -1,0 +1,165 @@
+{
+  "path": "mcp/src/agents_remember/application/review_revision_comparison.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "50e72f0f05fdeecfd3211de1ac01c7f4098230e9",
+        "content": "sha256:f670f2826238b1feb8b93959f5960ec0709c1aae4a68d731b78bbe111da287c9",
+        "locator": {
+          "kind": "symbol",
+          "name": "revision_heads"
+        }
+      },
+      "id": "RLZ-05D37Y",
+      "invariant": "INV-RT13RESK",
+      "origin": {
+        "handoffEntry": "L74-MEM-E1",
+        "leaf": "260928-MIK-L74"
+      },
+      "rationale": "revision_heads is the retained-revision head rule the invariant's conditions restate: every retained revision is a head, sorted for rendering determinism only; no predecessor edge is read.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "50e72f0f05fdeecfd3211de1ac01c7f4098230e9",
+        "content": "sha256:f670f2826238b1feb8b93959f5960ec0709c1aae4a68d731b78bbe111da287c9",
+        "locator": {
+          "kind": "symbol",
+          "name": "revision_heads"
+        }
+      },
+      "id": "RLZ-8B83YB7F",
+      "invariant": "INV-WCEGX72X",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "States the retained-revision head rule the summary shares with the reviewer: every retained revision of the selected population is a head; sorted order is rendering determinism only.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "50e72f0f05fdeecfd3211de1ac01c7f4098230e9",
+        "content": "sha256:f670f2826238b1feb8b93959f5960ec0709c1aae4a68d731b78bbe111da287c9",
+        "locator": {
+          "kind": "symbol",
+          "name": "revision_heads"
+        }
+      },
+      "id": "RLZ-H11EAN",
+      "invariant": "INV-WCEGX72X",
+      "origin": {
+        "handoffEntry": "L74-E4",
+        "leaf": "260928-MIK-L74"
+      },
+      "rationale": "revision_heads is the head rule whose retained-revision meaning the decision records.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "50e72f0f05fdeecfd3211de1ac01c7f4098230e9",
+        "content": "sha256:ddc186e79fa30557756920a1e33f181944dd1f534edf540aafcd1385b3ce9ffa",
+        "locator": {
+          "kind": "symbol",
+          "name": "select_subject_revisions"
+        }
+      },
+      "id": "RLZ-TFH8QX",
+      "invariant": "INV-P1QKHK",
+      "origin": {
+        "handoffEntry": "RP15",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Copies each selected side's display_version beside its own revision id and leaves an unselected side without a display version.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "50e72f0f05fdeecfd3211de1ac01c7f4098230e9",
+        "content": "sha256:ddc186e79fa30557756920a1e33f181944dd1f534edf540aafcd1385b3ce9ffa",
+        "locator": {
+          "kind": "symbol",
+          "name": "select_subject_revisions"
+        }
+      },
+      "id": "RLZ-Z1PBXX",
+      "invariant": "INV-P1QKHK",
+      "origin": {
+        "handoffEntry": "L89-W6-MCP-INV-P1QKHK",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "For the selected invariant/family identity, takes before_display_version and after_display_version from the same actual side payloads that supplied before_revision_id and after_revision_id. A missing side leaves its version None. These are carried display values, not inferred chronology or an invented conversion from revision ids. Root named producer finding A3 / a subject's revision numbers, D396 and R89 rule 6 as the governing mapping evidence under assessment.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "20": {
+      "note": "Selected side ids and their own display versions are forwarded together.\n\nAnchor: \"def select_subject_revisions(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50e72f0f05fdeecfd3211de1ac01c7f4098230e9",
+            "content": "sha256:ddc186e79fa30557756920a1e33f181944dd1f534edf540aafcd1385b3ce9ffa",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 35
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "Four selection states describe the actual chosen operands.\n\nAnchor: \"def _selection_description(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50e72f0f05fdeecfd3211de1ac01c7f4098230e9",
+            "content": "sha256:9ba95710d586211b5f32e9dcafd51e803450ecdf18482b3259147d1bfea78441",
+            "locator": {
+              "end": 96,
+              "kind": "line_range",
+              "start": 75
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Identity filtering and first matching side lookup remain explicit.\n\nAnchor: \"def _selector_identity(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50e72f0f05fdeecfd3211de1ac01c7f4098230e9",
+            "content": "sha256:54654738e661e04acf5a6d66b7db44b1d08f5ad9c585da41380cd767a0df7469",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 99
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "The exported helper sorts but is not used by the selector.\n\nAnchor: \"def revision_heads(population: Sequence[str]) -> tuple[str, ...]:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50e72f0f05fdeecfd3211de1ac01c7f4098230e9",
+            "content": "sha256:f670f2826238b1feb8b93959f5960ec0709c1aae4a68d731b78bbe111da287c9",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 29
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,235 @@
+{
+  "path": "mcp/src/agents_remember/cli/role_step_up_runtime.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Only non-taskless roles with an effective task inspect singleton receipt/prior decision; review-count warnings and explicit/prior choices remain qualified.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b087514afece86e4e212d88727fb27bac2699a6d",
+            "content": "sha256:73ee25a5e2eb32b14dce01379d70ef881c9211f2272346c7c090ed6f4c95e140",
+            "locator": {
+              "kind": "symbol",
+              "name": "selected_defaults"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Selector readiness precedes each descriptor read; the loop checks its monotonic remaining budget and rejects incomplete final records. No descriptor-nonblocking setting or universal OS-read timing bound is inferred.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b087514afece86e4e212d88727fb27bac2699a6d",
+            "content": "sha256:9af36c7d4a34a347aa94d2b86549816fd39b2d07fdc01f46eef16535decf3934",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_inventory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Cleanup attempts process/group termination and bounded waiting, closes pipes and can return unconfirmed termination; an earlier read reason takes precedence.\n\nAnchor: `_reap_inventory`, `_git_inventory`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b087514afece86e4e212d88727fb27bac2699a6d",
+            "content": "sha256:218c7d412e411945a9eecc271b2cf7c7f260622f8f469bdd89bab73403dcee23",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reap_inventory"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b087514afece86e4e212d88727fb27bac2699a6d",
+            "content": "sha256:24c41159328b24a785f0978417cc1243ca9b7d2f484f483829f2739c0d699bb7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_git_inventory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The runtime reuses the owner's shared taskless set — `architect`, `investigator` and `bootstrap` — for receipt identity; effective-master presence is not that identity.\n\nAnchor: `TASKLESS_ROLES` `_receipt_path`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "caa8c6e923b4efaeb1c61856c613d10771f7a6c3",
+            "content": "sha256:f7b28dd7554d05981e89e904bb1db6628663c831c79ffc5af1491a7ee2840c22",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/role_launch_context.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b4c32636d1b3142af6daf7fb0560284f0500da8",
+            "content": "sha256:c829806d1d238b76f9b34c98b359333571d0f634e4b063272d32fdaff384ca5c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Unconfirmed task metadata cannot assert an applied predecessor.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b087514afece86e4e212d88727fb27bac2699a6d",
+            "content": "sha256:19f0b2d54abe469139c35d7e46ab45cabc8658507a73477a92eba4d22d2087b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_recorded_predecessor"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Actual receipt choices supply the from record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b087514afece86e4e212d88727fb27bac2699a6d",
+            "content": "sha256:c2b99195f5406bef5b293e55aeedcf24b3483558753a8c269633a57cc7b6ba9d",
+            "locator": {
+              "kind": "symbol",
+              "name": "bind_step_up_predecessor"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The handover names immutable takeover bytes and retains predecessor report paths.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b087514afece86e4e212d88727fb27bac2699a6d",
+            "content": "sha256:55960d73c74f2174fdaa484e88861d8b45424474b845b6f4ec7ee100d59fb36d",
+            "locator": {
+              "kind": "symbol",
+              "name": "successor_prompt"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Inventory starts a separate process group for bounded cleanup attempts, not a guaranteed successful reap.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b087514afece86e4e212d88727fb27bac2699a6d",
+            "content": "sha256:24c41159328b24a785f0978417cc1243ca9b7d2f484f483829f2739c0d699bb7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_git_inventory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Partial inventories expose recovery instead of pretending completeness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b087514afece86e4e212d88727fb27bac2699a6d",
+            "content": "sha256:7998a078526b6c4c21559a2299cd2b37508a9b4fa0e61aa3f8080dc68a8d10db",
+            "locator": {
+              "kind": "symbol",
+              "name": "_inventory_result"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Test source exercises bounded partial inventory without blocking later seat start.\n\nAnchor: `test_hung_git_is_reaped_under_start_lock_with_durable_partial_recovery`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43773442dc036099b1e1b09e474d46b04e6b0be7",
+            "content": "sha256:03a51349cabeb5907792b2ffbfd8fc0c9514b8ca9ac643338a54fbd914ca7495",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_step_up_recovery.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "43773442dc036099b1e1b09e474d46b04e6b0be7",
+            "content": "sha256:6870e73174b4b30fab5423ef36fc6751dc7e316f4092e812059a82a9fd4a2059",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_hung_git_is_reaped_under_start_lock_with_durable_partial_recovery"
+            },
+            "path": "mcp/tests/test_step_up_recovery.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Per-root inventory constants explicitly bound capture time, bytes, NUL records, diagnostics and bounded reap wait.\n\nAnchor: The complete five-constant budget block, not one assignment",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b087514afece86e4e212d88727fb27bac2699a6d",
+            "content": "sha256:f68073ba94c0f4577e44356d7970516e1a568fa3fb3de643f241278febfaef08",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 36
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Capture enforces aggregate bytes, diagnostics and NUL-record budgets.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b087514afece86e4e212d88727fb27bac2699a6d",
+            "content": "sha256:f80be3ae41b9a612ac51ba416568e2532146e70c3fa469e9c44b98e8bfdc5b5e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_InventoryCapture"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

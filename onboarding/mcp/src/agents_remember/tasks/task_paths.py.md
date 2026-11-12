@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/tasks/task_paths.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/tasks/task_paths.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-14T07:05+02:00 |
-| lastVerifiedCommitHash | `4214d7a103dcc120481c6fe0059b322396ec9be6`|
-| lastVerifiedCommitDate | 2026-09-14T07:21:45+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [tasks/overview.md](overview.md)
@@ -31,32 +21,47 @@ here resolves it without a second definition and without touching `layers.toml`.
 
 ### Logic
 
-Three module-level constants name the layout: `SERIES_CONTRACT_FILENAME` (`"series-contract.md"`, `:20`),
-`ARCHIVE_DIR` (`"0_archive"`, `:21`) and `ENCLOSURES_DIR` (`"enclosures"`, `:22`).
+The layout constants name `series-contract.md`, `enclosures` and `notes`, and `CLEANUP_REPORT_NAME`
+(`review-artifact-cleanup.json`) is served from here. `ARCHIVE_DIR` and `task_folder_steps` are the two exceptions
+the docstring names: they belong to the walk and are defined with it in `kernel/coordination_context/task_folders.py`,
+imported here and re-exported, so a caller keeps importing them from this module while the walk that means them owns them.
 
-`slugify` (`:25-28`) lowercases, strips, collapses every run outside `[a-z0-9._-]` into `-`, trims
+`slugify` lowercases, strips, collapses every run outside `[a-z0-9._-]` into `-`, trims
 leading/trailing `.`, `-` and `_`, and falls back to `"task"` for an input that normalizes to nothing —
-which is what makes `leaf_enclosure_dir` (`:37-40`) derive the directory name from the leaf id, and
+which is what makes `leaf_enclosure_dir` derive the directory name from the leaf id, and
 `task_resolver.task_folder_name` reuse the same rule for task names.
 
-`series_contract_path` (`:31-34`) is `task_root / SERIES_CONTRACT_FILENAME`; `leaf_enclosure_path`
-(`:43-46`) is `leaf_enclosure_dir(task_root, leaf_id) / SERIES_CONTRACT_FILENAME`. `is_archived_path`
-(`:49-50`) is membership of `ARCHIVE_DIR` among the path's parts, so it holds at any depth.
-`is_enclosure_contract` (`:53-58`) requires the exact filename, at least three parts, and an
-`enclosures` grandparent. `iter_leaf_enclosure_contracts` (`:61-66`) walks
-`enclosures/*/series-contract.md` under a tasks root in sorted order and skips archived paths, which is
-the catalogue's source of leaf contracts.
+`series_contract_path` is `task_root / SERIES_CONTRACT_FILENAME`; `leaf_enclosure_path`
+is `leaf_enclosure_dir(task_root, leaf_id) / SERIES_CONTRACT_FILENAME`. `is_archived_path`
+is membership of `ARCHIVE_DIR` among the path's parts, so it holds at any depth.
+`is_enclosure_contract` requires the exact filename, at least three parts, and an
+`enclosures` grandparent.
+
+`iter_leaf_enclosure_contracts` returns enclosure-position candidates in sorted order, and since MIK-R83
+rules 1 and 2 it takes them from the canonical places only: `iter_task_folders` yields a repository's live
+task folders (the direct children of `tasks/<repository>/`, the archive segment excluded), asking
+`task_folder_steps` for the steps rather than walking the tree itself, and
+`_enclosure_contracts` reads `enclosures/<leaf>/series-contract.md` in each of them. One walk therefore
+answers "which folders are tasks", and no lookup walks the tree itself, so a copy under `notes/`,
+`requirements/` or a deeper folder is never met; `canonical_contract_place` states the depth rule for a
+contract and `scan_stray_task_files` is the one scan that reads such copies, and only to report them.
+
+The iterator does not parse or certify a yielded contract. Consumers use
+`is_foreign_enclosure_contract` to reject a task artifact outside the repository tasks folder
+derived from the contract's physical position. Both paths are resolved first, so `..` and symlink
+escapes cannot borrow membership from a textual prefix or recorded root. Resolution failure is
+foreign. Each consumer owns its warning or skipped-list detail; this predicate itself emits none.
 
 ### Conventions
 
-Pure path arithmetic over `pathlib`, no filesystem reads except the two `is_dir`/`rglob` probes the
-iterator needs. No imports from `worktrees`, and therefore no cycle: this module is what lets the task
-package derive its own paths.
+Path arithmetic stays in the task domain. Enumeration uses `is_dir`, `os.walk` and `lexists`;
+foreign membership uses resolved filesystem paths. There are no imports from `worktrees`, so the
+task package can derive its paths without a package cycle.
 
-`worktrees/task_resolver.py` imports all ten names and re-exports them under an explicit `__all__`;
+`worktrees/task_resolver.py` imports the public path vocabulary and re-exports it under an explicit `__all__`;
 `worktrees` remains the published import site for its existing callers, while the definition lives here.
-No caller other than `worktrees/task_resolver.py` and `tasks/leaf_doc.py` imports this module directly
-today, and `tasks/__init__.py` does not re-export it.
+Refresh imports its iterator and foreign-membership guard directly. Other consumers may use the
+published resolver import site; their guards do not create a second definition of the path rules.
 
 ### Invariants And Boundaries
 
@@ -78,45 +83,38 @@ today, and `tasks/__init__.py` does not re-export it.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository; the proving evidence is this
 repository's own source and its `layers.toml` contract.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external source is required for this repository-owned path vocabulary. | n/a | n/a |
+No external source is required for this repository-owned path vocabulary.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The two constants and the slug rule that decide the enclosure directory name. | `SERIES_CONTRACT_FILENAME`; `ENCLOSURES_DIR`; `ARCHIVE_DIR`; `slugify` | mcp/src/agents_remember/tasks/task_paths.py:20-22; mcp/src/agents_remember/tasks/task_paths.py:25-28 |
-| The two path builders the derived-master-link binding calls. | `series_contract_path`; `leaf_enclosure_path`; `leaf_enclosure_dir` | mcp/src/agents_remember/tasks/task_paths.py:31-34; mcp/src/agents_remember/tasks/task_paths.py:43-46; mcp/src/agents_remember/tasks/task_paths.py:37-40 |
-| The predicates and the leaf-contract enumerator the resolution and catalogue paths rely on. | `is_archived_path`; `is_enclosure_contract`; `iter_leaf_enclosure_contracts` | mcp/src/agents_remember/tasks/task_paths.py:49-50; mcp/src/agents_remember/tasks/task_paths.py:53-58; mcp/src/agents_remember/tasks/task_paths.py:61-66 |
-| The re-export surface that keeps every existing caller working while the definition sits here. | "from agents_remember.tasks.task_paths import ("; `__all__` | mcp/src/agents_remember/worktrees/task_resolver.py:16-27; mcp/src/agents_remember/worktrees/task_resolver.py:29-49 |
-| The consumer whose binding need created this module. | `_derived_bindings`; `_derived_leaf_bindings` | mcp/src/agents_remember/tasks/leaf_doc.py:198-221; mcp/src/agents_remember/tasks/leaf_doc.py:224-234 |
-| The package order that makes this module the correct home, with no baseline and no exception. | "a module in package P may import package Q only when rank(Q) < rank(P)" | layers.toml:25-25 |
-| The armed rail step that measures it. | `_layering_step` | mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py:310-319 |
+- The layout constants and slug rule decide enclosure directory names. [1]
+- The two path builders the derived-master-link binding calls. [2]
 
-## Cross-Repo References
+- The archive/enclosure-position predicates remain, while the iterator excludes notes and archives before descent. [3]
 
-No cross-repository boundary is owned by this module; it is pure path arithmetic over one task root.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No sibling repository boundary is needed to explain this file. | n/a | n/a |
 
-## Update History
+- The explicit re-export list and imports keep the path rules single-defined in the task domain. [4]
 
-- 2026-09-14T07:05+02:00 — 260913-LCA-L5 curator (uncommitted change set on `ar/260913-lca-l5-ar`, base
-  `52875e7a`): created this one-to-one sidecar for the change set's new source module. Recorded that it
-  exists to resolve a measured layering defect rather than as a refactor for its own sake — the first
-  revision of the change imported these two rules from `worktrees/task_resolver.py`, which inverted
-  `layers.toml`'s `tasks`(9) < `worktrees`(10) order and produced a `tasks <-> worktrees` cycle the armed
-  `layering` rail reports (17 violations / 2 cycles against a 16/1 base, measured with the repository's own
-  fitness function). Recorded the single-definition guarantee the resolution relies on, verified
-  structurally with `ast` over all of `mcp/src` rather than assumed, and the re-export arrangement that
-  keeps the existing callers working. Verification metadata is intentionally blank: the candidate is
-  uncommitted and no commit contains this file yet, so closeout owns the stamp; no execution or acceptance
-  claim.
+- The consumer whose binding need created this module. [5]
+- The package order that makes this module the correct home, with no baseline and no exception. [6]
+- The armed rail step that measures it. [7]
+
+
+- The traversal prunes notes and archive descent but preserves a leaf directory named notes. [8]
+
+- Physical, filesystem-resolved task membership rejects foreign artifacts and resolution failures. [9]
+
+### Cross-Repo References
+
+No external-system boundary is owned by this module; it defines repository task-layout paths,
+enclosure traversal and positional filesystem membership.
+
+No sibling repository boundary is needed to explain this file.

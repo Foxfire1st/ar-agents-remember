@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Keeps the current mounted continuation from replacing a coherent selected review on an adverse or later page. The retained W03 origin/log is historical; current source explicitly compares judgment rather than the removed evidence channel. This bounded scope prevents claiming old collection preservation from the new pane."
+  },
+  "applicability": "Late source expressions in the family read cycle.",
+  "conditions": [
+    "Continuation accumulation preserves the selected statement, current recorded judgment and siblings.",
+    "The reader focus remains where the reader left it while continuations arrive.",
+    "The page card read is independent from roster accumulation; late realization addresses remain reachable in the selected member details."
+  ],
+  "exclusions": [
+    "Per-card Full file and manually selected diff layout were removed by MIK-R89 v2 rule4; no removed workspace state is reconstructed.",
+    "Historical runs and origin evidence are not a fresh execution or independent memory verdict."
+  ],
+  "id": "INV-79SPV4",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "ports-fifth.log: keeps selected intent, evidence, siblings, focus and open layout while a late source expression becomes reachable; assertion-fates.md"
+      ],
+      "path": "notes/reports/l86-curator-W03/handoff-phase1.json"
+    },
+    "handoffEntry": "MIK-R86@v1 preservation W03 late expression",
+    "leaf": "260928-MIK-L86",
+    "task": "260928-MIK"
+  },
+  "revision": 3,
+  "schema": "ar-invariant/v1",
+  "statement": "Roster continuations retain the coherent selected statement, current recorded judgment, sibling rows and reader-owned focus while making every captured late realization claim address reachable.",
+  "status": "proposed",
+  "supersedes": []
+}

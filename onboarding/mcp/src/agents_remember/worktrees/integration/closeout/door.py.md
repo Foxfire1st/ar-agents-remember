@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/integration/closeout/door.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/integration/closeout/door.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T00:53 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Governing route overview](overview.md)
@@ -69,38 +59,32 @@ Pure classifiers return typed observations; mutation owners publish write-ahead 
 
 None recorded beyond the explicit terminal-archive boundary recorded by the governing overview.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured for this slice. The current behavior is repository-owned and is supported by the source references below.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured external source applies. | — | — |
+No configured external source applies.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The following current source boundaries establish the ledger-retirement behavior.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `successor_waiting_door` binds successor identity to code/memory and task provenance without a ledger dependency. | `successor_waiting_door` | mcp/src/agents_remember/worktrees/integration/closeout/door.py:117-172 |
-| `_require_door_transition` preserves the exact door identity and legal publication transitions. | `_require_door_transition` | mcp/src/agents_remember/worktrees/integration/closeout/door.py:302-360 |
+- `successor_waiting_door` binds successor identity to code/memory and task provenance without a ledger dependency. [1]
+- `_require_door_transition` preserves the exact door identity and legal publication transitions. [2]
 
 The source file is the direct evidence for this file-specific ownership boundary.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module defines `DoorContractReadFailure`; `DoorPublicationClassification`; `DoorPublicationError` as its public seam. | `DoorContractReadFailure`; `DoorPublicationError` | mcp/src/agents_remember/worktrees/integration/closeout/door.py:32-36; mcp/src/agents_remember/worktrees/integration/closeout/door.py:61-76 |
-| The door journal is written and read here, and `live_closeout_door` is the single live reader every former `contract.closeout_door` call site now uses. | `live_closeout_door` | mcp/src/agents_remember/worktrees/integration/closeout/door.py:203-232 |
-| Claim and successor seams re-require or rebuild the door dependency declaration. (`door_generation_for_operation`; `successor_waiting_door`) | `door_generation_for_operation`; `successor_waiting_door` | mcp/src/agents_remember/worktrees/integration/closeout/door.py:79-85; mcp/src/agents_remember/worktrees/integration/closeout/door.py:117-172 |
+- The module defines `DoorContractReadFailure`; `DoorPublicationClassification`; `DoorPublicationError` as its public seam. [3]
+- The door journal is written and read here, and `live_closeout_door` is the single live reader every former `contract.closeout_door` call site now uses. [4]
+- Claim and successor seams re-require or rebuild the door dependency declaration. (`door_generation_for_operation`; `successor_waiting_door`) [5]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository boundary is owned by this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No additional cross-repository evidence applies. | — | — |
+No additional cross-repository evidence applies.
 
 ## 260821-CLIVE Sole Door Publication Authority
 
@@ -117,21 +101,3 @@ the door journal only.
 The claim and successor steps now participate in the door dependency contract: currentness is
 reproven at claim, and the successor declares the exact predecessor generation as an input
 (worker handover: notes/reports/260902-CCR-L03-worker-delivery.md).
-
-## Update History
-
-- 2026-09-15T00:53 UTC — LCA-L9 working-candidate curation: retired ledger Git authority in this file-specific boundary; preserved real Git and lifecycle safeguards and prior history. Source and diff reviewed, source-sha256=8030607f94cfd3a9b1ab094b9f1caef465e24a0646cde170eae24c11aa25a781. Existing verification commit/date remain unchanged until an actual source commit is available; no test or acceptance claim.
-
-- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `door_generation_for_operation`, `successor_waiting_door` repointed to mcp/src/agents_remember/worktrees/integration/closeout/door.py:117-175, mcp/src/agents_remember/worktrees/integration/closeout/door.py:79-114. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
-
-- 2026-09-11T12:02+02:00 — Closeout-door cut reconciliation at code commit `fad9808e`: recorded that door storage moved out of the worktree contract into `<worktree_group>/reports/closeout-door.json`, named the journal accessors (`door_journal_path`, `read_published_door`, `write_published_door`) and the single live reader `live_closeout_door` that replaced every `contract.closeout_door` read, and recorded that `DoorPublicationEvidence` shed its three contract-SHA fields to `{state, generation}`. Replaced the contract-publication wording in Purpose, Logic and the sole-authority section, and added the no-contract-door-store invariant. Verification metadata remains pinned because only the cut-affected claims were reconciled; source documentation only, no acceptance claim.
-
-- 2026-09-03T17:35+02:00 - 260831-CCR-L27 Gate-5 memory pass (src-a): widened the claim row and prose cit range to door.py:83-120 so the cited range holds the `door_generation_for_operation` declaration.
-
-- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for fbc89847233b1c5959f56475f2cb51f936d5ef0b (CCR-R03@v1/L03): recorded dependency re-requirement at claim and successor dependency declaration; prior sole-authority and public-seam prose preserved.
-
-- 2026-08-25T08:16+02:00 — 260824-PDLS wave 004: moved this preserved sidecar with its behavior-preserving package split, repointed source evidence, and verified the emergency-landed source path at code commit `cb6623775a04cbdeb0509dc26f08a8268189c3f6`; this is onboarding provenance, not Dagger certification.
-
-- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: recorded sole door publication, exact claim, and successor identity rules. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
-
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: created from the accepted full L2 candidate. Verification fields remain blank until the architect-owned closeout has a real code commit to stamp.

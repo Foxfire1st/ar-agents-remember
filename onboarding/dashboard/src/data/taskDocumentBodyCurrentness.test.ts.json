@@ -1,0 +1,22 @@
+{
+  "path": "dashboard/src/data/taskDocumentBodyCurrentness.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module owns the regression assertions and fixture boundaries described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "820d15d05c18916a04058d90037c9dbad48b3b70",
+            "content": "sha256:a98c17cfebc9f9dd94c6026e02fb537e4cc7ad0b4a9f684d68fd1fe51525f7bc",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

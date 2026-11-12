@@ -1,0 +1,106 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/role_handover_locator.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e21930a61940ac50f090bb4ee6e1d9f45e35b19f",
+        "content": "sha256:f63c6fbd08dcfb96ed67e52f9587a2c5e77ebb7166edf7adad87ba0d816457f8",
+        "locator": {
+          "kind": "symbol",
+          "name": "locator_directory"
+        }
+      },
+      "id": "RLZ-MQNKS2",
+      "invariant": "INV-AV4AMJ",
+      "origin": {
+        "handoffEntry": "MIK-R208@v1 §1",
+        "leaf": "260928-MIK-L199"
+      },
+      "rationale": "locator_directory binds the durable request ID to a depth-independent location.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The durable root is the product's own folder under the user's projects directory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e21930a61940ac50f090bb4ee6e1d9f45e35b19f",
+            "content": "sha256:a3714bed53d46e8ae27c64220c96a80c351193a5df8c75ea0bf34157e4c45e03",
+            "locator": {
+              "kind": "symbol",
+              "name": "locator_root"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "One request id names one alias, and a name that cannot be an id is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e21930a61940ac50f090bb4ee6e1d9f45e35b19f",
+            "content": "sha256:f63c6fbd08dcfb96ed67e52f9587a2c5e77ebb7166edf7adad87ba0d816457f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "locator_directory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The product recognizes its own locators directly under that root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e21930a61940ac50f090bb4ee6e1d9f45e35b19f",
+            "content": "sha256:7976b1f9ef249e774930dc5af05fb01a5b25a072c94b1856c0df2f5630f90160",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_locator"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A repeat reuses the alias, a lost one is rebuilt at the recorded folder, and a name that would lead elsewhere is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e21930a61940ac50f090bb4ee6e1d9f45e35b19f",
+            "content": "sha256:cfe9c8e106b1231467ae19a8c460d27c24b5202ccabfc6e44d2e611a4d6b82c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "ensure_locator"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Removal deletes only an alias that leads inside the reclaimed folders and reports every other name as it stands.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e21930a61940ac50f090bb4ee6e1d9f45e35b19f",
+            "content": "sha256:205a2f665ccf58b89f967f573fb5e50dd685144f5b275b140a7d10eea2a4e240",
+            "locator": {
+              "kind": "symbol",
+              "name": "remove_locator"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

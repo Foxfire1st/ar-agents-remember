@@ -1,0 +1,40 @@
+{
+  "path": "scripts/agent_evals/hermes_profiles.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f08ea62a5e8ad47f64093840767edf918499cdbb",
+        "content": "sha256:577173503221d28b69d0994534ec9042c8ee72b5e2c28304c9475e9a06fbc427",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-VBBTCC",
+      "invariant": "INV-MDPBX0",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-hermes-profile",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "It declares actor route and effort mechanisms and derives compaction fractions from the actual window.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f08ea62a5e8ad47f64093840767edf918499cdbb",
+            "content": "sha256:577173503221d28b69d0994534ec9042c8ee72b5e2c28304c9475e9a06fbc427",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

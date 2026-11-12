@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "Realized across operations/curation.md, roles/curator.md and roles/reviewer.md with the owner-validation half at the accepted common home core/acceptance.md; partial attestation marks the evidence as needing owner validation before state advances."
+  },
+  "applicability": "Terminal/finalizer-attested meanings in operations/curation.md, roles/curator.md and roles/reviewer.md.",
+  "conditions": [
+    "The curation operation directly states terminal-only-ended truth.",
+    "The gate owner validates semantic acceptance at core/acceptance before advancing state.",
+    "Curator composes the operation handoff home; Reviewer retains local turn-only truth.",
+    "The scoped local surfaces state terminal truth while the accepted common home owns both terminal truth and owner validation."
+  ],
+  "exclusions": [
+    "Sweep-wide wording changes in settled role documents outside the retained corpus.",
+    "A reissued both-halves local requirement for the three scoped surfaces, which the accepted common-home meaning replaces."
+  ],
+  "id": "INV-5TKYXM",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L70-reviewer-6e032287-e04b-460f-82cf-fb4f25d0808a-fixverify-evidence/logs/V1b-roster-alone.txt (1 passed) and W-F1-roster-rows-removed.txt (1 failed, the three documents)"
+      ],
+      "path": "notes/reports/260928-MIK-L70-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R70@v1 rule 4",
+    "leaf": "260928-MIK-L70",
+    "task": "260928-MIK"
+  },
+  "revision": 3,
+  "schema": "ar-invariant/v1",
+  "statement": "Terminal/finalizer evidence states only that a turn ended. The curation handoff home and composed Curator/Reviewer referrals retain that local truth; semantic owner validation remains at the accepted common acceptance home, not a duplicated both-halves local requirement.",
+  "status": "proposed",
+  "supersedes": []
+}

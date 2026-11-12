@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "family_guarantee"
+    ],
+    "justification": "The ready message-switch is the rail family guarantee selection leg; typed per-case proofs were withdrawn as extractor-unsupported."
+  },
+  "applicability": "Selection changes between master, tasks and roles while the control channel is ready, inside and across workspaces.",
+  "conditions": [
+    "The ready channel supports opening the target agent; agent/workspace identity remains canonical.",
+    "A load readiness wait holds the latest selection until ready/pong before switching by message."
+  ],
+  "exclusions": [
+    "An explicitly unsupported-open plugin uses URL steering with its notice.",
+    "Only application ping silence, Retry or host return permits recovery loading; deadline lateness alone does not.",
+    "Known-no-agent selections hide; unknown discovery retains the visible inert frame."
+  ],
+  "id": "INV-YFAHQM",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "sidebarChatStaysLoaded.test.tsx (ar.open with workspaceId, element and generation unchanged) + e2e/document-chat-cross-workspace.spec.ts (L121 retained)"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L122-curator-handoff.json"
+    },
+    "handoffEntry": "MIK-R122@v1 rule 4",
+    "leaf": "260928-MIK-L122",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "With an open-capable ready channel, selected-document changes switch the same application by ar.open inside/across workspaces without reload; during a load ready wait latest selection is held then messaged. A timeout alone does not make the channel unavailable; unanswered ping permits fallback. An explicitly unsupported-open plugin steers each target by URL; known agentless selections hide, unknown selections remain visible and held.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,178 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
+        "content": "sha256:8391f7e20f53dc2e4087a2f40c76d748a99f961b044f4c5eeb3992955771f144",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-02MMZJ",
+      "invariant": "INV-NNQR91",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-19",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "This entire generated packaged Worker role is byte-identical to its canonical skill source at the frozen tree; the carrier propagates the complete role and sets no independent role, task or permission authority, so a whole-file locator names that complete propagation claim.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The packaged Worker leaves the candidate uncommitted and does not review or accept its own implementation, write memory onboarding, update task lifecycle or status, close out, commit, merge, push or publish.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
+            "content": "sha256:61e5581f71a234466784c2854f3180ca251705dc41e6369cf1b2fab8b662df2d",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 123
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The Worker role file states the Worker's duties, and the supplied operation states the procedure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
+            "content": "sha256:26c5524067439977845bf33105a7ed49edf803137809ee57ead9185bb7d52e9d",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The canonical source owns this doctrine.\n\nAnchor: `l-01-agent-lifecycles-role-worker`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
+            "content": "sha256:5f3d1154ebbd6680d1333d73a7b95ee7d823f0fe4084db5391fde6c9c649dc5a",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "MCP package data is copied from canonical skills and checked for drift.\n\nAnchor: `l-01-agent-lifecycles-role-worker`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
+            "content": "sha256:5f3d1154ebbd6680d1333d73a7b95ee7d823f0fe4084db5391fde6c9c649dc5a",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The Worker's stage ends when the candidate meets the requirement, the handover checks named in system/coding-guidelines.md pass on a clean copy of the final bytes, and the report is with the Reviewer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
+            "content": "sha256:78ed27080efd4c1cdb04a4588a7ab8a2eea07f9fa4c7ca0b9b803c1e95418145",
+            "locator": {
+              "end": 157,
+              "kind": "line_range",
+              "start": 157
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "After three failed repairs of the same check or finding the Worker stops and tells the Manager; with every candidate finding closed, a remaining record-only finding is repaired on the record and checked by the same Reviewer without a new round; a finding still open after a repair needs the property written for every case and the construction shown or changed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
+            "content": "sha256:5b4a09092e1a5906f5aa32e7aeffd074838cac0d3a3e4dce63d36ca8198354e7",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 141
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "This packaged Worker role is byte-identical to its canonical source and carries its actual stage and repair duties; that mirror identity establishes no executed check or acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
+            "content": "sha256:8391f7e20f53dc2e4087a2f40c76d748a99f961b044f4c5eeb3992955771f144",
+            "locator": {
+              "end": 157,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Worker intake opens the exact rendered_path and json_path handover locations with its own file tools; they are file locations, not tool-server read calls, and both context_packet and read_ar_files take the task_context with the canonical task reference and enclosure contract.\n\nAnchor: `rendered_path`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
+            "content": "sha256:340c5a14780d00bd7a013a752aafaf7e863776424abd7fd05e988eb6a511a867",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 14
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Before repairing a sealed finding in its own files, the generated Worker role follows the shared Repair a sealed own-file finding procedure in the implementation operation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
+            "content": "sha256:6c0b9657fb87e4488c963aabfe161d042015d740c0e06fa60b781b243e8aec38",
+            "locator": {
+              "end": 135,
+              "kind": "line_range",
+              "start": 135
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

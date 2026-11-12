@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Prevents reusing a passed review result after candidate bytes or Git entry kind/target/executable representation changes, or interpreting failed reads as equality."
+  },
+  "applicability": "Same-round record-only publication through generic and route fixed-list review paths for the authority-selected candidate.",
+  "conditions": [
+    "The Reviewer has recorded candidate evidence; remaining findings only shrink.",
+    "The actual resolver uses successful HEAD-tree and tracked diff reads plus untracked entry representations selected without following links.",
+    "Failed required reads remain unproven and cannot establish unchanged equality."
+  ],
+  "exclusions": [
+    "Caller candidate strings are not independent authority evidence.",
+    "A different or unproven candidate requires begin_review.",
+    "Native representation tests are bounded construction evidence, not an exhaustive proof of every concurrent mutation or Git configuration."
+  ],
+  "id": "INV-EA9XDB",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_review_state.py (binding proofs); mcp/tests/test_task_doc_review_public.py (probe regressions); mcp/tests/test_candidate_identity.py; evidence-attempt3/focused-pytest.log; evidence-attempt3/integration-route-reopen.log"
+      ],
+      "path": "handoff-final-wave.json"
+    },
+    "handoffEntry": "L116-W3-record-only-binding",
+    "leaf": "260928-MIK-L116",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A same-round record-only result is admitted only on the authority-resolved byte-identical candidate the round was recorded on; replayed claims, absent bindings, unresolvable identities, and clean-record reseals refuse before write.",
+  "status": "proposed",
+  "supersedes": []
+}

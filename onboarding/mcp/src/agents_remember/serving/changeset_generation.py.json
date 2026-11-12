@@ -1,0 +1,86 @@
+{
+  "path": "mcp/src/agents_remember/serving/changeset_generation.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "3a27a5ac7863ea62a93595be3a7f9023e111bb1a",
+        "content": "sha256:3dfde8b95de259bc4d75a84fcb878d20ca20208fb70078bb943bddc87f4e84c2",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-Z68Z1X",
+      "invariant": "INV-7TMGB0",
+      "origin": {
+        "handoffEntry": "L168-W-R168-02",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "Git-native freshness: a working status digest, Git's own count-objects census and presence probes; the object and worktree walks are gone.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Filesystem generations include directory names, symlinks, ctime and unskipped descendants.\n\nAnchor: `tree_identity`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a27a5ac7863ea62a93595be3a7f9023e111bb1a",
+            "content": "sha256:3dfde8b95de259bc4d75a84fcb878d20ca20208fb70078bb943bddc87f4e84c2",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Object observations distinguish stable existing objects from revoked content and absence proofs.\n\nAnchor: `ObjectGeneration`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a27a5ac7863ea62a93595be3a7f9023e111bb1a",
+            "content": "sha256:3dfde8b95de259bc4d75a84fcb878d20ca20208fb70078bb943bddc87f4e84c2",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Native locations/configuration are discovered through Git and retained with their governing inputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a27a5ac7863ea62a93595be3a7f9023e111bb1a",
+            "content": "sha256:50be544035eacabee6339b5f7941fcf8fbed355cd2a4112a368f35f4c4b4cfcd",
+            "locator": {
+              "kind": "symbol",
+              "name": "repository_layout"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The working view's generation is Git's own `status --porcelain=v2` answer with each changed path's identity folded in; no part of the module walks the worktree.\n\nAnchor: `working_manifest`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a27a5ac7863ea62a93595be3a7f9023e111bb1a",
+            "content": "sha256:3dfde8b95de259bc4d75a84fcb878d20ca20208fb70078bb943bddc87f4e84c2",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

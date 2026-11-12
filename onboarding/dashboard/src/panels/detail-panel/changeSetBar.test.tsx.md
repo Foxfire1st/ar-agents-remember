@@ -1,15 +1,5 @@
 # dashboard/src/panels/detail-panel/changeSetBar.test.tsx
 
-| Field                  | Value                                                       |
-| ---------------------- | ----------------------------------------------------------- |
-| repository             | agents-remember                                             |
-| path                   | `dashboard/src/panels/detail-panel/changeSetBar.test.tsx`   |
-| doc_type               | `file-level-onboarding`                                     |
-| lastUpdated | 2026-09-28T17:10:24+02:00 |
-| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`                  |
-| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
-| governingOverview      | `../overview.md`                                            |
-
 ## Governing Overview
 
 [panels/ overview](../overview.md)
@@ -24,7 +14,7 @@ doc-reader change-set bar rendering and interactions.
 
 ### 260921-ICR-L32 The Refusal Cases For The Live-Leaf Change-Set Read
 
-Three cases in a new `describe("the counter read's refusal (L32/D01)")` block pin the defect D01 was: `renders a refused counter read's own code and reason, never as a read that has not answered` (the refusal's code and reason reach the control, and a refusal no longer renders as a read that has not answered), `keeps a measured empty answer apart from a refusal and from a read that has not answered` (three states, three renderings), and `does not let a superseded read's refusal land on the control that replaced it` (the liveness guard is load-bearing). Against the leaf's base production bytes the first two **fail** — the base-defect witness — while on the candidate the module is **14 passed** (11 pre-existing plus these three). Restoring the old empty rejection handler fails two of them, and deleting the liveness guard fails the third.
+Refusal cases distinguish own code/reason, unanswered reads and measured empty, and drop superseded refusals. Historical L32 fail-before/mutation receipts are not a current passing total or a run in this preparation.
 
 ### Logic
 
@@ -44,6 +34,8 @@ L47-R1-F4 fix restored this assertion).
 
 **One case was added for the bound generation.** `opens the series view bound to the generation the net published` stubs the master net with its four endpoints and asserts the entry carries those pins into the viewer target, so the view and its expansions read the listed generation rather than re-resolving the live tip. cit:(["opens the series view bound to the generation the net published"], dashboard/src/panels/detail-panel/changeSetBar.test.tsx:236-303)
 
+**Both closed-leaf cases now expect the page's own default (MIK-R195).** `offers the Intent review for a closed leaf, bound to the comparison it delivered` and `keeps the closed leaf's Intent review when its knowledge is unavailable` assert that the entry's target is `review: {}` rather than `review: { historical: true }`. The entry no longer names the recorded comparison for a landed leaf, because the page's default is the pair that leaf delivered and the mismatch line's link could not otherwise leave the recorded frame.
+
 *(The L9 complete-catalogue case, `offers every catalogue row for review, not just the first`, was removed by
 `260921-ICR-L47`: the entry no longer offers a picker; the reviewer's own catalogue owns traversal of every
 subject.)*
@@ -58,6 +50,12 @@ read renders no attribution at all — an absent answer is not rendered as a zer
 base production bytes the case fails (the base asked with `includeLeaves=false` and rendered no
 attribution), which is what makes it evidence for the change rather than a restatement of it.
 
+**One case was added for the unmeasured series (S8).** `never prints a zero for a series the server
+named no generation for (S8)` stubs a master answer with `generation: null`, `currentness:
+unmeasured` and zero counters, and requires the state word `unmeasured`, no `+0 −0` total, and a
+disclosure that the series has no measured range and that no base and no selected result resolved.
+cit:(["never prints a zero for a series the server named no generation for (S8)"], dashboard/src/panels/detail-panel/changeSetBar.test.tsx:658-695)
+
 ### Conventions
 
 One behavior boundary per suite, per the test-split rule.
@@ -70,46 +68,27 @@ Assertions were preserved verbatim from the monolithic suite until `260921-ICR-L
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked `system/sources.md`; no Domain Documentation source is
 configured for this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found. | — | — |
+No relevant domain documentation was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The change-set bar suite, now with the generation-bound series entry case and the complete-catalogue traversal case. | `describe`; "opens the series view bound to the generation the net published" | dashboard/src/panels/detail-panel/changeSetBar.test.tsx:14-417; dashboard/src/panels/detail-panel/changeSetBar.test.tsx:75-142 |
-| **The Intent review opens the task-context review and the reviewer chooses the subject; a failed summary read keeps the entry with `offline` and the reason in the disclosure.** | "opens the task-context review; the reviewer chooses the subject"; "keeps the entry when the summary read itself fails" | dashboard/src/panels/detail-panel/changeSetBar.test.tsx:393-444 |
-| **The closed leaf's recorded entry with intent counts, and its survival when knowledge is unavailable.** | "offers the Intent review for a closed leaf, bound to its recorded comparison"; "keeps the closed leaf's Intent review when its knowledge is unavailable" | dashboard/src/panels/detail-panel/changeSetBar.test.tsx:75-130 |
-| The net's leaf attribution rendered beside the total, the request that asks for it, and the absent-answer rule. | "carries the master net's leaf attribution beside its total (R33.2)" | dashboard/src/panels/detail-panel/changeSetBar.test.tsx:160-233 |
+- The change-set bar suite retains the exact generation-bound master series entry and compact Intent review controls: a closed leaf's control supplies review: {} — the page's own default, which for a landed leaf is the delivered pair — and explicitly has no review-subject picker, even when knowledge is unavailable; a live leaf supplies the same review: {} and the closed one alone is labelled (recorded), leaving subject selection to the reviewer.
 
-## Cross-Repo References
+Retired at the fifth freeze d59c3493: dashboard/src/panels/detail-panel/changeSetBar.test.tsx:276-368 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 231622b2c7e272e7ca182ec28d3da61ca1749e0f. Retired means the anchor no longer stands, not that the cited subject was deleted [1]
+
+### Cross-Repo References
 
 No cross-repository implementation source governs this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
+No applicable cross-repository source was found.
 
-## Update History
-- 2026-09-28T17:10:24+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): **body update — the Intent review cases were rewritten for the compact entry (`ICR-R24@v3`).** The Logic paragraph on the three catalogue-answer cases and the L9 complete-catalogue paragraph are replaced by the current cases (task-context open with intent counts; failed summary read with `offline` and the disclosure reason, L47-R1-F4); the L12 section's two closed-leaf bullets are annotated with their current form; the Invariants sentence now says why assertions changed. The reopened row that named the removed L9 case was replaced by rows citing the current cases. No stamp advanced; closeout owns the real stamp.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "opens the series view bound to the generation the net published" repointed to dashboard/src/panels/detail-panel/changeSetBar.test.tsx:236-303. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-24T23:30:00+02:00 — 260921-ICR-L33 curator (candidate `ar/260921-icr-l33-ar`, uncommitted; code base `86639933d61528387ce106dbd4d7a334bd468671` plus the working-tree delta; adversarial round 2 `verify-l33.md` = `pass`): **one case added for the net's leaf attribution.** The subsection above records `carries the master net's leaf attribution beside its total (R33.2)`, its base-defect standing, and the absent-answer rule; the catalogue row was re-derived into the case this leaf's insertion moved (`308-394` → `469-539`) with the gate's own resolver. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted and the governed closeout owns the real stamp.
-- 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **body update — the D01 refusal cases.** A new subsection records the three cases this leaf adds in a dedicated describe block, the base-defect witness against the unmodified production bytes, and the two mutations that make the guards load-bearing. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-22T15:12:00+02:00 — 260921-ICR-L9 curator (candidate `ar/260921-icr-l9`, uncommitted; production line `f141d164265e926be9249acf6ae680ccf9ffae61`, this leaf's base): **one new catalogue traversal case (343 → 417 lines; `ICR-R09@v1`).** `offers every catalogue row for review, not just the first` (`:308-377`) stubs a three-row catalogue with totals, asserts every row is rendered with the retired row marked `retired · before-only`, and asserts the second and third rows put their own identities on the Intent review target — falsifying the first-row-only mechanism the packet names. The subject stub in the carried-subject case gained the additive `presence`/totals fields only; its assertions are unchanged. The Logic section records the case and the additive stub rule; the suite row is re-derived (`:14-343` → `:14-417`) and one row was added for the new case. **Stamp accounting:** the verification pair names the leaf's base — the last real commit the reading was taken against — because the new case exists only in this leaf's uncommitted candidate; closeout owns the stamp once the code commit exists.
-- 2026-09-22T11:00:00+02:00 — 260921-ICR-L13 curator (candidate `ar/260921-icr-l13`, uncommitted; base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5`): **one new generation case (273 → 343 lines).** The Logic and table record `opens the series view bound to the generation the net published` (`:75-142`); the entry-read cases below it moved with the insertion and the suite row is re-derived (`:13-136` → `:14-343`). Verification metadata is **not** advanced: the candidate is uncommitted and closeout owns the stamp.
-- 2026-09-21T14:59:00+02:00 — 260921-ICR-L2 curator (uncommitted change set on `ar/260921-icr-l2`, base `702714fc05363cb28eacaf101ba8384475a6aa56`): **the module gained the three answers the entry read can give** — no subject (task context, `review: {}`), a recorded subject (carried on the target), and a failing read (the entry survives). The pre-existing subject case was updated to flush the entry read before asserting, which is what makes the "the entry is offered immediately and the subject refines it" ordering a measured fact rather than a race. One citation row was re-derived against this candidate. **Stamp accounting:** the previous verification stamp is left as it was, because nothing in this leaf is committed; the claims this card's change moved were re-read against the candidate and are stamp-class leftovers that only closeout can stamp.
-
-
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: created this sidecar for the
-  change-set bar suite split from `DetailPanel.test.tsx`. Verification pinned to the
-  leaf base until closeout stamps the code commit.
 ## 260921-ICR-L12 The Closed Leaf's Entry Set, And Two Cases For It
 
 `260921-ICR-L12` (`ICR-R12@v1`) rewrites this module's closed-leaf expectation and adds the two
@@ -132,10 +111,6 @@ cases that measure it:
 No live-leaf case changed: the working change-set and the live review entry are exactly what they
 were.
 
-## Update History
-- 2026-09-23T04:30:48+02:00 — 260921-ICR-L12 curator (candidate `ar/260921-icr-l12`, uncommitted; production line at this leaf's base `870701b43039cd205a8c98e418382729510c3de3`, confirmed from the enclosure contract): **the closed leaf's entry set, and two cases for it (ICR-R12@v1).** The "no live enclosure" case now
-expects committed **and** the Intent review with no working button, and two new cases measure the
-recorded target (`historical: true` beside the recorded subject) and that an empty catalogue does not
-remove the entry. No live-leaf case changed. **Citation accounting:** the rows this leaf's insertions
-moved were re-derived against the candidate. **Stamp accounting:** no verification stamp was advanced —
-the candidate is uncommitted and the governed closeout owns the real stamp.
+## Retirements
+
+- Retired at the fifth freeze d59c3493: dashboard/src/panels/detail-panel/changeSetBar.test.tsx:276-368 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 231622b2c7e272e7ca182ec28d3da61ca1749e0f. Retired means the anchor no longer stands, not that the cited subject was deleted.

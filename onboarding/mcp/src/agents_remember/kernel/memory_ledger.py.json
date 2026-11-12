@@ -1,0 +1,152 @@
+{
+  "path": "mcp/src/agents_remember/kernel/memory_ledger.py",
+  "realizes": [],
+  "references": {
+    "10": {
+      "note": "Writing serializes the given ledger and touches no Git state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "125f9e150c83c61988656ca8750c0ee9e6c7563b",
+            "content": "sha256:ecfd0cd317379fb8dc33104e4c4a70a91aaaa024de632a70eb1ff0d109046cb5",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_ledger"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The first-row lookup of a code commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "125f9e150c83c61988656ca8750c0ee9e6c7563b",
+            "content": "sha256:b99d809bc570f4a3ca2c8afab4e4cadfb62796e07efe774b2db42c4d74d75c4a",
+            "locator": {
+              "kind": "symbol",
+              "name": "find_mapping"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The exact-pair lookup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "125f9e150c83c61988656ca8750c0ee9e6c7563b",
+            "content": "sha256:c83b663cc9ab339d9226951e909509aa17363cc5a712595c3547e419f96fb6c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "contains_mapping"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "A ledger read by the reviewer's worklist is recorded with the bytes read, its absence and its read failure.\n\nAnchor: `_external_ledger`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+            "content": "sha256:267caaf15e6e218966814d04fd2285fd1db099ea6dd45ebe90412f84ac14b800",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Schema names, the fence pattern, the file name and the exclusion pathspec.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "125f9e150c83c61988656ca8750c0ee9e6c7563b",
+            "content": "sha256:e42dad3f83182fb07f4108016602ab30ed1953b035df6b6be32f80e209a144d6",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 18
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The structural parse and its required fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "125f9e150c83c61988656ca8750c0ee9e6c7563b",
+            "content": "sha256:2ffae031547d10fa25cf4062ed5fd2c05853f1757d8b62ed1ca4d1d426ee729f",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_ledger_text_unvalidated"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The validation of order, empty ledgers and the first row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "125f9e150c83c61988656ca8750c0ee9e6c7563b",
+            "content": "sha256:87ddbdc5c5355bdd30f9ca03bddf68a52d88db51159b38c0b309d75abb11dabd",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_ledger"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The validating loader probes and reads through the recorder.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "125f9e150c83c61988656ca8750c0ee9e6c7563b",
+            "content": "sha256:6a66a2e68b22a7f1d00965a7882f56b3ca4d29383a7d5ed963a45b57e81cd620",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_ledger"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The structural loader probes and reads through the recorder.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "125f9e150c83c61988656ca8750c0ee9e6c7563b",
+            "content": "sha256:e77137fc1dd700771dea92fe92649acb9f5f88612392cd0a3a0b28a4d9323da2",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_ledger_unvalidated"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

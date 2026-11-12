@@ -1,0 +1,356 @@
+{
+  "path": "mcp/tests/test_knowledge_read_paths.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Magic spelling refused at both typed boundaries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50b41aa7749feb4071dda7fd3d204a4cd8475cd7",
+            "content": "sha256:23008fc2ad62d86f657422efc766520d04840dd2ec873f925834bbc63d8f4080",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_pathspec_magic_spelling_is_refused_by_the_typed_path_and_never_answered_as_absence"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The pathspec-magic boundary node: a leading-`:` spelling refused at both typed boundaries, with the Git facts measured by the module itself.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50b41aa7749feb4071dda7fd3d204a4cd8475cd7",
+            "content": "sha256:23008fc2ad62d86f657422efc766520d04840dd2ec873f925834bbc63d8f4080",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_pathspec_magic_spelling_is_refused_by_the_typed_path_and_never_answered_as_absence"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The glob-character node the review's correction rests on: authored, stored, seeded and resolved to its own blob.**\n\nAnchor: `test_a_path_holding_glob_characters_is_authorable_seedable_and_observed_as_its_blob`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50b41aa7749feb4071dda7fd3d204a4cd8475cd7",
+            "content": "sha256:ea9a54781eb6b85fc2cf5d61b9163238de12743aa4f3056b738e9670d3a888cf",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "50b41aa7749feb4071dda7fd3d204a4cd8475cd7",
+            "content": "sha256:1d39e7715c7a7699b57a1d399e3f338ffba892e99bef523ff7a54b21c6ea5994",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_path_holding_glob_characters_is_authorable_seedable_and_observed_as_its_blob"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "**The unaddressable-stored-spelling node: a refusal of the spelling, never an absence from the tree.**\n\nAnchor: `test_a_stored_path_that_cannot_be_addressed_is_refused_rather_than_reported_absent`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50b41aa7749feb4071dda7fd3d204a4cd8475cd7",
+            "content": "sha256:ea9a54781eb6b85fc2cf5d61b9163238de12743aa4f3056b738e9670d3a888cf",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The lookup that ran and could not answer, refused as unavailable rather than absent.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50b41aa7749feb4071dda7fd3d204a4cd8475cd7",
+            "content": "sha256:7ef8818ed136feabb30a06d57bf8d5985f6904f995f7e6dd608245b4dfe42713",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_failed_tree_lookup_is_unavailable_rather_than_an_absent_path"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "**The lookup that could not be run at all, reported as the same fact.**\n\nAnchor: `test_a_git_that_cannot_run_is_unavailable_rather_than_an_absent_path`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50b41aa7749feb4071dda7fd3d204a4cd8475cd7",
+            "content": "sha256:ea9a54781eb6b85fc2cf5d61b9163238de12743aa4f3056b738e9670d3a888cf",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "50b41aa7749feb4071dda7fd3d204a4cd8475cd7",
+            "content": "sha256:7699b5942dc509528967ae4e3d2742ca7f3af56f745c17b50d10965eb634b0db",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_git_that_cannot_run_is_unavailable_rather_than_an_absent_path"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "**The corrected predicate this module measures: leading `:` refused; `*`, `?` and `[` admitted as literal characters.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
+            "content": "sha256:b3d613826a8ec1517125e0879403fe1c4aad88032371f0b956871b9ec1832875",
+            "locator": {
+              "end": 607,
+              "kind": "line_range",
+              "start": 581
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:715e7df48deebd5b3adef0d28b2c124ccca66442005bd3f27ddc5cab9e0cf8c9",
+            "locator": {
+              "end": 92,
+              "kind": "line_range",
+              "start": 59
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
+            "content": "sha256:b3d613826a8ec1517125e0879403fe1c4aad88032371f0b956871b9ec1832875",
+            "locator": {
+              "kind": "symbol",
+              "name": "_confined_posix_relative"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:715e7df48deebd5b3adef0d28b2c124ccca66442005bd3f27ddc5cab9e0cf8c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_plain_git_path"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "**The write-path boundary that applies the shared rule, so a malformed anchor cannot be authored.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e852b71ce80180b12f5682c62e4baa1e186d0ec2",
+            "content": "sha256:12b3301d68fc80d98a6414b732ea425dcc979f5d77ce818f246cad5a965010c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourceAnchorDraft"
+            },
+            "path": "mcp/tests/anchor_fixture_models.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "**The seed boundary that applies the same rule, so a refused spelling cannot be presented as a seed.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3dd598b62290d22b1995fc556f1f6cc8ae0761f",
+            "content": "sha256:c9bae576442e9ed3c038b1f056f35e178a320f84b9c96b858f33f086e7154ed6",
+            "locator": {
+              "kind": "symbol",
+              "name": "PathSeed"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/read.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The lane row this module occupies. Source caption: `test_knowledge_read_paths`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5691b694e756469475d783c426d9781ef14c8633",
+            "content": "sha256:6d72a03b51c229fc0032ede7d0676b5f68afcd6b9e47ae30601f6b28cfaed5e5",
+            "locator": {
+              "end": 694,
+              "kind": "line_range",
+              "start": 694
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Literal glob characters are addressable.\n\nAnchor: `test_a_path_holding_glob_characters_is_authorable_seedable_and_observed_as_its_blob`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50b41aa7749feb4071dda7fd3d204a4cd8475cd7",
+            "content": "sha256:ea9a54781eb6b85fc2cf5d61b9163238de12743aa4f3056b738e9670d3a888cf",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "50b41aa7749feb4071dda7fd3d204a4cd8475cd7",
+            "content": "sha256:1d39e7715c7a7699b57a1d399e3f338ffba892e99bef523ff7a54b21c6ea5994",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_path_holding_glob_characters_is_authorable_seedable_and_observed_as_its_blob"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Unsupported stored spelling is not absence.\n\nAnchor: `test_a_stored_path_that_cannot_be_addressed_is_refused_rather_than_reported_absent`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50b41aa7749feb4071dda7fd3d204a4cd8475cd7",
+            "content": "sha256:ea9a54781eb6b85fc2cf5d61b9163238de12743aa4f3056b738e9670d3a888cf",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Unavailable tree is not absence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50b41aa7749feb4071dda7fd3d204a4cd8475cd7",
+            "content": "sha256:7ef8818ed136feabb30a06d57bf8d5985f6904f995f7e6dd608245b4dfe42713",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_failed_tree_lookup_is_unavailable_rather_than_an_absent_path"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Spawn failure is unavailable.\n\nAnchor: `test_a_git_that_cannot_run_is_unavailable_rather_than_an_absent_path`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50b41aa7749feb4071dda7fd3d204a4cd8475cd7",
+            "content": "sha256:ea9a54781eb6b85fc2cf5d61b9163238de12743aa4f3056b738e9670d3a888cf",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "50b41aa7749feb4071dda7fd3d204a4cd8475cd7",
+            "content": "sha256:7699b5942dc509528967ae4e3d2742ca7f3af56f745c17b50d10965eb634b0db",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_git_that_cannot_run_is_unavailable_rather_than_an_absent_path"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Anchor draft now belongs to test support.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e852b71ce80180b12f5682c62e4baa1e186d0ec2",
+            "content": "sha256:12b3301d68fc80d98a6414b732ea425dcc979f5d77ce818f246cad5a965010c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourceAnchorDraft"
+            },
+            "path": "mcp/tests/anchor_fixture_models.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Non-zero Git lookup has its own current case.\n\nAnchor: `test_a_lookup_that_answered_non_zero_is_unavailable_rather_than_an_absent_path`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50b41aa7749feb4071dda7fd3d204a4cd8475cd7",
+            "content": "sha256:ea9a54781eb6b85fc2cf5d61b9163238de12743aa4f3056b738e9670d3a888cf",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "50b41aa7749feb4071dda7fd3d204a4cd8475cd7",
+            "content": "sha256:a72bee8a2ef688cfec02937354f31ea3fe0d26ee72f51f0166a6c2c6242390ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_lookup_that_answered_non_zero_is_unavailable_rather_than_an_absent_path"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

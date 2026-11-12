@@ -1,0 +1,40 @@
+{
+  "path": "mcp/tests/test_agent_eval_hermes_refusals.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "fef84167b42486b15ea4a8307065e8455b402914",
+        "content": "sha256:49f03a65d4b1e16cdff14994abd4872d975d73a5bb650a64aafc54985ff72bc0",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-3AYEWE",
+      "invariant": "INV-A0B83R",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-hermes-capture",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "This regression module checks this obligation through test_native_dispatch_refusal_is_visible_without_a_guessed_child, test_unproven_refusal_is_opaque_with_material_unknown_only, test_unrelated_unknown_is_never_cleared_by_a_known_refusal, test_native_error_cannot_prove_a_different_input_was_refused and its remaining test cases.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fef84167b42486b15ea4a8307065e8455b402914",
+            "content": "sha256:49f03a65d4b1e16cdff14994abd4872d975d73a5bb650a64aafc54985ff72bc0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

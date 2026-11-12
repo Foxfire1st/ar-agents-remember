@@ -1,0 +1,376 @@
+{
+  "path": "mcp/src/agents_remember/memory/conversion/convert.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The pinned version and the rule that a changed output ships as a new version.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "121edfb1328d74cf689a952ccebd72153bfc37cb",
+            "content": "sha256:99a15c7917b4c9f702d22c5448dcbf99c67a7fd8975c16ec72405239cc934f70",
+            "locator": {
+              "kind": "symbol",
+              "name": "CONVERSION_FORMAT_VERSION"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "121edfb1328d74cf689a952ccebd72153bfc37cb",
+            "content": "sha256:d58fabe56ee98f4233b4e339824cf5e8fdddc5799f55f2283c1d6ebe9afdfca5",
+            "locator": {
+              "kind": "symbol",
+              "name": "SUPPORTED_VERSIONS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The report's measures; exported-entry currentness uses paired-commit symlink context after the unchanged-blob shortcut.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "121edfb1328d74cf689a952ccebd72153bfc37cb",
+            "content": "sha256:5bae543389feb41b543856eacdcaf46e2b4332b24361d61f5539d71b980abcb2",
+            "locator": {
+              "end": 482,
+              "kind": "line_range",
+              "start": 437
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "121edfb1328d74cf689a952ccebd72153bfc37cb",
+            "content": "sha256:d0a07bb4325b3e272cbdb194df7a9eed786255914f6a4a9def093ac90478e302",
+            "locator": {
+              "end": 261,
+              "kind": "line_range",
+              "start": 258
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "121edfb1328d74cf689a952ccebd72153bfc37cb",
+            "content": "sha256:6e6dd782b3535479cb571b310f654e4c6f3930c8dfeafb70fa7ded384666aa5c",
+            "locator": {
+              "end": 348,
+              "kind": "line_range",
+              "start": 345
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Determinism, the version refusal and the no-op.\n\nAnchor: `test_conversion_is_deterministic_version_pinned_and_a_no_op_once_converted`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44773410bfe6609e2891b444d598d96768be39ad",
+            "content": "sha256:67ae57d39d98cfdb606ab31b093d3422b2bd603cebdafb59586484fbd293bd4e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_conversion.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "44773410bfe6609e2891b444d598d96768be39ad",
+            "content": "sha256:dc4e2058816533155d8660ffc660f0572a015fdfd41735e651c19f8ac80323e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_conversion_is_deterministic_version_pinned_and_a_no_op_once_converted"
+            },
+            "path": "mcp/tests/test_knowledge_conversion.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Version 1's pinned bytes.\n\nAnchor: `test_conversion_format_version_1_reproduces_its_pinned_bytes` `VERSION_1_FIXTURE_DIGEST`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44773410bfe6609e2891b444d598d96768be39ad",
+            "content": "sha256:67ae57d39d98cfdb606ab31b093d3422b2bd603cebdafb59586484fbd293bd4e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_conversion.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "44773410bfe6609e2891b444d598d96768be39ad",
+            "content": "sha256:b957cd854d742c4db187144943705413883d638a12f415e233b5f4e4938d4017",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_conversion_format_version_1_reproduces_its_pinned_bytes"
+            },
+            "path": "mcp/tests/test_knowledge_conversion.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "44773410bfe6609e2891b444d598d96768be39ad",
+            "content": "sha256:8a2cb76e5e8cc9bf5d02a7e33eacb02348a191a0355877ec40a4064aadf2d7d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "VERSION_1_FIXTURE_DIGEST"
+            },
+            "path": "mcp/tests/test_knowledge_conversion.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "A refused conversion writes nothing and names what failed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44773410bfe6609e2891b444d598d96768be39ad",
+            "content": "sha256:2a5dc5965c9d6725574fe207ce21fa8be0902e7c35fb98845d511eaa20ab8c01",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_refused_conversion_writes_nothing_and_names_what_failed"
+            },
+            "path": "mcp/tests/test_knowledge_conversion.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "Current source delta inspected statically: Expose tree-mode symlink context at card anchoring and paired-commit currentness; retain pure inputs, unchanged-blob shortcut, version pin and explicitly historical conversion counts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "121edfb1328d74cf689a952ccebd72153bfc37cb",
+            "content": "sha256:d0a07bb4325b3e272cbdb194df7a9eed786255914f6a4a9def093ac90478e302",
+            "locator": {
+              "end": 261,
+              "kind": "line_range",
+              "start": 258
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "121edfb1328d74cf689a952ccebd72153bfc37cb",
+            "content": "sha256:6e6dd782b3535479cb571b310f654e4c6f3930c8dfeafb70fa7ded384666aa5c",
+            "locator": {
+              "end": 348,
+              "kind": "line_range",
+              "start": 345
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "An unsupported version is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "121edfb1328d74cf689a952ccebd72153bfc37cb",
+            "content": "sha256:b11b986fc2ab9f082a4f9df0be84b64ae42b18cde37af7545144d94d8f920110",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_version"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "121edfb1328d74cf689a952ccebd72153bfc37cb",
+            "content": "sha256:a6263cf5e6271c8f9c14c72de9037d748c876ce42d2a6c1a442654faa0c961c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversionVersionError"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The inputs: files, database, and the converted state the marker decides.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "121edfb1328d74cf689a952ccebd72153bfc37cb",
+            "content": "sha256:76320c3c2319d626b9ca1f4ee6c8d2f7b5bfcd1c5ac7117b05e5a2d605c332b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemoryInput"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The anchor commit: exact, prefix-resolved, or the listed fallback; an ambiguous prefix refuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "121edfb1328d74cf689a952ccebd72153bfc37cb",
+            "content": "sha256:acb576a1889db3604f9ef410697d0b47a362791d2612b521a174fd83ac94f5c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_anchor_commit"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Cards become Markdown plus file/route sidecars, with citation context bound to each anchor commit's symlink modes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "121edfb1328d74cf689a952ccebd72153bfc37cb",
+            "content": "sha256:9c843a1f17d3ff547fa70c1e248a33dae3a779c21580cfedf216e5c4a8f50fe5",
+            "locator": {
+              "end": 287,
+              "kind": "line_range",
+              "start": 233
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "121edfb1328d74cf689a952ccebd72153bfc37cb",
+            "content": "sha256:d0a07bb4325b3e272cbdb194df7a9eed786255914f6a4a9def093ac90478e302",
+            "locator": {
+              "end": 261,
+              "kind": "line_range",
+              "start": 258
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "121edfb1328d74cf689a952ccebd72153bfc37cb",
+            "content": "sha256:6e6dd782b3535479cb571b310f654e4c6f3930c8dfeafb70fa7ded384666aa5c",
+            "locator": {
+              "end": 348,
+              "kind": "line_range",
+              "start": 345
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The per-card audit, including the governing-overview and path mismatches.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "121edfb1328d74cf689a952ccebd72153bfc37cb",
+            "content": "sha256:5f2f81a68d8033dcb82cfd9115306b344e116b16e89d00168291970785ab89da",
+            "locator": {
+              "kind": "symbol",
+              "name": "_audit_card"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "121edfb1328d74cf689a952ccebd72153bfc37cb",
+            "content": "sha256:236ddfe632b6913e37dd76bd317c562c1343796f122baa365a2bc6e6a1617783",
+            "locator": {
+              "kind": "symbol",
+              "name": "nearest_overview"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Exported entries join their file's sidecar; a path without a card gets a sidecar without Markdown.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "121edfb1328d74cf689a952ccebd72153bfc37cb",
+            "content": "sha256:3909a82af7d303fce5ee856be79242aea5b4f303186fb1f7987c1512039dd231",
+            "locator": {
+              "kind": "symbol",
+              "name": "_merge_entries"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The whole tree is validated before anything is returned for writing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "121edfb1328d74cf689a952ccebd72153bfc37cb",
+            "content": "sha256:0acf9351aceafc1d206f41c504c27b8572030d89fb9de69656a58a19c24610e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_valid"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "121edfb1328d74cf689a952ccebd72153bfc37cb",
+            "content": "sha256:ef0f167e2cce851664a27e282fe8d7830d15eb220d937d2e48b01e569b62a2d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversionRefused"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The conversion's steps, the no-op and the marker.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "121edfb1328d74cf689a952ccebd72153bfc37cb",
+            "content": "sha256:2ce00211f0e556d927091ddb1985ea255f143356e7d6fe10e0dec936a1dbc7fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "convert_memory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

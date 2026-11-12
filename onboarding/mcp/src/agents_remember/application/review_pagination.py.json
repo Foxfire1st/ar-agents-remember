@@ -1,0 +1,302 @@
+{
+  "path": "mcp/src/agents_remember/application/review_pagination.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The module's own statement of what it owns, of the one cursor authority it reuses, and of the reset rule.**\n\nAnchor: `MOVED_SNAPSHOT_CODES` `RecordsPagePosition`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd95f139f4c1a2696a43d69e4f4a611944798d2a",
+            "content": "sha256:10367cc84b44433fa40d954c5a74fd6f1e7ebe93a16d48aa77cd2c893f137f6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "MOVED_SNAPSHOT_CODES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fd95f139f4c1a2696a43d69e4f4a611944798d2a",
+            "content": "sha256:32cdc5f549feec26d9565b26d4a97e4f5e7f738d69fde283182d51b32b19b1cd",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fd95f139f4c1a2696a43d69e4f4a611944798d2a",
+            "content": "sha256:30bd162688621cab6855e49990c207aedf786885e6484f6f933a6e3b00678d4c",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The published page value this module builds, with the constructor check that refuses a remainder without a cursor.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
+            "content": "sha256:d231f5d80a2730aab1061832becb5f2d5f3b3bd9ead09eb7a107fa018380ad30",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewCollectionPage"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
+            "content": "sha256:ed12ba772462662f1dd20074f97e601e646a1b5b202c822c9c3a795b071bc692",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_one_walk"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The surface's own new-generation action and the maximum page size the request model admits.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
+            "content": "sha256:3eeac84c9882160490e3644ea6a1324b6a5dee27fff40ae5272f5b12c0594a88",
+            "locator": {
+              "kind": "symbol",
+              "name": "REVIEW_PAGE_RESET_NEXT_ACTION"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
+            "content": "sha256:d206bc9279e58f3d6a4437d866a8d0e687275666c628e10f5ec7ba5126d40dce",
+            "locator": {
+              "kind": "symbol",
+              "name": "MAXIMUM_REVIEW_PAGE_SIZE"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "**The three bounded collections named once, because their cursors are different documents — the family roster joining the two this module pages (`ICR-R31@v1`).**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
+            "content": "sha256:037e225a092df307c870afcfdee90f36611a885f38eda64c9cce34ae7abe9ab7",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewPagedCollection"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The two page refusal codes on the closed refusal-code union.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
+            "content": "sha256:64e1c0c94e91954b0f8d3c83e41404617000a661098c382c18c4586589e6b734",
+            "locator": {
+              "end": 158,
+              "kind": "line_range",
+              "start": 157
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
+            "content": "sha256:9e48ce79d19cdf6921c7476ba21e4041a7b0759bb8a5d84bb685d9616716e61a",
+            "locator": {
+              "end": 162,
+              "kind": "line_range",
+              "start": 152
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The one consumer: the adapter offers a request's cursor to the collection it names and states the page this module returns.\n\nAnchor: `compose_review`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
+            "content": "sha256:bc9aed0908cabfef3b176f1734ea114458607fab1f9bf612787eace2cfa4d0c0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "**The route that admits the page size in its own vocabulary before the request model sees it.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:4601abf09592684baaeafad17291b99d8b681ea263365c2f8c8805f6b01bc21f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admitted_paging"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:3ae51a8f8426412b36c4336499bd81599d990f18c66b43548ac6c8bb0fc79a7e",
+            "locator": {
+              "kind": "symbol",
+              "name": "paged_review_request"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The client that renders these pages without ever constructing a cursor.\n\nAnchor: `carriedPage` `pageBounds`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
+            "content": "sha256:3a72132f0e91797658680ee56804a30bd93c76a74d449d6f3d58b4e7c0b8e002",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The one moved-snapshot code: the owners' own binding mismatch, and the two directions told apart by the owner's decoder.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd95f139f4c1a2696a43d69e4f4a611944798d2a",
+            "content": "sha256:10367cc84b44433fa40d954c5a74fd6f1e7ebe93a16d48aa77cd2c893f137f6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "MOVED_SNAPSHOT_CODES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fd95f139f4c1a2696a43d69e4f4a611944798d2a",
+            "content": "sha256:13aecc1d1e5bb9cc425e7b04af40ee63d7da53aa5962ea423d659ce047cebe4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "comparison_reset"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The refusal for a cursor that is not this collection's cursor at all, keeping the owner's own words and remedy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd95f139f4c1a2696a43d69e4f4a611944798d2a",
+            "content": "sha256:f91f4353069d0244731ce5351207db81969f44940f0aaca97bc836ac8d7c4c91",
+            "locator": {
+              "kind": "symbol",
+              "name": "unreadable_page_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The matrix refusal: the binding mismatch takes the surface's action, every other view refusal keeps the owner's, and the presented token is named rather than the view.**\n\nAnchor: `records_page_refusal`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd95f139f4c1a2696a43d69e4f4a611944798d2a",
+            "content": "sha256:30bd162688621cab6855e49990c207aedf786885e6484f6f933a6e3b00678d4c",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The comparison window stated as the surface's page: `total_basis=\"selection\"`, cumulative `returned`.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd95f139f4c1a2696a43d69e4f4a611944798d2a",
+            "content": "sha256:82bbedbac249feff796b3508d6f4fae4d678dc28a4082cad74225624f6dba52b",
+            "locator": {
+              "kind": "symbol",
+              "name": "comparison_page"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The reset page: the current comparison's first page served beside the refusal, with the refused cursor named on the refusal.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd95f139f4c1a2696a43d69e4f4a611944798d2a",
+            "content": "sha256:4245b71f13e23616eb027bec122bedc7ac9d79b1802f80055656fd5a6863f67b",
+            "locator": {
+              "kind": "symbol",
+              "name": "reset_comparison_page"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

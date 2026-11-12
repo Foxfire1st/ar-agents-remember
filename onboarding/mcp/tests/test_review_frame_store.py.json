@@ -1,0 +1,513 @@
+{
+  "path": "mcp/tests/test_review_frame_store.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "457873413fde21a1ce567ce52ed9e168f58144f9",
+        "content": "sha256:af2881636835e5bc3cda3f2d2e91186572a9ccf64d6f278a7ea4ba7730c9a5f8",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f09_v2_a_part_map_derived_from_the_admitted_bytes_is_persisted"
+        }
+      },
+      "facet": "The static part map derived from the admitted page marks is exactly the map persisted in the manifest.",
+      "id": "PRF-36047T",
+      "invariant": "INV-ZPHKZB",
+      "origin": {
+        "handoffEntry": "L183-curator-test-facet-22",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "457873413fde21a1ce567ce52ed9e168f58144f9",
+        "content": "sha256:93d14c94b988481cdb6cc7c4f34f336198736de08911b0726769e0105be572a6",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f12_a_live_draft_is_kept_and_an_abandoned_one_is_reclaimed"
+        }
+      },
+      "facet": "a live draft is kept and an abandoned one reclaimed",
+      "id": "PRF-3SAFEK",
+      "invariant": "INV-03QFAC",
+      "origin": {
+        "handoffEntry": "L102-F12",
+        "leaf": "260928-MIK-L102"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "457873413fde21a1ce567ce52ed9e168f58144f9",
+        "content": "sha256:970227020b1208267c3ca93815ce77202fa59a3876d32bfb015496aed7653793",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f01_v2_a_binding_that_moves_after_the_read_stays_the_old_binding"
+        }
+      },
+      "facet": "A later environment move leaves the published binding on the comparison read under the lock; reading against the new comparison reports stale and never relabels it current.",
+      "id": "PRF-467PWB",
+      "invariant": "INV-S75HA1",
+      "origin": {
+        "handoffEntry": "L183-curator-test-facet-23",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "457873413fde21a1ce567ce52ed9e168f58144f9",
+        "content": "sha256:f7267b74d0dc600027c09b8eacdf0dbe3b69e148bcc99ad5f72df1f77251437d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f14_a_refused_publication_preserves_the_ready_revision"
+        }
+      },
+      "facet": "a refused publication preserves the ready revision byte for byte",
+      "id": "PRF-5J3ZBN",
+      "invariant": "INV-K2YX74",
+      "origin": {
+        "handoffEntry": "L102-F14",
+        "leaf": "260928-MIK-L102"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "457873413fde21a1ce567ce52ed9e168f58144f9",
+        "content": "sha256:d502c97b924eb126cf9536c85278c2402b2cb43afad66e4249ed6795852c1a9d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f16_a_lineage_past_eight_revisions_reopens_after_a_restart"
+        }
+      },
+      "facet": "Ten revisions survive the former eight-revision ceiling without a reclamation receipt; ready revision10 and oldest/newest assets reopen and usage lists all ten.",
+      "id": "PRF-5NZ5EV",
+      "invariant": "INV-5VVSTD",
+      "origin": {
+        "handoffEntry": "L183-curator-test-facet-31",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "457873413fde21a1ce567ce52ed9e168f58144f9",
+        "content": "sha256:c6d3a413e793ef2b67ccdddee8ae461d55e80833c6cb45dd181ac365495d7d62",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f16_r2_the_largest_store_is_measured_at_its_default_ceiling"
+        }
+      },
+      "facet": "Ten retained revisions stay below the task-total ceiling with no lineage bound/reclamation, and a subprocess restarts on revision10.",
+      "id": "PRF-7DRGPM",
+      "invariant": "INV-VASQQX",
+      "origin": {
+        "handoffEntry": "L183-curator-test-facet-32",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "457873413fde21a1ce567ce52ed9e168f58144f9",
+        "content": "sha256:9195018e723123ab8769754c39bb31cd07a9de0c686b57cf26585cb43a4f815d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f09_v2_a_part_map_naming_an_unknown_claim_is_refused"
+        }
+      },
+      "facet": "A part map containing an unknown claim refuses validation before revision or ready-pointer writes.",
+      "id": "PRF-7F9M2V",
+      "invariant": "INV-ZPHKZB",
+      "origin": {
+        "handoffEntry": "L183-curator-test-facet-21",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "457873413fde21a1ce567ce52ed9e168f58144f9",
+        "content": "sha256:d01c7aac4178e37e31a7bc534778afe9f7b61e61de82e832102fca7788f298d6",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f01_v2_a_publish_refused_by_a_moved_binding_writes_nothing"
+        }
+      },
+      "facet": "A moved live binding refuses binding-moved with no revision/ready writes; the same draft publishes when the binding source still matches.",
+      "id": "PRF-7MTAWA",
+      "invariant": "INV-K2YX74",
+      "origin": {
+        "handoffEntry": "L183-curator-test-facet-19",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "457873413fde21a1ce567ce52ed9e168f58144f9",
+        "content": "sha256:b4efaca87e724202efeae3e7e87f24ac19f5bd4cbdec35d2a79286cb0dc4e8c9",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f10_the_task_ceiling_counts_every_lineage_and_a_draft"
+        }
+      },
+      "facet": "the task ceiling counts every lineage and a draft",
+      "id": "PRF-9AY8HZ",
+      "invariant": "INV-5VVSTD",
+      "origin": {
+        "handoffEntry": "L102-F10",
+        "leaf": "260928-MIK-L102"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "457873413fde21a1ce567ce52ed9e168f58144f9",
+        "content": "sha256:adbbdd3a823c04c4389524e81a5d29b51bcbd7cb3e887d6d01e08b235e656171",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f13_corrupt_bytes_are_refused_rather_than_served"
+        }
+      },
+      "facet": "corrupt bytes are refused rather than served",
+      "id": "PRF-A6DD2C",
+      "invariant": "INV-T4EVM5",
+      "origin": {
+        "handoffEntry": "L102-F13",
+        "leaf": "260928-MIK-L102"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "457873413fde21a1ce567ce52ed9e168f58144f9",
+        "content": "sha256:1caa89eb557c20206d0a09870a35a34344138041369686eb157c545f42179cc5",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f10_a_lineage_keeps_more_than_eight_revisions_and_counts_their_bytes"
+        }
+      },
+      "facet": "a lineage byte ceiling refuses before a revision is written, and usage accounts revision and metadata bytes",
+      "id": "PRF-BRRP5X",
+      "invariant": "INV-5VVSTD",
+      "origin": {
+        "handoffEntry": "L102-F10",
+        "leaf": "260928-MIK-L102"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "457873413fde21a1ce567ce52ed9e168f58144f9",
+        "content": "sha256:07aba459907b4c87c3564eebe78a699f9684a64b97eb9c814ab002731fcb18e2",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f09_the_evidence_survives_the_scratch_and_regeneration_names_it"
+        }
+      },
+      "facet": "removing the scratch and regenerating still yields the stored evidence digest and ancestry",
+      "id": "PRF-D3ACSH",
+      "invariant": "INV-ZPHKZB",
+      "origin": {
+        "handoffEntry": "L102-F09",
+        "leaf": "260928-MIK-L102"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "457873413fde21a1ce567ce52ed9e168f58144f9",
+        "content": "sha256:1ccacc60db09c51f93ac15290af9bd0cd6037a13a6c112e5cc3f30f069c7690f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f10_r2_draft_admission_counts_its_own_metadata"
+        }
+      },
+      "facet": "A draft's own record is included in its task-total reservation; overflow refuses frame-store-full before creating the draft directory.",
+      "id": "PRF-DZK1Q2",
+      "invariant": "INV-5VVSTD",
+      "origin": {
+        "handoffEntry": "L183-curator-test-facet-14",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "457873413fde21a1ce567ce52ed9e168f58144f9",
+        "content": "sha256:dc848eca248fc6045eadbf0465917908645ddaca1c58dfc108f50f2a5ba15e50",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f12_a_published_draft_never_publishes_a_second_revision"
+        }
+      },
+      "facet": "a published draft never publishes a second revision",
+      "id": "PRF-F71FWC",
+      "invariant": "INV-03QFAC",
+      "origin": {
+        "handoffEntry": "L102-F12",
+        "leaf": "260928-MIK-L102"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "457873413fde21a1ce567ce52ed9e168f58144f9",
+        "content": "sha256:07aba459907b4c87c3564eebe78a699f9684a64b97eb9c814ab002731fcb18e2",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f09_the_evidence_survives_the_scratch_and_regeneration_names_it"
+        }
+      },
+      "facet": "the frame's evidence survives the authoring scratch and is named by regeneration",
+      "id": "PRF-HZZXAR",
+      "invariant": "INV-ZAW3HJ",
+      "origin": {
+        "handoffEntry": "MIK-R103@v1",
+        "leaf": "260928-MIK-L102"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "457873413fde21a1ce567ce52ed9e168f58144f9",
+        "content": "sha256:ba225698d0e263ab0275e22f3513bcd2ccc24cf79e8e29f4f1cbdd192b2dac8e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f01_a_revision_bound_to_a_foreign_comparison_is_stale"
+        }
+      },
+      "facet": "A different comparison owner alone makes a frame stale even with equal trees, conversion and number; the selected/retained owners are reported.",
+      "id": "PRF-K2G334",
+      "invariant": "INV-S75HA1",
+      "origin": {
+        "handoffEntry": "L183-curator-test-facet-18",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "457873413fde21a1ce567ce52ed9e168f58144f9",
+        "content": "sha256:d3528fa79a8d1251df11c1cb95567f003eec66c3d815bafecb6ef2619e1ff9f2",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f15_a_reclaimed_revision_is_named_when_reopened"
+        }
+      },
+      "facet": "a reclaimed revision is named when reopened",
+      "id": "PRF-KAM5XV",
+      "invariant": "INV-8FY445",
+      "origin": {
+        "handoffEntry": "L102-F15",
+        "leaf": "260928-MIK-L102"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "457873413fde21a1ce567ce52ed9e168f58144f9",
+        "content": "sha256:41f2d06303f308deb4b0640968a0b9b5615c43dd2bc51a8cc39d7ef65f5ec3fd",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f09_v2_a_part_map_is_stored_with_the_revision_and_reopens"
+        }
+      },
+      "facet": "The revision manifest persists the part map with its claim IDs, including an empty-claims part, and reopen returns the same map.",
+      "id": "PRF-KGZF3J",
+      "invariant": "INV-ZPHKZB",
+      "origin": {
+        "handoffEntry": "L183-curator-test-facet-20",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "457873413fde21a1ce567ce52ed9e168f58144f9",
+        "content": "sha256:1fea1c9514c7632eaf16c1f29211ebeeb1b8b752121c65d26f039314d5d63478",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f15_an_archive_records_a_partial_failure_and_keeps_what_it_removed"
+        }
+      },
+      "facet": "an archive records a partial failure and keeps what it removed",
+      "id": "PRF-PD5KD0",
+      "invariant": "INV-8FY445",
+      "origin": {
+        "handoffEntry": "L102-F15",
+        "leaf": "260928-MIK-L102"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "457873413fde21a1ce567ce52ed9e168f58144f9",
+        "content": "sha256:485346f2e572d80d0fd644b41debad2d40f94ee99cf41253ede5fb0d5bf510e2",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f11_a_symlinked_frame_is_held_by_every_store_act"
+        }
+      },
+      "facet": "a symlinked frame is held by every store act",
+      "id": "PRF-QTXJ05",
+      "invariant": "INV-6VNAR5",
+      "origin": {
+        "handoffEntry": "L102-F11",
+        "leaf": "260928-MIK-L102"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "457873413fde21a1ce567ce52ed9e168f58144f9",
+        "content": "sha256:c88b3f806533db2e0ffe4331ec55e6577f717543179384f0bba72e04c9966192",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f10_r4_reclamation_metadata_is_in_the_reservation"
+        }
+      },
+      "facet": "Expired-draft reclamation metadata is included in task-total reservation while nine published revisions remain; a one-byte-smaller total preserves the last admitted ready revision.",
+      "id": "PRF-VPH7G5",
+      "invariant": "INV-5VVSTD",
+      "origin": {
+        "handoffEntry": "L183-curator-test-facet-16",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "457873413fde21a1ce567ce52ed9e168f58144f9",
+        "content": "sha256:cf6ebf97256f4e7ecbfa7f7ca2c2dea38bd0ec81ac8a59eedec97816cd79d7e7",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f10_r4_publication_reserves_every_final_byte"
+        }
+      },
+      "facet": "Publication at the exact task-total byte boundary succeeds; one byte less refuses frame-store-full with removal control and no ready pointer.",
+      "id": "PRF-WK23H5",
+      "invariant": "INV-5VVSTD",
+      "origin": {
+        "handoffEntry": "L183-curator-test-facet-15",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "457873413fde21a1ce567ce52ed9e168f58144f9",
+        "content": "sha256:1caa89eb557c20206d0a09870a35a34344138041369686eb157c545f42179cc5",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f10_a_lineage_keeps_more_than_eight_revisions_and_counts_their_bytes"
+        }
+      },
+      "facet": "Nine revisions are retained and reopenable with no silent reclamation; usage counts revision, draft and metadata bytes.",
+      "id": "PRF-XHRBD3",
+      "invariant": "INV-5VVSTD",
+      "origin": {
+        "handoffEntry": "L183-curator-test-facet-10",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "457873413fde21a1ce567ce52ed9e168f58144f9",
+        "content": "sha256:3cd9aa3b20048c869cfad1647ae08901d604bee84f6bec410835971d1055e728",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f01_r4_each_operand_field_survives_both_binding_constructors"
+        }
+      },
+      "facet": "Both binding constructors carry identical full operand/conversion/comparison identity with the packet owner; changing only one operand field makes the retained frame stale.",
+      "id": "PRF-Z98BFV",
+      "invariant": "INV-S75HA1",
+      "origin": {
+        "handoffEntry": "L183-curator-test-facet-30",
+        "leaf": "260928-MIK-L183"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "457873413fde21a1ce567ce52ed9e168f58144f9",
+        "content": "sha256:47a1dc437c271ef3c23c7767cb585272ffeb3bd6e4c9734f21180b6338a1eb53",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f16_r4_the_task_byte_maximum_costs_restart_and_reclamation"
+        }
+      },
+      "id": "RLZ-CMAZ4K",
+      "invariant": "INV-VASQQX",
+      "origin": {
+        "handoffEntry": "L102-F16",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "The maximum-store case fills the actual task byte ceiling with one lineage of 32 retained revisions and verifies measured physical bytes, named task-total refusal, earliest/latest readability, reopening in a fresh process, and preview/actual archive reclamation of the same counted total. It uses real files rather than sparse or shape-only data. This anchor is source evidence; this handoff does not claim a test run.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "A revision bound to a foreign comparison is stale.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "457873413fde21a1ce567ce52ed9e168f58144f9",
+            "content": "sha256:ba225698d0e263ab0275e22f3513bcd2ccc24cf79e8e29f4f1cbdd192b2dac8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_f01_a_revision_bound_to_a_foreign_comparison_is_stale"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The evidence survives the authoring scratch and regeneration names it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "457873413fde21a1ce567ce52ed9e168f58144f9",
+            "content": "sha256:07aba459907b4c87c3564eebe78a699f9684a64b97eb9c814ab002731fcb18e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_f09_the_evidence_survives_the_scratch_and_regeneration_names_it"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A developer-removed revision is named when the frame is reopened.\n\nAnchor: `test_f15_a_reclaimed_revision_is_named_when_reopened`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "457873413fde21a1ce567ce52ed9e168f58144f9",
+            "content": "sha256:65d92983fdcdb1c4f2840d5e88fe7a01ae4832b35b4cf4b63cf590f105f62cbb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Ten retained revisions reopen after a subprocess restart; there is no lineage-count ceiling.\n\nAnchor: `test_f16_r2_the_largest_store_is_measured_at_its_default_ceiling`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "457873413fde21a1ce567ce52ed9e168f58144f9",
+            "content": "sha256:65d92983fdcdb1c4f2840d5e88fe7a01ae4832b35b4cf4b63cf590f105f62cbb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Comparison identity, retained revision bytes, task-total bounds and persisted part maps are checked by the named cases.\n\nAnchor: `test_f01_a_revision_bound_to_a_foreign_comparison_is_stale`, `test_f10_a_lineage_keeps_more_than_eight_revisions_and_counts_their_bytes`, `test_f16_r4_the_task_byte_maximum_costs_restart_and_reclamation`, `test_f01_v2_a_publish_refused_by_a_moved_binding_writes_nothing`, `test_f09_v2_a_part_map_is_stored_with_the_revision_and_reopens`, `test_f09_v2_a_part_map_derived_from_the_admitted_bytes_is_persisted`, `test_f01_v2_a_binding_that_moves_after_the_read_stays_the_old_binding`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "457873413fde21a1ce567ce52ed9e168f58144f9",
+            "content": "sha256:65d92983fdcdb1c4f2840d5e88fe7a01ae4832b35b4cf4b63cf590f105f62cbb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

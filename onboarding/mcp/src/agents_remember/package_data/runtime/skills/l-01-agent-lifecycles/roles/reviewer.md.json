@@ -1,0 +1,486 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+        "content": "sha256:0bbe37a5e6fd93f99727d3907de9738083bdfd350a92af88445ad2129520458d",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-BKYWR9",
+      "invariant": "INV-NNQR91",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-19",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The mcp/src/agents_remember/package_data/runtime shipped copy propagates the skills/l-01-agent-lifecycles/roles/reviewer.md instructions to that installation surface; it is generated output and does not independently set role/task or permission authority.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "10": {
+      "note": "At master-exit the Reviewer accounts for every master requirement, leaf, substep and accepted gap fill; completion against task documents is an affirmative duty, not a formatting check.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:96d91410ac63c854beb796ebde0df02dbf75d99caa20a413072eef2e10573072",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 109
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "A master handover packet that reads as complete while silently omitting unfinished leaf work, a substep or an accepted gap fill has a blocking finding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:96d91410ac63c854beb796ebde0df02dbf75d99caa20a413072eef2e10573072",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 109
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Baseline review checks the Worker's targeted checks and regressions against the past for the requested scope; full suites and drift reporting run only on an explicit developer request.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:6b8cdfa852a54be4404ab7e58c52b956149da7ffb591189502e4a05a23b122ca",
+            "locator": {
+              "end": 71,
+              "kind": "line_range",
+              "start": 71
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The onboarding staleness criterion checks every present-tense card or overview sentence against the as-landed code, keeps historical accounts in history rows, and does not accept a true paragraph added beside a contradictory claim.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c630271da1672f6d2ecf2500c8e31150e38bce6",
+            "content": "sha256:2d94014feab76ac495757202671622b7c07f63939ce5644f556c2bf91e54d325",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "skills/l-01-agent-lifecycles/criteria/onboarding-memory.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Super-exit review inspects changed paths and sidecars and route overviews among the integrated portfolio evidence.\n\nAnchor: `route overviews`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:b90463edfca0c858ceaff30054348102fab18ba324c0942d14178ce0cdbb31b6",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 111
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Full suites and drift reporting run only on an explicit developer request, while the normal curation authoring pass always runs the complete memory_quality_check, which a subset cannot replace.\n\nAnchor: `memory_quality_check`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:8ff35a30909bc3945180cc36abe71d74b0dc4204910e2a15c66fa52d36a571ff",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 71
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "At master-exit a baseline BLOCK goes to the owning Manager as decomposable fix leaves.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:d9e168557c5ed854a4eafa107a8eb6e3f9c22c086556daf63a5268dea2da6f26",
+            "locator": {
+              "end": 113,
+              "kind": "line_range",
+              "start": 113
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "At super-exit a baseline BLOCK goes to the Orchestrator as decomposable fix leaves.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:d9e168557c5ed854a4eafa107a8eb6e3f9c22c086556daf63a5268dea2da6f26",
+            "locator": {
+              "end": 113,
+              "kind": "line_range",
+              "start": 113
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The Reviewer writes the verdict under the seam's notes/reports path using the verdict template and writes fix-leaf descriptors for non-leaf baseline blocks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:104b463c5f6b7d22e3eb53b76bc03249061a5de01200c81a78f2e7288754fe67",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 93
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The Reviewer independently examines one assigned seam or review round, refutes or confirms the claims against the bound criteria catalogs, and writes and hands over the verdict.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:73495278124a42936e1797a7200fd7c566a3289429c57d4e4775b3a56d09da1c",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "The Reviewer may write its review artifacts, retrieve read-only through read_ar_files, use scoped system/tools.md checks and report templates, inspect full memory_quality_check curation evidence, run requested drift reporting and send the direct leaf messages and Manager notices; ordinary leaf begin/result records are evidence, not gate acceptance.\n\nAnchor: `read_ar_files`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:4c84099f6191959cbb4aa679ac767a79318d19456ecc3ab556686d506d8ab039",
+            "locator": {
+              "end": 117,
+              "kind": "line_range",
+              "start": 117
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "The role's operator-settings passage is a prohibition: harness, model, effort and serviceTier are not the Reviewer's to set.\n\nAnchor: `serviceTier`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:8e56d5e3f247f76c29190f75c6950030a66324e29bf99877902367f2f0d842cb",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 119
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "The role keeps the master-exit and super-exit seam rubrics and their blocking rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:05aaa4a6744746d53af7fff8811de07607a00c4f712703bc9adfd371307ae7eb",
+            "locator": {
+              "end": 113,
+              "kind": "line_range",
+              "start": 105
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "Review starts only on the owner's assignment, reads the rendered task document and canonical JSON at the handover's taskDocReadArgs paths, and requires every applicable intake input before candidate inspection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:268f0c6740fa7dd25fab1292e40b6cd53ed86bfb0092ab1cdbf7830d6f9bebb4",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 14
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "A baseline review reports every standing criterion, the sealed baseline findings with stable identifiers, evidence and fix-acceptance criteria, and a complete route-coverage table.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:6b426ecca62662beb63ef604ab2e22d6fc43ee08959516a00975dfc3f6265aa6",
+            "locator": {
+              "end": 92,
+              "kind": "line_range",
+              "start": 90
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "The Reviewer's permitted read and check surface and its prohibitions on implementing, recording task acceptance, starting roles, publishing Git, deciding gates and absorbing another seat's work.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:6b5c13c66e6be3e9fa73f28f818431871e32ef6cf9fd725fd7e9bce1c550baf0",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 117
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "Reviewer leaf messages use role_message on agents-remember-task with the handover's sibling role and exact leaf task references; product-supplied agent identifiers stay whole and unchanged.\n\nAnchor: `role_message`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:95609773f5fb140851372e9083cc3d3f1e3f06dec492872f6c5fff1a5e874205",
+            "locator": {
+              "end": 101,
+              "kind": "line_range",
+              "start": 101
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The Reviewer's brief starts the work, and the verdict artifact is its durable handoff.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:73495278124a42936e1797a7200fd7c566a3289429c57d4e4775b3a56d09da1c",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "The Reviewer returns exit-seam fix leaves to the seat it reports to: the owning Manager at master-exit, the Orchestrator at super-exit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:d9e168557c5ed854a4eafa107a8eb6e3f9c22c086556daf63a5268dea2da6f26",
+            "locator": {
+              "end": 113,
+              "kind": "line_range",
+              "start": 113
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "The Reviewer reads the current review-state limit from the task_doc answer and never runs an unapproved round or splits the scope to avoid that limit.\n\nAnchor: `task_doc`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:f74aef61c9ab9702980b7cf1c39bead164c8055b722f9e86c19ea8b2af543020",
+            "locator": {
+              "end": 133,
+              "kind": "line_range",
+              "start": 133
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "The stage ends with a recorded verdict covering the whole requirement, its findings and coverage; the review step is marked done through task_doc only after the last round is recorded as passed.\n\nAnchor: `task_doc`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:4f2f17ddbd2db73eac599a91725f176a4d0295861b0742c576b9ba16eecbaf28",
+            "locator": {
+              "end": 141,
+              "kind": "line_range",
+              "start": 141
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "When reviewing the Curator's memory change the Reviewer inspects the quality result's cutCards and addedFiles reports: text removed without a named change and a file added outside the knowledge without a place in the task's requirement are findings.\n\nAnchor: `cutCards`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:3975ddc1f60620446aeac3015498f3a7bf168671a74106312224692c56a7b0a4",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 76
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "The Reviewer reads the rendered task document and canonical JSON at the supplied taskDocReadArgs paths, reads only the seam's required documents, and uses the Agents Remember tools on agents-remember-task only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:75bdfd1e3392bb1485d7b16d3e2f9f098e4198177a4104b1dac2c20f566f78d5",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 14
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The Reviewer refuses another seat's pasted brief and reports it to the seam's decider, and never absorbs another seat's work.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:8e56d5e3f247f76c29190f75c6950030a66324e29bf99877902367f2f0d842cb",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 119
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "A baseline review runs the bound catalogs, required routes and exploratory mandate, covers all three lenses explicitly, and tries to refute each claim before confirming it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ff6fa27f8af03076cef47a1eff305618f6611a9",
+            "content": "sha256:3f6a0bdee8a890e921cec773cf003c3a7e1844735bb77a8d82c99aa74ac9091f",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 11
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/review-baseline.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The Reviewer requires the catalogs bound by its review type and does not choose catalogs during the review.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:eeed639b566c1ff1e50cd5c8b948cedbe251300b1e19fb1311e6796d2cda752c",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 39
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Each review type binds a fixed set of criteria catalogs, listed in the role's review-type table from master-exit and super-exit to leaf, integration, full-loop and plan review.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:d1ce4aecd9144c86956f2c289fac885f4a84a27d25451c2b0d9b9cf6b0c38ae0",
+            "locator": {
+              "end": 64,
+              "kind": "line_range",
+              "start": 57
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake",
+      "guarded_by_test"
+    ],
+    "justification": "An arbitrary dependency cap can force unrelated judgments onto coarser evidence even when the payload model admits their precise witnesses."
+  },
+  "applicability": "Dependency capacity derived for coherence and other bounded record builders.",
+  "conditions": [
+    "Fixed dependencies, model-bounded judgments, assessments and validator edges derive the shared capacity.",
+    "An over-model payload refuses before artifact writes."
+  ],
+  "exclusions": [
+    "Master-scope route review has no own finite model bound and remains subject to the explicitly ruled shared refusal.",
+    "Shared evidence is allowed only when it actually supports each judgment."
+  ],
+  "id": "INV-SRS98B",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "role-reports/worker/7c2e9d14-6a1b-4f53-8e20-52a0c3d9b152/role-launch/260928-MIK-L52-worker-7c2e9d14-6a1b-4f53-8e20-52a0c3d9b152.md (SHA-256 ef7cff4d9b5140ebecdc1997c2df1fa8dc3ad81222e17dc63b2746cccab1bdf6); mcp/tests/test_evidence_dependency_bounds.py (max publish+validate, oversize refusal, vendored L39 load)"
+      ],
+      "path": "knowledge-wave.json"
+    },
+    "handoffEntry": "MIK-R52@v1 rule 12 bounded-builders",
+    "leaf": "260928-MIK-L52",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The coherence record's dependency bound is a named constant derived in code from model bounds (7+2048+256+1=2312); oversize payloads refuse naming bound and count before any write.",
+  "status": "proposed",
+  "supersedes": []
+}

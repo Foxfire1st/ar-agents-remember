@@ -1,0 +1,249 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge_index/build.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
+        "content": "sha256:ffc0ac85ff4e0e275fdd095f58ded3790b2de4fd523b3de064787a5579d9bb34",
+        "locator": {
+          "kind": "symbol",
+          "name": "_write_history"
+        }
+      },
+      "id": "RLZ-NJK730",
+      "invariant": "INV-2RFC0M",
+      "origin": {
+        "handoffEntry": "MIK-R48@v2 rule 5",
+        "leaf": "260928-MIK-L48"
+      },
+      "rationale": "The index persists the complete existing row document together with its history metadata.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The builder's contract: one snapshot in, problems named, nothing derived.\n\nAnchor: \"A file that fails its schema is reported, never guessed at.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
+            "content": "sha256:d1e9aa64c956aa0f1796f8f6a96ac62bfb06d8f889cb22b0ef22b021fb551653",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The parsed tree keeps each history file by path and each owner's merged history.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
+            "content": "sha256:f8a19eaf294390813cc3d6e4fe5126d9223d2343e400541ea37dd367763884d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "ParsedTree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "History rows are written per file, under the file's own path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
+            "content": "sha256:ffc0ac85ff4e0e275fdd095f58ded3790b2de4fd523b3de064787a5579d9bb34",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_history"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The parsed tree and its completeness.\n\nAnchor: `ParsedTree`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
+            "content": "sha256:1b22516606ea65bb761f776cdebad477c86dc5d066d891472a45a2bce23137eb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "What one build reports.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
+            "content": "sha256:50338a20987465f4fb984f54f86c618c7b89ac2c504d5c6db6b9cf32c6a1ea44",
+            "locator": {
+              "kind": "symbol",
+              "name": "BuildReport"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "One transaction: the store schema, the `ix_*` tables, the rows, the projection and the metadata.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
+            "content": "sha256:ba4b3cb06011e3c1a22e9748aed9c8d66e2d0be2019d1f5c948dd566e78cc50e",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_index"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The row writers: records, entries, members, routes, links, references and history rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
+            "content": "sha256:7bcf09c0ef7bd024665c5239842344ffd4efab1d13397fa859b93c8e50776693",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_rows"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
+            "content": "sha256:8039957364408c96e2f0cb139c6a0ebfc2903dbf62c183504a45d3e4ec24f099",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_record"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
+            "content": "sha256:83786254cb1c6ba01dbdbdb8080fccf86b7db73359a32c8b6b36b668252b92d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_link"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
+            "content": "sha256:c24f1b920e33f706375685894361121aa7b8dbabe06c9ec36d0d76421128becd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_references"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
+            "content": "sha256:c19bb9830ed09e05975a186139949c60dc16e2dfec09f2fd8dc964aae4c335fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reference_endpoint"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
+            "content": "sha256:c5c9db12cb8f6a83d479bbffeb65e74639debb54f72394a99891d906010921a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_link"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
+            "content": "sha256:ffc0ac85ff4e0e275fdd095f58ded3790b2de4fd523b3de064787a5579d9bb34",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_history"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The metadata row set a cached file is checked against.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
+            "content": "sha256:553db5bd42c2f97e64f517be601274d4040befce7a4f33f88bc2887a9334535e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_meta"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "A file failing its schema marks the index partial and is named; an unconverted tree indexes empty.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21d471fd2afb3c773c9c4b2b4eeeabecb946fb1c",
+            "content": "sha256:c8d0758a2993716516d8d13d17f86d4c5bcf9a31877b3cb01af414839345552c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_file_failing_its_schema_marks_the_index_partial_and_is_named"
+            },
+            "path": "mcp/tests/test_knowledge_index.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "21d471fd2afb3c773c9c4b2b4eeeabecb946fb1c",
+            "content": "sha256:072445b5f786964f51e85ccdb9940ef25ff81dd1fb13da0b74564894bbb565ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unconverted_tree_is_indexed_empty_and_says_so"
+            },
+            "path": "mcp/tests/test_knowledge_index.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

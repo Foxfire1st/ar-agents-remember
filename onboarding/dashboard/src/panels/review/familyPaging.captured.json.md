@@ -1,75 +1,351 @@
 # dashboard/src/panels/review/familyPaging.captured.json
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/review/familyPaging.captured.json` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-28T16:55:00+02:00 |
-| lastVerifiedCommitHash | `9b2f775f1ab0fca5f82b4f661785dd8216d4a8b3`|
-| lastVerifiedCommitDate | 2026-09-28T17:43:09+02:00|
-| governingOverview | `dashboard/src/panels/overview.md` |
-
 ## Governing Overview
 
 [panels route overview](../overview.md)
 
 ## Purpose
 
-Retain complete real HTTP review responses for a bounded two-sided family walk, so mounted client regressions consume the production wire shape.
+Retained test input for the review consumers, recording its own response identities, states and bounded populations.
 
 ## Code Commentary
 
-### Logic
+This file is fixture data, not current project knowledge or a new selection authority. Its literal response states and counts belong to the recorded input. Reading it does not execute its producer, validate an installed dashboard, reproduce the capture or grade the present candidate. A provenance field is a recorded custody statement, not an independent observation made by this card.
 
-The document identifies one selected subject and family, then stores three before-walk and three after-walk bodies. They were captured through the public-authored family scenario and real HTTP continuation helper at page size four. Content, memberships and claims can appear on different pages; another side's response can repeat its first page. Those are the cases the read-cycle test must preserve.
+### Current input shape
 
-### Conventions
+- Root keys: `["family_id", "subject_id", "before", "after"]`
+- Root collection sizes (physical JSON containers, not gate verdicts): `{"before": {"kind": "list", "count": 4}, "after": {"kind": "list", "count": 5}}`
+- Structured state blocks (a state beside payload, operation, comparison, cards, worklist, entries or items): 27; the bounded inventory below shows 6. This is a structural inventory, not a producer count. Other values remain available through the whole-file citation.
 
-Regenerate through the existing scenario and HTTP walk helper when the wire contract changes. Do not hand-edit successful response bodies to manufacture an expected display. Deliberate negative mutations belong in the consuming test and are explicitly asserted as failures.
+#### Recorded state block 1
 
-### Invariants And Boundaries
+```json
+{
+  "jsonPath": "$[\"before\"]",
+  "state": "review",
+  "operation": "read_knowledge_review",
+  "candidate": {
+    "repository_id": "agents-remember",
+    "master": "260928_maintained-invariant-knowledge",
+    "leaf_id": "260928-MIK-L37",
+    "task_ref": "260928_maintained-invariant-knowledge"
+  },
+  "knowledge": {
+    "selection_state": "subject_selected",
+    "revision_selection": {
+      "record_kind": "invariant",
+      "record_id": "8b1a17ca-96ba-5ede-a09f-abfb11ada0a5",
+      "state": "compared",
+      "before_revision_id": "66a9bb32-08f4-5ff4-8d80-63a8417606cb",
+      "after_revision_id": "ee4052e3-a8b7-5289-9399-d609257cc16a",
+      "before_heads": [
+        "66a9bb32-08f4-5ff4-8d80-63a8417606cb"
+      ],
+      "after_heads": [
+        "ee4052e3-a8b7-5289-9399-d609257cc16a"
+      ],
+      "before_retained": [
+        "66a9bb32-08f4-5ff4-8d80-63a8417606cb"
+      ],
+      "after_retained": [
+        "ee4052e3-a8b7-5289-9399-d609257cc16a"
+      ],
+      "statement": "the invariant 8b1a17ca-96ba-5ede-a09f-abfb11ada0a5 comparison uses the before revision 66a9bb32-08f4-5ff4-8d80-63a8417606cb and the after revision ee4052e3-a8b7-5289-9399-d609257cc16a, each recorded by its own memory tree"
+    }
+  },
+  "judgment": {
+    "state": "rows",
+    "detail": "The leaf's recorded judgments in attempt order.",
+    "rows.count": 2,
+    "proofs.count": 1
+  },
+  "family_context": {
+    "state": "partial",
+    "families_total": 1,
+    "families_returned": 1,
+    "families_remaining": 0,
+    "membership_rows_total": 6,
+    "unique_member_revision_total": 5,
+    "entries.count": 1,
+    "sides": [
+      {
+        "family_id": "fa2aac3a-f406-595a-a1e6-b50c656704ca",
+        "side": "before",
+        "state": "recorded",
+        "members_total": 3,
+        "members.count": 3,
+        "page": {
+          "state": "first_page",
+          "complete": false,
+          "counts": {
+            "invariant_revisions_total": 3,
+            "family_revisions_total": 1,
+            "memberships_total": 3,
+            "realization_claims_total": 9,
+            "advertised_expansions_total": 0,
+            "primary_items_total": 16,
+            "primary_items_returned": 4,
+            "primary_items_remaining": 12,
+            "distinct_source_locations_total": 9,
+            "distinct_source_paths_total": 8,
+            "unresolved_anchor_total": 5
+          }
+        }
+      },
+      {
+        "family_id": "fa2aac3a-f406-595a-a1e6-b50c656704ca",
+        "side": "after",
+        "state": "recorded",
+        "members_total": 3,
+        "members.count": 3,
+        "page": {
+          "state": "first_page",
+          "complete": false,
+          "counts": {
+            "invariant_revisions_total": 3,
+            "family_revisions_total": 1,
+            "memberships_total": 3,
+            "realization_claims_total": 11,
+            "advertised_expansions_total": 0,
+            "primary_items_total": 18,
+            "primary_items_returned": 4,
+            "primary_items_remaining": 14,
+            "distinct_source_locations_total": 11,
+            "distinct_source_paths_total": 9,
+            "unresolved_anchor_total": 0
+          }
+        }
+      }
+    ]
+  }
+}
+```
 
-These are regression fixture records, not the project's published knowledge database, a new selection authority or installed-browser evidence. The complete response keeps comparison, subject, family, source and evidence dimensions available to the real client.
+#### Recorded state block 2
 
-### Todos
+```json
+{
+  "jsonPath": "$[\"before\"][\"payload\"][\"source\"][\"inventory\"]",
+  "state": "measured",
+  "entries.count": 179
+}
+```
 
-None recorded.
+#### Recorded state block 3
 
-## Docs References
+```json
+{
+  "jsonPath": "$[\"before\"][\"payload\"][\"family_context\"]",
+  "state": "partial",
+  "entries.count": 1
+}
+```
 
-No Domain Documentation source is configured; the capture's producer and consumer are repository source.
+#### Recorded state block 4
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain source could be checked. | — | — |
+```json
+{
+  "jsonPath": "$[\"before\"]",
+  "state": "review",
+  "operation": "read_knowledge_review",
+  "candidate": {
+    "repository_id": "agents-remember",
+    "master": "260928_maintained-invariant-knowledge",
+    "leaf_id": "260928-MIK-L37",
+    "task_ref": "260928_maintained-invariant-knowledge"
+  },
+  "knowledge": {
+    "selection_state": "subject_selected",
+    "revision_selection": {
+      "record_kind": "invariant",
+      "record_id": "8b1a17ca-96ba-5ede-a09f-abfb11ada0a5",
+      "state": "compared",
+      "before_revision_id": "66a9bb32-08f4-5ff4-8d80-63a8417606cb",
+      "after_revision_id": "ee4052e3-a8b7-5289-9399-d609257cc16a",
+      "before_heads": [
+        "66a9bb32-08f4-5ff4-8d80-63a8417606cb"
+      ],
+      "after_heads": [
+        "ee4052e3-a8b7-5289-9399-d609257cc16a"
+      ],
+      "before_retained": [
+        "66a9bb32-08f4-5ff4-8d80-63a8417606cb"
+      ],
+      "after_retained": [
+        "ee4052e3-a8b7-5289-9399-d609257cc16a"
+      ],
+      "statement": "the invariant 8b1a17ca-96ba-5ede-a09f-abfb11ada0a5 comparison uses the before revision 66a9bb32-08f4-5ff4-8d80-63a8417606cb and the after revision ee4052e3-a8b7-5289-9399-d609257cc16a, each recorded by its own memory tree"
+    }
+  },
+  "judgment": {
+    "state": "rows",
+    "detail": "The leaf's recorded judgments in attempt order.",
+    "rows.count": 2,
+    "proofs.count": 1
+  },
+  "family_context": {
+    "state": "partial",
+    "families_total": 1,
+    "families_returned": 1,
+    "families_remaining": 0,
+    "membership_rows_total": 6,
+    "unique_member_revision_total": 5,
+    "entries.count": 1,
+    "sides": [
+      {
+        "family_id": "fa2aac3a-f406-595a-a1e6-b50c656704ca",
+        "side": "before",
+        "state": "recorded",
+        "members_total": 3,
+        "members.count": 3,
+        "page": {
+          "state": "continued",
+          "complete": false,
+          "counts": {
+            "invariant_revisions_total": 3,
+            "family_revisions_total": 1,
+            "memberships_total": 3,
+            "realization_claims_total": 9,
+            "advertised_expansions_total": 0,
+            "primary_items_total": 16,
+            "primary_items_returned": 8,
+            "primary_items_remaining": 8,
+            "distinct_source_locations_total": 9,
+            "distinct_source_paths_total": 8,
+            "unresolved_anchor_total": 5
+          }
+        }
+      },
+      {
+        "family_id": "fa2aac3a-f406-595a-a1e6-b50c656704ca",
+        "side": "after",
+        "state": "recorded",
+        "members_total": 3,
+        "members.count": 3,
+        "page": {
+          "state": "first_page",
+          "complete": false,
+          "counts": {
+            "invariant_revisions_total": 3,
+            "family_revisions_total": 1,
+            "memberships_total": 3,
+            "realization_claims_total": 11,
+            "advertised_expansions_total": 0,
+            "primary_items_total": 18,
+            "primary_items_returned": 4,
+            "primary_items_remaining": 14,
+            "distinct_source_locations_total": 11,
+            "distinct_source_paths_total": 9,
+            "unresolved_anchor_total": 0
+          }
+        }
+      }
+    ]
+  },
+  "page": {
+    "collection": "family_members",
+    "state": "continued",
+    "returned": 8,
+    "remaining": 8,
+    "total": 16,
+    "total_basis": "selection",
+    "scope": [
+      "side=before",
+      "family_revision_id=69927d22-e430-55b2-8f31-f84e01534db1",
+      "policy_version=recorded-family-frontier/v1",
+      "page_size=4"
+    ],
+    "continuation.fieldPresent": true,
+    "continuation.nonNull": true,
+    "continued_from.fieldPresent": true,
+    "continued_from.nonNull": true
+  }
+}
+```
 
-## Repo-Internal References
+#### Recorded state block 5
 
-The document's identifiers and walks are paired with the existing real-route producer and mounted consumer.
+```json
+{
+  "jsonPath": "$[\"before\"][\"payload\"][\"source\"][\"inventory\"]",
+  "state": "measured",
+  "entries.count": 179
+}
+```
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The fixture names its exact selected family, subject and before walk. | "family_id"; "subject_id"; "before" | dashboard/src/panels/review/familyPaging.captured.json:1-5 |
-| The second collection holds the after-side walk. | "after" | dashboard/src/panels/review/familyPaging.captured.json:3183-3184 |
-| The producer follows published HTTP cursors under one fixed bound. | `walk_responses` | mcp/tests/test_review_family_context_population.py:475-497 |
-| The consumer reads the complete captured bodies before mounting the actual read cycle. | "familyPaging.captured.json" | dashboard/src/panels/review/ReviewReadCycle.family.test.tsx:12-35 |
+#### Recorded state block 6
 
-## Cross-Repo References
+```json
+{
+  "jsonPath": "$[\"before\"][\"payload\"][\"family_context\"]",
+  "state": "partial",
+  "entries.count": 1
+}
+```
 
-No external repository boundary is introduced.
+### Reading boundary
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repository reference is required. | — | — |
+Missing fields are not converted into zero counts. Present state, measured population, carried page and continuation-field presence remain separate observations; an opaque cursor is not decoded or called admitted here. Synthetic overlays in consuming tests require their own disclosure and do not turn this recorded body into fresh native or browser acceptance. Regeneration belongs to the source/capture owner; old fixture descriptions below are not instructions to fabricate successful response bytes.
 
-## Update History
+## Previous Input Account — Historical Only
 
-- 2026-09-28T16:55:00+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): No content impact: the bytes are unchanged (still the `a5bec6c3` capture). Re-measured the range into `ReviewReadCycle.family.test.tsx`, whose header grew by the not-re-captured statement.
+The following account describes the preceding fixture bytes, receipts and consuming-test scope. Its present-tense clauses, measurements and numeric reference labels are historical, not current guarantees or live citations. The actual current input shape is recorded above; general design context is retained here rather than discarded.
 
-- 2026-09-27T02:44:54Z — L40: No content impact: reviewed the existing claim against the same named moved source owner and retained its meaning while rebinding the reference. This source artifact is unchanged; prior history and verification metadata remain intact.
+> # dashboard/src/panels/review/familyPaging.captured.json
+>
+> ## Governing Overview
+>
+> [panels route overview](../overview.md)
+>
+> ## Purpose
+>
+> Retain complete real HTTP review responses for a bounded two-sided family walk, so mounted client regressions consume the production wire shape.
+>
+> ## Code Commentary
+>
+> ### Logic
+>
+> The document identifies one selected subject and family, then stores three before-walk and three after-walk bodies. They were captured through the public-authored family scenario and real HTTP continuation helper at page size four. **MIK-L31 re-captured them from the current route** (MIK-R31 rule 6, the L44-R1-F5 remainder; L44's producer, first build accepted, one attempt; the receipt's `mik_l31_recapture` row, requests `paging1-paging-before-0` to `paging1-paging-after-2`), so the member sources now carry `locator`, `resolved_ranges` and `locator_state`. On this draw the before walk reads 11 items in three bodies (the last with nothing remaining) and the after walk 9. Family order follows the stored identities each build draws afresh, so the late-source case of `ReviewReadCycle.family.test.tsx` opens the subject inside this document's own `family_id` explicitly. Content, memberships and claims can appear on different pages; another side's response can repeat its first page. Those are the cases the read-cycle test must preserve.
+>
+> ### Conventions
+>
+> Regenerate through the existing scenario and HTTP walk helper when the wire contract changes. Do not hand-edit successful response bodies to manufacture an expected display. Deliberate negative mutations belong in the consuming test and are explicitly asserted as failures.
+>
+> ### Invariants And Boundaries
+>
+> These are regression fixture records, not the project's published knowledge database, a new selection authority or installed-browser evidence. The complete response keeps comparison, subject, family, source and evidence dimensions available to the real client.
+>
+> ### Todos
+>
+> None recorded.
+>
+> ## Evidence
+>
+> ### Docs References
+>
+> No Domain Documentation source is configured; the capture's producer and consumer are repository source.
+>
+> No configured domain source could be checked.
+>
+> ### Repo-Internal References
+>
+> The document's identifiers and walks are paired with the existing real-route producer and mounted consumer.
+>
+> - The fixture names its exact selected family, subject and before walk. (historical reference 1)
+> - The second collection holds the after-side walk. (historical reference 2)
+> - The receipt row for this document in the MIK-L31 re-capture. (historical reference 3)
+> - The producer follows published HTTP cursors under one fixed bound. (historical reference 4)
+> - The consumer reads the complete captured bodies before mounting the actual read cycle. (historical reference 5)
+>
+> ### Cross-Repo References
+>
+> No external repository boundary is introduced.
+>
+> No cross-repository reference is required.
 
-- 2026-09-27T02:33:38+00:00: Generated citation repair: `walk_responses` repointed to mcp/tests/test_review_family_context_population.py:475-497. No content impact: mechanical anchor-range projection bound to citation source snapshot 8d622ab90c9b13974d7092fdff43b4fba5681d634b1dc5af7229f82cc78dbdaa; claim bytes unchanged; generated by ccr-r10@v1.
+## Evidence
 
-- 2026-09-27T01:04:07+00:00 — Created the fixture card with public-authoring/HTTP provenance and its bounded regression purpose. It confers no live-knowledge or product-acceptance authority; verification hash/date remain blank until real closeout.
+### Repo-Internal References
 
+- The current retained JSON input supplies the literal identities, response states and populations summarized above; these are fixture facts, not live project knowledge or fresh execution evidence. [6]

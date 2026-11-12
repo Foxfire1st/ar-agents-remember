@@ -1,28 +1,28 @@
 # dashboard/src/types/projection.schema.json
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/types/projection.schema.json` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00 |
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [overview](../overview.md)
 
 ## Purpose
 
-Generated JSON Schema for the dashboard projection contract: typed projections, wire envelopes, and capability/status payloads consumed by the cockpit.
+Generated JSON Schema for core WorkspaceProjection, with TaskEntry/TaskCounts as the sole task identity/state/activity/membership/count contract and TaskSummary as separate content. Served-only servingBuild/watcherHealth diagnostics are folded into the TypeScript mirror by the generator, not this core JSON.
 
 ## Code Commentary
 
-The lifecycle phase vocabulary now includes `recovering-private-preparation`. This exposes the existing private-preparation recovery phase without granting publication or lifecycle authority to the dashboard. Evidence: dashboard/src/types/projection.schema.json:1981-1981.
+### Task-reader display definitions
 
-L23 adds the closed `LifecycleOperationProjection` schema and the optional `EnclosureNode.lifecycleOperation` reference. Operation kind, status, and phase are closed vocabularies; process/resume identities remain absent from the public schema. Since 260831-CCR (commit `99dc249b`) the schema adds the optional `LifecycleOperationProjection.taskIntent` reference to the `TaskIntentIdentity` definition and the new `TaskIntentIdentity` `` entry carrying the closed `task-intent/v1` schema and the 64-hex digest pattern.
+Generated TaskSummary display definitions now include form, header-note label/value rows and total, status
+note/preview flag, review state/finding rows and top-level step note/outcome flags. The Python schema
+uses construction defaults for many of these fields; do not confuse a defaulted JSON Schema property
+with the generated TypeScript mirror's required present field. The real producer supplies whole-round
+openFindings and totalFindings before bounding the findings slice. A genuine older producer supplies
+no review state; the recovery proof does not weaken the current producer's count obligation.
+
+
+The lifecycle phase vocabulary now includes `recovering-private-preparation`. This exposes the existing private-preparation recovery phase without granting publication or lifecycle authority to the dashboard. Evidence: the generated `LifecycleOperationProjection.phase` definition.
+
+L23 adds the closed `LifecycleOperationProjection` schema and the optional `EnclosureNode.lifecycleOperation` reference. Operation kind, status, and phase are closed vocabularies; process/resume identities remain absent from the public schema. Since 260831-CCR (commit `99dc249b`) the schema adds the optional `LifecycleOperationProjection.taskIntent` reference to the `TaskIntentIdentity` definition and the new `TaskIntentIdentity` `$defs` entry carrying the closed `task-intent/v1` schema and the 64-hex digest pattern.
 
 ### Logic
 
@@ -30,58 +30,100 @@ The generated `LifecycleOperationProjection.phase` enum contains code and memory
 phases, with no `ledger-commit` or `direct-ledger-commit` phase. Cache refresh is not a third Git
 operation for the dashboard to wait on. The JSON Schema remains generated from the Python model.
 
-- `` (line 2) holds the reusable projection schema definitions.
+- `$defs` holds the reusable projection schema definitions, including the attention row's
+  `AttentionItemClass` enum and the widened `AttentionLane` members `agent` and `task`.
 - `ActionAvailability` (line 3) declares whether one action is safe, decided by the reducer, never the UI.
-- `AgentPickupNode` (line 47) declares a pending dashboard response waiting for an agent to consume it.
 - `TaskDocumentRef` is the repository-qualified task identity reused by terminal, inbox, and
   projection fields; task ownership is not encoded as a leaf-key string.
-- `TaskDocNode` carries the optional `executionNature` and `executionGraph` contract plus
-  required graph-derived `executionWaves`; `TaskExecutionGraphNode` and
+- `TaskSummary` carries the optional `executionNature` and `executionGraph` contract plus
+  declared graph-derived `executionWaves`; `TaskExecutionGraphNode` and
   `TaskExecutionEdgeNode` preserve canonical task references and dependency reasons without
   adding scheduler priority or judgment to the generated wire schema. Since 260815-DAG-L11 the
   graph shape is leaf-segmented: `TaskExecutionNode` (`kind`, `ref`, `leafIds`) and
   `TaskExecutionEndpointNode` (`ref` + optional `leafId`) mirror the served segment model,
   `executionWaves` is typed over `TaskExecutionNode`, and the edge carries the optional
   `judgmentId` provenance reference.
-- `LifecycleOperationProjection.taskIntent` (line 1993-2006) is an optional `TaskIntentIdentity`
-  reference defaulting to null; `TaskIntentIdentity` (line 3776-3796) requires the 64-hex
+- `LifecycleOperationProjection.taskIntent` is an optional `TaskIntentIdentity`
+  reference defaulting to null; `TaskIntentIdentity` requires the 64-hex
   `digest` and constrains `schema` to `task-intent/v1`.
+- `TaskEntry.activity` has the closed values `works`, `waiting`, `paused` and `unknown`, `TaskCounts`
+  has an integer `waiting` (default 0), and `TaskEntry` has an optional `waitingSeats` array of closed
+  `WaitingSeat` objects: `agentId`, `waitsFor` (`subagent` and/or `background`) and `since` are
+  required; `role`, `checkDueAt` and `detail` may be absent/null. This exposes what the producer
+  serves for a waiting task, not browser authority over it.
 
 ### Conventions
+
+
+**INV-XZYGEB.** The schema is the contract the client is generated and checked against, so the fact's shape is stated here.
+
+## L126 Product-Record Wire Flag
+
+The `TaskDecisionNode` schema carries `product_record` (boolean, default false):
+true when the entry is a product-written record, set server-side from the
+writers' own constants. The stored decision shape is unchanged by the marking.
 
 Generated by `scripts/sync-projection-types.py`; do not hand-edit the schema without regenerating.
 
 ### Invariants And Boundaries
 
-- The schema is a generated artifact; source of truth is the Python wire schemas (`WorkspaceProjection.model_json_schema()` and the served projection schema) plus the generator script; regenerate with `scripts/sync-projection-types.py`.
-- Under the canonical Python 3.13 runtime, named `Literal` vocabularies appear once in `` and
-  their model properties use local `` values. The wire values are unchanged.
+- This JSON is generated from `WorkspaceProjection.model_json_schema()`; the served projection schema supplements the TypeScript artifact, not this JSON. Change the Python owner/generator and resynchronize with `scripts/sync-projection-types.py`, rather than hand-editing either artifact. Source inspection is not regeneration or a stale-output check.
+- Under the canonical Python 3.14 runtime, named `Literal` vocabularies appear once in `$defs` and
+  their model properties use local `$ref` values. The wire values are unchanged.
 - The intent identity is projection-only: the dashboard observes the digest, it never mints, mutates, or reuses one.
 
 ### Todos
 
 None.
 
-## Docs References
+## External grant display shape
+
+TaskSummary carries optional directGrant display evidence and typed giver/time data. Schema presence is not grant permission; current external authority stays backend-owned. Regenerate together with the Python observer/types.
+
+## Task-list disagreement wire shape
+
+The generated core schema gives `TaskEntry` an optional `disagreements` array of closed `TaskListDisagreement` objects. Its four kinds are `names-another-master`, `not-listed`, `listed-twice` and `unresolvable-master`; record identity is required, while row, recordMaster, parent and masterLiteral may be absent/null. This exposes producer evidence, not browser membership-repair authority. Regenerate from the Python owner rather than hand-editing this JSON.
+
+## Optional Task Order and Structured Prose
+
+TaskSummary carries optional fixed prose, completion time, waitsFor and resolved dependency arrays as content. TaskDependencyNode requires id/title and permits an absent canonical reference; no task state or jump is invented for a file-less dependency. TaskEntry owns identity, stage/activity, parent/children/counts and worktrees; TaskCounts covers stages and started activity buckets. Graph cycle remains optional display evidence, not browser scheduling/validation.
+
+
+
+- Optional nullable graph cycle flag. [11]
+
+- Generator separates core JSON schema from served TypeScript tail; entry point can sync/check but was not invoked here. [12]
+
+
+## Evidence
+
+
+- The generated dependency requires id/title with optional reference, and TaskEntry retains eventAt without task-event ageSeconds. [13]
+
+
+
+
+### Docs References
 
 No Domain Documentation source is configured in the resolved memory repository. The current
 contract is supported by the implementation and the authorized cache-retirement requirement.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured external domain source applies. | — | — |
+No configured external domain source applies.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The generated phase enum excludes ledger-commit phases while preserving the code/memory publication vocabulary. | `memory`; "memory-refresh"; "direct-memory-commit" | dashboard/src/types/projection.schema.json:1971-2008 |
-| The `$defs` block contains all reusable projection schema definitions. | "$defs"; `$defs` | dashboard/src/types/projection.schema.json:2-2 |
-| `ActionAvailability` declares reducer-decided action safety for the cockpit. | `type`; `ActionAvailability` | dashboard/src/types/projection.schema.json:3-46 |
-| `AgentPickupNode` declares a pending unacked dashboard response. | `type`; `AgentPickupNode` | dashboard/src/types/projection.schema.json:47-304 |
-| The generated `task-intent/v1` identity definition with closed schema and digest pattern. | `intent`; "task-intent/v1" | dashboard/src/types/projection.schema.json:4115-4136; dashboard/src/types/projection.schema.json:4125-4145 |
-| The optional task-intent reference on the lifecycle operation projection. | `null`; "taskIntent" | dashboard/src/types/projection.schema.json:2084-2094 |
-| The served closeout-queue node: no `maxItems` on `members`, `maxItems: 256` still on `sourceProblems`. | `type`; `members` | dashboard/src/types/projection.schema.json:630-692 |
+- The generated phase enum excludes ledger-commit phases while preserving the code/memory publication vocabulary. [1]
+- The `$defs` block contains all reusable projection schema definitions. [2]
+- `ActionAvailability` declares reducer-decided action safety for the cockpit. [3]
+
+- The optional task-intent reference on the lifecycle operation projection. [6]
+- The served closeout-queue node: no `maxItems` on `members`, `maxItems: 256` still on `sourceProblems`. [7]
+
+### Cross-Repo References
+
+No separate cross-repository implementation claim is made.
+
+No external implementation source applies.
 
 ## L23 Source-Lineage Schema
 
@@ -100,7 +142,7 @@ after organizational leaves moved to direct sprint-super ownership.
 
 ## 260815-DAG-L12 Schema Regeneration
 
-The JSON schema was regenerated to mirror the render-ready sprint graph view shapes (L12-R4): `TaskExecutionGraphView`, `TaskExecutionNodeView`, `TaskExecutionPredecessorNode`, and the optional `executionGraphView` on `TaskDocNode`. Generated by `scripts/sync-projection-types.py`; hand edits are overwritten.
+The JSON schema was regenerated to mirror the render-ready sprint graph view shapes (L12-R4): `TaskExecutionGraphView`, `TaskExecutionNodeView`, `TaskExecutionPredecessorNode`, and the optional `executionGraphView` on `TaskSummary`. Generated by `scripts/sync-projection-types.py`; hand edits are overwritten.
 
 
 ## 260821-CLIVE-L2 Lifecycle Operation Projection Contract
@@ -111,10 +153,8 @@ list of opaque command payloads (bounded to 32 entries; required by the generate
 and unreadable outcomes. The schema remains projection-only; it does not transfer lifecycle
 authority to the dashboard or to the disposable closeout projection.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The coherent operation envelope generates optional generation, first-class direct-landing kind, bounded legal-control payloads, and terminal/unreadable/incoherent status variants. | `type`; "One coherent, task-addressed lifecycle journal observation."; "incoherent" | dashboard/src/types/projection.schema.json:1830-2116 |
-| The generated TypeScript mirror requires the legalControls array on its operation observation. | `string`; `LifecycleOperationProjection` | dashboard/src/types/projection.ts:334-363 |
+- The coherent operation envelope generates optional generation, first-class direct-landing kind, bounded legal-control payloads, and terminal/unreadable/incoherent status variants. [8]
+- The generated TypeScript mirror requires the legalControls array on its operation observation. [9]
 
 ## 260821-CLIVE Disposable Queue And Discard Audit Contract
 
@@ -122,13 +162,13 @@ The generated schema replaces mutable queue blocker/candidate state with exact-c
 types: `CloseoutQueueNode` carries service condition, optional current-source identity, bounded source
 problems, and generation-keyed members; a member carries classification, priority, order, and
 reasons. The member array carries no item ceiling — its `maxItems: 256` was removed with the
-closeout candidate cap, although the array itself remains a required declared property. These rows
+closeout candidate cap, although the array remains a declared, defaulted property rather than a JSON Schema required field. These rows
 are observation-only views over waiting door generations, not lifecycle, claim,
 commit, certification, recovery, or terminal evidence.
 
 `DiscardUnstartedProofNode` records the exact absence/state proof and fingerprint used to remove an
 unstarted task, while `DiscardedSubTaskNode` retains its identity, reason, timestamp, and proof.
-`SeriesNode` requires discard count/history; `TaskDocNode` carries the optional equivalent. Discarded
+TaskSummary carries discard count/history as content audit data. Discarded
 work remains separate from live completion.
 
 Runtime refinements including item limits, numeric minima, fingerprints, and string bounds remain
@@ -147,7 +187,7 @@ projection file existed, so an absent queue cannot be mistaken for retained sche
 ## 260831-CCR-R02 Task-Intent Wire Shape
 
 The regenerated schema adds `TaskIntentIdentity` (closed `task-intent/v1` schema plus 64-hex
-digest) as a `` entry and attaches it optionally to `LifecycleOperationProjection.taskIntent`.
+digest) as a `$defs` entry and attaches it optionally to `LifecycleOperationProjection.taskIntent`.
 Observers see the exact canonical identity a door/operation/journal binds; the schema remains
 projection-only and transfers no intent authority to the dashboard.
 
@@ -159,105 +199,12 @@ or null, defaulting to null — the schema mirror of the optional CCR-R15 wait c
 populate for record-bound envelopes.
 
 
-## Cross-Repo References
+## 20261023-L190-v2 Attention Item Dismissibility Description
 
-No separate cross-repository implementation claim is made.
+The generated `AttentionItem.description` (`projection.schema.json:113`) now states MIK-R200@v2: every published row is dismissed once per occurrence, so `dismissible` is true for all of them; the acknowledgement hides exactly that occurrence and changes nothing at its cause; `itemClass` says only how an occurrence also ends — `action` by its native cause ending, `notice` by the bounded notice store, `operational` by observed recovery. `dismissible` stays in the published contract with `default: true` (`:163`) so a served row states its own dismissibility instead of leaving a client to infer it from the kind; a client that receives `false` from an older producer still dismisses the row. This is the Python model's docstring rendered by the generator; change `observer/projection.py:285-304` and regenerate with `scripts/sync-projection-types.py`, never this JSON.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external implementation source applies. | — | — |
-
-## Update History
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-
-- 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Removed the retired ledger-commit phases from the documented generated projection vocabulary. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.
-
-
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 3
-  claim(s) whose anchor no longer sat in its cited range and normalised 0 further range(s) in this
-  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
-  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
-  back at its current position. Verification metadata remains closeout-owned.
-- 2026-09-13T22:22+02:00 — L6 (260913-LCA): the regenerated schema no longer caps the closeout candidate population. `CloseoutQueueNode.members` lost its `maxItems: 256` (one deleted line, regenerated through `scripts/sync-projection-types.py` from `observer/projection.py`), so the two "bounded members" claims are corrected to name the withdrawn refinement and the bounds that survive (`CloseoutCandidateNode.reasons`, `CloseoutQueueNode.sourceProblems`). Added one evidence row for the served queue node (630-692); the `$defs` header, `TaskIntentIdentity` and `taskIntent` anchors still resolve. Source is a read-only uncommitted change set; verification metadata remains closeout-owned and no stamp advanced.
-- 2026-09-06T22:41:21+00:00: Generated citation repair: "\"TaskIntentIdentity\": {" repointed to dashboard/src/types/projection.schema.json:4117-4117. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-06T22:41:21+00:00: Generated citation repair: "\"taskIntent\": {" repointed to dashboard/src/types/projection.schema.json:2087-2087. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-06T21:51:23+00:00 — Reconciled the landed IAS source delta and actual preparation/fixture boundaries; existing verification pins and history are preserved.
-
-- 2026-09-05T07:19:22+00:00 — L31-MR-02 history recovery: restored the original dated L18 entry verbatim from memory commit fd41221f11dfe5ac2993520c0d7176ada59ce2ba (its recorded code provenance: f93ac631ca161e5880db3a937728cb256686b13b). This preserves sibling curation history; current body and verification metadata are unchanged.
-
-
-- 2026-09-05T06:38:58+00:00 — CCR L31 dashboard citation curation: re-read the scoped claims against frozen source `ea35964985f30080488270e71ac81657ac40682b`, split pooled evidence and corrected current source boundaries. Historical claims retain their recorded provenance. This is scoped claim review; existing whole-file verification metadata is unchanged.
-- 2026-09-05T06:24:16+00:00: Generated citation repair: "\"TaskIntentIdentity\": {" repointed to dashboard/src/types/projection.schema.json:4116-4116. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-05T06:24:16+00:00: Generated citation repair: "\"taskIntent\": {" repointed to dashboard/src/types/projection.schema.json:2086-2086. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec (lifecycle status-change waiting): recorded the regenerated `meaningfulRevision` schema member.
-- 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 memory pass: recorded the regenerated lifecycle envelope schema (versions, incoherent status, new identity/binding/worker/approval/recommendation `$defs`). Verified at code commit f93ac631ca161e5880db3a937728cb256686b13b.
-
-- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 99dc249bd507 (CCR-R02@v2/L25):
-  regenerated-schema card updated for the optional `LifecycleOperationProjection.taskIntent` and
-  the new `TaskIntentIdentity` `` (closed `task-intent/v1` schema + digest pattern);
-  documented the projection-only authority boundary. Verified at code commit 99dc249bd507c20b09ece1169c2b1fa2af8e8c1b.
-
-- 2026-08-29T19:04+02:00 — Regenerated under canonical Python 3.13: attention and process
-  vocabularies now use Pydantic's named local enum definitions without changing their values or the
-  generated TypeScript contract. Verification remains closeout-owned.
-
-- 2026-08-25T17:21+02:00 — Regenerated the closed invalidation outcome vocabulary after removing
-  the impossible `not-created` branch. Verification remains closeout-owned.
-
-- 2026-08-24T15:04+02:00 — Regenerated and documented the disposable closeout projection,
-  discard-before-start audit shapes, and exact JSON Schema refinement boundary while preserving the
-  newer lifecycle-operation projection contract.
-
-- 2026-08-24T00:51+02:00 — 260821-CLIVE-L2: documented the generated lifecycle-operation schema contract and its projection-only authority boundary. Verified at code commit `1d446724`.
-
-
-- 2026-08-20T10:45+02:00 — 260815-DAG-L12:   regenerated for the render-ready graph view shapes (L12-R4). Verified at code commit b7f2c8e2.
-
-- 2026-08-20T04:38+02:00 — 260815-DAG-L14: the projection schema gains the `TaskSeatNode` 
-  entry and `TaskDocNode.seats` / `TaskSubTaskRefNode.masterRef` properties (regenerated from the
-  Python schema by `scripts/sync-projection-types.py`). Verified at code commit 9c3180c1.
-
-
-- 2026-08-19T08:55+02:00 — 260815-DAG-L11: regenerated from the server projection with the
-  leaf-segmented graph definitions (`TaskExecutionNode`, `TaskExecutionEndpointNode`,
-  edge `judgmentId`, node-typed `executionWaves`). Verification remains closeout-owned.
-
-- 2026-08-18T13:00+02:00 — No content impact: 260815-DAG-L8 added the closeout-queue projection surface (closeoutQueues); the behavior this card describes is unchanged.
-
-- 2026-08-15T23:38+02:00 — 260815-DAG-L4: recorded the regenerated
-  organizational lineage literal and exact dashboard/server projection parity.
-  Verification remains closeout-owned.
-- 2026-08-15T02:16:50+02:00 — 260815-DAG-L1: regenerated from the server projection with the closed
-  execution-nature enum, reasoned graph nodes/edges, and derived execution waves.
-- 2026-08-12T20:10+02:00 — L23 curator: documented the generated lineage schema and its sole open recovery-args map; verification remains closeout-owned.
-
-- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
-
-- 2026-08-11T19:58+02:00 — Recorded the generated `TaskDocumentRef` definition and the projection,
-  subject, and owner fields that consume it after leaf-key removal.
-- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the regenerated schema — the
 ## 260713-TES-L5 Current Delta — Regenerated AgentPickupNode Description
 
-The generated schema's `AgentPickupNode.description` now carries the N16 landing semantics:
-pending rows wait for a turn-boundary landing (the system acks), `operator_inbox_consume` is
-an optional attribution marker with nothing mechanical attached, and the sweep predicates read
-the stores directly and never this projection. Regenerated via `scripts/sync-projection-types.py`
-from the `AgentPickupNode` docstring in `observer/projection.py`; codegen-current per the worker
-report and reviewer verification.
+The schema no longer declares AgentPickupNode or session lifecycle/duplicate task-document/series catalogues. Retained landing-operation envelopes and exact-current queue contracts remain independent projection evidence.
 
-## Update History
-
-- 2026-08-20T04:38+02:00 — 260815-DAG-L14: the projection schema gains the `TaskSeatNode` 
-  entry and `TaskDocNode.seats` / `TaskSubTaskRefNode.masterRef` properties (regenerated from the
-  Python schema by `scripts/sync-projection-types.py`). Verified at code commit 9c3180c1.
-
-
-- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the regenerated schema — the
-  `AgentPickupNode.description` rides the Python docstring rewrite (turn-boundary landing,
-  attribution-only consume, sweep predicates never read the projection), regenerated via
-  `scripts/sync-projection-types.py` and codegen-current. Verification metadata pinned until
-  closeout stamps the 260713-TES-L5 commit.
-- 2026-08-05T03:50+02:00 — 260731-EFA-L6 batch B curator: corrected the generated-schema source-of-truth invariant to name the Python wire schemas and generator script, matching the frozen snapshot.
-- 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new generated schema; anchors derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.
+- Generated TaskEntry disagreement references and the four-kind closed object preserve qualified record identity and optional discrepancy detail. Schema shape alone is not reconciliation. [14]

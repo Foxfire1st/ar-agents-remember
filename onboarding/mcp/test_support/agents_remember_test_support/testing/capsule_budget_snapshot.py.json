@@ -1,0 +1,73 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_snapshot.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Measured sizes are kept apart from approved limits.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd6cba5a5aaecb149b212d37fb2195784f3b76e7",
+            "content": "sha256:b8343a5b327380779b2cacb2af49e29aadc0bcbe3730d772ee496e2a88fe5e2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_D681_LIMITS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The history and decision fingerprints are fixed constants.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd6cba5a5aaecb149b212d37fb2195784f3b76e7",
+            "content": "sha256:70a0e4d5535a755b0d439a62ac66a3f5f9b423a1f8c9915738b530b04db1217c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_D681_HISTORY_SHA256"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "One later decision raises a single step-detail budget.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd6cba5a5aaecb149b212d37fb2195784f3b76e7",
+            "content": "sha256:633bc8bbac9f84dbdee875e69e1d649cbee509f252f12a3392a7e492a220b082",
+            "locator": {
+              "kind": "symbol",
+              "name": "_D682_DECISION"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The current checker binds this file by its SHA-256.\n\nAnchor: `historicalSnapshotSha256`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8318c7529a92a28e65eb4163a582e66d3bb3d62",
+            "content": "sha256:99bfafecbc8eb95945d5f6f3196f259e264f407c1e6482017ec720c1bab56c6d",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 120
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

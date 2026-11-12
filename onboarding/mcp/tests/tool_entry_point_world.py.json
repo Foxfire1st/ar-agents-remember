@@ -1,0 +1,725 @@
+{
+  "path": "mcp/tests/tool_entry_point_world.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+        "content": "sha256:749bf2c0a6f0b0968338fd50f754af15cb1791e1163ef62f60bba088bb3f45e0",
+        "locator": {
+          "end": 889,
+          "kind": "line_range",
+          "start": 1
+        }
+      },
+      "id": "RLZ-20QKDA",
+      "invariant": "INV-TG334W",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-20",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "the realization entry the existing row records; unchanged by this landing",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+        "content": "sha256:0f306524e822c2ba7fdc3e1c1007d96a0fabab7e2d6d03f04c2b7e9c5bb71836",
+        "locator": {
+          "kind": "symbol",
+          "name": "_returned_arm"
+        }
+      },
+      "id": "RLZ-2TZQC9",
+      "invariant": "INV-T8FDTX",
+      "origin": {
+        "handoffEntry": "L130-answer-judged-delivered",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "Applies the envelope ban from the product's own ENVELOPE_STRIPPED_FIELDS, walks every nested key against the whole result with only product-derived shaping allowances, and reads refusal marks off the delivered payload.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+        "content": "sha256:c4bac9584ff57d79b197e1ae2162e83f182902c091e0956914a3b6bebd602048",
+        "locator": {
+          "kind": "symbol",
+          "name": "EntryPointWorld._call"
+        }
+      },
+      "id": "RLZ-3J2TZH",
+      "invariant": "INV-W4XGR4",
+      "origin": {
+        "handoffEntry": "co:INV-W4XGR4",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "EntryPointWorld._call wraps session initialization, tool response and session cleanup in the phase budgets, resets the deadline at each transition, and raises _ToolCallTimeout with tool name and phase on timeout; call re-raises that named exception outside the product-raiser classifier.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+        "content": "sha256:60905a49bb6b00060bd9c4f7a88e5370debc600e0aca023dd28fbbe65078ffe9",
+        "locator": {
+          "kind": "symbol",
+          "name": "_read_whole_result"
+        }
+      },
+      "id": "RLZ-3ME8JM",
+      "invariant": "INV-22N6MM",
+      "origin": {
+        "handoffEntry": "L130-reader-moved",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "Reads this call's whole result from the answer's log file and refuses the no-file and unreadable shapes with a named finding, so no delivered answer can stand in for the whole result.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+        "content": "sha256:94827d7d82d1ba1109c0607fbd852ede5b7e830d2ac9490d0c7e76402c68cd0c",
+        "locator": {
+          "kind": "symbol",
+          "name": "UNMARKED_NOT_OK"
+        }
+      },
+      "id": "RLZ-3XS813",
+      "invariant": "INV-8V5KH0",
+      "origin": {
+        "handoffEntry": "L130-pins-taken",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "The shared-world UNMARKED_NOT_OK declaration is explicitly empty after L110 repairs its former memory_quality_check pin; the same-change removal/equality obligation remains with the sweep assertions.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+        "content": "sha256:0f306524e822c2ba7fdc3e1c1007d96a0fabab7e2d6d03f04c2b7e9c5bb71836",
+        "locator": {
+          "kind": "symbol",
+          "name": "_returned_arm"
+        }
+      },
+      "id": "RLZ-5XEVC4",
+      "invariant": "INV-T8FDTX",
+      "origin": {
+        "handoffEntry": "MIK-R130@v1 rule 2",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "Judges the delivered answer as delivered: envelope rejection, same-place-or-framework key accounting, refusal read from the answer.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+        "content": "sha256:e70868a155b3a04ce2b756d208c0f43673e28f1561ac0d0b6effd9883252c8c7",
+        "locator": {
+          "end": 32,
+          "kind": "line_range",
+          "start": 29
+        }
+      },
+      "id": "RLZ-6BR2QJ",
+      "invariant": "INV-T8FDTX",
+      "origin": {
+        "handoffEntry": "MIK-R130@v1 rule 2",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "Imports the envelope fields and the framework answer keys from the product's own code, the only shaping authority.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+        "content": "sha256:8ebad6cf5a03e40d8ab1c44a97616f90c57847a56f70c0e84d2142e2b0e888b8",
+        "locator": {
+          "kind": "symbol",
+          "name": "_unknown_in_truncated"
+        }
+      },
+      "id": "RLZ-6KD5XY",
+      "invariant": "INV-T8FDTX",
+      "origin": {
+        "handoffEntry": "L130-CODE-R1-F01",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "This list-wrapper gate now admits product shaping only where the matched whole list is over the product limit.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+        "content": "sha256:37578a1f10cb0bfb736dc16bace943a4034c864a0d510646723f7ba78e95ada6",
+        "locator": {
+          "end": 350,
+          "kind": "line_range",
+          "start": 338
+        }
+      },
+      "id": "RLZ-CAJ0JE",
+      "invariant": "INV-01JP62",
+      "origin": {
+        "handoffEntry": "MIK-R130@v1 / L130-W03 / L130-R03",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "The entry says the one classifier binds the already-verified whole-result reader to the same-place and refusal predicates; `classify` at 337-349 still returns `_raised_arm`/`_returned_arm` for the outcome and still reads the answer beside the whole result, so the claim holds at C. Its base anchor is valid at C; the candidate re-recorded it with the uncommitted worktree's blob.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+        "content": "sha256:37578a1f10cb0bfb736dc16bace943a4034c864a0d510646723f7ba78e95ada6",
+        "locator": {
+          "end": 350,
+          "kind": "line_range",
+          "start": 338
+        }
+      },
+      "id": "RLZ-CDHFWQ",
+      "invariant": "INV-01JP62",
+      "origin": {
+        "handoffEntry": "MIK-R130@v1 rule 6 + one classifier",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "The same 13 lines are the single classifier the sweep and the positive control both call (337-349); no second implementation of the arms exists in the file at C, so the control still proves the sweep rather than a copy of it.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+        "content": "sha256:bcb9e85aeee88bbc602fad846577f057f3caa9c900e314fdf5f7a6b1b0d53588",
+        "locator": {
+          "end": 901,
+          "kind": "line_range",
+          "start": 853
+        }
+      },
+      "id": "RLZ-CN53DJ",
+      "invariant": "INV-01JP62",
+      "origin": {
+        "handoffEntry": "L130-sweep-runs-whole",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "The entry says one tool's deadline is recorded as that tool's finding and the sweep goes on; that is the `except _ToolCallTimeout` branch at 873-885 inside the recorded 847-895, which sets `arm: unvalidatable` with the timeout text and `continue`s. At C the span carries the base card's bytes; the candidate's re-recording came from the uncommitted worktree, where the same 49 lines sit at 858.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+        "content": "sha256:0f306524e822c2ba7fdc3e1c1007d96a0fabab7e2d6d03f04c2b7e9c5bb71836",
+        "locator": {
+          "kind": "symbol",
+          "name": "_returned_arm"
+        }
+      },
+      "id": "RLZ-FFJB4Q",
+      "invariant": "INV-22N6MM",
+      "origin": {
+        "handoffEntry": "MIK-R130@v1 rules 1+3",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "Validates the read-back whole result under the tool's registered model before judging the delivered answer.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+        "content": "sha256:0f306524e822c2ba7fdc3e1c1007d96a0fabab7e2d6d03f04c2b7e9c5bb71836",
+        "locator": {
+          "kind": "symbol",
+          "name": "_returned_arm"
+        }
+      },
+      "id": "RLZ-K55Z4E",
+      "invariant": "INV-22N6MM",
+      "origin": {
+        "handoffEntry": "L130-reader-moved",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "Validates that whole result under the tool's registered model, which is the only validation the sweep performs on a returned call.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+        "content": "sha256:bcb9e85aeee88bbc602fad846577f057f3caa9c900e314fdf5f7a6b1b0d53588",
+        "locator": {
+          "end": 901,
+          "kind": "line_range",
+          "start": 853
+        }
+      },
+      "id": "RLZ-K7KKXM",
+      "invariant": "INV-01JP62",
+      "origin": {
+        "handoffEntry": "MIK-R130@v1 rule 6 + one classifier",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "Same branch, same conclusion at C: the recorded 847-895 covers `sweep` from `benign()` through the timeout branch and the classify call at 886, so nothing stays unrun behind another tool's deadline; only the blob/bytes of the candidate's re-recording are the uncommitted file's.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+        "content": "sha256:60905a49bb6b00060bd9c4f7a88e5370debc600e0aca023dd28fbbe65078ffe9",
+        "locator": {
+          "kind": "symbol",
+          "name": "_read_whole_result"
+        }
+      },
+      "id": "RLZ-QY1TXM",
+      "invariant": "INV-22N6MM",
+      "origin": {
+        "handoffEntry": "MIK-R130@v1 rules 1+3",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "Reads the whole result of this call from the file the answer names; a missing or unreadable file is an unvalidatable finding with the situation named.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+        "content": "sha256:7e19957a3c6b197157cd35a10484d2e1b647e26205051158c12204322a81a871",
+        "locator": {
+          "kind": "symbol",
+          "name": "EntryPointWorld.__init__"
+        }
+      },
+      "id": "RLZ-R7XCMX",
+      "invariant": "INV-P3ZYFW",
+      "origin": {
+        "handoffEntry": "MIK-R135@v1 §2",
+        "leaf": "260928-MIK-L135"
+      },
+      "rationale": "The constructor obtains the guard path before creating the settings parent and writing the delegation-policy stub.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+        "content": "sha256:5051eee79bbddebacb81642153d672e5fa69042a984ac06ee8b17ca76b0582d8",
+        "locator": {
+          "kind": "symbol",
+          "name": "_actionable_next"
+        }
+      },
+      "id": "RLZ-S2F966",
+      "invariant": "INV-T8FDTX",
+      "origin": {
+        "handoffEntry": "MIK-R130 W03 actionable next",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "Gates a shaped delivered next on naming a next tool or carrying arguments.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+        "content": "sha256:94827d7d82d1ba1109c0607fbd852ede5b7e830d2ac9490d0c7e76402c68cd0c",
+        "locator": {
+          "kind": "symbol",
+          "name": "UNMARKED_NOT_OK"
+        }
+      },
+      "id": "RLZ-S39TCH",
+      "invariant": "INV-8V5KH0",
+      "origin": {
+        "handoffEntry": "MIK-R130@v1 rules 4+5 + failure/recovery",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "The shared-world UNMARKED_NOT_OK declaration is now empty, as is the separate self-contained merged-sweep unmarked pin; the earlier named memory_quality_check pin remains historical origin evidence only.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+        "content": "sha256:616725463860034f01645ef22c9b069790e16605dd50f886654cbdcbdb5299b8",
+        "locator": {
+          "kind": "symbol",
+          "name": "refusal_marks"
+        }
+      },
+      "id": "RLZ-TZ43E1",
+      "invariant": "INV-T8FDTX",
+      "origin": {
+        "handoffEntry": "L130-CODE-R1-F02",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "This shared predicate now gates shaped next solely through the actual actionability predicate, excluding the generic string shortcut.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+        "content": "sha256:616725463860034f01645ef22c9b069790e16605dd50f886654cbdcbdb5299b8",
+        "locator": {
+          "kind": "symbol",
+          "name": "refusal_marks"
+        }
+      },
+      "id": "RLZ-X1MNME",
+      "invariant": "INV-T8FDTX",
+      "origin": {
+        "handoffEntry": "L130-answer-judged-delivered",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "Marks a nonempty delivered code like any refusal identity and a shaped next only when it names a tool or carries arguments, so guidance-only refusals stay bare.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "10": {
+      "note": "The ordinary benign table has 44 distinct literal keys matching the 44-name PUBLIC_TOOLS tuple, including citation_note_revision and explainer_control. The citation-note stimulus names an absent sidecar, uses a zero base digest and requests dry_run. This is source preparation, not registration or execution; prior 41/42-key and addition captions remain historical.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+            "content": "sha256:4f0a2060d4e987cb4bc478230104e22542a07378de72a45813292dd626f13405",
+            "locator": {
+              "end": 856,
+              "kind": "line_range",
+              "start": 670
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
+            "content": "sha256:fdef15e2ca9d39f66c8570a7147cb894dda16f47c7d3558bb4454e5b4714875f",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The shared world supplies an object-form read_ar_files stimulus and validates whole results and delivered answers through classifier helpers. Its sweep records timeouts as unvalidatable and continues; the separate self-contained support sweep propagates a timeout from call. These are source assertions, not execution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+            "content": "sha256:4f0a2060d4e987cb4bc478230104e22542a07378de72a45813292dd626f13405",
+            "locator": {
+              "end": 856,
+              "kind": "line_range",
+              "start": 670
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+            "content": "sha256:60905a49bb6b00060bd9c4f7a88e5370debc600e0aca023dd28fbbe65078ffe9",
+            "locator": {
+              "end": 280,
+              "kind": "line_range",
+              "start": 259
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+            "content": "sha256:0f306524e822c2ba7fdc3e1c1007d96a0fabab7e2d6d03f04c2b7e9c5bb71836",
+            "locator": {
+              "end": 292,
+              "kind": "line_range",
+              "start": 283
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+            "content": "sha256:1a14a08ab972157de8f02b4d4a9c64ca6781ff905af4fdaa824bf69c2772ddd1",
+            "locator": {
+              "end": 319,
+              "kind": "line_range",
+              "start": 295
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+            "content": "sha256:7f50509686224e01400f7078b44b0ff47ab307e17179ff99a9078f6221d87bb9",
+            "locator": {
+              "end": 912,
+              "kind": "line_range",
+              "start": 864
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+            "content": "sha256:e33e96dd94141fc597c4a422e03f4f6a1de7c73b57f87d47305f37ccf25e19f1",
+            "locator": {
+              "end": 528,
+              "kind": "line_range",
+              "start": 509
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "25b3cb991b3fb7f75377478cc7516ae6e0b44ff6",
+            "content": "sha256:2a76a8ea8d904e2eecff49f5ba9279facd629192a2c5ba20bb4b52b8018bdda0",
+            "locator": {
+              "end": 478,
+              "kind": "line_range",
+              "start": 443
+            },
+            "path": "mcp/tests/tool_entry_point_sweep_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "25b3cb991b3fb7f75377478cc7516ae6e0b44ff6",
+            "content": "sha256:dfa2f4445fc343c6d08d427baaf0a0ab25e38f1339c5137748db6914196100c8",
+            "locator": {
+              "end": 881,
+              "kind": "line_range",
+              "start": 840
+            },
+            "path": "mcp/tests/tool_entry_point_sweep_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "`build()` authors and starts the addressed enclosure without a session lifecycle option.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+            "content": "sha256:d5ddb49abe8321c060349687834469539f17d89221903323f44b042b2b1e2bf1",
+            "locator": {
+              "kind": "symbol",
+              "name": "build"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The shared sweep uses fixed fixture labels and preserves the named timeout continuation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+            "content": "sha256:7f50509686224e01400f7078b44b0ff47ab307e17179ff99a9078f6221d87bb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "sweep"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "`call` returns a non-timeout BaseException observation with str detail, concrete exceptionType and innermost traceback exceptionLocation. _ToolCallTimeout still reaches the ordinary sweep deadline handling and is classified as unvalidatable rather than as a product exception. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+            "content": "sha256:e616c9b18b248c49173d49291dce2d5ec166a5d4102ca1940c0910bc54a11219",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 14
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+            "content": "sha256:e33e96dd94141fc597c4a422e03f4f6a1de7c73b57f87d47305f37ccf25e19f1",
+            "locator": {
+              "end": 528,
+              "kind": "line_range",
+              "start": 509
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The whole result is read back from the file the answer names, and a missing or unreadable file is an unvalidatable finding. Anchor: `_read_whole_result`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+            "content": "sha256:60905a49bb6b00060bd9c4f7a88e5370debc600e0aca023dd28fbbe65078ffe9",
+            "locator": {
+              "end": 280,
+              "kind": "line_range",
+              "start": 259
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A returned call validates the whole result under its model and judges the delivered answer as delivered. Anchor: `_returned_arm`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+            "content": "sha256:0f306524e822c2ba7fdc3e1c1007d96a0fabab7e2d6d03f04c2b7e9c5bb71836",
+            "locator": {
+              "end": 292,
+              "kind": "line_range",
+              "start": 283
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+            "content": "sha256:60905a49bb6b00060bd9c4f7a88e5370debc600e0aca023dd28fbbe65078ffe9",
+            "locator": {
+              "end": 280,
+              "kind": "line_range",
+              "start": 259
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+            "content": "sha256:1a14a08ab972157de8f02b4d4a9c64ca6781ff905af4fdaa824bf69c2772ddd1",
+            "locator": {
+              "end": 319,
+              "kind": "line_range",
+              "start": 295
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "One shared classifier serves the sweep and the controls.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+            "content": "sha256:37578a1f10cb0bfb736dc16bace943a4034c864a0d510646723f7ba78e95ada6",
+            "locator": {
+              "kind": "symbol",
+              "name": "classify"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "A passed phase limit names the tool and the phase, outside the product-raiser classifier.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+            "content": "sha256:cdee253b37027f823794d963e164401d59d8a3df94597f8731eca5d854c71375",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ToolCallTimeout"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The world obtains the guarded settings path before settings-parent creation and stub writing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+            "content": "sha256:75e832cfc1127d25129cdfb5af15c622230f4d08151d4cfe640273f19383f51d",
+            "locator": {
+              "end": 485,
+              "kind": "line_range",
+              "start": 387
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "A fake-account child imports this worktree's world, receives the guard's refusal and leaves the fake configuration home empty — `test_building_the_world_with_the_users_own_environment_is_refused` in mcp/tests/test_user_settings_guard.py.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "125dbd7bb494997b684f79d63415482ecbdab0f3",
+            "content": "sha256:d7e7db52a695705d6439ab63d07741d4d444299200e08aabe5ae45bdc99a855b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_building_the_world_with_the_users_own_environment_is_refused"
+            },
+            "path": "mcp/tests/test_user_settings_guard.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The returned-call arm reads the log-named whole result and delegates validation and delivered-answer judging.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+            "content": "sha256:0f306524e822c2ba7fdc3e1c1007d96a0fabab7e2d6d03f04c2b7e9c5bb71836",
+            "locator": {
+              "kind": "symbol",
+              "name": "_returned_arm"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The delivered-answer refusal arm classifies `ok: false` from the delivered code and actionable-next marks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+            "content": "sha256:a5a7fee973a3d7e5d8b2202b333cd02d381249d1cc1bbe974c1e34d52a95d2da",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refusal_arm"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

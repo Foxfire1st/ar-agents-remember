@@ -1,0 +1,164 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e45cbd6127d560f2f834a2b326c1f9a481c697ac",
+        "content": "sha256:389501c5b165205d5bd30831d8aab2ddad4d373649e8673dc7d036bce9380fd2",
+        "locator": {
+          "kind": "symbol",
+          "name": "_require_landing_commit_check"
+        }
+      },
+      "id": "RLZ-DET0HP",
+      "invariant": "INV-2Q8RPR",
+      "origin": {
+        "handoffEntry": "L61-R152-integration-fact-or-check",
+        "leaf": "260928-MIK-L61"
+      },
+      "rationale": "Before integration ref movement, accept a parsed matching-tree Commit-Check-Pass fact or run the exact candidate check in a scratch checkout; no authenticated historical execution is inferred from the trailer alone.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e45cbd6127d560f2f834a2b326c1f9a481c697ac",
+        "content": "sha256:820de394bec97e960efba6ade61fac285beccf0512903cc5a861d374ca079792",
+        "locator": {
+          "kind": "symbol",
+          "name": "_require_clean_branch_checkout"
+        }
+      },
+      "id": "RLZ-SK45J1",
+      "invariant": "INV-HM7Z8C",
+      "origin": {
+        "handoffEntry": "L94-CUR-shared-checkout",
+        "leaf": "260928-MIK-L94"
+      },
+      "rationale": "Dirty protected checkout refusal is retained and augmented with the actual active direct leaf.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Two-output and route-specific candidate data.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e45cbd6127d560f2f834a2b326c1f9a481c697ac",
+            "content": "sha256:1f9d9c2cc7b1d5dcaf46f62a5e3083fc69886f9fe7935064467e8af535d84ba8",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntegratedCommits"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e45cbd6127d560f2f834a2b326c1f9a481c697ac",
+            "content": "sha256:3d54c847ac533427708312616fc8fa0c71b63616a5dc1eebeca83892f95f985d",
+            "locator": {
+              "kind": "symbol",
+              "name": "LandingAdmission"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Preparation validates accepted output and source/checkout state.\n\nAnchor: `prepare_integration_ref_move`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e45cbd6127d560f2f834a2b326c1f9a481c697ac",
+            "content": "sha256:4c7e812c2c7354177f641404d5386348bf60c07ef0ee34b6268efa6bb047d5bc",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Ordered expected-old CAS retains a torn pair on a memory race.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e45cbd6127d560f2f834a2b326c1f9a481c697ac",
+            "content": "sha256:5a6cedc45ba08d5522b39500a5837e87c92f1c7250b8f818ec9b958f682c0b7a",
+            "locator": {
+              "kind": "symbol",
+              "name": "merge_integrated_commits"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Owned checkout refresh excludes only memory cache state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e45cbd6127d560f2f834a2b326c1f9a481c697ac",
+            "content": "sha256:a6c3dd910fe11d284665e1e91e3a63dc5d3015540fc5d1d3f0f76a8ff2bff708",
+            "locator": {
+              "kind": "symbol",
+              "name": "refresh_owned_checkout"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Real Git regression for cache independence and competing memory CAS.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f50834048a5d93766dce2eb701040f614f49a0f",
+            "content": "sha256:d1b769266ca2c06857744a419ea02ee250028be95719299bd5a1ff835a81951d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cache_damage_cannot_change_the_accepted_pair_or_block_its_ref_move"
+            },
+            "path": "mcp/tests/test_integration_branch_authority.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2f50834048a5d93766dce2eb701040f614f49a0f",
+            "content": "sha256:5531733451c3fb886f1cb15c34c058422fb4a06dba377947b0aaf566115ccb21",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_external_pair_cas_retains_torn_pair_without_clobbering_memory_race"
+            },
+            "path": "mcp/tests/test_integration_branch_authority.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The dirty shared checkout guard names an occupying granted leaf, including a qualifying Completed dirty/incomplete sibling.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e45cbd6127d560f2f834a2b326c1f9a481c697ac",
+            "content": "sha256:8d76a99de912734f83a1e91e6efb0a60a15bbf6cb1b1d7c8c3805793f8175c42",
+            "locator": {
+              "end": 377,
+              "kind": "line_range",
+              "start": 355
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

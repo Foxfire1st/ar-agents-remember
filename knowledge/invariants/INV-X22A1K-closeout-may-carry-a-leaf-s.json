@@ -1,0 +1,39 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The stamped model, evidence taxonomy, raw Git transport, comparison and closeout door jointly enforce this bound across five files. The door tests discriminate both valid carry and stale deltas, including CR/LF collisions that could otherwise admit an unreviewed change."
+  },
+  "applicability": "The closeout door's applicable leaf route-review tree check when the current candidate tree differs from the recorded review candidate tree.",
+  "conditions": [
+    "The review has a plane-stamped baseCommit ancestral to the current contract code base.",
+    "The reviewed and incoming changed-path maps are compared with exact Git pathname bytes, not text-normalized names.",
+    "No reviewed path is changed by the incoming line, and the current base carries exactly the reviewed path/blob/mode delta.",
+    "Passing verdict, task intent, declared dependencies and evidence-byte currentness still pass their existing owners."
+  ],
+  "exclusions": [
+    "Exact-tree legacy acceptance is unchanged and does not require this clean-sync exception.",
+    "This door exception does not widen require_current_route_review or grant route-review recording to an atomic child.",
+    "No agent-process compliance, full closeout transaction, integration acceptance or fresh Curator test execution is claimed."
+  ],
+  "id": "INV-X22A1K",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/170_the-writer-renews-an-existing-row-of-c33d6f0ff6-ar/role-reports/curator/0272d5f6-4a2a-531a-b366-48f4ad0eca94/role-launch/A5-producer-reconciliation.json"
+      ],
+      "path": "A5-native-handoff.json"
+    },
+    "handoffEntry": "L170-curator-clean-sync-review-gate",
+    "leaf": "260928-MIK-L170",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Closeout may carry a leaf's recorded route review over a changed candidate tree only when its plane-stamped base is ancestral, incoming and reviewed paths are disjoint, and the current delta exactly preserves the reviewed pathname bytes, blobs and modes.",
+  "status": "proposed",
+  "supersedes": []
+}

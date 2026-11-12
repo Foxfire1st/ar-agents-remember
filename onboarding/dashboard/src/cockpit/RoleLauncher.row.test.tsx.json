@@ -1,0 +1,77 @@
+{
+  "path": "dashboard/src/cockpit/RoleLauncher.row.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Mounted assertions protect controls-only rendering, accessible names, selected-label/source hovers, informational chips, and shared recipe identity; overfull checks are DOM/source checks rather than pixel measurement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "157040fb47da3ae3e5beeb74c9d6eecf89fd9036",
+            "content": "sha256:226e5816de93b4b32ee03700c72113ea17579a46bedb9c755b7bfc8c9b74e5ac",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The default fixture supplies mode and choice provenance plus instruction metadata.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "157040fb47da3ae3e5beeb74c9d6eecf89fd9036",
+            "content": "sha256:a88451883c11d0f73b0dbf50009758677ad534538385522f18aa643d126ca16a",
+            "locator": {
+              "kind": "symbol",
+              "name": "roleDefaultsFixture"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "157040fb47da3ae3e5beeb74c9d6eecf89fd9036",
+            "content": "sha256:5cb3e9725bb5c3c04b7c7e213e7a44ddcaabd094b0b2b653108271d5d5f852f8",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 70
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "157040fb47da3ae3e5beeb74c9d6eecf89fd9036",
+            "content": "sha256:226e5816de93b4b32ee03700c72113ea17579a46bedb9c755b7bfc8c9b74e5ac",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Retains compact-row accessibility, source/label hovers, permission-owned chips, shared recipe and overfull DOM/source controls. The new case mounts RoleLauncher, prompts for a reason, asserts role plus stepUp only, and renders both status owners with host-default then observed-model text.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "157040fb47da3ae3e5beeb74c9d6eecf89fd9036",
+            "content": "sha256:92bb93c162e2c61c3b4ebf988dbd24ca4e0ffbf0e3c40a88ec4245599de04a98",
+            "locator": {
+              "end": 367,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

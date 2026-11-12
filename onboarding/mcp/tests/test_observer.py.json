@@ -1,0 +1,54 @@
+{
+  "path": "mcp/tests/test_observer.py",
+  "realizes": [],
+  "references": {
+    "3": {
+      "note": "Round trip through store.\n\nAnchor: `test_round_trip_through_store`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "954cf5b3913a1fd199f81cc088876e9cb40903b0",
+            "content": "sha256:67e1f55189add19f5cebe95396538e8944add0b016256a72657d2072f14f53ac",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Task scope remains in the workspace river and creates no lifecycle directory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "954cf5b3913a1fd199f81cc088876e9cb40903b0",
+            "content": "sha256:400fb81e4d787990cb8ddbcabe8a6e8ff36710788eea6a1925ce04decf7c43cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_scope_key_stays_in_the_workspace_river"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Unbound tool facts use the same workspace log.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "954cf5b3913a1fd199f81cc088876e9cb40903b0",
+            "content": "sha256:20a1d20941a2871c07633743392f1023d2441b8e3b52fd29b70739b66c3d52c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_workspace_log_for_unbound_events"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

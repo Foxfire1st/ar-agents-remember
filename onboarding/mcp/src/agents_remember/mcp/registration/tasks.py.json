@@ -1,0 +1,205 @@
+{
+  "path": "mcp/src/agents_remember/mcp/registration/tasks.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "88eee5a3e412e261ceee4f1d858eb283ef3138d4",
+        "content": "sha256:f75bfc78f7b6cafbe4847030de23115333c08e4d02e817cd10a2533719847c83",
+        "locator": {
+          "kind": "symbol",
+          "name": "_register_task_document_tools"
+        }
+      },
+      "id": "RLZ-QYHQYS",
+      "invariant": "INV-990KQM",
+      "origin": {
+        "handoffEntry": "L183-deferred-discovery-implementation",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Closeout/coherence/finalize/reopen/task_doc declarations retain canonical light models; task_doc operation/edit/target constructors load inside its call.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The `task_doc` / `task_reopen` payload builders.\n\nAnchor: `task_doc_payload`, `task_reopen_payload`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f831067a0a889a37f8501c831dbcefa3aa86540d",
+            "content": "sha256:454d46b1fd16712c3fb739fd0e5bd143ba39e230dbe3dd8a4eb0f6692b609d8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_doc_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/task_doc.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f831067a0a889a37f8501c831dbcefa3aa86540d",
+            "content": "sha256:4caf7f8561354a9a934e4821eb1d038fe69d7bc4381ac7d789b9dc97e124aa53",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_reopen_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/task_doc.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The finalize description: proves the landed edge and refuses before cleanup unless every declared step is done, then reconciles the exact parent row; leaves require a master and ancestors are not completed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88eee5a3e412e261ceee4f1d858eb283ef3138d4",
+            "content": "sha256:59024859859a75b210005e367c13660aed8b93ef556d4bc1f49adb908de066f5",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 65
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The finalize builder.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cbc2a027fa8329302b9ba1a1af26589d7940d865",
+            "content": "sha256:1401ce89181b17dff2611b4f0e8f325b4a79dc9190966ebb4fd77cab54c32db4",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycle_finalize_task_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`FinalizeTaskDocs`.\n\nAnchor: \"class FinalizeTaskDocs:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a944280846a4175d9217a58a16a3374d336e652b",
+            "content": "sha256:2aa6972042cf46b4dcdffedd6f3ee2dea1f7eda2e67ac094f909a60deb7467cb",
+            "locator": {
+              "end": 145,
+              "kind": "line_range",
+              "start": 145
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tool_requests.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The `task_doc` description lists `retire_master` among the compact operation vocabulary and states only that writes answer `ok` while dry runs answer `wouldLose` and the diff.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88eee5a3e412e261ceee4f1d858eb283ef3138d4",
+            "content": "sha256:bcc8f0cf4c36713979b2d314f88b10875dcb2216ce2e4afecaba44a15e14513f",
+            "locator": {
+              "end": 128,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The compact task_doc description names write/linkage operations and canonical generated-file reading. get/read_steps are removed and answered with operation-removed; they are not usable observations. Flat fields_file/section_body_file inputs are forwarded to the authoring owner. Delivered writes use ok/updated phrases; dry answers use wouldLose/diff and retained locations. Review, linkage, retirement and curator-coherence authorities remain at their established application/reference owners; short descriptions and a finished tool turn do not certify them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88eee5a3e412e261ceee4f1d858eb283ef3138d4",
+            "content": "sha256:bcc8f0cf4c36713979b2d314f88b10875dcb2216ce2e4afecaba44a15e14513f",
+            "locator": {
+              "end": 128,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Descriptions include keyed open-question writes and require master authority for finalization.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88eee5a3e412e261ceee4f1d858eb283ef3138d4",
+            "content": "sha256:34e8f8dbbe5f8aba3eeb620c1efd62e02f631e307654b5d46738ae4ee15bdf14",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 54
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "88eee5a3e412e261ceee4f1d858eb283ef3138d4",
+            "content": "sha256:8a9fd0bcbaddafaa58cc24755ef325741fe8cd53e62d0036559686356ca00ebe",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 75
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Closeout/coherence/finalize/reopen/task_doc declarations retain canonical light models; task_doc operation/edit/target constructors load inside its call.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88eee5a3e412e261ceee4f1d858eb283ef3138d4",
+            "content": "sha256:bcc8f0cf4c36713979b2d314f88b10875dcb2216ce2e4afecaba44a15e14513f",
+            "locator": {
+              "end": 128,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Task-doc compact description names alignmentSweep advice.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88eee5a3e412e261ceee4f1d858eb283ef3138d4",
+            "content": "sha256:0b46ed9dbc692cb1f4902bdfdcf43bb80d677c1775f12b70381534740353c323",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 75
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

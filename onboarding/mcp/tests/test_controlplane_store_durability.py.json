@@ -1,0 +1,68 @@
+{
+  "path": "mcp/tests/test_controlplane_store_durability.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "No record is lost when an append races a compaction.\n\nAnchor: `test_no_record_is_lost_when_an_append_races_a_compaction`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd91b4a5e6e4721b65bb89e44751a1a72a02472d",
+            "content": "sha256:b94bbc7581e3e5dba11119e904f02cfceae0ef6f2ce4f5a526e47fb2ebd34cc7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Gate enforcement fold refuses a torn line.\n\nAnchor: `test_gate_enforcement_fold_refuses_a_torn_line`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd91b4a5e6e4721b65bb89e44751a1a72a02472d",
+            "content": "sha256:b94bbc7581e3e5dba11119e904f02cfceae0ef6f2ce4f5a526e47fb2ebd34cc7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Gate projection fold degrades instead of crashing.\n\nAnchor: `test_gate_projection_fold_degrades_instead_of_crashing`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd91b4a5e6e4721b65bb89e44751a1a72a02472d",
+            "content": "sha256:b94bbc7581e3e5dba11119e904f02cfceae0ef6f2ce4f5a526e47fb2ebd34cc7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The operation opportunity precedes the retained assertion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd91b4a5e6e4721b65bb89e44751a1a72a02472d",
+            "content": "sha256:047ced491ead171a4d3468c25cf0e820b0e48233178087d04ace343816627f51",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_no_record_is_lost_when_an_append_races_a_compaction"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

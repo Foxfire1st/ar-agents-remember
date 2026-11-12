@@ -1,0 +1,34 @@
+{
+  "path": "mcp/src/agents_remember/application/closeout_queue.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The required request declaration is passed as the structural queue actor; scheduling and authorization stay with the queue.\n\nAnchor: `_declared_queue_actor`, `closeout_queue_tool`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "722fb3802ab8976d280ff37de4824015cd5bece7",
+            "content": "sha256:ed387d841037fc93813b86fa57dd3f10d2be436e50d6d747087d291b71fad8d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_declared_queue_actor"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "722fb3802ab8976d280ff37de4824015cd5bece7",
+            "content": "sha256:37a7601c46d34bb3539e027410accd8feacaca2e96fb4945eb5e555dc1ff2fee",
+            "locator": {
+              "kind": "symbol",
+              "name": "closeout_queue_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

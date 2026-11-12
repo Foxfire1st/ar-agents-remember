@@ -1,0 +1,75 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Rolling back after the folder is archived was weighed and rejected because deletions are irreversible, and every later change to the retire operation or the archive hook has to keep the retirement and retry only the cleanup."
+  },
+  "alternatives": [
+    {
+      "option": "Keep the retirement when the cleanup fails in part: report the failure with ok=false, and let a repeat of the identical request perform only the remaining cleanup, recreating nothing.",
+      "reason": "The developer chose to keep the retirement and retry the cleanup, because the deletions that already happened cannot be undone and a rollback would restore a folder whose artifacts are gone.",
+      "status": "chosen"
+    },
+    {
+      "option": "Roll everything back after the folder is archived when the cleanup fails in part.",
+      "reason": "It would move the folder back and re-add the sprint's membership although some artifacts were already deleted for good, so the restored master would be neither the original nor a clean retirement.",
+      "reconsider_when": "The archive hook's deletions become recoverable, for example backed up before they are made, so that a rollback could restore everything it deleted.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The result is ok=false with retired-with-hook-failures and names the repeat as the action; it never reports success while a failure remains.",
+    "A repeat edits no sprint document, writes no second record, moves nothing again and recreates nothing; every attempt keeps its own receipt.",
+    "A request that differs in reason, named edges or namespace is not a retry and is refused."
+  ],
+  "context": "The archive hook deletes review artifacts one by one after the master's folder is archived, and a deletion cannot be undone. The first version of the requirement said that if any part of a retirement fails, nothing is changed.",
+  "decider": "developer (260928-MIK DEVELOPER-DIRECTION D45: \"ok to the retirement\")",
+  "id": "DEC-VG306N",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-SS31ZW"
+    },
+    {
+      "relation": "explains",
+      "target": {
+        "blob": "030a9c583f38ba2151341a9a2c7218f88f6be12f",
+        "content": "sha256:feb831cade98c724ded5fa5ef7e62f6c0c1fb801d7f3de4f6e527c0058f053b6",
+        "locator": {
+          "kind": "symbol",
+          "name": "_clean_up"
+        },
+        "path": "mcp/src/agents_remember/application/task_docs/task_master_retirement.py"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "id": "MIK-R41",
+        "packet": "requirements/MIK-R41-v3-abandoned-leaves-do-not-block-a-master.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v3"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "DEVELOPER-DIRECTION D45 (2026-10-03); requirements/MIK-R41-v3-abandoned-leaves-do-not-block-a-master.md rule 4"
+      ],
+      "path": "notes/reports/260928-MIK-L41-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "RULING-D45",
+    "leaf": "260928-MIK-L41",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

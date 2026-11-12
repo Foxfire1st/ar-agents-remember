@@ -1,147 +1,113 @@
 # mcp/tests/test_evidence_catalog_gate_boundaries.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_evidence_catalog_gate_boundaries.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T19:10+02:00 |
-| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4`|
-| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
-| governingOverview | `mcp/tests/overview.md` |
-
 ## Governing Overview
 
 [mcp/tests route overview](overview.md)
 
 ## Purpose
 
-The lane that separates **the two evidence-catalog gates**, which one test used to run inside one
-case. `D-19` recorded why the distinction is load-bearing: a leaf can pass the byte pin, pytest,
-ruff, format and pyright while the consumer oracle is red, and the four green checks then ship a red
-gate.
-
-- **The catalog byte pin** — `LIFECYCLE_CATALOG_SHA256`, `LIFECYCLE_CONTRACT_COUNT` and
-  `LIFECYCLE_ARTIFACT_COUNT` in `mcp/tests/test_dependency_ownership_ast_helpers.py`, asserted
-  against `mcp/tests/evidence-lifecycle.toml`'s own bytes and populations. It answers *"is this the
-  exact catalog file that was measured?"*. **Nothing in the source tree can redden it** — only an
-  edit to the catalog's bytes changes it — and its documented repair is a re-pin after the edit was
-  reviewed.
-- **The consumer-completeness oracle** — `load_evidence_inventory` and its finding
-  `<artifact>: consumer proof differs from source-derived ownership`
-  (`mcp/test_support/agents_remember_test_support/testing/evidence_lifecycle.py`). It answers *"does
-  the catalog agree with the source tree it describes?"* by deriving the repository's dependency
-  graph and requiring every `consumer_scope = "exact"` artifact's declared `consumers` list to equal
-  the test modules that actually reach it. It reddens whenever a module starts or stops consuming a
-  governed artifact, and its documented repair is a **registry row** — which is *why* the pin moves
-  afterwards.
-
-The naming is stated where each reader arrives: this module's own docstring, and the oracle's module
-docstring (`evidence_lifecycle.py:1-19`) which was rewritten in the same pass.
+Shows that the consumer-completeness oracle (`load_evidence_inventory`) refuses a catalog that no
+longer describes the source tree, and that this refusal is about the source tree and not about the
+catalog's form. The catalog's canonical form is a separate refusal with its own command; this module
+holds the one case where the catalog stays canonical and only the oracle objects.
 
 ## Code Commentary
 
-### Logic
+`synthetic_repo` builds a small repository under the test's temporary directory: two test modules
+(`mcp/tests/test_alpha.py`, `mcp/tests/test_beta.py`), one governed artifact
+(`mcp/tests/_catalog_anchor.py`), a catalog written by the shared builder
+`write_synthetic_evidence_catalog` with both modules as consumers, and a `pyproject.toml` that names
+`mcp/tests` as the test path. It then runs `git init` and `git add -A`, because the oracle derives
+its facts from Git's file listing.
 
-**One case evaluates both gates in one run over one catalog edit**, so the distinction is a
-measurement rather than a claim: the oracle is red and the pin is green at the same instant.
+`test_the_oracle_refuses_a_tree_the_catalog_no_longer_describes` is the only case.
 
-`synthetic_repo` (`:49-65`) builds a valid catalog over two real consumers using the shared fixture
-`write_synthetic_evidence_catalog` from `_evidence_catalog_fixture`, writes the two consumer modules
-and the governed artifact as real files, adds the `[tool.pytest.ini_options]` block the oracle reads,
-and runs `git init` + `git add -A`. **The `git init` is not decoration**: the oracle derives its
-graph from the repository's tracked files, so a synthetic repository has to be one. The case asserts
-`load_evidence_inventory(root)` is non-empty first, so the refusal below is produced by the edit and
-not by the fixture.
+1. It loads the fresh catalog and asserts that it is valid, so the refusal in step 3 comes from the edit
+   and not from the fixture.
+2. It removes the line of the second consumer from the artifact's `consumers` list and asserts that
+   the text changed. The module still consumes the artifact. This is the state a change leaves when
+   it adds a test module that reads a governed support module and does not register it. The list
+   that remains is still in canonical form.
+3. It loads again and expects an `EvidenceLifecycleError` whose text holds
+   `consumer proof differs from source-derived ownership`, names the removed module under
+   `missing=`, reports exactly one finding, and does not mention `--write`.
 
-The edit is the exact shape a landing produces when it adds a test module that imports a governed
-support module and does not add the registry row: `SECOND_CONSUMER`'s name is replaced by
-`FIRST_CONSUMER`'s in the artifact's `consumers` list while `SECOND_CONSUMER` still consumes it, so
-the catalog's bytes are still the ones the pin measured and the tree is no longer the one the catalog
-describes. An `assert doctored != catalog.read_text(...)` guard (`:107`) fires before the write if
-the replacement did nothing.
+The last two assertions carry the boundary: the oracle's finding is the only one, and no
+canonical-form finding (which would name the `--write` command) is raised for a catalog that is
+merely incomplete.
 
-`populations` (`:68-76`) returns the pinned catalog's **byte digest, contract count and artifact
-count**. The case reads those before the doctoring and asserts them equal afterwards (`:116-118`),
-and the assertion carries its own message: *"the oracle's refusal is about the source tree, and it
-may not move the pinned bytes"*. That comparison is deliberately **between the file and itself** —
-the pin's own constants are asserted in the pin's own test, and duplicating them here would create a
-second place that has to be re-pinned. This is also why the module does **not** import the pin
-module: it imports `_evidence_catalog_fixture` and the oracle only.
+The module is a plain test module without a marker. It imports the builder from
+`_evidence_catalog_fixture.py` and the loader from `evidence_lifecycle.py`, and it reads no file of
+the real repository.
 
-### Conventions
+## Evidence
 
-`REPOSITORY_ROOT = Path(__file__).parents[2]` (`:41`) resolves the checkout from the test file, so
-the pinned catalog is found without a fixture or an environment variable. `PINNED_CATALOG`,
-`ARTIFACT`, `FIRST_CONSUMER` and `SECOND_CONSUMER` are module constants (`:42-46`) rather than
-literals repeated in the case. The module carries **no `pytestmark`**; its lane row was **appended**
-to the end of the `unit-regression` list in `mcp/tests/test-evidence-lanes.toml:195` — the
-single-writer registry apply put all five of this leaf's new case modules there rather than
-inserting `architecture-fitness` mid-list, because a mid-list insertion shifts every row below it and
-stales every citation into the file (item 16's half (a)). Being in `unit-regression` is what keeps
-the module out of the `pytest.mark.integration` population, which sits at exactly **400 / 400**.
+- The module states that the oracle reddens on the source tree and that canonical form is a separate refusal. [1]
+- The shared builder that writes the valid, canonical synthetic catalog. [5]
+- The synthetic repository: two consumers, one governed artifact, and a real Git repository. [6]
+- The case: one consumer line removed, one finding, and no mention of the write command. [8]
 
-### Invariants And Boundaries
-
-- **The oracle's refusal may not move the catalog's bytes.** The single assertion that carries the
-  module's meaning is the before/after population comparison, and it is written so a future
-  re-pin cannot make this case the second home of the pin.
-- **An exact-scope consumer is a precondition, not metadata.** This module consumes
-  `mcp/tests/_evidence_catalog_fixture.py` and (transitively, through the oracle) the lane manifest,
-  and both registrations are declared — an unregistered exact-scope consumer is a hard collection
-  error, which is the failure mode this module exists to make visible.
-- **The synthetic repository is a real Git repository.** No case stubs the graph the oracle derives.
-- **Boundary.** This is a test module. It owns no production contract and adds no support module.
-
-### Todos
-
-None recorded.
-
-## Docs References
-
-No domain documentation source is configured for this repository (`system/sources.md` carries no
-`Domain Documentation` entries). The statements below are grounded in repository source only.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
-
-## Repo-Internal References
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own statement of the two gates and how to tell them apart. | "The two evidence-catalog gates, and how to tell them apart when one of them is red." | mcp/tests/test_evidence_catalog_gate_boundaries.py:1-21 |
-| **The consumer-completeness oracle: the one gate the source tree can redden, and the finding it raises.** | `EvidenceLifecycleError`; `load_evidence_inventory` | mcp/test_support/agents_remember_test_support/testing/evidence_lifecycle.py:44-45; mcp/test_support/agents_remember_test_support/testing/evidence_lifecycle.py:179-225 |
-| The byte pin's own three constants, asserted in the pin's own test and deliberately not duplicated here. | "LIFECYCLE_CATALOG_SHA256"; "LIFECYCLE_CONTRACT_COUNT"; "LIFECYCLE_ARTIFACT_COUNT" | mcp/tests/test_dependency_ownership_ast_helpers.py:44-46 |
-| The pinned catalog whose bytes the case compares with themselves. | "PINNED_CATALOG"; "REPOSITORY_ROOT" | mcp/tests/test_evidence_catalog_gate_boundaries.py:41-42 |
-| The shared fixture that writes a valid synthetic catalog. | `write_synthetic_evidence_catalog` | mcp/tests/_evidence_catalog_fixture.py:13-64 |
-| The synthetic repository: two real consumers, one governed artifact, and a real Git repository because the oracle derives its graph from tracked files. | `synthetic_repo` | mcp/tests/test_evidence_catalog_gate_boundaries.py:49-65 |
-| The catalog's own digest and declared populations, read rather than pinned. | `populations` | mcp/tests/test_evidence_catalog_gate_boundaries.py:68-76 |
-| **The case: the oracle refuses the doctored tree while the pinned catalog's bytes and populations are identical.** | `test_the_oracle_reddens_while_the_byte_pin_stays_green` | mcp/tests/test_evidence_catalog_gate_boundaries.py:79-118 |
-| The lane row this module was appended to, in the lane list — appended rather than inserted mid-list. | "mcp/tests/test_evidence_catalog_gate_boundaries.py" |mcp/tests/test-evidence-lanes.toml:233-233|
-| The two exact-scope consumer registrations this module obliged. | "mcp/tests/test_evidence_catalog_gate_boundaries.py" | mcp/tests/evidence-lifecycle.toml:172-177; mcp/tests/evidence-lifecycle.toml:814-814 |
-
-## Cross-Repo References
+- The oracle's finding when declared and observed consumers differ. [9]
+### Cross-Repo References
 
 No cross-repository behavior is implemented or measured in this file. The synthetic repository is
 created under `tmp_path` and never touches the checkout's own Git store.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
+No meaningful cross-repo references found.
+### Docs References
 
-## Update History
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 2 citations into `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`): No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_read_anchor_memo.py` row at `:173`; each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T16:25:39+02:00 — 260921-ICR-L42 curator: No content impact: re-pointed this card's citations into `test-evidence-lanes.toml` after this leaf's line insertions (candidate tree `27409ea9f3320689c28c6a810c9a88afa288bbba` over code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`). Each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "mcp/tests/test_evidence_catalog_gate_boundaries.py" repointed to mcp/tests/test-evidence-lanes.toml:225-225. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "mcp/tests/test_evidence_catalog_gate_boundaries.py" repointed to mcp/tests/test-evidence-lanes.toml:206-206. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: "mcp/tests/test_evidence_catalog_gate_boundaries.py" repointed to mcp/tests/test-evidence-lanes.toml:199-199. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T01:20+02:00 — 260918-TSIP-L11 closing seat (memory worktree `84152b9e`, code `79fa817f`): re-read and re-derived 1 claim row(s) on the merged tip. Every row was read against the construct it cites before its range was regenerated: the merged `mcp/tests/test-evidence-lanes.toml` was read at the line that carries each lane anchor, `pyproject.toml` was read at its declaration, and every renamed or consolidated case was re-anchored on the successor whose own docstring records the consolidation. No range was produced by adding a delta to an old number and the product's mechanical fixer was not run, so **no projection bullet is written and no claim is reopened on this edit's account**. Rows: `test_evidence_catalog_gate_boundaries.py.md:123` ("mcp/tests/test_evidence_catalog_gate_boundaries.py") — re-read the claim against the landed source: the construct moved and the cited range was widened to the line that actually carries it, per the checker's own remedy.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: `EvidenceLifecycleError`; `load_evidence_inventory` repointed to mcp/test_support/agents_remember_test_support/testing/evidence_lifecycle.py:44-45; mcp/test_support/agents_remember_test_support/testing/evidence_lifecycle.py:179-225. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: `write_synthetic_evidence_catalog` repointed to mcp/tests/_evidence_catalog_fixture.py:13-64. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: "mcp/tests/test_evidence_catalog_gate_boundaries.py" repointed to mcp/tests/test-evidence-lanes.toml:194-194. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T19:10+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): created this one-to-one card for the case that separates the evidence catalog's byte pin from its consumer-completeness oracle. It records what each gate answers, why the oracle's documented repair is a registry row and the pin's is a re-pin, why the case compares the pinned catalog with itself instead of with constants (so it cannot become a second place to re-pin), and why the synthetic repository must be a real Git repository. It also records the two exact-scope consumer registrations the module obliged and its appended `unit-regression` lane row. This card carries **no `lastVerifiedCommitHash` and no `lastVerifiedCommitDate`**: every construct it cites exists only in this leaf's uncommitted candidate. What was read is this leaf's uncommitted working tree, and closeout owns the stamp.
+No domain documentation source is configured for this repository (`system/sources.md` carries no
+`Domain Documentation` entries). The statements below are grounded in repository source only.
+
+No configured domain documentation could be checked.
+### Repo-Internal References
+
+- The lane row this module was appended to, in the lane list — appended rather than inserted mid-list.
+- The two exact-scope consumer registrations this module obliged.
+
+- **The consumer-completeness oracle: the one gate the source tree can redden, and the finding it raises.** [22]
+- The shared fixture that writes a valid synthetic catalog. [23]
+- The synthetic repository: two real consumers, one governed artifact, and a real Git repository because the oracle derives its graph from tracked files. [24]
+
+
+
+
+
+
+
+
+
+
+
+
+> Retained earlier citation wording: - The catalog declares test_evidence_catalog_gate_boundaries.py as an exact consumer on the evidence-catalog fixture, settings-guard and Node-lockfile artifact rows. These three declarations do not establish invocation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+- The lane row this module was appended to, in the lane list — appended rather than inserted mid-list.  Anchor: `test_evidence_catalog_gate_boundaries` [25]
+
+
+- The two exact-scope consumer registrations this module obliged.  Anchor: `test_evidence_catalog_gate_boundaries` [Past-epoch source caption, detached from live reference 26. Recorded citation custody: mcp/tests/evidence-lifecycle.toml blob 0b04e782b9627695554aeeebd05967506794d78d (available); mcp/tests/evidence-lifecycle.toml blob b9e272ef623574e517181e36b3dc949a3ac78e19 (available); historical event commit not identified. No historical event or intent inferred.]
+
+Current source: The current lifecycle catalog declares test_evidence_catalog_gate_boundaries.py as an exact consumer of mcp/tests/_evidence_catalog_fixture.py, mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. These three current artifact registrations establish no invocation or passing result; the earlier two-registration caption remains historical.
+
+
+- The lane row this module holds in the sorted `unit-regression` list.  Anchor: "mcp/tests/test_evidence_catalog_gate_boundaries.py" [27]
+
+
+- The catalog declares test_evidence_catalog_gate_boundaries.py as an exact consumer on the evidence-catalog fixture, settings-guard and Node-lockfile artifact rows. These three declarations do not establish invocation.
+
+- Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:1-4036 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit f2b7c648f540efb9d64ceea22e11e651cb5cc914. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+
+- The lifecycle catalog declares test_evidence_catalog_gate_boundaries.py as an exact consumer of mcp/tests/_evidence_catalog_fixture.py, mcp/tests/_user_settings_guard.py and mcp/tests/fixtures/repository_profiles/node/package-lock.json. These artifact registrations establish no invocation or passing result. [26]

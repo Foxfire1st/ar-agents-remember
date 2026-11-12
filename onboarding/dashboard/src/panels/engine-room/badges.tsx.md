@@ -1,15 +1,5 @@
 # dashboard/src/panels/engine-room/badges.tsx
 
-| Field                  | Value                                                       |
-| ---------------------- | ----------------------------------------------------------- |
-| repository             | agents-remember                                             |
-| path                   | `dashboard/src/panels/engine-room/badges.tsx`               |
-| doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-08-07T08:19Z                                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`                  |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
-| governingOverview      | `overview.md`                                               |
-
 ## Governing Overview
 
 [panels/engine-room overview](overview.md)
@@ -48,32 +38,41 @@ requires it (e.g. the fleeting box).
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked `system/sources.md`; no Domain Documentation source is
 configured for this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found. | — | — |
+No relevant domain documentation was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The failure-mode overlay primitives extracted from the canvas. | `FleetingEnclosure`; `TerminalStop`; `RefusedConduit` | dashboard/src/panels/engine-room/badges.tsx:193-236; dashboard/src/panels/engine-room/badges.tsx:237-283 |
-| The closeout-order train and moved/attention badges. | `CloseoutTrain`; `MovedBadge`; `Gate` | dashboard/src/panels/engine-room/badges.tsx:61-79; dashboard/src/panels/engine-room/badges.tsx:127-145; dashboard/src/panels/engine-room/badges.tsx:315-342 |
+- The failure-mode overlay primitives extracted from the canvas. [1]
+- The closeout-order train and moved/attention badges. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation source governs this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
+No applicable cross-repository source was found.
 
-## Update History
 
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: created this sidecar for the new
-  badge module extracted from `EnclosureCanvas.tsx`. Verification pinned to the leaf
-  base until closeout stamps the code commit.
+## Current enclosure-only composition
+
+The Markdown primitive list does not name ProviderBlock, so that list is still valid. Source deletes ProviderBlock and ENGINE import only; Gate, NodeBlock, FleetingEnclosure, TerminalStop, RefusedConduit, recovery/attention/moved/lane/closeout primitives survive. RefusedConduit returns null when no conduitPathD.
+
+### Maintenance boundaries
+
+Keep the listed generic badge responsibilities. Add a precise retirement boundary for ProviderBlock, and qualify RefusedConduit by geometry: the polarity helper admits only integration/integration-mem, and old provider seed/clone kinds yield no polarity; integration flashes survive when shared geometry is present. Refresh shifted evidence locators without claiming all failure badges were deleted.
+
+Source/test/fixture inspection is not a fresh mounted capture or a passing test run.
+Historical provider-shaped input data and retained compatibility definitions do not
+restore removed provider visuals or tool exposure.
+
+- The Markdown primitive list does not name ProviderBlock, so that list is still valid. Source deletes ProviderBlock and E — source ownership, not executed visual proof. [3]
+- The Markdown primitive list does not name ProviderBlock, so that list is still valid. Source deletes ProviderBlock and E — source ownership, not executed visual proof. [4]
+- The Markdown primitive list does not name ProviderBlock, so that list is still valid. Source deletes ProviderBlock and E — source ownership, not executed visual proof. [5]
+
+- Provider seed/clone kinds yield no refused polarity; the surviving integration flash also requires a shared conduit path. [6]

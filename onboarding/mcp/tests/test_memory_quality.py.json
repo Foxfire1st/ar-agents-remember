@@ -1,0 +1,103 @@
+{
+  "path": "mcp/tests/test_memory_quality.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Current repaired metadata and historical removal behavior are covered by the census regression helper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2814c787dfea85e7594bff0fea3de5c8924d3379",
+            "content": "sha256:6b5dde48a19cf0c6405e10a3e98a6d7d6917a25b129164a3871dd7161a611788",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_census_accepts_repaired_current_onboarding_metadata"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A repaired current mapping is accepted even when the historical card named an old source.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2814c787dfea85e7594bff0fea3de5c8924d3379",
+            "content": "sha256:67facc70754a8f60a8e5912a6cf9adac79bdacd2ce35e0226d9ba24f96a00762",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_census_repaired_old_association_does_not_veto_current_mapping"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A removed historical card remains an absent row without a removal blocker.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2814c787dfea85e7594bff0fea3de5c8924d3379",
+            "content": "sha256:53199c3ee714f0c252b2e89f8314f9b625da18b510d8695e3867fdf78034571f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_census_retains_historical_removal_row_without_mapping_validation"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A moved card retains old and new census rows with absent and present final states.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2814c787dfea85e7594bff0fea3de5c8924d3379",
+            "content": "sha256:bd3a417ab1925730ebed13993870e2ddb4daf9016818900bbb36934eebff12d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_census_move_retains_old_and_new_rows"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Entity catalog alignment rejects orphaned fingerprint before code rails.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2814c787dfea85e7594bff0fea3de5c8924d3379",
+            "content": "sha256:5ec0d982ddcc407a74c1a297df3903b5b82eb9349e612aea9b39bb94154dacc3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_entity_catalog_alignment_rejects_orphaned_fingerprint_before_code_rails"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Entity catalog alignment accepts one fingerprint per inventory entry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2814c787dfea85e7594bff0fea3de5c8924d3379",
+            "content": "sha256:0bdd9a864398ba39862a3b786e9266f751ccc56845929fa96791ee7798ad0f32",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_entity_catalog_alignment_accepts_one_fingerprint_per_inventory_entry"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

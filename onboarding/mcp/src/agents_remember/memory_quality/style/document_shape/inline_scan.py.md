@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory_quality/style/document_shape/inline_scan.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory_quality/style/document_shape/inline_scan.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-08T17:47:39+02:00 |
-| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
-| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
-| governingOverview | `../../overview.md` |
-
 ## Governing Overview
 
 [overview](../../overview.md)
@@ -22,16 +12,9 @@ Locate Markdown code spans, fences, and table-cell boundaries.
 
 ### Logic
 
-Module-level surface:
+`cell_boundaries` interprets escaped pipes and code spans. `cell_spans` obtains those boundaries and delegates to `cell_spans_from_boundaries`; the latter derives cell offsets from supplied positions without rescanning and preserves optional outer pipes and empty cells. Table materialization in `tables.rows_of` skips the scanner for lines without a pipe and passes one scan's positions to this helper. The no-pipe shortcut belongs to that caller, not to `cell_boundaries` itself.
 
-- `backtick_runs` (function, lines 20-37) — Every maximal run of backticks, as ``(start, length)``.
-- `code_span_ranges` (function, lines 40-63) — Half-open ``(start, end)`` ranges covering each code span, delimiters included.
-- `cell_boundaries` (function, lines 66-83) — Indexes of the pipes that divide this line into table cells.
-- `enclosing_span_end` (function, lines 86-90)
-- `cell_spans` (function, lines 93-116) — Where each cell of a table row sits, with GFM's optional outer pipes removed.
-- `split_row` (function, lines 119-121) — The cells of a table row, stripped.
-- `fence_delimiter` (re-export from `kernel/onboarding_doc.py`) — ``(character, length)`` if this line opens or closes a fenced code block.
-- `unfenced_lines` (re-export from `kernel/onboarding_doc.py`) — ``(zero-based index, line)`` for every line outside a fenced code block.
+The unused stripped-cell wrapper `split_row` and its export are removed. Existing Windows-cell and escaped-pipe assertion callers now use the retained cell-span path; no replacement wrapper or table interpretation is introduced. Fence helpers remain kernel re-exports.
 
 ### Conventions
 
@@ -45,27 +28,30 @@ Module-level definitions follow the package conventions; names prefixed with `_`
 
 None.
 
-## Repo-Internal References
+## Evidence
 
-This module defines the top-level symbols cited below; each row points at the exact source range holding the anchor.
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Defines the function `backtick_runs` (lines 20-37) — Every maximal run of backticks, as ``(start, length)``.. | `backtick_runs` | mcp/src/agents_remember/memory_quality/style/document_shape/inline_scan.py:20-37 |
-| Defines the function `code_span_ranges` (lines 40-63) — Half-open ``(start, end)`` ranges covering each code span, delimiters included.. | `code_span_ranges` | mcp/src/agents_remember/memory_quality/style/document_shape/inline_scan.py:40-63 |
-| Defines the function `cell_boundaries` (lines 66-83) — Indexes of the pipes that divide this line into table cells.. | `cell_boundaries` | mcp/src/agents_remember/memory_quality/style/document_shape/inline_scan.py:85-102 |
-| Defines the function `enclosing_span_end` (lines 86-90). | `enclosing_span_end` | mcp/src/agents_remember/memory_quality/style/document_shape/inline_scan.py:105-109 |
-| Defines the function `cell_spans` (lines 93-116) — Where each cell of a table row sits, with GFM's optional outer pipes removed.. | `cell_spans` | mcp/src/agents_remember/memory_quality/style/document_shape/inline_scan.py:93-116 |
-| Defines the function `split_row` (lines 119-121) — The cells of a table row, stripped.. | `split_row` | mcp/src/agents_remember/memory_quality/style/document_shape/inline_scan.py:138-140 |
-| Re-exports the kernel `fence_delimiter` helper used for fenced scanning. | "    fence_delimiter," | mcp/src/agents_remember/kernel/onboarding_doc.py:90-106; mcp/src/agents_remember/memory_quality/style/document_shape/inline_scan.py:15-18 |
-| Re-exports the kernel `unfenced_lines` helper used for fence-aware scanning. | "    unfenced_lines," | mcp/src/agents_remember/kernel/onboarding_doc.py:109-130; mcp/src/agents_remember/memory_quality/style/document_shape/inline_scan.py:15-18 |
+This module defines the top-level symbols cited below; each native symbol reference resolves its definition; no prose line-number inventory overrides that binding.
 
-## Update History
 
-- 2026-09-08T17:47:39+02:00: CCR-L38 source-grounded preparation made the two re-export anchors exact import lines, retaining the kernel implementation ranges and avoiding ambiguous helper-name matches. Verification metadata remains closeout-owned; no acceptance claim.
-- 2026-09-08T14:45:44+00:00: CCR-L24 preparation corrected the fence-helper entries to describe their kernel re-exports and rebound `cell_boundaries`, `enclosing_span_end`, and `split_row` to the current scanner definitions. Verification metadata remains pinned pending final pair composition.
-- 2026-09-08T14:39:58+00:00: Generated citation repair: `cell_boundaries` repointed to mcp/src/agents_remember/memory_quality/style/document_shape/inline_scan.py:85-102. No content impact: mechanical anchor-range projection bound to citation source snapshot 5911742cfcc7a53db92b36b80bac02ee49a67204b190c0311a81bcc2e388ad59; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-08T14:39:58+00:00: Generated citation repair: `enclosing_span_end` repointed to mcp/src/agents_remember/memory_quality/style/document_shape/inline_scan.py:105-109. No content impact: mechanical anchor-range projection bound to citation source snapshot 5911742cfcc7a53db92b36b80bac02ee49a67204b190c0311a81bcc2e388ad59; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-08T14:39:58+00:00: Generated citation repair: `split_row` repointed to mcp/src/agents_remember/memory_quality/style/document_shape/inline_scan.py:138-140. No content impact: mechanical anchor-range projection bound to citation source snapshot 5911742cfcc7a53db92b36b80bac02ee49a67204b190c0311a81bcc2e388ad59; claim bytes unchanged; generated by ccr-r10@v1.
+- Every maximal run of backticks is located without consulting backslash escapes. [1]
 
-- 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.
+
+- Defines the function `code_span_ranges` — Half-open ``(start, end)`` ranges covering each code span, delimiters included. [2]
+
+
+- Defines the function `cell_boundaries` — Indexes of the pipes that divide this line into table cells. [3]
+
+
+- Defines the function `enclosing_span_end`. [4]
+
+
+- Cell offsets preserve optional outer pipes and reuse supplied boundaries without rescanning. [5]
+
+- Re-exports the kernel `fence_delimiter` helper used for fenced scanning. [7]
+- Re-exports the kernel `unfenced_lines` helper used for fence-aware scanning. [8]
+
+## MIK-R95 Illustrative Example Corrected
+
+The docstring's multi-backtick example no longer claims a card location: it keeps the `ariaLabel` illustration and says only that equal-length runs make it one span, after the referenced card was removed by the same leaf. Parser logic and the historical fixture bytes are unchanged.

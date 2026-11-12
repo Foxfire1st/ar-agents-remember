@@ -1,0 +1,155 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/start_progress.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Schema tag gating reads",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9227773387e3bae878d9ce48db571537d9ff3de5",
+            "content": "sha256:a939b132d9947f028c0e1376f406ef58484bd1b5b9b18b01c4ed2fd776aa8abf",
+            "locator": {
+              "kind": "symbol",
+              "name": "START_PROGRESS_SCHEMA"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Path layout under `temp/worktree-start/<repo>/<worktree>.json`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9227773387e3bae878d9ce48db571537d9ff3de5",
+            "content": "sha256:4a93610257ccc1376709a0826696cf5929b7b90375317863778fc47114fd8e45",
+            "locator": {
+              "kind": "symbol",
+              "name": "start_progress_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Best-effort write that never raises\n\nAnchor: `write_start_progress`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9227773387e3bae878d9ce48db571537d9ff3de5",
+            "content": "sha256:a6f982760a746eeabcf77676e49937d6011daa0b7dcd8d3a588e058cbcd8598e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`blockedReason` only emitted when present\n\nAnchor: `blockedReason`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9227773387e3bae878d9ce48db571537d9ff3de5",
+            "content": "sha256:5e5b83f6c3fc35ef84f243df11073962f895ba962c1a2a14af644ac49466231c",
+            "locator": {
+              "end": 103,
+              "kind": "line_range",
+              "start": 103
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Clear on contract supersession",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9227773387e3bae878d9ce48db571537d9ff3de5",
+            "content": "sha256:25c723659db84dbeb9252766fc1f77d0be565d72ab28e3df84c74c8da7484011",
+            "locator": {
+              "kind": "symbol",
+              "name": "clear_start_progress"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Schema-gated read returning `None` on miss",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9227773387e3bae878d9ce48db571537d9ff3de5",
+            "content": "sha256:673efc3b3d6d3a8f986a1d1723a55b1c972a49606faa36238990d71a991aa639",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_start_progress"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Layer placement avoids observer<->worktrees cycle\n\nAnchor: \"observer<->worktrees cycle\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9227773387e3bae878d9ce48db571537d9ff3de5",
+            "content": "sha256:272d79fca4eaa1a09a2ef267c85315ed0a4cafa774f39531f2d0fb1f9535e6f7",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 10
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Lineage-refused start beats publish no transient progress artifact.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9227773387e3bae878d9ce48db571537d9ff3de5",
+            "content": "sha256:27d9860e7db476ebe66f2a8fc6a5123e78fb9234abeb6666c063e239fdf9f623",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 78
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Provider-blocked is an obsolete pre-retirement phase, classified separately by is_retired_start_progress; no surviving producer writes that provider start path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9227773387e3bae878d9ce48db571537d9ff3de5",
+            "content": "sha256:7c1af3b0ad8f2865d56f8f2e2d2c93aa56d34eed9eea0c2c47229e532227f63a",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 25
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,658 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_writer/handoff.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+        "content": "sha256:877078cb8ce0609792a85cd9031174880499cf2aa932168c838629c0d2ec7eb4",
+        "locator": {
+          "kind": "symbol",
+          "name": "RowRequest"
+        }
+      },
+      "id": "RLZ-2NP5ND",
+      "invariant": "INV-054R7P",
+      "origin": {
+        "handoffEntry": "the-curators-reconsideration-judgment-is-never-automated",
+        "leaf": "260928-MIK-L186"
+      },
+      "rationale": "The row shape is where repoint is admitted as an authored field at all, so a re-point that no curator wrote cannot exist.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+        "content": "sha256:56b4b1c6857f40157750668951592e74e26426e78d6c6a635198058a287a5beb",
+        "locator": {
+          "kind": "symbol",
+          "name": "_entry"
+        }
+      },
+      "id": "RLZ-2WPJBP",
+      "invariant": "INV-KBCKV7N1",
+      "origin": {
+        "handoffEntry": "co:INV-KBCKV7N1",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The file writer requires curator-authored semantic scope for a new invariant and refuses an unfilled scope before any write.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+        "content": "sha256:b2bb98729f08af1c1d9912329a04b6550719237d072d2bdf91dae09ecc9621f7",
+        "locator": {
+          "kind": "symbol",
+          "name": "TestRangeReference"
+        }
+      },
+      "id": "RLZ-DACZSK",
+      "invariant": "INV-B37MWR",
+      "origin": {
+        "handoffEntry": "MIK-R194@v1 rules 1, 5",
+        "leaf": "260928-MIK-L186"
+      },
+      "rationale": "This is the shape a range proof arrives in: it holds the case's path and its line_range locator, so the writer reads the range from the hand-off and no other form stands in for it.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+        "content": "sha256:e5634b2fde999a70250356a80b5b8e8bfebac4a25e60d6f7c75c56d985354f01",
+        "locator": {
+          "kind": "symbol",
+          "name": "family_effect_refusal"
+        }
+      },
+      "id": "RLZ-E01K7E",
+      "invariant": "INV-EH65RT",
+      "origin": {
+        "handoffEntry": "L48-W-MIK-R48-v2-delivery",
+        "leaf": "260928-MIK-L48"
+      },
+      "rationale": "the input gate requiring an effect on changed rows and refusing it on the other four dispositions",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+        "content": "sha256:9c45635d9680b053825219744ed2cb085e0ed39efc6205935a3c7256457167aa",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-ZKPQ4B",
+      "invariant": "INV-MKZ0EA",
+      "origin": {
+        "handoffEntry": "L48-C-callsite-hunks-carry-rule-obligations",
+        "leaf": "260928-MIK-L48"
+      },
+      "rationale": "Refusal-string hunks outside family_effect_refusal carry the exact row, field and disposition wording.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Both forms, the bare file, and expressions that are not read as one test.\n\nAnchor: `test_evidence_names_a_test_as_a_test_id_or_as_a_path_plus_symbol`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0256098f652dc34be5986d7dcab77243a655f959",
+            "content": "sha256:ebb05908d076c74907bac8a22bfb3c2902b74eb2329c114409ae4e9ab1aba461",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_proofs.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "An entry and its curator keys; a ruling authors no invariant; the tests its evidence cites come from `tests_named_in`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+            "content": "sha256:9c45635d9680b053825219744ed2cb085e0ed39efc6205935a3c7256457167aa",
+            "locator": {
+              "end": 909,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The two test forms and the bare test module, read in order and once each.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+            "content": "sha256:9c45635d9680b053825219744ed2cb085e0ed39efc6205935a3c7256457167aa",
+            "locator": {
+              "end": 909,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Read the three sections, collecting every problem.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+            "content": "sha256:afe225e668ac89dbc64251b8baff9eb950324e382fef953bdc3516919652e185",
+            "locator": {
+              "end": 321,
+              "kind": "line_range",
+              "start": 318
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+            "content": "sha256:09f07bfe4d73d32868060de133d9dda519bc45f01bae66d3124ed37b58738c98",
+            "locator": {
+              "end": 371,
+              "kind": "line_range",
+              "start": 334
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "A ruling no record names is refused, and so are proofs on it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+            "content": "sha256:276970b5aa7b2189d3ee26ed3b4067b0769064e20b6f970ad2df76f4643a400d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_attached_rulings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Locators in the file form: symbol, line range, whole file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+            "content": "sha256:d6721ea4e23ab050b94450996a49f7aee57144ec3f376e0c15e4b7de68e49f91",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_locator"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Targets through the shipped realization rules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+            "content": "sha256:5a5c4f47f8364e929f773c384fae0cc2ce8bc3c390fd6fabf3568e5b71a52a22",
+            "locator": {
+              "kind": "symbol",
+              "name": "_targets"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Proofs carry the curator's facet.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+            "content": "sha256:65fb3cecc57f968d0a9a203a81da32119706a5a36fb1aeebb16678738bb33603",
+            "locator": {
+              "kind": "symbol",
+              "name": "_proofs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "An entry: new invariant needs scope, admission and a statement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+            "content": "sha256:9c45635d9680b053825219744ed2cb085e0ed39efc6205935a3c7256457167aa",
+            "locator": {
+              "end": 909,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "A record: kind, fields, and the writer-owned fields refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+            "content": "sha256:9c45635d9680b053825219744ed2cb085e0ed39efc6205935a3c7256457167aa",
+            "locator": {
+              "end": 909,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "History input refuses caller-owned id/revision/sources and malformed considered examinations; the empty list remains intentional.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+            "content": "sha256:9c45635d9680b053825219744ed2cb085e0ed39efc6205935a3c7256457167aa",
+            "locator": {
+              "end": 909,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A file named with a test anywhere in the evidence is not also reported bare.\n\nAnchor: `test_a_file_named_with_a_test_anywhere_in_the_evidence_is_not_also_reported_bare`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0256098f652dc34be5986d7dcab77243a655f959",
+            "content": "sha256:ebb05908d076c74907bac8a22bfb3c2902b74eb2329c114409ae4e9ab1aba461",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_proofs.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "The row keys and the request field a planned row's `ref` travels in.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+            "content": "sha256:9c45635d9680b053825219744ed2cb085e0ed39efc6205935a3c7256457167aa",
+            "locator": {
+              "end": 909,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "Four problems refused in one operation, each named.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e02efe56a42a670bb818ea1f56af7d09c48e5f3",
+            "content": "sha256:c97c263f4303e06cabcdfc7b776da00f1591ac09277e02f248cc82b352661c90",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_problems_refuse_the_whole_operation_and_each_is_named"
+            },
+            "path": "mcp/tests/test_knowledge_writer.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "An entry that names no record is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e02efe56a42a670bb818ea1f56af7d09c48e5f3",
+            "content": "sha256:87a60b9c98129eddc20542723944e3c9dd3a5aaed76c4cd7881d6f9c49d6bc11",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_entry_that_names_no_record_is_refused_and_nothing_of_it_dropped"
+            },
+            "path": "mcp/tests/test_knowledge_writer.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "The cover request and its rationale.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+            "content": "sha256:c070e80e2c44655919cc3c29fcd01e000093271874a4de51d649d8d621273656",
+            "locator": {
+              "kind": "symbol",
+              "name": "CoverRequest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "A cover's rationale: non-empty, and never beside remove.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+            "content": "sha256:efc3b7f53ee7bc7c27566fe4054ef723c09a764acf806a7e0765dd26b068846c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cover_rationale"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "The gate requires the effect on changed rows and refuses it elsewhere.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+            "content": "sha256:e5634b2fde999a70250356a80b5b8e8bfebac4a25e60d6f7c75c56d985354f01",
+            "locator": {
+              "kind": "symbol",
+              "name": "family_effect_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "Case evidence decodes JSON-quoted JavaScript/TypeScript test titles, merges them with Python references in appearance order and deduplicates them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+            "content": "sha256:481f7a4d15f351042c8c4997d3adb0dad9e4ffd14dfbd32c48d071a355e45148",
+            "locator": {
+              "end": 214,
+              "kind": "line_range",
+              "start": 186
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "The entry reader validates replace_evidence as a boolean before constructing the request, and only literal true sets its flag.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+            "content": "sha256:3936bc9c49708359acdb54ec805ab71537dd7ac510f28a2c992f71e6aa1f484d",
+            "locator": {
+              "end": 674,
+              "kind": "line_range",
+              "start": 642
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "History item parsing uses read_row_items and attaches its refusals to the specific row and subject.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+            "content": "sha256:4825f9f5ea15c84bc0f74cdaae4cfa2602665acd41942cb1f5da9efb1c1cd8dc",
+            "locator": {
+              "end": 907,
+              "kind": "line_range",
+              "start": 887
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c94a275c0c210a1a9b82e227bfb081ffaa8aedf9",
+            "content": "sha256:431bb6de6ae97c5df2536d981ca0d6c4010adf3342d4232ba389e06ee6e75665",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/row_items.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "A test reference may name a case by its lines, and only a line-range locator says where a case sits.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+            "content": "sha256:b2bb98729f08af1c1d9912329a04b6550719237d072d2bdf91dae09ecc9621f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "TestRangeReference"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The module docstring: a moved row's cover may name another source path, and a cover may carry a rationale that replaces the entry's in place.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+            "content": "sha256:36a005432e3e35fea0efbe95d6394ff1db316a4ada75900c733795db4a5b7e9b",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 23
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "A `repoint` row item names one fired link's position, the path and the locator, and is refused if it renames a link.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+            "content": "sha256:9c45635d9680b053825219744ed2cb085e0ed39efc6205935a3c7256457167aa",
+            "locator": {
+              "end": 909,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "Shared producer shape decoding is separated from full Curator intake, without weakening full-writer scope/admission checks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+            "content": "sha256:466578ca8098eea6245543c59dd5a3e9935c1f63f20dfcee5ead3cf57eea2539",
+            "locator": {
+              "end": 371,
+              "kind": "line_range",
+              "start": 318
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+            "content": "sha256:a39bea481dbe2d718b033078945ab259c71039982d34fa80cff3f1ebe0d64c85",
+            "locator": {
+              "end": 701,
+              "kind": "line_range",
+              "start": 642
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The cover request, its `path` and its `rationale`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+            "content": "sha256:c070e80e2c44655919cc3c29fcd01e000093271874a4de51d649d8d621273656",
+            "locator": {
+              "kind": "symbol",
+              "name": "CoverRequest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A cover read: its ID, locator, path and rationale, with every problem reported.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+            "content": "sha256:3eed69c77304c799ca62699a51a59036a12a3c9a94900d6f40b6709a5e8b11f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cover"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+            "content": "sha256:0fb9b0d63eb22b10ad86446975899b47bf4947e97e403170b869db063d9b7b09",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cover_locator"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The path check: remove plus path, and a path that is not a repository path, are named problems.\n\nAnchor: `require_repository_path`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+            "content": "sha256:5002592f62323f531a413309e656754812f63dae539270ff037a2240252bafb6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cover_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The four refusals and the relocation, end to end.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e02efe56a42a670bb818ea1f56af7d09c48e5f3",
+            "content": "sha256:fbc845ca4136164eb34326e37e70dbd2f85612fd718321f3d76bc113c85e1515",
+            "locator": {
+              "end": 1144,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/test_knowledge_writer.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The template's `incidental` is written as `support`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+            "content": "sha256:e036ba9adf09f8dec93b86b370da427a7144a891036fefbd42727c11b456d69a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ROLE_SPELLINGS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "One refusal reason: where, and what.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+            "content": "sha256:9f5367452d899fa56b1ccf9854a568c3eed6ee306d40d90ddc16e278dcfa9105",
+            "locator": {
+              "kind": "symbol",
+              "name": "Problem"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

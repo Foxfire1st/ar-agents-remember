@@ -1,100 +1,45 @@
 # mcp/src/agents_remember/kernel/onboarding_doc.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/kernel/onboarding_doc.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-06T22:01:41+00:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`                                  |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview      | `../../../overview.md`                     |
-
 ## Governing Overview
 
 [overview.md](../../../overview.md)
 
 ## Purpose
 
-Kernel-level onboarding-document helpers: markdown metadata-table parsing,
-route normalization, and the section-aware body/history change classification
-that closeout gates and carryover planning share.
+Kernel-level Markdown table and fence-aware meaningful-body/history parsing for old-card readers, conversion and crossing. Route normalization, changed-route membership and doc-type route discovery were removed from this module; the retained readers do not grant ordinary operational acceptance from Update History or verification metadata.
 
 ## Code Commentary
 
 ### Logic
 
-The metadata helpers (`onboarding_metadata_row`, `markdown_table_cells`,
-`table_metadata`, `normalize_route`, `route_contains_changed_path`,
-`ROUTE_OVERVIEW_DOC_TYPES`) moved here verbatim from
-`worktrees/modules/onboarding.py`, which keeps re-exporting them as a facade.
-`discover_route_overviews(onboarding_root)` returns (normalized route,
-onboarding-root-relative path) pairs for doc_type-verified route overviews —
-the shared discovery used by carryover overview candidates.
+`markdown_table_cells` splits table cells and `table_metadata` reads metadata rows for retained readers. `fence_delimiter`, `unfenced_lines` and `_section_lines` share fence-aware history boundaries. `ROUTE_OVERVIEW_DOC_TYPES` and the no-impact pattern remain constants, not a route-discovery or operational attestation API. `normalize_route`, `route_contains_changed_path` and `discover_route_overviews` are absent. The worktree onboarding owner imports only `markdown_table_cells`; metadata-row rewriting and its facade exports were removed.
 
-The change-classification helpers define what counts as an honest onboarding
-update. `meaningful_body(text)` is the document minus the three verification
-metadata rows (`lastUpdated`, `lastVerifiedCommitHash`,
-`lastVerifiedCommitDate`) and the entire `## Update History` section;
-`meaningful_body_changed(old, new)` compares those normalized bodies and treats
-`old=None` (new document) as changed. `update_history_section(text)` returns the
-stripped non-empty history lines, `new_history_lines(old, new)` returns history
-lines present only in the new text, and `has_no_impact_marker(lines)` matches
-the in-band attestation convention: an Update History entry containing
-`No content impact:` (file sidecars) or `No route impact:` (route overviews),
-case-insensitive, colon required.
+`meaningful_body` removes the three verification metadata rows and the entire real Update History section, with fence-aware heading detection. `update_history_section` returns stripped nonempty history lines; `new_history_lines` returns newly appearing lines. `meaningful_body_changed`, active-claim filtering and `has_no_impact_marker` were removed with the legacy operational classifiers.
 
 ### Invariants And Boundaries
 
-- Metadata stamps and history appendices never count as content updates; only
-  text outside the metadata rows and Update History section is "body".
-- The no-impact marker is the explicit reviewed-no-impact attestation; gate
-  errors teach it, and closeout payloads surface every attested document so
-  marker use stays visible at the commit-approval gate.
-- Any `## ` heading ends the Update History section; a marker outside the
-  history section never attests anything.
-- This module is kernel-level: it must not import worktree, application entry point, or
-  provider modules.
+- Parsing excludes verification stamps and Update History from meaningful body.
+- Real H2 headings delimit history; fenced lookalikes do not.
+- These are reader/converter utilities, not an ordinary publication fallback or in-band no-impact authority.
+- Kernel must not import worktree, application or provider owners.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured for this memory repo.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The kernel module defines metadata-row rewriting plus Update History extraction and delta helpers. | `onboarding_metadata_row`; `update_history_section`; `new_history_lines` | mcp/src/agents_remember/kernel/onboarding_doc.py:24-30; mcp/src/agents_remember/kernel/onboarding_doc.py:176-182; mcp/src/agents_remember/kernel/onboarding_doc.py:185-188 |
-| The closeout onboarding module imports the body/history classifiers and metadata-row helper from this kernel module. | "from agents_remember.kernel.onboarding_doc import (" | mcp/src/agents_remember/worktrees/modules/onboarding.py:10-10 |
-| Route-overview and sidecar classification gates consume the meaningful-body, new-history, and no-impact-marker helpers. | `_overview_revision`; `_governing_overview_bucket`; `_route_overview_bucket`; `classify_sidecar_updates` | mcp/src/agents_remember/worktrees/modules/onboarding.py:262-287; mcp/src/agents_remember/worktrees/modules/onboarding.py:323-339; mcp/src/agents_remember/worktrees/modules/onboarding.py:342-372; mcp/src/agents_remember/worktrees/modules/onboarding.py:694-748 |
-| Route-overview and sidecar metadata refresh paths consume `onboarding_metadata_row`. | `refresh_route_overview_metadata_for_context`; `refresh_onboarding_metadata_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:457-488; mcp/src/agents_remember/worktrees/modules/onboarding.py:962-1007 |
-| The public worktree-manager facade imports and re-exports `onboarding_metadata_row`. | "from agents_remember.worktrees.modules.onboarding import (" | mcp/src/agents_remember/worktrees/git_worktree_manager.py:67-67 |
-| Meaningful-body normalization strips verification fields and history. | `meaningful_body` | mcp/src/agents_remember/kernel/onboarding_doc.py:159-169 |
-| History extraction is section-aware. | `update_history_section` | mcp/src/agents_remember/kernel/onboarding_doc.py:176-182 |
-| A recognized no-impact marker requires its explicit colon form. | `has_no_impact_marker` | mcp/src/agents_remember/kernel/onboarding_doc.py:191-199 |
 
-## Update History
-- 2026-09-12T01:06:15+00:00: Generated citation repair: "from agents_remember.worktrees.modules.onboarding import (" repointed to mcp/src/agents_remember/worktrees/git_worktree_manager.py:67-67. No content impact: mechanical anchor-range projection bound to citation source snapshot 1740540b8733028dd833a3538d739271e8925ea5f51911a0f8dcd8c49e7e1c13; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-08T14:45:44+00:00: CCR-L24 preparation re-read `meaningful_body`, `update_history_section`, and `new_history_lines` against the current kernel source; wording retained and helper ranges regenerated. Verification metadata remains pinned pending final pair composition.
-- 2026-09-08T14:39:58+00:00: Generated citation repair: `meaningful_body` repointed to mcp/src/agents_remember/kernel/onboarding_doc.py:159-169. No content impact: mechanical anchor-range projection bound to citation source snapshot 5911742cfcc7a53db92b36b80bac02ee49a67204b190c0311a81bcc2e388ad59; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-08T14:39:58+00:00: Generated citation repair: `update_history_section` repointed to mcp/src/agents_remember/kernel/onboarding_doc.py:176-182. No content impact: mechanical anchor-range projection bound to citation source snapshot 5911742cfcc7a53db92b36b80bac02ee49a67204b190c0311a81bcc2e388ad59; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-08T14:39:58+00:00: Generated citation repair: `has_no_impact_marker` repointed to mcp/src/agents_remember/kernel/onboarding_doc.py:191-199. No content impact: mechanical anchor-range projection bound to citation source snapshot 5911742cfcc7a53db92b36b80bac02ee49a67204b190c0311a81bcc2e388ad59; claim bytes unchanged; generated by ccr-r10@v1.
+- Meaningful-body normalization strips verification fields and history. [6]
+- History extraction is section-aware. [7]
 
-- 2026-09-06T22:01:41+00:00 — Reconciled retired test evidence against current owning source; retained production invariants and verification pins without claiming removed suite protection.
 
-- 2026-08-04T03:26:26+02:00 — 260731-EFA-L6 S18-SR3-B06 curator: generated and source-inspected the three split consumer ranges (3 repairs, 0 normalisations, 0 declines); the locked immediate recheck was clean with frozen zero source/tokenize/parse/build telemetry.
-- 2026-08-04T03:03:23+02:00 — 260731-EFA-L6 S18-SR3-B06 worker: split the
-  underbound import-only record into explicit import, classification-consumer, and metadata-refresh
-  claims with complete owning symbols. All three changed bindings are provisional `:1-1` inputs
-  for the fresh Luna curator; no citation mechanics ran.
-- 2026-08-04T02:20:03+02:00 — 260731-EFA-L6 S18-B06 curator delta: repaired the scoped citations against the frozen source snapshot; generated ranges were inspected and the managed index remained warm/frozen with zero source reads, tokenization, parsing, and build.
+- History extraction and history-line delta parsing survive; metadata-row rewriting was removed. [1]
 
-- 2026-08-04T01:24:49+02:00 — 260731-EFA-L6 S18-SR2-B06 worker: source-first separated the
-  kernel helper definitions from closeout consumption and the public facade re-export. Preserved
-  all three generated definition ranges and added only honest `:1-1` consumer/re-export bindings;
-  no citation mechanics ran.
-- 2026-08-04T00:28:23+02:00 — 260731-EFA-L6 S18-B06 curator: repaired the helper and focused-test citation rows after resolving exact-anchor ambiguity; final exact frozen-snapshot check is clean.
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-06-10T05:50+02:00 — Issue #56 sub-task 3: added `discover_route_overviews` (doc_type-verified route discovery) for carryover overview candidates.
-- 2026-06-10T04:47+02:00 — Created: extracted shared metadata/route helpers from `worktrees/modules/onboarding.py` and added the body/history classification helpers (`meaningful_body`, `meaningful_body_changed`, `update_history_section`, `new_history_lines`, `has_no_impact_marker`) for the issue #56 memory-integrity gates.
+
+- The onboarding owner imports retained Markdown table parsing, not the removed body/history classifiers. [2]
+
+
+- The public worktree facade still imports and exports source-onboarding plans and entity/index refresh helpers; metadata-row rewriting was removed. [5]

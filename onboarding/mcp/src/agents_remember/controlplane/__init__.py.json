@@ -1,0 +1,128 @@
+{
+  "path": "mcp/src/agents_remember/controlplane/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The records this package exports.\n\nAnchor: \"class GateRecord\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c5bfb1e292fbf123166776a484851f67ac6f142",
+            "content": "sha256:f3c93f7d3af46248d0746d80d22ea61bbd0d2d1eff2392b2202d56fb99ef7941",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 45
+            },
+            "path": "mcp/src/agents_remember/controlplane/records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The gate delegation policy this package exports (moved to kernel primitives by L9).\n\nAnchor: \"class GatePolicy:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35226811a3b772b515e1d353fd6b76a7caeb93cf",
+            "content": "sha256:8d9487b3076ca1d8cfda80f3bb6275600830c76684c06abda4eb102af1a7946f",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 54
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/gate_policy.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The store this package exports.\n\nAnchor: \"class GateStore:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bbb005d14f4c90cbe56e3aecbbd4e5ca9cf52cd5",
+            "content": "sha256:246909f64d57c8a2909061ad67923548c61b14e880230f4d420a2bdeab969be7",
+            "locator": {
+              "end": 108,
+              "kind": "line_range",
+              "start": 108
+            },
+            "path": "mcp/src/agents_remember/controlplane/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The enforcement policy this package exports (slice 6b).\n\nAnchor: \"class GateGuard\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce5957cd60d790dc89aa33796a021dd2bf70c7f7",
+            "content": "sha256:198a6546e4de20cf19d73a1e00d7bb79ce5656454fdf46de3c73182d196a0cc2",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 42
+            },
+            "path": "mcp/src/agents_remember/controlplane/enforcement.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The durable-store contract exports: the package-docstring paragraph stating the contract, the import block, and the matching `__all__` entries.\n\nAnchor: `__all__`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee455c6ec7168da8ea70b3238c695f3b671052a0",
+            "content": "sha256:98c357627a3b6aebda7a8c8f572d6ccbe30a314083c6886279122c279d1e245f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The module that defines every durable-store symbol re-exported here, and the six per-store ownership constants that are deliberately not re-exported.\n\nAnchor: \"SCHEMA_VERSION = \"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
+            "content": "sha256:f9ff027fc10e363ca8bd88ab12e81b09bf2023b046372290f003fd48b199d8d3",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 45
+            },
+            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The current facade explicitly exports gate and durable-contract declarations; operator-inbox and direct file-I/O names are not exported.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee455c6ec7168da8ea70b3238c695f3b671052a0",
+            "content": "sha256:497f478c9923cf22cca6fc41ddc917c65f326b515c860db20d3051f29907c788",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

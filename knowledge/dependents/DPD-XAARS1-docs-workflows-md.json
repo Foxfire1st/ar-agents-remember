@@ -1,0 +1,149 @@
+{
+  "confirmed": {
+    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
+    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
+    "role": "worker",
+    "statement": "This task brought the page in line with the product: its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate, the false ones were corrected, and the page was read whole; 12 rows of the inventory of changes are told here.",
+    "task": "260928-MIK-L97",
+    "uncommitted": true
+  },
+  "document": "docs/workflows.md",
+  "id": "DPD-XAARS1",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-handoff"
+    },
+    "handoffEntry": "L97-dependent-docs-workflows-md",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-dependent/v1",
+  "stands_on": [
+    {
+      "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+    },
+    {
+      "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/tasks/document.py"
+    },
+    {
+      "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/tasks/store.py"
+    },
+    {
+      "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/tasks/task_intent.py"
+    },
+    {
+      "blob": "c3404824cd6df7779b6ca88e482e08e63727d831",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/tasks/task_paths.py"
+    },
+    {
+      "blob": "2cfd1fbb4b8d66acb95b9561c8157a660db5e3c5",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/models/task_document.py"
+    },
+    {
+      "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+    },
+    {
+      "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+    },
+    {
+      "blob": "dcbcb92eb8805a1f241603ea248fdac21fb64a9d",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
+    },
+    {
+      "blob": "94685bc678c71945d51aad8a4f89fceafe0d1de7",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
+    },
+    {
+      "blob": "bd77dbe33f4a4d1ac2befce7e6727da1a0375ce2",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/publication_admission.py"
+    },
+    {
+      "blob": "30e2ff45d5ee2851183199f50d122c1ccdd79e78",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/coordination_context/models.py"
+    },
+    {
+      "blob": "de648bcc90f0df139f1935da685f0443db3f0b4c",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/coordination_context/json_settings.py"
+    },
+    {
+      "blob": "8bce679174c74431e089a0291f70867a5aa614f7",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/direct_execution_grants.py"
+    },
+    {
+      "blob": "ae56f6c72b4720e9cd1ae2abdd42551a79d4c1d4",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
+    },
+    {
+      "blob": "b55831de01a31229148df21d4199d8411b00f926",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/worktree_tools.py"
+    },
+    {
+      "blob": "253d497ec656e8545831660fc2a7f893b5a59e89",
+      "kind": "file",
+      "path": "skills/l-01-agent-lifecycles/operations/closeout.md"
+    },
+    {
+      "blob": "14f77d0521220a97197f1eadbcdab1daa4b08dd3",
+      "kind": "file",
+      "path": "skills/l-01-agent-lifecycles/operations/planning.md"
+    },
+    {
+      "blob": "70f9c9b7b971a88ca122d8d482d8c7b89fa3a414",
+      "kind": "file",
+      "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
+    },
+    {
+      "blob": "112ec2f30686e22560ceca1cac9281606a748605",
+      "kind": "file",
+      "path": "system/defaults/examples/memory-repo/task-publication.md"
+    },
+    {
+      "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
+    },
+    {
+      "blob": "7258b945df21cc183036dd6a3ad93549d05dde60",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/integration/integration_resolution_handoff.py"
+    },
+    {
+      "blob": "a80df4903ac866d31ac7495d03f6ca3827bc1ebf",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py"
+    },
+    {
+      "blob": "cd80a35ddf162f3b0ef4f5521a0771cb5516b674",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/direct_execution_grants.py"
+    },
+    {
+      "blob": "a944280846a4175d9217a58a16a3374d336e652b",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/worktree_tool_requests.py"
+    }
+  ]
+}

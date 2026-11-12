@@ -1,0 +1,103 @@
+{
+  "path": "mcp/tests/test_tool_answer_log.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "02df2b567c68180c22058ef0d58bf27b6ea52756",
+        "content": "sha256:3f5edeed93dc365ee636395c070a071ad2e794cb7885b8314e7f2dbdb06d38d8",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolAnswerLogTests.test_concurrent_details_cannot_both_spend_the_same_log_budget"
+        }
+      },
+      "facet": "Two concurrent detail writers share one budget admission; only the affordable detail is written.",
+      "id": "PRF-AGPT04",
+      "invariant": "INV-T3CE64",
+      "origin": {
+        "handoffEntry": "MIK-R213@v1 rule 1",
+        "leaf": "260928-MIK-L202"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Log fields, redaction and write-failure behavior are checked.  Anchor: `ToolAnswerLogTests`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02df2b567c68180c22058ef0d58bf27b6ea52756",
+            "content": "sha256:4e501d5e6da0d4fabec24d326e4f71ecc97abfad6fb7b6e5c130c636c22154f4",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Raised and refused calls keep real entry logging.  Anchor: `ToolRaisedCallLoggingTests`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02df2b567c68180c22058ef0d58bf27b6ea52756",
+            "content": "sha256:4e501d5e6da0d4fabec24d326e4f71ecc97abfad6fb7b6e5c130c636c22154f4",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Hermetic enclosure log placement and cleanup are asserted.  Anchor: `ToolAnswerEnclosureTests`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02df2b567c68180c22058ef0d58bf27b6ea52756",
+            "content": "sha256:4e501d5e6da0d4fabec24d326e4f71ecc97abfad6fb7b6e5c130c636c22154f4",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Real temporary-root paths obey the exact preservation or length-and-digest rule.  Anchor: `ToolAnswerLogTests.test_home_folder_path_follows_the_length_rule`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02df2b567c68180c22058ef0d58bf27b6ea52756",
+            "content": "sha256:6ab4de03b441a04dcaeb3bc72e2070286d92677e9bfcbde64358e6010b711f3e",
+            "locator": {
+              "end": 346,
+              "kind": "line_range",
+              "start": 326
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Two detail writers cannot both spend one remaining budget.\n\nAnchor: `test_concurrent_details_cannot_both_spend_the_same_log_budget`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02df2b567c68180c22058ef0d58bf27b6ea52756",
+            "content": "sha256:4e501d5e6da0d4fabec24d326e4f71ecc97abfad6fb7b6e5c130c636c22154f4",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

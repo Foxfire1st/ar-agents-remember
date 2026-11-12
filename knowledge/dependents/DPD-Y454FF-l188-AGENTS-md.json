@@ -1,0 +1,41 @@
+{
+  "confirmed": {
+    "codeTree": "b42c8d51a964d240cdda819287aab852aa00dfe3",
+    "commit": "81180617aed517835314526b8309d37d5be8b3b7",
+    "role": "curator",
+    "statement": "AGENTS.md now points task authoring, collaboration, closeout and knowledge use at existing l-01 files instead of the removed skills, and still describes the package-served skill copy correctly.",
+    "task": "260928-MIK-L84",
+    "uncommitted": true
+  },
+  "document": "AGENTS.md",
+  "id": "DPD-Y454FF",
+  "origin": {
+    "handoff": {
+      "path": "handoff-draft.json"
+    },
+    "handoffEntry": "dpd-5",
+    "leaf": "260928-MIK-L188",
+    "task": "260928-MIK"
+  },
+  "revision": 3,
+  "schema": "ar-dependent/v1",
+  "stands_on": [
+    {
+      "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+      "kind": "file",
+      "path": "scripts/sync-skills.py"
+    },
+    {
+      "anchor": {
+        "blob": "f1d4e8e2f8295896686d4d104794e325b9694007",
+        "content": "sha256:5c093fea021c330d2c618bb11ee7902c52a15b4e661c6dbcceb21dffa645efd8",
+        "locator": {
+          "kind": "symbol",
+          "name": "shipped_skill_tree"
+        },
+        "path": "mcp/src/agents_remember/application/skill_resources/provider.py"
+      },
+      "kind": "anchor"
+    }
+  ]
+}

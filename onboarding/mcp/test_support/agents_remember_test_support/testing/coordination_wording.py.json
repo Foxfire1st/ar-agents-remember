@@ -1,0 +1,38 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/coordination_wording.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The single registry maps each lifecycle-skill file to the clauses it must carry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36d804a3c22f393f9af02706048f73c6db76e1a8",
+            "content": "sha256:6a063f2c6ed3c54faeadc287c845666bf828a5218c58642ea026b31c02b8f50a",
+            "locator": {
+              "kind": "symbol",
+              "name": "CURRENT_COORDINATION_CLAUSES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The module holds data only: it imports nothing and reads no file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36d804a3c22f393f9af02706048f73c6db76e1a8",
+            "content": "sha256:d5c0af6b8236e35c5c2f99e32e086efd3816a13eba057133d6e3d385654e67c8",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

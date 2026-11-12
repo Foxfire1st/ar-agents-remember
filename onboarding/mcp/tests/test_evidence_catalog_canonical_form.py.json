@@ -1,0 +1,1182 @@
+{
+  "path": "mcp/tests/test_evidence_catalog_canonical_form.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+        "content": "sha256:2499b6d7da18416ef948506e6854219aac7db2f5a2929dd8243044b6e10cadf7",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_rows_are_ordered_by_key_and_none_is_added_or_removed"
+        }
+      },
+      "facet": "The command reorders artifact rows by path and the number of rows is unchanged.",
+      "id": "PRF-0XD9XJ",
+      "invariant": "INV-6GVK07",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-write-command-decides-nothing",
+        "leaf": "260928-MIK-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+        "content": "sha256:1efbb9b29b9bcafe0d694f2355d41e5b6cbe2b3bfb7e3640ef3c9a5a35146346",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_command_refuses_incomplete_dependency_facts_without_writing"
+        }
+      },
+      "facet": "Incomplete dependency facts are refused and both catalogs keep their bytes, although one holds a repairable duplicate.",
+      "id": "PRF-1QCH7A",
+      "invariant": "INV-6GVK07",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-write-command-decides-nothing",
+        "leaf": "260928-MIK-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+        "content": "sha256:57c4bc18875b83126d31ad5bd902e56b074d43bffe0fa4a4ea5f1fb45a2e6f35",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_row_without_a_derived_consumer_keeps_every_consumer_that_exists"
+        }
+      },
+      "facet": "For rows whose derived set is empty the command prints that the consumers were kept, removes the line of a missing file only where another listed consumer exists, and keeps the list that names only the missing file.",
+      "id": "PRF-1QHEJY",
+      "invariant": "INV-6GVK07",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-write-command-decides-nothing",
+        "leaf": "260928-MIK-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+        "content": "sha256:5dff904d91600ca2e8a3207cb812581eb85d2b22f30fdbd0328517000fde9643",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_duplicate_consumer_is_refused_and_removed"
+        }
+      },
+      "facet": "The lifecycle loader refuses a consumers list that holds a line twice.",
+      "id": "PRF-2NGZS4",
+      "invariant": "INV-RDQYV3",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-canonical-form-refused",
+        "leaf": "260928-MIK-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+        "content": "sha256:ab5a7485f36f5e1c640c21e2a5fa6934267915157865a4f5547c8b1831244981",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_line_the_union_brings_back_for_a_deleted_file_is_refused_then_removed"
+        }
+      },
+      "facet": "After the landed side deleted a test file with its lines and the parked work added lines next to them, the reapply brings both lines back; the validator reports the missing consumer and the lane loader reports the lane member whose file does not exist, and both name the command.",
+      "id": "PRF-40QYA7",
+      "invariant": "INV-K0CS85",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-union-merge-checked",
+        "leaf": "260928-MIK-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+        "content": "sha256:a658b8ac4b6d5f203b30fb5bbe702a9bf435e0345b073a91be021db6f7485b1c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_row_whose_artifact_file_is_gone_is_named_and_never_removed"
+        }
+      },
+      "facet": "The validator refuses a row whose artifact file does not exist and says that the command removes no row.",
+      "id": "PRF-4GMJ7N",
+      "invariant": "INV-K0CS85",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-union-merge-checked",
+        "leaf": "260928-MIK-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+        "content": "sha256:ef047d17cda7b442859eadc86b233a9b7eb641ee54ccd337950077e24bb0a8dc",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_refusal_for_the_lane_manifest_leaves_a_repairable_lifecycle_catalog_alone"
+        }
+      },
+      "facet": "A comment inside a lane list is refused, and the lifecycle catalog, which holds a repairable duplicate, is not written.",
+      "id": "PRF-4J7PAA",
+      "invariant": "INV-6GVK07",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-write-command-decides-nothing",
+        "leaf": "260928-MIK-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+        "content": "sha256:a1e6b0368db7358f7cca8026c5f19a76f115794466043c9f55952d04c888f434",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_both_catalogs_merge_by_union"
+        }
+      },
+      "facet": "git check-attr reports merge: union for both catalog paths in the real repository.",
+      "id": "PRF-4TVMJ7",
+      "invariant": "INV-K0CS85",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-union-merge-checked",
+        "leaf": "260928-MIK-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+        "content": "sha256:627ab3bdcd14e72bf394f10ef5ef2ccbe0655ffb36acf13409959e83a22e6131",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_contract_rows_are_ordered_by_id"
+        }
+      },
+      "facet": "The command reorders contract rows by id.",
+      "id": "PRF-55E8GK",
+      "invariant": "INV-6GVK07",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-write-command-decides-nothing",
+        "leaf": "260928-MIK-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+        "content": "sha256:4b0cff175405c41ed8b77b91d54741cc78e5f7df6a944c58f63d778d1dd8dfad",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_two_branches_that_both_changed_the_lists_merge_with_a_merge_commit"
+        }
+      },
+      "facet": "Two branches that both committed list additions merge with a merge commit and without an unmerged path.",
+      "id": "PRF-6AY61P",
+      "invariant": "INV-K0CS85",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-union-merge-checked",
+        "leaf": "260928-MIK-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+        "content": "sha256:2abe959668f509b999980784a7b66ee1800a5b196bb562ece6ec2476d316b020",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_command_refuses_ambiguous_modules_without_writing"
+        }
+      },
+      "facet": "Ambiguous module names are refused, and both catalogs keep their bytes although one holds a repairable duplicate.",
+      "id": "PRF-7DVF46",
+      "invariant": "INV-6GVK07",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-write-command-decides-nothing",
+        "leaf": "260928-MIK-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+        "content": "sha256:1eed5e2928ef19ba2433d27b4b7be294b15367808c98c07f6525d0ba6466cf6a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_command_refuses_a_row_listed_twice_and_names_it"
+        }
+      },
+      "facet": "An artifact row and a contract row listed twice are each refused by name, and the file keeps its bytes.",
+      "id": "PRF-7K5G1H",
+      "invariant": "INV-6GVK07",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-write-command-decides-nothing",
+        "leaf": "260928-MIK-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+        "content": "sha256:042bb460c3b6a9b202813848408ed18189e201949a0434110034d0026fbbdbd3",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_consumer_list_out_of_order_is_refused_then_repaired"
+        }
+      },
+      "facet": "The lifecycle loader refuses an unordered consumers list, names the artifact and names the write command.",
+      "id": "PRF-7T132C",
+      "invariant": "INV-RDQYV3",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-canonical-form-refused",
+        "leaf": "260928-MIK-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+        "content": "sha256:3006a0c4798db597d48400aa02ab6b49dcda9948675850537d4401ca56edf943",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_pytest_start_up_explains_a_lane_manifest_that_does_not_parse"
+        }
+      },
+      "facet": "The start-up hook of a test run raises a usage error that names the lane manifest and carries the sentence about interleaved rows.",
+      "id": "PRF-7X62GY",
+      "invariant": "INV-K0CS85",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-union-merge-checked",
+        "leaf": "260928-MIK-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+        "content": "sha256:627ab3bdcd14e72bf394f10ef5ef2ccbe0655ffb36acf13409959e83a22e6131",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_contract_rows_are_ordered_by_id"
+        }
+      },
+      "facet": "The lifecycle loader refuses a contract row that sorts before the row above it, names the row and names the write command.",
+      "id": "PRF-7ZJCP3",
+      "invariant": "INV-RDQYV3",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-canonical-form-refused",
+        "leaf": "260928-MIK-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+        "content": "sha256:e37d6e0245119fa095aef1f7266c43d90e86c17763606f3f99a443da2810cb84",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_command_derives_a_missing_and_drops_an_unsupported_consumer"
+        }
+      },
+      "facet": "For an exact row the command adds a consumer the source tree shows and drops a listed module that does not exist.",
+      "id": "PRF-ANMFBF",
+      "invariant": "INV-6GVK07",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-write-command-decides-nothing",
+        "leaf": "260928-MIK-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+        "content": "sha256:1be4605d67f8080b746498eb2133aa0732d4bdab757d33d58037d3b08300da25",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_table_header_followed_by_a_comment_is_read_and_keeps_its_comment"
+        }
+      },
+      "facet": "Rows under a table header that is followed by a comment are ordered and derived, and both headers keep their comment.",
+      "id": "PRF-CX32NZ",
+      "invariant": "INV-6GVK07",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-write-command-decides-nothing",
+        "leaf": "260928-MIK-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+        "content": "sha256:29f5446bf3ddeabed6e2bce6985d076aedf5bae0a8991745c212f502d7a236aa",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_test_run_prints_the_lane_refusal_once_with_the_command"
+        }
+      },
+      "facet": "A real pytest run on a synthetic repository prints a worker's collection refusal once, with the finding and the command, and ends with the usage-error exit code.",
+      "id": "PRF-D12G9F",
+      "invariant": "INV-K0CS85",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-union-merge-checked",
+        "leaf": "260928-MIK-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+        "content": "sha256:c7a1134e5be49d7bdc62cadced73357623b975ad7659dd7f3e973cb0b53af621",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_form_the_command_does_not_read_is_refused_and_nothing_is_written"
+        }
+      },
+      "facet": "An indented table header, a list key written without spaces in either catalog, and a list whose closing bracket is not on a line of its own are each refused by name, and both catalogs keep their bytes.",
+      "id": "PRF-DB4VJ9",
+      "invariant": "INV-6GVK07",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-write-command-decides-nothing",
+        "leaf": "260928-MIK-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+        "content": "sha256:3559315c81d79f83f3a637051a3a333a41ad70fb22e4a52296d5a9f17f9c9f99",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_second_run_changes_nothing_and_comments_survive"
+        }
+      },
+      "facet": "A second run leaves both catalogs byte-identical and prints that they were already canonical; a comment above [files] and a comment above an [[artifact]] header are still in place.",
+      "id": "PRF-ETEC6F",
+      "invariant": "INV-6GVK07",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-write-command-decides-nothing",
+        "leaf": "260928-MIK-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+        "content": "sha256:26b0c1e1314044e79f0eaeeeaee2037f9bf6c9c39c8253cb2f5c086c7c0bb55b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_list_with_other_quotes_or_commas_is_refused_and_the_command_says_what_it_rewrote"
+        }
+      },
+      "facet": "A list whose quotes or commas are not canonical is rewritten, and the command names the form it wrote in its report.",
+      "id": "PRF-F80WGQ",
+      "invariant": "INV-6GVK07",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-write-command-decides-nothing",
+        "leaf": "260928-MIK-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+        "content": "sha256:01319fb23b22eb789e77b3539a9100859612fe8fd32c8db1c8ee17e808445666",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_two_changes_that_add_a_test_file_at_the_same_place_sync_without_a_stop"
+        }
+      },
+      "facet": "With parked work and a landed change that each add a line at the same place of the same lists, the stash applies with exit code 0, no path is unmerged, and both lines are in both catalogs.",
+      "id": "PRF-FR152H",
+      "invariant": "INV-K0CS85",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-union-merge-checked",
+        "leaf": "260928-MIK-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+        "content": "sha256:309328264476cb32c9fc5fd3f82559ab22647af96de855b67d635abf0bcd0221",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_validator_derives_the_source_graph_once_for_both_catalogs"
+        }
+      },
+      "facet": "One validator run derives the source graph once and still refuses a test file without a lane.",
+      "id": "PRF-FWSV2Q",
+      "invariant": "INV-K0CS85",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-union-merge-checked",
+        "leaf": "260928-MIK-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+        "content": "sha256:2499b6d7da18416ef948506e6854219aac7db2f5a2929dd8243044b6e10cadf7",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_rows_are_ordered_by_key_and_none_is_added_or_removed"
+        }
+      },
+      "facet": "The lifecycle loader refuses an artifact row that sorts before the row above it.",
+      "id": "PRF-HJJ6V5",
+      "invariant": "INV-RDQYV3",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-canonical-form-refused",
+        "leaf": "260928-MIK-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+        "content": "sha256:5dff904d91600ca2e8a3207cb812581eb85d2b22f30fdbd0328517000fde9643",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_duplicate_consumer_is_refused_and_removed"
+        }
+      },
+      "facet": "The command removes a duplicated consumer line and reports one removed duplicate line.",
+      "id": "PRF-J417JT",
+      "invariant": "INV-6GVK07",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-write-command-decides-nothing",
+        "leaf": "260928-MIK-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+        "content": "sha256:c7a1134e5be49d7bdc62cadced73357623b975ad7659dd7f3e973cb0b53af621",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_form_the_command_does_not_read_is_refused_and_nothing_is_written"
+        }
+      },
+      "facet": "The validator returns 1 for an indented table header, for a list key written without spaces in either catalog and for a list whose closing bracket is not on a line of its own.",
+      "id": "PRF-JA9CPA",
+      "invariant": "INV-RDQYV3",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-canonical-form-refused",
+        "leaf": "260928-MIK-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+        "content": "sha256:ab5a7485f36f5e1c640c21e2a5fa6934267915157865a4f5547c8b1831244981",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_line_the_union_brings_back_for_a_deleted_file_is_refused_then_removed"
+        }
+      },
+      "facet": "The command removes the consumer line and the lane line of a deleted test file that a union merge brought back, prints each, and the validator passes afterwards.",
+      "id": "PRF-JQ03R1",
+      "invariant": "INV-6GVK07",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-write-command-decides-nothing",
+        "leaf": "260928-MIK-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+        "content": "sha256:b836a48a8146873f0e611a0287315ac2e117a61bd99b12b0a4bea53b4ea540e8",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_both_loaders_explain_an_interleaved_file"
+        }
+      },
+      "facet": "Each loader adds the sentence about interleaved rows for its own catalog when the file does not parse.",
+      "id": "PRF-K5ATAD",
+      "invariant": "INV-K0CS85",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-union-merge-checked",
+        "leaf": "260928-MIK-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+        "content": "sha256:18d025405ec6deb7e3c5b7014491fade3919e645877e53e17c08a94ca65ad737",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_parked_work_is_reapplied_over_a_merge_commit_without_a_stop"
+        }
+      },
+      "facet": "Parked work is applied over a merge commit without an unmerged path.",
+      "id": "PRF-KT2B6W",
+      "invariant": "INV-K0CS85",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-union-merge-checked",
+        "leaf": "260928-MIK-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+        "content": "sha256:c69540a522ef07dfd8e6bcd70518dac3cba512e23c0bf67a61f7264b2a196735",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_repository_catalogs_are_in_canonical_form"
+        }
+      },
+      "facet": "Both real catalogs load through their loaders, so neither holds a row or a list that is out of canonical form.",
+      "id": "PRF-NHR8PH",
+      "invariant": "INV-RDQYV3",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-canonical-form-refused",
+        "leaf": "260928-MIK-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+        "content": "sha256:6ed86ea26e366ed87d33b54d39205aea3239da51750a37e866b83b3edb9e3237",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_command_refuses_a_directory_that_is_not_a_git_repository"
+        }
+      },
+      "facet": "Outside a Git repository the command refuses and writes nothing.",
+      "id": "PRF-NRW1V0",
+      "invariant": "INV-6GVK07",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-write-command-decides-nothing",
+        "leaf": "260928-MIK-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+        "content": "sha256:c72dffa2850a50f260d487b2e56ba7bc448b3a2f70e6919e3c2938eb91c2376f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_command_refuses_an_unparseable_catalog_without_writing"
+        }
+      },
+      "facet": "The command refuses the unparseable catalog with the sentence about interleaved rows and writes nothing.",
+      "id": "PRF-QX1CJB",
+      "invariant": "INV-K0CS85",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-union-merge-checked",
+        "leaf": "260928-MIK-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+        "content": "sha256:c72dffa2850a50f260d487b2e56ba7bc448b3a2f70e6919e3c2938eb91c2376f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_command_refuses_an_unparseable_catalog_without_writing"
+        }
+      },
+      "facet": "An unparseable catalog is refused with exit code 1 and both catalogs keep their bytes.",
+      "id": "PRF-RGZG44",
+      "invariant": "INV-6GVK07",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-write-command-decides-nothing",
+        "leaf": "260928-MIK-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+        "content": "sha256:6c521fa4b674a39ddebd988bb1b50d0f2c55163661f3bd407f9c4335c149995d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_list_with_two_paths_on_one_line_is_refused_then_rewritten"
+        }
+      },
+      "facet": "A list written with two paths on one line is rewritten with one path per line, the change is reported as whitespace normalised, and the validator passes.",
+      "id": "PRF-RZSFFJ",
+      "invariant": "INV-6GVK07",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-write-command-decides-nothing",
+        "leaf": "260928-MIK-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+        "content": "sha256:188712357b90d8d8addd954bb912792ef2d1882245222184e15d745eb53dc782",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_test_selection_names_a_base_catalog_that_does_not_parse"
+        }
+      },
+      "facet": "Test selection refuses the catalog of the base revision through the shared reader, with the sentence that says what to do.",
+      "id": "PRF-S6DFKK",
+      "invariant": "INV-K0CS85",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-union-merge-checked",
+        "leaf": "260928-MIK-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+        "content": "sha256:a658b8ac4b6d5f203b30fb5bbe702a9bf435e0345b073a91be021db6f7485b1c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_row_whose_artifact_file_is_gone_is_named_and_never_removed"
+        }
+      },
+      "facet": "A row whose artifact file does not exist is named in the report and stays in the catalog.",
+      "id": "PRF-SSMD8H",
+      "invariant": "INV-6GVK07",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-write-command-decides-nothing",
+        "leaf": "260928-MIK-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+        "content": "sha256:f61f7c1ff9a52c247a18c08fcd8e47304c5a1a594e1ae5879cd1b44cc884230e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_two_whole_rows_at_the_same_place_end_in_the_refusal_that_says_what_to_do"
+        }
+      },
+      "facet": "Two whole rows added at the same place leave a catalog that the lifecycle loader refuses with the sentence about interleaved rows; restoring the landed file and adding the row again passes.",
+      "id": "PRF-VSKRS0",
+      "invariant": "INV-K0CS85",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-union-merge-checked",
+        "leaf": "260928-MIK-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+        "content": "sha256:6c521fa4b674a39ddebd988bb1b50d0f2c55163661f3bd407f9c4335c149995d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_list_with_two_paths_on_one_line_is_refused_then_rewritten"
+        }
+      },
+      "facet": "The validator refuses a consumers list and a lane list written with two paths on one line, names the list and names the write command.",
+      "id": "PRF-VZC100",
+      "invariant": "INV-RDQYV3",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-canonical-form-refused",
+        "leaf": "260928-MIK-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+        "content": "sha256:0bd3e9b10a690f111efc8609a7536969b8841f557160cbe531a0ae083deb0903",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_same_line_on_both_sides_is_refused_with_the_command_then_removed"
+        }
+      },
+      "facet": "The same line added on both sides stays twice after the reapply; the validator refuses it as a duplicate and names the command, which removes one copy.",
+      "id": "PRF-WYRPQF",
+      "invariant": "INV-K0CS85",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-union-merge-checked",
+        "leaf": "260928-MIK-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+        "content": "sha256:042bb460c3b6a9b202813848408ed18189e201949a0434110034d0026fbbdbd3",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_consumer_list_out_of_order_is_refused_then_repaired"
+        }
+      },
+      "facet": "The command reports an unordered consumers list as reordered and the validator passes afterwards.",
+      "id": "PRF-X993CJ",
+      "invariant": "INV-6GVK07",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-write-command-decides-nothing",
+        "leaf": "260928-MIK-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+        "content": "sha256:53f8411859bea068493af266d8497c10256cfa7885de8cc97d369329edce7bdf",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_catalog_with_crlf_line_endings_is_refused_and_left_alone"
+        }
+      },
+      "facet": "A catalog with CRLF line endings is refused, and the other catalog, which holds a repairable duplicate, is left alone too.",
+      "id": "PRF-XN5CB2",
+      "invariant": "INV-6GVK07",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-write-command-decides-nothing",
+        "leaf": "260928-MIK-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+        "content": "sha256:75ff9afaff4a23ac7702e38e2b75f2ec9ad8fe299524262796610e9fc0dbf1bd",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_command_derives_an_exact_source_consumer_list"
+        }
+      },
+      "facet": "For an exact-source row the list becomes the source file that references the artifact.",
+      "id": "PRF-Y20XTZ",
+      "invariant": "INV-6GVK07",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-write-command-decides-nothing",
+        "leaf": "260928-MIK-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+        "content": "sha256:7fc19372faf3ff65fc430ff3689f9f87157b7c27637dc04fb68ff44773378faa",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_whitespace_only_change_is_reported"
+        }
+      },
+      "facet": "A change of whitespace only is reported as such and is not called already canonical.",
+      "id": "PRF-YE24WA",
+      "invariant": "INV-6GVK07",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-write-command-decides-nothing",
+        "leaf": "260928-MIK-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+        "content": "sha256:228c68243e89101eafa8b96b3d7fba966216e3f1c5485cdcd04d90aac97e88d2",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_validator_also_refuses_a_lane_manifest_that_is_not_canonical"
+        }
+      },
+      "facet": "The validator command returns 1 for a lane manifest whose list is out of order, and 0 after the write command ran.",
+      "id": "PRF-ZC34D8",
+      "invariant": "INV-RDQYV3",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-canonical-form-refused",
+        "leaf": "260928-MIK-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+        "content": "sha256:26b0c1e1314044e79f0eaeeeaee2037f9bf6c9c39c8253cb2f5c086c7c0bb55b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_list_with_other_quotes_or_commas_is_refused_and_the_command_says_what_it_rewrote"
+        }
+      },
+      "facet": "The loaders report a list whose quotes or commas are not canonical, and the command rewrites it and names the form it wrote.",
+      "id": "PRF-ZFN2Z5",
+      "invariant": "INV-RDQYV3",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-canonical-form-refused",
+        "leaf": "260928-MIK-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+        "content": "sha256:ac783156abba01ae07135f597f7902e9df2157d68335ec789511f8a2fa43f857",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_lane_manifest_without_a_files_table_is_refused_by_name_at_every_entry_point"
+        }
+      },
+      "facet": "The lane loader, the validator, the command and the pytest start-up each refuse a manifest with no [files] table by name instead of raising an internal error.",
+      "id": "PRF-ZN3J47",
+      "invariant": "INV-K0CS85",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-union-merge-checked",
+        "leaf": "260928-MIK-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+        "content": "sha256:ff8efdb268f7835da13f89c1ac0d4bc07875af5faa8828593e5df0abb97766d2",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_command_changes_no_field_of_a_row_but_its_consumers"
+        }
+      },
+      "facet": "With rows of both kinds out of order and a consumers list that is unordered, duplicated and holds an unsupported consumer, the command reorders and derives, and every other line of every row, including a comment between two fields and hand-typed spacing and quoting, keeps its bytes.",
+      "id": "PRF-ZQ1MTM",
+      "invariant": "INV-6GVK07",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-write-command-decides-nothing",
+        "leaf": "260928-MIK-L51"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+        "content": "sha256:e2a3355eb661424137372c8e306519b9b1f41dbd200050a20b62efad25476991",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_lane_loader_names_an_unordered_lane_and_a_duplicated_path"
+        }
+      },
+      "facet": "The lane loader names the unordered lane and the write command, and reports a path listed twice in one lane as a duplicate, not as conflicting file lanes.",
+      "id": "PRF-ZYHNHQ",
+      "invariant": "INV-RDQYV3",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-canonical-form-refused",
+        "leaf": "260928-MIK-L51"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module states that every case drives the real loaders, the real command or real Git over a synthetic repository.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+            "content": "sha256:deda303900cbc85fea1972801791c40c529ba22705c7e94cd6c33f52ad369f1e",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "Two changes at the same place reapply without an unmerged path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+            "content": "sha256:01319fb23b22eb789e77b3539a9100859612fe8fd32c8db1c8ee17e808445666",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_two_changes_that_add_a_test_file_at_the_same_place_sync_without_a_stop"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The same line on both sides stays twice, is refused, and is removed by the command.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+            "content": "sha256:0bd3e9b10a690f111efc8609a7536969b8841f557160cbe531a0ae083deb0903",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_same_line_on_both_sides_is_refused_with_the_command_then_removed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Two whole rows at the same place end in the refusal that says how to recover, and the recovery passes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+            "content": "sha256:f61f7c1ff9a52c247a18c08fcd8e47304c5a1a594e1ae5879cd1b44cc884230e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_two_whole_rows_at_the_same_place_end_in_the_refusal_that_says_what_to_do"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The loaders and the command entry under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ec5ab93e02ad626b0a4ea38ef8644508a1ae0f3",
+            "content": "sha256:567c7ad94a855fa98285824fec3450a8f1303866188684047bad505173acf641",
+            "locator": {
+              "kind": "symbol",
+              "name": "main"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/evidence_lifecycle.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The rewrite under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:3c9676fa36460061169e8c4df01ac67a7edd52424e98825058fa20151a6f494d",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_canonical_catalogs"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/catalog_canonical.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Every line of a row other than its consumers list keeps its bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+            "content": "sha256:ff8efdb268f7835da13f89c1ac0d4bc07875af5faa8828593e5df0abb97766d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_command_changes_no_field_of_a_row_but_its_consumers"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "A line that the union brings back for a deleted file is refused by both loaders and removed by the command.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+            "content": "sha256:ab5a7485f36f5e1c640c21e2a5fa6934267915157865a4f5547c8b1831244981",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_line_the_union_brings_back_for_a_deleted_file_is_refused_then_removed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "The pytest start-up hook explains a lane manifest that does not parse.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+            "content": "sha256:3006a0c4798db597d48400aa02ab6b49dcda9948675850537d4401ca56edf943",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_pytest_start_up_explains_a_lane_manifest_that_does_not_parse"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The synthetic repository is canonical, valid and committed, with the union attribute copied from the real file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+            "content": "sha256:bcf1f0ca6fd3769fcf393c8cac1f5c15bb8b26185cbb816979c112fd1b2a57ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "synthetic_repo"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "The validator derives the source graph once.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+            "content": "sha256:309328264476cb32c9fc5fd3f82559ab22647af96de855b67d635abf0bcd0221",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_validator_derives_the_source_graph_once_for_both_catalogs"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "The pytest start-up and the command refuse a lane manifest without a `[files]` table by name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+            "content": "sha256:43a042594627f3bcdb6699d0de210bff9808b87852c557361ce574ef56282fe1",
+            "locator": {
+              "end": 925,
+              "kind": "line_range",
+              "start": 906
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "A list with non-canonical quotes or commas is reported and rewritten with a named report line.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+            "content": "sha256:2141798203dc29278089a5bfb2c722beaae4c5c748969523a8f9b9e22473a40a",
+            "locator": {
+              "end": 940,
+              "kind": "line_range",
+              "start": 926
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "Five forms the line rewrite does not read are refused by the validator and by the command.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+            "content": "sha256:c7a1134e5be49d7bdc62cadced73357623b975ad7659dd7f3e973cb0b53af621",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_form_the_command_does_not_read_is_refused_and_nothing_is_written"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "A list with two paths on one line is refused and rewritten.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+            "content": "sha256:6c521fa4b674a39ddebd988bb1b50d0f2c55163661f3bd407f9c4335c149995d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_list_with_two_paths_on_one_line_is_refused_then_rewritten"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Both real catalogs load through their loaders.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+            "content": "sha256:c69540a522ef07dfd8e6bcd70518dac3cba512e23c0bf67a61f7264b2a196735",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_repository_catalogs_are_in_canonical_form"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Git reports the union merge attribute for both catalogs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+            "content": "sha256:a1e6b0368db7358f7cca8026c5f19a76f115794466043c9f55952d04c888f434",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_both_catalogs_merge_by_union"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "An unordered consumer list is refused by name with the command, then repaired.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+            "content": "sha256:042bb460c3b6a9b202813848408ed18189e201949a0434110034d0026fbbdbd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_consumer_list_out_of_order_is_refused_then_repaired"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The lane loader names the lane and does not call a duplicate a conflict.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+            "content": "sha256:e2a3355eb661424137372c8e306519b9b1f41dbd200050a20b62efad25476991",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_lane_loader_names_an_unordered_lane_and_a_duplicated_path"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "A second run leaves both files byte-identical and comments in place.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+            "content": "sha256:3559315c81d79f83f3a637051a3a333a41ad70fb22e4a52296d5a9f17f9c9f99",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_second_run_changes_nothing_and_comments_survive"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "An unparseable catalog is refused by the command and nothing is written.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+            "content": "sha256:c72dffa2850a50f260d487b2e56ba7bc448b3a2f70e6919e3c2938eb91c2376f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_command_refuses_an_unparseable_catalog_without_writing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The reapply helper parks, merges and applies, and asserts the kind of merge.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+            "content": "sha256:d27d1fdfc03a52b4da1e21708edec80c1fc9142b67616c5a7d3910d957aa25f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "reapply"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

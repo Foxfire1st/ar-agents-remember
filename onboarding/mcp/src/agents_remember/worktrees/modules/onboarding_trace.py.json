@@ -1,0 +1,111 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/onboarding_trace.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f6091818f7a3fdfaef7337e48da6b832bbe01f71",
+        "content": "sha256:b1117e446ea8341b70f9b249e6aca37a7d07749fd711bed19b7a630d17305bf4",
+        "locator": {
+          "kind": "symbol",
+          "name": "onboarding_trace_result"
+        }
+      },
+      "id": "RLZ-GARSNT",
+      "invariant": "INV-WM6BTP",
+      "origin": {
+        "handoffEntry": "MIK-R55@v1 rule 8",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "This onboarding boundary refuses a root file whose card subject would collide with the root overview.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "References-only counting and readable repair.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f6091818f7a3fdfaef7337e48da6b832bbe01f71",
+            "content": "sha256:ddd226cd3005097d3a57f053081ae6fe228d72cf55c9a1c3be954a4dd45cf3a4",
+            "locator": {
+              "end": 223,
+              "kind": "line_range",
+              "start": 170
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Item facts, ordinary open state and repair reasons.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f6091818f7a3fdfaef7337e48da6b832bbe01f71",
+            "content": "sha256:7ccb04d31918c6bba53245cf73a870df37fa58df77c5401bc223b7068043e0e6",
+            "locator": {
+              "end": 321,
+              "kind": "line_range",
+              "start": 246
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Per-file history provenance and current eligible answers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f6091818f7a3fdfaef7337e48da6b832bbe01f71",
+            "content": "sha256:6e84a85e25e251079015d419f87e3bd57925eea2ebb80f8ff107f6d81499f538",
+            "locator": {
+              "end": 493,
+              "kind": "line_range",
+              "start": 435
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Card/route construction, failure reporting and stored-item predicate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f6091818f7a3fdfaef7337e48da6b832bbe01f71",
+            "content": "sha256:95a07a4609d2252a0a203136d09086632f4edaf78a521140c52f82966ba10805",
+            "locator": {
+              "end": 665,
+              "kind": "line_range",
+              "start": 545
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Trace items consume caller-provided groups with every source/blob, and an existing root overview-file/card collision refuses as incomplete.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f6091818f7a3fdfaef7337e48da6b832bbe01f71",
+            "content": "sha256:e7838f5a92bd85fcaddc76aca3521757ff5019a3cbd934fc5c57765e895949d3",
+            "locator": {
+              "end": 667,
+              "kind": "line_range",
+              "start": 539
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

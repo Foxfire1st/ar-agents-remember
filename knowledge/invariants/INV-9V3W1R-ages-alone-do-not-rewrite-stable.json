@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "A detail that embeds the changing minute count turns every heartbeat into a projection rewrite and an event to every client, which is a standing cost for no information. The quiescence and static-detail cases pin both halves."
+  },
+  "applicability": "The projection delta and the stable text a stalled row carries.",
+  "conditions": [
+    "A quiet interval emits no delta and no membership change.",
+    "The threshold crossing emits exactly one membership change.",
+    "A stalled row's detail is fixed text, so a growing age does not rewrite it."
+  ],
+  "exclusions": [
+    "A serialized idle duration inside a row's stable detail.",
+    "Rewriting an unchanged projection because time passed.",
+    "Emitting an event for an age-only step."
+  ],
+  "id": "INV-9V3W1R",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/reviewer/267804e5-dd71-51e8-8f1d-d975effaaeaf/role-launch/round4/L190-fix-verification-R4.json#L190-R1-F12; Prior sealed closure retained; not reopened in fixed-list R4."
+      ],
+      "path": "ingest-runB.json"
+    },
+    "handoffEntry": "L190-R1-F12",
+    "leaf": "260928-MIK-L190",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Ages alone do not rewrite stable attention projection or emit an SSE membership change.",
+  "status": "proposed",
+  "supersedes": []
+}

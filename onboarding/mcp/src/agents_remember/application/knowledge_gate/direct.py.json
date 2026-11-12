@@ -1,0 +1,163 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_gate/direct.py",
+  "realizes": [],
+  "references": {
+    "10": {
+      "note": "The open leaf history files of a candidate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "136d4c18901e0406361b0361c272d806dc80da93",
+            "content": "sha256:1a82503335dfe34106b68ebfc42a8b0a4b73c46da93b5a15cea929aba31ba7eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_open_histories"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The direct verdict binds the explicit or inferred owner; only an exact no-publication replay skips a fresh gate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "136d4c18901e0406361b0361c272d806dc80da93",
+            "content": "sha256:7cd0923beec23ea1e1cc61d019f64db3a6059820df36f44045a21fb077dad60e",
+            "locator": {
+              "kind": "symbol",
+              "name": "direct_verdict"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The worklist over the series sides, failing closed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "136d4c18901e0406361b0361c272d806dc80da93",
+            "content": "sha256:0e49b4be19d35dc91f3c53b2777953d9cbe81b16fc4a50805dfb5a63a297bfe1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_worklist"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The route test.\n\nAnchor: `test_direct_landing_gates_names_its_leaf_closes_its_history_and_restores_on_refusal`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b576ddb0afc095d5ccff8d0c435a52682f6e126c",
+            "content": "sha256:8f367598192bb39ba67abadadead88d57d5b136c7b455e6216545a0928a59c24",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_closeout_gate.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "A supplied valid owner selects rowless closed history while other open owners refuse.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "136d4c18901e0406361b0361c272d806dc80da93",
+            "content": "sha256:9cede2e178d47bc78d5b916533657992992e4f36515b9828d7716dc07668e9f9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_named_source"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`_open_histories` implements the retained boundary described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "136d4c18901e0406361b0361c272d806dc80da93",
+            "content": "sha256:1a82503335dfe34106b68ebfc42a8b0a4b73c46da93b5a15cea929aba31ba7eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_open_histories"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "`_source` implements the retained boundary described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "136d4c18901e0406361b0361c272d806dc80da93",
+            "content": "sha256:044ae1162ac1195544e4268a00102177d3f1824342cff341664587f9ba561431",
+            "locator": {
+              "kind": "symbol",
+              "name": "_source"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "`direct_verdict` implements the retained boundary described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "136d4c18901e0406361b0361c272d806dc80da93",
+            "content": "sha256:7cd0923beec23ea1e1cc61d019f64db3a6059820df36f44045a21fb077dad60e",
+            "locator": {
+              "kind": "symbol",
+              "name": "direct_verdict"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The module docstring: the four sides and the leaf a direct landing names.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "136d4c18901e0406361b0361c272d806dc80da93",
+            "content": "sha256:7cd0923beec23ea1e1cc61d019f64db3a6059820df36f44045a21fb077dad60e",
+            "locator": {
+              "kind": "symbol",
+              "name": "direct_verdict"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "136d4c18901e0406361b0361c272d806dc80da93",
+            "content": "sha256:584a22c8a82c8025f118ee4cabe8eab1a65111db4db91df38b664aeadf68be0a",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

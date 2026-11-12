@@ -1,20 +1,31 @@
 # dashboard/src/panels/engine-room/engines.tsx
 
-| Field                  | Value                                                       |
-| ---------------------- | ----------------------------------------------------------- |
-| repository             | agents-remember                                             |
-| path                   | `dashboard/src/panels/engine-room/engines.tsx`              |
-| doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-08-07T08:19Z                                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`                  |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
-| governingOverview      | `overview.md`                                               |
-
 ## Governing Overview
 
 [panels/engine-room overview](overview.md)
 
-## Purpose
+
+## Current enclosure-only composition
+
+engines.tsx now exports BranchNode only, with ref-derived flags/materialisation, pruned style, full title/truncated branch, landing entry and delayed detach Motion. EngineGauge and all frame/charge/decorations, boot crossing effect and timeout are removed.
+
+### Maintenance boundaries
+
+Rewrite file purpose/logic/conventions as branch-node ownership. Remove gauge palette, charge/fault/boot-pulse and runtime-state evidence. Preserve factState register, branch flags and Motion boundaries; filename survival is not survival of the gauge.
+
+Source/test/fixture inspection is not a fresh mounted capture or a passing test run.
+Historical provider-shaped input data and retained compatibility definitions do not
+restore removed provider visuals or tool exposure.
+
+- engines.tsx now exports BranchNode only, with ref-derived flags/materialisation, pruned style, full title/truncated bran — source ownership, not executed visual proof. [3]
+
+## Historical superseded account (non-operative)
+
+The prior onboarding below is retained for provenance and unrelated design history.
+It is not current provider-render, fallback, prototype-parity or execution guidance.
+Current behavior and its limits are the operative contract above.
+
+
 
 The branch-node and engine-gauge renderers of the Engine Room scene, extracted from
 `EnclosureCanvas.tsx` by the 260731-EFA-L8 responsibility split. `BranchNode` draws a
@@ -46,32 +57,22 @@ CSS animation in these components.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked `system/sources.md`; no Domain Documentation source is
 configured for this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found. | — | — |
+No relevant domain documentation was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The branch-node renderer with landing/pruned registers. | `BranchNode` | dashboard/src/panels/engine-room/engines.tsx:72-135 |
-| The runtime-state gauge renderer. | `EngineGauge` | dashboard/src/panels/engine-room/engines.tsx:136-196 |
+- The branch-node renderer with landing/pruned registers. [1]
 
-## Cross-Repo References
+
+### Cross-Repo References
 
 No cross-repository implementation source governs this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: created this sidecar for the new
-  engines module extracted from `EnclosureCanvas.tsx`. Verification pinned to the
-  leaf base until closeout stamps the code commit.
+No applicable cross-repository source was found.

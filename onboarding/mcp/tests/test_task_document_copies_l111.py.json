@@ -1,0 +1,58 @@
+{
+  "path": "mcp/tests/test_task_document_copies_l111.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Typed references produce a real requirement copy and a nonmissing index row.\n\nAnchor: `TypedRequirementRefTests.test_typed_persisted_refs_are_copied`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d9081cdfd5ecdfb23546e869614d6e7010a2901",
+            "content": "sha256:7922000852c040b14641a8a5779258f311463368cf9548ab5d13bdcfe9d8fc15",
+            "locator": {
+              "end": 82,
+              "kind": "line_range",
+              "start": 63
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "An injected INDEX failure restores the admitted large copy-tree snapshot.\n\nAnchor: `AdmittedLargeCopyRollbackTests.test_admitted_large_requirement_restores_after_index_failure`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d9081cdfd5ecdfb23546e869614d6e7010a2901",
+            "content": "sha256:a254ce2e6b7430062e57ee8c41746b854e7d4d03c3abcead7c8be7a37d6613de",
+            "locator": {
+              "end": 541,
+              "kind": "line_range",
+              "start": 483
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Clearing leaf requirements reclaims their copies while retaining only the leaf document.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d9081cdfd5ecdfb23546e869614d6e7010a2901",
+            "content": "sha256:46c353dbcc1ed80fbf755494bd61dbb42a6cce3b5cc935bcbaf69805a6c3c1e9",
+            "locator": {
+              "end": 627,
+              "kind": "line_range",
+              "start": 597
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

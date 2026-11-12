@@ -1,0 +1,92 @@
+{
+  "path": "dashboard/src/test/loadIndependence.test.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ce6332e5f3e2af96e6412b4b2b47358e425d092e",
+        "content": "sha256:bfb986f19d961531c930783cdf41fd740db301a58487b75e57db9ce99ff4d655",
+        "locator": {
+          "kind": "symbol",
+          "name": "scan"
+        }
+      },
+      "id": "RLZ-K87BJE",
+      "invariant": "INV-5VQQ6S",
+      "origin": {
+        "handoffEntry": "MIK-R87@v1 13",
+        "leaf": "260928-MIK-L87"
+      },
+      "rationale": "The dashboard scan distinguishes executable clock/bound expressions from string/comment data and requires real reason markers.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Literal masking precedes comment and reason-marker recognition while preserving lines.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce6332e5f3e2af96e6412b4b2b47358e425d092e",
+            "content": "sha256:f9fc067fcee7d4d25d9e8baf1725bfb19da82fa9ccf8ff36ff814f054d70678b",
+            "locator": {
+              "kind": "symbol",
+              "name": "maskData"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The scanner reports local bounds, nonzero sleeps and direct/assigned clock inequalities.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce6332e5f3e2af96e6412b4b2b47358e425d092e",
+            "content": "sha256:df90b3bcf4f2db026015f427307cbd8c4865f6539e2059c233442b649c7bdfb8",
+            "locator": {
+              "kind": "symbol",
+              "name": "clockNames"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Synthetic positive and marker controls include multiline/exponent/literal-delimiter regressions.\n\nAnchor: `reports the sealed scanner refutation`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce6332e5f3e2af96e6412b4b2b47358e425d092e",
+            "content": "sha256:0960984611fa3d48e5558d9761c64e1c16ae922650b4bb2b9025201382377623",
+            "locator": {
+              "end": 195,
+              "kind": "line_range",
+              "start": 118
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The actual dashboard test-support population is scanned and must return an empty worklist.\n\nAnchor: `the dashboard suite does not depend on machine load`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce6332e5f3e2af96e6412b4b2b47358e425d092e",
+            "content": "sha256:14f4ae9e65512fd17bbff76f78e318de569fcd63e3cd9781776bbc1394268d28",
+            "locator": {
+              "end": 222,
+              "kind": "line_range",
+              "start": 197
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Realized in one module, so the obligation is proven rather than spread: parsing and charging are distinct realization points and the host cases exercise the refusal set."
+  },
+  "applicability": "Every message a frame sends to its host session.",
+  "conditions": [
+    "The session is open and bound to one revision."
+  ],
+  "exclusions": [
+    "The panel's trusted API requests, which do not travel the frame channel."
+  ],
+  "id": "INV-N7SK8E",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_canvas_serving.py::test_the_panel_reads_a_saved_page_and_starts_nothing; mcp/tests/test_canvas_host.py",
+        "mcp/tests/test_canvas_host.py; mcp/tests/test_canvas_serving.py::test_the_protocol_route_is_bound_bounded_and_replay_safe"
+      ],
+      "path": "curation-list.json"
+    },
+    "handoffEntry": "MIK-R104-r4-narrow-protocol",
+    "leaf": "260928-MIK-L104",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A frame request is validated against its session's binding — protocol version, session, comparison, revision, size and replay — and is debited from the session's rate before the caller parses it, because the route charges the token before the parse; a repeated identity is refused by the request ledger, not by the parser.",
+  "status": "proposed",
+  "supersedes": []
+}

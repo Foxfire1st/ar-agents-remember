@@ -1,0 +1,550 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+        "content": "sha256:25e44519d8c52fa20b1c7a9de674a0f6be77dcd794d22f6dcae868cc057786b5",
+        "locator": {
+          "kind": "symbol",
+          "name": "cleanup_result"
+        }
+      },
+      "id": "RLZ-15KPEC",
+      "invariant": "INV-ZJ9JXS",
+      "origin": {
+        "handoffEntry": "MIK-R129@v1",
+        "leaf": "260928-MIK-L129"
+      },
+      "rationale": "cleanup_result owns the archive-ready continuation: it carries no judgement record where the strict archive has none, does not rejudge the already accepted gate, and passes only optional landedTips data to the guarded tail.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+        "content": "sha256:475bbca5dcda63307c3fcbc1b6653e2ff65523e22b8123487a5ac760be470890",
+        "locator": {
+          "kind": "symbol",
+          "name": "_cleanup_outputs_result"
+        }
+      },
+      "id": "RLZ-3TZ5ST",
+      "invariant": "INV-N70HF0",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-10",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "Completed cleanup uses the same collector before removal; its retained focused control is distinguished from the admitted live Abandoned witness.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+        "content": "sha256:1c56b5c7fc022d6fc6525689775ec06899cbfa1e6ee459d6816d83c2f0752bc8",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-835S7H",
+      "invariant": "INV-BDYV4D",
+      "origin": {
+        "handoffEntry": "L198-F-mcp-src-agents_remember-worktrees-modules-cleanup",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "Cleanup removes the generation's recorded outside scratch root and reports the removal or the blocker.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+        "content": "sha256:2368f70df2faf1324dd191deef40f750922150fbcd6151482a5e7525c4c22114",
+        "locator": {
+          "kind": "symbol",
+          "name": "_terminal_mutation_authority"
+        }
+      },
+      "id": "RLZ-A326MB",
+      "invariant": "INV-39FYQE",
+      "origin": {
+        "handoffEntry": "L50-CODE-R1-F04",
+        "leaf": "260928-MIK-L50"
+      },
+      "rationale": "Admits properly-owned live-leaf and terminal-authorized contracts to the abandon-path mutation that writes terminal state, refusing protected refs; terminal-task authorization governs series.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+        "content": "sha256:3dc75e6a086bac5c74ae79fc1e3d77487cde15f62c2a22b47cb9d83f863bb191",
+        "locator": {
+          "kind": "symbol",
+          "name": "_publish_cleanup"
+        }
+      },
+      "id": "RLZ-B3GZ9J",
+      "invariant": "INV-R6DNZB",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-06",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Historical retired-defect attachment: this current repair owner persists/returns the durable no-remains reason. It does not establish that the old missing-reason defect still exists.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+        "content": "sha256:25e998f3f16f213c9d25c733eca9fd492a0e7d89763ecd2663869b70fb163d43",
+        "locator": {
+          "kind": "symbol",
+          "name": "_removed_directories"
+        }
+      },
+      "id": "RLZ-BX7F68",
+      "invariant": "INV-BDYV4D",
+      "origin": {
+        "handoffEntry": "L198-INV-B",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The directory inventory that gained the outside row.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+        "content": "sha256:104810b533eb6302e6c24edb0ccac715dfc7b5e77e0332d612c3986dbc6aafde",
+        "locator": {
+          "kind": "symbol",
+          "name": "_already_completed_cleanup"
+        }
+      },
+      "id": "RLZ-SZ7QYA",
+      "invariant": "INV-BDYV4D",
+      "origin": {
+        "handoffEntry": "L198-INV-B",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The completed-retry path shared in shape by all three endings.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+        "content": "sha256:3dc75e6a086bac5c74ae79fc1e3d77487cde15f62c2a22b47cb9d83f863bb191",
+        "locator": {
+          "kind": "symbol",
+          "name": "_publish_cleanup"
+        }
+      },
+      "id": "RLZ-TFV4YT",
+      "invariant": "INV-AXWPVF",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-06",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The authorized memory target clears its disposable cache before ordinary Git removal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+            "content": "sha256:6655686073ecd35f41f016b1c12f205ebc555fd6d064525522c7f429177bb9da",
+            "locator": {
+              "kind": "symbol",
+              "name": "remove_registered_worktree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Shared drift snapshot removal helper used by cleanup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d70d647b40f8b84669d1de3f0a9f357fa81e3327",
+            "content": "sha256:1b0c3421cd46f50e7fa1265d4f027d6ddb96ab078b53a1c3546fa6bd5efc804b",
+            "locator": {
+              "kind": "symbol",
+              "name": "remove_drift_snapshot"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/drift_snapshot.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "`_remote_git` runs both remote-talking calls with `run_git` plus `GIT_REMOTE_TIMEOUT_SECONDS`, passed as `GitRunnerOptions(timeout=...)`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fba56276158a0598e01ea849d08083987da3f1fe",
+            "content": "sha256:2487e4428301ad07f82ce90b5ae632ee586bdaba13687cdfdd2526423c5cfc21",
+            "locator": {
+              "kind": "symbol",
+              "name": "_remote_git"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/terminal_branch_retirement.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "`CleanupStatus`, `ContractCells` and `amend_contract` — the vocabulary the `completed` stamp belongs to and the typed write it takes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "758a00879439672a413425ed6c40686fe3626bd9",
+            "content": "sha256:4f12e525616477b9a6cfc60916cf62ac07f299a7784ed0a6e0ee020b8819336a",
+            "locator": {
+              "kind": "symbol",
+              "name": "amend_contract"
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "758a00879439672a413425ed6c40686fe3626bd9",
+            "content": "sha256:4f12e525616477b9a6cfc60916cf62ac07f299a7784ed0a6e0ee020b8819336a",
+            "locator": {
+              "kind": "symbol",
+              "name": "amend_contract"
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The bundle the cleanup outputs are validated through, and the builder that refuses a blockage with no reason.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45bde9d2eae6681ae74e8f1a36fbf6efed8e8d23",
+            "content": "sha256:6fecff16f222bd802f30b28b67b5cbf6cd44c932e3b29945d84bfd9496aafb78",
+            "locator": {
+              "kind": "symbol",
+              "name": "terminal_result_blockers"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/terminal_validation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The forced L6-shape case: an already torn-down provider runtime finalizes on the first call, and a provider runtime that cannot be removed blocks with its own reason.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
+            "content": "sha256:6811b9303c31e9f8161e57c76cd74aa2e0703c01140277f377b6b3a8843ef7a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_torn_down_provider_runtime_finalizes_on_the_first_call"
+            },
+            "path": "mcp/tests/test_terminal_blocker_reasons.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
+            "content": "sha256:0a35eedfdf93940b1382b8b784fd34c2318a07d0f4376c1b581dda2701b79418",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_provider_runtime_that_cannot_be_torn_down_blocks_with_its_own_reason"
+            },
+            "path": "mcp/tests/test_terminal_blocker_reasons.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Worktree tests cover cleanup preconditions and completed cleanup state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18fe6f617413cf0af2643fdf3a5cf1aa3b699523",
+            "content": "sha256:fd4a26f7576f3296e511a5a3e0cc79165e8b233fae04235ab1ea8fff91d42614",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeSupportTests"
+            },
+            "path": "mcp/tests/test_worktree_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "The current module exposes `remove_registered_worktree` at this ownership boundary; branch deletion is exposed by `terminal_branch_retirement.py`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fba56276158a0598e01ea849d08083987da3f1fe",
+            "content": "sha256:8e58b4070331d3fcd12f77132d203db94d86f77c85aa6cfc9370533dd5dcaa20",
+            "locator": {
+              "kind": "symbol",
+              "name": "delete_branch_if_merged"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/terminal_branch_retirement.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "`CleanupStatus`, `ContractCells` and `amend_contract` — the vocabulary the `completed` stamp belongs to and the typed write it takes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "758a00879439672a413425ed6c40686fe3626bd9",
+            "content": "sha256:15ff2b77804c98eb561cb5c8b92ae8240ddb9bce099af7731e8320f260faa919",
+            "locator": {
+              "end": 243,
+              "kind": "line_range",
+              "start": 190
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The current module exposes `remove_registered_worktree` at this ownership boundary; branch deletion is exposed by `terminal_branch_retirement.py`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fba56276158a0598e01ea849d08083987da3f1fe",
+            "content": "sha256:61f23ecf8b6df3709541f9f1b81ebd1a9f93b58f804f56a55ba8742d225d8159",
+            "locator": {
+              "kind": "symbol",
+              "name": "delete_branch_if_merged_into"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/terminal_branch_retirement.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "**Retained historical source account — superseded by the current contract:** Successful cleanup and exact terminal replay pass through the terminal activation-release bridge.  Anchor: `cleanup_result`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+            "content": "sha256:f77562dce1c2e56ca319e100349ed8da9a715b6913b1eb242d871be982f32cb4",
+            "locator": {
+              "end": 883,
+              "kind": "line_range",
+              "start": 685
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "**Retained historical source account — superseded by the current contract:** A cleanup repeated after its terminal archive was written carries no rejudged record: the archive-ready branch binds `kept_line = None` and invents no `landedTips`.  Anchor: `cleanup_result`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+            "content": "sha256:42e1995b1dbf9c75210fb68edd1d6e05615f33159cb76f9985890d12d62902e8",
+            "locator": {
+              "end": 851,
+              "kind": "line_range",
+              "start": 685
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "The dry-run repeat of an archive-ready cleanup finishes with no invented `landedTips`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a76904486fb2d997dd54694fefdf260b29d3f571",
+            "content": "sha256:11693da24789d1d355b5297ebc94857b2f237ace8f46c336d20f33d60249f269",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_repeated_cleanup_with_archive_ready_finishes"
+            },
+            "path": "mcp/tests/test_cleanup_repeated_archive_ready.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "The real-run and branch-gone repeats complete the contract and the terminal authority re-reads `cleanup-completed`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a76904486fb2d997dd54694fefdf260b29d3f571",
+            "content": "sha256:3aca38e8d8e7b7e64481205bd6f17b1d892c06ca229c54f94c4fbf83392ab1eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_repeated_cleanup_with_branches_already_gone_finishes"
+            },
+            "path": "mcp/tests/test_cleanup_repeated_archive_ready.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "Cleanup preserves its check order and no-remains handling. Dry and real calls both return blocked/coded answers for live provider setup or terminal blockers. Incomplete integration returns integration-incomplete with worktree_integrate guidance; a recognized missing carryover returns carryover-required. Cleanup gains no force override from shared blocker wording. The archive-ready kept_line=None/no-rejudgment/no-invented-landedTips policy is now owned by _cleanup_terminal_branch and returned to cleanup_result; its earlier failure narrative is historical. Unrecognized exceptions remain named failures.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+            "content": "sha256:844c0a4c09ae13603d4876a203380dad736797ba49c839b1b544bea3f4c2cfaa",
+            "locator": {
+              "end": 883,
+              "kind": "line_range",
+              "start": 623
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The bridge releases only an exact selected series and reports durable release failure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4df4324735948c916744cbd6d02298769da89c55",
+            "content": "sha256:3a00552ad62fb39e17881fca1a99e72e77ec42e0376a23afba78315f45693c59",
+            "locator": {
+              "kind": "symbol",
+              "name": "with_terminal_atomic_series_release"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_terminal.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Defines the `WorktreeArgs` dataclass that types the `cleanup_result` input.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "287418608a3ce1c662d9b1c309ec69d4523ac4ef",
+            "content": "sha256:aa5fda34dde0755a15aa9f1d706e5c0bfe973689ff8774eeb5c501a2726680d6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/args.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`cleanup_result` hard-guards on `carryover_done` (imported from here) and reuses `status_payload`.\n\nAnchor: \"def carryover_done\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
+            "content": "sha256:c773772c477e0a2152a0edb5e62dff7715402b045b5c6b15b82d3f173b053fdd",
+            "locator": {
+              "end": 197,
+              "kind": "line_range",
+              "start": 197
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Series reports-tree preservation is decided by the legacy child-enclosure guard imported from terminal validation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45bde9d2eae6681ae74e8f1a36fbf6efed8e8d23",
+            "content": "sha256:1a7dfc6f818e444df8a75d0f217c2d499b02cb4898523113feb6257e90ca2750",
+            "locator": {
+              "kind": "symbol",
+              "name": "legacy_series_reports_is_child_enclosure"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/terminal_validation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**Retained historical source account — superseded by the current contract:** Terminal mutation capability binds every removable worktree and local/remote branch to the validated contract before cleanup delegates to the lowest writers.  Anchor: `_terminal_mutation_authority`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+            "content": "sha256:2368f70df2faf1324dd191deef40f750922150fbcd6151482a5e7525c4c22114",
+            "locator": {
+              "end": 168,
+              "kind": "line_range",
+              "start": 108
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Provider teardown is delegated to this module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7da9d6abdce7275958e06ed2baf8cbf04674a2e2",
+            "content": "sha256:2aa48a21f45fe58ab4750793d6e04cb30fa24541e46271d4235ebc8f95b8b1ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "teardown_worktree_providers"
+            },
+            "path": "mcp/src/agents_remember/application/provider_runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "`delete_branch_force` and `remove_registered_worktree(force=...)` are reused by abandon.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5a10d614d0e28fb14c5e7a0703d8fb4ce35def4",
+            "content": "sha256:0cc7abbf055f6ec82fdb09ae3a167512e6cc5066d15c8fd6ab22645275e53dea",
+            "locator": {
+              "end": 765,
+              "kind": "line_range",
+              "start": 593
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/abandon.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

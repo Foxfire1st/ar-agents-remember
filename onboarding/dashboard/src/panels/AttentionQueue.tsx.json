@@ -1,0 +1,284 @@
+{
+  "path": "dashboard/src/panels/AttentionQueue.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c12094244f7358af502e88ac603fcd73652b80ad",
+        "content": "sha256:aa46180e0533f0c4fda448d6634b2f98f1342ea94f04976008ebef7e5307ba1d",
+        "locator": {
+          "end": 224,
+          "kind": "line_range",
+          "start": 224
+        }
+      },
+      "id": "RLZ-0014SR",
+      "invariant": "INV-K9B8G8",
+      "origin": {
+        "handoffEntry": "MIK-R144@v1 rule 3a",
+        "leaf": "260928-MIK-L144"
+      },
+      "rationale": "Holds the share of the column's inner height the layer may take (62 of 100), the number of the approved page \"Bell, layer open\".",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "c12094244f7358af502e88ac603fcd73652b80ad",
+        "content": "sha256:fc4f4acc142ba429f3537d355197205d37fde3c67a2e9b62cbb0c1419490af9d",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-A1GGR8",
+      "invariant": "INV-YNWH01",
+      "origin": {
+        "handoffEntry": "L190-R1-F08",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "The existing bounded bell renders explicit action/notice semantics and honest task/agent links.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "c12094244f7358af502e88ac603fcd73652b80ad",
+        "content": "sha256:ca895ac54f66e66753638a4ffaef0f3599ce43c53ee73adacdb1190eb7f06400",
+        "locator": {
+          "end": 583,
+          "kind": "line_range",
+          "start": 526
+        }
+      },
+      "id": "RLZ-BE8ACJ",
+      "invariant": "INV-K9B8G8",
+      "origin": {
+        "handoffEntry": "MIK-R144@v1 rule 3a",
+        "leaf": "260928-MIK-L144"
+      },
+      "rationale": "AttentionQueueImpl owns the bell count/tone and controlled DialogTrigger; opening measures the owning column and gives Popover its LAYER_BOUND-derived maxHeight. No removed lifecycle-opening callback is retained.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "c12094244f7358af502e88ac603fcd73652b80ad",
+        "content": "sha256:32058af5806636b323dbe55b7fe2aaffbdd04a21a81faf14e33278b2dce67229",
+        "locator": {
+          "kind": "symbol",
+          "name": "AttentionQueue"
+        }
+      },
+      "id": "RLZ-EKXY7G",
+      "invariant": "INV-R8BBQC",
+      "origin": {
+        "handoffEntry": "curator:MIK-R200@v1 rules 1, 7 and 8 — one queue, five native kinds, an actionable row",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "The bell renders those rows, with the dismissal control only on a dismissible entry and the subject links beside it.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "c12094244f7358af502e88ac603fcd73652b80ad",
+        "content": "sha256:80de5c1be2db70a68a5aaaa8c1e2d9d561b5e0dbfc4490732879fcfee8459cc4",
+        "locator": {
+          "end": 205,
+          "kind": "line_range",
+          "start": 131
+        }
+      },
+      "id": "RLZ-GDD925",
+      "invariant": "INV-8WM5H4",
+      "origin": {
+        "handoffEntry": "MIK-R163@v1",
+        "leaf": "260928-MIK-L164"
+      },
+      "rationale": "This exact frozen presentation construct supplies the typography/bounds named by the clause; its formerly missing proof is now supplied in the paired mounted evidence.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "c12094244f7358af502e88ac603fcd73652b80ad",
+        "content": "sha256:32eace7fe62065ce2e9d1418bf9103620fe9ec6c61276290af50a3163c59ab02",
+        "locator": {
+          "end": 524,
+          "kind": "line_range",
+          "start": 450
+        }
+      },
+      "id": "RLZ-HE8N5R",
+      "invariant": "INV-K9B8G8",
+      "origin": {
+        "handoffEntry": "MIK-R144@v1 rule 3a",
+        "leaf": "260928-MIK-L144"
+      },
+      "rationale": "AttentionLayer renders the open layer content in server queue order, advances served-age labels while mounted, admits source-scoped Clear all and item dismissal, and retains Dialog focus before removal. It does not measure the column or set the Popover height: AttentionQueueImpl owns that bound, and the layer recipe owns scrolling.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c12094244f7358af502e88ac603fcd73652b80ad",
+        "content": "sha256:fc4f4acc142ba429f3537d355197205d37fde3c67a2e9b62cbb0c1419490af9d",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-Z1J7Q5",
+      "invariant": "INV-DVQX4T",
+      "origin": {
+        "handoffEntry": "L168-W-R166-02-04",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "Individual and bulk dismissal controls optimistically hide items immediately; failed writes restore the affected items and show failure feedback.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "11": {
+      "note": "Source-scoped dismissal and failed-response restoration remain explicit helpers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c12094244f7358af502e88ac603fcd73652b80ad",
+            "content": "sha256:2f448b0db5288201620100c695234789b68cfa9f881689decd9c45038d99251b",
+            "locator": {
+              "end": 297,
+              "kind": "line_range",
+              "start": 239
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The layer bound is a proportion of its owning column.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c12094244f7358af502e88ac603fcd73652b80ad",
+            "content": "sha256:aa46180e0533f0c4fda448d6634b2f98f1342ea94f04976008ebef7e5307ba1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "LAYER_BOUND"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Actionable drift reappears on a different complete actionable fingerprint; missing fingerprints retain acknowledgment, and other kinds end through native recovery/removal proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "076d83315223337d2ae1069118fadbb14829c501",
+            "content": "sha256:a42ab4dd3c0acbce74126258fef02da9750eb01d6a77ae906347127486ba1b66",
+            "locator": {
+              "kind": "symbol",
+              "name": "_is_dismissed"
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_attention.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Queue wait labels advance server-served values from applied-object arrival, without inventing missing ages.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66d20f4008239bf7a9afcd90dfd2fd6ad191d7f4",
+            "content": "sha256:3dfb3ff03be854f5bc6ec2b47091a747f1e77acfcffab8aa0a2add32bc003026",
+            "locator": {
+              "kind": "symbol",
+              "name": "stampServed"
+            },
+            "path": "dashboard/src/data/servedAges.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "66d20f4008239bf7a9afcd90dfd2fd6ad191d7f4",
+            "content": "sha256:6d89d54b8313784d65db2577fb4579e3dc39c353e49ad702f009f5428c7d7217",
+            "locator": {
+              "kind": "symbol",
+              "name": "servedAgeSeconds"
+            },
+            "path": "dashboard/src/data/servedAges.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Entry titles use 0.8rem; item-base, age and location text use 0.72rem, with dismissal inheriting the base.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c12094244f7358af502e88ac603fcd73652b80ad",
+            "content": "sha256:4ef7ca8d65045442a128959bb01c16b4c8c41bf2bf6ff75de5926e902dab2790",
+            "locator": {
+              "end": 206,
+              "kind": "line_range",
+              "start": 130
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Bell and Clear all take the column-specific 0.72rem tab recipe.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "606cd459608eefcdc3a1c7e164d9e2f497cfcd1c",
+            "content": "sha256:d5bf9dfe06c81a1e35c163131306dd4ac35daf66719f30f42f828f442a4f1ba1",
+            "locator": {
+              "kind": "symbol",
+              "name": "columnTabButton"
+            },
+            "path": "dashboard/src/grammar/viewTabLook.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Task-page rows and smaller labels/counts supply the two text sizes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c5274962d831fe4690e16c298af3bafe5d0f386",
+            "content": "sha256:caf6b06ee131a5362479982095ffd91aba4645ed64e94ff5a2f8657330f0e424",
+            "locator": {
+              "end": 221,
+              "kind": "line_range",
+              "start": 163
+            },
+            "path": "dashboard/src/panels/detail-panel/pageStyles.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Rows render their location and a dismissal control on every entry - the published queue marks each row dismissible - and delegate task and agent controls to SubjectLinks only when the row names that subject and a handler is supplied.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c12094244f7358af502e88ac603fcd73652b80ad",
+            "content": "sha256:b49991a7e40365c4b5d48e563f2db0fb3cb095b993c32d958e80cb4afbcef964",
+            "locator": {
+              "end": 452,
+              "kind": "line_range",
+              "start": 355
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

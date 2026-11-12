@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/integration/atomic_series_landing.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/integration/atomic_series_landing.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash |  `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e`|
-| lastVerifiedCommitDate |  2026-08-25T17:21:45+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Integration overview](overview.md)
@@ -39,32 +29,23 @@ the public function or model instead of re-deriving its lower-level state machin
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The configured Domain Documentation registry is empty. No external documentation claim is made.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external domain source is required to establish this repository-owned implementation. | `AtomicLandingBlocker` | mcp/src/agents_remember/worktrees/integration/atomic_series_landing.py:1-158 |
+- No external domain source is required to establish this repository-owned implementation. [1]
 
-## Repo-Internal References
+### Repo-Internal References
 
 The source file is the direct evidence for this unit; its governing overview records adjacent owners.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's concrete API, control flow, and validation boundary are implemented here. | `AtomicLandingBlocker` | mcp/src/agents_remember/worktrees/integration/atomic_series_landing.py:1-158 |
+- The module's concrete API, control flow, and validation boundary are implemented here. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository source is allowed by the resolved settings, and this unit owns no external
 protocol claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repository reference applies. | `AtomicLandingBlocker` | mcp/src/agents_remember/worktrees/integration/atomic_series_landing.py:1-158 |
-
-## Update History
-
-- 2026-08-25T15:44+02:00 — Created during PDLS whole-system reconciliation after source and
-  requirement review. Verification remains closeout-owned.
+- No meaningful cross-repository reference applies. [3]

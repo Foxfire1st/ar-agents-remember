@@ -1,0 +1,131 @@
+{
+  "path": "mcp/src/agents_remember/models/lifecycles/preparation_state.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Selection is an ordered prefix of at most two preparations: code followed by memory content.\n\nAnchor: `PreparationLeg`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f80165f2fce348dd60607343404287bd534b8d7f",
+            "content": "sha256:bf395b2ffb81e1aa503770acb4d38997b5aa971cc2cc4028af99bd0392fd685d",
+            "locator": {
+              "kind": "symbol",
+              "name": "OperationPreparationState"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f80165f2fce348dd60607343404287bd534b8d7f",
+            "content": "sha256:4a64f6e80b675328de7c3fab07ead65fc1c56be8e0d89ff5fd00b0039ed7f2f6",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 19
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`PreparationCommandTerminal` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f80165f2fce348dd60607343404287bd534b8d7f",
+            "content": "sha256:f8764c5eda87da99020b97dc33db7f042096f54090ee64fa0dc877fd68e06799",
+            "locator": {
+              "kind": "symbol",
+              "name": "PreparationCommandTerminal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`PreparationCommand` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f80165f2fce348dd60607343404287bd534b8d7f",
+            "content": "sha256:0dcb9c5b2cc00037580aeeb22ff61e85c4d7b367a0200a1dd85229f0ab5c2757",
+            "locator": {
+              "kind": "symbol",
+              "name": "PreparationCommand"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`OperationPreparationState` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f80165f2fce348dd60607343404287bd534b8d7f",
+            "content": "sha256:bf395b2ffb81e1aa503770acb4d38997b5aa971cc2cc4028af99bd0392fd685d",
+            "locator": {
+              "kind": "symbol",
+              "name": "OperationPreparationState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`validate_preparation_owner` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f80165f2fce348dd60607343404287bd534b8d7f",
+            "content": "sha256:edbd54679a5da0ade58dc9c4d42e0bf83f4c0926dc4dd168a92461a8558ca333",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_preparation_owner"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`validate_preparation_transition` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f80165f2fce348dd60607343404287bd534b8d7f",
+            "content": "sha256:4054c527d480024f097ba112da4204e914e8a0db9123a7850fda42717ce2f25e",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_preparation_transition"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "`_validate_leg_transition` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f80165f2fce348dd60607343404287bd534b8d7f",
+            "content": "sha256:34372d1e74a7e80c48ad391cd5c27d3504567bf4ebe2c5d342ad58819f912996",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_leg_transition"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

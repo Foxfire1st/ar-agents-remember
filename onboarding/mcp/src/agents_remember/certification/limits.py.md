@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/certification/limits.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/certification/limits.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-01T11:33+02:00 |
-| lastVerifiedCommitHash | `0506b57a1a80e0b377e9cc3303e1841d3bd4799a`|
-| lastVerifiedCommitDate | 2026-09-01T12:17:08+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Certification overview](overview.md)
@@ -51,37 +41,24 @@ cost class so refusal is attributable and testable at exact-cap boundaries.
 
 Recalibrate only from measured repository scale while preserving the same fail-closed contract.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this memory root.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| One constant bounds registry admission and validation work. | `REGISTRY_VALIDATION_WORK_BUDGET` | mcp/src/agents_remember/certification/limits.py:20-20 |
-| Raw canonicalization admission accounts for declarations, references, membership, and digest units before allocation. | `admit_registry_canonicalization` | mcp/src/agents_remember/certification/limits.py:166-231 |
-| Validation measurement returns an explicit refused census when the cheap floor already exceeds the cap. | `measure_registry_validation_work`; `_refused_work` | mcp/src/agents_remember/certification/limits.py:233-316 |
-| Artifact reachability builds bounded query state only when queries exist. | `_measure_reachability`; `_empty_reachability` | mcp/src/agents_remember/certification/limits.py:382-461 |
-| Singleton and shared searches retain exact bounded answers and remain cycle-safe. | `_resolve_singleton_queries`; `_resolve_shared_queries` | mcp/src/agents_remember/certification/limits.py:557-602 |
+- One constant bounds registry admission and validation work. [1]
+- Raw canonicalization admission accounts for declarations, references, membership, and digest units before allocation. [2]
+- Validation measurement returns an explicit refused census when the cheap floor already exceeds the cap. [3]
+- Artifact reachability builds bounded query state only when queries exist. [4]
+- Singleton and shared searches retain exact bounded answers and remain cycle-safe. [5]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No repository inventory is embedded in this owner.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Budget accounting operates solely on the generic registry contract. | `measure_registry_validation_work` | mcp/src/agents_remember/certification/limits.py:233-300 |
-
-## Update History
-
-- 2026-09-01T11:33+02:00 — CCR-L11 Attempt 10 retained the prospective pre-allocation storage
-  refusal and removed the later dominated exact-storage refusal. Re-read both query resolvers and
-  rebound their citations to the accepted candidate. Verification remains closeout-owned.
-
-- 2026-09-01T03:11+02:00 — Created for bounded, pre-allocation registry work accounting.
-  Verification remains closeout-owned until the source candidate is committed.
+- Budget accounting operates solely on the generic registry contract. [6]

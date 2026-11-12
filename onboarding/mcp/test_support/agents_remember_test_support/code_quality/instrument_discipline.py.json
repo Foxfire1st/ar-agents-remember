@@ -1,0 +1,424 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/code_quality/instrument_discipline.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The refusal prefix every inadmissible-measurement error carries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38ba0fbb1e3c1070556fed3c224139fcf6e16bb7",
+            "content": "sha256:12f12b58dcb49a492824dff3daebf5b83ab22373e12864910a222c6a8f9bb60e",
+            "locator": {
+              "kind": "symbol",
+              "name": "REFUSAL_PREFIX"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The lines a unit occupies, and which boundary closed the window (its own `closed_by` field names that boundary).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38ba0fbb1e3c1070556fed3c224139fcf6e16bb7",
+            "content": "sha256:ba3346bf331f3c79038cf7c3439fb90f7b3ce3b822d133522007ffafb038439f",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapturedWindow"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Whether a captured transcript's producer ran to completion (its own `crashed_before_pass` field).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38ba0fbb1e3c1070556fed3c224139fcf6e16bb7",
+            "content": "sha256:8e0f22d37a356b008f21cb0245b246a78b13eb7460f8757b183713b900fb724c",
+            "locator": {
+              "kind": "symbol",
+              "name": "CrashScan"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The three facts a reproducible record must carry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38ba0fbb1e3c1070556fed3c224139fcf6e16bb7",
+            "content": "sha256:fdb30848a581316fce4aec363929f592ccfa54d5fa0e4fd2075fbe5ac1cebac6",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProducerIdentity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The outcome of re-running a recorded producer against the recorded artifact (its own `matches` field, a byte-exact digest comparison).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38ba0fbb1e3c1070556fed3c224139fcf6e16bb7",
+            "content": "sha256:e56a83d97f9b1b368d0f735552643ba3949fad65ae9154544015314b5a47c0f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProducerReproduction"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The shared precondition: a probe that cannot see its own positive, or cannot exclude its own negative, is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38ba0fbb1e3c1070556fed3c224139fcf6e16bb7",
+            "content": "sha256:209f30c3322e6837a2fa18a3aba9c2137aaa84088be9e3c6e906a71d88069359",
+            "locator": {
+              "kind": "symbol",
+              "name": "_prove_probe"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The only counting surface, refused unless the probe was proved first **and the counted pattern is the one it proved**.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38ba0fbb1e3c1070556fed3c224139fcf6e16bb7",
+            "content": "sha256:9f58299e5a80da11cf747863cc855aa6a2f1d3d5e961e883875a078f574a1ff2",
+            "locator": {
+              "kind": "symbol",
+              "name": "counted_pattern"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The unit-bounded capture that names the boundary closing it, the line cap included.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38ba0fbb1e3c1070556fed3c224139fcf6e16bb7",
+            "content": "sha256:12e76c6e57730a53b81664c9f241e071d7cd79ad3d8a7a1f25d6e9b9fb21edd8",
+            "locator": {
+              "kind": "symbol",
+              "name": "capture_bounded_window"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "A pass line printed after a crashed command is not attributable to that run.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38ba0fbb1e3c1070556fed3c224139fcf6e16bb7",
+            "content": "sha256:a4b182c2847224aff1bb20dbdb21ec619dec448e02e949f5306380d2ba235922",
+            "locator": {
+              "kind": "symbol",
+              "name": "crash_scan"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The exit status the artifact records as a run, or `None` when it only describes one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38ba0fbb1e3c1070556fed3c224139fcf6e16bb7",
+            "content": "sha256:33ff052e94031a20ac3ba284ae66dc20e55c7cef02d75294ee2d41c4e78e17e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_recorded_exit"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Whether the artifact reports a non-zero result of its own.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38ba0fbb1e3c1070556fed3c224139fcf6e16bb7",
+            "content": "sha256:55e4554060950ad3cba25953c33f41c3434507838aeef2331647c0d5d445b836",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reports_findings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Crash text that means a command failed, kept narrow so a transcript discussing a failure is not flagged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38ba0fbb1e3c1070556fed3c224139fcf6e16bb7",
+            "content": "sha256:99a03801e15449a60179aa58260a7756775f05016ced8cf531fc381e1f4478fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "CRASH_MARKERS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The admissibility verdict over a recorded artifact, with its four named refusals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38ba0fbb1e3c1070556fed3c224139fcf6e16bb7",
+            "content": "sha256:900fd944325d47f1fd7a68d9f413e10f68c9fcca7552e1cc0b4da28147d2f948",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_artifact_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "A record naming a producer absent from the package, or with no command or revision, is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38ba0fbb1e3c1070556fed3c224139fcf6e16bb7",
+            "content": "sha256:f663fc5a0f9a90500479b2cb97724c2632a0bdf3bca6c2a3d782d609da0a4502",
+            "locator": {
+              "kind": "symbol",
+              "name": "producer_identity_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Reproduction is byte-exact, writes its scratch output outside the evidence directory, and answers `matches=False` instead of raising.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38ba0fbb1e3c1070556fed3c224139fcf6e16bb7",
+            "content": "sha256:f5d9dfee48c4daf1e06fdb0bae69a53aec7675e574a6924bcfab3c42486a573d",
+            "locator": {
+              "kind": "symbol",
+              "name": "reproduce_recorded_producer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "The five classes of contract test that pin these behaviours against the historical cases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "509503bdf36eecc4fa1bf8a141285835c6fb0a58",
+            "content": "sha256:9ec636cb160f094fb38e81f8adee042c0e1d043484501d085030ee22cfc9b797",
+            "locator": {
+              "kind": "symbol",
+              "name": "PatternProbeWitnessTests"
+            },
+            "path": "mcp/tests/test_instrument_discipline.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "509503bdf36eecc4fa1bf8a141285835c6fb0a58",
+            "content": "sha256:5c4fb74de6933cc5453c38c57b7cdaae2abb8c7be57eaafc11b8c8e481d0f866",
+            "locator": {
+              "kind": "symbol",
+              "name": "BoundedCaptureTests"
+            },
+            "path": "mcp/tests/test_instrument_discipline.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "509503bdf36eecc4fa1bf8a141285835c6fb0a58",
+            "content": "sha256:8cdc1b3b8d6c93fc0330c7b1439faf07b80ca8f1b456076646078d37ef41011c",
+            "locator": {
+              "kind": "symbol",
+              "name": "CrashReadAsPassTests"
+            },
+            "path": "mcp/tests/test_instrument_discipline.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "509503bdf36eecc4fa1bf8a141285835c6fb0a58",
+            "content": "sha256:1ef8e70804900e174d8f6b8bde383044be46ac0c7f51924c710fefb8ec426bcb",
+            "locator": {
+              "kind": "symbol",
+              "name": "ArtifactAdmissibilityTests"
+            },
+            "path": "mcp/tests/test_instrument_discipline.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "509503bdf36eecc4fa1bf8a141285835c6fb0a58",
+            "content": "sha256:bdb953bc9dfce229bc8d21c821e371b620b6638078f686ff4d150e048b5f3825",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProducerIdentityTests"
+            },
+            "path": "mcp/tests/test_instrument_discipline.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Text that claims the thing a crash would have prevented.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38ba0fbb1e3c1070556fed3c224139fcf6e16bb7",
+            "content": "sha256:c40b150422f4461ff7af1f0359bb2a8ece1e4d4b659870b514cd17a918acc7e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "PASS_MARKERS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The loose exit-status probe, retained as the contrast the narrow rule is checked against.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38ba0fbb1e3c1070556fed3c224139fcf6e16bb7",
+            "content": "sha256:302b7312ad491b2bfd8dbab267b0ef524080707b857c200b70b2a9a9ca6ab43f",
+            "locator": {
+              "kind": "symbol",
+              "name": "EXIT_CODE"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The narrow rule: an exit status is evidence of a run only where the artifact records it as one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38ba0fbb1e3c1070556fed3c224139fcf6e16bb7",
+            "content": "sha256:c9ab221188d5a6b974b90f2716cde8ee6b0fb8bb95c0d994bfb532975659c5ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "TRANSCRIPT_EXIT"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The vacuity rule's quantity: a non-zero count of findings, errors or violations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38ba0fbb1e3c1070556fed3c224139fcf6e16bb7",
+            "content": "sha256:e391221697b994eede6707c8a0c3cca98dbad41d3e050ad82d5340b3f5241507",
+            "locator": {
+              "kind": "symbol",
+              "name": "NONZERO_FINDINGS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "One known answer a pattern must reproduce before its count means anything.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38ba0fbb1e3c1070556fed3c224139fcf6e16bb7",
+            "content": "sha256:c1c448b88f7d02ed4b6d052b185f5b8723c6a177e4e5ccf32a9b6d2d64a60979",
+            "locator": {
+              "kind": "symbol",
+              "name": "Witness"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The positive and negative witness pair that licenses a pattern.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38ba0fbb1e3c1070556fed3c224139fcf6e16bb7",
+            "content": "sha256:399c6fc07553cbee63a670c16dfdb56f6b891b3d85c5d15a9bbd0b97edafd36c",
+            "locator": {
+              "kind": "symbol",
+              "name": "Probe"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "A count over real text, carrying the witnesses that licensed it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38ba0fbb1e3c1070556fed3c224139fcf6e16bb7",
+            "content": "sha256:5b006959e2a79bf93f97451977d041f302d9ad6e30d757532efd608fc2c59d4e",
+            "locator": {
+              "kind": "symbol",
+              "name": "PatternCount"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

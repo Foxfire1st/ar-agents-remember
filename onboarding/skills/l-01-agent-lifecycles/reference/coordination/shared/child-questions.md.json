@@ -1,0 +1,78 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/coordination/shared/child-questions.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ff85c9b7ae5fb8f5153abcb76f793096019a3fec",
+        "content": "sha256:82e87dced129aac1283fe8cb0d95bfd6f0be3b415d7e88219f66bb144751052a",
+        "locator": {
+          "end": 11,
+          "kind": "line_range",
+          "start": 5
+        }
+      },
+      "id": "RLZ-FSCRW4",
+      "invariant": "INV-7FMDAS",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-7FMDAS",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The relay detail distinguishes an own-authority answer from developer words, preserves originating role/task/agent and return attribution, and retains parentless/permission boundaries. Its main relay sentence is a direct realization of the existing coordinating-question contract; instruction-change publication remains the owning task.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The relay distinguishes the receiver's answer from a developer ruling and preserves originating identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff85c9b7ae5fb8f5153abcb76f793096019a3fec",
+            "content": "sha256:ddd3dbbce8d0f7ce955208dfb2f727ef3adc13b71bc2b7792b81eae900d72f0b",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Instruction changes keep their owning task route, and new wording reaches a seat only through a new start or completed reload.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff85c9b7ae5fb8f5153abcb76f793096019a3fec",
+            "content": "sha256:e5512e5dd127563fc5b06a1d535772da67d73c04d520ef35665fa278566c471a",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 19
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Permission notices keep the existing parent route, and message handling points to `message-handover.md`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff85c9b7ae5fb8f5153abcb76f793096019a3fec",
+            "content": "sha256:7694fc376aefc9fcb23af2c2a01758247094a725a48a8a9ced7c5971a28fc193",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 25
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

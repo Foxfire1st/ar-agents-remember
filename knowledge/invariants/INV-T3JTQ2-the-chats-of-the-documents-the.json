@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Per-document host lookups at click time would leave an empty/blocked pane and multiply host work."
+  },
+  "applicability": "Preclick discovery of canonical document chats represented by the dashboard tree.",
+  "conditions": [
+    "One batch accepts at most 256 selections and takes one live-agent census.",
+    "Known answers can steer immediately and a fresh single-document answer corrects them."
+  ],
+  "exclusions": [
+    "Projects/taskless enumeration and unrecorded host agents are not tree documents."
+  ],
+  "id": "INV-T3JTQ2",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/cockpit/document-chat/knownChats.test.tsx › \"switches with the click to a chat the tree's one request already named, and takes the fresh answer after it\"; mcp/tests/test_role_document_chats.py; walk C2 of Attempt3 (the dashboard's requests logged)"
+      ],
+      "path": "producer-list.json"
+    },
+    "handoffEntry": "ruling 5dd9714f 2b",
+    "leaf": "260928-MIK-L140",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The chats of the documents the tree lists are known before a click: one request names up to 256 documents, the host is read once for it, and what that read cannot tell is answered as unknown, never as no chat.",
+  "status": "proposed",
+  "supersedes": []
+}

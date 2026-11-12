@@ -1,0 +1,39 @@
+{
+  "path": "dashboard/src/panels/review/changeSetRanks.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A row's rank is decided in one place, so the list and the popup cannot rank the same row differently.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85b7d078187e60ea2a62158ba8e483226e6be3b9",
+            "content": "sha256:085a2a3b44f7f950b0b1927ff5b47f6eaa44b9a5e19c420ff7abf55a2b9e75e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "EFFECT_RANK"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Every sort offers a hint that says what its order means, not the sort's name again.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85b7d078187e60ea2a62158ba8e483226e6be3b9",
+            "content": "sha256:6e9f9329cbfbdcaaec787c09c8a1522f5f5711c3d281ce0982053cedb3e8e3ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "SORT_HINTS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

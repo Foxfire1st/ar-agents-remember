@@ -1,0 +1,151 @@
+{
+  "path": "mcp/tests/test_certification_rail_registry.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Non agents remember registry compiles one deterministic plan per gate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9c82c0397907dc64d9de4166d0f24d997a8da9d",
+            "content": "sha256:6592ed8e40ce008813cb7ce1c7fa48207f18881c06f8a26c9b1f503aafbcab53",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_non_agents_remember_registry_compiles_one_deterministic_plan_per_gate"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Canonicalization deduplicates identical rails but rejects conflicts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9c82c0397907dc64d9de4166d0f24d997a8da9d",
+            "content": "sha256:76da3d36fb5d63a813e44f8b48c61e4cfa666b44cf1e5dd98a70804cad62315d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_canonicalization_deduplicates_identical_rails_but_rejects_conflicts"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Registry validation reports independent graph and classification failures.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9c82c0397907dc64d9de4166d0f24d997a8da9d",
+            "content": "sha256:d55cc03a2817f94e48808f38ca89cc0d2ecae3dc530de21366b04ce304225e31",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_registry_validation_reports_independent_graph_and_classification_failures"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Gate manifest keeps failed and independent siblings and blocks only dependant.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9c82c0397907dc64d9de4166d0f24d997a8da9d",
+            "content": "sha256:7217fdaffca5fc7c0fcc49d5b6ba4d032d03c861a453ff745c2f0d56eb984ab9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_gate_manifest_keeps_failed_and_independent_siblings_and_blocks_only_dependant"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Passing suite requires declared artifacts and bounded evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9c82c0397907dc64d9de4166d0f24d997a8da9d",
+            "content": "sha256:ed4f324c8f6784311bae1c7ca87c127af8e30b61132549d9334f1c9b445c707e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_passing_suite_requires_declared_artifacts_and_bounded_evidence"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Diagnostic result cannot be promoted to certifying altitude.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9c82c0397907dc64d9de4166d0f24d997a8da9d",
+            "content": "sha256:9fe6c2769b05cf3d823693f42215cf24cac2f596da6fade49153ba1ab887b559",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_diagnostic_result_cannot_be_promoted_to_certifying_altitude"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Result refuses evidence and artifacts outside the plan contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9c82c0397907dc64d9de4166d0f24d997a8da9d",
+            "content": "sha256:71ba36203bdba5846e849ab183af12ac78d8225224f1fe196626af71788f34b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_result_refuses_evidence_and_artifacts_outside_the_plan_contract"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Two independent failures remain visible with only the dependant blocked.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9c82c0397907dc64d9de4166d0f24d997a8da9d",
+            "content": "sha256:032473891fa61c1361879b4ae92c3a9b2229e4c281a3e964c1424bf0b9557d38",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_two_independent_failures_remain_visible_with_only_the_dependant_blocked"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Report only result cannot turn an enforcing failure green.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9c82c0397907dc64d9de4166d0f24d997a8da9d",
+            "content": "sha256:2add373e08815a4532fd843db298c3318a9ed3b9853cc5a0cc55327164c3b131",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_report_only_result_cannot_turn_an_enforcing_failure_green"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

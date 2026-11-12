@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_task_input_plan_edges.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The shared task input plan covers the paths the native readers really open",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aeffb5372d31689327d99f34f74125a41e10345c",
+            "content": "sha256:0161e5b1f20e63302026fb20765cc718858b2e43612ee6d36388d6e48bb5a2ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_plan_covers_paths_the_native_readers_really_open"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

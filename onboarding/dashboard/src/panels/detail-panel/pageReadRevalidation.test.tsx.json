@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/panels/detail-panel/pageReadRevalidation.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Retained counters/current callback\n\nAnchor: shows retained counters synchronously on return, validates by ETag, and uses the current click handler",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ccad188d201edf56c1b4841e221a728e85aee27",
+            "content": "sha256:315aaea4d8487514f1fb237a2258858ede69e5abdeb0ad7cd4eb43a080d0dd06",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 35
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Intent refusal and mounted-show revalidation\n\nAnchor: shows retained intent counts on return while validating and then shows a new refusal",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ccad188d201edf56c1b4841e221a728e85aee27",
+            "content": "sha256:1ad08a6ee517f7c03cd7fe2f31e56fa25a9f95c9ced3b6c90a8777f4969f1ef7",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 65
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Entry-owned working availability\n\nAnchor: uses only this entry’s bound worktrees for its working control",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ccad188d201edf56c1b4841e221a728e85aee27",
+            "content": "sha256:cffb6e8411b8fb1da8a24a83dbea35f7cd9944b507bcfa3550f72d9f6c2ca601",
+            "locator": {
+              "end": 153,
+              "kind": "line_range",
+              "start": 133
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

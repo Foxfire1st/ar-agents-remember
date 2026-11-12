@@ -1,0 +1,89 @@
+{
+  "path": "mcp/tests/test_leaf_handover.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "124237947d498a8a211b226ce4b903f1316d0ef1",
+        "content": "sha256:7dfc781d77b7f035cbc9e2a49446540beecc0dbe2d8ede2e1a890f9a0e393df0",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_leaf_roles_receive_exact_sibling_addresses_without_agent_ids"
+        }
+      },
+      "facet": "Checks the exact leafSeats value for each of the three eligible leaf roles and that every sibling argument resolves to the named sibling; protected-role absence is the separate test_other_roles_and_leafless_contexts_receive_no_sibling_value.",
+      "id": "PRF-QEG38R",
+      "invariant": "INV-W58B84",
+      "origin": {
+        "handoffEntry": "R99-4-sibling-value",
+        "leaf": "260928-MIK-L99"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "124237947d498a8a211b226ce4b903f1316d0ef1",
+        "content": "sha256:dda4151be2269ab1e797bc7e7df0cb00e1ae4c1c12e66876732ee0e7be4fa88b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_other_roles_and_leafless_contexts_receive_no_sibling_value"
+        }
+      },
+      "facet": "Checks that a protected launcher role and a role started without a leaf receive no leafSeats value.",
+      "id": "PRF-QEK0JW",
+      "invariant": "INV-W58B84",
+      "origin": {
+        "handoffEntry": "R99-4-sibling-value",
+        "leaf": "260928-MIK-L99"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "124237947d498a8a211b226ce4b903f1316d0ef1",
+        "content": "sha256:cc007eff9e5110243cd8a35c43a84c1581ee3dd476fec88ce389a6c938fb9b71",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-QXYKA6",
+      "invariant": "INV-W58B84",
+      "origin": {
+        "handoffEntry": "R99-4-sibling-value",
+        "leaf": "260928-MIK-L99"
+      },
+      "rationale": "Checks each leaf role, every protected launcher role, role-gated presence and actual selection resolvability.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The compiled handover carries the exact sibling addresses for each leaf role.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "124237947d498a8a211b226ce4b903f1316d0ef1",
+            "content": "sha256:7dfc781d77b7f035cbc9e2a49446540beecc0dbe2d8ede2e1a890f9a0e393df0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_leaf_roles_receive_exact_sibling_addresses_without_agent_ids"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "124237947d498a8a211b226ce4b903f1316d0ef1",
+            "content": "sha256:498cad0bf26459435c7cc99c814433fc247ef6d20349dc48aabc8ae7b5c00aa1",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 24
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,55 @@
+{
+  "path": "mcp/tests/test_l61_remaining_findings.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Remaining ordinary/direct mutation refusals retain the actual failure log, elapsed time and pointer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4756e99b1473ebf44d94aa4c984e67e9289cf967",
+            "content": "sha256:88b0f17a279979b1e71ce1d7cfa2f1cc5619d2da369a262c72c386a64cc0f5cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "RemainingRouteMutationLogTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "MaintenanceHookWitnessTests: qualified source contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4756e99b1473ebf44d94aa4c984e67e9289cf967",
+            "content": "sha256:8bdfe2b2dfd3998a6a5aef6c6fdd60b110b5a010cbdd4b3dd62f4a79f680a2a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "MaintenanceHookWitnessTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "FinalizationDeathWindowTests: qualified source contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4756e99b1473ebf44d94aa4c984e67e9289cf967",
+            "content": "sha256:0e0302eb9b0fc9a593de21670f60fca8fa470e0cd592c9640e29518d132610d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalizationDeathWindowTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

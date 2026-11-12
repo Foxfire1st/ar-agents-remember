@@ -1,0 +1,333 @@
+{
+  "path": "mcp/tests/test_review_limit_wording.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "287e37afe1ab390a6b72c9520fe0dceebd3b1872",
+        "content": "sha256:35b46b16e26283431beb31ebcbe623858e42207cc2dac364badb7fd97dd46597",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_worker_stage_requires_named_clean_copy_checks_and_refuses_the_retired_rule"
+        }
+      },
+      "facet": "A Worker text that adds the retired focused/lint/type handover rule fails.",
+      "id": "PRF-7YA9S3",
+      "invariant": "INV-CV3MW4",
+      "origin": {
+        "handoffEntry": "K3-CV3MW4-owning-section-guard",
+        "leaf": "260928-MIK-L84"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "287e37afe1ab390a6b72c9520fe0dceebd3b1872",
+        "content": "sha256:a79bcd7620a4552898646b497b41c9bdca69ec742036fb20188632af66986e0b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_check_compiled_sections"
+        }
+      },
+      "facet": "Applies the owning-section check to every compiled capsule.",
+      "id": "PRF-E4R0CP",
+      "invariant": "INV-CV3MW4",
+      "origin": {
+        "handoffEntry": "K3-CV3MW4-owning-section-guard",
+        "leaf": "260928-MIK-L84"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "287e37afe1ab390a6b72c9520fe0dceebd3b1872",
+        "content": "sha256:da4be66fad4859a66e09de02a3344c3a147af096446e81d83be37d38bce4f1f5",
+        "locator": {
+          "kind": "symbol",
+          "name": "_check_source_sections"
+        }
+      },
+      "facet": "Applies the owning-section check to each canonical and copied role source.",
+      "id": "PRF-FG9G5A",
+      "invariant": "INV-CV3MW4",
+      "origin": {
+        "handoffEntry": "K3-CV3MW4-owning-section-guard",
+        "leaf": "260928-MIK-L84"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "287e37afe1ab390a6b72c9520fe0dceebd3b1872",
+        "content": "sha256:ec340444e43d62304c3e19ff3ee9773631aa4d14527c4d45aebd525550cd3d1c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_stage_section_binding_fails_on_deletion_and_relocation"
+        }
+      },
+      "facet": "Deleting or relocating each required canonical-source facet outside the extracted stage section fails its predicate; not an installed agent-behavior witness.",
+      "id": "PRF-S1Q1AX",
+      "invariant": "INV-CV3MW4",
+      "origin": {
+        "handoffEntry": "L116-W3-wording-oracle",
+        "leaf": "260928-MIK-L116"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "287e37afe1ab390a6b72c9520fe0dceebd3b1872",
+        "content": "sha256:807064e599e8c1d00db8002d3485c51832adb1dbd9d818dfeafc9abbc22d9732",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_compiled_section_binding_fails_on_deletion_and_relocation"
+        }
+      },
+      "facet": "Deleting or relocating a facet in a compiled capsule must fail the check.",
+      "id": "PRF-S4QKPQ",
+      "invariant": "INV-CV3MW4",
+      "origin": {
+        "handoffEntry": "K3-CV3MW4-owning-section-guard",
+        "leaf": "260928-MIK-L84"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "287e37afe1ab390a6b72c9520fe0dceebd3b1872",
+        "content": "sha256:d3f74e604eac6700c9b5849ce63e0b0be852bc492a34f201e9fac52f2cf91089",
+        "locator": {
+          "kind": "symbol",
+          "name": "_section_missing"
+        }
+      },
+      "facet": "Reports a facet missing unless its clause stands in its owning section, and checks the Reviewer's record pointer.",
+      "id": "PRF-TX6Z53",
+      "invariant": "INV-CV3MW4",
+      "origin": {
+        "handoffEntry": "K3-CV3MW4-owning-section-guard",
+        "leaf": "260928-MIK-L84"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "287e37afe1ab390a6b72c9520fe0dceebd3b1872",
+        "content": "sha256:d52ef903dd6a1641e59edd538283183cbbe911ec7d39817f3787e70b1ab54409",
+        "locator": {
+          "kind": "symbol",
+          "name": "REVIEWER_RECORD_POINTER"
+        }
+      },
+      "facet": "The Reviewer's record-pointer sentence the check requires beside its stage facets (round limit from task_doc, pointers to round-limit verification and record-only rechecks).",
+      "id": "PRF-ZV74TW",
+      "invariant": "INV-CV3MW4",
+      "origin": {
+        "handoffEntry": "K3-CV3MW4-owning-section-guard",
+        "leaf": "260928-MIK-L84"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "287e37afe1ab390a6b72c9520fe0dceebd3b1872",
+        "content": "sha256:9dee62ec7a331a29d3d48db203963a44ed4a961491936bb2777310066c1c6ee6",
+        "locator": {
+          "end": 120,
+          "kind": "line_range",
+          "start": 120
+        }
+      },
+      "id": "RLZ-1X9C1T",
+      "invariant": "INV-CV3MW4",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-CV3MW4",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The Worker stage oracle now points to the repository memory-layer handover checks and a clean copy of final bytes.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "287e37afe1ab390a6b72c9520fe0dceebd3b1872",
+        "content": "sha256:2dbaab4852fc1c95bca0dc735510379693e43c1bf198438e89efe440d4c9f92c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_NUMBER"
+        }
+      },
+      "id": "RLZ-E1ZGXM",
+      "invariant": "INV-CV3MW4",
+      "origin": {
+        "handoffEntry": "L116-W3-wording-oracle",
+        "leaf": "260928-MIK-L116"
+      },
+      "rationale": "This grammar is the prohibited-number class the oracle defends: generative word forms plus digits, with label and allowance exemptions.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "287e37afe1ab390a6b72c9520fe0dceebd3b1872",
+        "content": "sha256:1be6f50cdf983c8f06ae5c45d6b069ec5a0e7c4dd9a9b092e905e412c30a152a",
+        "locator": {
+          "kind": "symbol",
+          "name": "_section_of"
+        }
+      },
+      "id": "RLZ-F81JKR",
+      "invariant": "INV-CV3MW4",
+      "origin": {
+        "handoffEntry": "L116-W3-wording-oracle",
+        "leaf": "260928-MIK-L116"
+      },
+      "rationale": "This extractor binds every facet assertion to the single stage section so whole-file presence can never satisfy the check.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "287e37afe1ab390a6b72c9520fe0dceebd3b1872",
+        "content": "sha256:bdebe569c19b4148f8e3fd4df02667a7a21eb6c6bd8f8534979d8a438928481c",
+        "locator": {
+          "end": 152,
+          "kind": "line_range",
+          "start": 141
+        }
+      },
+      "id": "RLZ-FPZCPA",
+      "invariant": "INV-CV3MW4",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-CV3MW4",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The Curator stage oracle names current publication/provenance, repair/report, pending-parent and genuine-stop facets in the required stage section.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "287e37afe1ab390a6b72c9520fe0dceebd3b1872",
+        "content": "sha256:35b46b16e26283431beb31ebcbe623858e42207cc2dac364badb7fd97dd46597",
+        "locator": {
+          "end": 626,
+          "kind": "line_range",
+          "start": 605
+        }
+      },
+      "id": "RLZ-M9GPDG",
+      "invariant": "INV-CV3MW4",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-CV3MW4",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The new control requires the current clean-copy named-check stage sentence and rejects replacement by, or coexistence with, the retired generic focused/lint/type sentence.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "287e37afe1ab390a6b72c9520fe0dceebd3b1872",
+        "content": "sha256:c77a22ea98483b365ec562dd0d12836f0c896255d9bcb9b9dd7386c6240bf58d",
+        "locator": {
+          "end": 441,
+          "kind": "line_range",
+          "start": 164
+        }
+      },
+      "id": "RLZ-X1RT42",
+      "invariant": "INV-CV3MW4",
+      "origin": {
+        "handoffEntry": "K3-CV3MW4-owning-section-guard",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The stage contracts: for each of worker, reviewer, curator and manager, each rule 6-8 facet with its owning document, heading and exact clause.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Positive detector controls and intentional label/allowance exemptions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "287e37afe1ab390a6b72c9520fe0dceebd3b1872",
+            "content": "sha256:af98bd8aa55fb122c2c941301dd2eb8bef5362a48b52102b2c69487ad0b990b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_number_detector_catches_limit_forms_and_exempts_labels"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Stage facets are bound to the extracted section rather than satisfied by relocated source text.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "287e37afe1ab390a6b72c9520fe0dceebd3b1872",
+            "content": "sha256:ec340444e43d62304c3e19ff3ee9773631aa4d14527c4d45aebd525550cd3d1c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_stage_section_binding_fails_on_deletion_and_relocation"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The specified Reviewer, Worker and Manager property/construction sentences survive source and compiled projections.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "287e37afe1ab390a6b72c9520fe0dceebd3b1872",
+            "content": "sha256:2705e46482371922d94e3970e0acf1bbda85cbd87350ce62dfeb248111b2d881",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_rule_nine_sentences_hold_for_reviewer_worker_manager"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Stage-end checks bind each role’s required facets to its current owning section in source and compiled text; the Reviewer's record-recheck facets are owned by `operations/review.md`. Curator facets include clean quality, installed-writer versus manual provenance and covered-write recovery. Deletion/relocation controls require a real mutation, while round-number and rule-nine guards remain.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "287e37afe1ab390a6b72c9520fe0dceebd3b1872",
+            "content": "sha256:c0af15c0ed6b84f106f97561d2c558798e25ff8e23406a49eed5af8e5bbcfe59",
+            "locator": {
+              "kind": "symbol",
+              "name": "STAGE_CONTRACTS"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Worker stage completion requires the handover checks named in workspace.memoryRoot/system/coding-guidelines.md on a clean copy of final bytes. A dedicated control rejects replacement by or reinsertion of the retired fixed focused-tests/lint/type sentence. Curator stage facets directly preserve covered-write recovery, manual provenance and stop boundaries. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "287e37afe1ab390a6b72c9520fe0dceebd3b1872",
+            "content": "sha256:9df75e396735eddf2453b16f37b61b73d009fe93c03e7b54dbacfe1e0f36b949",
+            "locator": {
+              "kind": "symbol",
+              "name": "STAGE_PARTS"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "287e37afe1ab390a6b72c9520fe0dceebd3b1872",
+            "content": "sha256:9075a6ffa113b2cbcc3759bedd0b578965ebe45e0ad7cabc7fb8d8cb04d8920e",
+            "locator": {
+              "end": 153,
+              "kind": "line_range",
+              "start": 104
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

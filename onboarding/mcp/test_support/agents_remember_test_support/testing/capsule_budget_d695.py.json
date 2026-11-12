@@ -1,0 +1,71 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The linked ordinary template population is fixed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8318c7529a92a28e65eb4163a582e66d3bb3d62",
+            "content": "sha256:6cebb71cd3065652505fbce30e4669edcd164d26802a41c439184820d1aff51b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ORDINARY_TEMPLATE_POPULATION"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Populations, uncapped ordinary templates and the 2500-word detail ceiling are asserted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8318c7529a92a28e65eb4163a582e66d3bb3d62",
+            "content": "sha256:29180fb0c77d56afe0f14bada0fec6a704795999ef8c7e83abab320d65792184",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assert_current_populations"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Detail and template classification is read from the composition manifest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8318c7529a92a28e65eb4163a582e66d3bb3d62",
+            "content": "sha256:c5db175a68c58fd0264dc35bea94d6a1bcf9ee7d37c4ad78247a36d6f565009a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_current_source_findings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Frozen owners and the current digest map are bound by hash before findings are collected.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8318c7529a92a28e65eb4163a582e66d3bb3d62",
+            "content": "sha256:8c2becfadaf1ba12345a93ed610585038b103dbd7f59b6d85aabde9d687a7b9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "current_budget_findings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

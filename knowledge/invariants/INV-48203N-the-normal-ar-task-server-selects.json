@@ -1,0 +1,39 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The launch must supply identity, the selector must fail closed and registration/dispatch must keep the narrow surface; the host-launch and bound-server regressions exercise these distinct locations."
+  },
+  "applicability": "Normal AR task-server startup for a process launched as an explainer, and calls to that bound server.",
+  "conditions": [
+    "Launch supplies both the workspace marker and the capability binding.",
+    "The binding validates repository/task/leaf workspace shape, required values and a positive integer generation before registration.",
+    "Registration supplies the same explainer implementations on the already-created server instance.",
+    "Every tool call checks the launch binding against the current seat before its handler runs.",
+    "Central read-only annotations are applied after either roster registers; they describe capability and do not grant permission or prove process-wide purity."
+  ],
+  "exclusions": [
+    "An ordinary process with neither marker nor binding retains the ordinary roster.",
+    "This statement does not claim operating-system confinement from tool discovery alone.",
+    "No ordinary roster fallback on a malformed or marker-backed missing binding."
+  ],
+  "id": "INV-48203N",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "helpers/explainer-tools/behavior-proposals.json; helpers/explainer-tools/sidecar-note-audit.json; helpers/backend/normalized-writer-draft.json; MIK-R186 v2 rule 3"
+      ],
+      "path": "L183-current-guarantees-and-proofs-W9"
+    },
+    "handoffEntry": "L183-CUR-ET01-bound-explainer-roster",
+    "leaf": "260928-MIK-L183",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The normal AR task server selects the explainer’s 22-tool surface only from its valid launch-owned binding, enforces that surface at dispatch, and revalidates the exact launched seat on every tool call. An invalid, lost marker-backed or replaced seat binding refuses by name instead of exposing the ordinary roster; a process with neither explainer marker nor binding retains the ordinary roster. Both surfaces receive the central read-only marks, and an unclassified tool refuses.",
+  "status": "proposed",
+  "supersedes": []
+}

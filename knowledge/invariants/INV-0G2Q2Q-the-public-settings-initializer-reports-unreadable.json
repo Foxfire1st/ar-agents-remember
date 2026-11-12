@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "A secret printed in a refusal, or a second failing read, is a cost the user pays for asking a legitimate question; the cases hold the refusal to one read and no disclosure."
+  },
+  "applicability": "The public user-settings-initializer answer when the destination is unreadable, symlinked, or collides with the host-authority block.",
+  "conditions": [
+    "The answer is a modeled refusal that names the condition.",
+    "No value from the unreadable file is printed, and no second read is attempted."
+  ],
+  "exclusions": [
+    "The absent-destination creation path and its read-back."
+  ],
+  "id": "INV-0G2Q2Q",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "a2/native-review.md N8; final-a3/source-witnesses.md. Direct initializer exception tests do not traverse this public wrapper."
+      ],
+      "path": "handoff-draft.json"
+    },
+    "handoffEntry": "L188-B07",
+    "leaf": "260928-MIK-L188",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The public settings initializer reports unreadable/colliding authority as a modeled refusal without a second failing read or secret disclosure.",
+  "status": "proposed",
+  "supersedes": []
+}

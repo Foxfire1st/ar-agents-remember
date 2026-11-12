@@ -1,0 +1,69 @@
+{
+  "path": "mcp/src/agents_remember/observer/reducer_impl/_types.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "cfd5ccff277b5ad7e7da2e2437b7617b01f6b241",
+        "content": "sha256:50326ead1fca9c4f0127c6ff9373dc2069a48e0393d6289ffdef2f759b3be6bb",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-5KK1W5",
+      "invariant": "INV-GQ9C07",
+      "origin": {
+        "handoffEntry": "L192-W-R199-02",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The reducer's node and snapshot types declare no provider node, provider boot record or setup summary at C, so no reducer output can carry one.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Frozen structural and analytical bundles retain their separate owners without removed gate/pickup/expectation or verification-age inputs.\n\nAnchor: `WorkspaceStructure` `AnalyticalInputs`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfd5ccff277b5ad7e7da2e2437b7617b01f6b241",
+            "content": "sha256:d6c71de443a9302315db3156efb7533e65181eba5735022b09c5ad46f6315365",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorkspaceStructure"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cfd5ccff277b5ad7e7da2e2437b7617b01f6b241",
+            "content": "sha256:510bd84303a0dd322a3ff7995371bf9a55b1eca6b406817f069859785e7745d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "AnalyticalInputs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Frozen structural and analytical bundles retain their separate owners without removed gate/pickup/expectation or verification-age inputs.\n\nAnchor: `AnalyticalInputs`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfd5ccff277b5ad7e7da2e2437b7617b01f6b241",
+            "content": "sha256:510bd84303a0dd322a3ff7995371bf9a55b1eca6b406817f069859785e7745d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "AnalyticalInputs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

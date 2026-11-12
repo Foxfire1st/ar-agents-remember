@@ -1,0 +1,40 @@
+{
+  "path": "mcp/tests/test_agent_eval_git_admission.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "906db2155c2606359d70fa48be6e6af229400de7",
+        "content": "sha256:99be4f2342d4567d4970dcc9a010366cc87a2763149b5aede639e3b3e0860b9c",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-A8YG74",
+      "invariant": "INV-96ANVQ",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-git-semantics",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "This regression module checks this obligation through test_case_admits_index_refresh_and_unreachable_objects, test_case_refuses_real_git_effect_even_when_working_edit_is_admitted, test_case_still_refuses_an_unadmitted_non_git_file, test_pytest_cache_does_not_hide_a_real_product_edit and its remaining test cases.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "906db2155c2606359d70fa48be6e6af229400de7",
+            "content": "sha256:99be4f2342d4567d4970dcc9a010366cc87a2763149b5aede639e3b3e0860b9c",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

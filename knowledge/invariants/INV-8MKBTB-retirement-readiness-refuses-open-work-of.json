@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The case {'path': 'mcp/tests/test_master_retirement_readiness.py', 'symbol': 'test_an_operation_report_where_an_older_layout_kept_it_is_a_fact'} proves this obligation on the candidate."
+  },
+  "applicability": "Retirement readiness reading the master's own enclosure operations and the master's leaves.",
+  "conditions": [
+    "Operation records follow the current enclosure layout.",
+    "A report kept by an older layout is reported as a fact with status and phase."
+  ],
+  "exclusions": [
+    "Sibling masters' operations, which are not this master's open work."
+  ],
+  "id": "INV-8MKBTB",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "focused.txt; readiness-final.txt; exact matching readiness wording in generated-copy-hashes.json generation check"
+      ],
+      "path": "entries-list.json"
+    },
+    "handoffEntry": "L41-continuation-own-master-operations",
+    "leaf": "260928-MIK-L41",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Retirement readiness refuses open work of the master leaves and unfinished or unreadable operations of the master own enclosure, while older-layout reports remain facts with status and phase.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,77 @@
+{
+  "path": "dashboard/src/cockpit/sidebarToggle.pages.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "95497dc9830b61a7d1e5d364e8cf7a9dec3978e1",
+        "content": "sha256:53a1e79b724cfb7ccc5d5d11e978e6ce4f1f5d7ab7243455dd98b566e1ff53fd",
+        "locator": {
+          "kind": "symbol",
+          "name": "draws no toggle where a page has no sidebar: the notes reader without a rail"
+        }
+      },
+      "facet": "A notes-reader decisions view without a rail is drawn and has no notes-left sidebar toggle.",
+      "id": "PRF-FAP10C",
+      "invariant": "INV-7QYXJP",
+      "origin": {
+        "handoffEntry": "RP16",
+        "leaf": "260928-MIK-L89"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Exact page-side population\n\nAnchor: \"const PAGES: PageWalk[] = [\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "95497dc9830b61a7d1e5d364e8cf7a9dec3978e1",
+            "content": "sha256:5cde29b7bd225cbc8a7af9eaa974104d0d2949473efc06817a6255d069ecca83",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 111
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Hide/reachability/width/storage/remount contract\n\nAnchor: \"it.each(PAGES)('$name: hides, stays reachable, gives its width, is remembered', async (walk) => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "95497dc9830b61a7d1e5d364e8cf7a9dec3978e1",
+            "content": "sha256:d0ee2d31f71192d7bc3482ac815a16b399b3e3d110f377490973609e020833b2",
+            "locator": {
+              "end": 180,
+              "kind": "line_range",
+              "start": 151
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "No-sidebar exception\n\nAnchor: \"it('draws no toggle where a page has no sidebar: the notes reader without a rail', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "95497dc9830b61a7d1e5d364e8cf7a9dec3978e1",
+            "content": "sha256:53a1e79b724cfb7ccc5d5d11e978e6ce4f1f5d7ab7243455dd98b566e1ff53fd",
+            "locator": {
+              "end": 188,
+              "kind": "line_range",
+              "start": 182
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

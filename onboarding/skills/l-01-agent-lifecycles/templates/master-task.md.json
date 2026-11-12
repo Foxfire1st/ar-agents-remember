@@ -1,0 +1,59 @@
+{
+  "path": "skills/l-01-agent-lifecycles/templates/master-task.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Masters are authored through `task_doc` fields and ordered sections.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49d187c638f03fa3ce7a67cf6fcc01fea488a2d2",
+            "content": "sha256:f05c345996dca323d8407bac62f1341808617bc6371a5a5d070e003160d353e1",
+            "locator": {
+              "end": 3,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Sub-tasks and Shared Decisions use the `subTasks` and `sharedDecisions` section kinds; Open Questions and References are freeform.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49d187c638f03fa3ce7a67cf6fcc01fea488a2d2",
+            "content": "sha256:f9d2e7a3078b4e3431504e3b8eeca12cd8d720b421ea62bb44ae0232529922fc",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 27
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The Architect reads the master template before authoring a master.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de0e221dc51f2f0b067db007cb4c00b17ab3bd39",
+            "content": "sha256:da32e642a4eee093da5d26e3337465baa8cd1ce388e03bbd584c2e4aaaecdc66",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 58
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

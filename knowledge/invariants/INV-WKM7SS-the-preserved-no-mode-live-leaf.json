@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Realized in the start module, which orders attachment before admission, and in the refusal test, which pins the attached result with nothing created; the passing test guards the ordering."
+  },
+  "applicability": "A start that names no memory directive at an address holding a live disabled leaf contract.",
+  "conditions": [
+    "The existing contract is live: not abandoned, reopened or completed.",
+    "The request carries no memory_mode, memory_choice or topology."
+  ],
+  "exclusions": [
+    "Genuinely new leaves, explicit disabled requests and explicit conversions, which keep the build path and its refusals."
+  ],
+  "id": "INV-WKM7SS",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "start.py::_live_disabled_leaf_attach_result runs before build_start_contract only for a request with no mode/choice/topology at a live disabled leaf. It delegates to _active_existing_contract_result, retaining operation-location, ordinary-worktree, source-lineage and task-leaf binding checks. Unresolved pre-checks fall through to the original builder; no conversion or alternate contract is manufactured. Existing new-leaf/explicit-disabled paths still use admission/refusal. test_no_mode_start_attaches_to_a_live_disabled_leaf proves dry+real attached-existing-contract with contract bytes/mode and code refs unchanged. Static delegation adds no new code/memory worktree creation. Independent qualified Python 3.14.8 ONE three-module run: 124 passed, EXIT=0, PID933961, 2026-10-10T12:14:31.159216Z–12:14:50.323397Z; exact argv/cwd/env and whole streams in notes/reports/role-launch/260928-MIK-L50-reviewer-bc8a682c-745f-42b2-a47d-8d978449ac08-code-r2.evidence/pytest-result.json and pytest.stdout.log (SHA c51285ede6a88c4b08784ab5b97f2c7bb727b6a733a57363198d58aaad673a5a).",
+        "Curator-owned expansion of R6 L50-CODE-R1-WKM7SS (producer input retained verbatim at notes/reports/role-launch/260928-MIK-L50-reviewer-bc8a682c-745f-42b2-a47d-8d978449ac08-code-r6.curator-handoff.json); additional realization anchors placed by the curator for sidecar coverage.",
+        "Curator-owned F01 attribution repair: complete original producer input is notes/reports/role-launch/260928-MIK-L50-reviewer-bc8a682c-745f-42b2-a47d-8d978449ac08-code-r6.curator-handoff.json (SHA-256 3ad6cd419e6a447b8cbe8371201b317965fffd5110fc6cd9b052bd8047705f72), entry L50-CODE-R1-F01, with every original producer field unchanged. Named original plus separate curator resolution: notes/reports/role-launch/260928-MIK-L50-curator-8f6ac14e-c1c0-43fe-b347-6b8ed2158727.evidence/named-producer-inputs.json. Existing origin.handoff.path notes/reports/260928-MIK-L50-curator-handoff-list.json is the historical CURATOR-OWNED WRITER PROJECTION, not the original producer input; expanded L50-CUR-EXP items belong to the Curator. F04 projection represents seven of nine targets: both original proof.stdout targets remain in original input and are not code realizations. Four other retained findings match all nine producer fields. F05 and requirement adjudication remain task-local in the complete seven-entry original; no waiver or lost evidence."
+      ],
+      "path": "notes/reports/260928-MIK-L50-curator-handoff-list.json"
+    },
+    "handoffEntry": "L50-CODE-R1-F01",
+    "leaf": "260928-MIK-L50",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The preserved no-mode live-leaf attachment now answers before new-parent admission; F01 is fixed.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,39 +1,36 @@
 # dashboard/src/panels/detail-panel/model.ts
 
-| Field                  | Value                                                       |
-| ---------------------- | ----------------------------------------------------------- |
-| repository             | agents-remember                                             |
-| path                   | `dashboard/src/panels/detail-panel/model.ts`                |
-| doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-08-24T15:04+02:00 |
-| lastVerifiedCommitHash | `3e5d04d8756f5c19aa5ea7657a121752400875b8` |
-| lastVerifiedCommitDate | 2026-09-16T14:49:02+02:00|
-| governingOverview      | `../overview.md`                                            |
-
 ## Governing Overview
 
 [panels/ overview](../overview.md)
 
 ## Purpose
 
-The pure document-derivation model of the DetailPanel, extracted from
-`DetailPanel.tsx` by the 260731-EFA-L8 split. Owns path/slug helpers, the
-displayed-reader-doc resolution, the master-document view assembly
-(`seriesAsMasterDoc`, `masterDocWithSeriesTokens`), and sub-task key/label helpers.
+Pure reader helpers for bounded text, parsed-time decisions, registers/prose, major-step marks and served ancestry; no series/slug selection fallback.
 
 ## Code Commentary
 
 ### Logic
 
-Since 260815-DAG-L14 `docPathForTaskRef` resolves a typed `masterRef` against the FULL
-projected task-document pool (a sprint commanded master lives in another folder, so
-`sliceDocs` can never answer it); undefined when the target is not projected, which is the
-caller signal to fall back to the row older behaviors.
 
-`displayedReaderDoc` / `displayedLeafDoc` resolve which task document the reader
-shows for a selection; `seriesAsMasterDoc` builds the master view from a series node
-(the path whose rows carry `createdAt` for ordering); `masterDocWithSeriesTokens`
-merges series tokens into a master document.
+
+`docChain(entry, tasks)` follows served parent keys with a seen-key cycle guard, using exact task entry selection for ancestors; missing parents end the chain.
+
+### 260928-MIK-L126 Current Delta — Newest-First Decision Ordering
+
+`orderDecisionsNewestFirst` orders entries by parsed recorded time, newest first, independently of storage order. Equal timestamps retain input order. Unparseable timestamps follow parseable entries and retain their input order among invalid peers. The preview and whole-log reader call this shared helper; its comparator does not establish how a backend writer stores records.
+
+
+
+### Form and bounded-reader model
+
+`docForm` reads the served summary form; identity uses entry.key rather than a transient content object. Child grouping and stage counts come from served entries, not document-status classification.
+
+Registers require a register heading and a parseable table; canonical slots are Judgment then Priority. Free-form Further notes exclude structured sections, recognized registers and a byte-identical objective repeat. `boundedText` checks both eight-line and character limits so a single huge paragraph cannot render unbounded. Review summaries read the supplied whole-round count rather than deriving it from a capped list. An ancestry chain follows served parent keys and never invents a series fallback. Optional prose/completion/dependency fields remain content fields, not topology inference. stepMarkStates emits one state per major step, not nested marks. A done parent stays done; otherwise an inProgress or done child promotes the parent to current before blocked/next fallback. Entry major-step totals remain served facts; full nested rendering stays with taskBlocks.
+
+### Execution-graph and discarded-subtask view fields
+
+TaskSummary retains optional executionGraphView and discarded audit data as supplied. Graph display and discard history remain separate from live membership/counts; this model does not fabricate absent fields.
 
 ### Conventions
 
@@ -41,63 +38,36 @@ Pure functions only — no React, no stores.
 
 ### Invariants And Boundaries
 
-The cross-series `→` jump is reachable only when `linkedLifecycleId` is present on a
-`TaskSubTaskRefNode`; this module keeps that guard.
+Navigation uses entry keys and exact canonical references in indexRows; no linkedLifecycleId or local slice fallback remains.
 
 ### Todos
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked `system/sources.md`; no Domain Documentation source is
 configured for this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found. | — | — |
+No relevant domain documentation was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The reader-doc resolution entry points. | `displayedReaderDoc`; `displayedLeafDoc` | dashboard/src/panels/detail-panel/model.ts:89-154 |
-| The master/series view assembly. | `seriesAsMasterDoc`; `masterDocWithSeriesTokens`; `subTaskKey` | dashboard/src/panels/detail-panel/model.ts:196-213; dashboard/src/panels/detail-panel/model.ts:216-219; dashboard/src/panels/detail-panel/model.ts:226-228 |
+- Decision ordering is parsed-time descending, stable for ties and invalid peers, with invalid timestamps after valid ones. [3]
 
-## Cross-Repo References
+
+
+
+
+
+
+
+
+
+### Cross-Repo References
 
 No cross-repository implementation source governs this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-
-## 260815-DAG-L12 Execution Graph View
-
-`MasterDocView` (the master-document view assembly) now includes the optional `executionGraphView` field (L12-R4/R5), so the sprint page can render the render-ready wave-grid graph directly from the projected master document.
-
-
-## 260821-CLIVE Discarded-Subtask Model
-
-`MasterDocView` now carries `discardedCount` and `discardedSubTasks`, and `seriesAsMasterDoc()`
-passes both producer-owned values through without folding them into live subtasks or completion.
-The existing execution-graph view, repository-qualified `masterRef` resolution, ordering, and token
-rollup behavior are unchanged.
-
-## Update History
-
-- 2026-08-24T15:04+02:00 — Extended the derived master view with the distinct discard-before-start
-  audit fields; no discarded item becomes a live or completed subtask.
-
-
-- 2026-08-20T10:45+02:00 — 260815-DAG-L12:   `MasterDocView` includes the optional `executionGraphView` (L12-R4/R5). Verified at code commit b7f2c8e2.
-
-- 2026-08-20T04:34+02:00 — 260815-DAG-L14: added `docPathForTaskRef` — resolves a typed
-  `masterRef` against the full projected task-document pool (undefined when unprojected, the
-  fallback signal for sprint rows). Verified at code commit 9c3180c1.
-
-
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: created this sidecar for the pure
-  model module extracted from `DetailPanel.tsx`. Verification pinned to the leaf
-  base until closeout stamps the code commit.
+No applicable cross-repository source was found.

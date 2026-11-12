@@ -1,15 +1,5 @@
 # mcp/native_helpers/conversation_library/src/protocol.test.ts
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/native_helpers/conversation_library/src/protocol.test.ts` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-07T00:31+02:00 |
-| lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [Locked native conversation-library helper overview](../overview.md)
@@ -50,39 +40,20 @@ path cannot make a broader privacy/schema claim.
 
 Add native operation tests only when actual helper behavior lands behind the same locked boundary.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured; the repository protocol is the direct evidence.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available. | — | — |
+No configured domain documentation was available.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Production protocol code implements the exact versions, handshake, fixed error output, and per-operation key validator under test. | `PROTOCOL_VERSION`; `CLAUDE_SDK_VERSION`; `PI_CODING_AGENT_VERSION`; `redactHelperError`; `buildHandshake`; `parseHelperRequest`; `validateOperationShape`; `requireExactKeys` | mcp/native_helpers/conversation_library/src/protocol.ts:13-15; mcp/native_helpers/conversation_library/src/protocol.ts:98-102; mcp/native_helpers/conversation_library/src/protocol.ts:13-13; mcp/native_helpers/conversation_library/src/protocol.ts:306-325; mcp/native_helpers/conversation_library/src/protocol.ts:327-345; mcp/native_helpers/conversation_library/src/protocol.ts:347-445; mcp/native_helpers/conversation_library/src/protocol.ts:447-452 |
+- Production protocol code implements the exact versions, handshake, fixed error output, and per-operation key validator under test. [1]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo boundary exists for this repository-local test.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-09-07T00:31+02:00 — Retired obsolete deleted-suite proof citations; the documented implementation contracts remain, without claiming those removed tests still protect them. Verification pins unchanged.
-
-- 2026-08-03T03:56+02:00 — 260731-EFA-L6 W3-B10 curator: anchored 2 table citations and normalized 2 source paths; no unresolved Tier-3 claims.
-
-- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: corrected the handshake coverage for the R4
-  version-gate removal — the new `handshake reports observed versions and is ready by contract, never
-  version-gated` test pins that `buildHandshake` always returns `ready` (versions informational) and
-  the operation result is the gate; removed the "wrong-version rejection" description (malformed-shape
-  rejection remains). Verification metadata stays pinned (uncommitted); closeout re-stamps.
-- 2026-07-18T10:55+02:00 — 260715-FEUI-L9 curator: created the helper regression sidecar after
-  hostile privacy/schema fix rounds passed. Verification is blank until closeout commits and stamps
-  the new source.
+No meaningful cross-repo references found.

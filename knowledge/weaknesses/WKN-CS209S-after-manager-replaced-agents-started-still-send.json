@@ -1,0 +1,28 @@
+{
+  "anchor": {
+    "blob": "b20f555dd03b92dcc6704a9fb8c94ceb1e389cd1",
+    "content": "sha256:b819d5fac7981c071dd2b3da73a10415cdba849c4ebabe9f66f2f11e76fdcb8c",
+    "locator": {
+      "kind": "file"
+    },
+    "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+  },
+  "id": "WKN-CS209S",
+  "kind": "debt",
+  "origin": {
+    "handoff": {
+      "path": "rule9-ingest-list.json"
+    },
+    "handoffEntry": "mark-8",
+    "leaf": "260928-MIK-L118",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L118"
+  },
+  "state": "open",
+  "statement": "After a Manager is replaced, the agents it started still send their returns to its id. The call is refused as `recipient-archived`, and the refusal's next action tells a Worker to start the role again or to ask its parent, which is the archived agent. Three returns were lost that way within 20 minutes of the switch of 2026-10-10, and the new Manager was never woken."
+}

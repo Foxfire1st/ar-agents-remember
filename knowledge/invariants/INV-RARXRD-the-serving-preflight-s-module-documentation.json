@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A module docstring naming a shipped release candidate dates the guidance to a version that no longer exists; a maintainer would read a false current account, so the statement guards that plausible mistake."
+  },
+  "applicability": "The serving preflight module's documentation.",
+  "conditions": [
+    "The docstring describes the failure class the preflight guards."
+  ],
+  "exclusions": [
+    "Historical release notes and captured test strings."
+  ],
+  "id": "INV-RARXRD",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_standalone_master_retirement.py -m integration: 33 passed, including the case that patches serving_preflight.SubTaskRef"
+      ],
+      "path": "l36-part2-invariant-ingest"
+    },
+    "handoffEntry": "MIK-L36@v10 e3",
+    "leaf": "260928-MIK-L36",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The serving preflight's module documentation describes the failure class it guards against without naming a release candidate.",
+  "status": "proposed",
+  "supersedes": []
+}

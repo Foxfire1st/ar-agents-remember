@@ -1,0 +1,401 @@
+{
+  "path": "mcp/src/agents_remember/models/role_agents.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "618a5b0e348354382c9a37d392847973ffdc14b1",
+        "content": "sha256:8d50d5ce179b00ae47ed4f2f4cb25fca21ad66e71705ebd12bd603469c0a1524",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-055VPB",
+      "invariant": "INV-0GPNBS",
+      "origin": {
+        "handoffEntry": "L188-B02",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "The public response declarations must admit the continuation and preparation fields before projection.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "618a5b0e348354382c9a37d392847973ffdc14b1",
+        "content": "sha256:274997cf278cde1e5c28fc2d05cd73b78a3219085dc7bb579eb8dcb4ac08c09c",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleMessageRefusal"
+        }
+      },
+      "id": "RLZ-27ER0H",
+      "invariant": "INV-0EASG7",
+      "origin": {
+        "handoffEntry": "L98-CODE1-F01 / Worker repair L98-A02",
+        "leaf": "260928-MIK-L98"
+      },
+      "rationale": "The public typed refusal includes the capacity refusal returned by delivery.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "618a5b0e348354382c9a37d392847973ffdc14b1",
+        "content": "sha256:91376c47bad7aca42a8214a34ed94e7595fc585d6ace8c4391fa469380a69398",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleEnvironmentPreparation"
+        }
+      },
+      "id": "RLZ-87AJC6",
+      "invariant": "INV-ZVQ7E3",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule6",
+        "leaf": "260928-MIK-L95"
+      },
+      "rationale": "The answer model admits opened as its own value, so a host outcome that does not exist is never rendered as created or found.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "618a5b0e348354382c9a37d392847973ffdc14b1",
+        "content": "sha256:8d50d5ce179b00ae47ed4f2f4cb25fca21ad66e71705ebd12bd603469c0a1524",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-J3TCD3",
+      "invariant": "INV-4DQMNE",
+      "origin": {
+        "handoffEntry": "L184-M1-F14-message",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "RoleMessageResponse.limitedUntil carries the reset a held answer names to its sender: the native message answer's field, not the task-state activity carrier.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "618a5b0e348354382c9a37d392847973ffdc14b1",
+        "content": "sha256:08e5377b63870a185a763c139b80ecb9c0110f827bc3047182ead38a33b4c25f",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleMessageResponse"
+        }
+      },
+      "id": "RLZ-PCPVCG",
+      "invariant": "INV-XZ766Y",
+      "origin": {
+        "handoffEntry": "L117-R08",
+        "leaf": "260928-MIK-L117"
+      },
+      "rationale": "The composed held producer keeps the turn id inside SentMessage for waiting and never exposes it in the public result; this DTO declares its listed message/held fields and the reported replacement value, and publishes no turnId on either delivery path.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "618a5b0e348354382c9a37d392847973ffdc14b1",
+        "content": "sha256:08e5377b63870a185a763c139b80ecb9c0110f827bc3047182ead38a33b4c25f",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleMessageResponse"
+        }
+      },
+      "id": "RLZ-QV74SA",
+      "invariant": "INV-18M0W3",
+      "origin": {
+        "handoffEntry": "L171-F07 / L171-A4",
+        "leaf": "260928-MIK-L171"
+      },
+      "rationale": "The strict public response must admit the replacement value that the delivery paths report, so validation does not turn delivery into an error.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "618a5b0e348354382c9a37d392847973ffdc14b1",
+        "content": "sha256:8d50d5ce179b00ae47ed4f2f4cb25fca21ad66e71705ebd12bd603469c0a1524",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-T4SZ1K",
+      "invariant": "INV-5H5VR2",
+      "origin": {
+        "handoffEntry": "L185-attach-inv-5h5vr2",
+        "leaf": "260928-MIK-L185"
+      },
+      "rationale": "The start answer's kept shape names handoverFilePath beside handoverArtifactPath; these are the field names every answer that carries them is measured against.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "618a5b0e348354382c9a37d392847973ffdc14b1",
+        "content": "sha256:93646618e32c968257ef1f5ffe4afbd82e81bbd477a1c10daaad783096376da8",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleMessageCall"
+        }
+      },
+      "id": "RLZ-WS2VEY",
+      "invariant": "INV-KD90E4",
+      "origin": {
+        "handoffEntry": "L117-R03",
+        "leaf": "260928-MIK-L117"
+      },
+      "rationale": "The body and attach inputs are declared on the call contract so the tool boundary, not prose, carries them.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "618a5b0e348354382c9a37d392847973ffdc14b1",
+        "content": "sha256:def73dcf8c4f4dcf99534555b6b99b677f11a91b6cf4cee4572fce50ee3ef819",
+        "locator": {
+          "end": 80,
+          "kind": "line_range",
+          "start": 57
+        }
+      },
+      "id": "RLZ-YG8KWM",
+      "invariant": "INV-RTQCXN",
+      "origin": {
+        "handoffEntry": "L100-R100-set-start-and-held-seats",
+        "leaf": "260928-MIK-L100"
+      },
+      "rationale": "The set call model fixes the one-call shape the entry point validates.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Frozen implementation of RoleStartCall supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "618a5b0e348354382c9a37d392847973ffdc14b1",
+            "content": "sha256:d9a14ac5dd62d11e49476cf560c4a158e7ef62b379bb4021024628b393859282",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleStartCall"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L19–L46",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "618a5b0e348354382c9a37d392847973ffdc14b1",
+            "content": "sha256:7f3534010ee2c81dd0f7779673922aa241b7710e8ec593b7ffb064591bc3f6e4",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 19
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L158–L184",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "618a5b0e348354382c9a37d392847973ffdc14b1",
+            "content": "sha256:718ee737a5e25dc32ead341d21ca4bb812abaa4c632985fc8e7eccea57972270",
+            "locator": {
+              "end": 184,
+              "kind": "line_range",
+              "start": 158
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The start call, which carries the caller's own harness name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "618a5b0e348354382c9a37d392847973ffdc14b1",
+            "content": "sha256:d9a14ac5dd62d11e49476cf560c4a158e7ef62b379bb4021024628b393859282",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleStartCall"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The environment preparation block, which now declares the first-run report.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "618a5b0e348354382c9a37d392847973ffdc14b1",
+            "content": "sha256:91376c47bad7aca42a8214a34ed94e7595fc585d6ace8c4391fa469380a69398",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleEnvironmentPreparation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The start answer, which declares the seat's continuation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "618a5b0e348354382c9a37d392847973ffdc14b1",
+            "content": "sha256:3718fbc9d0ae858dbcfc016d4b89a5e52155591b87a7d1edc016139f76335538",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleStartResponse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Current RoleMessageCall declares body/attachment inputs and waiting-message withdrawal; declarations do not prove every composed branch files payloads.\n\nAnchor: RoleMessageCall",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "618a5b0e348354382c9a37d392847973ffdc14b1",
+            "content": "sha256:8d50d5ce179b00ae47ed4f2f4cb25fca21ad66e71705ebd12bd603469c0a1524",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Frozen implementation of RoleStartResponse supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "618a5b0e348354382c9a37d392847973ffdc14b1",
+            "content": "sha256:3718fbc9d0ae858dbcfc016d4b89a5e52155591b87a7d1edc016139f76335538",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleStartResponse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Current response DTO declares its listed message/held fields, admits the reported replacement value, and carries no `turnId` on either delivery path; source declarations are not universal completeness evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "618a5b0e348354382c9a37d392847973ffdc14b1",
+            "content": "sha256:08e5377b63870a185a763c139b80ecb9c0110f827bc3047182ead38a33b4c25f",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleMessageResponse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The current source implements this file’s stated Investigator boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "618a5b0e348354382c9a37d392847973ffdc14b1",
+            "content": "sha256:c71521d379db5f4226c573fbfee6a78aae01223cc0328ba88fa90133066a8c82",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Current source section contains excerpt `class RoleStartResponse(ToolResponse):`; DTO/control ownership is not execution acceptance.\n\nAnchor: RoleStartResponse",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "618a5b0e348354382c9a37d392847973ffdc14b1",
+            "content": "sha256:5db05446a75126fb0aaaf7f54b2a7b4aa81e6d9277405668cf1a100dfe5bafa0",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 94
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Current source section contains excerpt `def harness_carries_one_server(harness_id: str `; DTO/control ownership is not execution acceptance.\n\nAnchor: harness_carries_one_server",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "160e313efbefa3c044cc286261c123d7a9bad3ea",
+            "content": "sha256:fac90a2efce29481db2fcdc3a5c2dc171b06d8d4d191e9f1c71198db08e26988",
+            "locator": {
+              "end": 82,
+              "kind": "line_range",
+              "start": 73
+            },
+            "path": "mcp/src/agents_remember/application/agent_binding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Worker/Curator typed review census, record-only exclusion and unknown history.\n\nAnchor: L175–L240",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+            "content": "sha256:89c09fd0491880de2f7b715bffbe2d6b0605a6dea7400689519c43f40f7b119d",
+            "locator": {
+              "end": 240,
+              "kind": "line_range",
+              "start": 175
+            },
+            "path": "mcp/src/agents_remember/worktrees/review_history.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Reason admission, threshold and differing-harness/model inheritance boundary.\n\nAnchor: L23–L84",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f341c13a99f485178e73c4ff8bf4de16267ee662",
+            "content": "sha256:5a3727f4901933c44cd5f7edc8b16220285a82a9e080326edf482cbb126f0b2f",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "mcp/src/agents_remember/cli/role_step_up.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,42 @@
+{
+  "path": "mcp/tests/test_agent_eval_trial_setup.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0f8a8a18affbb6396c753c130283ff2e7a783120",
+        "content": "sha256:5d4a620d83a5420f9ecacf9567e55eaaf3ab157339b4cbaf7b4245f38c053aab",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-7C5A4Y",
+      "invariant": "INV-A8FVPH",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-trial-isolation",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "This regression module checks this obligation through test_native_resolved_host_is_persisted_without_sanitizing_actor_environment, test_foreign_and_failed_native_results_stop_with_sanitized_persisted_receipt, test_auxiliary_host_cannot_pass_with_another_task_identity, test_auxiliary_receipts_keep_all_tasks_and_config_effort_distinct_from_main and its remaining test cases.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f8a8a18affbb6396c753c130283ff2e7a783120",
+            "content": "sha256:6845da9cf95b24b0e68c55b404f25eeaefaddca50af52e3b95cd64ba6af69e87",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

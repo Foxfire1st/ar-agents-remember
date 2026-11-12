@@ -1,0 +1,126 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/startup/start_plan.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "3370d0e27cac3d4a3c5aba90530883235032262d",
+        "content": "sha256:7690f84401be5f748fb2872f5235ca90148077d66730e94f93e3f71932f2768e",
+        "locator": {
+          "kind": "symbol",
+          "name": "StartContractPlan"
+        }
+      },
+      "id": "RLZ-EPYEZA",
+      "invariant": "INV-EX6T0F",
+      "origin": {
+        "handoffEntry": "MIK-R47@v1-preview-authority",
+        "leaf": "260928-MIK-L47"
+      },
+      "rationale": "Carries the leaf and its same-request owner-validated parent as one immutable local value rather than rebuilding authority from the path.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "3370d0e27cac3d4a3c5aba90530883235032262d",
+        "content": "sha256:38d915f9a4e84cfaa882248790aa127f496bafd0b83a7ba59e6bc6984b479e35",
+        "locator": {
+          "kind": "symbol",
+          "name": "_contract_after_memory_start"
+        }
+      },
+      "id": "RLZ-WKBKJH",
+      "invariant": "INV-WKM7SS",
+      "origin": {
+        "handoffEntry": "L50-CUR-EXP-F01",
+        "leaf": "260928-MIK-L50"
+      },
+      "rationale": "Never rewrites a contract into the removed mode; the amend-to-disabled branch is removed.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "10": {
+      "note": "The registered first-leaf proof preserves startup/Git state and checks the call records separately. \\[10]  Anchor: `test_registered_first_leaf_preview_is_repeatable_without_publication`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f1c1332855742f33a42427582b074c430695e4a",
+            "content": "sha256:f9b0ff1c796c84cacf9b2008984d93638cac24ca8d520264c2ebd1b1190f35a8",
+            "locator": {
+              "end": 300,
+              "kind": "line_range",
+              "start": 271
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "No disabled projection; only the external base reconciles",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3370d0e27cac3d4a3c5aba90530883235032262d",
+            "content": "sha256:38d915f9a4e84cfaa882248790aa127f496bafd0b83a7ba59e6bc6984b479e35",
+            "locator": {
+              "kind": "symbol",
+              "name": "_contract_after_memory_start"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Same request's validated preview-only parent",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3370d0e27cac3d4a3c5aba90530883235032262d",
+            "content": "sha256:7690f84401be5f748fb2872f5235ca90148077d66730e94f93e3f71932f2768e",
+            "locator": {
+              "kind": "symbol",
+              "name": "StartContractPlan"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Memory blocks retain recovery action and fields",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3370d0e27cac3d4a3c5aba90530883235032262d",
+            "content": "sha256:be7bd8e9de162c0787bf485fbe05d7a8a59a729917670d5e21a4361c5775bd6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_blocked_memory_start_result"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Preview uses the dry-run worktree owner",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3370d0e27cac3d4a3c5aba90530883235032262d",
+            "content": "sha256:e8b9b903e8fb118a5d1d1f1e08c1f9c498f9d3e2a947e601eaa26455a1640816",
+            "locator": {
+              "kind": "symbol",
+              "name": "_preview_start_enclosure"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

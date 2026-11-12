@@ -1,0 +1,101 @@
+{
+  "path": "dashboard/src/panels/sprint-graph/styles.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The responsive grid contract (≤3 per row, narrow single column).\n\nAnchor: `waveGridStyles`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e9801e315eb3e0cb3f9d8873ee957b31c30c2b6",
+            "content": "sha256:1745412435e7d451ae33aea1bfee4aef20a71146dc013e6e03f2acb387e52abb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The ellipsized, viewport-growing leaf line contract.\n\nAnchor: `leafLineStyles`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e9801e315eb3e0cb3f9d8873ee957b31c30c2b6",
+            "content": "sha256:1745412435e7d451ae33aea1bfee4aef20a71146dc013e6e03f2acb387e52abb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Dependency readiness/cycle styling is separate from the shared task-state presentation; the former task-frontier palette is removed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e9801e315eb3e0cb3f9d8873ee957b31c30c2b6",
+            "content": "sha256:51f65c4b0a97ea2d4cdc1af1c8af6c491c8d5c322c06db636f7c2c5879452c1e",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 44
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a241376aca7807abc7dd1661a6e38297b723ab7",
+            "content": "sha256:83840dfa9d07a36af705e950d0bac49290fafdcc113a57b84e7fa5a92d808a1b",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 71
+            },
+            "path": "dashboard/src/panels/detail-panel/pageParts.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The component consuming these styles.\n\nAnchor: `SprintGraphView`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a995ff889391494f6d68d05f4de87e3777f7460",
+            "content": "sha256:6f5a5c01e4363b57960c454e49402ef105205a13722bb291b90115ddf378c1a3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/sprint-graph/SprintGraphView.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The responsive-contract forcing tests.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0073056ad9df27c87365b0f9004653d15172e706",
+            "content": "sha256:aedb7a80865364699bc57c775b34a29f3c7582c8894aea19db83408b61248e5f",
+            "locator": {
+              "end": 163,
+              "kind": "line_range",
+              "start": 146
+            },
+            "path": "dashboard/src/panels/sprint-graph/SprintGraphView.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,146 @@
+{
+  "path": "mcp/src/agents_remember/memory/carryover_apply.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9686c82c42aa92ccb30902e632de9bc6f3dfc207",
+        "content": "sha256:50b2b06976b30da45bfcbba7554be1d4e868458fb2ea3584e87633fb1c3885d0",
+        "locator": {
+          "kind": "symbol",
+          "name": "apply_converted"
+        }
+      },
+      "id": "RLZ-MA1Q10",
+      "invariant": "INV-MZ13SJ",
+      "origin": {
+        "handoffEntry": "MIK-R56@v1 PartB §10",
+        "leaf": "260928-MIK-L56"
+      },
+      "rationale": "Owns staging, exact-tree validation, transactional byte restoration, worklist recomputation and repeat safety.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Payload confinement: Only onboarding Markdown/JSON pairs and schema record units enter the write extent. Paths must be canonical relative paths; derived indexes, hidden parents, symlinks and nonregular files are refused. Record JSON may omit an absent Markdown companion; onboarding units may not.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9686c82c42aa92ccb30902e632de9bc6f3dfc207",
+            "content": "sha256:a3d5cd48aa87647d73776d1c5657de174bf0c17f8c9f0549bd3f58b4e3ffb0b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_check_payloads"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9686c82c42aa92ccb30902e632de9bc6f3dfc207",
+            "content": "sha256:ed5f18a7bba7cde9e32cd65bd6a9d3072d155b3a5d9f87544f8984624f5e48f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Conflict and retry safety: Already-equal bytes are accepted even if dirty or staged. Divergent local changes and existing differing records are conflicts. The engine rechecks the complete submitted payload batch before writes and refuses that batch on any conflict; caller-side candidate skipping is a separate boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9686c82c42aa92ccb30902e632de9bc6f3dfc207",
+            "content": "sha256:e16fa5d0395c4b788502e374b4adb4357861d732cd6310243c8ac659cc9b0cfe",
+            "locator": {
+              "kind": "symbol",
+              "name": "_conflicts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9686c82c42aa92ccb30902e632de9bc6f3dfc207",
+            "content": "sha256:50b2b06976b30da45bfcbba7554be1d4e868458fb2ea3584e87633fb1c3885d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_converted"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f2012e3d1b6cfcf742adc9b3bf25460b4073950",
+            "content": "sha256:995e469cb000e69d917212ec9c2ff7a67b96b37a66646ee8aa825c9a2188a674",
+            "locator": {
+              "kind": "symbol",
+              "name": "_apply_carryover_for_request"
+            },
+            "path": "mcp/src/agents_remember/memory/carryover.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Validation and restoration: Apply writes prepared units, regenerates route indexes with explicit target storage, validates the exact tree against official code and the paired memory base (converting an old-format base through the existing converter), and splits refusing from report-only findings. On refusal/error it restores the pre-call knowledge/onboarding bytes, modes, caches and directory topology, including local edits, not HEAD.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9686c82c42aa92ccb30902e632de9bc6f3dfc207",
+            "content": "sha256:50b2b06976b30da45bfcbba7554be1d4e868458fb2ea3584e87633fb1c3885d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_converted"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9686c82c42aa92ccb30902e632de9bc6f3dfc207",
+            "content": "sha256:b268c784858dfadae7ab5f25ce811d709db08720103fcc3e923df4eb56edb7b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_base_for"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9686c82c42aa92ccb30902e632de9bc6f3dfc207",
+            "content": "sha256:ed5f18a7bba7cde9e32cd65bd6a9d3072d155b3a5d9f87544f8984624f5e48f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Publication boundary: Worklist recomputation uses persist=False. Success reports carried-into-worktree or nothing-to-carryover with written/payload paths, violations, index refresh and worklist. The engine does not stage or commit Git, move refs, carry history, refresh ledger or persist task artifacts; curator rows and leaf closeout remain separate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9686c82c42aa92ccb30902e632de9bc6f3dfc207",
+            "content": "sha256:50b2b06976b30da45bfcbba7554be1d4e868458fb2ea3584e87633fb1c3885d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_converted"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

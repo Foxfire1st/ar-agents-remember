@@ -1,0 +1,40 @@
+{
+  "path": "scripts/agent_evals/git_semantics.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ff0d776b24320fca0856aa4e8c8396ebff26606c",
+        "content": "sha256:ef093234c2206fd2c451d365e40ed4d75e65c2326a09c2377c600396aa9ff5fa",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-V2STNZ",
+      "invariant": "INV-96ANVQ",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-git-semantics",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "It compares commits, refs, stash and staged paths while preserving the retained snapshot bytes.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff0d776b24320fca0856aa4e8c8396ebff26606c",
+            "content": "sha256:ef093234c2206fd2c451d365e40ed4d75e65c2326a09c2377c600396aa9ff5fa",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

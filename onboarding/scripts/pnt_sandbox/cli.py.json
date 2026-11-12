@@ -1,0 +1,125 @@
+{
+  "path": "scripts/pnt_sandbox/cli.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "00db969fae087cb513430ec22b1da9f4ee290c44",
+        "content": "sha256:af231a910d2dc3e76785bb0dd4ce6de8ed0f0e6696d110bedc0a574d3dee7601",
+        "locator": {
+          "kind": "symbol",
+          "name": "_port"
+        }
+      },
+      "id": "RLZ-AKVE58",
+      "invariant": "INV-RPMFGP",
+      "origin": {
+        "handoffEntry": "MIK-R181@v2 §2",
+        "leaf": "260928-MIK-L179"
+      },
+      "rationale": "The command line refuses the live ports through the same constant the helper checks, so both paths reject them for the same reason.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "00db969fae087cb513430ec22b1da9f4ee290c44",
+        "content": "sha256:e259101ca31bef66dc5f43c0c48211b71051dd5a11b84864db81b5aaa11c786e",
+        "locator": {
+          "kind": "symbol",
+          "name": "_run"
+        }
+      },
+      "id": "RLZ-BH60XT",
+      "invariant": "INV-G0Z661",
+      "origin": {
+        "handoffEntry": "MIK-R96@v1 rule8 public port-tooling disposition / INV-G0Z661 effect",
+        "leaf": "260928-MIK-L96"
+      },
+      "rationale": "The controller passes the exact selected pair to the unchanged ownership/safety layout instead of guessing another port.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "00db969fae087cb513430ec22b1da9f4ee290c44",
+        "content": "sha256:a1454f4846cacbfc6c14a73d9ee746a01a74a1bde9e5ae3c0be919ffba9db248",
+        "locator": {
+          "kind": "symbol",
+          "name": "build_parser"
+        }
+      },
+      "id": "RLZ-K094SE",
+      "invariant": "INV-G0Z661",
+      "origin": {
+        "handoffEntry": "MIK-R96@v1 rule8 public port-tooling disposition / INV-G0Z661 effect",
+        "leaf": "260928-MIK-L96"
+      },
+      "rationale": "The public parser owns the four explicit argument surfaces and their preserved defaults/invalid-port refusal.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The scoped current source carries the module/document behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00db969fae087cb513430ec22b1da9f4ee290c44",
+            "content": "sha256:2b2b8dd9fae3e8cc57de42975e4d6ae96f7734231f1d68fa76de9a0aa732b0c2",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The parser with the explicit port arguments.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00db969fae087cb513430ec22b1da9f4ee290c44",
+            "content": "sha256:a1454f4846cacbfc6c14a73d9ee746a01a74a1bde9e5ae3c0be919ffba9db248",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_parser"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The controller passing the chosen pair.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00db969fae087cb513430ec22b1da9f4ee290c44",
+            "content": "sha256:e259101ca31bef66dc5f43c0c48211b71051dd5a11b84864db81b5aaa11c786e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The parser refuses an out-of-range port and the shared live ports, with the same message as before.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00db969fae087cb513430ec22b1da9f4ee290c44",
+            "content": "sha256:af231a910d2dc3e76785bb0dd4ce6de8ed0f0e6696d110bedc0a574d3dee7601",
+            "locator": {
+              "kind": "symbol",
+              "name": "_port"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

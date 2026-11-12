@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "One case fails on the pre-change bar and passes after it, and what it prevents is a zero of nothing published as a measurement on a page the developer reads. The promise is a presentation guarantee on one component and its governed test module, so it does not admit the span or family criteria."
+  },
+  "applicability": "A master change-set answer rendered by the task-document change-set bar.",
+  "conditions": [
+    "The answer carries empty code and memory lists, zero counters, generation null and currentness unmeasured: the degraded master selection the server returns when no base and no selected result resolves.",
+    "A resolved series answer still publishes its own counters as the total."
+  ],
+  "exclusions": [
+    "A measured empty range, which prints +0 −0 with the known-empty state.",
+    "The leaf and task views, whose own unrecorded state is separate.",
+    "A page that already holds a degraded answer: the bar names the state, it does not re-read on its own."
+  ],
+  "id": "INV-JH8ZHH",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "role-reports/worker/e2f5a3c8-47b1-4d09-8a6e-3b2c95d1f074/a13/evidence/before-a13-bar-test.txt; .../after-a13-bar-test.txt; .../live-install-probe.txt; notes/reports/reviewer/3c7e9d21-58a4-4b0f-a2d7-8e6a1f4b90c3/verdict-r8-a13.md"
+      ],
+      "path": "list.json"
+    },
+    "handoffEntry": "S8",
+    "leaf": "260928-MIK-L174",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A master change-set answer that names no generation is presented as unmeasured — no total, its own state and its reason — and never as a measured zero; a resolved series still prints the server's totals.",
+  "status": "proposed",
+  "supersedes": []
+}

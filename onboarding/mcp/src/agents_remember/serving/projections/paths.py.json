@@ -1,0 +1,161 @@
+{
+  "path": "mcp/src/agents_remember/serving/projections/paths.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The application startup writer installs workspace-river ToolEventWriter, using observer_root imported from the observer facade rather than this serving module.  Anchor: startup import and writer initialization",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "186284cc5a3f3e1d6a49a2378e0605ddfc5b1724",
+            "content": "sha256:d657a2ec8cf5d09aafddd1e10402884520cf0ab82ecb906d5b4fb9a4cefde757",
+            "locator": {
+              "end": 53,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "mcp/src/agents_remember/application/runtime/startup.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The projection I/O edge imports this serving module's observer_root and calls it for the projection store root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
+            "content": "sha256:3505c112f9fe4696f1966ff15044ae19bdacbcd36874ce5f891c083f612aacb5",
+            "locator": {
+              "end": 168,
+              "kind": "line_range",
+              "start": 39
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The drift snapshot reader using `drift_snapshot_dir` + the schema (3b).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8be3f293c9a38e01524f4b0f2f2252f9b0d2aecc",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 79
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_analytics.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The drift-run producer that writes the snapshot to `drift_snapshot_dir` (3b).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "199d14e1e97d80f9655d7de2eaa66aa556c4f69f",
+            "content": "sha256:c24eec167e05dd5320876f151b8a90bef29d79798675f6ba7e99303572d6e2a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "drift_snapshot_dir"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "199d14e1e97d80f9655d7de2eaa66aa556c4f69f",
+            "content": "sha256:150b3242311ff8813b1da5f6008a91ca3484b8fdaab714bc5a2613a53f00464a",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 37
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "create_server invokes the application startup owner; it does not install an ambient lifecycle. Anchor: server startup call",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
+            "content": "sha256:db410a3e3c4b61c729360d2ae1219b7a4171297870328a99a74ffe21e4dcc7ba",
+            "locator": {
+              "end": 302,
+              "kind": "line_range",
+              "start": 293
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The observer facade re-exports the kernel observer_root definition used by startup.\n\nAnchor: observer_root re-export",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90cdaabb8a2503d6feaa2452fea8963f7c486bf9",
+            "content": "sha256:c8c4fe8051d441d0b103143f578f4ce016591a65a288ee50f1b4741f22c9d048",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "mcp/src/agents_remember/observer/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The kernel observer_root delegates to the kernel observer_logs_root; this is separate from the serving module definition.\n\nAnchor: kernel path definitions",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "55b370f0c63cc924e024f719d082ae36c33558a4",
+            "content": "sha256:92d9d60ff8762c670c3e6acf61155fa2c7e2a9c90f0f32505a0b456b036999af",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/observer_paths.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The serving module separately defines observer_logs_root, observer_root and drift_snapshot_dir; its single-owner docstring is not an importer inventory.\n\nAnchor: serving path definitions",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "199d14e1e97d80f9655d7de2eaa66aa556c4f69f",
+            "content": "sha256:92d9d60ff8762c670c3e6acf61155fa2c7e2a9c90f0f32505a0b456b036999af",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 29
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

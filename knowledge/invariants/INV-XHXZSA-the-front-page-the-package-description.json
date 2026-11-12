@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A reader who starts on any entry point must reach the same install truth; a divergence sends that reader through a different or broken setup."
+  },
+  "applicability": "The six entry points (README.md, docs/README.md, docs/getting-started.md, docs/install/README.md, docs/llms.txt and mcp/README.md) and every harness page under docs/install/.",
+  "conditions": [
+    "Each entry point links the entry points it owes.",
+    "The front page links the roadmap.",
+    "Every entry point shows the install steps of docs/getting-started.md with the same number, order and titles, and no command line that page does not show."
+  ],
+  "exclusions": [
+    "Pages that are not entry points; the check names the entry points it compares."
+  ],
+  "id": "INV-XHXZSA",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_public_docs_check.py::test_a_differing_step_title_is_named; mcp/tests/test_public_docs_check.py::test_a_missing_step_is_named; mcp/tests/test_public_docs_check.py::test_a_differing_command_line_is_named; mcp/tests/test_public_docs_check.py::test_a_front_page_without_a_link_to_the_roadmap_is_named; mcp/tests/test_public_docs_check.py::test_an_entry_point_that_drops_an_owed_link_is_named; mcp/tests/test_public_docs_check.py::test_a_relative_link_in_the_package_description_is_named; clean-copy run f3: 21 passed"
+      ],
+      "path": "l97-curator-handoff"
+    },
+    "handoffEntry": "MIK-R97@v1 rule 7 (entry points)",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The front page, the package description and every harness page link the entry points they owe, the front page links the roadmap, and every entry point shows the install steps of docs/getting-started.md with the same number, order and titles and no command line that page does not show.",
+  "status": "proposed",
+  "supersedes": []
+}

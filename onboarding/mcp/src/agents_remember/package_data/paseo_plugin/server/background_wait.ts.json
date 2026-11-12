@@ -1,0 +1,206 @@
+{
+  "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/background_wait.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "5af0810d48c7081071943b58140287ce1a2dc662",
+        "content": "sha256:aae5c8b39019748baf7948dc625778fc1876e989d6f567745e9880bc8ba019d7",
+        "locator": {
+          "kind": "symbol",
+          "name": "readBackgroundDeclaration"
+        }
+      },
+      "id": "RLZ-GVPZKY",
+      "invariant": "INV-CAAWDR",
+      "origin": {
+        "handoffEntry": "MIK-R60@v8.1-5",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Reads the declaration line and its check time, clamped to 1-30 minutes.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "5af0810d48c7081071943b58140287ce1a2dc662",
+        "content": "sha256:44ed86c014b5f56de27d68cdd898db7ee107f77079fda98136a802e50f51c5bc",
+        "locator": {
+          "kind": "symbol",
+          "name": "composeBackgroundWaitCheck"
+        }
+      },
+      "id": "RLZ-JMKQ9S",
+      "invariant": "INV-CAAWDR",
+      "origin": {
+        "handoffEntry": "MIK-R60@v8.1-5",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "The check message that asks the seat for each process's state (or both waits').",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "5af0810d48c7081071943b58140287ce1a2dc662",
+        "content": "sha256:53e07ac064a459a54f1b6e54fd849b4e5450233ce73d0b68d96ecd64bd79c43e",
+        "locator": {
+          "kind": "symbol",
+          "name": "textDeclares"
+        }
+      },
+      "id": "RLZ-P25ZYV",
+      "invariant": "INV-60H3WR",
+      "origin": {
+        "handoffEntry": "MIK-R60@v9.8",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Reads either keyword from any seat's last text, whatever its provider.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The declaration keyword and the check's own first lines are fixed strings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5af0810d48c7081071943b58140287ce1a2dc662",
+            "content": "sha256:dddb2d2363a415ccc20c21401ebe4ff4ec71180e7bebd8ece84d81f9d93d0978",
+            "locator": {
+              "kind": "symbol",
+              "name": "BACKGROUND_WAIT_KEYWORD"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The check waits three minutes by default, and a named value is kept within 1 to 30 minutes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5af0810d48c7081071943b58140287ce1a2dc662",
+            "content": "sha256:9e30f1e70caa990761649c9a59b78ab26f2ee06783c1d68517fc73035e6fe4ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "BACKGROUND_WAIT_MAX_MINUTES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A seat not on ACP is told about the helper declaration, and every seat about the background declaration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5af0810d48c7081071943b58140287ce1a2dc662",
+            "content": "sha256:aeead69a4d0ef731966b7181fc7ba33d97fe3096678bbb30a646897257cedc8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "HELPER_WAKE_SENTENCE"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A keyword counts only at the start of a line, behind the allowed markers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5af0810d48c7081071943b58140287ce1a2dc662",
+            "content": "sha256:53e07ac064a459a54f1b6e54fd849b4e5450233ce73d0b68d96ecd64bd79c43e",
+            "locator": {
+              "kind": "symbol",
+              "name": "textDeclares"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The declaration is read from its line, quoted up to 300 characters, and its check time is clamped.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5af0810d48c7081071943b58140287ce1a2dc662",
+            "content": "sha256:aae5c8b39019748baf7948dc625778fc1876e989d6f567745e9880bc8ba019d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "readBackgroundDeclaration"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The declared row names the time used and where it came from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5af0810d48c7081071943b58140287ce1a2dc662",
+            "content": "sha256:93dfbd435ddd87b011d003c9f35cfc5a83c5ca14883b2ba6f3fcb7ef4fec3003",
+            "locator": {
+              "kind": "symbol",
+              "name": "backgroundDeclaredReason"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The published wait carries what it waits for, since when, the due check and the declaration's words.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5af0810d48c7081071943b58140287ce1a2dc662",
+            "content": "sha256:716938816c4569bb16b8f925ee7af1286ef5924d5c1ede2024a65c755394b168",
+            "locator": {
+              "kind": "symbol",
+              "name": "PublishedDeclaredWait"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "One check kind covers the waits one end declared.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5af0810d48c7081071943b58140287ce1a2dc662",
+            "content": "sha256:e254c0291d578703c17e2923839c58030a18a220b21d095b333144ff7c28c5fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "waitCheckKind"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The background check quotes the declaration and asks for each process's state, and for helpers too when both were declared.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5af0810d48c7081071943b58140287ce1a2dc662",
+            "content": "sha256:44ed86c014b5f56de27d68cdd898db7ee107f77079fda98136a802e50f51c5bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "composeBackgroundWaitCheck"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

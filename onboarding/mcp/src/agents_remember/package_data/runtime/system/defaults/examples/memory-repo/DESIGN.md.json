@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/DESIGN.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The shipped copy is the same example as the tree's own, and neither is inherited",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "676cfe53be5066f3452d4a5ce2011b14c66db5a9",
+            "content": "sha256:668166c8d3b7c426a7af101947e3e9a7cec768b6609021536054311036f6b42f",
+            "locator": {
+              "end": 3,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

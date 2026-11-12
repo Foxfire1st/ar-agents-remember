@@ -1,0 +1,143 @@
+{
+  "path": "mcp/tests/test_knowledge_review_attribution_precedence.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "10": {
+      "note": "`test_an_empty_converted_base_counts_as_completely_inspected_for_absence` owns the current boundary described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26bea4dd1c38960ff6a3657933b7f67eaf5de29a",
+            "content": "sha256:c7830afe8bd8ac54ff56c7f3747d52847807474f9de8bded225366c4c17f1414",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_empty_converted_base_counts_as_completely_inspected_for_absence"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "`test_a_damaged_knowledge_half_cannot_support_a_negative_attribution_conclusion` owns the current boundary described above.  > Retained earlier citation wording: - **The precedence cases: one unreadable half leaves the readable side attributed and the rest unknown; the same pair read completely confirms absence where the lost half could not; a damaged half cannot support a negative conclusion.**  > Retained earlier citation wording: - The unit-regression lane row, beside its sibling's. Anchor: `test_knowledge_review_attribution_precedence`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26bea4dd1c38960ff6a3657933b7f67eaf5de29a",
+            "content": "sha256:6984c5db6e9442ccd83da7cad9eeb5ecf6bcdb706e9b86af68b6dbe0ea10b1d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_damaged_knowledge_half_cannot_support_a_negative_attribution_conclusion"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "**The precedence cases: one unreadable half leaves the readable side attributed and the rest unknown; the same pair read completely confirms absence where the lost half could not; a damaged half cannot support a negative conclusion.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26bea4dd1c38960ff6a3657933b7f67eaf5de29a",
+            "content": "sha256:bab86f608af5e7616a8171381280f06d69cc9aa26e631a371aecc709c0a27828",
+            "locator": {
+              "end": 126,
+              "kind": "line_range",
+              "start": 102
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "26bea4dd1c38960ff6a3657933b7f67eaf5de29a",
+            "content": "sha256:773107394bbdc64fce4ae5f0c2bfb2e3ba7a795611781ce0ac1f9bc2e3ff98f2",
+            "locator": {
+              "end": 184,
+              "kind": "line_range",
+              "start": 161
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "26bea4dd1c38960ff6a3657933b7f67eaf5de29a",
+            "content": "sha256:6984c5db6e9442ccd83da7cad9eeb5ecf6bcdb706e9b86af68b6dbe0ea10b1d9",
+            "locator": {
+              "end": 217,
+              "kind": "line_range",
+              "start": 187
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "26bea4dd1c38960ff6a3657933b7f67eaf5de29a",
+            "content": "sha256:bab86f608af5e7616a8171381280f06d69cc9aa26e631a371aecc709c0a27828",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_one_unreadable_knowledge_half_leaves_the_readable_side_attributed_and_the_rest_unknown"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The module's own unit-regression lane row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5691b694e756469475d783c426d9781ef14c8633",
+            "content": "sha256:a030c166ca646be6ba8660755a3045e04d6f7e624177ca6a9292fb454ccf9e2c",
+            "locator": {
+              "end": 254,
+              "kind": "line_range",
+              "start": 254
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The empty-base case: a real empty converted Git base counts as completely inspected for absence; no canonical origin record invents its emptiness.  Anchor: lines 122-151",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26bea4dd1c38960ff6a3657933b7f67eaf5de29a",
+            "content": "sha256:7edfdc9e03455a7af97d73a53e7c78abfbf8d7a58056d1cf8bdf3b118fde124e",
+            "locator": {
+              "end": 157,
+              "kind": "line_range",
+              "start": 128
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "`test_one_unreadable_knowledge_half_leaves_the_readable_side_attributed_and_the_rest_unknown` owns the current boundary described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26bea4dd1c38960ff6a3657933b7f67eaf5de29a",
+            "content": "sha256:bab86f608af5e7616a8171381280f06d69cc9aa26e631a371aecc709c0a27828",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_one_unreadable_knowledge_half_leaves_the_readable_side_attributed_and_the_rest_unknown"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

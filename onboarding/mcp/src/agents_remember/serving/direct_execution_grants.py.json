@@ -1,0 +1,61 @@
+{
+  "path": "mcp/src/agents_remember/serving/direct_execution_grants.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "614aa98021c9f07b987ec6eb06908ebde3e5b0c1",
+        "content": "sha256:a83bf7ccaa09aca17f580894712cc8c1482893085ef5c61c98a5fad149d7b2bd",
+        "locator": {
+          "kind": "symbol",
+          "name": "developer_grant_tool"
+        }
+      },
+      "id": "RLZ-MYPXK4",
+      "invariant": "INV-8PJF2P",
+      "origin": {
+        "handoffEntry": "L94-CUR-grant-policy",
+        "leaf": "260928-MIK-L94"
+      },
+      "rationale": "The developer dashboard owner writes the same canonical grant through its give/revoke route.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "614aa98021c9f07b987ec6eb06908ebde3e5b0c1",
+        "content": "sha256:a1f85392bd641be96673b6fe8ff89b0a9cf0d66c924c10861b06cc8a52eda82a",
+        "locator": {
+          "kind": "symbol",
+          "name": "_restore_removed_grant"
+        }
+      },
+      "id": "RLZ-RQ2PBY",
+      "invariant": "INV-X16RQH",
+      "origin": {
+        "handoffEntry": "L94-CODE-F08",
+        "leaf": "260928-MIK-L94"
+      },
+      "rationale": "The developer dashboard route attempts the same exclusive recreation before refusing a start-interleaved revoke. Suppressed OSError can leave the removed grant absent; FileExistsError preserves another giver's grant without proving exact restoration or serial consistency. A004-C02 records this inherited gap in the unchanged promise.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Owns the dashboard developer route for the same shared leaf grants",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "614aa98021c9f07b987ec6eb06908ebde3e5b0c1",
+            "content": "sha256:62bf481f61682977eded3b65fa3597c583dd71005b90e8f6a622be3cedc60072",
+            "locator": {
+              "end": 428,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

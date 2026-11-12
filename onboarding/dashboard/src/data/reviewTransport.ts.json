@@ -1,0 +1,352 @@
+{
+  "path": "dashboard/src/data/reviewTransport.ts",
+  "realizes": [],
+  "references": {
+    "22": {
+      "note": "The tokens a reader can be shown.\n\nAnchor: `ReviewFailureToken`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f3302a8f0d3f3743960dbb22069270aecf18300",
+            "content": "sha256:926bec36aa5d3aa3b9e56da95657348563f04036e913943aa3fab0f7c682a750",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "The codes and their tokens, with the two transient codes of the leaf-wide view.\n\nAnchor: `TOKEN_BY_CODE`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f3302a8f0d3f3743960dbb22069270aecf18300",
+            "content": "sha256:926bec36aa5d3aa3b9e56da95657348563f04036e913943aa3fab0f7c682a750",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "The refusals of the intent half alone.\n\nAnchor: `INTENT_ONLY_CODES`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f3302a8f0d3f3743960dbb22069270aecf18300",
+            "content": "sha256:926bec36aa5d3aa3b9e56da95657348563f04036e913943aa3fab0f7c682a750",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "The error a review read throws.\n\nAnchor: `ReviewTransportError`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f3302a8f0d3f3743960dbb22069270aecf18300",
+            "content": "sha256:926bec36aa5d3aa3b9e56da95657348563f04036e913943aa3fab0f7c682a750",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "A typed refusal becomes a failure with its fields unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f3302a8f0d3f3743960dbb22069270aecf18300",
+            "content": "sha256:a37260d8b27a9f472ae532254db44f925b0c5c62f4f35f55366ac7ccc558fed7",
+            "locator": {
+              "end": 208,
+              "kind": "line_range",
+              "start": 201
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "**The header's own record of the defect this module exists for, and of its two boundaries: the body is the answer whatever the status, and the shared client keeps throwing for the routes that use it.**\n\nAnchor: `getReviewJson`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f3302a8f0d3f3743960dbb22069270aecf18300",
+            "content": "sha256:926bec36aa5d3aa3b9e56da95657348563f04036e913943aa3fab0f7c682a750",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "**The failure vocabulary: one token per answer that is not a review, including the two honest fallbacks, and the explicit statement that `loading`/`known-empty` are not members.**\n\nAnchor: `ReviewFailureToken`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f3302a8f0d3f3743960dbb22069270aecf18300",
+            "content": "sha256:926bec36aa5d3aa3b9e56da95657348563f04036e913943aa3fab0f7c682a750",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "**One failure in the owner's own terms, with `code` never re-spelled and `httpStatus` present only when a response carried it.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f3302a8f0d3f3743960dbb22069270aecf18300",
+            "content": "sha256:5681b446d544be3f2083632d00ee0534c0a7fcff380817488a529be115860a09",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewFailure"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "The typed refusal's wire fields, declared structurally so the import runs one way only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f3302a8f0d3f3743960dbb22069270aecf18300",
+            "content": "sha256:5eed3fb70f20d15d8ae365a085e6dc9c6c8e9639bf32e92ecaa3f550dd7d723d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewRefusalFacts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "**The only code→state table in the dashboard, and the classifier that carries an unknown code verbatim rather than guessing it into a state.**\n\nAnchor: `TOKEN_BY_CODE`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f3302a8f0d3f3743960dbb22069270aecf18300",
+            "content": "sha256:926bec36aa5d3aa3b9e56da95657348563f04036e913943aa3fab0f7c682a750",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "**The refusals that answer for the intent half alone, which is what licenses offering the task's source inventory as a separate question.**\n\nAnchor: `INTENT_ONLY_CODES`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f3302a8f0d3f3743960dbb22069270aecf18300",
+            "content": "sha256:926bec36aa5d3aa3b9e56da95657348563f04036e913943aa3fab0f7c682a750",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "The one error, staying a `FilesApiError` for existing catchers while carrying the whole failure.\n\nAnchor: `ReviewTransportError`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f3302a8f0d3f3743960dbb22069270aecf18300",
+            "content": "sha256:926bec36aa5d3aa3b9e56da95657348563f04036e913943aa3fab0f7c682a750",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "**The single transport-level classification: the body's own `status`, the optional fields read only where published, and `path` accepted as the port's own spelling of the offending input.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f3302a8f0d3f3743960dbb22069270aecf18300",
+            "content": "sha256:c4d5858a6e56e809a402e0b5a5a9f47d8ec1287a0e3e30c3bfedb4aec18095e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewBody"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "**A failure with no HTTP response is its own token and carries no status.**\n\nAnchor: `networkFailure`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f3302a8f0d3f3743960dbb22069270aecf18300",
+            "content": "sha256:926bec36aa5d3aa3b9e56da95657348563f04036e913943aa3fab0f7c682a750",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "40": {
+      "note": "**A typed refusal projected through the same classifier, so the entry and the surface cannot disagree about a code.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f3302a8f0d3f3743960dbb22069270aecf18300",
+            "content": "sha256:a37260d8b27a9f472ae532254db44f925b0c5c62f4f35f55366ac7ccc558fed7",
+            "locator": {
+              "kind": "symbol",
+              "name": "reviewProblemFromRefusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "41": {
+      "note": "An answer whose `state` this client does not admit is named, never rendered as a review.\n\nAnchor: `unreadableAnswer`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f3302a8f0d3f3743960dbb22069270aecf18300",
+            "content": "sha256:926bec36aa5d3aa3b9e56da95657348563f04036e913943aa3fab0f7c682a750",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "42": {
+      "note": "Any thrown cause as a failure: the transport error's own, anything else as the network failure it must be.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f3302a8f0d3f3743960dbb22069270aecf18300",
+            "content": "sha256:95d6a21cf22641c6a1afae742feadbfbb7b442847bebaab9f7fab4016adc8cdc",
+            "locator": {
+              "kind": "symbol",
+              "name": "reviewProblemFromCause"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "43": {
+      "note": "The review client's two public reads — the review and the entry catalogue — both go through the shared review transport, which this module re-exports.\n\nAnchor: `intentReview`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
+            "content": "sha256:3a72132f0e91797658680ee56804a30bd93c76a74d449d6f3d58b4e7c0b8e002",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "44": {
+      "note": "**The rendered counterpart of this module's classification: one region for every state that is not a review, and one block carrying every field the owner published.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dda0f8e45d38b01cd7700d66b0a93e90ef87991",
+            "content": "sha256:74471e933b7f1282d2b582656b01f556829f0c7f7cc23c680357692ebd1152da",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewOutcomeRegion"
+            },
+            "path": "dashboard/src/panels/review/ReviewOutcome.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "45": {
+      "note": "The task entry's brief word for the same tokens (`briefProblem`), shown on a control that never disappears, with the owner's full sentence in the disclosure beside it (`problemSentence`, since `260921-ICR-L47`).\n\nAnchor: `briefProblem`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc94281379ec05363f5271bd286a082c5e8529ae",
+            "content": "sha256:3de84b38e0e1422fa4594d95415e2537c1121d622ea23a03aaf4ab37e2998ebc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/detail-panel/entryState.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "46": {
+      "note": "The change-set client and the route the routed debt belongs to — a different client, a different route and a different owner from the review transport, which is why this leaf leaves it untouched.\n\nAnchor: `taskChangeset`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
+            "content": "sha256:208751f674d4ff70e2972a0ee37017c54eec078d8b360d528a42a7ad0ec813c3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/changeset.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "47": {
+      "note": "**The cases that drive the real client functions against the measured route bodies, including the pair that shows `getJson` dropping the identical body this decode preserves.**\n\nAnchor: `getJson`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b743f0cc40d0d1fa48a7abc9a7c92ac75d640ef",
+            "content": "sha256:be605aa7ebd5f50727d335966a1906dca4eebae03ff9764b638d32fa98614200",
+            "locator": {
+              "end": 164,
+              "kind": "line_range",
+              "start": 149
+            },
+            "path": "dashboard/src/data/reviewTransport.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,41 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/settings.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The JSON example declares version 2 memory-repo storage and path-rule include/exclude filters with common generated/vendor/build/local exclusions.\n\nAnchor: \"version\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a673eeb1120b0dbe4deacde0f0d4a69df363ba32",
+            "content": "sha256:54772b039f85954659c1876759bf18ff99c9a1716b6d6f76c0dfad44bb91414f",
+            "locator": {
+              "end": 2,
+              "kind": "line_range",
+              "start": 2
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The JSON example shows a branch-gated cross-repo allowance with code and memory inclusion flags.\n\nAnchor: \"crossRepo\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a673eeb1120b0dbe4deacde0f0d4a69df363ba32",
+            "content": "sha256:71eb637754581c2572787362dbd9dd5721a497448837d82903b32dd1d28e5b80",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 35
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

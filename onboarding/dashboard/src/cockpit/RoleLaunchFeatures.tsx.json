@@ -1,0 +1,238 @@
+{
+  "path": "dashboard/src/cockpit/RoleLaunchFeatures.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "88de0373d5339b3b1f1fb7cc23c59975ee6b560a",
+        "content": "sha256:9e0f636b76e7e7b2a67e44bdc6c06650891e19b0a19a8dd085fdacaf7d401ae8",
+        "locator": {
+          "kind": "symbol",
+          "name": "FeatureControl"
+        }
+      },
+      "id": "RLZ-000KJN",
+      "invariant": "INV-002A1G",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-05",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The control renders the host-provided field type/options and updates the selected feature map without granting permissions.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "88de0373d5339b3b1f1fb7cc23c59975ee6b560a",
+        "content": "sha256:5a56dc01cee577221dded10630b7848a3434d846fdb2332cdf274638f7c80aba",
+        "locator": {
+          "end": 41,
+          "kind": "line_range",
+          "start": 41
+        }
+      },
+      "id": "RLZ-DNT2PS",
+      "invariant": "INV-63Z0MN",
+      "origin": {
+        "handoffEntry": "L202-A6b-attach-4cb306",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Displays an explicit override through the same offered ID/label match instead of a local service-tier alias.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "88de0373d5339b3b1f1fb7cc23c59975ee6b560a",
+        "content": "sha256:e0d79930e5a47a875ee44bf38cbd164ad4946d28c8ca3c2ba05c32830286f514",
+        "locator": {
+          "end": 24,
+          "kind": "line_range",
+          "start": 24
+        }
+      },
+      "id": "RLZ-G5BZYA",
+      "invariant": "INV-63Z0MN",
+      "origin": {
+        "handoffEntry": "L202-A6b-attach-2e8221",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Displays an existing selected feature using the offered label matched without case, preserving configured value when no choice is known.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "88de0373d5339b3b1f1fb7cc23c59975ee6b560a",
+        "content": "sha256:e35d363ea0c0769d4eefb5b11118d0e50e1cf0f355fdc7ae55d488c60f6b2854",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleLaunchDefaults"
+        }
+      },
+      "id": "RLZ-G82K8R",
+      "invariant": "INV-63Z0MN",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-17",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "Ordinary defaults present the mode and optional instruction metadata with provenance; the basePreview branch labels both as non-applied Base previews for a stepped-up execution.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "88de0373d5339b3b1f1fb7cc23c59975ee6b560a",
+        "content": "sha256:8cafdaad8fb9fa8b8677aeb34b78b8e22c971ebcb781a99ca6c2c27fcfd705bd",
+        "locator": {
+          "end": 135,
+          "kind": "line_range",
+          "start": 135
+        }
+      },
+      "id": "RLZ-K9235Z",
+      "invariant": "INV-63Z0MN",
+      "origin": {
+        "handoffEntry": "L202-A6b-attach-59be8b",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Passes the configured service-tier spelling into the stepped-up base-preview branch, which labels those base choices as not applied to the stepped-up execution; this branch is not the ordinary feature control.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "88de0373d5339b3b1f1fb7cc23c59975ee6b560a",
+        "content": "sha256:9e0f636b76e7e7b2a67e44bdc6c06650891e19b0a19a8dd085fdacaf7d401ae8",
+        "locator": {
+          "kind": "symbol",
+          "name": "FeatureControl"
+        }
+      },
+      "id": "RLZ-YFEGZV",
+      "invariant": "INV-MXTMP8",
+      "origin": {
+        "handoffEntry": "L133-R1-F01",
+        "leaf": "260928-MIK-L133"
+      },
+      "rationale": "Producer: this renderer adds the chosen-or-default feature label to the control hover keeping its default provenance.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Permission dispatch preserves settings-owned chips; FeatureOverrideSelect owns selectable labels and hover.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88de0373d5339b3b1f1fb7cc23c59975ee6b560a",
+            "content": "sha256:9e0f636b76e7e7b2a67e44bdc6c06650891e19b0a19a8dd085fdacaf7d401ae8",
+            "locator": {
+              "kind": "symbol",
+              "name": "FeatureControl"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The feature-value updater retains identities and removes only an empty override.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88de0373d5339b3b1f1fb7cc23c59975ee6b560a",
+            "content": "sha256:beb1dc01ed8c6a7ddacdf6986b39bbe91aa47a708a081eaacf0ac025cbdda884",
+            "locator": {
+              "kind": "symbol",
+              "name": "withFeatureValue"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The ordinary ready defaults composition draws the host mode and optional instruction chips; basePreview labels them as non-applied Base previews.\n\nAnchor: Current substantive owner; original historical evidence remains in the memory base",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88de0373d5339b3b1f1fb7cc23c59975ee6b560a",
+            "content": "sha256:3f9e66aaf9e547933bfddf9dc79310cf8126d7a068156eac880b468ed5138a7d",
+            "locator": {
+              "end": 213,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Worker/Curator typed review census, record-only exclusion and unknown history.\n\nAnchor: L175–L240",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+            "content": "sha256:89c09fd0491880de2f7b715bffbe2d6b0605a6dea7400689519c43f40f7b119d",
+            "locator": {
+              "end": 240,
+              "kind": "line_range",
+              "start": 175
+            },
+            "path": "mcp/src/agents_remember/worktrees/review_history.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Reason admission, threshold and differing-harness/model inheritance boundary.\n\nAnchor: L23–L84",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f341c13a99f485178e73c4ff8bf4de16267ee662",
+            "content": "sha256:5a3727f4901933c44cd5f7edc8b16220285a82a9e080326edf482cbb126f0b2f",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "mcp/src/agents_remember/cli/role_step_up.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "RoleLaunchFeatures retains settings-owned permissions and non-applied Base previews; feature labels match host IDs or labels without a built-in speed alias.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88de0373d5339b3b1f1fb7cc23c59975ee6b560a",
+            "content": "sha256:7d419396057235240001b1b041f2bf663423dec70fc501bea19a9c8d50f7176f",
+            "locator": {
+              "end": 145,
+              "kind": "line_range",
+              "start": 111
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L184–L213",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88de0373d5339b3b1f1fb7cc23c59975ee6b560a",
+            "content": "sha256:e35d363ea0c0769d4eefb5b11118d0e50e1cf0f355fdc7ae55d488c60f6b2854",
+            "locator": {
+              "end": 213,
+              "kind": "line_range",
+              "start": 184
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

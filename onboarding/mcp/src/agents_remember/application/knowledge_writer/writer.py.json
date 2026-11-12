@@ -1,0 +1,693 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
+        "content": "sha256:95db1d32261a937c22e831b13a18e1f70edaa118479dc989b34aac10655cc425",
+        "locator": {
+          "kind": "symbol",
+          "name": "_onboarding_sources"
+        }
+      },
+      "id": "RLZ-2WC1ME",
+      "invariant": "INV-7V4K9G",
+      "origin": {
+        "handoffEntry": "L196-source-binding-reconciliation",
+        "leaf": "260928-MIK-L196"
+      },
+      "rationale": "Keeps every trace subject authoritative and merges its valid source list after the group selector, preventing matching unexplained groups from replacing trace sources.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
+        "content": "sha256:8d70d4b2cb827ddc9a7a9542c3a852effc9a78dcd6a4b0c7e521dc4a6bfc3852",
+        "locator": {
+          "kind": "symbol",
+          "name": "_unexplained_onboarding_sources"
+        }
+      },
+      "id": "RLZ-30D86H",
+      "invariant": "INV-7V4K9G",
+      "origin": {
+        "handoffEntry": "L196-source-binding-reconciliation",
+        "leaf": "260928-MIK-L196"
+      },
+      "rationale": "Selects eligible uncovered unexplained member paths, excludes trace subjects and unions paths in sorted order without copying metadata blob values.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
+        "content": "sha256:76336a59c7d319c2759ef0906e5d2b0583511d1b3cfac93a8f5f54147fb68d48",
+        "locator": {
+          "kind": "symbol",
+          "name": "_finish"
+        }
+      },
+      "id": "RLZ-CG79NZ",
+      "invariant": "INV-TW1224",
+      "origin": {
+        "handoffEntry": "L54-curator-R54-5-guard-reporting-sites",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "The finish boundary distinguishes PublicationError.restored from incomplete/unverifiable rollback and retains recovery notice when questions_published is already nonempty.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
+        "content": "sha256:ca3e7cf649704c7674d2ce0f77d8a659b6f7e0372f289a3ac9615af67d4da00b",
+        "locator": {
+          "kind": "symbol",
+          "name": "write_knowledge"
+        }
+      },
+      "id": "RLZ-EYFZY9",
+      "invariant": "INV-A6571D",
+      "origin": {
+        "handoffEntry": "L54-curator-MIK-R54-v1-rule-1-actual-guards",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "The public owner performs leaf-only shape admission, composes same-run worklist refusals after virtual authoring and stops before file publication.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
+        "content": "sha256:95db1d32261a937c22e831b13a18e1f70edaa118479dc989b34aac10655cc425",
+        "locator": {
+          "kind": "symbol",
+          "name": "_onboarding_sources"
+        }
+      },
+      "id": "RLZ-N5PSFX",
+      "invariant": "INV-7V4K9G",
+      "origin": {
+        "handoffEntry": "L188-da612e11-writer-source-binding",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "The selector gives existing trace items precedence before admitting uncovered group sources for otherwise unbound subjects.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
+        "content": "sha256:4dad4e5cccc7b45a4e0d04e4823fdf5a3a51f07fbfc42fe69168f0a5431d6d03",
+        "locator": {
+          "kind": "symbol",
+          "name": "_render"
+        }
+      },
+      "id": "RLZ-R56PA0",
+      "invariant": "INV-DWPSRR",
+      "origin": {
+        "handoffEntry": "L54-curator-MIK-R54-v1-rule-8-actual-guards",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "Raw superseded fields are diagnosed with the derived-state recovery before generic record-model parsing.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
+        "content": "sha256:8d70d4b2cb827ddc9a7a9542c3a852effc9a78dcd6a4b0c7e521dc4a6bfc3852",
+        "locator": {
+          "kind": "symbol",
+          "name": "_unexplained_onboarding_sources"
+        }
+      },
+      "id": "RLZ-R9S872",
+      "invariant": "INV-7V4K9G",
+      "origin": {
+        "handoffEntry": "L188-da612e11-writer-source-binding",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "This collector unions member paths by the matching onboarding subject and leaves current blob or absent values to the existing code snapshot owner.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The refusal text for an unconverted memory tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
+            "content": "sha256:ddc54a1d609b26aa73aab617bb80e631c4b24c0510c9aa059a1015bb8f084f8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "UNCONVERTED"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The registry side of the writer-reported rules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "915f129fdf2d6dbd0e54f7ecd9793fd9cacf8a49",
+            "content": "sha256:912287966d4ad2fe95234b62f0cfb089d5c40649015a914445b40054ba8d0797",
+            "locator": {
+              "kind": "symbol",
+              "name": "writer_reported_rule_ids"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Route rules are reports in the writer and refusals at a commit route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e02efe56a42a670bb818ea1f56af7d09c48e5f3",
+            "content": "sha256:654b94ba75c1212248cbaf2ffa17769545593edae0d2756d9d1ac199fdaf8df8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_family_route_rules_are_reports_in_the_writer_and_refusals_at_a_commit_route"
+            },
+            "path": "mcp/tests/test_knowledge_writer.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "New or changed unresolved requirement links refuse when the coordination root is supplied; absent-root observations do not\n\nAnchor: `write_knowledge`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
+            "content": "sha256:169cd09ef917795325317f364b432751267cf3d46f674364b6e170a89b401570",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Endpoints are resolved with stored prior-link identity before the pre-publication refusal check\n\nAnchor: `write_knowledge`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
+            "content": "sha256:169cd09ef917795325317f364b432751267cf3d46f674364b6e170a89b401570",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The memory tree and its base, or why the writer cannot write it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
+            "content": "sha256:8f7556548b74107eb9d5e2ff72f583a0542f95e2c983e87fe02a0f91ba3dd441",
+            "locator": {
+              "kind": "symbol",
+              "name": "_load"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "A crossing owner authors no entry, ruling or new record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
+            "content": "sha256:3dd771e602d47815062e4946dceb4f68e3ace03fc22cf93f41c8d467bc695efc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_crossing_problems"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The writer compares an unconverted HEAD through its converted base.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fab936dda80543f94c1a840030ce192da6fa5616",
+            "content": "sha256:2d725e4fb04dce11fb1a3ea1efbdbf994c3716be4bfcb804a064de312f082d5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_writer_compares_an_unconverted_head_through_its_converted_base"
+            },
+            "path": "mcp/tests/test_knowledge_crossing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Current request inputs include paired memory-base binding and leaf-required worklist admission",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
+            "content": "sha256:f1d00f3e6dd6fe0c8a4d7a194e818294ba4555e8a004992e3527f38547204b9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "WriteRequest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "File publication reports actual restoration and already-published question recovery.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
+            "content": "sha256:76336a59c7d319c2759ef0906e5d2b0583511d1b3cfac93a8f5f54147fb68d48",
+            "locator": {
+              "kind": "symbol",
+              "name": "_finish"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "A stored derived superseded field refuses before canonical rendering.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
+            "content": "sha256:4dad4e5cccc7b45a4e0d04e4823fdf5a3a51f07fbfc42fe69168f0a5431d6d03",
+            "locator": {
+              "kind": "symbol",
+              "name": "_render"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "Existing trace subjects retain source-set priority, including exclusion of malformed trace metadata from group selection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
+            "content": "sha256:95db1d32261a937c22e831b13a18e1f70edaa118479dc989b34aac10655cc425",
+            "locator": {
+              "kind": "symbol",
+              "name": "_onboarding_sources"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "Uncovered unexplained items contribute a sorted union of matching member paths; supplied blob values are not adopted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
+            "content": "sha256:8d70d4b2cb827ddc9a7a9542c3a852effc9a78dcd6a4b0c7e521dc4a6bfc3852",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unexplained_onboarding_sources"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "After validation, committing runs publish raised questions before knowledge files.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
+            "content": "sha256:228f60a32f02597b678534f7a9baf03f83513c245bf5547b5680c14b39903e48",
+            "locator": {
+              "kind": "symbol",
+              "name": "_append_raised"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
+            "content": "sha256:dd4b8db54c3a3cad7b5c1cfcd0e22301bbdd8cd1494d7b596e43d5e62fe55763",
+            "locator": {
+              "end": 226,
+              "kind": "line_range",
+              "start": 199
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
+            "content": "sha256:169cd09ef917795325317f364b432751267cf3d46f674364b6e170a89b401570",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "The carry-forward call and its report field.\n\nAnchor: `carry_entries`; \"carried=carried\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
+            "content": "sha256:4300962fcea3139ceecdb7d63cea7c8e8491033d573fd9313f96b61178a369d8",
+            "locator": {
+              "end": 179,
+              "kind": "line_range",
+              "start": 158
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Read, author, check history, render, validate, then finish or refuse.\n\nAnchor: `write_knowledge`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
+            "content": "sha256:169cd09ef917795325317f364b432751267cf3d46f674364b6e170a89b401570",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "Planned or written.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
+            "content": "sha256:76336a59c7d319c2759ef0906e5d2b0583511d1b3cfac93a8f5f54147fb68d48",
+            "locator": {
+              "kind": "symbol",
+              "name": "_finish"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "Canonical text is model-validated before its bytes enter the publication set.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
+            "content": "sha256:4dad4e5cccc7b45a4e0d04e4823fdf5a3a51f07fbfc42fe69168f0a5431d6d03",
+            "locator": {
+              "kind": "symbol",
+              "name": "_render"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "A duplicate-ID validator refusal reports its violation, exposes no written actions and preserves the memory tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e02efe56a42a670bb818ea1f56af7d09c48e5f3",
+            "content": "sha256:6c7cbd73e32d6bf4ffb6c62b50cb78bdafcae2eca6040400f369d53261122034",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_validator_refusal_writes_nothing_and_names_every_violation"
+            },
+            "path": "mcp/tests/test_knowledge_writer.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "33": {
+      "note": "A master line's crossing records its rows through the writer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e02efe56a42a670bb818ea1f56af7d09c48e5f3",
+            "content": "sha256:d1cd4aa18e61cf8e9032f531fbc01e548926a54b068b8a8bacdb8294cdd8fddf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_master_line_crossing_records_its_rows_through_the_writer"
+            },
+            "path": "mcp/tests/test_knowledge_writer.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "34": {
+      "note": "Registry-marked `writer_reports` refusals become reasoned reports inside the writer; the refusing commit/landing route is named.\n\nAnchor: \"refusals, reports = _writer_split(validation)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
+            "content": "sha256:fbcded7d21926324d4c4a1decd4bc85781d3a8850515172b454ce5e5ba240a56",
+            "locator": {
+              "kind": "symbol",
+              "name": "_writer_split"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
+            "content": "sha256:03cbe4515a6caf091de1569336529154c995bc0809b8e885a18a8c30b4be6a9a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_writer_report_note"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
+            "content": "sha256:fb44cf3ce9c234fd930083dd9e00de5ce6a7dcb1de2178c09f8ff32d4fba7fbd",
+            "locator": {
+              "end": 212,
+              "kind": "line_range",
+              "start": 209
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "Well-formed worklist items, trace links and onboarding source/count projections feed authoring with the paired memory base.\n\nAnchor: `worklist_shape_problem`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
+            "content": "sha256:3c161917c7c62109eea4ce38ca164dafd73486b24419aac55ddaca7d323658c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_trace_items"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
+            "content": "sha256:95db1d32261a937c22e831b13a18e1f70edaa118479dc989b34aac10655cc425",
+            "locator": {
+              "kind": "symbol",
+              "name": "_onboarding_sources"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
+            "content": "sha256:e2b16ed0fdad000807126f322a36355cfb9fea15ec7d27ac256858d903c8dd8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_onboarding_counted"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
+            "content": "sha256:975785ce48b81d65bbb32a968d36a6e3edb7fbdb25eb8278c61039a975023926",
+            "locator": {
+              "end": 155,
+              "kind": "line_range",
+              "start": 139
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "Paired-base/source projection and registry-driven writer reports retain validation, carry and conversion; later refusal preserves actual question effects and distinguishes verified from incomplete file restoration.\n\nAnchor: `write_knowledge` `_load` `_finish`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
+            "content": "sha256:ca3e7cf649704c7674d2ce0f77d8a659b6f7e0372f289a3ac9615af67d4da00b",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_knowledge"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
+            "content": "sha256:8f7556548b74107eb9d5e2ff72f583a0542f95e2c983e87fe02a0f91ba3dd441",
+            "locator": {
+              "kind": "symbol",
+              "name": "_load"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
+            "content": "sha256:76336a59c7d319c2759ef0906e5d2b0583511d1b3cfac93a8f5f54147fb68d48",
+            "locator": {
+              "kind": "symbol",
+              "name": "_finish"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
+            "content": "sha256:915eccdc0181ca1cff0428dfd4c5ac57bc68e6f004201a29ef0ed294d30e9d6c",
+            "locator": {
+              "end": 264,
+              "kind": "line_range",
+              "start": 229
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
+            "content": "sha256:169cd09ef917795325317f364b432751267cf3d46f674364b6e170a89b401570",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "Worklist and changed-link admission precede validation and file publication.\n\nAnchor: `write_knowledge`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
+            "content": "sha256:169cd09ef917795325317f364b432751267cf3d46f674364b6e170a89b401570",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A leaf requires the persisted worklist before capture; question publication has its separate task-owner port",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
+            "content": "sha256:f1d00f3e6dd6fe0c8a4d7a194e818294ba4555e8a004992e3527f38547204b9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "WriteRequest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Committing question append returns published keys and refusals",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
+            "content": "sha256:228f60a32f02597b678534f7a9baf03f83513c245bf5547b5680c14b39903e48",
+            "locator": {
+              "kind": "symbol",
+              "name": "_append_raised"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The carry itself.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57755dbe9aff5204421da8c3384af01e2d9f142d",
+            "content": "sha256:2b685fa9dea29491d7787bb4f65cbc9bfd94a13ea7e20a62e94d0aaad9637e44",
+            "locator": {
+              "kind": "symbol",
+              "name": "carry_entries"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/carry.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

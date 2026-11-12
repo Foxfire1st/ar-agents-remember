@@ -1,0 +1,219 @@
+{
+  "path": "mcp/tests/test_memory_opt_out_refused_start.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "6cb58ec1f5c1b629874d4ceb251f1ef2180572f3",
+        "content": "sha256:c6492dcb373da7df6d3fa06f07059389586005ab71b631b048010936d482c136",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_cleanup_of_a_terminal_archived_disabled_contract_is_refused"
+        }
+      },
+      "facet": "Cleanup of a terminal-archived disabled contract refuses by name with no developer decision.",
+      "id": "PRF-7TSCTH",
+      "invariant": "INV-6GBJC6",
+      "origin": {
+        "handoffEntry": "L50-CODE-R1-F03",
+        "leaf": "260928-MIK-L50"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6cb58ec1f5c1b629874d4ceb251f1ef2180572f3",
+        "content": "sha256:2ede0cec46d42741682301e0ba4211d4dd1bebd7cfb44f6315c732d04f466c04",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_no_mode_start_attaches_to_a_live_disabled_leaf"
+        }
+      },
+      "facet": "A modeless start at a live disabled leaf attaches with contract bytes, mode and code refs unchanged.",
+      "id": "PRF-DWCTJM",
+      "invariant": "INV-WKM7SS",
+      "origin": {
+        "handoffEntry": "L50-CODE-R1-F01",
+        "leaf": "260928-MIK-L50"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6cb58ec1f5c1b629874d4ceb251f1ef2180572f3",
+        "content": "sha256:2cb1848710412d65dcc21211ba4ff91f01f43fdf352d6cd15b05205933c0e3c3",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_start_refuses_disabled_where_knowledge_exists"
+        }
+      },
+      "facet": "An explicit disabled start refuses before anything is created where knowledge exists.",
+      "id": "PRF-MG2H90",
+      "invariant": "INV-39FYQE",
+      "origin": {
+        "handoffEntry": "L50-CODE-R1-F04",
+        "leaf": "260928-MIK-L50"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6cb58ec1f5c1b629874d4ceb251f1ef2180572f3",
+        "content": "sha256:0925fa745908681536cf56f639ffca5e9aa5348eaeb2442b1afaeb5ace1c7adc",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_start_refuses_disabled_where_the_probe_cannot_answer"
+        }
+      },
+      "facet": "An explicit disabled start refuses even when the knowledge probe cannot answer.",
+      "id": "PRF-Z13RG0",
+      "invariant": "INV-39FYQE",
+      "origin": {
+        "handoffEntry": "L50-CODE-R1-F04",
+        "leaf": "260928-MIK-L50"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "6cb58ec1f5c1b629874d4ceb251f1ef2180572f3",
+        "content": "sha256:c6492dcb373da7df6d3fa06f07059389586005ab71b631b048010936d482c136",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_cleanup_of_a_terminal_archived_disabled_contract_is_refused"
+        }
+      },
+      "id": "RLZ-1G7KJ6",
+      "invariant": "INV-6GBJC6",
+      "origin": {
+        "handoffEntry": "L50-CODE-R1-F03",
+        "leaf": "260928-MIK-L50"
+      },
+      "rationale": "Cleanup of a genuine terminal-archived disabled contract refuses by name without a developer decision.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "6cb58ec1f5c1b629874d4ceb251f1ef2180572f3",
+        "content": "sha256:2ede0cec46d42741682301e0ba4211d4dd1bebd7cfb44f6315c732d04f466c04",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_no_mode_start_attaches_to_a_live_disabled_leaf"
+        }
+      },
+      "id": "RLZ-R89R52",
+      "invariant": "INV-WKM7SS",
+      "origin": {
+        "handoffEntry": "L50-CODE-R1-F01",
+        "leaf": "260928-MIK-L50"
+      },
+      "rationale": "Modeless attach at a live disabled leaf answers before new-parent admission, and the test pins the attached result with nothing created.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Rules 1-2 scope and companion-module split",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6cb58ec1f5c1b629874d4ceb251f1ef2180572f3",
+            "content": "sha256:45bec460277b96bd22526793136df5651d9d41e116d85f7f573879b9132cdbf0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Knowledge, no-knowledge, and probe-failure refusals, dry and real",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6cb58ec1f5c1b629874d4ceb251f1ef2180572f3",
+            "content": "sha256:45bec460277b96bd22526793136df5651d9d41e116d85f7f573879b9132cdbf0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Choice answer, both CLI options, unknown tokens stay invalid",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6cb58ec1f5c1b629874d4ceb251f1ef2180572f3",
+            "content": "sha256:45bec460277b96bd22526793136df5651d9d41e116d85f7f573879b9132cdbf0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Missing root keeps its error; setup-first names its action",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6cb58ec1f5c1b629874d4ceb251f1ef2180572f3",
+            "content": "sha256:45bec460277b96bd22526793136df5651d9d41e116d85f7f573879b9132cdbf0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "First leaf refused before the series contract exists",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6cb58ec1f5c1b629874d4ceb251f1ef2180572f3",
+            "content": "sha256:45bec460277b96bd22526793136df5651d9d41e116d85f7f573879b9132cdbf0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Restarts land external; live-leaf attach; terminal cleanup refused",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6cb58ec1f5c1b629874d4ceb251f1ef2180572f3",
+            "content": "sha256:45bec460277b96bd22526793136df5651d9d41e116d85f7f573879b9132cdbf0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Tombstone builder, reopen args, missing-repo choices, error status",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6cb58ec1f5c1b629874d4ceb251f1ef2180572f3",
+            "content": "sha256:45bec460277b96bd22526793136df5651d9d41e116d85f7f573879b9132cdbf0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,22 @@
+{
+  "basis": "The worker searched the source, the dashboard and the skills for callers (worker report 260928-MIK-L37-worker.md, 'P1c round two', section 3): the MCP tool worktree_closeout_preview, worktree_closeout_apply as a dry run, and the command line (worktrees/modules/cli.py::command_closeout). The dashboard, the observers and the projections do not call it; only guidance text names the tool. Review R6 confirmed it (260928-MIK-L37-review-R1.md, 'Review R6', section 5): closeout_preview_payload is called from one place, closeout.py::_closeout_entry under dry_run. The leaf decision of 2026-10-01T22:49:36 (Q4) lets the preview evaluate the gate on every call on this condition; if anything polls it, the verdict is to be offered only when memoised and the preview is to say that the gate was not evaluated.",
+  "id": "ASM-NJ9P83",
+  "links": [
+    {
+      "relation": "conditions",
+      "target": "INV-WV1YQE"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "r2-40-records.json"
+    },
+    "handoffEntry": "ASM-PREVIEW-ON-REQUEST",
+    "leaf": "260928-MIK-L37",
+    "task": "260928-MIK"
+  },
+  "proposition": "The closeout preview is called only on explicit request; nothing polls it.",
+  "revision": 1,
+  "schema": "ar-assumption/v1",
+  "status": "accepted"
+}

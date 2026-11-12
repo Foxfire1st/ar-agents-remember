@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Reading the stored base instead of the effective converted tree would report revision and origin facts from bytes the review never used."
+  },
+  "applicability": "Memory-base investigation reads for a review comparison whose memory base was converted.",
+  "conditions": [
+    "The comparison records a conversion and an effective converted memory-base tree."
+  ],
+  "exclusions": [
+    "Unconverted comparisons and code-side reads."
+  ],
+  "id": "INV-GAVZC0",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Recorded A3/prior closure; unchanged-source custody and A4 focused preservation controls"
+      ],
+      "path": "l102-curator-list.json"
+    },
+    "handoffEntry": "L102-F02",
+    "leaf": "260928-MIK-L102",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A memory-base investigation must read the comparison's effective converted-base tree when conversion applies, while retaining the stored base identity separately.",
+  "status": "proposed",
+  "supersedes": []
+}

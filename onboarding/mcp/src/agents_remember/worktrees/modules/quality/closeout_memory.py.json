@@ -1,0 +1,184 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "One phase builds the service-owned drift context, runs the exact check group, and refuses on a non-clean result with bounded evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10bb6161832a6940af1f8770935ba0e8bcd36f96",
+            "content": "sha256:dd0ea0e02f5b8c072c65f3dafc3de1e73b416f2fb73b1f3b3808cdb0b7d8b182",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_memory_quality_phase"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "10bb6161832a6940af1f8770935ba0e8bcd36f96",
+            "content": "sha256:29a4ae1f1a384269adc1e3d5333e1372d72d28c2c915ea4af655e03b40877639",
+            "locator": {
+              "kind": "symbol",
+              "name": "_failure_message"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The combined result preserves both phase check maps, findings, counts, bounded report-only evidence, and declared phase membership.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10bb6161832a6940af1f8770935ba0e8bcd36f96",
+            "content": "sha256:0351640ea0822848124f11c44252b9e125e3d3606fadd49d73453715c4ebe1d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "combine_memory_quality"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The retained runner executes a supplied check group when directly called. No production call of either helper was found by the production AST/reference census with CLI and declared entry-point inspection; the current closeout owner imports neither helper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10bb6161832a6940af1f8770935ba0e8bcd36f96",
+            "content": "sha256:ef48738292342fc9913e81c9d9286c9fc50084601b5bd26c44c02d63d9d811f3",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 33
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+            "content": "sha256:a11094f88726f11a7585137e1178fc6dcf269a675547ec964b8021ff835a467d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The external-memory commit owner runs the refresh and the memory/ledger commits; it no longer combines a memory-quality gate result.\n\nAnchor: \"def external_closeout_commits(\"; \"def combine_memory_quality(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:b309983d7bf830a9b76b8a571c2ab9743d19a1361c927d2c6276cdc0f215ca47",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 73
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "10bb6161832a6940af1f8770935ba0e8bcd36f96",
+            "content": "sha256:93b86960f817975b4b69315def901350bad2575115dedf42adaf9b7a4aaf5468",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 56
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:64b3a0ab502d4792d8af8c0305da95a427c5130fe0086c260147bbd6bf980c10",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 66
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The memory-quality port declares drift context, check groups and quality execution.\n\nAnchor: \"class MemoryQualityPort\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "04542ceda7ef4559f29f3c1241a1d65ea7972a8f",
+            "content": "sha256:8385b407d04ef3482b301045b0cabb8d93f69f6102d0b3c2c13d1b52ceceffb6",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 117
+            },
+            "path": "mcp/src/agents_remember/worktrees/services.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "04542ceda7ef4559f29f3c1241a1d65ea7972a8f",
+            "content": "sha256:7c22d91e6252549ff5ff5b8f63dbc7bd68f9eb0498b32b119f296e52cc962e5d",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 123
+            },
+            "path": "mcp/src/agents_remember/worktrees/services.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "04542ceda7ef4559f29f3c1241a1d65ea7972a8f",
+            "content": "sha256:5d5d779dd74b12741f4568c99eafe0b34ef4537996a3e158236c205e5da99841",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 107
+            },
+            "path": "mcp/src/agents_remember/worktrees/services.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The injected service bundle keeps memory quality and certification continuation as distinct ports.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "04542ceda7ef4559f29f3c1241a1d65ea7972a8f",
+            "content": "sha256:a22230d4939b490a9a8a620bea45791e3feed11a85e2ca29164e8751e0942ac9",
+            "locator": {
+              "end": 357,
+              "kind": "line_range",
+              "start": 351
+            },
+            "path": "mcp/src/agents_remember/worktrees/services.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

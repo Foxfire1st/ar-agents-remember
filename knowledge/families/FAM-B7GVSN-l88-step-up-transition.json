@@ -1,0 +1,30 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Selection correctness alone cannot preserve replay identity; the member obligations jointly bind admitted instruction/choice selection to its immutable durable delivery."
+  },
+  "guarantee": "A failed-review threshold or explicit reason selects the user-configured alternative, with explicit same-start overrides retaining their fieldwise precedence and selected choices validated against the host. Its durable applied transition preserves exact retry identity and existing sealed review limits without resetting the code or memory lane.",
+  "id": "FAM-B7GVSN",
+  "members": [
+    "INV-N7G6M8",
+    "INV-X0685D"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "whole-curation.json"
+    },
+    "handoffEntry": "L88-step-up-transition",
+    "leaf": "260928-MIK-L88",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp/src/agents_remember/cli",
+    "mcp/src/agents_remember/kernel"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Configured step-up selection and durable transition"
+}

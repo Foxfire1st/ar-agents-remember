@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Prevents a compact answer from dropping the actionable operation state or being mistaken for its complete evidence corpus."
+  },
+  "applicability": "Final task, landing and role-message answer projections on admitted registered routes.",
+  "conditions": [
+    "The whole operation result remains computed by its existing owner; delivery is the bounded state/blockers/following action projection.",
+    "Existing final guard and file/log-loss facts remain authoritative."
+  ],
+  "exclusions": [
+    "This is not whole-CODE acceptance, transaction permission or a promise that an unadmitted log write succeeds."
+  ],
+  "id": "INV-DC238B",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "A06 freeze 17de999650338cff34a9215e10ae9a90747a186b789e9d5024137f576f20787f on base 228fd5ca (76 paths); landing 42/134, fast set 65/74, discriminator 2, sweep 15/81, catalogue 89 PASS, Ruff clean; round-8 CODE PASS verdict notes/reports/reviewer/4889df77-3c01-4cc7-a6ae-344b459490bd/round-8/verdict.md with remainingFindingIds=[]"
+      ],
+      "path": "producer-knowledge-list.json"
+    },
+    "handoffEntry": "MIK-R111@v1 / 260928-MIK-L111-A06 / worker-A06",
+    "leaf": "260928-MIK-L111",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The task and landing tools answer with the state reached, what blocks, and the one step that follows, within their targets and bounds, with every whole result retained in its detail file.",
+  "status": "proposed",
+  "supersedes": []
+}

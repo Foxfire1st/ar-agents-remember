@@ -1,0 +1,53 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The application already owns the failure and its Retry control. This hides the completed native outcome behind a pending dashboard line."
+  },
+  "alternatives": [
+    {
+      "option": "Report the native failure pane and release wait/input without dashboard failure prose.",
+      "reason": "The application already owns the failure and its Retry control.",
+      "status": "chosen"
+    },
+    {
+      "option": "Continue the dashboard drawing wait over the native failure pane.",
+      "reason": "This hides the completed native outcome behind a pending dashboard line.",
+      "reconsider_when": "If the native failure sign or selected-screen identity can no longer be reliably observed, revisit the report rather than inventing failure text.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Older-plugin behavior is unchanged; negotiated load-failed is distinct from shown."
+  ],
+  "context": "The host application can display Failed to load agent instead of drawing the chat.",
+  "decider": "Architect 97e0320d on the developer requirements, accepted by the Manager in the L140 decision log",
+  "id": "DEC-1ZN5WW",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "route:dashboard/src/cockpit"
+    },
+    {
+      "relation": "constrains",
+      "target": "route:mcp/src/agents_remember/package_data/paseo_plugin/client"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/cockpit/paseoFrameLateAnswer.test.tsx › \"ends the wait when the application shows that the host could not load the agent: the line goes and its own Retry is in reach\"; dashboard/src/cockpit/paseoPluginBridge.test.ts › \"tells such a dashboard that the host could not load the agent when the application shows that pane, and then waits for nothing\"; probe F-tip of Attempt3 (current plug-in): failure pane at 5.8 s, the dashboard's line gone at 5.9 s, the application's own Retry pressed; the architect's words are quoted in the report, part \"Built beyond the nine, on the architect's word\" (no ruling file)"
+      ],
+      "path": "producer-list.json"
+    },
+    "handoffEntry": "architect, message of 2026-10-11 17:32",
+    "leaf": "260928-MIK-L140",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

@@ -1,0 +1,303 @@
+{
+  "path": "pyproject.toml",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+        "content": "sha256:030596cef7d9fea970513ce9975de6839a71c38510ba0531432b1dc3f75be9a8",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-G47RTT",
+      "invariant": "INV-PDCN3H",
+      "origin": {
+        "handoffEntry": "L192-W-R199-10",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The project arms the size step here and states no limit, so this line shows the rail is armed, not what the limit is.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+        "content": "sha256:78ac6b541627510e77069ecad30b3e04b06d47ffee54cd49d93f4e602f6dc780",
+        "locator": {
+          "end": 335,
+          "kind": "line_range",
+          "start": 335
+        }
+      },
+      "id": "RLZ-WMQ90H",
+      "invariant": "INV-3NAQA6",
+      "origin": {
+        "handoffEntry": "MIK-R146@v1 rule 1 — integration declaration",
+        "leaf": "260928-MIK-L146"
+      },
+      "rationale": "The root declares the current integration selected-case ceiling of2000 after D579; the original1000 statement is superseded.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+        "content": "sha256:491f64c08426768394069607b3be0fb9b7d786a7920b9f6f8f01cd6b8d1cf425",
+        "locator": {
+          "end": 334,
+          "kind": "line_range",
+          "start": 334
+        }
+      },
+      "id": "RLZ-YH43T3",
+      "invariant": "INV-Q2VTFP",
+      "origin": {
+        "handoffEntry": "MIK-R146@v1 rule 1 — unit declaration",
+        "leaf": "260928-MIK-L146"
+      },
+      "rationale": "The root declares the current unit selected-case ceiling of10000; the adjacent dated raise preserves the historical decision without replacing the declaration.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Python lint policy and signature exception.\n\nAnchor: `[tool.ruff]`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "content": "sha256:2792983e259ca96490c0a14b7760063dfb856f7574c85e87d1368bc18df2c9ed",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Budgets, populations, collection and strictness, including the dated ceiling policy and tradeoff blocks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "content": "sha256:8676e641465a6551e9e9cffd7faa1e6a42f9b724809813c903d7edcb52f3006f",
+            "locator": {
+              "end": 122,
+              "kind": "line_range",
+              "start": 122
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "content": "sha256:81b16cca85b0b25e4e7e136558f566f01f0171aafbc8a615cab157dbcc6ef180",
+            "locator": {
+              "end": 251,
+              "kind": "line_range",
+              "start": 251
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "content": "sha256:24329980c91722cff083957188e3f6e6de6c7f24a81a62f06db77bd5fafa166d",
+            "locator": {
+              "end": 300,
+              "kind": "line_range",
+              "start": 279
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "content": "sha256:dd5577851fe3fe9c37895c6012bac452dccdd62d9ae4ee4be581195e6f85d39d",
+            "locator": {
+              "end": 367,
+              "kind": "line_range",
+              "start": 360
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The current enforced pair is 10000 unit and 2000 integration under D579; earlier 10000/1000, 6000/1000 and 5000/1000 readings are historical. The collection guard retains its authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "content": "sha256:a45f05c153d1b724bd7bfe5527b5534499d94b58cd5742e0a22db07b37cb65f7",
+            "locator": {
+              "end": 335,
+              "kind": "line_range",
+              "start": 334
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The dated raise states the headroom, measured scenario costs and preserved refusal directions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "content": "sha256:d54efa326c1d4128e0c15e19ae1c2e3f9fb44b9af2c0cfbcfa5bca0306be0494",
+            "locator": {
+              "end": 335,
+              "kind": "line_range",
+              "start": 321
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Type-checker scope and import environments.\n\nAnchor: `[tool.pyright]`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "content": "sha256:54226af6623b38088f837a8849f191ef0a6bc0cc939457fe4c3b356422afd788",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 43
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Coverage retains branch and Python-subprocess measurement and the file-size detector remains armed. Product roots name mcp/src/agents_remember; verification roots explicitly include .dagger/src/agents_remember_quality, mcp/test_support/agents_remember_test_support and scripts/agent_evals. These declarations classify operational ownership, not whether a package is installed.\n\nAnchor: Current declared source extent",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "content": "sha256:0b7752e4ab285b8c7ade467fb41317d79db47b5b60bd546f4a38f1032a5c6a53",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 68
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Radon reports.\n\nAnchor: \"[tool.radon]\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "content": "sha256:1f442416c90f39b61a1a4bb12cf74370eb23b32e31060fec454ec836aa198973",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 91
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The pytest configuration section the budget pair lives in.\n\nAnchor: \"[tool.pytest.ini_options]\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "content": "sha256:8676e641465a6551e9e9cffd7faa1e6a42f9b724809813c903d7edcb52f3006f",
+            "locator": {
+              "end": 122,
+              "kind": "line_range",
+              "start": 122
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The current root declaration is unit_case_budget = 10000 and integration_case_budget = 2000. D579 raises only integration from 1000 to 2000; the dated source block records the measured scenario runtimes and unchanged over-budget refusal directions. Earlier unit-only raises and their population measurements remain historical: **The earlier declared budget pair — `unit_case_budget` 10000 / `integration_case_budget` 1000, the latest unit ceiling raised from 6000 to 10000 by L193's D460 direction, following L54’s D299 raise from 5000 and the earlier D226 4000-to-5000 raise; the integration ceiling remained unchanged during those earlier unit raises. The prior pair was raised from 3000 / 600 by `260918-TSIP-L13`'s second developer-ruled raise on 2026-09-20; that earlier pair had itself been raised from 2300 / 400 by `260918-TSIP-L7` on 2026-09-19, and from 2200 / 400 before that by the truth-coverage census and staged-migration leaf over its own measured 2206-case candidate.** The earlier raises this row has carried are retained as the history they are: this candidate's own owning seat moved 1500 -> 1600, the merge onto the moved super line moved it to 2200 over a 2035-case population, and `260915-KS-L21` moved it to **2300** over a 2206-case population. Earlier dated population measurements remain inherited history, not re-executed or newly certified here.\n\nAnchor: Current declared source extent",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "content": "sha256:030596cef7d9fea970513ce9975de6839a71c38510ba0531432b1dc3f75be9a8",
+            "locator": {
+              "end": 413,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The dated merge entry that carries both lines' raise history verbatim — this master's `unit 1100 -> 1250`, then `1250 -> 1500` and `integration 300 -> 340`, then `1500 -> 1600` — beside the rule that each axis starts from the higher of the two lines' values and is then measured.**\n\nAnchor: \"unit 1100 -> 1250\"; \"both axes take the higher of the two lines' values\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "content": "sha256:3c474735527fc75e1b5d70fe5af5f6575b5f9ed4cfce0e11f930dd6eeb1978d8",
+            "locator": {
+              "end": 203,
+              "kind": "line_range",
+              "start": 189
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The dated block `260915-KS-L21` added immediately above the pair — measured 2158 collected at the base `a7076008`, 48 unit cases added by this leaf, 2206 collected against 2200, and the raise to 2300 sized for L22/L23 rather than filled — together with the integration measurement (394 against 400, unchanged) that the same block reports.**\n\nAnchor: \"2158 collected\"; \"2206 collected\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "content": "sha256:48767497e5fb0fa14513f5c759a89e3fd2492913705a6b01f3e3304c6e9f352f",
+            "locator": {
+              "end": 244,
+              "kind": "line_range",
+              "start": 216
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Warning exceptions and current evidence markers; the anchor is one of the three third-party exceptions the setting carries, because the setting name itself occurs three times in the file (twice inside the comments explaining it) and cannot anchor a unique claim.\n\nAnchor: \"ignore::starlette.exceptions.StarletteDeprecationWarning\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "content": "sha256:d5bb04ae02b170c0f8e9b8906f1cc58f832a292ddc281709514a9062a0f86314",
+            "locator": {
+              "end": 387,
+              "kind": "line_range",
+              "start": 387
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

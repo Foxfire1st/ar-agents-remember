@@ -1,0 +1,51 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/style/finding.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Defines the class `QualityFinding` (lines 14-43).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d52fca747a9dbe9516f7f671950ed8c0a88145d1",
+            "content": "sha256:4cbb6b222423cdb7e6baf21cb5a506285d36e95972a47d46f4a10be304f06186",
+            "locator": {
+              "kind": "symbol",
+              "name": "QualityFinding"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Defines the function `check_result` (lines 46-68) — Package findings into the uniform runner result ``memory_quality.check`` expects..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d52fca747a9dbe9516f7f671950ed8c0a88145d1",
+            "content": "sha256:8510ef7b04dfef6d3d5e3eadbbd5030d1d5e211345cc8111041c490071613dc3",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_result"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d52fca747a9dbe9516f7f671950ed8c0a88145d1",
+            "content": "sha256:60d83d99ba2ba85a03e973d1e39a6706e90509ce11548e0d85aa60d4d662915f",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 46
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

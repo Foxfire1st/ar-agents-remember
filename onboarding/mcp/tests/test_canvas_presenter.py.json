@@ -1,0 +1,74 @@
+{
+  "path": "mcp/tests/test_canvas_presenter.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "e4ac52c8feb276242bcf07388d06875854dbd737",
+        "content": "sha256:7bb9afcabcb3708ca77097b980e1956899a583b5120c197ab06a86968d6f4043",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_delayed_receipt_does_not_revive_a_cancelled_attempt"
+        }
+      },
+      "facet": "A receipt released after cancellation records execution and session IDs while the attempt remains cancelled.",
+      "id": "PRF-G912FW",
+      "invariant": "INV-YCMZGZ",
+      "origin": {
+        "handoffEntry": "L104-M19-settled-receipt",
+        "leaf": "260928-MIK-L104"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e4ac52c8feb276242bcf07388d06875854dbd737",
+        "content": "sha256:7bb9afcabcb3708ca77097b980e1956899a583b5120c197ab06a86968d6f4043",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_delayed_receipt_does_not_revive_a_cancelled_attempt"
+        }
+      },
+      "facet": "A cancelled attempt stays cancelled when its receipt arrives late.",
+      "id": "PRF-KWFXXY",
+      "invariant": "INV-YCMZGZ",
+      "origin": {
+        "handoffEntry": "L183-A-4",
+        "leaf": "260928-MIK-L183"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "4": {
+      "note": "An event-coordinated late receipt cannot revive a cancelled attempt; the shared hang guard only bounds a stuck wait.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4ac52c8feb276242bcf07388d06875854dbd737",
+            "content": "sha256:7bb9afcabcb3708ca77097b980e1956899a583b5120c197ab06a86968d6f4043",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_delayed_receipt_does_not_revive_a_cancelled_attempt"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "A presenter constructed without an injected runner uses `UnconfiguredPresenterRunner`: its start fails with `no-confined-harness` and creates no `host/prepared-start.json`. The retired native presenter is no longer a production default; explicit fixture runners retain their own tested behavior.\n\nAnchor: `test_a_presenter_without_a_runner_refuses_the_retired_native_seat`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4ac52c8feb276242bcf07388d06875854dbd737",
+            "content": "sha256:97232b786b87e4e0007878b40d1ec54d829b05addcbd4a28da85dc39db7a5749",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

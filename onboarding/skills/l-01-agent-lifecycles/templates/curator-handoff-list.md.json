@@ -1,0 +1,186 @@
+{
+  "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "25ccdee3a72d8b54b4ef991f862a406836b5e531",
+        "content": "sha256:2255d058b3c450f41d6dbd54aac7950714f198cacb90e7a20bbecf0bc94d75a6",
+        "locator": {
+          "end": 33,
+          "kind": "line_range",
+          "start": 29
+        }
+      },
+      "id": "RLZ-2NKZPW",
+      "invariant": "INV-0FBA8M52",
+      "origin": {
+        "handoffEntry": "K3-0FBA8M52-author-missing-rationale",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "States that a Curator receiving a target without a rationale authors it from the evidence before ingest, without re-deriving producer fields.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "25ccdee3a72d8b54b4ef991f862a406836b5e531",
+        "content": "sha256:7853928fedb2db895b7947d346f8199b97ea275c844daa0f8c9691f121acba5e",
+        "locator": {
+          "end": 173,
+          "kind": "line_range",
+          "start": 173
+        }
+      },
+      "id": "RLZ-6YRRWD",
+      "invariant": "INV-0FBA8M52",
+      "origin": {
+        "handoffEntry": "K3-0FBA8M52-author-missing-rationale",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Before ingest, the missing rationale is authored for every target of the worked examples.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "25ccdee3a72d8b54b4ef991f862a406836b5e531",
+        "content": "sha256:20fe55240e351f3615c1a0bbb48b34b997e63db65c3ea4f1714d1253b77f6975",
+        "locator": {
+          "end": 248,
+          "kind": "line_range",
+          "start": 243
+        }
+      },
+      "id": "RLZ-7VHY091X",
+      "invariant": "INV-E8655Z54",
+      "origin": {
+        "leaf": "260921-ICR-L45"
+      },
+      "rationale": "Tells producers to omit governing_route when no route governs a place instead of writing a placeholder word.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "25ccdee3a72d8b54b4ef991f862a406836b5e531",
+        "content": "sha256:843544f46726b1b61d108123ba82608c740f8c3ecf8b37e0f15995726f71dd05",
+        "locator": {
+          "end": 134,
+          "kind": "line_range",
+          "start": 100
+        }
+      },
+      "id": "RLZ-A2D6Y9T1",
+      "invariant": "INV-J7179RG5",
+      "origin": {
+        "leaf": "260921-ICR-L45"
+      },
+      "rationale": "The converted hand-off template names the supplied target value guards and the whole-run refusal boundary; the Architect rules that sibling commits are earlier per-entry provenance, not the converted operation.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "25ccdee3a72d8b54b4ef991f862a406836b5e531",
+        "content": "sha256:c07dd8c8d04a7ed3418196b614c5f38dd8c3eb012d440b85a00a0b4141edfc9e",
+        "locator": {
+          "end": 93,
+          "kind": "line_range",
+          "start": 27
+        }
+      },
+      "id": "RLZ-J1Y6PF",
+      "invariant": "INV-3F80Q2",
+      "origin": {
+        "handoffEntry": "MIK-R84@v5 part1 / L62 producer handoff ownership",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "This template declares the nine producer fields, four Curator fields and their ownership boundary.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "25ccdee3a72d8b54b4ef991f862a406836b5e531",
+        "content": "sha256:a52c02e08d9af083cb691c49a5e75c55507aaae8830419f64deceb6b8f8b803b",
+        "locator": {
+          "end": 134,
+          "kind": "line_range",
+          "start": 95
+        }
+      },
+      "id": "RLZ-RSTSK683",
+      "invariant": "INV-0FBA8M52",
+      "origin": {
+        "leaf": "260921-ICR-L45"
+      },
+      "rationale": "The canonical template owns the hand-off list shape every curator instruction defers to.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "16": {
+      "note": "Changed family rows need an authored effect; the revision is the writer's.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+            "content": "sha256:e5634b2fde999a70250356a80b5b8e8bfebac4a25e60d6f7c75c56d985354f01",
+            "locator": {
+              "kind": "symbol",
+              "name": "family_effect_refusal"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/handoff.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The authored source owns this contract; the distribution copy is not a separate authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25ccdee3a72d8b54b4ef991f862a406836b5e531",
+            "content": "sha256:d9cbacffc2e4185b71743115f15e5976a2202d18759d84c1b6474eb333fcf5b2",
+            "locator": {
+              "end": 318,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "The Writing and meaning review section links the shared writing profile and keeps producer fields verbatim without changing the thirteen-field producer schema.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25ccdee3a72d8b54b4ef991f862a406836b5e531",
+            "content": "sha256:f26c1783a159c5cc6b6a6a687aad480cb63e5a3d5e38f3fbbc5b6595522ad3f7",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 15
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "The producer contract keeps the entry, its shape and the producer rules; the Curator-authored keys, writer input, admission and decision records sit in the ingestion template.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16398354f1504a4b5d8dd813d6d93f912f801bf1",
+            "content": "sha256:d3c1273715f3b7fcc23d52d26d9e97f95de76f183b00dd1411403b29f9e9b21b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

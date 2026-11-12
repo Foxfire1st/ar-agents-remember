@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The self-contained sweep and separate shared entry-point world retain independently named explicit empty pins and the supported memory_baseline_adopt positive population; distinguishing declarations from executions prevents a historical failure count from re-admitting repaired envelope loss."
+  },
+  "applicability": "The serving-build evidence pins carried by the current sweep.",
+  "conditions": [
+    "Identify the self-contained merged sweep and separate shared-world populations independently.",
+    "Derive the current positive population from retained advertised tools; keep the explicitly declared empty envelope-loss and unmarked-not-ok pins, not the removed ambient-state pin.",
+    "Retain exact equality for the surviving pins and historical L110/L111 repair ownership without renewing historical observations."
+  ],
+  "exclusions": [
+    "Product repairs in this leaf, which belong to L111 for lifecycle and L110 for MQ projection.",
+    "New finding IDs or product acceptance read from carried pins."
+  ],
+  "id": "INV-TG334W",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/role-launch/260928-MIK-L71-worker-d508f3cc-d109-host-readers/source-current-a1b7/source26-public-sync/generation15-five-pin-successor/two-hunk-qualified-whole-file-byte-replay.json"
+      ],
+      "path": "l71-handoff-list.json"
+    },
+    "handoffEntry": "L71-CURRENT242-W-20",
+    "leaf": "260928-MIK-L71",
+    "task": "260928-MIK"
+  },
+  "revision": 5,
+  "schema": "ar-invariant/v1",
+  "statement": "The composed self-contained sweep declares the retained empty envelope-loss and empty unmarked-not-ok pins after the admitted same-change repairs; its positive population is memory_baseline_adopt, not the retired search tools. The separate shared entry-point world has its own empty unmarked-not-ok pin. The ambient-state raiser pin, ambient-state matrix and their case have been removed; they are not current declarations or evidence. Exact-equality checks on the retained pins and historical same-change repair ownership remain; these declarations are not an executed new failure census.",
+  "status": "proposed",
+  "supersedes": []
+}

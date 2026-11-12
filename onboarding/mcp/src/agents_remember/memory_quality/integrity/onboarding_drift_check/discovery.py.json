@@ -1,0 +1,88 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/discovery.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Retained metadata-text/path and entity readers parse old-card or structural inputs without the removed sidecar classifier.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "98dd7018897efd09b8c16955071bb1875fb146d9",
+            "content": "sha256:1ade7214d1ecdadcdf60c2a1e5db5b27dc11f1446454f20d548e810e0f19adb2",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_table_metadata_text"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "98dd7018897efd09b8c16955071bb1875fb146d9",
+            "content": "sha256:ad107faacea5214ae1160ecbdd0ad7a2d13a678d6767832c6e54a9763376cabe",
+            "locator": {
+              "kind": "symbol",
+              "name": "normalize_overview_route"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "98dd7018897efd09b8c16955071bb1875fb146d9",
+            "content": "sha256:7a9c34c9d98d9287ba75e16a2e4b3030569517b34f49d5d0e4eb2b3f198ee018",
+            "locator": {
+              "kind": "symbol",
+              "name": "rel"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52f7e65b6acd94ad5885aa51286fef97cef7c4af",
+            "content": "sha256:2cd15437ec639793c5a7cfcfffd4ecc59bd42ec05134e11abc18b28a1c8202ad",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 37
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/paths.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "789eb8c15a6d0709af6e7d1de4e61a85369bf59f",
+            "content": "sha256:7e22fccbef5156b8ff51c338a1ccec2f8dbe5bf566bd8ea7ac420fcaf3ca92c1",
+            "locator": {
+              "end": 85,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Path normalization is provided by the kernel resolver.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52f7e65b6acd94ad5885aa51286fef97cef7c4af",
+            "content": "sha256:ab7694ae876f83cd557719f29cc32a5e66c3a017411e6b0edfcf414ce450efba",
+            "locator": {
+              "kind": "symbol",
+              "name": "normalize_rel_path"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/paths.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

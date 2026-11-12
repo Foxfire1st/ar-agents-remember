@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Two proving tests pin the bounded fifteen-master preview and the keeper and hook-failure previews; without them valid sprints would fail response validation."
+  },
+  "applicability": "Whole-sprint archive previews.",
+  "conditions": [
+    "Valid sprints up to and beyond fifteen masters."
+  ],
+  "exclusions": [
+    "Single-master retire previews."
+  ],
+  "id": "INV-VH9J71",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_sprint_archive_custody.py::test_fifteen_master_preview_bounded_and_exact; ::test_shared_keeper_preview_and_hook_failure_preview; /var/tmp/mik-run3/l82/evidence-window/stageB8-results.json#steps/0; notes/reports/l82-code-review-R2/focused-pytest.json + .stdout"
+      ],
+      "path": "notes/reports/260928-MIK-L82-curator-handoff-list.json"
+    },
+    "handoffEntry": "L82-CODE-R1-07",
+    "leaf": "260928-MIK-L82",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A dry run for a valid sprint with fifteen masters raises response validation errors because the archive preview exceeds the inherited sixteen-item wouldChange and wouldWrite limits.",
+  "status": "retired",
+  "supersedes": []
+}

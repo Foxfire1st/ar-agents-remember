@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/task_projection/rendering.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                            |
-| path                   | `mcp/src/agents_remember/application/task_projection/rendering.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-16T10:30+02:00 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
-| governingOverview      | `../overview.md`                           |
-
 ## Governing Overview
 
 [application overview](../overview.md)
@@ -75,43 +65,29 @@ A new channel is a renderer function plus a `_CHANNEL_RENDERERS` entry plus its 
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external or domain documentation is configured for this memory root
 (`system/sources.md` has no entries), so no external documentation claim is made.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant documentation found after checking the configured sources. | N/A | N/A |
+No relevant documentation found after checking the configured sources.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The render entry point, the binding block that makes a projection self-locating, and the closure.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The complete model-visible document, in the operation's channel order. | `render_markdown` | mcp/src/agents_remember/application/task_projection/rendering.py:45-58 |
-| The binding block: task reference, branch, memory surface, contract and revision. | `_binding_block` | mcp/src/agents_remember/application/task_projection/rendering.py:65-89 |
-| The requirement section, and the single context line an adjacent obligation gets instead of its body. | `_requirements`; `_owned_requirement`; `_adjacent_line` | mcp/src/agents_remember/application/task_projection/rendering.py:96-132; mcp/src/agents_remember/application/task_projection/rendering.py:135-163; mcp/src/agents_remember/application/task_projection/rendering.py:166-167 |
-| The closure: expansion references and gaps, so "not injected" is visible rather than silent. | `_closure` | mcp/src/agents_remember/application/task_projection/rendering.py:234-258 |
-| The channel vocabulary and its renderer table. | `_CHANNEL_RENDERERS`; `_CHANNEL_ORDER`; `ProjectionChannel` | mcp/src/agents_remember/application/task_projection/rendering.py:261-271; mcp/src/agents_remember/application/task_projection/rendering.py:27-36; mcp/src/agents_remember/application/task_projection/types.py:45-57 |
-| The value the rendered bytes are digested into, which is why the revision is not in the prose twice. | `task_context_of` | mcp/src/agents_remember/application/task_projection/provider.py:37-52 |
-| The case that proves an owned obligation is carried verbatim into the rendered document. | `test_the_projected_planes_keep_their_kinds_and_carry_every_obligation_verbatim` | mcp/tests/test_task_projection.py:1152-1209 |
+- The complete model-visible document, in the operation's channel order. [1]
+- The binding block: task reference, branch, memory surface, contract and revision. [2]
+- The requirement section, and the single context line an adjacent obligation gets instead of its body. [3]
+- The closure: expansion references and gaps, so "not injected" is visible rather than silent. [4]
+- The channel vocabulary and its renderer table. [5]
+- The value the rendered bytes are digested into, which is why the revision is not in the prose twice. [6]
+- The case that proves an owned obligation is carried verbatim into the rendered document. [7]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No sibling-repository contract consumes this renderer.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | N/A | N/A |
-
-## Update History
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-
-- 2026-09-16T10:30+02:00 — 260915-CAPS-L3 curator: created this card for the Markdown renderer added
-  by the scoped-task-context leaf (`CAPS-R03@v1`). Records the fixed channel order and renderer
-  table, the self-locating binding block that lets L5/L7 deliver `markdown` verbatim, the deliberate
-  exclusion of the diagnostic half from model-visible prose, and the two surviving rules (nothing
-  clipped; referenced is not omitted). Verification metadata is left at the leaf base commit because
-  the source is uncommitted — the governed closeout stamps the real code commit.
+No meaningful cross-repo references found.

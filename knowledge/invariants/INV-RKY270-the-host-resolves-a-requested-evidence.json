@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Realized in one module, so the obligation is proven rather than spread: the reference decision and the receipt state are two places, and both the readiness and host cases hold the packet-only rule."
+  },
+  "applicability": "Every evidence reference a page asks the host to open.",
+  "conditions": [
+    "The revision carries an admitted packet naming the same comparison."
+  ],
+  "exclusions": [
+    "History rows and review selections the panel performs itself."
+  ],
+  "id": "INV-RKY270",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_canvas_readiness.py::test_an_evidence_reference_must_be_one_the_admitted_packet_carries",
+        "mcp/tests/test_canvas_host.py::test_evidence_opens_its_exact_destination_or_stays_unavailable"
+      ],
+      "path": "curation-list.json"
+    },
+    "handoffEntry": "MIK-R104-r5-evidence-resolution",
+    "leaf": "260928-MIK-L104",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The host resolves a requested evidence reference only from the references the revision's own admitted packet carries, and answers a named limitation instead of a destination it cannot prove.",
+  "status": "proposed",
+  "supersedes": []
+}

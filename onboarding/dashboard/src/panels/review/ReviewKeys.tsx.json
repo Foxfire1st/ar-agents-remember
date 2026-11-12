@@ -1,0 +1,41 @@
+{
+  "path": "dashboard/src/panels/review/ReviewKeys.tsx",
+  "realizes": [],
+  "references": {
+    "5": {
+      "note": "ReviewKeys.tsx current behavior at this source owner.\n\nAnchor: \"export function ReviewKeys() {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1c36a514c35c857cfc8422285537731f7db5592",
+            "content": "sha256:303a61710b2fd40d40621e3c828a5d3de785a224bfb09680d5d2615723ed195d",
+            "locator": {
+              "end": 78,
+              "kind": "line_range",
+              "start": 34
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "ReviewKeys.tsx current behavior at this source owner.\n\nAnchor: \"function isHelpKey(event: KeyboardEvent): boolean {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1c36a514c35c857cfc8422285537731f7db5592",
+            "content": "sha256:49933970ce7c3a34dff3c7d6f37ba0523d3664a41d172309abeedeaed2800eea",
+            "locator": {
+              "end": 78,
+              "kind": "line_range",
+              "start": 30
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,140 @@
+{
+  "path": "mcp/tests/test_capture_baseline.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "1182a0e706a4865aea0f22cc6f48d83ff0d34426",
+        "content": "sha256:7f71aa77fa8b1b32208fb3f01684f7d8f9ae94f241424024f6e4364a0e572203",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_eligible_addition_under_a_wildcard_negation_is_a_doubt"
+        }
+      },
+      "facet": "An eligible addition hidden by a wildcard negation is a doubt, so the proof re-derives instead of certifying.",
+      "id": "PRF-PHWCT5",
+      "invariant": "INV-N3M9G4",
+      "origin": {
+        "handoffEntry": "L177-INV-N3M9G4",
+        "leaf": "260928-MIK-L177"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "1182a0e706a4865aea0f22cc6f48d83ff0d34426",
+        "content": "sha256:37fd64e1d9d6694af7aa1e5a1abfcb9cf1b8dac8978c8cb5fa827536de01c900",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_observation_does_not_descend_into_a_wildcard_ignored_dependency_directory"
+        }
+      },
+      "facet": "The proof observes no path under an ignored dependency directory.",
+      "id": "PRF-Q88JBV",
+      "invariant": "INV-N3M9G4",
+      "origin": {
+        "handoffEntry": "L177-INV-N3M9G4",
+        "leaf": "260928-MIK-L177"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "1182a0e706a4865aea0f22cc6f48d83ff0d34426",
+        "content": "sha256:12b6e10371c16e87a77d6cae2d5a818162dc2784f39abc10a1c9c75f90d03593",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_restored_directory_mtime_cannot_certify_an_unchanged_tree"
+        }
+      },
+      "facet": "A restored parent-directory mtime cannot stand in for an unchanged tree.",
+      "id": "PRF-ZNVE45",
+      "invariant": "INV-N3M9G4",
+      "origin": {
+        "handoffEntry": "L177-INV-N3M9G4",
+        "leaf": "260928-MIK-L177"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Every named kind of change to the captured tree is a doubt, and a change inside an ignored folder is not.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1182a0e706a4865aea0f22cc6f48d83ff0d34426",
+            "content": "sha256:8c47aaf2231efb48071ca8a223affee5ddeca50e4c3c629282284ebaada046a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "CaptureBaselineTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "An eligible addition under a wildcard negation is a doubt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1182a0e706a4865aea0f22cc6f48d83ff0d34426",
+            "content": "sha256:7f71aa77fa8b1b32208fb3f01684f7d8f9ae94f241424024f6e4364a0e572203",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_eligible_addition_under_a_wildcard_negation_is_a_doubt"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A restored parent-directory mtime cannot certify an unchanged tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1182a0e706a4865aea0f22cc6f48d83ff0d34426",
+            "content": "sha256:12b6e10371c16e87a77d6cae2d5a818162dc2784f39abc10a1c9c75f90d03593",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_restored_directory_mtime_cannot_certify_an_unchanged_tree"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The proof observes no path under a Git-ignored dependency directory (the test instruments `os.scandir`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1182a0e706a4865aea0f22cc6f48d83ff0d34426",
+            "content": "sha256:37fd64e1d9d6694af7aa1e5a1abfcb9cf1b8dac8978c8cb5fa827536de01c900",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_observation_does_not_descend_into_a_wildcard_ignored_dependency_directory"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "An external ignore change invalidates the proof in both directions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1182a0e706a4865aea0f22cc6f48d83ff0d34426",
+            "content": "sha256:835ff46b05c1d667fc9e3c60c3eef113b261f092c1502f43eaa72ce1b22af9d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_external_ignore_changes_require_recapture_in_both_directions"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

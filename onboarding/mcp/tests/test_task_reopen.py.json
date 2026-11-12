@@ -1,0 +1,153 @@
+{
+  "path": "mcp/tests/test_task_reopen.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Resets contract doc and master index",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9b46a4f7d8f6a87bc535b5995eb6af1e66be9d4",
+            "content": "sha256:a5f90cd6872d0bf897fc7edda4eb418c2ccd97d6562aa98ddbf481ed98a96425",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_resets_contract_doc_and_master_index"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Contract publish failure rolls back docs and landing",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9b46a4f7d8f6a87bc535b5995eb6af1e66be9d4",
+            "content": "sha256:3565cafafe23673d746cf57db0ef13d1691e3fccdd3e569433bcbcffb747031d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_contract_publish_failure_rolls_back_docs_and_landing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A leaf naming no master resets the row its folder master lists (MIK-R38).  Anchor: \"def test_a_leaf_naming_no_master_resets_the_row_its_folder_master_lists(self) -> None:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9b46a4f7d8f6a87bc535b5995eb6af1e66be9d4",
+            "content": "sha256:1489a0fa4d917bd9c212a9de35678005c383f43590eef12c4c183d54f0c243e8",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 110
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A light leaf that is the folder's `task.json` is not its own master.  Anchor: \"def test_a_light_leaf_that_is_the_folder_task_json_is_not_its_own_master(self) -> None:\"; \"self.assertEqual(planned, (None, \\\"no-master\\\"))\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9b46a4f7d8f6a87bc535b5995eb6af1e66be9d4",
+            "content": "sha256:206db84358079a0850895b53471b4143b006e1f4c84ee9ecaba4e1a824bff1e7",
+            "locator": {
+              "end": 152,
+              "kind": "line_range",
+              "start": 125
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "A leaf the store would write elsewhere is refused before any write.  Anchor: \"def test_a_leaf_the_store_would_write_elsewhere_is_refused_before_any_write(self) -> None:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9b46a4f7d8f6a87bc535b5995eb6af1e66be9d4",
+            "content": "sha256:ccd7b23a55dffd9de25d958612efe3bd7857814546dbcc5cadf084dc0307bb51",
+            "locator": {
+              "end": 186,
+              "kind": "line_range",
+              "start": 154
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "A named master the store would write elsewhere is refused before any write.  Anchor: \"def test_a_named_master_the_store_would_write_elsewhere_is_refused(self) -> None:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9b46a4f7d8f6a87bc535b5995eb6af1e66be9d4",
+            "content": "sha256:7bb8214ce10abd453cf484ab8e7595265ce9f176542fe7364a055e8149241e10",
+            "locator": {
+              "end": 220,
+              "kind": "line_range",
+              "start": 188
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The terminal series reopen, gathered as one collected subject across all three of its arrivals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9b46a4f7d8f6a87bc535b5995eb6af1e66be9d4",
+            "content": "sha256:bf74eddf5441ae5fe7283d32cc843bc541c82e0127e418706fe928936b3100fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_terminal_series_is_reopened_without_ever_moving_a_live_ref"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The reset that is durable while the locator is still the collected generation is resumed, not refused.\n\nAnchor: `_assert_an_interrupted_series_reset_is_resumed`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9b46a4f7d8f6a87bc535b5995eb6af1e66be9d4",
+            "content": "sha256:bc093eb8cb406c16a3b80e376f0bdc4f083f66cc40b57653a2b155acc5eb3c01",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "A series that is already live and unaddressed is re-addressed: the successor is published citing the archived predecessor, the branch is unmoved, and the spent review counter is cleared.\n\nAnchor: `_assert_a_live_unaddressed_series_is_re_addressed`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9b46a4f7d8f6a87bc535b5995eb6af1e66be9d4",
+            "content": "sha256:bc093eb8cb406c16a3b80e376f0bdc4f083f66cc40b57653a2b155acc5eb3c01",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

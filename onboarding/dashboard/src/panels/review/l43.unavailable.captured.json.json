@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/l43.unavailable.captured.json",
+  "realizes": [],
+  "references": {
+    "2": {
+      "note": "The current retained JSON input supplies the literal identities, response states and populations summarized above; these are fixture facts, not live project knowledge or fresh execution evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1b4f93e220084b7df31938b3808834eb2aa05100",
+            "content": "sha256:98f70bea59de472fea4e05066797811ee351ddb5a884dfd3b8d82a9a1ce896a2",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,179 @@
+{
+  "path": "mcp/src/agents_remember/application/task_projection/rendering.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The complete model-visible document, in the operation's channel order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12fb312c8e191b6a77d3005c17124fb02354e98c",
+            "content": "sha256:26abd97afd59ef59aa5ab0b94cc936fc2dd9b08fbd59a24e6cd90d090f64a326",
+            "locator": {
+              "kind": "symbol",
+              "name": "render_markdown"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The binding block: task reference, branch, memory surface, contract and revision.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12fb312c8e191b6a77d3005c17124fb02354e98c",
+            "content": "sha256:38380acadc7c69c566c7146120c6cec5ba1f2d85185820ccbba44757ee61e5a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_binding_block"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The requirement section, and the single context line an adjacent obligation gets instead of its body.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12fb312c8e191b6a77d3005c17124fb02354e98c",
+            "content": "sha256:18f0abfc7a865eefbdcbf99901a9e67b58565648718b60f12af61ebb8e79ac84",
+            "locator": {
+              "kind": "symbol",
+              "name": "_requirements"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "12fb312c8e191b6a77d3005c17124fb02354e98c",
+            "content": "sha256:10d166b602240bd320ab23dc7c4fe149e4886891e90e7a2968dba65f14c798e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_owned_requirement"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "12fb312c8e191b6a77d3005c17124fb02354e98c",
+            "content": "sha256:7b03c61882dc967baa4f49e260e32374f049e0eaba6268dc7a03c79890e0b522",
+            "locator": {
+              "kind": "symbol",
+              "name": "_adjacent_line"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The closure: expansion references and gaps, so \"not injected\" is visible rather than silent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12fb312c8e191b6a77d3005c17124fb02354e98c",
+            "content": "sha256:ee22df4a01c6bd77f88c494211033952a63ec6e004e097657dd7bc7a624fecd2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_closure"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The channel vocabulary and its renderer table.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12fb312c8e191b6a77d3005c17124fb02354e98c",
+            "content": "sha256:62450175f304b0b0a6e78c04b8f66377ec567f2a3d6b8cdf62a352ff2756ebfe",
+            "locator": {
+              "kind": "symbol",
+              "name": "_CHANNEL_RENDERERS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "12fb312c8e191b6a77d3005c17124fb02354e98c",
+            "content": "sha256:cf065309c5733721dcaf4d228bb2e2d5db8eecb8d15997f91f4aeb391dae8134",
+            "locator": {
+              "kind": "symbol",
+              "name": "_CHANNEL_ORDER"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2af644d29fe74ba46ecf539a85c42764bb99d068",
+            "content": "sha256:2f15fe699af8f544d6581a24f58b9cd9ecc54996b3a4f97b94ca476e71196f6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProjectionChannel"
+            },
+            "path": "mcp/src/agents_remember/application/task_projection/types.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The value the rendered bytes are digested into, which is why the revision is not in the prose twice.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1a0a98677c18c055a70984ba23f1ff08b59b8a0",
+            "content": "sha256:87224e1eab61f19626c00585cfa8ead4baa207416a49e4cf2b9bd92db73ab09e",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_context_of"
+            },
+            "path": "mcp/src/agents_remember/application/task_projection/provider.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f1a0a98677c18c055a70984ba23f1ff08b59b8a0",
+            "content": "sha256:2fe1d5b5961eab0f6ae83b65a59eb4739f39473176f364fb0da2b725c439c393",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 37
+            },
+            "path": "mcp/src/agents_remember/application/task_projection/provider.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The case that proves an owned obligation is carried verbatim into the rendered document.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9991ab53e44e727208b5ce953c5a72c0e9ad25d",
+            "content": "sha256:e6f948f47d6eee8147f8acda3e1b1abe40300b988e05232a5a91be055dc2ad27",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_projected_planes_keep_their_kinds_and_carry_every_obligation_verbatim"
+            },
+            "path": "mcp/tests/test_task_projection.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

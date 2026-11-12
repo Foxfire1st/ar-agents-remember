@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Atomic own-copy publication, readable-sibling exclusion, foreign membership and conditional unknown-file handling jointly keep unrelated enclosure evidence from controlling publication while preserving the own failure path; no single member guarantees that combined boundary."
+  },
+  "guarantee": "Own task-copy publication remains atomic without admitting a foreign contract as an enclosure or letting a readable sibling determine its outcome; an indeterminate unreadable contract is tolerated only past staged own copies, otherwise refresh fails closed.",
+  "id": "FAM-4RPJEY",
+  "members": [
+    "INV-J3PYB0",
+    "INV-85JCY6",
+    "INV-BWW1N1",
+    "INV-VDT24F"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "l134-knowledge-ingest.json"
+    },
+    "handoffEntry": "L134-own-copy-isolation-family",
+    "leaf": "260928-MIK-L134",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp/src/agents_remember/application/task_docs",
+    "mcp/src/agents_remember/cli",
+    "mcp/src/agents_remember/tasks",
+    "mcp/src/agents_remember/worktrees",
+    "mcp/src/agents_remember/serving/projections"
+  ],
+  "schema": "ar-family/v1",
+  "status": "accepted",
+  "title": "Own-copy publication without foreign enclosure ownership"
+}

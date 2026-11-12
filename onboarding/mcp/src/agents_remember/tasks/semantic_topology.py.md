@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/tasks/semantic_topology.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/tasks/semantic_topology.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-01T03:58+02:00 |
-| lastVerifiedCommitHash |  `47c8d102c2430d5337dbe207d4601efb4844fec0`|
-| lastVerifiedCommitDate |  2026-09-01T08:53:56+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Tasks overview](overview.md)
@@ -48,23 +38,18 @@ missing, ambiguous, malformed, unsupported-version, and graph-index refusals.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external source is needed for this repository-owned semantic identity.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Strict frozen models define the complete v2 identity and its two placement modes. | `SemanticTopologyV2`; `SemanticTopologyDagPlacement`; `SemanticTopologyAtomicPlacement` | mcp/src/agents_remember/tasks/semantic_topology.py:53-122 |
-| Projection and fingerprint share one canonical structural value and exact work report. | `semantic_topology_projection_with_work`; `semantic_topology_fingerprint_with_work` | mcp/src/agents_remember/tasks/semantic_topology.py:148-238 |
-| Version, taxonomy, composite binding, execution nature, and placement all fail closed. | `_require_schema_version`; `_owning_parent_row`; `_dag_placement` | mcp/src/agents_remember/tasks/semantic_topology.py:241-364 |
+- Strict frozen models define the complete v2 identity and its two placement modes. [1]
+- Projection and fingerprint share one canonical structural value and exact work report. [2]
+- Version, taxonomy, composite binding, execution nature, and placement all fail closed. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 None.
-
-## Update History
-
-- 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: created the canonical
-  `semantic-topology/v2` file card. Verification remains closeout-owned.

@@ -1,0 +1,93 @@
+{
+  "path": "mcp/src/agents_remember/kernel/filesystem.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Worktree closeout planning uses the helper to filter changed worktree and committed paths, to plan sidecar refreshes over working and committed-range paths, and to recompute the changed entity fingerprints in the onboarding catalog.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
+            "content": "sha256:f20b3ec96b013658e5c4dc9e3c36f97ae92d98afa975af2b4ad7e0305754dbbf",
+            "locator": {
+              "kind": "symbol",
+              "name": "onboarding_refresh_plan_for_context"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+            "content": "sha256:0e79ba415fc69c4911c449a0d32333a3dd33e0aa68e711b17568dba622df25cb",
+            "locator": {
+              "end": 988,
+              "kind": "line_range",
+              "start": 975
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+            "content": "sha256:1195728b19af21f629571abbfeb4fded7ff821b5d4e5eaa5b03576e2bdf0cb6d",
+            "locator": {
+              "end": 946,
+              "kind": "line_range",
+              "start": 931
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+            "content": "sha256:09041fbb1dc62ffbb3e5d7e1edc8feb428539e8c960cd11661e8c32767ef56b7",
+            "locator": {
+              "end": 963,
+              "kind": "line_range",
+              "start": 949
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The missing-onboarding pre-commit check uses the helper for sidecar existence and inline source reads.\n\nAnchor: `filesystem.exists`; `filesystem.read_text`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1c7b82e4146f0ca94137b49d845adef38178ff5",
+            "content": "sha256:d08727d55a6cb1c0bc5bc93a37ce032d023aaa040e5c8c2b2c8ed930ba7529be",
+            "locator": {
+              "kind": "symbol",
+              "name": "_missing_sidecar_onboarding"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f1c7b82e4146f0ca94137b49d845adef38178ff5",
+            "content": "sha256:ff5457d92a71f94e20360af01a501d8fbac519479a221c71018d8c5fd3e99afe",
+            "locator": {
+              "kind": "symbol",
+              "name": "_missing_inline_onboarding"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

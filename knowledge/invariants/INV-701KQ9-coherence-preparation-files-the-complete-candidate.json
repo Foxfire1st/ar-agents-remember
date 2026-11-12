@@ -1,0 +1,38 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Separate application/transport owners enforce the guarantee and named executable assertion units guard its boundaries."
+  },
+  "applicability": "Coherence prepare and publication with optional judgments_file.",
+  "conditions": [
+    "The file holds judgments and review_assessments; its exact bytes supply the returned SHA-256.",
+    "Explicit empty inline collections count as a second source.",
+    "The resource budget accounts for bounded scalar-field maxima and collection-count limits with UTF-8 or ASCII-escaped supplementary-character expansion; remaining unbounded content is independently subject to the total file-byte cap, so inline model validity does not imply file-size admission."
+  ],
+  "exclusions": [
+    "File sourcing changes no semantic judgment or publication expectation.",
+    "Read actions do not accept publication content.",
+    "A set that could not be filed cannot authorize publication."
+  ],
+  "id": "INV-701KQ9",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "MIK-R110@v1 rules and Expected Evidence; original Worker and Reviewer lists plus qualified Attempt-7 verdict preserved in role report; source inspection is not new execution or MEMORY acceptance.",
+        "Same-origin complete19-entry re-presentation for Reviewer sealed MEMORY R1 F03/F04/F05/F07; supersedes only the stronger current resource/facet claims. No fresh test execution or new CODE/MEMORY acceptance."
+      ],
+      "path": "knowledge-wave.json"
+    },
+    "handoffEntry": "L110-C-coherence-transport",
+    "leaf": "260928-MIK-L110",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Coherence preparation files the complete candidate set and answers counts/digest/locations; file-sourced publication reads bounded regular-file bytes once, validates the inline models and preserves exact-set/CAS authority without duplicate inline sourcing.",
+  "status": "proposed",
+  "supersedes": []
+}

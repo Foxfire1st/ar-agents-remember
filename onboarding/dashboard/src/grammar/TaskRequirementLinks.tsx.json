@@ -1,0 +1,87 @@
+{
+  "path": "dashboard/src/grammar/TaskRequirementLinks.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The listing client that feeds the context.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6804a766caa5f3a903d673cff23f59847af2df0b",
+            "content": "sha256:0ed99f9537aa1fff2a7ae2d08a565d1ea7feea88b13442cb9ee76489c71c0f12",
+            "locator": {
+              "kind": "symbol",
+              "name": "listRequirements"
+            },
+            "path": "dashboard/src/data/requirements.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The artifact target the `open` callback lifts.\n\nAnchor: `TaskArtifactReaderTarget`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f433d3c79bfc376fb5c5b05f30f881a81adced4d",
+            "content": "sha256:1a9d922d69816dce4e479ac405b4e6cb4057800b23d006c3c7f3e1443d80a695",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/taskArtifacts.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The markdown consumer that renders registered addresses as buttons.\n\nAnchor: `requirementAnchor`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a65bd4444779518a555e2e38d8ca30fa0df9f3a",
+            "content": "sha256:53c3c42e8e266135ca62efba2df1a04f8a772831910cd7c246fbadc4c9d3103e",
+            "locator": {
+              "end": 172,
+              "kind": "line_range",
+              "start": 170
+            },
+            "path": "dashboard/src/grammar/Markdown.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1a65bd4444779518a555e2e38d8ca30fa0df9f3a",
+            "content": "sha256:dbbcb27210f3e352d08d6ba242aaa61621f03500d95beccbb45dbe266bda2ae3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/grammar/Markdown.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`TaskPage` mounts the provider around the selected form and own view, deferring its document listing until body loading settles.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d25262c3e75cb900805602c122e9f8f6605ec733",
+            "content": "sha256:a96f3d35efcd85c17ab4c16a2e7fa07b22d425c40434835adcea6cb37545cd18",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 85
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

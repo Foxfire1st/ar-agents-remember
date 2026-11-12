@@ -1,0 +1,120 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/task-publication.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The example's own text for this part of the publication policy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "112ec2f30686e22560ceca1cac9281606a748605",
+            "content": "sha256:53db09a3552377633435b4ff8f336358e2a1b5301603c7d9e38af33a0e04e7fc",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 9
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The spine, and the issue-and-PR trigger for each change kind.\n\nAnchor: `Spine`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "112ec2f30686e22560ceca1cac9281606a748605",
+            "content": "sha256:ab4baf1471102102e650dee0ff01c1357420057b12bb45c024838bccc7c19c05",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The local landing flow is the landing itself, and its gates are given in one line: commit approval, one push approval, then the agent owns push, PR, checks, merge, cleanup and carryover.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "112ec2f30686e22560ceca1cac9281606a748605",
+            "content": "sha256:ab4baf1471102102e650dee0ff01c1357420057b12bb45c024838bccc7c19c05",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The example's own text for this part of the publication policy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "112ec2f30686e22560ceca1cac9281606a748605",
+            "content": "sha256:8bd6f65401452c011dca9370a052873fdcda5dd4b46a801138dfa4556ef3d8ce",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 81
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The example's own text for this part of the publication policy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "112ec2f30686e22560ceca1cac9281606a748605",
+            "content": "sha256:0b12ca4c055aa50d07dbda7d4acdba3f097be3aab2e7d99ee84556fbbe807fb0",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 110
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The example's own text for this part of the publication policy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "112ec2f30686e22560ceca1cac9281606a748605",
+            "content": "sha256:1e37f7b7b44aafc0be916aa730f8053a532ddc798ef02f90a7b6ae001ffe7391",
+            "locator": {
+              "end": 158,
+              "kind": "line_range",
+              "start": 147
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The `local` flow starts its worktree with `worktree_start` and points its commit gate and closeout to the l-01 closeout procedure.\n\nAnchor: `worktree_start`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "112ec2f30686e22560ceca1cac9281606a748605",
+            "content": "sha256:ab4baf1471102102e650dee0ff01c1357420057b12bb45c024838bccc7c19c05",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

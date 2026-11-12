@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-14T17:20+02:00 |
-| lastVerifiedCommitHash | `270704b86116728a64ada83ee258a0e7726206b4` |
-| lastVerifiedCommitDate | 2026-09-14T18:18:08+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [worktrees/modules overview](../overview.md)
@@ -104,33 +94,29 @@ diff base, export root, and optional memory cap.
 
 None.
 
-## Docs References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Only the admitted executable is resolved for the profile adapter. | `_resolve_executor`; `_executor_command` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:956-957; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:255-288 |
-| An unavailable admitted executor produces a typed prerequisite failure. | `_executor_prerequisite_failure` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:960-987 |
+### Docs References
 
-## Repo-Internal References
+- Only the admitted executable is resolved for the profile adapter. [1]
+- An unavailable admitted executor produces a typed prerequisite failure. [2]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The executor admits authority, materializes the candidate and executes the profile adapter. | "def run_clean_quality("; "def _prepare_sandbox("; "def _admit_prepared_profile("; "def _write_sandbox_manifest(" | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:151-244; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:344-392; mcp/src/agents_remember/worktrees/modules/quality/execution/sandbox.py:42-66; mcp/src/agents_remember/worktrees/modules/quality/execution/sandbox.py:122-170 |
-| Exported decoder bytes determine the pipeline result and whether certifying evidence exists. | `_publish_executor_outcome`; `_exported_pipeline_exit` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:291-341; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:399-412 |
-| Publish one immutable evidence generation, then atomically point readers at it. | "def _publish_reports" | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:446-541 |
-| Export inventory validation checks the declared report members before publication. | "def _validated_export_inventory" | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:544-565 |
-| Immutable generation identity includes the exported report inventory. | "def _generation_digest" | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:605-620 |
-| Mint from one caller-held immutable generation snapshot. | "def certifying_evidence_from_published_manifest" | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:742-773 |
-| One serialized acceptance firewall shared by lifecycle consumers. | "def require_published_quality_evidence" | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:776-788 |
-| The single report reader and pruner implementation live in the path owner. | `published_report_path_from_manifest`; `_prune_report_generations` | mcp/src/agents_remember/worktrees/modules/quality/report_publication_paths.py:86-116; mcp/src/agents_remember/worktrees/modules/quality/report_publication_paths.py:119-138 |
+### Repo-Internal References
 
-## Cross-Repo References
+- The executor admits authority, materializes the candidate and executes the profile adapter. [3]
+- Exported decoder bytes determine the pipeline result and whether certifying evidence exists. [4]
+- Publish one immutable evidence generation, then atomically point readers at it. [5]
+- Export inventory validation checks the declared report members before publication. [6]
+- Immutable generation identity includes the exported report inventory. [7]
+- Mint from one caller-held immutable generation snapshot. [8]
+- One serialized acceptance firewall shared by lifecycle consumers. [9]
+- The single report reader and pruner implementation live in the path owner. [10]
+
+### Cross-Repo References
 
 The external execution boundary is the profile-declared Dagger runtime; its declaration is resolved through the native platform boundary. This file does not define a separate cross-repository protocol.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The exact admitted executor and frozen authority determine the launch command. | `_executor_command` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:255-288 |
+- The exact admitted executor and frozen authority determine the launch command. [11]
 
 ## 260821-DAGQC-L2 And 260824-PDLS Historical Notes
 
@@ -141,56 +127,3 @@ fields, and evidence is minted only from a digest-verified passed generation.
 ## Current Landed Composition
 
 Selected execution carries `CodeCertificationExecution`, a current launch-authority callback and a selected-generation protection callback. It validates the explicit comparison base, reconstructs retained report transport for a suffix, and reopens launch authority only after sandbox/profile/manifest preparation completes. Selected execution without a launch callback refuses. Publication reobserves the selected generation set before pruning and validates that it is a frozen set of full generation digests. Sandbox profile/manifest helpers now live in `quality/execution/sandbox.py`.
-
-## Update History
-
-- 2026-09-14T17:20+02:00 — 260913-LCA-L3 (uncommitted change set on `ar/260913-lca-l3-ar`, base
-  `7317108b`): `_prepare_sandbox` now hands the runner one `GitRunnerOptions(work_dir=sandbox)`
-  object for the sandbox clone and one `GitRunnerOptions(input_text=staged)` object for
-  `git apply --index -`, instead of `work_dir=`/`input_text=` keywords. No content impact: this card
-  stated no `run_git` call form, so the sandbox materialization described above is unchanged. The
-  eight-line apply call grew the file by seven lines; every citation here was re-derived against the
-  current file, several of them already loose before the migration — `run_clean_quality`
-  149-242 → 151-244, `_prepare_sandbox` 342-383 → 344-392, `_publish_executor_outcome` 287-337 →
-  291-341, `_exported_pipeline_exit` 392-405 → 399-412, `_publish_reports` 437-532 → 446-541,
-  `_validated_export_inventory` 535-556 → 544-565, `_generation_digest` 596-611 → 605-620,
-  `certifying_evidence_from_published_manifest` 733-764 → 742-773,
-  `require_published_quality_evidence` 767-779 → 776-788, `_resolve_executor` 965-966 → 956-957,
-  `_executor_command` 253-284 → 255-288 (Docs, Repo-Internal and Cross-Repo rows alike) and
-  `_executor_prerequisite_failure` 951-978 → 960-987 — and `quality/execution/sandbox.py`
-  `_write_sandbox_manifest` re-cited to 121-169 → 122-170; verification metadata remains
-  closeout-owned.
-
-- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card claims against the frozen candidate source and repaired exact citation coordinates (_exported_pipeline_exit→392-405). Preserved claim prose; source-sha256=b05d8c7f20bba2073eaa98003bf820d01e443ae2edc9b9a6cfccd932b9b60959; verification metadata remains unchanged because commit-owned realization is pending.
-
-- 2026-09-06T22:41:21+00:00: Generated citation repair: `_executor_prerequisite_failure` repointed to mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:951-978. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
-
-- 2026-09-05T22:19+00:00 — L30 source review at `6e4ab81f6ae52bce35003377bb3aec7877554ed7`: Preserved selected certificate generations during publication, moved the shared reader/pruner ownership, corrected failed-generation versus certifying-evidence wording and refreshed source extents.
-
-- 2026-09-04T10:05+02:00 - 260831-CCR-L12 Gate-5 memory pass for cfd09381 (CCR-R12@v4): recorded the authority-bound executor cutover - `run_clean_quality` admits or reuses the host-level shared Dagger authority, writes the snapshot into the sandbox manifest, launches through the deterministic authority environment, releases the exact owner on terminalization, and publishes schema-v3.1 manifests carrying `runtimeAuthorityDigest`; re-anchored reference ranges to the current 1030-line layout.
-
-
-- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): rewrote the card for the repository-profile executor cutover. `CleanQualityRequest` now carries `repository_id`/`profile_reference`/mode; the module admits the candidate's own profile, runs the profile-declared Dagger adapter and decoder, and publishes a schema-v3 manifest with profile identity; the fixed report-inventory/constants model (EXPORTED_REPORT_NAMES, CODEX_VERSION, base/venv runtime proofs, `_resolve_dagger`) was replaced by declared published artifacts and `_resolve_executor`.
-
-- 2026-08-31T08:05+02:00 -- 260821-ARSPAWN-L5 A004 correction: recorded strict prior-pointer resolution, pre-pointer historical-generation validation/pruning with prior-live protection, and the invariant that atomic pointer replacement is the final publication operation.
-
-- 2026-08-31T04:50+02:00 -- 260821-ARSPAWN-L5 independent-review repair: documented recursive, allowlisted publication of the ambient E2E directory and staged-generation validation that prevents nested evidence from being silently discarded. Verification remains closeout-owned.
-
-- 2026-08-30T21:25+02:00 -- 260821-ARSPAWN-L5 refreshed the executor's exact Codex admission pin from 0.147.0 to 0.151.0 in lockstep with the certifying Dagger graph. Verification remains closeout-owned.
-
-- 2026-08-29T16:27+02:00 -- Added both canonical Python runtime proofs to the immutable recognized quality-report generation.
-
-- 2026-08-25T08:16+02:00 -- 260824-PDLS wave 004: moved this preserved sidecar with its behavior-preserving package split, repointed source evidence, and verified the emergency-landed source path at code commit `cb6623775a04cbdeb0509dc26f08a8268189c3f6`; this is onboarding provenance, not Dagger certification.
-
-- 2026-08-24T21:23+02:00 -- 260824-PDLS added phase export and the sole certifying evidence factory at verified publication altitude.
-- 2026-08-24T14:19+02:00 -- 260821-DAGQC-L2: unified report publication and recovery on the strict schema-1.0 manifest and one-snapshot artifact lookup. Verification metadata remains pinned until architect-owned closeout.
-
-- 2026-08-17T12:30+02:00 -- 260815-DAG-L5: report publication now carries an attestation; added `published_quality_attestation`. Verification remains closeout-owned.
-
-- 2026-08-14T06:36+02:00 -- L23 final candidate review: the Dagger executor starts a fresh attempt, makes two report projections share one authoritative result, bounds live output, prunes stale predecessor reports, and fails closed on status reads; no local runner remains.
-
-- 2026-08-13T08:40+02:00 -- L23 integration-gate repair: recorded that report promotion now routes through `kernel.atomic_write.atomic_replace` instead of calling `os.replace` directly. Verification metadata remains closeout-owned.
-
-- 2026-08-12T15:19+02:00 -- Created for L23's pinned, observable Dagger quality executor; verification provenance remains closeout-owned.

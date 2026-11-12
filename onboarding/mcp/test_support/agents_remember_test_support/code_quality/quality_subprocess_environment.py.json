@@ -1,0 +1,83 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/code_quality/quality_subprocess_environment.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The closed outer-only set and child filtering are explicit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24d87f3c6683cb6a7215173e66c75306dff0350c",
+            "content": "sha256:88db3904691122c92af63b6f11360d57c8ac86d203485e4633df6783f077fe73",
+            "locator": {
+              "kind": "symbol",
+              "name": "OUTER_INVOCATION_ONLY"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "24d87f3c6683cb6a7215173e66c75306dff0350c",
+            "content": "sha256:9a7adbdab6e7797feefe389286a2bc2b572aa3307a31661e48bfc97e7c54625d",
+            "locator": {
+              "kind": "symbol",
+              "name": "child_environment"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Child construction preserves semantics while setting checkout import roots and coverage output.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24d87f3c6683cb6a7215173e66c75306dff0350c",
+            "content": "sha256:26cf1075296c45797d96af0795ac74eefe99ba051f4d168f6684f304869e4879",
+            "locator": {
+              "kind": "symbol",
+              "name": "build"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Import roots are derived from product file/directory targets once.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24d87f3c6683cb6a7215173e66c75306dff0350c",
+            "content": "sha256:5fc475533e95ff1a2ab03de8e929d115be88e5b3687598f20672f7f789f3d992",
+            "locator": {
+              "kind": "symbol",
+              "name": "source_import_roots"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Focused forcing proves only outer controls disappear.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9164cf3539be59d2cf01e7cbef66cf8700d4e858",
+            "content": "sha256:0639a0778f5c529f2e287fe0c714e1628a21a2ab366a75c95d6cb324b28e1fa6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_outer_retry_controls_do_not_leak_into_candidate_tests"
+            },
+            "path": "mcp/tests/test_quality_subprocess_environment.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

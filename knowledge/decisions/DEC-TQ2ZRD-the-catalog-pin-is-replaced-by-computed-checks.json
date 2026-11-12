@@ -1,0 +1,75 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Keeping the pin and resolving its conflict by hand at every sync was weighed against computing the property, and every later change that adds a test file relies on there being no pinned value to update."
+  },
+  "alternatives": [
+    {
+      "option": "Remove the pinned digest and counts. Compute what the pin was for from the catalog (the production proof owns no artifact row and no contract), keep both catalogs in one canonical form that the loaders enforce, and let Git merge them by union.",
+      "reason": "It removes the line that every leaf had to change, so a sync no longer stops on it, and the property the pin was introduced for is checked directly instead of through a byte comparison that was re-measured at every change.",
+      "status": "chosen"
+    },
+    {
+      "option": "Keep the pin and resolve the conflict at every sync.",
+      "reason": "Every leaf that adds a test file changes the same constant and adds a paragraph beside it, so every sync of every open leaf stops and is resolved by hand; more than forty re-pins show that the value was re-measured each time and not reviewed, so the cost bought no protection.",
+      "reconsider_when": "A catalog change that the computed checks cannot see, namely a descriptive field of a row changed to another value that the loader's rules allow, causes a defect that a reviewed byte pin would have stopped.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "A change that adds a test file edits one lane line and runs the write command; no constant, count or note in a test file follows.",
+    "A change of a descriptive field of a catalog row to another value that the loader's rules allow is not made visible by a failing test; a reviewer reads it in the diff.",
+    "The proof-ownership check and the loader's coverage, contract and consumer checks are the protection; a union merge result is refused when it is not canonical, holds the line of a deleted file or does not parse."
+  ],
+  "context": "The helper test mcp/tests/test_dependency_ownership_ast_helpers.py pinned the evidence-lifecycle catalog: the SHA-256 of its bytes and two row counts. The pin had been added so that the production-chain proof could not register a fixture or a contract of its own. Any change that added a test file changed the catalog and therefore had to change the constant, and two open leaves always changed the same line. All six recorded syncs of the master stopped in the reapply of a leaf's work; the helper test conflicted six times and the lifecycle catalog four times. Under the constant stood 935 lines of dated re-pin notes, which had brought the file to 1,137 lines against a rail of 1,200. After more than forty re-pins the pin protected nothing: each leaf re-measured the value and wrote it down.",
+  "decider": "the architect of 260928-MIK run 2, under the developer's ruling D47 (2026-10-04); packet MIK-R51 v1",
+  "id": "DEC-TQ2ZRD",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-RVNFEZ"
+    },
+    {
+      "relation": "explains",
+      "target": {
+        "blob": "9da8563d8c8ebed194bc8de4eb27d292075930d0",
+        "content": "sha256:ab462a219a6b43c631a576386e3b5359414b2915b40246455e12cc5a04b20fb3",
+        "locator": {
+          "kind": "symbol",
+          "name": "proof_ownership"
+        },
+        "path": "mcp/tests/test_dependency_ownership_ast_helpers.py"
+      }
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R51",
+        "packet": "requirements/MIK-R51-v1-shared-test-catalogs-merge-without-conflict.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "requirements/MIK-R51-v1-shared-test-catalogs-merge-without-conflict.md (Problem section and rules 1 and 2); DEVELOPER-DIRECTION D47 (2026-10-04); notes/reports/260928-MIK-L51-review-R1.md (answer 1)"
+      ],
+      "path": "notes/reports/260928-MIK-L51-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R51@v1-pin-decision",
+    "leaf": "260928-MIK-L51",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

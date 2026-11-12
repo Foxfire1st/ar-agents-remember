@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_explainer_attempt_identity.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The current seat is the latest recorded attempt, so a stale attempt cannot speak for the seat, witnessed by test_latest_recorded_attempt_is_the_current_seat",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d7a848b5946ba65dcd0cefb4957571117e02dc6",
+            "content": "sha256:ccf92d2eab36febe0fcdcecbb788e43923b3c60fab50af3719b20979e1969c04",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_latest_recorded_attempt_is_the_current_seat"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

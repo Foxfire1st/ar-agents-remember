@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "family_guarantee"
+    ],
+    "justification": "The packaged serving copy is the surface the family's mirror guarantee now names, so this obligation is what states that guarantee."
+  },
+  "applicability": "Every canonical role, operation, criteria and onboarding text the tool server ships to a harness.",
+  "conditions": [
+    "skills/ is the authoring source; mcp/src/agents_remember/package_data/runtime/skills is its generated serving copy, refreshed by scripts/sync-skills.py.",
+    "SystemSpecialist text stays retired.",
+    "No shipped first-read text uses assignment_read.",
+    "No harness installs a copy of the skills: the generated-copy declaration names one target for source skills, and the retired sync and starter renderers are gone."
+  ],
+  "exclusions": [
+    "Hand-edited package copies.",
+    "Resurrected retired role text.",
+    "Lifecycle rerouting or role resets by propagation."
+  ],
+  "id": "INV-NNQR91",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/role-launch/260928-MIK-L71-worker-d508f3cc-d109-host-readers/source-current-a1b7/source26-public-sync/generation15-five-pin-successor/expanded-evidence.md"
+      ],
+      "path": "l71-handoff-list.json"
+    },
+    "handoffEntry": "L71-CURRENT242-W-19",
+    "leaf": "260928-MIK-L71",
+    "task": "260928-MIK"
+  },
+  "revision": 3,
+  "schema": "ar-invariant/v1",
+  "statement": "Canonical skills are authored in skills/ and propagated to the package-owned runtime skills tree for resource serving and capsule compilation, without installed harness mirrors.",
+  "status": "proposed",
+  "supersedes": []
+}

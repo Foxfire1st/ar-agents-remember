@@ -1,0 +1,31 @@
+{
+  "basis": "Host preparation writes the paseoRuntime block of the active MCP settings file before a seat exists, and the ordinary setup conversation is a single user talking to one seat.",
+  "id": "ASM-PPRW7G",
+  "links": [
+    {
+      "relation": "conditions",
+      "target": {
+        "blob": "792cf6ab378a93556fa2f8158e47c1f2aff5b46a",
+        "content": "sha256:57fdc15bf87fdf15c0392626a326e330c4d51b76bdd279bb3b26fe504c91e352",
+        "locator": {
+          "end": 164,
+          "kind": "line_range",
+          "start": 164
+        },
+        "path": "docs/reference/settings-json.md"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "handoff-draft.json"
+    },
+    "handoffEntry": "bd0f278e single-Bootstrap assumption",
+    "leaf": "260928-MIK-L188",
+    "task": "260928-MIK"
+  },
+  "proposition": "Setup assumes one Bootstrap seat at a time, so two concurrent writers of the host-authority settings file are unsupported.",
+  "revision": 1,
+  "schema": "ar-assumption/v1",
+  "status": "accepted"
+}

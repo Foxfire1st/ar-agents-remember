@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_review_persisted_native.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Native recorded trees prove persistence, and every external-input invalidator is proved against them",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a67020933f2fc3967a8c131c3eb9ee0f7a97d920",
+            "content": "sha256:116c6197ee3891dd474b45da1dc5c1bd6279c0c4efed3c4d8708b7f1bdf86ffa",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_real_recorded_main_is_reused_by_a_fresh_owner"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Keeping legacy refusal detail in the whole result while excluding obsolete ledger/drift fields from its answer prevents callers from treating a refused legacy adoption as an initialized onboarding baseline."
+  },
+  "applicability": "memory_baseline_adopt_payload when whole.state equals legacy-format. This is a truthful refusal projection and does not convert or adopt legacy input.",
+  "conditions": [
+    "The completed baseline-adoption result state is legacy-format.",
+    "The unchanged full result is still passed to the whole-result boundary."
+  ],
+  "exclusions": [
+    "Changing or accepting legacy memory.",
+    "Applying the legacy-only compact projection to a successful converted baseline result."
+  ],
+  "id": "INV-5X9WH6",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "scratch/curator/b5e6f7a8-9c01-4d23-8e45-f6a7b8c9d012/helpers/backend/post-L194-source-equivalence.json; semantic-recommendations.json; MIK-R204 preservation of compact answers and legacy refusal"
+      ],
+      "path": "L183-current-guarantees-and-proofs-W9"
+    },
+    "handoffEntry": "L183-legacy-baseline-answer",
+    "leaf": "260928-MIK-L183",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A memory-baseline adoption refusal for legacy format keeps the full result for whole-result logging while its compact answer excludes onboarding_root, ledger_path, drift and ledger fields; other baseline answers keep their existing projection.",
+  "status": "proposed",
+  "supersedes": []
+}

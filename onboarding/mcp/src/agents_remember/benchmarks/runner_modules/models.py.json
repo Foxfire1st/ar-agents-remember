@@ -1,0 +1,56 @@
+{
+  "path": "mcp/src/agents_remember/benchmarks/runner_modules/models.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The public benchmark facade re-exports this module's public functions and classes for compatibility.\n\nAnchor: `models`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9fe21bfe0097d04bda1dd5d0436b8962d1f188c2",
+            "content": "sha256:c65ccd41a316bfe3fa1821ad99a71f7fac96de11bf7dd735a44c9757b7627f6e",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "mcp/src/agents_remember/benchmarks/runner.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The shared preparation object, without a skill-exposure mode.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68fa770e00e655744392f47267813de7377753af",
+            "content": "sha256:1d811397a9dc2063a16d5d1973b935205bb662d77ad76e6082cacb1aa33b7314",
+            "locator": {
+              "kind": "symbol",
+              "name": "BenchmarkPreparation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Current source account and its stated boundaries.\n\nAnchor: current source",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68fa770e00e655744392f47267813de7377753af",
+            "content": "sha256:9000011a19f052249d5ba5eb1d1a059f587f8589f274c52099f0fdbaa49f02b3",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

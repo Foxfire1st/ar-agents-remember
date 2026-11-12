@@ -1,0 +1,38 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "A future recovery must not turn failed reads into current anchors or rebind stale content. Moved, stale, unreadable and anchorless test assertions directly distinguish these states and verify no input mutation."
+  },
+  "applicability": "Official-code currentness of every selected carryover sidecar anchor.",
+  "conditions": [
+    "Plan observes realizes, proves and code/test-reference anchors using the selected official code tree.",
+    "Current moved content is re-recorded at apply only if mapped_anchor preserves the content identity.",
+    "Stale/unverifiable/read-failed anchors name their entry/reference and require explicit review."
+  ],
+  "exclusions": [
+    "Source HEAD and ambient worktree bytes cannot substitute for the selected official tree.",
+    "All-current anchors are not by themselves sufficient to auto-select a memory-only document; unchanged-target-since-base remains separate.",
+    "Explicitly reviewed noncurrent anchors may be retained unchanged for the curator/worklist/validator; review is not mechanical reanchoring or validator waiver.",
+    "Currentness does not enlarge the recorded-blob reader guarantees INV-RANN4DC0/INV-1RWT3JRR."
+  ],
+  "id": "INV-1CS8DN",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/worker/07e36231-0b63-422c-b9dc-59ca0e3d6b24/role-launch/L56-generation3-code-freeze.md",
+        "Frozen generation3 source inspection; no new execution or acceptance."
+      ],
+      "path": "generation3-new-source-proved-invariants.json"
+    },
+    "handoffEntry": "MIK-R56@v1 PartB §8",
+    "leaf": "260928-MIK-L56",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Every candidate anchor is observed at official code; moved identical content is re-recorded, and stale or unverifiable anchors require review.",
+  "status": "proposed",
+  "supersedes": []
+}

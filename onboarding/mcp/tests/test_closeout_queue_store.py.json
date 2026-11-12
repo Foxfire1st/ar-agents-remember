@@ -1,0 +1,55 @@
+{
+  "path": "mcp/tests/test_closeout_queue_store.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Effective read preserves artifact diagnostic and refuses source mismatch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "05621d8696c4b79695f31408d833f5866fd392b8",
+            "content": "sha256:af8e3ad7d28e08f2e89aaadea81e831c0135bb879bea4c3ad0764fa34fcd2b6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_effective_read_preserves_artifact_diagnostic_and_refuses_source_mismatch"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Stale off side builder never publishes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "05621d8696c4b79695f31408d833f5866fd392b8",
+            "content": "sha256:223b360b43a5f883b208d24c70943137cdb9473ff5bbf8684c731296ed448a33",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_stale_off_side_builder_never_publishes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Source unreadability keeps canonical state non admitting.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "05621d8696c4b79695f31408d833f5866fd392b8",
+            "content": "sha256:6416ba111bcded2e4d99077a8ec719ee7baf2fd0f69f5370eb6fc8aee03536ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_source_unreadability_keeps_canonical_state_non_admitting"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_public_evidence.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_public_evidence.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T00:53 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Governing route overview](overview.md)
@@ -40,42 +30,27 @@ Pure classifiers return typed observations; mutation owners publish write-ahead 
 
 None recorded beyond the explicit terminal-archive boundary recorded by the governing overview.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured for this slice. The current behavior is repository-owned and is supported by the source references below.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured external source applies. | — | — |
+No configured external source applies.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The following current source boundaries establish the ledger-retirement behavior.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `MigratedLifecycleClassification` reports proven code and memory output without a ledger-proof field. | `MigratedLifecycleClassification` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_public_evidence.py:24-57 |
-| `classify_migrated_lifecycle` classifies the retained migration proof without inventing new outputs. | `classify_migrated_lifecycle` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_public_evidence.py:117-126 |
+- `MigratedLifecycleClassification` reports proven code and memory output without a ledger-proof field. [1]
+- `classify_migrated_lifecycle` classifies the retained migration proof without inventing new outputs. [2]
 
 The source file is the direct evidence for this file-specific ownership boundary.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module defines `PublicEvidencePair`; `MigratedLifecycleClassification`; `public_lifecycle_evidence_pair` as its public seam. | `PublicEvidencePair` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_public_evidence.py:15-18 |
+- The module defines `PublicEvidencePair`; `MigratedLifecycleClassification`; `public_lifecycle_evidence_pair` as its public seam. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository boundary is owned by this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No additional cross-repository evidence applies. | — | — |
-
-## Update History
-
-- 2026-09-15T00:53 UTC — LCA-L9 working-candidate curation: retired ledger Git authority in this file-specific boundary; preserved real Git and lifecycle safeguards and prior history. Source and diff reviewed, source-sha256=f033ea2db12ac48e27df0ea5b08205fc1757e9901bbd327f89f55133ab781bd2. Existing verification commit/date remain unchanged until an actual source commit is available; no test or acceptance claim.
-
-
-- 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: moved this preserved sidecar to mirror `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_public_evidence.py`, repointed current source evidence and governing context, and verified the source at code commit `1d446724d099517f6f52d596b47827ae2391a2a4`.
-
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: created from the accepted full L2 candidate. Verification fields remain blank until the architect-owned closeout has a real code commit to stamp.
+No additional cross-repository evidence applies.

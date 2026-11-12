@@ -1,0 +1,739 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L176",
+  "rows": [
+    {
+      "disposition": "updated",
+      "id": "ROW-0PQMDR",
+      "items": [
+        "sha256:0be384b3b24740bb923c640b8d67e911d930c7471024062dadd14729d7255a40"
+      ],
+      "reason": "The entity-refresh paragraph said membership was limited to rows touching a changed path and values were computed at HEAD; both were made untrue by this leaf and are corrected. It now separates the unconditional check from the plan-bound ones: every catalog row is asked for absent evidence, while an unsupported algorithm and a missing fingerprint value are diagnosed only for the rows the plan reports, and an edited or new row is in scope even when no changed path touches it. The value is over the code commit's tree, and the route-index half and the curator's read-only finding are named beside it.",
+      "sources": [
+        {
+          "blob": "19659a8152534b0927a9d2298a478ff3b25bff56",
+          "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/onboarding.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-190GY3",
+      "items": [
+        "sha256:50462c098dd0a8a994b53c7f92ddfb60469d209efdeae8dd60afeac05bf696ba"
+      ],
+      "reason": "The overview states that contract-scoped memory quality measures the admitted pair, publishes its full checklist and evaluates converted worklist/gate policy, and that the controller owns the complete finding populations. A new finding source inside that checklist neither changes the route's purpose nor makes any statement here untrue; the finding's account belongs to the controller card.",
+      "sources": [
+        {
+          "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+          "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1BQK7M",
+      "items": [
+        "sha256:14cacdbfb8d5bf8cb31e69290be764c512301427fbf3b3d28a05079ff04ee181"
+      ],
+      "reason": "The contract-level wrapper now passes the leaf's memory base into the context planner and delegates to it. The plan's rules and the promise are the context function's, which the recompute invariant records.",
+      "subject": "hunk:sha256:14cacdbfb8d5bf8cb31e69290be764c512301427fbf3b3d28a05079ff04ee181"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-1J9JF6",
+      "items": [
+        "sha256:41836c1eddbeeed5fb17b43345d38a4045047b3f3aed1621ae2e595b43951d57"
+      ],
+      "reason": "The overview states that closeout asks the candidate gate before claiming approval, validates and gates the exact converted memory output, and gates recovered memory. Asking more inside that same candidate verdict keeps every one of those statements true; the constructs and the refusal text are the module cards' account.",
+      "sources": [
+        {
+          "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+          "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+        },
+        {
+          "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+          "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+        },
+        {
+          "blob": "19659a8152534b0927a9d2298a478ff3b25bff56",
+          "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-21V22F",
+      "items": [
+        "sha256:5e87926a24936c5c709fb9222098360cfbefef68a752360ab51534661b10dc2b"
+      ],
+      "reason": "INCOMPLETE_CODE is imported so an unreadable candidate becomes one named incomplete finding rather than an empty pass.",
+      "subject": "hunk:sha256:5e87926a24936c5c709fb9222098360cfbefef68a752360ab51534661b10dc2b"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R178",
+          "packet": "260928_maintained-invariant-knowledge/requirements/MIK-R178-v1-the-closeout-refuses-a-memory-fault-before-it-commits-the-code.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "b78058d621db878326cd27504300bd707ba9fffb",
+            "content": "sha256:5908da2724700646b83b9a401c7fbf263bf7f4d68fdc53ccacd856ff60f21b33",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_re_pointing_a_kept_row_lets_that_leaf_close_out"
+            },
+            "path": "mcp/tests/test_mik_r178_closeout_memory_fault_preflight.py"
+          },
+          "before": "absent",
+          "id": "PRF-C6TVBX"
+        },
+        {
+          "after": {
+            "blob": "b78058d621db878326cd27504300bd707ba9fffb",
+            "content": "sha256:6bff74a0b1c7040b5cb20f30af2963f92012de5ab7b3401be003372ba45ea146",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_deleted_evidence_path_stops_the_preview_and_the_preflight_before_the_code_commit"
+            },
+            "path": "mcp/tests/test_mik_r178_closeout_memory_fault_preflight.py"
+          },
+          "before": "absent",
+          "id": "PRF-CQV6NP"
+        },
+        {
+          "after": {
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:5294aa5786f684669c8cd1b735ec12b7a227be127bf85ee98de9ba85c2adfce2",
+            "locator": {
+              "kind": "symbol",
+              "name": "candidate_gate_verdict"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "before": "absent",
+          "id": "RLZ-GHCQ9T"
+        },
+        {
+          "after": {
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:114c7734fd039866458154c2993f9471f0cde61c7e1beff80d8e65761105932b",
+            "locator": {
+              "kind": "symbol",
+              "name": "closeout_changed_paths"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "before": "absent",
+          "id": "RLZ-Y8WVW1"
+        },
+        {
+          "after": {
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:eec23d0a589b6e08051d8a5982c568e5dc3410d87da42d6acb66aa6e6716f015",
+            "locator": {
+              "kind": "symbol",
+              "name": "candidate_memory_refresh_refusal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "before": "absent",
+          "id": "RLZ-YWJVBC"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "strengthen",
+      "id": "ROW-257VXC",
+      "items": [
+        "sha256:5bc505d439c89837c73a9522a5335e5be543765265593150134320b1d37dc31c"
+      ],
+      "reason": "The candidate verdict the preview and the apply's preflight read now asks the memory refresh's own refusals beside the invariant gate, so a leaf that deletes a file an entity row cites is refused before the approval claim and before the code commit rather than after it. The extension is MIK-R178@v1 rule 1 over the sentence that already stated the candidate gate; the commit order, the exact-tree gate, the recovery, integration and recorded-landing duties are unchanged. The code evidence is the Reviewer's L176-R2 verdict on the graded A2 object (tree 4b6c964149a5119ebc1f9bbf340a2e7646ab1a65 over base 05aaec0513ddbe5396aea447aa9e468fcd6a2291); the Manager's sync and composition ruling, with the eight leaf paths byte-identical across it, is the authority for carrying that verdict to this pair (composed tree a8ba842bccf56bdf0c157059a527ef8fef020d4b over 04729d84383a6787afe84ed33183fdc457a20f6e). The Reviewer did not grade the composed whole tree, and this row does not say it did. Evidence (L176-INV-HWAWFT): test_a_deleted_evidence_path_stops_the_preview_and_the_preflight_before_the_code_commit and test_re_pointing_a_kept_row_lets_that_leaf_close_out, plus the retained R1 publication-order and exact-memory controls; the Reviewer accepted MIK-R178@v1 against this exact tree in L176-R2-verdict.md.",
+      "revision": 5,
+      "subject": "INV-HWAWFT"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2GZ3HB",
+      "items": [
+        "sha256:23143a4a7947eadc7c6e95f4d82ec5181b48d85d3c7ac2aa6ff63462bde5c174"
+      ],
+      "reason": "The unconditional skip is deleted because scope is now decided by one condition that also keeps a row whose evidence list differs from the leaf's memory base or which is new, so the row the old line skipped is no longer skipped. The deletion carries no obligation of its own.",
+      "subject": "hunk:sha256:23143a4a7947eadc7c6e95f4d82ec5181b48d85d3c7ac2aa6ff63462bde5c174"
+    },
+    {
+      "considered": [
+        "FAM-61DY2V"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-2SV98T",
+      "items": [
+        "sha256:cdc528d45d96fe98d097b436121e7a210bf27f19a55caf8ee6feea69aaffdcbc"
+      ],
+      "reason": "The family's guarantee is about publishing only the admitted tree. Which rows the refresh recomputes and at which tree it reads their values is an input condition of the closeout's memory leg, not a member promise; the family was examined and declined.",
+      "revision": 1,
+      "subject": "membership:INV-B1AEEG"
+    },
+    {
+      "considered": [
+        "FAM-61DY2V"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-38NWSV",
+      "items": [
+        "sha256:a799907ebf51d359db934f7c03093b4757670f66d6803c9f0274f37cedab6bcf"
+      ],
+      "reason": "The family's guarantee covers judging and publishing the exact memory tree and its hook. Failing the closeout before the code commit when the route-index refresh cannot read its inputs is a candidate-verdict duty stated by INV-HWAWFT, not a separate joint promise of the family.",
+      "revision": 1,
+      "subject": "membership:INV-PRT9AA"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4NDG7F",
+      "items": [
+        "sha256:0a77d791a2a77dd1394073adefcd9b15882734fed0803a777e884caaaa76150b"
+      ],
+      "reason": "The card's worklist paragraph said this module owns closeout_changed_paths. The reader moved to closeout_external beside the candidate verdict that must judge the same worklist, and the card now says so while keeping the computation and the two tiers unchanged.",
+      "sources": [
+        {
+          "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+          "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/closeout.py"
+    },
+    {
+      "considered": [
+        "FAM-61DY2V"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-4RTENN",
+      "items": [
+        "sha256:f335baf3288d104c06724a2c149462997c2c2c2861b4f157e154a2351853e3e2"
+      ],
+      "reason": "The family's guarantee covers judging the exact prepared tree and publishing only it. Checking every catalog row against the candidate tree is a condition the closeout's own refresh must satisfy before that tree exists for judgment; it is not what the family's members jointly promise, so it stays outside it after examination.",
+      "revision": 1,
+      "subject": "membership:INV-0723AN"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7PXD2W",
+      "items": [
+        "sha256:851a897f9321e22a2538e76936c02be37e79d0e4c39079c564ce2668f73deb61"
+      ],
+      "reason": "The added line registers the new test module in the existing unit-regression lane. The lane definition is unchanged.",
+      "subject": "hunk:sha256:851a897f9321e22a2538e76936c02be37e79d0e4c39079c564ce2668f73deb61"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9CBC9M",
+      "items": [
+        "sha256:8918309612b8d1cb95c94b95993793a4fe1fc49395211b132c26783f243aab8d",
+        "sha256:a46c36d357ae9b6b629313ec533bf06616dfad167daeb436cbb53cbf2fdbd5fb",
+        "sha256:b02d089c363d378d31ca3202b0bc89c492936d8338acaf621cb4360d6fe54a46"
+      ],
+      "reason": "The card's fixture convention said _public_preview stubs only the enclosure admission, the operation journal and a remote's branch authority. Since the candidate verdict's memory-refresh check resolves its own context through closeout_external, the preview stub set now includes that module's contract_context, and the card names the third seam.",
+      "sources": [
+        {
+          "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+          "path": "mcp/tests/test_knowledge_reopen.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_knowledge_reopen.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9GABSF",
+      "items": [
+        "sha256:dce8ab367ad3269eb7d22bcf0a6508e82bfc65b998cce97368b6f16193bb177f"
+      ],
+      "reason": "The catalog path is no longer read from the first planned row's onboarding file; one helper names the catalog independently, which is what lets every row be checked when nothing is planned. The deleted line carries no obligation of its own.",
+      "subject": "hunk:sha256:dce8ab367ad3269eb7d22bcf0a6508e82bfc65b998cce97368b6f16193bb177f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-A06HNC",
+      "items": [
+        "sha256:19ef066178401800946b3e1be2872966b665c98f2ea7162b65cdb76443120e74"
+      ],
+      "reason": "The second removed import belongs to the same move: the worklist reader's two Git calls left this module with it.",
+      "subject": "hunk:sha256:19ef066178401800946b3e1be2872966b665c98f2ea7162b65cdb76443120e74"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-AS074T",
+      "items": [
+        "sha256:4e26e0cab290f45949d1b20508df7492c2f2aef8364329f9f912991d36aad3e6"
+      ],
+      "reason": "worktree_candidate_tree is imported so the curator's finding is measured against the leaf's own uncommitted candidate, the same capture the closeout commits.",
+      "subject": "hunk:sha256:4e26e0cab290f45949d1b20508df7492c2f2aef8364329f9f912991d36aad3e6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-AW2TSW",
+      "items": [
+        "sha256:f32c5bc7b1a857d93c4614c9316bbd5ff540be83fa11b40f1dbf0041d5ebebae"
+      ],
+      "reason": "The added import brings entity_evidence_findings_for_candidate into this module so the curator checklist can extend its repair findings. The finding is the entity-evidence invariant's and the population claim is the memory-quality family's; an import carries no promise of its own.",
+      "subject": "hunk:sha256:f32c5bc7b1a857d93c4614c9316bbd5ff540be83fa11b40f1dbf0041d5ebebae"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0T84PZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-0XMNQZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-2Q8RPR",
+          "revision": 4
+        },
+        {
+          "id": "INV-49E649",
+          "revision": 5
+        },
+        {
+          "id": "INV-656CYW",
+          "revision": 2
+        },
+        {
+          "id": "INV-89A5AN",
+          "revision": 1
+        },
+        {
+          "id": "INV-9ZBTVA",
+          "revision": 1
+        },
+        {
+          "id": "INV-ANKPPE",
+          "revision": 1
+        },
+        {
+          "id": "INV-BEYEV2",
+          "revision": 1
+        },
+        {
+          "id": "INV-D2HZQ8",
+          "revision": 1
+        },
+        {
+          "id": "INV-FYZQK0",
+          "revision": 1
+        },
+        {
+          "id": "INV-G0Y4VR",
+          "revision": 2
+        },
+        {
+          "id": "INV-GSEMMW",
+          "revision": 3
+        },
+        {
+          "id": "INV-HR2JKQ",
+          "revision": 1
+        },
+        {
+          "id": "INV-HWAWFT",
+          "revision": 5
+        },
+        {
+          "id": "INV-KTMBMN",
+          "revision": 1
+        },
+        {
+          "id": "INV-MS9BMJ",
+          "revision": 4
+        },
+        {
+          "id": "INV-N5RBFK",
+          "revision": 1
+        },
+        {
+          "id": "INV-WV1YQE",
+          "revision": 3
+        },
+        {
+          "id": "INV-XN0FG8",
+          "revision": 3
+        },
+        {
+          "id": "INV-YZ45D7",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZGFZXT",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-BB14QN",
+      "items": [
+        "sha256:f6d4c0ac45bdb82698d5085de83eb637ee94d031d8845f4a05b146f04fc265f6"
+      ],
+      "reason": "The family's joint guarantee is about judging the exact prepared memory tree, committing only it, keeping the pre-commit hook faithful and rejudging pairs before refs move. This leaf extends one member's promise, INV-HWAWFT, at the candidate verdict — the only member whose promise moves. The family grew by one member during this leaf's base sync: INV-HR2JKQ, a leaf publication validating every item of its own newly published history, with the history-item and re-anchor checks sharing one checked_history_files scope. I examined it at its revision 1: this leaf publishes its own history file and adds no history-checking rule, so that guarantee judges this leaf's output without being changed by it. The guarantee, the routes and the other twenty-one members are unchanged, and every member was examined at the composed candidate.",
+      "revision": 7,
+      "subject": "FAM-61DY2V"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BY0G04",
+      "items": [
+        "sha256:84f85404edb9dd5695fca1768470ce4b3e5ff78bfeb670751dbfb569fff68b5f"
+      ],
+      "reason": "subprocess is imported so an unexpected Git failure raised while reading a tree can be caught and reported with its step and identity.",
+      "subject": "hunk:sha256:84f85404edb9dd5695fca1768470ce4b3e5ff78bfeb670751dbfb569fff68b5f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-C1S0PQ",
+      "items": [
+        "sha256:4c12fe5e5e7747ece13f0f8e6efe3d75b38bec83622fdd30e975060ab7cf5cd3"
+      ],
+      "reason": "The refresh call site now passes the code commit and the leaf's memory base into refresh_entity_fingerprints_for_context, so the recompute reads the code commit's tree and can compare a row with the base. The call supplies inputs; the promise is the recompute invariant's.",
+      "subject": "hunk:sha256:4c12fe5e5e7747ece13f0f8e6efe3d75b38bec83622fdd30e975060ab7cf5cd3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ENTDFM",
+      "items": [
+        "sha256:f8605caa0bf667240c8629e5f87dd2380829a73a511736c82d733109a7c1f9ec"
+      ],
+      "reason": "This import brings the route-index refusal check into the verdict, which is what lets the route-index leg be asked before the code commit.",
+      "subject": "hunk:sha256:f8605caa0bf667240c8629e5f87dd2380829a73a511736c82d733109a7c1f9ec"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-EZ7A5D",
+      "items": [
+        "sha256:924c60c1980586f6acbcd2ff6b18059d62dadd600f3174423d8fed8177a532d8"
+      ],
+      "reason": "The card's checklist account now names the entity-evidence source with its real counting unit: one actionable finding per (entity row, absent evidence path), so a row with two absent paths yields two findings, and a candidate Git cannot read is one separate incomplete finding. That is the only behaviour this leaf adds here.",
+      "sources": [
+        {
+          "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+          "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/memory_quality/controller.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FPKNBC",
+      "items": [
+        "sha256:920c2f0aa3865788a7dcb3f98d8fbafdddbbc3d0a188ab5cf5ade239636a887e"
+      ],
+      "reason": "The worklist reader now lives here, so this module imports the two Git readers it needs: the changed working-tree paths and the unverified committed range. The tiers and their union are unchanged.",
+      "subject": "hunk:sha256:920c2f0aa3865788a7dcb3f98d8fbafdddbbc3d0a188ab5cf5ade239636a887e"
+    },
+    {
+      "considered": [
+        "FAM-DGPZ0R"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-GFT8V0",
+      "items": [
+        "sha256:eb687c67afa4d48dd27dda0e4eb40fca6486614aa51c07201d68c0e1131e28cc"
+      ],
+      "reason": "The memory-quality family's guarantee is about the bounded gate, its worklist/handoff duties and its attestation. This invariant is a finding the curator checklist publishes for one entity row, which no member of that family promises; the family was examined and the invariant stays outside it.",
+      "revision": 1,
+      "subject": "membership:INV-0QW95B"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-GT5Z53",
+      "items": [
+        "sha256:828a018329cd24740befe088723f1beac384f9b1a30ac4f66b862792cc1c729a"
+      ],
+      "reason": "A new card records the twelve-case module: the deleted-evidence and unreadable-cache refusals before either commit, the recompute over the code commit's tree, the curator's actionable finding, the compound-row refusal and its controls, and that the module's cases are source-level regressions and not a run.",
+      "sources": [
+        {
+          "blob": "b78058d621db878326cd27504300bd707ba9fffb",
+          "path": "mcp/tests/test_mik_r178_closeout_memory_fault_preflight.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_mik_r178_closeout_memory_fault_preflight.py"
+    },
+    {
+      "considered": [
+        "FAM-61DY2V"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-HGMRD5",
+      "items": [
+        "sha256:4ea7feb219530683ca6771451ca3dc21da9551b78e0fd25983af593306e2de60"
+      ],
+      "reason": "The refusal-content promise is about what a closeout refusal must say about an entity row. The gated-leaf-publication family's guarantee is about publishing only the admitted tree through the validator, the gate and the hook; it says nothing about the content of a refusal, and no member promises that. The family was examined and declined.",
+      "revision": 1,
+      "subject": "membership:INV-1ZQS29"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-JYFKBM",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "This file registers which lane runs which test module. The change adds the new module to the existing unit-regression lane and alters no lane definition, so the card's account of the file stands.",
+      "sources": [
+        {
+          "blob": "992d0b544ec034eb19f6958e1b731606651eacd0",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "considered": [
+        "FAM-61DY2V"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-K8894A",
+      "items": [
+        "sha256:ccee1f730f5f60fea3a5ebbe65e803435a03ff1b7d895e3b95b2733569f1bb6c"
+      ],
+      "reason": "The preservation promise says an add-only closeout behaves as before and an untouched row keeps its value. That bounds a change rather than adding to the family's joint guarantee, so after examining the family the invariant stays outside it.",
+      "revision": 1,
+      "subject": "membership:INV-8RRWT2"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KJXMPC",
+      "items": [
+        "sha256:7f39decba3a8e7a1ac1e8c7c6dfd4ed22b7001ff57ef4021573934561b805a64"
+      ],
+      "reason": "TemporaryDirectory is imported to capture the leaf's own candidate tree for the curator's read-only entity-evidence check without touching the worktree's index.",
+      "subject": "hunk:sha256:7f39decba3a8e7a1ac1e8c7c6dfd4ed22b7001ff57ef4021573934561b805a64"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-M5C1VP",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "This file registers which evidence consumers a lifecycle rule covers. The change adds the new test module to five existing consumer lists and alters no rule, so the card's account of the file stands.",
+      "sources": [
+        {
+          "blob": "679a1bdc679fec2f6dd9b4dda35fa3fc323dd9a2",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "content": "sha256:9e419dfdd31128ccf5ceac3e59beb60b4635163009e3fb334f5fa77592dc182c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_attach_curator_checklist"
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "before": {
+            "blob": "77f4c105452024a11b381921b945b76a3df028d5",
+            "content": "sha256:593f4ad5285df1aea3055ea3f09711dc4b694f1106383720c7bff7fa2022ebdf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_attach_curator_checklist"
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "id": "RLZ-CA2R2G"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-MVXCJ8",
+      "items": [
+        "sha256:561077ba66a7aebd0a58160965e1881b55d6c152ff29afa538a5da9492039ce4"
+      ],
+      "reason": "The invariant is about the memory-quality onboarding gate building its onboarding_trace items from the worklist run's own identical-copy groups and about the closeout judging those items through the memory-quality attestation. This leaf adds an entity-evidence finding to the same checklist, which is a different finding source and does not change how trace items are grouped, raised or judged.",
+      "revision": 2,
+      "subject": "INV-0APWSR"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NA0A2H",
+      "items": [
+        "sha256:dc3b0b72905d3cbe8c95a46107db287887fae96f28ff0e074a7314036429b6db"
+      ],
+      "reason": "run_git is imported so the candidate tree's path set and each <tree>:<path> probe are read through the repository's own Git runner.",
+      "subject": "hunk:sha256:dc3b0b72905d3cbe8c95a46107db287887fae96f28ff0e074a7314036429b6db"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:5294aa5786f684669c8cd1b735ec12b7a227be127bf85ee98de9ba85c2adfce2",
+            "locator": {
+              "kind": "symbol",
+              "name": "candidate_gate_verdict"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "before": {
+            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+            "content": "sha256:ce55dd2516d0d591615ce8e01cf27a2faddb5fd4999021481af5f1a6dd4b0936",
+            "locator": {
+              "kind": "symbol",
+              "name": "candidate_gate_verdict"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "id": "RLZ-SR7CGW"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-PQFEZV",
+      "items": [
+        "sha256:d658203ec6edb5827f23f4987b26ce0e9d4eba364ef5a7e0f21df48c60d5df37"
+      ],
+      "reason": "The invariant is about the preview and the apply's preflight reading one verdict over the same two trees, and that is unchanged: the preview still refuses with the apply's findings, asks for no commit approval and offers no apply. What the verdict now also asks is the memory refresh's refusals, which is INV-HWAWFT's extension and is recorded there; the realization sets on closeout.py, closeout_external.py and test_knowledge_reopen.py were re-anchored by the citation repair without changing this promise.",
+      "revision": 3,
+      "subject": "INV-WV1YQE"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SPS3GZ",
+      "items": [
+        "sha256:28fda194462d3238b6c02d19d0b97f6f2b21145085e356676322a68fd5c62713"
+      ],
+      "reason": "This import follows closeout_changed_paths to closeout_external, where the candidate verdict and the memory refresh judge one worklist reader. Both preview and apply still consume the same worklist, so the import changes no behaviour.",
+      "subject": "hunk:sha256:28fda194462d3238b6c02d19d0b97f6f2b21145085e356676322a68fd5c62713"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0APWSR",
+          "revision": 2
+        },
+        {
+          "id": "INV-2FA2B5",
+          "revision": 2
+        },
+        {
+          "id": "INV-7V4K9G",
+          "revision": 2
+        },
+        {
+          "id": "INV-HGJNDG",
+          "revision": 2
+        },
+        {
+          "id": "INV-HYZSDK",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-T1FY81",
+      "items": [
+        "sha256:e868f592dbc021b5311a7fedf6dfefac7eb74130148f6558da4b403e4e6fc9f4"
+      ],
+      "reason": "The family's joint guarantee covers the memory-quality gate's bounded state and its worklist/attestation duties. This leaf adds a finding source to the curator checklist and changes no member's promise; the guarantee, members and routes are unchanged, and every member was examined at the composed candidate.",
+      "revision": 2,
+      "subject": "FAM-DGPZ0R"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TAFJ85",
+      "items": [
+        "sha256:e7e812d4bcf04e7fc407776834bde154c30d4d0ffde2c55952aa0075870ae229"
+      ],
+      "reason": "These imports bring the entity refresh's plan, refusal and base readers into this module so the candidate verdict can ask them before either commit.",
+      "subject": "hunk:sha256:e7e812d4bcf04e7fc407776834bde154c30d4d0ffde2c55952aa0075870ae229"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-V3N4WA",
+      "items": [
+        "sha256:26883c484cbbdc4efd39d19fce0c12c4df2b7900589fbd94690e458761084df4"
+      ],
+      "reason": "The card now records that the candidate verdict asks the memory refresh's own refusals after the gate passes, through candidate_memory_refresh_refusal: the entity leg checks every catalog row for absent evidence and, for the rows the plan reports, names an unsupported algorithm or a missing value; the route-index leg asks the refresh's own planner over the resolved context roots and its source snapshot, not a tree-id argument; and closeout_changed_paths moved here so the verdict and the refresh judge one reader. Only the entity leg reads the candidate by tree id.",
+      "sources": [
+        {
+          "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+          "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-W35VZC",
+      "items": [
+        "sha256:56afdf8663049b6fe28f37b375e74b29663d6f0989ad3451844913948bb38f32"
+      ],
+      "reason": "The five added lines register the new test module as a consumer of five existing lifecycle rules. Registration only: no rule, category or count is defined in this file.",
+      "subject": "hunk:sha256:56afdf8663049b6fe28f37b375e74b29663d6f0989ad3451844913948bb38f32"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-W9GH06",
+      "items": [
+        "sha256:04c090397bfd45d1938dc72405073e75baa3714745005851ac59bb6dc86d104c"
+      ],
+      "reason": "parse_entity_fingerprint_rows now reads the catalog file and delegates to parse_entity_fingerprint_text, the reader the base comparison and the refusal use on text that need not be a file. Splitting the parse adds no obligation of its own; the recompute invariant records the scope and value rules.",
+      "subject": "hunk:sha256:04c090397bfd45d1938dc72405073e75baa3714745005851ac59bb6dc86d104c"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-WWYCJZ",
+      "items": [
+        "sha256:fbf79c81e22ddba98034b205d024af9c30f2d7f793694a64e3b1c728b56cda80"
+      ],
+      "reason": "The tests overview describes evidence policy and names the populations it discusses, not a closing inventory of test modules. One added module and two stub lines change no statement it makes about how this repository's tests are shaped.",
+      "sources": [
+        {
+          "blob": "679a1bdc679fec2f6dd9b4dda35fa3fc323dd9a2",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "992d0b544ec034eb19f6958e1b731606651eacd0",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+          "path": "mcp/tests/test_knowledge_reopen.py"
+        },
+        {
+          "blob": "b78058d621db878326cd27504300bd707ba9fffb",
+          "path": "mcp/tests/test_mik_r178_closeout_memory_fault_preflight.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Y6D176",
+      "items": [
+        "sha256:84e5ae1c9fcfe5f0b40441aa8a2409ce2a8f7212cc99e0d87ef005205f238a22"
+      ],
+      "reason": "closeout_changed_paths is deleted here because it moved to closeout_external so the candidate verdict and the refresh cannot judge different worklists. A move carries no obligation of its own; the reader's account is recorded where it now lives.",
+      "subject": "hunk:sha256:84e5ae1c9fcfe5f0b40441aa8a2409ce2a8f7212cc99e0d87ef005205f238a22"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZETMMD",
+      "items": [
+        "sha256:51e26ffed90ff7a14edb76011cc04d4e53bf9698f41a19ea7e7435e6a0ee13d9"
+      ],
+      "reason": "The two Git readers this module no longer calls are dropped from its import list because the worklist reader that used them moved out. No call site and no obligation changes.",
+      "subject": "hunk:sha256:51e26ffed90ff7a14edb76011cc04d4e53bf9698f41a19ea7e7435e6a0ee13d9"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

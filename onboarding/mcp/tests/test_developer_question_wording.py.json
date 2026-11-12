@@ -1,0 +1,209 @@
+{
+  "path": "mcp/tests/test_developer_question_wording.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "d508918edd5c2ec9f742e901be66b90d9fd968f7",
+        "content": "sha256:c80c2d0c3294603f003933d97de010a3d7c9aaa21b3178976eeb50e0ecae099e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_question_operations_keep_conditional_routing_and_pending_recovery"
+        }
+      },
+      "facet": "The test checks conditional routing/pending/provenance clauses at orientation.md and one-home pointers, without full duplicate clauses, in review and curation; it is a source-wording control, not runtime routing proof.",
+      "id": "PRF-9P5WRY",
+      "invariant": "INV-9S49CW",
+      "origin": {
+        "handoffEntry": "L112-semantic-replacement-PRF-T2404E",
+        "leaf": "260928-MIK-L112"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d508918edd5c2ec9f742e901be66b90d9fd968f7",
+        "content": "sha256:c013013da9880adf484b5a00a7f49ca4beeb9ed8ac9681465a223ff42cba3312",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_each_parent_has_upward_notice_and_unchanged_downward_answer_duties"
+        }
+      },
+      "facet": "Requires every starter role to carry the authority triage, the unchanged upward relay, the quoted downward answer and the permission notice with its named or not-supplied permission.",
+      "id": "PRF-DNKGK6",
+      "invariant": "INV-7FMDAS",
+      "origin": {
+        "handoffEntry": "MIK-R93@v1 rules3,4,5,8,9",
+        "leaf": "260928-MIK-L93"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d508918edd5c2ec9f742e901be66b90d9fd968f7",
+        "content": "sha256:19d28f4d232caef57721e6e512145676b42b4b3527a8f5cea05dc692b37fecd5",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_exact_retired_directives_are_detected_as_independent_sentences"
+        }
+      },
+      "facet": "Exercises each exact old directive alone against the actual clean carrier and reports it, without flagging the undeclared current text.",
+      "id": "PRF-PE1MYV",
+      "invariant": "INV-HGSFJ8",
+      "origin": {
+        "handoffEntry": "MIK-R93@v1 rules6,11,13",
+        "leaf": "260928-MIK-L93"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d508918edd5c2ec9f742e901be66b90d9fd968f7",
+        "content": "sha256:393e9f2d9dd43c40978f3a8d4acd60736b12c1658217067ed2fe476e76ac38d8",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_leaf_owner_relation_keeps_peer_results_and_named_parent_occasions"
+        }
+      },
+      "facet": "Checks the leaf ownerRelation names the actual parent, keeps the sibling roleMessageArguments and omits the old result-to-parent order.",
+      "id": "PRF-WW6328",
+      "invariant": "INV-8AMSGV",
+      "origin": {
+        "handoffEntry": "MIK-R93@v1 rules1,2,7,10",
+        "leaf": "260928-MIK-L93"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d508918edd5c2ec9f742e901be66b90d9fd968f7",
+        "content": "sha256:e1416fb1a4046625e1ee8cd3d880dec66f77322db70275346ff19ac389273bdc",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_each_parentable_role_has_question_recovery_and_answer_provenance"
+        }
+      },
+      "facet": "The test checks the full recovery/provenance clauses in orientation.md and requires the six parentable roles to carry the one-home pointer and no copied full routing doublet; it does not establish native message delivery.",
+      "id": "PRF-Z5CF4R",
+      "invariant": "INV-9S49CW",
+      "origin": {
+        "handoffEntry": "L112-semantic-replacement-PRF-SZ8AQ5",
+        "leaf": "260928-MIK-L112"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The parentable-role test checks question recovery and answer provenance in the shared orientation home, requires each selected role to carry its own pointer to that home without copying it, and checks transport clauses through each role's delivered message step and shared held paragraph.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d508918edd5c2ec9f742e901be66b90d9fd968f7",
+            "content": "sha256:e1416fb1a4046625e1ee8cd3d880dec66f77322db70275346ff19ac389273bdc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_each_parentable_role_has_question_recovery_and_answer_provenance"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Starter-role checks require the shared upward permission notice and each role's referral to it, declared transport recovery and the child-question step; the answer clauses retain an own-authority answer, otherwise an unchanged upward question and unchanged quoted developer-answer provenance on the return path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d508918edd5c2ec9f742e901be66b90d9fd968f7",
+            "content": "sha256:c013013da9880adf484b5a00a7f49ca4beeb9ed8ac9681465a223ff42cba3312",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_each_parent_has_upward_notice_and_unchanged_downward_answer_duties"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Orientation keeps conditional routing and pending recovery; review and curation are checked as composed role-plus-operation pairs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d508918edd5c2ec9f742e901be66b90d9fd968f7",
+            "content": "sha256:c80c2d0c3294603f003933d97de010a3d7c9aaa21b3178976eeb50e0ecae099e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_question_operations_keep_conditional_routing_and_pending_recovery"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The compiled leaf ownerRelation test keeps Worker, Reviewer and Curator peer results direct, reserves named authority/developer occasions to the parent, and requires sibling role/task arguments instead of routine parent result notices.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d508918edd5c2ec9f742e901be66b90d9fd968f7",
+            "content": "sha256:393e9f2d9dd43c40978f3a8d4acd60736b12c1658217067ed2fe476e76ac38d8",
+            "locator": {
+              "end": 355,
+              "kind": "line_range",
+              "start": 319
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The retired-directive control reads the current Manager, Orchestrator and router surfaces, appends each exact retired sentence separately and requires detection; the Architect own-chat sentence is retained as an allowed contrast.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d508918edd5c2ec9f742e901be66b90d9fd968f7",
+            "content": "sha256:19d28f4d232caef57721e6e512145676b42b4b3527a8f5cea05dc692b37fecd5",
+            "locator": {
+              "end": 374,
+              "kind": "line_range",
+              "start": 358
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The compiled leaf ownerRelation test records the descriptive starter identity separately from host.parent.returnAddress: returns use the Manager role and canonical sprint/master task references, while peer results keep sibling leaf addresses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d508918edd5c2ec9f742e901be66b90d9fd968f7",
+            "content": "sha256:393e9f2d9dd43c40978f3a8d4acd60736b12c1658217067ed2fe476e76ac38d8",
+            "locator": {
+              "end": 355,
+              "kind": "line_range",
+              "start": 319
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "`question_step` uses the declared source, the role's audience and that role's own pre-action pointer. For message transport it joins the emitted busy-refusal detail with the role's held-delivery paragraph, which must stand exactly once, audience-labelled, in the compiled orientation shared block (deleted clauses, a relabelled or extended paragraph and a duplicate fail); for child questions it follows the delivered return action's single link to the orientation section that owns answer attribution. Its clause-deletion controls read those actual details for busy/held recovery and unchanged developer-answer provenance; the other cases continue to read canonical source or compiled ownerRelation as appropriate. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d508918edd5c2ec9f742e901be66b90d9fd968f7",
+            "content": "sha256:f6a27c353ac3aab16d2b6c4e75fbbe787b2be61f840ddc9680870471a134ecf4",
+            "locator": {
+              "kind": "symbol",
+              "name": "question_step"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Realized in the kernel vocabulary module, which refuses removed members by name, in the contract reader, which keeps old cells readable, and in the disabled-memory classifiers; the vocabulary and boundary tests guard the removal."
+  },
+  "applicability": "Every place the product names, reads or refuses a memory mode.",
+  "conditions": [
+    "The member is disabled or another removed mode."
+  ],
+  "exclusions": [
+    "Unknown tokens, which stay invalid requests, and the removed internal mode, which keeps its own refusal first."
+  ],
+  "id": "INV-V3N6NW",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "requirements/MIK-R50-v1-a-task-cannot-opt-out-of-memory-where-knowledge-exists.md rules 1-2; mcp/tests/test_memory_mode_removal.py (57 converted cases); mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py (unknown-cell reading).",
+        "requirements/MIK-R50-v1-a-task-cannot-opt-out-of-memory-where-knowledge-exists.md rules 1-2; mcp/tests/test_memory_mode_removal.py: 44 function definitions, 59 collected node IDs (42 plain + 13 corrected-surface rows + 4 lookalike rows; collect-identities receipt SHA256:253d4bbdcfdcf65747935785edc2e3eeed2038592bd423c42ec0adc3f50bd91e); mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py (unknown-cell reading). An earlier '(57 converted cases)' figure in this evidence string matched no receipt and is struck."
+      ],
+      "path": "notes/reports/260928-MIK-L50-curator-handoff-list.json"
+    },
+    "handoffEntry": "L50-MIK-R50-rule-2-vocabulary-removed",
+    "leaf": "260928-MIK-L50",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The disabled memory mode is removed from the product vocabulary: only external starts; an empty or unknown stored cell with no recorded worktree or ledger still reads as disabled so old contracts stay legible, while a section showing either reads external.",
+  "status": "proposed",
+  "supersedes": []
+}

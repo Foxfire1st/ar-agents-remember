@@ -1,0 +1,191 @@
+{
+  "path": "mcp/src/agents_remember/mcp/registration/core.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
+        "content": "sha256:fe269adba5522b5fc3243b19d52c6a9a2796d487fc613bd4b0d2d33f88ff1fca",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-GEQTSN",
+      "invariant": "INV-N9D91D",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-08",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The registration owner no longer registers assignment_read; task_doc get and read_ar_files are not replaced by this leaf.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
+        "content": "sha256:77aaf76054d694febd932671143e3a4d603210f203a54a1c1c7999e4562dccdd",
+        "locator": {
+          "kind": "symbol",
+          "name": "_register_orientation_tools"
+        }
+      },
+      "id": "RLZ-MTTNJ1",
+      "invariant": "INV-990KQM",
+      "origin": {
+        "handoffEntry": "L183-deferred-discovery-implementation",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Identity/orientation/install declarations use the light sentinel and lazily resolve payload builders and operation request constructors; task_context remains typed on both readers and explicitly supplied refresh remains refused.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "10": {
+      "note": "The install tool registration whose description states the scaffold install, running-server currentness report and running-dashboard refresh.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
+            "content": "sha256:7826c72a7a27a46f2dff03a535a1e576667459cad0ad1b66aac3c83ab7df91f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_installation_tools"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Identity/orientation/install declarations use the light sentinel and lazily resolve payload builders and operation request constructors; task_context remains typed on both readers and explicitly supplied refresh remains refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
+            "content": "sha256:77aaf76054d694febd932671143e3a4d603210f203a54a1c1c7999e4562dccdd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_orientation_tools"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`read_ar_files_payload`, imported through the `mcp.tools` facade.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51b276452da0ab3a2641006c43d8d668f4b9eae1",
+            "content": "sha256:c7655e0400019bf4eed28ab2247d04ba6fe6d4707d672bcb3e4d8e36138b8450",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_ar_files_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/read_files.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The registration takes the keyword-only `experiment` parameter and builds the run's request itself.\n\nAnchor: `RuntimeInstallRequest`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
+            "content": "sha256:659f44a97ee634fa227884e9e5816bf543fbfc009d3d0da30be6e482b4e63904",
+            "locator": {
+              "end": 150,
+              "kind": "line_range",
+              "start": 144
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Frozen implementation of _register_identity_tools supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
+            "content": "sha256:dcb834f03fccd05554205c7589796d4f8d2da74c9ba8e718c9dfd370cb513481",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_identity_tools"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`_register_orientation_tools` declares the read-only orientation tools `context_packet` and `read_ar_files` and scrubs the removed `refresh` argument from the advertised schema.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
+            "content": "sha256:77aaf76054d694febd932671143e3a4d603210f203a54a1c1c7999e4562dccdd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_orientation_tools"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The installation tools and the runtime_install registration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
+            "content": "sha256:7826c72a7a27a46f2dff03a535a1e576667459cad0ad1b66aac3c83ab7df91f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_installation_tools"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The packet description states what include_drift measures and that omitting it measures nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
+            "content": "sha256:4f8406d88a585b0f3f3c9f656cb6f58e31724246d0a9f20578e79d354bcc66c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "context_packet"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The identity tool retains its explicit read-only/non-destructive/idempotent/closed-world annotations without restoring ping.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
+            "content": "sha256:08a3cac0c3fc80034bcf5e1347273b2005f1b3be7af895b9bb2eb027bdd53df0",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 59
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

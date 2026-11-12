@@ -2,13 +2,7 @@
 
 | Field | Value |
 | --- | --- |
-| repository | agents-remember |
 | sourceRoute | `mcp/test_support/agents_remember_test_support/testing` |
-| doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-28T10:16:27+02:00 |
-| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25`|
-| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
-| governingOverview | `../overview.md` |
 
 ## Governing Overview
 
@@ -16,183 +10,111 @@
 
 ## What This Area Is
 
-Repository-owned pytest isolation and evidence infrastructure. Ordinary pytest bootstrap and
-certifying startup are distinct: `pytest_bootstrap.py` owns deterministic ordering, isolated caches
-and restoration of owned mutable state, while `certifying_bootstrap.py` requires Dagger admission
-before preparing a certifying candidate process. Ordinary bootstrap does not grant certification or
-external-service capability.
+Repository-owned pytest isolation and evidence infrastructure. Ordinary pytest bootstrap and certifying startup are distinct. `pytest_bootstrap.py` supplies optional seeded collection ordering, an isolated cache directory for the pytest process, and the check that a test restores owned module-level state. Per-test restored rows, module-boundary reset rows and constant-for-tests rows have distinct treatments in a closed register; the register's collection-reset pass touches only already-loaded product owners. The module fixture separately imports the explicit kernel worktree-service holder and resets that object before and after the module; it is outside the syntactic collection census. The ordinary bootstrap carries no certifying or external-service capability. `certifying_bootstrap.py` admits a Dagger quality process before resolving the candidate test process.
+
+The route also owns the instruction-wording registries, readers, delivery and pointer checks, and capsule audience and budget fixtures used to check the shipped instruction corpus, plus a few single-regression helpers. These helpers do not hold an AR seat or author knowledge. Test qualification, completed curation, semantic acceptance and Git publication retain their separate authorities; running a bootstrap or validator does not itself supply acceptance. Canonical skill sources and their sole generated package copy belong to the synchronization owner, `scripts/sync-skills.py`; no harness skill mirror is produced.
+
+The closed product-process register now includes agents_remember.kernel.primitives.runtime_config._LEGACY_GATE_DELEGATION_WARNED with the default reset treatment and existing _clear resetter between test modules. It is not a per-test-restored lock. The shared guard and treatment rules remain unchanged; registration is not execution of the reset control.
 
 ## Hot Path Summary
 
-`dependency_facts.py` and `consumer_inventory.py` derive import/plugin/consumer ownership from
-current source. `lane_manifest.py` and `evidence_lanes.py` validate the explicitly declared evidence
-population. `evidence_lifecycle.py` validates catalog ownership, lifetime, real contract nodes and
-observed consumers; `evidence_governance.py` owns artifact discovery.
+- **Process setup.** `hermetic_bootstrap.py` sets up the candidate and pytest environment. `global_state.py` snapshots, restores and resets registered module-level state. `random_order.py` shuffles collected items when supplied a seed. `dagger_admission.py` mints the testing-layer capability after matching the Dagger environment nonce to the attestation file.
+- **Source facts.** `dependency_facts.py` derives import, pytest-plugin and consumer facts from source; it holds no ownership declarations. Its disposable per-file store keys source bytes and parser identities, while each build reconstructs current population and relations. `consumer_inventory.py` holds the bounded inventory of Python-test evidence consumers.
+- **The two test catalogs.** `lane_manifest.py` loads test-file lane membership. `evidence_lanes.py` checks it at collection and exposes category markers; its registry also maps cadence triggers to marker expressions. `evidence_lifecycle.py` validates governed test artifacts and provides the command-line entry for both catalogs. `evidence_governance.py` decides which files are governed. `catalog_canonical.py` supplies canonical-form findings and the rewrite behind `evidence_lifecycle --write`.
+- **Candidate-bound evidence.** `candidate_snapshot.py` gives the Git identity of a working candidate for non-certifying evidence routes. `evidence_provenance.py` records candidate and machine provenance for non-accepting Dagger evidence.
+- **Selection and reporting.** `retry_selection.py` collects the canonical population and executes only explicitly supplied retry files that were collected. `causal_dependency.py` derives exact-node source dependencies; `causal_failures.py` skips nodes identified by a causal preflight report and classifies observed failures. `cadence_runner.py` supplies non-accepting Dagger evidence for scheduled, provider-bump and migration triggers. `pytest_phase_reporter.py` records node outcomes and phase timings.
+- **Condition waits.** `waits.py` supplies synchronous and asynchronous named-condition waits under one shared hang guard. The condition supplies readiness; neither the guard nor the poll interval proves a producer had an opportunity.
+- **Instruction corpus.** `curation_doctrine.py` holds retired curation wording, corrected loop-gate field names and required instruction statements. `retired_leaf_handover_wording.py` holds verbatim retired handover sentences with their source carriers. `leaf_instruction_wording.py` holds affirmative clause tables and normalized readers for wording tests, and `delivered_step`, which reads a named detail through real admission, compilation and launch delivery. `capsule_wording.py` resolves each leaf clause on its delivered role, operation or owning detail section. `coordination_wording.py` and `curator_contracts.py` hold expected coordination and Curator clauses; `curator_instruction_delivery.py` checks the delivered Curator, Reviewer-intake and refused-write wording. `pointer_uniqueness.py` checks that each first message points to a lifecycle file once per action, `manifest_step_derivation.py` derives each manifest reference's step and audience from the actual pointers, and `task_document_instruction_contracts.py` checks the task-authoring pointers, conventions, templates and manifest entries. `instruction_consistency.py` checks that commands, tools, `task_doc` operations and paths named in skills, docs and README exist.
+- **Capsule audience and budgets.** `capsule_audience_fixtures.py`, `capsule_audience_v13_fixtures.py` and `capsule_audience_v13_operation_inverse.py` hold the reviewed pointer actions, clauses and per-stage byte pins, and the inverses that restore current capsule bytes to those pins. `capsule_budget_snapshot.py` holds the frozen capsule-budget measurements; `capsule_budget_d694.py` checks the frozen `capsule-budgets-d694.json` record, and `capsule_budget_d695.py` checks the current `capsule-budgets-current.json` record.
+- **Single-regression helpers.** `agent_eval_checkout_provisioning.py` asserts that agent-eval trial provisioning declares test mode and that the scratch CLI child loads the trial's own settings. `memory_orphan_checkpoint.py` crashes a parked-candidate sync before its journal publish and requires recovery to keep every parked memory file.
 
-`candidate_snapshot.py` and `evidence_provenance.py` bind generated artifacts to candidate and
-machine facts. `retry_selection.py` observes canonical collection and admits only the explicit
-affected module population. `causal_dependency.py` and `causal_failures.py` retain the exact-node
-causal evidence boundary. `cadence_runner.py` and `pytest_phase_reporter.py` own their retained
-execution/reporting adapters. The former route-measurement and causal-route matrix modules are
-retired; their old measured populations are historical evidence, not current route obligations.
+## Construction And Operating Model
 
-## Operating Model
+Ordinary local pytest uses the reusable bootstrap. Its random-order option defaults to no seed, so collection is shuffled only when a seed is supplied. Session isolation supplies a temporary cache location; autouse fixtures restore registered mutable mappings after each test and reset registered process state before and after each module. Certifying entry uses `prepare_certifying_pytest_bootstrap`, which obtains Dagger admission before its own candidate setup.
 
-Use the ordinary bootstrap for its declared local pytest responsibilities. Certifying entry uses
-`prepare_certifying_pytest_bootstrap`, which proves the Dagger capability before candidate setup.
-Neither route's mere execution supplies acceptance. The retained lane, lifecycle and dependency
-validators describe current source and configured evidence; they do not require reconstruction of
-removed test matrices or older source/test censuses.
+Dependency analysis reconstructs the current file population, module ownership and relationships on each build. Per-file facts can be reused from a disposable store using a key that includes the analysis implementation, Python version, module identity, package identity and source bytes. The lane and lifecycle validators compare declarations with that source-derived population and ownership graph.
 
-## Local Invariants And Traps
+The instruction helpers retain retired sentences separately from affirmative wording requirements. `curation_doctrine.py` normalizes readings and confines retired-sentence matches to the sources that carried them, across canonical and generated skill surfaces. It also checks loop-gate field wording and compact curation-policy statements. `retired_leaf_handover_wording.py` supplies source/sentence pairs; `leaf_instruction_wording.py` supplies affirmative clause alternatives and normalized checks used by the wording tests. The delivery checks read instructions through the product's own admission, compilation and launch composition rather than concatenating source files, and they start no role. These are wording checks, not semantic acceptance or knowledge verdicts.
 
-- Ordinary pytest setup has no certifying or external-service authority. Dagger admission remains
-  mandatory at the certifying composition boundary.
-- Owned mutable module state is restored after each test; a leak is reported rather than silently
-  accepted. Seeded ordering uses a local RNG and does not perturb the process-global RNG.
-- Literal plugin/import relationships are source facts. Unknown dynamic ownership cannot be
-  promoted to an exact dependency claim.
-- Explicit lane membership and discovered evidence catalog coverage remain exact; missing,
-  stale or conflicting declarations are findings.
-- Retry selection accepts only explicit affected modules whose collection was observed. It never
-  expands execution silently to repair missing ownership.
-- Causal suppression requires exact independently supported nodes. Reports and candidate/machine
-  provenance do not become certification merely because the tool ran in Dagger.
-- Coverage is diagnostic and retired matrix populations are not restoration requirements. Full
-  suites and aggregate review belong to the master completion route.
+### The Two Test Catalogs
+
+This route reads and rewrites `mcp/tests/evidence-lifecycle.toml`, the governed test-artifact and consumer catalog, and `mcp/tests/test-evidence-lanes.toml`, the test-file lane catalog.
+
+| Check | Where it lives | The question it answers | Its repair |
+| --- | --- | --- | --- |
+| Consumer oracle | `load_evidence_inventory` in `evidence_lifecycle.py` | Do declared consumers equal source-derived consumers, does every governed file have a row, and does every row identify governed evidence? | `--write` derives consumer lists; adding or retiring a row requires a decision and manual editing. |
+| Lane population | `load_lane_manifest` in `lane_manifest.py` | Does every current test file have exactly one lane, and is every listed path a current test file? | Add the lane line manually; `--write` removes lines whose files no longer exist. |
+| Canonical form | `catalog_canonical.py`, called by both loaders | Are contract rows ordered by ID, artifact rows by path, and path lists ordered without duplicates and written one path per line? | Run `--write`. |
+
+The repository-catalog test calls both loaders rather than pinning catalog bytes or a row count. The loaders compute the source facts needed for population and consumer checks when they run.
+
+`python -m agents_remember_test_support.testing.evidence_lifecycle --project-root .` validates the lifecycle catalog and then the lane manifest, sharing one cached source graph. With `--write`, it instead computes canonical text for both catalogs before writing either. It orders rows and lists, removes duplicate list lines, replaces the consumers of `exact` and `exact-source` rows when source analysis yields a nonempty set, and removes lane lines whose files no longer exist. For consumer lists without a derived replacement, it removes missing-file lines only when at least one listed consumer still exists. If the source tree yields no consumer, it reports that fact and retains the declared list subject to that missing-file cleanup; a list consisting entirely of missing consumers survives for an explicit retirement decision.
+
+The rewrite adds and removes no row and never assigns a lane. It refuses before writing either catalog when parsing fails, dependency facts are incomplete or ambiguous, or a table header or list cannot be read by its line rewrite. Computing both outputs first protects against those refusals; the two subsequent file writes are sequential.
+
+Git merges both catalogs by union. Such a merge can duplicate or reorder list lines, restore a deleted line, or interleave added rows. The loaders refuse canonical-form defects and stale membership. For a TOML parse error, the shared reader explains that rows may have been interleaved and tells the reader to restore the landed file and add the leaf's row again. Both loaders use that reader; pytest startup reads the lane manifest through it before collection.
+
+The lane loader runs during test collection. The lifecycle loader runs through the validator command, the Git hook's deterministic fast tier (also called by its targeted tier), the quality plan, the dependency selection graph, and `test_the_repository_catalogs_are_in_canonical_form`, whose file is declared in the unit lane. A change adding a test file adds its lane line and runs the canonical rewrite. Catalog rewrite and refusal cases live in `mcp/tests/test_evidence_catalog_canonical_form.py`; `mcp/tests/test_evidence_catalog_gate_boundaries.py` checks a canonical catalog whose declared consumers no longer describe the source tree.
+
+The closed register also gives the existing closeout digest-file stats, lifecycle location cache and lifecycle operation-record cache ordinary `_clear` resets at module boundaries. It adds no scanner exemption or production reset; restored rows retain their per-test treatment.
+
+Those retained lifecycle caches belong to the independent worktree landing chain. The removed ambient-session singleton and lifecycle-log cache are no longer registered, and their ambient heartbeat reset helper is gone. The register's collection-reset pass still visits only already-imported owners; removing retired owners adds neither a scanner exemption nor a production reset. Separately, the pytest fixture explicitly imports and resets the kernel service holder; the old blanket imported-only account does not describe this object reset.
+
+## Local Invariants And Boundaries
+
+- Ordinary pytest setup has no certifying or external-service authority. Dagger admission is mandatory at the certifying composition boundary; neither admission nor running the bootstrap alone establishes acceptance.
+- Restored mutable rows are repaired after each test before a detected leak fails the test. Reset rows are cleared at module boundaries, with registered cleanup routines finishing owned workers or resources where required. Constant-for-tests rows retain import-time and deferred registrations. Seeded ordering uses its own random generator and leaves the process-global generator untouched.
+- Dependency ownership is derived from source rather than lifecycle declarations. Lifecycle metadata describes governed artifacts and their ownership obligations; it does not establish completed curation, semantic acceptance or publication status.
+- The disposable facts store is intended not to replace source truth or hide a source error. The current reader rejects malformed or unusable entries, but a well-shaped cached entry is reused without comparison to newly parsed source. That limits the existing corruption guarantee: a well-shaped incorrect entry under the matching key is not detected by these predicates.
+- Lane membership and catalog coverage are exact: missing, stale or conflicting declarations produce findings. Lifecycle consumer lists must equal the derived consumer set.
+- Both catalogs must have canonical row and list order, without duplicate list lines and with one path per line. Canonical-form findings identify the rewrite command. Rewriting does not decide row retirement or lane assignment.
+- Retry selection validates explicit candidate-relative Python paths against executable items or successful module collection, including zero-body modules. It does not derive ownership itself; the dependency owner supplies the retry paths.
+- Causal dependency derivation uses exact source-level node relationships. Runtime suppression consumes the exact nodes in its causal preflight report, rather than suppressing a whole module by filename.
+- Condition readiness is separate from the shared hang guard.
 
 ## File-Level Onboarding Map
 
-The generated route index inventories the surviving source owners and their paired cards.
-It must be rebuilt from current source, never copied from a retired route census.
+The generated route index lists the source files of this route and their cards.
 
-## Source References
+**L184.** The reset register gains one row: the retained host role records of `serving.projections.host_activity` (`_ROLE_RECORDS`) are forgotten between test modules, so one module's reconciled roles cannot certify the next one's boot. That registration is all this file changes; the provider-limit fixture files and the stamped-end inputs the new cases use stay with the cases and the helpers that build them, and no fixture is constructed or executed here.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Ordinary bootstrap owns local ordering/cache/state isolation without certification. | "Reusable pytest bootstrap with no certifying or external-service capability." | mcp/test_support/agents_remember_test_support/testing/pytest_bootstrap.py:1-1 |
-| Certifying setup admits Dagger before candidate preparation. | `prepare_certifying_pytest_bootstrap` | mcp/test_support/agents_remember_test_support/testing/certifying_bootstrap.py:27-39 |
-| Retry execution retains exact explicit affected modules. | `pytest_collection_modifyitems` | mcp/test_support/agents_remember_test_support/testing/retry_selection.py:63-79 |
-
-## 260915-CAPS-L18 Complete Curation Reaches This Route
-
-This route gained `curation_doctrine.py`, the retired-sentence registry and required-rule table the
-shipped-corpus guard reads. CAPS-R18@v1 inverted the optional/narrow-curation doctrine in the shipped instruction sources. The
-sentences that presented the full `memory_quality_check` operation and the `curator_coherence`
-certification as developer-request-only diagnostics, "never routine closeout/integration prerequisites",
-are gone. The rule is now normative: **curation is complete on every leaf** — the full operation runs at
-the leaf's contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every
-curator-actionable finding is repaired or escalated as blocked with its exact returned code, and the
-operation is re-run after every repair until `curatorActionableCount=0` and the **raw**
-`qualityChecklistStatus=ready-for-closeout`. The **combined** `checklistStatus` is rewritten to
-`coherence-required` **only when the coherence record is then missing or stale** — that is the coherence
-gate, cleared by publishing the `curator_coherence` authority with `prepare` → `publish` → `validate`.
-On the success path, where the record is already current, the combined field is **not rewritten** at all
-and keeps its incoming `ready-for-closeout` value, with `closeoutReady=true`; `ready-for-closeout` is
-therefore observable in the combined field once the whole pipeline is already complete. **Field-name
-correction (`D35`, made by 260915-CAPS-L10):** this sentence previously named
-`checklistStatus=ready-for-closeout` as the loop's termination condition; read the raw field to end the
-loop and the combined field to decide the coherence gate
-(`application/memory_quality/controller.py:664`, `:671`, `:678`, `:685-687`).
-
-**Warrant corrected by `CAPS-R19` (leaf `260915-CAPS-L19`).** The `D35` correction above originally rested
-on the sentence *"`ready-for-closeout` is never a value of the combined field."* That absolute claim is
-**literally false**, and `CAPS-R19`'s revision note records it as superseded by the three-path model now
-stated here. The field-name correction it supported still holds; only its stated warrant was wrong.
-**Attribution is complementary and both halves hold:** `260915-CAPS-L10`'s curator corrected the
-**onboarding cards** that carried the wrong form, while `CAPS-R19` corrected the **shipped sources** — the
-five loop-gate carriers, their nine generated copies, and the guard registry's own docstring — and brought
-`docs/reference/mcp-tools.md` into both the loop-gate census and the guard's `LOOP_GATE_DOCUMENTS`.
-
-**And on this route the wrong field name was not only in prose — it was pinned by the guard, and that
-obstacle has since been repaired.** This route's `curation_doctrine.py` owns
-`CURATION_COMPLETENESS_STATEMENTS`, the required-form table the shipped-corpus guard reads, and at the
-base its `skills/l-01-agent-lifecycles/roles/curator.md` row **required** the fragments
-`"curatorActionableCount=0"` and `"checklistStatus=ready-for-closeout"`.
-`missing_completeness_statements` and `test_role_instruction_corpus.py::CurationIsCompleteOnEveryLeafTests::
-test_every_canonical_source_states_the_complete_curation_rule` match those fragments on
-`normalize_statement`'s reading, which strips emphasis and collapses whitespace but does **not** change
-case. So a repair that rewrites the sentence to `qualityChecklistStatus=ready-for-closeout` removes the
-lowercase-`c` fragment and turns the guard **red**. `D35`'s repair therefore had to move the declared
-fragment with the sentence, in the canonical source and in this table together, or the guard would fail
-on the repair itself.
-
-**Repaired by `CAPS-R19` (leaf `260915-CAPS-L19`), verified in the code worktree at this leaf's tip.**
-`260915-CAPS-L10` recorded this obstacle but did not repair it, because the table is code and that seat
-writes onboarding only. `CAPS-R19` is the leaf that moved the fragment: the retired pairing is no longer
-a *required* fragment anywhere in the table — it became the guard's own retired-form constant
-`RETIRED_LOOP_GATE_FIELD_PAIRING` (`curation_doctrine.py:222`), paired with the positive
-`LOOP_GATE_CORRECTED_FIELDS = ("qualityChecklistStatus", "closeoutReady")` (`:229`) now attached to the
-`roles/curator.md`, `operations/curation.md` and `templates/curator-brief.md` rows. `LOOP_GATE_DOCUMENTS` became a **path → required-field-names
-mapping** (`:237-240`, covering `docs/reference/drift-c02.md` and `docs/reference/mcp-tools.md`), and the
-new reader `missing_loop_gate_statements` (`:382`) asserts the positive half inside the **existing**
-census case `test_the_census_ranges_over_the_canonical_tree_and_every_generated_copy`
-(`test_role_instruction_corpus.py:685`) — no case was added, so the unit case delta is 0. Re-inserting the
-wrong pairing now reds the suite from three axes, measured by seeded experiment rather than asserted.
-
-**What the guard still does not do, stated rather than implied:** it is a **fragment matcher** with a
-declared blind spot — a wrong gate restated in fresh vocabulary that never writes the exact pairing is
-invisible to it — and it does not read the running tool. Coverage of this leaf's subject is therefore
-real but bounded, and no card may claim the guard catches every restatement.
-
-Two corrections the inversion must not collapse, both preserved: closeout still owns only the Git
-transaction and **invokes** nothing — it **carries** the completed curation as a prerequisite; and the
-rule is about the completeness of curation, not about unscoped runs, so "complete" always means the whole
-operation at the leaf's contract scope. The ruling is forward-looking: the already-landed and finalized
-leaves are not re-curated, and whole-layer completeness is discharged by L11's full-scope run at the
-frozen tip.
-
-## 260915-KS-L23 The Byte Pin And The Consumer Oracle Are Two Gates, And This Route Owns One Of Them
-
-`testing/evidence_lifecycle.py` is where the repository's **consumer-completeness oracle** lives, and
-the point of the L23 section is that a reader arriving here must be able to tell it apart from the
-gate beside it. `D-19` measured the cost of the confusion: four green checks — the byte pin, pytest,
-ruff, format and pyright — shipped a red governance gate, because nothing in them derives the
-catalog's consumers from the source tree.
-
-| Gate | Where it lives | The question it answers | Its documented repair |
-| --- | --- | --- | --- |
-| the catalog **byte pin** | `mcp/tests/test_dependency_ownership_ast_helpers.py`'s `LIFECYCLE_CATALOG_SHA256` / `LIFECYCLE_CONTRACT_COUNT` / `LIFECYCLE_ARTIFACT_COUNT` | *is this the exact catalog file that was measured?* — nothing in the source tree can redden it | a re-pin, after the catalog edit was reviewed |
-| the **consumer oracle** | this route's `load_evidence_inventory` | *does the catalog agree with the source tree it describes?* — it derives the dependency graph and requires every `consumer_scope = "exact"` artifact's declared `consumers` to equal the test modules that actually reach it | a registry row — which is *why* the pin moves afterwards |
-
-The oracle's module docstring (`evidence_lifecycle.py:1-19`) was rewritten in this leaf to name both
-gates and each one's repair, and the case that shows the distinction as a measurement rather than a
-claim is `mcp/tests/test_evidence_catalog_gate_boundaries.py` — one catalog edit, in one run, where
-the oracle refuses the tree and the pinned catalog's bytes and populations are unchanged.
-
-**The class this route pays for on every landing, stated so the next leaf does not relearn it.** A
-test module that starts or stops importing a governed support module changes its artifact's
-consumer proof **without touching the catalog**, so the oracle reddens and the repair is a registry
-row (after which the closing stamp moves the pin). This leaf obliged **four** such rows — three for
-its two governed-support consumers and one that the item-16 case itself created by reading the lane
-manifest — while the catalogue's populations stayed at **15 contracts / 65 artifacts** and the
-digest moved to `25b00f88...`, because a consumer-only change moves the bytes and not the counts.
-
-## Update History
-
-- 2026-09-18T19:16+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): **added the L23 section for the consumer-completeness oracle (item 13 / D-19)** — the two gates side by side with the question each answers and its documented repair, the module docstring rewrite that names them, the case that shows the distinction in one run, and the four consumer rows this leaf obliged with the populations unchanged at 15 / 65. The body changed substantively; the route's own claims and the earlier entries are untouched. No verification stamp moves: `evidence_lifecycle.py` is modified in the delivered working tree and closeout owns the stamp.
+## Evidence
 
 
-- 2026-09-17T14:15+02:00 — 260915-CAPS-L19 curator: **Field-name warrant corrected — `ready-for-closeout` read as *never* a value of the combined `checklistStatus`.** That absolute sentence was written by 260915-CAPS-L10's curator as the warrant for this card's `D35` correction, and `CAPS-R19` (`260915-CAPS-L19`) measures it **literally false** (`application/memory_quality/controller.py:685-687` leaves the combined field at its incoming `ready-for-closeout` value on the success path, with `closeoutReady=true`). The card now states the three-path model instead: the raw `qualityChecklistStatus` is the repair loop's gate; the combined `checklistStatus` is rewritten to `coherence-required` **only when the coherence record is then missing or stale**; and `closeoutReady` becomes true only once that validation passes. Corrected under `CAPS-R19`'s revision note (2026-09-17T13:55), which is the authority for this change. The field-name correction itself stands and attribution is complementary — `260915-CAPS-L10` corrected the onboarding cards, `CAPS-R19` corrected the shipped sources (the five loop-gate carriers, their nine generated copies, the guard registry's docstring) and brought `docs/reference/mcp-tools.md` into the loop-gate census and the guard's `LOOP_GATE_DOCUMENTS`. The earlier entries below are left exactly as written: they record what L10 did, and this entry is the correction of their warrant. No verification stamp advanced — the candidate is uncommitted and the governed closeout owns the real commits. Also corrected the card's guard-obstacle paragraph, which L10 recorded as "not repaired": `CAPS-R19` **did** repair it — the retired pairing is no longer a required fragment, it is the guard's `RETIRED_LOOP_GATE_FIELD_PAIRING` (`curation_doctrine.py:222`) beside the positive `LOOP_GATE_CORRECTED_FIELDS` (`:229`) and the `LOOP_GATE_DOCUMENTS` mapping (`:237-240`), asserted by `missing_loop_gate_statements` (`:382`) inside the existing census case (`test_role_instruction_corpus.py:685`).
-- 2026-09-17T13:45+02:00 — 260915-CAPS-L10 curator: **corrected a landed defect (`D35`) and recorded the obstacle its repair will hit on this route.** The `CAPS-L18` section now names the **raw** `qualityChecklistStatus` as the repair loop's gate and the combined `checklistStatus=coherence-required` as the coherence gate (`application/memory_quality/controller.py:664,671,678,687`). Added the source-backed statement that this route's `curation_doctrine.py::CURATION_COMPLETENESS_STATEMENTS` **requires** the fragment `"checklistStatus=ready-for-closeout"` for `roles/curator.md`, and that `normalize_statement` is case-preserving, so rewriting the sentence to `qualityChecklistStatus=…` would turn `test_every_canonical_source_states_the_complete_curation_rule` red unless the declared fragment moves with it. Recorded, not repaired — the table is code and this seat writes onboarding only.
-- 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: the complete-curation doctrine reaches this route. The canonical sources on this route now state that the full `memory_quality_check` operation is part of every leaf's curation, that a subset never stands in for it, and that closeout and integration carry the completed result as a prerequisite while invoking nothing. Body updated as above; no verification stamp advanced because the sources are uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-09T02:35:47+02:00 — CCR-L38 inherited route reconciliation: re-read this route's purpose, member inventory, route summary, and invariants against frozen candidate code tree `4c6b7bc2362bc03d50fc7a0643f34b591b805d45`; the candidate's changed paths are outside source route `mcp/test_support/agents_remember_test_support/testing`, so no route/member/prose/invariant change is required. route-member-count=20; source inspection only; verification metadata remains unchanged pending producer-owned realization. No acceptance or certification claim.
 
-- 2026-08-28T10:03:40+02:00 — Added the complete observed failure-family ownership split and the
-  measured three-symptom causal repair protocol to the route hot path.
-- 2026-08-28T04:37+02:00 — Retired Candidate-A host diagnostics, added threshold-aware evidence
-  governance and shared provenance, and replaced pure-only route comparison with repeated
-  pure/integration/durability serial/default-xdist measurement.
-- 2026-08-27T22:09+02:00 — Recorded explicit `pytest SKIPPED` as the plan-only retry proof after
-  the live matrix exposed a validator that incorrectly expected no result line.
-- 2026-08-27T21:10+02:00 — Split observed zero-body module collection from genuinely
-  missing/uncollected retry paths without adding a fallback.
-- 2026-08-27T20:45+02:00 — Bound the product retry scenario to the low-fan-out seed owner after a
-  central atomic-write mutation selected 486 test modules.
-- 2026-08-27T20:12+02:00 — Recorded formatter-valid controlled retry mutations after the real
-  product matrix exposed a pre-pytest harness defect.
-- 2026-08-27T17:19+02:00 — Added the dependency-owned retry execution boundary: canonical
-  collection restores current import evidence while only explicit affected modules execute.
-- 2026-08-27T11:08+02:00 — Moved test infrastructure under verification ownership and reconciled
-  explicit lanes, source-derived consumers, complete candidate binding, persistent retry, and
-  exact-node causal evidence. Verification remains closeout-owned.
+
+
+
+
+- Retired handover wording is source/sentence data; affirmative wording uses normalized clause alternatives.
+
+- Retired handover wording is source/sentence data. Affirmative wording uses normalized clause alternatives. Each retired sentence is detected only on its own source, and a removed source stays absent. [24]
+
+- The ordinary bootstrap carries no certifying or external-service capability. [1]
+- Certifying setup admits Dagger before it resolves the candidate. [2]
+- Retry execution keeps only explicitly supplied files of the collected population; dependency ownership is supplied by the caller. [3]
+- The rewrite computes both new catalogs before it writes either. [6]
+- The command validates both catalogs on one cached source graph, or rewrites them with `--write`. [7]
+- The union merge attribute for both catalogs. [8]
+- A leaked change of owned module-level state fails the test after restoration. [9]
+- Seeded ordering uses its own random generator. [10]
+
+- The curation-doctrine registry of retired statements. The statements a compact canonical instruction source must make. [13]
+
+- The lifecycle loader starts with canonical-form findings and then validates against the source tree. [15]
+- The lane loader reports noncanonical lane lists and compares declared files with test modules. [16]
+
+- The registry of retired curation sentences. [17]
+
+- The shared parse refusal explains possible row interleaving and restoration of the landed file. [18]
+- Condition readiness is separate from the shared hang guard. [20]
+- Content identities reuse per-file facts without freezing current graph membership. [21]
+- The rewrite preserves an entirely missing consumer list when no nonempty derived replacement exists. [22]
+- Cached facts are checked for shape and reused under their content key, without a fresh-parse equality check. [23]
+- The deterministic Git hook fast tier invokes the lifecycle-catalog command; the targeted tier calls that same fast tier. [25]
+- The closed product-process register now includes agents_remember.kernel.primitives.runtime_config._LEGACY_GATE_DELEGATION_WARNED with the default reset treatment and existing _clear resetter between test modules. It is not a per-test-restored lock. The shared guard and treatment rules remain unchanged; registration is not execution of the reset control. [26]
+- **Historical source-bound reference account, not an operative override:** The register assigns distinct reset, restored and constant treatments. [19]
+- The closed register also gives the existing closeout digest-file stats, lifecycle location cache and lifecycle operation-record cache ordinary `_clear` resets at module boundaries. It adds no scanner exemption or production reset; restored rows retain their per-test treatment. [27]
+- The current closed register omits retired ambient-session/log owners while retaining closeout and worktree landing-chain cache resets. [28]
+- The synchronization owner projects canonical skills to the sole declared package target, preserving every declared-copy check without harness mirrors. [14]
+- The collection register and explicit kernel service-holder reset are separate module-isolation paths; new explainer and watcher collections join the closed register. [29]

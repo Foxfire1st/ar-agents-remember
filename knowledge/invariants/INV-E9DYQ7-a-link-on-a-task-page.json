@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake",
+      "spans_locations"
+    ],
+    "justification": "Shared clipped text and references must preserve link meaning without turning source syntax into the user-visible contract."
+  },
+  "applicability": "Markdown/link text rendered by task-page head, note, step and reference surfaces.",
+  "conditions": [
+    "Shown Markdown is rendered rather than exposed as source link syntax.",
+    "Reference words are the link and the path is adjacent metadata."
+  ],
+  "exclusions": [
+    "Fixing relative non-requirement navigation in the shared Markdown grammar (outside L127).",
+    "Adding task-authoring authority to links."
+  ],
+  "id": "INV-E9DYQ7",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/panels/detail-panel/page-look.test.tsx: 'draws a Markdown link as a link and a reference as its words and its place'; notes/reports/worker/7b2c4e19-5d63-4a8f-b1e0-127000000a01/evidence-f6/sandbox/look2-capture.json (rawMarkdownLinks 0 on every form and width)"
+      ],
+      "path": "ingest-new-obligations.json"
+    },
+    "handoffEntry": "MIK-R127@v1 rule 10 (f)",
+    "leaf": "260928-MIK-L127",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A link on a task page is drawn as a link: Markdown in notes and step titles is rendered, a reference row is its words as the link with its path beside it, and the text of the page holds no raw Markdown link.",
+  "status": "proposed",
+  "supersedes": []
+}

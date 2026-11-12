@@ -1,0 +1,103 @@
+{
+  "path": "mcp/tests/test_explainer_planned.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The case `test_the_document_is_a_real_task_document_and_its_effects_become_planned_rows` protects each declared effect becoming a planned row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a5029768fb63cc682ee66351592260ac4e1e6c4e",
+            "content": "sha256:40e11ccdcac76ca6c815886e9b325463338bcb09b900a758faca19704e55ce75",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_document_is_a_real_task_document_and_its_effects_become_planned_rows"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The case `test_an_existing_subject_shows_its_current_statement_and_a_new_subject_its_label` protects a current statement and a hand-off label being told apart.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a5029768fb63cc682ee66351592260ac4e1e6c4e",
+            "content": "sha256:369f1f33d886eceb29e52a3d096a510495c0e0596c89afde2cae081aabdd2c3b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_existing_subject_shows_its_current_statement_and_a_new_subject_its_label"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The case `test_a_scope_path_two_tip_files_answer_is_listed_as_text` protects an ambiguous scope path being listed as text rather than resolved.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a5029768fb63cc682ee66351592260ac4e1e6c4e",
+            "content": "sha256:63e7e197facd770b28dff414fcd3b7ebd1adf1380bf9e3ff6377f54ea637aee3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_scope_path_two_tip_files_answer_is_listed_as_text"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The case `test_only_deterministic_sorts_are_offered` protects the sorts being deterministic and free of judgment ordering.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a5029768fb63cc682ee66351592260ac4e1e6c4e",
+            "content": "sha256:8adce91151ffebb0e1c0ed68156fadf12c9c8597cfeccef6ab356901655a4933",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_only_deterministic_sorts_are_offered"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The case `test_the_page_has_no_action_that_could_start_anything` protects the page carrying no action, no model turn and no agent start.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a5029768fb63cc682ee66351592260ac4e1e6c4e",
+            "content": "sha256:f5db2265443d554708b03b29d299b6e38f0ecabdf97eaf75378b40410659e1e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_page_has_no_action_that_could_start_anything"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The case `test_the_module_imports_no_host_service_or_bridge` protects the planned payload staying a pure read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a5029768fb63cc682ee66351592260ac4e1e6c4e",
+            "content": "sha256:a7c97d43dce64a193a0dce5563e99669ec536a33ed0cb37f44558d51ffc0e92b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_module_imports_no_host_service_or_bridge"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

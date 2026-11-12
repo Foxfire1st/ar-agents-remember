@@ -1,0 +1,413 @@
+{
+  "path": "mcp/src/agents_remember/kernel/recorded_reads.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8a23691198bebbe2d0f859101a6f6dab3b9b29d0",
+        "content": "sha256:1697c75ae1a2ec88bc76366b37850667f500f5a877bf156208c336a99cb16505",
+        "locator": {
+          "kind": "symbol",
+          "name": "changed_observations"
+        }
+      },
+      "id": "RLZ-67HY7K",
+      "invariant": "INV-D2HZQ8",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-gate-verdict-follows-selections",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "Repeats the recorded path resolutions and existence probes first and reports only those when one moved, so a retargeted locator is a change even when the bytes behind the new target are identical, and those bytes are not read for the check.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "8a23691198bebbe2d0f859101a6f6dab3b9b29d0",
+        "content": "sha256:0f7668579f2406c9df23d8f91027cfb6d4d0b6bc90397e058a4ede4ae275a178",
+        "locator": {
+          "kind": "symbol",
+          "name": "recorded_reads"
+        }
+      },
+      "id": "RLZ-94X4JH",
+      "invariant": "INV-7PGZ9Y",
+      "origin": {
+        "handoffEntry": "L54-curator-MIK-R55-v1-rule-6-actual-guards-wave-70",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "The context manager installs kept reads and a caller-owned/inherited examined bucket and resets both tokens in finally.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "8a23691198bebbe2d0f859101a6f6dab3b9b29d0",
+        "content": "sha256:c87cc3a4ea29b59b6f2405103a00cb5710e4655b2607dec6c2e514f3d3187386",
+        "locator": {
+          "kind": "symbol",
+          "name": "_record"
+        }
+      },
+      "id": "RLZ-FDBKA2",
+      "invariant": "INV-7PGZ9Y",
+      "origin": {
+        "handoffEntry": "L54-curator-MIK-R55-v1-rule-6-actual-guards-wave-70",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "This actual write boundary selects the examined or kept bucket and preserves conflicting observed identities.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "8a23691198bebbe2d0f859101a6f6dab3b9b29d0",
+        "content": "sha256:1697c75ae1a2ec88bc76366b37850667f500f5a877bf156208c336a99cb16505",
+        "locator": {
+          "kind": "symbol",
+          "name": "changed_observations"
+        }
+      },
+      "id": "RLZ-P66WSC",
+      "invariant": "INV-BBPPS5",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-view-depends-on-its-reads",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "Rechecks a recorded set: every recorded path resolution and existence probe first, and the recorded files only when all of those still give their recorded answers.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "8a23691198bebbe2d0f859101a6f6dab3b9b29d0",
+        "content": "sha256:e2eb089baa0dcd772d2ea5d230bd5dd048bfeab1317dff686f3041c2f38babce",
+        "locator": {
+          "kind": "symbol",
+          "name": "record_read"
+        }
+      },
+      "id": "RLZ-PQ6SK9",
+      "invariant": "INV-7PGZ9Y",
+      "origin": {
+        "handoffEntry": "MIK-R55@v1 rule 6",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "This recorder owns consumed read identities and their enclosing observation bucket.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "8a23691198bebbe2d0f859101a6f6dab3b9b29d0",
+        "content": "sha256:6da8d9496b8ae2e495bf6563dc29b7f421a9d4a5bebb08b51b9087461dc45d7d",
+        "locator": {
+          "kind": "symbol",
+          "name": "observed_resolve"
+        }
+      },
+      "id": "RLZ-SN23S7",
+      "invariant": "INV-D2HZQ8",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-gate-verdict-follows-selections",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "Records a path resolution as a resolve: row keyed by the unresolved absolute path, which is the row a retargeted link changes.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "8a23691198bebbe2d0f859101a6f6dab3b9b29d0",
+        "content": "sha256:5067986102da40975eb1326239556e72461cb71ebc7a10ed07aa3029d4f9a5c8",
+        "locator": {
+          "kind": "symbol",
+          "name": "has_failed_observation"
+        }
+      },
+      "id": "RLZ-YRJNST",
+      "invariant": "INV-5M9WY3",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-failed-read-never-kept",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "Names a row that is a conflict of two identities or an unreadable read as a failed observation; the view memo and the gate memo refuse to keep a result that has one.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "10": {
+      "note": "One read is recorded with the passed identity or the file's identity.\n\nAnchor: `record_read`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a23691198bebbe2d0f859101a6f6dab3b9b29d0",
+            "content": "sha256:8ffb4484face95cb08e182c862449827b752195befae946dae537bed77adfd2e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Two different identities for one key become a conflict.\n\nAnchor: `_record`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a23691198bebbe2d0f859101a6f6dab3b9b29d0",
+            "content": "sha256:8ffb4484face95cb08e182c862449827b752195befae946dae537bed77adfd2e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Rows of another block or process are recorded through the same conflict rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a23691198bebbe2d0f859101a6f6dab3b9b29d0",
+            "content": "sha256:0c18356448cc30876afdea357f1a3357f3b308ff4bc7d301c520c61ee2b3d9b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "replay_reads"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The validation of a row that arrives from another process.\n\nAnchor: `valid_observation`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a23691198bebbe2d0f859101a6f6dab3b9b29d0",
+            "content": "sha256:8ffb4484face95cb08e182c862449827b752195befae946dae537bed77adfd2e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "A conflict or an unreadable row marks the set as failed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a23691198bebbe2d0f859101a6f6dab3b9b29d0",
+            "content": "sha256:5067986102da40975eb1326239556e72461cb71ebc7a10ed07aa3029d4f9a5c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "has_failed_observation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The recorded resolution keeps the absolute logical path as its key.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a23691198bebbe2d0f859101a6f6dab3b9b29d0",
+            "content": "sha256:6da8d9496b8ae2e495bf6563dc29b7f421a9d4a5bebb08b51b9087461dc45d7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "observed_resolve"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The recorded existence probe of a path, also for a directory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a23691198bebbe2d0f859101a6f6dab3b9b29d0",
+            "content": "sha256:dabd96664201b6cf646625fc8ea3f6ed0b0c97b8830e928319f3f2f6a01aaa52",
+            "locator": {
+              "kind": "symbol",
+              "name": "observed_path_exists"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "A false existence probe records `exists:<absolute logical path>` = absent, distinct from a failed byte read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a23691198bebbe2d0f859101a6f6dab3b9b29d0",
+            "content": "sha256:7f62b031768c3439106d46110e3a664a0a6fc84e1d085beb6626a63fdcb57395",
+            "locator": {
+              "kind": "symbol",
+              "name": "observed_exists"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "One read of the bytes, recorded, then decoded with newline translation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a23691198bebbe2d0f859101a6f6dab3b9b29d0",
+            "content": "sha256:e786348fd708fd63c48c22be7a4bb9715f5c1ae97ba0ff3a8f903c1247849231",
+            "locator": {
+              "kind": "symbol",
+              "name": "observed_text"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The absent higher-priority settings file, the absent JSON sibling and the consumed Markdown file are rows of one recording.\n\nAnchor: `_settings_selection`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+            "content": "sha256:267caaf15e6e218966814d04fd2285fd1db099ea6dd45ebe90412f84ac14b800",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "A retargeted packet locator is seen through its resolve row, and no byte outside the task is read for the recheck.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+            "content": "sha256:525de24ac76e4627bf2b0ffd1ba7d5e701c5ec644922ae6ffdbf7c3ae47c2e32",
+            "locator": {
+              "kind": "symbol",
+              "name": "_packet_confinement"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "A malformed row from the child is refused by the parent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e29e1b9902f5b27cd11779b2b92b5e3fb6c28560",
+            "content": "sha256:3538b780e7fc2603231d6fe2e08b54e103f3363dc08a12c232e5172874b6a1d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_real_child_transport_failures_are_explicit_uncached_and_recoverable"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "Every file the gate reads is in its read set, and a conflicting read is never kept.\n\nAnchor: `test_every_file_read_is_in_the_read_set_and_a_conflicting_read_is_never_kept`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb21438758c57cf647872e223994856f0ee5bd5d",
+            "content": "sha256:1bcf74a1372072144d39d4252082585bbcc86540d62cc4aa888664961a69d8f9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_gate_routes.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "26": {
+      "note": "The direct JSON listing of a folder is recorded as one `json-files:` row, empty listing included.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a23691198bebbe2d0f859101a6f6dab3b9b29d0",
+            "content": "sha256:a4efcf6cd61b31017d9fad5d27b488f8acb9e61a9f8307f6df1d6d70c5677b15",
+            "locator": {
+              "kind": "symbol",
+              "name": "observed_json_files"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "Nested recording inherits or accepts a separate examined audit bucket; examined reads use its conflict handling without becoming kept dependencies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a23691198bebbe2d0f859101a6f6dab3b9b29d0",
+            "content": "sha256:c45cc44528e9e870507447df1c0a469f6700bb8616765a73e3e699708d9a67a5",
+            "locator": {
+              "end": 152,
+              "kind": "line_range",
+              "start": 138
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8a23691198bebbe2d0f859101a6f6dab3b9b29d0",
+            "content": "sha256:e2eb089baa0dcd772d2ea5d230bd5dd048bfeab1317dff686f3041c2f38babce",
+            "locator": {
+              "end": 162,
+              "kind": "line_range",
+              "start": 155
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8a23691198bebbe2d0f859101a6f6dab3b9b29d0",
+            "content": "sha256:c87cc3a4ea29b59b6f2405103a00cb5710e4655b2607dec6c2e514f3d3187386",
+            "locator": {
+              "end": 170,
+              "kind": "line_range",
+              "start": 165
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The recording block sets and restores the context variable.\n\nAnchor: `recorded_reads`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a23691198bebbe2d0f859101a6f6dab3b9b29d0",
+            "content": "sha256:8ffb4484face95cb08e182c862449827b752195befae946dae537bed77adfd2e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

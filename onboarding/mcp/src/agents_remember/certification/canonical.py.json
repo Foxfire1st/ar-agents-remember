@@ -1,0 +1,82 @@
+{
+  "path": "mcp/src/agents_remember/certification/canonical.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Raw registry admission refuses excess work before normalization or digest allocation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7678597fa991a5eb060503fc609755842eff13d",
+            "content": "sha256:91ba252f1835eab4ffe71252c6d63b8ea384601777d47603ceb4bb4f328bd0af",
+            "locator": {
+              "kind": "symbol",
+              "name": "canonicalize_registry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Rail variants deduplicate only by exact normalized digest within one identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7678597fa991a5eb060503fc609755842eff13d",
+            "content": "sha256:f9dbc1abf477cee1e2129404b92f78828fd99b8c50e48de78db22b868b29e9f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_canonical_rails"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Nested contract collections are normalized before stable rail ordering.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7678597fa991a5eb060503fc609755842eff13d",
+            "content": "sha256:ce6fb087fe679e0c747b393b62ebee51e0692c8fa2a7ed99307741b7b2af72fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_normalize_rail"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7678597fa991a5eb060503fc609755842eff13d",
+            "content": "sha256:b877e247248d6fab87f0e46d928a9126e04e825f1b30215cc4c8edccfe0bd23e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_rail_sort_key"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Canonicalization consumes the generic `RailRegistry` contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7678597fa991a5eb060503fc609755842eff13d",
+            "content": "sha256:91ba252f1835eab4ffe71252c6d63b8ea384601777d47603ceb4bb4f328bd0af",
+            "locator": {
+              "kind": "symbol",
+              "name": "canonicalize_registry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

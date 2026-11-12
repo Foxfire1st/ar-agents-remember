@@ -1,0 +1,39 @@
+{
+  "path": "mcp/src/agents_remember/application/curator_scope.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`CuratorScope` owns the behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0079b3a9ce6d5adb5fd9cd335b8b20418c5a302c",
+            "content": "sha256:8afb883683ee9fb7c58ac697a415a76320641421e7840a89394a3a302f7bec0f",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorScope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`read_curator_scope` owns the behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0079b3a9ce6d5adb5fd9cd335b8b20418c5a302c",
+            "content": "sha256:2db696a987d448a08b86e672f08a156787d90003198a97711b54b2124aa48ecd",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_curator_scope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

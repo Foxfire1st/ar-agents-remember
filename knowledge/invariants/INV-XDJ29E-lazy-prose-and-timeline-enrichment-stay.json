@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Two independent enrichment owners in PathViews and TruthView must preserve the same initial snapshot boundary. Otherwise a future lazy-reader change could combine new prose with old reference targets or new history with an old guarantee and misrepresent one coherent knowledge result. This outlives the leaf and is distinct from INV-QE6278, whose scope explicitly excludes document reads."
+  },
+  "applicability": "Whole-prose loading and timeline continuation/restart inside one mounted Knowledge reader view.",
+  "conditions": [
+    "A present prose response replaces held prose only when selection.treeKey and selection.memoryRevision equal the original path answer values.",
+    "Timeline enrichment requires a view answer, a supplied non-refused timeline and equality of those two selection fields to the initial record answer; continuation appends while restart replaces events only.",
+    "Mismatches/refusals/failures leave current prose/events and the original references/record fields coherent, with the owner failure and whole-view reload controls.",
+    "The comparisons use the supplied fields; two absent optional fields can compare equal. The boundary does not authenticate a complete server snapshot or returned repository/path metadata."
+  ],
+  "exclusions": [
+    "Backend tree/commit validation, cryptographic admission, arbitrary schema completeness and full-state rollback.",
+    "All reader acquisitions sharing one guard, aborting the network request, fresh browser/runtime/performance acceptance or native proof qualification from an unresolved parameterized test symbol."
+  ],
+  "id": "INV-XDJ29E",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Exact frozen usePathProse/useTimelinePages/timelineLoadFailure source and existing current cards; ReaderBounds changed-prose/timeline assertions independently read. Parameterized native symbols resolve null in the read-only owner, so no proves entry or guarded_by_test admission is claimed. No test execution performed."
+      ],
+      "path": "freeze11-reader-enrichment-boundary-and-support-hunks-03.json"
+    },
+    "handoffEntry": "CUR-L57-reader-side-load-coherence",
+    "leaf": "260928-MIK-L57",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Lazy prose and timeline enrichment stay with the initial reader view: differing supplied treeKey or memoryRevision refuses the side-load rather than mixing new text or history with the old references or record fields; failed/refused loads retain the coherent initial content and expose recovery controls.",
+  "status": "proposed",
+  "supersedes": []
+}

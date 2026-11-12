@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The recorded behavioral fixture assertions guard this obligation; the proof facets distinguish their limited fixture behavior from real-host or full-final acceptance."
+  },
+  "applicability": "Every resend of a held row that carries an attempted message id.",
+  "conditions": [
+    "The row keeps the id it was attempted under, and the store's claim is stale and resumable.",
+    "The timeline read is bounded: the bridge refetches the last 200 entries."
+  ],
+  "exclusions": [
+    "An unreadable timeline is treated as not holding the copy; the send proceeds under the same id and the host's own id record governs.",
+    "Recovery tolerates, and does not require, a host that deduplicates by itself."
+  ],
+  "id": "INV-PJA167",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_held_queue.py::HeldQueueRecoveryTests::test_a_split_recovery_keeps_the_part_id_on_a_deduping_host passes; scratch/worker/5e0b3a10-7a35-4c5e-9f11-100000000001/xdg/r6-probe-final1.txt sha 62ef60d4589d: received [A,B,C], B once"
+      ],
+      "path": "l100-knowledge-handoff.json"
+    },
+    "handoffEntry": "L100-R100-4b-immutable-id",
+    "leaf": "260928-MIK-L100",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "A stale-claim resume reuses the stored claim and resends surviving members under their original member-derived send ids. Before a resend the product reads the recipient's timeline for the attempt's id within the bounded tail it reads; when the copy is there the delivery is recorded with no send, and when the timeline cannot be read the send still goes out under the same id, so a host that records ids keeps it at most once.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,118 @@
+{
+  "path": "mcp/tests/test_capsule_serving_surface.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The split contract: surface cases here, worlds and vocabularies imported.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18d5da5c5cd81c7959fae306901ea22aa9d180b6",
+            "content": "sha256:69bbdd9beec0c06960b280bbcc65ae7645005644ef43ba91c5eb02958a30870c",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Shipped corpus, manifest identity, index shape and entry completeness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18d5da5c5cd81c7959fae306901ea22aa9d180b6",
+            "content": "sha256:0269eb5cec6b21d3b71d111b504e17949b7276875897c3a146bfc03a9c1fa840",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The real stdio exchange and its client-observed checks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18d5da5c5cd81c7959fae306901ea22aa9d180b6",
+            "content": "sha256:e403b7f68bf454d2f670b9fd2da37197f87e16d0ab598ac19170e4cd0717bb5f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_real_client_and_server_exchange_over_the_installed_sdk"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Live-server traversal refusal and the harness-can-fail sanity check.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18d5da5c5cd81c7959fae306901ea22aa9d180b6",
+            "content": "sha256:29abe39404e8e3d0e624d5a5a0dcc63bee02fac8f9c793602eb5f1582bf7d4a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_server_process_never_serves_a_file_outside_a_skill_directory"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Seeded-mutation guards: containment, index, name rule and idempotence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18d5da5c5cd81c7959fae306901ea22aa9d180b6",
+            "content": "sha256:547998cfaff795e86c9f2e2e3875d470ddc56280bd71591ff5304d6bfddf048d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_catalog_record_that_escapes_its_skill_directory_is_refused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Altitude admission, capsule seats, nesting and the legacy rename.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18d5da5c5cd81c7959fae306901ea22aa9d180b6",
+            "content": "sha256:14366176d431e014ff41b9a7687212e9517b31d33cc13818b54e1378bdc37a7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_altitude_admission_admits_every_role_the_document_can_carry_and_refuses_the_rest"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The served catalog and both the canonical and packaged skill trees hold exactly the six retained skills.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18d5da5c5cd81c7959fae306901ea22aa9d180b6",
+            "content": "sha256:0269eb5cec6b21d3b71d111b504e17949b7276875897c3a146bfc03a9c1fa840",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,40 @@
+{
+  "path": "mcp/tests/test_agent_eval_adapters.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "70142b8e0cf0d9760491f30298a95537c265702c",
+        "content": "sha256:eee96ae3691247bb9175e605fd4ccc5fa800adfc0d50c1692d21141932766ab9",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-GW3G26",
+      "invariant": "INV-QFMMYM",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-native-launch",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "Existing native actor and host/session tests retain explicit model/profile binding and setup/deadline failure assertions. Added archived-row/replay cases are separate synthetic capture tests, not a new native actor launch or acceptance result.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.\n\nAnchor: Current declared source extent",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70142b8e0cf0d9760491f30298a95537c265702c",
+            "content": "sha256:eee96ae3691247bb9175e605fd4ccc5fa800adfc0d50c1692d21141932766ab9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

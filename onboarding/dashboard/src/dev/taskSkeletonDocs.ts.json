@@ -1,0 +1,48 @@
+{
+  "path": "dashboard/src/dev/taskSkeletonDocs.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The rich exports and supported API answers are invented; leaf counts/times and the retained master product record are fixture examples, not native proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e60bbd108f600f17042997d3aade41f670e19fa2",
+            "content": "sha256:d9c84296d7ce67c802009e598c29fbd32325e8e909ce94a670c3dd2f8bc436a8",
+            "locator": {
+              "end": 281,
+              "kind": "line_range",
+              "start": 259
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e60bbd108f600f17042997d3aade41f670e19fa2",
+            "content": "sha256:6e306723ae4362ecf887948e42ea8d10e0ee2ffa00cbacf9531abb416303d3ec",
+            "locator": {
+              "end": 438,
+              "kind": "line_range",
+              "start": 406
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e60bbd108f600f17042997d3aade41f670e19fa2",
+            "content": "sha256:836800211d8a9926a676ef44b6abed1fe0202e8b14b8c2d5b90902e16875bdeb",
+            "locator": {
+              "end": 807,
+              "kind": "line_range",
+              "start": 715
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

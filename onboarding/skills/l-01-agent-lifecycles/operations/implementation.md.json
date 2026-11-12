@@ -1,0 +1,381 @@
+{
+  "path": "skills/l-01-agent-lifecycles/operations/implementation.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "70f9c9b7b971a88ca122d8d482d8c7b89fa3a414",
+        "content": "sha256:d32dc18f9ac3632b726959ce087e10a1b7fd459e0501b2534dcd5690eb74b4a7",
+        "locator": {
+          "end": 52,
+          "kind": "line_range",
+          "start": 4
+        }
+      },
+      "id": "RLZ-1AP8C0",
+      "invariant": "INV-NNQR91",
+      "origin": {
+        "handoffEntry": "L54-hidden-implementation-custody",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "This canonical implementation operation supplies the instructions that the shipped implementation copies propagate; those copies set no role, task or permission authority of their own. Under the architect amendment, this new L54 realization carries the propagation knowledge of these unchanged hidden realizations, not their IDs or physical anchors: RLZ-E1C26B sidecar SHA-256 5e70efce5aff15952b3b96082c98a056930b14d4f5780cd83495c2ff87ee706f (.agents); RLZ-JH0W86 sidecar SHA-256 27fa4d33fcb0c0a433f1fdebec3223e4040eaf9f8328b233fda2f6cdfa67fc70 (.claude); RLZ-HZ0DVG sidecar SHA-256 94d7ce67ca908fd5336f60df4b71e74cfc1d509b87129af3741024f900d27cd3 (.codex); RLZ-EAH82E sidecar SHA-256 1c343bd3dbdf52026a7acebbe0137323d5b5ffd681c70759bd991ebbdf4f77cd (.cursor); RLZ-TS8W18 sidecar SHA-256 5696eb7772773c1e03f3e342499295146abd5e631b1aede40d4b36213ff97d9c (.github-vscode); RLZ-N3YQKG sidecar SHA-256 4138bb1af976339ae7e0e9314d3a81d0116031a0a03e3b2d4a0492e4d4301197 (.hermes); RLZ-SK1Q22 sidecar SHA-256 2a0f46630a753a3416c62abf154b40819b4da510e2a06230d1af40d35c41521a (.openclaw); RLZ-QHEMWS sidecar SHA-256 4374c09ef2a8894d89d8a26f80ba6dacd9521338ca06eab046ec3f4d6571ca7d (.pi). The eight original entries remain byte-identical; this entry is not a relocation or recreation of any of them.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "70f9c9b7b971a88ca122d8d482d8c7b89fa3a414",
+        "content": "sha256:5bca58348a9cedbcb2afa0005c0f48deeef34ae14c2e6eca830a36c509d470a5",
+        "locator": {
+          "end": 20,
+          "kind": "line_range",
+          "start": 20
+        }
+      },
+      "id": "RLZ-27TK2D",
+      "invariant": "INV-972YFR",
+      "origin": {
+        "handoffEntry": "MIK-R218.1@v1",
+        "leaf": "260928-MIK-L205"
+      },
+      "rationale": "The implementation operation's final-candidate step is the always-loaded build stage where the Worker selects, records and runs the frozen focused tests.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "70f9c9b7b971a88ca122d8d482d8c7b89fa3a414",
+        "content": "sha256:5f96765bd480015dd201e0e99308c06a69fe32f205e55b2f25ffba81f75d8259",
+        "locator": {
+          "end": 87,
+          "kind": "line_range",
+          "start": 80
+        }
+      },
+      "id": "RLZ-3QTBC5",
+      "invariant": "INV-7E3JNX",
+      "origin": {
+        "handoffEntry": "R99-8-own-sync",
+        "leaf": "260928-MIK-L99"
+      },
+      "rationale": "Names Worker sync and supported continue arguments after Manager staging.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "70f9c9b7b971a88ca122d8d482d8c7b89fa3a414",
+        "content": "sha256:5120ba3868a8a19481ec6a7015246af0f409f915154041909761e3b6e9f1f2e1",
+        "locator": {
+          "end": 54,
+          "kind": "line_range",
+          "start": 45
+        }
+      },
+      "id": "RLZ-6P4D1B",
+      "invariant": "INV-MTRR08",
+      "origin": {
+        "handoffEntry": "L100-R100-doctrine-coherence",
+        "leaf": "260928-MIK-L100"
+      },
+      "rationale": "Worker first tells Manager to start Reviewer, then hands the exact freeze directly to the started Reviewer; the same clause sends the producer list only after code PASS.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "70f9c9b7b971a88ca122d8d482d8c7b89fa3a414",
+        "content": "sha256:47244c585ee85f98726122e926fdb820910baf2a3f0c1fc7486e89f298e37ad5",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-75F34B",
+      "invariant": "INV-ZVD184",
+      "origin": {
+        "handoffEntry": "L185-attach-inv-zvd184",
+        "leaf": "260928-MIK-L185"
+      },
+      "rationale": "The operation no longer repeats the Messages passage: it keeps one home in roles/worker.md, which is what the clause's 'nothing said twice' requires of the corpus.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "70f9c9b7b971a88ca122d8d482d8c7b89fa3a414",
+        "content": "sha256:340b75c0f75cd25023fcd41e73c89607ce9b14d0f2d8aad9c385e2d1bc4a7c2d",
+        "locator": {
+          "end": 87,
+          "kind": "line_range",
+          "start": 85
+        }
+      },
+      "id": "RLZ-7KXE63",
+      "invariant": "INV-7E3JNX",
+      "origin": {
+        "handoffEntry": "R99-8-own-sync",
+        "leaf": "260928-MIK-L99"
+      },
+      "rationale": "Separates Curator content repair, Manager staging and Worker supported continuation.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "70f9c9b7b971a88ca122d8d482d8c7b89fa3a414",
+        "content": "sha256:5bca58348a9cedbcb2afa0005c0f48deeef34ae14c2e6eca830a36c509d470a5",
+        "locator": {
+          "end": 20,
+          "kind": "line_range",
+          "start": 20
+        }
+      },
+      "id": "RLZ-CCM727",
+      "invariant": "INV-YGXGEC",
+      "origin": {
+        "handoffEntry": "MIK-R218.3@v1",
+        "leaf": "260928-MIK-L205"
+      },
+      "rationale": "The implementation operation states that a repair follows the same search rule, binding the Worker's repair round to the freeze rule.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "70f9c9b7b971a88ca122d8d482d8c7b89fa3a414",
+        "content": "sha256:d32dc18f9ac3632b726959ce087e10a1b7fd459e0501b2534dcd5690eb74b4a7",
+        "locator": {
+          "end": 52,
+          "kind": "line_range",
+          "start": 4
+        }
+      },
+      "id": "RLZ-DRT32D",
+      "invariant": "INV-NNQR91",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-19",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "Canonical Implementation owns task-bound own-file reads through the Worker's assignment, task_doc-first edits through orientation's primary-tool rule, memory as read-only context, truthful report and check evidence, and direct freeze delivery to the Reviewer. It carries no correct-write recovery pointer of its own.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Worker first tells Manager to start Reviewer at freeze, then hands that Reviewer the exact freeze and journal records directly once the seat exists. After code PASS and Curator start, its exact-freeze producer list goes directly to Curator.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70f9c9b7b971a88ca122d8d482d8c7b89fa3a414",
+            "content": "sha256:a214d72d4436bafca4d0b439d16882af5e8466e5a38d4c4674dbd4c8f1060d2e",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 47
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
+            "content": "sha256:f640afccb884091254869352840d254da88070e10f70804288c7d417a84cd40f",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 77
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The candidate stays uncommitted and the seat starts no role and stages nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
+            "content": "sha256:61e5581f71a234466784c2854f3180ca251705dc41e6369cf1b2fab8b662df2d",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 123
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "70f9c9b7b971a88ca122d8d482d8c7b89fa3a414",
+            "content": "sha256:89a01d31fa37bc62f88cc1d3268a51f2c417ab0e3ac7b0caeee74fd6cfaaa09e",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 87
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A hand-over counts only on a reply naming its exact object; busy refusals are retried.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70f9c9b7b971a88ca122d8d482d8c7b89fa3a414",
+            "content": "sha256:9a55e35d84457acf3218843c28532fefed39979cfc1cd497185d7de91aa612c2",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 72
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "61e68c0819957758f07b59ca3c123836392cc749",
+            "content": "sha256:008a9d834646564a39bfc0b0f957c855878328eca3c3e4fb664c80e66df6e370",
+            "locator": {
+              "end": 108,
+              "kind": "line_range",
+              "start": 108
+            },
+            "path": "skills/l-01-agent-lifecycles/core/authority.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1cb1b0d96c335765d43638350cb1524b3d2c72cc",
+            "content": "sha256:2af566a11122e448ce75709750cbdf82b8c541d5a2d66f431d11e64e64b8eb1e",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/message-handover.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The authored source owns this contract; the distribution copy is not a separate authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70f9c9b7b971a88ca122d8d482d8c7b89fa3a414",
+            "content": "sha256:47244c585ee85f98726122e926fdb820910baf2a3f0c1fc7486e89f298e37ad5",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The Worker-only operation carries conditional sync, direct repair and per-finding freeze evidence; its all-role audience marker adds no other seat.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70f9c9b7b971a88ca122d8d482d8c7b89fa3a414",
+            "content": "sha256:85f4f5278f612f3e6560e5e636d92ad2d81efd7c631ef89bcb2e3243152b3d93",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "70f9c9b7b971a88ca122d8d482d8c7b89fa3a414",
+            "content": "sha256:81a43bbfdc8bfca71585cedebd0b3dcac4a105ad3361ee3f4901529ea9f6de96",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 68
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:40d78f4501ce5a5ec6fe2a7214201741a166fda03410c5fe70b3ae38c7a1f2b4",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 61
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Worker distinguishes a clean sync from an overlapping path or failing focused test, and repairs owned findings without prior approval.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70f9c9b7b971a88ca122d8d482d8c7b89fa3a414",
+            "content": "sha256:c50264ab8ae886b8cc191cf9bc35799880ea1f228aebd4d81863bcba8cbaf409",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 68
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Each repaired finding has its own freeze entry; code PASS carries the same entries and changed paths directly to Curator.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70f9c9b7b971a88ca122d8d482d8c7b89fa3a414",
+            "content": "sha256:8dde060e2db755c2555199a3c33fa773d79ab1374d30820c374c60d9e4b6356c",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 41
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "70f9c9b7b971a88ca122d8d482d8c7b89fa3a414",
+            "content": "sha256:2a67283b79019c7469fb5a39a5e4dc0e156b2a87199c7b96b29c6ab664a5ec26",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 70
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "A freeze's focused tests are chosen by a recorded search of the tracked test files for every touched path, name and identifier, and a repair repeats it.\n\nAnchor: \"Choose a freeze's focused tests by searching\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70f9c9b7b971a88ca122d8d482d8c7b89fa3a414",
+            "content": "sha256:5bca58348a9cedbcb2afa0005c0f48deeef34ae14c2e6eca830a36c509d470a5",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

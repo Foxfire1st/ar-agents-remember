@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_review_opening_answers.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The build computes exactly what the page opens with, and the page reads all of it",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce78cb50347b744caeca7c9da9f2961be97ae63d",
+            "content": "sha256:0bc9ff9b27ee2fbf140e668023cf1b91ccda9cd07e6ae1deb58131652c724496",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_build_computes_exactly_what_the_page_opens_with_and_the_page_reads_it_all"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

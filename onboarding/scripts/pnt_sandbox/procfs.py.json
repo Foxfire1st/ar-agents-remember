@@ -1,0 +1,59 @@
+{
+  "path": "scripts/pnt_sandbox/procfs.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "13082cee3de98b41089657c30ec713c5b5d80885",
+        "content": "sha256:8728c00fed511ea5569798c4d2eed2a7807b24bdab44a624efc5fd9ffab281fd",
+        "locator": {
+          "kind": "symbol",
+          "name": "is_running"
+        }
+      },
+      "id": "RLZ-5MWTKA",
+      "invariant": "INV-T8F4HW",
+      "origin": {
+        "handoffEntry": "PNT-R11@v1 FR-3 (dashboard record) / F7 / F20",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Compares fresh PID, start ticks and argv instead of trusting a process number alone.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "13082cee3de98b41089657c30ec713c5b5d80885",
+        "content": "sha256:ba3f044676b86c32c8f275eae8b1981b971e19febd970591b8b9b992539225cc",
+        "locator": {
+          "kind": "symbol",
+          "name": "port_holders"
+        }
+      },
+      "id": "RLZ-WA4XV4",
+      "invariant": "INV-G0Z661",
+      "origin": {
+        "handoffEntry": "PNT-R11@v1 §2a / Ports (no fallback)",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Enumerates real TCP and TCP6 listening sockets and preserves unknown occupants.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The scoped current source carries the module/document behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "13082cee3de98b41089657c30ec713c5b5d80885",
+            "content": "sha256:5003107de5ffeb7400cfbe44d225f7f1512ffbcdbcac163a0826ed68b79d5e30",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

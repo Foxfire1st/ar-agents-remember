@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The schema home and ordinary candidate-write enforcement span document.py, task_doc_field_homes.py and task_doc_tools.py and prevent publishing dependencies on unlisted, self or cyclic tasks that would give the master a false executable order."
+  },
+  "applicability": "Explicit waitsFor authoring on a task belonging to an ordinary master through the ordinary task_doc candidate-write boundary.",
+  "conditions": [
+    "Each prerequisite is an ID listed by the same master; self references and newly introduced cycles are refused with the offending IDs.",
+    "The optional field may be absent in older documents."
+  ],
+  "exclusions": [
+    "Cross-master ordering, which remains the sprint graph’s concern.",
+    "Task-start permission or lifecycle readiness checks."
+  ],
+  "id": "INV-8W6XYQ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_task_document_order.py::test_waits_for_validation_covers_all_field_writers"
+      ],
+      "path": "L162-curation-wave-9-producer-knowledge.json"
+    },
+    "handoffEntry": "MIK-R128@v1 rule 1",
+    "leaf": "260928-MIK-L162",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A task optionally records same-master prerequisite IDs in waitsFor, and ordinary task_doc writes refuse unlisted, self and cyclic references with the offending IDs.",
+  "status": "proposed",
+  "supersedes": []
+}

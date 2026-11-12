@@ -1,0 +1,59 @@
+{
+  "path": "mcp/tests/test_paseo_role_bridge.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "51bce00d6c0ef9ddb28997883bb3a7f02d0cde02",
+        "content": "sha256:c6ba7bebfe1f8d163e3c1c32b58ca964e41249d5f0c27720ce46d525c0214092",
+        "locator": {
+          "kind": "symbol",
+          "name": "AgentSendScriptTests.test_a_running_turn_is_steered_or_held_by_the_provider_and_never_cut_off"
+        }
+      },
+      "facet": "A known-steering provider is sent by steer; a provider without steering is refused busy and its turn is left alone.",
+      "id": "PRF-S9G0ZZ",
+      "invariant": "INV-5EY4EN",
+      "origin": {
+        "handoffEntry": "MIK-R171@v2 rule 2",
+        "leaf": "260928-MIK-L171"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Send eligibility, steering versus holding, attachment payloads, waits and parent naming run against the real script.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51bce00d6c0ef9ddb28997883bb3a7f02d0cde02",
+            "content": "sha256:5e1e7609f8a1539cd34680e92801f546b75f02f10f2f22b386e0db7a45a16259",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentSendScriptTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Native options include both payload classes; empty lists omit them; malformed payloads fail before any recorded operation.\n\nAnchor: \"def test_images_and_text_attachments_go_with_the_message_only_when_given(self) -> None:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51bce00d6c0ef9ddb28997883bb3a7f02d0cde02",
+            "content": "sha256:b1aae9a0bbf19a0ac5a84133674f3aab269ab92e498e0022cc8bd6ded5ba4913",
+            "locator": {
+              "end": 452,
+              "kind": "line_range",
+              "start": 421
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

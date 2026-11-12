@@ -1,0 +1,40 @@
+{
+  "path": "scripts/agent_evals/adapters/capture.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "3cfa9e9efb574e5a56357c7799e3125bc04063cc",
+        "content": "sha256:24cad5fe1dba0997f7a92d8096339459d74bb9358c31f3c99ff01e54d4c3eef3",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-21QDFC",
+      "invariant": "INV-R4JZ3F",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-codex-capture",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "It reads explicit Codex and Claude transcript schemas and retains unknown syntax as an opaque native action rather than inventing a child call.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3cfa9e9efb574e5a56357c7799e3125bc04063cc",
+            "content": "sha256:24cad5fe1dba0997f7a92d8096339459d74bb9358c31f3c99ff01e54d4c3eef3",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

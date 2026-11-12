@@ -1,0 +1,452 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/sync_transaction_authority.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
+        "content": "sha256:922996d688a0da0b1b5ea5a4a8a115a7bbc3a4d464e26834da27e36fa9a9613c",
+        "locator": {
+          "kind": "symbol",
+          "name": "restore_cancelled_wip"
+        }
+      },
+      "id": "RLZ-0TVE2Z",
+      "invariant": "INV-T46B5W",
+      "origin": {
+        "handoffEntry": "MIK-R153 rule 3",
+        "leaf": "260928-MIK-L153"
+      },
+      "rationale": "Returns every parked candidate after rollback from its kept stash, proof-first for the reset-then-reapply crash window.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
+        "content": "sha256:630defe29a0c2a1845cab84ad949294c8213b3e9fb96fecc25b043e1ae8d0d1e",
+        "locator": {
+          "kind": "symbol",
+          "name": "_unproven_restore_error"
+        }
+      },
+      "id": "RLZ-8PNA7G",
+      "invariant": "INV-CMQTZF",
+      "origin": {
+        "handoffEntry": "MIK-R162 failure clause (no merge of the proof's own)",
+        "leaf": "260928-MIK-L163"
+      },
+      "rationale": "Names at most ten failed paths inline with readable rules and a remainder count, logs all failed names, and retains stash/cancel/no-edit guidance. Adds Git command/exit/reason only when reapply_merge_fault on that named sample actually needs native acquisition and captures a fault; it does not relay every original whole-proof native reason.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
+        "content": "sha256:e1313da8f56b303cb703c063979ceede04d9f96d1f81d2fec9252dcab608a86f",
+        "locator": {
+          "kind": "symbol",
+          "name": "require_pinned_authority"
+        }
+      },
+      "id": "RLZ-9AXMKT",
+      "invariant": "INV-STH8F0",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.1",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "require_pinned_authority asks the journal's strategy for the default-source ref it must check (160).",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
+        "content": "sha256:7f721e32abafe703b0d3c6e1f7f66ea25148fed031b5ace96e9bcacf899e5d3f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_require_side_contract"
+        }
+      },
+      "id": "RLZ-BBPEH9",
+      "invariant": "INV-STH8F0",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.1",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "_require_side_contract compares the contract's own source branch with the recorded one through journal_source_branch (260-265).",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
+        "content": "sha256:7ded4584d75bd0d66abef0c4dea9f4c6c024cc3571ddbc44584e112b0ab463e2",
+        "locator": {
+          "kind": "symbol",
+          "name": "complete_side_from_refs"
+        }
+      },
+      "id": "RLZ-DBH07E",
+      "invariant": "INV-STH8F0",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.1",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Rebuilds a side and its source branch from the pinned default-source ref name, so resume needs no task document.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
+        "content": "sha256:df20c5fc6f50a38ec260bbaa6172fe162e85a7fc4a91c4ccffe824d3e1692782",
+        "locator": {
+          "kind": "symbol",
+          "name": "require_finalizable_contract"
+        }
+      },
+      "id": "RLZ-E9N8Y2",
+      "invariant": "INV-STH8F0",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.1",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "require_finalizable_contract accepts the contract code base at the strategy's target (target_code_base, 279), which a default sync keeps unchanged.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
+        "content": "sha256:5e272c22cc08b6237bb712684d8ad38c400ba8b7fd693e8a3a046c66ccb7d962",
+        "locator": {
+          "kind": "symbol",
+          "name": "settle_resolved_parked_wip"
+        }
+      },
+      "id": "RLZ-EBT9G1",
+      "invariant": "INV-RNX24H",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.2",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "settle_resolved_parked_wip clears the journaled omission report and count only when the side settles (721-728), so a settled sync carries no stale omission.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
+        "content": "sha256:80d1610f228ba9d72ea9b088dc869c26928e10d1861d0aaefbddc7c59f45123d",
+        "locator": {
+          "kind": "symbol",
+          "name": "pin_authority"
+        }
+      },
+      "id": "RLZ-F65140",
+      "invariant": "INV-STH8F0",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.1",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "pin, require and delete each rebuild the strategy from the journal's syncSource (143, 157, 175), so the pin set follows the recorded choice.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
+        "content": "sha256:e7ccfa5ee84155c1f48195b0ead457be0001019f22fd4236e203ae0e46cc7d51",
+        "locator": {
+          "kind": "symbol",
+          "name": "delete_authority"
+        }
+      },
+      "id": "RLZ-H7JQHD",
+      "invariant": "INV-STH8F0",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.1",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "delete_authority removes the default-source pin with the others (178-180), so a finished or cancelled sync leaves no pin.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
+        "content": "sha256:d028a8fe2bfab6fd2a9097ac6cfd8f5d7dafa4043a48a071b7c2b2d22ed3da61",
+        "locator": {
+          "kind": "symbol",
+          "name": "side_record"
+        }
+      },
+      "id": "RLZ-JDBC36",
+      "invariant": "INV-STH8F0",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.1",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "side_record records the default branch instead of the contract line when given (75-76).",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
+        "content": "sha256:8bee8debcc97521a56dd713f0884c3e94df8d496ab8a7efc08ec7efb3468b0d0",
+        "locator": {
+          "kind": "symbol",
+          "name": "authority_refs_exist"
+        }
+      },
+      "id": "RLZ-R5KBRT",
+      "invariant": "INV-STH8F0",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.1",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "authority_refs_exist counts a pinned default-source ref as authority (197-198), so ref recovery sees a default sync.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
+        "content": "sha256:24779f813bd8290b1748e51b97be0fca07d3572973add82c75462be577077837",
+        "locator": {
+          "kind": "symbol",
+          "name": "restore_parked_wip"
+        }
+      },
+      "id": "RLZ-RFN5TT",
+      "invariant": "INV-YVP7RQ",
+      "origin": {
+        "handoffEntry": "MIK-R153 rule 5",
+        "leaf": "260928-MIK-L153"
+      },
+      "rationale": "Raises the proof error without journaling on dirty-and-unproven trees and never retires the stash mid-flight, so the same tree yields the same failure on retry.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
+        "content": "sha256:e47cadf755d462cd525b383d9702a3f905592d6e3aa2e4070147ca2144468a8b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_retain_parked_conflict"
+        }
+      },
+      "id": "RLZ-SWEAYE",
+      "invariant": "INV-MS6H65",
+      "origin": {
+        "handoffEntry": "MIK-R153 rule 6",
+        "leaf": "260928-MIK-L153"
+      },
+      "rationale": "The unchanged ordinary path for conflicted reapplies, now fingerprinting the operation-created state so a later cancel can tell it from owner edits.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
+        "content": "sha256:630defe29a0c2a1845cab84ad949294c8213b3e9fb96fecc25b043e1ae8d0d1e",
+        "locator": {
+          "kind": "symbol",
+          "name": "_unproven_restore_error"
+        }
+      },
+      "id": "RLZ-T7MCMT",
+      "invariant": "INV-04KNZY",
+      "origin": {
+        "handoffEntry": "MIK-R153 rule 2",
+        "leaf": "260928-MIK-L153"
+      },
+      "rationale": "The single author of the failed-proof refusal text; every proof failure in restore_parked_wip raises exactly this.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
+        "content": "sha256:541ad345ff83c9dacb613b072e0526e18a9d5839a532b0d2b147ee833f4d0eea",
+        "locator": {
+          "kind": "symbol",
+          "name": "require_record_contract"
+        }
+      },
+      "id": "RLZ-V8JT3Y",
+      "invariant": "INV-STH8F0",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.1",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "The code side check now receives the record (248), so its source branch is judged through the journal's strategy.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
+        "content": "sha256:630defe29a0c2a1845cab84ad949294c8213b3e9fb96fecc25b043e1ae8d0d1e",
+        "locator": {
+          "kind": "symbol",
+          "name": "_unproven_restore_error"
+        }
+      },
+      "id": "RLZ-VBC46S",
+      "invariant": "INV-AT7WXW",
+      "origin": {
+        "handoffEntry": "MIK-R162 rule 4",
+        "leaf": "260928-MIK-L163"
+      },
+      "rationale": "Logs every failed path and names at most the first ten inline with a merge rule only when readable, plus the remainder count and stash/cancel guidance.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Side planning and exact source-pair reads.\n\nAnchor: `side_record`, `source_pair`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
+            "content": "sha256:d028a8fe2bfab6fd2a9097ac6cfd8f5d7dafa4043a48a071b7c2b2d22ed3da61",
+            "locator": {
+              "kind": "symbol",
+              "name": "side_record"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d9a1143389ecb674fae28670511b2e7ae8035ad2",
+            "content": "sha256:452b7e4116df7c96c73adcb42afe45fe0b318f709f4ba2b58d5794d134e0b092",
+            "locator": {
+              "kind": "symbol",
+              "name": "source_pair"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_sources.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Pinned ref authority and reconstruction require exact identities.\n\nAnchor: `pin_authority`, `require_pinned_authority`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
+            "content": "sha256:80d1610f228ba9d72ea9b088dc869c26928e10d1861d0aaefbddc7c59f45123d",
+            "locator": {
+              "kind": "symbol",
+              "name": "pin_authority"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
+            "content": "sha256:e1313da8f56b303cb703c063979ceede04d9f96d1f81d2fec9252dcab608a86f",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_pinned_authority"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Contract identity and base-transition constraints.\n\nAnchor: `require_record_contract`, `require_contract_bases_unchanged`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
+            "content": "sha256:541ad345ff83c9dacb613b072e0526e18a9d5839a532b0d2b147ee833f4d0eea",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_record_contract"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
+            "content": "sha256:938284b4dab9d820f24656f4527d44eda425dfc1db7b4f96f5bff0f87743a684",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_contract_bases_unchanged"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Parked-content restoration and settlement retain the exact stash until safe.\n\nAnchor: `restore_parked_wip`, `settle_resolved_parked_wip`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
+            "content": "sha256:24779f813bd8290b1748e51b97be0fca07d3572973add82c75462be577077837",
+            "locator": {
+              "kind": "symbol",
+              "name": "restore_parked_wip"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
+            "content": "sha256:5e272c22cc08b6237bb712684d8ad38c400ba8b7fd693e8a3a046c66ccb7d962",
+            "locator": {
+              "kind": "symbol",
+              "name": "settle_resolved_parked_wip"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Restoration accepts only complete proven reapply and retains live stash authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
+            "content": "sha256:24779f813bd8290b1748e51b97be0fca07d3572973add82c75462be577077837",
+            "locator": {
+              "kind": "symbol",
+              "name": "restore_parked_wip"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Failed proof retains ten-inline/full-name-log, readable-rule, stash/cancel/no-edit boundaries; native command/exit/reason appears only when recomputing the named sample requires a native merge and captures a fault.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
+            "content": "sha256:630defe29a0c2a1845cab84ad949294c8213b3e9fb96fecc25b043e1ae8d0d1e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unproven_restore_error"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Cancellation restores already-restored sides and supports pre-sync reapply retry.\n\nAnchor: `restore_cancelled_wip`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
+            "content": "sha256:bc6d38632c06e37a2c49dd470445bc369a002d1ee99a340aa8e5f6f5d572848f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

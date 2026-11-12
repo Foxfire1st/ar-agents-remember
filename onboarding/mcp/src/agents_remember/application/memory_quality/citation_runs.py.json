@@ -1,0 +1,74 @@
+{
+  "path": "mcp/src/agents_remember/application/memory_quality/citation_runs.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8beb56e7ac09f840d461d70e1211b91ed27f8c7e",
+        "content": "sha256:81fc9d805f6e5d6eda7350fd0665675fd20648c396832ebf3bcd21943441cd52",
+        "locator": {
+          "kind": "symbol",
+          "name": "start_citation_preview"
+        }
+      },
+      "id": "RLZ-J7RBGE",
+      "invariant": "INV-QSA8WP",
+      "origin": {
+        "handoffEntry": "MIK-R213@v1 rule 2",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Admission freezes selection and delegates execution to the existing bounded registry.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Preview admission binds scope, operation and document selectors.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8beb56e7ac09f840d461d70e1211b91ed27f8c7e",
+            "content": "sha256:81fc9d805f6e5d6eda7350fd0665675fd20648c396832ebf3bcd21943441cd52",
+            "locator": {
+              "kind": "symbol",
+              "name": "start_citation_preview"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Polling uses the common scope controller.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8beb56e7ac09f840d461d70e1211b91ed27f8c7e",
+            "content": "sha256:cf71d4160be771c1df1422fe519b063765537929fdca14019d57a8a410ab1d41",
+            "locator": {
+              "kind": "symbol",
+              "name": "poll_citation_preview"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The worker checks scope around the synchronous preview.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8beb56e7ac09f840d461d70e1211b91ed27f8c7e",
+            "content": "sha256:2d36bf079cd47182a05cc90c068dda80a3f9ace1abb07bd3c7db9d30ecb9e610",
+            "locator": {
+              "kind": "symbol",
+              "name": "_execute_preview"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

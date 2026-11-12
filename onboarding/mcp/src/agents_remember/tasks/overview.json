@@ -1,0 +1,1442 @@
+{
+  "path": "mcp/src/agents_remember/tasks/overview",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Canonical task intent is hashed from the validated normative projection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
+            "content": "sha256:b479503be445e8b1660ea875d81d5a69432d8c51acd8192bcf92e97b87a3e9e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_intent_identity"
+            },
+            "path": "mcp/src/agents_remember/tasks/task_intent.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Task source snapshots and publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
+            "content": "sha256:598b8b132356383cbe0e3888140fd0962fd4bb9ac330950d41110bbb664f3922",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocSourceSnapshot"
+            },
+            "path": "mcp/src/agents_remember/tasks/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
+            "content": "sha256:1111e6701d15ca4b5661e60a98b581d3cb4e35df96c050c0dcafd9a7047c1ba3",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocSourceReadError"
+            },
+            "path": "mcp/src/agents_remember/tasks/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Application publication transaction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3cdbb47739fd9663671343886ca7985545584789",
+            "content": "sha256:609566939ff3f24cd3010781e5ad5c7f64b1f1d22abdad6d8e21ff7e7c1191d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocPublicationTransaction"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_publication.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Structural execution-node equality/hash and explicit reference ownership.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:542add22319edf16d9261747894ffc133e9b95cf87f19387da3795cde510bbfb",
+            "locator": {
+              "kind": "symbol",
+              "name": "SprintExecutionNode"
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Qualified leaf-title join.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8461d2e7183c79dc0bdaa9be6235475150a40623",
+            "content": "sha256:c4382ba01c1d80996e07f6a1edccdbd4a78db686a840d52c57dfe8a8d723d9e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "SprintGraphTitles"
+            },
+            "path": "mcp/src/agents_remember/tasks/execution_graph_titles.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8461d2e7183c79dc0bdaa9be6235475150a40623",
+            "content": "sha256:d5bf546949a8addb138d84f720ac440231c6825daa742993e5950bb8dc698623",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_graph_titles"
+            },
+            "path": "mcp/src/agents_remember/tasks/execution_graph_titles.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8461d2e7183c79dc0bdaa9be6235475150a40623",
+            "content": "sha256:1e1c02713fdb45b235e6d9665a13474e13c46d1dbfefd369061c97a66df92ef6",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_graph_titles"
+            },
+            "path": "mcp/src/agents_remember/tasks/execution_graph_titles.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Ordinal Mermaid identity allocation and rendering.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17896bc0471a58bc6acce335012cc3be76d3b77d",
+            "content": "sha256:0df2ed738f173bbac2215763230cbab2036a71fc0fa02a330ff7ad358920024d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_execution_graph_lines"
+            },
+            "path": "mcp/src/agents_remember/tasks/render.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The field.\n\nAnchor: \"MIK-R08 definition 5: a knowledge-maintenance leaf classifies every entry of its memory base\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:18c03e5b7dfcd87d1b8c680f4c0f1d0a2c360e3f949f533c07f9bf16db74891d",
+            "locator": {
+              "end": 723,
+              "kind": "line_range",
+              "start": 721
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:db858789ca3aa914c98fd790427e71d30c620e9082de56a1b6a5e6bcaf43ec48",
+            "locator": {
+              "end": 1076,
+              "kind": "line_range",
+              "start": 1074
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Its classification.\n\nAnchor: \"knowledgeMaintenanceScope\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85f114bd0c22ec4da82807255db52e5107afd7ff",
+            "content": "sha256:bf5acec652c95bfd9f6bcd4a65b6552acfd85e5daaa3d61da73bdec1228bc8ec",
+            "locator": {
+              "end": 171,
+              "kind": "line_range",
+              "start": 171
+            },
+            "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "85f114bd0c22ec4da82807255db52e5107afd7ff",
+            "content": "sha256:1d6e7d0990e843d357c7d547d9a1a175a67b015180df4a504c907f1710f0bf9d",
+            "locator": {
+              "end": 173,
+              "kind": "line_range",
+              "start": 173
+            },
+            "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Its header line.\n\nAnchor: `Expected knowledge effects`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17896bc0471a58bc6acce335012cc3be76d3b77d",
+            "content": "sha256:8b79b912cbb9537bec62927ca4bc3a49d02902c52ec8e0d571c76ac590569b82",
+            "locator": {
+              "end": 285,
+              "kind": "line_range",
+              "start": 280
+            },
+            "path": "mcp/src/agents_remember/tasks/render.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The declaration refusals: a master document, an empty list, a requirementRef naming no listed packet when the requirements list packets, and a repeated subject and effect.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:c23f524fb637ebdce3e0dcc0ea64981509ce347d98d4ab94ffd6d8b9c1b95921",
+            "locator": {
+              "end": 1038,
+              "kind": "line_range",
+              "start": 1008
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The field on the task document.\n\nAnchor: \"MIK-R11: the invariant and family effects the leaf expects\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:a3708a4a6a894925bf1ecf58df345d4a1d4c8a129d386d1cff2c0b977d22ff8e",
+            "locator": {
+              "end": 726,
+              "kind": "line_range",
+              "start": 724
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:0b5470421412c2136767f4ea27ff882448054a5aecb7997919508708ce94143e",
+            "locator": {
+              "end": 1079,
+              "kind": "line_range",
+              "start": 1077
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Exact task text remains mandatory alongside supplemental packet references.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
+            "content": "sha256:32fc15d6eb25299ccdc78f1b30b6ffaeb5b9e5fa0027ed57c5a3169f6bc4edb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_requirements"
+            },
+            "path": "mcp/src/agents_remember/tasks/task_intent.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Its normative classification.\n\nAnchor: \"expectedKnowledgeEffects\"; `ExpectedKnowledgeEffect`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85f114bd0c22ec4da82807255db52e5107afd7ff",
+            "content": "sha256:86e572fee3ea446a2d775f737fb2762d9319e55927ee502904c3b31fb6378a71",
+            "locator": {
+              "end": 172,
+              "kind": "line_range",
+              "start": 172
+            },
+            "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "85f114bd0c22ec4da82807255db52e5107afd7ff",
+            "content": "sha256:6d4e408bb816f366df596be9bed03bb9fbd3b4a3e00dffae3150b874caa8b56b",
+            "locator": {
+              "end": 298,
+              "kind": "line_range",
+              "start": 294
+            },
+            "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "85f114bd0c22ec4da82807255db52e5107afd7ff",
+            "content": "sha256:54cd3c8190fb0392574c7a66f56c6795e7355449c00a2bd44457c3596a827db9",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 174
+            },
+            "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "85f114bd0c22ec4da82807255db52e5107afd7ff",
+            "content": "sha256:36ea23db1c3db012fc05f73163d4fa4440dbd8c79775eecb66063ec36bb1662b",
+            "locator": {
+              "end": 301,
+              "kind": "line_range",
+              "start": 297
+            },
+            "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The optional intent slot, absent when undeclared.\n\nAnchor: `TaskIntentExpectedKnowledgeEffect` `canonical_value`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
+            "content": "sha256:9dd05c561299097e2391331336cbf06a3036cc935f4a44f59b73bcb3897ed15f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/tasks/task_intent.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The header block.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17896bc0471a58bc6acce335012cc3be76d3b77d",
+            "content": "sha256:c3e2fb7048fbfd50fa4f54054394692c4d623a44ca70d00b59544e0159778617",
+            "locator": {
+              "kind": "symbol",
+              "name": "_header_lines"
+            },
+            "path": "mcp/src/agents_remember/tasks/render.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The strict lookup and the decision answer.\n\nAnchor: `strict_leaf_doc` `leaf_decision_refusal`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aadce53774c779828d6dcfc8549d40e01f2cdd89",
+            "content": "sha256:31b1d56fe14ad5162059be5041627e59c48322ef9dd4fb51c2ca83bef9b6656a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/tasks/leaf_decisions.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The one rule for a leaf naming no master, and the sync's own call.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4568c29f3b900b0d0b94dce225776b17f1e981be",
+            "content": "sha256:9088b84a19015a1c79d2a52ddc77cfec084c3f0aa4fe087ff1223d471cde5d34",
+            "locator": {
+              "end": 190,
+              "kind": "line_range",
+              "start": 172
+            },
+            "path": "mcp/src/agents_remember/tasks/master_sync.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4568c29f3b900b0d0b94dce225776b17f1e981be",
+            "content": "sha256:63030139bbb1379892af3ead2ad39b9eb8264bf021e8b01736040f0c796a7c0b",
+            "locator": {
+              "end": 196,
+              "kind": "line_range",
+              "start": 193
+            },
+            "path": "mcp/src/agents_remember/tasks/master_sync.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The placement guard.\n\nAnchor: \"def require_task_document_in_place(\"; \"target = json_path_for(json_path.parent, doc)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b62764d58773b7137b2e0509d759e6df21fc8461",
+            "content": "sha256:e6584c09e9aecd5d9370b777f4eb632869ba4e102abfa86cf5efcc55a812a286",
+            "locator": {
+              "end": 156,
+              "kind": "line_range",
+              "start": 140
+            },
+            "path": "mcp/src/agents_remember/tasks/leaf_doc.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The task reader records the bytes it parses, an absent file and a failed read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
+            "content": "sha256:dd81f4dfc6836a097145db08b8d47c8c9a77ae4bc2b77d3b41a49123ae1d99db",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_task_doc"
+            },
+            "path": "mcp/src/agents_remember/tasks/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The strict lookup replays the leaf's own document and every row that is not a plain byte identity when it established the claimant; with no claimant it replays every row it opened, each sibling read in full and the exact direct JSON listing included.\n\nAnchor: `strict_leaf_doc`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aadce53774c779828d6dcfc8549d40e01f2cdd89",
+            "content": "sha256:31b1d56fe14ad5162059be5041627e59c48322ef9dd4fb51c2ca83bef9b6656a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/tasks/leaf_decisions.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The packet owner: recorded resolutions, confinement before the read, bytes recorded under the caller's locator.\n\nAnchor: `_approved_packet_ref`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
+            "content": "sha256:9dd05c561299097e2391331336cbf06a3036cc935f4a44f59b73bcb3897ed15f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/tasks/task_intent.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "A kept view ignores every task document it did not read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+            "content": "sha256:c3f475897dcd14f7a97836eec5863e97be6516602151f2871c7ddd4accbe3ae1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_kept_view_ignores_every_task_document_it_did_not_read"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+            "content": "sha256:652b10933379dbe7532866126282bad53c1c786c1d8756376c161eb2afc1bfb0",
+            "locator": {
+              "end": 949,
+              "kind": "line_range",
+              "start": 923
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Task-document publication rejects a route review missing intent identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
+            "content": "sha256:40eb1d5e4a70cd19695ae6ed12124d2b6c44bca8a44d3b2384324cf1384b9a65",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_publishable_task_document"
+            },
+            "path": "mcp/src/agents_remember/tasks/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "A document that begins to claim the leaf is not hidden by a kept view.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+            "content": "sha256:60616374187df50a50efa1efae51e8a02ebfb96f22f513da676c714dce3621e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_document_that_begins_to_claim_the_leaf_is_not_hidden_by_a_kept_view"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+            "content": "sha256:11f73fead97f325668096cc63aaff9f0c43dcb64b9dc3e1a960de82401c70497",
+            "locator": {
+              "end": 966,
+              "kind": "line_range",
+              "start": 952
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "31": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): A retirement proof requires an abandoned row without a live master reference; a legacy seat file may remain.\n\nAnchor: `SubTaskRef._retired_row_is_plain`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:0c7c8dcfdc9438f9246386ee82160720791a66e64d007a0737f6707c7f968da9",
+            "locator": {
+              "end": 523,
+              "kind": "line_range",
+              "start": 515
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:31d1061fd41033680594b708b8ba282eafb5212fb75a985d87230138f8a60e0c",
+            "locator": {
+              "end": 527,
+              "kind": "line_range",
+              "start": 519
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The missing-master message names the sprint, the master, the archive location and the retire operation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f9077dc8a0ad02a46a36a5729f89c8083771a9f",
+            "content": "sha256:0c43331b3dde69a95b7f53a17fc1fdbf20f4b3af44aa6e0e577a38e861fbcdb5",
+            "locator": {
+              "kind": "symbol",
+              "name": "missing_master_detail"
+            },
+            "path": "mcp/src/agents_remember/tasks/sprint_membership_refusal.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The retirement probe refuses a model that cannot parse a retired row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6e11097e656d8498dbf5547fc69b3c6e2c2415b",
+            "content": "sha256:82fd6bdc8ca3bc80cd92dc3a3b9769dcbf9c20bd5282766e4764b7105b23401e",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_serving_retirement_schema"
+            },
+            "path": "mcp/src/agents_remember/tasks/serving_preflight.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Shared sprint census reports commanding, recording and unreadable populations with caller-specific refusal policy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d30f455f8141827f2e8667465ad53fa062028dec",
+            "content": "sha256:d88698ceb66667a0e89dd5f164124c3e82b4531ff089147f14324c055c0fe49b",
+            "locator": {
+              "kind": "symbol",
+              "name": "sprint_census"
+            },
+            "path": "mcp/src/agents_remember/tasks/sprint_rows.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "Task reads record consumed bytes; the source-pair reader parses retained bytes separately\n\nAnchor: `read_task_doc`, `read_task_doc_with_source`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
+            "content": "sha256:dd81f4dfc6836a097145db08b8d47c8c9a77ae4bc2b77d3b41a49123ae1d99db",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_task_doc"
+            },
+            "path": "mcp/src/agents_remember/tasks/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
+            "content": "sha256:2c45f3991a0ba8b02b804b6bf561147de05165b9e09d50d58fb455dece5670f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_task_doc_with_source"
+            },
+            "path": "mcp/src/agents_remember/tasks/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "Prepared writes use atomic replacements and restoration; publication only locally requires review intent identity\n\nAnchor: `write_task_doc_batch` `_require_publishable_task_document`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
+            "content": "sha256:b6d738f15bd22b7c1c14f2817770b650fdf53fe135338353fc70773d689f5e00",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/tasks/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
+            "content": "sha256:eeeebbb8b4116d017d45350c275b791151d4e162e8d14a9f65126227730694ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_task_doc_batch"
+            },
+            "path": "mcp/src/agents_remember/tasks/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
+            "content": "sha256:40eb1d5e4a70cd19695ae6ed12124d2b6c44bca8a44d3b2384324cf1384b9a65",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_publishable_task_document"
+            },
+            "path": "mcp/src/agents_remember/tasks/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "Strict lookup retains claimant/nonplain identities or all observations for no claimant\n\nAnchor: `strict_leaf_doc`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aadce53774c779828d6dcfc8549d40e01f2cdd89",
+            "content": "sha256:31b1d56fe14ad5162059be5041627e59c48322ef9dd4fb51c2ca83bef9b6656a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/tasks/leaf_decisions.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aadce53774c779828d6dcfc8549d40e01f2cdd89",
+            "content": "sha256:7de424ff54f04e638f280df43d9d816521322a92d5a85d1d8259358c5af8d1b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "strict_leaf_doc"
+            },
+            "path": "mcp/src/agents_remember/tasks/leaf_decisions.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "Completed master terminality requires no blockers; abandonment is independent\n\nAnchor: `master_is_terminal`, `completion_blockers`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a4dadaca3d9016d1bb15ecc4b32f28703d8697b",
+            "content": "sha256:7f28306c886b1b52741e3ebc61fe68455459adcd69b875eed46a30bd2b01c491",
+            "locator": {
+              "kind": "symbol",
+              "name": "master_is_terminal"
+            },
+            "path": "mcp/src/agents_remember/tasks/readiness.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a4dadaca3d9016d1bb15ecc4b32f28703d8697b",
+            "content": "sha256:1e2a7be39dd1965472736acb225f483f2e0483f3ebf024c4e9c99e0615b4b1bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "completion_blockers"
+            },
+            "path": "mcp/src/agents_remember/tasks/readiness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "39": {
+      "note": "Parent-row stage mirrors the native task document directly, not a step-derived rollup or an independent landing verdict.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4568c29f3b900b0d0b94dce225776b17f1e981be",
+            "content": "sha256:e520eb63d25e90b91f915ecc2cda1fceb145ecccfe451ec533fcb837b2b54652",
+            "locator": {
+              "kind": "symbol",
+              "name": "derived_master_status"
+            },
+            "path": "mcp/src/agents_remember/tasks/master_sync.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Mutation classification consumes the accepted/candidate field delta.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85f114bd0c22ec4da82807255db52e5107afd7ff",
+            "content": "sha256:7797fce17a19d4ce6aa361624920dd63f12724edb7472c68660f80c5564acde2",
+            "locator": {
+              "kind": "symbol",
+              "name": "classify_task_document_mutation"
+            },
+            "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "40": {
+      "note": "Kind separation and leaf-only expected effects are explicit in the TaskDocument after-validator, which also checks sprint rows and seats.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:1f50c2905cc9b290fc5f6aeeb62bb43b9f9efb26b0397f6eacbc4db84a70e42f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_check_kind_fields"
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:7afedfa4a66c5a9076b56d4e4faa6e246a0842203125ab7be0c7fc009f6bb5ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocument"
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "41": {
+      "note": "Registration can replace a mismatched enclosure, while missing derived links are separately filled",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b62764d58773b7137b2e0509d759e6df21fc8461",
+            "content": "sha256:ac187f17699856e16148daef0e2c23405896254239757086dc1c67c12bdb2ed4",
+            "locator": {
+              "kind": "symbol",
+              "name": "plan_leaf_doc_enclosure_registration"
+            },
+            "path": "mcp/src/agents_remember/tasks/leaf_doc.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "42": {
+      "note": "Canonical placement guards derived write targets",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b62764d58773b7137b2e0509d759e6df21fc8461",
+            "content": "sha256:e6584c09e9aecd5d9370b777f4eb632869ba4e102abfa86cf5efcc55a812a286",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_task_document_in_place"
+            },
+            "path": "mcp/src/agents_remember/tasks/leaf_doc.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "43": {
+      "note": "Maintenance scope is lifecycle; declarations are normative; invalidation classes are limited",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85f114bd0c22ec4da82807255db52e5107afd7ff",
+            "content": "sha256:e04927094ef5db07cd0f4474a9f0112e8387f8ac05e9141b7c77147e3e6406d8",
+            "locator": {
+              "end": 103,
+              "kind": "line_range",
+              "start": 88
+            },
+            "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "85f114bd0c22ec4da82807255db52e5107afd7ff",
+            "content": "sha256:019f86026d576c4883cbaf64efe1367850b80a41fb657d271442991d2fb6d4e0",
+            "locator": {
+              "end": 209,
+              "kind": "line_range",
+              "start": 147
+            },
+            "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "85f114bd0c22ec4da82807255db52e5107afd7ff",
+            "content": "sha256:4e77b2a1a88bc765ec36507e0e735caefa2e8b5fc79ab93ed78346ea10fddc65",
+            "locator": {
+              "end": 105,
+              "kind": "line_range",
+              "start": 90
+            },
+            "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "44": {
+      "note": "Exact requirements remain mandatory beside packets; resolution and confinement precede packet bytes\n\nAnchor: `_requirements` `_approved_packet_ref`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
+            "content": "sha256:9dd05c561299097e2391331336cbf06a3036cc935f4a44f59b73bcb3897ed15f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/tasks/task_intent.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
+            "content": "sha256:32fc15d6eb25299ccdc78f1b30b6ffaeb5b9e5fa0027ed57c5a3169f6bc4edb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_requirements"
+            },
+            "path": "mcp/src/agents_remember/tasks/task_intent.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
+            "content": "sha256:df438c1059a150464aff29c529918b232f745101d7b828b9186a70c42c5ca9e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_approved_packet_ref"
+            },
+            "path": "mcp/src/agents_remember/tasks/task_intent.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "45": {
+      "note": "Partial review content addressing refuses and record canonical digest is checked",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c2275b9792d563997e82c391c04d0f6d885acd58",
+            "content": "sha256:0850c563045af2e3c101f1451eccd0b4e69ca7a5df887bd92a22d4d5e8fcfc67",
+            "locator": {
+              "kind": "symbol",
+              "name": "_check_route_review_coherence"
+            },
+            "path": "mcp/src/agents_remember/tasks/route_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "46": {
+      "note": "Current preflight checks model fields rather than distribution versions",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6e11097e656d8498dbf5547fc69b3c6e2c2415b",
+            "content": "sha256:fac227a51a54c44e4733c2e7d0f21732f9e26ae459d49d9d00af124e8c25c15d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/tasks/serving_preflight.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "47": {
+      "note": "Source comparison precedes ordered publication/invalidation/rebuild with reported projection failures",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3cdbb47739fd9663671343886ca7985545584789",
+            "content": "sha256:51c2d39adb859e74e55800718e2eb973f20f00a3e29bcfb12ce0e43dda706fca",
+            "locator": {
+              "end": 163,
+              "kind": "line_range",
+              "start": 132
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_publication.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "476c1c24ac02e05fb96b654322bf771287e6cbff",
+            "content": "sha256:51c71c325cda52ea89e46620bcaac74a90165279b50b3668573225bec6712f9d",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 38
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_fact_publication.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "48": {
+      "note": "Shared reopen reset owns typed cleanup and frozen-landing removal\n\nAnchor: `_reopened_contract`, `_clear_frozen_landing`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c08f0dd0dd501355eacf1089bf4011d44a0783e",
+            "content": "sha256:6d3689db95b8a2bc176c968a1bb0662a870335d936d02066b9e3265428fd6a5c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reopened_contract"
+            },
+            "path": "mcp/src/agents_remember/worktrees/reopen_reset.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c08f0dd0dd501355eacf1089bf4011d44a0783e",
+            "content": "sha256:18849a22f6422d15585b60237d37d467380867bb90ee039271f48892ebeafadf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_clear_frozen_landing"
+            },
+            "path": "mcp/src/agents_remember/worktrees/reopen_reset.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "49": {
+      "note": "Exact membership applies scoped unreadability and alias ambiguity refusals",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e7a9eac75417f2c2bf003612d5c62cfc540661a",
+            "content": "sha256:b5e5be056ece9b84830d072460358ae5d5902ad179a968446d12a2991e37e364",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commanded_masters_exact"
+            },
+            "path": "mcp/src/agents_remember/tasks/document_refs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The `task_doc` application entry point authors documents through this package. Anchor: `task_doc_tool`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
+            "content": "sha256:36946f9f594b3e343adf324da581e0d104f623f686bd83a9d2844ab5533ac0ba",
+            "locator": {
+              "end": 1186,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "50": {
+      "note": "Immutable graph admission compares canonical bytes and refuses over-budget population",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e9ac34bce989206098f910a849102bf40c1b71a",
+            "content": "sha256:c25d094a146db1574e4ac3f3929c37359e23ca8ce712c26278120c5c9e6c24cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validated_graph_binding"
+            },
+            "path": "mcp/src/agents_remember/tasks/semantic_topology_graph.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "51": {
+      "note": "Retirement census explicitly preserves different caller refusal policies",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d30f455f8141827f2e8667465ad53fa062028dec",
+            "content": "sha256:d88698ceb66667a0e89dd5f164124c3e82b4531ff089147f14324c055c0fe49b",
+            "locator": {
+              "kind": "symbol",
+              "name": "sprint_census"
+            },
+            "path": "mcp/src/agents_remember/tasks/sprint_rows.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "52": {
+      "note": "Notes/dispositions independently make step checkbox lines visible",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17896bc0471a58bc6acce335012cc3be76d3b77d",
+            "content": "sha256:8139caea92c6724240cc28d18f596e5b348b96e0fe463fa0bda59ebabde6484b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_step_lines"
+            },
+            "path": "mcp/src/agents_remember/tasks/render.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "53": {
+      "note": "Title joins use qualified leaf keys and a separate direct JSON reader\n\nAnchor: title join owners",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8461d2e7183c79dc0bdaa9be6235475150a40623",
+            "content": "sha256:289ba4f9fe20af4a696d5f9f4452d6bfcb1d078b9d817a4125230033d500d6a4",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "mcp/src/agents_remember/tasks/execution_graph_titles.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "54": {
+      "note": "Master-to-sprint mirroring uses the native commanding census and exact typed/legacy row correlation with named ambiguity/unreadability refusals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4568c29f3b900b0d0b94dce225776b17f1e981be",
+            "content": "sha256:9d4246aa736486f94b56714748fd5c2482e7e7d2366006d8b26553deace81559",
+            "locator": {
+              "kind": "symbol",
+              "name": "_plan_sprint_sync"
+            },
+            "path": "mcp/src/agents_remember/tasks/master_sync.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "55": {
+      "note": "Code reviewState and the post-landing memoryReviewState are independent persisted evidence lanes. Recorded rounds retain their kind and findings-remain facts for step-up counts; record-only checks add no try, and a memory result cannot reset passed code. Ordinary reads remain strict. The private launch-only fallback preserves malformed raw review evidence without making it a counted or accepted round; in-flight pre-rollout memory checks are not migrated.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c2275b9792d563997e82c391c04d0f6d885acd58",
+            "content": "sha256:5dbe7fc028a29d615006556062bbdfafbb99d8ae14df6d4fa1f717d6b0ddbb5d",
+            "locator": {
+              "end": 277,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/tasks/route_review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f960a935d832cbf64b99d7e8ef97475006c2ded2",
+            "content": "sha256:7d7286692ffc3446a8e6acc67c69afe17f8dcd2079850aabb8bb313a5325b6c9",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/tasks/launch_review_read.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "56": {
+      "note": "The persisted route-review record declares the optional base stamp.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c2275b9792d563997e82c391c04d0f6d885acd58",
+            "content": "sha256:bd0e6fe4943fbe368d04f63206bc9f889341d54fa1f9b32a6c60a0ad89548662",
+            "locator": {
+              "kind": "symbol",
+              "name": "RouteReviewRecord"
+            },
+            "path": "mcp/src/agents_remember/tasks/route_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "57": {
+      "note": "The exhaustive field taxonomy classifies the stamp as evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85f114bd0c22ec4da82807255db52e5107afd7ff",
+            "content": "sha256:99ae2ffaedb12ed191ec78b544ae2abccfa3f36500a279960afc4bfcf349c67a",
+            "locator": {
+              "end": 260,
+              "kind": "line_range",
+              "start": 249
+            },
+            "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "85f114bd0c22ec4da82807255db52e5107afd7ff",
+            "content": "sha256:646814c90d5daa9fda4778ee2bdad1b002add88f6c64243cad57dc151fe69bf1",
+            "locator": {
+              "end": 263,
+              "kind": "line_range",
+              "start": 252
+            },
+            "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "58": {
+      "note": "The master Order table labels a task whose intent review is open in its state cell.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:736ad19832ca176531804bda064dfea4f1b1f0ea00ca651a485403f30e32032b",
+            "locator": {
+              "kind": "symbol",
+              "name": "intent_review_open"
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "17896bc0471a58bc6acce335012cc3be76d3b77d",
+            "content": "sha256:506be68fce706e1d457facf8ecc86abe5f76ada4a4e97a22766c19b32ed52df4",
+            "locator": {
+              "end": 189,
+              "kind": "line_range",
+              "start": 178
+            },
+            "path": "mcp/src/agents_remember/tasks/render.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:2fff2d6b4d7b6b4a8fd6dca9e9821fd408f99eed6aef84d272b195f39f7e04ad",
+            "locator": {
+              "end": 729,
+              "kind": "line_range",
+              "start": 699
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:550a539ed995de387b5ed22663e837a524e609c09ef19a4f50045a83bb2f7177",
+            "locator": {
+              "end": 696,
+              "kind": "line_range",
+              "start": 667
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:d6da14c6a8c0b19a846b40ef7c08b229361903687089261e79dc4e101de153b1",
+            "locator": {
+              "end": 756,
+              "kind": "line_range",
+              "start": 745
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3c34b20dd7043af3f908b01459beac2fa1d2b5b",
+            "content": "sha256:1d8a6fa5c3ffb0899420b99c69d907fbf080a5fad904e5c20fabe0932ed26565",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "mcp/src/agents_remember/tasks/master_order.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3c34b20dd7043af3f908b01459beac2fa1d2b5b",
+            "content": "sha256:1dc392f655ec1040c2fc33c90d587853fa8aafaa77478361edf437ce6893f80c",
+            "locator": {
+              "end": 253,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/tasks/master_order.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
+            "content": "sha256:9dd05c561299097e2391331336cbf06a3036cc935f4a44f59b73bcb3897ed15f",
+            "locator": {
+              "end": 462,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/tasks/task_intent.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Leaf writes keep same-root master rows synchronized through the dedicated planner.\n\nAnchor: `plan_master_sync`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4568c29f3b900b0d0b94dce225776b17f1e981be",
+            "content": "sha256:c096ad39e2e33809b65b91ec66a656449d35e7b27b6bffe8ecedee0f5c4d7893",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/tasks/master_sync.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The task-document renderer regenerates markdown from the validated TaskDocument.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17896bc0471a58bc6acce335012cc3be76d3b77d",
+            "content": "sha256:ddf7bdb26707cdc0cd8b0d97733fce2556f65c92be705efef62698ad0d9601ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "render_markdown"
+            },
+            "path": "mcp/src/agents_remember/tasks/render.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The persisted worktree contract is the analogous model-to-text precedent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "758a00879439672a413425ed6c40686fe3626bd9",
+            "content": "sha256:b52ed062161b9c5d45e5088c38146ca084ceadd5859e230bf977b07b67cffe05",
+            "locator": {
+              "end": 877,
+              "kind": "line_range",
+              "start": 825
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "758a00879439672a413425ed6c40686fe3626bd9",
+            "content": "sha256:b52ed062161b9c5d45e5088c38146ca084ceadd5859e230bf977b07b67cffe05",
+            "locator": {
+              "kind": "symbol",
+              "name": "contract_to_text"
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The persisted-contract peer this schema mirrors.\n\nAnchor: `WorkspaceProjection`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ada1520ab5545be71a00dae1420683fd0b82938",
+            "content": "sha256:d32d3fa3f9ee309299df68d8e41fcd2129443d1c976d81632c8281b7311b99b4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

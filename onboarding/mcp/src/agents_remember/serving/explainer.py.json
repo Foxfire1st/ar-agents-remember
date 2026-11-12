@@ -1,0 +1,77 @@
+{
+  "path": "mcp/src/agents_remember/serving/explainer.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a3d5c552fe14c15e8526ef572cfdff0dd4941f16",
+        "content": "sha256:bff353ecb80092d5ca2e446b8bbdaa70e99198223c6d4c828dff4ae100216627",
+        "locator": {
+          "kind": "symbol",
+          "name": "_prepared_trees"
+        }
+      },
+      "id": "RLZ-43J39K",
+      "invariant": "INV-0ZE4W6",
+      "origin": {
+        "handoffEntry": "the-explainers-evidence-is-prepared-for-the-bound-comparison",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The preparation reopens exactly the selected recorded operands or rechecks the planned master-tip binding; a moved binding refuses rather than silently preparing another comparison.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a3d5c552fe14c15e8526ef572cfdff0dd4941f16",
+        "content": "sha256:a6983bc4f4e020e79459ce4f3e95c9e7ff7aab1aeb0f93994367b3f33d7cc9fd",
+        "locator": {
+          "kind": "symbol",
+          "name": "_prepare"
+        }
+      },
+      "id": "RLZ-RH6YTC",
+      "invariant": "INV-0ZE4W6",
+      "origin": {
+        "handoffEntry": "the-explainers-evidence-is-prepared-for-the-bound-comparison",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "This composition prepares the packet through the existing comparison owner, passes the bound owner/reference and receipts, and turns absent required preparation input into the named evidence-source-unavailable refusal.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "A process that cannot compose the seat service refuses every route by name\n\nAnchor: `def explainer_composition(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3d5c552fe14c15e8526ef572cfdff0dd4941f16",
+            "content": "sha256:2582b8ec6566aaf2ddbb4f2b7ae75e6f345c077fc9f4b7a69f7fd9a41262742e",
+            "locator": {
+              "end": 457,
+              "kind": "line_range",
+              "start": 406
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Comparison/evidence preparation rechecks operands; retained state carries its own claims and staleness; Update/Retire clear notices after service results; explicit removal and planned reads retain owner refusals; cancel preserves host uncertainty and measured revision equality.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3d5c552fe14c15e8526ef572cfdff0dd4941f16",
+            "content": "sha256:b8ee67ba84bbecf41be76e8da1a12acf27316c71f9c4234e599e0cb64554bb8a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_state_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

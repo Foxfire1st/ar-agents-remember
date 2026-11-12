@@ -1,0 +1,67 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The actual always-on fixed-cadence design was measured and replaced with server-owned interest and answer-age due state; future callers must not restore unused remote probes or substitute frontend permission."
+  },
+  "alternatives": [
+    {
+      "option": "Use actual server-owned Projector subscribers and current-identity semantic-answer age bands for landing probes.",
+      "reason": "The server already owns truthful subscriber membership and can rest discovery/admission while retaining exact final/reopen protections.",
+      "status": "chosen"
+    },
+    {
+      "option": "Continue unconditional fixed-interval remote probes independent of page interest.",
+      "reason": "It performs repeated remote work for an unchanged result with no consumer.",
+      "reconsider_when": "The product admits a concrete non-page consumer that requires independent background remote observation and owns its freshness budget.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "No frontend interest signal is introduced.",
+    "Explicit unbound refresh API and separate provider safety remain available.",
+    "The final admitted fresh-answer window is 120 seconds, not the older five-minute proposal."
+  ],
+  "context": "Recurring remote landing probes ran for unchanged eligible contracts without a page consuming them.",
+  "decider": "Architect cause/intent accepted through notes/messages/20261015T050317Z_manager-1110e042_to_worker-2dd83a0d.md and canonical leaf decision log.",
+  "id": "DEC-STANRJ",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-BMZ47D"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-BY8XBH"
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "09b582a0f8143eba360527769647f80fd552ab2c",
+        "content": "sha256:1074b49a6e7ede4e0756db60b961d8c2600d9694d3704f7e44be0322e8e001c4",
+        "locator": {
+          "kind": "symbol",
+          "name": "LandingProbeSchedule"
+        },
+        "path": "mcp/src/agents_remember/serving/projections/landing_cadence.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/worker/d2665764-add6-4e1c-aa4f-3cfe1d657d22/role-launch/freeze-2/report.md"
+      ],
+      "path": "curator-handoff-corrected.json"
+    },
+    "handoffEntry": "MIK-R165@v1 §4",
+    "leaf": "260928-MIK-L166",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

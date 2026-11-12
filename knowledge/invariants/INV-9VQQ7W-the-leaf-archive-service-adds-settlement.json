@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Artifact preservation is proved by the focused suite."
+  },
+  "applicability": "Every report, handover artifact, launch record and host chat of an archived leaf agent.",
+  "conditions": [
+    "Archiving removes the agent from the host's live list only.",
+    "The product deletes nothing it authored."
+  ],
+  "exclusions": [
+    "The host's chat retention duration is the host's behaviour and is not claimed."
+  ],
+  "id": "INV-9VQQ7W",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Frozen sourcebeb9473e +8a9894a4/f5ee11cc; test_current_history_retry_and_other_selections_preserve_every_artifact; durable post-sync/full-focused-final.log (157 passed), pyright-final.log (0 diagnostics); complete real-host witness remains pending. Rule8 also has unchanged role launch/repeat/message regressions in the same focused selection."
+      ],
+      "path": "notes/files/260928-MIK-L76-curation-evidence-20261007/handoff-full.json"
+    },
+    "handoffEntry": "MIK-R76@v1 required behavior 5",
+    "leaf": "260928-MIK-L76",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The leaf archive service adds settlement to launch receipts while preserving launch/report/handover fields and uses host archival rather than deleting retained chat or artifacts.",
+  "status": "proposed",
+  "supersedes": []
+}

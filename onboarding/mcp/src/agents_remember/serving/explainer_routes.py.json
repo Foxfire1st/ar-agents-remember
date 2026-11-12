@@ -1,0 +1,42 @@
+{
+  "path": "mcp/src/agents_remember/serving/explainer_routes.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ce5f9ae6d24b8c755e4b85b0d44b520623128a40",
+        "content": "sha256:6e4dcb9d28baa2852fe9c99beac45d86ce8b6e92e73b3c51476ef66a528aa526",
+        "locator": {
+          "kind": "symbol",
+          "name": "handle_cancel"
+        }
+      },
+      "id": "RLZ-H76NMX",
+      "invariant": "INV-VCAQVB",
+      "origin": {
+        "handoffEntry": "L183-exact-seat-cancel-state",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The cancel HTTP boundary requires the exact nonempty requestId and returns the seat service cancellation state for the selected leaf; malformed input is a named400 refusal and an unwired service refuses before host action.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "handle_state answers a request only for the seat this process holds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce5f9ae6d24b8c755e4b85b0d44b520623128a40",
+            "content": "sha256:222eac6bbc4de4e08674df28005dd484ea1339a829368090e1edba7fb771649a",
+            "locator": {
+              "kind": "symbol",
+              "name": "handle_state"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

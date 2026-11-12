@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/panels/review/ReviewSurface.lane.test.tsx",
+  "realizes": [],
+  "references": {
+    "13": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('draws each destination in the existing page in the lane answer order, with its one reason sentence', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9edd45516adabad6f33e502b8c6832599c0a00d",
+            "content": "sha256:427dbaec59ff69f21e360886540fe8ca1504566ee9344af9e8faef45145abcea",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 21
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('keeps All working while lane counts are being read, and never supplies guessed buckets', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9edd45516adabad6f33e502b8c6832599c0a00d",
+            "content": "sha256:90752e689e2538e66c8d0b40392e3ca9d8b233d574643b578c71b8c6da141e5e",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 48
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('states an unanswered leaf worklist as reading in its own view, never as no gate item', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9edd45516adabad6f33e502b8c6832599c0a00d",
+            "content": "sha256:2e49f46a567fdfcf354fdaec6d2728c3550961505e5616f6eb487b9eefd3211e",
+            "locator": {
+              "end": 93,
+              "kind": "line_range",
+              "start": 81
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

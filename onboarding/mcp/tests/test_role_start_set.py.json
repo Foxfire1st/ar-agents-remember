@@ -1,0 +1,110 @@
+{
+  "path": "mcp/tests/test_role_start_set.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "5024a7ad33c837d26fe69debaa4da32cf2b3bfa8",
+        "content": "sha256:805e27f2f746ffc03cde030f6a9917a757a4e148b7797b2c9a10849c09acb466",
+        "locator": {
+          "kind": "symbol",
+          "name": "SetStartTests.test_a_failed_seat_leaves_the_others_and_a_repeat_completes"
+        }
+      },
+      "facet": "A same-UUID repeat completes partial creation without a fourth agent or opening held siblings.",
+      "id": "PRF-3HVH1G",
+      "invariant": "INV-RTQCXN",
+      "origin": {
+        "handoffEntry": "L100-R100-set-start-and-held-seats",
+        "leaf": "260928-MIK-L100"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5024a7ad33c837d26fe69debaa4da32cf2b3bfa8",
+        "content": "sha256:7ef25dcb854cac1cd5b1e5dab5f6b1f1adf8f92a03a907ae69d064e194530a35",
+        "locator": {
+          "kind": "symbol",
+          "name": "SetStartTests.test_the_manager_set_creates_three_agents_with_held_seats"
+        }
+      },
+      "facet": "One Manager operation creates three fixture agents with only Worker opened.",
+      "id": "PRF-FH8XQN",
+      "invariant": "INV-RTQCXN",
+      "origin": {
+        "handoffEntry": "L100-R100-set-start-and-held-seats",
+        "leaf": "260928-MIK-L100"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "One Manager call creates three agents with exactly the Worker opened.\n\nAnchor: `SetStartTests.test_the_manager_set_creates_three_agents_with_held_seats`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5024a7ad33c837d26fe69debaa4da32cf2b3bfa8",
+            "content": "sha256:7ef25dcb854cac1cd5b1e5dab5f6b1f1adf8f92a03a907ae69d064e194530a35",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 50
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A partial creation completes with the same set identities and held seats intact.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5024a7ad33c837d26fe69debaa4da32cf2b3bfa8",
+            "content": "sha256:8414939b149a6e946d06b851dd74f172e086d06c3a8a81200abde78257745eae",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 85
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A set does not enlarge the existing role may-start matrix.\n\nAnchor: `SetStartTests.test_an_architect_set_is_refused_with_no_effects`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5024a7ad33c837d26fe69debaa4da32cf2b3bfa8",
+            "content": "sha256:7bab40ff0cc245f871dff2f90ef71e8e3ef284de9738c217dcbec581641f07be",
+            "locator": {
+              "end": 231,
+              "kind": "line_range",
+              "start": 215
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Held opener restores missing role facts before native agent-create and leaves the other held.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5024a7ad33c837d26fe69debaa4da32cf2b3bfa8",
+            "content": "sha256:436c850241439a47f7d84d3a6a3582f6262b408d5442cf9b57636291b3149620",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_first_message_opens_a_held_seat_and_leaves_the_other_held"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

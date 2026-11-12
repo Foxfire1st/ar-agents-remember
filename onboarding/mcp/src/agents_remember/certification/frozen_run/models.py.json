@@ -1,0 +1,50 @@
+{
+  "path": "mcp/src/agents_remember/certification/frozen_run/models.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The retained model recompiles exact authority before validating its complete-record digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "466536c3090c7f103403b2b484e2af5c1d6a32c9",
+            "content": "sha256:fe9bc53b2a7b6d4169ba19e8d26b1fcd8841e7d9056a0d6cafcc348d39815ebe",
+            "locator": {
+              "kind": "symbol",
+              "name": "FrozenCertificationRun"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "466536c3090c7f103403b2b484e2af5c1d6a32c9",
+            "content": "sha256:21d8226d807c8aeca1520b7d2554c785bdae136edb40cbedbc5b575c6db54c01",
+            "locator": {
+              "kind": "symbol",
+              "name": "_verify_authority"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Freeze retains the lane admission and original provenance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "466536c3090c7f103403b2b484e2af5c1d6a32c9",
+            "content": "sha256:4bb7a2c0d02b9efae4f4457a4a0c0ba24dc8c1071fb2bafcc143b06f9bd06bba",
+            "locator": {
+              "kind": "symbol",
+              "name": "freeze_certification_run"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

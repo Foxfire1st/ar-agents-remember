@@ -1,78 +1,38 @@
 # mcp/src/agents_remember/serving/_app_routes.py
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `mcp/src/agents_remember/serving/_app_routes.py`                                            |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-09-15T20:42+02:00 |
-| lastVerifiedCommitHash | `e9678c56e7f441371584ad8a18e2b9380cb38cf0` |
-| lastVerifiedCommitDate | 2026-09-15T20:50:53+02:00|
-| governingOverview      | `overview.md`                                          |
-
 ## Governing Overview
 
-[serving overview](overview.md)
+[overview](overview.md)
 
 ## Purpose
 
-260731-EFA-L7 responsibility split module for `mcp/src/agents_remember/serving/_app_routes.py`; owns the behaviours named by its top-level symbols.
+Register the retained projection reads, review-aware projection stream, raw event stream, action acknowledgement/dismissal and developer direct-execution grant routes. No gate-decision or operator-inbox route is registered here.
 
 ## Code Commentary
 
-- `_state_response`
-- `_task_document_response`
-- `_register_projection_routes`
-- `_recorded_gate_decision`
-- `_gate_decision_response`
-- `_dismissal_response`
-- `_action_response`
-- `_operator_inbox_response`
-- `_inbox_dismiss_response`
-- `_register_action_routes`
+The review stream multiplexes projection/memory invalidation with moved notices. _merged_stream lets notice exhaustion leave the page stream alive and ordinary stream exhaustion close it; finally cancels/gathers pending next-event tasks and aclosing releases subscriptions.
 
-Recorded dashboard gate decisions finalize under the internal
-`gate_decide_internal` vocabulary. This route is an internal projection/action seam and must not
-mislabel itself as the agent-facing structural `gate_decide` tool.
+A ready state response serves a copy of the memoized projection with its build tail, or bodyless 304 on a matching weak ETag; an unprimed projector refuses. When the process has a build-currentness reading (always for an installed build; for a checkout only when `status=true` asks), a short hash of that reading is appended to the projector revision in the weak ETag, so an unchanged projection still answers in full once the reading changes; `GET /api/state?status=true` also ignores If-None-Match. Task-body reads use the runtime’s generation-validated body cache and revision ETag, not enclosure/lifecycle resolution: unprimed is 503, missing document 404, and 304 requires current observed dependencies as well as an ETag match. Raw-event SSE remains separate from the ordinary state snapshot/delta stream. The state stream's snapshot carries the build-currentness reading, and its liveness beat also emits a `buildCurrentness` event whenever that reading changes. The state stream optionally carries review-memory invalidations on the same connection: only all-omitted `reviewRepo`/`reviewMaster`/`reviewLeaf` selects no identity; any supplied component forms a three-string tuple with missing/empty components normalized to empty strings. This normalization is not authentication or full selector admission. `multiplex_review_memory` owns selector/root checks, emits revision invalidations or explicit error events, and keeps the ordinary events distinct. The route iterates that multiplexer under `contextlib.aclosing`; the helper owns its streams/tasks and the native watcher owns its handles. These source cleanup paths are not an observed runtime cleanup certificate. Pure action evaluation returns an optional dismissal intent; the router persists its published kind/fingerprint and returns `dismissal-not-held` 503 on OSError instead of success. Other accepted actions are acknowledgements, not product mutations; the separate developer-grant route keeps its admitted owner.
 
-The state routes assemble the serve-time tail from `_app_lifespan`'s payload readers: `_state_response`
-merges `served_state_tail(build=…, heartbeat=_agent_notifier_heartbeat_payload(runtime),
-observer_health=_terminal_observer_health_payload(runtime))` onto a copy of the memoized projection
-dump, and the SSE generator is handed the same three readers. Since `LOCR-R17@v1` that third reader
-resolves the observer stage's own persisted health row for the CURRENT serving lifetime and returns
-`None` when no valid row exists, which is what makes `terminalObserverHealth` absent rather than null.
-The routes only read: neither `/api/state` nor the SSE stream writes, repairs, creates or deletes the
-health row, and neither can change the projection revision, the ETag, the 304 path or the delta shape.
+GET /api/diagnostics/background is a read-only view of the shared serving ledger, not projection mutation or acceptance. Event-tail accounting and watcher-health serialization retain their existing runtime owners; removed gate and inbox routes stay absent.
 
-## Invariants And Boundaries
+## Evidence boundary
 
-- The card mirrors the source file one-to-one at `mcp/src/agents_remember/serving/_app_routes.py`.
+This is current-source interpretation of the admitted frozen candidate, not a new test result, CODE grade or MEMORY acceptance. The retained supporting references below are reauthored through the ordinary fixer; unsupported removed constructs are withdrawn, not rebound to arbitrary neighboring code.
 
-## Repo-Internal References
+## Source-bound reference inputs
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The state response merges the serve-time tail onto a copy of the memoized body. | `_state_response` | mcp/src/agents_remember/serving/_app_routes.py:77-108 |
-| The SSE route hands the same readers to the projection stream. | `_register_projection_routes` | mcp/src/agents_remember/serving/_app_routes.py:124-177 |
-| The observer-health reader whose `None` makes the key absent. | `_terminal_observer_health_payload` | mcp/src/agents_remember/serving/_app_lifespan.py:376-394 |
 
-## Update History
+- The state response uses weak ETags from the projector revision (with the build-currentness stamp appended when a reading exists), refuses an absent snapshot, returns bodyless 304 on a match, otherwise copies the memoized projection and adds the served-state tail. [1]
 
-- 2026-09-15T20:42+02:00 — 260831-LOCR-L17 curator (uncommitted change set on `ar/260831-locr-l17`,
-  base `99534dc5`, `_app_routes.py` +12/−2): both state routes now pass the observer-health reader
-  into the tail, so the card records the current read-only wiring: `_state_response` merges the three
-  readers onto a copy of the memoized dump and the SSE generator receives the same three, with
-  `_terminal_observer_health_payload` returning `None` when no valid row exists for the current
-  serving lifetime — which is what makes the key absent rather than null. Recorded that these routes
-  only read: no GET/SSE rewrites, repairs, creates or deletes the health row, and the projection
-  revision, ETag, 304 path and delta shape are untouched. Also repaired this card's governing
-  overview link, which read `[None](None)`, to the serving route overview. Verification metadata
-  remains closeout-owned; no stamp advanced.
 
-- 2026-08-24T00:51+02:00 — No content impact: 260821-CLIVE-L2 the route module only repoints `finalize_tool_response` to its moved `models.tools` package. Verified at code commit `1d446724`.
+- The state SSE route passes ordinary snapshot/delta events through the optional review-memory multiplexer under aclosing; the distinct raw-event route still forwards observer records and its own ready marker.
 
-- 2026-08-11T19:58+02:00 — Distinguished internal dashboard gate-decision finalization from the
-  agent-facing structural `gate_decide` tool name.
-- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 
-- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: created this file-level onboarding card for the split module; content derived from the current worktree source. Verification metadata pinned until closeout stamps the 260731-EFA-L7 commit.
+- All omitted review selectors opt out; any supplied selector forms a normalized three-string identity for the resolver. The multiplexer—not normalization—checks segments/root admission, emits review.memory.error on admitted failure paths and keeps ordinary events flowing.
+
+- The review stream multiplexes projection/memory invalidation with moved notices. _merged_stream lets notice exhaustion leave the page stream alive and ordinary stream exhaustion close it; finally cancels/gathers pending next-event tasks and aclosing releases subscriptions. [4]
+
+- The build-currentness reading stamps the state ETag and rides the served tail. [5]
+- `status=true` inspects a checkout build too and answers without the conditional-read short cut. [6]
+- The liveness beat publishes build-currentness transitions to open pages. [7]

@@ -1,0 +1,40 @@
+{
+  "path": "mcp/tests/test_agent_eval_auth_observation.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8b345ea522f1adbe20b7e01101564ab9f65176ab",
+        "content": "sha256:306c034b5bb88444f520f6d6f7f3538d6dc10bc765b21a8608ae3476044aa383",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-QA59AZ",
+      "invariant": "INV-2FB1W6",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-auth-observation",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "This regression module checks this obligation through test_gpt_auth_difference_is_unknown_and_a_finding, test_gpt_auth_equal_and_existing_arm_difference_keep_their_meaning, test_gpt_auth_difference_overrides_a_captured_right_outcome, test_gpt_expected_end_includes_host_creation_time and its remaining test cases.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8b345ea522f1adbe20b7e01101564ab9f65176ab",
+            "content": "sha256:306c034b5bb88444f520f6d6f7f3538d6dc10bc765b21a8608ae3476044aa383",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

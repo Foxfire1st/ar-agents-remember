@@ -1,0 +1,220 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_writer/report.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c84b18b7dc47f00185b7c530a94c6ee5e5b37fb7",
+        "content": "sha256:e78ed39fd74a1c93aa5b31fa3f78aee9646e788bcd4fa0bb37c69bd854d357fa",
+        "locator": {
+          "kind": "symbol",
+          "name": "WriteReport"
+        }
+      },
+      "id": "RLZ-P0AJ5H",
+      "invariant": "INV-9RM8J9",
+      "origin": {
+        "handoffEntry": "MIK-R54@v1 rule 2",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "The report object clears refused outcomes before either JSON or text rendering can advertise them.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The outcome of one evidence-bearing entry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c84b18b7dc47f00185b7c530a94c6ee5e5b37fb7",
+            "content": "sha256:f3656ac308cfc96030bd276a57fd00776ce7d7fe67d0843d73984e50c37860ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "EvidenceOutcome"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Serialized requirement outcomes include changed and archived metadata. [10]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c84b18b7dc47f00185b7c530a94c6ee5e5b37fb7",
+            "content": "sha256:39e29abf4802c1f14f8947092d32741edfbefcb359bac2b8271b3fec0405b430",
+            "locator": {
+              "end": 260,
+              "kind": "line_range",
+              "start": 249
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The report and its refused flag.\n\nAnchor: `WriteReport`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c84b18b7dc47f00185b7c530a94c6ee5e5b37fb7",
+            "content": "sha256:1440a36ff6ee4b86d1b713b3fd554352a4470aec19563ba537bc6b2f52175992",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The JSON form.\n\nAnchor: `to_document`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c84b18b7dc47f00185b7c530a94c6ee5e5b37fb7",
+            "content": "sha256:1440a36ff6ee4b86d1b713b3fd554352a4470aec19563ba537bc6b2f52175992",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The text form.\n\nAnchor: `render`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c84b18b7dc47f00185b7c530a94c6ee5e5b37fb7",
+            "content": "sha256:1440a36ff6ee4b86d1b713b3fd554352a4470aec19563ba537bc6b2f52175992",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The carried entries in the report, JSON and text.\n\nAnchor: \"blob re-recorded at C (content unchanged)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c84b18b7dc47f00185b7c530a94c6ee5e5b37fb7",
+            "content": "sha256:2912e1dc0bdfc04a8b29aa01da6eb4182efbbc84ec44fe20630121f089aada58",
+            "locator": {
+              "kind": "symbol",
+              "name": "carried"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c84b18b7dc47f00185b7c530a94c6ee5e5b37fb7",
+            "content": "sha256:778402a0af0e706f418e6a298b3fdd066d97089fad835546322cd92070bdbc41",
+            "locator": {
+              "end": 185,
+              "kind": "line_range",
+              "start": 185
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "One requirement endpoint a record links and the owner's answer, `resolved` or `unresolved`: an unchanged unresolved link is reported, while a changed one refuses the write naming the endpoint and its code.\n\nAnchor: `EndpointOutcome`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c84b18b7dc47f00185b7c530a94c6ee5e5b37fb7",
+            "content": "sha256:1440a36ff6ee4b86d1b713b3fd554352a4470aec19563ba537bc6b2f52175992",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The report's requirement endpoints, and their JSON key.\n\nAnchor: `requirementEndpoints`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c84b18b7dc47f00185b7c530a94c6ee5e5b37fb7",
+            "content": "sha256:5dab2b1fac1f5af26a97623b71c5165dbf6db654d7f0aef89d92e333815b2fd5",
+            "locator": {
+              "kind": "symbol",
+              "name": "requirements"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c84b18b7dc47f00185b7c530a94c6ee5e5b37fb7",
+            "content": "sha256:ba0e5fd6edcb1f3211b23c3737e01e12d7bf5d49e97efadadf7154194b1123a5",
+            "locator": {
+              "end": 159,
+              "kind": "line_range",
+              "start": 159
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The text line per endpoint comes from a helper, so `render` does not grow (review F3).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c84b18b7dc47f00185b7c530a94c6ee5e5b37fb7",
+            "content": "sha256:c98a9b0c73edbfe9c4c507d8a3ff90303dcc2a623261b50d59fe6fa5417a85d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_endpoint_line"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c84b18b7dc47f00185b7c530a94c6ee5e5b37fb7",
+            "content": "sha256:18b27918cd54a3366d0ef704afdc4778244e2c046609f1712f5cf802f1a12032",
+            "locator": {
+              "end": 200,
+              "kind": "line_range",
+              "start": 200
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Refused reports clear action/evidence collections and expose the planned count and question identities. [9]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c84b18b7dc47f00185b7c530a94c6ee5e5b37fb7",
+            "content": "sha256:792b0b1e57ef747a0423491c339bc103efc9ce9ae1de59d092988c671bb4f16e",
+            "locator": {
+              "end": 169,
+              "kind": "line_range",
+              "start": 108
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

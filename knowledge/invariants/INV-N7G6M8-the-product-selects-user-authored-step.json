@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Prevents a retry borrowing foreign-provider permission choices or selecting an unconfigured stronger execution."
+  },
+  "applicability": "Role starts with a user-configured single step-up alternative, selected by failed-review threshold or a reasoned explicit request.",
+  "conditions": [
+    "Worker counts failing recorded code rounds and Curator counts failing recorded memory rounds; record-only checks add no try and other roles are on-request.",
+    "Validate selected alternatives against offered host choices before retirement; do not inherit permission/mode/features from a different provider/model scope.",
+    "Explicit same-start agent/model/effort retain fieldwise precedence."
+  ],
+  "exclusions": [
+    "No caller mode or permission-feature authority.",
+    "No automatic step-up with absent/unknown counts or absent configuration, no nested alternative and no reset of review allowance."
+  ],
+  "id": "INV-N7G6M8",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/worker/47d47893-c5d1-4ea1-a7cf-85b7faed8dcd/round1-final-integrated-verification-results.json"
+      ],
+      "path": "whole-curation.json"
+    },
+    "handoffEntry": "MIK-R141@v1/selection",
+    "leaf": "260928-MIK-L88",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The product selects user-authored step-up choices from persisted failed-review counts or an explicit reason while explicit same-start agent, model and effort overrides retain fieldwise precedence.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory_quality/memory_census_scope.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory_quality/memory_census_scope.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-11T10:26:37+02:00 |
-| lastVerifiedCommitHash | `806649b91bdce18f7b915bfbbf6727967f4e7a88` |
-| lastVerifiedCommitDate | 2026-09-16T12:23:53+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Memory quality overview](overview.md)
@@ -24,6 +14,14 @@ Captures the exact route-owned code and memory Git scope used by the structural 
 
 `MemoryCensusCodeInput` validates the route mode and pair-owned code identities. `MemoryCensusScope` serializes the exact scope facts and exposes working, committed, and memory path projections. `capture_memory_census_scope` rechecks pair and memory-tree stability around the capture; `_diff` derives bounded Git path changes from exact trees.
 
+**The comparison base (L37 fix round P1b).** `capture_memory_census_scope(contract, *, code_input=None,
+comparison=_baseline_itself)` takes a `MemoryComparison`: `(memory repository, baseline commit, candidate tree)
+-> comparison tree-ish`. The memory diff is taken against what it returns, and the scope records it as
+`memory_comparison_tree`. By default that is the baseline commit itself. The application binds the converted
+base (`application/memory_quality/census_base.census_comparison`), which this layer cannot reach. The payload
+carries `memoryComparisonTree` only when it differs from the baseline, so an unconverted leaf's payload is
+unchanged.
+
 ### Invariants And Boundaries
 
 - The route derives candidate identity from the admitted contract and does not accept a caller-selected future tree.
@@ -34,28 +32,23 @@ Captures the exact route-owned code and memory Git scope used by the structural 
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No configured Domain Documentation source applies.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Scope capture is repository-owned and exact-tree based. | `capture_memory_census_scope` | mcp/src/agents_remember/memory_quality/memory_census_scope.py:107-140 |
+- Scope capture is repository-owned and exact-tree based. [1]
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Code-input modes and pair-owned candidate fields are strict. | `MemoryCensusCodeInput` | mcp/src/agents_remember/memory_quality/memory_census_scope.py:25-52 |
-| Scope identity exposes stable serialized and path-change observations. | `MemoryCensusScope` | mcp/src/agents_remember/memory_quality/memory_census_scope.py:69-104 |
-| The route captures exact changes and refuses movement during the observation. | `capture_memory_census_scope`; `_diff` | mcp/src/agents_remember/memory_quality/memory_census_scope.py:107-140; mcp/src/agents_remember/memory_quality/memory_census_scope.py:249-286 |
+- Code-input modes and pair-owned candidate fields are strict. [2]
+- Scope identity exposes stable serialized and path-change observations. [3]
+- The route captures exact changes and refuses movement during the observation. [4]
 
-## Cross-Repo References
+- The scope is captured against a comparison tree the caller supplies; the baseline itself by default. [5]
+- The scope records what the memory candidate was compared with. [6]
+
+### Cross-Repo References
 
 None; the scope owner uses the local contract and pair authorities.
-
-## Update History
-
-- 2026-09-11T10:26:37+02:00 — Moved the mirrored sidecar from `mcp/src/agents_remember/worktrees/integration/closeout/memory_census_scope.py` to `mcp/src/agents_remember/memory_quality/memory_census_scope.py`. Relocated with the de-entanglement cut (commit `be517eec`, "relocate memory_census_scope into memory_quality"). Only the import block was reordered by the move; every cited anchor range was re-verified against the new path and is unchanged. Governing overview link repointed to the memory quality overview. Verification metadata refreshed to code commit `2fa5e81f4da44a0a87f1a700c5363a9d563e7f9d`.
-
-- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited-source reconciliation: created the previously absent governed sidecar from source bytes matching code commit `8133b6a9de2f787cb6c4527621a70123357aff31` (candidate-tree source SHA-256 `22b06a4f685103bf7cc17d65975b520b61d72c125071a52f43b73cbdea0c47b0`). No future candidate verification stamp was used.

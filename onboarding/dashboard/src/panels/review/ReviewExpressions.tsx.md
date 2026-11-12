@@ -1,77 +1,98 @@
-# ReviewExpressions.tsx
-
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/review/ReviewExpressions.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-27T00:59:43+00:00 |
-| lastVerifiedCommitHash | `a5bec6c3b3b413cd3066d0e8d302b4854d1b513a`|
-| lastVerifiedCommitDate | 2026-09-27T03:38:17+02:00|
-| governingOverview | `../overview.md` |
+# ReviewExpressions.tsx — retired renderer
 
 ## Governing Overview
 
-[overview.md](../overview.md)
+[dashboard/src/panels route overview](../overview.md)
 
-## Purpose
+## Retirement
 
-Render actual bound source and test diffs directly after the selected intent in the central reading path.
+The source is absent at both the base and candidate code trees; it was already deleted before either tree. Its dataset-only file accordion, revision-to-location selection and file-card expansion no longer run; no equivalent accordion relocated. This Markdown card remains in custody as the retirement record; its JSON sidecar was retired as metadata because the renderer it described was already absent, not because a new source deletion occurred, and it makes no active implementation claim.
 
-## Code Commentary
+ExpressionControls was extracted during the earlier retirement, without preserving the removed accordion. A4-F5 subsequently removes those controls and SourceContent as well. ReadingColumn now owns the page-level Changes only / Full context control and draws the shared model's subjects and lane; no card Full file fallback remains.
 
-### Logic
+The previous retirement note is preserved as the intermediate source epoch only:
 
-The center supplies `linksIncomplete` from the selected family's real completeness state. Loaded linked-file counts and empty-expression copy describe only what has loaded, and incomplete scope points to roster continuation. Missing links do not assert absent stored attribution or unchanged expressions.
+> The separately reusable ExpressionControls presentation controls were extracted to ExpressionControls.tsx. That extraction does not preserve ReviewExpressions behavior. CenterExpressions now renders focused cards or the measured-tree-comparison explanation. SourceContent remains for expression-card Full file only.
 
-For selected invariants, expression selection also uses the exact retained revisions of the authoritative subject read. A confirmed no-family subject can still reach its registered source expressions through payload attribution; the full inventory remains independently reachable.
+## Retained Historical Account
 
-expressionSelection joins exact selected invariant revision IDs to attributed locations and member sources, then intersects those paths with the complete measured source inventory. A separately selected inventory file remains inspectable and is labelled outside selected intent when appropriate. Without semantic selection it opens the selected file or first inventory entry. ExpressionCard delegates bytes to SourceContent with the inventory exact before/after tree IDs. Layout, full-file disclosure and open path remain caller-owned state.
+The following account describes the removed implementation only. Its present-tense clauses and numbered reference labels are historical, not current product promises or live citations. The current retirement boundary and surviving owners are documented separately.
 
-### Conventions
+> # ReviewExpressions.tsx
+>
+> ## Governing Overview
+>
+> [overview.md](../overview.md)
+>
+> ## Purpose
+>
+> Render actual bound source and test diffs directly after the selected intent in the central reading path.
+>
+> **Since MIK-L31 this is the dataset (unconverted) review's expression view only.** For a tree comparison the centre
+> renders the focused expression cards (`ExpressionCards.tsx`, MIK-R31) instead of this file accordion; a dataset
+> review makes no tree read and still renders this component unchanged (review F8's narrowed claim). The one change
+> here is that `ExpressionControls` (the diff layout and full-file toggles) is exported, so the cards reuse the same
+> controls and state.
+>
+> ## Code Commentary
+>
+> ### Logic
+>
+> The center supplies `linksIncomplete` from the selected family's real completeness state. Loaded linked-file counts and empty-expression copy describe only what has loaded, and incomplete scope points to roster continuation. Missing links do not assert absent stored attribution or unchanged expressions.
+>
+> For selected invariants, expression selection uses the exact retained revisions of the authoritative subject read. A confirmed no-family subject can still use its registered source locations. Independent changed-file actions use All changes in the comparison viewer when a recorded tree comparison is available; without that range the action states `comparison_not_recorded`, rather than inventing an explorer or comparison.
+>
+> expressionSelection joins exact selected invariant revision IDs to attributed locations and member sources, then intersects those paths with the complete measured source inventory. A separately selected inventory file remains inspectable and is labelled outside selected intent when appropriate. Without semantic selection it opens the selected file or first inventory entry. ExpressionCard delegates bytes to SourceContent with the inventory exact before/after tree IDs. Layout, full-file disclosure and open path remain caller-owned state.
+>
+> ### Conventions
+>
+> Use the existing owner interfaces and exact recorded identities; keep transient task evidence outside durable onboarding.
+>
+> ### Invariants And Boundaries
+>
+> Linked expression selection does not redefine the complete source inventory. An unlisted source reference is not an invented changed file. The retained dataset expression renderer is not a full-inventory rail; current independent changed-file navigation is the comparison-page destination, with named refusal when no recorded range exists. This component reads no arbitrary dataset or working-tree path.
+>
+> ### Todos
+>
+> None recorded. A partial or unavailable roster remains explicitly incomplete; semantic continuation stays in the main reading area. Independent changed-file inspection belongs to the comparison page when its recorded range is available, not a source explorer.
+>
+> ## Evidence
+>
+> ### Docs References
+>
+> No Domain Documentation source is configured. The implementation-specific account is grounded in the repository source below.
+>
+> No configured domain source could be checked.
+>
+> ### Repo-Internal References
+>
+> The named constructs own this behavior; reads and validation use their existing callers and models.
+>
+> - `ReviewExpressions` owns the behavior described above. (historical reference 1)
+> - `expressionSelection` owns the behavior described above. (historical reference 2)
+> - The layout and full-file controls, exported for the focused cards. (historical reference 3)
+> - The centre mounts this view only when no cards read applies (a dataset review). (historical reference 4)
+> - `ExpressionCard` owns the behavior described above. (historical reference 5)
+>
+> ### Cross-Repo References
+>
+> No independent cross-repository interface is introduced by this source.
+>
+> No additional cross-repository evidence is required.
+> - Dataset-only expression accordion in the central path (historical reference 6)
+> - Shared diff layout and full-file controls for cards reuse (historical reference 7)
+> - Revision-to-location join for the selected intent (historical reference 8)
+> - Card byte delegation with exact inventory tree identities (historical reference 9)
 
-Use the existing owner interfaces and exact recorded identities; keep transient task evidence outside durable onboarding.
+## Source-content transition and retained historical references
 
-### Invariants And Boundaries
+The following reference captions describe the prior source epoch. They are preserved as history; their reference numbers below are inert and do not claim current frontend consumers.
 
-Linked expressions do not replace or filter the full source inventory in the rail. An unlisted source reference is not an invented changed file. The component reads no arbitrary dataset or working-tree path.
+> - Surviving controls are independent presentation callbacks, not a relocated accordion. (historical reference 10)
+> - CenterExpressions has no retired file-view fallback. (historical reference 11)
 
-### Todos
+## Evidence
 
-None recorded. A partial or unavailable roster remains explicitly incomplete; the independent source explorer still reaches the complete change.
 
-## Docs References
 
-No Domain Documentation source is configured. The implementation-specific account is grounded in the repository source below.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain source could be checked. | — | — |
-
-## Repo-Internal References
-
-The named constructs own this behavior; reads and validation use their existing callers and models.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `ReviewExpressions` owns the behavior described above. | `ReviewExpressions` | dashboard/src/panels/review/ReviewExpressions.tsx:38-101 |
-| `expressionSelection` owns the behavior described above. | `expressionSelection` | dashboard/src/panels/review/ReviewExpressions.tsx:152-180 |
-| `ExpressionCard` owns the behavior described above. | `ExpressionCard` | dashboard/src/panels/review/ReviewExpressions.tsx:182-239 |
-
-## Cross-Repo References
-
-No independent cross-repository interface is introduced by this source.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No additional cross-repository evidence is required. | — | — |
-
-## Update History
-
-- 2026-09-27T00:59:43+00:00 — Replaced the resolved projection-gap note with the current loaded-link contract. Empty/partial copy no longer claims absent stored links; the complete source inventory and selected-subject source authority stay independent.
-- 2026-09-26T21:21:39Z — Recorded the upstream continuation projection limit without reclassifying stored realizations as absent.
-- 2026-09-26T21:09:29+00:00: Generated citation repair: `expressionSelection` repointed to dashboard/src/panels/review/ReviewExpressions.tsx:147-175. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-26T21:09:29+00:00: Generated citation repair: `ExpressionCard` repointed to dashboard/src/panels/review/ReviewExpressions.tsx:177-234. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-26T20:20:54Z — Reconciled authoritative subject reads, exact revision comparison and accessible selection behavior.
-
-- 2026-09-26T19:49:05Z — Created the unified source-expression rendering card.
+- The two current ReadingColumn facts formerly cited here — the page-level Code context control and the shared model's subject/lane rendering — are carried by the [ReadingColumn.tsx](reading/ReadingColumn.tsx.md) card; this retirement record keeps no live citation.

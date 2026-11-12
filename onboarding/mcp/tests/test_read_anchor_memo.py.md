@@ -1,15 +1,5 @@
 # mcp/tests/test_read_anchor_memo.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_read_anchor_memo.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-28T23:11:42+02:00 |
-| lastVerifiedCommitHash |  `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4`|
-| lastVerifiedCommitDate |  2026-09-29T00:17:28+02:00|
-| governingOverview | `mcp/tests/overview.md` |
-
 ## Governing Overview
 
 [mcp/tests overview](overview.md)
@@ -34,7 +24,7 @@ that make it safe: the same answers, fewer Git reads, and nothing remembered tha
   a mismatched blob); `_observe` builds a fresh `_TreeAnchorResolver` per pass, as every reader does;
   `_unremembered` empties the tables before each observation to reproduce the path before the memo.
 - **Same answers, one read per object.** A remembered pass equals the unremembered one; a repeat pass runs
-  only the per-resolver `cat-file -e` probe; the first pass runs one `ls-tree` per distinct path (the
+  only the per-resolver `--no-replace-objects rev-parse --verify --quiet <tree>^{tree}` probe; the first pass runs one `ls-tree` per distinct path (the
   absent one too), one blob read per distinct blob and one parse.
 - **Failures are asked again.** A runner that fails each Git question once shows the probe, the lookup
   and the blob read each asked again and only the success remembered.
@@ -50,7 +40,7 @@ that make it safe: the same answers, fewer Git reads, and nothing remembered tha
   every anchor with no ranges.
 - **No cross-repository or cross-grammar reuse** (review L56-R1-F2): an empty neighbour observed without a
   resolver fails its lookup instead of receiving the first repository's entry; a blobless neighbour
-  holding only the trees refuses a range and a symbol rather than answering from the first repository's
+  holding only the trees preserves exact_recorded_blob for the range with no resolved ranges, and reports unsupported_locator for the symbol rather than answering from the first repository's
   lines; one blob at `a.py` and `a.ts` resolves `x` only under Python and `g` only under TypeScript, in
   either order.
 
@@ -64,8 +54,7 @@ functions, one parametrised twice, make the nine cases.
 
 ### Invariants And Boundaries
 
-The cases drive the shipped owner and the real Git binary; nothing is mocked except the spies that
-count calls while delegating. The availability and isolation cases fail on the first attempt's code
+The cases drive the shipped owner and the real Git binary; the counting spies delegate, while the failure case also monkeypatches a runner to synthesize transient Git failures before delegating successes. The availability and isolation cases fail on the first attempt's code
 (A1, which remembered positive tree probes), and the reviewer's mutants R2–R4 are killed by this module
 alone (review R2).
 
@@ -73,37 +62,37 @@ alone (review R2).
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this test module.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found. | — | — |
+No relevant domain documentation was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The real repository, the Git and parser spies, and the per-case emptied tables. | `tree`; `git_calls`; `parses`; `_forgotten` | mcp/tests/test_read_anchor_memo.py:79-132 |
-| Every outcome the memo sits behind, a fresh resolver per pass, and the unremembered reference path. | `_claims`; `_observe`; `_unremembered` | mcp/tests/test_read_anchor_memo.py:148-180 |
-| Identical answers from one Git read per object and one parse per blob. | "test_repeated_observations_answer_identically_from_one_read_per_object" | mcp/tests/test_read_anchor_memo.py:187-227 |
-| A failed probe, lookup or blob read is asked again; only the success is remembered. | "test_a_failure_is_never_remembered_and_the_later_success_is_observed" | mcp/tests/test_read_anchor_memo.py:230-274 |
-| An abbreviated id is never remembered; the admission test's refusals. | "test_a_question_asked_with_an_abbreviated_tree_id_is_never_remembered" | mcp/tests/test_read_anchor_memo.py:277-298 |
-| Weight-bounded LRU eviction, refusal of oversized values, and the concurrent bound. | "test_the_memo_evicts_the_least_recently_used_past_its_weight_bound"; "test_concurrent_readers_share_answers_and_the_bound_holds" | mcp/tests/test_read_anchor_memo.py:301-369 |
-| **A pruned or revoked tree reported unavailable for every anchor, not answered from memory.** | "test_a_tree_that_stops_being_available_is_reported_unavailable_not_remembered" | mcp/tests/test_read_anchor_memo.py:372-414 |
-| **No repository's answers served for another, and one parse per grammar.** | "test_one_repositorys_answers_are_never_served_for_another"; "test_one_blob_is_parsed_per_grammar_whichever_is_asked_first" | mcp/tests/test_read_anchor_memo.py:417-511 |
-| The lane registration. | "mcp/tests/test_read_anchor_memo.py" | mcp/tests/test-evidence-lanes.toml:176-176 |
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
+No meaningful cross-repo references found.
 
-## Update History
+- The real repository, the Git and parser spies, and the per-case emptied tables. [1]
+- Every outcome the memo sits behind, a fresh resolver per pass, and the unremembered reference path. [2]
+- Identical answers from one Git read per object and one parse per blob.  Anchor: "test_repeated_observations_answer_identically_from_one_read_per_object" [3]
+- A failed probe, lookup or blob read is asked again; only the success is remembered.  Anchor: "test_a_failure_is_never_remembered_and_the_later_success_is_observed" [4]
+- An abbreviated id is never remembered; the admission test's refusals.  Anchor: "test_a_question_asked_with_an_abbreviated_tree_id_is_never_remembered" [5]
+- Weight-bounded LRU eviction, refusal of oversized values, and the concurrent bound.  Anchor: "test_the_memo_evicts_the_least_recently_used_past_its_weight_bound"; "test_concurrent_readers_share_answers_and_the_bound_holds" [6]
+- **A pruned or revoked tree reported unavailable for every anchor, not answered from memory.**  Anchor: "test_a_tree_that_stops_being_available_is_reported_unavailable_not_remembered" [7]
+- **No repository's answers served for another, and one parse per grammar.**  Anchor: "test_one_repositorys_answers_are_never_served_for_another"; "test_one_blob_is_parsed_per_grammar_whichever_is_asked_first" [8]
 
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 1 citation into `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (uncommitted candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`; review R2 PASS on the unchanged A2 diff): created this one-to-one card for the memo's test module — its real-Git fixtures and spies, and the nine cases (same answers from one read per object, failures asked again, abbreviations never remembered, the weight bound under eviction and concurrency, availability never remembered, no cross-repository or cross-grammar reuse). Verification metadata remains empty until closeout stamps the code commit.
+
+> Retained earlier citation wording: - The lane registration.  Anchor: "mcp/tests/test_read_anchor_memo.py"
+
+
+
+
+
+- The lane registration.  Anchor: "mcp/tests/test_read_anchor_memo.py" [9]

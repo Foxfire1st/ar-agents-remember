@@ -1,0 +1,383 @@
+{
+  "path": "mcp/tests/test_knowledge_diff_attribution.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "14": {
+      "note": "`test_the_measured_changes_are_partitioned_once_and_the_buckets_are_disjoint_and_exhaustive` supplies the current fixture or assertion described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08c6a57293dca2a8883c2fc89c3ecdd1acf81782",
+            "content": "sha256:bfb954ef713b6314a3acbfa4a8dd27ef6c854cfe66e34b5217c57f8e1f164b13",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_measured_changes_are_partitioned_once_and_the_buckets_are_disjoint_and_exhaustive"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "`test_a_registered_mapping_that_did_not_resolve_does_not_establish_attribution` supplies the current fixture or assertion described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08c6a57293dca2a8883c2fc89c3ecdd1acf81782",
+            "content": "sha256:0f8d38c4dcd374095093c928791fcf4effff9a15c3e42d2ac0b868c34b9bd5e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_registered_mapping_that_did_not_resolve_does_not_establish_attribution"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "`test_one_uninspected_snapshot_turns_every_unmapped_change_into_undetermined_attribution` supplies the current fixture or assertion described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08c6a57293dca2a8883c2fc89c3ecdd1acf81782",
+            "content": "sha256:5540210c704f6e7e9222e4257871e3c36fe63965ecb408c8599b1ccf40f3a162",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_one_uninspected_snapshot_turns_every_unmapped_change_into_undetermined_attribution"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "`test_an_unavailable_partition_states_no_total_and_never_a_measured_zero` supplies the current fixture or assertion described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08c6a57293dca2a8883c2fc89c3ecdd1acf81782",
+            "content": "sha256:33f1394c0db417d6fa432940fcb684b0a6d5dd43b59bf207533ecdadd883dba2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unavailable_partition_states_no_total_and_never_a_measured_zero"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "Fixture construction imports test-only row constructors; it does not call the retired canonical writer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08c6a57293dca2a8883c2fc89c3ecdd1acf81782",
+            "content": "sha256:1f57b3b2169dcb15e382e3d1b9ac263d1f1441cc76261e608c9a2aa4ce5ff6a3",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 40
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "RowStore writes text-tree fixture rows without the retired production admission plane.\n\nAnchor: `RowStore`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62e692c8ea18903861ec2efddd03c884ed14f818",
+            "content": "sha256:43a32e8370a3aa07c1e8247bd8b4d445a42caab3b630d2ed5783e663bc3c824e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/knowledge_rows_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "The unit marker and the per-case fixture.\n\nAnchor: `fixture` `pytestmark`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08c6a57293dca2a8883c2fc89c3ecdd1acf81782",
+            "content": "sha256:c0e13f01468e17ffe330bb7749057cd31bbd82bb9dffd42e1522d0d655d7f1d9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "08c6a57293dca2a8883c2fc89c3ecdd1acf81782",
+            "content": "sha256:0753257dc2b79f881f380b8681aa5ded3b4e356b794086776ece0c5b7a215bb4",
+            "locator": {
+              "kind": "symbol",
+              "name": "pytestmark"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "The sibling's comparison helpers these cases reuse.\n\nAnchor: `diff_seed`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08c6a57293dca2a8883c2fc89c3ecdd1acf81782",
+            "content": "sha256:e92672e07ae8dc61595484e9585c693016245776a6253ced40692019d5af8e6c",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 55
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "**The partition case: the measured changes divided once into attributed, confirmed unregistered and undetermined, with the buckets disjoint and exhaustive.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08c6a57293dca2a8883c2fc89c3ecdd1acf81782",
+            "content": "sha256:bfb954ef713b6314a3acbfa4a8dd27ef6c854cfe66e34b5217c57f8e1f164b13",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_measured_changes_are_partitioned_once_and_the_buckets_are_disjoint_and_exhaustive"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "The boundary case: a change mapped only to another invariant is outside selection, never unregistered.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08c6a57293dca2a8883c2fc89c3ecdd1acf81782",
+            "content": "sha256:ddba12e243e37abe2dcd7dede7eb8b38df638024c4623e57f588439d730ce3a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_change_mapped_only_to_another_invariant_is_outside_selection_not_unregistered"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "**The family-subject case: a family's members' own links count as selected attribution.**\n\nAnchor: `test_a_family_subject_counts_its_members_own_links_as_selected_attribution`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08c6a57293dca2a8883c2fc89c3ecdd1acf81782",
+            "content": "sha256:c0e13f01468e17ffe330bb7749057cd31bbd82bb9dffd42e1522d0d655d7f1d9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "08c6a57293dca2a8883c2fc89c3ecdd1acf81782",
+            "content": "sha256:c977da149deb205d91ebde4afc2f77f264a94321b4804f79ea02866bdd9f8872",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_family_subject_counts_its_members_own_links_as_selected_attribution"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "The precedence cases: a registered mapping that did not resolve — stale or unresolvable — does not establish attribution.\n\nAnchor: `test_a_stale_or_unresolvable_mapping_does_not_establish_attribution` `test_a_registered_mapping_that_did_not_resolve_does_not_establish_attribution`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08c6a57293dca2a8883c2fc89c3ecdd1acf81782",
+            "content": "sha256:c0e13f01468e17ffe330bb7749057cd31bbd82bb9dffd42e1522d0d655d7f1d9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "08c6a57293dca2a8883c2fc89c3ecdd1acf81782",
+            "content": "sha256:5bf052b9c872879da98b454b4acd748599835c298628f539d87e89cc07dfe2e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_stale_or_unresolvable_mapping_does_not_establish_attribution"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "08c6a57293dca2a8883c2fc89c3ecdd1acf81782",
+            "content": "sha256:0f8d38c4dcd374095093c928791fcf4effff9a15c3e42d2ac0b868c34b9bd5e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_registered_mapping_that_did_not_resolve_does_not_establish_attribution"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "26": {
+      "note": "The production-composition helpers the stale-mapping case authors and reads claims through.\n\nAnchor: `_author_candidate_claim`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08c6a57293dca2a8883c2fc89c3ecdd1acf81782",
+            "content": "sha256:c0e13f01468e17ffe330bb7749057cd31bbd82bb9dffd42e1522d0d655d7f1d9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "27": {
+      "note": "The incompleteness cases: one uninspected snapshot turns every unmapped change undetermined; a legitimately empty side counts as completely inspected.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08c6a57293dca2a8883c2fc89c3ecdd1acf81782",
+            "content": "sha256:3161876d1ea5ad23792583879c9b87d1fa0a89b4a0750932834a78e8a663043b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_legitimately_empty_side_counts_as_completely_inspected_for_absence"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "08c6a57293dca2a8883c2fc89c3ecdd1acf81782",
+            "content": "sha256:5540210c704f6e7e9222e4257871e3c36fe63965ecb408c8599b1ccf40f3a162",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_one_uninspected_snapshot_turns_every_unmapped_change_into_undetermined_attribution"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "28": {
+      "note": "The honesty cases: an unavailable partition states no total and never a measured zero; a partial observation states its denominator's scope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08c6a57293dca2a8883c2fc89c3ecdd1acf81782",
+            "content": "sha256:7d97cc1b0e1fb4d3b606cbf7eb50917e68095fdc3469d155f226250885e45616",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_partial_observation_states_the_scope_of_its_own_denominator"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "08c6a57293dca2a8883c2fc89c3ecdd1acf81782",
+            "content": "sha256:33f1394c0db417d6fa432940fcb684b0a6d5dd43b59bf207533ecdadd883dba2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unavailable_partition_states_no_total_and_never_a_measured_zero"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "29": {
+      "note": "The arithmetic cases' two input builders.\n\nAnchor: `_observed` `_inspected_sides`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08c6a57293dca2a8883c2fc89c3ecdd1acf81782",
+            "content": "sha256:c0e13f01468e17ffe330bb7749057cd31bbd82bb9dffd42e1522d0d655d7f1d9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "08c6a57293dca2a8883c2fc89c3ecdd1acf81782",
+            "content": "sha256:3e67fd2826ce12e28b2a3319da65b131ee296a509db9f7fd1a8e385e860d7368",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observed"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "08c6a57293dca2a8883c2fc89c3ecdd1acf81782",
+            "content": "sha256:2b6c535e7cc296acdd18cef0837997bb0e1c96002b50f5eba6bbcbbf146693f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_inspected_sides"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "30": {
+      "note": "The module's own unit-regression lane row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5691b694e756469475d783c426d9781ef14c8633",
+            "content": "sha256:be3624b9a56456ad2f4c1cb6f90e31aa332d75e5c7912ab6beb1f8017cdb4f2c",
+            "locator": {
+              "end": 225,
+              "kind": "line_range",
+              "start": 225
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "31": {
+      "note": "The unit-regression lane registers test_knowledge_diff_attribution.py. Seven lifecycle artifact lists declare it as a consumer: _user_settings_guard.py, anchor_fixture_models.py, diff_scope_test_support.py, the Node package-lock fixture, knowledge_row_codec_test_support.py, knowledge_rows_test_support.py and read_scope_test_support.py. Declaration is not execution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0556945441335e93cd0b1783dba11d3b2eb279a7",
+            "content": "sha256:f3c97cea90d6874137c31a702bc9f64c898199a273c0aede415fdef641e6c6c7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

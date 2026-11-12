@@ -1,0 +1,662 @@
+{
+  "path": "mcp/src/agents_remember/cli/role_launch_preparation.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+        "content": "sha256:98fbd77b7672b4cca22fe605161433c316af3e43afe3fc9d0b5a2144001621dd",
+        "locator": {
+          "kind": "symbol",
+          "name": "_task_document_read_metadata"
+        }
+      },
+      "id": "RLZ-091N3N",
+      "invariant": "INV-QZP9PM",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-14",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The handover metadata names only a leaf own copy or the controller own canonical Markdown path and distinguishes taskless/outside-working-folder states.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+        "content": "sha256:4970820acf2a339998c58d56cfc7183b9ced6c386736e55939cf86311636cb90",
+        "locator": {
+          "kind": "symbol",
+          "name": "prepare_role_handover"
+        }
+      },
+      "id": "RLZ-0ZG5YM",
+      "invariant": "INV-5ATS9T",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule5",
+        "leaf": "260928-MIK-L95"
+      },
+      "rationale": "The public role-start seam runs the shared preparation before it compiles the handover, so no caller prepares the environment beforehand.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+        "content": "sha256:1a6920158daeb820f8807df7f4c7d958b033f6823ee0f933068eca39484a036a",
+        "locator": {
+          "kind": "symbol",
+          "name": "_compile_handover"
+        }
+      },
+      "id": "RLZ-2E88NK",
+      "invariant": "INV-8AMSGV",
+      "origin": {
+        "handoffEntry": "MIK-R93@v1 rules1,2,7,10",
+        "leaf": "260928-MIK-L93"
+      },
+      "rationale": "The handover constructor selects developerQuestions solely by the presence of the launching parent and binds its real ID.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+        "content": "sha256:f68c6e26dd460031cd38b5c7dd871ca7b4140261b4a3f481b0523c13c3248098",
+        "locator": {
+          "kind": "symbol",
+          "name": "_return_address"
+        }
+      },
+      "id": "RLZ-2ZC9R8",
+      "invariant": "INV-V5KJ19",
+      "origin": {
+        "handoffEntry": "L117-R10",
+        "leaf": "260928-MIK-L117"
+      },
+      "rationale": "A leaf with sprint/master context returns to the current Manager using the child context references, regardless of who started it. Other roles and incomplete leaf contexts use the starter role and its applicable references with context fallbacks; descriptive starter/actual-parent question identity remains separate from ordinary replacement-safe returns.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+        "content": "sha256:1a6920158daeb820f8807df7f4c7d958b033f6823ee0f933068eca39484a036a",
+        "locator": {
+          "kind": "symbol",
+          "name": "_compile_handover"
+        }
+      },
+      "id": "RLZ-5DAQEC",
+      "invariant": "INV-W58B84",
+      "origin": {
+        "handoffEntry": "R99-4-sibling-value",
+        "leaf": "260928-MIK-L99"
+      },
+      "rationale": "The admitted handover constructor appends the one value after compiling existing values and copies exact canonical selection references.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+        "content": "sha256:8aeb4c9c5feaf03555182b2ce173b50d4b63d042afdcedddcfccbd9cfb055bda",
+        "locator": {
+          "kind": "symbol",
+          "name": "_prepare_role_folders"
+        }
+      },
+      "id": "RLZ-5H4QN7",
+      "invariant": "INV-8XCZY1",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-09",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "Preparation allocates request/role-local report and scratch roots, so another agent half-writing a file cannot block this agent collection.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+        "content": "sha256:3767742eb1562b12475352ffa77c55c949963aa02e68c37efbdb7ef62757e084",
+        "locator": {
+          "end": 362,
+          "kind": "line_range",
+          "start": 362
+        }
+      },
+      "id": "RLZ-702R9Y",
+      "invariant": "INV-8VNSKJ",
+      "origin": {
+        "handoffEntry": "L84-R1-05",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The launch preparation text tells launched roles the same recovery for refused task_doc writes.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+        "content": "sha256:4970820acf2a339998c58d56cfc7183b9ced6c386736e55939cf86311636cb90",
+        "locator": {
+          "kind": "symbol",
+          "name": "prepare_role_handover"
+        }
+      },
+      "id": "RLZ-8N10TZ",
+      "invariant": "INV-RQ2ZB8",
+      "origin": {
+        "handoffEntry": "PNT-R02@v1 §6",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Validates before workspace resolution and leaf enclosure preparation.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+        "content": "sha256:9410e1c9479a7f918a8df62ee08bd267c31f1f65bcc56f4551c3816fde8d0174",
+        "locator": {
+          "kind": "symbol",
+          "name": "_verify_leaf_revival_scope"
+        }
+      },
+      "id": "RLZ-8V1V37",
+      "invariant": "INV-MFVW1K",
+      "origin": {
+        "handoffEntry": "PNT-R07@v1 §5 (scope) / A3",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Compares saved launch task-context pair with current leaf-derived pair before resume.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+        "content": "sha256:ae9169abae6738fc9a561547d75cdeb72f64e1473ecaf76aed6a1ac03b18a254",
+        "locator": {
+          "kind": "symbol",
+          "name": "_prepare_task_document_files"
+        }
+      },
+      "id": "RLZ-AZVMM0",
+      "invariant": "INV-J3PYB0",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-13",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "Before creating the leaf agent, preparation requires a contractPath and canonical own-leaf identity, writes real task-document copies in the own role group outside code/memory roots, and does not demand a leaf enclosure specifically; ordinary enclosure refresh and granted-direct series/group placement are separate scopes.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+        "content": "sha256:4970820acf2a339998c58d56cfc7183b9ced6c386736e55939cf86311636cb90",
+        "locator": {
+          "kind": "symbol",
+          "name": "prepare_role_handover"
+        }
+      },
+      "id": "RLZ-DFH2HW",
+      "invariant": "INV-RQ2ZB8",
+      "origin": {
+        "handoffEntry": "L202-A6b-shared-fresh-catalog",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Checks current known choices before durable workspace or enclosure preparation.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+        "content": "sha256:ad12b44aa8d3cf322c080cbac6c1ca03847216bf2dc5936bb9d47489caaf37e6",
+        "locator": {
+          "kind": "symbol",
+          "name": "_ar_tool_server_usage"
+        }
+      },
+      "id": "RLZ-EH9QDT",
+      "invariant": "INV-HFREW1",
+      "origin": {
+        "handoffEntry": "MIK-R132@v1 rule 5",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "Words the first message from the same record as the launch call, so that brief and answer cannot say different things.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+        "content": "sha256:d6bee5d8e2ab2748115514e0f60af6b4be865d324bd52a5754df3646272561e7",
+        "locator": {
+          "kind": "symbol",
+          "name": "_role_defaults"
+        }
+      },
+      "id": "RLZ-FGXVSQ",
+      "invariant": "INV-WT3VCM",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-02",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The preparation owner carries resolved fieldOrigins and the actual host profile into one launch-default record, keeping authored per-level provider origins.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+        "content": "sha256:5e5430e36b61196467b614c0fd413bde32b78ef6de480fea36c5113b711a5667",
+        "locator": {
+          "kind": "symbol",
+          "name": "_role_assignment"
+        }
+      },
+      "id": "RLZ-HASECY",
+      "invariant": "INV-A8E0YE",
+      "origin": {
+        "handoffEntry": "MIK-R98@v1 §5",
+        "leaf": "260928-MIK-L98"
+      },
+      "rationale": "The actual started_by value selects the handover concern channel.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+        "content": "sha256:a22825664b51defd28eec8a582fb0e965eb88368f049472166db4e2d8324a82b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_recorded_leaf_scope"
+        }
+      },
+      "id": "RLZ-JWS27D",
+      "invariant": "INV-MFVW1K",
+      "origin": {
+        "handoffEntry": "PNT-R07@v1 §5 (scope) / A3",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Reads exact taskContext from launch receipt.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+        "content": "sha256:1a6920158daeb820f8807df7f4c7d958b033f6823ee0f933068eca39484a036a",
+        "locator": {
+          "kind": "symbol",
+          "name": "_compile_handover"
+        }
+      },
+      "id": "RLZ-KABSJ7",
+      "invariant": "INV-QZP9PM",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-14",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The compiled handover carries the exact native file-read metadata and task_doc-first instruction with scoped correct-write refusal recovery; it supplies file locations rather than a whole-document MCP read.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+        "content": "sha256:ed8429d508b341aa9ec30cb82b499d7f7340869713e16a745d9a2dd0c88637f6",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-T0T191",
+      "invariant": "INV-X9GE8J",
+      "origin": {
+        "handoffEntry": "L185-attach-inv-x9ge8j",
+        "leaf": "260928-MIK-L185"
+      },
+      "rationale": "The preparer assembles a launch's inputs and calls role_brief_message.brief_prompt for the message text and the complete hand-over's content; it publishes neither file — role_launch_routes calls publish_handover_files before the start is sent — and it sends nothing.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+        "content": "sha256:1a6920158daeb820f8807df7f4c7d958b033f6823ee0f933068eca39484a036a",
+        "locator": {
+          "kind": "symbol",
+          "name": "_compile_handover"
+        }
+      },
+      "id": "RLZ-TRMKTB",
+      "invariant": "INV-QZW2X2",
+      "origin": {
+        "handoffEntry": "L172-INV-C",
+        "leaf": "260928-MIK-L172"
+      },
+      "rationale": "Compiles the same reply rule into the hand-over's roleTools usage text, so a launched agent reads it beside the tools.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+        "content": "sha256:7239e89abf19a0e115b20e40550cab8f02158f841b9f839ba1434cfb9191030a",
+        "locator": {
+          "kind": "symbol",
+          "name": "_owner_relation"
+        }
+      },
+      "id": "RLZ-Y18EZK",
+      "invariant": "INV-8AMSGV",
+      "origin": {
+        "handoffEntry": "MIK-R93@v1 rules1,2,7,10",
+        "leaf": "260928-MIK-L93"
+      },
+      "rationale": "The ownership constructor preserves the parent identity and L72 coordinator values, adds the developer channel, and names R99 direct peers for leaf results and work questions.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+        "content": "sha256:9410e1c9479a7f918a8df62ee08bd267c31f1f65bcc56f4551c3816fde8d0174",
+        "locator": {
+          "kind": "symbol",
+          "name": "_verify_leaf_revival_scope"
+        }
+      },
+      "id": "RLZ-YR2FED",
+      "invariant": "INV-PH30YW",
+      "origin": {
+        "handoffEntry": "L94-CUR-grant-workspace-readers",
+        "leaf": "260928-MIK-L94"
+      },
+      "rationale": "Saved canonical task/contract identity is compared with the current grant-sensitive pair before native revival.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Frozen implementation of prepare_role_handover supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+            "content": "sha256:4970820acf2a339998c58d56cfc7183b9ced6c386736e55939cf86311636cb90",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_role_handover"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The preparer carries bound canonical/read-copy metadata, composes source-bound instructions and preserves parent/peer routing. Source inspection establishes these implementation boundaries, not live-host execution or acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+            "content": "sha256:1a6920158daeb820f8807df7f4c7d958b033f6823ee0f933068eca39484a036a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_handover"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Select and catalog-validate before workspace creation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+            "content": "sha256:4970820acf2a339998c58d56cfc7183b9ced6c386736e55939cf86311636cb90",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_role_handover"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Defaults extraction preserves host-role lookup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+            "content": "sha256:d6bee5d8e2ab2748115514e0f60af6b4be865d324bd52a5754df3646272561e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_role_defaults"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Detail-bound composition enters the existing handover and message binding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+            "content": "sha256:1a6920158daeb820f8807df7f4c7d958b033f6823ee0f933068eca39484a036a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_handover"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Concrete frozen detail pointers retain existing user-note composition.\n\nAnchor: `write_detail_artifacts`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
+            "content": "sha256:139b0e0c2bf07ff0a4e05c7c4f3a62dc34b68b68f00fa332dc3540979dcb6830",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 28
+            },
+            "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The capsule operation each launcher role is compiled from, including the free agent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+            "content": "sha256:c0ad5b8761a4da6a95ad5469b1e425605ac63fdf93b6f1d8a86f30d0a5412c53",
+            "locator": {
+              "kind": "symbol",
+              "name": "ROLE_START_OPERATIONS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The assignment the bootstrap seat carries, which names no task.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+            "content": "sha256:5e5430e36b61196467b614c0fd413bde32b78ef6de480fea36c5113b711a5667",
+            "locator": {
+              "kind": "symbol",
+              "name": "_role_assignment"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "First-read metadata names task_doc first, the same-tool refusal ladder for covered writes, and an open, logged hand write when no admitted route works.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+            "content": "sha256:98fbd77b7672b4cca22fe605161433c316af3e43afe3fc9d0b5a2144001621dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_task_document_read_metadata"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Frozen implementation of _ar_mcp_context supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+            "content": "sha256:327c2ecef707377b3d1753bab2d319f8df963473f4c308575a916c6f9c33c75b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ar_mcp_context"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The `_resolve_workspace` implementation now lives in its extracted owner.  Anchor: actual current supporting source",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+            "content": "sha256:8349e16a09c44ce4b7b9136ec3e1b8f44c1150b019f241a4b0ab8c22db0c6cb3",
+            "locator": {
+              "end": 272,
+              "kind": "line_range",
+              "start": 220
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The parented handover values: `ownerRelation` from `_owner_relation`, and a `developerQuestions` value that sends developer decisions to the actual parent agent id; a parentless launch keeps the own-chat sentence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+            "content": "sha256:7239e89abf19a0e115b20e40550cab8f02158f841b9f839ba1434cfb9191030a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_owner_relation"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+            "content": "sha256:fc63e6bf96780c8d60f22ab7f3189afb2231b725c74b61ca8ce0e05d5592b65e",
+            "locator": {
+              "end": 768,
+              "kind": "line_range",
+              "start": 749
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Checks that every view and start asks fresh and explicit refresh rescans provider discovery.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00532bdbe263591821e2365606c47747da6ed99a",
+            "content": "sha256:817cdeefa8b95db11a58fd768757678dc592e15af853085683cc8b70eb7e87c9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_paseo_catalog.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Checks rejected choices create no receipt, workspace, agent or enclosure.\n\nAnchor: `LaunchValidationTests.test_a_launch_is_validated_against_the_catalog_before_anything_is_created`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00532bdbe263591821e2365606c47747da6ed99a",
+            "content": "sha256:76deccd2f509435da730cdd3a5519c9a381776b2e2ca596aebb34dc673bf64a8",
+            "locator": {
+              "end": 336,
+              "kind": "line_range",
+              "start": 293
+            },
+            "path": "mcp/tests/test_paseo_catalog.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Changed/missing saved scope refuses with both pairs, no bridge/write/enclosure creation.\n\nAnchor: `ReviveTests.test_revive_of_a_leaf_bound_role_refuses_a_changed_task_scope_with_both_values`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be28238caa1a4769e38c6eb12cdc92ca0d18c95e",
+            "content": "sha256:065f2da2237b8d035a7eed918e1b3abbdc0f46b150f0d3b8b0b5d357cf8b6b37",
+            "locator": {
+              "end": 818,
+              "kind": "line_range",
+              "start": 788
+            },
+            "path": "mcp/tests/test_paseo_status.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "An Investigator's assignment comes from `investigator_assignment` with the actual starting parent: a parented start takes its concern from the parent's first message, a parentless start asks the developer.\n\nAnchor: `investigator_assignment`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+            "content": "sha256:3c96cf01a54136f94f456533307ae5eac3b4f1cf7a29741c60c47628d4c97c9f",
+            "locator": {
+              "end": 1081,
+              "kind": "line_range",
+              "start": 1080
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Leaf revival compares current grant-sensitive canonical task/contract scope before bridge use.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+            "content": "sha256:9410e1c9479a7f918a8df62ee08bd267c31f1f65bcc56f4551c3816fde8d0174",
+            "locator": {
+              "kind": "symbol",
+              "name": "_verify_leaf_revival_scope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

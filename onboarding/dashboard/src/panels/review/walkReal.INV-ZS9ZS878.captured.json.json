@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/walkReal.INV-ZS9ZS878.captured.json",
+  "realizes": [],
+  "references": {
+    "3": {
+      "note": "The current retained JSON input supplies the literal identities, response states and populations summarized above; these are fixture facts, not live project knowledge or fresh execution evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "257292d7bee4d503bfc5d0f29684c86970876f88",
+            "content": "sha256:0370157a6a0e7f32273ca62e8ab447cd9c3a1a8a16a2666abc73f0fdd7e79889",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

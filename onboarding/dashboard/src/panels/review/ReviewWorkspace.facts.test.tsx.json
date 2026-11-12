@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/panels/review/ReviewWorkspace.facts.test.tsx",
+  "realizes": [],
+  "references": {
+    "3": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(\"shows the next subject's movement once it answered, and keeps a subject's pending read and failure out of the chip\", async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279d90780f8aec8792c0e8e9188261c52753d84c",
+            "content": "sha256:0a4a3420c08841f228cbd8a64685c6a54d0f6891979b196fde6d87d3b9eb415c",
+            "locator": {
+              "end": 187,
+              "kind": "line_range",
+              "start": 160
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(\"wires the one leaf-wide read into the tree's code facts, a code-changed row and the Worklist row\", async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279d90780f8aec8792c0e8e9188261c52753d84c",
+            "content": "sha256:08cb8ae319e80ab19e82bf5737bafc58563139114576039ae03714d1560bd746",
+            "locator": {
+              "end": 210,
+              "kind": "line_range",
+              "start": 188
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('separates file attribution from open work and does not call an unmeasured change set empty', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279d90780f8aec8792c0e8e9188261c52753d84c",
+            "content": "sha256:f5d9bc28f33db01644a70702c5582bfbbe511c63e8bf1982ac6ec2adb6916014",
+            "locator": {
+              "end": 230,
+              "kind": "line_range",
+              "start": 211
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

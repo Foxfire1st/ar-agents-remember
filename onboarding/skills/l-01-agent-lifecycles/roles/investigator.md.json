@@ -1,0 +1,281 @@
+{
+  "path": "skills/l-01-agent-lifecycles/roles/investigator.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "23bfca4e88babb87f154a00a7d88d117d67c4614",
+        "content": "sha256:4a0dfeab70995c88c469397b1f859e6244c27cbf55e00ccb7cb3047b3ca31b73",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-0NTWBB",
+      "invariant": "INV-A8E0YE",
+      "origin": {
+        "handoffEntry": "MIK-R98@v1 §5",
+        "leaf": "260928-MIK-L98"
+      },
+      "rationale": "The role enforces the two concern intake channels.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "23bfca4e88babb87f154a00a7d88d117d67c4614",
+        "content": "sha256:4a0dfeab70995c88c469397b1f859e6244c27cbf55e00ccb7cb3047b3ca31b73",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-1YB3RJ",
+      "invariant": "INV-WAY665",
+      "origin": {
+        "handoffEntry": "MIK-R98@v1 §1",
+        "leaf": "260928-MIK-L98"
+      },
+      "rationale": "The canonical role source owns the widened concern and single report assignment.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "23bfca4e88babb87f154a00a7d88d117d67c4614",
+        "content": "sha256:bf272d89f8f6a68cc68860f8e55bc2747c1c9a5f9cfacde5a07c9bda38099860",
+        "locator": {
+          "end": 54,
+          "kind": "line_range",
+          "start": 8
+        }
+      },
+      "id": "RLZ-4CP22X",
+      "invariant": "INV-EXP68S",
+      "origin": {
+        "handoffEntry": "L62-CUR-6414-investigator-evidence",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "Actual report step states what is/is not, evidence, no self-authored requirement/ruling/duty and open parent question. Actual parent first concern and no fabricated scope/task. Scoped concern, scratch checks, report before explicitly authorized remediation and unchanged code/memory/task prohibition.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "23bfca4e88babb87f154a00a7d88d117d67c4614",
+        "content": "sha256:4a0dfeab70995c88c469397b1f859e6244c27cbf55e00ccb7cb3047b3ca31b73",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-4JERMG",
+      "invariant": "INV-9S49CW",
+      "origin": {
+        "handoffEntry": "MIK-R93@v1 rules1,2,2a,5,6,7",
+        "leaf": "260928-MIK-L93"
+      },
+      "rationale": "This role/operation source points to operations/orientation.md for developer questions and relayed answers; it is not a self-contained duplicated full-clause home or native delivered-message witness.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "23bfca4e88babb87f154a00a7d88d117d67c4614",
+        "content": "sha256:4a0dfeab70995c88c469397b1f859e6244c27cbf55e00ccb7cb3047b3ca31b73",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-6FJEPD",
+      "invariant": "INV-YT1AD8",
+      "origin": {
+        "handoffEntry": "MIK-R98@v1 §2",
+        "leaf": "260928-MIK-L98"
+      },
+      "rationale": "The role authorizes bounded reading/checks/reporting and its parent notification.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "23bfca4e88babb87f154a00a7d88d117d67c4614",
+        "content": "sha256:4a0dfeab70995c88c469397b1f859e6244c27cbf55e00ccb7cb3047b3ca31b73",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-9BPGSN",
+      "invariant": "INV-H0WCGX",
+      "origin": {
+        "handoffEntry": "MIK-R98@v1 §3",
+        "leaf": "260928-MIK-L98"
+      },
+      "rationale": "The role states each forbidden mutation and owner route.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "23bfca4e88babb87f154a00a7d88d117d67c4614",
+        "content": "sha256:4a0dfeab70995c88c469397b1f859e6244c27cbf55e00ccb7cb3047b3ca31b73",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-DX43S4",
+      "invariant": "INV-7VZRZW",
+      "origin": {
+        "handoffEntry": "R99-14-harness-work",
+        "leaf": "260928-MIK-L99"
+      },
+      "rationale": "The canonical Investigator states harness work autonomy and same-assignment permissions, checked/credited helpers and seat-owned boundary acts. This is role-source doctrine, not a SystemSpecialist owner or delivered-capsule witness.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "23bfca4e88babb87f154a00a7d88d117d67c4614",
+        "content": "sha256:2c45bdb1ead3c0dfe6dcbd9682f6b7430f209d9ee5b1af5c582282570d656cb5",
+        "locator": {
+          "end": 18,
+          "kind": "line_range",
+          "start": 18
+        }
+      },
+      "id": "RLZ-JJE91B",
+      "invariant": "INV-CHNC1N",
+      "origin": {
+        "handoffEntry": "MIK-PNT-DOCTRINE-TASKLESS-PROJECTS-SCOPE@draft1",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "The Investigator opening asks the actual concern source for missing concern or report scope without manufacturing identity.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "23bfca4e88babb87f154a00a7d88d117d67c4614",
+        "content": "sha256:4a0dfeab70995c88c469397b1f859e6244c27cbf55e00ccb7cb3047b3ca31b73",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-RMJW06",
+      "invariant": "INV-MM63KX",
+      "origin": {
+        "handoffEntry": "MIK-R98@v1 §4",
+        "leaf": "260928-MIK-L98"
+      },
+      "rationale": "The source preserves the old report-first and explicit-order boundary.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "23bfca4e88babb87f154a00a7d88d117d67c4614",
+        "content": "sha256:4a0dfeab70995c88c469397b1f859e6244c27cbf55e00ccb7cb3047b3ca31b73",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-XG7F62",
+      "invariant": "INV-GWA6VR",
+      "origin": {
+        "handoffEntry": "MIK-R60@v7.1-2",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Always-on role text whose tool-involving pointers now name their tool.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "23bfca4e88babb87f154a00a7d88d117d67c4614",
+        "content": "sha256:4a0dfeab70995c88c469397b1f859e6244c27cbf55e00ccb7cb3047b3ca31b73",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-Z9Z18P",
+      "invariant": "INV-QZW2X2",
+      "origin": {
+        "handoffEntry": "L172-INV-C",
+        "leaf": "260928-MIK-L172"
+      },
+      "rationale": "The Investigator sends its report to the supplied parent role/task address, and only a parentless run leaves it to the developer's chat.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Investigator has Projects, sprint or sprint/master scope, never a leaf launch; it investigates one scoped concern, distinguishes facts from hypotheses, names code/memory owners and changes no code, memory or task state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23bfca4e88babb87f154a00a7d88d117d67c4614",
+            "content": "sha256:5c703aac4b6da4b39d78a23ccffd3a61a5b6f4eb28e692d9a8e8cc27d9702dbf",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 12
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "23bfca4e88babb87f154a00a7d88d117d67c4614",
+            "content": "sha256:5fb4ed48b19a4ea3c3875fe7de1be0d91f15639ab46cb27b408cd04ba0922d6f",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "23bfca4e88babb87f154a00a7d88d117d67c4614",
+            "content": "sha256:7b2d342cb3f76b470443e17f9e05fbba642277ab9dc5da11b5adfc86a5e2727a",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 34
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "23bfca4e88babb87f154a00a7d88d117d67c4614",
+            "content": "sha256:0ebb99f70f744abc4004645539d59745924a0b8bcb68df4c2be1f6d0cf456103",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 53
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "23bfca4e88babb87f154a00a7d88d117d67c4614",
+            "content": "sha256:8a2fa6856200139c3c9c0e560a367d260799ff3f12a7d993de4522c2bf4a62e7",
+            "locator": {
+              "end": 82,
+              "kind": "line_range",
+              "start": 82
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Investigator reports what is and what is not with evidence, states no requirement, ruling or duty of its own, and names a needed change as an open question for its parent rather than a fix to apply.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23bfca4e88babb87f154a00a7d88d117d67c4614",
+            "content": "sha256:5050eddc7ae94d38b46a52289e4c291723543e9cce31cc1f0776945fc590a448",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 56
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,277 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_reference_anchors.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "4ecac2ccfc1c08ab4ba8c88ea03d670a854ec344",
+        "content": "sha256:7c365c574e46283c6530d2ba2a2be94b440a7d5a0f997c0547e44391fce3c557",
+        "locator": {
+          "kind": "symbol",
+          "name": "check_reference_anchors"
+        }
+      },
+      "id": "RLZ-F042X4",
+      "invariant": "INV-033XSD",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §5-§7 publication-refuses-stale-anchor",
+        "leaf": "260928-MIK-L191"
+      },
+      "rationale": "Registers the refusing R198.1 rule that names the sidecar, the references field and the pair it measured, and is skipped only when the validation carries no paired code tree.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The module states rule 5's obligation and the two reporting dispositions it registers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ecac2ccfc1c08ab4ba8c88ea03d670a854ec344",
+            "content": "sha256:048c789458a0da079d6a83e799ac5faeac4404cc8d533fa5a08a70bf3b4940ae",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Writer reporting is granted at registration.\n\nAnchor: `writer_reports`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ecac2ccfc1c08ab4ba8c88ea03d670a854ec344",
+            "content": "sha256:e84a4a3ea85cef3f1e045f144c28333b1767456cb13acfb1f1556e60805a0474",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 64
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Merge reporting is granted at registration.\n\nAnchor: `merge_reports`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ecac2ccfc1c08ab4ba8c88ea03d670a854ec344",
+            "content": "sha256:e84a4a3ea85cef3f1e045f144c28333b1767456cb13acfb1f1556e60805a0474",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 64
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The anchor debt reports at a sync merge, refuses every publication, and is a writer-reported rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "041fd9c5267802eb7187afb788f50056d7ed7222",
+            "content": "sha256:61d5789da23780ebab59b54e5ef6ee42ef342df99249ef23a26de967fb946f3f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_anchor_debt_reports_at_a_sync_merge_and_refuses_every_publication"
+            },
+            "path": "mcp/tests/test_reference_anchor_guard.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "A stale anchor refuses the pair the publication routes judge, and repairing that anchor alone clears it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c5d540c0c4b2558a2b3dfb436faf2b26d922805b",
+            "content": "sha256:b34752be7485d4149c8707dab38e45bcc9d0ff85eb687a2e50696cc4e27e16b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_stale_reference_anchor_refuses_the_pair_the_publication_routes_judge"
+            },
+            "path": "mcp/tests/test_reference_anchor_routes.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "A blob-only move refuses a leaf publication even when the located bytes are identical.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "041fd9c5267802eb7187afb788f50056d7ed7222",
+            "content": "sha256:8cf53d7099518d18a64aa70e6a95ba01c26a3a83c2f9d13e161b4f277403eafe",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_stale_blob_with_identical_content_refuses_a_leaf_publication"
+            },
+            "path": "mcp/tests/test_reference_anchor_guard.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "A matching blob with the wrong recorded content refuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "041fd9c5267802eb7187afb788f50056d7ed7222",
+            "content": "sha256:ac807743e3fe6e52ee65ec22152aad15dcc1e679869f4500b484b7e394559ae6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_same_blob_anchor_with_the_wrong_recorded_content_refuses"
+            },
+            "path": "mcp/tests/test_reference_anchor_guard.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The message names the observation's state, its reason and the measured pair.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ecac2ccfc1c08ab4ba8c88ea03d670a854ec344",
+            "content": "sha256:c394213c47c0c0ef859145422b6be9cfffe8de05c9a4f5c8bf6378b1313d9fe8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_message"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The one check: no code tree, no finding; otherwise one finding per non-current anchor.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ecac2ccfc1c08ab4ba8c88ea03d670a854ec344",
+            "content": "sha256:7c365c574e46283c6530d2ba2a2be94b440a7d5a0f997c0547e44391fce3c557",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_reference_anchors"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Whether this route reports rather than refuses is the registry's merge disposition.\n\nAnchor: `merge_reports_at`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ecac2ccfc1c08ab4ba8c88ea03d670a854ec344",
+            "content": "sha256:89c93cd8c2aa2a83661c5f36777fb310a88710b353f54e7bb1acd30c3c1c0c32",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 50
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Each non-current observation becomes a finding at its sidecar and its own target field.\n\nAnchor: `Finding`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ecac2ccfc1c08ab4ba8c88ea03d670a854ec344",
+            "content": "sha256:8ea9de2762f914afca81aebab719bda2aa9350ec3dd52a9e9822178166f1d3bd",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 55
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The observations the check walks are the census module's, over sidecars this route already parsed.\n\nAnchor: `observations_of`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ecac2ccfc1c08ab4ba8c88ea03d670a854ec344",
+            "content": "sha256:0efd3e25f8a8535db9fea8ea7317df7df0558d1d13c44c6f619b1f5d2ff6e0e8",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 54
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "A reporting route appends the sentence naming what refuses it next.\n\nAnchor: `merge_report_note`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ecac2ccfc1c08ab4ba8c88ea03d670a854ec344",
+            "content": "sha256:823ab88184258ad3fc781d44549d06c4e5ffbc31e30d5095dcd9f16b182dd2c8",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 59
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The rule id is the census module's own identifier.\n\nAnchor: `REFERENCE_ANCHOR_RULE`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ecac2ccfc1c08ab4ba8c88ea03d670a854ec344",
+            "content": "sha256:2c107dc5f2c9034a63708c3cb731a30f3e86fdba6cd3e7220368b979a2e2d05b",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 34
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Registration: the rule id, its rule caption, the check, and both dispositions.\n\nAnchor: `register_rule`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ecac2ccfc1c08ab4ba8c88ea03d670a854ec344",
+            "content": "sha256:e84a4a3ea85cef3f1e045f144c28333b1767456cb13acfb1f1556e60805a0474",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 64
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

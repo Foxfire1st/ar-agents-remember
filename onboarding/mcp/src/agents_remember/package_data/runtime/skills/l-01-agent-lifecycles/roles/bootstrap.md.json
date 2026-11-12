@@ -1,0 +1,333 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/bootstrap.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "54eeeb005b8ba5c7f3f16c096ec59d5ea61a2c10",
+        "content": "sha256:11994559aec49ff91c037d4b276c7870c355754696cf062692a875802ca61d3f",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-NVBKRR",
+      "invariant": "INV-NNQR91",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-19",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The mcp/src/agents_remember/package_data/runtime shipped copy propagates the skills/l-01-agent-lifecycles/roles/bootstrap.md instructions to that installation surface; it is generated output and does not independently set role/task or permission authority.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Canonical source this package-data copy is sync-propagated from.\n\nAnchor: `# Bootstrap`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "54eeeb005b8ba5c7f3f16c096ec59d5ea61a2c10",
+            "content": "sha256:10142a79d25fd343a320bd8f36a2d54aef2f38490150509c33882ef53e4c3ecc",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 6
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The capsule vocabulary appends bootstrap to both CAPSULE_ROLES and CAPSULE_OPERATIONS, publishing the role and its operation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "270a88e12632238bb65b8077d7b7dcfbae2e589d",
+            "content": "sha256:ca87be70f1004fe8f0b93c44eca5442b2a733b7770811673bac424afbd4a167c",
+            "locator": {
+              "kind": "symbol",
+              "name": "CAPSULE_ROLES"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/vocabulary.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The shipped source checks publish bootstrap as a free-agent role while excluding it from sprint/master/leaf role sets, inspect the source declarations for the same exclusion, and require a nonblank manifest altitude outside those task altitudes. These three cases do not assert a taskless launch/admission route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9861c72ac24c02e19b7fd2360ac95be1a6d9e5c3",
+            "content": "sha256:84e680674d90947358d415c9e5176bbe3dfef65020e5f5e3afc88e5ac5042f34",
+            "locator": {
+              "end": 407,
+              "kind": "line_range",
+              "start": 372
+            },
+            "path": "mcp/tests/test_memory_branch_authority.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9861c72ac24c02e19b7fd2360ac95be1a6d9e5c3",
+            "content": "sha256:c46a3133b8d2e30740d05d48c17c6400801f8382c6ee2a8c777c93a4b721e7ea",
+            "locator": {
+              "end": 510,
+              "kind": "line_range",
+              "start": 484
+            },
+            "path": "mcp/tests/test_memory_branch_authority.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The corpus check test_every_role_source_is_concise_and_well_formed supersedes fixed section order and minimum length with concise, well-formed, self-contained role-source checks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcea192008fd1214a3a615afe58b187b5c3eaaf7",
+            "content": "sha256:24e59722e69c478f7ddadbbb558ee803fa7c1f022982d613c5320c6bd536448a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_role_source_is_concise_and_well_formed"
+            },
+            "path": "mcp/tests/test_role_instruction_corpus.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The generated copies this file is one of, proved current by the generator's own check.\n\nAnchor: `CANONICAL_SKILLS` `check_targets`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:556c2515bac2a5348f19a93d199ce8620848ee26c5e67dea565240287f582394",
+            "locator": {
+              "kind": "symbol",
+              "name": "CANONICAL_SKILLS"
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:1c8dbc9ac78cd4e8aecbfeaece0b1cee9d5e1ab7d1d4ae36c7dc40afff255e22",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_targets"
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:ad37b1a91d804b52ab62cae5a24f4c1425fe4deb070594a329e13624d8b7a582",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 179
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:753adb3ef38e223969853a4fa937b2e7eeda92d641fe862b8ea7ec19e6bbbe28",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Bootstrap starts no role and messages no one; it asks the developer in its own chat and routes no setup finding through a task transaction.\n\nAnchor: `role_message`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "54eeeb005b8ba5c7f3f16c096ec59d5ea61a2c10",
+            "content": "sha256:7b8d340a98eb0b9052c3424ad3724e50c6a2ffb13b4c652870ab7352a5a30fd2",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 54
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Bootstrap is a setup/report role: it mutates only through the permitted setup surfaces, starts and messages no role, and authors neither onboarding nor knowledge.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "54eeeb005b8ba5c7f3f16c096ec59d5ea61a2c10",
+            "content": "sha256:55cedd4e1047d6fccf5eb7144465570629955bb8e2e94d4c930cd1cc8d03284d",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 48
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The packaged Bootstrap copy forbids retire_child alongside the other task, role-start and closeout calls outside its setup surfaces.\n\nAnchor: `retire_child`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "54eeeb005b8ba5c7f3f16c096ec59d5ea61a2c10",
+            "content": "sha256:3f30fb22a3ae0c687f7ed7bee416dd8703a39f834bad19ac758598b462c6d51d",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 52
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Bootstrap is a free agent: a setup role started from the dashboard with no task document, brief or parent; the user starts it with one call from their own chat.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "54eeeb005b8ba5c7f3f16c096ec59d5ea61a2c10",
+            "content": "sha256:88d0e5d8af61ab95a4f7d53858384b803b38aeedc380afc1d97b79662f34a115",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Bootstrap writes one report at the launch handover's taskReportPath and states that exact path on the report's first line.\n\nAnchor: `taskReportPath`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "54eeeb005b8ba5c7f3f16c096ec59d5ea61a2c10",
+            "content": "sha256:6ecfc010da88268e8f8db34b32a17fd822a5ce6a658660a9e60655d9c4d275b5",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 30
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Bootstrap starts with no task document, brief or parent, never waits for a task document and does not treat its absence as a defect to repair.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "54eeeb005b8ba5c7f3f16c096ec59d5ea61a2c10",
+            "content": "sha256:a6b15da7b714cd52cd84c2b2069e22b94dfa322c98a39212a5ed889b13462c44",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The role's instructions are this file plus the Bootstrap operation; nothing dispatches it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "54eeeb005b8ba5c7f3f16c096ec59d5ea61a2c10",
+            "content": "sha256:438ad4eb5d6591c52774e4a61d059086e5acc76493169fa81a5272631c335c25",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 10
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The permitted surfaces are the five setup tools plus read-only context_packet, server_info and read_ar_files and native state reads; the report's sections and state fields come from the Bootstrap report template.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "54eeeb005b8ba5c7f3f16c096ec59d5ea61a2c10",
+            "content": "sha256:090c319e73b1d5d3503e9ab910fdc6a274b2bdfc9fadc4367a66b1a7e4361325",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 32
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The operation block the role carries: workflow, failure inventory and authority gates.\n\nAnchor: `# Operation — Session Bootstrap`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d1b5e00d1cf12fac5ed5c9fbf2ad95dfd878573",
+            "content": "sha256:0a167d25b360e154c02dd9fdac113e52bbb0b78f701733c88a7ceee773d3179f",
+            "locator": {
+              "end": 2,
+              "kind": "line_range",
+              "start": 2
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/bootstrap.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The manifest entry declaring the free-agent altitude, its five tools and its three operations.\n\nAnchor: \"\\\"altitude\\\": \\\"free-agent\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:4bfb1faa8a0a63c2e4f582f0a9df847b07f5a05768f278f6bf0b4543ad7c88da",
+            "locator": {
+              "end": 478,
+              "kind": "line_range",
+              "start": 478
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

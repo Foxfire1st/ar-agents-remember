@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Guards the costly error this statement names: Finalizing a master decides again that an abandoned row whose enclosure records a completed integration refuses by name, for a master of either nature."
+  },
+  "applicability": "Finalization's re-decision of the abandoned-but-landed rule on either master nature.",
+  "conditions": [
+    "The finalizer calls the shared abandoned-row check at its own moment."
+  ],
+  "exclusions": [
+    "Closeout, which decides the same rule for an atomic master."
+  ],
+  "id": "INV-1B87DB",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L41-reviewer-acd0dccb-066d-41e9-ab45-b3d7e19e742f.md; probe x15_finalize_probes.out part 1; one killed mutation under sealed id 10"
+      ],
+      "path": "entries-list.json"
+    },
+    "handoffEntry": "L41-R7 note 10",
+    "leaf": "260928-MIK-L41",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Finalizing a master decides again that an abandoned row whose enclosure records a completed integration refuses by name, for a master of either nature.",
+  "status": "proposed",
+  "supersedes": []
+}

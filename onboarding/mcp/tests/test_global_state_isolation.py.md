@@ -1,15 +1,5 @@
 # mcp/tests/test_global_state_isolation.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_global_state_isolation.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [overview](overview.md)
@@ -24,44 +14,59 @@ The expected owner is the kernel checkout-execution declaration, whose normal py
 
 ### Logic
 
-Module-level surface:
+`GlobalStateLeakDetectionTests` deliberately leaks the checkout role, then observes both the named
+leak and restoration to test mode before failure. It verifies that only restored rows enter
+per-test snapshots, that reset never imports unloaded owners, and that a subsequently loaded cache
+is cleared. Every registered reset row exercises its
+declared cleanup through a local owner double, with the sweep-cursor and tool-writer rows asserting delegation to their owner resetters; each restored row keeps its original table while
+reporting the leaked addition.
 
-- `GlobalStateLeakDetectionTests` (class, lines 14-38)
-
-### Conventions
-
-Module-level definitions follow the package conventions; names prefixed with `_` are private to this module.
+`test_tmux_cleanup_failures_do_not_skip_existing_pytest_teardown` drives the actual unconfigure
+hook with both timeout and spawn errors. It observes private server targeting, the shared guard,
+and environment, lease and temporary cleanup before the original error propagates.
 
 ### Invariants And Boundaries
 
-- The card mirrors the source file one-to-one at `mcp/src/...` path.
+This suite runs under the ordinary shared pytest bootstrap as well as admitted certifying routes.
+The bootstrap's explicit test-mode baseline is required; a raw import without that composition is
+not an independent proof. Registry-row doubles establish declared loaded-owner cleanup,
+not native heartbeat or full native-service execution.
 
-### Todos
+## Evidence
 
-None.
-
-## Repo-Internal References
+### Repo-Internal References
 
 This module defines the top-level symbols cited below; each row points at the exact source range holding the anchor.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Defines the class `GlobalStateLeakDetectionTests` (lines 14-38). | `GlobalStateLeakDetectionTests` | mcp/tests/test_global_state_isolation.py:14-38 |
 
-## 260824-PDLS Route Impact
+- GlobalStateLeakDetectionTests checks named leak restoration and the loaded-owner reset register. [1]
 
-The production owner moved from `mcp/tests/_global_state.py` to
-`agents_remember_test_support.testing.global_state`. This suite still expects root certifying bootstrap to have
-declared the normal `test` mode, deliberately leaks dashboard mode, and proves restoration happens
-before failure. It is therefore a Dagger-suite contract, not a valid standalone raw-host test.
 
-## Update History
 
-- 2026-08-24T21:23+02:00 — Updated imports and route expectations after shared state ownership
-  moved into production testing.
+## Bootstrap Ownership
 
-- 2026-08-10T18:31+02:00 — 260731-EFA-L21: updated leak diagnostics and ownership enumeration for
-  the kernel-owned checkout execution mode and explicit pytest baseline. Verification metadata
-  remains pinned until approved closeout.
+The state owner lives in `agents_remember_test_support.testing.global_state`. Both ordinary and
+certifying pytest use its reusable bootstrap. No Dagger-only requirement belongs to these state
+restoration assertions.
 
-- 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.
+
+
+- Every loaded reset row participates in its declared cleanup proof. [2]
+
+
+- Each restored table is repaired and its leak named. [3]
+
+- Private tmux failure preserves all existing later teardown. [4]
+
+
+
+- Reset-row doubles assert owner delegation for sweep and tool-writer cleanup. [5]
+
+
+
+## 260928-MIK-L177 A9 — Reset Controls Cover The Background Pool
+
+The isolation suite now exercises the background-pool resetter: `_owned_background_pool` installs a
+mock executor and a real lock on the module, and the assertion requires exactly one draining call on
+that executor and a cleared `_BackgroundPool.executor`. The delegated-writer and sweep-cursor controls
+share one branch, so each is still asserted against its own callable.

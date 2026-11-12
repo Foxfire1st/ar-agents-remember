@@ -1,0 +1,120 @@
+{
+  "path": "mcp/tests/test_master_retirement_refusals.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "a05e1776b2ff5ac3143e4e0a203a0b22b1a9d0a6",
+        "content": "sha256:74cceee93973e919ff71bddd9902143d7d8cd2090ef957743230526473942181",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_direct_task_document_with_a_malformed_list_field_refuses_and_is_named"
+        }
+      },
+      "facet": "The named case demonstrates this obligation on the current candidate.",
+      "id": "PRF-HP04B2",
+      "invariant": "INV-C4PDDP",
+      "origin": {
+        "handoffEntry": "L41-continuation-O2",
+        "leaf": "260928-MIK-L41"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a05e1776b2ff5ac3143e4e0a203a0b22b1a9d0a6",
+        "content": "sha256:4b5591dc0ff68ad079d10a2f1156edf38b3caadfffb271e974e5a301b6406e97",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_deep_copy_that_cannot_be_read_does_not_stop_a_retirement"
+        }
+      },
+      "facet": "A deep unreadable copy does not stop a retirement, which still archives the master.",
+      "id": "PRF-NDNJ04",
+      "invariant": "INV-SGG6XQ",
+      "origin": {
+        "handoffEntry": "MIK-R209@v1",
+        "leaf": "260928-MIK-L200"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a05e1776b2ff5ac3143e4e0a203a0b22b1a9d0a6",
+        "content": "sha256:74cceee93973e919ff71bddd9902143d7d8cd2090ef957743230526473942181",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_direct_task_document_with_a_malformed_list_field_refuses_and_is_named"
+        }
+      },
+      "facet": "A direct document with a malformed list field still stops a retirement and is named.",
+      "id": "PRF-X22F53",
+      "invariant": "INV-SGG6XQ",
+      "origin": {
+        "handoffEntry": "MIK-R209@v1",
+        "leaf": "260928-MIK-L200"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A refused first phase of a master that no sprint commands leaves no directory it made for the record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a05e1776b2ff5ac3143e4e0a203a0b22b1a9d0a6",
+            "content": "sha256:357a3da218d9e60872573ad6a0d2417ea27ba5d4805d73b876fa8420305bfb20",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A request addressed to an unreadable document is refused by the file's name before anything else.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a05e1776b2ff5ac3143e4e0a203a0b22b1a9d0a6",
+            "content": "sha256:357a3da218d9e60872573ad6a0d2417ea27ba5d4805d73b876fa8420305bfb20",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A master with two retirement records is refused with both named, and a new retirement row never takes a number that is in use.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a05e1776b2ff5ac3143e4e0a203a0b22b1a9d0a6",
+            "content": "sha256:357a3da218d9e60872573ad6a0d2417ea27ba5d4805d73b876fa8420305bfb20",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "_whole recognizes a taskArchive-bearing raw application result; otherwise a projected answer must supply a real retained log. This distinction is not a fallback for missing logs. Existing exact refusal and no-write controls remain.\n\nAnchor: Current STOP-delta source carrier",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a05e1776b2ff5ac3143e4e0a203a0b22b1a9d0a6",
+            "content": "sha256:357a3da218d9e60872573ad6a0d2417ea27ba5d4805d73b876fa8420305bfb20",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

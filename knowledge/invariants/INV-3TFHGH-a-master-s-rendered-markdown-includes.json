@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The renderer and ordinary publication owner are separate files, and binding them prevents a successfully edited child dependency from leaving authoritative master Markdown stale or requiring an untracked side write."
+  },
+  "applicability": "Ordinary document publication of a master’s rendered Markdown and the affected parent rendering after a child dependency edit.",
+  "conditions": [
+    "The current Order is derived and supplied to the renderer through native publication.",
+    "An explicit waitsFor edit publishes the edited document and affected master Markdown through the existing batch path."
+  ],
+  "exclusions": [
+    "Persisting derived waves.",
+    "Post-publication side writes to repair the master rendering."
+  ],
+  "id": "INV-3TFHGH",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_task_document_order.py::test_field_write_refreshes_derived_markdown_and_projected_heads_without_storing_waves",
+        "Parent examination of actual F01 changed extents; no new execution or acceptance."
+      ],
+      "path": "L162-curation-wave-9-producer-knowledge.json"
+    },
+    "handoffEntry": "MIK-R128@v1 rule 5",
+    "leaf": "260928-MIK-L162",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A master’s rendered Markdown includes its current derived Order through ordinary document publication, without storing waves or post-publication side writes.",
+  "status": "proposed",
+  "supersedes": []
+}

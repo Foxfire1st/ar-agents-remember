@@ -1,0 +1,126 @@
+{
+  "path": "mcp/src/agents_remember/certification/diagnostics/projection.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Diagnostic evidence can never satisfy or promote into the R14 final proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0fe21a4eabc160460412845cb49defbe1f57c2c8",
+            "content": "sha256:b560ffdb37f3bb4af1d65d578234063f8f0a9e0388be3390a715698be31ad319",
+            "locator": {
+              "kind": "symbol",
+              "name": "diagnostic_never_satisfies_certification"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Reads the durable per-candidate manifest and newest terminal through the isolated store.\n\nAnchor: `manifest`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "987d7daec9dcb26cdaa3e8f7e78952b07e750bbf",
+            "content": "sha256:c6aa5b40d41f6f04907a2e07246e28c51c460ef23d919ca0b9471e6c2900829e",
+            "locator": {
+              "kind": "symbol",
+              "name": "newest_terminal"
+            },
+            "path": "mcp/src/agents_remember/certification/diagnostics/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Closed immutable base for registry, plan, and result records.\n\nAnchor: \"class FrozenContractModel\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6afba62c4e08748e497e2fb553252838af7e78ba",
+            "content": "sha256:f7a5ea8901e77c6b05bef81b105d77eeb31dc6624c20f98ca48378d817c7305f",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 30
+            },
+            "path": "mcp/src/agents_remember/models/certification/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Return a stable SHA-256 digest for one JSON-compatible contract value.\n\nAnchor: \"def content_digest\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5fec41e626660b1b088e42d53af5306e94975bdd",
+            "content": "sha256:1ca5c19a7deb5986c8a551fcc0549203bdaf5272bd1a547bfcee08054fee4776",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "mcp/src/agents_remember/certification/digests.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "R09 closeout readiness keeps diagnostics explicitly non-certifying through this projection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4280742ab94075651c308fbb89b0d65a75cb239f",
+            "content": "sha256:048ec0b9d18e456319af23f65402582ffa5080b0c04a3fadc5fa285e73f1c7c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_closeout_readiness"
+            },
+            "path": "mcp/src/agents_remember/certification/readiness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The facade re-exports lane projection helpers for closeout consumers.\n\nAnchor: `DiagnosticLaneProjection`; `diagnostic_blocks_certification`; `diagnostic_never_satisfies_certification`; `project_diagnostic_lane`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1938e7dc63fbf75c9296e824126f737b6638bc02",
+            "content": "sha256:45a0cc962b4edac5279915835327f781220c7c31b99ba1aa8d0d1100717be351",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            },
+            "path": "mcp/src/agents_remember/certification/diagnostics/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The projection stays repository-neutral over store and candidate inputs only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0fe21a4eabc160460412845cb49defbe1f57c2c8",
+            "content": "sha256:7b32523353e6bc89bc16770eb871d550f0d47d66895d9de6af80f327d36be53a",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_diagnostic_lane"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

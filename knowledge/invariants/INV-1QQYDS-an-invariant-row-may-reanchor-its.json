@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A moved-only admission gate rejects a legitimate carried-entry reanchor recorded with the invariant's own changed/extended evidence. The explicit four-disposition gate admits that construction while preserving no-impact and model boundaries."
+  },
+  "applicability": "Invariant history-row authoring with an explicit cover.path beside carried-entry evidence.",
+  "conditions": [
+    "The row author admits cover.path on moved, extended, changed or deleted dispositions before the existing cover/model checks.",
+    "no_impact still refuses an explicit cover.path; entry-ID-only covers without a path retain their separate semantics.",
+    "A relocation/reanchor remains constrained to the actual invariant entry, its current source binding and the single invariant row.",
+    "Existing cover and InvariantRow validation still run; admitting the path does not authorize invented entry IDs or invariant meanings."
+  ],
+  "exclusions": [
+    "This documents the required checked CODE definition, not a replacement producer or a waiver of the master Writer's actual refusal.",
+    "It does not move any held/generated card, repeat the finite six-entry ruling, revise held invariants or relax the no_impact path boundary."
+  ],
+  "id": "INV-1QQYDS",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/worker/ee26097f-36d1-4b54-bd58-5fa30c31e589/rule15-freeze-3aa8f835/freeze-report.md; final-focused-owners.json/log:159passed; extended write/readback with one added and two carried entries, same-request no_impact refusal, existing moved behavior; final Ruff/format/Pyright native0.",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/54_writer-and-validator-corrections-a4b3b3af8d-ar/role-reports/curator/1ad64580-9e4a-42ce-adc0-169869767dba/wave-76/proof-source-review.json"
+      ],
+      "path": "wave-68-complete-history.json"
+    },
+    "handoffEntry": "L54-W-rule15-cover-path-admission",
+    "leaf": "260928-MIK-L54",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "An invariant row may reanchor its carried entries beside its own evidence with cover.path on moved, extended, changed or deleted; no_impact still refuses, with one row per invariant and unchanged model checks.",
+  "status": "proposed",
+  "supersedes": []
+}

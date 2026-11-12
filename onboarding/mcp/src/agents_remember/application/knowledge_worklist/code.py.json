@@ -1,0 +1,644 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_worklist/code.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "44b9070e2ee796b4a12d3cfe31a734b1f363ce2d",
+        "content": "sha256:4732d4fa652707b60b16f11a7755cc6ecca5624812435b69cc7c0e20409408f3",
+        "locator": {
+          "kind": "symbol",
+          "name": "BLOB_DIFF_ARGS"
+        }
+      },
+      "id": "RLZ-4DQ5RM",
+      "invariant": "INV-HVGENX",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-parsed-diffs-ignore-user-config",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "The worklist's blob diff pins --no-ext-diff, --no-color and the two prefix options among its fixed options, so its hunks are a function of the two blobs.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "44b9070e2ee796b4a12d3cfe31a734b1f363ce2d",
+        "content": "sha256:de1bce56663cf3d60d5fdac74320df2958d107127088de2b378bed5831eeb034",
+        "locator": {
+          "kind": "symbol",
+          "name": "CodeTrees"
+        }
+      },
+      "id": "RLZ-PNV0Y8",
+      "invariant": "INV-AJBF9F",
+      "origin": {
+        "handoffEntry": "F01",
+        "leaf": "260928-MIK-L73"
+      },
+      "rationale": "A changed working-tree blob is visible to the assessor only if the same object store serves the line-range diff; this is the plumbing that keeps an edited line stale instead of unreadable.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "16": {
+      "note": "The pinned options of the blob diff.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44b9070e2ee796b4a12d3cfe31a734b1f363ce2d",
+            "content": "sha256:ae00e0685bf8c9f9974daec9e78bc5546df494eb188af7d4d186da9dfca04ae5",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 91
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Whether a hunk hits a range on one side.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44b9070e2ee796b4a12d3cfe31a734b1f363ce2d",
+            "content": "sha256:2d9db158368289e1be4222668ff5eeb78090e5716ff3e4e3f42f430638125e24",
+            "locator": {
+              "kind": "symbol",
+              "name": "_hits"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Hunk headers are parsed; a binary pair has none.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44b9070e2ee796b4a12d3cfe31a734b1f363ce2d",
+            "content": "sha256:6a7bb3717138117cc6ff4a72820c39634f4ae245eb588d556786a9b52ea8bbb8",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_hunks"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The image of a line range through a diff.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44b9070e2ee796b4a12d3cfe31a734b1f363ce2d",
+            "content": "sha256:50b699f659182b6f27aabf7837b0437b1790cb9310b29ffc5e98a2a7e0a5932e",
+            "locator": {
+              "kind": "symbol",
+              "name": "map_range"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The two trees, the object reader, hunk cache and independent B/C symlink-mode caches.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44b9070e2ee796b4a12d3cfe31a734b1f363ce2d",
+            "content": "sha256:de4f9573816c8009aeac1088629163eb9e0a3c88c722a2e604480d86ea46daf0",
+            "locator": {
+              "end": 472,
+              "kind": "line_range",
+              "start": 468
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44b9070e2ee796b4a12d3cfe31a734b1f363ce2d",
+            "content": "sha256:3b6e414d197fb315994078ce0ed5fb80774b88ca907d63bd88ff420e32853a3f",
+            "locator": {
+              "end": 486,
+              "kind": "line_range",
+              "start": 481
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44b9070e2ee796b4a12d3cfe31a734b1f363ce2d",
+            "content": "sha256:28d89957e702523fc6796949e41604dc2d43d1e321d8cb493b976212fb72a1e0",
+            "locator": {
+              "end": 501,
+              "kind": "line_range",
+              "start": 499
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0312a433230b5868e6030419096bdc9a1bdd0e19",
+            "content": "sha256:708d35c136798f5a486975977485f4106e6093ff3364c864da6a84a83504a60c",
+            "locator": {
+              "end": 161,
+              "kind": "line_range",
+              "start": 159
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/code_objects.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The read-ahead of both sides' blobs, with read failures suppressed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44b9070e2ee796b4a12d3cfe31a734b1f363ce2d",
+            "content": "sha256:abafcdb467fd570de9c45647ea00c8748d46a43a39359b135720ca1eff1ffcfd",
+            "locator": {
+              "kind": "symbol",
+              "name": "warm"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "The blob diff with its failure and cache.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44b9070e2ee796b4a12d3cfe31a734b1f363ce2d",
+            "content": "sha256:94cf8d37f3e65249044b0f1c31e7844a3e1193e22c4e5c8fbbc3f7027efcd3bb",
+            "locator": {
+              "end": 360,
+              "kind": "line_range",
+              "start": 342
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "Where a locator lands in a blob; selected-side symlink symbols refuse before extraction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44b9070e2ee796b4a12d3cfe31a734b1f363ce2d",
+            "content": "sha256:de4f9573816c8009aeac1088629163eb9e0a3c88c722a2e604480d86ea46daf0",
+            "locator": {
+              "end": 472,
+              "kind": "line_range",
+              "start": 468
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44b9070e2ee796b4a12d3cfe31a734b1f363ce2d",
+            "content": "sha256:3b6e414d197fb315994078ce0ed5fb80774b88ca907d63bd88ff420e32853a3f",
+            "locator": {
+              "end": 486,
+              "kind": "line_range",
+              "start": 481
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44b9070e2ee796b4a12d3cfe31a734b1f363ce2d",
+            "content": "sha256:28d89957e702523fc6796949e41604dc2d43d1e321d8cb493b976212fb72a1e0",
+            "locator": {
+              "end": 501,
+              "kind": "line_range",
+              "start": 499
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0312a433230b5868e6030419096bdc9a1bdd0e19",
+            "content": "sha256:708d35c136798f5a486975977485f4106e6093ff3364c864da6a84a83504a60c",
+            "locator": {
+              "end": 161,
+              "kind": "line_range",
+              "start": 159
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/code_objects.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "The one path that binds a name once.\n\nAnchor: `unique_binder`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44b9070e2ee796b4a12d3cfe31a734b1f363ce2d",
+            "content": "sha256:128341c2daa465fc7a6d31d357de1118c7ada3c2b1b632fc20571de3e11343cf",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "A changed path's hunks, or none for a file-level change.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44b9070e2ee796b4a12d3cfe31a734b1f363ce2d",
+            "content": "sha256:11585a1ae94100e7cdae9228394a6ce0d0d41fa109edf13642d3c29ad5a055a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "change_hunks"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "The object reader's batched prefetch.\n\nAnchor: `prefetch`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0312a433230b5868e6030419096bdc9a1bdd0e19",
+            "content": "sha256:7179f3331c2bfdd46621401448d88c1a32b4fe365162826280c6b5558bf0f7cf",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/code_objects.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "One batch for the changed blobs, answers from the cache afterwards, and a missing tree reported where it is used.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e159e3fdc8444fdd57cce28d9f770103e7ac3cb6",
+            "content": "sha256:0ce0d8b09fe446eae103436346e55cb41b36e1e6300b7d5aa90f8b87faf24161",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_warming_reads_the_changed_blobs_in_one_batch_and_never_fails_the_run"
+            },
+            "path": "mcp/tests/test_knowledge_worklist_leaf.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "28": {
+      "note": "The blob diff carries its own prefixes, colour and driver options.\n\nAnchor: `test_every_parsed_diff_names_its_own_prefix_colour_and_driver`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e29e1b9902f5b27cd11779b2b92b5e3fb6c28560",
+            "content": "sha256:c93f8f457e10d852a32030fc63a946d52eabbec586a630c99c64dfd99b4ef413",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "29": {
+      "note": "The hunk, range, content-identity and hit rules.\n\nAnchor: `CodeTrees`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44b9070e2ee796b4a12d3cfe31a734b1f363ce2d",
+            "content": "sha256:128341c2daa465fc7a6d31d357de1118c7ada3c2b1b632fc20571de3e11343cf",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "The pinned zero-context blob diff.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44b9070e2ee796b4a12d3cfe31a734b1f363ce2d",
+            "content": "sha256:4732d4fa652707b60b16f11a7755cc6ecca5624812435b69cc7c0e20409408f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "BLOB_DIFF_ARGS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "One hunk and its document form.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44b9070e2ee796b4a12d3cfe31a734b1f363ce2d",
+            "content": "sha256:d2ce1bb5827e58efd712ff0ca55f3fde440eab096c9b4f33bd903f63f1a6fb96",
+            "locator": {
+              "kind": "symbol",
+              "name": "Hunk"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "The strict-inside rule for an empty side.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44b9070e2ee796b4a12d3cfe31a734b1f363ce2d",
+            "content": "sha256:2d9db158368289e1be4222668ff5eeb78090e5716ff3e4e3f42f430638125e24",
+            "locator": {
+              "kind": "symbol",
+              "name": "_hits"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "Binary pairs give `None`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44b9070e2ee796b4a12d3cfe31a734b1f363ce2d",
+            "content": "sha256:6a7bb3717138117cc6ff4a72820c39634f4ae245eb588d556786a9b52ea8bbb8",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_hunks"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "The image of a line range, or no mapping.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44b9070e2ee796b4a12d3cfe31a734b1f363ce2d",
+            "content": "sha256:38d5a0c2a37f935f76418b0bd992a75908c2a27c963c44508ecbbc87d89d1977",
+            "locator": {
+              "kind": "symbol",
+              "name": "_map_line"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "The hunks of a blob pair, cached, with a named failure.\n\nAnchor: `CodeTrees`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44b9070e2ee796b4a12d3cfe31a734b1f363ce2d",
+            "content": "sha256:128341c2daa465fc7a6d31d357de1118c7ada3c2b1b632fc20571de3e11343cf",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "Whether the store holds a blob; a Git failure is a `CodeReadError`, never absent (R3-2).\n\nAnchor: `CodeTrees`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44b9070e2ee796b4a12d3cfe31a734b1f363ce2d",
+            "content": "sha256:128341c2daa465fc7a6d31d357de1118c7ada3c2b1b632fc20571de3e11343cf",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "Resolution by locator kind and side, with cached mode reads and named symlink-symbol refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44b9070e2ee796b4a12d3cfe31a734b1f363ce2d",
+            "content": "sha256:de4f9573816c8009aeac1088629163eb9e0a3c88c722a2e604480d86ea46daf0",
+            "locator": {
+              "end": 472,
+              "kind": "line_range",
+              "start": 468
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44b9070e2ee796b4a12d3cfe31a734b1f363ce2d",
+            "content": "sha256:3b6e414d197fb315994078ce0ed5fb80774b88ca907d63bd88ff420e32853a3f",
+            "locator": {
+              "end": 486,
+              "kind": "line_range",
+              "start": 481
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44b9070e2ee796b4a12d3cfe31a734b1f363ce2d",
+            "content": "sha256:28d89957e702523fc6796949e41604dc2d43d1e321d8cb493b976212fb72a1e0",
+            "locator": {
+              "end": 501,
+              "kind": "line_range",
+              "start": 499
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0312a433230b5868e6030419096bdc9a1bdd0e19",
+            "content": "sha256:708d35c136798f5a486975977485f4106e6093ff3364c864da6a84a83504a60c",
+            "locator": {
+              "end": 161,
+              "kind": "line_range",
+              "start": 159
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/code_objects.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "A line range mapped from its recorded blob; an unknown blob has no mapping.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44b9070e2ee796b4a12d3cfe31a734b1f363ce2d",
+            "content": "sha256:14a94bde92e54f85d9ce0d8bdc16a592112263d35405b2421379c9bdf920aff9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_mapped_lines"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "40": {
+      "note": "A changed path's hunks, shared by the gate and the lane (moved from `_path_hunks`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44b9070e2ee796b4a12d3cfe31a734b1f363ce2d",
+            "content": "sha256:11585a1ae94100e7cdae9228394a6ce0d0d41fa109edf13642d3c29ad5a055a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "change_hunks"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "41": {
+      "note": "The two callers: the gate's linkage and the lane's classification.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44b9070e2ee796b4a12d3cfe31a734b1f363ce2d",
+            "content": "sha256:11585a1ae94100e7cdae9228394a6ce0d0d41fa109edf13642d3c29ad5a055a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "change_hunks"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "42": {
+      "note": "Hunk parsing and line-range mapping cases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b88287461b307446f70db6c1c509b1f8032c2621",
+            "content": "sha256:07f3d64dacd95030b3b405e93335322d4d2aaa1ee0b4952fa3c6f88d97d5d51d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_hunks_parse_and_line_ranges_map_through_the_zero_context_diff"
+            },
+            "path": "mcp/tests/test_knowledge_worklist.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "43": {
+      "note": "Line ranges map, carry and touch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44b9070e2ee796b4a12d3cfe31a734b1f363ce2d",
+            "content": "sha256:50b699f659182b6f27aabf7837b0437b1790cb9310b29ffc5e98a2a7e0a5932e",
+            "locator": {
+              "kind": "symbol",
+              "name": "map_range"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "44": {
+      "note": "Current source delta inspected statically: Fix side-aware symlink resolution/caches and entry-blob maps; retain diff and range rules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44b9070e2ee796b4a12d3cfe31a734b1f363ce2d",
+            "content": "sha256:de4f9573816c8009aeac1088629163eb9e0a3c88c722a2e604480d86ea46daf0",
+            "locator": {
+              "end": 472,
+              "kind": "line_range",
+              "start": 468
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44b9070e2ee796b4a12d3cfe31a734b1f363ce2d",
+            "content": "sha256:3b6e414d197fb315994078ce0ed5fb80774b88ca907d63bd88ff420e32853a3f",
+            "locator": {
+              "end": 486,
+              "kind": "line_range",
+              "start": 481
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44b9070e2ee796b4a12d3cfe31a734b1f363ce2d",
+            "content": "sha256:28d89957e702523fc6796949e41604dc2d43d1e321d8cb493b976212fb72a1e0",
+            "locator": {
+              "end": 501,
+              "kind": "line_range",
+              "start": 499
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0312a433230b5868e6030419096bdc9a1bdd0e19",
+            "content": "sha256:708d35c136798f5a486975977485f4106e6093ff3364c864da6a84a83504a60c",
+            "locator": {
+              "end": 161,
+              "kind": "line_range",
+              "start": 159
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/code_objects.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

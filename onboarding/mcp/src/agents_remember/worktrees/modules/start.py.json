@@ -1,0 +1,631 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/start.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+        "content": "sha256:8a6c7608e9e87c98b5ac0e93c4e5be5596fc6d3dd5c132964926ce89e02c0ae2",
+        "locator": {
+          "kind": "symbol",
+          "name": "attach_result"
+        }
+      },
+      "id": "RLZ-4236M1",
+      "invariant": "INV-7AJ0ZW",
+      "origin": {
+        "handoffEntry": "L183-intent-review-start-gate",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Attach checks a planning leaf; every new enclosure start checks its bound leaf before progress/materialization; named intent-review-open returns ask-architect rather than retrying or creating anything.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+        "content": "sha256:1f55299fdc0743f470ed6fbc002652e45e36d9b364a87b7d20427e97f2d0b558",
+        "locator": {
+          "end": 790,
+          "kind": "line_range",
+          "start": 761
+        }
+      },
+      "id": "RLZ-4BP8FB",
+      "invariant": "INV-EX6T0F",
+      "origin": {
+        "handoffEntry": "MIK-R47@v1-preview-authority",
+        "leaf": "260928-MIK-L47"
+      },
+      "rationale": "Recognizes planned-parent lineage only when the request actually carries that validated value; missing file alone is not a bypass.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+        "content": "sha256:c8193055fb8f5bd54d03a11c297cc2b2415785aa78bb6690df6db60fa48c9379",
+        "locator": {
+          "end": 696,
+          "kind": "line_range",
+          "start": 693
+        }
+      },
+      "id": "RLZ-4C6AGR",
+      "invariant": "INV-Z0BXKJ",
+      "origin": {
+        "handoffEntry": "L168-CUR-M1-21-A013-04",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "Start/retry calls publish_start_task_facts to publish the admitted native stage; dry_run remains nonpublishing and TaskLeafBindingError returns the existing refusal. This is a propagation call site, not a second stage writer or a rollback-of-worktree guarantee.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+        "content": "sha256:bcd4e52ac6bd51f3f29f0a48d6a70b28eabae342fbf347b8873f8a3b51756299",
+        "locator": {
+          "kind": "symbol",
+          "name": "_live_disabled_leaf_attach_result"
+        }
+      },
+      "id": "RLZ-4W6N41",
+      "invariant": "INV-WKM7SS",
+      "origin": {
+        "handoffEntry": "L50-CODE-R1-F01",
+        "leaf": "260928-MIK-L50"
+      },
+      "rationale": "Modeless attach at a live disabled leaf answers before new-parent admission, and the test pins the attached result with nothing created.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+        "content": "sha256:dc43c1e231297170abed39368b5dd7e562aa6377ea5ef4b6a2585821b87a2fe9",
+        "locator": {
+          "end": 1027,
+          "kind": "line_range",
+          "start": 927
+        }
+      },
+      "id": "RLZ-5F6FY8",
+      "invariant": "INV-EX6T0F",
+      "origin": {
+        "handoffEntry": "MIK-R47@v1-preview-authority",
+        "leaf": "260928-MIK-L47"
+      },
+      "rationale": "Durable materialization retains default persisted-parent/workbench/source rechecks under existing repository integration authority; preview data is not its authorization.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+        "content": "sha256:0dbc85356fb5d99d02efe6d575b4746a65bb463cbe62c1652c022e8111f8aad1",
+        "locator": {
+          "end": 266,
+          "kind": "line_range",
+          "start": 263
+        }
+      },
+      "id": "RLZ-A9B09Z",
+      "invariant": "INV-Z0BXKJ",
+      "origin": {
+        "handoffEntry": "L168-CUR-M1-21-A013-03",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "Attach calls publish_start_task_facts with started=False so it retains document stage; dry_run remains nonpublishing and TaskLeafBindingError returns the existing refusal. This is a propagation call site, not a second stage writer or a rollback-of-worktree guarantee.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+        "content": "sha256:9ba4e862fe0f5132658fdeb769f1c9e98939478fd2e2143fd854a320668552de",
+        "locator": {
+          "kind": "symbol",
+          "name": "_open_intent_review_start_result"
+        }
+      },
+      "id": "RLZ-FG4NKF",
+      "invariant": "INV-7AJ0ZW",
+      "origin": {
+        "handoffEntry": "L183-intent-review-start-gate",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Start refuses before contract creation and repeats the check at enclosure creation. Attach gates a planning leaf only; an already inProgress/later enclosure may be re-entered. Refusal nextAction is ask-architect.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+        "content": "sha256:b32156cfd6ed249fd360628160a34570fcaf35180734f5155f8512a53da81430",
+        "locator": {
+          "kind": "symbol",
+          "name": "_start_contract_with_outside_scratch"
+        }
+      },
+      "id": "RLZ-FS0G5P",
+      "invariant": "INV-T8672G",
+      "origin": {
+        "handoffEntry": "L198-INV-A",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The dry-run refusal and the record applied before the text is computed.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+        "content": "sha256:a934ab68fbe228d011fe893e7cb185e667f271f2ccfdc70187b13f3e5d7fffba",
+        "locator": {
+          "kind": "symbol",
+          "name": "_create_start_enclosure"
+        }
+      },
+      "id": "RLZ-H78K10",
+      "invariant": "INV-7AJ0ZW",
+      "origin": {
+        "handoffEntry": "L183-intent-review-start-gate",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Attach checks a planning leaf; every new enclosure start checks its bound leaf before progress/materialization; named intent-review-open returns ask-architect rather than retrying or creating anything.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+        "content": "sha256:b4d904af9292974d1ec56bbae104b4aaf973cfe81c3f06951c6ab4bfd9c9d155",
+        "locator": {
+          "end": 924,
+          "kind": "line_range",
+          "start": 875
+        }
+      },
+      "id": "RLZ-HS8RJP",
+      "invariant": "INV-EX6T0F",
+      "origin": {
+        "handoffEntry": "MIK-R47@v1-preview-authority",
+        "leaf": "260928-MIK-L47"
+      },
+      "rationale": "Asks the exact parent-series guard and supplies its admitted unpublished parent to memory preview, preserving one authority handoff.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+        "content": "sha256:9568d4ac7bbdf73c0c5be3456de95752f329513a0177d085589ca21bafbc7ab3",
+        "locator": {
+          "end": 812,
+          "kind": "line_range",
+          "start": 809
+        }
+      },
+      "id": "RLZ-JD0KQR",
+      "invariant": "INV-Z0BXKJ",
+      "origin": {
+        "handoffEntry": "L168-CUR-M1-21-A013-05",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "Start/retry calls publish_start_task_facts to publish the admitted native stage; dry_run remains nonpublishing and TaskLeafBindingError returns the existing refusal. This is a propagation call site, not a second stage writer or a rollback-of-worktree guarantee.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+        "content": "sha256:ffe1db4a9cb003c6de6185dee6dc0c46cb90fb6aaf447f63e8cb1e0c603eb970",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-MNWF60",
+      "invariant": "INV-T8672G",
+      "origin": {
+        "handoffEntry": "L198-F-mcp-src-agents_remember-worktrees-modules-start",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "Starting an enclosure leaves the outside scratch root to publication and carries its record into the workspace the new seat receives.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+        "content": "sha256:4de71b5551e1489cdcb2dd4f2d826e4345860c01e1c6351b0c61557fd3982a88",
+        "locator": {
+          "kind": "symbol",
+          "name": "_unknown_choice_result"
+        }
+      },
+      "id": "RLZ-PJG8NR",
+      "invariant": "INV-8R2CRC",
+      "origin": {
+        "handoffEntry": "L50-CODE-R1-F06",
+        "leaf": "260928-MIK-L50"
+      },
+      "rationale": "The CLI never offers the removed mode while unknown answers stay invalid requests.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+        "content": "sha256:57380391a2464786fd255bb6f564c24f4af215513cb146389724293577264c50",
+        "locator": {
+          "kind": "symbol",
+          "name": "_contract_intent_review_block"
+        }
+      },
+      "id": "RLZ-QSADEA",
+      "invariant": "INV-7AJ0ZW",
+      "origin": {
+        "handoffEntry": "L183-intent-review-start-gate",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Attach checks a planning leaf; every new enclosure start checks its bound leaf before progress/materialization; named intent-review-open returns ask-architect rather than retrying or creating anything.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+        "content": "sha256:31fa9b90cb61db8da368e7974a8734305d63fdcfe11fc7a159fbe10a77063e6c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_intent_review_block"
+        }
+      },
+      "id": "RLZ-T769RC",
+      "invariant": "INV-7AJ0ZW",
+      "origin": {
+        "handoffEntry": "L183-intent-review-start-gate",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Attach checks a planning leaf; every new enclosure start checks its bound leaf before progress/materialization; named intent-review-open returns ask-architect rather than retrying or creating anything.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+        "content": "sha256:1eec313f794e3be4a0d0843e46382b25bca625daa8bdbbb841bf8a44f22d2a8f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_admitted_start_result"
+        }
+      },
+      "id": "RLZ-T7WGDA",
+      "invariant": "INV-EX6T0F",
+      "origin": {
+        "handoffEntry": "MIK-R47@v1-preview-authority",
+        "leaf": "260928-MIK-L47"
+      },
+      "rationale": "Forwards the built preview-only parent through the registered operation's preflight/planning path with the same leaf contract.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "16": {
+      "note": "Removed vocabulary refused before anything is created",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+            "content": "sha256:3190fb1c0f093b9554c3e0bc8a696ba47bd53baf22788ce1d08261c842da04b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_removed_vocabulary_result"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+            "content": "sha256:3190fb1c0f093b9554c3e0bc8a696ba47bd53baf22788ce1d08261c842da04b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_removed_vocabulary_result"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Unknown recovery answer is invalid, never opt-out",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+            "content": "sha256:4de71b5551e1489cdcb2dd4f2d826e4345860c01e1c6351b0c61557fd3982a88",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unknown_choice_result"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+            "content": "sha256:4de71b5551e1489cdcb2dd4f2d826e4345860c01e1c6351b0c61557fd3982a88",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unknown_choice_result"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "No-directive start keeps its live disabled leaf",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+            "content": "sha256:bcd4e52ac6bd51f3f29f0a48d6a70b28eabae342fbf347b8873f8a3b51756299",
+            "locator": {
+              "kind": "symbol",
+              "name": "_live_disabled_leaf_attach_result"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+            "content": "sha256:bcd4e52ac6bd51f3f29f0a48d6a70b28eabae342fbf347b8873f8a3b51756299",
+            "locator": {
+              "kind": "symbol",
+              "name": "_live_disabled_leaf_attach_result"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Refusal chain runs before context resolution",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+            "content": "sha256:295af77a79ed7e289b35fc237245cb18d60a6292d73281a552b45bf7434d458c",
+            "locator": {
+              "kind": "symbol",
+              "name": "start_result"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Live contract attaches, tombstone recreates",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+            "content": "sha256:eda68804c55e1be89b6d4a982499ee3dc3d4e0ec6dc60e27b1f84e061b705366",
+            "locator": {
+              "kind": "symbol",
+              "name": "_existing_contract_result"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+            "content": "sha256:eda68804c55e1be89b6d4a982499ee3dc3d4e0ec6dc60e27b1f84e061b705366",
+            "locator": {
+              "kind": "symbol",
+              "name": "_existing_contract_result"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "A tool call records its daily line and required detail under the retained log owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
+            "content": "sha256:62372c24c148ec8d3027528f6e0b457600727d7e4bc6bacebf3df10af9774c8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_tool_call"
+            },
+            "path": "mcp/src/agents_remember/application/tool_answer_log.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Completed answers use the one workspace event writer, with no ambient-lifecycle alternative.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa329467be28b558f2516086c2e67a82ec134f26",
+            "content": "sha256:db24aaa4c677843b12e305218671e7a210542ea8f41f557a36cfbffdba17b67f",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_tool_completed"
+            },
+            "path": "mcp/src/agents_remember/observer/tool_events.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "The public result path carries the owner-validated start plan.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+            "content": "sha256:295af77a79ed7e289b35fc237245cb18d60a6292d73281a552b45bf7434d458c",
+            "locator": {
+              "kind": "symbol",
+              "name": "start_result"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "Only the actually carried preview parent qualifies for planned-lineage recognition.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+            "content": "sha256:1f55299fdc0743f470ed6fbc002652e45e36d9b364a87b7d20427e97f2d0b558",
+            "locator": {
+              "kind": "symbol",
+              "name": "_parent_lineage_start_block"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+            "content": "sha256:1f55299fdc0743f470ed6fbc002652e45e36d9b364a87b7d20427e97f2d0b558",
+            "locator": {
+              "kind": "symbol",
+              "name": "_parent_lineage_start_block"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "Preview admission and memory preparation use the exact admitted parent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+            "content": "sha256:b4d904af9292974d1ec56bbae104b4aaf973cfe81c3f06951c6ab4bfd9c9d155",
+            "locator": {
+              "kind": "symbol",
+              "name": "_plan_start_enclosure"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+            "content": "sha256:b4d904af9292974d1ec56bbae104b4aaf973cfe81c3f06951c6ab4bfd9c9d155",
+            "locator": {
+              "kind": "symbol",
+              "name": "_plan_start_enclosure"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "Attach delegates with started=False and retains typed binding refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+            "content": "sha256:8a6c7608e9e87c98b5ac0e93c4e5be5596fc6d3dd5c132964926ce89e02c0ae2",
+            "locator": {
+              "kind": "symbol",
+              "name": "attach_result"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "The shared publisher promotes start, preserves attach stage, mirrors the row and reads binding back.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a83e3b0ba83b697ae4190cd329fec12aefa5f8f7",
+            "content": "sha256:645749bc10470be4dc5c58ed620ffce1275f51c22b7d7ceedddf24aacd7a5758",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_start_task_facts"
+            },
+            "path": "mcp/src/agents_remember/worktrees/start_task_publication.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "Start refuses before contract creation and repeats the check at enclosure creation. Attach gates a planning leaf only; an already inProgress/later enclosure may be re-entered. Refusal nextAction is ask-architect.\n\nAnchor: `_open_intent_review_start_result`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+            "content": "sha256:ffe1db4a9cb003c6de6185dee6dc0c46cb90fb6aaf447f63e8cb1e0c603eb970",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "The preflight returns skipped state when neither provider is enabled.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45b63ee2b11932f9042ed5039888627c21aa9c0e",
+            "content": "sha256:b9f0e0e0b8b6b3d632d5cd150b977a7c760c061b2c8e6454c936ac7aa1871695",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/startup/start_provider_preflight.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "The shared enablement predicate always disables CGC and GrepAI, regardless of legacy settings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80950be36296616946275f2d5e7cc7e752fd4185",
+            "content": "sha256:9a2ad7dd6bc6091f4ed89d7eedfef456c37e13de2b4de7e86ab5e0f2fdf94ee3",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 81
+            },
+            "path": "mcp/src/agents_remember/providers/setup_common.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "The retained launch seam returns non-enabled plans without starting a setup job.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+            "content": "sha256:26d119dadfd7cf660efe2d092075d933047bcd63b1d1d3d6b4141d1830ced3ec",
+            "locator": {
+              "end": 1127,
+              "kind": "line_range",
+              "start": 1090
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

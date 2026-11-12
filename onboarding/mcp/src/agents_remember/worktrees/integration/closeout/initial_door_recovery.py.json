@@ -1,0 +1,34 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/closeout/initial_door_recovery.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module defines `InitialCloseoutDoorRecoveryClassification`; `classify_initial_closeout_door_recovery` as its public seam.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fe5704d4945f5b4425d0b0521e12287c05e62c54",
+            "content": "sha256:3d54c41f7f6023dcdb3e19ed230d218aad52d0736383c12ed7b75a02cf55c39e",
+            "locator": {
+              "kind": "symbol",
+              "name": "InitialCloseoutDoorRecoveryClassification"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe5704d4945f5b4425d0b0521e12287c05e62c54",
+            "content": "sha256:ce2b73b0e6e8ac3537d3bc73aff6785ae4515774b2860ebe049e953f276e131a",
+            "locator": {
+              "kind": "symbol",
+              "name": "classify_initial_closeout_door_recovery"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/walkReal.capture-provenance.json",
+  "realizes": [],
+  "references": {
+    "5": {
+      "note": "The current receipt preserves its explicit section names and declared capture custody; reading the metadata does not independently execute or validate any recorded run.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a04acc4e58011221660f5082b0958d857a1260d0",
+            "content": "sha256:549b60aadf061e1ace827b020e862a48c164bb75cfe6647559264840ed63c750",
+            "locator": {
+              "end": 349,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

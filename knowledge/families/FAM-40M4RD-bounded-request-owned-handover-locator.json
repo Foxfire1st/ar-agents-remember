@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "The bounded locator alone, the shared note and first-line naming alone, the ownership and reclamation alone, or the 600-character refusal alone would each leave a launch failing at some depth or leaving a stale alias; together they promise a note that fits at any depth and a locator that always opens the exact bytes."
+  },
+  "guarantee": "A launch's recovery note and first-message line name one request-owned locator and the exact SHA-256, so the note fits at any report-folder depth and always opens the frozen hand-over bytes; the locator is reused or rebuilt across repeat and resume, refuses a collision before any file is written, and is reclaimed alone when resumability ends.",
+  "id": "FAM-40M4RD",
+  "members": [
+    "INV-AV4AMJ",
+    "INV-B31E3G",
+    "INV-Q9AV3B",
+    "INV-ZBKDZR"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "L199-curator-full-pass"
+    },
+    "handoffEntry": "family-handover-locator",
+    "leaf": "260928-MIK-L199",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp/src/agents_remember/cli",
+    "mcp/src/agents_remember/worktrees"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "A bounded, request-owned hand-over locator keeps the recovery note at any folder depth"
+}

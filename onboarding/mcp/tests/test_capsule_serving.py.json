@@ -1,0 +1,119 @@
+{
+  "path": "mcp/tests/test_capsule_serving.py",
+  "realizes": [],
+  "references": {
+    "14": {
+      "note": "Fixture world with external contract and synthetic corpus",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f19d88280cca899c0a34b54b0faae2717a4fdaf",
+            "content": "sha256:d0d6e823c9bdae00313e437f30c756f068d68a654110b12e459a934f88bac915",
+            "locator": {
+              "kind": "symbol",
+              "name": "World"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Contract text is external-memory with a ledger",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f19d88280cca899c0a34b54b0faae2717a4fdaf",
+            "content": "sha256:8abcac7ac806d6277beff77b9b51e3953c55561505ab4744fc0585e543fd6f1a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_contract_text"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "Capsule carries routed blocks with the fixture's own bytes",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f19d88280cca899c0a34b54b0faae2717a4fdaf",
+            "content": "sha256:f32b6275f794d9ad3884ff37bce17d86f6829bac3125192d4135fe46d59727d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_capsule_carries_routed_blocks_with_the_bytes_this_fixture_wrote"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "Moved task bytes are re-read versus refused as separate behaviours",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f19d88280cca899c0a34b54b0faae2717a4fdaf",
+            "content": "sha256:b09d8d5e945152990ce57bcd51775a8cc29cde422b5e13f9276d8bc8e91064c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_moved_task_document_is_read_again_and_the_capsule_carries_the_new_digest"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "Non-conforming skill directory is recorded, never served",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f19d88280cca899c0a34b54b0faae2717a4fdaf",
+            "content": "sha256:74aa414f4694d97bb0e5e39a3348e5856072d27c38414c0d11d41e35e2daafc6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_skill_directory_whose_root_file_is_not_conforming_is_recorded_not_served"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "Shipped-surface, exchange and guard cases moved to the surface module\n\nAnchor: `test_capsule_serving_surface.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f19d88280cca899c0a34b54b0faae2717a4fdaf",
+            "content": "sha256:cf7c1e6ebbeec1f5d33e9e87ee6575b281ffe9949c1fbe4073eb3615a68c99fc",
+            "locator": {
+              "end": 969,
+              "kind": "line_range",
+              "start": 965
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "Every synthetic operation declares an explicit audience=all, matching the extended manifest schema without changing expected synthetic operation bodies, beside the no-read-tree-write, role acquisition, task-digest, skill-reference/tool-boundary and resource registry cases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f19d88280cca899c0a34b54b0faae2717a4fdaf",
+            "content": "sha256:6ed04702555097e2e7e3bc17b6cda0626b6ddcf02f7fd7dbfbe1aa5b01d2c650",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

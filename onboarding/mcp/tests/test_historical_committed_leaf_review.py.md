@@ -1,185 +1,34 @@
 # mcp/tests/test_historical_committed_leaf_review.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_historical_committed_leaf_review.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-27T05:30:43+00:00 |
-| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` |
-| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
-| governingOverview | `mcp/tests/overview.md` |
-
 ## Governing Overview
 
-[tests route overview](overview.md)
+[Owning route overview](overview.md)
 
 ## Purpose
 
-**The cases that measure `ICR-R12@v1`'s produced behaviour through the real production composition**
-— a real enclosure, a real linked worktree, the real capture and resolution owners, the real comparison,
-R11's real freeze and the real HTTP route — rather than through a preconstructed payload. The packet's
-own verification requirement is what shapes the module: "Compare a live frozen leaf and its
-closed/cleaned/restarted view byte-for-byte; advance the branch and prove no contamination", and "tests
-that merely mirror implementation or assert returned prebuilt payloads are insufficient for production
-composition claims". Every assertion here therefore reads **served bytes** or an owner's own value, never
-a value this module assembled.
-
-The module carries the intake defect as its subject: a cleaned leaf's Intent Review answered
-`candidate_not_live` because the history route required `contract.code_worktree.exists()`. Eight cases
-measure the eight properties that replace it, one each:
-
-- a leaf frozen while it was live, its worktree group removed exactly as cleanup removes it, serves
-  **byte for byte the same** recorded comparison — the served bytes are compared, not a summary of them;
-- a **fresh interpreter** reconstructs the same comparison from the coordination root and the record
-  alone, so "reopen after a process restart" is measured rather than simulated;
-- a **later task** landing on the repository and on the leaf's protected branch changes neither the
-  bytes nor the provenance of the recorded comparison, and its content never enters the inventory;
-- a **pre-feature leaf** — source history, no intent generation ever recorded — exposes its recorded
-  source range and states that absence explicitly, as a typed absence and not as missing content;
-- a generation that recorded **no intent half at all** states that absence as its own fact on the pane
-  and on both refusals, and never as a channel that does not resolve (this leaf's F1 fix);
-- a **recorded range the repository cannot resolve** answers `candidate_unresolved` with the restore
-  action rather than the intake defect's `candidate_not_live` (this leaf's F2 fix);
-- expected content that no longer resolves is reported unavailable on the channel it affects, with the
-  record's own deletion statement, and nothing falls back to the current tip or to today's knowledge;
-- a closed leaf that recorded **neither** a comparison nor a landed commit is still refused by name,
-  which is the one state in which `candidate_not_live` is the honest answer.
+Declare that recorded comparisons retain exact answers across cleanup, interpreter restart and later source history, including each numbered catalogue/summary own content and explicit legacy or lost-object limits.
 
 ## Code Commentary
 
-### Logic
+A fresh converted-tree world per case supplies the actual serving collaborators/routes. The original recorded subject read is compared byte-for-byte after deleting its live group, for both explicit recorded and default reads. The same case separately preserves selector-free inventory/tree limitations and task_context/no comparison through cleanup; it does not turn source inspection into a knowledge comparison.
 
-**The fixture is the existing R01 enclosure fixture, extended rather than duplicated.**
-`closed_fixture` calls `build_endpoint_fixture` (imported from
-`test_knowledge_review_source_endpoints`), so the two real snapshots, the two real committed trees and
-the real linked worktree every case drives are the ones the source-endpoint cases already own; a case
-that needs a closed leaf removes the worktree group itself. `_freeze` publishes a real comparison
-through `freeze_review_comparison` (R11's owner), `_composition` reads the owner's own payload through
-`read_knowledge_review` with `review_records_for`, and `_serve` drives the production collaborators
-through `register_review_routes` and `TestClient` — so the entry route, the subject route, the expansion
-route and the refusals are measured over HTTP with the real status and the real body.
+The restart leg writes the four configuration roots, route and params, then invokes sys.executable with a child app composed from those roots. Its PYTHONPATH prepends candidate mcp/src but retains inherited entries. Status bytes and served body are compared with the prior recorded answer: a fresh interpreter is tested, not a fully source-only environment or native daemon restart.
 
-**The restart leg is a child interpreter, not a second client.** `_served_in_a_new_process` writes a
-descriptor of the four configuration roots, the route and the params, then runs `_CHILD_SERVE` in a
-child `sys.executable` with only `mcp/src` on `PYTHONPATH`; the child builds the app from the
-coordination root alone, calls the production port and writes its status and bytes out for the parent to
-compare. Nothing is shared with the parent beyond the coordination root, which is what makes "a fresh
-process reconstructs the same comparison" a measurement rather than a claim about the same object graph.
+A later real commit on the fixture code repository must not enter recorded inventory or alter the binding/body. Pre-feature landed source remains measured with legacy-unavailable unresolved knowledge; catalogue refusal names the unavailable knowledge. Historical JSON with two not-selected halves reopens typed absence while the test forbids every APSW Connection.
 
-**The later-task leg lands real history and then measures contamination rather than assuming it.**
-`_land_a_later_task` writes a path the leaf never touched, commits it, and moves the leaf's
-**protected source branch** to the new commit — the exact event that could contaminate a review reading
-a branch tip. The case then compares the served bytes with the frozen read and asserts the later task's
-path is absent from the inventory, the comparison binding is unchanged and the declared limitations are
-stable. `_object_present` is the supporting measurement that a reclaimed object really is gone, so the
-unavailable-channel case deletes objects through R11's own reclamation owner
-(`release_comparison_code_object`) rather than by touching files behind it.
+A pruned recorded commit earns candidate_unresolved and restore guidance. Deliberately pruned retained code/memory objects instead preserve unavailable-history, unavailable inventory and unresolved statements; a named subject earns candidate_dataset_absent. No later content substitutes, and no record-owned deletion statement is supplied. A cleaned leaf with neither comparison nor landed range retains candidate_not_live.
 
-**The two fix-round cases assert the sentence, not only the token.** The typed-absence case freezes a
-task with **no datasets at all** through R11's `freeze_review_comparison`, asserts the manifest records
-`{before: not-selected, after: not-selected}`, and then asserts the wording on the task-context pane, on
-the entry route and on the subject route — including that the "does not resolve now" sentence appears in
-none of them. The unresolvable-range case records a real landed commit, deletes the work branch, expires
-reflogs, removes the worktree group and runs `git gc --prune=now`, asserts the commit no longer resolves,
-and then asserts the route answers 404 `candidate_unresolved` with the "cannot be read (unresolvable)"
-detail and the restore action. A case that asserted only the machine-readable state would have passed
-while the human-readable sentence still told the reader the wrong fact, which is exactly what the fix
-round corrected.
+The added numbered case creates record1 with an intent revision and record2 withdrawing it, while leaving the code edit. Production catalogue/summary composition must echo1/2/latest2, retain changed versus unchanged outlines and distinguish added1 versus0. Unrecorded9 gives catalogue404 candidate_unresolved; summary9/-1 stays unavailable200 with no counts or comparison number. After group cleanup, repeated numbered catalogues retain their separate outlines rather than sharing one kept answer.
 
-### Conventions
+## Invariants And Boundaries
 
-`pytestmark = pytest.mark.evidence_unit` places the module in the ordinary unit lane, and
-`mcp/tests/test-evidence-lanes.toml` registers it there (a bare TOML key, so it is named as a quoted
-anchor rather than as an identifier). `mcp/tests/evidence-lifecycle.toml` derives its three
-`consumer_scope = "exact"` consumer rows from the census's own finding — the two snapshot/tree fixtures
-and the read-scope fixture the R01 enclosure is built over — and no artifact, no contract and no
-artifact identity is added: the population stays at **sixteen contracts / sixty-six artifacts**, and
-`mcp/tests/test_dependency_ownership_ast_helpers.py` re-pins the catalog to
-`4ab067e360c7807c3051ad71058c09058225f1e9155e7111da6e95c73cac0258` (the Twenty-third deliberate
-re-pin). Helper names are private and single-purpose, the child source is one module-level constant so
-the child and the parent cannot drift, and no case constructs a record, a manifest or a resolution by
-hand.
+The nine declared functions assert controlled Git/converted-memory and in-process route behavior; source descriptions, lane/consumer registrations and historical receipts are not a fresh test run. The restart child inherits its environment. Destructive Git/object operations belong to disposable fixtures when run, never the inspected leaf checkout. Browser geometry, paid turns and whole-memory acceptance are outside this module.
 
-### Invariants And Boundaries
+## Evidence
 
-- **Only served bytes and owner-produced values are asserted.** No case builds the payload it then
-  checks, and the byte comparisons read the response body.
-- **The enclosure is one per case.** `closed_fixture` builds a fresh fixture under the case's own
-  `tmp_path`, so no case observes another's worktree, record or removed worktree group.
-- **History is landed, not simulated.** A later task is a real commit that really moves the protected
-  source branch, and a reclaimed object is really gone before the unavailable-channel case asserts.
-- **A fresh process is a fresh interpreter.** The restart leg shares no state with the parent, so the
-  record-only resolution is measured rather than re-entered.
-- **No case re-derives what an owner owns.** Freezing, retaining, reclaiming and reopening all go
-  through R11's owners; the cases observe, they do not reimplement.
-- **Browser acceptance is not claimed here.** The packet's real-browser boundary belongs to
-  `ICR-R25@v1`, and the mounted-surface cases for this leaf live in the dashboard's own module.
-
-### Todos
-
-None recorded.
-
-## Docs References
-
-No domain documentation source is configured for this repository (`system/sources.md` carries no
-`Domain Documentation` entries). The statements below are grounded in repository source only.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
-
-## Repo-Internal References
-
-Every claim on this card is checkable in the shipped candidate: the module's own docstring and cases,
-the R01 enclosure fixture it extends, the R11 owners it drives for freezing and reclaiming, and the two
-registration files that admit it to a lane and derive its consumer rows. Three details a reader should
-carry: the module is **evidence_unit** and its lane row is what the collection gate reads before the
-module may run at all; the three consumer rows are `exact`-scoped, so a fourth fixture dependency would
-have to be registered rather than inferred; and the later-task and reclaimed-object legs mutate real Git
-state inside the case's own fixture repository, never the source checkout.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The module's own statement of the defect it measures, the six load-bearing properties, and that every case reads the production composition rather than a prebuilt payload.** | "candidate_not_live" | mcp/tests/test_historical_committed_leaf_review.py:1-27 |
-| The route every case drives, and the lane the module belongs to. | `REVIEW_ROUTE`; `pytestmark` | mcp/tests/test_historical_committed_leaf_review.py:77-77; mcp/tests/test_historical_committed_leaf_review.py:79-79 |
-| **The child that reopens the same comparison in an interpreter sharing no state with the parent.** | `_CHILD_SERVE` | mcp/tests/test_historical_committed_leaf_review.py:90-123 |
-| **The R01 enclosure fixture this module extends, one fresh enclosure per case.** | `closed_fixture`; `build_endpoint_fixture`; `EndpointFixture` | mcp/tests/test_historical_committed_leaf_review.py:126-130; mcp/tests/test_knowledge_review_source_endpoints.py:113-197; mcp/tests/test_knowledge_review_source_endpoints.py:207-239 |
-| **The production composition the cases read through: the real route, the real collaborators, the real record loader.** | `_serve`; `_subject_params`; `_entry_params`; `_body` | mcp/tests/test_historical_committed_leaf_review.py:133-147; mcp/tests/test_historical_committed_leaf_review.py:150-162; mcp/tests/test_historical_committed_leaf_review.py:165-166; mcp/tests/test_historical_committed_leaf_review.py:169-172 |
-| **The two owners the fixture drives: freezing a real comparison and reading the owner's own payload.** | `_freeze`; `_composition`; `freeze_review_comparison` | mcp/src/agents_remember/application/review_comparison_freeze.py:239-258; mcp/tests/test_historical_committed_leaf_review.py:175-179; mcp/tests/test_historical_committed_leaf_review.py:182-188 |
-| **The restart leg: a descriptor of the four roots alone, a child interpreter, and the served bytes written out for the parent to compare.** | `_served_in_a_new_process`; `serving_collaborators`; `register_review_routes` | mcp/tests/test_historical_committed_leaf_review.py:66-191; mcp/src/agents_remember/cli/dashboard.py:67-132; mcp/src/agents_remember/serving/review.py:542-624 |
-| **The later-task leg: a real commit on the repository, and the leaf's protected source branch really moved to it.** | `_land_a_later_task`; `LATER_TASK_PATH`; `LATER_TASK_TEXT` | mcp/tests/test_historical_committed_leaf_review.py:84-85; mcp/tests/test_historical_committed_leaf_review.py:230-251 |
-| **The byte-for-byte case: the live frozen read and the cleaned read served as bytes and compared.** | `test_a_closed_leaf_serves_its_recorded_comparison_byte_for_byte` | mcp/tests/test_historical_committed_leaf_review.py:257-324 |
-| **The restart case: the same bytes from a fresh interpreter that knows only the coordination root.** | `test_a_fresh_process_reconstructs_the_same_recorded_comparison` | mcp/tests/test_historical_committed_leaf_review.py:327-352 |
-| **The contamination case: bytes, binding and provenance unchanged after a later task lands, and the later path absent from the inventory.** | `test_a_later_task_does_not_contaminate_the_recorded_comparison` | mcp/tests/test_historical_committed_leaf_review.py:355-384 |
-| **The pre-feature case: the recorded source range exposed with the absence of an intent generation stated as a typed absence.** | `test_a_pre_feature_leaf_exposes_its_recorded_source_range_and_its_absence` | mcp/tests/test_historical_committed_leaf_review.py:387-446 |
-| **The F1 case: a generation that recorded no intent half states that absence as its own fact on the pane and on both refusals, and never as content that does not resolve.** | `test_a_generation_that_recorded_no_intent_half_states_that_absence_as_its_own_fact` | mcp/tests/test_historical_committed_leaf_review.py:449-503 |
-| **The F2 case: a recorded range the repository cannot resolve is `candidate_unresolved`, not the intake defect's code.** | `test_a_recorded_range_the_repository_cannot_resolve_is_unresolved_not_not_live` | mcp/tests/test_historical_committed_leaf_review.py:506-533 |
-| **The supporting measurement that a reclaimed object really is gone, so the unavailable-channel case deletes through R11's own reclamation owner rather than behind it.** | `_object_present`; `discard_comparison_snapshots`; `release_comparison_code_object` | mcp/tests/test_historical_committed_leaf_review.py:536-553; mcp/src/agents_remember/application/review_comparison_reclamation.py:174-210; mcp/src/agents_remember/application/review_comparison_reclamation.py:77-124 |
-| **The per-channel failure case: the affected channel unavailable with the record's own deletion statement, and nothing substituted.** | `test_expected_content_that_no_longer_resolves_is_unavailable_not_substituted` | mcp/tests/test_historical_committed_leaf_review.py:556-620 |
-| **The one state in which the intake defect's code is still the honest answer.** | `test_a_closed_leaf_with_nothing_recorded_is_refused_by_name` | mcp/tests/test_historical_committed_leaf_review.py:623-641 |
-| **The declared history tokens the cases assert, read from the resolution module's own vocabulary.** | `HISTORY_RECORDED_COMPARISON`; `HISTORY_RECORDED_SOURCE_RANGE`; `HISTORY_COMPARISON_PREFIX`; `HISTORY_INTENT_PREFIX`; `HISTORY_SOURCE_PREFIX`; `ClosedLeafReview` | mcp/src/agents_remember/application/review_committed_leaf.py:77-77; mcp/src/agents_remember/application/review_committed_leaf.py:78-78; mcp/src/agents_remember/application/review_committed_leaf.py:84-84; mcp/src/agents_remember/application/review_committed_leaf.py:85-85; mcp/src/agents_remember/application/review_committed_leaf.py:86-86; mcp/src/agents_remember/application/review_committed_leaf.py:116-160 |
-| **The lane row that registers this module, and the three exact-scope consumer rows its cases are derived for.** | "mcp/tests/test_historical_committed_leaf_review.py" | mcp/tests/test-evidence-lanes.toml:81-81; mcp/tests/evidence-lifecycle.toml:735-735; mcp/tests/evidence-lifecycle.toml:1426-1426; mcp/tests/evidence-lifecycle.toml:1463-1463 |
-| **The re-pin that keeps the catalog identity of the lifecycle TOML deliberate rather than incidental.** | `LIFECYCLE_CATALOG_SHA256`; `LIFECYCLE_CONTRACT_COUNT`; `LIFECYCLE_ARTIFACT_COUNT` | mcp/tests/test_dependency_ownership_ast_helpers.py:44-46 |
-
-## Cross-Repo References
-
-No cross-repository behavior is exercised by this module. Its enclosure is one repository's own leaf
-worktree with an external memory half, and every case reads that repository's own records.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 5 citations into `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test_knowledge_review_source_endpoints.py` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-
-- 2026-09-27T05:30:43+00:00 — Authored scoped citation maintenance for 1 L41 source-range projection(s) resolved by the frozen source index. Only changed-source ranges were adopted from the preview; unrelated ranges, generated history and verification stamps are preserved.
-
-- 2026-09-27T00:34:45Z — L39: No content impact: resolved the affected registry/instruction/overview reference rows against their exact current named anchors after the scoped source changes. Existing factual meaning, verification stamps and earlier history are preserved.
-
-- 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.
-- 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **citation pass — the rows this leaf's own line movement displaced were re-anchored from each row's own finding message.** Every flagged range was repointed or widened to the lines that actually carry the anchor at this candidate, using the memory-quality checklist's own per-row message as the ground truth rather than adding a delta to an old number; the repair was applied row-scoped by the cited-range string, so duplicate rows were each corrected. No claim was re-worded to fit a stale pointer, no anchor or range was dropped to silence a finding, and the two legacy mechanical-projection bullets on rows this pass re-read were retired with this entry as their dated disposition, and no new projection bullet was written. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
-- 2026-09-24T07:54+02:00 — 260921-ICR-L28 curator (uncommitted change set on `ar/260921-icr-l28`, base `63b476297708f779de8ed5c0bf3555b9d1de70c2`): **citation re-anchoring and history only; no claim wording changed and no row deleted.** This leaf's change set moved the lines several of this card's rows cite — `mcp/src/agents_remember/application/knowledge_curator_ingest.py` grew 3587 → 3861 while `mcp/tests/test-evidence-lanes.toml` gained one `unit-regression` row and `mcp/tests/evidence-lifecycle.toml` gained two consumer rows, each shifting every row below it — so every affected range was re-derived against the candidate's own bytes rather than shifted by a remembered delta and re-anchored to the construct it names. Nothing in the body above was deleted to clear a finding, and no verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the real stamp.
-- 2026-09-23T05:10:00+02:00 — 260921-ICR-L12 curator (candidate `ar/260921-icr-l12`, uncommitted; production line at this leaf's base `870701b43039cd205a8c98e418382729510c3de3`, confirmed from the enclosure contract): created this one-to-one card for the case module this leaf introduced (`ICR-R12@v1`). The card records the enclosure every case drives, that each property is measured through the real HTTP composition and the real R11 owners rather than through a constructed payload, the child-interpreter restart leg, the real-history contamination leg, and the two fix-round cases — F1's declared-absence sentence and F2's per-kind refusal — as current behaviour. The lane row and the three `exact`-scope consumer rows the census derived are named, so a reader can see what registers this module and on what evidence. **Stamp accounting:** the verification pair names the production line at this leaf's base — the last real commit the reading was taken against — because every construct this card cites exists only in this leaf's uncommitted candidate; the governed closeout owns the real stamp once the code commit exists.
+- The fresh child uses the actual serving composition and explicit configuration descriptor, with inherited import paths visible. [38]
+- Recorded selected bytes and selector-free task-context facts survive cleanup independently. [39]
+- A fresh interpreter and later fixture commit retain exact recorded answers. [40]
+- Legacy source/typed absence and lost range retain distinct measured/unavailable/refused facts. [41]
+- Lost retained objects are unavailable without substitution; a never-recorded cleaned leaf stays not live. [42]
+- Numbered reads preserve their own outline/counts, unavailable-number limits and separate retained catalogue answers. [43]

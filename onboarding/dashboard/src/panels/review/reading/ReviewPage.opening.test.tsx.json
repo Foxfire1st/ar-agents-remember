@@ -1,0 +1,25 @@
+{
+  "path": "dashboard/src/panels/review/reading/ReviewPage.opening.test.tsx",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "5": {
+      "note": "Closed-group counts/previews and tree-triggered group opening.\n\nAnchor: \"describe('the two closed groups (rule 5)', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d4b38fa68ade7951c68c72e35010491c4664610",
+            "content": "sha256:5f036801b77f08904f604c5c411c5c42d7a498d63aa586695f52d18291db592b",
+            "locator": {
+              "end": 294,
+              "kind": "line_range",
+              "start": 182
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

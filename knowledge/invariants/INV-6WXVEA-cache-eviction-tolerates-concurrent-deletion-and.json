@@ -1,0 +1,39 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A disappearing cache file must not turn a harmless cleanup race into failed work, while a public orphan path must not publish or complete authority that has no master. The separate bounded guards prevent both failure classes without weakening identity checks."
+  },
+  "applicability": "Converted-base cache eviction and public leaf task-document/start/publication/finalization routes requiring master authority.",
+  "conditions": [
+    "Eviction tolerates OSError while a listed old cache entry disappears before stat or unlink, without losing the newly stored usable entry.",
+    "Public leaf create/edit publication requires its master authority; low-level fixture/store writes do not supply a public orphan-creation exception.",
+    "A masterless public start/preview fails closed on source lineage, and missing leaf/master/row finalization fails before preparing completion publication.",
+    "Valid series-master finalization and existing master-plus-leaf planning remain distinct from the removed standalone-leaf fallback."
+  ],
+  "exclusions": [
+    "Best-effort cache eviction is not an atomic cache transaction, blanket error suppression or a source-lineage waiver.",
+    "This proposes the source-backed obligation, not a concurrency/start/finalization test run, task write, Git transaction or acceptance."
+  ],
+  "id": "INV-6WXVEA",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/worker/0e651ec5-2eed-4b58-b19f-e2336d4978ca/repair-freeze-0a36ddc4/builder-report.md#mik-r55-rule-9",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/54_writer-and-validator-corrections-a4b3b3af8d-ar/role-reports/curator/1ad64580-9e4a-42ce-adc0-169869767dba/wave-67/mechanism-review.json",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/54_writer-and-validator-corrections-a4b3b3af8d-ar/role-reports/curator/1ad64580-9e4a-42ce-adc0-169869767dba/wave-70/mechanism-review.json",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/54_writer-and-validator-corrections-a4b3b3af8d-ar/role-reports/curator/1ad64580-9e4a-42ce-adc0-169869767dba/wave-76/proof-source-review.json"
+      ],
+      "path": "wave-66-complete-history.json"
+    },
+    "handoffEntry": "MIK-R55@v1 rule 9",
+    "leaf": "260928-MIK-L54",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Cache eviction tolerates concurrent deletion and no public route creates, starts, publishes or finalizes a leaf without the required master authority.",
+  "status": "proposed",
+  "supersedes": []
+}

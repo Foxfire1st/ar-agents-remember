@@ -1,74 +1,73 @@
 # mcp/src/agents_remember/application/runtime/install.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/application/runtime/install.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-13T08:40+02:00                     |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview      | `overview.md`                              |
-
 ## Governing Overview
 
-[runtime overview](overview.md)
+[overview](overview.md)
 
 ## Purpose
 
-`runtime/install.py` is the thin application layer for the MCP
-`runtime_install` operation.
+`runtime/install.py` is the application entry point for the MCP
+`runtime_install` operation: it composes the lower service result with the public host step, the
+refresh (or, on a dry run, the read-only plan) of a running dashboard, and the inventory of running
+servers with their build currentness.
 
 ## Code Commentary
 
 ### Logic
 
-`RuntimeInstallRequest` carries the safe model-facing install flags:
-`dry_run`, `include_benchmarks`, `install_provider_deps` (default `True`), and
-`no_cache` (default `False`). It does not accept host paths or provider path overrides.
+`RuntimeInstallRequest` carries the model-facing install flags
+`dry_run`, `include_benchmarks`, `install_provider_deps` (default `True`) and
+`no_cache` (default `False`), plus the run's own `experiment` selection. Its `provider_deps_timeout`
+and `source_root` fields stay unset for MCP callers, so the tool accepts no host paths or provider
+path overrides.
 
 The dataclass is **defined in `agents_remember.install.runtime`** and this
-module re-exports it (`__all__ = ["RuntimeInstallRequest", "run_runtime_install"]`) for its
-runtime application surface. `run_runtime_install(config, request)` is
-now a one-line delegation — `install_runtime_from_config(config, request)` — because the service
-takes the request object itself rather than four unpacked keywords. The application entry point therefore no
-longer restates the flag list, which is what used to make the two definitions drift.
+module re-exports it (`__all__ = ["RuntimeInstallRequest", "open_user_settings_notice", "run_runtime_install"]`) for its
+runtime application surface. `run_runtime_install(config, request)` calls the lower
+service (`install_runtime_from_config(config, request)`), then calls the public host step
+(`install_host(config, request.dry_run)`), sets `result["host"]` to the host part and
+`result["ok"] = result["ok"] and host["ok"]`. The lower function returns its payload without a host
+field: **the host-producing composition is owned here.** The application entry point therefore does not
+restate the flag list. A settings file without the `paseoRuntime` block yields a host part that says so.
+
+After the host step the entry reads the running dashboard. A dry run calls `plan_running_dashboard`,
+a read-only preview that names `would-adopt`, `would-restart`, `unknown` or `failed` for an observed
+dashboard; an applied install calls `ensure_running_dashboard`, which leaves an absent dashboard
+stopped and otherwise adopts a dashboard already serving the installed version and source digest or
+stops and restarts a mismatched one. When a dashboard is observed, its `action`, `detail` and, when
+known, `pid` and `sourceDigest` are carried under `result["dashboard"]`, and a `failed` or
+`lock-held` action makes `ok` false. Last, `result["runningServers"]` lists each live MCP and
+dashboard server record under the coordination root's `runtime/servers/` with its observed build
+currentness (`server_inventory`); that read removes the record files of dead processes.
 
 ### Invariants And Boundaries
 
-- Keep this application entry point thin; install mechanics **and now the request type itself** belong in
-  `agents_remember.install.runtime`. This module is a re-export plus one delegation.
+- Keep this application entry point thin: the earlier install mechanics and the request type itself
+  belong in `agents_remember.install.runtime`. This module is a re-export plus the host, dashboard
+  and running-server composition, and those parts and their `ok` conjunction are owned here.
 - Do not add path fields to `RuntimeInstallRequest`; keep it to typed install
-  booleans (`no_cache` forces a from-scratch provider image rebuild downstream).
+  booleans. The retained `install_provider_deps` and `no_cache` fields are still
+  accepted and forwarded, but no provider dependency installation runs;
+  `no_cache` does not request a provider-image rebuild. Runtime installation still
+  attempts the required leftover-watcher stop and reports unused provider keys.
 - Default `dry_run` is false — the tool applies by default (act-by-default
   contract). Pass `dry_run=true` to inspect the planned reconcile before
-  mutation; the packaged install skills tell the agent to preview first.
+  mutation.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| MCP tool payload construction maps tool booleans into `RuntimeInstallRequest`. | `runtime_install_payload` | mcp/src/agents_remember/mcp/tools/core.py:76-102 |
-| The tool declaration exposes `runtime_install` as a public tool. | `runtime_install` | mcp/src/agents_remember/mcp/registration/core.py:119-146 |
-| The service layer defines `RuntimeInstallRequest` and performs the actual runtime install. | `RuntimeInstallRequest` | mcp/src/agents_remember/install/runtime.py:137-159 |
+### Repo-Internal References
 
-## Update History
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `RuntimeInstallRequest` repointed to mcp/src/agents_remember/install/runtime.py:137-159. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
+- Runtime installation attempts the required leftover-watcher stop independently of the accepted `install_provider_deps` and `no_cache` knobs and reports enabled provider keys once as unused; those knobs drive no provider dependency installation or provider-image rebuild. [5]
 
-- 2026-08-13T08:40+02:00 — L23 integration-gate repair: moved the preserved card with the pure source move into the cohesive `application/runtime/` package, rebound it to the new governing overview, and removed the obsolete flat-module import claim. Verification metadata remains closeout-owned.
+- The tool maps its booleans into `RuntimeInstallRequest` and hands that request unchanged to `runtime_install_payload`. [1]
 
-- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
+- The tool declaration exposes `runtime_install` as a public tool. [2]
 
-- 2026-08-02T17:12:10+02:00 — W1-B04 curator: repaired 1 citation claim; scoped recheck clean (0 findings).
+- The service layer defines `RuntimeInstallRequest` and performs the actual runtime install. [3]
 
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — 260731-EFA-L6 curator: source moved. `mcp/src/agents_remember/controllers/` was renamed to `application/`, so this sidecar moved with its source; path metadata and every in-body path follow, and the prose adopts "the application layer" / "an application entry point" for what it used to call a controller. Behavior is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-07-31T15:31+02:00 — 260731-EFA-L2: `RuntimeInstallRequest`'s definition moved to
-  `agents_remember.install.runtime` and this module re-exports it; `run_runtime_install` became a
-  single delegation passing the request object through. Corrected the stale reference to `server.py`
-  — tool registration now lives in `mcp/registration/core.py`. Verification metadata pinned until
-  closeout stamps the L2 code commit.
+- The application entry that composes the host step onto the lower service result, including the `ok` conjunction. [4]
 
-- 2026-05-30T21:33+02:00: Added the `no_cache` flag to `RuntimeInstallRequest` (forwarded to `install_runtime_from_config`) and repaired the builder reference — `runtime_install_payload` now lives in `tools/core.py` after the `01f503d` `mcp/tools.py` split. Verified against `8927f03`.
-- 2026-05-24T00:37+02:00: Refreshed verification after MCP command capture callers moved to service-backed controllers; the runtime install controller contract stayed unchanged.
-- 2026-05-23T04:29+02:00: Created for the MCP runtime install tool controller.
+- A dry run plans and an applied install refreshes a running dashboard; an observed dashboard's action is reported under `dashboard`, a `failed` or `lock-held` action fails `ok`, and the running servers are reported with their currentness. [6]
+- An applied install leaves an absent dashboard stopped and otherwise ensures it serves the installed build. [7]
+- The dry-run dashboard plan only observes and names the transition. [8]

@@ -1,0 +1,88 @@
+{
+  "path": "mcp/src/agents_remember/serving/changeset_reads.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0ea106246ac1a8053fa263b23190863c57ebd295",
+        "content": "sha256:83e37400860eadb6a861d04f8903f8a187caf59aec360961d3a98d2ab9f3cab5",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-3D6G48",
+      "invariant": "INV-ZNXX7H",
+      "origin": {
+        "handoffEntry": "L168-W-R168-PRESERVATION",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "The read wiring serves an id pair with no observation and computes a working view natively; no working generation is bound.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "0ea106246ac1a8053fa263b23190863c57ebd295",
+        "content": "sha256:466d3853142e9f8f7eba582f33a15200367fc6e2f56ca624340d62ab1df1d47d",
+        "locator": {
+          "kind": "symbol",
+          "name": "changed_files_with_counts"
+        }
+      },
+      "id": "RLZ-E0PH8P",
+      "invariant": "INV-7TMGB0",
+      "origin": {
+        "handoffEntry": "L174-7T-READS",
+        "leaf": "260928-MIK-L174"
+      },
+      "rationale": "The read wiring chooses the exact keyed inputs: an id pair is served with no observation, a working view is native with no cache, and a ref-keyed range keeps CommitPresence/RepositoryRead inputs.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Working diff counters use the native reader and register attribute inputs.\n\nAnchor: `changed_files_with_counts`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ea106246ac1a8053fa263b23190863c57ebd295",
+            "content": "sha256:83e37400860eadb6a861d04f8903f8a187caf59aec360961d3a98d2ab9f3cab5",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A missing text result needs successful native absence proof before retention.\n\nAnchor: `commit_text_or_none`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ea106246ac1a8053fa263b23190863c57ebd295",
+            "content": "sha256:83e37400860eadb6a861d04f8903f8a187caf59aec360961d3a98d2ab9f3cab5",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Only successful fixed native command results are retained.\n\nAnchor: `read_git`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ea106246ac1a8053fa263b23190863c57ebd295",
+            "content": "sha256:83e37400860eadb6a861d04f8903f8a187caf59aec360961d3a98d2ab9f3cab5",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # dashboard/src/panels/engine-room/useEngineTimeline.test.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/engine-room/useEngineTimeline.test.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Engine Room overview](overview.md)
@@ -41,32 +31,22 @@ motion turns into an expanding thick outline. Effects-off must be a true no-moti
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation entries are configured in `system/sources.md`.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found. | — | — |
+No relevant domain documentation was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The harness uses a real engine scenario and a minimal tagged SVG circle. | `ScanHarness` | dashboard/src/panels/engine-room/useEngineTimeline.test.tsx:25-33 |
-| Tests pin transform animation, non-scaling stroke, and the effects-off no-op. | "touches nothing under data-effects=off (no tween" | dashboard/src/panels/engine-room/useEngineTimeline.test.tsx:65-72 |
-| Timeline implementation installs the non-scaling stroke and transform tween. | `useEngineTimeline` | dashboard/src/panels/engine-room/useEngineTimeline.ts:168-247 |
+- The harness uses a real engine scenario and a minimal tagged SVG circle. [1]
+- Tests pin transform animation, non-scaling stroke, and the effects-off no-op. [2]
+- Timeline implementation installs the non-scaling stroke and transform tween. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository boundary is owned here.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repository evidence applies. | — | — |
-
-## Update History
-- 2026-08-02T20:42:26+02:00 — W2-B07 curator: repaired 3 repository-reference citations (3/3 anchored and sourced; scoped citation check clean).
-
-- 2026-07-24T13:17:17Z — Curator: created the timeline-substrate test sidecar. It is uncommitted,
-  so verification fields are intentionally blank until closeout stamps the code commit.
+No cross-repository evidence applies.

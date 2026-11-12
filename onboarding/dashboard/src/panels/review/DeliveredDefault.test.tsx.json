@@ -1,0 +1,94 @@
+{
+  "path": "dashboard/src/panels/review/DeliveredDefault.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "4e0203b1b289e2015cbec3215cae35ea52faeea7",
+        "content": "sha256:877eec42625c21af57bfc37301437aa1f202139f770eacb9b0286559dc3521e4",
+        "locator": {
+          "kind": "symbol",
+          "name": "a default frame with no recorded history opens the older delivered #7"
+        }
+      },
+      "facet": "The page opens the older delivered comparison on a default frame and states no mismatch line for it.",
+      "id": "PRF-1B89T0",
+      "invariant": "INV-HAJ9SH",
+      "origin": {
+        "handoffEntry": "L187-HAJ",
+        "leaf": "260928-MIK-L187"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4e0203b1b289e2015cbec3215cae35ea52faeea7",
+        "content": "sha256:0429b3716612581a5a4e0ae22dc675fede4331292f4686470026476696589c14",
+        "locator": {
+          "kind": "symbol",
+          "name": "the delivered link leaves the recorded frame the task entry opened"
+        }
+      },
+      "facet": "Following the delivered link leaves the recorded frame the task entry opened and reaches the delivered comparison.",
+      "id": "PRF-QKRT60",
+      "invariant": "INV-HAJ9SH",
+      "origin": {
+        "handoffEntry": "L187-HAJ",
+        "leaf": "260928-MIK-L187"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A default frame opens the older delivered comparison and states no line.\n\nAnchor: `a default frame with no recorded history opens the older delivered #7`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e0203b1b289e2015cbec3215cae35ea52faeea7",
+            "content": "sha256:904377535e1f97a0ffc85c4606103f61a58fe961ad3106363daffa812df81f3f",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 79
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The delivered link leaves the recorded frame the task entry opened.\n\nAnchor: `the delivered link leaves the recorded frame the task entry opened`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e0203b1b289e2015cbec3215cae35ea52faeea7",
+            "content": "sha256:051f31d59311559c89cf566d46b3cb67f918644bc2726b812dd2ef4201053aa2",
+            "locator": {
+              "end": 93,
+              "kind": "line_range",
+              "start": 86
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A refused notice-bearing read stays explicitly unavailable on the page.\n\nAnchor: `a refused notice-bearing read stays explicitly unavailable on the page`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e0203b1b289e2015cbec3215cae35ea52faeea7",
+            "content": "sha256:f8afe9fa68b64e89e80ee5205040cea8d049b50b0f540c62a73dce305a6669c0",
+            "locator": {
+              "end": 99,
+              "kind": "line_range",
+              "start": 95
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

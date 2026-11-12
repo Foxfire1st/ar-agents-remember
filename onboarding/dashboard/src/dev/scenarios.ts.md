@@ -1,20 +1,37 @@
 # dashboard/src/dev/scenarios.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/dev/scenarios.ts`                 |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `e9678c56e7f441371584ad8a18e2b9380cb38cf0`       |
-| lastVerifiedCommitDate | 2026-09-15T20:50:53+02:00|
-| governingOverview      | `../overview.md`                                |
-
 ## Governing Overview
 
 [dashboard/src overview](../overview.md)
 
-## Purpose
+
+## Current enclosure-only composition
+
+ScenarioFrame remains a full WorkspaceProjection plus caption, optional events and duration. Build-up now has four beats: the official line, code checkout, memory checkout/contract, and nominal. The seed-fault, reindex-reroute and provider-block timelines are removed. Memory-block and stale-base recover through ledger mapping and worktree creation without provider seed/clone beats; the retained registry also includes tear-down, live-sync, integration-conflict, abandon and the folded-in gallery states.
+
+### Maintenance boundaries
+
+Keep the current account aligned with the retained enclosure timelines: do not restore the removed provider arcs or treat their old fixture names as current frames. Preserve the historical account below as provenance. The scenario model supplies full projection frames; the cited diagnostics, geometry and pre-contract block owners define their retained display facts, rather than evidence of provider visuals or a rendered animation run.
+
+Source/test/fixture inspection is not a fresh mounted capture or a passing test run.
+Historical provider-shaped input data and retained compatibility definitions do not
+restore removed provider visuals or tool exposure.
+
+- erFrame wraps a named Engine Room scenario into a full projection and throws on an unknown name; build-up has four frames and SCENARIOS omits the removed provider timelines. [10]
+
+- The paired diagnostics owner renders phase, health, refs, source lineage, actions, missing facts and sources; optional summary, next action and memory refs remain, without the removed setup/progress rows. [11]
+
+- The paired conduit geometry contains worktree-add, ledger-map, sync and the two integration lanes; an edge without geometry produces no conduit path. [12]
+
+- The paired block resolver derives a fleeting pre-contract enclosure from the missing contract fact and limits the stale-base state to a behind-source blocked fleeting enclosure. [13]
+
+## Historical superseded account (non-operative)
+
+The prior onboarding below is retained for provenance and unrelated design history.
+It is not current provider-render, fallback, prototype-parity or execution guidance.
+Current behavior and its limits are the operative contract above.
+
+
 
 Slice 5i — the scenario MODEL behind the dev bench. A scenario is an ordered list of `ScenarioFrame`s,
 each a FULL `WorkspaceProjection` plus a caption; the `ScenarioPlayer` applies one complete frame at a
@@ -57,7 +74,7 @@ upstream: the main node prunes/dormant and a fleeting enclosure is born blocked,
 now-current main) → F5 `engine-boot-2-memory-contract` (memory worktree copies in, the coupler binds) → **F6**
 `engine-boot-3-providers-dim` + **F7** `engine-boot-4-seeding` (the provider clone **copy-arrows** sweep + engines
 charge cyan on recover — NOT a teleport to nominal) → F8 `engine-boot-5-nominal`. The export `SCENARIOS` is
-`[buildUp, tearDown, seedFault, memoryBlock, staleBase, ...restingScenarios]` — timelines first (with `staleBase`
+`[buildUp, tearDown, seedFault, memoryBlock, staleBase,...restingScenarios]` — timelines first (with `staleBase`
 inserted after `memoryBlock`), then the resting frames.
 
 **Slice 05o** then expanded the failure-mode set to a full eight modes. `seedFault` was **rewritten** as the
@@ -77,7 +94,7 @@ moved to `engine-sync-moved` → `engine-sync-memory-blocked` gate on the memory
 tail, source branch unmoved); and `abandon` (**T18**, TERMINAL — X0 working `engine-boot-5-nominal` →
 `engine-boot-abandoned` dissolves the live enclosure with no landing, the X0→X2 step IS the Motion dissolve).
 The export is `[buildUp, tearDown, seedFault, reindexReroute, memoryBlock, staleBase, providerBlock,
-liveSync, integrationConflict, abandon, ...cockpitScenarios, ...restingScenarios]` — every recoverable mode
+liveSync, integrationConflict, abandon,...cockpitScenarios,...restingScenarios]` — every recoverable mode
 passes through the provider clone beats (except the ff-only `liveSync`), the two terminal modes end on a
 STOP/dissolve, and the FEUI-L8 Chats catalog spreads in ahead of the resting frames.
 
@@ -110,29 +127,44 @@ genuinely produces (`_seed_edge_state`). Only the caption moved: the fixture *na
 `engine-cgc-seed-refused` and the scenario `label` (`Reindex reroute · CGC seed refused (soft · T9C)`)
 both still read "refused", so a search for that word still finds the arc.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No configured Domain Documentation source exists for this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `erFrame` wraps a named engine-room scenario into a full projection and throws on an unknown name. | `erFrame` | dashboard/src/dev/scenarios.ts:34-38 |
-| The `reindexReroute` timeline, whose R4 caption now reads `CGC seed STALE → reindex reroute`. | `reindexReroute` | dashboard/src/dev/scenarios.ts:91-103 |
-| `SCENARIOS` — timelines first, then the folded-in resting frames. | `SCENARIOS` | dashboard/src/dev/scenarios.ts:271-284 |
-| The `engine-cgc-seed-refused` fixture drives a `stale` `cgc-seed` edge; the fixture NAME is unchanged, only the caption moved. | "engine-cgc-seed-refused" | dashboard/src/panels/engine-room/fixtures.ts:834-834 |
-| `_seed_edge_state` is the reducer function that produces seed-edge states; `stale` is one of its decisive answers and `refused` is not among them. | "def _seed_edge_state(" | mcp/src/agents_remember/observer/reducer_impl/_processes.py:638-638 |
-| `EngineProcessEdge.state` documents the served vocabulary — nine states, `stale` among them and `refused` not — on an `extra="forbid"` model. | `EngineProcessEdge` | mcp/src/agents_remember/observer/projection.py:934-953 |
-| `engineRoomProjection` (the shared wrap) + `GALLERY` (folded-in resting states). | `engineRoomProjection`, `GALLERY` | dashboard/src/dev/fixtures.ts:135-144; dashboard/src/dev/fixtures.ts:146-490 |
-| Consumed by the player transport + the bench picker. | `Bench`, `applyFrame` | dashboard/src/dev/Bench.tsx:18-83; dashboard/src/dev/ScenarioPlayer.tsx:12-17; dashboard/src/dev/ScenarioPlayer.tsx:27-27 |
-| `WorkspaceProjection` / `ObserverEvent` types each frame carries. | `WorkspaceProjection`, `ObserverEvent` | dashboard/src/types/event.ts:9-22; dashboard/src/types/projection.ts:840-854 |
+- `erFrame` wraps a named engine-room scenario into a full projection and throws on an unknown name. [1]
+
+- The `reindexReroute` timeline, whose R4 caption now reads `CGC seed STALE → reindex reroute`. [2]
+
+
+- `SCENARIOS` — timelines first, then the folded-in resting frames. [3]
+
+- The `engine-cgc-seed-refused` fixture drives a `stale` `cgc-seed` edge; the fixture NAME is unchanged, only the caption moved. 
+- `_seed_edge_state` is the reducer function that produces seed-edge states; `stale` is one of its decisive answers and `refused` is not among them. 
+- `EngineProcessEdge.state` documents the served vocabulary — nine states, `stale` among them and `refused` not — on an `extra="forbid"` model. [6]
+
+- `engineRoomProjection` (the shared wrap) + `GALLERY` (folded-in resting states). [7]
+
+
+- Consumed by the player transport + the bench picker. [8]
+
+
+- `WorkspaceProjection` / `ObserverEvent` types each frame carries. [9]
+
+
+### Cross-Repo References
+
+This card maps a repository-local agents-remember source. Import and task-boundary review found no
+cross-repository implementation source that governs its behavior.
+
+No applicable cross-repository source was found.
 
 ## FEUI-L8 Reviewed Candidate Delta
 
@@ -141,85 +173,8 @@ Folds the dedicated Chats scenario catalog into the existing picker and projects
 The reviewed candidate is still uncommitted. Existing verification hash/date remain pinned to the
 leaf base; closeout owns commit stamping.
 
-## Cross-Repo References
-
-This card maps a repository-local agents-remember source. Import and task-boundary review found no
-cross-repository implementation source that governs its behavior.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
 ## L23 Final Candidate Disposition
 
 The fleet-12 scenario injects `FLEET_TASK_DOCUMENTS` into the calm projection before any optional
 lifecycle overlay. The dev surface therefore exercises the same sprint/master/leaf hierarchy that
 the Session Rail groups in production rather than a flat session-only fixture.
-
-## Update History
-
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 1
-  claim(s) whose anchor no longer sat in its cited range and normalised 4 further range(s) in this
-  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
-  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
-  back at its current position. Verification metadata remains closeout-owned.
-- 2026-09-05T06:24:16+00:00: Generated citation repair: `WorkspaceProjection`; `ObserverEvent` repointed to dashboard/src/types/projection.ts:817-830; dashboard/src/types/event.ts:9-22. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-08-20T10:45+02:00 — 260815-DAG-L12 curator: re-anchored citation range(s) to current source after the L12 line movement (cited files changed, card source unchanged); verification metadata unchanged.
-
-- 2026-08-14T06:30+02:00 — L23 final candidate review: fleet-12 scenarios now inject the shared
-  sprint/master/leaf task-document fixture so scenario grouping matches production rail semantics.
-  Verification remains closeout-owned.
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-
-- 2026-08-03T02:41:37+02:00 — W3-B04 curator: curated 6 table citations (6 total), supplying exact anchors and paths; the scoped fixer generated all final extents.
-
-- 2026-08-01T10:40+02:00 — 260731-EFA-L4 curator (citation pass): re-verified the `projection.py`
-  citation after a worker inserted ten lines above it. `EngineProcessEdge` L752-L771 → L762-L781:
-  the class opens at L762, `model_config = ConfigDict(extra="forbid")` is L770, and the nine-state
-  vocabulary comment plus `state: str` are L778-L779. No body text changed.
-- 2026-08-01T09:58+02:00 — 260731-EFA-L4 curator: the R4 caption in `reindexReroute` changed from
-  `CGC seed REFUSED` to `CGC seed STALE → reindex reroute`. `refused` was never in the served
-  `EngineProcessEdge.state` vocabulary — it was invented on the dashboard side and grew a renderer
-  branch — while `stale` is what `reducer.py::_seed_edge_state` genuinely emits and what the
-  `engine-cgc-seed-refused` fixture now drives. Corrected the T9C prose accordingly and recorded that
-  the fixture name and the scenario `label` still read "refused", so only the caption moved. Also
-  corrected the `SCENARIOS` export list, which omitted the `...cockpitScenarios` spread, and replaced
-  the placeholder `—` citations with ranges containing `erFrame`, `reindexReroute`, `SCENARIOS`, the
-  fixture's `stale` edge, `_seed_edge_state`, and the `EngineProcessEdge.state` vocabulary comment.
-  Verification metadata left pinned; closeout stamps the code commit.
-
-- 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
-  source/test/task evidence; no Domain Documentation source is configured.
-
-- 2026-06-22T11:00 — slice 05o: rewrote `seedFault` as the **T9B** single boot-demo identity (charge → RED
-  GrepAI fault → re-seed → nominal; the CGC reroute that used to live here is now its own mode) and added five
-  more failure modes — `reindexReroute` (**T9C**, soft CGC refused → reindex), `providerBlock` (**T7B**,
-  pre-contract plan gate → recover through the provider clone beats), `liveSync` (**T12B**, memory-lane gate +
-  ghost → merge/ff, no clone beats), `integrationConflict` (**T14C**, terminal replay → ⚡ → steady STOP), and
-  `abandon` (**T18**, terminal working → dissolve). All added to `SCENARIOS`; recoverable modes pass through the
-  provider clone beats, the terminal modes end on the STOP/dissolve. Verification metadata pinned until closeout
-  stamps the 05o code commit.
-- 2026-06-22T10:45 — slice 05o T1B: added the `staleBase` (`stale-base`) timeline mirroring the prototype's T1B F0→F8
-  over ONE `boot-demo` enclosure (the recoverable pre-contract failure mode — base behind upstream): F0 main-only →
-  F1 preflight (the code-lane scan) → F2 **BLOCK** (the main node prunes + a fleeting enclosure is born blocked, held
-  2400ms) → F3·F4 fast-forward (the base updates, the code worktree copies in) → F5 memory worktree + coupler → F6
-  providers-dim + F7 seed/clone (the provider copy-arrows sweep on recover, not a teleport) → F8 nominal. Inserted
-  into `SCENARIOS` after `memoryBlock`. Verification metadata pinned until closeout stamps the 05o code commit.
-- 2026-06-22T00:29 — slice 05o T3B: added the `memoryBlock` (`memory-block`) timeline mirroring the
-  prototype's T3B M0→M7 (one `boot-demo` enclosure: code-worktree → verify scan → BLOCK gate+ghost → reconcile
-  → **providers-dim + seed/clone** (the copy-arrows sweep on recover) → nominal), inserted into `SCENARIOS`
-  after `seedFault`. The recover passes through `engine-boot-3-providers-dim`/`-4-seeding` so the provider clone
-  arcs play on-screen rather than teleporting to nominal (a first cut dropped these two beats — caught by the
-  developer reviewing against `podstage.html`). Verification metadata pinned until closeout stamps the 05o code commit.
-- 2026-06-21T02:27+02:00 — slice 05k: split the tear-down's collapsed D2·D3 frame into two `erFrame`s — D2
-  `engine-landing-ffonly` (integrate / push feat → origin/feat / PR open) + the new D3 `engine-landing-pushed`
-  (PR merged → origin/main advances → local main pulls) — so the code-lands beat is distinct from integrate.
-  Verification metadata pinned until closeout stamps the 05k code commit.
-- 2026-06-19T23:58+02:00 — Created for slice 5i: the scenario model — `Scenario`/`ScenarioFrame` types, the
-  `erFrame` fixture-wrapper (throws on a bad name), the `build-up` (B0→B5) / `tear-down` (D0→D6, incl. the
-  `cleanup-pending` de-materialise + `engine-retired`) / `seed-fault` timelines, and the folded-in
-  single-frame resting scenarios from `GALLERY`. Verification metadata pinned until closeout stamps the
-  code commit.

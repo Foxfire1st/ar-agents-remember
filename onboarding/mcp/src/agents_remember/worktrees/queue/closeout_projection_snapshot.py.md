@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/queue/closeout_projection_snapshot.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/queue/closeout_projection_snapshot.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-01T03:58+02:00 |
-| lastVerifiedCommitHash |  `47c8d102c2430d5337dbe207d4601efb4844fec0`|
-| lastVerifiedCommitDate |  2026-09-01T08:53:56+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Closeout queue overview](overview.md)
@@ -42,24 +32,16 @@ projection only when the observation is readable and completely classified.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external source is required.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The immutable snapshot gates projection construction on complete readable identity. | "One exact current source census; old projection rows are never an input." | mcp/src/agents_remember/worktrees/queue/closeout_projection_snapshot.py:17-39 |
+- The immutable snapshot gates projection construction on complete readable identity. [1]
 
-## Cross-Repo References
+### Cross-Repo References
 
 None.
-
-## Update History
-
-- 2026-09-01T03:58+02:00 — Checklist follow-up: re-read the exact new snapshot definition and
-  retained its range without fabricating a commit verification stamp.
-
-- 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: created the projection source-snapshot card.
-  Verification remains closeout-owned.

@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "The page stream, watcher and serving lifetime share their owner and close paths, preventing a harmless notice stream from breaking the review or leaving subscriptions/tasks alive after disconnect."
+  },
+  "applicability": "The serving MoveNoticeWatch and review-scoped state stream when explainer application ports are wired. Missing composition leaves no invented watcher or successful explainer route.",
+  "conditions": [
+    "The serving composition supplies explainer watcher ports.",
+    "The page or a relevant leaf turn end triggers comparison; a planning leaf is page-open only.",
+    "Cooldown reuse is keyed to the current binding/generation/comparison/snapshot."
+  ],
+  "exclusions": [
+    "A watcher message, held-store write or host API poll.",
+    "An optional notice ending the ordinary review stream or a comparison failure breaking it."
+  ],
+  "id": "INV-15M226",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "scratch/curator/b5e6f7a8-9c01-4d23-8e45-f6a7b8c9d012/helpers/backend/post-L194-source-equivalence.json; semantic-recommendations.json; MIK-R186@v2 rule7"
+      ],
+      "path": "L183-current-guarantees-and-proofs-W9"
+    },
+    "handoffEntry": "L183-moved-notice-lifetime",
+    "leaf": "260928-MIK-L183",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A process-shared moved watcher compares on review-page opening and relevant leaf turn ends and publishes an in-process notice without messaging a seat, writing a held store or making a host call. Planning bindings compare only on page open; repeated page-open reads reuse a short binding-keyed cooldown. Failure logs without breaking the review stream. The ordinary stream controls connection lifetime and disconnect closes its subscriptions; serving shutdown cancels and drains the watcher with other background owners.",
+  "status": "proposed",
+  "supersedes": []
+}

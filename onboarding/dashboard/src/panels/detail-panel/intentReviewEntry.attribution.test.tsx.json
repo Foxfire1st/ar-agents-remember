@@ -1,0 +1,108 @@
+{
+  "path": "dashboard/src/panels/detail-panel/intentReviewEntry.attribution.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The real summary, and the state table's derivation from it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e00968b1dc3795394c0decc980f766b22dd901f",
+            "content": "sha256:22aab2b31eb79fd8faf7956f1c3520ddbdbca3d549a8a93b485e11bb3b1802f8",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The real summary renders attribution as without an invariant beside the intent counts in a separate element, with one summary request.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e00968b1dc3795394c0decc980f766b22dd901f",
+            "content": "sha256:22775da99f483d42734e81b9c41e2d9a5d96b0cc48ab689ce82c858f4c09aadc",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 60
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The six-row attribution table uses without an invariant for counted labels and retains null, partial and unavailable states.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e00968b1dc3795394c0decc980f766b22dd901f",
+            "content": "sha256:92d303ed3652b2a8addb0f94643a2337794be028fdb9f96038100374da63f57b",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 76
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Pending summary state renders no attribution element.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e00968b1dc3795394c0decc980f766b22dd901f",
+            "content": "sha256:8252402c27d19d86052add4baa0b94bf10f871195a7531ebddb55770aef4bb56",
+            "locator": {
+              "end": 156,
+              "kind": "line_range",
+              "start": 145
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The entry's count and its details under test.\n\nAnchor: `attributionText` `AttributionCount` `AttributionDetails`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
+            "content": "sha256:2d7f4935f88d2401d98cb7d831ecccab0c534bc6477233cd179cbd540e8fbb0a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "A separate three-row table checks all answered, two open and absent open-work states while preserving attribution and one request.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e00968b1dc3795394c0decc980f766b22dd901f",
+            "content": "sha256:9412e3038b34dfd3c2798a3052cc9b79073599077e9b0a4c8a0a43d926f29f1f",
+            "locator": {
+              "end": 166,
+              "kind": "line_range",
+              "start": 153
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

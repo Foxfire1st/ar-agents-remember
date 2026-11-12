@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "family_guarantee"
+    ],
+    "justification": "Spans working-group and product report locations: isolated per-role/request role-reports and scratch, distinct from product reports, are the collection substrate FAM-2BRZW7's canonical-notes guarantee requires."
+  },
+  "applicability": "Every new role start that needs report and scratch folders.",
+  "conditions": [
+    "The start runs inside an enclosure working group.",
+    "Old task-reports aliases exist only for recorded old bindings."
+  ],
+  "exclusions": [
+    "Product reports directories, which stay distinct from role-reports.",
+    "Provider-local folders, which stay distinct from real isolated folders."
+  ],
+  "id": "INV-8XCZY1",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/role-launch/260928-MIK-L71-worker-d508f3cc-d109-host-readers/source-current-a1b7/source26-public-sync/generation15-five-pin-successor/expanded-evidence.md"
+      ],
+      "path": "l71-handoff-list.json"
+    },
+    "handoffEntry": "L71-CURRENT242-W-09",
+    "leaf": "260928-MIK-L71",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "New starts use real isolated role-reports and per-role/request scratch in the working group, distinct from product reports; old task-reports aliases remain only for recorded old bindings.",
+  "status": "proposed",
+  "supersedes": []
+}

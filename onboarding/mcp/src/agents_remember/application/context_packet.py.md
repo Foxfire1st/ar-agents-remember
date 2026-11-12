@@ -1,14 +1,40 @@
 # mcp/src/agents_remember/application/context_packet.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/application/context_packet.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
-| governingOverview      | `overview.md`                              |
+## Current operative account — orientation and internal packet
+
+`build_context_packet` retains rich V2 context for internal/CLI/dashboard consumers and optionally reports the derived index. The mounted payload applies `slim_context_packet`: version 3, shared roots, optional readable active-leaf task ID/master, action lines only where needed, optional serving build and paired commits. `roots.code` is absolute; join shorter relative memory, enclosure and task-document paths to it. Settings/storage/provider policy blocks do not travel in the mounted answer. A partial index asks for action; an unreadable index is omitted.
+
+The tool log preserves the delivered slim answer, not an automatic V2 dump. `include_freshness=true` may fetch remotes; default reads do not fetch. Root factoring is a compactness mechanism, not proof of a universal token ceiling for arbitrary names. The older rich-wire account below is internal/historical context, not the mounted answer.
+
+### Preserved provider-knob removal
+
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- Provider inclusion/detail knobs are gone: `build_context_packet` calls `provider_summary_packet(config)` with no inclusion parameter, so the provider block is the retired skipped summary.
+- With `include_drift=false` the drift block is `not-checked`. When drift is requested for an existing unconverted memory directory, `_drift_packet` returns `status: "error"` and the shared `legacy_format_refusal` message for `context_packet`, without measuring drift. This is unconditional: a converted branch elsewhere is not an admission prerequisite. Convert first through the procedure named by the refusal, then repeat; a missing root still reaches the existing summary error.
+
+### Superseded inventory
+
+- Pre-repair card claim: Card directs detailed troubleshooting to provider_diagnostics. This is superseded archival wording, not a current prescription.
+
+### Source and authority bounds
+
+- Source comparison: `mcp/src/agents_remember/application/context_packet.py:113-115` (`provider_summary_packet(config)`).
+- Source comparison: `mcp/src/agents_remember/models/tools/public_roster.py:22 (PUBLIC_TOOLS =)`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Current source contract evidence
+
+
+- Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance. [12]
+
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
 
 ## Governing Overview
 
@@ -43,6 +69,9 @@ the producer now hands over the typed thing rather than a dict:
   at which point the `ValidationError` escaped the `@server.tool()` handler — nothing on this
   path catches one. Constructing the model at the projection puts the checker on the seam
   instead.
+- A leaf context that names an enclosure contract compares against the application-owned converted base
+  for that leaf (`_leaf_drift_base`), so this route agrees with the drift tool on the same candidate and
+  contract; a context without a contract keeps today's semantics with no separate base.
 - `_drift_packet(...)` cit:(["def _drift_packet("], mcp/src/agents_remember/application/context_packet.py:177-177) is typed `-> DriftSummaryPacket`, the `TypedDict` from
   `memory_quality.integrity.onboarding_drift_check.models`, instead of `dict[str, Any]`. Its
   `status` is the producer's `DriftStatus`, whose `error` member — and the matching `error` key —
@@ -101,17 +130,23 @@ l-01 trust checkpoint is the intended opt-in caller.
   working trees, and fetch/ledger failures degrade to `unknown`/`ledgerError`
   data instead of failing the packet.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `ContextPacketV2` and nested summary models define the response shape. | `ContextPacketV2` | mcp/src/agents_remember/models/context_packet.py:114-124 |
-| Provider summary projection keeps context compact and points details at diagnostics. | `provider_summary` | mcp/src/agents_remember/providers/status.py:130-154 |
-| Worktree status projection supplies the read-only worktree summary — as the MODEL: `worktree_status_packet` (L14-L49) returns `WorktreeSummary`, so there is no dict boundary here to validate. | `worktree_status_packet` | mcp/src/agents_remember/application/worktree_status.py:42-117 |
-| `DriftSummaryPacket` (L17-L20) — the `TypedDict` `_drift_packet` now returns — and `DriftStatus` (declared in `models/drift.py`). | "class DriftSummaryPacket(TypedDict):"; "DriftStatus = Literal[" | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:11-11; mcp/src/agents_remember/models/drift.py:11-11 |
-| Public payload builder validates this application entry point output through the model registry. | `context_packet_payload` | mcp/src/agents_remember/mcp/tools/core.py:54-73 |
-| Branch freshness facts (upstream, fetch, ahead/behind) come from the freshness kernel. | `read_branch_freshness` | mcp/src/agents_remember/kernel/git_freshness.py:98-112 |
-| `ledgerMapsCodeHead` reuses the ledger loader and mapping lookup. | `ledgerMapsCodeHead` | mcp/src/agents_remember/models/context_packet.py:106-106 |
+### Repo-Internal References
+
+- `ContextPacketV2` and nested summary models define the response shape. [1]
+
+- Provider summary projection keeps context compact and points details at diagnostics. [2]
+
+
+- Worktree status projection supplies the read-only worktree summary — as the MODEL: `worktree_status_packet` returns `WorktreeSummary`, so there is no dict boundary here to validate. [3]
+
+- `DriftSummaryPacket` (L17-L20) — the `TypedDict` `_drift_packet` now returns — and `DriftStatus` (declared in `models/drift.py`). [4]
+
+- Public payload builder validates this application entry point output through the model registry. [5]
+
+- Branch freshness facts (upstream, fetch, ahead/behind) come from the freshness kernel. [6]
+- `ledgerMapsCodeHead` reuses the ledger loader and mapping lookup. [7]
 
 ## 260821-CLIVE-L2 Current Contract
 
@@ -119,43 +154,14 @@ The current source seams include `ContextPacketError`, `ContextPacketRequest`, `
 
 ### Reconciled Source Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The current module exposes `ContextPacketError`, `ContextPacketRequest`, `build_context_packet` at this ownership boundary. | `ContextPacketError`; `ContextPacketRequest`; `build_context_packet` | mcp/src/agents_remember/application/context_packet.py:49-50; mcp/src/agents_remember/application/context_packet.py:53-61; mcp/src/agents_remember/application/context_packet.py:64-110 |
 
-## Update History
+- The current module exposes `ContextPacketError`, `ContextPacketRequest`, `build_context_packet` at this ownership boundary. [8]
 
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
-- 2026-08-02T23:59:26+02:00 — L6 Wave 2 duplicate-range correction: removed 2 repeated path:start-end Citation objects from 1 same-claim citation group(s) at card line(s) 107; retained the first occurrence/order, all non-repeated anchor coverage and source ranges; scoped non-fixing result 0.
-- 2026-08-02T20:43+02:00 — W2-B08: anchored 11 context-packet citation claims and supplied exact source paths; ranges remain generated by the scoped fixer. Verification metadata stays pinned until closeout.
+- A leaf drift block compares against the leaf's converted base and agrees with the drift tool. [9]
 
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — 260731-EFA-L6 curator: source moved. `mcp/src/agents_remember/controllers/` was renamed to `application/`, so this sidecar moved with its source; path metadata and every in-body path follow, and the prose adopts "the application layer" / "an application entry point" for what it used to call a controller. Behavior is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-01T10:07+02:00 — 260731-EFA-L4 curator: body updated. Two of the five nested blocks
-  stopped being `model_validate` adapter boundaries, and the card described all five the same
-  way. `worktree=` no longer calls `WorktreeSummary.model_validate(...)` — cit:([`build_context_packet`], mcp/src/agents_remember/application/context_packet.py:64-110)
-  `worktrees.status.worktree_status_packet` (L14-L49 there) returns the model, which moves "a
-  value the state machine emits and this packet rejects" from a runtime `ValidationError` inside
-  a handler with no `except` to a type error at the projection; the `WorktreeSummary` import was
-  dropped from this file accordingly. cit:([`_drift_packet`], mcp/src/agents_remember/application/context_packet.py:169-180) is now typed
-  `-> DriftSummaryPacket` (the producer's `TypedDict`) instead of `dict[str, Any]`, and the
-  `DriftSummary` it feeds now accepts the `error` status and key, so `include_drift=true` against
-  a repo without an onboarding root reports the reason instead of raising. Named the four blocks
-  that remain genuine dict boundaries and why they are safe (their wire models import the
-  producer's `Literal`). Added two invariants. Citations: `build_context_packet`'s construction
-  sites pinned — `repo` L81, `worktree` L88, `providers` L89-L96, `drift` L97, `freshness` L98,
-  the dump L102, `_freshness_packet` L105-L132, `_drift_packet` L169-L180; the `status.py`
-  reference row was re-pointed to `worktree_status_packet` L14-L49 with its new return type, and
-  a row was added for the drift-check models module (L14, L17-L20). Verification metadata pinned
-  until closeout stamps the L4 commit.
-- 2026-07-31T15:31+02:00 — 260731-EFA-L2: the `resolve_coordination_context` call moved onto the
-  resolver's new `CoordinationHints` / `EnclosureSelector` parameter objects. Packet contents,
-  request flags and validation boundaries are unchanged. Verification metadata pinned until
-  closeout stamps the L2 code commit.
-- 2026-06-10T08:39+02:00: Added the opt-in `freshness` section (issue #54): `include_freshness`/`fetch_timeout` on the request, `_freshness_packet()` with code+memory `read_branch_freshness` and the `ledgerMapsCodeHead` mapping check; default stays `not-checked`.
-- 2026-06-08T09:57+02:00: Restored the provider-summary model-validation boundary after skipped provider summaries moved the omitted nullable `ok` contract into the provider response model.
-- 2026-06-06T12:28+02:00: Corrected the context-packet payload-builder reference after the former `mcp/tools.py` module became the `mcp/tools/` package; source behavior unchanged.
-- 2026-05-31T12:50+02:00 — `ContextPacketError` re-typed to subclass `AuthorityError` (imported from `agents_remember.errors`) instead of `ValueError`; noted the new base in Invariants And Boundaries (1.0.0 review remediation).
-- 2026-05-28T19:52+02:00: Updated after context packets moved to explicit `ContextPacketV2` model construction and compact provider summaries.
-- 2026-05-24T02:47+02:00: Created after context packets imported drift summary from the new memory quality package.
+</details>
+
+- Slim orientation factors shared roots and optional task/actions/build/pair fields without rich policy blocks. [10]
+
+- Rich V2 assembly remains internal and optionally includes index facts. [11]

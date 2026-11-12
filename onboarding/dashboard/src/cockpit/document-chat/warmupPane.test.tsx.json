@@ -1,0 +1,22 @@
+{
+  "path": "dashboard/src/cockpit/document-chat/warmupPane.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Exercise the mounted warmupPane owner and its delivered read/selection states.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "310f923c6ee624d1f2eb79d87819a400fe429b84",
+            "content": "sha256:43d52b53b3fbafda165315474f5831f4a9c3e176ec6d412f54584f1a39901fbf",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,39 @@
+{
+  "path": "mcp/src/agents_remember/certification/digests.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Canonical JSON bytes use sorted keys, compact separators, UTF-8, and SHA-256.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5fec41e626660b1b088e42d53af5306e94975bdd",
+            "content": "sha256:1ca5c19a7deb5986c8a551fcc0549203bdaf5272bd1a547bfcee08054fee4776",
+            "locator": {
+              "kind": "symbol",
+              "name": "content_digest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Digest derivation is local and deterministic.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5fec41e626660b1b088e42d53af5306e94975bdd",
+            "content": "sha256:1ca5c19a7deb5986c8a551fcc0549203bdaf5272bd1a547bfcee08054fee4776",
+            "locator": {
+              "kind": "symbol",
+              "name": "content_digest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

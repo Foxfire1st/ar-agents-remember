@@ -1,0 +1,128 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/__init__.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The explicit current facade imports and exports retained reader values.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0013d582a92b9fdab6624ebf661afb233b1284ae",
+            "content": "sha256:fcd79cb0a4d62dcc5b96dd84a3e4456abfb8e81681b143db618add7a9902a04f",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The current export list contains no retired mutation outcome helpers; the acceptance helper remains at its own base owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0013d582a92b9fdab6624ebf661afb233b1284ae",
+            "content": "sha256:fcd79cb0a4d62dcc5b96dd84a3e4456abfb8e81681b143db618add7a9902a04f",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:13cc663044dee904e0ef554d6776f2c58837847c4cc915a9688f715dd1172a37",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_consistent_acceptance"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The served surface is the retained index-reader vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0013d582a92b9fdab6624ebf661afb233b1284ae",
+            "content": "sha256:fcd79cb0a4d62dcc5b96dd84a3e4456abfb8e81681b143db618add7a9902a04f",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Retired mutation outcome helpers are absent from the current facade; internal acceptance validation stays in base.py.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0013d582a92b9fdab6624ebf661afb233b1284ae",
+            "content": "sha256:fcd79cb0a4d62dcc5b96dd84a3e4456abfb8e81681b143db618add7a9902a04f",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:13cc663044dee904e0ef554d6776f2c58837847c4cc915a9688f715dd1172a37",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_consistent_acceptance"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The production store consumes these retained values through read-only operations.\n\nAnchor: `OpenedKnowledgeStore` `open_read_only_store`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
+            "content": "sha256:06f9fa0b997c9bd42569065fb5f62ea39d370764509c8c2467b0985cdde68958",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The shared branching fixture authors its identity and graph halves from these same models.\n\nAnchor: `build_branching_knowledge_fixture`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f2402b1efd9ec499e9d11653fe3e1f29141cedef",
+            "content": "sha256:f48cfad6729c67949acad349d305eff6b5f50b11ea2060dbcbe021a18de9548d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/knowledge_fixture_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

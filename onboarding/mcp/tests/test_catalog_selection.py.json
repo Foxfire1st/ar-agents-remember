@@ -1,0 +1,104 @@
+{
+  "path": "mcp/tests/test_catalog_selection.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Consumer-selection behavior is defined by the retained tests.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e37690bc18bcc5f967dba903c5a838426823174d",
+            "content": "sha256:44884af84f2cfbefdc5b30ff36033c2ee800b58e7c7939b46adc41774160622c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_removed_and_added_consumers_both_remain_affected"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e37690bc18bcc5f967dba903c5a838426823174d",
+            "content": "sha256:a61dc5f6a6688e8f3bce5f2c383565d7596dde5ce14e4422e7239918d0da41f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_non_consumer_policy_changes_keep_global_selection"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The fixture emits the catalog shape consumed by the selection helper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e37690bc18bcc5f967dba903c5a838426823174d",
+            "content": "sha256:ec103e11e8275e99e2c5c42cbaf681c80b947ec40e67da613ca48b9c2173e91b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_catalog"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Consumer differences select both sides while comments/order and policy-only changes do not.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e37690bc18bcc5f967dba903c5a838426823174d",
+            "content": "sha256:44884af84f2cfbefdc5b30ff36033c2ee800b58e7c7939b46adc41774160622c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_removed_and_added_consumers_both_remain_affected"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e37690bc18bcc5f967dba903c5a838426823174d",
+            "content": "sha256:4cad6578d712c2540072d7d0b831bd2a203eebf431f88de8fd7a637a6ced635f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_comment_and_consumer_order_changes_do_not_select_tests"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e37690bc18bcc5f967dba903c5a838426823174d",
+            "content": "sha256:a61dc5f6a6688e8f3bce5f2c383565d7596dde5ce14e4422e7239918d0da41f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_non_consumer_policy_changes_keep_global_selection"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Global input ownership is asserted separately from consumer metadata.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e37690bc18bcc5f967dba903c5a838426823174d",
+            "content": "sha256:047618def68a068390f56ab01daa63ba7a41e4dde4bc25712ea210655b7272c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_population_configuration_is_global_but_consumer_metadata_is_not"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

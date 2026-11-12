@@ -1,0 +1,114 @@
+{
+  "confirmed": {
+    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
+    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
+    "role": "worker",
+    "statement": "This task brought the page in line with the product: its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate, the false ones were corrected, and the page was read whole.",
+    "task": "260928-MIK-L97",
+    "uncommitted": true
+  },
+  "document": "docs/install/hermes.md",
+  "id": "DPD-GHEXS9",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-handoff"
+    },
+    "handoffEntry": "L97-dependent-docs-install-hermes-md",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-dependent/v1",
+  "stands_on": [
+    {
+      "blob": "17c7b4ba661d205be5d116ff99a93f0f19f34d39",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/primitives/paseo_runtime_settings.py"
+    },
+    {
+      "blob": "0eaef8fb2966ce40738225cccbbb3814c89da5c5",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/primitives/fresh_host.py"
+    },
+    {
+      "blob": "e49d6c05caeb90e4ca8f0595ece7f39e277d944a",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/serving/paseo/paseo_provision.py"
+    },
+    {
+      "blob": "6fa1ea0b40930f3f7b7eecbf2e1e53d6a88e6b7d",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/role_launch_request_rules.py"
+    },
+    {
+      "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+    },
+    {
+      "blob": "9125b43d7f08f23eb26bcfe0b5cf989ea3592615",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/role_launch_first_run.py"
+    },
+    {
+      "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+    },
+    {
+      "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+    },
+    {
+      "blob": "02149a35f0d9aee6a3081da6d8a9868a47b4ee8c",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+    },
+    {
+      "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+    },
+    {
+      "blob": "bbb12d34a5ef4aaed3993881dd4f8f537cc9c7e8",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/observer/acp_providers.py"
+    },
+    {
+      "blob": "82bf56a294bd3dec8696c1d78382b5ac9e8a082b",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/agentic_settings.py"
+    },
+    {
+      "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
+      "kind": "file",
+      "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+    },
+    {
+      "blob": "3f30237a53623bb13be7bf1d5d8dc8413ba64f6c",
+      "kind": "file",
+      "path": "mcp/pyproject.toml"
+    },
+    {
+      "blob": "5af0810d48c7081071943b58140287ce1a2dc662",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/background_wait.ts"
+    },
+    {
+      "blob": "6409c3b172fd81910a4386fa06cac88e5ba2580e",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
+    },
+    {
+      "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+    },
+    {
+      "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+    }
+  ]
+}

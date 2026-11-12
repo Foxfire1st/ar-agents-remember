@@ -1,25 +1,25 @@
 # dashboard/e2e/cockpit.spec.ts
 
-| Field                  | Value                                                       |
-| ---------------------- | ----------------------------------------------------------- |
-| repository             | agents-remember                                             |
-| path                   | `dashboard/e2e/cockpit.spec.ts`                             |
-| doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-08-28T14:15+02:00                                      |
-| lastVerifiedCommitHash | `a06d2ffcfae2c277f2ae19330c17d09c616b77e8`                  |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00                                   |
-| governingOverview      | `../../overview.md`                                         |
+## Current A10 retained-source account
+
+The retained Playwright source checks attention queue ranking/empty views, task-rail grouping and cross-origin Role chats clipboard policy. The old PTY/stage/inspector/set/composer contract and removed chats-E2E sibling supplies no current proof. Fixture gallery and mocked route assertions are not a fresh run or native-host acceptance.
+
+- The retained Playwright source checks attention queue ranking/empty views, task-rail grouping and cross-origin Role chats clipboard policy. The old PTY/stage/inspector/set/composer contract and removed chats-E2E sibling supplies no current proof. Fixture gallery and mocked route assertions are not a fresh run or native-host acceptance. [3]
+
+The attention-queue test ranks its gallery alarm against the actionable-drift item: the provider-down
+entry that used to hold the first slot went with the retired search providers, so the spec's first-item
+assertion names `3 actionable drift` and its severity label stays `alarm`. Read it as a fixture assertion
+over mocked routes, not as a fresh run.
+
+
 
 ## Governing Overview
 
 [agents-remember root overview](../../overview.md)
 
-There is no route-local overview for `dashboard/e2e/`, so the repository root
-overview is the nearest governing ancestor (same resolution as the
-`dashboard/e2e-production/` sidecar). The sibling suite
-[dashboard/e2e-chats overview](../e2e-chats/overview.md) drives the real composed
-app against real installed harnesses; this suite is the primary Playwright suite for
-the cockpit against the dev server and `/dev/bench` fixture gallery.
+This suite is governed by the root overview; removed chats/production suites are not current proof consumers.
+
+## Historical pre-retirement source account — not current proof
 
 ## Purpose
 
@@ -35,7 +35,7 @@ retained pre-cleanup rows, typing pulls the viewport to the live bottom).
 
 ### Logic
 
-The suite is the 27-test primary Playwright acceptance surface. Its current focus assertions follow
+The suite is the primary Playwright acceptance surface. Static source inspection finds 25 literal test declarations and 28 registrations after the two width loops expand; this is not executed Playwright collection or a passing run. Its current focus assertions follow
 the base rail → stage → inspector DOM order: traversal from the stage-header toggle remains in the
 stage, while the inspector handle owns adjacency to inspector content. Landed transcripts are
 asserted through their exact hidden/visible `pty-layer-*` identity. After removal of the StatusLine,
@@ -43,6 +43,8 @@ the suite proves queued settings through the queued chip, effective state throug
 the recorded set ledger through the opened inspector rather than retaining dead selectors. The
 terminal-continuity test asserts the stable DOM contract instead of a parallel-load-sensitive scroll
 position.
+
+The attention cases explicitly open attention-bell before reading the queue layer. Empty reads nothing waiting/no item; Escape closes the modal before querying Detail. These three edited browser tests have same-gallery/test-id unit mirrors in Cockpit.test.tsx, not a Playwright execution claim.
 
 ### Conventions
 
@@ -60,38 +62,28 @@ recorded in the L8 reviewer verdict as D-3).
 Optional hardening (a later leaf): generate the dashboard fingerprint in worktrees
 or make the production spec skip explicitly when the artifact is absent.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked `system/sources.md`; no Domain Documentation source is
 configured for this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found. | — | — |
+No relevant domain documentation was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The primary cockpit e2e suite (202 expectations at fix-round verify). | "import { expect, test } from \"@playwright/test\";"; `import { expect, test } from ` | dashboard/e2e/cockpit.spec.ts:1-700 |
-| The dev fixture gallery and scenarios the suite drives. | `cockpitScenarios` | dashboard/src/dev/scenarios.ts:214-257 |
 
-## Cross-Repo References
+
+- The primary cockpit e2e source; the earlier 202-expectations fix-round caption is historical, not a current reached-assertion count. [1]
+
+
+
+- The dev fixture gallery and scenarios the suite drives. [2]
+
+
+### Cross-Repo References
 
 No cross-repository implementation source governs this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-- 2026-08-28T14:15+02:00 — Reconciled the current 27-test cockpit contract after StatusLine
-  removal: stage/inspector focus adjacency, exact landed-transcript layers, header state, queued-set
-  chips, and inspector ledger evidence now replace the retired selectors. Stamped the landed PDLS
-  code candidate.
-
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: created this sidecar for the primary
-  Playwright suite after the FL3 repair (27/27) and CI wiring. Verification pinned
-  to the leaf base until closeout stamps the code commit.
+No applicable cross-repository source was found.

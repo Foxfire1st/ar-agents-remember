@@ -1,15 +1,5 @@
 # dashboard/src/panels/detail-panel/styles.ts
 
-| Field                  | Value                                                       |
-| ---------------------- | ----------------------------------------------------------- |
-| repository             | agents-remember                                             |
-| path                   | `dashboard/src/panels/detail-panel/styles.ts`               |
-| doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-08-07T08:19Z                                           |
-| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`                  |
-| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
-| governingOverview      | `../overview.md`                                            |
-
 ## Governing Overview
 
 [panels/ overview](../overview.md)
@@ -17,24 +7,23 @@
 ## Purpose
 
 The Panda CSS recipes of the DetailPanel, extracted from `DetailPanel.tsx` by the
-260731-EFA-L8 split. Owns sizing, the phase stepper, state badges, series/sub-task
-slice list, cross-master button, breadcrumb, worktree spine lanes, and reader
-typography.
+260731-EFA-L8 split. Owns the detail container, step marks, breadcrumb, worktree spine and the remaining
+change-set, grant and brief-state disclosure styles.
+The fixed document pages and their rows now use pageStyles.ts; retired old-page recipe definitions
+are not a second appearance owner.
 
 ## Code Commentary
 
 ### Logic
 
-Static atoms are `css({...})`; `step` and `lane` are `cva` keyed on state. All colours
+Static atoms are `css({...})`; `step` is a `cva` keyed on step state; `lane` is keyed on code/memory kind. All colours
 go through `token(colors.*)`.
 
 Since `260921-ICR-L47`, three classes style the brief-state disclosure the entry controls share
 (`entryState.tsx`): `entryStateDetails` (inline, full-width when open), `entryStateSummary` (the bordered
 `?` marker, native marker hidden) and `entryStateBody` (a bounded-width paragraph that wraps long codes).
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The three disclosure classes. | `entryStateDetails`; `entryStateSummary`; `entryStateBody` | dashboard/src/panels/detail-panel/styles.ts:175-202 |
+- The three disclosure classes. [1]
 
 ### Conventions
 
@@ -48,33 +37,38 @@ The `sizing` flex rule preserves the panel's fill behavior.
 
 None recorded.
 
-## Docs References
+## Retired direct-grant action recipe
+
+The earlier L94 page port retained `grantButton` and row-side text controls. D230 deliberately replaces that presentation: the old recipe and row hand-through are absent from current source, and the selected planning task uses the switch recipes below. That prior preservation claim remains historical in Git and the superseded L127 decision; it is not a current recipe or a current formatter/layout qualification.
+
+## Direct execution look
+
+The selected task uses directLine, directSwitch, directSwitchOff/directSwitchOn, directKnob, directGiven and directNote. Alignment gives the track its left/right position; the old grantButton recipe is gone. These styles present served UI state and do not decide permission or grant admission. Existing detail/lifecycle/change-set recipes keep their owners.
+
+## Evidence
+
+- The direct-execution line has one track, positional variants, knob and giver/notice text styles. [5]
+
+
+### Docs References
 
 The curator checked `system/sources.md`; no Domain Documentation source is
 configured for this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found. | — | — |
+No relevant domain documentation was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The panel layout/stepper/badge recipes. | `sizing`; `stepper`; `step`; `badge` | dashboard/src/panels/detail-panel/styles.ts:5-52 |
-| The slice/cross/spine recipes. | `slice`; `sliceButton`; `crossButton`; `lane` | dashboard/src/panels/detail-panel/styles.ts:55-66; dashboard/src/panels/detail-panel/styles.ts:69-88; dashboard/src/panels/detail-panel/styles.ts:91-110; dashboard/src/panels/detail-panel/styles.ts:133-145 |
+- The retained panel layout, step-mark and badge recipes. [2]
 
-## Cross-Repo References
+- The retained slice-container, breadcrumb and worktree-lane recipes. [3]
+
+### Cross-Repo References
 
 No cross-repository implementation source governs this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
+No applicable cross-repository source was found.
 
-## Update History
-- 2026-09-28T17:11:24+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): **body update — three disclosure classes for the entry's brief states (`ICR-R24@v3`).** No stamp advanced.
+- The current track-and-knob switch uses token styling; pending disables the button in the reader, not through a retained grantButton recipe. [4]
 
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: created this sidecar for the styles
-  module extracted from `DetailPanel.tsx`. Verification pinned to the leaf base until
-  closeout stamps the code commit.
+The obsolete stepper, taskHead, sliceMeta and sliceButton exports are removed; those names are not current appearance owners. Task-page-specific recipes remain in pageStyles.ts.

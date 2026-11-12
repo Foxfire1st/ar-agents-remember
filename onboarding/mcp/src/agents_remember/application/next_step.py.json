@@ -1,0 +1,240 @@
+{
+  "path": "mcp/src/agents_remember/application/next_step.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The response boundary preserves an explicit producer hint or computes one, rejects contradictory task addresses, and enriches the validated model before final serialization.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
+            "content": "sha256:60e27a120bfb8dc9f33714fb08d00eefa653f16db19cf2acb29230f633cf6a6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_attach_contract_guidance"
+            },
+            "path": "mcp/src/agents_remember/application/tool_response.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bbd96445dae6e10e1c4052722fab1b614aafedfe",
+            "content": "sha256:e65598ad08d511a5ffa26a3099d273596eea7844d5c2a00685c2ccb183271c43",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Contract-path reads contain their own load/guidance failures; only the two declared argument-bound preview stops are admitted.\n\nAnchor: current owner",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a0ebc421a6c1cbf393461876ac120f34d348d7ac",
+            "content": "sha256:be06be8f7a7d85e2cc0381fd08caadbefe845d38d7d49ec8b2e68dae437ed0fc",
+            "locator": {
+              "end": 99,
+              "kind": "line_range",
+              "start": 96
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a0ebc421a6c1cbf393461876ac120f34d348d7ac",
+            "content": "sha256:765eac3af59a82635f4e6c038672cdd21d715fbebfb4bf51a7a77b789e3983da",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 110
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a0ebc421a6c1cbf393461876ac120f34d348d7ac",
+            "content": "sha256:13bfa74a7f5d088ca77ee06e76447037c2be432b183cb14de2ab37b9a209d702",
+            "locator": {
+              "end": 133,
+              "kind": "line_range",
+              "start": 123
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a0ebc421a6c1cbf393461876ac120f34d348d7ac",
+            "content": "sha256:651b376bfe02b706d636bb5f47c0b192be0979805c07512995afbbe5733127ad",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 102
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`NextStep` model + the `nextStep` field on the response envelopes — the declaration that makes setting it at the choke point legal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6e13076db126a04a1f38984bfb6dc23884bff6a",
+            "content": "sha256:c95ff90ec2352fe3b0c399f2dca3eaec9f6fc92f163a386219c2bbd19882cc1b",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 49
+            },
+            "path": "mcp/src/agents_remember/models/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`lifecycle_guidance` state machine delegated to in the linear half; `_guidance_for` widens its payload with `dict(...)`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
+            "content": "sha256:656888b6f80fc1973338abb55a25f4b33bd3eba3d5b4a221a5bfafaf5ce12860",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycle_guidance"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
+            "content": "sha256:1a47259c93d114ae5f9f094ac5cd3537012434d42944e406beb755899538e76f",
+            "locator": {
+              "end": 229,
+              "kind": "line_range",
+              "start": 219
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`load_contract` / `WorktreeContract` (sub-state fields read by `_turn_end_after`).  Anchor: `load_contract` `WorktreeContract`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "758a00879439672a413425ed6c40686fe3626bd9",
+            "content": "sha256:bfec3a3775045fe3fe7e3a92d32691cdcd15bb5f228b4411aa801ec873ff97a9",
+            "locator": {
+              "end": 491,
+              "kind": "line_range",
+              "start": 460
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "758a00879439672a413425ed6c40686fe3626bd9",
+            "content": "sha256:de8fea3db94fe34a6b30d3583ecaff1cdf4c047fc7b04d32ee0d7eb5571a40fb",
+            "locator": {
+              "end": 311,
+              "kind": "line_range",
+              "start": 246
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "758a00879439672a413425ed6c40686fe3626bd9",
+            "content": "sha256:f5e1cba8d20f29a747255bf26737ace45a5f1abc788d18338bfdba877f70d51e",
+            "locator": {
+              "end": 284,
+              "kind": "line_range",
+              "start": 229
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "758a00879439672a413425ed6c40686fe3626bd9",
+            "content": "sha256:e4018d774645cce7dce0c51cbf04e207718d8685255da4379ea1c0691d889378",
+            "locator": {
+              "end": 491,
+              "kind": "line_range",
+              "start": 246
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The next-step entry point derives guidance from the current lifecycle and tool; this source citation does not establish response token-count coverage.\n\nAnchor: `next_step_for`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a0ebc421a6c1cbf393461876ac120f34d348d7ac",
+            "content": "sha256:2ea815d1fdd699dbe67829dca211baddb1e52dea79cceff14ced31a237edc172",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "No contract yields no hint; resolved contract and tool select retained landing guidance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a0ebc421a6c1cbf393461876ac120f34d348d7ac",
+            "content": "sha256:ed56376de2aca839183a36527b98b1606a2befdc8f3a1b1ee0cfd64c2bfe4bed",
+            "locator": {
+              "kind": "symbol",
+              "name": "compute_next_step"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Three contract-gated stop overlays are prose, not session/gate notification operations or approval.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a0ebc421a6c1cbf393461876ac120f34d348d7ac",
+            "content": "sha256:0b190a2870a7c193f867b2fb6912711f3543ce3549ce7f31905fda1cfe32fc18",
+            "locator": {
+              "kind": "symbol",
+              "name": "_turn_end_after"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

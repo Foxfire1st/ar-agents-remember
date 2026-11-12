@@ -1,0 +1,81 @@
+{
+  "confirmed": {
+    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
+    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
+    "role": "worker",
+    "statement": "This task brought the page in line with the product: its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate, the false ones were corrected, and the page was read whole.",
+    "task": "260928-MIK-L97",
+    "uncommitted": true
+  },
+  "document": "docs/reference/resolver-c08.md",
+  "id": "DPD-EJ2Y7Z",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-handoff"
+    },
+    "handoffEntry": "L97-dependent-docs-reference-resolver-c08-md",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-dependent/v1",
+  "stands_on": [
+    {
+      "blob": "e64d75e0a0f6f7457e8835ce83d3fc3f53ed0c7c",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/coordination_context/resolver.py"
+    },
+    {
+      "blob": "30e2ff45d5ee2851183199f50d122c1ccdd79e78",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/coordination_context/models.py"
+    },
+    {
+      "anchor": {
+        "blob": "ab717e76f2cdfeafb63ae754282c97e7295e186f",
+        "content": "sha256:1e6398917e2cfab045a19f2186a8cfd2b1e20aa312bbd8e2098832fc183ec4af",
+        "locator": {
+          "kind": "symbol",
+          "name": "context_to_dict"
+        },
+        "path": "mcp/src/agents_remember/kernel/coordination_context/serialize.py"
+      },
+      "kind": "anchor"
+    },
+    {
+      "blob": "52f7e65b6acd94ad5885aa51286fef97cef7c4af",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/coordination_context/paths.py"
+    },
+    {
+      "blob": "29c165efab4b87a3fa5656cc3f4c183bb7e8da84",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/memory_mode.py"
+    },
+    {
+      "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/context_packet.py"
+    },
+    {
+      "blob": "f161c87a3f3abab5c89216ea2b32aed0387c906d",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/models/context_packet.py"
+    },
+    {
+      "blob": "4fbc0127d89960a9767e05933e81b178828f7d52",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/git_facts.py"
+    },
+    {
+      "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+    },
+    {
+      "blob": "9dfc1293d27d539ce40fd6f6e61b4e4093dc2d01",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/task_scoped_mcp.py"
+    }
+  ]
+}

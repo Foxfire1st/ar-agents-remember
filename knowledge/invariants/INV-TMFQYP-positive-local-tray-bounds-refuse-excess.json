@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Browser admission and independent server validation prevent an oversized pick from retaining bytes or reaching a file/send path, with focused bound/refused-write assertions."
+  },
+  "applicability": "Dashboard collection and Send bounds, plus independent server request/image/message limits.",
+  "conditions": [
+    "Local dashboard bounds are positive whole numbers, defaulting to 20 picks, 5 MiB per image and 20 MiB per message; invalid input is refused and Reset restores defaults.",
+    "Collection refuses excess count/type/image/message contributions by name before storing refused image bytes, and Send rechecks current bounds.",
+    "The server bounds the streamed request before parsing, validates supported image type and decoded bytes, and refuses over-limit picks/images/messages before filing."
+  ],
+  "exclusions": [
+    "Browser encoded-size estimates and server decoded-byte accounting are not identical.",
+    "Local bounds are browser preferences, not AR operator settings.",
+    "Changing a bound does not silently remove existing picks."
+  ],
+  "id": "INV-TMFQYP",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Curator synthesis at A4-F5 code tree 25756231aa86f63ba59f91bec01146d27461e470, change sha256:936825218f4a7144e0d0ba68901733c25f0b82ae32fbf8946a2f57df389032a0; MIK-R188 v1 packet; source producer rows: MIK-R188@v1 rule 11 · bounds. Original producer inputs: role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596; role-reports/reviewer/ba078073-6b85-5233-8d65-cb6fbc7a2d44/round3/curator-handoff-list.json SHA-256 3d6fdce6235b4e08486515f77329985fe62b4397b644d60f325f706eb1ca9028. Tests named only as proof anchors; this helper ran no tests."
+      ],
+      "path": "authoring-wave5.corrected-input.json"
+    },
+    "handoffEntry": "TRAY13",
+    "leaf": "260928-MIK-L89",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Positive local tray bounds refuse excess picks and images by name before retention or Send, and the server independently bounds the request and decoded message before filing.",
+  "status": "proposed",
+  "supersedes": []
+}

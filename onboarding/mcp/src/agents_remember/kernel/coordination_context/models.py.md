@@ -1,129 +1,30 @@
 # mcp/src/agents_remember/kernel/coordination_context/models.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/kernel/coordination_context/models.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
-| governingOverview      | `overview.md`                              |
-
 ## Governing Overview
 
 [coordination_context overview](overview.md)
 
 ## Purpose
 
-`models.py` owns the dataclasses and typed dictionaries returned or consumed by
-the coordination-context resolver.
+`models.py` owns the dataclasses and typed dictionaries returned or consumed by the coordination-context resolver.
 
 ## Code Commentary
 
-### Logic
+The module defines missing-memory errors, storage/path-rule model types, cross-repo allow state, coordination selection, and the final `CoordinationContext` dataclass.
 
-The module defines missing-memory errors, storage/path-rule model types,
-cross-repo allow state, coordination selection, and the final
-`CoordinationContext` dataclass (cit:(["class CoordinationContext"], mcp/src/agents_remember/kernel/coordination_context/models.py:189-189)).
+`CoordinationContext.memory_mode` uses the shared `ReadableMemoryMode` alias from `kernel.memory_mode`: the contract's own recorded mode, so a legacy `disabled` contract still reports itself as it is today. The resolver assembly (`build_coordination_context`) reads `contract.memory_mode` straight into this field when a contract exists, and calls `_memory_mode(roots.topology)` — which now always yields `external` — only when there is no contract.
 
-`CoordinationContext.memory_mode` uses the shared `MemoryMode` alias declared here by
-260731-EFA-L9 (cit:(["MemoryMode = Literal"], mcp/src/agents_remember/kernel/memory_mode.py:35-35))
-and used by the field declaration (cit:(["memory_mode: MemoryMode"], mcp/src/agents_remember/kernel/coordination_context/models.py:211-211)).
-The resolver assembly is named by **`build_coordination_context`** and selects the contract's mode
-when a contract exists, otherwise calling `_memory_mode(roots.topology)` as its fallback
-(cit:(["memory_mode = contract.memory_mode if contract is not None else _memory_mode(roots.topology)"], mcp/src/agents_remember/kernel/coordination_context/resolver.py:279-279)).
+`LandingSettings` is the one-field record of the landing workflow a memory repository's settings choose, and its default is `local`. `LANDING_WORKFLOWS` beside it is the closed vocabulary the settings parser reads a value against, so a name this product does not implement is refused where the file is read instead of being carried into a landing.
 
-Since 260731-EFA-L2 it also owns the **four frozen parameter objects the resolver's public API is
-signed on**. They are the vocabulary of coordination-context resolution; a caller building one is
-answering one question, not filling in a keyword list:
+It also owns the four frozen parameter objects the resolver's public API is signed on. They are the vocabulary of coordination-context resolution; a caller building one is answering one question, not filling in a keyword list: `EnclosureSelector` (how a caller names the enclosure to resolve, directly by contract path or indirectly by task plus leaf id or worktree name), `CoordinationHints` (what a caller already knows about where the coordination tree is; every field is a hint, not a fact), `CodeRepository` (a resolved code repository), and `CoordinationRoots` (the coordination tree after resolution: which topology won and the four roots it implies). All four are re-exported from the `kernel.coordination_context_resolver` facade.
 
-- **`EnclosureSelector(contract_path=None, task_name=None, parent_task=None, leaf_id=None,
-  worktree_name=None)`** — *how a caller names the enclosure to resolve*. Either directly, by
-  `contract_path`, or indirectly: a task (with `parent_task` to disambiguate a repeated task name)
-  plus the leaf id or worktree name that picks one enclosure inside it. A caller supplying a subset
-  is still supplying one selector, and the whole set travels from the tool boundary down to
-  `resolve_contract` unchanged.
-- **`CoordinationHints(topology=None, coordination_root=None, settings_path=None,
-  onboarding_root=None)`** — *what a caller already knows about where the coordination tree is*.
-  Every field is a hint, not a fact: a requested topology overrides detection, an explicit
-  coordination root or settings file short-circuits the search, and an `onboarding_root` selects
-  the from-onboarding resolution path entirely. Detection fills in whatever is absent.
-- **`CodeRepository(name, root, workspace)`** — a resolved code repository. This replaces the
-  untyped `dict[str, Path | str]` the resolver used to pass around, which forced `Path(repo["root"])`
-  / `str(repo["name"])` casts at every read.
-- **`CoordinationRoots(topology, coordination_root, memory_root, onboarding_root, settings_path)`**
-  — the coordination tree after resolution: which topology won and the four roots it implies.
-  Detection produces them together and no reader wants a subset.
+Models stay behavior-light and importable by parser, resolver, and serialization modules. `MissingMemoryError` subclasses `AgentsRememberError`, so it joins the package's typed error family while staying catchable by existing `except ValueError` handlers.
 
-All four are re-exported from the `kernel.coordination_context_resolver` facade.
+## Evidence
 
-### Invariants And Boundaries
-
-- Models should stay behavior-light and importable by parser, resolver, and
-  serialization modules.
-- **`memory_mode` uses the shared vocabulary.** `MemoryMode`, cit:(["MemoryMode ="], mcp/src/agents_remember/kernel/memory_mode.py:35-35), is the kernel-owned declaration this module imports for its `memory_mode` field, and `resolver.build_coordination_context`, cit:(["def build_coordination_context"], mcp/src/agents_remember/kernel/coordination_context/resolver.py:252-252), is the current assembly entry point.
-- The four parameter objects are frozen and fully defaulted, so a resolver call that supplies
-  neither `hints` nor `selector` still resolves — `None` is replaced by an empty instance rather
-  than branching on absence.
-- `MissingMemoryError` subclasses `AgentsRememberError` (imported from
-  `agents_remember.errors`), so it joins the package's typed error family while
-  staying catchable by existing `except ValueError` handlers. It keeps the
-  checked internal and external memory paths so callers can report actionable
-  initialization guidance, naming the skills in full — initialize memory with
-  `c-00-initialize-memory-repo`, then run `c-03-repo-bootstrap`.
-
-## Docs References
-
-No external documentation is needed for these package-local data models.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation is needed. | n/a | n/a |
-
-## Repo-Internal References
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `MissingMemoryError` subclasses the typed `AgentsRememberError` base. | `MissingMemoryError` | mcp/src/agents_remember/kernel/coordination_context/models.py:10-29 |
-| `AgentsRememberError` remains a `ValueError`-compatible base. | `AgentsRememberError` | mcp/src/agents_remember/errors.py:18-19 |
-| Resolver assembly returns `CoordinationContext` instances defined here, reading `contract.memory_mode` straight into the field and falling back to the topology only when there is no contract. | `build_coordination_context`; `_memory_mode` | mcp/src/agents_remember/kernel/coordination_context/resolver.py:268-313; mcp/src/agents_remember/kernel/coordination_context/resolver.py:342-343; mcp/src/agents_remember/kernel/coordination_context/resolver.py:252-308 |
-| `MemoryMode` is the two-member memory vocabulary declaration (`external`, `disabled`), declared in the kernel memory-mode module. | "MemoryMode =" | mcp/src/agents_remember/kernel/memory_mode.py:35-35; mcp/src/agents_remember/kernel/memory_mode.py:7-8 |
-| The wire face of the same value imports and uses the shared alias for `memory.mode`. | `MemorySummary` | mcp/src/agents_remember/models/context_packet.py:79-86 |
-| Serialization converts these models to JSON-safe dictionaries. | `context_to_dict` | mcp/src/agents_remember/kernel/coordination_context/serialize.py:69-98 |
-
-## Cross-Repo References
-
-No cross-repository evidence is needed for local model declarations.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
-
-## Update History
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: "class CoordinationContext" repointed to mcp/src/agents_remember/kernel/coordination_context/models.py:189-189. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: "memory_mode: MemoryMode" repointed to mcp/src/agents_remember/kernel/coordination_context/models.py:211-211. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: "memory_mode = contract.memory_mode if contract is not None else _memory_mode(roots.topology)" repointed to mcp/src/agents_remember/kernel/coordination_context/resolver.py:279-279. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: "def build_coordination_context" repointed to mcp/src/agents_remember/kernel/coordination_context/resolver.py:252-252. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-08-04T15:56:39+02:00 — 260731-EFA-L6 S18-B10 curator: closed same-reviewer residual D18 by binding the resolver prose to the operative contract-or-topology conditional call; rechecked this card through the locked exact-document fixer/check.
-
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-01T10:45+02:00 — 260731-EFA-L4 curator (post-wave source change): corrected the current source-backed resolver symbols. `resolver.build_coordination_context`, cit:(["def build_coordination_context"], mcp/src/agents_remember/kernel/coordination_context/resolver.py:272-272), and `_memory_mode`, cit:(["def _memory_mode"], mcp/src/agents_remember/kernel/coordination_context/resolver.py:366-366), are the current named entries. The card's current dataclass and shared `MemoryMode` references were rechecked; no historical symbol-walk claim is retained. Verification metadata pinned until closeout stamps the L4 commit.
-- 2026-08-01T10:02+02:00 — 260731-EFA-L4 curator: body updated to record the shared
-  `MemoryMode`, cit:(["MemoryMode ="], mcp/src/agents_remember/kernel/coordination_context/models.py:209-209),
-  and the current resolver assembly, cit:(["def build_coordination_context"], mcp/src/agents_remember/kernel/coordination_context/resolver.py:272-272).
-  The matching invariant and wire-facing `MemorySummary` reference remain in this card.
-  Verification metadata pinned until closeout stamps the L4 commit.
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions): added
-  the four frozen parameter objects the resolver API is now signed on — `EnclosureSelector`,
-  `CoordinationHints`, `CodeRepository`, `CoordinationRoots`. `CodeRepository` replaces the
-  untyped `dict[str, Path | str]` the resolver passed between its private helpers. Additive to
-  this module; the signature change lands in `resolver.py` and the
-  `coordination_context_resolver` facade. Verification metadata pinned until closeout stamps the
-  L2 commit.
-- 2026-06-02T16:24+02:00 — Normalized skill references in the missing-memory guidance message to full lowercase skill names (`c-00-initialize-memory-repo`, then `c-03-repo-bootstrap`); previously abbreviated C-00/C-03. Reference-style normalization; behavior unchanged.
-- 2026-05-31T12:50+02:00 — `MissingMemoryError` now subclasses `AgentsRememberError` (imported from `agents_remember.errors`) instead of the builtin `ValueError`; updated Invariants And Boundaries to state the typed-error-family base and `except ValueError` compatibility, and added the errors.py repo-internal reference (1.0.0 review remediation).
-- 2026-05-25T20:57+02:00: Created by extracting coordination-context model declarations from the monolithic resolver.
+- Context carries the readable mode vocabulary [7]
+- Selector names the enclosure one way [8]
+- Hints short-circuit detection [9]
+- Resolved code repository record [10]
+- Resolved coordination tree record [11]
+- Missing memory stays a typed, catchable error [12]

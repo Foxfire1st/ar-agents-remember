@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The pending intent set is the part a confirmed-rows-only cap misses, and an unbounded pending set grows during exactly the interruptions the store exists to survive. The whole-store byte cases measure the document that is written rather than an approximation of it. The acknowledgement log is not capped: it reclaims by folding on observation, and the retired baseline key is not a bounded object at all, so neither is claimed here."
+  },
+  "applicability": "The disposable notice, baseline and acknowledgement working set, including interrupted intents.",
+  "conditions": [
+    "Every bound is enforced over the exact serialization that is written, counting confirmed rows and pending intents together.",
+    "Shedding is oldest-first and never lets a shed intent become a notice.",
+    "Reclamation never replays what it removed."
+  ],
+  "exclusions": [
+    "A canonical event journal or second history.",
+    "Eternal exactly-once notification under saturation.",
+    "A cap measured on one representation and applied to another."
+  ],
+  "id": "INV-FYBRFQ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/reviewer/267804e5-dd71-51e8-8f1d-d975effaaeaf/role-launch/round4/L190-fix-verification-R4.json#L190-R1-F13; Prior sealed closure retained; not reopened in fixed-list R4."
+      ],
+      "path": "ingest-runB.json"
+    },
+    "handoffEntry": "L190-R1-F13",
+    "leaf": "260928-MIK-L190",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The notice store that holds pending and confirmed terminal notices enforces count and byte bounds over everything it writes, pending intents included.",
+  "status": "proposed",
+  "supersedes": []
+}

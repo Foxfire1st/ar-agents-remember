@@ -1,0 +1,130 @@
+{
+  "path": "mcp/src/agents_remember/serving/paseo/paseo_process_record.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ad010fdcaa7f108411838221580b9106cc99bcda",
+        "content": "sha256:4148858e54956c31ca751fb1ea4266263bf8e9434fb1a310f480ae246989d197",
+        "locator": {
+          "end": 7,
+          "kind": "line_range",
+          "start": 3
+        }
+      },
+      "id": "RLZ-0PMK4H",
+      "invariant": "INV-0TCWT9",
+      "origin": {
+        "handoffEntry": "MIK-R123@v1:sentences-0.11.1",
+        "leaf": "260928-MIK-L123"
+      },
+      "rationale": "The stop-semantics note pins the release whose stopDaemonInstance behavior it describes, now bootId-first with age fallback.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "ad010fdcaa7f108411838221580b9106cc99bcda",
+        "content": "sha256:6482cf2320845c9faec45f6ebf5dc9d5d8e34cb6df521f5cdcaa1f484f9098d9",
+        "locator": {
+          "end": 43,
+          "kind": "line_range",
+          "start": 43
+        }
+      },
+      "id": "RLZ-8GP5BH",
+      "invariant": "INV-E4E4N1",
+      "origin": {
+        "handoffEntry": "L84-K3C-E4E4N1-06",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Provisioning records the harness homes a running daemon inherited and refuses a restart that would change them unless the change is accepted.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ad010fdcaa7f108411838221580b9106cc99bcda",
+        "content": "sha256:dcfdf587dff67a56e5a8529786a589deb29aa6b5d1f0b342e17122417b9ea283",
+        "locator": {
+          "end": 96,
+          "kind": "line_range",
+          "start": 92
+        }
+      },
+      "id": "RLZ-KSDZB8",
+      "invariant": "INV-E4E4N1",
+      "origin": {
+        "handoffEntry": "L84-K3C-E4E4N1-07",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Provisioning records the harness homes a running daemon inherited and refuses a restart that would change them unless the change is accepted.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The home record trust rule remains an independent check of the recorded PID's actual home and process.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad010fdcaa7f108411838221580b9106cc99bcda",
+            "content": "sha256:89ca2b671107da33d70a1214d576e719008cf92e3e9b9da985b899a554edfbda",
+            "locator": {
+              "kind": "symbol",
+              "name": "inspect_record"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The process facts include the executable, carried session-variable names without values, and the values of the catalogued harness-home variables.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad010fdcaa7f108411838221580b9106cc99bcda",
+            "content": "sha256:42a45851cdcf3a33159f8893529cf007484a7c01887e414fdd9e57b463b4859e",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_process"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The module describes the boot-id-first stop predicate Paseo 0.11.1 to 0.15.4 uses, without treating liveness as proof of home ownership.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad010fdcaa7f108411838221580b9106cc99bcda",
+            "content": "sha256:715b1638b4fbfebcafc96a09a757c1a7fe1a17e4128990f351b1ab3a992faa97",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Harness-home values are kept out of the process facts' representation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad010fdcaa7f108411838221580b9106cc99bcda",
+            "content": "sha256:6482cf2320845c9faec45f6ebf5dc9d5d8e34cb6df521f5cdcaa1f484f9098d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "harness_homes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

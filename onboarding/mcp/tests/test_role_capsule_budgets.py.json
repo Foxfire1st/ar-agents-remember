@@ -1,0 +1,182 @@
+{
+  "path": "mcp/tests/test_role_capsule_budgets.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "6bbaa8006b5418ef6bb2712754d9027a173cccde",
+        "content": "sha256:e7cd68fad4ff4ba3370ec190a8d10c6d351698ff2f7655c848db5f19b766ce6a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_every_yielded_capsule_has_a_budget_and_no_other_key_does"
+        }
+      },
+      "facet": "Registry capsule keys exactly match the compiler's matrix, and step-detail keys exactly match manifest-declared details.",
+      "id": "PRF-2SHTSX",
+      "invariant": "INV-Y6GVZ7",
+      "origin": {
+        "handoffEntry": "L88-R125-current-budget-proof-facets",
+        "leaf": "260928-MIK-L88"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6bbaa8006b5418ef6bb2712754d9027a173cccde",
+        "content": "sha256:0374a910975c2810c57c2f2ff2d05016edc4be9b67651c5817f676c4b1cfc935",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_no_capsule_exceeds_its_recorded_budget"
+        }
+      },
+      "facet": "Compiles every capsule, declared detail and the digest and fails when a recorded size differs from the compiled size, a size exceeds its limit, a size or limit exceeds its ceiling, a key is missing or names no current source, or a frozen registry, its checker or the digest map changed.",
+      "id": "PRF-FWV5AA",
+      "invariant": "INV-Y6GVZ7",
+      "origin": {
+        "handoffEntry": "L84-K2-Y6GVZ7-current-budget-proof",
+        "leaf": "260928-MIK-L84"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The budget registry test requires capsule keys to equal the manifest-derived role/operation/launcher matrix, detail keys to equal every declared detail source, and the digest entry to have exactly size_words and budget_words.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6bbaa8006b5418ef6bb2712754d9027a173cccde",
+            "content": "sha256:e7cd68fad4ff4ba3370ec190a8d10c6d351698ff2f7655c848db5f19b766ce6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_yielded_capsule_has_a_budget_and_no_other_key_does"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6bbaa8006b5418ef6bb2712754d9027a173cccde",
+            "content": "sha256:abd53b56df301564da99a6ecb80d1f03cfb18c686c1597147951310683291cd3",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 85
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6bbaa8006b5418ef6bb2712754d9027a173cccde",
+            "content": "sha256:7dff536f0ef1b96ea21436fba17d9885cfa6a4abf8a2c94de1d3bad34de682c9",
+            "locator": {
+              "end": 193,
+              "kind": "line_range",
+              "start": 187
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The historical-registry guard rejects missing/orphan entries, a recorded size that differs from the measured one, any actual/stored/budget size over its supplied ceiling, a budget different from min(ceil(stored size_words*11/10), ceiling) unless a named approved limit applies, and actual size over budget. `capsule_ceiling` selects Architect 4631, Manager 4513, Curator 4100, Reviewer/Bootstrap 4000 and 3700 for other roles; its callers guard details at 2700 and the shared digest at 1474.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6bbaa8006b5418ef6bb2712754d9027a173cccde",
+            "content": "sha256:369e341b62746b7c7072f8849d6ff40fb1b6155350b528851c6d7c483d620140",
+            "locator": {
+              "kind": "symbol",
+              "name": "_budget_findings"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The tests measure whitespace-split words from freshly rendered capsule instructions, complete declared detail sources and the separately delivered every-role digest, and check them against the fingerprinted current record: exact recorded measurements, per-key limits and role-specific ceilings (Architect 5441, Manager 4522, Curator 4537, Reviewer 4049, Bootstrap 4000, otherwise 3722), details 2500 and digest 2266. Exact keys reject omissions and orphans; mutation controls invoke the real guards with changed inputs at and beyond the limits.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6bbaa8006b5418ef6bb2712754d9027a173cccde",
+            "content": "sha256:0374a910975c2810c57c2f2ff2d05016edc4be9b67651c5817f676c4b1cfc935",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_no_capsule_exceeds_its_recorded_budget"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Live capsule ceilings are 5441 words for Architect, 4522 for Manager, 4537 for Curator, 4049 for Reviewer, 4000 for Bootstrap and 3722 for other roles; declared step details have a 2500-word ceiling and the separately delivered every-role digest a 2266-word ceiling that must equal the digest map's maximum. Registry completeness, exact recorded measurements and exact/over-limit mutation controls apply independently. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8318c7529a92a28e65eb4163a582e66d3bb3d62",
+            "content": "sha256:8c2becfadaf1ba12345a93ed610585038b103dbd7f59b6d85aabde9d687a7b9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "current_budget_findings"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The historical-registry capsule ceilings by role.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6bbaa8006b5418ef6bb2712754d9027a173cccde",
+            "content": "sha256:e94d57ebaaacf8349e480ede3a6abfa44e49dfa6a0805a3614af5b726123a8df",
+            "locator": {
+              "kind": "symbol",
+              "name": "capsule_ceiling"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The current record's capsule, step-detail and digest ceilings.\n\nAnchor: `current_capsule_ceilings_words`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "214707ebce4f6867647ac01bef003737d3ad5390",
+            "content": "sha256:0182ac1d6688241bfe9ccfc2cdcacf4e1cdd183ad89fd9219578032fa7214ba2",
+            "locator": {
+              "end": 6371,
+              "kind": "line_range",
+              "start": 6362
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The historical registry's frozen decision records, historical sizes and named limits stay pinned.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6bbaa8006b5418ef6bb2712754d9027a173cccde",
+            "content": "sha256:f76fee3743fd30c4087e3a61ac627c50216ddb3f658dcf108751b310ed0e55a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_d681_preserves_history_and_only_the_24_named_limits"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

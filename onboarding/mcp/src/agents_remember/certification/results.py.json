@@ -1,0 +1,136 @@
+{
+  "path": "mcp/src/agents_remember/certification/results.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Result construction binds one terminal observation to a planned rail.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25c0fed2e2cbeae446f6d58c03c095b0eeadfe3d",
+            "content": "sha256:6f837f445e61fcb74559f90683d96f9f82b78350bf9df17445b59e4df80a5a80",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_rail_result"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Manifest compilation re-admits the plan and accumulates complete catalog and contract findings before publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25c0fed2e2cbeae446f6d58c03c095b0eeadfe3d",
+            "content": "sha256:cf66e3b2e5eaf8978a1b4158f48a4f19d13be247bd3aa2b4377791cd5980da82",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_gate_result_manifest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Catalog validation rejects result omission, insertion, duplication, and substitution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25c0fed2e2cbeae446f6d58c03c095b0eeadfe3d",
+            "content": "sha256:143281b8b803ad07530f4666039ae7ef4390eae5d287b7620fe4c76951c96ecb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_result_catalog"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Applicability, artifacts, and evidence are checked against the planned contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25c0fed2e2cbeae446f6d58c03c095b0eeadfe3d",
+            "content": "sha256:5b1d4814048148586bff6cc20d8335d8fa9e990000c1ddd22861e542d27c986f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_result_applicability"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "25c0fed2e2cbeae446f6d58c03c095b0eeadfe3d",
+            "content": "sha256:e388a10c77d4bdb2f3f9b60a1a8a43228b3c6da6ac1dc77877fb8cc2469cc7e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_result_artifacts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "25c0fed2e2cbeae446f6d58c03c095b0eeadfe3d",
+            "content": "sha256:1a4d6d8b92aae846a9e7ba19d5f3375f506d7a2f7c5bb54762c796d76e0215fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_result_evidence"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Blocking semantics distinguish enforcing prerequisites from independent or report-only failures.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25c0fed2e2cbeae446f6d58c03c095b0eeadfe3d",
+            "content": "sha256:888727b4b63a92b1a8c18ac99cc117a17d2e123911c31954dc5e9cbe9de96069",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_blocking_semantics"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "25c0fed2e2cbeae446f6d58c03c095b0eeadfe3d",
+            "content": "sha256:596495e9ffff4bebd78e4a8c9ea6e6551133ee8d39f350812b7757e37a3f6aa7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_expected_blockers"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "All result admission is driven by the generic `GatePlan`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25c0fed2e2cbeae446f6d58c03c095b0eeadfe3d",
+            "content": "sha256:cf66e3b2e5eaf8978a1b4158f48a4f19d13be247bd3aa2b4377791cd5980da82",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_gate_result_manifest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

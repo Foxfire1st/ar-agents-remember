@@ -1,0 +1,288 @@
+{
+  "path": "mcp/tests/tool_entry_point_sweep_support.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "25b3cb991b3fb7f75377478cc7516ae6e0b44ff6",
+        "content": "sha256:9cbed5b01f0cff1332dd4da507f21c4eda604ef294aa2928b27b4f92e9e8a986",
+        "locator": {
+          "kind": "symbol",
+          "name": "ENVELOPE_LOSING_RAISERS"
+        }
+      },
+      "id": "RLZ-25RX8K",
+      "invariant": "INV-8V5KH0",
+      "origin": {
+        "handoffEntry": "L130-pins-taken",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "Declares the current empty ENVELOPE_LOSING_RAISERS pin after L111 repairs; the preceding four-raiser ownership/removal account is historical, not four current members or an executed census. Bidirectional observed/pinned equality belongs to the separate assertion unit.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "25b3cb991b3fb7f75377478cc7516ae6e0b44ff6",
+        "content": "sha256:62f79d21a9b38e354584d2fa8b5302a2aaab2db6401e859f7fd7d3893d8aee9a",
+        "locator": {
+          "end": 61,
+          "kind": "line_range",
+          "start": 55
+        }
+      },
+      "id": "RLZ-6VVBP4",
+      "invariant": "INV-8V5KH0",
+      "origin": {
+        "handoffEntry": "MIK-R130 W03 pin comment",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "the realization entry the existing row records; unchanged by this landing",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "25b3cb991b3fb7f75377478cc7516ae6e0b44ff6",
+        "content": "sha256:7accf97cce3c54c263cd48959022ef447fb38e737093b6f661acd0c5f2d4b6f5",
+        "locator": {
+          "end": 71,
+          "kind": "line_range",
+          "start": 63
+        }
+      },
+      "id": "RLZ-B0D6N2",
+      "invariant": "INV-8V5KH0",
+      "origin": {
+        "handoffEntry": "MIK-R130 W03 pin constant",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "This span contains the current empty envelope-loss declaration and the introduction to the separately governed retained positive T34 population. The earlier four lifecycle preconditions were L111 repair provenance, not current pin members or this Curator's measurement.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "25b3cb991b3fb7f75377478cc7516ae6e0b44ff6",
+        "content": "sha256:9cbed5b01f0cff1332dd4da507f21c4eda604ef294aa2928b27b4f92e9e8a986",
+        "locator": {
+          "kind": "symbol",
+          "name": "ENVELOPE_LOSING_RAISERS"
+        }
+      },
+      "id": "RLZ-F381M7",
+      "invariant": "INV-TG334W",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-20",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The current ENVELOPE_LOSING_RAISERS constant is empty after the L111-owned repairs. Historical since-b52/L26 four-arm ownership and same-change pin removal remain provenance; positive repaired tools and shared-world populations are separate and no execution is claimed.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "25b3cb991b3fb7f75377478cc7516ae6e0b44ff6",
+        "content": "sha256:9cbed5b01f0cff1332dd4da507f21c4eda604ef294aa2928b27b4f92e9e8a986",
+        "locator": {
+          "kind": "symbol",
+          "name": "ENVELOPE_LOSING_RAISERS"
+        }
+      },
+      "id": "RLZ-WQDNDW",
+      "invariant": "INV-8V5KH0",
+      "origin": {
+        "handoffEntry": "MIK-R130@v1 rules 4+5 + failure/recovery",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "The actual ENVELOPE_LOSING_RAISERS declaration holds no current members. The four named worktree operations belong to the retained historical L111 repair account, not a present four-operation declaration or newly observed failures.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "25b3cb991b3fb7f75377478cc7516ae6e0b44ff6",
+        "content": "sha256:17ad49c49bee633b673e5481327505991854f0f36441ebc2266603b65e789608",
+        "locator": {
+          "kind": "symbol",
+          "name": "T34_REPAIRED_TOOLS"
+        }
+      },
+      "id": "RLZ-Y2XJG0",
+      "invariant": "INV-8V5KH0",
+      "origin": {
+        "handoffEntry": "MIK-R130 W03 sweep pin prose",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "The current T34 declaration keeps only memory_baseline_adopt after the eight code-search tools were retired; the adjacent source distinguishes named worktree pins from the empty ambient-state population, without a new failure-census claim.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "One classifier assigns the declared arms, separating the two raise shapes by model identity rather than by wording.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25b3cb991b3fb7f75377478cc7516ae6e0b44ff6",
+            "content": "sha256:26bfab83d0548342d180d30119c4eedbcb029c39d15753716ba73fd28af68518",
+            "locator": {
+              "end": 254,
+              "kind": "line_range",
+              "start": 244
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "25b3cb991b3fb7f75377478cc7516ae6e0b44ff6",
+            "content": "sha256:f5ab20eb78fe980df8ce04556764cd4ffc1b830432ac75476c47207d5b13f5c9",
+            "locator": {
+              "end": 192,
+              "kind": "line_range",
+              "start": 176
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "25b3cb991b3fb7f75377478cc7516ae6e0b44ff6",
+            "content": "sha256:1fce94dd9ea9b05303d0ecc585018e9f693698e93af637a911c7175e09948f5d",
+            "locator": {
+              "end": 241,
+              "kind": "line_range",
+              "start": 215
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The census reads the world by digest, with the coordination boundary split by declared write zone.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25b3cb991b3fb7f75377478cc7516ae6e0b44ff6",
+            "content": "sha256:4c277e3f6cd1ba9aac21f832e499c57b79bcba4bc7bb27b4d0407131d094c4ad",
+            "locator": {
+              "end": 491,
+              "kind": "line_range",
+              "start": 482
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "25b3cb991b3fb7f75377478cc7516ae6e0b44ff6",
+            "content": "sha256:f127c261cefa588bb2b1b0f2e7d08c83cd30459d1505f5a16eef698e423f75dc",
+            "locator": {
+              "end": 527,
+              "kind": "line_range",
+              "start": 516
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "25b3cb991b3fb7f75377478cc7516ae6e0b44ff6",
+            "content": "sha256:689f298c694be506b52157e170893aab4d47fac723aab316d34a1166933e27ec",
+            "locator": {
+              "end": 551,
+              "kind": "line_range",
+              "start": 529
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A usable logged whole-result mapping is read from disk; an absent, unreadable or non-mapping log leaves the delivered payload as the classifier input.\n\nAnchor: current definitions",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25b3cb991b3fb7f75377478cc7516ae6e0b44ff6",
+            "content": "sha256:e4c6a24c1df136e92f540a0c0935479293ce6465cc1852e9e44afa744c57762f",
+            "locator": {
+              "end": 212,
+              "kind": "line_range",
+              "start": 195
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Preparation is a no-op and sweep state fields are fixed none labels rather than observations.\n\nAnchor: current definitions",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25b3cb991b3fb7f75377478cc7516ae6e0b44ff6",
+            "content": "sha256:be83719ebc1daffc39553d0b5510b05747c085a55d7a590d1905ebb8e29eafcc",
+            "locator": {
+              "end": 879,
+              "kind": "line_range",
+              "start": 831
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "25b3cb991b3fb7f75377478cc7516ae6e0b44ff6",
+            "content": "sha256:338b0cb1bfd3d3f86fe8479d656631340a4564abb5d87e287a5b8098c769b291",
+            "locator": {
+              "end": 881,
+              "kind": "line_range",
+              "start": 833
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "25b3cb991b3fb7f75377478cc7516ae6e0b44ff6",
+            "content": "sha256:3308ffef88eac4875931431ddd9872856668358f05917de26e5b0b5c94312ec6",
+            "locator": {
+              "end": 868,
+              "kind": "line_range",
+              "start": 820
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "`call` returns a non-timeout BaseException observation with str detail, concrete exceptionType and innermost traceback exceptionLocation. Timeout propagation and the classifier remain separate; a captured exception is not a product acceptance result. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25b3cb991b3fb7f75377478cc7516ae6e0b44ff6",
+            "content": "sha256:4853ee49cf5490d625b7bbf9f669de1ade8e0b5819f976565d3e8ed5e1511fb9",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "25b3cb991b3fb7f75377478cc7516ae6e0b44ff6",
+            "content": "sha256:2a76a8ea8d904e2eecff49f5ba9279facd629192a2c5ba20bb4b52b8018bdda0",
+            "locator": {
+              "end": 478,
+              "kind": "line_range",
+              "start": 443
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

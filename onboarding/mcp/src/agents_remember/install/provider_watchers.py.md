@@ -1,14 +1,24 @@
 # mcp/src/agents_remember/install/provider_watchers.py
 
-| Field                  | Value                                              |
-| ---------------------- | -------------------------------------------------- |
-| repository             | agents-remember                                 |
-| path                   | `mcp/src/agents_remember/install/provider_watchers.py` |
-| doc_type               | `file-level-onboarding`                            |
-| lastUpdated            | 2026-07-31T00:00+02:00                             |
-| lastVerifiedCommitHash |                                                    `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
-| lastVerifiedCommitDate |                                                    2026-09-17T23:56:19+02:00|
-| governingOverview      | `../../../overview.md`                             |
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- complete_provider_watcher_rebind was deleted.
+- Pre-refresh stop returns its result instead of raising on failure.
+- A failed stop sets report.ok=false and records recovery; no start/status/retry cycle remains here.
+
+### Source and authority bounds
+
+- Source comparison: `mcp/src/agents_remember/install/provider_watchers.py:128-146`.
+- Source comparison: `git diff HEAD -- mcp/src/agents_remember/install/provider_watchers.py (removed complete_provider_watcher_rebind)`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
 
 ## Governing Overview
 
@@ -76,49 +86,31 @@ actions.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external documentation is configured for this repository slice.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant documentation found after checking configured sources. | n/a | n/a |
+No relevant documentation found after checking configured sources.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The helper is called from runtime installation and is covered by the installer
 regression suite.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The rebind report stores lifecycle runs, readiness, recovery actions, messages, and the MCP payload shape. | `payload` | mcp/src/agents_remember/install/provider_watchers.py:25-31 |
-| Watcher lifecycle calls use temporary provider settings, `lifecycle.watchers_run`, and per-phase result recording. | "watchers_run" | mcp/src/agents_remember/install/provider_watchers.py:83-83 |
-| The pre-refresh stop aborts on non-ok/partial watcher stop before runtime provider refresh proceeds. | `stop_provider_watchers_before_refresh` | mcp/src/agents_remember/install/provider_watchers.py:128-141 |
-| The post-install path starts watchers, checks status, and attempts one non-destructive restart/rebind before adding recovery guidance. | `complete_provider_watcher_rebind` | mcp/src/agents_remember/install/provider_watchers.py:144-166 |
-| Runtime install creates and attaches the report, stops watchers before provider refresh, and completes rebind/recovery before returning. | `install_runtime` | mcp/src/agents_remember/install/runtime.py:633-651 |
+- The rebind report stores lifecycle runs, readiness, recovery actions, messages, and the MCP payload shape. [1]
+- Watcher lifecycle calls use temporary provider settings, `lifecycle.watchers_run`, and per-phase result recording. [2]
 
-## Cross-Repo References
+- A pre-refresh stop that is not ok or is partial is recorded on the rebind report with recovery guidance, and the install continues rather than aborting. [3]
+
+- Runtime install creates and attaches the report, stops watchers before provider refresh, and completes rebind/recovery before returning. [5]
+
+
+### Cross-Repo References
 
 No sibling repository evidence is needed for this helper.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
+No meaningful cross-repo references found.
 
-## Update History
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `install_runtime` repointed to mcp/src/agents_remember/install/runtime.py:633-651. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-08-02T21:18:27+02:00 — 260731-EFA-L6 curator W2-B06: repaired 6 citation claims; scoped result 0 findings.
-
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 3 cross-file line citations that moved when
-  the rebind helper was re-signed onto `ProviderWatcherRebind`. `complete_provider_watcher_rebind` is
-  now L144-L166 (was L154-L214, past the 166-line file); the `install_runtime` create/attach/stop plus
-  complete-rebind-before-return span is now L486-L553 in `runtime.py` (was L437-L527); the five focused
-  watcher-rebind tests now span L166-L463 in `test_install_runtime.py` (was L162-L452). All three ranges
-  read back against the current files.
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
-  added the frozen `ProviderWatcherRebind` and re-signed `run_provider_watcher_lifecycle`,
-  `stop_provider_watchers_before_refresh` and `complete_provider_watcher_rebind` onto it; the
-  `ProviderWatcherRebindReport` now rides on the rebind rather than being passed alongside it.
-  Ordering, retry and reported detail are unchanged. Verification metadata pinned until closeout
-  stamps the L2 commit.
-- 2026-06-04T22:15+02:00 — Created for the extracted runtime-install provider watcher rebind helper.
+</details>

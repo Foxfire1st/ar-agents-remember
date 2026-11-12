@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_completed_disposition.py",
+  "realizes": [],
+  "references": {
+    "2": {
+      "note": "Direct retire uses the shared owner predicate while existing integration and worker guards stay in force; direct supersede is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc69b9d1a4ee21d7057406891463fd33f0d5c094",
+            "content": "sha256:c95e1da155e233c245ccaa6fad5ffa50219d8495af87fa7e3c822db279d70fe5",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_completed_disposition"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

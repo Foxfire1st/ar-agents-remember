@@ -1,0 +1,36 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/observation.py",
+  "realizes": [],
+  "references": {
+    "2": {
+      "note": "Nested typed expected/observed evidence is recursively projected before structured refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c5b0f59bdf034f5e9ba4daf7aa19126196534506",
+            "content": "sha256:c9399fc7fd60d86c869d310f1734097cfc95b2f1bf848dbf804368b6ab234481",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c5b0f59bdf034f5e9ba4daf7aa19126196534506",
+            "content": "sha256:c4d91de04b3476bff7e646fc9baaec5384e877a00b93d2b7bab7b36af3e83e15",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 24
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

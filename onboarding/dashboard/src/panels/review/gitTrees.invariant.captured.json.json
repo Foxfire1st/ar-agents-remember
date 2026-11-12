@@ -1,0 +1,42 @@
+{
+  "path": "dashboard/src/panels/review/gitTrees.invariant.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The tree comparison it was read from (comparison 1 of the MIK-L31 scratch leaf).\n\nAnchor: \"review:trees:1\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c3bba24b53d91f6094d5dff986924c394189956b",
+            "content": "sha256:7bc54df267d6cc12a0a47ea60090f13a225acff853f81cdba77ca58436af2a7b",
+            "locator": {
+              "end": 1354,
+              "kind": "line_range",
+              "start": 1354
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The receipt row for this body, now with its request parameters.\n\nAnchor: \"gitTrees.invariant.captured.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "209e45f182a9af6d8819dc68e9669752abef54bf",
+            "content": "sha256:a38308e0c5aa0188b93511646f4413f2338f05cf1564bdeb2979f61dee1b5bf1",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 39
+            },
+            "path": "dashboard/src/panels/review/gitTrees.capture-provenance.json"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

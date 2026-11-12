@@ -1,0 +1,277 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_gate/memo.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "3078da5a68a54af6da5b09d38d2d4f08715e2a61",
+        "content": "sha256:a4b8c3d8f66fe43c7e3fc954b66e599bc720b6e9248ca90b7cdb72c8a7ba807d",
+        "locator": {
+          "kind": "symbol",
+          "name": "_Kept"
+        }
+      },
+      "id": "RLZ-777280",
+      "invariant": "INV-D2HZQ8",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-gate-verdict-follows-selections",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "Holds a verdict with the rows recorded for it and answers whether they still read the same through changed_observations over those rows.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "3078da5a68a54af6da5b09d38d2d4f08715e2a61",
+        "content": "sha256:c5a9d47dc523af4fae2607acdf66554200cd2e8bd1f4c866c038d40df8626399",
+        "locator": {
+          "kind": "symbol",
+          "name": "memo_key"
+        }
+      },
+      "id": "RLZ-CCQGJK",
+      "invariant": "INV-7PGZ9Y",
+      "origin": {
+        "handoffEntry": "L54-curator-MIK-R55-v1-rule-6-actual-guards-wave-70",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "Memo-key preparation obtains its contract and selected task bytes through the recorded-read owner rather than unrecorded read_bytes.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "3078da5a68a54af6da5b09d38d2d4f08715e2a61",
+        "content": "sha256:ad04419ef9439b7fa3e28b949be2f26ad8cb9f2cef8bccceedeef7d05756c49b",
+        "locator": {
+          "kind": "symbol",
+          "name": "remember"
+        }
+      },
+      "id": "RLZ-NAFPMS",
+      "invariant": "INV-D2HZQ8",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-gate-verdict-follows-selections",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "Keeps only a memoisable verdict whose rows hold no failed observation.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "3078da5a68a54af6da5b09d38d2d4f08715e2a61",
+        "content": "sha256:ab8c43d7462271b00d28215b0e6389d0cdc911c320e0f8965db1a09a52f004d8",
+        "locator": {
+          "kind": "symbol",
+          "name": "remembered"
+        }
+      },
+      "id": "RLZ-ZJCH68",
+      "invariant": "INV-D2HZQ8",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-gate-verdict-follows-selections",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "Serves a kept verdict only when it is young enough and its kept rows report no change.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "3078da5a68a54af6da5b09d38d2d4f08715e2a61",
+        "content": "sha256:e400485720addf668d9714aae3e9dcec952731a90ef9e533ed61f8b4314a6b58",
+        "locator": {
+          "kind": "symbol",
+          "name": "_read_bytes"
+        }
+      },
+      "id": "RLZ-ZQY7EV",
+      "invariant": "INV-7PGZ9Y",
+      "origin": {
+        "handoffEntry": "L54-curator-MIK-R55-v1-rule-6-actual-guards-wave-70",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "The consumed-byte wrapper records exact successful bytes or actual absence/read failure before memo-key construction.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "12": {
+      "note": "The key's fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3078da5a68a54af6da5b09d38d2d4f08715e2a61",
+            "content": "sha256:aab67928384bb56185a5012e48968fc984b9903efe98efd451719d8da9852db6",
+            "locator": {
+              "kind": "symbol",
+              "name": "GateMemoKey"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The key from contract bytes, the strict task lookup and the build stamp.\n\nAnchor: `memo_key`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3078da5a68a54af6da5b09d38d2d4f08715e2a61",
+            "content": "sha256:1ff71cf107836b013b2df97b909ec83371429f9410fcd6d6fcf6d1ec0e689ae6",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "A kept verdict is served only when young enough and unchanged.\n\nAnchor: `remembered`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3078da5a68a54af6da5b09d38d2d4f08715e2a61",
+            "content": "sha256:1ff71cf107836b013b2df97b909ec83371429f9410fcd6d6fcf6d1ec0e689ae6",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The gate asks the memo, records its reads and offers the verdict.\n\nAnchor: `evaluate_leaf_gate`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf1a7a3024b89c4ce174451e062bcf2cf3fa4a98",
+            "content": "sha256:9c50fa8900ad1086748427f41ff4eefd597790146ac56b0ef3b324d4e2cc0f3a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "A warm pass becomes the refusal when the packet locator is retargeted to a file with the same bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+            "content": "sha256:1446cc189bdfc847e52f08f12e39dc316d9482c56ebba34c7493d19936aa29de",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_gates_warm_pass_becomes_the_refusal_when_a_packet_locator_is_retargeted"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "The gate's verdict follows the packet in both directions, and a repeated evaluation gives the same verdict.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+            "content": "sha256:525de24ac76e4627bf2b0ffd1ba7d5e701c5ec644922ae6ffdbf7c3ae47c2e32",
+            "locator": {
+              "kind": "symbol",
+              "name": "_packet_confinement"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "A verdict behind an unreadable contract read keeps its answer and occupies no memo slot.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+            "content": "sha256:34bdc078eebaf81a6714ca4f9ec68744347a1449fe40e06e26a458638d867962",
+            "locator": {
+              "kind": "symbol",
+              "name": "_gate_failed_selector"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "Every file read is in the read set and a conflicting read is never kept.\n\nAnchor: `test_every_file_read_is_in_the_read_set_and_a_conflicting_read_is_never_kept`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb21438758c57cf647872e223994856f0ee5bd5d",
+            "content": "sha256:1bcf74a1372072144d39d4252082585bbcc86540d62cc4aa888664961a69d8f9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_gate_routes.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "The same trees against another parent tip are another key and another evaluation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb21438758c57cf647872e223994856f0ee5bd5d",
+            "content": "sha256:208b8ef141a1c32d17061d4ba27d38bd67d44d2ba97e3898f030725c419679f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_memo_key_holds_the_parent_tip"
+            },
+            "path": "mcp/tests/test_knowledge_gate_routes.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "The worktree layer's gate port calls the gate.\n\nAnchor: `leaf_refusal`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6230c3e5be5c089ead09c2ad0f4823e17d7002ca",
+            "content": "sha256:f224a678847d934667500b2c69209c217c2d7113c4f49614e40712875215c2e1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/adapter.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "Contract and found task-document reads record their digest or read failure while constructing the exact memo key.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3078da5a68a54af6da5b09d38d2d4f08715e2a61",
+            "content": "sha256:d95f05732be7fdccf66028ec8adf539d0dd2af05f3b55b7122573976db020a91",
+            "locator": {
+              "end": 142,
+              "kind": "line_range",
+              "start": 100
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

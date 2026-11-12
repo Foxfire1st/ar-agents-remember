@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The recorded behavioral fixture assertions guard this obligation; the proof facets distinguish their limited fixture behavior from real-host or full-final acceptance."
+  },
+  "applicability": "Native held-message admission, delivery and terminal receipt publication for a receipt-tracked recipient.",
+  "conditions": [
+    "The recipient workspace and durable store remain available after the interrupted step.",
+    "A host-accepted replay without duplicate delivery depends on host deduplication by the durable message ID; transport recovery is at least once.",
+    "Ended text is removed after compact terminal metadata is staged."
+  ],
+  "exclusions": [
+    "A real-host exactly-once witness; the existing tests use a fake host.",
+    "A fixed bound on all filesystem names enumerated for execution-root discovery."
+  ],
+  "id": "INV-ATA2Z7",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_held_queue.py::HeldQueueRecoveryTests zero-counter and delete-before-stage tests pass; scratch/worker/5e0b3a10-7a35-4c5e-9f11-100000000001/xdg/r6-probe-final0.txt sha c484e288071f: F03 swept=1 delivered=1, terminal=1 pending empty received once"
+      ],
+      "path": "l100-knowledge-handoff.json"
+    },
+    "handoffEntry": "L100-R100-4a-recovery",
+    "leaf": "260928-MIK-L100",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A crash between store admission and counter publication, or between host delivery with store deletion and end staging, is discovered and completed on restart with the terminal end recorded and no duplicate delivery.",
+  "status": "proposed",
+  "supersedes": []
+}

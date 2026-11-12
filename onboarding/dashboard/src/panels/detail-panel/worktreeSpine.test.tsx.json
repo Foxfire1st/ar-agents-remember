@@ -1,0 +1,121 @@
+{
+  "path": "dashboard/src/panels/detail-panel/worktreeSpine.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "69edaf9a74172327a7d0c2e390ff053479cdfa73",
+        "content": "sha256:9eb69e5e3bdbf981437e05707952ed184a63e0e445306a81b9959d3ec41e713d",
+        "locator": {
+          "kind": "symbol",
+          "name": "the worktree spine carries checkouts, not engines > names both checkout paths with their existence and cleanup facts"
+        }
+      },
+      "facet": "the shared header names the group's checkout path and each lane renders its repo name, existence and cleanup, and no engine lane exists to render",
+      "id": "PRF-VR8SGQ",
+      "invariant": "INV-H2G4R2",
+      "origin": {
+        "handoffEntry": "L192-W-R199-01",
+        "leaf": "260928-MIK-L192"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Lane text is reached by test id, and the two lanes are named `code checkout` and `memory checkout` beside their presence and cleanup facts.\n\nAnchor: `spine-lane-${kind}`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69edaf9a74172327a7d0c2e390ff053479cdfa73",
+            "content": "sha256:6df2c8e0e7493c0d8aa39c7afe991ee81f8b2f06b736a4e4aa0dc53b9b07ca44",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 34
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Absence is asserted as current absence under both cleanup histories, with history phrasing refused on each lane.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69edaf9a74172327a7d0c2e390ff053479cdfa73",
+            "content": "sha256:f0135d20ff64e119ecb8928f72938c285293b48963fa116f8d6418d11885630a",
+            "locator": {
+              "kind": "symbol",
+              "name": "UNSUPPORTED_HISTORY_WORDS"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "69edaf9a74172327a7d0c2e390ff053479cdfa73",
+            "content": "sha256:b68104a8042075fa3fa354f83e9dc35bf85fb43b54b0cf95094ceae60cbd23d6",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 61
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A present checkout keeps the present/cleanup label and its repo name on both lanes.\n\nAnchor: `the worktree spine carries checkouts, not engines`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69edaf9a74172327a7d0c2e390ff053479cdfa73",
+            "content": "sha256:38a395b141cbc8151d9bb3a13268a554deca93cb7bf1fd996850ad9cc01c034f",
+            "locator": {
+              "end": 115,
+              "kind": "line_range",
+              "start": 96
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The Tasks view keeps the enclosure and task facts and drops every retired lane word from the whole panel.\n\nAnchor: `DetailPanel`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69edaf9a74172327a7d0c2e390ff053479cdfa73",
+            "content": "sha256:74da238c020f5eaee033e68fe96a274b83147349477681d3742c470f8ab56b68",
+            "locator": {
+              "end": 136,
+              "kind": "line_range",
+              "start": 117
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The retired engine vocabulary is a named list asserted against rendered text.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69edaf9a74172327a7d0c2e390ff053479cdfa73",
+            "content": "sha256:fd7e39c20c593fda9aef45432f2530ac11453956d8f03817ff1eb9bfb4d46927",
+            "locator": {
+              "kind": "symbol",
+              "name": "RETIRED_LANE_WORDS"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

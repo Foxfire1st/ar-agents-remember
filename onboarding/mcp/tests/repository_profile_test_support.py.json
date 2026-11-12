@@ -1,0 +1,211 @@
+{
+  "path": "mcp/tests/repository_profile_test_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Anchor: Repository profile copied into owned fixture.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1d98ffa880e0a5db9c372dbdd0434a983699b79",
+            "content": "sha256:7353cbb26c950a37b4274549efda32cfe3af97c27d10498339fbf6eb7ab98f1d",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 70
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "Anchor: Fake graph client is not a running daemon.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1d98ffa880e0a5db9c372dbdd0434a983699b79",
+            "content": "sha256:1554e862e1aeb9cb460bf49f6547288d7acbe5be4cd8722476c02e03473ba7ff",
+            "locator": {
+              "end": 857,
+              "kind": "line_range",
+              "start": 849
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Anchor: Actual candidate-tree/profile admission; no source-selection artifact writer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1d98ffa880e0a5db9c372dbdd0434a983699b79",
+            "content": "sha256:43cf9d78cb48f1bf693c3ea0394e61053fd3b151b78f7e84c3ede4f988f2cbe6",
+            "locator": {
+              "end": 122,
+              "kind": "line_range",
+              "start": 103
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "Anchor: Fixture environment census reads tiny declared files.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1d98ffa880e0a5db9c372dbdd0434a983699b79",
+            "content": "sha256:1263e7eb15c131f7196b83b4318667df1de839550303db2bdb2ccd23e744e45b",
+            "locator": {
+              "end": 602,
+              "kind": "line_range",
+              "start": 591
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "Anchor: SDK execution records detached fixture file maps.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1d98ffa880e0a5db9c372dbdd0434a983699b79",
+            "content": "sha256:eeafd7808d9fa0110062046d1543a6c5940bc1c6e4fc087e701aceebf3ba6f7e",
+            "locator": {
+              "end": 772,
+              "kind": "line_range",
+              "start": 605
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Anchor: Generic fixture profile installation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1d98ffa880e0a5db9c372dbdd0434a983699b79",
+            "content": "sha256:37c4af49e159ebef6ed153e5da47b2acdcd47b4ed245817db509492e1a0c8129",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 79
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Anchor: Complete language fixture source/runtime declarations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1d98ffa880e0a5db9c372dbdd0434a983699b79",
+            "content": "sha256:c2e310c64749886b9ac167105d8fcb150e40422ff80023776ee52336d7962cb3",
+            "locator": {
+              "end": 158,
+              "kind": "line_range",
+              "start": 141
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Anchor: Fixture profile selectors/adapters/decoder vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1d98ffa880e0a5db9c372dbdd0434a983699b79",
+            "content": "sha256:992306c9df4974390e2673c044f8b07165ce7d2ca5d5ed2312a71342e2a9a670",
+            "locator": {
+              "end": 433,
+              "kind": "line_range",
+              "start": 276
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Anchor: Dagger runtime digest is computed from actual bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1d98ffa880e0a5db9c372dbdd0434a983699b79",
+            "content": "sha256:66a18ef596cd9b7df7ed34a3357335e353465961e4ddf36b93fcfae44d4f23a8",
+            "locator": {
+              "end": 137,
+              "kind": "line_range",
+              "start": 129
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Anchor: Portable execution manifest, not a fabricated Git observation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1d98ffa880e0a5db9c372dbdd0434a983699b79",
+            "content": "sha256:6f33a5aa2ac412639cd041a6ba44f5b0a3a59c5c08764f1f0baa375bdd3f8d61",
+            "locator": {
+              "end": 484,
+              "kind": "line_range",
+              "start": 451
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Anchor: Detached container graph double.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1d98ffa880e0a5db9c372dbdd0434a983699b79",
+            "content": "sha256:eeafd7808d9fa0110062046d1543a6c5940bc1c6e4fc087e701aceebf3ba6f7e",
+            "locator": {
+              "end": 772,
+              "kind": "line_range",
+              "start": 605
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Anchor: Fixture file value returned by the SDK double.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1d98ffa880e0a5db9c372dbdd0434a983699b79",
+            "content": "sha256:07e27508c37bea26e6c151e344e25c2f19c86de43b8e093965ab247f46f83bf7",
+            "locator": {
+              "end": 783,
+              "kind": "line_range",
+              "start": 775
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

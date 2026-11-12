@@ -1,0 +1,75 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_worklist/onboarding_trace.py",
+  "realizes": [],
+  "references": {
+    "31": {
+      "note": "Registration and ordinary row/source requirement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "255aedff14033a59a3efacf0f35afacec2578d89",
+            "content": "sha256:00261523642095b79b0e353262b7d4b57fa53c66d8327d16bd7361e2cc4e5354",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 80
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "Side inputs, conversions and actual settings reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "255aedff14033a59a3efacf0f35afacec2578d89",
+            "content": "sha256:f9c0a759d1f2d652da4b335427ca96925b8064840bbffe23b38bf03f9f2c8c69",
+            "locator": {
+              "end": 213,
+              "kind": "line_range",
+              "start": 98
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "The exact candidate blob map and identical-change source groups reach the complete trace merge",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "255aedff14033a59a3efacf0f35afacec2578d89",
+            "content": "sha256:ad4308a570f2d7a7c7605a7c668477101e90154f256111e5e6dfe4bd90c1cb73",
+            "locator": {
+              "end": 306,
+              "kind": "line_range",
+              "start": 272
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "The bridge forwards actual identical-change groups and captured code blobs into onboarding trace evaluation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "255aedff14033a59a3efacf0f35afacec2578d89",
+            "content": "sha256:ad4308a570f2d7a7c7605a7c668477101e90154f256111e5e6dfe4bd90c1cb73",
+            "locator": {
+              "end": 306,
+              "kind": "line_range",
+              "start": 272
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

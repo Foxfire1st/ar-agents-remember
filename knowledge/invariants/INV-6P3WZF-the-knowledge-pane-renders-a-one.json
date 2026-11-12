@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Confusing unreadability with known absence or hiding a recorded empty field silently changes what the reader can infer from the comparison."
+  },
+  "applicability": "The selected reviewer subject's one-sided statement and visible non-authored field-value rendering.",
+  "conditions": [
+    "Rendering follows the two declared operand states; an absent side may be the stated empty diff operand, but an unreadable side may not.",
+    "A non-authored value is unrecorded only when undefined; a recorded empty string keeps its own explicit label."
+  ],
+  "exclusions": [
+    "Mounting a knowledge pane when no subject is selected.",
+    "Reintroducing authored text values into Technical details or the non-authored field list."
+  ],
+  "id": "INV-6P3WZF",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "KnowledgeStatements.test.tsx 9/9 green (s6-focused-final.log); whole runs above"
+      ],
+      "path": "handoff-supported.json"
+    },
+    "handoffEntry": "MIK-L154 knowledge one-sided statements",
+    "leaf": "260928-MIK-L154",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The knowledge pane renders a one-sided statement's available text beside the explicit named absent/unreadable side, and names absent vs recorded-empty field values without printing either as blank.",
+  "status": "proposed",
+  "supersedes": []
+}

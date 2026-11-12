@@ -1,0 +1,25 @@
+{
+  "path": "mcp/src/agents_remember/providers/lifecycle/runtime_environment.py",
+  "realizes": [],
+  "references": {
+    "2": {
+      "note": "Command execution uses the subprocess environment helper.\n\nAnchor: [\"subprocess_env(None)\"]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "337ede2a94b54f8ec9ed9a95d5597c700991e152",
+            "content": "sha256:91caf96d05f5b7bdb621534983d048c09611b33a8703933c4401da424c0c9ddb",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/command_runner.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

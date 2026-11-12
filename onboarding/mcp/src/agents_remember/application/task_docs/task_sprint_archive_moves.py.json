@@ -1,0 +1,95 @@
+{
+  "path": "mcp/src/agents_remember/application/task_docs/task_sprint_archive_moves.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7e31358d525109344419b3de059fa6c6cbf350ef",
+        "content": "sha256:10110fd91a755b587c883bb9cd0f784447a274924041d3d14c3728bcf1ec36ff",
+        "locator": {
+          "kind": "symbol",
+          "name": "_restore_targets"
+        }
+      },
+      "id": "RLZ-0BE9A2",
+      "invariant": "INV-4RTF8V",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-01",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "7e31358d525109344419b3de059fa6c6cbf350ef",
+        "content": "sha256:810c2309354013897343615f6470b01384de7ebfa686edca44e71f1dee748de6",
+        "locator": {
+          "kind": "symbol",
+          "name": "_phase_one"
+        }
+      },
+      "id": "RLZ-AZFX64",
+      "invariant": "INV-8FSQZJ",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-13",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "7e31358d525109344419b3de059fa6c6cbf350ef",
+        "content": "sha256:10110fd91a755b587c883bb9cd0f784447a274924041d3d14c3728bcf1ec36ff",
+        "locator": {
+          "kind": "symbol",
+          "name": "_restore_targets"
+        }
+      },
+      "id": "RLZ-MDK5ZV",
+      "invariant": "INV-G4ED1Q",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-01",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "7e31358d525109344419b3de059fa6c6cbf350ef",
+        "content": "sha256:810c2309354013897343615f6470b01384de7ebfa686edca44e71f1dee748de6",
+        "locator": {
+          "kind": "symbol",
+          "name": "_phase_one"
+        }
+      },
+      "id": "RLZ-VQM1H6",
+      "invariant": "INV-YETAXG",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-13",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Ordered folder moves with full rollback before completion, then per-folder hook cleanup with retry of the remainder.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e31358d525109344419b3de059fa6c6cbf350ef",
+            "content": "sha256:b403d8eea45bb6fb1eb7fc004ddeb01ceeb5e3c6d8cdeccbebb4d55c0b060cc9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

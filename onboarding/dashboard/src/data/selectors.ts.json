@@ -1,0 +1,101 @@
+{
+  "path": "dashboard/src/data/selectors.ts",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "45703aad8672ac0bd3f53a1e3be16aef2ad16336",
+        "content": "sha256:f9a468be21f745ce68abb4692d7cff78eddbba96844874c4ee80194c83731e5e",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-K1KD32",
+      "invariant": "INV-GQ9C07",
+      "origin": {
+        "handoffEntry": "L192-W-R199-02",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "selectors.ts at C derives no provider state for any panel.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "45703aad8672ac0bd3f53a1e3be16aef2ad16336",
+        "content": "sha256:73c94ec98ff59774ca714fc57c18f3a2b416803757d40931678111e3b102ccf7",
+        "locator": {
+          "kind": "symbol",
+          "name": "selectHostActivityUnknown"
+        }
+      },
+      "id": "RLZ-T4JN5H",
+      "invariant": "INV-YK0D2W",
+      "origin": {
+        "handoffEntry": "D305 item 4 / L168-W-A015-host-activity-once",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "The one reading of the published count that every consumer uses.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "selectQueue caches the visible queue by the queue array's identity and the suppression map's identity, and hides every row whose id is in that map, whatever the entry's kind.\n\nAnchor: `selectQueue`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45703aad8672ac0bd3f53a1e3be16aef2ad16336",
+            "content": "sha256:f9a468be21f745ce68abb4692d7cff78eddbba96844874c4ee80194c83731e5e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The converted drift names order with the legacy classifications, healthy first.\n\nAnchor: `DRIFT_ORDER`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45703aad8672ac0bd3f53a1e3be16aef2ad16336",
+            "content": "sha256:f9a468be21f745ce68abb4692d7cff78eddbba96844874c4ee80194c83731e5e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Host-observation availability is read from the served unknown count, not recomputed from agents or elapsed time.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45703aad8672ac0bd3f53a1e3be16aef2ad16336",
+            "content": "sha256:73c94ec98ff59774ca714fc57c18f3a2b416803757d40931678111e3b102ccf7",
+            "locator": {
+              "kind": "symbol",
+              "name": "selectHostActivityUnknown"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "45703aad8672ac0bd3f53a1e3be16aef2ad16336",
+            "content": "sha256:73c94ec98ff59774ca714fc57c18f3a2b416803757d40931678111e3b102ccf7",
+            "locator": {
+              "kind": "symbol",
+              "name": "selectHostActivityUnknown"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

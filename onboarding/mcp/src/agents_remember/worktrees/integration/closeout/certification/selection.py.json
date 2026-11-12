@@ -1,0 +1,51 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Exact named store objects are reopened with a required runtime type; the loaded complete-graph DTO was removed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c8cc69c44f4910bb5cbf4400f19f879a1b4dc36",
+            "content": "sha256:2835089f22854586685f151cedfa3ac44ca845d92eb3362d2bf50a803815391b",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 37
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Terminal loading reopens original publication bytes and validates full result/certificate authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c8cc69c44f4910bb5cbf4400f19f879a1b4dc36",
+            "content": "sha256:2476185869975c2d278ff2a50ca770fe8b30c82309333f51da343a8ba17d2054",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_selected_terminal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c8cc69c44f4910bb5cbf4400f19f879a1b4dc36",
+            "content": "sha256:b244255b64bac99f5730445d44ccc7ddabf108b9a6c67838690ccb764e19b6d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "terminal_selection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

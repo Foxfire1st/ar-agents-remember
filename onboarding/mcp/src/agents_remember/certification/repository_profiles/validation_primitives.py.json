@@ -1,0 +1,55 @@
+{
+  "path": "mcp/src/agents_remember/certification/repository_profiles/validation_primitives.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`_finding` implements the described validation step.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c311a38260f5433079fea1969dc55f3c743ba92b",
+            "content": "sha256:05916d83fa7bb9439dd1400c184ee3c874eca2f0fa74378a14633ba4ed36035e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_finding"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`_duplicates` implements the described validation step.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c311a38260f5433079fea1969dc55f3c743ba92b",
+            "content": "sha256:5493bbd4fe2637bd9f0fdbcd3d3c65ba7d8e87f2f93ab2d2a27a2add9c846e14",
+            "locator": {
+              "kind": "symbol",
+              "name": "_duplicates"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`_validate_gate_set` implements the described validation step.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c311a38260f5433079fea1969dc55f3c743ba92b",
+            "content": "sha256:6f125cf1ef8012b734f77f237a97d9860a24886bc9f98aeed3e1636ac5001784",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_gate_set"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

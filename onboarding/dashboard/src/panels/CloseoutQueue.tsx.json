@@ -1,0 +1,55 @@
+{
+  "path": "dashboard/src/panels/CloseoutQueue.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Candidate row renders state, grade, and reasons.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62251f313ef49ee93fea2fbbf69165052b43f298",
+            "content": "sha256:b0fd4f8d7bdc1f79cffffc53a3f35a0277aa6be92d5e93aa4f39477513deebaa",
+            "locator": {
+              "kind": "symbol",
+              "name": "CandidateRow"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Queue section renders service/source condition, source problems, and member list.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62251f313ef49ee93fea2fbbf69165052b43f298",
+            "content": "sha256:455effeae9138282cb99408840a4856ce60169bf0386e656facfac467c563aab",
+            "locator": {
+              "kind": "symbol",
+              "name": "Queue"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Panel selects and renders the projected queues.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62251f313ef49ee93fea2fbbf69165052b43f298",
+            "content": "sha256:4326483fc232e5884a4d6f70b47bea09b8669728ed8131c937aa67aa1a866f68",
+            "locator": {
+              "kind": "symbol",
+              "name": "CloseoutQueue"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

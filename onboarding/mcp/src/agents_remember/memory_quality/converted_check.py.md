@@ -1,0 +1,119 @@
+# mcp/src/agents_remember/memory_quality/converted_check.py
+
+## Governing Overview
+
+[memory_quality route overview](overview.md)
+
+## Purpose
+
+**The memory-quality run on a converted memory tree.** A converted card has no metadata
+table, no Update History and no citation tables, so the checks that read those have nothing to check.
+Currentness comes from anchors instead, so the integrity slot runs the knowledge validator plus the
+stale-reference report. `memory_quality/check.run_memory_quality_check` dispatches here when the tree
+holds `knowledge/layout.json`.
+
+## Code Commentary
+
+### Landing-report scope
+
+The converted check optionally joins landing observations to `reportOnlyFindings` and exposes cut-card counts/rows plus added-file counts/bytes/rows. Its `landing_base` is separate from the validator `base`: admitted leaves use the contract base so committed leaf progress remains visible. `include_landing=False` lets the drift summary measure only validator/reference state without acquiring the landing census. Landing rows never enter `findings`, change `ok`, or count as actionable.
+
+
+- Landing facts join only the report-only population; their leaf base is independent from the validator base.
+
+
+
+
+### Logic
+
+
+- `converted_knowledge_check(memory_root, code_root, *, base=None)` validates the working tree
+  (`validate_tree`) against the supplied source reader. A direct `Path` input uses `CodeDirectory`; full quality dispatch supplies `QualitySourceFiles`. Its K_B comes from `_comparison_bases`:
+  without a `base` port, the repository's converted `HEAD` when it has one (`_committed_base`); with one,
+  whatever the `KnowledgeBasePort` returns (the converted bases, `HEAD` first and during a merge
+  `MERGE_HEAD` too, each kept only when converted), which the application binds to `HEAD` or, when `HEAD` is
+  unconverted, to its conversion from the shared converted-base cache. A base the
+  port cannot build is one refusing finding, `R24.7-converted-base` at `knowledge/layout.json`
+  (`_unbuildable_base`), never a comparison against nothing. The base decides only the base-dependent
+  `R22.6-anchor-path` refusal; `R198.1-reference-anchor` is base-independent, so a carried anchor whose
+  blob or content identity does not hold at the paired code tree is a finding.
+  Refusing violations are findings, stale reference anchors among them; validator reports are
+  report-only. The check name is `knowledge.converted`, and the
+  result also carries the reference state counts.
+- When the base cannot be built, carried-vs-new classification is unknown, so the base-dependent
+  anchor-path refusals are withheld instead of being decided against an invented empty base: the named
+  unbuildable-base refusal is recorded, every independently measurable reference state keeps being
+  reported, and no new/carried base-dependent refusal fires; `R198.1-reference-anchor` reads only the
+  candidate and the paired code tree, so it keeps refusing. The result also carries `sidecarCount` and
+  `unreadableSidecars` for the drift summary to name what it measured.
+
+### Conventions
+
+- `CONVERTED_KNOWLEDGE_CHECK` names the surviving validator/reference result; retired format check names are not registered.
+
+### Invariants And Boundaries
+
+- A stale reference anchor is a finding here, the validator's `R198.1-reference-anchor` refusal; `citation_fix` or curator re-authoring refreshes it.
+- `ok` is exactly `not findings`; stale reference anchors change it, and only landing observations stay report-only.
+
+### Todos
+
+None recorded.
+
+## Evidence
+
+### Docs References
+
+No domain documentation source is configured for this repository (`system/sources.md` carries no
+`Domain Documentation` entries). The design authority is the conversion and boundary-crossing requirement with its architect rulings in the task
+records, and the coordination-root note on the text-canonical knowledge layout; they live outside the code and
+memory repositories, so they are not cited as rows.
+
+No configured live documentation source was available for this pass.
+
+### Repo-Internal References
+
+The converted validator/reference result and its dispatch boundary.
+
+
+- K_B is the converted HEAD, when there is one. [2]
+
+
+
+- The runner's dispatch to this module. [4]
+
+
+- Memory quality reads the converted format. [5]
+
+
+- The validator's bases, and why a converted base could not be built. [6]
+
+
+
+
+
+
+
+
+### Cross-Repo References
+
+No meaningful cross-repo references found: the file reads and writes only the memory and code repositories its caller names.
+
+No cross-repo boundary is crossed by this file.
+
+
+
+- The validator's refusals are findings, and a stale reference anchor is one of them; only its reports stay report-only. [3]
+
+
+
+
+
+
+When full quality supplies `QualitySourceFiles`, both validation and the reference census read through it. The result adds source listing counts and skipped reasons in `sourceFiles`, and per-reference ignored/binary reasons in `referenceSourceNotes`. Readable excluded files retain verification without a remark; source notes do not turn readable citations into refusing findings.
+
+- Reader selection preserves direct Path callers and the supplied full-quality reader. [9]
+
+- The check takes the base port and reports an unbuildable base as a finding.  Anchor: `converted_knowledge_check` [7]
+
+- An unbuildable base withholds base-dependent refusals; measurable states keep reporting.  Anchor: `converted_knowledge_check` [8]

@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/markerReturn.source.captured.json",
+  "realizes": [],
+  "references": {
+    "3": {
+      "note": "The current retained JSON input supplies the literal identities, response states and populations summarized above; these are fixture facts, not live project knowledge or fresh execution evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a517b53d8ecdd49e801efcb4c8e8ab9f997bfa4",
+            "content": "sha256:1a390d44bb6b20a35ac4cb5b6a067bc976eb5d8559beda1b777e59a533cb1b6f",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

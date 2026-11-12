@@ -1,0 +1,40 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "mcp/src/agents_remember/package_data/paseo_plugin/client/look.ts saves and restores exact standalone preferences while client/load.ts attributes the look actually running in each page, preventing shared-storage frame writes from replacing the saved standalone theme or sidebar preference."
+  },
+  "applicability": "Embedded and standalone web pages sharing Paseo localStorage and the plugin's remembered standalone look.",
+  "conditions": [
+    "The pinned app writes its whole in-memory settings through the observed storage channel.",
+    "A matching writer/seen record describes the last settings or sidebar write."
+  ],
+  "exclusions": [
+    "Frame-originated appearance changes are not adopted as standalone preferences.",
+    "Unobserved or nonmatching writer records use the existing explicitly documented content rules; they do not establish recorded provenance.",
+    "Storage or write-observation refusal does not certify successful restoration."
+  ],
+  "id": "INV-CJ4VN0",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Worker focused Vitest 75/75 after named F1 repair and dashboard typecheck; source HEAD d106f71bb5878fe908cee2eddae348a3d777c8da plus git-diff sha256:dd2ec49fa7bbc7cc285c373370b29c90c4d1405303a1cc0b397d1258ba6fe245",
+        "Unrecorded typed proof case: dashboard/src/cockpit/paseoPluginLook.test.ts::never overwrites the user's look before it is kept | exact facet: The standalone preference is persisted before the application settings can be overwritten with the embedded appearance. | C tree: 83aa7103dca3c104e58df155baead24f10be784f | frozen test-file blob: de9e3aade83a9ff2b3cbdc5f7946175b6937aa36 | source line: 86 | bound limitation: Installed public writer cannot create typed proves from inline Vitest/Playwright it/test titles; no declaration symbol, file proof or alternate selector is substituted. | validation: source/assertion inspection only; no test execution in this curation pass.",
+        "Unrecorded typed proof case: dashboard/src/cockpit/paseoPluginLook.test.ts::records who wrote the sidebar's state: the user's is kept, the frame's is put back | exact facet: Both standalone open/closed preferences survive frame writes; genuine user writes update the remembered preference while frame writes are restored. | C tree: 83aa7103dca3c104e58df155baead24f10be784f | frozen test-file blob: de9e3aade83a9ff2b3cbdc5f7946175b6937aa36 | source line: 310 | bound limitation: Installed public writer cannot create typed proves from inline Vitest/Playwright it/test titles; no declaration symbol, file proof or alternate selector is substituted. | validation: source/assertion inspection only; no test execution in this curation pass.",
+        "Unrecorded typed proof case: dashboard/src/cockpit/paseoPluginClient.test.ts::does not take a page for the user's look when the store was written after the page began to load | exact facet: Two pages sharing storage retain the provenance of the look each page actually began running, instead of identifying the later stored settings as that page's initial look. | C tree: 83aa7103dca3c104e58df155baead24f10be784f | frozen test-file blob: 0287d9def51524d8142d5a54fffb5ffe10704b55 | source line: 492 | bound limitation: Installed public writer cannot create typed proves from inline Vitest/Playwright it/test titles; no declaration symbol, file proof or alternate selector is substituted. | validation: source/assertion inspection only; no test execution in this curation pass.",
+        "Source binding: C tree 83aa7103dca3c104e58df155baead24f10be784f; current target resolution 2026-10-05T08:13:05Z; root-authorized bounded evidence treatment 2026-10-05T08:18:12Z; exact cases/facets retained as origin/handoff evidence because installed writer cannot resolve inline test titles. Admission independently uses spans_locations, prevents_costly_mistake. No writer repair, test rename, fabricated/file-wide proof, source change or new test execution."
+      ],
+      "path": "notes/curation/261005-MIK-PNT-curator-handoff.json"
+    },
+    "handoffEntry": "PNT-R05@v2 §7 / standalone preservation",
+    "leaf": "260928-MIK-L90",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Applying the AR theme remembers the prior standalone sidebar state without changing it, while subsequent native frame writes retain writer provenance so standalone load can restore the user’s custom look and open/closed preference.",
+  "status": "proposed",
+  "supersedes": []
+}

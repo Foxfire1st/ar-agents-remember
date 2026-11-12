@@ -1,46 +1,46 @@
 # skills/l-01-agent-lifecycles/roles/architect.md
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | skills/l-01-agent-lifecycles/roles/architect.md |
-| doc_type | file-level-onboarding |
-| lastUpdated | 2026-08-31T04:50+02:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
-| governingOverview | skills/l-01-agent-lifecycles/roles/overview.md |
+## Rounds and starts
+
+Architect may grant a beyond-settings round for a concrete shrinking repair set; an unchanged failed repair or disputed requirement meaning needs a ruling instead of another round. Permission/non-finished starts are held by the product, and held permission notices propagate without message resubmission. Scope/parent identity and orchestration release stay distinct from native transport and AR acceptance.
+
+- The Architect may grant a beyond-settings round for a concrete shrinking repair set, and an unchanged failed repair or disputed requirement meaning needs a ruling instead. [5]
+
+## Current Source Qualification
+
+Flat mode means only the developer-chosen direct-coordination exception: when no Manager or Orchestrator owns closeout, the Architect may coordinate the paired closeout only under the already-delegated authority of `../operations/closeout.md` (the developer's explicit commit approval, or series authority recorded in the task document), after independent review and the required curation evidence exist.
+
+## Message/file transport
+
+This canonical role/operation requires messages to be short wake-ups naming requested work or a handover and its files. Report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, not pasted into message text. Within a shared task, files stay with its record and a leaf workspace exposes the message-folder link. Text uses the effective settings limit without a pinned number. The canonical source and generated copies share this contract; transport does not change their existing write/start powers, peer destinations or independent acceptance authority.
 
 ## Governing Overview
 
-[l-01 role overview](overview.md)
+[overview](overview.md)
 
 ## Purpose
 
-This source owns the architect role and the pre-topology requirement compiler gate. For ordinary
-role-shaped work, the seat is created by one ambient-launcher `dispatch_agent` call on the canonical
-sprint document with the complete canonical architect brief; after startup, the architect is a plane-hosted caller for its
-documented sprint children. It also creates one immutable, version-addressed canonical packet per
-independently falsifiable revision, records corpus approval in the approved packet, and only then
-projects filtered links into task topology.
+This canonical Architect owns the developer conversation, semantic requirements and approved plan. Its explicit Projects launch may be taskless: missing outcome or registered repository is asked for, never inferred. New independently falsifiable obligations become approved stable-ID/version packets before task topology; an existing assignment recovers durable approvals and current task evidence.
+
+Reviews, cold reads, re-checks, sweeps and Investigator reports advise the Architect. A factual correction may be applied; a finding that adds, narrows or overrides a rule beyond the developer’s words goes to the developer first, quoted beside those earlier words.
 
 ## Code Commentary
 
 ### Logic
 
-Free chat resolves the sprint, compiles `templates/architect-brief.md`, and submits the sprint
-document, role `architect`, and exact brief in one identity-free public request. The control plane
-selects the settings profile, proves readiness, durably pins the brief, and publishes the canonical
-seat before handoff. There is no public spawn/readiness/brief sequence, caller identity field, or
-session primitive. Once hosted, the architect's own dispatches use plane identity and direct-child
-scope; any plane refusal remains a plane refusal. An explicit developer-declared task-seat takeover
-uses the same ambient transaction for the named role at its canonical altitude instead of forcing
-an architect bootstrap first.
+When the resolved memory layer holds `system/task-publication.md`, the Architect follows it: registering a leaf creates its open linked issue. Where that file is absent, it publishes nothing.
 
-The architect dispatches the sprint-bound plan reviewer when the portfolio plan reaches its
-independent review seam. That reviewer generation is stamped with the sprint architect as its
-structural parent, which keeps it distinct from the orchestrator-owned super-exit reviewer at the
-same `(sprint document, reviewer)` seat. The architect may retire only its own stamped plan-review
-generation, never a live super reviewer.
+A `From explainer ·` message carries the developer's words only when their SHA-256 matches the filed message in `developer-messages/`. When no master-to-architect record names this Architect for a master, it claims the master with `explainer_control` on `agents-remember-task`, action `claim`.
+
+- Copied developer words in a From explainer message count as those words only after their hash matches the filed developer message; an Architect not named by the master-to-architect record claims that master through explainer_control. [7]
+
+When the packet names an effect on a recorded invariant or family, the Architect declares `expectedKnowledgeEffects` through `task_doc` on the bound task server before implementation. A packet naming no such effect declares nothing. This is the Architect’s planning duty, not permission for the Curator to change tasks, requirements or held role claims.
+
+For work inside one master, the Architect first starts one Manager on that canonical master and hands it the coordination; when two or more masters are worked on at the same time, it first starts one Orchestrator on the selected canonical sprint, which starts one Manager for each master. Direct coordination is the developer-chosen exception, and the developer may also ask for an Orchestrator above a single master. Native starts and peer messages use `role_start`/`role_message` on the bound task server, preserving actual agent, report and handover identities and exact canonical selections. An unknown start is reconciled with its original request ID; finding-specific repair returns to the same Worker.
+
+Its detail files, each read before the action its pointer names, are `reference/coordination/architect/` (process decisions, developer decisions, models and settings, claim verification, Curator measurement), `reference/coordination/shared/` (requirement design, master state, child questions, seat recovery, third rejected round), `reference/knowledge/commands.md`, `reference/knowledge/use.md`, `reference/tasks/document-authoring.md`, `reference/sandbox-actors.md` and `reference/message-handover.md`; short rules on timing targets, page proofs, compute cost, master scope and status reads, bound briefs and side problems, and failed developer checks are written at their actions in the role file.
+
+Briefs and task reads preserve exact requirement revisions, relevant families, paired/report roots and evidence class. Use supplied task-read arguments and the returned canonical document path rather than loading the full hierarchy. Developer decisions remain in the Architect’s own chat. A dashboard-started role needs no parent, and a finished turn is neither independent review, curation, semantic acceptance nor paired-Git publication.
 
 The architect compiles and cold-reads the complete requirement corpus before creating task
 topology. A later semantic change retains the stable ID, creates a new version-addressed packet,
@@ -55,105 +55,50 @@ approval increments the requirement version.
 
 ### Invariants And Boundaries
 
-Canonical lifecycle doctrine owns canonical skill content; generated copies are synchronization
-outputs. `dispatch_agent` is the sole public spawn verb, exact-session proof remains fail-closed,
-and plane authorization never falls back to ambient. An approved requirement packet is never
-rewritten in place. A worker/reviewer classification cannot become semantic authority. Role-table
-`dispatch` and `tools` rows are fixed authority/capability descriptions, not settings keys.
+Canonical lifecycle doctrine owns this source; generated copies are synchronization outputs. Native assignments preserve approved requirement IDs/versions, exact task/paired/report bindings and actual returned role-agent identities. An approved packet is not rewritten in place and delivery roles do not acquire semantic revision authority. No inferred repository/parent, uncertain duplicate, self-approval or shell-publication substitute is allowed; the delegated authority of `operations/closeout.md` remains required for Architect closeout coordination.
 
+Canonical lifecycle doctrine owns canonical skill content; generated copies are synchronization
+outputs. An approved requirement packet is never
+rewritten in place. A worker/reviewer classification cannot become semantic authority.
+
+Task-document authoring remains wholly upstream of activation and queue state. The Architect may approve otherwise-valid task changes; the affected disposable projection is then invalidated and rebuilt. A selector or queue cannot veto planning, and no valid task or master is discarded merely to free a runtime selection.
 
 ## CCR-R12@v5 Transaction Boundary
 
-This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full quality, full tests, full memory quality, certification, and independent review are explicit operations only. Requested reviews retain the sealed finding list and monotonic three-round limit.
+Current role duty remains targeted/scoped evidence with failed or unrun results visible, followed by the existing authorized paired Git transaction under its real contract. Requested independent review preserves the sealed monotonic finding set and settings-owned round limit. The normal Curator authoring pass remains the standing full memory-quality/coherence exception; an explicitly report-only admission claims none of that normal pass complete. No finished turn or green check supplies semantic acceptance or Git publication.
 
-## Docs References
+This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full quality, full tests, full memory quality, certification, and independent review are explicit operations only, save the normal Curator authoring pass, which remains the standing full memory-quality/coherence exception. Requested reviews retain the sealed finding list and settings-owned round limit.
+
+## Questions received from children
+
+Before answering a child's question or returning the developer's answer, the Architect reads `reference/coordination/shared/child-questions.md` for the relay, attribution and instruction-delivery rules; a child waiting at a permission prompt is relayed upward by `operations/coordination.md#relay-a-childs-permission-notice`.
+
+## Evidence
+
+- The Architect declares recorded invariant/family effects through task_doc before implementation only when the packet names them. [3]
+
+- When the resolved memory layer holds the publication file, the Architect follows it and registering a leaf creates its open linked issue; where that file is absent, nothing is published. [4]
+
+### Docs References
 
 No relevant documentation was configured in the resolved source registry; task artifacts and the final candidate are the direct evidence.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Worker source inventory, reviewer verdict, and governing route overview.
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references.
 
-## L23 Thematic Master Recovery
+## Current Investigator contract impact
 
-The architect treats a resumed master that trails super as a synchronization
-condition on the existing thematic master, not a reason to fork a replacement
-master. The plane derives ancestry from task structure and returns the contract
-address needed for backend recovery.
+The Architect keeps the developer conversation and may check, measure, run tests and builds, read the code and sources of the product, the host and the harnesses, and try things out in a sandbox himself, on a copy; that work informs his rulings, his requirements and the developer but never stands in for a leaf's build, review, curation or gate, and he changes no leaf's code or memory. A check before a landing is not a landing step. A check or investigation he does not do himself goes under delegation to the actual Manager or Orchestrator; developer-chosen direct coordination assigns a leaf check to Worker/Reviewer and a non-leaf concern to Investigator. Investigator starts remain within admitted Projects, sprint or master containment, and still-forbidden starts route to the actual parent or a parentless blocker. One Manager remains the default for one master.
 
-## 260713-TES-L5 Current Delta — Mailbox Custody, Not Ladder Rungs
+- The Architect owns the developer conversation and approved requirements, delegates one master to a Manager or multiple masters to an Orchestrator, and may check on a copy without replacing leaf build, review, curation or gate authority. [1]
 
-The terminal-custody section now says rows whose entire owner chain is dead surface to the
-architect as a mailbox (the timed escalation ladder is retired), rows land at the architect's
-turn boundary (the system acks), and `operator_inbox_consume` is an optional attribution
-marker. The developer remains an authority, not an address.
+- Beyond-settings rounds may be granted for a shrinking sealed list with a concrete repair; unchanged failed repairs or requirement-meaning disputes need a ruling. The Architect releases execution coordination and keeps the actual returned role identities, while it answers formal permission prompts only as far as its own seat's permissions reach. [2]
 
-## 260815-DAG-L2 Planning Authority
+- The Architect may check product, host and harness sources and run checks on a copy; a leaf check it delegates goes through the coordinating owner, or to Worker/Reviewer under developer-chosen direct coordination, while a non-leaf concern goes to Investigator. [6]
 
-The architect inspects `executionGraph` plus every commanded master's `executionNature` before
-spawning backend execution. A missing or materially stale topology produces a recommendation to
-run a strategist, never an automatic dispatch. The initial strategist and its plan-review reviewer
-are architect children and finish before the orchestrator exists; runtime reshapes still route
-through that architect-owned loop. A strategist skip authorizes the orchestrator to author the
-same explicit artifact, not an implicit default.
-
-## IAS Source-Pair Activation Planning Boundary
-
-The reviewed graph-less choice is now the source-pair-selected atomic-sequential mode. Canonical
-commanded-master order is only the stable equal-priority tie-break; selecting another atomic master
-may logically pause the former without forcing integration, contract retirement, or process and
-worktree termination. The architect therefore judges dependency truth independently of runtime
-selection and does not manufacture an edge merely to explain serialization.
-
-Task-document authoring remains wholly upstream of activation and queue state. The architect may
-approve otherwise-valid task changes; the affected disposable projection is then invalidated and
-rebuilt. A selector or queue cannot veto planning, and no valid task/master is discarded merely to
-free a runtime selection.
-
-## Update History
-- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
-
-- 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: documented architect
-  dispatch and retirement authority for the architect-stamped sprint plan reviewer, excluding the
-  orchestrator-owned super generation. Verification remains closeout-owned.
-
-- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 replaced the stale caller-visible
-  spawn/readiness/dispatch sequence with one ordinary ambient architect launch transaction,
-  separated explicit named-role takeover, and kept plane authority outside settings. Verification
-  remains closeout-owned.
-
-- 2026-08-27T21:53+02:00 — M40@v2: separated internal repair/test protocol events from formal
-  review-handoff attempt lineage while preserving developer-only semantic revision authority.
-- 2026-08-27T18:06+02:00 — M43: recorded architect/developer authority for requirement revisions
-  and kept ordinary implementation, evidence, and test/tool repairs on attempt lineage rather than
-  semantic versioning.
-- 2026-08-27T14:04+02:00 — M39 clarification: recorded immutable version-addressed packets,
-  packet-local durable corpus approval, and new-file revision handling rather than in-place edits.
-- 2026-08-27T13:32+02:00 — M39@v1: the architect now compiles, splits, packets, cold-reads, and
-  obtains developer approval for requirement revisions before creating topology; leaf projection
-  and version-change invalidation/rebriefing are explicit. Verification remains closeout-owned.
-
-- 2026-08-26T08:35+02:00 — Restored the required navigable governing-overview link while
-  reconciling architect activation doctrine.
-
-- 2026-08-26T05:20+02:00 — Reconciled architect doctrine with graph-less source-pair activation,
-  pause-without-retirement, task-authoring primacy, and queue/projection invalidation. Final source
-  ranges and verification remain post-Dagger/closeout-owned.
-
-- 2026-08-15T04:32+02:00 — 260815-DAG-L2: recorded architect ownership of strategist planning,
-  explicit topology admission, and the complete/still-valid condition for recommending a skip.
-  Verification remains closeout-owned.
-- 2026-08-12T20:10+02:00 — L23 curator: documented canonical thematic-master recovery semantics;
-  verification remains closeout-owned.
-
-- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the custody rewrite — rows whose
-  entire owner chain is dead surface to the architect as a mailbox, not a ladder rung (the
-  timed escalation ladder is retired); rows land at the architect's turn boundary and
-  `operator_inbox_consume` is an optional attribution marker, never a mechanical ack.
-  Verification metadata pinned until closeout stamps the 260713-TES-L5 commit.
-- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round 2 (curator): No content impact: the supervisor -> agent-notifier rename does not change the behavior this sidecar documents; reviewed current against the changed source. Verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
-- 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
+- Reviews, cold reads, re-checks, sweeps and Investigator reports advise the Architect; a fact correction may be applied, but adding, narrowing or overriding a rule beyond the developer's words requires the developer's decision with both texts quoted. [8]

@@ -1,14 +1,30 @@
 # mcp/tests/test_mcp_stdio_transport.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/tests/test_mcp_stdio_transport.py`    |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T05:30+02:00                     |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview      | `../overview.md`                           |
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- Current baseline test calls server_info.
+- The carryover stdio case now uses the actual converted `_converted_world` configuration and `asdict(selection)`, retaining real pipes, CALL_TIMEOUT, successful would-carryover and the exact auto-carry count assertion. The old fixture helper below is historical, not the current carrier.
+
+## Evidence
+
+- The real converted fixture feeds the stdio plan and preserves its success, state and count assertions. [2]
+
+### Superseded inventory
+
+- Pre-repair card claim: Card says a ping test proves the stdio harness. This is superseded archival wording, not a current prescription.
+
+### Source and authority bounds
+
+- Source comparison: `mcp/tests/test_mcp_stdio_transport.py:166 (def test_server_info_returns_over_stdio)`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
 
 ## Governing Overview
 
@@ -41,27 +57,16 @@ has a real auto-carry candidate. A `ping` test proves the harness itself.
 - `source_memory` must live inside the coordination root
   (`require_within_coordination`).
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The fixed subprocess boundary used by carryover. | `run_git` | mcp/src/agents_remember/kernel/git_command.py:85-151 |
+### Repo-Internal References
+
+
+- The fixed subprocess boundary used by carryover. [1]
+
 
 ## 260815-DAG-L4 Integration-Authority Forcing
 
 This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
 
-## Update History
-
-- 2026-08-15T23:38+02:00 — Reconciled the suite's L4 fixture and forcing role for protected integration branches, durable operation authority, external-memory parity, and recovery. Verification metadata remains closeout-owned.
-
-- 2026-08-02T21:29+02:00 — W2-B08 curator: anchored 4 citation findings to the shared `run_git` subprocess boundary and the package-wide stdin hygiene test. Verification metadata stays pinned until closeout.
-- 2026-07-31T16:35+02:00 — No content impact: the only change to
-  `mcp/tests/test_mcp_stdio_transport.py` since the L2 base commit is the whole-tree `ruff format`
-  pass in `00e8379`, which re-wrapped 3 line(s) with no token change whatsoever. Checked by
-  parsing both revisions and comparing the abstract syntax trees (identical) and the comment
-  tokens (identical), so no symbol, signature, default, decorator, control-flow branch, docstring,
-  or assertion this card describes has moved, and every claim this card makes about its own source
-  still holds.
-
-- 2026-06-10T05:30+02:00: Created as the reproducing harness and permanent regression for GitHub #49 (2.5.1).
+</details>

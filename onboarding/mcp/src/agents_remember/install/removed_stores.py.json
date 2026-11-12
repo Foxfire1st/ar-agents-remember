@@ -1,0 +1,127 @@
+{
+  "path": "mcp/src/agents_remember/install/removed_stores.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "919a71b491ed753daa97927f49bcf27947690f71",
+        "content": "sha256:a45ce0a6149eac41ceceecf0bfab60dfcc28238b19716d584db241c3cf0d566d",
+        "locator": {
+          "end": 29,
+          "kind": "line_range",
+          "start": 16
+        }
+      },
+      "id": "RLZ-8RPPPA",
+      "invariant": "INV-7XBR6C",
+      "origin": {
+        "handoffEntry": "MIK-R113@v1 rule 5",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "REMOVED_PART_STORE_PATHS declares the fixed retired-store paths shared by discovery and explicit removal. It is not the exclusive inventory rule: removed_part_stores also includes STORED_GATE_LOG_PATTERNS and REMOVED_LIFECYCLE_STORE_PATTERNS, and optionally _terminal_lock_stores after complete canonical-contract terminal proof.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "919a71b491ed753daa97927f49bcf27947690f71",
+        "content": "sha256:f763fb8a76e54f81a097d2649a7a80121361cb0127d059300242b19d5f6c72ad",
+        "locator": {
+          "kind": "symbol",
+          "name": "removed_part_stores_report"
+        }
+      },
+      "id": "RLZ-NYH1WY",
+      "invariant": "INV-7XBR6C",
+      "origin": {
+        "handoffEntry": "MIK-R113@v1 rule 5",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "The part of an install's result on these stores: count, size, the sentence that names the command, the way out of a stored gate, and the list.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "919a71b491ed753daa97927f49bcf27947690f71",
+        "content": "sha256:30df359dcfb250d017428959e8ac344766868db94af85d56522a271b5bba720a",
+        "locator": {
+          "kind": "symbol",
+          "name": "removed_part_stores"
+        }
+      },
+      "id": "RLZ-X20BVH",
+      "invariant": "INV-7XBR6C",
+      "origin": {
+        "handoffEntry": "MIK-R113@v1 rule 5",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "The one current shared inventory composes no-follow discovery, lifecycle residue and proven terminal-lock eligibility, returning files/sizes and unreadable paths without deletion.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Retired path inventory and no-install-deletion notice.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "919a71b491ed753daa97927f49bcf27947690f71",
+            "content": "sha256:a45ce0a6149eac41ceceecf0bfab60dfcc28238b19716d584db241c3cf0d566d",
+            "locator": {
+              "kind": "symbol",
+              "name": "REMOVED_PART_STORE_PATHS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Discovery does not follow stores through symbolic links.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "919a71b491ed753daa97927f49bcf27947690f71",
+            "content": "sha256:26533102bdf55329fc1755515563bb196524a374c5cf4574e3eeca2c7dbb54f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_store_files"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Terminal-lock eligibility fails closed on incomplete contracts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "919a71b491ed753daa97927f49bcf27947690f71",
+            "content": "sha256:c5d308a941ddba3ca571f06eb4fbecb5a95ae8ab7ff83965f6c85dc84b90dc8a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_terminal_lifecycles"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Inventory and reporting keep gate logs distinct.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "919a71b491ed753daa97927f49bcf27947690f71",
+            "content": "sha256:30df359dcfb250d017428959e8ac344766868db94af85d56522a271b5bba720a",
+            "locator": {
+              "kind": "symbol",
+              "name": "removed_part_stores"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

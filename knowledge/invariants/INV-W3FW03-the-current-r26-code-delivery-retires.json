@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "The behavior guards a costly publication, restoration or refusal mistake that the sealed findings proved reachable."
+  },
+  "applicability": "The current R26 code delivery on the corrected freeze.",
+  "conditions": [
+    "The code candidate is the corrected 28f8cf17 working diff."
+  ],
+  "exclusions": [
+    "The later memory removal, copy cleanup and curation phases, which this entry does not claim."
+  ],
+  "id": "INV-W3FW03",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.md; notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.evidence/candidate-final-binding.json"
+      ],
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "MIK-R26@v1 (advisory delivery)",
+    "leaf": "260928-MIK-L26",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The current R26 code delivery retires canonical production routes while actual memory removal, copy deletion and final curation remain later owner phases.",
+  "status": "retired",
+  "supersedes": []
+}

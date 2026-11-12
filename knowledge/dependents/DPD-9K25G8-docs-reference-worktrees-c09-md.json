@@ -1,0 +1,267 @@
+{
+  "confirmed": {
+    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
+    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
+    "role": "worker",
+    "statement": "This task brought the page in line with the product: its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate, the false ones were corrected, and the page was read whole; 7 rows of the inventory of changes are told here.",
+    "task": "260928-MIK-L97",
+    "uncommitted": true
+  },
+  "document": "docs/reference/worktrees-c09.md",
+  "id": "DPD-9K25G8",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-handoff"
+    },
+    "handoffEntry": "L97-dependent-docs-reference-worktrees-c09-md",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-dependent/v1",
+  "stands_on": [
+    {
+      "anchor": {
+        "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+        "content": "sha256:a5c1ee4adf4c1c93f7e11dc1cf2c29ffdc506405cc4c3272db2c584f0f8c04a6",
+        "locator": {
+          "kind": "symbol",
+          "name": "publish_tree_commit"
+        },
+        "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+      },
+      "kind": "anchor"
+    },
+    {
+      "blob": "d35463d6c2b0bc1953df6b6e2cd1fcca533a515d",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/modules/landing_commit_check.py"
+    },
+    {
+      "anchor": {
+        "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+        "content": "sha256:8051cd1b0ce6c524c37ca9bbeb9f2e077b17f254335985310d4ad655df1ebaae",
+        "locator": {
+          "kind": "symbol",
+          "name": "closeout_preview_payload"
+        },
+        "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+      },
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+        "content": "sha256:5294aa5786f684669c8cd1b735ec12b7a227be127bf85ee98de9ba85c2adfce2",
+        "locator": {
+          "kind": "symbol",
+          "name": "candidate_gate_verdict"
+        },
+        "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+      },
+      "kind": "anchor"
+    },
+    {
+      "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
+    },
+    {
+      "anchor": {
+        "blob": "d0940b70289d43e211b8e08dbeafc3769dc23b64",
+        "content": "sha256:86a20ff12327bbf2f7875dfe057efb888ad604a89225dc396dd6a0d01e677ac4",
+        "locator": {
+          "kind": "symbol",
+          "name": "_review_provenance"
+        },
+        "path": "mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py"
+      },
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+        "content": "sha256:7a65b3a43ec9a86839f97e43234988f11363361deea0709be2ff20d9a481fe43",
+        "locator": {
+          "kind": "symbol",
+          "name": "clean_sync_keeps_route_review"
+        },
+        "path": "mcp/src/agents_remember/worktrees/route_review.py"
+      },
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
+        "content": "sha256:7e0afbd8d9e318e9847056e83dfe8a8bc0e578ad69976f341a823b0ae146dbc4",
+        "locator": {
+          "kind": "symbol",
+          "name": "_integrated_result"
+        },
+        "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
+      },
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
+        "content": "sha256:834b50635720414156aad7ce60d8689a5d5c0077188e1d782679d4b640d55ddd",
+        "locator": {
+          "kind": "symbol",
+          "name": "_checkpoint_result"
+        },
+        "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
+      },
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "94685bc678c71945d51aad8a4f89fceafe0d1de7",
+        "content": "sha256:f4a4dbbbac572268bf652e1c74764051c15d05cf8b8e33bd824c1ff25847a8b2",
+        "locator": {
+          "kind": "symbol",
+          "name": "record_landing_result"
+        },
+        "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
+      },
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
+        "content": "sha256:6c3c5b011ddb1e3b77966fd359572b3d93078304e8904febd1147ae140e36b18",
+        "locator": {
+          "kind": "symbol",
+          "name": "_direct_landing_result"
+        },
+        "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
+      },
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "ae56f6c72b4720e9cd1ae2abdd42551a79d4c1d4",
+        "content": "sha256:fae744aa125389b1b01ef81404c0176cd6adfb4bed5f2a46d386ad0384b192cd",
+        "locator": {
+          "kind": "symbol",
+          "name": "_publish_provisional_code_commit"
+        },
+        "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
+      },
+      "kind": "anchor"
+    },
+    {
+      "blob": "c1fd1422c3c66140847529fbabe1c2f0c2f380e9",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/series_merge_admission.py"
+    },
+    {
+      "anchor": {
+        "blob": "f67644c1701e0d683788944412a932744fd0bc2b",
+        "content": "sha256:c36da453316d436b3ebbb3488e291a057c854abb7981bfee29526ea82006b71b",
+        "locator": {
+          "kind": "symbol",
+          "name": "empty_landing_leaf_ids"
+        },
+        "path": "mcp/src/agents_remember/worktrees/series_closeout.py"
+      },
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "8c8023bb3a59c12b7c1099777b123d40bf7deb6c",
+        "content": "sha256:eb3dbe24602b4c8d3323b3383bbc854a47a9aed380f600ac28cc4b4dea436941",
+        "locator": {
+          "kind": "symbol",
+          "name": "landing_document_answer"
+        },
+        "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+      },
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "bfbe2e81d84a8bfc86b538760f6510133897cc83",
+        "content": "sha256:24b0868a5c5dcba30614878aa4c409a601909434debde2a81150b7549da1aa88",
+        "locator": {
+          "kind": "symbol",
+          "name": "_require_commit_check"
+        },
+        "path": "mcp/src/agents_remember/memory/baseline.py"
+      },
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "e2893b2a4053a2e934a6dd262dbd4e9c397a7d1c",
+        "content": "sha256:1696c618c5b1ee0bf0db46f41c5d00e686f2f979ebdc98f3639456980744a991",
+        "locator": {
+          "kind": "symbol",
+          "name": "render_git_transition_support"
+        },
+        "path": "mcp/src/agents_remember/application/review_external_git_movement.py"
+      },
+      "kind": "anchor"
+    },
+    {
+      "blob": "95eb2af092cad6e8624da3e1b504ce58c42d553c",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/knowledge_gate/landing.py"
+    },
+    {
+      "blob": "b814692a49df324c2495b8abf40a050f54a211f5",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/queue/closeout_queue.py"
+    },
+    {
+      "blob": "ade1907a1a069cc93f17436db9d119803e79337c",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/queue/closeout_projection_publication.py"
+    },
+    {
+      "blob": "a2665963db2fdfc70275576a2b0fa2340ac94655",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/models/lifecycles/enclosure.py"
+    },
+    {
+      "blob": "597bca990a3cc373fbed97e7ae26e3f8c7da5d52",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_enclosure_terminal.py"
+    },
+    {
+      "blob": "35226811a3b772b515e1d353fd6b76a7caeb93cf",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/primitives/gate_policy.py"
+    },
+    {
+      "blob": "70f9c9b7b971a88ca122d8d482d8c7b89fa3a414",
+      "kind": "file",
+      "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
+    },
+    {
+      "blob": "b55831de01a31229148df21d4199d8411b00f926",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/worktree_tools.py"
+    },
+    {
+      "blob": "35356f9b5beedf48bc6ce7ea053ffb611f010882",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/integration/closeout/door.py"
+    },
+    {
+      "blob": "a80df4903ac866d31ac7495d03f6ca3827bc1ebf",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py"
+    },
+    {
+      "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
+      "kind": "file",
+      "path": "skills/l-01-agent-lifecycles/operations/review.md"
+    },
+    {
+      "blob": "ade405eca8709f4ab2c10d9f047bb9f76e2f44f5",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/models/lifecycles/door.py"
+    }
+  ]
+}

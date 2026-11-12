@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "A union merge that was trusted unchecked could land a catalog that holds a line twice, the line of a deleted file or two interleaved rows; without the union, every sync of an open leaf stops on the same lists and is resolved by hand."
+  },
+  "applicability": "Merges and stash applications of mcp/tests/test-evidence-lanes.toml and mcp/tests/evidence-lifecycle.toml in a worktree whose .gitattributes declares merge=union for both.",
+  "conditions": [
+    "Git reads the attribute from the worktree in which the merge or the stash application runs.",
+    "The sentence about interleaved rows is the recovery the loaders give a file that does not parse."
+  ],
+  "exclusions": [
+    "A merge in a worktree whose .gitattributes does not hold the two lines; the attribute does not apply there.",
+    "Every other merge Git performs for this repository."
+  ],
+  "id": "INV-K0CS85",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "requirements/MIK-R51-v1-shared-test-catalogs-merge-without-conflict.md (rules 6 and 7); notes/reports/260928-MIK-L51-worker.md; notes/reports/260928-MIK-L51-review-R1.md",
+        "requirements/MIK-R51-v1-shared-test-catalogs-merge-without-conflict.md (rules 6 and 7); notes/reports/260928-MIK-L51-worker.md; notes/reports/260928-MIK-L51-review-R1.md; notes/reports/260928-MIK-L51-factcheck.md"
+      ],
+      "path": "notes/reports/260928-MIK-L51-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R51@v1-union-merge-checked",
+    "leaf": "260928-MIK-L51",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "Git merges the two test catalogs by union, so two changes that add lines to the same list merge and reapply without a conflict, and a merge that interleaves rows is refused with the recovery sentence.",
+  "status": "proposed",
+  "supersedes": []
+}

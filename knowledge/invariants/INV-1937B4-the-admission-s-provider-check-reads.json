@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The case proves a server with configured providers is refused; the old field is no longer sent, so the check passed silently and could not prevent that error."
+  },
+  "applicability": "Every admission that reads the selected build's server_info answer.",
+  "conditions": [
+    "The selected build sends its configured-provider field in server_info."
+  ],
+  "exclusions": [
+    "A server with no configured providers passes this check; the root and repository checks remain separate."
+  ],
+  "id": "INV-1937B4",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_pnt_sandbox.py::test_the_admission_refuses_a_server_with_configured_providers"
+      ],
+      "path": "l179-handoff.json"
+    },
+    "handoffEntry": "MIK-R181@v2 §3",
+    "leaf": "260928-MIK-L179",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The admission's provider check reads the field server_info actually sends for configured providers and refuses a server that has any.",
+  "status": "accepted",
+  "supersedes": []
+}

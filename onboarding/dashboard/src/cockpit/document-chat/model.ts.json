@@ -1,0 +1,168 @@
+{
+  "path": "dashboard/src/cockpit/document-chat/model.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "3c1fc9b507b9358e632a0fbcb31c6f9c66435151",
+        "content": "sha256:a38fc109b713a348f9e3d3efd6074cbe05615e596ad2f9eeee92fb8f221d11d1",
+        "locator": {
+          "end": 70,
+          "kind": "line_range",
+          "start": 53
+        }
+      },
+      "id": "RLZ-17TQDT",
+      "invariant": "INV-WQ8YGE",
+      "origin": {
+        "handoffEntry": "L168-CUR-M2-21-N02",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "documentBindings indexes canonical entry.key, traverses addressed sprint.children in order, and delegates master children to masterBindings; no repository/name/document parent reconstruction remains.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "3c1fc9b507b9358e632a0fbcb31c6f9c66435151",
+        "content": "sha256:91ffcc405a79913305b9728bf87212deee37fdcc510518e88564bb16b5807c74",
+        "locator": {
+          "end": 124,
+          "kind": "line_range",
+          "start": 96
+        }
+      },
+      "id": "RLZ-6FBZ98",
+      "invariant": "INV-A3AK6R",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule3",
+        "leaf": "260928-MIK-L95"
+      },
+      "rationale": "The pick matches the record labels to the exact document, skips archived records without a workspace and takes the newest with a stable tiebreak.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "3c1fc9b507b9358e632a0fbcb31c6f9c66435151",
+        "content": "sha256:ab2288547637cff7c16f06c50ad98766ce6071dc8a2491bc8b9274266ed1644a",
+        "locator": {
+          "end": 94,
+          "kind": "line_range",
+          "start": 89
+        }
+      },
+      "id": "RLZ-S0YF0Z",
+      "invariant": "INV-7D9QDG",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule2",
+        "leaf": "260928-MIK-L95"
+      },
+      "rationale": "documentChatBinding delegates to precomputed tree topology and bindingInTree, preserving canonical admissible roles and no-role problem.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "3c1fc9b507b9358e632a0fbcb31c6f9c66435151",
+        "content": "sha256:91ffcc405a79913305b9728bf87212deee37fdcc510518e88564bb16b5807c74",
+        "locator": {
+          "end": 124,
+          "kind": "line_range",
+          "start": 96
+        }
+      },
+      "id": "RLZ-XM7PZS",
+      "invariant": "INV-68QN0P",
+      "origin": {
+        "handoffEntry": "MIK-R98@v1 §7",
+        "leaf": "260928-MIK-L98"
+      },
+      "rationale": "The default displayed agent is constrained to the document primary role.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "3c1fc9b507b9358e632a0fbcb31c6f9c66435151",
+        "content": "sha256:a0f34fb6fbfa3fb538e89a3cf4571cacb8d2ef693fb87b11e08b9c5ddd1bb905",
+        "locator": {
+          "end": 50,
+          "kind": "line_range",
+          "start": 25
+        }
+      },
+      "id": "RLZ-Y2SRXJ",
+      "invariant": "INV-WQ8YGE",
+      "origin": {
+        "handoffEntry": "L168-CUR-M2-21-N01",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "masterBindings resolves only served master.children in their supplied order, requires an addressed task-form child, and keeps Manager versus Worker/Reviewer/Curator bindings; it does not derive membership from names or worktrees.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "2": {
+      "note": "The agent pick matches the document key, skips archived records and picks the newest stable record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c1fc9b507b9358e632a0fbcb31c6f9c66435151",
+            "content": "sha256:f55b1b96983cba0beaf581cf205c0d7939dad6ae3be5d6831bfcf7e97ccd1f7f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The reader validates the declared record fields instead of trusting an untyped answer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c1fc9b507b9358e632a0fbcb31c6f9c66435151",
+            "content": "sha256:736b6b5e31b96af17f379e99bd08b70658f855cdaf412d2262caca9d18d5e0d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "documentAgents"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The current source implements this file’s stated Investigator boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c1fc9b507b9358e632a0fbcb31c6f9c66435151",
+            "content": "sha256:f7f539b6ce1ec00406beb94c6fc672ebea0d794fe4781c94c531f1956d041f19",
+            "locator": {
+              "end": 85,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "An unsupported selection admits no start, and the ordinary Projects selection keeps its own role set.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c1fc9b507b9358e632a0fbcb31c6f9c66435151",
+            "content": "sha256:d65700f54336cfbf10c4105ab686160d9701e8b561b5d0a1a69439ba8498e65b",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 74
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,116 @@
+{
+  "path": "dashboard/src/panels/review/ReviewSurface.walkStore.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "328d6f910823358b8a88670c9ff5bffc6d6c86c5",
+        "content": "sha256:5449417bb7510acb5e4f2ad8df0c61dea77e95bc3f1db6afd2c54acc92b3b951",
+        "locator": {
+          "kind": "symbol",
+          "name": "keeps the first family when a member of the second is opened from its slot, and marks it under the second family"
+        }
+      },
+      "facet": "Opening a member of the second family from its reading slot makes one review read, keeps the first family tagged, and marks the member occurrence under the second family.",
+      "id": "PRF-AX1Y88",
+      "invariant": "INV-NSG0D4",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-REQUEST-PROOF-PRF-N88RVC",
+        "leaf": "260928-MIK-L89"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "328d6f910823358b8a88670c9ff5bffc6d6c86c5",
+        "content": "sha256:8057a443311213c8d4ccc4b9b491faddf9a8a97c7d76d628e635254256271b19",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-3ZASGD",
+      "invariant": "INV-TJE3KM",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 W03 source-currentness native resolution",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "Historical attachment of the already-retired L86/R87 carriage record; source callback adaptation is not a new execution or current native acceptance claim.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "328d6f910823358b8a88670c9ff5bffc6d6c86c5",
+        "content": "sha256:e93e20bdcd79276401346b28215934e2910ff6a4fd690cef5eae6b7d41b35432",
+        "locator": {
+          "end": 133,
+          "kind": "line_range",
+          "start": 95
+        }
+      },
+      "id": "RLZ-7ZPXMR",
+      "invariant": "INV-NSG0D4",
+      "origin": {
+        "handoffEntry": "R4-F1",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "This store-authored comparison case retains both families through j/k navigation, then explicitly clicks the unknown member row to trigger a failed read and asserts the selected row and displayed refusal. The failed read is not a failed keyboard step.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "328d6f910823358b8a88670c9ff5bffc6d6c86c5",
+        "content": "sha256:80294103366a589b11d097947595faf6dc9408f4e6ac0b743dff4857109b5d73",
+        "locator": {
+          "end": 57,
+          "kind": "line_range",
+          "start": 47
+        }
+      },
+      "id": "RLZ-XADZP7",
+      "invariant": "INV-NSG0D4",
+      "origin": {
+        "handoffEntry": "R4-F1",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "The served world answers INV-GGGGGG with a deliberate network error here, so the request is an expected failure and no longer one that no body answers.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "12": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(\"keeps both families as the second family's own member is selected, and an explicit unknown read fails\", async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "328d6f910823358b8a88670c9ff5bffc6d6c86c5",
+            "content": "sha256:90d909e67f2fe19980b54ddd0afe361052aa8921a6a38fc66cbd56f005439862",
+            "locator": {
+              "end": 144,
+              "kind": "line_range",
+              "start": 105
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('keeps the first family when a member of the second is opened from its slot, and marks it under the second family', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "328d6f910823358b8a88670c9ff5bffc6d6c86c5",
+            "content": "sha256:5449417bb7510acb5e4f2ad8df0c61dea77e95bc3f1db6afd2c54acc92b3b951",
+            "locator": {
+              "end": 197,
+              "kind": "line_range",
+              "start": 176
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

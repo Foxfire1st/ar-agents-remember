@@ -1,0 +1,66 @@
+{
+  "path": "mcp/tests/test_retired_door_publication_fields.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The current generation and explicit retired digest names define the test input.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1eefd43b9fc5b826728f761be7a946ddd5d57f84",
+            "content": "sha256:90c151f0e6ac760249ef0c5f606cd3c8f59efc14ddad8abbb35b1c323ca06a3f",
+            "locator": {
+              "kind": "symbol",
+              "name": "RETIRED_DIGEST_FIELDS"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1eefd43b9fc5b826728f761be7a946ddd5d57f84",
+            "content": "sha256:a50361e4b8631cafac958b9518a404ff1d6383fceb9c96dbb0335d1492606493",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_door_publication_drops_retired_digests_but_refuses_other_unknown_keys"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The model read drops only the named retired fields and still rejects unknown fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1eefd43b9fc5b826728f761be7a946ddd5d57f84",
+            "content": "sha256:a50361e4b8631cafac958b9518a404ff1d6383fceb9c96dbb0335d1492606493",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_door_publication_drops_retired_digests_but_refuses_other_unknown_keys"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Store and terminal-archive reads exercise the persisted legacy record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1eefd43b9fc5b826728f761be7a946ddd5d57f84",
+            "content": "sha256:1ebcb405633df9c8b8b924e0a70dee2af77a46a2b04a865dc74f4678341cebd4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_operation_store_and_cleanup_terminal_archive_read_a_legacy_record"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

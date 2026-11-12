@@ -1,0 +1,24 @@
+{
+  "path": "mcp/tests/test_context_packet_cli.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The complete file owns the behavior and limits described above; documentation/tests are not fresh execution evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7eed36fe45de112146ee33dec06127e1ccb5b179",
+            "content": "sha256:f4735358a4cc5f35f65f993837a0af019569f48556467a6c1812eb4ea88af12a",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

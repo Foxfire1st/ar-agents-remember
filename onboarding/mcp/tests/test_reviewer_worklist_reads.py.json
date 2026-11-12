@@ -1,0 +1,433 @@
+{
+  "path": "mcp/tests/test_reviewer_worklist_reads.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+        "content": "sha256:1446cc189bdfc847e52f08f12e39dc316d9482c56ebba34c7493d19936aa29de",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_gates_warm_pass_becomes_the_refusal_when_a_packet_locator_is_retargeted"
+        }
+      },
+      "facet": "The gate passes and the pass is kept while a packet link points outside the task; after the link is retargeted to the packet, which has the same bytes, the next evaluation refuses with knowledge-item-open.",
+      "id": "PRF-3RZEFE",
+      "invariant": "INV-D2HZQ8",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-gate-verdict-follows-selections",
+        "leaf": "260928-MIK-L42"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+        "content": "sha256:60616374187df50a50efa1efae51e8a02ebfb96f22f513da676c714dce3621e1",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_document_that_begins_to_claim_the_leaf_is_not_hidden_by_a_kept_view"
+        }
+      },
+      "facet": "A second document with the leaf's ID makes the next read compute again and answer an incomplete worklist, while the memo holds only the first view.",
+      "id": "PRF-4XJBZJ",
+      "invariant": "INV-BBPPS5",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-view-depends-on-its-reads",
+        "leaf": "260928-MIK-L42"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+        "content": "sha256:a1506fdb6ee90f30c644f5705bd70bd304b89780abcf5a65ee899dad472f0f83",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_task_document_changing_while_the_view_is_computed_is_computed_again"
+        }
+      },
+      "facet": "A document written once before the child computes leads to two computations and a kept answer; a document rewritten on every computation leads to exactly two computations and the refusal inputs_changing that names the document, with nothing kept and a normal answer afterwards.",
+      "id": "PRF-5DT1WT",
+      "invariant": "INV-BBPPS5",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-view-depends-on-its-reads",
+        "leaf": "260928-MIK-L42"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+        "content": "sha256:808982e2fcff62915535c1d9d898c204240cc8938c0734c777c67bea85d0a706",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_moved_inputs_tells_not_read_from_changed_and_unidentified"
+        }
+      },
+      "facet": "With a key that names one document, no read and a read of the same bytes report nothing; other bytes, a conflict and a document the key does not name are each reported.",
+      "id": "PRF-8RG2QP",
+      "invariant": "INV-BBPPS5",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-view-depends-on-its-reads",
+        "leaf": "260928-MIK-L42"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+        "content": "sha256:9adb41c8b4499438af7dd1d9be67c565d837797950f3ac82ddc1254e9a1436b2",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_worklist_that_reads_no_task_document_is_not_refused_as_changed"
+        }
+      },
+      "facet": "A computation whose worklist does not apply and that read no task document answers the view with the worklist source absent instead of a refusal.",
+      "id": "PRF-F04GDR",
+      "invariant": "INV-BBPPS5",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-view-depends-on-its-reads",
+        "leaf": "260928-MIK-L42"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+        "content": "sha256:13efa4d40e2fad22d872ca9cc278d35ae3674f6d592caeb23bc61054e56da995",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_child_consumed_task_bytes_survive_aba_conflict_absence_and_read_errors"
+        }
+      },
+      "facet": "Child task-byte ABA, conflicting identities, absence and read errors refuse with recorded observations, keep no leaf-view memo entry, and permit a later stable task read to be kept. Changed settings, contract and ledger reads retain their named observations and prevent retention; changed-contract input refuses. The gate's controlled contract-read error instead recovers the baseline successful verdict and identical worklist while leaving the gate memo empty. Packet controls cover packet/alias ABA and first manifest IO failure; the failed IO is the manifest, not packet bytes.",
+      "id": "PRF-GCYB5H",
+      "invariant": "INV-5M9WY3",
+      "origin": {
+        "handoffEntry": "L156-MEM-F07-reconciled-failed-read-nonretention",
+        "leaf": "260928-MIK-L156"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+        "content": "sha256:c3f475897dcd14f7a97836eec5863e97be6516602151f2871c7ddd4accbe3ae1",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_kept_view_ignores_every_task_document_it_did_not_read"
+        }
+      },
+      "facet": "Another leaf's document that appears, is edited and is removed, and a newline added to the master's task.json, leave the body unchanged and start no child; an edit of the leaf's own document computes again.",
+      "id": "PRF-R1W9GV",
+      "invariant": "INV-BBPPS5",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-view-depends-on-its-reads",
+        "leaf": "260928-MIK-L42"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The long case: the leaf's document, then settings, contract, packet, root, ledger and gate parts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+            "content": "sha256:13efa4d40e2fad22d872ca9cc278d35ae3674f6d592caeb23bc61054e56da995",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_child_consumed_task_bytes_survive_aba_conflict_absence_and_read_errors"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The external ledger's bytes, change, absence and failure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+            "content": "sha256:267caaf15e6e218966814d04fd2285fd1db099ea6dd45ebe90412f84ac14b800",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "A failed contract read behind the gate keeps nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+            "content": "sha256:34bdc078eebaf81a6714ca4f9ec68744347a1449fe40e06e26a458638d867962",
+            "locator": {
+              "kind": "symbol",
+              "name": "_gate_failed_selector"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+            "content": "sha256:20942aac0ed24d1d6aeff0ebc2595445af8f13a71b83d945acb4828782df4532",
+            "locator": {
+              "end": 893,
+              "kind": "line_range",
+              "start": 845
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Documents the view did not read do not invalidate it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+            "content": "sha256:c3f475897dcd14f7a97836eec5863e97be6516602151f2871c7ddd4accbe3ae1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_kept_view_ignores_every_task_document_it_did_not_read"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+            "content": "sha256:652b10933379dbe7532866126282bad53c1c786c1d8756376c161eb2afc1bfb0",
+            "locator": {
+              "end": 949,
+              "kind": "line_range",
+              "start": 923
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "A second claimant is computed again.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+            "content": "sha256:60616374187df50a50efa1efae51e8a02ebfb96f22f513da676c714dce3621e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_document_that_begins_to_claim_the_leaf_is_not_hidden_by_a_kept_view"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+            "content": "sha256:11f73fead97f325668096cc63aaff9f0c43dcb64b9dc3e1a960de82401c70497",
+            "locator": {
+              "end": 966,
+              "kind": "line_range",
+              "start": 952
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "One recomputation, then inputs_changing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+            "content": "sha256:a1506fdb6ee90f30c644f5705bd70bd304b89780abcf5a65ee899dad472f0f83",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_task_document_changing_while_the_view_is_computed_is_computed_again"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "No task document read is not a change.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+            "content": "sha256:9adb41c8b4499438af7dd1d9be67c565d837797950f3ac82ddc1254e9a1436b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_worklist_that_reads_no_task_document_is_not_refused_as_changed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "The judgments of moved_inputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+            "content": "sha256:808982e2fcff62915535c1d9d898c204240cc8938c0734c777c67bea85d0a706",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_moved_inputs_tells_not_read_from_changed_and_unidentified"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+            "content": "sha256:ac8732cf843a807fac1a955bbf96b7f430aabbc66c24683663eaebeb8d0ad0de",
+            "locator": {
+              "end": 1030,
+              "kind": "line_range",
+              "start": 1019
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The gate's warm pass becomes the refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+            "content": "sha256:1446cc189bdfc847e52f08f12e39dc316d9482c56ebba34c7493d19936aa29de",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_gates_warm_pass_becomes_the_refusal_when_a_packet_locator_is_retargeted"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+            "content": "sha256:257a377fa2e712613aae2168af963169d25fcc286156247430943bcbf35590e8",
+            "locator": {
+              "end": 1064,
+              "kind": "line_range",
+              "start": 1033
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "Canonical decision bytes and parent-tip carriage establish the real packet-gate prerequisites.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+            "content": "sha256:8f60d4194bea549cc665f1bf45d5bff518871ce66b85b1fd763a7bb8b21c0767",
+            "locator": {
+              "kind": "symbol",
+              "name": "_packet_inputs"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The rows of the settings selection.\n\nAnchor: `_settings_selection`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+            "content": "sha256:267caaf15e6e218966814d04fd2285fd1db099ea6dd45ebe90412f84ac14b800",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The fallback contract read and a sibling read at two identities.\n\nAnchor: `_fallback_reads`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+            "content": "sha256:267caaf15e6e218966814d04fd2285fd1db099ea6dd45ebe90412f84ac14b800",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The packet link outside, inside and outside again, for the view and the gate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+            "content": "sha256:525de24ac76e4627bf2b0ffd1ba7d5e701c5ec644922ae6ffdbf7c3ae47c2e32",
+            "locator": {
+              "kind": "symbol",
+              "name": "_packet_confinement"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+            "content": "sha256:2c582e9b0523d39e6c98495f857bc554f064d5efb5679029b68b9cb1646eb2f6",
+            "locator": {
+              "end": 612,
+              "kind": "line_range",
+              "start": 556
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Root absence, retargeting, the removed sidecar root, and probe errors.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+            "content": "sha256:5d5279ced163a25302240b8fd1de7e6e59fe3f10cde77dc404ca43505d463bcb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_root_selections"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+            "content": "sha256:1ca8a9bf7f74072f318f989448df12c0321982a3b0e779708a351ee6c2176671",
+            "locator": {
+              "end": 731,
+              "kind": "line_range",
+              "start": 662
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

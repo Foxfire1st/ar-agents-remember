@@ -1,0 +1,41 @@
+{
+  "path": "dashboard/src/panels/review/l86.file-diffs.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Code file before/after pair\n\nAnchor: `code:mcp/src/agents_remember/application/review_comparison_freeze.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da5a59c51535c4a413e90de3bd74f162e9d2eb6c",
+            "content": "sha256:990ccea41980f945c2cbc1141bcbd7f255b2fe23b88b55179b26d4c4b5e51c3b",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Memory file before/after pair\n\nAnchor: `memory:knowledge/assumptions/ASM-HDB5GQ-knowledge-stays-git-sized.json`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da5a59c51535c4a413e90de3bd74f162e9d2eb6c",
+            "content": "sha256:990ccea41980f945c2cbc1141bcbd7f255b2fe23b88b55179b26d4c4b5e51c3b",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

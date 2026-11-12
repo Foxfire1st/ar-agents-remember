@@ -1,28 +1,18 @@
 # mcp/src/agents_remember/worktrees/modules/startup/start_provider_preflight.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/modules/startup/start_provider_preflight.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [governing route overview](../overview.md)
 
 ## Purpose
 
-Computes provider enablement and settings-readability state before worktree start exposes provider setup.
+Computes settings-readability and retained provider-plan state before worktree start. Both retired provider identities are disabled, so readable settings yield a skipped plan rather than provider setup.
 
 ## Code Commentary
 
 ### Logic
 
-The public surface is `provider_enablement_state`. Provider enablement is a start-time projection only. An unreadable provider configuration becomes bounded public evidence; provider availability neither locates the lifecycle journal nor changes enclosure authority.
+The module callable is `provider_enablement_state`. It reads the configured settings through the existing port; unreadable settings remain a bounded blocked result. The shared predicate always returns `False` for `codegraphcontext-code` and `grepai-memory`, regardless of their legacy settings, so this helper returns the skipped state and settings path for those providers. This is settings/plan reporting, not provider activation; it neither locates the lifecycle journal nor changes enclosure authority.
 
 ### Conventions
 
@@ -38,24 +28,31 @@ The file exposes typed values or one narrow operation boundary. Callers consume 
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No configured Domain Documentation source applies to this repository-internal lifecycle seam.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The source file itself is the current evidence for this file-specific contract.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module defines `provider_enablement_state` as its public seam. | `provider_enablement_state` | mcp/src/agents_remember/worktrees/modules/startup/start_provider_preflight.py:11-51 |
+- The module defines `provider_enablement_state` as its public seam. [1]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository boundary is owned by this file.
 
-## Update History
+## Historical provider-surface wording
 
-- 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: moved this preserved sidecar to mirror `mcp/src/agents_remember/worktrees/modules/startup/start_provider_preflight.py`, repointed current source evidence and governing context, and verified the source at code commit `1d446724d099517f6f52d596b47827ae2391a2a4`.
+The following earlier wording is retained as provenance, not a current consumer or operation contract:
 
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: created from the accepted full L2 candidate. Verification fields remain blank until the architect-owned closeout has a real code commit to stamp.
+> Computes provider enablement and settings-readability state before worktree start exposes provider setup.
+>
+> The public surface is `provider_enablement_state`. Provider enablement is a start-time projection only. An unreadable provider configuration becomes bounded public evidence; provider availability neither locates the lifecycle journal nor changes enclosure authority.
+
+## Current retirement-boundary evidence
+
+- The preflight retains unreadable-settings evidence and returns skipped state for disabled providers. [2]
+- The shared enablement predicate always returns false for both exact retired provider identities. [3]

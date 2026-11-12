@@ -1,0 +1,110 @@
+{
+  "path": "mcp/src/agents_remember/serving/changeset_cache.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a8a781425fec891612af4838bc49e7409a23f974",
+        "content": "sha256:53c856b7d45bc71f230bff53c92a5ed40b6cfe8857f7fafb5f8b83fb17522b0d",
+        "locator": {
+          "kind": "symbol",
+          "name": "_Read.finish"
+        }
+      },
+      "id": "RLZ-17D84X",
+      "invariant": "INV-BRGWKX",
+      "origin": {
+        "handoffEntry": "L174-R1-02",
+        "leaf": "260928-MIK-L174"
+      },
+      "rationale": "The cache checks the read's abandoned event before, during and after admission and withdraws any value it already admitted when the read is abandoned.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a8a781425fec891612af4838bc49e7409a23f974",
+        "content": "sha256:09ca8abb3bb0cc2c8c8e735571a03c7afdeb83412e1f8011cf77456df0c68ea5",
+        "locator": {
+          "kind": "symbol",
+          "name": "cached_read"
+        }
+      },
+      "id": "RLZ-340WGH",
+      "invariant": "INV-ZNXX7H",
+      "origin": {
+        "handoffEntry": "L168-W-R168-PRESERVATION",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "The generic read path retains a value only while its complete stable input generation still agrees; it admits a retained refusal on the named unknown-status stamp and never a successful result. It has no working-view mode rejection; the uncached change-set working view bypasses it at RLZ-E0PH8P in changeset_reads.py.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a8a781425fec891612af4838bc49e7409a23f974",
+        "content": "sha256:0ec10a5fa8298786b17a4f1069ec014773d091f1604f3be8c77b141ec266e771",
+        "locator": {
+          "kind": "symbol",
+          "name": "ChangesetCache"
+        }
+      },
+      "id": "RLZ-SZGGGM",
+      "invariant": "INV-7TMGB0",
+      "origin": {
+        "handoffEntry": "L168-W-R168-02",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "The cache owns the id-keyed result, repository/layout maps and the per-read object memo; a landed hit is served from its ids with no observation, while a working view is not cached.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "a8a781425fec891612af4838bc49e7409a23f974",
+        "content": "sha256:0ec10a5fa8298786b17a4f1069ec014773d091f1604f3be8c77b141ec266e771",
+        "locator": {
+          "kind": "symbol",
+          "name": "ChangesetCache"
+        }
+      },
+      "id": "RLZ-T4017A",
+      "invariant": "INV-GDWJKR",
+      "origin": {
+        "handoffEntry": "L168-W-R168-07",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "The cache's result, repository/layout and per-read object maps are capacity-bounded; an abandoned read admits nothing.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "2": {
+      "note": "All three retained tables are bounded and LRU.\n\nAnchor: `ChangesetCache`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a8a781425fec891612af4838bc49e7409a23f974",
+            "content": "sha256:3f4ef8779f96b1087b7bc6122b1cad18e4fc23138aaeace3f8021c5859c9c581",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Reuse requires exact observed generations and returns isolated copies; otherwise native computation runs.\n\nAnchor: `cached_read`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a8a781425fec891612af4838bc49e7409a23f974",
+            "content": "sha256:3f4ef8779f96b1087b7bc6122b1cad18e4fc23138aaeace3f8021c5859c9c581",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

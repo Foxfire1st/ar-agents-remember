@@ -1,0 +1,464 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L107",
+  "rows": [
+    {
+      "disposition": "no_impact",
+      "id": "ROW-0Y86XB",
+      "items": [
+        "sha256:523ddd9488d1b4d35889db522c1a6165e55be601d13a4821925ae8d5cee34032"
+      ],
+      "reason": "Reviewed against W02: the existing route ownership and generic build-owned runtime contract remain applicable; the concrete status/transition obligations are placed in the host records and their file sidecars.",
+      "subject": "onboarding:docs/reference/overview"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R107",
+          "packet": "requirements/MIK-R107-v1-the-host-runs-on-the-current-node.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        },
+        "DEC-C60H91"
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "8c04ba51e28132e2c051c120ed038b9f096cb595",
+            "content": "sha256:655cc4ba48eb5762242aa346d6db16f09c04d4322e1ed58238fb02b68c04669c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ensure_node"
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_node.py"
+          },
+          "before": {
+            "blob": "3167ee16f04ad230c21dcbbc1e2fce372593e8bf",
+            "content": "sha256:655cc4ba48eb5762242aa346d6db16f09c04d4322e1ed58238fb02b68c04669c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ensure_node"
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_node.py"
+          },
+          "id": "RLZ-0HKKTZ"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-4878CM",
+      "items": [
+        "sha256:0b48f6ec67b2af53cf9acf167090b38a6c4d42b0425afd47d3c32cbd2f4f51e5"
+      ],
+      "reason": "D113/current approved R107 replaces the literal22 pin with26.11.1, preserving digest verification, whole placement, absolute product paths, platform and foreign-target refusal. Worker §1/preservation/version consequence and current Reviewer PASS co-resolve here; original origin remains L96.",
+      "revision": 2,
+      "subject": "INV-BGV9YT"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-6DPDSN",
+      "items": [],
+      "reason": "The settings reference updates only the build-pinned Node version; settings still do not select the runtime release. Docs are excluded from file-card storage; the reference overview and host contract records preserve the governing intent.",
+      "subject": "onboarding:docs/reference/settings-json.md"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R107",
+          "packet": "requirements/MIK-R107-v1-the-host-runs-on-the-current-node.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "03d20024f657d641e591e1ecd7e37fc538ae412b",
+            "content": "sha256:2c33923f8d72dac9b6cc9bc5b93f359dcf15643d975836213cc7cf79c6d729f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_running_host_is_read_only_including_mismatches_and_session_names"
+            },
+            "path": "mcp/tests/test_paseo_start.py"
+          },
+          "before": "absent",
+          "id": "PRF-FHPS2X"
+        },
+        {
+          "after": {
+            "blob": "27bc7cb29b4c698532f752259d96f7929ecc87c7",
+            "content": "sha256:d798305e60a711a3f5a733eaedc4b1bfcef145f66764c00fcc5fe92799a2ad52",
+            "locator": {
+              "kind": "symbol",
+              "name": "runtime_status"
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_daemon.py"
+          },
+          "before": "absent",
+          "id": "RLZ-5TZT2N"
+        },
+        {
+          "after": {
+            "blob": "8c04ba51e28132e2c051c120ed038b9f096cb595",
+            "content": "sha256:f48f4945a3e2b3d4e1f2275c8fbca5d2e148c6cf571195facba9614ff3cb2579",
+            "locator": {
+              "kind": "symbol",
+              "name": "node_status"
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_node.py"
+          },
+          "before": "absent",
+          "id": "RLZ-H3MX7P"
+        },
+        {
+          "after": {
+            "blob": "5515191836e65faa8ef6b536868ba15ce9782fb1",
+            "content": "sha256:cd55f8a97f01af38eb6036e2307d7ff613d7adcb454639ac28c8831a1fc8a6f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observe"
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_start.py"
+          },
+          "before": "absent",
+          "id": "RLZ-KPZKR4"
+        },
+        {
+          "after": {
+            "blob": "5515191836e65faa8ef6b536868ba15ce9782fb1",
+            "content": "sha256:768cc2660ac745053d44771d1d99dabf17e347f92695d1084c458b362a9ef534",
+            "locator": {
+              "kind": "symbol",
+              "name": "_remedy_line"
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_start.py"
+          },
+          "before": "absent",
+          "id": "RLZ-P036B9"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "introduce",
+      "id": "ROW-7XH0EK",
+      "items": [],
+      "reason": "The accepted current W02 obligation extends the existing lifecycle and is supported by the named focused proof; no historical witness gap is promoted.",
+      "revision": 1,
+      "subject": "INV-7HC1QH"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-8MGF0N",
+      "items": [
+        "sha256:420ccf1a49fa3a9438fd3d33ac21be64def15dd4a77971529cf0655a074a4973"
+      ],
+      "reason": "Reviewed against W02: the existing route ownership and generic build-owned runtime contract remain applicable; the concrete status/transition obligations are placed in the host records and their file sidecars.",
+      "subject": "onboarding:mcp/src/agents_remember/serving/paseo/paseo_daemon.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-9NNGFG",
+      "items": [
+        "sha256:c724da714e0b8f5a1cec445aa18a5acc837a513a01f2ad291dc02893399ec3d4"
+      ],
+      "reason": "Reviewed against W02: the existing route ownership and generic build-owned runtime contract remain applicable; the concrete status/transition obligations are placed in the host records and their file sidecars.",
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CB4RC9",
+      "items": [
+        "sha256:abc9298513ba272dc23ed9b86a3a9e7d2b70801921b12f5b56d939757ec11489"
+      ],
+      "reason": "Reviewed against W02: the existing route ownership and generic build-owned runtime contract remain applicable; the concrete status/transition obligations are placed in the host records and their file sidecars.",
+      "subject": "onboarding:mcp/tests/test_paseo_start.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-E4RF2C",
+      "items": [],
+      "reason": "The installation text updates only the contract-derived concrete Node version. Its build-owned host, absolute product Node and setup intent are preserved; docs are excluded from file-card storage, and the root overview and Node invariant carry that contract.",
+      "subject": "onboarding:docs/install/README.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ETDDWG",
+      "items": [
+        "sha256:99a40981300d7d283715d67d63384ed247441010826575abe67078e5f6a8e6f3"
+      ],
+      "reason": "Reviewed against W02: the existing route ownership and generic build-owned runtime contract remain applicable; the concrete status/transition obligations are placed in the host records and their file sidecars.",
+      "subject": "onboarding:overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-EWWJ17",
+      "items": [
+        "sha256:b18ee261883c4328fc36c6274015e89bf6a3e2cdbcb49dfabf1d3303a4b60748"
+      ],
+      "reason": "Reviewed against W02: the existing route ownership and generic build-owned runtime contract remain applicable; the concrete status/transition obligations are placed in the host records and their file sidecars.",
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_host/contract.json"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-J6CYWA",
+      "items": [
+        "sha256:76b24edaca94278d608e209f7d187e8a7cefd05beb13c0106580abd2842eee9a"
+      ],
+      "reason": "Reviewed against W02: the existing route ownership and generic build-owned runtime contract remain applicable; the concrete status/transition obligations are placed in the host records and their file sidecars.",
+      "subject": "onboarding:mcp/src/agents_remember/serving/paseo/paseo_node.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-J9G80C",
+      "items": [
+        "sha256:242f2ac6955d7d894ebebf33a2ae05958aa0f4b9392c3e4d9c8b10df12b6b73a"
+      ],
+      "reason": "Reviewed against W02: the existing route ownership and generic build-owned runtime contract remain applicable; the concrete status/transition obligations are placed in the host records and their file sidecars.",
+      "subject": "onboarding:mcp/src/agents_remember/serving/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JAC2P5",
+      "items": [
+        "sha256:55d468aa401f556d41c3b78a3cae0063777d95e3317f10cf3baefaa31a279bb4"
+      ],
+      "reason": "The owner-admitted formatter only moves the identical derived consumer line into order; no consumer, authored contract, artifact or lane meaning changes.",
+      "subject": "hunk:sha256:55d468aa401f556d41c3b78a3cae0063777d95e3317f10cf3baefaa31a279bb4"
+    },
+    {
+      "disposition": "changed",
+      "examined": [
+        {
+          "id": "INV-03M6ZA",
+          "revision": 1
+        },
+        {
+          "id": "INV-0PAKA9",
+          "revision": 1
+        },
+        {
+          "id": "INV-7HC1QH",
+          "revision": 1
+        },
+        {
+          "id": "INV-96C24X",
+          "revision": 1
+        },
+        {
+          "id": "INV-BGV9YT",
+          "revision": 2
+        },
+        {
+          "id": "INV-CB36W0",
+          "revision": 1
+        },
+        {
+          "id": "INV-EQH5X6",
+          "revision": 1
+        },
+        {
+          "id": "INV-FM3V0M",
+          "revision": 1
+        },
+        {
+          "id": "INV-GAZREV",
+          "revision": 1
+        },
+        {
+          "id": "INV-PB8GDK",
+          "revision": 1
+        },
+        {
+          "id": "INV-RW4566",
+          "revision": 1
+        },
+        {
+          "id": "INV-YXP2R0",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-JZX42J",
+      "items": [
+        "sha256:3b1e87eaa02173a77b53ed8b3b8e4572d2fc559bc6f490b724ee21308bad6b90"
+      ],
+      "reason": "All ten existing scoped obligations remain necessary; the pin successor retains the acquisition guarantee, and public status plus explicit retained-file transition extend operability. The nine unchanged siblings stay revision1, routes remain exactly as recorded.",
+      "subject": "FAM-QDY93G"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-KCEFMD",
+      "items": [
+        "sha256:0925925fe2804169e1f3cdc449a9bc9038b11b472d6c1c6c6c047a4e59d54ebe"
+      ],
+      "reason": "Reviewed against W02: the existing route ownership and generic build-owned runtime contract remain applicable; the concrete status/transition obligations are placed in the host records and their file sidecars.",
+      "subject": "onboarding:mcp/tests/test_paseo_install_no_stop.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-NQTPPE",
+      "items": [
+        "sha256:542ae14a7b6aad3875a4b81a45a19c018989f384541332ec73bd8c48816d373c"
+      ],
+      "reason": "Reviewed against W02: the existing route ownership and generic build-owned runtime contract remain applicable; the concrete status/transition obligations are placed in the host records and their file sidecars.",
+      "subject": "onboarding:mcp/src/agents_remember/serving/paseo/paseo_provision.py"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R107",
+          "packet": "requirements/MIK-R107-v1-the-host-runs-on-the-current-node.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "4f4eefe190aeda7e299f77c8d8b44c821a634640",
+            "content": "sha256:a610071fa53ff837f9693820d6f3d4aedc6ca6668a98e52c882ecd2a18d70ee5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_running_host_on_another_node_is_deferred_before_node_or_home_changes"
+            },
+            "path": "mcp/tests/test_paseo_install_no_stop.py"
+          },
+          "before": "absent",
+          "id": "PRF-FW8AFM"
+        },
+        {
+          "after": {
+            "blob": "8b2e75098a4b2a32b4c965d867f0f32828a3fe36",
+            "content": "sha256:aea3ec1737896b4b455444cff71e058b35306cdaed159bd4da04950dfc962897",
+            "locator": {
+              "kind": "symbol",
+              "name": "_report_unused_node"
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_provision.py"
+          },
+          "before": "absent",
+          "id": "RLZ-2VJ210"
+        },
+        {
+          "after": {
+            "blob": "cf0e20b25616726e024ebe9a65135521b342eb6e",
+            "content": "sha256:b3755c26c13c6f8ce7b58a66c46c3ed405eb8856f94c83384ecba50059be2098",
+            "locator": {
+              "kind": "symbol",
+              "name": "_check_install_restart"
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_run.py"
+          },
+          "before": "absent",
+          "id": "RLZ-A48E62"
+        },
+        {
+          "after": {
+            "blob": "8b2e75098a4b2a32b4c965d867f0f32828a3fe36",
+            "content": "sha256:a4a472a6f331db512f6aa80c707689776a97c4ded035a97dcff8a2fbc923aeb0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_converge_daemon"
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_provision.py"
+          },
+          "before": "absent",
+          "id": "RLZ-AFXDAA"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "introduce",
+      "id": "ROW-PPJ59Z",
+      "items": [],
+      "reason": "The accepted current W02 obligation extends the existing lifecycle and is supported by the named focused proof; no historical witness gap is promoted.",
+      "revision": 1,
+      "subject": "INV-CB36W0"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Q2XG3V",
+      "items": [
+        "sha256:d1555099027dc99ac578945debb11fc69a087c3a33a70258383d92e01606b851"
+      ],
+      "reason": "Reviewed against W02: the existing route ownership and generic build-owned runtime contract remain applicable; the concrete status/transition obligations are placed in the host records and their file sidecars.",
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-RE3C9S",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "Reviewed against W02: the existing route ownership and generic build-owned runtime contract remain applicable; the concrete status/transition obligations are placed in the host records and their file sidecars.",
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-S7ZYE8",
+      "items": [
+        "sha256:779ef57edc5bb1dde69b69930e62fed1fe648f0d47eaba6a27aa39d276166ccb"
+      ],
+      "reason": "Reviewed against W02: the existing route ownership and generic build-owned runtime contract remain applicable; the concrete status/transition obligations are placed in the host records and their file sidecars.",
+      "subject": "onboarding:mcp/src/agents_remember/serving/paseo/paseo_start.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-T46T84",
+      "items": [
+        "sha256:ed7739236c90d27e6f5b368b4b8af0b95a035b5eb7d37c41ae517c1d5d5863d8"
+      ],
+      "reason": "The owner-admitted formatter only moves the identical derived consumer line into order; no consumer, authored contract, artifact or lane meaning changes.",
+      "subject": "hunk:sha256:ed7739236c90d27e6f5b368b4b8af0b95a035b5eb7d37c41ae517c1d5d5863d8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-W0SPSP",
+      "items": [
+        "sha256:7d0592ab0f60db0ff4d085d1d2e69832e7b14e5417f36fd4d969ab3aba852fce"
+      ],
+      "reason": "This import wires the shared Node comparator into the read-only observation; its semantics are already realized by node_status, _observe and _remedy_line in the status invariant. The import introduces no separate obligation.",
+      "subject": "hunk:sha256:7d0592ab0f60db0ff4d085d1d2e69832e7b14e5417f36fd4d969ab3aba852fce"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "8b2e75098a4b2a32b4c965d867f0f32828a3fe36",
+            "content": "sha256:a4a472a6f331db512f6aa80c707689776a97c4ded035a97dcff8a2fbc923aeb0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_converge_daemon"
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_provision.py"
+          },
+          "before": {
+            "blob": "70b38647aec70c72dae4a0462146b98d004ccbf1",
+            "content": "sha256:be2a8739238b1bf0dc5ac637a8989ceafb9e66e9a4bf12d04c1237fdfd3ce788",
+            "locator": {
+              "kind": "symbol",
+              "name": "_converge_daemon"
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_provision.py"
+          },
+          "id": "RLZ-R90C04"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-WEASJP",
+      "items": [
+        "sha256:64d79ce4f998f80bc3d4827d1524d4dae72e43daa50527ede0fd6ab42a6f54b1"
+      ],
+      "reason": "The added successful Node-transition report does not change the install late-restart branch: live settings remain written and the host remains running. Revalidated _converge_daemon and retained late-restart proof at W02.",
+      "revision": 1,
+      "subject": "INV-FM3V0M"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

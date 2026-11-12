@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/knowledge/classification.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/knowledge/classification.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T15:30+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
-| governingOverview | `mcp/src/agents_remember/models/overview.md` |
-
 ## Governing Overview
 
 [models route overview](../overview.md)
@@ -162,50 +152,42 @@ level and imported by name elsewhere in the repository, but `__all__` does not n
   `mcp/tests/test_knowledge_views_and_projection.py`, and the two builders are called from
   `mcp/src/agents_remember/application/knowledge_view_render.py` and by the tests.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The rows below ground the card's claims in the declarations themselves: the closed vocabularies and how each is
 derived, the rule record and the validator that closes its inputs, the registry and the lookup built from it, the
 three accessors, the two-branch provenance record and its builders, the base constants reused for bounded text,
 and the imported vocabularies this module reuses instead of re-declaring.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own statement of its subject and of what it deliberately does not have, including the two-member closure, the unclassifiable value routed to an unresolved limitation, and the "no store, no cache and no persistence" claim. | `UnresolvedLimitation` | mcp/src/agents_remember/models/knowledge/classification.py:1-36; mcp/src/agents_remember/models/knowledge/view.py:417-429 |
-| The closed two-member class set, its two members as typed values, and the runtime tuple derived from the literal rather than restated. | `CLASSIFICATION_CLASSES` | mcp/src/agents_remember/models/knowledge/classification.py:71-76 |
-| The four admitted ordering inputs quoted from the declared prohibition, with the runtime sequence derived from the literal. | `OrderingInput` | mcp/src/agents_remember/models/knowledge/classification.py:78-86 |
-| The closed determination kinds and the registry version recorded beside every mechanical classification. | `DeterminationKind`; `MECHANICAL_RULE_REGISTRY_VERSION` | mcp/src/agents_remember/models/knowledge/classification.py:88-95 |
-| The registered-role grouping order read from the realization-role vocabulary's own declaration instead of being hand-copied. | `REGISTERED_ROLE_ORDER`; `RealizationRole` | mcp/src/agents_remember/models/knowledge/classification.py:97-102; mcp/src/agents_remember/models/knowledge/graph.py:36-44 |
-| The failure that is an exception rather than a refusal value, so an unregistered rule cannot yield a default classification. | `MechanicalRuleNotRegistered` | mcp/src/agents_remember/models/knowledge/classification.py:105-111 |
-| One registered rule's declared fields, and the validator that refuses an ordering rule with no admitted input, a consequence rule that names one, and a rule that reads nothing. | `_require_an_admitted_ordering_input` | mcp/src/agents_remember/models/knowledge/classification.py:114-156 |
-| The registry itself: eight rules declared as a tuple, four ordering rules with exactly one per admitted input and four no-consequence rules, each reading named recorded values. | `MECHANICAL_RULES` | mcp/src/agents_remember/models/knowledge/classification.py:159-265 |
-| The registry's lookup, keyed by rule identity together with rule version so both halves of the identity are required. | `_MECHANICAL_RULES_BY_IDENTITY` | mcp/src/agents_remember/models/knowledge/classification.py:267-269 |
-| The one accessor that raises for a pair the registry does not carry, naming the sorted registry in its message. | `mechanical_rule` | mcp/src/agents_remember/models/knowledge/classification.py:272-286 |
-| The determination filter that returns the registered rules in registry order. | `mechanical_rules_for` | mcp/src/agents_remember/models/knowledge/classification.py:289-292 |
-| The accessor that raises when the named rule determines a consequence and therefore names no ordering input. | `ordered_input_of` | mcp/src/agents_remember/models/knowledge/classification.py:295-304 |
-| The authored reason as the author wrote it: an actor reference rather than free text, and a rationale bounded as prose. | `AuthoredDetermination` | mcp/src/agents_remember/models/knowledge/classification.py:307-316 |
-| The provenance record that refuses both mixtures of the two determinations, requires both halves of the rule identity in the mechanical branch, and checks the registry on the way. | `_require_exactly_one_branch` | mcp/src/agents_remember/models/knowledge/classification.py:319-370 |
-| The two builders, one per branch, so a caller cannot half-fill a provenance record. | `authored_provenance`; `mechanical_provenance` | mcp/src/agents_remember/models/knowledge/classification.py:373-379; mcp/src/agents_remember/models/knowledge/classification.py:382-386 |
-| The frozen, `extra="forbid"` base every shape derives from, with the three bounded-length constants this module's fields reuse. | `KnowledgeModel`; `PROSE_MAX_LENGTH`; `LABEL_MAX_LENGTH`; `REFERENCE_MAX_LENGTH` | mcp/src/agents_remember/models/knowledge/base.py:24-37 |
+- The module's own statement of its subject and of what it deliberately does not have, including the two-member closure, the unclassifiable value routed to an unresolved limitation, and the "no store, no cache and no persistence" claim. [1]
+- The closed two-member class set, its two members as typed values, and the runtime tuple derived from the literal rather than restated. [2]
+- The four admitted ordering inputs quoted from the declared prohibition, with the runtime sequence derived from the literal. [3]
+- The closed determination kinds and the registry version recorded beside every mechanical classification. [4]
+- The registered-role grouping order read from the realization-role vocabulary's own declaration instead of being hand-copied. [5]
+- The failure that is an exception rather than a refusal value, so an unregistered rule cannot yield a default classification. [6]
+- One registered rule's declared fields, and the validator that refuses an ordering rule with no admitted input, a consequence rule that names one, and a rule that reads nothing. [7]
+- The registry itself: eight rules declared as a tuple, four ordering rules with exactly one per admitted input and four no-consequence rules, each reading named recorded values. [8]
+- The registry's lookup, keyed by rule identity together with rule version so both halves of the identity are required. [9]
+- The one accessor that raises for a pair the registry does not carry, naming the sorted registry in its message. [10]
+- The determination filter that returns the registered rules in registry order. [11]
+- The accessor that raises when the named rule determines a consequence and therefore names no ordering input. [12]
+- The authored reason as the author wrote it: an actor reference rather than free text, and a rationale bounded as prose. [13]
+- The provenance record that refuses both mixtures of the two determinations, requires both halves of the rule identity in the mechanical branch, and checks the registry on the way. [14]
+- The two builders, one per branch, so a caller cannot half-fill a provenance record. [15]
+- The frozen, `extra="forbid"` base every shape derives from, with the three bounded-length constants this module's fields reuse. [16]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. A provenance class is a property of one namespace's
 own stored knowledge, the rules it registers are identified and versioned inside this package, and every value a
 rule names as read is a recorded value of the same store.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-18T15:30+02:00 — 260915-KS-L20 curator (uncommitted change set on `ar/260915-ks-l20`, base `9f88a6de`): created this one-to-one card for the closed provenance vocabulary — the two-member `authored`/`mechanical` class set, the four admitted ordering inputs, the registered mechanical-rule registry with its identity-and-version lookup, and the validator that keeps the two determinations from merging. It records that the class set is closed at two members with `CLASSIFICATION_CLASSES` derived from the literal, that `MECHANICAL_RULES` is a tuple of eight versioned rules with exactly one ordering rule per admitted input and that `MechanicalRule.reads` may not be empty, that `mechanical_rule` raises `MechanicalRuleNotRegistered` instead of degrading to a default, and that no declared field can hold a comparator, score, rank, weight, severity or percentage. The card also states the deliberate absences the module docstring names — no ordering comparator, no sort key, no store, cache or persistence, and nothing that derives an ordering key from a name, path, depth, extension or another view's result — together with the fact that `ordered_input_of` is exported and has no caller in the shipped candidate. This card carries **no `lastVerifiedCommitHash`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. What was actually read is this leaf's uncommitted working tree, and closeout owns the stamp once the code commit exists.
+No meaningful cross-repo references found.

@@ -1,15 +1,5 @@
 # mcp/tests/test_platform_subprocess.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_platform_subprocess.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T21:45:53+00:00 |
-| lastVerifiedCommitHash |  `d36109038b3f2b500c138f9dc1ea9c9f9a247489`|
-| lastVerifiedCommitDate |  2026-09-06T22:21:49+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Tests overview](overview.md)
@@ -42,39 +32,28 @@ work. This source inspection does not claim a newly executed test or acceptance 
 
 No additional implementation scope is opened by this memory reconciliation.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The repository has no configured Domain Documentation source. These claims concern its own test
 fixtures and assertions, so the exact retained source is the direct evidence.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external domain claim is required. | N/A | N/A |
+No external domain claim is required.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Each current definition below can be inspected in the exact source file. Historical references
 to removed methods are superseded by this current inventory.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Native environment uses enclosure reports and filters windows path | `test_native_environment_uses_enclosure_reports_and_filters_windows_path` | mcp/tests/test_platform_subprocess.py:16-33 |
-| Native command prefers the linux tool after a windows path | `test_native_command_prefers_the_linux_tool_after_a_windows_path` | mcp/tests/test_platform_subprocess.py:36-48 |
-| Native command refuses an explicit windows shim | `test_native_command_refuses_an_explicit_windows_shim` | mcp/tests/test_platform_subprocess.py:51-55 |
-| Native environment refuses windows backed temp root | `test_native_environment_refuses_windows_backed_temp_root` | mcp/tests/test_platform_subprocess.py:58-64 |
-| Windows runner keeps its environment and paths unchanged | `test_windows_runner_keeps_its_environment_and_paths_unchanged` | mcp/tests/test_platform_subprocess.py:67-72 |
+- Native environment uses enclosure reports and filters windows path [1]
+- Native command prefers the linux tool after a windows path [2]
+- Native command refuses an explicit windows shim [3]
+- Native environment refuses windows backed temp root [4]
+- Windows runner keeps its environment and paths unchanged [5]
 
-## Cross-Repo References
+### Cross-Repo References
 
 This card establishes test behavior, not a separate cross-repository protocol or live installation.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external evidence is needed for these assertions. | N/A | N/A |
-
-## Update History
-
-- 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
-
-
-- 2026-08-12T15:19+02:00 — Created with L23's native POSIX subprocess boundary regressions; verification provenance remains closeout-owned.
+No external evidence is needed for these assertions.

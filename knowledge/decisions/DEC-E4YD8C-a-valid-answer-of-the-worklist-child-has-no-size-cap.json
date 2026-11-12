@@ -1,0 +1,70 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "A cap was the open question of version 1 and was decided against on the models' own limits; a later change that adds a limit to the transport has to change the models first."
+  },
+  "alternatives": [
+    {
+      "option": "No cap on the size of a valid answer; waiting, time and reclamation are bounded instead.",
+      "reason": "The existing response models set no finite limit on a worklist or on its list of read files, so a cap would refuse answers that are valid today (rule 5 of version 2 of the requirement).",
+      "status": "chosen"
+    },
+    {
+      "option": "Cap the bytes of a child's answer.",
+      "reason": "It would refuse answers that the response models accept, for a large leaf whose worklist is correct.",
+      "reconsider_when": "The response models set a finite limit on a worklist or on its list of read files.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The parent drains the child's pipes in slices, so an answer larger than a pipe buffer arrives whole.",
+    "The request's deadline and the stop of the child's process group bound time and reclamation."
+  ],
+  "context": "A child returns the worklist and the list of the files it read through a pipe. Version 1 of the requirement left open whether the size of an answer should be capped (truth gap G3).",
+  "decider": "the architect under DEVELOPER-DIRECTION D47 (MIK-R42@v2 rule 5 and the closed gap G3)",
+  "id": "DEC-E4YD8C",
+  "links": [
+    {
+      "relation": "explains",
+      "target": {
+        "blob": "a555e9a9abeaf5f9e28273ddd2ac14cec79ec9f9",
+        "content": "sha256:7c02c0d50728d9d10d32edcfd8051e12cff4c99b451e5111edecf054f53225ce",
+        "locator": {
+          "kind": "symbol",
+          "name": "_collect"
+        },
+        "path": "mcp/src/agents_remember/kernel/reviewer_worklist_process.py"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "id": "MIK-R42",
+        "packet": "requirements/MIK-R42-v2-isolated-reviewer-worklist-computation.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v2"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "requirements/MIK-R42-v2-isolated-reviewer-worklist-computation.md rule 5 and Open Truth Gaps (G3)"
+      ],
+      "path": "notes/reports/260928-MIK-L42-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "RULING-R42v2-no-answer-cap",
+    "leaf": "260928-MIK-L42",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

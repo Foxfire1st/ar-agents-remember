@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Four registered cases protect the leaf read, its named roots, the unscoped official-line answer and the refusal when the memory worktree is gone; a wrong configuration silently answers from the wrong repository, which no caller can detect from the payload."
+  },
+  "applicability": "Every mounted paired read that carries a canonical task context - a task document reference and the leaf's contract path.",
+  "conditions": [
+    "The leaf's code worktree and memory worktree both exist."
+  ],
+  "exclusions": [
+    "A read with no task context: the official line, said so in the answer.",
+    "A contract whose worktrees no longer exist: refused by name, not served from another root."
+  ],
+  "id": "INV-YHCVE3",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_a_registered_leaf_read_observes_both_edited_worktrees; test_a_leaf_read_names_its_own_source_and_memory_roots; test_an_unscoped_read_is_identified_as_the_official_line; test_a_leaf_whose_memory_worktree_is_gone_is_refused_by_name; evidence/focused-reviewer-tests.log"
+      ],
+      "path": "handoff-draft-2.json"
+    },
+    "handoffEntry": "F09",
+    "leaf": "260928-MIK-L73",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A task-scoped registered paired read observes the leaf's uncommitted code and memory card while an unscoped read observes the unchanged official pair.",
+  "status": "proposed",
+  "supersedes": []
+}

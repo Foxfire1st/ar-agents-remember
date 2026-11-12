@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "An unpublished attempt treated as recoverable could lock a request that has no published bytes and block a plain retry."
+  },
+  "applicability": "A direct-landing refusal that is provably unpublished.",
+  "conditions": [
+    "The attempt's generation was not published, so cancellation and preparation restore are safe."
+  ],
+  "exclusions": [
+    "A publication that became visible; only recovery may proceed there."
+  ],
+  "id": "INV-9ZBTVA",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_direct_landing.py::DirectLandingTests::test_a_late_change_at_the_commit_boundary_refuses_restores_and_the_request_lands; test_converted_direct_retry_keeps_the_judged_generation; F04-unpublished-confirm.log"
+      ],
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "R3 finding 4",
+    "leaf": "260928-MIK-L26",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "An unpublished direct-landing refusal restores preparation and cancels its generation, while an irreversible publication retains recovery.",
+  "status": "proposed",
+  "supersedes": []
+}

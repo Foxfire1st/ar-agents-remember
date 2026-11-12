@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/application/review_overview_precompute.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "OverviewPrecompute builds the leaf-wide view before it is asked for and keys it on the trees digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ca9569b7e2d6609248b68b78a0c854e2e961f70",
+            "content": "sha256:f6c4db3ede299aa10b03f205269f406de1b29929b5fae524c06421cf2f954d6e",
+            "locator": {
+              "kind": "symbol",
+              "name": "OverviewPrecompute"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

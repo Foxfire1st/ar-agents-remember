@@ -1,0 +1,29 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Moving the developer-gallery import outside its development-only branch could ship the developer harness in a production dashboard bundle."
+  },
+  "applicability": "Every curator entry ingested from the orchestrator's hand-off list.",
+  "conditions": [],
+  "exclusions": [],
+  "id": "INV-2D60EEQS",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Hand-off kind: clause.",
+        "Producer's disposition: satisfied.",
+        "Evidence: The routing module states the production-only route and places the developer import inside the import.meta.env.DEV ternary, which a production build drops; the range cited is the routing block itself."
+      ]
+    },
+    "leaf": "260921-ICR-L30",
+    "legacyId": "ff4194e5-1353-49cd-afbc-87c1e73b6c12",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "The browser dashboard ships exactly one production route, the cockpit, and its developer gallery is reachable only in a development build, so a production bundle carries no route to the developer harness.",
+  "status": "proposed",
+  "supersedes": []
+}

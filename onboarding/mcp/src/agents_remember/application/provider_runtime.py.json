@@ -1,0 +1,179 @@
+{
+  "path": "mcp/src/agents_remember/application/provider_runtime.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`docker_command` and `run_command` are provided by the provider lifecycle shared layer (re-paired to their real owners; the previous row had the two anchors swapped).\n\nAnchor: \"def run_command\"; \"def docker_command\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "337ede2a94b54f8ec9ed9a95d5597c700991e152",
+            "content": "sha256:d07740071a26e48f00680a992b67403463c24834ff51b0dca629662803963f0a",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/command_runner.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6029fadb8d818bad5f7a8acb17fcedb6929a6439",
+            "content": "sha256:22556fd8c05c76ba55363f10ad0981f134fc4f87e0941d54eea393462f4164bb",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/docker_runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The one removal path: a not-present path, a dry run, a plain `rmtree`, and the permission-denied reclaim retry whose surviving tree now carries its own reason.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7da9d6abdce7275958e06ed2baf8cbf04674a2e2",
+            "content": "sha256:8f1226779d8cabe09fc5bf84b4a3e3964ec2727373b556a444a5a660b698e605",
+            "locator": {
+              "kind": "symbol",
+              "name": "remove_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The port the worktree layer reaches this module through; its `teardown` and `remove_tree` members are what a worktree operation can call.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "04542ceda7ef4559f29f3c1241a1d65ea7972a8f",
+            "content": "sha256:3d6f92d4fd05bcf8bd9fa3cf903fb62b86a74954e4a3189df33cecea220b7d9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProviderLifecyclePort"
+            },
+            "path": "mcp/src/agents_remember/worktrees/services.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The focused cases that pin the reason on every non-removal result and the surviving-tree cause.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
+            "content": "sha256:7a0f04ef049f20ca4ad3b0521fb3759e492f6eb1a71061d927835a47c101e421",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_remove_tree_answers_with_a_reason_whenever_it_reclaimed_nothing"
+            },
+            "path": "mcp/tests/test_terminal_blocker_reasons.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
+            "content": "sha256:cf0fca4dddba6037a11a2aace70fc52c6799556318aa5d803988f4061d6b7cd9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_reclaimed_but_surviving_provider_runtime_reports_why_it_survived"
+            },
+            "path": "mcp/tests/test_terminal_blocker_reasons.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
+            "content": "sha256:18b7b166310b208aea22c19d18ac0567a2442ec92f1607a76d2845b9e1c2e9ce",
+            "locator": {
+              "end": 335,
+              "kind": "line_range",
+              "start": 312
+            },
+            "path": "mcp/tests/test_terminal_blocker_reasons.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Ordinary start and retry return the non-enabled provider plan before the retained background-launch branch; neither retired ID becomes enabled.  Anchor: `plan_providers_for_start`, `run_or_launch_provider_setup`, `_retry_provider_setup_result`, `provider_enabled`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+            "content": "sha256:22b289c11b3f7dd36d5ab92dcdc82292ea02619249a80cca9e9c89c2a0e2c993",
+            "locator": {
+              "kind": "symbol",
+              "name": "plan_providers_for_start"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+            "content": "sha256:26d119dadfd7cf660efe2d092075d933047bcd63b1d1d3d6b4141d1830ced3ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_or_launch_provider_setup"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+            "content": "sha256:707f8430d994b394092dfbc59090e97fd43a07f459d652099c251568f3c6aa22",
+            "locator": {
+              "kind": "symbol",
+              "name": "_retry_provider_setup_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80950be36296616946275f2d5e7cc7e752fd4185",
+            "content": "sha256:44435c7691ac61a8330bd6183744c49519d1b4d716fe52e6600eb03d0aa6cc79",
+            "locator": {
+              "kind": "symbol",
+              "name": "provider_enabled"
+            },
+            "path": "mcp/src/agents_remember/providers/setup_common.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "45b63ee2b11932f9042ed5039888627c21aa9c0e",
+            "content": "sha256:7c1cb57aae6f6127e71d12c19499fc628f81cd83d4dc97dbc69164eafa3db07f",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/startup/start_provider_preflight.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

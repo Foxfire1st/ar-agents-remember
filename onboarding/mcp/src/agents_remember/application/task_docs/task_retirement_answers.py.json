@@ -1,0 +1,123 @@
+{
+  "path": "mcp/src/agents_remember/application/task_docs/task_retirement_answers.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c7e07f75507ace242c1610b9cb71969bc99e3ace",
+        "content": "sha256:ffbbacb22481e2e9a545e5ac8d7dc479674e1b1f37032c5fa7d776f2b8d9b1c6",
+        "locator": {
+          "kind": "symbol",
+          "name": "preview_answer"
+        }
+      },
+      "id": "RLZ-2X6PM2",
+      "invariant": "INV-CC0VTQ",
+      "origin": {
+        "handoffEntry": "L41-R7 finding 6",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "This function builds the dry-run answer and adds wouldWrite, the list of every file the real run writes.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "c7e07f75507ace242c1610b9cb71969bc99e3ace",
+        "content": "sha256:c304c51112992e812625bb5aab27400835e75211dafa7de664274f669840165a",
+        "locator": {
+          "kind": "symbol",
+          "name": "_archived_state"
+        }
+      },
+      "id": "RLZ-32XX53",
+      "invariant": "INV-GCEAJJ",
+      "origin": {
+        "handoffEntry": "L41-R7 note 9",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "This is the dry-run archived-state classifier; the real cleanup hook outcome is owned by task_master_retirement._clean_up.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "c7e07f75507ace242c1610b9cb71969bc99e3ace",
+        "content": "sha256:ffbbacb22481e2e9a545e5ac8d7dc479674e1b1f37032c5fa7d776f2b8d9b1c6",
+        "locator": {
+          "kind": "symbol",
+          "name": "preview_answer"
+        }
+      },
+      "id": "RLZ-6ZJ0CR",
+      "invariant": "INV-Y5TT22",
+      "origin": {
+        "handoffEntry": "L183-task-close-retires-environments",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Preview appends the hook exact explainer_line to its change list.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "A dry run of a retirement lists every file a real run writes, also after a death inside the sprint edit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7e07f75507ace242c1610b9cb71969bc99e3ace",
+            "content": "sha256:41f44cbe7564fa40196b5174695b2e8a01668b5760ff5e5ba117659e1738c30a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A dry run names a cleanup that failed hook-failed by the operation's own state table.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7e07f75507ace242c1610b9cb71969bc99e3ace",
+            "content": "sha256:41f44cbe7564fa40196b5174695b2e8a01668b5760ff5e5ba117659e1738c30a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The answer names the remaining steps and files for a repeated request, so a resumed request does only what remains.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7e07f75507ace242c1610b9cb71969bc99e3ace",
+            "content": "sha256:41f44cbe7564fa40196b5174695b2e8a01668b5760ff5e5ba117659e1738c30a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Preview appends the hook exact explainer_line to its change list.\n\nAnchor: `preview_answer`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7e07f75507ace242c1610b9cb71969bc99e3ace",
+            "content": "sha256:41f44cbe7564fa40196b5174695b2e8a01668b5760ff5e5ba117659e1738c30a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

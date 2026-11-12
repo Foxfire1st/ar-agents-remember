@@ -1,0 +1,29 @@
+{
+  "anchor": {
+    "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+    "content": "sha256:e4818a9a1e3df6db6852879d0f9c00605c02d08776cd26e58b6b15b9d74d38dc",
+    "locator": {
+      "kind": "symbol",
+      "name": "begin_task_review"
+    },
+    "path": "mcp/src/agents_remember/worktrees/review_history.py"
+  },
+  "id": "WKN-9KTGG7",
+  "kind": "fault",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-a004"
+    },
+    "handoffEntry": "L97-weakness-23",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L97"
+  },
+  "state": "open",
+  "statement": "begin_review writes the approval into the field approval and clears developerApproval, and the dashboard reads only developerApproval, so its line \"granted by\" never shows for an approval that begin_review records."
+}

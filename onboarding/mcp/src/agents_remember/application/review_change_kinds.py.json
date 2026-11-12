@@ -1,0 +1,568 @@
+{
+  "path": "mcp/src/agents_remember/application/review_change_kinds.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7225bcad1f4d4e5d17479f6dc2030a7d66bebf22",
+        "content": "sha256:95efdb775bd4fad53087f11e4578e7b2bc6e90db190164d86cb35564b83e413f",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-8F4K1F",
+      "invariant": "INV-5G73P2",
+      "origin": {
+        "handoffEntry": "MIK-R57@v2 by-design reanchor",
+        "leaf": "260928-MIK-L57"
+      },
+      "rationale": "Keeps realization-anchor movement in implementation classification rather than declaring a meaning change.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The module describes family occurrence facts and the new leaf-wide implementation-fact view, both from recorded comparison inputs.\n\nAnchor: exact source span",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7225bcad1f4d4e5d17479f6dc2030a7d66bebf22",
+            "content": "sha256:64f927a98d9a1e5fa4b6fb3e19ae42bf1de7b3557b2c9d966d0c341db1c3f764",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The unconditional unknown for an unresolved range, the lane's reason in a reviewer's words, and a non-file entry at a non-text change.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7225bcad1f4d4e5d17479f6dc2030a7d66bebf22",
+            "content": "sha256:aa79ae63ffbd53aac3ffc15133454659fda37e6091ad70569be86191c8e29a8b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_withheld"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7225bcad1f4d4e5d17479f6dc2030a7d66bebf22",
+            "content": "sha256:c09738f5090d85fd56fc726ccd1987826177f39a4035c71f7e4013068afa8f95",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unresolved"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7225bcad1f4d4e5d17479f6dc2030a7d66bebf22",
+            "content": "sha256:fc76fffc7eebf7879c87d6bc3861f12fbd48258df6e4291519ffa83f9036a2a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unintersectable"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Base-entry class reuse requires an equal indexed base entry; absent/mismatched shared classification falls back to the local one-entry classifier.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7225bcad1f4d4e5d17479f6dc2030a7d66bebf22",
+            "content": "sha256:49a1f3a52658fc54553a7c321a50b1fcf3fcc7b152dd534944c74f298366ef26",
+            "locator": {
+              "kind": "symbol",
+              "name": "_base_class"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Records and entries read through each side's index; an unparsed record or sidecar answers why instead.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7225bcad1f4d4e5d17479f6dc2030a7d66bebf22",
+            "content": "sha256:7722d5ecfbbb28c3d8fe2ef61480c8e8e19cf4c9f5104344c836d11f5d4664c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Change inventory and per-path results are memoized locally; supplied computed paths project through from_worklist, otherwise the lane classifies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7225bcad1f4d4e5d17479f6dc2030a7d66bebf22",
+            "content": "sha256:2c89aad673abb897ff397448a2607643f5520ff7adae2e6ff7527002f6ee8d5c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_change"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7225bcad1f4d4e5d17479f6dc2030a7d66bebf22",
+            "content": "sha256:ff5e402b73c7d6327313eef315ba98a368d67941ef33bccfcd4bac88a4266a15",
+            "locator": {
+              "kind": "symbol",
+              "name": "_file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The composed subject review passes its family context through the family-enrichment entry point; this is not the module sole caller after leaf-wide facts were added.\n\nAnchor: exact source span",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
+            "content": "sha256:df335d4a125139d744fd24d04fcc90476e7739486a731c2c73afa5927cfabd48",
+            "locator": {
+              "end": 504,
+              "kind": "line_range",
+              "start": 504
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Fact, Known, RecordChanges and problems are imported from the shared recorded-meaning owner.\n\nAnchor: exact source span",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7225bcad1f4d4e5d17479f6dc2030a7d66bebf22",
+            "content": "sha256:15df2a9bba9839a98d2546837558d815e83b97533afd73b0c87a918d0e9742c8",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 66
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The comparison reader carries optional shared classification beside its recorded-meaning reader.\n\nAnchor: `_ChangeKinds.classification`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7225bcad1f4d4e5d17479f6dc2030a7d66bebf22",
+            "content": "sha256:0b8d329d6950e159091d2fb8fc8112289ce0db4c2ac4f58814c669840a64183c",
+            "locator": {
+              "kind": "symbol",
+              "name": "meaning"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7225bcad1f4d4e5d17479f6dc2030a7d66bebf22",
+            "content": "sha256:32ed6cc0360e717e8b134bfc79b2041c498e4bc86677ce3f997c5aadc8d60e0d",
+            "locator": {
+              "end": 190,
+              "kind": "line_range",
+              "start": 190
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The family badge maps the shared guarantee onto badge words",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7225bcad1f4d4e5d17479f6dc2030a7d66bebf22",
+            "content": "sha256:39d290d8adb15d41a549871142293dd26d15a4ec1ca18fde3672e386502813ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "_guarantee"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Member intent and membership are the shared facts directly",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7225bcad1f4d4e5d17479f6dc2030a7d66bebf22",
+            "content": "sha256:02e076de6b859d7f80d4a047b31730ced11efb09774247e868b0faf95267cbbb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_intent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The shared intent, presence and wording functions decide revision, retired-presence and same-revision authored-text changes.\n\nAnchor: `RecordChanges.intent`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7861a16c59057dcfbcdc25f304f32e54d65c1fa",
+            "content": "sha256:bbad9f4079f0a0dbe70f7a3193b16140794b776e20dc4eff78235ff7ab8e618a",
+            "locator": {
+              "kind": "symbol",
+              "name": "presence"
+            },
+            "path": "mcp/src/agents_remember/application/review_record_changes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c7861a16c59057dcfbcdc25f304f32e54d65c1fa",
+            "content": "sha256:a78ddaea6d41c5e004303009bf88552c7b1186680d73facf3346f18f389b4ea8",
+            "locator": {
+              "kind": "symbol",
+              "name": "wording"
+            },
+            "path": "mcp/src/agents_remember/application/review_record_changes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c7861a16c59057dcfbcdc25f304f32e54d65c1fa",
+            "content": "sha256:73cd2857614c7ca5912fcd4e525cfdf5fa82df4fbfb7981e967e2aaba4f2b071",
+            "locator": {
+              "end": 169,
+              "kind": "line_range",
+              "start": 148
+            },
+            "path": "mcp/src/agents_remember/application/review_record_changes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Family enrichment returns the context untouched without trees/entries; opened-lane failures mark returned family/member facts unknown, not a dataset-review mode.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7225bcad1f4d4e5d17479f6dc2030a7d66bebf22",
+            "content": "sha256:be47c9f3ac796a7e5812037df243ca510d6e49f9bbb80b1f472cc50c34e9753b",
+            "locator": {
+              "kind": "symbol",
+              "name": "with_change_kinds"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7225bcad1f4d4e5d17479f6dc2030a7d66bebf22",
+            "content": "sha256:dfc0748b87c6f412da2fa705bd08ed0bb08ef5143e10d70c2b8eceb3a40dedb8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unread"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The shared intent, presence and wording functions decide revision, retired-presence and same-revision authored-text changes.\n\nAnchor: `RecordChanges.intent`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7861a16c59057dcfbcdc25f304f32e54d65c1fa",
+            "content": "sha256:bbad9f4079f0a0dbe70f7a3193b16140794b776e20dc4eff78235ff7ab8e618a",
+            "locator": {
+              "kind": "symbol",
+              "name": "presence"
+            },
+            "path": "mcp/src/agents_remember/application/review_record_changes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c7861a16c59057dcfbcdc25f304f32e54d65c1fa",
+            "content": "sha256:a78ddaea6d41c5e004303009bf88552c7b1186680d73facf3346f18f389b4ea8",
+            "locator": {
+              "kind": "symbol",
+              "name": "wording"
+            },
+            "path": "mcp/src/agents_remember/application/review_record_changes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c7861a16c59057dcfbcdc25f304f32e54d65c1fa",
+            "content": "sha256:73cd2857614c7ca5912fcd4e525cfdf5fa82df4fbfb7981e967e2aaba4f2b071",
+            "locator": {
+              "end": 169,
+              "kind": "line_range",
+              "start": 148
+            },
+            "path": "mcp/src/agents_remember/application/review_record_changes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The shared intent, presence and wording functions decide revision, retired-presence and same-revision authored-text changes.\n\nAnchor: `RecordChanges.intent`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7861a16c59057dcfbcdc25f304f32e54d65c1fa",
+            "content": "sha256:bbad9f4079f0a0dbe70f7a3193b16140794b776e20dc4eff78235ff7ab8e618a",
+            "locator": {
+              "kind": "symbol",
+              "name": "presence"
+            },
+            "path": "mcp/src/agents_remember/application/review_record_changes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c7861a16c59057dcfbcdc25f304f32e54d65c1fa",
+            "content": "sha256:a78ddaea6d41c5e004303009bf88552c7b1186680d73facf3346f18f389b4ea8",
+            "locator": {
+              "kind": "symbol",
+              "name": "wording"
+            },
+            "path": "mcp/src/agents_remember/application/review_record_changes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c7861a16c59057dcfbcdc25f304f32e54d65c1fa",
+            "content": "sha256:73cd2857614c7ca5912fcd4e525cfdf5fa82df4fbfb7981e967e2aaba4f2b071",
+            "locator": {
+              "end": 169,
+              "kind": "line_range",
+              "start": 148
+            },
+            "path": "mcp/src/agents_remember/application/review_record_changes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Shared Fact retains established/unknown/not_established states and prioritizes unresolved reasons from non-establishing entries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7861a16c59057dcfbcdc25f304f32e54d65c1fa",
+            "content": "sha256:795a3a4f913df9261c866591cec46b79afe7d4c2bfcce03581ba118201eab79c",
+            "locator": {
+              "kind": "symbol",
+              "name": "Fact"
+            },
+            "path": "mcp/src/agents_remember/application/review_record_changes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The family's own row and its total over the family's own records (review R1 note).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7225bcad1f4d4e5d17479f6dc2030a7d66bebf22",
+            "content": "sha256:39d290d8adb15d41a549871142293dd26d15a4ec1ca18fde3672e386502813ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "_guarantee"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7225bcad1f4d4e5d17479f6dc2030a7d66bebf22",
+            "content": "sha256:d571492cd9c2f9d26450f1f01790af8c7ae5cfa69ca908eac207d81b9d21fcc5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_members_total"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7225bcad1f4d4e5d17479f6dc2030a7d66bebf22",
+            "content": "sha256:8a26dc8477dba2a36820a7ccf6352725f4f4a8214f7d416277fdc1f51e1ef156",
+            "locator": {
+              "kind": "symbol",
+              "name": "_own_problem"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "One member occurrence: three facts, bounded evidence, and the change kind's reasons apart from the membership's.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7225bcad1f4d4e5d17479f6dc2030a7d66bebf22",
+            "content": "sha256:07ce1edf356f21af4331839ef8a4a4d356b0b1ae1c92cb544edfa4916e34fe06",
+            "locator": {
+              "kind": "symbol",
+              "name": "_member"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7225bcad1f4d4e5d17479f6dc2030a7d66bebf22",
+            "content": "sha256:58205f9aa4c67bbda425b7c9c248bfa77f8b4f8c5f0eb1544c4a014056e348a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_position"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Local intent delegates to the shared recorded-meaning implementation.\n\nAnchor: `RecordChanges.intent`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7225bcad1f4d4e5d17479f6dc2030a7d66bebf22",
+            "content": "sha256:02e076de6b859d7f80d4a047b31730ced11efb09774247e868b0faf95267cbbb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_intent"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c7861a16c59057dcfbcdc25f304f32e54d65c1fa",
+            "content": "sha256:73cd2857614c7ca5912fcd4e525cfdf5fa82df4fbfb7981e967e2aaba4f2b071",
+            "locator": {
+              "end": 169,
+              "kind": "line_range",
+              "start": 148
+            },
+            "path": "mcp/src/agents_remember/application/review_record_changes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Membership on each side of this family's record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7225bcad1f4d4e5d17479f6dc2030a7d66bebf22",
+            "content": "sha256:7f7f586a665e2795867cee1251436d16809375b1207ae2645d14dde7e0a97ff8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_membership"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Implementation (a): added, retired or re-anchored; only the mechanical carry is exempt (review R1 F1); stale-at-base repairs worded apart.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7225bcad1f4d4e5d17479f6dc2030a7d66bebf22",
+            "content": "sha256:1d656c641ec205490dfa7b4dc1a6acf8e8b8e0632d5e92b5e9989e0f02680f2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_entry_changes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Implementation (b) through the lane's links only, and definition 8 on a changed non-text file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7225bcad1f4d4e5d17479f6dc2030a7d66bebf22",
+            "content": "sha256:4cae0696e6ccb7e851f1f6aa438c67ba9a2c11dad020f0800a84819a8df41c0d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_hunks"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7225bcad1f4d4e5d17479f6dc2030a7d66bebf22",
+            "content": "sha256:ef0d0edbcf44e9577921b2a21a2cba8adcaf7ff720d97876c15802661d77198e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_hunk_linked"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7225bcad1f4d4e5d17479f6dc2030a7d66bebf22",
+            "content": "sha256:f6adbd3c2a15a4827e488f2f5f63322a45b89e3c4c80933b62c682a4ddb1881d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_file_covered"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,264 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/reopen.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "eb7f219c54077c4961695239a2bdaf7de1332e9c",
+        "content": "sha256:c9aadb43d9b043357c541d9f9f9e6532e5ace1bc4cbc7142b4a9a1a5b56147a9",
+        "locator": {
+          "kind": "symbol",
+          "name": "_already_reopened_result"
+        }
+      },
+      "id": "RLZ-TFKPW5",
+      "invariant": "INV-M3N2Y5",
+      "origin": {
+        "handoffEntry": "C2 reopen without limit",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Answers a repeated reopen on a tombstoned leaf without a write, and declines when a start has made the generation live.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "18": {
+      "note": "`_plan_leaf_doc_reset` owns the current boundary described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb7f219c54077c4961695239a2bdaf7de1332e9c",
+            "content": "sha256:3800c4595e1f9a984649face53b7226fad3aae0895f842726784da91c9f124bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_plan_leaf_doc_reset"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "`_plan_master_index_reset` owns the current boundary described above.\n\nAnchor: `_plan_master_index_reset`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb7f219c54077c4961695239a2bdaf7de1332e9c",
+            "content": "sha256:f798f8b474c24ccf0049bcc21a17d966f51f6bb4cb2afe7b876f5b82d3285be8",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "`_publish_reopen_transition` owns the current boundary described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb7f219c54077c4961695239a2bdaf7de1332e9c",
+            "content": "sha256:40eae1fe71f30f7e778650b60405a4d6860e6931bf22f7a49e544284f66fafbe",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish_reopen_transition"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "`_restore_reopen_artifacts` owns the current boundary described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb7f219c54077c4961695239a2bdaf7de1332e9c",
+            "content": "sha256:990ae872da7fba050e1aa445414ef95fb7658e10bb92ab91a34e84dd93aeb350",
+            "locator": {
+              "kind": "symbol",
+              "name": "_restore_reopen_artifacts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Terminal preflight, accepted memory ancestry, and integrated source-position checks.\n\nAnchor: `_reopen_preflight_refusal`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb7f219c54077c4961695239a2bdaf7de1332e9c",
+            "content": "sha256:f798f8b474c24ccf0049bcc21a17d966f51f6bb4cb2afe7b876f5b82d3285be8",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "Contract reset preserves identity while clearing two-output provenance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c08f0dd0dd501355eacf1089bf4011d44a0783e",
+            "content": "sha256:6d3689db95b8a2bc176c968a1bb0662a870335d936d02066b9e3265428fd6a5c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reopened_contract"
+            },
+            "path": "mcp/src/agents_remember/worktrees/reopen_reset.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "Frozen observation, task plans, and canonical publication remain coordinated.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c08f0dd0dd501355eacf1089bf4011d44a0783e",
+            "content": "sha256:18849a22f6422d15585b60237d37d467380867bb90ee039271f48892ebeafadf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_clear_frozen_landing"
+            },
+            "path": "mcp/src/agents_remember/worktrees/reopen_reset.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "`_reopen_master_path` resolves an unnamed leaf's master through the shared folder rule and a named reference through the shared `master_json_path_from_ref` resolver, refusing a reference that leaves the task folder.\n\nAnchor: `_reopen_master_path`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb7f219c54077c4961695239a2bdaf7de1332e9c",
+            "content": "sha256:f798f8b474c24ccf0049bcc21a17d966f51f6bb4cb2afe7b876f5b82d3285be8",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "The master reset refuses a misplaced master before planning its row, and keeps the demotion rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb7f219c54077c4961695239a2bdaf7de1332e9c",
+            "content": "sha256:4dc3ad6e9c80312e89e8c8bda5dee751006e66c8a131a2c8452a0c6267503587",
+            "locator": {
+              "kind": "symbol",
+              "name": "_plan_master_index_reset"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "The leaf reset refuses a misplaced leaf before planning its reset.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb7f219c54077c4961695239a2bdaf7de1332e9c",
+            "content": "sha256:3800c4595e1f9a984649face53b7226fad3aae0895f842726784da91c9f124bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_plan_leaf_doc_reset"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "The shared rule.\n\nAnchor: `folder_master_json_path`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4568c29f3b900b0d0b94dce225776b17f1e981be",
+            "content": "sha256:c096ad39e2e33809b65b91ec66a656449d35e7b27b6bffe8ecedee0f5c4d7893",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/tasks/master_sync.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "Parent lineage compares exact prestart output positions to the configured parent source.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0698b4d3060c69466daeccba41780544dbc5a11d",
+            "content": "sha256:94e08600c7701d5b5d55804a9bc4db0493ff8176781be940c5cd89b96a098d4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "parent_source_lineage"
+            },
+            "path": "mcp/src/agents_remember/worktrees/source_lineage.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "The series half shares the terminal path's tombstone proof, guards and archive citation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfe0753185e5a094aa76840372354516987503d5",
+            "content": "sha256:45dab99e820c6a87591861c5360d7ecfe244bb50f60b23a1618c05b93df0fb1a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_series_is_reset_tombstone"
+            },
+            "path": "mcp/src/agents_remember/worktrees/reopen_series.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "Leaf reopen supplies actual path/document pairs in preview and under the existing publication authority.\n\nAnchor: reopen source-path plumbing",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb7f219c54077c4961695239a2bdaf7de1332e9c",
+            "content": "sha256:58e3a6aff422b971f46023b0a771ccfc83d95b9649a041601fb38827f203a646",
+            "locator": {
+              "end": 568,
+              "kind": "line_range",
+              "start": 554
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eb7f219c54077c4961695239a2bdaf7de1332e9c",
+            "content": "sha256:fbedadfc1830e01aa7839085ffe90de4af221cfc2660044caef15ba7ddbf1fa8",
+            "locator": {
+              "end": 636,
+              "kind": "line_range",
+              "start": 572
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

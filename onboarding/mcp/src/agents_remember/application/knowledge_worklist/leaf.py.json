@@ -1,0 +1,26 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ad49bbea3aa27328b16a81b38c0fac81b3448485",
+        "content": "sha256:7451fad2a7395cbb0945efec59e2915caa9d695b48c363d98ac7d3e0e4a580f9",
+        "locator": {
+          "kind": "symbol",
+          "name": "persist_worklist"
+        }
+      },
+      "id": "RLZ-DS6CVY",
+      "invariant": "INV-RQNDH6",
+      "origin": {
+        "handoffEntry": "MIK-R81@v1-F13-worklist-publication",
+        "leaf": "260928-MIK-L81"
+      },
+      "rationale": "The one existing writer compares exact text at its publication boundary and leaves every caller evaluation and currentness check intact.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

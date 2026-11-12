@@ -1,0 +1,117 @@
+{
+  "path": "dashboard/src/panels/knowledge-reader/readerParts.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f10d3af559ce1dcc1fea8e6f543f672a0f92bba3",
+        "content": "sha256:47d02ce4c83243c402d501789605db2db56c8ce56ac0aac9f75f6aa8c64ce20f",
+        "locator": {
+          "end": 467,
+          "kind": "line_range",
+          "start": 417
+        }
+      },
+      "id": "RLZ-P2XBAV",
+      "invariant": "INV-4A68A2",
+      "origin": {
+        "handoffEntry": "MIK-R79@v1 required behavior 8",
+        "leaf": "260928-MIK-L79"
+      },
+      "rationale": "ProseWithReferences owns the rendering or source-selection boundary that implements this obligation: The shared Markdown renderer supports opt-in heading hierarchy, heading identifiers, text-only numbered references and caller-owned card links.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "12": {
+      "note": "The prose renderer, its marker buttons and its link mapping.\n\nAnchor: `ProseWithReferences`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f10d3af559ce1dcc1fea8e6f543f672a0f92bba3",
+            "content": "sha256:7e6e6c0909af224760f9ef06df8a877a6fa57889269df463445ec039c6271490",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "A `[n]` marker becomes a reference button only when the reference resolves.\n\nAnchor: `ReferenceList`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f10d3af559ce1dcc1fea8e6f543f672a0f92bba3",
+            "content": "sha256:7e6e6c0909af224760f9ef06df8a877a6fa57889269df463445ec039c6271490",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The authored-link to memory-path mapping.\n\nAnchor: `proseLinkPath`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f10d3af559ce1dcc1fea8e6f543f672a0f92bba3",
+            "content": "sha256:7e6e6c0909af224760f9ef06df8a877a6fa57889269df463445ec039c6271490",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "An unsupported link stays readable as text.\n\nAnchor: `ProseLink`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f10d3af559ce1dcc1fea8e6f543f672a0f92bba3",
+            "content": "sha256:7e6e6c0909af224760f9ef06df8a877a6fa57889269df463445ec039c6271490",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The one navigation context every link uses.\n\nAnchor: `ReaderNavContext`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f10d3af559ce1dcc1fea8e6f543f672a0f92bba3",
+            "content": "sha256:7e6e6c0909af224760f9ef06df8a877a6fa57889269df463445ec039c6271490",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The decision card with its alternatives.\n\nAnchor: `DecisionCard`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f10d3af559ce1dcc1fea8e6f543f672a0f92bba3",
+            "content": "sha256:7e6e6c0909af224760f9ef06df8a877a6fa57889269df463445ec039c6271490",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

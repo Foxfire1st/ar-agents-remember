@@ -1,0 +1,22 @@
+{
+  "path": "mcp/src/agents_remember/kernel/primitives/named_choices.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Matching tests IDs before labels without case and returns the offered row.\n\nAnchor: `named`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bca333ae11bd912a4042f43c258df9126d70dc72",
+            "content": "sha256:cb43d4abb78e50d3c89eb1edfa8a0d6ca60a1b07720e3a557734bed85bced037",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

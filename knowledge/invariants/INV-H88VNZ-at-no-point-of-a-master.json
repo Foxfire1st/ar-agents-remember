@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "The family states that a retirement is one recoverable operation; this member is the half that keeps the sprint resolvable until the folder has moved."
+  },
+  "applicability": "The sprint edit published by a master's retirement.",
+  "conditions": [
+    "The membership entry, the graph node and the touching edges are edited as one validated candidate."
+  ],
+  "exclusions": [
+    "Sprints from which the master had already been detached."
+  ],
+  "id": "INV-H88VNZ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "requirements/MIK-R41-v3-abandoned-leaves-do-not-block-a-master.md; notes/reports/260928-MIK-L41-worker-R3.md; notes/reports/260928-MIK-L41-review-R4.md"
+      ],
+      "path": "notes/reports/260928-MIK-L41-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R41@v3-sprint-valid-during-retirement",
+    "leaf": "260928-MIK-L41",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "At no point of a master's retirement does the sprint name a master it cannot resolve: the sprint is rewritten without the master's membership, graph node and edges in the publication that precedes the folder move, and a failure before the folder is archived restores the sprint's exact sources and the folder.",
+  "status": "proposed",
+  "supersedes": []
+}

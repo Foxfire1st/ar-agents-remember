@@ -1,0 +1,41 @@
+{
+  "path": "dashboard/src/panels/review/workspaceState.test.tsx",
+  "realizes": [],
+  "references": {
+    "2": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('opens and closes a group by id, and opening an open group changes nothing', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "32505cf69634fc3c94427d656520e836604f9ea0",
+            "content": "sha256:1a7699daab31e73738440467cd30ec4c3d1250920e3545006cf6150fb63e93f7",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 7
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('leaves the worklist view when a family position is chosen', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "32505cf69634fc3c94427d656520e836604f9ea0",
+            "content": "sha256:1940ae4604ca31963ceff601ce9f435bd69df36ad70a143b0cad971e5a553162",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 18
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

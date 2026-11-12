@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Guards the costly error this statement names: Two tests of test_task_reopen_series_extension.py answer lifecycle-switch-required when test_worktree_start_preview.py ran earlier in the same process, on the base commit as on the"
+  },
+  "applicability": "Two tests of test_task_reopen_series_extension.py answered lifecycle-switch-required when test_worktree_start_preview.py ran earlier in the same process.",
+  "conditions": [
+    "The interaction is inherited from the shared process-level request union."
+  ],
+  "exclusions": [
+    "Each file run alone, where the tests stay green."
+  ],
+  "id": "INV-61C8NM",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L41-reviewer-acd0dccb-066d-41e9-ab45-b3d7e19e742f.inherited-preview-reopen-mismatch.md; notes/reports/role-launch/260928-MIK-L41-reviewer-acd0dccb-066d-41e9-ab45-b3d7e19e742f-ruled-delta-evidence/out/d4-inherited-mismatch-facts.txt"
+      ],
+      "path": "entries-list.json"
+    },
+    "handoffEntry": "L41-R8D-inherited-order",
+    "leaf": "260928-MIK-L41",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Two tests of test_task_reopen_series_extension.py answer lifecycle-switch-required when test_worktree_start_preview.py ran earlier in the same process, on the base commit as on the candidate, because a real start leaves the process's session bound.",
+  "status": "retired",
+  "supersedes": []
+}

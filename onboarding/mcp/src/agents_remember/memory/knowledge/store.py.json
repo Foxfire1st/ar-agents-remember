@@ -1,0 +1,187 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/store.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The opened read store holds path, namespace, validated schema and read connection.\n\nAnchor: `OpenedKnowledgeStore`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
+            "content": "sha256:06f9fa0b997c9bd42569065fb5f62ea39d370764509c8c2467b0985cdde68958",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Both retained openers open an existing index read-only without creating or repairing it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
+            "content": "sha256:6fe2cc957dc11a8690591a9d84bf1ef8b232f5a9772df1f9241a4bc43ae0da28",
+            "locator": {
+              "kind": "symbol",
+              "name": "open_existing_knowledge_store"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
+            "content": "sha256:5a7d444f6d5aa6950d3170e1dfb74ced2b56bfcb496f38dd0485d8bcd71c6898",
+            "locator": {
+              "kind": "symbol",
+              "name": "open_read_only_store"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "**The close that unlinks nothing**, and the reason the peer unlink was removed rather than made conditional.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
+            "content": "sha256:947779ca6c56d2d2b3f19731a4d47c06e558fe68abe6d4f9e91cdeb7abde9d4a",
+            "locator": {
+              "kind": "symbol",
+              "name": "close"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The read surface, including the seal-verifying single-revision read.\n\nAnchor: `get_revision`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
+            "content": "sha256:06f9fa0b997c9bd42569065fb5f62ea39d370764509c8c2467b0985cdde68958",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "**The two enumerating reads the Intent Reviewer's entry list is built on: every recorded invariant and family identity, ordered by the identity's own column, with no filter and no count — because a reader that must be handed a subject cannot enumerate a candidate it was not pointed at.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
+            "content": "sha256:00a449d876919d3de040d15c7ea870e221d332a11a45dc654d9be90b89b323ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_invariants"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Closing the owned read handle unlinks no cache peers.\n\nAnchor: `OpenedKnowledgeStore.close`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
+            "content": "sha256:947779ca6c56d2d2b3f19731a4d47c06e558fe68abe6d4f9e91cdeb7abde9d4a",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 87
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`get_revision` reads one revision row by repository and revision id and decodes it with the stored seal verified; a text record holds no predecessor edge, so the decoded revision carries no predecessors.\n\nAnchor: `decode_revision_row`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
+            "content": "sha256:4d67cf075d6c300945eb4d42eeae768b15118046370b46da3c2227fc57a0dc7a",
+            "locator": {
+              "end": 173,
+              "kind": "line_range",
+              "start": 158
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a64ad09c79633786d6408b2e814119580ad51e7",
+            "content": "sha256:92d4353cb71f442af226829358fd09ea8dd54591ffed608d4b7a3779190116b8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Every invariant and family identity is enumerated in stable order.\n\nAnchor: `OpenedKnowledgeStore.list_invariants`; `OpenedKnowledgeStore.list_families`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
+            "content": "sha256:00a449d876919d3de040d15c7ea870e221d332a11a45dc654d9be90b89b323ab",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 123
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
+            "content": "sha256:3cb70a429652780066956ae4318d55c822d42865aa70e7aa796bf0aba0adb22b",
+            "locator": {
+              "end": 156,
+              "kind": "line_range",
+              "start": 141
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The logical identity is read from the opened index and bound namespace.\n\nAnchor: `OpenedKnowledgeStore.snapshot_identity`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
+            "content": "sha256:3c4b8b862d43ce91d9dd2905d7ea638814dd8a6a21c2c28d3ea3107abb8d5fd6",
+            "locator": {
+              "end": 194,
+              "kind": "line_range",
+              "start": 181
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

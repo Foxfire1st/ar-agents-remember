@@ -1,0 +1,107 @@
+{
+  "path": "mcp/src/agents_remember/cli/knowledge_write_route.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "19dcfe69c391f0df0341bdd52a11db4c0fcb86ff",
+        "content": "sha256:3eec625198c780176f28a7f619dcf731f64fb08c7bfbb04cb03163957cefa902",
+        "locator": {
+          "kind": "symbol",
+          "name": "command_settings"
+        }
+      },
+      "id": "RLZ-CQX7A6",
+      "invariant": "INV-S5VHSM",
+      "origin": {
+        "handoffEntry": "the-commands-raise-refusal-names-the-mounted-write",
+        "leaf": "260928-MIK-L186"
+      },
+      "rationale": "The command's settings are discovered here without an escape hatch, so the four causes are all it can meet and each maps to one clause.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "36": {
+      "note": "The adapter declares no settings option and imports no `require_config_path`: a caller cannot pass the authority a `raise` would need.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "19dcfe69c391f0df0341bdd52a11db4c0fcb86ff",
+            "content": "sha256:13bbf3980d4f11bb3a45d5a8b9fd98d4df00db2bb005e2da3c899eda0e5742ac",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 56
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "`run_leaf_write` builds the command route from `command_settings`, the hand-off list's resolved absolute path, the recorded label, the contract's resolved absolute path and the authorization reference, and passes the same label as the submission's hand-off.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "19dcfe69c391f0df0341bdd52a11db4c0fcb86ff",
+            "content": "sha256:b14ab972d1ae2deeae394903120b0286f3014e94b8a489b939aac1c9ba2d98cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_leaf_write"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "`command_settings` delegates to `knowledge_write_command.discovered_settings` with this command's discover, guard and load moves plus the unreadable error family, returning settings or one fixed clause.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "19dcfe69c391f0df0341bdd52a11db4c0fcb86ff",
+            "content": "sha256:3eec625198c780176f28a7f619dcf731f64fb08c7bfbb04cb03163957cefa902",
+            "locator": {
+              "kind": "symbol",
+              "name": "command_settings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "39": {
+      "note": "The guard's clause is also spelled in this module; the clause a refusal receives is the one the command module returns.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "19dcfe69c391f0df0341bdd52a11db4c0fcb86ff",
+            "content": "sha256:26765ab04026d19a589e2e9dc9c69864c4d5714b126be687d76f116f49cbd1fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "CHECKOUT_GUARD_CLAUSE"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "40": {
+      "note": "The wave route writes a taskless wave and takes no route, so a bootstrap reads no settings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "19dcfe69c391f0df0341bdd52a11db4c0fcb86ff",
+            "content": "sha256:5ab8986a0bfedab21027a3581be5a3b7cd8f8b4efe079e48080822e967fb4d8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_wave_write"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

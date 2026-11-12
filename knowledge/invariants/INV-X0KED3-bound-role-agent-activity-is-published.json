@@ -1,0 +1,41 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake",
+      "spans_locations"
+    ],
+    "justification": "Future changes to host intake, task projection or task-status consumers must preserve this bounded authority: duplicate task truth, unsupported paused observations, reconstructed membership or conflicting status/age presentation produce incorrect task operations. The named current source assertions guard the specified facets; this is no fresh Curator execution grade."
+  },
+  "applicability": "Every place that decides whether an agent is in a turn.",
+  "conditions": [
+    "Activity intake itself stays event-driven and reconciled once per boot.",
+    "The held-delivery tick reads the publication every three seconds for held delivery only."
+  ],
+  "exclusions": [
+    "No idle status polling and no second status store exist for activity.",
+    "The tick's read is not an activity intake and publishes no status of its own."
+  ],
+  "id": "INV-X0KED3",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "sync-L81-host-publisher-inner.txt; sync-L81-primary-regressions.txt; witness-host13-ui.json; idle-host11-owner-classified.json (five unrelated existing warmup calls retained)",
+        "M1-21: ROW-37XVJT; mcp/src/agents_remember/serving/change_watcher.py:618-624. Static source witness on A013; no Curator execution.",
+        "M1-21: ROW-0K0J6A; mcp/src/agents_remember/serving/change_watcher.py:517-539. Static source witness on A013; no Curator execution.",
+        "M1-21: ROW-A530FA, ROW-F2DJ70; mcp/src/agents_remember/cli/role_activity.py:60-63. Static source witness on A013; no Curator execution.",
+        "M1-21: ROW-A530FA; mcp/src/agents_remember/cli/role_held_messages.py:660-669. Static source witness on A013; no Curator execution.",
+        "M1-21: ROW-F2DJ70; mcp/src/agents_remember/cli/role_message_delivery.py:984-1008. Static source witness on A013; no Curator execution."
+      ],
+      "path": "A011-host-driven-native-task-core-31.json"
+    },
+    "handoffEntry": "L168-W-R167-02",
+    "leaf": "260928-MIK-L168",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "Bound role-agent activity is published from host transitions and reconciled once per boot; the activity publication is not polled for status, while the held-delivery tick reads it on its own short interval to see turn ends and to hold a message for a recipient reported in a turn.",
+  "status": "proposed",
+  "supersedes": []
+}

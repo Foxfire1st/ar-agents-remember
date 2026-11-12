@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/test_terminal_refusal_leaves_everything.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Refusal-before-deletion and honest partial-deletion answers are pinned.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9896dc76e68d49e2507f76d70cae2f287ac4c755",
+            "content": "sha256:3a153b16b7292c36d25d37e14ac43f41da037f4b1d51c0114907c0cb39dfa4fa",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

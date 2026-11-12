@@ -1,0 +1,503 @@
+{
+  "path": "mcp/tests/test_knowledge_gate_routes.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "fb21438758c57cf647872e223994856f0ee5bd5d",
+        "content": "sha256:b849d6a1edbadd1994470d6b5a41e9cc9a3d83a25b399a84d0dbcb635e2748b5",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_timed_out_blob_read_or_an_unverifiable_entry_refuses_a_master_landing"
+        }
+      },
+      "facet": "A master landing passes its calling-route operation through the gate block.",
+      "id": "PRF-A7FX3D",
+      "invariant": "INV-95NQR7",
+      "origin": {
+        "handoffEntry": "L50-CODE-R1-F02",
+        "leaf": "260928-MIK-L50"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "fb21438758c57cf647872e223994856f0ee5bd5d",
+        "content": "sha256:b849d6a1edbadd1994470d6b5a41e9cc9a3d83a25b399a84d0dbcb635e2748b5",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_timed_out_blob_read_or_an_unverifiable_entry_refuses_a_master_landing"
+        }
+      },
+      "id": "RLZ-AYEG7H",
+      "invariant": "INV-95NQR7",
+      "origin": {
+        "handoffEntry": "L50-CODE-R1-F02",
+        "leaf": "260928-MIK-L50"
+      },
+      "rationale": "An external-leg gate-route test pins explicit operation passing through the gate block; it proves the caller shape, not non-external refusal.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "13": {
+      "note": "The module docstring: every route test enters through the route's own entry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb21438758c57cf647872e223994856f0ee5bd5d",
+            "content": "sha256:d9198e7b784a3a1b6b9b301dcbbcac02bbbce9d59e91307d3a5b0b8616bb95d8",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The closeout refuses, restores the file and commits it closed once valid.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb21438758c57cf647872e223994856f0ee5bd5d",
+            "content": "sha256:cb38c1d763c28d0bdfcc2911aab8fa01c159c315ddf3860b584826dc793f8044",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_worktree_closeout_refuses_restores_the_file_and_commits_it_closed_once_valid"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Record landing refuses through its route entry.\n\nAnchor: `test_record_landing_refuses_through_its_route_entry`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb21438758c57cf647872e223994856f0ee5bd5d",
+            "content": "sha256:1bcf74a1372072144d39d4252082585bbcc86540d62cc4aa888664961a69d8f9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fb21438758c57cf647872e223994856f0ee5bd5d",
+            "content": "sha256:28fb9a8b5a78141ccea04a39e71203296f5d2dcf5765fafafad963e40659c5dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_record_landing_refuses_through_its_route_entry"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "Direct landing preview and apply refuse through their entry.\n\nAnchor: `test_direct_landing_preview_and_apply_refuse_through_their_route_entry`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb21438758c57cf647872e223994856f0ee5bd5d",
+            "content": "sha256:1bcf74a1372072144d39d4252082585bbcc86540d62cc4aa888664961a69d8f9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fb21438758c57cf647872e223994856f0ee5bd5d",
+            "content": "sha256:6c13977a1e1c986320e607d66eca9114c71cca08fbfaa29c5435367cf5c05358",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_direct_landing_preview_and_apply_refuse_through_their_route_entry"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The recorded rows of the settings resolution, and a conflicting read that is never kept.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb21438758c57cf647872e223994856f0ee5bd5d",
+            "content": "sha256:5bae2b601a32ad52c309042834bab9db010b8ecb0c5f31b4a592b44e74cfe2c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_file_read_is_in_the_read_set_and_a_conflicting_read_is_never_kept"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "Another parent tip is another evaluation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb21438758c57cf647872e223994856f0ee5bd5d",
+            "content": "sha256:208b8ef141a1c32d17061d4ba27d38bd67d44d2ba97e3898f030725c419679f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_memo_key_holds_the_parent_tip"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "A failed Git read inside the gate is never a verdict.\n\nAnchor: `test_a_git_read_that_fails_inside_a_predicate_or_the_validator_is_never_a_verdict`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb21438758c57cf647872e223994856f0ee5bd5d",
+            "content": "sha256:1bcf74a1372072144d39d4252082585bbcc86540d62cc4aa888664961a69d8f9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fb21438758c57cf647872e223994856f0ee5bd5d",
+            "content": "sha256:0e425bdd1f448a42d7ae12f7f58516db125ab0941ec2f5b2ee4c6d0d6223bae1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_git_read_that_fails_inside_a_predicate_or_the_validator_is_never_a_verdict"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "A marker probe Git cannot answer is never unconverted memory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb21438758c57cf647872e223994856f0ee5bd5d",
+            "content": "sha256:a6d492cbdf333c3436560e75f8ba097883b53930ec2316a32794aed9dfdfbe23",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_marker_probe_git_cannot_answer_is_never_unconverted_memory"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "The settings resolution whose rows the read-set test checks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "255aedff14033a59a3efacf0f35afacec2578d89",
+            "content": "sha256:a7ea456376914a23b14d158ee6841fc85d6b10f7b38cd8559caf2b1882a82706",
+            "locator": {
+              "kind": "symbol",
+              "name": "trace_context"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/onboarding_trace.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "The module docstring: each route test enters through its own entry point.\n\nAnchor: `record_landing_result`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb21438758c57cf647872e223994856f0ee5bd5d",
+            "content": "sha256:d6fb67f70c4e04794d7e692f77af197a083d0729f20d3ef96c196e51bc4b04aa",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "A hand-closed history file is refused at closeout validation and recorded landing.\n\nAnchor: `test_a_hand_closed_leaf_file_is_refused_at_closeout_validation_and_record_landing`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb21438758c57cf647872e223994856f0ee5bd5d",
+            "content": "sha256:1bcf74a1372072144d39d4252082585bbcc86540d62cc4aa888664961a69d8f9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fb21438758c57cf647872e223994856f0ee5bd5d",
+            "content": "sha256:9e304d27e518188d9fc67324964429426d9015d040ee630800041780a2fb36aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_hand_closed_leaf_file_is_refused_at_closeout_validation_and_record_landing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "Direct landing's route entries and its closing across calls.\n\nAnchor: `test_direct_landing_preview_and_apply_refuse_through_their_route_entry`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb21438758c57cf647872e223994856f0ee5bd5d",
+            "content": "sha256:1bcf74a1372072144d39d4252082585bbcc86540d62cc4aa888664961a69d8f9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fb21438758c57cf647872e223994856f0ee5bd5d",
+            "content": "sha256:6c13977a1e1c986320e607d66eca9114c71cca08fbfaa29c5435367cf5c05358",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_direct_landing_preview_and_apply_refuse_through_their_route_entry"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "Master landing refuses anything not current; ghost subjects; the scoping.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb21438758c57cf647872e223994856f0ee5bd5d",
+            "content": "sha256:b849d6a1edbadd1994470d6b5a41e9cc9a3d83a25b399a84d0dbcb635e2748b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_timed_out_blob_read_or_an_unverifiable_entry_refuses_a_master_landing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "26": {
+      "note": "The exact trees re-anchor-check the file they just closed; an unavailable object.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb21438758c57cf647872e223994856f0ee5bd5d",
+            "content": "sha256:54de1dac89ad347c8ae2498b208934d2776c03e88a17c7952543f4fe46901552",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_closeout_s_exact_tree_re_anchor_checks_the_file_it_has_just_closed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "27": {
+      "note": "The admission base, the memo key and record landing on unconverted memory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb21438758c57cf647872e223994856f0ee5bd5d",
+            "content": "sha256:2a62640ab5dbbd8e5edda02a6774f9d4b2e552f5959cfec5dbd2a0d5efb10d0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_routes_judge_a_leaf_s_earlier_record_new_against_the_parent_line"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "28": {
+      "note": "Git failures, probes and the read set.\n\nAnchor: `test_a_git_read_that_fails_inside_a_predicate_or_the_validator_is_never_a_verdict`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb21438758c57cf647872e223994856f0ee5bd5d",
+            "content": "sha256:1bcf74a1372072144d39d4252082585bbcc86540d62cc4aa888664961a69d8f9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fb21438758c57cf647872e223994856f0ee5bd5d",
+            "content": "sha256:0e425bdd1f448a42d7ae12f7f58516db125ab0941ec2f5b2ee4c6d0d6223bae1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_git_read_that_fails_inside_a_predicate_or_the_validator_is_never_a_verdict"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "29": {
+      "note": "R3-1 and R3-2.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb21438758c57cf647872e223994856f0ee5bd5d",
+            "content": "sha256:327d78ae2f713edb03a385621d5b91cd798af89ec0b81257a3a7048655982dbe",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_closing_the_memory_line_already_holds_is_never_restored"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fb21438758c57cf647872e223994856f0ee5bd5d",
+            "content": "sha256:d7ee6d97a48e75ac9e9cbe52feb1e31f78842b2b384db72f8f409b8138ae8cd4",
+            "locator": {
+              "end": 1087,
+              "kind": "line_range",
+              "start": 1034
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fb21438758c57cf647872e223994856f0ee5bd5d",
+            "content": "sha256:1bcf74a1372072144d39d4252082585bbcc86540d62cc4aa888664961a69d8f9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "30": {
+      "note": "The lane row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5691b694e756469475d783c426d9781ef14c8633",
+            "content": "sha256:ef900a5b38b3a4393ac60a6d42f336d540dcb806538d4acca19a65c9c1fc194c",
+            "locator": {
+              "end": 231,
+              "kind": "line_range",
+              "start": 231
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "31": {
+      "note": "A Git failure asking for a recorded blob is named by the trees and the lane.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb21438758c57cf647872e223994856f0ee5bd5d",
+            "content": "sha256:a25b751e9d479ca19125a3a78923132a144e33c0f5764437384502721a45cb39",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_git_failure_asking_for_a_recorded_blob_is_named_by_the_trees_and_the_lane"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "32": {
+      "note": "An unwritable closing receipt restores the file and admits nothing.\n\nAnchor: `test_an_unwritable_closing_receipt_restores_the_file_and_admits_nothing`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb21438758c57cf647872e223994856f0ee5bd5d",
+            "content": "sha256:1bcf74a1372072144d39d4252082585bbcc86540d62cc4aa888664961a69d8f9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fb21438758c57cf647872e223994856f0ee5bd5d",
+            "content": "sha256:ef96c555b5b61d7bebbc7ca9ad72f6cb61644a8107aa34318f4ef549eb366fd1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unwritable_closing_receipt_restores_the_file_and_admits_nothing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "33": {
+      "note": "A hand-closed file is refused also one commit later and through a merge.\n\nAnchor: `test_a_hand_closed_leaf_file_is_refused_at_closeout_validation_and_record_landing`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb21438758c57cf647872e223994856f0ee5bd5d",
+            "content": "sha256:1bcf74a1372072144d39d4252082585bbcc86540d62cc4aa888664961a69d8f9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fb21438758c57cf647872e223994856f0ee5bd5d",
+            "content": "sha256:9e304d27e518188d9fc67324964429426d9015d040ee630800041780a2fb36aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_hand_closed_leaf_file_is_refused_at_closeout_validation_and_record_landing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "34": {
+      "note": "The four refusal cases retain their original branches and complete world snapshots. _record checks the exact answer code, state and error detail rather than merely accepting a generic unsuccessful return.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb21438758c57cf647872e223994856f0ee5bd5d",
+            "content": "sha256:1bcf74a1372072144d39d4252082585bbcc86540d62cc4aa888664961a69d8f9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

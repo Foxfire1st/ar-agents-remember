@@ -1,0 +1,60 @@
+{
+  "path": "mcp/src/agents_remember/canvas/explainer_maintenance.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "08be2a48139f6518ce255710b8a3361359891354",
+        "content": "sha256:f9abb757a3cb292711148ce83604c7c012a8cb514f2e658ec884961ad155ab74",
+        "locator": {
+          "kind": "symbol",
+          "name": "update_seat"
+        }
+      },
+      "id": "RLZ-D8H43T",
+      "invariant": "INV-0ZE4W6",
+      "origin": {
+        "handoffEntry": "the-explainers-evidence-is-prepared-for-the-bound-comparison",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "An explicit Update captures the current bound comparison and prepares its packet again before replacing snapshot/instructions, without starting a model turn.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "08be2a48139f6518ce255710b8a3361359891354",
+        "content": "sha256:a95851441ad9a618bfb2c8ee74cd668974a292dea55ef271c42cc90c6a0994f3",
+        "locator": {
+          "kind": "symbol",
+          "name": "retire_seat"
+        }
+      },
+      "id": "RLZ-J0V8AP",
+      "invariant": "INV-EWGTN0",
+      "origin": {
+        "handoffEntry": "L183-A-2",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "retire_seat waits for the leaf lock and resumes or completes the receipt that identifies this environment; its workspace owner archives and ends the recorded processes before marking retirement finished.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "_reconcile_grades_and_counts reconciles what a retire leaves behind instead of dropping it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08be2a48139f6518ce255710b8a3361359891354",
+            "content": "sha256:a40d5e1e43806513bad213a1e2fe36bac4cc533243c286d9f29b2663f0b98cdf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reconcile_grades_and_counts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,66 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The three finalization designs were weighed with grounds in DEC-R57CDH and carried here, and the distinction binds all future archive-route claims."
+  },
+  "alternatives": [
+    {
+      "option": "Finalizing a master never archives it. Explicit retire_master is the individual-master archive route; archive_sprint is the whole-sprint route. When a sprint commands the master, retirement removes it from the sprint in the same step.",
+      "reason": "Preserves the L41 finalization constraint and developer D41/D47 rulings while admitting the ruled whole-sprint operation beside individual retirement.",
+      "status": "chosen"
+    },
+    {
+      "option": "Archive a master when it is finalized.",
+      "reason": "Carried from DEC-R57CDH: it moves a folder the sprint still names and runs the deleting hook nobody asked for.",
+      "reconsider_when": "A sprint no longer requires commanded masters to resolve to live folders and hook deletions become reversible.",
+      "status": "rejected"
+    },
+    {
+      "option": "At finalization, archive only the masters that no sprint commands.",
+      "reason": "Carried from DEC-R57CDH: never happened on landed code and deletes artifacts without a request to get rid of the master.",
+      "reconsider_when": "The developer asks for standalone-master finalization to archive it.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Finalization keeps never archiving; individual masters retire explicitly; whole sprints archive by archive_sprint with staying masters named."
+  ],
+  "context": "DEC-R57CDH (L41) states global archive exclusivity for retire_master; MIK-R82@v1 rule 1 admits archive_sprint moving exclusive masters with their sprint. The distinction needs recording without touching finalization never archiving.",
+  "decider": "Curator succession under M1 L82-MEM-M1-F05; original decider developer D41/D47 with architect run-2 ruling 2.",
+  "id": "DEC-TSRB7J",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "route:mcp/src/agents_remember/application/task_docs"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R82",
+        "packet": "requirements/MIK-R82-v1-archiving-a-sprint-leftover-copies-and-enclosure-adoption.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "notes/reports/260928-MIK-L82-curator-handoff-list-m2.json"
+    },
+    "handoffEntry": "dec-finalize-distinction",
+    "leaf": "260928-MIK-L82",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": [
+    "DEC-R57CDH"
+  ]
+}

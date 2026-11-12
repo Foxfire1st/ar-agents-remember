@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Persisted landing-final facts for one exact current completed contract. Losing this boundary would fabricate currentness, attribute another owner's work, hide an external change, or repeat an unsafe host/landing action rather than exposing the actual observation."
+  },
+  "applicability": "Persisted landing-final facts for one exact current completed contract.",
+  "conditions": [
+    "Required and optional reducer fields validate.",
+    "Expected participant set, feat/mem branch labels, observed facts and contract stamp match."
+  ],
+  "exclusions": [
+    "Missing, corrupt or predating finals are not valid history; they do not create repeated finishing attempts."
+  ],
+  "id": "INV-TMY6DW",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_landing_final_trust.py"
+      ],
+      "path": "curator-handoff-L81-A001-b1fd-03.json"
+    },
+    "handoffEntry": "L81-R1-F16",
+    "leaf": "260928-MIK-L81",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Only a genuinely successful matching complete landing-final record is treated as valid history; malformed or predating facts remain missing.",
+  "status": "proposed",
+  "supersedes": []
+}

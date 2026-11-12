@@ -1,0 +1,216 @@
+{
+  "path": "mcp/src/agents_remember/serving/projections/contract_snapshot.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "76448da20fe8c1c57050ff52099e23ce2db06b49",
+        "content": "sha256:85be2007b0fe8cc492cdc9aaffcc8d8f0a247f3b8b0b6417f5356bf4a98d8a56",
+        "locator": {
+          "kind": "symbol",
+          "name": "ContractSnapshotCache.build"
+        }
+      },
+      "id": "RLZ-7E8QD6",
+      "invariant": "INV-BWW1N1",
+      "origin": {
+        "handoffEntry": "L134-R2",
+        "leaf": "260928-MIK-L134"
+      },
+      "rationale": "Excludes foreign parsed/cache-hit contracts from the immutable mapping, evicts their cache entry and names their path in skipped.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Module docstring: one pass per tick, three prior walks, stat-identity cache, and the serialized-tick concurrency discipline.  Anchor: \"One immutable leaf-enclosure-contract snapshot per projection tick\"\n\nAnchor: current module contract",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76448da20fe8c1c57050ff52099e23ce2db06b49",
+            "content": "sha256:c700528b83fd4eaf0cf79a3f5589aa61b0c3a064c56302d12ce1e9a11e84017c",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The immutable snapshot and builder hold only admitted members and name read/parse failures or foreign nonmembers in skipped.\n\nAnchor: `ContractSnapshot` `build`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76448da20fe8c1c57050ff52099e23ce2db06b49",
+            "content": "sha256:bd29749b6e40f154ca3e6943c13cca27d437f1b1092776ab5d4c5a0b62e59940",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "76448da20fe8c1c57050ff52099e23ce2db06b49",
+            "content": "sha256:e2084926cf923c0f10655025803960784c6289f7ea2eb9605ad5c137d00c903c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ContractSnapshot"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Full builds enumerate/reconcile; scoped builds ignore archived/notes names, stat/parse other named paths and retain unrelated cached members. Failed or foreign parsed members are evicted; retry and live-set pruning claims require relevant/full builds.\n\nAnchor: `ContractSnapshotCache`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76448da20fe8c1c57050ff52099e23ce2db06b49",
+            "content": "sha256:bd29749b6e40f154ca3e6943c13cca27d437f1b1092776ab5d4c5a0b62e59940",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`_cached_contract` reuses a parse only while all three stat fields hold; `_safe_stat` failure falls through to the uncached parse instead of introducing a new skip path; `build_contract_snapshot` is the standalone one-shot.  Anchor: \"def build_contract_snapshot\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76448da20fe8c1c57050ff52099e23ce2db06b49",
+            "content": "sha256:df7ea781396690ce5aaa0902cd952e30373c9e90204eeb1e95ecbd9ae9fea1b7",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 191
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Snapshot construction uses the shared enclosure iterator and contract parser, rather than reimplementing either.  Anchor: \"from agents_remember.tasks.task_paths import (\", \"from agents_remember.worktrees.worktree_contract import (\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76448da20fe8c1c57050ff52099e23ce2db06b49",
+            "content": "sha256:2a2071e8ef1ebe7747ecd821a0b86d23e8ed33edf280e41d120be6377c6be391",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 30
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "76448da20fe8c1c57050ff52099e23ce2db06b49",
+            "content": "sha256:166184f5c35df79934002fea51eb2611272069d750228f800b2a09cc3c756180",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 31
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`projection_store` owns the module-level `_contract_snapshot_cache` (with the three-walks rationale) and injects it into the per-tick `ProjectionInputState`.  Anchor: \"class ProjectionTickState\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
+            "content": "sha256:d187b37145a351148be72c739a620daf84eea31a31394dea1c0d13b17cfeb6a9",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 75
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
+            "content": "sha256:3d0ad71a54ccf641e0565304fc4d86db184b731ad6f8f04bf8a26beba9faf143",
+            "locator": {
+              "end": 146,
+              "kind": "line_range",
+              "start": 146
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Task-domain refresh, first use or pending retry builds one snapshot; unaffected ticks retain it.  Anchor: `ProjectionInputState._refresh_tasks`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7441ab31d2dbb655e2be4d5a04571166c9ee1a2a",
+            "content": "sha256:9f48cc565b4f54100ed7a56c58f99c537e714c4ebea8ab36f7ed5cd3f1109419",
+            "locator": {
+              "end": 278,
+              "kind": "line_range",
+              "start": 259
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "`read_enclosures` and `read_engine_process_facts` take the keyword-only injected snapshot; `contracts=None` builds a local one with identical behavior.  Anchor: \"def read_enclosures\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d18eca6aa7f7a47d12546c8e5b12a68370fb69c",
+            "content": "sha256:f77d5d81904a212f9ddd7bb4eb29eb8d14592bbb565b77322d6b591a69373a6e",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 44
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Drift-snapshot pruning consumes the same snapshot, removing the third per-tick walk.  Anchor: \"def prune_orphaned_drift_snapshots\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dddcce3e33bed7ffbd8bec7c711954dc794d4e8d",
+            "content": "sha256:fafba0527c3953c4b6e0e5b5739ba83612f8053bcdc9466730193cd1d590b408",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "mcp/src/agents_remember/serving/projections/drift_snapshots.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

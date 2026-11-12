@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/mcp/tools/closeout_queue.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The payload adapter is deliberately a single delegation into the application service.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db307b352d659fecee045a3a60e1de4c4f3c2853",
+            "content": "sha256:a7868d94f7ea22a7846715542e0470335e99b413025feae19091766fc63ca2d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "closeout_queue_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

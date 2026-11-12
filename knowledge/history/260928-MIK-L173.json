@@ -1,0 +1,136 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L173",
+  "rows": [
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0682T5",
+      "items": [
+        "sha256:47c7ceb9ad2689f43613a768ff3ebdae532bdf80e193021453f7e29cad6c8160"
+      ],
+      "reason": "One added lane member for the new module. Lane membership classifies selection and cost, it neither executes the case nor states a contract, so no invariant is minted for it; the behaviour it selects is recorded where it is enforced.",
+      "subject": "hunk:sha256:47c7ceb9ad2689f43613a768ff3ebdae532bdf80e193021453f7e29cad6c8160"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-436X3G",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "Reviewed the card against the change. It describes lane membership, canonical lists, and the difference between selection and execution; this leaf adds the new module's one lane entry, and no category, override or population rule moved.",
+      "sources": [
+        {
+          "blob": "a94377134aefaf7a9ace059ee4312d9e1e550438",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-7MA64P",
+      "items": [
+        "sha256:83f2f0640203d2e03fce530cd29f16b7df24116451def855dafd764cd5089832"
+      ],
+      "reason": "Examined the route's converted-authoring, worklist and gate account. It describes the onboarding item's own currency and the gate's predicates, not which sources a card's row binds, and this leaf changes no route purpose, ownership or boundary: the changed contract lives on the file card that carries it. No route body edit is justified, so no route impact is claimed.",
+      "sources": [
+        {
+          "blob": "9d1e05a86de34369058f714dc77fe0db89f2a74e",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-B9YCHB",
+      "items": [
+        "sha256:452e3a7c474de3b8c0905b75382180a88bb1edb958ec0940156946fb33c4612f"
+      ],
+      "reason": "Examined the pytest-composition and evidence-catalog account and the responsibility map. They already state that a new test module takes one lane entry plus canonical consumer derivation, and that knowledge and onboarding tests own curator writing and trace gates. This leaf's added module and the two catalog members are that existing contract, so route meaning did not change.",
+      "sources": [
+        {
+          "blob": "6d2338c6984dba1d0392f1121cdea452dcc2991d",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "a94377134aefaf7a9ace059ee4312d9e1e550438",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "d464857b419ba83e861fca53e10b8983464be9ba",
+          "path": "mcp/tests/test_mik_r173_card_row_binds_every_copy.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-H7FAME",
+      "items": [
+        "sha256:6a2ee629a61746654f2bb93c421a02a8c662864b52adca7be271f2e076570a81"
+      ],
+      "reason": "The new card states what the module protects: the writer binding a card row to every source of its worklist item through the leaf's own worklist-writer-worklist loop, the single-source and overview branches that stay as they were, and the author-supplied-sources refusal. Five evidence lines anchor the five test symbols. Every statement is new because the module is new.",
+      "sources": [
+        {
+          "blob": "d464857b419ba83e861fca53e10b8983464be9ba",
+          "path": "mcp/tests/test_mik_r173_card_row_binds_every_copy.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_mik_r173_card_row_binds_every_copy.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-PDZEFS",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "Reviewed the card against the change. It describes the catalog's governing roles, the exact and exact-source consumer comparison, and repair by the catalog's own --write. This leaf adds the new module to three derived consumer lists that way; artifact rows, contracts and lifecycle rules are untouched.",
+      "sources": [
+        {
+          "blob": "6d2338c6984dba1d0392f1121cdea452dcc2991d",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "considered": [
+        "FAM-61DY2V",
+        "FAM-7B6N3Y4Q",
+        "FAM-KQQE74ZT"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-SZY0TC",
+      "items": [],
+      "reason": "Considered all three current members' guarantees. FAM-61DY2V binds how a converted leaf's closeout and landing judge their prepared tree through the validator and the invariant gate; FAM-7B6N3Y4Q binds the admitted authoring command, the single converted file writer and root resolution; FAM-KQQE74ZT binds the rationale and role every admitted realization target carries. None states a joint obligation about which sources a card's history row binds, and the new invariant adds one constructor's input rule to a route those families merely share. Do not group by shared route or by the word gate.",
+      "revision": 1,
+      "subject": "membership:INV-7V4K9G"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Y00X37",
+      "items": [
+        "sha256:fc094cb660cbf32d0e18c0e26c96a7e9fe3c0cae82ab7ad11493dc1ac9611858"
+      ],
+      "reason": "These three added lines name the new module in derived consumer lists the catalog's own --write generates. Consumer derivation is the catalog's stated contract, and one list membership carries no behaviour of its own; the module's protected contract is recorded on the writer and on the new card.",
+      "subject": "hunk:sha256:fc094cb660cbf32d0e18c0e26c96a7e9fe3c0cae82ab7ad11493dc1ac9611858"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-YPK429",
+      "items": [
+        "sha256:f52d69455c5cb017082150ebafcaa9c4d0cffa712042a766ed3482ff9d40a349"
+      ],
+      "reason": "The card's `_onboarding_row` commentary now says a card row's sources are the sources of the leaf's worklist item of its subject -- a file card's identical-copy group as much as an overview's governed files -- with the card's own path as the only fallback and an uncovered overview refused, and names `_row_sources` as the method that decides it. The sentence it replaces said a file subject supplies its one source, which this leaf made untrue. A new reference anchors the changed contract at `_row_sources`.",
+      "sources": [
+        {
+          "blob": "9d1e05a86de34369058f714dc77fe0db89f2a74e",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

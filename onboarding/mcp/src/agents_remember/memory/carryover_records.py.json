@@ -1,0 +1,148 @@
+{
+  "path": "mcp/src/agents_remember/memory/carryover_records.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d9f5e2d6634d53fcaf955378087b5cd05544a698",
+        "content": "sha256:af19474f3ad0fe83bad7ad135514c80e9941a74289699f586485d8b5a97ad078",
+        "locator": {
+          "kind": "symbol",
+          "name": "record_payloads"
+        }
+      },
+      "id": "RLZ-MRMRF1",
+      "invariant": "INV-5XX92M",
+      "origin": {
+        "handoffEntry": "MIK-R56@v1 PartB §9",
+        "leaf": "260928-MIK-L56"
+      },
+      "rationale": "Returns only missing record pairs and refuses differing target record bytes.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d9f5e2d6634d53fcaf955378087b5cd05544a698",
+        "content": "sha256:9adb99baed3a3a957d6725f442b6a874097c892f53cdba75bb2e7dc85165c92d",
+        "locator": {
+          "kind": "symbol",
+          "name": "plan_record_dependencies"
+        }
+      },
+      "id": "RLZ-RQWA9G",
+      "invariant": "INV-5XX92M",
+      "origin": {
+        "handoffEntry": "MIK-R56@v1 PartB §9",
+        "leaf": "260928-MIK-L56"
+      },
+      "rationale": "Resolves missing record pairs and links, detects record-differs, and projects history without carrying it.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Exact dependency graph: Schema edges are realizes/proves invariant IDs, ID reference targets, record members/supersedes and non-route links. Traverse outgoing named records to closure, not invented incoming records. Entry IDs and onboarding subjects additionally select source history as reading aids only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9f5e2d6634d53fcaf955378087b5cd05544a698",
+            "content": "sha256:bd483020f3e5ad69ddfe1606afd0fca931b1b54e168a4895083cd5a42a4e7be2",
+            "locator": {
+              "kind": "symbol",
+              "name": "named_record_ids"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d9f5e2d6634d53fcaf955378087b5cd05544a698",
+            "content": "sha256:9adb99baed3a3a957d6725f442b6a874097c892f53cdba75bb2e7dc85165c92d",
+            "locator": {
+              "kind": "symbol",
+              "name": "plan_record_dependencies"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Pair and identity conflicts: Record JSON is required; existing optional Markdown travels and participates in exact byte comparison. Source pairs must match indexed identity/document/path. Identical target pairs are present even under a different slug when their suffix-keyed members match. An exact interrupted subset at the same canonical source path is needed for companion completion, including an exact prose-only member with no indexed JSON yet. Differing held bytes, JSON occupied without the expected indexed ID, partial/unconverted indexes and missing/unreadable source records are conflicts, never absence proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9f5e2d6634d53fcaf955378087b5cd05544a698",
+            "content": "sha256:028edd08b2a71c12150aa57b08bbf2a00e846ac71e496c09ff2b8a704f2fe679",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record_pair"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d9f5e2d6634d53fcaf955378087b5cd05544a698",
+            "content": "sha256:937cb72199c4cb83ee4ee5faa7c854ed7117741485fa3c5e887f7f1104fad8a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_dependency"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d9f5e2d6634d53fcaf955378087b5cd05544a698",
+            "content": "sha256:9adb99baed3a3a957d6725f442b6a874097c892f53cdba75bb2e7dc85165c92d",
+            "locator": {
+              "kind": "symbol",
+              "name": "plan_record_dependencies"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "No history or overwrite payload: `record_payloads` returns complete fresh source units for missing or resumable records only. When a companion is missing, exact present members remain in the payload so the transaction checks the whole unit, skips equal writes and includes those held members in refusal-versus-HEAD reporting; differing existing bytes are refused. Apply must reopen indexes/replan to catch relocated identity conflicts. Source history has reading_aid_only=True and is never a payload or a recovery-curator row. These helpers perform no writes; the caller owns the transaction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9f5e2d6634d53fcaf955378087b5cd05544a698",
+            "content": "sha256:af19474f3ad0fe83bad7ad135514c80e9941a74289699f586485d8b5a97ad078",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_payloads"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d9f5e2d6634d53fcaf955378087b5cd05544a698",
+            "content": "sha256:11f795421b469584ebb042d89da05c9d6a72c405751fe5e94946d8983690e071",
+            "locator": {
+              "kind": "symbol",
+              "name": "_history"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f2012e3d1b6cfcf742adc9b3bf25460b4073950",
+            "content": "sha256:995e469cb000e69d917212ec9c2ff7a67b96b37a66646ee8aa825c9a2188a674",
+            "locator": {
+              "kind": "symbol",
+              "name": "_apply_carryover_for_request"
+            },
+            "path": "mcp/src/agents_remember/memory/carryover.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,446 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge_files/reconsideration.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "be65f7f2f73bbabec6d57403384bcae971bd56b2",
+        "content": "sha256:62ab274a326ba3736040aa9354defc555a7dd2c8740a3b7083ed1fb72ce7f0b2",
+        "locator": {
+          "kind": "symbol",
+          "name": "reconsideration_item_open"
+        }
+      },
+      "id": "RLZ-G9C5CR",
+      "invariant": "INV-83YJKE",
+      "origin": {
+        "handoffEntry": "MIK-R148@v1",
+        "leaf": "260928-MIK-L148"
+      },
+      "rationale": "This construct enforces the base decision's suppression under the evaluation's base-and-candidate supersession context rather than making the Curator reopen an already superseded alternative.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "be65f7f2f73bbabec6d57403384bcae971bd56b2",
+        "content": "sha256:1d7ff8f9c6792b6170a43cd7dc93ca3f94987150fedb08c532066986765c1d6c",
+        "locator": {
+          "kind": "symbol",
+          "name": "Repoint"
+        }
+      },
+      "id": "RLZ-V0TQVV",
+      "invariant": "INV-J7YKSB",
+      "origin": {
+        "handoffEntry": "a-still-rejected-row-may-re-point-a-fired-link-whose-code-is-gone",
+        "leaf": "260928-MIK-L186"
+      },
+      "rationale": "The stored shape of a re-point, so a record that carries one is validated where every other reconsideration shape is.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The module docstring: the subject, the triggers, the rows and the one satisfying rule.\n\nAnchor: `current source extent`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be65f7f2f73bbabec6d57403384bcae971bd56b2",
+            "content": "sha256:6290b0977c99f47e93cb497d2d8377f3650d0c1260a05ae3c2b964b794cfa1d8",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The row kind, the subject parser and the item kind are registered with MIK-R14 as owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1176f3ca1d7d895f188bac1a18b73621a5897e93",
+            "content": "sha256:712bb410527b2cbc91df02a7c2fb2ebd60d3703f3bfaa17fa011c2b130ea508d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_row_kind_and_the_item_kind_are_registered"
+            },
+            "path": "mcp/tests/test_reconsideration_surfacing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The stored predicate agrees with `satisfiedBy` on the answered item.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1176f3ca1d7d895f188bac1a18b73621a5897e93",
+            "content": "sha256:3879c9dc6c6e7ec429fe38296c8f446a091e114846feedfe154fca532119efb6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_still_rejected_answers_the_candidate_and_the_stored_predicate_agrees"
+            },
+            "path": "mcp/tests/test_reconsideration_surfacing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "A candidate successor suppresses the base decision and lists its ID; the stored rule requires supplied context.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1176f3ca1d7d895f188bac1a18b73621a5897e93",
+            "content": "sha256:a74ed3998baca1be473bbfcfc4f34ac6bc10ab987f4a9d44310faea235464b80",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_candidate_successor_silences_its_base_decision"
+            },
+            "path": "mcp/tests/test_reconsideration_surfacing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "Without a successor the changed target still raises.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1176f3ca1d7d895f188bac1a18b73621a5897e93",
+            "content": "sha256:9d3d211848ee1ac49b9825d9df092c32e27308e87f85e7039c8a39c79e340018",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_changed_target_without_a_successor_still_raises"
+            },
+            "path": "mcp/tests/test_reconsideration_surfacing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "An unrelated candidate decision suppresses nothing and raises no item itself.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1176f3ca1d7d895f188bac1a18b73621a5897e93",
+            "content": "sha256:adee2d6b45036cf05c1527ff6b89e010db6c60e4b9515527b8b2f9bfd15baff0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_candidate_decision_that_supersedes_nothing_keeps_the_item"
+            },
+            "path": "mcp/tests/test_reconsideration_surfacing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The closeout gate recomputes its worklist and reads no earlier persisted document.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf1a7a3024b89c4ce174451e062bcf2cf3fa4a98",
+            "content": "sha256:d933a755a1153049feff1f7157f4afed912fe5f0ff83b43663061e60bc24506f",
+            "locator": {
+              "kind": "symbol",
+              "name": "recompute_for_gate"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Direct landing computes its worklist over exact sides before judging.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "136d4c18901e0406361b0361c272d806dc80da93",
+            "content": "sha256:0e49b4be19d35dc91f3c53b2777953d9cbe81b16fc4a50805dfb5a63a297bfe1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_worklist"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/direct.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The registered reconsideration gate forwards candidate knowledge, opened code and rows to the candidate-aware owner; only its final remaining-change check uses the pure helper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f312d2bd30e408565bad26d89ed227a954d4cd8a",
+            "content": "sha256:c5717a8cc4c259cd4843ea995f5c26a3949b37995eda8137115985c6e624bb2a",
+            "locator": {
+              "end": 591,
+              "kind": "line_range",
+              "start": 582
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/predicates.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "078be84cd75d4ea2e221aae8ccb5e1085fa384d0",
+            "content": "sha256:8088dd4d9164eaa56a0d79e65be894419809cbebae8706c771d8a611f7f61b4c",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/reconsideration_gate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "An explicitly supplied superseded set closes a stored item without a row; the empty default preserves row-based compatibility.\n\nAnchor: `reconsideration_item_open`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be65f7f2f73bbabec6d57403384bcae971bd56b2",
+            "content": "sha256:2fb04d0cd7f55e0cd96a2d5ffdf5c018635431d44d1485380e31770e2c748ae9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Supersession, stale refresh and ordinary row satisfaction have explicit priority in the pure predicate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be65f7f2f73bbabec6d57403384bcae971bd56b2",
+            "content": "sha256:62ab274a326ba3736040aa9354defc555a7dd2c8740a3b7083ed1fb72ce7f0b2",
+            "locator": {
+              "end": 194,
+              "kind": "line_range",
+              "start": 169
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "be65f7f2f73bbabec6d57403384bcae971bd56b2",
+            "content": "sha256:a6deb7e2202307c1936975602764d16cb045e3a277a7161b650f53ccbe39b44a",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 115
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The kind and the two row dispositions.\n\nAnchor: `RECONSIDERATION_ITEM_KIND`, `RECONSIDER_DISPOSITIONS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be65f7f2f73bbabec6d57403384bcae971bd56b2",
+            "content": "sha256:05bd514fbcca6164283757265a8ff61999faddc9c67bafef1b95066c41e69f7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "RECONSIDERATION_ITEM_KIND"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "be65f7f2f73bbabec6d57403384bcae971bd56b2",
+            "content": "sha256:97b4c305f0392ed5ed4249d01b0892816bd1b9ca47219fb16aa51b34b3c5695d",
+            "locator": {
+              "kind": "symbol",
+              "name": "RECONSIDER_DISPOSITIONS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "A stored re-point names the link it answers, the target it stood at and the target it now names, each with its path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be65f7f2f73bbabec6d57403384bcae971bd56b2",
+            "content": "sha256:1d7ff8f9c6792b6170a43cd7dc93ca3f94987150fedb08c532066986765c1d6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "Repoint"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "A re-point list names each link once, so one item judges one link.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be65f7f2f73bbabec6d57403384bcae971bd56b2",
+            "content": "sha256:3bf6bde09bccd726bcd7626b4d14c2d922e465fd36a0bd9cc88cde61b34ec231",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_unique_repoints"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "The seven triggers, and the three a `still_rejected` answer refreshes.\n\nAnchor: `TRIGGERS`, `REFRESHED_TRIGGERS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be65f7f2f73bbabec6d57403384bcae971bd56b2",
+            "content": "sha256:67ced8e9e9e6d9767026ff5c10c999a7a6d938af5a3b8df5aeb2721bd603c122",
+            "locator": {
+              "kind": "symbol",
+              "name": "TRIGGERS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "be65f7f2f73bbabec6d57403384bcae971bd56b2",
+            "content": "sha256:5d3869691ae424644e5501cd5d97bb3edc87d7ba9594e60481332392eff2d77a",
+            "locator": {
+              "kind": "symbol",
+              "name": "REFRESHED_TRIGGERS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The history-row dispositions that count as a change of the row's subject.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be65f7f2f73bbabec6d57403384bcae971bd56b2",
+            "content": "sha256:f6458876ed595a509c8ca1931e5c7b3c6af522ba3dbbd94805ed8c56ab31b9c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "TRIGGERING_DISPOSITIONS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The subject pattern over the shared decision ID pattern.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be65f7f2f73bbabec6d57403384bcae971bd56b2",
+            "content": "sha256:0006ceaecb6230c1bedf879110bab18aa9f67954ade5ca569b765ce680e475eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "RECONSIDER_SUBJECT_PATTERN"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The subject spelled and parsed.\n\nAnchor: `reconsider_subject`, `parse_reconsider_subject`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be65f7f2f73bbabec6d57403384bcae971bd56b2",
+            "content": "sha256:2a4a6589d3fb13673301999bb2e4ae5de4d47a10baa1f5a7af30f683fe5fcffc",
+            "locator": {
+              "kind": "symbol",
+              "name": "reconsider_subject"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "be65f7f2f73bbabec6d57403384bcae971bd56b2",
+            "content": "sha256:8b29952a1b68f643cb6e2c441557da6a49b9ddb3d67db073b9c2bde9eec80bd1",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_reconsider_subject"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "One question per subject and leaf.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be65f7f2f73bbabec6d57403384bcae971bd56b2",
+            "content": "sha256:47ee4ad4b205d31da33eef5debffd1255006c7d7019dd107977236cf5921209a",
+            "locator": {
+              "kind": "symbol",
+              "name": "question_key"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The one spelling of a link target, compared before a refresh (N1).\n\nAnchor: `link_target_key`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be65f7f2f73bbabec6d57403384bcae971bd56b2",
+            "content": "sha256:2fb04d0cd7f55e0cd96a2d5ffdf5c018635431d44d1485380e31770e2c748ae9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The pure stored-item rule closes matching rows or supplied superseded IDs; empty default preserves two-argument behavior.\n\nAnchor: `reconsideration_item_open`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be65f7f2f73bbabec6d57403384bcae971bd56b2",
+            "content": "sha256:2fb04d0cd7f55e0cd96a2d5ffdf5c018635431d44d1485380e31770e2c748ae9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Prevents a recovery call from writing or reopening the master when only the named leaf was blocked."
+  },
+  "applicability": "Recovery from an exact leaf-enclosure binding failure.",
+  "conditions": [
+    "The canonical leaf reference is resolved through its owning repository/task/slug chain."
+  ],
+  "exclusions": [
+    "No master substitution, guessed leaf or alternative transaction authority."
+  ],
+  "id": "INV-VGQTBR",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "LeafBindingRecoveryTests green incl. corrupt-parent file repair: /tmp/mik-run3/L111/a06_fast.txt (65 passed, 78 subtests, exit 0); round-8 verdict notes/reports/reviewer/4889df77-3c01-4cc7-a6ae-344b459490bd/round-8/verdict.md"
+      ],
+      "path": "producer-knowledge-list.json"
+    },
+    "handoffEntry": "L111-CODE-F01.12 / worker-A06",
+    "leaf": "260928-MIK-L111",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Leaf-binding recovery names the exact leaf with repo and slug in its next arguments and never addresses the master document.",
+  "status": "proposed",
+  "supersedes": []
+}

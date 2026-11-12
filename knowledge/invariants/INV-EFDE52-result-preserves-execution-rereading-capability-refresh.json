@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "family_guarantee",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The developer's amendment kept the controls and their behavior while removing the text block; Result losing its re-read/steering would silently drop the launcher's steering of the frame, a costly regression the base behavior guards. The rule is a member of the launcher-strip family."
+  },
+  "applicability": "The Result control when the selected execution has an answer to re-read.",
+  "conditions": [
+    "The handler re-reads the selected execution and refreshes its capabilities before opening the reader.",
+    "The chat frame remains the same mounted element while the reader is open and after it is closed."
+  ],
+  "exclusions": [
+    "The report's display is rule 4's; this rule preserves what the control did before the change.",
+    "The removed block is not restored by the re-read."
+  ],
+  "id": "INV-EFDE52",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L75-reviewer-e90aa7a7-6651-4eb6-ab32-c6bfb33a38ac-evidence/ui-focused.log: PaseoChatFrame Result refresh and retained iframe tests"
+      ],
+      "path": "handoff.json"
+    },
+    "handoffEntry": "MIK-R75@v1 current rule 5",
+    "leaf": "260928-MIK-L75",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Result preserves execution rereading, capability refresh and mounted frame steering before opening the shared reader.",
+  "status": "proposed",
+  "supersedes": []
+}

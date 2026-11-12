@@ -1,0 +1,37 @@
+{
+  "path": "mcp/tests/test_pnt_sandbox_settings.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Prepared settings differ from the template only in the recorded coordination root and dashboard port.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8e718a35779c0d91225580bb6e84b2d9ac9e206",
+            "content": "sha256:6f7f1e114af0bae4d98462adc3530f73d80367c073b28110737430d60aa40dd3",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The developer's user settings file is never written or created, and an invalid existing authority is refused rather than replaced.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8e718a35779c0d91225580bb6e84b2d9ac9e206",
+            "content": "sha256:6f7f1e114af0bae4d98462adc3530f73d80367c073b28110737430d60aa40dd3",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

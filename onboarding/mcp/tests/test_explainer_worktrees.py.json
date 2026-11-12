@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_explainer_worktrees.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "An explainer checkout is detached, exact and an ordinary writable worktree, witnessed by test_commit_checkout_is_detached_exact_and_ordinary_writable",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1db299c5c8132079cb7289bdabf93412c0221aef",
+            "content": "sha256:f447313082fe9387cbaa644fc2284839965acc9f012200336c637d58ce48c679",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_commit_checkout_is_detached_exact_and_ordinary_writable"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

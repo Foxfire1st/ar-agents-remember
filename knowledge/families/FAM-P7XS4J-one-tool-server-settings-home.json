@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "The location, the one-time copy, the discovery rule and the provenance line each hold part of it; only together does every run read one known file and say which one."
+  },
+  "guarantee": "The tool-server settings file lives in the user's config folder beside the role settings: command-line discovery reads only that file unless an explicit path is given, an install copies the old convention file there once without changing either file, the harness folders or the folder permissions and reports a failed copy while it completes, and a discovered run names the file it used and a same-root dashboard that uses another.",
+  "id": "FAM-P7XS4J",
+  "members": [
+    "INV-FEBRX0",
+    "INV-AFA5WS",
+    "INV-S18ZC5",
+    "INV-BT9HFV"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "handoff-runA.json"
+    },
+    "handoffEntry": "fam-one-tool-server-settings-home",
+    "leaf": "260928-MIK-L84",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp/src/agents_remember/cli",
+    "mcp/src/agents_remember/kernel/primitives",
+    "mcp/src/agents_remember/install",
+    "mcp/src/agents_remember/application"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "One tool-server settings home, named in every discovered run"
+}

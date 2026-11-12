@@ -1,0 +1,293 @@
+{
+  "path": "mcp/tests/test_capsule_launch_wiring.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The task-attached case compares compile_launch_capsule with compile_task_capsule for the same admitted leaf, asserting identical trusted instruction text and semantic digest. It does not exercise a spawned session.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d6364a3e0174cccc37d69d4ad9edcb9a76681c2",
+            "content": "sha256:912ff883ea737d89bf36d0927ce8dc85e0e576755f607c07b550cb96bd94c5b6",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5d6364a3e0174cccc37d69d4ad9edcb9a76681c2",
+            "content": "sha256:e32b026f4e11aa5b73033264e3a947639b1db8f67b7f31c8aacadc2f0ea2bfc0",
+            "locator": {
+              "end": 206,
+              "kind": "line_range",
+              "start": 178
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The D13 case asserts that role_capsule_compile is absent from registered tools, then compiles through the application entry point using the enclosure contract and requires compiled instructions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d6364a3e0174cccc37d69d4ad9edcb9a76681c2",
+            "content": "sha256:af27fde7487ee67b2e71605cfa7ca885cd4879ae255ababe3680924461021d3e",
+            "locator": {
+              "end": 414,
+              "kind": "line_range",
+              "start": 380
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The free agent's named absence, and the identity that moves with the seat.\n\nAnchor: `test_the_free_agent_admission_names_its_absent_task_plane` `test_the_free_agent_capsule_identity_moves_with_the_seat`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d6364a3e0174cccc37d69d4ad9edcb9a76681c2",
+            "content": "sha256:44e813a09e11c20a74380fd4faabffa8814f1b17dcc4f3432b5b671533ce9cde",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5d6364a3e0174cccc37d69d4ad9edcb9a76681c2",
+            "content": "sha256:e4c939bbf5aab6df79375349b3f8c8dd53e7b4ab8926410fc9dc7a925c916cd8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_free_agent_admission_names_its_absent_task_plane"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5d6364a3e0174cccc37d69d4ad9edcb9a76681c2",
+            "content": "sha256:fd749260087e4c18edfa08e7eb550d1e6d4f03cf9b1678261eea9608720518fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_free_agent_capsule_identity_moves_with_the_seat"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The lane row D9's fail-closed loader requires for every new test module.  Anchor: \"mcp/tests/test_capsule_launch_wiring.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5691b694e756469475d783c426d9781ef14c8633",
+            "content": "sha256:4695b329b96163bd351824a2c951c1ce73612c7451dc3dc8f142ecb33d112c19",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 84
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "The live launch request value and internal compiler carry capsule identity; removed terminal launch points and the removed resolver are not current production routes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29fcf81063bb258507e45da4a75c16d0a9db554f",
+            "content": "sha256:f928cbbfb2240d0932d09326ec13526415cea995f68a076fe7bffb7c85464756",
+            "locator": {
+              "kind": "symbol",
+              "name": "LaunchCapsuleRequest"
+            },
+            "path": "mcp/src/agents_remember/serving/launch_capsule.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9ed77cba4caacd019fd87b683ea11e0653cb7ad1",
+            "content": "sha256:c50c7ecd23847fd84872c128c914ad5909f82a26145ba3ff51ece2f0aff6d330",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_launch_capsule"
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/launch.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The free-agent admission case names its absent task plane with free-agent:bootstrap, checks is_taskless, requires a task-document parser refusal of that identity, and checks a sha256 capsule digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d6364a3e0174cccc37d69d4ad9edcb9a76681c2",
+            "content": "sha256:e4c939bbf5aab6df79375349b3f8c8dd53e7b4ab8926410fc9dc7a925c916cd8",
+            "locator": {
+              "end": 349,
+              "kind": "line_range",
+              "start": 326
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "The admitted binding a delivery belongs to: repository, task document path, role and operation, each refused when empty or carrying outer whitespace, and reported under those four names.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef47b6c1e066fffcca824ae61e155cb383c7bd17",
+            "content": "sha256:bbfe2287c05d276f87d18aa7c0d63a8123de602b86eb621b7a1ab9d922516cc1",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 44
+            },
+            "path": "mcp/src/agents_remember/serving/capsule_delivery.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The three governed-artifact rows registering this module as a consumer, beginning with the _user_settings_guard.py row. The `curator_coherence_test_support.py` row registers `test_capsule_launch_wiring.py` as a consumer. The `fixtures/repository_profiles/node/package-lock.json` row registers `test_capsule_launch_wiring.py` as a consumer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0556945441335e93cd0b1783dba11d3b2eb279a7",
+            "content": "sha256:8fd51e671406bdc04ea2c8a36fd76d9421cb267a3b39b7c294791cf76416e7bb",
+            "locator": {
+              "end": 166,
+              "kind": "line_range",
+              "start": 65
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0556945441335e93cd0b1783dba11d3b2eb279a7",
+            "content": "sha256:0e7e698f864429471bf9fb8a7872c1db9aa391a81606be6ae62492fad8db737e",
+            "locator": {
+              "end": 1148,
+              "kind": "line_range",
+              "start": 1123
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0556945441335e93cd0b1783dba11d3b2eb279a7",
+            "content": "sha256:63a41bbdf1e5ef857bd6a176c8e21f01fd7543cf1913a36e4f7e06c76239d666",
+            "locator": {
+              "end": 2488,
+              "kind": "line_range",
+              "start": 2387
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "Adds a copied shipped corpus fixture while keeping real admission/selection/compilation. Three launch-boundary cases refuse unmarked section text with the exact line (including frontmatter), an operation that does not apply to the requested role, and a missing required operation file; each requires no delivery and a named status. Existing compiler-identity/free-agent/tool-removal cases remain.\n\nAnchor: Current test/support source",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d6364a3e0174cccc37d69d4ad9edcb9a76681c2",
+            "content": "sha256:44e813a09e11c20a74380fd4faabffa8814f1b17dcc4f3432b5b671533ce9cde",
+            "locator": {
+              "end": 414,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "The current task-attached launch asserts equality with the compiler's trusted instructions and semantic digest for the same admitted seat. Workspace-sensitive capsule identity is asserted by a separate free-agent test; it is not a spawn-launch workspace-agreement assertion.  Historical former note: \"The spawn side's agreement with its own capsule about the workspace.\" The former spawn-workspace assertion is historical; the current module has no such test case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d6364a3e0174cccc37d69d4ad9edcb9a76681c2",
+            "content": "sha256:e32b026f4e11aa5b73033264e3a947639b1db8f67b7f31c8aacadc2f0ea2bfc0",
+            "locator": {
+              "end": 206,
+              "kind": "line_range",
+              "start": 178
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5d6364a3e0174cccc37d69d4ad9edcb9a76681c2",
+            "content": "sha256:fd749260087e4c18edfa08e7eb550d1e6d4f03cf9b1678261eea9608720518fd",
+            "locator": {
+              "end": 372,
+              "kind": "line_range",
+              "start": 352
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The negative case: an un-compilable role refuses by name before any host effect.\n\nAnchor: `test_an_uncapsulable_role_refuses_by_name_before_any_host_effect`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d6364a3e0174cccc37d69d4ad9edcb9a76681c2",
+            "content": "sha256:44e813a09e11c20a74380fd4faabffa8814f1b17dcc4f3432b5b671533ce9cde",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The one decision point, for every seat class.\n\nAnchor: `test_the_mode_gate_names_capsule_legacy_and_refused_for_every_seat_class`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d6364a3e0174cccc37d69d4ad9edcb9a76681c2",
+            "content": "sha256:44e813a09e11c20a74380fd4faabffa8814f1b17dcc4f3432b5b671533ce9cde",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

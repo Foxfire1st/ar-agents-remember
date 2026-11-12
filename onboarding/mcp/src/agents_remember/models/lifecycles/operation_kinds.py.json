@@ -1,0 +1,87 @@
+{
+  "path": "mcp/src/agents_remember/models/lifecycles/operation_kinds.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The current `LifecycleOperationPhase` boundary implements the preparation contract above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c800252e5609ce24629551ce7c0cdc99602f3ed6",
+            "content": "sha256:66a9d983866eff0bc857d209ba0a3fbc7e11ebf0fbabf8e8f0fdf102d4d7d9bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleOperationPhase"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The canonical phase union excludes both retired ledger-commit phases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c800252e5609ce24629551ce7c0cdc99602f3ed6",
+            "content": "sha256:66a9d983866eff0bc857d209ba0a3fbc7e11ebf0fbabf8e8f0fdf102d4d7d9bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleOperationPhase"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The module defines the closed module vocabulary as its public seam.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c800252e5609ce24629551ce7c0cdc99602f3ed6",
+            "content": "sha256:09e4b4a2d43b7cd11cf9b82e50fc112d026833a7113ec21b15b63fa7fd0be670",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleOperationKind"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "None",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c800252e5609ce24629551ce7c0cdc99602f3ed6",
+            "content": "sha256:66a9d983866eff0bc857d209ba0a3fbc7e11ebf0fbabf8e8f0fdf102d4d7d9bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleOperationPhase"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "None",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c800252e5609ce24629551ce7c0cdc99602f3ed6",
+            "content": "sha256:09e4b4a2d43b7cd11cf9b82e50fc112d026833a7113ec21b15b63fa7fd0be670",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleOperationKind"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

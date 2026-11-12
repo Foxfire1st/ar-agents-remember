@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/providers/cgc/lifecycle/compose.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/providers/cgc/lifecycle/compose.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T06:20+02:00                     |
-| lastVerifiedCommitHash | `6beccd0545a2d5c161059715d5ed7830917eba03` |
-| lastVerifiedCommitDate | 2026-06-09T22:39:28+02:00|
-| governingOverview      | `overview.md`                              |
-
 ## Governing Overview
 
 [CGC Lifecycle Overview](overview.md)
@@ -76,39 +66,17 @@ ambiguous ("too many colons").
 - CGC Docker resources must render with generated Agents Remember ownership
   labels; missing `instance.labels` is an invalid settings shape.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external domain documentation is configured for this repository; the
 resolved `system/sources.md` currently contains no entries.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
+### Repo-Internal References
 
-## Repo-Internal References
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is required beyond mounted repository roots configured by provider settings. | n/a | n/a |
-
-## Update History
-- 2026-08-04T13:47:55+02:00 — 260731-EFA-L6 S18-B11 same-reviewer correction: deleted the three rangeless legacy rows; no current Compose claim was retained as anchored evidence. Verification metadata unchanged.
-
-- 2026-06-10T06:20+02:00 — Body-quality pass: merged the `cgc-watch-guard.py` watcher entrypoint into Logic alongside the existing `dataDestination` prose (documentation only).
-- 2026-06-09T22:10+02:00 — FalkorDB data volume now binds to the configurable backend `dataDestination` (default `/var/lib/falkordb/data`) instead of hardcoded `/data`, fixing graph data loss on container recreate; the watcher service template gained a `cgc-watch-guard.py` entrypoint that clears poisoned empty graph keys before exec'ing `cgc watch`.
-- 2026-05-31T12:50+02:00 — Source consolidated host user mapping: local `cgc_user()` / `cgc_user_block()` and the `os` import were removed, `RUNNER_USER_BLOCK` / `WATCHER_USER_BLOCK` now use the shared `host_user_block()` imported from `compose_runtime`, and `layouts` plus the layout-taking helpers are now typed `CgcRuntimeLayout` (imported from `core`) instead of `Any`; corrected the Logic section's user-mapping prose to name the shared helper (1.0.0 review remediation).
-- 2026-05-29T07:19+02:00: Updated after runner/watcher bind-mount targets,
-  `working_dir`, watch repo path, and container environment switched to driveless
-  POSIX container paths (`container_runtime_root` / `container_code_repo_root`,
-  `env(for_container=True)`) for Windows-host support.
-- 2026-05-28T14:21:08+02:00: Updated after CGC Compose label rendering began
-  rejecting provider settings without generated `instance.labels`.
-- 2026-05-27T00:25+02:00: Updated after CGC Compose port mappings switched to
-  shared `auto`-safe rendering.
-- 2026-05-26T23:59+02:00: Created for the provider Compose migration and closeout missing-onboarding gate.
+No cross-repo boundary is required beyond mounted repository roots configured by provider settings.

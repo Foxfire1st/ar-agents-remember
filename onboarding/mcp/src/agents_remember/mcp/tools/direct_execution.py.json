@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/mcp/tools/direct_execution.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Adapts the architect grant operation to the common typed MCP answer boundary",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ad7aabde1dbc6c164702026f852ba68846ef9a3",
+            "content": "sha256:a782dfb19417165d90085d48819b9b98d5c6ae907739e95be267f7c33b1b6a26",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

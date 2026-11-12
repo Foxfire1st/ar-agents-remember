@@ -1,0 +1,59 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/patch_cgc.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The script locates the installed CodeGraphContext package and applies a static list of patch operations.\n\nAnchor: \"purelib\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3455a36f045068d737905bc9a52d3f162d721527",
+            "content": "sha256:3067ad090336f47dcb12378650eddc990aeaf51e4df250baf9796bbb30a2b30b",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 6
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Patch operations fail fast when neither the patched text nor an acceptable original snippet is present.\n\nAnchor: `SystemExit`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3455a36f045068d737905bc9a52d3f162d721527",
+            "content": "sha256:37b41ba023ec3d4afc040ced6c982d48ac4431ec92e0c65ce52399b86d398c24",
+            "locator": {
+              "end": 133,
+              "kind": "line_range",
+              "start": 133
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The CGC Dockerfile copies and executes this patch script during runner image build.\n\nAnchor: \"COPY patch_cgc.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0ddf562f241bddf473c2954821e10f98a01d292",
+            "content": "sha256:7468c11076a5abc6d70e54b492adaf195c883480706e6c382d1095e98727bd74",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/Dockerfile"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

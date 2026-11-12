@@ -1,0 +1,57 @@
+{
+  "path": "mcp/tests/test_writer_integrations.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "a47f685838be75554f034d52522abfee9d9cc521",
+        "content": "sha256:3ad54d7979c01dd2e317c523c1f2571ef6836568d4408e5f8d34698deaf65b4f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_unsupported_test_title_names_why_and_may_offer_a_line_range"
+        }
+      },
+      "facet": "Source-defined regression check; not executed by Curator: Unsupported test-title syntax names the reason and line_range remedy.",
+      "id": "PRF-MYSKWD",
+      "invariant": "INV-B37MWR",
+      "origin": {
+        "handoffEntry": "L54-curator-proof-MIK-R54-v1-rule-9-wave-75",
+        "leaf": "260928-MIK-L54"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Describes bounded writer anchor-resolution integration assertions, explicitly not acceptance. The line-range fallback is not a license to invent a symbol proof. These are synthetic source cases, not a test run or live writer witness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a47f685838be75554f034d52522abfee9d9cc521",
+            "content": "sha256:84086ab667ac907632d78041009bdea4b5959f2d67b3f314967b0da849d4cd9f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The case pins the reason and the conditional range remedy the writer's refusal now gives.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a47f685838be75554f034d52522abfee9d9cc521",
+            "content": "sha256:3ad54d7979c01dd2e317c523c1f2571ef6836568d4408e5f8d34698deaf65b4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unsupported_test_title_names_why_and_may_offer_a_line_range"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,91 @@
+{
+  "path": "skills/l-01-agent-lifecycles/core/digest-map.json",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2967bc288b6496e92a61b1c6b594f3024cffd24c",
+        "content": "sha256:dcaabb958c850e21c4dec029c36505845c4eb803aa45bb7ea0d04bf0fa3d420c",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-BZ71PH",
+      "invariant": "INV-40JW44",
+      "origin": {
+        "handoffEntry": "MIK-R84@v5 part1 / L62 shared digest",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "This map retains source dispositions and evidence identities for audit instead of becoming an instruction block.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The mapping preserves its baseline inventory and stable unit IDs.\n\nAnchor: `\"unitIds\"`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2967bc288b6496e92a61b1c6b594f3024cffd24c",
+            "content": "sha256:db906b4a6477f8ae43b120c2fcd1c203b2eab0b709723d58c085f67fb24ac5e4",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The unit definition explains ID preservation and the role vocabulary.\n\nAnchor: `unitDefinition`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2967bc288b6496e92a61b1c6b594f3024cffd24c",
+            "content": "sha256:0cb3cc8e0abddec638fb535802d1a8d2d4662049dd42573ce07bb653bfd74390",
+            "locator": {
+              "end": 1618,
+              "kind": "line_range",
+              "start": 1608
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Current units distinguish reference evidence from selected digest lines; retired units keep their record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2967bc288b6496e92a61b1c6b594f3024cffd24c",
+            "content": "sha256:dcaabb958c850e21c4dec029c36505845c4eb803aa45bb7ea0d04bf0fa3d420c",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The digest block binds the rendered digest path, hash and word maximum, and lists the places of the digest.\n\nAnchor: `maximumWords`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2967bc288b6496e92a61b1c6b594f3024cffd24c",
+            "content": "sha256:fa5173cf6cd40d1c9a141d06fb81cefcf0c1db93189b40108cae6b54e59038eb",
+            "locator": {
+              "end": 6192,
+              "kind": "line_range",
+              "start": 6178
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

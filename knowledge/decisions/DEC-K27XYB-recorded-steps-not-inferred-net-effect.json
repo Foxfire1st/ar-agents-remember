@@ -1,0 +1,74 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "An overall inferred label was explicitly considered and rejected; that choice continues to bind projection and presentation after this leaf."
+  },
+  "alternatives": [
+    {
+      "option": "Show each eligible owner-recorded step in attempt order and retain the two-end wording comparison without one net-effect label.",
+      "reason": "The sequence exposes every authored judgment while the before/after diff still compares the selected ends.",
+      "status": "chosen"
+    },
+    {
+      "option": "Present one label as the reviewed leaf’s overall effect.",
+      "reason": "No owner authored such a combined judgment, so computing it would invent meaning rather than display evidence.",
+      "reconsider_when": "The developer explicitly admits an authored overall-effect record and defines its ownership and relation to attempt rows.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Future reviewer projections and UI show recorded judgments, including historical omissions, without inferring a label or combining steps into one effect.",
+    "The outline may abbreviate a long sequence, but the reading area retains every step and explains all admitted labels."
+  ],
+  "context": "The reviewer’s change badge and end-to-end wording diff previously hid earlier attempt judgments; the approved packet settles whether an overall label may replace those authored steps.",
+  "decider": "Developer directions D37/D46/D48; architect’s approved MIK-R43@v2 settlement under D47.",
+  "id": "DEC-K27XYB",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-76C676"
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "112a9855157f940bc999dde2c6fba752f6430f5e",
+        "content": "sha256:a69af279a9d52dd259d5c48e9012f2d184ec2c08052ba66c5cec283f7f74cdb0",
+        "locator": {
+          "kind": "symbol",
+          "name": "_answer"
+        },
+        "path": "mcp/src/agents_remember/application/review_meaning_effects.py"
+      }
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R43",
+        "packet": "requirements/MIK-R43-v2-recorded-meaning-effects-in-the-reviewer.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v2"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "MIK-R43@v2 rules 1-9 and settled alternatives table; DEVELOPER-DIRECTION.md D37, D46, D47, D48. Original Reviewer producer list remains immutable and separately co-resolved."
+      ],
+      "path": "handoff-primary.json"
+    },
+    "handoffEntry": "L43-C-recorded-judgments-not-net-effect",
+    "leaf": "260928-MIK-L43",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

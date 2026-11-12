@@ -1,0 +1,177 @@
+{
+  "path": "mcp/tests/test_automatic_post_integration_cleanup.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module docstring that records the ownership story and the historical name.\n\nAnchor: \"Reclamation is automatic and unprompted, and finalization is what runs it.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c3aa082730ec3868fcbc062a63abd1b1e3987980",
+            "content": "sha256:dd8c6de904bc709f1c4d75be216102cc95ad5b63ffbe0b646b86237b99c0bef8",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The dependency-classification entry that names this module as a consumer of the certification profile. Source caption: `AMBIENT_ROLE_RUNNER_PATH`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82360cec3b9a90193f4e9d7dbdf68cf5340dabb6",
+            "content": "sha256:7563e9fddebd3b6233c4bff75d8bbaf9be3e65bf0f01dd625cbb0983ed38b2a3",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 76
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The reclamation runner and report-shaping gate these cases exercise through `lifecycle_finalize_task`. A completed cleanup cell still archives its recorded terminal agents.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dcbcb92eb8805a1f241603ea248fdac21fb64a9d",
+            "content": "sha256:0ca1fc1d90191c59879780dfa605be2927cea690034f76e7255aff81f1bd1cf7",
+            "locator": {
+              "end": 371,
+              "kind": "line_range",
+              "start": 312
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dcbcb92eb8805a1f241603ea248fdac21fb64a9d",
+            "content": "sha256:0ca1fc1d90191c59879780dfa605be2927cea690034f76e7255aff81f1bd1cf7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run_or_verify_cleanup"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The report shaper whose exact sentence and inventory the first case asserts.  Anchor: \"ALREADY_CLEAN = \\\"already-clean\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3b7f427a2911b1e7d510e47ddbe5ed92a231af77",
+            "content": "sha256:f71d558a0c6fad3a909c9c129f0e4eff665a1a5e33dee3b11049d8e307514cd9",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 29
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/cleanup_report.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3b7f427a2911b1e7d510e47ddbe5ed92a231af77",
+            "content": "sha256:e74ee28e7f64b88a243d97af5586c007ca35f3d15151bb12efbd2f7fd64c1d3d",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/cleanup_report.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The landing route whose no-reclamation the cases assert, including the payload's untouched `cleanup` cell.\n\nAnchor: `_integrated_result`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
+            "content": "sha256:27fad559a8b42dd8535ce73c5eba0d269dafc45e5e0cc300ab1fbd175477a587",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
+            "content": "sha256:7e0afbd8d9e318e9847056e83dfe8a8bc0e578ad69976f341a823b0ae146dbc4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_integrated_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The projection that names the finalization move.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
+            "content": "sha256:ee4961644f5f75ee7af81745e3554bbfbc0eeb8e1029eadaf6de37787a13299f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_post_integration_phase"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The terminal operation the first case calls.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "content": "sha256:4e8196e941fb43e63fb6854a5666176542e8a6ae1c28085ce979fa1f060ee59d",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycle_finalize_task_tool"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "content": "sha256:9e0fed7e7fdb7bb043959686200dd6704ab20f6788a4e64d887e1de767cb99c7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

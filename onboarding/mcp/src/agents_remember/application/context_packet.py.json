@@ -1,0 +1,250 @@
+{
+  "path": "mcp/src/agents_remember/application/context_packet.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
+        "content": "sha256:27bb7296ec4a883a988d301b91ced911d3996b36f818048a890ca18cea208f7b",
+        "locator": {
+          "kind": "symbol",
+          "name": "slim_context_packet"
+        }
+      },
+      "id": "RLZ-JFEY5E",
+      "invariant": "INV-E2WDP2",
+      "origin": {
+        "handoffEntry": "L109-source-slim-orientation",
+        "leaf": "260928-MIK-L109"
+      },
+      "rationale": "This projection constructs the compact agent answer from the retained full context rather than deleting the internal builder.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`ContextPacketV2` and nested summary models define the response shape.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f161c87a3f3abab5c89216ea2b32aed0387c906d",
+            "content": "sha256:c1d0ad0575d6dd7eb1b23158502d843b17d2d7919b57f6695585533a74fb8e29",
+            "locator": {
+              "kind": "symbol",
+              "name": "ContextPacketV2"
+            },
+            "path": "mcp/src/agents_remember/models/context_packet.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Slim orientation factors shared roots and optional task/actions/build/pair fields without rich policy blocks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
+            "content": "sha256:27bb7296ec4a883a988d301b91ced911d3996b36f818048a890ca18cea208f7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "slim_context_packet"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Rich V2 assembly remains internal and optionally includes index facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
+            "content": "sha256:f693daf76a853a8dd3717df397402b659122d0092f9d56512ec1cbb23653a985",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_context_packet"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
+            "content": "sha256:b555aa17fe4af5d16d43fbd5b8426035a27e8b75737f9931a7e7582236902440",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Provider summary projection keeps context compact and points details at diagnostics.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70fe9d0307f25c7b326ed501f72e43a98d56bbe6",
+            "content": "sha256:117e1d6115145488ab9411f807a96af034b39fe2894a8bde95fe448ea48324d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "provider_summary"
+            },
+            "path": "mcp/src/agents_remember/providers/status.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Worktree status projection supplies the read-only worktree summary — as the MODEL: `worktree_status_packet` returns `WorktreeSummary`, so there is no dict boundary here to validate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16d78e38cc8ac2f8fe9aeec56ac35b664c5e8988",
+            "content": "sha256:1178f685feb181073285f1905be1da7df392287846aa5176dc75bf4b54b3c7ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_status_packet"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_status.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:30279b1752e0553b54475d9df98e562424f5f4fbde36428d0533666e1482106d",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeSummary"
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`DriftSummaryPacket` (L17-L20) — the `TypedDict` `_drift_packet` now returns — and `DriftStatus` (declared in `models/drift.py`).\n\nAnchor: \"class DriftSummaryPacket(TypedDict):\"; \"DriftStatus = Literal[\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d617ae8333cdb55f3cf9bdac4802153afe86655d",
+            "content": "sha256:4f888b408f3ea32f96c6d9a7aff94534d8f465c7a1a8fc402108a5a5492e3cfb",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 11
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a9114e155d9f2a5e4be13847dfae76a7674a446b",
+            "content": "sha256:a4fd9adef884dbb6ec257dea9499d51b7d671e333bf190b352afb44cb58b8b8f",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 11
+            },
+            "path": "mcp/src/agents_remember/models/drift.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Public payload builder validates this application entry point output through the model registry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "096416e28ba831c922b782c7d3994ab2b726e6cb",
+            "content": "sha256:4ca9c7f33dd5b33e6e28cea6c6fda08205ba9cd7fc864963f5929beae3e6ee3b",
+            "locator": {
+              "kind": "symbol",
+              "name": "context_packet_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/core.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Branch freshness facts (upstream, fetch, ahead/behind) come from the freshness kernel.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79ef372a5f71986f703d7b1e8404f3cbabfa76c2",
+            "content": "sha256:0b2089562fc3fb113c6393fd5b9ae364c6e107d06b1a50c1b9836cfb7581af5a",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_branch_freshness"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_freshness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "`ledgerMapsCodeHead` reuses the ledger loader and mapping lookup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f161c87a3f3abab5c89216ea2b32aed0387c906d",
+            "content": "sha256:4d2a3b44d5eca0a3f8a6e952cb503bbbd7ba32a0f7aa43d4ce2faac56f0dd03a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ledgerMapsCodeHead"
+            },
+            "path": "mcp/src/agents_remember/models/context_packet.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The current module exposes `ContextPacketError`, `ContextPacketRequest`, `build_context_packet` at this ownership boundary.\n\nAnchor: `ContextPacketError` `ContextPacketRequest` `build_context_packet`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
+            "content": "sha256:b555aa17fe4af5d16d43fbd5b8426035a27e8b75737f9931a7e7582236902440",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "A leaf drift block compares against the leaf's converted base and agrees with the drift tool.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
+            "content": "sha256:f745faa8f76bfefd6c2f7176bee019bfde535bf578c5852dbf5b590d818e6b64",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf_drift_base"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

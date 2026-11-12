@@ -1,0 +1,3380 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L177",
+  "rows": [
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-00VS3E",
+      "items": [
+        "sha256:b231ab40e92f0a410bc3cf732325eaa5b9badc6a74961a437a7078efeaa4ce71"
+      ],
+      "reason": "A test-only hunk: it exercises an obligation recorded elsewhere, and a test edit mints no invariant of its own.",
+      "subject": "hunk:sha256:b231ab40e92f0a410bc3cf732325eaa5b9badc6a74961a437a7078efeaa4ce71"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-01WRAN",
+      "items": [
+        "sha256:142c9e8899f4be918c4c6471fd8eadf84ca4010e9b7cf430b946f15be6a115e9"
+      ],
+      "reason": "A test-only hunk: it exercises an obligation recorded elsewhere, and a test edit mints no invariant of its own.",
+      "subject": "hunk:sha256:142c9e8899f4be918c4c6471fd8eadf84ca4010e9b7cf430b946f15be6a115e9"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-04WWV1",
+      "items": [
+        "sha256:1714f6a3aa0bc995d7cf57cb5c74dee0fce5c05c19b89bb62007ba4090ef7764",
+        "sha256:3810290c3fe5c6efa199d0b854e82a6dc71311f77fa73e2be2acca8cdd1c37d1",
+        "sha256:fa44a456bab4d8c62b4315de06088ac0283fca963e3328819c4592ed9cd16ff5"
+      ],
+      "reason": "The finite age bound is now a clock window in the key; the card states why no admission record can resurrect an over-age answer.",
+      "sources": [
+        {
+          "blob": "74192819229079d194a84478be3c684f21eb11d1",
+          "path": "mcp/src/agents_remember/serving/intent_summary_cache.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/intent_summary_cache.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-05PC87",
+      "items": [
+        "sha256:f2474f5fe3240abda5cbaa311a618195eaad08ea2a2dc07bff0c2152920867cc"
+      ],
+      "reason": "A scheduling hunk: it implements the background placement decision this list records, and carries no separate invariant.",
+      "subject": "hunk:sha256:f2474f5fe3240abda5cbaa311a618195eaad08ea2a2dc07bff0c2152920867cc"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-06FVYC",
+      "items": [
+        "sha256:d7eaa2736bcc67011346e0c7b6f40b20b6b0ed968444a5752310281100fea8d7"
+      ],
+      "reason": "A supporting hunk: it wires the change into an owner whose promise is recorded elsewhere, and adds no obligation of its own.",
+      "subject": "hunk:sha256:d7eaa2736bcc67011346e0c7b6f40b20b6b0ed968444a5752310281100fea8d7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0E3WJM",
+      "items": [
+        "sha256:3febd05dcfac1e89473f3cf14a805ca695cab51f6f416cc2315d9b7f004db09d"
+      ],
+      "reason": "A fingerprint hunk: it replaces the walk with native generations under the background decision, and states no separate obligation.",
+      "subject": "hunk:sha256:3febd05dcfac1e89473f3cf14a805ca695cab51f6f416cc2315d9b7f004db09d"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R179",
+          "packet": "requirements/MIK-R179-v1-the-intent-reviewer-opens-fast.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "af790a779d5ba61b711780eacd345f968d32bbbc",
+            "content": "sha256:f72df1b919361b3cbc047860edd831b6b7fe80166052339c058cb12f50fc9a43",
+            "locator": {
+              "kind": "symbol",
+              "name": "opens one main read when the catalogue answers after the bounded wait (L177-R1-07)"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.navigation.test.tsx"
+          },
+          "before": "absent",
+          "id": "PRF-8XGKV4"
+        },
+        {
+          "after": {
+            "blob": "4d59650168c6a43c0457a9f469e87e45b813292a",
+            "content": "sha256:960625c0e9d36907aebaa0fd1deda490ee696f1327e9e2a8d479e8660617b567",
+            "locator": {
+              "end": 209,
+              "kind": "line_range",
+              "start": 139
+            },
+            "path": "dashboard/src/panels/review/ReviewNavigation.tsx"
+          },
+          "before": {
+            "blob": "9583164e407b2b0ceb6df90ee3694633f7ca74a1",
+            "content": "sha256:0f41a9e2d507fe7766185518e6c08c76cefe82a73862688b1c5f7a3aa99fa958",
+            "locator": {
+              "end": 209,
+              "kind": "line_range",
+              "start": 139
+            },
+            "path": "dashboard/src/panels/review/ReviewNavigation.tsx"
+          },
+          "id": "RLZ-CCAZC6N3"
+        },
+        {
+          "after": {
+            "blob": "4d59650168c6a43c0457a9f469e87e45b813292a",
+            "content": "sha256:b2c98599ff5b7eb7c1c8069c78ea87616a75343d25c937debef7cd444224f23c",
+            "locator": {
+              "kind": "symbol",
+              "name": "useReviewNavigation"
+            },
+            "path": "dashboard/src/panels/review/ReviewNavigation.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-S720CR"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "strengthen",
+      "id": "ROW-0J8S28",
+      "items": [
+        "sha256:919e61203f5198134d6e9b6fd0fb01105a8348eae13e8decfd8d5e13292ba9b2"
+      ],
+      "reason": "The old condition deferred a catalogue answering after the bound to L48, so the one-read promise did not cover it. The candidate decides that case itself: past the bound the catalogue selects no subject and the open keeps one main read. The condition also now says what a prompt answer selects only when the catalogue actually has a subject; a genuinely empty catalogue inside the bound selects none and the open stays a task-context read, which the mounted meaning case accepts. Evidence (L177-INV-115RDW8H): L177-A8-fix-verification-verdict.md: 07 fixed; 17 mounted navigation cases pass, and the old two-read discriminator now sees one read.",
+      "revision": 3,
+      "subject": "INV-115RDW8H"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0JK98J",
+      "items": [
+        "sha256:8c8d46a1117498dcdbc9f18eff4b41d2be72875a47b7aa7e892330fa8c6b9653"
+      ],
+      "reason": "A test-only hunk: it exercises an obligation recorded elsewhere, and a test edit mints no invariant of its own.",
+      "subject": "hunk:sha256:8c8d46a1117498dcdbc9f18eff4b41d2be72875a47b7aa7e892330fa8c6b9653"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "8f53c952d51eb1b83c2d97993768dbc0809cc6ea",
+            "content": "sha256:8699b57a3d2f03599cb0115133681e0e30af288ae093b1ac52d64d5f24cd62f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tree_from_index_copy"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/capture_index.py"
+          },
+          "before": {
+            "blob": "a955cc499935e7a7f74d9dc2c41622e55df65c98",
+            "content": "sha256:4f7f5821a91ff126170485cc55eb81dfbead67fc107bae7dba9c0521632c4abc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tree_from_index_copy"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/capture_index.py"
+          },
+          "id": "RLZ-BW7QK2"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-0QP36J",
+      "items": [
+        "sha256:6056ec9d38bdfcd1dae8108fe8fe62d9de0b1bfa5680202cc518f34b863816cf"
+      ],
+      "reason": "The change reaches this invariant's code only through edits that leave its promise as recorded; every touched realization or proof is re-anchored at the candidate by this row.",
+      "revision": 2,
+      "subject": "INV-656CYW"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0VG5NJ",
+      "items": [
+        "sha256:a9c0212c7a8adb59d7720cb37b37306cf87ee315a3365ebe30f3142789feb3c8"
+      ],
+      "reason": "A scheduling hunk: it implements the background placement decision this list records, and carries no separate invariant.",
+      "subject": "hunk:sha256:a9c0212c7a8adb59d7720cb37b37306cf87ee315a3365ebe30f3142789feb3c8"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-0YVNMH",
+      "items": [
+        "sha256:56ec13eb0332a833e34e6ad75c3431289a9c12b39ff1b5493324685daeb28b06"
+      ],
+      "reason": "The MCP route's purpose and build are unchanged; the changed modules state their own contracts.",
+      "sources": [
+        {
+          "blob": "36eb7128d7ab24eaabed755ddab2f2e52776bf83",
+          "path": "mcp/src/agents_remember/cli/dashboard.py"
+        },
+        {
+          "blob": "c55864286e3f288751692072e8d090c3a16157ec",
+          "path": "mcp/src/agents_remember/cli/dashboard_review_reads.py"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0ZMKZJ",
+      "items": [
+        "sha256:c3a0424a5820997015db0ed79f50760dbd063975200b80a1b7c4b2c60f00e03c"
+      ],
+      "reason": "A capture-proof hunk covered by the proof invariant this list revises; it implements that promise and adds none.",
+      "subject": "hunk:sha256:c3a0424a5820997015db0ed79f50760dbd063975200b80a1b7c4b2c60f00e03c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1E2CXF",
+      "items": [
+        "sha256:b7cc21e577f82d2f4b77b0d72a25a5a6c0c9b4b23ee114b8f75b7efbebcc7435"
+      ],
+      "reason": "A test-only hunk: it exercises an obligation recorded elsewhere, and a test edit mints no invariant of its own.",
+      "subject": "hunk:sha256:b7cc21e577f82d2f4b77b0d72a25a5a6c0c9b4b23ee114b8f75b7efbebcc7435"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1K5FV4",
+      "items": [
+        "sha256:3988ef311d10ccad1d230ee3f384476bb092110cc554f4358cffad29fe712183"
+      ],
+      "reason": "A test-only hunk: it exercises an obligation recorded elsewhere, and a test edit mints no invariant of its own.",
+      "subject": "hunk:sha256:3988ef311d10ccad1d230ee3f384476bb092110cc554f4358cffad29fe712183"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f15f81a57f076686b9c0b38a3602086ff29499a0",
+            "content": "sha256:73cf180b9738b6073bf18558ff40a0fdbf24dec67b61cb8cff41613cc8a3a654",
+            "locator": {
+              "end": 290,
+              "kind": "line_range",
+              "start": 267
+            },
+            "path": "mcp/src/agents_remember/serving/projector.py"
+          },
+          "before": {
+            "blob": "3e5006c2738aece314723414d6d8eaf932383598",
+            "content": "sha256:66dd14931f05fe6fd7c2c1b15158a75458bec592465aeca01a9250beb60f2af0",
+            "locator": {
+              "end": 263,
+              "kind": "line_range",
+              "start": 244
+            },
+            "path": "mcp/src/agents_remember/serving/projector.py"
+          },
+          "id": "RLZ-S8TKV9"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-1SNFY7",
+      "items": [
+        "sha256:10d616e78a8d6a64ce644f86786183a035d7b371d68d9c53c8d9758f300d03ea"
+      ],
+      "reason": "The anchor retarget selects the publish and acknowledgement failure paths its rationale names; the projector's promise is unchanged, no entry was added or removed, and the leaf alters where that work runs, not what it guarantees.",
+      "revision": 1,
+      "subject": "INV-84PT5A"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0HBKP9",
+          "revision": 1
+        },
+        {
+          "id": "INV-2172NS",
+          "revision": 1
+        },
+        {
+          "id": "INV-5M9WY3",
+          "revision": 3
+        },
+        {
+          "id": "INV-61Y147",
+          "revision": 1
+        },
+        {
+          "id": "INV-656CYW",
+          "revision": 2
+        },
+        {
+          "id": "INV-7MH0BR",
+          "revision": 2
+        },
+        {
+          "id": "INV-9MF6HZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-EKE1RV",
+          "revision": 1
+        },
+        {
+          "id": "INV-N3M9G4",
+          "revision": 3
+        },
+        {
+          "id": "INV-TY4BR7",
+          "revision": 1
+        },
+        {
+          "id": "INV-W8WBTB",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-1Y168E",
+      "items": [
+        "sha256:c81f4a6618557df253dee1bc08d598f9e4e3fd87f03afd2026771a74d701c30f"
+      ],
+      "reason": "The capture proof's change realizes members already listed (INV-N3M9G4, INV-EKE1RV, INV-656CYW); the joint guarantee about one capture owner and exact reuse still holds, and no member or route moved.",
+      "revision": 2,
+      "subject": "FAM-4ZNEN9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2ANX9N",
+      "items": [
+        "sha256:5b311d0a7650ac5a0ebb03a330108e4a7c9f02bd394c68bbf7654afcdbb77a17"
+      ],
+      "reason": "A test-only hunk: it exercises an obligation recorded elsewhere, and a test edit mints no invariant of its own.",
+      "subject": "hunk:sha256:5b311d0a7650ac5a0ebb03a330108e4a7c9f02bd394c68bbf7654afcdbb77a17"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-2F50RR",
+      "items": [
+        "sha256:be28d7bd15544bcc3582b258b44744f78fccc8bc9dc61e680dd3aa682cf1681d"
+      ],
+      "reason": "A9: the declaration gains the background pool as process state — a resetter that drains the executor and clears the slot — plus the retained host-publication endings row, so a test module cannot inherit either.",
+      "sources": [
+        {
+          "blob": "89990ed97f0e0960816b36837bb9544946b6f361",
+          "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/global_state.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2TEH34",
+      "items": [
+        "sha256:c13bddaf0422705d30d7a1f2e9e6d72d2020bd39ae2ed6cd12d7d7f373760875"
+      ],
+      "reason": "A test-only hunk: it exercises an obligation recorded elsewhere, and a test edit mints no invariant of its own.",
+      "subject": "hunk:sha256:c13bddaf0422705d30d7a1f2e9e6d72d2020bd39ae2ed6cd12d7d7f373760875"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2Y96MZ",
+      "items": [
+        "sha256:e973ff6a14af222d3759e7dc9cebd812e0b7af823fbad807e6b58a33214ae0f8"
+      ],
+      "reason": "A supporting hunk: it wires the change into an owner whose promise is recorded elsewhere, and adds no obligation of its own.",
+      "subject": "hunk:sha256:e973ff6a14af222d3759e7dc9cebd812e0b7af823fbad807e6b58a33214ae0f8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-31T6SE",
+      "items": [
+        "sha256:d3afef4e637112511d2d059662b287afd4db41524d7779d3d0bb4a2e924164a9"
+      ],
+      "reason": "A test-only hunk: it exercises an obligation recorded elsewhere, and a test edit mints no invariant of its own.",
+      "subject": "hunk:sha256:d3afef4e637112511d2d059662b287afd4db41524d7779d3d0bb4a2e924164a9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-36EHE8",
+      "items": [
+        "sha256:1b7698df356e8cfe5acab43f2d91cbf3dc046f4428395c6f48b81d7929fe7425"
+      ],
+      "reason": "A test-only hunk: it exercises an obligation recorded elsewhere, and a test edit mints no invariant of its own.",
+      "subject": "hunk:sha256:1b7698df356e8cfe5acab43f2d91cbf3dc046f4428395c6f48b81d7929fe7425"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-21SDZECS",
+          "revision": 2
+        },
+        {
+          "id": "INV-2E8MG43K",
+          "revision": 2
+        },
+        {
+          "id": "INV-49H32B3F",
+          "revision": 2
+        },
+        {
+          "id": "INV-53F058MT",
+          "revision": 4
+        },
+        {
+          "id": "INV-555EHWM8",
+          "revision": 2
+        },
+        {
+          "id": "INV-8VQR13WX",
+          "revision": 1
+        },
+        {
+          "id": "INV-BR5MTSTY",
+          "revision": 2
+        },
+        {
+          "id": "INV-DYDMDD",
+          "revision": 1
+        },
+        {
+          "id": "INV-H8EM1VJR",
+          "revision": 3
+        },
+        {
+          "id": "INV-J1DFZS",
+          "revision": 1
+        },
+        {
+          "id": "INV-KKJYVB40",
+          "revision": 2
+        },
+        {
+          "id": "INV-MC654E0T",
+          "revision": 2
+        },
+        {
+          "id": "INV-MCVSM81V",
+          "revision": 3
+        },
+        {
+          "id": "INV-RMTHRQ0K",
+          "revision": 3
+        },
+        {
+          "id": "INV-RT13RESK",
+          "revision": 3
+        },
+        {
+          "id": "INV-VPX81HXV",
+          "revision": 2
+        },
+        {
+          "id": "INV-W5CTZJGD",
+          "revision": 2
+        },
+        {
+          "id": "INV-WQZ2WFCN",
+          "revision": 2
+        },
+        {
+          "id": "INV-XX178P3W",
+          "revision": 2
+        },
+        {
+          "id": "INV-YVVW1XCN",
+          "revision": 2
+        },
+        {
+          "id": "INV-Z385RTQS",
+          "revision": 2
+        },
+        {
+          "id": "INV-ZE4QPG25",
+          "revision": 2
+        },
+        {
+          "id": "INV-ZS9ZS878",
+          "revision": 3
+        },
+        {
+          "id": "INV-ZY0YMXMQ",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-3751RZ",
+      "items": [
+        "sha256:978b5a99815e56c381646d35b3b757ac31c97c79524a79fcd7547077b4288ea7"
+      ],
+      "reason": "The late-catalogue rule narrows a member's promise; the family's joint promise about the bound comparison is unchanged and all 24 members remain examined.",
+      "revision": 7,
+      "subject": "FAM-R6R095RW"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-38MXTD",
+      "items": [
+        "sha256:1e8418fac041b17a1464049c6add9626b348d5aa5db7a97cc12b4a5e57192fba"
+      ],
+      "reason": "A supporting hunk: it wires the change into an owner whose promise is recorded elsewhere, and adds no obligation of its own.",
+      "subject": "hunk:sha256:1e8418fac041b17a1464049c6add9626b348d5aa5db7a97cc12b4a5e57192fba"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-3CZK3Y",
+      "items": [
+        "sha256:01290c5b1f76658255c6933536213edd215ccbbc0392bbc1d8d7b5613f57a772",
+        "sha256:0c124624accd7ce1c5a29b86e004cdc78e9764ba765073ad030e34b3a753aafc",
+        "sha256:0d5c2e4ad48009dbe631d6aef1b6be8efc4c38e16c2693d54ec941bbe90ebfdf",
+        "sha256:0e9e6c7e4819c2d994e0400a5063ef7a2612739978f2516bf04475c22641748b",
+        "sha256:1f7751a12b35527788f06f881597421689c4b5149419abf641ec22da8879b408",
+        "sha256:3febd05dcfac1e89473f3cf14a805ca695cab51f6f416cc2315d9b7f004db09d",
+        "sha256:5a42489171d3a23f449c8415b751ebf17190578d3ceff4fa81b654d52e24e038",
+        "sha256:6883cfc39877ae015e78cb6a467a4ac823f4d3c097cac703d229149b11aa3011",
+        "sha256:73921d946c32d5c84471e94b04fb371392144f984f32ac5284561739817405be",
+        "sha256:7ec7f7d7142a0c3b41fff78e448b77cc5c9c7b92c8c03aea7825d4f356969068",
+        "sha256:89fe7e091513a2ca255e604c29dad3b083f85f7e1f767c6fefccab586541a4e0",
+        "sha256:8b5dc0162e8b99a5a1514d82d678a6c65963094010642e985f40285a2380bd5f",
+        "sha256:98b2a74db6765f1e8934f94a42907d655c0b57645f42fa5aee33c13c369ee104",
+        "sha256:a368113b1bc9a0d761ba2e4bc687f3241df9fd4a084030ec5dcfe71c6c1ac52d",
+        "sha256:a852123c72a29a64322f91a3cffc06d2eb447986d0560365e91a5320278b5d8a",
+        "sha256:ae428a21aff3936d098c814ad8f06bd9d3373ce48a8ff29f6c0b6e4b27842f9e",
+        "sha256:c1613850202f06e7c9b180ed718edaa7a62684edf949fc24e0e6cd97ae387861",
+        "sha256:c47c5df77870259c0852d20f5b0580d4f46d7ebb526e8d17409b82348b1df0ee",
+        "sha256:c543a0cf5e2f36e40f90009ab9a7498a73af5d16f2cb8f3063a7c2a509a51f75",
+        "sha256:d8787dc42c306dc048f05b21de218a2123340f5ae3f8dd366970c19c8af35aba",
+        "sha256:e4f08c841130e9c66ebf2acb81139caf105c5e7966a919fb0e9f048993e41aef",
+        "sha256:e9efb538bb69a69d68ce4ef6bfdbfd88f1878d9fc18d93f9ffd6cf576f9d866a"
+      ],
+      "reason": "The worktree walk is gone: the card states the native generation, the trust-flag doubt and the tasks tree's five-minute full refresh.",
+      "sources": [
+        {
+          "blob": "8f2ec4583a3bba0ad34652582466b680714fa213",
+          "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_closeout_queue.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/projections/snapshots_impl/_closeout_queue.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3E2WJW",
+      "items": [
+        "sha256:0615091277c15547047f478dbb8fda63fda3ec1bc9c8ce15280bb10761cc1703"
+      ],
+      "reason": "A capture-proof hunk covered by the proof invariant this list revises; it implements that promise and adds none.",
+      "subject": "hunk:sha256:0615091277c15547047f478dbb8fda63fda3ec1bc9c8ce15280bb10761cc1703"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-3GSP9W",
+      "items": [
+        "sha256:fb5d8337c23867c4c54fb69fdc8981b175042997a44dc46545534b95eff84152"
+      ],
+      "reason": "The card's late-catalogue bullet said an idle reader lands on the first family; the mounted case shows the late catalogue fills the navigation and selects nothing, with the reader's own click as the second read, so the bullet was corrected.",
+      "sources": [
+        {
+          "blob": "af790a779d5ba61b711780eacd345f968d32bbbc",
+          "path": "dashboard/src/panels/review/ReviewSurface.navigation.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/review/ReviewSurface.navigation.test.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4620CQ",
+      "items": [
+        "sha256:3f73c90be81337f83bf20a48c071fb6ab59ee9e1b20a485d1c44c0cd74c9cef1"
+      ],
+      "reason": "A summary-window hunk covered by the window invariant this list authors; it implements that promise and adds none.",
+      "subject": "hunk:sha256:3f73c90be81337f83bf20a48c071fb6ab59ee9e1b20a485d1c44c0cd74c9cef1"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4F1M41",
+      "items": [
+        "sha256:ae428a21aff3936d098c814ad8f06bd9d3373ce48a8ff29f6c0b6e4b27842f9e"
+      ],
+      "reason": "A fingerprint hunk: it replaces the walk with native generations under the background decision, and states no separate obligation.",
+      "subject": "hunk:sha256:ae428a21aff3936d098c814ad8f06bd9d3373ce48a8ff29f6c0b6e4b27842f9e"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-4G015G",
+      "items": [
+        "sha256:accadfd7496bde6c4be649be07d2cba4519f6e209460c0cb2d331d2629dcb0e4"
+      ],
+      "reason": "A case was added for the stamp-gated publication read; the module's subject is unchanged.",
+      "sources": [
+        {
+          "blob": "21c501fa7911ff7d65671cd9168d3a3f91c3ddb4",
+          "path": "mcp/tests/test_held_queue.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_held_queue.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4SY942",
+      "items": [
+        "sha256:a24a5be1adccdcef8e9a4ebac2aae89087d034365e748962a45935ccb858e255"
+      ],
+      "reason": "A catalogue answering after the bound selects nothing on its own; the card states the expired-key rule and that the reader's own choice still reads.",
+      "sources": [
+        {
+          "blob": "4d59650168c6a43c0457a9f469e87e45b813292a",
+          "path": "dashboard/src/panels/review/ReviewNavigation.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/review/ReviewNavigation.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-549FAJ",
+      "items": [
+        "sha256:8527e7d84860e94ad91e89c828a6803b43bcd951f53d3fe944301749f0579503"
+      ],
+      "reason": "A capture-proof hunk covered by the proof invariant this list revises; it implements that promise and adds none.",
+      "subject": "hunk:sha256:8527e7d84860e94ad91e89c828a6803b43bcd951f53d3fe944301749f0579503"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-558K59",
+      "items": [
+        "sha256:410b3665b5ee286ac88a15482ae84120edffbbf55e7fb77f5f378da6805ce02d"
+      ],
+      "reason": "A recorded-answer-reuse hunk covered by the reuse invariant this list authors; it implements that promise and adds none.",
+      "subject": "hunk:sha256:410b3665b5ee286ac88a15482ae84120edffbbf55e7fb77f5f378da6805ce02d"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-5MEDMJ",
+      "items": [
+        "sha256:288f0719e3506a171a5971d1ebf7966572a50f6f08524a1261bf2f224d412aea",
+        "sha256:5f32d73250b37e21159c465fc371172eb0f45f537e9e9f44c7c9db36e9f01438"
+      ],
+      "reason": "Two existing cases now reset a tracked path and restore it so they exercise the capture proof's fast path; no case was added and the module's endpoints and subject are unchanged.",
+      "sources": [
+        {
+          "blob": "5b6aebcc1cf7f6d7db96c96d85ce14a901d65688",
+          "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_knowledge_review_source_endpoints.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5XMT0Z",
+      "items": [
+        "sha256:a5d92bbdfa2aa011d393d415d4306e7ac22953c2a811dcbeb4c05e2d7f8199ab"
+      ],
+      "reason": "A capture-proof hunk covered by the proof invariant this list revises; it implements that promise and adds none.",
+      "subject": "hunk:sha256:a5d92bbdfa2aa011d393d415d4306e7ac22953c2a811dcbeb4c05e2d7f8199ab"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-61XB9B",
+      "items": [
+        "sha256:82adeeedd6a7bbf8bcf42892e973c35000bb2975ca9d883737e4b95956dab572"
+      ],
+      "reason": "New card: the bounded, input-stamped reuse store for a recorded comparison's answers.",
+      "sources": [
+        {
+          "blob": "710a83fae3a7e55dfb9b97899015b5ea6c9593e3",
+          "path": "mcp/src/agents_remember/serving/review_answer_reuse.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/review_answer_reuse.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-67P131",
+      "items": [
+        "sha256:f5bc3cbeade9bc53776cd699b4f654faaa0727982937266a971e2635ed4f1967"
+      ],
+      "reason": "A capture-proof hunk covered by the proof invariant this list revises; it implements that promise and adds none.",
+      "subject": "hunk:sha256:f5bc3cbeade9bc53776cd699b4f654faaa0727982937266a971e2635ed4f1967"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+            "content": "sha256:4a019192b889ba5cf0845cd636dced6093f739b662c16ac927926c9bf4d0472f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "before": {
+            "blob": "74952d968257b03b14368884a05d6c3ee73c74f8",
+            "content": "sha256:fc75d955807f53cb6eb3bbf69ad26e6d39015ec566e63134e15b39d4b1e5258b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "id": "RLZ-3T98VE"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-697SCR",
+      "items": [
+        "sha256:659bb7c770dacd1b5a1b80ec206a2b08156e1e34cef6ed14c0c61014a097d475"
+      ],
+      "reason": "The change reaches this invariant's code only through edits that leave its promise as recorded; every touched realization or proof is re-anchored at the candidate by this row.",
+      "revision": 1,
+      "subject": "INV-5FC4T6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-69K5VC",
+      "items": [
+        "sha256:213f219c8cb0ad72a99b43cd43c7bae9e0fcd3108d1a1c4da0226dc829274e87"
+      ],
+      "reason": "A test-only hunk: it exercises an obligation recorded elsewhere, and a test edit mints no invariant of its own.",
+      "subject": "hunk:sha256:213f219c8cb0ad72a99b43cd43c7bae9e0fcd3108d1a1c4da0226dc829274e87"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-6FE4JC",
+      "items": [
+        "sha256:8daa18f7d836f90ae3e530b7e10a22e579ccf25a7c7c553f40cb2dc744f6e0fa"
+      ],
+      "reason": "The route still builds the same fifteen members. The merge touched two catalogs' line positions and the leaf's own test modules, none of which changes what the mcp/tests route is for or how its evidence lanes relate.",
+      "sources": [
+        {
+          "blob": "b81baacc0319a9751fd1adbef523c624420bb5b2",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "458364fbeda46070a5456cfd6e6631d885356254",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "2a5f8a8f33152825aa0d093e104fb1014dedb321",
+          "path": "mcp/tests/test_background_accounting.py"
+        },
+        {
+          "blob": "1182a0e706a4865aea0f22cc6f48d83ff0d34426",
+          "path": "mcp/tests/test_capture_baseline.py"
+        },
+        {
+          "blob": "fc5a981ddabccf1304a008676287c87a9e98508b",
+          "path": "mcp/tests/test_closeout_live_gate.py"
+        },
+        {
+          "blob": "6be6699be944142714bfb6d286ace562d78f9710",
+          "path": "mcp/tests/test_git_command.py"
+        },
+        {
+          "blob": "8662cd79260de47050b1fdb7bc75f8a112aa9426",
+          "path": "mcp/tests/test_global_state_isolation.py"
+        },
+        {
+          "blob": "21c501fa7911ff7d65671cd9168d3a3f91c3ddb4",
+          "path": "mcp/tests/test_held_queue.py"
+        },
+        {
+          "blob": "0ec3c000f583557123360ae1567dc504935c010d",
+          "path": "mcp/tests/test_intent_summary_cache.py"
+        },
+        {
+          "blob": "5b6aebcc1cf7f6d7db96c96d85ce14a901d65688",
+          "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+        },
+        {
+          "blob": "65a853a6f92fda4f26d2d18fa268c94f90671fcf",
+          "path": "mcp/tests/test_review_answer_reuse.py"
+        },
+        {
+          "blob": "469e43fcedccf18a7cafdf8a4742d86aaf9a67a1",
+          "path": "mcp/tests/test_review_git_trees.py"
+        },
+        {
+          "blob": "8fb9239efdfa092b2dee2c101b3f2bc81c861fab",
+          "path": "mcp/tests/test_review_read_latency.py"
+        },
+        {
+          "blob": "88478d9345e5c625b2a554f452ad8e02a7311424",
+          "path": "mcp/tests/test_serving.py"
+        },
+        {
+          "blob": "b3a37deb06d45e5ae066f93982eb173bf012b0dc",
+          "path": "mcp/tests/test_workspace_wake_zero_census.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6PF1R6",
+      "items": [
+        "sha256:01290c5b1f76658255c6933536213edd215ccbbc0392bbc1d8d7b5613f57a772"
+      ],
+      "reason": "A fingerprint hunk: it replaces the walk with native generations under the background decision, and states no separate obligation.",
+      "subject": "hunk:sha256:01290c5b1f76658255c6933536213edd215ccbbc0392bbc1d8d7b5613f57a772"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-6PHVY1",
+      "items": [
+        "sha256:d6083951936f952d1255adc85f795bef6e21e2d58b14702440ca122bba444f77"
+      ],
+      "reason": "The projections route keeps its purpose and boundaries; the changed readers state their own contracts.",
+      "sources": [
+        {
+          "blob": "128bd96d97f674c0dc0508f766424159f7489418",
+          "path": "mcp/src/agents_remember/serving/projections/host_activity.py"
+        },
+        {
+          "blob": "31745f6287a813be61e9252418d591f780107101",
+          "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
+        },
+        {
+          "blob": "8f2ec4583a3bba0ad34652582466b680714fa213",
+          "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_closeout_queue.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/projections/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0T84PZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-0XMNQZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-2Q8RPR",
+          "revision": 4
+        },
+        {
+          "id": "INV-49E649",
+          "revision": 5
+        },
+        {
+          "id": "INV-656CYW",
+          "revision": 2
+        },
+        {
+          "id": "INV-89A5AN",
+          "revision": 1
+        },
+        {
+          "id": "INV-9ZBTVA",
+          "revision": 1
+        },
+        {
+          "id": "INV-ANKPPE",
+          "revision": 1
+        },
+        {
+          "id": "INV-BEYEV2",
+          "revision": 1
+        },
+        {
+          "id": "INV-D2HZQ8",
+          "revision": 1
+        },
+        {
+          "id": "INV-FYZQK0",
+          "revision": 1
+        },
+        {
+          "id": "INV-G0Y4VR",
+          "revision": 2
+        },
+        {
+          "id": "INV-GSEMMW",
+          "revision": 3
+        },
+        {
+          "id": "INV-HR2JKQ",
+          "revision": 1
+        },
+        {
+          "id": "INV-HWAWFT",
+          "revision": 5
+        },
+        {
+          "id": "INV-KTMBMN",
+          "revision": 1
+        },
+        {
+          "id": "INV-MS9BMJ",
+          "revision": 4
+        },
+        {
+          "id": "INV-N5RBFK",
+          "revision": 1
+        },
+        {
+          "id": "INV-WV1YQE",
+          "revision": 3
+        },
+        {
+          "id": "INV-XN0FG8",
+          "revision": 3
+        },
+        {
+          "id": "INV-YZ45D7",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZGFZXT",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-6Q5S5A",
+      "items": [
+        "sha256:ec8b4b03202681f4be530b5e79cf385402dadb0ea1bf0232bf77d47abf28b902"
+      ],
+      "reason": "The publication path gained no new obligation; the leaf's changes reach this family only through the capture and contract readers its members already govern.",
+      "revision": 7,
+      "subject": "FAM-61DY2V"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-6TEXD8",
+      "items": [
+        "sha256:a9a7545a0c72946641ca2ac25ca12468d74b42532f4017d59d2f283c65eec685"
+      ],
+      "reason": "The application route keeps its purpose and boundaries; the resolution and comparison cards carry the change.",
+      "sources": [
+        {
+          "blob": "45c52090040c1c184b65f00ab835c76855f6480d",
+          "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+        },
+        {
+          "blob": "11251451c02a953756580c9b12b6653586cac635",
+          "path": "mcp/src/agents_remember/application/review_tree_comparison.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-79MFEK",
+      "items": [
+        "sha256:ef36572b4d2d6362d75a5e39b87a48825a90a43eafd892fc80980a1c11f81c01"
+      ],
+      "reason": "A capture-proof hunk covered by the proof invariant this list revises; it implements that promise and adds none.",
+      "subject": "hunk:sha256:ef36572b4d2d6362d75a5e39b87a48825a90a43eafd892fc80980a1c11f81c01"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7BD6JN",
+      "items": [
+        "sha256:288f0719e3506a171a5971d1ebf7966572a50f6f08524a1261bf2f224d412aea"
+      ],
+      "reason": "A test-only hunk: it exercises an obligation recorded elsewhere, and a test edit mints no invariant of its own.",
+      "subject": "hunk:sha256:288f0719e3506a171a5971d1ebf7966572a50f6f08524a1261bf2f224d412aea"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7BXT81",
+      "items": [
+        "sha256:f8a62ba6098491311be78e54600bc23b1cdd2493f1ead8f271373fa94b63b191"
+      ],
+      "reason": "A supporting hunk: it wires the change into an owner whose promise is recorded elsewhere, and adds no obligation of its own.",
+      "subject": "hunk:sha256:f8a62ba6098491311be78e54600bc23b1cdd2493f1ead8f271373fa94b63b191"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7JZNY0",
+      "items": [
+        "sha256:7707adbbc58f346729fdc01f0cb9ccd484c2015d3b74b412287cf95cc00f1b29"
+      ],
+      "reason": "A capture-proof hunk covered by the proof invariant this list revises; it implements that promise and adds none.",
+      "subject": "hunk:sha256:7707adbbc58f346729fdc01f0cb9ccd484c2015d3b74b412287cf95cc00f1b29"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-7Q6J7E",
+      "items": [
+        "sha256:78bd4fb24022600743293d7fe9af5853799303252a9b4015a01248ee9cbc8107"
+      ],
+      "reason": "A9: the unit is now an explicit task around a background-pool thread, so a drain shields and awaits it even under repeated cancellation; the pool, worker count and accounting are as before, and the L177 account above it still holds. ",
+      "sources": [
+        {
+          "blob": "d81a9faa36598c3b57a6b1214e745404d8caa905",
+          "path": "mcp/src/agents_remember/serving/background_accounting.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/background_accounting.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7R57CP",
+      "items": [
+        "sha256:74dc334f1f7f0cb166d2651dc632eafb0abbe7e97a77889cf7734f43fa5a0575"
+      ],
+      "reason": "A capture-proof hunk covered by the proof invariant this list revises; it implements that promise and adds none.",
+      "subject": "hunk:sha256:74dc334f1f7f0cb166d2651dc632eafb0abbe7e97a77889cf7734f43fa5a0575"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7SS8S4",
+      "items": [
+        "sha256:25ac350bb2d8bbbdb150ba5752316ae27b942f294d95d47eac51e802bdc3d0c4"
+      ],
+      "reason": "A summary-window hunk covered by the window invariant this list authors; it implements that promise and adds none.",
+      "subject": "hunk:sha256:25ac350bb2d8bbbdb150ba5752316ae27b942f294d95d47eac51e802bdc3d0c4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7TNKR6",
+      "items": [
+        "sha256:fd449e3aa8ae5193319d1b8389b5c230b4710efec351ef6f82af6d70cf632de1"
+      ],
+      "reason": "A test-only hunk: it exercises an obligation recorded elsewhere, and a test edit mints no invariant of its own.",
+      "subject": "hunk:sha256:fd449e3aa8ae5193319d1b8389b5c230b4710efec351ef6f82af6d70cf632de1"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7TPGBZ",
+      "items": [
+        "sha256:83ec6206d4e19c32325580944fca97f81d79e642ecb2134aceab2f8bcc3a673b"
+      ],
+      "reason": "A test-only hunk: it exercises an obligation recorded elsewhere, and a test edit mints no invariant of its own.",
+      "subject": "hunk:sha256:83ec6206d4e19c32325580944fca97f81d79e642ecb2134aceab2f8bcc3a673b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7X4WA3",
+      "items": [
+        "sha256:ee0d8ef15721d619605d3ea4de8bf391df1824e73e646eab347a567e7c0709ff"
+      ],
+      "reason": "A supporting hunk: it wires the change into an owner whose promise is recorded elsewhere, and adds no obligation of its own.",
+      "subject": "hunk:sha256:ee0d8ef15721d619605d3ea4de8bf391df1824e73e646eab347a567e7c0709ff"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7X8588",
+      "items": [
+        "sha256:527575c578e581fe692c8c92b87e2e543c73df90b6bd7933053654678b3cd152"
+      ],
+      "reason": "A summary-window hunk covered by the window invariant this list authors; it implements that promise and adds none.",
+      "subject": "hunk:sha256:527575c578e581fe692c8c92b87e2e543c73df90b6bd7933053654678b3cd152"
+    },
+    {
+      "disposition": "changed",
+      "effect": "strengthen",
+      "examined": [
+        {
+          "id": "INV-7TMGB0",
+          "revision": 2
+        },
+        {
+          "id": "INV-BRGWKX",
+          "revision": 1
+        },
+        {
+          "id": "INV-C1RTSG",
+          "revision": 3
+        },
+        {
+          "id": "INV-GDWJKR",
+          "revision": 1
+        },
+        {
+          "id": "INV-M46Y3E",
+          "revision": 1
+        },
+        {
+          "id": "INV-NPEQB1",
+          "revision": 1
+        },
+        {
+          "id": "INV-QK8XNM",
+          "revision": 2
+        },
+        {
+          "id": "INV-WC3BS4",
+          "revision": 1
+        },
+        {
+          "id": "INV-WNHAWD",
+          "revision": 2
+        },
+        {
+          "id": "INV-YTPBCF",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZNXX7H",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-80AWEZ",
+      "items": [
+        "sha256:88961543bb5b60b2c5ce59a4edf0e26970fbabbfd125eef64033c38373c25bec",
+        "sha256:d62b55bace98feb6c1292315368150e55dba818a0f8bfc43a61f99dab08f084c"
+      ],
+      "reason": "Two members were added for the reviewer's recorded answers, and the route that carries them was added so every realization still lies under a family route. The guarantee text is unchanged; what the members jointly promise now covers a route the family named but no member realized.",
+      "revision": 3,
+      "subject": "FAM-EASWS6"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-81PBGT",
+      "items": [
+        "sha256:5b311d0a7650ac5a0ebb03a330108e4a7c9f02bd394c68bbf7654afcdbb77a17",
+        "sha256:98574a674fd483a00a3568075e5aa0a10407faec322ade563232db9fa5f308d0",
+        "sha256:988fb0f17c32106bada0fd45765b590b7defd64574d10eb4f51d7ff9c0b2ccd8"
+      ],
+      "reason": "The capture-proof cases moved to their own module; what remains and its subject are unchanged.",
+      "sources": [
+        {
+          "blob": "6be6699be944142714bfb6d286ace562d78f9710",
+          "path": "mcp/tests/test_git_command.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_git_command.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-897W2Y",
+      "items": [
+        "sha256:1714f6a3aa0bc995d7cf57cb5c74dee0fce5c05c19b89bb62007ba4090ef7764"
+      ],
+      "reason": "A summary-window hunk covered by the window invariant this list authors; it implements that promise and adds none.",
+      "subject": "hunk:sha256:1714f6a3aa0bc995d7cf57cb5c74dee0fce5c05c19b89bb62007ba4090ef7764"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8D08ED",
+      "items": [
+        "sha256:4f643aa461c1f5d5a0ec79710fc46b9b1e3937b1587c60880abe6869bf4c18c4"
+      ],
+      "reason": "A scheduling hunk: it implements the background placement decision this list records, and carries no separate invariant.",
+      "subject": "hunk:sha256:4f643aa461c1f5d5a0ec79710fc46b9b1e3937b1587c60880abe6869bf4c18c4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8H2S9B",
+      "items": [
+        "sha256:9d208d0875224f56800bcb9ffd6866f6bf1f308eab5b590c04a47d4e4fc9042f"
+      ],
+      "reason": "A test-only hunk: it exercises an obligation recorded elsewhere, and a test edit mints no invariant of its own.",
+      "subject": "hunk:sha256:9d208d0875224f56800bcb9ffd6866f6bf1f308eab5b590c04a47d4e4fc9042f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8KQ04H",
+      "items": [
+        "sha256:8ba0717a706856bfe43b5e1181471af8cea6883334eedc0d95d7fc2bbacd098e"
+      ],
+      "reason": "A test-only hunk: it exercises an obligation recorded elsewhere, and a test edit mints no invariant of its own.",
+      "subject": "hunk:sha256:8ba0717a706856bfe43b5e1181471af8cea6883334eedc0d95d7fc2bbacd098e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8QHDKB",
+      "items": [
+        "sha256:0d5c2e4ad48009dbe631d6aef1b6be8efc4c38e16c2693d54ec941bbe90ebfdf"
+      ],
+      "reason": "A fingerprint hunk: it replaces the walk with native generations under the background decision, and states no separate obligation.",
+      "subject": "hunk:sha256:0d5c2e4ad48009dbe631d6aef1b6be8efc4c38e16c2693d54ec941bbe90ebfdf"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8SVX12",
+      "items": [
+        "sha256:96fcc2532e73d3aeb3c59f5d19f926ac99d64914cf707de81fe5f5564c5848bd"
+      ],
+      "reason": "A recorded-answer-reuse hunk covered by the reuse invariant this list authors; it implements that promise and adds none.",
+      "subject": "hunk:sha256:96fcc2532e73d3aeb3c59f5d19f926ac99d64914cf707de81fe5f5564c5848bd"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8VMF18",
+      "items": [
+        "sha256:9fe1cb28760013a5dfb2efc1f4f900738d6291b23a16af26d0de8742648c23fe"
+      ],
+      "reason": "A supporting hunk: it wires the change into an owner whose promise is recorded elsewhere, and adds no obligation of its own.",
+      "subject": "hunk:sha256:9fe1cb28760013a5dfb2efc1f4f900738d6291b23a16af26d0de8742648c23fe"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-97RSWA",
+      "items": [
+        "sha256:7ebb530309b882a6e367e1a3c48cd03fbf5652619565164e9946d625e84adef1"
+      ],
+      "reason": "A capture-proof hunk covered by the proof invariant this list revises; it implements that promise and adds none.",
+      "subject": "hunk:sha256:7ebb530309b882a6e367e1a3c48cd03fbf5652619565164e9946d625e84adef1"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0NSFFW",
+          "revision": 1
+        },
+        {
+          "id": "INV-1F0XGE",
+          "revision": 1
+        },
+        {
+          "id": "INV-3XG15P",
+          "revision": 1
+        },
+        {
+          "id": "INV-5C5086",
+          "revision": 1
+        },
+        {
+          "id": "INV-84PT5A",
+          "revision": 1
+        },
+        {
+          "id": "INV-AD1MRN",
+          "revision": 1
+        },
+        {
+          "id": "INV-BMZ47D",
+          "revision": 1
+        },
+        {
+          "id": "INV-BY8XBH",
+          "revision": 1
+        },
+        {
+          "id": "INV-D0551J",
+          "revision": 3
+        },
+        {
+          "id": "INV-FKE909",
+          "revision": 2
+        },
+        {
+          "id": "INV-GDTTHF",
+          "revision": 1
+        },
+        {
+          "id": "INV-GP90VQ",
+          "revision": 2
+        },
+        {
+          "id": "INV-H9TEKD",
+          "revision": 1
+        },
+        {
+          "id": "INV-RGGEX3",
+          "revision": 1
+        },
+        {
+          "id": "INV-RJWTW8",
+          "revision": 1
+        },
+        {
+          "id": "INV-RQNDH6",
+          "revision": 1
+        },
+        {
+          "id": "INV-S8GHB9",
+          "revision": 1
+        },
+        {
+          "id": "INV-TMY6DW",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-99M5SV",
+      "items": [
+        "sha256:76942934602dfd0c518588ff5cc58e3f50bb8847af727bd025eb9daaf4441531"
+      ],
+      "reason": "The background placement decision and the walk's removal change how the work is scheduled, not what the family promises about pacing, honest accounting and healing.",
+      "revision": 4,
+      "subject": "FAM-CAG581"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9FGZ6G",
+      "items": [
+        "sha256:bad754d061634f99ece52febc5c1dc7540a80470d416d6bb00d595edf8ad1b52"
+      ],
+      "reason": "A test-only hunk: it exercises an obligation recorded elsewhere, and a test edit mints no invariant of its own.",
+      "subject": "hunk:sha256:bad754d061634f99ece52febc5c1dc7540a80470d416d6bb00d595edf8ad1b52"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9SP1MP",
+      "items": [
+        "sha256:1f7751a12b35527788f06f881597421689c4b5149419abf641ec22da8879b408"
+      ],
+      "reason": "A fingerprint hunk: it replaces the walk with native generations under the background decision, and states no separate obligation.",
+      "subject": "hunk:sha256:1f7751a12b35527788f06f881597421689c4b5149419abf641ec22da8879b408"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-A3HA6Z",
+      "items": [
+        "sha256:403cac2d75fe556d226de181c0c2c97312d811af9ec9b9f4c1a99cd6bfc40ae4"
+      ],
+      "reason": "A capture-proof hunk covered by the proof invariant this list revises; it implements that promise and adds none.",
+      "subject": "hunk:sha256:403cac2d75fe556d226de181c0c2c97312d811af9ec9b9f4c1a99cd6bfc40ae4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-A6CR2N",
+      "items": [
+        "sha256:8b5dc0162e8b99a5a1514d82d678a6c65963094010642e985f40285a2380bd5f"
+      ],
+      "reason": "A fingerprint hunk: it replaces the walk with native generations under the background decision, and states no separate obligation.",
+      "subject": "hunk:sha256:8b5dc0162e8b99a5a1514d82d678a6c65963094010642e985f40285a2380bd5f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-AGSGQP",
+      "items": [
+        "sha256:5a42489171d3a23f449c8415b751ebf17190578d3ceff4fa81b654d52e24e038"
+      ],
+      "reason": "A fingerprint hunk: it replaces the walk with native generations under the background decision, and states no separate obligation.",
+      "subject": "hunk:sha256:5a42489171d3a23f449c8415b751ebf17190578d3ceff4fa81b654d52e24e038"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "11251451c02a953756580c9b12b6653586cac635",
+            "content": "sha256:7d4f673d42a40e736cf7ce6f0956fcd6332da2e62c130eb85317fbaa23fe5789",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_comparison.py"
+          },
+          "before": {
+            "blob": "25ccba8ee5a4be236b2383b588f11bc1d1c259bc",
+            "content": "sha256:877612ca9d29d80b2ea0b9c614fda61f6b617340f8d3286969eff953370c6123",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_comparison.py"
+          },
+          "id": "RLZ-A9Z2XZ"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-AN50VM",
+      "items": [
+        "sha256:b9d0bc23cf0f10abd41dce4cf101319d6f7152d72d6bb4d61af44ff065d332ba"
+      ],
+      "reason": "The change reaches this invariant's code only through edits that leave its promise as recorded; every touched realization or proof is re-anchored at the candidate by this row.",
+      "revision": 3,
+      "subject": "INV-YJZKYC"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-B8RKXW",
+      "items": [
+        "sha256:5af87047c7be1abc6557b4a569053dc73058a10232f893cdf4df17e3106e28d0"
+      ],
+      "reason": "A scheduling hunk: it implements the background placement decision this list records, and carries no separate invariant.",
+      "subject": "hunk:sha256:5af87047c7be1abc6557b4a569053dc73058a10232f893cdf4df17e3106e28d0"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d81a9faa36598c3b57a6b1214e745404d8caa905",
+            "content": "sha256:4125b8413319c43814d375cf30adb8fb8c2182bf18d247d558d67ee532bba429",
+            "locator": {
+              "kind": "symbol",
+              "name": "offload"
+            },
+            "path": "mcp/src/agents_remember/serving/background_accounting.py"
+          },
+          "before": {
+            "blob": "27e4665c1b0308af6e9cc13bb196746028029964",
+            "content": "sha256:9971482e43857adc101814220d6313836cde401ce8ae3bdd6b69578dbf8fa4d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "offload"
+            },
+            "path": "mcp/src/agents_remember/serving/background_accounting.py"
+          },
+          "id": "RLZ-B8FAMX"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-BCT8EH",
+      "items": [
+        "sha256:4e7335d66171fa57c3c6b875c966f41a5bcc4ed18bd4342cd3a4f9e402cf1686"
+      ],
+      "reason": "The change reaches this invariant's code only through edits that leave its promise as recorded; every touched realization or proof is re-anchored at the candidate by this row.",
+      "revision": 1,
+      "subject": "INV-0NSFFW"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BHJCK0",
+      "items": [
+        "sha256:6dd7be604ade37d2be3389071da673ea9c5697fe45ebc4b2b732ec4bc26d1b0e"
+      ],
+      "reason": "A test-only hunk: it exercises an obligation recorded elsewhere, and a test edit mints no invariant of its own.",
+      "subject": "hunk:sha256:6dd7be604ade37d2be3389071da673ea9c5697fe45ebc4b2b732ec4bc26d1b0e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BJXYBM",
+      "items": [
+        "sha256:b4786a24bf1016d536f8dcf7c6961030cbfe4af8903d3507aadda4cf39aeb137"
+      ],
+      "reason": "A scheduling hunk: it implements the background placement decision this list records, and carries no separate invariant.",
+      "subject": "hunk:sha256:b4786a24bf1016d536f8dcf7c6961030cbfe4af8903d3507aadda4cf39aeb137"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R179",
+          "packet": "requirements/MIK-R179-v1-the-intent-reviewer-opens-fast.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "b81baacc0319a9751fd1adbef523c624420bb5b2",
+            "content": "sha256:5de1f247d1863d8bccc61be24e00d01530da95a636000ff36bd5ac3ae5b59b83",
+            "locator": {
+              "end": 2646,
+              "kind": "line_range",
+              "start": 2646
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "117fc94c6dd19a011922fbe25371a5a3fe271f2c",
+            "content": "sha256:5de1f247d1863d8bccc61be24e00d01530da95a636000ff36bd5ac3ae5b59b83",
+            "locator": {
+              "end": 2642,
+              "kind": "line_range",
+              "start": 2642
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-A31DQW"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-BY4KXW",
+      "items": [
+        "sha256:b9d390e78fef32a28b5252ffdce0dbb302e5707589af031c4c64c8cb932a9d86"
+      ],
+      "reason": "RLZ-A31DQW is carried unchanged, but its staged anchor never supported its rationale: it pointed at line 2640, which states kind = \"shared-support\" and says nothing about a pinned runtime. The recorded content hash was always the version-naming sentence, so the drift was positional only. The anchor now names line 2646, the source_version_or_generator sentence that identifies the pinned 0.11.1 runtime the FakePaseo stand-in models (line 2644 in the pre-merge blob, unchanged bytes). INV-0TCWT9's statement and revision stand.",
+      "revision": 1,
+      "subject": "INV-0TCWT9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-C0RQKX",
+      "items": [
+        "sha256:9934a33fcfe377c7aed530f600a9b36fa23f8bf102938f715d545712d7fd490d"
+      ],
+      "reason": "A scheduling hunk: it implements the background placement decision this list records, and carries no separate invariant.",
+      "subject": "hunk:sha256:9934a33fcfe377c7aed530f600a9b36fa23f8bf102938f715d545712d7fd490d"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-C18XSP",
+      "items": [
+        "sha256:6883cfc39877ae015e78cb6a467a4ac823f4d3c097cac703d229149b11aa3011"
+      ],
+      "reason": "A fingerprint hunk: it replaces the walk with native generations under the background decision, and states no separate obligation.",
+      "subject": "hunk:sha256:6883cfc39877ae015e78cb6a467a4ac823f4d3c097cac703d229149b11aa3011"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-C37576",
+      "items": [
+        "sha256:99f85acc4eb5d75075c1fe490ce7bce0517d001f1c8de3ac644399b2cf381ce9"
+      ],
+      "reason": "A scheduling hunk: it implements the background placement decision this list records, and carries no separate invariant.",
+      "subject": "hunk:sha256:99f85acc4eb5d75075c1fe490ce7bce0517d001f1c8de3ac644399b2cf381ce9"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "36eb7128d7ab24eaabed755ddab2f2e52776bf83",
+            "content": "sha256:873e4de88118a76553df927294a4b50b76d0a5455444773469f88c1550b4f086",
+            "locator": {
+              "end": 222,
+              "kind": "line_range",
+              "start": 110
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "before": {
+            "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
+            "content": "sha256:40dbc50ed2b814992263ad3acc41712bc18d316952ae238ca04326ea8f29192e",
+            "locator": {
+              "end": 197,
+              "kind": "line_range",
+              "start": 110
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "id": "RLZ-9D25GS"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-C67Y7P",
+      "items": [
+        "sha256:6cd5a7588731432aa5b46c5d29a64723efe67123d8527087b67f4996fd5c4c1a"
+      ],
+      "reason": "The change reaches this invariant's code only through edits that leave its promise as recorded; every touched realization or proof is re-anchored at the candidate by this row.",
+      "revision": 1,
+      "subject": "INV-HHZP57"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-C6ADX6",
+      "items": [
+        "sha256:c3339ff4cd410bf6f5d863e808cc35a8dfb09886d5104a11291eab4ac8483a41"
+      ],
+      "reason": "The serving route's purpose and boundaries are unchanged; the executor and projection contracts moved inside their cards.",
+      "sources": [
+        {
+          "blob": "d81a9faa36598c3b57a6b1214e745404d8caa905",
+          "path": "mcp/src/agents_remember/serving/background_accounting.py"
+        },
+        {
+          "blob": "74192819229079d194a84478be3c684f21eb11d1",
+          "path": "mcp/src/agents_remember/serving/intent_summary_cache.py"
+        },
+        {
+          "blob": "f15f81a57f076686b9c0b38a3602086ff29499a0",
+          "path": "mcp/src/agents_remember/serving/projector.py"
+        },
+        {
+          "blob": "710a83fae3a7e55dfb9b97899015b5ea6c9593e3",
+          "path": "mcp/src/agents_remember/serving/review_answer_reuse.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CMSE4S",
+      "items": [
+        "sha256:c543a0cf5e2f36e40f90009ab9a7498a73af5d16f2cb8f3063a7c2a509a51f75"
+      ],
+      "reason": "A fingerprint hunk: it replaces the walk with native generations under the background decision, and states no separate obligation.",
+      "subject": "hunk:sha256:c543a0cf5e2f36e40f90009ab9a7498a73af5d16f2cb8f3063a7c2a509a51f75"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-CS4DFA",
+      "items": [
+        "sha256:889fd363c38bdd69e6d3edfc8ed4e469d8234edde25ac3ef6c228db0a266bcff"
+      ],
+      "reason": "The three recorded reads now pass through RecordedReviewAnswers; the card states the wiring and that the read bodies are unchanged.",
+      "sources": [
+        {
+          "blob": "36eb7128d7ab24eaabed755ddab2f2e52776bf83",
+          "path": "mcp/src/agents_remember/cli/dashboard.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/dashboard.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CTZSM0",
+      "items": [
+        "sha256:df89f87e72c17d6fc505d2e0a083407f2a598a27a6997698a212bfe88f587960"
+      ],
+      "reason": "A capture-proof hunk covered by the proof invariant this list revises; it implements that promise and adds none.",
+      "subject": "hunk:sha256:df89f87e72c17d6fc505d2e0a083407f2a598a27a6997698a212bfe88f587960"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-CXND49",
+      "items": [
+        "sha256:182742c935301f9d2ae115f9baf3cabeb98ef1bf639a497ea107f0acbbbf199c",
+        "sha256:22b6fa960908b6d312772cff137152986a1653bab2e14a874e005f3985d9026c",
+        "sha256:36efdcf1db5bba1059e8fe6a45af1d6266a44894a4569af17b87db295e873cd1",
+        "sha256:73e9a003b064125d112fcd7fb250cd8313e9c8d0c52468adc1f876a6c354b3fc",
+        "sha256:b9d98a6eb51ce6c4800d325ba4d9257df0baf64ede889e7c8114b5a5fbaa71d9",
+        "sha256:d7eaa2736bcc67011346e0c7b6f40b20b6b0ed968444a5752310281100fea8d7",
+        "sha256:e973ff6a14af222d3759e7dc9cebd812e0b7af823fbad807e6b58a33214ae0f8",
+        "sha256:ee0d8ef15721d619605d3ea4de8bf391df1824e73e646eab347a567e7c0709ff"
+      ],
+      "reason": "The candidate now records the census of the private index it wrote the tree from, so its proof re-checks that exact index rather than a later snapshot; the card says so.",
+      "sources": [
+        {
+          "blob": "a7ffdba484f4eaafa7f3a0a0860e045504f33755",
+          "path": "mcp/src/agents_remember/worktrees/modules/future_code_candidate.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/future_code_candidate.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DJWAGQ",
+      "items": [
+        "sha256:0c124624accd7ce1c5a29b86e004cdc78e9764ba765073ad030e34b3a753aafc"
+      ],
+      "reason": "A fingerprint hunk: it replaces the walk with native generations under the background decision, and states no separate obligation.",
+      "subject": "hunk:sha256:0c124624accd7ce1c5a29b86e004cdc78e9764ba765073ad030e34b3a753aafc"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DN0AR6",
+      "items": [
+        "sha256:d644d6834184ff2bee276c282d621c9b2d08c679be86c1d7669b2c2244d64dc5"
+      ],
+      "reason": "A test-only hunk: it exercises an obligation recorded elsewhere, and a test edit mints no invariant of its own.",
+      "subject": "hunk:sha256:d644d6834184ff2bee276c282d621c9b2d08c679be86c1d7669b2c2244d64dc5"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DNGAPR",
+      "items": [
+        "sha256:73921d946c32d5c84471e94b04fb371392144f984f32ac5284561739817405be"
+      ],
+      "reason": "A fingerprint hunk: it replaces the walk with native generations under the background decision, and states no separate obligation.",
+      "subject": "hunk:sha256:73921d946c32d5c84471e94b04fb371392144f984f32ac5284561739817405be"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DSPS2B",
+      "items": [
+        "sha256:a852123c72a29a64322f91a3cffc06d2eb447986d0560365e91a5320278b5d8a"
+      ],
+      "reason": "A fingerprint hunk: it replaces the walk with native generations under the background decision, and states no separate obligation.",
+      "subject": "hunk:sha256:a852123c72a29a64322f91a3cffc06d2eb447986d0560365e91a5320278b5d8a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DX78TR",
+      "items": [
+        "sha256:425c5fb19a0e103c928fee5a203041eae93917fd0d4a894697e2c26626a4fb19"
+      ],
+      "reason": "A test-only hunk: it exercises an obligation recorded elsewhere, and a test edit mints no invariant of its own.",
+      "subject": "hunk:sha256:425c5fb19a0e103c928fee5a203041eae93917fd0d4a894697e2c26626a4fb19"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "af790a779d5ba61b711780eacd345f968d32bbbc",
+            "content": "sha256:c1e14b21363cbd4e9e207b3ced7673dfb179f00ef70a062a4282c9d395f3072c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.navigation.test.tsx"
+          },
+          "before": {
+            "blob": "2408f06ee5d1079e4fa0e852718dadfb4f2b4580",
+            "content": "sha256:d74d51c2702920e4dc3e4f6086b0054b2710c3ded64d2fb7addc14191b7cfde8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.navigation.test.tsx"
+          },
+          "id": "RLZ-21J3Q6"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-DZ1NQF",
+      "items": [
+        "sha256:d51b49a6ed11d0a216e39e619ea6e5e752b449114d996985ac541c648e40337d"
+      ],
+      "reason": "The change reaches this invariant's code only through edits that leave its promise as recorded; every touched realization or proof is re-anchored at the candidate by this row.",
+      "revision": 2,
+      "subject": "INV-WZC60Z"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-E01Q5Y",
+      "items": [
+        "sha256:f4f27bd89ad109e93de85f8be9c282e4b7563dde2fe8a2463e21f6d5a995edaa"
+      ],
+      "reason": "A capture-proof hunk covered by the proof invariant this list revises; it implements that promise and adds none.",
+      "subject": "hunk:sha256:f4f27bd89ad109e93de85f8be9c282e4b7563dde2fe8a2463e21f6d5a995edaa"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-E0TVHP",
+      "items": [
+        "sha256:fa44a456bab4d8c62b4315de06088ac0283fca963e3328819c4592ed9cd16ff5"
+      ],
+      "reason": "A summary-window hunk covered by the window invariant this list authors; it implements that promise and adds none.",
+      "subject": "hunk:sha256:fa44a456bab4d8c62b4315de06088ac0283fca963e3328819c4592ed9cd16ff5"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-E4G9E4",
+      "items": [
+        "sha256:025002789616dd76497220e6dd246a176f768d9909d0e0cc2181862eed2eaa11"
+      ],
+      "reason": "A capture-proof hunk covered by the proof invariant this list revises; it implements that promise and adds none.",
+      "subject": "hunk:sha256:025002789616dd76497220e6dd246a176f768d9909d0e0cc2181862eed2eaa11"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-E5KX43",
+      "items": [
+        "sha256:ae284625397d9e6a7840bb21c6a6329e97b0963c2996dbb95565f35129d48300"
+      ],
+      "reason": "A test-only hunk: it exercises an obligation recorded elsewhere, and a test edit mints no invariant of its own.",
+      "subject": "hunk:sha256:ae284625397d9e6a7840bb21c6a6329e97b0963c2996dbb95565f35129d48300"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EK6B4F",
+      "items": [
+        "sha256:988fb0f17c32106bada0fd45765b590b7defd64574d10eb4f51d7ff9c0b2ccd8"
+      ],
+      "reason": "A test-only hunk: it exercises an obligation recorded elsewhere, and a test edit mints no invariant of its own.",
+      "subject": "hunk:sha256:988fb0f17c32106bada0fd45765b590b7defd64574d10eb4f51d7ff9c0b2ccd8"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ET201X",
+      "items": [
+        "sha256:53845c406eeae0d638cb18f33e8e26f3ebc8176f55e44ebc450464cda0ee2af5",
+        "sha256:9bdbd0898be903222a90e662ac649cd768719a2812740f771db37108eb9883be",
+        "sha256:ab56fe95a55ef6eab525dd7c4d318f256d7babf1fa7f61b0d00ae2ad503a6185",
+        "sha256:d3afef4e637112511d2d059662b287afd4db41524d7779d3d0bb4a2e924164a9"
+      ],
+      "reason": "Cases were added for the bounded fingerprint reuse; the module's subject and harness are unchanged.",
+      "sources": [
+        {
+          "blob": "fc5a981ddabccf1304a008676287c87a9e98508b",
+          "path": "mcp/tests/test_closeout_live_gate.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_closeout_live_gate.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EW8QWJ",
+      "items": [
+        "sha256:40e3ace4c44274a4acc1a53a06e81178d0e2fd3889541aeb7d36289943f2b49a"
+      ],
+      "reason": "A scheduling hunk: it implements the background placement decision this list records, and carries no separate invariant.",
+      "subject": "hunk:sha256:40e3ace4c44274a4acc1a53a06e81178d0e2fd3889541aeb7d36289943f2b49a"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-EXP2T0",
+      "items": [
+        "sha256:bd157489e70c68424db70fbcb4527058c29354927d3d668aedaaebf613461c01"
+      ],
+      "reason": "The removed recorded tree and the reuse wiring gained cases; the module's subject is unchanged.",
+      "sources": [
+        {
+          "blob": "8fb9239efdfa092b2dee2c101b3f2bc81c861fab",
+          "path": "mcp/tests/test_review_read_latency.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_review_read_latency.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FBFJKC",
+      "items": [
+        "sha256:9026482421162e1c14e5c9845982d2feb17ecd7e6b954c2c5c15f7bcea315ebf"
+      ],
+      "reason": "A capture-proof hunk covered by the proof invariant this list revises; it implements that promise and adds none.",
+      "subject": "hunk:sha256:9026482421162e1c14e5c9845982d2feb17ecd7e6b954c2c5c15f7bcea315ebf"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-FX3YAN",
+      "items": [
+        "sha256:8705b8048784e1a63ba0de4bbf9c7cf4ff688c901d7d87b608fed36dc7b867b9",
+        "sha256:8d653c244f9c9b9680423469c75b1a3ec0f3e37dc73d10bf1091a21f7b30eb1d"
+      ],
+      "reason": "An existing case's expectation was adjusted to the native generation; no route or behaviour of the module changed.",
+      "sources": [
+        {
+          "blob": "b3a37deb06d45e5ae066f93982eb173bf012b0dc",
+          "path": "mcp/tests/test_workspace_wake_zero_census.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_workspace_wake_zero_census.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FZ0K3H",
+      "items": [
+        "sha256:e4f08c841130e9c66ebf2acb81139caf105c5e7966a919fb0e9f048993e41aef"
+      ],
+      "reason": "A fingerprint hunk: it replaces the walk with native generations under the background decision, and states no separate obligation.",
+      "subject": "hunk:sha256:e4f08c841130e9c66ebf2acb81139caf105c5e7966a919fb0e9f048993e41aef"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-G1602E",
+      "items": [
+        "sha256:9d8b90497d1540598265b741f80075e9950cc747a5034ae10ccd3a1a81595d92"
+      ],
+      "reason": "New card: the capture proof's own cases, including the ignore-semantics and no-descent cases.",
+      "sources": [
+        {
+          "blob": "1182a0e706a4865aea0f22cc6f48d83ff0d34426",
+          "path": "mcp/tests/test_capture_baseline.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_capture_baseline.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GA3C9A",
+      "items": [
+        "sha256:22b6fa960908b6d312772cff137152986a1653bab2e14a874e005f3985d9026c"
+      ],
+      "reason": "A supporting hunk: it wires the change into an owner whose promise is recorded elsewhere, and adds no obligation of its own.",
+      "subject": "hunk:sha256:22b6fa960908b6d312772cff137152986a1653bab2e14a874e005f3985d9026c"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GBANY1",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "Nothing this card states changed. The merged L180 lane file keeps both sides: the unit-regression lane still names the task-document order module and the role report module, and the integration lane still names the archive module. Only the three realization line anchors moved to their merged lines, so the card is named here to bind the current blobs and claims no new impact.",
+      "sources": [
+        {
+          "blob": "458364fbeda46070a5456cfd6e6631d885356254",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "36eb7128d7ab24eaabed755ddab2f2e52776bf83",
+            "content": "sha256:c233018d6eb0b24616c32a67cf4ed520bfcb81313f598e4304bbedb695b0acae",
+            "locator": {
+              "end": 166,
+              "kind": "line_range",
+              "start": 163
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "before": {
+            "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
+            "content": "sha256:67e64fa909f84b55cf54abe335131bb22c0b9725ee4bfd3898a56ffbca435c50",
+            "locator": {
+              "end": 152,
+              "kind": "line_range",
+              "start": 152
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "id": "RLZ-HM528R"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-GD1R3J",
+      "items": [
+        "sha256:a5a657e8b2aa8b18b082886f763f6274780bc044c7163a33c2781d9d8054bbc9"
+      ],
+      "reason": "The change reaches this invariant's code only through edits that leave its promise as recorded; every touched realization or proof is re-anchored at the candidate by this row.",
+      "revision": 1,
+      "subject": "INV-61Y147"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GDTRN2",
+      "items": [
+        "sha256:c47c5df77870259c0852d20f5b0580d4f46d7ebb526e8d17409b82348b1df0ee"
+      ],
+      "reason": "A fingerprint hunk: it replaces the walk with native generations under the background decision, and states no separate obligation.",
+      "subject": "hunk:sha256:c47c5df77870259c0852d20f5b0580d4f46d7ebb526e8d17409b82348b1df0ee"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-GF3S53",
+      "items": [
+        "sha256:1ea7ed8cbf0034a0d8b25af7e4ccf6b0e51b12d5b8173c222282f185b7001273"
+      ],
+      "reason": "The memory capture records its own census and the code side binds HEAD through the status proof; the card gained that boundary.",
+      "sources": [
+        {
+          "blob": "45c52090040c1c184b65f00ab835c76855f6480d",
+          "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/review_candidate_resolution.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GHCPR2",
+      "items": [
+        "sha256:fe1c13823255b18cb299790d7801eed366d892e4a658959a37c9ea6f50ab6360"
+      ],
+      "reason": "A scheduling hunk: it implements the background placement decision this list records, and carries no separate invariant.",
+      "subject": "hunk:sha256:fe1c13823255b18cb299790d7801eed366d892e4a658959a37c9ea6f50ab6360"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GSYPBA",
+      "items": [
+        "sha256:f98d8f3b8685e14e2a66b0f763e29d7c1e5cc18c432065b254657adcc4d3d88e"
+      ],
+      "reason": "A supporting hunk: it wires the change into an owner whose promise is recorded elsewhere, and adds no obligation of its own.",
+      "subject": "hunk:sha256:f98d8f3b8685e14e2a66b0f763e29d7c1e5cc18c432065b254657adcc4d3d88e"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "21c501fa7911ff7d65671cd9168d3a3f91c3ddb4",
+            "content": "sha256:db8ec14de2db02a0d0a11bc0b32330f3def0c65f4c80f4e4e7985034399963ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "TurnEndDeliveryTests"
+            },
+            "path": "mcp/tests/test_held_queue.py"
+          },
+          "before": {
+            "blob": "6be657f93ffe8567fb2696c63201120251c1fea4",
+            "content": "sha256:11b3d2dd8a6facdc29457eead59a646f2b3d051a9f7a7d6d7a1ad415387b09b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "TurnEndDeliveryTests"
+            },
+            "path": "mcp/tests/test_held_queue.py"
+          },
+          "id": "PRF-VKX6W8"
+        },
+        {
+          "after": {
+            "blob": "21c501fa7911ff7d65671cd9168d3a3f91c3ddb4",
+            "content": "sha256:db8ec14de2db02a0d0a11bc0b32330f3def0c65f4c80f4e4e7985034399963ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "TurnEndDeliveryTests"
+            },
+            "path": "mcp/tests/test_held_queue.py"
+          },
+          "before": {
+            "blob": "6be657f93ffe8567fb2696c63201120251c1fea4",
+            "content": "sha256:11b3d2dd8a6facdc29457eead59a646f2b3d051a9f7a7d6d7a1ad415387b09b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "TurnEndDeliveryTests"
+            },
+            "path": "mcp/tests/test_held_queue.py"
+          },
+          "id": "RLZ-AV49BD"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-GT575C",
+      "items": [
+        "sha256:2ad3e1a6840b50b1fe656adec7787bc3cacecb054c8775a06d3357bc4e48a5d9"
+      ],
+      "reason": "The change reaches this invariant's code only through edits that leave its promise as recorded; every touched realization or proof is re-anchored at the candidate by this row.",
+      "revision": 1,
+      "subject": "INV-3PV53M"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "128bd96d97f674c0dc0508f766424159f7489418",
+            "content": "sha256:8e36b5a5f73eaa5dfa768b8386c86ca5d15a2e83e41252ec500ceb3e5599c407",
+            "locator": {
+              "kind": "symbol",
+              "name": "turn_ended_agents"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/host_activity.py"
+          },
+          "before": {
+            "blob": "ca1ce27c37152b46f279a699a403f81d03935901",
+            "content": "sha256:299037cf7bb507e3ebf1749152fb8961d6fc22706d35035b939f1ba2674bdd4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "turn_ended_agents"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/host_activity.py"
+          },
+          "id": "RLZ-M56SSK"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-GTFA6D",
+      "items": [
+        "sha256:c6ebf1536cd30a3349f44b2013c86c2aed5b4cb5111697ceb15e2362a44b7bf3"
+      ],
+      "reason": "The change reaches this invariant's code only through edits that leave its promise as recorded; every touched realization or proof is re-anchored at the candidate by this row.",
+      "revision": 1,
+      "subject": "INV-4DQMNE"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-H32DEZ",
+      "items": [
+        "sha256:5c3e4bd6c836d8baf52cc51aca896b1205eca785d320ea734bcf985c125cf260"
+      ],
+      "reason": "A scheduling hunk: it implements the background placement decision this list records, and carries no separate invariant.",
+      "subject": "hunk:sha256:5c3e4bd6c836d8baf52cc51aca896b1205eca785d320ea734bcf985c125cf260"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-J6MZ1E",
+      "items": [
+        "sha256:a368113b1bc9a0d761ba2e4bc687f3241df9fd4a084030ec5dcfe71c6c1ac52d"
+      ],
+      "reason": "A fingerprint hunk: it replaces the walk with native generations under the background decision, and states no separate obligation.",
+      "subject": "hunk:sha256:a368113b1bc9a0d761ba2e4bc687f3241df9fd4a084030ec5dcfe71c6c1ac52d"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-J6QBTG",
+      "items": [
+        "sha256:aa7679c18916e8db0c87ffc4236757018a361f0eaf39b3298de3d383a1754eaf"
+      ],
+      "reason": "A test-only hunk: it exercises an obligation recorded elsewhere, and a test edit mints no invariant of its own.",
+      "subject": "hunk:sha256:aa7679c18916e8db0c87ffc4236757018a361f0eaf39b3298de3d383a1754eaf"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-J6SCT2",
+      "items": [
+        "sha256:e06c2d474d9db97b188061f10b36f50ab39cb954655bb674bb161ac206d660c9"
+      ],
+      "reason": "The card's 'equal physical snapshots' account described the walk the proof no longer performs; it now states the census, the index stamp and the native status, and what counts as a doubt.",
+      "sources": [
+        {
+          "blob": "517c52d2bf14b9587f91d75a20f13b98c9662b02",
+          "path": "mcp/src/agents_remember/worktrees/modules/capture_baseline.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/capture_baseline.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-J7SQP0",
+      "items": [
+        "sha256:7ec7f7d7142a0c3b41fff78e448b77cc5c9c7b92c8c03aea7825d4f356969068"
+      ],
+      "reason": "A fingerprint hunk: it replaces the walk with native generations under the background decision, and states no separate obligation.",
+      "subject": "hunk:sha256:7ec7f7d7142a0c3b41fff78e448b77cc5c9c7b92c8c03aea7825d4f356969068"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R179",
+          "packet": "requirements/MIK-R179-v1-the-intent-reviewer-opens-fast.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "af790a779d5ba61b711780eacd345f968d32bbbc",
+            "content": "sha256:24dcaeb989eae7126d3981e286a9056925d356e880e191b0d2fa999c3402a07c",
+            "locator": {
+              "kind": "symbol",
+              "name": "does not move a reader who is working when the catalogue answers after the bounded wait"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.navigation.test.tsx"
+          },
+          "before": "absent",
+          "id": "PRF-EM61A7"
+        },
+        {
+          "after": {
+            "blob": "4d59650168c6a43c0457a9f469e87e45b813292a",
+            "content": "sha256:26cf22d37531dad22a1d29776e25369192889e02820270e33cc11aac1de5a895",
+            "locator": {
+              "kind": "symbol",
+              "name": "SUBJECT_HOLD_MS"
+            },
+            "path": "dashboard/src/panels/review/ReviewNavigation.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-3Y0WSP"
+        },
+        {
+          "after": {
+            "blob": "4d59650168c6a43c0457a9f469e87e45b813292a",
+            "content": "sha256:b2c98599ff5b7eb7c1c8069c78ea87616a75343d25c937debef7cd444224f23c",
+            "locator": {
+              "kind": "symbol",
+              "name": "useReviewNavigation"
+            },
+            "path": "dashboard/src/panels/review/ReviewNavigation.tsx"
+          },
+          "before": {
+            "blob": "9583164e407b2b0ceb6df90ee3694633f7ca74a1",
+            "content": "sha256:0f41a9e2d507fe7766185518e6c08c76cefe82a73862688b1c5f7a3aa99fa958",
+            "locator": {
+              "kind": "symbol",
+              "name": "useReviewNavigation"
+            },
+            "path": "dashboard/src/panels/review/ReviewNavigation.tsx"
+          },
+          "id": "RLZ-ZCE8D5GH"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-JB43JG",
+      "items": [
+        "sha256:ad10c3cf0052198d35db8145010e30565f1f59ad4c8626466aeb669990822225"
+      ],
+      "reason": "The bounded hold is unchanged; its exclusion that deferred the after-bound case to L48 is replaced by this leaf's decision, so the record now states what that case does instead of leaving it open. Evidence (L177-INV-EPB2CXBE): L177-A8-fix-verification-verdict.md: 07 fixed on a late catalogue, with the bound unchanged.",
+      "revision": 4,
+      "subject": "INV-EPB2CXBE"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JK6N2Z",
+      "items": [
+        "sha256:ab56fe95a55ef6eab525dd7c4d318f256d7babf1fa7f61b0d00ae2ad503a6185"
+      ],
+      "reason": "A test-only hunk: it exercises an obligation recorded elsewhere, and a test edit mints no invariant of its own.",
+      "subject": "hunk:sha256:ab56fe95a55ef6eab525dd7c4d318f256d7babf1fa7f61b0d00ae2ad503a6185"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JRE0BR",
+      "items": [
+        "sha256:9107d40f45cb18daa612eba05c413d8fbb573d8f4b28e46263df1e9f9119cd2f"
+      ],
+      "reason": "A test-only hunk: it exercises an obligation recorded elsewhere, and a test edit mints no invariant of its own.",
+      "subject": "hunk:sha256:9107d40f45cb18daa612eba05c413d8fbb573d8f4b28e46263df1e9f9119cd2f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-K4KXJB",
+      "items": [
+        "sha256:3ce8af9657de87316e5fa35c413bf686860d24fe745a09f0db8db9c2ff470940"
+      ],
+      "reason": "A test-only hunk: it exercises an obligation recorded elsewhere, and a test edit mints no invariant of its own.",
+      "subject": "hunk:sha256:3ce8af9657de87316e5fa35c413bf686860d24fe745a09f0db8db9c2ff470940"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-M16546",
+      "items": [
+        "sha256:4f643aa461c1f5d5a0ec79710fc46b9b1e3937b1587c60880abe6869bf4c18c4",
+        "sha256:5af87047c7be1abc6557b4a569053dc73058a10232f893cdf4df17e3106e28d0",
+        "sha256:6fd3b0a6c01db5363416e95b705346420124e780da897f424b66bcbf954433e8",
+        "sha256:9934a33fcfe377c7aed530f600a9b36fa23f8bf102938f715d545712d7fd490d",
+        "sha256:b4786a24bf1016d536f8dcf7c6961030cbfe4af8903d3507aadda4cf39aeb137",
+        "sha256:b6ec76619ee1529cf9530e8fd4e93d8002219aadbf3896b148cb9dbf926e230b"
+      ],
+      "reason": "The tick publishes the stable form it already computed; the card states the one-dump rule.",
+      "sources": [
+        {
+          "blob": "31745f6287a813be61e9252418d591f780107101",
+          "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/projections/projection_store.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-M96KFP",
+      "items": [
+        "sha256:89fe7e091513a2ca255e604c29dad3b083f85f7e1f767c6fefccab586541a4e0"
+      ],
+      "reason": "A fingerprint hunk: it replaces the walk with native generations under the background decision, and states no separate obligation.",
+      "subject": "hunk:sha256:89fe7e091513a2ca255e604c29dad3b083f85f7e1f767c6fefccab586541a4e0"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-M993F2",
+      "items": [
+        "sha256:53845c406eeae0d638cb18f33e8e26f3ebc8176f55e44ebc450464cda0ee2af5"
+      ],
+      "reason": "A test-only hunk: it exercises an obligation recorded elsewhere, and a test edit mints no invariant of its own.",
+      "subject": "hunk:sha256:53845c406eeae0d638cb18f33e8e26f3ebc8176f55e44ebc450464cda0ee2af5"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "8fb9239efdfa092b2dee2c101b3f2bc81c861fab",
+            "content": "sha256:4f0315a3cb5c5a0473bde87e55ffecc78d0a05069e3c181c13c62a06b5fa81f9",
+            "locator": {
+              "end": 798,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/test_review_read_latency.py"
+          },
+          "before": {
+            "blob": "05410847e15edb174cfb7c55ea920722adaa6102",
+            "content": "sha256:d2f87055baaf93fc3942dedb2d0aa20d71610d04aae9f5d855978c4e3b58c769",
+            "locator": {
+              "end": 798,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/test_review_read_latency.py"
+          },
+          "id": "RLZ-AKBEXR"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-MFRSAF",
+      "items": [
+        "sha256:1b730d743ddb268104de0f3c7eb0b77d8132b7ac477b1d0335865a37049fce49"
+      ],
+      "reason": "The change reaches this invariant's code only through edits that leave its promise as recorded; every touched realization or proof is re-anchored at the candidate by this row.",
+      "revision": 1,
+      "subject": "INV-TJE3KM"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+            "content": "sha256:8dd6441d3b115c68f9b1289f703a029d9723e42576feaea6304deca280f2fb59",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tree_from_head"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "before": {
+            "blob": "74952d968257b03b14368884a05d6c3ee73c74f8",
+            "content": "sha256:cdef36782d299040f81fdd1ea2fb2d6bc8991b1368898a07355b5ab4b5173d4b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tree_from_head"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "id": "RLZ-98370Y"
+        },
+        {
+          "after": {
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+            "content": "sha256:464218c7cff86018061e344e5d5a53fd14ad3754b647e995dd80144b4559fdcb",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_candidate_tree"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "before": {
+            "blob": "74952d968257b03b14368884a05d6c3ee73c74f8",
+            "content": "sha256:457bf2374ac715bd7a283bd847f4954e5a05883d3b7990fc10a17ccd5e5fe20f",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_candidate_tree"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "id": "RLZ-MTQB5G"
+        },
+        {
+          "after": {
+            "blob": "8f53c952d51eb1b83c2d97993768dbc0809cc6ea",
+            "content": "sha256:8699b57a3d2f03599cb0115133681e0e30af288ae093b1ac52d64d5f24cd62f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tree_from_index_copy"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/capture_index.py"
+          },
+          "before": {
+            "blob": "a955cc499935e7a7f74d9dc2c41622e55df65c98",
+            "content": "sha256:4f7f5821a91ff126170485cc55eb81dfbead67fc107bae7dba9c0521632c4abc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tree_from_index_copy"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/capture_index.py"
+          },
+          "id": "RLZ-S5VV47"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-MKB64E",
+      "items": [
+        "sha256:ceb64e98fb69c256527c495aad1bf4621e058de89a6228aa79648de51beff586"
+      ],
+      "reason": "The change reaches this invariant's code only through edits that leave its promise as recorded; every touched realization or proof is re-anchored at the candidate by this row.",
+      "revision": 1,
+      "subject": "INV-EKE1RV"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MV52T4",
+      "items": [
+        "sha256:f92b6034411ef0affa75072a0c3e928e57e9d06fc5adca7d695eba718fee2da7"
+      ],
+      "reason": "A test-only hunk: it exercises an obligation recorded elsewhere, and a test edit mints no invariant of its own.",
+      "subject": "hunk:sha256:f92b6034411ef0affa75072a0c3e928e57e9d06fc5adca7d695eba718fee2da7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-N35SYM",
+      "items": [
+        "sha256:d28fb18a6f03a86a1dc4a26ab4d34f89e4ada12e9a4e0f126bb5b1104532991b"
+      ],
+      "reason": "A scheduling hunk: it implements the background placement decision this list records, and carries no separate invariant.",
+      "subject": "hunk:sha256:d28fb18a6f03a86a1dc4a26ab4d34f89e4ada12e9a4e0f126bb5b1104532991b"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-NBHBGB",
+      "items": [
+        "sha256:26c3104313dec39cd8a33b737f63170700a68e3f8e71a77a79f6829df39ef5d5",
+        "sha256:3988ef311d10ccad1d230ee3f384476bb092110cc554f4358cffad29fe712183",
+        "sha256:8e80c9063172e42087343d63c7c56898188721e22431ee85356be81abeaab05d"
+      ],
+      "reason": "A9: the saturation case proves the read completes by an ordering condition while every background unit is still parked, instead of a five-second timeout that a slow machine could fail without saturation.",
+      "sources": [
+        {
+          "blob": "2a5f8a8f33152825aa0d093e104fb1014dedb321",
+          "path": "mcp/tests/test_background_accounting.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_background_accounting.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NBKR3R",
+      "items": [
+        "sha256:d8787dc42c306dc048f05b21de218a2123340f5ae3f8dd366970c19c8af35aba"
+      ],
+      "reason": "A fingerprint hunk: it replaces the walk with native generations under the background decision, and states no separate obligation.",
+      "subject": "hunk:sha256:d8787dc42c306dc048f05b21de218a2123340f5ae3f8dd366970c19c8af35aba"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-NKCYAX",
+      "items": [
+        "sha256:035426e84dbc0676e24342234efb58321bb05ac3112d68f624106eeec06668d0",
+        "sha256:213f219c8cb0ad72a99b43cd43c7bae9e0fcd3108d1a1c4da0226dc829274e87",
+        "sha256:74e03d7fc93aeba3a1020c687fa2bd4848248d1b58ea7fddecfba40e2e54717f",
+        "sha256:9d208d0875224f56800bcb9ffd6866f6bf1f308eab5b590c04a47d4e4fc9042f",
+        "sha256:f92b6034411ef0affa75072a0c3e928e57e9d06fc5adca7d695eba718fee2da7"
+      ],
+      "reason": "Cases were adjusted to the capture's census; the module's subject is unchanged.",
+      "sources": [
+        {
+          "blob": "469e43fcedccf18a7cafdf8a4742d86aaf9a67a1",
+          "path": "mcp/tests/test_review_git_trees.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_review_git_trees.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NKGMDE",
+      "items": [
+        "sha256:67d62fa74c201961a9f1d33bad3ecb4fb8e6b26e82e5c513aa2af94f619810d4"
+      ],
+      "reason": "A test-only hunk: it exercises an obligation recorded elsewhere, and a test edit mints no invariant of its own.",
+      "subject": "hunk:sha256:67d62fa74c201961a9f1d33bad3ecb4fb8e6b26e82e5c513aa2af94f619810d4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NXRD7P",
+      "items": [
+        "sha256:b92eadd598bfa8e1ad55dad6425aec71a65a35166ad55a416828bcb257d87469"
+      ],
+      "reason": "A capture-proof hunk covered by the proof invariant this list revises; it implements that promise and adds none.",
+      "subject": "hunk:sha256:b92eadd598bfa8e1ad55dad6425aec71a65a35166ad55a416828bcb257d87469"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-P7P3SA",
+      "items": [
+        "sha256:b9d98a6eb51ce6c4800d325ba4d9257df0baf64ede889e7c8114b5a5fbaa71d9"
+      ],
+      "reason": "A supporting hunk: it wires the change into an owner whose promise is recorded elsewhere, and adds no obligation of its own.",
+      "subject": "hunk:sha256:b9d98a6eb51ce6c4800d325ba4d9257df0baf64ede889e7c8114b5a5fbaa71d9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PB01P5",
+      "items": [
+        "sha256:920c355ed1d363d3271ab8ab07b299a3ec8e17c22b1462238dc1deb3a61c8fb5"
+      ],
+      "reason": "A capture-proof hunk covered by the proof invariant this list revises; it implements that promise and adds none.",
+      "subject": "hunk:sha256:920c355ed1d363d3271ab8ab07b299a3ec8e17c22b1462238dc1deb3a61c8fb5"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PBW0CD",
+      "items": [
+        "sha256:5b4ccc07b6936b2370779b99ffbfe44d142867aacb20722ff610ddd9d5a745f8"
+      ],
+      "reason": "A test-only hunk: it exercises an obligation recorded elsewhere, and a test edit mints no invariant of its own.",
+      "subject": "hunk:sha256:5b4ccc07b6936b2370779b99ffbfe44d142867aacb20722ff610ddd9d5a745f8"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-PEJE1T",
+      "items": [
+        "sha256:142c9e8899f4be918c4c6471fd8eadf84ca4010e9b7cf430b946f15be6a115e9",
+        "sha256:1674619af80ae0fce76f8dfa96ed51ee0fb52501fd5fd5319ae67e9093e19a6b",
+        "sha256:425c5fb19a0e103c928fee5a203041eae93917fd0d4a894697e2c26626a4fb19",
+        "sha256:67d62fa74c201961a9f1d33bad3ecb4fb8e6b26e82e5c513aa2af94f619810d4",
+        "sha256:a232b053242f95e5f7c9c567a2b0ddfb033f9c4750e18d2fe7a89fe4ff7cef88",
+        "sha256:b7cc21e577f82d2f4b77b0d72a25a5a6c0c9b4b23ee114b8f75b7efbebcc7435",
+        "sha256:de629c12b14f825cfd9a4e5e0a621402a309034f47fc074f85ddada2a739864e"
+      ],
+      "reason": "A9: reset-control coverage now exercises the background-pool resetter against a mock executor and a real lock, asserting one drain and a cleared slot beside the existing delegated controls.",
+      "sources": [
+        {
+          "blob": "8662cd79260de47050b1fdb7bc75f8a112aa9426",
+          "path": "mcp/tests/test_global_state_isolation.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_global_state_isolation.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PQMJ5B",
+      "items": [
+        "sha256:9081f3b9cc8656318e2d22e8a0d10c11bb69f7b9e64a065211e657423d012a9c"
+      ],
+      "reason": "A scheduling hunk: it implements the background placement decision this list records, and carries no separate invariant.",
+      "subject": "hunk:sha256:9081f3b9cc8656318e2d22e8a0d10c11bb69f7b9e64a065211e657423d012a9c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Q0N6XN",
+      "items": [
+        "sha256:c88c95512f2aa9c938e5564e9f3d2710f82723c3aeaf8eb196f82d35c81d8859"
+      ],
+      "reason": "A scheduling hunk: it implements the background placement decision this list records, and carries no separate invariant.",
+      "subject": "hunk:sha256:c88c95512f2aa9c938e5564e9f3d2710f82723c3aeaf8eb196f82d35c81d8859"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "4d59650168c6a43c0457a9f469e87e45b813292a",
+            "content": "sha256:b2c98599ff5b7eb7c1c8069c78ea87616a75343d25c937debef7cd444224f23c",
+            "locator": {
+              "kind": "symbol",
+              "name": "useReviewNavigation"
+            },
+            "path": "dashboard/src/panels/review/ReviewNavigation.tsx"
+          },
+          "before": {
+            "blob": "9583164e407b2b0ceb6df90ee3694633f7ca74a1",
+            "content": "sha256:0f41a9e2d507fe7766185518e6c08c76cefe82a73862688b1c5f7a3aa99fa958",
+            "locator": {
+              "kind": "symbol",
+              "name": "useReviewNavigation"
+            },
+            "path": "dashboard/src/panels/review/ReviewNavigation.tsx"
+          },
+          "id": "RLZ-TT5XGFN4"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-Q5AK40",
+      "items": [
+        "sha256:a20ce32d5d30e6dbd2d151eda97503db74f3d21dfe4f6a50ed7c6e94efc514d1"
+      ],
+      "reason": "The change reaches this invariant's code only through edits that leave its promise as recorded; every touched realization or proof is re-anchored at the candidate by this row.",
+      "revision": 2,
+      "subject": "INV-2E8MG43K"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-QDSX0Z",
+      "items": [
+        "sha256:b48227bed17a5d676f53752d50783e1b3db1da8dd3d79f7ffd78b06ea9f88466"
+      ],
+      "reason": "New card: the reuse store's parity, invalidation and bound cases.",
+      "sources": [
+        {
+          "blob": "65a853a6f92fda4f26d2d18fa268c94f90671fcf",
+          "path": "mcp/tests/test_review_answer_reuse.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_review_answer_reuse.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-QHX8NC",
+      "items": [
+        "sha256:0b2e7293663e062a062cf71a725eb821961a7513da493d12d219e80ab4c94ef2",
+        "sha256:3ce8af9657de87316e5fa35c413bf686860d24fe745a09f0db8db9c2ff470940",
+        "sha256:ae284625397d9e6a7840bb21c6a6329e97b0963c2996dbb95565f35129d48300",
+        "sha256:b00074b3b6b524e90971dafb2fef00f5a85c66abfe81b023eedd3e62b2641d84",
+        "sha256:b7fcb98b6d75d9dd125fd5eaa1feb90a135522e1b1b5dcd560360eb1eae6ec00"
+      ],
+      "reason": "A case was added for the single dump a tick computes (the pool case lives in test_background_accounting); the module's subject is unchanged.",
+      "sources": [
+        {
+          "blob": "88478d9345e5c625b2a554f452ad8e02a7311424",
+          "path": "mcp/tests/test_serving.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_serving.py"
+    },
+    {
+      "considered": [],
+      "disposition": "no_family",
+      "id": "ROW-QJH7WJ",
+      "items": [
+        "sha256:ab635866eadda775d97a793cece2e0b1eba5819fe4a1ffd69ed2926c0c987f74"
+      ],
+      "reason": "The composed-catalog clause belongs to no family: it constrains how the two evidence catalogs may be edited, not how a bounded request read is bounded, and it shares no member rule with FAM-EASWS6 or the other reached families. The merged registrations are reached through the two catalog cards themselves.",
+      "revision": 1,
+      "subject": "membership:INV-H1BCMX"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-QPQPJP",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "The paired L180 catalog is merged into one list per artifact and the four realization anchors were re-ranged to it: the archive module registration in the curator-coherence port's consumers and in the repository-profile fixture's consumers, the report module registration in the latter, and the shared-support kind of the Paseo runtime support. The 75-artifact and 12-contract inventory is unchanged, no contract row moved, and no consumer was added or dropped.",
+      "sources": [
+        {
+          "blob": "b81baacc0319a9751fd1adbef523c624420bb5b2",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QW95PH",
+      "items": [
+        "sha256:6d3116251c47ceae19e082906b497eb0b3a17a0056e8449b3cc49ad84a24d118"
+      ],
+      "reason": "A scheduling hunk: it implements the background placement decision this list records, and carries no separate invariant.",
+      "subject": "hunk:sha256:6d3116251c47ceae19e082906b497eb0b3a17a0056e8449b3cc49ad84a24d118"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-R2ZYXC",
+      "items": [
+        "sha256:1674619af80ae0fce76f8dfa96ed51ee0fb52501fd5fd5319ae67e9093e19a6b"
+      ],
+      "reason": "A test-only hunk: it exercises an obligation recorded elsewhere, and a test edit mints no invariant of its own.",
+      "subject": "hunk:sha256:1674619af80ae0fce76f8dfa96ed51ee0fb52501fd5fd5319ae67e9093e19a6b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-R6TBQ8",
+      "items": [
+        "sha256:16459fb07170e10cdeb0027899159b0c7dc89d409f3068e21175804d097d739a"
+      ],
+      "reason": "A scheduling hunk: it implements the background placement decision this list records, and carries no separate invariant.",
+      "subject": "hunk:sha256:16459fb07170e10cdeb0027899159b0c7dc89d409f3068e21175804d097d739a"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-19P897",
+          "revision": 1
+        },
+        {
+          "id": "INV-BBPPS5",
+          "revision": 2
+        },
+        {
+          "id": "INV-HHZP57",
+          "revision": 1
+        },
+        {
+          "id": "INV-PKBCZ0",
+          "revision": 1
+        },
+        {
+          "id": "INV-Z2HVKA",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-R7C3RD",
+      "items": [
+        "sha256:7354a739689430520e66daf6ca6d10e769221a50a78e3b173614e6900f63d2d1"
+      ],
+      "reason": "The worklist child's ownership is unchanged; the leaf's changes reach the dashboard's read composition, not the child.",
+      "revision": 1,
+      "subject": "FAM-TYKA3T"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-R8WZHS",
+      "items": [
+        "sha256:26c3104313dec39cd8a33b737f63170700a68e3f8e71a77a79f6829df39ef5d5"
+      ],
+      "reason": "A test-only hunk: it exercises an obligation recorded elsewhere, and a test edit mints no invariant of its own.",
+      "subject": "hunk:sha256:26c3104313dec39cd8a33b737f63170700a68e3f8e71a77a79f6829df39ef5d5"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RWV79T",
+      "items": [
+        "sha256:73e9a003b064125d112fcd7fb250cd8313e9c8d0c52468adc1f876a6c354b3fc"
+      ],
+      "reason": "A supporting hunk: it wires the change into an owner whose promise is recorded elsewhere, and adds no obligation of its own.",
+      "subject": "hunk:sha256:73e9a003b064125d112fcd7fb250cd8313e9c8d0c52468adc1f876a6c354b3fc"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RXZSJJ",
+      "items": [
+        "sha256:182742c935301f9d2ae115f9baf3cabeb98ef1bf639a497ea107f0acbbbf199c"
+      ],
+      "reason": "A supporting hunk: it wires the change into an owner whose promise is recorded elsewhere, and adds no obligation of its own.",
+      "subject": "hunk:sha256:182742c935301f9d2ae115f9baf3cabeb98ef1bf639a497ea107f0acbbbf199c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RZXFYY",
+      "items": [
+        "sha256:9251ee79c03f01269bdbd0526d5dd0cdd3be5815a6e56a56d415229ebf43103a"
+      ],
+      "reason": "A summary-window hunk covered by the window invariant this list authors; it implements that promise and adds none.",
+      "subject": "hunk:sha256:9251ee79c03f01269bdbd0526d5dd0cdd3be5815a6e56a56d415229ebf43103a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-S5PB63",
+      "items": [
+        "sha256:b6ec76619ee1529cf9530e8fd4e93d8002219aadbf3896b148cb9dbf926e230b"
+      ],
+      "reason": "A scheduling hunk: it implements the background placement decision this list records, and carries no separate invariant.",
+      "subject": "hunk:sha256:b6ec76619ee1529cf9530e8fd4e93d8002219aadbf3896b148cb9dbf926e230b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SZ2P7V",
+      "items": [
+        "sha256:e9efb538bb69a69d68ce4ef6bfdbfd88f1878d9fc18d93f9ffd6cf576f9d866a"
+      ],
+      "reason": "A fingerprint hunk: it replaces the walk with native generations under the background decision, and states no separate obligation.",
+      "subject": "hunk:sha256:e9efb538bb69a69d68ce4ef6bfdbfd88f1878d9fc18d93f9ffd6cf576f9d866a"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "517c52d2bf14b9587f91d75a20f13b98c9662b02",
+            "content": "sha256:d62a59ae127ecd8fc7a616c49dc7036921f3a0cbde31dbbdb9d49259d12cc005",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 49
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/capture_baseline.py"
+          },
+          "before": {
+            "blob": "f87e4882334717b4528aa4384f167e1d68686821",
+            "content": "sha256:dc5bfb65b065b21dd38d78ffdccfc8ddef3522621e313f4b15f85c756665498e",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 39
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/capture_baseline.py"
+          },
+          "id": "RLZ-3JP7V8"
+        },
+        {
+          "after": {
+            "blob": "517c52d2bf14b9587f91d75a20f13b98c9662b02",
+            "content": "sha256:bd1de2909ea6074721132303c9d1329c8585adc973338143c088a0f79a043c46",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 111
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/capture_baseline.py"
+          },
+          "before": {
+            "blob": "f87e4882334717b4528aa4384f167e1d68686821",
+            "content": "sha256:8dfc8d85beaedf8809130c94f03ed4d3b1e2023e66474b2cac04cc0be082e393",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 71
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/capture_baseline.py"
+          },
+          "id": "RLZ-HMXXXB"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-T1KC3Y",
+      "items": [
+        "sha256:f5d23777b20e11611c9581b9144a758cbf31f58e3093ba20e640f68ce93190c8"
+      ],
+      "reason": "The change reaches this invariant's code only through edits that leave its promise as recorded; every touched realization or proof is re-anchored at the candidate by this row.",
+      "revision": 2,
+      "subject": "INV-7TMGB0"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TTPTQX",
+      "items": [
+        "sha256:8705b8048784e1a63ba0de4bbf9c7cf4ff688c901d7d87b608fed36dc7b867b9"
+      ],
+      "reason": "A test-only hunk: it exercises an obligation recorded elsewhere, and a test edit mints no invariant of its own.",
+      "subject": "hunk:sha256:8705b8048784e1a63ba0de4bbf9c7cf4ff688c901d7d87b608fed36dc7b867b9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TYP0MJ",
+      "items": [
+        "sha256:74e03d7fc93aeba3a1020c687fa2bd4848248d1b58ea7fddecfba40e2e54717f"
+      ],
+      "reason": "A test-only hunk: it exercises an obligation recorded elsewhere, and a test edit mints no invariant of its own.",
+      "subject": "hunk:sha256:74e03d7fc93aeba3a1020c687fa2bd4848248d1b58ea7fddecfba40e2e54717f"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-V4A8QY",
+      "items": [
+        "sha256:134148d6b40b31ef8bb9c262321e6e913fda60c8af1e513615db4ef8f8821406"
+      ],
+      "reason": "New card: the composition that binds a recorded comparison's exact inputs and routes its three reads through the reuse store.",
+      "sources": [
+        {
+          "blob": "c55864286e3f288751692072e8d090c3a16157ec",
+          "path": "mcp/src/agents_remember/cli/dashboard_review_reads.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/dashboard_review_reads.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-VK90XK",
+      "items": [
+        "sha256:32615260edd7c080a9951bd273d0c7b60accc2d751658a17c189c99dc4617370"
+      ],
+      "reason": "The held-delivery tick parses the publication only when its stamp moved; the card states the bounded parse cache.",
+      "sources": [
+        {
+          "blob": "128bd96d97f674c0dc0508f766424159f7489418",
+          "path": "mcp/src/agents_remember/serving/projections/host_activity.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/projections/host_activity.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-VSR5KW",
+      "items": [
+        "sha256:fa919aec70dc30bd9316f859eefd5daf5c5483fe3786c784be2929ff9c56a6dc"
+      ],
+      "reason": "The modules route keeps its purpose and boundaries; the capture proof's change is stated in its card.",
+      "sources": [
+        {
+          "blob": "517c52d2bf14b9587f91d75a20f13b98c9662b02",
+          "path": "mcp/src/agents_remember/worktrees/modules/capture_baseline.py"
+        },
+        {
+          "blob": "8f53c952d51eb1b83c2d97993768dbc0809cc6ea",
+          "path": "mcp/src/agents_remember/worktrees/modules/capture_index.py"
+        },
+        {
+          "blob": "a7ffdba484f4eaafa7f3a0a0860e045504f33755",
+          "path": "mcp/src/agents_remember/worktrees/modules/future_code_candidate.py"
+        },
+        {
+          "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+          "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-5YPFVJ",
+          "revision": 2
+        },
+        {
+          "id": "INV-KE2ZHT",
+          "revision": 1
+        },
+        {
+          "id": "INV-KJN5GP",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-VX3MEV",
+      "items": [
+        "sha256:fa042a7cce5397f34cc21c7b625c91be235ddfb4bbfc14bdcca7947f474f8a35"
+      ],
+      "reason": "Examined at the candidate: the family and each member are as they were.",
+      "revision": 3,
+      "subject": "FAM-3FTGSA"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WBPQ1D",
+      "items": [
+        "sha256:dff284d37a048689c157ada4040cf965f5c5457ba64d3282ee239f8102e639e1"
+      ],
+      "reason": "A capture-proof hunk covered by the proof invariant this list revises; it implements that promise and adds none.",
+      "subject": "hunk:sha256:dff284d37a048689c157ada4040cf965f5c5457ba64d3282ee239f8102e639e1"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-WBYVN5",
+      "items": [
+        "sha256:5840544d732ce730e151c02e4cd3570457065d1c6d2c8098eefed35f66c04a5d"
+      ],
+      "reason": "The capture's three entry points now hand their private index to a caller's observer, which the card states.",
+      "sources": [
+        {
+          "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+          "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/git.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WCR1QC",
+      "items": [
+        "sha256:0aeb5b0f7ab49ab0ba7f53015e09f236808c6d5b93640f434a4204f719486087"
+      ],
+      "reason": "A supporting hunk: it wires the change into an owner whose promise is recorded elsewhere, and adds no obligation of its own.",
+      "subject": "hunk:sha256:0aeb5b0f7ab49ab0ba7f53015e09f236808c6d5b93640f434a4204f719486087"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-WG3Z1Z",
+      "items": [
+        "sha256:a4a7be8b45b4799598f7f6e6c6003e8115c0b621d0957d41f1a92481d11e0406"
+      ],
+      "reason": "The card still holds: the change is inside a file whose contract did not move.",
+      "sources": [
+        {
+          "blob": "89990ed97f0e0960816b36837bb9544946b6f361",
+          "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-WTVGVD",
+      "items": [
+        "sha256:a62ddd6b261de51369790298dc3e597667f8aaf1cfc5d42eab8a9f08c1e17365"
+      ],
+      "reason": "The comparison's memory capture now carries its census, so the recheck proves movement from it rather than a walk.",
+      "sources": [
+        {
+          "blob": "11251451c02a953756580c9b12b6653586cac635",
+          "path": "mcp/src/agents_remember/application/review_tree_comparison.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/review_tree_comparison.py"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R179",
+          "packet": "requirements/MIK-R179-v1-the-intent-reviewer-opens-fast.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "af790a779d5ba61b711780eacd345f968d32bbbc",
+            "content": "sha256:f72df1b919361b3cbc047860edd831b6b7fe80166052339c058cb12f50fc9a43",
+            "locator": {
+              "kind": "symbol",
+              "name": "opens one main read when the catalogue answers after the bounded wait (L177-R1-07)"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.navigation.test.tsx"
+          },
+          "before": "absent",
+          "id": "PRF-TB6EZD"
+        },
+        {
+          "after": {
+            "blob": "4d59650168c6a43c0457a9f469e87e45b813292a",
+            "content": "sha256:b2c98599ff5b7eb7c1c8069c78ea87616a75343d25c937debef7cd444224f23c",
+            "locator": {
+              "kind": "symbol",
+              "name": "useReviewNavigation"
+            },
+            "path": "dashboard/src/panels/review/ReviewNavigation.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-228GGE"
+        },
+        {
+          "after": {
+            "blob": "4d59650168c6a43c0457a9f469e87e45b813292a",
+            "content": "sha256:b2c98599ff5b7eb7c1c8069c78ea87616a75343d25c937debef7cd444224f23c",
+            "locator": {
+              "kind": "symbol",
+              "name": "useReviewNavigation"
+            },
+            "path": "dashboard/src/panels/review/ReviewNavigation.tsx"
+          },
+          "before": {
+            "blob": "9583164e407b2b0ceb6df90ee3694633f7ca74a1",
+            "content": "sha256:0f41a9e2d507fe7766185518e6c08c76cefe82a73862688b1c5f7a3aa99fa958",
+            "locator": {
+              "kind": "symbol",
+              "name": "useReviewNavigation"
+            },
+            "path": "dashboard/src/panels/review/ReviewNavigation.tsx"
+          },
+          "id": "RLZ-WBPK96KD"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "weaken",
+      "id": "ROW-WX3TFG",
+      "items": [
+        "sha256:8d5b149ff28ca6df6bcb9dc91dc0f297f1873f21571ac74ae26921de64f3d204"
+      ],
+      "reason": "The old rule had an unengaged reader follow initialSubject whenever the catalogue answered. The candidate narrows that to a catalogue answering inside the bound, and leaves a later answer filling the navigation only, so the promise covers less than before. Evidence (L177-INV-RMTHRQ0K): L177-A8-fix-verification-verdict.md: the late catalogue repairs the two-read defect; the reader's own choice still reads.",
+      "revision": 3,
+      "subject": "INV-RMTHRQ0K"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WYPNS6",
+      "items": [
+        "sha256:152174de7508ce88be172341e21b1faf713433e71d44e9ac83150644bfcaef3b"
+      ],
+      "reason": "A scheduling hunk: it implements the background placement decision this list records, and carries no separate invariant.",
+      "subject": "hunk:sha256:152174de7508ce88be172341e21b1faf713433e71d44e9ac83150644bfcaef3b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-X0R7ZK",
+      "items": [
+        "sha256:b37e8fd0335756a9f9e585ddb8be3b39e7a93c35145d4bb0eca64820d0bb89dd"
+      ],
+      "reason": "A capture-proof hunk covered by the proof invariant this list revises; it implements that promise and adds none.",
+      "subject": "hunk:sha256:b37e8fd0335756a9f9e585ddb8be3b39e7a93c35145d4bb0eca64820d0bb89dd"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-X7E98T",
+      "items": [
+        "sha256:b1f93d1e3730f799d098526ef8ad7d2a486b46b3164845cdd3c7697e367b8f29"
+      ],
+      "reason": "A capture-proof hunk covered by the proof invariant this list revises; it implements that promise and adds none.",
+      "subject": "hunk:sha256:b1f93d1e3730f799d098526ef8ad7d2a486b46b3164845cdd3c7697e367b8f29"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-XA65NZ",
+      "items": [
+        "sha256:d9792b676fa3f077fb6067735bc9b68e14abaec1c194646f3efbcc7e7c0da0bd"
+      ],
+      "reason": "The late-catalogue branch is covered by the navigation invariant this list revises; this hunk carries no obligation of its own.",
+      "subject": "hunk:sha256:d9792b676fa3f077fb6067735bc9b68e14abaec1c194646f3efbcc7e7c0da0bd"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-XGKF8R",
+      "items": [
+        "sha256:0b2e7293663e062a062cf71a725eb821961a7513da493d12d219e80ab4c94ef2"
+      ],
+      "reason": "A test-only hunk: it exercises an obligation recorded elsewhere, and a test edit mints no invariant of its own.",
+      "subject": "hunk:sha256:0b2e7293663e062a062cf71a725eb821961a7513da493d12d219e80ab4c94ef2"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-48C3DS",
+          "revision": 1
+        },
+        {
+          "id": "INV-5VQQ6S",
+          "revision": 1
+        },
+        {
+          "id": "INV-WZAMFR",
+          "revision": 2
+        },
+        {
+          "id": "INV-WZC60Z",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-XKPK1Z",
+      "items": [
+        "sha256:e0546e160af6352c8277d22c4b960820a7d133101fec26fb9ef6607847c38e66"
+      ],
+      "reason": "The new test modules use the existing controlled-clock and real-producer patterns; the joint guarantee about observed test opportunities is unchanged.",
+      "revision": 1,
+      "subject": "FAM-98S8TF"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R179",
+          "packet": "requirements/MIK-R179-v1-the-intent-reviewer-opens-fast.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "5b6aebcc1cf7f6d7db96c96d85ce14a901d65688",
+            "content": "sha256:da90beecb6e8227cdf3e0580e0e8d6bce4b1510f4ecfcc582ffce813df66b68d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_memory_head_only_movement_rechecks_and_refuses_equal_physical_files"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "before": {
+            "blob": "66b3a35b970d7805894fad1a146cd0957b4e6aab",
+            "content": "sha256:973e51f7f7d019b094b209d75a004de69df9aa123b6ef9a192666e8b59255a4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_memory_head_only_movement_rechecks_and_refuses_equal_physical_files"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "id": "PRF-5MQ20M"
+        },
+        {
+          "after": {
+            "blob": "1182a0e706a4865aea0f22cc6f48d83ff0d34426",
+            "content": "sha256:7f71aa77fa8b1b32208fb3f01684f7d8f9ae94f241424024f6e4364a0e572203",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_eligible_addition_under_a_wildcard_negation_is_a_doubt"
+            },
+            "path": "mcp/tests/test_capture_baseline.py"
+          },
+          "before": "absent",
+          "id": "PRF-PHWCT5"
+        },
+        {
+          "after": {
+            "blob": "1182a0e706a4865aea0f22cc6f48d83ff0d34426",
+            "content": "sha256:37fd64e1d9d6694af7aa1e5a1abfcb9cf1b8dac8978c8cb5fa827536de01c900",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_observation_does_not_descend_into_a_wildcard_ignored_dependency_directory"
+            },
+            "path": "mcp/tests/test_capture_baseline.py"
+          },
+          "before": "absent",
+          "id": "PRF-Q88JBV"
+        },
+        {
+          "after": {
+            "blob": "1182a0e706a4865aea0f22cc6f48d83ff0d34426",
+            "content": "sha256:12b6e10371c16e87a77d6cae2d5a818162dc2784f39abc10a1c9c75f90d03593",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_restored_directory_mtime_cannot_certify_an_unchanged_tree"
+            },
+            "path": "mcp/tests/test_capture_baseline.py"
+          },
+          "before": "absent",
+          "id": "PRF-ZNVE45"
+        },
+        {
+          "after": {
+            "blob": "517c52d2bf14b9587f91d75a20f13b98c9662b02",
+            "content": "sha256:aed36cdf3c2d6d52236858202dd3a99a1da836eba3014dbe9eec7a76e1014b6e",
+            "locator": {
+              "kind": "symbol",
+              "name": "capture_baseline_unchanged"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/capture_baseline.py"
+          },
+          "before": "absent",
+          "id": "RLZ-11X3BB"
+        },
+        {
+          "after": {
+            "blob": "8f53c952d51eb1b83c2d97993768dbc0809cc6ea",
+            "content": "sha256:1d4d8325a09f8511f57fa8d6fe22336b9bb776cc56107c4d20396e4e16a152c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_index_entries"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/capture_index.py"
+          },
+          "before": "absent",
+          "id": "RLZ-7EGW9B"
+        },
+        {
+          "after": {
+            "blob": "517c52d2bf14b9587f91d75a20f13b98c9662b02",
+            "content": "sha256:aed36cdf3c2d6d52236858202dd3a99a1da836eba3014dbe9eec7a76e1014b6e",
+            "locator": {
+              "kind": "symbol",
+              "name": "capture_baseline_unchanged"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/capture_baseline.py"
+          },
+          "before": {
+            "blob": "f87e4882334717b4528aa4384f167e1d68686821",
+            "content": "sha256:9b4711bab06a351b18433aa09d2e997bc474952583ee117b160dab8626e7dc6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "capture_baseline_unchanged"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/capture_baseline.py"
+          },
+          "id": "RLZ-BKXN1R"
+        },
+        {
+          "after": {
+            "blob": "517c52d2bf14b9587f91d75a20f13b98c9662b02",
+            "content": "sha256:4a4aa4ff79482426d0c023334dcb766f34f2214e8f4e03729e7b0472186720b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_still_captures"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/capture_baseline.py"
+          },
+          "before": "absent",
+          "id": "RLZ-WFHVZ4"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "weaken",
+      "id": "ROW-Y1AK21",
+      "items": [
+        "sha256:8d1f959e29e2721ea777bcabdf51813c71c6bb6c1b05da90ba1571095adfad33"
+      ],
+      "reason": "Two things moved. The proof's mechanism changed from a whole-worktree snapshot walk to the capture's own census read against native status, with the guarantee (a recheck before reuse, any doubt re-deriving) unchanged. The prior statement also carried an eighty-child subject-read budget \"the current tests use\"; the candidate source and the reviewed cases contain no such budget, so that clause was removed and the record promises less than the old text claimed. It is recorded here as a correction of an unsupported clause, not as a clarification, and no authority is invented for a withdrawal. Evidence (L177-INV-N3M9G4): L177-A8-fix-verification-verdict.md: 01/02 fixed; the new module's cases cover the eligible addition, the ignored directory and the restored mtime.",
+      "revision": 3,
+      "subject": "INV-N3M9G4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Y23T8K",
+      "items": [
+        "sha256:b7fcb98b6d75d9dd125fd5eaa1feb90a135522e1b1b5dcd560360eb1eae6ec00"
+      ],
+      "reason": "A test-only hunk: it exercises an obligation recorded elsewhere, and a test edit mints no invariant of its own.",
+      "subject": "hunk:sha256:b7fcb98b6d75d9dd125fd5eaa1feb90a135522e1b1b5dcd560360eb1eae6ec00"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YDFHRA",
+      "items": [
+        "sha256:de629c12b14f825cfd9a4e5e0a621402a309034f47fc074f85ddada2a739864e"
+      ],
+      "reason": "A test-only hunk: it exercises an obligation recorded elsewhere, and a test edit mints no invariant of its own.",
+      "subject": "hunk:sha256:de629c12b14f825cfd9a4e5e0a621402a309034f47fc074f85ddada2a739864e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YEY6PM",
+      "items": [
+        "sha256:a7bc3c31d51f3b1f59c025f6133c775cec527920ebd0f2591596e03a195af184"
+      ],
+      "reason": "A capture-proof hunk covered by the proof invariant this list revises; it implements that promise and adds none.",
+      "subject": "hunk:sha256:a7bc3c31d51f3b1f59c025f6133c775cec527920ebd0f2591596e03a195af184"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YVWJAZ",
+      "items": [
+        "sha256:98b2a74db6765f1e8934f94a42907d655c0b57645f42fa5aee33c13c369ee104"
+      ],
+      "reason": "A fingerprint hunk: it replaces the walk with native generations under the background decision, and states no separate obligation.",
+      "subject": "hunk:sha256:98b2a74db6765f1e8934f94a42907d655c0b57645f42fa5aee33c13c369ee104"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-YW04JA",
+      "items": [
+        "sha256:6c0a6aa6269a48b5efb472de218cf0a7f5e22bb021ed372ee73ffca900140894"
+      ],
+      "reason": "The projector records the tick's own stable form for publication instead of recomputing it.",
+      "sources": [
+        {
+          "blob": "f15f81a57f076686b9c0b38a3602086ff29499a0",
+          "path": "mcp/src/agents_remember/serving/projector.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/projector.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YW6JK9",
+      "items": [
+        "sha256:9f7ff34a6da3aec38f2903e04d3302ed9e394590c36cc184b897f3372abf0251"
+      ],
+      "reason": "A capture-proof hunk covered by the proof invariant this list revises; it implements that promise and adds none.",
+      "subject": "hunk:sha256:9f7ff34a6da3aec38f2903e04d3302ed9e394590c36cc184b897f3372abf0251"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Z18NFJ",
+      "items": [
+        "sha256:3888cbfa9832a3d5173b86fa20cd966169556177ca4abf1d375c38d9602064f8"
+      ],
+      "reason": "The card gained the index census reader and the captured callback the capture now hands its caller.",
+      "sources": [
+        {
+          "blob": "8f53c952d51eb1b83c2d97993768dbc0809cc6ea",
+          "path": "mcp/src/agents_remember/worktrees/modules/capture_index.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/capture_index.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-115RDW8H",
+          "revision": 3
+        },
+        {
+          "id": "INV-74578B97",
+          "revision": 3
+        },
+        {
+          "id": "INV-8BYGSPZF",
+          "revision": 3
+        },
+        {
+          "id": "INV-8FWJM8RR",
+          "revision": 3
+        },
+        {
+          "id": "INV-EZ8QKFX6",
+          "revision": 3
+        },
+        {
+          "id": "INV-R93S8Y30",
+          "revision": 3
+        },
+        {
+          "id": "INV-SVZY1FHR",
+          "revision": 2
+        },
+        {
+          "id": "INV-T0EWDB7H",
+          "revision": 4
+        },
+        {
+          "id": "INV-TH4KXFTX",
+          "revision": 3
+        },
+        {
+          "id": "INV-WCEGX72X",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-Z6H9H9",
+      "items": [
+        "sha256:9927a2a4fc83fae3a32b50bce284c9664f4197d168e195d198b6d378088347d7"
+      ],
+      "reason": "The changed-intent entry's reads are unchanged; the recorded reads this leaf keeps are a different route and do not alter the entry's promise.",
+      "revision": 4,
+      "subject": "FAM-WEF4M4H1"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZDD88Y",
+      "items": [
+        "sha256:c1613850202f06e7c9b180ed718edaa7a62684edf949fc24e0e6cd97ae387861"
+      ],
+      "reason": "A fingerprint hunk: it replaces the walk with native generations under the background decision, and states no separate obligation.",
+      "subject": "hunk:sha256:c1613850202f06e7c9b180ed718edaa7a62684edf949fc24e0e6cd97ae387861"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ZG1KMC",
+      "items": [
+        "sha256:60733820acd278394b397770ea6b4140723ba9194467e55fe5df9099c1706709"
+      ],
+      "reason": "The panels route's purpose, build and boundaries are unchanged; the changed review files state their own contracts.",
+      "sources": [
+        {
+          "blob": "4d59650168c6a43c0457a9f469e87e45b813292a",
+          "path": "dashboard/src/panels/review/ReviewNavigation.tsx"
+        },
+        {
+          "blob": "af790a779d5ba61b711780eacd345f968d32bbbc",
+          "path": "dashboard/src/panels/review/ReviewSurface.navigation.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZHNG3D",
+      "items": [
+        "sha256:e3a260053a1832c1a121c686d94144de19cbcddd1b356fde40a380bbc7b2096d"
+      ],
+      "reason": "A scheduling hunk: it implements the background placement decision this list records, and carries no separate invariant.",
+      "subject": "hunk:sha256:e3a260053a1832c1a121c686d94144de19cbcddd1b356fde40a380bbc7b2096d"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ZTA0EN",
+      "items": [
+        "sha256:0b5e2f3072287288d73ed78da00d61e91c09ae29abd5e77e7ab3954b3230a4d2",
+        "sha256:8ba0717a706856bfe43b5e1181471af8cea6883334eedc0d95d7fc2bbacd098e",
+        "sha256:bad754d061634f99ece52febc5c1dc7540a80470d416d6bb00d595edf8ad1b52"
+      ],
+      "reason": "Cases were added for the window key and admission eviction; the module's subject is unchanged.",
+      "sources": [
+        {
+          "blob": "0ec3c000f583557123360ae1567dc504935c010d",
+          "path": "mcp/tests/test_intent_summary_cache.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_intent_summary_cache.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "89990ed97f0e0960816b36837bb9544946b6f361",
+            "content": "sha256:71a9ae05ecb76233d752a713c70f016d787f57a7cf265cbc076fffdef2ca2bd8",
+            "locator": {
+              "end": 320,
+              "kind": "line_range",
+              "start": 118
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+          },
+          "before": {
+            "blob": "f4aaacfcd15bb64cc5150682f4748512e07174bf",
+            "content": "sha256:7beed00ba2a1a811cef48ee655b56bf0a4ecd5c7987bab19ae9371f43ebabe01",
+            "locator": {
+              "end": 320,
+              "kind": "line_range",
+              "start": 118
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+          },
+          "id": "RLZ-1563PY"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-ZTFY5R",
+      "items": [
+        "sha256:bce41fd046275a6f06d266a2ce3ccadbb96981586428b11d54a663a1abdaff78"
+      ],
+      "reason": "The change reaches this invariant's code only through edits that leave its promise as recorded; every touched realization or proof is re-anchored at the candidate by this row.",
+      "revision": 1,
+      "subject": "INV-KE2ZHT"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

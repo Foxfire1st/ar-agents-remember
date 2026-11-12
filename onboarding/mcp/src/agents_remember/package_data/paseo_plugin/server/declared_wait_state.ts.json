@@ -1,0 +1,174 @@
+{
+  "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/declared_wait_state.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8ea3ddc298ef935cbc6a9ab828ccb4c5246056e1",
+        "content": "sha256:4b1e2b34d0cdda8ac37743f1c9d03400c343676bd2673cb47a3cc62850aaee2b",
+        "locator": {
+          "kind": "symbol",
+          "name": "checkDelayMs"
+        }
+      },
+      "id": "RLZ-4K9CFC",
+      "invariant": "INV-CAAWDR",
+      "origin": {
+        "handoffEntry": "MIK-R60@v8.1-5",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "One check for both waits, at the earlier of their times.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "8ea3ddc298ef935cbc6a9ab828ccb4c5246056e1",
+        "content": "sha256:abdd4a6e1f8f49c4f80b5676d6d8a9b72c23de90c0932eea142b1471a8e4e4aa",
+        "locator": {
+          "kind": "symbol",
+          "name": "rememberDeclaration"
+        }
+      },
+      "id": "RLZ-C39QBT",
+      "invariant": "INV-60H3WR",
+      "origin": {
+        "handoffEntry": "MIK-R60@v9.8",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Records the open declaration so the seat's next turn start (a harness wake) skips the check and its next undeclared end ends the wait.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "8ea3ddc298ef935cbc6a9ab828ccb4c5246056e1",
+        "content": "sha256:f7c2f6f4b3b15934404735c9190c87235e39fc6a2b94169193dc2f83bd13b547",
+        "locator": {
+          "kind": "symbol",
+          "name": "endDeclaredWait"
+        }
+      },
+      "id": "RLZ-QPVC18",
+      "invariant": "INV-CAAWDR",
+      "origin": {
+        "handoffEntry": "MIK-R60@v8.1-5",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Ends the wait at the next undeclared end or archiving and writes its row.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "A check writes one skip row per wait it covers; another wait keeps the kind it is given.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ea3ddc298ef935cbc6a9ab828ccb4c5246056e1",
+            "content": "sha256:63b37f5664fa76b1741798f161603d7cdcd36bb96245e936593ac584f81a9265",
+            "locator": {
+              "kind": "symbol",
+              "name": "appendWaitRows"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The published view names the open waits, since when, the due check and the declaration's words.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ea3ddc298ef935cbc6a9ab828ccb4c5246056e1",
+            "content": "sha256:c0249847f987fd450411279126c362b2afc26d1d489aab231445ce60db674e4a",
+            "locator": {
+              "kind": "symbol",
+              "name": "openDeclaredWait"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Every change of a seat's wait reaches the host-activity signal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ea3ddc298ef935cbc6a9ab828ccb4c5246056e1",
+            "content": "sha256:d5c9ee713ca05f389c982145a2a1fa41a49489ff30e66f928413c84b4cd4f1c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "announceWait"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The check comes at the earlier of the two delays when both waits were declared.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ea3ddc298ef935cbc6a9ab828ccb4c5246056e1",
+            "content": "sha256:4b1e2b34d0cdda8ac37743f1c9d03400c343676bd2673cb47a3cc62850aaee2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "checkDelayMs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "An undeclared end ends every wait the seat holds and drops its pending check.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ea3ddc298ef935cbc6a9ab828ccb4c5246056e1",
+            "content": "sha256:f7c2f6f4b3b15934404735c9190c87235e39fc6a2b94169193dc2f83bd13b547",
+            "locator": {
+              "kind": "symbol",
+              "name": "endDeclaredWait"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "An end that declares nothing, or declares for an archived seat, opens nothing; a declaring end writes one row per wait.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ea3ddc298ef935cbc6a9ab828ccb4c5246056e1",
+            "content": "sha256:77b0b08f56207ce4faf9017b0227060d7ab8150de7b8a9aa0215eb5da2fa88d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "judgeDeclaredEnd"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "A renewal keeps the first opening time, ends a dropped wait and evicts the oldest declaration past the bound.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ea3ddc298ef935cbc6a9ab828ccb4c5246056e1",
+            "content": "sha256:abdd4a6e1f8f49c4f80b5676d6d8a9b72c23de90c0932eea142b1471a8e4e4aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "rememberDeclaration"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

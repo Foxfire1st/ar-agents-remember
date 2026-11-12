@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/application/task_docs/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The package marker docstring.\n\nAnchor: \"Task-document authoring application modules.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "318a82a285770f0bec16a6b836a920892c8a299c",
+            "content": "sha256:dbf8cb06419ea089e64f2124e982b45ded8c77f2290785dea0bcecf4614e9149",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

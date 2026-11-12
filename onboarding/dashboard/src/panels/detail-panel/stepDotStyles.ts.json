@@ -1,0 +1,38 @@
+{
+  "path": "dashboard/src/panels/detail-panel/stepDotStyles.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Pointer-inert fixed tooltip styles and ordered nested-row layout remain separate from interaction/data ownership.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d2fafd66ba8ba1996fdc480ad019b278cdedaee3",
+            "content": "sha256:4c5bd7c0f94cf2f56a173c028263241692965d546b8ebb071cb034c7d1caf2b9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The tooltip's box breaks no word, and the parts that must stay whole say so themselves.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d2fafd66ba8ba1996fdc480ad019b278cdedaee3",
+            "content": "sha256:a00c5e26f3482823e35a5d96d82cba35497466186eb88b84429b4bd2069486ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "stepTipStyles"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

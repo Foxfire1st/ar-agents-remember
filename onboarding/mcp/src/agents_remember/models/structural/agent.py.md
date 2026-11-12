@@ -1,83 +1,34 @@
 # mcp/src/agents_remember/models/structural/agent.py
 
-| Field | Value |
-|---|---|
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/structural/agent.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T17:02+02:00 |
-| lastVerifiedCommitHash |  `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`|
-| lastVerifiedCommitDate |  2026-09-22T20:08:58+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Structural wire models](overview.md)
 
 ## Purpose
 
-Defines strict agent-facing DTOs for dispatch, parent/child messaging, retirement, and rename. The
-wire contains stable work-domain identity and intentionally has no runtime addressing fields.
+Declare the native receipt-tracked seat-retirement request/response and canonical role vocabulary.
+Dispatch, shared structural-delivery and parent/child messaging DTOs are absent.
 
 ## Code Commentary
 
-### Logic
+`StructuralRole` names the task-seat roles (architect, orchestrator, investigator, manager, worker,
+reviewer, curator) and the earlier system-specialist spelling.
+The frozen `RetireChildRequest` carries task_document_ref, role, reason, optional agent_id and
+interrupt_turn; the native owner, not this dataclass, enforces starter/receipt identity and
+refuses an empty target or an unadmitted interruption.
 
-Request dataclasses accept only task-document, role, content, label, and reason fields. Response
-models share `StructuralTargetResponse`, exposing the resolved task document and role plus status.
+`RetireChildResponse` declares retire_child, status, optional taskDocumentRef, role and detail;
+its role validator calls canonical_role. It inherits the retained ToolResponse envelope and
+does not expose a runtime-occupant response field. Internal task gate/activation owners remain
+separate; this DTO is not a plane-hosting API.
 
-### Conventions
+## Current model evidence
 
-Every operation has a distinct response model so the registry remains self-describing while the
-structural target shape stays common.
+The complete current source has only the role Literal, RetireChildRequest and
+RetireChildResponse.
 
-### Invariants And Boundaries
+## Evidence
 
-- Public request dataclasses define only the listed structural fields; registration and wire tests
-  guard the absence of plane-only address vocabulary.
-- Session, lifecycle, terminal, inbox-row, and gate ids are forbidden on public schemas.
-- Do not add legacy aliases for removed exact-id requests.
+- The retained role Literal and native retirement request/response have no dispatch/shared-delivery DTO. [1]
 
-### Todos
-
-None.
-
-## Docs References
-
-
-## Repo-Internal References
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The request family uses structural fields only. | `DispatchAgentRequest` | mcp/src/agents_remember/models/structural/agent.py:39-69 |
-| The response family returns structural targets without runtime ids. | `StructuralTargetResponse` | mcp/src/agents_remember/models/structural/agent.py:71-117 |
-
-## Cross-Repo References
-
-
-## 260918-TSIP-L4 — The Delivery Projection Declared On The Shared Base (`T4`)
-
-`StructuralTargetResponse` now declares `deliveryState: InboxDeliveryState | None = None`
-and `adapterDeliveryState: AdapterDeliveryState | None = None` (**`:86-87`**), which moved every
-line at or below the old `:78` down by `+10` (`RetireChildResponse` `98 → 108`,
-`RenameChildResponse` `102 → 112`, `RenameSelfResponse` `106 → 116`; file **107 → 117 lines**).
-
-The producer is the shared `structural_payload` (`application/structural/outcomes.py:36-39`): it
-adds both keys whenever the outcome carries a delivery state. **Declaring them on the base repairs
-the class rather than the three instances** — all six consumers inherit them, and
-`dispatch_agent`, `message_parent` and `message_child` are the three call sites that populate them
-today while `retire_child`, `rename_child` and `rename_self` pass no delivery state and leave both
-`None` (excluded by `exclude_none`). A strict consumer that omits a key its own producer can emit
-is exactly the `D53` shape, and there is no fourth consumer to fall through.
-
-Pinned by `mcp/tests/test_tool_response_conformance.py::test_the_structural_delivery_projection_is_declared_on_every_consumer`,
-which fails against the base model with `Items in the second set but not the first: {'deliveryState',
-'adapterDeliveryState'}`.
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-18T17:02+02:00 — 260918-TSIP-L4 curator (uncommitted change set on `ar/260918-tsip-l4-ar`, base `0dd04d6a`): the delivery projection declared on the shared base (`:86-87`, `T4`) — the class repaired, not the three instances. Verification metadata stays at the recorded verification because the candidate is uncommitted and the governed closeout owns the real code commit; `lastUpdated` advances with this body edit.
-
-- 2026-08-11T14:29+02:00 — Re-read `DispatchAgentRequest` and widened its citation to include
-  the dataclass declaration; verification metadata remains pending for governed closeout.
-- 2026-08-11T06:47+02:00 — 260731-EFA-L19: created for the public structural agent DTO family.
+- The task-seat role literal holds seven canonical roles plus the system-specialist spelling. [2]

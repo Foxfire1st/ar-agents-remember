@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Serving a changed manifest or asset would show bytes that no published revision attests."
+  },
+  "applicability": "Saved-first reopening, asset serving and regeneration of a ready frame.",
+  "conditions": [
+    "A ready pointer names a revision whose manifest and assets are stored."
+  ],
+  "exclusions": [
+    "A lineage with no ready revision, which reports its own reason."
+  ],
+  "id": "INV-T4EVM5",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "A4-checks/probes.json: historical-manifest-integrity; focused F13 snapshot/corruption cases"
+      ],
+      "path": "l102-curator-list.json"
+    },
+    "handoffEntry": "L102-F13",
+    "leaf": "260928-MIK-L102",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Saved-first opening, asset serving and regeneration must use one integrity-checked immutable revision snapshot and refuse corrupt or changed bytes rather than serving them as ready.",
+  "status": "proposed",
+  "supersedes": []
+}

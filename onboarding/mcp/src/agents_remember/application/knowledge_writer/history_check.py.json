@@ -1,0 +1,254 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_writer/history_check.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b85c922723254d922712cc3f24a42ae192ff9566",
+        "content": "sha256:5418222ea258cb6891c3f705815512fd46db1a7205c17173058065f6b516a111",
+        "locator": {
+          "kind": "symbol",
+          "name": "owner_history_problems"
+        }
+      },
+      "id": "RLZ-2GCRQ4",
+      "invariant": "INV-THFEVY",
+      "origin": {
+        "handoffEntry": "L54-curator-MIK-R54-v1-rule-11-actual-guards",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "The Writer applies literal new-token checks to its owned history without normalizing preserved closed labels.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b85c922723254d922712cc3f24a42ae192ff9566",
+        "content": "sha256:2d12ce7edfb35595c9ca6bcc57efbef29516212b0d0d51d3703d3def04f13812",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-55WTZQ",
+      "invariant": "INV-MKZ0EA",
+      "origin": {
+        "handoffEntry": "L48-C-callsite-hunks-carry-rule-obligations",
+        "leaf": "260928-MIK-L48"
+      },
+      "rationale": "Drift-check message hunks outside owner_history_problems carry the remedy and frozen-file wording.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "b85c922723254d922712cc3f24a42ae192ff9566",
+        "content": "sha256:5418222ea258cb6891c3f705815512fd46db1a7205c17173058065f6b516a111",
+        "locator": {
+          "kind": "symbol",
+          "name": "owner_history_problems"
+        }
+      },
+      "id": "RLZ-987Q8N",
+      "invariant": "INV-EH65RT",
+      "origin": {
+        "handoffEntry": "L48-W-MIK-R48-v2-delivery",
+        "leaf": "260928-MIK-L48"
+      },
+      "rationale": "the candidate-side check of recorded own revisions carrying the reopen way out",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b85c922723254d922712cc3f24a42ae192ff9566",
+        "content": "sha256:5418222ea258cb6891c3f705815512fd46db1a7205c17173058065f6b516a111",
+        "locator": {
+          "kind": "symbol",
+          "name": "owner_history_problems"
+        }
+      },
+      "id": "RLZ-C29640",
+      "invariant": "INV-V9A68X",
+      "origin": {
+        "handoffEntry": "MIK-R48@v2 rule 6",
+        "leaf": "260928-MIK-L48"
+      },
+      "rationale": "The owner history checker produces actionable drift/refusal text and preserves the distinction between hand-closed and frozen files.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b85c922723254d922712cc3f24a42ae192ff9566",
+        "content": "sha256:3cd222aedb40c187c6d3bd4813d007c090ed727bf40f4b65fa695ee893f8d186",
+        "locator": {
+          "kind": "symbol",
+          "name": "_restated_revision"
+        }
+      },
+      "id": "RLZ-RA87RM",
+      "invariant": "INV-XN0FG8",
+      "origin": {
+        "handoffEntry": "L37-changed-row-governs",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Returns the revision of the leaf's latest earlier row about the subject when that row is a changed row: the only revision a changed row at an unchanged revision may restate.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The two remedies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b85c922723254d922712cc3f24a42ae192ff9566",
+            "content": "sha256:c57a75f0a25aa52a8c8a6e45108c1a1734ba06beaae78a50b30f151b5905424c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_FROZEN"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Every non-base-frozen history row reports invalid item tokens with the row identity and current re-authoring remedy; base-frozen rows skip this added token check.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b85c922723254d922712cc3f24a42ae192ff9566",
+            "content": "sha256:49f750781eb156ac1952010c3c98f57fc72f769e34495b63c8a25806c8768de0",
+            "locator": {
+              "end": 99,
+              "kind": "line_range",
+              "start": 64
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Every row of the owner's file, as problems.\n\nAnchor: `owner_history_problems`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b85c922723254d922712cc3f24a42ae192ff9566",
+            "content": "sha256:2d12ce7edfb35595c9ca6bcc57efbef29516212b0d0d51d3703d3def04f13812",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Invariant and family row checks.\n\nAnchor: `_row_messages`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b85c922723254d922712cc3f24a42ae192ff9566",
+            "content": "sha256:2d12ce7edfb35595c9ca6bcc57efbef29516212b0d0d51d3703d3def04f13812",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A contradicted row refuses until it is named again; a base-closed file is frozen, while a hand-closed file gains the reopen step with the re-authoring remedy.\n\nAnchor: `owner_history_problems`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b85c922723254d922712cc3f24a42ae192ff9566",
+            "content": "sha256:2d12ce7edfb35595c9ca6bcc57efbef29516212b0d0d51d3703d3def04f13812",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The revision a row's change counts from: the higher merge side's for an unmerged record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b85c922723254d922712cc3f24a42ae192ff9566",
+            "content": "sha256:a3d28fc52505d21b8e41965767c5da4a5b3291441398c20b5b0187640ec2595a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_base_revision"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The owner's earlier attempts as the base holds them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b85c922723254d922712cc3f24a42ae192ff9566",
+            "content": "sha256:de44e03ca872897b86a4888c162830f5fb7c3e202f6cfec5883a03a3f5901c1f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_earlier_attempts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The revision a changed row may restate: the leaf's latest earlier row, when it is a changed row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b85c922723254d922712cc3f24a42ae192ff9566",
+            "content": "sha256:3cd222aedb40c187c6d3bd4813d007c090ed727bf40f4b65fa695ee893f8d186",
+            "locator": {
+              "kind": "symbol",
+              "name": "_restated_revision"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "A change already on the parent line may be answered by a later row; the leaf-owned changed-record rule remains distinct.\n\nAnchor: `test_a_change_on_the_parent_line_may_be_answered_by_any_later_row`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "edad7b9d825ab3a241a0917f1627d688e34954f3",
+            "content": "sha256:e791cf309e2f6ef9f2d1f7830a3cf0973f031617f8d7b50e028f35d6453d5381",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_reopen_governing_rows.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Drift refuses until the row is named again at the current revision.\n\nAnchor: `owner_history_problems`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b85c922723254d922712cc3f24a42ae192ff9566",
+            "content": "sha256:2d12ce7edfb35595c9ca6bcc57efbef29516212b0d0d51d3703d3def04f13812",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

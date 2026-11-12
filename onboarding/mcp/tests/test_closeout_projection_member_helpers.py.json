@@ -1,0 +1,103 @@
+{
+  "path": "mcp/tests/test_closeout_projection_member_helpers.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Ref.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "833829a2c8bff13b915ce3e1891ec98e57cab0f1",
+            "content": "sha256:de12fd8322ec3fa560e8db4bede3520c768f5043b1426f2bf73b5cd82097ece5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ref"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Graph.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "833829a2c8bff13b915ce3e1891ec98e57cab0f1",
+            "content": "sha256:06ce58ffcb6d45022de3e660bebb3ae374bbe24ba3c1613d64031a6074860b71",
+            "locator": {
+              "kind": "symbol",
+              "name": "_graph"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Candidate document.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "833829a2c8bff13b915ce3e1891ec98e57cab0f1",
+            "content": "sha256:6106b999e61a9a3aa4d1dfb140b3fdb732555e75ba679649326061557d21a85c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_candidate_document"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Documents.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "833829a2c8bff13b915ce3e1891ec98e57cab0f1",
+            "content": "sha256:34eb4b5c10250ea9ae142de679ec44528b7fcc2516fdf5bd10180eb49453ea38",
+            "locator": {
+              "kind": "symbol",
+              "name": "_documents"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Semantic index.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "833829a2c8bff13b915ce3e1891ec98e57cab0f1",
+            "content": "sha256:b4a3cb37ac9ede3eb7aec777409133cfd98eb42fe440b00ad885384158fc390e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_semantic_index"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Bound sprint.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "833829a2c8bff13b915ce3e1891ec98e57cab0f1",
+            "content": "sha256:fd3183f131a1d12ba38d0727e5acf522135768f82816e072f06d7a6bb1bc2638",
+            "locator": {
+              "kind": "symbol",
+              "name": "_bound_sprint"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

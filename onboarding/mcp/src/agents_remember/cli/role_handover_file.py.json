@@ -1,0 +1,101 @@
+{
+  "path": "mcp/src/agents_remember/cli/role_handover_file.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ef4a777f258e408def37c9a00eba870bb6180bd5",
+        "content": "sha256:40c3ca1843275f3294deab0bc52a53a6eb8651e0d6b998f7279ccbafa4b33915",
+        "locator": {
+          "kind": "symbol",
+          "name": "handover_file_line"
+        }
+      },
+      "id": "RLZ-DHEJ0P",
+      "invariant": "INV-5H5VR2",
+      "origin": {
+        "handoffEntry": "L185-R193-1-artifact-line",
+        "leaf": "260928-MIK-L185"
+      },
+      "rationale": "The line the message carries is composed here, so this is where the second file's name and digest become part of the first message.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The object is rendered at one-space indent with a final newline; the serializer sets no size bound, and the reference records the byte count of what it did write.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef4a777f258e408def37c9a00eba870bb6180bd5",
+            "content": "sha256:0b28b7334d4e5648880bece5e863cd7a3de84608e997ea73d6d4ba464e8c75ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "handover_file_text"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ef4a777f258e408def37c9a00eba870bb6180bd5",
+            "content": "sha256:112f66fdd066e4b20fc5b1b6908fe4a5176ef9fc5e88269100f16f0cef7be158",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_handover_file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The reference and bytes are planned without writing, so the message names what the launch will write.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef4a777f258e408def37c9a00eba870bb6180bd5",
+            "content": "sha256:4c1a167b8245bc751eed87855e9920e6bf5cee58100dfdaca10351a64cb492a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "planned_handover_file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The file is written once under the shared contract and reused only on equal bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef4a777f258e408def37c9a00eba870bb6180bd5",
+            "content": "sha256:112f66fdd066e4b20fc5b1b6908fe4a5176ef9fc5e88269100f16f0cef7be158",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_handover_file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A lost file is restored from the receipt alone; a changed or moved one is refused before any write.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef4a777f258e408def37c9a00eba870bb6180bd5",
+            "content": "sha256:f758b2da39425a5c05eb1e036d1a80a849637d0a5e05c6f3b25cfbcd3c33165f",
+            "locator": {
+              "kind": "symbol",
+              "name": "restore_handover_file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

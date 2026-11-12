@@ -1,0 +1,27 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The handoff template tells authors to omit an ungoverned route, and the realization parser rejects placeholder or non-text routes before they can create false governing paths."
+  },
+  "applicability": "Curator hand-off entries admitted through the ordinary curator writer that would write new realization claims and that write a governing_route at a target or at authority.",
+  "conditions": [
+    "A converted file-writer handoff supplies realization targets; _targets runs the shared value/route refusal before planning those targets."
+  ],
+  "exclusions": [
+    "Omitted or null governing_route, which remains ungoverned.",
+    "Stored historical realization rows, which this admission check does not retrospectively rewrite."
+  ],
+  "id": "INV-E8655Z54",
+  "origin": {
+    "leaf": "260921-ICR-L45",
+    "legacyId": "f02d1245-2ef2-492c-bc11-c7f047ede5aa",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "For an entry that would write new realizations, a governing_route written as the word absent in any case once trimmed, or as a value that is not a string, at a target or at the entry's authority, refuses the entry (as realization_governing_route_absent_literal or realization_value_not_text respectively) naming where it was written, while an omitted or null governing_route leaves the anchor ungoverned with no route row.",
+  "status": "proposed",
+  "supersedes": []
+}

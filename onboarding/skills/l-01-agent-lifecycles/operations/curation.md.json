@@ -1,0 +1,804 @@
+{
+  "path": "skills/l-01-agent-lifecycles/operations/curation.md",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
+        "content": "sha256:c8378e7534ca356f3f72832396b858027d1c259ad41002634bff75fac999173f",
+        "locator": {
+          "end": 45,
+          "kind": "line_range",
+          "start": 37
+        }
+      },
+      "id": "RLZ-090539",
+      "invariant": "INV-C8SVFY",
+      "origin": {
+        "handoffEntry": "PNT-R04@v1 §1 / F1",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Curator verifies this build and launch intake before using any writer.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
+        "content": "sha256:0e09b6ab1a83ae89e79e4f82fb2ec9c70dc51cb35f517976b5bd816be5efb4f8",
+        "locator": {
+          "end": 86,
+          "kind": "line_range",
+          "start": 86
+        }
+      },
+      "id": "RLZ-0EMKR7",
+      "invariant": "INV-9DAS08",
+      "origin": {
+        "handoffEntry": "K3-9DAS08-curation-bounded-repair",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The Curator applies the bounded encountered-memory repair, reports every repair and continues without a broad sweep.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
+        "content": "sha256:95e15343300e7269449f9701ecc5a9a1d9ab4340524ab0a51538e653b78a71d6",
+        "locator": {
+          "end": 45,
+          "kind": "line_range",
+          "start": 39
+        }
+      },
+      "id": "RLZ-0GEXHP",
+      "invariant": "INV-NNQR91",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-19",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The canonical operations/curation.md carries the applicable own-file first-read/task_doc-only write and report/scratch instructions for its role/operation; it is the source the public generator ships.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
+        "content": "sha256:35a25b2c5ce29181a871db3be75c5e3b54065f48d39c51cc26ada21739694921",
+        "locator": {
+          "end": 81,
+          "kind": "line_range",
+          "start": 79
+        }
+      },
+      "id": "RLZ-0MD7QE",
+      "invariant": "INV-JHB89M",
+      "origin": {
+        "handoffEntry": "L62-CUR-6414-claim-check",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "Independent fact-check is required; findings repaired with full-operation rerun.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
+        "content": "sha256:ec5f54146552ce1e00edd33226926235d27c46cf9218538a3d88ea43d08e2f5f",
+        "locator": {
+          "end": 8,
+          "kind": "line_range",
+          "start": 8
+        }
+      },
+      "id": "RLZ-1BV7D5",
+      "invariant": "INV-ZNJ14G",
+      "origin": {
+        "handoffEntry": "K3-ZNJ14G-curation-direct-inputs",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The Worker supplies its freeze and hand-off list, and the Reviewer its passed code freeze, directly to the Curator.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
+        "content": "sha256:70710b4a1d6956f454d3331cce749163b2cc9f0d78544cee5ef71196b617691f",
+        "locator": {
+          "end": 53,
+          "kind": "line_range",
+          "start": 53
+        }
+      },
+      "id": "RLZ-1K4M96",
+      "invariant": "INV-JAACMT",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-L62-CUR-6414-continuation",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "A report naming an authorized next step needs no new Manager go and continues through the whole handover while retaining repairs, escalation and genuine stops.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
+        "content": "sha256:42ec4631f132f99ee5d29b7a9998c0cf89d88cf761a12d56ddd0238c4a287920",
+        "locator": {
+          "end": 116,
+          "kind": "line_range",
+          "start": 116
+        }
+      },
+      "id": "RLZ-27TVRT",
+      "invariant": "INV-945YZ4",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-945YZ4",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The curation operation keeps partial and refused handovers partial, has faulty input corrected through the same tool, and keeps validator and gate findings as repairs. The covered correct-write recovery is reached through the shared every-role pointer.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
+        "content": "sha256:2a5c035ee6e0326f7fb926dabaa881eaafb7b8785d8431e3a2678a2b12fb3484",
+        "locator": {
+          "end": 48,
+          "kind": "line_range",
+          "start": 47
+        }
+      },
+      "id": "RLZ-2JHTJ3",
+      "invariant": "INV-BCEZZM",
+      "origin": {
+        "handoffEntry": "MIK-R101@v1 rule 8",
+        "leaf": "260928-MIK-L101"
+      },
+      "rationale": "For every role, the curation operation points to orientation's 'Bind curation to the serving build' before any memory decision or write. That section carries the selected-serving-build and clean-main reference rule, the fixture-only leaf proof and the no-install, no-guard-disable exclusion.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
+        "content": "sha256:570f65d4463f660446da4117cf8877ea9b30088b26d2f7b0e0c516ee93b239f4",
+        "locator": {
+          "end": 94,
+          "kind": "line_range",
+          "start": 93
+        }
+      },
+      "id": "RLZ-3VJ8EH",
+      "invariant": "INV-BCEZZM",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-BCEZZM",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The Manager-directed authority paragraph retains the no-code/no-gate/no-lifecycle boundary while qualifying task-document edits only by the scoped recovery route.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
+        "content": "sha256:3a6eb4dea3c62034f66cf7351a677e108bfe827ddc2ae01f77209a75cb7e2b8f",
+        "locator": {
+          "end": 128,
+          "kind": "line_range",
+          "start": 128
+        }
+      },
+      "id": "RLZ-4YAPS7",
+      "invariant": "INV-W24J6Q",
+      "origin": {
+        "handoffEntry": "R99-curator-notice-recovery",
+        "leaf": "260928-MIK-L99"
+      },
+      "rationale": "Before responding to failed delivery of a required Manager notice, the curation operation sends the Curator to the shared refused-handover rule: record the notice as pending, continue independent work, retry through role_message, and never turn it into a developer question in its own chat.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
+        "content": "sha256:bef223e783e831f66dc5eb4b95a0016af7749d9b83dd055234f22569eddf0fb2",
+        "locator": {
+          "end": 86,
+          "kind": "line_range",
+          "start": 84
+        }
+      },
+      "id": "RLZ-9AWEEA",
+      "invariant": "INV-9DAS08",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-L62-CUR-6414-curator-healing",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "'Repair and republish' applies the bounded encountered-memory repair of the role's instructions, requires every repair to be reported, forbids a broad sweep and reruns the complete checks and independent fact-check before handover.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
+        "content": "sha256:2771e8e7dabd805221cae30790e60c04eda4e5d7dc87d1dac6613ef8e3d8e8a5",
+        "locator": {
+          "end": 59,
+          "kind": "line_range",
+          "start": 53
+        }
+      },
+      "id": "RLZ-B0CM8K",
+      "invariant": "INV-JAACMT",
+      "origin": {
+        "handoffEntry": "L62-CUR-6414-continuation",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "A next-authorized-step report needs no new Manager go; continue through the whole handover.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
+        "content": "sha256:8f50640da2d94e09cf1dc538da784d7394195b516df1cb2f2856c6e459ef0c6d",
+        "locator": {
+          "end": 18,
+          "kind": "line_range",
+          "start": 16
+        }
+      },
+      "id": "RLZ-BB979Z",
+      "invariant": "INV-ZNJ14G",
+      "origin": {
+        "handoffEntry": "K3-ZNJ14G-curation-ownership",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Keeps leaf seats direct and the Manager on its occasions: Worker and Reviewer answer the Curator directly, the Manager reads leaf state from reports and keeps acceptance, landing and the Git transaction.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
+        "content": "sha256:2477b66e94545ed0eb95376f47432ea63ab0204e2083412e4fd8859888a014ff",
+        "locator": {
+          "end": 88,
+          "kind": "line_range",
+          "start": 84
+        }
+      },
+      "id": "RLZ-BJQYDS",
+      "invariant": "INV-QPY4KH",
+      "origin": {
+        "handoffEntry": "MIK-R84@v5 part1 / L62 memory-tool continuation",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The curation workflow retains the same independent-tool continuation and dependent-stop instruction at its working step.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
+        "content": "sha256:afb8b66d3e3681bacdfcd0bdd9bf5a876f7dffe4d93ff936d874880e00221dc3",
+        "locator": {
+          "end": 126,
+          "kind": "line_range",
+          "start": 124
+        }
+      },
+      "id": "RLZ-EEEG4W",
+      "invariant": "INV-5TKYXM",
+      "origin": {
+        "handoffEntry": "MIK-R70@v1 rule 4",
+        "leaf": "260928-MIK-L70"
+      },
+      "rationale": "The curation handoff says terminal/finalizer evidence proves turn end only; it preserves direct independent memory review and excludes tool-generated acceptance claims.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
+        "content": "sha256:21fc90beb21fe2d30fcd2074fda73da23727db98408253021b5abc36e1e31d0e",
+        "locator": {
+          "end": 118,
+          "kind": "line_range",
+          "start": 118
+        }
+      },
+      "id": "RLZ-JKHSZ1",
+      "invariant": "INV-ZNJ14G",
+      "origin": {
+        "handoffEntry": "K3-ZNJ14G-curation-questions",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "A missing comparison side is asked of the Worker or the Reviewer directly; the Manager only about ownership or authority.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
+        "content": "sha256:42d400b476e16758642720966db54aa1abf4c7249f5ead40a9f9676a1e381b5a",
+        "locator": {
+          "end": 120,
+          "kind": "line_range",
+          "start": 120
+        }
+      },
+      "id": "RLZ-K60P42",
+      "invariant": "INV-RKGNF8",
+      "origin": {
+        "handoffEntry": "R99-D95-curator-code-concerns",
+        "leaf": "260928-MIK-L99"
+      },
+      "rationale": "Directs code concerns to both seats and keeps code repair and gate ownership external.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
+        "content": "sha256:42ec4631f132f99ee5d29b7a9998c0cf89d88cf761a12d56ddd0238c4a287920",
+        "locator": {
+          "end": 116,
+          "kind": "line_range",
+          "start": 116
+        }
+      },
+      "id": "RLZ-MSJDKH",
+      "invariant": "INV-BCEZZM",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-BCEZZM",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "Partial and refused handovers stay partial ('planned' and 'refused' wrote nothing), faulty input is corrected through the same tool, and validator and gate findings still require repair. Scoped correct-write recovery waives none of them.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
+        "content": "sha256:afb8b66d3e3681bacdfcd0bdd9bf5a876f7dffe4d93ff936d874880e00221dc3",
+        "locator": {
+          "end": 126,
+          "kind": "line_range",
+          "start": 124
+        }
+      },
+      "id": "RLZ-PDP66S",
+      "invariant": "INV-5TKYXM",
+      "origin": {
+        "handoffEntry": "MIK-R70@v1 rule 4",
+        "leaf": "260928-MIK-L70"
+      },
+      "rationale": "This curation-operation handoff retains the turn-end-only boundary and direct Reviewer delivery; it is not a separate Curator certification.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
+        "content": "sha256:95e15343300e7269449f9701ecc5a9a1d9ab4340524ab0a51538e653b78a71d6",
+        "locator": {
+          "end": 45,
+          "kind": "line_range",
+          "start": 39
+        }
+      },
+      "id": "RLZ-PFT43W",
+      "invariant": "INV-K6Q2R4",
+      "origin": {
+        "handoffEntry": "PNT-R04@v1 §4 / F10",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Curator intake preserves launch task-document and reader arguments.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
+        "content": "sha256:ae11de20c14693b77c0087cdfede1714a104c5912a8792075ffd695b19dc8fbf",
+        "locator": {
+          "end": 135,
+          "kind": "line_range",
+          "start": 133
+        }
+      },
+      "id": "RLZ-R4SKXV",
+      "invariant": "INV-7E3JNX",
+      "origin": {
+        "handoffEntry": "R99-8-own-sync",
+        "leaf": "260928-MIK-L99"
+      },
+      "rationale": "The curation operation sends memory conflicts from the Worker's leaf sync directly to the Curator and keeps the transaction steps with the Manager. Before repair, it points to 'Synchronize the leaf' for the content-only boundary and the Manager-staging and Worker-continuation sequence.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
+        "content": "sha256:c24c96165aec600b417ae27af700b1605034c7004de3a81df91339795cdc78a3",
+        "locator": {
+          "end": 133,
+          "kind": "line_range",
+          "start": 122
+        }
+      },
+      "id": "RLZ-VESCVY",
+      "invariant": "INV-ZNJ14G",
+      "origin": {
+        "handoffEntry": "R99-1-direct-loop",
+        "leaf": "260928-MIK-L99"
+      },
+      "rationale": "Owns direct producer intake and memory delivery to Reviewer without routing its result through Manager.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
+        "content": "sha256:39a63615e2e0a6c98bac332902f388da9a0dc67b8a9398276b412b081f3b07f9",
+        "locator": {
+          "end": 48,
+          "kind": "line_range",
+          "start": 39
+        }
+      },
+      "id": "RLZ-VXHQMN",
+      "invariant": "INV-NNQR91",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-19",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "Canonical operations/curation.md carries task-bound own-file first reads of the rendered task and JSON file, exact reader scope, a writer bound to the selected serving build with every output inside the selected memory root, and a pointer to orientation's serving-build binding for the starting-server boundary.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
+        "content": "sha256:933693580a5a12f17ae439142bcb4d4dde0a057bc42b0a6dbd1e66147fa33df8",
+        "locator": {
+          "end": 86,
+          "kind": "line_range",
+          "start": 79
+        }
+      },
+      "id": "RLZ-WJQ4HW",
+      "invariant": "INV-9DAS08",
+      "origin": {
+        "handoffEntry": "L62-CUR-6414-curator-healing",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "After bounded repairs, complete checks and independent fact-check remain before handover. Independent fact-check is required; findings repaired with full-operation rerun.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
+        "content": "sha256:57609ea7e4e2cd15478ea2d6a06753c91909f3cf40087357408bc3bef38e2ca4",
+        "locator": {
+          "end": 48,
+          "kind": "line_range",
+          "start": 37
+        }
+      },
+      "id": "RLZ-X79EQQ",
+      "invariant": "INV-C8SVFY",
+      "origin": {
+        "handoffEntry": "PNT-R04@v1 §1 / F1",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Curation verifies launching-build identity and supplied context before its public writer.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
+        "content": "sha256:0ec721e2cda7edb353995ddc6520df50cd3fcbb25669cf4b4efd25fc8dc13674",
+        "locator": {
+          "end": 59,
+          "kind": "line_range",
+          "start": 59
+        }
+      },
+      "id": "RLZ-YFDXH3",
+      "invariant": "INV-JHB89M",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-L62-CUR-6414-claim-check",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The Curator must personally verify each card sentence against code; a memory line is not proof.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "MEMORY review stays separately sealed/counted and never opens or resets CODE review. Beyond the settings limit the architect or developer authorizes the pass and Manager records it. Curator owns corrected input/body/coherence work; transaction steps and external effects stay with their owners. The installed-build quality/coherence outcome and direct Reviewer handover remain separate from independent acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
+            "content": "sha256:12603cdb9fdd557d132a53152c2c00977cdbbce1026f5363700cfc417ff27abc",
+            "locator": {
+              "end": 126,
+              "kind": "line_range",
+              "start": 94
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
+            "content": "sha256:4e6bf8994a2889ebd2ead57252c36edc23ec9aaf19e314edbdf5f8746ae40f19",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 118
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Current curation keeps Manager transaction ownership separate, requires full intake/repair MQC and the independent fact-check, and records MEMORY review separately. The normal workflow continues through bounded repair and handover without a fresh Manager go, subject to the role’s genuine stops and own-repair escalation. Canonical task edits use the primary tool and scoped correct-write recovery; none of this grants Git, closeout or acceptance authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
+            "content": "sha256:0323f8730d0cf90b4cfe39b29f8fa8c7b993860fdbbe6e86d37169f0fe128ab4",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 14
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Current curation keeps Manager transaction ownership separate, requires full intake/repair MQC and the independent fact-check, and records MEMORY review separately. The normal workflow continues through bounded repair and handover without a fresh Manager go, subject to the role’s genuine stops and own-repair escalation. Canonical task edits use the primary tool and scoped correct-write recovery; none of this grants Git, closeout or acceptance authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
+            "content": "sha256:0323f8730d0cf90b4cfe39b29f8fa8c7b993860fdbbe6e86d37169f0fe128ab4",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 14
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Current curation keeps Manager transaction ownership separate, requires full intake/repair MQC and the independent fact-check, and records MEMORY review separately. The normal workflow continues through bounded repair and handover without a fresh Manager go, subject to the role’s genuine stops and own-repair escalation. Canonical task edits use the primary tool and scoped correct-write recovery; none of this grants Git, closeout or acceptance authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
+            "content": "sha256:0323f8730d0cf90b4cfe39b29f8fa8c7b993860fdbbe6e86d37169f0fe128ab4",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 14
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Restating a family guarantee needs a `changed` family history row with the Curator's effect, the writer fills the family revision, and families are read back and prepared-context locations attributed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f94d71264796f1e10917ef5762dba709b2bbcd06",
+            "content": "sha256:a1fc92afe5ec77be4b48f5fa3d421c047178e66c2e5b71258203a96e8971d707",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 9
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/curator/family-obligations.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Current curation continues from a report to the next authorized step without a new Manager go. It verifies card sentences against source, repairs wrong or missing memory encountered along its way beyond quality-check findings, names each repair and makes no broad sweep. Code changes, requirement decisions and another leaf’s work return to their owner. A correction qualifies every affected false body claim; full checks and the independent fact-check run before handover.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
+            "content": "sha256:2771e8e7dabd805221cae30790e60c04eda4e5d7dc87d1dac6613ef8e3d8e8a5",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 53
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
+            "content": "sha256:0e09b6ab1a83ae89e79e4f82fb2ec9c70dc51cb35f517976b5bd816be5efb4f8",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 86
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "content": "sha256:6876558a17c3bc01d04c1964ce78d2ac92f2ddef5ea7be0610c8117c1b7570ec",
+            "locator": {
+              "end": 101,
+              "kind": "line_range",
+              "start": 101
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "content": "sha256:f898ec3148ecaeb74251252927c4c5e8ce0edfffdb5573f0e13004aec0353bc2",
+            "locator": {
+              "end": 166,
+              "kind": "line_range",
+              "start": 166
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Raw clean curation and the independent second-reader fact-check have separate obligations. The intake sentence names the task-read arguments by their dotted path, `documents[0].taskDocReadArgs`, which is where a first message's projection carries them.\n\nAnchor: `documents[0].taskDocReadArgs`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
+            "content": "sha256:a7f9e4d104d70eeb6cf638b18d79a318957805e2a2a3a631a4b7c71c16d68373",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 39
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
+            "content": "sha256:275b225de5ac6b2d7a15a3ae2a7d46e86a6698ddd550bc41f1687989fd34be94",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 66
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Foundation authoring is regular work in the real Architect task, with its leaf admission, actual enclosure and task/Manager ownership; no incidental code delta is required. Setup reads and reports state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f434607253888f6864767fd1e65d695cb36c0fb7",
+            "content": "sha256:cedcdbd5cf960e1ec08e535abc2e8d739e43963cb736ad9bbcb1faed388ca748",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/curator/repository-foundation.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Current curation keeps Manager transaction ownership separate, requires full intake/repair MQC and the independent fact-check, and records MEMORY review separately. The normal workflow continues through bounded repair and handover without a fresh Manager go, subject to the role’s genuine stops and own-repair escalation. Canonical task edits use the primary tool and scoped correct-write recovery; none of this grants Git, closeout or acceptance authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
+            "content": "sha256:0323f8730d0cf90b4cfe39b29f8fa8c7b993860fdbbe6e86d37169f0fe128ab4",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 14
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Current curation keeps Manager transaction ownership separate, requires full intake/repair MQC and the independent fact-check, and records MEMORY review separately. The normal workflow continues through bounded repair and handover without a fresh Manager go, subject to the role’s genuine stops and own-repair escalation. Canonical task edits use the primary tool and scoped correct-write recovery; none of this grants Git, closeout or acceptance authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
+            "content": "sha256:0323f8730d0cf90b4cfe39b29f8fa8c7b993860fdbbe6e86d37169f0fe128ab4",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 14
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Current curation keeps Manager transaction ownership separate, requires full intake/repair MQC and the independent fact-check, and records MEMORY review separately. The normal workflow continues through bounded repair and handover without a fresh Manager go, subject to the role’s genuine stops and own-repair escalation. Canonical task edits use the primary tool and scoped correct-write recovery; none of this grants Git, closeout or acceptance authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
+            "content": "sha256:0323f8730d0cf90b4cfe39b29f8fa8c7b993860fdbbe6e86d37169f0fe128ab4",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 14
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Current curation keeps Manager transaction ownership separate, requires full intake/repair MQC and the independent fact-check, and records MEMORY review separately. The normal workflow continues through bounded repair and handover without a fresh Manager go, subject to the role’s genuine stops and own-repair escalation. Canonical task edits use the primary tool and scoped correct-write recovery; none of this grants Git, closeout or acceptance authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
+            "content": "sha256:0323f8730d0cf90b4cfe39b29f8fa8c7b993860fdbbe6e86d37169f0fe128ab4",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 14
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Current curation keeps Manager transaction ownership separate, requires full intake/repair MQC and the independent fact-check, and records MEMORY review separately. The normal workflow continues through bounded repair and handover without a fresh Manager go, subject to the role’s genuine stops and own-repair escalation. Canonical task edits use the primary tool and scoped correct-write recovery; none of this grants Git, closeout or acceptance authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
+            "content": "sha256:0323f8730d0cf90b4cfe39b29f8fa8c7b993860fdbbe6e86d37169f0fe128ab4",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 14
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Current curation keeps Manager transaction ownership separate, requires full intake/repair MQC and the independent fact-check, and records MEMORY review separately. The normal workflow continues through bounded repair and handover without a fresh Manager go, subject to the role’s genuine stops and own-repair escalation. Canonical task edits use the primary tool and scoped correct-write recovery; none of this grants Git, closeout or acceptance authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
+            "content": "sha256:0323f8730d0cf90b4cfe39b29f8fa8c7b993860fdbbe6e86d37169f0fe128ab4",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 14
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

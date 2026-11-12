@@ -1,0 +1,31 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Root admission and absent-selector refusal prevent false emptiness; the bounded summary and full selected comparison report prevent false completeness; the separately recorded capture disclosure prevents a falsely side-effect-free reading. These are distinct member duties, not one path-based group."
+  },
+  "guarantee": "For the declared converted knowledge_diff requests, root admission and an absent-selector refusal prevent a falsely empty comparison. The bounded answer names the compared trees, change counts, decision-asking records up to the list bound and the caller-readable report. The report carries the complete selected mechanical comparison produced by the unchanged comparison function, including its existing per-file patch-cut flags; answer-level patch omission is replaced by report location and counts, not presented as a complete inline comparison. Within the recorded capture obligation's scope, loose-object capture remains disclosed. This is a mechanical file comparison, not a semantic verdict or canonical-dataset comparison. A report write refusal names its reason rather than returning a partial comparison.",
+  "id": "FAM-71PC5P",
+  "members": [
+    "INV-JM868W",
+    "INV-PPGGTW",
+    "INV-X23FME"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "K05-family.handoff.json"
+    },
+    "handoffEntry": "fix3-bounded-diff",
+    "leaf": "260928-MIK-L26",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "routes": [
+    "mcp/src/agents_remember/application",
+    "mcp/src/agents_remember/mcp/tools"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Explicit scope and limits of mechanical knowledge diff"
+}

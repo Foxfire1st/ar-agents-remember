@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/tray/TraySent.limitWord.test.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "21920c2aa1c39b56e0515532fd33dcf2a077a252",
+        "content": "sha256:850393bd7a7e980246b41ef50fbd215ac95449ef8df4b709a0adc26af5251c33",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-DS086M",
+      "invariant": "INV-4DQMNE",
+      "origin": {
+        "handoffEntry": "INV-4DQMNE",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "Both forms of the tray's word are asserted here, which is the place the requirement gives them different jobs.",
+      "role": "support"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

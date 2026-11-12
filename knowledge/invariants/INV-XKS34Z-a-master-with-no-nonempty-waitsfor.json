@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The master derivation’s absence result and the dashboard Order block’s absence handling span two files and prevent the page from inventing a structured order that no child declared."
+  },
+  "applicability": "Ordinary masters with no nonempty waitsFor data in their listed tasks.",
+  "conditions": [
+    "No derived Order is supplied and no Order block is drawn."
+  ],
+  "exclusions": [
+    "Suppressing Order merely because one listed child is unreadable when another supplies dependency data.",
+    "Changing the sprint’s explicitly authored graph."
+  ],
+  "id": "INV-XKS34Z",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "L162-freeze-report.md:44-54"
+      ],
+      "path": "L162-curation-wave-9-producer-knowledge.json"
+    },
+    "handoffEntry": "MIK-R128@v1 recovery absent order",
+    "leaf": "260928-MIK-L162",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A master with no nonempty waitsFor data has no derived Order block.",
+  "status": "proposed",
+  "supersedes": []
+}

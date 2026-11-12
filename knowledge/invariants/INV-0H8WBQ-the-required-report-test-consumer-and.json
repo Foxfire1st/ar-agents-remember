@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The governance checks fail when a new test module is absent from the catalogs or when the measured digest disagrees with the source-derived ownership; a stale static pin would either fail the checks or hide a real ownership drift. Both catalogs realize the obligation."
+  },
+  "applicability": "The governed test-evidence catalogs of the repository and the ownership checks that read them.",
+  "conditions": [
+    "The new test module appears as a consumer in the lifecycle catalog and in its lane's population.",
+    "The catalogs' ownership checks read the R51 source-derived ownership; a later change that alters the catalogs is reconciled there, not by a stored static pin."
+  ],
+  "exclusions": [
+    "The superseded static digest pin and the old line position are historical observations, not current facts.",
+    "The historical repin's 19 contracts and 83 artifacts describe the catalog at the moment that pin was measured; they are not an immutable count the catalog must keep.",
+    "This obligation governs catalog registration; it does not name the test module's own behavior (rule 4a owns that)."
+  ],
+  "id": "INV-0H8WBQ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l75-ar/task-reports/role-launch/260928-MIK-L75-worker-0999d37f-1b2a-4c21-a2d8-9a47fece23fd-evidence/repin-and-sandbox-20261006/consumer-row-mutation.json"
+      ],
+      "path": "handoff.json"
+    },
+    "handoffEntry": "MIK-R75@v1-R1-03-root-repin",
+    "leaf": "260928-MIK-L75",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The new report-test module is registered as a consumer in both governed test-evidence catalogs, and the catalogs' ownership is the R51 owner's computed source-derived ownership: no catalog digest is pinned as a current global value, and the superseded static repin with its 19 contracts and 83 artifacts census is historical evidence only.",
+  "status": "proposed",
+  "supersedes": []
+}

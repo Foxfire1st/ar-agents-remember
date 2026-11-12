@@ -1,0 +1,107 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The architect named three real designs for closing the answered-prompt gap and the developer chose between them; the choice binds the interim retry text and MIK-R100's future product delivery."
+  },
+  "alternatives": [
+    {
+      "option": "The product holds a message addressed to a waiting agent and delivers it when the prompt is answered (MIK-R100 rule 4a).",
+      "reason": "D90: 'agree 3rd is the best option. It doesn't rely on me or an agent to execute.'",
+      "status": "chosen"
+    },
+    {
+      "option": "The developer says 'done' in the top chat after he answers the prompt.",
+      "reason": "D90 rejected asking the developer to execute the wake; the developer is not asked to confirm an answered prompt.",
+      "reconsider_when": "The product cannot hold and deliver a message by itself even after MIK-R100's scope is revisited.",
+      "status": "rejected"
+    },
+    {
+      "option": "The top agent checks or polls by itself until the prompt is answered.",
+      "reason": "D90 rejected an agent-executed check; no observer, poller or timing campaign is authorized.",
+      "reconsider_when": "A supported host event reports the prompt state without polling or a developer action.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Until MIK-R100 lands, MIK-R93 rule 8's interim occasion applies: each parent tries its held message once in each turn it takes for any reason, and the top supplies the occasion at its next turn.",
+    "The notice names the child's role, task and agent id and the permission as supplied, or the words 'not supplied'.",
+    "No automatic delivery, observer or permission override is claimed before MIK-R100 lands."
+  ],
+  "context": "A child that waits at a harness permission prompt cannot send or receive; role_message refuses the delivery and nothing tells the sender when the prompt is answered. The architect named three ways to close that gap, and the developer chose on 2026-10-07.",
+  "decider": "The developer; D90 (2026-10-07T10:42:20+02:00), carried as MIK-R93 rule 8 and MIK-R100 rule 4a.",
+  "id": "DEC-W5Y4RP",
+  "links": [
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R93",
+        "packet": "requirements/MIK-R93-v1-a-question-for-the-developer-goes-up-the-chain.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-7FMDAS"
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "id": "MIK-R100",
+        "packet": "requirements/MIK-R100-v1-the-manager-starts-a-leafs-agents-as-a-set.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    },
+    {
+      "alternative": 1,
+      "relation": "reconsider_on",
+      "target": {
+        "id": "MIK-R100",
+        "packet": "requirements/MIK-R100-v1-the-manager-starts-a-leafs-agents-as-a-set.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    },
+    {
+      "alternative": 2,
+      "relation": "reconsider_on",
+      "target": {
+        "id": "MIK-R100",
+        "packet": "requirements/MIK-R100-v1-the-manager-starts-a-leafs-agents-as-a-set.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_each_parent_has_upward_notice_and_unchanged_downward_answer_duties; expected5-summary.json; expected6-summary.json: actual CodexBash permission-pending and visible named waiting chat; initial approval-never restriction preserved separately"
+      ],
+      "path": "notes/files/l93-curation-20261008/handoff.json"
+    },
+    "handoffEntry": "MIK-R93@v1 rules3,4,5,8,9",
+    "leaf": "260928-MIK-L93",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

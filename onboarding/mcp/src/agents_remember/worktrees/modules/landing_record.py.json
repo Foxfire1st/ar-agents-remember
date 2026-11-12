@@ -1,0 +1,204 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/landing_record.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`LandedIntegration` contains strategy, code commit, and optional memory-content commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebbbfe201ea75726d7329b0f6630e0492b26acfe",
+            "content": "sha256:f46a3881ddbfcf3bcca5dc6fc2e6126e4965b6d8371fe02cd53c5c4e658f3f81",
+            "locator": {
+              "kind": "symbol",
+              "name": "LandedIntegration"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`record_landed_integration` writes the same actual outputs for final and checkpoint landing states.\n\nAnchor: `record_landed_integration`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebbbfe201ea75726d7329b0f6630e0492b26acfe",
+            "content": "sha256:e5008e969eaed1fd2ba9adec9aead3037c5aa22d02b71cddd993131f9f1d04a9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ebbbfe201ea75726d7329b0f6630e0492b26acfe",
+            "content": "sha256:7fd8930b7266dacdcc697badbaef5cfc5bd6cb7c8a107ebdb0fb8538c23ab6ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_landed_integration"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The cell, code/memory commit pair, and strategy this function writes are declared here. (`integration_strategy`; `integrated_code_commit`; `integrated_memory_content_commit`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "758a00879439672a413425ed6c40686fe3626bd9",
+            "content": "sha256:2477340ef80d93bba7c3ff4c836c2d2c130a55ecf141029695515e2102a5c0f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "integration_strategy"
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The landed facts this writer now takes as one frozen record. (`LandedIntegration`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebbbfe201ea75726d7329b0f6630e0492b26acfe",
+            "content": "sha256:f46a3881ddbfcf3bcca5dc6fc2e6126e4965b6d8371fe02cd53c5c4e658f3f81",
+            "locator": {
+              "kind": "symbol",
+              "name": "LandedIntegration"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The local final route calls this writer instead of amending the contract inline. (`_integrated_result`)\n\nAnchor: `_integrated_result`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
+            "content": "sha256:27fad559a8b42dd8535ce73c5eba0d269dafc45e5e0cc300ab1fbd175477a587",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
+            "content": "sha256:7e0afbd8d9e318e9847056e83dfe8a8bc0e578ad69976f341a823b0ae146dbc4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_integrated_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The local checkpoint route calls the same writer with `checkpoint=True`. (`_checkpoint_result`)\n\nAnchor: `_checkpoint_result`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
+            "content": "sha256:27fad559a8b42dd8535ce73c5eba0d269dafc45e5e0cc300ab1fbd175477a587",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
+            "content": "sha256:834b50635720414156aad7ce60d8689a5d5c0077188e1d782679d4b640d55ddd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_checkpoint_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The pull-request route calls the same writer. (`record_landed_integration(`)\n\nAnchor: \"record_landed_integration(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "94685bc678c71945d51aad8a4f89fceafe0d1de7",
+            "content": "sha256:e48aaf9bc549d584a0580f17396c05c85eebc18d0944c0c30f91973c40dc8126",
+            "locator": {
+              "kind": "symbol",
+              "name": "updated"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Cleanup refuses until this cell reads completed — which is what keeps a checkpoint from being reclaimed. (`integration_status`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+            "content": "sha256:5b2dabcf533809bbd3c64a97e487ce0364eb6080680d2d7beb4f356a27723862",
+            "locator": {
+              "end": 800,
+              "kind": "line_range",
+              "start": 779
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+            "content": "sha256:4c86521612be2517f89c2085c7b3a5bed24d086752973b41125c1a4071905a2f",
+            "locator": {
+              "end": 680,
+              "kind": "line_range",
+              "start": 680
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The series abandon guard reads the same cell before retiring a master's branch, and since 260831-LOCR-L30 refuses on `checkpointed` as well as `completed`. (`_require_series_task_terminal`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad8ead1570b3768fc61e53a84ee6fdb7e46505dd",
+            "content": "sha256:1e197b6149a772806531bf7f977cd1fab40aec99483c96ca8862b7def50a6cbd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_series_task_terminal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

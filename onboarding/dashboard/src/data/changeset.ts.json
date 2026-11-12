@@ -1,0 +1,192 @@
+{
+  "path": "dashboard/src/data/changeset.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
+        "content": "sha256:208751f674d4ff70e2972a0ee37017c54eec078d8b360d528a42a7ad0ec813c3",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-VVSZSQ",
+      "invariant": "INV-WNHAWD",
+      "origin": {
+        "handoffEntry": "L168-W-R168-03",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "The change-set client takes an owner signal; a completed or retained list is still returned for its own task.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Generation pins, the published generation identity, and the `committed`/`working` leaf-row state the master client threads and mirrors.\n\nAnchor: \"export interface MasterNetPins\"; \"export interface MasterNetGeneration\"; \"export interface MasterChangeset {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
+            "content": "sha256:c87098c78ba81a649a35582f80b2ce8ab8fe1bfaa70cfbda110c34cad0657b48",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 63
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
+            "content": "sha256:3653ba1ba3e72665595c656794db67d919c4c907aba3c304fc3b47ff62a21943",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 69
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
+            "content": "sha256:6e718064d432e3f615529ebd114610cc6182210cdbbaf5888f87bfa3102c05a1",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 76
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "File diffs name which half of the comparison they read",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
+            "content": "sha256:b2f1b1e79a343b046ec3f627073fb977b0b67f72a543096eb08f73e33bc6cd75",
+            "locator": {
+              "kind": "symbol",
+              "name": "FileDiff"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The comparison file diff adds kind and path",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
+            "content": "sha256:de2d059adaf595f3407bd8cbe2e2ce6c2fc3b40ce10177e1898f64135efd289f",
+            "locator": {
+              "kind": "symbol",
+              "name": "comparisonFileDiff"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "List addresses share one URL builder and store-backed peek/load API; the comparison list reuses the task endpoint with a number and no mode.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
+            "content": "sha256:c44d17e6c9922e6c44c6596244d1adc200e72881ff589d449d00e72eeb15d7e5",
+            "locator": {
+              "end": 212,
+              "kind": "line_range",
+              "start": 209
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
+            "content": "sha256:1353e8dabc40db1564c9fa6400aa2fbf25f36ea57c65eb39f91948b700b21c10",
+            "locator": {
+              "end": 217,
+              "kind": "line_range",
+              "start": 214
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Typed result contracts mirror the L3 endpoints' camelCase JSON (changed files, counters, file-diff, master accumulation), and (260921-ICR-L25) the leaf view's `state`/`stateDetail` pair that keeps an unrecorded range apart from a measured-empty one.\n\nAnchor: \"interface TaskChangeset\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
+            "content": "sha256:16f4fc80e1ee01ca1cf10038008ecf98f96f1d6ebf5e3ca1897d329aeb4a8722",
+            "locator": {
+              "kind": "symbol",
+              "name": "stateDetail"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Change-set reads use qs and their own refusal-preserving getChangeSetJson, throwing ReviewTransportError rather than discarding refusal detail.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
+            "content": "sha256:208751f674d4ff70e2972a0ee37017c54eec078d8b360d528a42a7ad0ec813c3",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The vitest contract test pins the endpoint URLs + the `FilesApiError` mapping.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79c1804f7f0534d3aa66a7557d6f5430c3d16f53",
+            "content": "sha256:9d2188188a9e17ea99ff7185c411ebbdd8838d37de170f5f9d9a996e8cc9ad87",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 17
+            },
+            "path": "dashboard/src/data/changeset.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "A comparison answer is the task shape plus identity",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
+            "content": "sha256:1a4ba82be6b143ff3ca51af70f8f89aa90b911011c08e3373efcdc3c5c4baddd",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskChangeset"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

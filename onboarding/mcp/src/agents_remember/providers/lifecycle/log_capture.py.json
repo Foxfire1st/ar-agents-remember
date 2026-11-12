@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/providers/lifecycle/log_capture.py",
+  "realizes": [],
+  "references": {
+    "2": {
+      "note": "`worktree_start_payload` applies `summarize_command_logs` to the worktree start tool response.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23805a3cc7fbb5f58d96584b7b4e3ce915c3eab9",
+            "content": "sha256:2b847500664473175ea92a4548ade845951dba95a788ead27cf7fe91848f8656",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_start_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/worktree.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

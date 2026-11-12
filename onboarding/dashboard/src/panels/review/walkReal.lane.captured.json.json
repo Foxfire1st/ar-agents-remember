@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/walkReal.lane.captured.json",
+  "realizes": [],
+  "references": {
+    "3": {
+      "note": "The current retained JSON input supplies the literal identities, response states and populations summarized above; these are fixture facts, not live project knowledge or fresh execution evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "530e5f1abe11f9e035cae6ee22141cf328fd52cf",
+            "content": "sha256:64f541e833c2b871e459d665f4b0df8e012ca674ae0a0b19edf299054562416c",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

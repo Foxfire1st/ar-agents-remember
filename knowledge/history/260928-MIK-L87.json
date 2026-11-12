@@ -1,0 +1,3221 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L87",
+  "rows": [
+    {
+      "disposition": "no_impact",
+      "id": "ROW-0Q86V6",
+      "items": [
+        "sha256:d5084369d375c89808e08ef2e2dc40edb99f47dc8d17fb549882f84ece80a296"
+      ],
+      "reason": "Reviewed the source change and existing governing contract: the shared hang-guard or justified teardown-marker migration preserves the assertions and product ownership; no additional current-intent text is needed.",
+      "subject": "onboarding:mcp/tests/test_cross_store_lock_order.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-0SZ518",
+      "items": [
+        "sha256:6029c907cb09bef4f10617a340f8f0931b9a4dd9cc8d6b5035b27b1ad6d16dcc"
+      ],
+      "reason": "Reviewed the source change and existing governing contract: the shared hang-guard or justified teardown-marker migration preserves the assertions and product ownership; no additional current-intent text is needed.",
+      "subject": "onboarding:mcp/tests/test_paseo_runtime.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-17T34B",
+      "items": [
+        "sha256:151798a5d27985a50bfa11036c8724f77e0c249b45bcf24e05e746ae92eb3c31"
+      ],
+      "reason": "Reviewed the source change and existing governing contract: the shared hang-guard or justified teardown-marker migration preserves the assertions and product ownership; no additional current-intent text is needed.",
+      "subject": "onboarding:mcp/tests/_control_plane.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1EC5NK",
+      "items": [
+        "sha256:8a759c6087ac94fc52d848e7e045447080bb1230100c0761e654a4b06c3be3d8"
+      ],
+      "reason": "This dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx hunk migrates a test guard, timer observation, helper import or catalog consumer relation; its local mechanism is documented in the affected card and does not introduce or alter a product guarantee.",
+      "subject": "hunk:sha256:8a759c6087ac94fc52d848e7e045447080bb1230100c0761e654a4b06c3be3d8"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-1FCYBR",
+      "items": [
+        "sha256:03405714e20ac1c3892560ae92fb1fe4f0f1f50ef6abeec3b784c28c6629bb53"
+      ],
+      "reason": "Reviewed the source change and existing governing contract: the shared hang-guard or justified teardown-marker migration preserves the assertions and product ownership; no additional current-intent text is needed.",
+      "subject": "onboarding:dashboard/src/panels/session-cockpit/BusPane.test.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1FG7G8",
+      "items": [
+        "sha256:ed7739236c90d27e6f5b368b4b8af0b95a035b5eb7d37c41ae517c1d5d5863d8"
+      ],
+      "reason": "This mcp/tests/evidence-lifecycle.toml hunk migrates a test guard, timer observation, helper import or catalog consumer relation; its local mechanism is documented in the affected card and does not introduce or alter a product guarantee.",
+      "subject": "hunk:sha256:ed7739236c90d27e6f5b368b4b8af0b95a035b5eb7d37c41ae517c1d5d5863d8"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-1RZA16",
+      "items": [
+        "sha256:6f3e630969a71c87bccd86fb62cb4c70153148878543f3423574925a3e80b3c9"
+      ],
+      "reason": "Reviewed the source change and existing governing contract: the shared hang-guard or justified teardown-marker migration preserves the assertions and product ownership; no additional current-intent text is needed.",
+      "subject": "onboarding:overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-270SJ2",
+      "items": [
+        "sha256:7fd5b25f72e9f8c00aca4fd667d89bbbe08ca7cac358b40282e5be50ffcf10ea"
+      ],
+      "reason": "This mcp/tests/test-evidence-lanes.toml hunk migrates a test guard, timer observation, helper import or catalog consumer relation; its local mechanism is documented in the affected card and does not introduce or alter a product guarantee.",
+      "subject": "hunk:sha256:7fd5b25f72e9f8c00aca4fd667d89bbbe08ca7cac358b40282e5be50ffcf10ea"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-285MAT",
+      "items": [
+        "sha256:b4ce1af421e8a0f250277db19bb58d170424a84a38eac0405fc9fe39c1d27012"
+      ],
+      "reason": "Reviewed the source change and existing governing contract: the shared hang-guard or justified teardown-marker migration preserves the assertions and product ownership; no additional current-intent text is needed.",
+      "subject": "onboarding:dashboard/src/panels/review/ReviewSurface.walkPartial.test.tsx"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-2XYP3G",
+      "items": [
+        "sha256:5ecfdb8065f2298cbac645549bc32145a84697081ae3d90a5876a69cbf30f2b8"
+      ],
+      "reason": "Reviewed the source change and existing governing contract: the shared hang-guard or justified teardown-marker migration preserves the assertions and product ownership; no additional current-intent text is needed.",
+      "subject": "onboarding:mcp/tests/test_active_projector_singleflight.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-33BW2F",
+      "items": [
+        "sha256:5f91ae1968997817ecfda4328ecf4852c109e713ded5bf3ca5b86c5b9c11455e"
+      ],
+      "reason": "Reviewed the source change and existing governing contract: the shared hang-guard or justified teardown-marker migration preserves the assertions and product ownership; no additional current-intent text is needed.",
+      "subject": "onboarding:dashboard/src/panels/session-cockpit/conversation/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-366X29",
+      "items": [
+        "sha256:25592ffab67fbb59052d5e3a4881256054f74aa2dbee764621ccae0d6ce461a5"
+      ],
+      "reason": "This mcp/tests/evidence-lifecycle.toml hunk migrates a test guard, timer observation, helper import or catalog consumer relation; its local mechanism is documented in the affected card and does not introduce or alter a product guarantee.",
+      "subject": "hunk:sha256:25592ffab67fbb59052d5e3a4881256054f74aa2dbee764621ccae0d6ce461a5"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3N3Z84",
+      "items": [
+        "sha256:7853dd224121ee68ac29bc2472869a734714b43656ad6a1d5c16abad02efecdf"
+      ],
+      "reason": "This dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx hunk migrates a test guard, timer observation, helper import or catalog consumer relation; its local mechanism is documented in the affected card and does not introduce or alter a product guarantee.",
+      "subject": "hunk:sha256:7853dd224121ee68ac29bc2472869a734714b43656ad6a1d5c16abad02efecdf"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0bfc29cc3d801e4d2f0814a2962831d3ad7192a1",
+            "content": "sha256:4ece35e8e2817118efa21d94b5c6b12840ca24690bc43b71252762f29635cb8a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_index_copy_keeps_the_time_git_reads_from_the_index_file"
+            },
+            "path": "mcp/tests/test_worktree_candidate_capture.py"
+          },
+          "before": {
+            "blob": "1470aa6a4ec9354f45a8ff4cb898e30fbb80adee",
+            "content": "sha256:4ece35e8e2817118efa21d94b5c6b12840ca24690bc43b71252762f29635cb8a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_index_copy_keeps_the_time_git_reads_from_the_index_file"
+            },
+            "path": "mcp/tests/test_worktree_candidate_capture.py"
+          },
+          "id": "PRF-N39F79"
+        },
+        {
+          "after": {
+            "blob": "0bfc29cc3d801e4d2f0814a2962831d3ad7192a1",
+            "content": "sha256:34daaa5536a59eea7f80f5d75e2488529f20507770dc4870aeb57dde4e3ab634",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_same_size_rewrite_in_the_second_of_the_index_write_changes_the_tree"
+            },
+            "path": "mcp/tests/test_worktree_candidate_capture.py"
+          },
+          "before": {
+            "blob": "1470aa6a4ec9354f45a8ff4cb898e30fbb80adee",
+            "content": "sha256:0dcdbf810def91fb01aad3b7c2e929c8748b9a6a806999c5d2b59278f74fad0f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_same_size_rewrite_in_the_second_of_the_index_write_changes_the_tree"
+            },
+            "path": "mcp/tests/test_worktree_candidate_capture.py"
+          },
+          "id": "PRF-P60NFQ"
+        },
+        {
+          "after": {
+            "blob": "fc1eb060cfce0e2d96b18883ee6bd172f05166e1",
+            "content": "sha256:7332a2692c4c246e0f5bf7e5538e552fae27708ee3539bf82050093bd854bfe0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_file_rewritten_while_the_gate_runs_is_never_committed_unjudged"
+            },
+            "path": "mcp/tests/test_knowledge_reopen.py"
+          },
+          "before": {
+            "blob": "a897777c854a4170c0e27151bf6954c22a736ce4",
+            "content": "sha256:65095f3c51eddfe5fe68ea6ccb93890f5a4eaadef69a18aee42137e861fcbe91",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_file_rewritten_while_the_gate_runs_is_never_committed_unjudged"
+            },
+            "path": "mcp/tests/test_knowledge_reopen.py"
+          },
+          "id": "PRF-PYPX5S"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-46JZ96",
+      "items": [
+        "sha256:b83e2a469a0cf13cea209de22ea0c16e48645c74653fba98e263406959f407be"
+      ],
+      "reason": "Preserves the recorded product guarantee. Shared hang guards, actual opportunity witnesses and the canonical index rewrite helper change proof scheduling, not the product outcome; inherited source changes retain the cited enforcement branch.",
+      "revision": 2,
+      "subject": "INV-656CYW"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "69debfc33e84f9ff25e6669f7bd3ecd30eb3fab5",
+            "content": "sha256:8dc43e1a3027e3e54e6c4d335297d3addf82f4b14d3e24198a16d6bb5e4ff7cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unsupported_version_is_named_before_importing_new_stdlib_modules"
+            },
+            "path": "mcp/tests/test_python_runtime_contract.py"
+          },
+          "before": {
+            "blob": "139df3a4f334da8c2e58090358a031c850cd4629",
+            "content": "sha256:35e74be497130959d66b2e54c19662d18ac9122ea975a3e48be6afb515bec439",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unsupported_version_is_named_before_importing_new_stdlib_modules"
+            },
+            "path": "mcp/tests/test_python_runtime_contract.py"
+          },
+          "id": "PRF-2Y3QFT"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-46MNCR",
+      "items": [
+        "sha256:1d73b82dcfb72424224b7a425959b095f940844de7553c42911788a51ff324f6"
+      ],
+      "reason": "Preserves the recorded product guarantee. Shared hang guards, actual opportunity witnesses and the canonical index rewrite helper change proof scheduling, not the product outcome; inherited source changes retain the cited enforcement branch.",
+      "revision": 1,
+      "subject": "INV-Y2SXDZ"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-46VZQW",
+      "items": [
+        "sha256:98574a674fd483a00a3568075e5aa0a10407faec322ade563232db9fa5f308d0"
+      ],
+      "reason": "Reviewed the source change and existing governing contract: the shared hang-guard or justified teardown-marker migration preserves the assertions and product ownership; no additional current-intent text is needed.",
+      "subject": "onboarding:mcp/tests/test_git_command.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-8WCSQ7",
+          "revision": 1
+        },
+        {
+          "id": "INV-9VQQ7W",
+          "revision": 1
+        },
+        {
+          "id": "INV-AJKQV2",
+          "revision": 1
+        },
+        {
+          "id": "INV-F1TY2E",
+          "revision": 1
+        },
+        {
+          "id": "INV-FEB6Y6",
+          "revision": 1
+        },
+        {
+          "id": "INV-GM5MS3",
+          "revision": 1
+        },
+        {
+          "id": "INV-K43DJZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-PRP52X",
+          "revision": 1
+        },
+        {
+          "id": "INV-VPXD65",
+          "revision": 1
+        },
+        {
+          "id": "INV-W41C85",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-4PJ3N5",
+      "items": [
+        "sha256:15ee10efdd9497259dc99699299b38b989e2fa360d03d74dadee3e4d39d289d7"
+      ],
+      "reason": "The exact existing member statements, current revisions and joint guarantee were read together. Test guards and producer-opportunity witnesses preserve their product contracts; source-line anchor maintenance adds no member or guarantee change.",
+      "subject": "FAM-VNK792"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-4Z61E4",
+      "items": [
+        "sha256:192978a8f399be1eb36b9864a197647a99bcb2597b42d86ed5277023eee676ac"
+      ],
+      "reason": "Reviewed the source change and existing governing contract: the shared hang-guard or justified teardown-marker migration preserves the assertions and product ownership; no additional current-intent text is needed.",
+      "subject": "onboarding:mcp/tests/test_serving_observation_loop.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-547G81",
+      "items": [
+        "sha256:0eb1b10ad35753a0654ff93a581c3e23692af23ab6d3c6ed9db91358d5d66298"
+      ],
+      "reason": "This dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx hunk migrates a test guard, timer observation, helper import or catalog consumer relation; its local mechanism is documented in the affected card and does not introduce or alter a product guarantee.",
+      "subject": "hunk:sha256:0eb1b10ad35753a0654ff93a581c3e23692af23ab6d3c6ed9db91358d5d66298"
+    },
+    {
+      "disposition": "changed",
+      "examined": [
+        {
+          "id": "INV-5YPFVJ",
+          "revision": 1
+        },
+        {
+          "id": "INV-KE2ZHT",
+          "revision": 1
+        },
+        {
+          "id": "INV-KJN5GP",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-55RGPT",
+      "items": [],
+      "reason": "The Python suite brackets modules with reset of already-imported owners, enforces a closed state-treatment register, and gives each process private tmux and provider resources with complete cleanup. Together these prevent the recorded ambient and resource collisions from depending on module order or other pytest processes.",
+      "subject": "FAM-3FTGSA"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-5QY532",
+      "items": [
+        "sha256:0e9e9b9bbd198ab2cd0aafc41d506b81cda89b6cc0fb4f1f0ae086f89c42eb23"
+      ],
+      "reason": "Reviewed the source change and existing governing contract: the shared hang-guard or justified teardown-marker migration preserves the assertions and product ownership; no additional current-intent text is needed.",
+      "subject": "onboarding:dashboard/src/panels/session-cockpit/ChatsStageBody.test.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5WXHKN",
+      "items": [
+        "sha256:3f98547e9d64144cee708364f3fa64c00f97b173c1e44ed5fb6ed8fd35bcb191"
+      ],
+      "reason": "This dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx hunk migrates a test guard, timer observation, helper import or catalog consumer relation; its local mechanism is documented in the affected card and does not introduce or alter a product guarantee.",
+      "subject": "hunk:sha256:3f98547e9d64144cee708364f3fa64c00f97b173c1e44ed5fb6ed8fd35bcb191"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-620WEF",
+      "items": [
+        "sha256:a346849630606d5cd386b2d7d032663f3e1fb119fe99a974ab9e0d568a942399"
+      ],
+      "reason": "Reviewed the source change and existing governing contract: the shared hang-guard or justified teardown-marker migration preserves the assertions and product ownership; no additional current-intent text is needed.",
+      "subject": "onboarding:dashboard/src/panels/session-cockpit/conversation/ConversationSurface.test.tsx"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "fc1eb060cfce0e2d96b18883ee6bd172f05166e1",
+            "content": "sha256:7332a2692c4c246e0f5bf7e5538e552fae27708ee3539bf82050093bd854bfe0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_file_rewritten_while_the_gate_runs_is_never_committed_unjudged"
+            },
+            "path": "mcp/tests/test_knowledge_reopen.py"
+          },
+          "before": {
+            "blob": "a897777c854a4170c0e27151bf6954c22a736ce4",
+            "content": "sha256:65095f3c51eddfe5fe68ea6ccb93890f5a4eaadef69a18aee42137e861fcbe91",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_file_rewritten_while_the_gate_runs_is_never_committed_unjudged"
+            },
+            "path": "mcp/tests/test_knowledge_reopen.py"
+          },
+          "id": "PRF-5DW4E9"
+        },
+        {
+          "after": {
+            "blob": "fc1eb060cfce0e2d96b18883ee6bd172f05166e1",
+            "content": "sha256:bebf826c21e4fd91d25a1e81754ae397cf3aa7695df206ff10845047e0ea21df",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_closeouts_own_writes_cannot_trip_its_gate"
+            },
+            "path": "mcp/tests/test_knowledge_reopen.py"
+          },
+          "before": {
+            "blob": "a897777c854a4170c0e27151bf6954c22a736ce4",
+            "content": "sha256:bebf826c21e4fd91d25a1e81754ae397cf3aa7695df206ff10845047e0ea21df",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_closeouts_own_writes_cannot_trip_its_gate"
+            },
+            "path": "mcp/tests/test_knowledge_reopen.py"
+          },
+          "id": "PRF-Q8BE7Z"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-645BRV",
+      "items": [
+        "sha256:bdf8ea693c3f1c8f910e318a06bf30827444c9aa1c7360449f4a0cce7edc027c"
+      ],
+      "reason": "Preserves the recorded product guarantee. Shared hang guards, actual opportunity witnesses and the canonical index rewrite helper change proof scheduling, not the product outcome; inherited source changes retain the cited enforcement branch.",
+      "revision": 1,
+      "subject": "INV-49E649"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6DVCJD",
+      "items": [
+        "sha256:5c5ec1712c8d8f01472de3f4a4aa0f1d904798981440d151affdbd5aadf8a0c7"
+      ],
+      "reason": "This dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx hunk migrates a test guard, timer observation, helper import or catalog consumer relation; its local mechanism is documented in the affected card and does not introduce or alter a product guarantee.",
+      "subject": "hunk:sha256:5c5ec1712c8d8f01472de3f4a4aa0f1d904798981440d151affdbd5aadf8a0c7"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R87",
+          "packet": "requirements/MIK-R87-v1-the-test-suites-do-not-depend-on-machine-load.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "e397069f3231d7d911fc12a2979717eac26c7325",
+            "content": "sha256:9d63e36ce56e7b59b7775386d903d71553ef0e2e333db646e9ef3724ade05eb8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_timing_scan_reports_patterns"
+            },
+            "path": "mcp/tests/test_suite_load_independence.py"
+          },
+          "before": "absent",
+          "id": "PRF-9D69PZ"
+        },
+        {
+          "after": {
+            "blob": "e397069f3231d7d911fc12a2979717eac26c7325",
+            "content": "sha256:9bbfb09d0b16b067a99d7a25949ea7efe69ba7382ea8eff5a2f51f14ba396695",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_python_waits_are_load_independent"
+            },
+            "path": "mcp/tests/test_suite_load_independence.py"
+          },
+          "before": "absent",
+          "id": "PRF-X4T1BQ"
+        },
+        {
+          "after": {
+            "blob": "e397069f3231d7d911fc12a2979717eac26c7325",
+            "content": "sha256:ba9ffbc2313d303e00e86760981dc550833fc7470125edcf633d89c60cecdb64",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_suite_load_independence.py"
+          },
+          "before": "absent",
+          "id": "RLZ-JPKMED"
+        },
+        {
+          "after": {
+            "blob": "ce6332e5f3e2af96e6412b4b2b47358e425d092e",
+            "content": "sha256:bfb986f19d961531c930783cdf41fd740db301a58487b75e57db9ce99ff4d655",
+            "locator": {
+              "kind": "symbol",
+              "name": "scan"
+            },
+            "path": "dashboard/src/test/loadIndependence.test.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-K87BJE"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "introduce",
+      "id": "ROW-6P4ADW",
+      "items": [],
+      "reason": "Introduces the scoped test-infrastructure obligation under the approved packet while preserving product behavior.",
+      "revision": 1,
+      "subject": "INV-5VQQ6S"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R87",
+          "packet": "requirements/MIK-R87-v1-the-test-suites-do-not-depend-on-machine-load.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "251f20fd78b6afb13afca5a101943ed52516e3d5",
+            "content": "sha256:f7aa08ab6966f9aa9b5c76338f508e2673c3bc73e79ccf836bd829412c7f000e",
+            "locator": {
+              "kind": "symbol",
+              "name": "GlobalStateLeakDetectionTests.test_reset_stops_the_ambient_heartbeat_and_clears_the_singleton"
+            },
+            "path": "mcp/tests/test_global_state_isolation.py"
+          },
+          "before": "absent",
+          "id": "PRF-Q64NXX"
+        },
+        {
+          "after": {
+            "blob": "010f854fb6bc835d89a1c480867a26fff0ec9943",
+            "content": "sha256:e1673552694e815f127e6792050708dd5f5c2e12230709353ebda3bc0725fa54",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reset_ambient"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+          },
+          "before": "absent",
+          "id": "RLZ-1RH2BY"
+        },
+        {
+          "after": {
+            "blob": "5df318e710939f0e89d6ca2d08598cd1084cca3d",
+            "content": "sha256:86da6bbe0013022c34b2ebcb04c9f92bf3148dd69c895c7e6277a5054e352b01",
+            "locator": {
+              "kind": "symbol",
+              "name": "reset_process_state_at_module_boundaries"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/pytest_bootstrap.py"
+          },
+          "before": "absent",
+          "id": "RLZ-N4E7JJ"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "introduce",
+      "id": "ROW-70JAAS",
+      "items": [],
+      "reason": "Introduces the scoped test-infrastructure obligation under the approved packet while preserving product behavior.",
+      "revision": 1,
+      "subject": "INV-5YPFVJ"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-7C8FJQ",
+      "items": [
+        "sha256:cd1b0ac3f1f6894430af1b97b76084cbaa61efc246686ee37c435708da1907a7"
+      ],
+      "reason": "Reviewed the source change and existing governing contract: the shared hang-guard or justified teardown-marker migration preserves the assertions and product ownership; no additional current-intent text is needed.",
+      "subject": "onboarding:mcp/tests/test_harness_control_claude_stream_1.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-7CRX8J",
+      "items": [
+        "sha256:6e6e2be9e99f7bf5cbbf290b7028023f0e5faa206540035cfe6d4fb3423b6d83"
+      ],
+      "reason": "Reviewed the source change and existing governing contract: the shared hang-guard or justified teardown-marker migration preserves the assertions and product ownership; no additional current-intent text is needed.",
+      "subject": "onboarding:mcp/tests/test_pi_rpc_adapter_ops_2.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7HH0A8",
+      "items": [
+        "sha256:3cb2948265697b2eaf5cda2ae38b9afa4a27f1583f388fd8a81b6edaed4af06b"
+      ],
+      "reason": "This mcp/tests/evidence-lifecycle.toml hunk migrates a test guard, timer observation, helper import or catalog consumer relation; its local mechanism is documented in the affected card and does not introduce or alter a product guarantee.",
+      "subject": "hunk:sha256:3cb2948265697b2eaf5cda2ae38b9afa4a27f1583f388fd8a81b6edaed4af06b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7JJJBX",
+      "items": [
+        "sha256:23e46c0f745bc7f41ef30de1d91553eca1599888b06f194476af4a557c2d45ec"
+      ],
+      "reason": "This mcp/tests/conftest.py hunk migrates a test guard, timer observation, helper import or catalog consumer relation; its local mechanism is documented in the affected card and does not introduce or alter a product guarantee.",
+      "subject": "hunk:sha256:23e46c0f745bc7f41ef30de1d91553eca1599888b06f194476af4a557c2d45ec"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a5df1145ebc5ff4fb428c088b9a63257dc148428",
+            "content": "sha256:c5962a53a527cbcd050fdf17aeeea129b955854e807395b3323dcf91f00d312d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_debt_write_failure_recovers_from_terminal_truth_after_restart"
+            },
+            "path": "mcp/tests/test_leaf_agent_archive.py"
+          },
+          "before": {
+            "blob": "56b2cea7b8a7d42295c98fc16f71e6ae01915499",
+            "content": "sha256:c5962a53a527cbcd050fdf17aeeea129b955854e807395b3323dcf91f00d312d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_debt_write_failure_recovers_from_terminal_truth_after_restart"
+            },
+            "path": "mcp/tests/test_leaf_agent_archive.py"
+          },
+          "id": "PRF-3HME1A"
+        },
+        {
+          "after": {
+            "blob": "a5df1145ebc5ff4fb428c088b9a63257dc148428",
+            "content": "sha256:3104db52415f800a0de1917b92b9b8118a1d8a10a2f193f9d0a9ee9913bd7b2c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_existing_observer_archives_terminal_debt_without_a_person_calling_recovery"
+            },
+            "path": "mcp/tests/test_leaf_agent_archive.py"
+          },
+          "before": {
+            "blob": "56b2cea7b8a7d42295c98fc16f71e6ae01915499",
+            "content": "sha256:af951ce93367c88ec0584d1f3b5f3265cdbf863070744a96983e303dd4a7455f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_existing_observer_archives_terminal_debt_without_a_person_calling_recovery"
+            },
+            "path": "mcp/tests/test_leaf_agent_archive.py"
+          },
+          "id": "PRF-Q475Y9"
+        },
+        {
+          "after": {
+            "blob": "a5df1145ebc5ff4fb428c088b9a63257dc148428",
+            "content": "sha256:be1f8cd8a5ed11c91fe99e39ba7a0326e9520a488daa4bb66e8e3a0d45d93e20",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_host_budget_and_receipt_settlement_stay_bounded_at_two_scales"
+            },
+            "path": "mcp/tests/test_leaf_agent_archive.py"
+          },
+          "before": {
+            "blob": "56b2cea7b8a7d42295c98fc16f71e6ae01915499",
+            "content": "sha256:be1f8cd8a5ed11c91fe99e39ba7a0326e9520a488daa4bb66e8e3a0d45d93e20",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_host_budget_and_receipt_settlement_stay_bounded_at_two_scales"
+            },
+            "path": "mcp/tests/test_leaf_agent_archive.py"
+          },
+          "id": "PRF-QVZP3Y"
+        },
+        {
+          "after": {
+            "blob": "a5df1145ebc5ff4fb428c088b9a63257dc148428",
+            "content": "sha256:aefb84456fcb89d52f52aa0a2b6f1f255edee581fff37a129e9c4c5fe755d3c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_predecessor_debt_survives_host_failure_and_automatic_recovery_advances_it"
+            },
+            "path": "mcp/tests/test_leaf_agent_archive.py"
+          },
+          "before": {
+            "blob": "56b2cea7b8a7d42295c98fc16f71e6ae01915499",
+            "content": "sha256:aefb84456fcb89d52f52aa0a2b6f1f255edee581fff37a129e9c4c5fe755d3c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_predecessor_debt_survives_host_failure_and_automatic_recovery_advances_it"
+            },
+            "path": "mcp/tests/test_leaf_agent_archive.py"
+          },
+          "id": "PRF-RZ808W"
+        },
+        {
+          "after": {
+            "blob": "c317b932a6967f953c35276901a817463e135f02",
+            "content": "sha256:d5220185ab90d8d914ef5886270ca75dfad669f4cd11fb752658d62eefa21eae",
+            "locator": {
+              "kind": "symbol",
+              "name": "bridge_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.py"
+          },
+          "before": {
+            "blob": "3aa3272a9a3f40526d122a20b9cc39d4ebe7f834",
+            "content": "sha256:523423b6acb1f6d4b507963d81229d2604ac91ed196f2a39422771da75dad868",
+            "locator": {
+              "kind": "symbol",
+              "name": "bridge_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.py"
+          },
+          "id": "RLZ-PMZND5"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-7QB2WJ",
+      "items": [
+        "sha256:513cfd93bd9f72b71c8366875a16b8bcf4a800c14ef70364f9218f48dc2de04c",
+        "sha256:dccd9c0e6338cff5035c29693719814b7e5b8b4a634324b5abcdef752274a84e"
+      ],
+      "reason": "Preserves the recorded product guarantee. Shared hang guards, actual opportunity witnesses and the canonical index rewrite helper change proof scheduling, not the product outcome; inherited source changes retain the cited enforcement branch.",
+      "revision": 1,
+      "subject": "INV-K43DJZ"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7X9TPE",
+      "items": [
+        "sha256:30098aafb1609fc764e53c05ffd3ed7320f9d9ed566d28f0233b1637169ca02a"
+      ],
+      "reason": "This dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx hunk migrates a test guard, timer observation, helper import or catalog consumer relation; its local mechanism is documented in the affected card and does not introduce or alter a product guarantee.",
+      "subject": "hunk:sha256:30098aafb1609fc764e53c05ffd3ed7320f9d9ed566d28f0233b1637169ca02a"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "196cde85317b71ad019bb7d1f67ada28a96298c7",
+            "content": "sha256:8299e745668553275bac69b234ee69d544b954b32bdf6a94f88459c5810d3fe2",
+            "locator": {
+              "end": 146,
+              "kind": "line_range",
+              "start": 59
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.walkUnavailable.test.tsx"
+          },
+          "before": {
+            "blob": "5bdfad9d86359e2946e349fae08ca889c1d603ab",
+            "content": "sha256:6e829535c3056090b931c381d3ccde6cb817390ef173281135e23dd64c9bcb14",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 60
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.walkUnavailable.test.tsx"
+          },
+          "id": "RLZ-F9DWNZ"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-83C19F",
+      "items": [
+        "sha256:419781924f87701fc32c9907757f665a090ffed042233c3c758751f0400fee99"
+      ],
+      "reason": "Preserves the recorded product guarantee. Shared hang guards, actual opportunity witnesses and the canonical index rewrite helper change proof scheduling, not the product outcome; inherited source changes retain the cited enforcement branch.",
+      "revision": 1,
+      "subject": "INV-BMFR2T"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "319eca1f8e7d80d5a6106c889b218c496d204ab8",
+            "content": "sha256:536a62a5a3d836fc36d852da801119f7b7a10323545636c560f5768f966c8309",
+            "locator": {
+              "kind": "symbol",
+              "name": "offer"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx"
+          },
+          "before": {
+            "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
+            "content": "sha256:5892fb80a23eb29d9d356982d6793f35b69281b7a3542444f19f1c9a9e3b378a",
+            "locator": {
+              "kind": "symbol",
+              "name": "offer"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx"
+          },
+          "id": "PRF-914WVC"
+        },
+        {
+          "after": {
+            "blob": "319eca1f8e7d80d5a6106c889b218c496d204ab8",
+            "content": "sha256:19711165baf68f525bf6de693f7ad2c025d344d72bc1a2e4ad2a7d966ff419d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "other"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx"
+          },
+          "before": {
+            "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
+            "content": "sha256:19711165baf68f525bf6de693f7ad2c025d344d72bc1a2e4ad2a7d966ff419d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "other"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx"
+          },
+          "id": "PRF-CYYXDH"
+        },
+        {
+          "after": {
+            "blob": "319eca1f8e7d80d5a6106c889b218c496d204ab8",
+            "content": "sha256:ecf0ddf2b4f662e41c6e25694d0e91074aac979713a53f51d25d5d4e4e449921",
+            "locator": {
+              "kind": "symbol",
+              "name": "all"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx"
+          },
+          "before": {
+            "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
+            "content": "sha256:ecf0ddf2b4f662e41c6e25694d0e91074aac979713a53f51d25d5d4e4e449921",
+            "locator": {
+              "kind": "symbol",
+              "name": "all"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx"
+          },
+          "id": "PRF-E6WSQM"
+        },
+        {
+          "after": {
+            "blob": "33733dedbf46e8e4767ea854f6b545ba419a0be7",
+            "content": "sha256:a1cfaede49f8f4f820083d70a85b19b405ec3090ad8343524fe59c6299146148",
+            "locator": {
+              "kind": "symbol",
+              "name": "rows"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.walk.test.tsx"
+          },
+          "before": {
+            "blob": "c03d822684615321e5d3468512cebb7ef546913c",
+            "content": "sha256:a1cfaede49f8f4f820083d70a85b19b405ec3090ad8343524fe59c6299146148",
+            "locator": {
+              "kind": "symbol",
+              "name": "rows"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.walk.test.tsx"
+          },
+          "id": "PRF-EWNQ4E"
+        },
+        {
+          "after": {
+            "blob": "319eca1f8e7d80d5a6106c889b218c496d204ab8",
+            "content": "sha256:a51ce9d9c89c789f522997a9e4e06249e568e69d091f4365063e217e5646a9e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "mark"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx"
+          },
+          "before": {
+            "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
+            "content": "sha256:4d472fdad43aa409bf3fea7d10d63d5e5c32d9451a497db23a91a8a33719e229",
+            "locator": {
+              "kind": "symbol",
+              "name": "mark"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx"
+          },
+          "id": "PRF-P372CY"
+        },
+        {
+          "after": {
+            "blob": "319eca1f8e7d80d5a6106c889b218c496d204ab8",
+            "content": "sha256:ba9bff7f15ac08d1879ae9700e5079031561ba3cb9bc8f0010aae1f6b16707e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "initial"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx"
+          },
+          "before": {
+            "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
+            "content": "sha256:ba9bff7f15ac08d1879ae9700e5079031561ba3cb9bc8f0010aae1f6b16707e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "initial"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx"
+          },
+          "id": "PRF-RX5N2X"
+        },
+        {
+          "after": {
+            "blob": "319eca1f8e7d80d5a6106c889b218c496d204ab8",
+            "content": "sha256:8704e60bf72cc159b310bdf55dbc6d27173df6e79824ab2e35eb4ce9323766ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "stubbed"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx"
+          },
+          "before": {
+            "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
+            "content": "sha256:8704e60bf72cc159b310bdf55dbc6d27173df6e79824ab2e35eb4ce9323766ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "stubbed"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx"
+          },
+          "id": "PRF-V5BWKQ"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-8DGYSH",
+      "items": [
+        "sha256:2f77e8b87c76ee23fff02efe3fb89051f13625e17161629502fddc931e13c82f"
+      ],
+      "reason": "Preserves the recorded product guarantee. Shared hang guards, actual opportunity witnesses and the canonical index rewrite helper change proof scheduling, not the product outcome; inherited source changes retain the cited enforcement branch.",
+      "revision": 1,
+      "subject": "INV-9ZKYWQ"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8ZCEBN",
+      "items": [
+        "sha256:650506b927f52f7d1323d67809dc88e4cdd02cadbb6af20dd8672e557df65b5f"
+      ],
+      "reason": "This dashboard/src/panels/review/ReviewSurface.walkStore.test.tsx hunk migrates a test guard, timer observation, helper import or catalog consumer relation; its local mechanism is documented in the affected card and does not introduce or alter a product guarantee.",
+      "subject": "hunk:sha256:650506b927f52f7d1323d67809dc88e4cdd02cadbb6af20dd8672e557df65b5f"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9a206d3d815288a7126484f8f1ed32c00a634033",
+            "content": "sha256:e29ba003cb25f1db27fe31175afb1aa5dc9c2f4e58c4cd274653c99d4f80c0fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "run"
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "before": {
+            "blob": "2066b4ba787438d5c04bc970fcd0310977657ae1",
+            "content": "sha256:b9fd0737c24359b29ad4027d5354d830677560bc125ea74dda9b6b1bb09cdb17",
+            "locator": {
+              "kind": "symbol",
+              "name": "run"
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "id": "RLZ-4SKB8D"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-92DAFR",
+      "items": [
+        "sha256:a85b9f11afe218a494664ff8f348669ff353f385e916df850b373e9c1ef535df"
+      ],
+      "reason": "Preserves the recorded product guarantee. Shared hang guards, actual opportunity witnesses and the canonical index rewrite helper change proof scheduling, not the product outcome; inherited source changes retain the cited enforcement branch.",
+      "revision": 1,
+      "subject": "INV-F1TY2E"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-98V6SB",
+      "items": [
+        "sha256:55d468aa401f556d41c3b78a3cae0063777d95e3317f10cf3baefaa31a279bb4"
+      ],
+      "reason": "This mcp/tests/evidence-lifecycle.toml hunk migrates a test guard, timer observation, helper import or catalog consumer relation; its local mechanism is documented in the affected card and does not introduce or alter a product guarantee.",
+      "subject": "hunk:sha256:55d468aa401f556d41c3b78a3cae0063777d95e3317f10cf3baefaa31a279bb4"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R87",
+          "packet": "requirements/MIK-R87-v1-the-test-suites-do-not-depend-on-machine-load.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "4527c1a55df306503a92176f7027d7c5a4eb30e0",
+            "content": "sha256:9a8a937dcaf98d7bfc39e36f29c74601d23b9730d1d8d3fd2f26fdcca130b93a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.navigation.test.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-21J3Q6"
+        },
+        {
+          "after": {
+            "blob": "812f2b24ae68e5e0cd0b2d62537cdac763915647",
+            "content": "sha256:ffa863bc0811d502b8b27155ac158522845fea743cd2b0ef2ffc54523aa80529",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.entryEconomy.test.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-MSNGXE"
+        },
+        {
+          "after": {
+            "blob": "801a35bf384d07142f14290233de7a04233345ec",
+            "content": "sha256:a0c9340e5003f962132a9a4c0a456c4d96c8ac0ecb543c6906d2ae51e5280879",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/conversation/store.test.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-RYPW8P"
+        },
+        {
+          "after": {
+            "blob": "917a3d1a7e971d992fe262076a740353f4cded80",
+            "content": "sha256:d5f8990b0b818900350f46efe0e71d0ddd745badc972e0130da5328d81c2e848",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/SessionComposer.test.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-Z2N5K7"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "introduce",
+      "id": "ROW-9FEZ88",
+      "items": [],
+      "reason": "Introduces the scoped test-infrastructure obligation under the approved packet while preserving product behavior. Curator memory fix verification corrects realization descriptions under sealed L87-M1-DASH-01/02/03 and L87-M1-PY-01 against the existing code; obligation and revision, realization identities, origins and complete covers are retained.",
+      "revision": 1,
+      "subject": "INV-WZC60Z"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9JEM5D",
+      "items": [
+        "sha256:45802580210946a889bc592222bfee7ba0798ff4f64b991c7ade7c9a2881b553"
+      ],
+      "reason": "This dashboard/src/panels/review/ReviewSurface.walkStore.test.tsx hunk migrates a test guard, timer observation, helper import or catalog consumer relation; its local mechanism is documented in the affected card and does not introduce or alter a product guarantee.",
+      "subject": "hunk:sha256:45802580210946a889bc592222bfee7ba0798ff4f64b991c7ade7c9a2881b553"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-9VTAA9",
+      "items": [
+        "sha256:f3b4e382e43dc1f114bbf150e17f54f505093f6f6ee31a35856cf53243da3cda"
+      ],
+      "reason": "Reviewed the source change and existing governing contract: the shared hang-guard or justified teardown-marker migration preserves the assertions and product ownership; no additional current-intent text is needed.",
+      "subject": "onboarding:mcp/tests/test_conversation_control_queue.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-AFGPY8",
+      "items": [
+        "sha256:e8d47a7844496290129362c9515a1a1fb31f2d1ba0853972628ff57f28a6add6"
+      ],
+      "reason": "This dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx hunk migrates a test guard, timer observation, helper import or catalog consumer relation; its local mechanism is documented in the affected card and does not introduce or alter a product guarantee.",
+      "subject": "hunk:sha256:e8d47a7844496290129362c9515a1a1fb31f2d1ba0853972628ff57f28a6add6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-AQPQG6",
+      "items": [
+        "sha256:fcbaab14c45cef5158896a925e72f0f56bd2074d379077c2d3abb5710bbf326f"
+      ],
+      "reason": "This mcp/tests/conftest.py hunk migrates a test guard, timer observation, helper import or catalog consumer relation; its local mechanism is documented in the affected card and does not introduce or alter a product guarantee.",
+      "subject": "hunk:sha256:fcbaab14c45cef5158896a925e72f0f56bd2074d379077c2d3abb5710bbf326f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-AZDAG8",
+      "items": [
+        "sha256:ecf5e0e7b78b9c53e639cbcb96d24c64df8744eb8783721c8cca6ca9ea2157c0"
+      ],
+      "reason": "This mcp/tests/conftest.py hunk migrates a test guard, timer observation, helper import or catalog consumer relation; its local mechanism is documented in the affected card and does not introduce or alter a product guarantee.",
+      "subject": "hunk:sha256:ecf5e0e7b78b9c53e639cbcb96d24c64df8744eb8783721c8cca6ca9ea2157c0"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-B5RB4S",
+      "items": [
+        "sha256:abc9298513ba272dc23ed9b86a3a9e7d2b70801921b12f5b56d939757ec11489"
+      ],
+      "reason": "Reviewed the source change and existing governing contract: the shared hang-guard or justified teardown-marker migration preserves the assertions and product ownership; no additional current-intent text is needed.",
+      "subject": "onboarding:mcp/tests/test_paseo_start.py"
+    },
+    {
+      "disposition": "changed",
+      "examined": [
+        {
+          "id": "INV-48C3DS",
+          "revision": 1
+        },
+        {
+          "id": "INV-5VQQ6S",
+          "revision": 1
+        },
+        {
+          "id": "INV-WZAMFR",
+          "revision": 1
+        },
+        {
+          "id": "INV-WZC60Z",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-BGY6VA",
+      "items": [],
+      "reason": "Introduces the authored joint observation guarantee; its exact unchanged members realize it under dashboard and mcp/tests. The testing-support directory belongs to the separate isolation and wait obligations, so it is removed from this family route set to satisfy Non-empty.",
+      "subject": "FAM-98S8TF"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BWHD7P",
+      "items": [
+        "sha256:5e3266fbcdbf6437e1a194e25902bbefdfad4dfd6ffa40edf1aa21aac05bd9d4"
+      ],
+      "reason": "This dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx hunk migrates a test guard, timer observation, helper import or catalog consumer relation; its local mechanism is documented in the affected card and does not introduce or alter a product guarantee.",
+      "subject": "hunk:sha256:5e3266fbcdbf6437e1a194e25902bbefdfad4dfd6ffa40edf1aa21aac05bd9d4"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-9ZKYWQ",
+          "revision": 1
+        },
+        {
+          "id": "INV-BMFR2T",
+          "revision": 1
+        },
+        {
+          "id": "INV-BS5PFE",
+          "revision": 1
+        },
+        {
+          "id": "INV-CK3PTB",
+          "revision": 1
+        },
+        {
+          "id": "INV-MWCCQM",
+          "revision": 1
+        },
+        {
+          "id": "INV-NSG0D4",
+          "revision": 1
+        },
+        {
+          "id": "INV-QZC5AZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-T1ZHP5",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-CBBZJG",
+      "items": [
+        "sha256:68987106f57df1f7fec15c2bc186f983f8a687f1b57326a8316e7a6fa6725711"
+      ],
+      "reason": "The exact existing member statements, current revisions and joint guarantee were read together. Test guards and producer-opportunity witnesses preserve their product contracts; source-line anchor maintenance adds no member or guarantee change.",
+      "subject": "FAM-68H10P"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CDGF09",
+      "items": [
+        "sha256:5a5e5e5e321a050eb76d67274ef1f93a5509f5d627a2fb42b2c1da68f772133c"
+      ],
+      "reason": "Reviewed the source change and existing governing contract: the shared hang-guard or justified teardown-marker migration preserves the assertions and product ownership; no additional current-intent text is needed.",
+      "subject": "onboarding:dashboard/src/panels/session-cockpit/sessions-view/stageSurface.test.tsx"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CDY8E2",
+      "items": [
+        "sha256:622ee4086e608f709332ceedb32804288f06edae95c3be46cfca96248a6648d6"
+      ],
+      "reason": "Reviewed the source change and existing governing contract: the shared hang-guard or justified teardown-marker migration preserves the assertions and product ownership; no additional current-intent text is needed.",
+      "subject": "onboarding:mcp/tests/test_codex_app_server_adapter_reconnect.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CNB0M1",
+      "items": [
+        "sha256:64c365747c69f1266fe05b16be7be1257a0a9db15892360cd55d68f515ab2a6a"
+      ],
+      "reason": "Reviewed the source change and existing governing contract: the shared hang-guard or justified teardown-marker migration preserves the assertions and product ownership; no additional current-intent text is needed.",
+      "subject": "onboarding:mcp/tests/test_codex_app_server_adapter.py"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R87",
+          "packet": "requirements/MIK-R87-v1-the-test-suites-do-not-depend-on-machine-load.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "ee4531a584965fc1575c59466193b4aaf30c56ab",
+            "content": "sha256:ebc8e54fd064ba9c1b4253e5d9b8023d4483a08c35754b2489a6eceb8680fb2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_dismissal_is_not_lost_to_a_prune_sweeping_on_another_thread"
+            },
+            "path": "mcp/tests/test_durable_store_contract.py"
+          },
+          "before": "absent",
+          "id": "PRF-CCFNGD"
+        },
+        {
+          "after": {
+            "blob": "388e9fadead831b814783a7bd7841862b17286a6",
+            "content": "sha256:a9a1dab64ce12b8a0b32699555065fc19b7e6e2ff44a4c071f5fce18836de620",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.triageMarkers.test.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-90D2YS"
+        },
+        {
+          "after": {
+            "blob": "e6ef0e66a5d43b4493a01a7055d378e67dd8800a",
+            "content": "sha256:f71e34ed53ae95f163ca3ea17f6119acf36b07333055555730fba870efb9acff",
+            "locator": {
+              "kind": "symbol",
+              "name": "_BlockingPort"
+            },
+            "path": "mcp/tests/conversation_open_test_support.py"
+          },
+          "before": "absent",
+          "id": "RLZ-AJ77QR"
+        },
+        {
+          "after": {
+            "blob": "7c0ee7d6761555dd18780788ef43832cdd742902",
+            "content": "sha256:b8be2376c3ca106749ef32120be3e6d54dcce9b0cdc6803765285a46c94e475b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.test.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-C4J6EP"
+        },
+        {
+          "after": {
+            "blob": "ee4531a584965fc1575c59466193b4aaf30c56ab",
+            "content": "sha256:a4f1ced4393900704a6f186c6760cf643db0ac9d0bce55e18d8be13609189531",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observe_contended_mutex"
+            },
+            "path": "mcp/tests/test_durable_store_contract.py"
+          },
+          "before": "absent",
+          "id": "RLZ-NAG261"
+        },
+        {
+          "after": {
+            "blob": "8d52789e17c7c0d2924220087aa761b024a31282",
+            "content": "sha256:49429fe74e4cae9451d7e65a78ca5b014ac36e34c0494f1bf76a2e1820f856d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Harness.read_completed_pass"
+            },
+            "path": "mcp/tests/eve_adapter_event_test_support.py"
+          },
+          "before": "absent",
+          "id": "RLZ-V5XGVT"
+        },
+        {
+          "after": {
+            "blob": "317e4539a4945706ae96b01891449a4dd8b125ff",
+            "content": "sha256:4fe71a402c116ee8ebc0459412a327881b67dac552f014ed7da45fcda064801a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/IntentMarkers.test.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-VA0R5H"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "introduce",
+      "id": "ROW-CP503M",
+      "items": [],
+      "reason": "Introduces the scoped test-infrastructure obligation under the approved packet while preserving product behavior. Curator memory fix verification corrects realization descriptions under sealed L87-M1-DASH-01/02/03 and L87-M1-PY-01 against the existing code; obligation and revision, realization identities, origins and complete covers are retained.",
+      "revision": 1,
+      "subject": "INV-WZAMFR"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CRTXN5",
+      "items": [
+        "sha256:7ceb576f86aad5fbda6e06aabcb230b75958c7a38a403480c13a805af0578239"
+      ],
+      "reason": "Reviewed the source change and existing governing contract: the shared hang-guard or justified teardown-marker migration preserves the assertions and product ownership; no additional current-intent text is needed.",
+      "subject": "onboarding:mcp/tests/test_paseo_role_bridge.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DET0YK",
+      "items": [
+        "sha256:6c3cf48ca36a7886cf49ed7191f720bc2abd4692a3f382b4a8a278e363f88f61"
+      ],
+      "reason": "This dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx hunk migrates a test guard, timer observation, helper import or catalog consumer relation; its local mechanism is documented in the affected card and does not introduce or alter a product guarantee.",
+      "subject": "hunk:sha256:6c3cf48ca36a7886cf49ed7191f720bc2abd4692a3f382b4a8a278e363f88f61"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DH88A2",
+      "items": [
+        "sha256:5fcc0a366aa1dd6891815e07cd7385cfcbf6f4dd4ea09c980156c0a2b7fac424"
+      ],
+      "reason": "This dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx hunk migrates a test guard, timer observation, helper import or catalog consumer relation; its local mechanism is documented in the affected card and does not introduce or alter a product guarantee.",
+      "subject": "hunk:sha256:5fcc0a366aa1dd6891815e07cd7385cfcbf6f4dd4ea09c980156c0a2b7fac424"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-DN4AS5",
+      "items": [
+        "sha256:a1eab4a32a2e74028e829378ed68810fbb65b1759f8e9f67aedae5548de374b9"
+      ],
+      "reason": "Reviewed the source change and existing governing contract: the shared hang-guard or justified teardown-marker migration preserves the assertions and product ownership; no additional current-intent text is needed.",
+      "subject": "onboarding:mcp/tests/test_harness_control_ipc.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0c44b80be6a1bb8d176afa67b62e37be8d5615c7",
+            "content": "sha256:91efded513d9dbb2d190cd297190d20920ca9be02d640d544f25e2714f7e1d9f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_pin_another_reader_made_or_is_making_is_the_answer_not_a_refusal"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "before": {
+            "blob": "ede6e5022f731d49e9f93adcd04f7eb551be9bad",
+            "content": "sha256:e3860010325e9ec39be013a421cb292f80bcaeaa14d068e6784140b992fe5349",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_pin_another_reader_made_or_is_making_is_the_answer_not_a_refusal"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "id": "PRF-FT4K6F"
+        },
+        {
+          "after": {
+            "blob": "0c44b80be6a1bb8d176afa67b62e37be8d5615c7",
+            "content": "sha256:f18605f796f9104d1a3faa081b329c51a9c5a0fee58216be30142fc9386252a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_four_concurrent_first_reads_answer_alike_from_one_child"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "before": {
+            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+            "content": "sha256:fac6ac8b50c11e5a9762389b20a0545e837549e755a87521be0d2947e9feaa76",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_four_concurrent_first_reads_answer_alike_from_one_child"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "id": "PRF-S0GME8"
+        },
+        {
+          "after": {
+            "blob": "69bb0e27f14a03f81252287c56705f6504f255cc",
+            "content": "sha256:c0b4010beafe02bb813cc3471b1d015fd2d053a6b5fa0941202ac92b9a231c74",
+            "locator": {
+              "kind": "symbol",
+              "name": "_create_pin"
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_comparison.py"
+          },
+          "before": {
+            "blob": "a6be25fd8ae64b86004f4bdf43cb0b23b50d6e4c",
+            "content": "sha256:edebee0b02d373e6fb29160dd1f042c38f31ad35f027af6a106eade5c15801b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_create_pin"
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_comparison.py"
+          },
+          "id": "RLZ-W2H9EX"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-DYE6H7",
+      "items": [
+        "sha256:76f622702f17711405cd45d44568cbfa11968323250cf32d345f2c643415600b",
+        "sha256:ecccae4056fe7d14b09040c4ec69e219fbb2358c63db2573323d000a2b221ffd"
+      ],
+      "reason": "Preserves the recorded product guarantee. Shared hang guards, actual opportunity witnesses and the canonical index rewrite helper change proof scheduling, not the product outcome; inherited source changes retain the cited enforcement branch.",
+      "revision": 1,
+      "subject": "INV-Z2HVKA"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R87",
+          "packet": "requirements/MIK-R87-v1-the-test-suites-do-not-depend-on-machine-load.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "e397069f3231d7d911fc12a2979717eac26c7325",
+            "content": "sha256:6e02ec73f045ffee4a37f453b73d798e0f46159bb89986e6ea37f6da4002e018",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_product_process_state_has_an_exact_register"
+            },
+            "path": "mcp/tests/test_suite_load_independence.py"
+          },
+          "before": "absent",
+          "id": "PRF-G0D88M"
+        },
+        {
+          "after": {
+            "blob": "010f854fb6bc835d89a1c480867a26fff0ec9943",
+            "content": "sha256:3cf48d489814b0c8e73e1ae721b7548e13f1f24c6f114ff679b11fe07453faab",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROCESS_MUTABLE_STATES"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+          },
+          "before": "absent",
+          "id": "RLZ-1563PY"
+        },
+        {
+          "after": {
+            "blob": "e397069f3231d7d911fc12a2979717eac26c7325",
+            "content": "sha256:6e02ec73f045ffee4a37f453b73d798e0f46159bb89986e6ea37f6da4002e018",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_product_process_state_has_an_exact_register"
+            },
+            "path": "mcp/tests/test_suite_load_independence.py"
+          },
+          "before": "absent",
+          "id": "RLZ-RS88T2"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "introduce",
+      "id": "ROW-E1C32Q",
+      "items": [],
+      "reason": "Introduces the scoped test-infrastructure obligation under the approved packet while preserving product behavior.",
+      "revision": 1,
+      "subject": "INV-KE2ZHT"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7VGMWY",
+          "revision": 1
+        },
+        {
+          "id": "INV-XG226D",
+          "revision": 1
+        },
+        {
+          "id": "INV-Y2SXDZ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-EG692Y",
+      "items": [
+        "sha256:b0a8c6f0c9af35e209a4ee7a26910d9b3b86d6cc0d56b7cac8f8a88c3a6acc06"
+      ],
+      "reason": "The exact existing member statements, current revisions and joint guarantee were read together. Test guards and producer-opportunity witnesses preserve their product contracts; source-line anchor maintenance adds no member or guarantee change.",
+      "subject": "FAM-Z69A94"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-EYMV8Z",
+      "items": [
+        "sha256:7d7aed8a498be709a0f3b3a004a4458ab9616006dc0b946ab9866c5ebb19522b"
+      ],
+      "reason": "Reviewed the source change and existing governing contract: the shared hang-guard or justified teardown-marker migration preserves the assertions and product ownership; no additional current-intent text is needed.",
+      "subject": "onboarding:dashboard/src/panels/session-cockpit/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-F12W6D",
+      "items": [
+        "sha256:8d5645d9e9010cc8de6512f21fddbdcdcf93a92cf635cb6e8c60711c2981bc21"
+      ],
+      "reason": "This dashboard/src/panels/review/ReviewSurface.walkStore.test.tsx hunk migrates a test guard, timer observation, helper import or catalog consumer relation; its local mechanism is documented in the affected card and does not introduce or alter a product guarantee.",
+      "subject": "hunk:sha256:8d5645d9e9010cc8de6512f21fddbdcdcf93a92cf635cb6e8c60711c2981bc21"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-F3AF4Z",
+      "items": [
+        "sha256:42d00f07ed71163cd3ae456b9691b6783dce04e95109b781f37fa189277d64db"
+      ],
+      "reason": "This dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx hunk migrates a test guard, timer observation, helper import or catalog consumer relation; its local mechanism is documented in the affected card and does not introduce or alter a product guarantee.",
+      "subject": "hunk:sha256:42d00f07ed71163cd3ae456b9691b6783dce04e95109b781f37fa189277d64db"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-F8VQH4",
+      "items": [
+        "sha256:5a216ce46522e26e0e83522dd6e2434f00dd86dd0482870f929ba27f3e5bcdef"
+      ],
+      "reason": "Reviewed the source change and existing governing contract: the shared hang-guard or justified teardown-marker migration preserves the assertions and product ownership; no additional current-intent text is needed.",
+      "subject": "onboarding:dashboard/src/panels/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FDRRE5",
+      "items": [
+        "sha256:fe7d58f36d0837fef6b61fa4a8cbe9a816aa6338a762969225b89a21764c7d8f"
+      ],
+      "reason": "This dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx hunk migrates a test guard, timer observation, helper import or catalog consumer relation; its local mechanism is documented in the affected card and does not introduce or alter a product guarantee.",
+      "subject": "hunk:sha256:fe7d58f36d0837fef6b61fa4a8cbe9a816aa6338a762969225b89a21764c7d8f"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-FFE6HF",
+      "items": [
+        "sha256:3367d593e402547ddc05a0946fe4ccdd761a26ebd4080758b3f5962a72a1c5b7"
+      ],
+      "reason": "Reviewed the source change and existing governing contract: the shared hang-guard or justified teardown-marker migration preserves the assertions and product ownership; no additional current-intent text is needed.",
+      "subject": "onboarding:mcp/tests/test_python_runtime_contract.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "4da7ae4b0b7fef8d26bf4f0e5f6fb149b0315dc2",
+            "content": "sha256:1ef2673b255d1e5062fd4f55873d76caf46ae73cc295396a298aac348959de3c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf_wide_parts"
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_knowledge.py"
+          },
+          "before": {
+            "blob": "943c2a1708748f416dcd9a5393b6fd1f7c0601b0",
+            "content": "sha256:362ddd25ba17ddcd8e76cbd474b701df3bbc02a7765b32c76a034765687615c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf_wide_parts"
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_knowledge.py"
+          },
+          "id": "RLZ-MM509G"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-G4ZAX6",
+      "items": [
+        "sha256:99d784cecbece6b25bd179f9051819956f05982bff2810e56d34f5c3ccff3ea0"
+      ],
+      "reason": "Preserves the recorded product guarantee. Shared hang guards, actual opportunity witnesses and the canonical index rewrite helper change proof scheduling, not the product outcome; inherited source changes retain the cited enforcement branch.",
+      "revision": 1,
+      "subject": "INV-19P897"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-G6DSTR",
+      "items": [
+        "sha256:f3208d61164115dd7287eb9cb7d97ae5f1b0f622497846f9883781cadc63ff31"
+      ],
+      "reason": "This dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx hunk migrates a test guard, timer observation, helper import or catalog consumer relation; its local mechanism is documented in the affected card and does not introduce or alter a product guarantee.",
+      "subject": "hunk:sha256:f3208d61164115dd7287eb9cb7d97ae5f1b0f622497846f9883781cadc63ff31"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GTEECV",
+      "items": [
+        "sha256:0d2556f54877d7eb0cbe70aec1eea1d3fe52d097306df9445bf10cc1d56357f3"
+      ],
+      "reason": "This dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx hunk migrates a test guard, timer observation, helper import or catalog consumer relation; its local mechanism is documented in the affected card and does not introduce or alter a product guarantee.",
+      "subject": "hunk:sha256:0d2556f54877d7eb0cbe70aec1eea1d3fe52d097306df9445bf10cc1d56357f3"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GWQG7R",
+      "items": [
+        "sha256:836a4b21a2f5113f4d49a23743374e7f83cd9cbe2c76171a8f04c6490a9574fd"
+      ],
+      "reason": "Reviewed the source change and existing governing contract: the shared hang-guard or justified teardown-marker migration preserves the assertions and product ownership; no additional current-intent text is needed.",
+      "subject": "onboarding:mcp/tests/test_leaf_agent_archive.py"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R87",
+          "packet": "requirements/MIK-R87-v1-the-test-suites-do-not-depend-on-machine-load.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "e397069f3231d7d911fc12a2979717eac26c7325",
+            "content": "sha256:7cfc7bea20d2b41d9ab59dae315882fef5542e243198eec3b5d024a778eee3b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_wait_helpers_name_the_unreached_condition"
+            },
+            "path": "mcp/tests/test_suite_load_independence.py"
+          },
+          "before": "absent",
+          "id": "PRF-TZWV5S"
+        },
+        {
+          "after": {
+            "blob": "9af2bed27c4fcb4d87f128685e1efc140f6c4d48",
+            "content": "sha256:87e913dc193128f20e764020e0ed9be17e4a98bf073a3d6a754e7e0dc899bb47",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/waits.py"
+          },
+          "before": "absent",
+          "id": "RLZ-FMTWMJ"
+        },
+        {
+          "after": {
+            "blob": "0c7c3f3c1ce76348caaec316256a873872841348",
+            "content": "sha256:427a3170de3c18a4b9b2fa18b40b88af6155a0aacd80a820c91eff7804374dd4",
+            "locator": {
+              "kind": "symbol",
+              "name": "rewrite_in_the_second_of_the_index_write"
+            },
+            "path": "mcp/tests/knowledge_index_test_support.py"
+          },
+          "before": "absent",
+          "id": "RLZ-KKDZ71"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "introduce",
+      "id": "ROW-H23C83",
+      "items": [],
+      "reason": "Introduces the scoped test-infrastructure obligation under the approved packet while preserving product behavior.",
+      "revision": 1,
+      "subject": "INV-EGK83G"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-H58GYD",
+      "items": [
+        "sha256:935cb4ee59c8cc5902094996b4f6a3027fe0a1f870dd56ebd84b72f496b5420e"
+      ],
+      "reason": "Reviewed the source change and existing governing contract: the shared hang-guard or justified teardown-marker migration preserves the assertions and product ownership; no additional current-intent text is needed.",
+      "subject": "onboarding:mcp/tests/test_harness_control_claude_stream_2.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-HFHBFX",
+      "items": [
+        "sha256:e353688744d7b4796b77b3ca0e4751a10e56aca5c945f6cdbd8210dc94d5e566"
+      ],
+      "reason": "Reviewed the source change and existing governing contract: the shared hang-guard or justified teardown-marker migration preserves the assertions and product ownership; no additional current-intent text is needed.",
+      "subject": "onboarding:mcp/tests/test_codex_app_server_adapter_correlation.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-HZD9R8",
+      "items": [
+        "sha256:f6917220e2c9494e86d5d2ff8a5957472be6e1351e4eca05417c4658607ffd2e"
+      ],
+      "reason": "Reviewed the source change and existing governing contract: the shared hang-guard or justified teardown-marker migration preserves the assertions and product ownership; no additional current-intent text is needed.",
+      "subject": "onboarding:dashboard/src/panels/session-cockpit/conversation/ConversationSurface.eve.test.tsx"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R87",
+          "packet": "requirements/MIK-R87-v1-the-test-suites-do-not-depend-on-machine-load.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "30046dec1ac690793265af23685477138cbb21b4",
+            "content": "sha256:3eda883ee87f63f87c614fa6b663b6a8cf6aa2a407f91e172895e4935fbd256a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_nested_wrong_shaped_entries_cannot_break_facts"
+            },
+            "path": "mcp/tests/test_dependency_facts_store.py"
+          },
+          "before": "absent",
+          "id": "PRF-1TGBVP"
+        },
+        {
+          "after": {
+            "blob": "30046dec1ac690793265af23685477138cbb21b4",
+            "content": "sha256:78b4b05e43ddfc8f40bb8e1b5cfdd81568d9df93af311624b89704eb753c1a38",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_reuse_invalidation_and_bounded_compaction"
+            },
+            "path": "mcp/tests/test_dependency_facts_store.py"
+          },
+          "before": "absent",
+          "id": "PRF-Q99BJZ"
+        },
+        {
+          "after": {
+            "blob": "b4447f012e0a159da29a8f802259e78e3f659c30",
+            "content": "sha256:12ebec5f719b18267dcac638b4d165b515580aff32beafd212fe4ed5d99585a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "RepositoryDependencyFacts.build"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/dependency_facts.py"
+          },
+          "before": "absent",
+          "id": "RLZ-KVM1SK"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "introduce",
+      "id": "ROW-JXD8X9",
+      "items": [],
+      "reason": "Introduces the scoped test-infrastructure obligation under the approved packet while preserving product behavior.",
+      "revision": 1,
+      "subject": "INV-BQD1G8"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d57949b8574bdf280c23f7d8c15d4c28634a0097",
+            "content": "sha256:fa38e6b23d0512939df6b4f03cccca030ef299efe4e63c8a7b7cb98c4ac04854",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_launch_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "before": {
+            "blob": "daf9a0e68065d34057a6c3325fd41a026f743b5f",
+            "content": "sha256:ced5ee07c5477f46e5cad77c83c348121f76505ece5de6a90ee3ea7d72ada2aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_launch_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "id": "RLZ-2MSXRD"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-K5K7RN",
+      "items": [
+        "sha256:36caaa14480048a423176434e31f8c78b0e3b603d96c9e554f61f84be9c43bd0"
+      ],
+      "reason": "Preserves the recorded product guarantee. Shared hang guards, actual opportunity witnesses and the canonical index rewrite helper change proof scheduling, not the product outcome; inherited source changes retain the cited enforcement branch.",
+      "revision": 1,
+      "subject": "INV-AJKQV2"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-K7JG7Z",
+      "items": [
+        "sha256:2f2e229ab4391f29f1d5b1c60177c87f51652b7b60fb039786f75fc970024c82"
+      ],
+      "reason": "This dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx hunk migrates a test guard, timer observation, helper import or catalog consumer relation; its local mechanism is documented in the affected card and does not introduce or alter a product guarantee.",
+      "subject": "hunk:sha256:2f2e229ab4391f29f1d5b1c60177c87f51652b7b60fb039786f75fc970024c82"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-K7Q5E7",
+      "items": [
+        "sha256:25dcedecb46a477fe172facfee6ea51fa52de16fd019dd278a9ce9420a2e1221"
+      ],
+      "reason": "This dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx hunk migrates a test guard, timer observation, helper import or catalog consumer relation; its local mechanism is documented in the affected card and does not introduce or alter a product guarantee.",
+      "subject": "hunk:sha256:25dcedecb46a477fe172facfee6ea51fa52de16fd019dd278a9ce9420a2e1221"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-KC7YPW",
+      "items": [
+        "sha256:6d2b1b8a5f8a6706712935d3b2d86d196494c6bcb274c62b0b9fa52955893285"
+      ],
+      "reason": "Reviewed the source change and existing governing contract: the shared hang-guard or justified teardown-marker migration preserves the assertions and product ownership; no additional current-intent text is needed.",
+      "subject": "onboarding:mcp/tests/test_knowledge_closeout_gate.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-KEYPN6",
+      "items": [
+        "sha256:d7d02b557b8864fa4aa4bff910e58e6f55f0be7fabd130304ec02972244ea7c1"
+      ],
+      "reason": "Reviewed the source change and existing governing contract: the shared hang-guard or justified teardown-marker migration preserves the assertions and product ownership; no additional current-intent text is needed.",
+      "subject": "onboarding:mcp/tests/test_task_doc_structural_publication_l2.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-KJCGZH",
+      "items": [
+        "sha256:c09f11fe45f37bcdb677acd1e1dd934bb66d7a50700094815fdbc91061067c10"
+      ],
+      "reason": "Reviewed the source change and existing governing contract: the shared hang-guard or justified teardown-marker migration preserves the assertions and product ownership; no additional current-intent text is needed.",
+      "subject": "onboarding:mcp/tests/test_harness_control_claude_interrupt.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KM5C86",
+      "items": [
+        "sha256:e618ed6d87d9d647460b5a89b98fb5612c4a7ada04feb3073e27c4a3bffc80b7"
+      ],
+      "reason": "This mcp/tests/conftest.py hunk migrates a test guard, timer observation, helper import or catalog consumer relation; its local mechanism is documented in the affected card and does not introduce or alter a product guarantee.",
+      "subject": "hunk:sha256:e618ed6d87d9d647460b5a89b98fb5612c4a7ada04feb3073e27c4a3bffc80b7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KQRKHW",
+      "items": [
+        "sha256:fed9af83df30ee0e21fd39671773cf72eeae405ad88db1a039924a73f463475a"
+      ],
+      "reason": "This dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx hunk migrates a test guard, timer observation, helper import or catalog consumer relation; its local mechanism is documented in the affected card and does not introduce or alter a product guarantee.",
+      "subject": "hunk:sha256:fed9af83df30ee0e21fd39671773cf72eeae405ad88db1a039924a73f463475a"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "33733dedbf46e8e4767ea854f6b545ba419a0be7",
+            "content": "sha256:7ec621df8b3a737555a4592b72ab1eb71914033cff209d9afcbce8d1c02fb5ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "tag"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.walk.test.tsx"
+          },
+          "before": {
+            "blob": "c03d822684615321e5d3468512cebb7ef546913c",
+            "content": "sha256:7ec621df8b3a737555a4592b72ab1eb71914033cff209d9afcbce8d1c02fb5ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "tag"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.walk.test.tsx"
+          },
+          "id": "PRF-62MDSP"
+        },
+        {
+          "after": {
+            "blob": "4527c1a55df306503a92176f7027d7c5a4eb30e0",
+            "content": "sha256:c6bf841289235e0836074cf621de34f88129fdddf61317fb8a828e2d00265f26",
+            "locator": {
+              "kind": "symbol",
+              "name": "invariantLabel"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.navigation.test.tsx"
+          },
+          "before": {
+            "blob": "9e4ad8cc9c5e89f1b87520a00398292de27e1df8",
+            "content": "sha256:c6bf841289235e0836074cf621de34f88129fdddf61317fb8a828e2d00265f26",
+            "locator": {
+              "kind": "symbol",
+              "name": "invariantLabel"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.navigation.test.tsx"
+          },
+          "id": "PRF-AAQWVQ"
+        },
+        {
+          "after": {
+            "blob": "319eca1f8e7d80d5a6106c889b218c496d204ab8",
+            "content": "sha256:261b2d4fda9f21295213f1caadd4b31c5b7e155912fa35bf9e2197b7d552618d",
+            "locator": {
+              "kind": "symbol",
+              "name": "bare"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx"
+          },
+          "before": {
+            "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
+            "content": "sha256:261b2d4fda9f21295213f1caadd4b31c5b7e155912fa35bf9e2197b7d552618d",
+            "locator": {
+              "kind": "symbol",
+              "name": "bare"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx"
+          },
+          "id": "PRF-CNYVD3"
+        },
+        {
+          "after": {
+            "blob": "071edcc28b275e9a13c191a87a60e28eb8eae0cf",
+            "content": "sha256:a9cdfbb04e490fe360252b1f5df5152a03653f864b088492d0daab98be6c90e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "opener"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.walkStore.test.tsx"
+          },
+          "before": {
+            "blob": "66cfe38ffa950ca558b3fb74d6ec1913e5f534b1",
+            "content": "sha256:a9cdfbb04e490fe360252b1f5df5152a03653f864b088492d0daab98be6c90e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "opener"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.walkStore.test.tsx"
+          },
+          "id": "PRF-N88RVC"
+        },
+        {
+          "after": {
+            "blob": "33733dedbf46e8e4767ea854f6b545ba419a0be7",
+            "content": "sha256:a2f7e93bb547e63527979dcaccd23a3bf8a0707406b280ae91909e8c67e1d9d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "sharedRow"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.walk.test.tsx"
+          },
+          "before": {
+            "blob": "c03d822684615321e5d3468512cebb7ef546913c",
+            "content": "sha256:a2f7e93bb547e63527979dcaccd23a3bf8a0707406b280ae91909e8c67e1d9d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "sharedRow"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.walk.test.tsx"
+          },
+          "id": "PRF-XA7SCW"
+        },
+        {
+          "after": {
+            "blob": "33733dedbf46e8e4767ea854f6b545ba419a0be7",
+            "content": "sha256:fbe243212b4c2edd2a1a59768fc3a237a2a15d0d24c9be62e3601b8a2767da6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "workspace"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.walk.test.tsx"
+          },
+          "before": {
+            "blob": "c03d822684615321e5d3468512cebb7ef546913c",
+            "content": "sha256:fbe243212b4c2edd2a1a59768fc3a237a2a15d0d24c9be62e3601b8a2767da6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "workspace"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.walk.test.tsx"
+          },
+          "id": "PRF-XA9YEH"
+        },
+        {
+          "after": {
+            "blob": "071edcc28b275e9a13c191a87a60e28eb8eae0cf",
+            "content": "sha256:cefe0eca812637aed82cae54c6397cc0bdb2f82d38f9bfdd866368bfe376edc1",
+            "locator": {
+              "end": 127,
+              "kind": "line_range",
+              "start": 96
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.walkStore.test.tsx"
+          },
+          "before": {
+            "blob": "66cfe38ffa950ca558b3fb74d6ec1913e5f534b1",
+            "content": "sha256:9598b4139c4da57f9e1d01a7e6fa15ae637b1728bb7d6806ec10c7968c505ae6",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 100
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.walkStore.test.tsx"
+          },
+          "id": "RLZ-7ZPXMR"
+        },
+        {
+          "after": {
+            "blob": "071edcc28b275e9a13c191a87a60e28eb8eae0cf",
+            "content": "sha256:cb741b44a0c6e59993502ea4cdbe24a1e4fc6ee8df1bfdfcbe7059537e8e8ce1",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 48
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.walkStore.test.tsx"
+          },
+          "before": {
+            "blob": "66cfe38ffa950ca558b3fb74d6ec1913e5f534b1",
+            "content": "sha256:830e954bcdafe601ee4deae05a13be784bd861f460171ce7f6946a98e310403d",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 48
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.walkStore.test.tsx"
+          },
+          "id": "RLZ-XADZP7"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-KRB2W6",
+      "items": [
+        "sha256:978f5c7abc6e826ec1cbdc16db83379a343deddf99de763bbc265ba2fec1d215"
+      ],
+      "reason": "Preserves the recorded product guarantee. Shared hang guards, actual opportunity witnesses and the canonical index rewrite helper change proof scheduling, not the product outcome; inherited source changes retain the cited enforcement branch.",
+      "revision": 1,
+      "subject": "INV-NSG0D4"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0c44b80be6a1bb8d176afa67b62e37be8d5615c7",
+            "content": "sha256:2e80ca17a62ea2cd04e66fe7e1a061de010131c68575711ce6615780c775d4da",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_identical_requests_share_one_child_and_others_wait_for_one_of_two_slots"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "before": {
+            "blob": "ede6e5022f731d49e9f93adcd04f7eb551be9bad",
+            "content": "sha256:db2645fb63f906f46efad7548a6f0cb776b99d8f009ba9ee0abc0d903771ed6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_identical_requests_share_one_child_and_others_wait_for_one_of_two_slots"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "id": "PRF-8DK3FJ"
+        },
+        {
+          "after": {
+            "blob": "0c44b80be6a1bb8d176afa67b62e37be8d5615c7",
+            "content": "sha256:c480b51e7330af8955178237e13e26612245ef0b0df995ffb799bd32ef3ebb6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_twelve_identical_concurrent_reads_share_one_child_without_a_refusal"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "before": {
+            "blob": "ede6e5022f731d49e9f93adcd04f7eb551be9bad",
+            "content": "sha256:0a429e445cde8b4e67c4f3c25a50fd8feb01665b6f2715e95df6e040705b0f24",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_twelve_identical_concurrent_reads_share_one_child_without_a_refusal"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "id": "PRF-CGHHCK"
+        },
+        {
+          "after": {
+            "blob": "0c44b80be6a1bb8d176afa67b62e37be8d5615c7",
+            "content": "sha256:17bb2254f821a00b3feef292f750d20cce1e19d4938e9bc1493b55fbb9db8cb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_overload_is_refused_only_past_the_waiting_bound_or_the_deadline_and_says_so"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "before": {
+            "blob": "ede6e5022f731d49e9f93adcd04f7eb551be9bad",
+            "content": "sha256:fe041c8ec1c4f09cd7def9211e262f8188d840da11da1bad3cf9e7677b3d6e55",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_overload_is_refused_only_past_the_waiting_bound_or_the_deadline_and_says_so"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "id": "PRF-FBXNKC"
+        },
+        {
+          "after": {
+            "blob": "0c44b80be6a1bb8d176afa67b62e37be8d5615c7",
+            "content": "sha256:5184096382682aa910695ea621a8dbb7486bff5fafe150e8bb8fc98f92b872cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_request_arriving_while_a_cancelled_flight_is_reaped_starts_its_own_computation"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "before": {
+            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+            "content": "sha256:27731608a288aa2ee5654a57799aa38b7064e3958eb4b2745c7b256e8e1ae459",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_request_arriving_while_a_cancelled_flight_is_reaped_starts_its_own_computation"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "id": "PRF-SW2WCZ"
+        },
+        {
+          "after": {
+            "blob": "0c44b80be6a1bb8d176afa67b62e37be8d5615c7",
+            "content": "sha256:f0fe54bb03d5bb0fc2a157fd7589817e23668f8b61679d679bf8241e24b3b5dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_three_changed_leaves_opened_in_quick_succession_all_answer"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "before": {
+            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+            "content": "sha256:bda75d42d8a82b6ada53d81ad530f56c75cec124e7b1d5f320f0c25d5275fd65",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_three_changed_leaves_opened_in_quick_succession_all_answer"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "id": "PRF-TNYM9P"
+        },
+        {
+          "after": {
+            "blob": "0c44b80be6a1bb8d176afa67b62e37be8d5615c7",
+            "content": "sha256:3fb8e2a96cf5bd585f0d87fa236ff1d553e7f84c2ca578796e7bea069bd1f48b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_waiting_bound_counts_computations_not_the_requests_sharing_them"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "before": {
+            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+            "content": "sha256:3fb8e2a96cf5bd585f0d87fa236ff1d553e7f84c2ca578796e7bea069bd1f48b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_waiting_bound_counts_computations_not_the_requests_sharing_them"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "id": "PRF-TTJXV7"
+        },
+        {
+          "after": {
+            "blob": "0c44b80be6a1bb8d176afa67b62e37be8d5615c7",
+            "content": "sha256:65adab1bfc387fb900f92881d215dc04c32c9fc87838afb427d14dfc3e5a29af",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_overload_is_its_own_refusal_code_with_a_true_action"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "before": {
+            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+            "content": "sha256:65adab1bfc387fb900f92881d215dc04c32c9fc87838afb427d14dfc3e5a29af",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_overload_is_its_own_refusal_code_with_a_true_action"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "id": "PRF-W7CVG0"
+        },
+        {
+          "after": {
+            "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+            "content": "sha256:7611f584012032129c9506190742fe1ef8b53ca43a02171de6485ee29e17029f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_deadline"
+            },
+            "path": "mcp/src/agents_remember/kernel/reviewer_worklist_process.py"
+          },
+          "before": {
+            "blob": "a555e9a9abeaf5f9e28273ddd2ac14cec79ec9f9",
+            "content": "sha256:d7c0c61d9c3b8425baf45d30bb9e72f3896ab173f576516b827871f8b954fded",
+            "locator": {
+              "kind": "symbol",
+              "name": "_deadline"
+            },
+            "path": "mcp/src/agents_remember/kernel/reviewer_worklist_process.py"
+          },
+          "id": "RLZ-SA51K0"
+        },
+        {
+          "after": {
+            "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+            "content": "sha256:d0864d204be614f73384c435d228f33335c9f44b8dc05495e9c795332ae9b72b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_join"
+            },
+            "path": "mcp/src/agents_remember/kernel/reviewer_worklist_process.py"
+          },
+          "before": {
+            "blob": "a555e9a9abeaf5f9e28273ddd2ac14cec79ec9f9",
+            "content": "sha256:c6d81149cb83aee6f86b643f2d670e4bb50fda16a605c243a9b74ee1584b2b86",
+            "locator": {
+              "kind": "symbol",
+              "name": "_join"
+            },
+            "path": "mcp/src/agents_remember/kernel/reviewer_worklist_process.py"
+          },
+          "id": "RLZ-Y2MRG8"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-M1KA2R",
+      "items": [
+        "sha256:0ef6381099e48e569f851f1360d8cb0201242ee8d8a37f46e2078ac77461e02b",
+        "sha256:284272cd9cf9394246fe0c4c08f4cb45a21c4083957aec8bb4ba7d6d9f73256e"
+      ],
+      "reason": "Preserves the recorded product guarantee. Shared hang guards, actual opportunity witnesses and the canonical index rewrite helper change proof scheduling, not the product outcome; inherited source changes retain the cited enforcement branch.",
+      "revision": 1,
+      "subject": "INV-PKBCZ0"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-M5M62X",
+      "items": [
+        "sha256:4b3d59e575eb3bc56fa17489fa88964dfd8681926a4486e44e9830bcdce3dcde"
+      ],
+      "reason": "This dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx hunk migrates a test guard, timer observation, helper import or catalog consumer relation; its local mechanism is documented in the affected card and does not introduce or alter a product guarantee.",
+      "subject": "hunk:sha256:4b3d59e575eb3bc56fa17489fa88964dfd8681926a4486e44e9830bcdce3dcde"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-2172NS",
+          "revision": 1
+        },
+        {
+          "id": "INV-5M9WY3",
+          "revision": 2
+        },
+        {
+          "id": "INV-61Y147",
+          "revision": 1
+        },
+        {
+          "id": "INV-656CYW",
+          "revision": 2
+        },
+        {
+          "id": "INV-7MH0BR",
+          "revision": 1
+        },
+        {
+          "id": "INV-EKE1RV",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-MFB5HB",
+      "items": [
+        "sha256:9b38d7d93de9b8dbde235c16830f28f4455b1221f7ff2793d70f07a57d19b4d7"
+      ],
+      "reason": "The exact existing member statements, current revisions and joint guarantee were read together. Test guards and producer-opportunity witnesses preserve their product contracts; source-line anchor maintenance adds no member or guarantee change.",
+      "subject": "FAM-4ZNEN9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-N31Y2X",
+      "items": [
+        "sha256:cd7637a823e3158dc774b7b00a4ece9852eba41483bfaa2302f6e3cf19c4fbea"
+      ],
+      "reason": "This dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx hunk migrates a test guard, timer observation, helper import or catalog consumer relation; its local mechanism is documented in the affected card and does not introduce or alter a product guarantee.",
+      "subject": "hunk:sha256:cd7637a823e3158dc774b7b00a4ece9852eba41483bfaa2302f6e3cf19c4fbea"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-N968RB",
+      "items": [
+        "sha256:95f7f3859e22dda447c752be78ed2db60b744b7d437023a02d8877b34a262c9a"
+      ],
+      "reason": "Reviewed the source change and existing governing contract: the shared hang-guard or justified teardown-marker migration preserves the assertions and product ownership; no additional current-intent text is needed.",
+      "subject": "onboarding:mcp/tests/test_paseo_bridge.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-NC7D6D",
+      "items": [
+        "sha256:9e18c06ad141dc59e5f7df92e1eb3d0428c03576a27569e2cdb4820b0a9fe1ed"
+      ],
+      "reason": "Reviewed the source change and existing governing contract: the shared hang-guard or justified teardown-marker migration preserves the assertions and product ownership; no additional current-intent text is needed.",
+      "subject": "onboarding:mcp/tests/test_worker_child_processes.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "82195bea86c6231f6c6014c8807cd5b7bc66e33e",
+            "content": "sha256:e0eaca3f75f83828c1d417d1febc1e25897a2b5b6cfd001e64eadad4abf054ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "BackgroundProjectionTests.test_native_watcher_observes_nested_atomic_writes_without_wsl_polling"
+            },
+            "path": "mcp/tests/test_serving.py"
+          },
+          "before": {
+            "blob": "2f87545123e787fca284973dfc4fc9483f01aa34",
+            "content": "sha256:2c2a2f6d44133667f26c461d0737af95a05805d51080e5216053c1a787fe751b",
+            "locator": {
+              "kind": "symbol",
+              "name": "BackgroundProjectionTests.test_native_watcher_observes_nested_atomic_writes_without_wsl_polling"
+            },
+            "path": "mcp/tests/test_serving.py"
+          },
+          "id": "PRF-BWKMZH"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-NHV7H7",
+      "items": [
+        "sha256:934badd8abfe0989450605e72916883779a8ddc1160ca39172afd36894ab26f4"
+      ],
+      "reason": "Preserves the recorded product guarantee. Shared hang guards, actual opportunity witnesses and the canonical index rewrite helper change proof scheduling, not the product outcome; inherited source changes retain the cited enforcement branch.",
+      "revision": 1,
+      "subject": "INV-AD1MRN"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-P6S4GW",
+      "items": [
+        "sha256:6a942ad5eee9f32ecc40c0553b8920b0e38e9d7d606cecc6a58dd4f5b435190c"
+      ],
+      "reason": "This dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx hunk migrates a test guard, timer observation, helper import or catalog consumer relation; its local mechanism is documented in the affected card and does not introduce or alter a product guarantee.",
+      "subject": "hunk:sha256:6a942ad5eee9f32ecc40c0553b8920b0e38e9d7d606cecc6a58dd4f5b435190c"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-PVBRD6",
+      "items": [
+        "sha256:2ec48ba5e1b537582c6d0d7ebcc8bb37795addac873d6fc216cd3e20051a85eb"
+      ],
+      "reason": "Reviewed the source change and existing governing contract: the shared hang-guard or justified teardown-marker migration preserves the assertions and product ownership; no additional current-intent text is needed.",
+      "subject": "onboarding:mcp/tests/test_inbox_rebinding_mechanics.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PZTZ77",
+      "items": [
+        "sha256:b356c1e4f3bab5c92d21f4f0cc29e318ff2960ac26632a11abb64fb02536789a"
+      ],
+      "reason": "This dashboard/src/panels/review/ReviewSurface.walkUnavailable.test.tsx hunk migrates a test guard, timer observation, helper import or catalog consumer relation; its local mechanism is documented in the affected card and does not introduce or alter a product guarantee.",
+      "subject": "hunk:sha256:b356c1e4f3bab5c92d21f4f0cc29e318ff2960ac26632a11abb64fb02536789a"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Q5WN96",
+      "items": [
+        "sha256:45772eb7d788ba4cf1e692869b6474afab3bad2d3892e044091d0c6d68d943a2"
+      ],
+      "reason": "Reviewed the source change and existing governing contract: the shared hang-guard or justified teardown-marker migration preserves the assertions and product ownership; no additional current-intent text is needed.",
+      "subject": "onboarding:mcp/tests/test_memory_quality_runs.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Q8AHAV",
+      "items": [
+        "sha256:f2b04089143dbf2cb24a4baa44f1dc2ed1d257b9dc9094635b73c4d294298f5f"
+      ],
+      "reason": "Reviewed the source change and existing governing contract: the shared hang-guard or justified teardown-marker migration preserves the assertions and product ownership; no additional current-intent text is needed.",
+      "subject": "onboarding:mcp/tests/test_harness_submission_authority.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d57949b8574bdf280c23f7d8c15d4c28634a0097",
+            "content": "sha256:fa38e6b23d0512939df6b4f03cccca030ef299efe4e63c8a7b7cb98c4ac04854",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_launch_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "before": {
+            "blob": "daf9a0e68065d34057a6c3325fd41a026f743b5f",
+            "content": "sha256:ced5ee07c5477f46e5cad77c83c348121f76505ece5de6a90ee3ea7d72ada2aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_launch_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "id": "RLZ-PMMCQ0"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-QB4MR9",
+      "items": [
+        "sha256:7e716198a044c3da756421221660c3709a2e575a7fdb784368ed63c9a2f16962"
+      ],
+      "reason": "Preserves the recorded product guarantee. Shared hang guards, actual opportunity witnesses and the canonical index rewrite helper change proof scheduling, not the product outcome; inherited source changes retain the cited enforcement branch.",
+      "revision": 1,
+      "subject": "INV-VPXD65"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RBGN59",
+      "items": [
+        "sha256:86244702b757e8ae412b595340787af0b07a4bf76d22cc82cd455a85c4a5e72b"
+      ],
+      "reason": "This mcp/tests/evidence-lifecycle.toml hunk migrates a test guard, timer observation, helper import or catalog consumer relation; its local mechanism is documented in the affected card and does not introduce or alter a product guarantee.",
+      "subject": "hunk:sha256:86244702b757e8ae412b595340787af0b07a4bf76d22cc82cd455a85c4a5e72b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-S5RCNF",
+      "items": [
+        "sha256:8330893cfb0b639a14daae621fc44772b6e258484071e916c6f3465c2c195883"
+      ],
+      "reason": "This mcp/tests/test-evidence-lanes.toml hunk migrates a test guard, timer observation, helper import or catalog consumer relation; its local mechanism is documented in the affected card and does not introduce or alter a product guarantee.",
+      "subject": "hunk:sha256:8330893cfb0b639a14daae621fc44772b6e258484071e916c6f3465c2c195883"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-S6Q083",
+      "items": [
+        "sha256:4bd614160c301d357a7d17f5a397359a8049328dc29fec4741b2a9d762ffaa4c"
+      ],
+      "reason": "Reviewed the source change and existing governing contract: the shared hang-guard or justified teardown-marker migration preserves the assertions and product ownership; no additional current-intent text is needed.",
+      "subject": "onboarding:dashboard/src/panels/review/ReviewSurface.walk.test.tsx"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-S80QEC",
+      "items": [
+        "sha256:6c569af98c212c3c52159453685c1fcd45fe47f33c1d0488a84607277cc7e23e"
+      ],
+      "reason": "Reviewed the source change and existing governing contract: the shared hang-guard or justified teardown-marker migration preserves the assertions and product ownership; no additional current-intent text is needed.",
+      "subject": "onboarding:mcp/tests/test_conversation_control_attachments.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SF3A7D",
+      "items": [
+        "sha256:66e6bea3b700baf34bf098319a4022644d2d89784b7440f62625805d5f1b94d7"
+      ],
+      "reason": "This dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx hunk migrates a test guard, timer observation, helper import or catalog consumer relation; its local mechanism is documented in the affected card and does not introduce or alter a product guarantee.",
+      "subject": "hunk:sha256:66e6bea3b700baf34bf098319a4022644d2d89784b7440f62625805d5f1b94d7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SPYMND",
+      "items": [
+        "sha256:3dcfca86e698ee4e963ad91119b35e83e4c73f73603667b3059106a64e7b9615"
+      ],
+      "reason": "This dashboard/src/panels/review/ReviewSurface.walkStore.test.tsx hunk migrates a test guard, timer observation, helper import or catalog consumer relation; its local mechanism is documented in the affected card and does not introduce or alter a product guarantee.",
+      "subject": "hunk:sha256:3dcfca86e698ee4e963ad91119b35e83e4c73f73603667b3059106a64e7b9615"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R87",
+          "packet": "requirements/MIK-R87-v1-the-test-suites-do-not-depend-on-machine-load.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "251f20fd78b6afb13afca5a101943ed52516e3d5",
+            "content": "sha256:3f266394d747702cf5fca9a16837a3bd874dfdc8772be3c7aea06f6c9d3ff525",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_tmux_cleanup_failures_do_not_skip_existing_pytest_teardown"
+            },
+            "path": "mcp/tests/test_global_state_isolation.py"
+          },
+          "before": "absent",
+          "id": "PRF-4FWVH4"
+        },
+        {
+          "after": {
+            "blob": "ceb49d3efdf0700888bacf2839c56e28492729f4",
+            "content": "sha256:1dcb5d872feb2f49fce1ad5c42ad71b112263c426c8645868a326a094e1faab0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_failed_start_reaps_its_actual_child_client_and_stderr_task"
+            },
+            "path": "mcp/tests/test_eve_effort_runtime.py"
+          },
+          "before": "absent",
+          "id": "PRF-TZSZ6X"
+        },
+        {
+          "after": {
+            "blob": "e8bdf251226d481d7582f6d4b4a34634d0fa25be",
+            "content": "sha256:4b6630a829f00cbb2d79a4f1bc91f9eb2e61a56a77f4d933ecca34d89a3f6b9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "pytest_unconfigure"
+            },
+            "path": "mcp/tests/conftest.py"
+          },
+          "before": "absent",
+          "id": "RLZ-69RY4R"
+        },
+        {
+          "after": {
+            "blob": "5df10e7a13c0ae403d119e8416558b7fe7b608d6",
+            "content": "sha256:848f5304e05cf69830b4b7c013df4756f1d0a7117be86723531deb3add6895af",
+            "locator": {
+              "kind": "symbol",
+              "name": "IsolatedEveRuntimeProcess"
+            },
+            "path": "mcp/tests/eve_adapter_test_support.py"
+          },
+          "before": "absent",
+          "id": "RLZ-9PGY1V"
+        },
+        {
+          "after": {
+            "blob": "ceb49d3efdf0700888bacf2839c56e28492729f4",
+            "content": "sha256:86ec1868a12ba8d2a7d3eacb53f4de0b8a4dc39f37d49c3bd720cfe63fe2a715",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_observed_bind_collision_retries_and_other_start_failures_do_not"
+            },
+            "path": "mcp/tests/test_eve_effort_runtime.py"
+          },
+          "before": "absent",
+          "id": "RLZ-C9462R"
+        },
+        {
+          "after": {
+            "blob": "6050969a458d78903090248ba3c5c4cb49edf265",
+            "content": "sha256:020cc3116ec38a77913861f8caceef323205e77ddcbaf0f2bca564514555f8b7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/live_eve_native_fixture.py"
+          },
+          "before": "absent",
+          "id": "RLZ-GP9FCX"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "introduce",
+      "id": "ROW-T1J0ER",
+      "items": [],
+      "reason": "Introduces the scoped test-infrastructure obligation under the approved packet while preserving product behavior.",
+      "revision": 1,
+      "subject": "INV-KJN5GP"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-T48TSK",
+      "items": [
+        "sha256:748e0965c6671788acb98ec566dc771f62822a5eb4a5a388e93ac514c96129b9"
+      ],
+      "reason": "This dashboard/src/panels/review/ReviewSurface.walkStore.test.tsx hunk migrates a test guard, timer observation, helper import or catalog consumer relation; its local mechanism is documented in the affected card and does not introduce or alter a product guarantee.",
+      "subject": "hunk:sha256:748e0965c6671788acb98ec566dc771f62822a5eb4a5a388e93ac514c96129b9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-T75GV8",
+      "items": [
+        "sha256:f4e67387fdd71450e9b0e627855e15a38e7781a4744e0d1eeb3b1949e7b81e4f"
+      ],
+      "reason": "This mcp/tests/conftest.py hunk migrates a test guard, timer observation, helper import or catalog consumer relation; its local mechanism is documented in the affected card and does not introduce or alter a product guarantee.",
+      "subject": "hunk:sha256:f4e67387fdd71450e9b0e627855e15a38e7781a4744e0d1eeb3b1949e7b81e4f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TFMDP0",
+      "items": [
+        "sha256:a0c946950dcd5006176bf826376b5c423d982f9ef49a2043951a172339637aeb"
+      ],
+      "reason": "This dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx hunk migrates a test guard, timer observation, helper import or catalog consumer relation; its local mechanism is documented in the affected card and does not introduce or alter a product guarantee.",
+      "subject": "hunk:sha256:a0c946950dcd5006176bf826376b5c423d982f9ef49a2043951a172339637aeb"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TG2M8W",
+      "items": [
+        "sha256:63e81a65ef8868664f32551bd43d3cdef366282174ea12f370b5055200571fe6"
+      ],
+      "reason": "This mcp/tests/evidence-lifecycle.toml hunk migrates a test guard, timer observation, helper import or catalog consumer relation; its local mechanism is documented in the affected card and does not introduce or alter a product guarantee.",
+      "subject": "hunk:sha256:63e81a65ef8868664f32551bd43d3cdef366282174ea12f370b5055200571fe6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-V7E7TA",
+      "items": [
+        "sha256:25d9c27ac85873ef1cdff93bed26811315b9d98c929a9979e3cd6b1e4f7d2a5a"
+      ],
+      "reason": "This dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx hunk migrates a test guard, timer observation, helper import or catalog consumer relation; its local mechanism is documented in the affected card and does not introduce or alter a product guarantee.",
+      "subject": "hunk:sha256:25d9c27ac85873ef1cdff93bed26811315b9d98c929a9979e3cd6b1e4f7d2a5a"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "319eca1f8e7d80d5a6106c889b218c496d204ab8",
+            "content": "sha256:cef2059f5666e0b526ac6c5dfa0193b8c3c076c7b74b4f6b90fa2d0d34ef4f49",
+            "locator": {
+              "end": 423,
+              "kind": "line_range",
+              "start": 353
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx"
+          },
+          "before": {
+            "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
+            "content": "sha256:88c96c49cbe43851c2fd267eb581dc5ec9b87f784316c877c81e293ec05a1656",
+            "locator": {
+              "end": 421,
+              "kind": "line_range",
+              "start": 350
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx"
+          },
+          "id": "RLZ-TRH263"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-VNMSYV",
+      "items": [
+        "sha256:ef08cc63f671d4998eeaa1bf5c75fb0d74525e098eddc77afe5ef722452f4628"
+      ],
+      "reason": "Preserves the recorded product guarantee. Shared hang guards, actual opportunity witnesses and the canonical index rewrite helper change proof scheduling, not the product outcome; inherited source changes retain the cited enforcement branch.",
+      "revision": 1,
+      "subject": "INV-QZC5AZ"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0c44b80be6a1bb8d176afa67b62e37be8d5615c7",
+            "content": "sha256:1a203303ad32e30c6354249d3bd6b29ea0acebd5cdac69545ad0679462fc8b1f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_killed_dashboard_takes_the_child_blocked_in_git_and_its_git_process_with_it"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "before": {
+            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+            "content": "sha256:971faf1d98da641b241b055a189b4b4f144feb7b85e60997487e757c2aaf4444",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_killed_dashboard_takes_the_child_blocked_in_git_and_its_git_process_with_it"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "id": "PRF-3ACHSD"
+        },
+        {
+          "after": {
+            "blob": "0c44b80be6a1bb8d176afa67b62e37be8d5615c7",
+            "content": "sha256:aea809871ea10d0252b4d985e8b91cb1df3d5efdca848ccb5f7dd05606e4d00e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_actual_disconnect_deadline_shutdown_and_queue_reap_children"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "before": {
+            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+            "content": "sha256:ae868677aa01b2f814c90c493fe4f3b32678515788a65974e794cde883e6c36f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_actual_disconnect_deadline_shutdown_and_queue_reap_children"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "id": "PRF-5ZX9J7"
+        },
+        {
+          "after": {
+            "blob": "0c44b80be6a1bb8d176afa67b62e37be8d5615c7",
+            "content": "sha256:280c70155e4161ef2d657b9f29896b7167a326d1eef01e46768f2cb6bc945b6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_cancelled_requester_leaves_the_shared_child_to_the_others_and_the_last_reaps_it"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "before": {
+            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+            "content": "sha256:7af958e39778c833eac83ac09c125579da710a652e117aed5e0523eaee6aa61e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_cancelled_requester_leaves_the_shared_child_to_the_others_and_the_last_reaps_it"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "id": "PRF-DN5X16"
+        },
+        {
+          "after": {
+            "blob": "0c44b80be6a1bb8d176afa67b62e37be8d5615c7",
+            "content": "sha256:284ca56a5db3b744fd63c41b57ba2a4ae8824b9192dd5c202d57bf113108c494",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_child_and_its_git_children_end_at_its_own_deadline"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "before": {
+            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+            "content": "sha256:2dfb98e6adce971ee3aca8f017deeb418b3eba8d1dfa2dff97fd2607408e415e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_child_and_its_git_children_end_at_its_own_deadline"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "id": "PRF-FRAR97"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-W22PK9",
+      "items": [
+        "sha256:602e2883ba22658307d378d80c24796a940511084166510e89d214d453325d54"
+      ],
+      "reason": "Preserves the recorded product guarantee. Shared hang guards, actual opportunity witnesses and the canonical index rewrite helper change proof scheduling, not the product outcome; inherited source changes retain the cited enforcement branch.",
+      "revision": 1,
+      "subject": "INV-HHZP57"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-W4AZS8",
+      "items": [
+        "sha256:16f23406ff3d045e5f884de1cdd87f45b79c149e3c77b2e3be92f8951410e6f6"
+      ],
+      "reason": "This mcp/tests/evidence-lifecycle.toml hunk migrates a test guard, timer observation, helper import or catalog consumer relation; its local mechanism is documented in the affected card and does not introduce or alter a product guarantee.",
+      "subject": "hunk:sha256:16f23406ff3d045e5f884de1cdd87f45b79c149e3c77b2e3be92f8951410e6f6"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-W55W4Z",
+      "items": [
+        "sha256:70c0fa3e055e24584b099d28d8996f0ac1d752ed933f8b249222ca02ec3104bd"
+      ],
+      "reason": "Reviewed the source change and existing governing contract: the shared hang-guard or justified teardown-marker migration preserves the assertions and product ownership; no additional current-intent text is needed.",
+      "subject": "onboarding:mcp/tests/test_leaf_enclosure_start.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WJMS3G",
+      "items": [
+        "sha256:7f2ddeb3bf380150cd585bfa529b233e7f017745c3d9d02a5cb774a4c742b717"
+      ],
+      "reason": "This dashboard/src/panels/review/ReviewSurface.walkStore.test.tsx hunk migrates a test guard, timer observation, helper import or catalog consumer relation; its local mechanism is documented in the affected card and does not introduce or alter a product guarantee.",
+      "subject": "hunk:sha256:7f2ddeb3bf380150cd585bfa529b233e7f017745c3d9d02a5cb774a4c742b717"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WMMDFZ",
+      "items": [
+        "sha256:930d2b8ab16de83b082062f92f8dbf63ddbdfce45cdf1b0772efffa7f69faf29"
+      ],
+      "reason": "This mcp/tests/evidence-lifecycle.toml hunk migrates a test guard, timer observation, helper import or catalog consumer relation; its local mechanism is documented in the affected card and does not introduce or alter a product guarantee.",
+      "subject": "hunk:sha256:930d2b8ab16de83b082062f92f8dbf63ddbdfce45cdf1b0772efffa7f69faf29"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R87",
+          "packet": "requirements/MIK-R87-v1-the-test-suites-do-not-depend-on-machine-load.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "f84e121103ee2abc1a191c6d978cd4fdd4b97ec6",
+            "content": "sha256:324e8e50136c1b4e38a8f43f5937548f0dc0ae0924d7b30a2ade528851e9aed0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/vitest.config.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-CNW3W7"
+        },
+        {
+          "after": {
+            "blob": "0485cc6ccebe5cacc8e1e1effeccbc320b57c881",
+            "content": "sha256:bf9e4e670a97ea9579564a7419d428569770feb605cd2772c254c08caf4882c1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/test/setup.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-SVAZ21"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "introduce",
+      "id": "ROW-WXHNZG",
+      "items": [],
+      "reason": "Introduces the scoped test-infrastructure obligation under the approved packet while preserving product behavior.",
+      "revision": 1,
+      "subject": "INV-48C3DS"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-X408MF",
+      "items": [
+        "sha256:b63346e683be22f0ec9f3e25b65301b502c670901895017f47e6afc1a57cad43"
+      ],
+      "reason": "Reviewed the source change and existing governing contract: the shared hang-guard or justified teardown-marker migration preserves the assertions and product ownership; no additional current-intent text is needed.",
+      "subject": "onboarding:mcp/tests/test_dagger_registry_lock.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "51f9b6abddfd252e7608a114af2561ae130b078b",
+            "content": "sha256:f203fbf19bf92f2d70df908f282767b722a1619b2889873eac53c0a17084ffe5",
+            "locator": {
+              "kind": "symbol",
+              "name": "changed_observations"
+            },
+            "path": "mcp/src/agents_remember/kernel/recorded_reads.py"
+          },
+          "before": {
+            "blob": "a969ca4a3e6f9573376dc23de7876cccfaa59f78",
+            "content": "sha256:460ed4b4eaff75ffbcf3436841851e9cc9eb7340682d58f9b8abefe3f8ca0216",
+            "locator": {
+              "kind": "symbol",
+              "name": "changed_observations"
+            },
+            "path": "mcp/src/agents_remember/kernel/recorded_reads.py"
+          },
+          "id": "RLZ-67HY7K"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-X6D6KP",
+      "items": [
+        "sha256:5baa343180ec3053dba31cdec327ddfb5f3d2fdc942ea6bcf92e6dd7963b74cf"
+      ],
+      "reason": "Preserves the recorded product guarantee. Shared hang guards, actual opportunity witnesses and the canonical index rewrite helper change proof scheduling, not the product outcome; inherited source changes retain the cited enforcement branch.",
+      "revision": 1,
+      "subject": "INV-D2HZQ8"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-49E649",
+          "revision": 1
+        },
+        {
+          "id": "INV-656CYW",
+          "revision": 2
+        },
+        {
+          "id": "INV-D2HZQ8",
+          "revision": 1
+        },
+        {
+          "id": "INV-HWAWFT",
+          "revision": 1
+        },
+        {
+          "id": "INV-MS9BMJ",
+          "revision": 2
+        },
+        {
+          "id": "INV-WV1YQE",
+          "revision": 1
+        },
+        {
+          "id": "INV-XN0FG8",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-X7NPMB",
+      "items": [
+        "sha256:e61a34853703cf0c65c3cf14521a3d06bde829f94f74df51cc1c30880218456a"
+      ],
+      "reason": "The exact existing member statements, current revisions and joint guarantee were read together. Test guards and producer-opportunity witnesses preserve their product contracts; source-line anchor maintenance adds no member or guarantee change.",
+      "subject": "FAM-61DY2V"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-X91376",
+      "items": [
+        "sha256:388c13e4c20d543fa8fa4036d292fe39f083d669ef2b6380c8fb5d9c4fd934d7"
+      ],
+      "reason": "Reviewed the source change and existing governing contract: the shared hang-guard or justified teardown-marker migration preserves the assertions and product ownership; no additional current-intent text is needed.",
+      "subject": "onboarding:mcp/tests/test_eve_product_integration.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-19P897",
+          "revision": 1
+        },
+        {
+          "id": "INV-BBPPS5",
+          "revision": 1
+        },
+        {
+          "id": "INV-HHZP57",
+          "revision": 1
+        },
+        {
+          "id": "INV-PKBCZ0",
+          "revision": 1
+        },
+        {
+          "id": "INV-Z2HVKA",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-XDX9JB",
+      "items": [
+        "sha256:577da74a645685e155b22a65cc305e7c0b5b05e84f2b1073e72cd8d4fa2ca4d8"
+      ],
+      "reason": "The exact existing member statements, current revisions and joint guarantee were read together. Test guards and producer-opportunity witnesses preserve their product contracts; source-line anchor maintenance adds no member or guarantee change.",
+      "subject": "FAM-TYKA3T"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "319eca1f8e7d80d5a6106c889b218c496d204ab8",
+            "content": "sha256:b1b19551e80087c12870584fdf904149991f4a9635040745830291ccbbe5277d",
+            "locator": {
+              "kind": "symbol",
+              "name": "atClick"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx"
+          },
+          "before": {
+            "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
+            "content": "sha256:b1b19551e80087c12870584fdf904149991f4a9635040745830291ccbbe5277d",
+            "locator": {
+              "kind": "symbol",
+              "name": "atClick"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx"
+          },
+          "id": "PRF-2CF5YF"
+        },
+        {
+          "after": {
+            "blob": "319eca1f8e7d80d5a6106c889b218c496d204ab8",
+            "content": "sha256:65b31236193cb40763aecbc742393f0d2fb9a7e0b70c99cb92ba9b2e7de0fca9",
+            "locator": {
+              "kind": "symbol",
+              "name": "retry"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx"
+          },
+          "before": {
+            "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
+            "content": "sha256:6c54104d56b8c46d98ae10197f512876b268b707a9fa0ecc8b71fa603499a0a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "retry"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx"
+          },
+          "id": "PRF-581Q8Y"
+        },
+        {
+          "after": {
+            "blob": "4527c1a55df306503a92176f7027d7c5a4eb30e0",
+            "content": "sha256:ea269e8db3327392747ef193461b4298bcea39a4795fe4845132c3688657f7ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "pressedAgain"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.navigation.test.tsx"
+          },
+          "before": {
+            "blob": "9e4ad8cc9c5e89f1b87520a00398292de27e1df8",
+            "content": "sha256:ea269e8db3327392747ef193461b4298bcea39a4795fe4845132c3688657f7ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "pressedAgain"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.navigation.test.tsx"
+          },
+          "id": "PRF-8296K7"
+        },
+        {
+          "after": {
+            "blob": "4527c1a55df306503a92176f7027d7c5a4eb30e0",
+            "content": "sha256:11a4d36f79e91beeeb71664962b2017e8c85204267fc882725ab3ac7a500a8ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "selected"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.navigation.test.tsx"
+          },
+          "before": {
+            "blob": "9e4ad8cc9c5e89f1b87520a00398292de27e1df8",
+            "content": "sha256:11a4d36f79e91beeeb71664962b2017e8c85204267fc882725ab3ac7a500a8ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "selected"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.navigation.test.tsx"
+          },
+          "id": "PRF-QZA2TP"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-XXWVKX",
+      "items": [
+        "sha256:60517c0acb42e3b664ea89643b520da2a87e888d2bc4f470a1cb6ba17df40c75"
+      ],
+      "reason": "Preserves the recorded product guarantee. Shared hang guards, actual opportunity witnesses and the canonical index rewrite helper change proof scheduling, not the product outcome; inherited source changes retain the cited enforcement branch.",
+      "revision": 1,
+      "subject": "INV-T1ZHP5"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-YBH9TD",
+      "items": [
+        "sha256:f1d4f565af4f7b06bd18535f7e03be09525b86159f1e3e55bf9341909fb95aa6"
+      ],
+      "reason": "Reviewed the source change and existing governing contract: the shared hang-guard or justified teardown-marker migration preserves the assertions and product ownership; no additional current-intent text is needed.",
+      "subject": "onboarding:mcp/tests/test_harness_control_claude.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "75f418654963492ccaebd1b5241cf80a54821218",
+            "content": "sha256:758c3058ac56076e2d6a6a002a25b460c283aa28c7e7d0d7de2fff972b8f7757",
+            "locator": {
+              "kind": "symbol",
+              "name": "BridgeScriptTests.test_script_failures_are_named_and_another_daemon_is_refused"
+            },
+            "path": "mcp/tests/test_paseo_bridge.py"
+          },
+          "before": {
+            "blob": "b0af01fc7a5dd4073694f370cf0ab432e0df1e7f",
+            "content": "sha256:61f4197f39df45313cebd1c6873a0c2831dc3ffce4f81cc7450f812ccc86734a",
+            "locator": {
+              "kind": "symbol",
+              "name": "BridgeScriptTests.test_script_failures_are_named_and_another_daemon_is_refused"
+            },
+            "path": "mcp/tests/test_paseo_bridge.py"
+          },
+          "id": "PRF-7PZS43"
+        },
+        {
+          "after": {
+            "blob": "75f418654963492ccaebd1b5241cf80a54821218",
+            "content": "sha256:e3274b9de9f2e09757fa8f558e3093f05dd9487c5741c5ef830e2931053e5184",
+            "locator": {
+              "kind": "symbol",
+              "name": "BridgeProcessTests.test_unconfigured_or_never_started_runtime_refuses_before_any_process"
+            },
+            "path": "mcp/tests/test_paseo_bridge.py"
+          },
+          "before": {
+            "blob": "b0af01fc7a5dd4073694f370cf0ab432e0df1e7f",
+            "content": "sha256:e3274b9de9f2e09757fa8f558e3093f05dd9487c5741c5ef830e2931053e5184",
+            "locator": {
+              "kind": "symbol",
+              "name": "BridgeProcessTests.test_unconfigured_or_never_started_runtime_refuses_before_any_process"
+            },
+            "path": "mcp/tests/test_paseo_bridge.py"
+          },
+          "id": "PRF-G01FCX"
+        },
+        {
+          "after": {
+            "blob": "75f418654963492ccaebd1b5241cf80a54821218",
+            "content": "sha256:59ec754e59b4faaafa50466b23c4acbaede5df2a01510e3935ca5d9b8deb9b7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "BridgeProcessTests.test_the_script_is_pointed_at_the_configured_runtime_and_no_other"
+            },
+            "path": "mcp/tests/test_paseo_bridge.py"
+          },
+          "before": {
+            "blob": "b0af01fc7a5dd4073694f370cf0ab432e0df1e7f",
+            "content": "sha256:59ec754e59b4faaafa50466b23c4acbaede5df2a01510e3935ca5d9b8deb9b7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "BridgeProcessTests.test_the_script_is_pointed_at_the_configured_runtime_and_no_other"
+            },
+            "path": "mcp/tests/test_paseo_bridge.py"
+          },
+          "id": "PRF-MDJK7B"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-YC4JYK",
+      "items": [
+        "sha256:b6d5503a9bec932dc97246ff00fd100d97997c4b836e68bd5c342d04f3608140"
+      ],
+      "reason": "Preserves the recorded product guarantee. Shared hang guards, actual opportunity witnesses and the canonical index rewrite helper change proof scheduling, not the product outcome; inherited source changes retain the cited enforcement branch.",
+      "revision": 1,
+      "subject": "INV-VV0B2G"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YGP19K",
+      "items": [
+        "sha256:4a9062cedc9a1d82fb9f561543a72c652107ed48ef058e20d800866a525ca767"
+      ],
+      "reason": "This dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx hunk migrates a test guard, timer observation, helper import or catalog consumer relation; its local mechanism is documented in the affected card and does not introduce or alter a product guarantee.",
+      "subject": "hunk:sha256:4a9062cedc9a1d82fb9f561543a72c652107ed48ef058e20d800866a525ca767"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YZ744W",
+      "items": [
+        "sha256:9165ea6f3534e58b3437da958e21fa2a55a5bb143d88cf5c16c4bb77809f85af"
+      ],
+      "reason": "This mcp/tests/evidence-lifecycle.toml hunk migrates a test guard, timer observation, helper import or catalog consumer relation; its local mechanism is documented in the affected card and does not introduce or alter a product guarantee.",
+      "subject": "hunk:sha256:9165ea6f3534e58b3437da958e21fa2a55a5bb143d88cf5c16c4bb77809f85af"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZH4B6J",
+      "items": [
+        "sha256:a3ae3c19f151abab6790077e4cd607b788e859b66f0cd6e2663e07b08c6b9e0e"
+      ],
+      "reason": "This dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx hunk migrates a test guard, timer observation, helper import or catalog consumer relation; its local mechanism is documented in the affected card and does not introduce or alter a product guarantee.",
+      "subject": "hunk:sha256:a3ae3c19f151abab6790077e4cd607b788e859b66f0cd6e2663e07b08c6b9e0e"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ZH823G",
+      "items": [
+        "sha256:7b1024d4943b43947372fee30c490ac8f706189a5ba6f5dc02b31fb7190a8b92"
+      ],
+      "reason": "Reviewed the source change and existing governing contract: the shared hang-guard or justified teardown-marker migration preserves the assertions and product ownership; no additional current-intent text is needed.",
+      "subject": "onboarding:dashboard/src/data/conversation/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZHM1P0",
+      "items": [
+        "sha256:ff136313c9b514e6c14baec22c5c5126fe790de43cdcc4d5f97b2d9f43da650a"
+      ],
+      "reason": "This mcp/tests/conftest.py hunk migrates a test guard, timer observation, helper import or catalog consumer relation; its local mechanism is documented in the affected card and does not introduce or alter a product guarantee.",
+      "subject": "hunk:sha256:ff136313c9b514e6c14baec22c5c5126fe790de43cdcc4d5f97b2d9f43da650a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZW1YFE",
+      "items": [
+        "sha256:45aa2099598d40f8833de697f2d99d139e58955a44ed8110c7a0d90d23cace8a"
+      ],
+      "reason": "This dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx hunk migrates a test guard, timer observation, helper import or catalog consumer relation; its local mechanism is documented in the affected card and does not introduce or alter a product guarantee.",
+      "subject": "hunk:sha256:45aa2099598d40f8833de697f2d99d139e58955a44ed8110c7a0d90d23cace8a"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-AD1MRN",
+          "revision": 1
+        },
+        {
+          "id": "INV-D0551J",
+          "revision": 1
+        },
+        {
+          "id": "INV-GP90VQ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-ZYFX8T",
+      "items": [
+        "sha256:fed6c9d5cbf2d77ce8dced3e9d61bfff8a8505312540010b9b8215d34092b311"
+      ],
+      "reason": "The exact existing member statements, current revisions and joint guarantee were read together. Test guards and producer-opportunity witnesses preserve their product contracts; source-line anchor maintenance adds no member or guarantee change.",
+      "subject": "FAM-CAG581"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZZ9QBT",
+      "items": [
+        "sha256:f562a5d611ed9b11249c78d619e895662d5b2f8db8fb53331eb7ed6cf242f897"
+      ],
+      "reason": "This dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx hunk migrates a test guard, timer observation, helper import or catalog consumer relation; its local mechanism is documented in the affected card and does not introduce or alter a product guarantee.",
+      "subject": "hunk:sha256:f562a5d611ed9b11249c78d619e895662d5b2f8db8fb53331eb7ed6cf242f897"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

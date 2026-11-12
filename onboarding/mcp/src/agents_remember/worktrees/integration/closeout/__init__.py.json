@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/closeout/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Package description\n\nAnchor: \"Closeout-door admission, publication, and recovery.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0072aff02995fe95fcb8c601d0209741218cd828",
+            "content": "sha256:ef119b005232290ee51fe19136531663be0128d442dcfb27992dcbf5c6fa5834",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

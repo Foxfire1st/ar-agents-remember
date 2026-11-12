@@ -1,0 +1,55 @@
+{
+  "path": "mcp/src/agents_remember/kernel/coordination_context/markdown_settings.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`parse_coordination_settings` selects JSON settings when present, parses Markdown settings blocks otherwise, and returns the `StorageSettings` defaults — `DEFAULT_STORAGE_MODE` = `\"memory-repo\"` — when no settings file exists. It takes no `topology` parameter any more. Source caption: `parse_coordination_settings`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f7aede928787476f95e2a0294befd268bcfbbcd",
+            "content": "sha256:c7ced00e2f88651401c0f3a38fc3add0dbc0b25152dd8057562b12ffbd7c29f5",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 88
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/settings.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "30e2ff45d5ee2851183199f50d122c1ccdd79e78",
+            "content": "sha256:7111a3b69c6d1751598edfaa6d6fb733c53af8a1a2aefb64258ae9ae96167bf3",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 42
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The topology-derived storage default is gone; `StorageSettings.mode`/`.default` are the one non-topology default.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "30e2ff45d5ee2851183199f50d122c1ccdd79e78",
+            "content": "sha256:ba610545f723deb0d8c206b064e83b99fde2b7895434d67aa6174790bd64f4bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "DEFAULT_STORAGE_MODE"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

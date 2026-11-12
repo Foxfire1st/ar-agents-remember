@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/providers/lifecycle/log_capture.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/providers/lifecycle/log_capture.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T00:00+02:00                     |
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2`                |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
-| governingOverview      | `overview.md`                              |
-
 ## Governing Overview
 
 [Provider Lifecycle Modules Overview](overview.md)
@@ -20,8 +10,8 @@
 responses caused by verbose provider command output (`pg_dump | psql`, `ollama
 pull`, `cgc bundle import`). It strips logs on success, tails them on failure,
 always drops the redundant `json` mirror, drops verbose plumbing keys
-(`command`, `commands`, `compose`, `migration`) on success, and redacts
-`PGPASSWORD=` tokens from command-line arguments.
+(`command`, `commands`, `compose`, `migration`) on success, and masks string command-list
+items containing `PASSWORD=` (including `PGPASSWORD=`), within the limits below.
 
 ## Code Commentary
 
@@ -33,9 +23,9 @@ always drops the redundant `json` mirror, drops verbose plumbing keys
   success, caps it to the failure tail otherwise. **The keys stay present (as `""`)** so the
   response keeps its shape either way.
 - `_drop_verbose_plumbing(node, *, succeeded)` — drops the always-redundant mirror keys, then
-  either the debug-only keys (on success) or the secrets inside them (on failure, via
-  `_redact_commands`). A failing node keeps the plumbing, redacted, **because that detail is what
-  makes the failure debuggable**.
+  the debug-only keys on success. On failure it keeps the plumbing and applies `_redact_commands`
+  only to `command`/`commands`, masking supported `PASSWORD=` string items in command-token lists;
+  this is not general secret redaction.
 
 `summarize_command_logs` still mutates in place, still recurses into dict values and list items,
 and still returns the same payload.
@@ -55,9 +45,13 @@ are tailed to `failure_tail` lines and `command`/`commands` are passed through
 node is evaluated independently so a failing child inside a successful parent
 retains its tail.
 
-`_redact_commands` walks list/dict values recursively. `_redact_token` replaces
-any string containing `PASSWORD=` with `<prefix>=***`, hiding credentials
-embedded inline in provider clone command arguments.
+`_redact_commands` recurses through dictionary values. For a list it calls `_redact_token`
+on each immediate item, not `_redact_commands`: string items containing the case-sensitive
+`PASSWORD=` substring are replaced with the text before the first `=` followed by `=***`
+(for example, `PGPASSWORD=...` becomes `PGPASSWORD=***`). Non-string list items, including
+nested lists/dictionaries, and scalar values passed to `_redact_commands` are unchanged.
+This covers flat command-token lists (including those reached through dictionary values),
+not arbitrary nested token containers, scalar command strings, logs, or every kind of secret.
 
 ### Invariants And Boundaries
 
@@ -66,38 +60,23 @@ embedded inline in provider clone command arguments.
   content afterwards.
 - The `json` key is always dropped (it is a duplicate mirror of `payload`
   attached by `setup_common`); this is not conditional on success/failure.
-- On failure, `command`/`commands` are retained for debugging but credential
-  tokens are redacted before the response reaches the client.
+- On failure, `command`/`commands` are retained for debugging. Their supported command-list
+  string items containing `PASSWORD=` are masked before transport; dictionary values recurse,
+  but nested list items and scalar strings have no blanket redaction guarantee.
 - Success is evaluated per-node, not globally; a parent node being ok does not
   silence a failing child's logs.
 - `tail_lines` returns the full text unchanged when the line count is within
   `max_lines`, so short logs are not truncated.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured for this memory repo.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation found. | n/a | n/a |
+No relevant external documentation found.
 
-## Repo-Internal References
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `provider_watchers_payload` applies `summarize_command_logs` to every watcher tool response. | `provider_watchers_payload` | mcp/src/agents_remember/mcp/tools/providers.py:73-87 |
-| `worktree_start_payload` applies `summarize_command_logs` to the worktree start tool response. | `worktree_start_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:41-51 |
+### Repo-Internal References
 
 
-## Update History
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `worktree_start_payload` repointed to mcp/src/agents_remember/mcp/tools/worktree.py:41-51. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B22 curator: replaced the three `n/a`-anchor
-  table citations with exact anchors and fixer-generated ranges; exact non-fixing check returns
-  zero findings.
-
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `C901`/`PLR0912` armed with no
-  exemptions): extracted `_shrink_logs` and `_drop_verbose_plumbing` from `summarize_command_logs`.
-  Identical reduction: same keys emptied, same keys dropped, same redaction on failure.
-  Verification metadata pinned until closeout stamps the L2 commit.
-- 2026-06-01T00:00+02:00 — Created onboarding for the new log-capture response trimmer module.
+- `worktree_start_payload` applies `summarize_command_logs` to the worktree start tool response. [2]

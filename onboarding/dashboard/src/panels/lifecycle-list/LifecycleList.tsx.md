@@ -1,474 +1,131 @@
 # dashboard/src/panels/lifecycle-list/LifecycleList.tsx
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/panels/lifecycle-list/LifecycleList.tsx` |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-09-01T03:58+02:00 |
-| lastVerifiedCommitHash | `09329a7ee598920c519b06305b73ba8e48d72c88`       |
-| lastVerifiedCommitDate | 2026-09-26T00:58:43+02:00|
-| governingOverview      | `../overview.md`                                 |
-
 ## Governing Overview
 
-[panels/ overview](../overview.md)
-
-## 260731-EFA-L8 Move
-
-`LifecycleList.tsx` moved to `dashboard/src/panels/lifecycle-list/LifecycleList.tsx`
-(canonical entry, 1,182 lines) under the frontend-rail naming rule. Its former
-monolithic test suite split by behavior into `admission.test.tsx`, `gateHint.test.tsx`,
-`hierarchy.test.tsx`, and `signals.test.tsx` (shared fixtures in `test-utils.tsx`).
-The component behavior is unchanged.
+[Panels overview](../overview.md)
 
 ## Purpose
 
-> **WITHDRAWAL — the `260921-ICR-L34` curation, because the code this card's L33 paragraphs described was
-> reverted.** Commit **`a9a1a41b`** (*"Revert L33's operations-list change; clear the pre-existing
-> ruff-format red"*) is a **direct emergency commit with no curator pass behind it**: it deleted
-> `panels/lifecycle-list/landedLeaves.ts` (177 lines), removed 250 lines from this module (1189 lines
-> now), deleted 366 lines from `hierarchy.test.tsx` (355 lines now) and restored
-> `useCollapsedTaskGroups.ts` to one collapse set. **The landed-leaf admission and its
-> default-collapse rule do not exist in any tree**, `landedLeaves.ts` exists in neither, and
-> `leafRecordsLandedWork`, `childFactsByParent`, `landedLeafDocs`, `markAutoCollapsed`, `rowIsCollapsed`,
-> `openedKeys`, `setCollapsed` and `CollapseState` exist nowhere. This card's L33 narrative and its L33
-> reference rows are **withdrawn in place** below and its card for the deleted module was removed; a
-> reader must not act on them. The rest of the card — the pre-L33 behaviour, the pivots, the tiers, the
-> row builders and the one-entry-per-`enclosureId` rule — was re-read against the reverted module and
-> stands.
-
-The Operations task list. It uses projected JSON-primary task documents as the readable task pool, but
-does not put every projected document into the left sidebar. Sidebar rows are limited to root/master
-task documents, leaf task documents that match an active enclosure, folder-keyed series fallbacks when
-no master document is projected, and runtime lifecycle fallbacks for enclosure-backed work with no
-document row. Since 260703-L11 an active enclosure is one whose worktree PHYSICALLY EXISTS — the shared
-`hasLiveWorktree` rule over the projection's stat'ed `codeWorktreeExists`/`memoryWorktreeExists` flags,
-never a cleanup-state proxy: retired/discarded leaves stay hidden as before (their worktrees were
-reaped), and a reopened contract (`cleanup: reopened`) stays hidden until `worktree_start` recreates its
-worktrees. **The existence rule is again the whole of the rule** — the L33 landed-leaf exception is
-withdrawn (see the banner above): a `Completed` leaf whose worktree closeout removed has no row here,
-and its work is reached through the master's own navigation and typed `taskdoc:` links. Retired,
-discarded, abandoned and still-planning leaves keep the old path. The complementary identity rule (260703-L11): each leaf appears ONCE — one task entry per
-`enclosureId` — with a bound lifecycle annotating the doc row rather than duplicating it as a card.
-
-In the `BY REPO` pivot, admitted leaf documents are grouped below their parent/root task and rendered as
-indented child rows; those leaf labels use the same child task-document numbers as the master task
-list. Since 260703-L14 the hierarchy carries a third, top level: an **orchestration task** — a
-`kind:"master"` doc with a non-empty `orchestrates` list — renders as a gold-tier command row, the
-masters it names nest one 22px step below it with the purple management tier, and their leaves keep
-today's rendering one step further. Command rows wear the developer-picked V4 treatment (folded corner,
-tier ghost wash, chevron `RankBadge`, gold top hairline for orchestration); uncommanded masters — and
-every row of a run with no orchestration task (the D3 ruling) — render exactly as before: no tier, no
-badge, no extra indent. `BY PHASE` remains a flat lifecycle/status view. The panel uses React Aria `ListBox` rows with
-typed selection keys (`taskdoc:<docPath>`, `series:<seriesId>`, `lifecycle:<id>`) and keeps the
-user-facing copy as "Tasks" (`Tasks · {n}`, empty state `No tasks.`). **`n` counts task ENTRIES, not
-projected documents** — every master, series and lifecycle entry, every leaf with live work, and the
-landed leaves of the parents that are OPEN — and since 260921-ICR-L33 the `h2` carries that meaning in
-its own native `title`, worded for the fresh render (a parent that still holds live work is open by
-default, so its landed leaves are already counted before any click). Task 11's compact gate badge is
-shown when the attached lifecycle has a durable `gate.kind` (`gateHint` returns the kind or `""`). **L17
-removed the wait-loop-era fallback** to a proto `ask` (the question string, else the literal "ask"): under
-notify-and-continue the attention queue carries the notification and only durable gates surface here. Long visible task labels stay
-one-line: the title span is the row's shrinkable segment, truncates with ellipsis when space is tight,
-and carries a native hover `title` containing the full label plus lifecycle context. The listbox,
-section, and row containers are also width-constrained (`minmax(0, 1fr)` grid tracks plus `minWidth:0`
-on the panel/row) so the row cannot expand the left panel horizontally before the title span gets to
-ellipsis; secondary kind, gate, and wait/progress metadata are bounded with their own ellipses so they
-cannot consume the whole title lane.
+The Operations task-navigation column: a controlled React Aria ListBox with BY REPO tree and BY PHASE flat grouping, one-line rows, and the attention bell in its head. The approved presentation replaces rank chevrons, tier frames and separate gate/chat/pickup chips with one state mark, one task-state word and a progress figure, with cached major-step marks for non-master document rows; full facts remain in each row's hover. Its head supplies both routes the bell's rows need — selecting the exact task and opening the concerned
+agent's chat through the shell's `onOpenAgent` request, which asks the frame rather than recording what it shows — so a queue row can reach its subject from the column that owns the
+bell. It neither authors task state nor widens row admission.
 
 ## Code Commentary
 
-### Logic
+### Admission and durable identity
 
-Since L15 the panel's served ages advance LOCALLY: the wire carries stable forms without the volatile *Seconds fields, so the panel derives display ages from per-object arrival anchors (data/servedAges.ts) refreshed by a 10-second useNowMs ticker — the deliberate, disclosed deviation from the no-re-render ideal that replaced the per-second whole-payload churn.
-
-L11 review follow-up (L11R-2): `lifecycleForEnclosure`'s anchor fallback is now deterministic — among lifecycles anchoring one enclosure without a contract `lifecycleId`, the greatest `lastEventTs` (most recently active) annotates the row, never projection order.
-
-The `Panel` `head` shows `Tasks · {rows.length}`. The BY REPO | BY PHASE pivot is a React Aria
-`ToggleButtonGroup` (single-select, `aria-label="Group tasks by"`) in that custom `head`; it groups the
-derived `OperationRow` collection by repository or lifecycle phase/task status. `operationRows` builds
-rows in this order: admitted task-document rows first, series fallback rows only when the master doc is
-not already in `taskDocuments`, then runtime-only lifecycle rows for enclosure-backed lifecycles that no
-document/series row represents. It first derives an active enclosure list with the shared
-`hasLiveWorktree` selector (`codeWorktreeExists || memoryWorktreeExists` — 260703-L11); document
-admission and runtime-only lifecycle fallbacks use that filtered list, while projected task documents
-remain available to Detail/master navigation.
-
-**The fourth pass and the default this paragraph describes are WITHDRAWN with the L33 revert.**
-`markAutoCollapsed(rows)` and `appendLandedLeafRows` exist nowhere in the code tree; the module has no
-landed-leaf pass, no `autoCollapsed` default and no `landedCount`. **What follows is the record of what
-L33 built, kept so the withdrawal is auditable and not so a reader can act on it:** once every
-non-landed row existed, `markAutoCollapsed(rows)` decided which rows the projection itself held closed,
-and only then did `appendLandedLeafRows` materialize the landed leaves of the parents that were open.
-The rule was two exclusions, not one: a row was auto-collapsed only when `landedCount > 0` **and**
-`childCount === landedCount` (every child it carried was one of its own landed leaves) **and** it carried
-no OTHER rows (`structuralChildren.get(row.key) ?? 0 === 0`). The third clause is load-bearing — on the
-live projection an orchestration row that commands other masters owns a 161-row subtree, and closing it
-would hide those masters' work behind a disclosure — and it is pinned by a delivered case rather than by
-argument. **`rowIsCollapsed` and the `autoCollapsed` default this paragraph describes were removed with
-the L33 revert** (see the banner): the reader's view of a row is the one `collapsedKeys` set in
-[`useCollapsedTaskGroups`](../useCollapsedTaskGroups.ts.md), inverted by `toggleCollapsed`.
-`TaskGroupSection` resolves `collapsedHere` once per group so the depth-stack walk and the
-row's disclosure agree about which rows are open.
-
-One row per `enclosureId` (260703-L11): a `representedEnclosureIds` set records every enclosure a doc
-row resolved through, and the runtime-only lifecycle loop skips a lifecycle whose
-`findLifecycleEnclosure` result is already claimed (also claiming the ids it does render, so two
-lifecycles bound to one enclosure yield one row). The annotation half of the rule is
-`lifecycleForEnclosure(enclosure, lifecycles, lifecycleById)`: when `runtimeForDoc` finds no lifecycle
-(e.g. the doc's `lifecycleId` was cleared), the doc row falls back to the lifecycle bound to its
-enclosure — by the contract's recorded `lifecycleId` or by a live lifecycle's own `enclosure` anchor —
-so the lifecycle's state/gate/ask/staleness enrich the single doc row instead of rendering a second
-task entry (the L9-reopen defect: the enclosure row AND the live lifecycle's card rendered for one
-leaf).
-
-A document is admitted when `isRootTaskDoc` returns true (`kind === "master"` or `task.json`) or
-`enclosureForDoc` matches the document directory to `EnclosureNode.taskRoot` and either the document
-stem or authored task-document `id` to `EnclosureNode.leafId` in the active enclosure list — every
-leafId comparison **case-insensitive** since L10, because enclosure leaf ids are slugified lowercase
-directory names (`260628-l7`) while doc ids are authored uppercase labels (`260628-L7`), the mismatch
-that left active series leaves rendering as doc-less runtime rows. The `id`
-join covers numbered leaf enclosures such as leaf id `31` whose readable task file is
-`31_provider-state-refresh-and-engine-room-honesty.json`; it deliberately does not admit arbitrary
-docs that merely share a master lifecycle. Since L11 the joins are EXACT only: `task_reopen` reuses
-the original leaf id (a reopened enclosure returns to planning with `cleanup: reopened` and renders
-as its planned doc row), so the old `-rN`/`-sN` suffixed-leaf-id `startsWith` admission heuristic is
-gone. These comparisons are structural joins to projected
-enclosure identity; they are not used to recover display numbers or ordering from task-name prefixes.
-Document rows use `taskDocSelectionKey(doc.docPath)`, series fallback rows use
-`seriesSelectionKey`, and runtime-only rows use `lifecycleSelectionKey`. Runtime-only lifecycle rows
-also resolve a `parentKey` through `masterParentKeyForEnclosure`: it finds the series whose folder
-(`pathDir(series.docPath)`) equals the enclosure `taskRoot` and points the row at the projected master
-(`taskdoc:` when the master document is projected, otherwise `series:`), so a doc-less enclosure-backed
-lifecycle nests under its master in `BY REPO` rather than floating as a top-level row.
-
-Leaf document row labels and parent keys come from `data/taskHierarchy.ts`: `taskDocHierarchyLabel`
-resolves the parent master sub-task ref and prepends the child task document `id` when that doc is
-projected, while `taskDocParentKey` points child rows at the projected parent master (`taskdoc:` when
-available, otherwise `series:`). The L14 command tier layers on top through `commandFacts(doc,
-allDocs)`: a master doc that IS an orchestration task (`isOrchestrationDoc` — `kind:"master"` +
-non-empty `orchestrates`) gets `tier:"orchestration"`; a master named in some orchestration doc's list
-(matched forgivingly by folder / doc id / title via `orchestratorParentKey(masterCommandNames(doc), …)`,
-never itself) gets `tier:"management"` and `parentKey` = the orchestration row's `taskdoc:` key.
-`seriesRow` applies the same commander check to folder-keyed series fallback rows (seriesId / title /
-folder names). `groupRows` keeps `BY PHASE` flat, but for `BY REPO` calls
-`hierarchyRows` — since L14 a depth-first walk over the parent links to ANY depth (orchestration >
-master > leaf is three levels) with a `seen` cycle guard plus a trailing sweep that appends
-cycle-orphaned rows top-level so pathological parent data can never drop a row. The `ListBoxItem`
-carries `data-depth`, `data-parent-key`, and the L14 `data-tier` for this hierarchy contract, while
-lifecycle selection ids remain unchanged. Tier rows render the V4 treatment through the row `cva`'s
-`tier` variants — a 13px folded-corner `_before` triangle, a `backgroundImage` ghost wash fading into
-the row bg (gold/purple ghost tokens), and for orchestration a `goldDim` top hairline — plus a
-`RankBadge` (size `row`) after the state `Dot`. Indentation is `indentStyle`: 22px `marginLeft` per
-step, where tier rows indent by their full depth while non-tier rows keep today's `nested`
-padding-left for their first level and only add margin beyond it — so a leaf under a commanded master
-sits one 22px step past the master, and a flat run's rows keep byte-identical styling to pre-L14. `selectedId` is normalized with `parseTaskSelection` before
-feeding React Aria `selectedKeys`, so raw lifecycle ids from older surfaces still highlight the right
-typed row when a matching row exists.
-
-`visibleHierarchyRows` is fed the resolved `collapsedHere` set rather than the raw persisted keys,
-which is what lets an auto-collapsed row hide its landed leaves without the reader's own collapse state
-being rewritten, and a master is given a disclosure (`hasDescendants`) when its inherited structural
-descendants exist **or** it carries children of its own (`item.childCount > 0`) — so a fully landed
-master still has a caret to open.
-
-After hierarchy flattening, `descendantBearingKeys` identifies parent rows with visible descendants.
-In `BY REPO`, `visibleHierarchyRows` walks the depth-first rows with a collapsed-depth stack, hiding
-descendants of collapsed sprint/orchestration or master rows while preserving nested keys' independent
-state. `TaskGroupDisclosure` is a native button with an accurate label and `aria-expanded`; its event
-handlers stop pointer, keyboard, and click propagation so disclosure is not ListBox selection. The
-heading still uses the full `rows.length`, and switching to `BY PHASE` uses the unfiltered flat rows.
-`useCollapsedTaskGroups` owns the reader's collapse state and persists stable typed selection keys in
-**one** array: `operations.tasks.collapsed.v1` (a key in it is a row the READER collapsed). The hook
-returns `{ collapsedKeys, toggleCollapsed }` and `toggleCollapsed(key)` inverts that one key.
-**The two-array form this paragraph used to describe — `operations.tasks.opened.v1` and
-`setCollapsed(key, collapsed)` — was removed with the L33 revert** and exists in no tree. selectedId and
-task detail remain controlled by the parent.
-
-The row's state mark is `OperationRow.variant`, and BOTH row builders (`docRow`, `seriesRow`) compute
-it as `lifecycle?.state ?? statusVariant(doc.status)`. The two sides of that `??` are different
-vocabularies and the split is the point:
-
-- **Live side** — when a lifecycle is bound, its RAW server `state` string goes to `<Dot variant>`
-  untranslated. `awaiting-developer`, `blocked`, `paused` and `abandoned` all reach `Dot` on this
-  path, never through `statusVariant`. Whether each one gets its own colour/glyph is `grammar/Dot.tsx`'s
-  contract, not this panel's; this panel's obligation is only to hand the state over unmangled.
-- **Document side** — `statusVariant` is the DOCUMENT-status map, for rows with no live lifecycle. Its
-  entire input vocabulary is `tasks/document.py::DocStatus` (`planning | inProgress | Completed`),
-  which arrives verbatim as `TaskDocNode.status` / `SeriesNode.status`. It therefore has exactly two
-  outcomes — `Completed` → `completed`, everything else → `running` — and nothing else can arrive.
-  It deliberately carries no lifecycle vocabulary: arms for `awaiting-developer`, `blocked`, `paused`
-  and `abandoned` here would be permanently unreachable, since those states always take the left side
-  of the `??`.
-
-Task document rows attach runtime state by structured data: direct `doc.lifecycleId`, or for root
-masters the sibling enclosure whose `taskRoot` matches the doc directory and whose lifecycle id is the
-root task id/name. `taskLabel` is used only for runtime-only lifecycle fallback rows. Progress hints use
-top-level implementation steps for leaf docs and sub-task done/total for master docs; nested substeps do
-not drive the row progress number. `gateHint(gate?.kind, ask)` returns only the durable gate kind and
-renders as a small amber row badge; the wait-loop-era bare `ask` payload is not a task-row affordance.
-
-Task 23/24 adds backend-driven agent-pickup feedback. `analytics.agentPickups` is grouped by
-`lifecycleId`; the first matching `AgentPickupNode` is carried on `OperationRow.pickup` and rendered by
-`AgentPickupIndicator` between the secondary column and gate badge. Fresh pending operator-inbox entries
-show static delivery/acknowledgment wording; entries past the five-minute pickup TTL show the
-dismissible `check chat` notice. Separately, `useSessions` subscribes to the shared Chats-owned catalog
-and `summarizeChatActivity` maps exact live harness `turnState` onto a compact chat indicator. Task
-progress, chat turn activity, and inbox acknowledgment are three independent axes; the row never adds a
-poller or derives chat activity from lifecycle state.
-
-The listbox and list sections use `gridTemplateColumns: minmax(0, 1fr)`, `width:100%`, and
-`minWidth:0` so React Aria section grid tracks cannot size themselves to a long row's min-content
-width. Row containers add `minWidth:0` and `maxWidth:100%`; the LifecycleList panel class also sets
-`minWidth:0` and hides horizontal overflow. The row title span then uses `minWidth:0` plus
-`flex:1 1 0` with `overflow:hidden`, `textOverflow:ellipsis`, and `whiteSpace:nowrap`; the secondary
-phase/repo text, gate badge, and wait/progress metadata each keep their own small bounded ellipsis.
-Those metadata spans deliberately avoid auto left margins; otherwise the row can stay within the panel
-but still starve the title down to zero visible pixels.
-`taskTitle` builds the native hover text from the full label, lifecycle id/state/phase, optional
-repo/gate, and the single bound task document's `currentStep` when present.
-
-### Conventions
-
-React Aria collection APIs (ListBox/Section/Item, ToggleButtonGroup); Panda `css`/`cva` for the look.
-
-### Invariants And Boundaries
-
-Selection is controlled by the cockpit's `selectedId`, but row identity is typed. The panel must not
-derive a task-document row from parent `taskName`, display numbers, filename prefixes, or
-`series-contract.md` content. The observer may project many completed/planning/inactive documents for
-reading and master navigation, but the sidebar list stays finite through root/enclosure admission.
-Archived/deleted docs disappear because the observer stops projecting them; status alone is not a
-sidebar disappearance rule. Worktree existence is THE rule for a LIVE leaf enclosure's left-rail
-eligibility (260703-L11): losing the physical worktree removes left-rail eligibility without deleting or
-hiding the task document from master navigation, and no cleanup-state proxy may substitute for the
-stat'ed flags. **The L33 exception to this paragraph — "a `Completed` leaf documents LANDS work, so its
-row is admitted under its open master", via `landedLeafDocs`/`leafRecordsLandedWork` and the delivered
-case `keeps a landed leaf that no series index resolves out of the list` — was removed by the revert and
-is withdrawn:** there is no landed-leaf admission, no `landedLeaves.ts` module, and no such case in
-`hierarchy.test.tsx`. Abandoned and reopened enclosures drop out through the existence rule, a
-PLANNING leaf is never a row, and every master, series and lifecycle entry keeps its row regardless — so
-one leaf still renders at most one task entry (per
-`enclosureId`), and a doc-less runtime row is nested only on the
-`taskRoot`/series join; a shared master lifecycle by itself must never admit a document or re-parent a
-row, so unrelated leaves under one master stay distinct rather than collapsing onto each other.
-Spawned-session provenance stays visible where sessions are shown (the chats sidebar keeps its own
-qualified-leaf-key rule); this list only de-duplicates task entries. Chat activity uses exact
-qualified-leaf identity first, then only unclaimed lifecycle-bound fallback sessions, and omits
-missing/terminal/non-harness seats. Collapse state is presentation
-state only: it must not mutate task documents, task status, selection, detail, or hierarchy projection.
-The L14 tier treatment is
-strictly additive and orchestration-gated (D3): tier/badge/indent render only when a projected doc
-carries `orchestrates` — no doc may be styled as a command row from titles, folder conventions, or
-lifecycle shape, and a run without an orchestration task must render exactly as pre-L14 (pinned by
-the flat-run regression test). Insignia render only through the shared `grammar/RankBadge`; the
-chips/gate/progress vocabulary and the L11 worktree-truth + one-row-per-enclosure rules are
-untouched by tiering. The L33 landed-leaf default is not a tier: it applies by CHILD FACTS
-(`childCount === landedCount`, no structural children) and never by tier, status, or row kind, so a
-command row is only ever auto-collapsed when it commands nothing.
-
-Title truncation is presentational only: row selection and React Aria `textValue` still use the resolved
-task label and stable typed row key. The no-horizontal-scroll contract belongs to the Operations list
-containers, not to `Panel` globally; do not make every panel hide horizontal overflow to fix this one
-list.
-
-`statusVariant` must stay a DOCUMENT-status map. Adding a lifecycle state to it (an
-`awaiting-developer` arm, say) writes a branch the server can never reach, because a bound lifecycle
-short-circuits it at `lifecycle?.state ?? …`; the fix for a mis-rendered lifecycle state belongs in
-`grammar/Dot.tsx`'s variant recipe, not here.
-
-The `data-testid="task-state"` span carries `aria-label`/`title` (`Task progress: {variant}; phase:
-{phase}`) with **no `role`** — and that is only valid because it renders inside a React Aria
-`ListBoxItem`, whose `role="option"` computes its name from content and so absorbs the label. A bare
-`<span aria-label>` is a named `generic`, which ARIA prohibits (axe-core `aria-prohibited-attr`) and
-which announces nothing; `AttentionQueue`'s equivalent mark has no widget role above it and therefore
-had to take an explicit `role="img"`. If this span is ever lifted out of the `ListBoxItem`, it needs a
-role of its own for the same reason.
-
-## Repo-Internal References
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `operationRows` admits root/master task documents, active-enclosure-matched leaves, series fallback rows, and active-enclosure-backed runtime fallbacks rather than every projected task document; `isRootTaskDoc`/`enclosureForDoc` are the joins. | `operationRows`; `isRootTaskDoc`; `enclosureForDoc` | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:294-304; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:480-480; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:479-479 |
-| `enclosureForDoc` admits leaf docs by exact case-insensitive stem/`id` joins only (reopen reuses the same leaf id since L11), and doc-less runtime rows are re-parented onto their master (`masterParentKeyForEnclosure`/`lifecycleRow`) so neither floats as a standalone node. | `enclosureForDoc`; `masterParentKeyForEnclosure`; `lifecycleRow` | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:479-479; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:910-910; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:550-558 |
-| Regressions assert a reopened (cleanup=reopened, no worktrees) enclosure is hidden until restart then re-admitted, an abandoned enclosure leaves the active rows, a doc-less orphan lifecycle nests under the master, and a lifecycle bound to a doc's enclosure annotates the single row instead of duplicating it. | "hides a reopened leaf (cleanup=reopened"; "re-admits a reopened leaf once its worktrees physically exist again"; "hides an abandoned enclosure from the active operations rows"; "nests a doc-less orphan lifecycle under its master instead of floating top-level"; "renders ONE task entry per enclosureId: a bound lifecycle annotates the doc row" | dashboard/src/panels/lifecycle-list/admission.test.tsx:249-306; dashboard/src/panels/lifecycle-list/admission.test.tsx:308-367; dashboard/src/panels/lifecycle-list/admission.test.tsx:463-500; dashboard/src/panels/lifecycle-list/admission.test.tsx:502-538; dashboard/src/panels/lifecycle-list/admission.test.tsx:369-461 |
-| `groupRows`/`hierarchyRows` give BY REPO its taskHierarchy-derived parent links and `data-depth` marking, and leave BY PHASE flat. | `groupRows`; `hierarchyRows` | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:305-305; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:946-946 |
-| Operations rows stay within the left panel: `sizing`/`listBox`/`section` widths, the `row` cva, then `rowId`'s ellipsis and the bounded `rowSec`/`rowGate`/`rowMeta`. | "const sizing = css({ flex: \"1 1 0\", minWidth: \"0\", overflowX: \"hidden\" });"; "const listBox = css({"; "const section = css({"; "const row = cva({"; "const rowId = css({"; "const rowSec = css({"; "const rowGate = css({"; "const rowMeta = css({" | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:61-61; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:87-97; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:98-104; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:116-179; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:180-187; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:188-197; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:198-213; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:214-223 |
-| `rowId` is the shrinkable title span; `taskTitle` assembles the native hover text from label, lifecycle, repo, gate, and current-step context. | `rowId`; `taskTitle` | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:180-187; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:757-765 |
-| The two row builders and the variant they compute. **Re-read against the reverted module:** the ranges below are the CALL SITES (`docRow(`/`seriesRow(`), which is what this row can point at now; the builders themselves are `docRow` at `:738-786` and `seriesRow` at `:788-837`, they compute the `Dot` variant as `lifecycle?.state ?? statusVariant(...)`, and `statusVariant` maps `DocStatus` alone. | `docRow`; `seriesRow`; `statusVariant` | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:489-497; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:515-521; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:738-786; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:788-837; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:1180-1184 |
-| "from agents_remember.models.task_document import DocStatus" — `statusVariant`'s entire input vocabulary (imported from "from agents_remember.models.task_document import DocStatus, StepStatus"). | "from agents_remember.models.task_document import DocStatus" | mcp/src/agents_remember/tasks/document.py:34-35 |
-| `Dot` owns the lifecycle-state treatments (`awaiting-developer`, `paused`, `abandoned`) this list passes through, and is `aria-hidden`. | `Dot`; `DOT_GLYPHS` | dashboard/src/grammar/Dot.tsx:10-11; dashboard/src/grammar/Dot.tsx:104-114 |
-| The `task-state` span carries `aria-label` with no role, inside the React Aria `ListBoxItem` whose `role="option"` names it. | "<ListBoxItem" | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:647-648 |
-| The shared hierarchy helper computes parent matches, child-id hierarchy labels, parent selection keys, and the exported `orderedByCreation`. | `orderedByCreation` | dashboard/src/data/taskHierarchy.ts:33-37 |
-| The L14 orchestration-command helpers this list's `commandFacts`/`seriesRow` tier derivation calls. | `isOrchestrationDoc`; `masterCommandNames`; `orchestratorParentKey` | dashboard/src/data/taskHierarchy.ts:91-95; dashboard/src/data/taskHierarchy.ts:98-103; dashboard/src/data/taskHierarchy.ts:109-122 |
-| The V4 chevron insignia rendered on tier rows (size `row`). | `RankBadge` | dashboard/src/grammar/RankBadge.tsx:44-79 |
-| L14 tier tests: the three-level hierarchy with 22px indents + the D3 flat-run regression. | "renders the orchestration tier above its commanded masters with the V4 treatment (L14)"; "renders NO orchestration row or insignia in a flat run (D3 regression)" | dashboard/src/panels/lifecycle-list/hierarchy.test.tsx:55-148; dashboard/src/panels/lifecycle-list/hierarchy.test.tsx:234-290 |
-| Focused tests assert root docs, active-enclosure leaves, enclosure fallbacks, and tooltip context are visible while loose/inactive/cleanup-completed leaves are absent, then prove BY REPO indentation/parent keys and BY PHASE flatness. | "limits sidebar rows to root docs"; "keeps standalone root task documents visible without listing loose leaf docs"; "exposes the full long task title and row context on title hover" | dashboard/src/panels/lifecycle-list/admission.test.tsx:19-151; dashboard/src/panels/lifecycle-list/admission.test.tsx:540-572; dashboard/src/panels/lifecycle-list/hierarchy.test.tsx:292-354 |
-| `fmtWait` for server-computed stale/wait ages. | `fmtWait` | dashboard/src/data/selectors.ts:108-114 |
-| Shared typed selection keys (`taskDocSelectionKey`/`seriesSelectionKey`/`lifecycleSelectionKey`, `parseTaskSelection`) and the `taskLabel`/`taskDocumentLabel` helpers used by the list and detail panel. | `taskDocSelectionKey`; `seriesSelectionKey`; `lifecycleSelectionKey`; `parseTaskSelection`; `taskLabel`; `taskDocumentLabel` | dashboard/src/data/taskIdentity.ts:18-18; dashboard/src/data/taskIdentity.ts:19-19; dashboard/src/data/taskIdentity.ts:20-20; dashboard/src/data/taskIdentity.ts:23-46; dashboard/src/data/taskIdentity.ts:262-279; dashboard/src/data/taskIdentity.ts:278-278 |
-| The shared `Panel` head/sticky band the pivot sits in. | `Panel` | dashboard/src/grammar/Panel.tsx:48-69 |
-| Task-row pickup spinner/check-chat notice. | `AgentPickupIndicator` | dashboard/src/panels/AgentPickupIndicator.tsx:42-83 |
-
-## 260821-CLIVE Discarded Progress Boundary
-
-Document and series rows pass producer-owned `discardedCount` into `progressHint()`. The visible hint
-keeps normal `done/total` progress and appends a distinct `N discarded` segment. A discarded-before-start
-task therefore remains auditable without incrementing completion or changing active row admission.
-Existing worktree-existence, identity, hierarchy, lifecycle-vs-document state, accessibility, and
-keep-alive boundaries remain unchanged.
-
-## Current L5I Maintenance
-
-The lifecycle rail accepts an `active` signal. Its locally advancing staleness clock stops while a
-kept-alive rail is hidden, while the render-heavy row/group derivation lives in a memoized child so
-clock and parent renders do not reconstruct the React Aria list unnecessarily.
-
-## Update History
-- 2026-09-25T22:19:46+00:00: Generated citation repair: `RankBadge` repointed to dashboard/src/grammar/RankBadge.tsx:44-79. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: `Panel` repointed to dashboard/src/grammar/Panel.tsx:48-69. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-25T22:50:00+02:00 — 260921-ICR-L34 curator (leaf `260921-ICR-L34`, memory worktree only; no code changed; leaf base `a9a1a41bba535803421470bd17d858657177cb5f`): **the L33 body is withdrawn and the card re-read against the reverted module.** Commit `a9a1a41b` deleted `panels/lifecycle-list/landedLeaves.ts` (with this curation it also loses its sidecar), removed 250 lines from this module (1189 now), deleted the four landed-master cases and 366 lines from `hierarchy.test.tsx` (355 now), and restored `useCollapsedTaskGroups.ts` to one collapse set — as a **direct emergency commit with no curator pass behind it**, so this card went on asserting an admission, a default-collapse rule, a fourth pass, a two-array collapse state and a delivered case that exist in no tree. A withdrawal banner now heads the Purpose; the four paragraphs that asserted the reverted behaviour (the purpose's landed-leaf exception, the `markAutoCollapsed`/`appendLandedLeafRows` pass, `rowIsCollapsed`/`openedKeys`, the two-array hook, and the landed-class exception in the invariants) state the withdrawal in place with the reason; the two rows whose anchors no longer exist anywhere were **deleted rather than re-pointed** (a rename is repairable, a deletion is not), and every other row this pass touched had its range re-derived by locating the anchor literally in the candidate rather than by adding a delta. **No verification stamp was advanced** — the candidate is uncommitted and the governed closeout owns the real stamp.
-- 2026-09-24T23:30:00+02:00 — 260921-ICR-L33 curator (candidate `ar/260921-icr-l33-ar`, uncommitted; code base `86639933d61528387ce106dbd4d7a334bd468671` plus the working-tree delta; adversarial round 2 `verify-l33.md` = `pass`): **body update — a master's landed leaves reach the list, and the count says what it counts.** Three sentences were false at this candidate and were corrected in place. (1) The Purpose paragraph said sidebar rows are limited to root/master docs, active-enclosure leaves, series fallbacks and runtime fallbacks — i.e. that a leaf gets a row only while its worktree exists. It now records the landed-leaf admission and the module that owns it (`panels/lifecycle-list/landedLeaves.ts`: `leafRecordsLandedWork`, `childFactsByParent`/`rowChildFacts`, `enclosureForDoc`, `markAutoCollapsed`, `rowIsCollapsed`, `landedLeafDocs`), the two bounds that keep the list finite (a row whose only children are its own landed leaves is closed by default and says `N landed`; a row that carries OTHER rows is never closed), and the measured shape (534 projected documents → 167 entries by default, 110 landed rows at first paint, 19 masters held closed, 441 at the ceiling). (2) The `Tasks · {n}` sentence described the copy but not the count: `n` counts task ENTRIES, the `h2` now states that in its own tooltip, and the wording is written for the fresh render. (3) The collapse paragraph said the hook "defaults to expanded and persists stable typed selection keys in `operations.tasks.collapsed.v1`": it now owns both halves (`operations.tasks.opened.v1` for the reader's opens) and returns `{ collapsedKeys, openedKeys, setCollapsed }`. The Invariants paragraph was qualified the same way (worktree existence is THE rule for a LIVE leaf; one landed class survives it deliberately, and an admission needs a resolving parent, never a bare status). **Citation accounting:** every row this leaf's line movement displaced was re-derived against the candidate with the gate's own resolver rather than by adding a delta to an old number. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
-- 2026-09-09T12:22:46+00:00: Generated citation repair: "from agents_remember.models.task_document import DocStatus" repointed to mcp/src/agents_remember/tasks/document.py:34-34. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: re-anchored the unchanged `DocStatus`
-  import after task-schema graph-validation extraction. Verification remains closeout-owned.
-
-- 2026-08-24T15:04+02:00 — Added the separate discarded-count progress segment; discarded work is
-  never counted as completed work.
-- 2026-08-20T04:50+02:00 — 260815-DAG-L14 curator: re-read the `DocStatus` import claim against
-  `tasks/document.py` — the import moved to the new top-of-file role-constant block; wording
-  retained, range regenerated, stamp advanced to code commit 9c3180c1.
+Every served TaskEntry is admitted, including planned/terminal/addressless rows without worktrees. Exact parent/children drive BY REPO; shared stage/activity drives BY PHASE, whose group order is `works`, `waiting`, `paused`, `unknown`, `started`, `planned`, `completed`, `aborted` (`PHASE_ORDER`); a task served as waiting forms its own `waiting` group. No document/series/session join remains; addressless entries only limit document navigation.
 
 
-- 2026-08-11T19:58+02:00 — Aligned the current dashboard card for `LifecycleList.tsx` with its task-document, seat-state, and lifecycle interaction boundaries.
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: moved this sidecar from dashboard/src/panels/LifecycleList.tsx to lifecycle-list/LifecycleList.tsx after the frontend-rail naming move; added the L8 Move section. Verification pinned to the leaf base until closeout stamps the code commit.
 
-- 2026-08-04T17:58+02:00 — 260731-EFA-L6 S18-B14 curator: repaired 14 citation rows with exact anchors (definition identifiers and quoted test names) and ledger-verified source ranges across LifecycleList.tsx, its test, Dot/RankBadge/Panel grammar, taskHierarchy, taskIdentity, selectors, AgentPickupIndicator, TaskGroupDisclosure, useCollapsedTaskGroups, and tasks/document.py; converted 3 superseded prose line citations in the 2026-08-01 entry to cit form, and unparenthesized the L14 leaf shorthand the prose scanner counts as an unchecked range. Scoped citation recheck is green. Verification metadata remains pinned until closeout.
 
-- 2026-08-01T09:35+02:00 — 260731-EFA-L4 curator: documented the `OperationRow.variant` channel, which
-  the body never covered. cit:([`docRow`], dashboard/src/panels/lifecycle-list/LifecycleList.tsx:738-786) and
-  cit:([`seriesRow`], dashboard/src/panels/lifecycle-list/LifecycleList.tsx:788-830) both compute
-  `lifecycle?.state ?? statusVariant(...)`, so a bound lifecycle's RAW state reaches `Dot` untranslated
-  — that is how `awaiting-developer` gets its own mark now, and it is why `statusVariant`'s
-  `awaiting-developer`/`blocked`/`paused`/`abandoned` arms were removable: they sat on the right of the
-  `??` and could never be entered. Verified `statusVariant`'s input vocabulary really is only
-  `tasks/document.py::DocStatus` (`planning|inProgress|Completed`), reaching it verbatim via
-  `TaskDocNode.status`/`SeriesNode.status`. Recorded the ARIA boundary: the `task-state` span's
-  role-less `aria-label` is valid only inside React Aria's `role="option"`. Repaired five stale
-  citations — row admission L306-L370;L659-L672 → `operationRows` L477-L571 + `isRootTaskDoc`/
-  `enclosureForDoc` L911-L938; BY REPO hierarchy L15-L20;L307-L343;L415-L447 → the taskHierarchy import
-  L17-L25 + `data-depth` L363-L378 + `groupRows`/`hierarchyRows` L752-L801; width constraints
-  L38-L106;L187-L214 → L61-L104;L116-L187;L188-L223; title/hover L99-L123;L212-L214;L464-L480 →
-  `rowId` L180-L187 + the span L386-L396 + `taskTitle` L841-L858 (the old third range landed on
-  `indentStyle`); `fmtWait` L1-L40 → L107-L114. Also widened the taskHierarchy row to name the now-
-  exported cit:([`orderedByCreation`], dashboard/src/data/taskHierarchy.ts:145-150) and the taskIdentity row to actually cover `taskLabel`.
 
-- 2026-07-24T13:17:17Z — Curator: documented hidden-rail clock pausing and memoized row rendering;
-  verification fields remain pre-commit.
+### Hierarchy, ordering and collapse
 
-- 2026-07-12T17:50+02:00 — 260712-TRH-L6: Operations now subscribes to the shared Chats session catalog and
-  renders separate task-progress, live turn-activity, and inbox acknowledgment axes. Exact-leaf-first
-  identity, unclaimed lifecycle fallback, deterministic multi-seat precedence, no second poller, and
-  static pickup wording are documented here. Reviewer residuals F1 (task-label role), F2 (palette), F4
-  (live-region scale), F5 (poll rerenders), and F6 (undefined-status omission) remain follow-up notes;
-  F3 is recorded on the pickup sidecar. Candidate source remains uncommitted; metadata is pinned until
-  closeout.
-- 2026-07-12T12:58+02:00 — 260712-TRH-L3: added BY REPO-only sprint/master disclosure controls,
-  depth-aware descendant filtering, and stable-key persistence under `operations.tasks.collapsed.v1`.
-  The heading count, typed selection/detail, nested independence, and BY PHASE flatness remain unchanged.
-  Candidate source is uncommitted; verification metadata is pinned to the last committed source touch
-  until closeout.
+Command hierarchy follows served parent/children; no orchestrates or taskHierarchy reconstruction remains. Indentation and local collapse retain presentation ownership without tier frames, ghost washes or rank chevrons.
 
-- 2026-07-07T14:00+02:00 — agent-orchestration L17 (supplement): `gateHint` no longer falls back to the
-  lifecycle's bare `ask` payload — it returns the durable `gate.kind` or `""`. The wait-loop-era chip (a
-  proto `ask` rendering "Gate: <question>" / "Gate: ask") is retired under notify-and-continue; the three
-  call sites drop the `ask` argument. A focused regression test locks it (a bare-ask lifecycle shows no
-  "Gate:" line). Verification metadata pinned until closeout stamps the L17 commit.
-- 2026-07-07T10:50+02:00 — L15: served ages advance locally (servedAges anchors + 10s ticker); volatile fields no longer arrive on the wire. Verification metadata pinned until closeout stamps the L15 commit.
+The existing collapsed-parent set stays persisted by useCollapsedTaskGroups. Open completed folds are local presentation state and start closed. treeItems derives ancestor holding and held terminal folds directly from served membership. RowCaret passes each non-flat parent's actual collapsed state and a held-aware toggle callback to TaskGroupDisclosure; the button itself receives no held flag. A selected descendant initially holds its ancestor chain and containing fold open without rewriting the reader's persisted choices. An explicit parent-caret or completed-fold click releases that control's hold and can close it without changing the selected document; the existing plain parent-row arrow action does the same when it requests a changed state. Releases last only for the current selection episode. Any selection change, including A→B→A, A→none→A or one observed while the retained list is hidden, starts fresh holds rather than reviving an older release. Choosing the parent itself does not force it open. Fold keys are not task-document identities, and activating a fold toggles it rather than choosing a document. Heading and group counts count admitted rows, including rows currently hidden by presentation folds.
 
-- 2026-07-07T05:34+02:00 — 260703-L15 S1: row staleness advances locally — `OperationRowsInput`
-  gained `nowMs` (from a component-level `useNowMs()`, 10 s tick), threaded through
-  `docRow`/`seriesRow`/`lifecycleRow` into `rowMetaText` via
-  `servedAgeSeconds(lifecycle, …staleSeconds, nowMs)`; the change gate stopped re-serving
-  lifecycles whose only movement is their age.
-  Verification metadata pinned until closeout stamps the L15 commit.
-- 2026-07-06T23:56:24+02:00 — 260703-L14 (visual hierarchy + chat grouping): the tasks tab gained the
-  orchestration tier — `OperationRow.tier` derived by `commandFacts` (orchestration = a master doc
-  with `orchestrates`; management = a master an orchestration doc names, matched folder/id/title,
-  nesting under it via `parentKey`), `seriesRow` applying the same commander check, `hierarchyRows`
-  generalized to N-depth DFS with a cycle guard, the V4 row treatment (folded-corner `_before`,
-  ghost wash, gold hairline) as row-cva `tier` variants, `RankBadge` beside the Dot, `data-tier`,
-  and the 22px `indentStyle` grammar. Flat runs (D3) render byte-identically to pre-L14.
-  Verification metadata pinned until closeout stamps the L14 commit.
-- 2026-07-06T10:30+02:00 — L11 adversarial-review follow-up: L11R-2 (deterministic lastEventTs anchor fallback) and L11R-3 (re-measured row-admission citations, were stale after the diff shifted the functions). Verification metadata pinned until closeout stamps the L11 commit.
+### State, signals and secondary facts
 
-- 2026-07-06T02:35+02:00 — 260703-L11 (worktree truth): active-enclosure admission flipped from the
-  cleanup-state proxy (`cleanup !== completed/abandoned`) to the shared `hasLiveWorktree` existence rule
-  over `EnclosureNode.codeWorktreeExists`/`memoryWorktreeExists` — a reopened leaf is now HIDDEN until
-  `worktree_start` recreates its worktrees (supersedes the L11-task_reopen behavior of rendering it as a
-  planned doc row). Added the one-row-per-`enclosureId` identity rule (`representedEnclosureIds` +
-  claim-on-render in the runtime loop) and the `lifecycleForEnclosure` annotation fallback so a bound
-  lifecycle enriches the doc row (state/gate/ask/staleness) instead of duplicating the leaf as a card.
-  Verification metadata pinned until closeout stamps the L11 commit.
-- 2026-07-03T00:30+02:00 — L11 task_reopen: active-enclosure admission now excludes `cleanup: abandoned`; the `-rN` suffixed-leaf-id `startsWith` reopen heuristic is removed because reopen reuses the exact leaf id, and a `cleanup: reopened` enclosure renders as its planned doc row.
-- 2026-07-02T21:45+02:00 — L10 binding repair: every `enclosureForDoc` leafId comparison (stem, doc id,
-  and the lifecycle-guarded reopen-suffix startsWith) is now case-insensitive, matching the
-  normalization RailChat and the change-set bar already use. Enclosure leaf ids are slugified
-  lowercase directory names while doc ids are authored uppercase, so active series leaf docs failed
-  the admission and rendered as doc-less runtime rows. Verification metadata pinned until closeout
-  stamps the L10 commit.
-- 2026-06-28T16:17+02:00 — Task 35 reopen-task nesting fix: `enclosureForDoc` now admits a reopened leaf's suffixed enclosure (`leafId` = stem/`id` + cycle suffix such as `…-s7`) only when it both shares the document lifecycle and matches the suffixed-leaf-id shape, and `lifecycleRow` resolves a master `parentKey` through the new `masterParentKeyForEnclosure` helper so doc-less enclosure-backed runtime rows nest under their master. Together these stop a re-opened/edited task from appearing as a standalone phantom sidebar node, without letting a shared master lifecycle alone re-parent unrelated leaves. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-27T23:08+02:00 — Task 31 Operations grouping: `enclosureForDoc` now admits leaf docs when the active enclosure leaf id matches the authored task-document id, fixing numbered leaves like `31` whose file stem includes a readable slug. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-25T13:10+02:00 — Task 23/24: Operations rows now render backend-projected agent pickup state through `AgentPickupIndicator`.
-- 2026-06-25T02:53+02:00 — Corrected the Operations horizontal-scroll regression: the listbox and
-  section grid tracks now use `minmax(0, 1fr)`, row containers have zero minimum width and max out at
-  the panel width, title plus secondary/gate/wait metadata use bounded ellipsis, and metadata avoids
-  auto left margin so long task titles ellipsize instead of widening the left panel or disappearing.
-  Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-24T21:49+02:00 — Corrected Task 17 cleanup sidebar regression: Operations now treats
-  `cleanup === "completed"` enclosures as inactive for sidebar admission/fallback rows, while the task
-  document remains projected for master navigation. Verification metadata pinned until closeout stamps
-  the code commit.
-- 2026-06-24T18:11+02:00 — Corrected Task 17 live-data numbering: Operations hierarchy labels now show
-  the child `TaskDocNode.id` for authored leaf rows and keep the parent ref number only as fallback.
-  Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-24T18:02+02:00 — Corrected Task 17 Operations leaf numbering: BY REPO hierarchy still places
-  leaves under parents using structured metadata, but labels now show the task-specific sub-task number
-  from structured task metadata instead of a generated local counter. Verification metadata pinned until
-  closeout stamps the code commit.
-- 2026-06-24T17:51+02:00 — Task 17 Operations hierarchy follow-up: `BY REPO` now groups admitted
-  active leaf rows under their parent/root task with a depth marker. `BY PHASE` remains flat and sidebar
-  admission is unchanged. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-24T17:20+02:00 — Task 17 sidebar-scope correction: Operations no longer renders every
-  projected task document as a sidebar row. It admits root/master docs, enclosure-matched leaf docs,
-  series fallbacks, and enclosure-backed runtime fallbacks; inactive/planning leaves remain reachable
-  through typed links and master navigation. Verification metadata pinned until closeout stamps the code
-  commit.
-- 2026-06-24T16:33+02:00 — Task 17 task-document-first Operations: the list now builds rows from
-  active task documents before runtime-only lifecycles, uses typed selection keys, attaches lifecycle
-  state by structured bindings, keeps completed unarchived docs visible, and reports top-level progress
-  only. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-24T12:37+02:00 — Task 18 title-overflow fix: task-row titles are now the shrinkable flex
-  segment with one-line ellipsis, while phase/gate/wait metadata stay visible; the title span exposes
-  a native hover title with the full task label plus lifecycle, gate, repo, and current-step context.
-  Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-24T08:59+02:00 — Helper extraction follow-up: refreshed metadata and references for the
-  shared `taskIdentity.ts` label helpers used by both Operations and Detail. Verification metadata
-  pinned until closeout stamps the code commit.
-- 2026-06-24T08:40+02:00 — Operations label fix: `LifecycleList` now resolves visible task labels from
-  bound enclosure/task metadata before falling back to the raw lifecycle id, so a promoted fleeting
-  lifecycle with a persistent leaf enclosure displays the leaf name while master/series rows keep the
-  task label. Added focused coverage in `LifecycleList.test.tsx`. Verification metadata pinned until
-  closeout stamps the code commit.
-- 2026-06-23T13:45+02:00 — Task 11: rows now surface gated/ask state with a compact amber badge sourced
-  from `lifecycle.gate.kind` or `lifecycle.ask`, including fleeting entries. Verification metadata
-  pinned until closeout stamps the task-11 code commit.
-- 2026-06-23T07:25+02:00 — UI copy rename (user-facing lifecycle to task): the operations-panel header
-  now reads `Tasks · {n}` (was "Lifecycles"), the empty state `No tasks.` (was "No lifecycles."), and
-  the aria-labels became "Group tasks by" / "Tasks". Display copy only; the component name, types, store
-  keys, and `lifecycle.id` values are unchanged. Refreshed Purpose plus Logic commentary. Verification
-  metadata pinned until closeout stamps the rename code commit.
-- 2026-06-15T17:00+02:00 — Created for slice 5d: the list became a React Aria `ListBox` and the pivot a
-  `ToggleButtonGroup`, styled by Panda. Verification metadata pinned until closeout stamps the 5d
-  code commit.
+The row uses shared taskStatusKey/TaskStatusWord from entry stage/activity, with display-only host-event age. rowBand orders own works first, then started, planned and terminal entries; it does not prioritize gates, inbox or chat facts.
+
+Progress reads entry stepsDone/stepsTotal for task summaries or served child counts for parents, excluding aborted from the denominator and preserving aborted/discarded audit in hover. Up to twelve major-step marks may expose cached pointer detail; larger populations use an aggregate bar. For non-task forms the figure prefixes progress with the served counts that `activityPhrase` writes — `counts.works`, `counts.waiting` (only when nonzero) and `counts.paused` — unless the served global unknown-activity count is nonzero. A nonzero workspace unknown-activity count suppresses these activity figures on every row; the shell reports unavailability once. Task forms show cached `StepMarks` instead. No per-row unknown flag is added. No local child-status recount or physical-worktree admission is introduced.
+
+There is no PickupDismiss or operator-inbox dismissal interaction in LifecycleList. The mark wrapper remains named inside ListBoxItem option semantics; accessibility must not depend on a removed action. Row selection/hover keep their retained owner without restoring press suppression for a deleted button.
+
+### Selection and keyboard reach
+
+Selection is the opaque taskdoc-prefixed entry key. One-time focus reveal marks the selected entry and holds served ancestors/folds open; a missing-row request is consumed without later motion. No attention-lifecycle carrying-row translation remains.
+
+Typeahead uses the displayed short id plus title for numbered master children, and preserves title-prefix matching for sprint/master/standalone labels. A standalone task can now display a separate id cell while still matching its historical title prefix. Unmodified right/left arrows open/close a focused parent only; task and fold rows receive no such tree action, and browser/system modifiers are untouched. Existing up/down, Enter and typing stay owned by React Aria. TaskGroupDisclosure remains a separate accessible native control with press propagation stopped.
+
+### Task-page text sizes
+
+columnPresentation.tsx owns these recipes: rowItem supplies 0.8rem to ordinary row titles, matching a task-page row; rowTitle retains ellipsis and its parent weight. Its completed/abandoned fold variant explicitly uses 0.72rem. Ids in both groupings, repository, state word, progress figure and group headings use 0.72rem, as does the shared caret. These are the task page's smaller-text size, not the approved proposal's 0.875 font conversion. Titles truncate rather than wrap or shrink, full text stays in the row hover, and the text-size recipes retain their bounded lanes. The new major-step marks use additional progress-lane space; source inspection does not re-establish mounted narrow-column acceptance for that addition. Decorative Dot glyphs retain their em-relative scale; shared Panel chrome retains its own typography.
+
+### Bounds and kept-alive execution
+
+The approved column uses shared Panel chrome and columnTabButton; the bell and bounded Popover do not consume tree height. Grouping/head/layer controls wrap inside a narrow rail. One-line title/word ellipsis is intentional and its full facts remain one hover away; minmax(0,1fr), constrained tracks and row padding prevent the list from expanding its owner. Do not impose this column's overflow rule on Panel globally.
+
+TaskStatusWord uses one shared visible clock to advance published host-event age. Hidden-list subscriptions are paused; time labels never infer stage/activity from elapsed silence. The memo comparator still lets a changed selectedId render while hidden, so the release-lifetime owner observes each selection episode. Missing age/event facts stay unknown.
+
+### Historical boundary to preserve
+
+MIK-R175 rules 1-2: neither the row line nor the figure box carries a `title`, because either is an ancestor of the step dots and the browser showed the nearest one over them. The row's hover text moved onto its own cells — id, title, repository, status word and the count figure — so the rest of the row keeps it, and the figure renders only when it has a value.
+
+
+**INV-7GVWYD.** This list renders the row, its hover and its mark, and also the group label, so it is where the two kinds of place are told apart.
+
+## Evidence
+
+
+- The row's native title is gone from every ancestor of a step mark, while its own cells keep the hover text. [40]
+
+
+- columnPresentation supplies 0.72rem group headings and 0.8rem ordinary row text. [34]
+
+
+
+
+
+- columnPresentation gives IDs, fold text, repository, state word and figure explicit 0.72rem while rowTitle retains ellipsis. [35]
+
+
+
+- The shared caret uses 0.72rem without changing its fixed lane. [36]
+- Task-page rows and smaller labels/counts supply the two text sizes. [37]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Unmodified horizontal arrows affect a focused parent, including closing a held parent when the requested state differs; task/fold rows gain no arrow action and modifiers remain untouched. [26]
+
+
+
+
+- Typeahead preserves title-only matching and the displayed prefix for numbered rows. [27]
+
+
+
+
+
+
+- Pure row state/word/hover and pure tree flattening own the presentation derivation. [29]
+
+
+
+- The remaining component behavioral suites hold row admission, hierarchy and independent Operations signals; this is source inspection, not a new run. [30]
+
+
+
+- Non-task forms suppress the child works/waiting/paused figure when the served unknown-activity count is nonzero; BY PHASE keeps the explicit works-to-aborted order, with waiting between works and paused, through its group comparator. [38]
+
+
+- Explicit disclosure releases a drawn-open parent or fold, while every selection transition expires prior release keys. [39]

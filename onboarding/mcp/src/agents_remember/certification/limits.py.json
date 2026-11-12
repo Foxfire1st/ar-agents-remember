@@ -1,0 +1,136 @@
+{
+  "path": "mcp/src/agents_remember/certification/limits.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "One constant bounds registry admission and validation work.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0b7bb59f53bcd350373a7c7b4a2316c555e68b2",
+            "content": "sha256:a4267ee8f1d42313749dd5993cea75dc1684bb181e05d918c62ddf68e35cb83f",
+            "locator": {
+              "kind": "symbol",
+              "name": "REGISTRY_VALIDATION_WORK_BUDGET"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Raw canonicalization admission accounts for declarations, references, membership, and digest units before allocation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0b7bb59f53bcd350373a7c7b4a2316c555e68b2",
+            "content": "sha256:3dff6cf4916892d8d164ea0f999af73064e36d84f5837ab2bbea440659d0a6d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "admit_registry_canonicalization"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Validation measurement returns an explicit refused census when the cheap floor already exceeds the cap.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0b7bb59f53bcd350373a7c7b4a2316c555e68b2",
+            "content": "sha256:537f182bd41f67d4bbb964ec0a91bf1c0ea4bc95ec3eab6e1b69fa4290bcf695",
+            "locator": {
+              "kind": "symbol",
+              "name": "measure_registry_validation_work"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c0b7bb59f53bcd350373a7c7b4a2316c555e68b2",
+            "content": "sha256:5012aed5acf46e3f301cc94346730636d149ab9eb828921e396689939bf79930",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refused_work"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Artifact reachability builds bounded query state only when queries exist.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0b7bb59f53bcd350373a7c7b4a2316c555e68b2",
+            "content": "sha256:7dcda0f547d423452ebd9774539e2db3ac1bedfec57279ecb09af536a5ab2290",
+            "locator": {
+              "kind": "symbol",
+              "name": "_measure_reachability"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c0b7bb59f53bcd350373a7c7b4a2316c555e68b2",
+            "content": "sha256:979ccd51b56c811ea85d84a19dc2fbd153a8256c609fbdd93235bea543fed8fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_empty_reachability"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Singleton and shared searches retain exact bounded answers and remain cycle-safe.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0b7bb59f53bcd350373a7c7b4a2316c555e68b2",
+            "content": "sha256:7da60c07756ff1a0d8d7dabe3e2a2e7f2599874ff47b1c8e8521c9e61d423866",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_singleton_queries"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c0b7bb59f53bcd350373a7c7b4a2316c555e68b2",
+            "content": "sha256:53666573af6e07e0d8005ef7fc7a6b9f8240631437c13a60b85b52f457d5945e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_shared_queries"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Budget accounting operates solely on the generic registry contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0b7bb59f53bcd350373a7c7b4a2316c555e68b2",
+            "content": "sha256:537f182bd41f67d4bbb964ec0a91bf1c0ea4bc95ec3eab6e1b69fa4290bcf695",
+            "locator": {
+              "kind": "symbol",
+              "name": "measure_registry_validation_work"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

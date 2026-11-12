@@ -1,0 +1,22 @@
+{
+  "path": "dashboard/src/panels/detail-panel/directGrantControl.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The mounted suite asserts switch state, row absence, canonical route and refusal/pending behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f9088c31ea5ca0294b1f62cda1f0135319635e64",
+            "content": "sha256:3c9febe314f76ba614b4175d504ebb1e04d58973b331d6d215cd20a346a51a86",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

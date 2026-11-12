@@ -1,39 +1,86 @@
 # skills/l-01-agent-lifecycles/roles/curator.md
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `skills/l-01-agent-lifecycles/roles/curator.md` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-26T23:48:33Z |
-| lastVerifiedCommitHash | `eda947325ccbe0791973953265278597e968a34a`|
-| lastVerifiedCommitDate | 2026-09-28T18:11:05+02:00|
-| governingOverview | `skills/l-01-agent-lifecycles/roles/overview.md` |
-
 ## Governing Overview
 
-[roles overview](overview.md)
+[overview](overview.md)
 
 ## Purpose
 
 Defines the curator’s current leaf and repository-foundation responsibilities: reconcile existing intent, ruled intent and implemented reality; maintain affected memory; author justified knowledge through the admitted writer; and report exact outcomes and unresolved limits.
 
+## Foundation carrier and writer admission
+
+The Curator seat opens only on a leaf task document. Repository foundation is regular task work: after setup reports memory and baseline state, the user starts the Architect, which opens the real foundation task — a registered leaf under a master — and the Curator starts on that task document and uses its actual enclosure contract. Before any task exists, Bootstrap reads and reports the foundation state and names the user-started Architect as the next step; no instructed session substitutes for task admission, and a missing task is reported rather than fabricated, as are a worktree and an enclosure. The writer routes, developer commit word and one-writer/independent-review boundaries remain distinct.
+
 ## Code Commentary
 
 ### Logic
 
-The leaf intake includes the task, accepted requirement revision, captured change set, existing onboarding, producer handoff, exact worktree contract and declared published dataset. Producer fields remain owned by their producer; the curator supplies semantic scope, family/source examination and resolved outcomes.
+The inline Writer/worklist correction section requires a persisted leaf worklist and names the read step. `reference/curator/worklist.md` links the writer's row and evidence procedures in `templates/curator-handoff-ingestion.md` (input sections, reconsidering a rejected alternative, invariant entries) and `templates/curator-handoff-list.md` (realization rationale and role), and explains the returned `knowledgeWorklist` and `knowledgeGate` fields. Continuing rejected simplifications/workarounds become decisions with the real rejected option and reason, not unfinished implementation. These source instructions do not claim that pending decisions or proofs have already been authored; typed claims and task/Git powers remain unchanged.
 
-When a family successor adds obligations, the curator selects unchanged siblings explicitly by stored membership ID and authored basis. The guarantee remains independently authored. The role prohibits manufacturing sibling invariant successors or assuming an inherited roster, and requires `retainedFromMemberId` and the published exact member set to be read back.
+Batch changed-card citation previews and repairs with one documents list per wave. The stage writes, checks and publishes task knowledge with the installed build and a clean quality check; own-input/coherence faults are corrected through the same admitted tool, never relabeled or bypassed. Valid product/permission/authority/out-of-ground blockers stop dependent work. MEMORY beyond-settings authority comes from architect/developer through the recorded Manager act; independent review and publication are not acceptance.
 
-The writer is the shipped knowledge-ingest route for leaves and the admitted knowledge-bootstrap route for taskless foundation work. Per-entry results, both coverage planes and published identity are read as separate facts. The full contract-scoped memory-quality operation and, when admitted, structured coherence remain evidence rather than semantic approval from tests. A typed refusal is reported honestly.
+This canonical role/operation requires messages to be short wake-ups naming requested work or a handover and its files. Report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, not pasted into message text. Within a shared task, files stay with its record and a leaf workspace exposes the message-folder link. Text uses the effective settings limit without a pinned number. The canonical source and the packaged copy the tool server serves share this contract; transport does not change their write/start powers, peer destinations or independent acceptance authority.
 
-The curator does not edit code, task/lifecycle state or Git transaction records, directly write SQLite, invent future commit stamps, or repair source movement. Repository-foundation work follows c-14 under real setup authority and does not manufacture an enclosure.
+The leaf intake includes the task, accepted requirement revision, captured change set, existing onboarding, producer handoff, exact worktree contract and the cards, sidecars and records of that leaf’s memory worktree; there is no dataset to publish. Producer fields remain owned by their producer; the curator supplies semantic scope, family/source examination and resolved outcomes.
 
-Since leaf `260921-ICR-L45`, Process step 3 requires the curator to make sure every hand-off target carries
+Current curation continues from a report to the next authorized step without a new Manager go. It verifies card sentences against source, repairs wrong or missing memory encountered along its way beyond quality-check findings, names each repair and makes no broad sweep. Code changes, requirement decisions and another leaf’s work return to their owner. A correction qualifies every affected false body claim; full checks and the independent fact-check run before handover.
+
+Family coverage is authored from stored member obligations, their evidence and applicable intent. The guarantee and routes are independent judgments. The admitted file writer records members and examined revisions; the Curator reads back actual written family state and fabricates neither sibling records nor obsolete dataset-roster fields.
+
+The writer is the shipped `agents-remember knowledge-ingest` route, or the mounted `knowledge_write`, using the task's leaf enclosure contract — including repository foundation work under the repository-foundation detail. A taskless `knowledge-bootstrap` command is not among this seat's routes. Its written/planned/refused state, actual record and entry IDs, history rows and bound code/memory trees are separate facts; file writing is neither a Git commit nor acceptance. Full scoped memory quality and structured coherence do not substitute for semantic approval.
+
+The curator does not edit code, task status/lifecycle or Git transaction records, directly write SQLite, invent future commit stamps, or repair source movement. Its only new task-step bookkeeping is completed matching own curation set_step; incomplete/blocked/progress/escalation work stays unfinished. Repository-foundation work follows the repository-foundation detail inside its own real task and does not manufacture an enclosure; setup reads and reports its state and authors none of it.
+
+The Curator's large-worklist duty is stated in the role text: enumerate one full-intake worklist of distinct outstanding memory actions in the report, count each underlying action once, and exclude already answered work, report-only observations and duplicate summaries. Invariant/family placement, admission, changes of meaning, the single `knowledge-ingest` write, the full memory-quality operation and the handoff stay with the seat. How the seat organises that work — including any harness sub-agents, at any size — is the seat’s own, and a harness without sub-agents does the same work.
+
+Before ingest the curator makes sure every hand-off target carries
 its own authored `rationale` (why that place carries the obligation, specific to the construct it names,
 optional `role`) before ingest, writing it from the evidence where the producer gave none; the writer
 never generates one and refuses an unexplained target with `realization_rationale_absent`.
+On converted memory the curator turns each developer ruling and requirement-packet choice that still constrains
+code into a decision record with the alternatives it weighed; decisions that matter only within the task stay in
+the task. Before authoring such a record it reads `reference/curator/governing-sources.md#preserve-governing-decisions`; the fields are in the "Decision records" section of `templates/curator-handoff-ingestion.md`.
+Lifting is guidance only; nothing enforces it mechanically.
+
+- **Converted memory.** On converted memory the curator follows the card formats, citation input and history
+  dispositions in `reference/curator/card-formats-and-citations.md`: cards have no metadata table, no Update History and no citation tables; a
+  new card's evidence, or a refreshed reference, is a citation table that `citation_fix` turns into `- <finding>
+  [n]` lines and sidecar references with resolved anchors; a changed file whose card needs no change is answered by
+  an `onboarding_trace` row written through `knowledge-ingest`. On converted memory the file writer is
+  `agents-remember knowledge-ingest --contract … --list … --authorization-ref … --commit --json`: it writes files in
+  the leaf's memory worktree and commits nothing to Git, an unconverted memory worktree is refused by name, and the
+  history rows answer the leaf's worklist items.
+
+- **The two record kinds.** A producer's entry of kind `weakness` becomes a `WKN-` record
+  through the writer, or the report says why not: the writer refuses one without a file, with an unknown kind, or
+  with a statement beyond its one-sentence bound, and the refusal names the field. An entry of kind `dependent`
+  becomes a `DPD-` record: the document, and for each place it stands on the value the writer reads at the task's
+  tip — a code anchor, a whole file's blob, or an invariant's or a family's revision — with the confirmation's task,
+  role and commit. Every write of a dependent is a confirmation, and a confirmation without its own one-sentence
+  statement is refused; no value is typed in. A document the task deleted has its dependent removed with it, and
+  the writer rebuilds the layout marker's dependent lookup, so a stale lookup is repaired by a writer write and
+  never by hand. The Curator answers the worklist's row for a weakness — it stands and its anchor moves with the
+  code, or it is closed — and the row for a changed document, which only the confirmed record answers. Neither
+  record refuses a task.
+
+### Current onboarding judgment and second-reader duties
+
+The new converted onboarding contract takes current source-bound updated/no_impact rows: updated requires authored Markdown/reference change, not realizes/proves-only or mechanical anchor edits; source movement reopens the answer.
+
+Before closeout a seat that wrote none of the leaf's cards or records fact-checks every changed statement against final code, each history disposition/effect/reason against the diff and important omissions. Blocking findings are repaired. This is a lifecycle step, not a new automated closeout gate; full quality/coherence and Curator helpers do not supply independent acceptance.
+
+- Independent non-author fact-check precedes closeout without adding a closeout predicate. [14]
+
+### Bound native intake and admission
+
+Read the rendered task-document files named in the handover with the harness's own file tools before acting; document changes go through task_doc only, since edits to copies are never read back. Use `arMcpContext.readerArguments` and each tool's actual schema; `task_context` carries both canonical task and enclosure contract. Resolve the named source/field before reporting it missing. Read immutable baseline/candidate knowledge before semantic changes, preserve the baseline, contain knowledge/onboarding outputs in the selected memory root and read admitted records back. Evidence/report outputs instead follow the task/scratch custody boundary stated above.
+
+The existing MIK writer remains authoritative. Use only the source-bound command admitted for the selected runtime. If this compiled capsule exposes no writer and admits no such command, report the required records not written; that is a capsule capability limit, not a general absence of MIK’s writer. Another installation, unscoped call or internal writer cannot substitute.
+
+An explicitly report-only admission supplies only the requested report and bound upstream message and claims none of the normal authoring pass complete. The normal pass retains its complete contract-scoped MQC, exact blocked findings, reruns and required prepare → publish → validate coherence. Developer questions go to the parent when one exists and to the own chat only without one; native peer clarification uses the actual parent/task role, and dashboard launch needs no parent. Operator settings, including serviceTier, remain outside Curator authority.
+
+At its stage end an unfinished Curator sends what it awaits, and from whom, to its parent with `role_message` on `agents-remember-task`; its own chat text is not a return. Faults its own work or instrument causes — a faulty-input refusal, a wrong anchor — are repaired through the same admitted tool and reported, and a coherence finding on its writes is repaired rather than relabelled.
 
 ### Conventions
 
@@ -50,77 +97,92 @@ Canonical skills own instructions. Generated copies are synchronized artifacts; 
 
 No additional work is asserted by this card. Actual project publication and semantic acceptance remain separately evidenced outcomes.
 
-## Docs References
+## Name the effect
 
-No configured Domain Documentation source applies to this repository-owned contract.
+When the curator restates a family's guarantee, the hand-off names the family as a
+changed row with the curator's authored `effect`; the writer fills the family's own
+revision. The changed-effect and writer-revision rule is in `reference/curator/family-obligations.md`, reached by the role's pointer before deciding family coverage or updating a family.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The operative contract is defined by the repository sources cited below. | — | — |
+The overview contract reads from purpose: title, governing overview, then `## What This Repo Is`, `## What This Area Is` or `## Purpose`; construction follows, then invariants/boundaries, and all citation lines stand together at the end. An overview change belongs in its applicable body section, never a leaf- or date-named section. The instruction states these as authoring rules and names no validator refusal for them; source instruction is not evidence that a validation invocation ran.
 
-## Repo-Internal References
+The review budget is settings-owned (`orchestration.loops.defaults.maxRounds`), read at each begin; the task’s effective limit, including approved extras, is exposed by `task_doc.reviewState.limit`. CODE and MEMORY have separate counts under the same setting. Beyond-limit work needs recorded Architect or developer approval, which the Manager requests through its assigned reporting route and records.
 
-These references name the current owners and the behavior they establish.
+Worker ends with requirement-satisfying bytes, focused checks and report with Reviewer; Reviewer records whole-requirement coverage and verdict; Curator writes, checks and publishes knowledge through the installed build and obtains clean full quality/coherence evidence before handing MEMORY directly to the independent Reviewer. Each stage repairs its own input/instrument slips through the same admitted tool and continues; permission prompts, other correct-input refusals or unowned state, requirement-meaning questions and out-of-scope effects remain stops; covered correct writes follow only their scoped recovery.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Required task, source, handoff and publication inputs. | `## Inputs` | skills/l-01-agent-lifecycles/roles/curator.md:11-58 |
-| Three-way reconciliation, explicit retention, writer/readback and full quality duties. | `## Process` | skills/l-01-agent-lifecycles/roles/curator.md:59-159 |
-| The curator’s prohibited writes and source-stamp boundary. | `## What you must not do` | skills/l-01-agent-lifecycles/roles/curator.md:204-218 |
-| Process step 3 requires an authored rationale on every hand-off target before ingest. | "every target carries its own authored" | skills/l-01-agent-lifecycles/roles/curator.md:70-76 |
+## Landing evidence and retained intent
 
-## Cross-Repo References
+For every card cut by the quality check, the handover names the source evidence that makes the removed text untrue. Text is never removed merely to clear a quality finding. Evidence and working files belong to the task record, the hand-over's scratch root, or — for what must not live under the projects home — the hand-over's outside scratch root, never the memory worktree; durable onboarding and knowledge remain the Curator’s writable memory surface. This adds review content without transferring the one writer, full-quality loop or landing authority.
 
-No sibling repository defines this file's contract.
+## Current composition and authoring contract
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repository implementation dependency. | — | — |
+The role retains complete intake: exact candidate diff, approved packet revisions and durable ruling, direct Worker/Reviewer reports and producer lists, existing affected memory, paired roots and enclosure scope. Producer fields stay verbatim; Curator-owned outcomes, semantic scope, admission, records and history remain the Curator's. Foundation is regular task work inside the Architect's own task; no instructed session or fabricated task stands in for that task admission.
 
-## Update History
-- 2026-09-28T17:18:24+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): body update — Logic records Process step 3's new duty (every target carries an authored rationale before ingest; the writer generates none); new reference row. Other ranges re-pointed through the exact base-to-candidate line map. No stamp advanced.
+Process detail lives in named-step files under `reference/curator/`: target rationale and ingest preparation in `knowledge-ingest.md`, governing decisions in `governing-sources.md`, family changed-effect and writer-owned revision in `family-obligations.md`, citation/card syntax in `card-formats-and-citations.md`; the full-intake deduplicated worklist stays whole in the role's "Produce the handover" section and helper/execution support in "Organise helpers within the assignment". The capsule keeps one serving-build writer for normal knowledge/sidecar/history authoring and only the scoped same-tool/input-class recovery for a covered correct-input write refusal, with owner notice and declared provenance. Full MQC/coherence, independent non-author fact-check, no helper self-review and no Git or code authority remain.
 
-- 2026-09-26T23:48:33Z — L39: reconciled exact sibling-retention input, immutable endpoint behavior and reporting against the frozen source. Preserved prior history and existing verification metadata; actual source commit stamping remains closeout-owned.
+Only after its own curation part is complete, the role sets a matching task step done with set_step/id/note; no matching step is reported without a mutation. Incomplete, blocked, progress and escalation reports do not mark unfinished work done. This is not task status, acceptance or landing authority. After three own repairs of the same check/finding still failing, stop, record attempts and tell Manager; no model is prescribed.
 
-- 2026-09-26T21:21:04+00:00: Generated citation repair: "Do not confuse **test-green with intent-green**" repointed to skills/l-01-agent-lifecycles/roles/curator.md:143-143. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-26T21:21:04+00:00: Generated citation repair: "Run the complete curation operation at intake and after every repair" repointed to skills/l-01-agent-lifecycles/roles/curator.md:110-110. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.
-- 2026-09-26T19:49:05Z — Reconciled authored scope, explicit installed invocation and ordinary comparison recording where this source owns them.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "Author and publish the durable knowledge through the real writer."; "Read the report, never the exit status" repointed to skills/l-01-agent-lifecycles/roles/curator.md:70-70; skills/l-01-agent-lifecycles/roles/curator.md:76-76. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "Do not confuse **test-green with intent-green**" repointed to skills/l-01-agent-lifecycles/roles/curator.md:131-131. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "Reconcile three ways before writing anything" repointed to skills/l-01-agent-lifecycles/roles/curator.md:61-61. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "Run the complete curation operation at intake and after every repair" repointed to skills/l-01-agent-lifecycles/roles/curator.md:102-102. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **body update — the taskless-curator seat policy (D56).** The role card states the admission the carriers now make, and its seat-policy note is dated rather than rewritten. **citation pass — the rows this leaf's own line movement displaced were re-anchored from each row's own finding message.** Every flagged range was repointed or widened to the lines that actually carry the anchor at this candidate, using the memory-quality checklist's own per-row message as the ground truth rather than adding a delta to an old number; the repair was applied row-scoped by the cited-range string, so duplicate rows were each corrected. No claim was re-worded to fit a stale pointer, no anchor or range was dropped to silence a finding, and the two legacy mechanical-projection bullets on rows this pass re-read were retired with this entry as their dated disposition, and no new projection bullet was written. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
-- 2026-09-24T07:54+02:00 — 260921-ICR-L28 curator (uncommitted change set on `ar/260921-icr-l28`, base `63b476297708f779de8ed5c0bf3555b9d1de70c2`): **the curator role gains one numbered step and renumbers the ones after it, with its function shape unchanged.** The role now authors the `family` and `external_sources` keys the producer never writes, keeps an unexamined obligation **unexamined** rather than family-free, and reads both planes back from the report, where a plane whose state is not `recorded` measured nothing and its null counts are not zeroes. An implementation change never rewrites member intent or family meaning by itself.
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-21T18:09+02:00 — 260921-ICR-L20 curator (uncommitted change set on `ar/260921-icr-l20`, production line `71a4433e686b3380af97a0836bb82bab2c8f2aad`): **body update for the authoring obligation this leaf added to the role file.** `skills/l-01-agent-lifecycles/roles/curator.md` is 144 lines and gained, inside the function shape `260915-CAPS-L22` standardized: a fourth numbered `## Process` step (`:53-66`) stating the real invocation, the fields to consume from the ingest report and the discipline that a zero exit is not evidence the repository holds the knowledge; a permitted-action line naming the subcommand (`:112-114`); a `## What you must not do` prohibition against writing the dataset or treating the mounted tool as a write route (`:124-126`); and a report sentence carrying the read-back identity (`:99-101`). The card's Logic gained a paragraph stating why this is the seat's own half rather than prose, and the Conventions and Invariants sections were re-read and left as written because nothing in them is contradicted. **Citation accounting:** every range this table carries into the role file was re-derived from the post-edit bytes rather than shifted — the test-green row `:63-71` → `:81-89`, "Reconcile three ways before writing anything" `:40-44` → `:44-44`, and "Run the complete curation operation at intake and after every repair" `:49-59` → `:67-77`, which the claim-reopen finding also named (it is a **stamp-class** leftover: the source is uncommitted, no commit contains the body as it now stands, so the verification stamp was left exactly as recorded and closeout owns it). The intake row's `:11-31` was re-verified rather than assumed, and two new rows cite the authoring step and its carriers. No claim and no row was dropped.
-- 2026-09-19T17:09+02:00 — 260915-KS-L28 curator (uncommitted change set on `ar/260915-ks-l28`): re-read this card against the source at `d0c1d1cfa9b576fd117ac2a0c05c5defe0089678` (previous verification stamp `14582854955223f75588c23c9f29f9d51bde9675`). The diff is seven added lines in `## Inputs` (`:22-28`) adding **the producers' curator hand-off list** — the builder's and reviewer's requirement-shaped items in the shape `../templates/curator-handoff-list.md` owns, with the producer fields filled and `resolution`/`validated_at`/`record_action`/`supersedes` the curator's to fill, a carried `disposition` never re-judged at intake. Body: added that intake item to the Logic (with its field-ownership boundary), extended the intake row's extent to the whole section (`:11-31`), and corrected three statements the current source does not support — the Logic's "runs scoped checks" and "Full memory quality and certification remain explicit operations, not closeout or integration prerequisites" (the source requires the **complete** operation at intake and after every repair, `:49-59`), the Conventions bullet that sent the seat to scoped onboarding checks, the same "explicit operations only" clause in the CCR-R12@v5 block, and the "role table classifies curator as target-only" sentence (the rewritten file carries no role table; that classification now lives in `composition-manifest.json`). Citations: re-derived against the file as it stands — the test-green row's `:56-59` extent no longer carried its anchor and moved to `:63-71`; "Reconcile three ways before writing anything" moved from `:33-37` to `:40-44`; "Run the complete curation operation at intake and after every repair" moved from `:42-46` to `:49-59`. Verified ranges/claims: all four rows' anchors resolve inside their extents at HEAD, and the new intake row resolves against the added bullet.
-- 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **the role file this card cites was rewritten into the function shape, and the card was re-derived against it.** leaf `260915-CAPS-L22` (under the developer's 2026-09-17 ruling) replaced the numbered sections and the `## Knobs, Tool Surface, And Dispatch Authority` block with `## Inputs`, `## Process`, `## Outputs`, `## What you may do`, `## What you must not do` and a closing `## Stop and …` section, so every Repo-Internal References row here that named an old heading or an out-of-range extent was re-pointed by reading the rewritten file: each anchor below is text that exists in the cited range, and each range is in bounds of the file as it stands. Where a claim described a construct the rewrite removed, the claim itself was re-worded to what the file now says. No verification stamp advanced: the source is uncommitted and the governed closeout owns the real code and memory commits. **Correction (`D51`, made in the same pass):** this entry first attributed the rewrite to `CAPS-R24@v1`. No such requirement revision exists — the master declares `CAPS-R01@v1` … `CAPS-R19@v1` — and the rewrite is leaf `260915-CAPS-L22`'s, under the developer's 2026-09-17 ruling. This curator fabricated the id; it is corrected here and in the body above.
-- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
+Reviewer records the separate memory lane, leaving code state intact. Method relocation does not prove unchanged meaning merely because the old range still maps; inspect the substantive adjacent detail. Existing blanket task-document prohibitions must be read with the explicit narrow own-step completion instruction, not taught as a ban on set_step.
 
-- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 classified curator as target-only plus explicit
-  ambient-takeover target, corrected ordinary plane ownership to the manager only, and kept
-  structural authority outside settings. Verification remains closeout-owned.
+Each detail file is read before the action its pointer names: intent reconciliation before reconciling, card sentence decisions before editing a card, knowledge-ingest preparation before preparing or ingesting, family obligations before deciding family coverage, and card formats and citations before preparing citation input.
 
-- 2026-08-29T09:14+02:00 — MCAR-L02 replaced the hand-authored terminal report with exact
-  lifecycle API publication and validation of the sole structured coherence authority.
-  Verification remains closeout-owned.
+## Evidence
 
-- 2026-08-28T11:32+02:00 — No content impact: re-read the v25 role/topology clarification; this
-  card already describes one leaf-owned primary revision, adjacent contextual constraints, and
-  the source-specific worker/reviewer/manager/curator boundary.
+## Current account — the authoring routes
 
-- 2026-08-27T16:27+02:00 — Requirement-corpus briefing repair: curator intake now receives exact
-  approved revision packets and per-revision adjudication; rejected/blocked delivery cannot become
-  current intent. Verification metadata remains pinned until governed closeout.
+The role's authoring routes name the mounted `knowledge_write` beside `agents-remember knowledge-ingest`: it runs the same writer with the same arguments under the task's leaf contract, a repository foundation authored through the repository-foundation detail uses the same route inside its own Architect task, and only the declared same-tool/input-class recovery for a covered correct-input write refusal permits manual authoring. The commit word is spelled both ways (`--commit`, `commit: true`), and the sentence that said no MCP tool writes knowledge is gone, because the mounted writer is one.
 
-- 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: aligned curator doctrine with the canonical strict memory-quality request and retry guidance. Verification metadata remains pinned until architect-owned closeout.
+## Scratch roots
 
-- 2026-08-11T14:40+02:00 — Made current-additions coverage and the full enforced memory-quality
-  worklist curator-owned completion conditions while preserving closeout ownership of real-commit metadata.
-- 2026-08-11T14:20+02:00 — Rewrote the default body around the curator's current three-way
-  coherence responsibility; removed generic spawn prose and appended task-delta overrides.
-- 2026-08-11T07:16+02:00 — Commit-derived verification was assigned to governed closeout after
-  curator content/citation preparation.
-- 2026-08-05T03:47+02:00 — Curator checks became enclosure-contract scoped.
-- 2026-07-12T18:11+02:00 — Established the fresh onboarding-only curator seat and durable report.
+The Curator's closing paragraph admits `workspace.outsideScratchRoot` for what must not live under the projects home (a sandbox root) and for one short `TMPDIR`, with `XDG_CONFIG_HOME` kept inside `workspace.scratchRoot`, and says never to remove that root. Agent-authored temporaries, experiments and working copies still belong only in the real `workspace.scratchRoot`, outside code/memory/task folders; product, test-runner and admitted sandbox temporaries follow their owners, and reports and evidence go in the hand-over's report folder that the product copies to canonical notes before removal. The launch projection carries the field as `outsideScratchRoot` beside `scratchRoot`.
+
+- Current Curator intake requires candidate-bound producer data and a passing handoff-check result for the same freeze, reads the intent-reconciliation detail before reconciling and the knowledge-ingest preparation before ingest, and keeps full checks, the non-author fact-check and truthful output identities. The seat keeps one writer, marks only its completed own step, escalates after three repeated own repairs and uses scoped recovery only for covered correct writes. It collects helpers and continues through normal work; encountered-memory repairs are bounded and named, with code/requirement/other-leaf work routed to its owner. The family-obligations detail attributes prepared-context unattributed code locations to their family or reports why not, and the change-routing detail retires deleted or renamed source cards while repairing every reference to them. [17]
+
+- Current Curator intake requires candidate-bound producer data and a passing handoff-check result for the same freeze, reads the intent-reconciliation detail before reconciling and the knowledge-ingest preparation before ingest, and keeps full checks, the non-author fact-check and truthful output identities. The seat keeps one writer, marks only its completed own step, escalates after three repeated own repairs and uses scoped recovery only for covered correct writes. It collects helpers and continues through normal work; encountered-memory repairs are bounded and named, with code/requirement/other-leaf work routed to its owner. Before ingest, earlier subject rows are read and invariant disposition meanings stay distinct from family/onboarding schemas. [18]
+
+- Current Curator intake requires candidate-bound producer data and a passing handoff-check result for the same freeze, reads the intent-reconciliation detail before reconciling and the knowledge-ingest preparation before ingest, and keeps full checks, the non-author fact-check and truthful output identities. The seat keeps one writer, marks only its completed own step, escalates after three repeated own repairs and uses scoped recovery only for covered correct writes. It collects helpers and continues through normal work; encountered-memory repairs are bounded and named, with code/requirement/other-leaf work routed to its owner. [19]
+
+- Current Curator intake requires candidate-bound producer data and a passing handoff-check result for the same freeze, reads the intent-reconciliation detail before reconciling and the knowledge-ingest preparation before ingest, and keeps full checks, the non-author fact-check and truthful output identities. The seat keeps one writer, marks only its completed own step, escalates after three repeated own repairs and uses scoped recovery only for covered correct writes. It collects helpers and continues through normal work; encountered-memory repairs are bounded and named, with code/requirement/other-leaf work routed to its owner. [20]
+
+- Current Curator intake requires candidate-bound producer data and a passing handoff-check result for the same freeze, reads the intent-reconciliation detail before reconciling and the knowledge-ingest preparation before ingest, and keeps full checks, the non-author fact-check and truthful output identities. The seat keeps one writer, marks only its completed own step, escalates after three repeated own repairs and uses scoped recovery only for covered correct writes. It collects helpers and continues through normal work; encountered-memory repairs are bounded and named, with code/requirement/other-leaf work routed to its owner. [21]
+
+- Current Curator intake requires candidate-bound producer data and a passing handoff-check result for the same freeze, reads the intent-reconciliation detail before reconciling and the knowledge-ingest preparation before ingest, and keeps full checks, the non-author fact-check and truthful output identities. The seat keeps one writer, marks only its completed own step, escalates after three repeated own repairs and uses scoped recovery only for covered correct writes. It collects helpers and continues through normal work; encountered-memory repairs are bounded and named, with code/requirement/other-leaf work routed to its owner. [22]
+
+- Current Curator intake requires candidate-bound producer data and a passing handoff-check result for the same freeze, reads the intent-reconciliation detail before reconciling and the knowledge-ingest preparation before ingest, and keeps full checks, the non-author fact-check and truthful output identities. The seat keeps one writer, marks only its completed own step, escalates after three repeated own repairs and uses scoped recovery only for covered correct writes. It collects helpers and continues through normal work; encountered-memory repairs are bounded and named, with code/requirement/other-leaf work routed to its owner. [23]
+
+- Current Curator intake requires candidate-bound producer data and a passing handoff-check result for the same freeze, reads the intent-reconciliation detail before reconciling and the knowledge-ingest preparation before ingest, and keeps full checks, the non-author fact-check and truthful output identities. The seat keeps one writer, marks only its completed own step, escalates after three repeated own repairs and uses scoped recovery only for covered correct writes. It collects helpers and continues through normal work; encountered-memory repairs are bounded and named, with code/requirement/other-leaf work routed to its owner. [24]
+
+- Current Curator intake requires candidate-bound producer data and a passing handoff-check result for the same freeze, reads the intent-reconciliation detail before reconciling and the knowledge-ingest preparation before ingest, and keeps full checks, the non-author fact-check and truthful output identities. The seat keeps one writer, marks only its completed own step, escalates after three repeated own repairs and uses scoped recovery only for covered correct writes. It collects helpers and continues through normal work; encountered-memory repairs are bounded and named, with code/requirement/other-leaf work routed to its owner. [25]
+
+- Current curation continues from a report to the next authorized step without a new Manager go. It verifies card sentences against source, repairs wrong or missing memory encountered along its way beyond quality-check findings, names each repair and makes no broad sweep. Code changes, requirement decisions and another leaf’s work return to their owner. A correction qualifies every affected false body claim; full checks and the independent fact-check run before handover. [27]
+
+- The Curator reads the required task, change-set, producer handoff and affected memory inputs. [1]
+
+- Three-way reconciliation, baseline preservation, admitted-record readback and full quality-check duties. [2]
+
+- The curator’s prohibited writes and source-stamp boundary. [3]
+
+- The knowledge-ingest preparation detail requires each hand-off target’s own authored rationale before ingest; the writer never generates that rationale and refuses an unexplained target. [4]
+
+- The governing-decisions detail lifts each ruling or packet choice that still constrains code into a decision record; task-only choices stay in the task. [5]
+
+- The curator follows the card-format and citation detail: cards hold current prose and numbered evidence lines, and the citation fixer turns citation tables into those lines and sidecar references. [6]
+
+- The admitted knowledge writer writes memory files in the leaf memory worktree; --commit (commit: true) authorizes those file writes, never a Git commit or acceptance. [7]
+
+- Restated guarantees carry an authored effect; the writer fills the revision. [8]
+
+- The memory-review pass limit is the settings limit and a pass beyond it needs Architect or developer instruction recorded by the Manager; the role keeps its stage and authority boundaries. [9]
+
+- The Curator batches citation checks and repairs, completes the full quality/coherence operation and hands memory directly to the independent Reviewer. Faulty inputs are corrected through the same tool; a covered correct-input write refusal uses the scoped recovery procedure with explicit provenance. Permission, validation, unowned-state, meaning and outside-surface stops remain. Extra memory passes require Architect/developer authority recorded by Manager. [10]
+
+- Evidence and working files stay outside the memory worktree. Overview authoring is purpose-first, changes belong in their applicable body section, and all citation lines terminate the overview. [11]
+
+- Every reported cut has task-change causality; finding-clearing deletion is forbidden. [12]
+
+- Repository foundation is authored by the Curator inside the real task the user-started Architect opens, a registered leaf under a master, with its actual enclosure. No taskless session or invented task, worktree or enclosure substitutes for task admission. [13]
+- Repository foundation is authored by the Curator inside the real task the user-started Architect opens, a registered leaf under a master, with its actual enclosure. No taskless session or invented task, worktree or enclosure substitutes for task admission. [15]
+
+
+- The worklist detail points to the writer's row, reconsideration and link-repair rules; the governing-sources detail records a rejected simplification or workaround with the chosen design, rejected option and reason, apart from unfinished work. [16]
+
+- Normal knowledge authoring uses mounted knowledge_write or the admitted serving-build knowledge-ingest route. Only a covered correct-input refusal admits the same-tool/input-class recovery procedure, with owner notice, declared provenance and working checks. [26]

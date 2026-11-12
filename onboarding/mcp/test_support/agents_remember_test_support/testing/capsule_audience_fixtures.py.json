@@ -1,0 +1,84 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/capsule_audience_fixtures.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Role pointer actions are pairs of reference path and action prefix.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "286fda06b2c638a72f1bf20a62494fc594734ca0",
+            "content": "sha256:9bf5a63fb945c740e2f23e5e447be5cab836b62c71950b5ce99a76ce14fc424b",
+            "locator": {
+              "kind": "symbol",
+              "name": "ROLE_POINTER_ACTIONS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`D656_OPERATION_SHA256`, and the stage table beside it, carry SHA-256 pins of each operation source and each per-role compiled stage.\n\nAnchor: `D656_OPERATION_SHA256`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "286fda06b2c638a72f1bf20a62494fc594734ca0",
+            "content": "sha256:9655acd2ff892398e4e47cf94d64ba68bd13619d5b082e99a42eb838a11ee29f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Short rules delivered in the shared digest name their owner source, clause and recipient roles.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "286fda06b2c638a72f1bf20a62494fc594734ca0",
+            "content": "sha256:6213f6a1ca7c3cfc20bec23f4af05f3c3b5041f7e6502b85778cf54f767c90e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "SHARED_SHORT_RULE_CLAUSES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A grouped detail read names several actions and keeps their owner clauses.\n\nAnchor: `GROUPED_DETAIL_CLAUSES`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "286fda06b2c638a72f1bf20a62494fc594734ca0",
+            "content": "sha256:9655acd2ff892398e4e47cf94d64ba68bd13619d5b082e99a42eb838a11ee29f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The module is data only; consumer tests own compilation and assertions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "286fda06b2c638a72f1bf20a62494fc594734ca0",
+            "content": "sha256:9655acd2ff892398e4e47cf94d64ba68bd13619d5b082e99a42eb838a11ee29f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

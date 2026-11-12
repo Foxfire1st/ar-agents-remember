@@ -1,0 +1,130 @@
+{
+  "path": "mcp/src/agents_remember/kernel/primitives/provider_degradation_settings.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The `providerDegradation` settings block is documented with its full key list, defaults, and behavior in the settings reference.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b216cf7a257bdee6b5d6e1f531105b3c9115cef4",
+            "content": "sha256:4d94e7e73411383667e3dbb2bd6cfb32a88d0c6f1ed4ec4bcf595ddeedac3059",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/settings-json.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`kernel/primitives/runtime_config.py` imports this module's `ProviderDegradationSettings`/`ProviderDegradationSettingsError`/`parse_provider_degradation_settings`, wraps parse errors into `ConfigError`, and stores the result on `McpRuntimeConfig.provider_degradation`. Source caption: \"class McpRuntimeConfig\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:c9227149e90ef130b709f739c6b478fa432f45e49db5a1674a7ff27e162b2cd8",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 43
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:5de183139073ffe8a9e489986c560a4804d5ea9a8c2382f4d37f5e1ab3dfb908",
+            "locator": {
+              "end": 204,
+              "kind": "line_range",
+              "start": 191
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:0ac152efd34bd15a55ea73e61f6c62b9fac0f79275f4e01847ce05e967832dee",
+            "locator": {
+              "end": 355,
+              "kind": "line_range",
+              "start": 349
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:92ef2fe02c6af05fc1cc9712701adee240ad6fe1bc100ab1b89ee59a5f140485",
+            "locator": {
+              "end": 375,
+              "kind": "line_range",
+              "start": 365
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The degradation detector consumes every field of `ProviderDegradationSettings` as its threshold/behavior surface.\n\nAnchor: \"class ProviderDegradationStore\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2edff51be75051062a682ac9a09910ffdb4db13a",
+            "content": "sha256:22d42a9364869463b895daa2d960aa31ad3c51114cc28a5cef042c139f97eef9",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 134
+            },
+            "path": "mcp/src/agents_remember/providers/degradation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2edff51be75051062a682ac9a09910ffdb4db13a",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 171,
+              "kind": "line_range",
+              "start": 171
+            },
+            "path": "mcp/src/agents_remember/providers/degradation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The public settings example ships a representative `providerDegradation` block.\n\nAnchor: `coordinationRoot`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02488160059666d9bd7383472baa03db8c36105b",
+            "content": "sha256:bc276e95c75e84f9711dda3930c7b670c98ef668d19f7cd5f560782c47f80143",
+            "locator": {
+              "end": 3,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "examples/mcp/settings.example.json"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

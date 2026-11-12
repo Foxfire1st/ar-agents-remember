@@ -1,0 +1,441 @@
+{
+  "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a4f07bffe14341a99eb320bdf2a28ac21454914a",
+        "content": "sha256:8c5a8b8358d36b143cfdc6bd660a11c69dfbd914437d4ce02b5cb4416504bcd9",
+        "locator": {
+          "kind": "symbol",
+          "name": "useReaderSidebars"
+        }
+      },
+      "id": "RLZ-3TTJ4S",
+      "invariant": "INV-PHBM6X",
+      "origin": {
+        "handoffEntry": "RP17_STATE",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Knowledge allocates independent knowledge/left and knowledge/right choices; a citation deliberately opens the latter.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "a4f07bffe14341a99eb320bdf2a28ac21454914a",
+        "content": "sha256:f07ba411128550531d953d5945a702e3ef1151efa896e1558cd8f5bcee7ed84f",
+        "locator": {
+          "kind": "symbol",
+          "name": "asideToggle"
+        }
+      },
+      "id": "RLZ-5BTD4M",
+      "invariant": "INV-7QYXJP",
+      "origin": {
+        "handoffEntry": "RP16",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The right toggle disappears at70rem and narrower, where the aside is not beside the document.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a4f07bffe14341a99eb320bdf2a28ac21454914a",
+        "content": "sha256:9f7d70a012886623f6f19abb1cbf39a131685cb17e63b54f0d93c41fb6974e8f",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReaderDocument"
+        }
+      },
+      "id": "RLZ-787PSC",
+      "invariant": "INV-7QYXJP",
+      "origin": {
+        "handoffEntry": "RP16",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The aside panel and handle receive the shared hidden-in-place properties while the document remains mounted.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "a4f07bffe14341a99eb320bdf2a28ac21454914a",
+        "content": "sha256:3e9bb9bcb30ab2cd4dacad822ff1d85f5501fe8891cc0310ce83070eb2124bb8",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReaderTree"
+        }
+      },
+      "id": "RLZ-DT31E4",
+      "invariant": "INV-7QYXJP",
+      "origin": {
+        "handoffEntry": "RP16",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The tree panel and handle receive the shared hidden-in-place properties instead of unmounting the tree.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "a4f07bffe14341a99eb320bdf2a28ac21454914a",
+        "content": "sha256:8c5a8b8358d36b143cfdc6bd660a11c69dfbd914437d4ce02b5cb4416504bcd9",
+        "locator": {
+          "kind": "symbol",
+          "name": "useReaderSidebars"
+        }
+      },
+      "id": "RLZ-KBZ4FJ",
+      "invariant": "INV-7QYXJP",
+      "origin": {
+        "handoffEntry": "RP16",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "A requested citation opens a user-hidden aside before placing its content there, rather than leaving the requested pane hidden.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a4f07bffe14341a99eb320bdf2a28ac21454914a",
+        "content": "sha256:9f7d70a012886623f6f19abb1cbf39a131685cb17e63b54f0d93c41fb6974e8f",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReaderDocument"
+        }
+      },
+      "id": "RLZ-NT7NVY",
+      "invariant": "INV-KXT50F",
+      "origin": {
+        "handoffEntry": "MIK-R79@v1 required behavior 10",
+        "leaf": "260928-MIK-L79"
+      },
+      "rationale": "ReaderDocument owns the rendering or source-selection boundary that implements this obligation: On this page lists rendered chapters and record sections, marks the current chapter and yields its pane to cited code.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "a4f07bffe14341a99eb320bdf2a28ac21454914a",
+        "content": "sha256:3aa6db4cd6a2cc983b5cd349f24fe8057be5938d493ab217deb2323944d0842b",
+        "locator": {
+          "kind": "symbol",
+          "name": "KnowledgeReader"
+        }
+      },
+      "id": "RLZ-R31WN7",
+      "invariant": "INV-QE6278",
+      "origin": {
+        "handoffEntry": "MIK-R79@v1 / L79-TK-O1 acquisition scope",
+        "leaf": "260928-MIK-L79"
+      },
+      "rationale": "KnowledgeReader places the records read above toolbar and tree, passes the answer to lookup and the same loader to Records, while document and counts retain separate read ownership.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "a4f07bffe14341a99eb320bdf2a28ac21454914a",
+        "content": "sha256:501a689b00155ee81f79e3329cc3f85e8383092c650e910f01e3bd13e2fd5be3",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReaderSidebarToggles"
+        }
+      },
+      "id": "RLZ-RFR6TS",
+      "invariant": "INV-7QYXJP",
+      "origin": {
+        "handoffEntry": "RP16",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Both Knowledge controls live at the document column edges outside the tree and citation/outline panels.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "a4f07bffe14341a99eb320bdf2a28ac21454914a",
+        "content": "sha256:3aa6db4cd6a2cc983b5cd349f24fe8057be5938d493ab217deb2323944d0842b",
+        "locator": {
+          "kind": "symbol",
+          "name": "KnowledgeReader"
+        }
+      },
+      "id": "RLZ-SQPNXD",
+      "invariant": "INV-7XYFX3",
+      "origin": {
+        "handoffEntry": "MIK-R79@v1 required behavior 13",
+        "leaf": "260928-MIK-L79"
+      },
+      "rationale": "KnowledgeReader owns the rendering or source-selection boundary that implements this obligation: At forty rem and narrower Browse shows a full-screen tree and selecting a row returns to the document.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "a4f07bffe14341a99eb320bdf2a28ac21454914a",
+        "content": "sha256:3aa6db4cd6a2cc983b5cd349f24fe8057be5938d493ab217deb2323944d0842b",
+        "locator": {
+          "kind": "symbol",
+          "name": "KnowledgeReader"
+        }
+      },
+      "id": "RLZ-VKH7CD",
+      "invariant": "INV-6QQ5FE",
+      "origin": {
+        "handoffEntry": "MIK-R79@v1 required behavior 1",
+        "leaf": "260928-MIK-L79"
+      },
+      "rationale": "KnowledgeReader owns the rendering or source-selection boundary that implements this obligation: Knowledge occupies the full dashboard width and retains its document and reading position across tab switches.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "a4f07bffe14341a99eb320bdf2a28ac21454914a",
+        "content": "sha256:416ed283ec762019ac71404ff63e72642cbcafda009bfb2b712b9930eede9615",
+        "locator": {
+          "kind": "symbol",
+          "name": "toggleLine"
+        }
+      },
+      "id": "RLZ-XARYD2",
+      "invariant": "INV-7QYXJP",
+      "origin": {
+        "handoffEntry": "RP16",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The control strip is drawn only where the responsive Knowledge layout admits its sidebars; Browse remains the phone tree owner.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a4f07bffe14341a99eb320bdf2a28ac21454914a",
+        "content": "sha256:6ef28c9497c306ba623dd0e7cdfe531615b35ccb6b3ab92c009fa77f2f136125",
+        "locator": {
+          "kind": "symbol",
+          "name": "useCitationNavigation"
+        }
+      },
+      "id": "RLZ-XBQAZZ",
+      "invariant": "INV-P362H1",
+      "origin": {
+        "handoffEntry": "MIK-R79@v1 required behavior 9",
+        "leaf": "260928-MIK-L79"
+      },
+      "rationale": "useCitationNavigation owns the rendering or source-selection boundary that implements this obligation: Wide citations open in the existing code pane without moving prose; multiple targets are listed first and narrow code navigation retains Back.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "a4f07bffe14341a99eb320bdf2a28ac21454914a",
+        "content": "sha256:9676193343370b4215759daea5747771b3c32453012630ba636c39c67938cf16",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-Z1NG7V",
+      "invariant": "INV-MQ34SM",
+      "origin": {
+        "handoffEntry": "MIK-R67@v2 by-design 7",
+        "leaf": "260928-MIK-L57"
+      },
+      "rationale": "Routes code views with the selected memory tree/anchor context rather than sending recorded source to the working-checkout File Viewer.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "12": {
+      "note": "The full-width shell with a resizable tree, document and aside.\n\nAnchor: \"export const KnowledgeReader = memo(function KnowledgeReader({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4f07bffe14341a99eb320bdf2a28ac21454914a",
+            "content": "sha256:4181b00f705471cd14a5b459d25bf25d6ef1b22285c399a9570a5b1111ee7eea",
+            "locator": {
+              "end": 300,
+              "kind": "line_range",
+              "start": 227
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "One selection-local records acquisition is created here and shared with the tree and toolbar.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a01cef75c71aa3fda6bae526501fa075f45f4197",
+            "content": "sha256:99bcb600e82bd59139d125d12d3e4b5bc9e2b6c5ef2e13bed9e9907f3a04c8d7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/knowledge-reader/ReaderToolbar.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The address's own view is read and a late answer is hidden.\n\nAnchor: \"function useAddressAnswer(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4f07bffe14341a99eb320bdf2a28ac21454914a",
+            "content": "sha256:0bfaca229b9c369bc830b1abaad6876fa5d1246ee25e8f51f51dbb1f7c73f642",
+            "locator": {
+              "end": 180,
+              "kind": "line_range",
+              "start": 162
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "A single cited target opens beside the text, or as its own page at 70rem and below.\n\nAnchor: \"function useCitationNavigation(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4f07bffe14341a99eb320bdf2a28ac21454914a",
+            "content": "sha256:43d6b34ea632e987c2f7ca5070cdf996ec7a8ad0637c26b8ca874efcd6413695",
+            "locator": {
+              "end": 416,
+              "kind": "line_range",
+              "start": 377
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The outline and cited code share the aside.\n\nAnchor: \"function ReaderDocument(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4f07bffe14341a99eb320bdf2a28ac21454914a",
+            "content": "sha256:9f7d70a012886623f6f19abb1cbf39a131685cb17e63b54f0d93c41fb6974e8f",
+            "locator": {
+              "end": 517,
+              "kind": "line_range",
+              "start": 461
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The tree receives the shared records loader.\n\nAnchor: `KnowledgeTree`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "13d16ed646c66456c46a044d8f55fae75ceb3ca3",
+            "content": "sha256:18b76f62cd63b8e28d425c57a04f3ae86c37c25bc9552187150f795ba4708dc3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/knowledge-reader/KnowledgeTree.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The outline that navigates the document's chapters.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c18a078a87a4bf5adc68342854e722257a33b8e1",
+            "content": "sha256:265c5f3c2cfa7a43356a9eb31573ae93b9f943a3e996bf4d613fff0bd6a21d04",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/knowledge-reader/ReaderOutline.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The cited code pane that renders the File Viewer's code primitive.\n\nAnchor: `CodeView`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a158f3f7810149facd26a0a18eaa8ca7c98cbbf",
+            "content": "sha256:64359838b86f76f52089a57778b9d4a5af9930c78909d0722aea2259955bcecd",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/knowledge-reader/ReaderCode.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Knowledge uses the shared left/right sidebar state; opening a citation explicitly opens the aside before setting that citation.\n\nAnchor: \"function useReaderSidebars(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4f07bffe14341a99eb320bdf2a28ac21454914a",
+            "content": "sha256:a29895eafd44de9cc46a4d57740ab33d42b81291152bc77741192193e6382853",
+            "locator": {
+              "end": 355,
+              "kind": "line_range",
+              "start": 341
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The tree and its handle receive the shared hidden-panel properties without unmounting KnowledgeTree.\n\nAnchor: \"function ReaderTree(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4f07bffe14341a99eb320bdf2a28ac21454914a",
+            "content": "sha256:417651d576bcf06cd99067bcfe6285d5982203eb88f362f4abc09e5f531c7a41",
+            "locator": {
+              "end": 376,
+              "kind": "line_range",
+              "start": 356
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "The tree and outline toggles stand in the document column outside their panels.\n\nAnchor: \"function ReaderSidebarToggles(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4f07bffe14341a99eb320bdf2a28ac21454914a",
+            "content": "sha256:4c290370b3d23d576499a7c9e2564caaf3f3139cc827f3ecdd2d8c82d61ef630",
+            "locator": {
+              "end": 460,
+              "kind": "line_range",
+              "start": 438
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "Responsive rules hide the tree toggle at 40rem and below and the aside toggle at 70rem and below.\n\nAnchor: \"const toggleLine = css({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4f07bffe14341a99eb320bdf2a28ac21454914a",
+            "content": "sha256:a4183fc605b8a5caf7c07f50b798a06dd10c787647a6c9f3a8afce9dea52008e",
+            "locator": {
+              "end": 99,
+              "kind": "line_range",
+              "start": 87
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,53 @@
+{
+  "path": "mcp/src/agents_remember/providers/lifecycle/host_ports.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "CGC backend uses shared host port allocation before building its Docker command.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "81a8436ca544b86f54234b9725547a8e697f6ebc",
+            "content": "sha256:f932683e4de5777be864039780bd3cf874057a848ca5e444289fc13e09dc66f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "cgc_backend_host_ports"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/backend.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "GrepAI backend and embedder use the same host port allocation policy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d3df8da82683fe7294e7c194efa8a34bfc048b4",
+            "content": "sha256:3eb75ca42d5cc1afeb82389862b15c8a9d3a0df438e7ad5409d75e549079dacd",
+            "locator": {
+              "kind": "symbol",
+              "name": "grepai_backend_host_port"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/backend.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "922ac28a95c9dfe97a206a29c94aed5715a85ab3",
+            "content": "sha256:9ff5d209e8125e309bae6d27ddd760ae0e449acd573d3a701f86cd86980e6481",
+            "locator": {
+              "kind": "symbol",
+              "name": "grepai_embedder_host_port"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/embedder.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_master_range_persistence.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Master pairs survive a fresh store and fresh cache owners, witnessed by test_master_pairs_survive_fresh_store_and_cache_owners",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfbd3a3f68ad92994f8197f36892791d5748766b",
+            "content": "sha256:c4eae38fdeea78bd7011da04e1ef004bcd2a8d58b4cf864d667b03f9005cfc3e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_master_pairs_survive_fresh_store_and_cache_owners"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

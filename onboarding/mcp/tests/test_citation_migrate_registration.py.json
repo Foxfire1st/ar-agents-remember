@@ -1,0 +1,174 @@
+{
+  "path": "mcp/tests/test_citation_migrate_registration.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "5ccfc2f0216de5938eaaad23dc4e41733c57613b",
+        "content": "sha256:baa25afaeb105e46bbcf68e4b8bbbe34beb68be1306cf22c8ab12c7c5f25eee7",
+        "locator": {
+          "kind": "symbol",
+          "name": "CitationMigrateRegistrationTests.test_citation_tools_propagate_other_authority_errors"
+        }
+      },
+      "facet": "The citation_fix-only loop requires an unrelated AuthorityError to propagate as the same exception object; it does not test a retired migration adapter.",
+      "id": "PRF-7D1MZH",
+      "invariant": "INV-ZA39KM",
+      "origin": {
+        "handoffEntry": "L112-retained-citation-authority",
+        "leaf": "260928-MIK-L112"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5ccfc2f0216de5938eaaad23dc4e41733c57613b",
+        "content": "sha256:08672d24d93014ad1c5a562857c47567569aeb5a8ab8b41a394fed5b677e8559",
+        "locator": {
+          "kind": "symbol",
+          "name": "CitationMigrateRegistrationTests.test_citation_tools_name_a_configured_contract_authority_refusal"
+        }
+      },
+      "facet": "The citation_fix-only assertion loop requires ok false, no operation envelope key, the configured-contract-authority-invalid status, exact repo/contract, side/name in detail and developer-decision.",
+      "id": "PRF-B4QVEG",
+      "invariant": "INV-ZA39KM",
+      "origin": {
+        "handoffEntry": "L112-retained-citation-authority",
+        "leaf": "260928-MIK-L112"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "10": {
+      "note": "Retained citation_fix-only configured-contract-authority refusal assertions.\n\nAnchor: `test_citation_tools_name_a_configured_contract_authority_refusal`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ccfc2f0216de5938eaaad23dc4e41733c57613b",
+            "content": "sha256:43c78866b14d9f46fa72c00abdc5dc8c3089f30ce001436395ef7e624076b47a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Retained citation_fix-only same-exception propagation assertion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ccfc2f0216de5938eaaad23dc4e41733c57613b",
+            "content": "sha256:baa25afaeb105e46bbcf68e4b8bbbe34beb68be1306cf22c8ab12c7c5f25eee7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_citation_tools_propagate_other_authority_errors"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The registration source is tested to leave citation_migrate absent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ccfc2f0216de5938eaaad23dc4e41733c57613b",
+            "content": "sha256:b5c9ee4d74fc87285a66a6391685d0eb5dbca0e07aeb6bac030fc64d449cac7b",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 49
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The public roster is tested to leave citation_migrate absent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ccfc2f0216de5938eaaad23dc4e41733c57613b",
+            "content": "sha256:b5c9ee4d74fc87285a66a6391685d0eb5dbca0e07aeb6bac030fc64d449cac7b",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 49
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The response-model registry is tested to leave citation_migrate absent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ccfc2f0216de5938eaaad23dc4e41733c57613b",
+            "content": "sha256:b5c9ee4d74fc87285a66a6391685d0eb5dbca0e07aeb6bac030fc64d449cac7b",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 49
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The source assertion checks the surviving citation_fix schema has neither expected_snapshot nor exclude.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ccfc2f0216de5938eaaad23dc4e41733c57613b",
+            "content": "sha256:b5c9ee4d74fc87285a66a6391685d0eb5dbca0e07aeb6bac030fc64d449cac7b",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 49
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The two citation_fix-only cases pin the exact configured-contract refusal and unchanged propagation of unrelated authority errors.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ccfc2f0216de5938eaaad23dc4e41733c57613b",
+            "content": "sha256:0319d1be96e926246dec4307b80c2a2aac8ab2c7522aa3575adf9dba2752f045",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 114
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Negative registration/roster/model assertions for citation_migrate.\n\nAnchor: `test_the_tool_is_not_registered_advertised_or_modelled`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ccfc2f0216de5938eaaad23dc4e41733c57613b",
+            "content": "sha256:43c78866b14d9f46fa72c00abdc5dc8c3089f30ce001436395ef7e624076b47a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

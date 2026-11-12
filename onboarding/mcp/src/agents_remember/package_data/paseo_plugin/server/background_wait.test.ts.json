@@ -1,0 +1,121 @@
+{
+  "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/background_wait.test.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "467da7a473f805f62ae558521732d6a2b201e400",
+        "content": "sha256:fbef07a3b90e27fca613cdea2e8d5f15d7572aba97d89d5e415ead6281908b0a",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-FBPRSZ",
+      "invariant": "INV-CAAWDR",
+      "origin": {
+        "handoffEntry": "MIK-R60@v8.1-5",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Proves ACP and non-ACP declarations, default/named/clamped check times, both waits, ends by undeclared end and archiving, and the unchanged silent-end path.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "A named check time is used, and a value outside 1 to 30 is clamped with the row saying so.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "467da7a473f805f62ae558521732d6a2b201e400",
+            "content": "sha256:e25ce3f3d27b595158a59cc34d333e44295ad4a3b7ab1ac9a9dc94575728e35c",
+            "locator": {
+              "kind": "symbol",
+              "name": "backgroundChecks"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "467da7a473f805f62ae558521732d6a2b201e400",
+            "content": "sha256:e478cbff587279eb53ba17986cf8821fdd2b509f1666658cff543a27f34c4e31",
+            "locator": {
+              "end": 161,
+              "kind": "line_range",
+              "start": 141
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Both waits declared in one end get one check, at the earlier time, asking about both.\n\nAnchor: `BOTH_WAITS_FIRST_LINE`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "467da7a473f805f62ae558521732d6a2b201e400",
+            "content": "sha256:8db4d04f7922a756f58bc84db7663e8e2b7ca5b7a8c548cdbee98a2e5bceab8d",
+            "locator": {
+              "end": 190,
+              "kind": "line_range",
+              "start": 163
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Archiving ends both waits with their rows, and no check goes out.\n\nAnchor: `noteAgentArchived`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "467da7a473f805f62ae558521732d6a2b201e400",
+            "content": "sha256:231c3f737959f675576a61b47eccad275c41606623cb14aedff431ff465ac9a5",
+            "locator": {
+              "end": 244,
+              "kind": "line_range",
+              "start": 227
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A silent end's message ends with the background sentence, and only an ACP seat gets the ACP sentence.\n\nAnchor: `BACKGROUND_WAKE_SENTENCE`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "467da7a473f805f62ae558521732d6a2b201e400",
+            "content": "sha256:7b0a220ac5c23c0f42e0dbeeaac170cf862e7c6e54dd370bcdffe03ef644b8a5",
+            "locator": {
+              "end": 322,
+              "kind": "line_range",
+              "start": 301
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The record carries an open wait beside the host's idle state, writes nothing for an unchanged one and drops it for an ended agent.\n\nAnchor: `HostActivityPublisher`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "467da7a473f805f62ae558521732d6a2b201e400",
+            "content": "sha256:cc61d8d86878e0d6173edb009cdaa0bbed0599536bf2a2c07b4a6d87d00f130b",
+            "locator": {
+              "end": 461,
+              "kind": "line_range",
+              "start": 441
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

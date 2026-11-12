@@ -2,142 +2,93 @@
 
 | Field       | Value                  |
 | ----------- | ---------------------- |
-| repository  | agents-remember     |
-| doc_type    | `repo-entity-catalog`  |
-| lastUpdated | 2026-09-27T05:02:28+00:00 |
-| lastVerifiedCommitHash | `c22beb0121946c0637e113ec4cf29da29fd4aec7` |
-| lastVerifiedCommitDate | 2026-09-17T03:29:40+02:00 |
 | status      | active                 |
 
 ## Purpose
 
 This catalog documents load-bearing real entities in `agents-remember`. It is not a glossary of every workflow term and it does not catalog task files. Task files remain planning artifacts; this file describes current reusable repository concepts and the boundaries between them.
 
-### Historical CCR Committed-Fingerprint Boundary
+#
 
-The catalog is reconciled to prepared code candidate
-`602143bd1d48226f4d53b83ff7c5002a695dcdff` (tree `4c6b7bc2362bc03d50fc7a0643f34b591b805d45`). Entity fingerprints below resolve only committed
-`602143bd1d48226f4d53b83ff7c5002a695dcdff:<path>` blobs from that candidate; no working-tree fingerprint or provisional verification
-stamp is treated as authority. This is source verification of the prepared implementation candidate, not aggregate acceptance. All seven candidate-local evidence sets were re-read against this source view; the three changed rows were refreshed in this pass and the other four already matched it.
+## Granted publication dimensions
 
-### Current Scoped Committed-Source Review
+Task Document remains authored JSON with optional external render annotation. Closeout Effective Input and Closeout Mutation Evidence retain exact code/memory authority, with direct creation adding a prospective codeBefore bound to the branch-holding checkout; Seat Landing Archive retains the accepted direct generation and its real outputs. Worktree Contract/Source Lineage admit master series roots without a direct leaf enclosure. Worktree Integration preserves ordinary substantive checkout-cleanliness refusal and additionally names an occupying granted direct leaf (including qualifying Completed siblings); accepted direct-pair recovery retains the same generation/output instead of minting another code commit. Existing committed fingerprints stay historical until the owning transaction records real commits, not uncommitted guesses.
 
-The recorded refresh from committed code `7cbda30d9a9a4c2944382fbef46ac58b85329935` covers 11 entity fingerprints: `Onboarding Unit`, `File-Level Onboarding Content Model`, `Light Task Artifact`, `External Memory Ledger`, `Closeout Effective Input`, `Closeout Mutation Evidence`, `Memory Baseline Adoption`, `Worktree Contract`, `Source Lineage`, `Worktree Integration`, `Seat Landing Archive`. The stored rows match the [scoped refresh receipt](ar-coordination/tasks/agents-remember/260913_ledger-commit-attribution/notes/reports/2026-09-15-live-cutover/entity-fingerprint-refresh.json); the External Memory Ledger evidence set includes the committed cache owner. These 11 rows are no longer pending a source commit or fingerprint recomputation. This closure confirms that recorded refresh and its current wording; it does not certify the full catalog or restamp unrelated entities and global verification fields.
+## Historical CCR Committed-Fingerprint Boundary
+
+Past-epoch custody (verbatim; own old target `4ffeeb98c6ddf7594ebdea7eac26bb7298f2dd72`; retained wording is not a claim about the current table):
+
+The catalog was reconciled to prepared code candidate
+`602143bd1d48226f4d53b83ff7c5002a695dcdff` (tree `4c6b7bc2362bc03d50fc7a0643f34b591b805d45`) when this boundary was recorded: entity fingerprints then resolved
+`602143bd1d48226f4d53b83ff7c5002a695dcdff:<path>` committed blobs only, no working-tree fingerprint or provisional verification
+stamp was treated as authority, and the seven candidate-local evidence sets were re-read against that source view — three
+changed rows were refreshed in that pass and the other four already matched it. That was source verification of a prepared
+implementation candidate, not aggregate acceptance. It is history rather than a statement about the table below: 0 of the 22 rows
+reproduce at `602143bd1d48226f4d53b83ff7c5002a695dcdff` — nine of the twenty-two name an evidence path that does not exist at that
+commit — and the table reproduces at `4ffeeb98c6ddf7594ebdea7eac26bb7298f2dd72`.
+
+Current clause: the closeout's entity-fingerprint refresh re-derives, at the landing code commit, every row whose evidence set or evidence files the landing changes. The retained wording keeps its own old `4ffeeb98` target.
+
+### Recorded Scoped Committed-Source Review
+
+Past-epoch custody (verbatim; own old target `4ffeeb98c6ddf7594ebdea7eac26bb7298f2dd72`; retained wording is not a claim about the current table):
+
+A second historical record: a refresh from committed code `7cbda30d9a9a4c2944382fbef46ac58b85329935` covered 11 entity fingerprints — `Onboarding Unit`, `File-Level Onboarding Content Model`, `Light Task Artifact`, `External Memory Ledger`, `Closeout Effective Input`, `Closeout Mutation Evidence`, `Memory Baseline Adoption`, `Worktree Contract`, `Source Lineage`, `Worktree Integration`, `Seat Landing Archive` — and its [scoped refresh receipt](ar-coordination/tasks/agents-remember/260913_ledger-commit-attribution/notes/reports/2026-09-15-live-cutover/entity-fingerprint-refresh.json) is the record of it, the External Memory Ledger evidence set including the committed cache owner. It is a genuine historical receipt, not this table's values: 0 of its 11 stored cells equals its recorded fingerprint, while four of its eleven fingerprints do reproduce at `7cbda30d9a9a4c2944382fbef46ac58b85329935` when hashed over the receipt's own recorded paths — External Memory Ledger, Closeout Mutation Evidence, Memory Baseline Adoption and Worktree Contract — and the other seven do not. The table below reproduces at `4ffeeb98c6ddf7594ebdea7eac26bb7298f2dd72`. Nothing here certifies the full catalog or restamps unrelated entities and global verification fields.
+
+Current clause: the closeout's entity-fingerprint refresh re-derives, at the landing code commit, every row whose evidence set or evidence files the landing changes. The retained wording keeps its own old `4ffeeb98` target.
 
 ## Entity Fingerprints
 
-### 260915-CAPS-L5 Capsule Delivery Impact
+### MIK-R113 current entity boundary
 
-The Codex capsule-delivery seam (`serving/capsule_delivery.py` plus the carrier chain through
-`terminal_opener.py`, `harness_control_runner.py`, `harness_control_factories.py` and
-`codex_app_server_session.py`) is a **new implementation of the existing adapter instruction-channel
-boundary, not a new cross-layer entity**, so this catalog adds no entity row for it. Two existing
-entities own the affected evidence and their recorded fingerprints are therefore stale at this
-candidate:
+The removed native delivery injector, adapter capability/submission machinery and supervisor sweep have no current catalog entry or preserved historical-reference route. Task-bound seat identity and retirement belong to native host receipts; enclosure landing proof remains contract-owned and separate. The surviving source-lineage/provider duties name their actual remaining owners.
 
-- **Harness Capability Snapshot** — four of its evidence paths are edited by this leaf
-  (`codex_app_server_session.py`, `harness_control_factories.py`, `harness_control_runner.py`,
-  `terminal_opener.py`), and the boundary it describes gained a real capability rule: a delivered
-  capsule is accepted only by a harness with a verified instruction channel (`codex`), and the launch
-  configuration carries it as one optional value.
-- **Source Lineage** — `terminal_opener.py` is in its evidence set and now transports the capsule from
-  the launch boundary to the runner configuration.
+Past-epoch custody (verbatim; own old target `4ffeeb98c6ddf7594ebdea7eac26bb7298f2dd72`; retained wording is not a claim about the current table):
 
-Both stored fingerprints remain at the prior committed baseline. `git-blob-set-v1` resolves committed
-`HEAD:<path>` blobs, so the refreshed value cannot be computed from this deliberately uncommitted
-candidate and **no value was hand-edited here**; the governed closeout recomputes both rows against the
-actual code commit, exactly as the ledger-retirement note above already requires.
-
-### 260915-CAPS-L6 Native eve Adapter Impact
-
-The native eve session adapter (`serving/eve_adapter.py`) is a **new implementation of the existing
-adapter/capability boundary, not a new cross-layer entity**, so this catalog adds no entity row for it.
-The two entities that own that boundary each gained real evidence paths, and their recorded fingerprints
-are therefore stale:
-
-- **Harness Capability Snapshot** gains the seven `serving/eve_*.py` modules, because the adapter
-  advertises a real catalog through the existing `CapabilitySnapshot`/`LaunchKnobs` port — including the
-  honest `session_settable: False` model/effort shape that a catalog reader must see.
-- **Harness Submission Authority** gains `eve_adapter.py`, `eve_protocol.py` and `eve_runtime_client.py`,
-  because the adapter now carries a real submission path: acceptance-versus-completion, the
-  never-repeat-a-possibly-accepted-write reconcile, and the queued-turn policy.
-
-Both stored fingerprints remain at the prior committed baseline. `git-blob-set-v1` resolves committed
-`HEAD:<path>` blobs, so the refreshed value cannot be computed from this deliberately uncommitted
-candidate and **no value was hand-edited here**; the governed closeout recomputes both rows against the
-actual code commit, as the existing ledger-retirement note above already requires.
-
-**A2 revision (same candidate, same entity judgment).** The A2 round repaired the candidate without
-changing what either entity's evidence set proves, so the two rows above stand and no third entity
-appears. The strengthened facts a future reader should not have to rediscover: acceptance on a
-reconciled submission is proved by the durable record holding the exact accepted message (the
-delivery-id branch was deleted as unreachable), the queued `turnPolicy` is spelled on the create **and**
-the follow-up from one literal, and the replay window has a single owner.
-
-Each row records the deterministic source evidence used by `c-02-memory-quality-control` skill for entity drift detection. The `git-blob-set-v1` fingerprint sorts the evidence paths, resolves each current `HEAD:<path>` Git blob hash, and hashes the resulting `path + blob_hash` list. A changed fingerprint means the entity entry needs review; it does not automatically prove the prose is wrong. `c-02-memory-quality-control` skill also reconciles this table against `## Entity Inventory`, so missing rows and orphaned rows are actionable catalog maintenance.
-
-<!-- merged 2026-09-19: fingerprint cells carry each line's as-of values; the closeout recomputes the rows the landed range changes -->
+Every row in the table below is `git-blob-set-v1` over that row's own evidence paths: the paths in sorted order, each followed by its blob, joined path-NUL-blob-newline. The closeout's entity-fingerprint refresh re-derives each value at the landing code commit, and a change to a row's evidence set requires recomputing that row.
 
 | Entity                              | Algorithm         | Fingerprint                                                               | Evidence Paths                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | ----------------------------------- | ----------------- | ------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Onboarding Unit                     | `git-blob-set-v1` | `sha256:49fc83afcbd5f62230a1e4dacaeb02e495394a06a993537ad47d606ebbdaf1ff` | `mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/SKILL.md`; `mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/file-level-onboarding-workflow.md`; `mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/repo-entity-catalog-workflow.md`; `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/drift.py`                      |
-| Runtime AGENTS Template Package     | `git-blob-set-v1` | `sha256:349717b52a6baf20336bc5e02b7c0ffcacad54441fa6ba02090a84c04148f42c` | `mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md`; `mcp/src/agents_remember/package_data/runtime/agents-md-files/skills/AGENTS.md`; `mcp/src/agents_remember/package_data/runtime/agents-md-files/system/AGENTS.md`; `mcp/src/agents_remember/package_data/runtime/agents-md-files/tasks/AGENTS.md`; `mcp/src/agents_remember/install/runtime.py`                                                                                                                                                                                                                                    |
-| Coordination Context                | `git-blob-set-v1` | `sha256:744cd1ba7638ef2d232d280ff228e8b7d3930a5b58c51979e2a0f11bed0b7a37` | `mcp/src/agents_remember/package_data/runtime/skills/c-08-ar-coordination-context-resolver/SKILL.md`; `mcp/src/agents_remember/kernel/coordination_context_resolver.py`                                                                                                                                                                                                                                                 |
-| Path Rule                           | `git-blob-set-v1` | `sha256:1f544d85e78ade878387f698079757e64e31944cce872d03d140d4a2ab564c35` | `mcp/src/agents_remember/kernel/coordination_context_resolver.py`; `mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/settings.json`; `examples/mcp/settings.example.json`                                                                                                                                                                                                       |
-| Memory Quality Control              | `git-blob-set-v1` | `sha256:ebed33199de2033d146cc3a416f2e5f0f38a796c47f97239763ae050eb7e671f` | `mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md`; `mcp/src/agents_remember/memory_quality/check.py`; `mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py`; `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/drift.py`; `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py`; `mcp/src/agents_remember/memory_quality/style/update_history/history_order.py`; `mcp/src/agents_remember/memory_quality/style/update_history/history_order_fix.py` |
-| File-Level Onboarding Content Model | `git-blob-set-v1` | `sha256:d321f71ffc2f04758deae51e6f91e0b48e858e239aaad599040240a12f340a3d` | `mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/SKILL.md`; `mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/file-level-onboarding-workflow.md`; `mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/templates/file-level-onboarding-template.md`; `mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/templates/inline-onboarding-block-template.md` |
-| Light Task Artifact                 | `git-blob-set-v1` | `sha256:90bffff6b13e6377070fd9c68acedd2f7a730f4051d493efe144207e7c8cdfe3` | `mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/SKILL.md`; `mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md`; `mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/template.md`; `mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/requirement-packet-template.md`                                                                                                                                                                                               |
-| External Memory Ledger              | `git-blob-set-v1` | `sha256:4ef5484d18d1479009ca45c9d036a35b1dbcd18e007e6dd29de244528653eaa0` | `mcp/src/agents_remember/kernel/memory_attribution.py`; `mcp/src/agents_remember/kernel/memory_cache.py`; `mcp/src/agents_remember/kernel/memory_ledger.py`; `mcp/src/agents_remember/worktrees/ledger_projection.py` |
-| Sprint Closeout Queue               | `git-blob-set-v1` | `sha256:a6fafc8bc6b520ce455985181786f01b4af49a0129dfe774f5a6e5cde7918077` | `mcp/src/agents_remember/controlplane/closeout_queue_store.py`; `mcp/src/agents_remember/models/closeout/projection.py`; `mcp/src/agents_remember/models/queue/closeout_queue.py`; `mcp/src/agents_remember/worktrees/queue/closeout_projection.py`; `mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py`; `mcp/src/agents_remember/worktrees/queue/closeout_projection_publication.py`; `mcp/src/agents_remember/worktrees/queue/closeout_queue.py` |
-| Closeout Effective Input | `git-blob-set-v1` | sha256:3bf33c78ef0d92621c5713276fd8c382cf5f39bb4294ee405a0a4ae06aaa339c | `mcp/src/agents_remember/application/worktree_tools.py`; `mcp/src/agents_remember/mcp/registration/closeout.py`; `mcp/src/agents_remember/models/closeout/input.py`; `mcp/src/agents_remember/worktrees/closeout_input.py`; `mcp/src/agents_remember/worktrees/direct_landing.py`; `mcp/src/agents_remember/worktrees/integration/closeout/operation_admission.py`; `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_candidate.py` |
-| Curator Coherence Authority         | `git-blob-set-v1` | `sha256:743d4dc9fd58d7b4400d446b2da246ee9c4b22b9a9c60444feff517ccd2833a9` | `mcp/src/agents_remember/application/curator_coherence.py`; `mcp/src/agents_remember/models/lifecycles/curator_coherence.py`; `mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py`; `mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_judgments.py`; `mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py`; `mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_render.py`; `mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_records.py`; `mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_paths.py`; `mcp/src/agents_remember/worktrees/integration/closeout/curator_assessment_evidence.py` |
-| Closeout Mutation Evidence          | `git-blob-set-v1` | `sha256:21500f8ffcb47e94558d25ab859f4143c316428a0a395140e9cc7fc7e4a3ce36` | `mcp/src/agents_remember/models/lifecycles/mutation_evidence.py`; `mcp/src/agents_remember/models/lifecycles/operation.py`; `mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py`; `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py`; `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py`; `mcp/src/agents_remember/worktrees/integration/mutation_evidence.py`; `mcp/src/agents_remember/worktrees/modules/closeout_external.py`; `mcp/src/agents_remember/worktrees/queue/closeout_recovery.py` |
-| Memory Baseline Adoption            | `git-blob-set-v1` | `sha256:6078e6741efde951d1734f0d087bb729b034544381d5c924509a6e7f01a46484` | `mcp/src/agents_remember/package_data/runtime/skills/c-10-adopt-memory-baseline/SKILL.md`; `mcp/src/agents_remember/memory/baseline.py`                                                                                                                                                                                                                                                                                  |
-| Worktree Contract                   | `git-blob-set-v1` | `sha256:c45a69a6d62d6f75a58f162e7c458feec9fd6a8d7d50989b6ddc8fb52e50fab8` | `mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md`; `mcp/src/agents_remember/worktrees/modules/closeout.py`; `mcp/src/agents_remember/worktrees/modules/guidance.py`; `mcp/src/agents_remember/worktrees/modules/integrate.py`; `mcp/src/agents_remember/worktrees/worktree_contract.py` |
-| Source Lineage | `git-blob-set-v1` | sha256:212118ce50f86e2bf43e7dae918434c604167f5fab86dba0d07bcaf7c6d7042d | `dashboard/src/panels/engine-room/DiagnosticsPanel.tsx`; `mcp/src/agents_remember/models/worktree.py`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-brief.md`; `mcp/src/agents_remember/serving/terminal_opener.py`; `mcp/src/agents_remember/worktrees/modules/closeout.py`; `mcp/src/agents_remember/worktrees/modules/integrate.py`; `mcp/src/agents_remember/worktrees/source_lineage.py` |
-| Worktree Integration                | `git-blob-set-v1` | `sha256:dde80481544dca3ee1d2d165d6056fc69db6d30a6abc5fe7effc5e264ad48820` | `mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md`; `mcp/src/agents_remember/worktrees/modules/cleanup.py`; `mcp/src/agents_remember/worktrees/modules/integrate.py` |
-| Branch-Gated Cross-Repo Source      | `git-blob-set-v1` | `sha256:8725cd636fe7a28a9cc46bc37f2ee1dd615c892c7e1733d10a9f865b8a042130` | `mcp/src/agents_remember/package_data/runtime/skills/c-08-ar-coordination-context-resolver/SKILL.md`; `mcp/src/agents_remember/kernel/coordination_context_resolver.py`                                                                                                                                                                                                                                                 |
-| Provider Degradation Protocol       | `git-blob-set-v1` | `sha256:51fb16434b4058378390d656007dbf5275df052a0ab55fc131bef820576a3f19` | `mcp/src/agents_remember/providers/degradation.py`; `mcp/src/agents_remember/kernel/primitives/provider_degradation_settings.py`; `mcp/src/agents_remember/controlplane/operator_inbox_records.py`; `mcp/src/agents_remember/controlplane/orchestration_artifacts.py`; `skills/l-01-agent-lifecycles/roles/system-specialist.md` |
-| Seat Binding Identity               | `git-blob-set-v1` | `sha256:c3b69040381e5cf4a86ddbcc682eabbccac60390bb8f926aa5567dd6614ec790` | `dashboard/src/data/railModel.ts`; `dashboard/src/data/sessions.ts`; `dashboard/src/data/taskHierarchy.ts`; `mcp/src/agents_remember/controlplane/signal_routing.py`; `mcp/src/agents_remember/models/declared_caller.py`; `mcp/src/agents_remember/models/task_document_ref.py`; `mcp/src/agents_remember/models/terminal_catalog.py`; `mcp/src/agents_remember/serving/ambient_seat.py`; `mcp/src/agents_remember/serving/structural_seats.py`; `mcp/src/agents_remember/serving/terminal_catalog.py`; `mcp/src/agents_remember/serving/terminal_task_assignment.py`; `mcp/src/agents_remember/tasks/document_refs.py` |
-| Seat Retirement                     | `git-blob-set-v1` | `sha256:f7786a9f458eed163a5f1e87f711d045aea21399dd180cc9fc640f467b5ccfff` | `mcp/src/agents_remember/mcp/tools/terminal.py`; `mcp/src/agents_remember/serving/app.py`; `mcp/src/agents_remember/serving/retire.py`; `mcp/src/agents_remember/serving/retire_policy.py`; `mcp/src/agents_remember/models/terminal_catalog.py`; `mcp/src/agents_remember/serving/terminal_catalog.py` |
-| Seat Landing Archive                | `git-blob-set-v1` | `sha256:cc7250972571a2921f4568e48612cba359d1f7bd095b86662d8d8d6e79564cb8` | `dashboard/src/data/railModel.ts`; `dashboard/src/data/sessionLifecycle.ts`; `dashboard/src/panels/session-cockpit/SessionRail.tsx`; `mcp/src/agents_remember/application/worktree_tools.py`; `mcp/src/agents_remember/models/terminal_catalog.py`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/manager-brief.md`; `mcp/src/agents_remember/serving/app.py`; `mcp/src/agents_remember/serving/landing.py`; `mcp/src/agents_remember/serving/terminal_catalog.py` |
-| Supervisor Sweep                    | `git-blob-set-v1` | `sha256:18cf88e232df93512f913ee00a2af56b8f3dd4ccfe7b1df7c40c3ec50731a158` | `mcp/src/agents_remember/kernel/agentic_settings.py`; `mcp/src/agents_remember/mcp/tools/base.py`; `mcp/src/agents_remember/serving/pane_signals.py`; `mcp/src/agents_remember/serving/agent_notifier_heartbeat.py`; `mcp/src/agents_remember/kernel/primitives/inbox_backoff.py`; `mcp/src/agents_remember/controlplane/operator_inbox_store.py`; `mcp/src/agents_remember/controlplane/signal_routing.py`; `mcp/src/agents_remember/controlplane/agent_notifier_signals.py` |
-| Task Document                       | `git-blob-set-v1` | `sha256:963729ba3765c30bb17ccab65553962d265b7b6f7bed37dd2c47d430c219fb4f` | `dashboard/src/data/taskDocuments.ts`; `dashboard/src/data/taskHierarchy.ts`; `dashboard/src/data/taskIdentity.ts`; `dashboard/src/panels/detail-panel/DetailPanel.tsx`; `mcp/src/agents_remember/models/task_document_ref.py`; `mcp/src/agents_remember/observer/projection.py`; `mcp/src/agents_remember/observer/projection_graph.py`; `mcp/src/agents_remember/serving/projections/snapshots.py`; `mcp/src/agents_remember/tasks/document_refs.py`; `mcp/src/agents_remember/tasks/execution_graph_titles.py` |
-| Delivery Injector                   | `git-blob-set-v1` | `sha256:ea4bf0985b523517ec6e3c1ad59c26470279d25a4476e3f42b5c3253adb0938e` | `mcp/src/agents_remember/mcp/tools/terminal.py`; `mcp/src/agents_remember/serving/harness_adapters.py`; `mcp/src/agents_remember/serving/harness_logs.py`; `mcp/src/agents_remember/serving/inbox_delivery.py`; `mcp/src/agents_remember/serving/injector.py`; `mcp/src/agents_remember/models/terminal_catalog.py`; `mcp/src/agents_remember/serving/terminal_catalog.py`; `mcp/src/agents_remember/serving/terminal_paste.py` |
-| Harness Capability Snapshot         | `git-blob-set-v1` | `sha256:7cd055565ead778b24130bb9a114a178afb0364d37310474ca0290474a3f66a0` | `mcp/src/agents_remember/mcp/tools/terminal.py`; `mcp/src/agents_remember/serving/claude_stream_protocol.py`; `mcp/src/agents_remember/serving/codex_app_server_adapter.py`; `mcp/src/agents_remember/serving/codex_app_server_session.py`; `mcp/src/agents_remember/serving/eve_adapter.py`; `mcp/src/agents_remember/serving/eve_events.py`; `mcp/src/agents_remember/serving/eve_interactions.py`; `mcp/src/agents_remember/serving/eve_protocol.py`; `mcp/src/agents_remember/serving/eve_runtime_client.py`; `mcp/src/agents_remember/serving/eve_runtime_launch.py`; `mcp/src/agents_remember/serving/eve_stream_cursor.py`; `mcp/src/agents_remember/serving/harness_capabilities.py`; `mcp/src/agents_remember/serving/harness_capability_catalog.py`; `mcp/src/agents_remember/serving/harness_control_adapter.py`; `mcp/src/agents_remember/serving/harness_control_api.py`; `mcp/src/agents_remember/serving/harness_control_bridge.py`; `mcp/src/agents_remember/serving/harness_control_claude.py`; `mcp/src/agents_remember/serving/harness_control_client.py`; `mcp/src/agents_remember/serving/harness_control_factories.py`; `mcp/src/agents_remember/serving/harness_control_models.py`; `mcp/src/agents_remember/serving/harness_control_runner.py`; `mcp/src/agents_remember/serving/harness_launch.py`; `mcp/src/agents_remember/serving/pi_rpc_adapter.py`; `mcp/src/agents_remember/serving/pi_rpc_configuration.py`; `mcp/src/agents_remember/serving/pi_rpc_events.py`; `mcp/src/agents_remember/serving/terminal_opener.py` |
-| Harness Submission Authority        | `git-blob-set-v1` | `sha256:713f1a043366c8c3c2b8dff4237aaeb50fa40dab50eab05f4b66ea2c868bfd77` | `dashboard/src/data/submissionLifecycleClient.ts`; `dashboard/src/data/submitClient.ts`; `dashboard/src/data/submitMachine.ts`; `mcp/src/agents_remember/serving/codex_app_server_adapter.py`; `mcp/src/agents_remember/serving/eve_adapter.py`; `mcp/src/agents_remember/serving/eve_protocol.py`; `mcp/src/agents_remember/serving/eve_runtime_client.py`; `mcp/src/agents_remember/serving/harness_control_adapter.py`; `mcp/src/agents_remember/serving/harness_control_api.py`; `mcp/src/agents_remember/serving/harness_control_bridge.py`; `mcp/src/agents_remember/serving/harness_control_claude.py`; `mcp/src/agents_remember/serving/harness_control_client.py`; `mcp/src/agents_remember/serving/harness_control_ipc.py`; `mcp/src/agents_remember/serving/harness_control_models.py`; `mcp/src/agents_remember/serving/harness_submission_authority.py`; `mcp/src/agents_remember/serving/harness_submission_ledger.py`; `mcp/src/agents_remember/serving/pi_rpc_adapter.py` |
+| Onboarding Unit                     | `git-blob-set-v1` | `sha256:2746d11a499252add720aa7802a899a17fd2f8f96cfbc44f6ca46a9b31a6d58a` | `skills/l-01-agent-lifecycles/reference/curator/card-formats-and-citations.md`; `skills/l-01-agent-lifecycles/reference/curator/governing-sources.md`; `skills/l-01-agent-lifecycles/templates/file-card.md`; `skills/l-01-agent-lifecycles/templates/repo-entity-catalog.md` |
+| Coordination Context                | `git-blob-set-v1` | `sha256:0b07ecc35fe9ca006849b4712416514f8984d7d90a6231816df1c103aebcba3f` | `mcp/src/agents_remember/kernel/coordination_context_resolver.py`; `mcp/src/agents_remember/kernel/coordination_context/models.py`; `mcp/src/agents_remember/kernel/coordination_context/resolver.py`                                                                                                                                                                                                                                                 |
+| Path Rule                           | `git-blob-set-v1` | `sha256:7dc6271ba16a077797f4f5e20f1503919cb05e21d4df086edb85bab43c525b83` | `mcp/src/agents_remember/kernel/coordination_context_resolver.py`; `mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/settings.json`; `examples/mcp/settings.example.json`                                                                                                                                                                                                       |
+| Memory Quality Control | `git-blob-set-v1` | `sha256:fda4d069ded0738cc760efc8636eb837a1854d21adc5d492cf6a6d26f36367f6` | `mcp/src/agents_remember/memory_quality/check.py`; `mcp/src/agents_remember/memory_quality/converted_check.py`; `mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py`; `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py`; `skills/l-01-agent-lifecycles/operations/curation.md` |
+| File-Level Onboarding Content Model | `git-blob-set-v1` | `sha256:f8bcf92d4450cbcc5e54b4b041b5605a14b0938aec20b12d02c88108b4247688` | `skills/l-01-agent-lifecycles/reference/curator/card-formats-and-citations.md`; `skills/l-01-agent-lifecycles/templates/file-card.md` |
+| Light Task Artifact                 | `git-blob-set-v1` | `sha256:387953445a386009226352d48dbdc7e10f0b180ab98504301fdb437f738c594e` | `skills/l-01-agent-lifecycles/core/loop.md`; `skills/l-01-agent-lifecycles/reference/tasks/document-authoring.md`; `skills/l-01-agent-lifecycles/templates/leaf-task.md`; `skills/l-01-agent-lifecycles/templates/master-task.md`; `skills/l-01-agent-lifecycles/templates/requirement-packet.md`                                                                                                                                                                                               |
+| External Memory Ledger              | `git-blob-set-v1` | `sha256:b4114ad55f38ee8a1ca89234a13fddb8ea869725c1926de1e7f2dbcaba55ce38` | `mcp/src/agents_remember/kernel/memory_attribution.py`; `mcp/src/agents_remember/kernel/memory_cache.py`; `mcp/src/agents_remember/kernel/memory_ledger.py`; `mcp/src/agents_remember/worktrees/ledger_projection.py` |
+| Sprint Closeout Queue               | `git-blob-set-v1` | `sha256:40a86268579a1af40de8f1f82a0b3c5ca2aae572513f3a7f6a5ea71a3e6073ac` | `mcp/src/agents_remember/controlplane/closeout_queue_store.py`; `mcp/src/agents_remember/models/closeout/projection.py`; `mcp/src/agents_remember/models/queue/closeout_queue.py`; `mcp/src/agents_remember/worktrees/queue/closeout_projection.py`; `mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py`; `mcp/src/agents_remember/worktrees/queue/closeout_projection_publication.py`; `mcp/src/agents_remember/worktrees/queue/closeout_queue.py` |
+| Closeout Effective Input | `git-blob-set-v1` | sha256:33855bbb91886cc9867ca63c9549003b27d7a5c414d6b8455dce025137aacbe3 | `mcp/src/agents_remember/application/worktree_tools.py`; `mcp/src/agents_remember/mcp/registration/closeout.py`; `mcp/src/agents_remember/models/closeout/input.py`; `mcp/src/agents_remember/worktrees/closeout_input.py`; `mcp/src/agents_remember/worktrees/direct_landing.py`; `mcp/src/agents_remember/worktrees/integration/closeout/operation_admission.py`; `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_candidate.py` |
+| Curator Coherence Authority         | `git-blob-set-v1` | `sha256:33b88bfeca24362fcc15a91935f7183553e5a72df2dc5f3e7232af2326f496e1` | `mcp/src/agents_remember/application/curator_coherence.py`; `mcp/src/agents_remember/models/lifecycles/curator_coherence.py`; `mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py`; `mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_judgments.py`; `mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py`; `mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_render.py`; `mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_records.py`; `mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_paths.py`; `mcp/src/agents_remember/worktrees/integration/closeout/curator_assessment_evidence.py` |
+| Closeout Mutation Evidence          | `git-blob-set-v1` | `sha256:0f0d674aa6aa200bfab267f5c15e93258782fb1672e70fe1ea2552ef65353f63` | `mcp/src/agents_remember/models/lifecycles/mutation_evidence.py`; `mcp/src/agents_remember/models/lifecycles/operation.py`; `mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py`; `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py`; `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py`; `mcp/src/agents_remember/worktrees/integration/mutation_evidence.py`; `mcp/src/agents_remember/worktrees/modules/closeout_external.py`; `mcp/src/agents_remember/worktrees/queue/closeout_recovery.py` |
+| Memory Baseline Adoption            | `git-blob-set-v1` | `sha256:3865209b376efc9ff80693a30b0922eca4bd28718028f38792e6a7c43a440deb` | `docs/guides/adopt-existing-memory.md`; `mcp/src/agents_remember/memory/baseline.py`                                                                                                                                                                                                                                                                                  |
+| Worktree Contract | `git-blob-set-v1` | `sha256:eecc0a2a2a2ffb99667b51bf31d915b00bd3823e5ed52ee4c9eea3d58fc1a862` | `docs/reference/worktrees-c09.md`; `mcp/src/agents_remember/worktrees/modules/closeout.py`; `mcp/src/agents_remember/worktrees/modules/guidance.py`; `mcp/src/agents_remember/worktrees/modules/integrate.py`; `mcp/src/agents_remember/worktrees/worktree_contract.py` |
+| Source Lineage | `git-blob-set-v1` | `sha256:29f0eb8601dd77a5b0112e81ee3228a7e8e9a216a43002927a96d3012d4775ef` | `dashboard/src/panels/engine-room/DiagnosticsPanel.tsx`; `mcp/src/agents_remember/models/worktree.py`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-brief.md`; `mcp/src/agents_remember/worktrees/modules/closeout.py`; `mcp/src/agents_remember/worktrees/modules/integrate.py`; `mcp/src/agents_remember/worktrees/source_lineage.py` |
+| Worktree Integration | `git-blob-set-v1` | `sha256:e4ca80fab003919ba096ea90ae57cd031f137483505032087894cf00f1947fbf` | `docs/reference/worktrees-c09.md`; `mcp/src/agents_remember/worktrees/modules/cleanup.py`; `mcp/src/agents_remember/worktrees/modules/integrate.py` |
+| Branch-Gated Cross-Repo Source      | `git-blob-set-v1` | `sha256:3dc79c7472c01e1e77f68cd4a3f1219fe07d7e59da4e91e3e099cfe21c0f55c0` | `mcp/src/agents_remember/kernel/coordination_context/cross_repo.py`; `mcp/src/agents_remember/kernel/coordination_context_resolver.py`                                                                                                                                                                                                                                                 |
+| Provider Degradation Protocol | `git-blob-set-v1` | `sha256:50d53b678ef8c5d0ccc37151d854eaebe2881c3ec5b1218acfb8a18ffdbab983` | `mcp/src/agents_remember/providers/degradation.py`; `mcp/src/agents_remember/kernel/primitives/provider_degradation_settings.py`; `mcp/src/agents_remember/providers/metrics.py` |
+| Seat Binding Identity | `git-blob-set-v1` | `sha256:435e148f270f6a3f149edb2ea72966d9c5f67bb2870e24055c000ed5f005fa43` | `mcp/src/agents_remember/application/role_launch_context.py`; `mcp/src/agents_remember/cli/role_launch_receipts.py`; `mcp/src/agents_remember/models/role_launcher.py`; `mcp/src/agents_remember/tasks/document_refs.py` |
+| Seat Retirement | `git-blob-set-v1` | `sha256:92d807b5a02b918a1a11691b261dddb0f7fbffce4da592658637ab63dfe8340b` | `mcp/src/agents_remember/cli/role_retire.py`; `mcp/src/agents_remember/cli/role_launch_liveness.py`; `mcp/src/agents_remember/models/structural/agent.py` |
+| Seat Landing Archive | `git-blob-set-v1` | `sha256:4d3cbfa154ab98516dcc683bf753515378d2fa87b3853abc8a1b4873a2ad38b3` | `mcp/src/agents_remember/worktrees/integration/terminal_enclosure_archive.py`; `mcp/src/agents_remember/models/lifecycles/enclosure.py`; `mcp/src/agents_remember/worktrees/worktree_contract.py` |
+| Task Document                       | `git-blob-set-v1` | `sha256:52f3df16e30aa532aac35a63daef7824d53afebbaca87b0ef4f689ffa794c3ff` | `dashboard/src/data/taskDocuments.ts`; `dashboard/src/data/taskIdentity.ts`; `dashboard/src/panels/detail-panel/DetailPanel.tsx`; `mcp/src/agents_remember/models/task_document_ref.py`; `mcp/src/agents_remember/observer/projection.py`; `mcp/src/agents_remember/observer/projection_graph.py`; `mcp/src/agents_remember/serving/projections/snapshots.py`; `mcp/src/agents_remember/tasks/document_refs.py`; `mcp/src/agents_remember/tasks/execution_graph_titles.py` |
 
 ## Entity Inventory
 
 ### Onboarding Unit
 
+Current converted units are mirrored Markdown prose plus a JSON reference/realization/proof companion; source identity comes from their path and anchored sidecar. Old stamp identifiers below are historical legacy-format vocabulary, not required current Markdown metadata. Ordinary authoring requires conversion first.
+
 | Field                        | Value                                                                                                                                                                                                                                                                                                                                                |
 | ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Category                     | Documentation artifact                                                                                                                                                                                                                                                                                                                               |
 | Represents In Reality        | A durable unit of repository knowledge that can be retrieved and verified before an agent relies on it.                                                                                                                                                                                                                                              |
-| Description                  | File-level onboarding mirrors one concrete source file; overviews summarize repo or route scopes; repo-level catalogs document recurring entities, carry deterministic evidence fingerprints, and require one fingerprint row per inventory entity. Onboarding maintenance starts from the resolved memory layer's `Domain Documentation` category for documentation evidence; live sources named there are authoritative, local mirrors are orientation caches, and refactor maintenance preserves useful onboarding before deleting or regenerating it. |
-| Canonical Source Of Truth    | `c-05-create-or-update-onboarding-files` skill onboarding maintenance rules, the resolved memory layer source registry for documentation discovery, and the generated onboarding files under the resolved onboarding root.                                                                                                                                                                      |
+| Description                  | File-level onboarding mirrors one concrete source file; overviews summarize repo or route scopes; repo-level catalogs document recurring entities, carry deterministic evidence fingerprints, and require one fingerprint row per inventory entity. Onboarding maintenance reads the documentation declared in the resolved memory layer's `system/sources.md`, including its Domain Documentation entries, and treats a registry entry as a pointer rather than evidence; a source rename preserves valid current prose at the new mirrored path. |
+| Canonical Source Of Truth    | The `l-01-agent-lifecycles` curator card-format, entity-catalog and governing-documentation reference with its file-card and entity-catalog layouts, the resolved memory layer source registry for documentation discovery, and the generated onboarding files under the resolved onboarding root.                                                                                                                                                                      |
 | Current Naming Drift         | The `ar-memory-*` schema identifiers (`ar-memory-ledger/v1`, `ar-memory-candidate-pair/v1`, `ar-memory-census/v1`) retain the historical prefix as wire contracts and are not memory-mode vocabulary. Memory topology no longer has an internal/external split: external memory repos at `ar-coordination/memory-repos/ar-<repo>/` are the only supported topology, and the former repo-local `ar-memory/` internal mode was removed from the product (`CAPS-R12@v1`) and is refused by name. `repo-sidecar` survives only as a per-artifact storage placement, not as a topology.                                                                                                                                                                              |
-| Key Identifiers              | `repository`, `path`, `sourceRoute`, `doc_type`, `lastVerifiedCommitHash`, `lastVerifiedCommitDate`, inline `sourceDigest`, and entity `git-blob-set-v1` fingerprint rows.                                                                                                                                                                           |
-| Parent / Child Relationships | Lives under the onboarding root returned by `c-08-ar-coordination-context-resolver` skill. File-level units mirror repo-relative source paths.                                                                                                                                                                                                                                                |
+| Key Identifiers              | Historical legacy-only schema account: `repository`, `path`, `sourceRoute`, `doc_type`, `lastVerifiedCommitHash`, `lastVerifiedCommitDate`, inline `sourceDigest`, and entity `git-blob-set-v1` fingerprint rows. |
+| Parent / Child Relationships | Lives under the `onboarding_root` returned by the coordination-context resolver. File-level units mirror repo-relative source paths.                                                                                                                                                                                                                                                |
 | Often Confused With          | Task artifacts, roadmap specs, source registries as proof, local documentation mirrors as authoritative sources, and temporary drift reports.                                                                                                                                                                                                        |
-| Source References            | [README.md](agents-remember/README.md) L57-L61; [`c-05-create-or-update-onboarding-files` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/SKILL.md) L8-L19; L58-L65; L137-L148; [file-level workflow](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/file-level-onboarding-workflow.md) L20-L29; L113-L121 |
+| Source References            | [README.md](agents-remember/README.md) L57-L61; [card formats and citations](agents-remember/skills/l-01-agent-lifecycles/reference/curator/card-formats-and-citations.md) L21-L51; L93-L109; [governing documentation](agents-remember/skills/l-01-agent-lifecycles/reference/curator/governing-sources.md) L5-L7; [file-card layout](agents-remember/skills/l-01-agent-lifecycles/templates/file-card.md) L1-L24; [entity-catalog layout](agents-remember/skills/l-01-agent-lifecycles/templates/repo-entity-catalog.md) L1-L48 |
 | Migration Notes              | The worktree-support stack should preserve one-to-one file-level mapping even as roots are renamed or split, and refactors should move or reuse accurate onboarding when behavior moves across files.                                                                                                                                                 |
-
-### Runtime AGENTS Template Package
-
-| Field                        | Value                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Category                     | Installable runtime instruction package                                                                                                                                                                                                                                                                                                                                                                                                            |
-| Represents In Reality        | The source-owned set of `AGENTS.md` templates that can be installed into a coordinator runtime tree.                                                                                                                                                                                                                                                                                                                                               |
-| Description                  | The current package lives under `mcp/src/agents_remember/package_data/runtime/agents-md-files/` and contains four templates: `coordinator/AGENTS.md`, `skills/AGENTS.md`, `system/AGENTS.md`, and `tasks/AGENTS.md`. The coordinator template routes spawned roles by brief and treats the developer-facing free chat as a launcher: research stays inline, while role-shaped work spawns a clean architect with the settings-owned profile. The coordinator and system templates use `context_packet` provider status when configured; provider authority lives in MCP settings outside the coordinator root. The system template separates clean-source drift candidates from dirty-source work in progress before curation. |
-| Canonical Source Of Truth    | The four source templates under `mcp/src/agents_remember/package_data/runtime/agents-md-files/` and their file-level onboarding units.                                                                                                                                                                                                                                                                                                                                                  |
-| Current Naming Drift         | No `workflow` or memory-repo `AGENTS.md` template exists after the shuffle; memory repos are not expected to provide root-level `AGENTS.md` files and use `system/*` files for repo-specific guidance. Coordinator `system/settings.json` is no longer the MCP/provider authority surface. |
-| Key Identifiers              | Source paths under `mcp/src/agents_remember/package_data/runtime/agents-md-files/`; intended installed destinations `ar-coordination/AGENTS.md`, `ar-coordination/skills/AGENTS.md`, `ar-coordination/system/AGENTS.md`, and `ar-coordination/tasks/AGENTS.md`.                                                                                                                                                                                                                         |
-| Parent / Child Relationships | Complements `mcp/src/agents_remember/package_data/runtime/system/defaults/examples/` fixtures and MCP package runtime install behavior; file-level onboarding mirrors each of the four templates.                                                                                                                                                                                                                                                                                             |
-| Often Confused With          | The repo-root `AGENTS.md`, example memory-repo instructions, or old scattered source-tree `AGENTS.md` files.                                                                                                                                                                                                                                                                                                                                       |
-| Source References            | [runtime installer](agents-remember/mcp/src/agents_remember/install/runtime.py); [coordinator template](agents-remember/mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md) L3-L112; [skills template](agents-remember/mcp/src/agents_remember/package_data/runtime/agents-md-files/skills/AGENTS.md) L1-L33; [system template](agents-remember/mcp/src/agents_remember/package_data/runtime/agents-md-files/system/AGENTS.md) L1-L68; [tasks template](agents-remember/mcp/src/agents_remember/package_data/runtime/agents-md-files/tasks/AGENTS.md) L1-L153 |
-| Migration Notes              | Runtime installation should copy only the four package-owned templates. Memory-repo `AGENTS.md` content should be created with the memory repo, not installed from this package.                                                                                                                                                                                                                                                                   |
 
 ### Coordination Context
 
@@ -145,14 +96,14 @@ Each row records the deterministic source evidence used by `c-02-memory-quality-
 | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Category                     | Resolver output contract                                                                                                                                                                                                                                                                                                                                                              |
 | Represents In Reality        | The resolved topology, roots, settings, storage rules, path rules, and cross-repo allowances for one code repository.                                                                                                                                                                                                                                                                 |
-| Description                  | `c-08-ar-coordination-context-resolver` skill produces this context so downstream skills do not rebuild topology rules. MCP settings own installed coordination-root authority; the package-local resolver no longer reads source-checkout `.env` or `.env.example` as coordination-root inputs. The public facade remains `coordination_context_resolver.py`, while implementation responsibilities now live under `kernel/coordination_context/`. Since 260731-EFA-L4 `CoordinationContext.memory_mode` is typed as the worktree contract's own `MemoryMode` alias rather than a second hand-written `Literal`, because `resolver.build_coordination_context` reads `contract.memory_mode` straight into the field (the code comment on that field names a `resolver._resolve` that does not exist): the resolved context and the contract share one declaration. That declaration is now **two** values, `external` and `disabled`, and it lives in `kernel/memory_mode.py` rather than in `kernel/coordination_context/models.py`; the `internal` member was removed from the product (`CAPS-R12@v1`) and is refused by name with status `memory-mode-unsupported` rather than substituted or defaulted. The repository's separate `Topology` literal has the single member `external`. No other resolved field moved. |
-| Canonical Source Of Truth    | `c-08-ar-coordination-context-resolver` skill docs, the package facade, and the focused coordination-context implementation modules.                                                                                                                                                                                                                                                   |
-| Current Naming Drift         | The `memory_mode` identifier is still the worktree contract's `MemoryMode` alias, but that alias now lives in `kernel/memory_mode.py` (moved out of `kernel/coordination_context/models.py` by `CAPS-R12@v1`) and holds two supported values, `external` and `disabled`; the removed `internal` member is refused by name rather than accepted.                                                                                                                                                                                                                                                                                                                                  |
-| Key Identifiers              | `topology`, `code_repository_name`, `code_repository_root`, `coordination_root`, `memory_root`, `onboarding_root`, `settings_path`, `path_settings_path`, `task_root`, `temp_root`, `pathRules`, `contract_path`, `worktree_group`, `ledger_path`, `memory_mode` (the worktree contract's `MemoryMode` alias). Without a task name, `task_root` is `ar-coordination/tasks/<repo>/`; with a task name or contract, it is the concrete task folder. |
-| Parent / Child Relationships | Consumed by `c-02-memory-quality-control` skill, `c-05-create-or-update-onboarding-files` skill, `c-03-repo-bootstrap` skill, and task workflows.                                                                                                                                                                                                                                                                                                                                     |
+| Description | The full internal `CoordinationContext` and `kernel/coordination_context/` resolver retain topology, roots, source-bound settings, storage, path rules and cross-repo facts; the facade remains `coordination_context_resolver.py`. MCP settings own configured repository/coordination authority, not source-checkout `.env` files. MIK-R109 removes the public `resolve_context` tool and makes mounted `context_packet` a version-3 roots/task/actions/build/pair answer; it does not slim the internal context or replace source-bound policy reads. The historical EFA-L4 shared-alias intent remains: current `memory_mode` uses `ReadableMemoryMode` from `kernel/memory_mode.py` so an existing removed `disabled` contract can be reported. Supported `MemoryMode` and `Topology` are `external` only; `internal` and new `disabled` mode requests are not accepted or silently substituted. |
+| Canonical Source Of Truth    | The package facade `kernel/coordination_context_resolver.py` and the focused `kernel/coordination_context/` implementation modules.                                                                                                                                                                                                                                                   |
+| Current Naming Drift | Do not conflate `SlimContextPacket` (agent orientation), retained full internal `CoordinationContext`, supported `MemoryMode` (`external`), and `ReadableMemoryMode` (`external` plus legacy-readable `disabled`). `resolve_context` is no longer a public tool; source-bound settings and metadata, not omitted compact fields, supply policy and configuration. |
+| Key Identifiers              | `topology`, `code_repository_name`, `code_repository_root`, `coordination_root`, `memory_root`, `onboarding_root`, `settings_path`, `path_settings_path`, `task_root`, `temp_root`, `pathRules`, `contract_path`, `worktree_group`, `ledger_path`, `memory_mode` (the worktree contract's `ReadableMemoryMode` alias; supported mode remains `external` only). Without a task name, `task_root` is `ar-coordination/tasks/<repo>/`; with a task name or contract, it is the concrete task folder. |
+| Parent / Child Relationships | Consumed by the `memory_quality/`, `worktrees/` and `tasks/` packages, the `application/` tool handlers, and the `docs/guides/onboard-existing-repo.md` setup guide.                                                                                                                                                                                                                                                                                                                                     |
 | Often Confused With          | The onboarding root itself or the worktree task contract.                                                                                                                                                                                                                                                                                                                             |
-| Source References            | [`c-08-ar-coordination-context-resolver` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-08-ar-coordination-context-resolver/SKILL.md); [coordination_context_resolver.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context_resolver.py); [resolver.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/resolver.py); [models.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/models.py) |
-| Migration Notes              | `c-08-ar-coordination-context-resolver` skill is now worktree-contract-aware but remains facts-only; `c-09-git-worktree-manager` skill owns mutation.                                                                                                                                                                                                                                                                                                       |
+| Source References            | [coordination_context_resolver.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context_resolver.py); [resolver.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/resolver.py); [models.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/models.py) |
+| Migration Notes              | The resolver is worktree-contract-aware (`contract_path`, `worktree_group`) but facts-only; the `worktrees/` package owns mutation.                                                                                                                                                                                                                                                                                                       |
 
 ### Path Rule
 
@@ -161,10 +112,10 @@ Each row records the deterministic source evidence used by `c-02-memory-quality-
 | Category                     | Settings and eligibility rule                                                                                                                                                                                                                         |
 | Represents In Reality        | Include/exclude rules that decide which source paths and file types are eligible for onboarding.                                                                                                                                                      |
 | Description                  | Path rules are parsed from JSON-first settings where possible and are evaluated separately from storage mode. JSON and Markdown parsing now live in focused settings modules, while storage evaluation lives in `coordination_context/storage.py`.      |
-| Canonical Source Of Truth    | `c-08-ar-coordination-context-resolver` skill settings and storage modules plus README storage guidance.                                                                                                                                                                                       |
+| Canonical Source Of Truth    | The coordination-context resolver's settings and storage modules plus the path-rules reference `docs/reference/path-rules.md`.                                                                                                                                                                                       |
 | Current Naming Drift         | Coordinator and memory-repo settings scope path rules per repository; unscoped rules can accidentally read as global defaults.                                                                                                                        |
 | Key Identifiers              | `path`, `include.paths`, `include.fileTypes`, `exclude.paths`, `exclude.fileTypes`, `storage`.                                                                                                                                                        |
-| Parent / Child Relationships | Belongs to coordination context storage settings and influences `c-02-memory-quality-control` skill classification.                                                                                                                                                                  |
+| Parent / Child Relationships | Belongs to coordination context storage settings and influences the memory-quality package's classification.                                                                                                                                                                  |
 | Often Confused With          | Storage mode; storage decides where artifacts live, path rules decide eligibility.                                                                                                                                                                    |
 | Source References            | [path-rules.md](agents-remember/docs/reference/path-rules.md); [settings.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/settings.py); [json_settings.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/json_settings.py); [storage.py](agents-remember/mcp/src/agents_remember/kernel/coordination_context/storage.py) |
 | Migration Notes              | Cross-repo/worktree changes should not replace path rules; they remain an eligibility layer.                                                                                                                                                          |
@@ -173,48 +124,72 @@ CCR cumulative source verification: No content impact: the changed settings exam
 
 ### Memory Quality Control
 
+Converted-memory readers distinguish an absent onboarding collection from an existing non-directory.
+The former measures zero without creating cards or selecting another root; the latter remains an
+error. Added-source missing-card checks retain their separate eligibility and reporting duty.
+
+The caller receives status, whole-population counts, bounded repair work orders and available
+checklist/census locations; the complete computation remains in retained corpus custody.
+Projection and transport never narrow the full operation or replace its gate/readiness judgments.
+
+The current procedure is the complete curation check set in `skills/l-01-agent-lifecycles/operations/curation.md`: the full contract-scoped memory_quality_check, with optional task-start drift via context_packet(include_drift) or the full quality request. The removed drift_check name is not a current callable surface. Missing onboarding, converted references/history, styles and derived route indexes are assessed before coherence; actionable zero is not semantic acceptance, coherence publication, full-final certification or a Git stamp. Historical checker/runner observations below retain their original epoch and prove no new execution.
+
+The converted workflow additionally reports measured onboarding card/overview cuts and newly added memory files outside `onboarding/`, `knowledge/` and `system/`. The full result keeps both lists and each added file's byte size with the summed bytes; its status answer keeps the two counts and first rows. The comparison uses the admitted leaf memory base when available, retaining committed leaf changes, and otherwise the run comparison base; unreadable input is named, not treated as proof of no cut. These are report-only observations, not new refusing checks or actionable findings. Curator cut justifications and task/scratch containment, and the Reviewer's independent MEMORY judgment of both reports, retain human semantic ownership.
+
+Landing report ownership is in `mcp/src/agents_remember/memory_quality/landing_report.py`, composition in `converted_check.py`, and bounded presentation in `application/memory_quality/answer.py`; these source contracts provide observations for independent review, not a new stamp.
+
+<details>
+<summary>Historical original entity account; preserved, not the current operative contract</summary>
+
 | Field                        | Value                                                                                                                                                                                                                                                                                                                                            |
 | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Category                     | Memory quality workflow                                                                                                                                                                                                                                                                                                                          |
-| Represents In Reality        | `c-02-memory-quality-control` skill's active control loop for task-start drift trust, current-worktree missing-onboarding checks, closeout memory quality checks, and targeted style repair.                                                                                                                                                                                    |
-| Description                  | Memory quality control uses `drift_check` at task start, `check_missing_onboarding` before code commits that add source files, and `memory_quality_check` before memory content commits. Task-start drift control separates clean-source update candidates from dirty-source active work-in-progress before `c-05-create-or-update-onboarding-files` skill handoff. Drift reports still classify onboarding units as up to date, drifted, missing verification, missing, orphaned, disabled, or unsupported and are written under the resolved temporary artifact root by default. Style findings such as update-history ordering are reported during closeout and repaired through focused scripts. Since 260731-EFA-L3 both integrity checkers read Git through the one kernel runner `kernel/git_command.run_git`: `check_missing_onboarding.py`'s own sixth copy of that function is gone, replaced by a local `require_git` that wraps the shared runner and keeps this module's contract that any non-zero exit is fatal, and `onboarding_drift_check/git_ops.py` (whose helpers `drift.py` re-exports) does the same. Because that runner strips `GIT_REPOSITORY_SELECTOR_ENV` and decodes with an explicit UTF-8 / `surrogateescape`, the "which sources did this worktree add" answer (`diff --cached`, `diff`, `ls-files --others`) and the drift and entity-fingerprint blob reads (`rev-parse HEAD:<path>` in `git_blob_hash`) now resolve against the repository the check was pointed at rather than an inherited `GIT_DIR` — a gate whose verdict is trusted can no longer be answered by a different repository. Since 260731-EFA-L4 the drift summary's own status vocabulary is declared once, as `DriftStatus = Literal["notChecked", "checked", "error"]` in `onboarding_drift_check/models.py`, beside the `DriftSummaryPacket` TypedDict that `summary.py`'s three producers now return; `models/drift.DriftSummary` (the context packet) and `models/memory.DriftCheckResponse` (the tool) both read that one declaration instead of keeping copies. The packet's copy was missing `error` — both the status and the key — while `run_drift_summary` returns exactly `{"status": "error", "error": ...}` whenever the onboarding root does not exist, so `context_packet(include_drift=true)` against a repo with no onboarding raised out of the tool on the very call meant to explain the problem. |
+| Represents In Reality        | The memory-quality package's active control loop for task-start drift trust, current-worktree missing-onboarding checks, closeout memory quality checks, and targeted style repair.                                                                                                                                                                                    |
+| Description                  | Memory quality control uses `drift_check` at task start, `check_missing_onboarding` before code commits that add source files, and `memory_quality_check` before memory content commits. Task-start drift control separates clean-source update candidates from dirty-source active work-in-progress before `c-05-create-or-update-onboarding-files` skill handoff. Drift reports on legacy-format trees still classify onboarding units as up to date, drifted, missing verification, missing, orphaned, disabled, or unsupported; on converted trees the drift slot reports current/stale/violation with exact counts (see Converted-Format Dispatch below). Reports are written under the resolved temporary artifact root by default. Style findings such as update-history ordering are reported during closeout and repaired through focused scripts. Since 260731-EFA-L3 both integrity checkers read Git through the one kernel runner `kernel/git_command.run_git`: `check_missing_onboarding.py`'s own sixth copy of that function is gone, replaced by a local `require_git` that wraps the shared runner and keeps this module's contract that any non-zero exit is fatal, and `onboarding_drift_check/git_ops.py` (whose helpers `drift.py` re-exports) does the same. Because that runner strips `GIT_REPOSITORY_SELECTOR_ENV` and decodes with an explicit UTF-8 / `surrogateescape`, the "which sources did this worktree add" answer (`diff --cached`, `diff`, `ls-files --others`) and the drift and entity-fingerprint blob reads (`rev-parse HEAD:<path>` in `git_blob_hash`) now resolve against the repository the check was pointed at rather than an inherited `GIT_DIR` — a gate whose verdict is trusted can no longer be answered by a different repository. Since 260731-EFA-L4 the drift summary's own status vocabulary is declared once, as `DriftStatus = Literal["notChecked", "checked", "error"]` in `onboarding_drift_check/models.py`, beside the `DriftSummaryPacket` TypedDict that `summary.py`'s three producers now return; `models/drift.DriftSummary` (the context packet) and `models/memory.DriftCheckResponse` (the tool) both read that one declaration instead of keeping copies. The packet's copy was missing `error` — both the status and the key — while `run_drift_summary` returns exactly `{"status": "error", "error": ...}` whenever the onboarding root does not exist, so `context_packet(include_drift=true)` against a repo with no onboarding raised out of the tool on the very call meant to explain the problem. |
 | Canonical Source Of Truth    | `c-02-memory-quality-control` skill docs and the `mcp/src/agents_remember/memory_quality/` package.                                                                                                                                                                                                                                                                        |
 | Current Naming Drift         | This entity was previously named `Drift Report`; drift remains one integrity check inside the broader memory quality control domain.                                                                                                                                                                                                              |
 | Key Identifiers              | `drift_check`, `check_missing_onboarding`, `memory_quality_check`, `history_order_fix.py`, report path, `classification`, `trust`, source path, affected sections, finding count, and closeout pass/fail state.                                                                                                                                  |
 | Parent / Child Relationships | Uses the `c-08-ar-coordination-context-resolver` skill context, hands onboarding content maintenance to `c-05-create-or-update-onboarding-files` skill, and feeds `c-09-git-worktree-manager` skill closeout before memory commits.                                                                                                                                                                                                                               |
 | Often Confused With          | Onboarding content itself or optional style guidance. Quality control is actionable workflow state, not passive advice.                                                                                                                                                                                                                          |
-| Source References            | [`c-02-memory-quality-control` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md); [check.py](agents-remember/mcp/src/agents_remember/memory_quality/check.py); [check_missing_onboarding.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py); [drift.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/drift.py); [history_order.py](agents-remember/mcp/src/agents_remember/memory_quality/style/update_history/history_order.py); [exclusion_register.py](agents-remember/mcp/src/agents_remember/memory_quality/style/citations/exclusion_register.py); [citation_index_settings.py](agents-remember/mcp/src/agents_remember/memory_quality/style/citations/citation_index_settings.py); [source_index.py](agents-remember/mcp/src/agents_remember/memory_quality/style/citations/source_index.py) |
-| Citation-Index Contract (260915-CAPS-L14) | The quality surface's citation index consumes a **shared exclusion register** fed by three sources — `onboarding.pathRules.exclude.paths` in the memory layer's `system/settings.json`, the code repository's `.gitignore`, and optional caller-supplied excludes on `citation_fix` / `--exclude` — and records the rule set that produced each published generation. Exceeding a cap is a **reported skip naming the file and its size**, never a silent omission and never a whole-tree refusal (developer ruling 2026-08-20: 4 MiB per file, 512 MiB aggregate over the post-exclusion/post-skip set, a ~2 GiB hard stop, settings-overridable through `onboarding.citationIndex`). The register, the caps and the settings key are **mode-independent**. This entity's evidence set gains `exclusion_register.py` and `citation_index_settings.py`; the `git-blob-set-v1` fingerprint is **not** re-signed in this pass — the leaf's source is uncommitted, so `rev-parse HEAD:<path>` cannot resolve a blob for a file that does not exist at HEAD, and the governed closeout re-derives the fingerprint over the real commit. |
+| Source References            | [c-02 memory-quality skill](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md); [check.py](agents-remember/mcp/src/agents_remember/memory_quality/check.py); [check_missing_onboarding.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py); [converted_check.py](agents-remember/mcp/src/agents_remember/memory_quality/converted_check.py); [converted drift summary](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py). Retired legacy drift/history/citation-index owners are not current source references. |
+| Citation-Index Contract (260915-CAPS-L14) | When `260915-CAPS-L14` recorded this contract (2026-09-17, memory commit `b03fa2c0b`, for a developer ruling of 2026-08-20), the quality surface's citation index consumed a **shared exclusion register** fed by three sources — `onboarding.pathRules.exclude.paths` in the memory layer's `system/settings.json`, the code repository's `.gitignore`, and optional caller-supplied excludes on `citation_fix` / `--exclude` — and reported a file exceeding a cap as a skip naming the file and its size, never a silent omission and never a whole-tree refusal, bounded at 4 MiB per file, 512 MiB aggregate over the post-exclusion/post-skip set and a ~2 GiB hard stop, settings-overridable through `onboarding.citationIndex`. **Those are past states.** `exclusion_register.py` and `citation_index_settings.py` were deleted on 2026-10-18 by commit `05aaec051` (`260928-MIK-L56`), and the register, the aggregate, the hard stop and the settings key went with them: no `onboarding.citationIndex` key exists now. What holds is `memory_quality/source_files.py` — **Git owns the listing**, only cited content is retained for the check with no persistent source index, an ignored or binary file gets its reason reported separately, and `MAX_SOURCE_BYTES = 4 * 1024 * 1024` is the only bound; the size bound's only skip is `not indexed: over 4 MiB`, per file, with no aggregate; the other `not indexed:` reasons — unreadable, no longer present, binary, ignored by Git, not a regular file, path outside the repository, symbolic link, Git cannot classify the path — are reported separately. This row carries no fingerprint. |
+| Converted-Format Dispatch (260928-MIK-L24) | On a memory tree holding `knowledge/layout.json` (the text knowledge format, MIK-R24 rule 5), `memory_quality/check.py` dispatches every selected check by format. The legacy-format checks (Update History order, citation `range_resolution` and `claim_reopen`) report `not-applicable-converted`. The drift slot runs `memory_quality/converted_check.converted_knowledge_check` instead: the knowledge validator's refusals are findings, and a stale sidecar reference (`memory_quality/reference_state`) is one of them, refused by `R198.1-reference-anchor` and refreshed by `citation_fix`, curator re-authoring or the onboarding gate (MIK-R30). The quality controller refuses a contract-scoped run on an unconverted leaf tree whose official line is converted (rule 9). That refusal was inert before MIK-R37 converted the first line (pre-conversion observation recorded under L24): unconverted trees keep the legacy path unchanged, while converted trees run the converted knowledge check with current/stale/violation counts as stated above. |
 | Migration Notes              | Worktree support should preserve `c-02-memory-quality-control` skill as quality reporting/routing, not onboarding prose writing.                                                                                                                                                                                                                                                 |
 
+</details>
+
 ### File-Level Onboarding Content Model
+
+Current converted file cards retain purpose, commentary, evidence and discovery/refactor knowledge, but have no metadata stamp table, Update History, or retained citation tables. Markdown evidence markers resolve to native JSON anchors; legacy metadata/history fields below are historical only.
 
 | Field                        | Value                                                                                                                                                                                                                                                                                             |
 | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Category                     | Onboarding schema                                                                                                                                                                                                                                                                                 |
 | Represents In Reality        | The required section, source-discovery, and citation model for one concrete source file's onboarding unit.                                                                                                                                                                                        |
-| Description                  | The model includes purpose, code commentary, docs references, repo-internal references, cross-repo references, metadata, and prepend-only update history. Docs references must start from the resolved `Domain Documentation` category, cite actual evidence rather than source registries, link canonical live references when available, record no relevant documentation only after live-source checks or blockers, and preserve still-accurate file-level knowledge across moves, splits, merges, or deletion cleanup. |
-| Canonical Source Of Truth    | `c-05-create-or-update-onboarding-files` skill file-level workflow and template.                                                                                                                                                                                                                                                            |
+| Description                  | Historical legacy-only schema account: The model includes purpose, code commentary, docs references, repo-internal references, cross-repo references, metadata, and prepend-only update history. Docs references must start from the resolved `Domain Documentation` category, cite actual evidence rather than source registries, link canonical live references when available, record no relevant documentation only after live-source checks or blockers, and preserve still-accurate file-level knowledge across moves, splits, merges, or deletion cleanup. |
+| Canonical Source Of Truth    | The `l-01-agent-lifecycles` file-card layout and curator card-format reference define the current file-card model; the Description and Key Identifiers rows describe the historical legacy-only schema.                                                                                                                                                                                                                                                            |
 | Current Naming Drift         | Inline onboarding reuses the same semantic content model; only storage adapter behavior differs. Local documentation mirrors are not a separate source-of-truth class; they are orientation caches when a live source is named.                                                                     |
-| Key Identifiers              | Metadata table fields, required sections, `Domain Documentation`, live retrieval path/tool/MCP, canonical live reference, and `No relevant documentation found after checking live sources.`                                                                                                       |
+| Key Identifiers              | Historical legacy-only schema account: Metadata table fields, required sections, `Domain Documentation`, live retrieval path/tool/MCP, canonical live reference, and `No relevant documentation found after checking live sources.` |
 | Parent / Child Relationships | File-level units complement repo overview and entity catalog.                                                                                                                                                                                                                                     |
 | Often Confused With          | Component overviews, task-local findings, source registries as evidence, or local docs mirrors as authoritative references.                                                                                                                                                                         |
-| Source References            | [file-level workflow](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/file-level-onboarding-workflow.md) L20-L29; L47-L86; L113-L121; [file-level template](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/templates/file-level-onboarding-template.md) L41-L49; [inline template](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/templates/inline-onboarding-block-template.md) L34-L35 |
+| Source References            | [file-card layout](agents-remember/skills/l-01-agent-lifecycles/templates/file-card.md) L1-L24; [card and overview scope](agents-remember/skills/l-01-agent-lifecycles/reference/curator/card-formats-and-citations.md) L21-L51. The file-card layout and card-format reference carry the current file-card model. |
 | Migration Notes              | The content model should survive storage changes from sidecar to inline, from internal-memory roots to external-memory roots, and from old source paths to new source paths when behavior is preserved or relocated.                                                                                                                                             |
 
 ### Light Task Artifact
+
+MIK-R128@v1 retains this entity and its approved-requirement authority. Ordinary task dependencies are structured data: a child TaskDocument stores its optional `waitsFor` IDs, while the owning master's `subTasks` index supplies child identities and authoritative row states. The master's displayed Now block is derived by `MasterNowBlock` from indexed task groups and the graph's can-start-next view; it is not a persisted human-authored dependency plan. Order is likewise derived rather than stored as Now prose. Recurring constraints, non-goals, acceptance checks and individual major-step progress have their structured canonical homes instead of duplicated checklist prose. The `l-01-agent-lifecycles` task-authoring reference and its leaf, master and requirement-packet templates describe that authoring shape; they do not prove a migration was executed or that completed/archived documents were rewritten. Historical committed fingerprints below are not re-stamped from an uncommitted candidate.
 
 | Field                        | Value                                                                                                                                                                                                                                                                                       |
 | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Category                     | Workflow artifact                                                                                                                                                                                                                                                                           |
 | Represents In Reality        | A durable JSON-primary plan/checklist that projects an approved, versioned requirement corpus into executable task topology.                                                                                                                                                                    |
-| Description                  | Before any sprint, master, task, or leaf document is created, the architect compiles independently falsifiable obligations into a stable ID/version index, creates one self-contained immutable packet per requirement revision, cold-reads the packets, and obtains developer approval. Task documents then project only the approved IDs, versions, and packet links; they do not rewrite the contracts. `task_doc` owns the `ar-task-document/v1` JSON source and deterministic Markdown render for `light`, `subTask`, and `master` shapes, while workflow policy may retain an existing hand-authored series master until it is intentionally migrated. Checkboxes remain the live implementation tracker. Each leaf owns one primary requirement revision, and delivery evidence plus immutable attempt/adjudication records remain requirement-bound rather than aggregate completion prose. |
-| Canonical Source Of Truth    | `w-02-light-task-workflow` skill docs, workflow, task render template, and canonical requirement-packet template.                                                                                                                                                                                                     |
-| Current Naming Drift         | Worktree-backed tasks live beside `contract.md` in repo-scoped task folders; non-worktree `w-02-light-task-workflow` skill artifacts can still use the resolved flat task root.                                                                                                                                         |
+| Description                  | Before any sprint, master, task, or leaf document is created, the architect compiles independently falsifiable obligations into a stable ID/version index, creates one self-contained immutable packet per requirement revision, cold-reads the packets, and obtains developer approval. Task documents then project only the approved IDs, versions, and packet links; they do not rewrite the contracts. `task_doc` owns the `ar-task-document/v1` JSON source and deterministic Markdown render for `light`, `subTask`, and `master` shapes. Checkboxes remain the live implementation tracker. Each leaf owns one primary requirement revision, and delivery evidence plus immutable attempt/adjudication records remain requirement-bound rather than aggregate completion prose. |
+| Canonical Source Of Truth    | The `l-01-agent-lifecycles` requirement-compilation rule, task-authoring reference, leaf and master task templates, and canonical requirement-packet template; `task_doc` owns the stored structure and rendered headings.                                                                                                                                                                                                     |
+| Current Naming Drift | Resolved root contracts use `series-contract.md`; an active leaf's own contract is `enclosures/<slugified-leaf-id>/series-contract.md`. The selected contract determines worktree/lineage authority; the obsolete blanket `contract.md`-beside-`task.md` location is not current geometry. Non-worktree artifacts can still use the resolved flat task root. |
 | Key Identifiers              | Task-document ref, `kind`, `Status`, stable requirement ID + version, canonical packet link, topology role, primary owned revision, implementation checklist, decision log, acceptance evidence, and leaf manifestation/attempt identity.                                                                                                                      |
 | Parent / Child Relationships | The approved canonical requirement corpus precedes topology. Masters and leaves are filtered projections of it; task artifacts can lead to onboarding updates, but neither task prose nor onboarding may replace the requirement packets.                                                                                                                        |
 | Often Confused With          | A rewritten master/leaf requirement contract, onboarding overview, entity catalog, worktree contract, acceptance envelope, or requirement-attempt summary.                                                                                                                                     |
-| Source References            | [`w-02-light-task-workflow` SKILL.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/SKILL.md); [workflow.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md); [template.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/template.md); [requirement-packet-template.md](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/requirement-packet-template.md) |
+| Source References            | [requirement compilation](agents-remember/skills/l-01-agent-lifecycles/core/loop.md) L82-L105; [task documents and requirement packets](agents-remember/skills/l-01-agent-lifecycles/reference/tasks/document-authoring.md) L1-L37; [leaf task template](agents-remember/skills/l-01-agent-lifecycles/templates/leaf-task.md); [master task template](agents-remember/skills/l-01-agent-lifecycles/templates/master-task.md); [requirement-packet template](agents-remember/skills/l-01-agent-lifecycles/templates/requirement-packet.md) |
 | Migration Notes              | Existing hand-authored masters remain planning state until intentionally migrated; new topology must still derive from the separately approved canonical requirement corpus.                                                                                                                                                                                     |
 
 ### External Memory Ledger
@@ -236,11 +211,11 @@ Closeout readiness and recovery bind the actual code/memory candidate, task inte
 
 #### Current Source Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The cache derives only attributed history. | `derive_memory_ledger`; `refresh_memory_cache` | mcp/src/agents_remember/kernel/memory_cache.py:22-41; mcp/src/agents_remember/kernel/memory_cache.py:65-91 |
-| Cache write failure is reported without a Git publication. | `refresh_memory_cache`; `prepare_memory_cache` | mcp/src/agents_remember/kernel/memory_cache.py:44-62; mcp/src/agents_remember/kernel/memory_cache.py:65-91 |
-| The source reader does not import cached rows. | `read_ledger_source` | mcp/src/agents_remember/worktrees/ledger_projection.py:222-249 |
+- The cache derives only attributed history. [1]
+
+- Cache materialization reports unavailable without publishing Git; the separate preparation owner excludes the cache from memory-content staging and may refuse preparation. [2]
+
+- The source reader does not import cached rows. [3]
 
 ### Sprint Closeout Queue
 
@@ -261,30 +236,42 @@ CCR cumulative source verification: The current source census binds canonical ta
 
 ### Closeout Effective Input
 
+The current direct route supports both verified-existing code and create from the exact previewed candidate tree with an explicit code message. The retained selected-certificate/preparation account below describes separate owners, not an entry prerequisite or automatic certification pipeline of ordinary `modules/closeout.py`.
+
 | Field | Value |
 | --- | --- |
 | Category | Lifecycle admission entity |
 | Represents In Reality | The one accepted statement of which closeout commit legs apply and the exact explicit message for every enabled leg. |
 | Description | Raw public observations are normalized once against a lease-stable route, contract, and code candidate. An ordinary leaf's code candidate is plane-derived as the configured base plus stable observed HEAD plus the canonical isolated-index full add-all tree; callers never supply that authoritative tree, each concurrent observation has a distinct automatically cleaned index, and derivation never stages the real index. The resulting identity is immutable. The closeout input contains typed `code` and `memory` legs: enabled legs carry stripped nonblank explicit messages; not-applicable legs carry reasons and no sentinel message. Worktree closeout persists this value in the lifecycle operation; entry returns it once and every preview, fingerprint, worker, code, external-memory, resume, and recovery consumer receives that exact typed value explicitly rather than rereading optional transport or creating shadow intent. Direct landing shares the contract for verified-existing code plus enabled external-memory content intent only for an explicitly selected leaf delivery without an enclosure; ordinary master/series closeout and integration are separate lifecycle routes and never require the direct-execution policy flag. |
-| Canonical Source Of Truth | `models/closeout/input.py` defines the leg vocabulary; `memory_quality/future_code_candidate.py` owns ordinary-leaf future-code identity; `worktrees/closeout_input.py` owns plan derivation, candidate adaptation, and normalization; `worktrees/integration/closeout/operation_admission.py` owns lease-stable durable admission. |
+| Canonical Source Of Truth | `models/closeout/input.py` defines the leg vocabulary; `worktrees/modules/future_code_candidate.py` owns ordinary-leaf future-code identity; `worktrees/closeout_input.py` owns plan derivation, candidate adaptation, and normalization; `worktrees/integration/closeout/operation_admission.py` owns lease-stable durable admission. |
 | Current Naming Drift | Public code may call the raw shape messages or commit-message input, while durable code calls the result `effectiveInput` / `EffectiveCloseoutInput`. Only the latter may cross below validation. |
-| Key Identifiers | Route, resolved plan, code/memory leg state, explicit message, reason, observed code HEAD, configured code base, full add-all candidate tree, HEAD tree, invalid field observation, corrected call, candidate fingerprint. |
+| Key Identifiers | Route, resolved plan, code/memory leg state, explicit message, reason, observed code HEAD, configured code base, full add-all candidate tree, HEAD tree, invalid field observation, corrected call, candidate fingerprint; direct input additionally carries optional `leafId` as request/retry identity (older records default to None). |
 | Parent / Child Relationships | Created from a worktree contract and plane-derived stable Git candidate; embedded in one closeout lifecycle generation; consumed by mutation evidence owners. Candidate acceptance identity does not replace the lifecycle journal's separate operation/mutation identity. Queue selection is neither parent nor authority. |
 | Often Confused With | Optional public JSON-schema fields, blank-message defaults, generated commit subjects, queue candidate declarations, or the legacy raw `WorktreeArgs` message fields. |
-| Source References | `mcp/src/agents_remember/models/closeout/input.py`; `mcp/src/agents_remember/memory_quality/future_code_candidate.py`; `mcp/src/agents_remember/worktrees/closeout_input.py`; `mcp/src/agents_remember/worktrees/integration/closeout/operation_admission.py`; `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_candidate.py`; `mcp/src/agents_remember/application/worktree_tools.py`; `mcp/src/agents_remember/worktrees/direct_landing.py` |
+| Source References | `mcp/src/agents_remember/models/closeout/input.py`; `mcp/src/agents_remember/worktrees/modules/future_code_candidate.py`; `mcp/src/agents_remember/worktrees/closeout_input.py`; `mcp/src/agents_remember/worktrees/integration/closeout/operation_admission.py`; `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_candidate.py`; `mcp/src/agents_remember/application/worktree_tools.py`; `mcp/src/agents_remember/worktrees/direct_landing.py` |
 | Migration Notes | Introduced by 260821-CLIVE-L1 as a replacement, not a compatibility layer. Raw strings stop at admission; there is no ledger message/leg, generated subject or empty enabled sentinel. CLIVE L2 implements the public task-addressed retry/recover/cancel/revise controls while preserving this input unchanged within one generation. MCAR-L02 adds the exact future-code identity owner without weakening the existing operation-journal reconciliation boundary. |
 
-CCR cumulative source verification: Current closeout and direct-landing admission additionally bind the canonical task-intent identity into the operation candidate and require it to equal the claimed door and any retained journal. Missing or stale intent cannot be filled from a plausible legacy value. This is separate from normalized commit messages, the future add-all code tree, and the configured certification profile. The configured worktree service bundle now installs PreparedCloseoutContinuation: selected original code certificates feed private code preparation, the real memory producer, and finalization. Effective input remains the immutable message/leg authority; it is not a substitute for those certificates or output proofs.
+Retained CCR selected-operation account: that owner binds canonical task intent into its operation candidate, claimed door and retained journal; its missing or stale intent is not filled from a plausible legacy value. Direct landing separately binds its accepted request and effective input without a claimed closeout door or canonical task-intent requirement, and public recover continues that accepted generation. The prepared closeout continuation that consumed selected original code certificates through private preparation, the memory producer and finalization was removed with that producer and its service ports; the surviving selection owner only reopens selected intents and prepared outputs. This describes those separate owners, not a selected-certificate prerequisite or automatic pipeline of the ordinary synchronous closeout entry. Effective input remains message/leg authority, not independent certificate or output proof.
 
-The ledger cache is not an enabledness choice or an input message. Disabled memory stays not-applicable, and unchanged actual memory may be reused without inventing another commit.
+The ledger cache is not an enabledness choice or an input message. The retained normalized-input model can represent a disabled/not-applicable leg for historical compatibility, but current public admission and candidate_gate_verdict refuse the removed disabled memory mode by name. Unchanged admitted actual memory may still be reused without inventing another commit.
 
 #### Current Source Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The normalized input and message vocabulary contain only code/memory. | `memory_content_message`; `CloseoutMessageInput` | mcp/src/agents_remember/models/closeout/input.py:47-53; mcp/src/agents_remember/models/closeout/input.py:127-165 |
+- The normalized input and message vocabulary contain only code/memory. [4]
+
+- A direct record binds the accepted effective input without a closeout door or canonical task intent. [15]
+
+- Direct recovery continues that accepted input and settles the kept closing receipt. [16]
+
 
 ### Curator Coherence Authority
+
+The live gate independently refuses legacy-format candidate/official input and preserves named probe errors. This format boundary is distinct from exact candidate identity, converted validation and historical closed-out authority.
+
+Preparation now files its complete candidate set and answers counts/digest/locations. Coherence status/validate after completed closeout return the retained record digest and actual recorded pair as `closed-out`, with no live-tree comparison; they are historical evidence, not new readiness.
+Publication may consume judgments and assessments inline or from one bounded regular JSON file,
+never both; exact-set, predecessor, evidence-integrity and CAS requirements remain the authority.
+These transport additions do not turn status counts or a file digest into a semantic verdict.
 
 | Field | Value |
 | --- | --- |
@@ -301,6 +288,8 @@ The ledger cache is not an enabledness choice or an input message. Disabled memo
 
 CCR cumulative source verification: Current publication and validation also bind taskIntent and explicit EvidenceDependencies. The memory-quality attestation declares the exact candidate pair, code tree, memory tree, report bytes and validator identity; coherence additionally declares semantic topology, leaf intent, attestation/report bytes, judgment evidence and any predecessor authority. Missing or stale edges refuse currentness and require fresh publication. Legacy missing-intent records can be decoded for observation but are not accepted as current authority. This existing coherence validator does not itself execute the unconnected R07 affected closure or R08 final-full certification flow.
 
+Historical source-commit account follows; it is not the current checkout state. The three review-assessment modules exist at the supplied code baseline. Preserve this original fingerprint-custody explanation without treating it as authority to defer present verification.
+
 260915-KS-L15 assessment extension, recorded against the measured tree: the review-assessment modules are
 **not yet at `HEAD`** in this leaf's code worktree (all three are untracked, added by the uncommitted
 change set), so the `git-blob-set-v1` evidence set above is deliberately left at the six committed
@@ -313,11 +302,13 @@ as an omission. The three new modules are named in `Canonical Source Of Truth` a
 
 ### Closeout Mutation Evidence
 
+The retained lifecycle evidence models and the selected-preparation selection owner below remain separate from the ordinary synchronous closeout entry. Their existence does not establish that the ordinary call selects original certificates, launches that worker, or performs a quality/review campaign.
+
 | Field | Value |
 | --- | --- |
 | Category | Durable lifecycle evidence entity |
 | Represents In Reality | Per-enabled-leg proof of the exact repository state before, during, and after a journaled worktree-closeout Git mutation. |
-| Description | Each enabled repository leg advances through `pre-mutation`, `mutation-intent`, `reconciled-unchanged`, or `commit-proven` evidence bound to branch/ref, HEAD/tree, reflog fingerprint, index/candidate trees, and worktree status. Intent is journaled before Git; commit proof validates the exact ref/parent/tree transition. After restart, exact unchanged state is distinguished from exact expected output and from ambiguity such as a ref moving away and back. A public retry of unchanged intent preserves attempt one, does not launch implicitly, and remains cancellable; status or reflog observation failure leaves the literal journal and evidence unchanged. A cancelled generation advances only through the current contract-owned waiting door plus cancelled disposition and worker-exit proof; historical door rows remain audit evidence rather than a uniqueness authority. Commit-proven evidence supplies the actual code/memory recovery tuple, while exact canonical contract-publication proof retains verified-existing/no-op generations without fabricated Git mutation evidence. |
+| Description | Each enabled repository leg advances through `pre-mutation`, `mutation-intent`, `reconciled-unchanged`, or `commit-proven` evidence bound to branch/ref, HEAD/tree, reflog fingerprint, index/candidate trees, and worktree status. Intent is journaled before Git; commit proof validates the exact ref/parent/tree transition. After restart, exact unchanged state is distinguished from exact expected output and from ambiguity such as a ref moving away and back. Reconciliation of unchanged intent preserves the mutation proof. An admitted non-dry-run explicit retry/recover of a non-direct journaled operation requeues the same generation, archives reconciled-unchanged proof in mutationHistory, resets that leg to pre-mutation, increments attempt and launches the detached worker; status or reflog observation failure leaves the literal journal and evidence unchanged. A cancelled generation advances only through the current contract-owned waiting door plus cancelled disposition and worker-exit proof; historical door rows remain audit evidence rather than a uniqueness authority. Commit-proven evidence supplies the actual code/memory recovery tuple, while exact canonical contract-publication proof retains verified-existing/no-op generations without fabricated Git mutation evidence. |
 | Canonical Source Of Truth | `models/lifecycles/mutation_evidence.py`, `worktrees/integration/mutation_evidence.py`, `worktrees/integration/closeout/recovery_projection.py`, and the strict lifecycle operation store. |
 | Current Naming Drift | Recovery commits are actual output references backed by Git/journal proof, including explicitly verified-existing output. Cache state is a separate consumer observation and has no mutation leg or ledger commit alias. |
 | Key Identifiers | Code/memory leg, repository, state, before/observed snapshot, actual HEAD/ref/tree, memory `contentHeadTree`, expected output tree, commit proof, operation key/generation, recovery tuple and finalized contract SHA-256. |
@@ -328,156 +319,70 @@ as an omission. The three new modules are named in `Canonical Source Of Truth` a
 
 Evidence-path reconciliation (2026-09-11): this entity is retained. Its former evidence path `mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py` was deleted with the detached lifecycle worker by commit `173bb01e`, which moved the mutation-evidence record advance and its transition validation into `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py`. That successor module was already an evidence path, so the row was repaired by dropping the deleted path and recomputing the `git-blob-set-v1` fingerprint rather than by retiring the entity. The door, worker-lease and journal passages retained above were not re-derived in this pass and should be re-read against the synchronous closeout route before being treated as current.
 
-CCR cumulative source verification: The journal now separates recordRevision, advanced on durable changes, from meaningfulRevision, advanced only for the defined wait-relevant state changes. Transforms cannot assign those revisions. Commit operations also bind immutable task intent and explicit input/door/tree/policy dependencies before worker launch; terminal legacy missing-intent generations are archived exactly before a canonical successor, while active missing-intent reuse refuses. These journal transitions remain separate from finalization-certificate authority. The installed preparation continuation now consumes the selected original certificates and exact prepared outputs; it revalidates worker, contract, approval and logical refs before publication. Unexpected worker failure is translated through the terminal rail-failure projection without inventing Git commit proof.
+Retained CCR journal/selected-preparation account: recordRevision tracks durable changes and meaningfulRevision the defined wait-relevant changes; transforms cannot assign them. That selected-operation owner binds task intent and explicit input/door/tree/policy dependencies, with its own missing-intent archive/refusal boundaries. Its retained preparation selection (`preparation_selection.selected_preparation_intents`) reopens the selected intents and prepared outputs, requires their owning operation and contract, rechecks the leg and logical refs and refuses a selection mismatch, without inventing Git proof. These separate owners do not establish that ordinary synchronous closeout selects this pipeline or runs certification, quality or review.
 
 #### Current Source Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Raw Git facts and the filtered memory-content head are separate fields. | `GitMutationSnapshot`; `contentHeadTree` | mcp/src/agents_remember/models/lifecycles/mutation_evidence.py:18-30 |
-| The recovery tuple contains only actual code and memory outputs. | `LifecycleOperationRecoveryCommits` | mcp/src/agents_remember/models/lifecycles/operation.py:66-72 |
-| Recovery verifies refs/ancestry before cache refresh. | `_prove_memory_output`; `prove_closeout_recovery_commits` | mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:39-55; mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:58-81 |
+- Raw Git facts and the filtered memory-content head are separate fields. [5]
+- The recovery tuple contains only actual code and memory outputs. [6]
+- Recovery verifies refs/ancestry before cache refresh. [7]
 
 ### Memory Baseline Adoption
+
+An existing legacy root returns legacy-format before drift/adopt processing. Unattributed memory converts in place before adoption; an official legacy line converts as a new leaf's first memory change and lands through converted validation. This root-format preflight is separate from blocked-legacy-cards inside converted first adoption; accept_drift lifts neither.
 
 | Field | Value |
 | --- | --- |
 | Category | External-memory adoption operation |
 | Represents In Reality | Explicit adoption of existing external-memory content into attributed Git history. |
-| Description | The c10 skill resolves context, reports drift and requires acceptance of actionable drift before adoption. `memory/baseline.py` detects an existing adoption from reachable attribution, validates the checked-out repository-default branch, creates the attributed content output and refreshes the consumer cache. Cache presence or parseability does not establish adoption and no ledger commit is produced. |
-| Canonical Source Of Truth | `skills/c-10-adopt-memory-baseline/SKILL.md`, `mcp/src/agents_remember/memory/baseline.py`, and Git attribution through `kernel/memory_cache.py`. |
+| Description | The `docs/guides/adopt-existing-memory.md` guide resolves context and handles actionable drift before adoption. `memory/baseline.py` detects attributed adoption, validates the checked-out repository-default branch, creates the attributed content output and refreshes the consumer cache. Converted first adoption separately refuses listed old-format cards as blocked-legacy-cards; accept_drift cannot lift that or a validator refusal. Existing attributed adoption retains precedence. Cache presence or parseability does not establish adoption and no ledger commit is produced. |
+| Canonical Source Of Truth | `docs/guides/adopt-existing-memory.md`, `mcp/src/agents_remember/memory/baseline.py`, and Git attribution through `kernel/memory_cache.py`. |
 | Current Naming Drift | Earlier wording called this the first ledgered baseline; current result fields are `memoryContentCommit` and informational `ledgerCache`. |
 | Key Identifiers | Repository/default branch, exact code source commit, actual memory-content commit and attributed history. |
 | Parent / Child Relationships | Adopts existing external-memory content; it does not author or semantically refresh that content. Its ledger result is the same disposable cache other consumers read. |
 | Often Confused With | Onboarding bootstrap, refreshing stale onboarding, a history backfill, or committing a ledger table. |
-| Source References | `skills/c-10-adopt-memory-baseline/SKILL.md`; `mcp/src/agents_remember/memory/baseline.py`; `mcp/src/agents_remember/kernel/memory_cache.py`. |
+| Source References | `docs/guides/adopt-existing-memory.md`; `mcp/src/agents_remember/memory/baseline.py`; `mcp/src/agents_remember/kernel/memory_cache.py`. |
 | Migration Notes | Existing attributed history makes another initial adoption invalid. A missing cache alone does not reopen adoption. This entity is included in the recorded 11-entity fingerprint refresh from committed `7cbda30d9a9a4c2944382fbef46ac58b85329935`. |
 
 #### Current Source Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Adoption creates the memory-content output and refreshes its cache. | `adopt_initial_baseline`; `memory_content_commit` | mcp/src/agents_remember/memory/baseline.py:172-227; mcp/src/agents_remember/memory/baseline.py:233-240 |
-| Adoption status is derived from Git attribution. | `has_adopted_baseline`; `ledger_status` | mcp/src/agents_remember/memory/baseline.py:230-255; mcp/src/agents_remember/memory/baseline.py:258-267 |
+
+- Adoption publishes or reuses the validated memory-content output, returns its actual identity and refreshes the disposable cache; adopted status derives from attributed Git history. [8]
+
+
 
 ### Branch-Gated Cross-Repo Source
 
 Entity inventory entry; current evidence and fingerprint are recorded above.
 
-### Delivery Injector
-
-Entity inventory entry; current evidence and fingerprint are recorded above.
-
-### Harness Capability Snapshot
-
-Entity inventory entry; current evidence and fingerprint are recorded above.
-
-### Harness Submission Authority
-
-Entity inventory entry; current evidence and fingerprint are recorded above.
-
 ### Provider Degradation Protocol
 
-Entity inventory entry; current evidence and fingerprint are recorded above.
+The retained provider metrics/state-transition and explicit response policy are the entity's authority. Provider degradation no longer posts through the removed operator-inbox or orchestration-artifact stores. The diagnostic role is canonical Investigator; its concern/report is not remediation permission. An authorized stop/recovery policy remains distinct from a role launch, an alert delivery or general provider-tool availability.
 
 ### Seat Binding Identity
 
-The stable identity of an agent seat is exactly one canonical real task document paired with one
-role. Sprint roles bind to the sprint document, a manager binds to its master document, and
-worker/reviewer/curator bind to their leaf documents. A terminal/session/lifecycle id identifies the
-current runtime occupant only; replacing that occupant does not change the seat or require another
-agent to learn a new address. Task-document containment and role authorize parent/child resolution,
-and zero or multiple qualified live occupants fail closed. Spawn ancestry remains internal
-provenance and a separate diagnostic projection, never the default Chats hierarchy or public address.
-
-`260815-DAG-L14 route impact:` sprint seats become first-class structure — the sprint
-document owns `SprintSeat` rows (role/label/identity/state) and seat task documents leave the
-sprint task index (existing ones stay on disk as historical records). Seat identity remains the
-canonical `(taskDocumentRef, role)` pair; a seat row identity is correlatable provenance,
-never an authority source.
-
-`260815-DAG-L3 route impact:` the public queue derives its caller from this plane-owned
-`(taskDocumentRef, role)` seat. Requests carry neither an actor nor lifecycle identity; manager and
-orchestrator transitions fail closed when the ambient structural seat lacks the required authority.
+A task-bound native role seat is the canonical real task-document selection and role, recorded in a role-execution receipt. Sprint/master/leaf containment admits the appropriate role before host creation. The host agent ID and request ID identify one execution, not a replacement canonical task or public session/lifecycle address. Receipt/binding consistency, unknown/archived status and ambiguous matches are reported rather than choosing an arbitrary occupant. Existing held/replacing execution facts do not create another authority source. Parentless Architect/Investigator scope is separately admitted. Parentless Bootstrap additionally takes no sprint, master, leaf, task document, repository or enclosure selection; its execution is request-keyed and its repository is chosen inside the dashboard conversation. That taskless start is not a second identity for a task-bound role, and this entity does not turn compiler-only task absence into Curator seat admission.
 
 ### Seat Landing Archive
 
-Entity inventory entry; current evidence and fingerprint are recorded above.
-
-260831-LOCR-L17: the evidence path `mcp/src/agents_remember/serving/app.py` is in this entity's
-curated set and changed in this leaf, so the row is refreshed here as a reconciliation rather than a
-fingerprint edit. The leaf adds one composition value to `_build_serving_runtime` — a single
-`serving_clock` shared by the sweeper, the runtime and the new observer-health publisher, plus that
-publisher on `_ServingRuntime` — and changes nothing about landed status, cleanup outcome,
-dashboard identity, retention, or the archive's own boundary. **The evidence path set is unchanged
-and no fingerprint value was hand-edited**; `git-blob-set-v1` cannot be derived by inspection, so it
-is recomputed from the landed commit at closeout. No acceptance claim is made.
-
-260831-LOCR-L36 second pass: the evidence path
-`mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md`
-changed in the L36 skill rewrite that regenerated the package-data copy, so the entity is consistent
-with the corrected orchestrator text rather than the retired rule. The corrected role document now
-says "Per-contract activation records each master's own `reconciling -> active` transition and
-serializes nothing across masters", that queue rows "only project each contract's own active/
-reconciling waiting facts", and that the atomic pre-move step must "require the master's own contract
-activation to be `active`" — i.e. per-contract activation with nothing serialized across masters.
-That is consistent with this archive's landed-status, cleanup-outcome, dashboard-identity and
-retention semantics: a master's landing no longer depends on being the single selected master of a
-protected source pair. That earlier pass left the evidence path set unchanged; the fingerprint has
-since been refreshed from committed `7cbda30d9a9a4c2944382fbef46ac58b85329935` in the recorded 11-entity refresh.
-
-260915-CAPS-L1 — **quoted text rebased; the invariant is preserved.** The same L36-quoted sentences no
-longer exist verbatim in the rewritten orchestrator role: a `grep` for all three quoted strings
-(`serializes nothing across masters`, `only project each contract`, `require the master`) now returns
-zero hits. The rule they carried survives in the current shipped wording, so this section is rebased
-rather than retired: the role now states the graph-less default as "canonical commanded order as the
-stable tie-break, **no serialization across masters, none retired**" (`roles/orchestrator.md:155-157`),
-and the dispatch step as "The control plane publishes **each contract's own** `reconciling → active`
-activation before implementation exposure" (`roles/orchestrator.md:187-189`), with an **`atomic`** master
-requiring "their own activation `active`" before it integrates and lands
-(`roles/orchestrator.md:229-232`). The claim this archive makes is unchanged and still holds: landing
-depends on the master's **own** per-contract activation, never on being the single selected master of a
-protected source pair. Evidence path sets and the stored fingerprint are untouched — no value was
-hand-advanced, and the catalog's `git-blob-set-v1` algorithm resolves committed `HEAD` blobs, which this
-uncommitted working-tree rewrite does not move.
-
-`No content impact:` 260815-DAG-L2 changes planning and landing authority prose in shared role
-evidence, but it does not change the archive's landed status, cleanup outcome, dashboard identity,
-or retention semantics.
-
-`No content impact:` 260815-DAG-L3 adds pre-closeout scheduling and lifecycle ownership but does
-not change the archive's landed result, cleanup outcome, dashboard identity, or retention rules.
-
-`No content impact:` 260821-CLIVE-L1 changes `application/worktree_tools.py` closeout admission
-from raw messages to normalized effective input. That shared evidence path changes the fingerprint,
-but it does not change archive identity, landed status, cleanup outcome, or retention semantics.
-
-CCR cumulative source verification: No content impact: the changed shared application paths add requirement-reader route registration, task-intent refusal translation and certification-profile propagation. They do not change archive identity, landed state, cleanup results, or retention policy.
+The catalog's older seat-oriented name denotes the enclosure landing/archive record, not the removed terminal catalog. The actual current owner publishes a crash-safe terminal enclosure archive and receipt before deleting the enclosure root, under the existing contract lifecycle lease. Re-observation is idempotent and binds the accepted contract/proof; code and memory outputs remain actual separate outputs, including the accepted direct generation where applicable. Archiving a native role agent on its host launch receipt is a different operation and does not manufacture enclosure landing proof, change task identity or replace admission of the contract's own lineage.
 
 ### Seat Retirement
 
-Entity inventory entry; current evidence and fingerprint are recorded above.
-
-260831-LOCR-L17: the same `serving/app.py` change touches this entity's curated evidence set (that
-file is one of its six paths), so the row is reconciled here. The leaf's edit is composition only —
-one shared serving clock and one observer-health publisher wired onto the serving runtime — and it
-adds no retirement route, policy, or terminal-catalog behaviour: retirement authority, its refusal
-shapes, and the catalog evidence blobs are untouched. **Evidence path set unchanged; no fingerprint
-was hand-edited**, and closeout recomputes the stored value from the landed commit. No acceptance
-claim is made.
-
-CCR cumulative source verification: No content impact: the sole changed fingerprint source, serving/app.py, registers requirement-reader routes. Retirement policy and terminal-catalog evidence blobs are unchanged from the prior IAS candidate.
-
-### Supervisor Sweep
-
-Entity inventory entry; current evidence and fingerprint are recorded above.
-
-`No content impact:` 260815-DAG-L3 appends one public tool name through shared MCP registry
-evidence. It does not alter supervisor predicates, delivery, cooldown, heartbeat, or escalation.
-
-CCR cumulative source verification: No content impact: the shared public-tool registry adds worktree_status_wait. The listed sweep, signal, heartbeat, backoff and inbox evidence blobs are unchanged; the read-only wait tool introduces no sweep or escalation owner.
+Native leaf-seat retirement resolves the real launch receipt and original starter before an effect. Unknown/ambiguous/non-leaf targets and a caller that did not start the seat refuse. The host archives without giving the retiree another turn; caller/reason and partial archive/receipt failures are recorded truthfully. Replacement/liveness settlement is related but not a second public messaging or spawning plane. Held text for a retired native recipient becomes not delivered, with compact outcome custody retained by its receipt owner.
 
 ### Task Document
+
+MIK-R128@v1 extends the existing document/projection entity, not its authority boundary. Ordinary master order derives from row IDs and `waitsFor`; an available referenced document supplies its own authored stage, with declared-row status only as the missing-document fallback. Title uses the readable child title with the row-name fallback. Unfinished waves, unresolved prerequisites and legacy-cycle presentation are derived views, while completed rows sort separately from completion evidence. Structured optional fields and major-step marks are projected to the fixed reader skeleton; authored decisions remain distinct from product landing/time records. The bounded body reader now reaches a named owning master and its explicitly listed children, in addition to graph-named sprint masters, without authorizing global enumeration. The governing schema-admission/body-corpus parity intent is preserved. Early CUR-C02 exposed missing-schema divergence for named child and named master dependencies; that counterexample is historical after the RF01 repair. Current named-owner/listed-child readers require the raw task-document schema before tolerant parsing. Stored strongly connected components retain Completed members before unfinished wave filtering, while completed display stays count-only. These are scoped current-source predicates, not fresh execution or CODE/MEMORY acceptance. No candidate-local migration, fresh application test execution, CODE PASS or MEMORY acceptance follows from this catalog reconciliation.
+
+Canonical JSON/rendered files are the observation surface; removed task_doc.get/read_steps answer operation-removed. Start, finalize and abandon publish native task stage and mirror the master row; attach preserves stage, and explicit correction or organizational-master completion remains task_doc authority. Declared membership does not depend on physical worktree existence. Host in-turn/permission activity qualifies only a started task after complete current-boot reconciliation and exact role-agent binding; unknown host authority never means paused. Write phrases, reviewState changes, by-file input digests and linkage-report counts/location are delivery/report carriers, not replacements for canonical topology or permission to mutate it. Own-leaf/requirement copies and missing-source notices remain derived launch material; no copy or answer receipt becomes task authority.
+
+Canonical repository-qualified sprint/master/leaf JSON remains task topology and structural seat authority; runtime identities never replace its durable address. Explicit dependency graphs derive declared edge meaning and deterministic topological waves in node declaration order, not authored priority. With no executionGraph, scheduling helpers retain exact canonical alias-commanded membership and default commanded masters to atomic execution: no graph dependency is invented and independent masters are not globally serialized or held merely because another contract is selected. Disposable queue/projection caches cannot veto intrinsically valid task authoring; publication and configured authority remain with their existing owners. Earlier atomic-one-at-a-time wording below is superseded, not current scheduling policy. The internal TaskDocNode reader supplies content for the served TaskEntry and its optional TaskSummary: model-derived sprint/master/task form, type/branch/status note, bounded header-note/review previews and step note/outcome previews remain content. Full strings/collections are on-demand TaskSummary body content. TaskEntry separately owns canonical identity, authored stage, started-only bound host activity/eventAt, progress and declared parent/children/counts; a retained body is not a second task-status authority. Its optional disagreements carry server-reconciled list/record differences, not a second task collection: for a documented subTask, a genuinely absent master allows declared-list fallback, while a present contrary or unresolvable master remains distinguishable and blocks adoption. Other listed kinds use identity/cycle-guarded list placement without validating their own master or rejecting their kind by that path. The producer retains one deterministic parent and reports every distinct served disagreement once per declaring master. The page only renders these facts and navigates to present native records; it never repairs canonical task membership. These display fields
+and the fixed reader skeleton do not change canonical task JSON, structural seat or scheduling
+ownership. Nested note data is projected but its current page renderer does not draw it.
+
+<details>
+<summary>Historical original entity account; preserved, not the current operative contract</summary>
 
 The canonical sprint, master, and leaf JSON task documents are both planning artifacts and the
 stable work-domain topology for structural seats. Sprint documents carry the canonical
@@ -519,7 +424,11 @@ the queue is a downstream projection and cannot refuse otherwise-valid task muta
 
 CCR cumulative source verification: No content impact: the changed detail-panel source imports the existing reader target type from its task-artifact owner. This does not alter task JSON authority, durable document references, execution-graph meaning or topology publication. Canonical task intent is separately consumed by the closeout admission and projection entities described here; a reader type import is not its authority.
 
+</details>
+
 ### Source Lineage
+
+The status model can carry an informational taskDocumentCopies drift notice. It does not prove ancestry, source freshness, universal copy equality or adoption of a canonical task change; the exact Git/task lineage owner remains separate.
 
 | Field | Value |
 | --- | --- |
@@ -531,7 +440,7 @@ CCR cumulative source verification: No content impact: the changed detail-panel 
 | Key Identifiers | Canonical task document, `executionNature`, relation (`super-to-leaf`, `super-to-master`, or `master-to-leaf`), side (`code` / `memory`), Git common-directory identity, canonical local branch, and owning contract path. Checkout paths, commits, and runtime ids remain evidence rather than agent-supplied addresses. |
 | Parent / Child Relationships | Organizational managers own direct sprint-super leaves without a series contract. Atomic managers own one series ref and their leaves descend from it; the complete leaf pair chain is sealed before the series can close. |
 | Often Confused With | Remote tracking freshness, seat binding identity, a remembered base commit, or a new replacement master. |
-| Source References | `mcp/src/agents_remember/worktrees/source_lineage.py`; `mcp/src/agents_remember/worktrees/modules/closeout.py`; `mcp/src/agents_remember/worktrees/modules/integrate.py`; `mcp/src/agents_remember/models/worktree.py`; `mcp/src/agents_remember/serving/terminal_opener.py`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-brief.md`; `dashboard/src/panels/engine-room/DiagnosticsPanel.tsx` |
+| Source References | `mcp/src/agents_remember/worktrees/source_lineage.py`; `mcp/src/agents_remember/worktrees/modules/closeout.py`; `mcp/src/agents_remember/worktrees/modules/integrate.py`; `mcp/src/agents_remember/models/worktree.py`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-brief.md`; `dashboard/src/panels/engine-room/DiagnosticsPanel.tsx` |
 | Migration Notes | L4 completed the nature-aware mechanical cutover across start, lineage projection, closeout, integration, and dashboard schema. The retired universal-master-branch workflow must not be reintroduced as compatibility behavior. |
 
 `260815-DAG-L3 route impact, current ownership corrected by CLIVE:` waiting-door scheduling and the
@@ -617,19 +526,23 @@ CCR cumulative source verification: Current contract publication additionally re
 
 #### Current Source Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The contract stores the actual two outputs and informational cache location. | `WorktreeContract`; `code_commit`; `memory_content_commit` | mcp/src/agents_remember/worktrees/worktree_contract.py:228-281 |
-| One normalizer/validator owns contract serialization. | `contract_publication_text`; `parse_contract_text` | mcp/src/agents_remember/worktrees/worktree_contract.py:470-477; mcp/src/agents_remember/worktrees/worktree_contract.py:475-480 |
+
+> Retained earlier citation wording: - The contract stores the actual two outputs and informational cache location. [10]
+
+> Retained earlier citation wording: - One normalizer/validator owns contract serialization. [11]
 
 ### Worktree Integration
+
+Recognized integration/checkpoint/cleanup refusals now retain their original code and sentence in an answered pre-write result, and blocked preview agrees with blocked apply. This changes neither paired ref publication, checkpoint-versus-completion, carryover/cleanup eligibility nor authorization. A quoted conversion next step is recovery presentation, not a new sync or landing permission.
+
+Positively legacy input refuses before fresh publication; named unreadable probes are not format absence. Converted/converting validation and exact transaction continue/cancel recovery retain their own authority. This does not certify full-final closure or rerun acceptance.
 
 | Field | Value |
 | --- | --- |
 | Category | Guarded Git publication operation |
 | Represents In Reality | Publication of accepted code and external-memory content to the exact integration/source refs. |
-| Description | Admission proves the actual code/memory outputs, expected source heads, fast-forward ancestry and substantive checkout cleanliness. Ref publication uses expected-old compare-and-swap and retained recovery evidence. A checkpoint captures an unfinished master's actual tips. Ledger rows, cached headers and cache availability neither select output commits nor gate publication. Cleanup proves the actual code and memory output reached their official source refs. |
-| Canonical Source Of Truth | `worktrees/modules/integrate.py`, `worktrees/integration/integration_ref_transaction.py`, `worktrees/series_closeout.py` and `worktrees/modules/guidance.py`. |
+| Description | Admission also rejudges a converted leaf's exact closeout pair or runs master validator/net-staleness/chain/history ownership before publication. It proves the actual code/memory outputs, expected source heads, fast-forward ancestry and substantive checkout cleanliness. Ref publication uses expected-old compare-and-swap and retained recovery evidence. A checkpoint captures an unfinished master's actual tips. Ledger rows, cached headers and cache availability neither select output commits nor gate publication. Cleanup proves the actual code and memory output reached their official source refs. |
+| Canonical Source Of Truth | `worktrees/modules/integrate.py`, `worktrees/modules/integration_gate.py`, `worktrees/integration/integration_ref_transaction.py`, `worktrees/series_closeout.py` and `worktrees/modules/guidance.py`. |
 | Key Identifiers | Exact code/memory output commits, source refs and heads, contract identity, checkpoint candidate and journal generation. |
 | Parent / Child Relationships | Consumes closeout or checkpoint output authority; writes the contract's integrated code/memory cells. Consumer cache refresh is independent of the paired Git transaction. |
 | Source References | `mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py`; `mcp/src/agents_remember/worktrees/series_closeout.py`; `mcp/src/agents_remember/worktrees/modules/guidance.py`. |
@@ -671,28 +584,34 @@ records that source-door authority as `not-applicable`, independently of `direct
 Fresh leaf integration still requires its exact claimed closeout source, and retained no-door
 journal recovery stays bound to its existing generation rather than becoming fresh admission.
 
-CCR cumulative source verification: Current execution routes the repository-owned certification profile into the altitude-owned quality gate. Series integration still owns the full code-quality run; leaf integration consumes its existing closeout authority. The named-ref transaction, expected-old checks, memory ancestry, rollback and recovery owners remain unchanged. Earlier queue-claim wording above is historical: the disposable queue does not own lifecycle certification. The production service bundle now wires the preparation continuation through real memory certification and exact prepared-output finalization. Series integration still owns its aggregate code-quality route; this connection does not turn leaf integration or a memory readiness observation into an aggregate acceptance pass.
+The earlier cumulative certification/aggregate-quality account is historical and is not current integration admission. Current integration runs the narrow invariant judgments over its actual pair: the shared leaf validator/worklist judge, or the master validator, net staleness, chain and authenticated new-history checks. It does not invoke a full code-quality, test, independent-review, MQC or coherence campaign. The named-ref transaction, expected-old checks, memory ancestry, rollback and recovery owners remain unchanged; the disposable queue owns none of those judgments.
 
 #### Current Source Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Admission checks actual sources, ancestry and content before refs move. | `prepare_integration_ref_move`; `require_integrated_memory_ancestry` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:103-160; mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:235-250 |
-| Carryover/cleanup readiness proves both outputs reached their official sources. | `carryover_done` | mcp/src/agents_remember/worktrees/modules/guidance.py:189-212 |
+
+- Admission checks actual sources, ancestry and content before refs move. [12]
+
+- Carryover/cleanup readiness proves both outputs reached their official sources. [13]
 
 ## Ownership Notes
 
 - This catalog intentionally excludes the eight worktree task files as onboarding subjects.
-- This catalog treats `mcp/src/agents_remember/package_data/runtime/agents-md-files/` as the package source for runtime `AGENTS.md` templates. Memory repos use `system/*` guidance files rather than root-level `AGENTS.md` files.
+- Memory repos use `system/*` guidance files rather than root-level `AGENTS.md` files.
 - Roadmap specs are cataloged only where they define active current design concepts that explain the repository's direction.
 - Legacy roadmap specs remain historical context where they disagree with the implemented memory/coordination split.
 
 
 ### Ledger-Retirement Fingerprint Follow-Up
 
-The six affected fingerprint values remain the prior committed baseline. Once the actual code candidate exists, refresh their reviewed evidence against that commit. The External Memory Ledger row now uses the focused current owners `mcp/src/agents_remember/kernel/memory_attribution.py`, `mcp/src/agents_remember/kernel/memory_cache.py`, `mcp/src/agents_remember/kernel/memory_ledger.py` and `mcp/src/agents_remember/worktrees/ledger_projection.py`; `memory_cache.py` has no committed blob in the reviewed base. Its retained digest is intentionally stale for the changed set until the actual committed-source refresh. The other five affected sets also require a committed-source refresh after their reviewed code changes.
+Past-epoch custody (verbatim; own old target `4ffeeb98c6ddf7594ebdea7eac26bb7298f2dd72`; retained wording is not a claim about the current table):
+
+When `260913-LCA-L9` recorded this follow-up (2026-09-15), six fingerprint values were deferred at that pass's committed baseline: the External Memory Ledger row was re-pointed to the focused owners `mcp/src/agents_remember/kernel/memory_attribution.py`, `mcp/src/agents_remember/kernel/memory_cache.py`, `mcp/src/agents_remember/kernel/memory_ledger.py` and `mcp/src/agents_remember/worktrees/ledger_projection.py`; `memory_cache.py` then had no committed blob in the base as reviewed, its retained digest was left stale for the changed set, and the other five sets awaited a committed-source refresh. Those are past states. `memory_cache.py` now has committed blob `7a62e25249db9a1da4bcc623e29b4af7faaf91e9` at both `d0be84f71` and `4ffeeb98c6ddf7594ebdea7eac26bb7298f2dd72`; the External Memory Ledger row computes `git-blob-set-v1` `sha256:b4114ad55f38ee8a1ca89234a13fddb8ea869725c1926de1e7f2dbcaba55ce38` over its four evidence paths at `4ffeeb98`, which is its stored cell. No deferred value is stale today: all twenty-two rows of the fingerprint block reproduce at that commit.
+
+Current clause: the closeout's entity-fingerprint refresh re-derives, at the landing code commit, every row whose evidence set or evidence files the landing changes. The retained wording keeps its own old `4ffeeb98` target.
 
 ### Knowledge-Storage Entity Deferral (260915-KS-L1)
+
+Historical pre-conversion proposal and committed-fingerprint deferral follow. They are not the current canonical knowledge storage contract: MIK-R26 knowledge is authored text in Git, with a disposable derived index; retained revision/read vocabulary does not restore the former database mutation or publication API.
 
 This leaf adds a load-bearing cross-layer entity: the **knowledge invariant revision** — the immutable, sealed,
 separately addressable authored revision aggregate stored by `memory/knowledge/`, whose identity is a repository
@@ -714,7 +633,7 @@ the closeout/index transaction that commits the code:
 
 Two conditions make the refresh complete rather than nominal: the row needs a committed source blob for every
 path in its evidence set, and its `## Entity Inventory` entry must be written in the same pass, because
-`c-02-memory-quality-control` skill reconciles the fingerprint table against the inventory and treats a missing
+The memory-quality package reconciles the fingerprint table against the inventory and treats a missing
 row or an orphaned row as actionable maintenance. The subsystem's own account of current intent lives in the file
 cards under `onboarding/mcp/src/agents_remember/{models,memory}/knowledge/` and in
 [`memory/overview.md`](mcp/src/agents_remember/memory/overview.md) meanwhile, so a reader is not left without a
@@ -732,6 +651,8 @@ Before this scoped edit, the baseline entity's source row contained a literal tr
 ```
 
 ### Knowledge Candidate-Change Boundary Deferral (260915-KS-L3)
+
+Historical pre-conversion proposal and committed-fingerprint deferral follow, not a current callable writer boundary. Ordinary current knowledge authoring uses the contract-scoped converted file writer and native history; the former canonical database `ChangeBatch` mutation route is retired.
 
 This leaf adds a second load-bearing cross-layer entity: the **knowledge candidate-change boundary** — the single
 typed, all-or-nothing write operation the rest of the knowledge substrate mutates through. One admitted candidate
@@ -759,1041 +680,91 @@ The subsystem's own account of current intent lives in the file cards under
 [`memory/overview.md`](mcp/src/agents_remember/memory/overview.md) meanwhile, so a reader is not left without a
 route while the fingerprint is pending.
 
-## Update History
-
-- 2026-09-27T05:02:28+00:00 — Updated only Curator Coherence Authority's durable-reader/custody ownership and load-bearing evidence paths. Its existing git-blob-set-v1 value is deliberately unchanged on uncommitted source; normal closeout recomputes real committed evidence. Other inherited catalog drift is outside this repair.
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (entity-evidence intersection checked on the leaf's uncommitted candidate at base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **no entity row's evidence set contains any path this leaf changes, so no fingerprint was recomputed and no prose was rewritten.** The leaf's 15 changed or added paths are five new relationship owners, the movement vocabulary, three case modules, the review adapter, the source inventory and the three governed-gate files; the catalog's fingerprint rows were checked mechanically against that set and the intersection is **empty**, which is why only `lastUpdated` moved. The relationship vocabulary is a member of entities this catalog already carries (the knowledge comparison and the review surface), not a new load-bearing cross-layer entity: no new protocol, no new authority and no new lifecycle crosses a layer boundary, so no inventory row was added either. The fingerprint algorithm is `git-blob-set-v1` over committed `HEAD:<path>` blobs, so a value computed now against uncommitted working-tree WIP would bake in bytes no commit contains; the governed closeout recomputes any row the real commit does intersect. Verification metadata remains closeout-owned; no stamp was advanced and no commit hash was invented.
-- 2026-09-22T10:40:00+02:00 — 260921-ICR-L7 curator (entity-evidence intersection checked on the leaf's uncommitted candidate at base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5`): **no entity row's evidence set contains any path this leaf changes, so no fingerprint was recomputed and no prose was rewritten.** The leaf's 7 changed or added paths are the head-selection policy owner, the selection value, the review adapter, the review vocabulary, the new ten-case module, the rewritten surface module and the lane manifest; the catalog's fingerprint rows were checked mechanically against that set and the intersection is **empty**, which is why only `lastUpdated` moved. The head-selection policy and the recorded selection are members of entities this catalog already carries (the knowledge comparison and the review surface), not new load-bearing cross-layer entities: no new protocol, no new authority and no new lifecycle crosses a layer boundary — so no inventory row was added either. The fingerprint algorithm is `git-blob-set-v1` over committed `HEAD:<path>` blobs, so a value computed now against uncommitted working-tree WIP would bake in bytes no commit contains; the governed closeout recomputes any row the real commit does intersect. Verification metadata remains closeout-owned; no stamp was advanced and no commit hash was invented.
-- 2026-09-22T09:15:00+02:00 — 260921-ICR-L4 curator (sync-merge resolution of the parked candidate against the landed line, merged base code `d21bc8a6` / memory `75bb4d65`): **additive union with landed `260921-ICR-L16` and `260921-ICR-L3`.** All three intersection entries kept newest-first; no fingerprint hand-advanced on any side. No verification stamp was advanced.
-- 2026-09-22T08:30:00+02:00 — 260921-ICR-L4 curator (uncommitted change set on `ar/260921-icr-l4`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **no new entity, and no fingerprint hand-advanced.** The leaf adds the attribution acquisition owner, the partition arithmetic, the shared observation vocabulary, the pane's partition rendering and the refusal owner — and every one of those is a member of an entity this catalog already carries (the knowledge invariant revision, the candidate-change boundary and the storage/publication surface), not a new load-bearing cross-layer entity: no new protocol, no new authority and no new lifecycle crosses a layer boundary. No fingerprint evidence path was dropped or renamed; the intersecting rows stay pinned to the last committed refresh and closeout recomputes them against the real code commit. No inventory row was added.
-- 2026-09-22T07:05:34+02:00 — 260921-ICR-L16 curator (entity-evidence intersection checked on the leaf's uncommitted candidate at base `8ff80ce08814856c9d6fec5b19093e6540fc6d7f`): **no entity row's evidence set contains any path this leaf changes, so no fingerprint was recomputed and no prose was rewritten.** The leaf's 13 changed or added paths are the review route's client, transport, outcome renderer, entry bar, expansion pane, serving shim, three dashboard case modules, one python case module and the lane manifest; the catalog's 96 fingerprint rows were checked mechanically against that set and the intersection is **empty**, which is why only `lastUpdated` moved. The fingerprint algorithm is `git-blob-set-v1` over committed `HEAD:<path>` blobs, so a value computed now against uncommitted working-tree WIP would bake in bytes no commit contains; the governed closeout recomputes any row the real commit does intersect. Verification metadata remains closeout-owned; no stamp was advanced and no commit hash was invented.
-- 2026-09-21T23:20:00+02:00 — 260921-ICR-L3 curator (entity-evidence intersection, scoped review of two rows on an uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): this leaf edits `mcp/src/agents_remember/serving/app.py`, and that file is inside the declared evidence sets of exactly two rows — **Seat Landing Archive** and **Seat Retirement** — which is why the candidate census names both as `entity-row` source-change candidates. The app.py change is the reviewer route family's registration now passing a **third** collaborator port (`collaborators.review_source_content`) into `register_review_routes`, with the call reformatted from one line to five; the other nine changed paths are the reviewer's transport, the new content read and its vocabulary, the client and panel that consume it, the two test manifests and the dependency-ownership helper's re-pinned catalog digest. **Both intersecting rows were re-read against the current source and retained**, and **no evidence path changed and no fingerprint was hand-advanced**: `git-blob-set-v1` resolves committed `HEAD:<path>` blobs, so the stored values remain exactly reproducible against the base commit while this candidate is uncommitted working-tree WIP, and a value computed now would bake in bytes no commit contains. Neither entity's claim is touched — the change mounts one further read-only route and one further read at two immutable tree objects, and alters no landing, retention, cleanup or retirement behaviour — so no prose was rewritten to accommodate a change that does not reach either entity's subject. The governed closeout recomputes the intersecting fingerprint rows against the real code commit; the candidate-reading accounting for this catalog stays as the L23 entry below recorded it, and **no verification stamp was advanced** (the catalog's `lastVerifiedCommitHash`/`lastVerifiedCommitDate` still name the last real commit whose bytes they were measured against).
-- 2026-09-20T13:43:00+02:00 — 260915-KS-L45 curator (entity-evidence intersection, scoped review of two rows on an uncommitted change set on `ar/260915-ks-l45-ar`, base `fb719f89`): this leaf edits `mcp/src/agents_remember/serving/app.py`, and that file is inside the declared evidence sets of exactly two rows — **Seat Landing Archive** and **Seat Retirement** — which is why the drift check reports both as "Source has local unstaged changes not represented in HEAD" and reports three further fingerprint-refresh rows. The app.py change is the reviewer route family's registration now passing **both** collaborator ports (the comparison port and the new entry port), plus its two-line call site; the other ten changed sources are the reviewer's transport, application adapter, models, the knowledge store's two enumerating reads, the ingest CLI's candidate/baseline placement and two dashboard files. **Both intersecting rows were re-read against the current source and retained**, and **no evidence path changed and no fingerprint was hand-advanced**: `git-blob-set-v1` resolves committed `HEAD:<path>` blobs, so the stored values remain exactly reproducible against the base commit while this candidate is uncommitted working-tree WIP, and a value computed now would bake in bytes no commit contains. Neither entity's claim is touched — the change mounts one further read-only route beside the existing one and alters no landing, retention, cleanup or retirement behaviour — so no prose was rewritten to accommodate a change that does not reach either entity's subject. Closeout recomputes the intersecting fingerprint rows against the real code commit; the candidate-reading accounting for this catalog stays as the L23 entry below recorded it, and **no verification stamp was advanced**.
-- 2026-09-19T23:05+02:00 — 260918-TSIP-L11 curator (memory worktree `fd1a024e`, code `7879f5b2`): **repaired the fingerprint table this master's own first sync merge split in two, and re-signed nothing by hand.** `ec85ac30a` (the 2026-09-19 merge of the incoming `260915_knowledge-substrate` memory line) inserted the "merged 2026-09-19: fingerprint cells carry each line's as-of values" HTML comment *between* two halves of one GFM table, with a blank line either side, so `parse_entity_fingerprint_rows` read only the first half and 10 inventory entities read as having no fingerprint row (`entity_inventory_without_fingerprint` ×10, measured on this tree before the repair). The comment is preserved verbatim and moved above the header row, where a table note belongs; the 26 rows are one contiguous block again and `style.document_shape.entity_catalog_alignment` reads 0 findings (`check_onboarding_root` run directly on this worktree). **No fingerprint value was recomputed or hand-edited here** — `git-blob-set-v1` resolves committed `HEAD:<path>` blobs and the governed closeout owns the refresh, exactly as the retained note above requires.
-
-- 2026-09-18T19:26+02:00 — 260915-KS-L23 curator (second entity-evidence intersection, taken from the owning seat's own `worktree_closeout_preview`): **no entity impact, and no fingerprint hand-advanced, for the six rows the closeout's own `entity_fingerprint_refresh` block now names.** The block is the authoritative list and it is a *different six* from the four the drift check reported at `19:00` two entries below — the intersection moved with this leaf's own uncommitted edits, each of which is a single evidence path: `Memory Quality Control` (`memory_quality/integrity/check_missing_onboarding.py`, item 27), `Closeout Effective Input` and `Seat Landing Archive` (`application/worktree_tools.py`, items 3 and 8), `Curator Coherence Authority` (`models/lifecycles/curator_coherence.py`, `worktrees/integration/closeout/curator_coherence.py` and `..._publication.py`, items 18 and 19), `Worktree Contract` (`worktrees/modules/guidance.py`, item 18) and `Source Lineage` (`models/worktree.py`, the address the next-step binder reads). **Every one of those paths is in the delivered candidate and none is committed**, so a fingerprint written now commits to bytes no commit carries — the same reason `git-blob-set-v1` makes the refresh the governed closeout's, and the same disposition this catalog used at `19:00`, at `2026-09-18T06:05+02:00` and at `2026-09-17T12:00+02:00`. The landing recomputes all six after the code commit (`entity_fingerprint_refresh_after_code_commit: true` in the preview). **No entity's claim is reached by any of the six changes**: they add a build stamp to a response, make a refusal name both supported root shapes, bind a next-step hint to the address it describes, restate a start gate's real condition, and copy a bound attestation beside its record — none of which alters the identity, the evidence set, or the described contract of the entity that cites it. No evidence path was dropped or renamed and no digest was invented.
-
-- 2026-09-18T19:00+02:00 — 260915-KS-L23 curator (entity-evidence intersection: the four fingerprint-refresh rows the drift check reports, re-measured at code `c5a74a85`): **no entity impact, and no fingerprint hand-advanced.** The four rows L22's entry below left standing were re-measured rather than carried, and each is stale against **committed HEAD**, not merely against working-tree WIP: the recorded value does not reproduce at `c5a74a85`, and in each row one declared evidence path moved in a landed commit. `Branch-Gated Cross-Repo Source` `sha256:8725cd63…` → `sha256:744cd1ba…` (`c-08-ar-coordination-context-resolver/SKILL.md` and `kernel/coordination_context_resolver.py`, both moved by `b281bcd6`); `Closeout Effective Input` `sha256:5e4274ba…` → `sha256:976d3ca8…` (`models/closeout/input.py`, `b281bcd6`); `Closeout Mutation Evidence` `sha256:6078e674…` → `sha256:21500f8f…` (`worktrees/modules/closeout_external.py`, `0dd1df9a`); `Task Document` `sha256:963729ba…` → `sha256:1386404f…` (`observer/projection.py`, `70ead750`/`3e5d04d8`). **None of the four was re-signed, and this is deliberate:** `git-blob-set-v1` resolves committed `HEAD:<path>` blobs, so a value written now is a value no commit carries once this leaf lands — and this leaf's own candidate keeps modifying `application/worktree_tools.py`, an evidence path of `Closeout Effective Input`, exactly as it modified `serving/app.py` for the two rows L22 recorded. The refresh therefore belongs to the governed closeout, which recomputes these rows against the real code commit; the same disposition this catalog already used at `2026-09-18T06:05+02:00` (`Curator Coherence Authority`, not re-signed) and at `2026-09-17T12:00+02:00` (`Memory Quality Control`, not re-signed), and the same one the `CCR-L38` entries below took *against a prepared commit* rather than against a working tree. **No entity's claim is reached by the moves:** `b281bcd6` removed the unsupported internal memory mode from the product (an option value and its comment, not the pair or closeout authority either entity describes), `0dd1df9a` is the capsule/bootstrap landing whose memory-content exclusion touches the external-closeout module's inputs rather than the mutation-evidence contract, and `observer/projection.py`'s single changed line is the `memoryMode` comment. No evidence path was dropped or renamed, no prose was rewritten to accommodate a change that does not reach a subject, and no commit hash was invented. Verification metadata remains closeout-owned.
-- 2026-09-18T18:10+02:00 — 260915-KS-L22 curator (entity-evidence intersection, scoped review of two rows on an uncommitted change set on `ar/260915-ks-l22`, base `2dcacb27`): this leaf adds the Intent Reviewer surface and edits `mcp/src/agents_remember/serving/app.py` by two lines (an import of `register_review_routes` and its registration call beside `register_requirements_routes`). That file is inside the declared evidence sets of exactly two rows — **Seat Landing Archive** and **Seat Retirement** — which is why the drift check reports both as "Source has local unstaged changes not represented in HEAD". **Both rows were re-read against the current source and retained**, and **no evidence path changed and no fingerprint was hand-advanced**: the catalog's `git-blob-set-v1` algorithm resolves committed `HEAD:<path>` blobs, so the stored values remain exactly reproducible against the base commit while this candidate is uncommitted working-tree WIP, and a value computed now would bake in bytes no commit contains. Neither entity's claim is touched by the change — the two added lines mount one further read-only route and alter no landing, retention, cleanup or retirement behaviour — so no prose was rewritten to accommodate a change that does not reach either entity's subject. The four remaining fingerprint-refresh rows the drift check reports (`Branch-Gated Cross-Repo Source`, `Closeout Effective Input`, `Closeout Mutation Evidence`, `Task Document`) belong to earlier leaves' uncommitted candidates and are not this leaf's; they are left exactly as they stand. The governed closeout recomputes the two intersecting rows from the real code commit once it exists. Verification metadata remains closeout-owned; no stamp was advanced and no commit hash was invented.
-
-- 2026-09-18T14:58+02:00 — 260918-TSIP-L3 curator: **one row dispositioned, no entity row added or removed, and no fingerprint value hand-edited.** The census names this catalog's **Curator Coherence Authority** row as an `entity-evidence-intersection` candidate because that leaf changed `mcp/src/agents_remember/models/lifecycles/curator_coherence.py` — one of the row's six evidence paths. The row's prose was re-read against the change and **retained unannotated**: naming the absent publication fields in a refusal and naming them in the registered description does not alter what this entity *is* (the sole live leaf-scoped selection of exact curator judgments), its canonical source-of-truth list, its relationships, or its confusion boundary. **The `git-blob-set-v1` cell was deliberately not re-signed**, for the reason every entry below already states: the algorithm resolves committed `HEAD:<path>` blobs, the leaf's change is uncommitted working-tree WIP, and a value computed now would bake in the base bytes — the governed closeout recomputes the rows whose evidence paths the landed range changes. One thing this leaf can say exactly about that row that the register could not: the row is **already** behind its committed evidence, recorded on 2026-09-13 as stored `sha256:2725f6c7…` against a resolvable `sha256:ada059b5…` with all six files identical between `HEAD` and the worktree, so its re-derivation is the catalog owner's judgment on the **path set** and not a consequence of this leaf. Four further rows report `drifted` for reasons outside this leaf's change set (`Branch-Gated Cross-Repo Source`, `Closeout Effective Input`, `Task Document`, and the same pre-existing `Curator Coherence Authority` staleness); they were re-read and left as found, and they belong to the master-end catalog reading rather than to a leaf's memory commit. No acceptance claim is made.
-
-- 2026-09-18T06:05+02:00 — 260915-KS-L15 curator (uncommitted change set on `ar/260915-ks-l15`, base `837961d4`): re-read this catalog's `Curator Coherence Authority` row against the leaf's changed sources and recorded the **assessment extension** the record gained. The row's Description, Canonical Source Of Truth, Current Naming Drift, Key Identifiers, Source References and Migration Notes now state that the authority carries a second typed collection beside `judgments` — the `ReviewAssessment` rows, with the four subject kinds, the closed three-value disposition, the four reportable states and one `review-record` edge per stored assessment recomputed from the record the edge points at — and that the collection is separate because a judgment's identity is a source-file triple while an assessment's subject is a family, an invariant revision, a comparison or a knowledge record. The evidence-byte destination the assessment uses is recorded with it. The fingerprint row above is deliberately **unchanged**: the three assessment modules are untracked in this leaf's code worktree and `git-blob-set-v1` resolves `HEAD:<path>`, so naming them there would make the row unrefreshable rather than more accurate; adding them and recomputing is the first closeout-owned step after the code commit, as the note beneath the row says. Verification metadata remains closeout-owned; no acceptance or certification claim is made.
-- 2026-09-17T12:00+02:00 — 260915-CAPS-L14 curator: extended the **Memory Quality Control** entity with its citation-index contract. Added a `Source References` extension naming `exclusion_register.py` and `citation_index_settings.py`, and a new **Citation-Index Contract (260915-CAPS-L14)** row recording the shared exclusion register and its three sources, the reported-skip cap mechanics under the developer's 2026-08-20 ruling, and that the register, the caps and the settings key are mode-independent. **The `git-blob-set-v1` fingerprint row was deliberately NOT re-signed.** The leaf's source is uncommitted, so `rev-parse HEAD:<path>` cannot resolve a blob for a file that does not exist at HEAD and a fingerprint computed now would bake in the base bytes of the modified files and empty hashes for the new ones — a stamp advanced onto an uncommitted tree. I verified the algorithm by reproducing this entity's recorded fingerprint `sha256:9a65d5e5…` from its current evidence set before declining to overwrite it; the governed closeout recomputes the row against the real code commit. Verification metadata remains closeout-owned; no stamp was advanced and no commit hash was invented.
-
-- 2026-09-17T10:52+02:00 — 260915-CAPS-L17 curator: **no entity row added or removed, and one L6-era description re-read and RETAINED because this candidate makes it true again.** The leaf gives eve's pinned application a real `AR_EVE_EFFORT` consumer and the adapter therefore publishes the effort axis, so `mcp/src/agents_remember/serving/eve_adapter.py` changed meaning while remaining the same implementation of the adapter/capability boundary. Two rows intersect the change and are the census's `entity-evidence-intersection` pair: **Harness Capability Snapshot** (whose evidence set carries `eve_adapter.py` and `harness_capability_catalog.py`) and **Harness Submission Authority** (whose set carries `eve_adapter.py`). The description the snapshot's row must not contradict is the L6 note's "including the honest `session_settable: False` model/effort shape that a catalog reader must see" — **it said that while the axis was withheld (L8) and says it again now that the axis is published**, since every published effort option is `launch_settable=True` / `session_settable=False`; the sentence is left exactly as written rather than annotated, because it is accurate at this tip. `CAPS-R17`'s own split is recorded here for the next reader: the menu is the accepted launch vocabulary, and an in-session `set_effort` stays `unsupported`. **No fingerprint was hand-advanced.** `git-blob-set-v1` resolves committed `HEAD:<path>` blobs, and this candidate is uncommitted with staged changes to `eve_adapter.py`, so a value computed now would bake in base bytes; the governed closeout recomputes both rows against the real code commit, exactly as the L6/L12/L14 entries already require. The drift check reports both rows drifted and that is the expected uncommitted-candidate signature, not a prose defect.
-- 2026-09-17T08:11:27+00:00 — 260915-KS-L9 curator (memory-quality closure): re-read every claim in this catalog against code commit `c22beb0121946c0637e113ec4cf29da29fd4aec7` and advanced the verification stamp to that commit, which closeout re-stamps. Citations: the `WorktreeContract` row cited `worktrees/worktree_contract.py:229-281`; the definition's extent begins at the `@dataclass(frozen=True)` line the parser treats as part of it, so the range is now `228-281`. Extent chosen by reading `@dataclass(frozen=True)` at 228 above `class WorktreeContract:` at 229, whose field list runs to `unknown_cells` at 281 — the sentence read was "The contract stores the actual two outputs and informational cache location", and the frozen dataclass is what stores them. Update History frame: the day-only preservation marker was not a dated work entry, so it is no longer a bullet — it keeps every word and its `2026-09-15` day, and no time of day was invented for it — and it sits where it introduces the notes it names; the `---` separator that bullet had replaced is restored; `2026-09-15T03:43 UTC` now states the offset the author already gave as `2026-09-15T03:43Z`, the same instant, with no new provenance.
-
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-read the reopened claim in the row 536 of this card against the current code: its anchor still resolves inside the cited range, so the wording holds and the stamp advances; stamped the untimestamped Update History entries with this document's own commit clock; stamped the untimestamped Update History entries with this document's own commit clock
-
-- 2026-09-17T03:15+02:00 — 260915-KS-L8 curator (uncommitted change set on `ar/260915-ks-l08`, base `1ff1893f`): **no entity impact, and no fingerprint hand-advanced.** The leaf adds the baseline-to-candidate comparison — `models/knowledge/diff.py` (its vocabulary), `memory/knowledge/{diff,diff_display}.py` (the union and the display), `application/knowledge_diff.py` (the sixth composition seam), two test modules and one governed support artifact — and **every one of those is a member of an entity this catalog already carries** (the knowledge invariant revision, the candidate-change boundary and the storage/publication surface), not a new load-bearing cross-layer entity: no new protocol, no new authority and no new lifecycle crosses a layer boundary, and the one interface extension (`SelectionQuery.seed_override`) is a **parameterisation of an existing policy owner** rather than a new owner. No fingerprint evidence path disappeared or was renamed, so the catalog's fingerprint rows stay pinned to the last committed refresh and no inventory row was added. The L1 and L3 entries above remain **deferred** rows for their own reasons, and this entry changes neither.
-- 2026-09-16T23:50+02:00 — 260915-KS-L7 curator (uncommitted change set on `ar/260915-ks-l07`, base `4eb2b199`): **no entity impact, and no fingerprint hand-advanced.** The leaf adds the selective recorded-scope read — four modules under `memory/knowledge/`, `models/knowledge/read.py`, `application/knowledge_read.py`, three test modules and one governed support artifact — and every one of those is a **member of an entity this catalog already carries** (the knowledge invariant revision, the candidate-change boundary and the storage/publication surface), not a new load-bearing cross-layer entity: no new protocol, no new authority, no new lifecycle crosses a layer boundary, and no fingerprint evidence path disappeared or was renamed. The catalog's fingerprint rows therefore stay pinned to the last committed refresh, and no inventory row was added. The L1 and L3 entries above remain **deferred** rows for their own reasons (a `git-blob-set-v1` fingerprint resolves committed `HEAD` blobs, and their evidencing files were uncommitted at their passes); this entry changes neither.
-- 2026-09-16T14:15+02:00 — 260915-CAPS-L5 curator: judged the Codex capsule-delivery seam against this
-  catalog's own criteria and added **no entity row** — it is a new implementation of the existing
-  adapter instruction-channel boundary, not a new cross-layer entity. Recorded the two entities whose
-  evidence this candidate staleness: **Harness Capability Snapshot** (four of its evidence paths are
-  edited here, and the boundary gained the capsule-channel rule) and **Source Lineage**
-  (`terminal_opener.py`). Both fingerprints stay at the prior committed baseline and were **not**
-  hand-edited: `git-blob-set-v1` resolves committed `HEAD:<path>` blobs, so the refreshed value cannot
-  be derived from this deliberately uncommitted candidate, and the governed closeout recomputes both
-  rows against the real code commit.
-
-- 2026-09-16T14:05+02:00 — 260915-CAPS-L12 curator: **two current-tense rows corrected** for the removal of `internal` memory mode (`CAPS-R12@v1`); no entity row was added or removed, because the removal changed a vocabulary member and an alias's home rather than introducing or retiring a load-bearing cross-layer entity. Row 1: the **Documentation Artifact** catalog's `Current Naming Drift` no longer claims "None recorded after the external-memory terminology alignment" with an `ar-memory/` internal-memory branch — it now states the `ar-memory-*` schema identifiers as historical wire contracts, names external memory repos as the only supported topology, and records the removal plus `repo-sidecar` as a per-artifact placement rather than a topology. Row 2: the **Coordination Context** entity's `Description` said the resolved context and the contract "share one declaration of `internal`/`external`/`disabled`" and that "the three values are unchanged" — it now reads **two** values, `external` and `disabled`, records that the declaration moved to `kernel/memory_mode.py` out of `kernel/coordination_context/models.py`, and names the typed refusal; the same entity's `Current Naming Drift` row was updated from "None recorded" to the moved alias. Fingerprint rows were **not** hand-edited: `git-blob-set-v1` resolves committed `HEAD:<path>` blobs, so the governed closeout recomputes them against the real code commit. Verification metadata remains closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was invented.
-- 2026-09-16T10:15+02:00 — 260915-CAPS-L6 curator (A2 delta pass, same uncommitted candidate, same two rows): re-read the L6 entity judgment against the A2 revision and it **stands unchanged** — the adapter remains an implementation of the existing adapter/capability boundary rather than a new cross-layer entity, so no third row was added and the two evidence-path sets were not widened further. Added an A2 note to the impact section recording what the round strengthened (acceptance proved from the durable record rather than a delivery id; the queued policy on create *and* follow-up; a single replay-window owner), so the next reader does not have to rediscover it. Both fingerprints stay at the prior committed baseline and were again **not** hand-edited: `git-blob-set-v1` resolves committed `HEAD:<path>` blobs, so the refreshed value cannot be derived from this uncommitted candidate, and the governed closeout recomputes both rows against the real code commit. The pass also restored this section's newest-first order by moving the leaf's 09:00 entry above the 08:01 entry it had been appended after; no entry was rewritten or dropped.
-
-- 2026-09-16T10:10+02:00 — 260915-KS-L3 curator (uncommitted change set on `ar/260915-ks-l03`, base
-  `27242ecb`): reviewed this catalog against the change set and recorded the one additional load-bearing entity the
-  leaf introduces — the knowledge candidate-change boundary spanning `models/knowledge`, `memory/knowledge`,
-  `application/knowledge.py` and `kernel/canonical_json.py` — as a **deferred** row with its evidence set named. No
-  fingerprint row was added and no fingerprint was advanced, because a `git-blob-set-v1` fingerprint resolves
-  committed `HEAD` blobs and every evidencing file is uncommitted in this leaf; the refresh belongs to the
-  transaction that commits the code, and it must add the matching `## Entity Inventory` entry in the same pass.
-  Recorded in `### Knowledge Candidate-Change Boundary Deferral (260915-KS-L3)`. The L1 deferral for the knowledge
-  invariant revision remains open for the same reason and is unaffected by this entry.
-
-
-- 2026-09-16T09:00+02:00 — 260915-CAPS-L6 curator: the native eve session adapter is a new
-  implementation of the existing adapter/capability boundary rather than a new cross-layer entity, so
-  no entity row was added — judged against this catalog's own criteria (load-bearing cross-layer
-  concepts with a real projection) instead of adding a row by reflex. **Harness Capability Snapshot**
-  gained the seven `serving/eve_*.py` modules as evidence paths and **Harness Submission Authority**
-  gained `eve_adapter.py`, `eve_protocol.py` and `eve_runtime_client.py`, because each entity's
-  declared source set genuinely changed. Both fingerprints stay at the prior committed baseline and
-  were **not** hand-edited: `git-blob-set-v1` resolves committed `HEAD:<path>` blobs, so the refreshed
-  value cannot be derived from this uncommitted candidate, and the governed closeout recomputes both
-  rows against the real code commit.
-
-
-- 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator (entity-evidence intersection, scoped review of two rows): the leaf rewrote the role-instruction corpus, which changed evidence paths cited by **Seat Landing Archive** (`roles/orchestrator.md`, `roles/manager.md`, `templates/manager-brief.md`) and **Source Lineage** (`roles/manager.md`, `templates/curator-brief.md`). Both rows were re-read against the rewritten sources. **Seat Landing Archive:** the three L36-quoted sentences no longer exist verbatim (a grep for all three returns zero hits), so that section's quotes were **rebased** onto the current shipped wording at `roles/orchestrator.md:155-157`, `:187-189`, and `:229-232`; the entity's claim — landing depends on the master's own per-contract activation, never on being the single selected master of a protected source pair — is preserved unchanged. **Source Lineage:** a reconciliation note records that its lineage assertions still hold against the rewritten `roles/manager.md` and `templates/curator-brief.md`. **No evidence path changed and no fingerprint was hand-advanced**: the catalog's `git-blob-set-v1` algorithm resolves committed `HEAD` blobs, and this rewrite is uncommitted working-tree WIP, so the stored values remain reproducible and the rows are left for closeout's automatic recomputation from the landed commit. No acceptance, coherence, or certification claim is made.
-
----
-- 2026-09-15T22:40+02:00 — 260915-KS-L1 curator (uncommitted change set on `ar/260915-ks-l01`, base
-  `67b21aeb`): reviewed this catalog against the change set and recorded the one load-bearing entity the leaf
-  introduces — the knowledge invariant revision spanning `models/knowledge`, `memory/knowledge`,
-  `application/knowledge.py` and `kernel/canonical_json.py` — as a **deferred** row with its evidence set named.
-  No fingerprint row was added and no fingerprint was advanced, because a `git-blob-set-v1` fingerprint resolves
-  committed `HEAD` blobs and every evidencing file is uncommitted in this leaf; the refresh belongs to the
-  transaction that commits the code, and it must add the matching `## Entity Inventory` entry in the same pass.
-  Recorded in `### Knowledge-Storage Entity Deferral (260915-KS-L1)`. Verification metadata remains
-  closeout-owned.
-
-- 2026-09-15T20:42+02:00 — 260831-LOCR-L17 curator (uncommitted change set on `ar/260831-locr-l17`, base
-  `99534dc5`): **no entity impact, and no fingerprint hand-advanced.** Two entity rows were flagged as
-  reconciled because the leaf changes `mcp/src/agents_remember/serving/app.py`, which appears in the
-  curated evidence sets of **Seat Landing Archive** and **Seat Retirement**: `_build_serving_runtime`
-  now resolves one `serving_clock` for the sweeper, the runtime and the observer-health publisher, and
-  constructs that publisher on `_ServingRuntime.observer_health`. That is composition wiring; it adds no
-  retirement route or policy, changes no landed status, cleanup outcome, dashboard identity or
-  retention semantics, and introduces no new entity. Both rows carry a reconciliation note above and
-  their evidence path sets are unchanged. The stored `git-blob-set-v1` values are NOT hand-edited:
-  they cannot be derived by inspection and are recomputed from the landed commit at closeout, which is
-  why the catalog's own fingerprint rows remain pinned to the last committed refresh. No acceptance or
-  certification claim is made.
-
-
-- 2026-09-15T13:18+02:00 — 260831-LOCR-L38 verification envelope (uncommitted change set on
-  `ar/260831-locr-l38`, base `67b21aeb`): **no entity impact, and no fingerprint hand-advanced.**
-  The leaf's change set is exactly two test modules (`mcp/tests/test_pause_stop_only_end_to_end.py`
-  and `mcp/tests/test_tools.py`) and `mcp/src/**` is byte-identical to HEAD. Neither path appears in
-  any entity's curated evidence-path set, so every stored `git-blob-set-v1` value still resolves from
-  committed `HEAD` blobs and the change set cannot move one. The two surfaces the leaf touched in
-  prose terms were reviewed and neither is an inventory subject: the **pause route** is stated where
-  it belongs (the `Worktree Contract` entry's per-contract activation note and the pause card), and
-  the **atomic-series activation record** has no entity of its own — its per-contract address, release
-  and observation are recorded inside **Sprint Closeout Queue** and **Worktree Integration**, whose
-  claims this leaf does not falsify (they say each contract's own record decides its state, that no
-  master is paused or blocked by another's selection, and that a release addresses only its own
-  contract — all still true, and now proved through the public pause for the vacant/foreign/unreadable
-  record shapes as well). No inventory prose changed, no evidence path set changed.
-  Verification metadata remains closeout-owned; no acceptance claim.
-
-
-- 2026-09-15T06:48:46+02:00 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
-
-
-- 2026-09-15T03:43Z — Closed pending fingerprint wording for the 11 entities in the recorded refresh from committed `7cbda30d9a9a4c2944382fbef46ac58b85329935`. Confirmed all 11 stored values against the refresh receipt, including the cache-owner evidence set; fingerprint/evidence-path values, unrelated entity prose, global verification fields, and prior history were preserved. Scoped receipt/prose closure only, not full-catalog certification.
-
-- 2026-09-15T01:15:02+00:00 — LCA working-candidate entity curation: corrected External Memory Ledger, Closeout Effective Input, Closeout Mutation Evidence, Memory Baseline Adoption, Worktree Contract and Worktree Integration to Git-derived consumer cache and two-output authority. Added exact current source evidence and the shared cache owner. Preserved all prior fingerprints/verification fields pending a real source commit, all prior history and unrelated entity bodies. Repaired the already-truncated baseline row only; moved its unrelated surviving fragment to an explicitly historical ownership note without reconstructing the catalog. Source review only, no live history migration or aggregate acceptance claim.
-
-
-
-- 2026-09-14T23:55+02:00 — 260913-LCA completed-master review follow-up (same uncommitted change set,
-  `ar/260913_ledger-commit-attribution`, base `bb65a207`): the **External Memory Ledger** entry's
-  `Description` now records the second half of its own truth test — the rebuild asks the
-  code-existence half of a row's truth of the **source's** rows at the boundary where the code
-  repository is in hand, excludes with `code-commit-missing` through the same reported channel what
-  that repository cannot prove, and keeps the rows of a world that names no code repository
-  (`LedgerWorld.code_repository` is optional) — and states that a later completed-master review found
-  two further defects, the multi-ref ref move and the invalid source row the rebuild carried through,
-  both fixed with the review's own probes passing. `Migration Notes` gained the same two fixes and
-  named `_update_ref_stream`. **No evidence path changed and no fingerprint was hand-advanced:** the
-  entry's curated evidence sets name neither `mcp/src/agents_remember/kernel/memory_backfill.py` nor
-  `mcp/src/agents_remember/worktrees/ledger_projection.py`, so every stored `git-blob-set-v1` value
-  still resolves from committed `HEAD` blobs, and this change set is uncommitted working-tree content.
-  Verification metadata remains closeout-owned; no acceptance claim is made.
-
-- 2026-09-15T03:43 UTC — Closed pending fingerprint wording for the 11 entities in the recorded refresh from committed `7cbda30d9a9a4c2944382fbef46ac58b85329935`. Confirmed all 11 stored values against the refresh receipt, including the cache-owner evidence set; fingerprint/evidence-path values, unrelated entity prose, global verification fields, and prior history were preserved. Scoped receipt/prose closure only, not full-catalog certification.
-
-
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the gate reports two
-  entity rows whose stored fingerprint no longer matches the current blob set — **Curator Coherence
-  Authority** and **Worktree Contract**. Re-read both entries and measured their evidence paths
-  against the code worktree: every file in both sets is clean against `HEAD`, so the rows are behind
-  committed history rather than disturbed by this leaf, exactly as the 2026-09-13 note already
-  records for the coherence row. Left as found on purpose: a fingerprint is generated authority, so
-  it is re-derived by the catalog owner or by closeout, never hand-written here. Flagged for the
-  owner; no acceptance claim and no verification stamp advanced.
-
-- 2026-09-14T18:20+02:00 — 260913-LCA-L3 follow-up (same uncommitted change set on
-  `ar/260913-lca-l3-ar`, base `7317108b`): the **External Memory Ledger** entry's description of the
-  migration was corrected. It no longer says the tool was "proven closed-loop on a scratch clone" and
-  no longer describes an apply as having been performed by this code: the fixed tool has **not** been
-  applied to any real repository, and its evidence is disposable fixtures plus a read-only plan
-  measurement (418 of 428 code commits named — the maximum — and 455 of 455 named memory commits
-  trailered at `7aa4cd97`, with every code commit that ends unnamed reported as a lost claim carrying
-  the memory commit that took its pairing). Records that an external review found two defects — a
-  selection that let hash order settle a conflict and left unmatched memory commits unattributed, and
-  a command path that never resolved its branch-name tip before writing rescue refs — and that both
-  are fixed, and that the acceptance proof is now trailer-only. The earlier pre-fix confined attempt
-  and its revert stay recorded as the reason the rewrite is deferred to this master's integration into
-  IAS. **No evidence path changed and no fingerprint was hand-advanced:** the entry's curated paths
-  still resolve from committed `HEAD` blobs, and this change set is uncommitted working-tree content.
-  Verification metadata remains closeout-owned; no acceptance claim is made.
+### 260928-MIK-L93 R93 Impact — developer-question routing
 
+The R93 change edits the canonical `l-01-agent-lifecycles` role, operation, core and template instructions and regenerates their copies, including the `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/…` copies. Two entities carry those copies in their curated evidence sets:
 
-- 2026-09-14T17:20+02:00 — 260913-LCA-L3 curation (uncommitted change set on `ar/260913-lca-l3-ar`,
-  base `7317108b`): the **External Memory Ledger** entry gained the attribution half of its subject
-  and the state of the migration. `Description` now records that the ledger's source is read from the
-  memory-content commits' own `Code-Commit:` trailer (one declaration in
-  `kernel/memory_attribution.py`, one production grep hit), that a pre-rule commit's row is proved by
-  the table its own tree records, and that the backfill tool exists and was applied, verified and then
-  **reverted by developer ruling** — rewriting the shared ancestors removed the master's memory
-  line's common ancestor with its super, so the plane's lineage gate refused downstream and the
-  migration is an explicit step at that master's integration into IAS. `Canonical Source Of Truth` was
-  corrected from "kernel/memory_ledger.py plus mutation/proof owners" to name the format's owner with
-  its now-local `LEDGER_RELATIVE_PATH`, the attribution authority, and the migration tool plus its
-  contract-guarded CLI entry point; `Key Identifiers` gained `LEDGER_RELATIVE_PATH` and the
-  `Code-Commit:` trailer key; `Migration Notes` gained the L2/L4, L11 and L3 rows. **No evidence path
-  changed and no fingerprint was hand-advanced:** the entry's curated paths still resolve from
-  committed `HEAD` blobs, and this change set is uncommitted working-tree content. Verification
-  metadata remains closeout-owned; no acceptance claim is made.
+- **Source Lineage** — the evidence set includes the `package_data` `roles/manager.md` and `templates/curator-brief.md` copies; the manager copy's developer-question sentence changed in this leaf.
+- **Seat Landing Archive** — the evidence set includes the `package_data` `roles/manager.md`, `roles/orchestrator.md` and `templates/manager-brief.md` copies; those copies' question and forward/notice sentences changed in this leaf.
 
+Past-epoch custody (verbatim; own old target `4ffeeb98c6ddf7594ebdea7eac26bb7298f2dd72`; retained wording is not a claim about the current table):
 
-- 2026-09-14T13:20+02:00 — 260913 ledger line (landed `ab47182`): the **External Memory Ledger**
-  entry no longer states the removed rule that divergent memory resolution preserves every exact
-  parent row and that dropped parent history fails closed. It now states that a divergent memory
-  resolution proves the pinned Git history only — the ledger is derived state, its rebuild is the
-  authority, and a row the rebuild cannot resolve is a reported exclusion (`sourceRowsExcluded`,
-  `sourceExcludedRows`, `sourceExcludedReasons`) rather than a refusal by the sync or the integration
-  gate — and its `Canonical Source Of Truth` row qualifies `sync_transaction_git.py` as the committer
-  of the divergent memory merge rather than a ledger-row prover. **No evidence path, fingerprint
-  value, or other entity row was touched, and no fingerprint was hand-advanced:** this change removes
-  a proof surface inside `worktrees/sync_transaction_git.py`, which is not one of the entry's curated
-  evidence paths, so all stored `git-blob-set-v1` values still resolve from committed `HEAD` blobs.
-  Verification metadata remains closeout-owned; no acceptance claim is made.
+When `260928-MIK-L93` recorded this (2026-10-08), both rows stayed at that pass's committed baseline because `git-blob-set-v1` resolves committed `HEAD:<path>` blobs and the change sat in a deliberately uncommitted candidate; no value was hand-edited then, and the governed closeout was to recompute both rows at the actual code commit. On the bytes this leaf lands both reproduce at `4ffeeb98c6ddf7594ebdea7eac26bb7298f2dd72`: Source Lineage `sha256:0804b499a554d5ea329b01c68459248a22cc4594fbd12b2b218020d1b882805e` over its seven evidence paths and Seat Landing Archive `sha256:82b5cbb9da8eabedb0e23533190292ec2b4501407a340446337981bc307e4e06` over its three, each equal to its stored cell. The governed closeout still recomputes both at its own landing commit, and the route contract itself is carried by the role, operation and CLI cards and by the rule-13 invariant.
 
+Current clause: `Source Lineage` is one of the four cells moved by the governed refresh named above; `Seat Landing Archive` held its immediately preceding stored cell. Both current cells reproduce at committed code `d8869a4b7206536a83d5e18bf5865a4d6dde08c4`, not the old values quoted in this custody account. The retained sentence keeps its own `4ffeeb98` target.
 
-- 2026-09-13T19:02+02:00 — LOCR-L37 stop-only pause curation: reviewed every entity whose curated evidence
-  set includes a file this leaf touched — **Closeout Effective Input**, **Source Lineage** and **Seat
-  Landing Archive** (all three list `mcp/src/agents_remember/application/worktree_tools.py`, and **Source
-  Lineage** also lists `mcp/src/agents_remember/models/worktree.py`). L37 adds a new public stop verb
-  (`worktree_pause`) plus its response envelope, a facade re-export and an advertised-roster entry; it
-  changes none of those entities' subjects — no closeout input leg, no lineage edge and no seat-landing
-  archive projection moves — so no inventory prose changed and no evidence path set was altered. **No
-  fingerprint row was hand-advanced, deliberately.** `git-blob-set-v1` resolves committed `HEAD:<path>`
-  blobs and this leaf's change is uncommitted working-tree WIP, so the stored rows still reproduce: measured
-  against the frozen code worktree, all 26 rows except one reproduce their stored values exactly. The
-  working-tree values closeout will recompute from the landed commit are **Closeout Effective Input**
-  `sha256:3b8faa62409851bd1e5471cddfe75f768635abf3a396bdf437661b0e5a434da5`, **Source Lineage**
-  `sha256:bb5dab420aabaa03ea710d7532f5731ab12b55b76fdbbf8ad22c3ab7abded3fa` and **Seat Landing Archive**
-  `sha256:beddb973d40e958c57d2cc1b6d0eb78b28890c9a56e12a0bd82d3c9bd12ea975`. One row is stale for reasons
-  outside this leaf: **Curator Coherence Authority** stores `sha256:2725f6c7…` while its evidence set
-  currently resolves to `sha256:ada059b51a616a5341d19806a057a5ac744855227d0a4c4ca2c175d0bde7f029`, and its
-  files are identical between `HEAD` and this worktree — so the row is behind the committed history rather
-  than disturbed by L37. It was left as found: re-deriving it is the catalog owner's judgment (it is the
-  path set, not the hash, that row needs reviewed), it is outside this leaf's blast radius, and closeout's
-  automatic recomputation only covers entities whose evidence paths changed in the landed range. Flagged
-  for the owner. No acceptance claim.
+## Working-source entity: Direct Execution Grant
 
-- 2026-09-13T15:00:56+02:00 — 260831-LOCR-L36 second pass (targeted entry edits; no catalog restructure): **Sprint Closeout Queue** now states the developer ruling — waiting reasons are per contract and nothing serializes a graph-less sprint, whose `atomic-sequential` default describes sprint shape rather than a serialization mechanism, while a real authored graph still gates on genuine predecessors. **Seat Landing Archive** gains a reconciliation note for its changed evidence path `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md`, recording that the corrected role text states per-contract activation that "serializes nothing across masters" and is consistent with the archive's landed-status/cleanup/dashboard/retention semantics. Evidence path sets unchanged and **no fingerprint value was hand-edited**; closeout recomputes them from the landed commit. No acceptance claim is made.
+The external canonical-leaf record identifies its giver and grant time; it is not a TaskDocument field or harness switch. The addressed kernel store supplies call-time gate reads, application architect and serving developer writers enforce the pre-start boundary, and observer/dashboard/render/store owners project readable display evidence. Unreadable display is tolerated; gates fail closed. Shared direct work uses master series checkouts and one active direct sibling boundary; already accepted publication completes its same-generation memory pair. Working evidence is the new source model/kernel/application/serving files plus the nine scoped maintained obligations; no committed-source fingerprint for an untracked model is invented.
 
+Committed-source inventory admission is deferred until the owning code transaction records a real commit containing these new source files. This definition and the maintained proposed obligations are current candidate evidence, not a committed fingerprint or completed catalogue-inventory admission.
 
-- 2026-09-13T14:21:37+02:00 — LOCR-L36 contract-scoped activation curation: corrected the entity prose that still described activation as one selected master for a normalized source pair. **Sprint Closeout Queue** now says the projection observes per-contract activation, that each canonical series contract's own record decides its state, that no live master is paused/blocked/retired by another master's selection, and that the projection never selects, releases, or reconciles a contract; its `Often Confused With` and `Migration Notes` rows were aligned. The `Direct IAS` blocks on **Source Lineage**, **Worktree Contract**, and **Worktree Integration** were re-worded to the contract-scoped address (`activation_path` derives from the contract fingerprint), the per-contract independent record, and a release that clears only the terminal contract's own record. **Fingerprints: neither affected row was hand-advanced, deliberately.** The two rows the census flags (**Source Lineage**, evidence `models/worktree.py`; **Sprint Closeout Queue**, evidence `worktrees/queue/closeout_projection.py`) still reproduce their stored values against the committed `HEAD` blob set exactly — the re-key is uncommitted working-tree WIP, so `HEAD:<path>` has not moved — and the catalog's fingerprint algorithm resolves `HEAD`, so writing a working-tree-derived value now would only manufacture a mismatch. Against the current frozen working tree those two rows would become `sha256:c1eccfebc0206d481cf59910108fc2e3ac30ccae03d99fcc45946b7ed5b7803e` (Source Lineage) and `sha256:51b0eb27443ea2fc6dbf151301ac74126c18a2883e4e592125cd7b0115064a1e` (Sprint Closeout Queue); both were left as found for closeout's automatic recomputation from the landed code commit. No evidence path set changed and no acceptance claim is made.
 
-- 2026-09-11T10:26:37+02:00 — De-entanglement cut cleanup: **Closeout Mutation Evidence** cited a deleted evidence path (`application/lifecycle/lifecycle_operation_worker.py`, removed with the detached lifecycle worker by commit `173bb01e`). The row was repaired in place: the deleted path was dropped, the successor owner of the record advance (`worktrees/integration/lifecycle/lifecycle_operation_store.py`) was already an evidence path, and the `git-blob-set-v1` fingerprint was recomputed against the current `HEAD` blobs to `sha256:a5c6cec60eaa09b0fecf730f938e2fcc3194bd3efc214ab876bbbda9d0d1e308`. The entity is retained rather than retired because the mutation-evidence models and validators survive; its `Source References` row was repaired and a short reconciliation note added under the entity table. Only the one broken-path row was touched — the remaining fingerprint-changed rows are pre-existing drift owned by a separate pass. No acceptance claim is made.
+- Canonical task edits and by-file input/report answers, informational task-copy drift, Git-source lineage and recognized pre-write integration refusals retain separate owners; compact reporting does not transfer their authority.
 
+Past-epoch account (retained wording): Retired at the fifth freeze d59c3493: mcp/src/agents_remember/worktrees/modules/future_code_candidate.py:35-92 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 806649b91bdce18f7b915bfbbf6727967f4e7a88. Retired means the anchor no longer stands, not that the cited subject was deleted
 
-- 2026-09-10T15:06+02:00 — Closeout auto-carry curation: re-derived the four entity fingerprints whose evidence paths include a changed source file (**External Memory Ledger**, **Worktree Contract**, **Source Lineage**, **Worktree Integration** — all list `worktrees/modules/closeout.py` and/or `worktrees/modules/integrate.py`). Against the committed `HEAD` blobs all four reproduce their stored values exactly (`b50fe5f0…`, `0a5a7460…`, `e23fab81…`, `b922dcc8…`), because the change is uncommitted working-tree WIP; **no fingerprint moved and none was hand-advanced**. A separate observation for the owner: the catalog header resolves fingerprints from prepared commit `602143bd`, while the stored rows match the newer `HEAD` `4bbe2c37`, so the header stamp is behind the rows — left as found rather than re-stamped by this curator.
+Citation custody: the inherited reference 17 marker followed the preceding retirement account, while its stored note and six targets described the separate task-edit, report, lineage and integration owners. That mismatched association is detached here; no claim is made that those targets supported the retirement sentence. The sentence retains its own named historical commit as prose. Reference 17 now belongs to the unchanged current ownership clause immediately above.
 
 
-- 2026-09-09T04:41:04+02:00 — CCR-L38 c-05 post-prepared-code verification: re-read all seven candidate-local entity evidence sets against prepared code commit `602143bd1d48226f4d53b83ff7c5002a695dcdff` (tree `4c6b7bc2362bc03d50fc7a0643f34b591b805d45`). Refreshed **Closeout Effective Input** → `sha256:131c0f388a9cf39fabd7c55f03fa4d94fce9fd58d8b4eb6618849fa4f25ee8be`; **Seat Landing Archive** → `sha256:26d3b785d7b5eb70a816dd522b9ab087b30db154528914345c25283e0db53f18`; **Source Lineage** → `sha256:134a589dc8c45efe0074e2e7f02881f3210662f4ff6d74649e2a5a54bac186b2`. The other four stored fingerprints already matched this source view. Updated catalog verification metadata to the prepared commit; entity prose, evidence paths, and ownership remained source-grounded. This is metadata/fingerprint maintenance only and makes no acceptance, coherence, certification, or closeout claim.
 
 
-- 2026-09-09T03:14+02:00 — CCR-L38 c-05 entity maintenance: reviewed the four existing entity evidence sets against prepared code commit `602143bd1d48226f4d53b83ff7c5002a695dcdff` (tree `4c6b7bc2362bc03d50fc7a0643f34b591b805d45`) and refreshed their stored `git-blob-set-v1` fingerprint cells. **Closeout Mutation Evidence** → `sha256:42340e88f87930abe9b8f453cf15e2f62beffef3ac5331c594d72e8825303092`; **External Memory Ledger** → `sha256:b37da9a33c8fd40364a24136cbdb360be33ba276df40df090372101613443520`; **Worktree Contract** → `sha256:b66839860fd37f051fcefda24b1470ac1be88cc164967eb6a3ed93664a137516`; **Worktree Integration** → `sha256:a8133296727127dd03a69fbfa1e6ef7c350d22d74199a10f01d39f75e9807982`. All 22 evidence paths resolve from the prepared source and the four existing entity bodies, relationships, source references, and ownership boundaries remain accurate; no entity prose or evidence path changed. This is source-grounded catalog maintenance only and makes no quality, coherence, certification, or closeout claim.
 
 
-- 2026-09-09T02:37:28+02:00 — CCR-L38 inherited entity reconciliation against frozen candidate code tree `4c6b7bc2362bc03d50fc7a0643f34b591b805d45`: **Closeout Mutation Evidence** was re-read with all 9 declared evidence paths resolving; current candidate evidence fingerprint is `sha256:42340e88f87930abe9b8f453cf15e2f62beffef3ac5331c594d72e8825303092`; the existing entity body, ownership boundary, and source-ground meaning remain accurate, so no content change was required; **External Memory Ledger** was re-read with all 5 declared evidence paths resolving; current candidate evidence fingerprint is `sha256:b37da9a33c8fd40364a24136cbdb360be33ba276df40df090372101613443520`; the existing entity body, ownership boundary, and source-ground meaning remain accurate, so no content change was required; **Worktree Contract** was re-read with all 5 declared evidence paths resolving; current candidate evidence fingerprint is `sha256:b66839860fd37f051fcefda24b1470ac1be88cc164967eb6a3ed93664a137516`; the existing entity body, ownership boundary, and source-ground meaning remain accurate, so no content change was required; **Worktree Integration** was re-read with all 3 declared evidence paths resolving; current candidate evidence fingerprint is `sha256:a8133296727127dd03a69fbfa1e6ef7c350d22d74199a10f01d39f75e9807982`; the existing entity body, ownership boundary, and source-ground meaning remain accurate, so no content change was required. Stored fingerprint rows and verification metadata remain unchanged pending the producer-owned realization. This is source inspection only and makes no acceptance or certification claim.
 
+- **Historical source-bound reference account, not an operative override:** Adoption status is derived from Git attribution. Source caption: `has_adopted_baseline` `ledger_status` [9]
 
-- 2026-09-05T07:01:27Z — CCR L31 cumulative recovery: reviewed the 22 changed load-bearing evidence files against IAS 205c0b664e7dbf6efd07c2c811d0d8295aa07c91 and the exact CCR candidate ea35964985f30080488270e71ac81657ac40682b. Updated thirteen entity entries and recomputed only their changed git-blob-set-v1 fingerprints using the existing canonical helper. Remaining rows reproduce unchanged evidence fingerprints. Recorded task-intent/dependency and journal-revision behavior, retained existing ledger/lineage/integration owners, and explicitly preserved missing R05/R07/R08 production composition. No acceptance, ledger mapping or Gate-5 certificate is implied.
 
 
-- 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: extended Sprint Closeout Queue with explicit
-  completion-readiness and `semantic-topology/v2` source planes plus the bounded immutable graph
-  index, and made Curator Coherence Authority consume that same bound graph generation. Evidence
-  path-set fingerprints remain deliberately pinned until governed closeout can resolve the landed
-  `HEAD` blobs.
 
 
-- 2026-08-31T20:30+02:00 — 260831-DER: reconciled Closeout Effective Input, Worktree Contract, and
-  Worktree Integration to the strict direct-execution boundary and recomputed their exact
-  `git-blob-set-v1` fingerprints from committed candidate `205c0b664e7dbf6efd07c2c811d0d8295aa07c91`.
 
+- First-baseline admission refuses listed old-format cards regardless of accept_drift, without replacing attributed-history ownership. [14]
 
-- 2026-08-29T08:52+02:00 — MCAR-L02 A005: added the Curator Coherence Authority entity with
-  explicit identity separation, one stable structured selector, exact judgment/evidence binding,
-  generated-only Markdown, and shared memory/door/closeout consumers. Its provisional candidate
-  fingerprint must be recomputed from committed blobs by closeout.
 
+## Evidence
 
-- 2026-08-29T05:17+02:00 — A003 self-review repair: clarified that future-code identity is
-  immutable and concurrent observations use distinct cleaned temporary indexes.
 
 
-- 2026-08-29T04:55+02:00 — MCAR-L02: reconciled Closeout Effective Input with the
-  plane-derived future-code identity owner, its caller-supplied-hash prohibition, and the separate
-  acceptance-versus-operation identity boundary. The committed-blob fingerprint remains pinned
-  until closeout makes the new source addressable through `HEAD:<path>`.
+- Native task stage/activity and eventAt are produced once; planned and terminal documents take precedence over host observations. [18]
 
 
-- 2026-08-28T14:06+02:00 — PDLS closeout reconciled the catalog to committed candidate
-  `a06d2ffcfae2c277f2ae19330c17d09c616b77e8`. Expanded Light Task Artifact to the implemented
-  requirement-compilation gate, versioned self-contained packets, filtered topology projections,
-  per-requirement acceptance evidence, and immutable attempt/adjudication records; added the
-  requirement-packet template to its evidence set. Reviewed Closeout Mutation Evidence's shared
-  exact-clean-snapshot predicate extraction and the Source Lineage / Seat Landing Archive role
-  doctrine changes as no entity-boundary changes. Recomputed all four affected fingerprints from
-  committed blobs.
 
+- Declared-list order and documented-subTask master validation with absent-master fallback form cycle-safe canonical entries; other listed kinds retain guarded list placement without own-master validation. [19]
 
-- 2026-08-26T19:27+02:00 — Reconciled Closeout Mutation Evidence after the IAS successor repair:
-  the current waiting door, cancelled journal disposition, and worker-exit proof authorize
-  replacement; publication history remains audit rather than uniqueness authority. Recomputed its
-  `git-blob-set-v1` fingerprint against committed code `c51373425be3e3f488590ad2f444810df89b4ffb`.
+- Native stage preparation captures document sources and matching master-row synchronization without inventing absent documents. [20]
+- Manager guidance distinguishes native stage publication from explicit correction and organizational-master completion.
 
+Anchor: "Start, finalize and abandon publish task stage"
 
-- 2026-08-26T16:03+02:00 — Memory hygiene: removed a pre-existing tool-output truncation banner
-  accidentally committed above the document title; entity content is unchanged.
+Old citation custody (Git blobs): skills/l-01-agent-lifecycles/roles/manager.md @ 3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380.
 
+- Manager guidance distinguishes native stage publication from explicit correction and organizational-master completion.
 
-- 2026-08-26T14:32+02:00 — Corrected the External Memory Ledger entity after the activation
-  regression: repeated code commits are valid ordered memory state, newest lookup is current
-  authority, and exact older edges remain audit history. Fingerprint refresh remains post-code-commit.
 
 
+- Selected operation passages and separately frozen named-step detail artifacts preserve source revisions without implying installation or new grants.
 
-- 2026-08-26T08:40+02:00 — Reconciled the affected queue, ledger, lineage, contract, and
-  integration entities to the frozen IAS source-pair activation/sync candidate. Real-commit
-  fingerprints remain closeout-owned for the new uncommitted source owners.
+Old citation custody (Git blobs): mcp/src/agents_remember/cli/role_instruction_details.py @ 9f6e5640683f5837e056f35ab36b73d582df963d; mcp/src/agents_remember/models/role_capsules/compiler.py @ 762c104a0bcdc0375416163993d106dc37c5fb18.
 
+- Selected operation passages and separately frozen named-step detail artifacts preserve source revisions without implying installation or new grants.
 
-- 2026-08-25T08:27+02:00 — 260824-PDLS wave 004: reviewed the nine drifted entity evidence sets against emergency-landed code commit `cb6623775a04cbdeb0509dc26f08a8268189c3f6`, repaired closeout package paths, and refreshed their deterministic fingerprints. The entity meanings remain current; the mapping records onboarding provenance and does not certify the red Dagger result.
 
 
-- 2026-08-24T16:00+02:00 — Final cumulative closeout audit: corrected the live Task
-  Document, Source Lineage, and Worktree Contract narratives so disposable scheduling is downstream
-  of task/door truth and claims/certification remain journal-owned.
 
+- Ordinary memory publication and recovered-pair gating own retained output proof; metadata refresh separately updates entity fingerprints and route indexes, and no exclusive prepared-certificate continuation publishes memory. [23]
 
-- 2026-08-24T15:41+02:00 — 260821-CLIVE final entity reconciliation: replaced the stale
-  transitional Sprint Closeout Queue entry with the implemented disposable-projection contract;
-  removed deleted `closeout_queue_lifecycle.py` and selected the seven current model, store,
-  census, member, publication, and facade owners as its evidence set. The fingerprint digest and
-  catalog verification metadata remain architect-owned for mechanical refresh. Timestamp is the
-  curator host's Europe/Berlin system time.
+- The contract stores the actual two outputs and informational cache location. [10]
 
 
-- 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: repointed the Closeout Effective Input and Closeout Mutation Evidence inventory/fingerprint evidence to canonical nested source routes and recomputed both `git-blob-set-v1` values against code commit `1d446724d099517f6f52d596b47827ae2391a2a4`; entity ownership is unchanged.
+- One normalizer/validator owns contract serialization. [11]
 
+## Retirements
 
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2 curator: reconciled External Memory Ledger, Sprint
-  Closeout Queue, Closeout Effective Input, Closeout Mutation Evidence, Task Document, Worktree
-  Contract, and Worktree Integration. The catalog now distinguishes landed L2 root-journal,
-  locator/manifest, worker/direct-landing, claim-transfer, and exact task-source transaction facts
-  from the still-present pre-L3 queue lifecycle/task-publication schema. No new catalog entity was
-  invented: these changes extend existing reusable entities. Evidence paths are unchanged; their
-  deterministic fingerprints and catalog verification stamp remain pinned until architect-owned
-  closeout can recompute them from the real code commit.
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/worktrees/modules/future_code_candidate.py:35-92 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 806649b91bdce18f7b915bfbbf6727967f4e7a88. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
+- Canonical task edits and by-file input/report answers, informational task-copy drift, Git-source lineage and recognized pre-write integration refusals retain separate owners; compact reporting does not transfer their authority. [17]
 
-- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1 curator: added `Closeout Effective Input` and
-  `Closeout Mutation Evidence`; reconciled External Memory Ledger, Sprint Closeout Queue,
-  Worktree Contract, Source Lineage, Worktree Integration, and Seat Landing Archive boundaries.
-  Candidate-11 rebinding is test-only and therefore has no entity-evidence path or fingerprint
-  impact. The unchanged production fingerprints still match frozen tree `4241908c`: effective input (`sha256:9e5e9365…`), mutation evidence
-  (`sha256:23921c56…`), ledger (`sha256:ea59b460…`), contract (`sha256:99a15991…`), lineage
-  (`sha256:10523264…`), queue (`sha256:6d356bdc…`), integration (`sha256:53bbd3b8…`), and archive
-  (`sha256:a8bf13d1…`). Verification metadata remains pinned
-  until governed closeout stamps the landed code commit.
+- Manager guidance distinguishes native stage publication from explicit correction and organizational-master completion. [21]
 
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair curator: recomputed the drifted
-  `git-blob-set-v1` fingerprints at code commit `e5cb139f` — External Memory Ledger
-  (`sha256:f3dca290…`), Sprint Closeout Queue (`sha256:6d356bdc…`), Memory Baseline Adoption
-  (`sha256:f7f1696e…`), Worktree Contract (`sha256:0b20fa32…`), Source Lineage
-  (`sha256:b005744f…`), Worktree Integration (`sha256:481d402d…`), and Seat Landing Archive
-  (`sha256:41d9c800…`) — because their evidence changed under the repair (`modules/closeout.py`
-  and `modules/integrate.py` refactors, `memory/baseline.py`, `application/worktree_tools.py`).
-  Sprint Closeout Queue evidence paths updated to the moved package locations
-  (`models/queue/closeout_queue.py`, `worktrees/queue/closeout_queue.py`,
-  `worktrees/queue/closeout_queue_lifecycle.py`).
-
-
-
-- 2026-08-20T21:30+02:00 — 260815-DAG-L15 curator: recomputed the drifted `git-blob-set-v1`
-  fingerprints at code commit `de3a0fd9` — Seat Binding Identity
-  (`sha256:dd86dfc7…`), Seat Landing Archive (`sha256:019de72c…`), and Task Document
-  (`sha256:58850cfa…`) — because their evidence changed under L15: `tasks/document_refs.py`
-  gained the shared atomic node-kind rule, and the lifecycle doctrine copies
-  (`roles/orchestrator.md`, `templates/manager-brief.md`) carried the review-doctrine repair.
-  Evidence path sets unchanged; prose verified current.
-
-
-
-- 2026-08-20T10:45+02:00 — 260815-DAG-L12 curator: recomputed the Task Document `git-blob-set-v1`
-  fingerprint at code commit `b7f2c8e2` (`sha256:3dc16924…`); evidence gains the two new
-  load-bearing projection files (`observer/projection_graph.py` — the primitives-only render-ready
-  graph-view builder; `tasks/execution_graph_titles.py` — the shared title join). Prose gains the
-  L12 render-ready-view note.
-
-
-- 2026-08-20T09:35+02:00 — 260815-DAG-L16 curator: recomputed the drifted `git-blob-set-v1`
-  fingerprints at code commit `a9d50e08` — Sprint Closeout Queue (`sha256:d5cbe8e2…`;
-  `models/closeout_queue.py` + `worktrees/closeout_queue.py` carry the declared-caller field and
-  the L16 R9 declaration refusals) and Supervisor Sweep (`sha256:2c76b810…`;
-  `mcp/tools/base.py` now advertises `direct_landing`, 59 public tools). Seat Binding Identity
-  evidence gains `models/declared_caller.py` (the request-carried ambient identity — L16-R2/R3)
-  and its fingerprint recomputed (`sha256:1aaeb262…`).
-
-
-
-- 2026-08-20T05:16+02:00 — 260815-DAG-L14 curator: recomputed the three drifted
-  `git-blob-set-v1` fingerprints at code commit `8071a644` — Seat Binding Identity
-  (`sha256:ef9cab6b…`), Seat Landing Archive (`sha256:35bf9ca4…`), and Task Document
-  (`sha256:1d21b82a…`; evidence includes the L14-touched `observer/projection.py`,
-  `tasks/document_refs.py`, and dashboard task files). Evidence path sets are unchanged. Seat
-  Binding Identity prose gains the first-class-sprint-seats note (seat rows are structure, not
-  seat task documents); Task Document prose gains the typed `masterRef` + atomic
-  `attach_master`/`detach_master` note.
-
-
-
-- 2026-08-19T22:32+02:00 — 260815-DAG-L13 curator: recomputed the eight drifted
-  `git-blob-set-v1` fingerprints at code commit `b523f53b` — External Memory Ledger, Seat Binding
-  Identity, Seat Landing Archive, Source Lineage, Sprint Closeout Queue, Task Document, Worktree
-  Contract, Worktree Integration (each evidence set includes L13-touched files; the reproduction
-  was validated by recomputing the unchanged Coordination Context row to its catalogued value
-  first). Evidence path sets are unchanged. Sprint Closeout Queue prose gains the degraded
-  readout/lane-narrowing/blocker-module note; Task Document prose replaces the explicit-migration
-  sentence with the atomic-sequential default and nature-less standalone resolution.
-
-
-- 2026-08-19T04:20+02:00 — 260815-DAG-L10 curator: the leaf changed the **Worktree Contract** and
-  **Worktree Integration** evidence files (`worktrees/worktree_contract.py` and
-  `worktrees/modules/cleanup.py`); both `git-blob-set-v1` fingerprints remain stamped at the
-  pre-L10 base `e41ea31d` while the leaf code is uncommitted in the worktree, and the closeout
-  refresh owns restamping them at the new code commit. Entity prose and evidence path sets are
-  unchanged.
-
-
-- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
-
-
-- 2026-08-15T23:38+02:00 — 260815-DAG-L4: reconciled Task Document, Source Lineage, Worktree
-  Contract, and Worktree Integration with task-derived organizational/atomic authority, exact
-  named-ref transactions, configured identity, and atomic series sealing. Entity fingerprint
-  restamping remains closeout-owned.
-
-
-- 2026-08-15T09:36+02:00 — 260815-DAG-L3 fast-hook repair: clarified that Task Document identity
-  bounds are runtime validators after normalization, preserving bounded durable input without an
-  untruthful generated TypeScript length type. Fingerprint restamping remains closeout-owned.
-
-- 2026-08-15T09:32+02:00 — 260815-DAG-L3 curator: added Sprint Closeout Queue as the durable,
-  bounded materialized view of mechanically eligible leaf closeouts; recorded exact judgment/task
-  authority boundaries and its closeout/integration lifecycle. Reconciled related ledger, seat,
-  task-document, lineage, contract, and integration entities; Seat Landing Archive and Supervisor
-  Sweep were reviewed as no-content-impact. Existing drifted fingerprints and the provisional new
-  row remain governed-closeout-owned for recomputation against the real code commit.
-
-- 2026-08-15T04:32+02:00 — 260815-DAG-L2: Task Document now records the canonical execution graph,
-  explicit master nature, and attributed planning authority. Source Lineage now distinguishes the
-  ruled organizational/atomic target from the still-current universal mechanical chain so later
-  cutover leaves cannot mistake doctrine for enforcement. No content impact to Seat Landing
-  Archive; fingerprints remain closeout-owned.
-
-- 2026-08-13T14:32+02:00 — No content impact: the manager/orchestrator/brief quality-guidance
-  changes assign acceptance to Dagger and do not change Seat Landing Archive or Source Lineage
-  identity, evidence topology, or lifecycle semantics. Fingerprints remain closeout-owned.
-
-
-- 2026-08-13T09:27+02:00 — L23 curator: clarified that Source Lineage compares repository identity
-  through Git's resolved common directory, so sibling linked worktrees do not become false
-  cross-repository mismatches. Final entity fingerprint remains closeout-owned.
-
-
-- 2026-08-13T09:02+02:00 — 260731-EFA-L23 curator follow-up: expanded Source Lineage from start/resume admission to the enforced pre-curator, closeout, and integration boundaries. The catalog now records transitive rechecks after long quality work, the final pre-claim/pre-merge check, and exact source-tip pinning across integration. Its evidence path set now includes the manager/curator dispatch doctrine and closeout/integration enforcement; the existing fingerprint remains deliberately pinned to the committed base for governed closeout recomputation after the dirty source delta is committed.
-
-
-- 2026-08-12T20:20+02:00 — 260731-EFA-L23 curator: added Source Lineage as a cross-layer structural admission entity and clarified Task Document as its identity source. The fingerprint was computed over the exact current worktree blobs because `source_lineage.py` is new and cannot resolve through `HEAD:<path>` until closeout commits it; governed closeout must recompute the same `git-blob-set-v1` row from the real code commit. Existing Worktree Contract, Seat Binding Identity, and Task Document rows whose evidence changed remain pinned for closeout recomputation; no verification stamp was fabricated.
-
-
-- 2026-08-12T07:10+02:00 — No content impact: 260731-EFA-L24 changes
-  full-gate resource policy inside shared evidence files but does not change the
-  External Memory Ledger, Seat Landing Archive, Supervisor Sweep, Worktree
-  Contract, or Worktree Integration identities or lifecycle semantics. Their
-  `git-blob-set-v1` fingerprints remain pinned for closeout recomputation against
-  the real L24 commit.
-
-
-- 2026-08-11T06:47+02:00 — Seat Binding Identity moved from `(leafKey, seatRole)` to canonical `(taskDocumentRef, role)` at sprint/master/leaf altitude. The evidence now follows real task topology, ambient/structural resolution, generalized task assignment, and the task-projected dashboard. Task Document now records its topology-authority role. Fingerprints remain pinned until governed closeout can derive them from the eventual code commit.
-
-
-- 2026-08-08T14:38+02:00 — 260731-EFA-L9 curator: re-pointed moved entity evidence paths
-  (provider-degradation settings, inbox backoff, task-document snapshots reader, terminal-catalog
-  row vocabulary) and recorded the L9 clarifications; fingerprint hashes remain pinned for
-  closeout recomputation. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: re-pointed the Task Document entity's evidence path from dashboard/src/panels/DetailPanel.tsx to the detail-panel/ canonical entry after the L8 responsibility split; the fingerprint hash itself is not hand-edited and closeout must recompute it against the landed code commit. Seat Binding Identity and Harness Submission Authority fingerprints will also change because their evidence sources (sessions.ts, LeafAttachPicker.tsx, submissionLifecycleClient.ts, submitClient.ts) changed, and closeout recomputes those rows.
-
-
-- 2026-08-04T15:29:35+02:00 — 260731-EFA-L6 S18-B11 same-reviewer residual correction: rebound the generated projection mirror, canonical schema, and sync/check behavior to packet-specified source spans. Verification metadata unchanged.
-
-
-- 2026-08-02T01:42+02:00 — 260731-EFA-L6: the class-split work deleted `serving/harness_control_queue.py`, which invalidated the declared evidence path set of TWO more entities — **Harness Capability Snapshot** and **Harness Submission Authority** both listed it. The dead path is removed from both; no replacement was substituted for it, because the facade owned no behavior. **Harness Submission Authority** additionally gains `mcp/src/agents_remember/serving/harness_submission_ledger.py`, the module `OperationRecord` and `SubmissionLedger` (records, retention, eviction, the paged `operation_timeline`) were split into — real evidence for this entity that did not exist when the row was written. The `Harness Capability Snapshot` prose pointer at the deleted file was dropped. Both fingerprints are pinned to the committed base and must be recomputed after the L6 code commit; all 21 rows were re-checked afterwards and every declared evidence path resolves.
-
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-
-- 2026-08-02T00:17+02:00 — 260731-EFA-L6 curator: the rename of `mcp/src/agents_remember/controllers/` to `application/` (plus `worktrees/status.py` to `application/worktree_status.py`) invalidated the declared evidence path set of exactly ONE entity. **Seat Landing Archive** listed `mcp/src/agents_remember/controllers/worktree_tools.py`; that path no longer exists, so its `git-blob-set-v1` fingerprint is currently computed over a set that cannot be resolved. The declaration is corrected to `mcp/src/agents_remember/application/worktree_tools.py` and its three prose references (`Canonical Source Of Truth`, `Parent / Child Relationships`, `Source References`) follow. The fingerprint hash itself is NOT hand-edited: `git-blob-set-v1` sorts the evidence paths, resolves each `HEAD:<path>` blob, and hashes the `path + blob_hash` list, so it cannot be derived by inspection and it cannot be computed at all until the rename is committed — at the current code `HEAD` (`a714114`) the new path does not resolve. Closeout must restamp it; `worktree_closeout_preview`/`worktree_closeout_apply` raise the recompute requirement (the `ENTITY_FINGERPRINT_ALGORITHM` gate in `worktrees/modules/onboarding.py` lists every entity whose evidence paths changed), and `drift_check`/`memory_quality_check` are what detect a row left stale. Two further entities cite the renamed package only in prose and needed no path-set change: **Provider Degradation Protocol** (`application/provider_tools.py` teardown path) and **Worktree Contract**/**Worktree Integration** (vocabulary only). All 21 fingerprint rows were re-checked against the code worktree afterwards; every declared evidence path now resolves. Fingerprints remain pinned to the committed base and must be recomputed after the L6 code commit.
-
-- 2026-08-01T19:25+02:00 — 260731-EFA-L5 correction pass (three claims in the L5 clarifications section, found by a curator working an adjacent lane). **(a)** "each store carries two deliberate read policies" was the false blanket this leaf corrected elsewhere: only `GateStore` and `ExpectationRowStore` carry both readers; `OperatorInboxStore` is strict only and the other three are tolerant only, rewriting from that tolerant read and dropping an unparseable row permanently. Restated as the rule the contract actually makes — every rewrite of an AUTHORITY-BEARING log reads strictly. **(b)** The claim that `durable_store.py`'s opening "summarizes '7-18% record loss'" is **stale**: that text was replaced earlier in this leaf with the per-store figures, and no `7-18` string exists anywhere in the code tree (the only match is an unrelated 2026-07-18 timestamp). The sentence noting the two were "not obviously the same measurement" went with it. **(c)** "0 lost across 10 runs of all three scenarios" overstated coverage on two axes; `MultiProcessDurabilityTests` asserts `lost == 0` in all three scenarios but over FIVE stores in `forced_unlink` (attention dismissals has no `append` and is excluded by construction), and the torn/raised zeros only in `stress`. Added the one base-commit fact a reader can actually check — `HarnessSensitivityTests` extracts the base commit with `git archive` at test time — and stated once that no base-commit measurement artifact is committed, so every rate is quoted on the source's authority. Verification metadata pinned until closeout stamps the L5 commit.
-
-- 2026-08-01T13:20+02:00 — 260731-EFA-L5 curator. Added the `260731-EFA-L5 Entity Clarifications`
-  section and updated five entity entries. **Method, since the verdict is not readable off the file
-  list:** intersected every entity's `Evidence Paths` against the leaf's 25-file changed set, then
-  read the hunks in each hit to decide moved vs re-signed. Five entities intersect —
-  **External Memory Ledger, Worktree Contract, Provider Degradation Protocol, Supervisor Sweep,
-  Task Document** — and **three moved, two were only re-signed**. Moved: *Worktree Contract*
-  (`series-contract.md` front matter gained `schemaVersion`, and `load_contract` gained a
-  document-level unknown-major refusal that reuses the durable-store version policy rather than
-  declaring a second one); *External Memory Ledger* (behaviour byte-identical, but R12 turned the
-  unguarded whole-file write from an unexamined omission into a decided property resting on a new
-  caller obligation — write and commit in the same function); *Supervisor Sweep* (its cooldown log
-  went from unlocked to locked across read and rewrite, and its inbox store became the leaf's one
-  declared exception to single-owner compaction). Re-signed only: *Provider Degradation Protocol*
-  (`operator_inbox_records.py` moved solely in the record base class; detector, state machine,
-  thresholds, failsafe and role/kind literals untouched — the same call the HFX2-L1 note above
-  already made) and *Task Document* (`snapshots.py` changed, but in `read_gates` and
-  `read_expectation_rows`; every task-document reader is byte-identical, verified hunk by hunk).
-
-  **Recorded three declarations that now live outside their entity's evidence set**, rather than
-  silently extending any evidence set — that changes what `git-blob-set-v1` hashes and is a
-  deliberate decision, not a curator's: Worktree Contract's version policy (in
-  `controlplane/durable_store.py`), Supervisor Sweep's compaction-ownership declarations (same
-  file), and two of External Memory Ledger's six write-and-commit call sites
-  (`worktrees/modules/start.py`, `memory/carryover.py`). None of these will ever surface as a stale
-  fingerprint row, which is why they are in prose. Also recorded, and left open for the manager and
-  the `controlplane/` curator: the whole `ar-durable-store/1.0` contract belongs to no entity —
-  checked against every `Evidence Paths` cell, nine `controlplane/` modules including the gate store
-  appear in none of them.
-
-  **Corrected one stale entry this leaf did not cause.** Supervisor Sweep's Migration Notes carried
-  a "Known HFX2-L11 deferral: `supervisor_signals.py` is an unbounded append-only log with no
-  compactor yet". `AgentNotifierSignalCooldownStore.compact` exists at the leaf's base commit
-  cit:([`AgentNotifierSignalCooldownStore`], mcp/src/agents_remember/controlplane/agent_notifier_signals.py:68-215) and `serving/supervisor.py` calls it once per sweep cit:([`run_agent_notifier_sweep`], mcp/src/agents_remember/serving/agent_notifier.py:95-182), returning the folded snapshot every `in_cooldown` check
-  then reads in memory. The note was false before L5; L5 only added the lock around that
-  read-filter-rewrite.
-
-  **No fingerprint hash and no evidence path was hand-edited**, and none could be: `git-blob-set-v1`
-  resolves `HEAD:<path>` and this leaf's code is uncommitted. The five stale rows are named in the
-  section for closeout to recompute. Verification metadata pinned.
-
-- 2026-08-01T10:50+02:00 — 260731-EFA-L4 curator, **three corrections to this register, all
-  re-derived from the working tree**. (1) *The TypeScript partition.* The `260731-EFA-L4 Entity
-  Clarifications` section said "The TypeScript mirror has **not** adopted that partition; it still
-  keeps `LIFECYCLE_STATES` and `TERMINAL_STATES` as two lists that can disagree." A worker landed the
-  partition in `dashboard/src/types/projection.ts` after that was written: the halves are written out
-  (`LIVE_STATES`, `TERMINAL_STATES`, `LIFECYCLE_STATES`, and `ACTIVE_STATES`) cit:([`LIVE_STATES`, `TERMINAL_STATES`, `LIFECYCLE_STATES`, `ACTIVE_STATES`], dashboard/src/types/projection.ts:9-9; dashboard/src/types/projection.ts:11-11; dashboard/src/types/projection.ts:13-13; dashboard/src/types/projection.ts:21-21) with no `Exclude<>` anywhere. Replaced with the current fact
-  *plus its honest limit*, verified here by mutation rather than taken on report: double-filing
-  `"completed"` onto `LIVE_STATES` fails with `error TS2344: Type '"completed"' does not satisfy the
-  constraint 'never'`, while a duplicate *within* one half (`["running", "running", …]`) compiles
-  clean — `Literal` collapses it in Python, a tuple does not — and is caught only at runtime, where
-  it fails three assertions in `dashboard/src/test/contract.test.ts` (3 failed / 12 passed).
-  `projection.py`'s "STATE OF THE MIRROR" comment now records the same reading. (2) *The response
-  contract, which this file contradicted itself about 250 lines apart.* The body said "59 of the 61
-  routes return a `Response` subclass **or feed an `EventSourceResponse`**" (right) while the 09:33
-  history entry said "59 of 61 routes return a `Response`" (wrong —
-  it collapses the SSE pair into the `Response` count and implies all 59 are the same shape). Both
-  now state the verified split, which `serving/response_contract.py`'s own docstring and
-  `mcp/tests/test_serving_response_conformance.py` carry: **57** handlers return a `Response`
-  subclass, **2** are SSE async generators (`GET /api/stream`, `GET /api/events`) = **59** on which
-  `response_model` validates nothing, and the remaining **2** (`GET /api/terminal/sessions`,
-  `GET /api/harnesses`) return a bare dict and *are* validated by FastAPI. Also tightened "declares a
-  strict `extra="forbid"` model for **every route** the serving app registers" to **every HTTP
-  route** — the websocket `WS /api/terminal/{session}` has none, which the same paragraph already
-  said twelve lines later. (3) *The fixture-provenance chain.* The dashboard-mirror paragraph named
-  the unheld link as "the mirror↔server link", which is the composed claim rather than the link, and
-  described `contract.test.ts` as a one-way measurement. Restated as four nodes and three links
-  (`wire.ts` →A→ `projection.ts` →B→ `snapshot.json` →C→ `projection.py`), with link B's three
-  directions named and link C identified as the one held by nothing; added the one-letter trap
-  (`mirror ⊆ served` is enforced, `mirror ⊆ server` is not) and re-stated the no-generator negative
-  at the strength the evidence supports — **no in-repo generator and no in-repo mechanism keeping the
-  two sides in step**, which cannot exclude a generator outside this repository. No fingerprint hash,
-  no evidence path, and no verification-metadata cell was touched; the eleven stale rows recorded
-  below still await closeout.
-
-- 2026-08-01T09:33+02:00 — 260731-EFA-L4 curator: derived the moved set from the diff by intersecting
-  every entity's evidence paths with the leaf's 149 changed files, then reading each hit. Eleven
-  entities have a changed evidence blob (Memory Quality Control, External Memory Ledger, Worktree
-  Contract, Worktree Integration, Seat Retirement, Seat Landing Archive, Supervisor Sweep, Task
-  Document, Delivery Injector, Harness Capability Snapshot, Harness Submission Authority); nine of
-  those moved in substance and were edited, while **External Memory Ledger** and **Delivery
-  Injector** were only re-signed by neighbours and are recorded as such. A twelfth, **Coordination
-  Context**, moved *without* its fingerprint moving — `kernel/coordination_context/models.py` is not
-  in its evidence set, and that is where `memory_mode` became the worktree contract's `MemoryMode`
-  alias. Checked and found unmoved: Onboarding Unit, Runtime AGENTS Template Package, Path Rule,
-  File-Level Onboarding Content Model, Light Task Artifact, Memory Baseline Adoption, Branch-Gated
-  Cross-Repo Source, Provider Degradation Protocol, Seat Binding Identity — none of their evidence
-  files is in the diff, and the near misses were checked by hand
-  (`observer/worktree_provider_admission.py` is not degradation-protocol evidence and its one
-  changed line replaces an inline literal set with the module's existing
-  `ARCHIVED_CLEANUP_STATES`; `models/terminal.LeafAssignmentStatus` folds in `worktrees.leaf_refs.LeafRefStatus`,
-  and because `Literal` flattens nested aliases the published attach vocabulary is byte-identical).
-  Corrected the **Worktree Contract** claim that closeout's quality wrapper runs "before any
-  mutation" and "gate failure preserves every one of those states": where the gate runs it now
-  stages the whole task worktree first, that index write is a mutation, and it is deliberately not
-  undone on refusal — the entry, its Parent / Child row and its `Closeout quality gate` projection
-  row all say so, including why the two refusals must precede the `git reset`. Recorded the contract
-  reader's new totality and the exact write-boundary (a hand-edited contract still loads, degraded
-  and quarantined), the `ContractCells`/`amend_contract` replacement for `dataclasses.replace`, the
-  six reconciled wire vocabularies, and the one genuine response change (`nextTool`/`nextArgs`/
-  `nextRequiredArgs` omitted rather than filled). Added a `260731-EFA-L4 Entity Clarifications`
-  section, which also states plainly that the new HTTP `response_model` declarations are a contract
-  and not an enforcement (of the 61 HTTP routes, 57 return a `Response` subclass and two more are
-  SSE async generators feeding an `EventSourceResponse` — 59 on which FastAPI serializes nothing and
-  so validates nothing; the remaining two, `GET /api/terminal/sessions` and `GET /api/harnesses`,
-  return a bare dict and *are* validated by FastAPI; the conformance suite is what holds the 59) and
-  that `dashboard/src/fixtures/snapshot.json` is
-  hand-maintained with **no generator**, so the mirror↔server link is unchecked
-  **[Sharpened 2026-08-01T10:50 — read "no generator *in this repository*"; and the unheld link is
-  `snapshot.json` against `projection.py`, not "mirror↔server", which is the composed claim. The
-  section body now states both precisely.]**. Repaired seven
-  citations in **Harness Capability Snapshot**, two of which were out of bounds. Recorded, as a
-  dated verification note under **Delivery Injector**, that `serving/injector.py` and
-  `serving/harness_adapters.py` have no importer under `mcp/src/` at all — drift that predates this
-  leaf and that no fingerprint could flag, because the modules that took delivery over are not in
-  that entity's evidence set. No fingerprint hash and no evidence path was hand-edited: this leaf's
-  code is uncommitted and `git-blob-set-v1` resolves `HEAD:<path>`, so closeout must recompute all
-  eleven stale rows against the landed commit. Verification metadata pinned until closeout stamps
-  the commit.
-
-- 2026-07-31T20:58+02:00 — 260731-EFA-L3 curator: reviewed the six entities whose evidence this leaf
-  touched, after six private `run_git`/`_run_git` copies were consolidated onto the single owner
-  `kernel/git_command.run_git` (strips the eight `GIT_REPOSITORY_SELECTOR_ENV` variables via
-  `git_environment()`; `GIT_LOCAL_TIMEOUT_SECONDS = 300` / `GIT_REMOTE_TIMEOUT_SECONDS = 120` /
-  `GIT_METADATA_TIMEOUT_SECONDS = 30` replace the hard-coded `timeout=5`). Three entries were
-  understated and were corrected. **External Memory Ledger**: writing `memory.md` is plain I/O, but
-  *publishing* a row is a commit (`closeout.py` and `integrate.replay_memory_content` via
-  `require_git` / `commit_if_dirty`) that ran through an unguarded copy, so an exported `GIT_DIR`
-  could put the compatibility record in another repository; the Description now records that the
-  commit is guarded. **Worktree Integration**: this phase's mutations — the code `rebase`, the memory
-  `checkout -b` + `rebase --onto` replay, both `merge --ff-only` landings and the two rollback
-  `reset --hard` calls in `_merge_integrated_commits` — had neither the environment guard nor any
-  timeout, so the entry's "all-or-nothing" claim never said *which* repositories it held for; also
-  recorded that cleanup's `ls-remote --heads` and `push origin --delete` now run under
-  `cleanup._remote_git` at 120s and report a stall as the already-defined `remote-unreachable` reason
-  instead of holding an uncancellable MCP tool call open. **Memory Quality Control**:
-  `check_missing_onboarding.py`'s private copy became a `require_git` wrapper over the shared runner
-  (non-zero exit still fatal), so the added-sources scan (`diff --cached`, `diff`, `ls-files
-  --others`) and the drift / entity-fingerprint blob reads (`rev-parse HEAD:<path>` in
-  `git_blob_hash`) can no longer be answered by an inherited `GIT_DIR`. Three entries were left
-  unchanged because their diff is a pure import repoint that does not touch what the entity is:
-  **Onboarding Unit** (`drift.py` is a one-line import move; the unit's definition, key identifiers
-  and maintenance rules are untouched), **Worktree Contract** (`guidance.py`'s only `run_git` is the
-  `show -s --format=%cI` dating of a ledger row, and the contract fields, `sync_log` and closeout-gate
-  ordering are unchanged) and **Task Document** (`snapshots.py`'s `run_git` is the best-effort
-  ledger-popover `git log --no-walk`, not the summary/body task-document projection the entry
-  describes). No metadata or fingerprint cell was hand-edited; closeout recomputes those.
-
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2 curator: recomputed the `git-blob-set-v1` fingerprints for
-  the nineteen entities the closeout preview flagged (Onboarding Unit, Runtime AGENTS Template
-  Package, Coordination Context, Path Rule, Memory Quality Control, External Memory Ledger, Memory
-  Baseline Adoption, Worktree Contract, Worktree Integration, Branch-Gated Cross-Repo Source,
-  Provider Degradation Protocol, Seat Binding Identity, Seat Retirement, Seat Landing Archive,
-  Supervisor Sweep, Task Document, Delivery Injector, Harness Capability Snapshot, Harness
-  Submission Authority) against the staged index, since the leaf's code commit has not landed yet;
-  the two unflagged rows were re-verified and already matched. Added a `260731-EFA-L2 Entity
-  Clarifications` section recording that **no entity was added, removed, split, merged or moved** —
-  the fingerprints turned because implementations were re-signed onto parameter objects — and naming
-  the changes that do alter what a caller may write: the resolver's keyword-bundle input API
-  (`CoordinationHints`/`EnclosureSelector`, resolved output unchanged), the `SeatClosure` provenance
-  shared by retirement and landing, `EscalationSchedule`/`OwnerSignal` in the sweep, the
-  single-capability-decision-point in the submission authority (and the two deleted duplicate
-  re-checks that were **not** relaxations), and the relocation of the liveness hysteresis config from
-  `terminal_liveness.py` to `terminal_catalog.py`. Corrected the Delivery Injector relationship row,
-  which claimed it wraps `TerminalPaster.paste` unchanged: dispatch now goes through the separate
-  `paste_dispatch` whose acceptance probe is required by the signature, replacing a deleted runtime
-  `ValueError`. Closeout should re-verify every fingerprint against the landed `HEAD`.
-
-- 2026-07-24T14:31Z — 260718-CHATS-L5I incremental CRAP/commit-gate curation:
-  clarified the Worktree Contract projection so approved closeout runs the strict
-  repository wrapper before any mutation and preserves all code, memory, ledger,
-  contract, and applied-gate state on failure. Existing entity fingerprints remain
-  intentionally unchanged until the code commit.
-
-
-- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: clarified the existing Harness Capability Snapshot and Harness Submission Authority projections for fixture-backed interrupt evidence and queued-receipt honesty; fingerprint values intentionally unchanged before code commit.
-
-
-- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: extended `Harness Capability Snapshot` for the
-  R2 resolved-identity launch acceptance (requested-alias-wins-on-resolved-model; the opus[1m]/default
-  collision is accepted, a genuinely different model still refused). No entity added or renamed.
-  Honest finding: entities.md carries NO conversation-capability (`FeatureCapability`/
-  `ConversationCapabilities`) entity, so the R4 version-gate removal required NO version-lock
-  correction here — that doctrine lives in the `serving/conversation/*` capability sidecars/overviews.
-  Fingerprint note: L5F changed several `Harness Capability Snapshot` evidence files
-  (`harness_control_models.py`, `harness_control_bridge.py`, `harness_control_client.py`,
-  `harness_control_claude.py`, `harness_launch.py` — R1 native-method carry, R2 acceptance, R6 honest
-  control-socket note), so its `git-blob-set-v1` fingerprint is now STALE; the changes are uncommitted,
-  so closeout must recompute the fingerprint after the candidate commit.
-
-- 2026-07-20T00:08+02:00 — 260718-CHATS-L2E curator: extended both harness entities for the native
-  control-plane substrate; no entity added or renamed. `Harness Submission Authority` records the
-  paged never-bodies `operation_timeline` enumeration, the once-only pre-tombstone
-  `WithdrawalRecovery` payload, and the asset-carrying submit channel in its description,
-  key-identifier, and daemon-boundary/server-authority projection rows, and its evidence set
-  gains the four channel files `harness_control_models.py`, `harness_control_queue.py`,
-  `harness_control_ipc.py`, and `harness_control_client.py` (10 → 14 paths). `Harness Capability
-  Snapshot` records the structural `InterruptCapableAdapter`/`AssetSubmitCapable` capability
-  contract (fail-closed typed refusal naming the adapter, fixture-gated enablement) in its
-  description, key-identifier, and normalized-adapter projection rows, and its evidence set gains
-  `harness_control_bridge.py`, `harness_control_models.py`, and `pi_rpc_events.py` (17 → 20
-  paths). Both fingerprint rows carry candidate working-tree fingerprints (`Harness Submission
-  Authority` `sha256:7072511b2fc0fd4efc510dac0f57dd272f5928954b843d2bccfbc6e56d4787f6`,
-  `Harness Capability Snapshot` `sha256:204ce5d816238315e6c9920e7ecbbe56a8d4eb206618a17381b79872b5c54b64`)
-  computed over the extended sets with the canonical `git-blob-set-v1` line format (validated by
-  reproducing both prior rows from HEAD blobs); closeout must recompute both against the landed
-  L2E code commit via `refresh_entity_fingerprints_for_context`.
-
-- 2026-07-19T09:15+02:00 — 260718-CHATS-L0E curator: extended both harness entities for the native
-  evidence and resume substrate. `Harness Capability Snapshot` records the additive codex-only
-  `resume_thread_id` launch channel (opener → `RunnerConfig` payload → factory → sole
-  `CodexAppServerSettings` site, pre-spawn fail-closed, never validated/authorized by the opener)
-  in its description, naming-drift, key-identifier, and launch-boundary projection rows.
-  `Harness Submission Authority` records the additive read-only `submission-provenance` batch
-  (epoch-checked, 1..64 unique ids, exact three-source disclosure with honest not-found, sole
-  bridge → queue → authority delegation) in its description, key-identifier, and daemon-boundary
-  projection rows. No entity was added or renamed and no evidence path list changed; both
-  fingerprint rows stay pinned to the committed L0 base because the leaf's code is uncommitted.
-  Candidate working-tree fingerprints are `Harness Capability Snapshot`
-  `sha256:601bc93731ef22bb94336e0a2212f954d57727b2a1905e507db41042224f89ce` and
-  `Harness Submission Authority` `sha256:1526ac63bf4fca6794b6f840d0216e3dcb6ea9db1aba9cd00183d6715202c180`;
-  closeout must recompute both against the landed L0E code commit.
-
-
-- 2026-07-18T15:22+02:00 — FEUI-MX-FIX-2 curator: clarified that dashboard binding identity is
-  materialized only from the validated accepted server row and that failed/request-only opens create
-  no provisional binding row. The Seat Binding Identity fingerprint remains pinned pending closeout
-  recomputation against the landed code commit.
-
-
-- 2026-07-18T07:22+02:00 — FEUI-L8 curator: moved Seat Landing Archive dashboard evidence from
-  retired `sessionGroups.ts`/`Chats.tsx` to `railModel.ts`, `SessionRail.tsx`,
-  `sessionLifecycle.ts`, and `LandedCleanupNotice.tsx`; preserved read-only landed inspection and
-  exact cleanup outcome/unknown-result recovery. Fingerprint recomputed from current HEAD evidence;
-  closeout will recompute after the L8 code commit.
-
-- 2026-07-17T21:39+02:00 — 260715-FEUI-L5 curator: added the load-bearing `Harness Submission
-  Authority` entity and cross-layer projection for the sole epoch-bound prompt/setter timeline,
-  atomic dispatch/withdraw, full refs, early-completion dominance, raw-free bounded status,
-  dispatch-now adapters, and revision-safe pop-back. Updated `Harness Capability Snapshot` to remove
-  stale shared/native queue ownership and distinguish capability evidence from lifecycle authority.
-  Candidate working-tree fingerprints are `Harness Submission Authority`
-  `sha256:bcea73128e11...` and `Harness Capability Snapshot` `sha256:8ca47ead9a60...`; closeout must
-  recompute both against the landed FEUI-L5 code commit.
-
-- 2026-07-17T04:20+02:00 — 260715-FEUI-L6 curator: extended the two cockpit consumption records —
-  Seat Retirement gains the L6 residual surface (the focus-independent
-  `retireControlStopError` sweep into informational, never-dropped stage notes + the retired-row
-  inspector) and the explicit boundary that the cockpit renders retirement but cannot issue it
-  (the retire route requires a catalog actor seat; the cockpit's operator action is the honest
-  terminate confirm); Seat Landing Archive gains the L6 cleanup-outcome rendering (the rail shows
-  the landed-cleanup route's own closed + skipped-with-reasons response via `endLandedDetailed`).
-  No entity was added or renamed; fingerprints remain pinned to the committed base and must be
-  recomputed after the L6 code commit.
-
-- 2026-07-17T02:30+02:00 — 260715-FEUI-L2 curator: recorded the sessions cockpit as a live
-  consumer on Seat Retirement (the `seat.retired` pre-apply path + provenance surfaces) and Seat
-  Landing Archive (rail completed folders + master/sprint bulk end over the same landed-cleanup
-  endpoint, `seat.landed` pre-apply), adding the dashboard seatEvents/railModel/SessionRail
-  source references. No entity was added or renamed; fingerprints remain pinned to the committed
-  base and must be recomputed after the L2 code commit.
-
-- 2026-07-16T07:27+02:00 — 260714-ACPUI-L5 curator: closed the live three-harness matrix for
-  Harness Capability Snapshot and added Claude's exact discovery-only MCP isolation versus normal
-  installed-session startup. Recorded dynamic Fable, Codex queued promotion, Pi readback/clamp,
-  resource-evidence, and startup-failed stop boundaries; expanded the curated evidence set from 16
-  to 17 paths. The fingerprint reflects the committed L4 base and must be recomputed after the L5
-  code commit.
-
-- 2026-07-16T06:26+02:00 — 260714-ACPUI-L4 curator: extended Harness Capability Snapshot through
-  the daemon boundary: bounded install-fingerprinted advertise with auth-refresh quarantine,
-  settings/request launch convergence through one live-truth opener, exact-session setters,
-  first-byte ambiguity, idempotent whole-message submit, retained reconciliation without resend,
-  raw-free public responses, and liveness-first status classification. Preserved role spawn and the
-  durable bus, and expanded the curated evidence set from 12 to 16 paths. The L3 fingerprint remains
-  intentionally pinned until closeout commits L4 code and recomputes the expanded set.
-
-- 2026-07-16T01:34+02:00 — 260714-ACPUI-L3 curator: extended Harness Capability Snapshot to the
-  implemented normalized `CapabilitySnapshot`/`SetResult` pair, exact five-value truth contract,
-  queue-ordered setters, and truthful Claude correlated-terminal, Codex fresh-turn, and Pi bounded
-  error/clamp semantics. Recorded the dynamic Fable correction and preserved settings-owned role
-  spawn plus the durable inbox/brief bus as independent moats. Expanded the curated evidence set;
-  its prior fingerprint remains intentionally pinned until closeout creates the L3 code commit and
-  the new Pi configuration source has a `HEAD` blob.
-
-- 2026-07-15T23:16+02:00 — 260714-ACPUI-L2 curator: expanded Harness Capability Snapshot from the
-  L1 advertise-only state to settings/role-resolved `ResolvedLaunch`, pre-discovery conflict
-  refusal, dynamic model-gated validation, Claude/Codex/Pi native launch channels, honest effective
-  evidence, the temporary roleless Codex default, exact Pi identity, Claude mismatch failure, and
-  the L3/L4 handoff. Curated eight load-bearing evidence paths; the prior committed fingerprint is
-  deliberately retained only until manager closeout recomputes it against the L2 code commit.
-
-- 2026-07-15T20:04+02:00 — 260714-ACPUI-L1 curator: added the selective Harness Capability
-  Snapshot entity for the normalized contract, three native dynamic catalog projections, cached
-  advertise versus transient discovery, ACP Sense 1 derived view, and explicit no-transport/no-
-  prompt boundary. Fingerprint uses current worktree blobs and closeout must recompute it against
-  the eventual L1 code commit.
-
-- 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: reviewed the Provider Degradation Protocol
-  entity for the additive inbox reader seam; only the exact two delivery-evidence fields are
-  tolerated and the fingerprint is refreshed by delegated closeout after the code commit.
-
-- 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
-
-
-- 2026-07-10T21:05+02:00 — Super-exit curator fingerprint reconciliation against code commit
-  `e400ed0ce98752d1b65d00de97c9b84c7ea20814`: recomputed all 19 `git-blob-set-v1` entity rows
-  with the canonical ref-pinned algorithm; every stored fingerprint matched, every inventory entry
-  had exactly one row, and no evidence path was missing. Entity prose was reviewed as unchanged.
-
-
-- 2026-07-10T19:49+02:00 — Positional 260707-HFX2-L19: refreshed the existing `Supervisor Sweep`
-  entity for the hosted-delivery retry-before-escalation boundary; added the guard/attempt threshold
-  identifiers, detection and inbox-state relationships, and the F1 regression-pin disposition.
-  Refreshed its current candidate-worktree fingerprint to `sha256:11b285be...`. Also reviewed the
-  `Seat Landing Archive` shared manager/orchestrator role evidence: those changes add only
-  Developer Clarification Triage and do not alter landing/archive semantics, so its prose remains
-  unchanged while its candidate fingerprint refreshes to `sha256:9a392aab...`. Manager-owned
-  closeout must recompute both against the eventual L19 code commit.
-
-
-- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: added the selective cross-layer `Seat Binding
-  Identity` entity for canonical `(leafKey, seatRole)` ownership, origin-vs-current-role
-  separation, legacy migration, live replacement, explicit hand-opened claims, and dashboard/
-  control-plane projections. Updated Seat Retirement and Supervisor Sweep for pair identity and
-  binding-first authority/routing; Seat Landing Archive now lands current roles. Preserved reviewer
-  O1 migration-read race, O2 local trust model, O3 reopen precedence, and O4 bounded fixed-point
-  adjustment at their actual entity homes. Refreshed candidate working-tree fingerprints:
-  `Seat Binding Identity` `sha256:b1ca3089...`, `Provider Degradation Protocol`
-  `sha256:6399c205...`, `Seat Retirement` `sha256:5b40314e...`, `Seat Landing Archive`
-  `sha256:edf86482...`, `Supervisor Sweep` `sha256:cbdd9c09...`, `Task Document`
-  `sha256:460b3970...`, and `Delivery Injector` `sha256:e9eea669...`. The last three shared-file
-  entities retain their prior meaning except where explicitly described; closeout must recompute
-  all candidate fingerprints against the eventual L17 commit.
-
-
-- 2026-07-10T13:41+02:00 — 260707-HFX2-L16: refreshed the Task Document entity for merged
-  on-demand bodies, explicit unavailable-body fallback, and single-rendered steps; recorded the
-  scalar-overwrite/cache notes. Seat Landing Archive meaning is unchanged, but its shared
-  `sessionGroups.ts` evidence moved to repo-qualified sprint grouping. Candidate-worktree
-  fingerprints are `Task Document` `sha256:89352b...` and `Seat Landing Archive`
-  `sha256:6f06df...`; closeout must recompute both against the eventual code commit.
-
-
-- 2026-07-10T13:03+02:00 — 260707-HFX2-L15: refreshed Delivery Injector and Supervisor Sweep for
-  harness-log acceptance, duplicate-safe bounded recovery, explicit replacement-leaf chain credit,
-  and one-row redelivery. Refreshed their candidate-worktree fingerprints and the shared changed
-  evidence fingerprints for Seat Retirement, Seat Landing Archive, and Task Document after review
-  confirmed those three entity meanings were unchanged. Closeout must recompute all five against
-  the eventual code commit.
-
-
-- 2026-07-10T02:39+02:00 — HFX3 retro curation: refreshed `Runtime AGENTS Template Package` for
-  the coordinator template's otherwise-free-chat launcher and settings-owned architect spawn;
-  recomputed its worktree-content fingerprint to
-  `sha256:5adc4ca9be01f8499b29818bbbb6f2677c1a6a38d61b3a52cd0bb96c0e008b9f`.
-  Closeout must recompute against the eventual two-parent code commit.
-
-
-- 2026-07-10T01:14+02:00 — 260707-HFX2-L13 curator pass: refreshed the existing `Supervisor
-  Sweep` entity for current-manager-first routing, leaf-chain progress, redundant rung dwell, same-
-  sweep transition protection, and completion wake; explicitly retained the accepted unbound-worker
-  S1 follow-up for HFX2-L14. Added the selective cross-layer `Task Document` entity for bounded
-  summary broadcast plus path-confined on-demand bodies and dashboard path/revision caching.
-  Fingerprints were computed from current worktree blobs and remain closeout-verification inputs
-  until the eventual L13 code commit exists.
-
-
-- 2026-07-09T14:05+02:00 — 260707-HFX2-L11 curator pass: split the old completion-edge
-  auto-retire model into two current entities. `Seat Retirement` now covers explicit/authority-
-  checked termination and landed-group cleanup only, with a refreshed fingerprint over retire
-  surfaces. Added `Seat Landing Archive` for `status:"landed"`, `_auto_land_completed_seats`,
-  `autoLandedSeats`, sweep-cold liveness behavior, dashboard grouping, package-data doctrine, and
-  explicit cleanup; fingerprint computed over current uncommitted worktree blobs. Recorded the
-  known limitation that a landed row whose tmux session later dies is not reclaimed by the
-  background sweep. Verification metadata pinned until closeout stamps the HFX2-L11 commit.
-
-- 2026-07-09T11:19+02:00 — 260707-HFX2-L9 (redelivery cadence + signal throttling, curator
-  pass): EXISTING-ENTITY update, not a new entity — `Supervisor Sweep`'s evidence, Description,
-  Key Identifiers, Parent/Child row, Source References, Migration Notes, and Cross-Layer Projection
-  now include the 900-second redelivery floor (`inbox_backoff.py`), floor-aware inbox scheduling
-  (`operator_inbox_store.py`), and the persisted signal cooldown store (`supervisor_signals.py`).
-  The new store's unbounded/no-compactor limitation is explicitly recorded as an HFX2-L11 deferral.
-  Fingerprint computed over current worktree content with `git hash-object` because the code is
-  uncommitted. Verification metadata pinned until closeout stamps the 260707-HFX2-L9 commit.
-
-- 2026-07-08T23:59+02:00 — 260707-HFX2-L5 (doctrine rewrite + focused liveness simulations, curator
-  pass): NOT a new entity — this leaf touches no runtime code (5 doctrine-only `skills/` files
-  synced to 9 downstream copies + 1 new test file). `Supervisor Sweep`'s Migration Notes gains a
-  forward-reference row recording a real gap the new `mcp/tests/test_liveness_simulations.py` found
-  and documented in THIS entity's own module: `evaluate_predicates` cannot be fed an injectable pane
-  capturer through `AgentNotifierContext`, so 2/8 of the leaf's P-15 fixture-zoo scenarios stay hybrid
-  (predicate-unit classify + real downstream sweep response) rather than full end-to-end — recorded
-  as a forward reference for the natural follow-up leaf (thread a capturer parameter through
-  `AgentNotifierContext`/`evaluate_predicates`), in the same spirit as this entity's own
-  Naming-Drift-row forward reference to the L3 injector before that leaf existed. Verification
-  metadata pinned until closeout stamps the 260707-HFX2-L5 commit.
-
-- 2026-07-08T23:15+02:00 — 260707-HFX2-L4 (P-15 tier 3 escalation ladder + dead-man respawn, curator
-  pass): EXISTING-ENTITY update, not a new entity — `Supervisor Sweep`'s evidence/Description/Key
-  Identifiers/Migration Notes extended to cover the two new `controlplane/` modules
-  (`escalation_ladder.py`, `orphan_policy.py`) and the `signal_routing.py` two-hop extension, judged
-  against this entity's OWN Migration Notes (written at HFX2-L3 closeout, anticipating this exact
-  leaf: "when it lands this entity's evidence paths and Description should be revisited"). Reasoning:
-  the ladder is wired DIRECTLY into `serving/supervisor.py` with no independent lifespan task or
-  settings family of its own — it extends this entity's existing detection/response/settings layers
-  rather than clearing the bar for a new entity (unlike `Delivery Injector`, which had its own
-  transport/classification/per-harness layer independent of the sweep). Fingerprint marked pending
-  recompute at closeout (this pass runs against an uncommitted worktree, so the current `HEAD` blob
-  hashes would not reflect the new evidence paths). Verification metadata pinned until closeout
-  stamps the 260707-HFX2-L4 commit.
-
-- 2026-07-08T22:30+02:00 — 260707-HFX2-L3 (paste injector hardening, R1-R5, curator pass): added the
-  `Delivery Injector` entity — `serving/injector.py`'s `deliver(row)` four-way `DeliveryOutcome`
-  contract plus `serving/harness_adapters.py`'s per-harness `HarnessAdapter` interface, judged
-  entity-worthy against the same bar `Supervisor Sweep` (HFX2-L2) was added under: a real cross-
-  cutting primitive that recurs across two independent call layers (the MCP spawn-tool payload
-  builder in `mcp/tools/` and the inbox/supervisor delivery layer in `serving/`) and had already
-  caused forward-reference naming ("the L3 injector") in `Supervisor Sweep`'s own Response row before
-  this leaf existed — exactly the recurring/naming-confusion bar the catalog workflow names. Judged
-  as a NEW entity rather than folding into `Supervisor Sweep`, since it is used by the spawn-brief
-  path which has nothing to do with the supervisor sweep at all; `inbox_delivery.py` is a caller of
-  this new entity, not itself added to `Supervisor Sweep`'s evidence set. Fingerprint computed via
-  `git hash-object` over the four evidence paths' current worktree content (no commit yet at this
-  leaf) — `sha256:312577ee…`. Added the matching Cross-Layer Projections entry. Also recomputed
-  `Supervisor Sweep`'s own `git-blob-set-v1` fingerprint (`sha256:48d7a2e6…`, was `sha256:b940f1f8…`)
-  because this leaf's diff touched `pane_signals.py`, one of that entity's own evidence paths (new
-  `blocked_reason_label`/`composer_state`, populated `_HARNESS_BLOCKED_PATTERNS["codex"]`) — reviewed
-  the diff directly: additive signatures the `Delivery Injector` entity composes, no change to
-  `classify_pane_signal`'s own precedence or `Supervisor Sweep`'s predicate/dispatcher/heartbeat
-  logic, so only a Migration Notes/Current Naming Drift update was warranted, not a Description
-  rewrite. Verification metadata pinned until closeout stamps the 260707-HFX2-L3 commit.
-
-- 2026-07-08T18:45+02:00 — 260707-HFX2-L2 (supervisor sweep + predicates): added the `Supervisor
-  Sweep` entity — a new load-bearing cross-layer protocol (predicate library + action executors +
-  self-liveness heartbeat + settings family + MCP-tool and dashboard surfacing) judged against the
-  same bar `Provider Degradation Protocol` (HFX-L7) and `Seat Retirement` (HFX-L8) were added under:
-  a genuine detection/response subsystem crossing multiple package routes (`serving/`, `kernel/`,
-  `mcp/tools/`, `dashboard/`), not a single-file feature. Fingerprint computed via `git hash-object`
-  over the five evidence paths' current worktree content (the code worktree has no commit yet at
-  this leaf; the blob hashes match what `HEAD:<path>` will resolve to once closeout commits land) —
-  `sha256:b940f1f8…`. Added the matching Cross-Layer Projections entry. Verification metadata
-  pinned until closeout stamps the 260707-HFX2-L2 commit.
-
-- 2026-07-08T16:15+02:00 — 260707-HFX2-L1 (curator delta round 2, closeout-preview gap): refreshed
-  the `Provider Degradation Protocol` `git-blob-set-v1` fingerprint (`sha256:98247629…`) after this
-  leaf's diff touched the entity's shared `operator_inbox_records.py` evidence path. Reviewed the
-  diff directly: the change adds `attemptCount`/`lastAttemptAt`/`nextAttemptAt`/`escalatedAt`
-  (R1 ack-semantics) and `ownerRole`/`ownerAgentId`/`ownerLifecycleId` (R4 hierarchical routing)
-  fields to `OperatorInboxEntry` — purely additive record fields for an unrelated feature, touching
-  neither the `AgentRole`/`InboxMessageKind` Literals this entity's `system-specialist`/
-  `degradation-alert` values live on, nor the detector/response protocol itself — so no entity
-  prose change beyond a short Migration Notes disclosure of the touch. Fingerprint computed
-  manually (sorted `path:blob_hash` pairs over `git hash-object` output on the leaf's uncommitted
-  working tree, joined `\0`, sha256), same as the Seat Retirement precedent, since no commit exists
-  yet for this leaf's diff to run the canonical `compute_git_blob_set_fingerprint` tool against;
-  flagged for recompute via the actual `c-02-memory-quality-control` skill tooling at closeout.
-
-- 2026-07-08T02:55+02:00 — 260707-HFX-L8 (seat lifecycle: retirement + live identity + turn-state,
-  issues #12/#4): added the `Seat Retirement` entity — the first genuine new cross-layer entity this
-  leaf introduces per the mgmt-L4 routing rule (catalog + policy + automation hooks + doctrine all
-  cross-cut). Live identity (rename) and live turn-state were judged NOT independently catalog-worthy
-  entities: rename is a simple identity-text field on the existing catalog row with no new protocol
-  of its own, and turn-state is a derived/observational signal (classification + projection), not a
-  load-bearing structural entity with its own authority/lifecycle — both are documented in the
-  relevant file sidecars and the `serving/` route overview instead. `git-blob-set-v1` fingerprint for
-  `Seat Retirement` was computed manually (sorted `path:blob_hash` pairs over `git hash-object` output
-  on the leaf's uncommitted working tree, joined `\n`, sha256) since no commit exists yet for this
-  leaf's diff to run the canonical `compute_git_blob_set_fingerprint` tool against; flagged for
-  recompute via the actual `c-02-memory-quality-control` skill tooling at closeout, same as several
-  prior entries in this history that left fingerprints pending a tooled recompute.
-
-- 2026-07-08T01:00+02:00 — 260707-HFX-L7 curator memory pass: added the `Provider Degradation
-  Protocol` entity (detector/state-machine, `providerDegradation` settings surface,
-  `system-specialist` role, `degradation-alert` inbox kind) with its Entity Inventory row and
-  Cross-Layer Projection. Fingerprint left pending — the R1+R2 evidence files are uncommitted at
-  this curator pass (code worktree HEAD `607cab0d`); recompute the `git-blob-set-v1` fingerprint
-  at closeout once the HFX-L7 commit lands.
-
-- 2026-06-28T19:10+02:00 — Main-carryover reconciliation (PR #95, code 84e95ad): recomputed the `Coordination Context`, `Branch-Gated Cross-Repo Source`, and `Path Rule` `git-blob-set-v1` fingerprints. The series carryover stamped them against the series tip (`bb69380`), but merged main changed their shared `coordination_context_resolver.py` evidence (the facade now re-exports `find_worktree_contract`, #90 / MCP 2.9.3), so the blob set differs at 84e95ad. Coordination Context + Branch-Gated Cross-Repo Source share evidence → `sha256:e23cab68…`; Path Rule → `sha256:83bad6ef…`. Recomputed with the canonical `compute_git_blob_set_fingerprint` and validated by reproducing the prior `bb69380` fingerprints first. Entity prose unchanged (the worktree_name fallback is a no-route-impact addition).
-
-- 2026-06-21T06:40+02:00 — Slice 05m (carryover-before-cleanup): updated the `Worktree Integration` entry's Description and its `Cleanup` Cross-Layer Projections row — cleanup (`cleanup_result`) is now carryover-guarded (hard-refuses until the parked memory is carried into official memory, proven by `guidance.carryover_done` against the official ledger, since cleanup deletes the parked memory branch the carry reads from) and, once carryover has run, retires both the worktree branch and the (PR'd) source branch (local for code + memory, remote for the code source branch). The `Worktree Contract` entry was left unchanged (its body records the `cleanup` contract field, not the lifecycle phase sequence). Entity metadata/fingerprint rows left for closeout recompute.
-
-- 2026-06-19T06:03: Slice 3c reopened (R4, leaf-doc fidelity) — the w-02 skill (SKILL/template) now documents the leaf extensions (`statusNote`/`headerNotes`/freeform `sections`). The `Light Task Artifact` evidence (the w-02 `package_data` skill files) changed; the `git-blob-set-v1` fingerprint row is left for closeout recompute.
-
-- 2026-06-19T05:15: Slice 3c reopened (R3, deferred-examples honesty) — the w-02 skill (SKILL/template/workflow) now teaches `codeExamplesNote` (a deferred planning slice records it so the render reads as deferred rather than none-needed). The `Light Task Artifact` evidence (the w-02 `package_data` skill files) changed; the `git-blob-set-v1` fingerprint row is left for closeout recompute.
-
-- 2026-06-14T00:16: Slice 3c commit 3 — the JSON-primary format now also covers a series `master` (`kind:"master"`: a `subTasks` index + ordered `sections`); updated the `Light Task Artifact` description. Its evidence (the w-02 `package_data` `SKILL.md`) changed again; the `git-blob-set-v1` fingerprint row is left for closeout recompute.
-
-- 2026-06-13T22:34: Slice 3c commit 2 — updated the `Light Task Artifact` entry for the JSON-primary task-document format: the `task_doc` MCP tool authors the `ar-task-document/v1` JSON and renders `task.md` (`light`/`subTask`; series master files stay hand-authored). Its evidence (the w-02 `package_data` skill files) changed; the `git-blob-set-v1` fingerprint row is left for closeout recompute.
-
-- 2026-06-11T14:32+02:00: Refreshed the `Path Rule` fingerprint after the rename sweep (PR #75, merged main `b9f1a31`) changed its `examples/mcp/settings.example.json` evidence; entity prose unchanged.
-
-- 2026-06-11T14:20+02:00: Re-verified the `External Memory Ledger` and `Worktree Contract` entries against merged main `b9f1a31` and recomputed both `git-blob-set-v1` fingerprints; the 2026-06-11T06:28 refresh had stamped them against a pre-merge worktree state whose evidence blobs did not survive the PR #63 landing verbatim. Entity prose verified accurate (sync_log, typed `WorktreeArgs` DTO, `AgentsRememberError` hierarchy all current); no prose changes.
-
-- 2026-06-11T06:28+02:00: Refreshed the `Worktree Contract` and `Worktree Integration` fingerprints after the issue #54 / 2.8.0 landing (`worktree_sync`, stale-base preflight) changed `worktree_contract.py`, `modules/guidance.py`, and the shared c-09 skill evidence. Recorded the contract's new `sync_log` base-pair field in the Worktree Contract entry and noted mid-task sync's `ff-only` preservation in the Worktree Integration entry; the rest of both entries remains accurate.
-
-- 2026-06-09T14:52+02:00: Reviewed the `Runtime AGENTS Template Package` evidence after MCP 2.4.1 changed the coordinator template, confirmed the entity description remains accurate with the hard onboarding trust gate, and refreshed its `git-blob-set-v1` fingerprint to `sha256:9e731db9b99f5a3c0910e323a50b1674f2d05544ce4b672318548b18b7ed4cfe`.
-
-- 2026-06-03T04:32+02:00: Refreshed the `Worktree Contract` and `Worktree Integration` fingerprints after the C-09 source-branch clarification changed their shared skill evidence; entity prose remains accurate.
-
-- 2026-05-31T12:30+02:00 — Updated External Memory Ledger, Worktree Contract, and Worktree Integration descriptions for the 1.0.0 review remediation: `LedgerError`/`ContractError` now subclass the shared `AgentsRememberError` typed-error family, worktree service functions take a typed `WorktreeArgs` DTO instead of `argparse.Namespace`, and integration's final merge is now atomic (pre-validates both fast-forwards and rolls both branches back on memory-side failure). Fingerprint rows left as-is for closeout recompute.
-
-- 2026-05-30T21:51+02:00: Recomputed the `Path Rule` (`sha256:7a2575aa…`) and `Runtime AGENTS Template Package` (`sha256:1bef3bb4…`) fingerprints after the 0.9.x run changed their evidence (`examples/mcp/settings.example.json` gained `timeoutCaps`; `install/runtime.py` gained `no_cache`); both entity descriptions were reviewed and remain accurate. Repaired the `Path Rule` Source References — the stale `README.md L122-L135` citation (out of range; path-rule guidance moved to `docs/`) now points to `docs/reference/path-rules.md`. Fingerprints recomputed with the canonical `compute_git_blob_set_fingerprint` and validated against an unchanged entity.
-
-- 2026-05-29T11:11+02:00: Refreshed the File-Level Onboarding Content Model fingerprint to `sha256:2c2e5cac` and aligned its prose to prepend-only update-history wording after source commit `1ccbc2d` corrected the file-level onboarding template's update-history comment from append-only to prepend-only.
-
-- 2026-05-25T20:57+02:00: Updated coordination context, path rule, and cross-repo source descriptions after the `c-08-ar-coordination-context-resolver` skill resolver moved behind focused `coordination_context/` implementation modules.
-
-- 2026-05-25T20:41+02:00: Updated worktree ledger, contract, and integration entity evidence paths after `c-09-git-worktree-manager` skill worktree lifecycle logic moved behind focused implementation modules.
-
-- 2026-05-25T16:37+02:00: Refreshed drifted onboarding verification metadata to source commit `a8ee844`, repaired packaged runtime evidence paths, and recomputed entity fingerprints.
-
-- 2026-05-24T10:06+02:00: Refreshed fingerprints after source commit `f48a346` moved Codex setup to `.codex`, removed source `.env` resolver authority, and added clean-source versus dirty-source drift classification guidance.
-
-- 2026-05-24T04:34+02:00: Renamed the drift-report entity to memory quality control, refreshed fingerprints after the `c-02-memory-quality-control` skill rename, and updated approval-gate evidence.
-
-- 2026-05-24T03:24+02:00: Refreshed worktree fingerprints after `c-09-git-worktree-manager` skill adopted the pre-code-commit missing-onboarding check.
-
-- 2026-05-24T02:47+02:00: Refreshed drift, baseline, and worktree fingerprints after memory quality moved drift integrity under `memory_quality` and `c-09-git-worktree-manager` skill adopted `memory_quality_check` closeout guidance.
-
-- 2026-05-24T00:37+02:00: Refreshed external memory ledger, baseline adoption, worktree contract, and worktree integration fingerprints after MCP worktree and memory controllers moved to service-backed result functions.
-
-- 2026-05-23T04:29+02:00: Updated Runtime AGENTS Template Package after templates moved provider startup guidance to `context_packet` MCP tool and external MCP settings authority.
-
-- 2026-05-22T13:32+02:00: Updated onboarding-unit and file-level content model entities after `c-05-create-or-update-onboarding-files` skill made domain-doc discovery provider-neutral while treating live registry-named documentation sources as authoritative over local mirrors. Fingerprints remain pinned until closeout commits the source change.
-
-- 2026-05-18T21:44+02:00: Refreshed drifted fingerprints after pulling the committed `c-04-retrieval-strategy-router` skill onboarding read-mode rename from `origin/main`.
-
-- 2026-05-18T21:38+02:00: Refreshed drifted fingerprints for runtime AGENTS template package, coordination context, and branch-gated cross-repo source after reviewing their current evidence paths.
-
-- 2026-05-16T18:08+02:00: Refreshed the runtime `AGENTS.md` template package fingerprint after closing out the benchmark workspace install and runner changes.
-
-- 2026-05-16T11:38+02:00: Refreshed the runtime `AGENTS.md` template package fingerprint after the benchmark installer `.gitignore` and Windows pruning fixes changed installer evidence.
-
-- 2026-05-16T11:08+02:00: Refreshed the runtime `AGENTS.md` template package fingerprint after the installer and template evidence set changed in the latest source commit.
-
-- 2026-05-15T12:57+02:00: Clarified that entity drift also checks inventory-to-fingerprint coverage, with missing rows and orphaned rows treated as actionable maintenance.
-
-- 2026-05-15T12:23+02:00: Added deterministic `git-blob-set-v1` fingerprints for current catalog entities and refreshed drift-report/onboarding-unit wording for overview and entity checks.
-
-- 2026-05-15T01:07+02:00: Clarified that `c-08-ar-coordination-context-resolver` skill's no-task-name `task_root` is the repo-specific task namespace under `ar-coordination/tasks/<repo>/`.
-
-- 2026-05-15T00:38+02:00: Added the runtime `AGENTS.md` template package entity after the source templates were consolidated under `mcp/src/agents_remember/package_data/runtime/agents-md-files/`.
-
-- 2026-05-14T20:00: Updated entity terminology after the alpha model switched to external-memory and `c-05-create-or-update-onboarding-files` skill renamed non-inline onboarding storage to sidecar onboarding.
-
-- 2026-05-12T10:59: Updated the external memory ledger entity after branch fields were removed from canonical ledger metadata.
-
-- 2026-05-11T19:01: Renamed the resolver entity to coordination context after `c-08-ar-coordination-context-resolver` skill moved its semantic API to coordination terminology.
-
-- 2026-05-09T23:55: Added worktree integration as a current lifecycle entity and updated contract fields for integration commits.
-
-- 2026-05-09T23:22: Updated coordination context and drift report entities after `c-08-ar-coordination-context-resolver` skill added `temp_root` and `c-02-memory-quality-control` skill moved reports under `temp/drift-reports`.
-
-- 2026-05-09T22:46: Added memory baseline adoption as the current-state entity introduced by `c-10-adopt-memory-baseline` skill.
-
-- 2026-05-09T22:10: Refreshed entity wording so ledger, contract, `c-09-git-worktree-manager` skill, and cross-repo v2 are described as implemented current state.
-
-- 2026-05-09T21:15: Created first `agents-remember` entity catalog for the preliminary onboarding baseline.
+- Selected operation passages and separately frozen named-step detail artifacts preserve source revisions without implying installation or new grants. [22]

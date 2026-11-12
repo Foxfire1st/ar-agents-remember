@@ -1,15 +1,5 @@
 # mcp/tests/test_fresh_user_harness.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_fresh_user_harness.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-17T10:35+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [mcp/tests/overview.md](overview.md)
@@ -30,9 +20,13 @@ later edit to the fixtures cannot quietly stop producing it.
 
 ### Logic
 
+Past-epoch loader account:
+
 `_load` imports a harness module by file path, since `scripts/e2e_harness/` is not a package; both
 `HARNESS_ROOT` and `MCP_SRC` are inserted into `sys.path` as **strings** rather than `Path`
 objects, because a non-`str` `sys.path` entry is silently ignored by the import machinery.
+
+Current loader account: `SCRIPTS_ROOT` names the scripts directory and joins `MCP_SRC` on `sys.path` as a string. `_load` imports `e2e_harness.<module>` with `importlib.import_module`, so the scenario and test share cached module objects and fixture-class identity. No parallel file-path loader is retained.
 
 `GOVERNED_HARNESS_MODULES` names the harness modules this suite answers for, and
 `FreshUserScenarioContractTests.test_every_governed_harness_module_this_suite_answers_for_exists`
@@ -43,16 +37,16 @@ The two classes and what each one defends:
 
 | Class | Defends |
 | --- | --- |
-| `FreshUserFixtureShapeTests` | the **fixture shape**: the over-cap fixture really crosses the shipped `MAX_SOURCE_FILE_BYTES` and carries the vendored tree and the distinct spear/sprint branches; the plain fixture stays inside every cap; and the fixture owns everything under its own run root. |
+| `FreshUserFixtureShapeTests` | the **fixture shape**: the oversized fixture has exactly `fresh_user_fixture.OVERSIZED_BYTES` generated-file bytes and carries the vendored tree and the distinct spear/sprint branches; the plain fixture excludes the vendored tree and uses `main`; and the fixture owns everything under its own run root. |
 | `FreshUserScenarioContractTests` | the **scenario contract**: a step that cannot run is reported as blocked by name and is never `completed`; every governed harness module this suite answers for exists; and the entry point requires `--reports` while defaulting its run root. |
 
 ### Conventions
 
-- Cap comparisons use the shipped `MAX_SOURCE_FILE_BYTES` / `MAX_SOURCE_BYTES` constants rather
-  than literals, so a case reddens when a ruled bound moves.
-- `sizes(root)` walks a fixture tree so a case can assert against real stat sizes.
-- The module is registered in the `unit-regression` evidence lane and is a declared **consumer** of
-  the two new `scripts/e2e_harness` catalog artifacts.
+- Size comparison uses the fixture-owned `OVERSIZED_BYTES`, not a retired citation source-index cap.
+- `sizes(root)` walks real fixture files for stat-size assertions.
+Past-epoch count caption: - The unit-regression module is a declared consumer of the three governed harness artifacts.
+
+Current count: `GOVERNED_HARNESS_MODULES` names four paths: fixture, scenario, reporting and runner. The existence assertion checks all four.
 
 ### Invariants And Boundaries
 
@@ -72,31 +66,47 @@ They are not the developer's repositories, and no card may describe them as such
 
 None.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The over-cap fixture really crosses the shipped per-file cap. | `test_the_over_cap_fixture_really_crosses_the_cap` | mcp/tests/test_fresh_user_harness.py:118-149 |
-| The plain fixture stays inside every cap. | `test_the_plain_fixture_stays_inside_every_cap` | mcp/tests/test_fresh_user_harness.py:151-168 |
-| The fixture owns everything under its own run root. | `test_the_fixture_owns_everything_under_its_own_run_root` | mcp/tests/test_fresh_user_harness.py:170-186 |
-| A step that cannot run is blocked by name and never reported as completed. | `test_a_step_that_cannot_run_is_blocked_by_name_and_not_completed` | mcp/tests/test_fresh_user_harness.py:192-216 |
-| Every governed harness module this suite answers for exists. | `test_every_governed_harness_module_this_suite_answers_for_exists`; `GOVERNED_HARNESS_MODULES` | mcp/tests/test_fresh_user_harness.py:218-222 |
-| The entry point requires `--reports` and defaults the run root. | `test_the_entry_point_requires_reports_and_defaults_the_run_root` | mcp/tests/test_fresh_user_harness.py:224-235 |
-| A non-`str` `sys.path` entry would be silently ignored, so both roots are inserted as strings. | `HARNESS_ROOT`; `MCP_SRC` | mcp/tests/test_fresh_user_harness.py:48-56 |
-| A governed harness module is loaded by path, since the harness root is not a package. | `_load` | mcp/tests/test_fresh_user_harness.py:64-99 |
-| The per-file cap the oversize case measures against. | `MAX_SOURCE_FILE_BYTES` | mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:23-23 |
-| The report path the entry point owns. | `REPORT_DIRECTORY` | scripts/e2e_harness/run_fresh_user.py:32-32 |
-| The entry point that drives the acceptance, removes its temporary root and exits on a failed invariant. | `main` | scripts/e2e_harness/run_fresh_user.py:47-82 |
+### Repo-Internal References
 
-## Cross-Repo References
+
+Retained earlier caption: - A governed harness module is loaded by path, since the harness root is not a package.
+
+Original-target custody: _load in blob 7e009d4b32c2f82a0a22371f55a3f93aaf5906d1 loaded flat harness modules by file path. Its current replacement imports the package-qualified identity through the scripts root; the historical loader sentence is detached from the live number.
+
+- Oversized generated-file bytes equal the fixture-owned OVERSIZED_BYTES; vendored tree, ignore file and distinct main/spear/sprint branch facts are asserted.
+
+
+- Plain fixture omits vendor/lib.py and uses main as its spear branch; it no longer asserts retired per-file or aggregate caps.
+
+- The fixture owns everything under its own run root.
+- A step that cannot run is blocked by name and never reported as completed.
+
+- Every governed harness module this suite answers for exists.
+
+- The entry point requires `--reports` and defaults the run root.
+- A non-`str` `sys.path` entry would be silently ignored, so both roots are inserted as strings.
+- The loader uses importlib.import_module with the e2e_harness-qualified module name. The test and scenario share cached module objects and fixture-class identity; a missing module raises rather than yielding an empty fixture.
+- The report path the entry point owns.
+- The entry point that drives the acceptance, removes its temporary root and exits on a failed invariant.
+
+- The unchanged GOVERNED_HARNESS_MODULES tuple names fixture, scenario, reporting and runner; the current package-qualified loader/root account shares cached module identity, and the existence assertion checks each declared path.
+
+### Cross-Repo References
 
 No sibling-repository contract defines these values.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
+No meaningful cross-repo references found.
 
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-
-- 2026-09-17T10:35+02:00 — 260915-CAPS-L14 curator: created this card for the test module the leaf adds. Records why the module exists at all (it is the **consumer of record** that makes the three new `scripts/e2e_harness` modules governed evidence artifacts with a real consumer and an executable replacement node), the two classes and what each defends, and, in its own section, the two exclusions its docstring states: it does not run the acceptance, and it does not claim the product's integration-branch authority. States plainly that the fixtures are disposable repositories created from nothing under one run root and **not** the developer's repositories. Verification metadata is left at this leaf's synced base `0346da9c` with a recorded working candidate, because the candidate is deliberately uncommitted — the governed closeout stamps the real code commit and no hash or digest was invented here.
+- The unchanged GOVERNED_HARNESS_MODULES tuple names fixture, scenario, reporting and runner; the current package-qualified loader/root account shares cached module identity, and the existence assertion checks each declared path. [12]
+- Oversized generated-file bytes equal the fixture-owned OVERSIZED_BYTES; vendored tree, ignore file and distinct main/spear/sprint branch facts are asserted. [1]
+- Plain fixture omits vendor/lib.py and uses main as its spear branch; it no longer asserts retired per-file or aggregate caps. [2]
+- The fixture owns everything under its own run root. [3]
+- A step that cannot run is blocked by name and never reported as completed. [4]
+- Every governed harness module this suite answers for exists. Anchor: `test_every_governed_harness_module_this_suite_answers_for_exists` `GOVERNED_HARNESS_MODULES` [5]
+- The entry point requires `--reports` and defaults the run root. [6]
+- A non-`str` `sys.path` entry would be silently ignored, so both roots are inserted as strings. [7]
+- The loader uses importlib.import_module with the e2e_harness-qualified module name. The test and scenario share cached module objects and fixture-class identity; a missing module raises rather than yielding an empty fixture. [8]
+- The report path the entry point owns. [10]
+- The entry point that drives the acceptance, removes its temporary root and exits on a failed invariant. [11]

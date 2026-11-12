@@ -1,0 +1,145 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c21ef23dc8e7179e020f7f27c3fe7cd4de3bc32e",
+        "content": "sha256:ca7f102cb6b47841f5fe5a6e47b19b5c72b95a695ded023b95675e4aea1a9da1",
+        "locator": {
+          "kind": "symbol",
+          "name": "_same_master_task_edge"
+        }
+      },
+      "id": "RLZ-RA6KK1",
+      "invariant": "INV-M3N2Y5",
+      "origin": {
+        "handoffEntry": "C2 reopen without limit",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Drops the parent-name edge that refused every master of pre-2026-09-29 vintage, which is what a leaf of such a master needs to start.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Typed admission evidence and bounded refusal projection.\n\nAnchor: `MasterSeriesContractSpecLike` `_master_series_admission_refusal`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c21ef23dc8e7179e020f7f27c3fe7cd4de3bc32e",
+            "content": "sha256:9812df5fe4bc4f7e42f5ab0ecd411ff4cf4526a59674adc4dc39187ae724a1db",
+            "locator": {
+              "kind": "symbol",
+              "name": "MasterSeriesContractSpecLike"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c21ef23dc8e7179e020f7f27c3fe7cd4de3bc32e",
+            "content": "sha256:50d06d82fc874cf6c88c09317e4bdc17575cf1bb7a1e15aefac57527a411127c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_master_series_admission_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c21ef23dc8e7179e020f7f27c3fe7cd4de3bc32e",
+            "content": "sha256:d0d06c62665db6aeb1282e23f290d0d6f0e9580690e3b8afcb69933f77a9812e",
+            "locator": {
+              "end": 159,
+              "kind": "line_range",
+              "start": 100
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c21ef23dc8e7179e020f7f27c3fe7cd4de3bc32e",
+            "content": "sha256:5b0c776a0b51f18c73ab4c4f41f3e6993706cb4eaf1ea0876bac3648f1ea67d5",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Existing contracts are classified before the separate edge checks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c21ef23dc8e7179e020f7f27c3fe7cd4de3bc32e",
+            "content": "sha256:7e3277ce2bff3fe8f9e694147b8109bb58e896a39eb4e4ff133f86c5b68d383a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_existing_master_series_contract"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "External memory is checked through real repository/worktree identity without a ledger-path argument.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c21ef23dc8e7179e020f7f27c3fe7cd4de3bc32e",
+            "content": "sha256:bd23f2c38658ae62772657d026dbf94718541c1dd7bb23b3f6b42323c58b2e5f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_repository_root"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c21ef23dc8e7179e020f7f27c3fe7cd4de3bc32e",
+            "content": "sha256:1d9c589edcdfb9e5a725c997f14ea8084adfc1d42181d6a205915746f11176d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_same_master_repository_edge"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c21ef23dc8e7179e020f7f27c3fe7cd4de3bc32e",
+            "content": "sha256:be0cb03faa5d007e33167cdbf13758005a7dfc5ea6390e6abed3ace13afe41c5",
+            "locator": {
+              "end": 279,
+              "kind": "line_range",
+              "start": 263
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Stable status-specific reason sentences are separate from bounded parser/admission detail and the addressed next operation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c21ef23dc8e7179e020f7f27c3fe7cd4de3bc32e",
+            "content": "sha256:5b0c776a0b51f18c73ab4c4f41f3e6993706cb4eaf1ea0876bac3648f1ea67d5",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

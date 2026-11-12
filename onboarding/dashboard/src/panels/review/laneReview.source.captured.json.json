@@ -1,0 +1,42 @@
+{
+  "path": "dashboard/src/panels/review/laneReview.source.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Both sides' exact blobs, complete.\n\nAnchor: \"\\\"object_id\\\": \\\"99f7742aa7822bbb2aa54c46ba72113e1f12c602\\\"\"; \"\\\"object_id\\\": \\\"87c7c5dcefcbaf93baf68a0c8eec34ad2dd11703\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b5afc3e91755520da5ce0d6f779f5765cebe24d7",
+            "content": "sha256:30f279be5577ed62b40724685027bc93e944ceb01dff8da1d92a522ab63600e6",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 2
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The receipt row for this body.\n\nAnchor: \"src/panels/review/laneReview.source.captured.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7310b805a789910931fd5a77e9562cb7cb6a6c8a",
+            "content": "sha256:50f7eae5184c893ac9f18e2a4b0e80a3b24f90e72f5a2ac0094a60fd5b4b5ee9",
+            "locator": {
+              "end": 82,
+              "kind": "line_range",
+              "start": 82
+            },
+            "path": "dashboard/src/panels/review/laneReview.capture-provenance.json"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

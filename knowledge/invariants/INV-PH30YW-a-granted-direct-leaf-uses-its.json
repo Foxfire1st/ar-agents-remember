@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "Workspace selection, paired-reader admission and revival identity must agree across distinct owners to prevent cross-task roots."
+  },
+  "applicability": "Granted direct leaf role preparation, task-scoped readers and leaf session revival.",
+  "conditions": [
+    "Existing master series contract and code/memory roots are product-admitted."
+  ],
+  "exclusions": [
+    "Ordinary ungranted leaf enclosure preparation remains unchanged.",
+    "Separate folders are not an OS sandbox or shell-permission guarantee."
+  ],
+  "id": "INV-PH30YW",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "MIK-R94@v1, D63/D74 and canonical Architect amendments"
+      ],
+      "path": "knowledge-handoff.json"
+    },
+    "handoffEntry": "L94-CUR-grant-workspace-readers",
+    "leaf": "260928-MIK-L94",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A granted direct leaf uses its master series checkouts without a leaf enclosure, while role reports and scratch remain in the separate admitted group; reader and revival scope derive from its canonical leaf and current grant/master contract, never caller or environment roots.",
+  "status": "proposed",
+  "supersedes": []
+}

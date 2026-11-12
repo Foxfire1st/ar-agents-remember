@@ -1,0 +1,184 @@
+{
+  "path": "mcp/tests/certification_registry_test_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Portable gate classes and authorities are centralized in the generic rail builder.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd6e35f8d48b3333712bb84cd5089b21e8e6ed2e",
+            "content": "sha256:3873b2bcf16274778b82f60e6e477d6919dc45e3beebd43048067fbbb257b6a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_CLASS_BY_GATE"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cd6e35f8d48b3333712bb84cd5089b21e8e6ed2e",
+            "content": "sha256:f064a59ea86c4863d81dda1b7ad9b08aee2412d5560d9f1737f13e15efe469aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_rail"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Registry, plan, result, and manifest helpers compose the valid baseline available to the retained consumers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd6e35f8d48b3333712bb84cd5089b21e8e6ed2e",
+            "content": "sha256:535bcb6abcb3ec2cb53db4b120c4b7c9cf90642829c134053361855b5a9e35a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_registry"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cd6e35f8d48b3333712bb84cd5089b21e8e6ed2e",
+            "content": "sha256:2ab50db530a62e9734a2477d3b7cea3bf2323af667b9790db4a156300bc3a534",
+            "locator": {
+              "kind": "symbol",
+              "name": "_plan"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cd6e35f8d48b3333712bb84cd5089b21e8e6ed2e",
+            "content": "sha256:408659503897fce85bbd57ad97d112d76ee2ece3c963a1cef5406af5f391c129",
+            "locator": {
+              "kind": "symbol",
+              "name": "_result"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cd6e35f8d48b3333712bb84cd5089b21e8e6ed2e",
+            "content": "sha256:c72e14f8cd14e4ad5acd14b78bd36ba5a542252c11fb2f98e4a88d0d41781eeb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_manifest"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Graph families construct reproducible dependency, raw-overflow, and artifact scaling boundaries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd6e35f8d48b3333712bb84cd5089b21e8e6ed2e",
+            "content": "sha256:36509cefec6ed812b01c650c8deee00ffc953166941e87ffee4d48acab9d4cf5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_gate_one_graph_registry"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cd6e35f8d48b3333712bb84cd5089b21e8e6ed2e",
+            "content": "sha256:573f2228d9e319a50746f24a4b837abfd4fb61fa6e7b51f7335121fd39d6aff7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_artifact_chain_registry"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cd6e35f8d48b3333712bb84cd5089b21e8e6ed2e",
+            "content": "sha256:6b9d4530cb4469fe68cd902ffd32cb4bdb6213bf68a4092b00708f7aeec1175f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_raw_declaration_overflow_registry"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cd6e35f8d48b3333712bb84cd5089b21e8e6ed2e",
+            "content": "sha256:a265084f70c6f9a70f77590d4d1a64b53a149f8e69f12d03eed3f31da187162c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_artifact_query_cross_product_registry"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The plan-authority suite directly imports the permanent support owner.\n\nAnchor: \"from certification_registry_test_support import (\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "521cfbc1653efebde0340e0c0f2ec2900d75919c",
+            "content": "sha256:43fe22fdb8a08dff3ff78fc2d8973bc52c7c5a98f6d1815a475ea783ec0e0a45",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "mcp/tests/test_certification_plan_authority.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The registry-contract suite directly imports the permanent support owner.\n\nAnchor: \"from certification_registry_test_support import (\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9c82c0397907dc64d9de4166d0f24d997a8da9d",
+            "content": "sha256:43fe22fdb8a08dff3ff78fc2d8973bc52c7c5a98f6d1815a475ea783ec0e0a45",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "mcp/tests/test_certification_rail_registry.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The support vocabulary intentionally names `sample-repository` and `portable-ci`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd6e35f8d48b3333712bb84cd5089b21e8e6ed2e",
+            "content": "sha256:535bcb6abcb3ec2cb53db4b120c4b7c9cf90642829c134053361855b5a9e35a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_registry"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

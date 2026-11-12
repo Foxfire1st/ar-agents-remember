@@ -1,0 +1,72 @@
+{
+  "path": "scripts/sync-runtime.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The three canonical-to-package-data runtime targets: benchmarks, providers and system.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "338cc0a8f410f09b4cdf632fdb2cc1f5f59aefc1",
+            "content": "sha256:5878d501febc1c0680371d9eb5e808cefcae684dc59f28d5d5049be367ad0738",
+            "locator": {
+              "kind": "symbol",
+              "name": "TARGETS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Digest comparison reports missing, extra, and changed files for `--check`, and refuses to call an absent canonical source in sync.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "338cc0a8f410f09b4cdf632fdb2cc1f5f59aefc1",
+            "content": "sha256:07d1389ba7afc7ff2736eab37a8ac36293e98952c9efe07e8ec60ad6a271854a",
+            "locator": {
+              "end": 205,
+              "kind": "line_range",
+              "start": 115
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Normal sync refuses self-sync, performs copy-then-swap replacement, and rechecks targets.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "338cc0a8f410f09b4cdf632fdb2cc1f5f59aefc1",
+            "content": "sha256:57627fe8c46dbb7f9833a18972cf210c70421890f6af07344303322694766733",
+            "locator": {
+              "kind": "symbol",
+              "name": "sync_targets"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Digest walk and copy use the same shared local-noise predicate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "338cc0a8f410f09b4cdf632fdb2cc1f5f59aefc1",
+            "content": "sha256:948870a343a2dd92fde2799d324c66e9782b3412adc81cf61d5e18905e87c7cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "copy_ignore"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

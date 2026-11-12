@@ -1,0 +1,42 @@
+{
+  "path": "mcp/src/agents_remember/package_data/paseo_plugin/shared/rpc.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7b4db747860e6c1a437c1648844c82abe83b1295",
+        "content": "sha256:4b77214a9d86d9b4d03a1eeb8320313cf5b61e932a1eed12dd58ac2eec600b99",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-H8E3JC",
+      "invariant": "INV-VDWN33",
+      "origin": {
+        "handoffEntry": "INV-VDWN33",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The shared contract is what both sides are written against, so the number's type is stated here.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Embed-list and explicit host-snapshot transports have separate typed empty-input responses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7b4db747860e6c1a437c1648844c82abe83b1295",
+            "content": "sha256:e5e263fa6121fd0f8133f945a105cc641a2d9840f504ef4eeb0a698e8dbf91b8",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

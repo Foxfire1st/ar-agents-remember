@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A broken link sends a reader to a page that does not exist; this offline check is the one guard that keeps the documentation navigable after every later change."
+  },
+  "applicability": "Every public document that a user reads: the root README, ROADMAP, CONTRIBUTING, SECURITY and CODE_OF_CONDUCT, the package description and every .md and .txt file under docs/.",
+  "conditions": [
+    "The link is relative, or absolute and points at this repository.",
+    "The link's path exists in the tree at the documented candidate.",
+    "An anchor names a heading of its target page, in the form the renderer gives it."
+  ],
+  "exclusions": [
+    "Links to other repositories or external sites, which are not tree paths.",
+    "An anchor on a non-document target, which the check does not judge."
+  ],
+  "id": "INV-XANH4K",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_public_docs_check.py::test_a_broken_relative_link_is_named; mcp/tests/test_public_docs_check.py::test_an_absolute_link_to_a_missing_repository_path_is_named; mcp/tests/test_public_docs_check.py::test_a_missing_anchor_is_named; mcp/tests/test_public_docs_check.py::test_a_relative_link_out_of_docs_is_named; clean-copy run f3: 21 passed"
+      ],
+      "path": "l97-curator-handoff"
+    },
+    "handoffEntry": "MIK-R97@v1 rule 7 (links)",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Every relative link, and every absolute link to this repository, in a public document names a path of the tree, and an anchor names a heading of its target.",
+  "status": "proposed",
+  "supersedes": []
+}

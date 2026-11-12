@@ -1,0 +1,38 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "New reviewer obligation from MIK-R86@v1 (packet a78d9ae3, Architect qualification 2026-10-08 11:18:45 UTC); implemented on the W03 successor tree 95f61633, whole-primary CODE PASS verdict 3663bf07. Evidence: leaf-view-8.log; l86-parity/ordered-comparison.json"
+  },
+  "applicability": "The leaf-wide review/trees answer and its memo path; not the standalone aggregate knowledge-diff reader or a frozen response-field census.",
+  "conditions": [
+    "ReviewTreesResult has no knowledge_diff field, and _view/_compute_leaf_parts/_worklist_view do not invoke knowledge_tree_diff or _measured_tree_diff for the leaf-wide answer.",
+    "The leaf-wide answer may carry currentness, worklist verdicts and code-change facts; those additions do not restore aggregate memory-tree patches.",
+    "LeafViewParts retains the worklist and optional code_changes, with the current caller’s settling and read-observation checks; no byte-identity or unchanged-memo-input promise is made for other fields."
+  ],
+  "exclusions": [
+    "Reintroducing aggregate memory-tree file lists/patches or their computation as part of this leaf-wide response.",
+    "A fixed Git-child/byte measurement, removed-test census, or perpetual byte identity of all other fields and memo conditions; prior W03 measurements and migration evidence remain historical in the preserved origin and before record.",
+    "Removing the surviving public knowledge_tree_diff reader, or prohibiting code-side classification and facts needed by the worklist."
+  ],
+  "id": "INV-2K9NMR",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "leaf-view-8.log; l86-parity/ordered-comparison.json",
+        "mcp/src/agents_remember/models/knowledge/review_trees.py module contract; stored record knowledge/invariants/INV-2K9NMR (revision 1)"
+      ],
+      "path": "notes/reports/l86-curator-W03/handoff-phase1.json"
+    },
+    "handoffEntry": "MIK-R86@v1 rule 22",
+    "leaf": "260928-MIK-L86",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "The leaf-wide reviewer answer omits aggregate knowledge_diff and does not compute the memory-tree file patches of that removed answer. The standalone knowledge_tree_diff helper remains separately owned and is not part of this leaf-wide response or its kept parts.",
+  "status": "proposed",
+  "supersedes": []
+}

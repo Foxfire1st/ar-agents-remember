@@ -1,0 +1,87 @@
+{
+  "path": "dashboard/src/panels/review/SubjectJudgment.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "fb3673e391e127346cf2d3310decd68af3efe750",
+        "content": "sha256:dd0a1402ba0047797afb9236d2abf9cff8e597852bef3eea11ed23948e02e2a0",
+        "locator": {
+          "kind": "symbol",
+          "name": "SubjectJudgment"
+        }
+      },
+      "id": "RLZ-2Q2MDQ",
+      "invariant": "INV-S545PW",
+      "origin": {
+        "handoffEntry": "L57-M1-F37-disclosure-grouping",
+        "leaf": "260928-MIK-L57"
+      },
+      "rationale": "SubjectJudgment draws rows and proof content openly while grouping all judgment identifiers and all proof identifiers in one disclosure per group; the grouping does not grow with that subject’s row or proof counts.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Selected-subject judgment and proofs: `SubjectJudgment` owns the described branch.\n\nAnchor: `SubjectJudgment`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb3673e391e127346cf2d3310decd68af3efe750",
+            "content": "sha256:6bee5bf69957e553ae3bf8c57876363e3f67f3f9c75ff2bec7633def95791a47",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Selected-subject judgment and proofs: `JudgmentRow` owns the described branch.\n\nAnchor: `JudgmentRow`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb3673e391e127346cf2d3310decd68af3efe750",
+            "content": "sha256:6bee5bf69957e553ae3bf8c57876363e3f67f3f9c75ff2bec7633def95791a47",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Selected-subject judgment and proofs: `Proof` owns the described branch.\n\nAnchor: `Proof`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb3673e391e127346cf2d3310decd68af3efe750",
+            "content": "sha256:6bee5bf69957e553ae3bf8c57876363e3f67f3f9c75ff2bec7633def95791a47",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Selected-subject judgment and proofs: `effectLabel` owns the described branch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb3673e391e127346cf2d3310decd68af3efe750",
+            "content": "sha256:20c63ce419974e81802fe30504f31cf3187958c56735472128cbb4cc9b4fa994",
+            "locator": {
+              "kind": "symbol",
+              "name": "effectLabel"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

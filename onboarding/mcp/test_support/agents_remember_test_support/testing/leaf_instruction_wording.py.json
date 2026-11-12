@@ -1,0 +1,430 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/leaf_instruction_wording.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d5871897935e8536a81be6ff610c46d9cd9e5494",
+        "content": "sha256:c722f08cf59e50e0655908206cf6a2b8f8a210e83ba0f64f68e1a93722b0646a",
+        "locator": {
+          "kind": "symbol",
+          "name": "CURATION_CLAUSES"
+        }
+      },
+      "id": "RLZ-33NPPV",
+      "invariant": "INV-ZNJ14G",
+      "origin": {
+        "handoffEntry": "K3-ZNJ14G-leaf-clause-oracle",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Holds the Curator's direct-handover clauses: the memory candidate goes straight to the Reviewer, evidenced code concerns go to both Worker and Reviewer, and only an unresolved disagreement goes to the Manager. The clause that limits Manager contact to its named occasions is the separate 'manager contact' entry LEAF_CLAUSES adds for roles/curator.md, outside this symbol.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d5871897935e8536a81be6ff610c46d9cd9e5494",
+        "content": "sha256:a960c86fd51b81204173e684cec313e48766858cb9f9f0fa103bfe414571f392",
+        "locator": {
+          "end": 447,
+          "kind": "line_range",
+          "start": 424
+        }
+      },
+      "id": "RLZ-5GMY8X",
+      "invariant": "INV-ZNJ14G",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-ZNJ14G",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The freeze goes directly from Worker to the Reviewer after the Manager starts that seat.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d5871897935e8536a81be6ff610c46d9cd9e5494",
+        "content": "sha256:354d67b6a2b502cce0c55cfabd0bbd325e792526fa670d84bfa1f478155256b9",
+        "locator": {
+          "end": 660,
+          "kind": "line_range",
+          "start": 651
+        }
+      },
+      "id": "RLZ-645J3W",
+      "invariant": "INV-MTRR08",
+      "origin": {
+        "handoffEntry": "L100-R100-doctrine-coherence",
+        "leaf": "260928-MIK-L100"
+      },
+      "rationale": "The source-confined positive Worker obligations take the implementation operation's freeze clauses: tell the Manager to start the Reviewer, then send the freeze directly to that Reviewer, and hand the Curator the list only after code PASS. They prescribe no set start.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d5871897935e8536a81be6ff610c46d9cd9e5494",
+        "content": "sha256:60f5a4ceefe2ad45b7b23c203953142bbad746926ad5f401a786292944798198",
+        "locator": {
+          "end": 437,
+          "kind": "line_range",
+          "start": 425
+        }
+      },
+      "id": "RLZ-8BC5NS",
+      "invariant": "INV-ZNJ14G",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-ZNJ14G",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The Worker's 'freeze to reviewer' oracle states the Manager start notice first and then the direct frozen-content handover once the Reviewer exists; the repeated 'identity and whole stretch' oracle restates only that direct handover step.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d5871897935e8536a81be6ff610c46d9cd9e5494",
+        "content": "sha256:0e0357b1d6c8f805231a7a420280eb2044724044b686a26ac7a4a8f86271e22e",
+        "locator": {
+          "kind": "symbol",
+          "name": "AUTONOMY_CLAUSES"
+        }
+      },
+      "id": "RLZ-CRRXSE",
+      "invariant": "INV-7VZRZW",
+      "origin": {
+        "handoffEntry": "K3-7VZRZW-autonomy-clauses",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The per-role oracle of the helper-autonomy obligation: for every role it holds the whole clauses the role text must state (own split, check and credit helper work, boundary acts are the seat's, helpers hold no seat or extra permissions, no self-review through a helper, one Curator writer), and the wording tests fail when a role loses one.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d5871897935e8536a81be6ff610c46d9cd9e5494",
+        "content": "sha256:58831bc1f1aa2df75644970b1a6563cdd30ecd1d8eb1aae051e99c044193ecbd",
+        "locator": {
+          "end": 71,
+          "kind": "line_range",
+          "start": 35
+        }
+      },
+      "id": "RLZ-H39C9Y",
+      "invariant": "INV-Q2HENX",
+      "origin": {
+        "handoffEntry": "L84-K3C-Q2HENX-01",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The l-01 wording guard requires exactly one pointer at each named action in a native first message (assert_action_pointer) and checks each emitted detail link's label count, path and fragment (assert_emitted_detail_links). The per-role handover action names are realized separately (MESSAGE_HANDOVER_ACTIONS, RLZ-Q0APWC).",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d5871897935e8536a81be6ff610c46d9cd9e5494",
+        "content": "sha256:b8fe9a3f393150d8b7aaa1b96710928e5be6e3581cd83abc68721ec05c2702df",
+        "locator": {
+          "kind": "symbol",
+          "name": "LEAF_CLAUSES"
+        }
+      },
+      "id": "RLZ-KB75CD",
+      "invariant": "INV-ZNJ14G",
+      "origin": {
+        "handoffEntry": "K3-ZNJ14G-leaf-clause-oracle",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Maps each leaf role and operation file to the direct-handover clauses it must carry, so a file that loses one fails its wording test.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d5871897935e8536a81be6ff610c46d9cd9e5494",
+        "content": "sha256:8964eb52bf21b60e0d465c6b6d079b6205ac1c5c02967c0ff999cccf29dd9184",
+        "locator": {
+          "end": 485,
+          "kind": "line_range",
+          "start": 476
+        }
+      },
+      "id": "RLZ-N0ZABH",
+      "invariant": "INV-ZNJ14G",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-ZNJ14G",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The Reviewer first notifies Manager for seat creation, then sends the freeze list directly to the existing Curator.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d5871897935e8536a81be6ff610c46d9cd9e5494",
+        "content": "sha256:d5ba0d2c7e0e86a8179c0f08dc72a158d9d5f0ea37cca4eee162e3c48147473f",
+        "locator": {
+          "end": 144,
+          "kind": "line_range",
+          "start": 128
+        }
+      },
+      "id": "RLZ-Q0APWC",
+      "invariant": "INV-Q2HENX",
+      "origin": {
+        "handoffEntry": "L84-K3C-Q2HENX-02",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The l-01 wording guard requires one pointer per action in each native first message and names each role's handover action.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d5871897935e8536a81be6ff610c46d9cd9e5494",
+        "content": "sha256:a960c86fd51b81204173e684cec313e48766858cb9f9f0fa103bfe414571f392",
+        "locator": {
+          "end": 447,
+          "kind": "line_range",
+          "start": 424
+        }
+      },
+      "id": "RLZ-QSH41B",
+      "invariant": "INV-ZNJ14G",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-ZNJ14G",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "Each repeated Worker oracle states Manager start notice first and direct frozen-content handover after Reviewer exists.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d5871897935e8536a81be6ff610c46d9cd9e5494",
+        "content": "sha256:cf8589b96203737384ab3c12fb6b706210801ea7245f50c2768f48d02de77ad1",
+        "locator": {
+          "kind": "symbol",
+          "name": "IMPLEMENTATION_CLAUSES"
+        }
+      },
+      "id": "RLZ-RXPPVR",
+      "invariant": "INV-ZNJ14G",
+      "origin": {
+        "handoffEntry": "K3-ZNJ14G-leaf-clause-oracle",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Holds the Worker's direct-handover clauses the implementation operation must state: freeze straight to the Reviewer once it exists, repairs back to the same Reviewer, the hand-off list straight to the Curator after PASS, and the Manager receiving notices only.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d5871897935e8536a81be6ff610c46d9cd9e5494",
+        "content": "sha256:8964eb52bf21b60e0d465c6b6d079b6205ac1c5c02967c0ff999cccf29dd9184",
+        "locator": {
+          "end": 485,
+          "kind": "line_range",
+          "start": 476
+        }
+      },
+      "id": "RLZ-S9QV0H",
+      "invariant": "INV-ZNJ14G",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-ZNJ14G",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "Once Curator exists, the Reviewer sends the passed freeze and code-PASS verdict directly to it.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d5871897935e8536a81be6ff610c46d9cd9e5494",
+        "content": "sha256:2b495cc8b11d576eb04dfacde45440f243c61bbe5ceba18ff5ec841ca9a4ed4f",
+        "locator": {
+          "end": 664,
+          "kind": "line_range",
+          "start": 651
+        }
+      },
+      "id": "RLZ-SAP4W5",
+      "invariant": "INV-ZNJ14G",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-ZNJ14G",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "Each repeated Worker oracle states Manager start notice first and direct frozen-content handover after Reviewer exists.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d5871897935e8536a81be6ff610c46d9cd9e5494",
+        "content": "sha256:978e099c292399cdb0bd6f7515bda6fa79c759114902749917b8c9611c00a1f8",
+        "locator": {
+          "end": 431,
+          "kind": "line_range",
+          "start": 425
+        }
+      },
+      "id": "RLZ-SQ3FKJ",
+      "invariant": "INV-ZNJ14G",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-ZNJ14G",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "Each repeated Worker oracle states Manager start notice first and direct frozen-content handover after Reviewer exists.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d5871897935e8536a81be6ff610c46d9cd9e5494",
+        "content": "sha256:8a7f50beff3290a3819d059900b148fb486cfe3b2d5a4ebec75d131b80a811fc",
+        "locator": {
+          "kind": "symbol",
+          "name": "delivered_step"
+        }
+      },
+      "id": "RLZ-TC2HJH",
+      "invariant": "INV-7KDG7C",
+      "origin": {
+        "handoffEntry": "K3-7KDG7C-delivered-step-digests",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The shared delivery oracle asserts that each frozen detail reference's revision is the digest of its content and that the emitted detail file's size and revision match the receipt, so a test fails when the frozen snapshot differs from what the receipt names.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d5871897935e8536a81be6ff610c46d9cd9e5494",
+        "content": "sha256:dde21eb0737f33b6d5c76c52b7a1a43b148da168e518d966f1c139861ac4ac59",
+        "locator": {
+          "end": 446,
+          "kind": "line_range",
+          "start": 441
+        }
+      },
+      "id": "RLZ-YF3JX9",
+      "invariant": "INV-ZNJ14G",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-ZNJ14G",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The Worker handoff list remains direct to Curator once Manager has created that seat.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d5871897935e8536a81be6ff610c46d9cd9e5494",
+        "content": "sha256:bf481e136a96e1c383261d1e1bb157ba3336ef4beeed6c8521acf42db5feb559",
+        "locator": {
+          "end": 749,
+          "kind": "line_range",
+          "start": 701
+        }
+      },
+      "id": "RLZ-Z4E6TX",
+      "invariant": "INV-V7M37D",
+      "origin": {
+        "handoffEntry": "K3-V7M37D-memory-lane-oracle",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The Reviewer's and review operation's oracle clauses for the memory lane: separate sealed reports, identifiers and pass count, own begin_review/record_review lane with reviewKind=memory, no reset of passed code review, the same settings limit and a recorded instruction beyond it.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The affirmative clause tables are the wording guards' data.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d5871897935e8536a81be6ff610c46d9cd9e5494",
+            "content": "sha256:52823e3b40e1ebd597bb44bc5eaeaddd3d8c10e17705e83e17c18f87118c044e",
+            "locator": {
+              "kind": "symbol",
+              "name": "autonomy_clauses"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "delivered_step uses real admission, compilation and launch composition to require one selected detail with exact source and bytes and a nonempty step that the launch record repeats, one pointer at the named action, resolved Markdown links and no unresolved detail token. Source inspection is not an executed check. Role-scoped alternatives preserve the instructed facets; Worker clauses name individual stage starts and direct peer handovers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d5871897935e8536a81be6ff610c46d9cd9e5494",
+            "content": "sha256:8a7f50beff3290a3819d059900b148fb486cfe3b2d5a4ebec75d131b80a811fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "delivered_step"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d5871897935e8536a81be6ff610c46d9cd9e5494",
+            "content": "sha256:cf8589b96203737384ab3c12fb6b706210801ea7245f50c2768f48d02de77ad1",
+            "locator": {
+              "end": 463,
+              "kind": "line_range",
+              "start": 424
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "MESSAGE_HANDOVER_SOURCE pins reference/message-handover.md and MESSAGE_HANDOVER_ACTIONS names each role's pointer action. The busy-retry alternatives require a pending record, independent work, one resend before turn end and a still-pending state after another full-store refusal. The consuming clause_surface path checks this detail through the actual admitted role and operation; the literal oracle does not establish that a live sender followed it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d5871897935e8536a81be6ff610c46d9cd9e5494",
+            "content": "sha256:ff16bd36038b3217dced71cb9135f5a0a36db62658a865fcdbd059e049b1f244",
+            "locator": {
+              "kind": "symbol",
+              "name": "MESSAGE_HANDOVER_ACTIONS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "delivered_step requires exactly one pointer to the detail at the named action.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d5871897935e8536a81be6ff610c46d9cd9e5494",
+            "content": "sha256:da288e64bce8f0c7539b380e1bf9a4790959d26460b1794b07216908b4f7cc9f",
+            "locator": {
+              "kind": "symbol",
+              "name": "assert_action_pointer"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d5871897935e8536a81be6ff610c46d9cd9e5494",
+            "content": "sha256:f4de1dffb68831ff2b49580e2c935042f02ac30931a19785b6de82cd6c36b187",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 72
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The Manager's refused-write pointer stands at its task retirement and movement action.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d5871897935e8536a81be6ff610c46d9cd9e5494",
+            "content": "sha256:89fed9fed0c21b722dbadea482f267b0cde5251f278c7f8acc42c5b5e38986f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "REFUSED_WRITE_ACTIONS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,297 @@
+{
+  "path": "dashboard/src/panels/review/FamilyTree.triage.test.tsx",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "14": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('draws one-line rows with one reason, no disclosure, and persists both views', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1825798e0dd504515959b3d4aa70e3f933fdb9b",
+            "content": "sha256:bf8b533f0b12ec5acd44ddaef8c48a452e0e42df3c881f183413ed52849767f1",
+            "locator": {
+              "end": 144,
+              "kind": "line_range",
+              "start": 126
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('opens with nothing selected; a click selects its row and keeps the tree where it is', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1825798e0dd504515959b3d4aa70e3f933fdb9b",
+            "content": "sha256:3aa435ef1648e9e226771b51a6e26019146977c1f090295dd81e3523daa741a3",
+            "locator": {
+              "end": 159,
+              "kind": "line_range",
+              "start": 145
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('reveals a selection made outside the tree by the scroller alone', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1825798e0dd504515959b3d4aa70e3f933fdb9b",
+            "content": "sha256:6b7c8f3eed55f08ef7eae66a720d896a123d0ca70a9b90b3aed2ff007aecfdce",
+            "locator": {
+              "end": 176,
+              "kind": "line_range",
+              "start": 160
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('keeps a walked family with its kept tag in Changed', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1825798e0dd504515959b3d4aa70e3f933fdb9b",
+            "content": "sha256:891bb91bb5d1edbf8950f4d6c3ed33501e625ac53baf08be2b8379a776a4940c",
+            "locator": {
+              "end": 182,
+              "kind": "line_range",
+              "start": 177
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('lists the changed locations under a subject and opens a group in the reading column only', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1825798e0dd504515959b3d4aa70e3f933fdb9b",
+            "content": "sha256:28b13bd4232d1559df086b5fb1c7a3bf1a11f43afd187c5cac1b5e051d085a45",
+            "locator": {
+              "end": 441,
+              "kind": "line_range",
+              "start": 186
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('pins the Worklist row above \"Code without invariant\", whose file rows come last, beside one All changes link', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1825798e0dd504515959b3d4aa70e3f933fdb9b",
+            "content": "sha256:563e7d7832e932d44cd5111b0fd3643db92c09e80c64f4448ad7c98aec003c52",
+            "locator": {
+              "end": 219,
+              "kind": "line_range",
+              "start": 204
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('filters the tree and says when nothing matches', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1825798e0dd504515959b3d4aa70e3f933fdb9b",
+            "content": "sha256:3a7184b43112d428a9784665941ec7197c5df96bea50f6f8f24ea03cd957dfb0",
+            "locator": {
+              "end": 231,
+              "kind": "line_range",
+              "start": 220
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('finds an unchanged location by its path in All, and shows its subject and its group row', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1825798e0dd504515959b3d4aa70e3f933fdb9b",
+            "content": "sha256:6b5214ed97b70dd0f02d923f0a11fd53020ea33d4c6a44e95f5417d674dec5e0",
+            "locator": {
+              "end": 248,
+              "kind": "line_range",
+              "start": 232
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('marks the one row of a shared region current for a selection of any of its entries', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1825798e0dd504515959b3d4aa70e3f933fdb9b",
+            "content": "sha256:c7e04b19fa22f6dec1b367509f913c58e00be127207f45d0e12e0bdda0105bbd",
+            "locator": {
+              "end": 258,
+              "kind": "line_range",
+              "start": 249
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('sorts from the one Sort menu, stores the choice, and shows the memory sorts unavailable with the reason', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1825798e0dd504515959b3d4aa70e3f933fdb9b",
+            "content": "sha256:50e31321eda70e58add5b26a01155c3f2b4c86cfc2684d0fd14e821a2768eb4f",
+            "locator": {
+              "end": 286,
+              "kind": "line_range",
+              "start": 259
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('moves focus between rows, pinned rows included, with the arrow keys', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1825798e0dd504515959b3d4aa70e3f933fdb9b",
+            "content": "sha256:561684199b091f7a9101894701e709b6fa56ecd8b954aedee0939be6e3892fda",
+            "locator": {
+              "end": 300,
+              "kind": "line_range",
+              "start": 287
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('draws the line counts of location and lane-file rows in mint and alarm red, signs kept', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1825798e0dd504515959b3d4aa70e3f933fdb9b",
+            "content": "sha256:d1f2c3b3539ff5f3f26380b85469932c3033619fba5f555c98fdcd9663aa9815",
+            "locator": {
+              "end": 441,
+              "kind": "line_range",
+              "start": 301
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "26": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(\"draws the Sort popup with the mockup's rows, one rule and an explanatory section\", async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1825798e0dd504515959b3d4aa70e3f933fdb9b",
+            "content": "sha256:ec773dce22ba9bffdb8cfedaa59fb16dbec95a70b78359aacc5775454113f2a5",
+            "locator": {
+              "end": 391,
+              "kind": "line_range",
+              "start": 360
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "27": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(\"pins the Worklist and lane block in the one scroller, after the tree's rows\", () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1825798e0dd504515959b3d4aa70e3f933fdb9b",
+            "content": "sha256:b4b89c34e43bdf47f5936449b593c4d1f10c77212cfc3064819c799cc361b813",
+            "locator": {
+              "end": 404,
+              "kind": "line_range",
+              "start": 392
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "28": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(\"draws the code-facts line only for a count above 0, and speaks a 0\", () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1825798e0dd504515959b3d4aa70e3f933fdb9b",
+            "content": "sha256:ddfc45c5fdf8364170e71b616dbe7e35974d1e0e1a1ebafd7346713b79750572",
+            "locator": {
+              "end": 418,
+              "kind": "line_range",
+              "start": 405
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "29": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('draws \"Without a family\" only after a shown family', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1825798e0dd504515959b3d4aa70e3f933fdb9b",
+            "content": "sha256:7c8e86c71bd2a3c9071fcef5460ce27cd424180e56713c7c29e7b9da9fbab947",
+            "locator": {
+              "end": 431,
+              "kind": "line_range",
+              "start": 419
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "30": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('keeps the All changes link and the Sort name while their repeats are not drawn', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1825798e0dd504515959b3d4aa70e3f933fdb9b",
+            "content": "sha256:a61ed6ece4a7bda1a576d71d517b6d0a37f2ade534772102cda48ccd41325c24",
+            "locator": {
+              "end": 441,
+              "kind": "line_range",
+              "start": 432
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

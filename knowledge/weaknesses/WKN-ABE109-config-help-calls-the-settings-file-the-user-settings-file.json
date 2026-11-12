@@ -1,0 +1,29 @@
+{
+  "anchor": {
+    "blob": "e55cdcd0e96e7bc8fb71fb9a60e63f3e2823b888",
+    "content": "sha256:45817c349df65c2cf8422ae8639486a5c316aed1d48a439541c497e5c4151ccc",
+    "locator": {
+      "kind": "symbol",
+      "name": "add_arguments"
+    },
+    "path": "mcp/src/agents_remember/cli/memory_citations.py"
+  },
+  "id": "WKN-ABE109",
+  "kind": "debt",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-a004"
+    },
+    "handoffEntry": "L97-weakness-36",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L97"
+  },
+  "state": "open",
+  "statement": "Four help texts of --config call agents-remember-settings.json the user settings file, which is the name of another file, and refusals of the loader say coordinator root for the coordination root."
+}

@@ -1,0 +1,129 @@
+{
+  "path": "mcp/tests/test_investigator.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "4683461b2130843a33bcc5bbe506d0b08e08bfc4",
+        "content": "sha256:7124f0401a2b6669e727e4fcb27198685d46de896cf65e60526b5d9d6f9d24c9",
+        "locator": {
+          "end": 147,
+          "kind": "line_range",
+          "start": 124
+        }
+      },
+      "facet": "Admits exactly the six allowed caller/selection combinations and refuses foreign or leaf selections before native launch.",
+      "id": "PRF-7SCCMD",
+      "invariant": "INV-68QN0P",
+      "origin": {
+        "handoffEntry": "MIK-R98@v1 §7",
+        "leaf": "260928-MIK-L98"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4683461b2130843a33bcc5bbe506d0b08e08bfc4",
+        "content": "sha256:14bb2020a042321f0f0fe839da9760a69bed337b147354cf4343b593768d7d80",
+        "locator": {
+          "kind": "symbol",
+          "name": "InvestigatorTests.test_old_start_binding_address_report_and_replay_preserve_recorded_paths"
+        }
+      },
+      "facet": "Both role names read the original saved address and report; replay and revive retain the earlier request and agent identities.",
+      "id": "PRF-7VAEMH",
+      "invariant": "INV-S2SR50",
+      "origin": {
+        "handoffEntry": "MIK-R98@v1 §10",
+        "leaf": "260928-MIK-L98"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4683461b2130843a33bcc5bbe506d0b08e08bfc4",
+        "content": "sha256:58e6006b9b740f31007416ab38a27bd5a050c95cbb2219a6a460178cc5bd3e62",
+        "locator": {
+          "kind": "symbol",
+          "name": "InvestigatorTests.test_message_new_turn_obeys_capacity_before_delivery_and_resume"
+        }
+      },
+      "facet": "Independent CODE2 operation evidence establishes the shared capacity owner is used before send/resume.",
+      "id": "PRF-8ZMK4K",
+      "invariant": "INV-BS7TH8",
+      "origin": {
+        "handoffEntry": "MIK-R98@v1/L98-A02/L98-R02",
+        "leaf": "260928-MIK-L98"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4683461b2130843a33bcc5bbe506d0b08e08bfc4",
+        "content": "sha256:58e6006b9b740f31007416ab38a27bd5a050c95cbb2219a6a460178cc5bd3e62",
+        "locator": {
+          "kind": "symbol",
+          "name": "InvestigatorTests.test_message_new_turn_obeys_capacity_before_delivery_and_resume"
+        }
+      },
+      "facet": "Four sprint/master and idle/closed cases refuse at eight before send or resume and admit after release; a recipient already in a turn is held, and an exact replay keeps its slot.",
+      "id": "PRF-AY6JRN",
+      "invariant": "INV-0EASG7",
+      "origin": {
+        "handoffEntry": "L171-F05-PRF-REPLACEMENT",
+        "leaf": "260928-MIK-L171"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4683461b2130843a33bcc5bbe506d0b08e08bfc4",
+        "content": "sha256:7aa15b4bf7f4660739228c01bfe25b4d448297e8db40d2b0062c000fd6db4c8e",
+        "locator": {
+          "kind": "symbol",
+          "name": "InvestigatorTests.test_task_listing_is_bounded_task_owned_and_result_exact"
+        }
+      },
+      "facet": "The newest-fifty task listing reports omitted requests while role ambiguity uses the complete open set and exact Result uses the supplied UUID.",
+      "id": "PRF-MJPAP4",
+      "invariant": "INV-VZJRTM",
+      "origin": {
+        "handoffEntry": "MIK-R98@v1 §8",
+        "leaf": "260928-MIK-L98"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4683461b2130843a33bcc5bbe506d0b08e08bfc4",
+        "content": "sha256:4ae78471983abc6a70df613aa0a69ef04812e053524f4b8fa5bc97951eecfc69",
+        "locator": {
+          "kind": "symbol",
+          "name": "InvestigatorTests.test_ninth_refuses_exact_ids_and_archiving_frees_capacity"
+        }
+      },
+      "facet": "The ninth new selected-task Investigator refuses with the complete open IDs; archiving a recorded open execution releases capacity.",
+      "id": "PRF-Z047QV",
+      "invariant": "INV-VZJRTM",
+      "origin": {
+        "handoffEntry": "MIK-R98@v1 §8",
+        "leaf": "260928-MIK-L98"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The source owns the documented investigation, identity or request boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4683461b2130843a33bcc5bbe506d0b08e08bfc4",
+            "content": "sha256:cba6de05d9348ed178448ef046bd4ee847c75a7facc951232c9823a747455dcd",
+            "locator": {
+              "end": 400,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

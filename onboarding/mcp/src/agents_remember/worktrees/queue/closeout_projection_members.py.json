@@ -1,0 +1,173 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "No external domain source is required to establish this repository-owned implementation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b5d120de09128b72ce518321cc008426a1384f97",
+            "content": "sha256:99076b495cce766407e2ba5dfdcab03e4738f5f46b54ccb15bb012d0d5a4fa1a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProjectionMemberContext"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Member construction consumes an exact precomputed topology fingerprint and the typed bound graph context.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b5d120de09128b72ce518321cc008426a1384f97",
+            "content": "sha256:ed98592eab6d52f45f6a8914e9d39d6f5bcf59f6bfa287f9a6cb768b786e57b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "projection_member"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b5d120de09128b72ce518321cc008426a1384f97",
+            "content": "sha256:d75456bc22a60530954e2cf4c28fe192adea6d7b17afc5ec8dfdc603efb86cb1",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 35
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Candidate-local activation waits are combined with door admission before optional DAG waits.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b5d120de09128b72ce518321cc008426a1384f97",
+            "content": "sha256:ed98592eab6d52f45f6a8914e9d39d6f5bcf59f6bfa287f9a6cb768b786e57b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "projection_member"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b5d120de09128b72ce518321cc008426a1384f97",
+            "content": "sha256:c0a427467b4f40d76e6c1335f8d55d6191af580dab40e4bbd0b41a86d176bf10",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admission_waiting_reasons"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b5d120de09128b72ce518321cc008426a1384f97",
+            "content": "sha256:afb231e3cf15238898bdb86a89ea63a0d960a8ddec30c2a1434f60858b56aca1",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 48
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b5d120de09128b72ce518321cc008426a1384f97",
+            "content": "sha256:47350079ff8b3793c44cff1b88b8b41c1f72e6f3414e16b3ef2bbbe5a7eec9e4",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 99
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Queue adapters delegate v2 projection/fingerprinting and preserve typed domain refusals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b5d120de09128b72ce518321cc008426a1384f97",
+            "content": "sha256:220d7b351db5d74399574ecd578e8d627b44d2df9ebfc58e2feed21a029a15e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "candidate_task_topology_fingerprint"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b5d120de09128b72ce518321cc008426a1384f97",
+            "content": "sha256:6f8f2e487b5aa80ff3eafdb9a4683d4b8500c23596ae9715b21de7c8c4ad023e",
+            "locator": {
+              "kind": "symbol",
+              "name": "semantic_topology_projection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Door intent absence/staleness become explicit member blockers.\n\nAnchor: `ProjectionMemberContext.task_intent`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b5d120de09128b72ce518321cc008426a1384f97",
+            "content": "sha256:8e82f2702e46856ca38667c73cee74f06cbc3b30c65d931e2ca783a852020678",
+            "locator": {
+              "kind": "symbol",
+              "name": "_projection_blockers"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b5d120de09128b72ce518321cc008426a1384f97",
+            "content": "sha256:3ca2c7373f8dda18b2b0f74601a5277faaa7cf4f34e0257f7e1bd05f440431bc",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 45
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "No meaningful cross-repository reference applies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b5d120de09128b72ce518321cc008426a1384f97",
+            "content": "sha256:99076b495cce766407e2ba5dfdcab03e4738f5f46b54ccb15bb012d0d5a4fa1a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProjectionMemberContext"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

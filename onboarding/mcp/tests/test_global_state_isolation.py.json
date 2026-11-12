@@ -1,0 +1,103 @@
+{
+  "path": "mcp/tests/test_global_state_isolation.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "cc030e9e864d53ded27c0824cf43139a9df87bf8",
+        "content": "sha256:3f266394d747702cf5fca9a16837a3bd874dfdc8772be3c7aea06f6c9d3ff525",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_tmux_cleanup_failures_do_not_skip_existing_pytest_teardown"
+        }
+      },
+      "facet": "TimeoutExpired and OSError in private tmux shutdown still execute environment,lease,directory cleanup.",
+      "id": "PRF-4FWVH4",
+      "invariant": "INV-KJN5GP",
+      "origin": {
+        "handoffEntry": "MIK-R87@v1 7",
+        "leaf": "260928-MIK-L87"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "GlobalStateLeakDetectionTests checks named leak restoration and the loaded-owner reset register.\n\nAnchor: `GlobalStateLeakDetectionTests`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc030e9e864d53ded27c0824cf43139a9df87bf8",
+            "content": "sha256:691c2f1e858559358180bb0b4e56288fcd8ab923a9904ac8787524f473b9dea8",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Every loaded reset row participates in its declared cleanup proof.\n\nAnchor: `test_every_reset_row_runs_its_declared_cleanup_for_a_loaded_owner`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc030e9e864d53ded27c0824cf43139a9df87bf8",
+            "content": "sha256:691c2f1e858559358180bb0b4e56288fcd8ab923a9904ac8787524f473b9dea8",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Each restored table is repaired and its leak named.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc030e9e864d53ded27c0824cf43139a9df87bf8",
+            "content": "sha256:b3a7b23a9d262802fb2c300d441ec0fb5b1e1606eb79d80ab83fc9f16c2ce008",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_each_restored_row_names_the_leak_and_restores_its_loaded_table"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Private tmux failure preserves all existing later teardown.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc030e9e864d53ded27c0824cf43139a9df87bf8",
+            "content": "sha256:3f266394d747702cf5fca9a16837a3bd874dfdc8772be3c7aea06f6c9d3ff525",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_tmux_cleanup_failures_do_not_skip_existing_pytest_teardown"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Reset-row doubles assert owner delegation for sweep and tool-writer cleanup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc030e9e864d53ded27c0824cf43139a9df87bf8",
+            "content": "sha256:691c2f1e858559358180bb0b4e56288fcd8ab923a9904ac8787524f473b9dea8",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

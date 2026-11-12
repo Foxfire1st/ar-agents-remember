@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The column and cold document must share retirement truth so neither misreports surviving processes as finished or creates a second recovery receipt."
+  },
+  "applicability": "Dashboard Retire controls for an existing leaf explainer, including a cold Operations leaf task document.",
+  "conditions": [
+    "The state reports a live or closed seat.",
+    "The developer explicitly confirms retirement."
+  ],
+  "exclusions": [
+    "This UI record does not attest process cleanup itself; the server receipt owns remaining-process truth.",
+    "Master/sprint task documents have no leaf Retire control."
+  ],
+  "id": "INV-AKRFQY",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/explainer/ExplainerTaskDocument.test.tsx::retires an existing explainer directly from a cold task document without visiting Review first; dashboard/src/explainer/ExplainerTaskDocument.test.tsx::names the processes a half-retired seat left behind and keeps recovery open until none remain; source-location and unchanged-byte audit: helpers/frontend/source-drift-current-W9.json; no fresh test execution."
+      ],
+      "path": "L183-current-guarantees-and-proofs-W9"
+    },
+    "handoffEntry": "L183-CUR-FE03-retirement",
+    "leaf": "260928-MIK-L183",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The chat header and an active leaf task document offer the same explicit Retire confirmation for an existing seat, name the resources that end and saved pages and grades that remain, and preserve one recovery receipt with named remaining processes until retirement finishes, including from a cold document.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,341 @@
+{
+  "path": "mcp/src/agents_remember/mcp/registration/worktrees.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b6b26f36ebef5b6f3b46cfe94907ed6cd6acec33",
+        "content": "sha256:c107c84de41b7068acf7100742d571c8c6d96ba7c4aa61c4e51f1476c390acab",
+        "locator": {
+          "kind": "symbol",
+          "name": "worktree_sync"
+        }
+      },
+      "id": "RLZ-EX1X7C",
+      "invariant": "INV-STH8F0",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.1",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Publishes the sync_source parameter on the worktree_sync tool.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "b6b26f36ebef5b6f3b46cfe94907ed6cd6acec33",
+        "content": "sha256:8f6996c17d11971112ef6181192b87e25f773050c0e11867cc3fff5ea8bc4ffe",
+        "locator": {
+          "kind": "symbol",
+          "name": "register_worktree_tools"
+        }
+      },
+      "id": "RLZ-NJRK6G",
+      "invariant": "INV-990KQM",
+      "origin": {
+        "handoffEntry": "L183-deferred-discovery-implementation",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Worktree declarations use light worktree_tool_requests types and lazily access existing payloads; enclosure adoption resolves its request class with its payload at call time.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Current pause declaration is contract-addressed, publishes nothing, hands control back and identifies separate checkpoint publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6b26f36ebef5b6f3b46cfe94907ed6cd6acec33",
+            "content": "sha256:1c64b32caf234c0c43e07186253e6775527e246baed49f8269d6373a1e90a25c",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_pause"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b6b26f36ebef5b6f3b46cfe94907ed6cd6acec33",
+            "content": "sha256:5a195ea8fb7f02e420cc51dd1eaa0c78cdb24df450156a9c82e25708d7964e24",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_worktree_stop_tools"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**Retained historical source account — superseded by the current contract:** `TaskRef` — the shared task locator attach and status pack.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b7d94fc2a811ecaa875d929ec1242369625dadc",
+            "content": "sha256:099fc8a76c1c3855e16525e55b4246e43e679d8c7af08b945c90347ee2c062d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskRef"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_ref.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The pairing this registrar performs: worktree_sync builds SyncResolutionInput(action=resolution_action, source=sync_source) from the shared continue/cancel and repository-default vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:4f2475b65b2a9470e35d676b1721991f967f5828bdd6299c7cefd71c19724142",
+            "locator": {
+              "kind": "symbol",
+              "name": "SyncResolutionInput"
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b6b26f36ebef5b6f3b46cfe94907ed6cd6acec33",
+            "content": "sha256:9d0fdf91fa52db3fabfcd66582e7e94f169646d2a9c7cffb265cc44089173dbb",
+            "locator": {
+              "end": 197,
+              "kind": "line_range",
+              "start": 174
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:11ff3c4c19259b7a62b72f0cafecfd04eeeca6cdd032b7811c1af4694cb40a14",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 86
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Current register_worktree_tools registers the existing start, address, observation and stop owners.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6b26f36ebef5b6f3b46cfe94907ed6cd6acec33",
+            "content": "sha256:8f6996c17d11971112ef6181192b87e25f773050c0e11867cc3fff5ea8bc4ffe",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_worktree_tools"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Current sync accepts contract_path, memory_sync_choice, resolution_action, dry_run and sync_source and packs the continue/cancel action and the repository-default source into one SyncResolutionInput; its compact description is 600 characters with whitespace collapsed, at the 600 limit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6b26f36ebef5b6f3b46cfe94907ed6cd6acec33",
+            "content": "sha256:087297c73a5bf5fe7d9fa1fc2c40195fdc944f637813ab2d1f507c4615396e12",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Worktree declarations use light worktree_tool_requests types and lazily access existing payloads; enclosure adoption resolves its request class with its payload at call time.\n\nAnchor: `register_worktree_tools`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6b26f36ebef5b6f3b46cfe94907ed6cd6acec33",
+            "content": "sha256:087297c73a5bf5fe7d9fa1fc2c40195fdc944f637813ab2d1f507c4615396e12",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Current public sync takes five arguments and packs the continue/cancel action and the repository-default source into one SyncResolutionInput; there is no knowledge_resolution argument.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6b26f36ebef5b6f3b46cfe94907ed6cd6acec33",
+            "content": "sha256:087297c73a5bf5fe7d9fa1fc2c40195fdc944f637813ab2d1f507c4615396e12",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**Retained historical source account — superseded by the current contract:** The start payload forwards task identity, bases and execution configuration to the application owner.\n\nAnchor: \"def worktree_start_payload\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23805a3cc7fbb5f58d96584b7b4e3ce915c3eab9",
+            "content": "sha256:694f16aa54f237b6118667f2358ae060cbd57488dc709d3938ae8a89dec0ed6a",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 46
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/worktree.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**Retained historical source account — superseded by the current contract:** The attach payload forwards the requested worktree attachment to the application owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23805a3cc7fbb5f58d96584b7b4e3ce915c3eab9",
+            "content": "sha256:c1750539f94440f2c9ac605180dc44226027d1e852b66433df43871e933baa6a",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 79
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/worktree.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**Retained historical source account — superseded by the current contract:** The status payload reads status through the application owner.\n\nAnchor: \"def worktree_status_payload\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23805a3cc7fbb5f58d96584b7b4e3ce915c3eab9",
+            "content": "sha256:9cf6ecacfec5c9e90c3b876e9ac26822943eef82fb4ed93de4b13cb292a27f79",
+            "locator": {
+              "end": 93,
+              "kind": "line_range",
+              "start": 93
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/worktree.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**Retained historical source account — superseded by the current contract:** The sync payload forwards the paired resolution value to the application owner.\n\nAnchor: \"def worktree_sync_payload\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23805a3cc7fbb5f58d96584b7b4e3ce915c3eab9",
+            "content": "sha256:243080e4c85ff72e2212a1f2ce2d138e6cc1c892db7b4a1dc49019760f66715c",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 59
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/worktree.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**Retained historical source account — superseded by the current contract:** The identity parameter object `TaskIdentity` (repo_id, task_name, worktree_name, leaf_id, parent_task, workflow_kind defaulting to `light-task`), defined in the application request boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a944280846a4175d9217a58a16a3374d336e652b",
+            "content": "sha256:758bdbf0fd5bdc20f4ed1a4050023c69c029ab93772f633114a4e5808574c135",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskIdentity"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tool_requests.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a944280846a4175d9217a58a16a3374d336e652b",
+            "content": "sha256:06408e1990c9561355c6c1d27dc39c8dfcbac13d529ae3e7000fbd61cd4ced84",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tool_requests.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The bases parameter object `TaskBases` (source_branch, work_branch, memory_mode, memory_choice, stale_base_choice), defined in the application request boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a944280846a4175d9217a58a16a3374d336e652b",
+            "content": "sha256:8a7054c8315d010a5745eef12259ce5a60c57f6136f86f8d14214e97f1494ad9",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskBases"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tool_requests.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "**Retained historical source account — superseded by the current contract:** The execution parameter object `StartExecution` (dry_run, skip_provider_setup, retry_provider_setup), defined in the application request boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a944280846a4175d9217a58a16a3374d336e652b",
+            "content": "sha256:f205ae84cde66f1719bdbbbcd34edd2795206ba84ad19aa350a33eededfd46c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "StartExecution"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tool_requests.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a944280846a4175d9217a58a16a3374d336e652b",
+            "content": "sha256:7f78ce2f53d72daa790b418ba14a21e6d39cc2decf643c78346b92d14a222775",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 51
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tool_requests.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

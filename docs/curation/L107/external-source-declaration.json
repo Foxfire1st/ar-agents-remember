@@ -1,0 +1,18 @@
+[
+  {
+    "id": "node-26-checksums",
+    "document": "https://nodejs.org/dist/v26.11.1/SHASUMS256.txt",
+    "version": "v26.11.1",
+    "retrieved_at": "2026-10-08T08:39:28Z",
+    "content_digest": "sha256:75ff0c104acddb008964dd5feb88f58844b652820cb1cb01696f95031372b293",
+    "location": "Worker retained SHASUMS256-26.txt; node-v26.11.1-linux-x64.tar.xz line"
+  },
+  {
+    "id": "node-release-index",
+    "document": "https://nodejs.org/dist/index.json",
+    "version": null,
+    "retrieved_at": "2026-10-08T09:54:43Z",
+    "content_digest": "sha256:c7005c9dd6c35ded6bab489597ab51094dc3e923e19b6236014e652b7cf5a7cb",
+    "location": "Worker freeze2/node-index-final.json; newest 26 and 24 records"
+  }
+]

@@ -1,0 +1,238 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_write_admission.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0c25de5b43f8d9eab093ba267292a378cddb9137",
+        "content": "sha256:ead85644de937dc1ad342e01ee925d95fbb66e9381f3a10f5a5e96242c92885b",
+        "locator": {
+          "kind": "symbol",
+          "name": "KnowledgeWriteAdmission"
+        }
+      },
+      "id": "RLZ-9E6YZ4JN",
+      "invariant": "INV-QN53GPRB",
+      "origin": {
+        "leaf": "260921-ICR-L30"
+      },
+      "rationale": "The admission resolver is where 'authority is derived, never asserted' is made a property of the control flow rather than a promise.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The taskless admission derives real setup authority; canonical enclosure adapters and database refusal were retired.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c25de5b43f8d9eab093ba267292a378cddb9137",
+            "content": "sha256:ead85644de937dc1ad342e01ee925d95fbb66e9381f3a10f5a5e96242c92885b",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeWriteAdmission"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The current resolver derives taskless admission from repository setup authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dcbd9ce3d1bcc4f2805f2ccf47e3b8a14119ec63",
+            "content": "sha256:5cdaf2e9510dbdc04146abcef8ff00e91a0b4d27dce7faac33bd6a7da5e9d974",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_bootstrap_admission.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "**The module's own statement of the gap it closes and of why a second write path was refused.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c25de5b43f8d9eab093ba267292a378cddb9137",
+            "content": "sha256:ead85644de937dc1ad342e01ee925d95fbb66e9381f3a10f5a5e96242c92885b",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeWriteAdmission"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The facts one admitted write is bound to, including the retry scope and the two exact source revisions.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c25de5b43f8d9eab093ba267292a378cddb9137",
+            "content": "sha256:ead85644de937dc1ad342e01ee925d95fbb66e9381f3a10f5a5e96242c92885b",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeWriteAdmission"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Which authority admitted this write, and whether it was derived without an enclosure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c25de5b43f8d9eab093ba267292a378cddb9137",
+            "content": "sha256:3ec33dcc3c9500aa2682f5cd25e81fdf7d377bfdee9479f7bc681fff6b88b94a",
+            "locator": {
+              "kind": "symbol",
+              "name": "AdmissionProvenance"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "**The second real admission this value exists to carry, and the resolver that builds it.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c25de5b43f8d9eab093ba267292a378cddb9137",
+            "content": "sha256:ead85644de937dc1ad342e01ee925d95fbb66e9381f3a10f5a5e96242c92885b",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeWriteAdmission"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The taskless admission value and provenance are the published shapes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c25de5b43f8d9eab093ba267292a378cddb9137",
+            "content": "sha256:ead85644de937dc1ad342e01ee925d95fbb66e9381f3a10f5a5e96242c92885b",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeWriteAdmission"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0c25de5b43f8d9eab093ba267292a378cddb9137",
+            "content": "sha256:3ec33dcc3c9500aa2682f5cd25e81fdf7d377bfdee9479f7bc681fff6b88b94a",
+            "locator": {
+              "kind": "symbol",
+              "name": "AdmissionProvenance"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The one current admission kind is repository-bootstrap.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c25de5b43f8d9eab093ba267292a378cddb9137",
+            "content": "sha256:547e039d511fdb71efdb12d3a866d33fbfc5d12a564c477b327ca7f0a66301e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "AdmissionKind"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**Provenance as a value: what admitted the write, from which document, and the one fact that made it an admission.**\n\nAnchor: `AdmissionProvenance`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c25de5b43f8d9eab093ba267292a378cddb9137",
+            "content": "sha256:48240d76706b6814071190f752ced0d208695746365055fb8212d06fad7a49b7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The taskless operation is bound to its exact code/memory roots and admitted source commits.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c25de5b43f8d9eab093ba267292a378cddb9137",
+            "content": "sha256:ead85644de937dc1ad342e01ee925d95fbb66e9381f3a10f5a5e96242c92885b",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeWriteAdmission"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The optional memory repository against the required memory worktree the operation refuses on.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c25de5b43f8d9eab093ba267292a378cddb9137",
+            "content": "sha256:d0ca2499f3633b6ae4538b5c942d2377ac826925bc1b6f8f37367b7275ab0e30",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_repo_path"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0c25de5b43f8d9eab093ba267292a378cddb9137",
+            "content": "sha256:ee736089b0313be7277c3830c646eee730e00c672d04d0c7acf218cc91dcba19",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_worktree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Provenance carries the exact setup authority and reference rather than a caller boolean.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c25de5b43f8d9eab093ba267292a378cddb9137",
+            "content": "sha256:3ec33dcc3c9500aa2682f5cd25e81fdf7d377bfdee9479f7bc681fff6b88b94a",
+            "locator": {
+              "kind": "symbol",
+              "name": "AdmissionProvenance"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

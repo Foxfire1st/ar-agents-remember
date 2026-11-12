@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Started and addressed-role cases including the id-addressed receipt pin the carriage; without the record agent-id messages would go role-less again."
+  },
+  "applicability": "role_start and role_message answers completed on the host path.",
+  "conditions": [
+    "The role rides the context variable around the choke in the same task context.",
+    "Completed answers include refusals, which are recorded with code."
+  ],
+  "exclusions": [
+    "Recipients with no role on receipt or call, which stay literal."
+  ],
+  "id": "INV-0ZW4BP",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "case test_role_start_and_role_message_name_the_started_or_addressed_role in mcp/tests/test_tool_event_river.py; pytest mcp/tests/test_tool_event_river.py -p no:cacheprovider -n 0 -q -> 16 passed; notes/reports/role-launch/260928-MIK-L114-worker-4b5eb1b1-ea79-4dac-b8dd-ef796451e0b6.md"
+      ],
+      "path": "notes/reports/l114-curator-handoff-list.json"
+    },
+    "handoffEntry": "L114-W05",
+    "leaf": "260928-MIK-L114",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "role_start/role_message builders publish the started/addressed role on a context variable, never in the answer.",
+  "status": "proposed",
+  "supersedes": []
+}

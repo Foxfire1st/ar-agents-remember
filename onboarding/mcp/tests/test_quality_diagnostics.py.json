@@ -1,0 +1,39 @@
+{
+  "path": "mcp/tests/test_quality_diagnostics.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Proves that diagnostic metric findings remain visible without blocking delivery.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3dfe581a740ee2b9f15eba362ab799997a18dac",
+            "content": "sha256:0fbe2c72607da7f2bc6959166bfec6f42ae2890783cf60abbb2ebbe9d000cd2c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_low_coverage_is_reported_without_failing_delivery"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Proves that diagnostic metric findings remain visible without blocking delivery.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3dfe581a740ee2b9f15eba362ab799997a18dac",
+            "content": "sha256:144d428aefb42dd16eca76bf720b751844798facacb02aec1db2b59180a816d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_high_crap_requests_review_without_failing_delivery"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

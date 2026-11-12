@@ -1,0 +1,40 @@
+{
+  "path": "mcp/tests/test_agent_eval_hermes_nested.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e2d349c647f41a9f7e963b47866db59d6cc3bd1d",
+        "content": "sha256:f268073e3b125dc898997b65dd5906a99c4622b687a2e3af9398acdc870e0a57",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-MVVCNG",
+      "invariant": "INV-A0B83R",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-hermes-capture",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "This regression module checks this obligation through test_real_fixture_identity, test_actual_nested_calls_enter_the_existing_graded_action_list, test_real_ce14_refusal_and_planned_count_are_not_changed, test_unobserved_dispatch_shape_is_named_with_location_and_hash.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2d349c647f41a9f7e963b47866db59d6cc3bd1d",
+            "content": "sha256:f268073e3b125dc898997b65dd5906a99c4622b687a2e3af9398acdc870e0a57",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

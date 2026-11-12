@@ -1,0 +1,39 @@
+{
+  "path": "dashboard/src/data/reviewOpen.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "An opening read is attributed to the open it belongs to, so a page's cost is counted per open.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bbc4d8abbbce7cc7961e60ec24c1d5b15b8b755e",
+            "content": "sha256:d13fd006dfa64ebb1ddc92b6677f95d7a4210c72ec9427894600b74142b5d80c",
+            "locator": {
+              "kind": "symbol",
+              "name": "openingReadOf"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "One page keeps one id, so its reads are known to belong to the same open.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bbc4d8abbbce7cc7961e60ec24c1d5b15b8b755e",
+            "content": "sha256:100c666e7838d7ff085d7905d9d76233a7b7fcf2e55c2684190b80df099088ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "reviewPageId"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

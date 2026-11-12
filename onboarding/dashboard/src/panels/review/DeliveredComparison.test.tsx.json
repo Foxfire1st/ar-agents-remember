@@ -1,0 +1,128 @@
+{
+  "path": "dashboard/src/panels/review/DeliveredComparison.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "d8db97aaf00c8567bd968250119cd77426b4b2f7",
+        "content": "sha256:b5a6099995a20013003e6eeac39d573e994c5c10028b9e2c943fa12137b4a611",
+        "locator": {
+          "kind": "symbol",
+          "name": "lists the delivered identities in the page’s technical details"
+        }
+      },
+      "facet": "The delivered identities appear as facts in the page's existing technical details.",
+      "id": "PRF-842CF1",
+      "invariant": "INV-NW4H6C",
+      "origin": {
+        "handoffEntry": "L187-NOTICE",
+        "leaf": "260928-MIK-L187"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d8db97aaf00c8567bd968250119cd77426b4b2f7",
+        "content": "sha256:c7b4ce9c8c95df03fc46c086c4290b088ec5862bc2971a519ae0b89f5ad3cca6",
+        "locator": {
+          "kind": "symbol",
+          "name": "states no line for the delivered pair itself and offers no link while unavailable"
+        }
+      },
+      "facet": "A matching pair shows no line, and an unavailable delivery is stated with no delivered control.",
+      "id": "PRF-VGXH1A",
+      "invariant": "INV-NW4H6C",
+      "origin": {
+        "handoffEntry": "L187-NOTICE",
+        "leaf": "260928-MIK-L187"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d8db97aaf00c8567bd968250119cd77426b4b2f7",
+        "content": "sha256:3182084bcad172a8a51f64dfe6bd3f52c74a2ac5df0b257ab88ad7c5eff87589",
+        "locator": {
+          "kind": "symbol",
+          "name": "states the mismatch once and opens the delivered view without a second review surface"
+        }
+      },
+      "facet": "The page states the mismatch once and its control asks for the delivered view.",
+      "id": "PRF-VJF503",
+      "invariant": "INV-NW4H6C",
+      "origin": {
+        "handoffEntry": "L187-NOTICE",
+        "leaf": "260928-MIK-L187"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The mismatch is stated once and its control asks for the delivered view.\n\nAnchor: `states the mismatch once and opens the delivered view without a second review surface`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d8db97aaf00c8567bd968250119cd77426b4b2f7",
+            "content": "sha256:e770f127882e5ce47cb494f95c0f4ae2398a4a203fd7a37478a3fcadb16903a8",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 28
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A matching pair states no line, and an unavailable delivery offers no delivered control.\n\nAnchor: `states no line for the delivered pair itself and offers no link while unavailable`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d8db97aaf00c8567bd968250119cd77426b4b2f7",
+            "content": "sha256:71ccf991108d0e6183d774659cb20a44e8dcfedcf1b725a09f4cfd48f644c0ce",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 39
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The delivered identities are listed in the page's technical details.\n\nAnchor: `lists the delivered identities in the page’s technical details`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d8db97aaf00c8567bd968250119cd77426b4b2f7",
+            "content": "sha256:53b2e483dbe108b5b0f763a3de2026aa2c2363cda92bce285c5a73b0b97ec778",
+            "locator": {
+              "end": 64,
+              "kind": "line_range",
+              "start": 57
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The menu carries the delivered row, which asks for the delivered action, and marks the number that holds the pair.\n\nAnchor: `it('offers the delivered pair as its own comparison-menu row and marks the number that holds it', async () => {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d8db97aaf00c8567bd968250119cd77426b4b2f7",
+            "content": "sha256:1844f09b018f8103841705d732d3bece1ce6d51ab45b4a5e5ec3058def1b70e4",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 66
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

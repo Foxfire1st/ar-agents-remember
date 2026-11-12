@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_observer_projection.py",
+  "realizes": [],
+  "references": {
+    "5": {
+      "note": "Fixed UTC fixture observation time.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33a972d10ae91707ed3e1e12affbcfd3a19b1556",
+            "content": "sha256:f2626fd1d29c6a19ff5ba356b2da6bf4ec9856e149db838a3aea297555efb02b",
+            "locator": {
+              "kind": "symbol",
+              "name": "FRESH"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

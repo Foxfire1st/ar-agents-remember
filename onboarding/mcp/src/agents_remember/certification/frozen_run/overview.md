@@ -2,13 +2,7 @@
 
 | Field | Value |
 | --- | --- |
-| repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/certification/frozen_run` |
-| doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-06T14:47:06+00:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
-| governingOverview | `../overview.md` |
 
 ## Governing Overview
 
@@ -16,34 +10,25 @@
 
 ## What This Area Is
 
-Immutable retained inputs for closeout certification. A frozen run keeps the original registry,
-plans, profile, admission and creation evidence together. Candidate authority records preserve
-semantic mutation/source/worktree/generated-input projections alongside the original bytes used
-to derive them. The package supplies contracts to the execution and lifecycle owners.
+This package defines immutable retained inputs for closeout certification. A frozen run keeps the original registry, plans, profile, admission and creation evidence together. Candidate authority records preserve semantic mutation, source, worktree and generated-input projections alongside the original bytes used to derive them. These contracts supply inputs to the execution and lifecycle owners.
 
 ## Hot Path Summary
 
-Read `models.py` for `FrozenCertificationRun` and `freeze_certification_run`; read `authorities.py`
-for `CandidateAuthorityRecords`, exact input snapshots and semantic projections. Run identity
-includes original provenance; certificate semantic identity has its own narrower contract.
+Read `models.py` for `FrozenCertificationRun` and `freeze_certification_run`; read `authorities.py` for `CandidateAuthorityRecords`, exact input snapshots and semantic projections. Run identity includes original provenance; certificate semantic identity has its own narrower contract.
 
-## Operating Model
+## How It Is Built
 
-The admitted lane is frozen into a self-validating run. Its admission is recompiled from retained
-owners and compared exactly; the complete record digest is then checked. Separately, the worktree
-observation owner gathers current authorities and retains their semantic envelope plus top-level derivation
-bytes. The generated-input declarations snapshot belongs inside that envelope and participates in
-its semantic digest. Subsequent lifecycle selection and gate execution consume these objects through their own
-owners; a valid retained object is not evidence that any gate passed.
+`freeze_certification_run` retains the admitted lane and repository profile using the lane admission's original creation provenance. The resulting run recompiles admission from its retained registry, plans, profile and provenance, compares that admission exactly, and checks the digest of the complete record.
 
-## Local Invariants And Traps
+The retained `CandidateAuthorityEnvelope` contains semantic projections, generated-input declarations and an optional `admittedMemoryTree`; `CandidateAuthorityRecords` separately retains derivation snapshots and original provenance and validates the semantic digest. These model fields and retained bytes do not establish a current runtime observer or prove that a current closeout door populates them. The former `observe_certification_candidate` runtime observer was removed.
 
-- Retain original creation evidence; do not reconstruct it from a later generation.
-- An exact run record and a semantic gate certificate have different digest domains.
-- Generated-input declarations start with unknown freshness.
-- No package import, constructor or digest check grants process or mutation authority.
+Requested certification still freezes the complete admitted profile, plans and original provenance before executing a gate. Recovery reopens the supplied immutable frozen run and verifies its stored reference without rediscovering a profile or summary journal. The removed automatic closeout admission helper no longer stages or observes a candidate for this purpose; ordinary closeout publishes its accepted tree through the invariant-gated transaction instead.
 
-## File-Level Onboarding Map
+The memory-quality controller revalidates the admitted candidate, refuses unconverted input, runs converted validation and the onboarding trace gate, and retains its checklist/readiness owners. It does not call the removed legacy sidecar/Update History refresh composition for an unconverted leaf. These application checks do not alter the immutable frozen-run contracts or certify any execution. No external Domain Documentation source is configured.
+
+### File-Level Onboarding Map
+
+The following retained coverage metadata describes the onboarding map, not lifecycle status or certification results.
 
 | Source File | Onboarding | Status |
 | --- | --- | --- |
@@ -51,28 +36,23 @@ owners; a valid retained object is not evidence that any gate passed.
 | `models.py` | [models.py.md](models.py.md) | covered |
 | `authorities.py` | [authorities.py.md](authorities.py.md) | covered |
 
-## Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| A frozen run revalidates exact original admission and complete-record identity. | `FrozenCertificationRun`; `freeze_certification_run` | mcp/src/agents_remember/certification/frozen_run/models.py:25-80 |
-| Candidate records separate semantic projections from exact derivation bytes and provenance. | `CandidateAuthorityEnvelope`; `CandidateAuthorityRecords` | mcp/src/agents_remember/certification/frozen_run/authorities.py:100-128 |
-| Production admission prepares and observes a candidate before compiling lifecycle recovery. | `prepare_closeout_certification` | mcp/src/agents_remember/worktrees/integration/closeout/certification/admission.py:75-142 |
+## Invariants And Boundaries
 
-## Docs References
+- Retain original creation evidence; do not reconstruct it from a later generation.
+- An exact run record and a semantic gate certificate have different digest domains.
+- Generated-input declarations start with unknown freshness. Their retained status is not evidence of a freshness check or a passed gate.
+- Package import, construction and digest validation establish retained contract consistency; process execution and mutation authority remain with the lifecycle and execution owners. A valid retained object is not evidence that any gate passed.
 
-No configured Domain Documentation source applies to this repository-owned contract.
+## Evidence
 
-## Cross-Repo References
+- A frozen run revalidates exact original admission and complete-record identity. [1]
+- Candidate records separate semantic projections from exact derivation bytes and provenance. [2]
 
-No cross-repository implementation boundary is owned by this route.
+- Requested certification freezes the admitted repository profile, plans, registry and original provenance before gate execution; selected recovery reopens the exact retained frozen run without profile or journal rediscovery. Ordinary closeout is not this certification route. [3]
 
-## CCR-L42 Refresh Validation Parity
-
-The parity candidate composes the sidecar and governing route body/history checks in `worktrees/modules/onboarding.py::validate_memory_refresh_attestations`; curator memory preparation and closeout call that shared validator independently for both surfaces. This route's existing ownership and source behavior remain unchanged by the validation wiring.
+- Retained authority models carry generated declarations, an optional admittedMemoryTree, input snapshots and provenance; model validation does not prove a current runtime observer or gate execution. [4]
 
 
-## Update History
-- 2026-09-10T02:27:58+02:00 — CCR-L42 parity curation: No route impact: curator preparation and closeout now run the shared sidecar and route body/history validators independently; this route's ownership and source semantics remain unchanged. No acceptance claim is made.
 
-- 2026-09-06T14:47:06+00:00 — Created the governing route from actual source at c69d5171187fa1957025e393270db9f5a864ab14, separating original frozen inputs from execution and certification authority.
+- On a converted tree the curator's memory-quality run uses the onboarding trace gate: one repair finding per missing trace, one per unreadable input, and one for changed sources without onboarding. [5]

@@ -1,0 +1,60 @@
+{
+  "path": "mcp/tests/paseo_runtime_test_support.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "04afc3e17822d205e12567c81307fe5c2684595a",
+        "content": "sha256:939c9f68ab03ed3fb930c154c58863ac58da700bc1e3207d705f1a02a481e324",
+        "locator": {
+          "kind": "symbol",
+          "name": "write_user_settings_block"
+        }
+      },
+      "id": "RLZ-8VGT3J",
+      "invariant": "INV-P3ZYFW",
+      "origin": {
+        "handoffEntry": "MIK-R135@v1 §2",
+        "leaf": "260928-MIK-L135"
+      },
+      "rationale": "The shared runtime writer obtains the guard path before both settings writing and the settings=None unlink.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "04afc3e17822d205e12567c81307fe5c2684595a",
+        "content": "sha256:70d0a612e3322a26aa86038df9ea5204e936af8ab7c76fc6dd5e0797a2e1d065",
+        "locator": {
+          "end": 54,
+          "kind": "line_range",
+          "start": 48
+        }
+      },
+      "id": "RLZ-Y5XYXW",
+      "invariant": "INV-MAZGMS",
+      "origin": {
+        "handoffEntry": "MIK-R60@v6.4",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "The fake host's live-settings list includes agents.idleRuntimeCleanup, so a provision that stopped writing it fails the runtime cases.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The fake npm and Paseo command line, its settings writers, process record and file-state observation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "04afc3e17822d205e12567c81307fe5c2684595a",
+            "content": "sha256:a4360a96f299ede22565157ba3b88c2fb0536db097859f48ac2fad10ec2b1031",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

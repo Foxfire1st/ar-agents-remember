@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The malformed-group cases prove the refusal, and the empty-map case proves the mapping is not refused for being empty."
+  },
+  "applicability": "Every worklist run's identicalChanges mapping read for a leaf on a converted memory worktree.",
+  "conditions": [
+    "The run is the one the entry judges; its groups are read by the single strict reader."
+  ],
+  "exclusions": [
+    "A genuine empty mapping is valid and yields one-source items.",
+    "The closeout contributes the attestation requirement, not a parser of its own, after 260928-MIK-L56 removed the validator."
+  ],
+  "id": "INV-2FA2B5",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Six malformed shapes through both consumers and the valid empty-map control pass; freeze-a02/probe-candidate.log: the memory-quality reader answers (None, \"identicalChanges['skills/…'] is not a list of source paths: 'not-a-source-list'\") and the closeout refuses naming the same entry, where probe-a01.log shows A01 answering ({}, '') and {}."
+      ],
+      "path": "ingest-L175.json"
+    },
+    "handoffEntry": "R177-C3",
+    "leaf": "260928-MIK-L175",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "A worklist run's identicalChanges that is not a mapping of representative source paths to lists of source paths is refused by name by the memory-quality gate, and by the closeout through the memory-quality attestation it requires, never shortened into ungrouped items; a genuine empty mapping stays a valid empty map.",
+  "status": "proposed",
+  "supersedes": []
+}

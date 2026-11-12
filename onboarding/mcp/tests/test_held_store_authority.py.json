@@ -1,0 +1,25 @@
+{
+  "path": "mcp/tests/test_held_store_authority.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "62c4392480b007b40cd8b3154b7528ba7c1e5e51",
+        "content": "sha256:4e2cf90ad69b5a5bf94404807504d0b093f53e22fe74e9d6d5107730c1ef4044",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_queue_is_a_hint_never_the_census"
+        }
+      },
+      "facet": "A held store the delivery queue does not name is still read.",
+      "id": "PRF-F68BBN",
+      "invariant": "INV-AYW07B",
+      "origin": {
+        "handoffEntry": "L190-R1-F02",
+        "leaf": "260928-MIK-L190"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

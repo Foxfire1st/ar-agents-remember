@@ -1,77 +1,89 @@
 # operations/orientation.md
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                            |
-| path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/orientation.md` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-16T08:01+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview      | `../../../../../../../overview.md` |
-
 ## Governing Overview
 
 [MCP package overview](../../../../../../../overview.md)
 
 ## Purpose
 
-Opening a turn — reading the brief and its durable inputs, establishing trust facts, and saying the current state back before acting.
+Recover the selected native role assignment and canonical inputs without deriving scope from the execution workspace.
 
-Every operation block shares one five-part shape — who carries it, required inputs, normal workflow, authority gates, failure handling, and handoff/exit — which is what makes a long procedure separately loadable instead of padding every role file.
+## Current Contract
+
+The role launcher supports these eight role IDs: `architect`, `investigator`, `orchestrator`, `manager`, `worker`, `reviewer`, `curator`, and `bootstrap`; `bootstrap` is the taskless setup role the one start call reaches. `system-specialist` is the earlier ID of the same Investigator role. Missing, unsupported, inapplicable or conflicting role/operation/task bindings are reported rather than inferred. Projects is an execution location, not a repository identity. A manually selected taskless Architect asks only for missing outcome or registered repository details. An Investigator accepts a scoped concern of any kind from its actual parent's first message and asks that parent for missing concern/report scope; without a parent it uses the developer's request and own chat. Investigator may be selected at Projects, on a sprint, or on a sprint and master, never on a leaf. No synthetic repository, sprint, master, task or parent is created. Existing work recovers durable requirements, rulings, approvals, agent IDs and reports; reconnects do not invalidate supplied approval.
+
+Task-bound reads use the rendered task-document files named in the handover and the harness’s own file tools before acting. For canonical task-document edits admitted to the role, use `task_doc` first; only a covered correct-input write refusal follows the declared same-tool/input-class recovery. Rendered copies are never parsed back and are refreshed by the owner’s next task_doc publication. Read only the selected packet/task scope and verify role, requirement revision, altitude, paired roots, contract and report agree. Missing admission/capability and read, validation, sync, guard, gate and permission stops remain unchanged.
+
+Use the launching build’s `agents-remember-task` server through its actual harness tool surface and schemas. The tool-server binding supplies identity; the handover supplies a parent when one exists. Every question requiring the developer's decision goes to the reporting recipient the role instructs; if the role names none, to the parent named in host.parent, through bound role_message; when neither exists, the agent asks the developer in its own chat. Independent work continues; when none remains, the agent records its state and sends what it awaits to that recipient. A full-store refusal follows the message-handover detail: the handover stays pending, is retried once, and a second refusal is reported. Only a recipient that cannot be reached at all (archived, not found, not resumable, no runtime configured, or host unreachable) sends the question to the agent's own chat, with the refusal named. Peer communication retains its bound role-message route.
+
+## Conventions
+
+Canonical skills/l-01-agent-lifecycles/operations/orientation.md owns the instruction. scripts/sync-skills.py regenerates this exact packaged copy, the sole generated skill target, which the tool server serves as MCP resources; no generated file defines a separate obligation.
+
+## Invariants And Boundaries
+
+Worker/Reviewer use memory read-only; Curator owns admitted memory writes. A dashboard role needs no parent. After compaction/reconnect restore the same assignment and inspect current AR truth before retrying an action.
 
 ## Code Commentary
-
-### Logic
-
-`## Who carries it, and their job` gives each of the nine roles its own opening move in one table, which is
-what lets a single operation block serve every seat without duplicating procedure into nine role files.
-`## Required inputs` fixes the brief as a spawned seat's session start and points the trust checkpoint
-itself at `../core/lifecycle-frame.md`, where it is authored once. `## Normal workflow`, `## Authority
-gates`, `## Failure handling`, and `## Handoff / exit` give the block its uniform five-part shape — the
-same shape every operation block uses, which is what makes them separately loadable.
-
-### Conventions
-
-A role file names this block in its `**Inherits:**` line and keeps only its own seat-specific opening detail.
-
-### Invariants And Boundaries
-
-- An operation block holds procedure only; a rule that applies across roles belongs in `core/`.
-- A role file names the operation it selects; it does not restate the procedure.
-- The operation vocabulary is closed at eight names, so an unknown operation is an explicit error rather than a silent fallback.
-- Authority gates and failure handling stay inside this block, not in the role that triggers it.
 
 ### Todos
 
 None recorded.
 
-## Docs References
+## Evidence
+
+
+Superseded card wording retained for custody (not certified as true of any source epoch or measured candidate):
+
+> Task-bound reads use the rendered task-document files named in the handover, read with the harness's own file tools before acting; change documents through `task_doc` only, because edits to copies are never read back and are lost on the next publication. Read only the selected packet/task scope and verify role, requirement revision, altitude, paired roots, contract and report agree.
+
+>  —  Taskless/approved-scope intake, exact task reads, paired write surfaces, bound server and same-task recovery.  —  lines 3-13  —  mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/orientation.md:3-13  —
+
+
+### Repo-Internal References
+
+- Taskless scope, exact task-bound reads, role-admitted task_doc-first edits, paired surfaces, the bound tool server and saved-assignment recovery. [6]
+
+### Docs References
 
 No external or domain documentation governs this repository-local instruction file; it is canonical
 repository prose consumed by the skill router.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant documentation found after checking live sources. | n/a | n/a |
+No relevant documentation found after checking live sources.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| The operation block's declared purpose, source path, and applicable roles. | `"operations"`; `"purpose"`; `"applies_to_roles"` | skills/l-01-agent-lifecycles/composition-manifest.json:1-1; skills/l-01-agent-lifecycles/composition-manifest.json:45-45; skills/l-01-agent-lifecycles/composition-manifest.json:47-47; skills/l-01-agent-lifecycles/composition-manifest.json:63-63; skills/l-01-agent-lifecycles/composition-manifest.json:73-73; skills/l-01-agent-lifecycles/composition-manifest.json:80-80; skills/l-01-agent-lifecycles/composition-manifest.json:90-90; skills/l-01-agent-lifecycles/composition-manifest.json:98-98; skills/l-01-agent-lifecycles/composition-manifest.json:107-107; skills/l-01-agent-lifecycles/composition-manifest.json:115-115; skills/l-01-agent-lifecycles/composition-manifest.json:128-128; skills/l-01-agent-lifecycles/composition-manifest.json:185-185; skills/l-01-agent-lifecycles/composition-manifest.json:223-223; skills/l-01-agent-lifecycles/composition-manifest.json:261-261; skills/l-01-agent-lifecycles/composition-manifest.json:289-289; skills/l-01-agent-lifecycles/composition-manifest.json:324-324; skills/l-01-agent-lifecycles/composition-manifest.json:366-366; skills/l-01-agent-lifecycles/composition-manifest.json:397-397; skills/l-01-agent-lifecycles/composition-manifest.json:429-429; skills/l-01-agent-lifecycles/composition-manifest.json:463-463; skills/l-01-agent-lifecycles/composition-manifest.json:489-489; skills/l-01-agent-lifecycles/composition-manifest.json:512-512; skills/l-01-agent-lifecycles/composition-manifest.json:539-539; skills/l-01-agent-lifecycles/composition-manifest.json:48-48; skills/l-01-agent-lifecycles/composition-manifest.json:64-64; skills/l-01-agent-lifecycles/composition-manifest.json:74-74; skills/l-01-agent-lifecycles/composition-manifest.json:81-81; skills/l-01-agent-lifecycles/composition-manifest.json:91-91; skills/l-01-agent-lifecycles/composition-manifest.json:99-99; skills/l-01-agent-lifecycles/composition-manifest.json:108-108; skills/l-01-agent-lifecycles/composition-manifest.json:116-116; skills/l-01-agent-lifecycles/composition-manifest.json:129-129; skills/l-01-agent-lifecycles/composition-manifest.json:138-138; skills/l-01-agent-lifecycles/composition-manifest.json:142-142; skills/l-01-agent-lifecycles/composition-manifest.json:146-146; skills/l-01-agent-lifecycles/composition-manifest.json:150-150; skills/l-01-agent-lifecycles/composition-manifest.json:154-154; skills/l-01-agent-lifecycles/composition-manifest.json:158-158; skills/l-01-agent-lifecycles/composition-manifest.json:49-49; skills/l-01-agent-lifecycles/composition-manifest.json:65-65; skills/l-01-agent-lifecycles/composition-manifest.json:75-75; skills/l-01-agent-lifecycles/composition-manifest.json:82-82; skills/l-01-agent-lifecycles/composition-manifest.json:92-92; skills/l-01-agent-lifecycles/composition-manifest.json:100-100; skills/l-01-agent-lifecycles/composition-manifest.json:109-109; skills/l-01-agent-lifecycles/composition-manifest.json:117-117; skills/l-01-agent-lifecycles/composition-manifest.json:130-130 |
-| The manifest keeps the operation vocabulary at exactly these eight names. | `OPERATION_KEYS`; `test_manifest_resolves_every_role_and_operation_source` | mcp/tests/test_role_instruction_corpus.py:56-64; mcp/tests/test_role_instruction_corpus.py:199-225; mcp/tests/test_role_instruction_corpus.py:66-66; mcp/tests/test_role_instruction_corpus.py:177-177; mcp/tests/test_role_instruction_corpus.py:180-180; mcp/tests/test_role_instruction_corpus.py:253-253 |
-| The canonical source of this block. | `# Operation` | skills/l-01-agent-lifecycles/operations/orientation.md:1-1 |
 
-## Cross-Repo References
+
+
+- The operation block's declared purpose, source path, and applicable roles. [3]
+
+- The canonical source of this block. [4]
+
+### Role launcher and alias
+
+- The launcher supports these eight role IDs, including the taskless `bootstrap` setup role. [5]
+
+### Cross-Repo References
 
 No sibling-repository contract defines this instruction file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
+No meaningful cross-repo references found.
 
-## Update History
+## Current Investigator contract impact
 
-- 2026-09-17T19:30+02:00 — 260915-CAPS-L20 curator: **dead governing-overview body link repaired, and the field brought into agreement with it.** The field named `../../../../../../../overview.md` — which resolves, but only under the onboarding root rather than against this card's own route — while the body link named `../../../../../overview.md` and resolved card-relative to nothing, so a reader clicking it landed nowhere and the two declarations disagreed. Both now name `../../../../../../../overview.md`, the route-local overview of this card's own directory, so the field and the link agree by construction. Recorded under `260915-CAPS-L20` as this leaf's **S3** (D3, the packaged `l-01-agent-lifecycles` family) and **S4** (D16, govern-or-remove per card). The checker that previously reported this corpus clean now resolves both declarations, so this card reaches the curator's gated repair set instead of passing silently; that is the gap this leaf closed. Superseded history entries above stand unedited — including any entry that asserted an earlier repair this card did not in fact carry, which is the finding rather than an error to erase. No prose, anchor, range or verification stamp was otherwise changed.
-- 2026-09-17T12:55+02:00 — 260915-CAPS-L14 curator: **D3 dead governing-overview link repaired.** This card's `governingOverview` was one directory level short, so it resolved to a path that does not exist instead of the `mcp/` route overview. The card directory sits seven levels below `onboarding/`, so seven `../` steps reach `onboarding/` and the correct target is `../../../../../../../overview.md` (→ `onboarding/mcp/overview.md`). Reversed here: `../../../../../overview.md` (which resolved to the nonexistent `mcp/src/agents_remember/overview.md`) or `../../../../../../overview.md` (→ the nonexistent `mcp/src/overview.md`) → **`../../../../../../../overview.md`**. The body's own `[mcp/overview.md](…)` link was re-pointed with it. No prose, anchor, range or verification stamp was otherwise changed.
+Parentless Projects Investigator intake asks only for the missing concern/report scope from the developer request. Selected sprint/master intake uses the supplied actual references and concern channel. No repository, task or parent is synthesized; reconnecting preserves durable approvals and evidence.
 
-- 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: created this card for `skills/l-01-agent-lifecycles/operations/orientation.md` — a file added by the role-instruction corpus consolidation. The canonical source is an operation-scoped procedure block extracted from interleaved role prose (orientation).; the packaged copy is produced by `scripts/sync-skills.py` and is not hand-edited. Verification metadata is left at the leaf base commit because the source is uncommitted — the governed closeout stamps the real code commit, and no hash or fingerprint was invented here.
+
+- This source owns the stated current Investigator scope or canonical vocabulary.
+
+
+
+## Current intake and developer-question evidence
+
+
+- Investigator takes any scoped concern from the actual parent, uses the developer request only without a parent, and never synthesizes task identity; developer decisions go to the instructed reporting recipient, else the parent, with the stated no-recipient and unreachable exceptions.
+
+- Orientation takes an Investigator's concern from its parent's first message or, without a parent, from the developer's request, and invents no task or trust packet; existing work restores its saved assignment first. [1]
+
+- Developer decisions go to the instructed reporting recipient or the parent; only an agent with neither, or whose recipient cannot be reached, asks in its own chat. [2]

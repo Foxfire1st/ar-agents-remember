@@ -1,0 +1,282 @@
+{
+  "path": "dashboard/src/test/wireFixtureGuard.test.ts",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The framing and three responsibilities the mechanism cannot supply itself.\n\nAnchor: \"a test whose fixture is authored by the consumer cannot detect producer drift\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a638463e5b64ab2206752784eae0cb1426ad8637",
+            "content": "sha256:16053c92f8380b4ed0cb75c194d15173264a16112e1284269646e1f9a3fd12ab",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 18
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The five-rule mechanism and discovered vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "content": "sha256:7af3dc70814d534f52c9a90d99ad84b3480187fb178b7432c1dad589e1bb8f2f",
+            "locator": {
+              "kind": "symbol",
+              "name": "wireTypeNames"
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The guard's documented uncovered-evasions section names `ElementAccessExpression`.\n\nAnchor: \"WHAT THIS DOES NOT COVER\"; \"ElementAccessExpression\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "content": "sha256:af994e03936b14b21ced4609ea8f1d7b5177460e2a2b5c2d7632bd27104efcae",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 39
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "content": "sha256:07e91ef16eef0599513f71f3de2a9e14340d6650bcec40fb235f84b748980133",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 44
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The sanctioned narrowing the registry names.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "390e10afba18e0b24c3be759f12f90011179665f",
+            "content": "sha256:12df43ff00e9127957d3b1b6424e4bd3dd39c9d43b08489a2906d08c6dee0cf7",
+            "locator": {
+              "kind": "symbol",
+              "name": "asServedProjection"
+            },
+            "path": "dashboard/src/test/servedProjection.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The sanctioned-site registry separates retained decode sites, fixture narrowing, the legacy-provider retirement probe and compiler suppression.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a638463e5b64ab2206752784eae0cb1426ad8637",
+            "content": "sha256:5402c58fb9157f5c0f6f1cfe48c98da4fe05f9996a471b5d6577f8457181aae8",
+            "locator": {
+              "kind": "symbol",
+              "name": "SANCTIONED_WIRE_SITES"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "The contract test suppresses the carried `refusedPolarity` property.\n\nAnchor: \"edge.refusedPolarity\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9f5518c01093d319450274b1110efb3863c2d4b",
+            "content": "sha256:cc552e64d9835d5841f2d0a4c809bb4ae532b93f7c7b46d16da823968bb51597",
+            "locator": {
+              "end": 669,
+              "kind": "line_range",
+              "start": 669
+            },
+            "path": "dashboard/src/test/contract.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a9f5518c01093d319450274b1110efb3863c2d4b",
+            "content": "sha256:cc552e64d9835d5841f2d0a4c809bb4ae532b93f7c7b46d16da823968bb51597",
+            "locator": {
+              "end": 669,
+              "kind": "line_range",
+              "start": 669
+            },
+            "path": "dashboard/src/test/contract.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "The sweep is built from the in-repo dashboard root and scanned source files; nothing outside this repository is read.\n\nAnchor: `dashboardRoot`, `dashboardSourceFiles`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "content": "sha256:d93f1e46d9474e2664d0ff74b0cd8982658c23e4b6c794c373db50f8e00d44ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "dashboardRoot"
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "content": "sha256:fae2416913e7169a85f6166b5a097c5c51fb2b77965bd4adc3a6e7f794ca1943",
+            "locator": {
+              "kind": "symbol",
+              "name": "dashboardSourceFiles"
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The real-tree sweep derives its discovered vocabulary with `wireTypeNames(program, ROOT)`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a638463e5b64ab2206752784eae0cb1426ad8637",
+            "content": "sha256:f361358cf34b5ea79891cef1a9371928a9d955207dce0d01815b4830b1cfbc81",
+            "locator": {
+              "kind": "symbol",
+              "name": "vocabulary"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The vacuity suite's fixture-surface checks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a638463e5b64ab2206752784eae0cb1426ad8637",
+            "content": "sha256:f9d2c04d8392b75bf6b6fd975b013471d78da87a660d55826b32d97958317314",
+            "locator": {
+              "end": 265,
+              "kind": "line_range",
+              "start": 256
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The reconciliation over the real tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a638463e5b64ab2206752784eae0cb1426ad8637",
+            "content": "sha256:c027e994d18fbf901b4c6318faf3a5a32bdf47ae3b0b0b4e89b2d3c8962d3573",
+            "locator": {
+              "end": 290,
+              "kind": "line_range",
+              "start": 268
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The virtual planted modules and honest forms.\n\nAnchor: `PLANTED_FILES`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a638463e5b64ab2206752784eae0cb1426ad8637",
+            "content": "sha256:8c574945484876085ce2c0a763e3e28e1c157d90bddede766c1192d225eb6e6d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Each rule shown biting, including cross-module and unresolved-name cases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a638463e5b64ab2206752784eae0cb1426ad8637",
+            "content": "sha256:c90d73b850c625a1dab0eac5cee0a7b93f9d1707dc4d8fa86fbf88f2b1176ac2",
+            "locator": {
+              "end": 449,
+              "kind": "line_range",
+              "start": 337
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Zero findings on the honest forms.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a638463e5b64ab2206752784eae0cb1426ad8637",
+            "content": "sha256:5124f65ebaeeab7af633cb70837a72d4c6a38867de241718eaf7c5e73f2d92bb",
+            "locator": {
+              "end": 458,
+              "kind": "line_range",
+              "start": 451
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The registry reconciliation unit cases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a638463e5b64ab2206752784eae0cb1426ad8637",
+            "content": "sha256:b69b3a519a95ce49481e35e962d28f88755bcf61d2967e9e047fc7fd20572d09",
+            "locator": {
+              "end": 491,
+              "kind": "line_range",
+              "start": 460
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

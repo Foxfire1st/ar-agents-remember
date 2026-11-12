@@ -1,0 +1,40 @@
+{
+  "path": "scripts/agent_evals/artifacts.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2c498d1c4942c5d0c8267d3cc2338268cff0bf20",
+        "content": "sha256:a998452210783add41d37bbc95595d24dcb79cb78ee4f5bb21981c6d1f163c63",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-1K7M3F",
+      "invariant": "INV-XKDZD4",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-evidence-values",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "It captures and verifies content-addressed evidence files and confines evidence paths to their declared roots.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c498d1c4942c5d0c8267d3cc2338268cff0bf20",
+            "content": "sha256:a998452210783add41d37bbc95595d24dcb79cb78ee4f5bb21981c6d1f163c63",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

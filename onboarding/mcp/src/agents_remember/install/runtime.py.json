@@ -1,0 +1,475 @@
+{
+  "path": "mcp/src/agents_remember/install/runtime.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+        "content": "sha256:4783839ffb9f4263ff8babc726eeee096a034b7e538f7e4d6ac6d0ab385adf70",
+        "locator": {
+          "end": 893,
+          "kind": "line_range",
+          "start": 893
+        }
+      },
+      "id": "RLZ-13ZE2T",
+      "invariant": "INV-AFA5WS",
+      "origin": {
+        "handoffEntry": "L84-K3C-AFA5WS-01",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The install copies the old convention settings file into the user config folder only when the destination is absent.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+        "content": "sha256:cba32f5e008c1e624e17bde27b2724781142040bb9dcef401e396d64dc308d59",
+        "locator": {
+          "kind": "symbol",
+          "name": "upgrade_user_settings"
+        }
+      },
+      "id": "RLZ-6KXYNZ",
+      "invariant": "INV-3HQNH1",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-16",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The existing install owner exclusively transfers the whole file/metadata before old-file removal, then attempts0444/0555 permission closure and reports closure OSError without undoing the move; no role-only fallback.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+        "content": "sha256:cba32f5e008c1e624e17bde27b2724781142040bb9dcef401e396d64dc308d59",
+        "locator": {
+          "kind": "symbol",
+          "name": "upgrade_user_settings"
+        }
+      },
+      "id": "RLZ-AA7ZAW",
+      "invariant": "INV-4GV8PF",
+      "origin": {
+        "handoffEntry": "MIK-R137@v1 rule 4",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "The one place where the product writes the user's settings file: the explicit move of the whole old file, once and without overwriting, after which it closes file and folder.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+        "content": "sha256:3ddacb8bd5f0122befc3730a4c21219d9b5cee1a1ab9ae73fc27f26bb0dd1a2d",
+        "locator": {
+          "kind": "symbol",
+          "name": "_close_user_settings_permissions"
+        }
+      },
+      "id": "RLZ-P87WJS",
+      "invariant": "INV-4GV8PF",
+      "origin": {
+        "handoffEntry": "MIK-R137@v1 rule 4",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "Sets the two modes: the file read-only, its folder closed to new and removed entries.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+        "content": "sha256:0d4616c9c928bd4215f0cb657bfa5b9ec8bd5764b1eb62c24befb667145c76db",
+        "locator": {
+          "kind": "symbol",
+          "name": "open_user_settings_notice"
+        }
+      },
+      "id": "RLZ-QWD32Q",
+      "invariant": "INV-R4QNJW",
+      "origin": {
+        "handoffEntry": "MIK-R137@v1 rule 5",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "Decides what a state report names: the block while file or folder is open to writing, nothing while both are closed or absent; it reads modes and changes none.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+        "content": "sha256:4a4fbcdc676ad9917989247e03cc4a140247855c8d37a56e5289407799f4d305",
+        "locator": {
+          "kind": "symbol",
+          "name": "user_settings_protection_report"
+        }
+      },
+      "id": "RLZ-V00WZB",
+      "invariant": "INV-R4QNJW",
+      "origin": {
+        "handoffEntry": "MIK-R137@v1 rule 5",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "Reads the modes of the file and its folder and states what is open, with the two commands for that exact path.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+        "content": "sha256:0a1920a2dc1e0b2cc2579092042bd0ceee94bb1fc401b9038a32668a90e8d710",
+        "locator": {
+          "kind": "symbol",
+          "name": "_user_settings_commands"
+        }
+      },
+      "id": "RLZ-YF7904",
+      "invariant": "INV-R34KP2",
+      "origin": {
+        "handoffEntry": "MIK-R137@v1 rule 6",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "Builds the two commands the product emits, each operand quoted for a shell, for folder and file.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The MCP application entry point forwards one typed request to the installer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3708c33b80551e129acbc4da11a4f728c1efb009",
+            "content": "sha256:108053a14cda04d0e17993e2857e179f64c5761a9c7dc2f5b2bacd8a5881831f",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_runtime_install"
+            },
+            "path": "mcp/src/agents_remember/application/runtime/install.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Provider watcher lifecycle orchestration and recovery-action construction live in the extracted install helper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa1a36d2b0380291d77aa3ff81c12026b03c214e",
+            "content": "sha256:24784ec382a0622aa53aff7e6fcbcc57a92c1de1193288f4472025f942830656",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_provider_watcher_lifecycle"
+            },
+            "path": "mcp/src/agents_remember/install/provider_watchers.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The application entry that composes the host step onto the lower service result.\n\nAnchor: `install_host`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3708c33b80551e129acbc4da11a4f728c1efb009",
+            "content": "sha256:b2a7e2beeba2fa2b9a24be0dcd2f4db50d65523ddd43812a1c2eceb6b64bc0ff",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": "mcp/src/agents_remember/application/runtime/install.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Whole-file exclusive transfer precedes old-file removal; permission closure and its OSError report follow it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "content": "sha256:cba32f5e008c1e624e17bde27b2724781142040bb9dcef401e396d64dc308d59",
+            "locator": {
+              "kind": "symbol",
+              "name": "upgrade_user_settings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "File0444/folder0555 closure is attempted, and protection reporting reads modes with exact commands.\n\nAnchor: `_close_user_settings_permissions`, `user_settings_protection_report`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "content": "sha256:3ddacb8bd5f0122befc3730a4c21219d9b5cee1a1ab9ae73fc27f26bb0dd1a2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_close_user_settings_permissions"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "content": "sha256:4a4fbcdc676ad9917989247e03cc4a140247855c8d37a56e5289407799f4d305",
+            "locator": {
+              "kind": "symbol",
+              "name": "user_settings_protection_report"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Install consumes the one shared removed-store inventory without defining or deleting it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "content": "sha256:2ef38c918d540dc4358ecdd3376fb5320f8fe435146e03808c8d10e624feb0a0",
+            "locator": {
+              "end": 739,
+              "kind": "line_range",
+              "start": 739
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The shared no-follow store/gate/lock inventory and reporting retain explicit user-owned removal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "919a71b491ed753daa97927f49bcf27947690f71",
+            "content": "sha256:30df359dcfb250d017428959e8ac344766868db94af85d56522a271b5bba720a",
+            "locator": {
+              "kind": "symbol",
+              "name": "removed_part_stores"
+            },
+            "path": "mcp/src/agents_remember/install/removed_stores.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The directory creation whose changed entries are observed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "content": "sha256:5d9c5e9b23bf1ebd2591444a99b45bd6a3dcb5c14ea375393c4d5521cc611c84",
+            "locator": {
+              "kind": "symbol",
+              "name": "ensure_dir"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The file copy whose changed entries are observed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "content": "sha256:12806b18d77784455a5a12d4bb5375195bd0db2501210f860cc12a9491151241",
+            "locator": {
+              "kind": "symbol",
+              "name": "copy_file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The install pass that writes the scaffold and no skill tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "content": "sha256:48d2a7fd0ef42986a9ec3e7c52a3fd10726d7ef7e0c1557a34c6fca70f100256",
+            "locator": {
+              "kind": "symbol",
+              "name": "_install_runtime"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Every accepted install removes the three retired coordinator startup files.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "content": "sha256:e50df3e24f617cc0af0d8d9271e33df35749e8c9dab80a6fb473fe38b61cd1de",
+            "locator": {
+              "kind": "symbol",
+              "name": "_capsule_cutover"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`RuntimeInstallScope` carries an optional experiment selection, and both public entry points funnel through one private installer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "content": "sha256:95e0be886d78f206aeb81e2b4cf47e735b6d9a1f2328f6d72dbcf1717d4ced2f",
+            "locator": {
+              "end": 688,
+              "kind": "line_range",
+              "start": 636
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The install result carries the MCP settings copy outcome.\n\nAnchor: `copy_mcp_settings`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "content": "sha256:04fbf5329c29670620a4617c8ccbf988d1dadcae8d3119a76b5a89909cd1e3c0",
+            "locator": {
+              "end": 895,
+              "kind": "line_range",
+              "start": 886
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The application entry adds the dashboard ensure and the running-server inventory to the install result.\n\nAnchor: `server_inventory(config)`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3708c33b80551e129acbc4da11a4f728c1efb009",
+            "content": "sha256:f749b3c6297d4f7e9a1dfc1204dad2aa0d3c50f8cb818255e85d73011d1780ef",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 30
+            },
+            "path": "mcp/src/agents_remember/application/runtime/install.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Every accepted install removes the retired coordinator startup files and writes none of them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "content": "sha256:e50df3e24f617cc0af0d8d9271e33df35749e8c9dab80a6fb473fe38b61cd1de",
+            "locator": {
+              "kind": "symbol",
+              "name": "_capsule_cutover"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "No skill tree is installed beside the runtime; the canonical corpus is reached from the packaged copy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "content": "sha256:a5b1cb83478f813c2f73aa99a54b77277b7d78efd1d1f651906e74bc2a6a8935",
+            "locator": {
+              "end": 798,
+              "kind": "line_range",
+              "start": 795
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The selection is resolved and probed before any write; with no selection passed, the run's environment is read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "content": "sha256:abfc956b9e0b363f04aa3a43dbb6fe7a376111e20d784182ec579cca5383d00e",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_experiment_install"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Provider settings generation derives lifecycle settings from MCP authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d2b3ea0cd51a15c2ec8828868eb9c03a98b0991b",
+            "content": "sha256:ed908d4b26865a91717a59fb120b1ce44121b9f55e8aa502f7a3623e5584ba55",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycle_settings_from_config"
+            },
+            "path": "mcp/src/agents_remember/providers/settings.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d2b3ea0cd51a15c2ec8828868eb9c03a98b0991b",
+            "content": "sha256:ed908d4b26865a91717a59fb120b1ce44121b9f55e8aa502f7a3623e5584ba55",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycle_settings_from_config"
+            },
+            "path": "mcp/src/agents_remember/providers/settings.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The install stores a provider watcher rebind report, attempts the old-watcher stop before the provider refresh and continues on a failed stop.\n\nAnchor: `stop_provider_watchers_before_refresh`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "content": "sha256:5da672fca24830b7c8cd2336508eb1a01245adcb6511a4bd59cfd921c62c0da7",
+            "locator": {
+              "end": 829,
+              "kind": "line_range",
+              "start": 812
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

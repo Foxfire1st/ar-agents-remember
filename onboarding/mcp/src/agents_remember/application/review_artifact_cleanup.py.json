@@ -1,0 +1,596 @@
+{
+  "path": "mcp/src/agents_remember/application/review_artifact_cleanup.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "74905228bbdd3e04b458fe271763354a5dae1b35",
+        "content": "sha256:4dee097d71164d9cd825648a90ba211ec7268dfe8dcdd1e140f458b6ba3224b7",
+        "locator": {
+          "kind": "symbol",
+          "name": "_still_there"
+        }
+      },
+      "id": "RLZ-612FMP",
+      "invariant": "INV-8JY29Q",
+      "origin": {
+        "handoffEntry": "the-explainers-folder-is-confined",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Cleanup derives explicit explainer-root artifacts, holds pending retire material and validates subsequent existence/remainder checks with the same physical authority.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "74905228bbdd3e04b458fe271763354a5dae1b35",
+        "content": "sha256:42ff183651bd1ac851cf56321739a657cc1d0850d285d7708c434af6ca2b8f3e",
+        "locator": {
+          "kind": "symbol",
+          "name": "_delete_explainer_artifacts"
+        }
+      },
+      "id": "RLZ-7PFX9Y",
+      "invariant": "INV-8JY29Q",
+      "origin": {
+        "handoffEntry": "the-explainers-folder-is-confined",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Cleanup derives explicit explainer-root artifacts, holds pending retire material and validates subsequent existence/remainder checks with the same physical authority.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "74905228bbdd3e04b458fe271763354a5dae1b35",
+        "content": "sha256:aab38b4fcba182d9675ff6c4a2209e755f521ae6a06049267672ddf6c430917b",
+        "locator": {
+          "kind": "symbol",
+          "name": "cleanup_review_artifacts"
+        }
+      },
+      "id": "RLZ-8YTPVD",
+      "invariant": "INV-YQPQ1M",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-02",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "This current shared cleanup/receipt/remainder owner retains evidence of the historical L82 arCaches correction. INV-YQPQ1M remains retired and superseded by INV-25AJSA; the current owner does not implement the retired negative defect statement.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "74905228bbdd3e04b458fe271763354a5dae1b35",
+        "content": "sha256:d112414b7676a04400c3cb13dd7186c1efd44ac073fccad8979d0e81bda48805",
+        "locator": {
+          "kind": "symbol",
+          "name": "_nothing_deleted"
+        }
+      },
+      "id": "RLZ-9GYRMR",
+      "invariant": "INV-25AJSA",
+      "origin": {
+        "handoffEntry": "L183-curator-test-facet-08",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Reports carry environments separately from deletable explainerArtifacts; a refused deletion receipt truthfully retains the retirement facts and shared artifact-key accounting.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "74905228bbdd3e04b458fe271763354a5dae1b35",
+        "content": "sha256:eb535ee4135b06a4bf66893cab36aa0feaaf8922218d776e0f8aec1b382c6eb8",
+        "locator": {
+          "end": 263,
+          "kind": "line_range",
+          "start": 263
+        }
+      },
+      "id": "RLZ-CGXQNF",
+      "invariant": "INV-25AJSA",
+      "origin": {
+        "handoffEntry": "L183-curator-test-facet-08",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The cleanup orchestration merges explainer retirement/environment/artifact facts into the report before releasing generations or deleting repository artifacts, so final receipt and remainder accounting sees the same shared deletion classes.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "74905228bbdd3e04b458fe271763354a5dae1b35",
+        "content": "sha256:45a13e664f3d59d0c0777cdb8b1b72316635ecd8f26f953a7516753df1debc21",
+        "locator": {
+          "kind": "symbol",
+          "name": "_explainer_retired"
+        }
+      },
+      "id": "RLZ-DRZBP3",
+      "invariant": "INV-Y5TT22",
+      "origin": {
+        "handoffEntry": "L183-task-close-retires-environments",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Archive invokes environment retirement before deletion receipt work; preview lists only and failed retirement is preserved in report instead of throwing away the committed task retirement.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "74905228bbdd3e04b458fe271763354a5dae1b35",
+        "content": "sha256:05e702e2b4429b21b7835bb74021bce163071a9adfb03377e672ef45375f081b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_Report"
+        }
+      },
+      "id": "RLZ-NR1QRD",
+      "invariant": "INV-25AJSA",
+      "origin": {
+        "handoffEntry": "L183-curator-test-facet-08",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Reports carry environments separately from deletable explainerArtifacts; a refused deletion receipt truthfully retains the retirement facts and shared artifact-key accounting.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "74905228bbdd3e04b458fe271763354a5dae1b35",
+        "content": "sha256:0ed30cc2c0216b1e464ca3a9d8716a80edba7ed07717073f24c6ee738b7dc806",
+        "locator": {
+          "kind": "symbol",
+          "name": "_with_explainer"
+        }
+      },
+      "id": "RLZ-PN2Z3J",
+      "invariant": "INV-25AJSA",
+      "origin": {
+        "handoffEntry": "L183-curator-test-facet-08",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Reports carry environments separately from deletable explainerArtifacts; a refused deletion receipt truthfully retains the retirement facts and shared artifact-key accounting.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "74905228bbdd3e04b458fe271763354a5dae1b35",
+        "content": "sha256:8b4a1a153dba7a8774319a900fa4813b1ac7c0053e3026a4cbbd49c44f6d9dff",
+        "locator": {
+          "kind": "symbol",
+          "name": "_explainer_admit"
+        }
+      },
+      "id": "RLZ-SRH4MF",
+      "invariant": "INV-8JY29Q",
+      "origin": {
+        "handoffEntry": "the-explainers-folder-is-confined",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The archive hook admits only the explicit explainer root for outside-task workspace artifacts, and delegates task-owned grades/receipts to the task confinement owner.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "74905228bbdd3e04b458fe271763354a5dae1b35",
+        "content": "sha256:ae51143fee96962cbcb3a892ba1150757478318b616aa7e4370aa9d5fee623e5",
+        "locator": {
+          "kind": "symbol",
+          "name": "_Confinement"
+        }
+      },
+      "id": "RLZ-THYM65",
+      "invariant": "INV-8JY29Q",
+      "origin": {
+        "handoffEntry": "the-explainers-folder-is-confined",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Task-owned artifact cleanup admits physical paths by checking intermediate links and resolved containment, rather than treating textual path membership as authority.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "74905228bbdd3e04b458fe271763354a5dae1b35",
+        "content": "sha256:aab38b4fcba182d9675ff6c4a2209e755f521ae6a06049267672ddf6c430917b",
+        "locator": {
+          "kind": "symbol",
+          "name": "cleanup_review_artifacts"
+        }
+      },
+      "id": "RLZ-XXSFQ4",
+      "invariant": "INV-25AJSA",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-02",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Cleanup retires explainer environments first, lists shared deletion classes, writes the planned receipt before artifact deletion and finishes the same ledger after cleanup. A failed receipt prevents deletion; retirement before that receipt is separately reported. Explainer artifacts use the explicit guarded explainer root; caches retain their original task-root confinement.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The module's statement of every target's identity source, the trust line, the confinement and the accepted window.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74905228bbdd3e04b458fe271763354a5dae1b35",
+            "content": "sha256:d8369c9e06aa181cb3997afb3555e5260b7c503fd830aa9580ffe1658d822a27",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "A manifest naming another leaf, pin, repository or directory is held.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74905228bbdd3e04b458fe271763354a5dae1b35",
+            "content": "sha256:fa4183f5b29506c78abef9259953e8e42280d289b330333019b073e2d911bbfa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_foreign_generation"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74905228bbdd3e04b458fe271763354a5dae1b35",
+            "content": "sha256:eb92b6c363d9fd8af3627e0f5ad119b59437f8fb7364fb445c56ef8788a8d525",
+            "locator": {
+              "kind": "symbol",
+              "name": "_outside_generation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The F1 exact own-task rule and the retained-code refs it selects.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74905228bbdd3e04b458fe271763354a5dae1b35",
+            "content": "sha256:c3360d3cd407e96f28fc561fb57139ee9431f89ab0d5b605e375340b45632183",
+            "locator": {
+              "kind": "symbol",
+              "name": "_own_leaf"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74905228bbdd3e04b458fe271763354a5dae1b35",
+            "content": "sha256:5c98946d84b57374d9cc629a5b79acd6db9dadf255b2fa80dcec3006cd35f0d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_retained_code_refs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The content scan: confined root, confined candidates, knowledge schema, untracked.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74905228bbdd3e04b458fe271763354a5dae1b35",
+            "content": "sha256:9660d6a588f6d73c29e9523ab9dd903a17c679f3a43edad38c60960f23e46709",
+            "locator": {
+              "kind": "symbol",
+              "name": "_is_knowledge_dataset"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The finalizer carries the report after the archive move, and never raises.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dcbcb92eb8805a1f241603ea248fdac21fb64a9d",
+            "content": "sha256:a49a9c54c5362e6d72020b6b913bbb89e032b6b1b422a3b457811dfe1887d4dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_with_review_artifact_cleanup"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The main archive case and the colliding-task case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e146d872dff5949e44db2b2ba21ca54a2f8736c1",
+            "content": "sha256:3d1354f049755323c27c0138905c788eb69753b831a5e70f1f4a4a727b24d460",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_archiving_deletes_the_tasks_review_refs_legacy_pins_and_dataset_copies"
+            },
+            "path": "mcp/tests/test_review_artifact_cleanup.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e146d872dff5949e44db2b2ba21ca54a2f8736c1",
+            "content": "sha256:f3de9985dc8eefa2c59de0ddf3c5843fcf261f8db2458bc4a6d6e693e49332e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_archiving_one_task_never_selects_a_colliding_tasks_pins"
+            },
+            "path": "mcp/tests/test_review_artifact_cleanup.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The ledger reports earlier deletions, interrupted planned deletions now absent, and previously failed artifacts now absent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cebcae34792c8ef9b715d51c12e1a4cd8f72fe48",
+            "content": "sha256:1fd7bbd0e07f5b505390efb02883cafa33442386ae2136165ce4326db4f9b17b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/review_artifact_receipts.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The first no-op records a receipt; an unchanged repeat with no new work or outcome writes none.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cebcae34792c8ef9b715d51c12e1a4cd8f72fe48",
+            "content": "sha256:1fd7bbd0e07f5b505390efb02883cafa33442386ae2136165ce4326db4f9b17b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/review_artifact_receipts.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The previous receipt is preserved under its own attempt number, reusing that path after interruption.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cebcae34792c8ef9b715d51c12e1a4cd8f72fe48",
+            "content": "sha256:1fd7bbd0e07f5b505390efb02883cafa33442386ae2136165ce4326db4f9b17b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/review_artifact_receipts.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Code-pin history is persisted before releasing the retained pin.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fe49634e9ec9be9654d8cf2cfd533cd3eaf6208d",
+            "content": "sha256:8ea7439e1b26cd6454e4e363a2f9d6d95e09d045ca2ab19e61d4b3a4d6792f94",
+            "locator": {
+              "kind": "symbol",
+              "name": "release_comparison_code_object"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_reclamation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Verified snapshot unlink precedes snapshot history, leaving a static failure window.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fe49634e9ec9be9654d8cf2cfd533cd3eaf6208d",
+            "content": "sha256:f78a7068598131d1b72a4260ff00daa527718fb981c22cd7f3698f08baf466dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "discard_comparison_snapshots"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_reclamation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The report file, the reason, and the two tables that make a file a knowledge dataset.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87f667053e5114433a51bfe17959d0bc8f0bd714",
+            "content": "sha256:2da45cc24f011454caf1f59d92909c00a4c311d206113c425b7b4bfc489448cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_KNOWLEDGE_TABLES"
+            },
+            "path": "mcp/src/agents_remember/application/dataset_copy_survey.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The current implementation adds the environment and explainer-artifact classes, pending-retirement preservation and explicit explainer-root confinement.\n\nAnchor: `cleanup_review_artifacts`, `_explainer_retired`, `_nothing_deleted`, `_delete_explainer_artifacts`, `_explainer_admit`, `_Confinement`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74905228bbdd3e04b458fe271763354a5dae1b35",
+            "content": "sha256:d8369c9e06aa181cb3997afb3555e5260b7c503fd830aa9580ffe1658d822a27",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The report, and holding a generation's pin and snapshots with the reason.\n\nAnchor: `_Report`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74905228bbdd3e04b458fe271763354a5dae1b35",
+            "content": "sha256:d8369c9e06aa181cb3997afb3555e5260b7c503fd830aa9580ffe1658d822a27",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The composition-bound port implementation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74905228bbdd3e04b458fe271763354a5dae1b35",
+            "content": "sha256:5813a24b3fbc8e54016b61fcb910793faf5a1ddb44978272d44ae198a8f29c19",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewArtifactCleanup"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The whole hook: review refs by directory name, own retained-code refs, generations, copies, the report.\n\nAnchor: `_sweep`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74905228bbdd3e04b458fe271763354a5dae1b35",
+            "content": "sha256:d8369c9e06aa181cb3997afb3555e5260b7c503fd830aa9580ffe1658d822a27",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Receipt writes refuse paths outside the task.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cebcae34792c8ef9b715d51c12e1a4cd8f72fe48",
+            "content": "sha256:1fd7bbd0e07f5b505390efb02883cafa33442386ae2136165ce4326db4f9b17b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/review_artifact_receipts.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Physical confinement: no symlink on the way, and the resolved path inside the resolved root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74905228bbdd3e04b458fe271763354a5dae1b35",
+            "content": "sha256:ae51143fee96962cbcb3a892ba1150757478318b616aa7e4370aa9d5fee623e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Confinement"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74905228bbdd3e04b458fe271763354a5dae1b35",
+            "content": "sha256:bdb70365235fb65adad56f55afdbeaedb428e01f1d91999347edde51013c57f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "problem"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The legacy identity by the trust line, and `task.json` read only when it is the task's own.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74905228bbdd3e04b458fe271763354a5dae1b35",
+            "content": "sha256:35caace53a1105b4f9ec653a26de6c40d3198ceac8ab0eba59af90ea18eab0fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_confirmed_task_id"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74905228bbdd3e04b458fe271763354a5dae1b35",
+            "content": "sha256:158df8e5a73aa3606ee1a32225a2a95c30d4299ce7b52fbc47a5b5b7e6394b52",
+            "locator": {
+              "kind": "symbol",
+              "name": "_task_document_id"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Generations released through their owners, or held.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74905228bbdd3e04b458fe271763354a5dae1b35",
+            "content": "sha256:3e0adf52880e9527e5cd4a6626a096d4b3e8f8ada57549dfd2f4be225c96fbea",
+            "locator": {
+              "kind": "symbol",
+              "name": "_release_generations"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74905228bbdd3e04b458fe271763354a5dae1b35",
+            "content": "sha256:571d113a6ecdb17f1e480dbb8096427f0fb504f36d11a83944f714bde3590978",
+            "locator": {
+              "kind": "symbol",
+              "name": "_release_one"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,226 @@
+{
+  "path": "mcp/src/agents_remember/models/tools/tool_registry.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+        "content": "sha256:10aa450f5caa463f1fe75eabf3cdf642c485bc41fe35884de37c4765dece2359",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-9QC0D9",
+      "invariant": "INV-8YX6P5",
+      "origin": {
+        "handoffEntry": "L192-W-R199-09",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The registry docstring at C describes the tool tiers and keeps the retired provider tools out of them (11-22) without claiming a diagnostic provider query, while the contracts it describes are unchanged; that is the base card's content, which C still holds, whereas the candidate re-recorded the uncommitted registry.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+        "content": "sha256:10aa450f5caa463f1fe75eabf3cdf642c485bc41fe35884de37c4765dece2359",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-ADD5KY",
+      "invariant": "INV-Q7KYQH",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §8 reference-note-revision",
+        "leaf": "260928-MIK-L191"
+      },
+      "rationale": "Maps citation_note_revision to CitationNoteRevisionResponse so its public answer is validated by the shared response registry; registration grants no write authority.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "10": {
+      "note": "The three strict response contracts those rows map to, in the module that declares them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b97b80d44d3d0a2bd5e469d8c0c966b71f28fa7",
+            "content": "sha256:4889da96e4a539fa55d10bd7a94ae233269cd690271782d68de54eab67c5f048",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            },
+            "path": "mcp/src/agents_remember/models/tools/knowledge_responses.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The three strict contracts the capsule rows map to, including the shared success/refusal capsule envelope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6df57ae981982e091e8dd11888f3f8af12865542",
+            "content": "sha256:8a760b6b38a702e3ca4b1d8dd38599d08c681d62913ba65f4443b0e14c4bea24",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleCapsuleResponse"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsule_resources.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6df57ae981982e091e8dd11888f3f8af12865542",
+            "content": "sha256:c3fcf3648ee9a334adea687e5219d8eaa03852026cc43e2a36e5c481ef8a5cd1",
+            "locator": {
+              "kind": "symbol",
+              "name": "SkillCatalogListResponse"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsule_resources.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6df57ae981982e091e8dd11888f3f8af12865542",
+            "content": "sha256:101b00e18d3e8cfe9badf6f0a19c0b0bd84063be7b88c8504e56a399b33234c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "SkillCatalogReadResponse"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsule_resources.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The current module exposes the module-level vocabulary at this ownership boundary.\n\nAnchor: \"INTERNAL_COMPAT_TOOL_NAMES = frozenset(\"; \"PUBLIC_TOOL_RESPONSE_MODELS: dict[str, type[ResponseEnvelope]] = {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "content": "sha256:bc52d590affca24af1af1614179744bbdab687ac29aa0b313a625b0964b9ae39",
+            "locator": {
+              "end": 122,
+              "kind": "line_range",
+              "start": 101
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "content": "sha256:4e406a2a4e88d1984affa80abe04eb1d3611b57920176b5e58e272c064171cc9",
+            "locator": {
+              "end": 121,
+              "kind": "line_range",
+              "start": 100
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "content": "sha256:1b17ac742337dc7af3061eb1da0a0b5c6fc7c68a95b048dea6cdfa00f0b3666a",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 99
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Frozen implementation of TOOL_RESPONSE_MODELS supporting the stated file behavior.\n\nAnchor: `TOOL_RESPONSE_MODELS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "content": "sha256:10aa450f5caa463f1fe75eabf3cdf642c485bc41fe35884de37c4765dece2359",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "content": "sha256:e32d72e73c43c68526666e351964e31154f7ccc5f262554de0776dac177d9e07",
+            "locator": {
+              "kind": "symbol",
+              "name": "TOOL_RESPONSE_MODELS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The by-name response-model registry, which carries the settings initializer.\n\nAnchor: `TOOL_RESPONSE_MODELS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "content": "sha256:10aa450f5caa463f1fe75eabf3cdf642c485bc41fe35884de37c4765dece2359",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "content": "sha256:e32d72e73c43c68526666e351964e31154f7ccc5f262554de0776dac177d9e07",
+            "locator": {
+              "kind": "symbol",
+              "name": "TOOL_RESPONSE_MODELS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The public response registry maps explainer_control to its strict response model; it does not weaken existing responses.\n\nAnchor: `TOOL_RESPONSE_MODELS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "content": "sha256:10aa450f5caa463f1fe75eabf3cdf642c485bc41fe35884de37c4765dece2359",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The choke point validates against this registry before emitting the envelope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bbd96445dae6e10e1c4052722fab1b614aafedfe",
+            "content": "sha256:c0e54f12b9211f7fb26dd24d118a8562de4972ce6d7beb7a43b920a7fc979f42",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tool_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

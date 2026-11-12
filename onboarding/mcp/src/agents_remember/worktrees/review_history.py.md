@@ -1,96 +1,76 @@
 # mcp/src/agents_remember/worktrees/review_history.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                            |
-| path                   | `mcp/src/agents_remember/worktrees/review_history.py` |
-| doc_type               | `file-level-onboarding`                 |
-| lastUpdated            | 2026-09-08T22:13:55+02:00                                     |
-| lastVerifiedCommitHash |                                            `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2`|
-| lastVerifiedCommitDate |                                            2026-09-12T01:54:48+02:00|
-| governingOverview      | `../../../overview.md`                   |
-
 ## Governing Overview
 
-[worktrees overview](../../../overview.md)
+[worktrees overview](overview.md)
 
 ## Purpose
 
-Owns task-document transitions for the fixed-list review protocol: begin a pending round,
-publish one result, require the pending bit before reviewer work, and enforce the ordinary
-three-round limit with a directly recorded developer permission for cumulative extra rounds.
+Owns task-document transitions for the fixed-list review protocol: settings-owned pending-round admission, sealed-list result publication, cumulative recorded architect/developer allowances, and a same-round record-only result guarded by the independently resolved candidate identity.
 
 ## Code Commentary
 
 ### Logic
 
-`begin_task_review` treats missing or explicit zero `reviewState` as round zero and starts round
-one with `pending=True`. Replaying a pending begin is idempotent and does not consume an allowance.
-A completed sealed state with no remaining findings refuses a new round. The transition imports
-the existing ordinary three-round limit; at exhaustion it requires a nonblank `developerApproval`
-and positive `additionalRounds`, records that answer, and accumulates the allowance without
-resetting the round or sealed issue list. Before exhaustion, or on a first/zero-state begin, that
-permission payload is rejected. The recorded answer is a direct workflow input; this module adds
-no authentication or provenance claim.
+`begin_task_review` treats missing or explicit zero state as round zero and starts a pending first round with the supplied settings number, or its fallback. A pending replay stays on the same round and does not add allowance. Each new begin recomputes `limit` as the current settings number plus approved extras. At exhaustion an approval naming architect or developer and positive `additionalRounds` opens the next round, records normalized approval words and adds the allowance without resetting count or sealed findings. Earlier developerApproval input is normalized to developer approval. Premature or malformed approval is refused. A clean sealed review may begin a later round within the budget; it does not reopen the finding list. This module validates the recorded shape, not approval authenticity.
 
-`record_task_review` requires a pending state and permits only verdict, findings,
-`remainingFindingIds`, and `verdictRef`. The first result validates and seals the baseline
-findings; a non-empty baseline must remain blocking and remaining IDs are derived from those findings.
-Successor rounds may not add findings and may only shrink the prior remaining set and the sealed
-baseline. A passing successor must leave no finding unresolved.
+`record_task_review` accepts verdict, findings, remainingFindingIds, verdictRef, optional checked candidateTree and finite reviewKind (default code). An absent state permits the initial baseline record; a pending first result seals findings, and pending successors shrink only the preceding remaining set. A nonpending result passes only if the recorded authority-resolved candidateIdentity and the current resolved identity are present and equal; a recorded candidateTree also requires the same checked-tree claim. Missing, unproven or changed identity refuses with begin_review as the next step. The result stays on the recorded round, still cannot add/reintroduce findings, and a passing result leaves none unresolved. The caller supplies the independent binding, which is persisted when available. A first or legacy zero-limit record is backfilled from the supplied settings number plus extras; a positive stored limit is not rewritten by record.
 
-`require_pending_review` is the reviewer-work admission guard. It refuses when state is missing or
-not pending and otherwise returns the task-owned state unchanged.
+`require_pending_review` returns the existing task-owned state unchanged, or a first-round pending default when the field is absent. Despite its name, it does not reject an existing nonpending state; actual begin/record admission is owned by the transition functions.
 
 ### Invariants And Boundaries
 
 - Missing state means zero; no external history store or identity/authentication claim is introduced.
 - The transition is monotonic over the sealed finding list: later rounds can only remove remaining IDs.
-- The ordinary cap is fixed at the existing settings constant; explicit developer permission adds
-  only a positive cumulative allowance and never resets the count or baseline.
-- This module owns state transitions, not candidate-tree, evidence, integration authority, or
-  reviewer authentication.
+- The budget is the supplied current settings number plus positive cumulative approved extras; approval never resets count or baseline.
+- This module owns state transitions and comparison/persistence of the supplied candidate binding, not candidate resolution, route-evidence construction, integration authority or reviewer authentication.
 - The worker report records implementation checks only; this card does not claim review or acceptance.
 
 ### Todos
 
 None.
 
-## Docs References
+## Current Contract
+
+reviewKind defaults to code and explicitly selects memoryReviewState only for memory; other values refuse. Begin/record operate only on that lane, preserving sibling code state, sealed baseline/shrinking IDs, current settings limit, cumulative approved extras and unchanged-candidate guards. Successful pending results append one typed ReviewRound with the then-remaining Boolean. A record-only check appends no row and leaves its original findingsRemain/kind intact, though its verdictRef may be updated. Worker tries count failed code rows; Curator tries count failed memory rows. Missing state is zero; incomplete/nonsequential typed history or launch-recovered unreadable evidence is unavailable, not guessed from legacy rounds. Other roles count zero. require_pending_review remains code-only compatibility. No transition here steps a model up, authenticates a reviewer or creates a grant.
+
+A try is a recorded code round with findings remaining for Worker, or an independent recorded memory round with findings remaining for Curator. Record-only checks are not tries. Other roles are on-request only. At the configured threshold the starter starts a successor from user-configured step-up choices; no new review round or allowance follows. Mode/permission features belong to the user-selected harness/model and are not borrowed across differing scopes; omitted cross-scope choices use host defaults. Counting and launch execution remain with their actual owners.
+
+The governing workflow opens an independent memory review after CODE PASS on the same task using begin_review/record_review with reviewKind=memory. It has its own immutable baseline and shrinking IDs, under the same settings limit and extra-round approval rule, and never resets code reviewState. The signed rollout applies only to memory reviews begun after L88 lands; already-underway reviews (L168, L56, L57, L59) finish with their sealed-report workflow, with no migration/backfill. This describes the candidate contract, not a claim that the serving build already supports it.
+
+This account is bound to the candidate source, not a claim of a running serving build or a fresh execution/acceptance verdict. Existing historical accounts remain historical.
+
+## Evidence
+
+
+- Worker/Curator typed review census, record-only exclusion and unknown history. [4]
+- Reason admission, threshold and differing-harness/model inheritance boundary. [5]
+- Record-only memory identity comes from memory authority, never the sibling code root. [6]
+- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [7]
+- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [8]
+- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [9]
+- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [10]
+- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [11]
+
+### Docs References
 
 No external Domain Documentation source governs these task-owned transitions.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured external source applies. | n/a | n/a |
+No configured external source applies.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Error/status boundary, cap-aware begin semantics, and pending admission. | `ReviewHistoryError`; `begin_task_review`; `require_pending_review` | mcp/src/agents_remember/worktrees/review_history.py:13-105 |
-| Publication field validation, developer-permission parsing, and sealed baseline creation. | `_validate_publication_fields`; `_parse_developer_exception`; `_record_baseline` | mcp/src/agents_remember/worktrees/review_history.py:94-107; mcp/src/agents_remember/worktrees/review_history.py:110-147; mcp/src/agents_remember/worktrees/review_history.py:150-172 |
-| Successor monotonicity and duplicate/blank-ID refusals. | `_record_successor`; `_require_unique_ids` | mcp/src/agents_remember/worktrees/review_history.py:175-206; mcp/src/agents_remember/worktrees/review_history.py:209-213 |
 
-## Source File Binding
+- Error/status boundary, cap-aware begin semantics, and pending admission. [1]
 
-The current L41 source bytes are SHA-256
+
+- Publication field validation, architect/developer approval parsing, and sealed baseline creation. [2]
+
+- Successor monotonicity and duplicate/blank-ID refusals. [3]
+
+## Historical L41 Source File Binding
+
+At the historical L41 preparation, the source bytes were SHA-256
 `a9ef793019ed3e2a66c258d977a493d9f431194b91d2f6c4897acd5821a895b6`
 (`9166` bytes, `235` lines). The source is an uncommitted preparation candidate, so
 verification metadata remains blank until a genuine commit-owned refresh.
-
-## Update History
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `_validate_publication_fields`; `_parse_developer_exception`; `_record_baseline` repointed to mcp/src/agents_remember/worktrees/review_history.py:94-107; mcp/src/agents_remember/worktrees/review_history.py:110-147; mcp/src/agents_remember/worktrees/review_history.py:150-172. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `_record_successor`; `_require_unique_ids` repointed to mcp/src/agents_remember/worktrees/review_history.py:175-206; mcp/src/agents_remember/worktrees/review_history.py:209-213. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-09T14:10+02:00 — CCR-L42 curator intake created/reconfirmed this one-to-one card against the current uncommitted source bytes (SHA-256 `a9ef793019ed3e2a66c258d977a493d9f431194b91d2f6c4897acd5821a895b6`, `9166` bytes, `235` lines). Verification remains closeout-owned; no test, review, acceptance, or future commit is asserted.
-
-
-- 2026-09-08T22:13:55+02:00 — CCR-R28 L41 memory curation: refreshed this card to the exact
-  transition source and recorded the existing three-round cap, actionable exhaustion refusal,
-  pending replay behavior, and direct recorded developer-approval allowance. No auth or second
-  review-history authority is implied.
-
-- 2026-09-08T22:01:43+02:00 — CCR-R27 domain-foundation preparation: created the review-history transition card from
-  the exact L40 source, preserving absence-as-zero, direct-call rejection and monotonic finding
-  semantics. Composition manifest SHA-256: `05d471d6ba42bbcfd76aed54ed592a3478eaa051a21459f45370bf15878b7bb0`; implementation evidence only.

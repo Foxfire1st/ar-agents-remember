@@ -1,0 +1,93 @@
+{
+  "path": "dashboard/src/data/readOwnership.test.ts",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "0ef108498d3212184af9d534cd74a9930beb36b2",
+        "content": "sha256:8ba37676d3e11afa75b717b826a36371eb2b1da9e875cdbcfca65e6b4e323731",
+        "locator": {
+          "kind": "symbol",
+          "name": "settles the joiner from the same fetch and keeps the fetch alive"
+        }
+      },
+      "facet": "An owner's abort settles only that owner's wait; the joiner still receives the shared fetch's answer.",
+      "id": "PRF-7Z6T0H",
+      "invariant": "INV-M46Y3E",
+      "origin": {
+        "handoffEntry": "L174-R1-01",
+        "leaf": "260928-MIK-L174"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "0ef108498d3212184af9d534cd74a9930beb36b2",
+        "content": "sha256:929a50dc2b7f830d9bb832d8ec8cfcc811b56326bae6970aa7d8a0a2afdc2c76",
+        "locator": {
+          "kind": "symbol",
+          "name": "starts a new body fetch for an immediate replacement after an abort"
+        }
+      },
+      "facet": "An immediate replacement after the last waiter leaves does not join the aborted body fetch.",
+      "id": "PRF-9XS060",
+      "invariant": "INV-M46Y3E",
+      "origin": {
+        "handoffEntry": "L174-R1-01",
+        "leaf": "260928-MIK-L174"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "0ef108498d3212184af9d534cd74a9930beb36b2",
+        "content": "sha256:a50f0bcfaa382d9300fb37e15719c221f91e81c5fa98136d353a971ca7994022",
+        "locator": {
+          "kind": "symbol",
+          "name": "ends the request with its last waiter and never rejoins an aborted one"
+        }
+      },
+      "facet": "The last waiter removes the pending entry and a replacement starts a fresh fetch.",
+      "id": "PRF-J56M9Y",
+      "invariant": "INV-M46Y3E",
+      "origin": {
+        "handoffEntry": "L174-R1-01",
+        "leaf": "260928-MIK-L174"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "0ef108498d3212184af9d534cd74a9930beb36b2",
+        "content": "sha256:ecb1e21063e74fed80e59a5af36ba13408568d331b62aa7ea917dd996762834f",
+        "locator": {
+          "kind": "symbol",
+          "name": "settles the joiner from the same body fetch and keeps it alive"
+        }
+      },
+      "facet": "The task-body store keeps a live joiner's fetch alive when another owner leaves.",
+      "id": "PRF-NA35J8",
+      "invariant": "INV-M46Y3E",
+      "origin": {
+        "handoffEntry": "L174-R1-01",
+        "leaf": "260928-MIK-L174"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "0ef108498d3212184af9d534cd74a9930beb36b2",
+        "content": "sha256:a50f0bcfaa382d9300fb37e15719c221f91e81c5fa98136d353a971ca7994022",
+        "locator": {
+          "kind": "symbol",
+          "name": "ends the request with its last waiter and never rejoins an aborted one"
+        }
+      },
+      "facet": "The resource's pending set is emptied at the last waiter leave; an immediate replacement starts a fresh fetch rather than joining the aborted one.",
+      "id": "PRF-RFWFGB",
+      "invariant": "INV-GDWJKR",
+      "origin": {
+        "handoffEntry": "L174-GD-CONDITIONAL",
+        "leaf": "260928-MIK-L174"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

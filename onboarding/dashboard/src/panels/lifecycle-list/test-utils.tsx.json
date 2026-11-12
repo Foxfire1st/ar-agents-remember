@@ -1,0 +1,22 @@
+{
+  "path": "dashboard/src/panels/lifecycle-list/test-utils.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The shared typed fixture builders and explicitly installed cleanup retain DOM/global/dashboard/localStorage ownership, without the removed sessions store.\n\nAnchor: `installListCleanup`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5226ee2994e1acb777b1f6a963c900fbf00f3aa4",
+            "content": "sha256:a9f83ab2762a6e70280c6e021017167ed2a9d00b0605f7560d76d5c447ff43eb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

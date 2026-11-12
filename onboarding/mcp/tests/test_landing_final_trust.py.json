@@ -1,0 +1,58 @@
+{
+  "path": "mcp/tests/test_landing_final_trust.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "96a71fd525fc0de04c0e7fcaf95941ad2366f740",
+        "content": "sha256:be5239587394b651a977d76edb27ff4d17c501a03c8f8597529e575844796acf",
+        "locator": {
+          "kind": "symbol",
+          "name": "LandingFinalTrustTests.test_untrusted_finals_read_as_honest_missing"
+        }
+      },
+      "facet": "Invalid participant sets, reducer types and unmatched final facts cannot suppress the permitted finishing attempt.",
+      "id": "PRF-VF4X03",
+      "invariant": "INV-TMY6DW",
+      "origin": {
+        "handoffEntry": "L81-R1-F16",
+        "leaf": "260928-MIK-L81"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "96a71fd525fc0de04c0e7fcaf95941ad2366f740",
+        "content": "sha256:56862358134b9ecc2ef922d56f71e164f631a93835e595f10f32417525d804b8",
+        "locator": {
+          "kind": "symbol",
+          "name": "TerminalSweepBudgetTests.test_startup_success_failure_final_loss_and_reopen_keep_four_admissions"
+        }
+      },
+      "facet": "The exact controlled source case startup success failure final loss and reopen keep four admissions; this is a focused executable facet, not installed-runtime or full performance acceptance.",
+      "id": "PRF-YW1HJV",
+      "invariant": "INV-D0551J",
+      "origin": {
+        "handoffEntry": "L81-R1-F15",
+        "leaf": "260928-MIK-L81"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "MIK-R81 rule 6 (F16): only a genuinely successful matching final reads as history.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "96a71fd525fc0de04c0e7fcaf95941ad2366f740",
+            "content": "sha256:de86fca32e8fad0ac701d0cb9510b340d71e29f6f92dc76da6d8c58b40daf1dc",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

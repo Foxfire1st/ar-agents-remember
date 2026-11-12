@@ -1,70 +1,45 @@
 # mcp/tests/test_observer_projection_attention.py
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `mcp/tests/test_observer_projection_attention.py`                                            |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-09-06T21:46+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489`                                        |
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
-[Test suite overview](overview.md)
+[Tests overview](overview.md)
 
 ## Purpose
 
-Attention priority and occurrence-scoped dismissal behavior.
+Pin attention ordering, retained-kind dismissal durability and safe occurrence reclamation.
 
 ## Code Commentary
 
-### Logic
+The queue lists the newest entry first — age ascending, ID breaking the tie, and an entry without an age counting as zero — so a drift row that names no age sorts with the newest rather than sinking below one that can date itself. Drift acknowledgements survive new timestamps when actionableFingerprint stays equal; changed findings recur. Blocked-start clicks work without a session and survive unchanged refresh/restart. Only explicit source recovery or a complete gone-source census ends that occurrence; nothing publishes a provider or setup item to acknowledge. Per-repo recovery is not inferred from a workspace-level healthy row; unknown/malformed/partial/unreadable sources retain dismissals, including failures inspecting an unreadable source. Reconciliation does not rewrite unchanged bytes, keeps its read map on failed cleanup, and never removes a click newer than the observation. Retired stale-session JSON is invalid compaction input, not a supported kind. In-process ASGI routes assert failed dismissal persistence returns 503/dismissal-not-held, then successful clicks survive restart. Task-bound worktrees retain precomputed disabled-action reasons. These fixture assertions do not establish live host delivery.
 
-Provider-down alarms precede blocked asks. A dismissal suppresses the current actionable-drift occurrence, while a newer snapshot surfaces it again. A later turn end similarly supersedes an awaiting-developer dismissal.
-
-### Conventions
-
-This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
-
-### Invariants And Boundaries
-
-Dismissal acknowledges one triggering occurrence, not every future event of the same kind. Durable timestamps determine resurfacing.
-
-### Todos
-
-No file-local implementation change is requested by this reconciliation.
-
-## Docs References
-
-No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
-
-## Repo-Internal References
-
-The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Blocked and provider down rank alarm first. | `test_blocked_and_provider_down_rank_alarm_first` | mcp/tests/test_observer_projection_attention.py:21-43 |
-| Dismiss suppresses actionable drift until newer snapshot. | `test_dismiss_suppresses_actionable_drift_until_newer_snapshot` | mcp/tests/test_observer_projection_attention.py:91-130 |
-| Newer turn end supersedes dismissal. | `test_newer_turn_end_supersedes_dismissal` | mcp/tests/test_observer_projection_attention.py:132-158 |
-
-## Cross-Repo References
-
-No cross-repository implementation evidence is required for these local test and fixture claims.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
-
-## Update History
-
-- 2026-09-06T21:46+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
+## Evidence
 
 
-- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: created this file-level onboarding card for the split module; content derived from the current worktree source. Verification metadata pinned until closeout stamps the 260731-EFA-L7 commit.
+- Equal findings remain dismissed across clock changes and a changed fingerprint recurs. [6]
+
+- Severity leaves the ranking: the queue lists the newest entry first and breaks ties by id, and a drift entry that names no age counts as zero rather than sinking. [7]
+
+### 20261023-L190-v2 Newest First Replaces Severity-First
+
+The ranking case was renamed and its expectation reversed: `actionable-drift:repo:main` (no age, so zero) now
+leads, `provider-down:z` (10s) follows, and the equal-age pair `a`/`b` (20s) keeps id order
+(`test_observer_projection_attention.py:143-176`). The case still proves a stable total order; it no longer proves
+a severity order, because the queue has none.
+
+- Explicit recovery ends retained-kind occurrences and later failure returns. [8]
+
+
+- Partial/broken input retains acknowledgement; complete gone facts reclaim. [9]
+
+
+- Observation cutoff protects a later click. [10]
+
+
+- Long histories retain current subjects and compact invalid retired/torn rows without repeat rewrite. [11]
+
+
+- ASGI persistence failure is 503; accepted dismissals survive refresh and restart. [12]
+
+- Precomputed task-worktree disablement remains authoritative. [13]
+
+- The retained directory-read-failure case uses blocked-start and keeps its acknowledgement when native source listing fails; no current provider census or provider acknowledgement is asserted. [14]

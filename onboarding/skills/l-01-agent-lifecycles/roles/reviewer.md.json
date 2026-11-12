@@ -1,0 +1,681 @@
+{
+  "path": "skills/l-01-agent-lifecycles/roles/reviewer.md",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+        "content": "sha256:411f521fe0a2ff6b5d7a0b2922cb1328de40ffbf1b4599ac7f6050ebab2f7b23",
+        "locator": {
+          "end": 145,
+          "kind": "line_range",
+          "start": 141
+        }
+      },
+      "id": "RLZ-165F81",
+      "invariant": "INV-CV3MW4",
+      "origin": {
+        "handoffEntry": "L116-W3-wording-oracle",
+        "leaf": "260928-MIK-L116"
+      },
+      "rationale": "The Reviewer's stage facets sit in 'Organise and continue the assigned work': the stage ends with a recorded verdict covering the whole requirement, own-slip repair and the stops, and the last-line rule. The pointer to the record-only recheck in the review operation is not here; it sits in 'Report problems without expanding review' (reviewer.md:132), where the wording guard looks for it.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+        "content": "sha256:0bbe37a5e6fd93f99727d3907de9738083bdfd350a92af88445ad2129520458d",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-1MJ3JN",
+      "invariant": "INV-GWA6VR",
+      "origin": {
+        "handoffEntry": "MIK-R60@v7.1-2",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Always-on role text whose tool-involving pointers now name their tool.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+        "content": "sha256:19d1cfb74a66834ddd189186991997133f3aef1fddd88d2a5bb49974a5df1afa",
+        "locator": {
+          "end": 41,
+          "kind": "line_range",
+          "start": 41
+        }
+      },
+      "id": "RLZ-2RDRRX",
+      "invariant": "INV-42NQQG",
+      "origin": {
+        "handoffEntry": "MIK-R60@v10.1-4",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "The two Reviewer sentences.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+        "content": "sha256:eeed639b566c1ff1e50cd5c8b948cedbe251300b1e19fb1311e6796d2cda752c",
+        "locator": {
+          "end": 39,
+          "kind": "line_range",
+          "start": 39
+        }
+      },
+      "id": "RLZ-6258J4",
+      "invariant": "INV-BTXVZP",
+      "origin": {
+        "handoffEntry": "MIK-R60@v11.5",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "The Reviewer binds catalogs from its table and nothing else.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+        "content": "sha256:eeed639b566c1ff1e50cd5c8b948cedbe251300b1e19fb1311e6796d2cda752c",
+        "locator": {
+          "end": 39,
+          "kind": "line_range",
+          "start": 39
+        }
+      },
+      "id": "RLZ-63V8FT",
+      "invariant": "INV-RS2QK8",
+      "origin": {
+        "handoffEntry": "MIK-R60@v12.6",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "The Reviewer's outputs name the filled section.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+        "content": "sha256:483a6eb926f22fcad055dde734169488b78b0272c07511876e5288bfc5261a1e",
+        "locator": {
+          "end": 153,
+          "kind": "line_range",
+          "start": 153
+        }
+      },
+      "id": "RLZ-AHY1E5",
+      "invariant": "INV-9S49CW",
+      "origin": {
+        "handoffEntry": "MIK-R93@v1 rules1,2,2a,5,6,7",
+        "leaf": "260928-MIK-L93"
+      },
+      "rationale": "This role/operation source points to operations/orientation.md for developer questions and relayed answers; it is not a self-contained duplicated full-clause home or native delivered-message witness.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+        "content": "sha256:d3857964a7b0bf5879ff9e0ca9e986a8e1cd24da00de793f0971c99bfb143fdd",
+        "locator": {
+          "end": 24,
+          "kind": "line_range",
+          "start": 24
+        }
+      },
+      "id": "RLZ-C066F0",
+      "invariant": "INV-BTXVZP",
+      "origin": {
+        "handoffEntry": "MIK-R60@v11.5",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Markers without catalogs.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+        "content": "sha256:75bdfd1e3392bb1485d7b16d3e2f9f098e4198177a4104b1dac2c20f566f78d5",
+        "locator": {
+          "end": 16,
+          "kind": "line_range",
+          "start": 14
+        }
+      },
+      "id": "RLZ-CG94JY",
+      "invariant": "INV-NNQR91",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-19",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "Lines 14-16 of the canonical roles/reviewer.md carry the Reviewer's first read of the rendered task document and canonical JSON and its tool binding on agents-remember-task; this canonical file is the source the generator propagates to the packaged runtime tree.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+        "content": "sha256:9423f066393f39755537181113986aca55c706529d195a1a08c223ac36a21ab8",
+        "locator": {
+          "end": 103,
+          "kind": "line_range",
+          "start": 76
+        }
+      },
+      "id": "RLZ-JH0BAQ",
+      "invariant": "INV-ZNJ14G",
+      "origin": {
+        "handoffEntry": "R99-1-direct-loop",
+        "leaf": "260928-MIK-L99"
+      },
+      "rationale": "The Reviewer writes and records its verdict and follows the review operation's leaf verdict handover: the verdict straight to the Worker, the passed freeze and code-PASS verdict straight to the Curator once it exists, memory findings returned to the Curator, and the ready-for-closeout notice to the Manager after both pass.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+        "content": "sha256:75bdfd1e3392bb1485d7b16d3e2f9f098e4198177a4104b1dac2c20f566f78d5",
+        "locator": {
+          "end": 16,
+          "kind": "line_range",
+          "start": 14
+        }
+      },
+      "id": "RLZ-PC6PG7",
+      "invariant": "INV-K6Q2R4",
+      "origin": {
+        "handoffEntry": "PNT-R04@v1 §4 / F10",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Reviewer intake preserves exact task-document and reader arguments.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+        "content": "sha256:0bbe37a5e6fd93f99727d3907de9738083bdfd350a92af88445ad2129520458d",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-PDE8EW",
+      "invariant": "INV-QZW2X2",
+      "origin": {
+        "handoffEntry": "L172-INV-C",
+        "leaf": "260928-MIK-L172"
+      },
+      "rationale": "The Reviewer's unfinished final turn sends what it awaits to its parent with role_message.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+        "content": "sha256:cd017a728ddfaa3a025198a2bd8fcd67bd9cda71438a7dbbf14488fb49da1307",
+        "locator": {
+          "end": 103,
+          "kind": "line_range",
+          "start": 103
+        }
+      },
+      "id": "RLZ-QBXQTV",
+      "invariant": "INV-5TKYXM",
+      "origin": {
+        "handoffEntry": "MIK-R70@v1 rule 4",
+        "leaf": "260928-MIK-L70"
+      },
+      "rationale": "The Reviewer's 'Handover and other seats' section closes by stating that a terminal or finalizer result attests only that the turn ended; gate acceptance stays with the Manager.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+        "content": "sha256:8a99b34d6915bd56c76579e50d87820d41943481067246e24591a2bb097e7221",
+        "locator": {
+          "end": 137,
+          "kind": "line_range",
+          "start": 135
+        }
+      },
+      "id": "RLZ-R22534",
+      "invariant": "INV-7VZRZW",
+      "origin": {
+        "handoffEntry": "R99-14-harness-work",
+        "leaf": "260928-MIK-L99"
+      },
+      "rationale": "reviewer receives the same assignment autonomy and responsibility bounds in its own composed role text.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+        "content": "sha256:0bbe37a5e6fd93f99727d3907de9738083bdfd350a92af88445ad2129520458d",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-WFV931",
+      "invariant": "INV-T8672G",
+      "origin": {
+        "handoffEntry": "L198-INV-A",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The sentence as it stands in the Reviewer text.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Every exact requirement attempt and candidate receives a separate independent accepted/rejected record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:cf142a867815ef3ee89223ac52a09f657d439c8f670980abec71f134a2fc98eb",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 74
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Reviewer intake uses exact rendered/JSON paths and actual scoped read schemas, reads only the assigned seam and writes only contained task-local report artifacts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:332e7c01e55327f3f472bb1dc1812c6d38391401c493fd1f17e33989998128de",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 14
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Reviewer requires the dispatched exact stable IDs and versions, the durable approval record, exact candidate and Worker attempts and the repository's tools; the catalogs come from the review type's row in the binding table, never from the brief or a choice during the review, and the verdict's Catalog Binding section names them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:aaadf9924004aaa25b968b0a7c3ebf902d0beae90ee400772594c52ecf04442f",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 33
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Reviewer inspects every changed file of the complete candidate diff and reads the baseline detail at step 4; a subset never replaces the Curator's complete authoring memory-quality operation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:03c06d3d0639a6699c9affdc24f9c90af4abf104c713c4e59113a107451689b8",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 69
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Baseline is sealed under the step-4 baseline detail; fix verification reuses that sealed evidence and only listed IDs without a new-lens or whole-seam rediscovery mandate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:55bb9c485826644337caf548b44bd5795b41936b60150a927b8e74066d17a50e",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 71
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Each exact requirement revision is adjudicated accepted or rejected against its Worker attempt/candidate in a separate immutable reviewer record in the same leaf journal; Worker and earlier records stay unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:cf142a867815ef3ee89223ac52a09f657d439c8f670980abec71f134a2fc98eb",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 74
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The Reviewer emits every bound standing criterion, sealed findings, complete route coverage, a seam-shaped verdict with its Catalog Binding section filled, a producer-data handoff list and durable per-route reports.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:0932b44d58b36e79f895181a8a3350014b2c6ab8952e3684d5a554fdab6ff928",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 90
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The baseline detail binds the catalogs, the three lenses and the exploratory mandate, and holds that a recorded weakness or a document's staleness is never a finding, while an unrepaired in-scope weakness is.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ff6fa27f8af03076cef47a1eff305618f6611a9",
+            "content": "sha256:08de0ac08202fc4ad82748e59c6e4c843c0b465114dbed60fd2928e1d8259db7",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 11
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/review-baseline.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The Reviewer records ordinary leaf CODE begin/result and separate MEMORY rounds with unchanged code state; Manager records beyond-settings authorization and retains gate acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
+            "content": "sha256:7c0dd38e30c539ade85749ce78f0b16d2e33d8459d20d8bd4680c15a501f4dce",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 88
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
+            "content": "sha256:9e9944d63194f324901c323ea44e17de128c1ec91130b5f6db17f985d0bdda27",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 116
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "A moved review candidate is stale and requires a successor exact Worker attempt and reviewer record; changed scope or identity does not manufacture a new first review.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:9a3679ff1f4256818b52bbfdffe4b2f75b450cc34b0de2a1178d0d26e7c2fd2b",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 131
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Reviewer marks only its own named review step done after the last round is recorded passed, and its stage ends at a recorded verdict covering the whole requirement, findings and coverage.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:4f2f17ddbd2db73eac599a91725f176a4d0295861b0742c576b9ba16eecbaf28",
+            "locator": {
+              "end": 141,
+              "kind": "line_range",
+              "start": 141
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The verdict template structurally repeats one adjudication block per stable ID.\n\nAnchor: \"## Mandatory Requirement Adjudication Block\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48b79cbc6545f76d228f4fbb17c000e6aae44c3e",
+            "content": "sha256:7626ba80bd5da998b74d17dd724a798b3b59af5f9c42c97f8b4d56b9c918b552",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 46
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/verdict.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Reviewer repairs its own recording or evidence faults and answers input-fault refusals through the same tool; record-only repair preserves a round only while all candidate findings are closed and candidate bytes remain unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:7f4e35050009885633fa89c4aa74e734636b400374d397a4111010cd2418bcdb",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 143
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
+            "content": "sha256:41f9de9a713c3271a0ae2eb70ba8597c21c2113bd07cedd961f480ab970b0da2",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 93
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The reviewer emits its own curator hand-off list in the shared producer shape.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:002b3fa67a14cb1fb2224dc4ff823c9f96ec9141e47c020d5bee031e1c3edb7e",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 94
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The Reviewer seam table names organizational leaf, atomic-master integration, master-exit, portfolio plan and super-exit scope, start selection and verdict recipient; candidate identity comes from the intake rather than the hosting enclosure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:a8b37c5577da29eb6667c8851b75226ade5feaa77060d1719b784fce45ae9ebc",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 47
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The Reviewer records ordinary CODE rounds and separately sealed MEMORY rounds under the actual task review-state limit; Manager gate acceptance and recorded architect/developer approval beyond the limit remain separate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
+            "content": "sha256:7c0dd38e30c539ade85749ce78f0b16d2e33d8459d20d8bd4680c15a501f4dce",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 88
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
+            "content": "sha256:9e9944d63194f324901c323ea44e17de128c1ec91130b5f6db17f985d0bdda27",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 116
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:f74aef61c9ab9702980b7cf1c39bead164c8055b722f9e86c19ea8b2af543020",
+            "locator": {
+              "end": 133,
+              "kind": "line_range",
+              "start": 133
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The Reviewer stage ends at a recorded verdict covering the whole requirement, findings and coverage. Own-step completion waits for a passed recorded last round; record-only repair reuses the last round only with every candidate finding closed and candidate bytes unchanged; a finding states the required property its case proves.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:4f2f17ddbd2db73eac599a91725f176a4d0295861b0742c576b9ba16eecbaf28",
+            "locator": {
+              "end": 141,
+              "kind": "line_range",
+              "start": 141
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
+            "content": "sha256:41f9de9a713c3271a0ae2eb70ba8597c21c2113bd07cedd961f480ab970b0da2",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 93
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:570a5c719359d5010cba9cb540c1cbf16bd03fc7a0dd9e86810148d277d0c209",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 84
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Organizational leaf route review sends code findings to Worker and memory findings to Curator; code PASS first notifies Manager so it can start Curator, and readiness for closeout names both passed lanes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:affa535e1ec46c4be1fb90d5bae5a14274e36be1eb320509d7a89e2abd917c40",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 49
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
+            "content": "sha256:5096aee15573cde31b4c8216091887fae42bcf581cb8508a366538b8f7a6529a",
+            "locator": {
+              "end": 71,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
+            "content": "sha256:134469903097cc2218a6667bc9d2bd9d79a70b88044c7ad55c6d08bb4ead9a75",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 120
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

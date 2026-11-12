@@ -1,0 +1,67 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "D131 chose removal over host-usage display with an explicit trigger for reconsideration; the no-replacement rule constrains every future dashboard and host-read change."
+  },
+  "alternatives": [
+    {
+      "option": "Drop the token counter with no replacement (D131).",
+      "reason": "Developer direction D131: the counter sums the bounded event log so it falls while a task is in work, and it counts only AR tool answers; host figures mean different things per harness. Removal-only rules 1-4 with the E2/E4 amendments; the code tree verifies the superseded bytes are out.",
+      "status": "chosen"
+    },
+    {
+      "option": "Read and show the host-reported usage per agent (former rules 2-3).",
+      "reason": "Withdrawn by D131 after the historical W1 freeze (4cdd/71c232bf) and before any removal-only amended-packet freeze/admission; the W1 bridge and document-chat implementation was removed byte-identically and admitted to no removal-only freeze.",
+      "reconsider_when": "The developer directs usage display again with a per-harness meaning contract.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "No view shows a token number per agent, task, master or workspace; AR reads no host or harness usage.",
+    "Single-event tokens stay under MIK-R114.",
+    "Product documents describing the counter are named for L62/L97 instead of repaired here."
+  ],
+  "context": "MIK-R115@v1 first required reading and showing host-reported usage (former rules 2-3, built in W1); that implementation froze historically as 4cdd/71c232bf before D131 rebinding, and the developer withdrew the scope on D131 before any removal-only amended-packet freeze/admission, narrowing the leaf to removal-only.",
+  "decider": "Developer D131 (2026-10-08), quoted in DEVELOPER-DIRECTION.md and the MIK-R115@v1 packet; recorded by Manager 3be39137.",
+  "id": "DEC-0J3YTK",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-S4MBTJ"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-4T6KSE"
+    },
+    {
+      "relation": "explains",
+      "target": {
+        "id": "MIK-R115",
+        "packet": "requirements/MIK-R115-v1-the-dashboard-shows-an-agents-usage-as-the-host-reports-it.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "L115-W1 journal entry; worker report pre-addendum bytes; task-reports/evidence dated old-scope screenshot"
+      ],
+      "path": "l115-handoff.json"
+    },
+    "handoffEntry": "L115-W1 superseded scope",
+    "leaf": "260928-MIK-L115",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

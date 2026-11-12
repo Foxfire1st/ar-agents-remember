@@ -1,0 +1,145 @@
+{
+  "path": "dashboard/src/dev/scenarios.test.ts",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The replacement provider-retirement case asserts the three provider arc names are absent and all encountered edge kinds belong to the five retained enclosure lanes, with a nonempty traversal.\n\nAnchor: `authors no provider arc and no provider edge kind`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63f84a9cf0d8979a776df3acf93f29e74c9d51b4",
+            "content": "sha256:9a3d47ad9bca50a61cf08c69bcbc9be3dcc456c5b4eea436eb8beabd2b5920c7",
+            "locator": {
+              "end": 218,
+              "kind": "line_range",
+              "start": 187
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "`SERVED_EDGE_STATES` and the guard that no authored edge state falls outside it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63f84a9cf0d8979a776df3acf93f29e74c9d51b4",
+            "content": "sha256:24865dd657124c9810b2e525d97c6bcaec2d4c1f300b67d2a941a09912c7ddde",
+            "locator": {
+              "kind": "symbol",
+              "name": "SERVED_EDGE_STATES"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Asserts the `build-up`/`tear-down` timelines + frame validity.\n\nAnchor: `version`; `caption`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63f84a9cf0d8979a776df3acf93f29e74c9d51b4",
+            "content": "sha256:7e8cca025f79acd671acdc0ddcf0f94b45be9ab3122e9fa1c7edeec3cf970465",
+            "locator": {
+              "kind": "symbol",
+              "name": "buildUp"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "63f84a9cf0d8979a776df3acf93f29e74c9d51b4",
+            "content": "sha256:1ac720b744f8536211d946cddb59ebef93b91a0e6c44d5b15f7d8d14bd1a798c",
+            "locator": {
+              "kind": "symbol",
+              "name": "tearDown"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "63f84a9cf0d8979a776df3acf93f29e74c9d51b4",
+            "content": "sha256:8441f6235e4b3dcce3a2eec6804e64944aaa760c25470907d0e3793716808c87",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 30
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "SCENARIOS registers build-up, tear-down, memory-block, stale-base, live-sync, integration-conflict and abandon before the resting frames; the three provider arcs are removed.\n\nAnchor: provider-arc removal comment",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58403a8e3f376b93e6cea8747e0d8ecdb222dd8c",
+            "content": "sha256:0b399324a5b92b6875378f983347d8c30a4dd89938753534c6152123b46f4a9d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/dev/scenarios.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`EngineProcessEdge.state` — the served vocabulary `SERVED_EDGE_STATES` mirrors, on an `extra=\"forbid\"` model.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63f84a9cf0d8979a776df3acf93f29e74c9d51b4",
+            "content": "sha256:24865dd657124c9810b2e525d97c6bcaec2d4c1f300b67d2a941a09912c7ddde",
+            "locator": {
+              "kind": "symbol",
+              "name": "SERVED_EDGE_STATES"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The surviving state guard lists nine accepted edge states, including stale, and rejects any encountered state outside that set after requiring a nonempty traversal. It does not claim a removed seed-edge reducer still emits them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63f84a9cf0d8979a776df3acf93f29e74c9d51b4",
+            "content": "sha256:24865dd657124c9810b2e525d97c6bcaec2d4c1f300b67d2a941a09912c7ddde",
+            "locator": {
+              "kind": "symbol",
+              "name": "SERVED_EDGE_STATES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "`refusedPolarityOf` derives the amber flash from the edge STATE in the renderer, which is why the edge needs no polarity field and the deleted assertion was fixture-only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
+            "content": "sha256:7a4dda1e37c1500d1e8f572c5fd5f02aac6a8037f6a885e76727b27bb8690d53",
+            "locator": {
+              "kind": "symbol",
+              "name": "refusedPolarityOf"
+            },
+            "path": "dashboard/src/panels/engine-room/geometry.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

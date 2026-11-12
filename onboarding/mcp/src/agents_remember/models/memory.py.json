@@ -1,0 +1,286 @@
+{
+  "path": "mcp/src/agents_remember/models/memory.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "5cd7ec716feacd1db6d5df3f9f31d400bf26d49e",
+        "content": "sha256:628fd21bfec7a1b7eacea95e6959b62f39dba09bd0368e8991ab63cfc3e44d90",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-7TARQ0",
+      "invariant": "INV-Q7KYQH",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §8 reference-note-revision",
+        "leaf": "260928-MIK-L191"
+      },
+      "rationale": "Carries the request and answer models whose declared fields are the tool's contract.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Memory-quality requests are executed by the focused controller.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
+            "content": "sha256:b9c3b6fbb6f4b5ae523ee6888de143b18da1674d8d42ec868401b25daea26060",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_memory_quality_request"
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
+            "content": "sha256:d66282011e6104457e201a03a8626244577dc026812a91ef41972743328fa8d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "start_memory_quality_request"
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
+            "content": "sha256:daf3217ecae8b4eaad292db942e50c17acee95b05ae749a557801f04457bc3a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "poll_memory_quality_request"
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
+            "content": "sha256:859092a84cc90e617f1aa354f948de9c8b7574016de937fbaedf26de3f050c22",
+            "locator": {
+              "end": 328,
+              "kind": "line_range",
+              "start": 320
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
+            "content": "sha256:29dcfa5d07b87f17f15e90303d889e700849a94090bab97105f06c5acab94f70",
+            "locator": {
+              "end": 337,
+              "kind": "line_range",
+              "start": 329
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
+            "content": "sha256:2381491880d675d8dd4d82dae3f0a85c07b093cbcb0c8d7fbcba954c6720e59a",
+            "locator": {
+              "end": 346,
+              "kind": "line_range",
+              "start": 338
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The citation envelope declares background state and run identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5cd7ec716feacd1db6d5df3f9f31d400bf26d49e",
+            "content": "sha256:7be2241f9fc71ec173132d0a8a7ad86287ab3a0b932e2cc12f26a5e84c4d5526",
+            "locator": {
+              "kind": "symbol",
+              "name": "CitationFixResponse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Other memory MCP application entry points retain drift, citation, route-index, init, baseline, and carryover ownership.\n\nAnchor: `drift_check_tool`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:6245c0fad1ad37363ec36508b7e32f67104a8b9143178bc7e8c18a0856de40bb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The strict sync/start/poll request models and discriminated union.  Anchor: `MemoryQualityCheckRequest`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5cd7ec716feacd1db6d5df3f9f31d400bf26d49e",
+            "content": "sha256:775235fb1f42f9630eb54a53efe600111eeefbd90e72692d1202abd3725bb2ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemoryQualitySyncRequest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5cd7ec716feacd1db6d5df3f9f31d400bf26d49e",
+            "content": "sha256:c530441aca764d26912f99f7d4144edce303ef641e01dc21ceab0c40f8fcea42",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemoryQualityStartRequest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5cd7ec716feacd1db6d5df3f9f31d400bf26d49e",
+            "content": "sha256:38dd3e642d96d2d197c1c9d8d5ddb9b0404157d1a5ebbf65fa4ce3b6d7bc9d55",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemoryQualityPollRequest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5cd7ec716feacd1db6d5df3f9f31d400bf26d49e",
+            "content": "sha256:20510de9fed7583f74b4605066ac827c276aba64e69757e2cf2655aa6586375d",
+            "locator": {
+              "end": 158,
+              "kind": "line_range",
+              "start": 158
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`DriftCheckResponse.status` uses the shared `DriftStatus` alias.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5cd7ec716feacd1db6d5df3f9f31d400bf26d49e",
+            "content": "sha256:5defc592c4ead496c0d96b2b8a314b6a884ae178e845fb42f98657c6140395ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "DriftCheckResponse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`DriftSummary.status` uses the same shared `DriftStatus` alias.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9114e155d9f2a5e4be13847dfae76a7674a446b",
+            "content": "sha256:f3cb1ef5e115b82b7f9c5c8a5ca59df05b7879630ac7e8f310db29ddfdb16318",
+            "locator": {
+              "kind": "symbol",
+              "name": "DriftSummary"
+            },
+            "path": "mcp/src/agents_remember/models/drift.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The context-packet wire face includes its matching `error` field.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9114e155d9f2a5e4be13847dfae76a7674a446b",
+            "content": "sha256:f3cb1ef5e115b82b7f9c5c8a5ca59df05b7879630ac7e8f310db29ddfdb16318",
+            "locator": {
+              "kind": "symbol",
+              "name": "DriftSummary"
+            },
+            "path": "mcp/src/agents_remember/models/drift.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The tool response carries the converted measurement fields beside the legacy ones.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5cd7ec716feacd1db6d5df3f9f31d400bf26d49e",
+            "content": "sha256:5defc592c4ead496c0d96b2b8a314b6a884ae178e845fb42f98657c6140395ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "DriftCheckResponse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Memory-quality codes reach the shared guard without a model length rejection.  Anchor: `MemoryQualityCheckResponse`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5cd7ec716feacd1db6d5df3f9f31d400bf26d49e",
+            "content": "sha256:628fd21bfec7a1b7eacea95e6959b62f39dba09bd0368e8991ab63cfc3e44d90",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The two optional quality fields are declared rather than merely tolerated flexible extras.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5cd7ec716feacd1db6d5df3f9f31d400bf26d49e",
+            "content": "sha256:51dc539bb93ec14158b4e050897b5328286ad7978c7888c28e7e23e758ddcbce",
+            "locator": {
+              "end": 121,
+              "kind": "line_range",
+              "start": 43
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

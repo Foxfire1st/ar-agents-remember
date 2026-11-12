@@ -1,0 +1,40 @@
+{
+  "path": "mcp/tests/test_agent_eval_regrade.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "6b054734c979fb0c49cc99a052da3aa7c5b046ed",
+        "content": "sha256:ad1cb1224449fdc8022bc37a1593757924b7ba9bfbf67456211346633f1b43f1",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-3N9SYD",
+      "invariant": "INV-8QTDZG",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-regrade",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "This regression module checks this obligation through test_local_package_guard_is_zero_judge_invocations, test_unexpected_grading_decode_failure_records_class_phase_and_cause, test_unexpected_preparation_decode_failure_is_classified_before_judge, test_hermes_census_uses_its_model_and_opposite_family_judge and its remaining test cases.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6b054734c979fb0c49cc99a052da3aa7c5b046ed",
+            "content": "sha256:ad1cb1224449fdc8022bc37a1593757924b7ba9bfbf67456211346633f1b43f1",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,73 @@
+{
+  "path": "mcp/tests/test_writer_merge_bases.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8eb96c929495eef56376524f078a70284c882c7a",
+        "content": "sha256:52c6a100e0872b2a9db3b41c5c7562f993a54df5cfc66b64ecfacda9ce7d0f70",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-QD9YG2",
+      "invariant": "INV-EZEJQD",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.3",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Proves both parents are validation bases during a merge (fail-before shown).",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The writer and the check validate a real merge against both parents.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8eb96c929495eef56376524f078a70284c882c7a",
+            "content": "sha256:e2f4b09aa8caca5379d21c085728c366ed4057210aab423b7696e1fc24bbc037",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_writer_and_the_check_validate_a_real_merge_against_both_parents"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Outside a merge the writer keeps its one `HEAD` base and refuses the new anchor.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8eb96c929495eef56376524f078a70284c882c7a",
+            "content": "sha256:fc232b214371d361758f0bda8f9f8a1230dd5c44320d26b45992ffd967b3068b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_outside_a_merge_the_writer_keeps_its_one_head_base"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "An unreadable or unconvertible `MERGE_HEAD` refuses by name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8eb96c929495eef56376524f078a70284c882c7a",
+            "content": "sha256:fb9a2f772a8becc3282946cea3c7e88005936729d3b17fedc5b0b67dc9dd1129",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unreadable_or_unconvertible_merge_head_refuses_by_name"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,42 @@
+{
+  "path": "scripts/agent_evals/reference_epochs/g1-20261030/epoch.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Historical evidence-copy identity, scope and runtime source path, explicitly not current instructions. [1]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1402af086154c95ec3af30b1c41930c6652a109",
+            "content": "sha256:e91cdd5615571d26d9b9c7ae9df1a672c6955350d362120d33d0192dcc15c1b2",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The loader verifies the fixed epoch manifest hash, policy binding, scope and retained-reference size/hash. [2]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83d9a6b4697759ecfd3567fc666dc046ce0699a6",
+            "content": "sha256:107653ec28bf5766a167cde71aa19909a0a95c8018092d1f1ef935422ce3521c",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 57
+            },
+            "path": "scripts/agent_evals/package_budget.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

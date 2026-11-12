@@ -1,0 +1,22 @@
+{
+  "path": "dashboard/src/panels/detail-panel/step-marks.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Seeded major-mark assertions retain nested lists; bounded hover cases cover only master/task pointer-rest details.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1574c9e3a125fdc8e6005e438c93f89ca2ac95c0",
+            "content": "sha256:3f6d38f84159bbbfcbf72b24572e49e815482ca19e7ab76f6f38bac85d31b70b",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

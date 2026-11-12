@@ -1,0 +1,689 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "52e4e48a805e1d81f5d7ca9c2042cd3ec786e249",
+        "content": "sha256:8b4227c9d3360ee30a300328b6cc7814300ea3eb301ad606403403bb52bb9dae",
+        "locator": {
+          "kind": "symbol",
+          "name": "_mismatches"
+        }
+      },
+      "id": "RLZ-11T0CS",
+      "invariant": "INV-MS9BMJ",
+      "origin": {
+        "handoffEntry": "L37-frozen-attempts",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Skips a row about a subject that a later attempt of the same owner answers again, so the latest judgment is the one that is re-anchor-checked.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "52e4e48a805e1d81f5d7ca9c2042cd3ec786e249",
+        "content": "sha256:b30cea9a1da16d6d79ceae4fcc28e1f7337335326592c19da6e69fdcde1134e7",
+        "locator": {
+          "kind": "symbol",
+          "name": "checked_history_files"
+        }
+      },
+      "id": "RLZ-2GRW8Z",
+      "invariant": "INV-HR2JKQ",
+      "origin": {
+        "handoffEntry": "MIK-R180@v1",
+        "leaf": "260928-MIK-L178"
+      },
+      "rationale": "This selector retains open histories and a leaf publication’s own not-previously-closed history; it is shared with re-anchor validation.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "52e4e48a805e1d81f5d7ca9c2042cd3ec786e249",
+        "content": "sha256:03d2aadbda30c0e741a8ad8b4aef566f1b184b0f7826c097285e1188ff4e99dd",
+        "locator": {
+          "kind": "symbol",
+          "name": "check_history_rows"
+        }
+      },
+      "id": "RLZ-8F3YMR",
+      "invariant": "INV-HR2JKQ",
+      "origin": {
+        "handoffEntry": "MIK-R180@v1",
+        "leaf": "260928-MIK-L178"
+      },
+      "rationale": "This registered rule now uses the shared history selector for item validation while retaining the independent every-file subject loop.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "52e4e48a805e1d81f5d7ca9c2042cd3ec786e249",
+        "content": "sha256:8958b1d5e7974ce9450138ae54b86b9c439181230800167a1796f056a74b96b7",
+        "locator": {
+          "kind": "symbol",
+          "name": "_hidden_changes"
+        }
+      },
+      "id": "RLZ-8XBYNC",
+      "invariant": "INV-XN0FG8",
+      "origin": {
+        "handoffEntry": "L37-changed-row-governs",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "At a commit that publishes a leaf, finds every invariant and family whose earlier unlanded row is a changed row and whose latest unlanded row has another disposition. It needs no converted base, so it also runs at a recorded landing, which the worklist does not reach.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "52e4e48a805e1d81f5d7ca9c2042cd3ec786e249",
+        "content": "sha256:b30cea9a1da16d6d79ceae4fcc28e1f7337335326592c19da6e69fdcde1134e7",
+        "locator": {
+          "kind": "symbol",
+          "name": "checked_history_files"
+        }
+      },
+      "id": "RLZ-BAD8R3",
+      "invariant": "INV-MS9BMJ",
+      "origin": {
+        "handoffEntry": "L37-frozen-attempts",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "At a leaf's publication reads every history file that is not closed in a base or in a frozen commit, whatever its own flag, so only a recorded closeout's file is left out of the re-anchor check.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "52e4e48a805e1d81f5d7ca9c2042cd3ec786e249",
+        "content": "sha256:c2f8e85a76746c05fbabcc6b2888b462de8d083de39f167c1a37c5be4512be48",
+        "locator": {
+          "kind": "symbol",
+          "name": "check_family_judgments"
+        }
+      },
+      "id": "RLZ-CNGN82",
+      "invariant": "INV-D4C9B3",
+      "origin": {
+        "handoffEntry": "MIK-R48@v2 rule 3",
+        "leaf": "260928-MIK-L48"
+      },
+      "rationale": "The registered check distinguishes the publication population and recorded row equality without backfill.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "52e4e48a805e1d81f5d7ca9c2042cd3ec786e249",
+        "content": "sha256:5414f7d7a22f16d23dc49516ad8a710a6a631b932ca5c52845ceb22a0662e920",
+        "locator": {
+          "kind": "symbol",
+          "name": "check_merged_history_rows"
+        }
+      },
+      "id": "RLZ-P3VG4W",
+      "invariant": "INV-9CSYZS",
+      "origin": {
+        "handoffEntry": "MIK-R52@v1 rule 7 strict-rows",
+        "leaf": "260928-MIK-L52"
+      },
+      "rationale": "The merged-row check with the leaf-publication strictness.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "52e4e48a805e1d81f5d7ca9c2042cd3ec786e249",
+        "content": "sha256:c2f8e85a76746c05fbabcc6b2888b462de8d083de39f167c1a37c5be4512be48",
+        "locator": {
+          "kind": "symbol",
+          "name": "check_family_judgments"
+        }
+      },
+      "id": "RLZ-SCX44M",
+      "invariant": "INV-EH65RT",
+      "origin": {
+        "handoffEntry": "L48-W-MIK-R48-v2-delivery",
+        "leaf": "260928-MIK-L48"
+      },
+      "rationale": "the publication rule judging only route-published new or edited rows",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "52e4e48a805e1d81f5d7ca9c2042cd3ec786e249",
+        "content": "sha256:03d2aadbda30c0e741a8ad8b4aef566f1b184b0f7826c097285e1188ff4e99dd",
+        "locator": {
+          "kind": "symbol",
+          "name": "check_history_rows"
+        }
+      },
+      "id": "RLZ-W32FSC",
+      "invariant": "INV-THFEVY",
+      "origin": {
+        "handoffEntry": "L54-curator-MIK-R54-v1-rule-11-actual-guards",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "Item tokens are judged in the files check_history_rows now shares with the re-anchor check: every open history file, and at a leaf publication the leaf's own file closed there and not before. A closed file of one of the master's leaves is covered at master routes by MIK-R52 rule 5 instead of being item-judged here.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "52e4e48a805e1d81f5d7ca9c2042cd3ec786e249",
+        "content": "sha256:96a01230a80ddd527233066dd4251774b2aa624fa41913d0210d0f50e5b817e8",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-X21JJV",
+      "invariant": "INV-MKZ0EA",
+      "origin": {
+        "handoffEntry": "L48-C-callsite-hunks-carry-rule-obligations",
+        "leaf": "260928-MIK-L48"
+      },
+      "rationale": "Registration and rule-text hunks outside check_family_judgments carry the publication-population wording.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The module docstring: the two checks, which files, frozen attempts, the governing changed row, rows the merge moved, and the one scope the item check now shares.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52e4e48a805e1d81f5d7ca9c2042cd3ec786e249",
+            "content": "sha256:789c6254858e9b42c4abc0aadf4855a5e5d6627c48eebf02fb1895e1232d79a1",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The sync merge cases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3768b4016fd921a34a69b6dcfcf2df78901c48a7",
+            "content": "sha256:ca8026f753e814efb423427ba9db47666900ae917825a632db04f9b936f8b72c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_sync_merge_refuses_a_history_row_only_when_the_leaf_s_own_side_had_it_wrong"
+            },
+            "path": "mcp/tests/test_knowledge_validator_routes.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "A file closed in a base or in a frozen commit is left out of the re-anchor check.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52e4e48a805e1d81f5d7ca9c2042cd3ec786e249",
+            "content": "sha256:b30cea9a1da16d6d79ceae4fcc28e1f7337335326592c19da6e69fdcde1134e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "checked_history_files"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Each owner's latest attempt about a subject.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52e4e48a805e1d81f5d7ca9c2042cd3ec786e249",
+            "content": "sha256:53f33a86c22abbd5093804d624057da20622979d983fe06abc4ef321e661e03f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_governing_attempts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "A row that a later attempt answers again is not re-anchor-checked.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52e4e48a805e1d81f5d7ca9c2042cd3ec786e249",
+            "content": "sha256:8b4227c9d3360ee30a300328b6cc7814300ea3eb301ad606403403bb52bb9dae",
+            "locator": {
+              "kind": "symbol",
+              "name": "_mismatches"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "A later row of another disposition that would replace the leaf's changed row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52e4e48a805e1d81f5d7ca9c2042cd3ec786e249",
+            "content": "sha256:8958b1d5e7974ce9450138ae54b86b9c439181230800167a1796f056a74b96b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_hidden_changes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The refusal names the changed row it replaces.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52e4e48a805e1d81f5d7ca9c2042cd3ec786e249",
+            "content": "sha256:f7abed20650cba1d743187c351a7bdfd498ab954797afc796f245b4314079860",
+            "locator": {
+              "kind": "symbol",
+              "name": "_hidden_change_message"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Changed row remains governing in every attempt.\n\nAnchor: `test_a_changed_record_is_governed_by_its_changed_row_in_every_attempt`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "edad7b9d825ab3a241a0917f1627d688e34954f3",
+            "content": "sha256:e791cf309e2f6ef9f2d1f7830a3cf0973f031617f8d7b50e028f35d6453d5381",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_reopen_governing_rows.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "edad7b9d825ab3a241a0917f1627d688e34954f3",
+            "content": "sha256:f2a5c13392eeade1234e4d59cd16af5174bf19c290178548d516c53824edff65",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_changed_record_is_governed_by_its_changed_row_in_every_attempt"
+            },
+            "path": "mcp/tests/test_knowledge_reopen_governing_rows.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "Parent-line change may be answered by any later row.\n\nAnchor: `test_a_change_on_the_parent_line_may_be_answered_by_any_later_row`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "edad7b9d825ab3a241a0917f1627d688e34954f3",
+            "content": "sha256:e791cf309e2f6ef9f2d1f7830a3cf0973f031617f8d7b50e028f35d6453d5381",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_reopen_governing_rows.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "edad7b9d825ab3a241a0917f1627d688e34954f3",
+            "content": "sha256:a3a0d63304851da3ceea90d1d419269335170667886b9dce1105ee1a7a809a62",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_change_on_the_parent_line_may_be_answered_by_any_later_row"
+            },
+            "path": "mcp/tests/test_knowledge_reopen_governing_rows.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "Leaf publication refuses every merged-row mismatch, while the `merge_reports` finding defers only at a non-publication sync merge and names the next refusing publication or landing.\n\nAnchor: `check_history_rows` `check_merged_history_rows`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52e4e48a805e1d81f5d7ca9c2042cd3ec786e249",
+            "content": "sha256:96a01230a80ddd527233066dd4251774b2aa624fa41913d0210d0f50e5b817e8",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52e4e48a805e1d81f5d7ca9c2042cd3ec786e249",
+            "content": "sha256:03d2aadbda30c0e741a8ad8b4aef566f1b184b0f7826c097285e1188ff4e99dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_history_rows"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52e4e48a805e1d81f5d7ca9c2042cd3ec786e249",
+            "content": "sha256:5414f7d7a22f16d23dc49516ad8a710a6a631b932ca5c52845ceb22a0662e920",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_merged_history_rows"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The files the re-anchor check reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52e4e48a805e1d81f5d7ca9c2042cd3ec786e249",
+            "content": "sha256:b30cea9a1da16d6d79ceae4fcc28e1f7337335326592c19da6e69fdcde1134e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "checked_history_files"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Current source delta inspected statically: Extend subject resolution and bounded merge reporting; keep R52 leaf refusal, frozen-attempt scope, independent retention and gate-owned currentness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52e4e48a805e1d81f5d7ca9c2042cd3ec786e249",
+            "content": "sha256:c01040bdedb8c44da02d110076938958c5e0ad2cd2c849ac231d2010551e0439",
+            "locator": {
+              "end": 314,
+              "kind": "line_range",
+              "start": 312
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52e4e48a805e1d81f5d7ca9c2042cd3ec786e249",
+            "content": "sha256:fb4ceeac28b45206c4540305be0f73e60b68b44a0fccb85bc477f6c9fb31bca4",
+            "locator": {
+              "end": 345,
+              "kind": "line_range",
+              "start": 342
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52e4e48a805e1d81f5d7ca9c2042cd3ec786e249",
+            "content": "sha256:46b8d2b3029fa38861b3cbbcbe135baac09c5d062c46747e5f29bc4e24e39359",
+            "locator": {
+              "end": 430,
+              "kind": "line_range",
+              "start": 426
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d7c13e7df1327acccc4ecd9c10b2da7c4c70c59b",
+            "content": "sha256:034b599f0d88e3e503993b0fc7e92cf95a5649c3c658511f567d4bbc459c2286",
+            "locator": {
+              "end": 776,
+              "kind": "line_range",
+              "start": 774
+            },
+            "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52e4e48a805e1d81f5d7ca9c2042cd3ec786e249",
+            "content": "sha256:6fd6e75f62b2330f958fbfdd27c8d147e95b911c2269d25d9ef3eadfe7162248",
+            "locator": {
+              "end": 290,
+              "kind": "line_range",
+              "start": 288
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52e4e48a805e1d81f5d7ca9c2042cd3ec786e249",
+            "content": "sha256:df46988f18894eadf365fbbb08e826a99a2125d53f3fab018eace0dfb0d95477",
+            "locator": {
+              "end": 321,
+              "kind": "line_range",
+              "start": 318
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52e4e48a805e1d81f5d7ca9c2042cd3ec786e249",
+            "content": "sha256:71b9f7ff22b302552165bcd74700aa499f6ac7a54ef7834ec006db1d33529f5f",
+            "locator": {
+              "end": 406,
+              "kind": "line_range",
+              "start": 402
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d7c13e7df1327acccc4ecd9c10b2da7c4c70c59b",
+            "content": "sha256:f34d645788bbd9ce2f25603b43d5c2d0b1d6beaad31d18efea2d2aee994b55ac",
+            "locator": {
+              "end": 756,
+              "kind": "line_range",
+              "start": 754
+            },
+            "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "Item tokens are judged only in the files the re-anchor check reads; a closed file outside that population is not item-judged here.\n\nAnchor: `check_history_rows`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52e4e48a805e1d81f5d7ca9c2042cd3ec786e249",
+            "content": "sha256:96a01230a80ddd527233066dd4251774b2aa624fa41913d0210d0f50e5b817e8",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52e4e48a805e1d81f5d7ca9c2042cd3ec786e249",
+            "content": "sha256:03d2aadbda30c0e741a8ad8b4aef566f1b184b0f7826c097285e1188ff4e99dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_history_rows"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A merge parent's rows, read only when a row disagrees.\n\nAnchor: \"def agreed(self, path: str, row: InvariantRow)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52e4e48a805e1d81f5d7ca9c2042cd3ec786e249",
+            "content": "sha256:cf108146f9604aa3fd19b01e83275815d1131c62fbf6683583a4b6655d6b1585",
+            "locator": {
+              "kind": "symbol",
+              "name": "_BaseRows"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Every disagreeing row that no later attempt of its owner answers again, and whether the merge moved it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52e4e48a805e1d81f5d7ca9c2042cd3ec786e249",
+            "content": "sha256:8b4227c9d3360ee30a300328b6cc7814300ea3eb301ad606403403bb52bb9dae",
+            "locator": {
+              "kind": "symbol",
+              "name": "_mismatches"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The refusing check rejects all mismatches at a leaf publication and only unmoved mismatches at a non-publication merge.\n\nAnchor: `check_history_rows`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52e4e48a805e1d81f5d7ca9c2042cd3ec786e249",
+            "content": "sha256:96a01230a80ddd527233066dd4251774b2aa624fa41913d0210d0f50e5b817e8",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52e4e48a805e1d81f5d7ca9c2042cd3ec786e249",
+            "content": "sha256:03d2aadbda30c0e741a8ad8b4aef566f1b184b0f7826c097285e1188ff4e99dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_history_rows"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Moved-row findings are bounded `merge_reports` at non-publication sync merges; the finding's message explains the deferral and names the next refusing publication or landing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52e4e48a805e1d81f5d7ca9c2042cd3ec786e249",
+            "content": "sha256:5414f7d7a22f16d23dc49516ad8a710a6a631b932ca5c52845ceb22a0662e920",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_merged_history_rows"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The history-row registrations: `R09-history-rows` carries `writer_reports=True` while `R09-history-rows-merged` carries `merge_reports=True`, not plain report-only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52e4e48a805e1d81f5d7ca9c2042cd3ec786e249",
+            "content": "sha256:ada10dcf1b001a10048f21dde3833e4c18cf80cb08e0a1a22bb08a27bb39f403",
+            "locator": {
+              "kind": "symbol",
+              "name": "HISTORY_ROWS_RULE"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52e4e48a805e1d81f5d7ca9c2042cd3ec786e249",
+            "content": "sha256:55df25b0a0c057322f61f78ce25801619140692faba9110d74ee496b4c180a15",
+            "locator": {
+              "kind": "symbol",
+              "name": "HISTORY_ROWS_MERGED_RULE"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The context flag a leaf publication sets.\n\nAnchor: \"leaf_publication: bool = False\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "915f129fdf2d6dbd0e54f7ecd9793fd9cacf8a49",
+            "content": "sha256:49bdb69b04d940bd2a58bf1ce6eada9e10055e8505ba45b5e33c39642538577e",
+            "locator": {
+              "end": 335,
+              "kind": "line_range",
+              "start": 335
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "915f129fdf2d6dbd0e54f7ecd9793fd9cacf8a49",
+            "content": "sha256:d2f3d96dd8948e4416449730447149f27c8cf5b9d69b79f5949fa145243ee771",
+            "locator": {
+              "end": 323,
+              "kind": "line_range",
+              "start": 323
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "A ghost subject in a closed file is refused at master landing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb21438758c57cf647872e223994856f0ee5bd5d",
+            "content": "sha256:ef8538598b8aee42a9457276d2d54cc12edf8860af6a1b50d66b4b8cbef5863d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_hand_committed_closed_history_file_with_a_ghost_subject_is_refused_at_master_landing"
+            },
+            "path": "mcp/tests/test_knowledge_gate_routes.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

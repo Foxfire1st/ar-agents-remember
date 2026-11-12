@@ -1,0 +1,309 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/evidence_lifecycle.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "5ec5ab93e02ad626b0a4ea38ef8644508a1ae0f3",
+        "content": "sha256:e96655668ee90e4f2d790d299aec28160afea26afdc3c395ca244f782ed315f0",
+        "locator": {
+          "end": 201,
+          "kind": "line_range",
+          "start": 201
+        }
+      },
+      "id": "RLZ-5D55A2",
+      "invariant": "INV-K0CS85",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-union-merge-checked",
+        "leaf": "260928-MIK-L51"
+      },
+      "rationale": "The lifecycle loader refuses a catalog that it cannot read or parse with the text of unreadable_catalog, so a parse error carries the sentence about interleaved rows.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "5ec5ab93e02ad626b0a4ea38ef8644508a1ae0f3",
+        "content": "sha256:a6dae9aca836181167beb70089e04874e63a4145e0133bfc9258333ade8550b3",
+        "locator": {
+          "kind": "symbol",
+          "name": "_canonical_form_findings"
+        }
+      },
+      "id": "RLZ-KEJCTF",
+      "invariant": "INV-RDQYV3",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-canonical-form-refused",
+        "leaf": "260928-MIK-L51"
+      },
+      "rationale": "Starts the lifecycle loader's findings with the layout findings and adds the order findings for contract rows and artifact rows and the list finding of every consumers list, so a lifecycle catalog that is out of canonical form raises and never loads.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "5ec5ab93e02ad626b0a4ea38ef8644508a1ae0f3",
+        "content": "sha256:71352f8e2f239049cb234e3c35014d8146e5149816e994c48b745d5023df6383",
+        "locator": {
+          "kind": "symbol",
+          "name": "_validate_path_and_consumers"
+        }
+      },
+      "id": "RLZ-QX3TXZ",
+      "invariant": "INV-K0CS85",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-union-merge-checked",
+        "leaf": "260928-MIK-L51"
+      },
+      "rationale": "Reports a listed consumer whose file does not exist and names the write command where the command repairs the row, and reports a row whose artifact file does not exist with the note that the command removes no row; for a row whose every listed consumer is gone and which the source tree does not support, the finding says that the command does not repair the row. So a line or row that a union brought back for a deleted file is refused without an over-widening claim.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The module names itself the consumer-completeness oracle and states that the catalog must be in canonical form.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ec5ab93e02ad626b0a4ea38ef8644508a1ae0f3",
+            "content": "sha256:edba11eb7c1a02cf08a0da79e1b9e03c77e34e583655c9be20e30aef6f045e0e",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Migration evidence must be temporary and versioned evidence must have external authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ec5ab93e02ad626b0a4ea38ef8644508a1ae0f3",
+            "content": "sha256:89da97d65a2615644f5247b0cdf59b01b2ad21331589d500e0a2f3b521fccb3e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_authority"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "A replacement is a registered contract or an existing node selector.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ec5ab93e02ad626b0a4ea38ef8644508a1ae0f3",
+            "content": "sha256:903a9840c334b5f50791b0f456954001365676151b6224eb51f62a5f5010d2d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_replacement"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The validator loads the lifecycle catalog and then the lane manifest on one cached source graph; `--write` goes to the rewrite.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ec5ab93e02ad626b0a4ea38ef8644508a1ae0f3",
+            "content": "sha256:567c7ad94a855fa98285824fec3450a8f1303866188684047bad505173acf641",
+            "locator": {
+              "kind": "symbol",
+              "name": "main"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "A refused rewrite prints that nothing was written and returns 1.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ec5ab93e02ad626b0a4ea38ef8644508a1ae0f3",
+            "content": "sha256:b900ec597cc03c5b6dc08e9fd1b84e6548ac6aae99cc1ff7eaac3a203f3c8f21",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The Git hook gate runs the validator command.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc9e582bcd4f203b2cb6710d9b1db35999d1341e",
+            "content": "sha256:fc6469a9464ab758dd3c4c3acb722ba1b7d402c2af1e273501edb9c149baa0ff",
+            "locator": {
+              "end": 231,
+              "kind": "line_range",
+              "start": 224
+            },
+            "path": ".githooks/_gate.sh"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The quality plan's evidence-lifecycle step runs the validator command.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "000b92a84b724de062342f3a02303c68beb1dffe",
+            "content": "sha256:d1239c912abee5456ba73fdd307891463ec886dcfb5f2ed325957ba7114f2ab8",
+            "locator": {
+              "end": 200,
+              "kind": "line_range",
+              "start": 192
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The loader collects every finding and raises one error that lists them; `build_facts` lets a caller supply the source graph.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ec5ab93e02ad626b0a4ea38ef8644508a1ae0f3",
+            "content": "sha256:23518a0af72ef4dc3997947891ca4d6ee6f7de8ec29e32be72acc5c6a234b851",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_evidence_inventory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "A catalog that cannot be read or parsed is refused with the shared refusal text.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ec5ab93e02ad626b0a4ea38ef8644508a1ae0f3",
+            "content": "sha256:e96655668ee90e4f2d790d299aec28160afea26afdc3c395ca244f782ed315f0",
+            "locator": {
+              "end": 201,
+              "kind": "line_range",
+              "start": 201
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "An artifact or consumer whose file is gone is a finding (the consumer finding names the command only where the command repairs the row), and declared and observed consumers are compared as sets.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ec5ab93e02ad626b0a4ea38ef8644508a1ae0f3",
+            "content": "sha256:71352f8e2f239049cb234e3c35014d8146e5149816e994c48b745d5023df6383",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_path_and_consumers"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Contract owners and exact evidence selectors must name real source nodes, and every contract must be referenced.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ec5ab93e02ad626b0a4ea38ef8644508a1ae0f3",
+            "content": "sha256:9fbf1f6cc27af1afe79f9d47457c1c7a84c87ee1f7ae3aa292756804632eb4a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_contracts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Discovery of the governed files is delegated to one owner and compared in both directions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ec5ab93e02ad626b0a4ea38ef8644508a1ae0f3",
+            "content": "sha256:53b897ad4b97880593f9c6a5e1e784a69129c7570e283ae5abf7e42dea75a424",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_catalog_coverage"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The layout findings, then one finding per contract row, artifact row and consumers list that is out of canonical form.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ec5ab93e02ad626b0a4ea38ef8644508a1ae0f3",
+            "content": "sha256:a6dae9aca836181167beb70089e04874e63a4145e0133bfc9258333ade8550b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_canonical_form_findings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "An exact or exact-source row needs a non-empty consumer list; an all-tests row must not list consumers and declares every test module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ec5ab93e02ad626b0a4ea38ef8644508a1ae0f3",
+            "content": "sha256:f23dfd7943c6b6bff60f049abdcbcdd63bbe380d37477cf3145fb0ae4f6a57bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_metadata_from"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Lifetime rules for temporary and retained evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ec5ab93e02ad626b0a4ea38ef8644508a1ae0f3",
+            "content": "sha256:cfe8e254eacda822b11358d017d23b42e00fdd81e54768fa52be9f734bef016c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_lifetime"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

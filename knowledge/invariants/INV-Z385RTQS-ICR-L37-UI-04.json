@@ -1,0 +1,29 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "family_guarantee"
+    ],
+    "justification": "Expression cards consume the page's recorded-range context choice while workspace state retains local group openings, keeping code inspection consistent across subject reads without creating a separate full-file authority."
+  },
+  "applicability": "Code-range display and location-group state of the mounted review page.",
+  "conditions": [
+    "The code-context preference is stored under review.code-context.v1; Full context shows the whole recorded range, not a separate full-file read.",
+    "Diffs use split layout at a content width of at least 1080px and unified layout below it.",
+    "Group openings survive subject reads within the mounted page; there is no Layout selector or per-expression full-file disclosure."
+  ],
+  "exclusions": [
+    "Local group openings are not persisted knowledge or cross-session preferences."
+  ],
+  "id": "INV-Z385RTQS",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "7dc7a5d7-f06f-40ae-a3c7-b59efbd79869",
+    "task": "260921-ICR"
+  },
+  "revision": 3,
+  "schema": "ar-invariant/v1",
+  "statement": "Changes only is the default recorded-range view; the one Changes only/Full context control is remembered across review openings and reloads. Diff layout follows the reading column's content width, while opened location groups remain local workspace state.",
+  "status": "proposed",
+  "supersedes": []
+}

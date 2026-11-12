@@ -1,0 +1,92 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/review.py",
+  "realizes": [],
+  "references": {
+    "92": {
+      "note": "Request, statement sides and task identity keep no-selection/missing-text distinct.\n\nAnchor: \"class ReviewSideContent(KnowledgeModel):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
+            "content": "sha256:54c13f931f0ccd90ae2994fb53a74416a15f9c315009b841885da5da7d507bc3",
+            "locator": {
+              "end": 307,
+              "kind": "line_range",
+              "start": 182
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "93": {
+      "note": "Knowledge comparison digests are all present or all absent; pages keep declared arithmetic and cursor states.\n\nAnchor: \"class ComparisonIdentity(KnowledgeModel):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
+            "content": "sha256:49bf6a6fc248d7b5ad13fbbbdcad9252c4be33d00598c70ca0dc20eaea84e7a2",
+            "locator": {
+              "end": 425,
+              "kind": "line_range",
+              "start": 310
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "94": {
+      "note": "Raw origin and revision selection retain the one-direction selection guard.\n\nAnchor: \"class ReviewKnowledgePane(KnowledgeModel):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
+            "content": "sha256:d51e0e88017e8cea7a10b97a92b44a9f614d98d26be70a9c27ad8cb9c1034e79",
+            "locator": {
+              "end": 516,
+              "kind": "line_range",
+              "start": 463
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "95": {
+      "note": "Required panes and payload guards retain structural agreement without semantic approval.\n\nAnchor: \"class KnowledgeReviewPayload(KnowledgeModel):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
+            "content": "sha256:0e006f842e6954082a9d752be51896858f6970f40ff39161b5d4046e191a8da0",
+            "locator": {
+              "end": 634,
+              "kind": "line_range",
+              "start": 519
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "96": {
+      "note": "Results keep typed outcomes and catalogue arithmetic, now with optional nonnegative comparison.\n\nAnchor: \"class KnowledgeReviewResult(KnowledgeModel):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
+            "content": "sha256:c7776634604628737707cc5b643562a27e0239a623743f1cb44e70eb43ebdad1",
+            "locator": {
+              "end": 721,
+              "kind": "line_range",
+              "start": 637
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

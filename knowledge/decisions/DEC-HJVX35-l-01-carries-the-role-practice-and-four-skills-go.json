@@ -1,0 +1,76 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Keeping the skills, moving everything and moving only fitting pieces were weighed with a measurement; the choice binds where role instructions live."
+  },
+  "alternatives": [
+    {
+      "option": "Move only the pieces that fit today's practice into existing or new l-01 homes, written to the guideline and checked against l-01 and the enforcing code, and remove w-02, c-04, c-05 and c-08 with their packaged copies.",
+      "reason": "l-01 is the only skill role agents actually use; the tools and the memory's system files already carry the enforced and answered pieces, and where text and code disagree the code wins.",
+      "status": "chosen"
+    },
+    {
+      "option": "Keep w-02, c-04, c-05 and c-08 as separate skills beside l-01.",
+      "reason": "They had become dead weight that no role reached, and their unmoved pieces contradicted today's practice or repeated the tools.",
+      "reconsider_when": "Role agents measurably need a separate skill for a subject l-01 cannot hold.",
+      "status": "rejected"
+    },
+    {
+      "option": "Move every piece that l-01 lacks into l-01.",
+      "reason": "Pieces enforced by a tool, said by a tool's answer or written for an older way of working would repeat or contradict the product.",
+      "reconsider_when": "A recorded struggle shows a role needed a rule that only an unmoved piece states.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Task authoring, card layouts, curator checks and the entity catalog have l-01 homes and templates.",
+    "c-00, c-03, c-10, c-13 and c-14 are left to a later task."
+  ],
+  "context": "Besides the l-01 lifecycle skill, the repository held w-02, c-04, c-05 and c-08, whose pieces the role agents no longer reached. A measurement found 257 pieces that l-01 lacked: 98 still fit today's practice, 51 are enforced by a tool, 58 are said by a tool's own answer and 50 were written for an older way of working.",
+  "decider": "The developer (D689, D691, D692); MIK-R84 v10 part 4.",
+  "id": "DEC-HJVX35",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "route:skills/l-01-agent-lifecycles"
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "e7138bf05823d41e85fe541b180f948f12e5c555",
+        "content": "sha256:5c66644a20d1b02c9303f60b6c152374e26e3cbbe5bc1333f8694bfdc6eec54f",
+        "locator": {
+          "kind": "file"
+        },
+        "path": "skills/l-01-agent-lifecycles/reference/tasks/document-authoring.md"
+      }
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R84",
+        "packet": "requirements/MIK-R84-v10-installed-copies-and-running-servers-are-current-after-an-install.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v10"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "handoff-runA.json"
+    },
+    "handoffEntry": "dec-l01-only-role-skill",
+    "leaf": "260928-MIK-L84",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

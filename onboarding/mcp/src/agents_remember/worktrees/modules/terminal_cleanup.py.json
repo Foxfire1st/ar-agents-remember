@@ -1,0 +1,42 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/terminal_cleanup.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c61d5d1b9b4836c3bb1f90ad30cae8de9adefe55",
+        "content": "sha256:b3452d2695138051b724fff10c9e170eb5dab487f426e54a0cae25344f35493a",
+        "locator": {
+          "kind": "symbol",
+          "name": "_cleanup_with_guard"
+        }
+      },
+      "id": "RLZ-FYGN7D",
+      "invariant": "INV-F1TY2E",
+      "origin": {
+        "handoffEntry": "MIK-R76@v1 required behavior 1",
+        "leaf": "260928-MIK-L76"
+      },
+      "rationale": "This admitted cleanup transaction re-reads canonical terminal authority and invokes the archive port before its destructive outputs.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Archival runs inside the admitted publish step before destructive outputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c61d5d1b9b4836c3bb1f90ad30cae8de9adefe55",
+            "content": "sha256:b3452d2695138051b724fff10c9e170eb5dab487f426e54a0cae25344f35493a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cleanup_with_guard"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

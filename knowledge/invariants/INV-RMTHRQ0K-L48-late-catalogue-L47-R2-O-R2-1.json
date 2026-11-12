@@ -1,0 +1,29 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The mounted navigation cases distinguish an engaged reader's kept subject from an unengaged reader's late catalogue and fail when either rule is inverted."
+  },
+  "applicability": "Initial unnamed reviewer entry and a catalogue answer after SUBJECT_HOLD_MS releases task-context reading.",
+  "conditions": [
+    "Pointerdown, keydown, wheel and touchstart are observed passively on the surface root; engagement is ignored while the hold is settling.",
+    "An outlined result is searched in the current persisted triage/authored order."
+  ],
+  "exclusions": [
+    "No unconditional first-family or timely-first-subject promise.",
+    "A catalogue that answers after the bound selects nothing on its own.",
+    "A refused or empty catalogue supplies no fabricated subject."
+  ],
+  "id": "INV-RMTHRQ0K",
+  "origin": {
+    "leaf": "260921-ICR-L48",
+    "legacyId": "fbe573f5-a662-433d-842c-6211b227de24",
+    "task": "260921-ICR"
+  },
+  "revision": 3,
+  "schema": "ar-invariant/v1",
+  "statement": "After the bounded unnamed-entry wait, an engaged reader keeps their selected subject, view and focus when the catalogue answers, while an unengaged reader follows initialSubject only for a catalogue that answers inside that wait; a catalogue answering later fills the navigation and selects no subject, and a named subject always wins.",
+  "status": "retired",
+  "supersedes": []
+}

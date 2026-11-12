@@ -1,0 +1,193 @@
+{
+  "path": "dashboard/src/panels/engine-room/styles.ts",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`sceneSvg` is now static layout only — the global `& g,& rect,…{ transition }` substrate is removed (05k).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5705ba6821a3de4af9781d63732e0300475af6a6",
+            "content": "sha256:bc8f5d68c1d5a6961435fe4e2ae24b5f6f5c9becdd426e3efcc8cd6b2a30df78",
+            "locator": {
+              "kind": "symbol",
+              "name": "sceneSvg"
+            },
+            "path": "dashboard/src/panels/engine-room/stage.styles.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "`closeoutTrainLabel` — `ink` 10px (was `muted` 9px) for legibility as a bare caption on the textured backdrop; `cleanupRecord` is an absolute overlay (5k F6).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd0b56b4d75340a645116b7357c2d0b4c954dea3",
+            "content": "sha256:f14c89b21fd5002c385d5cc15560b6bc8a5e5c4abe5ac03068f613abf2ad546f",
+            "locator": {
+              "kind": "symbol",
+              "name": "closeoutTrainLabel"
+            },
+            "path": "dashboard/src/panels/engine-room/flow.styles.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Fleeting-banner atoms (`fleetingBanner`/`fleetingLabel`/`fleetingReason`/`fleetingChoice(s)`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "61fa5ab62915df0658c9617649fee1dec455a082",
+            "content": "sha256:d2fb78a8b67fa0f141b7cee8fdd9d822b448c89123cc6fe246a8e17b2dcc0dfb",
+            "locator": {
+              "kind": "symbol",
+              "name": "fleetingBanner"
+            },
+            "path": "dashboard/src/panels/engine-room/layout.styles.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The `healthDot` / fact-state / runtime-state axes (colour-as-state); the only remaining `animation:` is the app-wide `pulse`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "61fa5ab62915df0658c9617649fee1dec455a082",
+            "content": "sha256:5de7520067a7984282375194629a00bcc4e15cc28258cd7b24594a4b143bda57",
+            "locator": {
+              "kind": "symbol",
+              "name": "healthDot"
+            },
+            "path": "dashboard/src/panels/engine-room/layout.styles.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The GSAP hook + the canvas that read these now-static recipes and drive the motion.\n\nAnchor: \"export function useEngineTimeline\", \"export function EnclosureCanvas\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "15444872a266d89123558da6eb8909e81fe96665",
+            "content": "sha256:ac62ca54f0f1d04e921bbc2241972b186f60f8104ff4b1afe03fbe9467fe7079",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 35
+            },
+            "path": "dashboard/src/panels/engine-room/EnclosureCanvas.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "745dcb2438f071de87e63481375c2c3790c15d3b",
+            "content": "sha256:008c8fe11be65228379f6d81493136f504b76d9437b5ee82249ec83a8094a5d2",
+            "locator": {
+              "end": 153,
+              "kind": "line_range",
+              "start": 153
+            },
+            "path": "dashboard/src/panels/engine-room/useEngineTimeline.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`warpSurge` is plain `css` (GSAP `data-fx='surge'`); `warpCouplerG` removed (Motion owns coupler opacity).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5705ba6821a3de4af9781d63732e0300475af6a6",
+            "content": "sha256:4bcd65590ea3df65140b70c7e677aa628dc2901efc287af1084cffb99ecee406",
+            "locator": {
+              "kind": "symbol",
+              "name": "warpSurge"
+            },
+            "path": "dashboard/src/panels/engine-room/stage.styles.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`refusedConduit` — the `polarity` amber/red variants over an `opacity: 0` base; the recipe carries colour only, and the polarity it is keyed on is derived from `edge.state` by the canvas.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd0b56b4d75340a645116b7357c2d0b4c954dea3",
+            "content": "sha256:e2391602a19cc3101c809dc5101cf21f1cb07a1fdc5f36447c93cb6e7db895bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "refusedConduit"
+            },
+            "path": "dashboard/src/panels/engine-room/flow.styles.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`refusedPolarityOf` — the caller that derives that polarity (`failed`→red, `stale`→amber) with no polarity field read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
+            "content": "sha256:7a4dda1e37c1500d1e8f572c5fd5f02aac6a8037f6a885e76727b27bb8690d53",
+            "locator": {
+              "kind": "symbol",
+              "name": "refusedPolarityOf"
+            },
+            "path": "dashboard/src/panels/engine-room/geometry.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "`EngineProcessEdge` declares no polarity field and never documented a `refused` state.\n\nAnchor: \"class EngineProcessEdge\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ada1520ab5545be71a00dae1420683fd0b82938",
+            "content": "sha256:6d5a8fd358ca69062732d0582b02c7da212699924831f1a0bca28dcd94c67685",
+            "locator": {
+              "end": 295,
+              "kind": "line_range",
+              "start": 295
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "`attnBadge`/`stopBar`/`dissolveShell` lost their `animation`/`transition` — GSAP `data-fx='breath'`/`'stop'` + Motion own them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd0b56b4d75340a645116b7357c2d0b4c954dea3",
+            "content": "sha256:1ccd912cbec465c3f069295004a7a6607692b70237ef18dbdaa7e11784f4aa2a",
+            "locator": {
+              "kind": "symbol",
+              "name": "attnBadge"
+            },
+            "path": "dashboard/src/panels/engine-room/flow.styles.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,113 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "Later membership changes preserve absent-versus-present input, one acyclic admitted parent, complete-content distinction and producer-owned diagnosis. The alternatives are documented previous/rule-question choices, not invented design-discussion history."
+  },
+  "alternatives": [
+    {
+      "option": "For documented subTasks, admit a genuinely absent master through the listing master and retain present own-master validation; preserve existing identity/cycle-guarded list placement for other document kinds without own-master validation. Display served subTask record/list disagreements once on the master page without repairing records.",
+      "reason": "D305 and D307: missing-master rows were being dropped; the explicit Q1 ruling puts record/list disagreements once on their master’s page.",
+      "status": "chosen"
+    },
+    {
+      "option": "Keep the previous reciprocal-only admission, dropping a listed documented child with no master.",
+      "reason": "D305 explicitly replaces it: missing master is not a contrary master, and those records must remain in their listing master.",
+      "reconsider_when": "A developer ruling explicitly makes a missing master exclude an otherwise listed record.",
+      "status": "rejected"
+    },
+    {
+      "option": "Put a disagreement beside each row in the side panel.",
+      "reason": "The D307 Q1 ruling chooses one place on the master’s page, rather than repeating the record/list dispute per tree row.",
+      "reconsider_when": "A developer-approved task navigation workflow explicitly requires per-row disagreement presentation.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Later membership changes preserve absent-versus-present input, one acyclic admitted parent, complete-content distinction and producer-owned diagnosis.",
+    "Master validation applies only to documented subTasks; other listed document kinds keep existing identity/cycle-guarded list placement. This corrects unsupported memory wording, not product behavior or a new safety exception."
+  ],
+  "context": "D305 and D307: missing-master rows were being dropped; the explicit Q1 ruling puts record/list disagreements once on their master’s page.",
+  "decider": "Developer D305/D307/D309, interpreted by Architect 97e0320d in the canonical L168 ruling; C4 is the direct quoted 2026-10-17T02:27:47+02:00 successor ruling.",
+  "id": "DEC-ZVT2KF",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "d37db285155926a5393191721b105ab17f124661",
+        "content": "sha256:48de0c9a5927d664ad57b424366a96de5cbe63165fa355809fa071a02ce44225",
+        "locator": {
+          "kind": "symbol",
+          "name": "_place_listed_child"
+        },
+        "path": "mcp/src/agents_remember/observer/task_entries.py"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "d37db285155926a5393191721b105ab17f124661",
+        "content": "sha256:d1fdd46de7e3835f6ab74f75cdd7e66c814beb79b729db03939b5fd86b3711eb",
+        "locator": {
+          "kind": "symbol",
+          "name": "_Membership"
+        },
+        "path": "mcp/src/agents_remember/observer/task_entries.py"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "85572eb5c023ddcb57cfaa6eed4873d5ceb88d09",
+        "content": "sha256:f0ed83a15510d20fcbd23e95c91789481ae0e65bfa7dfb299076cf4b963acced",
+        "locator": {
+          "kind": "symbol",
+          "name": "ListDisagreements"
+        },
+        "path": "dashboard/src/panels/detail-panel/listDisagreements.tsx"
+      }
+    },
+    {
+      "alternative": 1,
+      "relation": "reconsider_on",
+      "target": {
+        "blob": "d37db285155926a5393191721b105ab17f124661",
+        "content": "sha256:48de0c9a5927d664ad57b424366a96de5cbe63165fa355809fa071a02ce44225",
+        "locator": {
+          "kind": "symbol",
+          "name": "_place_listed_child"
+        },
+        "path": "mcp/src/agents_remember/observer/task_entries.py"
+      }
+    },
+    {
+      "alternative": 2,
+      "relation": "reconsider_on",
+      "target": {
+        "blob": "85572eb5c023ddcb57cfaa6eed4873d5ceb88d09",
+        "content": "sha256:f0ed83a15510d20fcbd23e95c91789481ae0e65bfa7dfb299076cf4b963acced",
+        "locator": {
+          "kind": "symbol",
+          "name": "ListDisagreements"
+        },
+        "path": "dashboard/src/panels/detail-panel/listDisagreements.tsx"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "D305 and D307: missing-master rows were being dropped; the explicit Q1 ruling puts record/list disagreements once on their master’s page. Source: /home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/run3/L168-REOPENED-FOR-THE-SIDE-PANEL-TREE-D305.json; C4 authority /home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/messages/20261017T002901Z_manager-5b50bf38_to_curator-2a74a542.md; original producer lists remain separate and unchanged."
+      ],
+      "path": "L168-A016-decisions-wave4a.json"
+    },
+    "handoffEntry": "L168-C-A016-ruling-membership",
+    "leaf": "260928-MIK-L168",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

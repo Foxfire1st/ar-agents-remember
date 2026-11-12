@@ -1,0 +1,85 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_recovery.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "4b458a3bcd123b06f0fe42ba8cbba04d34e3c277",
+        "content": "sha256:67234621a85558117e161b148cbcb761ed3e73e4d40eb8c52dab515b8dc0d563",
+        "locator": {
+          "kind": "symbol",
+          "name": "recover_direct_landing_under_authority"
+        }
+      },
+      "id": "RLZ-3F29H9",
+      "invariant": "INV-6DFQ9P",
+      "origin": {
+        "handoffEntry": "MIK-R52@v1 rule 8 direct-leaf-identity",
+        "leaf": "260928-MIK-L52"
+      },
+      "rationale": "The real-executor recovery settling the kept receipt in the same call.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The module defines `recover_direct_landing`; `direct_recovery_refusal`; `reconcile_control_mutations` as its public seam.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b458a3bcd123b06f0fe42ba8cbba04d34e3c277",
+            "content": "sha256:67234621a85558117e161b148cbcb761ed3e73e4d40eb8c52dab515b8dc0d563",
+            "locator": {
+              "kind": "symbol",
+              "name": "recover_direct_landing_under_authority"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "One translator reclassifies typed direct failures against current evidence while invariant runtime errors remain loud.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b458a3bcd123b06f0fe42ba8cbba04d34e3c277",
+            "content": "sha256:a31096c17029647be614e15aaaef6694758c564a0745631dc350da37653b4933",
+            "locator": {
+              "kind": "symbol",
+              "name": "_direct_recovery_failure"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4b458a3bcd123b06f0fe42ba8cbba04d34e3c277",
+            "content": "sha256:5e389ae104f6c16f78a47a5254f966d8e4244b6d1a34a331c9c9c64a07de6d33",
+            "locator": {
+              "kind": "symbol",
+              "name": "_current_record"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Real direct recovery settles the kept closing receipt in the same call.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b458a3bcd123b06f0fe42ba8cbba04d34e3c277",
+            "content": "sha256:67234621a85558117e161b148cbcb761ed3e73e4d40eb8c52dab515b8dc0d563",
+            "locator": {
+              "kind": "symbol",
+              "name": "recover_direct_landing_under_authority"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

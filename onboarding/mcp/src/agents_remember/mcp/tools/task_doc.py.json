@@ -1,0 +1,60 @@
+{
+  "path": "mcp/src/agents_remember/mcp/tools/task_doc.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The application entry point this builder forwards to. Anchor: `task_doc_tool`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
+            "content": "sha256:36946f9f594b3e343adf324da581e0d104f623f686bd83a9d2844ab5533ac0ba",
+            "locator": {
+              "end": 1186,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The shared validation/emission choke point.\n\nAnchor: `_tool_payload`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bbd96445dae6e10e1c4052722fab1b614aafedfe",
+            "content": "sha256:e65598ad08d511a5ffa26a3099d273596eea7844d5c2a00685c2ccb183271c43",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The response model the payload validates against. Anchor: `TaskDocResponse`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd8894a7e858b103972f9a0c9ec3a13e5fc41f48",
+            "content": "sha256:667882012ebd38bb51518f072cfa2239734d4aa86714747c7082f0e34bec837b",
+            "locator": {
+              "end": 293,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/models/task_doc.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

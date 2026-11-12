@@ -1,0 +1,333 @@
+{
+  "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9b06809a50c0177ed9f11e258232f95ce0fe5679",
+        "content": "sha256:f28f70cfd17ca791ca4d58f5139169884a61845842f7c08db66bfbeee7ac0794",
+        "locator": {
+          "kind": "symbol",
+          "name": "CuratorCoherenceRecordedJudgment"
+        }
+      },
+      "id": "RLZ-48YKHH1T",
+      "invariant": "INV-453ZPCZ5",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Carries the recorded judgment's evidenceSha256 and an optional evidenceArtifact. Its serializer omits the artifact key when none was stamped, so legacy records keep their original encoding, and its validator refuses custody whose SHA differs from the originally recorded evidence hash.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "9b06809a50c0177ed9f11e258232f95ce0fe5679",
+        "content": "sha256:7ce98fb56df5741a16879c79e78e98804146f128bd7c153a2bc170456a65157a",
+        "locator": {
+          "kind": "symbol",
+          "name": "require_memory_quality_attestation_dependencies"
+        }
+      },
+      "id": "RLZ-4BW0XT",
+      "invariant": "INV-HGJNDG",
+      "origin": {
+        "handoffEntry": "L56-INV-HGJNDG-rev2",
+        "leaf": "260928-MIK-L56"
+      },
+      "rationale": "The closeout publishes only on a memory-quality attestation whose declared dependencies equal the current code and memory candidate trees, so the judgment that reaches the memory commit is one the gate made against the candidate being closed.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "9b06809a50c0177ed9f11e258232f95ce0fe5679",
+        "content": "sha256:7ce98fb56df5741a16879c79e78e98804146f128bd7c153a2bc170456a65157a",
+        "locator": {
+          "kind": "symbol",
+          "name": "require_memory_quality_attestation_dependencies"
+        }
+      },
+      "id": "RLZ-DF2QHS",
+      "invariant": "INV-0APWSR",
+      "origin": {
+        "handoffEntry": "L56-INV-0APWSR-rev2",
+        "leaf": "260928-MIK-L56"
+      },
+      "rationale": "The closeout publishes only on a memory-quality attestation whose declared dependencies equal the current code and memory candidate trees, so the judgment that reaches the memory commit is one the gate made against the candidate being closed.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "9b06809a50c0177ed9f11e258232f95ce0fe5679",
+        "content": "sha256:f423a2397832d11ba45be152092d1256ab37be95aa986d6da60f996cbde80aca",
+        "locator": {
+          "end": 579,
+          "kind": "line_range",
+          "start": 578
+        }
+      },
+      "id": "RLZ-Q9EA8E",
+      "invariant": "INV-PFVBQM",
+      "origin": {
+        "handoffEntry": "K3-PFVBQM-coherence-commits",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The curator_coherence response model declares `codeCommit` and `memoryContentCommit`, the two commits a closed-out status or validate answer names; without these fields the answer could not carry them.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The quality attestation validates exact candidate count and uniqueness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b06809a50c0177ed9f11e258232f95ce0fe5679",
+            "content": "sha256:199a745b1a1009c4e66e0828643e0c9ea3e4620448d23d306b3c9c368c2ad286",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorQualityAttestation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Owner custody preserves original judgment bytes and old encoding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b06809a50c0177ed9f11e258232f95ce0fe5679",
+            "content": "sha256:f28f70cfd17ca791ca4d58f5139169884a61845842f7c08db66bfbeee7ac0794",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorCoherenceRecordedJudgment"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "A durable generation integrity result makes no live readiness claim.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b06809a50c0177ed9f11e258232f95ce0fe5679",
+            "content": "sha256:9b87927e234ed7eec7a95104ec1edaae81b4250cb8e1459eb2c30731b1f96c40",
+            "locator": {
+              "kind": "symbol",
+              "name": "ValidatedCuratorCoherenceGeneration"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The response declares the closeout commit identities a closed-out answer reports.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b06809a50c0177ed9f11e258232f95ce0fe5679",
+            "content": "sha256:2d8d5f8b5ef4005f1ea76b2b5c7ce843f45de5226e2664edb221cfd3da14f22a",
+            "locator": {
+              "kind": "symbol",
+              "name": "memoryContentCommit"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Immutable record validation enforces exact candidate-to-judgment coverage.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b06809a50c0177ed9f11e258232f95ce0fe5679",
+            "content": "sha256:890c9736acb344ad4e335a24a0bbf4670fa0b997c835052dcf94133cacd330d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorCoherenceRecord"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The discriminated action request separates read actions from publication CAS input, and names the publication fields it is missing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b06809a50c0177ed9f11e258232f95ce0fe5679",
+            "content": "sha256:d88ff6cfa7d8e4c8df6b7a72e9b6c9ba1856f3e0e86a26998308eb295bc08447",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorCoherenceRequest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The one declaration of what `publish` requires, and the per-member flag marking the two `prepare` does not derive.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b06809a50c0177ed9f11e258232f95ce0fe5679",
+            "content": "sha256:bf16185fc4471584a353e4b3a235a287cb2d0263bc2baa66a1ca58efc8d703fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "PublicationMember"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b06809a50c0177ed9f11e258232f95ce0fe5679",
+            "content": "sha256:bb049a3555b26c9f959e9e5d3289d2e9c71f4641c68da2fb93ffe66838fd75a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "PUBLICATION_MEMBERS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The refusal that names every missing publication member by request field name, in declaration order, and calls out a missing delivery identity.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b06809a50c0177ed9f11e258232f95ce0fe5679",
+            "content": "sha256:1b0f109e9d0b9776c0155281ec86ef05d3ef91fdc74e82f1fb5e6f3552103747",
+            "locator": {
+              "kind": "symbol",
+              "name": "publication_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The sibling refusal that names the publication-only field a read action received.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b06809a50c0177ed9f11e258232f95ce0fe5679",
+            "content": "sha256:2fdbee7a51b831f6fd4b9216d65e272e798168e5c917c0d6452c28f179c40b0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "forbidden_publication_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The statement of the complete publication input set, read from the declaration at call time.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b06809a50c0177ed9f11e258232f95ce0fe5679",
+            "content": "sha256:6056a8e954ae75eb1c188747da2865b05c86acc1d71b16e70b5c3d533fa37f84",
+            "locator": {
+              "kind": "symbol",
+              "name": "publication_input_statement"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**Which publication fields a request supplied, `judgments` included, and the validator that refuses on it.**\n\nAnchor: `CuratorCoherenceRequest._publication_inputs_supplied`; `CuratorCoherenceRequest._action_has_one_input_shape`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b06809a50c0177ed9f11e258232f95ce0fe5679",
+            "content": "sha256:b94b4d3866e2e416dc7a0f2dd141505f6bb100eb5a5a61577495453d3c55a956",
+            "locator": {
+              "end": 538,
+              "kind": "line_range",
+              "start": 523
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b06809a50c0177ed9f11e258232f95ce0fe5679",
+            "content": "sha256:4b66f4952e681126ce86951860c82aa18551606c79e43c75ea2a9ed0fb387cc5",
+            "locator": {
+              "end": 554,
+              "kind": "line_range",
+              "start": 540
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The R03 dependency vocabulary used by this record type.\n\nAnchor: `EvidenceDependencies` `dependency` `require_evidence_dependencies`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d641c183171962d4b4496d7d8daaa1f74b440e10",
+            "content": "sha256:4ebc3a89d0db8236a5e514dd8b929911f4700ef533acb0a50a91edde8f779e67",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d641c183171962d4b4496d7d8daaa1f74b440e10",
+            "content": "sha256:d494eee35e72faaa38064fb46eed8c686a13113da442f34a75052a5faaeb04dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "EvidenceDependencies"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d641c183171962d4b4496d7d8daaa1f74b440e10",
+            "content": "sha256:5b6612f499b9cdb5f329c7c2bfc729e0f925d528e6804f8b0e709609a5e734cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "dependency"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d641c183171962d4b4496d7d8daaa1f74b440e10",
+            "content": "sha256:c8927de77cb08539e36e313e6eff3cb3667e095cb90dfe85e801a2556a2359b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_evidence_dependencies"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

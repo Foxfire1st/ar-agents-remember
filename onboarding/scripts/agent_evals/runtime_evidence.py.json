@@ -1,0 +1,40 @@
+{
+  "path": "scripts/agent_evals/runtime_evidence.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9d83c359c401b5c258ebcb7be1f2f7a80e761875",
+        "content": "sha256:129e58a799474a42ac3e7aa42ae5440a6bac28bf1fcfe02b764359a67d5e0cbd",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-KGJS48",
+      "invariant": "INV-NMBR0E",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-trajectory-route",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "It records argv[0] and resolves explicit, frozen-PATH-derived or unresolved command identities from the trial snapshot.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d83c359c401b5c258ebcb7be1f2f7a80e761875",
+            "content": "sha256:129e58a799474a42ac3e7aa42ae5440a6bac28bf1fcfe02b764359a67d5e0cbd",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

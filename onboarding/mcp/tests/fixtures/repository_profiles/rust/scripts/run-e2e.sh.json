@@ -1,0 +1,37 @@
+{
+  "path": "mcp/tests/fixtures/repository_profiles/rust/scripts/run-e2e.sh",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Fixture E2E rail invoking cargo --locked service tests.\n\nAnchor: `result_path`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1278cfa2291b15d50010bb4f49652f9946814fcc",
+            "content": "sha256:a9d9ae6ca4eee461a3c2455be6dfcae2133822b8d74005b620a56cba17687c98",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9b3dfe69593945dccd2a7d6536169a6d3e6e3ad6",
+            "content": "sha256:782d8509c88008b255052ed571c6512cd366c7f3de5388b96577fbec3a9e53a9",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/fixtures/repository_profiles/rust/tests/service.rs"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

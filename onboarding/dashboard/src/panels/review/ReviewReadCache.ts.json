@@ -1,0 +1,112 @@
+{
+  "path": "dashboard/src/panels/review/ReviewReadCache.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "3499890289fceaa6c58051f49d8242838b8e0d73",
+        "content": "sha256:3698bfaf7a0f06e787c9dca3ee519a8df0814bac97a28142d55c2bb348bc9d4f",
+        "locator": {
+          "kind": "symbol",
+          "name": "sameGeneration"
+        }
+      },
+      "id": "RLZ-AVHNJD",
+      "invariant": "INV-9ZKYWQ",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-other-selections-start-afresh",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "The one test of whether two answers were read under one comparison: the same pair of code trees and, when both compared knowledge, the same pair of snapshots. The walked tree applies it to decide whether an answer may stand beside the rows it holds, so the tree and the read cache cannot disagree.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "3499890289fceaa6c58051f49d8242838b8e0d73",
+        "content": "sha256:388989d8785694a37b2aa397d12d7928455f755b6dd88ff7ab9b5c0ae143183b",
+        "locator": {
+          "kind": "symbol",
+          "name": "comparisonGenerationOf"
+        }
+      },
+      "id": "RLZ-DNK5ZP",
+      "invariant": "INV-9ZKYWQ",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-other-selections-start-afresh",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "Gives the comparison an answer was read under. It is exported so that the walked tree derives it exactly as the cache does.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "3499890289fceaa6c58051f49d8242838b8e0d73",
+        "content": "sha256:a8c0cd0f7b0a85125d6714aaea5f772ce29c9d4a30b12232bbb5c1dd43df4a49",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewReadCache"
+        }
+      },
+      "id": "RLZ-QAKHFKHZ",
+      "invariant": "INV-MC654E0T",
+      "origin": {
+        "leaf": "260921-ICR-L48"
+      },
+      "rationale": "Owns bounded review/source stores and generation invalidation; keepUnshown rejects an incompatible generation before observe can advance the generation or clear current stores.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "32": {
+      "note": "ReviewReadCache.ts current behavior at this source owner.\n\nAnchor: \"class BoundedStore<V> {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3499890289fceaa6c58051f49d8242838b8e0d73",
+            "content": "sha256:296f0d6b3b6695c2e6043d9311df646cad90e6cbbf36dfa0d4bed2e0e17297ee",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 27
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "ReviewReadCache.ts current behavior at this source owner.\n\nAnchor: \"export function sameGeneration(known: ComparisonGeneration, next: ComparisonGeneration): boolean {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3499890289fceaa6c58051f49d8242838b8e0d73",
+            "content": "sha256:3f8564009ffa51067c4d6ef4aa40f1a6be62a1a5b20165921a408d5b24fc158b",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 83
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "ReviewReadCache.ts current behavior at this source owner.\n\nAnchor: \"export class ReviewReadCache {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3499890289fceaa6c58051f49d8242838b8e0d73",
+            "content": "sha256:84c914a03756dca8f575fbbb114801bf44b540de070db739a2453c38b9bb59e6",
+            "locator": {
+              "end": 105,
+              "kind": "line_range",
+              "start": 90
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

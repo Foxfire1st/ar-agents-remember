@@ -1,20 +1,33 @@
 # dashboard/src/panels/engine-room/EngineFxOverlay.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/engine-room/EngineFxOverlay.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash |  `7c56c11d651972515723b4090b8174087eb5236f`|
-| lastVerifiedCommitDate |  2026-08-07T20:50:27+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Engine Room overview](overview.md)
 
-## Purpose
+
+## Current enclosure-only composition
+
+EngineFxOverlayProps now contains attention and surgeXs only; sparse sibling SVG renders SurgeLines and AttentionGroup. ReindexGroup and dimensions/reindexAt were removed; fixed shared viewBox and aria-hidden remain.
+
+### Maintenance boundaries
+
+Delete reindex geometry/spine/divisions and unchanged-choreography claims for that removed effect. Describe only ledger-coupler surge and attention breathing, selector ownership in timeline and surviving structural hit targets. Do not retire the whole overlay.
+
+Source/test/fixture inspection is not a fresh mounted capture or a passing test run.
+Historical provider-shaped input data and retained compatibility definitions do not
+restore removed provider visuals or tool exposure.
+
+- EngineFxOverlayProps now contains attention and surgeXs only; sparse sibling SVG renders SurgeLines and AttentionGroup.  — source ownership, not executed visual proof. [3]
+- EngineFxOverlayProps now contains attention and surgeXs only; sparse sibling SVG renders SurgeLines and AttentionGroup.  — source ownership, not executed visual proof. [4]
+- EngineFxOverlayProps now contains attention and surgeXs only; sparse sibling SVG renders SurgeLines and AttentionGroup.  — source ownership, not executed visual proof. [5]
+
+## Historical superseded account (non-operative)
+
+The prior onboarding below is retained for provenance and unrelated design history.
+It is not current provider-render, fallback, prototype-parity or execution guidance.
+Current behavior and its limits are the operative contract above.
+
+
 
 Renders the Engine Room's repeating decorative SVG effects in a sparse sibling overlay while the
 structural enclosure canvas remains unchanged.
@@ -45,28 +58,21 @@ aspect-ratio contract.
 Hangar/Engine Room steady-state CPU work is explicitly deferred by the developer and is not part
 of this file's current acceptance gate.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Timeline selectors and choreography. | `useEngineTimeline`; `buildFx` | dashboard/src/panels/engine-room/useEngineTimeline.ts:83-160; dashboard/src/panels/engine-room/useEngineTimeline.ts:168-247 |
-| Visual isolation regressions. | "isolates repeating transforms from the text-heavy structural SVG" | dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx:73-89 |
 
-## Cross-Repo References
+- Timeline selectors and choreography. [1]
+
+
+- Visual isolation regressions. [2]
+
+
+### Cross-Repo References
 
 No meaningful cross-repository references found.
-
-## Update History
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-04T11:43:39+02:00 — 260731-EFA-L6 S18-B03 curator: removed the unsupported canvas/overlay
-  ownership claim, retained the exact timeline choreography and visual-isolation references, and
-  anchored `buildFx` only where its implementation is present.
-
-- 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: created onboarding for the
-  sparse effects overlay and recorded that it preserves existing choreography and structural
-  ownership. Verification metadata remains blank until commit.

@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Adding reason text to the exact state mark breaks the state vocabulary, while hiding the reason removes the evidence needed to judge currentness."
+  },
+  "applicability": "Currentness labels and owner-supplied reasons on expression-card entries.",
+  "conditions": [
+    "Each non-current entry mark contains exactly its entry, state and side.",
+    "A supplied reason remains visible beside that mark with the same entry and side, outside disclosures."
+  ],
+  "exclusions": [
+    "Generating a missing reason, changing the recorded state or appending reason text inside the exact state mark."
+  ],
+  "id": "INV-T4D98B",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "ExpressionCards.test.tsx F4 exact-text case green; worklistRepair.test.tsx F06 reason-sibling case green (s3-f4f06.log: 20/20 together)"
+      ],
+      "path": "handoff-supported.json"
+    },
+    "handoffEntry": "MIK-L154 card currentness mark",
+    "leaf": "260928-MIK-L154",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A not-current card entry is marked with its exact MIK-R03 state text, and a recorded reason reads beside the mark outside any disclosure.",
+  "status": "proposed",
+  "supersedes": []
+}

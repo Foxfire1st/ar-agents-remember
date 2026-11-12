@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A public page must describe the product, not the coordination that produced it; a leaked identifier names an object the reader cannot open, while a product-shown name must stand on a marked line so the exemption is visible."
+  },
+  "applicability": "Every public document, on every page.",
+  "conditions": [
+    "No identifier of a task, a leaf, a requirement packet or a decision appears on any page, unless a marker on its line allows it.",
+    "A name of that shape that the product itself shows stands only on a line that carries the marker."
+  ],
+  "exclusions": [
+    "Internal memory, task records and coordination documents outside the public documentation."
+  ],
+  "id": "INV-BNDZWK",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_public_docs_check.py::test_an_identifier_is_named_on_every_page; clean-copy run f3: 21 passed",
+        "mcp/tests/test_public_docs_check.py::test_an_identifier_is_named_on_every_page; clean-copy run a4f1: 22 passed"
+      ],
+      "path": "l97-curator-handoff"
+    },
+    "handoffEntry": "MIK-R97@v1 rule 6 (identifiers)",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "No public document holds an identifier of a task, a leaf, a requirement packet or a decision, on any page. A name of that shape that the product itself shows stands only on a line that carries the marker.",
+  "status": "proposed",
+  "supersedes": []
+}

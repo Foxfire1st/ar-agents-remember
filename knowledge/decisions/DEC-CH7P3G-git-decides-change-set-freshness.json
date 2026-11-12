@@ -1,0 +1,67 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives"
+    ],
+    "justification": "The leaf weighed the existing hand-rolled walks, a Git-library signal and Git's own status/census; the first two were rejected for stated costs and a real reconsider condition."
+  },
+  "alternatives": [
+    {
+      "option": "Let Git decide: an id-keyed commit pair is served with no observation; a working view uses git status --porcelain=v2 and has no cache where a plain read costs no more; the object store uses Git's count-objects census.",
+      "reason": "Git's own signals cost a fraction of the hand-rolled walks and satisfy rule 5.",
+      "status": "chosen"
+    },
+    {
+      "option": "Keep the hand-rolled .git/objects and worktree walks.",
+      "reason": "They cost more than the Git read they guard and rule 5 removes them with their tests.",
+      "reconsider_when": "Git's status or census costs more than the read it guards on the developer's repositories.",
+      "status": "rejected"
+    },
+    {
+      "option": "Add a Git library such as pygit2 or a Rust binding for freshness.",
+      "reason": "Rule 5 forbids a new Git library; Git's CLI already exposes status and count-objects.",
+      "reconsider_when": "Git's own interfaces cannot express a freshness signal a future read needs.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The object-store and worktree walks and their tests are removed; a working view is uncached; id-keyed hits are served with no observation; the accepted gap is named in the cache module."
+  ],
+  "context": "The L168 freshness check walked the .git/objects store and the worktree, costing about 355 ms against Git's own status at about 24 ms; MIK-R176 rule 5 required every freshness check to cost less than the read it saves.",
+  "decider": "The developer (D325), implemented under MIK-R176@v2.",
+  "id": "DEC-CH7P3G",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "route:mcp/src/agents_remember/serving"
+    },
+    {
+      "relation": "explains",
+      "target": "INV-7TMGB0"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R176",
+        "packet": "requirements/MIK-R176-v2-a-task-switch-never-waits-for-the-task-left-behind.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v2"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "notes/reports/curator/03a91764-2ced-5673-861b-6d0d34d331bf/curator-handoff-L174-A9.json"
+    },
+    "handoffEntry": "dec5",
+    "leaf": "260928-MIK-L174",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

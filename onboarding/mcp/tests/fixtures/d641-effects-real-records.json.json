@@ -1,0 +1,40 @@
+{
+  "path": "mcp/tests/fixtures/d641-effects-real-records.json",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "31096198168d57b0e7e27322f9b6eb2e8c4e6f17",
+        "content": "sha256:fba043637b4b1c4f47dc4f8dbf7da93f6716f829bf2d5d561b67cdcf19fc4e5f",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-2SRW3D",
+      "invariant": "INV-A8FVPH",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-trial-isolation",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "These retained effects exercise native-repository and alias attribution rather than a guessed fixture path.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "31096198168d57b0e7e27322f9b6eb2e8c4e6f17",
+            "content": "sha256:fba043637b4b1c4f47dc4f8dbf7da93f6716f829bf2d5d561b67cdcf19fc4e5f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

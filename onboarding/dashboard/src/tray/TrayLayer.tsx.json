@@ -1,0 +1,60 @@
+{
+  "path": "dashboard/src/tray/TrayLayer.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7047c1f17a0ed1811467a411bfed806cdf8e657c",
+        "content": "sha256:336fbf44963786d28ba775058a4c9940e794d0d6397b4d1f48a8762b21df7d3e",
+        "locator": {
+          "kind": "symbol",
+          "name": "TrayLayer"
+        }
+      },
+      "id": "RLZ-C4S682",
+      "invariant": "INV-E2PVM0",
+      "origin": {
+        "handoffEntry": "TRAY02",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Mounts the offer once for the whole dashboard.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Mounts dashboard-wide tray selection and frame-pick integration once.\n\nAnchor: \"export function useTrayRuntime(): void {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7047c1f17a0ed1811467a411bfed806cdf8e657c",
+            "content": "sha256:d0fca9aba98dad5d9c9fd3efe1e5fffc58cd4ff1577d05e851ca26951a66fb79",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 17
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Mounts dashboard-wide tray selection and frame-pick integration once.\n\nAnchor: \"export function TrayLayer() {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7047c1f17a0ed1811467a411bfed806cdf8e657c",
+            "content": "sha256:336fbf44963786d28ba775058a4c9940e794d0d6397b4d1f48a8762b21df7d3e",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 29
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

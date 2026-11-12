@@ -1,0 +1,59 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/curator/change-routing.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Every change-set and notes item is routed to its card, overview, catalog or last-resort Operational-Notes home, and route indexes are refreshed per leaf.\n\nAnchor: `route_index_refresh`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2774385e740c199b89101abd2864c721614071c1",
+            "content": "sha256:a7ebb8cca10a898faafda47067c3b92d605103aee80480eb24f797245d9f0c02",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A deleted or renamed source retires its card and re-points or removes every reference.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2774385e740c199b89101abd2864c721614071c1",
+            "content": "sha256:1b18c7f29fdbd9c5f392409e5e56c135bc20c0f9dc5645908b8eefac3a80a817",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The Curator role points here before routing a changed file or notes item.\n\nAnchor: `change-routing.md`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "content": "sha256:d3254b711c4b40ce44aff3b736d39a62971361642e1ca55a7e02c747e8180605",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 69
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

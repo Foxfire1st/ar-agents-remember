@@ -1,0 +1,501 @@
+{
+  "path": "mcp/src/agents_remember/application/worktree_status.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "16d78e38cc8ac2f8fe9aeec56ac35b664c5e8988",
+        "content": "sha256:091220bb585535ea642658ad232fd027452f9c2d7532385ae6734b4dc7c49ce1",
+        "locator": {
+          "kind": "symbol",
+          "name": "_project_reopened_contract_status"
+        }
+      },
+      "id": "RLZ-YSVD0C",
+      "invariant": "INV-M3N2Y5",
+      "origin": {
+        "handoffEntry": "C2 reopen without limit",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Projects the reopened state with the start the caller should take, so the reset is observable before anyone starts a seat.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "**Retained historical source account — superseded by the current contract:** Status observes the stable sync journal before contract parsing and threads it through all result branches.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16d78e38cc8ac2f8fe9aeec56ac35b664c5e8988",
+            "content": "sha256:1178f685feb181073285f1905be1da7df392287846aa5176dc75bf4b54b3c7ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_status_packet"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**Retained historical source account — superseded by the current contract:** The summary maps unknown_contract_cells and the optional atomic-series activation fact onto the typed response.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16d78e38cc8ac2f8fe9aeec56ac35b664c5e8988",
+            "content": "sha256:1b97622f91e3e1329be0d662200baff45172fd9d34e044df786fdcb044cf9a3c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_summary_from_status_payload"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "16d78e38cc8ac2f8fe9aeec56ac35b664c5e8988",
+            "content": "sha256:1c41d0c29e1e7fdcf2758a8d2ada20accf6140d0d69ff10221e8f4d42388b324",
+            "locator": {
+              "end": 276,
+              "kind": "line_range",
+              "start": 216
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "16d78e38cc8ac2f8fe9aeec56ac35b664c5e8988",
+            "content": "sha256:64d0dd420ddf1cd31688503c0aa87276f277333a216618859b016a1b2775fe54",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "**Retained historical source account — superseded by the current contract:** The public status projection, including the terminal archive-ready branch whose next move is now enforced downstream.\n\nAnchor: `_project_terminal_contract_status`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16d78e38cc8ac2f8fe9aeec56ac35b664c5e8988",
+            "content": "sha256:64d0dd420ddf1cd31688503c0aa87276f277333a216618859b016a1b2775fe54",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The envelope that declares the three keys this projector writes, and the `PUBLIC_TOOLS` membership validator that now refuses an out-of-roster next move.  Anchor: \"# The next-move triple, declared here so the worktree surface's guidance is part of\"; \"def _require_registered_public_next_tool\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:e78c9a3a5f40cbe4afaccc30894f1b7e29d5e43ec2f9b1a3329a675dc7df6639",
+            "locator": {
+              "end": 411,
+              "kind": "line_range",
+              "start": 405
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:2b53233df4625503e4879e38c3fc0c5019bd748a0acc0843a62721ded74b16ca",
+            "locator": {
+              "end": 440,
+              "kind": "line_range",
+              "start": 429
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "**Retained historical source account — superseded by the current contract:** The suite that reaches the archive-ready state through this module's real `worktree_status_payload` call and pins the emitted next move against the real tool signatures.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c1cd105c2cb5cc58c6c288dbfe714e8b756483d",
+            "content": "sha256:2994e908c22c262a2a4248551c5ea35649166bb1701ccd8c7480f754ddad9381",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_archive_ready_status_names_the_accepted_cleanup_operation"
+            },
+            "path": "mcp/tests/test_worktree_status_terminal_next_tool.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "**Retained historical source account — superseded by the current contract:** `ContractBoundaryTests` pins the omitted next-move keys and the whole projection against the contracts on disk.\n\nAnchor: \"class ContractBoundaryTests(unittest.TestCase):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ac273eaf531038cab4a372393967360f40cb7fcc",
+            "content": "sha256:af9cb98d7b8ad64a82911f0ee3a6950600b13101483c130ced4e75780e1af6d3",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 28
+            },
+            "path": "mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The current module exposes `worktree_status_packet` at this ownership boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16d78e38cc8ac2f8fe9aeec56ac35b664c5e8988",
+            "content": "sha256:1178f685feb181073285f1905be1da7df392287846aa5176dc75bf4b54b3c7ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_status_packet"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "16d78e38cc8ac2f8fe9aeec56ac35b664c5e8988",
+            "content": "sha256:b674f86c032fc1792e0b40099ba2f615971c89f139b7d93c936af8ef42cdef83",
+            "locator": {
+              "end": 126,
+              "kind": "line_range",
+              "start": 44
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "16d78e38cc8ac2f8fe9aeec56ac35b664c5e8988",
+            "content": "sha256:64d0dd420ddf1cd31688503c0aa87276f277333a216618859b016a1b2775fe54",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The context-facing WorktreeSummary also carries taskDocumentCopies from the producer's optional task_document_copies notice. That one-line copy drift/refresh notice is informational, not mutation, acceptance or proof that every copied byte was exhaustively hashed. Existing sync and source-lineage evidence remains a separate owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16d78e38cc8ac2f8fe9aeec56ac35b664c5e8988",
+            "content": "sha256:64d0dd420ddf1cd31688503c0aa87276f277333a216618859b016a1b2775fe54",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "**Retained historical source account — superseded by the current contract:** The journal observer returns a typed projection without reading task or queue state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ebf57a7d381d703c7609d82b59f60ff5763e728",
+            "content": "sha256:3d9b939eb29f132e44d631724a82208fb910a5a42a3da32fb3c2a6b242b0316f",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_sync_operation"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5ebf57a7d381d703c7609d82b59f60ff5763e728",
+            "content": "sha256:e0e4a9f87d31a3e90f98f58d5e2426559c2e901472a3df021f58adf1dcc098f3",
+            "locator": {
+              "end": 501,
+              "kind": "line_range",
+              "start": 485
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5ebf57a7d381d703c7609d82b59f60ff5763e728",
+            "content": "sha256:cdbb70fe8b0319a8544a4e80e6d34e73417d82d9299e8aac73ac4ae9e2830d8a",
+            "locator": {
+              "end": 498,
+              "kind": "line_range",
+              "start": 482
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5ebf57a7d381d703c7609d82b59f60ff5763e728",
+            "content": "sha256:0f256ea75a52abd9f0a697a3656161dc499ad83534e239f562be32d2c019208e",
+            "locator": {
+              "end": 445,
+              "kind": "line_range",
+              "start": 429
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`SyncOperationProjection` is an explicit optional field on the context-facing worktree model.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:da6442ddbc9ab51798a8763b482d86031483726576330312b47e718f9d890ae8",
+            "locator": {
+              "end": 161,
+              "kind": "line_range",
+              "start": 145
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:949de5dbb02f9f8dc74e0bed9e0574b4f42a37dc8d9a3756a8f64770eb2f84f6",
+            "locator": {
+              "end": 149,
+              "kind": "line_range",
+              "start": 136
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:1998c2ee3ff1f4d0556889ee1b9c039832ac696cf40f0bb1dcb6e811070183f3",
+            "locator": {
+              "end": 366,
+              "kind": "line_range",
+              "start": 145
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**Retained historical source account — superseded by the current contract:** Worktree lifecycle status and next hints are composed by the worktree manager.\n\nAnchor: \"def lifecycle_guidance(\"; \"def next_guidance(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
+            "content": "sha256:656888b6f80fc1973338abb55a25f4b33bd3eba3d5b4a221a5bfafaf5ce12860",
+            "locator": {
+              "end": 233,
+              "kind": "line_range",
+              "start": 223
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
+            "content": "sha256:2687647418b48afe4b8cfec5618f187a16e0078a69bbc57bccac22cd70965336",
+            "locator": {
+              "end": 150,
+              "kind": "line_range",
+              "start": 136
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**Retained historical source account — superseded by the current contract:** Worktree summary model constrains the context-facing shape, including the optional series activation fact.\n\nAnchor: \"class WorktreeSummary\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:5a174031bc1f5315b5542fc4a2056871bc874be6a8c35560fdfd71e068178c47",
+            "locator": {
+              "end": 307,
+              "kind": "line_range",
+              "start": 307
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:68b68d00346b96e09a03ec58fe4c3608d997584b98f9485efeb913ba3f444fbb",
+            "locator": {
+              "end": 299,
+              "kind": "line_range",
+              "start": 299
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**Retained historical source account — superseded by the current contract:** Worktree summary model constrains the context-facing shape, including the optional series activation fact.\n\nAnchor: \"class WorktreeSummary\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:5a174031bc1f5315b5542fc4a2056871bc874be6a8c35560fdfd71e068178c47",
+            "locator": {
+              "end": 307,
+              "kind": "line_range",
+              "start": 307
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:68b68d00346b96e09a03ec58fe4c3608d997584b98f9485efeb913ba3f444fbb",
+            "locator": {
+              "end": 299,
+              "kind": "line_range",
+              "start": 299
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**Retained historical source account — superseded by the current contract:** Context packet assembly consumes this read-only worktree projection — assigned directly, no longer `model_validate`d.\n\nAnchor: \"worktree=worktree_status_packet\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
+            "content": "sha256:96e30929062dd2527747085131881a4d8702264758b033e6e9c00da24c2f3e74",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 112
+            },
+            "path": "mcp/src/agents_remember/application/context_packet.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**Retained historical source account — superseded by the current contract:** `WorktreeStatusPayload` (the `TypedDict` this projection consumes) and the phase/next-move vocabularies it is checked against (declared in `models/worktree.py` since L9).\n\nAnchor: \"class WorktreeStatusPayload\"; \"NextOperation = Literal[\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:3f49f08cd439ee60abb2c2af519250694a720edd770b6a9fa23dba9acee42740",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 48
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
+            "content": "sha256:9f8b7a4ba270891e6f05d9540ed477e99960ee0f65093c72c0dadad7200588ab",
+            "locator": {
+              "end": 132,
+              "kind": "line_range",
+              "start": 132
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "**Retained historical source account — superseded by the current contract:** `_vocabulary_cell` substitutes unknown vocabulary tokens and `WorktreeContract.unknown_cells` retains the raw diagnostics.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "758a00879439672a413425ed6c40686fe3626bd9",
+            "content": "sha256:6073541e503906b2274f1d300a2ce361db068c6b920e909c16155a21e7be33d5",
+            "locator": {
+              "end": 104,
+              "kind": "line_range",
+              "start": 104
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "758a00879439672a413425ed6c40686fe3626bd9",
+            "content": "sha256:1ed52e5598077da9eb58bccd0643d659bd015da151631217a770a70f8a05989a",
+            "locator": {
+              "end": 146,
+              "kind": "line_range",
+              "start": 112
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "758a00879439672a413425ed6c40686fe3626bd9",
+            "content": "sha256:32ce31e33a72720b880cbfb64836436279970d29d332971c0b5f27d36f8f17e4",
+            "locator": {
+              "end": 311,
+              "kind": "line_range",
+              "start": 306
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

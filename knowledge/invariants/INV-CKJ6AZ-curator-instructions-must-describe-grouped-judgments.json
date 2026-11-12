@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Prevent redundant copy judgments and history-row workarounds that leave the actual literal target or design rationale unresolved."
+  },
+  "applicability": "Curator instructions for grouped uncovered judgments, reconsideration repair and removed record-link targets, and the raise route those instructions name.",
+  "conditions": [
+    "The representative row binds every grouped candidate path and blob; equal declared generated copies and divergent or ordinary paths retain their distinct ruled treatment.",
+    "A stale reconsideration needs recomputation or a re-point whose reason says why the condition is not met, and a removed link target is answered by repoint or by raise, never by a refusal that points at itself.",
+    "A broken non-reconsideration link needs a literal record-link repair, not a history-row workaround.",
+    "A raise the command cannot publish names the mounted knowledge_write with the contract and hand-off paths, the hand-off name and the authorization reference.",
+    "Continuing by-design choices retain the actual rejected alternative and reason as decisions; no omission is treated as future work."
+  ],
+  "exclusions": [
+    "Instruction source is not proof of completed native decisions, executed tests or final readiness."
+  ],
+  "id": "INV-CKJ6AZ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/worker/0e651ec5-2eed-4b58-b19f-e2336d4978ca/repair-freeze-0a36ddc4/builder-report.md#mik-r55-rule-10"
+      ],
+      "path": "wave-77-complete-history.json"
+    },
+    "handoffEntry": "MIK-R55@v1 rule 10",
+    "leaf": "260928-MIK-L54",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "Curator instructions must describe grouped uncovered judgments, the re-point or raise that recovers a removed link target, and the route that publishes a raise the command refuses, and curation must record the continuing by-design choices without inventing alternatives.",
+  "status": "proposed",
+  "supersedes": []
+}

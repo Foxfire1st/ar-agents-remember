@@ -1,0 +1,205 @@
+{
+  "path": "dashboard/src/panels/review/changeTriage.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7942d716bf5726b8bef30b314b8f10af229b3a21",
+        "content": "sha256:2d0df6a17726c69577bbc1e97c6f3e4dbef468d49b15c98c1e12a7e52a050748",
+        "locator": {
+          "kind": "symbol",
+          "name": "memberMeaning"
+        }
+      },
+      "id": "RLZ-08NGSN",
+      "invariant": "INV-76C676",
+      "origin": {
+        "handoffEntry": "L43-C-recorded-effect-propagation",
+        "leaf": "260928-MIK-L43"
+      },
+      "rationale": "This member join selects the member’s own family occurrence or invariant answer, never its family’s labels.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "7942d716bf5726b8bef30b314b8f10af229b3a21",
+        "content": "sha256:67021a87fbc959540a2d8159025c1be96534e8fe2fc2bca10ec89b49e7f89b23",
+        "locator": {
+          "kind": "symbol",
+          "name": "OutlineRow"
+        }
+      },
+      "id": "RLZ-845A8V",
+      "invariant": "INV-76C676",
+      "origin": {
+        "handoffEntry": "L43-C-recorded-effect-consumer-closures",
+        "leaf": "260928-MIK-L43"
+      },
+      "rationale": "The compact outline-row contract carries the delivered own meaning state and sequence separately from its change badge.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "7942d716bf5726b8bef30b314b8f10af229b3a21",
+        "content": "sha256:fdc196cb19a7c70584c0b801040b63442ef16756771ab468b9eb70694dcc0b3b",
+        "locator": {
+          "kind": "symbol",
+          "name": "catalogueGroups"
+        }
+      },
+      "id": "RLZ-AQK9Y4",
+      "invariant": "INV-Z2XTN1",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 rule 11",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "It projects identity-only catalogue entries into plain rows when a comparison cannot supply an outline.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "7942d716bf5726b8bef30b314b8f10af229b3a21",
+        "content": "sha256:6bcb8092a7dfb48e27330e128175271baa3645cc39fe32450d562c10b2421f09",
+        "locator": {
+          "kind": "symbol",
+          "name": "outlineGroups"
+        }
+      },
+      "id": "RLZ-BKFAEY",
+      "invariant": "INV-W09GQM",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 rule 3",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "Groups one primary badge per outline row after outlineMember/memberBadge join the supplied leaf-wide code map, or walked facts only when no map was supplied. Unknown intent remains unknown; numeric sort weights and separate recorded-effect labels are not interchangeable with that prerequisite.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "7942d716bf5726b8bef30b314b8f10af229b3a21",
+        "content": "sha256:ea8ed2719c7ec65af7f238bf6c73c2fcdc029d4e966e9fa74401683eae89d21a",
+        "locator": {
+          "kind": "symbol",
+          "name": "memberBadge"
+        }
+      },
+      "id": "RLZ-KARAA7",
+      "invariant": "INV-W09GQM",
+      "origin": {
+        "handoffEntry": "CUR-L57-unknown-intent-badge-boundary",
+        "leaf": "260928-MIK-L57"
+      },
+      "rationale": "Keeps an unknown intent badge unknown before consulting narrower implementation or membership facts; only measured unchanged intent can be enriched by an established code fact. It preserves one primary label independently of numeric sort weight and compact recorded-effect labels.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "7942d716bf5726b8bef30b314b8f10af229b3a21",
+        "content": "sha256:791ae8cdfdcf77cf20b6623da26682eaa80cf9f18f561af5d1f7e812a4eebed7",
+        "locator": {
+          "kind": "symbol",
+          "name": "outlineMember"
+        }
+      },
+      "id": "RLZ-Q4XYYN",
+      "invariant": "INV-76C676",
+      "origin": {
+        "handoffEntry": "L43-C-recorded-effect-consumer-closures",
+        "leaf": "260928-MIK-L43"
+      },
+      "rationale": "A member outline row receives the member-specific meaning join, not the family’s judgment.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "7942d716bf5726b8bef30b314b8f10af229b3a21",
+        "content": "sha256:337ba80dab213fb248cd6b26bc7665661fb136a4418411f59e6df99a84523be0",
+        "locator": {
+          "end": 169,
+          "kind": "line_range",
+          "start": 169
+        }
+      },
+      "id": "RLZ-QWMT0G",
+      "invariant": "INV-ZEB6H9",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-HUNK-ATTACH-INV-ZEB6H9",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The member helper applies recorded change weight for every active sort except Authored; Authored alone keeps the supplied order without that priority weight.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "7942d716bf5726b8bef30b314b8f10af229b3a21",
+        "content": "sha256:5fea8733c57c751d5c17cd298929b2dd88f842a447f600c037ffc65304fa3324",
+        "locator": {
+          "end": 305,
+          "kind": "line_range",
+          "start": 292
+        }
+      },
+      "id": "RLZ-T3D6WD",
+      "invariant": "INV-NSG0D4",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-HUNK-ATTACH-INV-NSG0D4",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The retained walked roster can supply a missing compact member label after the explicit outline/catalogue label; it contributes an admitted walked fact to the shared model rather than changing the selected subject or inventing a roster member.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "24": {
+      "note": "changeTriage.ts current behavior at this source owner.\n\nAnchor: \"export function memberChanges(entry: ReviewFamilyContextEntry): Map<string, ReviewMemberChange> {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7942d716bf5726b8bef30b314b8f10af229b3a21",
+            "content": "sha256:f48cc6f159b3c1a61e7564bc14a61282dac9a5e995f0b933183acabfe4a580da",
+            "locator": {
+              "end": 203,
+              "kind": "line_range",
+              "start": 69
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "changeTriage.ts current behavior at this source owner.\n\nAnchor: \"export function outlineGroups(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7942d716bf5726b8bef30b314b8f10af229b3a21",
+            "content": "sha256:c420556c483fcff972c5fd101b339539f7c8070914f7f195a8b7610f451c5a86",
+            "locator": {
+              "end": 355,
+              "kind": "line_range",
+              "start": 340
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "changeTriage.ts current behavior at this source owner.\n\nAnchor: \"function unknownImplementation(fact: ReviewMemberChange \\| ReviewCodeChange \\| undefined): boolean {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7942d716bf5726b8bef30b314b8f10af229b3a21",
+            "content": "sha256:7f96b29a523f36f53510c1e9862887eeeaffda3d227aae3223b8c2f30ea09d80",
+            "locator": {
+              "end": 425,
+              "kind": "line_range",
+              "start": 252
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

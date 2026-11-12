@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/task_document_ref.py
 
-| Field | Value |
-|---|---|
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/task_document_ref.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-15T09:36+02:00 |
-| lastVerifiedCommitHash |  `17987fa66a642306eb8d20fa9a4bff2b881550d2`|
-| lastVerifiedCommitDate |  2026-08-15T14:36:30+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Models overview](overview.md)
@@ -18,6 +8,8 @@
 
 Defines the one canonical, repository-qualified task-document reference used at sprint, master, and
 leaf altitude. Paired with a role, it is the stable structural seat identity.
+
+Defines immutable repository-qualified task identity and per-call leaf reader context.
 
 ## Code Commentary
 
@@ -45,17 +37,31 @@ task-document topology rather than duplicated in this value model.
 
 None.
 
-## Docs References
+### Role Runtime and Scope
+
+TaskScopedReaderContext is extra-forbid/frozen and carries task_document_ref plus contract_path. The path must be normalized absolute POSIX with no parent traversal; source roots are not fields. Preserve TaskDocumentRef equality/hash/length rules and its distinction from runtime occupant identity.
+
+## Evidence
+
+### Docs References
 
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The frozen model validates, hashes, and serializes the canonical document reference. | `TaskDocumentRef` | mcp/src/agents_remember/models/task_document_ref.py:15-57 |
-| Topology resolves the reference against real task documents. | `TaskDocumentTopology` | mcp/src/agents_remember/tasks/document_refs.py:26-252 |
 
-## Cross-Repo References
+- The frozen model validates, hashes, and serializes the canonical document reference. [1]
+
+
+- Topology resolves the reference against real task documents. [2]
+
+
+### Cross-Repo References
+
+### Runtime Source References
+
+- Frozen implementation of TaskScopedReaderContext supporting the stated file behavior. [3]
+
+- Frozen implementation of TaskDocumentRef supporting the stated file behavior. [4]
 
 
 ## 260815-DAG-L3 Bounded Durable Identity
@@ -66,17 +72,3 @@ and durable WAL records can therefore reuse this identity without admitting unbo
 input. These are runtime persistence bounds, not fictional TypeScript string-length types: the
 shared JSON schema remains an ordinary string shape, while Pydantic refuses an oversized canonical
 value before it can enter any queue or task-document record.
-
-## Update History
-
-- 2026-08-15T09:36+02:00 — L3 fast-hook repair: moved the two canonical length bounds from
-  unrenderable JSON Schema `maxLength` keywords into explicit post-normalization validators. Runtime
-  admission remains bounded and the generated TypeScript surface remains truthfully `string`.
-- 2026-08-15T09:10+02:00 — L3 content update: recorded explicit repository/path bounds on the
-  canonical task-document reference; verification remains closeout-owned.
-
-- 2026-08-11T20:28+02:00 — 260731-EFA-L19 closeout-gate repair: corrected the body to remove a
-  nonexistent level field and recorded the explicit immutable-value hash over repository and path;
-  verification metadata remains pending the real code commit.
-
-- 2026-08-11T06:47+02:00 — 260731-EFA-L19: created as the sole level-neutral task-document identity model.

@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Asserting frozen text on hand-closed files fails the suite after R48 intentionally voids it there; the pair asserts the reopen way out instead."
+  },
+  "applicability": "Frozen-text carry assertions under R48 rule 6",
+  "conditions": [
+    "Hand-closed files judged at publication"
+  ],
+  "exclusions": [
+    "Byte and refusal checks, which stand unchanged"
+  ],
+  "id": "INV-ZAFMH5",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "before e5d6917c after f0c2a60c; single node 1 passed; full module green in closure 224"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L48-curator-c94be97e.handoff-list.json"
+    },
+    "handoffEntry": "L48-W-F3-worklist-wording-adaptation",
+    "leaf": "260928-MIK-L48",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The carry test frozen-text assertion does not hold for hand-closed files under R48 rule 6; one assertion pair now asserts the reopen way out while byte and refusal checks stand.",
+  "status": "retired",
+  "supersedes": []
+}

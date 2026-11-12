@@ -1,0 +1,103 @@
+{
+  "path": "mcp/tests/test_task_intent_review.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The case `test_replace_keeps_the_field_it_omits_and_refuses_a_call_that_would_drop_it` protects the review field surviving a replace that omits it and refusing one that would drop it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a892b0398f68216cbda169314d2785d3e3a47e5",
+            "content": "sha256:50060bc03773729e326dbadb68b86733d32dcda82a07ccc9e499d9a8e6d43219",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_replace_keeps_the_field_it_omits_and_refuses_a_call_that_would_drop_it"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The case `test_a_move_to_in_progress_is_refused_while_the_review_is_open` protects the stage move being refused while the review is open.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a892b0398f68216cbda169314d2785d3e3a47e5",
+            "content": "sha256:647d5e7d304b54adb973eeef68777d84428f4b79152070f0b6bbdc1843fbcd42",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_move_to_in_progress_is_refused_while_the_review_is_open"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The case `test_a_start_is_refused_before_the_enclosure_is_created` protects a start being refused before any enclosure is created.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a892b0398f68216cbda169314d2785d3e3a47e5",
+            "content": "sha256:c5a699f78990f483cc807288a594dd293561ec41ed2c0ba2c20846c3e59b5fe5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_start_is_refused_before_the_enclosure_is_created"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The case `test_every_leaf_role_is_refused_before_any_enclosure_is_made` protects every leaf role's resolution refusing before an enclosure is made.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a892b0398f68216cbda169314d2785d3e3a47e5",
+            "content": "sha256:44d2287468072ef96ad666cea7f346ad736a44e2f6fb9ec3724be55c7e11e86d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_leaf_role_is_refused_before_any_enclosure_is_made"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The case `test_a_found_live_enclosure_moves_the_leaf_and_its_master_row` protects a found live enclosure making the move as the resolution's last act.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a892b0398f68216cbda169314d2785d3e3a47e5",
+            "content": "sha256:6f3e9ba938dbe20c03124a0b1197a135602c6fee3ef7bd3d5dd4723bb67fbcc8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_found_live_enclosure_moves_the_leaf_and_its_master_row"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The case `test_the_native_go_resolves_to_the_exact_retained_revision_manifest_and_digest` protects the go resolving to the exact retained revision and its sealed manifest digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a892b0398f68216cbda169314d2785d3e3a47e5",
+            "content": "sha256:d18bc3e267ae6e72d644d4eb2b259793e36cfebf1f836f597e38e161bdb51f0e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_native_go_resolves_to_the_exact_retained_revision_manifest_and_digest"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

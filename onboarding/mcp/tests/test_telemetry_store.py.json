@@ -1,0 +1,135 @@
+{
+  "path": "mcp/tests/test_telemetry_store.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Append and read round trip preserves exact events",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "583612117c6347b55b2426729e1ed699f8f79b90",
+            "content": "sha256:c2413258bedc0c496205e768e85fa50d6a46c4fb1c63d5330f5578187efac519",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_append_and_read_round_trip_preserves_exact_events"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Append enforces monotonic event revision",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "583612117c6347b55b2426729e1ed699f8f79b90",
+            "content": "sha256:60e7d042f3cb3e0d966ab7e4372e061589b378782f0f7a26dde348a86a1bd99d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_append_enforces_monotonic_event_revision"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Tampered journal entry is refused",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "583612117c6347b55b2426729e1ed699f8f79b90",
+            "content": "sha256:ceabb6d1f99819de37afd4d0f92be4bc6e7cb2eaa629727e58492e64246ce84b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_tampered_journal_entry_is_refused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Read refuses journal gap",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "583612117c6347b55b2426729e1ed699f8f79b90",
+            "content": "sha256:e1301a2e06294c4220899e5c4c9ea68cfa31f5427cc8b35303202aa858d397af",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_read_refuses_journal_gap"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Read refuses broken predecessor chain",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "583612117c6347b55b2426729e1ed699f8f79b90",
+            "content": "sha256:da7b5d5e9009156a50f0e8abc812ab29b65dc7be24b0454c744420e405723b52",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_read_refuses_broken_predecessor_chain"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Replay is read only instrumentation",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "583612117c6347b55b2426729e1ed699f8f79b90",
+            "content": "sha256:7e9f3b7cd6f4a3059c3a66bca729faffffbe302b5f9a0b15570e01d685b61c0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_replay_is_read_only_instrumentation"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Append cas collision refuses different bytes at same revision",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "583612117c6347b55b2426729e1ed699f8f79b90",
+            "content": "sha256:15464a4bfd4a7ffc0af0100feff811c7dadef081513da24a30fb66c913db076c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_append_cas_collision_refuses_different_bytes_at_same_revision"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Append enforces byte capacity limit",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "583612117c6347b55b2426729e1ed699f8f79b90",
+            "content": "sha256:f5483a38c0919e9970c94bc10dc8100d3927ef10921a2f07354c26d02ee30304",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_append_enforces_byte_capacity_limit"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

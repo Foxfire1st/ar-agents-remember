@@ -1,0 +1,280 @@
+{
+  "path": "mcp/src/agents_remember/serving/daemon.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9403a71011ae2e3b32c3e09d71b7141fa4b93ebe",
+        "content": "sha256:38480b90ecd20ca8f70c128442315d1bb865fe2ed1dbc81b93796478e8ac7dda",
+        "locator": {
+          "kind": "symbol",
+          "name": "ensure"
+        }
+      },
+      "id": "RLZ-30CNGD",
+      "invariant": "INV-19ZN9E",
+      "origin": {
+        "handoffEntry": "MIK-R84@v5 retained v1 rule4 dashboard replacement",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "This public ensure operation reconciles the daemon with the requested serving build and endpoint.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "9403a71011ae2e3b32c3e09d71b7141fa4b93ebe",
+        "content": "sha256:95902e3d815141b78d7bc87f6ea4a967097ea0506516bc59117f110aac51dc05",
+        "locator": {
+          "kind": "symbol",
+          "name": "_describe_mismatch"
+        }
+      },
+      "id": "RLZ-73DA8E",
+      "invariant": "INV-72X9AJ",
+      "origin": {
+        "handoffEntry": "L84-CUR-02",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Adoption compares endpoint, version and Python source digest; a mismatch in any of them restarts the daemon.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "9403a71011ae2e3b32c3e09d71b7141fa4b93ebe",
+        "content": "sha256:22a680dbc0b0f6054f1c0d5d58060d964b4dd45d86ff8297934d5372df7956ff",
+        "locator": {
+          "kind": "symbol",
+          "name": "stop"
+        }
+      },
+      "id": "RLZ-85TQQF",
+      "invariant": "INV-GJTCT9",
+      "origin": {
+        "handoffEntry": "L84-R1-01",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The stop route acts only on the proven selected-root daemon identity.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "9403a71011ae2e3b32c3e09d71b7141fa4b93ebe",
+        "content": "sha256:cafcbed361a55cbb8cbbd128c0e3d05b3dc20c4b57149ca1794c1e6e077a6bbb",
+        "locator": {
+          "kind": "symbol",
+          "name": "_observed_state"
+        }
+      },
+      "id": "RLZ-T52AGX",
+      "invariant": "INV-19ZN9E",
+      "origin": {
+        "handoffEntry": "MIK-R84@v5 retained v1 rule4 dashboard replacement",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "This observation reads the identity that answers on the endpoint before adopting or replacing saved state.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "CLI dispatch (`--daemon`/`--status`/`--stop`) and the `--no-access-log` child flag.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "05fd300e87f1c47190482b0b69314db2f83729f5",
+            "content": "sha256:38409c107f8114307c4aa61909f095a291191bfe0be3a0a79a25bd351a165f19",
+            "locator": {
+              "end": 768,
+              "kind": "line_range",
+              "start": 744
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "An unprovable identity stops nothing and keeps the record.\n\nAnchor: `identity-unknown`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9403a71011ae2e3b32c3e09d71b7141fa4b93ebe",
+            "content": "sha256:22a680dbc0b0f6054f1c0d5d58060d964b4dd45d86ff8297934d5372df7956ff",
+            "locator": {
+              "end": 365,
+              "kind": "line_range",
+              "start": 340
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Adoption also requires the installed digest; an unknown digest restarts nothing; a stop that leaves the stale daemon serving fails.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9403a71011ae2e3b32c3e09d71b7141fa4b93ebe",
+            "content": "sha256:1d515a9e42f0ba5725b32eaee762d132e6628931d3953f92bae1b42ef77477d2",
+            "locator": {
+              "end": 437,
+              "kind": "line_range",
+              "start": 397
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Readiness requires the spawned pid to answer with its recorded build.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9403a71011ae2e3b32c3e09d71b7141fa4b93ebe",
+            "content": "sha256:52f0ac9d14d23894d390b3e64ccb8153bca3cea29959709815ab2064aff09682",
+            "locator": {
+              "kind": "symbol",
+              "name": "_wait_ready"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The `dashboard` settings key (`DashboardSettings`: autoStart, port) it consumes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:eb10f07ce1aa1cde2f6245b200c58c9a90a4a871b1fbfe3f74cbdee7665852ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "DashboardSettings"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The MCP boot seam calling `maybe_autostart_dashboard`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9403a71011ae2e3b32c3e09d71b7141fa4b93ebe",
+            "content": "sha256:4988cff4af7aa12bf35be2bd4fbf5135840ac6fc0d8fcde7c8f847b1e6729ced",
+            "locator": {
+              "kind": "symbol",
+              "name": "maybe_autostart_dashboard"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The version comparator is resolved from installed package metadata.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba8f919dc79e3daf6a51228201842447d6b49654",
+            "content": "sha256:e5d2c589169f0e48d7f5c4c033a2b33255af40069685ea1a124d29996cfec01f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_server_version"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/version.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The daemon ensure the dashboard calls.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9403a71011ae2e3b32c3e09d71b7141fa4b93ebe",
+            "content": "sha256:38480b90ecd20ca8f70c128442315d1bb865fe2ed1dbc81b93796478e8ac7dda",
+            "locator": {
+              "kind": "symbol",
+              "name": "ensure"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The spawn path the host is not part of.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9403a71011ae2e3b32c3e09d71b7141fa4b93ebe",
+            "content": "sha256:1ad734ef9eb8d5572b38dd0d18f0f86a5aa1653efc11b01b2d603e52b9a612d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "spawn"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The endpoint carries the installed version and Python source digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9403a71011ae2e3b32c3e09d71b7141fa4b93ebe",
+            "content": "sha256:8802ed702d6374da2d3059660b7070aa5ebf8e80cab50c112ffe6e40a6a0ae8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "DaemonEndpoint"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "`probe` observes the answering dashboard, checks its root and repairs a mismatched saved record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9403a71011ae2e3b32c3e09d71b7141fa4b93ebe",
+            "content": "sha256:24a2b00a2a05d15dafb44cb31523ea0f1218da139cf427fb1d06672e7e9a7d4c",
+            "locator": {
+              "end": 220,
+              "kind": "line_range",
+              "start": 168
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The install preview and the install-time ensure of a running dashboard.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9403a71011ae2e3b32c3e09d71b7141fa4b93ebe",
+            "content": "sha256:3626be9b6144440537caa5e6d1846d2792940d7360986ebc2e61c462622bef7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ensure_running_dashboard"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

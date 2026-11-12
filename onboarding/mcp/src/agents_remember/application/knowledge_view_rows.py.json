@@ -1,0 +1,22 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_view_rows.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The file realizes its current contract at the corrected candidate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "321fe2ba767a72c84262833c23e840928b4f88d8",
+            "content": "sha256:99826826c34ebc04133d2fc3388260022bb1187e881a90962a84e9a11b2f33fc",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

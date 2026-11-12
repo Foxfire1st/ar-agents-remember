@@ -1,0 +1,146 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The current `closeout_generation_retained` boundary implements the preparation contract above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b5b61ca2f4419a815ed7db876059e06a39ca9e47",
+            "content": "sha256:cc2252b72df6bec6dc405f4f895bb7bc3cf0e3bc955ccf353c7b1e839c795c18",
+            "locator": {
+              "kind": "symbol",
+              "name": "closeout_generation_retained"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The current `closeout_recovery_phase` boundary implements the preparation contract above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b5b61ca2f4419a815ed7db876059e06a39ca9e47",
+            "content": "sha256:3caf704ecd9d7d01c6578d92f43c151d4e6523373c7326cf851e1b616beec585",
+            "locator": {
+              "kind": "symbol",
+              "name": "closeout_recovery_phase"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`derive_closeout_recovery_commits` projects only code and memory-content commits from proven evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b5b61ca2f4419a815ed7db876059e06a39ca9e47",
+            "content": "sha256:602aeaa5d20414a00d2d167049760ac518e399be2ca98da9a4ddabb9b179b63c",
+            "locator": {
+              "kind": "symbol",
+              "name": "derive_closeout_recovery_commits"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`_has_exact_finalization_evidence` requires exact publication proof and the actual output cells for the memory mode.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b5b61ca2f4419a815ed7db876059e06a39ca9e47",
+            "content": "sha256:c0413faf4b28955f404418a87a98022d630d7f38c6a70d48cd7dca0f3b551fc1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_has_exact_finalization_evidence"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Recovery commits are projected from proven mutations. (`derive_closeout_recovery_commits`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b5b61ca2f4419a815ed7db876059e06a39ca9e47",
+            "content": "sha256:602aeaa5d20414a00d2d167049760ac518e399be2ca98da9a4ddabb9b179b63c",
+            "locator": {
+              "kind": "symbol",
+              "name": "derive_closeout_recovery_commits"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Reported cells must match the projection. (`require_closeout_recovery_projection`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b5b61ca2f4419a815ed7db876059e06a39ca9e47",
+            "content": "sha256:533af1badf91c9a413a7704c71f55917af0bcbc064b77d24fa8f9d7c04cec602",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_closeout_recovery_projection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Retention requires mutation or exact finalization evidence. (`closeout_generation_retained`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b5b61ca2f4419a815ed7db876059e06a39ca9e47",
+            "content": "sha256:cc2252b72df6bec6dc405f4f895bb7bc3cf0e3bc955ccf353c7b1e839c795c18",
+            "locator": {
+              "kind": "symbol",
+              "name": "closeout_generation_retained"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The current module exposes `derive_closeout_recovery_commits`, `require_closeout_recovery_projection`, `closeout_generation_retained` at this ownership boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b5b61ca2f4419a815ed7db876059e06a39ca9e47",
+            "content": "sha256:602aeaa5d20414a00d2d167049760ac518e399be2ca98da9a4ddabb9b179b63c",
+            "locator": {
+              "kind": "symbol",
+              "name": "derive_closeout_recovery_commits"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b5b61ca2f4419a815ed7db876059e06a39ca9e47",
+            "content": "sha256:cc2252b72df6bec6dc405f4f895bb7bc3cf0e3bc955ccf353c7b1e839c795c18",
+            "locator": {
+              "kind": "symbol",
+              "name": "closeout_generation_retained"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

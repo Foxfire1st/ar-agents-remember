@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "A launch whose send left no snapshot would be asserted against a later tree and pass; the send-time case fails on that fault and passes once the snapshot is required."
+  },
+  "applicability": "Every absolute path a first message emits, at the moment the host is handed that message.",
+  "conditions": [
+    "A path containing a space is checked whole, not cut at the space.",
+    "The snapshot taken at send is the one asserted later, and a missing snapshot fails rather than reading as clean."
+  ],
+  "exclusions": [
+    "The report paths and folders the role itself writes, and earlier report paths a successor line names."
+  ],
+  "id": "INV-SRBWN3",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_role_first_message.py, 245 subtests across five harnesses; a4-b07-before-after.txt (df6593a4…) records the fault accepted before the repair and caught after"
+      ],
+      "path": "l185-ingest-1.json"
+    },
+    "handoffEntry": "L185-R193-5-paths-exist-at-send",
+    "leaf": "260928-MIK-L185",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Every absolute path a first message emits is checked, whole and including one that contains a space, at the moment the host is handed that message, and the snapshot of that send is the one asserted later — absence of a snapshot is a failure, not a clean read.",
+  "status": "proposed",
+  "supersedes": []
+}

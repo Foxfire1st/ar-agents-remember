@@ -1,0 +1,39 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "The workspace writer, once-read caller, shared completion choke, admission bound, noncreating stream and maximum-time panel head jointly preserve an attributed bounded completion/feed account. None alone closes that chain; failed writes remain counted only under the existing process-local rule, and the removed lifecycle branch contributes no current obligation."
+  },
+  "guarantee": "A tool call completed on the host path uses the one workspace-river completion writer for one bounded facts-only event attributed to its once-read caller and its started or addressed role. A failed admitted write is counted in dropped on the next landed row, with no cross-restart promise. There is no current active-lifecycle alternative writer: the retired two-branch member remains historical provenance only. The panel reports who called and the latest feed time, while the shared-lock/missing-lock stream creates, rewrites and deletes no observer file.",
+  "id": "FAM-V8AH28",
+  "members": [
+    "INV-18B62F",
+    "INV-0MX54D",
+    "INV-P661EM",
+    "INV-PHS9T7",
+    "INV-S11488",
+    "INV-VSRHV3"
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "case test_bound_first_call_writes_one_workspace_event_with_caller_and_facts in mcp/tests/test_tool_event_river.py; pytest mcp/tests/test_tool_event_river.py -p no:cacheprovider -n 0 -q -> 16 passed; notes/reports/role-launch/260928-MIK-L114-worker-4b5eb1b1-ea79-4dac-b8dd-ef796451e0b6.md"
+      ],
+      "path": "notes/reports/l114-curator-handoff-list.json"
+    },
+    "handoffEntry": "river-row",
+    "leaf": "260928-MIK-L114",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "routes": [
+    "mcp/src/agents_remember/observer",
+    "mcp/src/agents_remember/application",
+    "mcp/src/agents_remember/serving",
+    "dashboard/src/panels"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Completed host-path tool calls land one bounded, attributed river row; failed writes are counted and restarts promise nothing"
+}

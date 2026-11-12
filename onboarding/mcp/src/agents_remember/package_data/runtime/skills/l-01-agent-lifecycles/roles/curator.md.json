@@ -1,0 +1,233 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+        "content": "sha256:eb1985fff70e4ce8c1c6f564b173837d76ef976bd2ea2840f8f8b24df9e525b3",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-EK6J3B",
+      "invariant": "INV-NNQR91",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-19",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The mcp/src/agents_remember/package_data/runtime shipped copy propagates the skills/l-01-agent-lifecycles/roles/curator.md instructions to that installation surface; it is generated output and does not independently set role/task or permission authority.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The mirror carries the same effect contract as the canonical role.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+            "content": "sha256:e5634b2fde999a70250356a80b5b8e8bfebac4a25e60d6f7c75c56d985354f01",
+            "locator": {
+              "kind": "symbol",
+              "name": "family_effect_refusal"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/handoff.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "An overview starts with its title, an optional governing overview and its purpose heading, puts a change into the body section that owns its meaning, and ends with all numbered citation lines together.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab2dde55ffb6fabcf5dded641acd559ed294af60",
+            "content": "sha256:d1cb107832fa807b37b374922855df001cd309c13a97866d10628925183eadbb",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 41
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/curator/card-formats-and-citations.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Curation keeps reconciliation and memory writing with the Curator and the Git transaction with the Manager; the Curator runs no Git write, closeout preview or landing decision.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
+            "content": "sha256:8f50640da2d94e09cf1dc538da784d7394195b516df1cb2f2856c6e459ef0c6d",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The leaf pass starts only on a leaf task document, never taskless; registered tasks belong to a master, and no standalone leaf, fake task, worktree or enclosure is fabricated for the leaf or foundation route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "content": "sha256:7d29c8551fceea6befa2bb3368b9e56702729dafe74d57b7b0f84a8c5bd9f7f6",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 47
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "For every card cut by the quality check the Curator names the source evidence that makes the removed text untrue; text is never removed merely to clear a quality finding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "content": "sha256:6038be5814e8f452acee52a8e9f79ebec01003bfacf61434586409c39243e5d7",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 112
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The Curator also repairs wrong or missing memory it encounters while curating, whoever left it and beyond the quality check's findings, through the writer; it names each repair, makes no broad sweep and routes repairs needing code, a requirement decision or another leaf's work.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "content": "sha256:f898ec3148ecaeb74251252927c4c5e8ce0edfffdb5573f0e13004aec0353bc2",
+            "locator": {
+              "end": 166,
+              "kind": "line_range",
+              "start": 166
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Curation reconciles three bodies of evidence (current intent, ruled change intent and implemented reality) and succeeds when they agree or every material divergence has reached its answering seat.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7117f2f448a2507a4289d3849b7765d64be4d702",
+            "content": "sha256:29ee5d4d2c163edfeabf2b9d3ce01b2ef069e5d0800a01882b492d0340ec8cb4",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/curator/intent-reconciliation.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The Curator runs no Git write and edits no code, gate, lifecycle state, worktree contract or closeout state; it edits a task document only as its writer under its assignment with the scoped correct-write recovery, and advances no fingerprint to an uncommitted tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "content": "sha256:637b17373ac98070d32d4516a78c49d38c8233bce7ee4b07ac8d3cb86e6853e7",
+            "locator": {
+              "end": 156,
+              "kind": "line_range",
+              "start": 152
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "On converted memory a role agent that wrote none of the leaf's cards or records checks every changed card, sidecar and record statement by statement before closeout; judgment history belongs in content-bound Curator rows and a counted card edit alone never closes a trace.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c630271da1672f6d2ecf2500c8e31150e38bce6",
+            "content": "sha256:aa8e7e0c4607242f4ebf11f911734729485f6e52a8190d5519ad12056f98c72e",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "skills/l-01-agent-lifecycles/criteria/onboarding-memory.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The Curator writes knowledge with knowledge_write or the admitted serving-build command-line writer with the task contract, handoff list and commit; the commit option authorizes file writes, not Git or acceptance.\n\nAnchor: `knowledge_write`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "content": "sha256:f953dbf193ecbbd1527e89392eaa4537e6ce4fd6f806fec28da1e4bf3612cbb1",
+            "locator": {
+              "end": 138,
+              "kind": "line_range",
+              "start": 136
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "When its part is complete the Curator marks only its own task-document step done through task_doc set_step with a one-line note; an incomplete, blocked or progress report never marks unfinished work done.\n\nAnchor: `task_doc`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "content": "sha256:9fc1029ada509e1f4ceb7fbf037f09f8d905cba800f712197f1a8dad7bf6151f",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 174
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The stage ends when task knowledge is written and checked and quality is clean, distinguishing installed-writer publication from scoped manual provenance; own faulty-input refusals and coherence findings are repaired through the same writer, and open permission prompts, other correct-input refusals, unowned state and requirement-meaning questions stop the work.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "content": "sha256:fbbb91d1e376a5e9ec3a62fa0d7d79a423bb0647697d35d74ef38507471effb9",
+            "locator": {
+              "end": 170,
+              "kind": "line_range",
+              "start": 162
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

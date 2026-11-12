@@ -1,18 +1,26 @@
 # skills/l-01-agent-lifecycles/templates/turn-report.md
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `skills/l-01-agent-lifecycles/templates/turn-report.md` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-09T14:45+02:00|
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
-| governingOverview | `skills/l-01-agent-lifecycles/overview.md` |
+## Report path and ownership
+
+- The retained worker artifact is written at the local report path its handover names and referenced from the leaf task document. Main-loop ownership, immutable requirement-attempt evidence, exact checks and file-based handovers remain. [4]
+
+## Message/file transport
+
+This canonical template requires messages to be short wake-ups naming requested work or a handover and its files. Report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, not pasted into message text. Within a shared task, files stay with its record and a leaf workspace exposes the message-folder link. Text uses the effective settings limit without a pinned number. The canonical source and the packaged copy share this contract; transport does not change their existing write/start powers, peer destinations or independent acceptance authority.
+
+## Report contents
+
+The canonical worker report retains exact candidate, immutable requirement-attempt/journal links, measured command/evidence limits, findings and continuation inputs. The retrieval inventory records `read_ar_files` naming, native onboarding reads and route-index inspection. The source provides direct-handover and pending/refusal/recovery slots carrying exact candidate/evidence references; no courier reply or terminal outcome substitutes for the recorded requirement verdict. Completed turns remain distinct from requirement acceptance, and source wording is not new native evidence.
+
+## Current composition and authoring contract
+
+An optional visual walkthrough is governed by the Worker role, which points to `reference/writing/visual-explainers.md` before one is added to the freeze report; it supplements and never replaces required report sections or acceptance. The template's own pointers lead to `core/acceptance.md` sections, `operations/implementation.md#verify-the-final-candidate`, `operations/review.md#boundaries` and `reference/message-handover.md`.
+
+The report remains the Worker's main-loop artifact at the supplied path, not delegated to a helper. Requirement attempt journal anchors, immutable expanded evidence, exact checks, separate durable-evidence hold point, direct handover evidence, harness contributions and respawn state retain their existing contracts. A shorter label, diagram or host turn-end signal proves no semantic acceptance.
 
 ## Governing Overview
 
-[lifecycle overview](../overview.md)
+[overview](../overview.md)
 
 ## Purpose
 
@@ -44,7 +52,7 @@ completed turn report and replaced by the exact authoritative journal anchor.
 
 ### Conventions
 
-- Store the report under the series `notes/reports/` directory.
+- Write the report at the local path the handover names, reference it from the leaf `task_doc` and retain its canonical destination.
 - Repeat the acceptance block without aggregating or sampling revisions.
 - Use code path plus symbol for code and path plus section/anchor for non-code deliverables.
 - Record a not-run reason when no check ran instead of omitting the Checks section.
@@ -61,55 +69,33 @@ completed turn report and replaced by the exact authoritative journal anchor.
 
 None.
 
-
 ## CCR-R12@v5 Handoff Boundary
 
-This template records the exact targeted or scoped checks and their failed or not-run status as handoff evidence. Closeout and integration consume the prepared code, memory-content, and ledger transaction; full quality, full tests, full memory quality, certification, and review are explicit requests rather than automatic template gates.
+This template records the exact targeted or scoped checks and their failed or not-run status as handoff evidence. Closeout and integration consume the prepared code, memory-content, and ledger transaction and carry the complete memory-quality result that normal curation always runs; full code quality, full-suite tests, certification, and review are explicit requests rather than automatic template gates.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source governs this report format.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Every briefed manifestation receives an immutable candidate-bound worker record containing its complete envelope. | "## Requirement Attempt Journal Records Appended For This Handoff" | skills/l-01-agent-lifecycles/templates/turn-report.md:65-119 |
-| Exact commands and outcomes have a first-class report section. | "## Checks" | skills/l-01-agent-lifecycles/templates/turn-report.md:159-171 |
-| Artifact lifecycle and task continuity are recorded separately. | "## Durable-Evidence Promotion Hold Point (separate concern)"; "## Respawn State (onboard a successor from this — no transcript needed)" | skills/l-01-agent-lifecycles/templates/turn-report.md:172-177; skills/l-01-agent-lifecycles/templates/turn-report.md:204-209 |
+- Every briefed manifestation receives an immutable candidate-bound worker record that cites its exact requirement anchor in the frozen expanded-evidence artifact, which holds the complete acceptance envelope once. [1]
 
-## Cross-Repo References
+- Exact commands and outcomes have a first-class report section. [2]
+
+- Artifact lifecycle and task continuity are recorded separately. [3]
+
+### Cross-Repo References
 
 The report shape is generic; each dispatched repository supplies the actual verification command
 and durable evidence paths.
 
-## 2026-08-27 Attempt Boundary Clarification
+## Canonical Source Ownership
 
-Attempt publication is phase-sensitive: validate before append, and treat append plus the exact
-review handoff as one formal boundary. A malformed row that never reached review is preserved by a
-non-attempt correction/void record without consuming the next attempt ID; after handoff, only an
-independent reviewer rejection permits a successor.
+The authored file is the canonical contract; its measured byte-equal package copy is a distribution carrier, not an independent role, task or permission authority.
 
-## Update History
-- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
+- The authored source owns this contract; the distribution copy is not a separate authority. [5]
 
-- 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
-
-- 2026-08-28T11:51+02:00 — Made the one-primary envelope and removal of the transient worker-record
-  scaffold explicit after authoritative journal append.
-
-- 2026-08-28T11:32+02:00 — No content impact: re-read the v25 role/topology clarification; this
-  card already describes one leaf-owned primary revision, adjacent contextual constraints, and
-  the source-specific worker/reviewer/manager/curator boundary.
-
-- 2026-08-27T22:15+02:00 — Distinguished pre-handoff non-attempt correction from post-handoff
-  reviewer rejection and successor lineage.
-
-- 2026-08-27T21:53+02:00 — M40@v2/M44@v2: added separate experimental protocol events and made
-  formal attempt records lightweight content-addressed views created only at review handoff.
-- 2026-08-27T20:45+02:00 — Separated the link-only turn report from the single physical leaf
-  journal so copied records cannot become competing authorities.
-- 2026-08-27T18:06+02:00 — M40/M43: converted the worker handoff into append-only attempt records
-  with exact candidate/predecessor identity, embedded M38 envelope/checks, and closed failure rows.
-- 2026-08-27T14:52+02:00 — Created onboarding for per-revision acceptance, the restored Checks
-  section, and the separate artifact-lifecycle hold point.
+- The Worker reads the visual-explainer guidance before adding an optional walkthrough to its freeze report. [6]

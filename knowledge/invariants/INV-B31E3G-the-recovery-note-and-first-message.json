@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The note is composed in the launch module while the line and the reference are produced by the hand-over artifact module; the single promise that both name one locator and digest holds only across both places."
+  },
+  "applicability": "Every role launch whose recovery note and first message name its hand-over artifact.",
+  "conditions": [
+    "The recovery note and the first-message artifact line name the same locator path and the same SHA-256.",
+    "Opening the locator returns the exact frozen hand-over bytes the digest records.",
+    "The complete hand-over's JSON sibling and an existing seat's restore keep their own references and behavior."
+  ],
+  "exclusions": [
+    "Messages after the first.",
+    "A launch recorded before the locator existed, whose saved message keeps its one-file or sibling-path line."
+  ],
+  "id": "INV-B31E3G",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/worker/d71994c1-f41e-4cbf-9999-f063dae40751/evidence/depth-probe-candidate.txt; test_paseo_launch.py::DeepLaunchFolderTests::test_the_note_and_the_path_it_names_tell_the_same_at_any_depth"
+      ],
+      "path": "L199-curator-full-pass"
+    },
+    "handoffEntry": "MIK-R208@v1 §2",
+    "leaf": "260928-MIK-L199",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The recovery note and first-message line name the same locator and SHA-256, and that locator opens the frozen handover bytes.",
+  "status": "proposed",
+  "supersedes": []
+}

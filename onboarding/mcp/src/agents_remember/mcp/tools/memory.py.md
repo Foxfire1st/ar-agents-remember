@@ -1,20 +1,96 @@
 # mcp/src/agents_remember/mcp/tools/memory.py
 
-| Field                  | Value                                          |
-| ---------------------- | ---------------------------------------------- |
-| repository             | agents-remember                             |
-| path                   | `mcp/src/agents_remember/mcp/tools/memory.py`  |
-| doc_type               | `file-level-onboarding`                        |
-| lastUpdated            | 2026-08-24T14:19+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`                                      |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview      | `overview.md`                                  |
-
 ## Governing Overview
 
 [overview.md](overview.md)
 
 ## Purpose
+
+Adapt retained memory quality, citations, route indexes, initialization, baseline and carryover operations.
+
+## Code Commentary
+
+The payload now computes whole first and supplies the filtered answer only for legacy-format; full is still handed to _tool_payload. Other changes defer cutover imports with the same error semantics.
+
+Quality sync/start/poll wrappers forward their discriminated typed requests to the matching
+controller method. Drift-check and citation-migrate adapters are absent. Citation fix alone
+catches exactly ConfiguredContractAuthorityError and returns configured-contract-authority-invalid
+with developer-decision guidance; unrelated exceptions propagate during the synchronous computation. Ordinary citation-fix results
+have a separate status projection: outcome, dry-run selection count, rewritten/stale/unreadable/refused
+totals and, on failure, bounded document/place/reason work orders. Complete authoring and stale lists
+remain in the whole-result log. The configured-authority refusal deliberately retains its existing
+full refusal rather than using the ordinary success projection. A bounded answer is not a reduced operation scope.
+The source's suggestion to run memory-citations for full lists is legacy CLI wording, not
+permission to evade a checkout execution guard: this leaf's admitted fixer is the scoped
+agents-remember-task citation_fix tool, preview before apply. Full logs can be read as evidence.
+`memory_carryover_plan` translates only a recognized legacy-format RuntimeError into the operation-specific typed refusal; unrelated runtime errors propagate. Both carryover adapters merge the genuine compact decision fields into the complete result supplied for validation and whole-result logging, while preserving raw candidate/conversion/publication detail. The plan still compacts with `report_path=None`,
+files no per-call report and exposes no `reportPath`. Its path population is not shortened by a
+second per-tool cap; the common delivery choke owns list bounds. Omitted candidate detail is not
+promised in a nonexistent report.
+Only the mutating `memory_carryover_apply` files the full result before compaction and
+returns that report's path with source-path decisions. Quality sync/start/poll results similarly
+retain their full application outcome beside a status projection; route refresh returns counts and
+stale targets rather than the successful full index census. The retained legacy bounding helper is
+not the citation-fix public delivery path.
+Retained response logs are separate custody, not reports filed by the read-plan branch.
+Previews and actual operations retain their separate authority and dry-run semantics.
+
+The citation-fix adapter forwards optional `contract_path` unchanged to the application owner.
+That owner admits the ordinary leaf route or measured pre-baseline route. The application
+result and full-detail log retain scalar `admission`; the ordinary citation status whitelist
+does not currently project it, and completion does not merge omitted fields back into the answer. The exact configured-contract-authority catch stays narrow. For a legacy-format refusal,
+`_carry_legacy_refusal` additionally carries the central `code` and conversion `detail` into the public answer: a whole-result log alone does not tell the caller how to recover. Ordinary failed converted fixes project stale, unreadable and authoring-refused entries only; the removed migration and old-format repair-list projections do not supply another repair route.
+
+
+- The retained citation-fix payload forwards the optional contract and translates only configured-contract authority mismatch.
+
+
+## Current evidence
+
+Inherited numbered findings retain their exact wording and full targets as historical custody where their candidate9 owner is retired or their account conflicts with the current route. They are not evidence that an absent legacy owner still executes. No guarantee is retired by this proposal; parent disposition remains required. The source-bound current account below is separate.
+
+- Converted citation fixes return bounded status/count work orders; legacy-format refusals carry conversion code/detail rather than a repair list.
+
+- The source test asserts singleton reference scope, full status counts and a capped actionable first slice without authoring/rewritten-detail delivery.
+
+
+
+- Carryover adapters retain full review detail and merge genuine delivered decision fields into the validated/logged whole; only apply files a per-call report. Compact answers retain recovery guidance, decisions/carriedPaths and apply reportPath without raw candidates/conversion/publication.
+
+
+
+- Route refresh delivers counts and stale targets rather than successful index material.
+
+
+- Citation fix delivers the ordinary status projection while preserving the configured-authority refusal.
+
+
+- Current source excerpt `def memory_quality_check_payload(` identifies this section's adapter/control owner, not an executed success.
+
+- Current source excerpt `def _bounded_lists(payload: dict[str, Any], names: tuple[str, ...]) -> dict[str, Any]:` identifies this section's adapter/control owner, not an executed success.
+
+## Citation preview modes
+
+`citation_fix_payload` retains its synchronous default and actual-write path. `mode="start"` requires `dry_run=true` and no run ID, freezes document selectors, and starts the existing preview computation in the shared run registry. `mode="poll"` requires a run ID and no selectors, with the same repository and candidate contract. Completed previews pass through the same citation status projection with `status` and `runId`; retained whole results remain separate from compact answers. A completed computation is not a claim that every repair succeeded.
+
+The configured-contract-authority catch in the synchronous computation stays narrow. Background worker exceptions instead become retained failed runs, and the shared poll controller can return scope or pair refusals. The synchronous statement that other errors propagate does not describe every background lifecycle outcome.
+
+
+- Mode dispatch preserves the default synchronous application call. [1]
+
+
+- Start and poll enforce their distinct argument shapes. [2]
+
+
+- Completed preview projections retain ordinary citation counts and failure work orders. [3]
+
+
+## Historical superseded account (non-operative)
+
+Prior descriptions/evidence remain below for provenance. They are not current public
+registration, provider/lifecycle/skill-install instructions or execution acceptance.
+
+
 
 Memory, drift, route-index, baseline, and carryover payload builders.
 
@@ -24,7 +100,7 @@ L23 adds the MCP payload adapter for guarded, contract-scoped `citation_fix`, pr
 
 ### Logic
 
-Holds `drift_check_payload`, the three typed memory-quality payload builders,
+Holds the three typed memory-quality payload builders,
 `route_index_refresh_payload`, `memory_init_payload`,
 `memory_baseline_status_payload`, `memory_baseline_adopt_payload`,
 `memory_carryover_plan_payload`, and `memory_carryover_apply_payload`. Each returns through
@@ -41,12 +117,15 @@ include_review_required=None, messages: CarryoverCommitMessages = DEFAULT_CARRYO
 is being carried. These unrelated carryover signatures remain flat; memory quality is the
 deliberate nested discriminated request contract published by `mcp/registration/memory.py`.
 
-The two carryover builders additionally file the full application entry point result under
-`temp/tool-reports/memory_carryover_plan/` / `.../memory_carryover_apply/` via
-`write_tool_report`, then return `compact_carryover_payload(full, reportPath)`:
-per-decision `source_path` lists in `decisions` (each list capped at
-`MAX_INLINE_CARRYOVER_PATHS` = 25 with a `... (+N more in report)` marker),
-`carriedPaths` for apply, and `reportPath` inline. The `candidates` array — and
+The carryover apply builder files the full application entry point result under
+`temp/tool-reports/memory_carryover_apply/` via
+`write_tool_report`, then returns `compact_carryover_payload(full, reportPath)`:
+per-decision `source_path` lists in `decisions`, kept whole rather than capped by a per-tool
+limit — no `MAX_INLINE_CARRYOVER_PATHS` survives beside the delivery boundary, which caps what
+the caller receives while the report keeps the full records —
+`carriedPaths` for apply, and `reportPath` inline. A carryover plan is a read and files no
+per-call report (rule 6): the answer is the plan with `... (+N more, no report filed)` markers
+and no `reportPath` key. The `candidates` array — and
 `carried`, which apply duplicated verbatim — never reach the wire; before this,
 a 28-file apply response cost 7.7k tokens (GitHub #52).
 
@@ -54,10 +133,11 @@ a 28-file apply response cost 7.7k tokens (GitHub #52).
 
 - Transport-thin: quality behavior lives in `application.memory_quality.controller`; other
   memory/drift behavior lives in `application.memory_tools` and the memory/onboarding-drift
-  packages. Wire-shape compaction is the one
-  exception that belongs here (mirroring `tools/providers.py` and
-  `tools/core.py`): the application entry point keeps returning the full result, and the
-  report is written BEFORE compaction so forensic detail is never lost.
+  packages. Two exceptions belong here: wire-shape compaction (mirroring `tools/providers.py`
+  and `tools/core.py`), where the application entry point keeps returning the full result and
+  the report is written BEFORE compaction so forensic detail is never lost; and the one
+  configured-authority refusal, where the two citation builders answer a
+  `ConfiguredContractAuthorityError` instead of letting it reach the choke point.
 - Decision facts stay inline (per-decision path lists, commits, intent note);
   only derivable per-record verbosity (onboarding paths, repeated
   evidence/reason strings) moves to the report.
@@ -81,26 +161,44 @@ canonical application owner now lives at `application.memory_quality.controller`
 package extraction only: sync/start/poll semantics and response finalization remain owned by that
 controller.
 
-## Update History
+## 260928-MIK-L37 The Converted Citation Fix Response Is Bounded
 
-- 2026-08-26T10:44:52+02:00 — Updated the canonical memory-quality application-owner path after the package extraction; transport behavior is unchanged.
-- 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: rewired the quality payload trio to strict sync/start/poll DTOs and the single controller API; removed flat wait/run-id interpretation from this layer. Verification metadata remains pinned until architect-owned closeout.
+`citation_fix_payload` passes the tool's result through `bounded_citation_fix`. For a converted tree's result
+(`status: "converted"`) every list is capped at `MAX_INLINE_CITATION_ITEMS` (50): `stale`, `rewrittenSidecars` and
+`unreadableSidecars`, and inside `authoring` `authoredCards`, `createdSidecars`, `unresolvedTargets` and `refused`
+(`_bounded_lists`). Each list gets `<name>Count` with the full number; `truncated` names the capped lists, and
+`truncatedNote` says how to get the rest: name one card, or run the command line's dry run. An unconverted tree's
+result is passed through unchanged, because its complete repair list is that fixer's contract.
 
-- 2026-08-20T21:30+02:00 — 260815-DAG-L15: added `memory_quality_check_start_payload` /
-  `memory_quality_check_poll_payload` wrapping the async application envelopes (L15-R7, incl. the
-  `ok`-header gate-repair fix). Verified at code commit de3a0fd9.
 
-- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
+- The bounded citation-fix helper caps a converted tree's lists and passes a legacy result through; the delivered answer is the capped status projection and the whole result is kept for the log.
 
-- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
+- Each named list capped, with its full count.
 
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-07-31T15:31+02:00 — 260731-EFA-L2: `memory_baseline_adopt_payload` took `branches:
-  MemoryBranches`; the carryover pair took `selection: CarryoverSelection` (positional) and apply
-  took `messages: CarryoverCommitMessages`, keeping `intent_note` separate. Compaction, report
-  filing and the act-by-default `dry_run` contract are unchanged. Verification metadata pinned until
-  closeout stamps the L2 code commit.
-- 2026-06-10T09:00+02:00 — Carryover plan/apply responses compacted for 2.5.2 (GitHub #52): full result filed via `write_tool_report`, wire keeps per-decision capped path lists + `carriedPaths` + `reportPath`, drops `candidates`/`carried` (apply previously repeated every record twice; 7.7k tokens for a 28-file carryover).
-- 2026-05-29T20:20+02:00: Recorded the act-by-default `dry_run` default on the effectful memory payload builders.
-- 2026-05-29T18:35+02:00: Created from the `mcp/tools.py` domain split (commit `01f503d`).
+## Historical two-caller account — configured-authority mismatch
+
+The following two-caller description is retained history. The current MCP adapter has only
+`citation_fix_payload`: migration's MCP caller is retired. `_citation_authority_refusal` builds
+the retained citation-fix adapter's narrow configured-contract-authority refusal; it is not a
+current second-caller contract.
+
+`citation_fix_payload` calls its application entry point inside a `try`
+that catches exactly `ConfiguredContractAuthorityError`. The catch returns `_citation_authority_refusal`:
+`ok: false`, `status: configured-contract-authority-invalid`, the `repoId` and `contractPath` it was called
+with, a `detail` naming the failing side and name, and `nextAction: developer-decision` — the remedy every
+sibling answer to the same condition carries. Every other error, an `AuthorityError` among them,
+propagates unchanged: the entry point answers only the one condition the product knows how to
+name, and any other failure still raises and loses the envelope. `ENVELOPE_LOSING_RAISERS` stays
+empty because the sweep's probe meets only that condition. The refusal is built once, so the
+adapter cannot answer the same condition two ways; `citation_fix`'s answer still passes through
+`bounded_citation_fix`.
+
+- The retained citation-fix adapter's configured-contract-authority refusal names the status and next action; the former MCP migration caller is retired.
+
+- The refusal carries the failing side and name in its detail, for both tools.
+
+
+
+- Only that error is translated: every other error, an `AuthorityError` among them, still propagates unchanged.
+
+- The payload now computes whole first and supplies the filtered answer only for legacy-format; full is still handed to _tool_payload. Other changes defer cutover imports with the same error semantics.

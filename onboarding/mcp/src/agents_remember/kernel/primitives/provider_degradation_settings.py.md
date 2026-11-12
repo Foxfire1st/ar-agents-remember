@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/kernel/primitives/provider_degradation_settings.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                            |
-| path                   | `mcp/src/agents_remember/kernel/primitives/provider_degradation_settings.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-02T01:42+02:00                     |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview      | `overview.md`                              |
-
 ## Governing Overview
 
 [kernel primitives overview](overview.md) — the module moved here from `mcp/` by 260731-EFA-L9;
@@ -21,7 +11,7 @@ and `kernel/`.
 `providerDegradation` MCP settings block (260707-HFX-L7): it validates and produces the frozen
 `ProviderDegradationSettings` thresholds the degradation detector (`providers/degradation.py`)
 reads every evaluation. It follows the same fail-loud-allowlist discipline as
-`timeoutCaps`/`dashboard` in `mcp/config.py` — unsupported keys and wrong shapes/types raise at
+`timeoutCaps`/`dashboard` in `kernel/primitives/runtime_config.py` — unsupported keys and wrong shapes/types raise at
 settings load, never silently ignored.
 
 ## Code Commentary
@@ -51,12 +41,12 @@ runs enabled with the failsafe armed at these bounds, per the task's "default ON
 conservative bound" requirement.
 
 `ProviderDegradationSettingsError` subclasses `AgentsRememberError` (the typed `ValueError`
-family shared by `ConfigError` and the other settings-parser errors), so `mcp/config.py` wraps it
+family shared by `ConfigError` and the other settings-parser errors), so `kernel/primitives/runtime_config.py` wraps it
 into `ConfigError` at the call site without changing the boot fail-loud contract.
 
 ### Conventions
 
-Mirrors the `timeoutCaps`/`dashboard` settings-parser pattern in `mcp/config.py`: a frozen
+Mirrors the `timeoutCaps`/`dashboard` settings-parser pattern in `kernel/primitives/runtime_config.py`: a frozen
 dataclass of typed defaults, a `KNOWN_*_FIELDS` frozenset gate, and small per-type validator
 helpers (`_bool_setting`/`_positive_setting`/`_ratio_setting`) rather than a general schema
 library.
@@ -75,52 +65,38 @@ library.
 
 No known follow-up in this file.
 
-## Docs References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The `providerDegradation` settings block is documented with its full key list, defaults, and behavior in the settings reference. | `# settings.json Reference` | docs/reference/settings-json.md:1-526 |
-
-## Repo-Internal References
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `mcp/config.py` imports this module's `ProviderDegradationSettings`/`ProviderDegradationSettingsError`/`parse_provider_degradation_settings`, wraps parse errors into `ConfigError`, and stores the result on `McpRuntimeConfig.provider_degradation`. | "class McpRuntimeConfig" | mcp/src/agents_remember/kernel/primitives/runtime_config.py:129-129 |
-| The degradation detector consumes every field of `ProviderDegradationSettings` as its threshold/behavior surface. | "class ProviderDegradationStore" | mcp/src/agents_remember/providers/degradation.py:171-171 |
-| The public settings example ships a representative `providerDegradation` block. | `coordinationRoot` | examples/mcp/settings.example.json:3-3 |
+### Docs References
 
 
-## Cross-Repo References
+- The `providerDegradation` settings block is documented with its full key list, defaults, and behavior in the settings reference.
+
+
+
+### Repo-Internal References
+
+
+
+
+
+- `kernel/primitives/runtime_config.py` imports this module's `ProviderDegradationSettings`/`ProviderDegradationSettingsError`/`parse_provider_degradation_settings`, wraps parse errors into `ConfigError`, and stores the result on `McpRuntimeConfig.provider_degradation`. Source caption: "class McpRuntimeConfig" [2]
+
+
+
+
+> Retained earlier card wording; superseded by the current account above:
+> - `mcp/config.py` imports this module's `ProviderDegradationSettings`/`ProviderDegradationSettingsError`/`parse_provider_degradation_settings`, wraps parse errors into `ConfigError`, and stores the result on `McpRuntimeConfig.provider_degradation`. [2]
+
+- The degradation detector consumes every field of `ProviderDegradationSettings` as its threshold/behavior surface. [3]
+- The public settings example ships a representative `providerDegradation` block. [4]
+
+
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Settings parsing is a repository-local MCP boundary; no external system or sibling repo involved. | n/a | n/a |
+Settings parsing is a repository-local MCP boundary; no external system or sibling repo involved.
 
-## Update History
-- 2026-09-17T20:42:17+00:00: Generated citation repair: "class McpRuntimeConfig" repointed to mcp/src/agents_remember/kernel/primitives/runtime_config.py:129-129. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 
-- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B24 curator: replaced the `n/a` rows with exact
-  anchors and fixer-generated ranges; exact non-fixing check returns zero findings.
-
-- 2026-08-02T01:42+02:00 — No content impact: corrected Source Path link depth. The link(s) in this document carried one `../` too many and had never resolved from this card's directory — not code moving out from under a citation, the path as written. Enumerating every depth in both trees leaves exactly one that resolves and it is exactly one level shallower, so there was nothing to judge (`memory_quality/style/citations`, `citation_link_depth_wrong`). No claim, range or target document changed. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-07-31T16:35+02:00 — No content impact: the only change to
-  `mcp/src/agents_remember/kernel/primitives/provider_degradation_settings.py` since the L2 base commit is the
-  whole-tree `ruff format` pass in `00e8379`, which re-wrapped 3 line(s) with no token change
-  whatsoever. Checked by parsing both revisions and comparing the abstract syntax trees
-  (identical) and the comment tokens (identical), so no symbol, signature, default, decorator,
-  control-flow branch, docstring, or assertion this card describes has moved,and every claim this
-  card makes about its own source still holds. Noted while checking: the references table also
-  cites line ranges inside `config.py`; those ranges shifted because this task edited those files,
-  so treat the cited numbers as approximate and the linked cards as authoritative.
-
-- 2026-07-31T15:31+02:00 — 260731-EFA-L2 curator: **mechanical only, attested unchanged.** The
-  file's diff against `c1dc505` is a single `ruff format` line rewrap of the
-  `recent_sample_limit=_positive_setting(...)` argument in
-  `parse_provider_degradation_settings`. No setting, default, threshold or validation rule changed.
-  Every claim in this sidecar was re-checked against the current source and still holds; the prose
-  was deliberately not rewritten. (The whole-tree reformat is commit `00e8379`.)
-- 2026-07-08T01:00+02:00 — 260707-HFX-L7 curator memory pass: created for the new
-  `providerDegradation` settings parser landed alongside the degradation detector. Verification
-  metadata pinned until closeout stamps the HFX-L7 commit.
+- The `providerDegradation` settings block is documented with its full key list, defaults, and behavior in the settings reference. [1]

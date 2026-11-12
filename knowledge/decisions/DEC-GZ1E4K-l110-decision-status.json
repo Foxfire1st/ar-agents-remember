@@ -1,0 +1,49 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The documented former singleton/material transport was weighed against finite batching/status custody, and the selected boundary governs later tool work."
+  },
+  "alternatives": [
+    {
+      "option": "Answer outcome/counts/actionable entries and retain complete material in its existing corpus.",
+      "reason": "Keeps the caller action and complete evidence without avoidable host cuts or scope expansion.",
+      "status": "chosen"
+    },
+    {
+      "option": "Return the complete diagnostic/candidate material in the conversational answer.",
+      "reason": "The actual singleton/corpus problems made this inadequate for finite curation waves.",
+      "reconsider_when": "A future developer ruling changes conversational transport costs or removes complete external corpus custody.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Future memory-tool work must preserve complete corpus and caller recovery while fitting the shared delivery bound."
+  ],
+  "context": "Inline diagnostic/candidate material was cut by hosts and repeated costly conversation-sized results; D125 explicitly chose status plus corpus custody.",
+  "decider": "Developer D125; approved MIK-R110@v1",
+  "id": "DEC-GZ1E4K",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-1V9ARB"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "DEVELOPER-DIRECTION.md D125 and MIK-R110@v1 Problem, Required Behavior and Preservation Boundaries."
+      ],
+      "path": "knowledge-wave.json"
+    },
+    "handoffEntry": "L110-decision-status-origin",
+    "leaf": "260928-MIK-L110",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

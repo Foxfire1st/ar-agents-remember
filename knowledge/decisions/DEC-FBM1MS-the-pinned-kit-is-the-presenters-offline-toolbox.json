@@ -1,0 +1,60 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Two readings were considered and the authority chose the removal; the ruling constrains later memory not to re-dress the kit as a boundary."
+  },
+  "alternatives": [
+    {
+      "option": "Keep the A8 publication-time kit refusal and record the kit as verified data.",
+      "reason": "Removed by the Architect's amendment 81a2274c.",
+      "reconsider_when": "If an authority reintroduces a publication-time kit check and rules the kit a boundary again.",
+      "status": "rejected"
+    },
+    {
+      "option": "Record the kit as the presenter's offline toolbox with no refusal after carry, and the page sandbox as the boundary.",
+      "reason": "This is the ruling and what the code at 96c6b4aa does.",
+      "status": "chosen"
+    }
+  ],
+  "consequences": [
+    "Later memory must not describe a kit refusal, a kit verification at publication, or the kit as a containment boundary.",
+    "DEC-6J7MCM is superseded; its refusal is history from A8, not current behaviour."
+  ],
+  "context": "Amendment 81a2274c removes the publication-time kit refusal that A8 introduced and that DEC-6J7MCM recorded. The code at 96c6b4aa carries kit files under the manifest's contract path when an attempt is authored and refuses no kit path afterwards; a presenter may publish its own bytes there.",
+  "decider": "architect 97e0320d (amendment 81a2274c)",
+  "id": "DEC-FBM1MS",
+  "links": [
+    {
+      "relation": "explains",
+      "target": {
+        "blob": "f3615d54f680fb65750834bd767ccc70ecac0a1d",
+        "content": "sha256:41bfb91754bf82bbf0dbe98abe86fb7e0fb1875faf15dbe64d03ec0d28302008",
+        "locator": {
+          "kind": "symbol",
+          "name": "collect_assets"
+        },
+        "path": "mcp/src/agents_remember/canvas/presenter_assets.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "role-reports/worker/e5b1c9d4-7a26-4f83-b0c1-9d47e2a8f350/role-launch/round9-evidence/R9-authority-81a2274c.json"
+      ],
+      "path": "a9-kit-toolbox.json"
+    },
+    "handoffEntry": "L104-B25-toolbox-a9",
+    "leaf": "260928-MIK-L104",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": [
+    "DEC-6J7MCM"
+  ]
+}

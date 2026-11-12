@@ -1,133 +1,144 @@
 # dashboard/src/panels/review/ReviewSurface.applicability.test.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/review/ReviewSurface.applicability.test.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-28T21:38:01+02:00 |
-| lastVerifiedCommitHash | `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6` |
-| lastVerifiedCommitDate | 2026-09-28T22:11:57+02:00|
-| governingOverview | `dashboard/src/panels/overview.md` |
-
 ## Governing Overview
 
-[dashboard/src/panels route overview](../overview.md)
+[panels route overview](../overview.md)
 
 ## Purpose
 
-The mounted-surface cases for `ICR-R26@v1`'s record labels: the **real** `ReviewSurface` over the
-**real** review client, with only `fetch` stubbed. Every request is built by the shipped client and
-every response travels the way the browser's does — status, body, the shared decode, the component tree
-— and no assertion reads a prop the test itself passed.
-
-The defect these cases catch is the client half of F09: a record of another subject rendering beside the
-selected one with nothing that says why it is there. Four cases, one property each: a record's own
-treatment is mounted with the **true subject** its binding names; the labelled context row shows the
-relationship that reached it and **never** the sibling's finding; the six-way counts are stated beside
-the collections they filtered; a previous generation's record is labelled `historical` with the
-candidate tree it examined; and a payload published **before** these labels existed still renders —
-which is the additive-compatibility property the server's optional fields exist for.
+The former mounted assessment/applicability fixture is removed from freeze07, not renamed into a current mounted control. Its last actual c861abfe BASE source retained a synthetic selected/sibling assessment case; its fetch response was an HTTP-shaped cast, not a native response/run witness. The earlier four-case label/count/history compatibility account was already historical. None is current regression coverage after this file deletion.
 
 ## Code Commentary
 
 ### Logic
 
-The comparison-focused cases isolate the shared catalogue hook so its additional request cannot consume a comparison fixture. The ordinary-entry catalogue/comparison interaction is covered separately by ReviewSurface.navigation.test.tsx. Assertions follow the compact labels, central display controls and changed-region default without weakening the existing record, paging or refusal contracts.
-
-**Two label fixtures are built once and shared, and the payload is a real wire body.** `directLabel`
-(`:37-47`) and `historicalLabel` (`:48-58`) are the two `ReviewDisplayedApplicability` values the cases
-mount, each naming its own subject and references. `payload(labels: boolean)` (`:59-203`) assembles the
-whole `KnowledgeReviewPayload` the surface consumes — both panes, the assessments, the context rows, the
-six-way summaries and the revision selection — and the boolean is the **only** difference between the
-two bodies: with the labels it carries the `applicability` fields, the `context` rows and the
-`applicability` counts; without them it carries none, which is exactly what a body published before this
-requirement looks like. `reviewed` (`:204-210`) wraps a body in the route's `review` envelope and
-`response` (`:211-219`) turns it into a real `Response`, so what the client decodes is a body rather
-than a fixture object.
-
-**The four cases, one property each:**
-
-1. `"mounts each record's own treatment and the true subject of labelled context"` (`:238-265`) — three
-   assessment rows mount, the direct one prints `applicability: direct (invariant <SUBJECT>)`, the
-   label also travels on the evidence pane's copy of the same record (so one selection cannot be
-   displayed with two treatments in two panes), the context row states the sibling's **true subject**
-   and the recorded relationship that reached it (`realization 0cca9e84 at src/batch.py`), and the
-   sibling's finding text is **absent** from the document — the contamination this requirement prevents.
-2. `"states the six-way counts beside the collections it filtered"` (`:267-281`) — the
-   `review-applicability` block prints `supplied assessments: 4` with `direct 1`, `historical 1`,
-   `context 1` and `not displayed 1`, so the filtering is visible as arithmetic on the page.
-3. `"labels a previous generation's record as historical rather than as the current result"`
-   (`:283-297`) — a `[data-applicability="historical"]` node exists, names the selected subject and
-   carries the old candidate tree id it examined.
-4. `"still renders a payload published before the labels existed"` (`:299-310`) — the unlabelled body
-   renders its two assessment rows and mounts **no** context block and **no** counts block, so a client
-   released before this vocabulary still works against a server that sends it.
-
-### Conventions
-
-The module stubs `fetch` with `vi.stubGlobal` and cleans up in `afterEach` (`:232-235`), so no global
-survives a case; `mountSubject` (`:220-231`) is the one mount helper and every case reads the rendered
-document rather than component state. The assertions use the same `data-testid` hooks the production
-component publishes (`review-assessment`, `review-context`, `review-applicability`) plus the new
-`data-applicability` attribute and the `data-context-of` attribute, so a case fails when the *rendered*
-label changes rather than when a prop does.
+Current ReviewRecordPanes renders raw record facts, lane/read-only state and judgment identifiers; the removed applicability/context/count/evidence-pane helpers are not present there. The surviving server-side sibling check exercises selected leaf judgment rows, not the old assessment applicability labels. These are distinct current boundaries, not substitute proof that the deleted mounted case still executes.
 
 ### Invariants And Boundaries
 
-- **The client renders what the server sent.** A missing `applicability` prints nothing extra; nothing
-  is defaulted, inferred or repaired on the client, which is why the pre-label case passes.
-- **A context row never carries a judgment.** The case asserts the sibling's finding text is absent from
-  the whole document, not merely from one list.
-- **One record, one treatment, both panes.** The same label is asserted on the knowledge pane's copy and
-  on the evidence pane's copy of the same assessment.
-- **The counts are rendered as the server stated them.** The client formats them and adds nothing; the
-  partition itself is the server model's validator, not this module's arithmetic.
-- **No browser journey is claimed here.** These are jsdom mount cases; the assembled A14/A15 acceptance
-  belongs to `ICR-R25@v1` and the reviewer workspace to `ICR-R24@v1`.
+No current execution, retained case, equivalent replacement, CODE/MEMORY acceptance or proof promotion is inferred from this historical card. No realization/proof attachments are removed: the inspected sidecar has none.
 
 ### Todos
 
-None recorded.
+No implementation request is invented to restore the retired channel.
 
-## Docs References
+## Evidence
 
-No domain documentation source is configured for this repository (`system/sources.md` carries no
-`Domain Documentation` entries). The statements below are grounded in repository source only.
+### Docs References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured Domain Documentation source was available; current boundaries below are repository source, not the old fixture or its header.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The two label fixtures the cases mount, each naming its own subject and references.** | `directLabel`; `historicalLabel` | dashboard/src/panels/review/ReviewSurface.applicability.test.tsx:45-54; dashboard/src/panels/review/ReviewSurface.applicability.test.tsx:56-65 |
-| **The two real wire bodies: one with the labels, context rows and counts, one without any of them.** | `payload` | dashboard/src/panels/review/ReviewSurface.applicability.test.tsx:67-210 |
-| **The envelope and the real `Response` the client decodes.** | `reviewed`; `response` | dashboard/src/panels/review/ReviewSurface.applicability.test.tsx:204-210; dashboard/src/panels/review/ReviewSurface.applicability.test.tsx:212-217; dashboard/src/panels/review/ReviewSurface.applicability.test.tsx:219-226 |
-| **The one mount helper, and the cleanup that keeps no global across a case.** | `mountSubject` | dashboard/src/panels/review/ReviewSurface.applicability.test.tsx:228-238; dashboard/src/panels/review/ReviewSurface.applicability.test.tsx:232-235 |
-| **The F09 client case: the treatment and the true subject are mounted, and the sibling's finding is nowhere in the document.** | "mounts each record's own treatment and the true subject of labelled context" | dashboard/src/panels/review/ReviewSurface.applicability.test.tsx:246-273 |
-| **The counts case: the six-way partition is rendered beside the collections it filtered.** | "states the six-way counts beside the collections it filtered" | dashboard/src/panels/review/ReviewSurface.applicability.test.tsx:275-289 |
-| **The historical case: a previous generation is labelled and never reads as the current result.** | "labels a previous generation's record as historical rather than as the current result" | dashboard/src/panels/review/ReviewSurface.applicability.test.tsx:291-305 |
-| **The additive-compatibility case: a body published before the labels existed still renders.** | "still renders a payload published before the labels existed" | dashboard/src/panels/review/ReviewSurface.applicability.test.tsx:307-318 |
-| **The client vocabulary these cases mount, and the fields the surface gained.** | `ReviewDisplayedApplicability`; `ReviewContextRecord`; `ReviewApplicabilitySummary`; `ReviewKnowledgePane` | dashboard/src/data/review.ts:155-164; dashboard/src/data/review.ts:166-178; dashboard/src/data/review.ts:180-190; dashboard/src/data/review.ts:217-239 |
-| **The rendered labels themselves: the per-record note, the context list and the counts block.** | `applicabilityNote`; `contextList`; `applicabilityCounts` | dashboard/src/panels/review/ReviewRecordPanes.tsx:46-61; dashboard/src/panels/review/ReviewRecordPanes.tsx:63-79; dashboard/src/panels/review/ReviewRecordPanes.tsx:81-92 |
-| **The two call sites that mount them, on the knowledge pane and on the evidence pane.** | `KnowledgePane`; `EvidencePane` | dashboard/src/panels/review/ReviewRecordPanes.tsx:215-240; dashboard/src/panels/review/ReviewRecordPanes.tsx:299-355 |
-| **The server-side case this client mirrors: a sibling's record is context and never the selected subject's.** | `test_a_sibling_subjects_assessment_is_context_and_never_the_selected_subjects` | mcp/tests/test_knowledge_review_subject_isolation.py:221-252 |
 
-## Cross-Repo References
+- ReviewMainFacts renders changed fields, unresolved references, remaining counts, staleness and submission facts; ReviewRecordIdentities renders comparison, retained revision, expansion and judgment identifiers in Technical details. [16]
 
-No cross-repository behavior is implemented in this module. It mounts the dashboard's own surface over
-its own origin.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
+- The controlled current sibling test filters leaf judgment rows and excludes the sibling row; it does not revive the removed applicability surface. [17]
 
-## Update History
-- 2026-09-28T21:38:01+02:00 — 260921-ICR-L48 curator (uncommitted candidate tree `ac73216e2a763b72844a63b8c36c81f9a8b5f0e8` over code base `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7`): **reopened claims re-read — the three attribution renderers and both mounting panes moved unchanged into `ReviewRecordPanes.tsx`.** `applicabilityNote`, `contextList` and `applicabilityCounts` are still called from the knowledge and evidence panes (`KnowledgePane` mounts `contextList`/`applicabilityCounts` for the knowledge records, `EvidencePane` mounts `applicabilityNote` on its links and observations plus the list and counts), so both claims hold and were re-pointed. One L48 difference matters to a reader of this module: the panes now render only for a payload that answers the subject on screen (`ReviewTechnicalDetails`), which this module's single-subject cases do not exercise. No verification stamp was advanced.
-- 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.
-- 2026-09-26T19:49:05Z — The comparison-focused cases isolate the shared catalogue hook so its additional request cannot consume a comparison fixture. The ordinary-entry catalogue/comparison interaction is covered separately by ReviewSurface.navigation.test.tsx. Assertions follow the compact labels, central display controls and changed-region default without weakening the existing record, paging or refusal contracts.
-- 2026-09-24T00:43:00+02:00 — 260921-ICR-L24 curator (memory worktree only; no code changed; no commits; leaf base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta): **four enforced citation rows re-cited to the constructs they name, wording unchanged.** The vocabulary row gained the two ranges its own anchors needed — `ReviewContextRecord` at `data/review.ts:166-178` and `ReviewKnowledgePane` at `:217-238` — while the two contributing ranges it already carried (`ReviewDisplayedApplicability` `107-142`, `ReviewApplicabilitySummary` `169-191`) are kept verbatim; the call-site row followed the two panes this leaf's surface shortened to their own extents (`ReviewSurface.tsx:275-300` for `KnowledgePane`, `:354-407` for `EvidencePane`). No claim was reworded or dropped and no contributing range was removed. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted (base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta) and governed closeout owns the real stamp.
-- 2026-09-23T02:30:00+02:00 — 260921-ICR-L26 curator (candidate `ar/260921-icr-l26`, uncommitted; production line at this leaf's base `2edad477bcd9127a90e4618d345ce34ef7e6a6d9`, confirmed from the enclosure contract): created this one-to-one card for the mounted-surface cases this leaf introduced (`ICR-R26@v1`). The card records the two real wire bodies the module builds (one labelled, one not), the four properties its cases pin — the true subject of a labelled context row and the absence of the sibling's finding, the six-way counts rendered as arithmetic, the historical label with the tree it examined, and the additive compatibility of a pre-label body — and the boundary that these are jsdom mount cases rather than the assembled A14/A15 acceptance R25 owns. **Stamp accounting:** the verification pair names the production line at this leaf's base — the last real commit the reading was taken against — because every construct this card cites exists only in this leaf's uncommitted candidate; the governed closeout owns the real stamp once the code commit exists.
+### Cross-Repo References
+
+The surviving cited owners are in this repository; no external-system boundary is claimed.
+
+## Historical Account
+
+Superseded text is retained below. Historical citation labels are inert, not current anchors.
+
+<details>
+<summary>Removed test account, preserved for history</summary>
+
+> # dashboard/src/panels/review/ReviewSurface.applicability.test.tsx
+>
+> ## Governing Overview
+>
+> [dashboard/src/panels route overview](../overview.md)
+>
+> ## Purpose
+>
+> The mounted-surface cases for `ICR-R26@v1`'s record labels: the **real** `ReviewSurface` over the
+> **real** review client, with `fetch` stubbed and the catalogue hook explicitly mocked. Every request is built by the shipped client and
+> every response travels the way the browser's does — status, body, the shared decode, the component tree
+> — and no assertion reads a prop the test itself passed.
+>
+> One surviving direct-record isolation case mounts the selected invariant over a synthetic labelled payload with the real `ReviewSurface` and client, replacing fetch and the catalogue hook. It asserts exactly one central direct assessment with its own finding, disposition, rationale and stale binding, and no sibling finding anywhere. The earlier context/count/history/pre-label cases are retired under the recorded ruling, not restored.
+>
+> The surface's retained direct assessments: the selected subject's own assessment treatment renders in pane 3 without borrowing a sibling's judgment. One synthetic labelled fixture exercises this through the real surface and client with only fetch and the catalogue replaced; dataset context, count, history and pre-selection probes are retired, not rebuilt.
+> ## Code Commentary
+>
+> ### Logic
+>
+> The comparison-focused cases isolate the shared catalogue hook so its additional request cannot consume a comparison fixture. The ordinary-entry catalogue/comparison interaction is covered separately by ReviewSurface.navigation.test.tsx. Assertions follow the compact labels, central display controls and changed-region default without weakening the existing record, paging or refusal contracts.
+>
+> `directLabel` names the selected invariant and retained revision. `payload()` builds its direct and sibling assessments and the selected revision; `reviewed` wraps that synthetic payload and `response` supplies an HTTP-shaped fetch reply. There is no current boolean labelled/unlabelled payload pair or historical-label fixture.
+>
+> **Historical pre-R86 card account — superseded, not current assertion evidence.**
+>
+> > **The four cases, one property each:**
+> >
+> > 1. `"mounts each record's own treatment and the true subject of labelled context"` (`:238-265`) — three
+> >    assessment rows mount, the direct one prints `applicability: direct (invariant <SUBJECT>)`, the
+> >    label also travels on the evidence pane's copy of the same record (so one selection cannot be
+> >    displayed with two treatments in two panes), the context row states the sibling's **true subject**
+> >    and the recorded relationship that reached it (`realization 0cca9e84 at src/batch.py`), and the
+> >    sibling's finding text is **absent** from the document — the contamination this requirement prevents.
+> > 2. `"states the six-way counts beside the collections it filtered"` (`:267-281`) — the
+> >    `review-applicability` block prints `supplied assessments: 4` with `direct 1`, `historical 1`,
+> >    `context 1` and `not displayed 1`, so the filtering is visible as arithmetic on the page.
+> > 3. `"labels a previous generation's record as historical rather than as the current result"`
+> >    (`:283-297`) — a `[data-applicability="historical"]` node exists, names the selected subject and
+> >    carries the old candidate tree id it examined.
+> > 4. `"still renders a payload published before the labels existed"` (`:299-310`) — the unlabelled body
+> >    renders its two assessment rows and mounts **no** context block and **no** counts block, so a client
+> >    released before this vocabulary still works against a server that sends it.
+>
+> ### Conventions
+>
+> Cleanup restores stubbed globals. The retained case queries `review-center-assessment`, `data-binding` and its direct applicability treatment in the central member view, then checks that the sibling finding is absent from the whole document.
+>
+> ### Invariants And Boundaries
+>
+> - The current case establishes direct-record isolation in the centre only; it does not establish the earlier two-pane treatment, six-way rendered partition, historical-label or pre-label compatibility subjects.
+> - This is synthetic-payload jsdom evidence, not a fresh backend or browser qualification.
+>
+> ### Todos
+>
+> None recorded.
+>
+> The fixture labels one direct assessment for the selected invariant with a retained revision selection, plus a sibling assessment about another subject. Mounting the invariant subject shows exactly one centre assessment with its own finding, disposition, rationale and stale binding beside a direct applicability treatment, while the sibling finding appears nowhere. The catalogue mock isolates this to the comparison path.
+> ## Evidence
+>
+> ### Docs References
+>
+> No domain documentation source is configured for this repository (`system/sources.md` carries no
+> `Domain Documentation` entries). The statements below are grounded in repository source only.
+>
+> No configured domain documentation could be checked.
+>
+> ### Repo-Internal References
+>
+> **Historical pre-R86 card account — superseded, not current assertion evidence.**
+>
+> > - **The two label fixtures the cases mount, each naming its own subject and references.** (historical reference 1)
+> > - **The two real wire bodies: one with the labels, context rows and counts, one without any of them.** (historical reference 2)
+> > - **The envelope and the real `Response` the client decodes.** (historical reference 3)
+> > - **The one mount helper, and the cleanup that keeps no global across a case.** (historical reference 4)
+> > - **The F09 client case: the treatment and the true subject are mounted, and the sibling's finding is nowhere in the document.** (historical reference 5)
+> > - **The counts case: the six-way partition is rendered beside the collections it filtered.** (historical reference 6)
+> > - **The historical case: a previous generation is labelled and never reads as the current result.** (historical reference 7)
+> > - **The additive-compatibility case: a body published before the labels existed still renders.** (historical reference 8)
+> > - **The client vocabulary these cases mount, and the fields the surface gained.** (historical reference 9)
+> > - **The rendered labels themselves: the per-record note, the context list and the counts block.** (historical reference 10)
+> > - **The two call sites that mount them, on the knowledge pane and on the evidence pane.** (historical reference 11)
+> > - **The server-side case this client mirrors: a sibling's record is context and never the selected subject's.** (historical reference 12)
+>
+> ### Cross-Repo References
+>
+> No cross-repository behavior is implemented in this module. It mounts the dashboard's own surface over
+> its own origin.
+>
+> No meaningful cross-repo references found.
+> - Direct and sibling labelled assessments of the fixture (historical reference 13)
+> - Synthetic comparison payload with retained revision selection (historical reference 14)
+> - Admitted review wrapper for served answers (historical reference 15)
+
+</details>

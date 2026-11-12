@@ -1,0 +1,126 @@
+{
+  "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/acp_providers.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0446dd3579fe4f1a02575958621c9b3ea7676610",
+        "content": "sha256:d84fef2cbab992c590657650e8f5666964187e8b07e246f5988bdd4d0f7efef5",
+        "locator": {
+          "kind": "symbol",
+          "name": "createAcpProviderSet"
+        }
+      },
+      "id": "RLZ-900CN6",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "L203-INV-1ZKP4R-r5",
+        "leaf": "260928-MIK-L203"
+      },
+      "rationale": "This set reads the installed host's provider classes, resolves each verdict, keeps drop-outs across restarts and writes the one file both the launch and the turn-end decision read, so the obligation's provider facts survive a restart without a copied list.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "0446dd3579fe4f1a02575958621c9b3ea7676610",
+        "content": "sha256:d84fef2cbab992c590657650e8f5666964187e8b07e246f5988bdd4d0f7efef5",
+        "locator": {
+          "kind": "symbol",
+          "name": "createAcpProviderSet"
+        }
+      },
+      "id": "RLZ-JJCDGT",
+      "invariant": "INV-G841F9",
+      "origin": {
+        "handoffEntry": "MIK-R216@v1",
+        "leaf": "260928-MIK-L203"
+      },
+      "rationale": "This set is the one place the ACP verdict is read from the installed Paseo and published, with drop-outs surviving restarts, so the set follows Paseo without copied lists.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The set is the one place the host's classes are read, resolved, dropped out and published, so the verdict is a decision and not a copied list.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0446dd3579fe4f1a02575958621c9b3ea7676610",
+            "content": "sha256:d84fef2cbab992c590657650e8f5666964187e8b07e246f5988bdd4d0f7efef5",
+            "locator": {
+              "kind": "symbol",
+              "name": "createAcpProviderSet"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The installation root comes from the entry path alone, and the absence of `@getpaseo` makes nothing readable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0446dd3579fe4f1a02575958621c9b3ea7676610",
+            "content": "sha256:3c5e0f14e3f46347eb6c8a9ba534f95e73bb51ed1463124219e5454b04b93883",
+            "locator": {
+              "kind": "symbol",
+              "name": "paseoRootOf"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The resolution order — built-in, configured, extends ACP, extends a built-in, unread — with a reason per verdict.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0446dd3579fe4f1a02575958621c9b3ea7676610",
+            "content": "sha256:4309f6e040232912a9114d976015a9f067b788d3956d7d954a524a299ac33cc6",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolveProvider"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A helper's own provider report drops that provider out, and the first report is the one kept.\n\nAnchor: `noteNativeProvider`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0446dd3579fe4f1a02575958621c9b3ea7676610",
+            "content": "sha256:5cf9f5ace41696dd40bae3bde22aea7b92e8d15c42f452ca4bcf3d7bb7644bda",
+            "locator": {
+              "end": 528,
+              "kind": "line_range",
+              "start": 524
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The document's body and its staging-then-rename write.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0446dd3579fe4f1a02575958621c9b3ea7676610",
+            "content": "sha256:54c6aa79836ad42d0a037adba2dafd6728d844b265cde5f3c53ec28d5da426a6",
+            "locator": {
+              "end": 559,
+              "kind": "line_range",
+              "start": 552
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

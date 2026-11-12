@@ -1,0 +1,235 @@
+{
+  "path": "mcp/tests/test_knowledge_paging.py",
+  "realizes": [],
+  "references": {
+    "13": {
+      "note": "`test_a_forty_member_family_pages_from_read_ar_files_through_knowledge_read_exactly_once` supplies the current fixture or assertion described above.\n\nAnchor: `test_a_forty_member_family_pages_from_read_ar_files_through_knowledge_read_exactly_once`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10e509c9a1f107e5fd47ad23a0aa985becb4f0d8",
+            "content": "sha256:f2f3488328213746b59dbe9a3b42ce4958c9ed180a8d0ce30eb6923ded697605",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "`test_a_row_larger_than_the_threshold_is_returned_alone_and_flagged` supplies the current fixture or assertion described above.\n\nAnchor: `test_a_row_larger_than_the_threshold_is_returned_alone_and_flagged`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10e509c9a1f107e5fd47ad23a0aa985becb4f0d8",
+            "content": "sha256:f2f3488328213746b59dbe9a3b42ce4958c9ed180a8d0ce30eb6923ded697605",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "`test_the_whole_knowledge_block_of_several_seeds_stays_within_the_threshold` supplies the current fixture or assertion described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10e509c9a1f107e5fd47ad23a0aa985becb4f0d8",
+            "content": "sha256:2e791477c5199f2490f0f9284663d749d122e7b5408f311b36146e4beca90cae",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_whole_knowledge_block_of_several_seeds_stays_within_the_threshold"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "`test_a_view_walk_is_bound_to_its_named_code_tree` supplies the current fixture or assertion described above.\n\nAnchor: `test_a_view_walk_is_bound_to_its_named_code_tree`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10e509c9a1f107e5fd47ad23a0aa985becb4f0d8",
+            "content": "sha256:f2f3488328213746b59dbe9a3b42ce4958c9ed180a8d0ce30eb6923ded697605",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "Seeded, bounded randomized trials.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10e509c9a1f107e5fd47ad23a0aa985becb4f0d8",
+            "content": "sha256:2301bef3491f4515f105477c32ae5f557359e2a381e2e6f8f28f80563998a1c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "RANDOMIZED_TRIALS"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "Forty-member direct knowledge_read walk, exactly once; the historical test name does not describe its current first call.\n\nAnchor: `test_a_forty_member_family_pages_from_read_ar_files_through_knowledge_read_exactly_once`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10e509c9a1f107e5fd47ad23a0aa985becb4f0d8",
+            "content": "sha256:f2f3488328213746b59dbe9a3b42ce4958c9ed180a8d0ce30eb6923ded697605",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "Threshold adherence over randomized families.\n\nAnchor: `test_pages_stay_within_the_threshold_over_randomized_families`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10e509c9a1f107e5fd47ad23a0aa985becb4f0d8",
+            "content": "sha256:f2f3488328213746b59dbe9a3b42ce4958c9ed180a8d0ce30eb6923ded697605",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "Large prose is not carried in projected rows and produces no oversized-row flag.\n\nAnchor: `test_a_row_larger_than_the_threshold_is_returned_alone_and_flagged`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10e509c9a1f107e5fd47ad23a0aa985becb4f0d8",
+            "content": "sha256:f2f3488328213746b59dbe9a3b42ce4958c9ed180a8d0ce30eb6923ded697605",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "Binding refusals with no page.\n\nAnchor: `test_a_continuation_whose_binding_does_not_hold_is_refused_with_no_page`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10e509c9a1f107e5fd47ad23a0aa985becb4f0d8",
+            "content": "sha256:f2f3488328213746b59dbe9a3b42ce4958c9ed180a8d0ce30eb6923ded697605",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "The whole block within the threshold, 5 and 16 seeds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10e509c9a1f107e5fd47ad23a0aa985becb4f0d8",
+            "content": "sha256:2e791477c5199f2490f0f9284663d749d122e7b5408f311b36146e4beca90cae",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_whole_knowledge_block_of_several_seeds_stays_within_the_threshold"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "A view walk keeps its ordering.\n\nAnchor: `test_a_view_walk_resumes_in_its_own_ordering_and_refuses_another`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10e509c9a1f107e5fd47ad23a0aa985becb4f0d8",
+            "content": "sha256:f2f3488328213746b59dbe9a3b42ce4958c9ed180a8d0ce30eb6923ded697605",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "Resumed pages stay at page 1's code tree: a leaf walk's entries are current at T1 and stale at T2, and a named view walk keeps its tree.\n\nAnchor: `test_a_resumed_leaf_walk_observes_entries_at_page_one_code_tree` `test_a_view_walk_is_bound_to_its_named_code_tree`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10e509c9a1f107e5fd47ad23a0aa985becb4f0d8",
+            "content": "sha256:f2f3488328213746b59dbe9a3b42ce4958c9ed180a8d0ce30eb6923ded697605",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "The leaf-row helpers: the counted rows, and the key that identifies each row once.\n\nAnchor: `_counted` `_leaf_key`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10e509c9a1f107e5fd47ad23a0aa985becb4f0d8",
+            "content": "sha256:f2f3488328213746b59dbe9a3b42ce4958c9ed180a8d0ce30eb6923ded697605",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "26": {
+      "note": "An empty ordering is refused on every path.\n\nAnchor: `test_an_empty_ordering_is_refused_not_defaulted_on_every_path`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10e509c9a1f107e5fd47ad23a0aa985becb4f0d8",
+            "content": "sha256:f2f3488328213746b59dbe9a3b42ce4958c9ed180a8d0ce30eb6923ded697605",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "27": {
+      "note": "Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10e509c9a1f107e5fd47ad23a0aa985becb4f0d8",
+            "content": "sha256:f2f3488328213746b59dbe9a3b42ce4958c9ed180a8d0ce30eb6923ded697605",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

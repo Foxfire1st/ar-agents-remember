@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The Reviewer role text and the Manager and Architect hand-off sentences each carried catalogs, so one statement keeps the Reviewer's own table the only source."
+  },
+  "applicability": "Every Reviewer brief and the Reviewer's choice of which review catalogs apply.",
+  "conditions": [
+    "The Reviewer derives its catalogs from the review type it is running, through its own table."
+  ],
+  "exclusions": [
+    "A catalog the brief names, which changes nothing."
+  ],
+  "id": "INV-BTXVZP",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/260928-MIK-L60-evidence/freeze2/partE (texts before and after); audience pin tests renewed"
+      ],
+      "path": "l60-plan4"
+    },
+    "handoffEntry": "MIK-R60@v11.5",
+    "leaf": "260928-MIK-L60",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Reviewer briefs carry no catalogs: the ar:needs and ar:gives markers and the intake sentences drop catalogs, and the Reviewer binds catalogs from its own review-type table alone; a brief that names catalogs changes nothing.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,177 @@
+{
+  "path": "dashboard/src/panels/lifecycle-list/waiting.test.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "1507226d88986bffb8a8561058f7ab421d29ee9d",
+        "content": "sha256:253ececa6ec6f4b64383457071a79a109432bdf1af6a0f89959ebf2dacd1871f",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-XXR9QP",
+      "invariant": "INV-3WWG5K",
+      "origin": {
+        "handoffEntry": "MIK-R60@v9.7",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Proves the views show the wait.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "10": {
+      "note": "The served seat the cases use is a worker waiting for background with its start, its check due and its own words.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1507226d88986bffb8a8561058f7ab421d29ee9d",
+            "content": "sha256:ae4ba882a8b0c73537d3c8d8819f5c5f86cc06009fc4a73099c59b120c6e2a21",
+            "locator": {
+              "kind": "symbol",
+              "name": "SEAT"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "At a fixed clock the row and the page read the waiting word, the row word's title and the hover carry the seat line.\n\nAnchor: `rowHover`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1507226d88986bffb8a8561058f7ab421d29ee9d",
+            "content": "sha256:5fbc6406e0af0f8a25d6c8e616df3ca598d98809e4a50c443d5e49b00563bbcd",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 41
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "A seat that declared both waits reads waiting for subagents and background.\n\nAnchor: `taskStatusKey`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1507226d88986bffb8a8561058f7ab421d29ee9d",
+            "content": "sha256:4898459a4c9e78ed680ea9a3b9abd0f7d754d0f2f0dad3b8ae851906901ee174",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 70
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "BY PHASE groups the waiting task under waiting and the header counts it as waiting.\n\nAnchor: `CockpitShell`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1507226d88986bffb8a8561058f7ab421d29ee9d",
+            "content": "sha256:2d5c1bcc453c6cb7525802d60a0755c9fb7aa88701f3e7bbcf7d5d0c330fa77d",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 78
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The header line has no waiting count while no task waits.\n\nAnchor: `task-counts`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1507226d88986bffb8a8561058f7ab421d29ee9d",
+            "content": "sha256:3f9b682c86cdfc2aeb2af36b8becb8cca3bfecb5baf7836cdf4a8f12249fb41e",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 91
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The word joins the served wait names with and.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef873d0fce95d4c8be313f68c176497834eb29d2",
+            "content": "sha256:829cb56b11978fe6f13d768b08b527b44fac939c5b99f6c80045a1739e41eb7a",
+            "locator": {
+              "kind": "symbol",
+              "name": "waitWhat"
+            },
+            "path": "dashboard/src/panels/detail-panel/waitWords.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The hover line is role, agent, what it waits for since when, the check due and the seat's words.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef873d0fce95d4c8be313f68c176497834eb29d2",
+            "content": "sha256:4064589400818a173ac473a762571e3a8b05ed09369c87dba09d877fba6bde1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "waitLines"
+            },
+            "path": "dashboard/src/panels/detail-panel/waitWords.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "BY PHASE orders the waiting group between works and paused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e90aae0d64e762edaf39473dd73648709dc17544",
+            "content": "sha256:7dcd50508c03676269adb07c8128e5f72fe9878a8f833394d19ea13675e02bf1",
+            "locator": {
+              "kind": "symbol",
+              "name": "PHASE_ORDER"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The header omits a waiting count of zero and drops it while host activity is unknown.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea395f2fb601961432e7256188d45952c08bfc19",
+            "content": "sha256:366478d781bd4ed76ea6a3cf189357ee9fe3dbd9828ebe9c7866421d93b1f4f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "shown"
+            },
+            "path": "dashboard/src/cockpit/topBarCounts.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

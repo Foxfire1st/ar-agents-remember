@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "New reviewer obligation from MIK-R86@v1 (packet a78d9ae3, Architect qualification 2026-10-08 11:18:45 UTC); implemented on the W03 successor tree 95f61633, whole-primary CODE PASS verdict 3663bf07. Evidence: SubjectReview.test.tsx; ReviewSurface.wordDiff.test.tsx; disclosureContract"
+  },
+  "applicability": "Reviewer-needed subject content and family-context presentation in the current change-set reading page.",
+  "conditions": [
+    "The selected subject's bound statement or guarantee, current judgment facts and the page's changed blocks are drawn in the reading column rather than inside tree rows.",
+    "An abnormal family read is named by the subject meta-line state chip; an owner-published roster continuation is offered there when one is available.",
+    "Technical details contains the selected answer's complete family-context detail, limitations, family-side selection statements and revision identifiers as provenance.",
+    "Pending, failed or refused selected reads remain labelled for their requested subject and supply the current owner's recovery action; they never display another subject's answer under that heading."
+  ],
+  "exclusions": [
+    "Complete raw family-context sentences and record identities need not be duplicated outside Technical details.",
+    "The tree carries only its admitted one-line names, change facts and active-sort reason; it is not the guarantee, statement or code reading surface.",
+    "Counted unchanged/not-comparable location groups and unchanged code stretches retain their separately admitted folds."
+  ],
+  "id": "INV-777108",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "SubjectReview.test.tsx; ReviewSurface.wordDiff.test.tsx; disclosureContract"
+      ],
+      "path": "notes/reports/l86-curator-W03/handoff-phase1.json"
+    },
+    "handoffEntry": "MIK-R86@v1 rule 10",
+    "leaf": "260928-MIK-L86",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "The reading column keeps each subject's guarantee or statement, changed blocks, recorded meaning effects and required judgment facts visible. Its meta line names abnormal family context; the full family-context sentences remain available as provenance in Technical details.",
+  "status": "proposed",
+  "supersedes": []
+}

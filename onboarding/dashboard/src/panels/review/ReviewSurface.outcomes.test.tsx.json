@@ -1,0 +1,75 @@
+{
+  "path": "dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx",
+  "realizes": [],
+  "references": {
+    "28": {
+      "note": "Real mounted surface/client/transport with explicit empty-catalogue mock and recorded/reduced fixture boundaries.\n\nAnchor: \"// test itself passed: every case asserts what the rendered DOM contains.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e0628b844fe9391b3f3e0ed8e0ce439c1b526e90",
+            "content": "sha256:0ba46ce2b5b1a06ba8f95e74bc6f6b20f76f2022c34c0e6a3964f3f138c9fe36",
+            "locator": {
+              "end": 254,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "29": {
+      "note": "New-target failure and sectionless answer/staleness remain labelled and visible at the reading-column head.\n\nAnchor: \"it(\"never renders a previous target's comparison under a new target's header\", async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e0628b844fe9391b3f3e0ed8e0ce439c1b526e90",
+            "content": "sha256:fb2e454c5a7f06a170ba1276d2ee8de43c20926084ecf680099aecdb40320f18",
+            "locator": {
+              "end": 476,
+              "kind": "line_range",
+              "start": 418
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "30": {
+      "note": "Known-empty and retained real-generation region claims remain mutually coherent.\n\nAnchor: \"// per target); the region is where the rule lives, so the region is where it is pinned.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e0628b844fe9391b3f3e0ed8e0ce439c1b526e90",
+            "content": "sha256:9c8230dcd819e6bff2f962db85319e03d626e8394073820f8905c8df8e435951",
+            "locator": {
+              "end": 540,
+              "kind": "line_range",
+              "start": 478
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "31": {
+      "note": "Exact intent-review URL counts, target-bound carried identity, refresh/race isolation and not-measured boundary.\n\nAnchor: \"const isReviewRead = (url: unknown) => new URL(String(url), \"http://localhost\").pathname === \"/api/review/intent\";\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e0628b844fe9391b3f3e0ed8e0ce439c1b526e90",
+            "content": "sha256:6fd41bcdbb622624e263f631125f0435a3bf1581e42a88f8238f5fd13b45cc92",
+            "locator": {
+              "end": 948,
+              "kind": "line_range",
+              "start": 582
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

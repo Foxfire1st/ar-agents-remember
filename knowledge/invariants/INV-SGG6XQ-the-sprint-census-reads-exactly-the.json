@@ -1,0 +1,40 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The rule is realized in the census that builds the populations (sprint_rows.py) and in the retirement route that refuses on them (task_retirement_records.py), and the census-scope and caller cases prove it; without the rule a deep copy can command or block a master again."
+  },
+  "applicability": "Every sprint census computed from a repository's task root for a master, and every caller's use of its commanding, recording and unreadable results.",
+  "conditions": [
+    "A task document is a task.json exactly one folder below the repository's task root.",
+    "0_archive, enclosures and the addressed master's own document are excluded.",
+    "A task folder that is a symbolic link is skipped, so one document is not counted twice through an alias.",
+    "A direct task folder that cannot be looked into contributes its task.json as unreadable.",
+    "Finalization and the master sync stop only on an unreadable direct document whose text names the master; retirement and sprint archival stop on every unreadable direct document; the archive-skip fact reads only the commanding list."
+  ],
+  "exclusions": [
+    "A task.json deeper inside a task folder (notes, reports, role reports, evidence, mirrors).",
+    "A task.json directly at the task root, which is not a folder document.",
+    "Report collection, the publishing task's packages and the names of their copies.",
+    "Any other search of the task tree."
+  ],
+  "id": "INV-SGG6XQ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Reviewer R1 baseline code PASS on change 4a94f3b1: 8 new/changed cases, 233 passed/21 subtests and 52 retirement/linkage cases re-run green, repro REFUSED-before / PROCEEDS-after. Cases: mcp/tests/test_task_document.py::SprintCensusDocumentScopeTests::test_deep_files_are_neither_read_nor_counted_nor_listed and ::test_a_symlinked_task_folder_is_not_another_task_document; mcp/tests/test_untyped_sprint_rows.py::test_a_deep_sprint_copy_does_not_refuse_the_masters_own_write, ::test_finalization_ignores_a_deep_sprint_copy and ::test_a_second_direct_sprint_document_still_refuses_the_masters_own_write; mcp/tests/test_master_retirement_refusals.py::test_a_deep_copy_that_cannot_be_read_does_not_stop_a_retirement and ::test_a_direct_task_document_with_a_malformed_list_field_refuses_and_is_named."
+      ],
+      "path": "l200-curator-handoff.json"
+    },
+    "handoffEntry": "MIK-R209@v1",
+    "leaf": "260928-MIK-L200",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The sprint census reads exactly the direct task documents of the repository's task root — `<task root>/<folder>/task.json` — excludes `0_archive`, `enclosures` and the master's own document, and skips a symlinked task folder; a `task.json` deeper inside a task folder is never read, counted or listed, and each caller keeps its own policy for the direct documents it cannot read.",
+  "status": "proposed",
+  "supersedes": []
+}

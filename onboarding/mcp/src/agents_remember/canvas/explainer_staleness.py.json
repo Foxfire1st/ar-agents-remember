@@ -1,0 +1,128 @@
+{
+  "path": "mcp/src/agents_remember/canvas/explainer_staleness.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e8d70a583afb47057679f7c836cf3ba3ba14b582",
+        "content": "sha256:55c590c62bdfc44a37b73cbe399f377678627f0907dfebb374f472e091960663",
+        "locator": {
+          "kind": "symbol",
+          "name": "part_staleness"
+        }
+      },
+      "id": "RLZ-KX04VM",
+      "invariant": "INV-ZAW3HJ",
+      "origin": {
+        "handoffEntry": "L183-A-5",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The per-part answer: which parts are stale, and the trusted reason each one carries.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The locator kind alone decides whether a fingerprint survives a line shift\n\nAnchor: `def keeps_fingerprint_across_a_line_shift(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e8d70a583afb47057679f7c836cf3ba3ba14b582",
+            "content": "sha256:56af4febb4b80fdd82cd2cfdb3879d5bd26e35458e49b74ed1a65fa8d99bedd3",
+            "locator": {
+              "end": 137,
+              "kind": "line_range",
+              "start": 124
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A fingerprint carries either a value or the reason it has none, never both and never neither\n\nAnchor: `class BlockFingerprint`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e8d70a583afb47057679f7c836cf3ba3ba14b582",
+            "content": "sha256:ca65ef12ab27f45152202de755ddacaa8a9db0cd0a81eee8cb985b688e2d87c5",
+            "locator": {
+              "end": 606,
+              "kind": "line_range",
+              "start": 579
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "An unknown basis kind, or a claim with no basis, is stale whenever any side of the comparison moved\n\nAnchor: `def basis_stale(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e8d70a583afb47057679f7c836cf3ba3ba14b582",
+            "content": "sha256:9fd08c0a3f6fe1a65f905ab762c9f00e6d4903abf638fcd844abed56251fa737",
+            "locator": {
+              "end": 1149,
+              "kind": "line_range",
+              "start": 1132
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A revision without a usable part map is stale as a whole, so no part is named that does not hold the claim\n\nAnchor: `def part_staleness(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e8d70a583afb47057679f7c836cf3ba3ba14b582",
+            "content": "sha256:55c590c62bdfc44a37b73cbe399f377678627f0907dfebb374f472e091960663",
+            "locator": {
+              "end": 1296,
+              "kind": "line_range",
+              "start": 1254
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A grade whose block changed or cannot be fingerprinted is stale, with that reason\n\nAnchor: `def grade_staleness(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e8d70a583afb47057679f7c836cf3ba3ba14b582",
+            "content": "sha256:c00e6385964923822d7e5cb234ccfbe45d09f30d399bcdcc51f09a7aa3dbfcfa",
+            "locator": {
+              "end": 1390,
+              "kind": "line_range",
+              "start": 1382
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Subjects keep their order; inside one, blocks sort by grade with ties kept and ungraded last\n\nAnchor: `def judgment_order(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e8d70a583afb47057679f7c836cf3ba3ba14b582",
+            "content": "sha256:057fb8547cf91e03236a2bf1855871aeab4de64159217cecec1156039075f635",
+            "locator": {
+              "end": 1624,
+              "kind": "line_range",
+              "start": 1608
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

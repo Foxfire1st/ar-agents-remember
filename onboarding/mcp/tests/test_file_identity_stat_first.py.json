@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_file_identity_stat_first.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "An unchanged file is read once, and any moved stat reads it again, witnessed by test_an_unchanged_file_is_read_once_and_any_moved_stat_reads_it_again",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79ed7bd66280335b8fb62d6e8f45c6c952d20b14",
+            "content": "sha256:6eee682c5708e89c7b428ac45d0248db4148495193852e2c2a53a6ee3afefe6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unchanged_file_is_read_once_and_any_moved_stat_reads_it_again"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

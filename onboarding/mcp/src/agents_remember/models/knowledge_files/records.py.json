@@ -1,0 +1,352 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge_files/records.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "66f8f78abd64e53edd4c0ca7b61e6ede5b7bc299",
+        "content": "sha256:4689cb500cf9dbeb916fa3ed8dad218b9b306f164725a0d66320da9320a0e2a3",
+        "locator": {
+          "kind": "symbol",
+          "name": "WeaknessRecord"
+        }
+      },
+      "id": "RLZ-RP1GHX",
+      "invariant": "INV-ZEV1G9",
+      "origin": {
+        "handoffEntry": "L118-W1",
+        "leaf": "260928-MIK-L118"
+      },
+      "rationale": "The weakness schema is defined here: the closed kind literal, the one-sentence statement, the anchor that must name a file, the seer, the open-or-closed state and the closure that a closed record must carry.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "66f8f78abd64e53edd4c0ca7b61e6ede5b7bc299",
+        "content": "sha256:7dd8741ced510f2612b5bd82d4383f62d49dcc63766118d845fbb74e5dd8e4ee",
+        "locator": {
+          "kind": "symbol",
+          "name": "DependentRecord"
+        }
+      },
+      "id": "RLZ-WP85HN",
+      "invariant": "INV-ZEV1G9",
+      "origin": {
+        "handoffEntry": "L118-W1",
+        "leaf": "260928-MIK-L118"
+      },
+      "rationale": "The dependent schema is defined here: one tracked document, at least one link of the three kinds, no repeated link, and the confirmation that names the task, role and commit it was taken at.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The per-kind relation vocabulary.\n\nAnchor: `RELATIONS_BY_KIND`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66f8f78abd64e53edd4c0ca7b61e6ede5b7bc299",
+            "content": "sha256:b51180cbaba8ce9fa1b0ab758d2abbaffa1f7f8c674904f0cda2e8259e354f87",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "66f8f78abd64e53edd4c0ca7b61e6ede5b7bc299",
+            "content": "sha256:07f5c8b787fdff65b3fba9967c05a07727bde68039063217217f3f85ee7471f9",
+            "locator": {
+              "kind": "symbol",
+              "name": "RELATIONS_BY_KIND"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Prefix and relation checks shared by every record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66f8f78abd64e53edd4c0ca7b61e6ede5b7bc299",
+            "content": "sha256:0cef87532e5cc6541fbb7d1652dc2a36b9f29f4378a98d30a728b27ed80abf2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Record"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Revision and status on incident and facet records.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66f8f78abd64e53edd4c0ca7b61e6ede5b7bc299",
+            "content": "sha256:f23f5071242b88c127aeec95593f1b682530e404cf118fb4f4a90e221986c5c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_FacetRecord"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The family record: members and routes, a route being a repository directory or `.`.\n\nAnchor: `RoutePath`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66f8f78abd64e53edd4c0ca7b61e6ede5b7bc299",
+            "content": "sha256:f530aab27ac6b86d596a74cab614bfa984216b53b0cefdb336c79589837c6341",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyRecord"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "66f8f78abd64e53edd4c0ca7b61e6ede5b7bc299",
+            "content": "sha256:314d27c3b180d5b12b266a4638c420f9d948c3aaef7ab6dccf9e787e7f06c0b2",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 55
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "66f8f78abd64e53edd4c0ca7b61e6ede5b7bc299",
+            "content": "sha256:efd799ab5acc74501035383a431dbf1636073e15bfcb93fb7fab31e8af1bd1b8",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 50
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A family route is a repository path or the root route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:eb5df9ab7ae8e5abfc55ac2de0582778f39aeb2501ff8d4ba0cf8aa4d255fe86",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_family_route_is_a_repository_path_or_the_root_route"
+            },
+            "path": "mcp/tests/test_knowledge_family_routes.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:bfd9fbd01fa7d4862b964a6d3801cdfd5a5902e569236eb0120dc0ed7f5ff9b0",
+            "locator": {
+              "end": 326,
+              "kind": "line_range",
+              "start": 320
+            },
+            "path": "mcp/tests/test_knowledge_family_routes.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:fc856e8bb98681b86e48c955807b0a040f5f1bdcf626ec61ced69f938bd1eddf",
+            "locator": {
+              "end": 324,
+              "kind": "line_range",
+              "start": 318
+            },
+            "path": "mcp/tests/test_knowledge_family_routes.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:0c8e60d1d8aa00fd5145ec67d858f6f5d4c8b3f92d639936d073c7b24256ffc1",
+            "locator": {
+              "end": 284,
+              "kind": "line_range",
+              "start": 278
+            },
+            "path": "mcp/tests/test_knowledge_family_routes.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The invariant record: no second-owner fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66f8f78abd64e53edd4c0ca7b61e6ede5b7bc299",
+            "content": "sha256:3fe24bc68fbb9b21dd3e18fdae27517045eaa3918df9bd748d8abf627a3125b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "InvariantRecord"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Incident recovery is required once not unresolved.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66f8f78abd64e53edd4c0ca7b61e6ede5b7bc299",
+            "content": "sha256:11ebdb9d1da9ffc8e779a0461ed16786920c2c1c83a83905b7d42c3a97838ecf",
+            "locator": {
+              "kind": "symbol",
+              "name": "IncidentRecord"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The kind → model table.\n\nAnchor: `RECORD_MODELS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66f8f78abd64e53edd4c0ca7b61e6ede5b7bc299",
+            "content": "sha256:b51180cbaba8ce9fa1b0ab758d2abbaffa1f7f8c674904f0cda2e8259e354f87",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "66f8f78abd64e53edd4c0ca7b61e6ede5b7bc299",
+            "content": "sha256:252f543ea4ffa1f120e1a718e8c5e9bfdf8b1e287611fb97bc16e0bd6f091aea",
+            "locator": {
+              "kind": "symbol",
+              "name": "RECORD_MODELS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Text facet records declare their own fields, with current kind parsing and malformed-field checks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66f8f78abd64e53edd4c0ca7b61e6ede5b7bc299",
+            "content": "sha256:da6c7bcb6ed994c4fa14ff47680d68521b4472c82ea1335c080da6553f4eb2f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "AssumptionRecord"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "66f8f78abd64e53edd4c0ca7b61e6ede5b7bc299",
+            "content": "sha256:b9f227e2f4d7a4d53d019088b912edc7e9fc134b175fe24513183d6a51114531",
+            "locator": {
+              "kind": "symbol",
+              "name": "LimitationRecord"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "66f8f78abd64e53edd4c0ca7b61e6ede5b7bc299",
+            "content": "sha256:42738d783a12321715ddb2f9bfc7b3e86c4f7277e3a21c2fed326e122fc684cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "FailureModeRecord"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "66f8f78abd64e53edd4c0ca7b61e6ede5b7bc299",
+            "content": "sha256:d9fb7043f9042cce039907bebc0a019b0adbf6032ef65cb12118def0831155c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "ScenarioRecord"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "66f8f78abd64e53edd4c0ca7b61e6ede5b7bc299",
+            "content": "sha256:ad599edb38f37370164d80494f76523f04aabac37c8e0727a5ca80553f99c6c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiagnosticRecord"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "66f8f78abd64e53edd4c0ca7b61e6ede5b7bc299",
+            "content": "sha256:080c331dee719b9827d4cc64dae2e1af4a979f61db276393bfeee4a0804bb272",
+            "locator": {
+              "kind": "symbol",
+              "name": "TermRecord"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9e3e6783d7e5ecab9b659fb3428c64b31ca57085",
+            "content": "sha256:0ab5773b79ede7b51b8996691c2527befe0bf4c7668a80b1e02cddedc31cd88c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_record_kind_parses_round_trips_and_refuses_a_foreign_prefix"
+            },
+            "path": "mcp/tests/test_knowledge_file_formats.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9e3e6783d7e5ecab9b659fb3428c64b31ca57085",
+            "content": "sha256:29083ed2e21e9385f7abc772c5b15b1a4d299107f27779b7054593f2eb01ce4b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_records_refuse_second_owners_and_malformed_record_fields"
+            },
+            "path": "mcp/tests/test_knowledge_file_formats.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

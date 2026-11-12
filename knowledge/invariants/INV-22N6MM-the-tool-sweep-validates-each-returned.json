@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The sweep vocabulary test judges every tool's whole result and the missing-file control fails a fileless answer; both ran green on the final candidate."
+  },
+  "applicability": "Every public-tool sweep call that returns through the world's one reader.",
+  "conditions": [
+    "The delivered answer names its whole-result file in `log`.",
+    "The file reads as this call's result."
+  ],
+  "exclusions": [
+    "Timeout outcomes, recorded on the tool without judging.",
+    "Calls that raise instead of returning (the error arm)."
+  ],
+  "id": "INV-22N6MM",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "EntryPointProbeTests vocabulary test; ChokePointControlTests missing-file control; D55 sweep+controls whole plus valid-progression integration on bytes e6f32045",
+        "CODE PASS verdict notes/reports/role-launch/260928-MIK-L130-reviewer-b8c837d4-b77a-4233-821a-8b7ee65e9624.code-r3.md; sweep+controls whole on passed bytes: 24 passed, 157 subtests passed, exit 0 (PID 2433640); raw /var/tmp/mik-run3/L130/final-w03-20261010T151202/sweep-controls.stdout; proof freeze6/proof-evidence.md"
+      ],
+      "path": "l130-handoff-list.json"
+    },
+    "handoffEntry": "MIK-R130@v1 rules 1+3",
+    "leaf": "260928-MIK-L130",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The tool sweep validates each returned call's whole result, read back from the file the delivered answer names in `log`, under the tool's registered model; an answer that names no file, or whose file cannot be read as this call's result, is unvalidatable with the situation named, and the delivered answer is never taken for the whole result.",
+  "status": "proposed",
+  "supersedes": []
+}

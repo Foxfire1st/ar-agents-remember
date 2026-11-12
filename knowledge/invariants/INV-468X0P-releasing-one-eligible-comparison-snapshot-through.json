@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Two proving tests pin the tracked-sibling refusal and the truthful eligible release; without them a release could silently take a tracked file."
+  },
+  "applicability": "Comparison-snapshot generation release through the generation owner.",
+  "conditions": [
+    "The generation is wholly eligible apart from a tracked sibling."
+  ],
+  "exclusions": [
+    "Ordinary unlinking of ineligible snapshots."
+  ],
+  "id": "INV-468X0P",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_knowledge_copy_cleanup.py::test_a_tracked_sibling_refuses_the_whole_generation_release; ::test_a_wholly_eligible_generation_releases_with_truthful_history; notes/reports/l82-code-review-R2/focused-pytest.json + .stdout"
+      ],
+      "path": "notes/reports/260928-MIK-L82-curator-handoff-list.json"
+    },
+    "handoffEntry": "L82-CODE-R1-03",
+    "leaf": "260928-MIK-L82",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Releasing one eligible comparison snapshot through its generation owner can delete its Git-tracked sibling even though that sibling is excluded from the reviewed deletion list.",
+  "status": "retired",
+  "supersedes": []
+}

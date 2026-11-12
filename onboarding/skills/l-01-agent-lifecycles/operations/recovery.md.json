@@ -1,0 +1,137 @@
+{
+  "path": "skills/l-01-agent-lifecycles/operations/recovery.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ba5f03d507c690e8c79e3fd0dcfe5626efd115a6",
+        "content": "sha256:85f4f5278f612f3e6560e5e636d92ad2d81efd7c631ef89bcb2e3243152b3d93",
+        "locator": {
+          "end": 29,
+          "kind": "line_range",
+          "start": 29
+        }
+      },
+      "id": "RLZ-1247SR",
+      "invariant": "INV-WR3J18",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-WR3J18",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The all-role marker ends the preceding explicitly addressed block so later recovery text returns to common delivery.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "ba5f03d507c690e8c79e3fd0dcfe5626efd115a6",
+        "content": "sha256:862666d0cc0fdc6c1e6d70ae16a0bad215ad3d59a5daf7a91c71a5f517fecf5d",
+        "locator": {
+          "end": 26,
+          "kind": "line_range",
+          "start": 26
+        }
+      },
+      "id": "RLZ-3EW4SE",
+      "invariant": "INV-WR3J18",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-WR3J18",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The explicit audience names Architect, Orchestrator, Manager, Worker, Curator, Investigator and Reviewer for the following recovery block.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "ba5f03d507c690e8c79e3fd0dcfe5626efd115a6",
+        "content": "sha256:32b05c917124bf29aad9ed807a1bae89dd1c9bc65df3394a6363f42b7674b33b",
+        "locator": {
+          "end": 38,
+          "kind": "line_range",
+          "start": 36
+        }
+      },
+      "id": "RLZ-H90KRE",
+      "invariant": "INV-BCEZZM",
+      "origin": {
+        "handoffEntry": "K3-BCEZZM-recovery-reviewed-result-stands",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The recovery operation delivers the reviewed-result-stands ruling after a clean synchronization and points to its governing home in implementation.md.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ba5f03d507c690e8c79e3fd0dcfe5626efd115a6",
+        "content": "sha256:7a01366a9472c5ae23e58d2c229c067bdd376d1c8a827ae63a32709ca103013d",
+        "locator": {
+          "end": 43,
+          "kind": "line_range",
+          "start": 41
+        }
+      },
+      "id": "RLZ-Q06Z1M",
+      "invariant": "INV-BCEZZM",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-BCEZZM",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "Before a memory decision or write resumes, recovery points to orientation's 'Bind curation to the serving build', which binds it to the starting server or its serving-build CLI, the clean-main reference, fixture-only leaf proof and no install or guard disable.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "ba5f03d507c690e8c79e3fd0dcfe5626efd115a6",
+        "content": "sha256:0668cc8a29823df5171ea0ca4e10a7b3b94afe117f78cf52d042a383c3ccd2da",
+        "locator": {
+          "end": 34,
+          "kind": "line_range",
+          "start": 30
+        }
+      },
+      "id": "RLZ-YTZ3Y1",
+      "invariant": "INV-4E130M",
+      "origin": {
+        "handoffEntry": "Preservation (flags and acceptance)",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Recovery does not promote session completion to acceptance.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The authored source owns this contract; the distribution copy is not a separate authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba5f03d507c690e8c79e3fd0dcfe5626efd115a6",
+            "content": "sha256:5740777d773a2c8733d5696ac52af01718a1d40813d85b6e0a0c46d904d74429",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The recovery instruction keeps same-identity recovery and the clean-sync reviewed-result rule, and sends the Curator to the serving-build binding before resuming a memory decision or write.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba5f03d507c690e8c79e3fd0dcfe5626efd115a6",
+            "content": "sha256:ed67d8b867201c00e373796058951688c28a2f92b4921874e25e51aa448a9df0",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 4
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

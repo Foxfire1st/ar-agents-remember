@@ -1,0 +1,133 @@
+{
+  "path": "mcp/tests/test_review_state.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "a73df28f30c70ae3eed1ab9d528460feaf6d6c40",
+        "content": "sha256:307329bba5850950f38996290293ab0ebfd45722bf6da1f20bdfc9b61bbf235b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_legacy_developer_approval_record_stays_readable_and_counts"
+        }
+      },
+      "facet": "Legacy developerApproval is readable and its cumulative allowance still contributes to the effective budget; this does not authenticate a human approval.",
+      "id": "PRF-001XG2",
+      "invariant": "INV-AW14ZP",
+      "origin": {
+        "handoffEntry": "L116-W3-beyond-limit-approval",
+        "leaf": "260928-MIK-L116"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Missing/zero state starts round one and pending replay is idempotent.\n\nAnchor: `test_missing_state_starts_round_one_and_replay_is_pending_idempotent` `test_explicit_zero_state_starts_round_one`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a73df28f30c70ae3eed1ab9d528460feaf6d6c40",
+            "content": "sha256:242f919996ec867008449e3168a9d8c1c8936df2bf65acfac2f1f8fdc0aab64b",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Baseline sealing and successor rounds only shrink remaining IDs.\n\nAnchor: `test_baseline_seals_findings_and_successors_only_shrink_remaining`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a73df28f30c70ae3eed1ab9d528460feaf6d6c40",
+            "content": "sha256:242f919996ec867008449e3168a9d8c1c8936df2bf65acfac2f1f8fdc0aab64b",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Successor witnesses reject new and duplicate IDs and a PASS with unresolved IDs; this extent does not exercise reintroduction of an eliminated ID.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a73df28f30c70ae3eed1ab9d528460feaf6d6c40",
+            "content": "sha256:25a6532b52e6d0bb57b1fb4af1e5e155bd28259e523b672cd3f26659974707ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_successor_rejects_new_duplicate_reintroduced_and_unresolved_passing_ids"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Recording without begin starts the baseline and still requires a valid verdict.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a73df28f30c70ae3eed1ab9d528460feaf6d6c40",
+            "content": "sha256:94123191f1b26b3447e76c1df238a4c73bf9253c1eb22099a73729144a3d1ac5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_record_without_begin_starts_the_baseline_and_still_requires_a_verdict"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Ordinary exhaustion refuses the sixth round at the default five-round limit, naming the count and the limit.\n\nAnchor: `test_default_three_round_limit_refuses_fourth_with_actionable_count`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a73df28f30c70ae3eed1ab9d528460feaf6d6c40",
+            "content": "sha256:242f919996ec867008449e3168a9d8c1c8936df2bf65acfac2f1f8fdc0aab64b",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Recorded architect/developer approval adds cumulative rounds only at exhaustion and preserves findings; legacy developer words stay readable.\n\nAnchor: `test_one_explicit_extra_round_preserves_count_and_issue_list_then_refuses_fifth`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a73df28f30c70ae3eed1ab9d528460feaf6d6c40",
+            "content": "sha256:242f919996ec867008449e3168a9d8c1c8936df2bf65acfac2f1f8fdc0aab64b",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Malformed approval payloads leave exhausted state unchanged.\n\nAnchor: `test_invalid_developer_exception_leaves_exhausted_state_unchanged`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a73df28f30c70ae3eed1ab9d528460feaf6d6c40",
+            "content": "sha256:242f919996ec867008449e3168a9d8c1c8936df2bf65acfac2f1f8fdc0aab64b",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

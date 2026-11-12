@@ -1,0 +1,437 @@
+{
+  "path": "mcp/src/agents_remember/mcp/registration/capsule_serving.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The extension introduces **three** protocol methods; `skills/list` and `skills/get` are implemented by every server declaring the extension, and it introduces no **other** methods, message types or schema changes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dedd3c7307afdbd303da1409b5aabd3363ea93fb",
+            "content": "sha256:15709ccd2d1b8ead314f0ec02cce6fc8f34d0ff200577540c0bd2982c4f37489",
+            "locator": {
+              "kind": "symbol",
+              "name": "SKILLS_EXTENSION_ID"
+            },
+            "path": "mcp/src/agents_remember/models/skill_resources.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The three response models the payloads are validated against.\n\nAnchor: `RoleCapsuleResponse` `SkillCatalogListResponse` `SkillCatalogReadResponse`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6df57ae981982e091e8dd11888f3f8af12865542",
+            "content": "sha256:b5773c433bf7281a0a3d1ef2939c9b0cb57f452e341b5ce6271d6521ebbe1481",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsule_resources.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6df57ae981982e091e8dd11888f3f8af12865542",
+            "content": "sha256:8a760b6b38a702e3ca4b1d8dd38599d08c681d62913ba65f4443b0e14c4bea24",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleCapsuleResponse"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsule_resources.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6df57ae981982e091e8dd11888f3f8af12865542",
+            "content": "sha256:c3fcf3648ee9a334adea687e5219d8eaa03852026cc43e2a36e5c481ef8a5cd1",
+            "locator": {
+              "kind": "symbol",
+              "name": "SkillCatalogListResponse"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsule_resources.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6df57ae981982e091e8dd11888f3f8af12865542",
+            "content": "sha256:101b00e18d3e8cfe9badf6f0a19c0b0bd84063be7b88c8504e56a399b33234c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "SkillCatalogReadResponse"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsule_resources.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The resource `_meta` provenance block every served file carries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dedd3c7307afdbd303da1409b5aabd3363ea93fb",
+            "content": "sha256:6939f4f8d09e89a5ae6b22a6b79a0cf13ad562a7d44efb6314f593bbc452ce8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "skill_meta"
+            },
+            "path": "mcp/src/agents_remember/models/skill_resources.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ee8cf510bc65204f28fb79ea1696f671365169c",
+            "content": "sha256:be7caa59c0e81ec9a5cb174153833327ea402638f6bba04802d60f1808d5eaaf",
+            "locator": {
+              "kind": "symbol",
+              "name": "index_resource_meta"
+            },
+            "path": "mcp/src/agents_remember/application/skill_resources/catalog.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "**Declaring the extension itself commits the server** to `skills/list` and `skills/get` — which is why the declaration and the methods install together here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5865a5625745237980b5f2727a2b258b47488104",
+            "content": "sha256:d69893f1c3bd695c92b4588515bc735d2b057f5267f28a9cf9cf8ddbeaeed941",
+            "locator": {
+              "kind": "symbol",
+              "name": "declare_skills_extension"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5865a5625745237980b5f2727a2b258b47488104",
+            "content": "sha256:0bd2a72217964ec246d0969bacd754a82f47c08e9e2ed05bef70f1c9cc4f75c5",
+            "locator": {
+              "end": 150,
+              "kind": "line_range",
+              "start": 150
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5865a5625745237980b5f2727a2b258b47488104",
+            "content": "sha256:547ee2d3390940b8a8fc7ba4a000e2da08fe7ae8903ba2bba80d4c9e4327dbf8",
+            "locator": {
+              "end": 104,
+              "kind": "line_range",
+              "start": 77
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5865a5625745237980b5f2727a2b258b47488104",
+            "content": "sha256:e599d213ee8a82d54eb3535c16767e98a907ef2191dd8819d3f9c007367f5466",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "This server's own index resource is the Agent Skills well-known-discovery shape and is explicitly *not* the extension's enumeration result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dedd3c7307afdbd303da1409b5aabd3363ea93fb",
+            "content": "sha256:58c016d5d00419fb702bb4af84c9d0821c623243465c3075a67935987082694a",
+            "locator": {
+              "kind": "symbol",
+              "name": "SKILL_INDEX_URI"
+            },
+            "path": "mcp/src/agents_remember/models/skill_resources.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dedd3c7307afdbd303da1409b5aabd3363ea93fb",
+            "content": "sha256:42fdbff61eb5f9f7d4496b6b43c956f5e11c069a7d5ce66524d3b473cbb0beb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "SKILL_INDEX_SCHEMA"
+            },
+            "path": "mcp/src/agents_remember/models/skill_resources.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The one entry point the registrar tuple calls: it registers the skill surface's resources, and no tools.\n\nAnchor: `register_capsule_and_skill_tools`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5865a5625745237980b5f2727a2b258b47488104",
+            "content": "sha256:e599d213ee8a82d54eb3535c16767e98a907ef2191dd8819d3f9c007367f5466",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The capability and the two protocol methods are installed by adjacent calls, so the advertisement cannot outrun the implementation.\n\nAnchor: `_register_skill_resources` `_REGISTERED`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5865a5625745237980b5f2727a2b258b47488104",
+            "content": "sha256:26281eee4775d550c00a4096005fab1ee68897893b8a99ed510e17193c953c63",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_skill_resources"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5865a5625745237980b5f2727a2b258b47488104",
+            "content": "sha256:8156dad5e033524dc808e9ad3a5820a273538446de7c82527f46166e04fd5e7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_REGISTERED"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5865a5625745237980b5f2727a2b258b47488104",
+            "content": "sha256:ad0e307c404146db2f47435c70e7ca0dd7585481cc2e91afcf6752b91d143db2",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 54
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5865a5625745237980b5f2727a2b258b47488104",
+            "content": "sha256:935a9b62e15361103dd6ad0ec5c496c95dd4ac0df1f1e6edbba360cba8dc1338",
+            "locator": {
+              "end": 154,
+              "kind": "line_range",
+              "start": 143
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5865a5625745237980b5f2727a2b258b47488104",
+            "content": "sha256:e599d213ee8a82d54eb3535c16767e98a907ef2191dd8819d3f9c007367f5466",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The extension declaration extends the SDK's initialization options at their one construction point, without narrowing a typed field.\n\nAnchor: `declare_skills_extension` `_EXTENSIONS` `_DECLARED`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5865a5625745237980b5f2727a2b258b47488104",
+            "content": "sha256:d69893f1c3bd695c92b4588515bc735d2b057f5267f28a9cf9cf8ddbeaeed941",
+            "locator": {
+              "kind": "symbol",
+              "name": "declare_skills_extension"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5865a5625745237980b5f2727a2b258b47488104",
+            "content": "sha256:ca258ce9264e2629c77dd9e97a86242b9bfcf0a491dba24cb6091b0bf41b7848",
+            "locator": {
+              "kind": "symbol",
+              "name": "_EXTENSIONS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5865a5625745237980b5f2727a2b258b47488104",
+            "content": "sha256:6db936b72fe42d35153bd687301809934bb9131d1e819ea939141af369a63f24",
+            "locator": {
+              "kind": "symbol",
+              "name": "_DECLARED"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5865a5625745237980b5f2727a2b258b47488104",
+            "content": "sha256:63a0f64887515ec39ed5a91a9c465cb582819a658fdd762905528faae4160a7b",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 50
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5865a5625745237980b5f2727a2b258b47488104",
+            "content": "sha256:e747e4209a1496f2622b442d9c85864a8237c8d5fdd80a80ea8bba1f930eda90",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 65
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5865a5625745237980b5f2727a2b258b47488104",
+            "content": "sha256:547ee2d3390940b8a8fc7ba4a000e2da08fe7ae8903ba2bba80d4c9e4327dbf8",
+            "locator": {
+              "end": 104,
+              "kind": "line_range",
+              "start": 77
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5865a5625745237980b5f2727a2b258b47488104",
+            "content": "sha256:e599d213ee8a82d54eb3535c16767e98a907ef2191dd8819d3f9c007367f5466",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The resource shapes, whose loader re-checks the revision and proves containment before serving.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5865a5625745237980b5f2727a2b258b47488104",
+            "content": "sha256:0ae7ff6f9d128658c46105667b24b23c52288a5ee319a8d177dd2da6d6124e13",
+            "locator": {
+              "kind": "symbol",
+              "name": "skill_file_resource"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5865a5625745237980b5f2727a2b258b47488104",
+            "content": "sha256:ee869d666225ce11ebd22367359f189c9de8d29c941e8140a26f5ffc3ee9c0f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "index_resource"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5865a5625745237980b5f2727a2b258b47488104",
+            "content": "sha256:bce171451536434d197f193dad30a0b2f481e6d98d62e6448211ec71387eb85a",
+            "locator": {
+              "end": 145,
+              "kind": "line_range",
+              "start": 114
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5865a5625745237980b5f2727a2b258b47488104",
+            "content": "sha256:ba46388743cad89faf4dc29d6087b25b2af9899716aeb719f0de56b5eea807ba",
+            "locator": {
+              "end": 171,
+              "kind": "line_range",
+              "start": 148
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The two mandatory methods and their handlers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad4c89063b2e17da424c2cd56cec5fe24a47f564",
+            "content": "sha256:cc4845b47643583a8b98ac754e62902b8c3afa0d20223d7a77ef2c6167511c4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "install_extension_methods"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/skills_extension.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ad4c89063b2e17da424c2cd56cec5fe24a47f564",
+            "content": "sha256:dff2844fde0f4c222393a15010a2a6985f11267e5d6925e10c031798049c1a4a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_skills_list_handler"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/skills_extension.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ad4c89063b2e17da424c2cd56cec5fe24a47f564",
+            "content": "sha256:b08b4801ba0159c6d6ce30e7954cdf483bb8dc02fce88346d37290e94de5d598",
+            "locator": {
+              "kind": "symbol",
+              "name": "_skills_get_handler"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/skills_extension.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

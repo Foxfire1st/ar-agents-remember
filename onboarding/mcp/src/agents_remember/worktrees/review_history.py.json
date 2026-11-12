@@ -1,0 +1,293 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/review_history.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+        "content": "sha256:e4818a9a1e3df6db6852879d0f9c00605c02d08776cd26e58b6b15b9d74d38dc",
+        "locator": {
+          "kind": "symbol",
+          "name": "begin_task_review"
+        }
+      },
+      "id": "RLZ-A1773Z",
+      "invariant": "INV-AW14ZP",
+      "origin": {
+        "handoffEntry": "L116-W3-beyond-limit-approval",
+        "leaf": "260928-MIK-L116"
+      },
+      "rationale": "begin_task_review applies exhaustion/admission and spends recorded approved extras while admitting the next round; _parse_approval_exception validates/normalizes the approval input and does not itself spend the allowance.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+        "content": "sha256:06a20a5e72778b378f2c659586c0aa1b729eaa24b8378d932046977157956d98",
+        "locator": {
+          "kind": "symbol",
+          "name": "record_task_review"
+        }
+      },
+      "id": "RLZ-AM1W4N",
+      "invariant": "INV-EA9XDB",
+      "origin": {
+        "handoffEntry": "L116-W3-record-only-binding",
+        "leaf": "260928-MIK-L116"
+      },
+      "rationale": "This transition persists the binding on every recorded round and routes the baseline, pending, and record-only paths.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+        "content": "sha256:06a20a5e72778b378f2c659586c0aa1b729eaa24b8378d932046977157956d98",
+        "locator": {
+          "kind": "symbol",
+          "name": "record_task_review"
+        }
+      },
+      "id": "RLZ-F6A17D",
+      "invariant": "INV-7HBKZR",
+      "origin": {
+        "handoffEntry": "L116-W3-effective-limit-answers",
+        "leaf": "260928-MIK-L116"
+      },
+      "rationale": "This transition backfills the limit on first and pre-limit records while never rewriting a stored post-limit number.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+        "content": "sha256:52ecdf4c314df46148e3cb14ee2ce21e1331c3570c485b2f7ad916e1d18a53e6",
+        "locator": {
+          "kind": "symbol",
+          "name": "_require_actual_unchanged"
+        }
+      },
+      "id": "RLZ-XK6MSW",
+      "invariant": "INV-EA9XDB",
+      "origin": {
+        "handoffEntry": "L116-W3-record-only-binding",
+        "leaf": "260928-MIK-L116"
+      },
+      "rationale": "This guard compares recorded and current bindings and refuses before write; it never compares caller strings.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+        "content": "sha256:e4818a9a1e3df6db6852879d0f9c00605c02d08776cd26e58b6b15b9d74d38dc",
+        "locator": {
+          "kind": "symbol",
+          "name": "begin_task_review"
+        }
+      },
+      "id": "RLZ-Y795T5",
+      "invariant": "INV-AF2DN3",
+      "origin": {
+        "handoffEntry": "L116-W3-settings-limit-answers",
+        "leaf": "260928-MIK-L116"
+      },
+      "rationale": "begin_task_review recomputes/persists the effective stored limit for a newly admitted round; a valid replay while pending returns the unchanged document before that recomputation.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Error/status boundary, cap-aware begin semantics, and pending admission.\n\nAnchor: `ReviewHistoryError` `begin_task_review` `require_pending_review`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+            "content": "sha256:42dd33d21c574d9e80eec3ddcee8b4a0814786c26ea0359ce5660dd395c29f1d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L295–L317",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+            "content": "sha256:f4fd041b97f55864cf92f61601b91c9da38f0468372ff815a2caae9601ef4caf",
+            "locator": {
+              "end": 317,
+              "kind": "line_range",
+              "start": 295
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L400–L456",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+            "content": "sha256:af0f1a85332e6d5774d78ba7a7ab35661c2ce53f58508d5fa825dfa3285c26cb",
+            "locator": {
+              "end": 456,
+              "kind": "line_range",
+              "start": 400
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Publication field validation, architect/developer approval parsing, and sealed baseline creation.\n\nAnchor: `_validate_publication_fields` `_parse_developer_exception` `_record_baseline`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+            "content": "sha256:42dd33d21c574d9e80eec3ddcee8b4a0814786c26ea0359ce5660dd395c29f1d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Successor monotonicity and duplicate/blank-ID refusals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+            "content": "sha256:f261a86d1b2f7c9565792a52a5285c3db3f159a4f2c6b97d16d89f4724e79f84",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record_successor"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+            "content": "sha256:06a9767bbd8a773b59bc1d4b7283ace91072017fc81c2ecd62925de482eadfe1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_unique_ids"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Worker/Curator typed review census, record-only exclusion and unknown history.\n\nAnchor: L175–L240",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+            "content": "sha256:89c09fd0491880de2f7b715bffbe2d6b0605a6dea7400689519c43f40f7b119d",
+            "locator": {
+              "end": 240,
+              "kind": "line_range",
+              "start": 175
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Reason admission, threshold and differing-harness/model inheritance boundary.\n\nAnchor: L23–L84",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f341c13a99f485178e73c4ff8bf4de16267ee662",
+            "content": "sha256:5a3727f4901933c44cd5f7edc8b16220285a82a9e080326edf482cbb126f0b2f",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "mcp/src/agents_remember/cli/role_step_up.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Record-only memory identity comes from memory authority, never the sibling code root.\n\nAnchor: L251–L296",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+            "content": "sha256:90f0dd1b3aad214ad2d499dda3753cc514d16cabd606ee0021a9a7c6e84ed456",
+            "locator": {
+              "end": 296,
+              "kind": "line_range",
+              "start": 251
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_route_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L25–L100",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+            "content": "sha256:e4818a9a1e3df6db6852879d0f9c00605c02d08776cd26e58b6b15b9d74d38dc",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 25
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L103–L240",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+            "content": "sha256:a9f3fd58b33078f01e00d7831afae17b6112dc0adf32e625b58785795cd14bbe",
+            "locator": {
+              "end": 240,
+              "kind": "line_range",
+              "start": 103
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L243–L265",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+            "content": "sha256:63503809fbe2153a3f7d578c99d3128fbd9ddcdb6de5a4034a919b5a4a5cb603",
+            "locator": {
+              "end": 265,
+              "kind": "line_range",
+              "start": 243
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

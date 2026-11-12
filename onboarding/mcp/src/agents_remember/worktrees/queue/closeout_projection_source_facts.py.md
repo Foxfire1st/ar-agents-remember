@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/queue/closeout_projection_source_facts.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/queue/closeout_projection_source_facts.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-01T03:58+02:00 |
-| lastVerifiedCommitHash |  `47c8d102c2430d5337dbe207d4601efb4844fec0`|
-| lastVerifiedCommitDate |  2026-09-01T08:53:56+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Closeout queue overview](overview.md)
@@ -44,22 +34,17 @@ whole-document hashing or an implicit fallback.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external source is required.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Task facts contain only address, presence, and schema-owned completion-readiness fields. | `task_source_fact` | mcp/src/agents_remember/worktrees/queue/closeout_projection_source_facts.py:27-42 |
-| Semantic topology is emitted as a separate explicit v2 source plane. | `semantic_topology_source_fact` | mcp/src/agents_remember/worktrees/queue/closeout_projection_source_facts.py:44-68 |
+- Task facts contain only address, presence, and schema-owned completion-readiness fields. [1]
+- Semantic topology is emitted as a separate explicit v2 source plane. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 None.
-
-## Update History
-
-- 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: created the explicit projection source-plane
-  card. Verification remains closeout-owned.

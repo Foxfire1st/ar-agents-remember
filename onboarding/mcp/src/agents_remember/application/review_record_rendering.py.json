@@ -1,0 +1,76 @@
+{
+  "path": "mcp/src/agents_remember/application/review_record_rendering.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8eafcdd6f1f2e70dfd792d2dc57a62caed505101",
+        "content": "sha256:64120005fabcf3773d46f7ae9c91c031396a5756a537ec7be8ac2076dc656e53",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-QXHW4R",
+      "invariant": "INV-MCENRN",
+      "origin": {
+        "handoffEntry": "MIK-R57@v2 by-design writer-authority",
+        "leaf": "260928-MIK-L57"
+      },
+      "rationale": "Explicitly describes the reviewer as read-only and directs authoring to the existing writer and its provenance.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "25": {
+      "note": "A supplied named refusal is returned as a refused result without a supplied payload.\n\nAnchor: refused result",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8eafcdd6f1f2e70dfd792d2dc57a62caed505101",
+            "content": "sha256:41be09c43fa88b5387d556120c363032f03a9a77dc5b82dc1abbe890bf0429c4",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "The caller’s stale boolean selects the disabled-stale branch and named next action.\n\nAnchor: stale submission branch",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8eafcdd6f1f2e70dfd792d2dc57a62caed505101",
+            "content": "sha256:f237f930be6d2a37bb2941eb6fb9fd41e99a26febc59d519255f2b8e2dc7402b",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 21
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "The nonstale branch is explicitly read-only and points judgments to the existing writer.\n\nAnchor: read-only submission branch",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8eafcdd6f1f2e70dfd792d2dc57a62caed505101",
+            "content": "sha256:2a2fa1104d22fdf98310a823f08ee4a2f202a84877ba8e8be8460708a45bf3de",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 37
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

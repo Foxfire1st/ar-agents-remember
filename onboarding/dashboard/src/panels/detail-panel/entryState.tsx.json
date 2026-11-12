@@ -1,0 +1,135 @@
+{
+  "path": "dashboard/src/panels/detail-panel/entryState.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "cc94281379ec05363f5271bd286a082c5e8529ae",
+        "content": "sha256:f9bee20c58215c2a0bcb4de3f55e334d2587834852f74a1e57c9597a58c3f820",
+        "locator": {
+          "kind": "symbol",
+          "name": "EntryStateDetails"
+        }
+      },
+      "id": "RLZ-7T9XTN8G",
+      "invariant": "INV-TH4KXFTX",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Is the one disclosure every entry control uses for its explanation: a closed <details> whose summary is only a '?' with an accessible '<label>: details' name. The owner's full sentence goes into its body, so it stays out of the entry row until the developer opens it.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Why the pattern exists, and why the disclosure is outside the button.\n\nAnchor: \"interactive content inside a button\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc94281379ec05363f5271bd286a082c5e8529ae",
+            "content": "sha256:8e4d4eba51d64dd0a44f79e4c2a0b42439a4773bfaac23a06adcf290d1965714",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The closed disclosure with its accessible summary.\n\nAnchor: \"details\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc94281379ec05363f5271bd286a082c5e8529ae",
+            "content": "sha256:f9bee20c58215c2a0bcb4de3f55e334d2587834852f74a1e57c9597a58c3f820",
+            "locator": {
+              "kind": "symbol",
+              "name": "EntryStateDetails"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The brief word per shared token.\n\nAnchor: `briefProblem`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc94281379ec05363f5271bd286a082c5e8529ae",
+            "content": "sha256:3de84b38e0e1422fa4594d95415e2537c1121d622ea23a03aaf4ab37e2998ebc",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The owner's full sentence, with nothing invented.\n\nAnchor: `problemSentence`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc94281379ec05363f5271bd286a082c5e8529ae",
+            "content": "sha256:3de84b38e0e1422fa4594d95415e2537c1121d622ea23a03aaf4ab37e2998ebc",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The disclosure styles.\n\nAnchor: `entryStateDetails` `entryStateSummary` `entryStateBody`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d19f997fc5ce9cd991b0eb7b4f8b24c36ef9eea2",
+            "content": "sha256:4eed52431310247cf3a11bea879b6f5e33cf92916025760dcbcca66d136907ce",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/detail-panel/styles.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The two consumers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
+            "content": "sha256:db1440661bc2c5df6a6ed652788d9257bdc43f36a023f5155b9bfdd26df11a7b",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 31
+            },
+            "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1f434d49ec1adbb3ff324745748345f4ce909fce",
+            "content": "sha256:9f2d92e61273758bdd54bb863e89cc2198feaded093ea7f4f132c5567e680449",
+            "locator": {
+              "end": 255,
+              "kind": "line_range",
+              "start": 181
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

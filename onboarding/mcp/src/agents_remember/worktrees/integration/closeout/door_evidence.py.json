@@ -1,0 +1,114 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d0940b70289d43e211b8e08dbeafc3769dc23b64",
+        "content": "sha256:86a20ff12327bbf2f7875dfe057efb888ad604a89225dc396dd6a0d01e677ac4",
+        "locator": {
+          "kind": "symbol",
+          "name": "_review_provenance"
+        }
+      },
+      "id": "RLZ-EK3CPH",
+      "invariant": "INV-X22A1K",
+      "origin": {
+        "handoffEntry": "L170-curator-clean-sync-review-gate",
+        "leaf": "260928-MIK-L170"
+      },
+      "rationale": "The door uses this predicate only for a mismatching candidate tree, preserves the original review digest as provenance, and retains its passing-verdict, task-intent and evidence/dependency checks.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The door candidate contains only real candidate/base and review/memory facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0940b70289d43e211b8e08dbeafc3769dc23b64",
+            "content": "sha256:02c4d7bc0ead907cfaaf8bcb6ef0e1bbc54d7e43b3608ec48f69b26b54be502c",
+            "locator": {
+              "kind": "symbol",
+              "name": "DoorCandidateEvidence"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Current source bases and cache-excluding memory tree capture.\n\nAnchor: \"memory.md\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0940b70289d43e211b8e08dbeafc3769dc23b64",
+            "content": "sha256:4872953a9ea93bafd6670c7f147958295b80f194a822817f82ec5e6a3dcba490",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_source_bases_current"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0940b70289d43e211b8e08dbeafc3769dc23b64",
+            "content": "sha256:52b4227b0b8b38b083e7df42281583c8c66c4e756748ef235b2c7b81b2e2198e",
+            "locator": {
+              "end": 108,
+              "kind": "line_range",
+              "start": 99
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The door admits only exact-tree or bounded clean-sync review provenance, with task evidence still independently validated.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0940b70289d43e211b8e08dbeafc3769dc23b64",
+            "content": "sha256:86a20ff12327bbf2f7875dfe057efb888ad604a89225dc396dd6a0d01e677ac4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_review_provenance"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0940b70289d43e211b8e08dbeafc3769dc23b64",
+            "content": "sha256:4623182b3c07400a0b56ab066fbbb357b5262e1c1259bd1ed6a507938a497a38",
+            "locator": {
+              "kind": "symbol",
+              "name": "_door_task_evidence"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Cache changes leave memory candidate identity stable while real content changes it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df90d6e9e99524a3af886bbd71dced595ebee823",
+            "content": "sha256:b1536497cb419e9f6f3be74fac5697b02a3c254a76bd239a9620f84495fa09c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_start_and_memory_candidate_do_not_take_authority_from_the_cache"
+            },
+            "path": "mcp/tests/test_worktree_sync.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

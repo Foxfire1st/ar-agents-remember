@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "family_guarantee"
+    ],
+    "justification": "Spans controllers and handovers: reading canonical rendered files through harness file tools, naming an outside-working-folder state where applicable, and honest taskless no-file reporting are the file-reading obligations; no joint family guarantee is claimed."
+  },
+  "applicability": "Every controller handover and every taskless role start that needs file evidence.",
+  "conditions": [
+    "Controllers use harness file tools on canonical rendered files.",
+    "The handover names an outside-working-folder state where one applies.",
+    "Taskless roles have no own task file and say so."
+  ],
+  "exclusions": [
+    "assignment_read, parts or size fixtures, none of which remain.",
+    "A no-enclosure leaf start, which the preparation boundary refuses.",
+    "Hermes first installed-agent file-read evidence, which stays Manager-owned."
+  ],
+  "id": "INV-QZP9PM",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/role-launch/260928-MIK-L71-worker-d508f3cc-d109-host-readers/source-current-a1b7/source26-public-sync/generation15-five-pin-successor/expanded-evidence.md"
+      ],
+      "path": "l71-handoff-list.json"
+    },
+    "handoffEntry": "L71-CURRENT242-W-14",
+    "leaf": "260928-MIK-L71",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Controllers read canonical rendered files through harness file tools; their handover names an outside-working-folder state where applicable. Taskless roles honestly have no own task file. No assignment_read/parts/size fixture remains.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,83 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/quality/certification_run.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The caller supplies selection, retention and last-moment start authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "77ca963453d2f023457ee4aba37dd515f5c942fc",
+            "content": "sha256:038ed2c98d99ffc25201bb438712c2ad3a022be3416cb9f7a8e97ace599f4902",
+            "locator": {
+              "kind": "symbol",
+              "name": "SelectedCodeCertification"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Decoder readback records actual terminal catalogs before failure propagation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "77ca963453d2f023457ee4aba37dd515f5c942fc",
+            "content": "sha256:1c97c2670df88ce21c3d04e438d02e2b91162efdd1c50f6efa741e36e9cef2be",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_terminal_generation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Returned recording refusals remain fatal to their caller.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "77ca963453d2f023457ee4aba37dd515f5c942fc",
+            "content": "sha256:6d1c5acad825e07a9b5fe497b796de21a7dc8d3c9ef293be84f22c699a68ed9f",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_recorded_generation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Complete code-prefix verification reopens originals and validates the frozen chain.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "77ca963453d2f023457ee4aba37dd515f5c942fc",
+            "content": "sha256:2d524945c404a52c78b3a3e6ded1dbe4e003fee472eb51091c732be7c8fa6beb",
+            "locator": {
+              "kind": "symbol",
+              "name": "verify_selected_code_terminals"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "77ca963453d2f023457ee4aba37dd515f5c942fc",
+            "content": "sha256:3a40d3bd2c4666444fcea54b6f0ac86401e533d8be1a40f654d7bc6e1bff08e9",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 79
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

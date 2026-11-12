@@ -1,0 +1,291 @@
+{
+  "path": "mcp/tests/test_candidate_identity.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "183a27d76ddfbad00c5c0c79bb97d0743993e225",
+        "content": "sha256:bf67949d301dda58303c027d9488d41026b6699ccd85328744a1ec20f3b4ece3",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_link_to_equal_content_file_differs_from_file"
+        }
+      },
+      "facet": "A symlink entry and an equal-content regular file produce different candidate identities under the ruled representation construction.",
+      "id": "PRF-4R0EJ4",
+      "invariant": "INV-4DNDW7",
+      "origin": {
+        "handoffEntry": "L116-F01",
+        "leaf": "260928-MIK-L116"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "183a27d76ddfbad00c5c0c79bb97d0743993e225",
+        "content": "sha256:3229d44e0fe58513f0075aadd27468cd2d32d9c7cdc8309dd9e0a33aec774878",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_link_target_change_differs"
+        }
+      },
+      "facet": "Changing the symlink target changes the candidate identity without following the referent.",
+      "id": "PRF-6RJ3GH",
+      "invariant": "INV-EA9XDB",
+      "origin": {
+        "handoffEntry": "L116-W3-record-only-binding",
+        "leaf": "260928-MIK-L116"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "183a27d76ddfbad00c5c0c79bb97d0743993e225",
+        "content": "sha256:bf67949d301dda58303c027d9488d41026b6699ccd85328744a1ec20f3b4ece3",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_link_to_equal_content_file_differs_from_file"
+        }
+      },
+      "facet": "A symlink entry and an equal-content regular file produce different candidate identities under the ruled representation construction.",
+      "id": "PRF-94GSQP",
+      "invariant": "INV-EA9XDB",
+      "origin": {
+        "handoffEntry": "L116-W3-record-only-binding",
+        "leaf": "260928-MIK-L116"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "183a27d76ddfbad00c5c0c79bb97d0743993e225",
+        "content": "sha256:ffc292e52639728d5da27cfd15698a4545c5eb71d80bac7bb2671f3c83b9a5e1",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_executable_bit_change_differs"
+        }
+      },
+      "facet": "Changing a regular untracked file executable bit changes its identity while content stays fixed.",
+      "id": "PRF-JW30Y9",
+      "invariant": "INV-4DNDW7",
+      "origin": {
+        "handoffEntry": "L116-F01",
+        "leaf": "260928-MIK-L116"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "183a27d76ddfbad00c5c0c79bb97d0743993e225",
+        "content": "sha256:ffc292e52639728d5da27cfd15698a4545c5eb71d80bac7bb2671f3c83b9a5e1",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_executable_bit_change_differs"
+        }
+      },
+      "facet": "Changing a regular untracked file executable bit changes its identity while content stays fixed.",
+      "id": "PRF-X1DMDY",
+      "invariant": "INV-EA9XDB",
+      "origin": {
+        "handoffEntry": "L116-W3-record-only-binding",
+        "leaf": "260928-MIK-L116"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "183a27d76ddfbad00c5c0c79bb97d0743993e225",
+        "content": "sha256:3229d44e0fe58513f0075aadd27468cd2d32d9c7cdc8309dd9e0a33aec774878",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_link_target_change_differs"
+        }
+      },
+      "facet": "Changing the symlink target changes the candidate identity without following the referent.",
+      "id": "PRF-Y8TJSM",
+      "invariant": "INV-4DNDW7",
+      "origin": {
+        "handoffEntry": "L116-F01",
+        "leaf": "260928-MIK-L116"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Stable clean input and representative tracked, staged and untracked mutations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "183a27d76ddfbad00c5c0c79bb97d0743993e225",
+            "content": "sha256:b6375565335c7eaaf0a0aca91f6197954de2b6473062ee0be7776c9c432e4510",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_clean_worktree_identity_is_stable"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "183a27d76ddfbad00c5c0c79bb97d0743993e225",
+            "content": "sha256:02a41b565d843fdbe52992e9819954dc1c87dfad6c898641564521cdb789957f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_tracked_modification_changes_the_identity"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "183a27d76ddfbad00c5c0c79bb97d0743993e225",
+            "content": "sha256:a928b0c13d17fb5e26d8ddacaa1d4ae9f8fb666b04bbee07f7f62602f9e4290e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_staged_modification_changes_the_identity"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "183a27d76ddfbad00c5c0c79bb97d0743993e225",
+            "content": "sha256:ea401870d3ad928435fb70eca589eb169d9a599d5c056ae8ee86d83c893bf614",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_untracked_addition_changes_the_identity"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "183a27d76ddfbad00c5c0c79bb97d0743993e225",
+            "content": "sha256:b5a60c48767e55094558a51684c4b689bbef4190af881f96128b5793b4b94087",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_untracked_content_change_changes_the_identity"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Failed component reads, a real broken-configuration witness and an unborn HEAD yield unproven results.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "183a27d76ddfbad00c5c0c79bb97d0743993e225",
+            "content": "sha256:7f6a4eaae19a31307d8f8ac32ee9f98a0f11cb35c4f54f9275a6aa5d79520c9f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_failed_diff_read_propagates_unproven"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "183a27d76ddfbad00c5c0c79bb97d0743993e225",
+            "content": "sha256:8ee873e54ca7c128b236fed7ccf035934fa362caff87b5775badaf619c4776ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_failed_status_read_propagates_unproven"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "183a27d76ddfbad00c5c0c79bb97d0743993e225",
+            "content": "sha256:57663d63684bd6410c0b2a8d1c4daf6b589c5e0dba6d07a64087fc52dc7094cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unreadable_regular_bytes_propagate_unproven"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "183a27d76ddfbad00c5c0c79bb97d0743993e225",
+            "content": "sha256:12b5924ad12906060928f899ea48fef7d0af7dc447f7265514b4888648c8c7cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_failed_head_tree_read_with_real_head_is_unproven"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "183a27d76ddfbad00c5c0c79bb97d0743993e225",
+            "content": "sha256:360e172e6d53c03a5b2e9b9655f8f68adf30be873d0ae08a033f304af6111ef7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_broken_config_under_phrase_named_folder_is_unproven"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "183a27d76ddfbad00c5c0c79bb97d0743993e225",
+            "content": "sha256:77b7b619349dbc7c959ca1bed9e48afb194d1f129981729fa8624e0a31eddfdf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unborn_head_is_unproven"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The ruled representation cases distinguish link/regular kind, changed target and changed executable bit; missing-target links are stable but distinct by target.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "183a27d76ddfbad00c5c0c79bb97d0743993e225",
+            "content": "sha256:bf67949d301dda58303c027d9488d41026b6699ccd85328744a1ec20f3b4ece3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_link_to_equal_content_file_differs_from_file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "183a27d76ddfbad00c5c0c79bb97d0743993e225",
+            "content": "sha256:3229d44e0fe58513f0075aadd27468cd2d32d9c7cdc8309dd9e0a33aec774878",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_link_target_change_differs"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "183a27d76ddfbad00c5c0c79bb97d0743993e225",
+            "content": "sha256:ffc292e52639728d5da27cfd15698a4545c5eb71d80bac7bb2671f3c83b9a5e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_executable_bit_change_differs"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "183a27d76ddfbad00c5c0c79bb97d0743993e225",
+            "content": "sha256:e4fcea4e8d4e0c4daefec92e6305b5ad6fe774614fbd7e639d1bbdf09d88675a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_missing_link_target_is_its_own_kind"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

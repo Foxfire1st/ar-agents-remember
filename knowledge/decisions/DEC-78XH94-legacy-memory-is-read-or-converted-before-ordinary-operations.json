@@ -1,0 +1,74 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The former conditional trigger and card-writer exception were real prior choices; replacing them constrains every later operational memory route."
+  },
+  "alternatives": [
+    {
+      "option": "Refuse ordinary legacy operations regardless of converted memory elsewhere; retain only the named reads and conversion/recovery routes.",
+      "reason": "The build cannot infer operational support from a local conversion census, and a single format boundary prevents ungated legacy publication.",
+      "status": "chosen"
+    },
+    {
+      "option": "Retain the conditional trigger and card-writer exception until a converted branch or worktree is observed.",
+      "reason": "It leaves never-converted repositories operating on the unsupported old format and makes local sibling state decide admission.",
+      "reconsider_when": "A separate developer decision deliberately restores ordinary legacy-format support with an explicit validated publication contract.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The location probe supplies recovery wording only.",
+    "Card writes require converted memory; citation_migrate and memory-citations --migrate are unregistered.",
+    "Converted/converting/crossing routes retain their existing validation and transaction owners."
+  ],
+  "context": "The prior cutover-window trigger admitted never-converted repositories and exempted card writers. That could continue legacy operation without an invariant gate; MIK-R46 under D39(b)/D47 requires conversion first.",
+  "decider": "Developer D39(b)/D47, approved MIK-R46@v2 rules 1, 2 and 5.",
+  "id": "DEC-78XH94",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-JT28KJ"
+    },
+    {
+      "relation": "constrains",
+      "target": "route:mcp/src/agents_remember/application"
+    },
+    {
+      "relation": "constrains",
+      "target": "route:mcp/src/agents_remember/worktrees"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R46",
+        "packet": "requirements/MIK-R46-v2-conversion-precedes-ordinary-memory-operations.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v2"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "requirements/MIK-R46-v2-conversion-precedes-ordinary-memory-operations.md under D39(b)/D47; rule 7 rejects retire when this master lands."
+      ],
+      "path": "curator-writer-rebound-42201818.json"
+    },
+    "handoffEntry": "authority-legacy-admission",
+    "leaf": "260928-MIK-L46",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": [
+    "DEC-FCNRNT",
+    "DEC-VMMJDN"
+  ]
+}

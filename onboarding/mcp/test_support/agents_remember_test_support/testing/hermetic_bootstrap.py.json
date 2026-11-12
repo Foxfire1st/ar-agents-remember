@@ -1,0 +1,63 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/hermetic_bootstrap.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Candidate source root is validated explicitly.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d4408f620124ebd072f463689680de8ef49c6069",
+            "content": "sha256:7cbd3f13394345e8e903e47099856ef745f64cd8b925ee3606c2c9b99c14dca0",
+            "locator": {
+              "kind": "symbol",
+              "name": "candidate_test_process"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d4408f620124ebd072f463689680de8ef49c6069",
+            "content": "sha256:a593f989727be4466eeaaed6284516194f3f02f157f4c48070fe86ea1a2bed90",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 50
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Child isolation is centralized.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d4408f620124ebd072f463689680de8ef49c6069",
+            "content": "sha256:27b410d0a87080546397778a2d5bdb309a1785a15b81163579efd9853ed6fd9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "hermetic_pytest_environment"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d4408f620124ebd072f463689680de8ef49c6069",
+            "content": "sha256:77e9e9c75a8a08df7dc268cb8b5b5d08548f34d109c75cce6ac4ea7675556535",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 62
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

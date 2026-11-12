@@ -1,0 +1,575 @@
+{
+  "path": "dashboard/src/cockpit/paseoFrameControl.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+        "content": "sha256:3f1936de1758643ca02914d8e3193deeda73f6f0acbe73a19611841e03a56d0a",
+        "locator": {
+          "kind": "symbol",
+          "name": "PASEO_UNAVAILABLE_QUIET_MS"
+        }
+      },
+      "id": "RLZ-133RJY",
+      "invariant": "INV-8P06Y0",
+      "origin": {
+        "handoffEntry": "MIK-R122@v1 recovery 3",
+        "leaf": "260928-MIK-L122"
+      },
+      "rationale": "PASEO_UNAVAILABLE_QUIET_MS names the settle delay the trailing window waits after the last unavailable selection before forwarding; it bounds no total burst, and the corrected oracle drains actually scheduled work rather than asserting this duration.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+        "content": "sha256:a9089b8a548ba7ecff412d14754d31cfc3b50787e51d0de078db71c81149a5cf",
+        "locator": {
+          "kind": "symbol",
+          "name": "load"
+        }
+      },
+      "id": "RLZ-3FTZB5",
+      "invariant": "INV-Y7WR54",
+      "origin": {
+        "handoffEntry": "MIK-R122@v1 rule 7",
+        "leaf": "260928-MIK-L122"
+      },
+      "rationale": "load is the only place the generation rises, so every document load is counted exactly once and message switches never count.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+        "content": "sha256:4989d6a12e83a2bcc3fd3d3a0712ecc59b36562db9c375a4251dae6c7f5fcfa9",
+        "locator": {
+          "kind": "symbol",
+          "name": "PaseoFrameControl.display"
+        }
+      },
+      "id": "RLZ-6KQQRY",
+      "invariant": "INV-EJ38J1",
+      "origin": {
+        "handoffEntry": "L140-R1-F01",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "A selection made while a load's ready report is awaited starts no settle window and no load; it is left for the report.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+        "content": "sha256:3429c69cabae1586257f3c9c98077fffabfd6eef2f26aaf46c82f0e5b88e41e9",
+        "locator": {
+          "kind": "symbol",
+          "name": "PaseoFrameControl.onOnChat"
+        }
+      },
+      "id": "RLZ-91J2K1",
+      "invariant": "INV-CB2QY3",
+      "origin": {
+        "handoffEntry": "ruling 4be3d695 2a, read by ruling ee770e77",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "Takes that answer for the open request only and publishes it to the pane.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+        "content": "sha256:d0445a449567c2c1d2541969be3506e2780b12b62d1d58ae09351be2a865f354",
+        "locator": {
+          "kind": "symbol",
+          "name": "start"
+        }
+      },
+      "id": "RLZ-9XE68C",
+      "invariant": "INV-C71CTF",
+      "origin": {
+        "handoffEntry": "PNT-R05@v3 §6 / trusted visible selection",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "start/stop reset the selected-ID set for the next frame lifetime before accepting the new channel trusted selection set; the controller holds no catalog.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+        "content": "sha256:bc721665060d6db230bb7350061f28d1cfc39044b0b8c380bb04e73b7e243edb",
+        "locator": {
+          "kind": "symbol",
+          "name": "PaseoFrameControl.sync"
+        }
+      },
+      "id": "RLZ-ASR7MK",
+      "invariant": "INV-ZJ2JX8",
+      "origin": {
+        "handoffEntry": "MIK-R140@v1 rule 3",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "For automatic selected-target steering, sync starts a URL load only when control is unavailable, no loaded document is awaiting readiness, and the URL does not already name the wanted agent. This is not every URL-load owner: start directly loads the initial/returned-host document or the explicit Retry target while control is waiting; an explicitly non-open plugin retains its separate URL-only path.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+        "content": "sha256:4989d6a12e83a2bcc3fd3d3a0712ecc59b36562db9c375a4251dae6c7f5fcfa9",
+        "locator": {
+          "kind": "symbol",
+          "name": "display"
+        }
+      },
+      "id": "RLZ-AVC402",
+      "invariant": "INV-D0QATN",
+      "origin": {
+        "handoffEntry": "PNT-R15@v1 / PNT-R16@v1 persistent Chats and inline navigation",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Ignores the same target after transient options absence and uses the established ready channel to steer changed executions.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+        "content": "sha256:ee4c2bd20126b9f34b0a73bac442ef7394a40c1a138102a0579bf8def9ec28c8",
+        "locator": {
+          "kind": "symbol",
+          "name": "onMessage"
+        }
+      },
+      "id": "RLZ-AY5KZV",
+      "invariant": "INV-0286SX",
+      "origin": {
+        "handoffEntry": "PNT-R05@v3 §6 / current Parent context",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Displays a Parent failure only when its source agent is still in the trusted selected set, including split panes without a pending launcher request.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+        "content": "sha256:56f04fe8bdd8388ef84a5ba075d99ac4c2a5bf0cd8555e11f47a8d2fdfd7c38a",
+        "locator": {
+          "end": 199,
+          "kind": "line_range",
+          "start": 165
+        }
+      },
+      "id": "RLZ-AZSTHT",
+      "invariant": "INV-8P06Y0",
+      "origin": {
+        "handoffEntry": "MIK-R122@v1 recovery 3",
+        "leaf": "260928-MIK-L122"
+      },
+      "rationale": "display re-arms trailing unavailable settle only outside a load wait; onSettle forwards latest and clearSettle cancels. A load wait holds latest for ready/pong or its own ping silence.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+        "content": "sha256:3db0955128547a99ef8f35c57c23fa106bc61640c7573f7eded51610edbfcaaf",
+        "locator": {
+          "kind": "symbol",
+          "name": "receive"
+        }
+      },
+      "id": "RLZ-D6KWM4",
+      "invariant": "INV-1PVR72",
+      "origin": {
+        "handoffEntry": "PNT-R05@v3 / paired embed trust and origin clipboard policy",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Requires the configured frame origin and its current contentWindow before interpreting plugin protocol messages.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+        "content": "sha256:3652e0509fb6b267a048ef84202ea5ebf881a1a1d3b6e021f252bb008b7834cc",
+        "locator": {
+          "kind": "symbol",
+          "name": "PaseoFrameControl.probe"
+        }
+      },
+      "id": "RLZ-DB2T67",
+      "invariant": "INV-ZJ2JX8",
+      "origin": {
+        "handoffEntry": "MIK-R140@v1 rule 3",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "After a request's deadline: one ping, and only its silence allows the one load.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+        "content": "sha256:6c92851230026aa4cb5ae12b811a46e6d5282cdb818e5bc8d77b5a13885e977b",
+        "locator": {
+          "kind": "symbol",
+          "name": "PaseoFrameControl.onShown"
+        }
+      },
+      "id": "RLZ-DD4FK1",
+      "invariant": "INV-N3NNM1",
+      "origin": {
+        "handoffEntry": "architect, message of 2026-10-11 17:32",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "Takes that answer like the answer shown: the request ends, nothing is waited for, the frame is in reach, and no problem text is set.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+        "content": "sha256:39ef2562efa6da62b3d2f194a66508f8b1fe282d549ab926b2036f16239ff672",
+        "locator": {
+          "kind": "symbol",
+          "name": "PaseoFrameControl.onReady"
+        }
+      },
+      "id": "RLZ-GG246Z",
+      "invariant": "INV-EJ38J1",
+      "origin": {
+        "handoffEntry": "L140-R1-F01",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "The ready report, or a pong taken as it, ends the wait and sends the held selection by message.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+        "content": "sha256:4989d6a12e83a2bcc3fd3d3a0712ecc59b36562db9c375a4251dae6c7f5fcfa9",
+        "locator": {
+          "kind": "symbol",
+          "name": "display"
+        }
+      },
+      "id": "RLZ-KJHW38",
+      "invariant": "INV-QS9SRX",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 10",
+        "leaf": "260928-MIK-L75"
+      },
+      "rationale": "The launcher's own steering stays: the frame is shown the execution the launcher displays, and no new navigation is built around it.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+        "content": "sha256:ee4c2bd20126b9f34b0a73bac442ef7394a40c1a138102a0579bf8def9ec28c8",
+        "locator": {
+          "kind": "symbol",
+          "name": "onMessage"
+        }
+      },
+      "id": "RLZ-N3QWTS",
+      "invariant": "INV-STRQX4",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 9",
+        "leaf": "260928-MIK-L75"
+      },
+      "rationale": "The message switch keeps the selection and navigation-error kinds and drops the hierarchy/hierarchy-error handling that only fed the removed sidebar.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+        "content": "sha256:421457bcb42cd6bdb13cb9f9eae3b76927955324849767e00264f7f448734ade",
+        "locator": {
+          "kind": "symbol",
+          "name": "PaseoFrameControl.awaitReady"
+        }
+      },
+      "id": "RLZ-NF7RKH",
+      "invariant": "INV-ZJ2JX8",
+      "origin": {
+        "handoffEntry": "MIK-R140@v1 rule 3",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "After every load: the deadline for the ready report, then one ping, and only that ping's silence makes the channel unavailable.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+        "content": "sha256:92cbd86891412ef52c23ed651bdef1d930c9b29abf77fd92319b43fcf114f79e",
+        "locator": {
+          "end": 520,
+          "kind": "line_range",
+          "start": 75
+        }
+      },
+      "id": "RLZ-SFPH0W",
+      "invariant": "INV-7D9QDG",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule2",
+        "leaf": "260928-MIK-L95"
+      },
+      "rationale": "The controller posts ar.open with the exact agent and workspace and the page mode, so a ready document frame follows the selection without a reload.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+        "content": "sha256:92cbd86891412ef52c23ed651bdef1d930c9b29abf77fd92319b43fcf114f79e",
+        "locator": {
+          "kind": "symbol",
+          "name": "PaseoFrameControl"
+        }
+      },
+      "id": "RLZ-SXWYQF",
+      "invariant": "INV-EEX84Q",
+      "origin": {
+        "handoffEntry": "MIK-R140@v1 rule 2",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "The controller sends the switch as one message while the channel is ready, and after a request's deadline asks by a ping instead of loading; a pong keeps the request waiting.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+        "content": "sha256:421457bcb42cd6bdb13cb9f9eae3b76927955324849767e00264f7f448734ade",
+        "locator": {
+          "kind": "symbol",
+          "name": "awaitReady"
+        }
+      },
+      "id": "RLZ-TW9MMS",
+      "invariant": "INV-KSCJ1Q",
+      "origin": {
+        "handoffEntry": "MIK-R121-R2-P3",
+        "leaf": "260928-MIK-L121"
+      },
+      "rationale": "awaitReady owns post-load timeout, ping, unanswered-ping problem naming and fallback; probe owns the pending agent request equivalent.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+        "content": "sha256:bc721665060d6db230bb7350061f28d1cfc39044b0b8c380bb04e73b7e243edb",
+        "locator": {
+          "kind": "symbol",
+          "name": "sync"
+        }
+      },
+      "id": "RLZ-YV57VE",
+      "invariant": "INV-YFAHQM",
+      "origin": {
+        "handoffEntry": "MIK-R122@v1 rule 4",
+        "leaf": "260928-MIK-L122"
+      },
+      "rationale": "sync asks by message while ready, or loads a changed target while unavailable only when not waiting for a load ready report.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+        "content": "sha256:c71a996880db63f28f763e0bbccda87ee98927f306160713ca8e2e795bfbb76b",
+        "locator": {
+          "kind": "symbol",
+          "name": "PASEO_CONTROL_TIMEOUT_MS"
+        }
+      },
+      "id": "RLZ-ZDH8FW",
+      "invariant": "INV-ZJ2JX8",
+      "origin": {
+        "handoffEntry": "MIK-R140@v1 rule 3",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "The one deadline of 10 s that the ready report, a request and a ping each have.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Ready changes message immediately; readiness-held changes and unavailable trailing settlement differ.\n\nAnchor: \"display(scope: string, target: PaseoAgentTarget \\| null): void {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+            "content": "sha256:4989d6a12e83a2bcc3fd3d3a0712ecc59b36562db9c375a4251dae6c7f5fcfa9",
+            "locator": {
+              "end": 187,
+              "kind": "line_range",
+              "start": 165
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Tray attachment is replaced on readiness and cleared on stop.\n\nAnchor: \"private linkTray(capabilities: PluginAbilities): void {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+            "content": "sha256:0056c576f8d01a30aa092a98dc330a6e072b6780418b1d58b6a37fe8faa07621",
+            "locator": {
+              "end": 299,
+              "kind": "line_range",
+              "start": 288
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Native showing reports and bounded older selection inference publish the frame's chat independently.\n\nAnchor: \"private followSelection(agentIds: string[]): void {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+            "content": "sha256:cbef9622e24b8e78204dff90ec919b400c9fc8c45686bd084bb912bf24d98046",
+            "locator": {
+              "end": 358,
+              "kind": "line_range",
+              "start": 354
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Ready capability negotiation attaches tray reporting and sends the latest held target.\n\nAnchor: \"private onReady(capabilities: PluginAbilities): void {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+            "content": "sha256:39ef2562efa6da62b3d2f194a66508f8b1fe282d549ab926b2036f16239ff672",
+            "locator": {
+              "end": 281,
+              "kind": "line_range",
+              "start": 263
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "URL loading remains bounded by unavailable state and outstanding readiness.\n\nAnchor: \"private sync(): void {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+            "content": "sha256:bc721665060d6db230bb7350061f28d1cfc39044b0b8c380bb04e73b7e243edb",
+            "locator": {
+              "end": 389,
+              "kind": "line_range",
+              "start": 381
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "One load produces one generation and its own readiness wait.\n\nAnchor: \"private load(wanted: PaseoAgentTarget \\| null): void {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+            "content": "sha256:a9089b8a548ba7ecff412d14754d31cfc3b50787e51d0de078db71c81149a5cf",
+            "locator": {
+              "end": 418,
+              "kind": "line_range",
+              "start": 408
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "All accepted control and tray messages require exact frame origin and window.\n\nAnchor: \"receive(event: MessageEvent): void {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+            "content": "sha256:3db0955128547a99ef8f35c57c23fa106bc61640c7573f7eded51610edbfcaaf",
+            "locator": {
+              "end": 209,
+              "kind": "line_range",
+              "start": 202
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Missing readiness probes before unavailable control.\n\nAnchor: \"private awaitReady(): void {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+            "content": "sha256:421457bcb42cd6bdb13cb9f9eae3b76927955324849767e00264f7f448734ade",
+            "locator": {
+              "end": 447,
+              "kind": "line_range",
+              "start": 433
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "A late answered request stays pending without resending its open.\n\nAnchor: \"private probe(): void {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+            "content": "sha256:3652e0509fb6b267a048ef84202ea5ebf881a1a1d3b6e021f252bb008b7834cc",
+            "locator": {
+              "end": 464,
+              "kind": "line_range",
+              "start": 453
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Only the pending agent settles on drawn chat or the native load-failed pane.\n\nAnchor: \"private onShown(agentId: string \\| undefined, drawn: boolean): void {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+            "content": "sha256:6c92851230026aa4cb5ae12b811a46e6d5282cdb818e5bc8d77b5a13885e977b",
+            "locator": {
+              "end": 343,
+              "kind": "line_range",
+              "start": 335
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Startup distinguishes ordinary document load from hidden preload.\n\nAnchor: \"start(available: AvailablePaseoFrame, afterRetry: boolean, preload = false): void {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+            "content": "sha256:d0445a449567c2c1d2541969be3506e2780b12b62d1d58ae09351be2a865f354",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 127
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

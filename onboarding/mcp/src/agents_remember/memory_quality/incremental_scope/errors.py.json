@@ -1,0 +1,41 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/incremental_scope/errors.py",
+  "realizes": [],
+  "references": {
+    "3": {
+      "note": "The retained subresult store raises typed closure refusals; removed planner/executor sites are not current consumers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad3284e96b783f7009d48674cda24143dbc0db27",
+            "content": "sha256:b8569502183d38a69fea1111082840787b15ece4e80c80769abf68d048062768",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refuse"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/incremental_scope/subresult_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The base error carries the canonical agents-remember failure status machinery.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f44c8d99dcf91688bcc70c6659a03fbf91c40a5e",
+            "content": "sha256:20c20f4fc731011816f8a9403d598d5363e401ba2e3601ef7639543dfe232398",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentsRememberError"
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

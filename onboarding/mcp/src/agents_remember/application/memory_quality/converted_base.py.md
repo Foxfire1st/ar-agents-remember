@@ -1,0 +1,81 @@
+# mcp/src/agents_remember/application/memory_quality/converted_base.py
+
+## Governing Overview
+
+[Application overview](../overview.md)
+
+## Purpose
+
+**The `knowledge.converted` check's comparison base: one base for every consumer.** The memory-quality run validates the converted working tree against the memory worktree's `HEAD`. When
+`HEAD` is unconverted (the converting leaf before its closeout, or a line that has crossed) the base must be `HEAD`'s
+conversion, exactly as the gate, the worklist and the writer see it. Then a carried reference to a file the
+candidate deleted or moved is reported (`R22.6-carried-stale`), not refused as a newly written anchor
+(`R22.6-anchor-path`). During a merge the bases are the writer's two, `HEAD` and `MERGE_HEAD`, so the check never
+refuses what the writer was allowed to write.
+
+## Code Commentary
+
+### Landing-report scope
+
+The landing report has a separate leaf-base port. `leaf_base_request` selects the contract's admitted memory commit and paired code base; `leaf_base_request_for_context` does the same for context-owning consumers. `leaf_base_port` resolves cards, the complete base-path listing, known code-base paths and code-named Git renames. Converted-base cache reuse remains shared, but this landing comparison does not replace the validator's HEAD-derived operation base. Without a contract/base request, diagnostic callers retain their established fallback. An unreadable or unconvertible memory base returns a named problem for report-only observation, not a new validator refusal. An unreadable code-base listing leaves deletion evidence unknown, and an unreadable Git rename listing supplies no named renames; neither silently establishes a deletion or a move.
+
+- The landing base resolves the admitted commit, base listing, code deletion evidence and code-named renames independently.
+
+
+### Logic
+
+- `_port(code)` wraps `knowledge_writer.base_side.writer_bases` as a `KnowledgeBasePort`: `(memory root, candidate)
+  -> (bases, problem)`, where `bases` is the converted sides `HEAD`, then `MERGE_HEAD` during a merge
+  (`BaseSides.validation_bases`).
+- `converted_check_base(scope, coordination_root)` is the port of a memory-quality run: the code root is the
+  scope's quality code root, the fallback is the contract's code base commit B when the scope has a contract, and
+  the cache is the coordination root's shared converted-base cache.
+- `context_check_base(code_root, context)` is the port of a run that holds a coordination context (the closeout's
+  quality phases and the prepared certification). B is the code base of the contract the context names, when it
+  names one. A context without a coordination root (a bare diagnostic) gets no port, and the check then uses a
+  converted `HEAD`.
+
+### Conventions
+
+- The port exists because `memory_quality/converted_check.py` ranks below the application layer and cannot reach
+  the converted-base cache; the application binds it through `DriftCheckContext.knowledge_base`.
+
+### Invariants And Boundaries
+
+- The port holds no conversion logic of its own. It calls `writer_bases`, which reads the shared converted-base
+  cache under the same key (memory commit, version, K_B's own `Code-Commit` or B) as the other readers. On a cache
+  miss that call runs the conversion and stores it, so whichever reader runs first converts.
+- A base that cannot be built comes back as the problem text, which the check reports as the refusing finding
+  `R24.7-converted-base`.
+
+### Todos
+
+- None recorded.
+
+## Evidence
+
+### Docs References
+
+No domain documentation source is configured for this repository (`system/sources.md` carries no
+`Domain Documentation` entries). The design authority is the text-storage cutover's requirement and its review decision in the task records; it
+lives outside the code and memory repositories, so it is not cited as a row.
+
+No configured live documentation source was available for this pass.
+
+### Repo-Internal References
+
+- The module docstring: one base for every consumer of the converted check. [1]
+- The base port of a memory-quality run. [2]
+- The base port of a run that holds a coordination context; none without a coordination root. [3]
+
+
+
+- The check's side of the port: its bases, and an unbuildable base as a finding. [5]
+
+### Cross-Repo References
+
+No meaningful cross-repo references found: the module binds two same-repository modules.
+
+No cross-repo boundary is crossed by this file.
+
+- The memory-quality run passes the port into the drift context.  Anchor: `_execute_memory_quality` [4]

@@ -1,0 +1,71 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/report.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "One violation and its rendering.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "835422907a8725e63723cea8a96e70c4f2302383",
+            "content": "sha256:9c5a57e0afee9943dd47f6917e0471847bcecb442f78501872f937e74cbec9e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "Violation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The report and its refusing/report-only split.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "835422907a8725e63723cea8a96e70c4f2302383",
+            "content": "sha256:de65b2e56666ef469c54d24a31a02df090c98023e942a7a48f506e9d9f1f4b55",
+            "locator": {
+              "kind": "symbol",
+              "name": "ValidationReport"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The refusal lists every refusing violation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "835422907a8725e63723cea8a96e70c4f2302383",
+            "content": "sha256:99155802740038c36213dde4bc92738f5b150f9b6125464ef9afaedc2922a651",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeValidationError"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A shape refusal names file, field and rule.\n\nAnchor: `test_shape_refuses_a_bad_field_and_names_file_field_and_rule`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "922080aa70ed74fa611b56de473a1398e4e6ec6d",
+            "content": "sha256:2872079c064fd035ad0a25e8d43839a5893228d43b3b62f0c5e5de769d3b1504",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_validator.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/data/reviewTrees.scoped.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The review opens without cards and reads only the invariant the reviewer selected; an entry link resolves on its exact side and reuses the answer the owning invariant already gave",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b0e4dfdd7cf97bd83d42323e5cefb7065593489",
+            "content": "sha256:9d3333aeb3dd09a9a2b223db40e1689f273907d22a62d5b8642d445914573072",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 25
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

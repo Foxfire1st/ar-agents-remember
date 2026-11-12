@@ -1,0 +1,59 @@
+{
+  "path": "mcp/src/agents_remember/application/task_docs/task_flat_list_edits.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d23a63f7d815ca9e9c26fee40476b6115b9e9de3",
+        "content": "sha256:6944b9dc2cd73a37dc98edbaf50fdf965b77d7e9f11e53fe58bffbfbecdc9279",
+        "locator": {
+          "kind": "symbol",
+          "name": "_question_fields"
+        }
+      },
+      "id": "RLZ-E3BX3J",
+      "invariant": "INV-F2EQDR",
+      "origin": {
+        "handoffEntry": "L54-curator-R54-6-key-validation-and-task-owner-bridge",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "This guard checks nonblank string keys and text beginning with that key before put_open_question mutates any supplied batch; it is field validation, not the loaded-root comparison.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d23a63f7d815ca9e9c26fee40476b6115b9e9de3",
+        "content": "sha256:0de6c257a1eda646843bd00070c74296f0e13643efa2b0bca0df7b8f4b6ec3cf",
+        "locator": {
+          "kind": "symbol",
+          "name": "put_open_question"
+        }
+      },
+      "id": "RLZ-NDAY6B",
+      "invariant": "INV-F2EQDR",
+      "origin": {
+        "handoffEntry": "MIK-R54@v1 rule 6",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "The task owner applies keyed insertion or replacement inside its own read/publication transaction.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Mutates flat task decisions and keyed questions inside the task owner’s already admitted read/publication operation. These are in-memory list edits, not independent publication or lock authority; errors retain TaskDocError and literal prefix addressing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d23a63f7d815ca9e9c26fee40476b6115b9e9de3",
+            "content": "sha256:aaf55c1658d9fba7455c6f2511501a6b3cdb40851e6166ce9ffa5b8d2cd2ccc0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

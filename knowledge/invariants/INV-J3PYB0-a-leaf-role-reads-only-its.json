@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "Spans the leaf enclosure and task-documents: own-document-only reads as real files with a pre-first-turn INDEX entry is the D124/D125 containment mechanism; public writes refresh only the own leaf's copies."
+  },
+  "applicability": "Ordinary enclosed leaf roles reading their own rendered task document.",
+  "conditions": [
+    "The copied leaf is the agent's own leaf; declared approved requirement references extend that bound file set, never another leaf.",
+    "Real JSON/Markdown files and one INDEX artifact with copied digests and explicit missing rows exist before the first turn.",
+    "Public writes rendering bound documents reconcile the exact copy set with rollback on failed publication."
+  ],
+  "exclusions": [
+    "Reading another leaf's document.",
+    "Git-tree or in-memory-only copies presented as the readable file.",
+    "Granted-direct leaf roles use their admitted master-series contract and own group/task-documents placement; this enclosure guarantee does not promise direct automatic public-write refresh."
+  ],
+  "id": "INV-J3PYB0",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/role-launch/260928-MIK-L71-worker-d508f3cc-d109-host-readers/source-current-a1b7/source26-public-sync/generation15-five-pin-successor/expanded-evidence.md"
+      ],
+      "path": "l71-handoff-list.json"
+    },
+    "handoffEntry": "L71-CURRENT242-W-13",
+    "leaf": "260928-MIK-L71",
+    "task": "260928-MIK"
+  },
+  "revision": 3,
+  "schema": "ar-invariant/v1",
+  "statement": "An enclosed leaf role reads its own rendered leaf document and declared approved requirements as real task-documents files, with one INDEX artifact recording copied digests and named missing files before the first turn; public writes refresh only the exact bound copy set atomically.",
+  "status": "proposed",
+  "supersedes": []
+}

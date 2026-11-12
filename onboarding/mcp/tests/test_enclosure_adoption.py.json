@@ -1,0 +1,52 @@
+{
+  "path": "mcp/tests/test_enclosure_adoption.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Adoption dry run, real run and repeated run are pinned.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8f5a6768124af30c08124f542f31b5f7e5b7403",
+            "content": "sha256:ecf9c99fe3e48aa01739b7918bc6e74307913a1b91baaf36c13b3c42976ec7cb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Operation identity is read from the whole result while dry-run and next-action assertions remain.\n\nAnchor: `test_dry_run_is_the_default_and_writes_nothing`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8f5a6768124af30c08124f542f31b5f7e5b7403",
+            "content": "sha256:ecf9c99fe3e48aa01739b7918bc6e74307913a1b91baaf36c13b3c42976ec7cb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Existing _adopt_tool application controls remain. Registered adapter details such as the adoption artifact use the retained log. Identity, receipt, no-write and move comparisons remain intact; no second mutator is called merely to obtain whole facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8f5a6768124af30c08124f542f31b5f7e5b7403",
+            "content": "sha256:ecf9c99fe3e48aa01739b7918bc6e74307913a1b91baaf36c13b3c42976ec7cb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

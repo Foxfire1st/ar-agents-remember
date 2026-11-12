@@ -1,0 +1,22 @@
+{
+  "path": "mcp/src/agents_remember/package_data/canvas/kit/ar-video/23fd71bf/VOCABULARY.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Provenance for the pinned kit entry: the visual vocabulary of that engine, as the kit guide references it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c717372f3833fb2744245c2c4c197c9bd3e78944",
+            "content": "sha256:6268f5976f710d3db4b380ac97b8037ed0fc09d2dd01e6dfb24d4bc7352625d8",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

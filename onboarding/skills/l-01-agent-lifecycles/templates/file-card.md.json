@@ -1,0 +1,59 @@
+{
+  "path": "skills/l-01-agent-lifecycles/templates/file-card.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The layout's sections are Governing Overview, Purpose, Code Commentary, Relationships and Evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "145f2021791548364f7b9c029e484dc2cc131ac9",
+            "content": "sha256:994548cab71dcf5c2c0adf7c19ab55e61491d3c7a591378c8abc18df4e1b8577",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Evidence rows are Finding, Anchor and Source with a line range.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "145f2021791548364f7b9c029e484dc2cc131ac9",
+            "content": "sha256:6e7a4bb93edfa925facd735a04c761cd8630114ae3e0beaae74981c708284d81",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The card-format reference points to this layout before a source-file card is created.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab2dde55ffb6fabcf5dded641acd559ed294af60",
+            "content": "sha256:44185dc4e2f2e451ce4a444e08f8788aaaf9d2961d92ebfc6882370ec69bdc67",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/curator/card-formats-and-citations.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

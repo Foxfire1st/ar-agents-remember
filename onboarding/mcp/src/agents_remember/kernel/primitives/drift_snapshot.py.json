@@ -1,0 +1,39 @@
+{
+  "path": "mcp/src/agents_remember/kernel/primitives/drift_snapshot.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The projection-side pruning policy prunes only after a complete native branch census, with its own snapshot reader and removal; worktree cleanup and the onboarding drift summary and report take these path and removal primitives.\n\nAnchor: `prune_orphaned_drift_snapshots`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dddcce3e33bed7ffbd8bec7c711954dc794d4e8d",
+            "content": "sha256:540e66199e6c2b997835cc079421ad4395816766d16dfe5c6a7ca12e848bd2b7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/drift_snapshots.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Snapshot removal is owned by this primitive; no deleted-suite removal-edge coverage is asserted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d70d647b40f8b84669d1de3f0a9f357fa81e3327",
+            "content": "sha256:1b0c3421cd46f50e7fa1265d4f027d6ddb96ab078b53a1c3546fa6bd5efc804b",
+            "locator": {
+              "kind": "symbol",
+              "name": "remove_drift_snapshot"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

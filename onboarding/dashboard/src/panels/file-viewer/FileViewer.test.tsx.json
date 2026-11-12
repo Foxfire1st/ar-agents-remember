@@ -1,0 +1,54 @@
+{
+  "path": "dashboard/src/panels/file-viewer/FileViewer.test.tsx",
+  "realizes": [],
+  "references": {
+    "6": {
+      "note": "The suite mounts the shell on Operations for its keep-alive assertions.\n\nAnchor: `CockpitShell`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6323f80a69d0d140b643fa63af30504f7ccaa6ed",
+            "content": "sha256:11bad086ad7ce952d2398053374917d752bbc4f1df6e13b987d5ce5bad184fd1",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The mode-bar entry the tests click.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bcc511bf68fd8d89365ba2b47d20c43a86469f44",
+            "content": "sha256:921ce3936f37598a6d974e6bad08740bc13b0b7e6b102bad4d72570b039b65a3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/grammar/ModeBar.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The File Viewer the tests keep mounted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a34e748d74bbd03ce1ffd35fe6d4b719b434cd55",
+            "content": "sha256:ebac7e86f0373cc77040c74c9d3842c5f1cd232b4b05d87d73e7baf2afe0b5d1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/file-viewer/FileViewer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

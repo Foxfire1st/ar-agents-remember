@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/data/taskIdentity.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The single task-identity case keeps repository qualification in the taskdoc selection key, master document key and role-chat leaf key. Reference comparison accepts a copied identical repository/path reference, rejects a changed repository and rejects two undefined references; it is not a master-folder resolution or tree/pre-drill test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c766c75870a3dd1a35d791f0cd7114e648e8f1d3",
+            "content": "sha256:7cd732922192d7b4d58a562ed50b2dde169fa3b96eb19c67e74c9e5dc2eeb882",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

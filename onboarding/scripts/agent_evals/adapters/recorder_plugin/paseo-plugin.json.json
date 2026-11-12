@@ -1,0 +1,40 @@
+{
+  "path": "scripts/agent_evals/adapters/recorder_plugin/paseo-plugin.json",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ecc0b7adaa42dac10c33b54768818a24ce1ef6df",
+        "content": "sha256:0b33fedbedbeb682fa956d4a43f1698f5df189067b3998b323cd6e3b2057afa7",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-TM1TTY",
+      "invariant": "INV-QFMMYM",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-native-launch",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "It declares the fixture recorder plugin identity and its Paseo version requirement.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ecc0b7adaa42dac10c33b54768818a24ce1ef6df",
+            "content": "sha256:0b33fedbedbeb682fa956d4a43f1698f5df189067b3998b323cd6e3b2057afa7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

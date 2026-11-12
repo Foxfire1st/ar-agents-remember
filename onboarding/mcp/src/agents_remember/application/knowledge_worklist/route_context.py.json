@@ -1,0 +1,59 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_worklist/route_context.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "52dca54186245fab9357985e28308e82732fad2a",
+        "content": "sha256:5cbcdeaafc45e247889b47cd3cea1a327f2e5a4fcad7d85b73ca3d2a4a6f987e",
+        "locator": {
+          "kind": "symbol",
+          "name": "with_route_context"
+        }
+      },
+      "id": "RLZ-9W7PS2",
+      "invariant": "INV-ADXT15",
+      "origin": {
+        "handoffEntry": "MIK-R55@v1 rule 1",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "This enrichment attaches family-chain context while leaving identity outside that context.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "52dca54186245fab9357985e28308e82732fad2a",
+        "content": "sha256:f97f129973f8e8b5ebd718df861309aee07785bcc59d2fbaf78b699a24272087",
+        "locator": {
+          "kind": "symbol",
+          "name": "route_chain"
+        }
+      },
+      "id": "RLZ-MW7BGB",
+      "invariant": "INV-ADXT15",
+      "origin": {
+        "handoffEntry": "MIK-R55@v1 rule 1",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "This path-wise lookup derives family IDs, titles and routes from the candidate memory chain.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Attaches mechanical governing-family route context using the worklist’s already parsed candidate knowledge. The runtime selector import avoids the leaf/currentness/worklist import cycle. Route context supplies retrieval information; it must not alter worklist item identity, trigger reach or acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52dca54186245fab9357985e28308e82732fad2a",
+            "content": "sha256:b39e73af2fd424cd67059bf95792f19388569780a23d3bd542a55a7a9ba0d363",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

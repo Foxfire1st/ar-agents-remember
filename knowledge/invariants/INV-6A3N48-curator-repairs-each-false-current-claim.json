@@ -1,0 +1,49 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "A single false-current claim left on a sibling card or paired note keeps publishing a contradiction despite a repaired primary card."
+  },
+  "applicability": "Normal Curator reconciliation and repair of affected onboarding cards, paired citation notes and sibling carriers.",
+  "conditions": [
+    "Assess sentences individually against current source before retaining, narrowing or withdrawing them.",
+    "Repair the encountered class on every current carrier found by the bounded search.",
+    "Keep a true present-tense statement about a retired subject.",
+    "The general current-truth/history rule does not recast this task's expressly retained historical-custody prose as a current behavior claim or as an L62-authored epoch."
+  ],
+  "exclusions": [
+    "A broad repository sweep.",
+    "Dropping correct text merely to clear a quality finding.",
+    "The in-place historical-custody accounts expressly retained by this task's accepted ruling: retain their historical prose and stated original evidence identity; they are not assertions about current behavior and are not moved into L62 history as if L62 authored their epochs."
+  ],
+  "id": "INV-6A3N48",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Admitted code tree 6db7c75557a5d040db6cc2938c3f8a53f658bebe; unchanged source meanings and exact locators renewed from the6414 rehearsal by native Git blob equality.",
+        "Current Worker producer list: /home/firefox/projects/ar-coordination/worktrees/agents-remember/62_instructions-and-documentation-descri-e8e4920fc1-ar/role-reports/worker/db30bb98-270f-4b0e-aefe-8aa8f1202292/role-launch/producer-successor-6db7c755/producer-list.json sha256:0a86fcdbcecf101f39edb967a3d79bcb4b70f73b00196f88e58e6c20d2b1a152",
+        "Source analysis inputs and exact per-locator renewal are recorded in /home/firefox/projects/ar-coordination/worktrees/agents-remember/62_instructions-and-documentation-descri-e8e4920fc1-ar/scratch/curator/73230181-c727-4e12-9a7d-59bcc4479653/combined-knowledge-6db.review.json",
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/messages/20261104T083057Z_manager-d8eb30d5_to_curator-3bf1546d.md sha256:92ec82cfc19d3fa4d2e7da2d3e6634d92a3a639e05dd33c65e410442add74a96",
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/messages/20261104T085038Z_manager-d8eb30d5_to_curator-3bf1546d.md sha256:8f295bfb3d82d39c267123d68988510ca414a13ea12458c09bd3da82d954ef58",
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/messages/20261104T085814Z_manager-d8eb30d5_to_curator-3bf1546d.md sha256:38f87c1908b346a5f659b937609cd08609f424db5f257303250fef5268495927",
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/messages/20261104T195716Z_manager-d8eb30d5_to_curator-3bf1546d.md sha256:9e201970d04a2a0f8354403448d623b493ad021ea422f078479021fff8e83bad",
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/messages/20261104T204911Z_manager-d8eb30d5_to_curator-3bf1546d.md sha256:25a1c33e388cd5d1a1a2094bd070e95d54842038ad67f0af2511c2040d1e529b",
+        "Precise candidate hunk IDs: sha256:a7c7440fe0f95835378ebcb22eac8aa6bf833db1c580dfee29e6871797550b9b, sha256:c1862a40c59a6caa0721dd575ea274b0692b32833c7b53c52f168fa9221bbccb",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/62_instructions-and-documentation-descri-e8e4920fc1-ar/scratch/curator/73230181-c727-4e12-9a7d-59bcc4479653/covered90-semantic-judgments-6414.json sha256:f59981975c1b343f3059ab7592a6c82f760546f9a7cf8f6fee62360a6f5b419f",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/62_instructions-and-documentation-descri-e8e4920fc1-ar/scratch/curator/73230181-c727-4e12-9a7d-59bcc4479653/skills-source-onboarding56-uncovered40-final6db.json sha256:47b7b3d443ab387274e6b5c4a15f85ac36926df7996562dd7bcf38397bf2a27c",
+        "No new invariant identity or semantic revision is inferred from these attachments."
+      ],
+      "path": "L62-final6db-curation"
+    },
+    "handoffEntry": "L62-CUR-6414-current-truth",
+    "leaf": "260928-MIK-L62",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Curator repairs each false current claim across every encountered carrier found by a bounded search, preserves true wording, and records past accounts in history after the final edit.",
+  "status": "proposed",
+  "supersedes": []
+}

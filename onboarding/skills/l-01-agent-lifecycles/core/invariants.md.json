@@ -1,0 +1,269 @@
+{
+  "path": "skills/l-01-agent-lifecycles/core/invariants.md",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "00459247fca0dfd5d42a9eab5e29ae5532c95f3d",
+        "content": "sha256:678b921190218e6dbe5c25f29c58929a378ec8915055c0dfb38cf9adff456ad3",
+        "locator": {
+          "end": 25,
+          "kind": "line_range",
+          "start": 22
+        }
+      },
+      "id": "RLZ-97QJ7M",
+      "invariant": "INV-7FMDAS",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-7FMDAS",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "A ruling that changes task, branch or orchestration state is recorded in the owning task's decision log, with the supporting analysis kept in `notes/`. The last sentence carries the parent/parentless question route and can support that precise facet of the existing relay record.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "00459247fca0dfd5d42a9eab5e29ae5532c95f3d",
+        "content": "sha256:63fec8a32ae5a69ffa7acb472707122f8eae1f9126ffda60a98c20c0fcf9d753",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-MQGWW2",
+      "invariant": "INV-GWA6VR",
+      "origin": {
+        "handoffEntry": "MIK-R60@v7.1-2",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Authoring source of the digest; line 97 names server_info like every-role.md.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "00459247fca0dfd5d42a9eab5e29ae5532c95f3d",
+        "content": "sha256:89943b36b19c5c6cfda15347d9c91782b0f0c1a613b62435f7ac5cc3315947e3",
+        "locator": {
+          "end": 40,
+          "kind": "line_range",
+          "start": 38
+        }
+      },
+      "id": "RLZ-TZP8SF",
+      "invariant": "INV-7FMDAS",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-7FMDAS",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "Observability now keeps the selected document/chat and explicitly exempts taskless Architect/Bootstrap from invented tasks. The adjacent relay sentence preserves the Architect developer conversation and actual parent route; only that relay facet matches the stored question-relay obligation.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Shared durable continuity and artifact-of-record obligation, with the shared evidence rules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00459247fca0dfd5d42a9eab5e29ae5532c95f3d",
+            "content": "sha256:431fa22ee64f17f15d1e53174a5d1048f4b66064ff0fee4d9e4ee9a48fc8d254",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Task intent creates its branch and build worktree; planning, design and chat are not build routes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00459247fca0dfd5d42a9eab5e29ae5532c95f3d",
+            "content": "sha256:021af9c9b04ebc8298897d16d69fea1fb3702340db407fd4b5fe3e551068beb4",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 42
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Launch settings own the role-setting rows: harness, model, effort, serviceTier, mode, featureValues, notes, extraArgs and stepUp.\n\nAnchor: `featureValues`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00459247fca0dfd5d42a9eab5e29ae5532c95f3d",
+            "content": "sha256:1652872239a186b86d9d44eceb795977aa97468a1dc9a63bdd759dadb4f089b3",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 73
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Task collaboration, format, memory-specific commands and role/operation duties have separate instruction owners.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00459247fca0dfd5d42a9eab5e29ae5532c95f3d",
+            "content": "sha256:ba476e538cb00657a76b31e28c245fabb220337d433226bee985c3c6b57ad137",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 83
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The instruction-boundary rule states that a started role receives its role text, operation text and the shared every-role digest in its first message, and loads no other core file. Retained core corpus is an authoring reference, not evidence of a particular launch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00459247fca0dfd5d42a9eab5e29ae5532c95f3d",
+            "content": "sha256:69a4ce3481e4de1c59b7c32b3746d0259c6f3f634194de1b6372a6a828be2d25",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 91
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Questions, analysis, rulings and parent relay.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00459247fca0dfd5d42a9eab5e29ae5532c95f3d",
+            "content": "sha256:58a641c20e450cd1565de9a58916db27c7772ab49dd11dd1edf352f29a0cdc47",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 19
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Dependency-based sequencing, the guard rule and observability.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00459247fca0dfd5d42a9eab5e29ae5532c95f3d",
+            "content": "sha256:df520caf7ce7ccaa578827975571b440c5d0141b59a52892e7fc828c5fb31337",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 27
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Small gaps, escalation to the parent and Orchestrator-only spirit test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00459247fca0dfd5d42a9eab5e29ae5532c95f3d",
+            "content": "sha256:b135e3314f7b1428db68f5c4c951403afc1b76f968c74b64dd8d4a13eeb95c02",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 61
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Portable roles, settings precedence, permitted role-setting keys and harness-independent role start.\n\nAnchor: `serviceTier`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00459247fca0dfd5d42a9eab5e29ae5532c95f3d",
+            "content": "sha256:e031e39cacc3c9b4ece8f2ac9f93934838809f10195c16f3dce879291cfa7e3f",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 69
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Task collaboration, task format, repository memory commands, role duties, operation procedures and reference details have separate owners. A started role receives its own role, operation and every-role digest; it loads no other core file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00459247fca0dfd5d42a9eab5e29ae5532c95f3d",
+            "content": "sha256:34003e99b907a59032c3f643a4290b09547380dcc03d55c517c69101ef96a0f0",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 81
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Selected Orientation starts from supplied assignment and forbids loading other role/core files.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1745f5c871fefa6b9649161d2c3d7b15b0caf6f7",
+            "content": "sha256:5d3f1bf6cdd2365ded442eb31d1adc21bc4cfa8105425e826f44cfbba2e8acfb",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The Architect owns the developer conversation for delegated work; a parentless seat uses its own chat and backend seats keep their parent relay.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00459247fca0dfd5d42a9eab5e29ae5532c95f3d",
+            "content": "sha256:b05b42c66ddfa51dac4d1c5aa4caff5baebcbd094a8b12000c64dd81fd41586d",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 36
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

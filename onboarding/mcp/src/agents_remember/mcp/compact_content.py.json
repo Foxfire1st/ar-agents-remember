@@ -1,0 +1,66 @@
+{
+  "path": "mcp/src/agents_remember/mcp/compact_content.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`create_server()` installs the shim as its first action.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
+            "content": "sha256:67af5c5f3b8171491a76f68c2c356979bcca1a6ab64fa225732a9160c70ede18",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Behavior is verified through an in-process tool call.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07aa7958b1413048cb4b33c455b0339b9e4afda5",
+            "content": "sha256:1cc55325833004c9564b92de870f2049068687cab12c87194589476ae34ebcbd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_tool_call_text_block_is_compact_and_matches_structured"
+            },
+            "path": "mcp/tests/test_compact_content.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "07aa7958b1413048cb4b33c455b0339b9e4afda5",
+            "content": "sha256:8161d0476c28a81bbd4cfb1366b7e2d39e509277577ed6d9c38b75367eb8c6a7",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 50
+            },
+            "path": "mcp/tests/test_compact_content.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "07aa7958b1413048cb4b33c455b0339b9e4afda5",
+            "content": "sha256:01e523374470e32a95aa84add1602496bb825ac226fbefc59b637a7cec2f60b6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_compact_content.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

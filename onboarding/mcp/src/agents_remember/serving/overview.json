@@ -1,0 +1,2277 @@
+{
+  "path": "mcp/src/agents_remember/serving/overview",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "100": {
+      "note": "The bounds of a selection and the size of the route's thread pool.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ffb62b059733fa92509b8a34342b5a834fb8bb54",
+            "content": "sha256:355dca75535fa17395c7ec399f12dd4dde61de19ad0f00c6255ecca406d306a3",
+            "locator": {
+              "end": 64,
+              "kind": "line_range",
+              "start": 54
+            },
+            "path": "mcp/src/agents_remember/serving/review_trees.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "105": {
+      "note": "The start-only supervision the dashboard composes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26dcce17a3c64c18fe86c72366bf2522c16cc810",
+            "content": "sha256:055476941e360a611e75be9449fe29c11740aa259b2215c2509c5dc5860937d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "ensure_host"
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_start.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "106": {
+      "note": "The install host part.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3dcea459e6d09537cb45d687d719f677526cdbb4",
+            "content": "sha256:ebab7a90111a508b1555ff8649d4494215fcd6c5cb72754a2ae8e05003b771f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "install_host"
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_install.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3dcea459e6d09537cb45d687d719f677526cdbb4",
+            "content": "sha256:e6c6716d95d5a31ead17cd8300db17e5a2c357739b5c4e09e3189c184d37669d",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 45
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_install.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "107": {
+      "note": "The host acquisition.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c04ba51e28132e2c051c120ed038b9f096cb595",
+            "content": "sha256:655cc4ba48eb5762242aa346d6db16f09c04d4322e1ed58238fb02b68c04669c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ensure_node"
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_node.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8c04ba51e28132e2c051c120ed038b9f096cb595",
+            "content": "sha256:5cf46822f369ecfb3fc493be7b84898e208b171d150f727961b424ab4251845e",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_node.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "110": {
+      "note": "App registers three intent handlers plus separate summary, tree and reader ports before static delivery.  Anchor: create_app",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79366831b556a7cf512bc53d396ac55a43734666",
+            "content": "sha256:8aa0d623bf09d6d8867d3fc30c2e039e4e6ee1290780be0be1be6b4cdd0db345",
+            "locator": {
+              "end": 205,
+              "kind": "line_range",
+              "start": 175
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "111": {
+      "note": "Startup ordering, native held-message sweep registration, worklist-first shutdown, and awaited background teardown are explicit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
+            "content": "sha256:006376b7981daea32fb2fbb209dacb019156dd139997c85794d2a7bdbe4f5da8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_running_lifespan"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1fefbd4071035b1f6a3c99de43218b2ec9d23149",
+            "content": "sha256:a1ab49c714a54d678742e8ccaa0c07e9a7fa24278c8ce1ce3e15ea45e382f9e4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/background_accounting.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "112": {
+      "note": "Leaf-archive recovery is the one loop under the terminal-observation owner: it sleeps after each attempt returns, and no terminal-observation prime or poll remains.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
+            "content": "sha256:2078006d528ed120367cdbaff430b3c8a884c697282d74206e04d1568c35b858",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf_archive_recovery_loop"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "113": {
+      "note": "Live pacing adds post-completion rest, so interval/heartbeat alone is not a total freshness bound.  Anchor: projection_completed; _next_deadline\n\nAnchor: actual current supporting source\n\nRetired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/change_watcher.py:590-593 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3555e19b09110e97833a14cba59e64a655c10041",
+            "content": "sha256:9ed27255dae0eddc20ff5a12a3d7a767c7aeb20e3362d4e395e25123eed44f55",
+            "locator": {
+              "end": 632,
+              "kind": "line_range",
+              "start": 629
+            },
+            "path": "mcp/src/agents_remember/serving/change_watcher.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3555e19b09110e97833a14cba59e64a655c10041",
+            "content": "sha256:46e9f923bbeb787a2366e0b5cf93b1fc8c38949f4a839e9dd3651ebb0f8903c2",
+            "locator": {
+              "end": 765,
+              "kind": "line_range",
+              "start": 732
+            },
+            "path": "mcp/src/agents_remember/serving/change_watcher.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3555e19b09110e97833a14cba59e64a655c10041",
+            "content": "sha256:1232aa9847c9f42ef686219de6596cb935976fe67a4c2c406561cf0c5e867e11",
+            "locator": {
+              "end": 788,
+              "kind": "line_range",
+              "start": 755
+            },
+            "path": "mcp/src/agents_remember/serving/change_watcher.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3555e19b09110e97833a14cba59e64a655c10041",
+            "content": "sha256:29f75bb6aebaec7ee408a09220f75750904f63b842461e49037af6bbe4aaba89",
+            "locator": {
+              "end": 511,
+              "kind": "line_range",
+              "start": 508
+            },
+            "path": "mcp/src/agents_remember/serving/change_watcher.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3555e19b09110e97833a14cba59e64a655c10041",
+            "content": "sha256:968a0e785bc6f609f39d02db48cdef457c7fc832e5a4b3ea73818e57cbf8ba52",
+            "locator": {
+              "end": 646,
+              "kind": "line_range",
+              "start": 613
+            },
+            "path": "mcp/src/agents_remember/serving/change_watcher.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "114": {
+      "note": "Missing wheel exits degraded; watch establishment, retry and native-watch options are explicit.  Anchor: run; _watch_once",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3555e19b09110e97833a14cba59e64a655c10041",
+            "content": "sha256:89d4177771c50b6502d62a8407551c1684195f428abbebc37d30d6bccd2c5e8f",
+            "locator": {
+              "end": 861,
+              "kind": "line_range",
+              "start": 767
+            },
+            "path": "mcp/src/agents_remember/serving/change_watcher.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "120": {
+      "note": "Source content admits attributed unchanged context only with measured requested inventory.\n\nAnchor: admit_source_path; _attributed_or_refused",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd53a560b89553bb10e18692e31319e6d580a0cc",
+            "content": "sha256:c47b8746ae73feb224ac1c24c3190092adbe03053a4f52dba4a63214d75f1e19",
+            "locator": {
+              "end": 158,
+              "kind": "line_range",
+              "start": 86
+            },
+            "path": "mcp/src/agents_remember/application/review_source_admission.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "121": {
+      "note": "Leaf range returns empty for missing repository before endpoint-owner admission.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "content": "sha256:e108a3c317e025490ff19943c9e4cf5b0ac1c619561eb8f36991dd011867056b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf_range"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "128": {
+      "note": "Host ensure is start-only, with observation, lock, and outcome receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26dcce17a3c64c18fe86c72366bf2522c16cc810",
+            "content": "sha256:055476941e360a611e75be9449fe29c11740aa259b2215c2509c5dc5860937d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "ensure_host"
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_start.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Internal compile_launch_capsule admits task/free-agent seats through retained compiler ownership and returns a generic delivery/refusal.\n\nAnchor: `mcp/src/agents_remember/application/role_capsules/launch.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ed77cba4caacd019fd87b683ea11e0653cb7ad1",
+            "content": "sha256:14ab14f52fec4b2de32246118b9db9e7feaaf031a28803f9105bd460b527b419",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/launch.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "130": {
+      "note": "Landing interest gates actual discovery and probe admission, while due policy retains exact identities.\n\nAnchor: `LandingStateRefresher.refresh_once`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09b582a0f8143eba360527769647f80fd552ab2c",
+            "content": "sha256:1074b49a6e7ede4e0756db60b961d8c2600d9694d3704f7e44be0322e8e001c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "LandingProbeSchedule"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/landing_cadence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f78cd0b0ccc7bef3d26f33529137c09da56e2e03",
+            "content": "sha256:a86f6f348996f8ae207c89e91e5a1eaf0fe0bbf88cf61814b64e77b9121452a6",
+            "locator": {
+              "end": 339,
+              "kind": "line_range",
+              "start": 261
+            },
+            "path": "mcp/src/agents_remember/serving/projections/landing_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "131": {
+      "note": "Provider safety remains an independent periodic sequence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
+            "content": "sha256:ad2bae9b4636ad639cb42c916442297460ce550fb8cae6845509efd7c5ff0e2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_metrics_loop"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "132": {
+      "note": "Complete reconciled host input joins role-agent task identities only while its supervisor observation is armed.\n\nAnchor: `read`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ce1357b19b87897a111544e0477ef1d7bb1450f",
+            "content": "sha256:bdff12ea41d26dcc2816d777441d8833df29687f28f3ba4c08c94a05d7897673",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/host_activity.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0ce1357b19b87897a111544e0477ef1d7bb1450f",
+            "content": "sha256:df2d59936624d3cd1d59a7b6615ca58d30c8b6ae4b0021a6bb4218781d78f63e",
+            "locator": {
+              "kind": "symbol",
+              "name": "read"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/host_activity.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "133": {
+      "note": "Native cache values reuse only complete matching input generations; additional consumed inputs must have pre-read observations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a8a781425fec891612af4838bc49e7409a23f974",
+            "content": "sha256:09ca8abb3bb0cc2c8c8e735571a03c7afdeb83412e1f8011cf77456df0c68ea5",
+            "locator": {
+              "kind": "symbol",
+              "name": "cached_read"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_cache.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "135": {
+      "note": "Full TaskSummary preparation has separate bounded retention and generation checks, not a second task-status producer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "857eb6cbd01cfd193deb00b866acfe3ed5a3aa13",
+            "content": "sha256:4ef96577968fa196bc17bc5619ab1a3bc88ce0f360e9ba9a23629771e1597db6",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocumentBodyCache"
+            },
+            "path": "mcp/src/agents_remember/serving/task_document_cache.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "136": {
+      "note": "Task-body 304 requires a still-current captured generation and matching content revision.\n\nAnchor: `if_none_match_matches`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c284363bcc9358c1351d82fe3b311d7fd74521f2",
+            "content": "sha256:fecbca6ab24c31ddf3ca2253d265b5eec337a372ef46ba19da4214ac61abb88b",
+            "locator": {
+              "end": 168,
+              "kind": "line_range",
+              "start": 166
+            },
+            "path": "mcp/src/agents_remember/serving/_app_routes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "137": {
+      "note": "Master validation in placement applies only to documented subTasks; other listed kinds retain list placement under existing identity/cycle guards, not a kind-rejection or own-master-validation rule.\n\nAnchor: Exact producer admission boundary",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "content": "sha256:8ca067a86d2ee83d9c1b56d58218d06b03dc5fe4f8d930335be216512b7848c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_task_entries"
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "content": "sha256:16d8ca417b7d5c248481b1875b0737610c295a7003275c9599c6b6c1e4971338",
+            "locator": {
+              "end": 421,
+              "kind": "line_range",
+              "start": 343
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "content": "sha256:2e3d0f7b73581184814e67983f84f48e68f04f43994be827653c34fd18149436",
+            "locator": {
+              "end": 417,
+              "kind": "line_range",
+              "start": 339
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "138": {
+      "note": "The injected canonical memory-root port is carried from collaborators into the shared serving runtime, not resolved from arbitrary client roots.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
+            "content": "sha256:5cad09326ea48bcab9f5af8d1664d30a8f8771efee378a43321831f5b224c5d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "ServingCollaborators"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_common.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
+            "content": "sha256:10f53a60573c3d51d6a90b8ff6aaebed89149cc7db6d6175cb7e9f4da26c4c02",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ServingRuntime"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_common.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "79366831b556a7cf512bc53d396ac55a43734666",
+            "content": "sha256:eab1e07e06288c0f45adb2c354dc3b0778c03f526b4ac58c349150bccb5d312f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_build_serving_runtime"
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "139": {
+      "note": "The existing state stream opts into review-memory invalidations only through supplied review identity; no-selector streams retain their ordinary event path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c284363bcc9358c1351d82fe3b311d7fd74521f2",
+            "content": "sha256:13aaf574b6e483c1bdeef8d9fb3c6bf67b347e7cae4a9a58c663863b63eec274",
+            "locator": {
+              "kind": "symbol",
+              "name": "_review_stream"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f884d317176ef56edeba08afba6ebc87737fa1b5",
+            "content": "sha256:0222d39ee8635bb76186f7f8448069f042a2a55ccf702c14c656ac04214e057e",
+            "locator": {
+              "kind": "symbol",
+              "name": "multiplex_review_memory"
+            },
+            "path": "mcp/src/agents_remember/serving/review_memory_watch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c284363bcc9358c1351d82fe3b311d7fd74521f2",
+            "content": "sha256:0269fd5c9029d40d6f41bd0e71c148de6e4623a4d1a54fdeae79eede8f9c720e",
+            "locator": {
+              "end": 436,
+              "kind": "line_range",
+              "start": 413
+            },
+            "path": "mcp/src/agents_remember/serving/_app_routes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "140": {
+      "note": "The connection-owned watcher filters generated/temporary paths, separates ready from coalesced changes, emits invalidation revisions rather than tree identities and drains its worker/merge ownership on closure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f884d317176ef56edeba08afba6ebc87737fa1b5",
+            "content": "sha256:71f5f75c1fa3c7c085a80828aba8500ad66df49667c50ff4ffa7f4b76d58eb5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_merge"
+            },
+            "path": "mcp/src/agents_remember/serving/review_memory_watch.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "141": {
+      "note": "The catalogue handler admits optional comparison, refuses negative values and forwards all four port arguments.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:285b3b10be0648438ea082d3cd4cdbd680529abec030bf412336bc869d944d5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "api_review_intent_entries"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "142": {
+      "note": "The summary handler forwards optional comparison and names a negative number as unavailable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "31014e2a2cd4f9774512f7ab5460f73f88377e4c",
+            "content": "sha256:0945d68bf4078f9dded7724a78413c46021aab82b1cc099d22214a484e09d534",
+            "locator": {
+              "kind": "symbol",
+              "name": "api_review_intent_summary"
+            },
+            "path": "mcp/src/agents_remember/serving/review_summary.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "31014e2a2cd4f9774512f7ab5460f73f88377e4c",
+            "content": "sha256:aec8ced4afe9ba4f92850647755206e7cce7fdb3b803d827c7dc19db9aac9e38",
+            "locator": {
+              "kind": "symbol",
+              "name": "_negative_comparison"
+            },
+            "path": "mcp/src/agents_remember/serving/review_summary.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "143": {
+      "note": "Summary ports and cache keys include exact optional comparison identity.\n\nAnchor: `SummaryKey`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa967a110b417a273179def211beadcbffa21efe",
+            "content": "sha256:64f2db09bbc5c883ad0c6556fae4be637cff7ec73a4d4f7d5f43c8a558939f0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewIntentSummaryPort"
+            },
+            "path": "mcp/src/agents_remember/serving/intent_summary_cache.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "146": {
+      "note": "Serving composition refuses retired canvas authoring before registration, composes explicit explainer ports and comparison-bound routes, and owns moved-notice stream/watch lifetime. Ordinary roster has 44 names while explainer surface selection is separate.\n\nAnchor: `move_notice_watch`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
+            "content": "sha256:77300d3d8d990814a8c85c25a0c314254dde308fd394c4a03ff87c1fd34e2cb3",
+            "locator": {
+              "kind": "symbol",
+              "name": "PUBLIC_TOOLS"
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "79366831b556a7cf512bc53d396ac55a43734666",
+            "content": "sha256:594e15b9b4fbc0139d61473bf108a57d9edcf8058d3d535c0c2ff0e90e8b6d51",
+            "locator": {
+              "kind": "symbol",
+              "name": "refuse_replaced_canvas_authoring"
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c284363bcc9358c1351d82fe3b311d7fd74521f2",
+            "content": "sha256:baffae246adc8ca34e1a4978e4f637a5d07bf112180da7c81905697ed5c5cf10",
+            "locator": {
+              "kind": "symbol",
+              "name": "_merged_stream"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c284363bcc9358c1351d82fe3b311d7fd74521f2",
+            "content": "sha256:13aaf574b6e483c1bdeef8d9fb3c6bf67b347e7cae4a9a58c663863b63eec274",
+            "locator": {
+              "kind": "symbol",
+              "name": "_review_stream"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
+            "content": "sha256:b3911d0d280404b8ce7782248ae9d25cb9de11163eee3363e84c501733a1a45e",
+            "locator": {
+              "end": 555,
+              "kind": "line_range",
+              "start": 549
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "567816510b3d22da93f35b7d067b56bc73bc4893",
+            "content": "sha256:c4c43221a3995a9f930d58dea927134267df383098a679ed4d11a05d21f2a1c9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/explainer_surface.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The shared naming primitive appends the same physical lock suffix.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1c8709e75ca22ed12ab5182e676a05d389075a96",
+            "content": "sha256:8625fb836b979634f02013f27444bae4be2d8f919640db82fd48f72a5588b0f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "lock_path_for"
+            },
+            "path": "mcp/src/agents_remember/kernel/file_lock.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Every-directory filtering retains lock suffix exclusion.\n\nAnchor: `is_projection_input_event`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3555e19b09110e97833a14cba59e64a655c10041",
+            "content": "sha256:9121b4c60b4e54071e290de2fd00fdea92513f2f76af904494e77636590dab0f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/change_watcher.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3555e19b09110e97833a14cba59e64a655c10041",
+            "content": "sha256:d9ef3969e16b8aae5bc6fb18d935ab09f26ece5dab35aeeb5bb1301fffc39bbb",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_projection_input_event"
+            },
+            "path": "mcp/src/agents_remember/serving/change_watcher.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The query, the port and the GET handler with its three answer classes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f60b20373629b56db05b6b2cd9dc184622380b3",
+            "content": "sha256:1060c2684ed8d6af4340e10468d8e34975d66f607c18b71f6f51b4f25db1ceeb",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeReaderQuery"
+            },
+            "path": "mcp/src/agents_remember/serving/knowledge_reader.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3f60b20373629b56db05b6b2cd9dc184622380b3",
+            "content": "sha256:5781c8215b5a6f6de9beb976f79d707fcd24810e3bf4859034a1508daa19895d",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_knowledge_reader_route"
+            },
+            "path": "mcp/src/agents_remember/serving/knowledge_reader.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "The catalogue handler forwards task context and its optional recorded comparison number; an unwired process still returns a named refusal rather than an empty list.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:285b3b10be0648438ea082d3cd4cdbd680529abec030bf412336bc869d944d5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "api_review_intent_entries"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "**The expansion route's handler and the module-level transport behind it (`260921-ICR-L3`).**  Anchor: \"def api_review_intent_source_content(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:a7e5ba6f8331c12effad7c41e71338de141f4769efb00994a3181bf88c33f1b3",
+            "locator": {
+              "end": 667,
+              "kind": "line_range",
+              "start": 665
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:1272bac5ce2f7595b1d3bf178f8f23fceb8ae7c37096a6de10d8d163257da323",
+            "locator": {
+              "end": 782,
+              "kind": "line_range",
+              "start": 764
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "**The unwired-entry body: `unavailable` with the \"not served rather than served empty\" reason and next action — and, since `260921-ICR-L3`, its sibling for the expansion route.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:6a4431aebebb8e92d13470cf87b927abe75c08b06267b8db3f7ec7c926ceb3bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_UNWIRED_ENTRIES"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:9bcdd3d2069d6b63749794955628cb2711dc84c3e83bb56dd9959b07fc04b3d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_UNWIRED_SOURCE_CONTENT"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "**The entry route constant, and the comment recording why it is a second path rather than a second adapter.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:7bc221fb57784dc83fba044bcea100ba7cbb03b34455bfd44ce00d39be98db2c",
+            "locator": {
+              "kind": "symbol",
+              "name": "KNOWLEDGE_REVIEW_ENTRIES_ROUTE"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "The two admitted selector kinds, refused rather than mapped.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:b58a180d96007d29c14c655d73d6cd78c2476d3d1c072095248dbe58a272c5cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "SELECTOR_KINDS"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "The query parser that admits only those two.  Anchor: \"def review_request_from_query(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:213ac2fb8c7559b5e917f8c3d06d7f058864a4419125614e034f47c5f5bcea96",
+            "locator": {
+              "end": 420,
+              "kind": "line_range",
+              "start": 298
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "**The status mapping the routes inherit from the change-set routes: success is `refusal is None`, and the four candidate codes — including `subject_unresolved` — answer `404`.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:90063c8291f95506706a14c495d8eb7191febaac8e868bc666486c4588f7cd53",
+            "locator": {
+              "kind": "symbol",
+              "name": "_status_for"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "The refusal code a process with no adapter produces.\n\nAnchor: `review_adapter_unavailable`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:9872e447f26aeb81f14b64ff49d0d3c4424ea0b172d300268de789a31844a3bd",
+            "locator": {
+              "end": 619,
+              "kind": "line_range",
+              "start": 534
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "The 400 a selector kind outside the admitted set gets.\n\nAnchor: `status_code`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:5248bb0be5725e7555a26a26a6e8349ba9d70ac1b6f636d9234bac2b1cc3cb67",
+            "locator": {
+              "end": 713,
+              "kind": "line_range",
+              "start": 713
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The collaborator port and the registration before the static mount.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79366831b556a7cf512bc53d396ac55a43734666",
+            "content": "sha256:7ea9c545483648d870ab687a1d98d43c51d66dd72d29f1cabd089da7a0c1c134",
+            "locator": {
+              "end": 244,
+              "kind": "line_range",
+              "start": 244
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "40": {
+      "note": "**The registration that must precede the static mount and that takes all three ports.**  Anchor: \"def register_review_routes(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79366831b556a7cf512bc53d396ac55a43734666",
+            "content": "sha256:eea35ea031971c3730cd82b103cc44ac7572411657452a4300e42dab6de4e5ad",
+            "locator": {
+              "end": 189,
+              "kind": "line_range",
+              "start": 176
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "41": {
+      "note": "**The entry port type: the task context in, one typed entry result out — and, since `260921-ICR-L3`, the expansion port beside it.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:1b434104dfcc1eac61a10625922c7967c302440dfc83524c70a1d6e8b9039571",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeReviewEntriesPort"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:e6dd46938e97bb07522b36aa981492ccfc4b6e800692db4d5721c1872240007f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSourceContentPort"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "42": {
+      "note": "**The unwired-entry body: `unavailable` with the \"not served rather than served empty\" reason and next action.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:6a4431aebebb8e92d13470cf87b927abe75c08b06267b8db3f7ec7c926ceb3bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_UNWIRED_ENTRIES"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "44": {
+      "note": "**The entry port type: the task context in, one typed entry result out.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:1b434104dfcc1eac61a10625922c7967c302440dfc83524c70a1d6e8b9039571",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeReviewEntriesPort"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "46": {
+      "note": "The two admitted selector kinds, refused rather than mapped.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:b58a180d96007d29c14c655d73d6cd78c2476d3d1c072095248dbe58a272c5cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "SELECTOR_KINDS"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "47": {
+      "note": "The query parser that admits only those two.  Anchor: \"def review_request_from_query(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:213ac2fb8c7559b5e917f8c3d06d7f058864a4419125614e034f47c5f5bcea96",
+            "locator": {
+              "end": 420,
+              "kind": "line_range",
+              "start": 298
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "48": {
+      "note": "**The status mapping the routes inherit from the change-set routes; the signature accepts all three typed results and reads success as `refusal is None`.**  Anchor: \"def _status_for(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:90063c8291f95506706a14c495d8eb7191febaac8e868bc666486c4588f7cd53",
+            "locator": {
+              "end": 628,
+              "kind": "line_range",
+              "start": 611
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "49": {
+      "note": "The refusal code a process with no adapter produces.\n\nAnchor: `review_adapter_unavailable`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:9872e447f26aeb81f14b64ff49d0d3c4424ea0b172d300268de789a31844a3bd",
+            "locator": {
+              "end": 619,
+              "kind": "line_range",
+              "start": 534
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "51": {
+      "note": "The transport still maps the literal legacy candidate_dataset_absent refusal code to404; a status mapping does not establish a currently produced dataset candidate path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:90063c8291f95506706a14c495d8eb7191febaac8e868bc666486c4588f7cd53",
+            "locator": {
+              "kind": "symbol",
+              "name": "_status_for"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "52": {
+      "note": "**The 200/refusal split the entry handler makes: `entries` serves `200`, anything else goes through `_status_for`.**  Anchor: \"def api_review_intent_entries(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:90063c8291f95506706a14c495d8eb7191febaac8e868bc666486c4588f7cd53",
+            "locator": {
+              "end": 628,
+              "kind": "line_range",
+              "start": 611
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "53": {
+      "note": "The registration that must precede the static mount.  Anchor: \"def register_review_routes(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79366831b556a7cf512bc53d396ac55a43734666",
+            "content": "sha256:eea35ea031971c3730cd82b103cc44ac7572411657452a4300e42dab6de4e5ad",
+            "locator": {
+              "end": 189,
+              "kind": "line_range",
+              "start": 176
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "54": {
+      "note": "The status mapper accepts the three review result types; success is refusal absence, with distinct unavailable and missing-subject/candidate refusals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:90063c8291f95506706a14c495d8eb7191febaac8e868bc666486c4588f7cd53",
+            "locator": {
+              "kind": "symbol",
+              "name": "_status_for"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "55": {
+      "note": "**The new owner: which exact Git objects a committed range binds, the three absence kinds, and the one absence that may degrade to empty.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48e667c9305d3cf101beae36d282b6f77fd8ca28",
+            "content": "sha256:b7a164140ee93dc815b88289ebc9427873fbda7c77a9bb4087fb5a0fa999b6c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "recorded_committed_range"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_endpoints.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "48e667c9305d3cf101beae36d282b6f77fd8ca28",
+            "content": "sha256:5a28d4a0c426597856d7485be42352e3ed838fc9dfe210e30ae6652b0a109d39",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecordedEndpointAbsent"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_endpoints.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "48e667c9305d3cf101beae36d282b6f77fd8ca28",
+            "content": "sha256:0bd52fb074a9a9cf53d881f2c43ca86bade63063eb80290e44b0322dcf009da9",
+            "locator": {
+              "kind": "symbol",
+              "name": "NOT_RECORDED"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_endpoints.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "56": {
+      "note": "**The caller that owns the degradation policy and (260921-ICR-L25) carries the code half's named absence instead of raising it: the two sides resolve independently, and only an unrecorded memory half empties.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "content": "sha256:e108a3c317e025490ff19943c9e4cf5b0ac1c619561eb8f36991dd011867056b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf_range"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "content": "sha256:7ea5a0c462acdae6785d07dfc32269df86c64c5edaad40f655ecfb5f2a020f63",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_file_diff"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "57": {
+      "note": "**The doc-reader entry point that publishes the unrecorded state in the body.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "content": "sha256:87dd40a7ecbeb73a030c4de09704e045d3e3d9d85a5a7ad11b6556ea86e0907c",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_changeset"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a3a2210b12a2fe760312652a13f1f7366c306e92",
+            "content": "sha256:463b38acb2a449e68d35e60f53e3a39a6d156550a23302eeffa713b2fd585458",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeafChangeSet"
+            },
+            "path": "mcp/src/agents_remember/serving/response_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "58": {
+      "note": "**The cases that measure this route's half of the change: the recorded range bound and unmoved by a later commit, the state answered instead of a `HEAD` read with the route's own `200`, and the one-half degradation.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "003b509b7309b3cd122be4091f29d71b1335eb1a",
+            "content": "sha256:fff151a6307bda42be3463b93fa856c06d89c102c0b0b1145dea883cfd4e0541",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_committed_range_binds_the_recorded_commit_and_a_later_commit_does_not_move_it"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "003b509b7309b3cd122be4091f29d71b1335eb1a",
+            "content": "sha256:b3ec6e7db7a750909e0cec4db8326ba6803ae8f9a6bccafe1e21cab116283d91",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unrecorded_committed_endpoint_is_answered_with_its_own_state_rather_than_read_from_head"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "003b509b7309b3cd122be4091f29d71b1335eb1a",
+            "content": "sha256:1f76b2f5730cd5afddf1be51ba95a35027e6de25d2def8094c0c17227f264944",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_route_answers_an_unrecorded_committed_view_without_a_status_error"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "003b509b7309b3cd122be4091f29d71b1335eb1a",
+            "content": "sha256:f284d3f654cf707b2d61c77f2fd3beeca6f990d0761cdc646f39151fb0c71f34",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unrecorded_memory_half_empties_only_itself_and_keeps_the_code_half"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "59": {
+      "note": "**The new owner: which exact commits a master net binds, the deterministic digest, same-call currentness, and the named refusal for a missing endpoint.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c4737de45af72f420304b097f27413a794c58d4",
+            "content": "sha256:7a575351d35d49184626d8535b1e76e3c313d05810ad25cf7446591727a247a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "select_master_net"
+            },
+            "path": "mcp/src/agents_remember/serving/master_net_generation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c4737de45af72f420304b097f27413a794c58d4",
+            "content": "sha256:7e4b9016dd83d515a08995c2571779347c9eaec5189fef2958695d1e5fcfac21",
+            "locator": {
+              "kind": "symbol",
+              "name": "master_net_digest"
+            },
+            "path": "mcp/src/agents_remember/serving/master_net_generation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c4737de45af72f420304b097f27413a794c58d4",
+            "content": "sha256:a5988124fd3546125bd509ee4ee7a2ceac7949ef752d2c51ffaaec03f3bb07e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "MasterEndpointAbsent"
+            },
+            "path": "mcp/src/agents_remember/serving/master_net_generation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "60": {
+      "note": "**The thin delegating entry and the pinned file view, with the shared master 400/404 mapping.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "content": "sha256:c0ad04ef56c199e4145dee058c921ac7700e48c5b6c2392b857c0c04641fe5b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "master_changeset"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "content": "sha256:f8d63841e83c4a19b3d6d39a43ff101d86b79d47da1c8fa753c95ebc2d580751",
+            "locator": {
+              "kind": "symbol",
+              "name": "master_file_diff"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "content": "sha256:b590a72879d2e392799021146479a74c061263778255a3892990a907ae3a139e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_master_json"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "61": {
+      "note": "**The served vocabulary: the generation identity, the net's `generation` + `currentness` + `scope`, and the `committed`/`working` leaf-row state.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3a2210b12a2fe760312652a13f1f7366c306e92",
+            "content": "sha256:f64c082d90fbb42c45415faf0fed88e15e456ce9c1b4d3bfccd27c9e4b686b03",
+            "locator": {
+              "kind": "symbol",
+              "name": "MasterNetGeneration"
+            },
+            "path": "mcp/src/agents_remember/serving/response_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a3a2210b12a2fe760312652a13f1f7366c306e92",
+            "content": "sha256:dde80e31f24d9d4836c324eaa93b07012c54462ca77b232373d84670f5e882b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "MasterChangeSet"
+            },
+            "path": "mcp/src/agents_remember/serving/response_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a3a2210b12a2fe760312652a13f1f7366c306e92",
+            "content": "sha256:bbbb25e8523b159636c4217b70b8618bc867bb38c88eb3b0cde709926030ce4c",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeafSummary"
+            },
+            "path": "mcp/src/agents_remember/serving/response_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "62": {
+      "note": "**The nine cases that measure this route's half of the change, through real contracts, repos and routes.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36ceb1d30a00e7763b864061d9798f98f1f499ff",
+            "content": "sha256:2de796bf3226f012ae5d15a82940e8c11b88c163c9e563dfd6aca2252a8cb15e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_two_leaves_that_add_then_remove_a_file_net_to_exactly_zero"
+            },
+            "path": "mcp/tests/test_master_net_generation.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "36ceb1d30a00e7763b864061d9798f98f1f499ff",
+            "content": "sha256:398c37fd83c45f70e118cb5189cab9138f7430313e39f00de2a13865ea403c7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_diff_failure_after_validation_is_refused_never_reported_as_zero"
+            },
+            "path": "mcp/tests/test_master_net_generation.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "63": {
+      "note": "**The parser's two admitted shapes, and the refusals it keeps: a half-named selector and an unadmitted kind still return `None`.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:269fde1491c2738b585d26b2469803632780af809147de027da7cf2ddedbde39",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_request_from_query"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
+            "content": "sha256:309800d1e476be02617431a5b949573576643852804a690979848579f42e621b",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSurfaceRequest"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "65": {
+      "note": "The status mapping and the serializer, unchanged by that leaf (the mapping serves a third result type since `260921-ICR-L3`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:90063c8291f95506706a14c495d8eb7191febaac8e868bc666486c4588f7cd53",
+            "locator": {
+              "kind": "symbol",
+              "name": "_status_for"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:8d921d2181ce73a31753a8a2f8957f40fd329436288652cfb31c908b530fffac",
+            "locator": {
+              "kind": "symbol",
+              "name": "_json"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "66": {
+      "note": "**The composition the task-context answer reaches, which is where the complete inventory is measured.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
+            "content": "sha256:8031c5ed17f3ab243106bb4c84c6a162e538a7d27c5ed0dc06d2caef33cba0ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "compose_review"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5bd81fc6f8ff0b3bd239e3a985472aa9ae3d6d01",
+            "content": "sha256:8abb654f734d5874cba410862a0e4c89a5ad23abeb73ebe7879f4031a69a333d",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_context_review"
+            },
+            "path": "mcp/src/agents_remember/application/review_task_context.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "67": {
+      "note": "**The case that admits exactly the two reviewable selector kinds and refuses every other spelling, and the case that drives the same route with no selector parameters at all.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5326dde5297deef1bfee2f628ae5f7843ca2e89d",
+            "content": "sha256:d86784400b4e517a756a4981dd0f2dc9c26fceca88faf2b966d6387c599bb099",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_transport_admits_exactly_the_two_reviewable_selector_kinds"
+            },
+            "path": "mcp/tests/test_knowledge_review_resolution_and_route.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "003b509b7309b3cd122be4091f29d71b1335eb1a",
+            "content": "sha256:84e896178f95f5b455a12673239c99b93dbef512fa8389c0992780e32e188365",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_task_context_review_lists_the_complete_source_inventory_with_no_knowledge_at_all"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "68": {
+      "note": "**The third route constant, GET-only, with the comment recording why it is a third path rather than a payload field: the inventory is the whole task's change set and a payload carrying every file's text would be a document dump.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:8604670d9976c4ec7e3f0bfa5eec624e3dda197e611a93fde7ad74f2f4a106cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "KNOWLEDGE_REVIEW_SOURCE_CONTENT_ROUTE"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "69": {
+      "note": "**The expansion's whole selector as one value: the task context, the entry path, and both camel-case tree ids, which travel together because any one alone selects nothing.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:3d8e168ee22f6c9b451bd06933d55854d834167bcdea2bdbd6bf330c58e50111",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourceContentRef"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:deb1bda79d4a52dcc11e5b8fac1a44078e1f5409e66c459b2b77ac5503b00d4e",
+            "locator": {
+              "kind": "symbol",
+              "name": "before_code_tree_id"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "70": {
+      "note": "**The parse that refuses a blank component rather than defaulting it — a defaulted tree id would make the server choose a generation.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:77a7088874866476b25a8429f1a0317bbd80d260a770575eaa17227ad73fdeb8",
+            "locator": {
+              "kind": "symbol",
+              "name": "source_content_request_from_query"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "71": {
+      "note": "**The one-line route registration, and the module-level transport behind it: the unwired `503`, the incomplete-generation `400`, and the same two exception shapes the comparison handler uses.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:a7e5ba6f8331c12effad7c41e71338de141f4769efb00994a3181bf88c33f1b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "api_review_intent_source_content"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:1272bac5ce2f7595b1d3bf178f8f23fceb8ae7c37096a6de10d8d163257da323",
+            "locator": {
+              "kind": "symbol",
+              "name": "_source_content_response"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "72": {
+      "note": "**The expansion route's own unwired answer: \"not served rather than served as an empty file\".**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:9bcdd3d2069d6b63749794955628cb2711dc84c3e83bb56dd9959b07fc04b3d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_UNWIRED_SOURCE_CONTENT"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "73": {
+      "note": "**The third port type and the third collaborator field, with the reason it is a port rather than a payload field.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:88fa6259b4331559780c4a745da725b3246dd39110df5b4afd8fde218505204b",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 110
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
+            "content": "sha256:42c4997d02fe59a1cce1a48e50cc0b8dc6c9686b2220228b40c21103ce0b74c8",
+            "locator": {
+              "end": 206,
+              "kind": "line_range",
+              "start": 198
+            },
+            "path": "mcp/src/agents_remember/serving/_app_common.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
+            "content": "sha256:e1364725bde4381d9885a60a2a4698bc94777af3299e1350fafb99aee1dce29b",
+            "locator": {
+              "end": 207,
+              "kind": "line_range",
+              "start": 199
+            },
+            "path": "mcp/src/agents_remember/serving/_app_common.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "74": {
+      "note": "**The status mapping widened to the third result type, where the expansion's refusal code reaches `400` through the same fall-through as `comparison_refused`.**\n\nAnchor: `source_content_unresolved`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:90063c8291f95506706a14c495d8eb7191febaac8e868bc666486c4588f7cd53",
+            "locator": {
+              "kind": "symbol",
+              "name": "_status_for"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
+            "content": "sha256:4f8105550c9040b6122fbd15c25e4f774e7186f1a1a45198fd02c564a933eaf7",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 151
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "75": {
+      "note": "The `400` body for a query that did not name the generation whole, and the exact expected set it names.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:58bbd1bd83463b3bdce0a3636d2c658ec14ac1ad090f5848d7ce54ab00c8c1f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_incomplete_generation"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "76": {
+      "note": "The registration call in the app factory, which passes all three collaborator ports and still precedes the greedy static mount.  Anchor: `register_review_routes`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79366831b556a7cf512bc53d396ac55a43734666",
+            "content": "sha256:2a408a54335d394efb8f83c97206bda2d92a8428d7c04a27222edf51094218de",
+            "locator": {
+              "end": 185,
+              "kind": "line_range",
+              "start": 179
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "79366831b556a7cf512bc53d396ac55a43734666",
+            "content": "sha256:6c9f0b508c6761d91dc59b44c289511fb9a5a67eecd54aa2ff8d11addefa7801",
+            "locator": {
+              "end": 236,
+              "kind": "line_range",
+              "start": 230
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "77": {
+      "note": "**The composition root's third review port, whose docstring names the two facts the route rests on: the caller's generation rather than the server's choice, and no working tree or `HEAD` as a source of bytes.**  Anchor: `read_review_source_content`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "05fd300e87f1c47190482b0b69314db2f83729f5",
+            "content": "sha256:07a9ae9b329c050c8b413bd1b7a773428e7e1405bad0dae4dd1dcafcc2b53c1c",
+            "locator": {
+              "end": 322,
+              "kind": "line_range",
+              "start": 312
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "05fd300e87f1c47190482b0b69314db2f83729f5",
+            "content": "sha256:14b5262c837d857baf356888a7eb27a796635f0c27d9c90ddb014fae99fb24e8",
+            "locator": {
+              "end": 326,
+              "kind": "line_range",
+              "start": 316
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "78": {
+      "note": "**The application owner behind the port: the admitted paths (a changed path of a measured change set, or unchanged context a recorded realization of the same comparison links — decided by the admission owner), both bound trees read by object id, and the per-side states.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
+            "content": "sha256:a7b54f8e8b6b6237ddfc474f9f9c9bacf7c17583e978f70442cb67ef3eafc3a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_review_source_content"
+            },
+            "path": "mcp/src/agents_remember/application/review_source_content.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bd53a560b89553bb10e18692e31319e6d580a0cc",
+            "content": "sha256:38e8843a8cebfb16f766d607a7dee7674eb699fa1a559e313a7a5af4a6d746fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "admit_source_path"
+            },
+            "path": "mcp/src/agents_remember/application/review_source_admission.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "79": {
+      "note": "**The cases that drive the new route through the real composition: an incomplete query refused by the transport, an unwired process refused by name, and an unmeasured generation that still confines the path to a measured change set.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "311e58a2b77c5b2fe0036ebbb98a88798cc389ed",
+            "content": "sha256:6de61e708b7c086a3c358c547178d7de5ed001b3da123d6d1de394b23bc51684",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_query_that_does_not_name_the_generation_is_refused_by_the_transport"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_content.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "311e58a2b77c5b2fe0036ebbb98a88798cc389ed",
+            "content": "sha256:601d97ed28f97e42ea4b6b5909e9837bb19c2d8ff6f09e626f87dddc761b0ee7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unwired_process_refuses_the_route_by_name"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_content.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "311e58a2b77c5b2fe0036ebbb98a88798cc389ed",
+            "content": "sha256:50c1fac1f10c62d093fca91bed2ba4f1329841ed5910c658bb8df0265958f031",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unmeasured_generation_still_confines_the_path_to_a_measured_change_set"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_content.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "80": {
+      "note": "**The one mapping and the one body builder: the `400`/`404` idiom cannot differ between the two adapters.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:1cc85c851604ee4ca8b137bd8590fb591c073c8be26c824d93ac866c3364c194",
+            "locator": {
+              "kind": "symbol",
+              "name": "_port_outcome"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:96773af1d825e27ff84469b7ab2145d6f3aa8914644c7a27f5a1a0b943144762",
+            "locator": {
+              "kind": "symbol",
+              "name": "_transport_refusal"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "81": {
+      "note": "**The two actions the bodies gained, and where they are named.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:ef6e1b55aece9a15c3bec5a918e3b050bbcb3a0e514ffa05dff9e7cddd9bd5be",
+            "locator": {
+              "kind": "symbol",
+              "name": "_AUTHORITY_NEXT_ACTION"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:e427c2f50687224b5cbca6c4f60658d87324deb3d248450f678ce8aa53646209",
+            "locator": {
+              "kind": "symbol",
+              "name": "_NOT_FOUND_NEXT_ACTION"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "82": {
+      "note": "The expansion read's whole transport, whose docstring now states the shared mapping.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:1272bac5ce2f7595b1d3bf178f8f23fceb8ae7c37096a6de10d8d163257da323",
+            "locator": {
+              "kind": "symbol",
+              "name": "_source_content_response"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "83": {
+      "note": "The published surface, unchanged: the three route constants, the three ports and the two parsers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:97ed9820106930a056d17c96f31047662399f10bf2f484b236c28fda965717ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:3d8e168ee22f6c9b451bd06933d55854d834167bcdea2bdbd6bf330c58e50111",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourceContentRef"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "84": {
+      "note": "The dashboard composition root registers the native role-launch routes, then the developer chat/tray routes, as the app's extra API routes beside the retained review/read ports.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "05fd300e87f1c47190482b0b69314db2f83729f5",
+            "content": "sha256:307e3408785c8695c9f67245e4f509609475552c72121ffa430684a886b3241d",
+            "locator": {
+              "kind": "symbol",
+              "name": "api_routes"
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "89": {
+      "note": "The collaborator that stops the route's child computations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
+            "content": "sha256:8d6e77bb4fda4c5987361be9ddd701b2dedf303a912722dd2047b97d174e2491",
+            "locator": {
+              "end": 238,
+              "kind": "line_range",
+              "start": 237
+            },
+            "path": "mcp/src/agents_remember/serving/_app_common.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "LaunchCapsuleMode has only capsule/refused and no resolver or legacy carrier policy.\n\nAnchor: `mcp/src/agents_remember/serving/launch_capsule.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29fcf81063bb258507e45da4a75c16d0a9db554f",
+            "content": "sha256:125b72817befd46674986f2091bb50b1b3f062c29eac249e0d0ebf42addd173a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/launch_capsule.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "90": {
+      "note": "The runtime receives the shutdown callable from the collaborators.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79366831b556a7cf512bc53d396ac55a43734666",
+            "content": "sha256:3e43035bd152ccea9442fd4671ffad7e6a60b2733e46014253331c69699a0877",
+            "locator": {
+              "end": 132,
+              "kind": "line_range",
+              "start": 132
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "79366831b556a7cf512bc53d396ac55a43734666",
+            "content": "sha256:7d96f5bd3c97b9cf620d7ae7ce4f4a5b331a4d813018e8bd6b769e4456804dd2",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 139
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "91": {
+      "note": "Serving shutdown calls it on a worker thread before the background tasks are cancelled.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
+            "content": "sha256:090ec4bc0649183f78cc1138cb4f8dc0866abc370e720fc3cde406e82498c19b",
+            "locator": {
+              "end": 600,
+              "kind": "line_range",
+              "start": 590
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "93": {
+      "note": "It supplies that owner's shutdown to the app.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "05fd300e87f1c47190482b0b69314db2f83729f5",
+            "content": "sha256:eaca7c5320c469289fa232e9891afbca3e36745b1e0237e67b2beab03203e18a",
+            "locator": {
+              "end": 386,
+              "kind": "line_range",
+              "start": 386
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "05fd300e87f1c47190482b0b69314db2f83729f5",
+            "content": "sha256:877aa536d3b04674fff41070bb0164e99e2f79107ce8e8f2ac02dc1f7fd6de99",
+            "locator": {
+              "end": 395,
+              "kind": "line_range",
+              "start": 395
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "96": {
+      "note": "An enabled live leaf-wide tree read may start without a comparison number; focused card-entry reads require one. Absence of a number does not imply a dataset review.\n\nAnchor: `useReviewTrees` `useReviewTreeEntries`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e69a371f1c81dd1fdb854476f50f1d23c43a8cf",
+            "content": "sha256:6b3c3f3c8a9be8bb0421c6d68a40b40c86e38f3389a798efdf8a71709119805e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/reviewTrees.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0e69a371f1c81dd1fdb854476f50f1d23c43a8cf",
+            "content": "sha256:17bc59450e14c8c4d531e55facd62efb69c577f26623432f47c07a180f569bd9",
+            "locator": {
+              "kind": "symbol",
+              "name": "useReviewTrees"
+            },
+            "path": "dashboard/src/data/reviewTrees.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "97": {
+      "note": "A busy default executor cannot delay a tree read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e29e1b9902f5b27cd11779b2b92b5e3fb6c28560",
+            "content": "sha256:70af368c577d7976553c7af0697fc514b5f8853c37291dcff61d2a58753d2404",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_busy_default_executor_cannot_delay_a_tree_read"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "98": {
+      "note": "A disconnect, the deadline, shutdown and a queued request each end with the children reaped.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e29e1b9902f5b27cd11779b2b92b5e3fb6c28560",
+            "content": "sha256:aea809871ea10d0252b4d985e8b91cb1df3d5efdca848ccb5f7dd05606e4d00e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_actual_disconnect_deadline_shutdown_and_queue_reap_children"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

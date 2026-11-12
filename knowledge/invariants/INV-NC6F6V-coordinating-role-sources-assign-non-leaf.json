@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The attributed source owners must agree on the same selection, receipt and identity contract; a single location cannot preserve the obligation across its public producer and consumers."
+  },
+  "applicability": "Coordinating roles assigning a check or investigation belonging to no leaf.",
+  "conditions": [
+    "Use the actual admitted Investigator scope and returned agent identity.",
+    "A still-forbidden start is routed to the known parent; a parentless caller names the blocker in its own chat."
+  ],
+  "exclusions": [
+    "No invented Architect identity.",
+    "Leaf Worker/Reviewer checks retain their owning seats."
+  ],
+  "id": "INV-NC6F6V",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Report E09 six-clause table; wording and retired-fragment tests; .capsules.diff"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L98-curator-89a3f43e-2fd9-4e77-94ac-ff94bdf3b836.A02-curated-handoff.json"
+    },
+    "handoffEntry": "MIK-R98@v1 §9",
+    "leaf": "260928-MIK-L98",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Coordinating role sources assign non-leaf checks to Investigator under the actual wider permissions, while a still-forbidden start uses the known parent chain and a no-parent role invents no Architect.",
+  "status": "proposed",
+  "supersedes": []
+}

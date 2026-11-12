@@ -1,0 +1,40 @@
+{
+  "path": "mcp/tests/fixtures/text-delivery-native-reads.json",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "df47ac5a312c7c0575617447664e4bb9ae041299",
+        "content": "sha256:f2278ad00cc12977b2c0e472255b0787414e151f24553484684cbcfae852cf22",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-B62J1F",
+      "invariant": "INV-HXTSVY",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-text-delivery",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "These native read records pin detail-read attribution and body equality.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df47ac5a312c7c0575617447664e4bb9ae041299",
+            "content": "sha256:f2278ad00cc12977b2c0e472255b0787414e151f24553484684cbcfae852cf22",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

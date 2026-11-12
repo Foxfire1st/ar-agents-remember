@@ -1,0 +1,41 @@
+{
+  "path": "mcp/src/agents_remember/providers/grepai/context/workspace.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The layout module supplies the workspace name, output path, and normalized project roots.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0aa99c577ebd8e202dbe53fec26d5e8f6df1d117",
+            "content": "sha256:245a80a72c8b183547fb2e01d16c2f080053b20cf961cc095be5dde0f1b0fcf8",
+            "locator": {
+              "kind": "symbol",
+              "name": "GrepaiRuntimeLayout"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/context/layout.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "GrepAI lifecycle actions write the workspace config before starting or synchronizing the Docker-owned runner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a0f8c16695c0b7a31b0d963603d1e843814ae72",
+            "content": "sha256:a4ae6bc75693f8434cd0298384bfb844241d140fa84b1fe4547c84c195e0cef2",
+            "locator": {
+              "kind": "symbol",
+              "name": "grepai_docker_workspace_state"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/actions.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,1259 @@
+{
+  "path": "dashboard/src/cockpit/Cockpit.tsx",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+        "content": "sha256:47f36edd7a691ac43233b2b9bb6bc8fb27fd185458575546938c4d3ea69c1335",
+        "locator": {
+          "end": 851,
+          "kind": "line_range",
+          "start": 850
+        }
+      },
+      "id": "RLZ-0S1X9J",
+      "invariant": "INV-G1K3QN",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-TRAY09-shown-page-repository",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Publishes the selected page repository without fabricating a task binding or recipient, so downstream taskless filing can use the current repository context.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+        "content": "sha256:60bc25696b100ddfbef71aa797ce37aced694af3c96337092f369c0042e28c6f",
+        "locator": {
+          "end": 726,
+          "kind": "line_range",
+          "start": 648
+        }
+      },
+      "id": "RLZ-1Q53AD",
+      "invariant": "INV-D0QATN",
+      "origin": {
+        "handoffEntry": "PNT-R15@v1 / PNT-R16@v1 persistent Chats and inline navigation",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "MainLayers places RoleChatsPane under the persistent Chats ViewLayer, passes the canonical TaskEntry tasks array, and sets active only while Chats is visible without takeover. View switches hide the layer rather than unmounting the pane; no taskDocuments or series prop remains.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+        "content": "sha256:6c298755fc2ec4b5aede20cb8c8a61fc89c2534a04840780d97a5902059bdcbe",
+        "locator": {
+          "end": 719,
+          "kind": "line_range",
+          "start": 717
+        }
+      },
+      "id": "RLZ-405M48",
+      "invariant": "INV-6QQ5FE",
+      "origin": {
+        "handoffEntry": "MIK-R79@v1 required behavior 1",
+        "leaf": "260928-MIK-L79"
+      },
+      "rationale": "MainLayers keeps the KnowledgeReader mounted inside a ViewLayer that is only hidden while another view is shown, so the reader's document and reading position are not reset by a tab switch. The full dashboard width is not drawn here: Knowledge is in FULL_BLEED_VIEWS (Cockpit.tsx:176), which hides the rails.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+        "content": "sha256:60bc25696b100ddfbef71aa797ce37aced694af3c96337092f369c0042e28c6f",
+        "locator": {
+          "kind": "symbol",
+          "name": "MainLayers"
+        }
+      },
+      "id": "RLZ-4S029K",
+      "invariant": "INV-XB45X4",
+      "origin": {
+        "handoffEntry": "MIK-R79@v1 required behavior 16",
+        "leaf": "260928-MIK-L79"
+      },
+      "rationale": "MainLayers owns the rendering or source-selection boundary that implements this obligation: The bar is Chats, Operations, Knowledge and File Viewer, starts on Chats and does not mount pages outside the bar at ordinary page load.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+        "content": "sha256:29d3d4539fa8862f31ceefba386db2c2bb6805610e1898aeb18a22f4b2ab535f",
+        "locator": {
+          "kind": "symbol",
+          "name": "VIEWS"
+        }
+      },
+      "id": "RLZ-51Q8P8",
+      "invariant": "INV-XB45X4",
+      "origin": {
+        "handoffEntry": "MIK-R79@v1 required behavior 16",
+        "leaf": "260928-MIK-L79"
+      },
+      "rationale": "VIEWS owns the rendering or source-selection boundary that implements this obligation: The bar is Chats, Operations, Knowledge and File Viewer, starts on Chats and does not mount pages outside the bar at ordinary page load.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+        "content": "sha256:55a91037aa9860d4f1f28f96dfffe69c10484b6e1d763c177cbdfb751e3fdcb3",
+        "locator": {
+          "kind": "symbol",
+          "name": "RightRail"
+        }
+      },
+      "id": "RLZ-8C3WDX",
+      "invariant": "INV-X60KEC",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule8",
+        "leaf": "260928-MIK-L95"
+      },
+      "rationale": "The rail retains EventRiver and selected-document native host chat using the canonical current task reference; no retired series context, session panel or composer is mounted.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+        "content": "sha256:eb079060b2b76a141e83b53b196e958b275c6631360db2b68e5fb07f41201638",
+        "locator": {
+          "kind": "symbol",
+          "name": "TopBar"
+        }
+      },
+      "id": "RLZ-8HK86C",
+      "invariant": "INV-YK0D2W",
+      "origin": {
+        "handoffEntry": "D305 item 4 / L168-W-A015-host-activity-once",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "Renders the header line topBarCountsLine writes, which drops works, waiting and paused and says 'host activity unavailable' once while host activity is unknown.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+        "content": "sha256:d757d00659c1317b8fae09d60622d196a804ee9b0b139793a76dbba455db824d",
+        "locator": {
+          "kind": "symbol",
+          "name": "railedColumns"
+        }
+      },
+      "id": "RLZ-97RX3X",
+      "invariant": "INV-7QYXJP",
+      "origin": {
+        "handoffEntry": "RP16",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Derives actual shell tracks from Operations sidebar visibility and review chat placement; closed/overlay review chat has a zero track, and the 40rem shell is one column.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+        "content": "sha256:38f4a63184b4908af3f66cae1db063a2dd2f1c9f54e949e16b7147b66bf1cfb0",
+        "locator": {
+          "kind": "symbol",
+          "name": "shownPage"
+        }
+      },
+      "id": "RLZ-AT1CK7",
+      "invariant": "INV-E2PVM0",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-TRAY02-shown-page-provenance",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Names Review, File Viewer, Operations or the selected dashboard page label for panel passage provenance. This names current context; it does not collect a highlight or replace the explicit-add requirement.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+        "content": "sha256:ee59bf32cd91e8947c89a98d01bb5870d522a6f8a849945813e9bf77551d943c",
+        "locator": {
+          "kind": "symbol",
+          "name": "shellFlags"
+        }
+      },
+      "id": "RLZ-AYAH1W",
+      "invariant": "INV-VMREN3",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-VMREN3-Cockpit-composition",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Classifies a review as the Operations railed-page slot rather than a change-set takeover; keeping it out of takeover preserves the existing right-rail parent. This is classification support, not a new full-bleed or unrelated page-retention guarantee.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+        "content": "sha256:c6d8679bc2ab3dfcca99e099a16580215951cfd6bf0ab93b32263f14e9d81f76",
+        "locator": {
+          "kind": "symbol",
+          "name": "ChangeSetTakeover"
+        }
+      },
+      "id": "RLZ-C54BJW",
+      "invariant": "INV-VMREN3",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-VMREN3-Cockpit-composition",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The takeover now renders only ChangeSetViewer; the removed ReviewSurface path is supplied by the stable railed-page slot. This is the negative composition boundary supporting the one retained right-rail frame.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+        "content": "sha256:ab381fa39ef1b0eafc49c03f625ed3e711249682ff8ff69844f17ca13021aa90",
+        "locator": {
+          "kind": "symbol",
+          "name": "Cockpit"
+        }
+      },
+      "id": "RLZ-C8G0X4",
+      "invariant": "INV-TBFVJ5",
+      "origin": {
+        "handoffEntry": "L114-W14",
+        "leaf": "260928-MIK-L114"
+      },
+      "rationale": "Cockpit forwards ready?.lastEventTs to dashboardStore.markEventsHydrated from the Event River stream-ready callback. EventRiver mounts separately and reads store state; no timestamp prop is passed to it.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+        "content": "sha256:d757d00659c1317b8fae09d60622d196a804ee9b0b139793a76dbba455db824d",
+        "locator": {
+          "kind": "symbol",
+          "name": "railedColumns"
+        }
+      },
+      "id": "RLZ-D87A3M",
+      "invariant": "INV-ZTZSDN",
+      "origin": {
+        "handoffEntry": "RP18_WIDTH",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Applies the active width only to an open in-grid chat track and preserves its currentclass gutter; overlay and closed chat keep a zero track, separately from the Operations rail widths.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+        "content": "sha256:61ee688cede471dbd021eac365784a4e8d10a487bf950b619d83b30d01120f01",
+        "locator": {
+          "end": 741,
+          "kind": "line_range",
+          "start": 664
+        }
+      },
+      "id": "RLZ-DYQR7W",
+      "invariant": "INV-7QYXJP",
+      "origin": {
+        "handoffEntry": "RP16",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Operations left rail remains mounted but hidden for full-bleed, review, or a closed left sidebar; MainLayers receives the two independent Operations sidebar states and hides its ordinary content while review occupies the page. The reviewed Operations control/layout state is propagated rather than reset.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+        "content": "sha256:61ee688cede471dbd021eac365784a4e8d10a487bf950b619d83b30d01120f01",
+        "locator": {
+          "end": 741,
+          "kind": "line_range",
+          "start": 664
+        }
+      },
+      "id": "RLZ-EYJNC3",
+      "invariant": "INV-VMREN3",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-VMREN3-Cockpit-composition",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "MainLayers remains in its original position and is hidden while review is shown; the optional ReviewMain has an explicit null slot immediately before the unkeyed RightRail. RightRail receives Operations visibility and optional review-column state without being reparented or replaced.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+        "content": "sha256:ffaaad5daaeed93b8e273cc7db34c010926e5c65a1c4c6b0f7363ce1299f2f50",
+        "locator": {
+          "end": 217,
+          "kind": "line_range",
+          "start": 213
+        }
+      },
+      "id": "RLZ-FZBMHD",
+      "invariant": "INV-MGGEBY",
+      "origin": {
+        "handoffEntry": "L168-CUR-M2-21-N11",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "The shell subscribes to s.tasks and memoizes its values by map identity, replacing the parallel document/series subscriptions. engineProcesses remains separately subscribed operational data, not another task population.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+        "content": "sha256:d56a9ba0b4ba627c4df3338f1cd16fc62cd150dec19d94e9d6d0dd587eb57f78",
+        "locator": {
+          "end": 922,
+          "kind": "line_range",
+          "start": 908
+        }
+      },
+      "id": "RLZ-GKR34V",
+      "invariant": "INV-MGGEBY",
+      "origin": {
+        "handoffEntry": "L168-CUR-M2-21-N12",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "TopBar subscribes directly to the served taskCounts and the host-unknown reading and hands them to topBarCountsLine (topBarCounts.ts), which enumerates the seven supplied stage/activity fields instead of calculating task totals from lifecycle metrics and leaves out works, waiting and paused while host activity is unknown; the independent queue/generatedAt subscriptions remain separate.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+        "content": "sha256:ba05633139a8b3dc98955101d18b2859622ea3fe4f67c24606c01c44826fec50",
+        "locator": {
+          "kind": "symbol",
+          "name": "OperationsSidebarStrip"
+        }
+      },
+      "id": "RLZ-J78MSW",
+      "invariant": "INV-7QYXJP",
+      "origin": {
+        "handoffEntry": "RP16",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Keeps the Operations task-list toggle first and the River/chat toggle last on the main-column strip outside both hidden rails.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+        "content": "sha256:34f1296a09cf7353b03084aef3f7f6c063480007d75f46a483b3e7b6a1333ad3",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-JEPM88",
+      "invariant": "INV-3WWG5K",
+      "origin": {
+        "handoffEntry": "MIK-R60@v9.7",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Header count of waiting tasks.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+        "content": "sha256:b43be95478ec5655c2b63d9cd0c272680ffb33bbd1b21e4f244d3d15c3d55076",
+        "locator": {
+          "kind": "symbol",
+          "name": "useCockpitShellState"
+        }
+      },
+      "id": "RLZ-JF8VR8",
+      "invariant": "INV-PHBM6X",
+      "origin": {
+        "handoffEntry": "RP17_STATE",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Operations allocates distinct left and right shared states and hands only the shown review target to its separate review-chat state.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+        "content": "sha256:55a91037aa9860d4f1f28f96dfffe69c10484b6e1d763c177cbdfb751e3fdcb3",
+        "locator": {
+          "kind": "symbol",
+          "name": "RightRail"
+        }
+      },
+      "id": "RLZ-NTTB53",
+      "invariant": "INV-VMREN3",
+      "origin": {
+        "handoffEntry": "MIK-R122@v1 rules 2-3",
+        "leaf": "260928-MIK-L122"
+      },
+      "rationale": "RightRail keeps one stable DocumentChat child while choosing Operations or review visibility, width and task props; toggles hide wrappers instead of removing or reparenting that child.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+        "content": "sha256:7e0949e4d05d10372e20416e9f680b420f60788ae98fb810d361653dd0993bce",
+        "locator": {
+          "end": 515,
+          "kind": "line_range",
+          "start": 471
+        }
+      },
+      "id": "RLZ-PPNW5M",
+      "invariant": "INV-K9B8G8",
+      "origin": {
+        "handoffEntry": "MIK-R144@v1 rule 3a",
+        "leaf": "260928-MIK-L144"
+      },
+      "rationale": "Renders the task list as the whole left rail and no queue block above it, which is what gives the tree the column's whole height.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+        "content": "sha256:330ca28f4169c431e3e762656113684377b0215fb3ecce84c1a579c9f11dbca2",
+        "locator": {
+          "end": 743,
+          "kind": "line_range",
+          "start": 743
+        }
+      },
+      "id": "RLZ-PYHCH0",
+      "invariant": "INV-7QYXJP",
+      "origin": {
+        "handoffEntry": "RP16",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Applies the current railedColumns result to the body grid; the authority function alone does not apply sidebar width release to the rendered layout.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+        "content": "sha256:a4b49076008fcec7c66bd4d05cb617f69004fb8380dcb26b49ceed7187d4177d",
+        "locator": {
+          "end": 740,
+          "kind": "line_range",
+          "start": 737
+        }
+      },
+      "id": "RLZ-T3RK9S",
+      "invariant": "INV-811GC5",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-RP09-review-shell-marker",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Marks only the shown review body as data-page=review. The existing shell rule at layout.tsx lines24–29 excludes that marker from Operations stacked rail/viewport heights, so the review uses its own narrow main-page scroll owner rather than inheriting Operations minimum heights.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+        "content": "sha256:7e9ada31b3b996049de0f4e1a9f0fdc676b486b530da0f60c779306468c2cf64",
+        "locator": {
+          "end": 597,
+          "kind": "line_range",
+          "start": 581
+        }
+      },
+      "id": "RLZ-VF6VZ5",
+      "invariant": "INV-MN80QW",
+      "origin": {
+        "handoffEntry": "MIK-R122@v1 rule 6",
+        "leaf": "260928-MIK-L122"
+      },
+      "rationale": "The inner keepalive wrapper is display:none and aria-hidden whenever view.chat is false, and DocumentChat stays mounted inside it with active={view.shown && view.chat}. On Operations view.chat means railView is chat and view.shown means the rail is neither full-bleed nor hidden by its sidebar toggle (rightRailView, Cockpit.tsx:536-537). This anchor covers the inner hiding construct and that active predicate; it does not establish unconditional visibility of the outer fullBleed rail.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+        "content": "sha256:34f1296a09cf7353b03084aef3f7f6c063480007d75f46a483b3e7b6a1333ad3",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-WPHE33",
+      "invariant": "INV-AE8ZGP",
+      "origin": {
+        "handoffEntry": "L190-R1-F09",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Cockpit owns actual agent/chat target requests and the view switch used by bell navigation.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+        "content": "sha256:38f4a63184b4908af3f66cae1db063a2dd2f1c9f54e949e16b7147b66bf1cfb0",
+        "locator": {
+          "kind": "symbol",
+          "name": "shownPage"
+        }
+      },
+      "id": "RLZ-WZSWBY",
+      "invariant": "INV-G1K3QN",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-TRAY09-shown-page-repository",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Supplies the review repository or Operations task repository as the current filing context for taskless developer messages; File Viewer leaves repository ownership to its own page, and unrelated pages supply null. This is context propagation support, not the filing transaction authority.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+        "content": "sha256:47f36edd7a691ac43233b2b9bb6bc8fb27fd185458575546938c4d3ea69c1335",
+        "locator": {
+          "end": 851,
+          "kind": "line_range",
+          "start": 850
+        }
+      },
+      "id": "RLZ-Y70RFK",
+      "invariant": "INV-E2PVM0",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-TRAY02-shown-page-provenance",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Publishes the current page label and repository to the tray context consumed by the panel-selection offer.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+        "content": "sha256:57e2f656bc20222f62328519d9d1cb2e901ebceaae50dfbc50c5bceaa6af534f",
+        "locator": {
+          "kind": "symbol",
+          "name": "CockpitShell"
+        }
+      },
+      "id": "RLZ-Z2FC1D",
+      "invariant": "INV-XB45X4",
+      "origin": {
+        "handoffEntry": "MIK-R79@v1 required behavior 16",
+        "leaf": "260928-MIK-L79"
+      },
+      "rationale": "CockpitShell owns the rendering or source-selection boundary that implements this obligation: The bar is Chats, Operations, Knowledge and File Viewer, starts on Chats and does not mount pages outside the bar at ordinary page load.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "100": {
+      "note": "Independent Operations sidebar toggles outside DetailPanel.\n\nAnchor: \"function OperationsSidebarStrip({ left, right }: { left: SidebarState; right: SidebarState }) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:ba05633139a8b3dc98955101d18b2859622ea3fe4f67c24606c01c44826fec50",
+            "locator": {
+              "end": 646,
+              "kind": "line_range",
+              "start": 625
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "101": {
+      "note": "Review column shares the right rail and DocumentChat wrapper.\n\nAnchor: \"export function RightRail(props: RightRailProps) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:706985c016d1d38383287db3f07ddf082653c552d1f92c4418f91cf74e34615e",
+            "locator": {
+              "end": 586,
+              "kind": "line_range",
+              "start": 550
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "102": {
+      "note": "Operations/sidebar and review/chat column sizing.\n\nAnchor: \"function railedColumns(state: CockpitShellState, narrow: boolean): CSSProperties {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:d757d00659c1317b8fae09d60622d196a804ee9b0b139793a76dbba455db824d",
+            "locator": {
+              "end": 821,
+              "kind": "line_range",
+              "start": 810
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "103": {
+      "note": "Shown page/repository provenance values.\n\nAnchor: \"function shownPage(state: CockpitShellState): { page: string; repository: string \\| null \\| undefined } {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:38f4a63184b4908af3f66cae1db063a2dd2f1c9f54e949e16b7147b66bf1cfb0",
+            "locator": {
+              "end": 832,
+              "kind": "line_range",
+              "start": 826
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "105": {
+      "note": "The shared RightRail forwards the review leaf's explainer target into the same DocumentChat wrapper. Operations still uses its ordinary document chat; its active leaf document also mounts ViewedLeafExplainerControl, which can read and retire an existing explainer without visiting Review. The Operations active predicate is shared with DetailPanel, and switching pages adds neither a frame wrapper nor a frame key.\n\nAnchor: `DocumentChat`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:9e29a6f39a93a440da8f1d2d92bd0a81f51c92296063aab804777b188d187de0",
+            "locator": {
+              "end": 600,
+              "kind": "line_range",
+              "start": 551
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "106": {
+      "note": "The top bar renders the serving-build stamp from its own module.\n\nAnchor: `ServingBuildStamp`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:0eaa76116b5fd4da58b30d177aa8300fe23b8801d8c951817074f38b262f65b2",
+            "locator": {
+              "end": 934,
+              "kind": "line_range",
+              "start": 924
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "The product bar and its order are one list.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:29d3d4539fa8862f31ceefba386db2c2bb6805610e1898aeb18a22f4b2ab535f",
+            "locator": {
+              "kind": "symbol",
+              "name": "VIEWS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "Knowledge is a full-bleed, hidden-not-unmounted layer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:7d50bddd7d69bb31870ec6d78cfdc8c5f73c48264256b3b97d918a92cf5bff6a",
+            "locator": {
+              "end": 176,
+              "kind": "line_range",
+              "start": 176
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:306832e2054f2394fcd3196d50acce4eda3ce48b61027b6db3c6995d8bb91a1b",
+            "locator": {
+              "end": 620,
+              "kind": "line_range",
+              "start": 602
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:6c298755fc2ec4b5aede20cb8c8a61fc89c2534a04840780d97a5902059bdcbe",
+            "locator": {
+              "end": 719,
+              "kind": "line_range",
+              "start": 717
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "A page outside the bar mounts only through an injected view.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:29d3d4539fa8862f31ceefba386db2c2bb6805610e1898aeb18a22f4b2ab535f",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 70
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:921e455be43c5f1c647d35565a6cba24b9ae6ee6e59f1fd30d46f9bec932c12d",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 87
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:e94e2e07228ebd4fdb78e86106e834de4941f73e37970c32685a171b5e64b87f",
+            "locator": {
+              "end": 691,
+              "kind": "line_range",
+              "start": 685
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "The layer wrapper that hides without unmounting.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:306832e2054f2394fcd3196d50acce4eda3ce48b61027b6db3c6995d8bb91a1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "ViewLayer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "The mode-bar primitive that renders the product entries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bcc511bf68fd8d89365ba2b47d20c43a86469f44",
+            "content": "sha256:921ce3936f37598a6d974e6bad08740bc13b0b7e6b102bad4d72570b039b65a3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/grammar/ModeBar.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "39": {
+      "note": "The Knowledge reader the retained layer mounts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:6c298755fc2ec4b5aede20cb8c8a61fc89c2534a04840780d97a5902059bdcbe",
+            "locator": {
+              "end": 719,
+              "kind": "line_range",
+              "start": 717
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "65": {
+      "note": "RailedBody applies saved Operations sidebar widths or the review's reading/chat tracks; its narrow path uses one column.\n\nAnchor: \"function railedColumns(state: CockpitShellState, narrow: boolean): CSSProperties {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:d757d00659c1317b8fae09d60622d196a804ee9b0b139793a76dbba455db824d",
+            "locator": {
+              "end": 821,
+              "kind": "line_range",
+              "start": 810
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "66": {
+      "note": "Files, Engine Room, Topology, Knowledge, and Chats request the full-bleed layout.\n\nAnchor: \"const FULL_BLEED_VIEWS: ReadonlySet<CockpitView> = new Set<CockpitView>(['files', 'knowledge', 'engine', 'topology', 'chats']);\"; \"function shellFlags(view: CockpitView, changeSet: ChangeSetTarget \\| null, notesOpen: boolean) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:7d50bddd7d69bb31870ec6d78cfdc8c5f73c48264256b3b97d918a92cf5bff6a",
+            "locator": {
+              "end": 176,
+              "kind": "line_range",
+              "start": 176
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:ee59bf32cd91e8947c89a98d01bb5870d522a6f8a849945813e9bf77551d943c",
+            "locator": {
+              "end": 188,
+              "kind": "line_range",
+              "start": 180
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "68": {
+      "note": "The `chatsLayer` keep-alive class used by the Chats layer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "269029073b4592e81229eed6cbcae8eb1df77b5c",
+            "content": "sha256:a718b57c94ebdab2db2252696e298395cb07ff64be08c414db4f154b56441399",
+            "locator": {
+              "end": 280,
+              "kind": "line_range",
+              "start": 274
+            },
+            "path": "dashboard/src/cockpit/layout.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:0e083528be45ad099dc01a9c0c450064660ea4947830ae120697f07fd2b38969",
+            "locator": {
+              "end": 723,
+              "kind": "line_range",
+              "start": 720
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "69": {
+      "note": "`EffectsToggle` (✦ Effects / ❄ Calm) — flips `data-effects` + persists `calm-cockpit`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:1d7c9e5c076b3198664d85b740ca896c119d57f87cb3528d1d4041a70f47bb63",
+            "locator": {
+              "kind": "symbol",
+              "name": "EffectsToggle"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "70": {
+      "note": "The boot-time effects flag it persists to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bfa67cd00c85c1ea3eda8dec05ee8089f3eae10e",
+            "content": "sha256:9a6d833b0b979936952da4450b45712143440c2c84a21423befd33c5cbdc8e03",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 9
+            },
+            "path": "dashboard/src/main.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "71": {
+      "note": "The honest-motion gate the rail transition + the toggle drive.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5045a0dfe298de1b76c82e4326d5f177dbd5bc70",
+            "content": "sha256:03fbe4a61df59f3821f011f83ed126d730c7c17a0c274c82b2b3d537bcb9f6a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "useShouldAnimate"
+            },
+            "path": "dashboard/src/panels/engine-room/useShouldAnimate.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "72": {
+      "note": "Cockpit wires connectState and one connectEvents raw Event River consumer, plus the ready hydration marker; no seat-event reconciler.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:ab381fa39ef1b0eafc49c03f625ed3e711249682ff8ff69844f17ca13021aa90",
+            "locator": {
+              "kind": "symbol",
+              "name": "Cockpit"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "73": {
+      "note": "A `#knowledge?…` reader URL selects the Knowledge view as the shell's initial view.\n\nAnchor: \"export function Cockpit() {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:ab381fa39ef1b0eafc49c03f625ed3e711249682ff8ff69844f17ca13021aa90",
+            "locator": {
+              "end": 128,
+              "kind": "line_range",
+              "start": 113
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "75": {
+      "note": "The reader's hash parser.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ec5f222a6d97528f9484c56a1ff060446b461ff",
+            "content": "sha256:eda6257fecd133947c26ef85ac6ee28147c69d3f84870f1fc64117e4b907ba15",
+            "locator": {
+              "kind": "symbol",
+              "name": "parseReaderHash"
+            },
+            "path": "dashboard/src/data/knowledgeReader.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "79": {
+      "note": "The frontend `Analytics` projection includes the `engineProcesses` process-map collection.\n\nAnchor: \"export interface Analytics {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
+            "content": "sha256:d178e2984cfafab2c14c74e8af6380ead9d9ae54ad2fa9379c5cc43ee16cb881",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 31
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "88": {
+      "note": "The reviewed UI contract owner `MainLayers`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:60bc25696b100ddfbef71aa797ce37aced694af3c96337092f369c0042e28c6f",
+            "locator": {
+              "end": 726,
+              "kind": "line_range",
+              "start": 648
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "89": {
+      "note": "MainLayers mounts the persistent RoleChatsPane with tasks and the visible/non-takeover active predicate, forwarding agentChat as openChat. RailedBody passes shell agentChat to MainLayers and openAgentChat to LeftRail; LeftRail forwards that handler to LifecycleList. Native host transport remains separately owned.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:0e083528be45ad099dc01a9c0c450064660ea4947830ae120697f07fd2b38969",
+            "locator": {
+              "end": 723,
+              "kind": "line_range",
+              "start": 720
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:4ba002a7c7b2a25d7d901d1bed8913233ebd138d748fa758ef3da0983a3d8c15",
+            "locator": {
+              "end": 775,
+              "kind": "line_range",
+              "start": 752
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:fed40e394e2f1884df2cb03ccaa494b72c0af7bc1a12092a9994c73dce647d58",
+            "locator": {
+              "end": 514,
+              "kind": "line_range",
+              "start": 471
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "90": {
+      "note": "The reviewed UI contract owner `ViewLayer`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:306832e2054f2394fcd3196d50acce4eda3ce48b61027b6db3c6995d8bb91a1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "ViewLayer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "91": {
+      "note": "Stored cockpit regression source covering retained product views; it is source evidence, not a fresh test, browser or performance result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd9f0e0af2d5b86c76f00ee5b83c40786dfd38cd",
+            "content": "sha256:dc721020062a7ed10745200efa4d6d0343bcf86ac2ce11ee6acb64df7fad43ad",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "92": {
+      "note": "The right rail keeps one unkeyed chat wrapper across Operations and review; Operations' River still mounts conditionally.\n\nAnchor: \"export function RightRail(props: RightRailProps) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:706985c016d1d38383287db3f07ddf082653c552d1f92c4418f91cf74e34615e",
+            "locator": {
+              "end": 586,
+              "kind": "line_range",
+              "start": 550
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "93": {
+      "note": "The hidden chat side stays mounted but out of reach behind display:none and aria-hidden. Anchor: \"export function RightRail(props: RightRailProps) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:55a91037aa9860d4f1f28f96dfffe69c10484b6e1d763c177cbdfb751e3fdcb3",
+            "locator": {
+              "end": 600,
+              "kind": "line_range",
+              "start": 558
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "94": {
+      "note": "The header's count line uses shared labels for served taskCounts, adds a waiting count only while a task waits, omits works, waiting and paused words when host observation is unknown, and reports host activity unavailable once rather than drawing an unknown-count bucket.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea395f2fb601961432e7256188d45952c08bfc19",
+            "content": "sha256:3c990ec584876b48cbbe9fb161e4b70686959f98859e6b334c8381518fe29d88",
+            "locator": {
+              "kind": "symbol",
+              "name": "topBarCountsLine"
+            },
+            "path": "dashboard/src/cockpit/topBarCounts.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "96": {
+      "note": "The shell starts the screen wake lock once on mount; the wake-lock helper follows document visibility and releases its held sentinel on stop.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "505865bf7a78f9816dc2d5544162cf9c0e92c3b0",
+            "content": "sha256:4dee0d4c201a1796e31c959ca51078d0e1f8db40b32819c6ce9ecabfb47c7d89",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "dashboard/src/data/screenWakeLock.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "97": {
+      "note": "Base review navigation names repo/master/leaf and recorded history. Separate reviewer hash helpers persist selection/comparison through replaceState without changing that target or adding browser-history entries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a95dab3d3b1d2c6d67aa03480e0490509bfa53b",
+            "content": "sha256:13c7ade713d8f4284ac157756841a0dea09d47d93d418749215d2fd4ef97a480",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 7
+            },
+            "path": "dashboard/src/cockpit/reviewHash.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3a95dab3d3b1d2c6d67aa03480e0490509bfa53b",
+            "content": "sha256:4646613a249fadc4508b4cfbdcfcc33ede13a298ee99dcd22c0e453099ab45fd",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "dashboard/src/cockpit/reviewHash.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "98": {
+      "note": "At at-most40rem the shell admits vertical overflow and single-column railed content. The ordinary change-set takeover uses the fixed takeover body; review is rendered in the railed body.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "269029073b4592e81229eed6cbcae8eb1df77b5c",
+            "content": "sha256:c688a9d5c0ad3d4db07f8f6744f1c7420309636a4a1a0130efdf84e274954380",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "dashboard/src/cockpit/layout.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "269029073b4592e81229eed6cbcae8eb1df77b5c",
+            "content": "sha256:473d12aa52e55e5988d86b0a406eff38adf7a8918e0356012f66c81d4b5942b5",
+            "locator": {
+              "end": 289,
+              "kind": "line_range",
+              "start": 282
+            },
+            "path": "dashboard/src/cockpit/layout.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:07306e81f9d0d65931bbfc7bb38a9cbf6a12c57b34ad3116edbb66d7c4c396aa",
+            "locator": {
+              "end": 715,
+              "kind": "line_range",
+              "start": 646
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:c6d8679bc2ab3dfcca99e099a16580215951cfd6bf0ab93b32263f14e9d81f76",
+            "locator": {
+              "end": 433,
+              "kind": "line_range",
+              "start": 413
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:d757d00659c1317b8fae09d60622d196a804ee9b0b139793a76dbba455db824d",
+            "locator": {
+              "end": 821,
+              "kind": "line_range",
+              "start": 810
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "99": {
+      "note": "Review is explicitly excluded from takeover.\n\nAnchor: \"function shellFlags(view: CockpitView, changeSet: ChangeSetTarget \\| null, notesOpen: boolean) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:ee59bf32cd91e8947c89a98d01bb5870d522a6f8a849945813e9bf77551d943c",
+            "locator": {
+              "end": 188,
+              "kind": "line_range",
+              "start": 180
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

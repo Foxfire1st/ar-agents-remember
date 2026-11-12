@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Procuring an extra uv would mutate operator-owned tool state and silently reverse the chosen use-the-machine-tool boundary."
+  },
+  "applicability": "The host worktree environment bootstrap and its selection of the machine-provided uv.",
+  "conditions": [
+    "A supported uv is supplied on PATH by the operator."
+  ],
+  "exclusions": [
+    "Installing Python and locked project dependencies is unchanged.",
+    "The certified container retains its existing exact uv installation."
+  ],
+  "id": "INV-F4X256",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_script_brings_no_uv_itself; search for curl|wget|download|pip install|uv==|install uv in the script: no match"
+      ],
+      "path": "writer-projection-final.json"
+    },
+    "handoffEntry": "MIK-R139@v1 rule 2",
+    "leaf": "260928-MIK-L139",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The product downloads and installs no uv.",
+  "status": "proposed",
+  "supersedes": []
+}

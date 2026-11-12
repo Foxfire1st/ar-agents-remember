@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "spans_locations"
+    ],
+    "justification": "The no-counter regression tests pin counter-free models and schema across backend and served mirror; realizations span the persisted lifecycle shape and the master presentation header; the verdict itself withholds current-parent, runtime, memory and gate acceptance."
+  },
+  "applicability": "The exact intrinsic historical compound 4cdd7fbc/5081af9e plus new module 6a99c015 with W7 documentary successor, as reviewed in ordinary CODE rounds 1-3.",
+  "conditions": [],
+  "exclusions": [
+    "Current-parent, runtime, memory, Curator and gate acceptance, which the verdict expressly withholds."
+  ],
+  "id": "INV-EBPJ67",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Owner case 857e2cee179598a4dc9da3d58626120455ee2274847ccc0c341d0734aa5d2f9a; requirement 0995657f5cac477a7efb21876fbf5454e69194afdbafcbe1b92d02933798a777, ruling c640c26ccfcae9a72374dcf2c6d114cdea3b5a899ca33f4ab262ccccd95781a8; successor report 1bcae91c9b8fe4ade3b7b28e1bf5ea3d2ed7461b0068775ada7e3dd3d23b7a1d, producer 7e3b260d9f80869ddc324340a1bdc50ab6e565ca6a1434c83a3e85ea5387b310, original journal35466/d3f63691bbfd9092537c7053a91fd5132fa7df0a8b5e06822a4ad645bbbd00b4; l115-code-review-R3/F03-fixed-criterion-evidence.json and dispositions.json. All positive R1/R2 source/persisted/render/check proof reused on unchanged code. No new test/render/runtime campaign.",
+        "L115-M1-F01 sealed (reviewer-memory.verdict.md#L115-M1-F01): the review-result statement stays as dated task-review data; no active/proposed product invariant asserts requirement acceptance. 857ef excludes task-approval/check claims from product knowledge."
+      ],
+      "path": "l115-handoff.json"
+    },
+    "handoffEntry": "MIK-R115@v1 / L115-W7 / code-R3",
+    "leaf": "260928-MIK-L115",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "MIK-R115@v1 is accepted against exact L115-W7 documentary successor on unchanged historical W4 code; the final original F03 inventory-kind defect is repaired and all four sealed code findings are closed.",
+  "status": "retired",
+  "supersedes": []
+}

@@ -1,0 +1,265 @@
+{
+  "path": "mcp/src/agents_remember/models/lifecycles/operation_projection.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The current `_RUNNING_PHASES` boundary implements the preparation contract above.\n\nAnchor: `frozenset`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39635827ccc7d2dfc1c1bb5e217062cb3b596354",
+            "content": "sha256:e612f469bf501136575bdd3e000f09e106f00187131d597fbeb6b103a68b1a51",
+            "locator": {
+              "kind": "symbol",
+              "name": "_RUNNING_PHASES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The envelope is a same-repository task-lifecycle wire contract.\n\nAnchor: \"Revision-bound public lifecycle-operation projection contracts\"; \"One coherent, task-addressed lifecycle journal observation.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39635827ccc7d2dfc1c1bb5e217062cb3b596354",
+            "content": "sha256:5ec3b41e02623b995cb350315b0b85c4ebc0f03a7ded88863768b609411b082e",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleOperationProjection"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39635827ccc7d2dfc1c1bb5e217062cb3b596354",
+            "content": "sha256:6a21a397ca4a4847c26c4ab17513d8486edb54500415c0856d8dcbe7fa21edad",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The current `_INPUT_REQUIRED_PHASES` boundary implements the preparation contract above.\n\nAnchor: `frozenset`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39635827ccc7d2dfc1c1bb5e217062cb3b596354",
+            "content": "sha256:e958461cdd9294a8a5f00fd10509dbbddd6370813db0801e0019f8a3e3f7b8b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_INPUT_REQUIRED_PHASES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The current `STATE_MATRIX` boundary implements the preparation contract above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39635827ccc7d2dfc1c1bb5e217062cb3b596354",
+            "content": "sha256:3329afd011a545798e46dd7d27fd934a442816c49761ad689cad268f74ca4cda",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleProjectionStateRule"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39635827ccc7d2dfc1c1bb5e217062cb3b596354",
+            "content": "sha256:f706b285b57eb34b187792167b99b6eb0d05c833515640a3a8736c772ebc0b20",
+            "locator": {
+              "kind": "symbol",
+              "name": "STATE_MATRIX"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Running, direct, and input-required phase sets use the canonical code/memory-only publication vocabulary.\n\nAnchor: `memory`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39635827ccc7d2dfc1c1bb5e217062cb3b596354",
+            "content": "sha256:e958461cdd9294a8a5f00fd10509dbbddd6370813db0801e0019f8a3e3f7b8b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_INPUT_REQUIRED_PHASES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39635827ccc7d2dfc1c1bb5e217062cb3b596354",
+            "content": "sha256:e612f469bf501136575bdd3e000f09e106f00187131d597fbeb6b103a68b1a51",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 59
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The atomic public envelope and its per-kind state matrix.\n\nAnchor: \"the atomic public envelope\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39635827ccc7d2dfc1c1bb5e217062cb3b596354",
+            "content": "sha256:5ec3b41e02623b995cb350315b0b85c4ebc0f03a7ded88863768b609411b082e",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleOperationProjection"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39635827ccc7d2dfc1c1bb5e217062cb3b596354",
+            "content": "sha256:04afd4601f18f5adcbedc2512975fe4d0b0ea8f58b9e1dcca6d48f4c04fc8d0f",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "CCR-R15 meaningful-state cursor on the envelope.\n\nAnchor: `None`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39635827ccc7d2dfc1c1bb5e217062cb3b596354",
+            "content": "sha256:2aed8e845977ac6a47914414c9739b0be89baa75b5954dc95bea73319b27310a",
+            "locator": {
+              "kind": "symbol",
+              "name": "meaningfulRevision"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Envelope coherence refusals keep observations internally valid.\n\nAnchor: \"projection component bindings do not match their envelope\"; \"projection components violate the state matrix\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39635827ccc7d2dfc1c1bb5e217062cb3b596354",
+            "content": "sha256:239e98c6c328bae4f71e85a81099765cdafc181732421b41f9dc143d2abe6a81",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_projection_state"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39635827ccc7d2dfc1c1bb5e217062cb3b596354",
+            "content": "sha256:48cc6620069e5018d878ac11ff66bba12fbf5b8abde2cf635e956bdd82c4bbf6",
+            "locator": {
+              "end": 440,
+              "kind": "line_range",
+              "start": 421
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39635827ccc7d2dfc1c1bb5e217062cb3b596354",
+            "content": "sha256:a78b52ae7d5ab6509d58b4d57a5a87e707bf47e0f5ad9c86500675648ab67b6b",
+            "locator": {
+              "end": 468,
+              "kind": "line_range",
+              "start": 443
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The durable record whose meaningful revision the envelope projects.\n\nAnchor: \"CCR-R15: the durable monotonic meaningful-state revision\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:889eb9e188da88d5fe7591330d94e044ac29ce28e65004870f4efc720334f3b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_decode_legacy_missing_intent"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/operation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:1fad0ac0d36de0f0e08eb7ab87a3d85d76b039f0c4c3199f11a15238a060f95b",
+            "locator": {
+              "kind": "symbol",
+              "name": "meaningfulRevision"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/operation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The wait vocabulary that consumes the cursor.\n\nAnchor: \"Public vocabulary of the read-only lifecycle status-change wait (CCR-R15).\"; \"plus the next meaningful cursor\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a08e895db5bad70e38c3efde63dd320864f691d1",
+            "content": "sha256:4bc59a71c22f92dfb97c343d85a84258e96b2e0212b42d75af63c9a760717351",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleWaitOutcome"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/operation_wait.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a08e895db5bad70e38c3efde63dd320864f691d1",
+            "content": "sha256:155ef99346d9e03499ebca95c2f60bb57026dfa6b95f5d9b899bb26208f6cc91",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/operation_wait.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,67 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Disclosed shared effects and in-worktree backup redesign were explicitly weighed; the chosen write boundary and backup disposal continue constraining bootstrap changes."
+  },
+  "alternatives": [
+    {
+      "option": "Keep disclosed shared interpreter/cache/rollback effects, forbid writes to primary/another worktree, distinguish backup names by worktree and remove successful backups.",
+      "reason": "Preserves the shared-runtime construction and bounds the actual cross-worktree and accumulation risks with the two named script changes.",
+      "status": "chosen"
+    },
+    {
+      "option": "Move backups into the worktree and redesign the bootstrap to confine every effect there.",
+      "reason": "The scoped ruling permits the named shared locations and orders no other script change.",
+      "reconsider_when": "A bootstrap run writes into the primary checkout or another worktree, or a landing counts an environment as a change or leaves it after cleanup.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Shared locations must be disclosed as such, not described as worktree-local.",
+    "Successful recreation leaves no backup of that run; failed candidates remain for diagnosis.",
+    "Actual environment lifecycle observations remain the Manager's landing notes, not claimed by accounting tests."
+  ],
+  "context": "The existing bootstrap uses a shared interpreter and user cache rollback folder; forcing every effect below the worktree would change that design, while persistent same-second backup names collide and successful backups accumulate.",
+  "decider": "Architect 97e0320d-431f-4f4c-8c86-66a6dca880a7, scoped L136 environment-script ruling sections 1 and comesBack.",
+  "id": "DEC-PPAY3E",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-2FS4D1"
+    },
+    {
+      "relation": "constrains",
+      "target": "route:scripts"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R136",
+        "packet": "requirements/MIK-R136-v1-a-task-worktree-has-its-own-environment.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/run3/L136-WHAT-THE-ENVIRONMENT-SCRIPT-MAY-WRITE-AND-HOW-RULE-SIX-IS-SHOWN-RULING.json"
+      ],
+      "path": "writer-projection-final.json"
+    },
+    "handoffEntry": "curator-shared-bootstrap-effects-choice",
+    "leaf": "260928-MIK-L136",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

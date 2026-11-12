@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/dataset_identity_memo.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "DatasetIdentityMemo serves identity from retained handles within its bound.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e14d3c1fa9c32a61404f9998e6a975412d10ce5e",
+            "content": "sha256:6fe86b9999bb0e92cc989c42cf44e0bcee17beff33d763c648e37fa230a16234",
+            "locator": {
+              "kind": "symbol",
+              "name": "DatasetIdentityMemo"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

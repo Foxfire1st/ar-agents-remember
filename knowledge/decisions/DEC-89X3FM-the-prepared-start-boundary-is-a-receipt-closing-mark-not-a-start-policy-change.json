@@ -1,0 +1,74 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives"
+    ],
+    "justification": "Four real designs were weighed against the non-waiting closing and the excluded start-policy boundary."
+  },
+  "alternatives": [
+    {
+      "option": "A durable leaf closing mark written under the existing receipt lock: a pre-create check refuses an unentered creation, an already-entered create is not waited for and stays archive-pending, and a returned or replayed creation is archived and refused without erasing the retirement record.",
+      "reason": "It closes the crossing inside the admitted files, uses the existing receipt store and lock, keeps the closing non-waiting, and preserves the request-ID reconciliation and archived-recipient refusal.",
+      "status": "chosen"
+    },
+    {
+      "option": "Wait for the prepared creation or its host RPC to finish before the closing completes.",
+      "reason": "The requirement says a closing never waits for a turn; waiting would also let a start delay a leaf's closure.",
+      "reconsider_when": "The developer accepts a closing that waits for an in-flight creation.",
+      "status": "rejected"
+    },
+    {
+      "option": "Change the bridge or the launch protocol so creation cannot begin after a closing.",
+      "reason": "The packet excludes any change to how an agent is started or messaged (MIK-R71), and the host exposes no atomic create-or-refuse operation.",
+      "reconsider_when": "A future start-policy requirement admits the change or the host exposes an atomic create-or-refuse operation.",
+      "status": "rejected"
+    },
+    {
+      "option": "A new sweeper, queue or timer that owns archive debt.",
+      "reason": "The receipt debt head and the existing terminal observation loop already carry the obligation; a second store or scheduler would duplicate them.",
+      "reconsider_when": "The existing observation loop cannot carry the debt or is removed.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The closing mark is written before host I/O and re-checked under the lock before a running receipt is published.",
+    "An entered creation remains owed until confirmed, then is archived and refused without erasing the leaf's retirement metadata."
+  ],
+  "context": "Review finding A-1 proved that a prepared leaf launch could create its agent after the closing archive pass and overwrite the recorded gone outcome. The amended packet admits a repair in three named files and their test only, and excludes any change to how an agent is started or messaged.",
+  "decider": "Architect mechanism ruling 2026-10-07 (Architect97e) inside the amended MIK-R76@v1 (packet 8aee0cfa); review finding A-1.",
+  "id": "DEC-89X3FM",
+  "links": [
+    {
+      "relation": "explains",
+      "target": "INV-VPXD65"
+    },
+    {
+      "relation": "explains",
+      "target": "INV-AJKQV2"
+    },
+    {
+      "relation": "constrains",
+      "target": "route:mcp/src/agents_remember/cli"
+    },
+    {
+      "alternative": 1,
+      "relation": "reconsider_on",
+      "target": "INV-AJKQV2"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "260928-MIK-L76-reviewer-0894c933-985c-4b4d-bbda-1aeb444948a3.evidence/fix-verification-A1/deterministic-positive.log (4 passed/5 subtests); 260928-MIK-L76-reviewer-0894c933-985c-4b4d-bbda-1aeb444948a3.evidence/fix-verification-A1/deterministic-removed-fix.log (6 expected failures/1 passed/11 deselected, exact original module paths and SHA printed); 260928-MIK-L76-reviewer-0894c933-985c-4b4d-bbda-1aeb444948a3.evidence/fix-verification-A1/replay-message-preservation.log (5 passed/20 subtests); 260928-MIK-L76-reviewer-0894c933-985c-4b4d-bbda-1aeb444948a3.evidence/fix-verification-A1/final-binding-and-archive-readback.json."
+      ],
+      "path": "notes/files/260928-MIK-L76-curation-evidence-20261007/handoff-full.json"
+    },
+    "handoffEntry": "MIK-R76@v1",
+    "leaf": "260928-MIK-L76",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

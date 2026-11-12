@@ -1,0 +1,30 @@
+{
+  "anchor": {
+    "blob": "a623ecf0ae000606d5b10a571c5b1633513eb51a",
+    "content": "sha256:d909f4d53b0db6ee79f92f393ed8f3059eaa2583c683e98397f5c744c2f32a47",
+    "locator": {
+      "end": 30,
+      "kind": "line_range",
+      "start": 30
+    },
+    "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/pick.ts"
+  },
+  "id": "WKN-7DDHBZ",
+  "kind": "debt",
+  "origin": {
+    "handoff": {
+      "path": "l189-handoff-list-v1.json"
+    },
+    "handoffEntry": "L189-W1",
+    "leaf": "260928-MIK-L189",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L189"
+  },
+  "state": "open",
+  "statement": "The plug-in's DOM adapter headers in pick.ts and bridge.ts still name Paseo 0.11.1 while this build pins @getpaseo/server 0.12.0, so a reader of the measurement code must reconcile two version claims across two files."
+}

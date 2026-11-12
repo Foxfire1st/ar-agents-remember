@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A surviving imported product owner can make later modules depend on file scheduling; module-boundary reset/cleanup prevents that cross-module leak without restoring removed ambient state."
+  },
+  "applicability": "Module boundaries in pytest processes loading the repository bootstrap plugin.",
+  "conditions": [
+    "The process mutable-state scanner resets only already-imported product modules.",
+    "The module fixture explicitly imports the lightweight kernel.worktree_service_binding reset owner and clears its bound services and pending supplier before and after each module."
+  ],
+  "exclusions": [
+    "No reset between ordered cases of one test file.",
+    "No eager import merely to reset a collection-scanner owner; the dedicated kernel worktree-services holder is the explicit module-boundary exception."
+  ],
+  "id": "INV-5YPFVJ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_global_state_isolation.py; forced preview/dispatch file order"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L87-curator-73a5c9f7-9924-4b1a-b1dd-cc1d4764c587.W02-writer-batch.json"
+    },
+    "handoffEntry": "MIK-R87@v1 3",
+    "leaf": "260928-MIK-L87",
+    "task": "260928-MIK"
+  },
+  "revision": 3,
+  "schema": "ar-invariant/v1",
+  "statement": "Each test module resets already-imported product collection owners and the dedicated kernel worktree-services holder before and after execution; removed ambient lifecycle and heartbeat owners are not reset or joined.",
+  "status": "proposed",
+  "supersedes": []
+}

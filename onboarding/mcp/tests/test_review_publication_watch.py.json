@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_review_publication_watch.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A saved-page publication reaches a connected reader without recursive task watching",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce7d0b60fa0d30ebcc90cf99f16e1617453f02ae",
+            "content": "sha256:9ba8a17ead529eb7b8445e233d1064b6f96c2e7e50a6963be62514bdcd5087e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_future_frame_and_ready_replacement_are_observed_and_worker_reaped"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

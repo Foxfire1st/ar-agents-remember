@@ -1,0 +1,71 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/integration_topology_collisions.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "No external domain source is required to establish this repository-owned implementation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87d7fb0298654e26ce42a6e52cc8a0d68aef28e5",
+            "content": "sha256:e4b807afb65d221132828b3f13460704dada4e9a5da39dbf35869df59cb04777",
+            "locator": {
+              "kind": "symbol",
+              "name": "TopologyCollisionServices"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The module's concrete API, control flow, and validation boundary are implemented here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87d7fb0298654e26ce42a6e52cc8a0d68aef28e5",
+            "content": "sha256:e4b807afb65d221132828b3f13460704dada4e9a5da39dbf35869df59cb04777",
+            "locator": {
+              "kind": "symbol",
+              "name": "TopologyCollisionServices"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "No meaningful cross-repository reference applies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87d7fb0298654e26ce42a6e52cc8a0d68aef28e5",
+            "content": "sha256:e4b807afb65d221132828b3f13460704dada4e9a5da39dbf35869df59cb04777",
+            "locator": {
+              "kind": "symbol",
+              "name": "TopologyCollisionServices"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The live-leaf census names and excludes foreign task-document nonmembers before retaining its collision checks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87d7fb0298654e26ce42a6e52cc8a0d68aef28e5",
+            "content": "sha256:1e29b932e56969ad7d1383c81dd5748174855885df379e466960ba4c370c3806",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_no_live_leaf_collisions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

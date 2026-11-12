@@ -1,22 +1,12 @@
 # mcp/tests/test_python_runtime_contract.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_python_runtime_contract.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T21:45:53+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489`|
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Tests overview](overview.md)
 
 ## Purpose
 
-Runs the Python builder installer against controlled command fixtures to prove a full clone is validated before atomic no-clobber publication, a valid existing builder is reused, and a foreign builder is refused without deleting its marker. This file no longer asserts every package/CI Python-version surface or the old publisher-race matrix.
+Runs the Python builder installer against controlled command fixtures to prove a full clone is validated before atomic no-clobber publication, a valid existing builder is reused, and a foreign builder is refused without deleting its marker. It also carries the negative runtime-admission witness: the checker must end in the named version refusal before it can import a standard-library module the interpreter lacks. This file no longer asserts every package/CI Python-version surface or the old publisher-race matrix.
 
 ## Code Commentary
 
@@ -25,6 +15,18 @@ Runs the Python builder installer against controlled command fixtures to prove a
 The current evidence boundary is the source-listed behavior below. Earlier coverage claims in
 history describe prior populations and must not be used to recreate removed tests or claim they
 still run. The retained behavior and its fixture limits, described above, govern this card.
+
+The negative admission witness (`test_unsupported_version_is_named_before_importing_new_stdlib_modules`)
+runs the checker under a simulated 3.13.15 interpreter whose `compression` import fails, and asserts
+exit 1, empty stdout and the exact named refusal naming the expected and observed versions and the
+executable. This module invokes the current `sys.executable` and simulates the older version;
+the earlier card's additional account of a real 3.11, 3.12 and 3.13 matrix is historical and
+is not a retained test population in this module.
+
+> Retained earlier card wording; superseded by the current account above:
+> executable. The real older-interpreter matrix supplements it with actual 3.11, 3.12 and 3.13
+> interpreters.
+
 
 ### Conventions
 
@@ -42,39 +44,29 @@ work. This source inspection does not claim a newly executed test or acceptance 
 
 No additional implementation scope is opened by this memory reconciliation.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The repository has no configured Domain Documentation source. These claims concern its own test
 fixtures and assertions, so the exact retained source is the direct evidence.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external domain claim is required. | N/A | N/A |
+No external domain claim is required.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Each current definition below can be inspected in the exact source file. Historical references
 to removed methods are superseded by this current inventory.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Runtime builder is fully cloned atomically published and reused | `test_runtime_builder_is_fully_cloned_atomically_published_and_reused` | mcp/tests/test_python_runtime_contract.py:154-184 |
-| Existing foreign builder is refused and preserved | `test_existing_foreign_builder_is_refused_and_preserved` | mcp/tests/test_python_runtime_contract.py:187-200 |
+- Runtime builder is fully cloned atomically published and reused [1]
+- Existing foreign builder is refused and preserved [2]
 
-## Cross-Repo References
+
+- The negative admission witness proves the named refusal precedes any newer standard-library import. [3]
+
+
+### Cross-Repo References
 
 This card establishes test behavior, not a separate cross-repository protocol or live installation.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external evidence is needed for these assertions. | N/A | N/A |
-
-## Update History
-
-- 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
-
-
-- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for eb05a872780112640359232063168639d20fa87b (root bootstrap repair): documented the new hermetic installer-contract tests (full clone, atomic no-clobber publication, cleanup, reuse, foreign-path refusal, publisher races) and refreshed the citation anchors for the runtime-contract/capability tests. Verification metadata rebased from `60e429d1` to the bootstrap repair owning commit.
-
-- 2026-08-29T16:10+02:00 — Created for the project-wide Python 3.13.15 cutover and native-pidfd
-  acceptance boundary. Verification remains closeout-owned.
+No external evidence is needed for these assertions.

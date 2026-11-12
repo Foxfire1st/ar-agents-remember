@@ -1,0 +1,3656 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L52",
+  "rows": [
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-01C4XA",
+      "items": [
+        "sha256:3ba349f0ca1683c390cc02cf470e46ecf726b66964538385c51c2d684a2c1e71"
+      ],
+      "reason": "Typed port vocabulary carries persistence, leaf owner and series contract to their existing owners; it is not a second policy.",
+      "subject": "hunk:sha256:3ba349f0ca1683c390cc02cf470e46ecf726b66964538385c51c2d684a2c1e71"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-04E0TY",
+      "items": [
+        "sha256:c6ff779da5e323663d2d635e168c1524b9211cc5dbe834bd7948b9bddd05c2a5"
+      ],
+      "reason": "Dispatch is moved to the sole integration admission owner; import removal and call forwarding are mechanical propagation.",
+      "subject": "hunk:sha256:c6ff779da5e323663d2d635e168c1524b9211cc5dbe834bd7948b9bddd05c2a5"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-453ZPCZ5",
+          "revision": 2
+        },
+        {
+          "id": "INV-53MJW8V0",
+          "revision": 2
+        },
+        {
+          "id": "INV-7W11WKKN",
+          "revision": 4
+        },
+        {
+          "id": "INV-8Q6DZTDB",
+          "revision": 3
+        },
+        {
+          "id": "INV-9NCBGQSY",
+          "revision": 5
+        },
+        {
+          "id": "INV-S26EBC8P",
+          "revision": 3
+        },
+        {
+          "id": "INV-VXA7SZ0Z",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-0J3MXQ",
+      "items": [
+        "sha256:fafbbb7e93492f52b905234dbd8ca3b4f6c6223cae36fc91952ba3064c60a6e9"
+      ],
+      "reason": "Examined every current/base member and its realizing/proving locations against the changed route. The joint guarantee, membership and explicit route coverage remain valid; the touched-member repairs preserve their respective obligations.",
+      "revision": 6,
+      "subject": "FAM-XZ5BR65G"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-16MQCW",
+      "items": [
+        "sha256:921efdfb2239c5fd1c614abb410f8636314be42dfceadb060634371646e79b9a"
+      ],
+      "reason": "This generated harness copy is byte-faithful to its canonical root skill and has no independent file card or policy owner. The canonical skill cards and governing root overview were updated for exact-pair guidance and the public direct recover limitation; another parallel card would duplicate that authority.",
+      "subject": "onboarding:.pi/skills/c-09-git-worktree-manager/SKILL.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1DPJ11",
+      "items": [
+        "sha256:9b3dd388ab633b8f024e3a25e91aecbf132ebe69b45f2e6c876d312044d86386"
+      ],
+      "reason": "Spine endpoint/merge admission and complete foreign naming implement the master-chain rule; helper/data plumbing adds no independent obligation beyond it.",
+      "subject": "hunk:sha256:9b3dd388ab633b8f024e3a25e91aecbf132ebe69b45f2e6c876d312044d86386"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1GVF1H",
+      "items": [
+        "sha256:5b8713b1d5ade65e50993f71b6bb7e9f928d44fa1b7e39703306513c0e29ab59"
+      ],
+      "reason": "Recorded pair selection and helper dispatch implement the recorded-landing rule; no separate authority is inferred from the adapter wiring.",
+      "subject": "hunk:sha256:5b8713b1d5ade65e50993f71b6bb7e9f928d44fa1b7e39703306513c0e29ab59"
+    },
+    {
+      "disposition": "changed",
+      "effect": "introduce",
+      "examined": [
+        {
+          "id": "INV-3BGCAT",
+          "revision": 1
+        },
+        {
+          "id": "INV-3FA4VG",
+          "revision": 1
+        },
+        {
+          "id": "INV-5JEN5D",
+          "revision": 1
+        },
+        {
+          "id": "INV-6DFQ9P",
+          "revision": 1
+        },
+        {
+          "id": "INV-78GNBA",
+          "revision": 1
+        },
+        {
+          "id": "INV-9CSYZS",
+          "revision": 1
+        },
+        {
+          "id": "INV-HAQRFD",
+          "revision": 1
+        },
+        {
+          "id": "INV-KSJZS0",
+          "revision": 1
+        },
+        {
+          "id": "INV-M0J963",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-2107YR",
+      "items": [],
+      "reason": "The leaf, master, authentic-history, retained-record and strict-owner members together exclude separate bypasses; explicitly authored routes cover their complete realization population.",
+      "revision": 1,
+      "subject": "FAM-NQQP2T"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-270BSV",
+      "items": [
+        "sha256:2a1f6ec2abfc3e3840206f126c1eefdc39b02dce828d1ecab25c86411158b8d5",
+        "sha256:7fd33a3a29557d53ed969fe07d8563af77a387de9b87ac2a002af90ff273bf8f"
+      ],
+      "reason": "This generated harness copy is byte-faithful to its canonical root skill and has no independent file card or policy owner. The canonical skill cards and governing root overview were updated for exact-pair guidance and the public direct recover limitation; another parallel card would duplicate that authority.",
+      "subject": "onboarding:.github-vscode/skills/c-12-closeout/SKILL.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-27TTR3",
+      "items": [
+        "sha256:1edcbb2507a9722b3f2372d8e31b2a79d3bf90760218c73dcc0d7a097ae9f2cc"
+      ],
+      "reason": "Spine endpoint/merge admission and complete foreign naming implement the master-chain rule; helper/data plumbing adds no independent obligation beyond it.",
+      "subject": "hunk:sha256:1edcbb2507a9722b3f2372d8e31b2a79d3bf90760218c73dcc0d7a097ae9f2cc"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2ABPK3",
+      "items": [
+        "sha256:8a3e28cd35ec218319da2edb8b59ef20dd3b4d735ba57cf0ca3be8d7e541a509"
+      ],
+      "reason": "The owner identity is propagated into the existing immutable request/retry/closing machinery; no separate policy beyond the named-owner rule is introduced.",
+      "subject": "hunk:sha256:8a3e28cd35ec218319da2edb8b59ef20dd3b4d735ba57cf0ca3be8d7e541a509"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2H1T42",
+      "items": [
+        "sha256:55c64c365b60177ac57dfaa77554b22f9a93d5acc3bf4cab1e710da8b6d44ee2"
+      ],
+      "reason": "Spine endpoint/merge admission and complete foreign naming implement the master-chain rule; helper/data plumbing adds no independent obligation beyond it.",
+      "subject": "hunk:sha256:55c64c365b60177ac57dfaa77554b22f9a93d5acc3bf4cab1e710da8b6d44ee2"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2M3FB0",
+      "items": [
+        "sha256:b39c88d09128536627a9582bdcf9c9b8cca5155653b594b87683e078716c8e3f"
+      ],
+      "reason": "Port forwarding, one history-only recorded check and owned takeback result implement the recorded pair/identity/aftermath rules without creating another authority.",
+      "subject": "hunk:sha256:b39c88d09128536627a9582bdcf9c9b8cca5155653b594b87683e078716c8e3f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-37GYA3",
+      "items": [
+        "sha256:380cb11d5e5f84c3e1e5ad6b17a0eb000c6636679b5c812ff929449d806b9601"
+      ],
+      "reason": "Dispatch is moved to the sole integration admission owner; import removal and call forwarding are mechanical propagation.",
+      "subject": "hunk:sha256:380cb11d5e5f84c3e1e5ad6b17a0eb000c6636679b5c812ff929449d806b9601"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-38W4S6",
+      "items": [
+        "sha256:df511c20d255e3cdaa04952e4d3891f0f1b97d5d73c6fbc6e6f75e5f2eb47710"
+      ],
+      "reason": "Spine endpoint/merge admission and complete foreign naming implement the master-chain rule; helper/data plumbing adds no independent obligation beyond it.",
+      "subject": "hunk:sha256:df511c20d255e3cdaa04952e4d3891f0f1b97d5d73c6fbc6e6f75e5f2eb47710"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "1078c62a7abf8884e726b0b7e3fa174d50d34254",
+            "content": "sha256:5bcbb09ccb83a79ce41f7a2752e5bba4939171a01b6881d87df7910ce303c215",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
+          },
+          "before": {
+            "blob": "2396376cd715d4d7b646d44e5d83f4304708a636",
+            "content": "sha256:b80bc966651f313af77137b13fbb72874e1782d1f082b1619850f97df0731593",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
+          },
+          "id": "RLZ-FGW904R4"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-3E9VCF",
+      "items": [
+        "sha256:a705068d3f6e2762639cdaa592ebb2d2cdb8536de1b2654631dcf720960c91d2"
+      ],
+      "reason": "Shared bound preflight and historical closed-out answer do not change retained-generation integrity, destination confinement or pre-CAS validation.",
+      "revision": 2,
+      "subject": "INV-VXA7SZ0Z"
+    },
+    {
+      "covers": [
+        {
+          "after": "absent",
+          "before": {
+            "blob": "8f92bbe9948b98fa7072f2ae69b1fb50bc6f098f",
+            "content": "sha256:9b489c9891393b3cbeb5b43f0486a0d5796d44c43ad1aa2f6cf6fdd0b2093aaa",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_route_refuses_unconverted_memory_once_the_repository_holds_converted_memory"
+            },
+            "path": "mcp/tests/test_knowledge_cutover.py"
+          },
+          "id": "PRF-0VDDSE"
+        },
+        {
+          "after": {
+            "blob": "71f46c2b7658cabd8f043846644d5e73558e3757",
+            "content": "sha256:c9ad8ff46286820f69e1c70a99eee754b9816d334d5cf20047a66f68087062e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_converting_candidate_is_gated_never_locked"
+            },
+            "path": "mcp/tests/test_knowledge_cutover.py"
+          },
+          "before": {
+            "blob": "8f92bbe9948b98fa7072f2ae69b1fb50bc6f098f",
+            "content": "sha256:9562e96fdf3bbfa214287193ff0d97a5c78cdee9dc78e8e37287cf4fc0138c22",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_converting_candidate_is_gated_never_locked"
+            },
+            "path": "mcp/tests/test_knowledge_cutover.py"
+          },
+          "id": "PRF-595PRD"
+        },
+        {
+          "after": {
+            "blob": "71f46c2b7658cabd8f043846644d5e73558e3757",
+            "content": "sha256:09bc52594a04902e96d6482a082ca175014285361638bf4a4c5fd7fdd1557248",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_only_a_definite_non_repository_reads_as_holding_no_converted_memory"
+            },
+            "path": "mcp/tests/test_knowledge_cutover.py"
+          },
+          "before": {
+            "blob": "8f92bbe9948b98fa7072f2ae69b1fb50bc6f098f",
+            "content": "sha256:09bc52594a04902e96d6482a082ca175014285361638bf4a4c5fd7fdd1557248",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_only_a_definite_non_repository_reads_as_holding_no_converted_memory"
+            },
+            "path": "mcp/tests/test_knowledge_cutover.py"
+          },
+          "id": "PRF-FJHVPR"
+        },
+        {
+          "after": {
+            "blob": "71f46c2b7658cabd8f043846644d5e73558e3757",
+            "content": "sha256:9b489c9891393b3cbeb5b43f0486a0d5796d44c43ad1aa2f6cf6fdd0b2093aaa",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_route_refuses_unconverted_memory_once_the_repository_holds_converted_memory"
+            },
+            "path": "mcp/tests/test_knowledge_cutover.py"
+          },
+          "before": "absent",
+          "id": "PRF-M1DGK1"
+        },
+        {
+          "after": {
+            "blob": "71f46c2b7658cabd8f043846644d5e73558e3757",
+            "content": "sha256:c2b341a1b32b233ee06f2d9e5e1ca6f432e3512a98b01ca63e8e0989ab775859",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_converted_worktree_locks_too_and_an_unanswered_probe_refuses"
+            },
+            "path": "mcp/tests/test_knowledge_cutover.py"
+          },
+          "before": {
+            "blob": "8f92bbe9948b98fa7072f2ae69b1fb50bc6f098f",
+            "content": "sha256:c2b341a1b32b233ee06f2d9e5e1ca6f432e3512a98b01ca63e8e0989ab775859",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_converted_worktree_locks_too_and_an_unanswered_probe_refuses"
+            },
+            "path": "mcp/tests/test_knowledge_cutover.py"
+          },
+          "id": "PRF-VEG64W"
+        },
+        {
+          "after": {
+            "blob": "fbf5d24148b7b54165d4139154db5fe28aa19800",
+            "content": "sha256:0e5264293702419b6720f6d41418015c54d6daea214577d4820df6a1bd9ef966",
+            "locator": {
+              "kind": "symbol",
+              "name": "_direct_gate_owner"
+            },
+            "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
+          },
+          "before": {
+            "blob": "d551d4bbe222a72add65ecdc80d981cdaeec5cfd",
+            "content": "sha256:a556c9d631cc7b7ddd6a9d5a9d33c4b0a769fc0caad09453666329c49b429836",
+            "locator": {
+              "kind": "symbol",
+              "name": "_direct_gate_owner"
+            },
+            "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
+          },
+          "id": "RLZ-0WT63S"
+        },
+        {
+          "after": {
+            "blob": "b7c1cdbb6b82fa751e51722404352099fba9aa25",
+            "content": "sha256:24d7192cf2a23f2fb4db1d2286bcde370e7e67fe20194f37934b87ad17ddb87e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf_landing_lock"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integration_gate.py"
+          },
+          "before": {
+            "blob": "6cfdec1af86890182716df842f338bd4955bda31",
+            "content": "sha256:a94715293d68c9774f5fe64a9deed77f880545129eba51dfe873e0cd867fe0ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf_landing_lock"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
+          },
+          "id": "RLZ-57S6TY"
+        },
+        {
+          "after": {
+            "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+            "content": "sha256:83359b4306c44b3d04e27cbb1c63bc883464a7a728bac450c985bf94d044f798",
+            "locator": {
+              "kind": "symbol",
+              "name": "external_closeout_commits"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "before": {
+            "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
+            "content": "sha256:0ebf4a5e3e684b912685fc0c90666637f1884a59f1ae8c895d4b53db53e665d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "external_closeout_commits"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "id": "RLZ-7ENMV3"
+        },
+        {
+          "after": {
+            "blob": "b70b13d88cfb4875c2e73574dfaaa2d12d4303e6",
+            "content": "sha256:67d47854920238903c844bd4769263945e3ecae17cf2d940b09799639597a8b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "landing_gate_refusal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "before": {
+            "blob": "2e61c5b715ff2ad0a5d8cd26a98da4aaa866b6b2",
+            "content": "sha256:67d47854920238903c844bd4769263945e3ecae17cf2d940b09799639597a8b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "landing_gate_refusal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "id": "RLZ-9CPSN9"
+        },
+        {
+          "after": {
+            "blob": "b70b13d88cfb4875c2e73574dfaaa2d12d4303e6",
+            "content": "sha256:54b4f95134fee9ba49567b3c59a20dbc524e5b99411883ad7a0dfab929a9e8a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_cutover_refusal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "before": {
+            "blob": "2e61c5b715ff2ad0a5d8cd26a98da4aaa866b6b2",
+            "content": "sha256:54b4f95134fee9ba49567b3c59a20dbc524e5b99411883ad7a0dfab929a9e8a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_cutover_refusal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "id": "RLZ-AR3Q4W"
+        },
+        {
+          "after": {
+            "blob": "c24d6db63454e6ef80c78275021a81c01e040158",
+            "content": "sha256:6a04ed42f6bdbe4b3b89ae68473df6d4faf013f0cde52a06ea720adce42b6699",
+            "locator": {
+              "kind": "symbol",
+              "name": "_knowledge_gate_refusal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
+          },
+          "before": {
+            "blob": "8df56352222cae3f9048acae41cad9951a373f0b",
+            "content": "sha256:ea23d3e0a5458ab3d0bff86cb483f8f2300f1f2cee57d9e8aa84e982372d230b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_knowledge_gate_refusal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
+          },
+          "id": "RLZ-BQ1Y8W"
+        },
+        {
+          "after": {
+            "blob": "b7c1cdbb6b82fa751e51722404352099fba9aa25",
+            "content": "sha256:ba0f45687a8d0a9c237f8191b49fee25aef4d9515b6f927ee7e37a2a5006f76e",
+            "locator": {
+              "kind": "symbol",
+              "name": "integration_gate_block"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integration_gate.py"
+          },
+          "before": {
+            "blob": "6cfdec1af86890182716df842f338bd4955bda31",
+            "content": "sha256:4c0fd5a01a0879aee1f25a37c4ad950c9e7ca9385ba4ca71fe69830275435425",
+            "locator": {
+              "kind": "symbol",
+              "name": "_knowledge_gate_block"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
+          },
+          "id": "RLZ-DH6NBY"
+        },
+        {
+          "after": {
+            "blob": "b70b13d88cfb4875c2e73574dfaaa2d12d4303e6",
+            "content": "sha256:432ff046e10433c7569e56f86456caa342921364f14b881c5fa017a21fd151a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_gate_refusal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "before": {
+            "blob": "2e61c5b715ff2ad0a5d8cd26a98da4aaa866b6b2",
+            "content": "sha256:987a28acd25a51da6e8a58012ff2505de02d6d9283b136886e5daff24ef2fdbe",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_gate_refusal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "id": "RLZ-FP4XHH"
+        },
+        {
+          "after": {
+            "blob": "b70b13d88cfb4875c2e73574dfaaa2d12d4303e6",
+            "content": "sha256:bf9ad0ae5b340ad7844846ce7287ddf9286eaa8eb85b52fd028133538d3eaa61",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepared_closeout_lock"
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "before": {
+            "blob": "2e61c5b715ff2ad0a5d8cd26a98da4aaa866b6b2",
+            "content": "sha256:bf9ad0ae5b340ad7844846ce7287ddf9286eaa8eb85b52fd028133538d3eaa61",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepared_closeout_lock"
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "id": "RLZ-RC557C"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-3F81PE",
+      "items": [
+        "sha256:7c4b5bdf1cc2c3cd73f3603cdc067ac1092446550d55af00318bc762d487fff8"
+      ],
+      "reason": "The extracted integration_gate remains the refusal/cutover owner; existing entry IDs move to its actual constructs, while direct/recorded/closeout counterparts retain the same removed-mode and converted/unconverted policy. MEMORY M1 withdraws the overclaim and supplies a precisely qualified replacement proof, retaining all other moved/current covers. Evidence (L52-M1-F05-cutover-proof-correction): Owner-released L52-MEMORY-M1-F05: replaces PRF-0VDDSE only, withdraws its fourteen/universal-unlocking claim; source assertions, not fresh Curator execution.",
+      "revision": 2,
+      "subject": "INV-JT28KJ"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3JC2DQ",
+      "items": [
+        "sha256:7d23fce9264709fc7a7b75003aeb4f4e9a319d02512d72ae68d09eb8c37b9470"
+      ],
+      "reason": "Recorded pair selection and helper dispatch implement the recorded-landing rule; no separate authority is inferred from the adapter wiring.",
+      "subject": "hunk:sha256:7d23fce9264709fc7a7b75003aeb4f4e9a319d02512d72ae68d09eb8c37b9470"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+            "content": "sha256:9ef98f7c45ae2442c3282c3838e1d1f91ee1797ba67685a67894576e1b8bbe75",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commit_memory_content"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "before": {
+            "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
+            "content": "sha256:c7bbb91f8ab877928b918ed5abff23ca3ab64f391f0c1a94b5f90de643a24563",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commit_memory_content"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "id": "RLZ-8QCF0T"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-3MDHDS",
+      "items": [
+        "sha256:7c6963746c2010250436186175ffec28b65178a314ec597e77e3cca1e7cee53b"
+      ],
+      "reason": "The exact contract branch and observed parent still bind publication; the preparation/refusal additions do not relax them.",
+      "revision": 1,
+      "subject": "INV-KTMBMN"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-3RCGR0",
+      "items": [
+        "sha256:7bf8c33f685fecb3e986cc0e63f720195b5ec727122bf915c79ee21116364549"
+      ],
+      "reason": "This generated harness copy is byte-faithful to its canonical root skill and has no independent file card or policy owner. The canonical skill cards and governing root overview were updated for exact-pair guidance and the public direct recover limitation; another parallel card would duplicate that authority.",
+      "subject": "onboarding:.github-vscode/skills/c-09-git-worktree-manager/SKILL.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3TSM0Z",
+      "items": [
+        "sha256:d3ccc7e241774bdbc223a84922701c412c8302e865f1784fb9215ecf88403032"
+      ],
+      "reason": "Spine endpoint/merge admission and complete foreign naming implement the master-chain rule; helper/data plumbing adds no independent obligation beyond it.",
+      "subject": "hunk:sha256:d3ccc7e241774bdbc223a84922701c412c8302e865f1784fb9215ecf88403032"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-44QGT5",
+      "items": [
+        "sha256:600ea80dbaf74a541192e942126fa0e91f101f77883f31119653508611339149"
+      ],
+      "reason": "Spine endpoint/merge admission and complete foreign naming implement the master-chain rule; helper/data plumbing adds no independent obligation beyond it.",
+      "subject": "hunk:sha256:600ea80dbaf74a541192e942126fa0e91f101f77883f31119653508611339149"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4669W1",
+      "items": [
+        "sha256:1f4631d8cc5e06b49697e28cbfcbf6125c394d6f42d3f85bb28e67d565c1c36e"
+      ],
+      "reason": "Produced sync heads are evidence inputs to the recorded master-chain rule, not independent landing acceptance.",
+      "subject": "hunk:sha256:1f4631d8cc5e06b49697e28cbfcbf6125c394d6f42d3f85bb28e67d565c1c36e"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R52",
+          "packet": "requirements/MIK-R52-v1-every-landing-route-judges-what-it-lands.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "0efb0c3490bef8b11b51995770442aaf96cc19d6",
+            "content": "sha256:b39a641f80d19e8ffd7bb06416dbdf6e0eaf12cf9f23f3d92b3d857a94c9a1e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_record_landing_with_unreadable_recorded_code_refuses_without_writing"
+            },
+            "path": "mcp/tests/test_landing_unreadable_inputs.py"
+          },
+          "before": "absent",
+          "id": "PRF-JP8039"
+        },
+        {
+          "after": {
+            "blob": "c24d6db63454e6ef80c78275021a81c01e040158",
+            "content": "sha256:e5954b7cbee7f73cfc32a9b994fcb5588566838d7421c753e4c6538f5231be08",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_landing_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
+          },
+          "before": "absent",
+          "id": "RLZ-AQ9CB7"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "introduce",
+      "id": "ROW-4M0FP4",
+      "items": [],
+      "reason": "Admit the enduring exact-pair route obligation from the approved packet with its authored applicability, exclusions and source/test evidence; verdict prose is not the invariant.",
+      "revision": 1,
+      "subject": "INV-HAQRFD"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b2a4b8163b634df11013792fe18f84652d820d6b",
+            "content": "sha256:5de1f247d1863d8bccc61be24e00d01530da95a636000ff36bd5ac3ae5b59b83",
+            "locator": {
+              "end": 2146,
+              "kind": "line_range",
+              "start": 2146
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "cbd8a667827a2e4277358439a10ab52dd4bd9a87",
+            "content": "sha256:5de1f247d1863d8bccc61be24e00d01530da95a636000ff36bd5ac3ae5b59b83",
+            "locator": {
+              "end": 2116,
+              "kind": "line_range",
+              "start": 2116
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-A31DQW"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-4N897P",
+      "items": [],
+      "reason": "Admitted incoming-wins catalog composition preserves meaning and consumer ownership while reanchoring the actual complete registration rows. Supported post-M2 source sync preserves the passed meaning and consumer ownership; only the same complete current catalog covers are recomposed against the landed and leaf source. Owner sync200920807156 onto4b6a2660/9c69aa18 retains the same passed catalog meanings and real consumer ownership; renew complete same-ID covers after landed lane-order repair, without replaying semantic entries or proofs.",
+      "revision": 1,
+      "subject": "INV-0TCWT9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4TS03G",
+      "items": [
+        "sha256:5cf15f91e9b0fdaa46b402336a762af1bd9b6bb9171752cb4fecef025e0637ae"
+      ],
+      "reason": "Spine endpoint/merge admission and complete foreign naming implement the master-chain rule; helper/data plumbing adds no independent obligation beyond it.",
+      "subject": "hunk:sha256:5cf15f91e9b0fdaa46b402336a762af1bd9b6bb9171752cb4fecef025e0637ae"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4ZJMGG",
+      "items": [
+        "sha256:2d2059fdc133a327c0066438dfd00b69a08571ded51d9fff1ced60755e1f0b6c"
+      ],
+      "reason": "The route case/assertion/header adapters now target the actual hand-edited recorded route; their source assertions are covered by the durable route rule, not a standalone runtime invariant.",
+      "subject": "hunk:sha256:2d2059fdc133a327c0066438dfd00b69a08571ded51d9fff1ced60755e1f0b6c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-58MC0G",
+      "items": [
+        "sha256:d74cde6e75a2d1515b3d26925f5b485862dd613695e76af732cb705da7cdb779"
+      ],
+      "reason": "The route case/assertion/header adapters now target the actual hand-edited recorded route; their source assertions are covered by the durable route rule, not a standalone runtime invariant.",
+      "subject": "hunk:sha256:d74cde6e75a2d1515b3d26925f5b485862dd613695e76af732cb705da7cdb779"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5F5HKC",
+      "items": [
+        "sha256:996be5063a1d331fd1bd5d0907ce8480f7f098be621af2754fe91ea0e078e03e"
+      ],
+      "reason": "Persistence-flag plumbing and memo-hit guarding implement no-write landing refusal; recomputed judgment stays the same.",
+      "subject": "hunk:sha256:996be5063a1d331fd1bd5d0907ce8480f7f098be621af2754fe91ea0e078e03e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5GFSER",
+      "items": [
+        "sha256:492b1c022b69b2d4e8a19c1fa8a267572e66f09240c0a058001c83a6b4bf35ef"
+      ],
+      "reason": "The owner identity is propagated into the existing immutable request/retry/closing machinery; no separate policy beyond the named-owner rule is introduced.",
+      "subject": "hunk:sha256:492b1c022b69b2d4e8a19c1fa8a267572e66f09240c0a058001c83a6b4bf35ef"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5J7XET",
+      "items": [
+        "sha256:784996256b2ad8188834e24d2ac4fec755ac395b1027b64f146aa4024d335e4e"
+      ],
+      "reason": "The dispatcher/bound guard and historical answer implement the recorded bounded-publication/closed-out obligations; imports and local branch composition carry no additional independent invariant.",
+      "subject": "hunk:sha256:784996256b2ad8188834e24d2ac4fec755ac395b1027b64f146aa4024d335e4e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5Y47BK",
+      "items": [
+        "sha256:050b6bb6b4ee01861493e184c6ad7b7dfb4888f8d4a99b7880d240ef0e392c23"
+      ],
+      "reason": "Spine endpoint/merge admission and complete foreign naming implement the master-chain rule; helper/data plumbing adds no independent obligation beyond it.",
+      "subject": "hunk:sha256:050b6bb6b4ee01861493e184c6ad7b7dfb4888f8d4a99b7880d240ef0e392c23"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-664VH5",
+      "items": [
+        "sha256:f8386810f1695a228422dfc37b8df56551ba43d35d0d14f79cd0a23b6bce0842"
+      ],
+      "reason": "Spine endpoint/merge admission and complete foreign naming implement the master-chain rule; helper/data plumbing adds no independent obligation beyond it.",
+      "subject": "hunk:sha256:f8386810f1695a228422dfc37b8df56551ba43d35d0d14f79cd0a23b6bce0842"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6AS632",
+      "items": [
+        "sha256:3f0d36ff9db0e91d46f36b9e9a330289420700587dae4ec0c51826eada6f5087"
+      ],
+      "reason": "The owner identity is propagated into the existing immutable request/retry/closing machinery; no separate policy beyond the named-owner rule is introduced.",
+      "subject": "hunk:sha256:3f0d36ff9db0e91d46f36b9e9a330289420700587dae4ec0c51826eada6f5087"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6HVZ57",
+      "items": [
+        "sha256:e45a2cc489b4e69976ed47069bce616ddd633d1f675d9c32b6e84e47a47d54d9"
+      ],
+      "reason": "Port forwarding, one history-only recorded check and owned takeback result implement the recorded pair/identity/aftermath rules without creating another authority.",
+      "subject": "hunk:sha256:e45a2cc489b4e69976ed47069bce616ddd633d1f675d9c32b6e84e47a47d54d9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-71RW3M",
+      "items": [
+        "sha256:fb6654c224ef7c5b56084c8fb525b6da1a1f029cf7dab936fb0e38c0368cbdf8"
+      ],
+      "reason": "The dispatcher/bound guard and historical answer implement the recorded bounded-publication/closed-out obligations; imports and local branch composition carry no additional independent invariant.",
+      "subject": "hunk:sha256:fb6654c224ef7c5b56084c8fb525b6da1a1f029cf7dab936fb0e38c0368cbdf8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-77MJ5V",
+      "items": [
+        "sha256:c32e00bc51159c91195f6afaf891be5b87fb8788b80456483ad5ba1b8c2cc419"
+      ],
+      "reason": "The owner identity is propagated into the existing immutable request/retry/closing machinery; no separate policy beyond the named-owner rule is introduced.",
+      "subject": "hunk:sha256:c32e00bc51159c91195f6afaf891be5b87fb8788b80456483ad5ba1b8c2cc419"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7A2QZ5",
+      "items": [
+        "sha256:20d482d70ebff165d3fa1ca9c3b72308bdd99b76837b4fd7d9ad23d82f2e5ad8"
+      ],
+      "reason": "Spine endpoint/merge admission and complete foreign naming implement the master-chain rule; helper/data plumbing adds no independent obligation beyond it.",
+      "subject": "hunk:sha256:20d482d70ebff165d3fa1ca9c3b72308bdd99b76837b4fd7d9ad23d82f2e5ad8"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-7DTX26",
+      "items": [
+        "sha256:dab2de6cf30b9158510bdcd5854ab9c359c86eb583fea2950d0caa63e0f902c7",
+        "sha256:ed24bcc769e4e17fd3e0640c7f74688e80fa26f3ea944c213fcb15feaba38ae1"
+      ],
+      "reason": "This generated harness copy is byte-faithful to its canonical root skill and has no independent file card or policy owner. The canonical skill cards and governing root overview were updated for exact-pair guidance and the public direct recover limitation; another parallel card would duplicate that authority.",
+      "subject": "onboarding:.agents/skills/c-12-closeout/SKILL.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7FGQZ9",
+      "items": [
+        "sha256:376f9b8369bae3f4f0fdf13c42c4573200f3bea5f641d8155a130b8a9c3021c4"
+      ],
+      "reason": "The route case/assertion/header adapters now target the actual hand-edited recorded route; their source assertions are covered by the durable route rule, not a standalone runtime invariant.",
+      "subject": "hunk:sha256:376f9b8369bae3f4f0fdf13c42c4573200f3bea5f641d8155a130b8a9c3021c4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7Q0ADK",
+      "items": [
+        "sha256:2f4f90194cc41627ee6e055865a4021abca9e9bcb74e554de1ce4b1b1a458a06"
+      ],
+      "reason": "Port forwarding, one history-only recorded check and owned takeback result implement the recorded pair/identity/aftermath rules without creating another authority.",
+      "subject": "hunk:sha256:2f4f90194cc41627ee6e055865a4021abca9e9bcb74e554de1ce4b1b1a458a06"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7SMTTW",
+      "items": [
+        "sha256:17244a24f82514f1d386819c01d0136180dae30b334a2971585e8ac0f5010ace"
+      ],
+      "reason": "Dispatch is moved to the sole integration admission owner; import removal and call forwarding are mechanical propagation.",
+      "subject": "hunk:sha256:17244a24f82514f1d386819c01d0136180dae30b334a2971585e8ac0f5010ace"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7VN08Y",
+      "items": [
+        "sha256:a9c12c76f8932ecaabab9bdd4aad234b266f54fa2193cd94d92da17234f5cd25"
+      ],
+      "reason": "The shared pair/freezing and conditional restoration helpers implement the approved route/freezing/aftermath obligation already stated in durable records; local exception/import wiring has no independent invariant.",
+      "subject": "hunk:sha256:a9c12c76f8932ecaabab9bdd4aad234b266f54fa2193cd94d92da17234f5cd25"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R52",
+          "packet": "requirements/MIK-R52-v1-every-landing-route-judges-what-it-lands.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "1d97e7f7bc98ce535ba25753359cd3fb245fa2bb",
+            "content": "sha256:be7d9c36b69278661f21646c6a970232a29947dfb1f66bf285a6c8ac3ca10a77",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_control_recover_on_the_interrupted_running_generation_is_refused"
+            },
+            "path": "mcp/tests/test_direct_landing_leaf_identity.py"
+          },
+          "before": "absent",
+          "id": "PRF-JJE0TB"
+        },
+        {
+          "after": {
+            "blob": "1d97e7f7bc98ce535ba25753359cd3fb245fa2bb",
+            "content": "sha256:d628479a888fdf111eb15cea5368bf5bff957152928dfe54d46dbb42f2c86bd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_direct_landing_with_the_supplied_open_leaf_lands_and_records_the_leaf"
+            },
+            "path": "mcp/tests/test_direct_landing_leaf_identity.py"
+          },
+          "before": "absent",
+          "id": "PRF-Y7VF8B"
+        },
+        {
+          "after": {
+            "blob": "be0ead7895aaa5341e86fbb96bd03f3cbdfa0cef",
+            "content": "sha256:67234621a85558117e161b148cbcb761ed3e73e4d40eb8c52dab515b8dc0d563",
+            "locator": {
+              "kind": "symbol",
+              "name": "recover_direct_landing_under_authority"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_recovery.py"
+          },
+          "before": "absent",
+          "id": "RLZ-3F29H9"
+        },
+        {
+          "after": {
+            "blob": "fbf5d24148b7b54165d4139154db5fe28aa19800",
+            "content": "sha256:89818e4f876c27b560b51a9e0c3b7bed024a63bd5782465d72377af844b8caeb",
+            "locator": {
+              "kind": "symbol",
+              "name": "DirectLandingRequest"
+            },
+            "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
+          },
+          "before": "absent",
+          "id": "RLZ-QQ206R"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "introduce",
+      "id": "ROW-7Y0K22",
+      "items": [],
+      "reason": "Admit the enduring exact-pair route obligation from the approved packet with its authored applicability, exclusions and source/test evidence; verdict prose is not the invariant.",
+      "revision": 1,
+      "subject": "INV-6DFQ9P"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+            "content": "sha256:9ef98f7c45ae2442c3282c3838e1d1f91ee1797ba67685a67894576e1b8bbe75",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commit_memory_content"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "before": {
+            "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
+            "content": "sha256:c7bbb91f8ab877928b918ed5abff23ca3ab64f391f0c1a94b5f90de643a24563",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commit_memory_content"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "id": "RLZ-DTBEY7"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-8HRY6D",
+      "items": [
+        "sha256:1f42235abe1b5e8ef06414a4d46313a42cc1412f2e2a67c372256ee33fd3ea4d"
+      ],
+      "reason": "Earlier owner-bound documentation correction remains historical provenance; new exact-pair checks do not reverse its accepted publication boundary.",
+      "revision": 1,
+      "subject": "INV-JFGTZT"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8KBBWH",
+      "items": [
+        "sha256:748fc3e2ac5e7803babeef3486c6742fa9882c8d6be164c3b29acb796908d596"
+      ],
+      "reason": "Import forwarding follows the extracted gate owner and changes no assertion contract.",
+      "subject": "hunk:sha256:748fc3e2ac5e7803babeef3486c6742fa9882c8d6be164c3b29acb796908d596"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-8PEZPH",
+      "items": [
+        "sha256:4708cf8a1032316024e245de2793f50b1d65d984ac9f95c85dc2bb851c3d4000"
+      ],
+      "reason": "This generated harness copy is byte-faithful to its canonical root skill and has no independent file card or policy owner. The canonical skill cards and governing root overview were updated for exact-pair guidance and the public direct recover limitation; another parallel card would duplicate that authority.",
+      "subject": "onboarding:.openclaw/workspace/skills/c-09-git-worktree-manager/SKILL.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8WK73V",
+      "items": [
+        "sha256:92e5620e4e28f0db8e770fda72268d04c28ad64f3650453595b2c4510ce9d363"
+      ],
+      "reason": "Recorded pair selection and helper dispatch implement the recorded-landing rule; no separate authority is inferred from the adapter wiring.",
+      "subject": "hunk:sha256:92e5620e4e28f0db8e770fda72268d04c28ad64f3650453595b2c4510ce9d363"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-91ZQSR",
+      "items": [
+        "sha256:4c56c63192509de34bcbcce5760954d23aa11586ff42412496cb428b1fc11155"
+      ],
+      "reason": "Typed port vocabulary carries persistence, leaf owner and series contract to their existing owners; it is not a second policy.",
+      "subject": "hunk:sha256:4c56c63192509de34bcbcce5760954d23aa11586ff42412496cb428b1fc11155"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-93M535",
+      "items": [
+        "sha256:1db000d46378435e9d0d60e6cd869d74ab2b0d11a560e169b33020090ac62d40"
+      ],
+      "reason": "Spine endpoint/merge admission and complete foreign naming implement the master-chain rule; helper/data plumbing adds no independent obligation beyond it.",
+      "subject": "hunk:sha256:1db000d46378435e9d0d60e6cd869d74ab2b0d11a560e169b33020090ac62d40"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9Y15WD",
+      "items": [
+        "sha256:896dbe29655535d77ad2ca7cb3334f43cee2be4d748a7aa422fc72df1d54f0ff"
+      ],
+      "reason": "Recorded pair selection and helper dispatch implement the recorded-landing rule; no separate authority is inferred from the adapter wiring.",
+      "subject": "hunk:sha256:896dbe29655535d77ad2ca7cb3334f43cee2be4d748a7aa422fc72df1d54f0ff"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-39FYQE",
+          "revision": 1
+        },
+        {
+          "id": "INV-6GBJC6",
+          "revision": 1
+        },
+        {
+          "id": "INV-8R2CRC",
+          "revision": 1
+        },
+        {
+          "id": "INV-95NQR7",
+          "revision": 1
+        },
+        {
+          "id": "INV-V3N6NW",
+          "revision": 1
+        },
+        {
+          "id": "INV-WKM7SS",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-A075SA",
+      "items": [
+        "sha256:18323e2657c6aa1fbce7f4a9da93b3a9f7c72b9fd4ae1494cfc2a1e88d06fba0"
+      ],
+      "reason": "Examined every current/base member and its realizing/proving locations against the changed route. The joint guarantee, membership and explicit route coverage remain valid; the touched-member repairs preserve their respective obligations.",
+      "revision": 1,
+      "subject": "FAM-Q5J2ZC"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-AC0GK6",
+      "items": [
+        "sha256:d9cbd2789dbf1b8dc1591c33d16cb5ae733b01d50a442862b65d0ac06822b719"
+      ],
+      "reason": "Persistence-flag plumbing and memo-hit guarding implement no-write landing refusal; recomputed judgment stays the same.",
+      "subject": "hunk:sha256:d9cbd2789dbf1b8dc1591c33d16cb5ae733b01d50a442862b65d0ac06822b719"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R52",
+          "packet": "requirements/MIK-R52-v1-every-landing-route-judges-what-it-lands.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "fba297f078a4f8bfc008311ec7860b3216a51041",
+            "content": "sha256:04cc4761df5e5a170c7099764e3e728f03c332edf4de8257e0f6a50d5b96b5bf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_refused_closeout_leaves_an_edited_ignore_file_alone_and_names_it"
+            },
+            "path": "mcp/tests/test_closeout_refusal_aftermath.py"
+          },
+          "before": "absent",
+          "id": "PRF-KDZ3DJ"
+        },
+        {
+          "after": {
+            "blob": "b70b13d88cfb4875c2e73574dfaaa2d12d4303e6",
+            "content": "sha256:9055645ff3ba79a95ca391f43fa641ca8854b33ff9d2eebacc5fb23fb7d03327",
+            "locator": {
+              "kind": "symbol",
+              "name": "HistoryClosing"
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "before": "absent",
+          "id": "RLZ-XXWZ1F"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "introduce",
+      "id": "ROW-AEWCWA",
+      "items": [],
+      "reason": "Admit the enduring exact-pair route obligation from the approved packet with its authored applicability, exclusions and source/test evidence; verdict prose is not the invariant. MEMORY M1 correction: skipped takeback is diagnostic/return-value evidence, not a receipt field.",
+      "revision": 1,
+      "subject": "INV-KSJZS0"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-B07501",
+      "items": [
+        "sha256:19d3507b7bcaef31f3fb20311a886a0f1110ea34d3125d2eca1c6d99fcb5c1c8"
+      ],
+      "reason": "The route case/assertion/header adapters now target the actual hand-edited recorded route; their source assertions are covered by the durable route rule, not a standalone runtime invariant.",
+      "subject": "hunk:sha256:19d3507b7bcaef31f3fb20311a886a0f1110ea34d3125d2eca1c6d99fcb5c1c8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-B25AR7",
+      "items": [
+        "sha256:e89253c5e464452e4340f81ed477c7ef46209c01b62c35fd06e66e3b9c1ed1ff"
+      ],
+      "reason": "The owner identity is propagated into the existing immutable request/retry/closing machinery; no separate policy beyond the named-owner rule is introduced.",
+      "subject": "hunk:sha256:e89253c5e464452e4340f81ed477c7ef46209c01b62c35fd06e66e3b9c1ed1ff"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-B77XBH",
+      "items": [
+        "sha256:3411a3b4dda89cfbfe716b74432d3e538b8df3875ca1556a05f6b06f3064a6cd"
+      ],
+      "reason": "The owner identity is propagated into the existing immutable request/retry/closing machinery; no separate policy beyond the named-owner rule is introduced.",
+      "subject": "hunk:sha256:3411a3b4dda89cfbfe716b74432d3e538b8df3875ca1556a05f6b06f3064a6cd"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-BAEAGH",
+      "items": [
+        "sha256:678f322669dada8351505e3b0066b6b85858765ba420386e6153c705376d2b99"
+      ],
+      "reason": "This generated harness copy is byte-faithful to its canonical root skill and has no independent file card or policy owner. The canonical skill cards and governing root overview were updated for exact-pair guidance and the public direct recover limitation; another parallel card would duplicate that authority.",
+      "subject": "onboarding:.hermes/skills/c-09-git-worktree-manager/SKILL.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "89cda38de3084e4cbbe2521a9c668510f6314878",
+            "content": "sha256:7fd67179e3e04aac48c980da9cec80db4504b6df9d29d7af1b7cf16ab7a8cc9a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_behind_entry_gate_sites_refuse_a_disabled_contract"
+            },
+            "path": "mcp/tests/test_memory_opt_out_refused_routes.py"
+          },
+          "before": {
+            "blob": "b1cc35c9b446e484b65429c35a505444368a9a30",
+            "content": "sha256:d729e3ba5b4fa56caa130994f5b320abd7e417b2184be52b3ee0c4796f984e18",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_behind_entry_gate_sites_refuse_a_disabled_contract"
+            },
+            "path": "mcp/tests/test_memory_opt_out_refused_routes.py"
+          },
+          "id": "PRF-N2C6BV"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-BKN40R",
+      "items": [
+        "sha256:908b17eea0bf154cef858667466a70661ad9cfd65f5f53ba078761ca27477c0d"
+      ],
+      "reason": "The behind-entry refusal test now calls the extracted integration gate; disabled-route and abandon/modeless-restart intent remains unchanged.",
+      "revision": 1,
+      "subject": "INV-39FYQE"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-C6XA15",
+      "items": [
+        "sha256:427384aca4ad851d55fa8e409e15fb739480e52dabdd54a5e266bfae55546d0c"
+      ],
+      "reason": "Port forwarding, one history-only recorded check and owned takeback result implement the recorded pair/identity/aftermath rules without creating another authority.",
+      "subject": "hunk:sha256:427384aca4ad851d55fa8e409e15fb739480e52dabdd54a5e266bfae55546d0c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CCK9BA",
+      "items": [
+        "sha256:0ea409b09436a9e707ce1cff865bfd2c0ee2c4c7cc4ac5bb0f8ecf539be7e143"
+      ],
+      "reason": "The owner identity is propagated into the existing immutable request/retry/closing machinery; no separate policy beyond the named-owner rule is introduced.",
+      "subject": "hunk:sha256:0ea409b09436a9e707ce1cff865bfd2c0ee2c4c7cc4ac5bb0f8ecf539be7e143"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R52",
+          "packet": "requirements/MIK-R52-v1-every-landing-route-judges-what-it-lands.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+            "content": "sha256:83359b4306c44b3d04e27cbb1c63bc883464a7a728bac450c985bf94d044f798",
+            "locator": {
+              "kind": "symbol",
+              "name": "external_closeout_commits"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "before": {
+            "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
+            "content": "sha256:0ebf4a5e3e684b912685fc0c90666637f1884a59f1ae8c895d4b53db53e665d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "external_closeout_commits"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "id": "RLZ-1GS7KY"
+        },
+        {
+          "after": {
+            "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+            "content": "sha256:9ef98f7c45ae2442c3282c3838e1d1f91ee1797ba67685a67894576e1b8bbe75",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commit_memory_content"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "before": {
+            "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
+            "content": "sha256:c7bbb91f8ab877928b918ed5abff23ca3ab64f391f0c1a94b5f90de643a24563",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commit_memory_content"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "id": "RLZ-AS19NV"
+        },
+        {
+          "after": {
+            "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+            "content": "sha256:2e6b71f194f95ae3a119d49987ce890f73f507d3bc12bc37744e49d9eef068f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "refuse_ungated_candidate"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "before": {
+            "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
+            "content": "sha256:2e6b71f194f95ae3a119d49987ce890f73f507d3bc12bc37744e49d9eef068f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "refuse_ungated_candidate"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "id": "RLZ-AVX93M"
+        },
+        {
+          "after": {
+            "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+            "content": "sha256:6733de358d09058db7ab9672204df11f721366208bfd9ed54924fe325d71e265",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refuse_ungated_memory"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "before": {
+            "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
+            "content": "sha256:6733de358d09058db7ab9672204df11f721366208bfd9ed54924fe325d71e265",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refuse_ungated_memory"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "id": "RLZ-VRHJYJ"
+        },
+        {
+          "after": {
+            "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+            "content": "sha256:182a12a341a97c4b5960eff651b8e356bdecaad0f4fa29123c64b60c55d961ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_gated_recovery"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "before": {
+            "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
+            "content": "sha256:8d4fef8bd6c5c58914c6af197676edd4695b894527205834a84265c711ebfc2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_gated_recovery"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "id": "RLZ-ZTW3GN"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "strengthen",
+      "id": "ROW-CGXNVQ",
+      "items": [
+        "sha256:a0ae54c94ea92f651fd410752e1fcc3c7ab7a00f895953011ff7f88473d96745"
+      ],
+      "reason": "The approved packet deliberately replaces the validator-only/non-rejudged leaf route and exact-recorded-commit freezing limits: actual pair rejudgment and recorded-closeout descendant freezing are now governing intent. Other publication, attempt and conditional takeback boundaries remain. MEMORY M1 correction: caller-specific comparison bases and conditional recorded-code selection are explicit.",
+      "revision": 3,
+      "subject": "INV-HWAWFT"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CHZXTE",
+      "items": [
+        "sha256:40a25b9ae861689c727fa530fcc0932a21f742d8de7d0b37bf82204ac1413bd4"
+      ],
+      "reason": "Persistence-flag plumbing and memo-hit guarding implement no-write landing refusal; recomputed judgment stays the same.",
+      "subject": "hunk:sha256:40a25b9ae861689c727fa530fcc0932a21f742d8de7d0b37bf82204ac1413bd4"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-1V9ARB",
+          "revision": 1
+        },
+        {
+          "id": "INV-701KQ9",
+          "revision": 1
+        },
+        {
+          "id": "INV-VH0QZ1",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-CKPJ2B",
+      "items": [
+        "sha256:f480753edb0d21513b263f66d6271856e39527db9db87209a4969fb835ed569e"
+      ],
+      "reason": "Examined every current/base member and its realizing/proving locations against the changed route. The joint guarantee, membership and explicit route coverage remain valid; the touched-member repairs preserve their respective obligations.",
+      "revision": 1,
+      "subject": "FAM-ZVFPWJ"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CPM7DB",
+      "items": [
+        "sha256:912cd4b86570c00cc804b9fbc357af5f07839fbfdfb8e05802b42439499801e0"
+      ],
+      "reason": "This generated harness copy is byte-faithful to its canonical root skill and has no independent file card or policy owner. The canonical skill cards and governing root overview were updated for exact-pair guidance and the public direct recover limitation; another parallel card would duplicate that authority.",
+      "subject": "onboarding:.agents/skills/c-09-git-worktree-manager/SKILL.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0963684e441d8b3abc82f5e031afe6964134530e",
+            "content": "sha256:2ec1c5e42e55002422069833399dfe81fd6e81181e5cffceb33f38465b7ab973",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py"
+          },
+          "before": {
+            "blob": "3274f2b5b02128a98741ec4f1ebe84bd8285eb04",
+            "content": "sha256:232647f54e098581048fa54985922540a7da716ac50ab4d4e0ae188753973d02",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py"
+          },
+          "id": "RLZ-X21JJV"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-CQFRP1",
+      "items": [
+        "sha256:2c6aa2108c7d949bd5c78ca7daade38ab0cf947326404e77a65993928a6a1fff"
+      ],
+      "reason": "Strict leaf-publication rows extend the governed helper/registration text without changing the requirement-shaped scope of the carried R48 witnesses.",
+      "revision": 1,
+      "subject": "INV-MKZ0EA"
+    },
+    {
+      "disposition": "changed",
+      "effect": "strengthen",
+      "examined": [
+        {
+          "id": "INV-0T84PZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-0XMNQZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-2Q8RPR",
+          "revision": 1
+        },
+        {
+          "id": "INV-49E649",
+          "revision": 3
+        },
+        {
+          "id": "INV-656CYW",
+          "revision": 2
+        },
+        {
+          "id": "INV-89A5AN",
+          "revision": 1
+        },
+        {
+          "id": "INV-9ZBTVA",
+          "revision": 1
+        },
+        {
+          "id": "INV-ANKPPE",
+          "revision": 1
+        },
+        {
+          "id": "INV-BEYEV2",
+          "revision": 1
+        },
+        {
+          "id": "INV-D2HZQ8",
+          "revision": 1
+        },
+        {
+          "id": "INV-FYZQK0",
+          "revision": 1
+        },
+        {
+          "id": "INV-G0Y4VR",
+          "revision": 1
+        },
+        {
+          "id": "INV-GSEMMW",
+          "revision": 1
+        },
+        {
+          "id": "INV-HWAWFT",
+          "revision": 3
+        },
+        {
+          "id": "INV-KTMBMN",
+          "revision": 1
+        },
+        {
+          "id": "INV-MS9BMJ",
+          "revision": 4
+        },
+        {
+          "id": "INV-N5RBFK",
+          "revision": 1
+        },
+        {
+          "id": "INV-WV1YQE",
+          "revision": 2
+        },
+        {
+          "id": "INV-XN0FG8",
+          "revision": 2
+        },
+        {
+          "id": "INV-YZ45D7",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZGFZXT",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-CXM46E",
+      "items": [
+        "sha256:94a671d44e2b109532ee103679b22b77cee0b8b1e8bf3677c1fac06ddaa3059a"
+      ],
+      "reason": "The prior recorded-landing-validator-only limit is deliberately replaced by actual leaf-pair rejudgment and descendant freezing; all other members and routes retain their joint publication meaning.",
+      "revision": 4,
+      "subject": "FAM-61DY2V"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-D29C9V",
+      "items": [
+        "sha256:67c7640a77e16c1563858b853fce865466ba2099331a4278e5b62263143f1c30"
+      ],
+      "reason": "The dispatcher/bound guard and historical answer implement the recorded bounded-publication/closed-out obligations; imports and local branch composition carry no additional independent invariant.",
+      "subject": "hunk:sha256:67c7640a77e16c1563858b853fce865466ba2099331a4278e5b62263143f1c30"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-D3RX2C",
+      "items": [
+        "sha256:9eff7e190fd2a8b8604ac2873d7c5e34b73ca006f9b8ff42db10e190adba1ce3"
+      ],
+      "reason": "Spine endpoint/merge admission and complete foreign naming implement the master-chain rule; helper/data plumbing adds no independent obligation beyond it.",
+      "subject": "hunk:sha256:9eff7e190fd2a8b8604ac2873d7c5e34b73ca006f9b8ff42db10e190adba1ce3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-D8Q6WT",
+      "items": [
+        "sha256:4c75f8b158a272473a1af5a48e32990ee71c97e53360921e148ceff961c8d371"
+      ],
+      "reason": "Population registration selects the test modules and proves no execution or gate acceptance.",
+      "subject": "hunk:sha256:4c75f8b158a272473a1af5a48e32990ee71c97e53360921e148ceff961c8d371"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-DGXMFA",
+      "items": [
+        "sha256:b70378b55c7f3bdb268ce729335f83c7fa5f51eb4636a141b1e9fa2695e76143",
+        "sha256:4017a9a75677b63867627edfa7dbc005c00fef211cd998bed151924eac46235e"
+      ],
+      "reason": "This generated harness copy is byte-faithful to its canonical root skill and has no independent file card or policy owner. The canonical skill cards and governing root overview were updated for exact-pair guidance and the public direct recover limitation; another parallel card would duplicate that authority.",
+      "subject": "onboarding:.codex/skills/c-12-closeout/SKILL.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DK1AWB",
+      "items": [
+        "sha256:6b97b7538d4690c48762365f37db837bd7889b935478089b7b2c90e900e0896a"
+      ],
+      "reason": "The route case/assertion/header adapters now target the actual hand-edited recorded route; their source assertions are covered by the durable route rule, not a standalone runtime invariant.",
+      "subject": "hunk:sha256:6b97b7538d4690c48762365f37db837bd7889b935478089b7b2c90e900e0896a"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-DKCQFX",
+      "items": [
+        "sha256:839a23ad433ee105d7b8e0206b0e3b435c503b12636c077d8e0ec2b5ba07e796"
+      ],
+      "reason": "This generated harness copy is byte-faithful to its canonical root skill and has no independent file card or policy owner. The canonical skill cards and governing root overview were updated for exact-pair guidance and the public direct recover limitation; another parallel card would duplicate that authority.",
+      "subject": "onboarding:.claude/skills/c-09-git-worktree-manager/SKILL.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DZA06W",
+      "items": [
+        "sha256:65b0abff8abf549fa769a698b2309f007ca78e5974baf5cf2c14e1bd111e09ab"
+      ],
+      "reason": "Spine endpoint/merge admission and complete foreign naming implement the master-chain rule; helper/data plumbing adds no independent obligation beyond it.",
+      "subject": "hunk:sha256:65b0abff8abf549fa769a698b2309f007ca78e5974baf5cf2c14e1bd111e09ab"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EPMM81",
+      "items": [
+        "sha256:65aef5457466f9a0540b9b57045a1ce8c305b01f1c580880399e6667a533b716"
+      ],
+      "reason": "Typed port vocabulary carries persistence, leaf owner and series contract to their existing owners; it is not a second policy.",
+      "subject": "hunk:sha256:65aef5457466f9a0540b9b57045a1ce8c305b01f1c580880399e6667a533b716"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R52",
+          "packet": "requirements/MIK-R52-v1-every-landing-route-judges-what-it-lands.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "135632f88a874b3c2d23e07b31fb2e8843f95324",
+            "content": "sha256:c35939cf0ca072018d6ba360e7177293f866cd7a75a78710ca301255fcba6f26",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_edited_closeout_cell_is_judged_as_edited"
+            },
+            "path": "mcp/tests/test_integration_refusal_footprint.py"
+          },
+          "before": "absent",
+          "id": "PRF-HT6J20"
+        },
+        {
+          "after": {
+            "blob": "238ddffcd69752641bd783dc6b5519f049708342",
+            "content": "sha256:a8091ffef820f64732261181d5347a4b8312b9fdc59fe5d528a7c93c97807ed9",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_record_kept"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py"
+          },
+          "before": "absent",
+          "id": "RLZ-QX2H3T"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "introduce",
+      "id": "ROW-FFCM5E",
+      "items": [],
+      "reason": "Admit the enduring exact-pair route obligation from the approved packet with its authored applicability, exclusions and source/test evidence; verdict prose is not the invariant.",
+      "revision": 1,
+      "subject": "INV-78GNBA"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FGZ38R",
+      "items": [
+        "sha256:a86bd0d88eaa668bd9b3cdacb6afa74a83bde65424d42be66255287e9778fa0c"
+      ],
+      "reason": "Population registration selects the test modules and proves no execution or gate acceptance.",
+      "subject": "hunk:sha256:a86bd0d88eaa668bd9b3cdacb6afa74a83bde65424d42be66255287e9778fa0c"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "093961344dabf41f2cae9f73415874cd296b3315",
+            "content": "sha256:f36593638f68ebeaccf4eabbbc0a528fd178c561c8cef4faa97ed13672d8614a",
+            "locator": {
+              "kind": "symbol",
+              "name": "atomic_leaf_documents"
+            },
+            "path": "mcp/src/agents_remember/worktrees/series_leaf_contracts.py"
+          },
+          "before": {
+            "blob": "28474542e94120c54ab0f1ca2ebddee5c0027eab",
+            "content": "sha256:f36593638f68ebeaccf4eabbbc0a528fd178c561c8cef4faa97ed13672d8614a",
+            "locator": {
+              "kind": "symbol",
+              "name": "atomic_leaf_documents"
+            },
+            "path": "mcp/src/agents_remember/worktrees/series_leaf_contracts.py"
+          },
+          "id": "RLZ-NQE97Y"
+        },
+        {
+          "after": {
+            "blob": "093961344dabf41f2cae9f73415874cd296b3315",
+            "content": "sha256:0da9354d60c7d3c6e6d026adbd3f4d8550df1addb379c7bce3c59684ef1da6f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "exact_atomic_leaf_contracts"
+            },
+            "path": "mcp/src/agents_remember/worktrees/series_leaf_contracts.py"
+          },
+          "before": {
+            "blob": "28474542e94120c54ab0f1ca2ebddee5c0027eab",
+            "content": "sha256:0c062bcc31684874c616a517341608c857c5546e4bcb330098b7b205114394d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "exact_atomic_leaf_contracts"
+            },
+            "path": "mcp/src/agents_remember/worktrees/series_leaf_contracts.py"
+          },
+          "id": "RLZ-WCN6PR"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-FHRE31",
+      "items": [
+        "sha256:283b5089e295b824ccfb8e2566f4df680706e7c94c3ff7ebcb5c5b4a786d4b29"
+      ],
+      "reason": "Final requires exact non-abandoned enclosure population; the new partial require_all=False route does not change abandoned-row truth.",
+      "revision": 1,
+      "subject": "INV-B9EZM6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FMXQTE",
+      "items": [
+        "sha256:53e73c31e18c96ad632e0ee850386874037541b5b9ece496aa705e7ec4b9035a"
+      ],
+      "reason": "Spine endpoint/merge admission and complete foreign naming implement the master-chain rule; helper/data plumbing adds no independent obligation beyond it.",
+      "subject": "hunk:sha256:53e73c31e18c96ad632e0ee850386874037541b5b9ece496aa705e7ec4b9035a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FXTYNG",
+      "items": [
+        "sha256:215156203e0ff96c3928a090c4476bdd1063c5d6ea066af69b3737486a58c2e8"
+      ],
+      "reason": "Spine endpoint/merge admission and complete foreign naming implement the master-chain rule; helper/data plumbing adds no independent obligation beyond it.",
+      "subject": "hunk:sha256:215156203e0ff96c3928a090c4476bdd1063c5d6ea066af69b3737486a58c2e8"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GE68RF",
+      "items": [
+        "sha256:934f038d89f03d221a899b38ed2a46e91248c5c805204dcfbcbcea6c03be3f89",
+        "sha256:cd886e676666c0942a494787543c7dbcffd079854a603da4765a6acab6e32bbf"
+      ],
+      "reason": "This generated harness copy is byte-faithful to its canonical root skill and has no independent file card or policy owner. The canonical skill cards and governing root overview were updated for exact-pair guidance and the public direct recover limitation; another parallel card would duplicate that authority.",
+      "subject": "onboarding:.hermes/skills/c-12-closeout/SKILL.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GGEB7C",
+      "items": [
+        "sha256:12e83100c7670d7730ff7cd231b13be690dd9529cfe3d4d6b7d1fc15b5cbb047"
+      ],
+      "reason": "Population registration selects the test modules and proves no execution or gate acceptance.",
+      "subject": "hunk:sha256:12e83100c7670d7730ff7cd231b13be690dd9529cfe3d4d6b7d1fc15b5cbb047"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GTFW0N",
+      "items": [
+        "sha256:9570e42e2d57ee3a6ac0671e4b94e977853683dfdc99f4be41f83853e4c16bba"
+      ],
+      "reason": "Dispatch is moved to the sole integration admission owner; import removal and call forwarding are mechanical propagation.",
+      "subject": "hunk:sha256:9570e42e2d57ee3a6ac0671e4b94e977853683dfdc99f4be41f83853e4c16bba"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R52",
+          "packet": "requirements/MIK-R52-v1-every-landing-route-judges-what-it-lands.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "a4da23de4f7e088bd48e197958581befed4b02a4",
+            "content": "sha256:6e28c4c95d7c88b3f2918a177254f9e8c6cb4e5767daa36c13697d01e1e32528",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_merge_moved_row_refuses_at_leaf_publication"
+            },
+            "path": "mcp/tests/test_knowledge_validator_routes.py"
+          },
+          "before": "absent",
+          "id": "PRF-PCFQPT"
+        },
+        {
+          "after": {
+            "blob": "0963684e441d8b3abc82f5e031afe6964134530e",
+            "content": "sha256:35b167726ea01747baa5d2d87fa38d2d341f239c445826eef614a669b75f9ea4",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_merged_history_rows"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py"
+          },
+          "before": "absent",
+          "id": "RLZ-P3VG4W"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "introduce",
+      "id": "ROW-GXWJKX",
+      "items": [],
+      "reason": "Admit the enduring exact-pair route obligation from the approved packet with its authored applicability, exclusions and source/test evidence; verdict prose is not the invariant.",
+      "revision": 1,
+      "subject": "INV-9CSYZS"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GYS141",
+      "items": [
+        "sha256:1a305e698a1051471bd1c1c07c9acb9bd271d77b3b9fda78d3ce7e92cfbfa684"
+      ],
+      "reason": "Shared bound imports replace duplicate declarations without altering record encoding or judgment meaning.",
+      "subject": "hunk:sha256:1a305e698a1051471bd1c1c07c9acb9bd271d77b3b9fda78d3ce7e92cfbfa684"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R52",
+          "packet": "requirements/MIK-R52-v1-every-landing-route-judges-what-it-lands.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "0963684e441d8b3abc82f5e031afe6964134530e",
+            "content": "sha256:8b4227c9d3360ee30a300328b6cc7814300ea3eb301ad606403403bb52bb9dae",
+            "locator": {
+              "kind": "symbol",
+              "name": "_mismatches"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py"
+          },
+          "before": {
+            "blob": "3274f2b5b02128a98741ec4f1ebe84bd8285eb04",
+            "content": "sha256:8b4227c9d3360ee30a300328b6cc7814300ea3eb301ad606403403bb52bb9dae",
+            "locator": {
+              "kind": "symbol",
+              "name": "_mismatches"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py"
+          },
+          "id": "RLZ-11T0CS"
+        },
+        {
+          "after": {
+            "blob": "c24d6db63454e6ef80c78275021a81c01e040158",
+            "content": "sha256:9b2e295967e9c9fc5f4c3259fcd8e3fed0da4fbd4d2e30532358793d7a442038",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf_pair_recorded_refusal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
+          },
+          "before": {
+            "blob": "8df56352222cae3f9048acae41cad9951a373f0b",
+            "content": "sha256:8135cad9b222b0270b45d030ee357afa35a0b77af84cef8d8f461cad5d32d055",
+            "locator": {
+              "kind": "symbol",
+              "name": "_landing_request"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
+          },
+          "id": "RLZ-5Z5DFP"
+        },
+        {
+          "after": {
+            "blob": "560551a2058c73a9283f51e12e765737384373cb",
+            "content": "sha256:1557b61d8f9f64ea72f61cb3d47d899a22625aadf36044fd5f6bf1a4cfa9d0d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_writable_history"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
+          },
+          "before": {
+            "blob": "6d9044763997b7c562f1dce7c4f8beb226668066",
+            "content": "sha256:1557b61d8f9f64ea72f61cb3d47d899a22625aadf36044fd5f6bf1a4cfa9d0d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_writable_history"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
+          },
+          "id": "RLZ-9RQ2RP"
+        },
+        {
+          "after": {
+            "blob": "0963684e441d8b3abc82f5e031afe6964134530e",
+            "content": "sha256:b30cea9a1da16d6d79ceae4fcc28e1f7337335326592c19da6e69fdcde1134e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "checked_history_files"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py"
+          },
+          "before": {
+            "blob": "3274f2b5b02128a98741ec4f1ebe84bd8285eb04",
+            "content": "sha256:b30cea9a1da16d6d79ceae4fcc28e1f7337335326592c19da6e69fdcde1134e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "checked_history_files"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py"
+          },
+          "id": "RLZ-BAD8R3"
+        },
+        {
+          "after": {
+            "blob": "b70b13d88cfb4875c2e73574dfaaa2d12d4303e6",
+            "content": "sha256:7e62f02406a1bca57e4306035af6d5886206e02c2f674f2f64628597fec7b90e",
+            "locator": {
+              "kind": "symbol",
+              "name": "closed_out_memory"
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "before": {
+            "blob": "2e61c5b715ff2ad0a5d8cd26a98da4aaa866b6b2",
+            "content": "sha256:7e62f02406a1bca57e4306035af6d5886206e02c2f674f2f64628597fec7b90e",
+            "locator": {
+              "kind": "symbol",
+              "name": "closed_out_memory"
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "id": "RLZ-JD5AC5"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "strengthen",
+      "id": "ROW-H151EX",
+      "items": [
+        "sha256:a5d137cf6f33a5a7919d19fa57d942881b793b98b6014fa0dd06e2702505826a"
+      ],
+      "reason": "The approved packet deliberately replaces the validator-only/non-rejudged leaf route and exact-recorded-commit freezing limits: actual pair rejudgment and recorded-closeout descendant freezing are now governing intent. Other publication, attempt and conditional takeback boundaries remain. MEMORY M1 replaces the stale exact-only request-builder witness with the real leaf delegating branch and preserves every other cover.",
+      "revision": 4,
+      "subject": "INV-MS9BMJ"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+            "content": "sha256:9ef98f7c45ae2442c3282c3838e1d1f91ee1797ba67685a67894576e1b8bbe75",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commit_memory_content"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "before": {
+            "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
+            "content": "sha256:c7bbb91f8ab877928b918ed5abff23ca3ab64f391f0c1a94b5f90de643a24563",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commit_memory_content"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "id": "RLZ-B150AP"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-H1GEM2",
+      "items": [
+        "sha256:413c2ceccf508cd8059ead132f218c172aec155fe16b727360cdba0c04ec33c1"
+      ],
+      "reason": "Unpublished preparation takeback preserves its ownership condition and refuses to overwrite concurrent bytes.",
+      "revision": 1,
+      "subject": "INV-765TQN"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HF0RSW",
+      "items": [
+        "sha256:e7d41e299cb424e8b58b9668d3e0c737ff6a17a8b594cdf137dce36d48e2d623"
+      ],
+      "reason": "Typed port vocabulary carries persistence, leaf owner and series contract to their existing owners; it is not a second policy.",
+      "subject": "hunk:sha256:e7d41e299cb424e8b58b9668d3e0c737ff6a17a8b594cdf137dce36d48e2d623"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HMB6F3",
+      "items": [
+        "sha256:a67634d55d2807da8d233d1d63d3153f7806e0b1101e19319454961728b91f4c"
+      ],
+      "reason": "Spine endpoint/merge admission and complete foreign naming implement the master-chain rule; helper/data plumbing adds no independent obligation beyond it.",
+      "subject": "hunk:sha256:a67634d55d2807da8d233d1d63d3153f7806e0b1101e19319454961728b91f4c"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+            "content": "sha256:9ef98f7c45ae2442c3282c3838e1d1f91ee1797ba67685a67894576e1b8bbe75",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commit_memory_content"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "before": {
+            "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
+            "content": "sha256:c7bbb91f8ab877928b918ed5abff23ca3ab64f391f0c1a94b5f90de643a24563",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commit_memory_content"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "id": "RLZ-TQ016P"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-J9A725",
+      "items": [
+        "sha256:d8e544cb94ede3c06b29c6ece0c2b7068c02ab3e5dd3cfcdb61e4cea321b163d"
+      ],
+      "reason": "The same restoring owner now reports skipped takeback and still preserves concurrent content through HistoryClosing.restore.",
+      "revision": 1,
+      "subject": "INV-N5RBFK"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JN4YWV",
+      "items": [
+        "sha256:0ae64cbf5ebda718f61936d2d6063e15b797c400edea801d0ba973b420dc879e"
+      ],
+      "reason": "Port forwarding, one history-only recorded check and owned takeback result implement the recorded pair/identity/aftermath rules without creating another authority.",
+      "subject": "hunk:sha256:0ae64cbf5ebda718f61936d2d6063e15b797c400edea801d0ba973b420dc879e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JP8MMY",
+      "items": [
+        "sha256:9826b460fdc70fd9f500ecb5c93bd9894ca56f38e7a08a2a954f64022f68e03c"
+      ],
+      "reason": "Generated/canonical guidance propagates the actual per-route judgments and public-control limitation; it is presentation, not another executable authority.",
+      "subject": "hunk:sha256:9826b460fdc70fd9f500ecb5c93bd9894ca56f38e7a08a2a954f64022f68e03c"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f969968fdf803aa0853d0b4210a5b1e7f53a31ee",
+            "content": "sha256:39b03ab8f9fe4fd8075ed0a60963d5f610a8373c3c3207440e34d935ff7155de",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "before": {
+            "blob": "f10f508c9cbeadef7f1983c4e81f8ecfe9410256",
+            "content": "sha256:85a9805f569f646611dbd63f93364f8d2a44351f6f39e6eb87c273d5586cb4d9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "id": "RLZ-3T98VE"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-JRRV36",
+      "items": [
+        "sha256:1f7fe63fed1ac1f1560cc746b15aab56dd9ed95a9881ab08a3371b6d9ba2e80c"
+      ],
+      "reason": "Readable-commit and strict-ancestry helpers are added without restoring either removed helper/export.",
+      "revision": 1,
+      "subject": "INV-5FC4T6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-K8HVKQ",
+      "items": [
+        "sha256:a96d49522f712070fbb9fc964623229387c72a087a8aa639288cd63646460170"
+      ],
+      "reason": "Population registration selects the test modules and proves no execution or gate acceptance.",
+      "subject": "hunk:sha256:a96d49522f712070fbb9fc964623229387c72a087a8aa639288cd63646460170"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KD1AQG",
+      "items": [
+        "sha256:e365338f4e4c7a1d19802c9f57dd74e76542728f65c32bb60683a58535d51ce2"
+      ],
+      "reason": "Spine endpoint/merge admission and complete foreign naming implement the master-chain rule; helper/data plumbing adds no independent obligation beyond it.",
+      "subject": "hunk:sha256:e365338f4e4c7a1d19802c9f57dd74e76542728f65c32bb60683a58535d51ce2"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KE0AH0",
+      "items": [
+        "sha256:2d8c1b9f30191248c850c15bb764df824edbbefa3d479b46062d1382b67117ab"
+      ],
+      "reason": "Spine endpoint/merge admission and complete foreign naming implement the master-chain rule; helper/data plumbing adds no independent obligation beyond it.",
+      "subject": "hunk:sha256:2d8c1b9f30191248c850c15bb764df824edbbefa3d479b46062d1382b67117ab"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KT80PE",
+      "items": [
+        "sha256:fc718787d6d75e110be9b041597ad6f8c0c6ed4f00ca293e18fd6f93fa365191"
+      ],
+      "reason": "Population registration selects the test modules and proves no execution or gate acceptance.",
+      "subject": "hunk:sha256:fc718787d6d75e110be9b041597ad6f8c0c6ed4f00ca293e18fd6f93fa365191"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "8d2b8ca9151405443484521494eda9b6f76f45f1",
+            "content": "sha256:03a81aabcbdb2a662795b0ea7d5567ac9be13a4bb4ab1fe8f0399c4af86d39e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_master_or_checkpoint_landing_waits_until_no_entry_at_a_changed_path_is_stale"
+            },
+            "path": "mcp/tests/test_knowledge_closeout_gate.py"
+          },
+          "before": {
+            "blob": "d942a315e886f9a4c077004752d2af6adc4726e0",
+            "content": "sha256:9fb61e29c38ecd355f5b3ef58ee74ea9117fe3ff25778b1e852ece047c34efca",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_master_or_checkpoint_landing_waits_until_no_entry_at_a_changed_path_is_stale"
+            },
+            "path": "mcp/tests/test_knowledge_closeout_gate.py"
+          },
+          "id": "PRF-6RYB97"
+        },
+        {
+          "after": {
+            "blob": "b77fdd007c84e03ec75cccfb3736ffbb57118884",
+            "content": "sha256:b849d6a1edbadd1994470d6b5a41e9cc9a3d83a25b399a84d0dbcb635e2748b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_timed_out_blob_read_or_an_unverifiable_entry_refuses_a_master_landing"
+            },
+            "path": "mcp/tests/test_knowledge_gate_routes.py"
+          },
+          "before": {
+            "blob": "690ead62160c1245c795067d4e119ae6d4e80a22",
+            "content": "sha256:2e30418108d1d9aa304e2d02622e27a6dd191c3d80a0a04420c05d170ab33410",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_timed_out_blob_read_or_an_unverifiable_entry_refuses_a_master_landing"
+            },
+            "path": "mcp/tests/test_knowledge_gate_routes.py"
+          },
+          "id": "PRF-A7FX3D"
+        },
+        {
+          "after": {
+            "blob": "c24d6db63454e6ef80c78275021a81c01e040158",
+            "content": "sha256:e5954b7cbee7f73cfc32a9b994fcb5588566838d7421c753e4c6538f5231be08",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_landing_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
+          },
+          "before": {
+            "blob": "8df56352222cae3f9048acae41cad9951a373f0b",
+            "content": "sha256:e5954b7cbee7f73cfc32a9b994fcb5588566838d7421c753e4c6538f5231be08",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_landing_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
+          },
+          "id": "RLZ-4NWKSS"
+        },
+        {
+          "after": {
+            "blob": "b70b13d88cfb4875c2e73574dfaaa2d12d4303e6",
+            "content": "sha256:da4f9e5c7445b0656438a4b3a6fb7b8cd76d6c5baaf8de813ce0e6cc355f9ebe",
+            "locator": {
+              "kind": "symbol",
+              "name": "direct_gate_verdict"
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "before": {
+            "blob": "2e61c5b715ff2ad0a5d8cd26a98da4aaa866b6b2",
+            "content": "sha256:3056ced3ff338f180c1dc8cc6f34f32df1c14c711c62506f0f4b0d1c2ea47c77",
+            "locator": {
+              "kind": "symbol",
+              "name": "direct_gate_verdict"
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "id": "RLZ-870H2F"
+        },
+        {
+          "after": {
+            "blob": "b77fdd007c84e03ec75cccfb3736ffbb57118884",
+            "content": "sha256:b849d6a1edbadd1994470d6b5a41e9cc9a3d83a25b399a84d0dbcb635e2748b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_timed_out_blob_read_or_an_unverifiable_entry_refuses_a_master_landing"
+            },
+            "path": "mcp/tests/test_knowledge_gate_routes.py"
+          },
+          "before": {
+            "blob": "690ead62160c1245c795067d4e119ae6d4e80a22",
+            "content": "sha256:2e30418108d1d9aa304e2d02622e27a6dd191c3d80a0a04420c05d170ab33410",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_timed_out_blob_read_or_an_unverifiable_entry_refuses_a_master_landing"
+            },
+            "path": "mcp/tests/test_knowledge_gate_routes.py"
+          },
+          "id": "RLZ-AYEG7H"
+        },
+        {
+          "after": {
+            "blob": "fbf5d24148b7b54165d4139154db5fe28aa19800",
+            "content": "sha256:e112c153df124119c6af9c2af37abbcf5dbd5378e3e796234a479ea4f257f1f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "direct_landing"
+            },
+            "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
+          },
+          "before": {
+            "blob": "d551d4bbe222a72add65ecdc80d981cdaeec5cfd",
+            "content": "sha256:e112c153df124119c6af9c2af37abbcf5dbd5378e3e796234a479ea4f257f1f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "direct_landing"
+            },
+            "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
+          },
+          "id": "RLZ-HJ8H2C"
+        },
+        {
+          "after": {
+            "blob": "71f46c2b7658cabd8f043846644d5e73558e3757",
+            "content": "sha256:d2c324cfe8da1e7acd1a3399410b9a42df71458f93e702e616f056ba63f9cfb6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_blocked"
+            },
+            "path": "mcp/tests/test_knowledge_cutover.py"
+          },
+          "before": {
+            "blob": "8f92bbe9948b98fa7072f2ae69b1fb50bc6f098f",
+            "content": "sha256:d41fdb55a660149ded7a89d8ee8435fd7fdbbc085817ea2f7a55a6fc098428f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_blocked"
+            },
+            "path": "mcp/tests/test_knowledge_cutover.py"
+          },
+          "id": "RLZ-JDVNG9"
+        },
+        {
+          "after": {
+            "blob": "b7c1cdbb6b82fa751e51722404352099fba9aa25",
+            "content": "sha256:ba0f45687a8d0a9c237f8191b49fee25aef4d9515b6f927ee7e37a2a5006f76e",
+            "locator": {
+              "kind": "symbol",
+              "name": "integration_gate_block"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integration_gate.py"
+          },
+          "before": {
+            "blob": "6cfdec1af86890182716df842f338bd4955bda31",
+            "content": "sha256:4c0fd5a01a0879aee1f25a37c4ad950c9e7ca9385ba4ca71fe69830275435425",
+            "locator": {
+              "kind": "symbol",
+              "name": "_knowledge_gate_block"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
+          },
+          "id": "RLZ-PS6FJJ"
+        },
+        {
+          "after": {
+            "blob": "b70b13d88cfb4875c2e73574dfaaa2d12d4303e6",
+            "content": "sha256:af8b2c9e843bfc7c5eabd24e8644f08d5fb63f5ae14434c16fb50f90c8489845",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepared_closeout_refusal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "before": {
+            "blob": "2e61c5b715ff2ad0a5d8cd26a98da4aaa866b6b2",
+            "content": "sha256:af8b2c9e843bfc7c5eabd24e8644f08d5fb63f5ae14434c16fb50f90c8489845",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepared_closeout_refusal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "id": "RLZ-PTPE1P"
+        },
+        {
+          "after": {
+            "blob": "8d2b8ca9151405443484521494eda9b6f76f45f1",
+            "content": "sha256:03a81aabcbdb2a662795b0ea7d5567ac9be13a4bb4ab1fe8f0399c4af86d39e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_master_or_checkpoint_landing_waits_until_no_entry_at_a_changed_path_is_stale"
+            },
+            "path": "mcp/tests/test_knowledge_closeout_gate.py"
+          },
+          "before": {
+            "blob": "d942a315e886f9a4c077004752d2af6adc4726e0",
+            "content": "sha256:9fb61e29c38ecd355f5b3ef58ee74ea9117fe3ff25778b1e852ece047c34efca",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_master_or_checkpoint_landing_waits_until_no_entry_at_a_changed_path_is_stale"
+            },
+            "path": "mcp/tests/test_knowledge_closeout_gate.py"
+          },
+          "id": "RLZ-S2RAEW"
+        },
+        {
+          "after": {
+            "blob": "fbf5d24148b7b54165d4139154db5fe28aa19800",
+            "content": "sha256:1fa08c18de287310d98cea90b25a7e7e068fc1423cbd3b55d3edaab5face30bf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_direct_landing_preview"
+            },
+            "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
+          },
+          "before": {
+            "blob": "d551d4bbe222a72add65ecdc80d981cdaeec5cfd",
+            "content": "sha256:6064306f286379066fc9b5fdb2d0eb5a452c9452195a4244145f7459a9d45477",
+            "locator": {
+              "kind": "symbol",
+              "name": "_direct_landing_preview"
+            },
+            "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
+          },
+          "id": "RLZ-Z8X4P3"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-KWAPN2",
+      "items": [
+        "sha256:40c3575d2dbe42d1a570fe433562cee6d3d8861801ef028dd4fe89648a39bb28"
+      ],
+      "reason": "The extracted integration_gate remains the refusal/cutover owner; existing entry IDs move to its actual constructs, while direct/recorded/closeout counterparts retain the same removed-mode and converted/unconverted policy.",
+      "revision": 1,
+      "subject": "INV-95NQR7"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R52",
+          "packet": "requirements/MIK-R52-v1-every-landing-route-judges-what-it-lands.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "e5318345905e4d7b2daee5e1c3032271c5b64a9e",
+            "content": "sha256:905c4d16f1a83c4a9ea7f367cc42e3d1dd8802b62fa2402b46850da01daa998f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_six_foreign_commits_are_all_named"
+            },
+            "path": "mcp/tests/test_master_chain_offenders.py"
+          },
+          "before": "absent",
+          "id": "PRF-54QWWX"
+        },
+        {
+          "after": {
+            "blob": "5874259383770db761b01efb85f1cdc83142dc41",
+            "content": "sha256:6353e278f5576c1f0d1ffa9063771be93514167b750232d975e8bab2a31afb00",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_hand_merge_refuses_through_the_public_recorded_route"
+            },
+            "path": "mcp/tests/test_master_chain_public_routes.py"
+          },
+          "before": "absent",
+          "id": "PRF-9SZG6G"
+        },
+        {
+          "after": {
+            "blob": "2e2e1ce552a42396bc678ff06e8f4a50ef9a92ac",
+            "content": "sha256:f41f25dc88ab812ae525d5c1a86aa222b5c2c9f6e8d39ccd1fd983c62f2819d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "landed_chain_refusal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/series_closeout.py"
+          },
+          "before": "absent",
+          "id": "RLZ-971YA2"
+        },
+        {
+          "after": {
+            "blob": "7a32ae3f63b70f77abf362afa28237ea54b9abc9",
+            "content": "sha256:78d2968fbb269c172c018e2ccd746b4b6860cc287deda0960b5034ac26eb3d8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "integrate_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
+          },
+          "before": "absent",
+          "id": "RLZ-E3853N"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "introduce",
+      "id": "ROW-KYAME4",
+      "items": [],
+      "reason": "Admit the enduring exact-pair route obligation from the approved packet with its authored applicability, exclusions and source/test evidence; verdict prose is not the invariant.",
+      "revision": 1,
+      "subject": "INV-3BGCAT"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-M04FTZ",
+      "items": [
+        "sha256:2726370391800f11748f939cdf5f6bcbae45c5cb63d79b33f6268636c56ba591"
+      ],
+      "reason": "The owner identity is propagated into the existing immutable request/retry/closing machinery; no separate policy beyond the named-owner rule is introduced.",
+      "subject": "hunk:sha256:2726370391800f11748f939cdf5f6bcbae45c5cb63d79b33f6268636c56ba591"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-M523V9",
+      "items": [
+        "sha256:4875bacea31b81ade399e579c2275a1401b8cdf8ac93c2c64c18aa7fc13737dd"
+      ],
+      "reason": "Fixture/import forwarding keeps cutover scope distinct from separately proved chain admission.",
+      "subject": "hunk:sha256:4875bacea31b81ade399e579c2275a1401b8cdf8ac93c2c64c18aa7fc13737dd"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-M9TTYE",
+      "items": [
+        "sha256:aab8de20199d91366a83e08616ebfa7cba412ec19846565278e554c96aa39f86",
+        "sha256:5d5658fcf0f20b1318c03af793226fa3840842292807f2ec5db61fc36fa99350"
+      ],
+      "reason": "This generated harness copy is byte-faithful to its canonical root skill and has no independent file card or policy owner. The canonical skill cards and governing root overview were updated for exact-pair guidance and the public direct recover limitation; another parallel card would duplicate that authority.",
+      "subject": "onboarding:.pi/skills/c-12-closeout/SKILL.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b2a4b8163b634df11013792fe18f84652d820d6b",
+            "content": "sha256:fde7d1383b82a9f405fb58142b8ce8fc1ce3c5ee87c869f83895e8b67bad99a6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "cbd8a667827a2e4277358439a10ab52dd4bd9a87",
+            "content": "sha256:39ca93a56c46b2b679a423d13ae8ece2604c0d2acb4631d4f34ca4d98654c70e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GRTJG0"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-MQMA73",
+      "items": [
+        "sha256:3c45ed0288d9fdde9347c41b218141632d81cd9f8ede6fc8743146230460cabb"
+      ],
+      "reason": "Catalog additions register the real new evidence consumers and fixture; deleted database-era rows are not resurrected. Supported parent sync changed catalog layout; re-anchor the same complete cover against the composed candidate without changing record intent or consumer ownership. Supported post-M2 source sync preserves the passed meaning and consumer ownership; only the same complete current catalog covers are recomposed against the landed and leaf source. Owner sync200920807156 onto4b6a2660/9c69aa18 retains the same passed catalog meanings and real consumer ownership; renew complete same-ID covers after landed lane-order repair, without replaying semantic entries or proofs. Owner-admitted two adjacent consumer-pair sorts only; same complete catalog cover renewed after ordering correction, without record or meaning change.",
+      "revision": 1,
+      "subject": "INV-MSCRAN"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-N64RQ7",
+      "items": [
+        "sha256:8a64e721f126908b4fe8e5045f577b56b96bafe81f5f4eb45984abdeeb26c918"
+      ],
+      "reason": "Spine endpoint/merge admission and complete foreign naming implement the master-chain rule; helper/data plumbing adds no independent obligation beyond it.",
+      "subject": "hunk:sha256:8a64e721f126908b4fe8e5045f577b56b96bafe81f5f4eb45984abdeeb26c918"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NEJCEJ",
+      "items": [
+        "sha256:e925f0e5ab11d071b3b6873a5211335e69ad4003eb9ed1fdd10845bc968e58e4"
+      ],
+      "reason": "The existing recorded-master request selects recorded code through _judged_master_code and names an unreadable input instead of silently choosing another code endpoint, as MIK-R52 requires. This master-only routing does not enforce the corrected leaf descendant-freezing obligation.",
+      "subject": "hunk:sha256:e925f0e5ab11d071b3b6873a5211335e69ad4003eb9ed1fdd10845bc968e58e4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NZ053T",
+      "items": [
+        "sha256:eee0014b202e684c87f43344b71fbc8a2cddd5e5943260c0cdd0e0de20974869"
+      ],
+      "reason": "Port forwarding, one history-only recorded check and owned takeback result implement the recorded pair/identity/aftermath rules without creating another authority.",
+      "subject": "hunk:sha256:eee0014b202e684c87f43344b71fbc8a2cddd5e5943260c0cdd0e0de20974869"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-P3468C",
+      "items": [
+        "sha256:c4ab421d60850ff0d05240471b7acad38b321d563bea48db3fd737f364da1ced"
+      ],
+      "reason": "Shared bound imports replace duplicate declarations without altering record encoding or judgment meaning.",
+      "subject": "hunk:sha256:c4ab421d60850ff0d05240471b7acad38b321d563bea48db3fd737f364da1ced"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-P3J3G9",
+      "items": [
+        "sha256:d07c817fe43577cecab87d77a2527486b2536656d15bd277d8bb1987680bfc34"
+      ],
+      "reason": "The route case/assertion/header adapters now target the actual hand-edited recorded route; their source assertions are covered by the durable route rule, not a standalone runtime invariant.",
+      "subject": "hunk:sha256:d07c817fe43577cecab87d77a2527486b2536656d15bd277d8bb1987680bfc34"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PE3S6D",
+      "items": [
+        "sha256:1adfbf96423902f75defe7f4a1834df8990ee51cdae8ba8345778cda221624a7"
+      ],
+      "reason": "Spine endpoint/merge admission and complete foreign naming implement the master-chain rule; helper/data plumbing adds no independent obligation beyond it.",
+      "subject": "hunk:sha256:1adfbf96423902f75defe7f4a1834df8990ee51cdae8ba8345778cda221624a7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PRYRAB",
+      "items": [
+        "sha256:3e2cf738c1995b38aa73b6014b1cd2c1f6a1edc3d593c71f39a3c05d88f260a9"
+      ],
+      "reason": "The route case/assertion/header adapters now target the actual hand-edited recorded route; their source assertions are covered by the durable route rule, not a standalone runtime invariant.",
+      "subject": "hunk:sha256:3e2cf738c1995b38aa73b6014b1cd2c1f6a1edc3d593c71f39a3c05d88f260a9"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f969968fdf803aa0853d0b4210a5b1e7f53a31ee",
+            "content": "sha256:b1bff66ce31f00a3e25ff2e50d3c6a4f3d2ace0229322eb2bf102aca69cfe16f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_move_admitted_ref"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "before": {
+            "blob": "f10f508c9cbeadef7f1983c4e81f8ecfe9410256",
+            "content": "sha256:b1bff66ce31f00a3e25ff2e50d3c6a4f3d2ace0229322eb2bf102aca69cfe16f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_move_admitted_ref"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "id": "RLZ-GJZS85"
+        },
+        {
+          "after": {
+            "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+            "content": "sha256:9ef98f7c45ae2442c3282c3838e1d1f91ee1797ba67685a67894576e1b8bbe75",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commit_memory_content"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "before": {
+            "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
+            "content": "sha256:c7bbb91f8ab877928b918ed5abff23ca3ab64f391f0c1a94b5f90de643a24563",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commit_memory_content"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "id": "RLZ-Q6CJEZ"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-PWKYHQ",
+      "items": [
+        "sha256:72167392b30027882671f80a0bfe0747dff724b8f2208661e74e31c8c41939a2"
+      ],
+      "reason": "The publication-return boundary and failed expected-old takeback remain unchanged: partial reachable output and restored preparations remain a distinct retained case.",
+      "revision": 1,
+      "subject": "INV-FYZQK0"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R52",
+          "packet": "requirements/MIK-R52-v1-every-landing-route-judges-what-it-lands.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "5874259383770db761b01efb85f1cdc83142dc41",
+            "content": "sha256:96b3761ce6d86a502a048db5a17f12d4acf6d9525608bca31a5718fc4a938069",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_hand_edited_leaf_closeout_cell_refuses_through_public_leaf_integration"
+            },
+            "path": "mcp/tests/test_master_chain_public_routes.py"
+          },
+          "before": "absent",
+          "id": "PRF-A81SGB"
+        },
+        {
+          "after": {
+            "blob": "135632f88a874b3c2d23e07b31fb2e8843f95324",
+            "content": "sha256:21c33d0ee1b05af684bd6c3a3d22994088b3266f2bd0a33d355d00819f50e288",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_refused_leaf_integration_apply_writes_nothing"
+            },
+            "path": "mcp/tests/test_integration_refusal_footprint.py"
+          },
+          "before": "absent",
+          "id": "PRF-KPPB2W"
+        },
+        {
+          "after": {
+            "blob": "b7c1cdbb6b82fa751e51722404352099fba9aa25",
+            "content": "sha256:24d7192cf2a23f2fb4db1d2286bcde370e7e67fe20194f37934b87ad17ddb87e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf_landing_lock"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integration_gate.py"
+          },
+          "before": "absent",
+          "id": "RLZ-G7040T"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "introduce",
+      "id": "ROW-Q2DQ9T",
+      "items": [],
+      "reason": "Admit the enduring exact-pair route obligation from the approved packet with its authored applicability, exclusions and source/test evidence; verdict prose is not the invariant.",
+      "revision": 1,
+      "subject": "INV-5JEN5D"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QDVCM4",
+      "items": [
+        "sha256:e9aaf8de466001f6ad34668e40854ac8b0447446a067cbf5e06b3ecfd5abe112"
+      ],
+      "reason": "Spine endpoint/merge admission and complete foreign naming implement the master-chain rule; helper/data plumbing adds no independent obligation beyond it.",
+      "subject": "hunk:sha256:e9aaf8de466001f6ad34668e40854ac8b0447446a067cbf5e06b3ecfd5abe112"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QS5YD2",
+      "items": [
+        "sha256:c5cd6b3b14416cf4235e410a71d990deaec169ce63a0e144b78f237b92cf972b"
+      ],
+      "reason": "The shared pair/freezing and conditional restoration helpers implement the approved route/freezing/aftermath obligation already stated in durable records; local exception/import wiring has no independent invariant.",
+      "subject": "hunk:sha256:c5cd6b3b14416cf4235e410a71d990deaec169ce63a0e144b78f237b92cf972b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QVR4SP",
+      "items": [
+        "sha256:8aaae69fa353c7b93bf54bb2d1ad833f8611b010ca0d8457ec99ac150d59c3ce"
+      ],
+      "reason": "Persistence-flag plumbing and memo-hit guarding implement no-write landing refusal; recomputed judgment stays the same.",
+      "subject": "hunk:sha256:8aaae69fa353c7b93bf54bb2d1ad833f8611b010ca0d8457ec99ac150d59c3ce"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RB416C",
+      "items": [
+        "sha256:26052e106710e73c03b78c37eb0bfd9c238302291da66a949c4847f999e46bfd"
+      ],
+      "reason": "The dispatcher/bound guard and historical answer implement the recorded bounded-publication/closed-out obligations; imports and local branch composition carry no additional independent invariant.",
+      "subject": "hunk:sha256:26052e106710e73c03b78c37eb0bfd9c238302291da66a949c4847f999e46bfd"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+            "content": "sha256:9ef98f7c45ae2442c3282c3838e1d1f91ee1797ba67685a67894576e1b8bbe75",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commit_memory_content"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "before": {
+            "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
+            "content": "sha256:c7bbb91f8ab877928b918ed5abff23ca3ab64f391f0c1a94b5f90de643a24563",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commit_memory_content"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "id": "RLZ-4VQ93G"
+        },
+        {
+          "after": {
+            "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+            "content": "sha256:de0378335937c87f8c461adc352207ef562d860dc1e63f6cbafa60e6f76dcaf4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_judged_tree"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "before": {
+            "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
+            "content": "sha256:de0378335937c87f8c461adc352207ef562d860dc1e63f6cbafa60e6f76dcaf4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_judged_tree"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "id": "RLZ-WJY6N2"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-RGR5WX",
+      "items": [
+        "sha256:a6d526fa9c99ae381c7cb510a6daf6d5f8650ffe0edc7406557a985fe3497a2c"
+      ],
+      "reason": "Historical documentation-only correction remains historical; new executable changes are not represented as that prior AST-equivalent correction.",
+      "revision": 1,
+      "subject": "INV-NJT6A9"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-RWEFX6",
+      "items": [
+        "sha256:5d76ca7a0140256f2249fd343307bcafb4ddad41344765b2a5222738e4573aa5",
+        "sha256:9e98fd7096830484cf922af7afe530ec44adf14416456bf32534ac2f62dcb776"
+      ],
+      "reason": "This generated harness copy is byte-faithful to its canonical root skill and has no independent file card or policy owner. The canonical skill cards and governing root overview were updated for exact-pair guidance and the public direct recover limitation; another parallel card would duplicate that authority.",
+      "subject": "onboarding:.claude/skills/c-12-closeout/SKILL.md"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R52",
+          "packet": "requirements/MIK-R52-v1-every-landing-route-judges-what-it-lands.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+            "content": "sha256:8b005244c058f89a5173a0a1d8c6a01fcba28076d5dd37dc456d66ade779e9e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_exact_memory_tree"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "before": {
+            "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
+            "content": "sha256:8b005244c058f89a5173a0a1d8c6a01fcba28076d5dd37dc456d66ade779e9e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_exact_memory_tree"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "id": "RLZ-FJ0671"
+        },
+        {
+          "after": {
+            "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+            "content": "sha256:9ef98f7c45ae2442c3282c3838e1d1f91ee1797ba67685a67894576e1b8bbe75",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commit_memory_content"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "before": {
+            "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
+            "content": "sha256:c7bbb91f8ab877928b918ed5abff23ca3ab64f391f0c1a94b5f90de643a24563",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commit_memory_content"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "id": "RLZ-K4M788"
+        },
+        {
+          "after": {
+            "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+            "content": "sha256:de0378335937c87f8c461adc352207ef562d860dc1e63f6cbafa60e6f76dcaf4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_judged_tree"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "before": {
+            "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
+            "content": "sha256:de0378335937c87f8c461adc352207ef562d860dc1e63f6cbafa60e6f76dcaf4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_judged_tree"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "id": "RLZ-M2XFSX"
+        },
+        {
+          "after": {
+            "blob": "f969968fdf803aa0853d0b4210a5b1e7f53a31ee",
+            "content": "sha256:b97684cc2ac76c4fccebf4b9798b3174f988a5b6ff37fa0aa659ddeafa089b67",
+            "locator": {
+              "kind": "symbol",
+              "name": "stage_tree"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "before": {
+            "blob": "f10f508c9cbeadef7f1983c4e81f8ecfe9410256",
+            "content": "sha256:b97684cc2ac76c4fccebf4b9798b3174f988a5b6ff37fa0aa659ddeafa089b67",
+            "locator": {
+              "kind": "symbol",
+              "name": "stage_tree"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "id": "RLZ-V3EGC6"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-RWEYW9",
+      "items": [
+        "sha256:3d43872e88756a5ea1f713664766a77e1d6742062822ac1f71a047f44b563e19"
+      ],
+      "reason": "Memory publication still captures all owned writes before judgment and publishes the exact judged tree; the refactoring and conditional takeback preserve that boundary. MEMORY M1 correction: ordinary-closeout scope does not deny the direct owner's judged-tree binding.",
+      "revision": 3,
+      "subject": "INV-49E649"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RYFKDG",
+      "items": [
+        "sha256:54d026492bc1a80a1de7e9ac58efa20b6eed02b4cef5f0efa2ed9be04d4ea6f1"
+      ],
+      "reason": "Persistence-flag plumbing and memo-hit guarding implement no-write landing refusal; recomputed judgment stays the same.",
+      "subject": "hunk:sha256:54d026492bc1a80a1de7e9ac58efa20b6eed02b4cef5f0efa2ed9be04d4ea6f1"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+            "content": "sha256:9ef98f7c45ae2442c3282c3838e1d1f91ee1797ba67685a67894576e1b8bbe75",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commit_memory_content"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "before": {
+            "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
+            "content": "sha256:c7bbb91f8ab877928b918ed5abff23ca3ab64f391f0c1a94b5f90de643a24563",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commit_memory_content"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "id": "RLZ-ZC5A4Z"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-S0Q4N2",
+      "items": [
+        "sha256:6c0732689d12a8c51a1c5fbd64ab588f75409fef6283f93bad32ecf216f665d0"
+      ],
+      "reason": "The earlier provenance-removal judgment is preserved as bounded history, not promoted into a prohibition on new technical gate code.",
+      "revision": 1,
+      "subject": "INV-RYF7BJ"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-S3FGSM",
+      "items": [
+        "sha256:84087257280e07587009fa5bca684d5c0743919d2f1de1cf909f0a3a9f96087e"
+      ],
+      "reason": "Population registration selects the test modules and proves no execution or gate acceptance.",
+      "subject": "hunk:sha256:84087257280e07587009fa5bca684d5c0743919d2f1de1cf909f0a3a9f96087e"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R52",
+          "packet": "requirements/MIK-R52-v1-every-landing-route-judges-what-it-lands.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "36095c36cbdbc76df02280415b7d1414ebb5493f",
+            "content": "sha256:e246b511755166c835464d878e83cd00338238015576d75da7691959d9e1fd52",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_maximum_coherence_publication_validates_at_capacity"
+            },
+            "path": "mcp/tests/test_evidence_dependency_bounds.py"
+          },
+          "before": "absent",
+          "id": "PRF-B4QRXX"
+        },
+        {
+          "after": {
+            "blob": "36095c36cbdbc76df02280415b7d1414ebb5493f",
+            "content": "sha256:9d09b49479a9cc27a5cf74d5048e42cd4d828b4179857182bd6ae6dbcef2aa25",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_old_coherence_record_still_loads"
+            },
+            "path": "mcp/tests/test_evidence_dependency_bounds.py"
+          },
+          "before": "absent",
+          "id": "PRF-R5ZKGD"
+        },
+        {
+          "after": {
+            "blob": "747ceef9f19039b540d51ee10fd567e30e334606",
+            "content": "sha256:48800da83af555058a5c5a04ae8c6bd574fa9199c6bd208756df69d57a07535e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py"
+          },
+          "before": "absent",
+          "id": "RLZ-631Z8E"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "introduce",
+      "id": "ROW-S3Q7XT",
+      "items": [],
+      "reason": "Admit the enduring exact-pair route obligation from the approved packet with its authored applicability, exclusions and source/test evidence; verdict prose is not the invariant.",
+      "revision": 1,
+      "subject": "INV-SRS98B"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-S9G0SH",
+      "items": [
+        "sha256:cadace9ae1c85a8ee7e121a068ee482c8345466bb192e7da4a253b7060f464e7"
+      ],
+      "reason": "Spine endpoint/merge admission and complete foreign naming implement the master-chain rule; helper/data plumbing adds no independent obligation beyond it.",
+      "subject": "hunk:sha256:cadace9ae1c85a8ee7e121a068ee482c8345466bb192e7da4a253b7060f464e7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-S9JCSG",
+      "items": [
+        "sha256:1bc749aeedc7c1e27a6d594cac5e4050f889fa660ae3d2dab5079318e23dd50f"
+      ],
+      "reason": "The owner identity is propagated into the existing immutable request/retry/closing machinery; no separate policy beyond the named-owner rule is introduced.",
+      "subject": "hunk:sha256:1bc749aeedc7c1e27a6d594cac5e4050f889fa660ae3d2dab5079318e23dd50f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SBV4Y5",
+      "items": [
+        "sha256:a8e2dfb7cfcaf32358bf558ca94eb209a2da21da4a7ee4907703a4fa793f9e1e"
+      ],
+      "reason": "Population registration selects the test modules and proves no execution or gate acceptance.",
+      "subject": "hunk:sha256:a8e2dfb7cfcaf32358bf558ca94eb209a2da21da4a7ee4907703a4fa793f9e1e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SDWE9Y",
+      "items": [
+        "sha256:920a8048394f00e70df83e880a238bb88451a31781683ad5beb13d1898037f31"
+      ],
+      "reason": "Generated/canonical guidance propagates the actual per-route judgments and public-control limitation; it is presentation, not another executable authority.",
+      "subject": "hunk:sha256:920a8048394f00e70df83e880a238bb88451a31781683ad5beb13d1898037f31"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SN17RT",
+      "items": [
+        "sha256:f890d9de19cee228895ae4e18746c77bd3dec812df8666e5acc6c07dcc4ef46d"
+      ],
+      "reason": "Generated/canonical guidance propagates the actual per-route judgments and public-control limitation; it is presentation, not another executable authority.",
+      "subject": "hunk:sha256:f890d9de19cee228895ae4e18746c77bd3dec812df8666e5acc6c07dcc4ef46d"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ST0TX0",
+      "items": [
+        "sha256:5b97e59fa8c6c96608c0931e4956cead795331c206e18d4690bb6c862aca887f",
+        "sha256:c4cd8a86c1e5e5585c9f06f18ddd6313614e3eb099ddc578257d54f6432d6e3c"
+      ],
+      "reason": "This generated harness copy is byte-faithful to its canonical root skill and has no independent file card or policy owner. The canonical skill cards and governing root overview were updated for exact-pair guidance and the public direct recover limitation; another parallel card would duplicate that authority.",
+      "subject": "onboarding:.cursor/skills/c-12-closeout/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-STE9A9",
+      "items": [
+        "sha256:c9ca0cc0fec7d28997cc9aa867ae35974e735072ba15fedfdcb3c0d6007472ac",
+        "sha256:0f97cc8b08fb03f81d3bb07fc8f7f48ead75b392555d2d8409e50da389809e77"
+      ],
+      "reason": "This generated harness copy is byte-faithful to its canonical root skill and has no independent file card or policy owner. The canonical skill cards and governing root overview were updated for exact-pair guidance and the public direct recover limitation; another parallel card would duplicate that authority.",
+      "subject": "onboarding:.openclaw/workspace/skills/c-12-closeout/SKILL.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+            "content": "sha256:9ef98f7c45ae2442c3282c3838e1d1f91ee1797ba67685a67894576e1b8bbe75",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commit_memory_content"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "before": {
+            "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
+            "content": "sha256:c7bbb91f8ab877928b918ed5abff23ca3ab64f391f0c1a94b5f90de643a24563",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commit_memory_content"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "id": "RLZ-MPKFXQ"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-SWY4YN",
+      "items": [
+        "sha256:6599fa29a5dc336899ec073ed8ce221931e385ae77ca2cfbab6c75a3ae5887fd"
+      ],
+      "reason": "The restoring block still encompasses unpublished failures; conditional ownership checks preserve rather than overwrite foreign edits.",
+      "revision": 1,
+      "subject": "INV-FQ2447"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SYJ1TD",
+      "items": [
+        "sha256:8e8d30ec834db9637bbd70460506c584cdc833245fc19b5cd9c3313d90d6e3bd"
+      ],
+      "reason": "Recorded pair selection and helper dispatch implement the recorded-landing rule; no separate authority is inferred from the adapter wiring.",
+      "subject": "hunk:sha256:8e8d30ec834db9637bbd70460506c584cdc833245fc19b5cd9c3313d90d6e3bd"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-T36QVZ",
+      "items": [
+        "sha256:4c5350060eb6f1565b33fe58db7e55592a587c09e81eb73fabc0b40c0a567303"
+      ],
+      "reason": "Population registration selects the test modules and proves no execution or gate acceptance.",
+      "subject": "hunk:sha256:4c5350060eb6f1565b33fe58db7e55592a587c09e81eb73fabc0b40c0a567303"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TE9JRQ",
+      "items": [
+        "sha256:71db0601cce0e7792c1759012212bbd7d608b7c319f99eb99c8c75998db11367"
+      ],
+      "reason": "Spine endpoint/merge admission and complete foreign naming implement the master-chain rule; helper/data plumbing adds no independent obligation beyond it.",
+      "subject": "hunk:sha256:71db0601cce0e7792c1759012212bbd7d608b7c319f99eb99c8c75998db11367"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TGEHS2",
+      "items": [
+        "sha256:5e4a882e23ce8d6c510b68e1b5fa8d138dd5a0e3ade6ce711eb6063a74280f7b"
+      ],
+      "reason": "Spine endpoint/merge admission and complete foreign naming implement the master-chain rule; helper/data plumbing adds no independent obligation beyond it.",
+      "subject": "hunk:sha256:5e4a882e23ce8d6c510b68e1b5fa8d138dd5a0e3ade6ce711eb6063a74280f7b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TR2TVB",
+      "items": [
+        "sha256:dca71017cf2b2eceeb3b82563a9a7a91690184e05a8398433980ed6081f4e2c4"
+      ],
+      "reason": "The owner identity is propagated into the existing immutable request/retry/closing machinery; no separate policy beyond the named-owner rule is introduced.",
+      "subject": "hunk:sha256:dca71017cf2b2eceeb3b82563a9a7a91690184e05a8398433980ed6081f4e2c4"
+    },
+    {
+      "disposition": "still_rejected",
+      "id": "ROW-V5BPM9",
+      "items": [
+        "sha256:65e8eb9ca14ffeff34f8c9e7b1410e4777fbda246c56adcc08c7c550a7d8fbca"
+      ],
+      "reason": "The stale incoming-base anchors were inspected: citation_fix_tool and citation_migrate_tool still write cards/reference shape only, commit nothing and write no knowledge records. The locked closeout still prevents unconverted edits landing; the rejected lock-all alternative remains rejected. This is link currency repair, not a reversal of the active decision.",
+      "subject": "reconsider:DEC-VMMJDN#1"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VAH62C",
+      "items": [
+        "sha256:82953d6b1f75084df55615eff94e3a163ccbe9a34c459b1914ac19f5f95a9269"
+      ],
+      "reason": "The shared pair/freezing and conditional restoration helpers implement the approved route/freezing/aftermath obligation already stated in durable records; local exception/import wiring has no independent invariant.",
+      "subject": "hunk:sha256:82953d6b1f75084df55615eff94e3a163ccbe9a34c459b1914ac19f5f95a9269"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R52",
+          "packet": "requirements/MIK-R52-v1-every-landing-route-judges-what-it-lands.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "66bac1d2656394169414a2c104e800a11b4064b2",
+            "content": "sha256:0656045846a2dbe92f1ceee595fd92d0ffeec6500803557fb0e54fdd3053d9ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_status_and_validate_answer_closed_out_after_the_closeout"
+            },
+            "path": "mcp/tests/test_curator_coherence_closed_out.py"
+          },
+          "before": "absent",
+          "id": "PRF-RFW9MQ"
+        },
+        {
+          "after": {
+            "blob": "1078c62a7abf8884e726b0b7e3fa174d50d34254",
+            "content": "sha256:a55a599b1c92a8e4c1ec967be5a2291299e44c18285855b7c3cc6bf5b984a9b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "curator_coherence_action"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
+          },
+          "before": "absent",
+          "id": "RLZ-EYX021"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "introduce",
+      "id": "ROW-VPNCP9",
+      "items": [],
+      "reason": "Admit the enduring exact-pair route obligation from the approved packet with its authored applicability, exclusions and source/test evidence; verdict prose is not the invariant.",
+      "revision": 1,
+      "subject": "INV-PFVBQM"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R52",
+          "packet": "requirements/MIK-R52-v1-every-landing-route-judges-what-it-lands.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": "absent",
+          "before": {
+            "blob": "8f92bbe9948b98fa7072f2ae69b1fb50bc6f098f",
+            "content": "sha256:e9ba6eff80a4b51f831b83c7de639bb2c014cd4d57ae0af15f1ceb9f74b93e9d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_no_read_selects_the_database_of_a_converted_tree"
+            },
+            "path": "mcp/tests/test_knowledge_cutover.py"
+          },
+          "id": "PRF-JR10RF"
+        }
+      ],
+      "disposition": "deleted",
+      "effect": "retire",
+      "id": "ROW-W0KWKD",
+      "items": [],
+      "reason": "MEMORY M1 withdraws PRF-JR10RF: its retained test only selects a derived published-intent index and preserves legacy database bytes; it executes no unchanged-knowledge freeze. The already-retired record and historical origin remain, with no replacement pseudo-proof.",
+      "revision": 3,
+      "subject": "INV-T9M21FB4"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-W1ENW4",
+      "items": [
+        "sha256:dd456226792116c249243b11b2439d2fc2ad905e993260c140b33ee9249414a1"
+      ],
+      "reason": "This generated harness copy is byte-faithful to its canonical root skill and has no independent file card or policy owner. The canonical skill cards and governing root overview were updated for exact-pair guidance and the public direct recover limitation; another parallel card would duplicate that authority.",
+      "subject": "onboarding:.codex/skills/c-09-git-worktree-manager/SKILL.md"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R52",
+          "packet": "requirements/MIK-R52-v1-every-landing-route-judges-what-it-lands.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+            "content": "sha256:0300da511c4f3ecc757b4a3c97c4fc0911cbc1150136e0aee4085a9e019aa146",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_pair_refusal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "before": "absent",
+          "id": "RLZ-7TKTT1"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "introduce",
+      "id": "ROW-W7EC2Z",
+      "items": [],
+      "reason": "Admit the enduring exact-pair route obligation from the approved packet with its authored applicability, exclusions and source/test evidence; verdict prose is not the invariant.",
+      "revision": 1,
+      "subject": "INV-M0J963"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-B9EZM6",
+          "revision": 1
+        },
+        {
+          "id": "INV-E20AY2",
+          "revision": 1
+        },
+        {
+          "id": "INV-YZVCB8",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-WCSWEH",
+      "items": [
+        "sha256:e806f57327a8875d5f392228b701d7201004d09c706c9f2f0e2c2e221dce434a"
+      ],
+      "reason": "Examined every current/base member and its realizing/proving locations against the changed route. The joint guarantee, membership and explicit route coverage remain valid; the touched-member repairs preserve their respective obligations.",
+      "revision": 1,
+      "subject": "FAM-E5BHSB"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WJY0YD",
+      "items": [
+        "sha256:61dbc5c274447cc0b231425550d94152a89c56181be5dd27c93f8c57098de090"
+      ],
+      "reason": "Port forwarding, one history-only recorded check and owned takeback result implement the recorded pair/identity/aftermath rules without creating another authority.",
+      "subject": "hunk:sha256:61dbc5c274447cc0b231425550d94152a89c56181be5dd27c93f8c57098de090"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "1078c62a7abf8884e726b0b7e3fa174d50d34254",
+            "content": "sha256:5bcbb09ccb83a79ce41f7a2752e5bba4939171a01b6881d87df7910ce303c215",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
+          },
+          "before": {
+            "blob": "2396376cd715d4d7b646d44e5d83f4304708a636",
+            "content": "sha256:b80bc966651f313af77137b13fbb72874e1782d1f082b1619850f97df0731593",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
+          },
+          "id": "RLZ-K6TKTC"
+        },
+        {
+          "after": {
+            "blob": "1078c62a7abf8884e726b0b7e3fa174d50d34254",
+            "content": "sha256:7d7fe17df0eb2eba57e4a0d4e6835c0a273a3ad49e5ebdd1037d9c813d0e188e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_candidate_set"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
+          },
+          "before": {
+            "blob": "2396376cd715d4d7b646d44e5d83f4304708a636",
+            "content": "sha256:7d7fe17df0eb2eba57e4a0d4e6835c0a273a3ad49e5ebdd1037d9c813d0e188e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_candidate_set"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
+          },
+          "id": "RLZ-QQNJDJ"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-WKFZY7",
+      "items": [
+        "sha256:e422e3daf71d2410e83ef0bfd954cc49318a444e8f025b2d961e140e41abec5c"
+      ],
+      "reason": "The publication guard uses shared model bounds before writes; candidate filing, single file sourcing and exact-set/CAS authority are preserved.",
+      "revision": 1,
+      "subject": "INV-701KQ9"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R52",
+          "packet": "requirements/MIK-R52-v1-every-landing-route-judges-what-it-lands.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "7e18cf9aabc6cc74d145b510074c8be7404321c2",
+            "content": "sha256:beb36979d11993ac6df558b8dcb9bff7d425e72b9ad204f8bb888daf2673a1fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_edited_closed_file_refuses_naming_it"
+            },
+            "path": "mcp/tests/test_history_ownership.py"
+          },
+          "before": "absent",
+          "id": "PRF-7HPHWH"
+        },
+        {
+          "after": {
+            "blob": "e9ed87994a579daa9e148c94dbe0fe3961ea1271",
+            "content": "sha256:f469fd1a4d2de7b0de084ccd3515375140bb98f2af0df91f64bff2de1e4395c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_history_owners"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/landing.py"
+          },
+          "before": "absent",
+          "id": "RLZ-E6NG05"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "introduce",
+      "id": "ROW-WRFY4F",
+      "items": [],
+      "reason": "Admit the enduring exact-pair route obligation from the approved packet with its authored applicability, exclusions and source/test evidence; verdict prose is not the invariant.",
+      "revision": 1,
+      "subject": "INV-3FA4VG"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b2a4b8163b634df11013792fe18f84652d820d6b",
+            "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+            "locator": {
+              "end": 1342,
+              "kind": "line_range",
+              "start": 1342
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "cbd8a667827a2e4277358439a10ab52dd4bd9a87",
+            "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+            "locator": {
+              "end": 1314,
+              "kind": "line_range",
+              "start": 1314
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-1WK7P0"
+        },
+        {
+          "after": {
+            "blob": "9f31b7c2d55c568826cfdbefce91301427adf48d",
+            "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+            "locator": {
+              "end": 404,
+              "kind": "line_range",
+              "start": 404
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "c7a2d8a9a3a1afbddf87f815452a4f3de97e0328",
+            "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+            "locator": {
+              "end": 395,
+              "kind": "line_range",
+              "start": 395
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-NJFH31"
+        },
+        {
+          "after": {
+            "blob": "b2a4b8163b634df11013792fe18f84652d820d6b",
+            "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+            "locator": {
+              "end": 528,
+              "kind": "line_range",
+              "start": 528
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "cbd8a667827a2e4277358439a10ab52dd4bd9a87",
+            "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+            "locator": {
+              "end": 525,
+              "kind": "line_range",
+              "start": 525
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-TB9TST"
+        },
+        {
+          "after": {
+            "blob": "b2a4b8163b634df11013792fe18f84652d820d6b",
+            "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
+            "locator": {
+              "end": 1495,
+              "kind": "line_range",
+              "start": 1495
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "cbd8a667827a2e4277358439a10ab52dd4bd9a87",
+            "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
+            "locator": {
+              "end": 1465,
+              "kind": "line_range",
+              "start": 1465
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-VQZWNZ"
+        },
+        {
+          "after": {
+            "blob": "9f31b7c2d55c568826cfdbefce91301427adf48d",
+            "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
+            "locator": {
+              "end": 291,
+              "kind": "line_range",
+              "start": 291
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "c7a2d8a9a3a1afbddf87f815452a4f3de97e0328",
+            "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
+            "locator": {
+              "end": 283,
+              "kind": "line_range",
+              "start": 283
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-ZTDYFT"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-WXYQNB",
+      "items": [],
+      "reason": "Admitted incoming-wins catalog composition preserves meaning and consumer ownership while reanchoring the actual complete registration rows. Supported post-M2 source sync preserves the passed meaning and consumer ownership; only the same complete current catalog covers are recomposed against the landed and leaf source. Owner sync200920807156 onto4b6a2660/9c69aa18 retains the same passed catalog meanings and real consumer ownership; renew complete same-ID covers after landed lane-order repair, without replaying semantic entries or proofs.",
+      "revision": 1,
+      "subject": "INV-0H8WBQ"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-X4C4BN",
+      "items": [
+        "sha256:137b97f6203566a2387bbb0f5ab6e5a78961ac7a922e6c412fb0b6bc104eabcd"
+      ],
+      "reason": "Typed port vocabulary carries persistence, leaf owner and series contract to their existing owners; it is not a second policy.",
+      "subject": "hunk:sha256:137b97f6203566a2387bbb0f5ab6e5a78961ac7a922e6c412fb0b6bc104eabcd"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-X8PAGE",
+      "items": [
+        "sha256:e03d52a408680ee790fbcff79348caeb43cf520cc4691f963623ae39500ba805"
+      ],
+      "reason": "The owner identity is propagated into the existing immutable request/retry/closing machinery; no separate policy beyond the named-owner rule is introduced.",
+      "subject": "hunk:sha256:e03d52a408680ee790fbcff79348caeb43cf520cc4691f963623ae39500ba805"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-XPVCR6",
+      "items": [
+        "sha256:dc86b58bad0cf1890dd70eb428fee4d9c2f9d5e38cc2ad4708f71edc2a382987"
+      ],
+      "reason": "The existing recorded-master request carries the canonical series-contract address for authentic history-owner selection; it is already governed by MIK-R52 rules6/7 and adds no independent invariant.",
+      "subject": "hunk:sha256:dc86b58bad0cf1890dd70eb428fee4d9c2f9d5e38cc2ad4708f71edc2a382987"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-XVV05X",
+      "items": [
+        "sha256:be5a0a6c3bc9eef9fe5d5748cc996bbba51ab99d38c66cbf9e709e8569c4bb44"
+      ],
+      "reason": "This generated harness copy is byte-faithful to its canonical root skill and has no independent file card or policy owner. The canonical skill cards and governing root overview were updated for exact-pair guidance and the public direct recover limitation; another parallel card would duplicate that authority.",
+      "subject": "onboarding:.cursor/skills/c-09-git-worktree-manager/SKILL.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Y27XT2",
+      "items": [
+        "sha256:d21643515a88de37311ae57a96cd3a264d24aa83509c3d9594415172935dcc08"
+      ],
+      "reason": "The shared pair/freezing and conditional restoration helpers implement the approved route/freezing/aftermath obligation already stated in durable records; local exception/import wiring has no independent invariant.",
+      "subject": "hunk:sha256:d21643515a88de37311ae57a96cd3a264d24aa83509c3d9594415172935dcc08"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+            "content": "sha256:9ef98f7c45ae2442c3282c3838e1d1f91ee1797ba67685a67894576e1b8bbe75",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commit_memory_content"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "before": {
+            "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
+            "content": "sha256:c7bbb91f8ab877928b918ed5abff23ca3ab64f391f0c1a94b5f90de643a24563",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commit_memory_content"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "id": "RLZ-PFSP3Y"
+        },
+        {
+          "after": {
+            "blob": "f969968fdf803aa0853d0b4210a5b1e7f53a31ee",
+            "content": "sha256:b1bff66ce31f00a3e25ff2e50d3c6a4f3d2ace0229322eb2bf102aca69cfe16f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_move_admitted_ref"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "before": {
+            "blob": "f10f508c9cbeadef7f1983c4e81f8ecfe9410256",
+            "content": "sha256:b1bff66ce31f00a3e25ff2e50d3c6a4f3d2ace0229322eb2bf102aca69cfe16f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_move_admitted_ref"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "id": "RLZ-Y3ZQ4N"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-YACDSV",
+      "items": [
+        "sha256:3ea7fb7e206300f2da3b869bbb384e55fc55f258b73a6275af92c85de316d2df"
+      ],
+      "reason": "The current docstring still distinguishes partial publication raising from proof failure after successful return; new takeback diagnostics preserve that distinction.",
+      "revision": 1,
+      "subject": "INV-JZD1F5"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YYEGGS",
+      "items": [
+        "sha256:847d9ea30d7803701148b3ed8be9b08f6c8a5a87178e91126a85052b101e7c3d"
+      ],
+      "reason": "Port forwarding, one history-only recorded check and owned takeback result implement the recorded pair/identity/aftermath rules without creating another authority.",
+      "subject": "hunk:sha256:847d9ea30d7803701148b3ed8be9b08f6c8a5a87178e91126a85052b101e7c3d"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Z12FV1",
+      "items": [
+        "sha256:1160273e17787353f43ca7c7c505e258336cab0f3b16f59af7b3c7e9c4bb1863"
+      ],
+      "reason": "The route case/assertion/header adapters now target the actual hand-edited recorded route; their source assertions are covered by the durable route rule, not a standalone runtime invariant.",
+      "subject": "hunk:sha256:1160273e17787353f43ca7c7c505e258336cab0f3b16f59af7b3c7e9c4bb1863"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Z7GPDY",
+      "items": [
+        "sha256:1dacf037a2d95fdfa8ef2b4a662b6894e2af0930434425dd2b08cf35a6756daa"
+      ],
+      "reason": "Spine endpoint/merge admission and complete foreign naming implement the master-chain rule; helper/data plumbing adds no independent obligation beyond it.",
+      "subject": "hunk:sha256:1dacf037a2d95fdfa8ef2b4a662b6894e2af0930434425dd2b08cf35a6756daa"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZG8C9V",
+      "items": [
+        "sha256:c50f3ad0571912281d185fdbe0a71f28acde9ccb756a1688f4a0245f075f988c"
+      ],
+      "reason": "Spine endpoint/merge admission and complete foreign naming implement the master-chain rule; helper/data plumbing adds no independent obligation beyond it.",
+      "subject": "hunk:sha256:c50f3ad0571912281d185fdbe0a71f28acde9ccb756a1688f4a0245f075f988c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZRZ6DJ",
+      "items": [
+        "sha256:43166091ed1a57cb5f1deae97e1f76821ef951763941dba22cd58ec5303b8179"
+      ],
+      "reason": "The shared pair/freezing and conditional restoration helpers implement the approved route/freezing/aftermath obligation already stated in durable records; local exception/import wiring has no independent invariant.",
+      "subject": "hunk:sha256:43166091ed1a57cb5f1deae97e1f76821ef951763941dba22cd58ec5303b8179"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZV2R0S",
+      "items": [
+        "sha256:ad432ff04d824d2b0a91c790e5151978e79442023bb4c7e4918da284d49c83b4"
+      ],
+      "reason": "Persistence-flag plumbing and memo-hit guarding implement no-write landing refusal; recomputed judgment stays the same.",
+      "subject": "hunk:sha256:ad432ff04d824d2b0a91c790e5151978e79442023bb4c7e4918da284d49c83b4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZWMPFZ",
+      "items": [
+        "sha256:98857a3350e0d2f417f14297a78c87152bac595a2115d396c20dc4b1242eb237"
+      ],
+      "reason": "The shared pair/freezing and conditional restoration helpers implement the approved route/freezing/aftermath obligation already stated in durable records; local exception/import wiring has no independent invariant.",
+      "subject": "hunk:sha256:98857a3350e0d2f417f14297a78c87152bac595a2115d396c20dc4b1242eb237"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

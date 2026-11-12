@@ -1,0 +1,71 @@
+{
+  "path": "dashboard/src/explainer/testSupport.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Each path answers its queue in order and every call is recorded",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d3301088979d62b38dfb56c6e757570d38a49f3",
+            "content": "sha256:b3d91709b5fa744e93522fa4b0213ae4a7b9e43440e473ad98f7369ada0435f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "backend"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A plain state has no seat, no build and no stale parts unless a case patches one",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d3301088979d62b38dfb56c6e757570d38a49f3",
+            "content": "sha256:5f7558157f133dd6af87d690387781d917b0cc6879c292d29c3a7141cea7a2fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "explainerState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The tray is emptied of picks, text and targets",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d3301088979d62b38dfb56c6e757570d38a49f3",
+            "content": "sha256:46b10bbc3eca2ced13e7fa1b3c0708af5f56b81d47c316cea47179186b401c29",
+            "locator": {
+              "kind": "symbol",
+              "name": "resetTray"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A pick names an invariant reference in the test's repository",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d3301088979d62b38dfb56c6e757570d38a49f3",
+            "content": "sha256:510dbe23215568cf62e06dfee7f4e63ca4576dd7ce50113a42ab9fde16ba16a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "invariantPick"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

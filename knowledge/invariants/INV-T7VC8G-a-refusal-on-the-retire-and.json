@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Prevents an operator from assuming an untyped membership-removal edit is executable when the only command is needed to retain sprint identity."
+  },
+  "applicability": "Retire/finalize refusal guidance for removing a master from a commanding sprint.",
+  "conditions": [
+    "The remedy is selected from the actual typed-row and retained-sprint shape.",
+    "An admitted untyped edit includes any required graph and integration-branch changes."
+  ],
+  "exclusions": [
+    "The sole untyped-master/no-retirement shape has no removal edit; the command is retained rather than advertising an impossible action."
+  ],
+  "id": "INV-T7VC8G",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L41-reviewer-acd0dccb-066d-41e9-ab45-b3d7e19e742f.md section 'Sealed findings 3 to 8'; probes x14_reattach_untyped.out and x31_named_edit_and_member.out part A (the named edit carried out as written, then the recorded request completes); two killed mutations under sealed id 3"
+      ],
+      "path": "entries-list.json"
+    },
+    "handoffEntry": "L41-R7 finding 3",
+    "leaf": "260928-MIK-L41",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Membership-removal guidance names detach_master for a typed row, an admitted set_field edit for an untyped membership when another commanded master or a retirement record preserves sprint identity, and explicitly reports no available removal edit for a sole untyped master without a retirement record.",
+  "status": "proposed",
+  "supersedes": []
+}

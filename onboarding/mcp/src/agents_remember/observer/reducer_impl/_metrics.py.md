@@ -1,44 +1,29 @@
 # mcp/src/agents_remember/observer/reducer_impl/_metrics.py
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `mcp/src/agents_remember/observer/reducer_impl/_metrics.py`                                            |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-07T22:45:00+02:00                                            |
-| lastVerifiedCommitHash | `997305a9ced4caea67edb826224bf0351264fd56`                                        |
-| lastVerifiedCommitDate | 2026-09-17T19:54:27+02:00|
-| governingOverview      | `../overview.md`                                          |
-
 ## Governing Overview
 
 [overview](../overview.md)
 
 ## Purpose
 
-Analytical rollups: token series, staleness histogram, and workspace metrics. The reducer's slice-3b rollups: the bounded cumulative token series, the verification-age histogram, the workspace metrics rollup, and the analytics assembly. All remain pure functions of already-read inputs.
+Pure analytical assembly over already-read retained inputs. Verification-age histogram and stalest-sidecar ranking functions are removed. Native task stage/activity counts belong to task-entry production; the old lifecycle `_metrics` function is not present here. This module computes no token aggregate.
 
 ## Code Commentary
 
-- `_metrics`
-- `_decimate_token_series`
-- `token_series`
-- `staleness_histogram`
-- `_staleness_bucket`
 - `build_analytics`
-- `_stalest`
+
+Analytics retains supplied drift, route coverage, tool reports and ledgers, with caller-derived attention and Engine Room process surfaces. No setup surface is retained. It emits no verification-age sidecar list, lifecycle buckets, taskDocuments, series, pickup or expectation collection and owns no task-stage/action authority. The former lifecycle metrics and tool.completed liveness account belongs to the predecessor, not this current assembly function.
 
 ## Invariants And Boundaries
 
 - The card mirrors the source file one-to-one at `mcp/src/agents_remember/observer/reducer_impl/_metrics.py`.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
 
-## Update History
+- Analytics assembles retained feeds and caller-derived overrides without sidecar ranking. [2]
 
-- 2026-09-17T19:30+02:00 — 260915-CAPS-L20 curator: **dead governing-overview body link repaired, and the field brought into agreement with it.** The field named `overview.md` — which resolves, but only under the onboarding root rather than against this card's own route — while the body link named `../../overview.md` and resolved card-relative to nothing, so a reader clicking it landed nowhere and the two declarations disagreed. Both now name `../overview.md`, the route-local overview of this card's own directory, so the field and the link agree by construction. Recorded under `260915-CAPS-L20` as this leaf's **S3** (D3, the packaged `l-01-agent-lifecycles` family) and **S4** (D16, govern-or-remove per card). The checker that previously reported this corpus clean now resolves both declarations, so this card reaches the curator's gated repair set instead of passing silently; that is the gap this leaf closed. Superseded history entries above stand unedited — including any entry that asserted an earlier repair this card did not in fact carry, which is the finding rather than an error to erase. No prose, anchor, range or verification stamp was otherwise changed.
-- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: created this file-level onboarding card for the split module; content derived from the current worktree source. Verification metadata pinned until closeout stamps the 260731-EFA-L7 commit.
+
+
+
+### Repo-Internal References

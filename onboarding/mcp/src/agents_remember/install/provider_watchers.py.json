@@ -1,0 +1,90 @@
+{
+  "path": "mcp/src/agents_remember/install/provider_watchers.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "aa1a36d2b0380291d77aa3ff81c12026b03c214e",
+        "content": "sha256:94b4b369d5d4f6c0e5cf994ed09a94bb7fa74146c77d4be03eff8693be5d29d0",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-JYN8HS",
+      "invariant": "INV-BPW763",
+      "origin": {
+        "handoffEntry": "L192-W-R199-04",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The install's old-watcher stop still runs before the runtime tree is refreshed and still records a failed stop instead of aborting.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The rebind report stores lifecycle runs, readiness, recovery actions, messages, and the MCP payload shape.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa1a36d2b0380291d77aa3ff81c12026b03c214e",
+            "content": "sha256:85c09f71007bb67afa0ad54d6704adc9da5a49d8b994cc269d5004a630682d75",
+            "locator": {
+              "kind": "symbol",
+              "name": "payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Watcher lifecycle calls use temporary provider settings, `lifecycle.watchers_run`, and per-phase result recording.\n\nAnchor: \"watchers_run\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa1a36d2b0380291d77aa3ff81c12026b03c214e",
+            "content": "sha256:0a27f8e0ffaae661e1392f20740a005b96f70bcfcc286d212694762e17ec648b",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 83
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A pre-refresh stop that is not ok or is partial is recorded on the rebind report with recovery guidance, and the install continues rather than aborting.\n\nAnchor: `stop_provider_watchers_before_refresh`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa1a36d2b0380291d77aa3ff81c12026b03c214e",
+            "content": "sha256:94b4b369d5d4f6c0e5cf994ed09a94bb7fa74146c77d4be03eff8693be5d29d0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Runtime install creates and attaches the report, stops watchers before provider refresh, and completes rebind/recovery before returning.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "content": "sha256:f0e41d7834874b6bcc77ad3010c515db8b76282842ed22366209fcd595dff9ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "install_runtime"
+            },
+            "path": "mcp/src/agents_remember/install/runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

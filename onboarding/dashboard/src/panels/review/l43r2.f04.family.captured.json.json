@@ -1,0 +1,25 @@
+{
+  "path": "dashboard/src/panels/review/l43r2.f04.family.captured.json",
+  "realizes": [],
+  "references": {
+    "2": {
+      "note": "The current mounted F04 source names its distinct capture provenance, declares the two-leaf/writer history and closed-flag simulation, and imports l57.f04-native inputs rather than this removed set.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a818c7653088cb8371185f2d07c8b0e56ab01cdd",
+            "content": "sha256:f7cb80bdee084c6db4fd10a9e715a7eb7587cddadb004ac815ddaee083c82400",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.f04.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Prevents losing the beginning of the answer or exceeding the final bound after a late reply is attached."
+  },
+  "applicability": "Waited native role replies that must fit a bounded answer.",
+  "conditions": [
+    "The delivered text keeps its beginning and is refit after late attachment before the final guard."
+  ],
+  "exclusions": [
+    "Retained full-reply/log locations remain conditional on successful filing; no invented location or host completion."
+  ],
+  "id": "INV-ZZQXZ3",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "RoleWaitPrefixTests incl. late line-error refit and giant-reply bound green: /tmp/mik-run3/L111/a06_fast.txt (65 passed, 78 subtests, exit 0); round-8 verdict notes/reports/reviewer/4889df77-3c01-4cc7-a6ae-344b459490bd/round-8/verdict.md"
+      ],
+      "path": "producer-knowledge-list.json"
+    },
+    "handoffEntry": "L111-CODE-F01.15 / worker-A06",
+    "leaf": "260928-MIK-L111",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Waited replies keep their beginning within the bound with the whole reply in the detail file, and a late-attached prefix is refit before the guard.",
+  "status": "proposed",
+  "supersedes": []
+}

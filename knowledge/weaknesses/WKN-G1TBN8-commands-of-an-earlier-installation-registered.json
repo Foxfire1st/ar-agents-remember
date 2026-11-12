@@ -1,0 +1,28 @@
+{
+  "anchor": {
+    "blob": "6f3a69cae0b8febac949097f08a925389a945baa",
+    "content": "sha256:c3265ddb8c210f72aa1356bda0f44001e43cd5f72960b694cb536b1b264119cc",
+    "locator": {
+      "kind": "file"
+    },
+    "path": "mcp/src/agents_remember/cli/__main__.py"
+  },
+  "id": "WKN-G1TBN8",
+  "kind": "debt",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-handoff"
+    },
+    "handoffEntry": "L97-weakness-03",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L97"
+  },
+  "state": "open",
+  "statement": "Six commands that serve only an installation of an earlier version are still registered (providers-remove, knowledge-census, knowledge-copies, memory-backfill, upgrade-user-settings, removed-stores), and no public page describes them. A seventh outside the agents' command table, knowledge-convert, is told in three lines of two guide pages, for a memory repository cloned before memory_init."
+}

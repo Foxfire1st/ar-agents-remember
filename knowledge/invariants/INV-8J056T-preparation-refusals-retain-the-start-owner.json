@@ -1,0 +1,39 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The first-start refusal named an atomic series-contract edge and no remedy, and a terminal generation could otherwise be treated as a found enclosure; the obligation spans the refusal translator, the terminal check and the child transport, and the terminal and stale-recovery cases are guarded by focused tests."
+  },
+  "applicability": "Every refusal of the shared role-start preparation, on the launcher's answer and on role_start.",
+  "conditions": [
+    "The refusal names what could not be prepared, the worktree start's own status and reason, and the next step a person or agent can take.",
+    "A terminal enclosure generation refuses before any root is used or any enclosure is created, names reopen-required and previews the exact contract's task_reopen.",
+    "A stale-source block keeps the native recovery fields and directs the owner to the explicit stale_base_choice rather than inventing a missing-contract inspection.",
+    "A refusal leaves nothing half-made; a cut-off preparation names what may remain and how it is repaired or abandoned."
+  ],
+  "exclusions": [
+    "The worktree start's own checks and parameters stay as they are; the start only changes the hint it passes.",
+    "A refusal for an open execution, a start rule or the launch lock is the launcher's existing line."
+  ],
+  "id": "INV-8J056T",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Current packet ef014c94; 0f030b39-current-qualification-20261007/manifest.json, raw command logs and candidate.patch SHA256 268fd6d7815eda90270537510dd0cb0db82027b3b0d99dde5425faaab333e1ac",
+        "Memory review notes/reports/role-launch/260928-MIK-L95-reviewer-d292b89d-aa9a-4fa8-9969-aad69f71ba3f.memory-r1.md SHA256 03da9b2843b4421adf865681a1cbca6b06726e2573496fe4ac0697c88b16d276; producer list notes/reports/role-launch/260928-MIK-L95-reviewer-d292b89d-aa9a-4fa8-9969-aad69f71ba3f.memory-r1.curator-handoff.json SHA256 3a511e51a2d242d65a38e5011fb8b137985cae8d23d732ddbec6e36d16ed16c8; exact passed code d5f2207722e71601819dc64bd298a5a073dff41e and memory candidate 6598e6150ae5a7c515fcdc12bce9efa7cc1b9a85"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L95-curator-fda7e7d6-5424-45e5-831a-f5387774d331-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R95@v1 rule7",
+    "leaf": "260928-MIK-L95",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Preparation refusals retain the start owner status and reason and name the next repair action on both entry points.",
+  "status": "proposed",
+  "supersedes": []
+}

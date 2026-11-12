@@ -1,0 +1,124 @@
+{
+  "path": "mcp/src/agents_remember/cli/role_retire.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ce02a53623bbc91e452717b9870f6c71ab46f72c",
+        "content": "sha256:9c2a94a04a5eaf9aeb7bec360fdc376b208e8468102a3b68a51b3ce3894d2487",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-FRTZHC",
+      "invariant": "INV-ECNV2S",
+      "origin": {
+        "handoffEntry": "INV-ECNV2S",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The retirement route is where the refusal is raised, so the naming of the subagent belongs here.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ce02a53623bbc91e452717b9870f6c71ab46f72c",
+        "content": "sha256:c4a09ad1ec544cd29b1694a272d7ed9a69e5c6ca29d912bc3aa15e8f7c5c960b",
+        "locator": {
+          "end": 388,
+          "kind": "line_range",
+          "start": 350
+        }
+      },
+      "id": "RLZ-HPM77Q",
+      "invariant": "INV-ECNV2S",
+      "origin": {
+        "handoffEntry": "L100-R100-8-unique-target",
+        "leaf": "260928-MIK-L100"
+      },
+      "rationale": "The total of matching current and archived records over one refuses the retirement before any host call or disk write, enumerating both sides.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The native entry checks original-starter authority before idempotent success or archive.\n\nAnchor: `_retire_seat`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce02a53623bbc91e452717b9870f6c71ab46f72c",
+            "content": "sha256:9c2a94a04a5eaf9aeb7bec360fdc376b208e8468102a3b68a51b3ce3894d2487",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce02a53623bbc91e452717b9870f6c71ab46f72c",
+            "content": "sha256:c05f7267fdfe015a986a183e561a3117e2221d6df436c3d10dabf4c247cd8d80",
+            "locator": {
+              "kind": "symbol",
+              "name": "_retire_seat"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Unknown and ambiguous native targets refuse before retirement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce02a53623bbc91e452717b9870f6c71ab46f72c",
+            "content": "sha256:c4a09ad1ec544cd29b1694a272d7ed9a69e5c6ca29d912bc3aa15e8f7c5c960b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_locate_seat"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Host archive precedes receipt recording; failure is reported rather than rounded up.\n\nAnchor: `_archive_retiree` `_record_retirement`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce02a53623bbc91e452717b9870f6c71ab46f72c",
+            "content": "sha256:9c2a94a04a5eaf9aeb7bec360fdc376b208e8468102a3b68a51b3ce3894d2487",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce02a53623bbc91e452717b9870f6c71ab46f72c",
+            "content": "sha256:c589d0e9a62cc6ae9ce1deaecd882d5b3e906574609c79f4695af942b1f8a81b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_archive_retiree"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce02a53623bbc91e452717b9870f6c71ab46f72c",
+            "content": "sha256:0287a7b93b80ace0499272372d526e23219621e696e6198e78390737d5c6ad21",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record_retirement"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

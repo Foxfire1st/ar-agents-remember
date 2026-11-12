@@ -1,0 +1,58 @@
+{
+  "path": "mcp/tests/test_context_packet_slim.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The ordinary compact fixture checks retained roots/build and omitted repeated blocks.\n\nAnchor: `ContextPacketSlimTests.test_slim_answer_holds_roots_pair_and_build`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e21ea9f046dbf359d9ccfea6776b4c6848a35eb",
+            "content": "sha256:2a2b38fea740cb1bec825a49812289c9667f2dab1a201f0bb0e2d07966191c95",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 38
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A registered partial-index fixture exposes its action line.\n\nAnchor: `ContextPacketSlimTests.test_a_registered_packet_names_a_partial_index`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e21ea9f046dbf359d9ccfea6776b4c6848a35eb",
+            "content": "sha256:f3923cc8c76094c0b9a26e52fd865467773c73b282460cc10ef486c5dc7c4ef6",
+            "locator": {
+              "end": 183,
+              "kind": "line_range",
+              "start": 143
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Registered leaf and taskless fixtures open named roots and validate task/build/pair fields.\n\nAnchor: `ContextPacketSlimTests.test_registered_leaf_and_taskless_packets`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e21ea9f046dbf359d9ccfea6776b4c6848a35eb",
+            "content": "sha256:f9c89061ddab6cc4c3a76436f9e751124faf524f27f8302f72e1adb58d2412ec",
+            "locator": {
+              "end": 268,
+              "kind": "line_range",
+              "start": 185
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

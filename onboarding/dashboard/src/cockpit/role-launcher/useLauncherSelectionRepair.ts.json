@@ -1,0 +1,75 @@
+{
+  "path": "dashboard/src/cockpit/role-launcher/useLauncherSelectionRepair.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "repairedSeededSelection is a current owner of the behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3443840e5d8030c7d294c2aad5c9aa39dbda5e57",
+            "content": "sha256:759a3d5b5dda521b7fdf90303acd6f860aeed3a9542f067601c18afc3c2d7cc5",
+            "locator": {
+              "end": 92,
+              "kind": "line_range",
+              "start": 82
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "repairedSeededSelection returns the first invalid seeded document correction, without catalog override pruning.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3443840e5d8030c7d294c2aad5c9aa39dbda5e57",
+            "content": "sha256:898999d205bc14c4ce1e481d3018308a822a850c02518047d11daa1b53371c95",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 82
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "usePruneSeededSelection is a current owner of the behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3443840e5d8030c7d294c2aad5c9aa39dbda5e57",
+            "content": "sha256:cac816d299f657ea1595050f4462717d33cac234ad3cc53b6a7f7ad6129e6f52",
+            "locator": {
+              "end": 115,
+              "kind": "line_range",
+              "start": 96
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "usePruneSeededSelection is the retained document repair effect; its dependencies contain no catalog or options-readiness input.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3443840e5d8030c7d294c2aad5c9aa39dbda5e57",
+            "content": "sha256:12212a6a3df2f8339da76c9df0e7f244e409291f59ad6327438be8c508162b09",
+            "locator": {
+              "end": 114,
+              "kind": "line_range",
+              "start": 96
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

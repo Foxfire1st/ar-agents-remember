@@ -1,0 +1,89 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The direction weighed own-chat questions and a dashboard waiting mark against the parent chain, and the choice governs every role, operation and launch handover text changed by this leaf and later instruction work."
+  },
+  "alternatives": [
+    {
+      "option": "A role agent a parent started sends every developer question to its parent; each parent answers what lies within its authority or passes the question up unchanged with its own recommendation apart; the question surfaces once in the top chat with the asker's role, task and agent id; the developer's answer returns down the chain with the receiving agent's id and his quoted words passed unchanged.",
+      "reason": "D64: the developer reads one chat and can answer there, and the chain keeps the asking agent's identity, what it holds back and its recommendation.",
+      "status": "chosen"
+    },
+    {
+      "option": "Keep developer questions in each agent's own chat, as the role texts said before this leaf.",
+      "reason": "The developer saw no marker for a waiting chat and could not find the questions among the run's more than a hundred sessions.",
+      "reconsider_when": "The dashboard marks every waiting chat so the developer can find each one, and the developer chooses own-chat questions again.",
+      "status": "rejected"
+    },
+    {
+      "option": "Give the dashboard a visible mark for a chat that waits and leave the questions in the agents' own chats.",
+      "reason": "The packet excludes dashboard changes; which leaf takes the waiting-chat mark is one of its open truth gaps.",
+      "reconsider_when": "A dashboard waiting-chat mark lands or the developer asks for one.",
+      "status": "deferred"
+    }
+  ],
+  "consequences": [
+    "Every role source, the three operations that carry the duty, the handover developerQuestions value and the role_message refusal remedies state the chain rule.",
+    "The parentless and dashboard-started behavior, the L72 coordinator text and the R99 direct peer hand-overs are preserved.",
+    "The retired own-chat and no-forwarding sentences are registered so they cannot return unnoticed."
+  ],
+  "context": "The role texts told most roles to put developer questions in their own chat. On 2026-10-05 the Reviewer of leaf L41 asked the developer in its own chat for a further review round; on 2026-10-06 two role agents waited for him in their own chats and he answered that he could not see which chat was waiting. D64 directed that a question from a parented role goes up the chain to the chat at the top.",
+  "decider": "The developer; D64 (2026-10-06), applied by the architect-approved MIK-R93@v1.",
+  "id": "DEC-VQ50BV",
+  "links": [
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R93",
+        "packet": "requirements/MIK-R93-v1-a-question-for-the-developer-goes-up-the-chain.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-8AMSGV"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-9S49CW"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-7FMDAS"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-82ZTHK"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-HGSFJ8"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-W24J6Q"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "HandoverTextWordingTests.test_developer_question_channel_matches_role_and_parent; test_owner_relation_routes_developer_questions_and_preserves_coordinators; before.json/after.json/comparison.json; condition-control-final.json"
+      ],
+      "path": "notes/files/l93-curation-20261008/handoff.json"
+    },
+    "handoffEntry": "MIK-R93@v1 rules1,2,7,10",
+    "leaf": "260928-MIK-L93",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

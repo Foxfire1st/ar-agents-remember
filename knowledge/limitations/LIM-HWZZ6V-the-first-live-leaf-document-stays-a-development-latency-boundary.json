@@ -1,0 +1,31 @@
+{
+  "boundary": "The same-input development samples record first-root latency of 37.634 to 28.055 seconds at 1600px and 37.433 to 28.053 seconds at 390px; one sample per width. After the O1 frontend repair the records count is one before and one after the Records expansion, so the expansion adds no request; the remaining first-root cost is not attributed to a cause.",
+  "id": "LIM-HWZZ6V",
+  "limited": "A fast first view of a live leaf's Knowledge document.",
+  "links": [
+    {
+      "relation": "bounds",
+      "target": "INV-6QQ5FE"
+    },
+    {
+      "relation": "bounds",
+      "target": "INV-QE6278"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "handoff.json"
+    },
+    "handoffEntry": "L79-TK-O1 latency boundary / post-takeover-1",
+    "leaf": "260928-MIK-L79",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-limitation/v1",
+  "status": "proposed",
+  "unsupported": [
+    "No adequate reading speed, production performance or cause is established by the samples.",
+    "No numeric first-view limit is in the packet, and none is invented here.",
+    "No equivalence between the development harness and production serving is claimed."
+  ]
+}

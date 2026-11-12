@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The viewer's single realization carries the retained parsed list and editor identity; the component case guards the unchanged, changed and current-refusal facets. The cache no longer serves a working viewer result, so the two-file span no longer holds."
+  },
+  "applicability": "An open working-leaf change-set viewer while its selected before/after content remains unchanged.",
+  "conditions": [
+    "The settled 2500 ms validation loop uses the shared conditional list/file resources; comparison snapshots are excluded from working polling.",
+    "Unchanged retained values preserve the mounted CodeMirror MergeView; changed content may replace it and a current refusal remains visible.",
+    "A working view is read natively on each poll (MIK-R176 rule 5's no-cache decision); the no-Git-computation guarantee is withdrawn for the working view."
+  ],
+  "exclusions": [
+    "Cold loads, actual native input changes, changed selected content and failures are not zero-work/no-remount claims.",
+    "No independent timing threshold, first-visit performance grade or fresh Curator browser/Git witness."
+  ],
+  "id": "INV-QK8XNM",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "sync-L81-dashboard.txt; sync-L81-primary-regressions.txt; body-viewer-witness12.json six304/zero-body polls over8.502s, sameCodeMirror; conditional-candidate11-settled.json zeroGit after settled warmup"
+      ],
+      "path": "A011-bounded-generation-content-33.json"
+    },
+    "handoffEntry": "L168-W-R168-06",
+    "leaf": "260928-MIK-L168",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "The open viewer retains its CodeMirror node, and an unchanged 2.5 s working poll recomputes the native change set while re-rendering only when its content changes.",
+  "status": "proposed",
+  "supersedes": []
+}

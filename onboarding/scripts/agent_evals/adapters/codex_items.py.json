@@ -1,0 +1,40 @@
+{
+  "path": "scripts/agent_evals/adapters/codex_items.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c612e6d7b02cd011359f525f389144e0f3fbc8b9",
+        "content": "sha256:145f53eb110a1f0d4da42e6505b2b38ed4e56ee1bb14f8e206de64ed66c97902",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-B14HR6",
+      "invariant": "INV-R4JZ3F",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-codex-capture",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "It pairs native completed TurnItems and child dispatches rather than trusting printed output as tool execution.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c612e6d7b02cd011359f525f389144e0f3fbc8b9",
+            "content": "sha256:145f53eb110a1f0d4da42e6505b2b38ed4e56ee1bb14f8e206de64ed66c97902",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,40 @@
+{
+  "path": "scripts/agent_evals/adapters/execution.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "afd9a11ec1dca7e0f63c9e85ba0e342d4d23cd0d",
+        "content": "sha256:cdb090d0c3aecab03c06175f57b755c5a097d525d4bfb985521474bf86fbe50a",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-Z2XAK8",
+      "invariant": "INV-QFMMYM",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-native-launch",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "It constructs native launch profiles and preflight bindings and reclaims failed process groups.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "afd9a11ec1dca7e0f63c9e85ba0e342d4d23cd0d",
+            "content": "sha256:cdb090d0c3aecab03c06175f57b755c5a097d525d4bfb985521474bf86fbe50a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

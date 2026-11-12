@@ -1,0 +1,55 @@
+{
+  "path": "mcp/tests/test_layering.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Rank violation fails.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23b0782366b995fd3bfd4e6bf0d6cba8823b7190",
+            "content": "sha256:d2cb73e1863b5f2ceda96f451d8e21b1cafe178d3d57377696517c5c5c8ab88d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_rank_violation_fails"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Clean tree passes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23b0782366b995fd3bfd4e6bf0d6cba8823b7190",
+            "content": "sha256:8634c8f5df1c9b416ed5622d65e3842802bc40169ba0bdab0ad630a90a36c137",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_clean_tree_passes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Undeclared package import fails.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23b0782366b995fd3bfd4e6bf0d6cba8823b7190",
+            "content": "sha256:cd301b68999166686ee48b8f92b4df29944748e0b8dfba746a85133d95999dfe",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_undeclared_package_import_fails"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

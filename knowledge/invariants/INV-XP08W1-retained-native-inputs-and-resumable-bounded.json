@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Two costs meet here — a repeated parse on every heartbeat and an unbounded enumeration — and both are invisible in functional tests that only check the rows. The read-counter and two-size cases measure the work a pass does."
+  },
+  "applicability": "The acquisition path that reads the native stores and the discovery that enumerates receipts and held folders.",
+  "conditions": [
+    "Initialized, completed file-backed views skip acquisition on a quiet pass. First observation, a full refresh or the relevant invalidation acquires them; cold or unfinished held and pause acquisition also resumes on the existing heartbeat. Permissions derive from retained host facts and stall clocks update on every pass.",
+    "Enumeration is budgeted per call and resumes where it stopped, keeping its continuation state bounded.",
+    "Completed quiet file-backed refreshes reread no native source."
+  ],
+  "exclusions": [
+    "Re-reading every native store on each heartbeat.",
+    "Retaining continuation state without a bound.",
+    "Presenting a resumed or shed walk as a complete census."
+  ],
+  "id": "INV-XP08W1",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/reviewer/267804e5-dd71-51e8-8f1d-d975effaaeaf/role-launch/round4/L190-fix-verification-R4.json#L190-R1-F11; DirectoryWalk bounds actual entries, including noise, to each allowance with retained iterators. Held root/receipt/folder acquisition shares256entry steps, with bounded walk count/depth and sticky incompleteness on shedding; pause acquisition has its explicit256entry per-pass budget and bounded heap. Partial acquisition resumes on existing heartbeat without fresh host poll; complete idle observations skip native acquisition. Four size subcases fail on pre-repair enumeration work and pass on candidate, with quiet and eventual-complete controls. Exact counts/fixture work evidence are not substituted for aggregate native CPU/RSS/reload proof, which remains F01."
+      ],
+      "path": "ingest-runB.json"
+    },
+    "handoffEntry": "L190-R1-F11",
+    "leaf": "260928-MIK-L190",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Retained native inputs and resumable bounded discovery avoid repeated quiet work and scale within explicit per-refresh allowances.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Guards the costly error this statement names: The action for an operation record of an enclosure without a live operation locator is a move by hand that does not overwrite, and its text tells the operator to choose an unused d"
+  },
+  "applicability": "The action for an operation record of an enclosure without a live operation locator.",
+  "conditions": [
+    "The move does not overwrite an existing same-named record and its text names the later build adoption route."
+  ],
+  "exclusions": [
+    "Enclosures with a live locator."
+  ],
+  "id": "INV-HKTN7W",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L41-reviewer-acd0dccb-066d-41e9-ab45-b3d7e19e742f.ruled-delta-addendum.md section 4; notes/reports/role-launch/260928-MIK-L41-reviewer-acd0dccb-066d-41e9-ab45-b3d7e19e742f-ruled-delta-evidence/out/d2-snap-py313.txt against notes/reports/role-launch/260928-MIK-L41-reviewer-acd0dccb-066d-41e9-ab45-b3d7e19e742f-ruled-delta-evidence/out/d2-r8-py313.txt; notes/reports/role-launch/260928-MIK-L41-reviewer-acd0dccb-066d-41e9-ab45-b3d7e19e742f-ruled-delta-evidence/out/d7-environment.txt"
+      ],
+      "path": "entries-list.json"
+    },
+    "handoffEntry": "L41 ruling 4 (the move by hand)",
+    "leaf": "260928-MIK-L41",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The action for an operation record of an enclosure without a live operation locator is a move by hand that does not overwrite, and its text tells the operator to choose an unused destination when one exists, to verify that the record has moved, and that a later build's adoption route replaces the step.",
+  "status": "proposed",
+  "supersedes": []
+}

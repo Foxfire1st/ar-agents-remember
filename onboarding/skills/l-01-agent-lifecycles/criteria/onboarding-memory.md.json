@@ -1,0 +1,224 @@
+{
+  "path": "skills/l-01-agent-lifecycles/criteria/onboarding-memory.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "3c630271da1672f6d2ecf2500c8e31150e38bce6",
+        "content": "sha256:371e6b459d70ba212b0a758faf4aecc549b068cf604baede42b3cfce4a13db8a",
+        "locator": {
+          "end": 25,
+          "kind": "line_range",
+          "start": 21
+        }
+      },
+      "id": "RLZ-61E5ND",
+      "invariant": "INV-9DAS08",
+      "origin": {
+        "handoffEntry": "L62-CUR-6414-curator-healing",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "OM2 owns the converted-memory second-reader and content-bound trace duty.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "3c630271da1672f6d2ecf2500c8e31150e38bce6",
+        "content": "sha256:3f41b6a506a8fa75fc81b4a8c56e6f9eece1d1873fd3bbe582608924cdbd77ea",
+        "locator": {
+          "end": 17,
+          "kind": "line_range",
+          "start": 13
+        }
+      },
+      "id": "RLZ-NHPXYF",
+      "invariant": "INV-6A3N48",
+      "origin": {
+        "handoffEntry": "L62-CUR-6414-current-truth",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "OM1 requires all-carrier current truth and keeps true retired-subject statements.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "3c630271da1672f6d2ecf2500c8e31150e38bce6",
+        "content": "sha256:1887386723b64b571b1f2add708e149b687337e07cac1f45f16ef3092ebdeaf8",
+        "locator": {
+          "end": 19,
+          "kind": "line_range",
+          "start": 17
+        }
+      },
+      "id": "RLZ-P0EHMW",
+      "invariant": "INV-JHB89M",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-L62-CUR-6414-claim-check",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "OM1 separately checks counts/prose line references against code and rejects a true added paragraph as repair for a contradicting body.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "3c630271da1672f6d2ecf2500c8e31150e38bce6",
+        "content": "sha256:2659dc44a329a314fa74fd7f0a198d50cd065155ba83969663b2488eedd1c9fb",
+        "locator": {
+          "end": 57,
+          "kind": "line_range",
+          "start": 47
+        }
+      },
+      "id": "RLZ-SYBPB2",
+      "invariant": "INV-CKJ6AZ",
+      "origin": {
+        "handoffEntry": "MIK-R194@v1 rule 6 — the re-point judgment criterion",
+        "leaf": "260928-MIK-L186"
+      },
+      "rationale": "The standing criterion a curation pass is checked against: OM-5 asks the reviewer to judge each re-point's target and reason, which is the instruction side of the re-point obligation this record states.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "3c630271da1672f6d2ecf2500c8e31150e38bce6",
+        "content": "sha256:371e6b459d70ba212b0a758faf4aecc549b068cf604baede42b3cfce4a13db8a",
+        "locator": {
+          "end": 25,
+          "kind": "line_range",
+          "start": 21
+        }
+      },
+      "id": "RLZ-X5BFFX",
+      "invariant": "INV-JHB89M",
+      "origin": {
+        "handoffEntry": "L62-CUR-6414-claim-check",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "OM2 owns the converted-memory second-reader and content-bound trace duty.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "3c630271da1672f6d2ecf2500c8e31150e38bce6",
+        "content": "sha256:dd6754027ab396e080da50fbd970eaff5c007b036d7a65ac8f8695409bd5f841",
+        "locator": {
+          "end": 17,
+          "kind": "line_range",
+          "start": 15
+        }
+      },
+      "id": "RLZ-XVA5YX",
+      "invariant": "INV-6A3N48",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-L62-CUR-6414-current-truth",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "OM1 checks each present claim, paired note and bounded sibling carrier against as-landed code, retaining true retired-subject statements and moving past accounts to history.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Current body claims are checked against shipped code under OM-1.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c630271da1672f6d2ecf2500c8e31150e38bce6",
+            "content": "sha256:2d94014feab76ac495757202671622b7c07f63939ce5644f556c2bf91e54d325",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "OM-2 requires a non-author second reader for final statements, history meanings and omissions before closeout.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c630271da1672f6d2ecf2500c8e31150e38bce6",
+            "content": "sha256:371e6b459d70ba212b0a758faf4aecc549b068cf604baede42b3cfce4a13db8a",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 21
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Plausible admission is judged under OM-4; baseline exploration and the promotion/fix-verification boundaries come from the shared catalog rules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c630271da1672f6d2ecf2500c8e31150e38bce6",
+            "content": "sha256:711505f1e7b3c20f9d3c567408606fc14d82dd453347feeee03d52d02b6d394d",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The authored source owns this contract; the distribution copy is not a separate authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c630271da1672f6d2ecf2500c8e31150e38bce6",
+            "content": "sha256:bf3c3b23e48b98821f50c00797f2c0ce4facbeca98e45826dd45256ffd403da6",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "OM-5 makes each re-point and each reconsidered revision after a raise a judged obligation the reviewer checks against the code and the recorded answer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c630271da1672f6d2ecf2500c8e31150e38bce6",
+            "content": "sha256:2659dc44a329a314fa74fd7f0a198d50cd065155ba83969663b2488eedd1c9fb",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 47
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "OM-1 also checks affected paired notes and sibling cards found by a bounded search, including dated sections. Repair or withdraw the encountered false-claim class on every such current carrier and keep true statements about the current state. The independent second reader still checks statements, history meaning and important omissions before closeout.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c630271da1672f6d2ecf2500c8e31150e38bce6",
+            "content": "sha256:c98795b85f7bdb9a465a2c0136e776f84f41cf669d11cf54c1cc562a809a5fed",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

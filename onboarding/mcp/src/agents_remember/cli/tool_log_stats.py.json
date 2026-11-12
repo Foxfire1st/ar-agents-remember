@@ -1,0 +1,58 @@
+{
+  "path": "mcp/src/agents_remember/cli/tool_log_stats.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "46668f595ea6bf06ba16f3fbeb70deaa74626d79",
+        "content": "sha256:7f59d9efc376f151c3c0fd0fcd576b42bf76f26f4d0a890d22a4df351c42c59e",
+        "locator": {
+          "kind": "symbol",
+          "name": "collect_rows"
+        }
+      },
+      "id": "RLZ-Y83EEJ",
+      "invariant": "INV-KJFNBQ",
+      "origin": {
+        "handoffEntry": "MIK-R108@v1 §8 stats",
+        "leaf": "260928-MIK-L108"
+      },
+      "rationale": "collect_rows reads the log folder only and skips blank and malformed lines, so sizing stays a read-only consumer that never repairs or rewrites.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Per-tool sizes are read from the log folder, skipping bad lines.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "46668f595ea6bf06ba16f3fbeb70deaa74626d79",
+            "content": "sha256:7f59d9efc376f151c3c0fd0fcd576b42bf76f26f4d0a890d22a4df351c42c59e",
+            "locator": {
+              "kind": "symbol",
+              "name": "collect_rows"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The command entry stays read-only and reports the exit status.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "46668f595ea6bf06ba16f3fbeb70deaa74626d79",
+            "content": "sha256:5e8d1f095353b876fe7c89f58ebf85f38310fc127d2b053fb37e51c901fd3037",
+            "locator": {
+              "kind": "symbol",
+              "name": "run"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

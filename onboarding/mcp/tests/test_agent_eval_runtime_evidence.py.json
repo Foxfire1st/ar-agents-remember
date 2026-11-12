@@ -1,0 +1,42 @@
+{
+  "path": "mcp/tests/test_agent_eval_runtime_evidence.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "894b6eabf26a634cfde43d84e1b84991287d72b4",
+        "content": "sha256:36ed6c8c3d6d62be1d60c0d9a1bda47c101eda26326955b9955a5632ad6cb14e",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-QCNC97",
+      "invariant": "INV-NMBR0E",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-trajectory-route",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "This regression module checks this obligation through test_only_recorded_trial_path_is_used, test_snapshot_tampering_cannot_become_derived_resolution, test_unparseable_shell_keeps_command_and_explicitly_unknown_argv0, test_missing_command_shape_is_reported_instead_of_silently_skipped and its remaining test cases.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "894b6eabf26a634cfde43d84e1b84991287d72b4",
+            "content": "sha256:36ed6c8c3d6d62be1d60c0d9a1bda47c101eda26326955b9955a5632ad6cb14e",
+            "locator": {
+              "end": 374,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

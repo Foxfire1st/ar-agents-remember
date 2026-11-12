@@ -1,0 +1,179 @@
+{
+  "path": "mcp/src/agents_remember/mcp/tools/role_agents.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "06312961eb1a285e4dc69292d9973c71884c5620",
+        "content": "sha256:a1f02b392b8b038b84cfd76e62be672f007d1193f087109a9fe2df9fedf0cf9f",
+        "locator": {
+          "end": 29,
+          "kind": "line_range",
+          "start": 24
+        }
+      },
+      "id": "RLZ-4GA95T",
+      "invariant": "INV-RTQCXN",
+      "origin": {
+        "handoffEntry": "L100-R100-set-start-and-held-seats",
+        "leaf": "260928-MIK-L100"
+      },
+      "rationale": "The tool entry point carries the set call through the single payload choke point.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "06312961eb1a285e4dc69292d9973c71884c5620",
+        "content": "sha256:46f9ada07cbae466cb31f360e4381b3ffc6057f9f34c6e34c42750d3dc54db6b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_host_authority_not_here"
+        }
+      },
+      "id": "RLZ-4X2W2V",
+      "invariant": "INV-0G2Q2Q",
+      "origin": {
+        "handoffEntry": "L188-B07",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "The named refusal identifies installed MCP host authority instead of writing it through user settings.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "06312961eb1a285e4dc69292d9973c71884c5620",
+        "content": "sha256:3269bf4844a96cc66faaba066289476830b4ff4dda0d47fe28d0f831d985c687",
+        "locator": {
+          "kind": "symbol",
+          "name": "role_start_payload"
+        }
+      },
+      "id": "RLZ-FDKA6K",
+      "invariant": "INV-0ZW4BP",
+      "origin": {
+        "handoffEntry": "L114-W05",
+        "leaf": "260928-MIK-L114"
+      },
+      "rationale": "role_start_payload carries the started role around the completion choke on a context variable, because the choke receives the answer and the answer must not carry the role.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "06312961eb1a285e4dc69292d9973c71884c5620",
+        "content": "sha256:8c4d848acba2ae83de73d85662dde488f228b8d30d1f766c55bd83e1978e1ddf",
+        "locator": {
+          "kind": "symbol",
+          "name": "user_settings_init_payload"
+        }
+      },
+      "id": "RLZ-SGBE1Y",
+      "invariant": "INV-0G2Q2Q",
+      "origin": {
+        "handoffEntry": "L188-B07",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "The entry says the public refusal boundary returns the original modeled refusal without re-entering the failed reader; at C the payload builder's refusal branch (99-115) copies code, detail and next action off `SettingsInitRefused` and never calls the reader again, and the path it reports is the non-reading resolver's.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "06312961eb1a285e4dc69292d9973c71884c5620",
+        "content": "sha256:4e5e01a0b5e9a05fb4518eb97afca08fbbfb8507d3dada288641e396427a3ee8",
+        "locator": {
+          "kind": "symbol",
+          "name": "role_message_payload"
+        }
+      },
+      "id": "RLZ-ZG3HK3",
+      "invariant": "INV-0ZW4BP",
+      "origin": {
+        "handoffEntry": "L114-W05",
+        "leaf": "260928-MIK-L114"
+      },
+      "rationale": "role_message_payload carries the addressed role the same way, resolving it from the recipient receipt when the call addresses an agent id that names no role itself.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The start builder brackets its producer and response choke with role context and resets that context afterward.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06312961eb1a285e4dc69292d9973c71884c5620",
+            "content": "sha256:3269bf4844a96cc66faaba066289476830b4ff4dda0d47fe28d0f831d985c687",
+            "locator": {
+              "kind": "symbol",
+              "name": "role_start_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Message completion retains the addressed-role context through the choke, with a held-answer override and reset afterward.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06312961eb1a285e4dc69292d9973c71884c5620",
+            "content": "sha256:4e5e01a0b5e9a05fb4518eb97afca08fbbfb8507d3dada288641e396427a3ee8",
+            "locator": {
+              "kind": "symbol",
+              "name": "role_message_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Native retirement delegates to the existing receipt owner and wraps its answer under retire_child.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06312961eb1a285e4dc69292d9973c71884c5620",
+            "content": "sha256:5d655a14898cf0a17601e04f41b2500ae81322783101de99d653992ad208a9c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "retire_child_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The payload that answers a refusal instead of raising one.\n\nAnchor: `user_settings_init_payload`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06312961eb1a285e4dc69292d9973c71884c5620",
+            "content": "sha256:0610f236b6dad84e694809f783d6ea749db5f1b7846827f58fe0bc640279e028",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The named refusal of a host block in the user settings file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06312961eb1a285e4dc69292d9973c71884c5620",
+            "content": "sha256:46f9ada07cbae466cb31f360e4381b3ffc6057f9f34c6e34c42750d3dc54db6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_host_authority_not_here"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

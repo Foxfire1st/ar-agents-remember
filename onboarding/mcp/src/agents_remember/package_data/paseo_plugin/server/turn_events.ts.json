@@ -1,0 +1,130 @@
+{
+  "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7b71c2d90feb0492573d4db95c5609a6662596a7",
+        "content": "sha256:568a277f057a7be11e46e1b8255faa17e5ec4e9c4157c14f40b504e84b279294",
+        "locator": {
+          "kind": "symbol",
+          "name": "readHostState"
+        }
+      },
+      "id": "RLZ-09MB1T",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "MIK-R183@v5/INV-1ZKP4R",
+        "leaf": "260928-MIK-L181"
+      },
+      "rationale": "Walks the host agent list page by page and marks completion only when no page reports more, so only an exhausted listing supplies the seat and child facts the silence test reads.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7b71c2d90feb0492573d4db95c5609a6662596a7",
+        "content": "sha256:6fa1ad0856163ab84ae6cff86e2b2dddab559b817d4a3d797ee22805709e78aa",
+        "locator": {
+          "kind": "symbol",
+          "name": "registerParentWakeEvents"
+        }
+      },
+      "id": "RLZ-1HAN2T",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "L172-TURN-END-WAKE",
+        "leaf": "260928-MIK-L172"
+      },
+      "rationale": "Feeds the host event, the ended turn's timeline read through readTurnTimeline (timeline.refetch, null when unreadable) and the turn id to the decision, reads the host's agent state and parent label for the silence and send gates, sinks every decision row to the plugin's log, and returns the cleanup that ends pending waits.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "7b71c2d90feb0492573d4db95c5609a6662596a7",
+        "content": "sha256:a022a1f0bfb2c78cec71b089c85e08077b7e7c2a76b42f94f39a8cfca3576a7a",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-55H239",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "INV-1ZKP4R",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "Event handling is where the cost bound is kept, so the skip belongs here.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7b71c2d90feb0492573d4db95c5609a6662596a7",
+        "content": "sha256:3a81f54404a2eb7a0d1f1c86bdd394d1be61542af325e73076ffeaba09f38421",
+        "locator": {
+          "kind": "symbol",
+          "name": "PARENT_AGENT_ID_LABEL"
+        }
+      },
+      "id": "RLZ-5CTT1H",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "MIK-R183@v5/INV-1ZKP4R",
+        "leaf": "260928-MIK-L181"
+      },
+      "rationale": "Spells the host label that names a child's parent, so the seat's children are found by the link the host publishes rather than by a plugin-owned registry.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7b71c2d90feb0492573d4db95c5609a6662596a7",
+        "content": "sha256:01e300a63fc3e5ec4598ed5b7d689328c394e9ae85f6ce753592536fdd55fc20",
+        "locator": {
+          "kind": "symbol",
+          "name": "readTurnTimeline"
+        }
+      },
+      "id": "RLZ-6CDZFK",
+      "invariant": "INV-HERZ7X",
+      "origin": {
+        "handoffEntry": "MIK-R60@v6.3",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Reads the turn through timeline.refetch instead of the hook's empty timeline.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "7b71c2d90feb0492573d4db95c5609a6662596a7",
+        "content": "sha256:6fa1ad0856163ab84ae6cff86e2b2dddab559b817d4a3d797ee22805709e78aa",
+        "locator": {
+          "kind": "symbol",
+          "name": "registerParentWakeEvents"
+        }
+      },
+      "id": "RLZ-HAGFJ4",
+      "invariant": "INV-HERZ7X",
+      "origin": {
+        "handoffEntry": "MIK-R60@v6.3",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Uses readTurnTimeline on agent.turn.after to decide hand-over or seat message.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Native host handlers and explicit steering sends.\n\nAnchor: `registerParentWakeEvents`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7b71c2d90feb0492573d4db95c5609a6662596a7",
+            "content": "sha256:a022a1f0bfb2c78cec71b089c85e08077b7e7c2a76b42f94f39a8cfca3576a7a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

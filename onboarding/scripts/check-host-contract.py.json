@@ -1,0 +1,23 @@
+{
+  "path": "scripts/check-host-contract.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The concordance check over contract, manifest, lock and plugin.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bfaf9b5f20272244ad140fef74d4a5a3aaa3d62f",
+            "content": "sha256:009f8b87f8b481ecca6b9d98c362d23e4723ec8fde32e10df670fc9e8eeac195",
+            "locator": {
+              "kind": "symbol",
+              "name": "check"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

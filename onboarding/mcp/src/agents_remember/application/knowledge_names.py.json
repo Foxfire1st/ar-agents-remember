@@ -1,0 +1,91 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_names.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c20ef4c48c67b7018ba203aa7fe8dc041cc80711",
+        "content": "sha256:d4ff417ceee420cafc4b01638f2f006f72ba9bf3009dc1dea5bb877522e5589c",
+        "locator": {
+          "kind": "symbol",
+          "name": "project_knowledge_body"
+        }
+      },
+      "id": "RLZ-ESCNKG",
+      "invariant": "INV-AE005N",
+      "origin": {
+        "handoffEntry": "MIK-R109@v1 §2 knowledge-projection",
+        "leaf": "260928-MIK-L109"
+      },
+      "rationale": "This projects selected rows to the ID/kind/state/location rows the clause requires, with declaration-line locations, family header references and failure fallback.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The transport projection drops record text while retaining names and paging.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c20ef4c48c67b7018ba203aa7fe8dc041cc80711",
+            "content": "sha256:d4ff417ceee420cafc4b01638f2f006f72ba9bf3009dc1dea5bb877522e5589c",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_knowledge_body"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Selection provenance and cached lookup remain one-answer concerns.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c20ef4c48c67b7018ba203aa7fe8dc041cc80711",
+            "content": "sha256:d9d28a141a53f9155d5328f53483a1dad61eab58b671b1a00ea8e547930ae61c",
+            "locator": {
+              "kind": "symbol",
+              "name": "NameResolver"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Declared ID lines are indexed once; undeclared marks retain their fallback.\n\nAnchor: `NameResolver.line_of`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c20ef4c48c67b7018ba203aa7fe8dc041cc80711",
+            "content": "sha256:5d2e373d617ebb14f6279a1f075dcf5225fba46d05f082e7c56c77223de33f7e",
+            "locator": {
+              "end": 221,
+              "kind": "line_range",
+              "start": 196
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Membership and ordinary rows locate authoritative record or sidecar declarations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c20ef4c48c67b7018ba203aa7fe8dc041cc80711",
+            "content": "sha256:a760eb0066e77fc444d65adf68dfb04a99c33dfb34cea265949b49d972418f13",
+            "locator": {
+              "kind": "symbol",
+              "name": "_row_location"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

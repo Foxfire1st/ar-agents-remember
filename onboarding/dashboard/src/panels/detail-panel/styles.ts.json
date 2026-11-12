@@ -1,0 +1,135 @@
+{
+  "path": "dashboard/src/panels/detail-panel/styles.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d19f997fc5ce9cd991b0eb7b4f8b24c36ef9eea2",
+        "content": "sha256:4eed52431310247cf3a11bea879b6f5e33cf92916025760dcbcca66d136907ce",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-09G1VF",
+      "invariant": "INV-XPCFCB",
+      "origin": {
+        "handoffEntry": "L150-R10",
+        "leaf": "260928-MIK-L150"
+      },
+      "rationale": "The track, knob, line, words and note styles live here in dashboard tokens; the old grantButton style is gone.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The three disclosure classes.\n\nAnchor: disclosure recipes",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d19f997fc5ce9cd991b0eb7b4f8b24c36ef9eea2",
+            "content": "sha256:431c511e5b0dc75118b9d056103232a2d67947c30e339d753c6cf9c8595034e4",
+            "locator": {
+              "end": 184,
+              "kind": "line_range",
+              "start": 159
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The retained panel layout, step-mark and badge recipes.\n\nAnchor: retained layout and step marks",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d19f997fc5ce9cd991b0eb7b4f8b24c36ef9eea2",
+            "content": "sha256:148a1976d412773719eb72231110bd53cc3c2ba5129f2e02d7d02277cc91beae",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The retained slice-container, breadcrumb and worktree-lane recipes.\n\nAnchor: retained slice, breadcrumb and worktree recipes",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d19f997fc5ce9cd991b0eb7b4f8b24c36ef9eea2",
+            "content": "sha256:e6f4b21d315c3ff0c95cb89784f8d738786aea82db4fe1836df27119c9aad9c1",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 44
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d19f997fc5ce9cd991b0eb7b4f8b24c36ef9eea2",
+            "content": "sha256:26f99e3560fa578fa3dd6bb02466d1fa538e5ae47e2b5cd2e05c3156c8432f96",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 88
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The current track-and-knob switch uses token styling; pending disables the button in the reader, not through a retained grantButton recipe.\n\nAnchor: track and pending boundary",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d19f997fc5ce9cd991b0eb7b4f8b24c36ef9eea2",
+            "content": "sha256:227bb5cdd33a765cd1dde7e169a160ff814adabab31f0afe661bdc1d7b41ffe7",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 52
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8727e6986904131489c13104c706b28a118acb8a",
+            "content": "sha256:e5b3890998c79d888e554bd070b9b94e26a500d1a619a6b8f6606cfd84f9945c",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 86
+            },
+            "path": "dashboard/src/panels/detail-panel/directGrant.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The direct-execution line has one track, positional variants, knob and giver/notice text styles.\n\nAnchor: direct-execution recipes",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d19f997fc5ce9cd991b0eb7b4f8b24c36ef9eea2",
+            "content": "sha256:227bb5cdd33a765cd1dde7e169a160ff814adabab31f0afe661bdc1d7b41ffe7",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 52
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

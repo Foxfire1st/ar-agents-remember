@@ -1,0 +1,56 @@
+{
+  "path": "mcp/tests/test_tool_answer_table_enclosure.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "f4dae3bfd03107129533aae974c8934d80c0db32",
+        "content": "sha256:026483ba11f142c72dede8032d4b161a278a5353ab2d9ccbc33479b8fe5f5566",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolAnswerEnclosureTests.test_cleanup_removes_logs_with_the_enclosure"
+        }
+      },
+      "facet": "Cleanup removes logs with the enclosure.",
+      "id": "PRF-K2K392",
+      "invariant": "INV-E8S0YF",
+      "origin": {
+        "handoffEntry": "MIK-R108@v1 §3 enclosure-lifecycle",
+        "leaf": "260928-MIK-L108"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The logs directory is made with the enclosure beside the worktrees and dirties neither worktree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f4dae3bfd03107129533aae974c8934d80c0db32",
+            "content": "sha256:bea79d7cd3bfe36d437b8a2e4889e2eca60150fbf86b3693fff262691086478d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The closeout changed paths list no log, and cleanup removes the logs directory with the enclosure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f4dae3bfd03107129533aae974c8934d80c0db32",
+            "content": "sha256:bea79d7cd3bfe36d437b8a2e4889e2eca60150fbf86b3693fff262691086478d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,41 @@
+{
+  "path": "dashboard/src/panels/review/ReviewSurface.originRepair.test.tsx",
+  "realizes": [],
+  "references": {
+    "2": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(`keeps the supplied native ${kind} origins in the closed Technical details at ${width}px`, async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23567d064c35ec33f7c3bd52e7bb53d0c89bae8d",
+            "content": "sha256:512ef70a1923032e6c7d6fdf5123553e7335b3de378b72d658c69595c42e3402",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 57
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('keeps distinct family task, leaf/wave and hand-off entries on their own sides (synthetic origin control)', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23567d064c35ec33f7c3bd52e7bb53d0c89bae8d",
+            "content": "sha256:df6abad25346b40039a443e3fc6e907f2585c17a4dc135a06e3478f4c842445c",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 78
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

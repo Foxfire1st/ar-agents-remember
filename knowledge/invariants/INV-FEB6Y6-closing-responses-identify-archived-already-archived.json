@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Truthful outcome reporting is proved by the focused suite."
+  },
+  "applicability": "Every closing answer and every repeated finalize.",
+  "conditions": [
+    "The answer separates archived, already archived, gone, owed and left-alone targets.",
+    "A leaf with no recorded agents says so in one line."
+  ],
+  "exclusions": [
+    "The answer is not turned into a refusal because a target is owed or left alone."
+  ],
+  "id": "INV-FEB6Y6",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Frozen sourcebeb9473e +8a9894a4/f5ee11cc; test_empty_unreadable_and_conflicting_records_are_named_without_host_calls, test_repeated_finalize_reports_archive_outcomes_without_changing_task_again; durable post-sync/full-focused-final.log (157 passed), pyright-final.log (0 diagnostics); complete real-host witness remains pending. Rule8 also has unchanged role launch/repeat/message regressions in the same focused selection."
+      ],
+      "path": "notes/files/260928-MIK-L76-curation-evidence-20261007/handoff-full.json"
+    },
+    "handoffEntry": "MIK-R76@v1 required behavior 7",
+    "leaf": "260928-MIK-L76",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Closing responses identify archived, already archived, gone, owed and left-alone targets, and a leaf with no recorded role agents states that plainly.",
+  "status": "proposed",
+  "supersedes": []
+}

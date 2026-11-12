@@ -1,0 +1,40 @@
+{
+  "path": "mcp/tests/test_agent_eval_git_semantics.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "105557a1eecece6b995b3fe924e0f41832241c69",
+        "content": "sha256:04446a3c2e1e698452e448e178ed53b5792ddaa851616102904799e0fe30749f",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-FR6828",
+      "invariant": "INV-96ANVQ",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-git-semantics",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "This regression module checks this obligation through test_index_refresh_and_unreachable_objects_are_benign, test_real_git_effects_fail, test_same_staged_names_with_different_blob_is_a_real_change, test_reflog_churn_does_not_grant_config_or_hook_changes and its remaining test cases.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "105557a1eecece6b995b3fe924e0f41832241c69",
+            "content": "sha256:04446a3c2e1e698452e448e178ed53b5792ddaa851616102904799e0fe30749f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

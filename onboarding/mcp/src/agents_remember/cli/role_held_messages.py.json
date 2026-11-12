@@ -1,0 +1,416 @@
+{
+  "path": "mcp/src/agents_remember/cli/role_held_messages.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
+        "content": "sha256:d689048c233bd9c614b78c52c0324727b53756342c2aef8d4af2b5dd444eae03",
+        "locator": {
+          "kind": "symbol",
+          "name": "_sweep_receipt"
+        }
+      },
+      "id": "RLZ-205RZ4",
+      "invariant": "INV-SB6HQS",
+      "origin": {
+        "handoffEntry": "MIK-R171@v1 rule 5",
+        "leaf": "260928-MIK-L171"
+      },
+      "rationale": "It performs one receipt's drain and turns a failed one into a returned state plus a log line with the recipient and the reason, instead of returning silently.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
+        "content": "sha256:b32993d54b51d3cdbe19363a305d9c116177bee4877055ddc0c37a6a4a187c62",
+        "locator": {
+          "kind": "symbol",
+          "name": "_send_part"
+        }
+      },
+      "id": "RLZ-29SEFE",
+      "invariant": "INV-AMJAZT",
+      "origin": {
+        "handoffEntry": "MIK-R171@v1 rule 3",
+        "leaf": "260928-MIK-L171"
+      },
+      "rationale": "It sends a part under the attempt's id when there is one, which is what makes the host deduplicate the resend.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
+        "content": "sha256:eb280fb438737f80f512e6673551d06abef185c4477bc26bada04d554f76014e",
+        "locator": {
+          "end": 1056,
+          "kind": "line_range",
+          "start": 1041
+        }
+      },
+      "id": "RLZ-3FQBKH",
+      "invariant": "INV-ATA2Z7",
+      "origin": {
+        "handoffEntry": "L100-R100-4a-recovery",
+        "leaf": "260928-MIK-L100"
+      },
+      "rationale": "A present zero counter no longer ends the check: it falls through to the store count, so a crash between admission and counter publication cannot orphan the message.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
+        "content": "sha256:1840845c59103e95fef82567c8c05000db7538c46bf821194f21667cfebdc0b7",
+        "locator": {
+          "kind": "symbol",
+          "name": "_send_once"
+        }
+      },
+      "id": "RLZ-3G97RJ",
+      "invariant": "INV-AMJAZT",
+      "origin": {
+        "handoffEntry": "MIK-R171@v1 rule 3",
+        "leaf": "260928-MIK-L171"
+      },
+      "rationale": "It refuses only on the host's own admission answer and reports an unreachable or unknown outcome as such, so the caller learns the message is held and not lost.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
+        "content": "sha256:f0ab63ad221fad88615e7e1e89220f57324a014f7fb591f16e2254735f703c8b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_deliver_waiting"
+        }
+      },
+      "id": "RLZ-5S4KME",
+      "invariant": "INV-Y1SDE2",
+      "origin": {
+        "handoffEntry": "L100-R100-4b-minimum-partition",
+        "leaf": "260928-MIK-L100"
+      },
+      "rationale": "Every round attempts the whole remainder first and only a refused whole probes down, so a learned budget below capacity never forces an avoidable split; the budget stays a lower bound.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
+        "content": "sha256:a6e03ae162ead1a55e19cd540059d13548454e11de187ad32117171984471bad",
+        "locator": {
+          "kind": "symbol",
+          "name": "deliver_ended_turns"
+        }
+      },
+      "id": "RLZ-617P3B",
+      "invariant": "INV-4DQMNE",
+      "origin": {
+        "handoffEntry": "MIK-R171@v1 rule 1",
+        "leaf": "260928-MIK-L171"
+      },
+      "rationale": "It drains exactly the queued receipts whose agent the host reports as having just ended a turn, which is the turn end this rule names; it sends nothing to the recipient and builds no census.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
+        "content": "sha256:ff3043421a9684683ef76bdabd1c830cf82011365c230d0dc30e1a42ac35921e",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-83E20B",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "INV-1ZKP4R",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The held store is where a waiting row's fields are written and read, so the reset survives here or not at all.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
+        "content": "sha256:1e1457bce15f5f3c12e6e4c173d24ae6251f1b7031469a07b672298a27afbe08",
+        "locator": {
+          "end": 428,
+          "kind": "line_range",
+          "start": 419
+        }
+      },
+      "id": "RLZ-A0MBR2",
+      "invariant": "INV-X0KED3",
+      "origin": {
+        "handoffEntry": "L168-CUR-M1-21-A013-17",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "_resume_for_drain calls receipt-aware resume_role_agent before testing reachability/closed-state refusal; the call orders role identity publication before host resume.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
+        "content": "sha256:68d7ec3cfbf19c2da8316497a477f66c751f5bbb391bdd439f973416ceb91fe5",
+        "locator": {
+          "end": 282,
+          "kind": "line_range",
+          "start": 240
+        }
+      },
+      "id": "RLZ-D3TNNK",
+      "invariant": "INV-PJA167",
+      "origin": {
+        "handoffEntry": "L100-R100-4b-immutable-id",
+        "leaf": "260928-MIK-L100"
+      },
+      "rationale": "The stale-claim branch returns the stored claim unchanged instead of recomputing it from survivors, so the resend keeps its id.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
+        "content": "sha256:eb320b19dc2840e1a33a2d43f39f86e455155f3fda7c36d95d3c42c48c5fc111",
+        "locator": {
+          "end": 741,
+          "kind": "line_range",
+          "start": 713
+        }
+      },
+      "id": "RLZ-EJV806",
+      "invariant": "INV-ATA2Z7",
+      "origin": {
+        "handoffEntry": "L100-R100-4a-recovery",
+        "leaf": "260928-MIK-L100"
+      },
+      "rationale": "Each delivered part is staged before its texts leave the store, so a stop after deletion still leaves the end recoverable without resending.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
+        "content": "sha256:8eec25d18387148541c8897194b740b6cbbd476cb64885562105774a07c4b91d",
+        "locator": {
+          "kind": "symbol",
+          "name": "_next_piece"
+        }
+      },
+      "id": "RLZ-F2G09P",
+      "invariant": "INV-AMJAZT",
+      "origin": {
+        "handoffEntry": "MIK-R171@v1 rule 3",
+        "leaf": "260928-MIK-L171"
+      },
+      "rationale": "It keeps a message whose send outcome is unknown alone in its own part, so it can never be merged into a combined batch under a different id.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
+        "content": "sha256:cb91f3750f43ab30ba438bf51309fbc88be8b2f4a226faf22715731159bc07f4",
+        "locator": {
+          "end": 978,
+          "kind": "line_range",
+          "start": 928
+        }
+      },
+      "id": "RLZ-HDQJ4X",
+      "invariant": "INV-TTYYP8",
+      "origin": {
+        "handoffEntry": "L100-R100-4a-bounded-census",
+        "leaf": "260928-MIK-L100"
+      },
+      "rationale": "Each tick pulls at most 32 paths and reads at most 32 receipts, restarting exhausted walks the next tick.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
+        "content": "sha256:c9afd69b55ad86434fd6632bb6a481f2713473eaf4736d53ea0d997d4be257c5",
+        "locator": {
+          "end": 315,
+          "kind": "line_range",
+          "start": 307
+        }
+      },
+      "id": "RLZ-KV9BPM",
+      "invariant": "INV-PJA167",
+      "origin": {
+        "handoffEntry": "L100-R100-4b-immutable-id",
+        "leaf": "260928-MIK-L100"
+      },
+      "rationale": "Part send ids derive from member messages, so any drain resending the same members recomputes the same id for a deduplicating host.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
+        "content": "sha256:cb91f3750f43ab30ba438bf51309fbc88be8b2f4a226faf22715731159bc07f4",
+        "locator": {
+          "kind": "symbol",
+          "name": "sweep_held_messages"
+        }
+      },
+      "id": "RLZ-R78RC8",
+      "invariant": "INV-4DQMNE",
+      "origin": {
+        "handoffEntry": "MIK-R171@v1 rule 1",
+        "leaf": "260928-MIK-L171"
+      },
+      "rationale": "It drains the receipts that hold messages before the rotating walk, so a held message is retried on every sweep instead of after the whole store has been visited.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
+        "content": "sha256:b00d07d04aecedc7880a7aca5a95badc403766093996e091785e9a6b8831c535",
+        "locator": {
+          "kind": "symbol",
+          "name": "_still_held"
+        }
+      },
+      "id": "RLZ-SC9R3R",
+      "invariant": "INV-SB6HQS",
+      "origin": {
+        "handoffEntry": "MIK-R171@v1 rule 5",
+        "leaf": "260928-MIK-L171"
+      },
+      "rationale": "It records why the remainder still waits, which is the reason the log line and the answer carry.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
+        "content": "sha256:77ad6d5c3491628e1461b97995707bd7917951f16a6b1280adf22bfc4c443e5c",
+        "locator": {
+          "end": 535,
+          "kind": "line_range",
+          "start": 482
+        }
+      },
+      "id": "RLZ-XRBVHQ",
+      "invariant": "INV-ATA2Z7",
+      "origin": {
+        "handoffEntry": "L100-R100-4a-recovery",
+        "leaf": "260928-MIK-L100"
+      },
+      "rationale": "The opening handover stages its ends before removal for the same deletion-to-staging window on the open path.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Admission appends under the store lock and refuses overflow without dropping text.\n\nAnchor: `hold_message`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
+            "content": "sha256:ff3043421a9684683ef76bdabd1c830cf82011365c230d0dc30e1a42ac35921e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A drain delegates claim/readiness checks and whole-first FIFO delivery.\n\nAnchor: `drain_held` `_deliver_waiting`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
+            "content": "sha256:ff3043421a9684683ef76bdabd1c830cf82011365c230d0dc30e1a42ac35921e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Terminal lines are published separately from ended text and retain failure state.\n\nAnchor: `apply_drain_to_receipt`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
+            "content": "sha256:ff3043421a9684683ef76bdabd1c830cf82011365c230d0dc30e1a42ac35921e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Yielded receipt paths, reads and drains are capped; each directory stays open as a live filesystem-order scan. Delivery root discovery is synchronous and retains one walk per discovered root, without the attention reader's sixty-four-folder cap.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
+            "content": "sha256:1ff8e08ba65d590af6adee9de481a0c5dbe86b460cbbdc19091694b8052620df",
+            "locator": {
+              "end": 978,
+              "kind": "line_range",
+              "start": 909
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Validation precedes prompt construction and host launch; failures retain waiting work.\n\nAnchor: Current source; preserved L88 property 5",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
+            "content": "sha256:77ad6d5c3491628e1461b97995707bd7917951f16a6b1280adf22bfc4c443e5c",
+            "locator": {
+              "end": 535,
+              "kind": "line_range",
+              "start": 482
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Common restoration also validates instruction details and takeover references.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b4c32636d1b3142af6daf7fb0560284f0500da8",
+            "content": "sha256:6a0633a405546e45da352e8eb35965d47a2fa74f630c2a3fe17c1eb85bbfacd6",
+            "locator": {
+              "end": 172,
+              "kind": "line_range",
+              "start": 147
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Test source checks cannot-open, zero second host calls and retained/reclaimable work.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3597a8c769c981f6dc3d933c895420c3b6e9766",
+            "content": "sha256:166c230ed1abed522ea3807eaa5e12ec65cb2ce592fd91c92c565be0cc15176a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_held_opening_refuses_changed_details_and_preserves_waiting_messages"
+            },
+            "path": "mcp/tests/test_capsule_replay_integrity.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

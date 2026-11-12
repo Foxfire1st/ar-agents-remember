@@ -1,0 +1,58 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_enclosure_terminal.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "597bca990a3cc373fbed97e7ae26e3f8c7da5d52",
+        "content": "sha256:6683f97489ba414cd4386011d5eb5e60c20d9c68fedbd4138885ade6718ef7f1",
+        "locator": {
+          "kind": "symbol",
+          "name": "terminal_cleanup_contract_authority"
+        }
+      },
+      "id": "RLZ-BJ65H3",
+      "invariant": "INV-M3N2Y5",
+      "origin": {
+        "handoffEntry": "C2 reopen without limit",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Accepts the reopen's own reset contract as the sanctioned successor of a completed cleanup instead of reading it as tampering.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`restartable_predecessor_contract` requires a terminal restartable contract without recorded code/memory outputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "597bca990a3cc373fbed97e7ae26e3f8c7da5d52",
+            "content": "sha256:30e698d9a604e8fc073ed89bf9f9306dfcf454a010bb2f8f19d91472cb863c4c",
+            "locator": {
+              "kind": "symbol",
+              "name": "restartable_predecessor_contract"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`require_successor_generation` validates exact terminal predecessor and successor identities.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "597bca990a3cc373fbed97e7ae26e3f8c7da5d52",
+            "content": "sha256:e6fce4570b4155efda56a8974acaed655315be704cbbbb4ee3afffd57b197c4e",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_successor_generation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

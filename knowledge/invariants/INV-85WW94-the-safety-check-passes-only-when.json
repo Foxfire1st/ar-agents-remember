@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake",
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "A defaulted or symlink-escaped AR state root can direct a disposable run at live code or memory; the selected-build resolver, evaluator and start gate must agree before processes launch."
+  },
+  "applicability": "Configured and derived AR state roots resolved for the PNT sandbox dashboard and tool-server modes.",
+  "conditions": [
+    "The selected sandbox command is running on Linux with readable process or source observations; otherwise its named refusal applies."
+  ],
+  "exclusions": [
+    "An already-running start skips the safety check; check must judge edits made while running.",
+    "Harness homes, package-manager caches, linked Eve dependencies and key files are outside this AR root check."
+  ],
+  "id": "INV-85WW94",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_pnt_sandbox.py::SafetyCheckTests (four cases); mcp/tests/test_pnt_sandbox_processes.py::StartAndStopTests::test_start_starts_nothing_when_the_safety_check_fails; review R2 [23-settings-mutations-r2]; member table FAM-5 in section 3.3"
+      ],
+      "path": "notes/curation/261005-MIK-PNT-curator-handoff.json"
+    },
+    "handoffEntry": "PNT-R11@v1 §4 (safety check) / F5",
+    "leaf": "260928-MIK-L90",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The safety check passes only when every root the build's dashboard and tool server would use resolves to a path inside the sandbox directory, judged by loading the settings with the build's own configuration loader once as each of the two processes, walking every absolute path the loaded configuration holds under whatever key, and adding the roots the build derives; a root that is outside, unresolved, `null`, or missing from the keys the resolver is expected to report fails the check and is named by its key; the check runs inside `start` before the Paseo runtime or the dashboard is started and on its own as `check`.",
+  "status": "proposed",
+  "supersedes": []
+}

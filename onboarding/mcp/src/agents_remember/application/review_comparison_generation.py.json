@@ -1,0 +1,737 @@
+{
+  "path": "mcp/src/agents_remember/application/review_comparison_generation.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+        "content": "sha256:1998de33ff7fae2df7457701d4ec82ad7d05a7c91188390b193b84adea85c881",
+        "locator": {
+          "kind": "symbol",
+          "name": "ComparisonRecordBinding"
+        }
+      },
+      "id": "RLZ-MN7TV1X5",
+      "invariant": "INV-53MJW8V0",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Retains optional assessment availability beside declared collection counts. The serializer omits assessment_channel when absent; when supplied, the validator checks that it names assessments and that a present count equals the binding’s declared assessment count. This is retained-manifest serialization and declared-shape agreement, not a current Reviewer collection read or authentication of a measured input.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The module's own statement of what it owns (the record, the layout, the deletion record) and of the separate responsibility next door.\n\nAnchor: `ComparisonGenerationManifest`, `ComparisonHistoryDeletion`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:bd44b8de870712d461019f7032a67cf3764866f653e96af426e1a4c084ced1bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonGenerationManifest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:73d2ab8e235bb64a6aaf9817c167e685cf29aaa0d8cb180b00ae1b58c6774add",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonHistoryDeletion"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Legacy input collection counts/digest and optional assessment availability remain distinct declared facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:1998de33ff7fae2df7457701d4ec82ad7d05a7c91188390b193b84adea85c881",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonRecordBinding"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Every policy version as a constant its owner declares, never a version derived here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:fe67f904f5f11b12767ad3ae2190ed722bd2021cc09ee9e434562ac18ac92935",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonPolicyStamp"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "**The lineage: one predecessor named by id *and* manifest digest, plus the two optional owner digests.**\n\nAnchor: `ComparisonPublicationLineage`, `_a_predecessor_is_named_by_identity_and_digest`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:cd86731de23da33a01dfa8bde4c3ced074c1065c1952493400e697143feaa5a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonPublicationLineage"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:9a98cc092af749a1ddd5438cd5e57b060364c69a4e130752cb1ea018b53c26a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_a_predecessor_is_named_by_identity_and_digest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The record itself, the seal it carries, and the four self-agreement checks including the re-derived generation id.**\n\nAnchor: `ComparisonGenerationManifest`, `_the_record_agrees_with_itself`, `binding_payload`, `compute_binding_digest`, `knowledge_side`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:bd44b8de870712d461019f7032a67cf3764866f653e96af426e1a4c084ced1bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonGenerationManifest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:86dd2b413d706148bd70c23f7eddb97fd0c5401271cecb53c6ea65dd93b31d0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_the_record_agrees_with_itself"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:66d6846ee6fcd837bc53f444fdd14683aff1d5a7e4a356de707de555fdef5e8d",
+            "locator": {
+              "kind": "symbol",
+              "name": "binding_payload"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:ccba9283f5cecb95129ea13c843280a79499b1428c3f1b84c889f953efdbcadc",
+            "locator": {
+              "kind": "symbol",
+              "name": "compute_binding_digest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:7bd6d52dcc2dd0856e6e851121141b8ab69112e1a484333b30f225e9de1f3fd0",
+            "locator": {
+              "kind": "symbol",
+              "name": "knowledge_side"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "**The unavailable-history record an explicit deletion writes, including the custody measured *before* a pin was released.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:73d2ab8e235bb64a6aaf9817c167e685cf29aaa0d8cb180b00ae1b58c6774add",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonHistoryDeletion"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Current historical layout helpers derive task-report generation, manifest and deletion paths; the snapshot_path helper is removed.\n\nAnchor: `comparison_generations_root`, `leaf_generation_root`, `generation_directory`, `manifest_path`, `deletion_record_path`, `task_root_for_review`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:5ff43495dbfb832e1b82138cfae66fe0a4c0be2615e6963ecbdc1d1c2b976529",
+            "locator": {
+              "kind": "symbol",
+              "name": "comparison_generations_root"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:8c4b20d59c40447ca2c2c625c1442a1a4cb42467ed83a24d719a4e10fbcae4dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_generation_root"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:ff4efef8e16256fd5037587d623d01989e9b9be01b9b3320746128707ab4155a",
+            "locator": {
+              "kind": "symbol",
+              "name": "generation_directory"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:b837958f90afb6bb41130fe5e04d9871f17888556daa925fd0be425b6fe096a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "manifest_path"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:d3294a724c88c4bfa364b40edeb05f281c7292776ce69723346ae98fd91bbaf9",
+            "locator": {
+              "kind": "symbol",
+              "name": "deletion_record_path"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:86c676926d0f09f27ada6d3c7327e294ab92463a55fbe583bdf78e32f7901a61",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_root_for_review"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Generation identity is derived from the binding digest; the manifest exposes its own canonical encoding, not the removed assemble_manifest publisher.\n\nAnchor: `generation_identity`, `ComparisonGenerationManifest`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:a5adbf45ab5a044a703998d99ca13a81e1ea299b9a5a3d3f89f3f357537fb2c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "generation_identity"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:bd44b8de870712d461019f7032a67cf3764866f653e96af426e1a4c084ced1bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonGenerationManifest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "**The two-statement read: the record's own validation plus the containing directory's agreement with the id it claims.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:b0cd4a2490fa79806b19d1b7854d5b9a05b2663b9aa5e3a6eccb3c3359e8f6c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_manifest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "**The deletion reads and the canonical-bytes write, with \"present but unreadable is not absence\" stated in the code.**\n\nAnchor: `read_history_deletion`, `write_history_deletion`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:7ae8ab396039b61473789744274cd015d6dc4eca442889b5a2134069dc39a48b",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_history_deletion"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:45caf52e247338e80737728b123867c75868e42d906a7ca3a7e785490576f043",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_history_deletion"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "**Discovery: the one list of published-looking directories, and the pass that skips an unreadable record instead of guessing its fields.**\n\nAnchor: `generation_directories`, `ComparisonGenerationRef`, `read_generation_refs`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:43d8b4eaf6bf9079b006388a4e67430ea6fdf45046ded7933b30c27ed4c25ef1",
+            "locator": {
+              "kind": "symbol",
+              "name": "generation_directories"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:99ec4ea3783af488b05781f374e7347d32a146a6f9979325f95ddbc9b04ffa92",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonGenerationRef"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:87757e4339e7c19f1a026e13d00e4aa193e7a0755fb81b60e184edf04ae29031",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_generation_refs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The retained decoder exposes its current version, layout, model and archival read/discovery helpers; it exports no new-generation assembler.\n\nAnchor: `__all__`, `COMPARISON_GENERATION_VERSION`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:d302bfd98587daf77eac930e448b0017e36ebbd342d1c1ea83490f4cad301591",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:60d6cdf7f686bb571b7263c93b26736a60362c6916f7e43b51c4d3c591176595",
+            "locator": {
+              "kind": "symbol",
+              "name": "COMPARISON_GENERATION_VERSION"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "**The one durable-root owner this module asks instead of restating `<task_root>/notes/reports`.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a53c6f42e92d352bb02456ae4a50a3b52c58e2e4",
+            "content": "sha256:235530d66b6a614a5e796a88c1b1f12d0d19f8e1194a5a30e4e12454ce537b09",
+            "locator": {
+              "kind": "symbol",
+              "name": "durable_reports_root"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/durable_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The R05 constant imported rather than re-spelled, so the accepted spelling and the recorded one cannot drift.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd22c4941955ad551d6ed094c6503a0289de477b",
+            "content": "sha256:d4df5cb13df1b5433b35b395e0582f21a8ab5ac77b3c765684c24b74b1274fef",
+            "locator": {
+              "kind": "symbol",
+              "name": "NOT_RECORDED"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_before_half.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Referenced source/selection/inventory/identity owners remain inspectable; this decoder no longer assembles new generations from them.\n\nAnchor: `FutureCodeCandidateIdentity`, `ReviewCandidateResolution`, `ReviewSourceInventory`, `ComparisonIdentity`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1feda3e0e721c91e435f6b638b26c88dc538b55b",
+            "content": "sha256:37cdc53a78e18c59f4375c7ba9e1f69ebacd7dc1380018220ecefe3c08d96a1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "FutureCodeCandidateIdentity"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/future_code_candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1d90d4f0e878dfd10c90e1cc30e2037832907004",
+            "content": "sha256:c2d0d2845aede68ef62da4920815be1fac37cd60aa5078d8f5ff99eab7c42348",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewCandidateResolution"
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e02f9598b6bfebef7bb44697138a77410c5cda1",
+            "content": "sha256:a6ded60f6de0902dd814d1c229af2628aaa97baf14d42932e23e87cb7d90bb48",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSourceInventory"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_source.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
+            "content": "sha256:f85866fb872c92ee60595940e4e9ca33e81e178dc4ae608c2c14185f7e223d49",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonIdentity"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "Historical source is preserved without reading a canonical dataset; tampered source is refused rather than retargeted.\n\nAnchor: `test_a_legacy_record_preserves_exact_source_and_never_reads_its_dataset`, `test_a_tampered_historical_source_record_is_refused_instead_of_retargeted`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8782f874fb743422a5c03599845ebe464f324be4",
+            "content": "sha256:0ce1481071e6c2182697b99af633c14a2c08c04aed9fae81fdbfad2f272745e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_legacy_record_preserves_exact_source_and_never_reads_its_dataset"
+            },
+            "path": "mcp/tests/test_knowledge_review_comparison_generation.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8782f874fb743422a5c03599845ebe464f324be4",
+            "content": "sha256:ac412f75b07d1887e41fb9abae94a35df7ee71fe77fa64d861cfe79161e188a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_tampered_historical_source_record_is_refused_instead_of_retargeted"
+            },
+            "path": "mcp/tests/test_knowledge_review_comparison_generation.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "The optional assessment availability uses its retained-manifest-only owner; absent availability is omitted from canonical serialization and a present count matches the declared assessment total.\n\nAnchor: `ComparisonRecordBinding`, `ComparisonAssessmentAvailability`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:1998de33ff7fae2df7457701d4ec82ad7d05a7c91188390b193b84adea85c881",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonRecordBinding"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "68801f87ac1b7cdcb236bc14286d61bcf0a7be1b",
+            "content": "sha256:7a0602a1c762ca1c5df340982eea5bf38bcb3e7415e5ff3feec234f30c87780f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonAssessmentAvailability"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/comparison_records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The retained layout names generation, manifest and deletion locations and typed absence; former canonical snapshot-directory/name constants are removed.\n\nAnchor: `COMPARISON_GENERATIONS_DIRECTORY`, `COMPARISON_MANIFEST_NAME`, `COMPARISON_DELETIONS_DIRECTORY`, `KNOWLEDGE_NOT_SELECTED`, `TYPED_ABSENCE_STATES`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:415ef56a520111e415dfe3c41be25eb342bf473b9e1aa43d8b3a09f684cdbb86",
+            "locator": {
+              "kind": "symbol",
+              "name": "COMPARISON_GENERATIONS_DIRECTORY"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:eca5c99e15a60f69045c9d64bc9bcc0d9ddb5a7551a744475f5b2176230da4aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "COMPARISON_MANIFEST_NAME"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:0a1e180d97c1ca96220a58e805863fdf905bdca7098700c7457698a1bcaf6b82",
+            "locator": {
+              "kind": "symbol",
+              "name": "COMPARISON_DELETIONS_DIRECTORY"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:1d9f87b33dd8dac1a75ec760b2fa122183bb0ef3eb798c7c8df0018fcbfae8f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "KNOWLEDGE_NOT_SELECTED"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:bf75044f5a0c18e1352b1c65b2fffb32bbe5e605c85f1f1cfff0b9270775c6d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "TYPED_ABSENCE_STATES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The fields the seal does not cover, and why each is excluded.**\n\nAnchor: `_UNSEALED_FIELDS`, `_GENERATION_NAMESPACE`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:55264320a7f56bb3b5bd6ed460e6a5f397fee7ef24bd87ae6794dda269ab0a28",
+            "locator": {
+              "kind": "symbol",
+              "name": "_UNSEALED_FIELDS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:2db59879199e0c163d7c2bdc46b47dbbd13ed3fd9d7399874b709cb55160fd04",
+            "locator": {
+              "kind": "symbol",
+              "name": "_GENERATION_NAMESPACE"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A retained snapshot artifact is metadata: relative path, declared digest/length, deletion owner and scope; this model does not read or prove the file exists.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:d404f35af062dade838d6205c912421144b911c43e5e393cf0a8220265432669",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonSnapshotArtifact"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Knowledge binding validation requires identity plus artifact metadata for retained, neither for non-retained, and a reason for non-retained; physical bytes are a separate question.\n\nAnchor: `ComparisonKnowledgeBinding`, `_retained_means_identity_and_bytes`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:58e8d6a0b8c45ac5604510f6313bbf25ae1ac294739a94629dc07e1a8d9e23a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonKnowledgeBinding"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:eb5689cb647c66f31961f62ffb8bd9d16c7fa5b095c360018b7c4f2aa2e07f72",
+            "locator": {
+              "kind": "symbol",
+              "name": "_retained_means_identity_and_bytes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The source binding checks that retained custody and pin presence agree. With a pin, it requires both deletion-owner fields and compares retained tree/base to the bound identities; without a pin it returns after the ownership-field condition. It does not cross-check candidate_capture base/tree against those identities. These are recorded structural constraints, not fresh Git-object availability evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:0d51335ed64ff98bb341847bc29b732f2cbbb69ab3c6983ad8f109842a53ced2",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonSourceBinding"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:11492b1c893b139e15aaeab825a3115bf64d35c61c9568e97c919a2fc1b112d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_custody_and_the_pin_agree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The scope binding: the owner-produced inventory's state, digest and population, plus the selection that must name its selector.**\n\nAnchor: `ComparisonScopeBinding`, `_the_selection_and_its_selectors_agree`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:6bcc9083619ba2b74dc9f618a4c931764b68be285e0839c83c89841c8ccf0ad2",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonScopeBinding"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:579a1bffafb7bf066b67bf8bda5481ea506fdeabf1df95663969b28fa785442e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_the_selection_and_its_selectors_agree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "One cited owner-produced artifact as a task-relative, digest-bearing reference.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:a3d8cff6ecef3d809a32be9dcfb1e11f1b545f3a1335d06f082687d51172d859",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonArtifactReference"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

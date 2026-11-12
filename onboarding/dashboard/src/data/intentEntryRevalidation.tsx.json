@@ -1,0 +1,190 @@
+{
+  "path": "dashboard/src/data/intentEntryRevalidation.tsx",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d3feb8a1751db6eca58b6b0be0a1878f10d95367",
+        "content": "sha256:495395edc9c750eb467c472c50a53c55ea59ed7ef0bff8c01a6b1faf156710f8",
+        "locator": {
+          "kind": "symbol",
+          "name": "IntentEntryRevalidation"
+        }
+      },
+      "id": "RLZ-2T0WMXME",
+      "invariant": "INV-EZ8QKFX6",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "The provider derives shown transitions and exposes a local revalidate callback through React context. Both explicit reviewer refresh and the matching live-review memory hook use that callback; the entry generation joins its facts key. The context itself creates no transport. Conditional/read coalescing belongs to the existing summary owner, not an unconditional one-network-read-per-callback rule.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The local provider increments generation on a false-to-true shown transition and on revalidate. useReviewMemoryWatch registers only for an active live enclosure and non-recorded history, invokes shared entry revalidation alongside review invalidation/refresh, and filters notifications by exact registered scope. publishReviewMemory reconciles first/initial baselines and changed revisions. connectState carries that scope and dispatches memory events through its existing SSE connection. The original header-only no-signal account is superseded.\n\nAnchor: inclusive source ranges\n\nRetired at the fifth freeze d59c3493: dashboard/src/data/reviewMemoryWatch.ts:91-113 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 20624f979e2b89067a3e42019c9611a8e18ff848; dashboard/src/data/reviewMemoryWatch.ts:76-84 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 20624f979e2b89067a3e42019c9611a8e18ff848; dashboard/src/data/stream.ts:47-65 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5f8398b32760677c370e3145add73cfa8388357b. Retired means the anchor no longer stands, not that the cited subject was deleted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3feb8a1751db6eca58b6b0be0a1878f10d95367",
+            "content": "sha256:495395edc9c750eb467c472c50a53c55ea59ed7ef0bff8c01a6b1faf156710f8",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 27
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The provider: the show transition derived during render, and `revalidate`.\n\nAnchor: `state.shown !== shown`; `revalidate`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3feb8a1751db6eca58b6b0be0a1878f10d95367",
+            "content": "sha256:495395edc9c750eb467c472c50a53c55ea59ed7ef0bff8c01a6b1faf156710f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntentEntryRevalidation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The no-provider default and the two hooks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3feb8a1751db6eca58b6b0be0a1878f10d95367",
+            "content": "sha256:f10cd384c0fd4305058d2f6332a8a18b61d98136734b95688eef19937ee45282",
+            "locator": {
+              "kind": "symbol",
+              "name": "NO_REVALIDATION"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3feb8a1751db6eca58b6b0be0a1878f10d95367",
+            "content": "sha256:b318e73b1d3563a4015e6ce73a092543e11bce1758c54e8ecbf8c30e4cf82717",
+            "locator": {
+              "kind": "symbol",
+              "name": "useIntentEntryGeneration"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3feb8a1751db6eca58b6b0be0a1878f10d95367",
+            "content": "sha256:87fdd50ce88da9c68e68daded3e1f3269081956b3b2f5816c471b717aa97c729",
+            "locator": {
+              "kind": "symbol",
+              "name": "useRevalidateIntentEntry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "ReviewRefresh obtains the shared entry revalidation callback, and its actual button onClick calls onRefresh followed by revalidateEntry. The callback declaration alone is not the invocation witness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3e475efda7ef790e1fd6b2326f2b7bc1b264aaa9",
+            "content": "sha256:8658db4b92cc71e6f4a9057a8fa3e960dbfa823baf44abe7beba324da2ca9115",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 49
+            },
+            "path": "dashboard/src/panels/review/ReviewRefresh.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "DocChangeSetBar appends context generation to leaf facts and passes them to LeafEntries; IntentReviewEntry passes facts to useIntentReviewSummary, whose key/effect includes facts. ChangeSetButton separately consumes the same generation in its load effect dependencies. Generation is not a summary-only input.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1f434d49ec1adbb3ff324745748345f4ce909fce",
+            "content": "sha256:507af4b6d58e46ba209a89bf9e7e3ba5fda9df541712fe3d8af2193a693e13be",
+            "locator": {
+              "end": 383,
+              "kind": "line_range",
+              "start": 337
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
+            "content": "sha256:61594614662970fe60970b4470b9f15ccacfe8ce3609734137a466abad325d13",
+            "locator": {
+              "end": 170,
+              "kind": "line_range",
+              "start": 149
+            },
+            "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1b88a5d8391b7e00d3ee0155a662a004bca0654c",
+            "content": "sha256:3d0e3eb5cc6fc52075663761aa1ced3977748f9005902052290037c5f99274b3",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 104
+            },
+            "path": "dashboard/src/data/reviewIntentSummary.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The current stored test bodies assert summary-read counts and catalogue isolation for re-show/task switching, opening from another view, reviewer return and explicit refresh. These are static assertions, not new execution or proof of memory-event/reconnect request counts. Both former target ranges are replaced by the current complete scenario extents.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb42598c0c350ffa0445f7d80aea0b38979f62b4",
+            "content": "sha256:602e43f9bda6d97b5b235cd7be0ff537a0b1f819ee2e119669c7d06c1da71ace",
+            "locator": {
+              "end": 221,
+              "kind": "line_range",
+              "start": 163
+            },
+            "path": "dashboard/src/cockpit/Cockpit.intentEntry.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eb42598c0c350ffa0445f7d80aea0b38979f62b4",
+            "content": "sha256:e8fd8becfed73d543b5c7c076dc5e038b54ca51ee1f2e978054f18c8bd86065c",
+            "locator": {
+              "end": 239,
+              "kind": "line_range",
+              "start": 223
+            },
+            "path": "dashboard/src/cockpit/Cockpit.intentEntry.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

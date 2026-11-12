@@ -1,0 +1,57 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "The choice prevents later repairs from reintroducing narrow machine-speed timeouts or treating a larger per-file number as a behavioral fix."
+  },
+  "alternatives": [
+    {
+      "option": "Use the existing shared test and hook hang guard and await behavioral conditions.",
+      "reason": "One guard bounds hangs without introducing a narrower file-local machine-speed assumption.",
+      "status": "chosen"
+    },
+    {
+      "option": "Retain or merely raise each file-local timeout.",
+      "reason": "A separate elapsed-time bound stays a machine-load assumption and a raised timeout alone does not repair the guard's rule.",
+      "reconsider_when": "The developer deliberately changes the shared guard contract and admits a separately justified bound for these operations.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The affected tests inherit the configured shared bound; timing behavior and guard changes have their own owners.",
+    "A load-independent exception requires a genuine documented cause, not a marker added to silence the guard."
+  ],
+  "context": "Five mounted dashboard test files overrode the shared hang guard with a file-local 30-second timeout, which the unchanged load-independence guard rejected.",
+  "decider": "Approved MIK-R154@v1 rules 5 and 6, applied by the Worker under architect authority D47; Curator records the carried choice.",
+  "id": "DEC-YWSQDK",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "ce6332e5f3e2af96e6412b4b2b47358e425d092e",
+        "content": "sha256:bfb986f19d961531c930783cdf41fd740db301a58487b75e57db9ce99ff4d655",
+        "locator": {
+          "kind": "symbol",
+          "name": "scan"
+        },
+        "path": "dashboard/src/test/loadIndependence.test.ts"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "MIK-R154@v1 rule 5 and rule 6; original Worker entry MIK-L154 shared load bound; vitest.config.ts and src/test/loadIndependence.test.ts unchanged."
+      ],
+      "path": "handoff-supported.json"
+    },
+    "handoffEntry": "L154-C-shared-load-bound-choice",
+    "leaf": "260928-MIK-L154",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

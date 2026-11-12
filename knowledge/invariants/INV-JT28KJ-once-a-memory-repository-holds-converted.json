@@ -1,0 +1,38 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The application, CLI and landing routes must not commit or operate on a legacy line just because no converted sibling is visible; the public route matrix guards this cross-layer refusal."
+  },
+  "applicability": "Every route of the runtime that writes, checks, syncs, closes out or lands a memory line: knowledge writes, memory-quality runs, managed memory syncs, closeouts, direct landing, record landing, leaf, master and checkpoint landing, and carryover.",
+  "conditions": [
+    "The route has established that its memory input lacks knowledge/layout.json; missing, unreadable and corrupt inputs retain their own errors."
+  ],
+  "exclusions": [
+    "read_ar_files retains legacy cards marked legacy-format with no knowledge section, and the conversion command remains supported.",
+    "An already-current or skip-memory sync moves no memory side; an in-flight sync can continue or cancel.",
+    "A legacy target may adopt a converted source by fast-forward; mixed merges retain the crossing sync and all-converted sides retain their normal route.",
+    "A converted target cannot fast-forward from a legacy source; marker presence alone is not validator acceptance.",
+    "No absent/non-directory or definite non-repository input is fabricated into a memory line."
+  ],
+  "id": "INV-JT28KJ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_knowledge_cutover.py::test_every_route_refuses_unconverted_memory_once_the_repository_holds_converted_memory; mcp/tests/test_knowledge_cutover.py::test_the_converting_candidate_is_gated_never_locked; mcp/tests/test_knowledge_cutover.py::test_a_converted_worktree_locks_too_and_an_unanswered_probe_refuses; mcp/tests/test_knowledge_cutover.py::test_only_a_definite_non_repository_reads_as_holding_no_converted_memory; review notes/reports/260928-MIK-L37-review-R1.md (R1 focus item 1 and R2: the lock at every route, 33 mutations)"
+      ],
+      "path": "30-leaf-change.json"
+    },
+    "handoffEntry": "L37-cutover-lock",
+    "leaf": "260928-MIK-L37",
+    "task": "260928-MIK"
+  },
+  "revision": 3,
+  "schema": "ar-invariant/v1",
+  "statement": "Every ordinary check, write, managed memory sync, closeout or landing with legacy memory input refuses with the central legacy-format conversion message whether or not converted memory exists elsewhere; named probe failures are never classified as legacy, and converted or converting candidates retain their validator and gate.",
+  "status": "proposed",
+  "supersedes": []
+}

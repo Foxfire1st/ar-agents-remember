@@ -1,0 +1,95 @@
+{
+  "path": "mcp/tests/lifecycle_enclosure_test_support.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "550045e865c871fe9ee1356984795629372f872d",
+        "content": "sha256:ef59455423f3787f3039cd2fee6027b487b0ace7b1397e2f98cf5dfbf2dff38c",
+        "locator": {
+          "kind": "symbol",
+          "name": "discard_owned_roots"
+        }
+      },
+      "id": "RLZ-7FSRAQ",
+      "invariant": "INV-TMKNRV",
+      "origin": {
+        "handoffEntry": "L198-INV-D",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The helper that replaced the prefix-shaped sweep.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "550045e865c871fe9ee1356984795629372f872d",
+        "content": "sha256:389a917ed5a9019972defd3ce9593f8202f69c144c1aa715c7349c1cb08ac424",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-R0BAX1",
+      "invariant": "INV-TMKNRV",
+      "origin": {
+        "handoffEntry": "L198-F-mcp-tests-lifecycle_enclosure_test_support",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The support at C still removes a published enclosure's outside scratch root at run end, in the module whose parent/marker/ownership refusals the invariant states, and its whole-file anchor matches C.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "No external domain source is required for this repository-owned test contract.  Anchor: `enclosure_contract`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "550045e865c871fe9ee1356984795629372f872d",
+            "content": "sha256:389a917ed5a9019972defd3ce9593f8202f69c144c1aa715c7349c1cb08ac424",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The selected scenarios and assertions implement this test unit's forcing proof.  Anchor: `enclosure_contract`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "550045e865c871fe9ee1356984795629372f872d",
+            "content": "sha256:389a917ed5a9019972defd3ce9593f8202f69c144c1aa715c7349c1cb08ac424",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "No meaningful cross-repository reference applies.  Anchor: `enclosure_contract`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "550045e865c871fe9ee1356984795629372f872d",
+            "content": "sha256:389a917ed5a9019972defd3ce9593f8202f69c144c1aa715c7349c1cb08ac424",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

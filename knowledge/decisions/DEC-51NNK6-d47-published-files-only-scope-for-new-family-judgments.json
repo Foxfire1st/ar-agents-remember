@@ -1,0 +1,71 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Two scoping rules were weighed with measured landing evidence; every later landing, publication and validation must obey the chosen population."
+  },
+  "alternatives": [
+    {
+      "option": "Judge a row as new or edited only in a history file the route under judgment publishes: open files always, and at leaf publication files not closed in a base, reusing the validator's existing checked_history_files notion.",
+      "reason": "The architect's run-2 ruling 4 settles which files the rule judges; both rules now agree on what published by this route means.",
+      "status": "chosen"
+    },
+    {
+      "option": "Judge every parsed history file, exempting only rows identical at the same path in a comparison base or frozen tree.",
+      "reason": "The sprint line holds none of the master's history files, so every landed unlabelled row counted as new: nine violations on the landed history, measured before the re-versioning.",
+      "reconsider_when": "History files become comparable across lines at landing time, so a landing base always holds the rows it judges.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Master and checkpoint landings pass over closed history files whichever leaves they belong to.",
+    "Leaf publications judge files not closed in a base whatever the hand-set flag says.",
+    "The writer's own validation judges open files only and is not a publication."
+  ],
+  "context": "As first built, the rule judged every parsed history file, so the master's landing onto the sprint line refused with nine violations on landed frozen rows; D47 gave the architect the authority for the run-2 rulings that re-scoped it.",
+  "decider": "Architect, run-2 ruling 4 under developer direction D47.",
+  "id": "DEC-51NNK6",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "3274f2b5b02128a98741ec4f1ebe84bd8285eb04",
+        "content": "sha256:c2f8e85a76746c05fbabcc6b2888b462de8d083de39f167c1a37c5be4512be48",
+        "locator": {
+          "kind": "symbol",
+          "name": "check_family_judgments"
+        },
+        "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py"
+      }
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R48",
+        "packet": "requirements/MIK-R48-v2-recorded-family-meaning-judgments.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v2"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/l48-no-base-proof/raw/invocation.json SHA a60f4028d2d352777098d2448f1fd89c213156d31033ac52250d3256ad5c789d; raw/no-base-validate.stdout SHA 17e5dea8867fff5e5f3f2bb009adf972d8b02afae100582d05b9cd5cf49a4ce8 (22322 bytes; 94 report-only lines plus zero-violation summary); raw/no-base-validate.stderr SHA e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 (empty); notes/reports/l48-extra1-documentary/evidence.json"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L48-curator-c94be97e.handoff-list.json"
+    },
+    "handoffEntry": "already-raised no-base0violations retained-proof claim; no new ID",
+    "leaf": "260928-MIK-L48",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

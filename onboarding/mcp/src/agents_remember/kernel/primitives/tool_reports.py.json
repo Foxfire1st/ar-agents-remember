@@ -1,0 +1,25 @@
+{
+  "path": "mcp/src/agents_remember/kernel/primitives/tool_reports.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The runtime-install payload files executed reports and pairs them with its compact answer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "096416e28ba831c922b782c7d3994ab2b726e6cb",
+            "content": "sha256:8251c903331d979e635fe1786a6e06d88de049db1e1a775efd46edf08db785db",
+            "locator": {
+              "end": 162,
+              "kind": "line_range",
+              "start": 102
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/core.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

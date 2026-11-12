@@ -1,0 +1,819 @@
+{
+  "worker": [
+    {
+      "id": "MIK-R107@v1 \u00a71 current66",
+      "statement": "The packaged host contract selects Node26.11.1 on linux-x64 with the official archive URL and SHA-256, while preserving host0.11.0-beta.2 and its complete npm lock.",
+      "kind": "clause",
+      "target": [
+        {
+          "path": "mcp/src/agents_remember/package_data/paseo_host/contract.json",
+          "locator": {
+            "kind": "file"
+          },
+          "governing_route": "mcp",
+          "rationale": "This packaged build authority selects the exact Node archive, digest and platform while retaining the host version and complete npm lock."
+        }
+      ],
+      "found_at": [
+        {
+          "path": "mcp/src/agents_remember/package_data/paseo_host/contract.json",
+          "locator": {
+            "kind": "file"
+          },
+          "commit": null
+        }
+      ],
+      "disposition": "implemented and verified by focused evidence; independent verification pending",
+      "disposition_source": null,
+      "evidence": "notes/reports/role-launch/260928-MIK-L107-worker-c1ec121b-f3da-4e9e-ae4a-36795d5b9d81/freeze2/candidate.patch; SHASUMS256-26.txt in predecessor artifact; node-index-final.json; contract-post-sync-final.log",
+      "authority": {
+        "task_document": "agents-remember/260928_maintained-invariant-knowledge/107_the-host-runs-on-the-current-node.json"
+      },
+      "resolution": {
+        "code_tree": "02999c710272fdcf6b9fe262d83298d8f8e522c1",
+        "resolved_at": "2026-10-08T10:29:36.203119+00:00",
+        "targets": [
+          {
+            "path": "mcp/src/agents_remember/package_data/paseo_host/contract.json",
+            "start": 1,
+            "end": 13,
+            "sha256": "ad98876cc3becdf424d3cf0d2f5db3bd820e37576f6e17ba5adfa5a0669d3574"
+          }
+        ],
+        "placement": "durable host contracts",
+        "record_home": "INV-BGV9YT@2"
+      },
+      "validated_at": "2026-10-08T10:29:36.203119+00:00",
+      "record_action": "revise",
+      "supersedes": [],
+      "scope": {
+        "applicability": "Every host acquisition and every process that starts the host: the provision's npm run, PaseoCli calls and the bridge.",
+        "conditions": [
+          "The platform is Linux x86_64 with /proc; the archive URL and SHA-256 come from the contract.",
+          "The managed Node lies beside the product's python and paseo folders; the archive cache is under the user's cache folder."
+        ],
+        "exclusions": [
+          "A Node already on the machine is never used for the host, whatever its version.",
+          "No install outside the product's data and cache folders, no bin link, no PATH, shell or npm-config change.",
+          "The Eve application keeps its own separate Node line."
+        ]
+      }
+    },
+    {
+      "id": "MIK-R107@v1 \u00a72 current66",
+      "statement": "The sandbox host and bridge run on the contract Node26.11.1, its plugin and frame are available, one product-created Pi agent answers one message, and the next host provision makes no change.",
+      "kind": "measurement",
+      "target": [],
+      "found_at": [
+        {
+          "path": "notes/reports/role-launch/260928-MIK-L107-worker-c1ec121b-f3da-4e9e-ae4a-36795d5b9d81/freeze2/final26/process-executables-post-sync.json",
+          "locator": null,
+          "commit": null
+        },
+        {
+          "path": "notes/reports/role-launch/260928-MIK-L107-worker-c1ec121b-f3da-4e9e-ae4a-36795d5b9d81/freeze2/final26/pi-create-result.json",
+          "locator": null,
+          "commit": null
+        },
+        {
+          "path": "notes/reports/role-launch/260928-MIK-L107-worker-c1ec121b-f3da-4e9e-ae4a-36795d5b9d81/freeze2/final26/pi-state-result.json",
+          "locator": null,
+          "commit": null
+        },
+        {
+          "path": "notes/reports/role-launch/260928-MIK-L107-worker-c1ec121b-f3da-4e9e-ae4a-36795d5b9d81/freeze2/final26/install-post-sync.json",
+          "locator": null,
+          "commit": null
+        }
+      ],
+      "disposition": "implemented and verified by focused evidence; independent verification pending",
+      "disposition_source": null,
+      "evidence": "notes/reports/role-launch/260928-MIK-L107-worker-c1ec121b-f3da-4e9e-ae4a-36795d5b9d81/freeze2/final26/status-post-sync.json; frame-descriptor-post-sync.json; pi-state-result.json contains L107-NODE26-OK; one26modelturn and zero22modelturns",
+      "authority": {
+        "task_document": "agents-remember/260928_maintained-invariant-knowledge/107_the-host-runs-on-the-current-node.json"
+      },
+      "resolution": {
+        "code_tree": "02999c710272fdcf6b9fe262d83298d8f8e522c1",
+        "resolved_at": "2026-10-08T10:29:36.203119+00:00",
+        "targets": [],
+        "placement": "task-local retained verification evidence",
+        "record_home": "task-local W02 sandbox witness"
+      },
+      "validated_at": "2026-10-08T10:29:36.203119+00:00",
+      "record_action": "add",
+      "supersedes": []
+    },
+    {
+      "id": "MIK-R107@v1 \u00a73 current66",
+      "statement": "The same native Codex dispatch required-tool refusal occurs on a fresh matched-profile Node22.23.2 control, so it is not a Node26 failure and permits no Node24 fallback.",
+      "kind": "decision",
+      "target": [],
+      "found_at": [
+        {
+          "path": "notes/reports/role-launch/260928-MIK-L107-worker-c1ec121b-f3da-4e9e-ae4a-36795d5b9d81/freeze2/control22/matched/matched-comparison.json",
+          "locator": null,
+          "commit": null
+        },
+        {
+          "path": "notes/reports/role-launch/260928-MIK-L107-worker-c1ec121b-f3da-4e9e-ae4a-36795d5b9d81/freeze2/control22/matched/catalog-after-start.json",
+          "locator": null,
+          "commit": null
+        }
+      ],
+      "disposition": "recorded under explicit current66 amendment; Node26 retained, noNode24 attempted",
+      "disposition_source": null,
+      "evidence": "notes/reports/role-launch/260928-MIK-L107-worker-c1ec121b-f3da-4e9e-ae4a-36795d5b9d81/freeze2/control22/matched/dispatch-result.json; original26 post-freeze1-dispatch-result.json; same full refusal and arguments, fresh22 native seat; Owner carries readiness to L100",
+      "authority": {
+        "task_document": "agents-remember/260928_maintained-invariant-knowledge/107_the-host-runs-on-the-current-node.json"
+      },
+      "resolution": {
+        "code_tree": "02999c710272fdcf6b9fe262d83298d8f8e522c1",
+        "resolved_at": "2026-10-08T10:29:36.203119+00:00",
+        "targets": [],
+        "placement": "task-local retained verification evidence",
+        "record_home": "DEC-C60H91@1"
+      },
+      "validated_at": "2026-10-08T10:29:36.203119+00:00",
+      "record_action": "add",
+      "supersedes": []
+    },
+    {
+      "id": "MIK-R107@v1 \u00a74 status current66",
+      "statement": "Public Paseo and dashboard status compare the owned running host executable with the contract Node and report the Node restart requirement and existing explicit provision remedy without changing the host.",
+      "kind": "clause",
+      "target": [
+        {
+          "path": "mcp/src/agents_remember/serving/paseo/paseo_node.py",
+          "locator": {
+            "kind": "symbol",
+            "value": "node_status"
+          },
+          "governing_route": "mcp/src/agents_remember/serving/paseo",
+          "rationale": "This pure observation compares the owned executable with the selected product Node and supplies the shared restart-required result."
+        },
+        {
+          "path": "mcp/src/agents_remember/serving/paseo/paseo_daemon.py",
+          "locator": {
+            "kind": "symbol",
+            "value": "runtime_status"
+          },
+          "governing_route": "mcp/src/agents_remember/serving/paseo",
+          "rationale": "The public Paseo status owner merges owned process facts with the Node comparison without starting or reconfiguring the host."
+        },
+        {
+          "path": "mcp/src/agents_remember/serving/paseo/paseo_start.py",
+          "locator": {
+            "kind": "symbol",
+            "value": "_observe"
+          },
+          "governing_route": "mcp/src/agents_remember/serving/paseo",
+          "rationale": "Dashboard host observation presents the same contract-versus-owned-executable comparison under its read-only deadline."
+        },
+        {
+          "path": "mcp/src/agents_remember/serving/paseo/paseo_start.py",
+          "locator": {
+            "kind": "symbol",
+            "value": "_remedy_line"
+          },
+          "governing_route": "mcp/src/agents_remember/serving/paseo",
+          "rationale": "The presentation boundary names the existing explicit provision command when Node restart is required."
+        }
+      ],
+      "found_at": [
+        {
+          "path": "mcp/tests/test_paseo_start.py",
+          "locator": {
+            "kind": "symbol",
+            "value": "test_running_host_is_read_only_including_mismatches_and_session_names"
+          },
+          "commit": null
+        }
+      ],
+      "disposition": "implemented and verified by focused evidence; independent verification pending",
+      "disposition_source": null,
+      "evidence": "notes/reports/role-launch/260928-MIK-L107-worker-c1ec121b-f3da-4e9e-ae4a-36795d5b9d81/freeze2/control22/matched/candidate26-observes-live22-status.json; candidate26-live22-public-dashboard-status.json; final26/status-post-sync.json; focused-tests-post-sync-final.log",
+      "authority": {
+        "task_document": "agents-remember/260928_maintained-invariant-knowledge/107_the-host-runs-on-the-current-node.json"
+      },
+      "resolution": {
+        "code_tree": "02999c710272fdcf6b9fe262d83298d8f8e522c1",
+        "resolved_at": "2026-10-08T10:29:36.203119+00:00",
+        "targets": [
+          {
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_node.py",
+            "start": 36,
+            "end": 45,
+            "sha256": "707769af277dcd3b95a6ab775741bd926a5ba1c278293400fb2a4785b58606d1"
+          },
+          {
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_daemon.py",
+            "start": 53,
+            "end": 95,
+            "sha256": "73e3af9d93bea195be6294184250b2c152b3c76920c5dcce07b6d6d646423eeb"
+          },
+          {
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_start.py",
+            "start": 105,
+            "end": 142,
+            "sha256": "60d45bf6a1190bae58ae9b6acb6c98000aa9fc3098a133ae7dd2360dcbbb50dd"
+          },
+          {
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_start.py",
+            "start": 168,
+            "end": 186,
+            "sha256": "60d45bf6a1190bae58ae9b6acb6c98000aa9fc3098a133ae7dd2360dcbbb50dd"
+          }
+        ],
+        "placement": "durable host contracts",
+        "record_home": "INV-7HC1QH@1"
+      },
+      "validated_at": "2026-10-08T10:29:36.203119+00:00",
+      "record_action": "add",
+      "supersedes": [],
+      "scope": {
+        "applicability": "Both public status paths observing a configured owned running host.",
+        "conditions": [
+          "Compare the observed executable with the absolute contract Node path, even when the new target is already installed.",
+          "A matching or unobserved executable alone supplies no Node restart reason."
+        ],
+        "exclusions": [
+          "Status does not install, restart, change settings or remove process records."
+        ]
+      },
+      "family": {
+        "state": "member",
+        "memberships": [
+          {
+            "family": "L107-host-observable-transition",
+            "basis": "A verified build Node, visible restart requirement and explicit retained-file transition are needed together to make the host lifecycle safe to operate."
+          }
+        ]
+      }
+    },
+    {
+      "id": "MIK-R107@v1 \u00a74 transition current66",
+      "statement": "An install defers a live-host Node transition and explicit provision restarts on the contract Node, reports the observed earlier product Node folder as no longer used by that host, and preserves its files.",
+      "kind": "clause",
+      "target": [
+        {
+          "path": "mcp/src/agents_remember/serving/paseo/paseo_provision.py",
+          "locator": {
+            "kind": "symbol",
+            "value": "_converge_daemon"
+          },
+          "governing_route": "mcp/src/agents_remember/serving/paseo",
+          "rationale": "The transition owner defers install restarts, captures the observed earlier Node folder, and reports it only after explicit provision starts the replacement host."
+        },
+        {
+          "path": "mcp/src/agents_remember/serving/paseo/paseo_provision.py",
+          "locator": {
+            "kind": "symbol",
+            "value": "_report_unused_node"
+          },
+          "governing_route": "mcp/src/agents_remember/serving/paseo",
+          "rationale": "This report-only boundary accepts only an earlier sibling product Node folder and names it as unused by this host without deleting files."
+        },
+        {
+          "path": "mcp/src/agents_remember/serving/paseo/paseo_run.py",
+          "locator": {
+            "kind": "symbol",
+            "value": "_check_install_restart"
+          },
+          "governing_route": "mcp/src/agents_remember/serving/paseo",
+          "rationale": "The install admission owner detects a live executable mismatch before Node acquisition or home mutations."
+        }
+      ],
+      "found_at": [
+        {
+          "path": "mcp/tests/test_paseo_install_no_stop.py",
+          "locator": {
+            "kind": "symbol",
+            "value": "test_running_host_on_another_node_is_deferred_before_node_or_home_changes"
+          },
+          "commit": null
+        }
+      ],
+      "disposition": "implemented and verified by focused evidence; independent verification pending",
+      "disposition_source": null,
+      "evidence": "notes/reports/role-launch/260928-MIK-L107-worker-c1ec121b-f3da-4e9e-ae4a-36795d5b9d81/freeze2/focused-tests-post-sync-final.log; exact test verifies deferral, restart, retained marker and no-change repeat",
+      "authority": {
+        "task_document": "agents-remember/260928_maintained-invariant-knowledge/107_the-host-runs-on-the-current-node.json"
+      },
+      "resolution": {
+        "code_tree": "02999c710272fdcf6b9fe262d83298d8f8e522c1",
+        "resolved_at": "2026-10-08T10:29:36.203119+00:00",
+        "targets": [
+          {
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_provision.py",
+            "start": 323,
+            "end": 367,
+            "sha256": "6d3302ce98b53a702ce28b6ae840ad68fa57f126ef12b0c679b2595df98901ea"
+          },
+          {
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_provision.py",
+            "start": 370,
+            "end": 373,
+            "sha256": "6d3302ce98b53a702ce28b6ae840ad68fa57f126ef12b0c679b2595df98901ea"
+          },
+          {
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_run.py",
+            "start": 52,
+            "end": 89,
+            "sha256": "4d4c4dc60c92e7e026e588b40ec5db01ed152cb5438ac502273088c8934f15a4"
+          }
+        ],
+        "placement": "durable host contracts",
+        "record_home": "INV-CB36W0@1"
+      },
+      "validated_at": "2026-10-08T10:29:36.203119+00:00",
+      "record_action": "add",
+      "supersedes": [],
+      "scope": {
+        "applicability": "Install and explicit terminal provision when an owned running host uses an earlier product Node.",
+        "conditions": [
+          "Install defers before Node or home writes.",
+          "Only a successful explicit provision restart reports the earlier sibling Node folder as unused by this host."
+        ],
+        "exclusions": [
+          "No deletion of old Node files or claim that another process no longer uses them.",
+          "No automatic transition through dashboard start or status."
+        ]
+      },
+      "family": {
+        "state": "member",
+        "memberships": [
+          {
+            "family": "L107-host-observable-transition",
+            "basis": "A verified build Node, visible restart requirement and explicit retained-file transition are needed together to make the host lifecycle safe to operate."
+          }
+        ]
+      }
+    },
+    {
+      "id": "MIK-R107@v1 \u00a75 current66",
+      "statement": "The install and settings reference state the contract Node26.11.1 and getting-started describes the build-pinned Node without a conflicting version.",
+      "kind": "clause",
+      "target": [
+        {
+          "path": "docs/install/README.md",
+          "locator": {
+            "kind": "line_range",
+            "start": 55,
+            "end": 59
+          },
+          "governing_route": "docs/install",
+          "rationale": "This reference states the selected contract runtime for users; it must agree with the packaged authority."
+        },
+        {
+          "path": "docs/reference/settings-json.md",
+          "locator": {
+            "kind": "line_range",
+            "start": 175,
+            "end": 183
+          },
+          "governing_route": "docs/reference",
+          "rationale": "This reference states the selected contract runtime for users; it must agree with the packaged authority."
+        }
+      ],
+      "found_at": [
+        {
+          "path": "docs/install/README.md",
+          "locator": {
+            "kind": "line_range",
+            "start": 55,
+            "end": 59
+          },
+          "commit": null
+        },
+        {
+          "path": "docs/reference/settings-json.md",
+          "locator": {
+            "kind": "line_range",
+            "start": 175,
+            "end": 183
+          },
+          "commit": null
+        }
+      ],
+      "disposition": "implemented and verified by focused evidence; independent verification pending",
+      "disposition_source": null,
+      "evidence": "notes/reports/role-launch/260928-MIK-L107-worker-c1ec121b-f3da-4e9e-ae4a-36795d5b9d81/freeze2/retired-version-post-sync.txt; only historical error/benchmark records retain22.23 strings",
+      "authority": {
+        "task_document": "agents-remember/260928_maintained-invariant-knowledge/107_the-host-runs-on-the-current-node.json"
+      },
+      "resolution": {
+        "code_tree": "02999c710272fdcf6b9fe262d83298d8f8e522c1",
+        "resolved_at": "2026-10-08T10:29:36.203119+00:00",
+        "targets": [
+          {
+            "path": "docs/install/README.md",
+            "start": 55,
+            "end": 59,
+            "sha256": "c51b3aa23b3738145b28cacb0d14094e9840d5ef5729ccdd97b2ca5a729d956e"
+          },
+          {
+            "path": "docs/reference/settings-json.md",
+            "start": 175,
+            "end": 183,
+            "sha256": "dc9532d0ffe14b93ff8b55a65eac93daf1ef7fc7e5844a0bd955586047cf74c6"
+          }
+        ],
+        "placement": "durable host contracts",
+        "record_home": "INV-BGV9YT@2 and task-local documentation trace"
+      },
+      "validated_at": "2026-10-08T10:29:36.203119+00:00",
+      "record_action": "revise",
+      "supersedes": [],
+      "scope": {
+        "applicability": "Every host acquisition and every process that starts the host: the provision's npm run, PaseoCli calls and the bridge.",
+        "conditions": [
+          "The platform is Linux x86_64 with /proc; the archive URL and SHA-256 come from the contract.",
+          "The managed Node lies beside the product's python and paseo folders; the archive cache is under the user's cache folder."
+        ],
+        "exclusions": [
+          "A Node already on the machine is never used for the host, whatever its version.",
+          "No install outside the product's data and cache folders, no bin link, no PATH, shell or npm-config change.",
+          "The Eve application keeps its own separate Node line."
+        ]
+      }
+    },
+    {
+      "id": "MIK-R107 preservation current66",
+      "statement": "Node acquisition still verifies the official digest before whole placement, refuses a foreign target, reuses a valid Node without downloading, and selects absolute product Node paths on the unchanged supported platform.",
+      "kind": "clause",
+      "target": [
+        {
+          "path": "mcp/src/agents_remember/serving/paseo/paseo_node.py",
+          "locator": {
+            "kind": "symbol",
+            "value": "ensure_node"
+          },
+          "governing_route": "mcp/src/agents_remember/serving/paseo",
+          "rationale": "The acquisition owner verifies the official digest, checks existing product Node, and refuses foreign targets before npm runs."
+        },
+        {
+          "path": "mcp/src/agents_remember/kernel/primitives/paseo_node_paths.py",
+          "locator": {
+            "kind": "symbol",
+            "value": "product_node"
+          },
+          "governing_route": "mcp/src/agents_remember/kernel/primitives",
+          "rationale": "The shared path authority chooses absolute product executables from the packaged contract on the supported platform."
+        }
+      ],
+      "found_at": [
+        {
+          "path": "mcp/tests/test_paseo_node.py",
+          "locator": {
+            "kind": "file"
+          },
+          "commit": null
+        }
+      ],
+      "disposition": "implemented and verified by focused evidence; independent verification pending",
+      "disposition_source": null,
+      "evidence": "notes/reports/role-launch/260928-MIK-L107-worker-c1ec121b-f3da-4e9e-ae4a-36795d5b9d81/freeze2/focused-tests-post-sync-final.log; unchanged acquisition/absolute-path facets carried from original baseline",
+      "authority": {
+        "task_document": "agents-remember/260928_maintained-invariant-knowledge/107_the-host-runs-on-the-current-node.json"
+      },
+      "resolution": {
+        "code_tree": "02999c710272fdcf6b9fe262d83298d8f8e522c1",
+        "resolved_at": "2026-10-08T10:29:36.203119+00:00",
+        "targets": [
+          {
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_node.py",
+            "start": 67,
+            "end": 84,
+            "sha256": "707769af277dcd3b95a6ab775741bd926a5ba1c278293400fb2a4785b58606d1"
+          },
+          {
+            "path": "mcp/src/agents_remember/kernel/primitives/paseo_node_paths.py",
+            "start": 41,
+            "end": 61,
+            "sha256": "fe600cb7ef3c4954de35b149342bfa412aad97db5a5742c98823c7d5c6a27005"
+          }
+        ],
+        "placement": "durable host contracts",
+        "record_home": "INV-BGV9YT@2"
+      },
+      "validated_at": "2026-10-08T10:29:36.203119+00:00",
+      "record_action": "revise",
+      "supersedes": [],
+      "scope": {
+        "applicability": "Every host acquisition and every process that starts the host: the provision's npm run, PaseoCli calls and the bridge.",
+        "conditions": [
+          "The platform is Linux x86_64 with /proc; the archive URL and SHA-256 come from the contract.",
+          "The managed Node lies beside the product's python and paseo folders; the archive cache is under the user's cache folder."
+        ],
+        "exclusions": [
+          "A Node already on the machine is never used for the host, whatever its version.",
+          "No install outside the product's data and cache folders, no bin link, no PATH, shell or npm-config change.",
+          "The Eve application keeps its own separate Node line."
+        ]
+      }
+    },
+    {
+      "id": "Owner-approved incoming catalog sorting at0ce",
+      "statement": "The existing catalog formatter moves only one derived consumer into order, preserving the consumer multiset, authored contract and artifact fields, lane bytes, lockfile pin and test population.",
+      "kind": "decision",
+      "target": [
+        {
+          "path": "mcp/tests/evidence-lifecycle.toml",
+          "locator": {
+            "kind": "line_range",
+            "start": 1076,
+            "end": 1083
+          },
+          "governing_route": "mcp/tests",
+          "rationale": "This derived consumer list carries canonical ordering while its declared membership and contract remain unchanged."
+        }
+      ],
+      "found_at": [
+        {
+          "path": "notes/reports/role-launch/260928-MIK-L107-worker-c1ec121b-f3da-4e9e-ae4a-36795d5b9d81/freeze2/catalog-order-repair/proposal-validation.json",
+          "locator": null,
+          "commit": null
+        },
+        {
+          "path": "notes/reports/role-launch/260928-MIK-L107-worker-c1ec121b-f3da-4e9e-ae4a-36795d5b9d81/freeze2/catalog-order-repair/check.log",
+          "locator": null,
+          "commit": null
+        }
+      ],
+      "disposition": "recorded: explicitly admitted deterministic sorting only; no new finding or semantic requirement",
+      "disposition_source": null,
+      "evidence": "notes/reports/role-launch/260928-MIK-L107-worker-c1ec121b-f3da-4e9e-ae4a-36795d5b9d81/freeze2/catalog-order-repair/evidence-lifecycle.toml.proposal.diff; actual bytes match proposal; PASS83 after inheritedFAIL1",
+      "authority": {
+        "task_document": "agents-remember/260928_maintained-invariant-knowledge/107_the-host-runs-on-the-current-node.json"
+      },
+      "resolution": {
+        "code_tree": "02999c710272fdcf6b9fe262d83298d8f8e522c1",
+        "resolved_at": "2026-10-08T10:29:36.203119+00:00",
+        "targets": [
+          {
+            "path": "mcp/tests/evidence-lifecycle.toml",
+            "start": 1076,
+            "end": 1083,
+            "sha256": "a20b0f19989cb58fc2967bd272eb264a15bbbc6f19d27262475e8fa5f1a90fe3"
+          }
+        ],
+        "placement": "durable host contracts",
+        "record_home": "task-local ordering-only/no-impact history"
+      },
+      "validated_at": "2026-10-08T10:29:36.203119+00:00",
+      "record_action": "add",
+      "supersedes": []
+    },
+    {
+      "id": "INV-BGV9YT recorded version consequence current66",
+      "statement": "Recorded INV-BGV9YT revision1 still names Node22.23.2 at the ensure_node realization, while the current contract pins26.11.1 and preserves its absolute-path, digest, platform and foreign-target guarantees.",
+      "kind": "finding",
+      "target": [
+        {
+          "path": "mcp/src/agents_remember/serving/paseo/paseo_node.py",
+          "locator": {
+            "kind": "symbol",
+            "value": "ensure_node"
+          },
+          "governing_route": "mcp/src/agents_remember/serving/paseo",
+          "rationale": "The acquisition owner verifies the official digest, checks existing product Node, and refuses foreign targets before npm runs."
+        }
+      ],
+      "found_at": [
+        {
+          "path": "notes/reports/role-launch/260928-MIK-L107-worker-c1ec121b-f3da-4e9e-ae4a-36795d5b9d81/freeze2/packet-current.md",
+          "locator": null,
+          "commit": null
+        }
+      ],
+      "disposition": "reported for Curator reconciliation; no Worker memory authoring",
+      "disposition_source": null,
+      "evidence": "knowledge_read FAM-QDY93G@1 / INV-BGV9YT / RLZ-0HKKTZ, origin260928-MIK-L96; Worker read at original memory tree2faf4b...; current sync worklist supplied separately",
+      "authority": {
+        "task_document": "agents-remember/260928_maintained-invariant-knowledge/107_the-host-runs-on-the-current-node.json"
+      },
+      "resolution": {
+        "code_tree": "02999c710272fdcf6b9fe262d83298d8f8e522c1",
+        "resolved_at": "2026-10-08T10:29:36.203119+00:00",
+        "targets": [
+          {
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_node.py",
+            "start": 67,
+            "end": 84,
+            "sha256": "707769af277dcd3b95a6ab775741bd926a5ba1c278293400fb2a4785b58606d1"
+          }
+        ],
+        "placement": "durable host contracts",
+        "record_home": "INV-BGV9YT@2"
+      },
+      "validated_at": "2026-10-08T10:29:36.203119+00:00",
+      "record_action": "revise",
+      "supersedes": [],
+      "scope": {
+        "applicability": "Every host acquisition and every process that starts the host: the provision's npm run, PaseoCli calls and the bridge.",
+        "conditions": [
+          "The platform is Linux x86_64 with /proc; the archive URL and SHA-256 come from the contract.",
+          "The managed Node lies beside the product's python and paseo folders; the archive cache is under the user's cache folder."
+        ],
+        "exclusions": [
+          "A Node already on the machine is never used for the host, whatever its version.",
+          "No install outside the product's data and cache folders, no bin link, no PATH, shell or npm-config change.",
+          "The Eve application keeps its own separate Node line."
+        ]
+      }
+    }
+  ],
+  "reviewer": [
+    {
+      "id": "MIK-R107@v1 / L107-W02 / L107-R02",
+      "statement": "Current W02 satisfies each sealed finding under the explicitly amended approved requirement: one offered host Pi agent answers on26, the matched22 native startup refusal is not a Node failure, exact attempt/journal lineage exists, and public status reports the observed old-Node restart requirement without mutating the host.",
+      "kind": "decision",
+      "target": [],
+      "found_at": [
+        {
+          "path": "notes/reports/260928-MIK-L107-requirement-attempt-journal.md",
+          "locator": null,
+          "commit": null
+        }
+      ],
+      "disposition": "accepted for exact tree02999c710272fdcf6b9fe262d83298d8f8e522c1/current66d packet; advisory CODE PASS",
+      "disposition_source": "notes/reports/role-launch/260928-MIK-L107-reviewer-fbb97228-1b3d-46d2-93a3-28d8c5dc9307.code-r2.verdict.md",
+      "evidence": "notes/reports/260928-MIK-L107-requirement-attempt-journal.md#reviewer-record--l107-r02; notes/reports/role-launch/260928-MIK-L107-reviewer-fbb97228-1b3d-46d2-93a3-28d8c5dc9307.code-r2.verdict.md",
+      "authority": {
+        "task_document": "agents-remember/260928_maintained-invariant-knowledge/107_the-host-runs-on-the-current-node.json"
+      },
+      "resolution": {
+        "code_tree": "02999c710272fdcf6b9fe262d83298d8f8e522c1",
+        "resolved_at": "2026-10-08T10:29:36.203119+00:00",
+        "targets": [],
+        "placement": "task-local retained verification evidence",
+        "record_home": "task-local independent R02 judgment and preserved historical journal"
+      },
+      "validated_at": "2026-10-08T10:29:36.203119+00:00",
+      "record_action": "add",
+      "supersedes": []
+    },
+    {
+      "id": "L107-CODE-R1-F01",
+      "statement": "The current approved witness/control criterion is satisfied by one actual host Pi reply on Node26 and a fresh same-argument Node22 control with the exact same full native startup refusal.",
+      "kind": "finding",
+      "target": [],
+      "found_at": [
+        {
+          "path": "notes/reports/role-launch/260928-MIK-L107-reviewer-fbb97228-1b3d-46d2-93a3-28d8c5dc9307.code-r2.evidence/worker-freeze2/final26/pi-state-result.json",
+          "locator": null,
+          "commit": null
+        },
+        {
+          "path": "notes/reports/role-launch/260928-MIK-L107-reviewer-fbb97228-1b3d-46d2-93a3-28d8c5dc9307.code-r2.evidence/worker-freeze2/control22/matched/matched-comparison.json",
+          "locator": null,
+          "commit": null
+        }
+      ],
+      "disposition": "fixed under explicit amended66d criterion; original rejected default constraint remains historical",
+      "disposition_source": "notes/reports/role-launch/260928-MIK-L107-reviewer-fbb97228-1b3d-46d2-93a3-28d8c5dc9307.code-r2.verdict.md",
+      "evidence": "notes/reports/role-launch/260928-MIK-L107-reviewer-fbb97228-1b3d-46d2-93a3-28d8c5dc9307.code-r2.verdict.md#f01--current-amended-operational-proof",
+      "authority": {
+        "task_document": "agents-remember/260928_maintained-invariant-knowledge/107_the-host-runs-on-the-current-node.json"
+      },
+      "resolution": {
+        "code_tree": "02999c710272fdcf6b9fe262d83298d8f8e522c1",
+        "resolved_at": "2026-10-08T10:29:36.203119+00:00",
+        "targets": [],
+        "placement": "task-local retained verification evidence",
+        "record_home": "task-local independent R02 judgment and preserved historical journal"
+      },
+      "validated_at": "2026-10-08T10:29:36.203119+00:00",
+      "record_action": "add",
+      "supersedes": []
+    },
+    {
+      "id": "L107-CODE-R1-F02",
+      "statement": "Actual W02 supplies the complete exact-candidate/current-packet attempt record and preserves the separately authored late W01 and rejected R01 in the single physical append-only journal.",
+      "kind": "finding",
+      "target": [],
+      "found_at": [
+        {
+          "path": "notes/reports/260928-MIK-L107-requirement-attempt-journal.md",
+          "locator": null,
+          "commit": null
+        }
+      ],
+      "disposition": "fixed; no backdating or rewriting original absence",
+      "disposition_source": "notes/reports/role-launch/260928-MIK-L107-reviewer-fbb97228-1b3d-46d2-93a3-28d8c5dc9307.code-r2.verdict.md",
+      "evidence": "notes/reports/role-launch/260928-MIK-L107-reviewer-fbb97228-1b3d-46d2-93a3-28d8c5dc9307.code-r2.evidence/worker-journal-before-r02.md; notes/reports/role-launch/260928-MIK-L107-reviewer-fbb97228-1b3d-46d2-93a3-28d8c5dc9307.code-r2.evidence/journal-append-receipt.json",
+      "authority": {
+        "task_document": "agents-remember/260928_maintained-invariant-knowledge/107_the-host-runs-on-the-current-node.json"
+      },
+      "resolution": {
+        "code_tree": "02999c710272fdcf6b9fe262d83298d8f8e522c1",
+        "resolved_at": "2026-10-08T10:29:36.203119+00:00",
+        "targets": [],
+        "placement": "task-local retained verification evidence",
+        "record_home": "task-local independent R02 judgment and preserved historical journal"
+      },
+      "validated_at": "2026-10-08T10:29:36.203119+00:00",
+      "record_action": "add",
+      "supersedes": []
+    },
+    {
+      "id": "L107-CODE-R1-F03",
+      "statement": "Both public status paths report an observed prior-Node mismatch and the existing terminal restart remedy without changing the running host, while a matching Node reports no restart requirement.",
+      "kind": "finding",
+      "target": [
+        {
+          "path": "mcp/src/agents_remember/serving/paseo/paseo_node.py",
+          "locator": {
+            "kind": "symbol",
+            "value": "node_status"
+          },
+          "governing_route": "mcp/src/agents_remember/serving/paseo",
+          "rationale": "This pure observation compares the owned executable with the selected product Node and supplies the shared restart-required result."
+        },
+        {
+          "path": "mcp/src/agents_remember/serving/paseo/paseo_daemon.py",
+          "locator": {
+            "kind": "symbol",
+            "value": "runtime_status"
+          },
+          "governing_route": "mcp/src/agents_remember/serving/paseo",
+          "rationale": "The public Paseo status owner merges owned process facts with the Node comparison without starting or reconfiguring the host."
+        },
+        {
+          "path": "mcp/src/agents_remember/serving/paseo/paseo_start.py",
+          "locator": {
+            "kind": "symbol",
+            "value": "_observe"
+          },
+          "governing_route": "mcp/src/agents_remember/serving/paseo",
+          "rationale": "Dashboard host observation presents the same contract-versus-owned-executable comparison under its read-only deadline."
+        },
+        {
+          "path": "mcp/src/agents_remember/serving/paseo/paseo_start.py",
+          "locator": {
+            "kind": "symbol",
+            "value": "_remedy_line"
+          },
+          "governing_route": "mcp/src/agents_remember/serving/paseo",
+          "rationale": "The presentation boundary names the existing explicit provision command when Node restart is required."
+        }
+      ],
+      "found_at": [
+        {
+          "path": "mcp/tests/test_paseo_start.py",
+          "locator": {
+            "kind": "symbol",
+            "value": "test_running_host_is_read_only_including_mismatches_and_session_names"
+          },
+          "commit": null
+        },
+        {
+          "path": "notes/reports/role-launch/260928-MIK-L107-reviewer-fbb97228-1b3d-46d2-93a3-28d8c5dc9307.code-r2.evidence/worker-freeze2/control22/matched/candidate26-live22-public-dashboard-status.json",
+          "locator": null,
+          "commit": null
+        }
+      ],
+      "disposition": "fixed",
+      "disposition_source": "notes/reports/role-launch/260928-MIK-L107-reviewer-fbb97228-1b3d-46d2-93a3-28d8c5dc9307.code-r2.verdict.md",
+      "evidence": "notes/reports/role-launch/260928-MIK-L107-reviewer-fbb97228-1b3d-46d2-93a3-28d8c5dc9307.code-r2.evidence/paired-f03-source.json; notes/reports/role-launch/260928-MIK-L107-reviewer-fbb97228-1b3d-46d2-93a3-28d8c5dc9307.code-r2.evidence/reviewer-focused-tests.log; notes/reports/role-launch/260928-MIK-L107-reviewer-fbb97228-1b3d-46d2-93a3-28d8c5dc9307.code-r2.verdict.md#f03--precise-status-repair-and-preserved-transition",
+      "authority": {
+        "task_document": "agents-remember/260928_maintained-invariant-knowledge/107_the-host-runs-on-the-current-node.json"
+      },
+      "resolution": {
+        "code_tree": "02999c710272fdcf6b9fe262d83298d8f8e522c1",
+        "resolved_at": "2026-10-08T10:29:36.203119+00:00",
+        "targets": [
+          {
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_node.py",
+            "start": 36,
+            "end": 45,
+            "sha256": "707769af277dcd3b95a6ab775741bd926a5ba1c278293400fb2a4785b58606d1"
+          },
+          {
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_daemon.py",
+            "start": 53,
+            "end": 95,
+            "sha256": "73e3af9d93bea195be6294184250b2c152b3c76920c5dcce07b6d6d646423eeb"
+          },
+          {
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_start.py",
+            "start": 105,
+            "end": 142,
+            "sha256": "60d45bf6a1190bae58ae9b6acb6c98000aa9fc3098a133ae7dd2360dcbbb50dd"
+          },
+          {
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_start.py",
+            "start": 168,
+            "end": 186,
+            "sha256": "60d45bf6a1190bae58ae9b6acb6c98000aa9fc3098a133ae7dd2360dcbbb50dd"
+          }
+        ],
+        "placement": "durable host contracts",
+        "record_home": "INV-7HC1QH@1 (co-resolved with Worker status clause)"
+      },
+      "validated_at": "2026-10-08T10:29:36.203119+00:00",
+      "record_action": "add",
+      "supersedes": []
+    }
+  ]
+}

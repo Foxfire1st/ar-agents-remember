@@ -1,0 +1,127 @@
+{
+  "path": "dashboard/src/panels/review/l86.test-utils.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "07758437da5439381bd614a3e9a4ee9a269162ec",
+        "content": "sha256:4aad36f9fdc7d2597df0a0a863a537d0ba82319fb564c58adbe9678feb12f0de",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-7SA9RR",
+      "invariant": "INV-BM96VC",
+      "origin": {
+        "handoffEntry": "MIK-R57@v2 by-design real-captures",
+        "leaf": "260928-MIK-L57"
+      },
+      "rationale": "Loads the retained raw public fixtures for mounted controls without manufacturing smaller substituted answers.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The loader parses each named retained capture.\n\nAnchor: \"export const captured = <T>(name: string): T =>\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07758437da5439381bd614a3e9a4ee9a269162ec",
+            "content": "sha256:c86cfcdde86992ccdb167e60e91d76c49c3343b484f2c0b7b63b2e2168c7d370",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 7
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The selected invariant is read from exact request provenance and checked against the captured member body.\n\nAnchor: \"const memberRequest = captured<{\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07758437da5439381bd614a3e9a4ee9a269162ec",
+            "content": "sha256:bb1cf8dc8f7ceec7fe95a962ca3256d83cba9ac123e4fb00c38baf15e0750874",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 21
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The shared mounted target names the recorded L37 leaf.\n\nAnchor: \"export const target = {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07758437da5439381bd614a3e9a4ee9a269162ec",
+            "content": "sha256:b843b83ed489482ee39bc37541e9d9f850a7a68242696e2631797bbed720d2bc",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 35
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The fetch stub logs requests and can hold selected lane or worklist responses. Held-response selection distinguishes lane from unscoped worklist requests.\n\nAnchor: \"export function serve(entries = catalogue, hold?: 'lane' \\| 'worklist') {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07758437da5439381bd614a3e9a4ee9a269162ec",
+            "content": "sha256:be37dbf86c0d319bc4dd00159088046ed6eaba967e465959bf7f24edb1d1b70d",
+            "locator": {
+              "end": 126,
+              "kind": "line_range",
+              "start": 42
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The reply router dispatches the exact supported public paths and throws for any other route. Intent and tree replies are selected by their selector and tree query parameters.\n\nAnchor: \"function intentReply(url: URL): unknown {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07758437da5439381bd614a3e9a4ee9a269162ec",
+            "content": "sha256:953ae93baef0859cf49a95a86703824742404462730835c3c3c85c5794a1c5ad",
+            "locator": {
+              "end": 121,
+              "kind": "line_range",
+              "start": 62
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The summary response is composed from captured lane attribution counts with literal zero intent counters; it was not captured with L37.\n\nAnchor: \"const laneFacts = (lane as { lane: Record<string, number> }).lane;\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07758437da5439381bd614a3e9a4ee9a269162ec",
+            "content": "sha256:e15e5c3c21a0ca81896ec050f267e62e5e54b98c3cde7dd2e700b843ccdafe04",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 75
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

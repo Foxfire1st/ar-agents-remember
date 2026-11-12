@@ -1,0 +1,87 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/code_quality/diff_coverage.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Canonical runner and typed startup/timeout failures",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "32b722250415940d4a176b42593587c0c3e4243d",
+            "content": "sha256:132b410773395d652cb08df29ea7d7baac7f0093254a9f4772677c5893607e7e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_git"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Explicit and inferred comparison-base resolution",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "32b722250415940d4a176b42593587c0c3e4243d",
+            "content": "sha256:dfa5cc8974878c6b02ee30710884b3fc2b723e8e98f2b616302ad25a0da0d826",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_base"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Changed statements and source-line branch arcs",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "32b722250415940d4a176b42593587c0c3e4243d",
+            "content": "sha256:1e38c166a0ed1342cdb377f46b8b5d6ed39675d92456ac4e125da8c9eaf7c072",
+            "locator": {
+              "kind": "symbol",
+              "name": "tally_file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Measured/nonmeasurable states",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "32b722250415940d4a176b42593587c0c3e4243d",
+            "content": "sha256:e1d12664a90b91756c3b6a49df38cd8ca359451c37762348c48fb7526e0eccf8",
+            "locator": {
+              "kind": "symbol",
+              "name": "measure"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "All findings remain diagnostic without a floor",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "32b722250415940d4a176b42593587c0c3e4243d",
+            "content": "sha256:7f77a887176f806b7dbe4fd1b3af226513165b8cb840736d73bdd42460313de8",
+            "locator": {
+              "kind": "symbol",
+              "name": "render"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

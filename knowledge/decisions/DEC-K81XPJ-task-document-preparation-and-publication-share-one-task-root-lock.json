@@ -1,0 +1,84 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "Constrains future changes to task-doc source preparation, canonical source/copy rollback and the shared central publication boundary; it preserves the explicit rejected inverse, central-only and nested-success alternatives rather than presenting them as deferred work."
+  },
+  "alternatives": [
+    {
+      "option": "One repository task-root file lock spans task_doc source read and preparation and is re-entered by the central publisher through validation, publication, refresh and rollback; a call-scoped marker refuses nested publication before writes.",
+      "reason": "The architect's L54-C05 task-document publication ruling and both amendments close the actual interval with the existing kernel primitive. Another thread/process waits and prepares after rollback; same-call nested publication is refused rather than falsely credited as a foreign success.",
+      "status": "chosen"
+    },
+    {
+      "option": "Add a per-key inverse to undo the failed batch against the latest source generation.",
+      "reason": "The architect ruled that closing the interval makes whole-source snapshot restoration correct; a second inverse mechanism is not built for the same fact.",
+      "reconsider_when": "A production requirement demonstrably needs independently successful publication inside the rollback interval and the architect explicitly revises the serialization boundary.",
+      "status": "rejected"
+    },
+    {
+      "option": "Take the task-root file lock only around the central transaction after task_doc has read and prepared its candidate.",
+      "reason": "The preparation-gap amendment identifies that a waiting question writer would retain the failing batch's source operand and refuse its exact CAS after rollback instead of preparing and publishing against the restored source.",
+      "reconsider_when": "The authoritative read/prepare boundary is changed by an approved design that still proves the waiting writer publishes from the restored source without implicit retries.",
+      "status": "rejected"
+    },
+    {
+      "option": "Allow a successful same-thread publication inside copy refresh because the file lock is re-entrant.",
+      "reason": "Re-entrancy alone admits the review counterexample: snapshot rollback erases that nested success. The amended criterion distinguishes a real foreign thread/process from a nested publication and requires the latter to refuse before writing.",
+      "reconsider_when": "A real production path needs publication inside publication; the worker must stop and obtain an architect ruling before changing the active-marker refusal.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The sibling lock file is derived from the repository task root by kernel.file_lock.lock_path_for; the ordinary task_doc and central publisher share its same-thread re-entrant hold.",
+    "The central call-scoped active marker is reset in finally, including failures. Nested task_doc entry returns task-document-publication-in-progress; direct nested central publication raises its named task-document error before the publisher runs.",
+    "Whole-source snapshot rollback is retained. Other independently prepared topology, retirement and linkage callers keep exact CAS and clean refusal on a race, with no automatic retry.",
+    "The abstract own-document/copy-set guarantee of INV-J3PYB0 remains unchanged; its publication realization states this actual enforcement mechanism."
+  ],
+  "context": "Failed task-document copy refresh restores pre-batch canonical source snapshots. Without exclusion, another successful question publication could be erased; taking exclusion only after task_doc prepares an edit also leaves the waiting writer with a stale exact-CAS operand.",
+  "decider": "architect, L54-C05-TASK-DOCUMENT-PUBLICATION-TAKES-THE-EXISTING-FILE-LOCK.json, including both amendments",
+  "id": "DEC-K81XPJ",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "eb17f15ae8c3ab296c94191b81ec35737c0625e8",
+        "content": "sha256:4f28ba262a9548b71c9f8272d0ff337b9257c577a0c59072448065bfd61bc8ac",
+        "locator": {
+          "kind": "symbol",
+          "name": "run_task_doc_call"
+        },
+        "path": "mcp/src/agents_remember/application/task_docs/task_doc_publication.py"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "eb17f15ae8c3ab296c94191b81ec35737c0625e8",
+        "content": "sha256:c5e141f1dc8fee5e0f37869b0f85bddc6ad170fb3e149c5c9c62fb4a208f7be8",
+        "locator": {
+          "kind": "symbol",
+          "name": "publish_task_doc_transaction_and_refresh"
+        },
+        "path": "mcp/src/agents_remember/application/task_docs/task_doc_publication.py"
+      }
+    },
+    {
+      "relation": "explains",
+      "target": "INV-J3PYB0"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "wave-06-onboarding.json"
+    },
+    "handoffEntry": "L54-C05-task-root-lock",
+    "leaf": "260928-MIK-L54",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

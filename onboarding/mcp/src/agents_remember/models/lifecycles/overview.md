@@ -2,362 +2,159 @@
 
 | Field | Value |
 | --- | --- |
-| repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/models/lifecycles/` |
-| doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-27T05:02:28+00:00 |
-| lastVerifiedCommitHash | `a0b2c18d2b8d08ac1242a13f65bde900a190df7a` |
-| lastVerifiedCommitDate | 2026-09-27T07:57:14+02:00|
-| governingOverview | `../overview.md` |
 
 ## Governing Overview
 
 [models overview](../overview.md)
 
+## Purpose
+
+This directory defines strict transaction models for task-addressed closeout, integration and direct landing. The former agent-session lifecycle signal response/vocabulary in responses.py is removed; transaction package naming does not restore that API. It describes accepted inputs, durable operation records, public observations, preparation, certification, cancellation and enclosure identity. It also defines curator-coherence generations and the separate knowledge-review assessment collection.
+
+Execution, persistence, physical publication readback and tool payload assembly belong to the consuming observer, worktree, application and MCP layers. A model accepting a record establishes its structural validity; it does not establish that Git mutation, certification execution or publication occurred.
+
 ## Hot Path Summary
 
-Operation recovery and integration authority carry code and memory-content commits only. `mutation_evidence.py` keeps the actual `head`/`headTree` and adds `contentHeadTree` for memory comparisons with root `memory.md` excluded. Prepared state admits the ordered code/content prefix and separately proves the certified content tree when an existing raw memory output still contains a legacy cache.
+Use `finalize.py` for terminal finalization responses and `operation.py` for accepted transaction inputs and durable records. Native task stage/activity/eventAt belongs to observer/projection.py and its task-entry producer, not the removed responses.py session State/Phase domain. `operation_projection.py` owns the versioned public envelope, re-exported by `operation.py`; `operation_kinds.py` centralizes operation kinds, statuses, phases and control actions.
 
-This route is the strict vocabulary for root-journal operations: generations, closeout-door and successor publication, worker termination, direct landing, legacy migration proof, and public legal controls.
+Recovery output fields distinguish the code commit from the memory-content commit. `mutation_evidence.py` retains actual Git `head` and `headTree` alongside optional `contentHeadTree`. Preparation retains the ordered code/memory-content prefix and keeps private output selection separate from published mutation authority.
 
-Use `responses.py` for lifecycle signal vocabularies and tool responses, `finalize.py` for the
-terminal finalizer response, and `operation.py` for asynchronous closeout/integration inputs,
-durable records, and public projections. The operation record separately retains closeout selection,
-integration selection, and completed organizational certification. `certification.py` and
-`integration_certification.py` own those selected-reference vocabularies; execution and physical
-publication readback remain outside the model layer.
+For curator publication, read `curator_coherence.py` with `memory_candidate.py`. For assessment currentness, read `review_assessment.py` with `review_assessment_binding.py`: an unmeasured binding is neither current nor stale.
 
-## What Belongs Here
+## Construction
 
-Strict lifecycle wire and durable-operation models. Lifecycle behavior, persistence, status
-projection, and tool payload assembly remain in observer, worktree, application, and MCP layers.
+DirectLandingOperationInput retains canonical leafTaskDocumentRef, optional codeBefore and codeCommitMessage to distinguish create from verify-existing. The journal owns accepted input/policy snapshots and code/memory mutation/output proof, not a full pre-code check verdict; raw output/lifecycle state is not interchangeable with top-level response state.
 
-## Operating Model
+### Signal and transaction models
 
-The package centralizes related model definitions without introducing a package facade.
-`responses.py` owns the lifecycle state/phase vocabularies consumed by observer code;
-`operation.py` separates private durable execution identity from the task-addressed public view.
+The package marker introduces no facade. The former responses.py session state/phase vocabulary and lifecycle-id signal response are historical only. The retained asynchronous transaction-operation vocabulary belongs to operation_kinds.py; native task state is a separate model, not a rename of the deleted signal response.
 
-## Local Invariants And Traps
+`CloseoutOperationInput` retains normalized effective input, approval note, gate-policy snapshots and corrective dispositions. `IntegrateOperationInput` retains strategy, gate-policy snapshots and the completion-seat choice. Their discriminated union also admits the separate direct-landing input.
 
-- One module owns each vocabulary; consumers import it rather than copying literal sets.
-- AR-owned response and operation records reject unexpected fields.
-- Operation keys, worker PIDs, fingerprints, and candidate trees remain private record state.
-- Selected certification belongs to one exact operation key/generation. Completed integration binds
-  the same original frozen run and G1–4 references, completion fingerprint, comparison base, memory
-  cap, and admitted integration code commit.
-- Selection advances meaningful state; model validity alone does not prove stored publication bytes.
+`LifecycleOperationRecord` is the strict schema-3.0 internal snapshot. It retains accepted identity, generation, revisions, worker ownership, mutation evidence, recovery commits, cancellation and termination evidence, legacy migration proof, preparation, door publication and optional certification selections. The public `LifecycleOperationProjection` is a coherent task-addressed envelope with versioned identity and component bindings, worker and approval observations, recommendations, legal controls and an optional meaningful-state cursor. Its declared fields omit raw operation keys, worker PIDs, leases and process fingerprints; this is not a blanket secrecy guarantee for every nested result value or identity digest.
+
+`LifecycleFinalizeTaskResponse` declares terminal task facts, blockers, cleanup and archive results, projection effects and atomic-series activation facts. `outsideScratch` names the root a completed-cleanup retry removed, and `outsideScratchReconcile` carries the sweep that runs beside every ending answer. It declares neither completion-seat result sets nor edge proof; the producer emits cleanup/archive/projection and activation facts. Its `agentArchive` defaults to an empty mapping; finalization forwards an archive report when the cleanup or abandon result supplies one.
+
+### Scheduling, enclosure and private preparation
+
+`door.py` defines waiting, deferred, withdrawn and claimed scheduling dispositions, publication evidence and task/provenance identity vocabulary. `enclosure.py` defines reserved, manifest-proven, addressable and terminal-archived address states and the exact terminal predecessor link, including archive and receipt paths. These structures describe scheduling and enclosure evidence; they do not themselves perform queue transfer, external archival or cleanup.
+
+The standing enclosure contract is that cleanup follows external archival, receipt and readback, and successor publication cites the exact terminal predecessor. Verification of the executing cleanup and successor owners remains an uncertainty of this bounded review.
+
+`preparation.py`, `preparation_state.py` and `prepared_memory.py` separate intent and raw output identity, retained command observations, and logical versus physical execution views. `OperationPreparationState` admits only the ordered code/memory-content prefix. Command kinds form an ordered create/materialize/commit prefix; earlier commands must have succeeded before later commands are admitted. The output-command check requires an observed original commit command when the selection carries command history. It does not impose that condition on an output with an empty command tuple.
+
+Transition validation preserves selected identity and prior commands, refuses clearing or restarting command history, and permits late terminal observation only under the original worker or proved-exit authority. A prepared-code execution view binds its references and digest while leaving actual repository and Git readback to its owner. None of these models turns a private commit into a published mutation.
+
+### Certification and curator generations
+
+`certification.py` and `integration_certification.py` own retained selected-reference vocabulary. The operation record separately retains closeout selection, integration selection and completed organizational quality certification. When completion certification is present, validation requires the original frozen run and four original gate certificates, exact selected integration references, completion identity and admitted integration code commit. The retained fields describe explicit or historical certification authority; their presence alone does not show that ordinary transaction workers select or require them.
+
+`CuratorQualityAttestation` and `CuratorCoherenceRecord` carry `MemoryCandidatePairIdentity`, whose cells distinguish repository, contract, roots, branches, bases and onboarding root. The model documents the cache location as informational and excluded from the contract-digest projection. The public coherence response declares pair identity and typed mismatch/recovery fields (`pairField`, `expected`, `observed`, `nextArgs`); pair identity is optional in that response shape, so model declarations alone do not prove that every prepared, published, valid or refused response populates it.
+
+Curator source candidates and judgments use the `(sourceFile, onboardingFile, classification)` identity. Record validation requires unique candidates, unique judgments and exact set equality. Requirement revision, delivery attempt, candidate trees, attestation digests, record digest and predecessor-authority digest remain separate cells.
+
+`PUBLICATION_MEMBERS` declares the nine non-null publication inputs in request order, including the semantic requirement revision, delivery attempt and expected task intent. `JUDGMENTS_MEMBER` names the separate judgment content input; review assessments are another optional content collection. The publish validator, missing-field refusal and prepare input statement consume the declaration. Non-publish actions refuse supplied publication-only fields, and `freeze_snapshot` has its own refusal. The current refusal says `missing ` followed by field names; it does not use the former prose's `missing:` spelling. Prepare's direct caller uses `publication_input_statement()`.
+
+Recorded judgments may additionally retain evidence custody. The serializer omits absent custody to preserve older record encoding, and supplied custody must retain the original evidence SHA. Caller judgment inputs have no replacement-custody field. `ValidatedCuratorCoherenceGeneration` represents integrity-checked durable content separately from a live authority pointer.
+
+### Knowledge-review assessments
+
+`CuratorCoherenceRecord.assessments` is a separate typed collection, bounded at 256 and checked for assessment-ID uniqueness. It is not added to source-candidate judgment coverage: knowledge subjects and source-file pairs have different identities.
+
+`review_assessment.py` owns assessment records and read projections; `review_assessment_binding.py` compares recorded dependencies with measured values; `review_assessment_store.py` builds and checks collection bindings without deciding semantic equivalence or endorsing a disposition. The dependency builder uses `review-assessment/v1`; its policy requires candidate-state, code-tree, task-intent, semantic-topology, evidence-bytes and validator edges, with memory-tree, predecessor-record and review-record optional. The coherence record declares one `review-record` edge per stored assessment; an assessment does not declare the containing record as its own dependency. Those different directions avoid the self-referential binding described by the existing contract.
+
+The measurement vocabulary distinguishes not-measured, measured and unavailable observations. A binding reports `unavailable` when measurement failed, `stale` when a measured value disagrees, `not-measured` when declared identities remain uncovered, and otherwise `current`. An empty mapping is a completed measurement with no values, not a measurement failure; coverage of the assessment's declared identities still decides its binding state. The comparison does not decide equivalence, and stale judgments remain readable.
+
+Subject projections distinguish `none-recorded` from `not-measured` and `unavailable`. Currentness counts must describe and partition the entries. Independently, unresolvedCount must equal the number of entries whose disposition is unresolved, not merely be bounded by assessmentCount. Their status follows stale, unavailable, unresolved, not-measured, then current precedence. `assessment_state_for` accepts explicit statuses rather than an instruction to assume currentness.
+
+Direct operation input carries optional leafId as retry identity while old journals default it to None. Shared evidence-dependency capacity follows from bounded record populations, including coherence judgments and assessments; valid unrelated evidence need not be coarsened to a bare historical count. Model bounds still refuse before artifact writes.
+
+### Retained comparison availability, not the live judgment pane
+
+`comparison_records.py` defines ComparisonAssessmentAvailability for immutable comparison manifests.
+An answered collection requires its recorded count; none_recorded requires zero, recorded requires a
+positive count, and unanswered states carry no count plus a recovery action. These guards constrain
+supplied values; they do not independently measure the collection or authenticate artifact bytes.
+Retaining this descriptor does not restore the removed observation/evidence/assessment reviewer pane.
+The current live review has its separate judgment/proof contract. Read its concrete model card for
+manifest-versus-physical-artifact validation ownership.
+
+## Invariants and boundaries
+
+- Consumers should import the owning vocabulary rather than duplicate literal sets. This is a standing ownership rule, not proof that every consumer conforms.
+- Response and operation models retain strict unexpected-field rejection. Strictness does not mean all compatibility decoding is absent: both operation and curator records decode legacy missing task intent into the explicit `missing-intent` state. The former blanket absence promise conflicts with these deciding predicates.
+- Actual Git head/tree facts are distinct from filtered content-tree facts. The mutation snapshot owner excludes root `memory.md` from its isolated content, index and candidate trees when memory-cache filtering is selected, while retaining actual head/tree facts. The surviving kernel `ExistingGitPreparationBinding` explicitly separates immutable Git `tree` from optional `memory_content_tree` in the admitted memory-cache domain. The old prepared-memory reuse/new-output consumers are removed, not the actual-versus-filtered model distinction. These are consumer-source predicates, not effects performed by the model or execution evidence from this account.
+- Selected certification belongs to its exact operation key and generation. Completed integration certification must bind the original selection and admitted code commit; structurally valid references do not prove stored publication bytes.
+- `recordRevision` and `meaningfulRevision` have different purposes. The meaningful-state subset includes both certification selection cells; the store's transition checks require meaningful revision to advance precisely when that subset changes. The public envelope carries the meaningful cursor separately from its record-bound identity.
+- Worker exit requires an observation timestamp. Cancellation evidence requires nonempty expected facts and exact observed equality. Its `workerExitProven` field is a boolean declaration; this model's own validator does not require it to be true. Executing cancellation authority requires separate verification.
+- Accepted input, source/target authority, mutation history, irreversible boundaries and worker facts belong to durable operation state rather than being inferred from queue presence. The original retry/recovery/successor and legacy fail-closed behavioral promises are retained as contracts requiring their executing owners' confirmation.
+- Assessment currentness must report what was measured. Missing measurement is not favorable evidence, a failed measurement is not an empty successful measurement, and a summary cannot contradict its entries.
+
+## Authority uncertainties
+
+No lifecycle authority or task-status record was assigned to this review. Historical leaf names and dates are not current status or acceptance evidence. No test, differential probe, installation or product validation was executed. The earlier 80-shape probe and registered-tool regression claim are historical assertions whose evidence was not examined.
+
+The original claim that normal closeout/integration workers do not select, populate or require retained certification fields is not established by model optionality or the examined generation constructor alone. Confirmation belongs to the executing workers. Likewise, deletion provenance for `door_response.py`, `successor.py` and the retired ledger intent, schema-1 removability, queue-invalidation survival, and the complete integration/refusal behavior remain outside the deciding source excerpts examined here. These uncertainties do not assign a new lifecycle status or change standing intent.
 
 ## File-Level Onboarding Map
 
-- [`__init__.py.md`](__init__.py.md) — side-effect-free package marker.
-- [`responses.py.md`](responses.py.md) — lifecycle signal vocabularies and responses.
-- [`finalize.py.md`](finalize.py.md) — terminal task-finalization response.
-- [`operation.py.md`](operation.py.md) — asynchronous lifecycle operation inputs, record, and projection.
+- [comparison_records.py](comparison_records.py.md) — retained manifest availability, not a live pane.
+- [review_assessment.py](review_assessment.py.md) — stored assessment/count/currentness projection.
 
+- [`__init__.py.md`](__init__.py.md) — side-effect-free package marker.
+- [`finalize.py.md`](finalize.py.md) — terminal task-finalization response.
+- [`operation.py.md`](operation.py.md) — asynchronous lifecycle operation inputs, record, and projection re-export.
 - [`certification.py.md`](certification.py.md) — exact closeout selection, retained memory observations and append-only original terminal history.
 - [`integration_certification.py.md`](integration_certification.py.md) — full integration selection, original completion identity and retained interrupted terminals.
+- [preparation.py](preparation.py.md), [preparation_state.py](preparation_state.py.md) and [prepared_memory.py](prepared_memory.py.md) — private preparation vocabulary and logical/physical execution views.
 
 ## Child Overviews
 
 None.
 
-## Repo-Internal References
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Lifecycle response vocabularies and models are owned together. | `LiveState`; `LifecycleResponse` | mcp/src/agents_remember/models/lifecycles/responses.py:16-16; mcp/src/agents_remember/models/lifecycles/responses.py:30-35 |
-| Finalization exposes edge proof and completion-seat result sets. | `LifecycleFinalizeTaskResponse` | mcp/src/agents_remember/models/lifecycles/finalize.py:18-54 |
-| Asynchronous operation records keep private identity out of the public projection. | "class LifecycleOperationRecord(BaseModel):"; "class LifecycleOperationProjection(StrictResponseModel):" | mcp/src/agents_remember/models/lifecycles/operation.py:340-340; mcp/src/agents_remember/models/lifecycles/operation_projection.py:340-340 |
-
-Current working-candidate evidence for this route:
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Recovery records have two output commits. | `LifecycleOperationRecoveryCommits` | mcp/src/agents_remember/models/lifecycles/operation.py:66-72 |
-| A filtered content head does not replace actual Git head/tree facts. | `GitMutationSnapshot`; `contentHeadTree` | mcp/src/agents_remember/models/lifecycles/mutation_evidence.py:18-30 |
-| Prepared state has an ordered two-leg prefix. | `OperationPreparationState`; `_LEG_ORDER` | mcp/src/agents_remember/models/lifecycles/preparation_state.py:19-19; mcp/src/agents_remember/models/lifecycles/preparation_state.py:112-128 |
-
-## Docs References
-
-No Domain Documentation source is configured.
-
-## Cross-Repo References
-
-No cross-repository implementation dependency governs this route.
-
 ## How To Use This Area
 
-Read the focused model card first, then its producer/consumer references. Use the parent models
-overview for registry-wide response conventions.
+Read the focused model card, then its producer and consumer references. Use the governing models overview for registry-wide response conventions.
 
-## L23 Final Candidate Route Disposition
-
-This route owns the validated durable-operation record, including accepted candidate and monotonic
-recovery-commit evidence. Agent-facing lifecycle responses remain task-addressed and deliberately
-exclude operation keys, PIDs, leases, and resume tokens.
-
-## 260815-DAG-L4 L4 Integration Journal Schema
-
-Lifecycle operation records bind integration to canonical contract and repository identities, exact source and target refs, accepted commits, conflict provenance, irreversible recovery facts, and worker ownership. Legacy or incomplete integration authority fails closed rather than being synthesized.
-
-## 260821-CLIVE-L1 Evidence And Strict Schema
-
-Closeout lifecycle records are strict schema 3.0 and carry normalized effective input plus per-leg mutation evidence. `mutation_evidence.py` defines pre-mutation, mutation-intent, reconciled-unchanged, and commit-proven states over exact Git snapshots. Recovery cells are a derived projection, and the exact finalized-contract publication hash retains verified-existing/no-op generations without inventing Git mutation evidence. Compatibility readers and runtime bypasses are intentionally absent.
-
-## 260821-CLIVE-L2 Current Architecture
-
-The journal record is the durable authority after scheduling claim transfer. Retry preserves accepted input; recovery reconciles the same generation; cancellation requires exact Git/process evidence; revision publishes one linked successor. Direct landing has its own accepted input and memory-content mutation evidence; the ledger intent is retired. Schema-1 proof is isolated and removable.
-
-### Reconciled Source Evidence
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Closeout and integrate inputs retain their kind-specific accepted decisions. | `CloseoutOperationInput`; `IntegrateOperationInput` | mcp/src/agents_remember/models/lifecycles/operation.py:308-317; mcp/src/agents_remember/models/lifecycles/operation.py:320-329 |
-| Organizational completion proof requires original full-prefix references and the exact selected integration authority. | `IntegrationQualityCertification`; `_require_integration_certification_authority` | mcp/src/agents_remember/models/lifecycles/operation.py:205-242; mcp/src/agents_remember/models/lifecycles/operation.py:562-585 |
-| Enclosure address models. | `EnclosurePublicationState`; `TerminalEnclosurePredecessor` | mcp/src/agents_remember/models/lifecycles/enclosure.py:20-25; mcp/src/agents_remember/models/lifecycles/enclosure.py:28-42 |
-| Worker termination evidence. | `WorkerTerminationEvidence`; `LifecycleCancellationEvidence` | mcp/src/agents_remember/models/lifecycles/termination.py:12-33; mcp/src/agents_remember/models/lifecycles/termination.py:36-53 |
-
-## 260821-CLIVE Final Door, Journal, And Enclosure Models
-
-`door.py` is canonical scheduling intent with exactly waiting/deferred/withdrawn/claimed
-dispositions and immutable task/repository/provenance identity. The public join result
-`door_response.py` was deleted with the closeout-door tool entry point (commit `6982c6a7`); no door
-response model remains on this route. `operation.py`
-owns the durable lifecycle after claim: running state, source-journal identity, commits,
-certification, integration, cancellation, retirement, and supersession survive queue invalidation.
-
-`enclosure.py` owns the terminal archive, external receipt, locator progression, and exact terminal
-predecessor required for successor-enclosure publication. The former `successor.py` standalone
-intent model is deleted: missing enclosure state and standalone successor WALs are not authority.
-Cleanup may remove the enclosure root only after canonical entries have been externally archived,
-receipted, and read back; a successor must cite that exact terminal predecessor.
-
-## 260824-PDLS Final Lifecycle-Model Reconciliation
-
-Operation and enclosure validation is split into named single-purpose checks for commit legs,
-irreversible boundaries, recovery, legacy proof, mutation history, and worker authority. The split
-preserves one strict journal-owned model surface; it does not add permissive readers, fallback
-state, or queue-derived lifecycle evidence.
-
-## 2026-08-26 Shared Operation And Control Vocabulary
-
-`operation_kinds.py` is the single model owner for both `LifecycleOperationKind` and the closed `LifecycleControlAction` set. Worktree request DTOs, lifecycle controls, and public projections consume those types rather than declaring action literals at an effect layer. This keeps exhaustive request/response typing beside the lifecycle model vocabulary.
-
-## MCAR-L02 Curator-Coherence Records
-
-`curator_coherence.py` defines frozen strict source-candidate, judgment, recorded-evidence,
-generation, stable-authority, snapshot, action-request, and response models. Requirement revision,
-delivery attempt, candidate trees, attestation digest, record digest, and predecessor-authority
-digest are different cells. Exact set validation prevents a report from silently covering eight
-candidates while the current attestation contains ten.
-
-## KS-R24@v1 The Publication Set Is One Declaration
-
-`curator_coherence.py` now declares what `publish` requires **once**. `PUBLICATION_MEMBERS` is a tuple
-of `PublicationMember` beside the request model, in the request model's own field order, each entry
-carrying its caller-written field name and whether `prepare` derives it; `JUDGMENTS_MEMBER` names
-`judgments`, a publication input that is not one of the nine the `None` check covers. The validator,
-the `publish` refusal (`publication_refusal`) and the `prepare` text (`publication_input_statement`) all
-read that declaration, so a member appended to it is checked, named and stated with no second edit —
-the drift the single list removes. `forbidden_publication_refusal` names the publication-only field a
-`status`/`prepare`/`validate` call received, in model order, with the `freeze_snapshot` branch keeping
-its own message. The messages are the requirement: the shipped refusal named three prose categories
-("identity, predecessor, and caller") while the two members that actually caused it
-(`semantic_requirement_revision`, `delivery_attempt`) belonged to none of them, which is how two leaves
-of this master recorded an unpublished coherence authority as an impassable tool defect
-(`notes/DISCLOSURES.md` D-11). No member became optional, none became required, and a differential
-probe over 80 request shapes measured 0 accept/refuse changes. File-level detail is in the sidecar, and
-the `prepare` half lives on the closeout route.
-## 260918-TSIP-L3 The Publish Refusal Names The Field (`T50`)
-
-`CuratorCoherenceRequest._action_has_one_input_shape` requires nine non-null fields for `publish` and
-forbids them on `status`/`prepare`/`validate`. Its predicate tests each field against `None`, so the
-entries now carry the request field's own name beside the value: the `publish` refusal appends
-`missing: <every absent field>` and the sibling branch names what it received. **That message is the
-caller's only route to the field** — pydantic attaches a model-level validator error to nothing
-(`loc: ()`) — and the JSON schema cannot carry the requirement, because it is conditional on
-`action == "publish"`. The predicate itself is unchanged: a refusal's text, not its behaviour, was the
-defect, which is why the repair is pinned through the **real registered tool** in
-`mcp/tests/test_tools.py` and not only at the model boundary.
-
-## MCAR-L03 Pair-Bound Lifecycle Evidence
-
-`CuratorQualityAttestation` and `CuratorCoherenceRecord` now require the complete frozen
-`MemoryCandidatePairIdentity`, not merely independent code and memory tree strings. The public
-coherence response carries that same pair on prepared, published, valid, and typed-refusal paths;
-`pairField`, `expected`, `observed`, and `nextArgs` preserve exact mismatch and recovery facts
-without exposing a second authority. This makes a record from another otherwise-valid checkout,
-base, branch, onboarding root or contract structurally ineligible for the current leaf. The consumer cache path is excluded from candidate identity.
-
-## CCR-R18@v1 Generation-Coherent Projection Contracts
-
-260831-CCR-L18 added `models/lifecycles/operation_projection.py` to this route: the closed state matrix (status/phase/worker-state/result-class/control-action cells, versioned `lifecycle-operation-state-matrix/v1`) and the revision-bound public `LifecycleOperationProjection` envelope (identity, component bindings, worker/approval/recommendation cells). `operation_kinds.py` now centralizes `LifecycleOperationStatus` and `LifecycleOperationPhase`; `operation.py` gained the monotonic `recordRevision` field and re-exports the envelope. File-level detail lives in the three sidecars.
-
-## Observation Cursor Contract
-
-`operation_wait.py` declares the status-change wait vocabulary. `operation.py` retains both
-`recordRevision` for durable writes and `meaningfulRevision` for meaningful state changes;
-`operation_projection.py` carries the optional public wait cursor in the versioned coherent
-envelope. These revisions have different purposes and must not be substituted for one another.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The durable record owns both revisions; its meaningful subset includes both selected certification cells. | `LifecycleOperationRecord`; `_MEANINGFUL_STATE_FIELDS`; `meaningful_state_payload`; `meaningful_state_changed` | mcp/src/agents_remember/models/lifecycles/operation.py:343-439; mcp/src/agents_remember/models/lifecycles/operation.py:521-548; mcp/src/agents_remember/models/lifecycles/operation.py:525-553; mcp/src/agents_remember/models/lifecycles/operation.py:556-559; mcp/src/agents_remember/models/lifecycles/operation.py:562-568 |
-| The public envelope carries the wait cursor beside versioned identity and component bindings. | `LifecycleOperationProjection` | mcp/src/agents_remember/models/lifecycles/operation_projection.py:340-393 |
-
-## L34 Preparation Ownership
-
-The L34 private-output vocabulary is owned by [preparation.py](preparation.py.md), [preparation_state.py](preparation_state.py.md) and [prepared_memory.py](prepared_memory.py.md). Intent and raw-output identity, append-only command evidence and physical/logical execution views remain separate. None of these models makes a private commit a published mutation.
+## Evidence
 
 
-## Integrated IAS Recovery Contract
-
-`preparation_state.py` separates output-command validation and command-terminal observation into focused helpers. An output still requires its original observed commit command; command history cannot be removed or restarted, and late terminal observation requires the original worker authority. The model remains a validator of selected journal facts, not a producer of Git proof.
-
-## CCR-R12@v5 Current Model Boundary
-
-The lifecycle model route records typed transaction inputs, explicit approval/gate-policy snapshots,
-candidate/source identity, mutation evidence, recovery facts, and terminal results. Retained
-certification and quality fields remain strict vocabulary for explicit or historical callers, but
-normal closeout/integration workers do not select, populate, or require them. Model presence is not
-normal transaction acceptance evidence.
-
-## 260915-KS-L15 The Assessment Collection Beside Judgments
-
-`models/lifecycles/` gains three modules and one field on the existing authority, and the reason the
-field is a **second collection** rather than an extension of `judgments` is the load-bearing fact of
-this change. A judgment's identity is the `(sourceFile, onboardingFile, classification)` triple and
-`_judgments_cover_candidates_exactly` refuses a record whose judgment set is not exactly its
-source-candidate set; a knowledge review's subject is a knowledge record, a family, an invariant
-revision or a comparison, and none of those is a source-file pair. Appending one to `judgments` would
-therefore either break exact coverage or fabricate a source-candidate tuple for a family, which the
-design forbids outright — so `CuratorCoherenceRecord.assessments` is its own typed collection,
-bounded by `MAX_CURATOR_REVIEW_ASSESSMENTS = 256` and validated only for its own identity uniqueness.
-
-`review_assessment.py` owns the record and the four-state read projection; `review_assessment_binding.py`
-owns currentness and the rule that a mismatch marks a binding **stale while leaving the judgment
-readable**; `review_assessment_store.py` builds the exact-input declaration under a new
-`review-assessment/v1` evidence-dependency policy and declares the record's own `review-record` edge
-per assessment. The binding deliberately does not declare the record it lives in — the edge runs from
-the record to the assessment only — which is what keeps it out of the self-invalidating sequence.
-`evidence_dependencies.py` gained that policy and one *permission* on `curator-coherence/v1`, widening
-no kind vocabulary.
-
-## 260921-ICR-L15 Measured assessment currentness
-
-This route's assessment vocabulary now separates **what a measurement established** from **what the
-stored records assert**, and it is a vocabulary change rather than a new read: no invariant of the
-binding rule moved, and the shipped comparison stays the one equality authority.
-
-`review_assessment.py` (502 → 620 lines) declares the per-record state as the four-member
-`AssessmentBindingStatus` — `not-measured`, `current`, `stale`, `unavailable` — published once as
-`ASSESSMENT_BINDING_STATUSES` and reused as `CURRENTNESS_STATES`. `AssessmentEntry.currentness` carries
-it, so a projection reports the state a *measurement* put a binding in rather than a label derived from
-whether a mapping was supplied. `SubjectAssessmentStatus` gained `not-measured` and `unavailable` beside
-the `none-recorded` that stays the *unassessed* subject's own state, because a subject nobody assessed,
-a subject whose records nobody measured and a subject whose measurement failed are three different
-answers. `SubjectAssessmentState` gained `notMeasuredCount`/`unavailableCount` and the validator
-(`_counts_describe_the_records_that_exist`, `_require_the_counts_to_partition_the_records`,
-`_status_of_records`) that derives the currentness counts from the entries and refuses a status its own
-records contradict. `assessment_state_for(assessments, *, statuses=None)` reports `not-measured` for an
-assessment nobody measured, and its signature has no argument that means "assume current" or "assume
-stale"; the subject status follows the precedence `stale` → `unavailable` → `unresolved` →
-`not-measured` → `current`.
-
-`review_assessment_binding.py` (276 → 497 lines) owns the measurement half. The new
-`AssessmentCurrentnessMeasurement` carries `state`, the `values` a world was read to hold, a `detail`,
-and the `unmeasured` identities with their own reason; `CurrentnessMeasurementState` declares the three
-measurement states, and `measured_currentness`, `no_currentness_measurement` and
-`unavailable_currentness_measurement` are the ways to build one. `measured_binding_status` states the
-whole rule: a failed measurement is `unavailable`; a measured disagreement is `stale`, decided by the
-shipped `disputed_dependencies` comparison over the measured values; a completed measurement that
-covered every declared identity and disagreed nowhere is `current`; and everything else — including the
-empty measurement, which is measured and covers nothing — is `not-measured`. Presence of a mapping is
-never the decision. `unmeasured_identities`, `measured_binding_statuses`,
-`supplied_measurement_statuses` and `subject_state(assessments, current=None)` carry that rule into the
-per-record and per-subject shapes the composition and the read projection use. `assessment_currentness`,
-`disputed_dependencies` and the `require_current_*` refusals are **unchanged**: a measured movement is
-still the only thing that can call a binding stale, and nothing here decides equivalence.
-
-Three facts a reader of this route should carry:
-
-- **An unmeasured binding is neither current nor stale.** It is `not-measured`, and reporting it as
-  either would publish a fact the store never held.
-- **A measured zero is not a failure.** An empty measurement is a measurement that covered nothing; a
-  failed one is `unavailable`. The two are different facts.
-- **The summary cannot disagree with its records.** The counts partition the entries and the status is
-  re-derived from them, so a `current` subject holding an entry nothing measured is unrepresentable.
-
-## Update History
-
-- 2026-09-27T05:02:28+00:00 — Reconciled this route's durable assessment-history ownership and failure boundaries. Existing source/knowledge/evidence owners and authored judgment meaning are preserved; verification stamps remain closeout-owned.
-- 2026-09-23T12:00:00+02:00 — 260921-ICR-L15 citation-repair curator (memory worktree only; no code changed, no commits; leaf base `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta): **route body updated (new section above).** `ICR-R15@v1` makes an assessment's currentness a measured fact: `models/lifecycles/review_assessment.py` (502 → 620) now declares the four-member `AssessmentBindingStatus` and the `not-measured`/`unavailable` subject states with the counts validator, and `models/lifecycles/review_assessment_binding.py` (276 → 497) gains `AssessmentCurrentnessMeasurement` and the whole rule in `measured_binding_status` over it. This route's two cards had no enforced citation row, so no range moved here. **No verification stamp was advanced**, because the candidate is uncommitted: the header's `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are untouched and remain closeout-owned, and this entry states a reading against the leaf base named above plus its working-tree delta rather than a verified commit.
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-18T18:52+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **re-read this route against its changed sources at code `c5a74a85` and found the body already current; advanced the verification stamp and the reviewed-candidate row to that revision, which closeout re-stamps.** The delta since the old stamp is exactly the L15 landing recorded in the section above (`65e3791b`): the three `review_assessment*` modules, the `CuratorCoherenceRecord.assessments` collection with `MAX_CURATOR_REVIEW_ASSESSMENTS = 256`, the binding's stale-while-readable rule, the `review-assessment/v1` evidence-dependency policy, and `curator_coherence.py`'s own 212-line growth. Each of those is what the body already says, and the five module names in it were re-read against the files. **No content impact:** no claim byte was rewritten and nothing was added to fit the stamp.
-- 2026-09-18T17:04+02:00 — 260918-TSIP-L4 curator (uncommitted change set on `ar/260918-tsip-l4-ar`, base `0dd04d6a`): No route impact: `models/lifecycles/finalize.py` declared the two atomic-series projections it was already receiving; this route's composition and ownership are unchanged. The `+4` shift the import caused moved citations only.
-- 2026-09-18T14:56+02:00 — 260918-TSIP-L3 curator (uncommitted change set on `ar/260918-tsip-l3-ar`, base `a12c511f`):
-  this route's governed source changed (`models/lifecycles/curator_coherence.py`, 385 → 398 lines), so
-  a body section was **added rather than annotated** — `## 260918-TSIP-L3 The Publish Refusal Names
-  The Field (`T50`)` — recording that the model-level refusal now names every absent publication field,
-  why the message and not the schema is the caller's route to the field, and that the predicate itself
-  is unchanged. **Two citations into the changed source were repaired in the same pass** — the
-  `CuratorCoherenceRequest` row on `models/lifecycles/curator_coherence.py.md`
-  (`:259-317 → :259-330`) and the duplicate on `models/overview.md` (`:259-315 → :259-328`) — and the
-  eight rows that end below the change were re-read and are unchanged. No citation points into **this**
-  document, so it needed no sweep of its own. `lastUpdated` advances with this body edit; `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are deliberately unchanged because
-  the candidate is uncommitted and the governed closeout owns the real code commit.
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-18T06:05+02:00 — 260915-KS-L15 curator (uncommitted change set on `ar/260915-ks-l15`, base `837961d4`): re-read this route against its changed sources and wrote the section above. The route gained three assessment modules and one field on `CuratorCoherenceRecord`; the body records why the collection is separate from `judgments` (a judgment's identity is a source-file triple and exact coverage is unchanged) and what each module owns. The reference rows for the changed modules were re-derived from the current files while re-reading them: `_publication_inputs_supplied` is `:464-478`, `_action_has_one_input_shape` `:480-494`, `publication_refusal` `:353-377`, `publication_input_statement` `:386-411`, `dependency` `:243-252` and `canonical_sha256` `:354-358`. Verification metadata remains closeout-owned; no acceptance or certification claim is made.
-- 2026-09-18T03:25+02:00 — 260915-KS-L24 curator (uncommitted change set on `ar/260915-ks-l24`, base `9c12e8b1`): recorded, for this route's nearest-governed change, that the curator-coherence publication set is now **one declaration** (`PUBLICATION_MEMBERS` plus its three readers) and that the refusal and the `prepare` statement name their members instead of a prose category — the defect that made two earlier leaves of this master report an unpublished coherence authority as an impassable tool defect (`notes/DISCLOSURES.md` D-11). The paragraph also states what did **not** change (no member became optional or required, 0 accept/refuse differences over 80 request shapes) and where the `prepare` half is owned. Only the curator-coherence material in this route was re-read in this pass. Verification metadata remains closeout-owned; no acceptance or certification claim is made.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: "class LifecycleOperationRecord(BaseModel):"; "class LifecycleOperationProjection(StrictResponseModel):" repointed to mcp/src/agents_remember/models/lifecycles/operation.py:340-340; mcp/src/agents_remember/models/lifecycles/operation_projection.py:340-340. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `LifecycleOperationProjection` repointed to mcp/src/agents_remember/models/lifecycles/operation_projection.py:340-393. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T06:49:47+00:00: Generated citation repair: "class LifecycleOperationRecord(BaseModel):"; "class LifecycleOperationProjection(StrictResponseModel):" repointed to mcp/src/agents_remember/models/lifecycles/operation.py:340-340; mcp/src/agents_remember/models/lifecycles/operation_projection.py:340-340. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T06:49:47+00:00: Generated citation repair: `LifecycleOperationProjection` repointed to mcp/src/agents_remember/models/lifecycles/operation_projection.py:340-393. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `_MEANINGFUL_STATE_FIELDS` in the row 178 of this card from mcp/src/agents_remember/models/lifecycles/operation.py:343-439 to mcp/src/agents_remember/models/lifecycles/operation.py:521, the extent of the construct the claim is about (the checker named line(s) [521, 554] as its live location)
-- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Removed ledger intent/output authority and documented raw versus filtered memory snapshot identities. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
-- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the
-  `mcp/src/agents_remember/models/lifecycles/` route changed since the recorded verification commit.
-  Re-read the card against the frozen on-disk source and re-checked its claims and cited ranges:
-  nothing this card asserts is falsified by the change, so no wording changed. Verification metadata
-  remains closeout-owned; no verification stamp advanced.
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the route's files last
-  moved before this task line. Re-read the route card and spot-checked its cited anchors against the
-  current source: they still resolve. No wording changed; verification metadata remains
-  closeout-owned.
-- 2026-09-11T10:26:37+02:00 — De-entanglement cut cleanup at code commit `2fa5e81f`: recorded that `door_response.py` was deleted with the closeout-door tool entry point (commit `6982c6a7`) and dropped the stale "public join result" claim. Only this cut-affected claim was reconciled; the rest of this route was not re-read in this pass, so verification metadata remains pinned. Source documentation only; no acceptance or certification claim.
-- 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
-- 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
-- 2026-09-09T02:35:47+02:00 — CCR-L38 inherited route reconciliation: re-read this route's purpose, member inventory, route summary, and invariants against frozen candidate code tree `4c6b7bc2362bc03d50fc7a0643f34b591b805d45`; the candidate's changed paths are outside source route `mcp/src/agents_remember/models/lifecycles`, so no route/member/prose/invariant change is required. route-member-count=24; source inspection only; verification metadata remains unchanged pending producer-owned realization. No acceptance or certification claim.
-- 2026-09-06T21:58:28+00:00 — Reconciled this route against the source delta from `245057ab16e19afdaabd5c188c9576b22e0c0870` to `d36109038b3f2b500c138f9dc1ea9c9f9a247489`. Updated current ownership and policy claims; prior verification commit/date and history remain unchanged. Source inspection only; no test, review or acceptance claim.
 
 
-### 2026-09-06T17:13:06+00:00 — L34 implementation memory
+- Native task stage/activity/eventAt is declared separately; the removed session response/state vocabulary is not an operative model in this route. [1]
 
-Recorded the current private preparation/publication ownership from source. Existing verification identity is retained; this entry does not claim tests, certification or acceptance.
-- 2026-09-06T15:08:14+00:00 — Added the current selected-certification/refusal source routes and their precise fixture/model boundaries; corrected stale pending-candidate wording where present. Preserved broader prior verification stamps and all earlier history.
-- 2026-09-06T13:51:59+00:00 — L33 candidate curation: Added selected versus completed certification vocabulary and exact integration identity invariants; repaired affected operation/model source anchors. Reviewed uncommitted source; prior verification commit/date remain unchanged. This is source documentation, not gate or acceptance evidence.
-- 2026-09-05T06:21+00:00 — Re-read the reopened affected citation claims against the frozen source, corrected their current wording/ranges, and replaced ambiguous symbols with exact declaration anchors. Verification records this source-backed claim review; it is not a code acceptance or final Gate-5 verdict.
-- 2026-09-05T06:12+00:00 — Combined coherent projection and status-wait vocabularies; corrected current source anchors and distinguished record from meaningful revisions.
-- 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec: route coverage adds the typed status-change wait vocabulary (`operation_wait.py`) and refreshes `operation.py` / `operation_projection.py` with the CCR-R15 `meaningfulRevision` cursor; route index regenerated.
-- 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 route impact: recorded the new `operation_projection.py` module, the centralized status/phase vocabulary, and the record revision field. File-level detail in the models/lifecycles sidecars.
-- 2026-08-29T22:45+02:00 — MCAR-L03: bound quality attestations, coherence records, public
-  responses, and mismatch recovery to the complete contract-derived code-memory pair identity.
-- 2026-08-29T08:52+02:00 — Added the strict curator-coherence authority family and exact candidate
-  judgment coverage. Verification remains closeout-owned.
-- 2026-08-26T10:44:52+02:00 — Added the centralized operation/control-action vocabulary boundary and refreshed exact lifecycle model evidence anchors.
-- 2026-08-25T17:21+02:00 — Reconciled the final lifecycle validator and enclosure ownership split.
-  Verification remains closeout-owned.
-- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: reconciled final door/journal/terminal-enclosure ownership and removed the obsolete successor model. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: refreshed current route intent and source evidence for the accepted full L2 candidate; verification provenance and contract-scoped quality enforcement remain architect-closeout-owned.
-- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: route claims reconciled to accepted candidate tree `4241908c`; verification metadata remains closeout-owned.
-- 2026-08-17T12:30+02:00 — No route impact: 260815-DAG-L5 added organizational-completion wire models to the lifecycles route; the route purpose is unchanged.
-- 2026-08-15T23:38+02:00 — 260815-DAG-L4: reconciled this governing route with the frozen integration-authority implementation and forcing surface. Verification remains closeout-owned.
-- 2026-08-14T06:25+02:00 — L23 final candidate review: the validated operation record carries
-  exact candidate and recovery-commit evidence used by monotonic restart reconciliation; no private
-  operation identity entered agent-facing projections. Verification remains closeout-owned.
-- 2026-08-13T08:40+02:00 — Created for the L23 move that groups lifecycle response, finalizer, and asynchronous-operation models under one cohesive route. Verification metadata remains closeout-owned.
 
-## Retained curator generation and judgment custody
+> Retained earlier citation wording: - Finalization declares terminal facts, cleanup/archive and activation facts; it declares neither edge proof nor completion-seat result sets. [2]
 
-The existing recorded judgment may carry owner-stamped path/SHA/size custody under the existing curator artifact root. Original authored citation/hash remain unchanged, caller judgment inputs cannot provide replacement custody, and canonical omission preserves older sealed records. A typed ValidatedCuratorCoherenceGeneration represents durable integrity separately from live authority/currentness.
+- Asynchronous operation records keep private execution identity out of the declared public projection fields. [3]
+- Recovery records have code and memory-content output-commit fields. [4]
+- A filtered content head does not replace actual Git head/tree facts. [5]
+- Prepared state has an ordered two-leg prefix. [6]
+- Closeout and integrate inputs retain their kind-specific accepted decisions. [7]
+- Organizational completion proof requires original full-prefix references and the exact selected integration authority. [8]
+- Enclosure address models. [9]
+- Worker termination evidence. [10]
+- The durable record owns both revisions; its meaningful subset includes both selected certification cells. [11]
+- The public envelope carries the wait cursor beside versioned identity and component bindings. [12]
+- Strict operation decoding explicitly represents missing legacy task intent. [13]
+
+- Publication inputs, refusal text, record coverage and evidence custody have deciding predicates. [14]
+
+
+- Prepare consumes the shared publication input statement. [15]
+
+- Preparation output-command requirements are conditional on retained command history; transitions preserve original observations. [16]
+- Measured binding status separates failure, disagreement and incomplete coverage. [17]
+
+- Finalization forwards supplied agent archive reports. [19]
+
+- The exact assessment dependency policy and record-to-assessment edge are separately constructed. [20]
+- The memory mutation snapshot preserves actual Git head and headTree while computing cache-excluded contentHeadTree, indexTree, candidateTree and status; removed prepared-memory reuse/output consumers are not current callers. [21]
+
+
+- Currentness partitions entries while unresolvedCount independently equals their unresolved dispositions; status follows the actual recorded population. [18]
+
+- ComparisonAssessmentAvailability is a retained manifest descriptor, not a current reviewer channel: answered counts and recovery requirements are structurally checked, not independently measured or semantically endorsed. [22]
+
+- Finalization declares terminal facts, cleanup/archive and activation facts; it declares neither edge proof nor completion-seat result sets.  Anchor: `LifecycleFinalizeTaskResponse` [2]

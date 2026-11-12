@@ -1,0 +1,231 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/reference_state.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "92307a15e76cc80cb4f56af2bc448df86c7bceab",
+        "content": "sha256:1b676566623ede7fef41052717338fc5b5ff0b89bc0cf883ab16ee803100edb9",
+        "locator": {
+          "kind": "symbol",
+          "name": "fix_references"
+        }
+      },
+      "id": "RLZ-3XM7BA",
+      "invariant": "INV-13QTT2",
+      "origin": {
+        "handoffEntry": "MIK-R45@v2 rule 2",
+        "leaf": "260928-MIK-L45"
+      },
+      "rationale": "The mechanical re-recording stage whose exclude set keeps refused cards byte-identical (F01 repair, shared class).",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "92307a15e76cc80cb4f56af2bc448df86c7bceab",
+        "content": "sha256:2153844db803d3c3d74267cd8a69030b0944ec325aed82b3a16d04f5262abc0e",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-Z15J3Z",
+      "invariant": "INV-033XSD",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §5-§7 publication-refuses-stale-anchor",
+        "leaf": "260928-MIK-L191"
+      },
+      "rationale": "Exposes the fixer's refresh rule publicly, so the census and the guard judge an anchor by the same rule the fixer repairs by.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "A tree is converted exactly when it has the layout marker.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92307a15e76cc80cb4f56af2bc448df86c7bceab",
+            "content": "sha256:5222022946ed0872ef074f7f24e823e660c3d191c7983b3bdcd3731db2da5b2f",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_converted_memory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "One document's fix lists its own stale references.\n\nAnchor: `test_one_documents_fix_reports_its_own_stale_references_and_the_response_is_bounded`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c1c7d17344cd9be8f9ea3dbac4d826343761c185",
+            "content": "sha256:28fd122ff2c33d1107d06aa386bb795f4dba57257da61e80f4c61dd118335d22",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_conversion_toolchain.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Only sidecars holding references are counted or observed; empty maps are skipped, malformed ones unreadable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92307a15e76cc80cb4f56af2bc448df86c7bceab",
+            "content": "sha256:d5a4f8ee36bc919ed6b1287b5f92f206fe02510d168390e7b7bccff76cec6fc7",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_references"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The located bytes of a file, symbol or range locator.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92307a15e76cc80cb4f56af2bc448df86c7bceab",
+            "content": "sha256:d5a78ce00a59a66e7d0d29b949c031082d0301ae2901b304f5781a3e56080dc3",
+            "locator": {
+              "kind": "symbol",
+              "name": "located"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "An anchor's state in the working tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92307a15e76cc80cb4f56af2bc448df86c7bceab",
+            "content": "sha256:3a48d929bee49d77e968dce8842e753c75ec437f33c6d3730a2a811c6c4ca49a",
+            "locator": {
+              "kind": "symbol",
+              "name": "anchor_state"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "92307a15e76cc80cb4f56af2bc448df86c7bceab",
+            "content": "sha256:6d63bbaf8d5a866d9817c9baf298afafcd70c7f6920a11b44db26bd6e70d3554",
+            "locator": {
+              "kind": "symbol",
+              "name": "git_blob_id"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A stale reference is reported to the curator and refused at publication by the validator's anchor guard.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ecac2ccfc1c08ab4ba8c88ea03d670a854ec344",
+            "content": "sha256:7c365c574e46283c6530d2ba2a2be94b440a7d5a0f997c0547e44391fce3c557",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_reference_anchors"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_reference_anchors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Only mechanical moves are re-recorded; a range is re-found only when its bytes occur exactly once.\n\nAnchor: `_refreshed` `fix_references`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92307a15e76cc80cb4f56af2bc448df86c7bceab",
+            "content": "sha256:2153844db803d3c3d74267cd8a69030b0944ec325aed82b3a16d04f5262abc0e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "References are checked, and only mechanical moves are fixed.\n\nAnchor: `test_references_are_checked_and_only_mechanical_moves_are_fixed`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c1c7d17344cd9be8f9ea3dbac4d826343761c185",
+            "content": "sha256:28fd122ff2c33d1107d06aa386bb795f4dba57257da61e80f4c61dd118335d22",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_conversion_toolchain.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The mechanical fixer scopes one sidecar, names unreadable sidecars, and skips the explicit authoring-refused exclusion set before refresh or write.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92307a15e76cc80cb4f56af2bc448df86c7bceab",
+            "content": "sha256:1b676566623ede7fef41052717338fc5b5ff0b89bc0cf883ab16ee803100edb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "fix_references"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "A sidecar that is not valid JSON is named and skipped.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92307a15e76cc80cb4f56af2bc448df86c7bceab",
+            "content": "sha256:07a0bef1bc7377859aacb0aef7f7b38f3f96e55066de087d91841260ec44257f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_sidecars"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The reference check scoped to one sidecar.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92307a15e76cc80cb4f56af2bc448df86c7bceab",
+            "content": "sha256:d5a4f8ee36bc919ed6b1287b5f92f206fe02510d168390e7b7bccff76cec6fc7",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_references"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

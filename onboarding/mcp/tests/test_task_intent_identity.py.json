@@ -1,0 +1,119 @@
+{
+  "path": "mcp/tests/test_task_intent_identity.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Every step obligation field changes intent",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3f503a58ab45fa1e09406accc1a9a88d16a63e7",
+            "content": "sha256:4896e10a9028fa0d1c745146d8a7faa3916b63fc43bc95003732db8052af72a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_step_obligation_field_changes_intent"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Every step progress or audit field is excluded",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3f503a58ab45fa1e09406accc1a9a88d16a63e7",
+            "content": "sha256:ccd3147c5cee9e93a699e8e85079cb1dcb43d70024e626a274aa9db36bc719e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_step_progress_or_audit_field_is_excluded"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Task document ref is part of leaf identity",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3f503a58ab45fa1e09406accc1a9a88d16a63e7",
+            "content": "sha256:95e66c9c6148f20cc8b61830ed92598da3a6c9961c2516d447c39559403ab9b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_task_document_ref_is_part_of_leaf_identity"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Typed approved packet refs are supplemental and version addressed",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3f503a58ab45fa1e09406accc1a9a88d16a63e7",
+            "content": "sha256:081b1b1e4f6211e4f9e39ae14ab6daf9e9524c990d46165c7740b17e8a97e016",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_typed_approved_packet_refs_are_supplemental_and_version_addressed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Packet approval prose is non authoritative identity invariant",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3f503a58ab45fa1e09406accc1a9a88d16a63e7",
+            "content": "sha256:3a2db5dd8a23243947f0be75c0997ee878729ea6cc0b3ce89f71ad342af563fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_packet_approval_prose_is_non_authoritative_identity_invariant"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Approval like prose cannot create a typed packet reference",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3f503a58ab45fa1e09406accc1a9a88d16a63e7",
+            "content": "sha256:83880b84c74ebb3a232c59f78c8fca716f2f8644dcae48f84bde0328f1efeb47",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_approval_like_prose_cannot_create_a_typed_packet_reference"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Duplicate packet metadata refuses as ambiguous",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3f503a58ab45fa1e09406accc1a9a88d16a63e7",
+            "content": "sha256:77cf6dacb01aeeb41dfd6d6cd8b5f800ed9d1d3a50d9a17710a8b1abab49fb38",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_duplicate_packet_metadata_refuses_as_ambiguous"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

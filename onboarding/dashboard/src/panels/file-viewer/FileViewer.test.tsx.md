@@ -1,78 +1,60 @@
 # dashboard/src/panels/file-viewer/FileViewer.test.tsx
 
-| Field | Value |
-| ---------------------- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/file-viewer/FileViewer.test.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
-| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [file-viewer/ overview](overview.md)
 
 ## Purpose
 
-The vitest + Testing-Library test for the File Viewer center tab. It pins three behaviors: mode-bar
-tab registration (full-bleed), the empty-state backdrop prompt before any file is selected, and the
-keep-mounted-on-switch behavior that lets the viewer's state survive a view change.
+`FileViewer.test.tsx` proves the File Viewer's center-tab behavior: its registration as a full-bleed
+view selectable from the mode bar, keep-alive mounting across view switches, and its repository
+listing calls.
 
 ## Code Commentary
 
 ### Logic
 
-`beforeEach` stubs global `fetch` (the viewer fetches the repo catalog on mount) so jsdom never hits
-the network; `afterEach` runs `cleanup` and unstubs. Test 1 applies the `engine-fleet` GALLERY
-snapshot, renders `CockpitShell`, clicks the "File Viewer" radio, then asserts the `file-viewer` testid
-is present, the shell body carries `data-fullbleed="true"`, and `.rail--left` is gone (full-bleed, like
-Engine Room / Topology). Test 2 renders `FileViewer` directly and asserts the empty-state backdrop
-prompt — it checks `container.textContent` contains "Select a code file" (the siege-tank backdrop fills
-the pane; there are no per-side placeholders to query). Test 3 (keep-mounted) checks the viewer node exists
-from the default Operations view but its parent is `display:none`; switching to File Viewer reveals the
-SAME node (`display:flex`, never remounted); leaving hides it again (still the same node) — proving
-state is preserved.
+The suite mounts `CockpitShell` and drives the mode bar. MIK-R79 moved the dashboard's opening view
+from Operations to Chats, so the three tests that assert the File Viewer's hidden-not-unmounted
+behavior on another view now mount `CockpitShell initialView="operations"` explicitly. The assertions
+themselves are unchanged: the File Viewer is mounted from the start when another view is open, stays
+the same DOM node across switches, and issues one repository listing.
+
+### Conventions
+
+Vitest + Testing Library, as the rest of the dashboard suites; views are selected by their radio name.
 
 ### Invariants And Boundaries
 
-The test must stay hermetic — `fetch` is always stubbed, so no real `/api/files/*` calls fire. The
-keep-mounted assertions encode the Cockpit contract: the File Viewer is toggled via CSS `display`,
-never unmounted, so the DOM node's identity must persist across switches. Assertions key off stable
-hooks (`data-testid` `file-viewer`, the "File Viewer" radio role, the `data-fullbleed` attribute) plus the
-empty-state prompt copy ("Select a code file") matched against `container.textContent`, so renaming those
-is a breaking change.
+The tests mount the shell on an **injected** `initialView="operations"` and bind the File Viewer's
+registration, hidden-not-unmounted keep-alive and deferred catalog behavior. They do not assert the
+shell's Chats default (the separate shell default-view suite owns that) and do not re-test the
+Knowledge reader or the hidden pages.
 
-## Repo-Internal References
+### Todos
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The component under test. | `FileViewer` | dashboard/src/panels/file-viewer/FileViewer.tsx:299-299 |
-| `CockpitShell` registers the "File Viewer" mode and keeps it mounted via `display`. | "export function CockpitShell({ initialView = "operations" }: { initialView?: CockpitView } = {}) {"; `File Viewer` | dashboard/src/cockpit/Cockpit.tsx:887-887; dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:4-4; dashboard/src/data/files.ts:102-102 |
-| The empty-state backdrop prompt copy ("Select a code file") asserted here. | "Select a code file" | dashboard/src/panels/file-viewer/DualPane.tsx:99-112 |
-| `applySnapshot` loads the projection under test. | `applySnapshot` | dashboard/src/data/store.ts:49-49 |
-| The `engine-fleet` GALLERY fixture. | "engine-fleet" | dashboard/src/panels/engine-room/fixtures.ts:723-723 |
+No additional work is asserted by this card.
 
-## Current L5I Maintenance
+## Evidence
 
-The focused viewer suite now proves that a hidden mounted viewer makes no files API request, first
-selection makes exactly one catalog read, and later hide/show cycles retain the settled catalog.
+### Docs References
 
-## Update History
-- 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`dashboard/src/cockpit/Cockpit.tsx`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "export function CockpitShell({ initialView ="; "}: { initialView?: CockpitView } = {}) {" repointed to dashboard/src/cockpit/Cockpit.tsx:886-886; dashboard/src/cockpit/Cockpit.tsx:886-886. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "export function CockpitShell({ initialView ="; "}: { initialView?: CockpitView } = {}) {" repointed to dashboard/src/cockpit/Cockpit.tsx:877-877; dashboard/src/cockpit/Cockpit.tsx:877-877. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T16:13:35+00:00: Generated citation repair: "export function CockpitShell({ initialView ="; "}: { initialView?: CockpitView } = {}) {" repointed to dashboard/src/cockpit/Cockpit.tsx:875-875; dashboard/src/cockpit/Cockpit.tsx:875-875. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-05T06:24:16+00:00: Generated citation repair: "export function CockpitShell({ initialView ="; "}: { initialView?: CockpitView } = {}) {" repointed to dashboard/src/cockpit/Cockpit.tsx:860-860; dashboard/src/cockpit/Cockpit.tsx:860-860. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
+No domain documentation source is configured for this repository. The requirement packet
+`MIK-R79@v1` (rule 16) fixes the opening view and the product bar; it lives outside the code and
+memory repositories, so it is named here and not cited as a row.
 
-- 2026-08-04T18:00+02:00 — 260731-EFA-L6 S18-B14 curator: repaired 3 citation rows with exact anchors (`FileViewer`/`CockpitShell`/"File Viewer"/`GALLERY`/"engine-fleet") and ledger-verified ranges, added the applySnapshot implementation range beside its interface signature, and bound the engine-fleet entry to its GALLERY spread-map and scenario definition. Scoped citation recheck is green. Verification metadata remains pinned until closeout.
+No configured live documentation source was available for this pass.
 
-- 2026-07-24T13:17:17Z — Curator: recorded first-visible catalog-read regressions; verification
-  fields remain pre-commit.
+### Repo-Internal References
 
-- 2026-06-30T00:00:00+02:00 — operations-integration L5: the pre-selection assertion now checks `container.textContent` contains "Select a code file" (the siege-tank empty-state backdrop fills the pane, so there are no per-side `pane-placeholder` nodes to query) instead of scanning `pane-placeholder` elements.
-- 2026-06-29T09:06+02:00 — Created for operations-integration L2 (File Viewer): the vitest/RTL test
-  covering File Viewer mode-bar registration (full-bleed), the pre-selection placeholder, and the
-  keep-mounted-on-switch state preservation. Verification metadata pinned to the task base until
-  closeout stamps the L2 code commit.
+- The suite mounts the shell on Operations for its keep-alive assertions. [6]
+
+- The mode-bar entry the tests click. [7]
+
+
+- The File Viewer the tests keep mounted. [8]
+
+
+### Cross-Repo References
+
+No cross-repo boundary is crossed by this file.

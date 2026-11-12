@@ -1,0 +1,91 @@
+{
+  "path": "mcp/src/agents_remember/application/review_evidence_read.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "21897b270c5bc01d83034606213689b999539778",
+        "content": "sha256:0f5db40a4b64e22dc751e17023febdf7de071e3d73c8ea9039157e5fd6652ace",
+        "locator": {
+          "kind": "symbol",
+          "name": "side_operand"
+        }
+      },
+      "id": "RLZ-5NZ9R3",
+      "invariant": "INV-GAVZC0",
+      "origin": {
+        "handoffEntry": "L102-F02",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "Prior closure preserved; no reopening/new lens. Retained prior closure on preserved bytes/properties; no new adjudication lens. Effective converted-base selection is shared by source, relationships and claim reads. The independent claim control returns converted text, the effective tree and the separately retained stored tree. The focused effective-base source/relationship case passes; no HEAD fallback is used.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "21897b270c5bc01d83034606213689b999539778",
+        "content": "sha256:7bbd2722672874ace9a38c37df2e0585cb69daa540ed9bf41227095ee6413382",
+        "locator": {
+          "kind": "symbol",
+          "name": "read_bound_source"
+        }
+      },
+      "id": "RLZ-T34YVV",
+      "invariant": "INV-YFTJNQ",
+      "origin": {
+        "handoffEntry": "L102-F04",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "Ordinary, resumed and symlink reads are streamed with measured consumption; an offset beyond MAX_SCAN_BYTES now refuses before any blob read (independent actualRead=0). Resumed prefix work is deducted from the finite scan budget. Packet path/collection caps, relationship path/byte/depth/page caps, bounded ls-tree streaming and a per-walk indexed lookup remain enforced; two-size and boundary tests pass. This credits bounded legitimate investigation, not unlimited-store-reader behavior owned by F10.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "A read resolves its side through the comparison and names the effective and stored memory-base trees apart.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21897b270c5bc01d83034606213689b999539778",
+            "content": "sha256:0f5db40a4b64e22dc751e17023febdf7de071e3d73c8ea9039157e5fd6652ace",
+            "locator": {
+              "kind": "symbol",
+              "name": "side_operand"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A path spelling that could name another operand is refused rather than repaired.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21897b270c5bc01d83034606213689b999539778",
+            "content": "sha256:97b5cd2d05348afa3406e7ca84820a9e1ec50fd283410f1cb464fe54511f86a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_path_problem"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A scan that could not reach the requested line says so instead of certifying an empty range.\n\nAnchor: `_scan_cut`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21897b270c5bc01d83034606213689b999539778",
+            "content": "sha256:de4df895f7e1a424780e48e6de9b9cf52773214be07ef5b492c2869d9ec44d0e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

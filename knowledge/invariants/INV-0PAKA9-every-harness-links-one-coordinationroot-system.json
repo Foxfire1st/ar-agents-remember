@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Verified against frozen 242 paseo_authority.py (require_user_settings_path) and the retargeted install/start/runtime plus host-release tests; admitted under Owner semantic case 4ef8129e."
+  },
+  "applicability": "Host-authority preparation and per-use reads on the current installation, with developer role-settings location handled separately.",
+  "conditions": [
+    "The MCP configPath file owns host authority; an absent file or block selects no host until admitted setup creates it.",
+    "An existing host block is preserved rather than rewritten; callers retain modeled unreadable or malformed authority refusals.",
+    "XDG_CONFIG_HOME or the standard user config directory selects the separate developer user-settings path.",
+    "An old coordinationRoot/system/settings.json user-settings file refuses before its contents are read; the explicit upgrade owns whole-file migration."
+  ],
+  "exclusions": [
+    "A user-settings or per-harness host fallback.",
+    "Partial user-settings copies; the upgrade moves the whole user file.",
+    "Host-authority preparation does not initialize or rewrite developer role settings."
+  ],
+  "id": "INV-0PAKA9",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l96-ar/task-reports/role-launch/260928-MIK-L96-worker-c9abaa5b-c066-404b-a276-fcb39fcd4a79.evidence/restart-b/checks/final-unit-v2.log; manifest 1d1f404e04e282f568cfa601317e4cad75d22392b1c9a2f28bc96a1e46091b4f; current source manifest cd7706b9b3c7dbb3d64684ec054c55b6f9eac22dbe1b6d76779bdab5e47abe08; current qualification /home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l96-ar/task-reports/role-launch/260928-MIK-L96-worker-c9abaa5b-c066-404b-a276-fcb39fcd4a79.evidence/post-l51-current/catalog-qualification.json; current manifest 5cdfbd41e9079195a3cd318d4a26263392ab8031aead02c2459faa39445bbf3f; exact reuse /home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l96-ar/task-reports/role-launch/260928-MIK-L96-worker-c9abaa5b-c066-404b-a276-fcb39fcd4a79.evidence/post-L39-sync/exact-input-proof-reuse.json"
+      ],
+      "path": "notes/reports/260928-MIK-L96-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R96@v1 §8 / OR-R034",
+    "leaf": "260928-MIK-L96",
+    "task": "260928-MIK"
+  },
+  "revision": 3,
+  "schema": "ar-invariant/v1",
+  "statement": "Every harness reads one installation host authority from the paseoRuntime block in the MCP settings file named by configPath, per use and without user-settings or per-harness fallback. Setup creates an absent host block once and preserves an existing block; developer role settings retain their distinct standard user-config location and old-location refusal.",
+  "status": "proposed",
+  "supersedes": []
+}

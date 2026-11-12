@@ -1,0 +1,197 @@
+{
+  "path": "mcp/tests/test_publication_merge_shape.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7caf814738fbdc99e9755685ffed5d62d5a7ac7e",
+        "content": "sha256:a21dfd665ca42f35c309e3f99034a67e3af31b550e9ba22fbfc568d073668e42",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-9PJ8Z0",
+      "invariant": "INV-QDVJK4",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.4",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Proves admission on the real route (master task id, no authority range), refusals for content, wrong second parent and octopus, and the workflow read (fail-before shown).",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "A published pull-request merge of the landed commit is admitted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7caf814738fbdc99e9755685ffed5d62d5a7ac7e",
+            "content": "sha256:5cf4ad86eb1b758641976fc7deb778137414b87c94c510cb71d3d804273106ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_finished_master_admits_a_published_pr_merge"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "On the real route a merge at the tip is admitted by shape and names its landing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7caf814738fbdc99e9755685ffed5d62d5a7ac7e",
+            "content": "sha256:28e54f8326f78eb9894cb92cf27d39acc8bf4db79aba4742fa2178c18fd5a2df",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_real_route_admits_a_published_merge_at_the_tip_by_shape"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A merge that no rule admits is refused with the merge named and the leaf remedy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7caf814738fbdc99e9755685ffed5d62d5a7ac7e",
+            "content": "sha256:409846956d8e12ded4b9dceec3c0a25e2716a161767cff23df5ea7321edc41e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_merge_no_rule_admits_is_refused_by_name"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A merge with content of its own is refused as history beyond the landing chain.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7caf814738fbdc99e9755685ffed5d62d5a7ac7e",
+            "content": "sha256:d3c2085b6a67a2a185e982943b02eb0c3da5d907861caf2d39ad8f890bf5ecda",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_merge_with_content_of_its_own_is_refused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A merge whose second parent is not the leaf landing is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7caf814738fbdc99e9755685ffed5d62d5a7ac7e",
+            "content": "sha256:828a38c262cb5e3e108e3f12ada9d1f735e7f69591d32d4476df8210e819b41b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_second_parent_that_is_not_the_leaf_landing_is_refused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "An octopus merge is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7caf814738fbdc99e9755685ffed5d62d5a7ac7e",
+            "content": "sha256:6923f52eceb5d96ef09f283180682bf51cd59076b90b0c507637f0f7d8c94877",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_octopus_merge_is_refused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The recorded default-line tip admits its history; without the record it is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7caf814738fbdc99e9755685ffed5d62d5a7ac7e",
+            "content": "sha256:7edd201f669d709217ba79484614444b3e3ecdae62ae34c483e5709f3f9996d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_crossing_entry"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7caf814738fbdc99e9755685ffed5d62d5a7ac7e",
+            "content": "sha256:88add91548c7aa28f66ea496d03cba6fffd181fb3738c2242298f8286f6a7b66",
+            "locator": {
+              "end": 244,
+              "kind": "line_range",
+              "start": 231
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "History past the recorded tip and a direct master commit are still refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7caf814738fbdc99e9755685ffed5d62d5a7ac7e",
+            "content": "sha256:87ae2803f45da4f94e3a7f4d466443c6a5aa24145dd9ba5b662b41edba085aae",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_foreign_commit_beside_the_crossing_is_still_refused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "A leaf starting at the recorded default source pair stands on the chain.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7caf814738fbdc99e9755685ffed5d62d5a7ac7e",
+            "content": "sha256:36395f41ec3f759491d2896af76ab01ef4efe3b2fd3fdfc6c504b7b2672ef9e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_empty_landing_on_a_default_line_source_pair_stands_on_the_chain"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "A series reads its landing workflow from its memory work branch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7caf814738fbdc99e9755685ffed5d62d5a7ac7e",
+            "content": "sha256:859e8b6680af29c69d2161e5128e0d60ce5798c381f060cc9837698a39f1c694",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_series_reads_its_landing_workflow_from_its_memory_branch"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

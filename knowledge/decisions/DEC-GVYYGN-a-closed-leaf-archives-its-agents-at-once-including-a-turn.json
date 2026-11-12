@@ -1,0 +1,78 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "The choice fixes when and how every leaf closing archives its agents and forbids a wait or a person-driven recovery."
+  },
+  "alternatives": [
+    {
+      "option": "Archive every recorded leaf agent at once through the host's existing cancel-capable archive call, before the worktrees are removed, whether idle or in a turn.",
+      "reason": "The only moments a leaf is deliberately ended are when its job is done or when it is abandoned; in both the agents have nothing left to do, and the host archive call already ends a running turn. Archiving first keeps no agent working in a folder that is gone.",
+      "status": "chosen"
+    },
+    {
+      "option": "Archive only agents observed idle and wait for a running turn to end.",
+      "reason": "The developer rejected the wait: a closed leaf's agents must not linger and potentially cause problems, and an abandoned leaf must not leave an agent running until its turn ends.",
+      "reconsider_when": "The host offers an atomic idle-only archive that cannot end a turn, or the product stops ending leaves while agents run.",
+      "status": "rejected"
+    },
+    {
+      "option": "Archive after the worktrees are removed, or leave archival to a person refreshing the host.",
+      "reason": "Removal first lets an agent work for a moment in a folder that no longer exists, and a person-driven archive does not meet the automatic busy/host-down recovery the requirement asks for.",
+      "reconsider_when": "A future requirement moves archival to the host or stops removing worktrees at closing.",
+      "status": "rejected"
+    },
+    {
+      "option": "Keep a cap on how many role agents may run at once.",
+      "reason": "The developer withdrew the architect's cap and kept the setting accepted but enforced by nothing for now.",
+      "reconsider_when": "The developer asks for leaf-limit enforcement again.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The archive attempt is bounded (8 s total, 2 s per call) and never refuses an admitted retirement.",
+    "A host failure leaves receipt-owned debt the existing observation loop settles without a person."
+  ],
+  "context": "Finalizing or abandoning a leaf removed its worktrees and branches but left its Worker, Reviewer and Curator in the host as idle sessions. The architect proposed archiving only idle agents; the developer's D56 direction and follow-up words settled what happens to an agent that is in a turn.",
+  "decider": "Developer direction D56 (2026-10-05) and the developer's follow-up words; implemented under MIK-R76@v1.",
+  "id": "DEC-GVYYGN",
+  "links": [
+    {
+      "relation": "explains",
+      "target": "INV-F1TY2E"
+    },
+    {
+      "relation": "explains",
+      "target": "INV-PRP52X"
+    },
+    {
+      "relation": "explains",
+      "target": "INV-K43DJZ"
+    },
+    {
+      "relation": "constrains",
+      "target": "route:mcp/src/agents_remember/worktrees/modules"
+    },
+    {
+      "alternative": 1,
+      "relation": "reconsider_on",
+      "target": "INV-PRP52X"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Frozen sourcebeb9473e +8a9894a4/f5ee11cc; test_admitted_cleanup_and_abandon_archive_before_destructive_outputs, test_current_history_retry_and_other_selections_preserve_every_artifact; durable post-sync/full-focused-final.log (157 passed), pyright-final.log (0 diagnostics); complete real-host witness remains pending. Rule8 also has unchanged role launch/repeat/message regressions in the same focused selection."
+      ],
+      "path": "notes/files/260928-MIK-L76-curation-evidence-20261007/handoff-full.json"
+    },
+    "handoffEntry": "MIK-R76@v1 required behavior 1",
+    "leaf": "260928-MIK-L76",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

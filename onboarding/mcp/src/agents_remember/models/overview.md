@@ -1,3047 +1,727 @@
-# mcp/src/agents_remember/models/ - Response Contract Models Overview
-
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| sourceRoute            | `mcp/src/agents_remember/models/`          |
-| doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-28T17:21:23+02:00 |
-| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` |
-| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
-| governingOverview      | `../../../../overview.md`                  |
+# Response Contracts, Shared Wire Values, And Text Knowledge Models
 
 ## Governing Overview
-
-[mcp/overview.md](../../../../overview.md)
-
-| lastUpdated | 2026-09-21T23:45+02:00 |
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The union that gained this leaf's member, with the new code inserted between the comparison refusal and the adapter refusal.** | `ReviewRefusalCode`; `source_content_unresolved` | mcp/src/agents_remember/models/knowledge/review.py:152-162 |
-| **The refusal record the new code travels in, and the result that carries it as one of exactly two outcomes.** | `ReviewRefusal`; `KnowledgeReviewResult` | mcp/src/agents_remember/models/knowledge/review.py:403-415; mcp/src/agents_remember/models/knowledge/review.py:1110-1125 |
-| The surface version that stays `/1`, with the reasoning recorded beside the constant. | `KNOWLEDGE_REVIEW_SURFACE_VERSION` |mcp/src/agents_remember/models/knowledge/review.py:130-139|
-| **The availability vocabulary, its five states and the validator that refuses a favourable default.** | `ReviewRecordChannel`; `ReviewRecordChannelState`; `ReviewRecordClassName` | mcp/src/agents_remember/models/knowledge/review_records.py:32-63; mcp/src/agents_remember/models/knowledge/review_records.py:68-123 |
-| **The field the evidence pane gained, and the re-export that keeps the vocabulary reachable through the payload module.** | `ReviewEvidencePane`; `channels`; `ReviewRecordChannel` | mcp/src/agents_remember/models/knowledge/review.py:918-958; mcp/src/agents_remember/models/knowledge/review.py:101-102; mcp/src/agents_remember/models/knowledge/review.py:956-991 |
-| **The owner that resolves every channel, so the vocabulary has a producer and not only a shape.** | `_COLLECTION_OWNERS`; `_channel` | mcp/src/agents_remember/application/review_evidence_records.py:136-143; mcp/src/agents_remember/application/review_evidence_records.py:781-792; mcp/src/agents_remember/application/review_evidence_records.py:127-127 |
-| The cases that measure the vocabulary's refusals and its presence in the served wire schema. | `test_the_channel_model_refuses_a_count_no_owner_measured`; `test_the_wire_payload_carries_the_channels` | mcp/tests/test_knowledge_review_evidence_channels.py:887-912; mcp/tests/test_knowledge_review_evidence_channels.py:959-966 |
-
-## 260921-ICR-L44 Two Pure Extractions, And The Anchor Observation Gains A Structured Region
-
-Two value vocabularies moved into their own modules, each re-exported unchanged by the module it left so
-every existing import keeps working: the anchor-observation vocabulary (`AnchorResolutionState`,
-`ANCHOR_RESOLUTIONS`, `AnchorResolution`) now lives in `models/knowledge/read_anchor.py` (re-exported by
-`read.py`), and the family member-source reference (`ReviewFamilyMemberSource`,
-`ReviewSourceLocatorState`, `source_locator_state`) in `models/knowledge/review_family_source.py`
-(re-exported by `review_family_context.py`). Both moves kept their source modules under the 600-line
-pressure line. Two additive wire changes rode with them: `AnchorResolution.resolved_ranges` — structured
-one-based line ranges, allowed only on `exact_recorded_blob` — appears on **every** anchor observation
-(knowledge read pages, diff observations, the family roster), and the member source gained `locator`,
-`resolved_ranges` and a required `locator_state`, with `role`/`rationale` required. The locator state is
-decided by one function shared by the producer and the validator, so a region can never be stated on
-bytes the side did not find.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The anchor observation and its region validator. | `AnchorResolution` | mcp/src/agents_remember/models/knowledge/read_anchor.py:48-78 |
-| The member-source reference and its one locator-state rule. | `ReviewFamilyMemberSource`; `source_locator_state` | mcp/src/agents_remember/models/knowledge/review_family_source.py:36-123 |
-
-## 260921-ICR-L15 Measured assessment currentness
-
-**Route meaning changed: an assessment's currentness is now a fact a measurement established, not a
-label derived from whether a mapping was supplied.** Three modules of this route are touched: two change
-their vocabulary, and the third changes only a docstring.
-
-`models/lifecycles/review_assessment.py` (502 → 620 lines) declares the per-record state as the
-four-member `AssessmentBindingStatus` — `not-measured`, `current`, `stale`, `unavailable` — published
-once as `ASSESSMENT_BINDING_STATUSES` and reused as `CURRENTNESS_STATES`, and
-`AssessmentEntry.currentness` carries it. `SubjectAssessmentStatus` gained `not-measured` and
-`unavailable` beside `none-recorded`, which stays the *unassessed* subject's own state rather than a
-fourth disposition. `SubjectAssessmentState` gained `notMeasuredCount` and `unavailableCount` plus the
-validator (`_counts_describe_the_records_that_exist`, `_require_the_counts_to_partition_the_records`,
-`_status_of_records`) that derives the currentness counts from the entries and refuses a status its own
-records contradict, and `assessment_state_for(assessments, *, statuses=None)` reports `not-measured`
-for an assessment nobody measured — there is no argument that means "assume current" and none that
-means "assume stale". The subject status follows the precedence `stale` → `unavailable` → `unresolved`
-→ `not-measured` → `current`.
-
-`models/lifecycles/review_assessment_binding.py` (276 → 497 lines) gained
-`AssessmentCurrentnessMeasurement` (`state` ∈ `measured`/`not-measured`/`unavailable`, the `values` a
-world was read to hold, a `detail`, and the `unmeasured` identities with their own reason) and the whole
-rule in `measured_binding_status`: a failed measurement is `unavailable`; a measured disagreement is
-`stale`, decided by the shipped `disputed_dependencies` comparison; a completed measurement that
-covered every declared identity and disagreed nowhere is `current`; and everything else — including an
-empty measurement — is `not-measured`. `measured_binding_statuses`, `supplied_measurement_statuses`,
-`subject_state` and `unmeasured_identities` carry it to the shapes the composition and the projection
-use. `assessment_currentness`, `disputed_dependencies` and the `require_current_*` refusals are
-**unchanged**: the comparison stays the one equality authority.
-
-`models/knowledge/review.py` is a **docstring-only** change (1198 lines before and after):
-`ReviewAssessmentDisplay.binding_state` is now documented as the measured status carried verbatim, in
-the four states named above. `models/knowledge/review_records.py` is unchanged by this leaf, so nothing
-on the record-availability vocabulary moves.
-
-Three facts a reader of this route should carry:
-
-- **Presence of a mapping is never the decision.** An empty measurement is measured and covers nothing,
-  which is a different fact from a measurement that failed.
-- **An unmeasured binding is neither current nor stale.** Reporting it as either would publish a fact
-  the store never held.
-- **The summary cannot disagree with its records.** The counts partition the entries and the status is
-  re-derived from them, so a `current` subject holding an entry nothing measured is unrepresentable.
-
-## 260921-ICR-L21 The Final-Output Vocabulary: One Record, Three Verdicts, And A Validator That Re-Derives Them
-
-`260921-ICR-L21` (`ICR-R21@v1`) declares the final-output receipt in a **new sibling module**,
-`models/knowledge/review_final_output_receipt.py`, beside the other review vocabularies and next to the
-record it belongs to (`review.py`). It is the **vocabulary alone** — the operation that selects a
-generation, publishes the receipt and reads it back is
-`application/review_final_output_receipt.py` — so a consumer can hold and validate a receipt without
-importing the operation that produced it.
-
-The vocabulary's shape is the requirement's own rule made unconstructible-if-false:
-
-- **`FinalOutputReceipt` is a set of owner-produced identities and no authored prose** — the generation's
-  seal and manifest digest, the reviewed baseline and candidate code trees, the delivered code
-  commit/tree, the delivered memory-content commit/tree (absent together exactly when
-  `memory_output_state` says so), the published knowledge identity read through the ordinary read route,
-  and the two match verdicts. The one sentence it publishes, `statement`, is derived from those fields.
-- **The verdict has three values, and the third exists because two would state something false.**
-  `bound` is the only value that claims coverage and it requires a measured match on every channel the
-  generation actually **selected**; an unmeasured knowledge channel is `unmeasured`, not matched; a
-  mismatch is `moved`. Likewise `MatchState`'s `not-comparable` is not a softer
-  `differs-from-reviewed-input`, and `PublishedKnowledgeState` keeps `unusable` apart from
-  `not-recorded`.
-- **The validator re-derives every verdict from the record's own fields and refuses a record whose
-  verdicts do not follow** — detectable without the store, which is what stops a forged `bound` from
-  surviving a read-back.
-- **One rule, one expression.** `final_output_verdict` is the single statement of the verdict rule and
-  the writer calls it, so no second copy can drift from the validator.
-
-## 260921-ICR-L8 The Movement Vocabulary Enters The Review Wire
-
-`260921-ICR-L8` (`ICR-R08@v1`) declares the recorded-relationship vocabulary in a **new sibling module**,
-`models/knowledge/review_relationships.py` (372 L), beside the other payload vocabularies — the movement,
-its sides and states, the authored lineage, the gaps with their codes, the recorded pairing bases and the
-labelled rename inference — and re-exports it from `models/knowledge/review.py`, whose `__all__` names
-stay where a reader looks for them. The vocabulary is an **enforcement** of the packet rather than a
-container: a movement carries both sides or the transition that says why not; a paired movement must
-name the recorded relation it paired on; a gap must name a displayed side; a movement that could not
-establish its identity must say so with an `identity_not_recorded` gap; and a rename inference's basis
-can only be Git's own detection, with a measured pairing, a measured non-pairing and an unmeasured
-inference kept apart.
-
-Two additive field changes reach the review wire, both with defaults so an existing dashboard fixture
-still validates: `ReviewSourceLocation` gains the preserved `invariant_id`, the `recorded_side`, the
-movement's `transition`, the `counterpart_path` (named only when the other side records exactly one
-address) and the whole `movement`; `ReviewSourcePane` gains the `relationships` collection, which exists
-because a membership and a route association have no source address at all and because a movement whose
-two sides are one row at one address is still one association rather than two locations. The dashboard's
-TypeScript mirror (`dashboard/src/data/review.ts`) does **not** carry the new fields yet — mounting the
-collection in the pane is `ICR-R24`'s — so this route records the wire, not a rendered page.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The vocabulary module's own statement of the five rules its shape enforces, and the movement with its four validators.** | `ReviewRelationshipMovement` | mcp/src/agents_remember/models/knowledge/review_relationships.py:1-46; mcp/src/agents_remember/models/knowledge/review_relationships.py:258-372 |
-| The closed unions: the kinds, the side states, the transitions, the lineage kinds, the gap codes and the recorded pairing bases. | `ReviewRelationshipKind`; `ReviewRelationshipState`; `ReviewRelationshipTransition`; `ReviewRelationshipGapCode`; `ReviewPairingBasis` | mcp/src/agents_remember/models/knowledge/review_relationships.py:68-70; mcp/src/agents_remember/models/knowledge/review_relationships.py:79-79; mcp/src/agents_remember/models/knowledge/review_relationships.py:89-91; mcp/src/agents_remember/models/knowledge/review_relationships.py:109-117; mcp/src/agents_remember/models/knowledge/review_relationships.py:126-135 |
-| **The unresolved fact as a value, and the side whose validator refuses a recorded state without a relationship identity.** | `ReviewRelationshipGap`; `ReviewRelationshipSide` | mcp/src/agents_remember/models/knowledge/review_relationships.py:138-150; mcp/src/agents_remember/models/knowledge/review_relationships.py:153-201 |
-| **The labelled rename inference, whose validator ties a pairing to its state and refuses a similarity word on an unmeasured one.** | `ReviewRenameInference` | mcp/src/agents_remember/models/knowledge/review_relationships.py:221-255 |
-| **The pane row that now carries the association beside its address, and the pane that carries the whole collection.** | `ReviewSourceLocation`; `ReviewSourcePane` | mcp/src/agents_remember/models/knowledge/review.py:644-915; mcp/src/agents_remember/models/knowledge/review.py:921-953; mcp/src/agents_remember/models/knowledge/review.py:96-96 |
-| The display owner that fills the vocabulary, and the traversal that builds the movements. | `paired_movement`; `single_sided_movement`; `relationship_movements` | mcp/src/agents_remember/application/review_relationship_display.py:107-139; mcp/src/agents_remember/application/review_relationship_display.py:142-174; mcp/src/agents_remember/application/review_relationship_movement.py:142-177 |
-
-## 260921-ICR-L9 The Catalogue's Presence And Totals Enter The Wire, And The Per-Subject Count Leaves It
-
-**Route meaning changed: the entry half's vocabulary now describes a population, not a per-subject
-comparison.** `ReviewEntry.presence` — the new three-member `ReviewSubjectPresence` union
-`before_only`/`after_only`/`both` — **replaces** `selected_item_count` (893 → 936 lines). The deleted
-field was the wire carrier of the per-subject compare-to-earn-a-row mechanism `ICR-R09@v1` removes;
-an entry that carried a comparison count would oblige the catalogue read to compare every subject
-before answering, which the packet forbids. `ReviewEntryListResult` gains the labelled totals
-(`total_subjects`/`invariant_total`/`family_total`) with the `_require_the_totals_to_describe_the_catalogue`
-validator: the total must sum its two kind totals, a refused read carries zero totals, and the total
-is `>=` the page beside it — the rule R10's paging depends on. The one-direction rule is unchanged in
-substance and now totalled: a refused entry read still offers **no** entry, an empty `entries` on an
-`entries` state is still a pair that records no subject with the task-context source review reachable
-beside it.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The presence union on the vocabulary, beside the subject-kind union it parallels.** | `ReviewSubjectPresence`; `ReviewSubjectKind` | mcp/src/agents_remember/models/knowledge/review.py:197-203; mcp/src/agents_remember/models/knowledge/review.py:210-210 |
-| **The entry value with `presence`, and the entry list with the totals and their agreement validator.** | `ReviewEntry`; `ReviewEntryListResult`; `_require_the_totals_to_describe_the_catalogue` | mcp/src/agents_remember/models/knowledge/review.py:1143-1164; mcp/src/agents_remember/models/knowledge/review.py:1103-1164; mcp/src/agents_remember/models/knowledge/review.py:1128-1189; mcp/src/agents_remember/models/knowledge/review.py:1117-1117 |
-| The catalogue owner that fills these values, and the adapter that delegates to it. | `read_subject_catalogue`; `list_knowledge_review_entries` | mcp/src/agents_remember/application/review_subject_catalogue.py:47-69; mcp/src/agents_remember/application/knowledge_review.py:199-280 |
-
-## 260921-ICR-L7 The Review Wire Carries The Explicit Revision Selection, Declared Next Door
-
-**Route meaning changed: pane 1's two statements are the selected revisions, and the selection is a
-recorded value with its own validators.** `models/knowledge/revision_selection.py` (new, 150 lines)
-declares `ReviewRevisionSelection`: the `compared` head pair, the `added`/`removed` one-sided head,
-or the explicit `ambiguous`/`unresolved` non-pair — always with every head and every retained
-revision listed, and with the human-readable `statement` beside the ids. Three validators make a
-misreading unconstructible: the state carries its own state's ids and no other's, the pair is drawn
-from the recorded heads, and the heads from the retained. There is no timestamp, no similarity, no
-rank and no "latest" anywhere in the value. `models/knowledge/review.py` (873 → 893 lines) carries
-it on the pane as the optional `revision_selection` — absent exactly when no subject was compared —
-with the one-direction validator that refuses a recorded selection beside a task-context pane. The
-value lives outside the vocabulary file so that file stays under the soft rail, and the selection
-policy that computes it lives on the application route, not here.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The new value module: the five-state union and the model with its own statement.** | `RevisionSelectionState`; `ReviewRevisionSelection` | mcp/src/agents_remember/models/knowledge/revision_selection.py:51-51; mcp/src/agents_remember/models/knowledge/revision_selection.py:54-74 |
-| **The three validators that make a misreading unconstructible.** | `_require_the_state_to_match_the_pair`; `_require_the_pair_to_come_from_the_heads`; `_require_the_heads_to_come_from_the_retained` | mcp/src/agents_remember/models/knowledge/revision_selection.py:76-106; mcp/src/agents_remember/models/knowledge/revision_selection.py:108-129; mcp/src/agents_remember/models/knowledge/revision_selection.py:131-150 |
-| **The pane field that carries the value, with its one-direction validator.** | `revision_selection`; `_require_a_compared_subject_to_record_its_selection` | mcp/src/agents_remember/models/knowledge/review.py:739-739; mcp/src/agents_remember/models/knowledge/review.py:712-788 |
-| **The policy that computes the value from authored heads.** | `select_subject_revisions` | mcp/src/agents_remember/application/review_revision_comparison.py:144-187 |
-
-## Update History
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 7 citations into `mcp/tests/test_knowledge_diff_scope.py`, `mcp/tests/test_knowledge_review_surface.py` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base; the ranges whose cited case or codec moved verbatim now cite `mcp/tests/test_knowledge_diff_attribution.py`. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T17:21:23+02:00 — 260921-ICR-L44 curator (after the sync onto code base `58e22246cc09ef0ee12095e284a111a475081c38`, candidate tree `b9b82c7206142f2b0bc1490e193d3d2b154c1b82`): No route impact beyond this leaf's earlier entry: re-measured rows in the later sections of this overview that cite files this leaf (and L42's landed lane row) moved — the `read.py` rows after the extraction, the `review.ts` tree-id rows, and the lane-manifest rows — so each anchor lands on its construct again; no claim wording changed.
-
-- 2026-09-28T17:14:56+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): **route body reviewed — one new knowledge model, `knowledge/review_intent_summary.py` (`ICR-R24@v3`).** It declares `ReviewIntentSummaryResult` (`counted`/`partial`/`unavailable`, exactly one of counts or refusal) and `ReviewIntentCounts` (plus/minus equal to their per-kind parts; typed `realization_only`, `membership_only`, `unresolved`); its card records the semantics. No route-level contract of `models/` changed. No stamp advanced.
-
-- 2026-09-28T16:55:00+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): added the route section for the two pure extractions (`read_anchor.py`, `review_family_source.py`, both re-exported by the modules they left) and the two additive wire changes (`AnchorResolution.resolved_ranges` on every anchor observation; the member source's locator, ranges and required state/role/rationale), and re-measured the ranges into `read.py` the extraction shifted.
-
-- 2026-09-28T12:38:10+02:00 — 260921-ICR-L43 curator (uncommitted candidate tree `990a5c1a3afab15d04881475b2501ed98cddf908` over code base `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`): `models/knowledge/review_source_content.py` gained `ReviewSourceAdmission`, `ReviewSourceExpansionStatus` (inventory status plus expansion-only `unchanged`), `admission`/`admission_detail` on the expansion, and a validator tying attributed context to `unchanged` and `requested_generation`. No route impact: the models route's vocabulary-only role and module set are unchanged; the detail lives on that module's card.
-- 2026-09-27T05:30:43+00:00 — Authored scoped citation maintenance for 1 L41 source-range projection(s) resolved by the frozen source index. Only changed-source ranges were adopted from the preview; unrelated ranges, generated history and verification stamps are preserved.
-
-- 2026-09-27T05:23:46+00:00 — Re-resolved 1 source-linked citation claim(s) against the extracted or shifted L41 owners. Each selected symbol uses its current declaration extent; other source references and prior generated history remain unchanged. Verification stamps remain closeout-owned.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: `ReviewRefusalCode`; `source_content_unresolved` repointed to mcp/src/agents_remember/models/knowledge/review.py:152-162; mcp/src/agents_remember/models/knowledge/review.py:160-160. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-23T12:00:00+02:00 — 260921-ICR-L15 citation-repair curator (memory worktree only; no code changed, no commits; leaf base `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta): **route body updated (new section above) and four enforced citation rows re-pointed.** `ICR-R15@v1` makes an assessment's currentness a measured fact — `models/lifecycles/review_assessment.py` (502 → 620), `models/lifecycles/review_assessment_binding.py` (276 → 497), `models/knowledge/review.py` (docstring-only, net 0 lines) — and the section records the vocabulary at this route's altitude. **Citation accounting for the four `citation_anchor_absent_from_range` rows in this document:** `test_the_channel_model_refuses_a_count_no_owner_measured` and `test_the_wire_payload_carries_the_channels` were cited at `mcp/tests/test_knowledge_review_evidence_channels.py:761-787; :789-796` and now read `:887-912; :959-966`; `test_a_knowledge_only_change_leaves_an_openable_review_with_a_measured_empty_inventory` and `test_an_inventory_that_could_not_carry_a_name_is_partial_by_construction` were cited at `mcp/tests/test_knowledge_review_surface.py:1279-1354; :1357-1357` and now read `:1359-1434; :1437-1475`. Each range was re-read against the declaration it names in the leaf's candidate and contains it; finding and anchor wording is unchanged. **No verification stamp was advanced**, because the candidate is uncommitted: `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are untouched and remain closeout-owned. The report-only rows into `models/knowledge/review.py` that are stale by a move are left to the mechanical projection the check says owns them.
-- 2026-09-23T09:40:00+02:00 — 260921-ICR-L21 curator (uncommitted change set on `ar/260921-icr-l21`, base `972b44cc07b307929535fe7974d6a30d53c9c4f1`): **route body update for the final-output vocabulary (`ICR-R21@v1`).** The route gained `models/knowledge/review_final_output_receipt.py` — the record, its match/verdict/state vocabularies, the three pure helpers and the validator — and the section above states what a consumer keys on: `bound` is the only value claiming coverage and it requires a measured match on every channel the generation actually selected, an unmeasured knowledge channel is `unmeasured` rather than matched, and the validator re-derives every verdict from the record's own fields so a forged coverage claim cannot survive a read-back. The operation that produces and reads the record is a new `application/` owner recorded on that route's overview, not here. Per-file citations live in the new sidecar. No verification stamp was advanced: the candidate is uncommitted and closeout owns the real stamp.
-- 2026-09-22T16:35:00+02:00 — 260921-ICR-L9 curator (candidate `ar/260921-icr-l9`, uncommitted; production line `f141d164265e926be9249acf6ae680ccf9ffae61`, this leaf's base): **route body update for the subject catalogue (`ICR-R09@v1`).** The route gained `application/review_subject_catalogue.py` and this overview gained the L9 section (the population rule, the seam, and the compare-to-earn-a-row deletion); the L7 section's rows into `knowledge_review.py`/`review.py` were re-derived against the moved candidate. **Stamp accounting:** the verification pair names the leaf's base; closeout owns the stamp.
-- 2026-09-22T10:40:00+02:00 — 260921-ICR-L7 curator (uncommitted change set on `ar/260921-icr-l7`, base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5`): **route body updated (new section above).** The review wire carries the explicit revision selection: `models/knowledge/revision_selection.py` (new, 150 lines) declares the value and its three validators, and `models/knowledge/review.py` (873 → 893 lines) carries it on the pane with the one-direction validator. **Enforced rows re-cited in the same pass:** the L14-table rows this leaf's growth moved (`source_content_unresolved` `114` → `115`, `ReviewRefusal` `812-824` → `832-846`, `KnowledgeReviewResult` `827-842` → `847-864`, `KNOWLEDGE_REVIEW_SURFACE_VERSION` `95` → `96`, `ReviewEvidencePane` `643-680` → `685-721`), the subject-kinds row (`121` → `122`), and the L2 wire-shape rows (`1161-1220` → `1198-1275`, `1223-1261` → `1276-1314`). Header names this leaf's candidate row. No verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the stamp.
-
-## 260921-ICR-L3 The Review Refusal Vocabulary Gains The Source-Content Code
-This route's impact is **one member of one closed union**, and the reason it is worth naming is that a
-closed vocabulary a client reads is a contract change even when the addition is strictly additive.
-`models/knowledge/review.py`'s `ReviewRefusalCode` — the closed union a `ReviewRefusal` carries as its
-`code` — gained `source_content_unresolved`, inserted between `comparison_refused` and
-`review_adapter_unavailable`. It is the answer the new **entry-content** route gives when the generation
-a listing published no longer resolves to the two code objects that listing bound: there are no bytes to
-serve for that entry, and that is a different fact from "this process cannot read the entry" (an
-unwired port) and from "this entry has no content" (an empty rendering). The union is the module's own
-statement of which refusals exist, declared once here so the transport's admission path and the
-browser's rendering of a refusal cannot come to disagree about the vocabulary.
-**It is additive in the strict sense, and that is a fact about the transport rather than a promise.**
-The union is a vocabulary, not control flow: a code the transport does not recognise already answers
-`400`, so a client written against the previous six keeps working and an unknown code is refused rather
-than quietly mapped onto an existing answer. `KNOWLEDGE_REVIEW_SURFACE_VERSION` therefore stays
-`knowledge-review-surface/1`, exactly as it did for the R02 inventory and the L45 entry half.
-## 260921-ICR-L14 The Record-Availability Vocabulary Gets Its Own Module, And The Evidence Pane Carries It
-`ICR-R14@v1` adds one module to this route and one field to an existing model.
-[`models/knowledge/review_records.py`](knowledge/review_records.py.md) declares the vocabulary a
-review's record composition reports: `ReviewRecordClassName` (the six collections, named by record
-class rather than by pane, because availability is a fact about the owner and one fact must serve
-whichever pane renders the records), `ReviewRecordChannelState` (the five states — `recorded`,
-`none_recorded`, `unavailable`, `not_measured`, `not_selected`) and `ReviewRecordChannel`, whose
-validator makes "a count nobody measured" unrepresentable: a counted state must carry its count, an
-uncounted state may not carry one, `recorded` requires at least one record, `none_recorded` requires
-exactly zero, and every non-answer must state what would produce one.
-**The extraction is also a rail repair.** The vocabulary used to live in
-[`models/knowledge/review.py`](knowledge/review.py.md), which had crossed the 900-line soft rail at 940;
-it is 851 now and the three names are **re-exported** from it, so no importer had to learn a new home.
-`ReviewEvidencePane.channels` is the one field this leaf added there — the composition's own supply,
-carried **whole** (a class that was not read or could not be read appears with that state instead of
-being absent from the list) and deliberately not derived from the collection lengths, because an empty
-tuple has three possible meanings and the pane must render all three without claiming which one it is.
-
-## 260915-KS-L41 The Reader Port Gains A Membership Method, And The Integrity Response Binds Its Run
-
-Two models on this route changed, and both are contract changes rather than behaviour changes.
-`models/knowledge/view.py`'s `KnowledgeViewReader` protocol now declares **five** methods rather than
-four: `snapshot()`, `registered_counts()`, `rows(record_kind)`, `family_member_rows()` and
-`anchor_state(locator)`. `family_member_rows()` exists because a generic read cannot answer its question —
-family membership is a recorded generation-1 entity with its own table and is **not** duplicated into the
-`knowledge_record`/`record_revision` envelope `rows(record_kind)` reads, so asking that method for the
-kind `family_member` returned no rows on a dataset that holds them, and a family view then reported a
-joint guarantee, no members, no implementation locations and a complete answer. Declaring the method is
-what makes the read a typed call rather than a string a caller can spell into an empty answer, and a
-reader that cannot satisfy it fails the protocol instead of returning empty.
-
-`models/tools/knowledge_responses.py`'s `KnowledgeIntegrityCheckResponse` gained the five fields that
-bind its conditions to the run they were measured over: `selectedRunId` and `inputDigest` (each
-`str | None`, defaulting to `None`), `inputIdentities` and `matchingRunIds` (each a list of objects,
-defaulting to empty), and `exactInputSelector` (an optional object). `matchingRunIds` carries every run
-the requested scope holds, the selected one included, and `exactInputSelector` echoes the caller's own
-`runId`/`inputDigest` or `None` — an explicit "the caller named no exact input" rather than a silent
-absence. `compatible: None` is unchanged and still by design: this route adds a binding, not a verdict.
-The response model still declares no `payload` field, so there is nowhere for a rendered view to arrive.
-
-## IAS Contract-Scoped Activation And Sync Vocabulary
-
-The activation vocabulary lives under `models/structural/atomic_series_activation.py` and is keyed by
-the canonical series contract, not by a protected source pair. It separates selectable state
-(`reconciling|active`) from observed state (`vacant|unreadable|reconciling|active`) and binds the
-selected master plus canonical contract path to `contractFingerprint` — the SHA-256 of the canonical
-resolved contract path. Each activation record is `schemaVersion "2.0"`; the former
-`AtomicSeriesSourceRef` / `AtomicSeriesSourcePair` models and the `sourcePairFingerprint` field they
-fed are gone, because two atomic masters commanded by one sprint derive the same protected source pair
-and must nonetheless hold independent selection. This is disposable selection, not task truth, queue
-membership, or lifecycle evidence.
-
-Sync models project the stable enclosure-root journal without requiring task-document parsing.
-Public status distinguishes a retained resolution, automatic resume, cancellation, terminal
-completion, malformed/identity-invalid evidence, and bounded quarantine. Exact Git refs, admitted
-heads, and per-side progress remain strict durable state; the response exposes only what an agent
-needs to continue, cancel, or repair. Exact field membership is reconciled to the frozen candidate;
-verification metadata remains closeout-owned until the new code commit exists.
-
-CCR-R25 extends the public worktree wire vocabulary with optional
-`AtomicSeriesActivationFact` and `AtomicSeriesAdmission` fields; the contract-scoped re-key makes them
-per-contract. Status carries the addressed contract's activation address, `contractFingerprint`,
-observed state, and record/error evidence. Admission responses explain the addressed contract's own
-corrective state, the nested activation snapshot, expected/observed evidence, retry precondition, and
-a contract-bound read-only status action. They no longer carry a `classification`, a `sourcePair*`
-field or a `blocking` blocker — with them went the `AtomicSeriesAdmissionBlocking` model — because a
-foreign live master is never this contract's wait, blocker, or retry precondition. These models
-validate the projection shape only; selector mutation and recovery remain owned by the activation and
-lifecycle domains.
-
-## Current Structural Wire Vocabulary
-
-MCAR-L02 adds the strict curator-coherence lifecycle family under
-`models/lifecycles/curator_coherence.py`. It keeps the semantic requirement revision, worker
-delivery attempt, exact source candidates, agent-owned judgments, immutable record generation,
-stable live authority, optional attempt snapshot, and public request/response as separate typed
-identities. The request exposes one closed `status|prepare|publish|validate` action vocabulary.
-What `publish` requires is now **one declaration**: the nine publication members live in
-`PUBLICATION_MEMBERS` beside the request model, and the validator, the `publish` refusal and the
-`prepare` text all read it, so a member appended there is checked, named and stated with no second
-edit. A `publish` refusal names every missing member by its request field name, a
-`status`/`prepare`/`validate` refusal names the publication-only field it received, and the
-`prepare` response states the complete input set — including the two members it does not derive
-(`semantic_requirement_revision`, `delivery_attempt`), which stay the caller's own delivery
-identities. Record validation requires unique exact coverage of the structured source-candidate set
-rather than accepting partial or extra judgments.
-
-`TaskDocumentRef` is the shared repository-qualified work identity. `models/structural/agent.py` and
-`models/structural/gates.py` define the agent-facing request/response families without runtime
-address fields; internal gate correlation models are isolated behind that public boundary. The
-former flat gate model has moved, with its semantic history preserved in the successor card.
-`TaskDocumentRef` is a frozen value object whose explicit hash uses repository plus path; task
-altitude remains topology-owned rather than becoming a third identity field.
-
-`models/task_document.py` also owns the closed `MasterExecutionNature` wire vocabulary:
-`organizational|atomic`. Persisted task-document schema, observer projection, generated dashboard
-schema, and TypeScript all import or derive from that one enum rather than maintaining parallel
-strings.
-
-`lifecycles/operation.py` adds strict closeout/integration input snapshots, an internal durable
-record, and a deliberately smaller public projection. The record carries private fingerprint,
-candidate tree, PID, approval claim, and recovery details; the projection exposes only the task,
-kind, state, phase, heartbeat, current command, result/failure, and guidance required by agents
-and the dashboard. `models/worktree.py` embeds that projection without publishing operation IDs.
-
-## Shared Serving-Build Wire Identity
-
-ARSPAWN-L4 owns `ServingBuildPayload` in `models/core.py` so dashboard served state and MCP
-`server_info` cannot maintain parallel candidate-identity shapes. Co-location avoids adding a 26th
-flat model module while keeping one strict wire authority. Required version and boot time
-are supplemented by optional content digest, interpreter, package root, checkout commit, dashboard
-fingerprint, and proven-dirty evidence. Absence stays honest unknown; package version alone is not
-treated as exact candidate identity.
-
-## Shared Certification Wire Ownership
-
-[The certification wire route](certification/overview.md) owns shared frozen primitives, canonical corrective dispositions and exact stored-object references. Domain certification and lifecycle models import these concrete values; wire validity does not establish observed authority, execute a gate or select a journal record. Registry/plan compilers and the existing certificate store remain the semantic and storage owners. This extraction changes retrieval ownership while preserving the moved constraints.
+[overview](../../../../overview.md)
 
 ## Purpose
 
-`models/` owns the Pydantic response contracts for Agents Remember MCP payload
-builders. It turns the public tool surface and internal builders
-from loose dictionaries into named, inspectable models that can be validated at
-runtime and tested by schema. Model homes follow tool domains: `TaskReopenResponse`
-(cit:([`TaskReopenResponse`], mcp/src/agents_remember/models/task_doc.py:223-226)) lives in `task_doc.py` while keeping the `WorktreeCommandResponse` shape, since
-the task_reopen payload carries the enclosure contract state.
+The note-only revision has a registered `CitationNoteRevisionResponse` carrying the selected card/reference, repairing leaf, preview/change state, target/reference counts and before/after digests. `tool_answer` gives it a 1,200-token shaped bound, and `public_roster` advertises its name. These declarations describe response and delivery contracts, not a performed write.
+
+Capsule operation selection now carries an explicit all/sections audience contract. Sections-mode validation examines the complete source before projecting common and addressed text. Declared step-detail references carry source, revision, bytes and named step separately from inline blocks; the selected-content seal does not change their original source revisions or tool grants.
+
+`mcp/src/agents_remember/models/` owns named contracts shared by MCP responses, serving projections, task and lifecycle owners, capsule compilation, and knowledge readers. It supplies strict package-owned shapes, deliberately flexible detail envelopes, closed vocabularies, immutable identities, and pure construction predicates. Model validation establishes the declared shape and the consistency checks actually implemented; it does not establish observed runtime authority, successful execution, semantic truth, publication approval, or recovery.
+
+The governing route is `mcp/overview.md`. `models/tools/` remains governed here. Responsibility-specific packages include `role_capsules/`, `knowledge_files/`, `closeout/`, `queue/`, `lifecycles/`, `structural/`, and `certification/`. These homes separate stable values from the application, storage, selection, and mutation owners that use them.
+
+Knowledge is text in Git after MIK-R26. `knowledge_files/` owns the record, onboarding-sidecar, census, and history formats. `knowledge/` retains reader vocabulary, source locators, revision aggregate mappings and digests, comparison values, and review displays. Its facade does not export the former canonical database command batch, stored-anchor writer, snapshot-publication commands, or composition commands. Retained operation/refusal spellings and reader-oriented draft values do not restore those APIs.
+
+role_capsules/contracts.py retains source-addressed needs/gives endpoints, validates marker shape before operation audience selection and removes valid markers from instruction text. CapsuleCapsule carries those endpoints separately. TaskDocResponse carries optional bounded alignmentSweep advice; these value objects establish neither actual endpoint delivery nor packet release or persisted task state.
 
 ## Hot Path Summary
+MIK-R109 wire contracts name knowledge, not its text. `NamedFile` carries existence, card location/state/counts and per-row limitations/refusals; `NamedRecord` identifies actionable records and exact heading or explicit title fallback. `ReadArFilesResponse` carries call-local overview locations and code/memory observation state, not source/card/overview bodies or `published_intent`. `SlimContextPacket` is the version-3 agent roots/task/actions/build/pair shape beside the retained full `ContextPacketV2` builder contract. Knowledge-read rows carry text ID/kind/state/location with selection provenance; diff answers carry compared trees, counts, bounded decision records and whole-report location. The review models carry the resolved four-tree comparison, the leaf's highest recorded comparison number and the delivered notice value, which names the pair a landed leaf delivered and whether the comparison on screen is that pair; carrying them reviews nothing. `resolve_context` is removed from the public roster/response route, and all four L109 reads have final answer bounds, not interim rows.
 
-Closeout and landing models expose code/memory outputs; `DirectLandingResponse.ledgerCache` is an informational cache-refresh result. The lifecycle models distinguish actual Git heads from filtered memory content and retain no ledger commit alias.
+A tool result is first validated through `tools/tool_registry.py::TOOL_RESPONSE_MODELS`, except a `server-build-stale` dispatch refusal, which validates through `base.py::StaleBuildRefusalResponse`. `tools/tool_response.py::finalize_tool_response` optionally enriches the validated envelope, serializes it with absent optional fields omitted, and finalizes token accounting. The application boundary then constructs the answer delivered to an agent: `application/tool_response.py::complete_tool_response` selects a supplied compact answer or, by default, strips `tokens`, `tokenizer`, `tokenCountExact`, and `operation` and truncates long lists from the finalized whole result. It translates the selected answer's `nextStep` into `next`, records the whole result where possible, and applies the delivered-answer bound. A supplied projection does not automatically inherit whole-result enrichment. Dashboard and command-line consumers retain the whole-result path. Consequently, token fields belong to the modeled whole result and log accounting; they are not promised on the delivered agent answer.
 
-## 260915-CAPS-L2 Role-Capsule Contract And Compiler
+tools/public_roster.py owns the advertised 44-name ordinary tuple and tools/tool_registry.py maps current names to their response models. Both are model-layer wire vocabulary, not live execution or advertisement. Native role start/set/message, receipt-tracked retirement and knowledge read/diff/integrity remain; removed terminal, inbox, gate, readiness, manager-nudge and internal spawn response registrations do not survive here.
 
-`mcp/src/agents_remember/models/role_capsules/` is a **new sub-route** on this route: the master's
-frozen role-capsule DTO surface plus the pure logic that compiles it. It is the first thing on this
-route whose entire contract is about *what an agent seat is given*, so its reading order is worth
-stating once.
+The current ordinary public source roster has 44 names, including mounted knowledge_write, user_settings_init, citation_note_revision and explainer_control; the earlier41-name and pre-sync R11142-name compositions remain historical source epochs. SHAPED_TOOL_BOUNDS carries final task/landing/role delivery rows, including direct_execution_grant at150 tokens with no raw interim-map entry. Some other shaped tools retain raw L111 interim-map spellings, so final assembled rows, bound lookup and interim_leaf_for are not interchangeable observations. TaskDocResponse is the rich whole model: removed-read refusal alone may lack parsed identity, successful writes still require it, checklist-read models/steps are gone, and optional phrase, by-file, synchronization-error and fact-report fields support surviving operations. WorktreeSummary adds an optional taskDocumentCopies notice, not exhaustive copy equality or mutation permission. Model declarations and illustration labels are not universal observed maxima or acceptance.
 
-The package reads in six steps, and each step is one module: `vocabulary.py` declares the frozen
-ten roles/nine operations and the four composition roots; `manifest.py` parses the canonical
-authored `composition-manifest.json` into typed entries **without touching the filesystem**;
-`selection.py` turns an admitted binding into a scope by exact membership (no scoring, no
-nearest-match, no fallback operation); `source_set.py` proves the admitted files agree with the
-locked plan **in both directions**; `resolution.py` reduces each identity to exactly one block,
-collapsing byte-identical duplicates and stopping on an equal-authority contradiction;
-`tools.py` narrows requested tool identities against the admitted policy snapshot; and
-`compiler.py` seals the result with the semantic digest and the diagnostic manifest.
+> **Retained historical source account — superseded by the current route account:**
+> A tool result is first validated through `tools/tool_registry.py::TOOL_RESPONSE_MODELS`. `tools/tool_response.py::finalize_tool_response` optionally enriches the validated envelope, serializes it with absent optional fields omitted, and finalizes token accounting. The application boundary then constructs the answer delivered to an agent: `application/tool_response.py::complete_tool_response` selects a supplied compact answer or, by default, strips `tokens`, `tokenizer`, `tokenCountExact`, and `operation` and truncates long lists from the finalized whole result. It translates the selected answer's `nextStep` into `next`, records the whole result where possible, and applies the delivered-answer bound. A supplied projection does not automatically inherit whole-result enrichment. Dashboard and command-line consumers retain the whole-result path. Consequently, token fields belong to the modeled whole result and log accounting; they are not promised on the delivered agent answer.
 
-`models/memory_content_excludes.py` is the route's second 260915-CAPS-L13 addition and is a
-different kind of module: not a capsule DTO but the **shared memory-content exclusion policy** —
-`memory.md` (the computed ledger cache) and `bootstrap/` (transient scaffolding) declared once for
-all four seams that create a memory-content commit. It lives in `models` because that is the lowest
-layer every producing seam can read.
+> Retained L109 incoming interim-policy account; finalized L111 shaped bounds below supersede its L1114000 claim:
+> The answer policy is presently mixed rather than uniformly final: L100's `retire_child` and `role_start_set`, and L111 tools, retain named interim rows at 4,000 tokens; `role_message` and `server_info` have explicit 4,000-token exceptions. L110 memory/coherence tools now have `SHAPED_TOOL_BOUNDS` between 400 and 1,500 tokens, including 850 for curator coherence. Retained drift/migration bound entries do not advertise removed tools. L112 final rows assign `runtime_install` 600 tokens and `dispatch_agent` 1,500. Lookup checks exceptions, shaped bounds, interim ownership, then finalized task rows (including L109 and L112), and otherwise returns the 4,000-token net. General lists have a 20-entry cap; status projections use a 10-entry cap where selected, and overflow has a separate 400-token short form. These are source declarations, not a fresh measurement that every delivered answer meets them. Logging failure is reported without failing the underlying call.
 
-Three separations are load-bearing and easy to collapse by accident:
+> **Retained historical source account — superseded by the current route account:**
+> Historical pre-L113 registry account, not current membership or response-registry evidence: `tools/public_roster.py` declared the advertised tuple once, independently of live registration and response-model registration. Its then-current literal contained 41 names, including the added `retire_child` and `role_start_set`; their response models are registered without restoring the other retired operations. `PUBLIC_TOOL_RESPONSE_MODELS` filters the full registry by the explicitly declared internal compatibility names. Those internal rows include trusted session, inbox, gate, readiness, and manager-nudge builders; their presence does not advertise public tools. The public knowledge family is `knowledge_read`, `knowledge_diff`, and `knowledge_integrity_check`. Provider operations, the former knowledge mutations/projection, and status-change wait are not entries in the present public tuple.
 
-1. **admitted input / content output / diagnostic output** — the DTOs in `types.py` keep these
-   structurally apart, which is why `types.py` was split at 704 lines and the diagnostic
-   projection extracted into `diagnostics.py` (541 + 217 after the A3 repairs). **Nothing in `diagnostics.py` may ever
-   feed `semantic_digest`**; timestamps, unselected sources, conflict rows and refusal text are
-   deliberately outside the capsule's identity.
-2. **a request is not a grant** — tool requests are narrowed against `CapsuleToolPolicy`; nothing in
-   this package can add a capability the policy did not already permit. **The skill channel is a
-   different shape and must not be described with this one:** `compiler.skill_references` builds one
-   content-addressed `CapsuleSkillReference` per declared skill (`identity`/`origin`/`uri`/`revision`)
-   and consults **no** policy — a skill reference is a pointer to separately delivered content, so it
-   is *carried*, and the only thing that can invalidate it is a skill root file that was not admitted.
-3. **declared vocabulary over the manifest** — the role/operation registry is declared in code and
-   handed to the parser, so a manifest edit fails compilation instead of minting a new role.
+> **Retained historical source account — superseded by the current route account:**
+> The answer policy is presently mixed rather than uniformly final: L100's `retire_child` and `role_start_set`, and L109/L111 tools, retain named interim rows at 4,000 tokens; `role_message` and `server_info` have explicit 4,000-token exceptions. L110 memory/coherence tools now have `SHAPED_TOOL_BOUNDS` between 400 and 1,500 tokens, including 850 for curator coherence. Retained drift/migration bound entries do not advertise removed tools. L112 final rows assign `runtime_install` 600 tokens and `dispatch_agent` 1,500. Lookup checks exceptions, shaped bounds, interim ownership, then L112 final rows, and otherwise returns the 4,000-token net. General lists have a 20-entry cap; status projections use a 10-entry cap where selected, and overflow has a separate 400-token short form. These are source declarations, not a fresh measurement that every delivered answer meets them. Logging failure is reported without failing the underlying call.
 
-The semantic digest is a `\t`-separated canonical document over the seat, operation, repository,
-work branch, task reference and document digest, requirement identities, the specializations
-**actually composed**, one line per composed block with its revision, one line per requested tool id
-in sorted order, one `skill` line per carried reference, and the task context when supplied. Order is
-part of identity, not presentation over it. Ten shipped roles compile from disk twice to one digest
-each and to ten different digests, so the digest is neither a constant nor order-insensitive.
+Contract guidance preserves an explicit producer `nextStep`; otherwise the application resolves the response's own contract. The two preview approval stops may use the exact same call's `contract_path` argument and remain summary-only. Actionable guidance that names a contract is withheld when the response has no address or any supplied spelling fails to identify its contract file or immediate containing directory. Guidance without an artifact address can remain. No ambient-session guidance or declared `agentNotifierBanner`/`supervisorBanner` envelope fields remain.
 
-`layers.toml` places this package in `models` (rank 2) precisely because it holds only
-dependency-free value types, canonical source parsing, and selection logic. The contract's declared
-target is not yet met tree-wide — the tree reports 16 pre-existing violations, **none** naming a
-role-capsule module — so do not present the layer contract as currently satisfied.
+Memory-tree reads carry their selected tree/index, completeness and bounded continuation, plus reader-owned proof, currentness, family, and route-chain blocks when applicable. Git-tree knowledge diffs carry exact revisions, bounded patches and omissions; text-tree integrity reports carry validator inputs, findings and optional leaf worklists. These observations establish neither semantic effect nor code approval.
 
-## Detailed Route Context
+`tools/explainer_control.py` owns the strict update/retire/claim response, its master-to-Architect ownership record and claim-transfer counts. Non-refused results require an admitted action; a refused result can retain the unknown action it rejected. The model validates shape and bounded lists, not the caller's actual authority or delivery success.
 
-The model layer now carries closed lifecycle generation, legal-control, enclosure, door, successor, termination, direct-landing, and bounded legacy vocabularies while keeping scheduling projection separate.
+## Construction And Ownership
 
-The closeout input, source, and projection vocabulary now lives under `models/closeout/`. This is a
-one-to-one package move of the existing typed contracts, not a compatibility namespace: input owns
-accepted plan shape, source owns exact candidate provenance, and projection owns disposable
-scheduling facts while journal models retain lifecycle evidence.
+DirectExecutionGrant is external task-local authority; observer directGrant is display-only. Direct response adds candidateTree/candidatePaths/codeCommitMessage facts, and lifecycle direct input carries exact canonical leaf plus prospective codeBefore. No task-document flag or anticipated commit hash is introduced.
 
-`models/closeout/input.py` no longer owns the rendering of the memory-content commit message.
-Since 260913-LCA-L4 the one writer is `kernel.memory_attribution.render_memory_content_message`
-(kernel/memory_attribution.py:72-97), and `EffectiveCloseoutInput.memory_content_message(code_commit)`
-(input.py:148-166) is the closeout-shaped way in to it: the closeout's own message verbatim plus
-exactly one final-paragraph `Code-Commit: <sha>` trailer naming the code commit that same closeout
-landed. Both closeout routes still render through that wrapper — worktree closeout and the
-branch-addressed direct landing — while the prepared memory-content leg, carryover, baseline adoption
-and backfill call the kernel renderer directly, so the attribution has a single definition in kernel.
-There is no current ledger-only producer: the cache is rebuilt without a commit. Historical commits without attribution contribute no computed mapping.
+The recorded-meaning review models separate eligible steps, readable none and unavailable history. Each step keeps authored effect and own judged revision; old family omissions remain explicit and half-recorded rows are invalid. Subject payloads require the field, task context supplies it empty, and outline labels carry the same state/order independently of change-kind facts.
 
-ACPUI-L2 adds `launch-selection-invalid` to the strict terminal spawn response for an incomplete
-role-configured native selection. Existing `resolvedModel`/`resolvedEffort` fields continue to
-carry settings provenance, while `sessionCommands` is now explicitly user-authored launch
-configuration rather than a normalized model/effort vehicle. Dynamic catalog and process failures
-remain hosted control evidence and do not inflate the pre-spawn status enum.
+> **Retained historical source account — superseded by the current route account:**
+> Memory-quality response codes reach the shared shaping guard without a model length ceiling; malformed/over-long codes are converted there with whole-result custody, not raised first. The current tool-answer interim map explicitly assigns `direct_execution_grant` to L111. No response-model, tool-roster or semantic-acceptance owner moves.
 
-HFX2-L17 adds binding identity to terminal responses: attach can return `role-required` and carries
-`seatRole`/`previousSeatRole`; spawn carries `seatRole`. The legacy `role` field still means
-transport (`chat` or `terminal`) and is not orchestration identity.
+**Envelope and vocabulary ownership.** `base.py` distinguishes `extra="forbid"` package-owned contracts from `extra="allow"` intentional detail surfaces. Both envelope families declare `ok`, token metadata, optional producer/contract `nextStep`, answer-carried `next`, optional log location/error and the optional `buildCurrentness` reading, without notifier banners. `StaleBuildRefusalResponse` is the strict `code`/`error` envelope that validates the shared `server-build-stale` dispatch refusal in place of a writer's own response model. Flexible envelopes also recursively reject the reserved snake-case decision keys, preserving the camelCase decision vocabulary without rejecting unrelated detail. `ResponseEnvelope` names their union. Nullable fields omitted by `exclude_none=True` need optional defaults. Inherited policy requires explicit nested owned models, or a narrow `model_validate` adapter, rather than silently treating arbitrary dictionaries as owned contracts.
 
-HFX2-L15 extends the terminal spawn response with `replacementForLeaf`, resolved model/effort, and
-bound session-log entry/path provenance. Delivery booleans are evidence-specific: context is true
-only for the id-bearing user record, and commands require command plus non-error stdout evidence.
+The enduring vocabulary rule is one declaration consumed by producers and readers. Ownership can be at a producer or at this lower wire layer when importing the producer would create a cycle. Worktree lifecycle and guidance aliases now live in `models/worktree.py`; Git state/freshness and readable memory mode are imported from their kernel owners. The leaf-reference refusal vocabulary (`LeafRefStatus`) and its type-derived `VALID_LEAF_REF_STATUSES` membership set are owned by `worktrees/leaf_refs.py`; no model in this package consumes them. The historical drift-repair examples explain why a copied status set can reject a producer's real payload after its operation already occurred; they do not establish present exhaustive coverage.
 
-Start with `tools/tool_registry.py`: `TOOL_RESPONSE_MODELS` maps every modeled builder
-to one response model, while `PUBLIC_TOOL_RESPONSE_MODELS` filters out retained
-compatibility builders so it matches `mcp.tools.PUBLIC_TOOLS`. Both are typed
-`dict[str, type[ResponseEnvelope]]` (260731-EFA-L4), not `type[BaseModel]`.
-`tools/public_roster.py` (260831-LOCR-L32) is the route's zero-import leaf holding the single
-definition of the advertised tuple `PUBLIC_TOOLS` (63 ordered names since 260831-LOCR-L37 added
-`worktree_pause`; L22-L86); `mcp/tools/base.py`
-re-exports the identical object. It lives here because a `models` response model now reads it —
-`models/worktree.py` enforces the worktree surface's next-move vocabulary against it — and
-`models → mcp` would be a `layers.toml` violation.
-`base.py` defines strict response envelopes, intentionally
-flexible detail envelopes, token metadata fields, and the strict `NextStep`
-lifecycle-hint model carried by an optional `nextStep` field on BOTH envelope
-bases (`ResponseModel` and `FlexibleResponseEnvelope`), so every modeled tool
-response can surface the computed next move; 260731-EFA-L4 declares the
-`supervisorBanner: str | None` stale-supervisor field beside it on both bases and
-names their union `ResponseEnvelope`. Domain modules then own
-contract slices: `context_packet.py` for compact `ContextPacketV2`,
-`providers.py` for provider summaries and diagnostics, `worktree.py` for
-worktree context/status responses including `enclosurePath`, `leafId`, and `kind`, `memory.py` for memory/onboarding tools,
-`runtime.py` for runtime and resolver tools, `benchmarks.py` for Codex
-benchmark tools, `lifecycles/responses.py` for the `lifecycle_*` signal responses
-(with `LifecycleStartResponse` also carrying an optional `frontHalfRundown`
-front-half roadmap, and the task-28 `LifecycleTurnEndNotificationResponse`
-adding a `summary` for the public NOTIFY-AND-CONTINUE turn-end tool),
-`task_doc.py` for the `task_doc` authoring response including the optional Task 21 `masterSync`
-leaf-to-master result, `gates.py` for
-`LifecycleGateResponse`, the public gate decide/list responses, and retained
-compatibility gate responses (L4 adds delegated-decision `decidingRole` and
-`evidenceRefs` to the decide response), `operator_inbox.py` for the
-three `operator_inbox_*` external-chat response contracts (task 10),
-`orchestration.py` for the strict `orchestration_nudge_manager` response,
-`lifecycles/finalize.py` for the strict terminal task-finalizer response, `terminal.py` for the strict
-`attach_terminal_session_to_leaf` hosted-chat/terminal reassignment response AND the L2
-`spawn_agent_session` dispatch response (`SpawnAgentSessionResponse` — spawned-by provenance +
-context-delivery outcome (since 260707-HFX-L3 incl. the failure-evidence `deliveryCapture` field) + the server-arbitrated `leaf-taken`/pre-spawn refusal statuses; since HFX-L4 the attach/spawn models also accept
-`leaf-ref-not-found` / `leaf-ref-ambiguous` refusals with the original `leafKey` and optional detail; since
-260703-L16 also the `effort-invalid`/`model-invalid`/`level-invalid` refusals, the free-form spawn
-provenance `launchArgs`/`promptKeywords`/`sessionCommands` + `sessionCommandsDelivered`, and the
-level provenance `spawnLevel`/`spawnLevelSource`; HFX2-L10 adds the
-`spend-override-unsupported` refusal for legacy caller spend fields and maintained harness-native
-spend env keys; since 260821-ARSPAWN-L1 also the caller-kind provenance `spawnedByKind`
-(`plane|ambient|unattributed`) mirroring the catalog row — the provenance the public `dispatch_agent`
-sets by caller kind), and
-`tokens.py` for response token accounting. **260707-HFX-L8** adds two more strict models to
-`terminal.py`: `SessionRetireResponse` (`retired`/`already-retired`/`unknown-session`/
-`unknown-actor`/`retire-refused` statuses, retirement provenance fields, `detail` naming the exact
-authority-policy clause on refusal) and `SessionRenameResponse` (`renamed`/`unknown-session`,
-`label`/`spawnedLabel` — identity text only, no `spawn_role` field on this response since a rename
-never changes it). `lifecycles/finalize.py`'s `LifecycleFinalizeTaskResponse` carries additive
-`autoLandedSeats: list[str]` field for the master→super finalize edge's landed archive hook.
+`ContextPacketV2` owns compact startup context, with storage path rules nested in the memory storage shape rather than duplicated at top level. A retained inconsistency needs explicit description: `ContextDiagnosticsHint.providerDiagnosticsTool` still defaults to `provider_diagnostics`, while that name is absent from the public roster and response registry. This default is present schema wording, not an actionable public-tool recommendation. Provider summary/detail models may survive without making deleted provider tools public.
 
-## Route Model
+**Offline token accounting.** `tokens.py` constructs the default exact `o200k_base` counter at module scope. Before loading the encoding it verifies the shipped vocabulary's presence, supported encoding name, and SHA-256. Only then does it temporarily point `TIKTOKEN_CACHE_DIR` to the verified file's parent, under a reentrant lock, restoring the previous environment value afterward. The filename is derived from the source URL's SHA-1 cache key. Verification must precede the library load: the inherited intent is to refuse missing or byte-wrong package data rather than permit a startup download or rewrite. The lock coordinates participating callers only; unrelated threads can still observe or modify the process-global environment. `ApproximateTokenCounter` exists as a separately selectable implementation, but the default exact counter does not automatically fall back to it on vocabulary failure. Whole-result accounting includes its metadata through a stable-count loop.
 
-- Owned compact contracts should inherit from `StrictResponseModel` or
-  `ToolResponse` so unknown fields are rejected.
-- Native/detail surfaces that intentionally pass through provider or service
-  payloads should inherit from `FlexibleResponseModel` or `FlexibleToolResponse`.
-- The strict `NextStep` model (task 27) mirrors the worktree guidance dict shape
-  (`summary` plus optional `nextOperation`/`nextTool`/`nextArgs`/`nextRequiredArgs`),
-  so an operational hint and a gate-raise share one vocabulary (a gate junction
-  is just `nextTool="lifecycle_gate"`). Both envelope bases
-  ([base.py](agents-remember/mcp/src/agents_remember/models/base.py)) declare an
-  optional `nextStep: NextStep | None` field, populated for in-lifecycle calls at
-  the [mcp/tools/base.py](agents-remember/mcp/src/agents_remember/mcp/tools/base.py)`::_tool_payload`
-  choke point and excluded when None, so lifecycle-less calls stay unchanged.
-- Both envelope bases also declare `supervisorBanner: str | None` (260731-EFA-L4), set at
-  the same choke point. It had been written by the choke point since 260707-HFX2-L2 R5 but
-  declared on no model, which is the specific hole: `ResponseModel` is `extra="forbid"`, so
-  a response carrying a stale-supervisor banner failed its OWN `model_validate`, and
-  `FlexibleResponseEnvelope`'s `extra="allow"` accepted it undeclared — tolerated drift is
-  for the PROVIDER's fields, not this package's. `ResponseEnvelope` is the
-  `ResponseModel | FlexibleResponseEnvelope` alias naming the two families; the split between
-  them is about `extra`, not about the header, and both carry the same
-  `ok`/`tokens`/`nextStep`/`supervisorBanner` fields.
-- `ContextPacketV2` keeps startup context compact and points detailed provider
-  troubleshooting to `provider_diagnostics`.
-- Token metadata fields exist on every modeled response; the final S6 wiring
-  fills them from the serialized JSON payload.
+> **Retained historical source account — superseded by the current route account:**
+> **Task, structural, and native role identities.** `TaskDocumentRef` is a frozen repository-qualified JSON task-document identity, hashed by repository and normalized confined path. Repository identity prevents cross-repository collisions; task altitude remains topology-owned. `TaskScopedReaderContext` adds the canonical absolute enclosure contract address rather than a provider actor/workspace identity. `task_document.py` owns `MasterExecutionNature` (`organizational|atomic`). Structural agent/gate contracts separate public task/role outcomes from internal runtime correlation and occupant identity.
+
+`role_agents.py` and `role_launcher.py` own single/set role starts, messaging and launcher request/response shapes. Start/message status vocabularies admit product-held state; set responses carry per-seat results, and message responses carry held-message identity and waiting counts. Calls declare replacement and held-message withdrawal operands. These fields do not confer caller-controlled permission policy: the shared launch selector refuses permission-bearing feature overrides. `structural/agent.py` separately restores `RetireChildRequest` and `RetireChildResponse` for native receipt-tracked retirement; original-starter authorization belongs to `cli/role_retire.py`. The inherited native-launch intent separates canonical task/workspace identity, explicit requested model/effort/mode/feature choices, per-choice provenance, and actual host observations. Requested immutable `sessionOptions` are not proof that the host observed mode or service tier. Dynamic validation and launch/replay behavior belong to the native launcher owners, not these schemas. This proposal does not independently certify that full launch path.
+
+The removed terminal/dispatch DTO family is not a current model home. Native role launch request/response and receipt-owned retirement remain separate retained models; their structural identities do not become a promise about removed carrier, terminal readiness or dispatch-brief transport.
+
+**Lifecycle, closeout, and publication contracts.** Lifecycle models retain generation, enclosure, legal control, successor, termination, mutation, preparation, recovery and bounded legacy evidence separately from disposable scheduling projection. The strict internal operation record may hold fingerprints, candidate trees, process identity, approval claims and recovery detail; its public projection states the exact journal identity (contract path, generation, record revision and candidate/plan/identity digests), task intent, result, failure and guidance text, an approval `claimed|unclaimed` observation, a worker liveness observation, a recommended action, legal controls and projection effects, while process and lease authority stay internal. Root-journal evidence is not replaced by a queue projection. `queue/` is the waiting-door request/response surface, while `closeout/projection.py` owns its scheduling vocabulary; earlier selected/in-flight/certified queue accounts are historical.
+
+`closeout/input.py`, `source.py`, and `projection.py` respectively own accepted input, exact candidate provenance, and scheduling facts. The inherited input contract distinguishes raw messages, resolved plans, enabled/not-applicable legs, and structured refusals; below validation there should be no invented subject or blank sentinel. Memory-content attribution belongs to `kernel.memory_attribution.render_memory_content_message`, reached by closeout through its effective-input wrapper: preserve the authored message and append the exact landed code commit trailer. Code and memory outputs remain distinct from informational `ledgerCache` refresh. `memory_content_excludes.py` declares `memory.md` and `bootstrap` once as worktree-relative names; these are not pathspec strings. The inherited account says the ledger is a rebuilt cache with no current ledger-only commit producer, and unattributed historical commits yield no computed mapping. A stale comment in the exclusion module still mentions its own transaction; that comment alone does not establish a present producer.
+
+Atomic-series activation is contract-scoped, not protected-source-pair-scoped. Its strict v2 record carries the contract fingerprint, selected master, canonical contract path, revision, time, and state. The present record state admits `vacant` as well as `reconciling|active`; the separately declared selection vocabulary admits only the latter two, and observed state additionally admits `unreadable`. This is disposable selection, not task truth or lifecycle acceptance. Independent atomic masters sharing a protected pair must not overwrite one another's selection. Worktree activation/admission projections explain the addressed contract's state and corrective action; a foreign live master is not this contract's blocker. Real predecessor dependencies remain execution-graph concerns. Sync projections retain resolution, resume, cancellation, completion, malformed/identity-invalid evidence and bounded quarantine; exact refs, admitted heads and per-side progress remain journal-owned durable facts.
+
+Curator coherence keeps requirement revision, delivery attempt, source candidates, authored judgments, immutable generation, stable authority and optional attempt snapshot separate. `status|prepare|publish|validate` is closed. The nine identity/publication members are declared once and drive validation, refusal wording and prepare guidance. Optional `judgments_file` transports judgments and assessments without joining that required identity set; the request shape refuses this content on non-publication actions, and the publication owner refuses explicit inline/file duplication, including explicitly supplied empty lists. Response models add candidate counts by kind, candidate-set digest/file locations, publication counts and the judgments-file SHA-256. Transport changes supply neither semantic judgments nor acceptance authority. Judgment coverage is unique and exact over source candidates; assessments are a separate optional collection outside that coverage obligation. Publication-only input is refused for non-publication actions, and only publication may freeze an attempt snapshot. `MemoryCandidatePairIdentity` is shared rather than copied by quality, coherence and closeout contracts. Certification primitives, corrective dispositions and exact stored-object references live in `certification/`; registry/plan compilers and certificate storage retain semantic and storage authority. `test_evidence.py` makes candidate-bound certifying evidence opaque to ordinary construction and requires the verified Dagger publication capability for accepting consumers. Diagnostic output is not acceptance evidence.
+
+`ServingBuildPayload` is the shared strict boot identity for dashboard and server information: version and boot time are required, while exact content/build/interpreter/package/commit/dirty observations may be absent. A version alone is not an exact candidate identity. `build_currentness.py` declares `BuildCurrentnessPayload`, the strict comparison of a loaded Python build with the files now at its package root (installed or checkout mode; current, stale or unknown state; loaded and installed digests, first-seen time, reason and remedy), shared by serving status and the response envelope. `core.py::RunningServerPayload` pairs one live server's recorded boot identity with that reading; server information and runtime install carry the running-server list. Declaring a reading performs no restart or refusal. Master retirement and sprint execution-edge models separately describe archived proof, removed linkage, affirmed graph edges, reasons and source digests; declaring that proof does not perform retirement.
+
+**Capsule and skill construction.** `role_capsules/` separates manifest parsing, exact scope selection, bidirectional source-set admission, instruction resolution, tool narrowing and compilation. Declared role/operation vocabulary constrains manifest edits; no nearest-match selection or fallback operation is intended. Resolution collapses byte-identical duplicates and refuses equal-authority contradiction. Admitted input, semantic content and diagnostic output stay structurally separate: timestamps, unselected sources, conflict rows and refusal text do not enter the semantic digest.
+
+Tool requests are narrowed against admitted policy and cannot grant new capability. Skill references are a distinct channel: every declared skill is carried as an origin/identity/URI/content-revision pointer to admitted root content, without applying tool-grant policy. No declared skill may silently disappear. The digest includes manifest schema, seat/role/operation, repository/work branch, task/document/requirements, composed specializations, ordered block identities/revisions, requested tool identities, skill identities/revisions, and verified task-context identity when supplied. Order contributes to identity. Empty or non-UTF-8 admitted instruction sources use typed capsule source refusals; emptiness can be discovered during actual composition after admission.
+
+`role_capsule_resources.py` and `skill_resources.py` own response/discovery formats, origin-plus-name identity, declared provenance and server-supplied-data trust statements. Enumeration returns references and metadata rather than opening bodies; an observed declared tool set is not applied permission. These model owners do not import the MCP protocol layer. The removed Eve carrier has no current parsing, serialization or environment-vocabulary contract. Retained LaunchCapsule values carry compiled instructions; native writer/launch consumers own their actual reading, delivery and execution admission.
+
+**Text knowledge construction.** `knowledge_files/documents.py` maps the twelve record kinds, layout marker, file/route sidecars, history and four census schemas to models and refuses unknown schemas. `FileModel` is frozen, extra-forbidden and alias-serialized, and refuses explicit null keys at its model boundary. Canonical formatting is formatting only; it must not silently change content. IDs distinguish minted six-character suffixes from legacy-derived eight-character suffixes; slugs are display rather than identity. Each relationship has one owning record/sidecar surface, rather than duplicate second-owner fields.
+
+Repository paths use the confined plain-Git-path rule. `RoutePath` alone also admits `.` for the root route; inherited intent permits a family there only when no narrower home exists. That semantic placement policy is not inferred from the type's ability to represent `.`. Leading-colon pathspec magic is refused, while literal glob characters are permitted as names. Anchor content identity is `sha256:` over the exact blob bytes: one-based inclusive line ranges preserve each terminator and split on newline only; whole-file anchors use all bytes; symbol resolution supplies a range to this shared hasher. It never decodes the bytes to establish identity.
+
+Admission meanings remain `spans_locations`, `guarded_by_test`, `family_guarantee`, `prevents_costly_mistake`, `joint_guarantee`, `real_alternatives`, and `constrains_future_work`. Mechanical support for the first two uses sidecar realization/proof facts; reviewer judgment owns the others. An exported record is recognized by a legacy identity that actually derives its record ID, not mere `legacyId` presence; decisions receive no export exemption. Census baseline, inventory, claims and route-status formats retain provenance and distinguish import disposition from authored semantic assessment. Root route slug is `@root`; claim IDs use `CLM-` plus six Crockford characters; latest status across censuses governs. Pinning and append-only checks belong to the validator rather than format construction.
+
+History files are leaf, wave or crossing-owned and contain one row per subject. The registry retains invariant, family, onboarding_trace, planned, unexplained and reconsideration and adds membership and record. Invariant/family dispositions keep their covered-entry/examined-member obligations and governing changed-or-retirement rule. Reopened files merge by attempt, with later subjects superseding earlier ones. The merged latest-file closed flag is not each winning row's provenance: winning_row_closed computes those own-file flags separately. Closed-base history stays frozen, and unchanged-revision changed rows remain restatements rather than a new arbitrary judgment.
+
+Onboarding trace rows allow updated/no_impact and writer-filled SourceBlob bindings. Each SourceBlob has a repository path and lowercase hex object token or absent sentinel; source paths are distinct. Updated requires sources in the model, while old sourceless rows remain syntactically readable and answer only in their own closed files. The normal gate checks source equality and counted Markdown/nonmechanical references, not realizes/proves-only changes. Crossing markers retain their structured list and root subject onboarding:overview. L53's rollout exception permits its own measured changed card through the old producer with no invented updated/no_impact row or later backfill. Planned effects retain their disposition-specific references, of which the writer resolves the requirement, decision, invariant and row forms; a deferred `ref.leaf` is only checked for `OwnerId` shape and is not resolved to an existing follow-up leaf.
+
+Unexplained hunk identity is changed-line based; nontext subjects bind the candidate object or absence. The pure helper reads a subject-to-row map but does not establish row currency or count a card edit. Covered items keep no_invariant; uncovered items use the application gate's typed current onboarding answer, so an elsewhere source edit can reopen that answer without changing hunk identity. Unreadable sidecars or unstated coverage do not pass. Reconsideration subject/index, still_rejected/raise forms, refreshable triggers and derived decision supersession remain separate rules, not substitutes for onboarding currentness.
+
+MembershipRow names membership:<invariant> with no_family, current candidate revision and distinct considered family IDs; it cannot answer a listed invariant. RecordRow names a decision/facet at candidate revision: changed requires effect, retired requires retire, no_impact forbids effect and because is optional. Unknown-subject checks resolve the membership invariant and record subject. These candidate schemas are not authority to write new kinds through an unsupported main-line producer.
+
+The reconsideration satisfying function accepts `superseded=frozenset()` after its item and rows.
+A matching row closes an item only when no changed fact carries the `refresh_not_current` trigger,
+which returns the item open before the row map is consulted; without a row, a valid reconsideration
+subject also closes when its decision ID belongs to the supplied superseded set. The empty default
+preserves two-argument
+behavior. Supersession is derived, never stored; subject spelling, triggers, dispositions, row kinds
+and decision status schema are unchanged. MIK-R148 rule3 is pure-function plus fresh-run agreement:
+the worklist supplies both-side context and omits superseded items before judging, while the registered
+gate wrapper does more than rows-only calling: `reconsideration_row_open` hands the candidate, code and
+rows to `reconsideration_gate_reason`, which derives candidate supersession and measures each refreshed
+anchor before calling the satisfying function with that superseded set. A manually constructed old item
+is not promised closed by that wrapper.
+
+**Reader and review construction.** Recorded-scope seeds distinguish path, invariant identity/revision and family identity/revision; they carry no scoring or inferred relevance. Context binds namespace and snapshot, and source resolution requires both repository root and code tree. A missing task reference is a supported planning read. Counts partition total/cumulative returned/remaining, and page completeness agrees with continuation presence. Shared `knowledge-continuation/v2` tokens use `kc2.`, bind tree, response/view, seed/order, policy/version, manifest, position, threshold and optional code tree, and queue at most 64 seeds without a local path. Queue overflow is the named `seed_queue_exceeded` boundary. Scope, view and comparison cursors retain their separate contracts; rebinding cannot silently combine different revisions.
+
+`classification.py` separates authored provenance from registered versioned mechanical rules; no mixed/default provenance or semantic rank is intended. The three retained views are source context, invariant and family. Their bounded completeness is within declared scope, not project truth; not-applicable quantities carry reasons rather than invented zeroes. `KnowledgeViewReader` supplies snapshot/count/row/membership/anchor observations rather than letting a renderer open storage. Membership has its own method because it is not interchangeable with generic record rows. A source-path seed uses `PathSeed`; absent restriction differs from a measured empty realization set. Realization display rows can carry authored role, path and locator without inferring them. `ReadArFilesResponse` declares named files, call-local overview locations, memory/code state and refusal fields; it has no `published_intent` or source/card/overview body carrier. Its naming response is separate from the bounded `knowledge_read` views and has no continuation or per-session delivery state.
+
+Review models display records owned elsewhere and define no new record kind. `review.py` re-exports focused vocabulary owners, including `review_refusal.py`; the surface version remains `knowledge-review-surface/1`. Task context is a meaningful absence of a subject selector/comparison, tied to `not_compared`, while the source inventory still records the bound code pair. Present text, absent/binary/unresolved source, measured/partial/unavailable inventory, exact unrepresentable path bytes, and mode/content changes stay distinct. Inventory and attribution counts must reconcile. Attribution uses changed paths and disjoint exhaustive buckets; source movement is separate from authored obligation movement, and a diff is not a semantic effect finding. Text-record statement replacement is represented by removed/added transitions rather than an invented predecessor relationship.
+
+The subject catalogue carries invariant/family identity, label and `before_only|after_only|both` presence rather than a per-subject comparison count. `ReviewEntryListResult` also declares optional `ReviewOutline` beside its entries and totals. Its current producer reads the two derived indexes for navigation identities, family titles/membership and change marks, and invariant statement summaries of at most 120 characters; it does not open source or create a second source inventory. This display addition defines no new record kind and supplies no packet authoring or acceptance authority. Total subjects sum invariant and family totals, cover the returned page, and are zero on refusal. Revision selection declares compared, unresolved, added and removed states with the corresponding before/after presence pairs; ambiguous belongs to the historical five-state model, not the current union. It carries recorded heads and retained revisions and does not select by timestamp, similarity, rank or latest label. Movements name their recorded pairing basis, both sides or a reasoned transition, and displayed-side gaps; missing identity requires an explicit gap. Rename inference is labeled Git detection and separates measured pairing, measured non-pairing and unmeasured inference. Relationship collections can include associations without source addresses.
+
+Current tree review requires the judgment pane rather than projecting supporting-record channel bags, curator-assessment displays or applicability summaries. The pane carries this leaf’s selected-subject history rows in attempt order and proof entries with authored facets and after-code currentness; these are not executed proof results or inferred semantic conclusions. Measured no judgment and unreadable history remain distinct. Task context has no selected knowledge subject and reports unavailable judgment rather than an empty successful collection. The judgment model requires nonempty rows exactly in its rows state and keeps proof currentness separate from execution.
+
+Historical pre-L57 record-availability/applicability DTO account, not a current tree-review payload: Record availability retains six classes and five states: recorded, none-recorded, unavailable, not-measured, not-selected. Counts exist only for counted answers; positive/zero requirements follow the state, and unanswered channels name what would produce an answer. An unreadable individual remains named beside available siblings. Applicability labels require their recorded references, keep direct/historical subject identity explicit, and partition every supplied record across six treatments. Related family context carries true subject, recorded relationship, author/role and references without importing judgment content. An absent optional treatment means unstated treatment, not unrelatedness.
+
+Lifecycle assessment currentness remains a separate contract, not a tree-review assessment-display channel: failed measurement is unavailable, a measured disagreement is stale even if other axes remain unmeasured, complete matching coverage is current, and missing coverage is not-measured. The low-level equality comparison remains separate from this measurement-aware projection. Subject counts partition entries and derive status in stale → unavailable → unresolved → not-measured → current precedence; no recorded assessment is the separate none-recorded state. The former tree-review assessment display is removed; this does not retire authored lifecycle assessment records. Submission is display-only, with stale-disable coupling; its dispositions confer no approval. Previous binding names only the replaced display, and absence supplies no invented previous generation. Recorded-history selection addresses the leaf's published record; live selection is the absent-history case.
+
+Collection pages distinguish selection totals from walk totals and require a continuation for a remainder. Refused pages carry a separate refusal rather than zero counts. Family context distinguishes recorded/not-recorded/not-resolved/unreadable, preserves authored guarantees and exact membership occurrences, and reports a true no-family-recorded zero separately. Roster `complete` describes the walk: only a complete first page can be checked as the whole roster; a complete continued final page carries only its own share. Member-source locator states share a producer/validator rule. Anchor observations may carry resolved ranges only on exact recorded blobs; unsupported, missing, different and unrequested observations remain distinct.
+
+Tree review retains four exact code/memory trees and optional converted-base inputs. Unavailable history and pre-conversion legacy unavailability are named rather than substituted. `same_trees` compares task/leaf, every side's repository and tree, and converted base. The side model documents committed-commit versus uncommitted-ref ownership; this local class does not itself implement an exclusive commit/ref validator, so its prose must not be promoted into a constructor guarantee or a claim about the entire call path. Focused entries distinguish recorded absence from unavailable/unresolved ranges, bound exact excerpts to 400 lines/48,000 characters, retain authored role/rationale or proof facet and currentness, and classify change as changed/unchanged/undetermined. Leaf-wide views do not fabricate focused entries.
+
+The catalogue and changed-intent summary results additionally declare an optional nonnegative comparison number. Selected revision values retain their exact revision IDs separately from optional display versions and per-side writer observations. `ReviewRevisionWriter` distinguishes recorded, introduced, not_recorded and unavailable; its validator requires owners exactly for recorded or introduced states. These are transported provenance observations, not an additional revision-selection policy or acceptance verdict. Focused card sides carry an optional exact symbol name, and entries can carry four after-index memory values: realizing-invariant count at the located path, incoming-link count, lack of proof and open-weakness count. `ReviewEntryMemoryState` separately names available/unavailable values, the after tree and complete/partial index state or failure reason. A declared shape and optional fields do not by themselves establish that every producer has read a complete index.
+
+`review_lane.py` owns `ReviewLaneHunk`, `ReviewLaneFile`, `ReviewLaneDestination`, `ReviewUnexplainedLane` and `ReviewLaneSummary`, preserving hunk classification, membership state, per-file reasons, destinations and changed-file buckets. Lane-summary partial/unavailable states carry no totals; the full lane's partial state retains measured-path totals and names its unmeasured scope. Exact source expansion is owned by `review_source_content.py::ReviewSourceExpansion` and its request/result contracts. These live model owners do not establish a live `SourceExplorer` or `LaneFileFocus` implementation. Change-kind models derive primary facts and marks, with unknown on unresolved range and reasons required for unknown facts/membership. Changed-intent summaries keep counted/partial/unavailable separate, sum per-kind added/removed, and leave realization-only, membership-only and unresolved outside plus/minus. These models render observations rather than selecting subjects or deciding semantic correctness.
+
+Final-output receipt v2 binds the complete retained comparison and digest to required delivered code and memory commits/trees. Its two stored verdicts are bound or moved, with both exact candidate-tree matches required for bound. The shared helper also returns unmeasured for an incomparable channel, but that does not make unmeasured a valid v2 receipt state. Sync rebinding v2 similarly derives current/moved/unmeasured from exact captures, with memory head/tree present together. Sync-movement displays retain the source comparison and only applicable moved-channel observations. These values authorize neither clearance nor successor publication; missing observation is never a favorable match.
+
+RoleMessageCall and RoleMessageRefusal/response models carry file-only body/attachment inputs and named file/hash/limit/successor outcomes. The existing answer exception describes bounded returned reply text with complete reply-file retention, not loss of the complete native reply. These declarations are source contracts, not proof of installed host consumption.
 
 ## Invariants And Boundaries
 
-- Every public MCP tool must have exactly one declared response model in
-  `PUBLIC_TOOL_RESPONSE_MODELS`; every retained compatibility builder that still
-  returns through `_tool_payload` must have one in `TOOL_RESPONSE_MODELS`.
-- **The advertised tuple, the live FastMCP registration, and this registry are three separately
-  declared artifacts** (260831-LOCR-L29). `finalize_tool_response` indexes
-  `TOOL_RESPONSE_MODELS` by tool name, so an advertised name with no registry row raises instead of
-  returning a payload. Compare all three from a live probe server —
-  `mcp/tests/test_tools.py::PublicSurfaceInventoryTests` is that executor. Do not treat the
-  `server_info` payload as surface authority: it reports `mcp.tools.PUBLIC_TOOLS` itself, so
-  comparing it to the tuple is self-referential.
-- Do not rely on Pydantic to silently coerce nested raw dictionaries for owned
-  contract objects. Construct nested models explicitly, or call
-  `NestedModel.model_validate(...)` only at a narrow raw-adapter boundary.
-- Keep `context_packet` free of `rawStatus` and duplicate top-level
-  `pathRules`; detailed provider state belongs in `provider_diagnostics`.
-- Nullable response fields that can be omitted after `exclude_none=True` must
-  declare optional defaults (`= None`); otherwise a later public payload
-  validation pass treats the missing key as a required-field error.
-- Flexible models are for intentionally raw/detail payloads, not a shortcut for
-  avoiding a stable public contract.
-- **A wire vocabulary is IMPORTED from whoever produces it; it is never retyped on this
-  route** (260731-EFA-L4). A hand-copied `Literal` beside a producer's own is a set that can
-  only be compared against the producer when a real payload carries the new member — which
-  happens as a `ValidationError` raised inside an `@server.tool()` handler that has no
-  `except` for one. Nested `Literal` aliases flatten under PEP 586, so folding a producer's
-  alias into a longer list (`Literal["attached", ..., LeafRefStatus]`) publishes exactly the
-  same enum it did when the members were spelled out. Where the producing module cannot be
-  imported without a cycle, the vocabulary is declared HERE and the producer imports it (see
-  `terminal.py` below) — one declaration is the invariant; a particular module owning it is
-  not.
-- **Nothing on this route declares a status a producer cannot emit, or omits one it can.**
-  The historical wire-vocabulary suite measured produced-vs-declared in both
-  directions and is the suite to extend when a new status appears.
-- **Nothing on this route may reach the network while the package is importing.**
-  `tokens.py` builds `DEFAULT_TOKEN_COUNTER = TiktokenTokenCounter()` at module
-  scope, and `mcp/tools/base.py` imports `finalize_payload_tokens` from it — so
-  that construction runs on the server's startup path, and anything it touches
-  runs there too. Adding a second `tiktoken` encoding therefore means
-  vendoring its vocabulary too — `vendored_vocabulary_cache` raises
-  `TokenizerVocabularyError` (`errors.py`) for any name other than
-  `VENDORED_ENCODING_NAME` rather than letting `tiktoken` download it.
-- **A vendored vocabulary is verified by this route before `tiktoken` is pointed at
-  it, never afterwards.** `_verify_vendored_vocabulary` hashes the file against
-  `VENDORED_VOCABULARY_SHA256` and raises for absent, unshipped, *or byte-wrong*;
-  only then does `vendored_vocabulary_cache` set `TIKTOKEN_CACHE_DIR`, and only to
-  the verified file's own parent directory. Delegating the check to `tiktoken` is not
-  equivalent and must not be "simplified" back: `tiktoken.load.read_file_cached`
-  checks the same digest but answers a mismatch by deleting the file and downloading
-  a replacement over it — inside an installed package that is a startup fetch plus a
-  rewrite of the installed tree, or a `PermissionError` on a read-only install.
-- Tools whose bulk moved to `temp/tool-reports/` (2.5.1: runtime install,
-  provider diagnostics/watchers; 2.5.2: carryover plan/apply) document the
-  compact wire fields as optional declared fields on their flexible models —
-  `reportPath` everywhere, plus the per-tool digests (rebind `phases`,
-  carryover `decisions`/`carriedPaths`) — so the compact shape is discoverable
-  from the model even though the envelope stays flexible.
-
-L14: the task-doc node model exposes the optional `orchestrates` list and the sessions wire model carries the optional `spawnRole` — both additive, absent on old payloads.
-
-## Repo-Internal References
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Public MCP payload builders validate through the response model registry. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:22-24 |
-| The advertised public roster's single definition, in this route's zero-import `tools/` leaf; the adapter re-exports the identical object. | "PUBLIC_TOOLS = ("; "__all__ = [\"PUBLIC_TOOLS\", \"RESERVED_TOOLS\", \"TRANSPORT\"]" | mcp/src/agents_remember/models/tools/public_roster.py:22-22; mcp/src/agents_remember/mcp/tools/base.py:19-19 |
-| The response model that reads the roster to enforce the worktree surface's next move against `PUBLIC_TOOLS`. | "# The next-move triple, declared here so the worktree surface's guidance is part of"; "def _require_registered_public_next_tool" | mcp/src/agents_remember/models/worktree.py:400-406; mcp/src/agents_remember/models/worktree.py:431-442 |
-| The registry maps every modeled builder and the advertised public subset to response models. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:255-259 |
-| Contract tests prove public tool coverage and schema generation. | `PublicToolResponseModelTests`; `test_every_public_tool_has_a_schema_generating_response_model` | mcp/tests/test_models.py:46-117 |
-| The record-landing envelope is declared on this route. | "class WorktreeRecordLandingResponse(WorktreeCommandResponse):" | mcp/src/agents_remember/models/worktree.py:557-557 |
-| The checkpoint-landing envelope is declared on this route. | "class WorktreeCheckpointLandingResponse(WorktreeCommandResponse):" | mcp/src/agents_remember/models/worktree.py:538-538 |
-| The checkpoint registry row sits between the integrate and record-landing rows; the record-landing row follows it. | "\"worktree_checkpoint_landing\": WorktreeCheckpointLandingResponse,"; "\"worktree_record_landing\": WorktreeRecordLandingResponse," | mcp/src/agents_remember/models/tools/tool_registry.py:191-191; mcp/src/agents_remember/models/tools/tool_registry.py:192-192; mcp/src/agents_remember/models/tools/tool_registry.py:198-198; mcp/src/agents_remember/models/tools/tool_registry.py:199-199; mcp/src/agents_remember/models/tools/tool_registry.py:205-205; mcp/src/agents_remember/models/tools/tool_registry.py:206-206 |
-| Curator coherence keeps semantic revision, attempt, immutable record, stable authority, snapshot, and action request identities separate and exact. | `CuratorCoherenceRecord`; `CuratorCoherenceAuthority`; `CuratorCoherenceSnapshot`; `CuratorCoherenceRequest` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:226-307; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:310-321; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:324-330; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:449-529 |
-| Operator inbox response models cover post, poll, consume, and hosted-delivery metadata. | `OperatorInboxPostResponse`; `OperatorInboxPollResponse`; `OperatorInboxConsumeResponse` | mcp/src/agents_remember/models/operator_inbox.py:119-126; mcp/src/agents_remember/models/operator_inbox.py:129-135; mcp/src/agents_remember/models/operator_inbox.py:62-116 |
-| Contract tests prove public tool coverage and schema generation. | `PublicToolResponseModelTests`; `test_every_public_tool_has_a_schema_generating_response_model`; "def test_every_public_tool_has_a_schema_generating_response_model(" | mcp/tests/test_models.py:46-61 |
-| Orchestration response models cover the public manager-nudge helper. | `OrchestrationNudgeManagerResponse` | mcp/src/agents_remember/models/orchestration.py:14-24 |
-| Lifecycle finalizer response model covers the terminal task finalization payload. | `LifecycleFinalizeTaskResponse` | mcp/src/agents_remember/models/lifecycles/finalize.py:18-54 |
-| Terminal response models cover trusted task-seat assignment and internal hosted-session spawn. | `AttachTerminalSessionToTaskResponse`; `SpawnAgentSessionResponse` | mcp/src/agents_remember/models/terminal.py:37-50; mcp/src/agents_remember/models/terminal.py:93-139 |
-| The next-step engine that fills `nextStep` from the active lifecycle. | `nextStep` | mcp/src/agents_remember/application/next_step.py:260-270 |
-| The wire-test module documents the 165-of-213 `context_packet` baseline. | "165 of the 213" | mcp/tests/test_wire_vocabulary_exhaustiveness.py:7-7 |
-| The worktree model declares the contract-cell vocabulary aliases (moved from worktrees by 260731-EFA-L9) with `MemoryMode` imported from kernel. | "from agents_remember.kernel.coordination_context.models import MemoryMode"; "WorkflowKind = Literal["; "HumanReviewStatus = Literal["; "LifecycleStatus = CloseoutStatus"; "CleanupStatus = Literal[" | mcp/src/agents_remember/models/worktree.py:9-9; mcp/src/agents_remember/models/worktree.py:35-49 |
-| The worktree model declares the phase/next-operation/next-tool vocabulary (moved from guidance by L9). | "WorktreePhase = Literal["; "NextOperation = Literal["; "NextTool = Literal[" | mcp/src/agents_remember/models/worktree.py:46-55; mcp/src/agents_remember/models/worktree.py:56-64; mcp/src/agents_remember/models/worktree.py:65-86 |
-| Guidance consumes the phase/next-operation/next-tool aliases declared by the wire model through one grouped import. | "from agents_remember.models.worktree import (" | mcp/src/agents_remember/worktrees/modules/guidance.py:10-10 |
-| The drift-status vocabulary and `DriftSummaryPacket` that `drift.py` and `memory.py` import. | `DriftSummaryPacket` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:11-20 |
-
-Current working-candidate evidence for this route:
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Direct landing returns cache observations separately from commits. | `DirectLandingResponse` | mcp/src/agents_remember/models/direct_landing.py:20-54 |
-| Public message transport names only code and memory. | `CloseoutMessageInput` | mcp/src/agents_remember/models/closeout/input.py:46-52 |
-| None | `CloseoutCommitLegName` | mcp/src/agents_remember/models/closeout/input.py:33-33 |
-
-## 260712-TRH-L4 Route Impact
-
-Models now distinguish spawned-unbriefed, harness-ready, and briefed and carry the readiness/dispatch statuses, exact-session proof fields, dispatch kind, and separated supervisor state surface.
-
-### 260713-PHA-L5 Route Contract Review
-
-The route remains governed by the shared hosted protocol bridge: exact adapter snapshots provide
-readiness and liveness, correlated receipts sit beneath durable inbox rows, interactions use durable
-gates, legacy/custom sessions are explicit unsupported states, and pane/log signals are diagnostic
-only. Dashboard and packaged projections remain additive and synchronized.
-
-## 260731-EFA-L3 Route Impact — `tokens.py` Counts Offline
-
-The token counter no longer downloads its vocabulary. `TiktokenTokenCounter.__post_init__` used to
-call `tiktoken.get_encoding("o200k_base")` bare, which on a cold cache fetched
-`o200k_base.tiktoken` from `openaipublic.blob.core.windows.net` — and because
-`DEFAULT_TOKEN_COUNTER = TiktokenTokenCounter()` is built at module scope on the import path of
-every MCP tool, that HTTPS round trip happened *while the server was starting*. A fresh container,
-an offline machine or a hermetic CI job could not start the server at all.
-
-The vocabulary now ships inside the package at
-`agents_remember/package_data/tiktoken/fb374d419588a4632f3f557e76b4b70aebbca790`. That file name is
-not decoration: `tiktoken.load.read_file_cached` keys its cache on `sha1(url)`, so it is the only
-name a cache hit can have, and `vendored_vocabulary_path()` recomputes it from
-`VENDORED_VOCABULARY_URL` rather than hard-coding the digest — the shipped file and the download it
-replaces stay provably the same thing. `__post_init__` now loads inside
-`vendored_vocabulary_cache(self.encodingName)`, which points `TIKTOKEN_CACHE_DIR` at the vendored
-directory for the duration of that one load, under `_CACHE_DIR_LOCK`, and restores
-the operator's previous value afterwards. Scoped rather than exported, because the vendored
-directory sits inside an installed (usually read-only) package and any *other* encoding loaded later
-in the process would try to write its download there. The operator's own `TIKTOKEN_CACHE_DIR` is
-deliberately overridden rather than honoured — theirs may be cold, and honouring a cold one is
-exactly the download this exists to remove.
-
-**The route verifies the vocabulary itself, before tiktoken is told where to look.**
-`vendored_vocabulary_cache` calls the private `_verify_vendored_vocabulary(encoding_name)` as its
-first statement — ahead of the lock and ahead of any environment mutation — and that helper raises
-`TokenizerVocabularyError` in three cases: an encoding this package does not ship, an absent file,
-and a file whose SHA-256 does not equal `VENDORED_VOCABULARY_SHA256`. It then hands back the
-verified path, and only *that file's own parent directory* is ever exported, so tiktoken cannot be
-pointed at a directory whose contents were not checked.
-
-Leaving the digest to tiktoken is not the same thing, and the difference is the whole point.
-tiktoken checks the same SHA-256, but it does **not** fail closed on a mismatch:
-`tiktoken.load.read_file_cached` deletes the offending cached file and downloads a replacement over
-it. Pointed at this package's directory, that turns a corrupt vendored copy into a silent network
-fetch on the server's startup path *and* a rewrite of the installed tree — or, on the read-only
-install this module is written for, into a `PermissionError` from the write-back instead of the
-designed refusal. Checking first is what makes corruption behave like absence. `VENDORED_VOCABULARY_SHA256`
-is restated here rather than imported, and that is not a second source of truth:
-`mcp/tests/test_cold_start.py` re-derives it from the installed tiktoken, so a release that changes
-what tiktoken asks for fails there. Hashing costs one full read of 3.6 MB per counter construction,
-which in the server is once per process.
-
-`_CACHE_DIR_LOCK` is a `threading.RLock`, not a `Lock`, because the guarded region spans the `yield`
-in an exported context manager. The obvious use of one —
-`with vendored_vocabulary_cache(name): TiktokenTokenCounter()` — has the counter's own load re-enter
-the manager on the same thread, which on a non-reentrant lock is a permanent hang with no timeout
-and no traceback rather than a wrong answer. The lock's honest scope is "the counters this package
-builds": `TIKTOKEN_CACHE_DIR` is process-global and belongs to tiktoken, so a thread that reads or
-writes it without coming through here can still observe or clobber the override, and nothing at this
-layer can prevent that.
-
-Nothing about the response contract changed: the shipped bytes are the download's bytes, so counts
-are the same numbers and `name` still reports
-`tiktoken:o200k_base`. There is deliberately no approximate fallback — a fallback would make a
-reported count depend on whether the machine that produced it had egress, silently mixing exact and
-estimated values inside one dashboard aggregate. A vendored file that is missing **or present with
-the wrong bytes** raises `TokenizerVocabularyError` instead, naming both the expected and the found
-digest, so a build that failed to ship it — or a `core.autocrlf=true` checkout that rewrote its line
-endings — says so at startup rather than working only where the network happens to be reachable.
-
-## 260731-EFA-L4 Route Impact — Vocabularies Come From Their Producers
-
-Every change here has the same shape: a `Literal` this route had typed out by hand, standing
-beside the module that actually produces those values, replaced by an import of the producer's
-own alias. The failure mode being removed is a **set difference**, and it lands as a
-`ValidationError` raised inside an MCP tool handler with no `except` for one.
-
-**`worktree.py` — six copies, six drifts, 165 of 213 contracts.** `WorktreeSummary`'s
-vocabularies were all local `Literal`s. They now come from
-`worktrees.worktree_contract` (`WorkflowKind`, `MemoryMode`, `HumanReviewStatus`,
-`IntegrationStatus`, `CleanupStatus`, and `CloseoutStatus` aliased to the published wire name
-`LifecycleStatus`) and `worktrees.modules.guidance` (`WorktreePhase`, `NextOperation`,
-`NextTool`). Only `WorktreeState` stays local — it is produced entirely inside
-`application.worktree_status`, which constructs the model directly, so the checker already sees a single
-writer. What the copies had missed is checkable against the producers: the local
-`WorkflowKind` was `Literal["chat", "light", "light-task"]` while the contract's is
-`Literal["chat-task", "light-task"]` — the copy did not contain the kind `worktree_start`'s own
-docstring advertises and had two members the contract cannot write; local `CleanupStatus` lacked
-`reopened`; local `WorktreePhase` lacked `carryover-pending` and `abandoned`; local
-`NextOperation` lacked `request_carryover_decision`; local `NextTool` lacked
-`memory_carryover_apply`. Measured effect, recorded in
-`test_wire_vocabulary_exhaustiveness.py`'s docstring: 165 of the 213 `series-contract.md` files
-on disk (77.5%) made `context_packet` raise, across seven independent gaps. Two additive
-optional fields join the summary: `nextRequiredArgs` gains a documented absent-means-nothing-
-required reading (the producer writes the key only when there is a required argument, and the
-projection reports what the producer said rather than substituting `[]`), and
-`unknownContractCells: list[str] | None` reports `"<field>=<raw token> read as <fallback>"` for
-any contract cell outside its declared vocabulary — the file still projects as `active` with
-substituted values, and heals the next time a lifecycle tool writes it.
-
-**`context_packet.py` — three retyped vocabularies.** `RepoSummary.state` takes
-`kernel.git_facts.RepoState` and `BranchFreshness.state` takes
-`kernel.git_freshness.FreshnessState`, both of which are assembled here through
-`model_validate` of an untyped dict, so a copy would be measured against the producer only
-when a real degrade path fired. `MemorySummary.mode` moves from `Literal["internal",
-"external"]` to `worktrees.worktree_contract.MemoryMode`, which has always included
-`disabled` — `WorktreeSummary` in the SAME response already declared it, so one packet could
-pass `memoryMode="disabled"` and fail `memory.mode` on the same value.
-
-**`drift.py` / `memory.py` — one vocabulary, three declarations, two of them short.**
-`DriftStatus` now lives once, in
-`memory_quality/integrity/onboarding_drift_check/models.py` beside `run_drift_summary` which
-produces it, and both wire models import it. `models.drift.DriftStatus` had been
-`Literal["notChecked", "checked"]` and `DriftSummary` declared no `error` field, while
-`run_drift_summary` returns `{"status": "error", "error": ...}` whenever the onboarding root is
-missing — so `include_drift=true` against a repo without onboarding raised out of the tool on
-the status *and* the key, i.e. the diagnostic crashed on exactly the call meant to explain the
-problem. `DriftSummary` gains `error: str | None`. `models.memory.DriftCheckStatus` was the
-third copy (correct, but a third place for the next member not to arrive) and is gone.
-
-**`read_files.py` — the alias moved to the decider.** `FileReadStatus` is declared in
-`application/read_files.py`, where `_resolve_onboarding` decides it and now returns it as its
-annotated type, and this model imports it. Note the direction: this is a `models/` →
-`application/` import, the reverse of the usual layering, chosen because the deciding function
-is the single writer and it puts the value into an untyped payload dict. It creates no cycle —
-`application/read_files.py` does not import `models.read_files`.
-
-**`terminal.py` — folded members and runtime halves.** `LeafAssignmentStatus` and
-`SpawnAgentSessionStatus` fold in `worktrees.leaf_refs.LeafRefStatus` (the pair
-`leaf-ref-not-found`/`leaf-ref-ambiguous`) instead of respelling it; `Literal` flattening means
-the published enums are unchanged (`get_args(LeafAssignmentStatus)` is still the same six
-members). The three terminal vocabularies stay declared HERE rather than beside the payload
-builders that write them, and the module says why: `mcp.tools.base` → `models.tools.tool_registry` →
-`models.terminal` is an existing import edge, so a `models.terminal` → `mcp.tools.terminal`
-import would close a cycle. The invariant is one declaration, not a particular owner —
-`mcp.tools.terminal` imports these aliases and annotates its status seams with them.
-`VALID_SPAWN_AGENT_SESSION_STATUSES`, `VALID_SESSION_RETIRE_STATUSES` and
-`VALID_SESSION_RENAME_STATUSES` are `frozenset(get_args(...))` of their aliases — the runtime
-half derived from the type rather than typed beside it.
-
-**`tools/tool_registry.py` — the loose type that made the token count wrong.** Both registries are
-`dict[str, type[ResponseEnvelope]]`. Under the previous `dict[str, type[BaseModel]]`,
-`TOOL_RESPONSE_MODELS[tool].model_validate(payload)` was typed as a bare `BaseModel`, on which
-`nextStep` and `supervisorBanner` are not attributes a checker knows — so the choke point had
-no type-clean way to set them on the validated response, and wrote them into the dict AFTER
-`model_dump` and AFTER `finalize_payload_tokens`. Two consequences, both silent: the served
-response carried bytes the advertised `tokens` did not count, and `supervisorBanner` was a key
-on an object whose model did not declare it. Naming the union is what let the choke point be
-reordered (see the `mcp/tools/` overview). Verified: all 62 registered models are
-`ResponseModel` or `FlexibleResponseEnvelope` subclasses and all 62 declare both fields, so the
-narrower type is true of the whole registry today.
-
-## 260731-EFA-L9 Route Impact — Conversation Wire Models Join This Route
-
-The route now owns more than MCP response contracts. 260731-EFA-L9 moved the stable
-conversation/evidence/control-wire grammar out of `serving/` into the new
-`models/conversations/` child route (16 responsibility-owned modules + curated `__init__.py`
-export surface), moved the terminal-catalog row vocabulary into `models/terminal_catalog.py`,
-and added the task-document wire vocabulary in `models/task_document.py`. The route model is
-unchanged in kind — strict owned contracts, curated exports — but the wire surface it governs is
-now shared by serving projectors/control and the response-model registry. `models/__init__.py`
-re-exports the curated conversation surface (R6); no forwarding shims exist at the old serving
-paths.
-
-## L23 Source-Lineage Contract
-
-The model layer now owns closed lineage relation, side, edge-state, aggregate
-state, recovery, and terminal refusal vocabularies. Worktree, terminal, observer,
-and dashboard consumers import or mirror this strict shape instead of accepting
-free strings or agent-supplied identity.
-
-## 260815-DAG-L3 Queue Models
-
-`models/closeout_queue.py` adds the strict action-specific request, categorical scheduling grade,
-exact evidence facts, candidate state machine, atomic blocker, bounded canonical queue state, and
-ready/waiting/blocked/in-flight response projection. Every persisted/public text and collection is
-bounded, impossible state/owner/commit combinations fail validation, external memory requires exact
-evidence while internal/disabled use a typed not-applicable state, and only a one-way lifecycle
-owner fingerprint reaches durable state. Since 260815-DAG-L13 `LANE_OCCUPYING_STATES` narrows the
-landing lane to selected/closeout-in-flight/integration-in-flight candidates (a certified candidate
-no longer occupies it), and the response carries the scheduling readout fields (`mode`,
-`registers`, `laneOwner`, `legalNextOperations`, `acquisitionFacts`). Shared `TaskDocumentRef` values enforce their repository
-and path bounds after canonical normalization, avoiding JSON Schema constraints that the generated
-TypeScript projection could not express truthfully.
-
-## 260815-DAG-L4 L4 Durable Authority Models
-
-Worktree, closeout-queue, and task projections now distinguish organizational direct-super lineage from atomic series lineage and carry exact configured repository, ref, candidate, recovery, and conflict-transaction facts required by the mutation plane.
-
-## 260815-DAG-L15 Route Impact
-
-`MemoryQualityCheckResponse` gained the optional async `status`/`runId` run envelope (L15-R7); the synchronous response shape is unchanged.
-
-## 260815-DAG Master Full-Gate Repair Route Impact
-
-`models/closeout_queue.py` moved to the new `models/queue/` sub-route; `models/task_doc.py` `TaskDocResponse` gained the special-op wire fields (the strict-envelope rejection fix).
-
-## 260821-CLIVE-L1 Closeout Vocabulary
-
-`closeout_input.py` adds the raw-message, resolved-plan, enabled/not-applicable leg, structured-refusal, and effective-input vocabulary shared by both closeout routes. Public worktree and direct-landing responses expose that vocabulary. Lifecycle operation records use only the normalized form; no generated subject, blank sentinel, or fallback input remains below validation.
-
-## 260821-CLIVE-L2 Historical Intermediate Architecture
-
-Models validate immutable identity and contradictory evidence but perform no I/O or recovery.
-`models.lifecycles` owns the canonical root-journal vocabulary. The transitional L2
-selected/in-flight/certified queue schema was removed by L3; `models.queue` now exposes only the
-disposable waiting-door projection request/response contract, while
-`models.closeout_projection` owns its strict projection vocabulary.
-
-Registered tool request/response contracts now live under `models/tools/`; the move removes the former flat paths without changing the registry's ownership or creating compatibility exports.
-
-### Reconciled Source Evidence
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Strict lifecycle operation record/projection. | "class LifecycleOperationRecord(BaseModel):"; "class LifecycleOperationProjection(StrictResponseModel):" | mcp/src/agents_remember/models/lifecycles/operation.py:340-340; mcp/src/agents_remember/models/lifecycles/operation_projection.py:340-340 |
-| Queue candidate projection. | `CloseoutQueueRequest`; `CloseoutQueueResponse` | mcp/src/agents_remember/models/queue/closeout_queue.py:32-37; mcp/src/agents_remember/models/queue/closeout_queue.py:40-59 |
-
-## 260821-DAGQC-L2 Closed Quality And Landing Models
-
-The route adds strict discriminated memory-quality request DTOs and the shared
-`QualityGateResult`/memory-policy models. Closeout and integration no longer expose open quality
-mappings, and stable versus immutable result paths remain distinct. Direct landing keeps exactly
-three top-level outcomes; journal lifecycle evidence is nested.
-
-## 260824-PDLS — Python Test Evidence Model
-
-`test_evidence.py` adds a closed diagnostic/certifying altitude and consumer vocabulary.
-Diagnostic evidence carries exact nodes, exit code, and a structural candidate binding;
-certifying evidence has no public constructor and is minted only from a verified immutable Dagger
-generation. Coverage, quality, retry, route review, lifecycle, closeout, and integration require
-the certifying type, keeping acceptance impossible to express as a generic payload flag.
-
-## 260824-PDLS Final Model Reconciliation
-
-The evidence models close authority, lifetime, cadence, and result vocabularies for diagnostic and
-certifying lanes, while lifecycle models retain strict journal-owned mutation proof. Projection
-invalidation removes the impossible `not-created` outcome, and validator decomposition preserves
-one typed public contract instead of distributing failure-family knowledge across callers.
-
-## 260821-ARSPAWN-L2 Stable Structural Evidence
-
-`TerminalCatalogEntry.dispatch_brief_entry_id` is private durable reconciliation evidence, not a
-structural address. It may be serialized for control-plane recovery and dashboard diagnostics.
-The receipt survives promotion of a staged heir into the same document-and-role seat, but clears
-when document or role changes. Promotion also clears the replacement reference so one row cannot
-remain in both seat generations.
-
-`StructuralOutcome` projects operation, status, canonical task document, role, detail, and
-delivery state while deliberately excluding runtime occupant identity.
-
-## MCAR-L03 Pair Identity Models
-
-`memory_candidate.py` owns the frozen exact-pair schema. Memory-quality, curator-coherence, and
-closeout response models reference that schema rather than copying its fields. Semantic
-requirement versions, delivery attempts, candidate trees, and pair identity remain separate
-contracts.
-
-## Status-Change Wait Response
-
-`models/worktree.py` still owns `WorktreeStatusWaitResponse`, but `models/tools/tool_registry.py`
-no longer registers it: the `worktree_status_wait` tool was removed from the public surface, so the
-response class is currently unregistered and unreferenced anywhere in the tree. It carries a typed
-outcome, optional successor generation and meaningful revision, elapsed/timeout observations, and
-the coherent lifecycle projection. It introduces no public worker PID or private operation key.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The read-only wait response exposes outcomes and cursors without private worker authority. | "class WorktreeStatusWaitResponse(WorktreeCommandResponse):" | mcp/src/agents_remember/models/worktree.py:470-470 |
-| Public response registration no longer carries the dedicated wait response: `worktree_status_wait` is absent from `TOOL_RESPONSE_MODELS`, so `WorktreeStatusWaitResponse` stays defined in `models/worktree.py` with no registered tool. | "\"worktree_sync\": WorktreeSyncResponse," | mcp/src/agents_remember/models/tools/tool_registry.py:200-200 |
-
-## Integrated IAS Recovery Contract
-
-The changed lifecycle preparation model retains original command ownership and append-only terminal observations through focused validation helpers. Runtime composition and physical Git proof remain outside models. The retained `test_wire_vocabulary_exhaustiveness.py` is now support code without collected test functions; its historical census and deleted cases must not be read as current exhaustive protection.
-
-## CCR-L42 Refresh Validation Parity
-
-The parity candidate composes the sidecar and governing route body/history checks in `worktrees/modules/onboarding.py::validate_memory_refresh_attestations`; curator memory preparation and closeout call that shared validator independently for both surfaces. This route's existing ownership and source behavior remain unchanged by the validation wiring.
-
-## 260831-LOCR-L30 Checkpoint-Landing Wire Model
-
-`models/worktree.py` gains `WorktreeCheckpointLandingResponse` (operation literal
-`worktree_checkpoint_landing`, carrying `integrationStrategy`, `integratedCodeCommit`,
-`integratedMemoryContentCommit`), `IntegrationStatus` gains the
-`checkpointed` member, and `models/tools/tool_registry.py` registers the new envelope between
-`worktree_integrate` and `worktree_record_landing`.
-
-This is the same invariant the L29 section below states, satisfied a second time — and the second
-landing envelope is why the registry cannot be checked as a set alone. The two tools sit adjacent in
-the registry and their payloads differ only in the operation literal, so a swap between them would
-still validate as a set. `mcp/tests/test_tools.py::PublicSurfaceInventoryTests` drives one
-`finalize_tool_response` call per name for that reason.
-
-**260831-LOCR-L34** adds `worktree_checkpoint_landing` to the `NextTool` vocabulary
-cit:([`NextTool`], mcp/src/agents_remember/models/worktree.py:59-74) — the checkpoint's preview and its
-`integration-ref-race` refusal both emit it, and it is a registered public tool — while deliberately
-leaving `NextOperation` unchanged, because pausing a master is the existing
-`request_integration_decision` intent rather than a lifecycle phase. The reasoning and the
-reviewed-and-not-changed row live on the `models/worktree.py` card; the preview/apply parity invariant
-that produced the repair is inventoried on the `worktrees/overview.md` route.
-
-## 260831-LOCR-L29 Public-Surface Repair
-
-`models/worktree.py` gains `WorktreeRecordLandingResponse` (operation literal
-`worktree_record_landing`, carrying `integrationStrategy`, `landedCodeCommit`, and
-`landingTargets`), and `models/tools/tool_registry.py` registers it immediately after
-`worktree_integrate`. This route overview also governs `models/tools/`, which has no nested
-overview of its own.
-
-The route already stated the invariant — every advertised MCP tool has exactly one declared
-response model — and this is the route where it can be violated invisibly. `finalize_tool_response`
-indexes `TOOL_RESPONSE_MODELS` by tool name, so a tool that `mcp/registration/closeout.py` registers
-is published by FastMCP while the missing row makes its own response lookup raise. The tool was
-advertised and unable to return a payload, and the suite stayed green: `server_info` reports
-`PUBLIC_TOOLS` itself, so the only comparison available was self-referential.
-
-The matching census row landed in `mcp/tools/base.py` (61 advertised names at that leaf — 62 since
-260831-LOCR-L30 — with `worktree_record_landing` immediately after `worktree_integrate`), and the
-invariant now has an executor in
-`mcp/tests/test_tools.py::PublicSurfaceInventoryTests`, which compares the live registration order
-to that tuple and drives one `finalize_tool_response` call for the repaired name.
-
-## 260831-LOCR-L32 The Public Roster Joins This Route, And The Worktree Next Move Is Enforced
-
-This route's `tools/` leaf gained `public_roster.py` — a zero-import module whose whole body is the
-`PUBLIC_TOOLS` literal
-cit:([`PUBLIC_TOOLS`], mcp/src/agents_remember/models/tools/public_roster.py:22-90) — **62 names at this
-leaf, 63 from 260831-LOCR-L37, and 66 since 260915-CAPS-L4**. It is the tuple's **single definition**; `mcp/tools/base.py`
-now re-exports that identical object instead of declaring its own, so
-`agents_remember.mcp.tools.PUBLIC_TOOLS`, `PUBLIC_TOOL_RESPONSE_MODELS`, the live registration order,
-and the `public_surface` pin all still name the same tuple with no consumer change.
-
-The roster lives here because a model needs to read it. `models/worktree.py::WorktreeCommandResponse`
-now declares `nextAction` / `nextTool` / `nextArgs`
-cit:(["# The next-move triple, declared here so the worktree surface's guidance is part of"], mcp/src/agents_remember/models/worktree.py:400-400) and refuses a `nextTool` outside
-  cit:(["# The next-move triple, declared here so the worktree surface's guidance is part of"], mcp/src/agents_remember/models/worktree.py:400-400) and refuses a `nextTool` outside
-`PUBLIC_TOOLS` through `_require_registered_public_next_tool`
-cit:([`_require_registered_public_next_tool`], mcp/src/agents_remember/models/worktree.py:431-442). Before this leaf the
-cit:([`_require_registered_public_next_tool`], mcp/src/agents_remember/models/worktree.py:431-442). Before this leaf the
-cit:(["# The next-move triple, declared here so the worktree surface's guidance is part of"], mcp/src/agents_remember/models/worktree.py:400-400) and refuses a `nextTool` outside
-envelope inherited `extra="allow"` and declared none of those keys, so
-`application/worktree_status.py::_project_terminal_contract_status`'s write crossed the wire verbatim
-and unchecked — `worktree_abandon` reached the wire as a `nextTool` without ever being a `NextTool`
-member. `models → mcp` would be a `layers.toml` violation (models = 2, mcp = 22), a function-local
-import trips `ruff PLC0415`, and module-level imports in either direction are circular — so the tuple's
-move into this route is the precondition of the fix, not a companion cleanup. The layering checker
-returned to its exact baseline of 16 violations with no `models → mcp` edge and no new cycle.
-
-**The invariant is per surface.** The worktree surface's next move must name a registered *public*
-tool; the `task_doc` surface may name the registered-but-non-public `session_retire`
-(`TaskDocResponse` is not a `WorktreeCommandResponse`). Do not widen `PUBLIC_TOOLS` to cover it.
-
-## 260831-LOCR-L36 The Activation Vocabulary Becomes Contract-Scoped
-
-The atomic-series activation record was re-keyed from the protected source pair to the canonical
-series contract, and this route's wire models moved with it. Two atomic masters commanded by one
-sprint derive the *same* protected pair (same code repository/branch and memory repository/branch;
-only the work branches differ), so a one-record-per-pair store made the second master's selection
-replace the first. `models/structural/atomic_series_activation.py` is now 45 lines and declares only
-`AtomicSeriesActivationRecord` (16) and `AtomicSeriesActivationArchiveEvidence` (30), both
-`schemaVersion "2.0"` with `contractFingerprint`.
-
-On the worktree wire vocabulary (`models/worktree.py`, 514 lines):
-
-- `AtomicSeriesActivationFact.contractFingerprint` replaces `sourcePairFingerprint`, so status
-  evidence names the contract whose record was read.
-- `AtomicSeriesAdmissionActivation.contractFingerprint` replaces `sourcePairFingerprint`.
-- `AtomicSeriesAdmission` lost `classification`, `sourcePair`, `sourcePairFingerprint` and `blocking`,
-  and gained `contractFingerprint`. The `AtomicSeriesAdmissionBlocking` model was deleted, so a
-  foreign live master is no longer expressible as this contract's blocker or retry precondition.
-- No model on this route declares `AtomicSeriesSourceRef` / `AtomicSeriesSourcePair`.
-
-The wait vocabulary narrowed with it: the activation domain now returns only
-`atomic-series-reconciling`, so a vacant record and another master's active selection are never
-waiting reasons. Real wave dependencies still gate through the sprint execution graph's own
-`predecessor-incomplete:` reasons, and everything under `worktrees/integration/**` is untouched by
-this change.
-
-## 260915-KS-L1 Knowledge Vocabulary
-
-## 260915-CAPS-L4 The Capsule And Skill-Resource Wire Contracts
-
-This route gained one sub-route of nine modules, `models/knowledge/`, and no authority. It is the shared
-vocabulary of the experimental knowledge substrate: repository namespace identity, invariant identity and the
-immutable revision aggregate, the sealed-payload digest, the provenance envelope, the source identity and locator
-union, the typed operation/refusal/result contract, and the schema identity.
-This route gained two modules that own the AR MCP surface's wire vocabulary for the capsule operation
-and the SEP-2640 skills transport. Both are value modules: dataclasses or strict response models plus
-their rendering, with no behavior that decides a selection, a permission or a trust level.
-
-Three ownership rules are the reason it lives here rather than in the store that writes it:
-- `role_capsule_resources.py` — the three strict response envelopes (`role_capsule_compile`,
-  `skill_catalog_list`, `skill_catalog_read`) and their nested payloads, plus the bridge-name and
-  `server-supplied-data` trust constants. The capsule envelope carries **both** shapes: `ok` false plus
-  a typed `refusalStatus` is a refusal, not an error type, and the identity/provenance fields are
-  optional precisely because a refusal legitimately carries only what was established before it
-  refused.
-- `skill_resources.py` — the discovery registry (`SkillResourceEntry`, `SkillResourceFile`,
-  `SkillResourceCatalog`, `UnreadableSkill`), the **SEP-2640 entry shape**
-  (`{uri, frontmatter, resources:[{uri,digest,size}]}`), this server's own Agent Skills discovery index,
-  and the `_meta` provenance block. Identity is `origin` + name, which is what keeps two servers serving
-  a same-named skill distinct. `entry_documents()` is the **enumeration surface** the `skills/list`
-  method returns; `discovery_metadata()` is what this server's own listing tools hand out; neither can
-  reach a file body.
-
-- **Literal vocabularies are defined where they decide.** `KnowledgeState` (`proposed`/`accepted`),
-  `KnowledgeOperation`, `KnowledgeRefusalCode`, `REVISION_PAYLOAD_VERSION` and `KNOWLEDGE_SCHEMA_NAME` are declared
-  in their owning model and imported by the decider — never declared by the decider and re-exported downward.
-- **Values, not rows.** `KnowledgeModel` is frozen with `extra="forbid"`, which makes the process-local value
-  immutable; refusing an update to a stored revision is a storage rule enforced by schema triggers and the
-  operation's preconditions, not by model immutability.
-- **Identity is not a label.** Display version and display label are separated from immutable identity, so two
-  successors of one revision may both display `v2` and both stay addressable. `RevisionDraft` deliberately has no
-  `payload_digest` field: the store recomputes the seal rather than accepting it.
-Two vocabulary facts that belong at route level, because they are the route's own
-"defined here, imported by whoever decides it" rule applied to a security property:
-
-`Authorship` and the `SourceLocator` union are declared **shared**: they are the vocabulary the selective
-read/diff contributor (KS-R07/KS-R08) is expected to consume, and the locator union is discriminated on `kind` so
-that consumer needs no second locator vocabulary. That consumer does not exist yet; nothing here claims it does.
-The blob identity is a Git object identity, not a copy of the bytes — there is no second content store.
-- **`contentTrust` is a stated constant, not an inferred or settable field**, and
-  **`declaredAllowedTools` is an observation, never a grant** — a host MUST NOT honor mechanisms
-  declared in skill content, and no field on these models is a channel through which it could. The
-  leaf's mutation probe removes the related guarantee on the admitted-policy side (`M2`) and its named
-  case fails.
-- **`requestedTools` and `grantedTools` are separate fields on the capsule envelope.** The compiler
-  narrows every request against the admitted policy snapshot; keeping both on the wire is what makes
-  that narrowing auditable rather than invisible.
-
-Validation vocabulary matters as much as shape: `normalized_uuid` refuses a non-canonical identifier spelling
-instead of rewriting it, `Authorship` requires a normalized-UTC `recorded_at`, and `SourceAnchor` refuses an
-absolute, backslash, UNC or parent-escaping path so a stored record never carries one.
-A third fact, added by the post-rejection repairs and worth carrying here because it is a wire-shape
-decision rather than a reader's choice: **the entry's `frontmatter` is the verbatim `SKILL.md`
-frontmatter, not a two-field summary.** SEP-2640 §Enumeration requires *"every field the author wrote,
-not a curated subset"*, so `SkillResourceEntry.frontmatter` carries the whole YAML map the reader
-produced, and `license`, `metadata` and future specification fields pass through unchanged. A nested
-skill is published flat: an ordinary entry whose `uri` merely shares a path prefix with its parent's.
-
-Both modules import nothing from `mcp` — the same `models` rank constraint this route's
-`tools/public_roster.py` records. The protocol methods that consume these values live on the `mcp`
-route (`registration/skills_extension.py`), which is the correct direction for this rank.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The served knowledge vocabulary as an explicit re-export list — re-cited against the working tree, which the graph half extended. | `__all__` | mcp/src/agents_remember/models/knowledge/__init__.py:160-288 |
-| The frozen base and the refusal to rewrite a non-canonical identifier. | `KnowledgeModel`; `normalized_uuid` | mcp/src/agents_remember/models/knowledge/base.py:34-37; mcp/src/agents_remember/models/knowledge/base.py:95-109 |
-| The invariant identity and revision aggregate, including the display-label-versus-identity separation. | `InvariantIdentity`; `InvariantRevision` | mcp/src/agents_remember/models/knowledge/invariant.py:33-55; mcp/src/agents_remember/models/knowledge/invariant.py:56-115 |
-| The sealed payload, with the predecessor set inside the digest and the digest field excluded. | `canonical_revision_payload` | mcp/src/agents_remember/models/knowledge/digest.py:30-52 |
-| The provenance envelope and its normalized-UTC requirement. | `Authorship` | mcp/src/agents_remember/models/knowledge/authorship.py:32-88 |
-| The shared source identity, locator union and the relative-POSIX-path rule — now split into the draft and the stored anchor, with a real `UUID` identity. | `SourceLocator`; `SourceAnchorDraft`; `SourceAnchor` | mcp/src/agents_remember/models/knowledge/source.py:80-82; mcp/src/agents_remember/models/knowledge/source.py:82-129; mcp/src/agents_remember/models/knowledge/source.py:130-133 |
-|The typed operation, refusal-code and result contract — re-cited against the working tree, which the graph, candidate-change, snapshot, merge, authored-judgment and detection halves have each extended since.|`KnowledgeRefusalCode`| mcp/src/agents_remember/models/knowledge/result.py:101-228 |
-| The invariant-creation result whose `operation` field names the operation that produced it. | `CreateRevisionResult` | mcp/src/agents_remember/models/knowledge/result.py:422-439 |
-|  The storage owner that writes this vocabulary. | "class OpenedKnowledgeStore" | mcp/src/agents_remember/memory/knowledge/store.py:92-510  |
-| The later requirement packets the shared envelope and locator are declared for: requirement packets `KS-R07` and `KS-R08`, which live in the coordination root, outside both the code and the memory repository, so the citation grammar cannot address them. | — | — |
-| The capsule envelope keeps one shape for success and refusal, with the seat facts it established. | `RoleCapsuleResponse` | mcp/src/agents_remember/models/role_capsule_resources.py:86-115 |
-| The requested-versus-granted split that makes the compiler's narrowing auditable. | `CapsuleRequestedToolPayload`; `RoleCapsuleResponse.grantedTools` | mcp/src/agents_remember/models/role_capsule_resources.py:56-62; mcp/src/agents_remember/models/role_capsule_resources.py:112-112 |
-| Identity is origin plus name, and a listing cannot reach a body. | `SkillResourceEntry.identity`; `discovery_metadata` | mcp/src/agents_remember/models/skill_resources.py:83-87; mcp/src/agents_remember/models/skill_resources.py:149-170; mcp/src/agents_remember/models/skill_resources.py:200-221 |
-| The trust statement is a constant and a declared tool set is observed, never applied. | `SERVER_SUPPLIED_CONTENT_TRUST`; `declared_allowed_tools` | mcp/src/agents_remember/models/role_capsule_resources.py:31-32; mcp/src/agents_remember/models/skill_resources.py:219-234; mcp/src/agents_remember/models/skill_resources.py:270-285 |
-| The three registry rows that make the new names returnable. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:155-238 |
-
-## 260915-KS-L2 The Graph Vocabulary, And The Repaired Anchor Identity
-
-## 260915-CAPS-L7 The Eve Capsule Carrier Format
-
-This route's knowledge sub-route grew from nine modules to eleven and the vocabulary it serves now covers the
-**graph**: `family.py` carries family identity and the immutable family revision, and `graph.py` carries the two
-relations and the read models both directions answer with. Four of the nine L1 modules changed, three of them
-substantively.
-This route gained `eve_capsule_carrier.py`, which owns the **format** of the one value AR hands a pinned
-eve runtime before it executes. The launch environment can carry a reference and a digest but not the
-compiled instructions, so the content travels as a file whose bytes that digest addresses.
-
-The three graph-vocabulary rules, each the model-level half of a storage contract:
-It owns the format and nothing else — it parses bytes it is handed and computes digests over them, with
-**no filesystem import by design**. Reading the file, writing it and deciding whether a launch may
-proceed belong to the tiers that own those surfaces, and that separation is what lets one shape serve
-the compiler side (`application`) and the launch side (`serving`) with neither importing the other.
-
-- **A guarantee is the family's own text.** `FamilyRevisionDraft` carries the joint guarantee and never composes
-  it from its members, and its `payload_digest` seals the whole aggregate including the sorted predecessor set, so
-  a changed guarantee is a separately identified successor.
-- **A draft carries no seal, and the anchor draft carries no provenance.** `FamilyMemberDraft`,
-  `RealizationClaimDraft` and `FamilyRevisionDraft` have no row digest, and `SourceAnchorDraft` has no
-  `provenance` field; the store computes the first and the admitted application attaches the second.
-- **A role is an authored claim.** `RealizationRole` is a closed vocabulary with an explicit `unclassified`
-  member, so a missing role is representable as "not classified" rather than silently defaulted to a real one,
-  and no reader infers a role or a rationale from the source.
-Four properties are enforced here rather than trusted, all at parse time:
-
-**The repaired anchor identity is a correction to the L1 vocabulary, not a new feature.** `SourceAnchor.anchor_id`
-was declared `anchor_id: UUID = Field(pattern=UUID_PATTERN)`, and Pydantic refuses to apply a string `pattern`
-constraint to its UUID schema, so **every** anchor construction raised
-`TypeError: Unable to apply constraint 'pattern' … for schema of type 'uuid'` — the class was unconstructible, and
-it stayed latent because no L1 test constructed one. The field is now a plain `UUID` and the canonical stored text
-is derived at the storage boundary (`records.anchor_row` writes `str(anchor.anchor_id)`), exactly as it is for an
-authorship operation identity. The same change split `SourceAnchor` into the draft (what the author decided) and
-the stored record (the draft plus the provenance envelope), which is what keeps provenance out of a caller's hands.
-The lesson a future reader should take is narrow and reusable: on an identifier field, a `pattern`-constrained
-string and a parsed `UUID` are not interchangeable spellings — one of them is unconstructible.
-- **Self-describing identity** — `EveCapsuleIdentity` names the seat it belongs to, so a carrier left
-  over from another seat is refused by `require_identity` instead of applied.
-- **The digest is over the exact bytes on disk**, so a carrier edited after it was written is refused.
-- **Every consumer-needed field is required**, so a truncated or hand-written carrier fails naming the
-  missing field rather than contributing an empty instruction block; the three parallel instruction
-  lists must correspond one to one.
-- **The workspace scope and the workspace root are forced equal** (`_require_workspace_confinement`),
-  so the runtime cannot read and execute in one directory while its write rule admits another.
-
-The `models/` route's own statement that `REVISION_PAYLOAD_VERSION` is the payload version is now one of two:
-`FAMILY_REVISION_PAYLOAD_VERSION` exists because the family payload seals a different field set, so a digest can
-never be mistaken for the other object's identity.
-This module is also the single home of the four environment names and of the two instruction
-**channels**. The channel choice is load-bearing rather than stylistic: the trusted instructions go in
-the **system** role, which eve keeps outside conversation history and includes on every model call — so
-they survive turn boundaries, compaction and clear — while task facts go in the **user** role, because
-they are content rather than authority and compaction may legitimately summarize them.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The family identity, the immutable revision aggregate and its self-consistency rules. | `FamilyIdentity`; `FamilyRevisionDraft`; `FamilyRevision` | mcp/src/agents_remember/models/knowledge/family.py:51-55; mcp/src/agents_remember/models/knowledge/family.py:58-102; mcp/src/agents_remember/models/knowledge/family.py:105-109 |
-| The two relation shapes, the closed authored role vocabulary and the four read models. | `FamilyMemberDraft`; `RealizationClaimDraft`; `RealizationRole`; `UNCLASSIFIED_ROLE`; `AnchorRealizations` | mcp/src/agents_remember/models/knowledge/graph.py:49-56; mcp/src/agents_remember/models/knowledge/graph.py:65-85; mcp/src/agents_remember/models/knowledge/graph.py:36-44; mcp/src/agents_remember/models/knowledge/graph.py:46-46; mcp/src/agents_remember/models/knowledge/graph.py:120-129 |
-| The draft/stored split and the repaired `UUID` identifier field. | `SourceAnchorDraft`; `SourceAnchor` | mcp/src/agents_remember/models/knowledge/source.py:82-129; mcp/src/agents_remember/models/knowledge/source.py:130-133 |
-| The two payload versions and the family payload's sealed field set. | `FAMILY_REVISION_PAYLOAD_VERSION`; `canonical_family_revision_payload` | mcp/src/agents_remember/models/knowledge/digest.py:26-27; mcp/src/agents_remember/models/knowledge/digest.py:71-90 |
-| The shared accepted/proposed rule both revision aggregates apply at construction. | `require_consistent_acceptance` | mcp/src/agents_remember/models/knowledge/base.py:40-56 |
-| The extended served surface, including the graph names. | `__all__` | mcp/src/agents_remember/models/knowledge/__init__.py:123-202 |
-| The eight graph operations and the anchor-endpoint union the request vocabulary gained. | `AnchorEndpoint`; `NewAnchor`; `AnchorReference`; `CreateRealizationClaimResult` | mcp/src/agents_remember/models/knowledge/result.py:342-353; mcp/src/agents_remember/models/knowledge/result.py:325-325; mcp/src/agents_remember/models/knowledge/result.py:508-518; mcp/src/agents_remember/models/knowledge/result.py:332-335; mcp/src/agents_remember/models/knowledge/result.py:361-361; mcp/src/agents_remember/models/knowledge/result.py:526-540; mcp/src/agents_remember/models/knowledge/result.py:371-376; mcp/src/agents_remember/models/knowledge/result.py:360-370 |
-| The eight graph operations and the anchor-endpoint union the request vocabulary gained. | `AnchorEndpoint`; `NewAnchor`; `AnchorReference`; `CreateRealizationClaimResult` | mcp/src/agents_remember/models/knowledge/result.py:343-347; mcp/src/agents_remember/models/knowledge/result.py:350-358; mcp/src/agents_remember/models/knowledge/result.py:361-364; mcp/src/agents_remember/models/knowledge/result.py:526-540; mcp/src/agents_remember/models/knowledge/result.py:371-376; mcp/src/agents_remember/models/knowledge/result.py:360-370 |
-| The storage owners that write this vocabulary: the graph modules, plus the store for the invariant half. | `create_family_revision`; `class OpenedKnowledgeStore` | mcp/src/agents_remember/memory/knowledge/families.py:133-162; mcp/src/agents_remember/memory/knowledge/store.py:92-510 |
-| The requirement this graph vocabulary belongs to: requirement packet `KS-R02@v1`, which lives in the coordination root, outside both the code and the memory repository, so the citation grammar cannot address it. | — | — |
-| The carrier format added to this route: schema, value types and the on-disk byte contract. | `EVE_CAPSULE_CARRIER_SCHEMA`; `EveCapsuleCarrier`; `to_bytes`; `from_bytes`; `carrier_digest` | mcp/src/agents_remember/models/eve_capsule_carrier.py:32-32; mcp/src/agents_remember/models/eve_capsule_carrier.py:168-231; mcp/src/agents_remember/models/eve_capsule_carrier.py:287-296 |
-| The two channels and why the distinction is load-bearing. | `ROLE_INSTRUCTION_CHANNEL`; `TASK_CONTEXT_CHANNEL` | mcp/src/agents_remember/models/eve_capsule_carrier.py:46-58 |
-| The parse-time confinement invariant and the wrong-seat refusal. | `_require_workspace_confinement`; `require_identity` | mcp/src/agents_remember/models/eve_capsule_carrier.py:273-285; mcp/src/agents_remember/models/eve_capsule_carrier.py:299-320 |
-| The four environment names declared beside the format so writer and reader cannot drift. | `BINDING_REF_ENV`; `CAPSULE_PATH_ENV`; `CAPSULE_DIGEST_ENV`; `WORKSPACE_ROOT_ENV` | mcp/src/agents_remember/models/eve_capsule_carrier.py:34-42 |
-| The producer that builds this value and the two consumers that verify it, none of them in this route. | `build_carrier`; `verify_capsule_binding`; `loadVerifiedCapsule` | mcp/src/agents_remember/application/eve_capsule/__init__.py:282-324; mcp/src/agents_remember/serving/eve_runtime_launch.py:447-497; eve_runtime/agent/lib/capsule.ts:109-149 |
-
-## 260915-KS-L3 The Candidate-Change Vocabulary
-
-## 260915-CAPS-L11 One Refusal Shape For One Class Of Source Defect
-
-This route's knowledge sub-route grew from eleven modules to twelve, and the vocabulary it serves now covers the
-**write boundary** rather than only the stored shapes. `candidate.py` is the whole vocabulary of the one
-candidate-change operation: the resolved context, the expected-record model, the closed command union, the batch
-and its factual receipt. Three of its rules are the model-level half of a storage contract:
-`sources.py` on this route now refuses an **emptied** admitted source the same way it already refused
-a non-UTF-8 one: a typed `CapsuleSourceError` carrying `status="source-empty"`, a detail naming the
-source path, and a next action — rather than a bare `ValueError` escaping `CapsuleSource.text`.
-
-- **A resolved context is compared, never trusted.** `KnowledgeContext` carries what the admitted runtime
-  resolved, and `context_digest` seals every field but itself; `CandidateResolution` deliberately has **no**
-  dataset-identity field, so an application cannot pass a remembered digest — it can only read one. The model
-  validator refuses an unsealed context at construction, and the operation re-derives the digest inside its
-  transaction, which is the only defence against a `model_copy`-built batch that bypasses the validator.
-- **The union is the reach.** `ProposedCommand` is eighteen frozen members discriminated on `kind` with
-  `extra="forbid"`: there is no promotion member, no approval member, no arbitrary-SQL member and no free-form
-  field, so "this operation never accepts knowledge" and "a payload cannot confer authority" are properties of
-  the vocabulary rather than rules the operation remembers to apply. Command payloads carry **no** `Authorship`:
-  the admitted envelope is attached by the store, and a draft that arrived with its own is re-stamped.
-- **Expected state, never assumed state.** `ExpectedRecord` is `present` with a digest or `absent` without one,
-  and there is deliberately no third mode — "I did not say" is not an expectation. `ChangeBatch` refuses two
-  expectations for one record.
-**Why the shape matters rather than the message.** `compile_admitted_capsule` catches only
-`CapsuleCompilationError`, so an untyped raise from the value layer surfaced to an operator as a
-traceback instead of the named refusal the compiler's own boundary promises. One class of defect now
-has one refusal shape at one boundary.
-
-The receipt is part of the contract too: `RecordIdentity.state` is exactly `written | removed`, a removal carries
-the digest the row had, a command whose effect was already stored contributes no entry, and
-`MutationResult._require_consistent_receipt` refuses a refusal that changed anything, a non-refused result with a
-refusal, a `no_change` result with entries, a `changed` result with an empty entry list, or a `changed` result
-whose two identities are equal.
-
-`models/knowledge/result.py` grew the two label-edit request/result pairs and the two candidate-boundary codes
-(`target_not_candidate`, `promotion_not_supported`), while the `task-candidate` lane deliberately reuses
-`unauthorized_scope`. **The refusal code `no_change` remains declared with no producer** — the reachable
-vocabulary is the *result state*, and a consumer must not branch on the code.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The lane vocabulary, including the read-only `baseline` member that exists so it can be refused by name. | `KnowledgeLane`; `CANDIDATE_LANES` | mcp/src/agents_remember/models/knowledge/candidate.py:107-107; mcp/src/agents_remember/models/knowledge/candidate.py:109-111; mcp/src/agents_remember/models/knowledge/candidate.py:117-119 |
-| The resolved context and its two consistency validators. | `KnowledgeContext` | mcp/src/agents_remember/models/knowledge/candidate.py:236-277 |
-|  The module-level digest the validator calls and the operation re-derives. | "def context_digest" | mcp/src/agents_remember/models/knowledge/candidate.py:280-280  |
-| The expectation model and its present-with-digest / absent-without-digest rule. | `ExpectedRecord` | mcp/src/agents_remember/models/knowledge/candidate.py:302-324 |
-| **The closed union with no promotion, approval or SQL member — twenty-two members after this leaf's four composition command kinds joined the eighteen**, and the members are the operation's entire reach. | `ProposedCommand` | mcp/src/agents_remember/models/knowledge/candidate.py:596-626 |
-| The alias a batch's commands travel under, and the construct that makes the union's membership checkable in one place. | `ChangeCommand` | mcp/src/agents_remember/models/knowledge/candidate.py:649-649 |
-| The resolution shape that deliberately omits the dataset identity. | `CandidateResolution`; `KnowledgeContext` | mcp/src/agents_remember/models/knowledge/candidate.py:659-676; mcp/src/agents_remember/models/knowledge/candidate.py:236-236 |
-| The batch and the receipt consistency validator the operation's results must satisfy. | `ChangeBatch`; `MutationResult`; `RecordIdentity` | mcp/src/agents_remember/models/knowledge/candidate.py:239-262; mcp/src/agents_remember/models/knowledge/candidate.py:518-543; mcp/src/agents_remember/models/knowledge/candidate.py:546-589; mcp/src/agents_remember/models/knowledge/candidate.py:658-729; mcp/src/agents_remember/models/knowledge/candidate.py:278-299 |
-| The lane vocabulary, including the read-only `baseline` member that exists so it can be refused by name. | `KnowledgeLane`; `CANDIDATE_LANES` | mcp/src/agents_remember/models/knowledge/candidate.py:99-99; mcp/src/agents_remember/models/knowledge/candidate.py:101-111; mcp/src/agents_remember/models/knowledge/candidate.py:117-119 |
-| The resolved context and its two consistency validators. | `KnowledgeContext` | mcp/src/agents_remember/models/knowledge/candidate.py:221-262 |
-|  The module-level digest the validator calls and the operation re-derives. | "def context_digest" | mcp/src/agents_remember/models/knowledge/candidate.py:280-280  |
-| The expectation model and its present-with-digest / absent-without-digest rule. | `ExpectedRecord` | mcp/src/agents_remember/models/knowledge/candidate.py:302-324 |
-| The closed union with no promotion, approval or SQL member; the twenty-two kinds are the operation's entire reach. | `ProposedCommand`; `ChangeCommand` | mcp/src/agents_remember/models/knowledge/candidate.py:596-626; mcp/src/agents_remember/models/knowledge/candidate.py:628-635; mcp/src/agents_remember/models/knowledge/candidate.py:649-649 |
-| The resolution shape that deliberately omits the dataset identity. | `CandidateResolution` | mcp/src/agents_remember/models/knowledge/candidate.py:656-673 |
-| The resolution shape that deliberately omits the dataset identity. | `CandidateResolution`; `KnowledgeContext` | mcp/src/agents_remember/models/knowledge/candidate.py:659-676; mcp/src/agents_remember/models/knowledge/candidate.py:236-236 |
-| The batch and the receipt consistency validator the operation's results must satisfy. | `ChangeBatch`; `MutationResult`; `RecordIdentity` | mcp/src/agents_remember/models/knowledge/candidate.py:278-299; mcp/src/agents_remember/models/knowledge/candidate.py:658-683; mcp/src/agents_remember/models/knowledge/candidate.py:686-729 |
-| The two candidate-boundary codes and the three operations that leaf added to the served vocabulary. | `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:101-171 |
-| The served operation union the candidate-boundary leaf joined. | `KnowledgeOperation` | mcp/src/agents_remember/models/knowledge/result.py:36-96 |
-| The invariant-label result that leaf added to the served vocabulary. | `SetInvariantLabelResult` | mcp/src/agents_remember/models/knowledge/result.py:598-618 |
-| The operation that consumes this vocabulary. | `change_candidate` | mcp/src/agents_remember/memory/knowledge/candidate.py:61-80 |
-| The composition seam that resolves a context from a live candidate and seals it. | `resolve_candidate_context`; `build_candidate_context` | mcp/src/agents_remember/application/knowledge.py:252-273; mcp/src/agents_remember/application/knowledge.py:275-301 |
-| The seam entry point that applies a batch under the admitted provenance. | `change_knowledge_candidate` | mcp/src/agents_remember/application/knowledge.py:303-318 |
-| The lane rules the batch operation applies before it takes the lock. | `require_writable_lane` | mcp/src/agents_remember/memory/knowledge/candidate.py:83-102 |
-
-## 260915-KS-L4 The Snapshot Vocabulary
-
-The knowledge sub-route grew a thirteenth module, `models/knowledge/snapshot.py`, and the vocabulary it adds is a
-**local working object's** vocabulary rather than a stored shape's: one candidate directory, its sealed receipt,
-one closed snapshot stage, one publication request/result, the publication-state measurement a read gates on, and
-the closed disposal union. `models/knowledge/result.py` grew six operations and seven refusal codes in the same
-change, and the facade re-exports all of it.
-
-Three model-level rules carry the contract, and each is the reason a field is missing rather than present:
-
-- **The receipt carries no dataset digest.** `CandidateReceipt` records namespace, lane, the exact code and memory
-  inputs, the schema generation and the candidate reference, and seals every one of them with `receipt_digest` —
-  but the *dataset's* logical identity is deliberately absent, because a caller that could state it could hand-write
-  the identity its publication would later be compared against. The identity is read from the database or it does
-  not exist, and `build_candidate_receipt` derives rather than accepts.
-- **Every result is closed, and `state` is the only branch.** `CandidateResult`, `SnapshotPublicationResult`,
-  `PublicationState` and `CandidateDisposalResult` each refuse an inconsistent combination at construction: a
-  refusal carries its refusal and reports nothing it did not establish, a non-refusal names what it reached, and a
-  refused publication reports **no** destination identity at all. `PreparedKnowledgeSnapshot` carries both the
-  logical identity and the physical `file_digest` because publication decides two different questions — "is this
-  the same knowledge?" and "is this the file I froze?".
-- **The disposal union has exactly two members, and its authorization is carried, not examined.**
-  `CandidateDisposition` is `DiscardCandidate | PublishedCandidate` discriminated on `kind`; there is no "it looked
-  disposable" mode. `DiscardCandidate.authorization_ref` is stored because the caller owns the approval chain,
-  while this layer decides only permissibility (whether the named identity is the one the candidate holds now, and
-  therefore whether discarding abandons work no retained publication covers).
-
-The refusal vocabulary's own rule is unchanged by the addition and worth restating where the codes are declared:
-`no_change` remains a **result state** in two vocabularies (the batch's `MutationResult` and the publication's
-`SnapshotPublicationResult`) and a refusal code with no producer, and `snapshot_incomplete` /
-`publication_durability_unconfirmed` exist because "the private stage did not complete" and "the replacement
-completed but cannot be confirmed" need different remedies.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The snapshot vocabulary's own module: layout, receipt, stage, publication and disposal.** | `CANDIDATE_DATABASE_NAME`; `CandidateReceipt`; `PreparedKnowledgeSnapshot`; `SnapshotPublicationResult`; `CandidateDisposition` | mcp/src/agents_remember/models/knowledge/snapshot.py:52-54; mcp/src/agents_remember/models/knowledge/snapshot.py:109-141; mcp/src/agents_remember/models/knowledge/snapshot.py:224-236; mcp/src/agents_remember/models/knowledge/snapshot.py:259-293; mcp/src/agents_remember/models/knowledge/snapshot.py:351-354 |
-| The two derived paths that keep write and publication on one file. | `candidate_database_path`; `candidate_receipt_path` | mcp/src/agents_remember/models/knowledge/snapshot.py:58-62; mcp/src/agents_remember/models/knowledge/snapshot.py:64-67 |
-| The typed admitted handle that confers no authority by itself. | `AdmittedCandidateDestination` | mcp/src/agents_remember/models/knowledge/snapshot.py:70-93 |
-| The baseline that requires the identity the caller admitted for it. | `CandidateBaseline` | mcp/src/agents_remember/models/knowledge/snapshot.py:96-106 |
-| The receipt's sealing helper and the one derived constructor. | `receipt_digest`; `build_candidate_receipt` | mcp/src/agents_remember/models/knowledge/snapshot.py:144-148; mcp/src/agents_remember/models/knowledge/snapshot.py:151-185 |
-| The destination request whose "expected absent" mode is the only way to overwrite. | `SnapshotDestinationRequest`; `PublishSnapshotRequest` | mcp/src/agents_remember/models/knowledge/snapshot.py:239-249; mcp/src/agents_remember/models/knowledge/snapshot.py:252-256 |
-| The measurement that reports two identities and guesses nothing. | `PublicationState` | mcp/src/agents_remember/models/knowledge/snapshot.py:296-321 |
-| The carried-not-examined authorization reference and the verdict. | `DiscardCandidate`; `PublishedCandidate`; `CandidateDisposalResult` | mcp/src/agents_remember/models/knowledge/snapshot.py:324-337; mcp/src/agents_remember/models/knowledge/snapshot.py:340-345; mcp/src/agents_remember/models/knowledge/snapshot.py:357-375 |
-| **The operation and refusal vocabulary this leaf extended.** | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:36-78; mcp/src/agents_remember/models/knowledge/result.py:82-147; mcp/src/agents_remember/models/knowledge/result.py:151-151; mcp/src/agents_remember/models/knowledge/result.py:161-191 |
-| The facade that re-exports the whole snapshot surface as the served vocabulary. | `__all__` | mcp/src/agents_remember/models/knowledge/__init__.py:160-288 |
-| The lifecycle and publication operations that produce these values. | `create_candidate`; `publish_candidate_snapshot`; `publication_state` | mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:85-98; mcp/src/agents_remember/memory/knowledge/publication.py:66-111; mcp/src/agents_remember/memory/knowledge/materialization.py:34-99 |
-| The second composition seam that admits these values and returns them unchanged. | `admitted_candidate_destination`; `publish_knowledge_snapshot` | mcp/src/agents_remember/application/knowledge_snapshot.py:67-82; mcp/src/agents_remember/application/knowledge_snapshot.py:134-139 |
-| The node that proves the publication outcome is a measurement rather than a claim. | "test_a_logical_no_op_retains_the_published_bytes" | mcp/tests/test_knowledge_snapshot_publication.py:239-239 |
-
-## 260915-KS-L5 The Merge Vocabulary
-
-The knowledge sub-route grew a fourteenth module, `models/knowledge/merge.py`, and it declares the **structural**
-half of the substrate's vocabulary: three datasets that already exist, two base claims, the coverage facts of a
-delta, one conflict record and one outcome. The absence the whole module is built around is stated in its own
-docstring rather than left to a consumer's inference: **nothing here can carry a judgement about whether the
-merged knowledge is correct** — there is no compatibility, acceptance, approval or "harmless" field, and the one
-non-refusal state is named `structurally_merged` because that is the entire claim.
-
-Three splits are load-bearing, and each is a place a weaker model would have permitted a guess:
-
-- **An explicit input versus a resolved one.** `MergeInput` names a dataset *and* the exact logical identity the
-  caller admitted for it. A caller cannot hand over a path and let the operation decide which dataset it meant;
-  the identity is re-read and compared before any byte is copied. The `reference` field is the caller's own
-  durable anchor and is carried as a fact — this layer does not read Git objects to decide what a dataset is.
-- **A base claim versus a base fact.** The claim is a closed union of `SuppliedGitBase` (the caller resolved it)
-  and `ResolvedGitBase` (the caller claims one commit is the *unique* common base and asks for the evidence).
-  There is no third member, so "the operation may pick one" is not expressible. `MergeBaseResolution` records
-  which of the two applied, so a reader can tell "the history had one common base" from "the caller said which
-  commit it was" without re-deriving it from the claim.
-- **A measurement versus a verdict.** `MergeCoverage` reports which tables the changeset touched, which the
-  replay proved covered, and how many operations of each kind were materialised; `MergeOutcome` reports the
-  identities it observed. Neither can express an opinion about the data.
-
-Two model-level rules a consumer must not flatten, because each is enforced at construction:
-
-- **A table that changed but carried no operation is representable, and it is not silent.** `TableCoverage`
-  separates `table_changed` (read from the two datasets) from `operations` (counted from the changeset) — the
-  exact pair whose disagreement *is* the silent-omission class — and `MergeCoverage` covers every canonical
-  table, so "examined and had nothing to carry" cannot be confused with "never attached".
-- **A conflict record states only what the engine supplied.** `MergeConflict` has two shapes:
-  `engine_attributed`, where the callback held the operation and the record carries its table, kind and the exact
-  row key (read from the operation's **old** values, because a changeset omits a key column an `UPDATE` did not
-  change), and `engine_reported_without_row`, where a foreign-key conflict gave the callback no change at all, so
-  the row fields are absent and `detail` says so. No violation count is reported for that shape: the pinned
-  binding raises `ConstraintError` with no count, so a number there would be the operation's own inference.
-
-`models/knowledge/result.py` grew the two operations (`resolve_merge_base`, `merge_knowledge_datasets`) and
-twelve refusal codes in the same change — one per observable failure point, so the twelve different next actions
-stay distinguishable. `duplicate_identity` and `delete_reference_conflict` are the two whose meaning a reader must
-read from the merge's cards rather than from the code name: the first fires even on byte-identical payloads, and
-the second names no row.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The merge vocabulary's own module: the explicit input, the closed base claim, coverage, conflict and outcome.** | `MergeInput`; `SuppliedGitBase`; `ResolvedGitBase` | mcp/src/agents_remember/models/knowledge/merge.py:110-121; mcp/src/agents_remember/models/knowledge/merge.py:81-86; mcp/src/agents_remember/models/knowledge/merge.py:89-101; mcp/src/agents_remember/models/knowledge/merge.py:243-284; mcp/src/agents_remember/models/knowledge/merge.py:293-346; mcp/src/agents_remember/models/knowledge/merge.py:349-391 |
-| The one non-refusal state name, which is the entire claim the operation makes. | `MERGE_STATES` | mcp/src/agents_remember/models/knowledge/merge.py:82-82 |
-| **The precondition the row-less conflict offer reads, the field that carries it, and the function that no longer infers the offer from the code.** | `RetractionPrecondition`; `MergeConflict.precondition`; `expressible_decisions` | mcp/src/agents_remember/models/knowledge/merge.py:148-181; mcp/src/agents_remember/models/knowledge/merge.py:443-443; mcp/src/agents_remember/models/knowledge/merge.py:148-179 |
-| The request that carries the proven resolution, the paths it deliberately keeps out of the resolution, and the optional destination. | `MergeRequest` | mcp/src/agents_remember/models/knowledge/merge.py:277-310 |
-| The base-resolution request and the resolution that records which claim applied. | `MergeBaseRequest`; `MergeBaseResolution` | mcp/src/agents_remember/models/knowledge/merge.py:212-243; mcp/src/agents_remember/models/knowledge/merge.py:245-274 |
-| The per-table coverage fact that separates "changed" from "carried an operation". | `TableCoverage` | mcp/src/agents_remember/models/knowledge/merge.py:313-335 |
-| **The operation and refusal vocabulary this leaf extended.** | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:36-78; mcp/src/agents_remember/models/knowledge/result.py:82-147; mcp/src/agents_remember/models/knowledge/result.py:151-151; mcp/src/agents_remember/models/knowledge/result.py:161-191 |
-| The merge operation that consumes this vocabulary. | `merge_knowledge_datasets` | mcp/src/agents_remember/memory/knowledge/merge.py:131-163 |
-| The base resolution that produces the value this vocabulary consumes. | `resolve_merge_base` | mcp/src/agents_remember/memory/knowledge/merge_base.py:75-105 |
-| The third composition seam that takes these values and returns them unchanged. | `merge_resolved_knowledge_datasets` | mcp/src/agents_remember/application/knowledge_merge.py:74-83 |
-| The node that asserts the published outcome carries no verdict field and reports the coverage record. | "def test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate(" | mcp/tests/test_knowledge_guarded_merge.py:307-376 |
-| The boundary node that holds the conflict record to the engine's own row identity. | "test_the_conflict_record_prefers_the_old_side_and_reports_a_missing_key_as_such" | mcp/tests/test_knowledge_guarded_merge_boundaries.py:165-184 |
-
-## 260915-KS-L6 The Portable Vocabulary, And The Boundary It Draws Around External Input
-
-The knowledge sub-route gained its **fifteenth module**, `models/knowledge/portable.py`, and
-`models/knowledge/result.py` gained two operation names and one refusal code. The portable vocabulary is the
-wire shape of the artifact contract, and three splits carry it — each exists because collapsing it would make a
-statement the code cannot support:
-
-- **A request versus an admitted identity.** `ExportRequest.expected_identity` is **required**, because an export
-  is addressed at a dataset rather than at whatever a path currently holds; storage re-reads it before encoding.
-- **A validated artifact versus a published dataset.** `PortableValidation` reports what was *checked* — with
-  `row_counts` over every canonical table **including the empty ones**, because "present and empty" is the fact
-  that separates a complete export from one that dropped a collection — while `ImportResult` reports what now
-  *exists*. Neither can carry a verdict and neither can grant acceptance: a row whose `state_at_origin` says
-  `accepted` crosses as that stored value and nothing more.
-- **A staging fact versus a destination fact.** An import can validate perfectly and still not publish, so
-  `ImportResult.verified_identity` is carried **independently of `state`**, and the model refuses to construct
-  unless the verified identity and the destination's identity agree on the logical digest.
-
-`ImportRequest.expected_destination` is a **closed two-mode choice** in effect — the exact identity the caller
-observed, or `None` for "expected to be absent" — and there is no third mode: an occupied destination nobody
-admitted is `destination_occupied` rather than replaced, and a named-but-absent destination is `destination_stale`
-rather than a silent fresh install. `expected_repository_id` is optional and only narrows.
-
-**The one vocabulary addition is the narrowest member of the whole refusal union.** `invalid_export` exists
-because the portable artifact is the only input on any of these paths that can be **malformed as a document** —
-an unknown envelope field, a missing manifest key, a repeated JSON key, a row whose fields are not the declared
-columns in declared order, a value the declared type cannot hold, or a text that is not the canonical rendering of
-the document it holds — which is this route's own recorded rule ("a code is a vocabulary decision, not a
-raise-site convenience") at its sharpest. `unsupported_schema`, `duplicate_identity`, `invalid_reference` and
-`destination_occupied` are shared with the paths where the failure is the same fact. The two operations are
-separate for the same reason the merge pair is: an export answers "what is this dataset, logically" and an import
-answers "may this artifact become a dataset here".
-
-**One convention is worth stating here because it is a deliberate non-change:** `models/knowledge/__init__.py`
-does **not** re-export the portable (or merge) vocabulary, so a consumer reaches it as
-`agents_remember.models.knowledge.portable` — the shape the merge vocabulary already follows.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The portable sub-route module, its three splits and its deliberately absent verdict. | `ExportRequest`; `ImportRequest`; `PortableValidation`; `ExportResult`; `ImportResult` | mcp/src/agents_remember/models/knowledge/portable.py:36-44; mcp/src/agents_remember/models/knowledge/portable.py:47-63; mcp/src/agents_remember/models/knowledge/portable.py:66-98; mcp/src/agents_remember/models/knowledge/portable.py:101-133; mcp/src/agents_remember/models/knowledge/portable.py:136-176 |
-| The one code and the two operations this leaf added to the shared vocabulary. | `KnowledgeRefusalCode`; `KnowledgeOperation` | mcp/src/agents_remember/models/knowledge/result.py:36-78; mcp/src/agents_remember/models/knowledge/result.py:82-147; mcp/src/agents_remember/models/knowledge/result.py:151-151; mcp/src/agents_remember/models/knowledge/result.py:161-191 |
-| The five factories that produce the portable boundary's codes. | `invalid_export_refusal`; `non_canonical_export_refusal`; `unsupported_schema_refusal`; `destination_occupied_refusal`; `destination_absent_refusal`; `import_validation_failed_refusal` | mcp/src/agents_remember/memory/knowledge/export_refusals.py:26-50; mcp/src/agents_remember/memory/knowledge/export_refusals.py:53-75; mcp/src/agents_remember/memory/knowledge/export_refusals.py:78-102; mcp/src/agents_remember/memory/knowledge/export_refusals.py:105-126; mcp/src/agents_remember/memory/knowledge/export_refusals.py:129-148; mcp/src/agents_remember/memory/knowledge/export_refusals.py:151-172 |
-| The encoder and reader this vocabulary describes. | `parse_export`; `validate_export`; `encode_export` | mcp/src/agents_remember/memory/knowledge/export_portable.py:490-543; mcp/src/agents_remember/memory/knowledge/export_portable.py:667-712; mcp/src/agents_remember/memory/knowledge/export_portable.py:276-301 |
-| The nodes that hold the round trip and the no-promotion rule to this vocabulary. | "test_a_populated_dataset_round_trips_to_an_equal_logical_dataset"; "test_accepted_origin_state_crosses_as_data_and_is_not_promoted" | mcp/tests/test_knowledge_portable_roundtrip.py:401-470; mcp/tests/test_knowledge_portable_roundtrip.py:473-486 |
-
-## 260915-KS-L7 The Recorded-Scope Read Vocabulary
-
-The knowledge sub-route gained its **sixteenth module**, `models/knowledge/read.py`, and three existing modules
-changed: `result.py` gained one operation and six refusal codes, `base.py` gained the shared path rule
-`require_plain_git_path`, and `source.py`'s anchor validator now delegates its Git-pathspec half to it. The
-selective read's vocabulary holds no SQL, no Git call and no authority decision — it declares what a caller may
-ask for and what a caller is told.
-
-**Four splits are load-bearing, and each is a place a future edit could silently undo a guarantee:**
-
-- **Seed versus selection.** The seed is a **closed discriminated union** of five kinds — `path`, `invariant`,
-  `invariant_revision`, `family`, `family_revision`, one per row of the requirement's table — and it carries **no
-  filter, no sort, no revision preference and no display version**, because none of those may select a record.
-  The only thing that narrows a selection is an exact identity the caller named.
-- **Selection versus page.** The three `primary_items_*` fields describe **one walk**: the declared selection
-  total, the cumulative returned, what remains. All three travel on every page, so a one-item page cannot be read
-  as a one-item scope **at any position** — not only at its first page — and `KnowledgeReadCounts` refuses its own
-  arithmetic contradiction at construction.
-- **Provenance versus verdict.** Every statement, role, rationale and lifecycle crosses as the authored text it
-  is stored as, and **the response has no field that could hold a current-truth marker, a severity or a
-  ranking**. That absence is how the requirement's *Forbidden Overreach* is enforced structurally rather than by
-  discipline, and it is the property this route's "a wire vocabulary is imported from its producer" rule protects.
-- **Continuing versus re-binding.** `KnowledgeReadCursor` names the exact snapshot, context, selector, policy,
-  manifest and position it continues, so a cursor presentable against another dataset is refused rather than
-  serving a page assembled from two revisions.
-
-**Three model-level invariants a consumer may rely on**, each refused at construction: `KnowledgeReadPage`
-refuses `has_more == enumeration_complete` or a `has_more` that disagrees with the presence of a continuation
-(**a truncated page cannot be presentable as complete**); `KnowledgeReadCounts` refuses
-`returned + remaining != total`; and `KnowledgeReadResult` refuses to be both a page and a refusal, or neither.
-
-**The read context is the whole admission one read has,** and it enforces two rules at construction: the selected
-snapshot must belong to the named repository namespace, and source resolution needs **both** `repository_root` and
-`code_tree_id`. A half-specified resolution is refused rather than answered with `not_requested`, because that
-would report a caller's mistake as a fact about a recorded anchor. **`task_ref=None` is a supported state and not
-a degraded one** — a baseline read during planning needs no leaf, an enclosure or a fabricated task.
-
-**The vocabulary additions are the ones only a bounded, continuable selection can reach:** the operation
-`read_knowledge_scope` (one rather than two, because a seed and a continuation are two ways of asking one
-question and a caller branches on the refusal code, not on which of the two it passed) and six codes —
-`selector_absent`, `registration_absent` (the two **absences**, separated by which question the caller got wrong,
-and neither a verdict of "no semantic impact"), `page_budget_too_small` (the selection is valid and one
-indivisible item does not fit; the position is unchanged), `continuation_binding_mismatch` (**no partial page**),
-`snapshot_unavailable` (which is also what a schema generation this build cannot read surfaces as, so the read
-does **not** use `unsupported_schema`) and `selection_incomplete` (no total, no partial manifest). Measured
-at this leaf's own candidate, the unions were **twenty-five operations and forty-four refusal codes**; the
-file declares **fifty operations and forty-five refusal codes** today (re-measured 2026-09-18 at code
-`c5a74a85`; see the entry at the head of this history).
-
-**One deliberate difference from the two preceding leaves is worth recording here.**
-`models/knowledge/__init__.py` does **not** re-export the portable or merge vocabularies, but it **does**
-re-export the read vocabulary and lists every one of its names in `__all__` — so a consumer may reach the read
-shapes from either `agents_remember.models.knowledge` or `agents_remember.models.knowledge.read`.
-
-**The path rule is shared, and that is the reason `base.py` is in this change set.** `require_plain_git_path`
-refuses Git pathspec **magic** — the leading-`:` family — while **admitting `*`, `?` and `[`**, which `ls-tree`
-addresses as literal characters (measured on `git 2.54.0`). Both typed path boundaries call it, so a spelling the
-write path refuses cannot be presented as a seed that is answered with an absence. The card for
-`models/knowledge/base.py` carries the measured table.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The read sub-route module: the closed seed union, the context, the page and the cursor. | `KnowledgeReadSeed`; `PathSeed`; `KnowledgeReadContext`; `KnowledgeReadPage`; `KnowledgeReadCursor` | mcp/src/agents_remember/models/knowledge/read.py:188-197; mcp/src/agents_remember/models/knowledge/read.py:128-155; mcp/src/agents_remember/models/knowledge/read.py:200-247; mcp/src/agents_remember/models/knowledge/read.py:417-448; mcp/src/agents_remember/models/knowledge/read.py:480-497 |
-| **The corrected count model and the truncated page that cannot claim completeness.** | `KnowledgeReadCounts`; `KnowledgeReadPage` | mcp/src/agents_remember/models/knowledge/read.py:370-414; mcp/src/agents_remember/models/knowledge/read.py:417-448 |
-| The one operation and six codes this leaf added to the shared vocabulary. | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:36-78; mcp/src/agents_remember/models/knowledge/result.py:82-147; mcp/src/agents_remember/models/knowledge/result.py:151-151; mcp/src/agents_remember/models/knowledge/result.py:161-191 |
-| **The shared Git-pathspec rule, with `*`, `?` and `[` admitted as literal characters.** | `require_plain_git_path` | mcp/src/agents_remember/models/knowledge/base.py:59-92 |
-| The write path's delegation of its pathspec half to that one rule. | `SourceAnchorDraft` | mcp/src/agents_remember/models/knowledge/source.py:82-127 |
-| **The facade's ninth source, which this leaf did add to `__all__`.** | `KNOWLEDGE_READ_POLICY_VERSION` | mcp/src/agents_remember/models/knowledge/__init__.py:71-71 |
-| The cursor decoder the read re-exports through the facade. | `continue_from_cursor` | mcp/src/agents_remember/models/knowledge/read.py:548-554 |
-| The cursor encoder the read re-exports through the facade. | `cursor_for` | mcp/src/agents_remember/models/knowledge/read.py:527-545 |
-| The nodes that hold these models to their own invariants. | "test_a_truncated_page_states_that_items_remain_rather_than_claiming_completeness"; "test_a_page_budget_of_one_item_still_advertises_the_second_location" | mcp/tests/test_knowledge_read_scope.py:838-871; mcp/tests/test_knowledge_read_scope.py:547-657 |
-
-## 260915-KS-L8 The Comparison Vocabulary
-
-The knowledge sub-route gained its **seventeenth module**, `models/knowledge/diff.py`, and `result.py` gained
-**one** operation — `diff_knowledge_scope` — and **no refusal code at all**, so the unions measured
-**twenty-six operations and forty-four codes** at this leaf's own reading; the file declares **fifty
-operations and forty-five refusal codes** today (re-measured 2026-09-18 at code `c5a74a85`; see the entry
-at the head of this history — the module card records that this leaf's twenty-six was a count of the
-members the diff work could see rather than a count of the union). (L8 is the first knowledge leaf whose boundary needed no new
-refusal vocabulary, and that is recorded as a fact rather than a silence: the comparison's whole failure
-surface is R07's own six codes plus `selected_input_unavailable`, and a one-sided absence travels as a value
-beside the page rather than as a seventh code). The module declares what a comparison may ask and what a
-caller is told; it holds no SQL, no Git resolution and no authority decision.
-
-**Four split lines are the contract, and each is a place a future edit could silently undo a guarantee:**
-
-- **Two snapshots, one selector policy, and no field that could carry a second one.** `KnowledgeDiffSide`
-  carries the exact snapshot and an *optional* selector that **replaces** the request's seed for that side
-  only — the packet's *"an explicit revision selector may address different before/after revision IDs"* as a
-  value. The request has **no field** that could express a computed relevance, a ranking or an inferred
-  impact, so the forbidden second relevance rule is not representable here. The one production path this
-  reaches is `SelectionQuery.seed_override`, documented on the memory route's overview and in the
-  sub-route's own modules — a parameterisation of R07's single rule, **not** a second rule.
-- **Provenance versus verdict.** `KnowledgeDiffSourceChange` carries the two sides' observations and four
-  booleans about which object moved, and **nothing that could hold a severity, a "strengthens", a "harmless"
-  or a neutrality finding**. The record's own field changes are a separate collection on the item, so a
-  source-only change cannot read as a changed obligation — the packet's second non-conforming example made
-  structurally impossible rather than merely avoided.
-- **Absence versus selection.** `DiffCoverage` keeps `present_outside_selection` apart from
-  `absent_from_snapshot`, and `SideAbsence` carries one side's own typed absence **beside** the page rather
-  than replacing it, because a comparison can legitimately find that one side holds nothing for the selector
-  while the other holds records.
-- **A comparison's cursor is not a read's cursor.** `continue_diff_from_cursor` is a separate decoder for a
-  separate document: a read cursor positions a page in one selection and a comparison cursor positions one in
-  a union of two, so presenting either to the other operation is a caller's mistake and both refuse it by
-  name.
-
-**Three model-level invariants a consumer may rely on**, each refused at construction: `KnowledgeDiffPage`
-refuses `has_more == enumeration_complete` or a `has_more` disagreeing with the presence of a continuation
-(**a truncated comparison cannot be presentable as complete**); `KnowledgeDiffCounts` refuses its own
-arithmetic contradiction **and** a display/suppression total larger than the comparison; and
-`KnowledgeDiffResult` refuses to be both a page and a refusal or neither, and **refuses a declared limitation
-that disagrees with its omissions in either direction** — while `no_semantic_assessment_performed` is
-unconditional.
-
-**The closed vocabularies and the one member that was removed.** `DiffItemKind` (five), `DiffCoverage`
-(five), `DiffRecordTransition` (six, whose `superseding`/`superseded` pair is recognised **only** from the
-authored predecessor edge — never a label, a display version or an insertion order), `DiffOmissionReason`
-(three) and `DiffLimitation` (four) are literals rather than free text. `assessment_beyond_this_increment`
-was declared and then **removed** in fix round 1 because nothing in the package constructed it and no
-limitation advertised it: a reason with no producer is dead vocabulary in a table the validator checks in
-both directions. `KNOWLEDGE_DIFF_FIELD_NAMES` is the nine compared record fields in declared order, with
-`selection_reasons` deliberately absent — which route of a selection reached a record is a fact about a
-traversal, not about the record.
-
-**One deliberate non-change to the facade.** `models/knowledge/__init__.py` does **not** re-export the
-comparison vocabulary, exactly as it does not re-export the portable or merge vocabularies — a consumer names
-`agents_remember.models.knowledge.diff`, and the module is not in the facade change set.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The comparison sub-route module: the two sides, the request, the item, the page and the result. | `KnowledgeDiffSide`; `KnowledgeDiffRequest`; `KnowledgeDiffItem`; `KnowledgeDiffPage`; `KnowledgeDiffResult` | mcp/src/agents_remember/models/knowledge/diff.py:197-220; mcp/src/agents_remember/models/knowledge/diff.py:260-268; mcp/src/agents_remember/models/knowledge/diff.py:333-370; mcp/src/agents_remember/models/knowledge/diff.py:707-730; mcp/src/agents_remember/models/knowledge/diff.py:733-818 |
-| **The record half and the source half, with no field that could hold a verdict and `missing_side` as a reason rather than a third change statement.** | `KnowledgeDiffSourceChange` | mcp/src/agents_remember/models/knowledge/diff.py:303-331 |
-| **The binding and the digest derived from it, which is how a candidate change invalidates a continuation by construction.** | `KnowledgeDiffBinding`; `diff_binding_digest` | mcp/src/agents_remember/models/knowledge/diff.py:271-290; mcp/src/agents_remember/models/knowledge/diff.py:292-301 |
-| **The counts that keep the comparison total and the display total apart, and the two closed vocabularies.** | `KnowledgeDiffCounts`; `DiffCoverage`; `DiffRecordTransition` | mcp/src/agents_remember/models/knowledge/diff.py:664-693; mcp/src/agents_remember/models/knowledge/diff.py:125-139; mcp/src/agents_remember/models/knowledge/diff.py:140-153 |
-| The expansion as a value, with the carried partition and its three path lists. | `KnowledgeDiffExpansion` | mcp/src/agents_remember/models/knowledge/diff.py:630-662 |
-| **The comparison's own cursor and its two functions, deliberately not the read's decoder.** | `KnowledgeDiffCursor`; `diff_cursor_for`; `continue_diff_from_cursor` | mcp/src/agents_remember/models/knowledge/diff.py:831-845; mcp/src/agents_remember/models/knowledge/diff.py:847-864; mcp/src/agents_remember/models/knowledge/diff.py:866-887 |
-| **The one operation this leaf added, and the unchanged code union.** | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:36-78; mcp/src/agents_remember/models/knowledge/result.py:82-147; mcp/src/agents_remember/models/knowledge/result.py:151-151; mcp/src/agents_remember/models/knowledge/result.py:161-191 |
-| **The node that measures the absent verdict over the serialized response, and the node that holds the two change statements apart.** | "test_no_field_of_a_comparison_can_carry_a_strengthening_or_harmlessness_verdict"; "test_the_two_change_statements_are_separate_fields_and_neither_implies_the_other" | mcp/tests/test_knowledge_diff_boundaries.py:498-525; mcp/tests/test_knowledge_diff_boundaries.py:527-554 |
-| The nodes that hold the page and result invariants: the truncated comparison and the unestablished limitation. | "test_a_truncated_comparison_cannot_be_presented_as_a_complete_one"; "test_a_comparison_that_declares_a_limit_it_did_not_establish_fails_construction" | mcp/tests/test_knowledge_diff_scope.py:652-713; mcp/tests/test_knowledge_diff_scope.py:577-649 |
-
-## 260915-KS-L10 The Route Operations, And The Envelope's Refusal
-
-This leaf added vocabulary, not a new sub-route, and the additions are exactly the two an operable `Route`
-needs. `models/knowledge/result.py`'s `KnowledgeOperation` literal gained **`author_route`** and
-**`set_governing_route`** — `routes.py` had been borrowing `create_invariant_revision` as the operation its
-refusals named, so a caller acting on a route refusal was told an invariant-revision operation failed. The
-refusal vocabulary itself did **not** grow: inadmissible record payloads are refused with the already-shipped
-**`invalid_payload`** code, because "the payload you supplied is not this kind's shape" is the same fact the
-envelope seam needs and no narrower code could say it better. The route rules reuse the shipped
-`invalid_reference`, `missing_expected_row` and `lineage_cycle` codes for a non-confined path, an unauthored
-route or parent, and a cycle respectively, and `relationship_constraint` for a second governing route on an
-already-governed row.
-
-The deliberately absent vocabulary is as load-bearing as the additions: there is **no** `Route` model in this
-sub-route and no `route_schema`-style declaration, because the three generation-2 tables
-(`route`, `knowledge_record`, `record_revision`) are declared by `memory/knowledge/schema_v2.py` as pinned DDL
-and the route operations take frozen request dataclasses (`RouteDraft`, `GoverningRouteDraft`) rather than
-pydantic models. Nothing here became a second identity authority: no field on any model in this sub-route
-carries a route's identity as a fingerprint.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The two operations the route write layer added, so a route refusal names a route operation. | `author_route`; `set_governing_route` | mcp/src/agents_remember/models/knowledge/result.py:36-96 |
-| The shipped code an inadmissible record payload is refused with — reused rather than widened, and re-cited by hand against the current tree. | `invalid_payload` | mcp/src/agents_remember/models/knowledge/result.py:134-152; mcp/src/agents_remember/models/knowledge/result.py:117-117; mcp/src/agents_remember/models/knowledge/result.py:162-162 |
-| The two operations the route write layer added, so a route refusal names a route operation. | `author_route`; `set_governing_route` | mcp/src/agents_remember/models/knowledge/result.py:43-44 |
-| The shipped code an inadmissible record payload is refused with — reused rather than widened, and re-cited by hand against the current tree. | `invalid_payload` | mcp/src/agents_remember/models/knowledge/result.py:162-162 |
-| The route rules' refusal shapes and the frozen request objects they report on. | `normalize_route_path`; `set_governing_route` | mcp/src/agents_remember/memory/knowledge/routes.py:76-90; mcp/src/agents_remember/memory/knowledge/routes.py:398-480 |
-
-## 260915-KS-L11 The Authored-Judgment Vocabulary
-
-The knowledge sub-route gained its **eighteenth and nineteenth modules** — `models/knowledge/facet.py`
-and `models/knowledge/facet_read.py` — and the widening of the operation's own vocabulary in
-`models/knowledge/candidate.py` and `models/knowledge/result.py`: **eighteen command kinds** (the shipped
-twelve plus six facet commands), **six new operations** and **no new refusal code**:
-`facet.py` added no code of its own, and every failure the write path reports reuses a shipped one
-(`invalid_payload`, `invalid_reference`, `missing_expected_row`, `stale_precondition`,
-`promotion_not_supported`, `lineage_cycle`, `unsupported_schema`) — all seven **reused unchanged**, and the
-four factories the leaf added were mechanisms under codes the vocabulary already declared. The six
-facet acts joined `KnowledgeOperation`, so this section read the operation union at **thirty-five
-members** with the refusal-code union at **forty-four** — both stale, and neither may be read as the
-current size: the file declares **fifty operations and forty-five refusal codes** today (re-measured
-2026-09-18 at code `c5a74a85`; the measured series and the command are in the entry at the head of this
-history).
-
-**One closed list is the whole vocabulary, and everything else is derived from it.** `FACET_KINDS` is the
-eight subtypes; `FacetKind` is the same eight spellings; one frozen payload model per subtype carries that
-subtype's minimum meanings; `FacetPayload` is the discriminated union whose member set is exactly the eight;
-and `FACET_RECORD_SCHEMAS` derives `facet-<kind>/v1` from the kind. A ninth subtype has **no member to
-resolve to**, so it cannot be stored as a generic facet — it becomes the typed `invalid_payload` refusal at
-the envelope seam, which is also why `AddFacet` carries its payload as a mapping: validating it in the
-command would turn that refusal into a parse error.
-
-**Three splits are load-bearing, and each is a place a future edit could undo a guarantee:**
-
-- **Authored content versus provenance.** No payload field can be read as, or substituted for, the record's
-  authorship: a decision's `decider` is content *about who decided*, there is no field for `actor_ref`,
-  `authorization_ref`, `operation_id` or `recorded_at`, and `extra="forbid"` is what refuses a payload that
-  arrives carrying one.
-- **Guidance versus verdict.** `DiagnosticGuidancePayload` requires an interpretation **and** the limit of
-  that interpretation, and carries no field that could hold an assessment, a compatibility verdict, a
-  severity or an endorsement — for any of the eight subtypes.
-- **Recorded designation versus derived currency.** `ExplanationRecord.current_revision_id` is the
-  designation the record *stores*; `None` is the fact "no designation recorded" rather than a fallback to
-  the newest revision, and no field of the read vocabulary could be read as "latest".
-
-**The two closed sets this module declares are deliberately separate declarations.** The four attachment
-endpoint kinds and the two explanation subject kinds spell two names identically because both name the same
-canonical table, but they are separate constants and separate typed unions: an attachment's endpoint set and
-an explanation's subject set are two closed sets that could diverge, and sharing a literal would hide it.
-The **route is deliberately absent from the endpoint set** — the route association is the envelope's own
-`governing_route_id`, and a second route mechanism here would be the competing one the design forbids.
-
-**One precision the union does not carry, stated so it is not inferred:** `AddFacet.facet_kind` is a
-length-bounded `str` rather than the `FacetKind` literal, so the *command* accepts any nonempty kind name
-and the closure is enforced one seam later. That is the deliberate trade above, not an oversight — but a
-reader should not conclude the ninth subtype is unconstructible at the command.
-
-**One deliberate non-change to the facade.** `models/knowledge/__init__.py` does **not** re-export this
-vocabulary, exactly as it does not re-export the portable, merge or comparison vocabularies — a consumer
-names `agents_remember.models.knowledge.facet` or `...facet_read`, and neither module is in the facade
-change set.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The one closed list and the declarations derived from it. | `FACET_KINDS`; `FacetPayload`; `FACET_RECORD_SCHEMAS` | mcp/src/agents_remember/models/knowledge/facet.py:68-77; mcp/src/agents_remember/models/knowledge/facet.py:183-193; mcp/src/agents_remember/models/knowledge/facet.py:209-211 |
-| **The six authored commands and the union they join, which is the operation's widened reach.** | `FacetCommand`; "ProposedCommand = Annotated[" | mcp/src/agents_remember/models/knowledge/candidate.py:628-635; mcp/src/agents_remember/models/knowledge/candidate.py:596-596; mcp/src/agents_remember/memory/knowledge/facets.py:88-88; mcp/src/agents_remember/models/knowledge/candidate.py:614-614 |
-| **The standalone request and the receipt that carries no approval, endorsement or judgement field.** | `FacetWriteRequest`; `FacetWriteResult` | mcp/src/agents_remember/models/knowledge/facet.py:512-529; mcp/src/agents_remember/models/knowledge/facet.py:560-585 |
-| **The facet selection's own policy, the complete-or-refused bound and the page whose completeness is not a settable flag.** | `FACET_SELECTION_POLICY_VERSION`; `FACET_SELECTION_ITEM_LIMIT`; `FacetReadPage` | mcp/src/agents_remember/models/knowledge/facet_read.py:56-56; mcp/src/agents_remember/models/knowledge/facet_read.py:61-61; mcp/src/agents_remember/models/knowledge/facet_read.py:332-354 |
-| The two seed kinds and the six item kinds as closed unions. | `FacetReadSeed`; `FacetReadItem` | mcp/src/agents_remember/models/knowledge/facet_read.py:182-185; mcp/src/agents_remember/models/knowledge/facet_read.py:241-249 |
-| The eight subtypes' payload models and the two nonempty-tuple meanings. | `ScenarioPayload`; `LimitationPayload` | mcp/src/agents_remember/models/knowledge/facet.py:132-143; mcp/src/agents_remember/models/knowledge/facet.py:146-152 |
-| **The nodes that hold the closure, the per-subtype refusals and the receipt's absent verdict fields.** | "test_the_seam_registry_is_exactly_the_eight_declared_subtypes"; "test_a_facets_authorship_lifecycle_and_receipt_are_stored_data_with_no_verdict" | mcp/tests/test_knowledge_facets.py:181-227; mcp/tests/test_knowledge_facets.py:306-343; mcp/tests/test_knowledge_facets.py:408-415; mcp/tests/test_knowledge_facets.py:228-228; mcp/tests/test_knowledge_facets.py:427-427 |
-| **The six operations this leaf added to the shared vocabulary, and the unchanged code union.** | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:36-90; mcp/src/agents_remember/models/knowledge/result.py:82-147; mcp/src/agents_remember/models/knowledge/result.py:151-151; mcp/src/agents_remember/models/knowledge/result.py:161-191 |
-
-## 260915-KS-L14 The Detection Vocabulary, And The Two Operations It Adds
-
-The knowledge sub-route gained its **twentieth module** — `models/knowledge/detection.py` — and the
-shared served vocabulary grew by **two operations and one refusal code**: `record_detection_run` and
-`read_detection_run` join `KnowledgeOperation`, and `detection_self_reference` joins
-`KnowledgeRefusalCode`. The operation union therefore read **thirty-seven members** and the code
-union **forty-five** at this leaf's own candidate. The code union is still forty-five; the operation
-union is **not** — the file declares **fifty operations** today (re-measured 2026-09-18 at code
-`c5a74a85`; the measured series is in the entry at the head of this history), so the number above is
-this section's own reading and not the current size. Two members rather than one, for the reason the read pair and the diff pair are
-one each: recording a run and reading one back are different acts, and the read is the one that must
-answer with the recorded order rather than with whatever order rows come back in.
-
-**No field of either record can hold a conclusion, and the absence is declared rather than inferred.**
-The module's whole vocabulary is built so that a severity, an assessed priority, a conflict or
-compatibility verdict, a causal explanation, a harmlessness label and an authored finding are
-**unrepresentable**: `CONCLUSION_BEARING_FIELD_NAMES` is one closed list of those concepts and
-`conclusion_bearing_fields` is a total, mechanical **review of a model's declared field set** — it reads
-`model_fields`, not an instance, so a field is reported whether or not any payload populates it. The
-shipped base's `extra="forbid"` refuses a payload that supplies one; `observed_basis_detail` refuses a
-verdict written into the prose field by requiring `detail` to *equal* the rendering of the record's own
-recorded basis. Both records also carry the unconditional `no_semantic_assessment_performed` limitation,
-so the absence is a stated fact rather than something a reader infers from a missing field.
-
-**The closed vocabularies are declared as a `Literal` and as a tuple, and a case asserts they agree.**
-`DetectionCondition` / `DETECTION_CONDITIONS` (the five declared conditions), `DeclaredInputSet` /
-`DECLARED_INPUT_SETS` (the three readings), `DetectionChangeGranularity`, `DetectionScopeStatus`,
-`DetectionLimitation` / `DETECTION_LIMITATIONS` and `MANIFEST_DESTINATION_KINDS`. Three published
-identities travel with them: `DETECTION_POLICY_VERSION` (the detection contract's name, in the shipped
-constant idiom), `CONDITION_VOCABULARY_VERSION` (the vocabulary versioned with the policy, so a condition
-the policy does not declare is refused *with the version it was refused against*), and
-`DETECTION_EXTRACTOR_VERSION` — **authored rather than imported**, because the shipped anchor resolver has
-no symbol extractor and returns `unsupported_locator`, so there was no existing constant to cite.
-
-**The declared input set is checked against the member's own recorded discriminator, never by counting
-sides.** `DetectionRecordedInputSet` enforces that `both_sides_declared` records both declared sides each
-under its own selector and context and **no** counterpart-probe outcome, that `union_of_both_sides` records
-both sides *and* the probe's recorded outcome per reported item, and that `trigger_side_only` records
-exactly one side and no probe at all. Each refusal names the member and what was recorded instead, because
-a two-sided condition reported from a one-sided read is the silent-widening shape the requirement exists
-to prevent — and a `trigger_side_only` signal that *asserts* something about the unread side gets its own
-refusal, since the absence of a counterpart is a scope limitation rather than a finding of equality.
-
-**Two shapes carry what the record cannot say.** `DetectionScopeManifest.resolve` reports a reference as
-`retained` only for a resolved durable-publication destination with a recorded identity, and otherwise
-`unresolved` **with what would resolve it** — never as an empty manifest, and never as an error;
-`DetectionManifestResolution`'s validator refuses either half without its required field.
-`DetectionRunCurrentness` carries the recorded and current versions beside the state and **no signal at
-all**: its `signals_unchanged` field is the literal `True`, which is the type saying that this operation
-cannot rewrite what it read. `DetectionRunReproduction` carries both run identities, both ordered
-sequences, every differing input and one verdict that must follow from those facts.
-
-**The record's own field set is all-required.** `DetectionSignalPayload` carries every field requirement
-1.1 lists — signal id, repository, governing route, condition, vocabulary version, declared input set,
-observed changes, relationship paths, the two published versions, the scope manifest, the registered scope
-status, the unmapped paths and the limitations — with the four collection fields required even though
-three are frequently empty, so a signal that observed nothing *states* that rather than defaulting.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The three published identities, including the extractor version authored because no shipped constant exists to cite.** | `DETECTION_POLICY_VERSION`; `DETECTION_EXTRACTOR_VERSION`; `CONDITION_VOCABULARY_VERSION` | mcp/src/agents_remember/models/knowledge/detection.py:96-134 |
-| The five declared conditions and the three declared input sets, each as the validated type beside the tuple a caller enumerates. | `DETECTION_CONDITIONS`; `DECLARED_INPUT_SETS` | mcp/src/agents_remember/models/knowledge/detection.py:124-149 |
-| **The closed conclusion-name list and the declared-field-set review that makes "no conclusion is representable" checkable rather than asserted.** | `CONCLUSION_BEARING_FIELD_NAMES`; `conclusion_bearing_fields` | mcp/src/agents_remember/models/knowledge/detection.py:217-283 |
-| The observed-change granularities, the declared scope status and every declareable limitation. | `DetectionChangeGranularity`; `DetectionScopeStatus`; `DETECTION_LIMITATIONS` | mcp/src/agents_remember/models/knowledge/detection.py:156-209 |
-| **The declared-input-set discriminator contract: two sides and no probe, both sides and the probe, or one side and no probe.** | `DetectionRecordedInputSet` | mcp/src/agents_remember/models/knowledge/detection.py:546-632 |
-| **The manifest reference and its two-state resolution, which reports an unresolvable reference with what would resolve it rather than as an empty manifest.** | `DetectionScopeManifest`; `DetectionManifestResolution` | mcp/src/agents_remember/models/knowledge/detection.py:417-543 |
-| **The all-required signal field set, and the `detail`-equals-rendering rule that refuses a verdict in prose as it refuses a verdict field.** | `DetectionSignalPayload`; `observed_basis_detail` | mcp/src/agents_remember/models/knowledge/detection.py:635-753; mcp/src/agents_remember/models/knowledge/detection.py:1017-1033 |
-| **The run payload: the per-signal declarations not collapsed into a run default, and the declared total order over signal identity.** | `DetectionRunPayload` | mcp/src/agents_remember/models/knowledge/detection.py:756-827 |
-| **The currentness answer that carries the recorded versions beside the current ones and cannot hold a re-interpreted signal.** | `DetectionRunCurrentness` | mcp/src/agents_remember/models/knowledge/detection.py:942-987 |
-| The one typed outcome per detection operation, serving its signals in the run's recorded order. | `DetectionRunResult` | mcp/src/agents_remember/models/knowledge/detection.py:990-1014 |
-| **The two operations and the one refusal code this leaf added to the shared vocabulary.** | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:36-96; mcp/src/agents_remember/models/knowledge/result.py:101-171 |
-| The envelope registry every typed payload pair is registered under — six family groups now — and the two-kind set derived from the detection entries. | `PAYLOAD_MODELS`; `DETECTION_RECORD_KINDS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:132-178; mcp/src/agents_remember/memory/knowledge/record_envelope.py:189-197; mcp/src/agents_remember/memory/knowledge/record_envelope.py:198-204 |
-| **The requirement-revision family this route gained: its frozen payload vocabulary, the pair it declares in the envelope's kind vocabulary, and the kind set derived from it.** | `RequirementRevisionPayload` | mcp/src/agents_remember/models/knowledge/requirement.py:172-213 |
-| The pair that family declares in the envelope's typed kind vocabulary. | `REQUIREMENT_REVISION_KIND`; `REQUIREMENT_REVISION_SCHEMA` | mcp/src/agents_remember/models/knowledge/requirement.py:80-84 |
-| The kind set derived from the registry entries that pair is built from. | `REQUIREMENT_RECORD_KINDS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:211-213 |
-| **The recorded quotation-degree ruling, and the absence it turns on: no payload field is the operative obligation.** | "test_a_payload_carrying_an_operative_obligation_field_is_refused" | mcp/tests/test_knowledge_requirement_reference_contract.py:294-310 |
-| The two operation members the requirement record group added, and the fact that no refusal code was added with them. | `record_requirement_revision`; `read_requirement_revisions` | mcp/src/agents_remember/models/knowledge/result.py:114-114; mcp/src/agents_remember/models/knowledge/result.py:113-113 |
-| The envelope registry key pair each detection payload is registered under, and the two-kind set derived from it. | `PAYLOAD_MODELS`; `DETECTION_RECORD_KINDS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:132-178; mcp/src/agents_remember/memory/knowledge/record_envelope.py:189-197; mcp/src/agents_remember/memory/knowledge/record_envelope.py:198-204 |
-| **The cases that hold the field-set review, the three declared input sets and the retention answer.** | "test_the_signal_field_set_is_required_and_carries_no_conclusion_bearing_field"; "test_the_declared_input_set_vocabulary_is_exactly_three_members_each_with_its_own_discriminator"; "test_a_manifest_may_not_be_reported_retained_at_a_destination_that_cannot_retain_it" | mcp/tests/test_knowledge_detection_signals.py:185-222; mcp/tests/test_knowledge_detection_signals.py:346-360; mcp/tests/test_knowledge_detection_signals.py:527-569 |
-| The eight graph operations and the anchor-endpoint union the request vocabulary gained, each cited at its own declaration. | `AnchorReference`; `AnchorEndpoint`; `NewAnchor`; `CreateRealizationClaimResult` | mcp/src/agents_remember/models/knowledge/result.py:300-316; mcp/src/agents_remember/models/knowledge/result.py:307-315; mcp/src/agents_remember/models/knowledge/result.py:483-498; mcp/src/agents_remember/models/knowledge/result.py:327-327; mcp/src/agents_remember/models/knowledge/result.py:316-316; mcp/src/agents_remember/models/knowledge/result.py:326-326; mcp/src/agents_remember/models/knowledge/result.py:342-353; mcp/src/agents_remember/models/knowledge/result.py:325-325; mcp/src/agents_remember/models/knowledge/result.py:332-335; mcp/src/agents_remember/models/knowledge/result.py:508-518; mcp/src/agents_remember/models/knowledge/result.py:361-361; mcp/src/agents_remember/models/knowledge/result.py:526-540; mcp/src/agents_remember/models/knowledge/result.py:371-376; mcp/src/agents_remember/models/knowledge/result.py:360-370 |
-| The envelope registry key pair each detection payload is registered under, and the two-kind set derived from it. | `PAYLOAD_MODELS`; `DETECTION_RECORD_KINDS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:132-178; mcp/src/agents_remember/memory/knowledge/record_envelope.py:189-197; mcp/src/agents_remember/memory/knowledge/record_envelope.py:198-204 |
-
-## 260915-KS-L12 The Supporting-Record Vocabulary
-
-`KS-R12@v1` adds the record vocabulary the route's typed layer was still missing: an **evidence claim**
-(authored content about what evidence covers) and a **verification observation** (a mechanical fact about
-what ran). They are two kinds and not one 'evidence' record, and the separation is the whole reason the
-leaf exists — collapsing them would put a human's coverage assertion in the same row as a machine's exit
-status, and the first consumer to read the row would treat the whole row as machine-produced. The
-separation is also what makes the no-sufficiency rule enforceable: if a passing run lives in a different
-record from the claim, there is no single row in which 'passed' could be read as 'sufficient'.
-
-Four properties of this vocabulary are load-bearing. **Nothing judges.** Neither payload has a field for a
-verdict, a confidence, a severity, an endorsement or an aggregate, and `limitations` is required on a
-claim with the empty string as a value it can hold — 'this author declared no limitations' rather than
-'limitations unknown'. **The subject and the coverage are structural.** A claim's subject is a
-discriminated union of exactly two kinds, invariant revision and knowledge facet revision, each naming its
-own join table, and its claimed coverage is the same shape with a row identity that makes one endpoint
-covered once unrepresentable at construction as well as in the key. **The execution result is a closed
-five-member vocabulary** — `passed`, `failed`, `error`, `skipped`, `not_run` — with `not_run` a member
-reported as itself and no member that says what a result means. **The references are references.** A
-`ResultArtifactReference` is a confined repository-relative path, the sha256 of the artifact's bytes and
-its size; a `PublicationReference` names a durable destination, the sha256 of the published bytes and the
-instant, and its presence or absence is how the record states which retention route it relies on.
-
-The route's read vocabulary is `models/knowledge/evidence_read.py`: the declared contract of a **third**
-selection with its own policy name, its own two seed kinds, its own item kinds and its own counts, plus
-the four artifact-resolution states and the unassessed state a claim with no assessment reference is
-served with. No model here has a status, grade, score, confidence or aggregate, and the item models are
-frozen and extra-forbidden, so a page cannot be extended with one.
-**A property a reader should not have to rediscover:** emptiness is discovered while blocks are
-*composed* — after admission succeeded and a real manifest parsed — so the guard is reachable only
-through a real composition. That is why the leaf's case drives a disposable copy of the shipped
-corpus rather than a fixture, and it is what makes the seed failable.
-
-## 260915-KS-L13 The Authored-Effect Vocabulary, And The Change Set That Composes It
-
-`KS-R13@v1` adds the record vocabulary for **authored work**: what a change was *intended* to do, and who
-said so. Four kinds arrive as **envelope records** — `invariant_effect_claim`, `preservation_claim`,
-`unresolved_question` and `semantic_change_set` — so the route gains their payload shapes and no identity
-mechanism, no second revision aggregate and no table for the change set itself. The first three are
-members of one change set and declare their own `change_set_id`, which is what makes membership a stored
-fact rather than something the change set restates; the change set's own payload carries the two snapshot
-identities it was authored over, the opaque requirement-revision references it names and the exact
-realization-claim identities it proposes.
-
-**Six properties are load-bearing. The effect vocabulary is closed and spelled once** —
-`ADMITTED_EFFECT_LABELS` names nine labels in one tuple and `EffectLabel` is the literal type built from
-exactly that tuple, so a synonym, a compound label, a free-text label and a tenth member are all the same
-refusal: the payload does not validate. **Inputs and outputs are exact revision references, never prose**,
-and nothing in the vocabulary parses one, splits it on a separator or infers an identity from it. **One
-cardinality rule** — `cardinality_violation` — admits no revision on both sides of a claim, requires two
-or more outputs for `split` and two or more inputs for `merge`, and admits any counts for the other seven
-labels; it is declared here and imported by the storage boundary, so the construction validator and the
-typed refusal cannot disagree. **There is no field that is a truth verdict**: no boolean, score,
-confidence, verdict or `verified` field exists on a claim, and a stored claim is a claim whose *declared
-shape* was accepted rather than one endorsed. **A preservation claim is a separate record and is not an
-effect**: its subject is a closed four-member union (an invariant identity or revision, an anchor, or a
-change set) with deliberately **no** effect-claim member, and there is no `preserve` label and no
-preservation flag. **The author is not a payload field**: authorship *is* the revision's `provenance`,
-stamped from the admission, so a payload naming an actor, an authorization, an operation or a recorded
-time would be a second, competing statement of one fact.
-
-**The change set is where authored work is composed and where the forbidden set is absent.** It is
-superseded by a **new record with a predecessor edge** — no in-place revision, no mutable "current
-version" pointer, no separately typed successor — and there is no generated summary, generated narrative,
-computed effect list, severity or display ordering computed from meaning anywhere in its shape. It is
-**not a decision**: it carries no acceptance, no promotion and no merge verdict. Its read models are
-`UnresolvedReference` (the holder, the field's closed four-member set, the reference verbatim as written,
-and a reason — with deliberately **no** slot for a resolved value), the three member views and
-`SemanticChangeSetView` with all six declared parts readable, and `AuthoredEffectScope` / `EffectReadResult`
-for the whole derived read. Every view is a pure function of rows the caller already read, so a view is
-disposable rather than an authority; `ChangeSetMembership` is the membership *fact* the design allows code
-to compute, and an empty list means exactly that no member declares the change set. `assessment_refs` are
-**named** references that may remain unresolved — the assessment record belongs to another leaf — so one
-that resolves to nothing is a reported state and never a refused write, a substitute, or a claim that an
-assessment happened.
-
-## 260915-KS-L16 The Registered-Scope And Family-Review Vocabulary, And Two Operations Added Without A Refusal Code
-
-`KS-R16@v1` composes the family-integrity pipeline over three record leaves and adds **no record kind of
-its own**; what this route gains is the two vocabularies that pipeline speaks. `models/knowledge/registered_scope.py`
-is the §8 registered review scope's declaration — its snapshots, its followed edges with per-side
-provenance, its membership, its manifest and its own construction refusal. `models/knowledge/family_review.py`
-is the pipeline's vocabulary between the detector and the authored record: grouped facts, five separated
-statuses, per-input currentness, the routing report and the one gate-consequence decision. Both are
-**envelope-shaped additions**: neither brings a table, an identity mechanism or a storage contract, and
-neither restates a schema `KS-R14@v1`, `KS-R15@v1` or `KS-R17@v1` already owns.
-
-**The scope's five properties are shapes rather than rules a caller remembers.** `ScopeSnapshotDeclaration`
-names the two sides a scope is declared over, and `FollowedScopeEdge` carries the side each result was read
-from, so a cross-snapshot union is a *recorded lookup for candidate discovery* and never a claim that two
-snapshots' relationships hold at once. Widening is a declared policy or it is nothing: the resolved
-`(policy_id, policy_version_id, declared_version)` triple travels with the scope it produced, and a request
-that declares no policy follows no composition edge. Membership is recorded, never inferred — nothing here
-derives a member from prose, a label, a folder name, a path prefix or a symbol, and a path prefix compared
-against a stored anchor path is a resolution fact this module cannot represent at all;
-`scope_path_is_recorded` is the one path-shaped predicate it carries, and it decides exact recorded
-equality. The registered scope is **not** the R07 read frontier: no field can hold a selected revision set,
-a page cursor, a count of items remaining or an advertised expansion. And construction is total or it is
-`ScopeConstructionRefusal`, naming the exact declared input it could not resolve — there is deliberately no
-partial scope carrying an unresolved-input list, because "what a run over the scope could not resolve" is
-`KS-R14@v1`'s half of the split. `SCOPE_CONSTRUCTION_VERSION` pins the declaration's own version, and **no
-identity is minted here**: the scope is addressed by its declared `scope_id` and carries no content address,
-logical digest or fingerprint of its own, so a `scope_manifest_ref` elsewhere points at that id and at
-nothing derived from it.
-
-**The pipeline vocabulary keeps five owners separate and refuses to carry a conclusion.**
-`FamilyIntegrityFactGroup` declares no name from the detection schema's conclusion-bearing field set —
-`KS-R14@v1`'s own review function is the measurement, and the case that protects it requires the empty
-tuple — while `retains()` is the review that a merge lost nothing: grouping may merge matches, but every
-matched condition and its supporting paths and edges are retained, and no field could hold a dropped match.
-`SeparatedStatusReport` carries exactly one entry per owner in the declared order (`PIPELINE_STATUS_OWNERS`,
-with `STATUS_OWNER_DECLARATIONS` and `STATUS_VOCABULARIES` giving each owner its own closed status
-vocabulary and its own statement of what it does *not* establish), and there is no field anywhere in it for
-one verdict, one badge or one boolean. Missing stays missing: an absent stored record is reported as
-`no-record-recorded` and never as a favourable disposition, because the vocabulary has no "compatible"
-member and no default. `FindingCurrentness` carries the recorded comparison's result, the identities that
-moved and a typed statement that nothing was reinterpreted for the new inputs, and `FamilyReviewRouting`
-carries the shipped actionability formula's three terms **beside** the family-review row count as a separate
-number, with a field whose only admissible value names the validator that actually decides closeout
-readiness (`CLOSEOUT_READINESS_DECIDER`) — a zero actionable count is necessary and never sufficient.
-`FamilyReviewGateDecision` and its recorded instance `RECORDED_GATE_CONSEQUENCE_DECISION` make the gate's
-consequence owned rather than implied. `FACT_GROUPING_POLICY_VERSION` and `FAMILY_REVIEW_ROUTING_SURFACES`
-name the two declared policies the pipeline's composition is bound to.
-
-**Two operations were added and no refusal code was.** `models/knowledge/result.py`'s `KnowledgeOperation`
-union gained exactly two members — `construct_registered_scope` and `compose_family_integrity_report` — each
-with its reason written beside it in the source, and `KnowledgeRefusalCode` was deliberately **not**
-extended: a scope-construction refusal reuses the shipped codes, and a reader who saw the union grow and
-inferred a new refusal vocabulary would be reading the wrong fact. That absence is recorded here rather than
-left to a diff, because "this leaf needed no new refusal code" and "this leaf's refusal vocabulary was never
-reviewed" must not read alike.
-
-## 260915-KS-L20 The Five Query Views, The Closed Provenance Class, And The Projection Manifest
-
-`KS-R20@v1` adds five modules to this route and **no record kind of its own**, which is the property worth
-stating first: the views render the kinds `KS-R10@v1` through `KS-R19@v1` already store, and nothing here
-mints an identity, a table or a content address.
-
-**`models/knowledge/classification.py` is the whole answer to `Doc13:243`'s prohibition, and the answer is
-data rather than vigilance.** The class set is closed at two members — `authored`, a stored record a named
-author wrote carrying its author and its rationale, or `mechanical`, computed by a named versioned rule from
-stored facts — and there is no `unknown`, no `null`, no `mixed` and no default. A value that cannot be
-classified is **not emitted with an empty class**: the view layer reports it as an
-`UnresolvedLimitation`. The rule set is closed and versioned: `MECHANICAL_RULES` is the registry,
-`mechanical_rule` is the only way to obtain a rule, and a candidate rule that is not registered **raises**
-rather than producing a classification, so no inline comparator can acquire a class by being spelled like
-one. `Provenance` refuses a value carrying both an author and a rule, one carrying neither, and an authored
-value whose stated reason is a mechanical rule — requirement 2.3's "the mechanical determination never
-writes an authored record, and an authored determination never cites a mechanical rule as its reason" made
-unrepresentable rather than documented. What the module deliberately does **not** have is as load-bearing as
-what it has: no ordering comparator, no sort key, no score, no rank, no weight, no severity, no percentage,
-and no field a caller could read as an assessment. `REGISTERED_ROLE_ORDER` is read from the vocabulary's own
-declaration (`get_args(RealizationRole)`) rather than hand-copied, so a role added to the vocabulary cannot
-silently acquire a position.
-
-**`models/knowledge/view.py` declares the five views and makes three dishonest shapes unconstructible.**
-`VIEW_NAMES` is `Doc13:235-239`'s list in that order — source context, invariant, family, review matrix,
-curation queue — with no synonym, no sixth view and no view assembled at a caller's convenience, and the
-payload's own `view` field says which one the caller got. Every row that orders or qualifies a value
-carries a `Provenance` as a **sibling** field of that value (requirement 2.6), so a consumer can tell an
-authored finding from a mechanical observation without knowing which renderer produced the payload; there is
-no field anywhere below for a score, a rank, a weight, a severity, a percentage, a summary or a conclusion,
-so a view cannot acquire one by accident. `ViewPayload._require_honest_bounding` refuses a payload that
-returned a first page without a continuation **and** one that declares itself complete while carrying a
-token, which is the structural form of "a bounded response never presents its first page as the entire
-registered scope"; `ViewCompleteness` is scoped to the four inputs `Doc13:227` names and its field is
-spelled `complete_within_declared_scope` so no reader can take it for a statement about the project's
-semantics. `ViewCounts` carries all nine named quantities, each `counted` or `not_applicable` **with its
-reason**, so a quantity with no meaning for a view says so instead of reporting a zero. And
-`KnowledgeViewReader` is a runtime-checkable `Protocol` that is the only way this vocabulary obtains a row:
-a view module has no path, no connection and no candidate tree, so "a view that opens the database directly
-has left the contract" is a property of the type rather than a rule to remember. Its one addition for the
-path-only front door is `ViewRequest.source_path`, the optional seed a caller who knows only a file can
-present, and the field's validator constructs the shipped `PathSeed` rather than restating its rule — so a
-path that no stored anchor could carry selects nothing by construction rather than by a lookup that happens
-to miss, and the confinement rule stays in the one place the write path already spells it.
-
-## 260915-KS-L32 The Read Request's Path Seed, And The Seeded Reads It Feeds
-
-`models/knowledge/view.py` carries one new optional field on the read request. `ViewRequest.source_path` is
-bounded by `PATH_MAX_LENGTH` and validated by constructing the shipped `PathSeed` rather than by copying its
-rule, which is what keeps one spelling of "a confined repository-relative POSIX path" governing both the
-write path that records realization anchors and the read seed that looks them up. The reason the field
-exists at route altitude is that the seed is what makes the renderer's selection reachable from an ordinary
-code hit: the application layer resolves the path to the revisions realized there and feeds both the
-invariant view's selection and the family view's members and member locations from that one frontier, so a
-caller no longer has to discover an invariant revision id or a family revision id before asking what governs
-a file. An absent seed means "no restriction" and an empty realization set means "realized nowhere"; the two
-are different answers and the model does not collapse them.
-
-
-**`models/knowledge/projection_manifest.py` is the vocabulary the managed writer is judged against.** The
-manifest is the only authority on ownership, so `ManagedOutput` and `RetainedOutput` are the two ways a
-path can be owned and `ProjectionManifest._require_one_entry_per_path` refuses two owners for one path.
-Every produced output records its stable identity, its source snapshot, its renderer version, its digest
-**algorithm** and its byte count — a projection artifact without all of them is not constructible, which is
-requirement 4.3 in shape. The refusal vocabulary is a closed seven-member list (`destination_escape`,
-`destination_collision`, `escaping_link`, `unresolved_projection_input`, `manifest_unreadable`,
-`destination_unavailable`, `unauthorized_overwrite`), the four discrepancy kinds are distinguished because
-they call for different caller action, and the retention reasons are a closed five-member list. Confinement
-is a pure function here (`require_confined_relative_path`) and collision detection is one
-(`detect_destination_collisions`) so the writer can refuse **before** either output is written rather than
-discovering the collision mid-publish. `DIGEST_ALGORITHM` is `sha256` because `SHA256_PATTERN` already
-governs every digest that crosses the knowledge boundary; the manifest's digest is projection bookkeeping
-about a file on disk, it is not a knowledge identity, it confers none, and nothing in the substrate reads it
-as one.
-
-**`models/tools/knowledge_responses.py` is the wire half, and its whole point is that it is one shape
-rather than five.** Requirement 6.8 says a mounted tool's response payload is the same view payload
-requirements 2 and 3 define, "not a second shape", so `knowledge_read` carries the view payload's own JSON
-and this module adds only the envelope around it — a tool that re-rendered a view in its own format would be
-a second renderer and therefore a second place for the classification rule to be violated. Each of the five
-is a strict `ToolResponse` carrying a two-state discriminator (`view`/`result` or `refused`) with refusal
-fields that name the offending input, so a handler cannot translate a refusal into an empty result or a
-default; `KnowledgeIntegrityCheckResponse` carries `compatible: null` beside an explicit `unresolved` list
-instead of manufacturing a verdict from a passing test.
-
-## 260915-KS-L21 The Truth-Coverage Census Vocabulary, And Three Commands Added To The Closed Union
-
-`KS-R21@v1` contributes one module to this route — `models/knowledge/census.py` — and edits one line-shaped
-fact in `models/knowledge/candidate.py`. The route still adds **no record kind of its own**: the census's three
-kinds are envelope records, and this module owns only their payload shapes.
-
-**Three record kinds, and every prohibition on the vocabulary is a property of the declared fields.** The
-inventory row, the assessable claim and the migration disposition are the three shapes. There is **no field that
-could hold an inference**: no classification the parser could have computed, no verdict, no mismatch class and no
-status derived from import success. `claim_kind` admits `unclassified` beside the four kinds `Doc12:65-70`
-closes the taxonomy at, and `disposition` admits `imported`, `unmapped`, `unsupported`, `unreadable`, `retired`,
-`historical` and `non_claim` — and **none of those is a verdict about whether a claim is true**. A semantic
-status such as *supported*, *contradicted* or *unresolved* is a curator's authored `ReviewAssessment`, read by
-the census and never written by it. `extra="forbid"` on the shared base is what refuses a payload arriving with
-one.
-
-**Provenance is a required stored value, not a report note.** `CensusProvenance` carries the artifact, the
-location within it and the frozen baseline the artifact was read at, and **all three records require it** — a
-record that could omit its provenance is a record whose claim is no longer addressable to its original text.
-The baseline is a `SnapshotIdentity` rather than two loose strings, because the frozen baseline *is* one: the
-packet requires an exact code revision and an exact memory revision recorded by identity, and `SnapshotIdentity`
-is the shipped shape that records exactly that pair. Two artifacts examined at two baselines are two
-observations, which is why the baseline is part of the record rather than a parameter of the run.
-
-**No record carries an identity of its own beyond its key.** There is no content address, no logical digest and
-no fingerprint field in this vocabulary, and the generation that declares these tables declares no such column
-either: the census mints no second identity authority, and the content digest stays on `record_revision` where
-the record envelope puts it. A case in this leaf's own suite inspects the declared columns for exactly that
-absence.
-
-**Three commands join the closed union, and the union is still closed.** `CensusInventoryRowCommand`,
-`CensusClaimCommand` and `CensusDispositionCommand` are appended to `ProposedCommand`'s discriminated union in
-`candidate.py`, and the six census tables are appended to `MutableRecordTable` — an inventory row, an
-assessment-free claim, a migration disposition and the three relations they resolve through are each written by
-a batch command, so an expectation, a duplicate check and a receipt all address one of these rows by its own
-primary key. The command models are imported late, beside the other command modules, for the one-directional
-reason that block already states: an import at this position resolves one way while the other side's own
-annotation resolves the other. The module's own derived sets — `CENSUS_RECORD_KINDS`, `CENSUS_COMMAND_KINDS`,
-`CENSUS_WRITABLE_TABLES` — are what the seam registry and the dispatch tables name, so the census answers for
-its own membership rather than a count being edited in a test.
-
-## 260915-KS-L22 The Review-Surface Vocabulary, And The Record Kind It Does Not Define
-
-`models/knowledge/review.py` is this route's new vocabulary module, and the property that matters
-most about it is a non-property: **it defines no record kind.** Every value in it renders records
-another owner already stores, or states an absence where no record exists; the one thing it owns is
-the shape of a display. The three pane names are declared once (`REVIEW_PANE_NAMES` = `knowledge`,
-`source`, `evidence`) and `PROPOSED_ASSESSMENT_DISPOSITIONS` publishes the three dispositions the
-existing curator authority accepts — as a statement about that authority rather than as a control of
-this surface's own, so a reviewer can see which judgements are expressible. None of the three is
-publication approval, and the payload's constructor refuses a disposition set that is not theirs.
-
-The prohibitions are constructor checks rather than conventions a renderer is asked to remember.
-`ReviewSideContent` refuses text unless the side is `present`, so a missing operand renders as a named
-state (`absent`, `binary` or `unresolved`) and never as a blank that reads like an empty document.
-`ReviewAssessmentDisplay` refuses an assessment displayed without its author or without the inputs it
-examined, because an anonymous verdict and an assessment that examined nothing are not renderings of
-a recorded assessment at all. `ReviewRemainingCount` refuses an unexplained absent count — `value` is
-`None` exactly when the quantity has no meaning here, and the reason must then be stated — and refuses
-a measured count that also carries a not-applicable reason, which is how a zero that means "none"
-stays distinguishable from a zero that means "not measured".
-
-The stale rule is structural at the payload. `KnowledgeReviewPayload` refuses a stale comparison whose
-submission state is not `disabled_stale`, and refuses a current comparison whose submission claims to
-be disabled for staleness: "an assessment is never submitted against a comparison that has moved" is a
-property of the value rather than a rule a client is asked to honour. The same class keeps the
-knowledge pane's own assessment one of the assessments it displays, and the evidence pane's two states
-matched to the collections they carry — an empty corpus reported as `recorded`, or a populated one
-reported as `none_recorded`, is a false statement about the evidence either way, and `assessed` is
-false the moment there is no assessment to show.
-
-One outcome per result closes the set. `KnowledgeReviewResult` carries either a payload or one typed
-refusal, never both and never neither, so a caller that receives a refusal has no panes and cannot
-read their absence as a review of an empty candidate. The refusals themselves are a closed **six**-
-member union — the codes for an unresolved candidate, a non-live one, an absent dataset, an
-unresolved **subject**, a refused comparison, and an unavailable adapter — each naming its detail, its
-next action and, where one exists, the offending input.
-
-**The entry half of the surface is three more declarations in the same module, and its rule is the
-interesting one.** `ReviewSubjectKind` is the closed two-member `invariant`/`family` union, declared
-**here once** so the transport's admission tuple, the entry list and the panes cannot come to disagree
-about which identities are reviewable. `ReviewEntry` is the reviewed subject as the shipped comparison
-selected it — a recorded identity, that identity's own label and the operation's count — with **no
-field for a path, a file, a display version or a ranking**, which is what keeps "the browser never
-chooses the candidate" a property of the value rather than a convention of its callers.
-`ReviewEntryListResult` is the entry read's typed outcome, and its validator refuses a **refused** read
-that offers any entry: "a refused entry read offers no subject; an entry beside a refusal is how a
-caller comes to review a subject nothing admitted". Its empty `entries` on an `entries` state is
-therefore a pair that selected no reviewable subject — a fact about the datasets, stated as one — and
-not a disguised failure.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own non-definition: it defines no record kind. | "This module defines **no record kind**" | mcp/src/agents_remember/models/knowledge/review.py:3-3 |
-| The three pane names, declared once. | `REVIEW_PANE_NAMES` |mcp/src/agents_remember/models/knowledge/review.py:132-141|
-| The dispositions the existing authority accepts, published rather than owned. | `PROPOSED_ASSESSMENT_DISPOSITIONS` |mcp/src/agents_remember/models/knowledge/review.py:137-146|
-| The present-side-requires-text rule. | "def _require_text_exactly_when_present" |mcp/src/agents_remember/models/knowledge/review.py:235-249|
-| The author and examined inputs a displayed assessment must carry. | "def _require_the_basis_to_travel" |mcp/src/agents_remember/models/knowledge/review.py:563-586|
-| The stale/submission coupling, checked at construction. | "def _require_the_submission_state_to_follow_staleness" |mcp/src/agents_remember/models/knowledge/review.py:1063-1063|
-| The unassessed-is-an-absence rule for counts. | "def _require_a_stated_state" |mcp/src/agents_remember/models/knowledge/review.py:649-672|
-| One outcome per comparison result: a payload or one refusal. | "def _require_one_outcome" |mcp/src/agents_remember/models/knowledge/review.py:1095-1129|
-| **The two reviewable subject kinds, declared here once so the transport, the entry list and the panes cannot disagree.** | `ReviewSubjectKind`; `SELECTOR_KINDS` |mcp/src/agents_remember/models/knowledge/review.py:189-203; mcp/src/agents_remember/serving/review.py:98-106|
-| **The reviewed subject as the comparison selected it: a recorded identity, its own label and the operation's count, with no field for a path, a file, a display version or a ranking.** | `ReviewEntry` | mcp/src/agents_remember/models/knowledge/review.py:335-355 |
-| **The entry read's typed outcome, whose validators refuse a refused read that offers any entry, non-zero totals beside a refusal, and a total smaller than the page beside it (`ICR-R09@v1`).** | `ReviewEntryListResult` | mcp/src/agents_remember/models/knowledge/review.py:1103-1164 |
-| The sixth refusal code, for a subject the resolution could not name. | `subject_unresolved` | mcp/src/agents_remember/models/knowledge/review.py:155-156 |
-| **The seventh refusal code, added by this leaf: the generation a listing published no longer resolves to the two code objects it bound, so there are no bytes to serve for that entry.** | `source_content_unresolved` | mcp/src/agents_remember/models/knowledge/review.py:159-160 |
-
-## 260918-TSIP-L4 — The Response Models Stop Forbidding What Their Producers Emit
-
-This route's subject in one sentence: **a strict response model that omits a key its own producer
-emits rejects the payload after the write has already happened**, so the caller loses the envelope
-that would have told it the work was done. This leaf swept all 84 registered models and repaired
-seven instances, four of them in this route.
-
-- **`models/worktree.py` gained `AtomicSeriesActivationReleaseFact` (`:181-201`)** — the terminal
-  release evidence for the selected series (`state` ∈ `vacant`, `already-vacant`,
-  `different-selection-preserved`, `unreadable-preserved`, `release-failed`, plus the optional
-  error triple). It sits beside `AtomicSeriesActivationFact`, which the route already declared on
-  `WorktreeSummary` and on the flexible `WorktreeCommandResponse` base.
-- **`WorktreeOperationControlResponse.nextTool` was widened to its fourth reachable successor**
-  (`:514-521`, `worktree_closeout_preview`), because
-  `worktrees/integration/lifecycle/lifecycle_operations.py:498,508` already emitted it.
-- **`models/lifecycles/finalize.py` — the `D53` repair.** `LifecycleFinalizeTaskResponse` declares
-  `atomicSeriesActivation` (`:53`) and `atomicSeriesActivationRelease` (`:54`). It was the **only
-  strict consumer** of that projection anywhere and the only one that had not declared it, which is
-  why the terminal operation completed its transaction and then answered with a pydantic error.
-- **`models/task_doc.py` declares `steps` (`:134`)** — the `read_steps` operation's payload, which
-  the tool publishes as *the* way to read a checklist and which could never return.
-- **`models/terminal.py` declares `strandedRowIds` / `strandedRowCount` / `surfacedRowId`
-  (`:211-213`)** — the only report of an operator-inbox row surfaced while retiring a seat.
-- **`models/operator_inbox.py` gained a typed refusal half** (`OperatorInboxPostStatus` at
-  `:59`, `status` at `:75`, `detail` at `:101`, and a `model_validator` at `:103-116` making the
-  four queued-projection fields required exactly when `ok` is true).
-- **`models/structural/agent.py` declares both delivery keys on the shared
-  `StructuralTargetResponse` base (`:86-87`)**, so all six consumers inherit them — the class
-  repaired rather than the three instances.
-
-The strict/flexible route model this overview describes is unchanged: the repairs **declare**
-projections that were already being emitted. After them the corrected sweep reports exactly **2**
-strict models forbidding a candidate key, both dismissed with their reasons at
-`notes/reports/260918-TSIP-L4-worker-report.md` §5, down from 9 at this leaf's base.
-
-## Update History
-- 2026-09-21T23:24+02:00 — 260921-ICR-L14 curator, **sync-merge resolution of the parked candidate against the landed ICR-L3 curation.** The two sides had curated this document independently and both sets of statements are kept: the landed `260921-ICR-L3` section, rows and history entries alongside this leaf's, tables unioned key by key (a row both sides carried keeps the ranges that hold its anchors in the merged code tree, the other side's range folded in where it is also true; rows only one side carried are kept in their own order), prose sections kept whole and Update History entries merged newest-first. The header states both facts: the production line is the master tip `a8d2431926d6b130012ca81ed2e85b14721c0615` (ICR-L3 landed) and this leaf's own code is still its uncommitted candidate. **Stamp accounting:** no verification stamp was invented; the stamp names the landed production line and the candidate rows name each uncommitted reading.
-- 2026-09-21T22:50:00+02:00 — 260921-ICR-L14 curator (uncommitted change set on `ar/260921-icr-l14`, production line `d80a0513e928ef29a973527d09597c82c96fde87`): **route body updated for one new vocabulary module and one new payload field.** `models/knowledge/review_records.py` now declares the record-availability vocabulary (`ReviewRecordClassName`, `ReviewRecordChannelState`, `ReviewRecordChannel` and its validator), extracted from `models/knowledge/review.py` — which had crossed the 900-line soft rail at 940 and is 851 now — and re-exported from it so no importer moved; `ReviewEvidencePane.channels` carries the composition's own supply of that vocabulary, whole and underived. The section records all three facts and the four reference rows behind them. No earlier section was re-worded. **Stamp accounting:** no verification stamp was advanced — the pair recorded on this route predates this reading and the candidate is uncommitted — and the governed closeout's metadata refresh owns the real one.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: `REVIEW_PANE_NAMES` repointed to mcp/src/agents_remember/models/knowledge/review.py:95-95. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: `PROPOSED_ASSESSMENT_DISPOSITIONS` repointed to mcp/src/agents_remember/models/knowledge/review.py:100-104. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "def _require_text_exactly_when_present" repointed to mcp/src/agents_remember/models/knowledge/review.py:151-151. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "def _require_the_basis_to_travel" repointed to mcp/src/agents_remember/models/knowledge/review.py:343-343. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "def _require_the_submission_state_to_follow_staleness" repointed to mcp/src/agents_remember/models/knowledge/review.py:754-754. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "def _require_a_stated_state" repointed to mcp/src/agents_remember/models/knowledge/review.py:416-416. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: `subject_unresolved` repointed to mcp/src/agents_remember/models/knowledge/review.py:110-110. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: `KNOWLEDGE_REVIEW_SURFACE_VERSION` repointed to mcp/src/agents_remember/models/knowledge/review.py:93-93. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T15:17:00+02:00 — 260921-ICR-L2 curator, **post-sync citation re-derivation, forced by the merge rather than by a claim change.** The sync brought leaf `260921-ICR-L5`'s landed work into this candidate, which moved the review adapter and the review-surface test module; the two rows of this document that cite `test_knowledge_review_surface.py` were re-pointed at the merged module's extents (`1161-1210`, `1213-1251`, from the pre-merge `971-1020`, `1023-1061`). No claim was re-worded, no anchor dropped and no stamp advanced.
-
-- 2026-09-21T00:20+02:00 — 260915-KS-L47 curator (uncommitted change set on `ar/260915-ks-l47-ar`, code base `be325216416326a66950c9e320ff8d08f41e5d66`, memory base `2f415d930d1f8122ae0226bd296add3265600749`): **body update for the route this leaf's change set touches — the `compatible` declaration and the wire-omission rule this leaf's change set makes explicit on `KnowledgeIntegrityCheckResponse`. The route section above states both halves of the rule and the two test assertions reconciled to it.** This is a body change and not a metadata-only refresh: the route section carries statements the overview did not make before. `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are retained exactly as recorded, because no commit contains this body and no stamp was measured on it; no stamp was advanced or invented. No commit was made.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: "# The next-move triple, declared here so the worktree surface's guidance is part of" repointed to mcp/src/agents_remember/models/worktree.py:400-400. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: `_require_registered_public_next_tool` repointed to mcp/src/agents_remember/models/worktree.py:431-442. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: "# The next-move triple, declared here so the worktree surface's guidance is part of" repointed to mcp/src/agents_remember/models/worktree.py:400-400. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T14:20+02:00 — 260915-KS-L43 curator, **memory-side sync conflict resolved as a UNION; no side dropped.** The memory source branch advanced to `92f444b04` (260915-KS-L45) while this leaf's curation was in flight, so the sync's re-apply conflicted in this file. Both sides were kept because both are true: 260915-KS-L45's landed additions (the Intent-review entry path, the two published half-names `REVIEW_BASELINE_DIRECTORY`/`REVIEW_CANDIDATE_DIRECTORY`, the `missing_dataset_half` pair preflight, the receipt-derived `review_namespace`, and the enumerating reads) and this leaf's 260915-KS-L43 edits (the allocated-identity/derived-citation split, the retry key and its journal, the explicit anchor reuse, and the recovery's journaled decisions with the bounded cycling refusal). Where the two sides carried the same row in different line numbers, the row was re-measured against the moved line rather than picked: L45 curated against `fb719f89` and this leaf's source moves every citation below `:306` of `knowledge_curator_ingest.py` and renumbers `cli/knowledge_ingest.py` entirely, so the surviving ranges are the post-merge measurement for both. One **contradiction** is recorded rather than silently resolved: the `lastVerifiedCommitHash`/`lastVerifiedCommitDate` frontmatter pair is L45's (recorded against the moved line, the newest verification on record), while the candidate reading recorded in the entry is this leaf's reading — two different claims, kept beside each other instead of one overwriting the other. No verification stamp was advanced by this leaf.
-- 2026-09-20T14:20+02:00 — 260915-KS-L43 curator (uncommitted change set on `ar/260915-ks-l43-ar`, code base `fb719f89`): **route body updated.** The section above is appended at the end of this route's change narrative, so no existing heading moved and no off-route card's line citation shifted. It records the route's own impact — `MergeRequest.reconciliations` as a tuple, the unchanged vocabulary beside it, the measured cycling the plurality repairs, and the boundary that keeps a sequence of one-row decisions from being a policy. No verification stamp was advanced: the source is modified in the delivered working tree and the governed closeout owns the real stamp; the entry names the candidate this reading was performed against. No commit was made.
-- 2026-09-20T13:43:00+02:00 — 260915-KS-L45 curator (uncommitted change set on `ar/260915-ks-l45-ar`, base `fb719f89`): **the review-surface vocabulary gained its entry half.** The card now records `ReviewSubjectKind` (the two admitted subject kinds, declared here once so the transport's admission tuple, the entry list and the panes cannot disagree), `ReviewEntry` (the reviewed subject as the shipped comparison selected it — a recorded identity, its own label and the operation's count, with **no field for a path, a file, a display version or a ranking**), and `ReviewEntryListResult` (whose validator refuses a **refused** read that offers any entry: "an entry beside a refusal is how a caller comes to review a subject nothing admitted"), plus the sixth refusal code `subject_unresolved`. The L22 paragraph's "closed five-member union" was corrected in place to six. Four reference rows were re-cited to their constructs' current extents and four were added. No verification stamp was advanced.
-- 2026-09-20T07:33+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `b7bfebb550f036a7e51de1f390be1123cd2d2172`): **reopened claim re-read against the construct its range now covers, and the stale generated-projection record retired after that read.** The claim — *"The request that carries the proven resolution, the paths it deliberately keeps out of the resolution, and the optional destination."* — names `MergeRequest`. Each anchor was resolved at its own current declaration in the code worktree and the cited range holds it, so the pointer is current and the wording still holds unchanged: no re-cite and no re-wording was needed. The generated citation-repair bullet that recorded the mechanical projection of this claim's range was **removed** because that projection resolves an exact NAME rather than the claim's subject, so keeping it would leave an unverifiable range asserting currency it cannot support; with it retired the range stands as the curator-read citation it now is. The rest of the card's history is untouched, no other bullet or row was deleted, and no verification stamp was advanced — the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-20T06:50+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `f79f4db7`): **route body updated.** `models/knowledge/merge.py` gained the authored-decision vocabulary — `AuthoredDecision`, `expressible_decisions` (the single place that answers which decisions a conflict admits), `AuthoredReconciliation` (two structural shapes, no mode flag) and `MergeRequest.reconciliation` — and `models/worktree.py` gained the wire half: `SyncResolutionAction`'s third member `reconcile`, `SyncResolutionInput` (the action-and-decision pair), `SyncKnowledgeConflict` (the engine's explanation carried verbatim, with an empty `decisions` list meaning nothing can be settled) and the two projections that carry it (`SyncResolutionProjection.knowledge`, `SyncOperationProjection.knowledgeConflict`). The vocabulary block moved by six lines, so `WorkflowKind` is now L35 … `NextTool` L65 and `WorktreeState` L307. A body change, not a metadata-only refresh.
-
-- 2026-09-20T03:57:45+00:00: Generated citation repair: "class WorktreeRecordLandingResponse(WorktreeCommandResponse):" repointed to mcp/src/agents_remember/models/worktree.py:557-557. No content impact: mechanical anchor-range projection bound to citation source snapshot ef4a9932e0393a408ecd0f26b5bc2e0e1e335ad90b9e47a16092ffd6f3403af3; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T03:57:45+00:00: Generated citation repair: "class WorktreeCheckpointLandingResponse(WorktreeCommandResponse):" repointed to mcp/src/agents_remember/models/worktree.py:538-538. No content impact: mechanical anchor-range projection bound to citation source snapshot ef4a9932e0393a408ecd0f26b5bc2e0e1e335ad90b9e47a16092ffd6f3403af3; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T03:57:45+00:00: Generated citation repair: "class WorktreeStatusWaitResponse(WorktreeCommandResponse):" repointed to mcp/src/agents_remember/models/worktree.py:470-470. No content impact: mechanical anchor-range projection bound to citation source snapshot ef4a9932e0393a408ecd0f26b5bc2e0e1e335ad90b9e47a16092ffd6f3403af3; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T03:57:45+00:00: Generated citation repair: `MERGE_STATES` repointed to mcp/src/agents_remember/models/knowledge/merge.py:81-81. No content impact: mechanical anchor-range projection bound to citation source snapshot ef4a9932e0393a408ecd0f26b5bc2e0e1e335ad90b9e47a16092ffd6f3403af3; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T03:57:45+00:00: Generated citation repair: `TableCoverage` repointed to mcp/src/agents_remember/models/knowledge/merge.py:313-335. No content impact: mechanical anchor-range projection bound to citation source snapshot ef4a9932e0393a408ecd0f26b5bc2e0e1e335ad90b9e47a16092ffd6f3403af3; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T03:57:45+00:00: Generated citation repair: "# The next-move triple, declared here so the worktree surface's guidance is part of" repointed to mcp/src/agents_remember/models/worktree.py:400-400. No content impact: mechanical anchor-range projection bound to citation source snapshot ef4a9932e0393a408ecd0f26b5bc2e0e1e335ad90b9e47a16092ffd6f3403af3; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T03:57:45+00:00: Generated citation repair: `_require_registered_public_next_tool` repointed to mcp/src/agents_remember/models/worktree.py:431-442. No content impact: mechanical anchor-range projection bound to citation source snapshot ef4a9932e0393a408ecd0f26b5bc2e0e1e335ad90b9e47a16092ffd6f3403af3; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T02:05:20+00:00: Generated citation repair: "# The next-move triple, declared here so the worktree surface's guidance is part of" repointed to mcp/src/agents_remember/models/worktree.py:352-352. No content impact: mechanical anchor-range projection bound to citation source snapshot fe7fdbf3f561fa23007ac47565833928a7c74df1b4b028969d78a5b139bb65b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T00:16:01+00:00: Generated citation repair: `merge_resolved_knowledge_datasets` repointed to mcp/src/agents_remember/application/knowledge_merge.py:74-83. No content impact: mechanical anchor-range projection bound to citation source snapshot b8fe5b3589f1357e836aaad1587e69ed38bbda0d58221eaa2150e96eb0561e93; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T02:12+02:00 — 260915-KS-L32 memory-side conflict resolution (uncommitted; this worktree, code base `7dcec036`, merged tree = L30's landed `7ca3ac48` plus this leaf's four modified paths): **resolved five reference hunks and the Update History block.** Files this leaf did not modify keep upstream's ranges, which were read in the code worktree: `models/worktree.py:352-352; 385-385` and the inline `cit:` `383-394` (this leaf's added `59-95` citation for the `NextTool` literal is kept beside them, not deleted); `mcp/tests/test_models.py:46-61` for the contract-test row, with both sides' anchor renames to the surviving case kept; and the facet row's `628-635; 596-596; 614-614` beside `facets.py:88-88`, because upstream re-measured that row (it repointed `611` → `614`). Two `candidate.py` cells were cited fresh where upstream's value was inherited from the merge base and never re-measured: `656-673` → `659-676`, the `CandidateResolution` class's own declaration extent, in both duplicate rows — the application route's clearance pass records that same extent — with this leaf's added `KnowledgeContext` citation at `236-236` kept. The closed-union row keeps upstream's measured `596-626; 628-635; 649-649` (upstream repointed `ChangeCommand` `646` → `649`; this leaf's alternate `614-648; 649-649` names the same constructs). Update history is the union of both sides, newest first. No claim was re-worded, no anchor, row or citation dropped, and no verification stamp advanced.
-- 2026-09-20T01:29+02:00 — 260915-KS-L30 curator (uncommitted change set on `ar/260915-ks-l30-ar`, base `7dcec036094768c5f50e571fb45e59a27ae78efc`): **cleared the last two citation rows of this card — two dead anchors on the route's contract-test row (one row).** The row named `test_every_public_tool_has_a_response_model` and `test_every_public_tool_response_model_generates_json_schema`, both of which exist nowhere in the tree. The source records that they are one case now: `test_every_public_tool_has_a_schema_generating_response_model` (mcp/tests/test_models.py:47) states in its own docstring "One subject, two halves: the registry is total, and every model it names is usable. These were two cases and are one: both iterate the same registry over the same set, and neither can be true while the other is false." The Anchor cell therefore names that surviving case beside the class that holds it, and the cited range `46-61` was retained unchanged because it already holds both the class (46) and the case's declaration span (47-61). The Finding text is unchanged, the row is not deleted and no citation was dropped. No verification stamp was advanced: this card's metadata already names the working candidate's own base commit as what was read.
-- 2026-09-20T01:00+02:00 — 260915-KS citation residue clearance (uncommitted change set on memory base `66b2ae8adebea11bc2300d2d51822f321a128657`): cleared the 4 of the 6 enforced citation rows this card carried (citation_anchor_absent_from_range) that a range edit can clear — `ProposedCommand = Annotated[` was repointed to mcp/src/agents_remember/models/knowledge/candidate.py:614-614 and `ChangeCommand` to mcp/src/agents_remember/models/knowledge/candidate.py:649-649, both having shifted three lines down, and the contract-test row was re-cited to mcp/tests/test_models.py:46-61, where the two cases it named were consolidated into `test_every_public_tool_has_a_schema_generating_response_model`. The remaining 2 rows name `test_every_public_tool_has_a_response_model` and `test_every_public_tool_response_model_generates_json_schema`, which exist nowhere in the tree, so no range can hold them and they need a claim-level re-read; every claim wording, anchor and every other range is unchanged, and no verification stamp was advanced.
-- 2026-09-20T00:46:52+02:00 — 260915-KS-L32 curator (uncommitted change set on `ar/260915-ks-l32-ar`, code base `7dcec036`, memory base `66b2ae8a`): **added the L32 section and extended the `models/knowledge/view.py` paragraph** — `ViewRequest.source_path`, the optional path seed a caller who knows only a file can present, validated by constructing the shipped `PathSeed` rather than restating its confinement rule. The body changed substantively; no verification stamp advanced, because the source named is modified in the delivered working tree and closeout owns the stamp. Citation repair in the same pass, all of it **pre-existing** drift this leaf did not cause (none of these files is modified by this leaf's change set): the `models/worktree.py` row's two anchors were cited at `322-330` and `355-364`, which hold neither the `# The next-move triple` comment (352) nor `_require_registered_public_next_tool` (385), so it now cites `59-95` for the `NextTool` literal alongside `352-352` and `385-385`; the contract-test row named two cases that no longer exist anywhere — the 260915-KS-L29 consolidation merged `test_every_public_tool_has_a_response_model` and `test_every_public_tool_response_model_generates_json_schema` into `test_every_public_tool_has_a_schema_generating_response_model`, so its anchor is the quoted merged `def` and its range `test_models.py:46-61`; `CandidateResolution` moved from `656-673` to `659-676` in both duplicate rows; `ChangeCommand` from `646` to `649`; and the closed-union and authored-commands rows from `596-626; 628-635; 646` and `628-635; 596` to `614-648; 649-649`, so each range holds the construct it names. No claim was re-worded to fit a stale pointer and no anchor or range was dropped to silence a row.
-- 2026-09-20T00:31+02:00 — 260915-KS-L30 curator (uncommitted change set on `ar/260915-ks-l30-ar`, base `7dcec036094768c5f50e571fb45e59a27ae78efc`): **mechanical citation-range projection** against this leaf's candidate. The checklist reported 2 row(s) whose cited range no longer holds its anchor although the construct is present in the cited file; each range was widened to the lines that carry it — `# The next-move triple, declared here so the worktree surface's guidance is part of`; `def _require_registered_public_next_tool`. No claim wording, anchor or citation was added, removed or re-worded, and no range was deleted: the new range is the checklist's own resolved extent for that anchor on this candidate. No verification stamp was advanced.
-- 2026-09-19T22:28:52+00:00: Generated citation repair: "class WorktreeRecordLandingResponse(WorktreeCommandResponse):" repointed to mcp/src/agents_remember/models/worktree.py:507-507. No content impact: mechanical anchor-range projection bound to citation source snapshot 440311ed835ff15c77271ad85c2bef2103d2b46ebe061b96476b211b3d19cd24; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-19T22:28:52+00:00: Generated citation repair: "class WorktreeCheckpointLandingResponse(WorktreeCommandResponse):" repointed to mcp/src/agents_remember/models/worktree.py:488-488. No content impact: mechanical anchor-range projection bound to citation source snapshot 440311ed835ff15c77271ad85c2bef2103d2b46ebe061b96476b211b3d19cd24; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-19T22:28:52+00:00: Generated citation repair: "class WorktreeStatusWaitResponse(WorktreeCommandResponse):" repointed to mcp/src/agents_remember/models/worktree.py:422-422. No content impact: mechanical anchor-range projection bound to citation source snapshot 440311ed835ff15c77271ad85c2bef2103d2b46ebe061b96476b211b3d19cd24; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-19T22:28:52+00:00: Generated citation repair: `ChangeCommand` repointed to mcp/src/agents_remember/models/knowledge/candidate.py:649-649. No content impact: mechanical anchor-range projection bound to citation source snapshot 440311ed835ff15c77271ad85c2bef2103d2b46ebe061b96476b211b3d19cd24; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-19T22:28:52+00:00: Generated citation repair: "# The next-move triple, declared here so the worktree surface's guidance is part of" repointed to mcp/src/agents_remember/models/worktree.py:352-352. No content impact: mechanical anchor-range projection bound to citation source snapshot 440311ed835ff15c77271ad85c2bef2103d2b46ebe061b96476b211b3d19cd24; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-19T22:28:52+00:00: Generated citation repair: `_require_registered_public_next_tool` repointed to mcp/src/agents_remember/models/worktree.py:383-394. No content impact: mechanical anchor-range projection bound to citation source snapshot 440311ed835ff15c77271ad85c2bef2103d2b46ebe061b96476b211b3d19cd24; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-19T22:38+02:00 — 260918-TSIP-L11 curator (memory worktree `fd1a024e`, code `7879f5b2`): **re-read each claim below against the construct its range now covers, corrected the wording where the construct had moved, re-derived every range from the construct's real extent in the file the claim cites, and only then left the card's stamp to closeout.** No `Generated citation repair` bullet is written: these are curator edits, not a mechanical projection. `overview.md:342` — re-read: two test names were consolidated into one whose docstring says 'These were two cases and are one'. It still asserts both halves the claim states (registry totality and a usable schema per model), so the wording is retained.
-- 2026-09-19T22:33+02:00 — 260918-TSIP-L11 curator (memory worktree `fd1a024e`, code `7879f5b2`): cleared the inherited citation debt on 3 claim(s) by RE-READING each claim against the merged tree and RE-DERIVING every cited range from the construct's real extent in the file the claim cites (`extents.anchor_extents`), never by adding a delta to an old number and never through the mechanical projection (no generated citation-repair bullet is written, so no claim is reopened by this edit). Claims re-read: `overview.md:340` ("# The next-move triple, declared here so the worktree surface's guidance is part of", "def _require_registered_public_next_tool"); `overview.md:954` (`ProposedCommand`, `ChangeCommand`); `overview.md:1343` (`FacetCommand`, "ProposedCommand = Annotated[").
-- 2026-09-18T19:56:14+02:00 — 260915-KS-L23 residue clearance, seat B (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **cleared the four enforced `citation_anchor_absent_from_range` rows in this document** (two table rows, the second one present three times). (a) The response-model row cited `worktree.py:322-328`, which ends two lines above the comment declaring the next-move triple at `330`; the range was widened to `322-330`. (b) The three detection-registry rows cited `record_envelope.py:198-198` (a blank line) for `DETECTION_RECORD_KINDS`, whose declaration is at `204`; each row's range was widened to `198-204`. The claims, the anchors and every other range are unchanged. No claim was re-worded, no anchor or range was dropped to silence a row, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: "class WorktreeRecordLandingResponse(WorktreeCommandResponse):" repointed to mcp/src/agents_remember/models/worktree.py:485-485. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: "class WorktreeCheckpointLandingResponse(WorktreeCommandResponse):" repointed to mcp/src/agents_remember/models/worktree.py:466-466. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: "from agents_remember.models.worktree import (" repointed to mcp/src/agents_remember/worktrees/modules/guidance.py:10-10. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: "class WorktreeStatusWaitResponse(WorktreeCommandResponse):" repointed to mcp/src/agents_remember/models/worktree.py:400-400. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: `REQUIREMENT_RECORD_KINDS` repointed to mcp/src/agents_remember/memory/knowledge/record_envelope.py:211-213. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: `TaskReopenResponse` repointed to mcp/src/agents_remember/models/task_doc.py:223-226. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: "# The next-move triple, declared here so the worktree surface's guidance is part of" repointed to mcp/src/agents_remember/models/worktree.py:330-330. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T19:10+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **the operation union's size was wrong in five places in this document, and is now measured and stated once.** The S7 contradiction review found this document asserting `thirty-seven` (the L14 section) and, in the L18 entry, `thirty-nine` with the claim that the L14 section "is corrected in place" — a correction that never happened. Re-measured rather than copied, with the declaration itself as the measuring instrument: `mcp/.venv/bin/python -c "import ast; t=ast.parse(open('mcp/src/agents_remember/models/knowledge/result.py').read()); print([len(n.value.slice.elts) for n in t.body if isinstance(n,ast.Assign) and getattr(n.targets[0],'id','')=='KnowledgeOperation'])"` at code `c5a74a85` → **50** members in `KnowledgeOperation` (`result.py:36-157`) and **45** in `KnowledgeRefusalCode` (`result.py:161-232`). The module card `models/knowledge/result.py.md` already said fifty, which is the cross-check. **Four further statements of the same fact were found in the same pass and corrected with it** — this is one document and one count, so leaving any would have been the same defect one section up: the L7 section read twenty-five/forty-four, the L8 section twenty-six/forty-four (the count the module card records as "the members that leaf could see"), the L11 section thirty-five/forty-four, and the L14 section thirty-seven/forty-five. All five now carry **fifty operations / forty-five refusal codes** as the current size, each keeping its own historical reading explicitly labelled as that section's reading, and the false "corrected in place" clause in the L18 entry is annotated in place. **When it changed, measured per commit:** 28 at `4904e08f`, 35 at `4264dcc9`, 37 at `e963a01c` (the base the L18/L19 curators wrote against), then 39 at `a0665505`, 41 at `15fe8678`, 44 at `66f8b9f0`, 47 at `b5a74aee`, 48 at `7b1db4e0`, and 50 at `9f88a6de` — six of this master's landings (KS-R19, R18, R17, R12, R13, R16), unchanged since. No count in this document is now asserted as current except the measured one, and no other claim, range or section was re-read in this pass.
-- 2026-09-18T18:10+02:00 — 260915-KS-L22 curator (uncommitted change set on `ar/260915-ks-l22`, base `2dcacb27`): **added the L22 section** — the review-surface vocabulary and the record kind it does not define, the three pane names and the published dispositions, and the constructor-enforced prohibitions that carry the surface's rules as properties (present-side-requires-text, an assessment's basis must travel, unassessed is an absence, stale implies disabled submission, one outcome per result). Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns that stamp.
-- 2026-09-18T15:12:32+00:00: Generated citation repair: `KnowledgeContext` repointed to mcp/src/agents_remember/models/knowledge/candidate.py:236-277. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T15:12:32+00:00: Generated citation repair: "def context_digest" repointed to mcp/src/agents_remember/models/knowledge/candidate.py:280-280. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T15:12:32+00:00: Generated citation repair: `ChangeCommand` repointed to mcp/src/agents_remember/models/knowledge/candidate.py:646-646. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T15:12:32+00:00: Generated citation repair: `CandidateResolution` repointed to mcp/src/agents_remember/models/knowledge/candidate.py:656-673. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T15:12:32+00:00: Generated citation repair: "def context_digest" repointed to mcp/src/agents_remember/models/knowledge/candidate.py:280-280. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T15:12:32+00:00: Generated citation repair: `CandidateResolution` repointed to mcp/src/agents_remember/models/knowledge/candidate.py:656-673. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T15:12:32+00:00: Generated citation repair: `REQUIREMENT_RECORD_KINDS` repointed to mcp/src/agents_remember/memory/knowledge/record_envelope.py:204-206. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:04+02:00 — 260918-TSIP-L4 curator (uncommitted change set on `ar/260918-tsip-l4-ar`, base `0dd04d6a`): this route's governed source changed, so a body section was **added rather than annotated** (`## 260918-TSIP-L4 …`) and every citation into the changed files was re-derived in the same operation. Verification stamps stay at the recorded verification — the candidate is uncommitted and the governed closeout owns the real code commit.
-- 2026-09-18T17:00+02:00 — 260915-KS-L21 curator (uncommitted change set on `ar/260915-ks-l21`, base `a7076008`): **added the L21 section** — the one module `KS-R21@v1` contributes to this route and the property that the route still adds no record kind of its own; the three census payload shapes and the fields each refuses to have (no inference, no verdict, no mismatch class, no derived status); `CensusProvenance` as a required stored value carrying a `SnapshotIdentity` baseline rather than two loose strings; the deliberate absence of any second identity authority in both the vocabulary and the declared columns; and the three commands appended to `ProposedCommand`'s closed union with the six census tables appended to `MutableRecordTable`, named through the module's own derived sets so the group answers for its own membership. The metadata block above now names this leaf's candidate as what was read and carries **no `lastVerifiedCommitHash`**: the body was re-read against a working candidate no commit contains, so no real commit holds the content a stamp would claim to have verified, and closeout owns the stamp. The body was changed substantively and this entry is the history record, not a metadata-only refresh.
-- 2026-09-18T14:49:10+00:00: Generated citation repair: "class WorktreeRecordLandingResponse(WorktreeCommandResponse):" repointed to mcp/src/agents_remember/models/worktree.py:501-501. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fb0a4d92072964079a2a144c1f1da15ff07327804a09730959bc69f38a7e98f; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T14:49:10+00:00: Generated citation repair: "class WorktreeCheckpointLandingResponse(WorktreeCommandResponse):" repointed to mcp/src/agents_remember/models/worktree.py:482-482. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fb0a4d92072964079a2a144c1f1da15ff07327804a09730959bc69f38a7e98f; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T14:49:10+00:00: Generated citation repair: "class WorktreeStatusWaitResponse(WorktreeCommandResponse):" repointed to mcp/src/agents_remember/models/worktree.py:416-416. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fb0a4d92072964079a2a144c1f1da15ff07327804a09730959bc69f38a7e98f; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T14:49:10+00:00: Generated citation repair: `TaskReopenResponse` repointed to mcp/src/agents_remember/models/task_doc.py:201-204. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fb0a4d92072964079a2a144c1f1da15ff07327804a09730959bc69f38a7e98f; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T14:49:10+00:00: Generated citation repair: "# The next-move triple, declared here so the worktree surface's guidance is part of" repointed to mcp/src/agents_remember/models/worktree.py:346-346. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fb0a4d92072964079a2a144c1f1da15ff07327804a09730959bc69f38a7e98f; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T14:49:10+00:00: Generated citation repair: `_require_registered_public_next_tool` repointed to mcp/src/agents_remember/models/worktree.py:377-388. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fb0a4d92072964079a2a144c1f1da15ff07327804a09730959bc69f38a7e98f; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T13:36:47+00:00: Generated citation repair: `PUBLIC_TOOL_RESPONSE_MODELS` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:255-259. No content impact: mechanical anchor-range projection bound to citation source snapshot 468e47519c1a75ea8349538fbc4903207afc60f299e5295d1631f1f15f11a5ef; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T13:36:47+00:00: Generated citation repair: "\"worktree_sync\": WorktreeSyncResponse," repointed to mcp/src/agents_remember/models/tools/tool_registry.py:200-200. No content impact: mechanical anchor-range projection bound to citation source snapshot 468e47519c1a75ea8349538fbc4903207afc60f299e5295d1631f1f15f11a5ef; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T15:30+02:00 — 260915-KS-L20 curator (uncommitted change set on `ar/260915-ks-l20`, base `9f88a6de`): **added the L20 section** — the five modules `KS-R20@v1` contributes to this route and the property that it adds no record kind of its own; the closed two-member provenance class and the closed versioned rule registry (with `mechanical_rule` raising rather than classifying an unregistered rule, and `Provenance` refusing both mixtures); the three dishonest shapes `view.py` makes unconstructible (an unbounded-without-continuation payload, a complete-with-a-token payload, and a quantity reported as zero where it has no meaning); the reader port as the only data path; and the projection-manifest vocabulary whose seven refusal codes, four discrepancy kinds and five retention reasons are closed, plus the one-shape response contract that keeps the classification rule at a single implementation. The metadata block above now names this leaf's candidate as what was read; the body was changed substantively and this entry is the history record, not a metadata-only refresh.
-- 2026-09-18T14:55+02:00 — 260918-TSIP-L3 curator (citation repair, `ar/260918-tsip-l3-ar`, base `a12c511f`): The `CuratorCoherenceRequest` range was re-scoped `:259-315 → :259-328`: the leaf's `T50` repair inserted 13 lines inside that extent (three of the four others on the row end below the change and are unchanged). The claim's wording was re-read against the new bytes and is unchanged — only the range moved, because this leaf's edit to `mcp/src/agents_remember/models/lifecycles/curator_coherence.py` inserted lines above it. `lastUpdated` advances with this repair; `lastVerifiedCommitHash` is deliberately unchanged because the candidate is uncommitted and the governed closeout owns the real code commit.
-- 2026-09-18T12:07:24+00:00: Generated citation repair: `SetInvariantLabelResult` repointed to mcp/src/agents_remember/models/knowledge/result.py:598-618. No content impact: mechanical anchor-range projection bound to citation source snapshot 5571c165ff8c0fb8964492349c8f2d6be0134e3c91863ce685e4c34bb24aa86b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T12:07:24+00:00: Generated citation repair: `invalid_payload` repointed to mcp/src/agents_remember/models/knowledge/result.py:162-162. No content impact: mechanical anchor-range projection bound to citation source snapshot 5571c165ff8c0fb8964492349c8f2d6be0134e3c91863ce685e4c34bb24aa86b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T14:05+02:00 — 260915-KS-L16 curator (uncommitted change set on `ar/260915-ks-l16`, base `7b1db4e0`): **added the L16 section** — the two vocabularies `KS-R16@v1` contributes to this route (the registered review scope's declaration and the family-review pipeline's records), the five scope properties that are enforced by record shape, the four pipeline properties that keep five status owners separate and refuse to carry a conclusion, and the **two operations added to the union with no refusal code added beside them**. The metadata block above now names this leaf's candidate as what was read; the body was changed substantively and this entry is the history record, not a metadata-only refresh.
-- 2026-09-18T10:44+02:00 — 260915-KS-L13 curator (uncommitted change set on `ar/260915-ks-l13`, base `b5a74aee`): **added the L13 section** — the four authored-effect kinds as envelope records, the closed nine-member effect vocabulary and its single cardinality rule, the deliberate absences (no truth verdict, no authorship field, no preservation flag, no generated summary, no acceptance verdict), the preservation claim as its own record with a closed subject union, and the derived read models that report unresolved references rather than resolving them. The metadata block above now names this leaf's candidate as what was read; the body was changed substantively and this entry is the history record, not a metadata-only refresh.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: `CreateRevisionResult` repointed to mcp/src/agents_remember/models/knowledge/result.py:422-439. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: `AnchorEndpoint`; `NewAnchor`; `AnchorReference`; `CreateRealizationClaimResult` repointed to mcp/src/agents_remember/models/knowledge/result.py:361-364; mcp/src/agents_remember/models/knowledge/result.py:350-358; mcp/src/agents_remember/models/knowledge/result.py:343-347; mcp/src/agents_remember/models/knowledge/result.py:526-540. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: "def context_digest" repointed to mcp/src/agents_remember/models/knowledge/candidate.py:265-265. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: `ExpectedRecord` repointed to mcp/src/agents_remember/models/knowledge/candidate.py:302-324. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: `CandidateResolution` repointed to mcp/src/agents_remember/models/knowledge/candidate.py:638-655. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: `KnowledgeContext` repointed to mcp/src/agents_remember/models/knowledge/candidate.py:221-262. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: "def context_digest" repointed to mcp/src/agents_remember/models/knowledge/candidate.py:265-265. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: `ExpectedRecord` repointed to mcp/src/agents_remember/models/knowledge/candidate.py:302-324. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: `CandidateResolution` repointed to mcp/src/agents_remember/models/knowledge/candidate.py:638-655. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: `ChangeBatch`; `MutationResult`; `RecordIdentity` repointed to mcp/src/agents_remember/models/knowledge/candidate.py:658-683; mcp/src/agents_remember/models/knowledge/candidate.py:686-729; mcp/src/agents_remember/models/knowledge/candidate.py:278-299. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: `invalid_payload` repointed to mcp/src/agents_remember/models/knowledge/result.py:152-152. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: `REQUIREMENT_RECORD_KINDS` repointed to mcp/src/agents_remember/memory/knowledge/record_envelope.py:195-197. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T07:45:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `66f8b9f0`): **re-read every claim this card carries against the construct as the merged, post-landing line now stands, and advanced the verification stamp to `66f8b9f0` because the body was re-read against the current source.** The engine had reopened 3 claim(s) here (1 x citation_claim_reopened, 2 x citation_provenance_invalid). Each was read at its cited extent: the wording is **retained as it stands**, because the constructs it names still exist and still mean what the card says — what moved was a *range* this leaf's own addition had shifted, together with the payload-model, registry and budget facts the merged line grew. No claim was deleted, softened or dropped from an anchor set, and no range was advanced without a reading.
-- 2026-09-18T07:21:19+00:00: Generated citation repair: "def context_digest" repointed to mcp/src/agents_remember/models/knowledge/candidate.py:249-249. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T07:21:19+00:00: Generated citation repair: "def context_digest" repointed to mcp/src/agents_remember/models/knowledge/candidate.py:249-249. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T07:21:19+00:00: Generated citation repair: `FacetCommand`; "ProposedCommand = Annotated[" repointed to mcp/src/agents_remember/models/knowledge/facet.py:492-500; mcp/src/agents_remember/models/knowledge/candidate.py:498-498. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T07:15:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 10 generated projection bullet(s) by hand while resolving the memory sync** — `REQUIREMENT_RECORD_KINDS`, `CreateRevisionResult`, `SetInvariantLabelResult`, `invalid_payload`, `AnchorEndpoint`, `NewAnchor`, `AnchorReference`, `CreateRealizationClaimResult` and 5 further anchor(s). Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen until an agent had read what it points at. This leaf's own addition moved the ranges they project, so a bullet still naming the old extent is stale evidence; the resident claims' ranges were re-verified against the current source in this pass. Nothing in the body above was deleted to clear a finding.
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-18T04:50:00+00:00 — 260915-KS-L19 curator (uncommitted change set on `ar/260915-ks-l19`, base `e963a01c`): **recorded the requirement-revision payload vocabulary this route gained, corrected the registry row it made stale, and retired the card's generated projection bullets by hand.** The route's registry row described the envelope registry as the place *detection* payloads are registered and paired it with a derived set at a range the module's growth had moved; it now states the registry as the four-family seam it is (`:93-113`), keeps the detection set at its own declaration (`:124`), and three rows are added: the requirement family's frozen payload vocabulary with the pair it declares and the kind set derived from it, the **recorded quotation-degree ruling with the absence it turns on** (no payload field is the operative obligation, asserted falsifiably at the payload plane), and the two `KnowledgeOperation` members this leaf added together with the fact that **no refusal code was added with them** — recorded as a fact rather than left to a diff, because 'this leaf needed no new vocabulary' and 'this leaf's vocabulary was never reviewed' must not read alike. Three generated projection bullets were retired after their claims were re-read: `AnchorEndpoint`/`NewAnchor`/`AnchorReference`/`CreateRealizationClaimResult` (whose ranges were a projection of the graph request and result models), `invalid_payload` (re-cited at the refusal literal), and the detection registry pair above. Verification metadata advances to the leaf's base commit `e963a01c` because the body was re-read against the current source; the code commit does not exist yet and closeout owns that stamp.
-
-- 2026-09-18T04:50:00+00:00 — 260915-KS-L17 curator (uncommitted change set on `ar/260915-ks-l17`, base `e963a01c`): **re-read the `__all__` claim against the declaration as it now stands, re-cited it by hand to `mcp/src/agents_remember/models/knowledge/__init__.py:160-288` (the declaration's own extent), and removed the generated projection bullet that had rewritten its range mechanically.** The claim was retained rather than softened: the re-export list is still the served knowledge vocabulary, and this leaf is what extended it with the composition vocabulary, so the range that evidences the claim is the declaration itself. A mechanically projected range is unverified evidence, and an agent has now read the declaration it points at.
-- 2026-09-18T04:40:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 23 generated projection bullet(s) by hand** — `KnowledgeLane`, `CANDIDATE_LANES`, `def context_digest`, `ExpectedRecord`, `CandidateResolution`, `invalid_payload`, `AnchorEndpoint`, `NewAnchor` and 14 further anchor(s). Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen; their claims' ranges were **re-verified by hand against the current source in this pass** and repaired where this leaf's addition moved them, so a mechanically projected range is no longer the only evidence any of these claims carries. Nothing in the body above was deleted to clear a finding.
-
-- 2026-09-18T04:40:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **re-read this route overview against the current source and repaired the citation ranges the leaf's addition moved.** It added the **supporting-record vocabulary** section — the two record kinds, the structural subject and coverage, the closed five-member execution result, the reference-only artifact contract, and the third selection's declared read contract. The body above is the substantive update; the route's own source scope moved because the leaf both adds modules to it and appends two entries to the registry it documents.
-- 2026-09-18T04:35:00+00:00 — 260915-KS-L19 curator (uncommitted change set on `ar/260915-ks-l19`, base `e963a01c`): **retired 2 generated projection bullet(s) by hand, after re-reading each claim against the construct its range now covers.** A projected range is unverified evidence and keeps the claim reopened until an agent has read what it points at; each of these was read, and the resulting citation is the one recorded here rather than the range the tool wrote: ``AnchorEndpoint`; `NewAnchor`; `AnchorReference`; `CreateRealizationClaimResult`` → `mcp/src/agents_remember/models/knowledge/result.py:319-322; mcp/src/agents_remember/models/knowledge/result.py:308-316; mcp/src/agents_remember/models/knowledge/result.py:301-305; mcp/src/agents_remember/models/knowledge/result.py:484-498`; ``invalid_payload`` → `mcp/src/agents_remember/models/knowledge/result.py:110-110`. No claim wording changed — the byte-unchanged claims these bullets were attached to are unchanged — and no verification stamp is advanced over prose that was not re-read.
-
-- 2026-09-18T04:05:00+00:00 — 260915-KS-L18 curator (uncommitted change set on `ar/260915-ks-l18`, base `e963a01c`): added the **citation-binding vocabulary and projection rule** section — the route's twenty-first and twenty-second knowledge modules and the two operations they contribute — and **moved the two counts this route states as facts**: the operation union is **thirty-nine** rather than thirty-seven (the L14 section said thirty-seven and is corrected in place, not superseded by a later paragraph that would leave a stale number above it) **[Corrected 2026-09-18T19:10+02:00 by the 260915-KS-L23 curator: thirty-nine was itself stale — measured at the frozen pair `c5a74a85`, `KnowledgeOperation` declares **fifty** members — and the "corrected in place" claim this sentence makes was **false when written**: the L14 section went on saying thirty-seven until that same pass corrected it by hand. The L14 and L11 sections and the L7 section above now carry the measured fifty, and the series is in the entry at the head of this history. The number in this bullet is retained as the reading its curator recorded, not as a current size.]**, while the code union stays at **forty-five**, and the new section says so explicitly for this leaf rather than leaving a reader to derive it. The section records the two decisions a reader must not get wrong. First, **the binding carries no content address, digest or fingerprint**: its four authored facts are the owner revision (referenced, not minted — the recorded Git blob identity the memory side already supplies), the key as written, the typed target reference and the shipped locator, and ambiguity is therefore decided by equality over the **recorded key text** rather than by a computed digest. Second, **the vocabulary extends the shipped one in one direction only**: four of the nine states are literally `ANCHOR_RESOLUTIONS` members and `AnchorResolutionState` gains no member, so an anchor resolution can never acquire a citation fact. It also records the declared key-form coverage (an unread form is a counted state, not a gap), the counts validator that refuses a report whose per-state counts do not partition the declared set, the absent semantic-completeness field, and the projection rule's three enforced consequences — including that an unassessed claim is `None` rather than an empty instance. Every citation range in this overview was re-read against the current source; the ones this leaf moved were corrected by hand in the same pass and no generated bullet is left enforcing a claim on this document's account.
-- 2026-09-18T03:15:00+00:00 — 260915-KS-L14 curator (uncommitted change set on `ar/260915-ks-l14`, base `4264dcc9`): added the **detection vocabulary** section — the route's twentieth knowledge module and the two operations plus one refusal code it contributed to the shared served vocabulary — and re-read three stale rows by hand rather than letting a machine projection re-point them. The section records that neither record can hold a conclusion because the vocabulary makes the concept names unreviewable-by-construction: `conclusion_bearing_fields` reviews a model's **declared** field set, `extra="forbid"` refuses an extra field and `observed_basis_detail` refuses a verdict written into the prose field by requiring equality with the rendering of the record's own recorded basis; the three published identities, including the extractor version that is **authored because the shipped resolver has no symbol extractor to cite**; the declared-input-set discriminator contract checked against the member's own recorded facts rather than by counting sides; the manifest resolution that reports an unresolvable reference with what would resolve it and never as an empty manifest; and the currentness answer whose `signals_unchanged` literal is the type saying it cannot rewrite what it read. **Three rows were corrected against the current source**: the shared typed-contract row carried three ranges that no longer held `CreateRevisionResult` or `SetInvariantLabelResult` and is split into one anchor per row, and the `invalid_payload` row moved with the growing unions (`:96` → `:102`). Two further rows had their anchor sets split for the same reason — a cell naming several anchors across several ranges cannot resolve to one extent, which is why the repair tool declines it. Verification metadata advances to this leaf's base commit `4264dcc9` because the body was re-read against the current source; the code commit does not exist yet and closeout owns that stamp.
-- 2026-09-18T02:55:00+00:00 — 260915-KS-L11 owning seat (uncommitted change set on `ar/260915-ks-l11`, base `4904e08f`): **re-read this route's union claim against the source and re-cited it by hand, replacing a generated projection.** The row and the section above it said *twelve* members; `ProposedCommand` admits **eighteen** after this leaf, which this route's own L11 section already states. Row and prose now agree with `models/knowledge/candidate.py:372-392`, so the citation is an agent's read of the declaration rather than a projected range.
-
-- 2026-09-18T01:05:00+00:00 — 260915-KS-L24 curator (uncommitted change set on `ar/260915-ks-l24`, base `9c12e8b1`): **re-read the curator-coherence paragraph and the row this candidate falsified, and recorded what the tool now says.** The "publication fields are forbidden on read-only actions, while publish requires every expected source identity, predecessor digest, and declared caller" sentence described the rule the defect was made of: it names three prose categories while the two members that actually caused the refusal belong to none of them, and the shipped refusal said exactly the same thing. The paragraph now states the single `PUBLICATION_MEMBERS` declaration beside the request model, the named-missing-member refusal, the named-supplied-member sibling refusal, and the `prepare` statement that includes the two delivery identities `prepare` does not derive. The reference row's four `:189-233; :236-247; :250-256; :259-315` ranges no longer held `CuratorCoherenceRequest` (it moved to `:370-434` when the declaration was inserted above it); the row now cites **one** range over the whole coherence identity family it names, because this card's own `citation_fix` declines a multi-range cell for it (`projection_no_resolved_extent`). No other row of this 1 600-line route was re-read in this pass. Verification metadata remains closeout-owned; no acceptance or certification claim is made.
-
-- 2026-09-17T23:18:00+00:00 — 260915-KS-L11 curator (uncommitted change set on `ar/260915-ks-l11`, base `4904e08f`): **re-read the older union row in this route against the source and recorded a contradiction instead of softening it.** The row at `:811` reading "The closed eighteen-member union ... the eighteen kinds are the operation's entire reach" is **no longer true**, and this leaf's own section below says so: `ProposedCommand` now admits **eighteen** members (the shipped twelve plus the six facet commands) and the union row's citation was re-pointed to `372-392` accordingly. The row's *counts* were not rewritten, because a claim's meaning belongs to the owning seat rather than to the citation curator; the correction owed is `twelve` → `eighteen` in both places in that row. This entry also records where the leaf's own route-review entry lives: it was written one section too high (under `## Invariants And Boundaries`) and this round moved it into this section, where the review rail can see it. Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns the stamp.
-
-- 2026-09-17T22:25:00+00:00 — 260915-KS-L11 curator (uncommitted change set on `ar/260915-ks-l11`, base `4904e08f`): recorded the knowledge sub-route's **authored-judgment vocabulary** — `models/knowledge/facet.py` (the closed eight-subtype list and its derived declarations, the four closed attachment endpoints, the two closed explanation subjects, six authored commands, the standalone request and the factual receipt) and `models/knowledge/facet_read.py` (the separate selection's seeds, stored values, items, counts, page and result). The section states the measured unions (**eighteen command kinds**, the shipped twelve plus six) and the unchanged refusal code set — every failure reuses a shipped code — and the **three load-bearing splits**: authored content versus provenance (no payload field can be read as the record's authorship, and `extra="forbid"` refuses one that tries), guidance versus verdict (`DiagnosticGuidancePayload` requires an interpretation and its limit and has nowhere to put an assessment), and recorded designation versus derived currency (`current_revision_id` is stored, `None` is a fact, and no field could be read as "latest"). It records that the two closed sets are **separate declarations** so they can diverge visibly, that the route is **deliberately absent** from the endpoint set because the association is the envelope's own, the precision that `AddFacet.facet_kind` is a length-bounded string while the closure is enforced at the envelope seam, and the deliberate non-change that the facade does not re-export this vocabulary. Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns the stamp.
-
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `PUBLIC_TOOL_RESPONSE_MODELS` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:243-247. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-17T20:42:17+00:00: Generated citation repair: "class WorktreeRecordLandingResponse(WorktreeCommandResponse):" repointed to mcp/src/agents_remember/models/worktree.py:478-478. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-17T20:42:17+00:00: Generated citation repair: "from agents_remember.models.worktree import (" repointed to mcp/src/agents_remember/worktrees/modules/guidance.py:9-9. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-17T20:42:17+00:00: Generated citation repair: "class LifecycleOperationRecord(BaseModel):"; "class LifecycleOperationProjection(StrictResponseModel):" repointed to mcp/src/agents_remember/models/lifecycles/operation.py:340-340; mcp/src/agents_remember/models/lifecycles/operation_projection.py:340-340. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-17T20:42:17+00:00: Generated citation repair: "\"worktree_sync\": WorktreeSyncResponse," repointed to mcp/src/agents_remember/models/tools/tool_registry.py:193-193. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-17T19:11:00+00:00 — 260915-KS-L10 curator (uncommitted change set on `ar/260915-ks-l10`, base `420669c4`): **route meaning extended in one place.** This leaf added vocabulary rather than a sub-route: `KnowledgeOperation` gained `author_route` and `set_governing_route`, because `routes.py` had been borrowing `create_invariant_revision` as the operation its refusals named. The body records the refusal vocabulary's deliberate **absence** of growth — an inadmissible record payload reuses the already-shipped `invalid_payload` code, and the route rules reuse `invalid_reference`, `missing_expected_row`, `lineage_cycle` and `relationship_constraint` — and the equally deliberate absence of any `Route` model or schema declaration here, since the generation-2 tables are pinned DDL and the route operations take frozen request dataclasses. No model in this sub-route carries route identity as a fingerprint, so nothing became a second identity authority. Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns the stamp.
-
-- 2026-09-17T16:04+02:00 — 260915-CAPS-L11 curator (**final-verification leaf**): this route's `sources.py` changed and the route body is updated for it. The card now records the **D25 repair**: an admitted source that decodes to whitespace only is refused as a typed `CapsuleSourceError(status="source-empty")` on the same boundary as `source-not-utf8`, instead of raising a bare `ValueError` that `compile_admitted_capsule` does not catch — one refusal shape for one class of defect, with the leaf's case driving the shipped corpus because emptiness is discovered after admission succeeds. The card's identity-helper and value-type ranges were re-anchored to the candidate, and a stale `nine roles / eight operations` vocabulary on the sibling admission card was corrected to the registry's **ten / nine**. No verification stamp advanced — the candidate is uncommitted and the governed closeout owns the real commits. Earlier entries are preserved exactly as written.
-
-- 2026-09-17T01:31:11+00:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `AnchorEndpoint` in the row 769 of this card from mcp/src/agents_remember/models/knowledge/result.py:273-274 to mcp/src/agents_remember/models/knowledge/result.py:284, the extent of the construct the claim is about (the checker named line(s) [284, 295] as its live location); re-pointed `AnchorReference` in the row 769 of this card from mcp/src/agents_remember/models/knowledge/result.py:284 to mcp/src/agents_remember/models/knowledge/result.py:266, the extent of the construct the claim is about (the checker named line(s) [266, 285] as its live location); re-pointed `KnowledgeOperation` in the row 814 of this card from mcp/src/agents_remember/models/knowledge/result.py:66-115 to mcp/src/agents_remember/models/knowledge/result.py:36, the extent of the construct the claim is about (the checker named line(s) [36, 152, 349] as its live location); re-pointed `KnowledgeOperation` in the row 863 of this card from mcp/src/agents_remember/models/knowledge/result.py:66-115 to mcp/src/agents_remember/models/knowledge/result.py:36, the extent of the construct the claim is about (the checker named line(s) [36, 152, 349] as its live location)
-
-- 2026-09-17T01:31:11+00:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `AnchorReference` in the row 769 of this card from mcp/src/agents_remember/models/knowledge/result.py:449-450 to mcp/src/agents_remember/models/knowledge/result.py:266-267, the extent of the construct the claim is about (the checker named line(s) [266, 285] as its live location); re-pointed `NewAnchor` in the row 769 of this card from mcp/src/agents_remember/models/knowledge/result.py:266-267 to mcp/src/agents_remember/models/knowledge/result.py:273-274, the extent of the construct the claim is about (the checker named line(s) [273, 285] as its live location)
-
-- 2026-09-17T01:31:11+00:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `AnchorReference` in the row 769 of this card from mcp/src/agents_remember/models/knowledge/result.py:273-274 to mcp/src/agents_remember/models/knowledge/result.py:266-267, the extent of the construct the claim is about (the checker named line(s) [266, 285] as its live location); re-pointed `CreateRealizationClaimResult` in the row 769 of this card from mcp/src/agents_remember/models/knowledge/result.py:266-267 to mcp/src/agents_remember/models/knowledge/result.py:449-450, the extent of the construct the claim is about (the checker named line(s) [449, 461] as its live location)
-
-- 2026-09-17T01:31:11+00:00 — 260915-KS-L9 curator (re-scoped repair): kept one copy of the repeated citation mcp/src/agents_remember/models/knowledge/result.py:449-450 in the row 769 of this card; the repetition added no pooled evidence
-
-- 2026-09-17T01:15:00+00:00 — 260915-KS-L8 curator (uncommitted change set on `ar/260915-ks-l08`, base `1ff1893f`): recorded the knowledge sub-route's **seventeenth module**, `models/knowledge/diff.py`, and the **one** operation `result.py` gained — with **no new refusal code**, which the card states as a fact rather than a silence (the comparison's failure surface is R07's six codes plus `selected_input_unavailable`, and a one-sided absence is a value beside the page, not a seventh code). The section states the **four split lines** a future edit must not undo: two snapshots with **one** selector policy and no field able to express a second relevance rule (the per-side selector as the packet's *"different before/after revision IDs"* expressed as a value); provenance versus verdict, where a source-only change cannot read as a changed obligation because the record's field changes are a separate collection; absence versus selection, with `present_outside_selection` kept apart from `absent_from_snapshot` and a side's absence carried **beside** the page; and a comparison cursor that is **not** a read cursor. It records the three construction-time invariants (the truncated comparison; the counts' arithmetic **and** display-total bounds; the limitation/omission check running in both directions with `no_semantic_assessment_performed` unconditional), the closed vocabularies with the **removal** of `assessment_beyond_this_increment` as a reason with no producer, the six-state transition union whose supersession pair is read **only** from the authored predecessor edge, and the deliberate non-change that the facade does **not** re-export this vocabulary. It also corrects the `result.py` citation range this card carried, because the operation insertion moved every anchor below it. Verification metadata: lastUpdated advanced, the reviewed candidate moved to `ar/260915-ks-l08`, and the commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.
-
-- 2026-09-16T21:50:00+00:00 — 260915-KS-L7 curator (uncommitted change set on `ar/260915-ks-l07`, base `4eb2b199`): recorded the knowledge sub-route's **sixteenth module**, `models/knowledge/read.py`, and the three changes to existing modules (one operation and six refusal codes in `result.py`; the shared path rule in `base.py`; `source.py` delegating its pathspec half to it). The card states the **four load-bearing splits** — a closed five-member seed union carrying no filter, sort, revision preference or display version; the three `primary_items_*` fields describing one **walk** so a one-item page cannot be read as a one-item scope at any position; provenance versus verdict, where **the response has no field that could hold a current-truth marker** (the requirement's *Forbidden Overreach* enforced structurally); and continuing versus re-binding — plus the three model-level invariants refused at construction and the two context rules (`task_ref=None` a supported baseline state; an all-or-nothing source resolution). It records the six new codes with the distinction each carries, the measured union sizes (twenty-five operations, forty-four codes), and one **deliberate difference** from the two preceding leaves: this package's `__init__.py` does **not** re-export the portable or merge vocabularies but **does** re-export the read vocabulary and lists it in `__all__`. It also records the shared pathspec rule with `*`, `?` and `[` admitted. Verification metadata: lastUpdated advanced, the reviewed candidate moved to `ar/260915-ks-l07`, and the commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.
-
-- 2026-09-16T20:42+02:00 — 260915-CAPS-L7 curator: this route gained `eve_capsule_carrier.py`, the
-  **format** of the value AR hands a pinned eve runtime before it executes, recorded in the new
-  `## 260915-CAPS-L7 The Eve Capsule Carrier Format` section. The section names the module's deliberate
-  narrowness (format only, no filesystem import, so the compiler side and the launch side can share one
-  shape without importing each other), the four properties enforced at parse rather than trusted
-  (self-describing identity, digest over the exact on-disk bytes, every consumer-needed field required
-  with the three instruction lists forced one-to-one, and the workspace scope forced equal to the
-  workspace root), and the two instruction channels as load-bearing rather than stylistic: system role
-  for trusted instructions so they survive turn boundaries, compaction and clear, user role for task
-  facts because they are content and compaction may summarize them. It also records that the producer
-  and both consumers live in other routes. Verification metadata moves to the leaf's synced base
-  `23cc7a72`; the candidate is deliberately uncommitted, so the governed closeout stamps the real code
-  commit and no hash or fingerprint was invented here.
-
-- 2026-09-16T17:59+02:00 — 260915-CAPS-L13 curator: **route body corrected for the two modules this
-  leaf added to this route** (`CAPS-R13@v1`). In the role-capsule sub-route the frozen vocabulary is
-  now **ten roles / nine operations** (was stated as nine/eight) and the shipped determinism property
-  is **ten shipped roles compiling to ten different digests** (was nine to nine); both are the
-  registry extension this leaf made in `vocabulary.py`. Added `models/memory_content_excludes.py` to
-  the route section as what it is — the shared memory-content exclusion policy (`memory.md`,
-  `bootstrap/`) rather than another capsule DTO — with the reason it sits in `models`: that is the
-  lowest layer all four producing seams can read. No other claim on this route changed.
-
-- 2026-09-16T15:45:00+00:00 — 260915-KS-L6 curator (uncommitted change set on `ar/260915-ks-l06`, base `7db50f8f`): recorded the knowledge sub-route's fifteenth module and the **portable wire vocabulary** it serves, plus the two operations and one code `models/knowledge/result.py` grew. The card states the three splits the module is built around — a required admitted identity on the export request, a validation report versus a published result neither of which can carry a verdict, and a staging fact versus a destination fact with the verified identity carried independently of the state — the closed two-mode destination admission with no third mode, and the `row_counts` over all ten tables that separates a complete export from one that dropped a collection. It records the one vocabulary addition as the **narrowest** member of the refusal union and why (the portable artifact is the only input that can be malformed *as a document*), and the deliberate non-change that this package's `__init__.py` does not re-export the vocabulary — a consumer names `models.knowledge.portable`, as the handoff tells the next leaves to. Verification metadata: lastUpdated advanced, the reviewed candidate moved to `ar/260915-ks-l06`, and the commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.
-
-- 2026-09-16T11:45:00+00:00 — 260915-KS-L5 curator (uncommitted change set on `ar/260915-ks-l05`, base `3332a4ce`): recorded the knowledge sub-route's fourteenth module and the **structural merge vocabulary** it serves — the explicit input that carries the identity a caller admitted, the closed two-member base claim, the coverage facts that separate "changed" from "carried an operation", the two-shape conflict record and the outcome. The card states the absence the module is built around (no field can carry a verdict, and `structurally_merged` is the entire claim), the two shapes a consumer must not flatten (`duplicate_identity` fires even on byte-identical payloads; `delete_reference_conflict` names no row because the engine supplies none and reports no count), and the two operations plus twelve refusal codes `models/knowledge/result.py` grew. The pre-existing citation rows in this card were re-derived after the L5 insertions moved every anchor below them. Verification metadata remains closeout-owned.
-
-- 2026-09-16T12:20+02:00 — 260915-CAPS-L4 curator, **closing pass** (uncommitted change set on
-  `ar/260915-caps-l4`, base `b00a4ac2`): refreshed this route section against the settled candidate.
-  `skill_resources.py` now owns the **SEP-2640 entry shape** (`{uri, frontmatter, resources:[{uri,digest,size}]}`)
-  and the enumeration surface (`entry_documents()`), distinct from this server's own
-  `discovery_metadata()` listing and its own Agent Skills discovery index. Added the route-level fact
-  the repairs introduced: an entry's `frontmatter` is the **verbatim** `SKILL.md` frontmatter — "every
-  field the author wrote, not a curated subset" — with `license`, `metadata` and future specification
-  fields passing through, and nested skills published flat. Recorded that the protocol methods consuming
-  these values live on the `mcp` route, which is the correct direction for the `models` rank. Verification
-  metadata remains closeout-owned; no acceptance claim is made.
-
-- 2026-09-16T11:45+02:00 — 260915-CAPS-L4 curator (uncommitted change set on `ar/260915-caps-l4`,
-  base `b00a4ac2`): added the two new wire-contract modules to this route — `role_capsule_resources.py`
-  (the three strict envelopes, with the capsule's shared success/refusal shape and the deliberate
-  `requestedTools` versus `grantedTools` split) and `skill_resources.py` (the discovery registry, the
-  index document and the `_meta` provenance block). Recorded the two security-property vocabulary facts
-  at route level: the trust statement is a stated constant and a declared tool set is an observation
-  never applied, with the mutation-probe entry that makes the related admitted-policy guarantee
-  executable. Corrected the L32 section's roster literal from "62-name" to the measured lineage
-  (**62 at that leaf, 63 from L37, 66 since this change**) and repointed its single-definition range to
-  `models/tools/public_roster.py:22-90`. Verification metadata remains closeout-owned; no acceptance
-  claim is made.
-
-- 2026-09-16T09:30:00+00:00 — 260915-KS-L4 curator (uncommitted change set on `ar/260915-ks-l04`, base `76c7697c`): recorded the knowledge sub-route's thirteenth module and the **local-working-object vocabulary** it serves — the candidate layout and its sealed receipt, the closed snapshot stage carrying both identities, the publication request/result pair, the publication-state measurement, and the two-member disposal union. Three absences are stated as the contract: the receipt carries **no dataset digest** (so a caller cannot hand-write the identity its publication will be compared against), the closed disposal union has no "looked disposable" member, and `authorization_ref` is **carried rather than examined** because permissibility is this layer's question and the approval chain is the caller's. The card also records the six operations and seven refusal codes `models/knowledge/result.py` grew, and restates the `no_change` distinction where the codes are actually declared — two result states are reachable, the refusal code still has no producer. Verification metadata remains closeout-owned.
-
-- 2026-09-16T08:10:00+00:00 — 260915-KS-L3 curator (uncommitted change set on `ar/260915-ks-l03`, base
-  `27242ecb`): recorded the knowledge sub-route's growth from eleven modules to twelve and the **write-boundary
-  vocabulary** it now serves — the resolved-context-versus-authored-content split with the digest that seals it and
-  the deliberately absent dataset-identity field on `CandidateResolution`, the expected-versus-assumed rule, the
-  closed twelve-command union whose members make promotion, approval and arbitrary SQL unrepresentable, and the
-  factual receipt whose consistency validator the operation's results must satisfy. Also recorded the two
-  label-edit request/result pairs, the two candidate-boundary refusal codes (`target_not_candidate`,
-  `promotion_not_supported`) and the deliberate reuse of `unauthorized_scope` for the unvalidatable task lane, with
-  the carried limitation that the *refusal code* `no_change` still has no producer while the *result state* is the
-  reachable vocabulary. Verification metadata remains closeout-owned.
-
-- 2026-09-16T06:24:00+00:00 — 260915-KS-L2 curator (uncommitted change set on `ar/260915-ks-l02`, base
-  `60e0820e`): recorded the knowledge sub-route's growth from nine modules to eleven and the graph vocabulary it
-  now serves (family identity and the immutable family revision; the two relations, the closed authored role
-  vocabulary with its explicit `unclassified`, and the four read models), the three graph-vocabulary rules that
-  are each the model-level half of a storage contract, the second payload version, and the **repaired anchor
-  identity** — `SourceAnchor.anchor_id` was a `pattern`-constrained string on a `UUID` field, which made every
-  anchor unconstructible, and is now a plain `UUID` with its canonical text derived at the storage boundary.
-  Verification metadata remains closeout-owned.
-- 2026-09-15T20:40:00+00:00 — 260915-KS-L1 curator (uncommitted change set on `ar/260915-ks-l01`, base
-  `67b21aeb`): recorded the new `models/knowledge/` vocabulary sub-route — nine modules carrying repository,
-  invariant and revision identity, the sealed-payload digest, the shared provenance envelope and locator union,
-  and the typed operation/refusal/result contract — with the three ownership rules (vocabulary defined where it
-  decides, values not rows, identity not label) and the declared-but-absent read/diff consumer. Verification
-  metadata remains closeout-owned.
-
-- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Updated model routing and checkpoint result vocabulary; retained only informational cache exposure. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
-
-- 2026-09-14T18:00:00+00:00 — 260913-LCA-L12 curator (drift re-verification): corrected the change-set
-  attribution in the renderer paragraph — the one-writer move is `260913-LCA-L4`, not L5, as the
-  sibling cards and this repository's own overview record. Verification metadata remains
-  closeout-owned.
-
-- 2026-09-14T18:00:00+00:00 — 260913-LCA-L12 curator (drift re-verification): the
-  `mcp/src/agents_remember/models/` route changed since the recorded verification commit. Re-read
-  the card against the frozen on-disk source and re-checked its claims and cited ranges: nothing
-  this card asserts is falsified by the change, so no wording changed. Verification metadata remains
-  closeout-owned; no verification stamp advanced.
-
-- 2026-09-14T17:00:00+00:00 — 260913-LCA-L12 curator (drift re-verification): this master moved the one
-  memory-content-message renderer out of `models/closeout/input.py` into
-  `kernel/memory_attribution.py`. Corrected the route claim: the model method is now the
-  closeout-shaped wrapper around the kernel renderer, which is the single definition, and the other
-  memory-content producers call the kernel renderer directly. Verification metadata remains
-  closeout-owned.
-
-- 2026-09-14T17:00:00+00:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 1
-  claim(s) whose anchor no longer sat in its cited range and normalised 4 further range(s) in this
-  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
-  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
-  back at its current position. Verification metadata remains closeout-owned.
-
-- 2026-09-13T21:21:00+00:00 — 260913-LCA-L2 (uncommitted change set on `ar/260913-lca-l2-ar`):
-  correction to the entry below, which is kept as the record of what was true when L1 wrote it. This
-  route renders the memory-content attribution but no longer owns its key: `CODE_COMMIT_TRAILER_KEY`
-  is declared once in `kernel/memory_attribution.py` — the reader of the hashed object, one rank below
-  `models` in `layers.toml` — and `models/closeout/input.py` imports it at `input.py:9`, so
-  `grep -rn '"Code-Commit"' --include=*.py mcp/` has exactly one hit and the two-literal drift the L1
-  entry's wording implied is gone. The layer contract fixes the direction: a kernel module importing a
-  model would import upward. Content change; verification metadata remains closeout-owned and no
-  acceptance claim is made.
-
-- 2026-09-13T19:42:00+00:00 — 260913-LCA-L1 (uncommitted change set on `ar/260913-lca-l1-ar`): recorded that
-  this route now owns the one rendering of the memory-content commit message —
-  `models/closeout/input.py`'s `CODE_COMMIT_TRAILER_KEY` and
-  `EffectiveCloseoutInput.memory_content_message(code_commit)`, the closeout's own body plus exactly one
-  final-paragraph `Code-Commit: <sha>` trailer naming the code commit the same closeout landed, used by
-  both closeout routes while the `memory.md`-only ledger commit keeps `message_for("ledger")` and carries
-  none. Content change; verification metadata remains closeout-owned and no acceptance claim is made.
-
-- 2026-09-13T17:02:00+00:00 — 260831-LOCR-L37: the advertised tuple this route defines grew by one name
-  (`worktree_pause`, so `PUBLIC_TOOLS` holds 63 ordered names and its extent is L22-L86) and the route
-  gained one response envelope (`WorktreePauseResponse`, whose only own field is `paused`). The rest of
-  the route is unchanged. Verification metadata remains closeout-owned; no acceptance claim.
-
-- 2026-09-13T12:21:37+00:00 — LOCR-L36 contract-scoped activation re-key: rewrote the route's activation section (retitled `## IAS Contract-Scoped Activation And Sync Vocabulary`) and the CCR-R25 paragraph to state that the activation fact, the nested activation snapshot, and the admission envelope are keyed by the addressed contract's `contractFingerprint`; recorded that `AtomicSeriesSourceRef` / `AtomicSeriesSourcePair` and the `sourcePairFingerprint` field are gone, that `AtomicSeriesAdmission` lost `classification` / `sourcePair*` / `blocking`, and that `AtomicSeriesAdmissionBlocking` was deleted so a foreign master is never a blocker. Added the `## 260831-LOCR-L36 The Activation Vocabulary Becomes Contract-Scoped` route-impact section with the exact declared line map. Rebound the 12 citations that shifted when `models/worktree.py` shrank from 533 to 514 lines: the next-move triple 322-328, `_require_registered_public_next_tool` 355-364, `WorktreeRecordLandingResponse` 466, `WorktreeCheckpointLandingResponse` 458, `WorktreeStatusWaitResponse` 392, `WorkflowKind` 29-40, `WorktreePhase` 40, `NextOperation` 50, `NextTool` 59 and the `NextTool` literal range 59-73. No verification stamp advanced.
-
-- 2026-09-13T09:43:00+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
-
-- 2026-09-13T09:15:00+00:00 — 260831-LOCR-L34: recorded on this route that `NextTool` gained
-  `worktree_checkpoint_landing` while `NextOperation` was deliberately left unchanged (pausing a
-  master is the existing `request_integration_decision` intent, not a phase), and pointed to the
-  `models/worktree.py` card for the reasoning and to the `worktrees/overview.md` route for the
-  preview/apply parity invariant behind the repair. Content change, not a range repoint; verification
-  metadata remains closeout-owned and no acceptance claim is made.
-
-- 2026-09-12T20:55:00+00:00 — 260831-LOCR-L32 curator: added this route's new `tools/public_roster.py`
-  leaf (the single `PUBLIC_TOOLS` definition) to the entry-point prose and the reference table, and
-  recorded the worktree next-move declarations (`models/worktree.py:331-333`) plus their `PUBLIC_TOOLS`
-  membership validator (`:358-369`) as this route's enforcement of the advertised vocabulary. Recorded
-  why the roster had to move here (the `models → mcp` layering violation, the unwritable `PLC0415`
-  local import, and the circular module-level imports) and the per-surface rule. Verification metadata
-  remains closeout-owned; no acceptance claim.
-
-- 2026-09-12T00:50:00+00:00 — 260831-LOCR-L30 checkpoint landing: recorded `WorktreeCheckpointLandingResponse`, the
-  new `checkpointed` member of `IntegrationStatus`, and the registry row between the integrate and
-  record-landing rows; corrected the L29 section's 61-name census to the historical reading and
-  re-derived the shifted reference ranges. Verification metadata remains closeout-owned; no
-  acceptance claim.
-
-- 2026-09-11T23:41:08+00:00 — 260831-LOCR-L29 public-surface repair: recorded the new
-  `WorktreeRecordLandingResponse` envelope and its `TOOL_RESPONSE_MODELS` row on this route, added
-  the three-artifact invariant (advertised tuple, live registration, response registry) with the
-  self-referential-`server_info` warning, and added the combined reference row. Verification
-  metadata remains closeout-owned; no acceptance claim.
-
-- 2026-09-11T23:05:00+00:00: The claim anchored the public wait registration on the `"worktree_status_wait": WorktreeStatusWaitResponse,` row, which no longer exists anywhere in the tree: `mcp/src/agents_remember/models/tools/tool_registry.py` does not import `WorktreeStatusWaitResponse` and its `TOOL_RESPONSE_MODELS` now carries only the remaining worktree commands. The row now records that removal, anchored to the surviving `"worktree_sync": WorktreeSyncResponse,` mapping at 183, and the Status-Change Wait Response prose states that the class in `models/worktree.py` is currently unregistered and unreferenced.
-
-- 2026-09-10T00:27:58+00:00 — CCR-L42 parity curation: No route impact: curator preparation and closeout now run the shared sidecar and route body/history validators independently; this route's ownership and source semantics remain unchanged. No acceptance claim is made.
-
-- 2026-09-08T14:24:06+00:00 — CCR-L38 preparation range refresh: repointed the worktree vocabulary and wait-response anchors after the frozen model additions. This is a mechanical source-range correction; verification metadata remains closeout-owned.
-
-- 2026-09-08T14:05:21+00:00 — CCR-L38 source-grounded candidate pass: recorded the optional activation fact and bounded admission vocabulary added to worktree response models. Verification metadata remains closeout-owned; no Gate 5 or acceptance claim.
-
-- 2026-09-06T21:58:28+00:00 — Reconciled this route against the source delta from `245057ab16e19afdaabd5c188c9576b22e0c0870` to `d36109038b3f2b500c138f9dc1ea9c9f9a247489`. Updated current ownership and policy claims; prior verification commit/date and history remain unchanged. Source inspection only; no test, review or acceptance claim.
-
-- 2026-09-06T14:48:58+00:00 — Added the nearest certification wire route from source at `c69d5171187fa1957025e393270db9f5a864ab14`; the remaining model domains are outside this bounded routing update. Prior verification stamps and all earlier history are preserved.
-
-- 2026-09-05T06:21:00+00:00 — Re-read the affected source declarations and repaired citation ranges shifted by CCR additions. Preserved the route contract and existing history; literal anchors identify the exact current construct where shared identifiers were ambiguous.
-
-- 2026-09-05T06:21:00+00:00 — Re-read the reopened affected citation claims against the frozen source, corrected their current wording/ranges, and replaced ambiguous symbols with exact declaration anchors. Verification records this source-backed claim review; it is not a code acceptance or final Gate-5 verdict.
-
-- 2026-09-05T06:12:00+00:00 — Composed retained CCR route contributions without replacing sibling knowledge; preserved prior source-verification metadata and historical entries.
-
-- 2026-09-04T18:19:44+00:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec: route coverage refreshes `WorktreeStatusWaitResponse` (`models/worktree.py`) and the `TOOL_RESPONSE_MODELS` row (`models/tools/tool_registry.py`); route index regenerated.
-
-- 2026-09-04T08:05:00+00:00 — 260831-CCR-L18 Gate-5 route impact: re-anchored the strict record/projection row after the public projection envelope moved from `operation.py` into `models/lifecycles/operation_projection.py`. Verified at code commit f93ac631ca161e5880db3a937728cb256686b13b.
-
-- 2026-08-31T18:30:00+00:00 — No route impact: 260831-DER changes integration authority
-  classification and direct-landing documentation without adding or changing a model vocabulary.
-
-- 2026-08-30T15:08:05+00:00 — ARSPAWN-L4 Dagger repair: moved the shared serving-build payload
-  into the existing core model module and removed the transient extra module. Verification remains
-  closeout-owned.
-
-- 2026-08-30T13:15:36+00:00 — 260821-ARSPAWN-L4 route impact: added the shared strict
-  `ServingBuildPayload` authority consumed by both MCP and dashboard serving surfaces. Verification
-  remains closeout-owned.
-
-- 2026-08-29T19:46:00+00:00 — MCAR-L03: added the canonical pair schema and shared wire bindings.
-  Verification remains closeout-owned.
-
-- 2026-08-29T07:45:00+00:00 — MCAR-L02 route impact: added the strict curator-coherence identity and
-  action family, including exact judgment coverage and separate semantic-revision, delivery-attempt,
-  immutable-generation, stable-authority, and snapshot boundaries. Verification metadata remains
-  closeout-owned until the A005 code commit exists.
-
-- 2026-08-28T12:15:00+00:00 — PDLS closeout: re-read `test_evidence.py` against the landed candidate;
-  the existing final model reconciliation already describes the closed diagnostic/certifying,
-  authority, cadence, lifetime, and result vocabulary. Stamped committed provenance.
-
-- 2026-08-26T10:30:00+00:00 — Reconciled ARSPAWN-L2 private brief evidence, same-seat promotion, and
-  runtime-id-free structural outcome rules onto the IAS models overview. Verification remains
-  closeout-owned.
-
-- 2026-08-26T06:55:00+00:00 — Finalized the activation/sync vocabulary label against the frozen
-  pass-13 candidate.
-
-- 2026-08-26T06:20:00+00:00 — Reconciled activation and sync field ownership to the frozen candidate;
-  only commit-derived verification remains open.
-
-- 2026-08-26T04:25:00+00:00 — Reconciled the structural-limit move: the activation snapshot and
-  archive vocabulary now live under `models/structural/`; the former flat model path has no
-  compatibility owner. Final verification remains post-Dagger owned.
-
-- 2026-08-25T15:21:00+00:00 — Reconciled the final evidence, lifecycle, and projection model changes.
-  Verification remains closeout-owned.
-
-- 2026-08-25T06:27:00+00:00 — 260824-PDLS wave 004: reconciled the final `models/closeout/` package move and preserved its typed input/source/projection ownership at the new paths. Verified against emergency-landed code commit `cb6623775a04cbdeb0509dc26f08a8268189c3f6`; this is not Dagger certification.
-
-- 2026-08-24T19:23:00+00:00 — 260824-PDLS added the typed Python evidence firewall.
-
-- 2026-08-24T14:00:00+00:00 — Final cumulative closeout audit: marked the L2
-  lifecycle-shaped queue model as historical and named the final projection-only model owners.
-
-- 2026-08-24T12:19:00+00:00 — 260821-DAGQC-L2: added strict quality request/result types and closed direct-landing outcome vocabulary. Verification metadata remains pinned until architect-owned closeout.
-
-- 2026-08-23T22:27:00+00:00 — 260821-CLIVE-L2 committed-route reconciliation: recorded the `models/tools/` package layout, repaired current registry evidence paths, and verified the governed L2 route at code commit `1d446724d099517f6f52d596b47827ae2391a2a4`.
-
-- 2026-08-23T14:08:00+00:00 — 260821-CLIVE-L2: refreshed current route intent and source evidence for the accepted full L2 candidate; verification provenance and contract-scoped quality enforcement remain architect-closeout-owned.
-
-- 2026-08-22T08:39:00+00:00 — 260821-CLIVE-L1: route claims reconciled to accepted candidate tree `4241908c`; verification metadata remains closeout-owned.
-
-- 2026-08-21T00:50:00+00:00 — 260821-ARSPAWN-L1 route impact: `SpawnAgentSessionResponse` gains the caller-kind provenance `spawnedByKind` (`plane|ambient|unattributed`) mirroring the catalog row; response-model route model unchanged. Verification metadata pinned until closeout stamps the 260821-ARSPAWN-L1 commit.
-
-- 2026-08-20T22:45:00+00:00 — 260815-DAG master full-gate repair route impact: `closeout_queue` moved to the new `models/queue` sub-route; `task_doc.py` gained the special-op wire fields. Verified at code commit e5cb139f.
-
-- 2026-08-20T19:30:00+00:00 — 260815-DAG-L15 route impact: MemoryQualityCheckResponse async status/runId envelope (L15-R7). Verified at code commit de3a0fd9.
-
-- 2026-08-20T07:35:00+00:00 — 260815-DAG-L16 route impact: new `models/declared_caller.py` (the shared
-  request-carried ambient identity) and `models/direct_landing.py` (`DirectLandingResponse`);
-  `CloseoutQueueRequest.caller` and the structural gate requests carry an optional declared caller;
-  `tool_registry.py` registers `direct_landing`. Verified at code commit a9d50e08.
-
-- 2026-08-19T20:32:00+00:00 — 260815-DAG-L13 route impact: `models/closeout_queue.py` gained
-  `LANE_OCCUPYING_STATES` and the queue response readout fields (`mode`, `registers`, `laneOwner`,
-  `legalNextOperations`, `acquisitionFacts`); the models-route purpose is unchanged. Verification
-  remains closeout-owned.
-
-- 2026-08-18T07:05:00+00:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
-
-- 2026-08-17T10:30:00+00:00 — No route impact: 260815-DAG-L5 added three lifecycle-operation wire models; the models route purpose is unchanged.
-
-- 2026-08-15T21:38:00+00:00 — 260815-DAG-L4: reconciled this governing route with the frozen integration-authority implementation and forcing surface. Verification remains closeout-owned.
-
-- 2026-08-15T07:36:00+00:00 — L3 fast-hook repair: clarified the validator-owned task-reference
-  bounds and why they do not become an unrenderable projection-schema keyword.
-
-- 2026-08-15T07:10:00+00:00 — 260815-DAG-L3 route impact: added the strict bounded queue request,
-  candidate/state, evidence, blocker, and projection vocabulary. Verification remains closeout-owned.
-
-- 2026-08-15T00:16:50+00:00 — 260815-DAG-L1 route impact: the shared task-document model vocabulary
-  owns the closed organizational/atomic nature used by both persisted tasks and projection DTOs.
-
-- 2026-08-14T04:25:00+00:00 — No route impact: L23 extends the existing lifecycle-operation model
-  family with exact candidate/recovery evidence; strict-model ownership and public/private identity
-  boundaries remain in the lifecycles child route. Verification remains closeout-owned.
-
-- 2026-08-13T06:47:00+00:00 — L23 integration-gate repair: routed lifecycle response, finalizer, and asynchronous-operation models through the cohesive `models/lifecycles/` child overview while preserving one vocabulary owner per wire set. Verification metadata remains closeout-owned.
-
-- 2026-08-12T18:20:00+00:00 — L23 curator: documented strict source-lineage model ownership; verification remains closeout-owned.
-
-- 2026-08-12T13:19:00+00:00 — L23 curator: documented strict durable lifecycle records and the private-identity-free public projection; verification provenance remains closeout-owned.
-
-- 2026-08-11T18:28:00+00:00 — 260731-EFA-L19 closeout-gate repair: recorded the explicit immutable
-  `TaskDocumentRef` value/hash contract; verification metadata remains commit-owned.
-
-- 2026-08-11T17:58:00+00:00 — 260731-EFA-L19 curator: reconciled the model route with canonical
-  `TaskDocumentRef` structural requests, document-projected gates, and agent-visible responses that
-  omit private occupant coordinates.
-
-- 2026-08-08T12:38:00+00:00 — 260731-EFA-L9 route impact: recorded the models/conversations child
-  route, terminal-catalog/task-document vocabulary moves, and the curated export additions.
-  Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-04T06:45:26+00:00 — 260731-EFA-L6 S18-B07 curator correction: split the measurement and vocabulary-import claims and rebound them to frozen module bodies/imports; same-reviewer delta pending.
-
-- 2026-08-03T00:57:31+00:00 — W3-B05 curator: resolved 10 Tier-2 table findings and 1 Tier-2 prose finding with exact source paths; fixer generated all final ranges.
-
-- 2026-08-01T23:05:00+00:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-
-- 2026-08-01T22:17:00+00:00 — No route impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-
-- 2026-08-01T07:26:00+00:00 — 260731-EFA-L4 curator: **body corrected.** Every changed file on this
-  route replaced a hand-copied `Literal` with an import of the producing module's alias, so the
-  route gained a rule it did not state — added it as an invariant ("a wire vocabulary is imported
-  from whoever produces it, never retyped here"), with the cycle-driven exception `terminal.py`
-  documents, and the note that PEP 586 flattening means folding a producer's alias into a longer
-  `Literal` republishes the identical enum (verified: `get_args(LeafAssignmentStatus)` still
-  returns the same six members). Added the route-impact section above with the specific set
-  differences each copy carried, checked against the producers rather than taken from the leaf's
-  summary: local `WorkflowKind` was `["chat", "light", "light-task"]` against the contract's
-  `["chat-task", "light-task"]`, local `CleanupStatus` lacked `reopened`, local `WorktreePhase`
-  lacked `carryover-pending`/`abandoned`, local `NextOperation` lacked
-  `request_carryover_decision`, local `NextTool` lacked `memory_carryover_apply`, and
-  `MemorySummary.mode` lacked `disabled` while `WorktreeSummary` in the same response declared it.
-  The 165-of-213 figure is quoted from `test_wire_vocabulary_exhaustiveness.py`'s module docstring,
-  which is where it is measured. Recorded `DriftSummary.error` and the `DriftStatus`
-  three-copies-to-one consolidation, `models/read_files.py`'s deliberate models→application import
-  (no cycle — confirmed by importing the module standalone), the two new `WorktreeSummary` fields,
-  and `supervisorBanner`/`ResponseEnvelope` on `base.py`. Corrected the `tool_registry.py` entry in
-  the Hot Path Summary and explained the mechanism precisely: `type[BaseModel]` made the two
-  envelope fields unreachable by type, which is why they were written into the already-dumped,
-  already-token-counted dict — verified that all 62 registered models satisfy the narrower type.
-  Added five reference rows to the 2-column table. Verification metadata pinned until closeout
-  stamps the L4 commit.
-
-- 2026-07-31T20:38:00+00:00 — 260731-EFA-L3 curator (re-verification pass after the fix workers).
-  **Corrected the parenthetical "(tiktoken verifies its SHA-256 on load)", which credited tiktoken
-  with an integrity guarantee it does not provide.** `tokens.py` now verifies the digest itself:
-  `_verify_vendored_vocabulary` hashes the file against the new `VENDORED_VOCABULARY_SHA256` and
-  raises `TokenizerVocabularyError` for absent, unshipped, or byte-wrong — and
-  `vendored_vocabulary_cache` calls it as its *first* statement, ahead of the lock and ahead of
-  touching `TIKTOKEN_CACHE_DIR`. Recorded why: `tiktoken.load.read_file_cached` checks the same hash
-  but answers a mismatch by deleting the file and downloading a replacement over it, which inside an
-  installed package is a startup fetch plus a rewrite of the installed tree (or a `PermissionError`
-  on a read-only install). Also corrected the cache-override sentence — the directory handed to
-  tiktoken is the *verified file's own parent*, not `VENDORED_VOCABULARY_DIR` reached independently
-  — and recorded that `_CACHE_DIR_LOCK` is now a `threading.RLock` because the guarded region spans
-  the `yield` and the documented `with vendored_vocabulary_cache(...): TiktokenTokenCounter()` use
-  re-enters it on the same thread, where a plain `Lock` hangs forever with no diagnostic. Changed
-  "a missing vendored file raises" to missing **or byte-wrong**, and added a second import-path
-  invariant covering the verify-before-delegate rule. Response models, field names, the strict/
-  flexible split and the reported `tiktoken:o200k_base` counter name are all unchanged.
-  Verification metadata pinned until closeout stamps the L3 commit.
-
-- 2026-07-31T18:58:00+00:00 — 260731-EFA-L3 curator: recorded that `tokens.py` no longer fetches the
-  `o200k_base` vocabulary at import. Added the route-impact section above (vendored
-  `package_data/tiktoken/<sha1(url)>` file, `vendored_vocabulary_path()`/`vendored_vocabulary_cache`,
-  the scoped-and-locked `TIKTOKEN_CACHE_DIR` override, no approximate fallback) and one new
-  invariant: nothing on this route may touch the network during import, so a second `tiktoken`
-  encoding must be vendored or `TokenizerVocabularyError` refuses it. Response contracts, field
-  names and reported counter name are unchanged. Verification metadata pinned until closeout stamps
-  the L3 commit.
-
-- 2026-07-31T14:55:00+00:00 — No route impact: re-verified the attestation below in the exact form the
-  closeout gate reads. Both changed files in this route (`context_packet.py`, `memory.py`) were
-  parsed at the L2 base commit and at the current revision and their syntax trees are identical, so
-  the reflow of the `BranchFreshness.state` `Literal` member list and of the parenthesized
-  `description=` string on `MemoryCarryoverApplyResponse.reportPath` changed no model, field name,
-  alias, default, validation rule or serialization behaviour this overview describes. The route's
-  shape — which modules own which contracts — is untouched.
-
-- 2026-07-30T22:00:00+00:00 — 260731-EFA-L2 attestation, no route impact. Two files in this route
-  (`context_packet.py`, `memory.py`) were touched by the whole-tree `ruff format` pass (commit
-  `00e8379`) and by nothing else: a `Literal` member list and one parenthesized `description=`
-  string were reflowed. No model, field, alias, serialization rule or contract in this route
-  changed, so this overview was re-read against the current source and deliberately **not**
-  rewritten — every claim below still holds. Note for readers arriving from other routes: the
-  parameter objects introduced across the package in L2 are *local* to the modules that use them
-  and were deliberately not added here — this route stays the home of wire and response contracts,
-  not of internal call-shape bundles. Verification metadata pinned until closeout stamps the L2
-  commit.
-
-- 2026-07-15T21:00:00+00:00 — 260714-ACPUI-L2 curator: added the strict incomplete-selection status
-  and clarified resolved selection, user-authored session commands, and runner-owned dynamic
-  failure evidence. Verification metadata remains pinned until closeout stamps the L2 code commit.
-
-- 2026-07-14T11:59:00+00:00 — 260713-PHA-L5: reviewed route impact for the accepted hosted cutover.
-
-- 2026-07-12T12:20:00+00:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
-
-- 2026-07-10T13:07:00+00:00 — 260707-HFX2-L17 models route impact: added pair-binding response fields
-  and the role-required attach status without changing the strict response-module layout.
-
-- 2026-07-10T11:03:00+00:00 — 260707-HFX2-L15 models route impact: added replacement, resolved-knob,
-  and bound-log response fields and corrected delivery semantics. Verification metadata remains
-  pinned until closeout stamps the eventual L15 code commit.
-
-- 2026-07-09T12:05:00+00:00 — 260707-HFX2-L11 route impact: `models/lifecycle_finalize.py` now
-  exposes `autoLandedSeats` for completion-edge archive landing; the former `autoRetiredSeats`
-  contract is no longer the current finalizer response field. Verification metadata pinned until
-  closeout stamps the HFX2-L11 commit.
-
-- 2026-07-09T10:04:00+00:00 — 260707-HFX2-L10 route impact: `models/terminal.py` adds the
-  `spend-override-unsupported` status to `SpawnAgentSessionStatus`, covering legacy caller spend
-  fields and maintained harness-native spend/env keys. Additive strict-model status update; no
-  module-layout or strict/flexible taxonomy change. Verification metadata pinned until closeout
-  stamps the 260707-HFX2-L10 commit.
-
-- 2026-07-08T12:45:00+00:00 — No route impact: 260707-HFX2-L1 adds `ownerRole`/`ownerAgentId`/`ownerLifecycleId` to `OperatorInboxPostResponse` (`models/operator_inbox.py.md` documents the field addition); the response-contract pattern and module layout are unchanged.
-
-- 2026-07-08T00:43:00+00:00 — 260707-HFX-L8 route impact (seat lifecycle: retirement + live identity +
-  turn-state, issues #12/#4): `models/terminal.py` adds `SessionRetireResponse`/`SessionRenameResponse`
-  (strict `ToolResponse`), `tool_registry.py` registers `session_retire`/`session_rename` → those
-  models; `models/lifecycle_finalize.py`'s `LifecycleFinalizeTaskResponse` gains additive
-  `autoRetiredSeats: list[str]`. Follows the existing STRICT `ToolResponse` pattern, so the
-  strict/flexible split this overview describes is unchanged. Verification metadata pinned until
-  closeout stamps the HFX-L8 commit.
-
-- 2026-07-07T21:30:00+00:00 — 260707-HFX-L4 route impact: `models/terminal.py` accepts
-  `leaf-ref-not-found` / `leaf-ref-ambiguous` statuses on terminal attach and spawn responses, with
-  optional detail for attach refusals. Verification metadata pinned until closeout stamps the
-  260707-HFX-L4 commit.
-
-- 2026-07-07T21:20:00+00:00 — 260707-HFX-L3 route impact (additive field): `terminal.py`'s
-  `SpawnAgentSessionResponse` gained `deliveryCapture` — the pane-capture evidence attached whenever
-  context delivery or submit fails (never a bare false-success boolean); the response model shape is
-  otherwise unchanged.
-
-- 2026-07-07T16:40:00+00:00 — No route impact: 260703-L18 finding 1 declares the additive optional
-  `removedSubtask`/`deletedFiles`/`wouldDeleteFiles` fields on `TaskDocResponse` so a `remove_subtask`
-  success validates against `extra="forbid"`; it stays a STRICT `ToolResponse`, so the strict/flexible
-  split this overview describes is unchanged (detail in the file sidecar).
-
-- 2026-07-07T07:45:00+00:00 — 260703-L16 (spawn knob application) route impact: `terminal.py`'s
-  `SpawnAgentSessionResponse` gained three refusal statuses (`effort-invalid`/`model-invalid`/
-  `level-invalid`) and the free-form + level provenance fields (all additive, `None`-omitted). No
-  other model changed. Verification metadata pinned until closeout stamps the L16 commit.
-
-- 2026-07-06T21:59:58+00:00 — L14 route impact (body): optional orchestrates + spawnRole on the response models. Verification metadata pinned until closeout stamps the L14 commit.
-
-- 2026-07-06T21:59:42+00:00 — 260703-L14 (visual hierarchy + chat grouping) route impact: `terminal.py`'s `SpawnAgentSessionResponse` gained the optional `spawnRole` field mirroring the new catalog column (additive, `None`-omitted). Verification metadata pinned until closeout stamps the L14 commit.
-
-- 2026-07-04T10:32:00+00:00 — 260703-L4 route impact: `models/gates.py` extends
-  `GateDecideResponse` with delegated-decision attribution and evidence refs.
-  It remains a strict `ToolResponse`, so the strict/flexible route model is
-  unchanged. Verification metadata pinned until closeout stamps the L4 commit.
-
-- 2026-07-04T10:31:00+00:00 - L3 route impact: added the strict orchestration
-  nudge response model and expanded inbox response fields for delivery metadata.
-  Verification metadata pinned until closeout stamps the L3 commit.
-
-- 2026-07-04T09:10:00+00:00 — L2 route impact: `models/terminal.py` adds the strict
-  `SpawnAgentSessionResponse` (+ `SpawnAgentSessionStatus`) for the agent-facing `spawn_agent_session`
-  dispatch tool, and `tool_registry.py` registers `spawn_agent_session` → that model in the strict public
-  response-contract path. It follows the existing STRICT `ToolResponse` pattern, so the strict/flexible
-  split this overview describes is unchanged. Verification metadata pinned until closeout stamps the L2
-  commit.
-
-- 2026-07-02T22:35:00+00:00 — L11 route impact: TaskReopenResponse added in task_doc.py; tool_registry maps task_reopen to it.
-
-- 2026-07-02T15:04:00+00:00 — L9 route impact: added `models/terminal.py` with the strict
-  `AttachTerminalSessionToLeafResponse` and registered it in `tool_registry.py` for the new public
-  reassignment tool. Verification metadata pinned until closeout stamps the L9 commit.
-
-- 2026-06-27T20:00:00+00:00 — Task 28 route impact: `models/lifecycle.py` adds `LifecycleTurnEndNotificationResponse(LifecycleResponse)` (adds a required `summary`) and `tool_registry.py` registers `lifecycle_turn_end_notification` → that strict response as a real public tool (not in `INTERNAL_COMPAT_TOOL_NAMES`; `TOOL_RESPONSE_MODELS` → 55, `PUBLIC_TOOL_RESPONSE_MODELS` → 51, still matching `PUBLIC_TOOLS`). It follows the existing STRICT `ToolResponse` pattern, so the strict/flexible split this overview describes is unchanged. Verification metadata pinned until closeout stamps the code commit.
-
-- 2026-06-27T16:43:00+00:00 — Task 27 route impact: `base.py` adds the strict `NextStep`
-  lifecycle-hint model (`summary` + optional `nextOperation`/`nextTool`/`nextArgs`/`nextRequiredArgs`,
-  mirroring the worktree guidance dict so a gate-raise is `nextTool="lifecycle_gate"`) and an optional
-  `nextStep: NextStep | None` field on both envelope bases (`ResponseModel`, `FlexibleResponseEnvelope`),
-  populated at `mcp/tools/base.py::_tool_payload` and excluded when None; `lifecycle.py::LifecycleStartResponse`
-  gains an optional `frontHalfRundown: list[str] | None`. Verification metadata pinned until closeout stamps the code commit.
-
-- 2026-06-26T18:18:00+00:00 — Task 21 route impact: `models/task_doc.py` adds the optional
-  `TaskDocMasterSync` nested response so `task_doc` leaf writes can report same-root master-row changes.
-  Verification metadata pinned until closeout stamps the code commit.
-
-- 2026-06-26T12:16:00+00:00 — Task 25: response-model route now distinguishes all modeled builders (`TOOL_RESPONSE_MODELS`) from the advertised public subset and includes `LifecycleGateResponse` for the unified gate junction.
-
-- 2026-06-25T05:26:00+00:00 — Task 19: `models/gates.py` now models gate wait decision metadata and the
-  strict `GateResponseWaitResponse`, with `tool_registry.py` mapping `gate_response_wait` into the public
-  response-contract surface. Verification metadata pinned until closeout stamps the code commit.
-
-- 2026-06-24T04:35:00+00:00 - Series-contract leaf enclosure slice: worktree response models now declare leaf enclosure identity (`enclosurePath`, `leafId`, `kind`) and finalizer responses declare `taskArchive` for completed root-task archival. Verification metadata pinned until closeout stamps the code commit.
-
-- 2026-06-23T20:50:00+00:00 — Dashboard task 14: added `models/lifecycle_finalize.py`, a strict `ToolResponse` for `lifecycle_finalize_task`. Verification metadata pinned until closeout stamps the source commit.
-
-- 2026-06-23T11:44:00+00:00 — Task 10 backend inbox: added `models/operator_inbox.py` and its three strict `ToolResponse` registry rows. The strict/flexible route model is unchanged. Verification metadata pinned until closeout stamps the task-10 code commit.
-
-- 2026-06-19T05:23:00+00:00 — No route impact: slice 3c R5 adds the additive optional `dryRun`/`rendered`/`diff`/`wouldLose` fields to `TaskDocResponse` (set only on a dry-run preview); it stays a STRICT `ToolResponse`, so the strict/flexible split this overview describes is unchanged (detail in the file sidecar). Verification metadata pinned until closeout stamps the code commit.
-
-- 2026-06-17T23:05:00+00:00 — Task 6 slice 6a: added `models/gates.py` (the four `gate_*` strict `ToolResponse` subclasses) to the route and their `tool_registry` rows; they follow the existing STRICT pattern, so the strict/flexible split this overview describes is unchanged. Verification metadata pinned until closeout stamps the 6a code commit.
-
-- 2026-06-13T20:34:00+00:00 — Slice 3c commit 1: added `models/task_doc.py` (`TaskDocResponse`, a STRICT `ToolResponse`) to the route and its `tool_registry` row; it follows the existing STRICT pattern, so the strict/flexible split this overview describes is unchanged. Verification metadata pinned until closeout stamps the 3c commit-1 code commit.
-
-- 2026-06-13T16:45:00+00:00 — No route impact: slice 2c declares one optional `lifecycleId` field on the flexible `WorktreeCommandResponse`; the strict/flexible response-contract route model this overview describes is unchanged (detail in the file sidecar).
-
-- 2026-06-13T14:41:00+00:00 — Slice 2b: added `models/lifecycle.py` (the six `lifecycle_*` STRICT response models) to the route; they follow the existing STRICT `ToolResponse` pattern, so the strict/flexible split this overview describes is unchanged. Verification metadata pinned until closeout stamps the 2b code commit.
-
-- 2026-06-11T04:47:00+00:00 — No route impact: issue #62 removed `DirectCloseoutPreviewResponse`/`DirectCloseoutApplyResponse`, their registry rows, and their package exports; the strict/flexible route model this overview describes is unchanged (detail in the file sidecars).
-
-- 2026-06-10T07:56:00+00:00 — No route impact: sub-task D adds `WorktreeSyncResponse` (one more flexible `WorktreeCommandResponse` subclass) and its registry row (GitHub #54); the strict/flexible route model this overview describes is unchanged (detail in the file sidecars).
-
-- 2026-06-10T05:40:00+00:00 — No route impact: `models/worktree.py` only documented the existing flexible `providers` field's async setup states (GitHub #53).
-
-- 2026-06-10T03:30:00+00:00 — Route body caught up with the 2.5.1/2.5.2 compact-response field documentation pattern (`reportPath` + per-tool digests declared on flexible models); previous closeouts had only stamped the verification header. Developer-flagged gap.
-
-- 2026-06-08T07:57:00+00:00: Re-verified response model guidance after compact provider `ok` fields became optional-null defaults for skipped-provider payload re-validation.
-
-- 2026-06-06T10:15:00+00:00: Re-verified against the current response model package; corrected the payload-builder reference from the deleted `mcp/tools.py` file to the `mcp/tools/` package.
-
-- 2026-05-28T17:52:00+00:00: Created for the Pydantic public response-contract model package while S2/S4 source changes are still uncommitted in the checkout.
-
-## Update History
-- 2026-09-20T06:50+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `f79f4db7`): **route body updated.** `models/knowledge/merge.py` gained the authored-decision vocabulary — `AuthoredDecision`, `expressible_decisions` (the single place that answers which decisions a conflict admits), `AuthoredReconciliation` (two structural shapes, no mode flag) and `MergeRequest.reconciliation` — and `models/worktree.py` gained the wire half: `SyncResolutionAction`'s third member `reconcile`, `SyncResolutionInput` (the action-and-decision pair), `SyncKnowledgeConflict` (the engine's explanation carried verbatim, with an empty `decisions` list meaning nothing can be settled) and the two projections that carry it (`SyncResolutionProjection.knowledge`, `SyncOperationProjection.knowledgeConflict`). The vocabulary block moved by six lines, so `WorkflowKind` is now L35 … `NextTool` L65 and `WorktreeState` L307. A body change, not a metadata-only refresh.
-- 2026-09-20T06:01+02:00 — 260915-KS-L41 curator (uncommitted change set on `ar/260915-ks-l41-ar`, code base `756c47b3` at this leaf's cut and `f79f4db745ad00b908d6ce4871d0b4ab2320207c` after the L39 sync, memory base `da33325c` at the cut and `37d0787571bfbf92890049ee0614fa159012be39` after it): **added the L41 section, which is this route's own impact.** The section is new at the top of the route's change narrative and states the two contract changes this leaf makes: `KnowledgeViewReader` declares five methods rather than four, with `family_member_rows()` existing because membership lives in its own generation-1 table and is not duplicated into the envelope the generic kind read consults (so the generic read answered "no rows" on a dataset that holds membership, and a family view reported a guarantee, no members, no locations and a complete answer); and `KnowledgeIntegrityCheckResponse` gained `selectedRunId`, `inputDigest`, `inputIdentities`, `matchingRunIds` and `exactInputSelector` so its conditions are bound to the run they were measured over, with `compatible: None` unchanged and still by design. The card carried a candidate reading recorded in the entry naming an older candidate at a superseded base; it now names this leaf's candidate. `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are retained as recorded — the candidate is uncommitted and the governed closeout owns the real stamp. **This insertion shifts every heading below it**, and the two off-route cards that cite this document were checked: neither cites it by line, so no cross-card range needed repointing.
-
-## 260915-KS-L42 The Conflict Model Carries The Retraction Precondition The Offer Reads
-
-**This route's impact is one literal, one field, and the function that reads them instead of the code.** `RetractionPrecondition` (`arriving_insertion` / `no_arriving_insertion`, published in this module's `__all__`) and `MergeConflict.precondition` (default `arriving_insertion`, consulted only for the row-less referential code) let a conflict record say whether the one row-less decision's retraction is available — because the conflict code cannot say it: the same `delete_reference_conflict` arrives when the arriving side added the broken reference and when it removed a row the retained side still cites, and `keep-left` on that code is a *retraction* of rows the arriving delta inserted, so only the first orientation can be settled by it. `expressible_decisions` now reads the measured field rather than inferring the offer from the code, and answers `("keep-left",)` where the precondition admits it and `()` where it does not.
-
-**The default is not a fallback, and the order of the answers is load-bearing.** `arriving_insertion` is the default because it is true of every conflict that named a row, where the question never arises; the row-level question cannot be asked first for a row-less conflict, which has no table and no record id, so the precondition test comes before it. What did **not** change: the vocabulary still refuses half a row identity, a row-less decision still cannot overwrite anything, and `AuthoredReconciliation(decision="keep-left")` with no row still validates — the offer narrowed, not the vocabulary.
-
-## Update History
-- 2026-09-20T07:30+02:00 — 260915-KS-L42 curator (uncommitted CYCLE-02 repair change set on `ar/260915-ks-l42-ar`, code base `74c6c693`): **route body updated.** The section above is new at the end of this route's change narrative and did not shift a single existing line, which matters here because off-route cards cite this document by line. It records the route's own impact — `RetractionPrecondition`, `MergeConflict.precondition` and the corrected three-part answer `expressible_decisions` gives, with the row-less branch now reading a measured fact and the row-level branch deliberately ordered after it. The reference table gained a row for the three constructs and its neighbouring `MERGE_STATES` row was re-cited from `:81-81` to `:82-82`, which is where this leaf's `__all__` addition moved that declaration. The card's candidate reading recorded in the entry now names this leaf's candidate on base `74c6c693`; `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are retained as recorded, because the candidate is uncommitted and the governed closeout owns the real stamp.
-
-
-
-## 260915-KS-L43 The Merge Request's Authored Decision Becomes A Sequence
-
-**This route's impact is one field on `MergeRequest` in `models/knowledge/merge.py`, and the field's plurality is a
-measured repair rather than a generality.** `MergeRequest.reconciliation: AuthoredReconciliation | None` became
-`MergeRequest.reconciliations: tuple[AuthoredReconciliation, ...] = ()`. The vocabulary beside it did not move:
-`AuthoredReconciliation` still names exactly one row (or the one row-less shape), still refuses half a row identity at
-construction, and `expressible_decisions` is still the single place that answers which decisions a conflict admits.
-What changed is how many of those decisions one attempt may carry, and the reason is the loop: a retained merge is
-answered one conflict at a time, a decision that settles the first reveals the second, and with only the newest
-decision carried the two alternate forever — the caller is re-offered a decision it has already made and that has
-already had its effect. Measured: twelve applications to the cap and no settlement before, two applications and a
-settled merge after (`evidence/after-independent/recovery-progress-after.json` against `recovery-progress-before.json`).
-
-**A sequence of one-row decisions is not a policy, and the model is where that could have gone wrong.** Every member
-still names its own row, every conflict no member names is still refused exactly as it was, and there is still no
-field meaning "prefer my side" — the shape simply lets a caller restate the decisions it has already made instead of
-the merge forgetting them between attempts.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The merge request's authored-decision channel, now a tuple of one-row decisions. | `MergeRequest` | mcp/src/agents_remember/models/knowledge/merge.py:286-325 |
-| The vocabulary and its single admission point, unchanged. | `AuthoredReconciliation`; `expressible_decisions` | mcp/src/agents_remember/models/knowledge/merge.py:182-218; mcp/src/agents_remember/models/knowledge/merge.py:148-179 |
-
-## 260915-KS-L44 The Two Realization Row Models Declare The Location They Were Already Being Handed
-
-**This route's impact is two row models in `models/knowledge/view.py`, and the fields are declarations of a fact the pipeline already carried.** `FamilyRow` (`:822-859`) and `InvariantRow` (`:782-819`) now declare `role: RealizationRole | None`, `path: str | None` (bounded by `REFERENCE_MAX_LENGTH`) and `locator: SourceLocator | None`. A realization row of either view reported the claim id, the invariant revision id and the authored rationale and **no place at all**, so a caller could see that a realization existed without seeing where it is; the recorded location was already sitting on the candidate the projection had been handed, which is why the repair is three field assignments in the renderer rather than a derivation, and why nothing in this module had to change its meaning.
-
-**Both models are one shape behind more than one row kind, and that decides the optionality — and the fields are not added where nothing can populate them.** `InvariantRow` carries the invariant view's `fact_kind="statement"` rows as well as its `realization` rows, so the three fields are optional and appear on statement rows as explicit `null`s, the same convention this module already had for `SourceContextRow.anchor_state` (produced by `knowledge_read_payload`'s `model_dump(mode="json")` with no `exclude_none`). `ReviewMatrixRow` and `CurationQueueRow` deliberately do **not** gain the fields: no candidate feeding either view sets a `path` or a `locator`, so there is no recorded location for them to drop and an added field would be a field nothing populates. `ViewSourceRow` is the reader port's own DTO rather than a rendered row and is outside this change.
-
-## Update History
-- 2026-09-21T12:40+02:00 — 260915-KS-L44 curator (uncommitted CYCLE-03 change set on `ar/260915-ks-l44-ar`, code base `2a96eb88`): **route body updated.** The section above is appended at the end of this route's change narrative, so no existing heading moved. It records this route's own impact — the three optional location fields on `FamilyRow` and `InvariantRow`, why they are optional (one model behind two row kinds, with explicit `null` on the rows that have no location), what deliberately did **not** gain them (`ReviewMatrixRow` and `CurationQueueRow`, because no candidate feeding them sets a `path` or a `locator`), and that `ViewSourceRow` is a port DTO rather than a rendered row. Three off-route cards that cite this file by line were re-read and repointed as this leaf's own fall-out; that repair is recorded on the file's own card. No verification stamp was advanced; the candidate is uncommitted and the governed closeout owns the real stamp.
-
-## 260915-KS-L47 The Integrity Response's No-Verdict Position Is A Declared Field The Wire Omits
-
-`models/tools/knowledge_responses.py`'s `KnowledgeIntegrityCheckResponse` keeps `compatible` declared
-and always `None`, and its docstring now says both halves: the field is declared so the response
-vocabulary carries the no-verdict position `Doc13:186` requires, and the shared response choke point
-(`models/tools/tool_response.py`'s `finalize_tool_response`, over `ResponseModel.to_payload`) dumps with
-`exclude_none=True`, so a caller sees the key **absent** rather than present-and-null. Absence means this
-build reached no verdict, never that a verdict was suppressed; a producer that computed one would have
-to put the key back. The `models/tools/knowledge_responses.py` sidecar states the same rule, and
-`mcp/tests/test_knowledge_views_and_projection.py`'s two assertions were reconciled to it on the
-developer's ruling that the incoming choke point wins: the stale `compatible is None` assertion is gone
-and the no-run branch asserts `"selectedRunId" not in unnamed` rather than `is None`. **No other model
-this route owns changed**, and no field was added or removed.
-
-## 260921-ICR-L19 The Read-Files Response Carries The Repository's Published Intent
-
-**This route's impact is one optional field on one strict response model (ICR-R19@v1).**
-`ReadArFilesResponse` now declares `published_intent: dict[str, Any] | None = None` beside the
-`repository_overview` / `route_overviews` front-door dicts. The application entry point populates it on
-every call — its own `state` (`recorded` / `not-recorded` / `unusable`) is the answer, so `None` is the
-field's declared default rather than a state the route produces.
-
-**The shape is carried, not declared here, and that is the route boundary.** The selection contract — which
-dataset is read, which seeds are used, which absences are named — belongs to
-`application/published_intent.py`, so this module carries the block as a dict rather than re-declaring a
-second contract for the same read. That is the same direction the front-door dicts already follow, and it
-keeps the wire model from drifting into a duplicate vocabulary. `extra="forbid"` and the strict envelope
-are unchanged, and no other model this route owns changed.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The new field, on the strict response model that declares it.** | `ReadArFilesResponse`; `published_intent` | mcp/src/agents_remember/models/read_files.py:50-74; mcp/src/agents_remember/models/read_files.py:74-74 |
-| **The owning module that decides the shape this model declines to re-declare.** | `published_intent_block` | mcp/src/agents_remember/application/published_intent.py:271-286 |
-| The strict envelope base the field joined. | `ToolResponse` | mcp/src/agents_remember/models/base.py:91-94 |
-| The registry entry for the tool whose payload carries the field; unchanged by this leaf. | `read_ar_files` | mcp/src/agents_remember/models/tools/tool_registry.py:167-167 |
-
-
-## 260921-ICR-L2 The Review Wire Shape Carries An Inventory And An Absent Comparison
-
-**Route meaning changed: the review payload can now describe a review that compared nothing, and it
-carries the complete source change inventory either way.** `models/knowledge/review.py` gained
-`ReviewChangedFile` (path, status, content kind, mode-change flag and a reason required exactly when the
-content is unknown), `ReviewUnrepresentablePath` (the exact bytes of a name this surface cannot carry as
-text) and `ReviewSourceInventory` (`state` measured/unavailable, the entries, a `listed_total` checked
-against the list it describes, a `detail`, the reproducing `command`, both tree ids and the
-unrepresentable remainder) — and `ReviewSourcePane.inventory` is now required and first.
-
-Three optionalities and two states carry the rest of the change. `ReviewSurfaceRequest.selector` is
-optional, and its **absence is the task context** rather than an empty subject. `ComparisonIdentity`
-gained `knowledge_compared` and its three knowledge-half digests became optional, held all-or-nothing by
-a validator. `ReviewKnowledgePane` gained `selection_state` (`subject_selected`/`task_context`) with a
-reason required in exactly the second state, and `ReviewStaleness.state` gained `not_compared`.
-`KnowledgeReviewPayload.comparison` became optional behind a validator that ties its absence to
-`not_compared` **and** to the knowledge pane's answer, so a payload cannot disagree with itself about
-which question it answered. `KNOWLEDGE_REVIEW_SURFACE_VERSION` stays `knowledge-review-surface/1`, and
-the ruling is recorded beside the constant: `/1` admits both shapes, the change is additive for a client
-that already requests the subject payload, and no version validator exists in this package to enforce a
-bump.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The inventory's own model, with the count checked against the list and the rule that an unrepresentable path makes the inventory measured and partial.** | `ReviewSourceInventory`; `ReviewChangedFile`; `ReviewUnrepresentablePath` | mcp/src/agents_remember/models/knowledge/review.py:764-880; mcp/src/agents_remember/models/knowledge/review.py:70-70; mcp/src/agents_remember/models/knowledge/review.py:102-102 |
-| **The pane that now requires the inventory as its first fact, and carries the measured partition beside it.** | `ReviewSourcePane` | mcp/src/agents_remember/models/knowledge/review.py:883-921 |
-| **The request whose selector may be absent, and the absence as a meaning rather than a default.** | `ReviewSurfaceRequest` | mcp/src/agents_remember/models/knowledge/review.py:242-286 |
-| **The comparison identity that states whether it compared knowledge, with the selector and both snapshot digests all-or-nothing.** | `ComparisonIdentity`; `_require_the_knowledge_half_to_be_all_or_nothing` |mcp/src/agents_remember/models/knowledge/review.py:345-383; mcp/src/agents_remember/models/knowledge/review.py:362-400|
-| **The knowledge pane's selection state and its required reason, and the payload validator that holds it in agreement with the identity and the staleness state.** | `ReviewKnowledgePane`; `_require_the_selection_state_to_state_itself`; `KnowledgeReviewPayload`; `_require_the_identity_and_staleness_to_agree` | mcp/src/agents_remember/models/knowledge/review.py:1066-1082; mcp/src/agents_remember/models/knowledge/review.py:991-1030; mcp/src/agents_remember/models/knowledge/review.py:680-756; mcp/src/agents_remember/models/knowledge/review.py:712-788; mcp/src/agents_remember/models/knowledge/review.py:999-1107 |
-| **The third staleness state, which is the task context and not a flavour of current.** | `ReviewStaleness` |mcp/src/agents_remember/models/knowledge/review_staleness.py:51-82|
-| **The surface version that stays `/1`, with the reasoning recorded beside the constant.** | `KNOWLEDGE_REVIEW_SURFACE_VERSION` |mcp/src/agents_remember/models/knowledge/review.py:130-139|
-| The cases that measure the new states: a measured empty inventory beside an untouched comparison, and the structural rule that an inventory which could not carry a name is partial by construction. | `test_a_knowledge_only_change_leaves_an_openable_review_with_a_measured_empty_inventory`; `test_an_inventory_that_could_not_carry_a_name_is_partial_by_construction` | mcp/tests/test_knowledge_review_surface.py:940-1015; mcp/tests/test_knowledge_review_surface.py:1018-1056 |
-
-
-## 260921-ICR-L4 The Comparison Vocabulary Gains The Attribution Partition, And The Pane Carries It
-
-**Route meaning changed: the attribution half of a review is one accounting, not two lists.**
-`models/knowledge/diff.py` (634 → 892 lines) gained the partition vocabulary for ICR-R04@v1:
-`ATTRIBUTION_GRANULARITY` (`changed_path`, the one granularity every attribution count is stated
-at), `AttributionBucket` (three), `AttributionLink` (four — the two `outside` members are different
-facts), `AttributionSideState` (three), `AttributionSide`, `ChangedPathAttribution` and
-`SourceAttribution` with the disjoint-plus-exhaustive validator. `DiffOmissionReason` gained
-`attribution_not_determined` and `DiffLimitation` gained `unknown_attribution_changed_paths` — two
-limits, not one: the first says no valid registered attribution was established, the second says
-that conclusion could not be reached at all. `models/knowledge/review.py` (836 → 857 lines) declares
-the six persistent counts once as `ReviewRemainingCountName` and carries the partition on the pane
-(`ReviewSourcePane.attribution` plus `unknown_attribution_changed_paths`), so a path appears in
-exactly one of the three lists. The wire change is purely additive, so existing dashboard fixtures
-still validate.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The one granularity, the three buckets, the four link labels and the three side states.** | `ATTRIBUTION_GRANULARITY`; `AttributionBucket`; `AttributionLink`; `AttributionSideState` | mcp/src/agents_remember/models/knowledge/diff.py:435-435; mcp/src/agents_remember/models/knowledge/diff.py:437-437; mcp/src/agents_remember/models/knowledge/diff.py:444-454; mcp/src/agents_remember/models/knowledge/diff.py:456-456 |
-| **The partition value with its validator and its three bucket accessors, and one side's contribution beside it.** | `SourceAttribution`; `ChangedPathAttribution`; `AttributionSide` | mcp/src/agents_remember/models/knowledge/diff.py:509-628; mcp/src/agents_remember/models/knowledge/diff.py:473-507; mcp/src/agents_remember/models/knowledge/diff.py:459-471 |
-| **The two new closed-vocabulary members, and the model's own second producer of the undetermined limit.** | `DiffOmissionReason`; `DiffLimitation`; `_attribution_not_measured` | mcp/src/agents_remember/models/knowledge/diff.py:154-168; mcp/src/agents_remember/models/knowledge/diff.py:170-182; mcp/src/agents_remember/models/knowledge/diff.py:821-829 |
-| **The six counts declared once, and the pane that carries the partition.** | `ReviewRemainingCountName`; `ReviewSourcePane` | mcp/src/agents_remember/models/knowledge/review.py:611-915; mcp/src/agents_remember/models/knowledge/review.py:921-953; mcp/src/agents_remember/models/knowledge/review.py:96-96 |
-| **The nine partition cases, and the unavailable-partition honesty case beside the partial-denominator case.** | "test_the_measured_changes_are_partitioned_once_and_the_buckets_are_disjoint_and_exhaustive"; "test_an_unavailable_partition_states_no_total_and_never_a_measured_zero"; "test_a_partial_observation_states_the_scope_of_its_own_denominator" | mcp/tests/test_knowledge_diff_attribution.py:64-142; mcp/tests/test_knowledge_diff_attribution.py:529-556; mcp/tests/test_knowledge_diff_attribution.py:558-626 |
-
-
-## Update History
-- 2026-09-22T09:20:00+02:00 — 260921-ICR-L4 curator (gate repair pass on the merged line): **enforced rows re-cited and validator duplicates collapsed** (comparison rows to merged `diff.py`, validator rows to merged declarations, surface-test rows to merged extents). Wording unchanged; no stamp advanced.
-- 2026-09-22T09:15:00+02:00 — 260921-ICR-L4 curator (sync-merge resolution of the parked candidate against the landed line, merged base code `d21bc8a6` / memory `75bb4d65`): **additive union with landed `260921-ICR-L3`.** Both sides' history kept; L3's refusal-code section and rows stand beside this leaf's partition section, with the L2 rows both sides carried re-derived once against the merged 873-line `review.py`. Header names the merged base on this leaf's candidate row. No verification stamp was advanced.
-- 2026-09-22T08:30:00+02:00 — 260921-ICR-L4 curator (uncommitted change set on `ar/260921-icr-l4`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **route body updated (new section above).** The comparison vocabulary gained the attribution partition (`models/knowledge/diff.py` 634 → 892) and the review wire gained the six named counts with the carried partition (`models/knowledge/review.py` 836 → 857). The L2 review-wire rows into `review.py` and the surface-test rows were re-derived against this candidate, and the older comparison rows this leaf's growth moved (expansion, counts, cursor) were re-pointed at their constructs' current extents. Two file-level cards updated in the same pass. No verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the stamp.
-- 2026-09-21T22:40+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **route body updated, and every row this document carries into `models/knowledge/review.py` re-derived against the candidate.** The new section is inserted at the top of this route's change narrative and records this leaf's whole impact here: `ReviewRefusalCode` gained `source_content_unresolved` — the seventh member, inserted between `comparison_refused` and `review_adapter_unavailable` — as the code the new entry-content route answers with when the generation a listing published no longer resolves to the two code objects it bound; the section states why that is a different fact from an unwired port and from an empty rendering, and why the addition is additive in the strict sense (`400` for an unrecognised code is a property of the transport, so `KNOWLEDGE_REVIEW_SURFACE_VERSION` stays `/1`). **Citation accounting:** sixteen rows were re-read and re-derived from each construct's real extent rather than shifted by a delta, because this leaf's one-line insertion moved every construct below the refusal union and several earlier ranges had already drifted: `_require_text_exactly_when_present` `143` → `144`; `_require_the_basis_to_travel` `335` → `336`; `_require_the_submission_state_to_follow_staleness` `739` → `740`; `_require_a_stated_state` `408` → `409`; `_require_one_outcome` `800-826` → `801-806` (the comparison result's own validator, not the entry result's identically named one at 827); `ReviewSubjectKind` `110` → `111`; `SELECTOR_KINDS` `serving/review.py:60-63` → `79-79`; `ReviewEntry` `192-208` → `193-209`; `ReviewEntryListResult` `808-836` → `809-837`; `subject_unresolved` `98-109` → `98-106`; `ReviewSurfaceRequest` `156-175` → `157-176`; `ComparisonIdentity` `211-249` → `212-250` with its validator's own line added; `ReviewSourcePane` `615-632` → `616-633`; `ReviewStaleness` `666-691` → `667-692`; `REVIEW_PANE_NAMES` `87-91` → `87-87`. Three ranges that spanned most of the file and named nothing in particular (`64-625`, `50-625` on the inventory row, `45-796` on the knowledge-pane row) were replaced with the real per-construct extents (`497-527`, `530-549`, `552-613`; `440-489`, `712-773`), and the two validators that row names but did not cite were given their own lines (`483-483`, `758-758`). One row was added for the new refusal code. No claim wording was changed except where the wording itself counted the union, and no verification stamp was advanced — the candidate is uncommitted and closeout owns the real stamp. **Stamp accounting:** the two verification rows now name the **production line this card was read against** — `d80a0513…`, the master line at this leaf's base, committed `2026-09-21T19:51:20+02:00` — rather than the older commit they carried before, because this card's body was read against that line and this leaf's uncommitted change set on top of it; they do not claim that a commit contains this leaf's bytes, and the governed closeout owns the real stamp once the code commit exists.
-- 2026-09-21T15:43:00+02:00 — 260921-ICR-L2 curator, **the second sync's memory-side conflict in this document resolved as a union.** Kept from the master line: L19's read-files section in full — the one optional `published_intent` field on `ReadArFilesResponse`, the boundary that its shape stays owned by `application/published_intent.py` and is carried here rather than re-declared, and its four reference rows — plus its history entry. Kept from this leaf: the L2 section on the review wire shape (the inventory models, the optional request selector, `knowledge_compared`, the task-context selection state and the `/1` ruling) with its reference rows and history entry. The two sections cite disjoint files, so no row needed re-pointing and **no claim needed correcting**: L19's rows measure `models/read_files.py` and the owner module, both untouched by this leaf, and this leaf's rows measure `models/knowledge/review.py`, untouched by L19. No claim was dropped and none was invented; no verification stamp was advanced.
-- 2026-09-21T15:14+02:00 — 260921-ICR-L19 curator (uncommitted change set on `ar/260921-icr-l19`, code base `0fca5c69`): **route body updated.** The section above is appended at the end of this route's change narrative, so no existing heading moved. It records this route's own impact for the leaf: the one optional `published_intent` field on `ReadArFilesResponse`, the boundary that its shape is owned by `application/published_intent.py` and carried here rather than re-declared (the same direction the front-door dicts already follow), that the field is populated on every call so `None` is only the declared default, and that the strict envelope, the `extra="forbid"` rule and every other model on this route are unchanged. The field's own card and the application route's section carry the behaviour; this section carries only the contract's own fact. No verification stamp was advanced; the candidate is uncommitted and the governed closeout owns the real stamp. No commit was made.
-- 2026-09-21T14:59:00+02:00 — 260921-ICR-L2 curator (uncommitted change set on `ar/260921-icr-l2`, code base `702714fc`): **route body updated.** This route's review models gained the inventory (`ReviewSourceInventory`, `ReviewChangedFile`, `ReviewUnrepresentablePath`, `ReviewSourcePane.inventory`), the task-context states (`not_compared`, `selection_state`/`selection_detail`), an optional comparison identity with `knowledge_compared` and its all-or-nothing digest rule, and an optional request selector; the surface-version constant stays `/1` with the ruling recorded beside it. The section is appended at the end of this route's narrative. Nine reference rows of this document that cite `models/knowledge/review.py` were re-derived against the candidate in the same pass, because this leaf moved every line below the pane-name constants. **No verification stamp was advanced** — the candidate is uncommitted and closeout owns the real stamp.
-
-## 260921-ICR-L10 The Published Page Vocabulary, And The Constructor That Refuses A Remainder Without A Cursor
-
-`260921-ICR-L10` (`ICR-R10@v1`) adds the review surface's page vocabulary to the review models.
-`ReviewCollectionPage` publishes `collection`, `state`, `total`, `returned`, `remaining`, the owner's
-opaque `continuation`, the active `scope`, `continued_from`, the reset refusal and `total_basis`;
-`ReviewPagedCollection` names the two bounded collections once; `MAXIMUM_REVIEW_PAGE_SIZE` and
-`REVIEW_PAGE_RESET_NEXT_ACTION` carry the surface's own bound and its new-generation action; and the
-closed refusal-code union gained `comparison_page_reset` and `comparison_page_unreadable`, which are
-different facts and are told apart by the owner's decoder rather than by their text.
-
-**The two properties a later reader must not relax.** First, a page with a remainder cannot be
-*constructed* without its cursor: the page value's own validator refuses `(remaining > 0) != (continuation
-is not None)`, so the shape that produced "remaining=100 with no way to inspect them" is unrepresentable
-rather than merely avoided. Second, `total_basis` says what `total` counts — `selection` for the
-comparison, whose total is the whole selection on every page with `returned` cumulative over the walk,
-and `walk` for the view, which measures its remainder from where the walk stands — because one rendered
-sentence carrying two meanings is how `total` came to mean two different numbers.
-
-`ReviewSurfaceRequest` gained `page_of`, `continuation` and `page_size`, and `KnowledgeReviewPayload`
-gained `page` and `page_refusal`. The refusal is a **separate field** rather than an empty page: a page
-value needs the owner's own counts and a refused read has none, so a page of invented zeros would be a
-measured-zero lie about a read that did not happen.
-
-## Update History
-- 2026-09-23T00:20:00+02:00 — 260921-ICR-L10 curator (candidate `ar/260921-icr-l10`, uncommitted; base `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`): **route body updated.** **the published page vocabulary, and the constructor that refuses a remainder without a cursor.** The review models gained `ReviewCollectionPage` (with `total_basis` and the constructor check that makes `remaining>0` without a cursor unrepresentable), `ReviewPagedCollection`, `MAXIMUM_REVIEW_PAGE_SIZE`, `REVIEW_PAGE_RESET_NEXT_ACTION`, the two page refusal codes, `ReviewSurfaceRequest.page_of/continuation/page_size`, and the payload's `page` and `page_refusal`. Existing rows that cited `models/knowledge/review.py` were re-derived against this candidate, because this leaf moved them. No verification stamp was advanced: nothing in this leaf is committed, so the merge/commit stamp is closeout's.
-## 260921-ICR-L26 The Applicability Vocabulary, And Five Display Models That Say Why
-
-`260921-ICR-L26` (`ICR-R26@v1`, subject and comparison isolation) declares the attribution half's wire
-vocabulary in a **new sibling module**, `models/knowledge/review_applicability.py` (222 L), beside the
-other payload vocabularies, and re-exports it from `models/knowledge/review.py` so the names a reader
-looks for stay where they were. `models/knowledge/review.py` is 1137 → 1174 lines.
-
-**The vocabulary is an enforcement, not a container.** `ReviewApplicabilityClass` is the five supplied
-collections spelled as the record-class vocabulary **minus its one measurement channel**, with an
-import-time assertion proving the equality against `ReviewRecordClassName` so the two spellings cannot
-drift. `ReviewDisplayedApplicability` carries a record's own recorded subject and the exact references
-the treatment was decided from — `references` is required for **every** state, because a label that
-names no recorded reference would be the surface's own opinion rather than a statement about the record
-— and its validator refuses a `direct` or `historical` claim that names no subject, which is the F09
-shape made unrepresentable rather than merely fixed. `ReviewContextRecord` is the packet's "related
-family/closure context" clause as a value: true subject, the recorded relationship that reached it,
-author/role and references, and **no** judgment content. `ReviewApplicabilitySummary` counts one
-collection six ways and refuses a partition that does not account for every supplied record exactly
-once, because a count that silently loses a record is how filtering becomes erasure. There is
-deliberately no field for a similarity, a confidence, a score or a nearest match.
-
-**Five display models gained an optional `applicability`** — `ReviewAuthoredEffect`, `ReviewSignal`,
-`ReviewAssessmentDisplay`, `ReviewEvidenceLink` and `ReviewObservation` — and both panes gained
-`context` (the labelled context rows) and `applicability` (the six-way counts), so the two panes that
-display the same assessments cannot disagree about which of them may be displayed. Every addition is
-optional and additive: a payload published before these labels existed still validates, and an absent
-label means "this body states no treatment", never "this record is unrelated".
-
-## Update History
-- 2026-09-23T02:45:00+02:00 — 260921-ICR-L26 curator (candidate `ar/260921-icr-l26`, uncommitted; production line at this leaf's base `2edad477bcd9127a90e4618d345ce34ef7e6a6d9`, confirmed from the enclosure contract): **route body updated for the applicability vocabulary (`ICR-R26@v1`).** The section above records the new vocabulary module, the three models and what each refuses, the five display models that gained the optional label, the two pane collections, and the additive-compatibility rule. **Citation accounting:** the rows on this overview that cited `models/knowledge/review.py` by line were re-derived against this candidate (`ReviewAuthoredEffect`/`ReviewSignal` `483-505`/`508-524`, `ReviewAssessmentDisplay` `527-566`, `ReviewEvidenceLink`/`ReviewObservation` `569-580`/`583-601`, `ReviewKnowledgePane` `680-756`, `ReviewEvidencePane` `918-958`), because this leaf moved them. **Stamp accounting:** no verification stamp was advanced — the header already names the leaf's base, and nothing in this leaf is committed, so the governed closeout owns the real stamp.
-## 260921-ICR-L12 The Review Request Names Which Record It Is Addressed To
-
-`260921-ICR-L12` (`ICR-R12@v1`) adds **one literal and one optional field** to this route's review
-vocabulary: `ReviewHistoryRef = Literal["recorded"]` and `ReviewSurfaceRequest.history`. The single
-value is the whole point — the surface addresses exactly one historical record, the leaf's own
-published comparison generation, so there is no way to ask for a generation that is not this leaf's —
-and the field's absence is the live review every caller already asks for.
-
-**The vocabulary still defines no record kind.** The field names *which* record a read is addressed to
-and carries no content of its own: the comparison, its panes, its channels and its refusals are all
-rendered from records other owners store, and a historical read renders the generation's own recorded
-content under exactly the same model shapes a live read uses. `models/knowledge/review.py` is 1189
-lines after the addition, still under its 1200-line rail, and no limit was widened to admit it.
-
-**A closed client vocabulary stays closed.** An absent field is the live review, so a client written
-before this change asks for exactly what it asked for before; and an unknown spelling never reaches the
-model at all — the transport refuses it in its own 400 vocabulary rather than letting the model's own
-bound raise, which is why the request model's literal and the route's admitted value have one owner.
-
-## Update History
-- 2026-09-23T04:31:21+02:00 — 260921-ICR-L12 curator (candidate `ar/260921-icr-l12`, uncommitted; production line at this leaf's base `870701b43039cd205a8c98e418382729510c3de3`, confirmed from the enclosure contract): **route body updated for the review's record selector (ICR-R12@v1).** The section above records the
-one literal and one optional field this leaf added, why the value is deliberately single, and that the
-vocabulary still defines no record kind; the module is 1189 lines, under its rail, with no limit
-widened. **Citation accounting:** every row on this overview that cited `models/knowledge/review.py` by
-line was re-derived against this candidate. **Stamp accounting:** no verification stamp was advanced —
-the header already names this leaf's base as the production line the reading was taken against, and
-nothing in this leaf is committed, so the governed closeout owns the real stamp.
-
-## 260921-ICR-L17 The Review Request Names The Comparison A Refresh Replaces
-
-`260921-ICR-L17` (`ICR-R17@v1`) changes one model on this route:
-`ReviewSurfaceRequest.previous_binding_digest` is a new **optional, sha256-shaped** field naming the
-comparison the caller was already looking at when the read replaces that display.
-
-Three facts a reader of this route should carry:
-
-- **it is the *previous* identity, never a substitute for the current one** — it selects no dataset,
-  resolves no candidate and is never rendered as the comparison; the composition only ever compares it
-  against the comparison it rendered;
-- **its absence is a state, not a default to fill in** — a read that carries none replaces nothing, which
-  is `current` by construction;
-- **its `pattern` is the digest's own published shape**, so a value that names no generation this surface
-  could have published cannot be asserted as a previous input, and the route refuses a malformed spelling
-  in its own vocabulary rather than raising out of the model.
-
-
-## Update History
-- 2026-09-23T06:50:00+02:00 — 260921-ICR-L17 curator (candidate `ar/260921-icr-l17`, uncommitted; production line at this leaf's base `c422dc00273d4ae7a5d8c9c8db97365b8c85d640`, confirmed from the enclosure contract): **the review request names the comparison a refresh replaces (`ICR-R17@v1`).** `ReviewSurfaceRequest.previous_binding_digest` is a new optional field with the digest's own published pattern; it is the previous identity only, its absence means the read replaces nothing, and the route refuses a malformed spelling rather than raising out of the model. **Citation accounting:** the rows this nine-line insertion moved were re-derived from each construct's own declaration (`KnowledgeReviewResult` `:1119`, `ReviewAuthoredEffect` `:507`, `ReviewObservation` `:607`, `ReviewRemainingCount` `:645`, `ReviewSignal` `:532`, `_require_the_totals_to_describe_the_catalogue` `:1178`, `revision_selection` `:731`). **Stamp accounting:** the verification pair names this leaf's base; closeout owns the stamp.
-
-## 260921-ICR-L22 The Rebinding Record's Vocabulary, And Three Display Models For The 1200-Line Rail
-
-`260921-ICR-L22` (`ICR-R22@v1`, managed Git recovery rebinding) adds **one** module to this route and
-moves two existing display models out of `models/knowledge/review.py` — one cohesive responsibility
-relocated whole, so the payload module stays under the repository's hard rail while every name it
-published keeps its home.
-
-- `models/knowledge/review_sync_rebinding.py` (**390 L**) — **the typed record that binds one comparison
-  generation to the source/knowledge pair a managed sync resolved.** `ReviewSyncRebinding` (`:193`) carries
-  the generation it judges (id, index, binding digest and the digest of the manifest bytes that carried
-  them), the reviewed source side beside the resolved one (the captured tree *and* the work-branch head the
-  sync left, because a tree id alone does not say which commit the leaf now holds), each side's
-  `SyncChannelMatch` (`:88` — `matches-reviewed-input`, `differs-from-reviewed-input`, `unmeasured`), the
-  knowledge observation (`SyncKnowledgeObservation`, `:164`) and the reviewed knowledge state
-  (`retained` / `not-recorded` / `not-selected`), plus its own self-consistency validator (`:242`), which
-  re-derives every channel's verdict from the identities the record carries and refuses a record no owner
-  could have produced — a forged `current` beside a differing tree, or a dataset identity for a generation
-  that retained none, is refused at construction rather than repaired at read time.
-- **The verdict vocabulary, and why it is three-valued.** `ReviewSyncRebindingVerdict` (`:97`) is
-  `current` / `moved` / `unmeasured`. `current` is the **only** value that claims the generation still
-  describes the resolved pair, so it requires a *measured* match on every channel the generation actually
-  retained: a comparison the review never made must never read as agreement, and a generation that
-  retained no knowledge operand may still be `current` on the code channel alone. `moved` is a measured
-  difference on either channel. `unmeasured` is neither and is not a softer `moved`: the declared
-  publication location held nothing this code could read, so the pair's knowledge half is simply unknown —
-  and the validator refuses that value beside a location that did hold a readable dataset.
-  `review_sync_verdict` (`:142`) derives the value, while `code_channel_match` (`:107`) and
-  `knowledge_channel_match` (`:120`) are the pure comparisons that derivation and the validator share. The
-  record's version is a literal of this vocabulary's own (`ar-review-sync-rebinding/v1`, `:76-78`) and its
-  selection rule (`latest-published-generation`, `:82`) is spelled here rather than read from the producing
-  owner at run time, so two records from different layouts are distinguishable from the records themselves.
-- **The 1200-line rail's extraction, and what did and did not change.** `models/knowledge/review_staleness.py`
-  (**204 L**) is new and owns the surface's own state about its inputs: `ReviewStaleness` (`:51`) and
-  `ReviewSubmission` (`:190`) moved out of `models/knowledge/review.py` **verbatim** — all 35 of their
-  non-blank lines appear byte-for-byte in the new module, so one implementation of each rule still exists
-  and no behaviour travelled with the text — beside the new `ReviewSyncMovement` (`:85`, validator `:132`)
-  and its four-valued `ReviewSyncMovementState` (`:48`: `current` / `stale` / `not-measured` /
-  `unavailable`, where only `current` claims agreement and the two absences carry the reason behind them).
-  The reason is the rail and nothing else: `review.py` was **1198 lines** against the 1200-line hard rail,
-  so the movement vocabulary could not be added there without making it a new offender.
-  `models/knowledge/review.py` is therefore **1198 → 1164 lines**: it re-exports all three names
-  (`:61-65`), its `__all__` gained exactly `ReviewSyncMovement` (`:121`), and its payload
-  `KnowledgeReviewPayload` gained one optional field, `sync_movement: ReviewSyncMovement | None = None`
-  (`:1026`) — `None` meaning "no managed sync has reported", which is deliberately a different fact from a
-  reported agreement, and a stale movement is folded into `staleness` beside it so a review whose inputs a
-  sync moved can never read as current.
-
-## Update History
-- 2026-09-23T20:30:00+02:00 — 260921-ICR-L23 curator (memory worktree only; no code changed, no commits; leaf base `473ad8242bb4c22bdabed5d5253767350381eb3e` plus the working-tree delta): **six route-level reference rows were re-anchored, and the route's governed sources gained the boundary vocabulary.** `models/knowledge/review.py` publishes `external_git_movement` on the payload and re-exports the name; `models/knowledge/review_staleness.py` adds the fourth staleness state; `models/knowledge/review_external_movement.py` is this leaf's new model module carrying the vocabulary, the support matrix and the states. The repaired rows are `ReviewRecordChannel` (`49-50`, `970`), `ReviewSubjectPresence` (`204`), `revision_selection` (`739`), `_require_a_compared_subject_to_record_its_selection` (`777-788`), `subject_unresolved` (`155`), `source_content_unresolved` (`159`) and `_require_the_selection_state_to_state_itself` (`768-775`). **No verification stamp was advanced**: the candidate is uncommitted, so no commit holds the content a stamp would claim to have verified, and the governed closeout owns the real code and memory commits.
-- 2026-09-23T17:15:00+02:00 — 260921-ICR-L22 curator (uncommitted change set on `ar/260921-icr-l22`, base `e605822eb3bf83bf63a45963c5f51d5fc28859ee):` **route body updated for the rebinding vocabulary and the display models' extraction (`ICR-R22@v1`).** The section above records the new record module and its self-consistency validator, the three-valued verdict and why `unmeasured` is not a softer `moved`, the verbatim move of `ReviewStaleness` and `ReviewSubmission` into `review_staleness.py` with the rail as the only reason, and the payload's one new optional field at `:1026` on a module that is 1198 → 1164 lines. **Citation accounting:** every range in the section above was measured on this candidate; rows already on this overview that cite `models/knowledge/review.py` by line were **not** touched, because the curator repairs citation ranges separately, per row — this leaf moved that module's lines by 34 (a net reduction, so those rows now read *higher* than the lines they name), and the two moved classes' own ranges moved with them. **Stamp accounting:** no verification stamp was advanced — the header's verification pair names this leaf's recorded base `e605822e` because nothing in this leaf is committed, and the governed closeout owns the real stamp.
-
-## 260921-ICR-L31 The Family-Context Vocabulary And The Third Paged Collection
-
-**This route gained one value module and two additions to an existing one (`ICR-R31@v1`).**
-``mcp/src/agents_remember/models/knowledge/review_family_context.py`` is the vocabulary for the
-comparison-bound family context: one family revision's authored guarantee with its provenance and seal;
-one membership row carrying its exact member revision and the other family revisions that revision is
-recorded in; the read owner's own roster page with its counts, its completeness and the cursor that
-reaches the rest; one snapshot's side context; one family's entry with its selection and its candidate
-guarantees; and the context itself with its measured counts and its references into the evidence and
-assessment owners' own collections. Four side states are four distinct facts — ``recorded``,
-``not_recorded``, ``not_resolved``, ``unreadable`` — and none of them is an empty roster;
-``no_family_recorded`` is a measured zero of the family population and its validator refuses it any
-entries.
-
-``models/knowledge/review.py`` changed twice in the same direction: ``ReviewPagedCollection`` and
-``REVIEW_PAGED_COLLECTIONS`` now name a third bounded collection (``family_members``), and
-``KnowledgeReviewPayload`` carries the required ``family_context`` field so an absent field can never be
-read as a measured zero.
-
-**The reopen corrected one reading of the roster page, and it is a *reading* rather than a new field.**
-``complete`` on ``ReviewFamilyRosterPage`` describes the read **walk and not the page**: a multi-page walk
-completes on its **final** page, and that page carries only its own share of the selection. So a complete
-page is *the roster, whole* exactly when it is also a single page (``state == "first_page"``), and
-``ReviewFamilyRevisionContext``'s validator holds only that case to the revision-wide member count; a
-completed **continued** page is a position in a walk and is accepted, while the same carried rows on a
-walk's first page are still refused as the truncation that guard exists for. Nothing else in this route
-moved: no value gained or lost a field, no ``Literal`` state changed, no signature changed, and
-``complete``'s own meaning — the read owner's own ``enumeration_complete`` — is untouched, because this
-module reads that flag and never writes it. The side context's own class docstring was corrected on these
-bytes to match, because its older sentence still read as though a complete page always carried the whole
-roster.
-
-## Update History
-- 2026-09-24T02:20:00+02:00 — 260921-ICR-L31 curator, **reopened enclosure** (`260921-icr-l31b`, same base `fdf3e4b6cfe73040d35cbfd4d8b93fd55369e499`): **route body updated for the corrected roster-page completion semantics.** The paragraph above records the reopen in this route's governed source: ``complete`` is the walk's flag, so only a complete page that is *also* the walk's first page may be read as the whole roster, and ``ReviewFamilyRevisionContext``'s validator now holds exactly that case to the revision-wide count while accepting a completed continued page — with the truncation refusal intact and no field, state or signature added. The rest of the vocabulary this section records is unchanged, including the four side states, the measured-zero rule and the required ``family_context`` payload field. **No route impact was claimed as absent and no no-route-impact judgment was published** — this is real body content, and it is what answers this route's memory-refresh attestation. **Citation accounting:** the ranges in the section above were re-measured on the candidate, where the page value now spans ``:225-277``, the side context ``:280-356`` and the context itself ``:468-548``. **Stamp accounting: no verification stamp was advanced** — nothing in this leaf is committed, so the header's pair still names the recorded base ``fdf3e4b6``.
-- 2026-09-23T22:20:00+02:00 — 260921-ICR-L31 curator (uncommitted change set on `ar/260921-icr-l31`, base `4c000b11c5243e4a8e77c08e87984fff00c1d94b`): route body updated for the family-context value vocabulary and the third paged collection (`ICR-R31@v1`), including the required ``family_context`` payload field. Citation rows this leaf's insertions moved were re-anchored to the declarations they name. No route impact was claimed as absent.
-
-## 260921-ICR-L47 The Changed-Intent Summary Model
-
-`models/knowledge/` gains [`review_intent_summary.py`](knowledge/review_intent_summary.py.md), the typed
-vocabulary of the task entry's `Intent review +N −N` (`ICR-R24@v3`). `ReviewIntentSummaryResult` is
-`counted`, `partial` or `unavailable` and carries **exactly one** of counts or the owner's refusal, so an
-unread comparison cannot be serialized as a measured `+0 −0`; `ReviewIntentCounts` makes `added`/`removed`
-equal to the sums of their per-kind parts (invariants, joint guarantees) and keeps `realization_only`,
-`membership_only` and `unresolved` outside plus/minus. Like the sibling review models it selects and
-compares nothing; the application owner computes the numbers.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The counts and their sum check. | `ReviewIntentCounts`; `_require_the_totals_to_be_their_parts` | mcp/src/agents_remember/models/knowledge/review_intent_summary.py:55-84 |
-| One outcome per state. | `ReviewIntentSummaryResult`; `_require_one_outcome` | mcp/src/agents_remember/models/knowledge/review_intent_summary.py:87-115 |
-
-## Update History
-- 2026-09-28T17:30:36+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): **route body updated — new section for the changed-intent summary model.** The earlier history-only entry for this leaf was not a body update; this section is. No stamp advanced.
+Preserve the inherited requirement that advertised tools, live registration and response-model ownership agree, including name-to-model assignment rather than mere set equality. `finalize_tool_response` directly indexes the registry, so a missing row is consequential. The present proposal compares source declarations only; `server_info` cannot independently prove roster completeness by repeating the roster itself. Worktree top-level next-tool guidance is validated against the public tuple. The earlier `session_retire` builder account is historical, not a current task-document response route or a reason to widen that tuple.
+
+Owned stable fields belong in strict contracts. Flexibility is justified by intentional upstream/detail ownership, not by avoiding declaration of this package's keys. Optional defaults and omission behavior are part of the wire contract. Single vocabularies, exact identity, explicit unsupported/absent/unmeasured states, bounded resources, and refusal-versus-success distinctions must survive extraction or migration. A frozen value is not proof that storage prevents revision updates. A model's lack of I/O is not evidence that an entire operation lacks authorization, confinement, or recovery checks.
+
+Proofs describe what a test demonstrates, not whether it passed or whether an invariant holds. Currentness uses the named code tree; no-code-tree realized invariants remain unverifiable rather than receiving HEAD. Currentness failure stays visible without refusing the read. Registration absence and selector absence are different questions, neither a no-impact judgment. Partial reads/diffs/indexes and omitted patches must remain explicitly bounded. Authored claims, mechanical observations, judgments, storage acceptance and publication approval are separate responsibilities; no structural success, empty actionability count, matching digest, or valid DTO supplies another owner's semantic verdict.
+
+## Historical And Verification Limits
+
+All original reference identities and excluded metadata remain under parent custody. This body replaces incremental chronology with responsibility and policy; retained old references do not acquire current proof truth. The full supplied card was read in consecutive bounded chunks and its bytes matched the supplied SHA-256. HEAD matched the supplied source commit. This was source inspection only: no tests, product imports, runtime launches, network calls, sync, publication, or edits occurred, and no fresh execution or acceptance verdict is claimed.
+
+The KS canonical-database writer history is retired by MIK-R26, including command batches, label edits, stored-anchor construction, snapshot preparation/publication/disposal, structural dataset merge/reconciliation, portable import/export, route mutation, envelope facets, stored detection, supporting records, authored-effect/change-set composition, registered-scope/family-integrity composition, and generated projection. Its enduring intent remains distinct: resolve and compare exact admitted identity instead of trusting remembered digests; seal context and recheck below bypassable constructors; keep expected-present/expected-absent explicit; never let caller content confer authorship or acceptance; separate logical identity from frozen file identity; distinguish incomplete staging from unconfirmed publication durability; carry explicit discard authorization rather than infer disposability; and report only structural merge facts, never correctness.
+
+Historical merge intent distinguished supplied versus unique resolved bases, complete changed-table/operation coverage, exact engine-attributed rows versus row-less referential conflicts, and non-inferred conflict counts. Retraction depended on arriving insertion rather than the code alone; row-less decisions could not overwrite, and ordered one-row reconciliation sequences retained earlier authored decisions without becoming a side-preference policy. Portable intent required exact source/destination expectation, complete empty-inclusive table coverage, verified identity separate from publication, canonical artifact validation, and no acceptance inferred from transferred accepted state. Removed routes are not resurrected by these reasons.
+
+Historical facet, evidence, effect, detection and pipeline intent separated content from admission provenance, interpretation from verdict, stored designation from latest inference, evidence coverage claims from execution observations, preservation from effect, and grouping/actionability from closeout readiness. It retained exact opaque references, unresolved references as values, closed effect labels with split/merge cardinality, no generated semantic summary, declared scope/policy and per-side relationship provenance, explicit no-record states, and zero-actionable as necessary but insufficient. Detection distinguished both-declared/union-with-probe/trigger-only input sets, required recorded order and limitations, kept unresolved retention separate from empty manifests, and prohibited rewriting original signals on currentness reads. These are inherited semantic intentions of retired surfaces, not claims that their old constructors or producers exist now.
+
+Named limits remain: reference numbered 199's former `candidate.py` extent is explicitly unresolved historical evidence and supplies no current command-union guarantee. External KS-R02, KS-R07, KS-R08 and Doc12/Doc13/Doc14 rulings and requirement packets were not independently inspected here. The old ICR-R24 account that the TypeScript mirror lacked movement fields is historical; present dashboard adoption was not adjudicated. The capsule ten-role digest observations, sixteen pre-existing layer violations, 165-of-213 context failures, 62/73/84-model or tool censuses, nine-to-two strict-model sweep and its dismissals in `notes/reports/260918-TSIP-L4-worker-report.md`, and twelve-versus-two merge recovery attempts are historical candidate-specific observations, not fresh acceptance. Their old reports/receipts were not inspected. The historical wire-vocabulary test module is not fresh exhaustive protection; this proposal did not collect or execute tests. Pre-cutover statements that runtime consumers were absent are historical and must not override current text-format ownership. Old native readiness, hosted-protocol, delivery, landing, quality, memory and whole-build claims likewise supply no new certification.
+
+Legacy final-output receipts and sync rebindings remain readable under their explicit v1 classes. Their original verdicts are retained, but exact reviewed memory-tree evidence was not recorded and therefore cannot establish v2 tree-pair coverage. `worktree_status_wait` and its response are historical; a retained lifecycle wait literal is not a mounted replacement operation. Historical union sizes, source line counts, rail repairs, delivery dates, and fixture hashes describe their old witnesses only.
+
+## Historical Reference Provenance
+
+These retired source accounts preserve earlier intent only. Their former citation numbers are inert, not current source guarantees.
+
+- Historical pre-L57 reference account only; the named supporting-record acquisition/availability/applicability owner is removed, not a current wire guarantee: **The availability vocabulary, its five states and the validator that refuses a favourable default.** (historical reference 4; retired in L57)
+
+- Historical pre-L57 reference account only; the named supporting-record acquisition/availability/applicability owner is removed, not a current wire guarantee: **The owner that resolves every channel, so the vocabulary has a producer and not only a shape.** (historical reference 6; retired in L57)
+
+`knowledge/review_evidence.py`, `knowledge/review_evidence_read.py` and `knowledge/review_frame.py` declare the packet, read-receipt and frame shapes the application owners return: comparison binding and collections, finite limits and measurements, supplemental receipts, claims and coverage, frame manifest and atomic pointer, drafts, reclamation receipts, and the opening, staleness and regeneration answers. Model validation establishes the declared shape and the consistency checks it implements; it observes no execution, truth or acceptance.
+
+**L184.** The role-message answer model gains the reset time a limited recipient's hold reports.
+
+## The one-call setup contracts
+
+`models/user_settings_init.py` declares the settings initializer's answer — its state, path, target, the harness of each role, what the call wrote or preserved, and its refusal fields — and `models/skills.py` was removed with the skill-install response it declared. On the role wire, `RoleStartCall` carries the caller's harness name, `RoleEnvironmentPreparation` declares the first-run report, and `RoleStartResponse` declares the dashboard and chat addresses the start answer emits. `LauncherRole` also admits the taskless setup role `bootstrap`; `system-specialist` normalizes to Investigator. `RoleDispatchRequest` carries `callerHarness` independently of the optional agent/model/effort override; model fields do not establish successful launch or permission authority.
+
+## Citation preview response
+
+`CitationFixResponse` adds optional run status and identity to the existing explicit citation count fields. The envelope distinguishes running/completed/failed background state from the repair result; it does not turn completed computation into clean memory or acceptance.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Evidence
+
+- The packet shapes bind one comparison and refuse an inconsistent collection or coverage count.
+
+- A frame manifest refuses an inconsistent asset digest, an unlisted entrypoint and a non-older parent.
+
+- The tree view's answer.
+
+- One entry on one side, and on both sides.
+
+- A second computation over moved inputs is refused as inputs_changing; a process failure keeps its own code.
+
+- Entry-side symbol and entry memory values retain explicit path and count meanings.
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/models/knowledge/review_trees.py::ReviewTreesResult - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/models/knowledge/review_tree_entries.py::ReviewTreeEntry - the bytes it recorded now occur 7 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/application/review_tree_knowledge.py::_leaf_wide_parts - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/models/knowledge/review_evidence.py::EvidencePacket - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/models/knowledge/review_frame.py::FrameManifest - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Capsule skill references and semantic digest exclude diagnostic output.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- **Retained historical source account — superseded by the current route account:** Capsule skill references and semantic digest exclude diagnostic output.
+
+
+
+
+
+
+
+
+
+- **Retained historical source account — superseded by the current route account:** Historical L111 predecessor account, not the current roster: the composed PUBLIC_TOOLS now declares 44 names and SHAPED_TOOL_BOUNDS carries the final task/landing/role delivery rows including direct_execution_grant at 150 tokens; the earlier 41- and 42-name captions here are historical, not current source counts.
+
+- **Retained historical source account — superseded by the current route account:** Capsule skill references and semantic digest exclude diagnostic output. [309]
+
+- The composed `PUBLIC_TOOLS` declares 44 names, and `SHAPED_TOOL_BOUNDS` carries the final task/landing/role delivery rows, including `direct_execution_grant` at 150 tokens. [315]
+
+- Citation responses carry optional background identity. [338]
+- **The refusal record the new code travels in, and the result that carries it as one of exactly two outcomes.** [2]
+- The surface version that stays `/1`, with the reasoning recorded beside the constant. [3] [252]
+- The anchor observation and its region validator. [8]
+- The member-source reference and its one locator-state rule. [9]
+- **The vocabulary module's own statement of the five rules its shape enforces, and the movement with its four validators.** [10]
+- The closed unions: the kinds, the side states, the transitions, the gap codes and the recorded pairing bases. [11]
+- **The unresolved fact as a value, and the side whose validator refuses a recorded state without a relationship identity.** [12]
+- **The labelled rename inference, whose validator ties a pairing to its state and refuses a similarity word on an unmeasured one.** [13]
+- **The pane row that now carries the association beside its address, and the pane that carries the whole collection.** [14]
+- The display owner that fills the vocabulary, and the traversal that builds the movements. [15]
+- **The presence union on the vocabulary, beside the subject-kind union it parallels.** [16]
+- **The entry value with `presence`, and the entry list with the totals and their agreement validator.** [17]
+- The catalogue owner that fills these values, and the adapter that delegates to it. [18]
+- The current revision-selection value declares the four-state union compared/unresolved/added/removed and validates the respective pair-presence combinations; the earlier five-state account is historical. [19]
+- **The three validators that make a misreading unconstructible.** [20]
+- **The pane field that carries the value, with its one-direction validator.** [21]
+- **The policy that computes the value from authored heads.** [22]
+- The shared route-directory type. [23]
+- The family record's routes use it. [24]
+- The four census schemas registered for dispatch. [25]
+- The latest status entry across every census governs. [26]
+- The range's bytes. [27]
+- The content identity. [28]
+- The onboarding-trace row and its `markers` list. [29]
+- The optional field (beside the later `currentness`, `families` and, since MIK-R05, `routeChain`) and the docstring boundary. [31]
+- The one continuation token and what it binds. [32]
+- The read response's page state and fields, re-read when MIK-R05 added `routeChain`. [33]
+- The integrity response's optional fields. [35]
+- The sync response's worklist summary.  Anchor: "class WorktreeSyncResponse(WorktreeCommandResponse):"; "MIK-R08 rule 8: a completed sync recomputes the leaf's worklist" [36]
+- The optional field and its docstring paragraph. [37]
+- The row kind's docstring with MIK-R30's meaning. [38]
+- The planned forms, the key and the gate predicate. [39]
+- The planned row and its disposition-bound ref. [40]
+- The invariant criteria's meanings, and which two the validator checks. [42]
+- The derivation that identifies an export. [43]
+- The response kinds a token pages, and the public queue cap. [44]
+- The optional `families` field on the read response, followed since MIK-R05 by `routeChain`. [45]
+- At least two alternatives, exactly one chosen. [46]
+- Superseded is derived from later decisions' `supersedes`. [47]
+- The reconsider links and MIK-R14's subject. [48]
+- The ref namespace and the durable record. [49]
+- The subjects, the row subject and the gate predicate. [51]
+- The no_invariant row. [52]
+- The optional field. [54]
+- The docstring paragraph. [55]
+- The range and change states and the excerpt bounds. [56]
+- The tree view's field for the entries. [58]
+- The lane's literals: buckets, hunk classes, range reasons, membership states, gate linkage. [59]
+- The lane reconciles; an unmeasured value carries no totals. [60]
+- The tree view's two new fields, and the summary's. [61]
+- The facts derive the primary and the marks. [62]
+- The entry's facts describe exactly its returned members. [63]
+- The reconsideration row retains its own subject and disposition grammar. [66]
+- Public MCP payload builders validate through the response model registry. [67]
+- The advertised public roster's single definition, in this route's zero-import `tools/` leaf; the adapter re-exports the identical object. [68]
+- The response model that reads the roster to enforce the worktree surface's next move against `PUBLIC_TOOLS`.  Anchor: "# The next-move triple, declared here so the worktree surface's guidance is part of"; "def _require_registered_public_next_tool" [69]
+- The registry maps every modeled builder and the advertised public subset to response models. [70]
+- Contract tests prove public tool coverage and schema generation. [71] [77]
+- The record-landing envelope is declared on this route.  Anchor: "class WorktreeRecordLandingResponse(WorktreeCommandResponse):" [72]
+- The checkpoint-landing envelope is declared on this route.  Anchor: "class WorktreeCheckpointLandingResponse(WorktreeCommandResponse):" [73]
+- The checkpoint registry row sits between the integrate and record-landing rows; the record-landing row follows it. [74]
+- Lifecycle finalizer response model covers the terminal task finalization payload. [79]
+- Next-step computation consumes the resolved worktree contract and retains its landing approval stops, not ambient session state. [81]
+
+- The answer boundary preserves producer guidance, permits the same-call summary stop, and bounds actionable guidance to the response's own contract address. [316]
+
+- Strict envelope fields retain contract guidance and answer/log accounting without notifier banners. [317]
+
+- Flexible envelope fields use the same current guidance/answer/log header without restoring removed declared banner fields. [318]
+
+- The wire-test module documents the 165-of-213 `context_packet` baseline. [82]
+- The worktree model declares the contract-cell vocabulary aliases (moved from worktrees by 260731-EFA-L9) with `MemoryMode` imported from kernel. [83]
+- The worktree model declares the phase/next-operation/next-tool vocabulary (moved from guidance by L9). [84]
+- Guidance consumes the phase/next-operation/next-tool aliases declared by the wire model through one grouped import. [85]
+- The drift-status vocabulary `DriftStatus`, declared in `models/drift.py`, and the `DriftSummaryPacket` that imports it (`memory_quality/integrity/onboarding_drift_check/models.py`). [86]
+- Direct landing returns cache observations separately from commits. [87]
+- Public message transport names only code and memory. [88]
+- None [89]
+- Strict lifecycle operation record/projection. [90]
+- Queue candidate projection. [91]
+- The served knowledge vocabulary as an explicit re-export list — re-cited against the working tree, which the graph half extended. [94]
+- The frozen base and the refusal to rewrite a non-canonical identifier: `normalized_uuid` strips and lowercases the text, then refuses any spelling that is not the canonical lowercase UUID form (`models/knowledge/base.py:95-109`). [95]
+- The invariant identity and revision aggregate, including the display-label-versus-identity separation. [96]
+- The sealed payload, with the predecessor set inside the digest and the digest field excluded. [97]
+- The provenance envelope and its normalized-UTC requirement. [98]
+- The typed operation, refusal-code and result contract — re-cited against the working tree, which the graph, candidate-change, snapshot, merge, authored-judgment and detection halves have each extended since. [100]
+- OpenedKnowledgeStore binds a validated derived-index connection to a repository namespace and reads identities and sealed revisions. It writes no knowledge rows; the former canonical-database writers were retired. [102]
+- The capsule envelope keeps one shape for success and refusal, with the seat facts it established. [103]
+- The requested-versus-granted split that makes the compiler's narrowing auditable. [104]
+- Identity is origin plus name, and a listing cannot reach a body. [105]
+- The trust statement is a constant and a declared tool set is observed, never applied. [106]
+- The three registry rows that make the new names returnable. [107]
+- The family identity, the immutable revision aggregate and its self-consistency rules. [108]
+- The retained graph subset is exact membership and authored role vocabulary. [109]
+- The two payload versions and the family payload's sealed field set. [111]
+- The shared accepted/proposed rule both revision aggregates apply at construction. [112]
+- The extended served surface, including the graph names. [113]
+- The family module reads exact sealed index revisions; canonical writers are retired. [116]
+- KnowledgeLane retains reader-context spellings; the old tuple constant is retired. [122] [130]
+- The resolved context and its two consistency validators. [123] [131]
+- The module-level digest the validator calls and the operation re-derives. [124] [132]
+- The two candidate-boundary codes and the three operations that leaf added to the served vocabulary. [138]
+- The served operation union the candidate-boundary leaf joined. [139]
+- The operation and refusal vocabulary this leaf extended. [153] [164]
+- The facade that re-exports the whole snapshot surface as the served vocabulary. [154]
+- The one code and the two operations this leaf added to the shared vocabulary. [171]
+- The read sub-route module: the closed seed union, the context, the page and the cursor. [175]
+- **The corrected count model and the truncated page that cannot claim completeness.** [176]
+- The one operation and six codes this leaf added to the shared vocabulary. [177]
+- **The shared Git-pathspec rule, with `*`, `?` and `[` admitted as literal characters.** [178]
+- Current PathSeed uses the shared path rule; the stored-anchor writer validator is retired. [179]
+- **The facade's ninth source, which this leaf did add to `__all__`.** [180]
+- The cursor decoder the read re-exports through the facade. [181]
+- The cursor encoder the read re-exports through the facade. [182]
+- The nodes that hold these models to their own invariants. [183]
+- The comparison sub-route module: the two sides, the request, the item, the page and the result. [184]
+- **The record half and the source half, with no field that could hold a verdict and `missing_side` as a reason rather than a third change statement.** [185]
+- **The binding and the digest derived from it, which is how a candidate change invalidates a continuation by construction.** [186]
+- **The counts that keep the comparison total and the display total apart, and the two closed vocabularies.** [187]
+- The expansion as a value, with the carried partition and its three path lists. [188]
+- **The comparison's own cursor and its two functions, deliberately not the read's decoder.** [189]
+- **The one operation this leaf added, and the unchanged code union.** [190]
+- **The node that measures the absent verdict over the serialized response, and the node that holds the two change statements apart.** [191]
+- The nodes that hold the page and result invariants: the truncated comparison and the unestablished limitation, including the opposite-state and continuation refusals (`test_knowledge_diff_scope.py:613-676`). [192]
+- The two operations the route write layer added, so a route refusal names a route operation. [193] [195]
+- The shipped code an inadmissible record payload is refused with — reused rather than widened, and re-cited by hand against the current tree. [194] [196]
+- Historical candidate-change commands and their union were retired with the canonical database write boundary (MIK-R26); candidate.py now owns read-context identities, not that widened write operation. [199]
+- **The six operations this leaf added to the shared vocabulary, and the unchanged code union.** [205]
+- Condition/input-set vocabulary remains as Literal types. [207]
+- Retained mechanical observation vocabulary names granularity, scope and limitations. [209]
+- **The declared-input-set discriminator contract: two sides and no probe, both sides and the probe, or one side and no probe.** [210]
+- **The manifest reference and its two-state resolution, which reports an unresolvable reference with what would resolve it rather than as an empty manifest.** [211]
+- **The all-required signal field set, and the `detail`-equals-rendering rule that refuses a verdict in prose as it refuses a verdict field.** [212]
+- **The two operations and the one refusal code this leaf added to the shared vocabulary.** [216]
+- The two operation members the requirement record group added, and the fact that no refusal code was added with them. [222]
+- The module's own non-definition: it defines no record kind. [227]
+- The three pane names, declared once. [228]
+- The dispositions the existing authority accepts, published rather than owned. [229]
+- The present-side-requires-text rule. [230]
+- The author and examined inputs a displayed assessment must carry. [231]
+- The stale/submission coupling, checked at construction. [232]
+- The unassessed-is-an-absence rule for counts. [233]
+- One outcome per comparison result: a payload or one refusal. [234]
+- **The two reviewable subject kinds, declared here once so the transport, the entry list and the panes cannot disagree.** [235]
+- The reviewed subject carries its recorded identity, its own label and before/after presence. It has no path, file, display version, ranking or per-subject comparison count. [236]
+- **The entry read's typed outcome, whose validators refuse a refused read that offers any entry, non-zero totals beside a refusal, and a total smaller than the page beside it (`ICR-R09@v1`).** [237]
+- The sixth refusal code, for a subject the resolution could not name. [238]
+- **The seventh refusal code, added by this leaf: the generation a listing published no longer resolves to the two code objects it bound, so there are no bytes to serve for that entry.** [239]
+- The strict `ReadArFilesResponse` declares named-file and governing-overview locations, observation state and refusal fields; it has no `published_intent` body field. [242]
+- **The owning module that decides the shape this model declines to re-declare.** [243]
+- The strict envelope base the field joined. [244]
+- The registry entry for the tool whose payload carries the field; unchanged by this leaf. [245]
+- **The inventory's own model, with the count checked against the list and the rule that an unrepresentable path makes the inventory measured and partial.** [246]
+- **The pane that now requires the inventory as its first fact, and carries the measured partition beside it.** [247]
+- **The request whose selector may be absent, and the absence as a meaning rather than a default.** [248]
+- **The comparison identity that states whether it compared knowledge, with the selector and both snapshot digests all-or-nothing.** [249]
+- **The knowledge pane's selection state and its required reason, and the payload validator that holds it in agreement with the identity and the staleness state.** [250]
+- **The third staleness state, which is the task context and not a flavour of current.** [251]
+- The cases that measure the new states: a measured empty inventory beside an untouched comparison, and the structural rule that an inventory which could not carry a name is partial by construction. [253]
+- **The one granularity, the three buckets, the four link labels and the three side states.** [254]
+- **The partition value with its validator and its three bucket accessors, and one side's contribution beside it.** [255]
+- **The two new closed-vocabulary members, and the model's own second producer of the undetermined limit.** [256]
+- **The six counts declared once, and the pane that carries the partition.** [257]
+- **The nine partition cases, and the unavailable-partition honesty case beside the partial-denominator case.** [258]
+- The counts and their sum check. [259]
+- One outcome per state. [260]
+- The package map and the shape-only boundary. [261]
+- The base every file model inherits. [262]
+- An invariant record carries no second-owner fields. [263]
+- Schema dispatch refuses unknown schemas. [264]
+- The history file: one owner, one row per subject, a strict `closed` flag. [265]
+- The freeze predicate. [267]
+- The history schema in the dispatch table. [268]
+- The history row ID kind. [269]
+- The three current responses declare tree read, Git-tree diff and text validation. [270]
+- All of an owner's history files read as one. [272]
+- The attempt-qualified history path. [273]
+- Why a row cannot govern an invariant whose revision the leaf changed. [274]
+- Current imported source owns this scoped route boundary. [275] [277] [278]
+- Current imported source owns this scoped route boundary. [276]
+- The dashboard's tokens for the codes. [280]
+- Overload is its own refusal code with a true action. [281]
+- The closed union of refusal codes. [282]
+- The typed refusal with its code, detail and next action. [283]
+- The surface version. [284]
+- The overload failure carries the code reviewer_busy. [285]
+
+- The response shape. [286]
+
+- `TaskReopenResponse` lives in `task_doc.py` while keeping the `WorktreeCommandResponse` shape. [287]
+- `worktree_checkpoint_landing` joins the `NextTool` vocabulary; its preview and refusal both emit it. [288]
+- `PUBLIC_TOOLS` is one tuple with a single definition, re-exported unchanged. [289]
+- The worktree response declares the next-move triple and refuses any `nextTool` outside `PUBLIC_TOOLS`. [290]
+- ReviewEntryListResult gains the optional ReviewOutline field beside its entry population and counts. [291]
+- Rows and supplied superseded IDs close items; default context remains empty. [292]
+- The subject pattern, the triggers and the refreshed triggers. [64]
+- The one spelling of a link target, and the gate's predicate. [65]
+- Curator coherence keeps semantic revision, attempt, immutable record, stable authority, snapshot, and action request identities separate and exact. [75]
+- Current single literal PUBLIC_TOOLS contains 44 ordinary public names (including knowledge_write, user_settings_init, citation_note_revision and explainer_control) and excludes dispatch_agent; native role, retirement and knowledge vocabulary remains. Source census only, no live advertisement, new CODE grade or MEMORY acceptance. [294]
+- One current tool-response registry: `TOOL_RESPONSE_MODELS` holds the same 44 public names as `PUBLIC_TOOLS`, including `knowledge_write`, `user_settings_init`, `citation_note_revision` and `explainer_control`, and excludes `dispatch_agent`; the former internal-compat/public split (`INTERNAL_COMPAT_TOOL_NAMES`, `PUBLIC_TOOL_RESPONSE_MODELS`) is retired and is retained as history only. This is a source-shape census, not a live advertisement or acceptance. [295]
+
+- Whole-result validation/enrichment precedes serialization and token finalization. [296]
+
+- Completion validates the whole result, selects a supplied/default answer and translates the selected answer's lifecycle guidance. [297]
+
+- L110 shaped bounds and L112 final bounds coexist with interim rows and exceptions. [298]
+
+- Provider diagnostics remains a schema default despite public removal. [299]
+- Offline exact default verifies bytes before scoped cache mutation; approximate counter is separate. [300]
+- Refusal declarations live in a focused module and are re-exported. [301]
+- Activation record state includes vacant; selection and observed vocabularies differ. [302]
+- Text schema dispatch is distinct from legacy writer exports. [303]
+- Shared worklist predicates preserve different covered/uncovered answers. [304]
+- Measurement coverage and measured disagreement determine assessment binding status. [305]
+- Tree comparison equality includes repository identity; local side fields do not implement exclusive commit/ref validation. [306]
+- V2 receipt admits only measured bound/moved states; helper also represents unmeasured. [307]
+- Sync currency requires both exact matches and preserves missing memory as unmeasured. [308]
+- **Retained historical source account — superseded by the current route account:** The subject pattern, the triggers and the refreshed triggers. [64]
+- **Retained historical source account — superseded by the current route account:** The one spelling of a link target, and the gate's predicate. [65]
+- **Retained historical source account — superseded by the current route account:** Curator coherence keeps semantic revision, attempt, immutable record, stable authority, snapshot, and action request identities separate and exact. [75]
+- **Retained historical source account — superseded by the current route account:** Present public roster is a single literal with 41 names and no provider diagnostics or knowledge mutations. [294]
+- **Retained historical source account — superseded by the current route account:** Provider diagnostics remains a schema default despite public removal. [299]
+- **Retained historical source account — superseded by the current route account:** Offline exact default verifies bytes before scoped cache mutation; approximate counter is separate. [300]
+- **Retained historical source account — superseded by the current route account:** Refusal declarations live in a focused module and are re-exported. [301]
+- **Retained historical source account — superseded by the current route account:** Activation record state includes vacant; selection and observed vocabularies differ. [302]
+- **Retained historical source account — superseded by the current route account:** Text schema dispatch is distinct from legacy writer exports. [303]
+- **Retained historical source account — superseded by the current route account:** Measurement coverage and measured disagreement determine assessment binding status. [305]
+- **Retained historical source account — superseded by the current route account:** Tree comparison equality includes repository identity; local side fields do not implement exclusive commit/ref validation. [306]
+- **Retained historical source account — superseded by the current route account:** V2 receipt admits only measured bound/moved states; helper also represents unmeasured. [307]
+- **Retained historical source account — superseded by the current route account:** Sync currency requires both exact matches and preserves missing memory as unmeasured. [308]
+- The recorded-meaning review models separate eligible steps, readable none and unavailable history. [293]
+- The shared predicate has a superseded-set exception without a new row kind or a change to default two-argument behavior. [311]
+- History registry includes the full set of row forms. [41]
+- History registry retains unexplained and its neighboring row kinds. [53]
+- Registry includes membership and record. [266]
+- SourceBlob and bound onboarding row validation. [312]
+- Membership and decision/facet record forms. [313]
+- Each winning row retains its own closed-file provenance. [314]
+- Capsule operation selection now carries an explicit all/sections audience contract. Sections-mode validation examines the complete source before projecting common and addressed text. Declared step-detail references carry source, revision, bytes and named step separately from inline blocks; the selected-content seal does not change their original source revisions or tool grants. [319]
+- The response requires judgment and retains knowledge/source identity without the removed supporting-record fields. [320]
+- Selected-subject history and membership rows are rendered in attempt order, with proof entries supplied separately and explicit none/unavailable states. [321]
+- The regression asserts required judgment and absence of removed wire channels; this is source/assertion evidence, not a fresh test run. [322]
+- Lifecycle assessment status partitions remain independently modeled; their existence does not restore the removed tree-review assessment display. [323]
+- Judgment rows exist exactly in rows state; proof facets/currentness are not run results. [324]
+- The catalogue declares optional nonnegative comparison identity. [327]
+- The changed-intent summary declares the recorded comparison it counted. [328]
+- Revision writer owner-presence validation is separate from exact selected IDs and display versions. [329]
+- Focused card memory availability carries the after tree and explicit index state or reason. [331]
+- The review models carry the delivered notice value beside the resolved comparison, without becoming a review of that pair. [332]
+- The settings initializer's answer shape. [333]
+- The start answer that declares the seat's continuation. [334]
+- The current literal ordinary public roster declares 44 names, including knowledge_write, user_settings_init, citation_note_revision and explainer_control; this source census is not live advertisement or acceptance. [335]
+- Launcher selections include Bootstrap, normalize the earlier system-specialist spelling to Investigator, and carry the caller harness as separate request data. [336]
+- The ordinary roster adds explainer_control, whose strict result keeps ownership, state and optional action records; admitted results validate the action and refusals retain an unknown rejected action. [337]
+- Entry-side symbol and entry memory values retain explicit path and count meanings. [330]
+- One entry on one side, and on both sides. [57]
+
+- role_capsules/contracts.py retains source-addressed needs/gives endpoints, validates marker shape before operation audience selection and removes valid markers from instruction text. CapsuleCapsule carries those endpoints separately. TaskDocResponse carries optional bounded alignmentSweep advice; these value objects establish neither actual endpoint delivery nor packet release or persisted task state. [339]

@@ -1,0 +1,179 @@
+{
+  "path": "dashboard/src/panels/review",
+  "references": {
+    "1": {
+      "note": "One ordered model for both page consumers and view/filter boundaries\n\nAnchor: \"export function changeSetModel(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "672ce8fd4dd62a7f6c9945096f467600b5c4543a",
+            "content": "sha256:ac86d898c7593aa3db700a2e0e04efe2cbeb1d582bfa0b7b4c28720e20c8e2ef",
+            "locator": {
+              "end": 548,
+              "kind": "line_range",
+              "start": 520
+            },
+            "path": "dashboard/src/panels/review/changeSetOrder.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The mismatch line and the delivered identities reuse the page's existing note and technical-details parts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7bce135c0162daeefcec8350c30bc6c36d8aab7c",
+            "content": "sha256:4eec5afda1d2df049434fd1e1e6f45416180d24ee65c38527af925c5a49311dc",
+            "locator": {
+              "end": 275,
+              "kind": "line_range",
+              "start": 245
+            },
+            "path": "dashboard/src/panels/review/reading/pageParts.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The Review \\| Explanation switch stays in the top line. Each shown or compared saved revision carries its own binding, time, isolated frame and trusted stale list, and a claim return selects its resolved Review block with the walked tree retained. Published categories and grades feed the one change-set model: a category’s declared scale orders drawn changed blocks with Priority ties and an Ungraded (n) group, while chips retain presenter-inference labels, reasons and stale marks. Before work exists, the planned page uses the product’s planned · no changes line, an intended notice and deterministic-only effect orders with inert packet bodies. A matching live no-work move renews deterministic reads; work-bearing moves present the watcher’s notice and explicit Update instead of waking an explainer.\n\nAnchor: `useSurfaceExplainer`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+            "content": "sha256:ba77287e15f39970a8964523103e46e7263d4d0479b7f377a370d3485757ac0a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "One tree scroller with retained navigation and pinned lane\n\nAnchor: \"export function ReviewTree(props: ReviewTreeProps)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23b4b91094455811bf1a94a416461ad26b7a6937",
+            "content": "sha256:79667ad63106b58464f78c2c6f54556a43dc0f03764f2716516c9acd46e159c2",
+            "locator": {
+              "end": 381,
+              "kind": "line_range",
+              "start": 318
+            },
+            "path": "dashboard/src/panels/review/tree/ReviewTree.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Shared reading content, notes, lane and provenance composition\n\nAnchor: \"export function ReadingColumn(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ad6d3a0f7add2f77d6450f5347b61416090768c",
+            "content": "sha256:c35375dd33e3168059c40ca83a0daad019b5df17d8de07c905390ca9e03c26d2",
+            "locator": {
+              "end": 155,
+              "kind": "line_range",
+              "start": 106
+            },
+            "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Explicit target selection without catalogue-driven selection\n\nAnchor: \"export function initialSubject(target:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b87c6e5d5e3a7ab5cc242cc08bb5346a018eeb4d",
+            "content": "sha256:46a197313fdc891ecd9375b9304b6785329d2aa6d62239e80650465edeec561f",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 136
+            },
+            "path": "dashboard/src/panels/review/ReviewNavigation.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Opening completion opens the in-view lane path independently of engagement.\n\nAnchor: \"export function ReadingColumn(\"; \"function LaneFileBlock(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ad6d3a0f7add2f77d6450f5347b61416090768c",
+            "content": "sha256:c35375dd33e3168059c40ca83a0daad019b5df17d8de07c905390ca9e03c26d2",
+            "locator": {
+              "end": 155,
+              "kind": "line_range",
+              "start": 106
+            },
+            "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dd43b2a06c461d86230be648e274a74066401da2",
+            "content": "sha256:ba24b727893bfa3aafb89fa1b8fb7893a7455a5e299bb386980f8d529e1dcfe5",
+            "locator": {
+              "end": 380,
+              "kind": "line_range",
+              "start": 369
+            },
+            "path": "dashboard/src/panels/review/reading/LaneSection.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The shared file gate distinguishes opened and engaged state and admits at most eight file tasks.\n\nAnchor: \"export const READ_BATCH = 8\"; \"export class ReadGate\"; \"function useStarted(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bdbedad45f630b1680d1cfbe1ff737929679ef46",
+            "content": "sha256:3692a385a2536ef3e19ac875aaa23d9a7fdeb948a98e469ad5056f44aac62e0c",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "dashboard/src/panels/review/reading/readGate.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "A visible text lane file holds one gate slot for classification and text together.\n\nAnchor: \"function useLaneFileRead(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd43b2a06c461d86230be648e274a74066401da2",
+            "content": "sha256:8e66882c19407d6a0456586e61de4e93eb5f859589044eb37baf583e439cec90",
+            "locator": {
+              "end": 126,
+              "kind": "line_range",
+              "start": 105
+            },
+            "path": "dashboard/src/panels/review/reading/LaneSection.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

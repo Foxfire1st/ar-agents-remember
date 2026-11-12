@@ -1,14 +1,15 @@
 # README.md
 
-| Field | Value |
-|---|---|
-| repository | agents-remember |
-| path | `scripts/e2e_harness/README.md` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-31T09:45+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
-| lastVerifiedCommitDate |  2026-08-31T15:32:32+02:00|
-| governingOverview | `scripts/e2e_harness/overview.md` |
+## Current A8 source account
+
+The retained README documents run_fresh_user.py on the host, its requested reports/work-root paths and fresh-user-acceptance/run.json transcript, dev/main fixtures, scenario stages, recorder and blocked-step reporting. Its old ambient Codex/Dagger/model/tmux/replication operator account is historical, not this entry point. The README calls the fixture clean-room isolation a requirement; this curation does not independently verify isolation, run the acceptance or count blocked outcomes. The entry source writes the transcript at the supplied report destination and derives exit failure from non-passed invariants/checkpoints.
+
+- The current README documents the fresh-user host entry, fixtures, scenario, recorder and distinction between shape tests and acceptance. [7]
+
+- The current host main writes fresh-user-acceptance/run.json under the supplied reports destination and derives failure from invariant/checkpoint statuses. [8]
+
+## Historical original source account — retained, not authority for removed behavior
+
 
 ## Governing Overview
 
@@ -62,42 +63,30 @@ never presented as a production runtime setting.
 
 None.
 
-## Docs References
+
+
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured; the executed CLI records current runtime evidence.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The document distinguishes the real consumer from deterministic provider scripting. | `# Clean-room E2E harnesses` | scripts/e2e_harness/README.md:1-9 |
 
-## Repo-Internal References
+- The document has the fresh-user acceptance run on the host through the product's own entry points, and records a step that cannot run as blocked with its reason rather than completed. [1]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Security containment and false-positive prevention are explicit fixture contracts. | "danger-full-access" | scripts/e2e_harness/README.md:11-15 |
-| Idempotency, negative sentinels, and cleanup evidence are distinguished from retries. | "same canonical occupant" | scripts/e2e_harness/README.md:17-23 |
-| One forwarded tmux namespace binds role creation to liveness and cleanup. | `TMUX_TMPDIR` | scripts/e2e_harness/README.md:25-29 |
-| Targeted/full applicability, replication count, and retry count are explicit. | "Every invocation executes two planned fresh replications and zero retries" | scripts/e2e_harness/README.md:31-34 |
 
-## Cross-Repo References
+### Repo-Internal References
+
+
+- The run reads and writes nothing outside its run root, which is a fresh temporary directory unless --work-root names one. [2]
+
+
+- Every step records the exact call it made and the real result it got, and a step that cannot run is recorded as blocked with its reason, never as completed. [3]
+
+
+### Cross-Repo References
 
 No meaningful cross-repository reference applies.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The document names no sibling repository as implementation authority. | `# Clean-room E2E harnesses` | scripts/e2e_harness/README.md:1-34 |
 
-## Update History
-
-- 2026-08-31T09:45+02:00 — 260821-ARSPAWN-L5 closeout repair: documented the single tmux
-  namespace contract across Codex MCP forwarding, role creation, probes, and cleanup. Verification
-  remains closeout-owned.
-
-- 2026-08-30T22:20:19+02:00 — 260821-ARSPAWN-L5 converted source references to the
-  canonical anchored citation format. Verification metadata remains closeout-owned.
-
-- 2026-08-30T21:59:40+02:00 — 260821-ARSPAWN-L5: documented the same-seat repeat,
-  controlled dispatch-advertisement sentinels, and separately preserved cleanup failures.
-  Verification metadata remains closeout-owned.
-
-- 2026-08-30T21:25+02:00 — 260821-ARSPAWN-L5 created onboarding for the harness operator contract. Verification metadata remains closeout-owned.
+- The document names no sibling repository as implementation authority. [6]

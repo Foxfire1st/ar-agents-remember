@@ -1,0 +1,212 @@
+{
+  "path": "mcp/src/agents_remember/models/role_capsules/vocabulary.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The eight-role/nine-operation census, the literal/tuple agreement guard and the launcher-is-not-a-role guard.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f79613843e1dcaa558f0dc6741884f96154e0be3",
+            "content": "sha256:1729ebbdf3e2e1f72b157fe8add6a179b376f9b258a3a0568e13b0c36a8e75bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_frozen_vocabulary_is_exactly_the_eight_roles_and_nine_operations"
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The independent role census this module's runtime tuple is compared against.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f79613843e1dcaa558f0dc6741884f96154e0be3",
+            "content": "sha256:c09f88cdc76bed96c2e5f65d6aada85dc64d8f52df4091725c171cd9da011974",
+            "locator": {
+              "kind": "symbol",
+              "name": "SHIPPED_ROLES"
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f79613843e1dcaa558f0dc6741884f96154e0be3",
+            "content": "sha256:dd76f42e46accac0c85e2afbb7053c96a8f73fffd7d3b19758efc24ff0a7d341",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 79
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f79613843e1dcaa558f0dc6741884f96154e0be3",
+            "content": "sha256:9caad7c0acbb81f00dc722d5ebb1905a53306888b50387f58df3b87174e4ae37",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 81
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The parser that is handed this vocabulary and refuses a manifest that disagrees.\n\nAnchor: `parse_composition_manifest` `MANIFEST_VOCABULARY_MISMATCH`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd8a486213211e6be0e506486402269997de9b68",
+            "content": "sha256:9e72f69c7d30b140570b8095c2756eefda32d61086f0928b95fbd99ff46d676f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/manifest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cd8a486213211e6be0e506486402269997de9b68",
+            "content": "sha256:f6eb837e5cb925d8c0d34322f5d2c6bb210d05d0fc8839d5792af417a3acbde6",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_composition_manifest"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/manifest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cd8a486213211e6be0e506486402269997de9b68",
+            "content": "sha256:1813b02c7b7f6f72d28f1af170d139cb3166a6a625775965c73443f7593673f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "MANIFEST_VOCABULARY_MISMATCH"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/manifest.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The narrowing helpers that turn an untrusted string into a role or refuse it.\n\nAnchor: `narrow_operation` `narrow_role`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0dfbfa7cad2cc062959ea0052500d3edc6219618",
+            "content": "sha256:11d946e15b3b6e22d1932e52dc9dca7609abf48157c5af305e9c3f4abec66eee",
+            "locator": {
+              "kind": "symbol",
+              "name": "narrow_operation"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/selection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0dfbfa7cad2cc062959ea0052500d3edc6219618",
+            "content": "sha256:6288321bc3f942cff7810ea96a02f6f874e623dd433111d6c0166e0de7648de5",
+            "locator": {
+              "kind": "symbol",
+              "name": "narrow_role"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/selection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0dfbfa7cad2cc062959ea0052500d3edc6219618",
+            "content": "sha256:48618f22880eceadbbae45d7f2650dd59c3358ec2cb4e6dd91635b6215f7187e",
+            "locator": {
+              "end": 189,
+              "kind": "line_range",
+              "start": 177
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/selection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0dfbfa7cad2cc062959ea0052500d3edc6219618",
+            "content": "sha256:2d7b0d6285eed564c0e4b3baa4959c1e6d2dd75b6f69522cb73b12be963ad207",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/selection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The canonical authored metadata that must agree with these tuples.\n\nAnchor: \"\\\"role_order\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:f0dad0a8df6fd0a2092f0cfbc762f0978e1200280daa6856c932da956fc8f041",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 6
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The settings registry kept in step with this vocabulary, so a published role is configurable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0866515684aa632f534294be7451aa0a58b5589",
+            "content": "sha256:0a603f7916f3b0c99d6900adf6c5dd4f7f693c4a3ed81117e2a7f194034be25c",
+            "locator": {
+              "kind": "symbol",
+              "name": "KNOWN_ROLES"
+            },
+            "path": "mcp/src/agents_remember/kernel/_agentic_settings_core.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The capsule role registry ends with bootstrap; no task-binding set supplies admission.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "270a88e12632238bb65b8077d7b7dcfbae2e589d",
+            "content": "sha256:ca87be70f1004fe8f0b93c44eca5442b2a733b7770811673bac424afbd4a167c",
+            "locator": {
+              "kind": "symbol",
+              "name": "CAPSULE_ROLES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

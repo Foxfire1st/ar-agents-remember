@@ -1,15 +1,5 @@
 # mcp/test_support/agents_remember_test_support/testing/consumer_inventory.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/test_support/agents_remember_test_support/testing/consumer_inventory.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Python testing boundary](overview.md)
@@ -35,15 +25,8 @@ Dagger-only evidence boundary or create another consumer.
 - `direct_route_reachable` remains false for all accepting consumers.
 - New acceptance consumers must extend both the model enum and this forcing inventory.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The complete accepting-consumer inventory is explicit. | `ACCEPTING_CONSUMER_INVENTORY` | mcp/test_support/agents_remember_test_support/testing/consumer_inventory.py:22-79 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-08-28T04:48+02:00 — Corrected the coverage consumer owner to the extracted
-  `quality_plan._pytest_step`; evidence authority and the closed consumer vocabulary are unchanged.
-- 2026-08-26T10:44:52+02:00 — No content impact: reviewed owner-string relocations for quality and lifecycle consumers; the closed accepting-consumer inventory and evidence reachability rules are unchanged.
-- 2026-08-24T21:23+02:00 — Created for 260824-PDLS.
+- The complete accepting-consumer inventory is explicit. [1]

@@ -1,0 +1,76 @@
+{
+  "path": "skills/l-01-agent-lifecycles/templates/leaf-task.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The scaffold is an authoring example for `task_doc` fields, not a stored task document.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "01e3bc7cff6c674cffddec983f62fd73b2c1f7c1",
+            "content": "sha256:95b0f1abb0249428184389ba77793a6302b784316c8e2a72db114048a1eb4a6a",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Requirements name the approved identifier, version and packet path, and the promise this leaf implements.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "01e3bc7cff6c674cffddec983f62fd73b2c1f7c1",
+            "content": "sha256:109c8e310e06f29602478191e19c3ce79d2593d45d698e35ae9e609859e055b2",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 15
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Implementation steps are reviewable outcomes; proposed code examples give placement and body-less skeletons.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "01e3bc7cff6c674cffddec983f62fd73b2c1f7c1",
+            "content": "sha256:4acb2c0786bb48e6702c5ce1d6857236999bb470a019d1bb95766d9c90eb9333",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 27
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The Architect reads the leaf template before authoring a leaf.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de0e221dc51f2f0b067db007cb4c00b17ab3bd39",
+            "content": "sha256:432028c4623c2a2dec59638bee44d005c30ed4b67e085c61e64610ab9d1fee9f",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

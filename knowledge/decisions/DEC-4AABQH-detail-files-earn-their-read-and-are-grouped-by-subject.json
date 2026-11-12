@@ -1,0 +1,63 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The flat per-action split and the subject-folder layout were both built and compared; the choice binds where every future l-01 detail file goes."
+  },
+  "alternatives": [
+    {
+      "option": "Group detail files in subject folders (reference/<subject>/, with <subject>/<role>/ beside <subject>/shared/), name each file by what it holds, write a rule of one or two sentences inline at its action, and give a file only to content that costs more than its pointer.",
+      "reason": "Fewer and larger files are read at the step that needs them, and short rules reach the agent without a tool call.",
+      "status": "chosen"
+    },
+    {
+      "option": "One topic file per action or heading group, split from the working-rules files into one flat reference folder.",
+      "reason": "It produced many very small files whose pointers cost as much as their rules, with no folder rule and no lower size bound.",
+      "reconsider_when": "Reader runs show agents open small single-action files but skip grouped files at the step that needs them.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Every pointer, manifest entry, packaged copy, budget record and test follows a moved file in the same change.",
+    "The memory's skill-writing guideline carries the folder and naming rules."
+  ],
+  "context": "Splitting the catch-all reference files into one topic file per action left 74 files in one flat folder, 34 of them coord-topic-<role>-<topic>.md and 39 under 150 words. A pointer was often nearly as long as the rule it led to, and an agent spends a tool call on every file it opens.",
+  "decider": "The developer (D705); MIK-R84 v13.",
+  "id": "DEC-4AABQH",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "route:skills/l-01-agent-lifecycles/reference"
+    },
+    {
+      "relation": "explains",
+      "target": "INV-W6HBYY"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R84",
+        "packet": "requirements/MIK-R84-v13-installed-copies-and-running-servers-are-current-after-an-install.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v13"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "handoff-runA.json"
+    },
+    "handoffEntry": "dec-detail-files-by-subject",
+    "leaf": "260928-MIK-L84",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

@@ -1,0 +1,74 @@
+{
+  "path": "dashboard/src/panels/detail-panel/StepDot.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a774a5e57ae8f781cdd06597ba61c3fdeba9edd8",
+        "content": "sha256:5c0132651cad3521c3c4b86dfd358510ee80ef214342b11453c164a1d18ff9bc",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-KXCBQY",
+      "invariant": "INV-SQ7NQA",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 rule 12",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This standalone dot-and-tooltip component delays pointer disclosure of the supplied major step and its existing ordered children; its local pointer timer and state do not fetch task data or add keyboard focus stops.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "a774a5e57ae8f781cdd06597ba61c3fdeba9edd8",
+        "content": "sha256:2f94951d3bf99a2de3011769f2811c398610122c4f3a98e81915a5a576ee65ce",
+        "locator": {
+          "kind": "symbol",
+          "name": "StepTooltip"
+        }
+      },
+      "id": "RLZ-X67G83",
+      "invariant": "INV-JW28W1",
+      "origin": {
+        "handoffEntry": "MIK-R175@v2",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "This construct carries the packet obligation; adjudication is accepted on L102-A1, with route evidence and any failures preserved in the Reviewer verdict.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Optional cached step details use a cancelable non-touch pointer-rest timer and a body portal, with no fetch or tab stop.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a774a5e57ae8f781cdd06597ba61c3fdeba9edd8",
+            "content": "sha256:5c0132651cad3521c3c4b86dfd358510ee80ef214342b11453c164a1d18ff9bc",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The tooltip's id and status word keep their full width while only the title wraps.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a774a5e57ae8f781cdd06597ba61c3fdeba9edd8",
+            "content": "sha256:2f94951d3bf99a2de3011769f2811c398610122c4f3a98e81915a5a576ee65ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "StepTooltip"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

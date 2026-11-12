@@ -1,0 +1,25 @@
+{
+  "path": "mcp/src/agents_remember/observer/reducer_impl/_attention.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "076d83315223337d2ae1069118fadbb14829c501",
+        "content": "sha256:df422e63673c2c2e4d72bcde4ca6020c81448e3c13cdce3f37d7be4ed8236171",
+        "locator": {
+          "kind": "symbol",
+          "name": "build_attention_queue"
+        }
+      },
+      "id": "RLZ-DB86WQ",
+      "invariant": "INV-R8BBQC",
+      "origin": {
+        "handoffEntry": "curator:MIK-R200@v1 rules 1, 7 and 8 — one queue, five native kinds, an actionable row",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "The one total sort and the dismissal fold are here, so the ordering and the action/notice behaviour are enforced at this join.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,53 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The pane stays nonempty and input belongs to the selected agent without a second application. That needs another frame, connection and copy of the conversation, contrary to no-heavier-than-native-click."
+  },
+  "alternatives": [
+    {
+      "option": "Show the one application own screen, hold input to selected-screen identity and keep waiting through drawing.",
+      "reason": "The pane stays nonempty and input belongs to the selected agent without a second application.",
+      "status": "chosen"
+    },
+    {
+      "option": "Preserve the earlier picture until the conversation draws.",
+      "reason": "That needs another frame, connection and copy of the conversation, contrary to no-heavier-than-native-click.",
+      "reconsider_when": "If selected-screen input ownership cannot be proved, hold input until drawing rather than adding a second frame.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Native progress remains visible and on-chat and drawn are separate reports."
+  ],
+  "context": "The initial earlier-picture wording conflicted with immediate native switching.",
+  "decider": "Architect 97e0320d on the developer requirements, accepted by the Manager in the L140 decision log",
+  "id": "DEC-Z9M938",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "route:dashboard/src/cockpit"
+    },
+    {
+      "relation": "constrains",
+      "target": "route:mcp/src/agents_remember/package_data/paseo_plugin/client"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/cockpit/paseoFrameLateAnswer.test.tsx › \"is let through when the application says it is on the chat, while the line stays until the chat is shown\"; dashboard/src/cockpit/paseoPluginBridge.test.ts › \"tells a dashboard that reads it once when the application is on the agent's chat, before the chat is drawn\"; dashboard/src/cockpit/document-chat/knownChats.test.tsx › \"keeps the earlier chat shown and out of reach while it asks, and hides the frame only on the answer no chat\"; sent-text probes S-tip and S-old of Attempt3"
+      ],
+      "path": "producer-list.json"
+    },
+    "handoffEntry": "ruling 4be3d695 2a, read by ruling ee770e77",
+    "leaf": "260928-MIK-L140",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

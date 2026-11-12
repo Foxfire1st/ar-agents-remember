@@ -1,0 +1,81 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "Every future empty-selection change must keep the effective-target switch or hide path."
+  },
+  "alternatives": [
+    {
+      "option": "Keep the matching Projects Architect as the effective chat target and switch in the same frame; hide with the launcher only when no effective agent exists.",
+      "reason": "Preserves the delivered default and the explicit preservation boundary.",
+      "status": "chosen"
+    },
+    {
+      "option": "Treat every empty selection as agentless and always hide with the launcher.",
+      "reason": "Drops the live default the packet preserves.",
+      "reconsider_when": "The Projects Architect default is removed or the packet redefines selection without a chat.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Empty selections with a matching Architect switch chats; only truly agentless selections hide the frame.",
+    "Future empty-selection work keeps the effective-target switch or the hide path."
+  ],
+  "context": "Rule 5 says where the selection has no chat the frame hides, while MIK-R95 keeps the newest live Projects Architect as the default chat target when no document is selected.",
+  "decider": "Owner on the canonical task decision 2026-10-10T07:04:45Z under developer direction D160.",
+  "id": "DEC-AW7WG2",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "87320203450d777a0b564196b6dccdb508028659",
+        "content": "sha256:e062eaed22a3ebb011448a80cda5c3a216c03b4272a213fc9fc315dfa126923f",
+        "locator": {
+          "kind": "symbol",
+          "name": "DocumentChatImpl"
+        },
+        "path": "dashboard/src/cockpit/document-chat/DocumentChat.tsx"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "549cf610137c56828d056d1a3b11a3818c82bbd1",
+        "content": "sha256:8ba560f316f457667f7257445e0b57a1068febe45836a462fa0efd2c99b5f6d4",
+        "locator": {
+          "kind": "symbol",
+          "name": "chatPresentation"
+        },
+        "path": "dashboard/src/cockpit/document-chat/state.ts"
+      }
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R122",
+        "packet": "requirements/MIK-R122-v1-the-sidebar-chat-stays-loaded-and-switches.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "sidebarChatStaysLoaded.test.tsx (ghost keeps element behind aria-hidden wrapper; return switches back) + model.ts documentChatBinding/documentChatAgent (unchanged)"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L122-curator-handoff.json"
+    },
+    "handoffEntry": "MIK-R122@v1 rule 5",
+    "leaf": "260928-MIK-L122",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

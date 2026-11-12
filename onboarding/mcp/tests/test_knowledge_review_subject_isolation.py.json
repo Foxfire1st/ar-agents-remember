@@ -1,0 +1,25 @@
+{
+  "path": "mcp/tests/test_knowledge_review_subject_isolation.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "43": {
+      "note": "A source-bound tree-history case excludes a same-leaf sibling’s row from the selected invariant’s judgment. It replaces the former assessment treatment/count/isolation suite rather than relocating direct/context/historical assessment semantics.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f76474a70d8b76d40e6c4921c381c8800f9aa29",
+            "content": "sha256:58cd2fd948b95edea40621f803043bbca46f8336c26e6759fee83ab03cac4e75",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,122 @@
+{
+  "path": "mcp/tests/test_tool_answer_table_guards.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "5504a8305b372c2b663447cf409c0684d33ec294",
+        "content": "sha256:9d4cd35afa708b7815a0297a614fafd90c70fda8ed9b015dac0aa846c8b8251d",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolAnswerGuardTests.test_nested_lists_are_cut_through_retained_items"
+        }
+      },
+      "facet": "The pure truncate_lists cases check nested first-twenty ordered items, original count and truncation flags; they do not assert a filesystem detail/log location.",
+      "id": "PRF-FEA7C4",
+      "invariant": "INV-B7J1PZ",
+      "origin": {
+        "handoffEntry": "L112-semantic-replacement-PRF-RYVXYP",
+        "leaf": "260928-MIK-L112"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5504a8305b372c2b663447cf409c0684d33ec294",
+        "content": "sha256:045dbe0d371b0bf690380e33826bf6495281226e8692ed7ad1db26dc642e2f8b",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolAnswerGuardTests.test_envelope_stripped_from_every_answer"
+        }
+      },
+      "facet": "This server_info shaping case asserts that its answer omits each of the four envelope fields, retains ok and omits nextStep/log; it is not a census of every public tool answer.",
+      "id": "PRF-H1T045",
+      "invariant": "INV-B7J1PZ",
+      "origin": {
+        "handoffEntry": "L112-semantic-replacement-PRF-1XJ3QK",
+        "leaf": "260928-MIK-L112"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5504a8305b372c2b663447cf409c0684d33ec294",
+        "content": "sha256:7fc3055cec865cd15a4eebbb09ddcf09c0e039a84397c803fa0f0a862b53e514",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolAnswerGuardTests.test_short_form_fixed_part_and_location_fit_with_longest_code"
+        }
+      },
+      "facet": "Fixed part and location fit hold with the longest code.",
+      "id": "PRF-JKEZYQ",
+      "invariant": "INV-CQSY2Z",
+      "origin": {
+        "handoffEntry": "MIK-R108@v1 §4 fixed-250",
+        "leaf": "260928-MIK-L108"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5504a8305b372c2b663447cf409c0684d33ec294",
+        "content": "sha256:9494980a66ce801f786df64f5d8b3d368e2130fff6669eb13a864c1927808d5e",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolAnswerGuardTests.test_over_budget_root_path_through_the_choke"
+        }
+      },
+      "facet": "An over-budget root path passes the choke with the fixed sentence.",
+      "id": "PRF-NF7PTQ",
+      "invariant": "INV-SYBT3F",
+      "origin": {
+        "handoffEntry": "MIK-R108@v1 §4 location-omitted",
+        "leaf": "260928-MIK-L108"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "An answer under its bound passes unchanged and one over it gets the short form with its code and error.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5504a8305b372c2b663447cf409c0684d33ec294",
+            "content": "sha256:4cac8666124a5c4e8878e0afc3991db64b4dcee6246ffb6ff0549b50cdfb4c91",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The short form holds at its measured boundaries, and a location over the fixed bound is omitted rather than substituted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5504a8305b372c2b663447cf409c0684d33ec294",
+            "content": "sha256:4cac8666124a5c4e8878e0afc3991db64b4dcee6246ffb6ff0549b50cdfb4c91",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Cutting keeps names, counts and the first entries, and the answer's next field carries the following call.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5504a8305b372c2b663447cf409c0684d33ec294",
+            "content": "sha256:4cac8666124a5c4e8878e0afc3991db64b4dcee6246ffb6ff0549b50cdfb4c91",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

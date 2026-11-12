@@ -1,0 +1,41 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_worklist/reconsideration_gate.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "078be84cd75d4ea2e221aae8ccb5e1085fa384d0",
+        "content": "sha256:8088dd4d9164eaa56a0d79e65be894419809cbebae8706c771d8a611f7f61b4c",
+        "locator": {
+          "kind": "symbol",
+          "name": "reconsideration_gate_reason"
+        }
+      },
+      "id": "RLZ-GD6WG9",
+      "invariant": "INV-YA1T3N",
+      "origin": {
+        "handoffEntry": "MIK-R55@v1 rule 3",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "This gate keeps a refresh_not_current candidate open regardless of an attempted history-row answer.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Evaluates currentness and satisfying-row conditions for already produced reconsideration items at the registered gate seam. This function does not invent triggers or cascading reconsideration. A satisfying history row alone cannot make a refreshed stale anchor current. Supersession, source observation and row satisfaction remain separate decisions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "078be84cd75d4ea2e221aae8ccb5e1085fa384d0",
+            "content": "sha256:848f3d1be1efd620b81d9ecd4c4db450e023e06b1a7bdf2662f347440c959625",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

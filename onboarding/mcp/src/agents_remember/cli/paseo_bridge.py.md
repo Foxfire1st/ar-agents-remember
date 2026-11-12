@@ -1,0 +1,60 @@
+# mcp/src/agents_remember/cli/paseo_bridge.py
+
+## Governing Overview
+
+[overview](../../../overview.md)
+
+## Purpose
+
+Runs one bounded JavaScript bridge command and interprets its one JSON reply.
+
+## Code Commentary
+
+bridge_call sends prompt/payload as stdin data and stops a process at 60 seconds. _bridge_environment removes inherited PASEO/AR_PASEO values, then supplies configured URL, home server ID, pin and deadline. Missing settings/identity refuse before process start; unreadable replies, replacement-decoded output and bounded fatal lines remain named failures.
+
+
+This is the dynamic reply adapter, not a typed one: `bridge_call` returns an unrestricted `dict[str, Any]` decoded from the bridge's JSON reply, so a field it does not describe is still carried instead of being refused, and no strict usage DTO is declared here. The Python branch is the configuration adapter; the bounded subprocess, environment, identity and deadline guarantees above stand.
+
+## Bounded bridge calls (MIK-R76)
+
+`bridge_call` takes an optional `timeout_seconds` that defaults to the existing
+`PASEO_BRIDGE_TIMEOUT_SECONDS` (60 s). The subprocess timeout and the reported failure text use it,
+and the bridge environment gains `AR_PASEO_DEADLINE_MS`, set to the smaller of the script deadline
+and the supplied timeout minus a 100 ms margin, so a caller with a shorter remaining budget bounds
+the JavaScript side too. The archive service uses this to keep its per-target call inside the
+closing archive budget.
+
+## Send outcome codes and the timeline read
+
+`SEND_OUTCOME_UNKNOWN` (`paseo_send_outcome_unknown`) is the code `agent-send` reports when the connection is lost while the message was being sent: the host may have taken it. The role-message tool holds the message with that reason rather than reporting a delivery or a plain refusal. `agent-has-message` is the read behind the reconciliation before a resend: it answers whether the recipient's timeline already carries a client message id, and a timeline the runtime cannot read is the named failure `paseo_timeline_unreadable`.
+
+## Evidence
+
+- The implementation of bridge_call supporting the stated file behavior. [1]
+
+- Frozen implementation of _bridge_environment supporting the stated file behavior. [2]
+- Frozen implementation of _configured_server_id supporting the stated file behavior. [3]
+
+- Checks exact endpoint/server-id environment and removal of inherited PASEO/AR_PASEO values. [4]
+
+- Checks absent settings or home server-id start no process. [5]
+
+- Exercises different/missing connected server identity and named refusal with reconnect disabled. [6]
+
+
+## The Node a bridge call runs on
+
+The bridge runs its script on a Node named by full path, never on `node` from `PATH`. `serving/paseo/paseo_running_node.communication_node` picks this build's product Node when it is installed, otherwise the Node executable of the owned running host that the host's process record and live process prove; it grants no right to start a host on that older Node. With neither Node present the call fails `node_not_installed`, naming `runtime_install` and the provision command; other selection failures are `paseo_bridge_unavailable`. The not-configured text keeps its own meaning.
+
+After the bridge answers, the call reads the owned host's process. When that host runs on another Node than this build's, the reply carries `node`, `nodeExecutable`, `restartRequired: ["node"]` and the terminal provision `restartRemedy` beside the answer; it is not a refusal. A host that exits or cannot be read after answering leaves the reply unchanged.
+
+- The bridge launch runs the packaged script on the communication Node, maps a missing Node to `node_not_installed`, and adds the host's restart reason and remedy to an answered reply. [7]
+- The communication Node is the product Node, else the proven running host's Node, else `node_not_installed`. [10]
+
+- The configured-runtime requirement the bridge enforces before any process starts. [8]
+
+## The host block is read from the authority settings file
+
+`require_bridge_runtime` names `authority_settings_path(config.config_path)` in its refusal, because the `paseoRuntime` block belongs to the MCP settings file the tool server was started with rather than to a coordination-root file. Reading the block per use is unchanged: a block a cold first run just established is visible to the next call without a restart.
+
+- The configured-runtime read and the authority path its refusal names. [9]

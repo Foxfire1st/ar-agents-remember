@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/integration/closeout/preparation/__init__.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/__init__.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T17:13:06+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489`|
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Owning overview](overview.md)
@@ -36,29 +26,16 @@ The documented types and paths do not themselves establish execution, certificat
 
 No source-local TODO is asserted here.
 
-## Docs References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation applies. | N/A | N/A |
+### Docs References
 
-## Repo-Internal References
+No configured domain documentation applies.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Package purpose and import behavior. | "Lifecycle-owned private preparation and exact protected-output publication." | mcp/src/agents_remember/worktrees/integration/closeout/preparation/__init__.py:1-1 |
+### Repo-Internal References
 
-## Cross-Repo References
+- Package purpose and import behavior. [1]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repository source is needed for this card. | N/A | N/A |
+### Cross-Repo References
 
-## Update History
-
-- 2026-09-06T23:07:14+00:00 — History-format repair at the actual recorded repair time. The earlier reconciliation note recorded only a local calendar date; its time of day is unknown. Original note preserved verbatim: "- 2026-09-07 — Reconciled the package marker’s landed-source status; retained prior verification pins."
-
-
-### 2026-09-06T17:13:06+00:00 — Initial L34 implementation card
-
-Created from the current source. Verification metadata is intentionally unset until a genuine commit-based verification occurs; no test or acceptance result is asserted.
+No cross-repository source is needed for this card.

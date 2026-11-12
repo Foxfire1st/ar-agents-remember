@@ -1,0 +1,128 @@
+{
+  "path": "mcp/tests/test_historical_committed_leaf_review.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "1bf677c509c7087fa3731c5839a4b1fe95e06e1f",
+        "content": "sha256:ec0be12ccf0888d6c9ea63c32b926229b911bab5d14b0cc74b8cd32f39326e87",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_older_comparison_number_serves_that_record_s_outline_and_summary"
+        }
+      },
+      "facet": "Through the production entries/summary collaborators, comparisons 1 and 2 return their own echoed numbers, outline changes and added counts; an unrecorded entries number returns 404 candidate_unresolved, while missing and negative summary numbers return 200 unavailable with the offending input and no counts.",
+      "id": "PRF-1MBBHQ",
+      "invariant": "INV-HAJ9SH",
+      "origin": {
+        "handoffEntry": "RP11",
+        "leaf": "260928-MIK-L89"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "38": {
+      "note": "The fresh child uses the actual serving composition and explicit configuration descriptor, with inherited import paths visible.\n\nAnchor: \"def closed_fixture(tmp_path: Path) -> World:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1bf677c509c7087fa3731c5839a4b1fe95e06e1f",
+            "content": "sha256:2cf43c4ab3b2fe5e1a075af271df06ad282f8a29cad8ace70b1b129b826a0117",
+            "locator": {
+              "end": 159,
+              "kind": "line_range",
+              "start": 55
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "39": {
+      "note": "Recorded selected bytes and selector-free task-context facts survive cleanup independently.\n\nAnchor: \"def test_a_closed_leaf_serves_its_recorded_comparison_byte_for_byte(closed_fixture: World) -> None:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1bf677c509c7087fa3731c5839a4b1fe95e06e1f",
+            "content": "sha256:559a51d453e9eeef62c3f1e4cf5bf326a241e0c9769bf4e54574fd36c7dd902c",
+            "locator": {
+              "end": 199,
+              "kind": "line_range",
+              "start": 162
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "40": {
+      "note": "A fresh interpreter and later fixture commit retain exact recorded answers.\n\nAnchor: \"def test_a_fresh_process_reconstructs_the_same_recorded_comparison(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1bf677c509c7087fa3731c5839a4b1fe95e06e1f",
+            "content": "sha256:033ead4f249a4b285b9dd629788f4cdac8821cc0618819456b06c1c16f280158",
+            "locator": {
+              "end": 233,
+              "kind": "line_range",
+              "start": 202
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "41": {
+      "note": "Legacy source/typed absence and lost range retain distinct measured/unavailable/refused facts.\n\nAnchor: \"def test_a_pre_feature_leaf_exposes_its_recorded_source_range_and_its_absence(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1bf677c509c7087fa3731c5839a4b1fe95e06e1f",
+            "content": "sha256:6b232d88b21c6e81288f7378479046fb77602471e4811bb76547e85ae32a303d",
+            "locator": {
+              "end": 323,
+              "kind": "line_range",
+              "start": 236
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "42": {
+      "note": "Lost retained objects are unavailable without substitution; a never-recorded cleaned leaf stays not live.\n\nAnchor: \"def test_expected_content_that_no_longer_resolves_is_unavailable_not_substituted(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1bf677c509c7087fa3731c5839a4b1fe95e06e1f",
+            "content": "sha256:9bf92c420fdab5ed5e8231d190b756ad6bad5378724975e3ff13ece4bfe41ea4",
+            "locator": {
+              "end": 377,
+              "kind": "line_range",
+              "start": 335
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "43": {
+      "note": "Numbered reads preserve their own outline/counts, unavailable-number limits and separate retained catalogue answers.\n\nAnchor: \"def _numbered_reads(world: World):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1bf677c509c7087fa3731c5839a4b1fe95e06e1f",
+            "content": "sha256:9778198b42e56aeb66e4326d62e4e019f42344362f91b8075e04dc4e1247cf48",
+            "locator": {
+              "end": 439,
+              "kind": "line_range",
+              "start": 380
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

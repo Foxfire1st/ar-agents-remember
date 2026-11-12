@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Shared declaration and live-registration tests jointly prevent a later tool owner from silently growing the repeated context or dropping the only route to complete calling instructions."
+  },
+  "applicability": "Description text and published input-schema descriptions advertised by the product's registered MCP tool surface.",
+  "conditions": [
+    "Ordinary finalized tool descriptions end with the skill or reference that carries their longer explanation.",
+    "A still-interim-owned tool keeps its recorded landing length until its answer-table owner makes the row final.",
+    "The retained dispatch_agent description keeps its named transition length until its replacement and removal land together."
+  ],
+  "exclusions": [
+    "Harness-native tools and user-configured non-product servers.",
+    "Tool answer-token ceilings, which the answer guard owns separately.",
+    "An assertion that all models in an arbitrary current build already pass the schema-description check."
+  ],
+  "id": "INV-4HS3E5",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "MIK-R112@v1 rule 7, current primary SHA c98e45347f34e81db278c0341ecc7626d6638da0a3b51688d2fa861783a1971f; current source read after completed L50 sync at code HEAD 00d6b4d48ad47e076a87c594ff85456ef80978ef. The proof entries name the checks and their facets, not a fresh Curator test run or a claim that foreign overlong models are repaired. The Worker's and Reviewer's exact historical CODE PASS and failed-test evidence remain separate."
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L112-curator-65bce089-3714-468f-8b4c-68b77ee1d4dd.description-list.json"
+    },
+    "handoffEntry": "L112-R7-DESCRIPTION-CONTRACT",
+    "leaf": "260928-MIK-L112",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A finalized registered-tool description is bounded to 600 characters and ends by naming an openable longer explanation; published input-schema descriptions are bounded to 120 characters, while explicitly interim-owned tools and the retained dispatch_agent description keep their pinned transition lengths until their owning change lands.",
+  "status": "accepted",
+  "supersedes": []
+}

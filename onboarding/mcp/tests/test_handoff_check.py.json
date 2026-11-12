@@ -1,0 +1,56 @@
+{
+  "path": "mcp/tests/test_handoff_check.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Producer, proof, record-link and candidate-field cases distinguish checker validation from writer judgment.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ffef93a4c3ab1b3854fcd8b2b6f8fee53a834bd8",
+            "content": "sha256:ef9749d14c1d4e5e4a113324a7fad60bc2885a1c21d3631541ef2d1702b8656a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_clean_producer_does_not_need_curator_admission"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The named-tree and byte-snapshot cases assert read-only behavior and invocation-error status.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ffef93a4c3ab1b3854fcd8b2b6f8fee53a834bd8",
+            "content": "sha256:1564d0f0f3b4d9c8809b4685e8756ff07bc7318599a751a2bf80d0e21d35ce3b",
+            "locator": {
+              "end": 291,
+              "kind": "line_range",
+              "start": 241
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A clean producer prints exactly three lines, and a worklist input is an unrecognized argument with exit 2.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ffef93a4c3ab1b3854fcd8b2b6f8fee53a834bd8",
+            "content": "sha256:01ddf2d827a953b24847de4e7ce4a120f4944501b27564cd704b6b11214d4a68",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_handoff_check_rejects_worklist_input"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

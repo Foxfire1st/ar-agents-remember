@@ -1,0 +1,45 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Future start/attach, abandon or task publication changes must keep native task and parent stages coherent rather than restoring a redundant agent status write or a second session stage store. Current test sources pin restart promotion, parent preflight, two-document rollback and exact cross-root mirrors; no fresh execution is asserted."
+  },
+  "applicability": "Native worktree start/attach and abandon publication of readable, in-place canonical task documents and their admitted parent row.",
+  "conditions": [
+    "Start promotes planning or an admitted abandoned successor to inProgress; attaching retains document stage and exact existing facts make publication idempotent.",
+    "Task-stage candidates retain their exact source snapshots and use the existing rollback-safe JSON/Markdown batch writer; parent stage comes from that same native document stage.",
+    "Abandon preflights task/parent linkage before terminal mutation, revalidates source before publication, and composes task/parent stage with contract publication under its existing terminal guard.",
+    "Finalize, reopen and explicit task corrections retain their existing authority; completed documents are not reopened by ordinary start."
+  ],
+  "exclusions": [
+    "An absent task source does not authorize inventing a document, and malformed/ambiguous parent linkage is not silently repaired.",
+    "Rollback of task-source/contract publication does not promise restoration of already-reclaimed worktrees or all earlier bootstrap side effects.",
+    "Disposable projection effects remain separately reported; their failure is not another task-stage authority.",
+    "Proof facets describe current test assertions read from A011, not a fresh Curator execution or independent acceptance."
+  ],
+  "id": "INV-Z0BXKJ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "freeze-native-stage-order.txt:87PASS; sync-L81-start-preview-repaired.txt:17PASS; constructed-finalize10-timing.json:322.413ms; native guards preserved",
+        "M1-21: ROW-KCDYDJ; mcp/src/agents_remember/worktrees/modules/abandon.py:304-307. Static source witness on A013; no Curator execution.",
+        "M1-21: ROW-EBJW7F; mcp/src/agents_remember/tasks/master_sync.py:104-155. Static source witness on A013; no Curator execution.",
+        "M1-21: ROW-025WFC; mcp/src/agents_remember/worktrees/modules/start.py:250-253. Static source witness on A013; no Curator execution.",
+        "M1-21: ROW-V1QAND; mcp/src/agents_remember/worktrees/modules/start.py:604-607. Static source witness on A013; no Curator execution.",
+        "M1-21: ROW-FCSZBC; mcp/src/agents_remember/worktrees/modules/start.py:717-720. Static source witness on A013; no Curator execution."
+      ],
+      "path": "A011-native-stage-publication-35.json"
+    },
+    "handoffEntry": "L168-W-R167-05",
+    "leaf": "260928-MIK-L168",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Native worktree start and abandon publish their task stages in the same rollback-safe transaction, while finalize and reopen retain their authority.",
+  "status": "proposed",
+  "supersedes": []
+}

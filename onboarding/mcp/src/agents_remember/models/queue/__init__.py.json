@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/models/queue/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The package marker docstring.\n\nAnchor: \"Queue-domain response models.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92d26d1f88e6e97eba6befa3a28182d1a6d2f55b",
+            "content": "sha256:82421d7ad15886f45ef8311c66807efccb86476e873e9334aee13dfc5bb2eae2",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

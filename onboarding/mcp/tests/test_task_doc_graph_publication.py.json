@@ -1,0 +1,38 @@
+{
+  "path": "mcp/tests/test_task_doc_graph_publication.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Plain or single graph document is the supported batch shape",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b2d4da2d1b3bc34a082fe573f4ee00c4bc28c358",
+            "content": "sha256:314189b10bf6be9e24a2446137dfde06375d2057256f8d8efcfad677cc1175b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_plain_or_single_graph_document_is_the_supported_batch_shape"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Two graph documents refuse before task or projection publication\n\nAnchor: `test_two_graph_documents_refuse_before_task_or_projection_publication`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b2d4da2d1b3bc34a082fe573f4ee00c4bc28c358",
+            "content": "sha256:5a795415a1209966fed669e92c835ce1585bfb9a821b3108f4f42d7152d6e9d7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

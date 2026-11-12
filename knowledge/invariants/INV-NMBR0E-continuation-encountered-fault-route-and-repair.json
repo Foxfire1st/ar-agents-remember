@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Using today’s writer or PATH to grade an old run would invent route authority and conceal a recovery-ladder violation."
+  },
+  "applicability": "GT1/GT3/GT4/GT5 continuation, route, encountered-fault and recovery observations over retained eval trajectories.",
+  "conditions": [
+    "Command resolution uses explicit executable paths or the captured frozen environment.",
+    "Route/build authority and recovery tool/input class come from admitted evidence.",
+    "Insufficient evidence remains unknown or a rubric question."
+  ],
+  "exclusions": [
+    "Resolving an old command from today’s PATH or inferred historical build.",
+    "Actor success wording as proof of an authorized repair."
+  ],
+  "id": "INV-NMBR0E",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Frozen tree fd6462b85ba9d06f004e323384ea800f9aa5144a, base 59b01fb8f72a38d2d27f9c37b8b9ca2513fd3fa0; path bindings and source hashes in producer-manifest.json; Reviewer R4 and d229-repairs/report.md."
+      ],
+      "path": "L62-unaffected-evaluation-obligations"
+    },
+    "handoffEntry": "L62-fd6462b8-trajectory-route",
+    "leaf": "260928-MIK-L62",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Continuation, encountered-fault, route and repair grading uses admitted evidence and authority rather than actor success wording or an inferred historical build.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A body that carries decision numbers, local paths or review records is unreadable to the person it is written for; that is the failure this standard exists to prevent, and it cannot be caught after publication because the reader simply stops reading."
+  },
+  "applicability": "Every visible text this repository publishes: issue titles and bodies, comments, pull request titles and bodies.",
+  "conditions": [
+    "The resolved memory layer carries system/task-publication.md at its root."
+  ],
+  "exclusions": [
+    "The hidden markers, the private plan and the receipts, which no reader sees.",
+    "Product documentation and the repository's own prose outside a published text."
+  ],
+  "id": "INV-Z454MC",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "39 written bodies and titles pass the marker/link/prose/secret scans; no public body uses a prohibited abbreviation, path or record."
+      ],
+      "path": "l194-curator-handoff.json"
+    },
+    "handoffEntry": "PUB-01-rules-1-3-reader-text",
+    "leaf": "260928-MIK-L194",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Every published body is written prose for a reader outside the machine: no decision or task numbers, master or sprint codes, local paths, checksums, agent IDs, review records, version history or provenance tables; requirement IDs are the only abbreviation.",
+  "status": "proposed",
+  "supersedes": []
+}

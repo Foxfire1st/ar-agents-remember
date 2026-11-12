@@ -1,0 +1,567 @@
+{
+  "path": "mcp/src/agents_remember/mcp/registration/memory.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "da0d962d6a6ecb8139ab4de63016c4bff497a1c9",
+        "content": "sha256:14d3e28109cc04c1a36750066b033359105473bf7276e620816572d5d1e909e8",
+        "locator": {
+          "kind": "symbol",
+          "name": "_register_memory_health_tools"
+        }
+      },
+      "id": "RLZ-44SETH",
+      "invariant": "INV-CR4CJ8",
+      "origin": {
+        "handoffEntry": "MIK-R213@v1 rule 3",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "The same registered tool exposes preview modes beside its original synchronous arguments.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "da0d962d6a6ecb8139ab4de63016c4bff497a1c9",
+        "content": "sha256:14d3e28109cc04c1a36750066b033359105473bf7276e620816572d5d1e909e8",
+        "locator": {
+          "kind": "symbol",
+          "name": "_register_memory_health_tools"
+        }
+      },
+      "id": "RLZ-GZRJ1A",
+      "invariant": "INV-990KQM",
+      "origin": {
+        "handoffEntry": "L183-deferred-discovery-implementation",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "`_register_memory_health_tools` at C still declares the memory-check/quality tools with their models while the payloads are reached through the lazy `tools` proxy on each call; that is the base card's content, which C still holds, and this pass's re-recording took the uncommitted file's bytes.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "da0d962d6a6ecb8139ab4de63016c4bff497a1c9",
+        "content": "sha256:22a16fa5e06b93600248318969bdaa92fc3eadaa85884358ee5bbb049f754e00",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-PT7Q2S",
+      "invariant": "INV-Q7KYQH",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §8 reference-note-revision",
+        "leaf": "260928-MIK-L191"
+      },
+      "rationale": "Registers the tool on the memory server, which is what makes it reachable at all.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Carryover registration declares a leaf-bound recovery application that reanchors, indexes and validates, requires intent_note, and carries no commit or imported history. Source caption: `memory_carryover_apply`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da0d962d6a6ecb8139ab4de63016c4bff497a1c9",
+            "content": "sha256:dc303c009fee10719834f1b3294579d032ff9b1a31dfe7e8d0fccd3a7e702d4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_carryover_apply"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The typed poll payload builder.  Anchor: `memory_quality_check_poll_payload`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
+            "content": "sha256:703c72ae680dd86cb5bd28174d3c0c965dc3fb04dede227d6000c50e5f0c30d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_quality_check_poll_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/memory.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
+            "content": "sha256:9587e21b84f3111c38c400ea4bbb19364ebc17e8c540588423cf39ea08983674",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/memory.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The `citation_fix` registration with its one-card or bounded-card selectors, optional `contract_path` and `dry_run`; no caller exclude is declared. Source caption: `citation_fix`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da0d962d6a6ecb8139ab4de63016c4bff497a1c9",
+            "content": "sha256:e680829e47db58265b7a93e8d891f6a09ba122ed9a80bec82f3dcc04a8a1cfad",
+            "locator": {
+              "end": 93,
+              "kind": "line_range",
+              "start": 54
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The scope object the citation operations share: it carries one named document or a bounded list of them, and refuses both selectors, an empty list, or a list outside `citation_fix`.\n\nAnchor: `CitationOperationScope`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:6245c0fad1ad37363ec36508b7e32f67104a8b9143178bc7e8c18a0856de40bb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The one scope value the citation operations share: the application entry points default to `DEFAULT_CITATION_OPERATION_SCOPE`, and the registration constructs the named-document scope it passes in.\n\nAnchor: `_citation_trees`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:6245c0fad1ad37363ec36508b7e32f67104a8b9143178bc7e8c18a0856de40bb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The drift description states the anchor measurement, the non-blocking stale rule, and the no-repair boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
+            "content": "sha256:4f8406d88a585b0f3f3c9f656cb6f58e31724246d0a9f20578e79d354bcc66c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "context_packet"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/core.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Baseline adoption forwards accept_drift without bypassing legacy-card or validator refusal; stale code/test references still fail exact paired staged-tree validation before any baseline is published.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bfbe2e81d84a8bfc86b538760f6510133897cc83",
+            "content": "sha256:4a22ee9b6321b636b8277d22c6d5fd5735eb65cc24655fd564b6b99b9760dce1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_converted_adopt_gate"
+            },
+            "path": "mcp/src/agents_remember/memory/baseline.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da0d962d6a6ecb8139ab4de63016c4bff497a1c9",
+            "content": "sha256:cab05899bedafd53520adfbc53526a3b92c684ac434bf63cceea0f3d82a66b0a",
+            "locator": {
+              "end": 201,
+              "kind": "line_range",
+              "start": 187
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Registration exposes converted worktree-only carryover and finite citation selectors without retired commit-message, caller-exclude or expected-snapshot arguments.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da0d962d6a6ecb8139ab4de63016c4bff497a1c9",
+            "content": "sha256:f6773d34aa7cd5ce69e5776b325f65d0464896d68cd92d4c204388caf6d77d59",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 67
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da0d962d6a6ecb8139ab4de63016c4bff497a1c9",
+            "content": "sha256:6264a9090f02cc8d816656020f15ce2537faf2ac797e1499009c7119bebc659e",
+            "locator": {
+              "end": 82,
+              "kind": "line_range",
+              "start": 54
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Memory health, baseline and carryover declarations retain their models and request discriminators, but payloads and operation-only memory request types are resolved on the matching call.  Anchor: `_register_memory_health_tools`\n\nAnchor: `_register_memory_health_tools`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da0d962d6a6ecb8139ab4de63016c4bff497a1c9",
+            "content": "sha256:22a16fa5e06b93600248318969bdaa92fc3eadaa85884358ee5bbb049f754e00",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The payload builders for the carryover plan and report-filing apply pair.  Anchor: `memory_carryover_plan_payload`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
+            "content": "sha256:8512bf49ed060b04bc987a87a99f12c2e9bf03d022426c17124c865589a1f38c",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_carryover_plan_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/memory.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
+            "content": "sha256:9587e21b84f3111c38c400ea4bbb19364ebc17e8c540588423cf39ea08983674",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/memory.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The public declaration forwards mode, run ID and frozen selectors through one payload owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da0d962d6a6ecb8139ab4de63016c4bff497a1c9",
+            "content": "sha256:8c8970683147f31767f3c402cb5be5e66ff82056236a64dead9f16f9747fc52e",
+            "locator": {
+              "kind": "symbol",
+              "name": "citation_fix"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "MQC docstring names knowledgeWorklist and knowledgeGate full-log fields and retains coherence boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da0d962d6a6ecb8139ab4de63016c4bff497a1c9",
+            "content": "sha256:8ac100494368c3d2ba1b2423415b8f18f11e9292d7761156e3ab77975ea90634",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 36
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The typed sync/start/poll payload builders.  Anchor: `memory_quality_check_payload`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
+            "content": "sha256:e222cae706209ad8af15c382443e44ca8a37e989ea5e6271f39e1f4598f1e78b",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_quality_check_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/memory.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
+            "content": "sha256:9587e21b84f3111c38c400ea4bbb19364ebc17e8c540588423cf39ea08983674",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/memory.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The `MemoryBranches` parameter object.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:33ec530cd7ea134f868737123e2ef344fae4d4c7609e21308019028ba0037442",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemoryBranches"
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:7229f6c95646f4b67b1e52b84d4ca859d73135a8eb1643a853d7a320c4370ced",
+            "locator": {
+              "end": 518,
+              "kind": "line_range",
+              "start": 506
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:6245c0fad1ad37363ec36508b7e32f67104a8b9143178bc7e8c18a0856de40bb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The `CarryoverSelection` parameter object.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:9d8d695f42fefc4b5e4d8e2094742e6eb75f0700834a0beee3387672628132f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "CarryoverSelection"
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:67b61bfc06f10cc6b6c8812296acb9e5f8c7403e341eb1b125c454c767a736ba",
+            "locator": {
+              "end": 864,
+              "kind": "line_range",
+              "start": 853
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:679ecdf25b3ab8b1325aad109c73f91fbbbcecad5273268146aa079cb2d3829d",
+            "locator": {
+              "end": 1115,
+              "kind": "line_range",
+              "start": 1096
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:6245c0fad1ad37363ec36508b7e32f67104a8b9143178bc7e8c18a0856de40bb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:7eaec590e90cef9afda608cb18f4d74465b0695311c5b03d70bb5de17e1d7cf7",
+            "locator": {
+              "end": 949,
+              "kind": "line_range",
+              "start": 930
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:5f9010a8552ff0068c4a2ab61496010f48e619d70d04cba02104791ce038249b",
+            "locator": {
+              "end": 950,
+              "kind": "line_range",
+              "start": 931
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The payload builder for the carryover plan.  Anchor: `memory_carryover_plan_payload`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
+            "content": "sha256:8512bf49ed060b04bc987a87a99f12c2e9bf03d022426c17124c865589a1f38c",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_carryover_plan_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/memory.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
+            "content": "sha256:9587e21b84f3111c38c400ea4bbb19364ebc17e8c540588423cf39ea08983674",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/memory.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The payload builder for the report-filing apply.  Anchor: `memory_carryover_apply_payload`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
+            "content": "sha256:0d77a2578f522b633677c3faa6193c4284366efd62363687351f961d31f5b994",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_carryover_apply_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/memory.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
+            "content": "sha256:9587e21b84f3111c38c400ea4bbb19364ebc17e8c540588423cf39ea08983674",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/memory.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The typed sync payload builder.  Anchor: `memory_quality_check_payload`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
+            "content": "sha256:e222cae706209ad8af15c382443e44ca8a37e989ea5e6271f39e1f4598f1e78b",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_quality_check_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/memory.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
+            "content": "sha256:9587e21b84f3111c38c400ea4bbb19364ebc17e8c540588423cf39ea08983674",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/memory.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The typed start payload builder.  Anchor: `memory_quality_check_start_payload`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
+            "content": "sha256:e6c73d4e2c546f68a386d3a10225edcd035ef64461d721740f28cb4b313093ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_quality_check_start_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/memory.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
+            "content": "sha256:9587e21b84f3111c38c400ea4bbb19364ebc17e8c540588423cf39ea08983674",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/memory.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

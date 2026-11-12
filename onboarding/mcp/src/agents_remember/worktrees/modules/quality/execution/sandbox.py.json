@@ -1,0 +1,67 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/quality/execution/sandbox.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Fresh preparation loads configured authority and observes actual source selection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee971f9439bb92610e7057de9349aa72968a2eab",
+            "content": "sha256:2909c7c1992a9a2014a465dac364f98e3596222c250335a3dd64c791443401c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admit_prepared_profile"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Selected preparation retains frozen semantic authority and bounded raw-file provenance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee971f9439bb92610e7057de9349aa72968a2eab",
+            "content": "sha256:c6f93502fa251785ee8c645f9db21601c7490b41be32be2917559b196611a4d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_selected_profile"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Manifest publication rechecks source selection and binds actual retained transport.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee971f9439bb92610e7057de9349aa72968a2eab",
+            "content": "sha256:3d594ab559ced4191d7a7a82941a00770ac4f0c1d9b4281bf747b47f97f7d20c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_sandbox_manifest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ee971f9439bb92610e7057de9349aa72968a2eab",
+            "content": "sha256:97f912523050da24c93a235f60224743586f1a519bce530b458fbe1bafc4d5f4",
+            "locator": {
+              "end": 169,
+              "kind": "line_range",
+              "start": 121
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

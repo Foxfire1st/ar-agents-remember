@@ -1,0 +1,76 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/coordination/architect/models-and-settings.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A missing named model is looked up and the harness and host versions are checked first.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e66f6688e066237488319af6e85ed2e3d216af6",
+            "content": "sha256:d44afa2556c761011441536f4c187a2b64052559959a7b3955d9cc651d97545c",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Named role sets may be switched by the Architect; any other settings change needs the developer's word.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e66f6688e066237488319af6e85ed2e3d216af6",
+            "content": "sha256:25b540cef54eafd50fa74cb87adab5dfb17671d55b53400cc8f66ee3c744a905",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 9
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Seats start on the named model or role default, never a variant chosen by name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e66f6688e066237488319af6e85ed2e3d216af6",
+            "content": "sha256:4ccb318f4c8bd8005fb6c0676178cb669e402dec1110fc84b5944da22f52ed3a",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The Architect role points here before selecting a seat model and its settings.\n\nAnchor: `models-and-settings.md`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de0e221dc51f2f0b067db007cb4c00b17ab3bd39",
+            "content": "sha256:53366a86261d025d65cbd6e4949b6130eb302243a7b8528d327f34137fc134a2",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 84
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

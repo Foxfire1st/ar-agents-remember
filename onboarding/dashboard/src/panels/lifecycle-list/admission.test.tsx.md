@@ -1,15 +1,5 @@
 # dashboard/src/panels/lifecycle-list/admission.test.tsx
 
-| Field                  | Value                                                       |
-| ---------------------- | ----------------------------------------------------------- |
-| repository             | agents-remember                                             |
-| path                   | `dashboard/src/panels/lifecycle-list/admission.test.tsx`    |
-| doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-08-07T08:19Z                                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`                  |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
-| governingOverview      | `../overview.md`                                            |
-
 ## Governing Overview
 
 [panels/ overview](../overview.md)
@@ -24,43 +14,33 @@ into the Operations list.
 
 ### Logic
 
-Seeds projections with mixed lifecycle/doc kinds and asserts the admitted rows and
-their labels per the admission rule.
+Served master/leaf/unauthored planning entries are visible and counted without worktrees. Selecting the addressable child emits its qualified key. Retired enclosure/lifecycle admission is not tested; addressless inert rows belong to taskEntryPage.
 
 ### Invariants And Boundaries
 
-Assertions preserved from the monolithic suite; shared cleanup from
-`test-utils.tsx`.
+Shared list cleanup remains. The row-admission contract now covers served tasks without worktrees, not the historical enclosure-only admission policy.
 
 ### Todos
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked `system/sources.md`; no Domain Documentation source is
 configured for this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found. | — | — |
+No relevant domain documentation was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The row-admission suite. | `describe` | dashboard/src/panels/lifecycle-list/admission.test.tsx:18-575 |
 
-## Cross-Repo References
+- The row-admission suite. [1]
+
+
+### Cross-Repo References
 
 No cross-repository implementation source governs this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: created this sidecar for the
-  admission suite split from `LifecycleList.test.tsx`. Verification pinned to the
-  leaf base until closeout stamps the code commit.
+No applicable cross-repository source was found.

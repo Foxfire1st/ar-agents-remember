@@ -1,0 +1,61 @@
+{
+  "path": "dashboard/src/panels/review/focusedCards.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e5dc7b90edf5b1102c9d98737b168d1589137ded",
+        "content": "sha256:1dffedab0024acafdd52a1f38f95dc35d280a2836396bbd3f4aca13212194601",
+        "locator": {
+          "end": 67,
+          "kind": "line_range",
+          "start": 62
+        }
+      },
+      "id": "RLZ-TMW88G",
+      "invariant": "INV-9S9XT5",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-HUNK-ATTACH-INV-9S9XT5",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "drawnText removes exactly one terminating newline before FilePane rendering so the inclusive mapped range does not acquire an invented final empty row; unreadable sides are still not made empty.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "14": {
+      "note": "focusedCards.ts current behavior at this source owner.\n\nAnchor: \"export function cardVoice(entry: ReviewTreeEntry): CardVoice {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5dc7b90edf5b1102c9d98737b168d1589137ded",
+            "content": "sha256:d2e14b699abbaf7a96cee1210f887f4d8a8abc2d5b8392ca147fde56c0b35537",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 34
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "focusedCards.ts current behavior at this source owner.\n\nAnchor: \"export function firstLines(card: ExpressionCard): { before: number; after: number } {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5dc7b90edf5b1102c9d98737b168d1589137ded",
+            "content": "sha256:e8f8b975284d88ebc27058ec475000906d6e5fb63b5f8659846b2dda96c45f2d",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 58
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

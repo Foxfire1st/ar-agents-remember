@@ -1,0 +1,38 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Matching only a family subject or treating a declaration as delivery could hide the wrong effect or a requirement from another packet. Exact effect/reference reconciliation keeps those obligations visible without fabricating task authority."
+  },
+  "applicability": "Expected-knowledge-effect schema validation and reconciliation of one leaf's declarations against its candidate history.",
+  "conditions": [
+    "A family declaration is delivered only by a changed FamilyRow whose actual effect equals the declaration; invariant changed/retire rows retain their own matching rules.",
+    "When typed approved packet references are listed in the task document, declared requirementRef spellings must belong to their stableId/version set; the added check does not apply when that typed set is empty.",
+    "An unmatched declaration remains an explicit planned obligation unless answered through its admitted planned row, rather than being silently completed by a similarly named row.",
+    "L54's own declared invariant strengthening still needs actual delivery or its admitted answer at real closeout; this source-backed record is not that delivery."
+  ],
+  "exclusions": [
+    "The model does not approve or resolve requirement packets and declarations do not certify their own fulfillment.",
+    "No held invariant revision, task declaration edit, closeout or acceptance is performed by this publication."
+  ],
+  "id": "INV-HX6ZN5",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/worker/0e651ec5-2eed-4b58-b19f-e2336d4978ca/repair-freeze-0a36ddc4/builder-report.md#mik-r55-rule-5",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/54_writer-and-validator-corrections-a4b3b3af8d-ar/role-reports/curator/1ad64580-9e4a-42ce-adc0-169869767dba/wave-67/mechanism-review.json",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/54_writer-and-validator-corrections-a4b3b3af8d-ar/role-reports/curator/1ad64580-9e4a-42ce-adc0-169869767dba/wave-76/proof-source-review.json"
+      ],
+      "path": "wave-66-complete-history.json"
+    },
+    "handoffEntry": "MIK-R55@v1 rule 5",
+    "leaf": "260928-MIK-L54",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Declared family effects match their actual changed-row effect and packet references, while this leaf’s declared invariant strengthening must still be delivered or answered at its real closeout.",
+  "status": "proposed",
+  "supersedes": []
+}

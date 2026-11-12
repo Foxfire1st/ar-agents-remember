@@ -1,0 +1,98 @@
+{
+  "path": "mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "dbad775386ff530ac950360a2ca49d6e9fc02678",
+        "content": "sha256:42d9a1e57ba3944ce6ffbccda21afca308acfe3e650595ab0e71c08b88cbf2ed",
+        "locator": {
+          "kind": "symbol",
+          "name": "_admit_terminal_surviving_contract"
+        }
+      },
+      "id": "RLZ-93CPH5",
+      "invariant": "INV-6GBJC6",
+      "origin": {
+        "handoffEntry": "L50-CODE-R1-F03",
+        "leaf": "260928-MIK-L50"
+      },
+      "rationale": "Cleanup of a genuine terminal-archived disabled contract refuses by name without a developer decision.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The module defines `ConfiguredContractAccepted`; `ConfiguredContractRefused`; `admit_configured_contract` as its public seam.\n\nAnchor: `ConfiguredContractAccepted` `ConfiguredContractRefused` `admit_configured_contract`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dbad775386ff530ac950360a2ca49d6e9fc02678",
+            "content": "sha256:474e31f0982deb639ffdd0ffea835a5968a97c342dbd271178dea9a8e46833ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConfiguredContractAccepted"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dbad775386ff530ac950360a2ca49d6e9fc02678",
+            "content": "sha256:b8cbe01abd232a66d9fb1a2ddc5f6ffb9f8e5519428c76021a0137ad5967b67a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConfiguredContractRefused"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dbad775386ff530ac950360a2ca49d6e9fc02678",
+            "content": "sha256:2cd629788561282f91ce2fb714dbb84d0af712c551874c021fb27516590b00ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "admit_configured_contract"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dbad775386ff530ac950360a2ca49d6e9fc02678",
+            "content": "sha256:5437f585bdb5d0a3e36076ded083366b8ef27137f68451d65b02094af990e31f",
+            "locator": {
+              "end": 64,
+              "kind": "line_range",
+              "start": 58
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dbad775386ff530ac950360a2ca49d6e9fc02678",
+            "content": "sha256:b8d6c2d0e517a6986a8c1c2ee4f334197c004b82faa039d45aa5870ae7d6d412",
+            "locator": {
+              "end": 93,
+              "kind": "line_range",
+              "start": 83
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dbad775386ff530ac950360a2ca49d6e9fc02678",
+            "content": "sha256:579b44b5511fc3a31adf41f56e4f5f9c97bf384bf2acf8ca12c8131a67c4df6f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

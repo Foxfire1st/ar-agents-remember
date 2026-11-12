@@ -1,0 +1,72 @@
+{
+  "path": "mcp/src/agents_remember/serving/review_memory_watch.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Only an explicitly selected, admitted review connection receives a watch; failures retain the ordinary stream.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f884d317176ef56edeba08afba6ebc87737fa1b5",
+            "content": "sha256:0222d39ee8635bb76186f7f8448069f042a2a55ccf702c14c656ac04214e057e",
+            "locator": {
+              "kind": "symbol",
+              "name": "multiplex_review_memory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Cancellation waits for root-admission completion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f884d317176ef56edeba08afba6ebc87737fa1b5",
+            "content": "sha256:4fb7a6d38f9c9c2f31d3c121ed8132e1b33db7e4aa1c2f893ee044d9b0581d70",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_root"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The source regression queues a genuine native edit during registration and asserts distinct baseline/update events.\n\nAnchor: `test_change_during_registration_is_not_swallowed_by_baseline`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b2989fbdc3060b3f34d8360d8ef291e51533e06",
+            "content": "sha256:42f70f7ac0ac55785da2e2cdfbb320357d6899dd6c0c5c811a844bc0f9f9c045",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_review_memory_watch.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The source HTTP-disconnect regression requires worker exit before serving shutdown.\n\nAnchor: `test_real_http_disconnect_retires_native_watch_before_server_shutdown`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b2989fbdc3060b3f34d8360d8ef291e51533e06",
+            "content": "sha256:42f70f7ac0ac55785da2e2cdfbb320357d6899dd6c0c5c811a844bc0f9f9c045",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_review_memory_watch.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

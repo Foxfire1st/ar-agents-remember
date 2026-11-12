@@ -1,0 +1,29 @@
+{
+  "anchor": {
+    "blob": "463f5d42482415a98b7acd08b6be102c6dc95af2",
+    "content": "sha256:ca307d2721aab177b7d185104fbd3a5ef28902a7011ff83fb315510a793125b0",
+    "locator": {
+      "kind": "symbol",
+      "name": "SessionRegistry"
+    },
+    "path": "mcp/src/agents_remember/canvas/sessions.py"
+  },
+  "id": "WKN-707J2Q",
+  "kind": "fault",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-a004"
+    },
+    "handoffEntry": "L97-weakness-24",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L97"
+  },
+  "state": "open",
+  "statement": "A canvas session ends 30 minutes after it opens, used or not, and the reason it records is idle-timeout."
+}

@@ -1,0 +1,39 @@
+{
+  "path": "mcp/src/agents_remember/application/review_invariant_changes.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "invariants_that_differ compares record blobs and names the ones that differ.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aeeadb406fd80ed4c0de15628f2e8117fd21c79d",
+            "content": "sha256:4c7799b8f7647f180b1830c306d774263bc6f24362ac4e38abda1d6c7f57238d",
+            "locator": {
+              "kind": "symbol",
+              "name": "invariants_that_differ"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "_unavailable keeps an unreadable record visible as unavailable rather than as a change.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aeeadb406fd80ed4c0de15628f2e8117fd21c79d",
+            "content": "sha256:85d4e303bca9bcb3e8bfd7671d4d1c8767c78e1b659eb620db05a6b713a2b229",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unavailable"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

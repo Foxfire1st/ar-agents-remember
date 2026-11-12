@@ -1,0 +1,188 @@
+{
+  "confirmed": {
+    "codeTree": "883cd99bf39d98ad9a295289db97c05e2f89e73a",
+    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
+    "role": "curator",
+    "statement": "The packaged copy is re-read at A005: it no longer stands on install/removed_stores.py and its remaining statements stand against the packaged text.",
+    "task": "260928-MIK-L97",
+    "uncommitted": true
+  },
+  "document": "mcp/src/agents_remember/package_data/runtime/docs/tool-details.md",
+  "id": "DPD-NGC2F6",
+  "origin": {
+    "handoff": {
+      "path": "handoff-draft.json"
+    },
+    "handoffEntry": "dpd-2",
+    "leaf": "260928-MIK-L188",
+    "task": "260928-MIK"
+  },
+  "revision": 6,
+  "schema": "ar-dependent/v1",
+  "stands_on": [
+    {
+      "anchor": {
+        "blob": "9125b43d7f08f23eb26bcfe0b5cf989ea3592615",
+        "content": "sha256:4dfecd273e8b7851ec4b7d4cfa3656919408df3d0c9325d4769becf683f22684",
+        "locator": {
+          "kind": "symbol",
+          "name": "prepare_first_run"
+        },
+        "path": "mcp/src/agents_remember/cli/role_launch_first_run.py"
+      },
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "f5e98565595261000309d4af6931b1bd494a558b",
+        "content": "sha256:8b5ff8f9f66b69de9ac42443a04b79192ac20f26109b76cc6cd87808ae77adf5",
+        "locator": {
+          "kind": "symbol",
+          "name": "establish_authority_paseo_runtime"
+        },
+        "path": "mcp/src/agents_remember/kernel/primitives/paseo_authority.py"
+      },
+      "kind": "anchor"
+    },
+    {
+      "id": "INV-033XSD",
+      "kind": "record",
+      "revision": 1
+    },
+    {
+      "id": "INV-QR6DSA",
+      "kind": "record",
+      "revision": 2
+    },
+    {
+      "blob": "026b25cfc0f0c7c01ed4aeebd60f00747b7b7c52",
+      "kind": "file",
+      "path": "docs/tool-details.md"
+    },
+    {
+      "blob": "096416e28ba831c922b782c7d3994ab2b726e6cb",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/mcp/tools/core.py"
+    },
+    {
+      "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/install/runtime.py"
+    },
+    {
+      "blob": "bf9ac72bbb7c8c5de47dafe426cd1ab91b20c7bd",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/install/experiment.py"
+    },
+    {
+      "blob": "3708c33b80551e129acbc4da11a4f728c1efb009",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/runtime/install.py"
+    },
+    {
+      "blob": "3dcea459e6d09537cb45d687d719f677526cdbb4",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/serving/paseo/paseo_install.py"
+    },
+    {
+      "blob": "ab649fa5dd2402a61b2ddd4c6fb9e3a2be7ee979",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/serving/server_registry.py"
+    },
+    {
+      "blob": "adde5b12a26cb698ccc28c146c1e2bbca612f6fd",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/mcp/build_staleness.py"
+    },
+    {
+      "blob": "215396ca72f75e174a7d10419eff50f6d07b1964",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/models/build_currentness.py"
+    },
+    {
+      "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+    },
+    {
+      "blob": "8e48e38066874b65d5c7dec91535af65a658fbe4",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
+    },
+    {
+      "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+    },
+    {
+      "blob": "8d6b1ee561c5e43e75c716d3761df322e279052a",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/memory_quality/landing_report.py"
+    },
+    {
+      "blob": "da0d962d6a6ecb8139ab4de63016c4bff497a1c9",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/mcp/registration/memory.py"
+    },
+    {
+      "blob": "ce02a53623bbc91e452717b9870f6c71ab46f72c",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/role_retire.py"
+    },
+    {
+      "blob": "78d1d879651aca07ed8ab09f7022678801d0b38d",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/mcp/registration/seat_retirement.py"
+    },
+    {
+      "blob": "aa1a36d2b0380291d77aa3ff81c12026b03c214e",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/install/provider_watchers.py"
+    },
+    {
+      "blob": "80950be36296616946275f2d5e7cc7e752fd4185",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/providers/setup_common.py"
+    },
+    {
+      "blob": "f46c901c30e3cecad97dcf399005a5a768c8eb61",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/primitives/checkout_coordination.py"
+    },
+    {
+      "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/mcp/server.py"
+    },
+    {
+      "blob": "0a98d07922b6fc1d752ba17136ea7a1634652373",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/serving/build_info.py"
+    },
+    {
+      "blob": "43b091711c6ff4cc99e2a14a2aae53c94e0146cf",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/memory_quality/runs.py"
+    },
+    {
+      "blob": "9b06809a50c0177ed9f11e258232f95ce0fe5679",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
+    },
+    {
+      "blob": "52dca54186245fab9357985e28308e82732fad2a",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/knowledge_worklist/route_context.py"
+    },
+    {
+      "blob": "ae1b5a6ed0cae313b1f5ce14e2f26dc25dcaf5f4",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/memory_quality/source_files.py"
+    },
+    {
+      "blob": "bfbe2e81d84a8bfc86b538760f6510133897cc83",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/memory/baseline.py"
+    }
+  ]
+}

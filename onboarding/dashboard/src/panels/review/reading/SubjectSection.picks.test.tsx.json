@@ -1,0 +1,41 @@
+{
+  "path": "dashboard/src/panels/review/reading/SubjectSection.picks.test.tsx",
+  "realizes": [],
+  "references": {
+    "4": {
+      "note": "Minimal reading context and isolated tray collection.\n\nAnchor: \"function context(): ReadingContextValue {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9fbb204a5821f39adc63514a3fbbb44de198e9ad",
+            "content": "sha256:20ac4ef000f901673436c7e7647195ba779392b4484130d3bf30aecd8c54ef36",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 18
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Record picks use text IDs/comparison sides and do not guess invariant revisions.\n\nAnchor: \"it('sends an invariant's text id with its comparison at the memory side that holds it', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9fbb204a5821f39adc63514a3fbbb44de198e9ad",
+            "content": "sha256:0d7b1f6abbc1da71a27beb6b1dd105f8ddf329af0c5a0730aea495b400a3512f",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 57
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

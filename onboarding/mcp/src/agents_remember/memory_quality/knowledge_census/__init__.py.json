@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/knowledge_census/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The package's public names.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43630763c4c9388682e82eb1738c8ec876b8dfeb",
+            "content": "sha256:26e958d0cfdbf4e1aa1f7db4388b1a3063c355e3e8c788bd5ac6f36da3fe2d50",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,40 @@
+{
+  "path": "scripts/agent_evals/adapters/hermes_dispatch.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b1d1531afcd7aa4a038b14995aaa3e6a0973d011",
+        "content": "sha256:77d7ec4d006346ea7702d1c36a5d91066983579415d02f4301581eebca379c8d",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-NTGZ3E",
+      "invariant": "INV-A0B83R",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-hermes-capture",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "It normalizes the observed MCP call arrays while preserving refusal status and planned-before-refusal metadata.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1d1531afcd7aa4a038b14995aaa3e6a0973d011",
+            "content": "sha256:77d7ec4d006346ea7702d1c36a5d91066983579415d02f4301581eebca379c8d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "family_guarantee"
+    ],
+    "justification": "Spans every settings reader: D109's one-time whole-file move plus the shared location guard with old-only/both-path refusal is the mechanism FAM-6M4B49's single-location guarantee is built on."
+  },
+  "applicability": "Every reader of user settings on the current line.",
+  "conditions": [
+    "The single standard user config location guard resolves the path.",
+    "Old-only and both-path states refuse without a compatibility reader."
+  ],
+  "exclusions": [
+    "A compatibility reader for the old path.",
+    "Repository-layer authorship of user settings."
+  ],
+  "id": "INV-B7D1WM",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/role-launch/260928-MIK-L71-worker-d508f3cc-d109-host-readers/source-current-a1b7/source26-public-sync/generation15-five-pin-successor/expanded-evidence.md"
+      ],
+      "path": "l71-handoff-list.json"
+    },
+    "handoffEntry": "L71-CURRENT242-W-15",
+    "leaf": "260928-MIK-L71",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "D109 moves the whole user settings file once to the standard user config location; every current-line old-path reader uses the same location guard, and old-only/both-path states refuse without a compatibility reader.",
+  "status": "proposed",
+  "supersedes": []
+}

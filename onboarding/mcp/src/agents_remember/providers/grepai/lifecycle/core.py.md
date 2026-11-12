@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/providers/grepai/lifecycle/core.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/providers/grepai/lifecycle/core.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T00:00+02:00     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
-| governingOverview      | `overview.md`                              |
-
 ## Governing Overview
 
 [Provider Lifecycle Modules Overview](overview.md)
@@ -86,34 +76,10 @@ seed target without the caller needing to pass it separately.
   provider's context back, so routing through it is a circular import that
   breaks any entry point touching grepai modules first.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| GrepAI PostgreSQL backend lifecycle consumes backend settings from this module through `grepai_backend_start`. | `grepai_backend_start` | mcp/src/agents_remember/providers/grepai/lifecycle/backend.py:444-463 |
-| GrepAI Ollama lifecycle consumes embedder settings from this module through `grepai_embedder_backend_start`. | `grepai_embedder_backend_start` | mcp/src/agents_remember/providers/grepai/lifecycle/embedder.py:392-415 |
-| GrepAI runner image/container lifecycle consumes runner settings and workspace config from this module through `grepai_watcher_container_start` and `grepai_runner_image_build`. | `grepai_watcher_container_start`; `grepai_runner_image_build` | mcp/src/agents_remember/providers/grepai/lifecycle/runner.py:37-74; mcp/src/agents_remember/providers/grepai/lifecycle/runner.py:245-257 |
+### Repo-Internal References
 
-## Update History
-- 2026-08-03T02:57+02:00 — W3-B03 curator: curated 3 table citations for GrepAI backend, embedder, watcher, and runner-image lifecycle paths; fixer-generated ranges verified.
-
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
-  added the frozen `GrepaiWorkspaceConfig` and `GrepaiServicePorts` (plus the
-  `UNRESOLVED_SERVICE_PORTS` singleton), re-signed `prepare_grepai_workspace` onto the config
-  object, and updated `grepai_layout_from_args` for the layout builder's new bundles. The written
-  `workspace.yaml` is unchanged. Verification metadata pinned until closeout stamps the L2 commit.
-- 2026-07-06T22:38+02:00 — 260703-L13 ride-along: `grepai_layout_from_args` calls
-  `grepai_settings_from_file` without the dropped `coordination_root` argument; manual
-  layouts now require an explicit `--from-settings` file (an empty JSON object suffices —
-  the old fallback empty-defaulted the same way, fail-open). Verification metadata pinned
-  until closeout stamps the L13 commit.
-
-- 2026-06-10T07:30+02:00 — No content impact: import path updated to `providers/context_common.py` (shared helpers moved out of the facade package, GitHub #58); documented behavior unchanged.
-- 2026-06-10T05:30+02:00 — Imports moved off the `providers.context` aggregator to leaf modules (`grepai.context` + `context.common`): the aggregator star-imports grepai context back, a circular import that broke any entry point touching grepai modules first.
-- 2026-06-02T01:15+02:00 — Added `rootsMount` (default `/grepai/roots`) to runner settings; `grepai_container_project_paths` now maps via `grepai_root_container_path` to `/grepai/roots/<project_id>` and the host-path translator `grepai_container_path` was removed; `prepare_grepai_workspace` now calls `ensure_grepai_root_gitignore` instead of the mirror sync + artifact scrub (watch-live).
-- 2026-06-01T00:00+02:00 — `grepai_embedder_backend_settings` now propagates `seedFromContainer` from raw backend settings into the resolved dict when the key is a non-empty string; updated Logic.
-- 2026-05-31T12:50+02:00 — Removed the unused `grepai_run_checked_command` helper and its `run_command` import, and typed the `layout` params plus the `grepai_layout_from_args` return on `GrepaiRuntimeLayout` (newly imported) instead of `Any`; reinforced the "derives configuration only" boundary and recorded the layout typing in Invariants And Boundaries (1.0.0 review remediation).
-- 2026-05-27T00:41+02:00: Updated after container GrepAI environment rendering
-  switched to container-local runtime paths for the Compose watcher.
-- 2026-05-25T19:09+02:00: Moved into the provider-specific subpackage and dropped the filename prefix while preserving behavior.
-- 2026-05-25T19:01+02:00: Created from GrepAI settings and workspace logic extracted out of provider lifecycle.
+- GrepAI PostgreSQL backend lifecycle consumes backend settings from this module through `grepai_backend_start`. [1]
+- GrepAI Ollama lifecycle consumes embedder settings from this module through `grepai_embedder_backend_start`. [2]
+- GrepAI runner image/container lifecycle consumes runner settings and workspace config from this module through `grepai_watcher_container_start` and `grepai_runner_image_build`. [3]

@@ -1,0 +1,274 @@
+{
+  "path": "dashboard/src/data/stream.ts",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d07a34e704f66d30bdfda13f53b076f4073e0482",
+        "content": "sha256:808e29d99056316d7c5633dfc088129917a628701ba753e2d5fc42b0b97d334a",
+        "locator": {
+          "kind": "symbol",
+          "name": "connectEvents"
+        }
+      },
+      "id": "RLZ-6SZT0A",
+      "invariant": "INV-QJC7QN",
+      "origin": {
+        "handoffEntry": "L114-W13",
+        "leaf": "260928-MIK-L114"
+      },
+      "rationale": "connectEvents opens the raw channel and parses the ready frame without changing event framing; hydration metadata flows through this call.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "d07a34e704f66d30bdfda13f53b076f4073e0482",
+        "content": "sha256:214bd4b1b218d19e24c980620b4a3068d3859ef3f7678d1dc2dcedf0ab530eab",
+        "locator": {
+          "kind": "symbol",
+          "name": "attachReviewListeners"
+        }
+      },
+      "id": "RLZ-C5K52Y",
+      "invariant": "INV-V0PX2F",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE07-moved-notice",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Excludes stopped/replaced sources and forwards the named moved event through the existing state transport.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "d07a34e704f66d30bdfda13f53b076f4073e0482",
+        "content": "sha256:c37180eca777de69c1a2d1746cbd62a1dbec1c7dc94c44390e27b7f7a51fe18e",
+        "locator": {
+          "end": 24,
+          "kind": "line_range",
+          "start": 16
+        }
+      },
+      "id": "RLZ-C5YJ9B",
+      "invariant": "INV-MGGEBY",
+      "origin": {
+        "handoffEntry": "L168-CUR-M2-21-N20",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "The state-event subscription takes task/task.removed/taskCounts instead of lifecycle/lifecycle.removed, forwarding the single server task population while retaining independent state events.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "d07a34e704f66d30bdfda13f53b076f4073e0482",
+        "content": "sha256:f7c7abe02f78737992a6030e2a80576fd6b56217649fd607bb3ad9d3e0cd1dd6",
+        "locator": {
+          "kind": "symbol",
+          "name": "connectState"
+        }
+      },
+      "id": "RLZ-D66VH0",
+      "invariant": "INV-74578B97",
+      "origin": {
+        "handoffEntry": "CUR-L57-sse-live-summary-invalidation-transport",
+        "leaf": "260928-MIK-L57"
+      },
+      "rationale": "Uses the existing state EventSource for the registered memory scope, ignores events from stopped/replaced sources, dispatches initial/change notices and separate errors to the watch owner, resets initial state on open and reopens/disposes the scope subscription. The watch owner invokes shared entry generation invalidation; this transport neither invents summary counts nor authenticates knowledge or opens a second memory connection.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The state channel's `connectState`: one `EventSource` over `/api/stream` merging the snapshot and each named delta into the store, with a bounded open deadline and the liveness watchdog.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d07a34e704f66d30bdfda13f53b076f4073e0482",
+            "content": "sha256:f7c7abe02f78737992a6030e2a80576fd6b56217649fd607bb3ad9d3e0cd1dd6",
+            "locator": {
+              "kind": "symbol",
+              "name": "connectState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The watch owner selects the first registered scope. Registration changes notify scope listeners when that selected scope changes and reset the revision baseline. publishReviewMemory checks matching scope and a string revision, then notifies matching registrations for an undefined baseline, initial message or changed revision. publishReviewMemoryError invokes matching failure callbacks. These are client coordination checks, not authentication.\n\nAnchor: inclusive source ranges\n\nRetired at the fifth freeze d59c3493: dashboard/src/data/reviewMemoryWatch.ts:12-32 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5f8398b32760677c370e3145add73cfa8388357b; dashboard/src/data/reviewMemoryWatch.ts:76-84 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 20624f979e2b89067a3e42019c9611a8e18ff848. Retired means the anchor no longer stands, not that the cited subject was deleted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ba9b634c8dc962571424e64723fc44a8335f134",
+            "content": "sha256:6100f6dbfe26a57cccd6513f50791b700a5e258c12e7079b122f38b5ece962f8",
+            "locator": {
+              "end": 96,
+              "kind": "line_range",
+              "start": 88
+            },
+            "path": "dashboard/src/data/reviewMemoryWatch.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0ba9b634c8dc962571424e64723fc44a8335f134",
+            "content": "sha256:0b5f53874d3458370941e5a22cb83a7834de5ed45c54ae18f0cc1ea68513d716",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 97
+            },
+            "path": "dashboard/src/data/reviewMemoryWatch.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0ba9b634c8dc962571424e64723fc44a8335f134",
+            "content": "sha256:1d11c144cafa8f7a39f87af2cd7d1e94fab807e31b73c8e2c9bee4d2e684929c",
+            "locator": {
+              "end": 170,
+              "kind": "line_range",
+              "start": 165
+            },
+            "path": "dashboard/src/data/reviewMemoryWatch.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "attachReviewListeners owns the guarded review.memory, review.memory.error and review.explainer.moved listeners. A current moved event marks watchdog liveness and publishes to the exact-scope moved-notice subscribers; it does not change snapshot/delta ownership. One isCurrent predicate excludes a stopped or replaced source for all state handlers. The memory initial-baseline flag is a shared mutable holder reset on open.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d07a34e704f66d30bdfda13f53b076f4073e0482",
+            "content": "sha256:214bd4b1b218d19e24c980620b4a3068d3859ef3f7678d1dc2dcedf0ab530eab",
+            "locator": {
+              "kind": "symbol",
+              "name": "attachReviewListeners"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The state connection subscribes to the named `buildCurrentness` delta beside the task, enclosure and whole-value events.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d07a34e704f66d30bdfda13f53b076f4073e0482",
+            "content": "sha256:a7ac870841f9e6a4c17f7d1e55ef0fdb41eb127eac043ac4865ef18cf42d4083",
+            "locator": {
+              "kind": "symbol",
+              "name": "STATE_EVENTS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "State stream snapshot and named deltas merge into the Zustand store.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d07a34e704f66d30bdfda13f53b076f4073e0482",
+            "content": "sha256:39cb46fc97333d33f2e0f1df345bbb3136c02f17c9d4d0e398b1cfda83d3f4fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "attachStateListeners"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Raw event stream forwards `event` rows and the backend `ready` marker.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d07a34e704f66d30bdfda13f53b076f4073e0482",
+            "content": "sha256:808e29d99056316d7c5633dfc088129917a628701ba753e2d5fc42b0b97d334a",
+            "locator": {
+              "kind": "symbol",
+              "name": "connectEvents"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The backend raw stream emits a `ready` event once after backlog delivery.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91d04c0b9f1ef75ed3894240899e238bde789901",
+            "content": "sha256:1f3d8eb53c0b1348ff045304118c7eca3eeb5555521451ca4c0056d38ee03aac",
+            "locator": {
+              "end": 369,
+              "kind": "line_range",
+              "start": 342
+            },
+            "path": "mcp/src/agents_remember/serving/events.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The browser listener table has build-currentness, task/count and operational events, but no closeoutQueues named listener.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d07a34e704f66d30bdfda13f53b076f4073e0482",
+            "content": "sha256:a7ac870841f9e6a4c17f7d1e55ef0fdb41eb127eac043ac4865ef18cf42d4083",
+            "locator": {
+              "kind": "symbol",
+              "name": "STATE_EVENTS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Snapshot application separately retains closeoutQueues alongside canonical tasks and operational projections.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f4687b5092789e0a1d4182e803092af73f123537",
+            "content": "sha256:b1691825a62f112a5023425cab5a19d398654fc7b1ee124da5d7b5082b24aff0",
+            "locator": {
+              "kind": "symbol",
+              "name": "applySnapshotState"
+            },
+            "path": "dashboard/src/data/store.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "connectState reads optional review-memory scope into request parameters, guards handlers against stopped or replaced sources, publishes parsed memory messages with an initial flag reset on open, and publishes parsed errors separately. Memory messages mark watchdog liveness; memory errors do not. Disposal unsubscribes scope notifications.\n\nAnchor: inclusive source ranges\n\nRetired at the fifth freeze d59c3493: dashboard/src/data/stream.ts:45-64 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 20624f979e2b89067a3e42019c9611a8e18ff848; dashboard/src/data/stream.ts:76-78 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 20624f979e2b89067a3e42019c9611a8e18ff848; dashboard/src/data/stream.ts:120-128 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5f8398b32760677c370e3145add73cfa8388357b; dashboard/src/data/stream.ts:47-66 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5f8398b32760677c370e3145add73cfa8388357b; dashboard/src/data/stream.ts:141-149 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 842b487b854503d95c9c2d9dce1841198ba93c7d. Retired means the anchor no longer stands, not that the cited subject was deleted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d07a34e704f66d30bdfda13f53b076f4073e0482",
+            "content": "sha256:e417c6c00b4c21d359d1e61352875e4650a5e636d12c7ac01f5e7a2b884be865",
+            "locator": {
+              "end": 155,
+              "kind": "line_range",
+              "start": 153
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

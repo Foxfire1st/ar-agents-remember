@@ -1,0 +1,343 @@
+{
+  "path": "mcp/tests/test_final_codex_models.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Railspec.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7d68875d6e9129810a99340a8407b00a42726a3",
+            "content": "sha256:9245481b73ab98cf4af1bb4bb0811b66aa81d4debb1cfcf5bae2eb2725bb236f",
+            "locator": {
+              "kind": "symbol",
+              "name": "RailSpec"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "Fresh identities.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7d68875d6e9129810a99340a8407b00a42726a3",
+            "content": "sha256:e08dc05f09e7e2e7c19d74a0c1c51958d170bb47240d1b3129e5450dbcf5e8a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "fresh_identities"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Plan record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7d68875d6e9129810a99340a8407b00a42726a3",
+            "content": "sha256:9c57bb27ffc26e7b14f3557bda51308ff484606c7f66d35dcbf6c0881cd05500",
+            "locator": {
+              "kind": "symbol",
+              "name": "plan_record"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Attempt record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7d68875d6e9129810a99340a8407b00a42726a3",
+            "content": "sha256:06d3a1ace4a838ea51e87158e67b5ee441b79532c2d0f4ed657d92ee4e549ed1",
+            "locator": {
+              "kind": "symbol",
+              "name": "attempt_record"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "Environment binding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7d68875d6e9129810a99340a8407b00a42726a3",
+            "content": "sha256:625c49a05bbe9057148dbd1329fa96f5f046eb4e28efed4bb89d42167b7b9893",
+            "locator": {
+              "kind": "symbol",
+              "name": "environment_binding"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "Authority binding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7d68875d6e9129810a99340a8407b00a42726a3",
+            "content": "sha256:aebc5190b756c04e12944ab9bc052420ccf27798edecbd897392cf427cfbcbcc",
+            "locator": {
+              "kind": "symbol",
+              "name": "authority_binding"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Teardown record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7d68875d6e9129810a99340a8407b00a42726a3",
+            "content": "sha256:5ea0644cb4b67b186d32ec8a3db23de677f157bad41283c39250297b5553b31c",
+            "locator": {
+              "kind": "symbol",
+              "name": "teardown_record"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "Make draft.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7d68875d6e9129810a99340a8407b00a42726a3",
+            "content": "sha256:b6d319df45b820eb60b7e9646e1ae697d9b0c421ef2c248689af6531cb45ac35",
+            "locator": {
+              "kind": "symbol",
+              "name": "make_draft"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "Make store.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7d68875d6e9129810a99340a8407b00a42726a3",
+            "content": "sha256:3510defc4ad33ff28569497aaddd94e039c541f37eb955d54f79caba82f243c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "make_store"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "Publish run.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7d68875d6e9129810a99340a8407b00a42726a3",
+            "content": "sha256:4d0ba342ded600431c6509e2b4caa82557495949ebd71867dd87c18bf8fb9550",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_run"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "Store codes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7d68875d6e9129810a99340a8407b00a42726a3",
+            "content": "sha256:cb9009f7df7e3f17f2caf03107f8e503d1dcb3c6ef6eb71b5a9f36ee927846a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "store_codes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7d68875d6e9129810a99340a8407b00a42726a3",
+            "content": "sha256:af818801f7aa1c7ea15a65a41d9c748cfc412c920252805bc06ed536732b12c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "identity"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "Fakeinspector.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7d68875d6e9129810a99340a8407b00a42726a3",
+            "content": "sha256:bc9909cec4a7546f469e520cdf8146b02a67535a4ed3e78758bb146ba5329504",
+            "locator": {
+              "kind": "symbol",
+              "name": "FakeInspector"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "Engine environ.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7d68875d6e9129810a99340a8407b00a42726a3",
+            "content": "sha256:28fc7c7664b3cef6cf704c542972f31d60958a9fdfc2e3543e9e1897641dba4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "engine_environ"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Rail.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7d68875d6e9129810a99340a8407b00a42726a3",
+            "content": "sha256:f651db440284ac882adc2f20235bd32d0a739d55b81e231658dcf13242aefa80",
+            "locator": {
+              "kind": "symbol",
+              "name": "rail"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Scenario registry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7d68875d6e9129810a99340a8407b00a42726a3",
+            "content": "sha256:f54dd4f901e38252a704477238f68310fcff9a4d0285f633d2fa8877ead43c45",
+            "locator": {
+              "kind": "symbol",
+              "name": "scenario_registry"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Certifying plan.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7d68875d6e9129810a99340a8407b00a42726a3",
+            "content": "sha256:268b7ab79bab27699e5093aaad7432dc31f62726635079d7be99c8c249b3a301",
+            "locator": {
+              "kind": "symbol",
+              "name": "certifying_plan"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Manifest for.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7d68875d6e9129810a99340a8407b00a42726a3",
+            "content": "sha256:2dc8c9ef6703f69fed263c58ea67f6a050a41c8a89a94a9f6a307999240c6e56",
+            "locator": {
+              "kind": "symbol",
+              "name": "manifest_for"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Scenario failure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7d68875d6e9129810a99340a8407b00a42726a3",
+            "content": "sha256:6056472aa0482f50e0f3f6f97b4137e82d4d2a19c9e8988f4c86517336f73bc7",
+            "locator": {
+              "kind": "symbol",
+              "name": "scenario_failure"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Gate4 manifest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7d68875d6e9129810a99340a8407b00a42726a3",
+            "content": "sha256:c987b2f7add969ba9e9f8844ccbe8ed28ba39c9187716b1272e5c6255f5a5aad",
+            "locator": {
+              "kind": "symbol",
+              "name": "gate4_manifest"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Repetition identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7d68875d6e9129810a99340a8407b00a42726a3",
+            "content": "sha256:98808012601cfba08bfcbf32f60d3e0695f627b869d5d6154469bb104f664f9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "repetition_identity"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

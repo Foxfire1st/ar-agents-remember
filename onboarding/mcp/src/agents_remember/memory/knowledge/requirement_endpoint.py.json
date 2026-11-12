@@ -1,0 +1,389 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2c338bc95b7c3356425cae3d82c0c83cf08a2667",
+        "content": "sha256:4fcc8dbd244f2419df8a21fcee9e51c7523355c7dbf5278ebc782d917b2ae157",
+        "locator": {
+          "kind": "symbol",
+          "name": "resolve_requirement_endpoint"
+        }
+      },
+      "id": "RLZ-6B4AF6",
+      "invariant": "INV-DP689F",
+      "origin": {
+        "handoffEntry": "L54-curator-MIK-R54-v1-rule-10-actual-guards",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "The selected live/archive owner supplies the actual packet resolution and explicit archive provenance; no authority is invented.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2c338bc95b7c3356425cae3d82c0c83cf08a2667",
+        "content": "sha256:1dc74a8fe10ce3024734be2fe7695c4d9609b42ca9484f98b2705943f4b14608",
+        "locator": {
+          "kind": "symbol",
+          "name": "requirement_task_root"
+        }
+      },
+      "id": "RLZ-XHZ44A",
+      "invariant": "INV-DP689F",
+      "origin": {
+        "handoffEntry": "MIK-R54@v1 rule 10",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "This owner selects the live task directory or its bounded archive counterpart.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "15": {
+      "note": "The two root answers and the manifest constants.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c338bc95b7c3356425cae3d82c0c83cf08a2667",
+            "content": "sha256:424716912342298176139e4510ac3f030ee0bad293634a61e620235461b99773",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 54
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "One endpoint with the owner's answer and its key.\n\nAnchor: `RequirementEndpoint`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c338bc95b7c3356425cae3d82c0c83cf08a2667",
+            "content": "sha256:00f54da1be81d091bdafdf53f314023ec88f3954f08edab4edd0585b07b4b895",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The owning task's root, or none for a repository that is not one directory name.\n\nAnchor: `requirement_task_root`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c338bc95b7c3356425cae3d82c0c83cf08a2667",
+            "content": "sha256:00f54da1be81d091bdafdf53f314023ec88f3954f08edab4edd0585b07b4b895",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Resolution hands the reference to the owner and reports an unresolved endpoint.\n\nAnchor: `resolve_requirement_endpoint`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c338bc95b7c3356425cae3d82c0c83cf08a2667",
+            "content": "sha256:00f54da1be81d091bdafdf53f314023ec88f3954f08edab4edd0585b07b4b895",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The manifest is read once and recorded as bytes, absent or unreadable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c338bc95b7c3356425cae3d82c0c83cf08a2667",
+            "content": "sha256:e81e65f5dea0a7f4ae9f71e1333de6e84e0a046b9d8c79f7522e98adb596c91d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_manifest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The approval of one stable ID.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c338bc95b7c3356425cae3d82c0c83cf08a2667",
+            "content": "sha256:3da4a039b41e690cfdc147dff1a290d7c9f6cc1bae61b1dd9a23430300a4ddf2",
+            "locator": {
+              "kind": "symbol",
+              "name": "requirement_approval"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The comparison of versions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c338bc95b7c3356425cae3d82c0c83cf08a2667",
+            "content": "sha256:3538b283f3d5764f4f8f7d758b50b3c8a86dc87abc6292adb6c63ade4cddc0d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "newer_than"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "The docstring's recording paragraph (MIK-R09).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c338bc95b7c3356425cae3d82c0c83cf08a2667",
+            "content": "sha256:e81e65f5dea0a7f4ae9f71e1333de6e84e0a046b9d8c79f7522e98adb596c91d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_manifest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "The two answers that are this module's own, both about the root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c338bc95b7c3356425cae3d82c0c83cf08a2667",
+            "content": "sha256:6f009ce3656a87d4b37b7bdd737866906746146847e1d3bfdfac4b10f0de3b61",
+            "locator": {
+              "kind": "symbol",
+              "name": "TASK_PLANE_UNAVAILABLE"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "One endpoint, its state, its task root and the owner's answer; its index key.\n\nAnchor: `RequirementEndpoint`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c338bc95b7c3356425cae3d82c0c83cf08a2667",
+            "content": "sha256:00f54da1be81d091bdafdf53f314023ec88f3954f08edab4edd0585b07b4b895",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "The owning task's root, or none when the repository is not one directory.\n\nAnchor: `requirement_task_root`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c338bc95b7c3356425cae3d82c0c83cf08a2667",
+            "content": "sha256:00f54da1be81d091bdafdf53f314023ec88f3954f08edab4edd0585b07b4b895",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "No root, a root outside tasks, or the owner's answer verbatim.\n\nAnchor: `resolve_requirement_endpoint`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c338bc95b7c3356425cae3d82c0c83cf08a2667",
+            "content": "sha256:00f54da1be81d091bdafdf53f314023ec88f3954f08edab4edd0585b07b4b895",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "The manifest path, format and version pattern; the approval states.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c338bc95b7c3356425cae3d82c0c83cf08a2667",
+            "content": "sha256:6107e1df3fc95f3e6eb4024cac45e69f0c21b10c7bd8a9d9fd42e47590f6961f",
+            "locator": {
+              "kind": "symbol",
+              "name": "MANIFEST_PATH"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "The integer after `v`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c338bc95b7c3356425cae3d82c0c83cf08a2667",
+            "content": "sha256:49570d37da1778dba3c9b19703066fb894a945cc3b2aa6d9e18b46c3b672ca09",
+            "locator": {
+              "kind": "symbol",
+              "name": "version_number"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "What the manifest says about one ID, and the newer-than comparison.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c338bc95b7c3356425cae3d82c0c83cf08a2667",
+            "content": "sha256:5fb08aad422a944a4e84cf80f7cb468b0b9e10196bdb886ba627267a3ff12fd9",
+            "locator": {
+              "kind": "symbol",
+              "name": "RequirementApproval"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "The manifest read with its reasons, since MIK-R09 recording the exact bytes read; the approved entries of one ID.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c338bc95b7c3356425cae3d82c0c83cf08a2667",
+            "content": "sha256:e81e65f5dea0a7f4ae9f71e1333de6e84e0a046b9d8c79f7522e98adb596c91d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_manifest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "The highest approved version and its packet, `not_approved`, or `unknown`; the packet's named function.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c338bc95b7c3356425cae3d82c0c83cf08a2667",
+            "content": "sha256:3da4a039b41e690cfdc147dff1a290d7c9f6cc1bae61b1dd9a23430300a4ddf2",
+            "locator": {
+              "kind": "symbol",
+              "name": "requirement_approval"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "The lookup's cases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1176f3ca1d7d895f188bac1a18b73621a5897e93",
+            "content": "sha256:df053197906d07b2388c5dac23e09dedb0592a931742ca48c4a64f9c3d13e43e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_manifest_lookup_returns_the_highest_approved_version"
+            },
+            "path": "mcp/tests/test_reconsideration_surfacing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "34": {
+      "note": "The owner the packet question is handed to.\n\nAnchor: `resolve_requirement_endpoint`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c338bc95b7c3356425cae3d82c0c83cf08a2667",
+            "content": "sha256:00f54da1be81d091bdafdf53f314023ec88f3954f08edab4edd0585b07b4b895",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "Resolved, version mismatch, missing, outside tasks and no root; the validator never resolves.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "886a6295ef58c5cdbfa1e1682723c34ea51e94c1",
+            "content": "sha256:e6da3ab34e59a129b755374a77b7dd28270b5ae8ed3ce4ca0a73c1fd5ef0adaa",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_requirement_endpoints_resolve_through_the_owner_and_never_refuse"
+            },
+            "path": "mcp/tests/test_knowledge_decisions.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "36": {
+      "note": "Absent active directories can use the repository-scoped archive, whose provenance is retained on both resolved and unresolved owner outcomes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c338bc95b7c3356425cae3d82c0c83cf08a2667",
+            "content": "sha256:1dc74a8fe10ce3024734be2fe7695c4d9609b42ca9484f98b2705943f4b14608",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 89
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2c338bc95b7c3356425cae3d82c0c83cf08a2667",
+            "content": "sha256:4fcc8dbd244f2419df8a21fcee9e51c7523355c7dbf5278ebc782d917b2ae157",
+            "locator": {
+              "end": 141,
+              "kind": "line_range",
+              "start": 101
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

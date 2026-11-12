@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Watcher health serialized on the served state tail. Losing this boundary would fabricate currentness, attribute another owner's work, hide an external change, or repeat an unsafe host/landing action rather than exposing the actual observation."
+  },
+  "applicability": "Watcher health serialized on the served state tail.",
+  "conditions": [
+    "Healthy bodies omit downSince; outages carry it.",
+    "Generated optional typing follows the actual body."
+  ],
+  "exclusions": [
+    "There is no schema exemption or health field on a watcherless composition."
+  ],
+  "id": "INV-GDTTHF",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_watcher_health_body.py"
+      ],
+      "path": "curator-handoff-L81-A001-b1fd-03.json"
+    },
+    "handoffEntry": "MIK-R81@v1-F10-typed-health-body",
+    "leaf": "260928-MIK-L81",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The served watcher health omits downSince while healthy and includes it during an outage, matching generated optional typing without a schema exemption.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,485 @@
+{
+  "path": "dashboard/src/test/fixtures/wire.ts",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A type assertion performs no check and removes excess-property checking — the mechanism by which `as SomeWireType` let a `refusedPolarity` and a master-row `createdAt` compile.\n\nAnchor: \"as SomeWireType\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a129de9436ae3d8f076d34f4eabb33240781dedf",
+            "content": "sha256:8164a66d74351e8aa91df939055a98ff37e89e14c52065eca95f66fce3a8e099",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 7
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "Every sampled registered vocabulary value must be legal.\n\nAnchor: \"carries only values the mirror's vocabulary declares, at every registered path\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9f5518c01093d319450274b1110efb3863c2d4b",
+            "content": "sha256:da779c827da3795c878647e500000544381770373d5fd6645487b11952e94740",
+            "locator": {
+              "end": 573,
+              "kind": "line_range",
+              "start": 564
+            },
+            "path": "dashboard/src/test/contract.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "EMPTY_ANALYTICS carries every current analytics key as an empty list, without the retired stalestSidecars key.\n\nAnchor: `EMPTY_ANALYTICS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a129de9436ae3d8f076d34f4eabb33240781dedf",
+            "content": "sha256:ca949a7feaa7e40320e660e3b58629780946c36e8dab87a8d4b3ba5d0dc952ab",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "`reparsed` using `structuredClone`, with the note that `asServedProjection(JSON.parse(…))` is a vacuous check.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a129de9436ae3d8f076d34f4eabb33240781dedf",
+            "content": "sha256:ded4c63a96ba260c6abdc2c92b7838df904742362d6880591309bd385839707a",
+            "locator": {
+              "kind": "symbol",
+              "name": "reparsed"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a129de9436ae3d8f076d34f4eabb33240781dedf",
+            "content": "sha256:a626b61741f498f98cbe9aa19be1c2dcd4113285ce44e1afdff3938c60f528ee",
+            "locator": {
+              "end": 301,
+              "kind": "line_range",
+              "start": 299
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "`asServedProjection` — the sanctioned narrowing this module's `SERVED` constant is read through.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "390e10afba18e0b24c3be759f12f90011179665f",
+            "content": "sha256:12df43ff00e9127957d3b1b6424e4bd3dd39c9d43b08489a2906d08c6dee0cf7",
+            "locator": {
+              "kind": "symbol",
+              "name": "asServedProjection"
+            },
+            "path": "dashboard/src/test/servedProjection.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Excess-property checking applies to fresh object literals, which is why an override written inline at the call site is checked and one routed through a variable is not.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c1728908f2e1d3aa121a935b106bb55590cb0bbc",
+            "content": "sha256:6f0551e6feea6c5ac5293a4de3eb72fdfe92c5864c12eb7f96bba1c5da212696",
+            "locator": {
+              "kind": "symbol",
+              "name": "Overrides"
+            },
+            "path": "dashboard/src/test/fixtures/overrides.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "The fixture bases draw their enclosure sample from the same oracle.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a52ba245b323a37cc2fd3f07dc9a634a1e5e433",
+            "content": "sha256:0de4b39e321f1100f1a868ff3d4bc28433945437b62ad749fac3727114969976",
+            "locator": {
+              "end": 1814,
+              "kind": "line_range",
+              "start": 1158
+            },
+            "path": "dashboard/src/fixtures/snapshot.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2a52ba245b323a37cc2fd3f07dc9a634a1e5e433",
+            "content": "sha256:fd844a94f0df0cb3b6403e4eae5f6c768c9cfd184e219d2211b327c409814cd0",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 65
+            },
+            "path": "dashboard/src/fixtures/snapshot.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The wire oracle carries the hand-maintained sampled analytics payload.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a52ba245b323a37cc2fd3f07dc9a634a1e5e433",
+            "content": "sha256:9dd7595ae252103b646e3c43eca51203f5dbba8407504429e616c502435f55ee",
+            "locator": {
+              "end": 1190,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "dashboard/src/fixtures/snapshot.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "BASE_ATTENTION copies the sampled attention item identity, kind, severity, lane and title, including required itemClass and dismissible; the sample remains manually maintained.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a129de9436ae3d8f076d34f4eabb33240781dedf",
+            "content": "sha256:99664b6a2ee79b59d1a73aabb4df38819af4303335d33238c7df12db586cec3d",
+            "locator": {
+              "end": 176,
+              "kind": "line_range",
+              "start": 168
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "The engine-process builder takes its sample from analytics.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a52ba245b323a37cc2fd3f07dc9a634a1e5e433",
+            "content": "sha256:76f4bba25921a170cf4794a40f63ddb0b477af01c3e612fa787f7555a95100e1",
+            "locator": {
+              "end": 541,
+              "kind": "line_range",
+              "start": 63
+            },
+            "path": "dashboard/src/fixtures/snapshot.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2a52ba245b323a37cc2fd3f07dc9a634a1e5e433",
+            "content": "sha256:fd844a94f0df0cb3b6403e4eae5f6c768c9cfd184e219d2211b327c409814cd0",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 65
+            },
+            "path": "dashboard/src/fixtures/snapshot.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "The projection default object supplies tasks/taskCounts, enclosures, active worktree groups, metrics and analytics without a providers field.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a129de9436ae3d8f076d34f4eabb33240781dedf",
+            "content": "sha256:93447b3d1b8e0b58434d69e28b4087f511555c78974168c8582a07db3485d3fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "projection"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "28": {
+      "note": "The override constraint every builder takes, and the three limits it documents.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c1728908f2e1d3aa121a935b106bb55590cb0bbc",
+            "content": "sha256:6f0551e6feea6c5ac5293a4de3eb72fdfe92c5864c12eb7f96bba1c5da212696",
+            "locator": {
+              "kind": "symbol",
+              "name": "Overrides"
+            },
+            "path": "dashboard/src/test/fixtures/overrides.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "29": {
+      "note": "The guard that catches the residue `Overrides` cannot — the smuggled field with no assertion to ban, and the `any` rule whose comment names `fixtures/wire.ts::reparsed` as the site that was making exactly that mistake.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a638463e5b64ab2206752784eae0cb1426ad8637",
+            "content": "sha256:3569702045788c7a64cae206b544c6f6de7f778aa13270134929ab0988d7c7b8",
+            "locator": {
+              "end": 445,
+              "kind": "line_range",
+              "start": 423
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "`structuredClone` deep-clones a value at runtime; unlike a `JSON.parse(JSON.stringify(…))` round-trip it does not launder the value's static type into `any`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a129de9436ae3d8f076d34f4eabb33240781dedf",
+            "content": "sha256:ded4c63a96ba260c6abdc2c92b7838df904742362d6880591309bd385839707a",
+            "locator": {
+              "kind": "symbol",
+              "name": "reparsed"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a129de9436ae3d8f076d34f4eabb33240781dedf",
+            "content": "sha256:a626b61741f498f98cbe9aa19be1c2dcd4113285ce44e1afdff3938c60f528ee",
+            "locator": {
+              "end": 301,
+              "kind": "line_range",
+              "start": 299
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "31": {
+      "note": "`ObserverEvent` — the separate event contract this module's `observerEvent` builder targets, mirroring `observer/events.py` rather than `projection.py`.\n\nAnchor: `ObserverEvent`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25b46051e848ed30ec884515068da4de250b2117",
+            "content": "sha256:ad737b334a9d79e13b1ab2b81a6e1a25a8ccc71cfb4c4f2a07ca3e974d61049e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/types/event.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "The in-repo `WorkspaceProjection` producer model uses `extra=\"forbid\"` and declares the complete projection boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ada1520ab5545be71a00dae1420683fd0b82938",
+            "content": "sha256:9d00407991a5ac2ae6112d754bf7c6f06f544820a425de0cb7b78edc726abb74",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorkspaceProjection"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "R6 and the two proven defects, both of which compiled because they were written with `as SomeWireType`.\n\nAnchor: \"R6 in one sentence\"; \"drift. This leaf proved it twice\"; \"fixture that set the field itself\"; \"tests built a master\"; \"fixtures were written with\"; \"both compiled\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a129de9436ae3d8f076d34f4eabb33240781dedf",
+            "content": "sha256:f51bf451e52cbd60dab42d23a4ff11b3b155436ee93eced9600d143735f1a851",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "`snapshot.json` remains the hand-maintained sample while the source names the producer-to-TypeScript link as generated and checked.\n\nAnchor: \"is NOT generated; it remains a hand-maintained\"; \"producer-to-TypeScript link is generated and checked\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a129de9436ae3d8f076d34f4eabb33240781dedf",
+            "content": "sha256:7e42a5e0e377e61378d25b8c95e783e30197562b5aa89d6979a6c9574b65fed0",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "`projection.ts` marks itself generated and names its schema, generator, regeneration command, and drift check.\n\nAnchor: \"GENERATED FILE; DO NOT EDIT\"; \"Canonical core model\"; \"Schema artifact\"; \"Served-only tail\"; \"Generator:\"; \"Regenerate:\"; \"Drift check:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
+            "content": "sha256:048d2be48e5d33c20e3cf9ed45c3edc5ca0c7ab1bb6ad6008e2c4c2d29162b8b",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The projection generator implements both check and generation paths.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a679628bfc97d851c7d3246fbeddcdcd95364844",
+            "content": "sha256:b7406c17cc72921b4db23c556877f4445defbd89af6bd62340ffc15b0d513c18",
+            "locator": {
+              "kind": "symbol",
+              "name": "check"
+            },
+            "path": "scripts/sync-projection-types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a679628bfc97d851c7d3246fbeddcdcd95364844",
+            "content": "sha256:c18f31c577f41468edd16e036b0729ca9394f2cda2fe7364274e3f716a20df86",
+            "locator": {
+              "kind": "symbol",
+              "name": "main"
+            },
+            "path": "scripts/sync-projection-types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a679628bfc97d851c7d3246fbeddcdcd95364844",
+            "content": "sha256:03b063fa79a28e97e10a9bbeae9e64cdbaf6b644eaa4e5f348b2055e0e819df4",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 43
+            },
+            "path": "scripts/sync-projection-types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a679628bfc97d851c7d3246fbeddcdcd95364844",
+            "content": "sha256:c9c0f2f098b8ec38b8037451981c839051aad21d9d187b5ee38c58c67fd01bd6",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 54
+            },
+            "path": "scripts/sync-projection-types.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The sample introduces no served field missing from the mirror.\n\nAnchor: \"has no served field the mirror is missing\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9f5518c01093d319450274b1110efb3863c2d4b",
+            "content": "sha256:b84bb5fef68c7da2997f26eacdf572410d2f35298b0e8d5959899a076ad27eea",
+            "locator": {
+              "end": 532,
+              "kind": "line_range",
+              "start": 530
+            },
+            "path": "dashboard/src/test/contract.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The sample covers declared structural paths except explicit residue.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9f5518c01093d319450274b1110efb3863c2d4b",
+            "content": "sha256:250a4cc506ffd6cdba6ae28d95148729085d0e8eece9c0f2b3d52da1667698ce",
+            "locator": {
+              "end": 544,
+              "kind": "line_range",
+              "start": 539
+            },
+            "path": "dashboard/src/test/contract.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a9f5518c01093d319450274b1110efb3863c2d4b",
+            "content": "sha256:562db58d8bb2e4814b99dc78dc03d57ef14958bc34bd8b5409f00b644b5638c4",
+            "locator": {
+              "end": 185,
+              "kind": "line_range",
+              "start": 176
+            },
+            "path": "dashboard/src/test/contract.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

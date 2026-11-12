@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/queue/closeout_projection_snapshot.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The immutable snapshot gates projection construction on complete readable identity.\n\nAnchor: \"One exact current source census; old projection rows are never an input.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0968195a670e5002466561ef85e27b1b22c445ae",
+            "content": "sha256:1246bb903245c4dcd0fd2eb50bda8b3e363cf87119497952729846733c0fc1c5",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 17
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

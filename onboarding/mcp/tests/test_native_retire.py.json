@@ -1,0 +1,94 @@
+{
+  "path": "mcp/tests/test_native_retire.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "0cdec1a69c5c1f6120c97762161e1f2d6f867195",
+        "content": "sha256:a8d366c6382e21cde7b73bbd83d6030df90eaba3755d93aff5e57315fc6c50a8",
+        "locator": {
+          "kind": "symbol",
+          "name": "NativeRetireTests.test_an_unauthorized_repeat_after_retirement_is_refused"
+        }
+      },
+      "facet": "Retirement does not skip original-starter authorization when the target is already retired.",
+      "id": "PRF-8P489J",
+      "invariant": "INV-ECNV2S",
+      "origin": {
+        "handoffEntry": "L100-R100-8-unique-target",
+        "leaf": "260928-MIK-L100"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "0cdec1a69c5c1f6120c97762161e1f2d6f867195",
+        "content": "sha256:e6bce367bfef3fbdb3b91e2bda746d181fa7fc79ecfa4880d20a32fc8abb804f",
+        "locator": {
+          "kind": "symbol",
+          "name": "NativeRetireTests.test_a_current_plus_history_record_is_refused_without_effects"
+        }
+      },
+      "facet": "The MCP entry refuses one current plus one history match without host or receipt effects.",
+      "id": "PRF-T9DTY3",
+      "invariant": "INV-ECNV2S",
+      "origin": {
+        "handoffEntry": "L100-R100-8-unique-target",
+        "leaf": "260928-MIK-L100"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The original starter archives its agent without a child turn and records retirement provenance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cdec1a69c5c1f6120c97762161e1f2d6f867195",
+            "content": "sha256:5be65934fa62c03faa4ddb99ede7df321bc70ef6d3959a968602fe675d23e63d",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 67
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Current plus historical receipt duplication refuses through the entry point without effects.\n\nAnchor: `NativeRetireTests.test_a_current_plus_history_record_is_refused_without_effects`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cdec1a69c5c1f6120c97762161e1f2d6f867195",
+            "content": "sha256:e6bce367bfef3fbdb3b91e2bda746d181fa7fc79ecfa4880d20a32fc8abb804f",
+            "locator": {
+              "end": 200,
+              "kind": "line_range",
+              "start": 178
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A failed final receipt write reports the split and an identical retry converges.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cdec1a69c5c1f6120c97762161e1f2d6f867195",
+            "content": "sha256:6c6dfa08d82c93402b4cda5b5c2eb7eb85c76088dea38f25ee97f121e90b0020",
+            "locator": {
+              "end": 257,
+              "kind": "line_range",
+              "start": 227
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

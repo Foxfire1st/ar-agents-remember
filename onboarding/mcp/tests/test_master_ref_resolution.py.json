@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_master_ref_resolution.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "MasterRefResolutionTests: qualified source contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26dc2d832bdda16e66d97e21981b1645d8dd8746",
+            "content": "sha256:963532012535e09876f4c0affea73bb7b44a0e374c54dbc9a828e90aef8e3403",
+            "locator": {
+              "kind": "symbol",
+              "name": "MasterRefResolutionTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

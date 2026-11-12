@@ -1,0 +1,23 @@
+{
+  "path": "dashboard/src/panels/review/reviewShown.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A hidden review keeps its page and does not answer for the visible one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "580eac0cbcf8a119b5ad392a352a2cc14ad6bdac",
+            "content": "sha256:9c55f470a3538c67c647e6ae9812536c4dc78eb9f9557691fdf0c95f2da48b43",
+            "locator": {
+              "kind": "symbol",
+              "name": "useReviewShown"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,100 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Selected-record read-only observation reloads the exact original output and constructs a physically proved logical-pair-bound code view.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5f12495381a9fa4649783b976feae33f2c7d774c",
+            "content": "sha256:0b0a4d63142c0bc83576f154401261583371860d335f06178dcd6245239988a1",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 56
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The selected-record path reuses strict existing-code or sealed private-code proof without inventing a worker lease.\n\nAnchor: \"Reprove a selected code output without requiring a live worker lease.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5f12495381a9fa4649783b976feae33f2c7d774c",
+            "content": "sha256:0b0a4d63142c0bc83576f154401261583371860d335f06178dcd6245239988a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_selected_prepared_code_view"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Selected record and intent currentness are rechecked around observation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5f12495381a9fa4649783b976feae33f2c7d774c",
+            "content": "sha256:e13c420e85ee5c0bd16a834bba3570df6b1b54a36b07cfe91785f0c3b54b3f7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_selected_code_current"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The execution view binds the exact output bytes, raw commit/tree, and logical pair.\n\nAnchor: \"logicalPair\"; \"codeCommit\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5f12495381a9fa4649783b976feae33f2c7d774c",
+            "content": "sha256:b4075c7052a82972ed3711613462d97316f6907945f408557cef9b5faee15f33",
+            "locator": {
+              "kind": "symbol",
+              "name": "_build_prepared_code_view"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5f12495381a9fa4649783b976feae33f2c7d774c",
+            "content": "sha256:9836ba73cb8985f846ebf977dee075303dbf714bdf01001db3916cbe2f099ec7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_PreparedCodeViewBuild"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Only exact selected-output reproof remains; the fresh prepare/running-handoff APIs were removed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5f12495381a9fa4649783b976feae33f2c7d774c",
+            "content": "sha256:0b0a4d63142c0bc83576f154401261583371860d335f06178dcd6245239988a1",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 56
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/detail-panel/limit-time.test.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "afbfb6e2b562a3a9ff2b73211de0b3f7604af7fe",
+        "content": "sha256:10f7590eca5b4d3c8dd1ecdd9c1e74c5d128407e6473f37e7f439feab3b575c3",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-MN80PB",
+      "invariant": "INV-XZYGEB",
+      "origin": {
+        "handoffEntry": "INV-XZYGEB",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The formatter this case exercises is the one the limited hover and detail render, so the precision claim lives in its test.",
+      "role": "support"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

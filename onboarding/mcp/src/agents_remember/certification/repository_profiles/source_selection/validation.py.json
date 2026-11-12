@@ -1,0 +1,45 @@
+{
+  "path": "mcp/src/agents_remember/certification/repository_profiles/source_selection/validation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Declaration validation accumulates evidence, command and prerequisite findings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3353426eefed3e05f356f1bbb0747ce628a6ae5",
+            "content": "sha256:83e8aac9d13cdcec097d1a7badba4962536ec3c3220151baa90c36e87592dbce",
+            "locator": {
+              "kind": "symbol",
+              "name": "source_placeholders"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f3353426eefed3e05f356f1bbb0747ce628a6ae5",
+            "content": "sha256:c8840fcc38fa66017d74e944f343c2d27161db32c6ce9a50822027b5925c0226",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_source_applicability"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f3353426eefed3e05f356f1bbb0747ce628a6ae5",
+            "content": "sha256:9ce45cf1cb8cb7a7f749aaf7da28d3c0dd75161bc7bac161f4613448340b6d94",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_conditional"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

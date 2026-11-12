@@ -1,0 +1,387 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index_cache.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "10b3d2f2f0e2260e325f16a13904d95cc21c17dd",
+        "content": "sha256:5948de9e1d08b7fa447479b5525f1476e9918ffe7eb838459200904696c53ffb",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-JFZ23B",
+      "invariant": "INV-976SFG",
+      "origin": {
+        "handoffEntry": "L190-R1-F06",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "The existing terminal namespace guard commits native outcome before best-effort notice work and never rolls back a committed publication.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Defines the class `ManagedCacheAuthority` (lines 34-61).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10b3d2f2f0e2260e325f16a13904d95cc21c17dd",
+            "content": "sha256:24edadf5f857a24dc4800ceae627bc2b341116b8a4f7b3905a83a2298a8fe59f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ManagedCacheAuthority"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Defines the class `TerminalNamespaceGuard` - one exact-leaf terminal reservation held through mutation and publication.\n\nAnchor: `TerminalNamespaceGuard`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10b3d2f2f0e2260e325f16a13904d95cc21c17dd",
+            "content": "sha256:5948de9e1d08b7fa447479b5525f1476e9918ffe7eb838459200904696c53ffb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Defines the function `terminal_namespace_guard` (lines 387-425) — Reserve one exact contract namespace before any terminal mutation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10b3d2f2f0e2260e325f16a13904d95cc21c17dd",
+            "content": "sha256:729d9edecf10f93de93bae1b1b387062980a81a2b02663168de38ba415b46de4",
+            "locator": {
+              "kind": "symbol",
+              "name": "terminal_namespace_guard"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Defines the function `_validate_terminal_contract` (lines 428-459).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10b3d2f2f0e2260e325f16a13904d95cc21c17dd",
+            "content": "sha256:9c8d9c7c4c823bbbce84c13dd8ee9e8d8bf3cf39d45a46c9c184654eec6f0393",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_terminal_contract"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Defines the function `_current_contract` (lines 462-469).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10b3d2f2f0e2260e325f16a13904d95cc21c17dd",
+            "content": "sha256:0353a84fe4127e2dd8e54c5e2750c83091225c8174046e849b9273e58d63b307",
+            "locator": {
+              "kind": "symbol",
+              "name": "_current_contract"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Defines the function `_required_lifecycle` (lines 472-477).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10b3d2f2f0e2260e325f16a13904d95cc21c17dd",
+            "content": "sha256:80c089cfbab7c1b0dde81e1a6524385328251a0e2ea45ded10a9ef2f03c23cff",
+            "locator": {
+              "kind": "symbol",
+              "name": "_required_lifecycle"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Defines the class `CacheControlState` (lines 64-87).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10b3d2f2f0e2260e325f16a13904d95cc21c17dd",
+            "content": "sha256:560bd48f377e728549aa2e403d37a75c48fc17cb44eb7eca5d3a41f0b6159358",
+            "locator": {
+              "kind": "symbol",
+              "name": "CacheControlState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Defines the function `_control_handle` (lines 480-482).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10b3d2f2f0e2260e325f16a13904d95cc21c17dd",
+            "content": "sha256:fa2314f7f138d57d180db0ad19aebfc41a041e9a105596b5c2ac65ed8d33deb4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_control_handle"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "Defines the function `_read_control_state` (lines 485-518).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10b3d2f2f0e2260e325f16a13904d95cc21c17dd",
+            "content": "sha256:bfd57b31b2591495db261753b407bfeeaa7ed2df51dc20265163ad985a229fd1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_control_state"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Defines the function `_write_control_state` (lines 521-528).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10b3d2f2f0e2260e325f16a13904d95cc21c17dd",
+            "content": "sha256:fdafd864845e47ededd8f767efd8dd6f790373c0b2fd22b302d62628179839db",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_control_state"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "Defines the function `_restore_control_state` (lines 531-538).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10b3d2f2f0e2260e325f16a13904d95cc21c17dd",
+            "content": "sha256:929212e9a3ac5a286a9c138fcdb73c317e872ef1b8f3e0f36268b4607cede99e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_restore_control_state"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "Defines the function `_exclusive_before_deadline` (lines 541-548).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10b3d2f2f0e2260e325f16a13904d95cc21c17dd",
+            "content": "sha256:2da4f343c4811feb8f2ec2f68eff8c1d3a14dc59dda66d4c8c49fbd9fa93c713",
+            "locator": {
+              "kind": "symbol",
+              "name": "_exclusive_before_deadline"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "Defines the function `_root_lock` (lines 551-560).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10b3d2f2f0e2260e325f16a13904d95cc21c17dd",
+            "content": "sha256:7db76ad1242d788da21bedf5f42b6c964c5949f12f083afe806ab074058c502f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_root_lock"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "Defines the function `_try_exclusive` (lines 563-568).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10b3d2f2f0e2260e325f16a13904d95cc21c17dd",
+            "content": "sha256:097b6adcea600cb042ea102957c6d721a528dec7a2281106555ec1ea82294887",
+            "locator": {
+              "kind": "symbol",
+              "name": "_try_exclusive"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Defines the class `ContractCacheFacts` (lines 90-107).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10b3d2f2f0e2260e325f16a13904d95cc21c17dd",
+            "content": "sha256:b4e09bea17490dc8b6696e3a51adc933055c68d0d8e703240eb181056f862ae5",
+            "locator": {
+              "kind": "symbol",
+              "name": "ContractCacheFacts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "10b3d2f2f0e2260e325f16a13904d95cc21c17dd",
+            "content": "sha256:6c271a5232c2e852fea15f1f97b470631a1223c855409125628f09ef7b36e6b7",
+            "locator": {
+              "end": 105,
+              "kind": "line_range",
+              "start": 88
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "Resolved-path equality or ancestry detects cache placement under a supplied resolved root; authority rejects cache roots inside code or memory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10b3d2f2f0e2260e325f16a13904d95cc21c17dd",
+            "content": "sha256:ccda65a50467300451ad1621b66715ae5ca9f2e364187378abe77a72a8d19741",
+            "locator": {
+              "kind": "symbol",
+              "name": "_under"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "10b3d2f2f0e2260e325f16a13904d95cc21c17dd",
+            "content": "sha256:ed4f9074fba9519f65615bad89b12b31d12a7bfec91bed80bb3a4d6d8e58abe2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolved_authority"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Defines the function `managed_cache_authority` (lines 110-128).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10b3d2f2f0e2260e325f16a13904d95cc21c17dd",
+            "content": "sha256:4d81c32202509297bc104e1da68ee48623409f789dca17be813eb6ba0aba7288",
+            "locator": {
+              "kind": "symbol",
+              "name": "managed_cache_authority"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "10b3d2f2f0e2260e325f16a13904d95cc21c17dd",
+            "content": "sha256:5f0cd090404bc32870c9f0720fe1ffcf7c37226467b9779800b493cf1a1588d6",
+            "locator": {
+              "end": 126,
+              "kind": "line_range",
+              "start": 108
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Defines the function `_resolved_authority` (lines 131-163).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10b3d2f2f0e2260e325f16a13904d95cc21c17dd",
+            "content": "sha256:ed4f9074fba9519f65615bad89b12b31d12a7bfec91bed80bb3a4d6d8e58abe2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolved_authority"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "10b3d2f2f0e2260e325f16a13904d95cc21c17dd",
+            "content": "sha256:8334a2786dd2172d7d0a2e2c89733ab3d47ff19a99eb03904aa4557c0e31f536",
+            "locator": {
+              "end": 135,
+              "kind": "line_range",
+              "start": 103
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Defines the function `contract_cache_authority` (lines 166-175).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10b3d2f2f0e2260e325f16a13904d95cc21c17dd",
+            "content": "sha256:40c2d8d8a644eba71f5c45ee560cd60e2e503a897946fd05c0bebeb003c406a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "contract_cache_authority"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "10b3d2f2f0e2260e325f16a13904d95cc21c17dd",
+            "content": "sha256:cf0675dcfa94879a4d4c5af0688ca78e3315f8263afb25346f0bc322480cc2e1",
+            "locator": {
+              "end": 173,
+              "kind": "line_range",
+              "start": 164
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

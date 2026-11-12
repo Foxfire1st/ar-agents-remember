@@ -1,0 +1,427 @@
+{
+  "path": "mcp/tests/test_role_capsule_audiences.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The compiler delivers only the common and selected role stage parts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16114bb86792e4394123e4b98c42efd8d3cb2831",
+            "content": "sha256:91071933f1c686b8f234b0a11efb836dc1eab70ceb306a6e399c7e24b57c6653",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_compiler_delivers_only_common_and_selected_role_stage_parts"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "Curator execution support is an unconditional inline output.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16114bb86792e4394123e4b98c42efd8d3cb2831",
+            "content": "sha256:e8ceabeeced1beb4ad2d3ed532afa9ea6c76d7c9591ce5f33809ff0ad60a188d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_curator_execution_support_is_an_unconditional_inline_output"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "External backing output stays inline.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16114bb86792e4394123e4b98c42efd8d3cb2831",
+            "content": "sha256:cb0062659e90e270e4d9f9368a770e2e663b4fbcbd4667ed037653e52465721d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_d301_external_backing_output_stays_inline"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Bootstrap requires reproducibility rather than reader execution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16114bb86792e4394123e4b98c42efd8d3cb2831",
+            "content": "sha256:1d26b97611f3e4318e314a75821372cc452abac71010ac0bce958a630ab68827",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_d301_bootstrap_requires_reproducibility_not_reader_execution"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "Delivered authoring resolves the actual capsule routing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16114bb86792e4394123e4b98c42efd8d3cb2831",
+            "content": "sha256:639c5931e83b26fdf3ca2f8dbf11a609e42258325cd357d7c0b95c2b3a772a2a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_d301_delivered_authoring_resolves_actual_capsule_routing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The hand-off file is read for the first review and reused for repairs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16114bb86792e4394123e4b98c42efd8d3cb2831",
+            "content": "sha256:0f6d2b76ebc346c524b50a1cc9d1fb69bd80bfaabbc68155ae0c4e4490ee9340",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_d301_handoff_file_is_read_for_first_review_then_reused_for_repairs"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The Curator's delivered curation workflow is numbered one to five with the checks, fact-check and repair headings; its delivered details equal its role and curation pointer actions, each bound to its read action, and its role section carries no numbered workflow.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16114bb86792e4394123e4b98c42efd8d3cb2831",
+            "content": "sha256:783fd85e932b9bca1b99eebd05d6ca428a174484c688ce18dc1450340c7bdefd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_curator_detail_names_use_only_curation_workflow_numbers_and_titles"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "Nested Curator details are read through their launch artifacts: the prose-and-history detail binds card history to the card-formats detail, the knowledge-ingest detail binds a deciding or writing command-line run to the serving-build detail, and the serving-build detail binds such a run to `server_info.servingBuild` and names Orientation as the authority owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16114bb86792e4394123e4b98c42efd8d3cb2831",
+            "content": "sha256:9d2c15993f8cb4cf7bc74f4c1b3c21c280219c8709832d9fd4889d1d0a045fd9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_nested_curator_file_names_use_the_same_operation_titles"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "Leaf role texts mark only their own completed steps.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16114bb86792e4394123e4b98c42efd8d3cb2831",
+            "content": "sha256:f2432aeb8ed9662fb66d535d41610862ea8cc8f3cc24166151ce558731d1e3d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_leaf_role_texts_mark_only_their_own_completed_steps"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "Every Curator stage keeps the serving build's producer boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16114bb86792e4394123e4b98c42efd8d3cb2831",
+            "content": "sha256:ee3c00544d5c3a3f72e04e93e6e2f3fcbbbddf0101e9319fbe36b9acbf50175d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_curator_stage_keeps_the_serving_build_producer_boundary"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "Memory-review instructions select the independent recorded lane.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16114bb86792e4394123e4b98c42efd8d3cb2831",
+            "content": "sha256:a3869613bf30ae52651ea38cb3b1e4a14551aa1f1b9d41be09305c686ff5cacb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_memory_review_instructions_select_the_independent_recorded_lane"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Declared step detail bytes travel as separate references.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16114bb86792e4394123e4b98c42efd8d3cb2831",
+            "content": "sha256:c98a1ab4d0f1e269e52ea3b5adb3da6970f714c5515f40636ac29b94ef5c78f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_compiler_carries_declared_step_detail_bytes_as_separate_references"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "For every manifest-declared role/operation pair, the real-operation audience test compiles the addressed capsule, rejects leaked audience markers and compares that operation block's content hash with its `V13_STAGE_SHA256` entry; undoing the admitted short-rule edits must match `V13_PRE_SHORT_STAGE_SHA256` and then undoing the pinned path moves must match `D656_STAGE_SHA256`; its final census must cover every declared pair.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16114bb86792e4394123e4b98c42efd8d3cb2831",
+            "content": "sha256:913099a13bb26ed68637a9fa89084b6dbfa0251efc4a0a69f288bb5e47ccc150",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_real_operation_audiences_preserve_pinned_common_and_only_addressed_paragraphs"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "The operation-source test compares raw source bytes against `V13_OPERATION_SHA256`, the short-rule-restored bytes against `V13_PRE_SHORT_OPERATION_SHA256` and the path-restored bytes against `D656_OPERATION_SHA256`. authorized-closeout must keep audience=all and operations/closeout.md; every other operation must use sections and begin with the common audience marker.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16114bb86792e4394123e4b98c42efd8d3cb2831",
+            "content": "sha256:71c5525c381d40d8ca59a846aff30773ddf2115d667abd9a046f29a8ecb10c8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_operation_audience_markings_preserve_pinned_bytes_and_immutable_closeout"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "A repairing role stops after three repairs of the same check or finding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16114bb86792e4394123e4b98c42efd8d3cb2831",
+            "content": "sha256:3a7560d2d9ca3ff634cf305bc50b8e12d0b69db3c3b78bfe9c19e2f35e901c56",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_repairing_roles_stop_after_three_repairs_of_the_same_check_or_finding"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "The current Reviewer-addressed review paragraph says a clean sync opens no new freeze or round, sends shared-path/test-failure repairs for one look, and returns a freeze whose finding entries are missing without counting a round. The real-operation audience test binds each addressed review block to its stored stage seal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
+            "content": "sha256:6d6c044c515d8a9d4c5f6655e86b094789d473a302ab286442f4117960acd9dc",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 79
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "`V13_OPERATION_SHA256` records the current implementation and review source seals alongside the other operations, and the operation-source test compares actual source bytes with those recorded values. This describes stored assertions, not a new approval or repinning event.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16114bb86792e4394123e4b98c42efd8d3cb2831",
+            "content": "sha256:00b14b8b5fac470b220e34a0877f390dec5ff8ae843ffd6152a7b2a95d4c4ab3",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "The current planning text asks the developer once \"go, or review first?\", discloses planned comparison without a task workspace and explainer-workspace creation on first Explain, and records the intentReview answer. Current coordination says intent-review-open waits for Architect go and is not retried. The audience tests retain separate source and addressed-stage seal tables for those operation texts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14f77d0521220a97197f1eadbcdab1daa4b08dd3",
+            "content": "sha256:10550187e9fe19bfe335b30824eefb735f35a8f835520452d23a5deeaad738af",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 45
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/planning.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "Complete V13 operation and per-recipient stage digest literals pin the current audience projections, including closeout bytes, and the inverse transforms tie them back to the D656 digests. Detail checks cover all declared role/operation pairs and require every declared read action to bind to exactly one link to its emitted detail. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16114bb86792e4394123e4b98c42efd8d3cb2831",
+            "content": "sha256:64ec88943f0a06a58a65af2b148a5ea862c48b30fe4e2282c553e4ec4e8f92fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assert_step_detail_timing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The handover writes immutable source details beside its file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16114bb86792e4394123e4b98c42efd8d3cb2831",
+            "content": "sha256:cf23f1a7e71ee7a0ed7e0ee30266b5760c4e65efe4b3a41b47bc4273aecc5e8b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_handover_writes_immutable_source_details_beside_its_file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The launch composition names frozen details by their request paths.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16114bb86792e4394123e4b98c42efd8d3cb2831",
+            "content": "sha256:f31c621fc3c74a5e9810361fdca56d4a9cac811c4efb3ec5d6608124c0c02aed",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_launch_composition_names_frozen_details_by_their_request_paths"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The Curator receives ruled step details separately and keeps the writer boundaries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16114bb86792e4394123e4b98c42efd8d3cb2831",
+            "content": "sha256:176d908900c927f5e3fc0ca8dc8106ba01d5ebdb25e4a41850e813ed57ab1c4e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_curator_receives_ruled_step_details_separately_and_keeps_writer_boundaries"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Manager curation receives neither the Curator's card nor the writer's steps.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16114bb86792e4394123e4b98c42efd8d3cb2831",
+            "content": "sha256:6b52e629c07b228e9b4a538b9933d7701f1e77613cbac1e0dce84e4240f0cee6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_manager_curation_does_not_receive_curators_card_or_writer_steps"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The real D301 capsules deliver named step files as frozen launch artifacts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16114bb86792e4394123e4b98c42efd8d3cb2831",
+            "content": "sha256:ef4cac984994b64a31c01a4b181d84b819cea937f68f80f94e69b25037e6b08f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_d301_real_capsules_deliver_named_step_files_as_frozen_launch_artifacts"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The Curator's capsule keeps the whole handover and its step limits.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16114bb86792e4394123e4b98c42efd8d3cb2831",
+            "content": "sha256:12e471f73f48316f0488a30f533ca7cddf857c2c9b2f69c8a2d0175b962315f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_d301_curator_keeps_whole_handover_and_step_limits_in_capsule"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "For every declared role/operation pair the delivered detail records equal the role's and operation's pointer actions; each read action binds to exactly one link to the detail's emitted file, each emitted detail round-trips its revision, size and read-only mode, and intake-wording, missing-target, duplicated-paragraph and empty-step mutations must fail; the census covers every declared pair and every declared detail.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16114bb86792e4394123e4b98c42efd8d3cb2831",
+            "content": "sha256:50127267f544d4d72ed97ba5661b4f8a8c7562fedc8933011a79987d3e7d0ecb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_step_details_are_named_for_reaching_their_step_not_intake"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

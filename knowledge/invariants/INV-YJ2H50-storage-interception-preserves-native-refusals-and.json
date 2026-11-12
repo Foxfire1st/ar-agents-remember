@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "An earlier form of the wrapper changed a native refusal's semantics and coerced an object argument twice, which would quietly alter host behavior the plugin does not own; the wrapper and its sidebar caller span the obligation and the real-wrapper regression guards the preserved semantics. Its only proof was the sidebar test's write-watcher setup; the assertion evidence is retained as the card's test references, and the file writer binds proof anchors to symbols, which a vitest callback does not provide."
+  },
+  "applicability": "The plugin's load-time storage write watcher and the document page's use of it.",
+  "conditions": [
+    "The wrapper transforms only direct localStorage writes whose first two arguments are strings, and only while a transform is installed.",
+    "Receiver and argument count stay intact for every other call, and a native refusal still refuses.",
+    "Observation does not coerce an object argument a second time."
+  ],
+  "exclusions": [
+    "Web storage calls on another object, and non-string writes, are observed or transformed only as the native call allows.",
+    "The transform's purpose is the sidebar choice; it does not rewrite unrelated storage keys."
+  ],
+  "id": "INV-YJ2H50",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "0f030b39-repair1-20261007/manifest.json; current patch 94968724550595e29f06f99072b1637a2f1f75253b2f2643e09261722f10bb43; raw checks/browser/Owner rulings in the same directory",
+        "Memory review notes/reports/role-launch/260928-MIK-L95-reviewer-d292b89d-aa9a-4fa8-9969-aad69f71ba3f.memory-r1.md SHA256 03da9b2843b4421adf865681a1cbca6b06726e2573496fe4ac0697c88b16d276; producer list notes/reports/role-launch/260928-MIK-L95-reviewer-d292b89d-aa9a-4fa8-9969-aad69f71ba3f.memory-r1.curator-handoff.json SHA256 3a511e51a2d242d65a38e5011fb8b137985cae8d23d732ddbec6e36d16ed16c8; exact passed code d5f2207722e71601819dc64bd298a5a073dff41e and memory candidate 6598e6150ae5a7c515fcdc12bce9efa7cc1b9a85"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L95-curator-fda7e7d6-5424-45e5-831a-f5387774d331-evidence/handoff.json"
+    },
+    "handoffEntry": "L95-R1-PLG-02",
+    "leaf": "260928-MIK-L95",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Storage interception preserves native refusals and coercion while transforming valid sidebar string writes.",
+  "status": "proposed",
+  "supersedes": []
+}

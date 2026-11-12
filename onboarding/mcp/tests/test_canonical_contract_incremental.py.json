@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_canonical_contract_incremental.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "An incremental canonical-contract change leaves exactly the state a full run leaves, witnessed by test_new_canonical_contract_changes_incremental_state_exactly_like_full",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90e1c47945457065333b786e9c9528e1fd155171",
+            "content": "sha256:9024ac701af8eca99c93e4b076affc8e8928086722b743e31bfadd9347b9b45f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_new_canonical_contract_changes_incremental_state_exactly_like_full"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

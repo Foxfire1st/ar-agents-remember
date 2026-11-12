@@ -1,0 +1,75 @@
+{
+  "path": "dashboard/src/cockpit/Cockpit.memo.test.tsx",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "13": {
+      "note": "The keep-alive case observes the File Viewer layer identity instead of the Engine Room.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a34e748d74bbd03ce1ffd35fe6d4b719b434cd55",
+            "content": "sha256:ebac7e86f0373cc77040c74c9d3842c5f1cd232b4b05d87d73e7baf2afe0b5d1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/file-viewer/FileViewer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The hidden-not-unmounted wrapper whose identity survives a switch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:306832e2054f2394fcd3196d50acce4eda3ce48b61027b6db3c6995d8bb91a1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "ViewLayer"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The mounted layers the render counts observe.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:60bc25696b100ddfbef71aa797ce37aced694af3c96337092f369c0042e28c6f",
+            "locator": {
+              "kind": "symbol",
+              "name": "MainLayers"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The River-hidden sidebar case keeps the same document-chat node across the EventRiver toggle.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd1bd114a1b40d2f90a6a932ce77f8777a6a2880",
+            "content": "sha256:99e41a35d9481745fe549e492926d24fd431e2b793af9be11de49a0e3593562c",
+            "locator": {
+              "end": 243,
+              "kind": "line_range",
+              "start": 229
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

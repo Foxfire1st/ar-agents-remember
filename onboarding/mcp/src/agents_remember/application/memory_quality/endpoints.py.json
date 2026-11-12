@@ -1,0 +1,41 @@
+{
+  "path": "mcp/src/agents_remember/application/memory_quality/endpoints.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "18efeb81e152208d9cf64ccb106934b8cb191c60",
+        "content": "sha256:3ff733a4dca4f0c0fa2624b18c2f595e4c783f5224e52ef3659c6572c60ad964",
+        "locator": {
+          "kind": "symbol",
+          "name": "requirement_endpoint_documents"
+        }
+      },
+      "id": "RLZ-GBDJQT",
+      "invariant": "INV-DP689F",
+      "origin": {
+        "handoffEntry": "MIK-R54@v1 rule 10",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "This projection emits endpoint states alongside findings without turning them into validator refusals.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Observes authored requirement references separately from validator findings and their acceptance verdict. Resolution observations do not rewrite authored links or change the validator verdict. Unresolved and archived states remain explicit observations; this module does not substitute a fabricated endpoint or infer task acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18efeb81e152208d9cf64ccb106934b8cb191c60",
+            "content": "sha256:19ffadc5d806ef9c9eacaeef4899ad58a580e7fd07b3f92d5ce8316eab9c6771",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

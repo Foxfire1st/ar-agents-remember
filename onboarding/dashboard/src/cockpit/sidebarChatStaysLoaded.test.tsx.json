@@ -1,0 +1,83 @@
+{
+  "path": "dashboard/src/cockpit/sidebarChatStaysLoaded.test.tsx",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The river toggle keeps the same frame element with the load count unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5cf90e675870480710ad04782c0665904e5557c",
+            "content": "sha256:944542dd2cd3e5249037c6d7a60006c9b3c0dcd5966e3e64c95f490421bfd462",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Selection switches post ar.open with agent and workspace and never load again.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5cf90e675870480710ad04782c0665904e5557c",
+            "content": "sha256:944542dd2cd3e5249037c6d7a60006c9b3c0dcd5966e3e64c95f490421bfd462",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The agentless selection hides the frame without unloading it and switches back.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5cf90e675870480710ad04782c0665904e5557c",
+            "content": "sha256:944542dd2cd3e5249037c6d7a60006c9b3c0dcd5966e3e64c95f490421bfd462",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A not-ready burst loads nothing in between and brings only the latest selection forward.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5cf90e675870480710ad04782c0665904e5557c",
+            "content": "sha256:944542dd2cd3e5249037c6d7a60006c9b3c0dcd5966e3e64c95f490421bfd462",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "No focus stays inside the hidden chat.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5cf90e675870480710ad04782c0665904e5557c",
+            "content": "sha256:944542dd2cd3e5249037c6d7a60006c9b3c0dcd5966e3e64c95f490421bfd462",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

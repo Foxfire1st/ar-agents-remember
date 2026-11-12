@@ -1,0 +1,82 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/quality/certification_reuse.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The reused row is matched, revalidated and accumulated only with its exact selected originals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "15fa4b06244152bba3ec857e5097577c4bf2582c",
+            "content": "sha256:e8425ba6c9c29e477035eef72e30efd0b045216fed3a124fff517651c6fe468e",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_retained"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "15fa4b06244152bba3ec857e5097577c4bf2582c",
+            "content": "sha256:2e0fc9f0cf5e84c61122f65559d4a9b99208aab07497fd6dda8c02ba565388d4",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 28
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The decoder transport carries complete original certificate/result/publication objects.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e9c4da6a49ad402e6d6562b032ff50f7393f1ff",
+            "content": "sha256:72e1eb22a3b2041cb40f3f08280b542aba1689d61dd5f89861a85fd660c6b610",
+            "locator": {
+              "kind": "symbol",
+              "name": "RetainedGateExecution"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/execution/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Typed terminals and the mutable per-publication accumulator remain separate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ad582e28b720638911ddaaf33f4f7f151fb69ae",
+            "content": "sha256:d291a5627ab0da158e30d6958dc520b1a56924a78bf7407703ffd0733e316c2c",
+            "locator": {
+              "kind": "symbol",
+              "name": "GateRecordPublication"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/certification_terminal.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4ad582e28b720638911ddaaf33f4f7f151fb69ae",
+            "content": "sha256:afe5324d67399b268ef03b9df1da239ce792bdc89d21154ec78abc21da859a37",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 60
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/certification_terminal.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

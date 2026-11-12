@@ -1,0 +1,62 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Whole producer-owned counts stay authoritative and compatibility follows an actually delivered old envelope. That state was an assumption no landed payload reaches; manufacturing it would violate fixture provenance and weaken the current wire."
+  },
+  "alternatives": [
+    {
+      "option": "Keep openFindings a required integer in a present current review state; older real payloads omit the whole review block.",
+      "reason": "Whole producer-owned counts stay authoritative and compatibility follows an actually delivered old envelope.",
+      "status": "chosen"
+    },
+    {
+      "option": "Make openFindings optional and add a shared absent-count branch within a present review state.",
+      "reason": "That state was an assumption no landed payload reaches; manufacturing it would violate fixture provenance and weaken the current wire.",
+      "reconsider_when": "A genuinely landed producer is evidenced to deliver a review state without the required count, or a new approved protocol changes it.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Do not reconstruct zero from preview flags; keep recorded old-envelope omission and current-count cases distinct."
+  ],
+  "context": "Architect ab10c409 withdrew point2 of3cbc9670 after the Worker established that no landed build sends reviewState without openFindings; authority retained in Reviewer evidence-f7-pass/authority-ab10c409.json.",
+  "decider": "architect ab10c409, authoritative correction, not a rewrite of historical verdict",
+  "id": "DEC-KFECP3",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-Z8HF38"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-9PWR57"
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "a6fa39a171f5944c5f21864e0a81e97c3911a51c",
+        "content": "sha256:9b9ecd7507b3c0591253e8909a192475860e40271f60eb252e8c9337e50ff1fa",
+        "locator": {
+          "kind": "symbol",
+          "name": "TaskReviewStateNode"
+        },
+        "path": "mcp/src/agents_remember/observer/projection.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "ingest-decisions-family.json"
+    },
+    "handoffEntry": "required-whole-review-count",
+    "leaf": "260928-MIK-L127",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

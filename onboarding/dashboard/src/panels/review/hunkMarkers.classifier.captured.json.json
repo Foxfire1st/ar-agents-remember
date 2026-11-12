@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/hunkMarkers.classifier.captured.json",
+  "realizes": [],
+  "references": {
+    "6": {
+      "note": "The current retained JSON input supplies the literal identities, response states and populations summarized above; these are fixture facts, not live project knowledge or fresh execution evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f191a17dc8744ee15ddbc605ae6edca80e32dd5",
+            "content": "sha256:1a6ccd3bc01054f8d2ec7f89fcba7f7052868b8ec4bba24dfe931e55b3e1da66",
+            "locator": {
+              "end": 2097,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

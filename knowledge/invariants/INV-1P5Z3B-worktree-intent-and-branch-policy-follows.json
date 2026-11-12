@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A worktree opened from the wrong source line or branch silently curates and lands against the wrong history; the guarantee prevents that costly mistake."
+  },
+  "applicability": "The worktree intent and branch policy that a light task or a bootstrap decides before work starts.",
+  "conditions": [
+    "The recorded organizational or atomic nature of the work decides the branching, not a rule per master.",
+    "The worktree tools decide it from the master's recorded execution nature; no instruction text restates the policy."
+  ],
+  "exclusions": [
+    "Creating a branch for every master by default."
+  ],
+  "id": "INV-1P5Z3B",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "a2/doctrine-review.md P6; criteria/doctrine.md D-4; core/authority.md:109–116; a2/retired-section-map.md."
+      ],
+      "path": "handoff-draft.json"
+    },
+    "handoffEntry": "L188-B15",
+    "leaf": "260928-MIK-L188",
+    "task": "260928-MIK"
+  },
+  "revision": 3,
+  "schema": "ar-invariant/v1",
+  "statement": "Worktree intent and branch policy follows recorded organizational versus atomic execution nature instead of creating a branch for every master.",
+  "status": "proposed",
+  "supersedes": []
+}

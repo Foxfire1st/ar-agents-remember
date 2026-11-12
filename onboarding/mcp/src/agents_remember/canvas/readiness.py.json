@@ -1,0 +1,129 @@
+{
+  "path": "mcp/src/agents_remember/canvas/readiness.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d4e183afce9e090f773a85ec0093b6a8d77241b5",
+        "content": "sha256:6be5fa9a44e505f3a4a7b84019f39891d809eb80a44170e259ceb88f7b493d10",
+        "locator": {
+          "end": 63,
+          "kind": "line_range",
+          "start": 59
+        }
+      },
+      "id": "RLZ-8QW9AX",
+      "invariant": "INV-40VGBY",
+      "origin": {
+        "handoffEntry": "L183-curator-test-facet-02",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Legacy data-evidence bases and data-evidence-claim IDs are distinct channels; the legacy regex must not validate claim IDs as basis references because part-map/claim-basis admission owns them.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d4e183afce9e090f773a85ec0093b6a8d77241b5",
+        "content": "sha256:de3a88264aaed8d46e8c01191923f4836e40e77394e485e7e38271f786b90190",
+        "locator": {
+          "kind": "symbol",
+          "name": "check_page"
+        }
+      },
+      "id": "RLZ-9EDB6X",
+      "invariant": "INV-40VGBY",
+      "origin": {
+        "handoffEntry": "L183-A-7",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The static gate, whose checks now include the page's part map.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "d4e183afce9e090f773a85ec0093b6a8d77241b5",
+        "content": "sha256:da065cab7c0c24f92ff8a8d46b10ab79880a77ab4599e18b50b7d10f52d49953",
+        "locator": {
+          "kind": "symbol",
+          "name": "_check_parts"
+        }
+      },
+      "id": "RLZ-GVKAM0",
+      "invariant": "INV-40VGBY",
+      "origin": {
+        "handoffEntry": "L183-A-7",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The part-map check itself and the four refusals it runs in order.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "d4e183afce9e090f773a85ec0093b6a8d77241b5",
+        "content": "sha256:de3a88264aaed8d46e8c01191923f4836e40e77394e485e7e38271f786b90190",
+        "locator": {
+          "kind": "symbol",
+          "name": "check_page"
+        }
+      },
+      "id": "RLZ-MBE2GJ",
+      "invariant": "INV-40VGBY",
+      "origin": {
+        "handoffEntry": "MIK-R104-r14-readiness-and-load",
+        "leaf": "260928-MIK-L104"
+      },
+      "rationale": "The static check follows the page's own references and refuses what the revision does not carry.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The static check refuses a page that names something its revision does not carry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d4e183afce9e090f773a85ec0093b6a8d77241b5",
+            "content": "sha256:de3a88264aaed8d46e8c01191923f4836e40e77394e485e7e38271f786b90190",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_page"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A report is ready only when no check failed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d4e183afce9e090f773a85ec0093b6a8d77241b5",
+            "content": "sha256:87c4b7a2ab9bddcbc487dbf31f0164a3d3ce560ad4b64336ff201e79f358c39c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReadinessReport"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The current implementation adds part-map and claim-basis checks to static readiness and returns that derived map for retained publication.\n\nAnchor: `_check_parts`, `claim_basis_problem`, `check_page`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d4e183afce9e090f773a85ec0093b6a8d77241b5",
+            "content": "sha256:9c21082900e6e75f72e196d9f817747377189faf792020070fe5afab438a9c7f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "spans_locations",
+      "family_guarantee"
+    ],
+    "justification": "The public observation and transition boundaries together prevent an installation or status read from unexpectedly replacing a running host; focused tests demonstrate the exact mismatch and preserved-file behavior."
+  },
+  "applicability": "Both public status paths observing a configured owned running host.",
+  "conditions": [
+    "Compare the observed executable with the absolute contract Node path, even when the new target is already installed.",
+    "A matching or unobserved executable alone supplies no Node restart reason."
+  ],
+  "exclusions": [
+    "Status does not install, restart, change settings or remove process records."
+  ],
+  "id": "INV-7HC1QH",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L107-worker-c1ec121b-f3da-4e9e-ae4a-36795d5b9d81/freeze2/control22/matched/candidate26-observes-live22-status.json; candidate26-live22-public-dashboard-status.json; final26/status-post-sync.json; focused-tests-post-sync-final.log"
+      ],
+      "path": "handoff.json"
+    },
+    "handoffEntry": "MIK-R107@v1 §4 status current66",
+    "leaf": "260928-MIK-L107",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Public Paseo and dashboard status compare the owned running host executable with the contract Node and report the Node restart requirement and existing explicit provision remedy without changing the host.",
+  "status": "proposed",
+  "supersedes": []
+}

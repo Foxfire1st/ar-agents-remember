@@ -1,0 +1,247 @@
+{
+  "path": "mcp/tests/test_review_git_trees.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "9a147aaa605089d27bacf86c342ebf9939d1ff33",
+        "content": "sha256:c46ac594a4329e1097044b65606fb3b3559556c5ae1bbc1f76db8091a621ed6a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_tree_view_shows_currentness_per_side_and_the_worklist_without_a_knowledge_diff"
+        }
+      },
+      "facet": "Leaf-wide view without knowledge_diff, currentness/worklist kept",
+      "id": "PRF-3B2NS2",
+      "invariant": "INV-2K9NMR",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 rule 22",
+        "leaf": "260928-MIK-L86"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "9a147aaa605089d27bacf86c342ebf9939d1ff33",
+        "content": "sha256:418793da544c952ec55ebe33f19550f57bc0372c318d60c00953d6fd1feb6274",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_cards_read_answers_without_memory_values_when_they_cannot_be_read"
+        }
+      },
+      "facet": "A missing after index returns retained entries with no invented values and the exact bound tree/reason; an injected query failure also returns entries without values and names the tree and I/O error.",
+      "id": "PRF-H6YMKV",
+      "invariant": "INV-8F35XR",
+      "origin": {
+        "handoffEntry": "RP04",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "9a147aaa605089d27bacf86c342ebf9939d1ff33",
+        "content": "sha256:8d0c3bf94324e95540acae43cf2fd358340c350ef3ecab6e551ef17bff2e4005",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_cards_read_gives_each_entry_its_four_memory_values_at_the_after_tree"
+        }
+      },
+      "facet": "Every card entry equals the four independently queried bound-after-index values, including distinct realizations, family incoming links, proof absence and only open path weaknesses; a lane answer carries no entry-memory values.",
+      "id": "PRF-HBQ25C",
+      "invariant": "INV-8F35XR",
+      "origin": {
+        "handoffEntry": "RP04",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "9a147aaa605089d27bacf86c342ebf9939d1ff33",
+        "content": "sha256:79582a1947c85408de626e1c5eaa801a3e1a75433e409af9ee3f6185e5d25bdb",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_history_rows_are_found_by_the_row_subject_an_item_names"
+        }
+      },
+      "facet": "Once a leaf answers a subject again in its attempt-2 file, the reviewer's worklist view shows that row and not the first attempt's row of the same leaf, and still shows another owner's row about the subject.",
+      "id": "PRF-Z7R50C",
+      "invariant": "INV-MS9BMJ",
+      "origin": {
+        "handoffEntry": "L37-frozen-attempts",
+        "leaf": "260928-MIK-L37"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "9a147aaa605089d27bacf86c342ebf9939d1ff33",
+        "content": "sha256:79582a1947c85408de626e1c5eaa801a3e1a75433e409af9ee3f6185e5d25bdb",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_history_rows_are_found_by_the_row_subject_an_item_names"
+        }
+      },
+      "facet": "Once a leaf answers a subject again in its attempt-2 file, the reviewer's worklist view shows that row and not the first attempt's row of the same leaf, and still shows another owner's row about the subject.",
+      "id": "PRF-ZRZPGX",
+      "invariant": "INV-MS9BMJ",
+      "origin": {
+        "handoffEntry": "L42-restore-PRF-Z7R50C",
+        "leaf": "260928-MIK-L42"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "38": {
+      "note": "Four-tree records/pins, first-read effects and repeated no-write state remain declared.\n\nAnchor: \"def test_a_live_review_is_four_trees_with_its_uncommitted_candidates_pinned_and_reused(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a147aaa605089d27bacf86c342ebf9939d1ff33",
+            "content": "sha256:bc2d1e361e4b159185281a1eaceaf402e14c3730b367f2b8e4a2870416264072",
+            "locator": {
+              "end": 246,
+              "kind": "line_range",
+              "start": 130
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "39": {
+      "note": "Leaf-wide currentness/worklist and selected-subject Git budgets retain their precise fixture populations.\n\nAnchor: \"def test_the_tree_view_shows_currentness_per_side_and_the_worklist_without_a_knowledge_diff(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a147aaa605089d27bacf86c342ebf9939d1ff33",
+            "content": "sha256:af115692d79aaa0dd6ae7c6837b5a5038b1eda88c399afaae03a83e82c2fb111",
+            "locator": {
+              "end": 365,
+              "kind": "line_range",
+              "start": 249
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "40": {
+      "note": "Capture memo equality and cache-constructor failure/sharing assertions remain explicit.\n\nAnchor: \"def test_an_unmoved_worktree_skips_to_the_tree_a_rederive_would_derive(world: World) -> None:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a147aaa605089d27bacf86c342ebf9939d1ff33",
+            "content": "sha256:1913d002094341940720527bc853ed3273db46c79445d2a384eb132992afa8f1",
+            "locator": {
+              "end": 500,
+              "kind": "line_range",
+              "start": 381
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "41": {
+      "note": "Partial, reopen/conversion, derived-index-only and legacy source-only paths retain typed side facts.\n\nAnchor: \"def test_a_partial_index_shows_its_state_on_the_affected_side(world: World) -> None:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a147aaa605089d27bacf86c342ebf9939d1ff33",
+            "content": "sha256:f550c8e81702bb0db360a5f9e4e9aae395e6788c31e0f89408c5476b6aab9481",
+            "locator": {
+              "end": 698,
+              "kind": "line_range",
+              "start": 509
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "42": {
+      "note": "Archive/route and focused-entry assertions preserve pin ownership, bounds and code-side identities.\n\nAnchor: \"def test_pins_are_named_by_the_task_directory_and_archival_removes_them(world: World) -> None:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a147aaa605089d27bacf86c342ebf9939d1ff33",
+            "content": "sha256:3b8dd08bc3b43392b39314adb98dc44320507c15923351edcafed23bcfa3562c",
+            "locator": {
+              "end": 846,
+              "kind": "line_range",
+              "start": 703
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "43": {
+      "note": "The four after-memory values and optional symbol names are compared with their exact index definitions; lane answers omit them.\n\nAnchor: \"def _memory_facts(world: World) -> None:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a147aaa605089d27bacf86c342ebf9939d1ff33",
+            "content": "sha256:7647c788015ccbbf8ac1ef2fba01c40dff7cb180d4d2b9b7bddd312677080433",
+            "locator": {
+              "end": 944,
+              "kind": "line_range",
+              "start": 849
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "44": {
+      "note": "Absent/faulted memory reads keep entries/reasons and are not retained; successful reads can then settle.\n\nAnchor: \"def test_the_cards_read_answers_without_memory_values_when_they_cannot_be_read(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a147aaa605089d27bacf86c342ebf9939d1ff33",
+            "content": "sha256:418793da544c952ec55ebe33f19550f57bc0372c318d60c00953d6fd1feb6274",
+            "locator": {
+              "end": 995,
+              "kind": "line_range",
+              "start": 947
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "45": {
+      "note": "Code absence versus unreadable and latest history attempts retain distinct owner facts.\n\nAnchor: \"def test_the_cards_read_names_an_unreadable_side_unavailable_and_a_missing_file_absent(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a147aaa605089d27bacf86c342ebf9939d1ff33",
+            "content": "sha256:e972df627731888ffd27dc3e702c6952279cff12db0935083277a343ad3f89fd",
+            "locator": {
+              "end": 1064,
+              "kind": "line_range",
+              "start": 998
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "46": {
+      "note": "Excerpts/placement cache and proof-only unchanged-path admission retain their finite/read-only contracts.\n\nAnchor: \"def test_an_excerpt_longer_than_its_bound_is_a_stated_prefix() -> None:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a147aaa605089d27bacf86c342ebf9939d1ff33",
+            "content": "sha256:7453e60a85b67c92ed1a774f2a5800065065b827a48b9a9f4f11155c4eb14773",
+            "locator": {
+              "end": 1189,
+              "kind": "line_range",
+              "start": 1067
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A union merge silently resurrected deleted catalog rows once; the consumer lines pin the live set the census checks."
+  },
+  "applicability": "The evidence-lifecycle catalog",
+  "conditions": [
+    "Union merges touching deleted rows"
+  ],
+  "exclusions": [
+    "Live consumer lines, which are kept"
+  ],
+  "id": "INV-MSCRAN",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "git diff b52adc8b shows exactly +2 lines; load_evidence_inventory clean; ownership and canonical-form modules green"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L48-curator-c94be97e.handoff-list.json"
+    },
+    "handoffEntry": "L48-W-F2-catalog-union-resurrection-repaired",
+    "leaf": "260928-MIK-L48",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The master union merge resurrected deleted DB-era catalog rows; the candidate restores the base file plus two consumer lines for the new test module.",
+  "status": "retired",
+  "supersedes": []
+}

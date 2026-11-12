@@ -1,0 +1,28 @@
+{
+  "anchor": {
+    "blob": "ec9afaf7463245dfaa02ae7d023c376b6570d073",
+    "content": "sha256:50e6d1c9f84d62ba2250a2ee987c1ff23d1e4d3dc36f091a472df1ce29893890",
+    "locator": {
+      "kind": "file"
+    },
+    "path": "mcp/src/agents_remember/cli/role_message_delivery.py"
+  },
+  "id": "WKN-K3PPJY",
+  "kind": "debt",
+  "origin": {
+    "handoff": {
+      "path": "rule9-ingest-list.json"
+    },
+    "handoffEntry": "mark-23",
+    "leaf": "260928-MIK-L118",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L118"
+  },
+  "state": "open",
+  "statement": "L111 Worker reported role files at HEAD import cli/role_message_delivery.py and cli/role_message_files.py that exist only as untracked files; not reproducible in master or the L111 tree (no such imports at HEAD). The files, if present, belong to the L117 candidate (untracked until it lands); no action here. Also: a bare git stash pop grabs another seat's parked WIP (shared stack);"
+}

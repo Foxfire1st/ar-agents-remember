@@ -1,0 +1,990 @@
+{
+  "path": "mcp/src/agents_remember/application/memory_tools.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+        "content": "sha256:887ce8a68fba17a39475a93b7d8417fb39e5ba4d9708cdae05e2865e2519aef5",
+        "locator": {
+          "end": 65,
+          "kind": "line_range",
+          "start": 64
+        }
+      },
+      "id": "RLZ-1J7B0N",
+      "invariant": "INV-BTF5NF",
+      "origin": {
+        "handoffEntry": "curator-support-1",
+        "leaf": "260928-MIK-L191"
+      },
+      "rationale": "This ceiling bounds the per-target rows returned by citation_census_tool; it is a presentation limit, while that caller still writes and names the complete census artifact. The numeric bound does not narrow the invariant's measured population.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+        "content": "sha256:129a1b47f142a1adf1eba27fb36b455eaa37075548562f131998e10cb12d93d5",
+        "locator": {
+          "kind": "symbol",
+          "name": "_pre_baseline_official_scope"
+        }
+      },
+      "id": "RLZ-5KQY0P",
+      "invariant": "INV-13QTT2",
+      "origin": {
+        "handoffEntry": "MIK-R45@v2 rule 2",
+        "leaf": "260928-MIK-L45"
+      },
+      "rationale": "The single admission helper both fixer entry points share; its five ordered checks are the whole gate.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+        "content": "sha256:dedad5329b7d2d542e7d04a186c6869a311fc5167b1e47add81c4277e8bf5156",
+        "locator": {
+          "kind": "symbol",
+          "name": "memory_carryover_apply_tool"
+        }
+      },
+      "id": "RLZ-AFT8BA",
+      "invariant": "INV-MZ13SJ",
+      "origin": {
+        "handoffEntry": "L56-CUR-final-facet-INV-MZ13SJ",
+        "leaf": "260928-MIK-L56"
+      },
+      "rationale": "Calls the admitted no-commit transaction and reports an actual refused state with ok false rather than presenting restoration/no-write as success. This is a supporting envelope, not a new admission, rollback or publication authority.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+        "content": "sha256:8b5883f160e78969aa44c39e139897297d96aebecd17b2391d059c91d3eefe10",
+        "locator": {
+          "kind": "symbol",
+          "name": "citation_note_revision_tool"
+        }
+      },
+      "id": "RLZ-C0NK6V",
+      "invariant": "INV-Q7KYQH",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §8 reference-note-revision",
+        "leaf": "260928-MIK-L191"
+      },
+      "rationale": "The curator's mounted route to that owner, which refuses an operand outside the admitted memory tree and records the contract's leaf as author.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+        "content": "sha256:e07c88ae05c8a689fa70c027d0e146b9b069b245e945fc5195b544ad73dbe235",
+        "locator": {
+          "kind": "symbol",
+          "name": "_converted_citation_fix"
+        }
+      },
+      "id": "RLZ-FMSZFC",
+      "invariant": "INV-VH0QZ1",
+      "origin": {
+        "handoffEntry": "L110-C-batch",
+        "leaf": "260928-MIK-L110"
+      },
+      "rationale": "Each selected converted card is authored and refreshed independently; refusal is accumulated.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+        "content": "sha256:ae5997c75a3f9b9702040723b9c6b0a30ddef7a3a651258c3b1344406c65d441",
+        "locator": {
+          "end": 924,
+          "kind": "line_range",
+          "start": 920
+        }
+      },
+      "id": "RLZ-GFATR9",
+      "invariant": "INV-09DXWE",
+      "origin": {
+        "handoffEntry": "L188-curator-B12-regular-task-next-action-a740",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "The indexed-memory result sends recorded/not-recorded states to the same developer-started Architect and regular-task continuation, while an unusable partial index keeps its explicit repair action. The initializer reports; it performs no foundation production.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+        "content": "sha256:9de9f4e5133226cbb72cb3625c3dda0fb110f0642c9b8eeed1a06438b8a81007",
+        "locator": {
+          "kind": "symbol",
+          "name": "_citation_fix_status"
+        }
+      },
+      "id": "RLZ-GH6AH9",
+      "invariant": "INV-1V9ARB",
+      "origin": {
+        "handoffEntry": "L56-CUR-final-facet-INV-1V9ARB",
+        "leaf": "260928-MIK-L56"
+      },
+      "rationale": "`_citation_fix_status` at C still counts rewritten/stale/unreadable/refused over the complete selected populations, including the refused list taken from the authoring report, so the claim holds; only its blob had to move to C's.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+        "content": "sha256:910178dbc0247244e141b02e44b602b499401c0af9db5b9fa94e9d992bb89e05",
+        "locator": {
+          "end": 828,
+          "kind": "line_range",
+          "start": 824
+        }
+      },
+      "id": "RLZ-MF9P9F",
+      "invariant": "INV-09DXWE",
+      "origin": {
+        "handoffEntry": "L188-curator-B12-regular-task-next-action-a740",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "The shared guidance names the developer-started Architect, a regular foundation task and its Curator. It presents the existing setup-to-foundation continuation rather than authorizing taskless foundation production.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+        "content": "sha256:b138d8d6c8cc66ad7f51dad3972cb2d9fc8732425e5b8d4983ba5e762944a940",
+        "locator": {
+          "kind": "symbol",
+          "name": "citation_fix_tool"
+        }
+      },
+      "id": "RLZ-NRP4N9",
+      "invariant": "INV-JT28KJ",
+      "origin": {
+        "handoffEntry": "L46-curator-unconditional-boundary",
+        "leaf": "260928-MIK-L46"
+      },
+      "rationale": "The application refuses legacy memory before invoking the converted card authoring writer.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+        "content": "sha256:7ef380476ad350970442b0914c3a71a14bb4114fe50df852a1834179bc78e67f",
+        "locator": {
+          "end": 896,
+          "kind": "line_range",
+          "start": 888
+        }
+      },
+      "id": "RLZ-PCQR3A",
+      "invariant": "INV-09DXWE",
+      "origin": {
+        "handoffEntry": "L188-curator-B12-regular-task-next-action-a740",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "The unavailable-publication result uses that state-first Architect handover for nonlegacy states; the legacy-format branch retains its separate conversion refusal. This returns continuation guidance and does not start the Architect or write foundation records.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+        "content": "sha256:b138d8d6c8cc66ad7f51dad3972cb2d9fc8732425e5b8d4983ba5e762944a940",
+        "locator": {
+          "kind": "symbol",
+          "name": "citation_fix_tool"
+        }
+      },
+      "id": "RLZ-S74G2D",
+      "invariant": "INV-13QTT2",
+      "origin": {
+        "handoffEntry": "MIK-R45@v2 rule 2",
+        "leaf": "260928-MIK-L45"
+      },
+      "rationale": "The fixer entry point whose optional contract_path carries the two admissions.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+        "content": "sha256:c7784311ae347dfa345d80e854bb875d9f8fc138ef0cc315a4e0e53976866813",
+        "locator": {
+          "kind": "symbol",
+          "name": "memory_carryover_plan_tool"
+        }
+      },
+      "id": "RLZ-SZR0SN",
+      "invariant": "INV-9MH0V9",
+      "origin": {
+        "handoffEntry": "L56-CUR-final-facet-INV-9MH0V9",
+        "leaf": "260928-MIK-L56"
+      },
+      "rationale": "Calls matching converted-format admission before planning, code authority or candidate reads.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+        "content": "sha256:20715addb462bc44fb693c9aedfe978d20f77305d2676685c56bbe2d1c386530",
+        "locator": {
+          "kind": "symbol",
+          "name": "route_index_refresh_tool"
+        }
+      },
+      "id": "RLZ-W1WY9N",
+      "invariant": "INV-13QTT2",
+      "origin": {
+        "handoffEntry": "MIK-R45@v2 rule 2",
+        "leaf": "260928-MIK-L45"
+      },
+      "rationale": "The index apply entry point taking the same admission through the same helper.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+        "content": "sha256:b9330db4676ef731cd95886e9ad74664f430ed48bd0b1054011157379721166f",
+        "locator": {
+          "kind": "symbol",
+          "name": "CitationOperationScope"
+        }
+      },
+      "id": "RLZ-ZY3NGB",
+      "invariant": "INV-VH0QZ1",
+      "origin": {
+        "handoffEntry": "L110-C-batch",
+        "leaf": "260928-MIK-L110"
+      },
+      "rationale": "The scope validates selectors and derives the only list bound from the coherence model.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Baseline status reports unsuccessful `ok` for unavailable Git history as well as blocked drift, while preserving the owner's payload.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:c4a9538003f50940143bb235c8446534f9c76b0b3a1c28b61f8cace48655ef48",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_baseline_status_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Baseline status reports unsuccessful `ok` for unavailable Git history as well as blocked drift, while preserving the owner's payload.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:c4a9538003f50940143bb235c8446534f9c76b0b3a1c28b61f8cace48655ef48",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_baseline_status_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The baseline owner distinguishes unreadable attribution behind a resolvable HEAD from an unborn repository, retaining the existing drift decision.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bfbe2e81d84a8bfc86b538760f6510133897cc83",
+            "content": "sha256:a0bf2c3889850dab1979e16c2e436db1829b62d71562a6cf60052a3cfee09baf",
+            "locator": {
+              "kind": "symbol",
+              "name": "baseline_status"
+            },
+            "path": "mcp/src/agents_remember/memory/baseline.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Carryover's options carry the approval intent and the explicit review selections, not a memory commit subject, and the apply adapter forwards those fields.\n\nAnchor: `CarryoverCommitMessages`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:6245c0fad1ad37363ec36508b7e32f67104a8b9143178bc7e8c18a0856de40bb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The apply entry point that forwards that subject and nothing else.\n\nAnchor: `memory_carryover_apply_tool`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:6245c0fad1ad37363ec36508b7e32f67104a8b9143178bc7e8c18a0856de40bb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Canonical quality scope is owned by the focused scope module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26578a8454aee1ff1eb6ff15e36b1cb9f381f001",
+            "content": "sha256:b4ac54ce5b407c6b284a6e53ad2c4a201c6b22b4346c5895fb70b893f0a38eb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemoryScope"
+            },
+            "path": "mcp/src/agents_remember/application/memory_scope.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Its resolver, which binds a repository to the scope the quality surface runs against.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26578a8454aee1ff1eb6ff15e36b1cb9f381f001",
+            "content": "sha256:a9befde4b5936a384a7ed09a1e2ddc0a9c52af4a88f1955b2b44d9a99200c818",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_memory_scope"
+            },
+            "path": "mcp/src/agents_remember/application/memory_scope.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "This controller function revalidates the scope, calls the scoped memory-quality check and composes its result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
+            "content": "sha256:306f6286876759fdd98fa31ee60140a06b129e5d528ab0d843fc5dcea6300b09",
+            "locator": {
+              "kind": "symbol",
+              "name": "_execute_memory_quality"
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The controller attaches the curator checklist and enclosure-local worklist for the full scoped publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
+            "content": "sha256:9e419dfdd31128ccf5ceac3e59beb60b4635163009e3fb334f5fa77592dc182c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_attach_curator_checklist"
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "On a converted tree the citation check reports sidecar references instead of reading citation tables.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:6a04802ea6586dd0e323bb3072fa8615e8bea72dc3298eeef2972754f9982cbb",
+            "locator": {
+              "kind": "symbol",
+              "name": "citation_check_tool"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "92307a15e76cc80cb4f56af2bc448df86c7bceab",
+            "content": "sha256:5222022946ed0872ef074f7f24e823e660c3d191c7983b3bdcd3731db2da5b2f",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_converted_memory"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/reference_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The shared converted fixer authors references, then refreshes mechanical moves, excluding every authoring-refused sidecar; one named document scopes both stages.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:e07c88ae05c8a689fa70c027d0e146b9b069b245e945fc5195b544ad73dbe235",
+            "locator": {
+              "kind": "symbol",
+              "name": "_converted_citation_fix"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The baseline owner distinguishes unreadable attribution behind a resolvable HEAD from an unborn repository, retaining the existing drift decision.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bfbe2e81d84a8bfc86b538760f6510133897cc83",
+            "content": "sha256:f4919bee988d4473dce9ce42789930a3b179417eb1c07e1d5ba1f0c40270d283",
+            "locator": {
+              "kind": "symbol",
+              "name": "ledger_status"
+            },
+            "path": "mcp/src/agents_remember/memory/baseline.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The scope object the caller's named documents ride with, validated at construction.\n\nAnchor: `CitationOperationScope`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:6245c0fad1ad37363ec36508b7e32f67104a8b9143178bc7e8c18a0856de40bb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "**The memory initializer now reports the knowledge foundation beside the memory root it scaffolds (`ICR-R29@v1`).**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:7b520fc9b22cbf25310bc93079df0b862908d53ceb2833165f870ee544025537",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_init_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "**The admission whose location this block reports, so the location a curator is told to populate is the one the bootstrap publishes to.**\n\nAnchor: `admit_bootstrap_context`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dcbd9ce3d1bcc4f2805f2ccf47e3b8a14119ec63",
+            "content": "sha256:5cdaf2e9510dbdc04146abcef8ff00e91a0b4d27dce7faac33bd6a7da5e9d974",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_bootstrap_admission.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "The read that decides the block's state, and the unavailable form its states come from.\n\nAnchor: `resolve_published_intent`, `PublishedIntentUnavailable`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2257653c8f42c1861ece020b7afb0ebe068ff1e",
+            "content": "sha256:6918f2ee0d10bbb302b9a5825ac0309321a87cc5271af0ee5a2a11102e76be05",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_published_intent"
+            },
+            "path": "mcp/src/agents_remember/application/published_intent.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e2257653c8f42c1861ece020b7afb0ebe068ff1e",
+            "content": "sha256:7fe54fb261752044862f79b45d0ea3ccf57b8981074bc78771a941b10ddc473c",
+            "locator": {
+              "kind": "symbol",
+              "name": "PublishedIntentUnavailable"
+            },
+            "path": "mcp/src/agents_remember/application/published_intent.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "The scope's own check: one named `document`, or a `documents` list only for `citation_fix`, refused before the memory tree is resolved.\n\nAnchor: `validate`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:6245c0fad1ad37363ec36508b7e32f67104a8b9143178bc7e8c18a0856de40bb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "The two card writers, which ask no cutover lock. Anchor: `citation_fix_tool`, `route_index_refresh_tool`\n\nAnchor: `citation_fix_tool` `citation_migrate_tool` `route_index_refresh_tool`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:6245c0fad1ad37363ec36508b7e32f67104a8b9143178bc7e8c18a0856de40bb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "Frozen implementation of _refuse_official_memory supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:752848b4867967cdcbbc2e0bbbead222c7bf0b552f0d9e8fe80885e9c83e785d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refuse_official_memory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "Frozen implementation of _leaf_memory_writer_scope supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:a7b0a1176435d908d3ae89aa58f11a71872c9f42db473b2e31b7a6f04ed254a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf_memory_writer_scope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Carryover's options carry the approval intent and the explicit review selections, not a memory commit subject, and the apply adapter forwards those fields.\n\nAnchor: `CarryoverCommitMessages`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:6245c0fad1ad37363ec36508b7e32f67104a8b9143178bc7e8c18a0856de40bb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "The drift tool binds the leaf's converted base with a contract, else the checkout HEAD.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:f763db344a416efd66bbb0d3414cfd2cfcf00cfec743dabcb71778a18ef92f63",
+            "locator": {
+              "kind": "symbol",
+              "name": "drift_check_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "Contractless writes share the measured declared-root, converted-format, no-baseline and no-linked-worktree admission; every failed condition names the leaf route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:129a1b47f142a1adf1eba27fb36b455eaa37075548562f131998e10cb12d93d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_pre_baseline_official_scope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "This application function selects pre-baseline admission or the ordinary leaf contract. Its pre-baseline and unconverted-refusal returns explicitly add measuring_build_stamp(); its converted-leaf return calls _citation_fix_result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:b138d8d6c8cc66ad7f51dad3972cb2d9fc8732425e5b8d4983ba5e762944a940",
+            "locator": {
+              "kind": "symbol",
+              "name": "citation_fix_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "Route-index apply uses the same pre-baseline admission; scoped operations still use the resolver-owned roots and storage.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:20715addb462bc44fb693c9aedfe978d20f77305d2676685c56bbe2d1c386530",
+            "locator": {
+              "kind": "symbol",
+              "name": "route_index_refresh_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "Finite fix selection is validated before reads with the shared bound.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:b9330db4676ef731cd95886e9ad74664f430ed48bd0b1054011157379721166f",
+            "locator": {
+              "kind": "symbol",
+              "name": "CitationOperationScope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "The operation-specific shared legacy refusal preserves short-message/full-detail conversion guidance; only recognized caller RuntimeErrors are translated.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:0ad4605217085ded778cd1fafd60116a0873ead51fdde2374479e3ee480c2c64",
+            "locator": {
+              "kind": "symbol",
+              "name": "_carryover_legacy_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "The public apply catches only the recognized legacy refusal; success and converted-target refusal remain distinct.\n\nAnchor: `memory_carryover_apply_tool`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:6245c0fad1ad37363ec36508b7e32f67104a8b9143178bc7e8c18a0856de40bb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "Carryover options forward approval intent and explicit review selection without a commit subject.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:dedad5329b7d2d542e7d04a186c6869a311fc5167b1e47add81c4277e8bf5156",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_carryover_apply_tool"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f2012e3d1b6cfcf742adc9b3bf25460b4073950",
+            "content": "sha256:995e469cb000e69d917212ec9c2ff7a67b96b37a66646ee8aa825c9a2188a674",
+            "locator": {
+              "kind": "symbol",
+              "name": "_apply_carryover_for_request"
+            },
+            "path": "mcp/src/agents_remember/memory/carryover.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "The carryover adapter forwards converted worktree import, derives ok from refused state and translates only the recognized legacy RuntimeError.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:dedad5329b7d2d542e7d04a186c6869a311fc5167b1e47add81c4277e8bf5156",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_carryover_apply_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "39": {
+      "note": "Converted fixing authors selected cards then refreshes references, excluding authoring-refused sidecars.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:e07c88ae05c8a689fa70c027d0e146b9b069b245e945fc5195b544ad73dbe235",
+            "locator": {
+              "kind": "symbol",
+              "name": "_converted_citation_fix"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Canonical quality scope is owned by the focused scope module.\n\nAnchor: `resolve_memory_scope`, `MemoryScope`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26578a8454aee1ff1eb6ff15e36b1cb9f381f001",
+            "content": "sha256:a9befde4b5936a384a7ed09a1e2ddc0a9c52af4a88f1955b2b44d9a99200c818",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_memory_scope"
+            },
+            "path": "mcp/src/agents_remember/application/memory_scope.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "26578a8454aee1ff1eb6ff15e36b1cb9f381f001",
+            "content": "sha256:b4ac54ce5b407c6b284a6e53ad2c4a201c6b22b4346c5895fb70b893f0a38eb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemoryScope"
+            },
+            "path": "mcp/src/agents_remember/application/memory_scope.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "40": {
+      "note": "The document-only scope refuses conflicting, empty or oversized selections; only fix admits a multi-card list.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:b9330db4676ef731cd95886e9ad74664f430ed48bd0b1054011157379721166f",
+            "locator": {
+              "kind": "symbol",
+              "name": "CitationOperationScope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "41": {
+      "note": "The converted fixer and route-index apply retain ordinary leaf and measured pre-baseline admissions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:b138d8d6c8cc66ad7f51dad3972cb2d9fc8732425e5b8d4983ba5e762944a940",
+            "locator": {
+              "kind": "symbol",
+              "name": "citation_fix_tool"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:20715addb462bc44fb693c9aedfe978d20f77305d2676685c56bbe2d1c386530",
+            "locator": {
+              "kind": "symbol",
+              "name": "route_index_refresh_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "42": {
+      "note": "Memory initialization reports the foundation without authoring records. Complete resolved states and nonlegacy unavailable publication name the measured state before the Architect/regular-task/Curator handover; partial-index repair, legacy conversion and admission refusals retain their distinct next actions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:7b520fc9b22cbf25310bc93079df0b862908d53ceb2833165f870ee544025537",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_init_tool"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:ff465974c2ff2904981ae7f7b0fe9990369387c39693b2aad43fa9ae5f18cb61",
+            "locator": {
+              "kind": "symbol",
+              "name": "_knowledge_foundation_state"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Typed quality execution and public run translation are owned by the controller.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
+            "content": "sha256:b9c3b6fbb6f4b5ae523ee6888de143b18da1674d8d42ec868401b25daea26060",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_memory_quality_request"
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
+            "content": "sha256:639ad1bd1203dac73613f0b23e99c3c53170586d911beda46efbc260fcca2060",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_execution"
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The route-index application entry point forwards resolver-owned authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:20715addb462bc44fb693c9aedfe978d20f77305d2676685c56bbe2d1c386530",
+            "locator": {
+              "kind": "symbol",
+              "name": "route_index_refresh_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The route-index builder uses explicit repository and storage authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8ea2ba5138e5b5662c32749fef651002f28bbee",
+            "content": "sha256:60c738fbff7f8b76f037ac59d0174391ef8e585d380a03a671edb65809cf2021",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_route_indexes"
+            },
+            "path": "mcp/src/agents_remember/kernel/route_index.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The route-index builder receives storage authority explicitly in its typed signature.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8ea2ba5138e5b5662c32749fef651002f28bbee",
+            "content": "sha256:60c738fbff7f8b76f037ac59d0174391ef8e585d380a03a671edb65809cf2021",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_route_indexes"
+            },
+            "path": "mcp/src/agents_remember/kernel/route_index.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The apply entry point that forwards that subject and nothing else.\n\nAnchor: `memory_carryover_apply_tool`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:6245c0fad1ad37363ec36508b7e32f67104a8b9143178bc7e8c18a0856de40bb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

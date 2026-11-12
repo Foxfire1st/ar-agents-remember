@@ -1,0 +1,549 @@
+{
+  "path": "mcp/tests/test_knowledge_review_one_sided_statements.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The module's own scope statement: six cases over the real adapter and two real datasets, and the load-bearing properties each one owns.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "512bf1dcd15d3e70a90a9c7373fd4e554842a30d",
+            "content": "sha256:76c297d3d7846c5bd62f0bbe291684ba67b01d528b7c4058776b21250270d7b7",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The retained function asserts key-order canonicality only and explicitly discloses withdrawal of its fixture-driven round trip.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "512bf1dcd15d3e70a90a9c7373fd4e554842a30d",
+            "content": "sha256:056271f4deb8b666d2f45b67c4eafddeeffb39380e30e41e997ff4244a1f8a04",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_structured_field_value_is_rendered_as_its_own_text_and_never_as_an_absence"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The one-sided record reported by coverage with an empty roster, against the conditions the after side really recorded.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "512bf1dcd15d3e70a90a9c7373fd4e554842a30d",
+            "content": "sha256:11e22fd36edb688cef31a499ce8eb266af6546cef1ac286b96abef04d93b709a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_one_sided_record_is_reported_by_its_coverage_and_not_by_a_roster_of_field_rows"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "**The task-context case: no comparison, both sides unresolved with the same reason and no text, and no roster.**\n\nAnchor: `test_a_review_that_compared_no_subject_serves_no_operand_at_all`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "512bf1dcd15d3e70a90a9c7373fd4e554842a30d",
+            "content": "sha256:b00e739d2ac732826f0ba07d0f2f07455d2c30fa19295b26a3bfab7ae667d856",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "512bf1dcd15d3e70a90a9c7373fd4e554842a30d",
+            "content": "sha256:1ccc31b28da82fcd785debc8607142112c6d175dea58e3991eabaf9e70ed141f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_review_that_compared_no_subject_serves_no_operand_at_all"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The projection owner defines canonical structured-value text and its wrapper markers. The retained local test asserts key-order canonicality; marker round-trip test coverage is not claimed.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a2cdf1b16e61a977a5f7246ee6647b6114f1413d",
+            "content": "sha256:ca5e40a13ef3f5dc67e0e73be19c58df5f8e36bc3948c61d5c51d15e632dcaae",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 73
+            },
+            "path": "mcp/src/agents_remember/application/review_statement_sides.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a2cdf1b16e61a977a5f7246ee6647b6114f1413d",
+            "content": "sha256:e7d9c01374ec55e37ec25b09e76f30bc5ab3d0246db555e5007035ed7e94ab1b",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 65
+            },
+            "path": "mcp/src/agents_remember/application/review_statement_sides.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a2cdf1b16e61a977a5f7246ee6647b6114f1413d",
+            "content": "sha256:66a8bd6cc2d648216ace0c0e498a81f2cf2338ce60e271adfca99e2f7460e724",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 66
+            },
+            "path": "mcp/src/agents_remember/application/review_statement_sides.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "512bf1dcd15d3e70a90a9c7373fd4e554842a30d",
+            "content": "sha256:056271f4deb8b666d2f45b67c4eafddeeffb39380e30e41e997ff4244a1f8a04",
+            "locator": {
+              "end": 276,
+              "kind": "line_range",
+              "start": 262
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The current compose_review entry point takes resolution and request; the local review helper invokes it without the removed ReviewRecordInputs bag.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
+            "content": "sha256:4f1a07a85c7f9cf7858e5f5678cca9e892fdbc342ce77aa4b5981302a8d3483d",
+            "locator": {
+              "end": 489,
+              "kind": "line_range",
+              "start": 270
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "512bf1dcd15d3e70a90a9c7373fd4e554842a30d",
+            "content": "sha256:c6d5a67fdce71b90de5a53aecc875edf27e0a2b7666cdabad12da4346553bf61",
+            "locator": {
+              "end": 184,
+              "kind": "line_range",
+              "start": 161
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Read fixture and test-only row builder supply both datasets.\n\nAnchor: `build_read_scope_fixture` `RowStore` `open_knowledge_store`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
+            "content": "sha256:f8b2b68d3a4084309c854c774b870c585832b99c522189ececf823a1ec098a67",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/read_scope_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "62e692c8ea18903861ec2efddd03c884ed14f818",
+            "content": "sha256:43a32e8370a3aa07c1e8247bd8b4d445a42caab3b630d2ed5783e663bc3c824e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/knowledge_rows_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
+            "content": "sha256:269b1bb5848bfa06ae7f0b5f2138690cc4cc9475afc3d513873e274139d3eeea",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_read_scope_fixture"
+            },
+            "path": "mcp/tests/read_scope_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "62e692c8ea18903861ec2efddd03c884ed14f818",
+            "content": "sha256:d9c7bd2f6f17f175008858f09a85cd9f5d2f7eb7b157523ccacd8976c11547c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "RowStore"
+            },
+            "path": "mcp/tests/knowledge_rows_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "62e692c8ea18903861ec2efddd03c884ed14f818",
+            "content": "sha256:adc63e919d39094931f1834d856b4a23941c7e75ca6195c1ba4cd119091edd8a",
+            "locator": {
+              "kind": "symbol",
+              "name": "open_knowledge_store"
+            },
+            "path": "mcp/tests/knowledge_rows_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "The lane row that selects this module, and the consumer rows of the two shared-support artifacts it imports (knowledge rows and read scope).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0556945441335e93cd0b1783dba11d3b2eb279a7",
+            "content": "sha256:f3c97cea90d6874137c31a702bc9f64c898199a273c0aede415fdef641e6c6c7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The current lifecycle catalog declares test_knowledge_review_one_sided_statements.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/anchor_fixture_models.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_rows_test_support.py, mcp/tests/read_scope_test_support.py. These current declarations establish no invocation or passing result; no former narrow-window identity is inferred.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0556945441335e93cd0b1783dba11d3b2eb279a7",
+            "content": "sha256:f3c97cea90d6874137c31a702bc9f64c898199a273c0aede415fdef641e6c6c7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "The renderer displays before/after statements and its component tests use synthetic statement values; they neither import the Python statement constants nor assert acceptance_ref field rows.\n\nAnchor: `KnowledgeStatements`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "260d7c2a75a75150a56ab0c840a253df4f94ff68",
+            "content": "sha256:c8597a4c296ca932f2036e0b9a41e221b92089146d7b2f220075c9de6e3ed3bc",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/panels/review/KnowledgeStatements.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fe55994283f7075d41a5b4845f429dd0d76df6b5",
+            "content": "sha256:f7ee053e85c0e265023f7d0d267a21981d0df64f2a3f58e175ad3fad515ffa87",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/KnowledgeStatements.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe55994283f7075d41a5b4845f429dd0d76df6b5",
+            "content": "sha256:a667fc3ff593802fe44012abfe3ffac077cc366db14fe4ddade1cf72080370b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeStatements"
+            },
+            "path": "dashboard/src/panels/review/KnowledgeStatements.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Current revision selection takes the subject's own before/after item for each tree, rather than the historical _identity_item/page-order account.\n\nAnchor: `select_subject_revisions` `_side_item`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50e72f0f05fdeecfd3211de1ac01c7f4098230e9",
+            "content": "sha256:b5a4b2c7452e3305f447dcec5abfa9cdf826ea9ea655b54243c92f084b2df59c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/review_revision_comparison.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "50e72f0f05fdeecfd3211de1ac01c7f4098230e9",
+            "content": "sha256:ddc186e79fa30557756920a1e33f181944dd1f534edf540aafcd1385b3ce9ffa",
+            "locator": {
+              "kind": "symbol",
+              "name": "select_subject_revisions"
+            },
+            "path": "mcp/src/agents_remember/application/review_revision_comparison.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "50e72f0f05fdeecfd3211de1ac01c7f4098230e9",
+            "content": "sha256:82cb514fc25f5d47f59cf2a8724bfa386f7a06e9d7a20732607859a0843961d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_side_item"
+            },
+            "path": "mcp/src/agents_remember/application/review_revision_comparison.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The module's whole lane declaration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "512bf1dcd15d3e70a90a9c7373fd4e554842a30d",
+            "content": "sha256:0753257dc2b79f881f380b8681aa5ded3b4e356b794086776ece0c5b7a215bb4",
+            "locator": {
+              "kind": "symbol",
+              "name": "pytestmark"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "An invariant text record stores one numeric revision and one statement, distinct from the former retained-revision model.\n\nAnchor: invariant record fields",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66f8f78abd64e53edd4c0ca7b61e6ede5b7bc299",
+            "content": "sha256:e1294300e672bdb270cada4f27d2b8a310508ebb019d00774e8579be7f80cd1d",
+            "locator": {
+              "end": 137,
+              "kind": "line_range",
+              "start": 124
+            },
+            "path": "mcp/src/agents_remember/models/knowledge_files/records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Retain the authored statement constants; remove the nonexistent SHARED_ACCEPTANCE_REF target. Acceptance is asserted by its text-knowledge prefix.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "512bf1dcd15d3e70a90a9c7373fd4e554842a30d",
+            "content": "sha256:2876ec40462e3de6470a7e854ad32b7f3b8d24908c9032a958cb0fd0e3a611d4",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 68
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "OneSidedPair remains the local frozen dataclass. Extra seeds are constructed by _extra; the former AuthoredInvariant target does not survive.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "512bf1dcd15d3e70a90a9c7373fd4e554842a30d",
+            "content": "sha256:6ce4bcbc2f0dff118e6a557595020f024fdfa8723e0c89fd1fcbf2b48613c321",
+            "locator": {
+              "end": 92,
+              "kind": "line_range",
+              "start": 80
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "512bf1dcd15d3e70a90a9c7373fd4e554842a30d",
+            "content": "sha256:a5d9b108152d2d163e0f01b10f83cc437e68fe639a1b43bfafed4335af092ad8",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 95
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "_extra constructs ExtraInvariantSeed values, and pair supplies them to the test fixture builder. The former author_invariant target is absent.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "512bf1dcd15d3e70a90a9c7373fd4e554842a30d",
+            "content": "sha256:a5d9b108152d2d163e0f01b10f83cc437e68fe639a1b43bfafed4335af092ad8",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 95
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "512bf1dcd15d3e70a90a9c7373fd4e554842a30d",
+            "content": "sha256:e1ef6447bacc2005e2fbe74aaca336ca4bff125093ca770b3e1e2504d65ca83b",
+            "locator": {
+              "end": 158,
+              "kind": "line_range",
+              "start": 115
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The fixture: two independently built snapshots under one namespace, and the four authored revisions that make an addition, a removal and a real transition.**\n\nAnchor: `pair`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "512bf1dcd15d3e70a90a9c7373fd4e554842a30d",
+            "content": "sha256:b00e739d2ac732826f0ba07d0f2f07455d2c30fa19295b26a3bfab7ae667d856",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "512bf1dcd15d3e70a90a9c7373fd4e554842a30d",
+            "content": "sha256:e1ef6447bacc2005e2fbe74aaca336ca4bff125093ca770b3e1e2504d65ca83b",
+            "locator": {
+              "kind": "symbol",
+              "name": "pair"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The one composition call, with the hand-assembled resolution and the loud failure on a refusal.\n\nAnchor: `review`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "512bf1dcd15d3e70a90a9c7373fd4e554842a30d",
+            "content": "sha256:b00e739d2ac732826f0ba07d0f2f07455d2c30fa19295b26a3bfab7ae667d856",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "512bf1dcd15d3e70a90a9c7373fd4e554842a30d",
+            "content": "sha256:c6d5a67fdce71b90de5a53aecc875edf27e0a2b7666cdabad12da4346553bf61",
+            "locator": {
+              "kind": "symbol",
+              "name": "review"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The addition and the removal: the complete present-side statement, the named absent side with `text is None`, and the comparison's own side-absence code.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "512bf1dcd15d3e70a90a9c7373fd4e554842a30d",
+            "content": "sha256:2c88cb7e4ccc6e6f31b85f6737cf90ce462e537c5625002e27cbb567f7f15df2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_added_statement_renders_its_after_text_beside_a_named_absent_before"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "512bf1dcd15d3e70a90a9c7373fd4e554842a30d",
+            "content": "sha256:a66dedf43017f357632ebd53db6a7da972e44024adeed1da988bc30787095c62",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_removed_statement_renders_its_before_text_beside_a_named_absent_after"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The exact roster is acceptance_ref, lifecycle and payload_digest; accepted provenance uses a text-knowledge acceptance prefix.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "512bf1dcd15d3e70a90a9c7373fd4e554842a30d",
+            "content": "sha256:175621daedeb7d823db4cbacc5ba5ddc72e5dda27328ca966756a83af8253f04",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_field_row_keeps_the_side_that_recorded_a_value_and_names_the_side_that_did_not"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

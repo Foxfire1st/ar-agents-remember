@@ -1,0 +1,66 @@
+{
+  "path": "mcp/src/agents_remember/providers/cgc/lifecycle/overview",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The parent lifecycle facade imports the CGC package facade.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bda51957bb81b9b0ad79a645e8e538384ea9bf33",
+            "content": "sha256:bc63a6437806a3f421be48164f69798b40ad7bd2d307c45a66416364e9b5c921",
+            "locator": {
+              "kind": "symbol",
+              "name": "_EXPORT_MODULES"
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/__init__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bda51957bb81b9b0ad79a645e8e538384ea9bf33",
+            "content": "sha256:72a94a1221e0cb6c3bf2b407c034d72a476b085abfc5e5cece6394892ab08ddf",
+            "locator": {
+              "kind": "symbol",
+              "name": "__getattr__"
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Watcher aggregation imports exactly `cgc_stop_all` from this package; both admitted CGC watcher actions (`stop`, `shutdown-all`) resolve to it, and no start or status aggregation is imported.\n\nAnchor: `watcher_cgc_result`, `cgc_stop_all`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "313cccf27ecb857ee439e37d244b9512f017738d",
+            "content": "sha256:f5f6370ed049c2f211ed6578d46bc91a01807880299e42a30dc0fec2f5e6552a",
+            "locator": {
+              "kind": "symbol",
+              "name": "watcher_cgc_result"
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/watchers.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4b951246c7fde0b145aac05a589c5d0d1bc1574c",
+            "content": "sha256:335c76855e0da2922ebdbf796f62a803969496396da593678399fab6f08f9e9f",
+            "locator": {
+              "kind": "symbol",
+              "name": "cgc_stop_all"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,172 @@
+{
+  "path": "mcp/src/agents_remember/tasks/leaf_decisions.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "aadce53774c779828d6dcfc8549d40e01f2cdd89",
+        "content": "sha256:7de424ff54f04e638f280df43d9d816521322a92d5a85d1d8259358c5af8d1b1",
+        "locator": {
+          "kind": "symbol",
+          "name": "strict_leaf_doc"
+        }
+      },
+      "id": "RLZ-K3TRTH",
+      "invariant": "INV-BBPPS5",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-view-depends-on-its-reads",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "Records its lookup in a nested block; with an established claimant it replays to the caller only the rows of the leaf's own document and the rows that are not a plain byte identity, so a sibling document that was read and ruled out is no input of the caller's result. When the leaf has no claimant it replays every row it opened — each sibling read in full and the exact direct JSON listing — so a performed negative lookup keeps depending on those files; the terminal task-root resolution is one of the admitted unrecorded B5 selectors and records no row; when the lookup raises it replays every row.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "10": {
+      "note": "The lookup inside a nested recording, and the rows it replays to the caller.\n\nAnchor: `strict_leaf_doc`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aadce53774c779828d6dcfc8549d40e01f2cdd89",
+            "content": "sha256:31b1d56fe14ad5162059be5041627e59c48322ef9dd4fb51c2ca83bef9b6656a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Every JSON file of the folder is read; a broken file that names the leaf is collected.\n\nAnchor: `_unreadable_claims`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aadce53774c779828d6dcfc8549d40e01f2cdd89",
+            "content": "sha256:31b1d56fe14ad5162059be5041627e59c48322ef9dd4fb51c2ca83bef9b6656a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "A raw document names the leaf by its id or an enclosure's leafId; a master never does.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aadce53774c779828d6dcfc8549d40e01f2cdd89",
+            "content": "sha256:329403bb2284b09fd60023f9ac15b24f680ea165054166fcbb67930a1edc513d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_names_leaf"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Exactly one decision entry at the cited time resolves.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aadce53774c779828d6dcfc8549d40e01f2cdd89",
+            "content": "sha256:a49644bb3d75c59716525a78db9d08a7d8bdb96d7bf38cefd861ff9e4196d407",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_decision_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The recorded reads hold the leaf's document and not the master's; sibling writes leave a kept view in place.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+            "content": "sha256:c3f475897dcd14f7a97836eec5863e97be6516602151f2871c7ddd4accbe3ae1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_kept_view_ignores_every_task_document_it_did_not_read"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "A second claimant makes the next lookup ambiguous.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+            "content": "sha256:60616374187df50a50efa1efae51e8a02ebfb96f22f513da676c714dce3621e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_document_that_begins_to_claim_the_leaf_is_not_hidden_by_a_kept_view"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "A sibling file that is read at two identities during the lookup stays recorded as a conflict, and the view is refused.\n\nAnchor: `_fallback_reads`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+            "content": "sha256:267caaf15e6e218966814d04fd2285fd1db099ea6dd45ebe90412f84ac14b800",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "Strict lookup replays the claimant and failed observations while recording readable ruled-out siblings as examined, outside kept dependencies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aadce53774c779828d6dcfc8549d40e01f2cdd89",
+            "content": "sha256:7de424ff54f04e638f280df43d9d816521322a92d5a85d1d8259358c5af8d1b1",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 60
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The module docstring: the strict lookup and what it records as read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aadce53774c779828d6dcfc8549d40e01f2cdd89",
+            "content": "sha256:6c6eed5cd59a5acbab521b55ccf23cc26f352d62fde96281210a51fecf21706e",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

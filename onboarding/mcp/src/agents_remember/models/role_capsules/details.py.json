@@ -1,0 +1,95 @@
+{
+  "path": "mcp/src/agents_remember/models/role_capsules/details.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "fc27398cbb49aa07209ebcbeed8e891bb97bd479",
+        "content": "sha256:f8d7230a52d517521dcf3f1dd66c62ac359408213856c85b01cd1f747513a5c6",
+        "locator": {
+          "kind": "symbol",
+          "name": "compile_detail_references"
+        }
+      },
+      "id": "RLZ-2F8QMG",
+      "invariant": "INV-MQ3K06",
+      "origin": {
+        "handoffEntry": "MIK-R84@v5 part1 / L62 step-detail delivery",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "This function selects and binds declared detail bytes and their read timing into each compilation.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Launch copies detail files, substitutes paths, and records frozen revisions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
+            "content": "sha256:95473e1da9c3027a19991c55617d9011c5c561e7d847352b7f7a018f5f21ea66",
+            "locator": {
+              "kind": "symbol",
+              "name": "compose_launch_instructions"
+            },
+            "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Replay validates regular opened files and frozen revisions at deterministic detail names beside the saved handover in its recorded canonical folder, not mutable corpus sources.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
+            "content": "sha256:013fd35cb59b3e2dfca99d5eed0a2db2ae42048952a03b6a87761f58fbdd9087",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_instruction_detail_artifacts"
+            },
+            "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Per-request detail artifacts use exact admitted bytes beside the handover and write-once publication.\n\nAnchor: L59–L74",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a25806bf819c4fcfb46827a42776588021e88e7a",
+            "content": "sha256:53ae089e7b885fad8e278a7a4540e98ab4b52f03f6e60ecbb8260f070081a4d4",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 114
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L18–L74",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc27398cbb49aa07209ebcbeed8e891bb97bd479",
+            "content": "sha256:dadfe31dd58a2bed1a2df5d3772dee0ac966edb33411e858b929986ab996e634",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 18
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

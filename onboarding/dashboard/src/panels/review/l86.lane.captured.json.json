@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/l86.lane.captured.json",
+  "realizes": [],
+  "references": {
+    "3": {
+      "note": "The current retained JSON input supplies the literal identities, response states and populations summarized above; these are fixture facts, not live project knowledge or fresh execution evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12127e4e4e6a5eda11d0ddd39eb4045c59a85d6e",
+            "content": "sha256:90cbb600bc8a9626973f0439a9a8c5905ab33ac916e7a1da7bfbfc53ac3d668f",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

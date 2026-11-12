@@ -1,0 +1,204 @@
+{
+  "path": "mcp/src/agents_remember/cli/memory_citations.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e55cdcd0e96e7bc8fb71fb9a60e63f3e2823b888",
+        "content": "sha256:650e3921322b752568ef34c5bfe590d313d8c8f0150059d05d61392ffc668e94",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-0TPWSZ",
+      "invariant": "INV-BTF5NF",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §2 anchor-census",
+        "leaf": "260928-MIK-L191"
+      },
+      "rationale": "The command that runs the census and prints its state.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "e55cdcd0e96e7bc8fb71fb9a60e63f3e2823b888",
+        "content": "sha256:650e3921322b752568ef34c5bfe590d313d8c8f0150059d05d61392ffc668e94",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-MYHE2D",
+      "invariant": "INV-Q7KYQH",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §8 reference-note-revision",
+        "leaf": "260928-MIK-L191"
+      },
+      "rationale": "The command-line verb over the same owner, with the same refusal set.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "e55cdcd0e96e7bc8fb71fb9a60e63f3e2823b888",
+        "content": "sha256:53d2638b897f7aeb49028d4492a9a5718fc70aaceadfc655491a152944d68949",
+        "locator": {
+          "end": 46,
+          "kind": "line_range",
+          "start": 44
+        }
+      },
+      "id": "RLZ-Q6805W",
+      "invariant": "INV-B3FPFJ",
+      "origin": {
+        "handoffEntry": "L84-CUR-01",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "This --config help now says that an omitted --config reads the user settings file under XDG_CONFIG_HOME or ~/.config, whatever the current directory, as discover_config() does; at A010 it claimed working- or current-directory discovery.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "e55cdcd0e96e7bc8fb71fb9a60e63f3e2823b888",
+        "content": "sha256:a86c8995cd82bf4343cb85f86c75fa431f88445dc685e5cd88c47d626d006c6b",
+        "locator": {
+          "kind": "symbol",
+          "name": "run"
+        }
+      },
+      "id": "RLZ-RSG7F8",
+      "invariant": "INV-VH0QZ1",
+      "origin": {
+        "handoffEntry": "L110-C-batch",
+        "leaf": "260928-MIK-L110"
+      },
+      "rationale": "Repeated CLI document options select the same finite fix operation, not other citation modes.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "CLI declarations make --contract optional at the parser (required except for --fix on the configured memory root before its first attributed baseline) and keep --document as a repeatable per-call selection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e55cdcd0e96e7bc8fb71fb9a60e63f3e2823b888",
+            "content": "sha256:45817c349df65c2cf8422ae8639486a5c316aed1d48a439541c497e5c4151ccc",
+            "locator": {
+              "kind": "symbol",
+              "name": "add_arguments"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Dispatch requires a contract for modes other than fix and forwards the fixer's optional contract to its application owner.\n\nAnchor: `citation_fix_tool`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e55cdcd0e96e7bc8fb71fb9a60e63f3e2823b888",
+            "content": "sha256:1ff20cca07e028513474c653d91c581249e54cc3343fed6b57e51da8769df433",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 97
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The scope that carries the caller’s named documents and refuses both selectors, an empty list, and a list outside citation_fix.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:b9330db4676ef731cd95886e9ad74664f430ed48bd0b1054011157379721166f",
+            "locator": {
+              "kind": "symbol",
+              "name": "CitationOperationScope"
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:0f0c734630b026feb275f60ff129107cdf091fad6ce837783b161ebe23950c10",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 69
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:6245c0fad1ad37363ec36508b7e32f67104a8b9143178bc7e8c18a0856de40bb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The --document help states the converted form: --document alone.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e55cdcd0e96e7bc8fb71fb9a60e63f3e2823b888",
+            "content": "sha256:48bef87050aa3b105cb5a2037185187a818f51b02fda1368fd0694febfd9a3dd",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 55
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The CLI declares report/fix and optional contract with repeatable document selection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e55cdcd0e96e7bc8fb71fb9a60e63f3e2823b888",
+            "content": "sha256:45817c349df65c2cf8422ae8639486a5c316aed1d48a439541c497e5c4151ccc",
+            "locator": {
+              "kind": "symbol",
+              "name": "add_arguments"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Citation scope carries only singleton or finite document-list selection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:b9330db4676ef731cd95886e9ad74664f430ed48bd0b1054011157379721166f",
+            "locator": {
+              "kind": "symbol",
+              "name": "CitationOperationScope"
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

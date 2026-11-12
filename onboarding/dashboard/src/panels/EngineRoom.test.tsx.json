@@ -1,0 +1,165 @@
+{
+  "path": "dashboard/src/panels/EngineRoom.test.tsx",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The `EngineRoomHeader` + `LIFECYCLE_PHASES` under test.\n\nAnchor: `EngineRoomHeader` `LIFECYCLE_PHASES`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c89382b7530853796de958e287f52a05bf0222f3",
+            "content": "sha256:5618965181d8da987f106c86d53201f36adbbd5d11be42a1e036a3731a8f2f1d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/EngineRoom.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c89382b7530853796de958e287f52a05bf0222f3",
+            "content": "sha256:6e9adda042b547ae3499d1b20e0b8b4ade1082ae8bde5914bbf19acc9761a1a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "EngineRoomHeader"
+            },
+            "path": "dashboard/src/panels/EngineRoom.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c89382b7530853796de958e287f52a05bf0222f3",
+            "content": "sha256:8332e101b5109e115e1fbd02b7e54f6b3136ae7a065365c01f754c51cb3986b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_PHASES"
+            },
+            "path": "dashboard/src/panels/EngineRoom.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The `GALLERY` projection seed + the store `applySnapshot`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f4687b5092789e0a1d4182e803092af73f123537",
+            "content": "sha256:c0420b2dd5bea4a4f594d8ed95ced8b024a0ed142835e84b314d6e1d298ec012",
+            "locator": {
+              "kind": "symbol",
+              "name": "applySnapshot"
+            },
+            "path": "dashboard/src/data/store.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "87693eb6b819166337bd70d0a819044301bb6ecf",
+            "content": "sha256:a42962e11da2b584c87dbc9a9401315e35f17789695d4263ddf419fc8a962460",
+            "locator": {
+              "kind": "symbol",
+              "name": "GALLERY"
+            },
+            "path": "dashboard/src/dev/fixtures.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f4687b5092789e0a1d4182e803092af73f123537",
+            "content": "sha256:42dd9859a345050ff73bdef5442d877eda8277a5906905b3284e2509f5d51942",
+            "locator": {
+              "end": 345,
+              "kind": "line_range",
+              "start": 345
+            },
+            "path": "dashboard/src/data/store.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "87693eb6b819166337bd70d0a819044301bb6ecf",
+            "content": "sha256:0195b4c579d2a1a8dd00fffc526a784ef564c4ee1b088984acd3a58e9bd964fb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/dev/fixtures.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The honest-motion gate the pulse reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5045a0dfe298de1b76c82e4326d5f177dbd5bc70",
+            "content": "sha256:03fbe4a61df59f3821f011f83ed126d730c7c17a0c274c82b2b3d537bcb9f6a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "useShouldAnimate"
+            },
+            "path": "dashboard/src/panels/engine-room/useShouldAnimate.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The current EngineRoom case asserts no official provider strip or fallback, while the enclosure canvas remains present; its title records the MIK-R112 provider-engine surface removal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be0ac451d8bedb89e099b27a7d7548602601d947",
+            "content": "sha256:a7c9a318073762c1d8424db848b67e3031b2cf02b3e0326e37991462bd3c2810",
+            "locator": {
+              "end": 151,
+              "kind": "line_range",
+              "start": 144
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The current Engine Room composes enclosure stack, process map, boot timeline and diagnostics; its test requires the official provider strip and fallback absent while the enclosure canvas remains. This is source ownership, not fresh executed visual proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c89382b7530853796de958e287f52a05bf0222f3",
+            "content": "sha256:2aede7278b5afa2f34d995f55e47a09251c5042e5d230c595155d47469266519",
+            "locator": {
+              "end": 178,
+              "kind": "line_range",
+              "start": 107
+            },
+            "path": "dashboard/src/panels/EngineRoom.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "be0ac451d8bedb89e099b27a7d7548602601d947",
+            "content": "sha256:a7c9a318073762c1d8424db848b67e3031b2cf02b3e0326e37991462bd3c2810",
+            "locator": {
+              "end": 151,
+              "kind": "line_range",
+              "start": 144
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

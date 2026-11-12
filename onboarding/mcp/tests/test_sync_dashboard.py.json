@@ -1,0 +1,145 @@
+{
+  "path": "mcp/tests/test_sync_dashboard.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The script whose check mode this module pins.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2630946c35dd86bc184c6dcedd7c8234c1829901",
+            "content": "sha256:37ef0cce4c6d316d69185d11c3c3c6f1f1b227eaca651ac959e3dec9099b4561",
+            "locator": {
+              "kind": "symbol",
+              "name": "main"
+            },
+            "path": "scripts/sync-dashboard.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The entry point the case invokes with `--check`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2630946c35dd86bc184c6dcedd7c8234c1829901",
+            "content": "sha256:37ef0cce4c6d316d69185d11c3c3c6f1f1b227eaca651ac959e3dec9099b4561",
+            "locator": {
+              "kind": "symbol",
+              "name": "main"
+            },
+            "path": "scripts/sync-dashboard.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The write path that `--check` must leave unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2630946c35dd86bc184c6dcedd7c8234c1829901",
+            "content": "sha256:896ed2925a1e55d6f373b20f4002df3a7f3f34c8d518217109c360b4f73c3daf",
+            "locator": {
+              "kind": "symbol",
+              "name": "sync"
+            },
+            "path": "scripts/sync-dashboard.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The fingerprint the check recomputes from the source tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2630946c35dd86bc184c6dcedd7c8234c1829901",
+            "content": "sha256:c3f4b3982eafccea92bef8c6e9fad6a3f641d6c6725eff45711fb94fa1a95a49",
+            "locator": {
+              "kind": "symbol",
+              "name": "source_fingerprint"
+            },
+            "path": "scripts/sync-dashboard.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The predicate that decides whether the placed bundle is still current.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2630946c35dd86bc184c6dcedd7c8234c1829901",
+            "content": "sha256:0c073bc71a772f7826af7d8508ca3767c941db66570765c57c6a7bf6ed454262",
+            "locator": {
+              "kind": "symbol",
+              "name": "bundle_is_current"
+            },
+            "path": "scripts/sync-dashboard.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The path constants the fixture re-points, and the fingerprint sidecar the write path owns.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2630946c35dd86bc184c6dcedd7c8234c1829901",
+            "content": "sha256:372f3d9f0445e74baed8e4b2b3dcf556e0e6ade38b37ca06bc788c44b1ce3484",
+            "locator": {
+              "kind": "symbol",
+              "name": "SOURCE"
+            },
+            "path": "scripts/sync-dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2630946c35dd86bc184c6dcedd7c8234c1829901",
+            "content": "sha256:2a6bb56318c8b304bba99069b27f1d49f32c54568df8a19dbbf5952abe19e17c",
+            "locator": {
+              "kind": "symbol",
+              "name": "TARGET"
+            },
+            "path": "scripts/sync-dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2630946c35dd86bc184c6dcedd7c8234c1829901",
+            "content": "sha256:9f0aa3d3ea05c97ca43c88f0d74b3837c17a9fbfb6c8d5a276c919545dbb3a26",
+            "locator": {
+              "kind": "symbol",
+              "name": "SOURCE_TREE"
+            },
+            "path": "scripts/sync-dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2630946c35dd86bc184c6dcedd7c8234c1829901",
+            "content": "sha256:c33fce36d2f95de60f42d2c366aff4dcdb45eb043f34049a8cb689e97cb70fb8",
+            "locator": {
+              "kind": "symbol",
+              "name": "FINGERPRINT_FILE"
+            },
+            "path": "scripts/sync-dashboard.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

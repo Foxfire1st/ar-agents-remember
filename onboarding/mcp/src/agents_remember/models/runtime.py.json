@@ -1,0 +1,114 @@
+{
+  "path": "mcp/src/agents_remember/models/runtime.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Runtime install application entry point produces the installer response payload.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3708c33b80551e129acbc4da11a4f728c1efb009",
+            "content": "sha256:108053a14cda04d0e17993e2857e179f64c5761a9c7dc2f5b2bacd8a5881831f",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_runtime_install"
+            },
+            "path": "mcp/src/agents_remember/application/runtime/install.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The retired coordination tool's former computation, kept for its one remaining script caller and not registered as an MCP tool.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1b5b6819f2e8e4aa3cd02b9e26d6dc1b5e1d0614",
+            "content": "sha256:472e59581e2d31b9d9eecafe0dff6390563fbb71514a931da9ade35fed9fffba",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_context_tool"
+            },
+            "path": "mcp/src/agents_remember/application/coordination_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1b5b6819f2e8e4aa3cd02b9e26d6dc1b5e1d0614",
+            "content": "sha256:5335ef1e0774281709ef0711b2639ff9a4608348d43cfbb2998fa57415be0586",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "mcp/src/agents_remember/application/coordination_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1b5b6819f2e8e4aa3cd02b9e26d6dc1b5e1d0614",
+            "content": "sha256:5f87dec67cff6e8215ddf9208627e0abee5bb6df918e15a54b315773da41d3ef",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/coordination_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The install response shape carrying the host part.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8020c454e7738e8c4fd09e5c90fe068e397b1931",
+            "content": "sha256:8f93e5820eb7e2025cb1c2766775afceef103d359a7e142b1734e6ca3e6d020c",
+            "locator": {
+              "kind": "symbol",
+              "name": "RuntimeInstallResponse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The live installation response is flexible and retains reportPath and host data.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8020c454e7738e8c4fd09e5c90fe068e397b1931",
+            "content": "sha256:8f93e5820eb7e2025cb1c2766775afceef103d359a7e142b1734e6ca3e6d020c",
+            "locator": {
+              "kind": "symbol",
+              "name": "RuntimeInstallResponse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The install response carries the running-server inventory and the dashboard part.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8020c454e7738e8c4fd09e5c90fe068e397b1931",
+            "content": "sha256:31e849517de49785a1ce5990a0438928a52a6743dc861cf44ce51d5aa119dbcb",
+            "locator": {
+              "kind": "symbol",
+              "name": "runningServers"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

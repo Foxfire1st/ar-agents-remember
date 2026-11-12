@@ -1,0 +1,80 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/refused-write.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c5c547f2f6818f886972bce92087be9d041c1fc9",
+        "content": "sha256:ddd19dc1462d05620b4ccdb86d21e3f6702f71e19b1c3cc5d91a8102d95c2aaf",
+        "locator": {
+          "end": 9,
+          "kind": "line_range",
+          "start": 7
+        }
+      },
+      "id": "RLZ-AHDGQB",
+      "invariant": "INV-945YZ4",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-945YZ4",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The two lines distinguish a correct-input writer refusal from missing admitted capability. Only the former reaches the named same-tool ladder; the latter remains unwritten and reported.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "c5c547f2f6818f886972bce92087be9d041c1fc9",
+        "content": "sha256:4491fffd1a27e78f6a2b3732efc075754c27900d0bfac4fe42ca26aa8276b209",
+        "locator": {
+          "end": 51,
+          "kind": "line_range",
+          "start": 3
+        }
+      },
+      "id": "RLZ-D8BSGX",
+      "invariant": "INV-945YZ4",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-945YZ4",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The new ladder defines the revised writer boundary: primary tool/faulty-input correction, honest build/route recovery, same refused input class only, prior owner notice, manual provenance/checks/issue and no false receipt. Read/validation/sync/start/permission/transaction stops and Bootstrap’s absent authority remain excluded.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c5c547f2f6818f886972bce92087be9d041c1fc9",
+            "content": "sha256:83d69507881a091ffbaaa473a3deb5e9b87c86593df19ce16067dbd0bc9e7fb0",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The stops section keeps every refusal and gate, requires immediate repair of findings and limits `--no-verify` to a developer-allowed occasion.\n\nAnchor: `--no-verify`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c5c547f2f6818f886972bce92087be9d041c1fc9",
+            "content": "sha256:041a4ae269ba2db6e13cd80d5194d77a8f1362860c3f57d0021df2262b891c77",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 47
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

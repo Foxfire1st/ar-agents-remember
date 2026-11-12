@@ -1,0 +1,59 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/curator/intent-reconciliation.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The three bodies of evidence and the success condition of the reconciliation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7117f2f448a2507a4289d3849b7765d64be4d702",
+            "content": "sha256:29ee5d4d2c163edfeabf2b9d3ce01b2ef069e5d0800a01882b492d0340ec8cb4",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Passing tests do not establish coherence, and historical oddities need a causal and reconsideration check.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7117f2f448a2507a4289d3849b7765d64be4d702",
+            "content": "sha256:1bef76044e9efb65533f8a3bbbfcb94ebd093dad929fe26970126a3430f17a5f",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The curation operation points here before promoting a historical oddity.\n\nAnchor: `intent-reconciliation.md`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
+            "content": "sha256:2704060377d2a0e4bf65ca6aa5f180ddec76ffce165a1e725cdab1b78b38be31",
+            "locator": {
+              "end": 114,
+              "kind": "line_range",
+              "start": 114
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

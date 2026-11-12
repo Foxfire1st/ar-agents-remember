@@ -1,0 +1,83 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The packet contrasts competing prose homes with fixed fields/headings and requires one case-insensitive refusal map to keep later authoring from recreating the drift. The choice governs future authoring and consumers, not this leaf’s schedule."
+  },
+  "alternatives": [
+    {
+      "option": "Provide typed or fixed homes and refuse newly restated section headings and header labels with their canonical field or operation, while grandfathering existing text.",
+      "reason": "The packet contrasts competing prose homes with fixed fields/headings and requires one case-insensitive refusal map to keep later authoring from recreating the drift.",
+      "status": "chosen"
+    },
+    {
+      "option": "Continue accepting newly duplicated free-form sections and header notes for statements that already have a typed or fixed home.",
+      "reason": "The surveyed variety of headings and duplicated fields gives the same fact competing homes and prevents consistent drawing; the packet requires refusals rather than ongoing duplication.",
+      "reconsider_when": "A developer-approved home/skeleton contract deliberately removes the corresponding fixed home or makes a particular label a distinct semantic field.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "New aliases belong to the central authored map rather than being guessed independently by consumers.",
+    "Old sections and notes can remain editable/removable; this is not permission for a corpus migration."
+  ],
+  "context": "Recurring non-goal, acceptance, design, objective and dependency statements are scattered among competing section headings and header notes.",
+  "decider": "Developer D185 and architect-approved MIK-R128@v1.",
+  "id": "DEC-HQSPKF",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-T3TNTX"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-KS5H7X"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-7F81PT"
+    },
+    {
+      "relation": "explains",
+      "target": {
+        "id": "MIK-R128",
+        "packet": "requirements/MIK-R128-v1-the-order-of-tasks-is-data-and-what-recurs-has-a-place.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    },
+    {
+      "alternative": 1,
+      "relation": "reconsider_on",
+      "target": {
+        "id": "MIK-R128",
+        "packet": "requirements/MIK-R128-v1-the-order-of-tasks-is-data-and-what-recurs-has-a-place.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "L162-freeze-report.md:44-54"
+      ],
+      "path": "L162-curation-wave-9-producer-knowledge.json"
+    },
+    "handoffEntry": "MIK-R128@v1 rule 7",
+    "leaf": "260928-MIK-L162",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

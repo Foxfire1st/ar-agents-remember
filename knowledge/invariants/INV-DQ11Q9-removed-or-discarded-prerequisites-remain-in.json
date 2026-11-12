@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The explicit-write checker and dependency snapshot adapter are separate owners whose contract prevents a read from erasing historical removed-task IDs while a later field write silently keeps invalid prerequisites."
+  },
+  "applicability": "Existing waitsFor references to removed tasks, and the next explicit authoring of that field; retained abandoned tasks are distinct.",
+  "conditions": [
+    "Existing references are not rewritten during a read; synthetic missing tasks display as gone.",
+    "The next explicit field write removes IDs no longer admitted by the master current task index.",
+    "Abandonment alone is not synthetic gone."
+  ],
+  "exclusions": [
+    "Silently rewriting the historical reference during a read or an unrelated edit.",
+    "Treating an unresolved reference as completed."
+  ],
+  "id": "INV-DQ11Q9",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_task_document_order.py::test_removed_prerequisite_projects_gone_and_a_legacy_cycle_stays_one_wave"
+      ],
+      "path": "L162-curation-wave-9-producer-knowledge.json"
+    },
+    "handoffEntry": "MIK-R128@v1 recovery gone prerequisite",
+    "leaf": "260928-MIK-L162",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "Removed prerequisites remain in existing waitsFor data and display as gone; the next explicit write of that field drops IDs no longer admitted by the master task index. A known abandoned task instead retains its native aborted state, not a fabricated gone marker.",
+  "status": "proposed",
+  "supersedes": []
+}

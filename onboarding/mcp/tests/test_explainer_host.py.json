@@ -1,0 +1,106 @@
+{
+  "path": "mcp/tests/test_explainer_host.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "2acdf7cb58b58406bff295af133586c06b031795",
+        "content": "sha256:6ca1b39639c53c08ffa3877f362265824430318f6ef79c1cee2378483d333005",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_real_explainer_launch_always_carries_both_launch_words"
+        }
+      },
+      "facet": "Exercises launch identity, exact roster, named forbidden dispatch or fail-closed missing binding.",
+      "id": "PRF-6038X7",
+      "invariant": "INV-48203N",
+      "origin": {
+        "handoffEntry": "L183-CUR-ET01-bound-explainer-roster",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "2acdf7cb58b58406bff295af133586c06b031795",
+        "content": "sha256:a1728df0ad659922a6e83babf6b38fba339cd29a309fd3d3aa0393ed8fe9d173",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_cancel_targets_the_exact_seat_and_request_and_closes_the_pending_decision"
+        }
+      },
+      "facet": "The exact agentId/requestId cross the cancel bridge; the stopped-turn reply closes pending permission custody and preserves mode.",
+      "id": "PRF-D6SY30",
+      "invariant": "INV-VCAQVB",
+      "origin": {
+        "handoffEntry": "L183-exact-seat-cancel-state",
+        "leaf": "260928-MIK-L183"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The case `test_the_seat_is_created_with_the_capsule_and_no_first_prompt` protects the capsule being the seat's instructions with no first prompt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2acdf7cb58b58406bff295af133586c06b031795",
+            "content": "sha256:806c45493bacbf420bba47f97bf25cb6003d7906be4a9a94fbf2a6ec1b2895c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_seat_is_created_with_the_capsule_and_no_first_prompt"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The case `test_the_seat_state_reads_the_hosts_own_agent_view` protects seat state being read from the host's own turn fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2acdf7cb58b58406bff295af133586c06b031795",
+            "content": "sha256:34c6ec429e32ec551d121f90f3e26419be67fd563ca21b7139a2ff5f3b747de5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_seat_state_reads_the_hosts_own_agent_view"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The case `test_the_settings_role_owns_the_seats_model_effort_and_mode` protects the role's model, effort and permission mode reaching the create and holding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2acdf7cb58b58406bff295af133586c06b031795",
+            "content": "sha256:97511d1ac7dd76e2fe1acc666ef2246a0e43c70908a2c26f0a928a0207e4896a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_settings_role_owns_the_seats_model_effort_and_mode"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The cancel case sends the exact seat ID and request ID through the bridge, observes a stopped turn and closed pending permission decision, clears the recorded pending marker, and keeps the seat mode. This test uses a scripted bridge reply, so it is not proof of cancellation against a live host.\n\nAnchor: `test_a_cancel_targets_the_exact_seat_and_request_and_closes_the_pending_decision`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2acdf7cb58b58406bff295af133586c06b031795",
+            "content": "sha256:02f3eed0077bdfdea42fb30d7a21513691046e8371f11ccb63c8c9f1563de481",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_review_incremental_memos.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A symbol answer is kept by blob, path and name across reads, and the second read parses nothing",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cde57db12e1284c6fcdbb36aadbdef75c938b223",
+            "content": "sha256:a3bd408ae454be1ce8cbf9148f9cecc156a3bd06ec96857fe1c679a877bdac74",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_symbol_answer_is_kept_by_blob_path_and_name_across_reads"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

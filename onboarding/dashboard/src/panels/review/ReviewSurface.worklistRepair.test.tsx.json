@@ -1,0 +1,88 @@
+{
+  "path": "dashboard/src/panels/review/ReviewSurface.worklistRepair.test.tsx",
+  "realizes": [],
+  "references": {
+    "10": {
+      "note": "One complete per-side entry-identity list within subject Technical details, with no review content in provenance.\n\nAnchor: \"it.each(['family', 'invariant'] as const)(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "984b4b70232aa0d7bf7ef1a1ba9d3444311f58bc",
+            "content": "sha256:2933b69bf5cbf0bc71569ae486ffecffcb18bbcc59e1e561b23032f59cd8d2f1",
+            "locator": {
+              "end": 291,
+              "kind": "line_range",
+              "start": 102
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "F06 stale/unverifiable reasons on changed-entry card sides, outside details; unchanged locations remain grouped.\n\nAnchor: \"it('F06 shows captured resolved-stale reasons and a supplied unverifiable proof-side reason outside disclosures', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "984b4b70232aa0d7bf7ef1a1ba9d3444311f58bc",
+            "content": "sha256:c3a33b8d54375fb3c7910886df78ad3f24000121efc3f7b09c4637a35fee7de4",
+            "locator": {
+              "end": 184,
+              "kind": "line_range",
+              "start": 137
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Synthetic reply routing and measured/partial/held/refused/mismatched worklist states.\n\nAnchor: `replaceReplies`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "984b4b70232aa0d7bf7ef1a1ba9d3444311f58bc",
+            "content": "sha256:f17059c32f1106ebbf919e0fdd73aee744825862654a9d7bace3889059ecdcfe",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Synthetic reply routing and measured/partial/held/refused/mismatched worklist states.\n\nAnchor: \"worklist.detail = 'no MIK-R08 worklist applies to this leaf, or none was persisted for it';\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "984b4b70232aa0d7bf7ef1a1ba9d3444311f58bc",
+            "content": "sha256:eff767a7eccf5e0ddaae561cf88d74636e86a35f004726a329825ac592418116",
+            "locator": {
+              "end": 291,
+              "kind": "line_range",
+              "start": 187
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "One complete per-side entry-identity list within subject Technical details, with no review content in provenance.\n\nAnchor: `checkEntryIdentities`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "984b4b70232aa0d7bf7ef1a1ba9d3444311f58bc",
+            "content": "sha256:f17059c32f1106ebbf919e0fdd73aee744825862654a9d7bace3889059ecdcfe",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

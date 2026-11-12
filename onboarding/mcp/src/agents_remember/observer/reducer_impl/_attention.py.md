@@ -1,51 +1,23 @@
 # mcp/src/agents_remember/observer/reducer_impl/_attention.py
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `mcp/src/agents_remember/observer/reducer_impl/_attention.py`                                            |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-07T22:45:00+02:00                                            |
-| lastVerifiedCommitHash | `997305a9ced4caea67edb826224bf0351264fd56`                                        |
-| lastVerifiedCommitDate | 2026-09-17T19:54:27+02:00|
-| governingOverview      | `../overview.md`                                          |
-
 ## Governing Overview
 
 [overview](../overview.md)
 
 ## Purpose
 
-Attention queue: rank what needs the human from the reduced surfaces. Pure and deterministic: every source contributes one small builder and the queue sorts by (severity, wait, id). Dismissals suppress lifecycle-bound items until a newer triggering signal re-surfaces them.
+Pure deterministic attention ranking — newest first, with every row acknowledged on the same terms — over actionable drift and blocked-start occurrences and the five native kinds — permission wait, held message, stalled task, landed notice, abandoned notice — that `_attention_native.py` builds from the task, host, held-store and terminal facts of the pass, with no provider or setup builder and no session-stale/lifecycle alarm builder.
 
 ## Code Commentary
 
-- `_ask_text`
-- `build_attention_queue`
-- `_is_dismissed`
-- `_signal_after`
-- `_await_summary`
-- `_lifecycle_attention`
-- `_gate_node`
-- `_attach_gates`
-- `_gate_attention`
-- `_provider_attention`
-- `_drift_attention`
-- `_drift_attention_detail`
-- `_setup_attention`
-- `_start_attention`
+`build_attention_queue` sorts by age and ID — youngest first, so the newest entry is on top, and an entry with no age counts as zero (:79-80) — and folds every row against matching current acknowledgements, with no class exempt: a live native cause can be acknowledged like a notice, and dismissing it changes nothing at its cause (v2 rule 7). Blocked starts end through complete native-reader recovery/removal proof; unknown health or a missing projected node is not recovery. Drift uses actionable fingerprints: equal or missing fingerprints preserve acknowledgement; changed complete findings can resurface. A later timestamp alone is not a new occurrence. Worktree debt remains independently operational, not a synthesized session status.
 
-## Invariants And Boundaries
+### 20261023-L190-v2 Newest First, And No Row Above The Acknowledgement
 
-- The card mirrors the source file one-to-one at `mcp/src/agents_remember/observer/reducer_impl/_attention.py`.
+The queue's total order is `(waitSeconds or 0.0, item.id)` (:80). Rule 1's severity ordering is withdrawn with `_SEVERITY_RANK`; severity stays on the row, unranked, so the bell can still name the highest one served. `waitSeconds` is the age the row already carries, so an age-only tick re-orders nothing and `diff_projection` still emits nothing.
 
-## Repo-Internal References
+The dismissal fold (:79) no longer asks whether a row is dismissible. Rule 7 makes the acknowledgement the only thing that hides a row, and `itemClass` only says how the occurrence also ends. The module still owns the one fold: nothing here infers recovery from age, a missing node or a vanished acknowledgement.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
+## Evidence boundary
 
-## Update History
-
-- 2026-09-17T19:30+02:00 — 260915-CAPS-L20 curator: **dead governing-overview body link repaired, and the field brought into agreement with it.** The field named `overview.md` — which resolves, but only under the onboarding root rather than against this card's own route — while the body link named `../../overview.md` and resolved card-relative to nothing, so a reader clicking it landed nowhere and the two declarations disagreed. Both now name `../overview.md`, the route-local overview of this card's own directory, so the field and the link agree by construction. Recorded under `260915-CAPS-L20` as this leaf's **S3** (D3, the packaged `l-01-agent-lifecycles` family) and **S4** (D16, govern-or-remove per card). The checker that previously reported this corpus clean now resolves both declarations, so this card reaches the curator's gated repair set instead of passing silently; that is the gap this leaf closed. Superseded history entries above stand unedited — including any entry that asserted an earlier repair this card did not in fact carry, which is the finding rather than an error to erase. No prose, anchor, range or verification stamp was otherwise changed.
-- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: created this file-level onboarding card for the split module; content derived from the current worktree source. Verification metadata pinned until closeout stamps the 260731-EFA-L7 commit.
+This account is current source interpretation only. It creates no executed test/host/bootstrap result and supplies no new CODE or MEMORY grade.

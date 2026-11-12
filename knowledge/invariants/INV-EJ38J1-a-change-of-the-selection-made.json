@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A selection during recovery could otherwise cause another load and prevent readiness from arriving."
+  },
+  "applicability": "Selection changes during the readiness wait started by a document load.",
+  "conditions": [
+    "Only the latest requested selection is retained.",
+    "Ready or pong restores a supported message channel."
+  ],
+  "exclusions": [
+    "An explicitly unsupported-open plugin remains URL-only."
+  ],
+  "id": "INV-EJ38J1",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/cockpit/paseoFrameLateAnswer.test.tsx › \"holds a change made right after that load for the loaded document's ready report, and loads again only on another unanswered ping\"; red on the bytes of Attempt2: notes/reports/worker/c41a5d77-92e0-4b18-a3d6-140c0a7e0b50/after-evidence-attempt3/red/dashboard-red.txt"
+      ],
+      "path": "producer-list.json"
+    },
+    "handoffEntry": "L140-R1-F01",
+    "leaf": "260928-MIK-L140",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A change of the selection made while a load's ready report is still awaited is held: it goes out by message at the report, and it loads only when the ping after that load stays unanswered too.",
+  "status": "proposed",
+  "supersedes": []
+}

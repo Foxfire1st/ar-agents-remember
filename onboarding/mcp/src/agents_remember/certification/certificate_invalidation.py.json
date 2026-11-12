@@ -1,0 +1,159 @@
+{
+  "path": "mcp/src/agents_remember/certification/certificate_invalidation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Certificate input changes are classified and their downstream invalidation closure is computed before reuse.\n\nAnchor: \"def classify_certificate_invalidation(\"; \"def _identity_drift_closure(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0950a19426b81088946c32342ba7c4a1e7227a47",
+            "content": "sha256:b5b2b620c3e16c331e06ebb21e3a156c1cd94d23578f6e59c1448b69b9ab6435",
+            "locator": {
+              "end": 121,
+              "kind": "line_range",
+              "start": 89
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0950a19426b81088946c32342ba7c4a1e7227a47",
+            "content": "sha256:85f61397a6f35b2190f6b6adb8ef96cfe43645042317645bef03e3013e718d74",
+            "locator": {
+              "end": 213,
+              "kind": "line_range",
+              "start": 213
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The matrix and downstream closure produce one decision.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0950a19426b81088946c32342ba7c4a1e7227a47",
+            "content": "sha256:ac72dbb08acc24fa46dcf82673a9c4fc1afe480c51a8166fd82a9921ba267d33",
+            "locator": {
+              "kind": "symbol",
+              "name": "classify_certificate_invalidation"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0950a19426b81088946c32342ba7c4a1e7227a47",
+            "content": "sha256:4d81b2c83fdd20a5737b6c6e6b7a3071d3bc66889049d9f6c080cfde0bce9519",
+            "locator": {
+              "kind": "symbol",
+              "name": "_change_start_gates"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0950a19426b81088946c32342ba7c4a1e7227a47",
+            "content": "sha256:b5b2b620c3e16c331e06ebb21e3a156c1cd94d23578f6e59c1448b69b9ab6435",
+            "locator": {
+              "end": 121,
+              "kind": "line_range",
+              "start": 89
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0950a19426b81088946c32342ba7c4a1e7227a47",
+            "content": "sha256:1f4c316b6a1d7882c0fd59ba522004c5d39ea3844ed7792901e0374e895a2701",
+            "locator": {
+              "end": 181,
+              "kind": "line_range",
+              "start": 165
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Reuse retains only a current exact prefix and names the first gate to run.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0950a19426b81088946c32342ba7c4a1e7227a47",
+            "content": "sha256:f04b26a3b97c7b2b3a793956dd94e6698cf041f49a9c3f0e4a921e7e6dda9072",
+            "locator": {
+              "kind": "symbol",
+              "name": "plan_certificate_reuse"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0950a19426b81088946c32342ba7c4a1e7227a47",
+            "content": "sha256:22be68a5b191b87b50ba21e8b6c2725a7eb1883989104b3f16873c8d14b9e715",
+            "locator": {
+              "end": 162,
+              "kind": "line_range",
+              "start": 124
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Identity drift from any stale certificate invalidates its downstream closure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0950a19426b81088946c32342ba7c4a1e7227a47",
+            "content": "sha256:2e798b7013e45bbf20357c029b72f636473a0551f6466b11423afda742d519eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_identity_drift_closure"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Coherence-only changes scope to affected Gate-5 subrecords.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0950a19426b81088946c32342ba7c4a1e7227a47",
+            "content": "sha256:a8a1036ba1ffbb65f9f52a0eb2e61fc97d915cf071d046679d3c2e778e86b5f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "CertificateInputChange"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0950a19426b81088946c32342ba7c4a1e7227a47",
+            "content": "sha256:7d9fd69c8bd97adf512f739a8b50709b5f100f52dbb745ab8b337cd6fed25c18",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 40
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

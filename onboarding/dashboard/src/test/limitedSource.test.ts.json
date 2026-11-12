@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/test/limitedSource.test.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9d1a15d53124a7264b04167ed3a487e0e2e1b038",
+        "content": "sha256:1fbb488fc1b55e705594dc933baf90605b7b602fc73c438e560562bed7bf36a6",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-FMCYY6",
+      "invariant": "INV-XZYGEB",
+      "origin": {
+        "handoffEntry": "INV-XZYGEB",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "A second source of the word is the failure this case is written to catch, and it reads the sources themselves.",
+      "role": "support"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,190 @@
+{
+  "path": "dashboard/src/panels/detail-panel/DetailPanel.tsx",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "15": {
+      "note": "`state.ts` derives a qualified leaf key from the selected non-master entry and publishes it with the canonical document reference through `onViewTask`; the task reader no longer derives or places a leaf key on its wrapper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d2888af16213c962443c354697eb0c58e39858e2",
+            "content": "sha256:bb82e1249772ef0845067bca1adf6419eda4ba270fefc7bd9a3beb3d91f7e3ba",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 17
+            },
+            "path": "dashboard/src/panels/detail-panel/state.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The shared qualified leaf key uses reference.repository, the reference path's master folder and the durable entry.id; it returns undefined when the reference, master folder or ID is absent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da9a50c94331d5aa3aa473423509ecc387aa825a",
+            "content": "sha256:f579e2b56fd9f694db9efa4bda89739264b099e3d4ac8548b2e376b65f17d8a9",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 11
+            },
+            "path": "dashboard/src/data/taskIdentity.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Component regressions pin body-first request ordering, complete field rendering, fallback visibility, one implementation-step copy, and revision caching.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "771c4aa9ca9066f422f5ee6445d94ade8dcbe3f8",
+            "content": "sha256:b2ea6b65deb2081695921a0e3bc1fd4504e8b1176022792b7dff98696032ac99",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/detail-panel/taskBody.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "31": {
+      "note": "Task step progress/count is placed in the Steps table block, not a duplicate ProgressFill page header.\n\nAnchor: `StepsBlock`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfa90f06e4586e011e00707422154dfc77cce5a0",
+            "content": "sha256:adc44e360658873af21f7327e0dd12bfddfe1d21078e62e2b9f117e0ec706b6b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/detail-panel/taskBlocks.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "ProgressFill is the shared progress display primitive.\n\nAnchor: \"export function ProgressFill({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad05c38ca3832a638191efb24ae51a8736d76deb",
+            "content": "sha256:422ebdab208e4913ead2eccbfc4d2b7ce8891880a61ae3c54fe041da9f52ce01",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 27
+            },
+            "path": "dashboard/src/grammar/ProgressFill.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "Index rows are positioned by their one-based place in the parent's child list, and the row uses that position only as its test identity.  Historical card provenance: the previous caption was `fullOrderPositions`. Source caption: `IndexRows` `TaskIndexRow`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d59f6f4f1003b950cbdf978c2588f8a55b945e3e",
+            "content": "sha256:a93886753a484864e75a5025d86dfb19d59003caab14f7a0b65b0fa4de6e9147",
+            "locator": {
+              "end": 501,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/panels/detail-panel/task-groups.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "Each index row resolves its test identity from the row position and navigates by the served entry's task key.  Historical card provenance: the previous caption was `IndexLink` `resolveRowTarget`. Source caption: `TaskIndexRow` `RowLink` `IndexRows`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d59f6f4f1003b950cbdf978c2588f8a55b945e3e",
+            "content": "sha256:a93886753a484864e75a5025d86dfb19d59003caab14f7a0b65b0fa4de6e9147",
+            "locator": {
+              "end": 501,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/panels/detail-panel/task-groups.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "The fixed page uses StepsBlock for its table/count; standalone ProgressFill remains a separate grammar primitive, not mounted as a duplicate task-page header.\n\nAnchor: `StepsBlock` `ProgressFill`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfa90f06e4586e011e00707422154dfc77cce5a0",
+            "content": "sha256:adc44e360658873af21f7327e0dd12bfddfe1d21078e62e2b9f117e0ec706b6b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/detail-panel/taskBlocks.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ad05c38ca3832a638191efb24ae51a8736d76deb",
+            "content": "sha256:27b1ce7c5112d328546cf0e714d8e3e93eca7c6943912e2aaacbbee11009dc50",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/grammar/ProgressFill.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "44": {
+      "note": "Shared block text remains Markdown and the relocated decision preview retains newest-authored semantics.\n\nAnchor: `DecisionPreview`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9059b737b5ca32dc1181b0d4f8d6180ef3e28de",
+            "content": "sha256:4922fdeefae597b12f97a14dea4bd0c1cf01b9bbc83b80030110d74aaa54d319",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/detail-panel/skeletons.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "46": {
+      "note": "The shared empty-state backdrop the no-selection state renders.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c3afff4327a285950ac79ef737319425475e8a7",
+            "content": "sha256:1fdb99f22b57f7bf665c0b14bd93b1c6eda2fe294352e1fce9d7f0dd9705e608",
+            "locator": {
+              "kind": "symbol",
+              "name": "EmptyStateBackdrop"
+            },
+            "path": "dashboard/src/panels/EmptyStateBackdrop.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

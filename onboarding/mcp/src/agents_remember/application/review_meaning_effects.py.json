@@ -1,0 +1,173 @@
+{
+  "path": "mcp/src/agents_remember/application/review_meaning_effects.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "adee3e1164686ae8794d9205dd8877034eb0426e",
+        "content": "sha256:3fc15af756352ef6c5047877b1ab3920f527596c0c54515482d54daac14140e0",
+        "locator": {
+          "kind": "symbol",
+          "name": "_answer"
+        }
+      },
+      "id": "RLZ-XEM6QG",
+      "invariant": "INV-76C676",
+      "origin": {
+        "handoffEntry": "L43-C-recorded-effect-propagation",
+        "leaf": "260928-MIK-L43"
+      },
+      "rationale": "The exact record answer maps identity and eligible after-history to steps, none or unavailable without inferring a label.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "adee3e1164686ae8794d9205dd8877034eb0426e",
+        "content": "sha256:917218f6cd072fa651459c79b1450851c5b41125b1954120ebbc188af0f1daa1",
+        "locator": {
+          "kind": "symbol",
+          "name": "review_meaning_effects"
+        }
+      },
+      "id": "RLZ-XVN2T4",
+      "invariant": "INV-76C676",
+      "origin": {
+        "handoffEntry": "MIK-R43@v2",
+        "leaf": "260928-MIK-L43"
+      },
+      "rationale": "This owner-scoped after-history projection supplies the record answers required by the packet.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The resolved after index and optional identity-only baseline feed one record projection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "adee3e1164686ae8794d9205dd8877034eb0426e",
+            "content": "sha256:917218f6cd072fa651459c79b1450851c5b41125b1954120ebbc188af0f1daa1",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_meaning_effects"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The same owner-filtered projection supplies outline labels.\n\nAnchor: `outline_meanings`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "adee3e1164686ae8794d9205dd8877034eb0426e",
+            "content": "sha256:e34f59646dc60f82bdb41a9e90bfdcfcd33d005e8062873e164319edb0ccd6be",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Only admitted dispositions form steps; old and half-recorded family cases remain distinct.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "adee3e1164686ae8794d9205dd8877034eb0426e",
+            "content": "sha256:35d72fd4c9430f82de11a387731782e629a9512d3df71276b43e2576117c51ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "_family_step"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The module delegates owner-row retrieval and raw-identity resolution to review_history. owner_rows uses the index's exact-owner query, refuses incomplete indexes and retains only admitted owner attempt paths. raw_subject checks the after identity map, optional baseline map and admitted raw identity; baseline supplies no history rows. These helper bodies preserve the removed local behavior.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "adee3e1164686ae8794d9205dd8877034eb0426e",
+            "content": "sha256:3ffa15f8b4d781165f8526dda4df6bc1118b44d51aad786458186761795e4405",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 55
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fccd0935574f17332e5452e6abbcf8f0c87d8cc3",
+            "content": "sha256:5052e06f16a5cd4788e12e72af156bbe576a879873663428966ade49f60b8ac7",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "mcp/src/agents_remember/application/review_history.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fccd0935574f17332e5452e6abbcf8f0c87d8cc3",
+            "content": "sha256:278f25c0a7076c4e62ddba8ceaa1c51078fe8b6912d4bc2c501156f2867e15ae",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 41
+            },
+            "path": "mcp/src/agents_remember/application/review_history.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fccd0935574f17332e5452e6abbcf8f0c87d8cc3",
+            "content": "sha256:51e3ee2717d3a067836eedd0dada0393f857b572f5fb052fed52baa254f8602e",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 61
+            },
+            "path": "mcp/src/agents_remember/application/review_history.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f96d18c15313b3678be4b1ab3097dd93a32de955",
+            "content": "sha256:1dc1ee781774b33c39205f0cc309a6cf1e702204c1c17be18a63236c2179b7f4",
+            "locator": {
+              "end": 316,
+              "kind": "line_range",
+              "start": 315
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/query.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8956b095d29551a323f720e81379174ab9ea902a",
+            "content": "sha256:a6fcf22f2f60f6d0f9cf2b21b8be819e0ca04fc0352f7a6c946b0dd91853597f",
+            "locator": {
+              "end": 196,
+              "kind": "line_range",
+              "start": 187
+            },
+            "path": "mcp/src/agents_remember/models/knowledge_files/documents.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

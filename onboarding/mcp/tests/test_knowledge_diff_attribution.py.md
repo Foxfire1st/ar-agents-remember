@@ -1,15 +1,5 @@
 # mcp/tests/test_knowledge_diff_attribution.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_knowledge_diff_attribution.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-28T23:41:23+02:00 |
-| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4`|
-| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
-| governingOverview | `mcp/tests/overview.md` |
-
 ## Governing Overview
 
 [Test suite overview](overview.md)
@@ -20,7 +10,7 @@
 every measured changed path lands in exactly one bucket.** `260921-ICR-L4` added these cases to
 [`test_knowledge_diff_scope.py`](test_knowledge_diff_scope.py.md). `260921-ICR-L57` moved them here
 verbatim when that module crossed the 1200-line rail; no case was added, dropped or changed. The module
-runs the same real comparison, over the two real databases and Git trees that
+runs the same real comparison, over the fixture-built candidate snapshots and real Git trees that
 `diff_scope_test_support` builds. It is marked `pytest.mark.evidence_unit` and registered in the
 **unit-regression** lane beside its sibling.
 
@@ -32,14 +22,22 @@ The properties, one case each:
   unregistered;
 - a family subject counts its own members' links as selected attribution;
 - a registered mapping that never resolved establishes no attribution. The arithmetic case covers this,
-  and so does the production-composition case, which authors the claims into the candidate snapshot and
-  asserts the shipped reader's own resolutions for a stale or unresolvable mapping;
+  and so does the fixture-composition case, which authors the claims into the candidate snapshot with
+  the fixture constructors and asserts the shipped reader's own resolutions for a stale or unresolvable
+  mapping;
 - one uninspected snapshot makes every unmapped change undetermined;
 - a legitimately empty side counts as completely inspected; and
 - an unavailable partition states no total and never a measured zero, and a partial observation states
   the scope of its own denominator.
 
 ## Code Commentary
+
+
+The comparison partitions the measured changed-path population into disjoint attributed, confirmed-unregistered and unknown-attribution buckets. Unchanged mapped paths contribute no changed count, repeated claims contribute one path, and selected-subject links are distinguished from completely established outside-selection links. Family scope comes from exact membership revisions.
+
+Unresolved or stale locators do not establish attribution. An unread snapshot prevents a negative conclusion and qualifies outside-selection membership; a known-empty inspected side can support absence. An unavailable observation carries null totals, while a partial denominator names omitted uncarriable paths.
+
+The two-tree fixture and extra realization rows use test-only knowledge_rows_test_support constructors. `_author_candidate_claim` is a fixture helper despite its historical write-plane docstring. Surviving production anchor readers, source measurement and partition/comparison code supply the asserted output; this suite does not prove canonical write admission.
 
 ### Logic
 
@@ -56,8 +54,8 @@ unavailable or partial observation), the case calls the partition owner directly
 `entry_link` reads the link label one measured path carries.
 
 **The stale-mapping case authors real claims.** `_author_candidate_claim` writes one realization claim
-into the candidate snapshot through `create_realization_claim`, exactly as the write plane does.
-`_candidate_claim_resolutions` then reads the shipped reader's own resolutions for that path. So the
+into the candidate snapshot through `create_realization_claim`, built on the fixture constructors
+(`anchor_fixture_models` drafts, `DiffFixture`), not the production write plane. `_candidate_claim_resolutions` then reads the shipped reader's own resolutions for that path. So the
 precedence is measured through production composition, not injected.
 
 ### Conventions
@@ -68,7 +66,7 @@ precedence is measured through production composition, not injected.
 
 ### Invariants And Boundaries
 
-- **Unit lane by behaviour.** Everything is built under `tmp_path` through public store operations; the
+- **Unit lane by behaviour.** Everything is built under `tmp_path`; the
   only subprocesses are the fixture's own `git` calls.
 - **Behaviour-preserving split.** The nine cases and their helpers are byte-identical to the section they
   came from. The collected node names match the pre-split population; only the module name in the node
@@ -82,41 +80,93 @@ precedence is measured through production composition, not injected.
 
 None.
 
-## Docs References
+## Evidence
+
+
+### Docs References
+
+No Domain Documentation source is configured for this slice.
+
+### Repo-Internal References
+
+- `test_the_measured_changes_are_partitioned_once_and_the_buckets_are_disjoint_and_exhaustive` supplies the current fixture or assertion described above. [14]
+- `test_a_registered_mapping_that_did_not_resolve_does_not_establish_attribution` supplies the current fixture or assertion described above. [15]
+- `test_one_uninspected_snapshot_turns_every_unmapped_change_into_undetermined_attribution` supplies the current fixture or assertion described above. [16]
+- `test_an_unavailable_partition_states_no_total_and_never_a_measured_zero` supplies the current fixture or assertion described above. [17]
+
+- Fixture construction imports test-only row constructors; it does not call the retired canonical writer. [18]
+
+
+- RowStore writes text-tree fixture rows without the retired production admission plane. [19]
+
+
+### Docs References
 
 No Domain Documentation entries are configured in this memory root. The statements below are grounded in
 repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's statement of what it measures, and the import of the sibling's helpers. | "The comparison's source attribution partition: every measured changed path in exactly one bucket."; "from test_knowledge_diff_scope import diff_seed, run_diff" | mcp/tests/test_knowledge_diff_attribution.py:1-49 |
-| The unit marker and the per-case fixture. | `pytestmark`; `fixture` | mcp/tests/test_knowledge_diff_attribution.py:51-58 |
-| The sibling's comparison helpers these cases reuse. | `diff_seed`; `run_diff` | mcp/tests/test_knowledge_diff_scope.py:68-75; mcp/tests/test_knowledge_diff_scope.py:78-113 |
-| **The partition case: the measured changes divided once into attributed, confirmed unregistered and undetermined, with the buckets disjoint and exhaustive.** | "test_the_measured_changes_are_partitioned_once_and_the_buckets_are_disjoint_and_exhaustive" | mcp/tests/test_knowledge_diff_attribution.py:64-135 |
-| **The boundary case: a change mapped only to another invariant is outside selection, never unregistered.** | "test_a_change_mapped_only_to_another_invariant_is_outside_selection_not_unregistered"; `entry_link` | mcp/tests/test_knowledge_diff_attribution.py:144-183; mcp/tests/test_knowledge_diff_attribution.py:138-141 |
-| **The family-subject case: a family's members' own links count as selected attribution.** | "test_a_family_subject_counts_its_members_own_links_as_selected_attribution" | mcp/tests/test_knowledge_diff_attribution.py:186-218 |
-| **The precedence cases: a registered mapping that did not resolve — stale or unresolvable — does not establish attribution.** | "test_a_registered_mapping_that_did_not_resolve_does_not_establish_attribution"; "test_a_stale_or_unresolvable_mapping_does_not_establish_attribution" | mcp/tests/test_knowledge_diff_attribution.py:221-299; mcp/tests/test_knowledge_diff_attribution.py:302-364 |
-| The production-composition helpers the stale-mapping case authors and reads claims through. | `_author_candidate_claim`; `_candidate_claim_resolutions` | mcp/tests/test_knowledge_diff_attribution.py:367-403; mcp/tests/test_knowledge_diff_attribution.py:406-423 |
-| **The incompleteness cases: one uninspected snapshot turns every unmapped change undetermined; a legitimately empty side counts as completely inspected.** | "test_one_uninspected_snapshot_turns_every_unmapped_change_into_undetermined_attribution"; "test_a_legitimately_empty_side_counts_as_completely_inspected_for_absence" | mcp/tests/test_knowledge_diff_attribution.py:426-488; mcp/tests/test_knowledge_diff_attribution.py:491-526 |
-| **The honesty cases: an unavailable partition states no total and never a measured zero; a partial observation states its denominator's scope.** | "test_an_unavailable_partition_states_no_total_and_never_a_measured_zero"; "test_a_partial_observation_states_the_scope_of_its_own_denominator" | mcp/tests/test_knowledge_diff_attribution.py:529-555; mcp/tests/test_knowledge_diff_attribution.py:558-601 |
-| The arithmetic cases' two input builders. | `_observed`; `_inspected_sides` | mcp/tests/test_knowledge_diff_attribution.py:604-607; mcp/tests/test_knowledge_diff_attribution.py:610-626 |
-| The unit-regression lane row, beside its sibling's. | "mcp/tests/test_knowledge_diff_attribution.py" | mcp/tests/test-evidence-lanes.toml:139-139 |
-| The two support artifacts whose exact `consumers` lists declare this module (at `:1442` and `:1493`). | "path = \"mcp/tests/diff_scope_test_support.py\""; "path = \"mcp/tests/read_scope_test_support.py\"" | mcp/tests/evidence-lifecycle.toml:1425-1470; mcp/tests/evidence-lifecycle.toml:1473-1529 |
+- The unit marker and the per-case fixture. [20]
 
-## Cross-Repo References
+- The sibling's comparison helpers these cases reuse. [21]
+- **The partition case: the measured changes divided once into attributed, confirmed unregistered and undetermined, with the buckets disjoint and exhaustive.** [22]
+
+- The boundary case: a change mapped only to another invariant is outside selection, never unregistered. [23]
+
+
+- **The family-subject case: a family's members' own links count as selected attribution.** [24]
+
+
+
+- The precedence cases: a registered mapping that did not resolve — stale or unresolvable — does not establish attribution. [25]
+
+
+
+- The production-composition helpers the stale-mapping case authors and reads claims through. [26]
+
+
+- The incompleteness cases: one uninspected snapshot turns every unmapped change undetermined; a legitimately empty side counts as completely inspected. [27]
+
+- The honesty cases: an unavailable partition states no total and never a measured zero; a partial observation states its denominator's scope. [28]
+
+
+- The arithmetic cases' two input builders. [29]
+
+
+
+
+
+
+> Retained earlier citation wording: - The unit-regression lane registers test_knowledge_diff_attribution.py. Seven lifecycle artifact lists declare it as a consumer: _user_settings_guard.py, anchor_fixture_models.py, diff_scope_test_support.py, the Node package-lock fixture, knowledge_row_codec_test_support.py, knowledge_rows_test_support.py and read_scope_test_support.py. Declaration is not execution.
+
+
+
+### Cross-Repo References
 
 No cross-repository behaviour is exercised here. The fixture's Git trees are temporary and local.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured cross-repository evidence is claimed. | — | — |
+No configured cross-repository evidence is claimed.
 
-## Update History
 
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): created this one-to-one card for the attribution-partition cases, which the worker moved verbatim out of `test_knowledge_diff_scope.py` (1384 → 790 lines there; 626 lines and 9 cases here). The six case rows moved from `test_knowledge_diff_scope.py.md`, where they were removed, and their ranges were re-derived to each case's own extent. The case list reuses the `260921-ICR-L4` curator's account of the nine cases. New rows cite the helpers, the lane row and the two consumer declarations. Verification metadata remains empty until closeout stamps the code commit.
+
+
+
+
+
+
+
+- The module's own unit-regression lane row. [30]
+
+
+- The unit-regression lane registers test_knowledge_diff_attribution.py. Seven lifecycle artifact lists declare it as a consumer: _user_settings_guard.py, anchor_fixture_models.py, diff_scope_test_support.py, the Node package-lock fixture, knowledge_row_codec_test_support.py, knowledge_rows_test_support.py and read_scope_test_support.py. Declaration is not execution.
+
+- The unit-regression lane registers test_knowledge_diff_attribution.py. Seven lifecycle artifact lists declare it as a consumer: _user_settings_guard.py, anchor_fixture_models.py, diff_scope_test_support.py, the Node package-lock fixture, knowledge_row_codec_test_support.py, knowledge_rows_test_support.py and read_scope_test_support.py. Declaration is not execution.
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:352-352 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:800-800 - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1202-1202 - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2029-2029 - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2740-2740 - the bytes it recorded now occur 50 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2783-2783 - the bytes it recorded now occur 7 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:3299-3299 - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+
+- The unit-regression lane registers test_knowledge_diff_attribution.py. Seven lifecycle artifact lists declare it as a consumer: _user_settings_guard.py, anchor_fixture_models.py, diff_scope_test_support.py, the Node package-lock fixture, knowledge_row_codec_test_support.py, knowledge_rows_test_support.py and read_scope_test_support.py. Declaration is not execution. [31]

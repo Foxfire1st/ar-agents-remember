@@ -1,182 +1,161 @@
 # mcp/src/agents_remember/kernel/coordination_context/ — Coordination Context Modules
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| sourceRoute            | `mcp/src/agents_remember/kernel/coordination_context/` |
-| doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-08-22T10:39+02:00                     |
-| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25`
-| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
-| governingOverview      | `../../../../overview.md`                  |
-
 ## Governing Overview
 
 [mcp/overview.md](../../../../overview.md)
 
 ## Purpose
 
-`coordination_context/` contains the extracted implementation for the `c-08-ar-coordination-context-resolver` skill
-package resolver. The public import and `python -m` entrypoint remain
-`agents_remember.kernel.coordination_context_resolver`, while this package owns
-the focused resolver, settings, storage, contract, cross-repo, serialization,
-and CLI responsibilities.
+The package resolves the coordination context of a code repository: which memory root the repository uses,
+where its settings, task, system and docs roots are, which storage and path rules apply, which adjacent
+repositories are admitted as sources, and the facts of the worktree contract a request selects. It reads
+only: it creates no memory root, changes no Git worktree and writes no onboarding. The facade
+`agents_remember.kernel.coordination_context_resolver` re-exports the package's functions and models and
+passes the resolution request into this package.
 
 ## Hot Path Summary
 
-Start in `resolver.py` for topology and context assembly, `settings.py` for
-JSON-first settings selection, `json_settings.py` and `markdown_settings.py`
-for settings formats, `markdown_cross_repo.py` and
-`markdown_global_rules.py` for legacy Markdown parser branches, `storage.py`
-for path-rule eligibility, `cross_repo.py` for branch-gated adjacent repo facts,
-`contracts.py` for root/leaf series-contract fact loading, and `serialize.py` plus
-`cli.py` for output adapters.
+`resolve_coordination_context(code_repository_name, workspace_root, code_repository_root, *, request)`
+takes one `CoordinationRequest`. It resolves the code repository, selects the onboarding-hint route or the
+root-selection route, parses settings, and calls `build_coordination_context` to assemble the answer.
 
-## Route Model
+- With `hints.onboarding_root`, the supplied onboarding path selects its own route. Topology is inferred
+  from that path; settings supply the coordination and memory roots. A memory-worktree hint can select
+  settings from the official memory repository. A loaded contract can subsequently select the effective
+  memory root and always its onboarding child when it names a memory worktree, even before that child exists. Docs retain their existing existence-based selection.
+- Without that hint, `detect_coordination_selection` uses an explicit settings path when supplied;
+  otherwise it selects the external root `<coordination root>/memory-repos/ar-<name>` when it exists.
+  A missing selected memory root raises `MissingMemoryError`, whose message names the coordination root
+  and default external root checked by selection.
+- Settings are JSON first. For settings outside the coordination-root settings location, the JSON
+  candidate is the sibling `settings.json`. For coordination-root settings, it is the user's settings
+  file returned through the user-settings location guard. If the JSON candidate exists, only it is
+  parsed. Otherwise the fenced blocks of the selected Markdown settings file are parsed; a missing
+  Markdown file gives defaults.
+- Contract lookup tries an explicit contract path, then a task selector, then a worktree selector when
+  the previous lookup supplied no candidate. An absent candidate, or a load failure other than the canonical-place check,
+  produces no loaded contract while retaining its candidate path in the result; a candidate path that is not the
+  contract's own canonical place propagates a named refusal that states the found and recorded paths rather than
+  falling through to the next selector.
+- `build_coordination_context` takes the task root, worktree group, memory mode, code and memory
+  worktrees, and ledger path from a loaded contract. Without one, it derives the task root and worktree
+  group from the selector when present, otherwise uses the repository task root and no worktree group;
+  the memory mode defaults to `external`.
+- `resolve_cross_repo_entry` gives each allowed adjacent repository one of three states. `excluded`:
+  the entry is invalid, code inclusion is disabled, its code path is missing, or its code repository is
+  detached, is not a Git repository, or is not on the expected branch. `included-code-only`: memory
+  inclusion is off, the memory repository is missing or on another branch, or its ledger raises
+  `LedgerError`. `included`: code and memory both pass, and the ledger's last verified code commit and
+  last memory content commit are attached.
 
-The package is intentionally split by responsibility:
+## How It Is Built
 
-- `models.py` owns dataclasses and typed dictionaries — with one deliberate exception since
-  260731-EFA-L4: `CoordinationContext.memory_mode` (line 151) is no longer an independently
-  declared `Literal["internal", "external", "disabled"]` but
-  `worktrees.worktree_contract.MemoryMode`, imported at line 8. The two were the same three
-  members, written twice, and this package is a *consumer* of that vocabulary rather than an
-  author of it: `resolver._resolve` assigns `contract.memory_mode` straight into the field
-  (line 284, reaching the constructor at line 307) whenever a contract is in scope, and falls
-  back to `_memory_mode(topology)` (line 342, `internal`/`external` only — a resolved context
-  is `disabled` only because a contract said so) when none is. Retype it here and the two
-  copies can disagree again, which is a type error at line 284 in the good case and, in the
-  bad one, a value this dataclass accepts that the contract writer refuses.
-- `paths.py` owns path/topology primitives.
-- `resolver.py` composes a `CoordinationContext` without performing mutation.
-- `settings.py` chooses JSON settings over Markdown fallback and delegates
-  concrete parsers.
-- `json_settings.py`, `markdown_settings.py`, and `setting_values.py` own
-  settings parsing details.
-- `markdown_cross_repo.py` and `markdown_global_rules.py` keep the Markdown
-  parser below complexity and maintainability thresholds.
-- `storage.py` owns storage/path-rule decisions.
-- `contracts.py` and `cross_repo.py` load external facts used by the resolver; contract lookup goes through active task-root resolution plus alias-aware leaf-enclosure resolution, excluding archived task roots.
-- `serialize.py` and `cli.py` adapt the context to text/JSON output.
+- [models.py](models.py.md): the data of a resolution. `CoordinationRequest` carries the hints, the
+  selector and the contract reader of one request; `CoordinationHints` and `EnclosureSelector` are its two
+  parts; `CoordinationSelection`, `CoordinationRoots` and `CodeRepository` are intermediate results;
+  `CoordinationContext` is the answer. `ContractReaderPort` is the contract-file surface the resolver may
+  use, so that the kernel imports nothing from the `worktrees` package.
+- [paths.py](paths.py.md): where the coordination root, a memory root, a settings file and an onboarding
+  card live, and which onboarding roots are supported memory locations.
+- [resolver.py](resolver.py.md): selects the memory root and assembles the context.
+- [settings.py](settings.py.md): chooses the settings file to parse. [json_settings.py](json_settings.py.md)
+  parses `settings.json`; [markdown_settings.py](markdown_settings.py.md) parses the fenced settings blocks
+  of `settings.md` line by line, with the steps of two of its blocks in
+  [markdown_cross_repo.py](markdown_cross_repo.py.md) and
+  [markdown_global_rules.py](markdown_global_rules.py.md); [setting_values.py](setting_values.py.md)
+  checks single values.
+- [storage.py](storage.py.md): which storage a source file gets under the path rules.
+- [contracts.py](contracts.py.md): finds and loads the contract a request selects, through the port.
+- [cross_repo.py](cross_repo.py.md): resolves each allowed adjacent repository to a state with its reason.
+- [serialize.py](serialize.py.md): the context as a dictionary and as text rows.
+
+### Recorded Reads
+
+The recorded portions of root selection, settings selection and parsing, and contract lookup use the
+kernel's read recorder ([recorded_reads.py](../recorded_reads.py.md)). `observed_text` records the SHA-256
+of the exact bytes consumed, or an absent or unreadable input. `observed_exists` records a negative
+existence probe but does not record a successful probe by itself. `observed_resolve` records a logical
+path and its resolved target; `observed_path_exists` records both present and absent path predicates.
+
+- Inside a recording block these operations leave rows describing the observations. A caller that
+  checks those rows before reusing a kept result can detect changed consumed settings, the appearance
+  of a previously absent higher-priority settings file, a recorded memory root appearing or
+  disappearing, or a recorded root link being retargeted even when its new target has identical bytes.
+  Reuse and recomputation belong to the caller; the recorder does not recompute results itself.
+- Outside a recording block the same functions record nothing and perform their underlying reads,
+  probes and resolutions normally. `observed_text` reads raw bytes, decodes UTF-8 and normalizes line
+  endings; it does not simply delegate to `Path.read_text`.
+- Recording blocks are opened by the reviewer's leaf-wide worklist computation and its memo
+  (`application/reviewer_worklist_child.py`, `application/review_tree_knowledge.py`,
+  `application/review_leaf_view_memo.py`), by the invariant gate (`application/knowledge_gate/gate.py`)
+  and by the leaf-document lookup (`tasks/leaf_decisions.py`).
+- The onboarding-hint route uses plain calls for its initial onboarding and explicit-settings
+  resolutions and some settings-inference probes, but its downstream memory-root inference and
+  external-root derivation use recorded resolutions. The child-root, system-root and final
+  path-settings existence probes inside `build_coordination_context`, and the adjacent-repository
+  path probes and Git metadata operations, are not recorded by those operations. Settings parsers,
+  contract candidate resolution and negative probes, the production contract loader, and the
+  adjacent-repository memory-ledger loader still record the observations they make. The injected
+  contract reader determines how its own lookups and loads are observed.
 
 ## Invariants And Boundaries
 
-- `c-08-ar-coordination-context-resolver` skill remains facts-only; this package does not create memory roots, modify
-  Git worktrees, or write onboarding.
-- MCP settings and explicit arguments are resolver authority; source-checkout
-  `.env` and `.env.example` are not runtime coordination-root inputs.
-- The facade preserves the public resolver import path and selected test seams,
-  but implementation code belongs in the focused modules.
-- Settings parsing is JSON-first; Markdown fenced settings are accepted only
-  when a sibling `settings.json` is absent.
+- A resolution request without a contract reader is refused with `ValueError`; context construction
+  independently enforces the same requirement. A contract is read through `ContractReaderPort`, and the
+  package imports nothing from `worktrees`.
+- The supported topology is `external`. An explicit request for `internal` is refused by name. Selection
+  without an explicit settings path also refuses an existing `<code root>/ar-memory`; settings-root and
+  onboarding-root inference refuse their detected `ar-memory` layouts. An explicit settings path takes
+  precedence over the repository-side legacy-root check.
+- Onboarding topology inference admits an official memory-repository layout whose parent name starts
+  with `ar-` under `memory-repos`, or the structurally decoded
+  `<coordination root>/worktrees/<repository>/<group>/memory-<name>/onboarding` layout. Unsupported paths
+  receive a refusal naming the two supported locations. The official-repository branch checks the
+  parent layout; unlike the memory-worktree decoder, it does not independently check the final path
+  component's name.
+- `resolve_storage_for_source` answers the storage of one source file. Without path rules it returns
+  `settings.mode`, except that `hybrid` uses `settings.default` or `external`. With rules, the first rule
+  whose base and inclusion predicates match decides: an exclusion returns `disabled`; otherwise a
+  non-hybrid mode returns `settings.mode`, while hybrid uses the rule's storage or its configured
+  default. A file no rule matches is `disabled` unless the mode is `hybrid`, which uses its default or
+  `external`.
+- The package states facts. Creating or repairing a memory root belongs to the skills that
+  `MissingMemoryError` names. The resolver consumes its arguments, selected settings, contract-reader
+  results and adjacent-repository Git and ledger facts; it reads no `.env` file itself.
+- A loaded contract's memory mode is reported as recorded, including a readable legacy `disabled`
+  value. That reported metadata is outside the resolver's operative promises: context resolution does
+  not establish lifecycle permission or a current task status.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The package-local facade keeps existing callers pointed at the split implementation. | "_resolver.resolve_coordination_context" | mcp/src/agents_remember/kernel/coordination_context_resolver.py:131-146 |
-| The current resolver constructs the context; retired parity suites provide no current pass. | `build_coordination_context` | mcp/src/agents_remember/kernel/coordination_context/resolver.py:252-308 |
+- The facade passes one request to the resolver. [3]
+- The request: hints, selector and contract reader. [4]
+- The contract-file surface the resolver may use. [5]
+- A request without a contract reader is refused; an onboarding-root hint selects its own path. [6]
+- Root selection: explicit settings, the removed repository root, the external root, the missing-memory error. [7]
 
-## 260731-EFA-L2 Resolver API
 
-`resolve_coordination_context` is now
-`(code_repository_name=None, workspace_root=None, code_repository_root=None, *, hints:
-CoordinationHints | None = None, selector: EnclosureSelector | None = None)`. The nine former
-resolution arguments live on the two frozen bundles in `models.py`, which also owns
-`CodeRepository` (replacing the untyped repo dict the private helpers passed around) and
-`CoordinationRoots`. `build_coordination_context(repo, *, roots, storage, cross_repo, selector)`
-and `contracts.resolve_contract(selector, coordination_root, code_repository_name)` match. All four
-models are re-exported from the `kernel.coordination_context_resolver` facade, which is the
-supported import path for callers outside this package. Resolution order, the onboarding-root
-branch and contract-lookup precedence are unchanged.
+- The memory mode a topology implies. [9]
 
-## 260731-EFA-L9 Route Impact
 
-The resolver CLI moved to `cli/coordination_resolver.py` (the `cli` package sits above kernel),
-and the resolver now consumes a `ContractReaderPort` bound to
-`worktrees/modules/contract_reader.py::WorktreeContractReader` instead of importing worktrees
-directly. The coordination-context detection/assembly behavior is unchanged.
+- The memory-worktree shape, decoded segment by segment. [10]
+- The two supported onboarding roots and the refusal that names both. [11]
+- JSON candidate first, then the Markdown blocks, using recorded readers and probes. [12]
 
-## 260915-KS-L23 The Second Supported Memory Shape, And The Refusal That Now Names It
 
-`paths.py` had one topology inference and one refusal, and the refusal named a single supported
-shape — `<ar-coordination>/memory-repos/ar-<code-repository-name>/onboarding`. That was **false as a
-general statement**: a leaf enclosure's memory worktree is a memory root the product itself uses,
-because the contract-scoped memory-quality route takes its onboarding root from the *contract*
-rather than from this resolver. The practical cost (D-34, item 27) was that a curator wanting the
-package-local checker's answer for a leaf — rather than the whole checklist's, which arrives by the
-MCP tool under D-33's fixed serving build — had no route at all.
+- Storage of one source file under the path rules. [13]
+- Storage from one rule: not matched, excluded, or the rule's storage. [14]
+- The states of an adjacent repository's code side. [15]
+- The states of its memory side. [16]
+- The ledger state of an included memory repository. [17]
 
-The route now decodes the second shape **structurally** and states both:
+- An explicit contract candidate is resolved through the recorder; candidate absence is recorded. [18]
 
-- `memory_worktree_enclosure(onboarding_root)` (`paths.py`) returns
-  `(coordination_root, code_repository_name)` for
-  `.../worktrees/<repo>/<group>/memory-<name>/onboarding`, and `None` for anything that does not match
-  every segment — a directory that merely happens to be named `memory-something` earns no acceptance,
-  and the name segment must be longer than the bare prefix.
-- `infer_topology_from_onboarding_root` returns `"external"` for it, which is what the memory
-  genuinely is: external to the code repository.
-- `infer_settings_path` resolves a memory worktree's settings to the **official** memory repo's
-  `system/settings.md`, because a memory worktree carries no `system/` of its own; an unknown
-  worktree falls back to the older context-root inference so it reports the missing file rather than
-  resolving to another repository's settings.
-- The refusal (`ValueError`) now names **both** supported shapes, says which one the
-  contract-scoped route already measures, and echoes the received path.
 
-**What this does not change.** Resolution order, the onboarding-root branch, contract-lookup
-precedence, the facts-only boundary, settings authority and the L2 `hints=`/`selector=` API are all
-untouched; this is one accepted shape added to one inference, and one error message made true. The
-consumer is `memory_quality/integrity/check_missing_onboarding.py`, which carries its own sidecar.
 
-## Update History
-- 2026-09-18T19:15+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): **added the L23 section for item 27 / D-34** — `paths.py` now accepts a leaf enclosure's memory worktree as a second, structurally decoded memory shape, resolves its settings to the official memory repo's, and refuses an unsupported root by naming **both** supported shapes and the received value. The section records what is deliberately unchanged (resolution order, the onboarding-root branch, contract precedence, the facts-only boundary, settings authority, the L2 API) and names the consumer. No verification stamp moves: `paths.py` is modified in the delivered working tree and closeout owns the stamp.
+- A path resolution as a recorded selection row. [19]
+- A path's existence as a recorded selection row. [20]
 
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `build_coordination_context` repointed to mcp/src/agents_remember/kernel/coordination_context/resolver.py:252-308. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
+- A skipped settings file of higher priority and a JSON-only settings file are recorded. [21]
 
-- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1 candidate-11 curation rebind: refreshed the
-  formatter-moved worktree-support test coordinate against accepted tree `4241908c`.
-  Verification metadata remains pinned until governed closeout.
-
-- 2026-08-08T14:38+02:00 — 260731-EFA-L9 route impact: recorded the CLI move and the
-  contract-reader port seam. Verification metadata pinned until closeout stamps the L9 code
-  commit.
-
-- 2026-08-03T03:59:59+02:00 — Curated 5 citation claims (2 table rows, 3 source-form repairs): added exact anchors and source paths; scoped fixer generated the final ranges.
-
-- 2026-08-01T00:00+02:00 — 260731-EFA-L4 curator: this route's only L4 change is
-  `models.py` (+5/-2), and it moves one ownership line. `CoordinationContext.memory_mode` stopped
-  declaring its own `Literal["internal", "external", "disabled"]` and now imports
-  `worktrees.worktree_contract.MemoryMode` (models.py line 8, field at line 151), so the
-  Route Model's "`models.py` owns dataclasses and typed dictionaries" needed the exception
-  recorded rather than left implied. Verified the direction of the dependency by reading
-  `resolver.py`: `contract.memory_mode` is assigned into the field at line 284 and reaches the
-  constructor at line 307, with `_memory_mode(topology)` (line 342) covering the no-contract
-  case in `internal`/`external` only. This is not a new package boundary — `contracts.py`
-  (line 14) and `resolver.py` (line 33) already imported from `worktrees.worktree_contract`;
-  what changed is that one vocabulary is now declared once instead of twice. The resolver's
-  facts-only boundary, settings authority, contract-lookup precedence and the L2
-  `hints=`/`selector=` API are all unchanged. Verification metadata pinned until closeout
-  stamps the L4 commit.
-- 2026-07-31T21:04+02:00 — 260731-EFA-L3 curator: No route impact: checked Purpose, Hot Path
-  Summary, Route Model and Invariants And Boundaries against this route's only L3 change —
-  `cross_repo.py` (1 file, +7/-3), where `git_branch` (line 26) and `git_head_or_empty` (line 35)
-  now pass `timeout=GIT_METADATA_TIMEOUT_SECONDS` to the runner. Unlike the routes this leaf
-  consolidated, `cross_repo.py` already imported `run_git` from `kernel/git_command.py` and still
-  re-exports it in `__all__` (line 17), so this route never held one of the drifted unguarded
-  copies and no "owns its own git runner" claim exists here to correct. Module responsibilities,
-  the resolver's facts-only boundary, settings authority and the L2 `hints=`/`selector=` API are
-  all unchanged; the added bound is a per-call argument documented in the `cross_repo.py` sidecar.
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2: the resolver's public API moved to keyword-only
-  `hints=` / `selector=` bundles (`CoordinationHints`, `EnclosureSelector`), with `CodeRepository`
-  and `CoordinationRoots` typing what the private helpers pass between them. Every caller in the
-  tree was updated; resolved contexts are unchanged. Verification metadata pinned until closeout
-  stamps the L2 commit.
-- 2026-07-07T23:30+02:00 — 260707-HFX-L4 route impact: `contracts.py` now uses the dedicated
-  `worktrees.leaf_refs` adapter for explicit leaf-id contract lookup, so qualified/doc-id/legacy refs can
-  find the correct enclosure while the package structure stays unchanged. Verification metadata pinned
-  until closeout stamps the 260707-HFX-L4 commit.
-- 2026-06-28T20:30+02:00 — No route impact: `find_worktree_contract` now skips archived (`0_archive/`) contracts and its docstring was corrected to `series-contract.md`; the route's module structure and model are unchanged (detail in the contracts.py file sidecar; task 260628_post-landing-cleanup).
-- 2026-06-28T19:10+02:00 — Main-carryover reconciliation (PR #95, code 84e95ad): re-recorded main's worktree_name route note that the series carryover dropped — `contracts.py` gained a `worktree_name` fallback in `resolve_contract` plus `find_worktree_contract`, `resolver.py` forwards `worktree_name`, and the facade re-exports it (#90, MCP 2.9.3); **no route impact** (module responsibilities, structure, and invariants unchanged), detail lives in the `contracts.py` / `resolver.py` file sidecars.
-- 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: coordination context now resolves active task names, optional nested `parent_task`, and optional `leaf_id` into root or leaf `series-contract.md` paths instead of looking for sibling `contract.md` files. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-06T12:15: Re-verified against the current 15-file coordination-context package; purpose, hot path, route model, and invariants still match.
-- 2026-05-25T20:57+02:00: Created after the monolithic `c-08-ar-coordination-context-resolver` skill package resolver was split into focused implementation modules, then amended when Markdown fallback parser branches moved into submodules.
+- The context takes task root, worktree group, memory mode, worktrees and ledger path from the contract. [8]

@@ -1,0 +1,2518 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L171",
+  "rows": [
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-017JN7",
+      "items": [
+        "sha256:656de0a541fa67b3f8fbc18ddb515c19d491829e4aef78d3588a572476ab1a76"
+      ],
+      "reason": "Checked: this addition is `_reset_sweep_cursor`, the test-facing reset of the sweep walks and the queue slice. It serves the bounded rotation the leaf records under rule 1 and promises nothing of its own.",
+      "subject": "hunk:sha256:656de0a541fa67b3f8fbc18ddb515c19d491829e4aef78d3588a572476ab1a76"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-0NVDX9",
+      "items": [
+        "sha256:66d20561c308c0ee7cb7473d99159f1817c81536d22343c2280c54b4cb7c1679"
+      ],
+      "reason": "The card's evidence now covers the hold, single-copy, answered-batch and steer-or-hold cases the class holds.",
+      "sources": [
+        {
+          "blob": "635bb67942bc1db4b14dbf7ed76b1cc62d9dc24b",
+          "path": "mcp/tests/test_paseo_role_messages.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_paseo_role_messages.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0SDRHN",
+      "items": [
+        "sha256:aa23abc81490f11372b4a8b4026da20e65c2dfe495e56563a39d10f5ded630b7"
+      ],
+      "reason": "Checked: the hunks keep the facade's message-flow expectations in step with the hold and delivery answers; they are evidence, not a new obligation.",
+      "subject": "hunk:sha256:aa23abc81490f11372b4a8b4026da20e65c2dfe495e56563a39d10f5ded630b7"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "examined": [
+        {
+          "id": "INV-002A1G",
+          "revision": 1
+        },
+        {
+          "id": "INV-1Q4W04",
+          "revision": 1
+        },
+        {
+          "id": "INV-7DMXZ3",
+          "revision": 2
+        },
+        {
+          "id": "INV-AFTG56",
+          "revision": 2
+        },
+        {
+          "id": "INV-N9D91D",
+          "revision": 2
+        },
+        {
+          "id": "INV-VKTCC4",
+          "revision": 1
+        },
+        {
+          "id": "INV-WT3VCM",
+          "revision": 1
+        },
+        {
+          "id": "INV-YDDMGJ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-0Y5YFB",
+      "items": [
+        "sha256:ea1b5733707ee4639fbb6c231835aff11282231cd972367d368b7b28d96f770a"
+      ],
+      "reason": "The reached family carries its eight members; only INV-AFTG56 moved, and that move is anchored re-pointing, not a change of family meaning.",
+      "revision": 2,
+      "subject": "FAM-N17BB4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0ZJBDK",
+      "items": [
+        "sha256:29e6b8660ed5bff58bc8559c8e39f649fbb757ad2e6d648fbaaf2ba629f3b6a6"
+      ],
+      "reason": "Checked: the hunks replace the steer-only script expectations with the steer-or-hold decision rule 2 states; they are evidence for that clause.",
+      "subject": "hunk:sha256:29e6b8660ed5bff58bc8559c8e39f649fbb757ad2e6d648fbaaf2ba629f3b6a6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1JBX5Z",
+      "items": [
+        "sha256:e1754c9d347270172f5fd3ae3dab581808f2d8734e6d11ed8725004bedf60b24"
+      ],
+      "reason": "Checked against the leaf's records: the turn-end drain, the held-receipt queue and its rotating slice, the timeline reconciliation before a resend, the paused-drain line and the part boundary are carried by rule 1, rule 3 and rule 5 realizations; no new obligation is created here.",
+      "subject": "hunk:sha256:e1754c9d347270172f5fd3ae3dab581808f2d8734e6d11ed8725004bedf60b24"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1QYA7P",
+      "items": [
+        "sha256:d9165f531ebcaee31c6c27bd97d5193f7f807c75b694c5d8ffee73ebe29ed394"
+      ],
+      "reason": "Checked: the hunks replace the steer-only script expectations with the steer-or-hold decision rule 2 states; they are evidence for that clause.",
+      "subject": "hunk:sha256:d9165f531ebcaee31c6c27bd97d5193f7f807c75b694c5d8ffee73ebe29ed394"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-22K7RT",
+      "items": [
+        "sha256:12b81336664c4dc4e43b51dec38302ed0556de626920762aa49d172886955e85"
+      ],
+      "reason": "Checked: this addition is `_host_already_holds`, the timeline read that stops a resend when the recipient already holds the copy. It carries rule 3's at-most-once promise, which the leaf records in its own invariant and realization; the hunk adds no further obligation.",
+      "subject": "hunk:sha256:12b81336664c4dc4e43b51dec38302ed0556de626920762aa49d172886955e85"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-24T6V2",
+      "items": [
+        "sha256:bb659c4e87619dab6892ee2fff3e9a9505e5bf8e931d40a7dc7b74eb484c6cf0"
+      ],
+      "reason": "Checked: the hunks are the cases proving rules 1, 5 and 7 (turn-end delivery, bounded rotation, paused-drain line, receipt count); they add evidence, not a new obligation.",
+      "subject": "hunk:sha256:bb659c4e87619dab6892ee2fff3e9a9505e5bf8e931d40a7dc7b74eb484c6cf0"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2DBB3C",
+      "items": [
+        "sha256:fef4c8e4828072f177e8f09be62552e9a55d51786fbcac4decee5b4d0ecf0e7c"
+      ],
+      "reason": "Checked: the hunks are the cases proving rules 2, 3, 4 and 7 (hold, single copy, answered batch, steer-or-hold); they add evidence, not a new obligation.",
+      "subject": "hunk:sha256:fef4c8e4828072f177e8f09be62552e9a55d51786fbcac4decee5b4d0ecf0e7c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2E8WHP",
+      "items": [
+        "sha256:23b3ad315fb063384bf2675e1811eeb24985661ec8cefff7aba16575c507fea3"
+      ],
+      "reason": "Checked: the hunks keep the facade's message-flow expectations in step with the hold and delivery answers; they are evidence, not a new obligation.",
+      "subject": "hunk:sha256:23b3ad315fb063384bf2675e1811eeb24985661ec8cefff7aba16575c507fea3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2KV36M",
+      "items": [
+        "sha256:0ac14fc3747d22ec76bf20ac2e5b914102d4143d153222a1f72158f75e729b5a"
+      ],
+      "reason": "Checked: the hunks start the held-delivery tick and its two cadences under the existing ledger accounting; the delivery obligation is carried by rule 1's realizations.",
+      "subject": "hunk:sha256:0ac14fc3747d22ec76bf20ac2e5b914102d4143d153222a1f72158f75e729b5a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2TT205",
+      "items": [
+        "sha256:b5e8b907e4be72f40a4904ddd2e6df5d6e461e4cfffa4021dc81f4ea96413287"
+      ],
+      "reason": "Checked: the hunks are the cases proving rules 1, 5 and 7 (turn-end delivery, bounded rotation, paused-drain line, receipt count); they add evidence, not a new obligation.",
+      "subject": "hunk:sha256:b5e8b907e4be72f40a4904ddd2e6df5d6e461e4cfffa4021dc81f4ea96413287"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2YCEP0",
+      "items": [
+        "sha256:59b2dbc514f22d892cff35bd9723add93c461dddff5187269945018370a74320"
+      ],
+      "reason": "Checked: the hunks start the held-delivery tick and its two cadences under the existing ledger accounting; the delivery obligation is carried by rule 1's realizations.",
+      "subject": "hunk:sha256:59b2dbc514f22d892cff35bd9723add93c461dddff5187269945018370a74320"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-37X424",
+      "items": [
+        "sha256:040a6164ee7befc2216abf7650ad731478bbac98eb8dbbea8b3f2fa626b27d57"
+      ],
+      "reason": "Checked: the hunks replace the steer-only script expectations with the steer-or-hold decision rule 2 states; they are evidence for that clause.",
+      "subject": "hunk:sha256:040a6164ee7befc2216abf7650ad731478bbac98eb8dbbea8b3f2fa626b27d57"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3HWZBG",
+      "items": [
+        "sha256:33e17995d540454f5b48316869407839fb22a6555aac29a54c38598812bc2790"
+      ],
+      "reason": "Checked against the leaf's records: the hold-versus-send decision, the plain replacement answer and the answered held batch are carried by rule 2 and rule 4 realizations; nothing else in the file changes meaning.",
+      "subject": "hunk:sha256:33e17995d540454f5b48316869407839fb22a6555aac29a54c38598812bc2790"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3MDXRZ",
+      "items": [
+        "sha256:7edb96d9ec78fa59c73e0e4e6800870c3e9c4814b4335765e5537bbc83e74da6"
+      ],
+      "reason": "Checked: the hunks are the cases proving rules 2, 3, 4 and 7 (hold, single copy, answered batch, steer-or-hold); they add evidence, not a new obligation.",
+      "subject": "hunk:sha256:7edb96d9ec78fa59c73e0e4e6800870c3e9c4814b4335765e5537bbc83e74da6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3MPE4G",
+      "items": [
+        "sha256:9fe310ca50e446829e001766ce1aa60dc6db11d041d9c22c2a585a958ba23548"
+      ],
+      "reason": "Checked: the hunks replace the steer-only script expectations with the steer-or-hold decision rule 2 states; they are evidence for that clause.",
+      "subject": "hunk:sha256:9fe310ca50e446829e001766ce1aa60dc6db11d041d9c22c2a585a958ba23548"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3N31X9",
+      "items": [
+        "sha256:3bf432321b59e9cab48b1f04ed9f4c55067dde330ca563d44f2c9dc3becc3369"
+      ],
+      "reason": "Checked against the leaf's records: the turn-end drain, the held-receipt queue and its rotating slice, the timeline reconciliation before a resend, the paused-drain line and the part boundary are carried by rule 1, rule 3 and rule 5 realizations; no new obligation is created here.",
+      "subject": "hunk:sha256:3bf432321b59e9cab48b1f04ed9f4c55067dde330ca563d44f2c9dc3becc3369"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-3NAAH8",
+      "items": [
+        "sha256:b5ae7593a94611913cf4afac18ec137f1fda946694b1e1a21be63fbdb24925df"
+      ],
+      "reason": "The card now names the turn-end drain, the held-receipt queue the tick drains before any walk, the rotating queue slice, the timeline reconciliation before a resend and the paused-drain log line.",
+      "sources": [
+        {
+          "blob": "4a6fe8b36abe6236b7ff925a4a4da4019fef0949",
+          "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_held_messages.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3SFXJD",
+      "items": [
+        "sha256:fb7af65cf2a58ce6ba9dccd70a18b078f701a2491fc8701b611a1186b2997198"
+      ],
+      "reason": "Checked against the leaf's records: the turn-end drain, the held-receipt queue and its rotating slice, the timeline reconciliation before a resend, the paused-drain line and the part boundary are carried by rule 1, rule 3 and rule 5 realizations; no new obligation is created here.",
+      "subject": "hunk:sha256:fb7af65cf2a58ce6ba9dccd70a18b078f701a2491fc8701b611a1186b2997198"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3W3J0F",
+      "items": [
+        "sha256:b588f68fea499231992ad89b50a765320e42bd47728b569dd23a31a7e0638a1f"
+      ],
+      "reason": "Checked: the hunks are the cases proving rules 1, 5 and 7 (turn-end delivery, bounded rotation, paused-drain line, receipt count); they add evidence, not a new obligation.",
+      "subject": "hunk:sha256:b588f68fea499231992ad89b50a765320e42bd47728b569dd23a31a7e0638a1f"
+    },
+    {
+      "considered": [],
+      "disposition": "no_family",
+      "id": "ROW-3XA416",
+      "items": [
+        "sha256:d49265d4f7fe20b2b69799b97435686859e74f16b35d617d66249cb5877204d7"
+      ],
+      "reason": "Examined the leaf's reached families: none of them shares a joint guarantee with this clause, which promises one behaviour of its own and is recorded as a standalone invariant.",
+      "revision": 1,
+      "subject": "membership:INV-3PV53M"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4PRH3D",
+      "items": [
+        "sha256:9114d638bdf9e2add55de1a95eb3837f07a6c29da9b1893b9da893f823ecc32b"
+      ],
+      "reason": "Checked against the leaf's records: the turn-end drain, the held-receipt queue and its rotating slice, the timeline reconciliation before a resend, the paused-drain line and the part boundary are carried by rule 1, rule 3 and rule 5 realizations; no new obligation is created here.",
+      "subject": "hunk:sha256:9114d638bdf9e2add55de1a95eb3837f07a6c29da9b1893b9da893f823ecc32b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-54JBC0",
+      "items": [
+        "sha256:d3617b7ef2206273419b3d234e0f98a4fef817798a59ab9972855c0b5a1c9790"
+      ],
+      "reason": "Checked against the leaf's records: the turn-end drain, the held-receipt queue and its rotating slice, the timeline reconciliation before a resend, the paused-drain line and the part boundary are carried by rule 1, rule 3 and rule 5 realizations; no new obligation is created here.",
+      "subject": "hunk:sha256:d3617b7ef2206273419b3d234e0f98a4fef817798a59ab9972855c0b5a1c9790"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5AV5NE",
+      "items": [
+        "sha256:bbf365d3166e2b47f74a4c20c78a486ae325e6eca31e36143ce6eb75d3e7ea5b"
+      ],
+      "reason": "Checked: the hunks are the cases proving rules 2, 3, 4 and 7 (hold, single copy, answered batch, steer-or-hold); they add evidence, not a new obligation.",
+      "subject": "hunk:sha256:bbf365d3166e2b47f74a4c20c78a486ae325e6eca31e36143ce6eb75d3e7ea5b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5CK1AX",
+      "items": [
+        "sha256:fe966a15f6230495a28b409c442c50745da9430c739f26210b17a68fbaefe9e6"
+      ],
+      "reason": "Checked against the leaf's records: the hold-versus-send decision, the plain replacement answer and the answered held batch are carried by rule 2 and rule 4 realizations; nothing else in the file changes meaning.",
+      "subject": "hunk:sha256:fe966a15f6230495a28b409c442c50745da9430c739f26210b17a68fbaefe9e6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5H2A9G",
+      "items": [
+        "sha256:eb72a356db5108f076f3d952bf1fa20639323b39eb8cdff7d8aa0c49f8ef17cd"
+      ],
+      "reason": "Checked: the first-message case now asserts the send shape rule 2 requires; the change answers L171-F06.",
+      "subject": "hunk:sha256:eb72a356db5108f076f3d952bf1fa20639323b39eb8cdff7d8aa0c49f8ef17cd"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-5NMTFE",
+      "items": [
+        "sha256:9316806f61a567f622823bd9f44eb581a82b13b921f64240eb6928b6f9ceaf9b"
+      ],
+      "reason": "Reviewed: the serving route's ownership and lifetime statements stay true; the new tick is named in the lifespan card.",
+      "sources": [
+        {
+          "blob": "4a53276d7da469e7c756e76be23652dbf745dd56",
+          "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5T7QZ7",
+      "items": [
+        "sha256:7ceb576f86aad5fbda6e06aabcb230b75958c7a38a403480c13a805af0578239"
+      ],
+      "reason": "The card's evidence now covers the steer-or-hold script cases and the absent active-turn behaviour.",
+      "sources": [
+        {
+          "blob": "06c3070bde6a41b5947871dd5dd0becffc76f2a6",
+          "path": "mcp/tests/test_paseo_role_bridge.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_paseo_role_bridge.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6J9XZG",
+      "items": [
+        "sha256:3dbfd667d24f7eedb447aae92154ffa10367505ff5ec1a74be50de51613f3139"
+      ],
+      "reason": "Checked: the hunks remove the uncalled duplicate delivery path rule 6 names; the shared helpers keep their existing contract, and no invariant text changes because of the removal.",
+      "subject": "hunk:sha256:3dbfd667d24f7eedb447aae92154ffa10367505ff5ec1a74be50de51613f3139"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-6T4Z1Z",
+      "items": [
+        "sha256:918ccc4f8176249d2001c08cbaf07082c82ea173e0fad181165ab791dc520f9a"
+      ],
+      "reason": "The first-message test now asserts the M4-04 send shape the bridge actually performs.",
+      "sources": [
+        {
+          "blob": "77be2d00b8e5dbb6da386d3a47a790b6d51184c8",
+          "path": "mcp/tests/test_paseo_bridge_agents.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_paseo_bridge_agents.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-72PVT1",
+      "items": [
+        "sha256:1bfbe5ddb79a3ba7cf845ccfcaea633509a15addd412117fcdf3541352b0acf9"
+      ],
+      "reason": "Checked: the hunks are the cases proving rules 1, 5 and 7 (turn-end delivery, bounded rotation, paused-drain line, receipt count); they add evidence, not a new obligation.",
+      "subject": "hunk:sha256:1bfbe5ddb79a3ba7cf845ccfcaea633509a15addd412117fcdf3541352b0acf9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-75XHFG",
+      "items": [
+        "sha256:eb08cbb297b4375cb03461ffd4e23dfd8047820c46faf08a50b98723a610f585"
+      ],
+      "reason": "Checked: the hunks replace the steer-only script expectations with the steer-or-hold decision rule 2 states; they are evidence for that clause.",
+      "subject": "hunk:sha256:eb08cbb297b4375cb03461ffd4e23dfd8047820c46faf08a50b98723a610f585"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-76E6PY",
+      "items": [
+        "sha256:beb8bbde89be8b4d279358008ff97a06c2fe9d8cd83d703bc5e2313380f9bd4a"
+      ],
+      "reason": "Checked: the hunks remove the uncalled duplicate delivery path rule 6 names; the shared helpers keep their existing contract, and no invariant text changes because of the removal.",
+      "subject": "hunk:sha256:beb8bbde89be8b4d279358008ff97a06c2fe9d8cd83d703bc5e2313380f9bd4a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7BAE9J",
+      "items": [
+        "sha256:3453e75302f7df0ed080704a3eb32339944e48a126f637c3f3d9485749f2be5c"
+      ],
+      "reason": "Checked against the leaf's records: the hold-versus-send decision, the plain replacement answer and the answered held batch are carried by rule 2 and rule 4 realizations; nothing else in the file changes meaning.",
+      "subject": "hunk:sha256:3453e75302f7df0ed080704a3eb32339944e48a126f637c3f3d9485749f2be5c"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-7BT0RQ",
+      "items": [
+        "sha256:303e8def883c7e720430e5eea93be497b0cd48f130874621fda42e27eab7dabb"
+      ],
+      "reason": "The uncalled duplicate delivery is gone: the card no longer describes retained private `_deliver`/`_send` routines as present, and states the shared helpers the composed facade actually selects.",
+      "sources": [
+        {
+          "blob": "ec9afaf7463245dfaa02ae7d023c376b6570d073",
+          "path": "mcp/src/agents_remember/cli/role_message_delivery.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_message_delivery.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7JJK2C",
+      "items": [
+        "sha256:e372fe71b2d106ff482e7e75f3992cd1072c2f35ed0f5fc71bfb737d8ad7cc5b"
+      ],
+      "reason": "Checked against the leaf's records: the hold-versus-send decision, the plain replacement answer and the answered held batch are carried by rule 2 and rule 4 realizations; nothing else in the file changes meaning.",
+      "subject": "hunk:sha256:e372fe71b2d106ff482e7e75f3992cd1072c2f35ed0f5fc71bfb737d8ad7cc5b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7QQKJ5",
+      "items": [
+        "sha256:2504e80fe13d8c929516ad0fadc65829ac4a0148794a5a579a8f5d8ab505ba75"
+      ],
+      "reason": "Checked against the leaf's records: the turn-end drain, the held-receipt queue and its rotating slice, the timeline reconciliation before a resend, the paused-drain line and the part boundary are carried by rule 1, rule 3 and rule 5 realizations; no new obligation is created here.",
+      "subject": "hunk:sha256:2504e80fe13d8c929516ad0fadc65829ac4a0148794a5a579a8f5d8ab505ba75"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7RAVJ5",
+      "items": [
+        "sha256:d2ab4d2499676e2731bef02c67d544b3282155eb36bbd3f75e50cf5302bbf693"
+      ],
+      "reason": "Checked: the hunks replace the steer-only script expectations with the steer-or-hold decision rule 2 states; they are evidence for that clause.",
+      "subject": "hunk:sha256:d2ab4d2499676e2731bef02c67d544b3282155eb36bbd3f75e50cf5302bbf693"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7W1DKD",
+      "items": [
+        "sha256:8049bde8a1c4520c3b95587e80315d9f998e0868058d903156302e85750f3cf7"
+      ],
+      "reason": "Checked against the leaf's records: the hold-versus-send decision, the plain replacement answer and the answered held batch are carried by rule 2 and rule 4 realizations; nothing else in the file changes meaning.",
+      "subject": "hunk:sha256:8049bde8a1c4520c3b95587e80315d9f998e0868058d903156302e85750f3cf7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7Z91BY",
+      "items": [
+        "sha256:a16bf923bfba884b8a77198ccf1778e5117597eca1a8b5927839902151ffc1db"
+      ],
+      "reason": "Checked: the hunks are the cases proving rules 1, 5 and 7 (turn-end delivery, bounded rotation, paused-drain line, receipt count); they add evidence, not a new obligation.",
+      "subject": "hunk:sha256:a16bf923bfba884b8a77198ccf1778e5117597eca1a8b5927839902151ffc1db"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-822NPM",
+      "items": [
+        "sha256:ce3a221e806fa29eba36b2639ff6318b07cd1d89c4e360e473491c96675eae2e"
+      ],
+      "reason": "Reviewed: the card's current contract still holds for this route; nothing in the change alters what it states.",
+      "sources": [
+        {
+          "blob": "72eb3bf450d12e38de9fdbb8d59d1285bc4192ec",
+          "path": "mcp/src/agents_remember/models/role_agents.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-83TNH5",
+      "items": [
+        "sha256:2d63f7386bb2ded0ceee2f3a91e653dcb8bc21462fec338221ef6f1e3f868780"
+      ],
+      "reason": "Checked: the hunks start the held-delivery tick and its two cadences under the existing ledger accounting; the delivery obligation is carried by rule 1's realizations.",
+      "subject": "hunk:sha256:2d63f7386bb2ded0ceee2f3a91e653dcb8bc21462fec338221ef6f1e3f868780"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-86FX53",
+      "items": [
+        "sha256:90d60f8939b834de711c24f2ab142369cd6bbc3f7da7fb3587df0f27f99e6e80"
+      ],
+      "reason": "Checked: the hunks are the cases proving rules 2, 3, 4 and 7 (hold, single copy, answered batch, steer-or-hold); they add evidence, not a new obligation.",
+      "subject": "hunk:sha256:90d60f8939b834de711c24f2ab142369cd6bbc3f7da7fb3587df0f27f99e6e80"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8BJWMB",
+      "items": [
+        "sha256:6efa18094229f1373eb1629911b636b50dd7640ca60e52a1829cdbb19ddcfd30"
+      ],
+      "reason": "Checked against the leaf's records: the hold-versus-send decision, the plain replacement answer and the answered held batch are carried by rule 2 and rule 4 realizations; nothing else in the file changes meaning.",
+      "subject": "hunk:sha256:6efa18094229f1373eb1629911b636b50dd7640ca60e52a1829cdbb19ddcfd30"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8FBDY2",
+      "items": [
+        "sha256:471699771c62baa31c5b58b78c04c90afc2a17881bd78392c46f4a8cb81661ca"
+      ],
+      "reason": "Checked: the hunks are the cases proving rules 2, 3, 4 and 7 (hold, single copy, answered batch, steer-or-hold); they add evidence, not a new obligation.",
+      "subject": "hunk:sha256:471699771c62baa31c5b58b78c04c90afc2a17881bd78392c46f4a8cb81661ca"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8XBJTT",
+      "items": [
+        "sha256:27f65802e514cae48daa8bc60145eb9fe496c9fed1887a091e5a7820da58a974"
+      ],
+      "reason": "Checked against the leaf's records: the turn-end drain, the held-receipt queue and its rotating slice, the timeline reconciliation before a resend, the paused-drain line and the part boundary are carried by rule 1, rule 3 and rule 5 realizations; no new obligation is created here.",
+      "subject": "hunk:sha256:27f65802e514cae48daa8bc60145eb9fe496c9fed1887a091e5a7820da58a974"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8YCGG1",
+      "items": [
+        "sha256:487607ba05433268658f60ea5b1cc9ce2c722fe2afb535042765c7967735745f"
+      ],
+      "reason": "Checked: the hunks remove the uncalled duplicate delivery path rule 6 names; the shared helpers keep their existing contract, and no invariant text changes because of the removal.",
+      "subject": "hunk:sha256:487607ba05433268658f60ea5b1cc9ce2c722fe2afb535042765c7967735745f"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "72eb3bf450d12e38de9fdbb8d59d1285bc4192ec",
+            "content": "sha256:47560c27a0b34781cde6ba234f500155afcf4dae466a0bc502641cbbf8222cdc",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleMessageResponse"
+            },
+            "path": "mcp/src/agents_remember/models/role_agents.py"
+          },
+          "before": {
+            "blob": "105a8bb1e9f5f0acd686f6aaa584300aad0313db",
+            "content": "sha256:92235b745ebbe236e99c4f26631380d9cba61ec3e64213e2c3dd8f93a9272538",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleMessageResponse"
+            },
+            "path": "mcp/src/agents_remember/models/role_agents.py"
+          },
+          "id": "RLZ-PCPVCG"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-8YJZ52",
+      "items": [
+        "sha256:8fc7aa34c0e35642a9beb8ba7fcd4bc69ac44a78c0f9f3227bb9a00b65aaa967"
+      ],
+      "reason": "The realization rationale is corrected: the composed held producer keeps the turn id inside SentMessage for waiting and never exposes it in the public result, so this DTO declares its listed message/held fields and the reported replacement value without a turnId.",
+      "revision": 1,
+      "subject": "INV-XZ766Y"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8Z9YMH",
+      "items": [
+        "sha256:0e45e0cff7535fa35684e3a1cdc7aae3cf73c5d604df38d1f566b9bb1ae076b7"
+      ],
+      "reason": "Checked against the leaf's records: the turn-end drain, the held-receipt queue and its rotating slice, the timeline reconciliation before a resend, the paused-drain line and the part boundary are carried by rule 1, rule 3 and rule 5 realizations; no new obligation is created here.",
+      "subject": "hunk:sha256:0e45e0cff7535fa35684e3a1cdc7aae3cf73c5d604df38d1f566b9bb1ae076b7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-91WTJH",
+      "items": [
+        "sha256:91ba358ad9b7f64e67e7c9819f832ec0c3b8352af9622a5c3a3bb3b8369a0cb9"
+      ],
+      "reason": "Checked: the hunks remove the uncalled duplicate delivery path rule 6 names; the shared helpers keep their existing contract, and no invariant text changes because of the removal.",
+      "subject": "hunk:sha256:91ba358ad9b7f64e67e7c9819f832ec0c3b8352af9622a5c3a3bb3b8369a0cb9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9D0BGR",
+      "items": [
+        "sha256:6e9896e0c5a1069d4f3c2f7d27c223ff70007c2d121452507315f0bdb977a20e"
+      ],
+      "reason": "Checked: the hunks remove the uncalled duplicate delivery path rule 6 names; the shared helpers keep their existing contract, and no invariant text changes because of the removal.",
+      "subject": "hunk:sha256:6e9896e0c5a1069d4f3c2f7d27c223ff70007c2d121452507315f0bdb977a20e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9MQZX0",
+      "items": [
+        "sha256:e7b0ee04416331b0717df9ad2b29e724ae3e3f651a645b837e414ac5f2826dee"
+      ],
+      "reason": "Checked against the leaf's records: the hold-versus-send decision, the plain replacement answer and the answered held batch are carried by rule 2 and rule 4 realizations; nothing else in the file changes meaning.",
+      "subject": "hunk:sha256:e7b0ee04416331b0717df9ad2b29e724ae3e3f651a645b837e414ac5f2826dee"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-A4H286",
+      "items": [
+        "sha256:0d9b5c46efb474e597e3e2c86f363de6d4d20bde5d0adb0665c9b9eae1f6e13b"
+      ],
+      "reason": "Checked: the hunks are the cases proving rules 2, 3, 4 and 7 (hold, single copy, answered batch, steer-or-hold); they add evidence, not a new obligation.",
+      "subject": "hunk:sha256:0d9b5c46efb474e597e3e2c86f363de6d4d20bde5d0adb0665c9b9eae1f6e13b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-A7N8T1",
+      "items": [
+        "sha256:0c6a52a174856fe7f096b72a2e7973af388b110320737ea76c1381d2bf534d99"
+      ],
+      "reason": "Checked against the leaf's records: the turn-end drain, the held-receipt queue and its rotating slice, the timeline reconciliation before a resend, the paused-drain line and the part boundary are carried by rule 1, rule 3 and rule 5 realizations; no new obligation is created here.",
+      "subject": "hunk:sha256:0c6a52a174856fe7f096b72a2e7973af388b110320737ea76c1381d2bf534d99"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-A8HRHH",
+      "items": [
+        "sha256:95510387e5f706acba2deca414b169bbef52d1a04e0964ea8cbb3ad6625dd3b0"
+      ],
+      "reason": "Checked against the leaf's records: the turn-end drain, the held-receipt queue and its rotating slice, the timeline reconciliation before a resend, the paused-drain line and the part boundary are carried by rule 1, rule 3 and rule 5 realizations; no new obligation is created here.",
+      "subject": "hunk:sha256:95510387e5f706acba2deca414b169bbef52d1a04e0964ea8cbb3ad6625dd3b0"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-A90VEW",
+      "items": [
+        "sha256:6b2d07538d222b8a6cac03c91972137c77c9874177b20947e0381219281a6e4c"
+      ],
+      "reason": "Checked against the leaf's records: the turn-end drain, the held-receipt queue and its rotating slice, the timeline reconciliation before a resend, the paused-drain line and the part boundary are carried by rule 1, rule 3 and rule 5 realizations; no new obligation is created here.",
+      "subject": "hunk:sha256:6b2d07538d222b8a6cac03c91972137c77c9874177b20947e0381219281a6e4c"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b20f555dd03b92dcc6704a9fb8c94ceb1e389cd1",
+            "content": "sha256:7b5071f64bf3e66e005d048fe1f9a292f5917e5545f7fb689247190c6356d33b",
+            "locator": {
+              "kind": "symbol",
+              "name": "sender_line"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+          },
+          "before": {
+            "blob": "37290aaa6b6611755ea8749e5de9e8fb7ffca04c",
+            "content": "sha256:7b5071f64bf3e66e005d048fe1f9a292f5917e5545f7fb689247190c6356d33b",
+            "locator": {
+              "kind": "symbol",
+              "name": "sender_line"
+            },
+            "path": "mcp/src/agents_remember/cli/role_message_delivery.py"
+          },
+          "id": "RLZ-S0SZP3"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-AF9T8W",
+      "items": [
+        "sha256:37de384f134ae974048f72316c9b6dd2ec734be9c70bf7d5b12484a26c021516"
+      ],
+      "reason": "Reviewed: the wake line and its file/hash pointer are untouched. Its realization moved with the surviving module: `sender_line` now lives in paseo_role_tools, and the removed duplicate delivery no longer carries a copy.",
+      "revision": 1,
+      "subject": "INV-VH983B"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-MGGEBY",
+          "revision": 1
+        },
+        {
+          "id": "INV-VDWN33",
+          "revision": 1
+        },
+        {
+          "id": "INV-WQ8YGE",
+          "revision": 2
+        },
+        {
+          "id": "INV-X0KED3",
+          "revision": 2
+        },
+        {
+          "id": "INV-XZYGEB",
+          "revision": 2
+        },
+        {
+          "id": "INV-YK0D2W",
+          "revision": 1
+        },
+        {
+          "id": "INV-Z0BXKJ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-AQ16Q2",
+      "items": [
+        "sha256:5aba27f35f82cb5529e3d9af376aca913b8cf401f1822b1cd3c18683879daec3"
+      ],
+      "reason": "Reviewed: the host-entry family keeps its guarantee; this change reads the publication and adds no second intake. The member revisions it examines are re-read after the clause correction.",
+      "revision": 2,
+      "subject": "FAM-14NZRC"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-AQ7NAR",
+      "items": [
+        "sha256:8afa8943d66bad3883f2ab99ea6ec0dcfa07488de1197fd37d79f2f9a6b8821f"
+      ],
+      "reason": "Checked: the hunks are the cases proving rules 2, 3, 4 and 7 (hold, single copy, answered batch, steer-or-hold); they add evidence, not a new obligation.",
+      "subject": "hunk:sha256:8afa8943d66bad3883f2ab99ea6ec0dcfa07488de1197fd37d79f2f9a6b8821f"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "6be657f93ffe8567fb2696c63201120251c1fea4",
+            "content": "sha256:c7f86b3d48bf1f9bab0b3f4992ee6cbc96cae4379054378a1b80c631abb1a8db",
+            "locator": {
+              "kind": "symbol",
+              "name": "HeldQueueRecoveryTests.test_variable_lengths_split_into_the_minimum_two_deliveries"
+            },
+            "path": "mcp/tests/test_held_queue.py"
+          },
+          "before": {
+            "blob": "17545da627e57225b95ef861aa8bd594bbabdd45",
+            "content": "sha256:ba12b3c15f346d4335f0ca3aebc3e88bdf4238b989ca64821650dabc2f90b7fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "HeldQueueRecoveryTests.test_variable_lengths_split_into_the_minimum_two_deliveries"
+            },
+            "path": "mcp/tests/test_held_queue.py"
+          },
+          "id": "PRF-H3ACQA"
+        },
+        {
+          "after": {
+            "blob": "4a6fe8b36abe6236b7ff925a4a4da4019fef0949",
+            "content": "sha256:f0ab63ad221fad88615e7e1e89220f57324a014f7fb591f16e2254735f703c8b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_deliver_waiting"
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "before": {
+            "blob": "40dc59696c90511ab0a56b5166cdc99ea059475a",
+            "content": "sha256:0b9f1c118723f43006c4966af5cfe7188ea8bd46af5125ef0933237c49bd92f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_deliver_waiting"
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "id": "RLZ-5S4KME"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-AR60C6",
+      "items": [
+        "sha256:6cf2d8b46696b4f6d45aa056c594bd4cb95cbdad835c3b2e3a9a890ae6ccfd6a"
+      ],
+      "reason": "Reviewed: the size-limit partition rule is untouched and its parts still travel under the stored ids.",
+      "revision": 1,
+      "subject": "INV-Y1SDE2"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ARV72W",
+      "items": [
+        "sha256:baa7fd033053125607fc06cd5370c1a9849b1fccf005a0013aed51ee261f4dbf"
+      ],
+      "reason": "Checked against the leaf's records: the hold-versus-send decision, the plain replacement answer and the answered held batch are carried by rule 2 and rule 4 realizations; nothing else in the file changes meaning.",
+      "subject": "hunk:sha256:baa7fd033053125607fc06cd5370c1a9849b1fccf005a0013aed51ee261f4dbf"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ATTFBY",
+      "items": [
+        "sha256:ae9b5d96206c0d1683613afba0be8ab8e68af466c0a153f214807c0fe3a816a5"
+      ],
+      "reason": "Checked: the hunks are the cases proving rules 2, 3, 4 and 7 (hold, single copy, answered batch, steer-or-hold); they add evidence, not a new obligation.",
+      "subject": "hunk:sha256:ae9b5d96206c0d1683613afba0be8ab8e68af466c0a153f214807c0fe3a816a5"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-B1J3RF",
+      "items": [
+        "sha256:928c614b418c1c86181cfcb8d5ecea4d5b3209bea906f5e1c9696703af1ea36e"
+      ],
+      "reason": "The role-tools trace is rebound to the repaired source blob: the shared replacement warning now names the cancellation, and the card says so.",
+      "sources": [
+        {
+          "blob": "b20f555dd03b92dcc6704a9fb8c94ceb1e389cd1",
+          "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/paseo_role_tools.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BF4AGX",
+      "items": [
+        "sha256:38c588eeb7931e6e53531671ae1ab88179a945469d9a06808ff651ac78c7f022"
+      ],
+      "reason": "Checked: the hunks replace the steer-only script expectations with the steer-or-hold decision rule 2 states; they are evidence for that clause.",
+      "subject": "hunk:sha256:38c588eeb7931e6e53531671ae1ab88179a945469d9a06808ff651ac78c7f022"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BK6C39",
+      "items": [
+        "sha256:0aa4ace139935b7f2162262ef0e00885ec424e42ddf81ff0f527271edb71dc36"
+      ],
+      "reason": "Checked against the leaf's records: the turn-end drain, the held-receipt queue and its rotating slice, the timeline reconciliation before a resend, the paused-drain line and the part boundary are carried by rule 1, rule 3 and rule 5 realizations; no new obligation is created here.",
+      "subject": "hunk:sha256:0aa4ace139935b7f2162262ef0e00885ec424e42ddf81ff0f527271edb71dc36"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BK9XR3",
+      "items": [
+        "sha256:1fcb1fd047e2c9c69df66b9b0919d2cbe0647c3d9f0059ec057c1a8cbd3bb645"
+      ],
+      "reason": "Checked against the leaf's records: the hold-versus-send decision, the plain replacement answer and the answered held batch are carried by rule 2 and rule 4 realizations; nothing else in the file changes meaning.",
+      "subject": "hunk:sha256:1fcb1fd047e2c9c69df66b9b0919d2cbe0647c3d9f0059ec057c1a8cbd3bb645"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-C07N4Q",
+      "items": [
+        "sha256:8e7eb840b2fa18dfe0d48f742abd40de1947cba1ae49bb482b3ab40a122b8c81"
+      ],
+      "reason": "Checked against the leaf's records: the hold-versus-send decision, the plain replacement answer and the answered held batch are carried by rule 2 and rule 4 realizations; nothing else in the file changes meaning.",
+      "subject": "hunk:sha256:8e7eb840b2fa18dfe0d48f742abd40de1947cba1ae49bb482b3ab40a122b8c81"
+    },
+    {
+      "considered": [],
+      "disposition": "no_family",
+      "id": "ROW-C2TRVF",
+      "items": [
+        "sha256:5f86063cc0e9ede61a78f68f25cb2f42a67e8c8b06db14278d5bfd1913854e71"
+      ],
+      "reason": "Examined FAM-S140B6: the stored revision admits an admitted native held FIFO batch and its bounded, ordered recovery; this clause's promise is recorded as its own invariant and the stored family revision was left unchanged, because a successor declaration extending its member set is a separate authored act this leaf did not perform.",
+      "revision": 1,
+      "subject": "membership:INV-18M0W3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CB4Y80",
+      "items": [
+        "sha256:7a43b48306de83496b00de520c62478c879703c4263cbd581f3b89225ac1495c"
+      ],
+      "reason": "Checked: the hunks keep the facade's message-flow expectations in step with the hold and delivery answers; they are evidence, not a new obligation.",
+      "subject": "hunk:sha256:7a43b48306de83496b00de520c62478c879703c4263cbd581f3b89225ac1495c"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "examined": [
+        {
+          "id": "INV-0EASG7",
+          "revision": 1
+        },
+        {
+          "id": "INV-68QN0P",
+          "revision": 1
+        },
+        {
+          "id": "INV-A0240E",
+          "revision": 1
+        },
+        {
+          "id": "INV-BS7TH8",
+          "revision": 1
+        },
+        {
+          "id": "INV-VZJRTM",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-CCN8PE",
+      "items": [
+        "sha256:47e2ec6193fcc972ec891b5ff194bc696dee85a0acf8a247e95711819415a873"
+      ],
+      "reason": "The reached family gains INV-0EASG7 as a member with its current row.",
+      "revision": 1,
+      "subject": "FAM-3NG1K9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CDFA3R",
+      "items": [
+        "sha256:1cc8b8e6fac174d5fd857ec38ac515dbfdd20c3e21f9f57072ce7c42200f31ae"
+      ],
+      "reason": "Checked against the leaf's records: the turn-end drain, the held-receipt queue and its rotating slice, the timeline reconciliation before a resend, the paused-drain line and the part boundary are carried by rule 1, rule 3 and rule 5 realizations; no new obligation is created here.",
+      "subject": "hunk:sha256:1cc8b8e6fac174d5fd857ec38ac515dbfdd20c3e21f9f57072ce7c42200f31ae"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CQ7S0Q",
+      "items": [
+        "sha256:68aebc3a11b9a9e478d0e56d86db1561ad58a5e4c900d760ddf5e046a26390dd"
+      ],
+      "reason": "Checked against the leaf's records: the turn-end drain, the held-receipt queue and its rotating slice, the timeline reconciliation before a resend, the paused-drain line and the part boundary are carried by rule 1, rule 3 and rule 5 realizations; no new obligation is created here.",
+      "subject": "hunk:sha256:68aebc3a11b9a9e478d0e56d86db1561ad58a5e4c900d760ddf5e046a26390dd"
+    },
+    {
+      "covers": [
+        {
+          "after": "absent",
+          "before": {
+            "blob": "69ed8af35d0b9bfbe4ce42d96c344fe83a60a494",
+            "content": "sha256:c209c96391c58d7bf0dd7a77db0a2facf067b43429683348fa3763ed4cae322e",
+            "locator": {
+              "kind": "symbol",
+              "name": "InvestigatorTests.test_message_new_turn_obeys_capacity_before_delivery_and_resume"
+            },
+            "path": "mcp/tests/test_investigator.py"
+          },
+          "id": "PRF-92G0HP"
+        },
+        {
+          "after": {
+            "blob": "4683461b2130843a33bcc5bbe506d0b08e08bfc4",
+            "content": "sha256:58e6006b9b740f31007416ab38a27bd5a050c95cbb2219a6a460178cc5bd3e62",
+            "locator": {
+              "kind": "symbol",
+              "name": "InvestigatorTests.test_message_new_turn_obeys_capacity_before_delivery_and_resume"
+            },
+            "path": "mcp/tests/test_investigator.py"
+          },
+          "before": "absent",
+          "id": "PRF-AY6JRN"
+        },
+        {
+          "after": {
+            "blob": "b20f555dd03b92dcc6704a9fb8c94ceb1e389cd1",
+            "content": "sha256:35d445b9fbcf93f458571be8f1390bc1608b893aa8f8d362f1414820e2be1fb6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_deliver"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+          },
+          "before": {
+            "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
+            "content": "sha256:be483005f08cd68788ef4e585defc960e7a279129a0122fa2689400717fb478f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_deliver"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+          },
+          "id": "RLZ-SGCSYP"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-CQE73F",
+      "items": [
+        "sha256:7d93384012a8beeb3cb6ab78f59cb8086bd048b809dc12c8cd19c7959f5c042a"
+      ],
+      "reason": "The replacement proof joins the invariant, the steering-claim proof is removed, and the row covers the invariant's remaining realization.",
+      "revision": 1,
+      "subject": "INV-0EASG7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CWVX57",
+      "items": [
+        "sha256:fc9474a8668c00036263625570aea89caa6ad80b83e2c0d904e7232e2f9e0641"
+      ],
+      "reason": "Checked: the hunks are the cases proving rules 2, 3, 4 and 7 (hold, single copy, answered batch, steer-or-hold); they add evidence, not a new obligation.",
+      "subject": "hunk:sha256:fc9474a8668c00036263625570aea89caa6ad80b83e2c0d904e7232e2f9e0641"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CXNZPZ",
+      "items": [
+        "sha256:b574fb773818f15b814e1ddf9c63f61cbcd3a617692d924fb455f931f1ce203a"
+      ],
+      "reason": "Checked: the hunks are the cases proving rules 1, 5 and 7 (turn-end delivery, bounded rotation, paused-drain line, receipt count); they add evidence, not a new obligation.",
+      "subject": "hunk:sha256:b574fb773818f15b814e1ddf9c63f61cbcd3a617692d924fb455f931f1ce203a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DC94X5",
+      "items": [
+        "sha256:396174363184c4b6e20cf4c0eb85675a73a4d1dc6c68bc78c3f5fd4a42e9ed8f"
+      ],
+      "reason": "Checked: the hunks keep the facade's message-flow expectations in step with the hold and delivery answers; they are evidence, not a new obligation.",
+      "subject": "hunk:sha256:396174363184c4b6e20cf4c0eb85675a73a4d1dc6c68bc78c3f5fd4a42e9ed8f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DDGQDG",
+      "items": [
+        "sha256:62e60037dec6cbe5d7629722141de74cd84b41ab3f847dc4bc0c898f19a4dab0"
+      ],
+      "reason": "Checked: the hunks are the cases proving rules 2, 3, 4 and 7 (hold, single copy, answered batch, steer-or-hold); they add evidence, not a new obligation.",
+      "subject": "hunk:sha256:62e60037dec6cbe5d7629722141de74cd84b41ab3f847dc4bc0c898f19a4dab0"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DE2MP5",
+      "items": [
+        "sha256:af79cfe789c13cfad080b091393edadf3cea9d3fbef74ea8c4c5365b5b9b847c"
+      ],
+      "reason": "Checked: the hunks are the cases proving rules 1, 5 and 7 (turn-end delivery, bounded rotation, paused-drain line, receipt count); they add evidence, not a new obligation.",
+      "subject": "hunk:sha256:af79cfe789c13cfad080b091393edadf3cea9d3fbef74ea8c4c5365b5b9b847c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DEQEDT",
+      "items": [
+        "sha256:d023d2ed5f66e2388cfe9ad2823f9e345d886d7c343ff054551fd870b8cf64a8"
+      ],
+      "reason": "Checked: the hunk adds the reader the tool uses for a turn end and a running turn; it introduces no second intake, timer or status store, so no invariant text changes.",
+      "subject": "hunk:sha256:d023d2ed5f66e2388cfe9ad2823f9e345d886d7c343ff054551fd870b8cf64a8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DF83EM",
+      "items": [
+        "sha256:553639623e8140988b34a93606743c7ec0ac222d2fc4b47e912a4d3838bdade7"
+      ],
+      "reason": "Checked against the leaf's records: the turn-end drain, the held-receipt queue and its rotating slice, the timeline reconciliation before a resend, the paused-drain line and the part boundary are carried by rule 1, rule 3 and rule 5 realizations; no new obligation is created here.",
+      "subject": "hunk:sha256:553639623e8140988b34a93606743c7ec0ac222d2fc4b47e912a4d3838bdade7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DG5JGM",
+      "items": [
+        "sha256:c5f86ac5ab312ec92aa3ed3443b46b41dccc1fddee935bf185c7d1a28ed40450"
+      ],
+      "reason": "Checked against the leaf's records: the hold-versus-send decision, the plain replacement answer and the answered held batch are carried by rule 2 and rule 4 realizations; nothing else in the file changes meaning.",
+      "subject": "hunk:sha256:c5f86ac5ab312ec92aa3ed3443b46b41dccc1fddee935bf185c7d1a28ed40450"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DKXQ2K",
+      "items": [
+        "sha256:7acd7542fe1cbfafa36078c454c1f9f57abe0190e30e279a970b6e2819b92d86"
+      ],
+      "reason": "Checked: the hunks keep the facade's message-flow expectations in step with the hold and delivery answers; they are evidence, not a new obligation.",
+      "subject": "hunk:sha256:7acd7542fe1cbfafa36078c454c1f9f57abe0190e30e279a970b6e2819b92d86"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "4683461b2130843a33bcc5bbe506d0b08e08bfc4",
+            "content": "sha256:58e6006b9b740f31007416ab38a27bd5a050c95cbb2219a6a460178cc5bd3e62",
+            "locator": {
+              "kind": "symbol",
+              "name": "InvestigatorTests.test_message_new_turn_obeys_capacity_before_delivery_and_resume"
+            },
+            "path": "mcp/tests/test_investigator.py"
+          },
+          "before": {
+            "blob": "69ed8af35d0b9bfbe4ce42d96c344fe83a60a494",
+            "content": "sha256:c209c96391c58d7bf0dd7a77db0a2facf067b43429683348fa3763ed4cae322e",
+            "locator": {
+              "kind": "symbol",
+              "name": "InvestigatorTests.test_message_new_turn_obeys_capacity_before_delivery_and_resume"
+            },
+            "path": "mcp/tests/test_investigator.py"
+          },
+          "id": "PRF-8ZMK4K"
+        },
+        {
+          "after": {
+            "blob": "b20f555dd03b92dcc6704a9fb8c94ceb1e389cd1",
+            "content": "sha256:1993b985f3ef382c403e5dd3252aad3b7ca007a2082f21589f0c515078d9b7e7",
+            "locator": {
+              "end": 1680,
+              "kind": "line_range",
+              "start": 1583
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+          },
+          "before": {
+            "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
+            "content": "sha256:be483005f08cd68788ef4e585defc960e7a279129a0122fa2689400717fb478f",
+            "locator": {
+              "end": 1680,
+              "kind": "line_range",
+              "start": 1583
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+          },
+          "id": "RLZ-7MG9HB"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-DPHN8C",
+      "items": [
+        "sha256:d5368042abed625f85e7149c90649fdccf82043ceebb39c1cca35a58e2b60dc3"
+      ],
+      "reason": "Reviewed: the completed-Investigator turn rule is untouched.",
+      "revision": 1,
+      "subject": "INV-BS7TH8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DR21S1",
+      "items": [
+        "sha256:436da5344bb4de9098dddca472e1730882ccf33dba6f183eff0beb09fa9dd97f"
+      ],
+      "reason": "Checked: the hunks are the cases proving rules 2, 3, 4 and 7 (hold, single copy, answered batch, steer-or-hold); they add evidence, not a new obligation.",
+      "subject": "hunk:sha256:436da5344bb4de9098dddca472e1730882ccf33dba6f183eff0beb09fa9dd97f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-E127YX",
+      "items": [
+        "sha256:e30aadff4aafebe7a92d6f8ff453300239ca78d48acd49429eb55e34923b9f14"
+      ],
+      "reason": "Checked: the hunks start the held-delivery tick and its two cadences under the existing ledger accounting; the delivery obligation is carried by rule 1's realizations.",
+      "subject": "hunk:sha256:e30aadff4aafebe7a92d6f8ff453300239ca78d48acd49429eb55e34923b9f14"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-E3DG5S",
+      "items": [
+        "sha256:efacdc1a1fc29a24f12ba5aa9353152d18fde33faa95583d6f3196b38dc48708"
+      ],
+      "reason": "Checked: a new support module holding no tests; it carries no runtime promise.",
+      "subject": "hunk:sha256:efacdc1a1fc29a24f12ba5aa9353152d18fde33faa95583d6f3196b38dc48708"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EJBV5F",
+      "items": [
+        "sha256:8a359dea73d30888db410a6694b5356dc04952fccfe3c3fa77539b206b27f67a"
+      ],
+      "reason": "Checked: the hunks are the cases proving rules 2, 3, 4 and 7 (hold, single copy, answered batch, steer-or-hold); they add evidence, not a new obligation.",
+      "subject": "hunk:sha256:8a359dea73d30888db410a6694b5356dc04952fccfe3c3fa77539b206b27f67a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ER4WZV",
+      "items": [
+        "sha256:056e487a62f3fa80eefd9ff1c09280cd3a2261e8bc3919d3c912dc60d345c376"
+      ],
+      "reason": "Checked: the hunks are the cases proving rules 2, 3, 4 and 7 (hold, single copy, answered batch, steer-or-hold); they add evidence, not a new obligation.",
+      "subject": "hunk:sha256:056e487a62f3fa80eefd9ff1c09280cd3a2261e8bc3919d3c912dc60d345c376"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "4683461b2130843a33bcc5bbe506d0b08e08bfc4",
+            "content": "sha256:14bb2020a042321f0f0fe839da9760a69bed337b147354cf4343b593768d7d80",
+            "locator": {
+              "kind": "symbol",
+              "name": "InvestigatorTests.test_old_start_binding_address_report_and_replay_preserve_recorded_paths"
+            },
+            "path": "mcp/tests/test_investigator.py"
+          },
+          "before": {
+            "blob": "69ed8af35d0b9bfbe4ce42d96c344fe83a60a494",
+            "content": "sha256:a8a4b16f79bbcdecd306f8681732018ffc395b23b187741dde0e482742776cf7",
+            "locator": {
+              "kind": "symbol",
+              "name": "InvestigatorTests.test_old_start_binding_address_report_and_replay_preserve_recorded_paths"
+            },
+            "path": "mcp/tests/test_investigator.py"
+          },
+          "id": "PRF-7VAEMH"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-F5KQNH",
+      "items": [
+        "sha256:eaa82393af25b5080ec62723b72e01051d0608d19b9217db17f2bfffa51875d0"
+      ],
+      "reason": "Reviewed: the system-specialist spelling rule is untouched.",
+      "revision": 2,
+      "subject": "INV-S2SR50"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FRVNR0",
+      "items": [
+        "sha256:a4b0e57ffa6e8ebbc8cddb44dd0f2a6ba7a2dd156667142f48cc2f2ee071e547"
+      ],
+      "reason": "Checked: the hunks start the held-delivery tick and its two cadences under the existing ledger accounting; the delivery obligation is carried by rule 1's realizations.",
+      "subject": "hunk:sha256:a4b0e57ffa6e8ebbc8cddb44dd0f2a6ba7a2dd156667142f48cc2f2ee071e547"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FSJ947",
+      "items": [
+        "sha256:cdc7d843dec470ebaa52d139d4b4e9579d94f02a4e08fa39067747eb970a68af"
+      ],
+      "reason": "Checked: the hunks remove the uncalled duplicate delivery path rule 6 names; the shared helpers keep their existing contract, and no invariant text changes because of the removal.",
+      "subject": "hunk:sha256:cdc7d843dec470ebaa52d139d4b4e9579d94f02a4e08fa39067747eb970a68af"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FSP0WC",
+      "items": [
+        "sha256:accadfd7496bde6c4be649be07d2cba4519f6e209460c0cb2d331d2629dcb0e4"
+      ],
+      "reason": "The card's evidence now covers the turn-end, bounded-rotation and paused-drain cases the class holds.",
+      "sources": [
+        {
+          "blob": "6be657f93ffe8567fb2696c63201120251c1fea4",
+          "path": "mcp/tests/test_held_queue.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_held_queue.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "6be657f93ffe8567fb2696c63201120251c1fea4",
+            "content": "sha256:230c811d8596a9daeba0c27a483d7bab8cfdfd7590fb8a0b3b9e78edcabd0bae",
+            "locator": {
+              "kind": "symbol",
+              "name": "HeldQueueRecoveryTests.test_a_split_recovery_keeps_the_part_id_on_a_deduping_host"
+            },
+            "path": "mcp/tests/test_held_queue.py"
+          },
+          "before": {
+            "blob": "17545da627e57225b95ef861aa8bd594bbabdd45",
+            "content": "sha256:181e65b6ee43ce9d89d9002fc4a1244a6976d4168ca06d70dd5a68524ca7f5a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "HeldQueueRecoveryTests.test_a_split_recovery_keeps_the_part_id_on_a_deduping_host"
+            },
+            "path": "mcp/tests/test_held_queue.py"
+          },
+          "id": "PRF-E0ANR2"
+        },
+        {
+          "after": {
+            "blob": "4a6fe8b36abe6236b7ff925a4a4da4019fef0949",
+            "content": "sha256:f40bf3b8f8c87ac8444db0cb664ee5458a68150120125b5c9f475e31fa874e03",
+            "locator": {
+              "end": 315,
+              "kind": "line_range",
+              "start": 307
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "before": {
+            "blob": "40dc59696c90511ab0a56b5166cdc99ea059475a",
+            "content": "sha256:ed9ce56bda9d4dec77e6c06781d92e1aa03532d0061ce23e7fa857ab856a19b0",
+            "locator": {
+              "end": 829,
+              "kind": "line_range",
+              "start": 812
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "id": "RLZ-KV9BPM"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-FX8MH7",
+      "items": [
+        "sha256:57d538ac804833d60ba4eb18e5f8bc01cb0ee490bf3292900ce361bfe929fb2c"
+      ],
+      "reason": "The member-id anchor moves to the computation at combined_message_id; the row also covers the invariant's proof entry so it governs the whole set.",
+      "revision": 2,
+      "subject": "INV-PJA167"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-G9CKV8",
+      "items": [
+        "sha256:07d2186cc4d17d247a0e83eed1db0b7de46ae6a7d558dae9fee206b53e7af972"
+      ],
+      "reason": "Checked against the leaf's records: the turn-end drain, the held-receipt queue and its rotating slice, the timeline reconciliation before a resend, the paused-drain line and the part boundary are carried by rule 1, rule 3 and rule 5 realizations; no new obligation is created here.",
+      "subject": "hunk:sha256:07d2186cc4d17d247a0e83eed1db0b7de46ae6a7d558dae9fee206b53e7af972"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GDNGM5",
+      "items": [
+        "sha256:c86e82e93fe57b83bb03032413aeb414f63b9c752bb5340237ae42d9ed7101f2"
+      ],
+      "reason": "Checked against the leaf's records: the turn-end drain, the held-receipt queue and its rotating slice, the timeline reconciliation before a resend, the paused-drain line and the part boundary are carried by rule 1, rule 3 and rule 5 realizations; no new obligation is created here.",
+      "subject": "hunk:sha256:c86e82e93fe57b83bb03032413aeb414f63b9c752bb5340237ae42d9ed7101f2"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-GGPDE3",
+      "items": [
+        "sha256:32615260edd7c080a9951bd273d0c7b60accc2d751658a17c189c99dc4617370"
+      ],
+      "reason": "The card now states that the publication is read for the recipient's turn end and for a second view of a running turn, without becoming a second intake or a polling timer.",
+      "sources": [
+        {
+          "blob": "ca1ce27c37152b46f279a699a403f81d03935901",
+          "path": "mcp/src/agents_remember/serving/projections/host_activity.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/projections/host_activity.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GHA3S4",
+      "items": [
+        "sha256:6bc51331788577f6c177a54de1716df822861ef862eef564e7f21696900631b4"
+      ],
+      "reason": "Checked: the hunks keep the facade's message-flow expectations in step with the hold and delivery answers; they are evidence, not a new obligation.",
+      "subject": "hunk:sha256:6bc51331788577f6c177a54de1716df822861ef862eef564e7f21696900631b4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GJ74KJ",
+      "items": [
+        "sha256:2617709ebd7a0978ebab262c9d10d1810ff087e3bfac4ed40b2351323097390b"
+      ],
+      "reason": "Checked: the hunks are the cases proving rules 2, 3, 4 and 7 (hold, single copy, answered batch, steer-or-hold); they add evidence, not a new obligation.",
+      "subject": "hunk:sha256:2617709ebd7a0978ebab262c9d10d1810ff087e3bfac4ed40b2351323097390b"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-GNQAD6",
+      "items": [
+        "sha256:4bfd8d22663bfdf0e5fff738767b6d95731bc688a826ae8f5f326570099bf433"
+      ],
+      "reason": "The new support module is recorded as test support: it holds no tests and carries no runtime promise.",
+      "sources": [
+        {
+          "blob": "a00571a2c695cc0ce5d5cf48629187fe6ea2077f",
+          "path": "mcp/tests/paseo_launch_test_support.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/paseo_launch_test_support.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GSKXR6",
+      "items": [
+        "sha256:d22647421c4e036ae25ac217f8d02c0877657e6420c1bb29e54dccaa7d5c928b"
+      ],
+      "reason": "Checked against the leaf's records: the turn-end drain, the held-receipt queue and its rotating slice, the timeline reconciliation before a resend, the paused-drain line and the part boundary are carried by rule 1, rule 3 and rule 5 realizations; no new obligation is created here.",
+      "subject": "hunk:sha256:d22647421c4e036ae25ac217f8d02c0877657e6420c1bb29e54dccaa7d5c928b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HXXA0V",
+      "items": [
+        "sha256:9bc8d6b4963452ec5ed3532aeb3bbff576ba517604a12ea23a999baca5334e62"
+      ],
+      "reason": "Checked: the hunks start the held-delivery tick and its two cadences under the existing ledger accounting; the delivery obligation is carried by rule 1's realizations.",
+      "subject": "hunk:sha256:9bc8d6b4963452ec5ed3532aeb3bbff576ba517604a12ea23a999baca5334e62"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-J56WJF",
+      "items": [
+        "sha256:c90beb089d24f573b86c475c994eedcb45e99da3ecf9912a67f6ae5cb53a7a2b"
+      ],
+      "reason": "Checked: the hunks are the cases proving rules 2, 3, 4 and 7 (hold, single copy, answered batch, steer-or-hold); they add evidence, not a new obligation.",
+      "subject": "hunk:sha256:c90beb089d24f573b86c475c994eedcb45e99da3ecf9912a67f6ae5cb53a7a2b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JKCBX8",
+      "items": [
+        "sha256:984a6e608b7b6f3a7a32a4966474862d54e2421b13a2fdb9bcd04aea3e6d3136"
+      ],
+      "reason": "Checked against the leaf's records: the sidecar rewrite re-points six numeric anchors and changes no meaning; the moved and changed rows for INV-ATA2Z7, INV-TTYYP8 and INV-PJA167 carry every claim it touches.",
+      "subject": "hunk:sha256:984a6e608b7b6f3a7a32a4966474862d54e2421b13a2fdb9bcd04aea3e6d3136"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JQRXA7",
+      "items": [
+        "sha256:dcfe036afb2c479fbaaf908e756ad7ab8351635eba88d378097cecab6f032ef2"
+      ],
+      "reason": "Checked: the hunks are the cases proving rules 2, 3, 4 and 7 (hold, single copy, answered batch, steer-or-hold); they add evidence, not a new obligation.",
+      "subject": "hunk:sha256:dcfe036afb2c479fbaaf908e756ad7ab8351635eba88d378097cecab6f032ef2"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JS4NK3",
+      "items": [
+        "sha256:932341aac6ed9373a170d35ec0692577ca34d15e45afa2419249bf8b068ce18d"
+      ],
+      "reason": "Checked: the hunks are the cases proving rules 2, 3, 4 and 7 (hold, single copy, answered batch, steer-or-hold); they add evidence, not a new obligation.",
+      "subject": "hunk:sha256:932341aac6ed9373a170d35ec0692577ca34d15e45afa2419249bf8b068ce18d"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-K1DGTM",
+      "items": [
+        "sha256:1d19e82790c2a28643821dcb48aeef25c0566ce9af9fda01ede62a27088962ee"
+      ],
+      "reason": "Checked: the hunks replace the steer-only script expectations with the steer-or-hold decision rule 2 states; they are evidence for that clause.",
+      "subject": "hunk:sha256:1d19e82790c2a28643821dcb48aeef25c0566ce9af9fda01ede62a27088962ee"
+    },
+    {
+      "considered": [],
+      "disposition": "no_family",
+      "id": "ROW-K30DHS",
+      "items": [
+        "sha256:16b55f5e6eb754648a63aa5ae6ca78f92349d4e95ef73515a1c0861a70a27a29"
+      ],
+      "reason": "Examined FAM-S140B6: the stored revision admits an admitted native held FIFO batch and its bounded, ordered recovery; this clause's promise is recorded as its own invariant and the stored family revision was left unchanged, because a successor declaration extending its member set is a separate authored act this leaf did not perform.",
+      "revision": 1,
+      "subject": "membership:INV-4DQMNE"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KEYF37",
+      "items": [
+        "sha256:350b35b2b57530afcb9ff7ad7f7c8f69bd116e34ac553732e755399294e24894"
+      ],
+      "reason": "Checked: the hunks are the cases proving rules 2, 3, 4 and 7 (hold, single copy, answered batch, steer-or-hold); they add evidence, not a new obligation.",
+      "subject": "hunk:sha256:350b35b2b57530afcb9ff7ad7f7c8f69bd116e34ac553732e755399294e24894"
+    },
+    {
+      "considered": [],
+      "disposition": "no_family",
+      "id": "ROW-KGAWY7",
+      "items": [
+        "sha256:7c9db4d79f9a5868d3e22426db92ec6435902c5ba2812d0c8997a20471e9e2c1"
+      ],
+      "reason": "Examined FAM-S140B6: the stored revision admits an admitted native held FIFO batch and its bounded, ordered recovery; this clause's promise is recorded as its own invariant and the stored family revision was left unchanged, because a successor declaration extending its member set is a separate authored act this leaf did not perform.",
+      "revision": 1,
+      "subject": "membership:INV-SB6HQS"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "14e284444735ed4ed43101ca3775396ae4c53044",
+            "content": "sha256:b68ebb2a4cc01f25f38d1648145979d28ff8b4290c2edafee50d5aa57600c8f5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/role_launcher.py"
+          },
+          "before": {
+            "blob": "14e284444735ed4ed43101ca3775396ae4c53044",
+            "content": "sha256:b68ebb2a4cc01f25f38d1648145979d28ff8b4290c2edafee50d5aa57600c8f5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/role_launcher.py"
+          },
+          "id": "RLZ-7HQW7Z"
+        },
+        {
+          "after": {
+            "blob": "3229dfc038ca83b4aaf9202a78c610e19471c3c0",
+            "content": "sha256:a851beb609bd79ad68a6abc762ffed5ee4c38b83c17820b7f83df2a229d8ff08",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+          },
+          "before": {
+            "blob": "3033ec12e4c3c52a47055c386828f8e57f36ef9b",
+            "content": "sha256:e0af3874ea4771803b0f3dfe69e9bec4ec90d0925d11652a15ca62b118b229cc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+          },
+          "id": "RLZ-7J6Y4G"
+        },
+        {
+          "after": {
+            "blob": "6c5d030703b806f56bcd3589e5e715b3df06c01e",
+            "content": "sha256:869ba0e34d204f45aa60de6eddb1993abcb818aaee5acfd7127c836749ab75c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_launch_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "before": {
+            "blob": "6c5d030703b806f56bcd3589e5e715b3df06c01e",
+            "content": "sha256:869ba0e34d204f45aa60de6eddb1993abcb818aaee5acfd7127c836749ab75c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_launch_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "id": "RLZ-CCXPRM"
+        },
+        {
+          "after": {
+            "blob": "8a9a70a8d78188803743060a92166f0028b70d86",
+            "content": "sha256:cbf3f160756de1839dd4a7dfc62850475caaa39151e4de3d28ad0c5ded1df7c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_agent_selection"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "before": {
+            "blob": "8a9a70a8d78188803743060a92166f0028b70d86",
+            "content": "sha256:cbf3f160756de1839dd4a7dfc62850475caaa39151e4de3d28ad0c5ded1df7c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_agent_selection"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "id": "RLZ-SR53ZZ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-KJJ8XV",
+      "items": [
+        "sha256:12a8360f046a3fbb2f1f2843a3e7d97853afb1cfd73fc6d8b44a76521f7f09e3"
+      ],
+      "reason": "The whole-file realization is re-anchored after the launch comment stopped naming a harness; the entry keeps its id and its rationale still holds for the current bytes.",
+      "revision": 2,
+      "subject": "INV-AFTG56"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KPYRW0",
+      "items": [
+        "sha256:37d4770097ee934834e76966d9394f2cddc10d0c256d836f043039ad7478f241"
+      ],
+      "reason": "Checked: the hunks remove the uncalled duplicate delivery path rule 6 names; the shared helpers keep their existing contract, and no invariant text changes because of the removal.",
+      "subject": "hunk:sha256:37d4770097ee934834e76966d9394f2cddc10d0c256d836f043039ad7478f241"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KTYD1V",
+      "items": [
+        "sha256:d6ccb5b7afa09bdb645052eb3b1c5d6b79276145c6ad680714a277c445991df7"
+      ],
+      "reason": "Checked: the hunks keep the facade's message-flow expectations in step with the hold and delivery answers; they are evidence, not a new obligation.",
+      "subject": "hunk:sha256:d6ccb5b7afa09bdb645052eb3b1c5d6b79276145c6ad680714a277c445991df7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KXFT1P",
+      "items": [
+        "sha256:3e2c4ab3cc4ce37eabf86c8a796c19425a17f21f78c6632f059e13d93b659585"
+      ],
+      "reason": "Checked: the hunks start the held-delivery tick and its two cadences under the existing ledger accounting; the delivery obligation is carried by rule 1's realizations.",
+      "subject": "hunk:sha256:3e2c4ab3cc4ce37eabf86c8a796c19425a17f21f78c6632f059e13d93b659585"
+    },
+    {
+      "considered": [],
+      "disposition": "no_family",
+      "id": "ROW-KZMJBG",
+      "items": [
+        "sha256:df4f3c0eacc9f7a1ef9127fda4795b69cd1ff6e03f781f9136e018743aadd8c4"
+      ],
+      "reason": "Examined FAM-S140B6: the stored revision admits an admitted native held FIFO batch and its bounded, ordered recovery; this clause's promise is recorded as its own invariant and the stored family revision was left unchanged, because a successor declaration extending its member set is a separate authored act this leaf did not perform.",
+      "revision": 1,
+      "subject": "membership:INV-AMJAZT"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-M3T1XC",
+      "items": [
+        "sha256:dd123a517d42da31dcec5eee6f312b7069de13d9c2b6906b2c38b8f9c0e66aa1"
+      ],
+      "reason": "Checked: the hunks are the cases proving rules 2, 3, 4 and 7 (hold, single copy, answered batch, steer-or-hold); they add evidence, not a new obligation.",
+      "subject": "hunk:sha256:dd123a517d42da31dcec5eee6f312b7069de13d9c2b6906b2c38b8f9c0e66aa1"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MAMFP3",
+      "items": [
+        "sha256:850aaba7927e71f85e9973a34584d4b91ebbba748a9e65bab23862d9886934c2"
+      ],
+      "reason": "Checked: the hunks are the cases proving rules 2, 3, 4 and 7 (hold, single copy, answered batch, steer-or-hold); they add evidence, not a new obligation.",
+      "subject": "hunk:sha256:850aaba7927e71f85e9973a34584d4b91ebbba748a9e65bab23862d9886934c2"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MJWVNN",
+      "items": [
+        "sha256:eb4c2566176bf6b9468626e1ec3c67faaaecee912d8d9adfd2ec79855d81b17b"
+      ],
+      "reason": "Checked: the hunks are the cases proving rules 1, 5 and 7 (turn-end delivery, bounded rotation, paused-drain line, receipt count); they add evidence, not a new obligation.",
+      "subject": "hunk:sha256:eb4c2566176bf6b9468626e1ec3c67faaaecee912d8d9adfd2ec79855d81b17b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MVSSG4",
+      "items": [
+        "sha256:0c0ceec0d1d53937a17b0cdd50f18c397ef3ea5796a5199f30a599264aa0e678"
+      ],
+      "reason": "Checked: the hunks start the held-delivery tick and its two cadences under the existing ledger accounting; the delivery obligation is carried by rule 1's realizations.",
+      "subject": "hunk:sha256:0c0ceec0d1d53937a17b0cdd50f18c397ef3ea5796a5199f30a599264aa0e678"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-N1W0V6",
+      "items": [
+        "sha256:154056ef72fcfe964651d6ecdb30273b0f9361a4f2ed42ebaa119e64246c69c9"
+      ],
+      "reason": "Checked against the leaf's records: the turn-end drain, the held-receipt queue and its rotating slice, the timeline reconciliation before a resend, the paused-drain line and the part boundary are carried by rule 1, rule 3 and rule 5 realizations; no new obligation is created here.",
+      "subject": "hunk:sha256:154056ef72fcfe964651d6ecdb30273b0f9361a4f2ed42ebaa119e64246c69c9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-N4DDAJ",
+      "items": [
+        "sha256:1988090a1d4acc62629a7813eaee496b82e2e3f7c071a2a7b3ecb007073ca790"
+      ],
+      "reason": "Checked: the hunks remove the uncalled duplicate delivery path rule 6 names; the shared helpers keep their existing contract, and no invariant text changes because of the removal.",
+      "subject": "hunk:sha256:1988090a1d4acc62629a7813eaee496b82e2e3f7c071a2a7b3ecb007073ca790"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-NCK4HD",
+      "items": [
+        "sha256:752673e4b13166a8df7662dd6ff201f071d4274bab9469b89b2c4efade639df4"
+      ],
+      "reason": "Reviewed: the card's current contract still holds for this route; nothing in the change alters what it states.",
+      "sources": [
+        {
+          "blob": "4683461b2130843a33bcc5bbe506d0b08e08bfc4",
+          "path": "mcp/tests/test_investigator.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_investigator.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NJEVXV",
+      "items": [
+        "sha256:32e6490dc301bb8e30cc958f29f5d5b4490d7af0f8fa627b9de9d0604a092c77"
+      ],
+      "reason": "Checked: the hunks remove the uncalled duplicate delivery path rule 6 names; the shared helpers keep their existing contract, and no invariant text changes because of the removal.",
+      "subject": "hunk:sha256:32e6490dc301bb8e30cc958f29f5d5b4490d7af0f8fa627b9de9d0604a092c77"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NN2WDX",
+      "items": [
+        "sha256:961839091e28cdc13b544228686b8765dd036461a7330e983def84fc5625da88"
+      ],
+      "reason": "Checked against the leaf's records: the turn-end drain, the held-receipt queue and its rotating slice, the timeline reconciliation before a resend, the paused-drain line and the part boundary are carried by rule 1, rule 3 and rule 5 realizations; no new obligation is created here.",
+      "subject": "hunk:sha256:961839091e28cdc13b544228686b8765dd036461a7330e983def84fc5625da88"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NN6XTV",
+      "items": [
+        "sha256:d2b1f378c733b6d6038c55dc1e2dd71db626455493261f1d7fc76b4c6b7ca37b"
+      ],
+      "reason": "Checked: the hunks are the cases proving rules 2, 3, 4 and 7 (hold, single copy, answered batch, steer-or-hold); they add evidence, not a new obligation.",
+      "subject": "hunk:sha256:d2b1f378c733b6d6038c55dc1e2dd71db626455493261f1d7fc76b4c6b7ca37b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NWV76R",
+      "items": [
+        "sha256:552eedd4576528e973b9b08e1e43291e94ccd67315d45726bc6935a6ea685a0b"
+      ],
+      "reason": "Checked: the hunks are the cases proving rules 2, 3, 4 and 7 (hold, single copy, answered batch, steer-or-hold); they add evidence, not a new obligation.",
+      "subject": "hunk:sha256:552eedd4576528e973b9b08e1e43291e94ccd67315d45726bc6935a6ea685a0b"
+    },
+    {
+      "covers": [],
+      "disposition": "changed",
+      "effect": "retire",
+      "id": "ROW-P09MR2",
+      "items": [],
+      "reason": "This record stated a historical proof census of one attempt, not a continuing behavioural obligation. The accepted before/after and sandbox facts stay in the leaf's report and card evidence, and the record is retired rather than kept as a promise.",
+      "revision": 1,
+      "subject": "INV-3PV53M"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-P0GHK7",
+      "items": [
+        "sha256:a621267b2fe109b0c3ed7e7f3b1793b7841e3a1a8071fe189bd36ab071cb5567"
+      ],
+      "reason": "Checked against the leaf's records: the hold-versus-send decision, the plain replacement answer and the answered held batch are carried by rule 2 and rule 4 realizations; nothing else in the file changes meaning.",
+      "subject": "hunk:sha256:a621267b2fe109b0c3ed7e7f3b1793b7841e3a1a8071fe189bd36ab071cb5567"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-P17E62",
+      "items": [
+        "sha256:ecc9ae695e6ccd994095acd0a5d984747f1f093e438324add1bd423b920411ae"
+      ],
+      "reason": "Checked against the leaf's records: the turn-end drain, the held-receipt queue and its rotating slice, the timeline reconciliation before a resend, the paused-drain line and the part boundary are carried by rule 1, rule 3 and rule 5 realizations; no new obligation is created here.",
+      "subject": "hunk:sha256:ecc9ae695e6ccd994095acd0a5d984747f1f093e438324add1bd423b920411ae"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-P54V20",
+      "items": [
+        "sha256:0286725b7c81ceb41ef42a2f0dce0171a4d81112dd21154e3edc7e3149d9450c",
+        "sha256:23b3ad315fb063384bf2675e1811eeb24985661ec8cefff7aba16575c507fea3",
+        "sha256:396174363184c4b6e20cf4c0eb85675a73a4d1dc6c68bc78c3f5fd4a42e9ed8f",
+        "sha256:6bc51331788577f6c177a54de1716df822861ef862eef564e7f21696900631b4",
+        "sha256:7a43b48306de83496b00de520c62478c879703c4263cbd581f3b89225ac1495c",
+        "sha256:7acd7542fe1cbfafa36078c454c1f9f57abe0190e30e279a970b6e2819b92d86",
+        "sha256:9811a1eb85e5b867683a8769bc406e84b92f01f65c60082d849ed99213d78b11",
+        "sha256:a72101fe2611311572ee80a3d4f8b1faaa2cbcc3b4f1722dadcfaa4221780d75",
+        "sha256:aa23abc81490f11372b4a8b4026da20e65c2dfe495e56563a39d10f5ded630b7",
+        "sha256:af5618de6a2ab559dc169fecca62824ac6f6f96d2cfb9169cbbde6e4b4f27b9c"
+      ],
+      "reason": "The card's sidecar references were refreshed to the repaired fixture's current anchors, so the trace binds the file's blob at C and answers its hunks.",
+      "sources": [
+        {
+          "blob": "e20e0ea7366337d5be1e8d423b62f1399c1672a9",
+          "path": "mcp/tests/test_paseo_role_tools.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_paseo_role_tools.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-P7SDF2",
+      "items": [
+        "sha256:f1ae8f436b7ba93954c984a2a39da4d352b17ef3a9750b3a974ef2fb87bf0212"
+      ],
+      "reason": "Checked against the leaf's records: the turn-end drain, the held-receipt queue and its rotating slice, the timeline reconciliation before a resend, the paused-drain line and the part boundary are carried by rule 1, rule 3 and rule 5 realizations; no new obligation is created here.",
+      "subject": "hunk:sha256:f1ae8f436b7ba93954c984a2a39da4d352b17ef3a9750b3a974ef2fb87bf0212"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-A87E4H",
+          "revision": 1
+        },
+        {
+          "id": "INV-HJ9MR9",
+          "revision": 1
+        },
+        {
+          "id": "INV-KD90E4",
+          "revision": 1
+        },
+        {
+          "id": "INV-PRVEVY",
+          "revision": 1
+        },
+        {
+          "id": "INV-VH983B",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-PNMEWQ",
+      "items": [
+        "sha256:b316aa018b109cebb19769795b12b0adb240a78617375538e25e3d7acca9984d"
+      ],
+      "reason": "Reviewed: the wake-with-files guarantee is untouched; the held-batch answer is a separate clause.",
+      "revision": 1,
+      "subject": "FAM-ZWJ8XR"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PS05TD",
+      "items": [
+        "sha256:c1ad9eba9ac414a93283afab3953ec126aba4f8241d6710c44bd38fde2e0810a"
+      ],
+      "reason": "Checked: the hunks keep the facade's message-flow expectations in step with the hold and delivery answers; they are evidence, not a new obligation.",
+      "subject": "hunk:sha256:c1ad9eba9ac414a93283afab3953ec126aba4f8241d6710c44bd38fde2e0810a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QH5DPM",
+      "items": [
+        "sha256:c3658162ac568dbe14432c1697bf8009e443d5cd67cef51360900eaf4ee1015e"
+      ],
+      "reason": "Checked: the hunks are the cases proving rules 2, 3, 4 and 7 (hold, single copy, answered batch, steer-or-hold); they add evidence, not a new obligation.",
+      "subject": "hunk:sha256:c3658162ac568dbe14432c1697bf8009e443d5cd67cef51360900eaf4ee1015e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QHHGC0",
+      "items": [
+        "sha256:3b946d3f4e00d51dee44b17c3a43bbe7ba1256e596c1db3a98aa52894a3978b8"
+      ],
+      "reason": "Checked: the hunks are the cases proving rules 1, 5 and 7 (turn-end delivery, bounded rotation, paused-drain line, receipt count); they add evidence, not a new obligation.",
+      "subject": "hunk:sha256:3b946d3f4e00d51dee44b17c3a43bbe7ba1256e596c1db3a98aa52894a3978b8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QRAVQQ",
+      "items": [
+        "sha256:4b345e345f6d72558c3a4535e5e342831ef04cdf1a45ca06e0e4b29be94fe619"
+      ],
+      "reason": "Checked: the hunks are the cases proving rules 1, 5 and 7 (turn-end delivery, bounded rotation, paused-drain line, receipt count); they add evidence, not a new obligation.",
+      "subject": "hunk:sha256:4b345e345f6d72558c3a4535e5e342831ef04cdf1a45ca06e0e4b29be94fe619"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-R22BT2",
+      "items": [
+        "sha256:cee49c3671218062823d9bbe0f3b31c217c9a4c52f92450e2615804f499105b5"
+      ],
+      "reason": "Checked: the hunks are the cases proving rules 2, 3, 4 and 7 (hold, single copy, answered batch, steer-or-hold); they add evidence, not a new obligation.",
+      "subject": "hunk:sha256:cee49c3671218062823d9bbe0f3b31c217c9a4c52f92450e2615804f499105b5"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-R7Q5E0",
+      "items": [
+        "sha256:312304d9f2ba13b3d7124ed621fa4977c4f3011f8783f1861da9eef24cf4d47d"
+      ],
+      "reason": "The card now names the unknown-outcome class the send path reports so the tool can hold the message instead of losing it.",
+      "sources": [
+        {
+          "blob": "6f168562d7b6d92fa147b4800d9eec570f5d5fb4",
+          "path": "mcp/src/agents_remember/cli/paseo_bridge.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/paseo_bridge.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-R7WYDM",
+      "items": [
+        "sha256:dbfcf53c570d4400056ccabfb4593d2940646062e93eb3805b53a0b6ae223472"
+      ],
+      "reason": "Checked: the hunks are the cases proving rules 2, 3, 4 and 7 (hold, single copy, answered batch, steer-or-hold); they add evidence, not a new obligation.",
+      "subject": "hunk:sha256:dbfcf53c570d4400056ccabfb4593d2940646062e93eb3805b53a0b6ae223472"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "4a6fe8b36abe6236b7ff925a4a4da4019fef0949",
+            "content": "sha256:cb91f3750f43ab30ba438bf51309fbc88be8b2f4a226faf22715731159bc07f4",
+            "locator": {
+              "end": 1451,
+              "kind": "line_range",
+              "start": 1401
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "before": {
+            "blob": "40dc59696c90511ab0a56b5166cdc99ea059475a",
+            "content": "sha256:85985ba205ce4a95a16a9c0fd9b1a8c1129a15ab47e52dff88da037f36cc224f",
+            "locator": {
+              "end": 1157,
+              "kind": "line_range",
+              "start": 1123
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "id": "RLZ-HDQJ4X"
+        },
+        {
+          "after": {
+            "blob": "4a6fe8b36abe6236b7ff925a4a4da4019fef0949",
+            "content": "sha256:e0af81109d09a11c33d4d49b08811d1401bd9eeb25a69002b1bb557878cfc67b",
+            "locator": {
+              "end": 1353,
+              "kind": "line_range",
+              "start": 1319
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "before": {
+            "blob": "40dc59696c90511ab0a56b5166cdc99ea059475a",
+            "content": "sha256:ed5f000a1900257819ee196b306192d26a0f4f5e451691ea10b07432ed6712f7",
+            "locator": {
+              "end": 1078,
+              "kind": "line_range",
+              "start": 1044
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "id": "RLZ-JRXFCD"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-RD3F42",
+      "items": [
+        "sha256:7e9d1a9cd9b1e8c3d4a6b8d242fc9935e4791e674ff6b2ac5bc262ec68bfa816"
+      ],
+      "reason": "Two anchors move from class/docstring text to the complete constructs: sweep_held_messages for the enforced read and drain budget with walk restart, and _CandidateWalk for generator state, take and exhaustion handling. Statement and revision unchanged.",
+      "revision": 2,
+      "subject": "INV-TTYYP8"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-REB1HR",
+      "items": [
+        "sha256:85f8b84966c33ba08ee26cc2c2c103125269e58f0e8bf481913c2775e22122db"
+      ],
+      "reason": "Nothing in the overview card changes meaning; the row rebinds the trace to its changed source blobs after the launch-comment and fixture repairs.",
+      "sources": [
+        {
+          "blob": "a00571a2c695cc0ce5d5cf48629187fe6ea2077f",
+          "path": "mcp/tests/paseo_launch_test_support.py"
+        },
+        {
+          "blob": "6be657f93ffe8567fb2696c63201120251c1fea4",
+          "path": "mcp/tests/test_held_queue.py"
+        },
+        {
+          "blob": "4683461b2130843a33bcc5bbe506d0b08e08bfc4",
+          "path": "mcp/tests/test_investigator.py"
+        },
+        {
+          "blob": "77be2d00b8e5dbb6da386d3a47a790b6d51184c8",
+          "path": "mcp/tests/test_paseo_bridge_agents.py"
+        },
+        {
+          "blob": "06c3070bde6a41b5947871dd5dd0becffc76f2a6",
+          "path": "mcp/tests/test_paseo_role_bridge.py"
+        },
+        {
+          "blob": "635bb67942bc1db4b14dbf7ed76b1cc62d9dc24b",
+          "path": "mcp/tests/test_paseo_role_messages.py"
+        },
+        {
+          "blob": "e20e0ea7366337d5be1e8d423b62f1399c1672a9",
+          "path": "mcp/tests/test_paseo_role_tools.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RHA8C3",
+      "items": [
+        "sha256:78167a865a67191c18f1d6fe4d5dbd429a4f3c4a422e75bb494a434a9002fced"
+      ],
+      "reason": "Checked: the hunks are the cases proving rules 1, 5 and 7 (turn-end delivery, bounded rotation, paused-drain line, receipt count); they add evidence, not a new obligation.",
+      "subject": "hunk:sha256:78167a865a67191c18f1d6fe4d5dbd429a4f3c4a422e75bb494a434a9002fced"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RHH30X",
+      "items": [
+        "sha256:d0b6747120a43ff5d692673260b8a83d24417b56838890ff9abe32668da596c5"
+      ],
+      "reason": "Checked: the hunks are the cases proving rules 1, 5 and 7 (turn-end delivery, bounded rotation, paused-drain line, receipt count); they add evidence, not a new obligation.",
+      "subject": "hunk:sha256:d0b6747120a43ff5d692673260b8a83d24417b56838890ff9abe32668da596c5"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RPYDRT",
+      "items": [
+        "sha256:94762b643dbe8968f8340aa2db63b6ad2a15ba58dcdd53733bc351e026c8fc45"
+      ],
+      "reason": "Checked against the leaf's records: the hold-versus-send decision, the plain replacement answer and the answered held batch are carried by rule 2 and rule 4 realizations; nothing else in the file changes meaning.",
+      "subject": "hunk:sha256:94762b643dbe8968f8340aa2db63b6ad2a15ba58dcdd53733bc351e026c8fc45"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-RRMBNE",
+      "items": [
+        "sha256:feb51b4cd247f462945f5e309df2c5e3a3ad9606ebc4b97627002d2403ff2ffa"
+      ],
+      "reason": "The card now names the held-delivery tick, its two cadences and the turn-end drain it runs",
+      "sources": [
+        {
+          "blob": "4a53276d7da469e7c756e76be23652dbf745dd56",
+          "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/_app_lifespan.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "635bb67942bc1db4b14dbf7ed76b1cc62d9dc24b",
+            "content": "sha256:8e9a86ce5806f73681acbde57b6a5fdffb646e2058745f2c0fe0caa6fa0e363e",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleMessageTests.test_several_live_agents_of_a_role_are_refused_with_their_ids_never_chosen_among"
+            },
+            "path": "mcp/tests/test_paseo_role_messages.py"
+          },
+          "before": {
+            "blob": "857f207816298c36a510306f9890d228877ad6f5",
+            "content": "sha256:73c6210b150df4fca36173f0acfba672fdfc608265398abef7a007a2ad8571e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleMessageTests.test_several_live_agents_of_a_role_are_refused_with_their_ids_never_chosen_among"
+            },
+            "path": "mcp/tests/test_paseo_role_messages.py"
+          },
+          "id": "PRF-0Y1E2J"
+        },
+        {
+          "after": {
+            "blob": "b20f555dd03b92dcc6704a9fb8c94ceb1e389cd1",
+            "content": "sha256:43b38cfbb18654b80f69545f5e159964443a6fe44a01b890bb401ab72c0e79bd",
+            "locator": {
+              "end": 150,
+              "kind": "line_range",
+              "start": 148
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+          },
+          "before": {
+            "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
+            "content": "sha256:544351a5f4e03a5fdefccc5a2861c3a514970f282dc97e76b3c8154cc254a4f1",
+            "locator": {
+              "end": 117,
+              "kind": "line_range",
+              "start": 117
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+          },
+          "id": "RLZ-HJ854G"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-S1HFM5",
+      "items": [
+        "sha256:b87d5dcec909fd302daa3ca9b07f9f80c07dae9c206b955fe9a649ae6acb6120"
+      ],
+      "reason": "The realization keeps its id at the candidate-limit constant; the row also covers the invariant's proof entry so it governs the whole set.",
+      "revision": 2,
+      "subject": "INV-R9S24S"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SN5025",
+      "items": [
+        "sha256:82aa2f72f6a187fa76bb09c76e9a4df6d7ed8eb778bfae135bc657785c37fae6"
+      ],
+      "reason": "Checked against the leaf's records: the hold-versus-send decision, the plain replacement answer and the answered held batch are carried by rule 2 and rule 4 realizations; nothing else in the file changes meaning.",
+      "subject": "hunk:sha256:82aa2f72f6a187fa76bb09c76e9a4df6d7ed8eb778bfae135bc657785c37fae6"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-SR3Q30",
+      "items": [
+        "sha256:8f411874ab6bcee443a341ce40381ecd7cf6b65de9a6bdfe9311c49d2dae4889"
+      ],
+      "reason": "Nothing in the overview card changes meaning; the row rebinds the trace to its changed source blobs after the launch-comment and fixture repairs.",
+      "sources": [
+        {
+          "blob": "3229dfc038ca83b4aaf9202a78c610e19471c3c0",
+          "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+        },
+        {
+          "blob": "6f168562d7b6d92fa147b4800d9eec570f5d5fb4",
+          "path": "mcp/src/agents_remember/cli/paseo_bridge.py"
+        },
+        {
+          "blob": "b20f555dd03b92dcc6704a9fb8c94ceb1e389cd1",
+          "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+        },
+        {
+          "blob": "4a6fe8b36abe6236b7ff925a4a4da4019fef0949",
+          "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+        },
+        {
+          "blob": "ec9afaf7463245dfaa02ae7d023c376b6570d073",
+          "path": "mcp/src/agents_remember/cli/role_message_delivery.py"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SSZB56",
+      "items": [
+        "sha256:c0832141ec66487bba719e29d20d8d89fc3c41a792b1d97b9bb859e1c4af85ed"
+      ],
+      "reason": "Checked against the leaf's records: the turn-end drain, the held-receipt queue and its rotating slice, the timeline reconciliation before a resend, the paused-drain line and the part boundary are carried by rule 1, rule 3 and rule 5 realizations; no new obligation is created here.",
+      "subject": "hunk:sha256:c0832141ec66487bba719e29d20d8d89fc3c41a792b1d97b9bb859e1c4af85ed"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SVPJ8P",
+      "items": [
+        "sha256:583c5b54d00a7ebf19f26e17c45f195b97fd33811f25ba43aa1b1d11266206ed"
+      ],
+      "reason": "Checked: the hunks remove the uncalled duplicate delivery path rule 6 names; the shared helpers keep their existing contract, and no invariant text changes because of the removal.",
+      "subject": "hunk:sha256:583c5b54d00a7ebf19f26e17c45f195b97fd33811f25ba43aa1b1d11266206ed"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SW6305",
+      "items": [
+        "sha256:184b6a475b3514a3d4bd5d755df466eb801594f29b8903af793a5f8f9a78785b"
+      ],
+      "reason": "Checked: the hunks remove the uncalled duplicate delivery path rule 6 names; the shared helpers keep their existing contract, and no invariant text changes because of the removal.",
+      "subject": "hunk:sha256:184b6a475b3514a3d4bd5d755df466eb801594f29b8903af793a5f8f9a78785b"
+    },
+    {
+      "covers": [
+        {
+          "after": "absent",
+          "before": {
+            "blob": "37290aaa6b6611755ea8749e5de9e8fb7ffca04c",
+            "content": "sha256:321d3ce7aa957002c9170d0f2f8979955563c5dbd4698f2195f4791bc0bec45f",
+            "locator": {
+              "end": 1008,
+              "kind": "line_range",
+              "start": 984
+            },
+            "path": "mcp/src/agents_remember/cli/role_message_delivery.py"
+          },
+          "id": "RLZ-WWN9TN"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-SX5NJH",
+      "items": [
+        "sha256:99fe59dd34ea3e3385f4c5a67d9b35052cffa90e7fb7a5f6eafc35b23c0ccd8f"
+      ],
+      "reason": "The clause moves to a revision that distinguishes event-driven activity intake from the held-delivery tick's own short read; the realization that lived in the removed duplicate delivery is retired with that module.",
+      "revision": 2,
+      "subject": "INV-X0KED3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-T7MGWD",
+      "items": [
+        "sha256:be8fe8a1594a31324feb5c9425ddd8e56745421c4a0ae7fa4f2bb576c83d9df9"
+      ],
+      "reason": "Checked: the first-message case now asserts the send shape rule 2 requires; the change answers L171-F06.",
+      "subject": "hunk:sha256:be8fe8a1594a31324feb5c9425ddd8e56745421c4a0ae7fa4f2bb576c83d9df9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TA6QHC",
+      "items": [
+        "sha256:58abac3cd18cd046d5e353160987794b8f5fe8b2e9d4572854c2aa2859c45485"
+      ],
+      "reason": "Checked: the hunks are the cases proving rules 2, 3, 4 and 7 (hold, single copy, answered batch, steer-or-hold); they add evidence, not a new obligation.",
+      "subject": "hunk:sha256:58abac3cd18cd046d5e353160987794b8f5fe8b2e9d4572854c2aa2859c45485"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TWTWV9",
+      "items": [
+        "sha256:c3ecf9c98016fa4cec1c2be52fed234efe7c19ecd3c11d73e3e15584e9f9dc03"
+      ],
+      "reason": "Checked against the leaf's records: the turn-end drain, the held-receipt queue and its rotating slice, the timeline reconciliation before a resend, the paused-drain line and the part boundary are carried by rule 1, rule 3 and rule 5 realizations; no new obligation is created here.",
+      "subject": "hunk:sha256:c3ecf9c98016fa4cec1c2be52fed234efe7c19ecd3c11d73e3e15584e9f9dc03"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TWYQCV",
+      "items": [
+        "sha256:09929cf0a6fa5c007da7617dda0676cca0a48cf54eb76f9af5416476bc64260e"
+      ],
+      "reason": "Checked: the hunks are the cases proving rules 1, 5 and 7 (turn-end delivery, bounded rotation, paused-drain line, receipt count); they add evidence, not a new obligation.",
+      "subject": "hunk:sha256:09929cf0a6fa5c007da7617dda0676cca0a48cf54eb76f9af5416476bc64260e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VEVNMY",
+      "items": [
+        "sha256:2c1c5e21e2166ef07016bb86e7fd0d3182f1a4b289b68625c9e440f066489f19"
+      ],
+      "reason": "Checked: the hunks are the cases proving rules 2, 3, 4 and 7 (hold, single copy, answered batch, steer-or-hold); they add evidence, not a new obligation.",
+      "subject": "hunk:sha256:2c1c5e21e2166ef07016bb86e7fd0d3182f1a4b289b68625c9e440f066489f19"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VNVP8F",
+      "items": [
+        "sha256:31fe26563f0c8fff8ceb24fbcd4a0bb817b2b20b5228c5d62c30e5c9426fd79c"
+      ],
+      "reason": "Checked: the hunks remove the uncalled duplicate delivery path rule 6 names; the shared helpers keep their existing contract, and no invariant text changes because of the removal.",
+      "subject": "hunk:sha256:31fe26563f0c8fff8ceb24fbcd4a0bb817b2b20b5228c5d62c30e5c9426fd79c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VRQS30",
+      "items": [
+        "sha256:12e80f392a4a902f4fad4b6ec2d92ebe66ec855ec3d70216fab1c7a60ae2a117"
+      ],
+      "reason": "Checked: the hunks start the held-delivery tick and its two cadences under the existing ledger accounting; the delivery obligation is carried by rule 1's realizations.",
+      "subject": "hunk:sha256:12e80f392a4a902f4fad4b6ec2d92ebe66ec855ec3d70216fab1c7a60ae2a117"
+    },
+    {
+      "considered": [],
+      "disposition": "no_family",
+      "id": "ROW-VRR7Y0",
+      "items": [
+        "sha256:699d8abc4891c8271a348c60bcad12146e49a6d11271bb496c8502a63766a9bd"
+      ],
+      "reason": "Examined the leaf's reached families: none of them shares a joint guarantee with this clause, which promises one behaviour of its own and is recorded as a standalone invariant.",
+      "revision": 1,
+      "subject": "membership:INV-4HTNQM"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-W86TKA",
+      "items": [
+        "sha256:1f04f5794e86cfc12bfbbb7b0ec5bbdfb9a8450b8b1a28e4e209065b218c7324"
+      ],
+      "reason": "Reviewed: the projections route keeps its event-driven intake; only the consumer of the publication changed.",
+      "sources": [
+        {
+          "blob": "ca1ce27c37152b46f279a699a403f81d03935901",
+          "path": "mcp/src/agents_remember/serving/projections/host_activity.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/projections/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WDDDJH",
+      "items": [
+        "sha256:0912f0617a613ede0d1310a5b424a74c4ac38d58ccd7017d6fff23c0145e6b76"
+      ],
+      "reason": "Checked: the hunks are the cases proving rules 2, 3, 4 and 7 (hold, single copy, answered batch, steer-or-hold); they add evidence, not a new obligation.",
+      "subject": "hunk:sha256:0912f0617a613ede0d1310a5b424a74c4ac38d58ccd7017d6fff23c0145e6b76"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "examined": [
+        {
+          "id": "INV-ATA2Z7",
+          "revision": 1
+        },
+        {
+          "id": "INV-PJA167",
+          "revision": 2
+        },
+        {
+          "id": "INV-TTYYP8",
+          "revision": 2
+        },
+        {
+          "id": "INV-Y1SDE2",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-WV51PV",
+      "items": [
+        "sha256:0d017310dd17d7250806d369d7eae6e7cab3d2c5a2be621df6b0441368b5b100"
+      ],
+      "reason": "The reached family carries its four members with their current rows.",
+      "revision": 1,
+      "subject": "FAM-S140B6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WY08M3",
+      "items": [
+        "sha256:e193c901bccafd7a45ffe3a42773ab41e5707346e9bf265709d67862c60ea2aa"
+      ],
+      "reason": "Checked against the leaf's records: the turn-end drain, the held-receipt queue and its rotating slice, the timeline reconciliation before a resend, the paused-drain line and the part boundary are carried by rule 1, rule 3 and rule 5 realizations; no new obligation is created here.",
+      "subject": "hunk:sha256:e193c901bccafd7a45ffe3a42773ab41e5707346e9bf265709d67862c60ea2aa"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WZ9BCV",
+      "items": [
+        "sha256:8d56b88ff78fde97727a937bad1c88fee32bff74740c1226255cee96f2a2268b"
+      ],
+      "reason": "Checked: the hunks are the cases proving rules 2, 3, 4 and 7 (hold, single copy, answered batch, steer-or-hold); they add evidence, not a new obligation.",
+      "subject": "hunk:sha256:8d56b88ff78fde97727a937bad1c88fee32bff74740c1226255cee96f2a2268b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-X309KR",
+      "items": [
+        "sha256:0286725b7c81ceb41ef42a2f0dce0171a4d81112dd21154e3edc7e3149d9450c"
+      ],
+      "reason": "Checked: the hunks keep the facade's message-flow expectations in step with the hold and delivery answers; they are evidence, not a new obligation.",
+      "subject": "hunk:sha256:0286725b7c81ceb41ef42a2f0dce0171a4d81112dd21154e3edc7e3149d9450c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-X5JJRY",
+      "items": [
+        "sha256:408c858136723e8670491167d1f30ce0158ed8ae5cadcd40fd3f61e29e844c49"
+      ],
+      "reason": "Checked against the leaf's records: the hold-versus-send decision, the plain replacement answer and the answered held batch are carried by rule 2 and rule 4 realizations; nothing else in the file changes meaning.",
+      "subject": "hunk:sha256:408c858136723e8670491167d1f30ce0158ed8ae5cadcd40fd3f61e29e844c49"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-X961Z4",
+      "items": [
+        "sha256:db57497eed4a5f2a2e52dd85cf130c8b83bdd2dc186580bc768d4ca7180600ed"
+      ],
+      "reason": "Checked: the hunks are the cases proving rules 2, 3, 4 and 7 (hold, single copy, answered batch, steer-or-hold); they add evidence, not a new obligation.",
+      "subject": "hunk:sha256:db57497eed4a5f2a2e52dd85cf130c8b83bdd2dc186580bc768d4ca7180600ed"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-XJHHAJ",
+      "items": [
+        "sha256:38cf2cd9ab03cc81108bda206ddef399f66c4cea6135dfaec4f038c2002bd0aa"
+      ],
+      "reason": "Checked: the hunks remove the uncalled duplicate delivery path rule 6 names; the shared helpers keep their existing contract, and no invariant text changes because of the removal.",
+      "subject": "hunk:sha256:38cf2cd9ab03cc81108bda206ddef399f66c4cea6135dfaec4f038c2002bd0aa"
+    },
+    {
+      "considered": [],
+      "disposition": "no_family",
+      "id": "ROW-XJRS34",
+      "items": [
+        "sha256:c6fe11fc501066a1c8cd49203efa5bd04af90a85ae352fd43cd1590f7fa181e8"
+      ],
+      "reason": "Examined FAM-14NZRC, FAM-S140B6: the stored revision admits an admitted native held FIFO batch and its bounded, ordered recovery; this clause's promise is recorded as its own invariant and the stored family revision was left unchanged, because a successor declaration extending its member set is a separate authored act this leaf did not perform.",
+      "revision": 1,
+      "subject": "membership:INV-5EY4EN"
+    },
+    {
+      "considered": [],
+      "disposition": "no_family",
+      "id": "ROW-XPE9TW",
+      "items": [
+        "sha256:43a07203f05779897db275e433f5b3301b14af2dd97bf03a765e7c35af9ee8cd"
+      ],
+      "reason": "Examined FAM-ZWJ8XR, FAM-S140B6: the stored revision admits an admitted native held FIFO batch and its bounded, ordered recovery; this clause's promise is recorded as its own invariant and the stored family revision was left unchanged, because a successor declaration extending its member set is a separate authored act this leaf did not perform.",
+      "revision": 1,
+      "subject": "membership:INV-4XSRF7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-XXFAKK",
+      "items": [
+        "sha256:f5449d688075a7bf248d3f9b9767260cc48e10aebdb6136e3b8fb41abc8d0992"
+      ],
+      "reason": "Checked against the leaf's records: the turn-end drain, the held-receipt queue and its rotating slice, the timeline reconciliation before a resend, the paused-drain line and the part boundary are carried by rule 1, rule 3 and rule 5 realizations; no new obligation is created here.",
+      "subject": "hunk:sha256:f5449d688075a7bf248d3f9b9767260cc48e10aebdb6136e3b8fb41abc8d0992"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-XXGXWJ",
+      "items": [
+        "sha256:e0b831b18b842e0e58f0b202668e24d9440dc78e1527d299d7969cd651971c48"
+      ],
+      "reason": "Checked: the hunks are the cases proving rules 2, 3, 4 and 7 (hold, single copy, answered batch, steer-or-hold); they add evidence, not a new obligation.",
+      "subject": "hunk:sha256:e0b831b18b842e0e58f0b202668e24d9440dc78e1527d299d7969cd651971c48"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-XY2NGE",
+      "items": [
+        "sha256:43ec75548d342fbc860594b04981307f3a046b4b86a45866ccd2ce9908a96f59"
+      ],
+      "reason": "Checked: the hunk names the unknown-outcome class the tool holds on; the file's existing bridge contract is unchanged.",
+      "subject": "hunk:sha256:43ec75548d342fbc860594b04981307f3a046b4b86a45866ccd2ce9908a96f59"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "4a6fe8b36abe6236b7ff925a4a4da4019fef0949",
+            "content": "sha256:eb280fb438737f80f512e6673551d06abef185c4477bc26bada04d554f76014e",
+            "locator": {
+              "end": 1529,
+              "kind": "line_range",
+              "start": 1514
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "before": {
+            "blob": "40dc59696c90511ab0a56b5166cdc99ea059475a",
+            "content": "sha256:452b3a9483c50da17d54e90ef8d7b8ad9a500e045072ed8bed3fc3e7fd50186d",
+            "locator": {
+              "end": 1175,
+              "kind": "line_range",
+              "start": 1160
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "id": "RLZ-3FQBKH"
+        },
+        {
+          "after": {
+            "blob": "4a6fe8b36abe6236b7ff925a4a4da4019fef0949",
+            "content": "sha256:eb320b19dc2840e1a33a2d43f39f86e455155f3fda7c36d95d3c42c48c5fc111",
+            "locator": {
+              "end": 1139,
+              "kind": "line_range",
+              "start": 1111
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "before": {
+            "blob": "40dc59696c90511ab0a56b5166cdc99ea059475a",
+            "content": "sha256:58e95aa15b2f4047f24638684731ab41ac1e1d128711d6cf0a9640640a2e0079",
+            "locator": {
+              "end": 968,
+              "kind": "line_range",
+              "start": 851
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "id": "RLZ-EJV806"
+        },
+        {
+          "after": {
+            "blob": "4a6fe8b36abe6236b7ff925a4a4da4019fef0949",
+            "content": "sha256:77ad6d5c3491628e1461b97995707bd7917951f16a6b1280adf22bfc4c443e5c",
+            "locator": {
+              "end": 933,
+              "kind": "line_range",
+              "start": 880
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "before": {
+            "blob": "40dc59696c90511ab0a56b5166cdc99ea059475a",
+            "content": "sha256:27d4c728d4e5b3b53b7b0c95fbbf5e06cb86be74f9165dd70c8b490862f74d3c",
+            "locator": {
+              "end": 803,
+              "kind": "line_range",
+              "start": 749
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "id": "RLZ-XRBVHQ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-Y398YC",
+      "items": [
+        "sha256:1894c1701c4f02564d0a7edea57b67dc0ec822f972d55fcce5c7f534d5cd9c23"
+      ],
+      "reason": "Three anchors move from comment and partial ranges to the complete owner of each claim: the zero-counter fall-through in _receipt_needs_drain, the stage-then-remove phase in _commit_part, and the opening handover's ordered stage-before-removal in _open_held_seat. Ids, statements and revisions unchanged.",
+      "revision": 1,
+      "subject": "INV-ATA2Z7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YJGFB9",
+      "items": [
+        "sha256:d0c25a56322f7de796d3549292a00af218ad4fd7af0f17fa5b07e55375996a07"
+      ],
+      "reason": "Checked: the hunks remove the uncalled duplicate delivery path rule 6 names; the shared helpers keep their existing contract, and no invariant text changes because of the removal.",
+      "subject": "hunk:sha256:d0c25a56322f7de796d3549292a00af218ad4fd7af0f17fa5b07e55375996a07"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YYVYPW",
+      "items": [
+        "sha256:f97549694e3a1ba99e5efa1a8af84e17f0099618c0529fceba852753edec15bd"
+      ],
+      "reason": "Checked: the hunks remove the uncalled duplicate delivery path rule 6 names; the shared helpers keep their existing contract, and no invariant text changes because of the removal.",
+      "subject": "hunk:sha256:f97549694e3a1ba99e5efa1a8af84e17f0099618c0529fceba852753edec15bd"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Z1WDZX",
+      "items": [
+        "sha256:a85e17a0c510eaaa86a7b7b4a9fa595c1360cd34f60e88f5dd09e7a525256f30"
+      ],
+      "reason": "Checked against the leaf's records: the hold-versus-send decision, the plain replacement answer and the answered held batch are carried by rule 2 and rule 4 realizations; nothing else in the file changes meaning.",
+      "subject": "hunk:sha256:a85e17a0c510eaaa86a7b7b4a9fa595c1360cd34f60e88f5dd09e7a525256f30"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZE7NEH",
+      "items": [
+        "sha256:04e80cd43a4863be1772e97e23798dcb05f60470e4229348d1b7dec508641e61"
+      ],
+      "reason": "Checked: the hunks replace the steer-only script expectations with the steer-or-hold decision rule 2 states; they are evidence for that clause.",
+      "subject": "hunk:sha256:04e80cd43a4863be1772e97e23798dcb05f60470e4229348d1b7dec508641e61"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZHNWCD",
+      "items": [
+        "sha256:8fc7231a7e9b9b62a1345e002325f6610b7dfaa537f177e3115dc52a0471a70d"
+      ],
+      "reason": "Checked: the hunks remove the uncalled duplicate delivery path rule 6 names; the shared helpers keep their existing contract, and no invariant text changes because of the removal.",
+      "subject": "hunk:sha256:8fc7231a7e9b9b62a1345e002325f6610b7dfaa537f177e3115dc52a0471a70d"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZQQKMK",
+      "items": [
+        "sha256:eca308724ca5f78e9355151b7cc4cfabc0b81917cd43ab43736e6a3030443cea"
+      ],
+      "reason": "Checked: the hunks are the cases proving rules 2, 3, 4 and 7 (hold, single copy, answered batch, steer-or-hold); they add evidence, not a new obligation.",
+      "subject": "hunk:sha256:eca308724ca5f78e9355151b7cc4cfabc0b81917cd43ab43736e6a3030443cea"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZT236K",
+      "items": [
+        "sha256:efe68fb0da9c21bc9e54cb2d12c33d552b2b0216dca1b506539fc6bc366af458"
+      ],
+      "reason": "Checked against the leaf's records: the turn-end drain, the held-receipt queue and its rotating slice, the timeline reconciliation before a resend, the paused-drain line and the part boundary are carried by rule 1, rule 3 and rule 5 realizations; no new obligation is created here.",
+      "subject": "hunk:sha256:efe68fb0da9c21bc9e54cb2d12c33d552b2b0216dca1b506539fc6bc366af458"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZWFK6Y",
+      "items": [
+        "sha256:c3b290e04970f243d9758aeea8ed7a0e660202ba44f0f4ecc77230a9b1af8dcd"
+      ],
+      "reason": "Checked against the leaf's records: the hold-versus-send decision, the plain replacement answer and the answered held batch are carried by rule 2 and rule 4 realizations; nothing else in the file changes meaning.",
+      "subject": "hunk:sha256:c3b290e04970f243d9758aeea8ed7a0e660202ba44f0f4ecc77230a9b1af8dcd"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ZY0QR4",
+      "items": [
+        "sha256:7fb6eaf9c000bf3bed5c25a3ff4cbbd45f7fc33041e7258cb03f85472970e556"
+      ],
+      "reason": "The card's held-answer statements now say the drain publishes no turnId, propagates the disposition through the same helper as a direct delivery, and that the DTO admits the reported replacement value; the stale typed reference note is rewritten with the card.",
+      "sources": [
+        {
+          "blob": "72eb3bf450d12e38de9fdbb8d59d1285bc4192ec",
+          "path": "mcp/src/agents_remember/models/role_agents.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/role_agents.py"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

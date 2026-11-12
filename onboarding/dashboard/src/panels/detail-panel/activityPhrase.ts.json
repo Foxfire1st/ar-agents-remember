@@ -1,0 +1,59 @@
+{
+  "path": "dashboard/src/panels/detail-panel/activityPhrase.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The phrase is works, an optional waiting part, then paused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "655991bf68f16d3e6aa17b648598c0c7626142d4",
+            "content": "sha256:ae4f0d52be0301baff53860bcb331043e82b97542cbf84bff75ffbed5bb382af",
+            "locator": {
+              "kind": "symbol",
+              "name": "activityPhrase"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The row figure renders it for non-task forms and hides it while host activity is unknown.\n\nAnchor: `activityPhrase`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e90aae0d64e762edaf39473dd73648709dc17544",
+            "content": "sha256:befc5b8185f651f0318a3c8ee5ebe2b46abf00243d9986fe3bb32ca3c97301e8",
+            "locator": {
+              "end": 576,
+              "kind": "line_range",
+              "start": 573
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The master Now cells render it and leave it out while host activity is unknown.\n\nAnchor: `activityPhrase`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d59f6f4f1003b950cbdf978c2588f8a55b945e3e",
+            "content": "sha256:5c914772af3f08d64f63957c3050a0b5139c0c148d1d67b6f460ecec0409a31b",
+            "locator": {
+              "end": 152,
+              "kind": "line_range",
+              "start": 149
+            },
+            "path": "dashboard/src/panels/detail-panel/task-groups.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

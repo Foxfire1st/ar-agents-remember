@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Two tests fail when more or fewer than one renewal claims current and when the current record names an absent path; a history sub-record read as current would let a budget check compare against outdated sizes."
+  },
+  "applicability": "The current capsule budget record and its packaged copy.",
+  "conditions": [
+    "Renewal sub-records are the decision keys that start with measuredCurrentRenewal."
+  ],
+  "exclusions": [
+    "Older decision sub-records without that prefix (currentRenewal, currentRenewalValidation32, currentRenewalValidation35, rawBaselineSerializationCorrection624), which carry no historicalTree.",
+    "Paths written with a skills/l-01-agent-lifecycles/ prefix, which the absent-path guard does not check."
+  ],
+  "id": "INV-12JAM7",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/84_installed-copies-and-running-servers--f9ff935141-ar/role-reports/reviewer/f347a616-f3b7-49c6-9cbb-086da0e40734/260928-MIK-L84-P5-sealed-findings.md (L84-P5-25 N4); /home/firefox/projects/ar-coordination/worktrees/agents-remember/84_installed-copies-and-running-servers--f9ff935141-ar/role-reports/reviewer/f347a616-f3b7-49c6-9cbb-086da0e40734/260928-MIK-L84-P5-round5-fix-verification-verdict.md (open: two current:true sub-records); /home/firefox/projects/ar-coordination/worktrees/agents-remember/84_installed-copies-and-running-servers--f9ff935141-ar/role-reports/reviewer/f347a616-f3b7-49c6-9cbb-086da0e40734/260928-MIK-L84-P5-round6-fix-verification-verdict.md (Closed: exactly one current sub-record, 11 history sub-records carry historicalTree, new test fails on 4 of 5 mutations); /home/firefox/projects/ar-coordination/worktrees/agents-remember/84_installed-copies-and-running-servers--f9ff935141-ar/role-reports/reviewer/f347a616-f3b7-49c6-9cbb-086da0e40734/260928-MIK-L84-P5-round7-fix-verification-verdict.md (P5-25 record: exactly one current:true sub-record …R7, 2,266 words = every-role.md, map 5ecc13f4 = digest-map.json = top-level value, history sub-records carry historicalTree, package equal).; /home/firefox/projects/ar-coordination/worktrees/agents-remember/84_installed-copies-and-running-servers--f9ff935141-ar/role-reports/reviewer/f347a616-f3b7-49c6-9cbb-086da0e40734/260928-MIK-L84-P5-round8-fix-verification-verdict.md (round 8: re-checked or unchanged at a867665b); round 8 (A011): exactly one current:true sub-record, measuredCurrentRenewal88048054R8; digest words 2,266 = every-role.md; map 9c3b3d0c = digest-map.json = the top-level value; finalInstructionFiles listing 6265bb9a recomputed over 89 files; R7 carries historicalTree 8e7d5b2e"
+      ],
+      "path": "handoff-runA.json"
+    },
+    "handoffEntry": "L84-P5-25",
+    "leaf": "260928-MIK-L84",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Exactly one budget sub-record claims current, its digest words and digest-map hash equal the final values and it names no path absent on the final tree, every measurement-history sub-record carries historicalTree, and the package copy is equal.",
+  "status": "proposed",
+  "supersedes": []
+}

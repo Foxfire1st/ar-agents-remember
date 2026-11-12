@@ -1,0 +1,28 @@
+# mcp/src/agents_remember/package_data/paseo_plugin/package.json
+
+## Governing Overview
+
+[Route overview](../../../../overview.md)
+
+## Purpose
+
+The private manifest defines canonical plugin source packaging and standalone typecheck dependencies.
+
+## Code Commentary
+
+The file list includes native manifest, entries and client/server/shared directories. @getpaseo/plugin is pinned to 0.15.4; typecheck declares nonemitting tsc, while test runs the server decision tests through Node's experimental type stripping. Other listed development dependencies supply the package's types. A host-free decision test command is not a live-plugin installation or event-delivery witness.
+
+
+## Invariants And Boundaries
+
+These declarations are not installation or successful typecheck evidence. The package is canonical source, not a generated skill mirror.
+
+## Evidence
+
+The current source and test assertions below establish the documented ownership; test citations do not claim a rerun in this pass.
+
+
+- The plugin's development SDK `@getpaseo/plugin` is pinned to 0.15.4. [1]
+
+
+- The manifest lists the plugin's shipped files and declares the `typecheck` and `test` scripts the release checklist runs in a scratch copy. [2]

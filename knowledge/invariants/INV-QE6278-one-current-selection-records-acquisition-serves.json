@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The obligation binds the reader parent, the toolbar and the tree across three files, which is what its realizations show."
+  },
+  "applicability": "The Knowledge reader's records list for one repository and memory tree.",
+  "conditions": [
+    "The toolbar's lookup and the Records branch consume the same memoized acquisition for the current selection.",
+    "A repository or commit change clears old answers and a late answer cannot be displayed."
+  ],
+  "exclusions": [
+    "The document, selection and count reads, which keep their own owners.",
+    "A persistent cache across selections and any backend or API change."
+  ],
+  "id": "INV-QE6278",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Same-stem evidence/own-focused-controls.log: 3 passed, 25 skipped; removed-fix-input-verification.json validates exact old owners and current assertions; Worker removed-fix-negative.log has three expected failures; actual browser-after shows records count one before and one after Records expansion"
+      ],
+      "path": "handoff.json"
+    },
+    "handoffEntry": "MIK-R79@v1 / L79-TK-O1 acquisition scope",
+    "leaf": "260928-MIK-L79",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "One current-selection records acquisition serves both lookup and Records, clears old answers on repo or commit changes, ignores late selections, and leaves the document, header and path tree usable during delay or failure.",
+  "status": "proposed",
+  "supersedes": []
+}

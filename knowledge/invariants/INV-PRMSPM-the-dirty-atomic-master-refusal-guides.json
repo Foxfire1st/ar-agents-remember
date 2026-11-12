@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Guards the costly error this statement names: The dirty atomic-master refusal guides delivery through a closed leaf and owner publication or discard, advertises no integration-workbench commit, and retains its original guard l"
+  },
+  "applicability": "The dirty atomic-master refusal's guidance about the integration worktree.",
+  "conditions": [
+    "The refusal guides delivery through a closed leaf and owner publication or discard and advertises no integration-workbench commit."
+  ],
+  "exclusions": [
+    "Clean integration worktrees."
+  ],
+  "id": "INV-PRMSPM",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Independent real dirty-worktree guard control passes, keeping the tip and uncommitted content; old-guidance negative fails the new remedy assertion; guard AST is equal after normalizing string constants."
+      ],
+      "path": "entries-list.json"
+    },
+    "handoffEntry": "260928-MIK-L41-CW-N1",
+    "leaf": "260928-MIK-L41",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The dirty atomic-master refusal guides delivery through a closed leaf and owner publication or discard, advertises no integration-workbench commit, and retains its original guard logic and refusal condition.",
+  "status": "proposed",
+  "supersedes": []
+}

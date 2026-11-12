@@ -1,0 +1,59 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/abandon_task_publication.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b5ccbb891fc3b5b1a85848561a6ac63c70b433d5",
+        "content": "sha256:fd1b67a3eb2db4aa0e69c0c4d8b56495f210c9182b46723ffb7157dcb94d1979",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-AJMBBK",
+      "invariant": "INV-976SFG",
+      "origin": {
+        "handoffEntry": "L190-R1-F06",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Abandon publication couples staged task state, final native commit receipt and best-effort notice confirmation.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "b5ccbb891fc3b5b1a85848561a6ac63c70b433d5",
+        "content": "sha256:c0072023a33fe6eb6463e8fa22fd075bba5d42c095ecdeddd8aaeafe15c8ab7a",
+        "locator": {
+          "kind": "symbol",
+          "name": "publish_abandoned_task"
+        }
+      },
+      "id": "RLZ-TM4MJN",
+      "invariant": "INV-Z0BXKJ",
+      "origin": {
+        "handoffEntry": "L168-W-R167-05",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "Abandon publishes the terminal native stage instead of relying on an agent call.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The existing terminal guard receives the paired publication and restoration callbacks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b5ccbb891fc3b5b1a85848561a6ac63c70b433d5",
+            "content": "sha256:c0072023a33fe6eb6463e8fa22fd075bba5d42c095ecdeddd8aaeafe15c8ab7a",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_abandoned_task"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

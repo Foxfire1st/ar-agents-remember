@@ -1,0 +1,279 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/view_source.py",
+  "realizes": [],
+  "references": {
+    "19": {
+      "note": "`StoreViewReader` owns the current boundary described above.\n\nAnchor: `StoreViewReader`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62477ae2fb481bc7ea9762d2594fad4babc33bd3",
+            "content": "sha256:b4b96302f20338518c4e0f72a5915ddad984e20ec735face8560bd9dbfbe28fa",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "`open_view_reader` owns the current boundary described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62477ae2fb481bc7ea9762d2594fad4babc33bd3",
+            "content": "sha256:f30563b53bfcc5327203ee8ef47ed0b031346af44b2b1e2294b8beb53770330d",
+            "locator": {
+              "kind": "symbol",
+              "name": "open_view_reader"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The port returns recorded rows in deterministic query order while the view layer owns semantic selection, ordering and provenance classification.\n\nAnchor: `StoreViewReader`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62477ae2fb481bc7ea9762d2594fad4babc33bd3",
+            "content": "sha256:b4b96302f20338518c4e0f72a5915ddad984e20ec735face8560bd9dbfbe28fa",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "The read-only handle this module opens through, with the read-only APSW flag and the busy timeout it does set.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62477ae2fb481bc7ea9762d2594fad4babc33bd3",
+            "content": "sha256:f30563b53bfcc5327203ee8ef47ed0b031346af44b2b1e2294b8beb53770330d",
+            "locator": {
+              "kind": "symbol",
+              "name": "open_view_reader"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "The snapshot composed from the dataset's own identity rather than a caller's assertion.\n\nAnchor: `snapshot`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62477ae2fb481bc7ea9762d2594fad4babc33bd3",
+            "content": "sha256:004f01a94e36414d6224fa7459d4bfed5cdc97e2e45ca977ed2594e2f2fbb232",
+            "locator": {
+              "end": 151,
+              "kind": "line_range",
+              "start": 148
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "The two registered totals, each counted from its own table and returned as one counts value.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62477ae2fb481bc7ea9762d2594fad4babc33bd3",
+            "content": "sha256:182d1bfb3eda6551adaafd7087bacd213d333fa7c2c3778290d2364b0230f3a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "REGISTERED_REALIZATIONS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "Generation 1's own entities read by their own statements instead of being copied into the envelope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62477ae2fb481bc7ea9762d2594fad4babc33bd3",
+            "content": "sha256:6c151081a202c6d160d3c1ed01b2a1c38ba35e6b0bb16242e971007fa2bb9f9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "INVARIANT_REVISIONS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "The family-membership read: its own statement, executed from its own port method, with the comment recording why the generic envelope read could not answer it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62477ae2fb481bc7ea9762d2594fad4babc33bd3",
+            "content": "sha256:5ff749f8f95662ffc61307622dba619e34569c48cd98ec7cfed6bd83816fdf23",
+            "locator": {
+              "kind": "symbol",
+              "name": "FAMILY_MEMBERS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "The realization-claim read and the source anchor it joins, so a claim arrives with the location it attributes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62477ae2fb481bc7ea9762d2594fad4babc33bd3",
+            "content": "sha256:68e62789fd290cc490076b770ed1b3686027ea957d045f150283d5df4ebd37f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "REALIZATION_CLAIMS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "The typed-JSON decoding and the never-defaulted author lookup every stored payload passes through.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62477ae2fb481bc7ea9762d2594fad4babc33bd3",
+            "content": "sha256:7c7d8d561bf9ac296c531201556c7fde270467a0496a8fb5407a84771baff1f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_sequence"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "The reader class, built from an already-open connection and the declared snapshot, holding no path of its own, and the port it answers.\n\nAnchor: `StoreViewReader`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62477ae2fb481bc7ea9762d2594fad4babc33bd3",
+            "content": "sha256:b4b96302f20338518c4e0f72a5915ddad984e20ec735face8560bd9dbfbe28fa",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "The snapshot accessor, the registered counts and the per-kind read with its lifetime cache.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62477ae2fb481bc7ea9762d2594fad4babc33bd3",
+            "content": "sha256:cfb4d1bd0b5c06b303bb7411135c4b988e1d0a3a798d62b51f1d25bac8b52fde",
+            "locator": {
+              "kind": "symbol",
+              "name": "registered_counts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "The entity row readers and the attachment read, plus the count helper that refuses an empty count result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62477ae2fb481bc7ea9762d2594fad4babc33bd3",
+            "content": "sha256:49d0d3500474e4931b8a7972f050fcccfb767eb30234a1f3eac3f753141b89fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "invariant_rows"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "The anchor-state answer: not-requested when there is no resolver, a typed error when the resolver is not callable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62477ae2fb481bc7ea9762d2594fad4babc33bd3",
+            "content": "sha256:6f9dbfc639144f6df97b9e2f3e289365f0d73722901b5ad24cd3d25f674456f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "anchor_state"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "The row builders, each naming its record kind and schema and building its payload from named columns.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62477ae2fb481bc7ea9762d2594fad4babc33bd3",
+            "content": "sha256:1b5d464bfc91a52b05dcbf5ce42c3488c93097421714dec281509a848bbfa063",
+            "locator": {
+              "kind": "symbol",
+              "name": "_invariant_row"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "Where selection and ordering actually live, with an unclassifiable value withheld rather than defaulted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ba11c0965aecef5b0befe6bd64bc4b5b6e3d23c",
+            "content": "sha256:8fcf10cdf738b916894cc21e2c4c0214ebf1e8530e93d25def5cdcce0741afce",
+            "locator": {
+              "kind": "symbol",
+              "name": "order_candidates"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_view_render.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "The eight logical tables the single schema declares.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec5bf0677108161ea883091d9613a34d21a3697c",
+            "content": "sha256:37710426cf694c85158fb041b0a5ece12a253bfbb37dbddd70f41690043d01be",
+            "locator": {
+              "kind": "symbol",
+              "name": "CANONICAL_TABLES"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

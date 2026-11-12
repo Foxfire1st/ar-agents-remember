@@ -1,0 +1,590 @@
+{
+  "path": "mcp/tests/test_cli_discovery.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "12a47430dbdd08e71e08d907a6418223d15c70e0",
+        "content": "sha256:d5ef2ce61a41bedf8d1dd406111942e1b8352e3417ee618ee0572751bf153204",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_actual_install_dry_run_never_creates_settings_or_harness_folders"
+        }
+      },
+      "facet": "A dry run creates neither the settings file nor any harness folder.",
+      "id": "PRF-0FTS2S",
+      "invariant": "INV-AFA5WS",
+      "origin": {
+        "handoffEntry": "MIK-R84@v10 part4 / user settings and copy-once installation",
+        "leaf": "260928-MIK-L84"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "12a47430dbdd08e71e08d907a6418223d15c70e0",
+        "content": "sha256:99c930865fdf850407724165e2743173826e538247d89bc8ccf2d64d1c4549a3",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_discovery_names_actual_daemons_other_settings_only_for_same_root"
+        }
+      },
+      "facet": "A discovered run names its file and reports a same-root daemon that uses another file, and stays silent for a daemon of another root.",
+      "id": "PRF-4W1X8N",
+      "invariant": "INV-FEBRX0",
+      "origin": {
+        "handoffEntry": "MIK-R84@v5 retained v1 rule6 settings provenance",
+        "leaf": "260928-MIK-L84"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "12a47430dbdd08e71e08d907a6418223d15c70e0",
+        "content": "sha256:aff40e15925ab8e9ed2fa92f1daf869977c75d830167e39ff4463b8a7cc4d2bc",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_daemon_help_names_the_source_digest_restart"
+        }
+      },
+      "facet": "Fails when the dashboard --daemon help does not name the Python source digest among the causes that restart a running daemon.",
+      "id": "PRF-924YSM",
+      "invariant": "INV-72X9AJ",
+      "origin": {
+        "handoffEntry": "L84-CUR-02",
+        "leaf": "260928-MIK-L84"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "12a47430dbdd08e71e08d907a6418223d15c70e0",
+        "content": "sha256:9ced22af9e8f37ffe3db5efc2da912d3abb175b1e3cef4ca5f5a4e2810aa8936",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_no_config_help_claims_directory_discovery"
+        }
+      },
+      "facet": "Walks every --config help of the umbrella parser and fails on any working-directory or directory-discovery claim.",
+      "id": "PRF-D1Q8MZ",
+      "invariant": "INV-B3FPFJ",
+      "origin": {
+        "handoffEntry": "L84-CUR-01",
+        "leaf": "260928-MIK-L84"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "12a47430dbdd08e71e08d907a6418223d15c70e0",
+        "content": "sha256:c5e2bee02a3957bd5d09461b21fb46c11f758fc5dc643506b58f2e75d94f9062",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_missing_user_config_never_uses_a_registration_with_valid_explicit_path"
+        }
+      },
+      "facet": "A missing user file is refused even when a workspace registration names a valid settings path.",
+      "id": "PRF-KY1GY4",
+      "invariant": "INV-S18ZC5",
+      "origin": {
+        "handoffEntry": "MIK-R84@v10 part4 / discovery authority and explicit settings",
+        "leaf": "260928-MIK-L84"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "12a47430dbdd08e71e08d907a6418223d15c70e0",
+        "content": "sha256:9efdc6161c7bdf37dca538394c70ddb783dd0bf7f5af6086bc4d26e280a3839d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_cli_reports_actual_discovery_and_preserves_explicit_settings"
+        }
+      },
+      "facet": "The command line reports the discovered file and keeps an explicit settings path.",
+      "id": "PRF-P6N7CK",
+      "invariant": "INV-S18ZC5",
+      "origin": {
+        "handoffEntry": "MIK-R84@v10 part4 / discovery authority and explicit settings",
+        "leaf": "260928-MIK-L84"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "12a47430dbdd08e71e08d907a6418223d15c70e0",
+        "content": "sha256:ce362fe99f78ec23afa7b9a3452554a1bd07cc9492ef15b60d5bacb08a38567a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_default_home_and_explicit_xdg_share_the_user_settings_folder"
+        }
+      },
+      "facet": "The default home and an explicit XDG config home both place the tool-server file beside the user's settings.",
+      "id": "PRF-RV1F3J",
+      "invariant": "INV-AFA5WS",
+      "origin": {
+        "handoffEntry": "MIK-R84@v10 part4 / user settings and copy-once installation",
+        "leaf": "260928-MIK-L84"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "12a47430dbdd08e71e08d907a6418223d15c70e0",
+        "content": "sha256:b4dd13dcf6d998d6f2c0648d753e8d2659726b1be3284ef41f49b35c4891234f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_omitted_config_help_names_the_user_settings_file_not_the_directory"
+        }
+      },
+      "facet": "For each of the four subcommands, the parser's --config help names the user settings file under XDG_CONFIG_HOME or ~/.config and says it is read whatever the current directory is.",
+      "id": "PRF-SS9B81",
+      "invariant": "INV-B3FPFJ",
+      "origin": {
+        "handoffEntry": "L84-CUR-01",
+        "leaf": "260928-MIK-L84"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "12a47430dbdd08e71e08d907a6418223d15c70e0",
+        "content": "sha256:757ec383408aa8edef953f92ec096e143c00d1aaf38b40c32f90e89d9bfe5773",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_settings_copy_never_opens_config_permissions"
+        }
+      },
+      "facet": "The settings copy never changes the permissions of the config folder.",
+      "id": "PRF-WFVSDM",
+      "invariant": "INV-BT9HFV",
+      "origin": {
+        "handoffEntry": "L84-D1-02",
+        "leaf": "260928-MIK-L84"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "12a47430dbdd08e71e08d907a6418223d15c70e0",
+        "content": "sha256:8f03f91ac85cefb01daf3e6c5bfce765b958cf975096d02518fd57f53e85261f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_example_registration_parses_as_uvx_options_then_the_package_command"
+        }
+      },
+      "facet": "Splits the example args as uvx does and requires the one uvx option --refresh-package agents-remember-mcp, the command agents-remember-mcp@latest and --config with the settings path for that command; the round-9 form is refused.",
+      "id": "PRF-X82R56",
+      "invariant": "INV-VWK5HY",
+      "origin": {
+        "handoffEntry": "L84-LC-03",
+        "leaf": "260928-MIK-L84"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "12a47430dbdd08e71e08d907a6418223d15c70e0",
+        "content": "sha256:b49dbf61934ae1f01b8da5ecfc03a649c7dab55f47532730cc4e9fa086eff1ac",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_runtime_install_reports_settings_oserror_and_completes"
+        }
+      },
+      "facet": "A settings-copy error is reported in the install result and the install completes its other reports.",
+      "id": "PRF-XS290J",
+      "invariant": "INV-BT9HFV",
+      "origin": {
+        "handoffEntry": "L84-D1-02",
+        "leaf": "260928-MIK-L84"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "12a47430dbdd08e71e08d907a6418223d15c70e0",
+        "content": "sha256:4517c73d7f50d389182e2370e7e401e2649e3ddadc01d4a1a81f73c182386d53",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_actual_install_copies_once_leaves_old_and_harness_folders_untouched"
+        }
+      },
+      "facet": "A real install copies the old file once into the absent destination and leaves the source and harness folders untouched.",
+      "id": "PRF-Z6358X",
+      "invariant": "INV-AFA5WS",
+      "origin": {
+        "handoffEntry": "MIK-R84@v10 part4 / user settings and copy-once installation",
+        "leaf": "260928-MIK-L84"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "12a47430dbdd08e71e08d907a6418223d15c70e0",
+        "content": "sha256:9ced22af9e8f37ffe3db5efc2da912d3abb175b1e3cef4ca5f5a4e2810aa8936",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_no_config_help_claims_directory_discovery"
+        }
+      },
+      "id": "RLZ-3THBY9",
+      "invariant": "INV-B3FPFJ",
+      "origin": {
+        "handoffEntry": "L84-CUR-01",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "This test walks every --config help of the umbrella parser and fails on a working-directory or directory-discovery claim.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "12a47430dbdd08e71e08d907a6418223d15c70e0",
+        "content": "sha256:d717f542f1d83b5c9edde2564a25af22546415168630dad2c83c9c4f7b624416",
+        "locator": {
+          "kind": "symbol",
+          "name": "_uvx_split"
+        }
+      },
+      "id": "RLZ-ETK026",
+      "invariant": "INV-VWK5HY",
+      "origin": {
+        "handoffEntry": "L84-LC-03",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The pin's model of uvx argument order: uvx options first (a value-taking option consumes the next argument), then one package command, then that command's arguments.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "12a47430dbdd08e71e08d907a6418223d15c70e0",
+        "content": "sha256:aff40e15925ab8e9ed2fa92f1daf869977c75d830167e39ff4463b8a7cc4d2bc",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_daemon_help_names_the_source_digest_restart"
+        }
+      },
+      "id": "RLZ-FGSVST",
+      "invariant": "INV-72X9AJ",
+      "origin": {
+        "handoffEntry": "L84-CUR-02",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "This test pins the source-digest restart cause in the --daemon help.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "12a47430dbdd08e71e08d907a6418223d15c70e0",
+        "content": "sha256:b4dd13dcf6d998d6f2c0648d753e8d2659726b1be3284ef41f49b35c4891234f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_omitted_config_help_names_the_user_settings_file_not_the_directory"
+        }
+      },
+      "id": "RLZ-PXVYTC",
+      "invariant": "INV-B3FPFJ",
+      "origin": {
+        "handoffEntry": "L84-CUR-01",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "This test pins the new help sentence in each of the four subcommands' parsers.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The user-config file wins over workspace registrations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12a47430dbdd08e71e08d907a6418223d15c70e0",
+            "content": "sha256:b0dd55cfd6f2a75daaf922028b49d60db12dec18defc34861a26a2e3b6e7d9ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_user_config_wins_over_workspace_registrations"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "A dry run creates no settings file or folder.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12a47430dbdd08e71e08d907a6418223d15c70e0",
+            "content": "sha256:d5ef2ce61a41bedf8d1dd406111942e1b8352e3417ee618ee0572751bf153204",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_actual_install_dry_run_never_creates_settings_or_harness_folders"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "A denied destination reports a permission remedy without widening permissions while the install completes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12a47430dbdd08e71e08d907a6418223d15c70e0",
+            "content": "sha256:757ec383408aa8edef953f92ec096e143c00d1aaf38b40c32f90e89d9bfe5773",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_settings_copy_never_opens_config_permissions"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "A destination created after the absence probe is refused and kept.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12a47430dbdd08e71e08d907a6418223d15c70e0",
+            "content": "sha256:93b45f988c2e1770b6e02bff6e36fc647fdc864449ff53aedc92f46791b9e356",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_copy_refuses_a_destination_created_after_the_absence_probe"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "A missing user config never falls back to a registration that names a valid explicit path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12a47430dbdd08e71e08d907a6418223d15c70e0",
+            "content": "sha256:c5e2bee02a3957bd5d09461b21fb46c11f758fc5dc643506b58f2e75d94f9062",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_missing_user_config_never_uses_a_registration_with_valid_explicit_path"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "An interrupted copy removes only its own incomplete destination.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12a47430dbdd08e71e08d907a6418223d15c70e0",
+            "content": "sha256:156907eeb7c6fd4d880d13c48e34d87cfed9a94f11fb4f59b0ee0edf3f1ef435",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_copy_failure_removes_only_its_own_incomplete_destination"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Every settings-copy OS error is reported as permission or refused while the install completes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12a47430dbdd08e71e08d907a6418223d15c70e0",
+            "content": "sha256:b49dbf61934ae1f01b8da5ecfc03a649c7dab55f47532730cc4e9fa086eff1ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_runtime_install_reports_settings_oserror_and_completes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "Every `--config` help of the umbrella parser is collected by subcommand.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12a47430dbdd08e71e08d907a6418223d15c70e0",
+            "content": "sha256:cded21b28c4c51dc18567d076edcfdeafb1f416b5f049acb16269543dee7f523",
+            "locator": {
+              "kind": "symbol",
+              "name": "_config_help_by_command"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The `--config` help of four subcommands names the user settings file whatever the current directory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12a47430dbdd08e71e08d907a6418223d15c70e0",
+            "content": "sha256:b4dd13dcf6d998d6f2c0648d753e8d2659726b1be3284ef41f49b35c4891234f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_omitted_config_help_names_the_user_settings_file_not_the_directory"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "No `--config` help claims discovery from the working or current directory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12a47430dbdd08e71e08d907a6418223d15c70e0",
+            "content": "sha256:9ced22af9e8f37ffe3db5efc2da912d3abb175b1e3cef4ca5f5a4e2810aa8936",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_no_config_help_claims_directory_discovery"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "The dashboard `--daemon` help names the restart on a differing Python source digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12a47430dbdd08e71e08d907a6418223d15c70e0",
+            "content": "sha256:aff40e15925ab8e9ed2fa92f1daf869977c75d830167e39ff4463b8a7cc4d2bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_daemon_help_names_the_source_digest_restart"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Discovery never inspects the current directory, so a nearer registration cannot select another authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12a47430dbdd08e71e08d907a6418223d15c70e0",
+            "content": "sha256:8f0518f61a28238f7a60018a685aae3c6cc86329d93d88ede38a6e4ef197e5d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_current_directory_never_selects_another_authority"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Malformed and foreign registrations do not affect the user config.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12a47430dbdd08e71e08d907a6418223d15c70e0",
+            "content": "sha256:3c09a0957ac0e88964d10c5bbc388cc0fa6e82fd44797869937d8885bfaed144",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_malformed_and_foreign_registrations_do_not_affect_user_config"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A miss names the user-config path and the explicit --config remedy, with no workspace fallback.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12a47430dbdd08e71e08d907a6418223d15c70e0",
+            "content": "sha256:bd79325721bc3970bf7ef63a9a38ecd508fa734b9578d88cf4dafcb89e3c4d88",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_miss_names_user_config_and_explicit_remedy_without_workspace_fallback"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The CLI reports the discovered settings and an explicit --config is used without discovery.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12a47430dbdd08e71e08d907a6418223d15c70e0",
+            "content": "sha256:9efdc6161c7bdf37dca538394c70ddb783dd0bf7f5af6086bc4d26e280a3839d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cli_reports_actual_discovery_and_preserves_explicit_settings"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Discovery names a running same-root dashboard's other settings file and writes nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12a47430dbdd08e71e08d907a6418223d15c70e0",
+            "content": "sha256:99c930865fdf850407724165e2743173826e538247d89bc8ccf2d64d1c4549a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_discovery_names_actual_daemons_other_settings_only_for_same_root"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The user config must name an existing absolute coordination root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12a47430dbdd08e71e08d907a6418223d15c70e0",
+            "content": "sha256:40f831d53ce601aaf0b8bfbe819e67a6e77551ff4186a377f61ddeb135a5391f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_user_config_requires_a_real_absolute_coordination_root"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The default home and an explicit XDG config home share the user-settings folder; a relative one refuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12a47430dbdd08e71e08d907a6418223d15c70e0",
+            "content": "sha256:ce362fe99f78ec23afa7b9a3452554a1bd07cc9492ef15b60d5bacb08a38567a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_default_home_and_explicit_xdg_share_the_user_settings_folder"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The install copies the old settings once and leaves old and harness folders untouched.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12a47430dbdd08e71e08d907a6418223d15c70e0",
+            "content": "sha256:4517c73d7f50d389182e2370e7e401e2649e3ddadc01d4a1a81f73c182386d53",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_actual_install_copies_once_leaves_old_and_harness_folders_untouched"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

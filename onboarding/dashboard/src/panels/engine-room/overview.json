@@ -1,0 +1,990 @@
+{
+  "path": "dashboard/src/panels/engine-room",
+  "references": {
+    "1": {
+      "note": "The server composer of the process nodes the client renders.\n\nAnchor: \"def build_analytics(\"; \"def _start_process_node(entry: dict[str\"; \"def _process_edges(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc7a6d1a7b42e9f22d3b82ddcee7e044cd9d7cb5",
+            "content": "sha256:1dea019ad356aa7df62d82195273725cf7c6d95221aeeb6e35b6f16bbc66023b",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_metrics.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d2ad899f0adbf93abb10fb821fee28e8801cae3",
+            "content": "sha256:23dc6cc4bffbb9f8686a5bd39c41d5511db1a4b6243f8637d0e1bf0448b137e6",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 98
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_processes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d2ad899f0adbf93abb10fb821fee28e8801cae3",
+            "content": "sha256:a4f266f5dd15d6d2cf7e9bd92bb9f928fe1a0b05e166728552c4523c59af83da",
+            "locator": {
+              "end": 374,
+              "kind": "line_range",
+              "start": 374
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_processes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dc7a6d1a7b42e9f22d3b82ddcee7e044cd9d7cb5",
+            "content": "sha256:1dea019ad356aa7df62d82195273725cf7c6d95221aeeb6e35b6f16bbc66023b",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_metrics.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d2ad899f0adbf93abb10fb821fee28e8801cae3",
+            "content": "sha256:23dc6cc4bffbb9f8686a5bd39c41d5511db1a4b6243f8637d0e1bf0448b137e6",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 98
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_processes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d2ad899f0adbf93abb10fb821fee28e8801cae3",
+            "content": "sha256:a4f266f5dd15d6d2cf7e9bd92bb9f928fe1a0b05e166728552c4523c59af83da",
+            "locator": {
+              "end": 374,
+              "kind": "line_range",
+              "start": 374
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_processes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Route still owns enclosure visualization, model/types, branch/coupler/ledger, straight worktree/sync/integration conduit — source ownership, not executed visual proof.\n\nAnchor: `export function OfficialLineLayer({`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "053b605eb77ad20fed2c08ede3c3caabf4fc3cf6",
+            "content": "sha256:82d50fd5ae48a6139e3c3eb50ee4e6e7c37f96d64b3ac53904f7f726a623ae3c",
+            "locator": {
+              "end": 252,
+              "kind": "line_range",
+              "start": 187
+            },
+            "path": "dashboard/src/panels/engine-room/sceneLayers.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Route still owns enclosure visualization, model/types, branch/coupler/ledger, straight worktree/sync/integration conduit — source ownership, not executed visual proof.\n\nAnchor: `function fxSignature(node: EngineProcessNode): string {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "745dcb2438f071de87e63481375c2c3790c15d3b",
+            "content": "sha256:6768f05bbb4d1c870d56b55b932e64ce7df3837770597212bc88985fec5c8df5",
+            "locator": {
+              "end": 145,
+              "kind": "line_range",
+              "start": 54
+            },
+            "path": "dashboard/src/panels/engine-room/useEngineTimeline.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Route still owns enclosure visualization, model/types, branch/coupler/ledger, straight worktree/sync/integration conduit — source ownership, not executed visual proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c81634e51615e483399292e3462c23681ff3f39",
+            "content": "sha256:11435a3178df88ef447007e28d0ecf2fdffdacaec000133a9e549d1c1876c1f2",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6c81634e51615e483399292e3462c23681ff3f39",
+            "content": "sha256:9effedaf0257b7453234f1d383042c3fb4f5721404a4e664c28adfb723b53763",
+            "locator": {
+              "end": 99,
+              "kind": "line_range",
+              "start": 93
+            },
+            "path": "dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6c81634e51615e483399292e3462c23681ff3f39",
+            "content": "sha256:f85ab62386f37aca0671da9ecd1cc060de954391dee2bbbe59d0ce76532d8c7e",
+            "locator": {
+              "end": 228,
+              "kind": "line_range",
+              "start": 166
+            },
+            "path": "dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6c81634e51615e483399292e3462c23681ff3f39",
+            "content": "sha256:3b7214d844933f22f434c49e6dbd562bcea97fc71c79743d46edc8d9f6a4e1fb",
+            "locator": {
+              "end": 269,
+              "kind": "line_range",
+              "start": 263
+            },
+            "path": "dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6c81634e51615e483399292e3462c23681ff3f39",
+            "content": "sha256:648417a8b0d3aa15b3a4eb71c10c429a44b967c80a6fb1adc16d4ac69f9ccef4",
+            "locator": {
+              "end": 550,
+              "kind": "line_range",
+              "start": 533
+            },
+            "path": "dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "Published process nodes are mapped and ordered without a lifecycle/session/gate join; only enclosureKey and node are returned.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab7f380552d2c5c141cd55b980ed509244b01f6e",
+            "content": "sha256:bcda3aa2cce27047c0cb5733f48b675cf7fe6f3c7d6f70c8d4a4fce04ced66a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "buildEngineRoomModel"
+            },
+            "path": "dashboard/src/panels/engine-room/buildEngineRoomModel.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96aec8b27873ce7787e5ed066e0b68e34d739955",
+            "content": "sha256:24b1ceb88b39058cc9aa4856479c2cf094c901ceafb573accf03f7baff352b36",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 40
+            },
+            "path": "dashboard/src/panels/engine-room/buildEngineRoomModel.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "Process/ledger slice subscriptions, memoized process-only mapping, selected enclosure and repository ledger retain their own source boundaries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c89382b7530853796de958e287f52a05bf0222f3",
+            "content": "sha256:2aede7278b5afa2f34d995f55e47a09251c5042e5d230c595155d47469266519",
+            "locator": {
+              "kind": "symbol",
+              "name": "EngineRoomImpl"
+            },
+            "path": "dashboard/src/panels/EngineRoom.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c89382b7530853796de958e287f52a05bf0222f3",
+            "content": "sha256:54510dd877359167a4bf16da1db9e12cc0059f54475251600c808b394e850204",
+            "locator": {
+              "end": 167,
+              "kind": "line_range",
+              "start": 105
+            },
+            "path": "dashboard/src/panels/EngineRoom.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Memory/materialisation/fleeting and movement predicates\n\nAnchor: resolveEngines through resolveMemoryMovement",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97051d4d41f68adb2f44945b0980df38f23ad791",
+            "content": "sha256:e712b54a11506fa0f03a113d472eca167d46571d81144300006c5e365d92df41",
+            "locator": {
+              "end": 151,
+              "kind": "line_range",
+              "start": 52
+            },
+            "path": "dashboard/src/panels/engine-room/scene.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Terminal, recovery and landing predicates retain their source conditions; recovery deduplicates next action and enabled action names.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97051d4d41f68adb2f44945b0980df38f23ad791",
+            "content": "sha256:3141fb71c0867801b3bab45b71b4421d41f8c75b246dd3eda1916c8f27a3ed8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolveGates"
+            },
+            "path": "dashboard/src/panels/engine-room/scene.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "97051d4d41f68adb2f44945b0980df38f23ad791",
+            "content": "sha256:83ea024dbd04381fa97e0d25a4e3196ecc52bb160d45543440c39963a66bf862",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolveRecovery"
+            },
+            "path": "dashboard/src/panels/engine-room/scene.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "97051d4d41f68adb2f44945b0980df38f23ad791",
+            "content": "sha256:5e273681b2a142f6cfaed7c327f07c31d1c6ee27eb865ac35e4f2e28a6ab9984",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolveLanding"
+            },
+            "path": "dashboard/src/panels/engine-room/scene.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Provider geometry absent; integration paths straight; polarity state-derived\n\nAnchor: EDGE_GEOM, conduitPathD, refusedPolarityOf",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
+            "content": "sha256:97b1d32acbe5a3c866b61ae80830913b4de58375b86bdeaf7ea3f412391f41df",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "dashboard/src/panels/engine-room/geometry.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Replay metadata without bent geometry; observed-only landing progression\n\nAnchor: Conduit, landingFlowState",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20ebb84787f6b5ab1be931ed6560c0e33431166b",
+            "content": "sha256:ad2f00ea6532819ab4ac5198fb8799178406b5706444e220ec19205f9067bc08",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "dashboard/src/panels/engine-room/conduits.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20ebb84787f6b5ab1be931ed6560c0e33431166b",
+            "content": "sha256:6fc598c43361d6fa90cf96cbd72ed920980ec8a128aaa9c79c2a9009fd5c6dda",
+            "locator": {
+              "end": 179,
+              "kind": "line_range",
+              "start": 146
+            },
+            "path": "dashboard/src/panels/engine-room/conduits.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Bounded ledger window and best-effort metadata\n\nAnchor: read_ledger, _ledger_window, enrichment",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8be3f293c9a38e01524f4b0f2f2252f9b0d2aecc",
+            "content": "sha256:4cb79f14498dbfbce7c40621369d4e0cd436cf31478ef10bac72e56ddab48d6c",
+            "locator": {
+              "end": 240,
+              "kind": "line_range",
+              "start": 194
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_analytics.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8be3f293c9a38e01524f4b0f2f2252f9b0d2aecc",
+            "content": "sha256:b063990cd0cfb8c932c34618afc3e5b3b0b6e9418accc7c3fb827a6143c3608c",
+            "locator": {
+              "end": 320,
+              "kind": "line_range",
+              "start": 253
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_analytics.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8be3f293c9a38e01524f4b0f2f2252f9b0d2aecc",
+            "content": "sha256:4cb79f14498dbfbce7c40621369d4e0cd436cf31478ef10bac72e56ddab48d6c",
+            "locator": {
+              "end": 240,
+              "kind": "line_range",
+              "start": 194
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_analytics.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8be3f293c9a38e01524f4b0f2f2252f9b0d2aecc",
+            "content": "sha256:b063990cd0cfb8c932c34618afc3e5b3b0b6e9418accc7c3fb827a6143c3608c",
+            "locator": {
+              "end": 320,
+              "kind": "line_range",
+              "start": 253
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_analytics.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The served `EngineProcessNode` / `Analytics.engineProcesses` contract.\n\nAnchor: `EngineProcessNode`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ada1520ab5545be71a00dae1420683fd0b82938",
+            "content": "sha256:d32d3fa3f9ee309299df68d8e41fcd2129443d1c976d81632c8281b7311b99b4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Preview, matching row, missing metadata, downward popover\n\nAnchor: LedgerTable, LedgerPopover",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f8c77203e752ccbf10a6c27855eed358fd6b1448",
+            "content": "sha256:92cdc0c0cb3c7a6e9ef9d218a637ffbfa028fb104a91cd72c74ff49d2bcd2951",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 31
+            },
+            "path": "dashboard/src/panels/engine-room/ledger.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f8c77203e752ccbf10a6c27855eed358fd6b1448",
+            "content": "sha256:9a1f4316d0877192dbc833e2f0323878b56bbf69d162430856f91fa02d1c11c5",
+            "locator": {
+              "end": 168,
+              "kind": "line_range",
+              "start": 148
+            },
+            "path": "dashboard/src/panels/engine-room/ledger.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The current process producer emits worktree-add, ledger-map and sync edges; provider seed/clone lanes and their state-precedence reducer are absent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d2ad899f0adbf93abb10fb821fee28e8801cae3",
+            "content": "sha256:86af058e0c5abc7a69a835324dcdc9697f80441984b3e2dceaa2cedd54eafdbb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_process_edges"
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_processes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d2ad899f0adbf93abb10fb821fee28e8801cae3",
+            "content": "sha256:868f56411c0f65bcaedd6ca1614d510845b8d4ccf8b225829b1726b3b6455ecb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_materialize_edge_state"
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_processes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Extra fields forbidden, kind/state string fields, optional lineage\n\nAnchor: projection models",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ada1520ab5545be71a00dae1420683fd0b82938",
+            "content": "sha256:0a35ca704e6f95e4f1e3ead2ac775ceb1457d96888de21bf0fbaf449e015f2f8",
+            "locator": {
+              "end": 456,
+              "kind": "line_range",
+              "start": 373
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "Timeline freshness differs from canvas; abandon/conflict dispositions\n\nAnchor: bootSteps, disposeFrontier, teardownSteps",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c6fb3353eaaf5c876e680e34783ef2a1b24b47f",
+            "content": "sha256:1403058305cd2d20f85308eec3b6742b7e6e94db1b319234489878c0b3c5e191",
+            "locator": {
+              "end": 115,
+              "kind": "line_range",
+              "start": 33
+            },
+            "path": "dashboard/src/panels/engine-room/BootTimeline.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "Source-lineage state remains a display fact, while the diagnostics action row renders only Affordance and no former gate responder.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b655ff830c5a9c45e80be3c51bbd8390324add5b",
+            "content": "sha256:e1cdbdaf8407848910aa6566aabf918401673b88df39c60ff44782c3fa4e4737",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiagnosticsPanel"
+            },
+            "path": "dashboard/src/panels/engine-room/DiagnosticsPanel.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b655ff830c5a9c45e80be3c51bbd8390324add5b",
+            "content": "sha256:ccaa718c09af11cc7b3d63386664583d9bdf8d7b6175a239c5d752fbf9941cf1",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiagnosticActionRow"
+            },
+            "path": "dashboard/src/panels/engine-room/DiagnosticsPanel.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "Motion gate, scoped context pause and cleanup\n\nAnchor: shouldAnimate, useEngineTimeline",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5045a0dfe298de1b76c82e4326d5f177dbd5bc70",
+            "content": "sha256:9bb7de66e1a174480fdf39d15aa8a38ad942301965db125e8ee779170998366c",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "dashboard/src/panels/engine-room/useShouldAnimate.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "745dcb2438f071de87e63481375c2c3790c15d3b",
+            "content": "sha256:3548b0005b46d8a557674654ac9a3a4a312b9e9d3cff075b85f6109321e233ba",
+            "locator": {
+              "end": 231,
+              "kind": "line_range",
+              "start": 153
+            },
+            "path": "dashboard/src/panels/engine-room/useEngineTimeline.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "Current sibling overlay contains surge and attention\n\nAnchor: EngineFxOverlay",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df68c2254ed8f38e966883668dcf5caea64390d7",
+            "content": "sha256:c761a02e6796a7cbd74c4ff76dc5138578f78fd7d3cd496dab8387d923941bc4",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 74
+            },
+            "path": "dashboard/src/panels/engine-room/EngineFxOverlay.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "EngineRoom conditionally mounted, contrary to inherited keep-alive account",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:dcdf7b26bdc676b80b0311450589915c44d94af9f9d33e708a387ca83267569b",
+            "locator": {
+              "end": 691,
+              "kind": "line_range",
+              "start": 687
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:921e455be43c5f1c647d35565a6cba24b9ae6ee6e59f1fd30d46f9bec932c12d",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 87
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "The current pre-contract fleeting assertion checks `nextAction`, and the replacement census rejects retired provider/setup fields and rendered traces; the former T7B retry/abandon and no-disabled-memory assertion remains historical.\n\nAnchor: `renders the big red fleeting-enclosure box (BLOCKED title + reason + recovery) for a pre-contract block`; `EnclosureCanvas — provider traces are gone (MIK-R112 rule 2)`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c81634e51615e483399292e3462c23681ff3f39",
+            "content": "sha256:cba204820a8a7da8b68ef2fca5f4b5efff375bfa06d2920bda6aa89ab5e4c272",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 31
+            },
+            "path": "dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6c81634e51615e483399292e3462c23681ff3f39",
+            "content": "sha256:8f7caa2c52679d2c1791e4e364844d08e1f548b64394bc0a5c8fadd58a527fb0",
+            "locator": {
+              "end": 520,
+              "kind": "line_range",
+              "start": 477
+            },
+            "path": "dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The honest-motion gate the GSAP/Motion read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5045a0dfe298de1b76c82e4326d5f177dbd5bc70",
+            "content": "sha256:03fbe4a61df59f3821f011f83ed126d730c7c17a0c274c82b2b3d537bcb9f6a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "useShouldAnimate"
+            },
+            "path": "dashboard/src/panels/engine-room/useShouldAnimate.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "BranchTier mounts integration/source and worktree tiers plus a conditional middle landing tier, with branch labels from projected refs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "053b605eb77ad20fed2c08ede3c3caabf4fc3cf6",
+            "content": "sha256:47718d6637f76abc954c7d5dcbfb9708e21681526e7e15c8328d3419df6e54f0",
+            "locator": {
+              "end": 185,
+              "kind": "line_range",
+              "start": 139
+            },
+            "path": "dashboard/src/panels/engine-room/sceneLayers.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "efb364dc374fa80ecd59103fe9f95d72b224e6ee",
+            "content": "sha256:97c5c52ddccfacf340c819ad90970cfb6866904b1b36e626a62251593e977768",
+            "locator": {
+              "end": 115,
+              "kind": "line_range",
+              "start": 51
+            },
+            "path": "dashboard/src/panels/engine-room/engines.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "15444872a266d89123558da6eb8909e81fe96665",
+            "content": "sha256:daf2ff19d8889ea99f9c36af2cdf9b8fd94d80e9be49204697efed0a92aafd44",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 62
+            },
+            "path": "dashboard/src/panels/engine-room/EnclosureCanvas.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "Enclosure status joins the exact native entry worktree.enclosure and delegates to TaskStatusWord; no matching entry renders no task word, not an invented lifecycle status.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "054ead2663c65b7d2efb4b784b2c7d7ae25d7dca",
+            "content": "sha256:054b7d812da4a60d9f8bde34d7598a2e63c5d89fef4ec123063c50fda9ebe32b",
+            "locator": {
+              "kind": "symbol",
+              "name": "BoundTaskStatus"
+            },
+            "path": "dashboard/src/panels/engine-room/EnclosureStackList.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "054ead2663c65b7d2efb4b784b2c7d7ae25d7dca",
+            "content": "sha256:c408d1856263ac544e7b8bcc91f3739c27d6e1abeaea499b75932c2a951cebe6",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 78
+            },
+            "path": "dashboard/src/panels/engine-room/EnclosureStackList.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "The enclosure process edge builder emits worktree-add, ledger-map and sync, without provider seed/clone edges.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d2ad899f0adbf93abb10fb821fee28e8801cae3",
+            "content": "sha256:86af058e0c5abc7a69a835324dcdc9697f80441984b3e2dceaa2cedd54eafdbb",
+            "locator": {
+              "end": 415,
+              "kind": "line_range",
+              "start": 374
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_processes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "Pre-contract start nodes also create only worktree-add and ledger-map edges.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d2ad899f0adbf93abb10fb821fee28e8801cae3",
+            "content": "sha256:e4320fe12f6cca6ca4ae474b86803e4b13e938c15ceddf48b76c0dbd8bcef000",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 105
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_processes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "Current refused polarity accepts only integration and integration-mem, with failed/stale state deciding red/amber.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
+            "content": "sha256:10f1bc043a15d6e4d23cca602d1e73b73b83d58b6a50b215ee976b3d8a091861",
+            "locator": {
+              "end": 103,
+              "kind": "line_range",
+              "start": 73
+            },
+            "path": "dashboard/src/panels/engine-room/geometry.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "Diagnostics render current process facts without provider setup/heartbeat rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b655ff830c5a9c45e80be3c51bbd8390324add5b",
+            "content": "sha256:397c1377ed5752a6665e1b9a7e3057d55a5e680f53f8ce8ba7145635932a03ef",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 37
+            },
+            "path": "dashboard/src/panels/engine-room/DiagnosticsPanel.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The cockpit shell that hides the rails for the Engine Room view (§4.1).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:0f469e6b992308afc228aac4b72debc3ac8e5fd34deedd109fe0a75719e44bcf",
+            "locator": {
+              "end": 504,
+              "kind": "line_range",
+              "start": 498
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`EngineProcessEdge` (`extra=\"forbid\"`) with the documented `kind` and `state` vocabularies the flash derives from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ada1520ab5545be71a00dae1420683fd0b82938",
+            "content": "sha256:4b31b460cf2bfd78dc4589df8a552c328a633762e9e07d658f5db4e360b63935",
+            "locator": {
+              "kind": "symbol",
+              "name": "EngineProcessEdge"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The former _seed_edge_state/_DECISIVE_SETUP_EDGE_STATES seed-lane account is historical. The current process reducer emits enclosure materialisation and sync edges with no provider seed/clone state reducer.\n\nRetired anchor: mcp/src/agents_remember/observer/reducer_impl/_processes.py:631 — the file holds 490 lines, so the cited location no longer exists; the code this note is about is cited by the reference that carries it.\n\nRetired anchor: mcp/src/agents_remember/observer/reducer_impl/_processes.py:638 — the file holds 490 lines, so the cited location no longer exists; the code this note is about is cited by the reference that carries it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d2ad899f0adbf93abb10fb821fee28e8801cae3",
+            "content": "sha256:86af058e0c5abc7a69a835324dcdc9697f80441984b3e2dceaa2cedd54eafdbb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_process_edges"
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_processes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d2ad899f0adbf93abb10fb821fee28e8801cae3",
+            "content": "sha256:868f56411c0f65bcaedd6ca1614d510845b8d4ccf8b225829b1726b3b6455ecb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_materialize_edge_state"
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_processes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a95148ac75c865e5846b8994fe331ba5fb2ad1f7",
+            "content": "sha256:b9ed06ad72f6362152ab656a657b39bee623eb96dc5fbb2653139841fef4f711",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 27
+            },
+            "path": "mcp/src/agents_remember/observer/reducer.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The client mirror of the edge, which no longer declares a polarity field.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
+            "content": "sha256:21cac9e0ab2bd51c63ac823fa1d60ca86b9759849b9cbd5ccabcdb3bd7aa8072",
+            "locator": {
+              "kind": "symbol",
+              "name": "EngineProcessEdge"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
+            "content": "sha256:21cac9e0ab2bd51c63ac823fa1d60ca86b9759849b9cbd5ccabcdb3bd7aa8072",
+            "locator": {
+              "kind": "symbol",
+              "name": "EngineProcessEdge"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The Engine Room model consumes server-composed enclosure process nodes without a client session join or safety inference and sorts them by phase then leaf/task identity. EngineRoom composes their stack, process-map stage with ledger input and diagnostics layout; these are source responsibilities, not executed visual proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab7f380552d2c5c141cd55b980ed509244b01f6e",
+            "content": "sha256:8676a7512c767fa359421941f48b6bdd0679d0b362e99c3cb18366695812eefd",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "dashboard/src/panels/engine-room/buildEngineRoomModel.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c89382b7530853796de958e287f52a05bf0222f3",
+            "content": "sha256:15f33449c1269b15bc35c17365fdcf7cf2858257483642bb3b7c707fc82b6a51",
+            "locator": {
+              "end": 176,
+              "kind": "line_range",
+              "start": 114
+            },
+            "path": "dashboard/src/panels/EngineRoom.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Route still owns enclosure visualization, model/types, branch/coupler/ledger, straight worktree/sync/integration conduit — source ownership, not executed visual proof.\n\nAnchor: `export function resolveEngines(node: EngineProcessNode) {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97051d4d41f68adb2f44945b0980df38f23ad791",
+            "content": "sha256:89fe850d92faaf4c5a5f686873215820829a6ef94b95a68855a6c0fca0866479",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 52
+            },
+            "path": "dashboard/src/panels/engine-room/scene.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

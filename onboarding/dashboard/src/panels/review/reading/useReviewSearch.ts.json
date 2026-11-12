@@ -1,0 +1,39 @@
+{
+  "path": "dashboard/src/panels/review/reading/useReviewSearch.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Opening the page does not read the whole inventory; a typed query does.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "31dc0ef763170f058c60ac2021bee23fb6abffa8",
+            "content": "sha256:1de9af2f2bb61d7998df8a852f124d3c16c294aa047019ee47fb9f13ba30baf1",
+            "locator": {
+              "kind": "symbol",
+              "name": "searchNeeded"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A failed search read is shown as a problem, not as an empty result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "31dc0ef763170f058c60ac2021bee23fb6abffa8",
+            "content": "sha256:d55c6c4f9b6e22190c867f746086e0d3323d6a378e2265bf2ae02847acb87e65",
+            "locator": {
+              "kind": "symbol",
+              "name": "searchProblemOf"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

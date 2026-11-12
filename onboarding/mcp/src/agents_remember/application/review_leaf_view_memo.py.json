@@ -1,0 +1,340 @@
+{
+  "path": "mcp/src/agents_remember/application/review_leaf_view_memo.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7648883defbabbaf2d855721f766fbdcce2bb99a",
+        "content": "sha256:0eec46ab95cb5f05e7213fdd08b93624900f6c42f7f2a2489eb9fc962d333de2",
+        "locator": {
+          "kind": "symbol",
+          "name": "moved_inputs"
+        }
+      },
+      "id": "RLZ-28NDMN",
+      "invariant": "INV-BBPPS5",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-view-depends-on-its-reads",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "Reports as moved a task document the computation read whose bytes differ from the key's or that the key does not name, and every recorded row whose recheck gives another identity. A document the key names that the computation never opened is not reported.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "7648883defbabbaf2d855721f766fbdcce2bb99a",
+        "content": "sha256:3c1b280f14f8c2c670f0921f7cff56e9271498bd45cb43b2a4df8eca176e2242",
+        "locator": {
+          "kind": "symbol",
+          "name": "remembered"
+        }
+      },
+      "id": "RLZ-3BXC5B",
+      "invariant": "INV-BBPPS5",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-view-depends-on-its-reads",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "Serves a kept view only when it is young enough and its recorded rows report no change, and replays the kept rows into the caller's recording.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7648883defbabbaf2d855721f766fbdcce2bb99a",
+        "content": "sha256:d0c75c1b1f556d322b0a75a50ff548a9600174dd82b33c5112163ea124c9ddee",
+        "locator": {
+          "kind": "symbol",
+          "name": "leaf_view_key"
+        }
+      },
+      "id": "RLZ-3EFTEY",
+      "invariant": "INV-5M9WY3",
+      "origin": {
+        "handoffEntry": "L40-actual-read-memo",
+        "leaf": "260928-MIK-L40"
+      },
+      "rationale": "Binds exact candidate/base trees, gate-key input identities and canonical task reads for this request.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7648883defbabbaf2d855721f766fbdcce2bb99a",
+        "content": "sha256:0eec46ab95cb5f05e7213fdd08b93624900f6c42f7f2a2489eb9fc962d333de2",
+        "locator": {
+          "kind": "symbol",
+          "name": "moved_inputs"
+        }
+      },
+      "id": "RLZ-B1HDWP",
+      "invariant": "INV-5M9WY3",
+      "origin": {
+        "handoffEntry": "L40-actual-read-memo",
+        "leaf": "260928-MIK-L40"
+      },
+      "rationale": "Reports as moved every task document whose recorded identity differs from the key's or that the key does not name, and every recorded row whose recheck gives another identity. It compares identities only: an unreadable observation that stays unreadable keeps the same identity and is reported by nothing as moved, so the exclusion of failed reads is enforced separately by the memo's `remember` through `has_failed_observation`. A document the key names that the computation did not open is not reported.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7648883defbabbaf2d855721f766fbdcce2bb99a",
+        "content": "sha256:a44ed17da93f424b5040882b8ec98265b35fc46404d42057532b091232ec097c",
+        "locator": {
+          "kind": "symbol",
+          "name": "remember"
+        }
+      },
+      "id": "RLZ-JT0DJ4",
+      "invariant": "INV-5M9WY3",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-failed-read-never-kept",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "Refuses to keep parts whose rows hold a conflict or an unreadable row, or record a task document as absent, or for which moved_inputs reports anything.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7648883defbabbaf2d855721f766fbdcce2bb99a",
+        "content": "sha256:d4396dd07e2b5208d4339a2d6847e2bb632b0126860ed40f62e7bd9870405579",
+        "locator": {
+          "kind": "symbol",
+          "name": "_Kept"
+        }
+      },
+      "id": "RLZ-PR915R",
+      "invariant": "INV-BBPPS5",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-view-depends-on-its-reads",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "Holds the kept parts with the rows recorded for them and answers whether they still read the same through changed_observations over exactly those rows.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "10": {
+      "note": "Task reads are the JSON files directly in the task folder.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7648883defbabbaf2d855721f766fbdcce2bb99a",
+            "content": "sha256:ac71b894fbfa7e24f72510bc047d8f61524a44ef94b66366ff5c5a28b0dc56b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_task_reads"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The recheck repeats selections before it reads bytes.\n\nAnchor: `changed_observations`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a23691198bebbe2d0f859101a6f6dab3b9b29d0",
+            "content": "sha256:8ffb4484face95cb08e182c862449827b752195befae946dae537bed77adfd2e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/kernel/recorded_reads.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Another leaf's document appearing, changing or vanishing, and a newline in task.json, leave the kept view in place; the leaf's own document recomputes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+            "content": "sha256:c3f475897dcd14f7a97836eec5863e97be6516602151f2871c7ddd4accbe3ae1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_kept_view_ignores_every_task_document_it_did_not_read"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "A second document that claims the leaf is computed again and answers incomplete.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+            "content": "sha256:60616374187df50a50efa1efae51e8a02ebfb96f22f513da676c714dce3621e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_document_that_begins_to_claim_the_leaf_is_not_hidden_by_a_kept_view"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Not read, same bytes, other bytes, a conflict and an unnamed document, each judged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+            "content": "sha256:808982e2fcff62915535c1d9d898c204240cc8938c0734c777c67bea85d0a706",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_moved_inputs_tells_not_read_from_changed_and_unidentified"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "Count and age bounds, and no answer for another key.\n\nAnchor: `test_the_view_memo_is_bounded_by_count_and_by_age_and_never_answers_another_key`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
+            "content": "sha256:889b4d4df7f6c4f3fa6078a9b27d3909316d5c1874d01fd04c3acf2a887d7c35",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_review_read_latency.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "A view behind which a read failed is not kept.\n\nAnchor: `test_a_view_behind_which_a_read_failed_is_never_kept`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
+            "content": "sha256:889b4d4df7f6c4f3fa6078a9b27d3909316d5c1874d01fd04c3acf2a887d7c35",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_review_read_latency.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "The kept value includes the worklist and its optional code-change facts; the actual caller propagates those facts.\n\nAnchor: current stored value and producer",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7648883defbabbaf2d855721f766fbdcce2bb99a",
+            "content": "sha256:a61e6c42933e90c535fd55c7b5d38af3c8a6b73b5e14dd3b0505ba857fb1d40c",
+            "locator": {
+              "end": 115,
+              "kind": "line_range",
+              "start": 110
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "32b468e307d43909fa4abb9ad4cf27f31384665f",
+            "content": "sha256:3931efd74b39a7336bb56c4a4b94c7935fa6b037d8216f5316844855c8411c5e",
+            "locator": {
+              "end": 567,
+              "kind": "line_range",
+              "start": 548
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_knowledge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "LeafViewParts has worklist and optional code_changes, not worklist alone.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7648883defbabbaf2d855721f766fbdcce2bb99a",
+            "content": "sha256:a61e6c42933e90c535fd55c7b5d38af3c8a6b73b5e14dd3b0505ba857fb1d40c",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeafViewParts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "Nested gate-key observations are replayed before the absent-key return.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7648883defbabbaf2d855721f766fbdcce2bb99a",
+            "content": "sha256:d0c75c1b1f556d322b0a75a50ff548a9600174dd82b33c5112163ea124c9ddee",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_view_key"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The key's fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7648883defbabbaf2d855721f766fbdcce2bb99a",
+            "content": "sha256:9e266c70363803ee282c5a5b8109f245643c5952b4fdcbd86e1ed93428de29ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeafViewKey"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The key is built with the task lookup's reads recorded; several conditions give no key.\n\nAnchor: `leaf_view_key`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7648883defbabbaf2d855721f766fbdcce2bb99a",
+            "content": "sha256:108498f60b2ba7cab98c94deea783f7d08f2ff07b0af76a617c932d4172363f9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "A read with other bytes or an unnamed read is a move; a named document that was not read is not.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7648883defbabbaf2d855721f766fbdcce2bb99a",
+            "content": "sha256:0eec46ab95cb5f05e7213fdd08b93624900f6c42f7f2a2489eb9fc962d333de2",
+            "locator": {
+              "kind": "symbol",
+              "name": "moved_inputs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,58 @@
+{
+  "path": "mcp/src/agents_remember/canvas/explainer_capsule.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The seat's text is addressed by one capability word shared with the registered capability\n\nAnchor: `CAPABILITY = `",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2106478861eb630c00746b136bbba1c3890cd71a",
+            "content": "sha256:159b3733c4400ca040b7447aa4cb12a12d98a5e919848542f2fa234bc8840de7",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 19
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The text is read through the loader that bounds its length and its required clauses\n\nAnchor: `def capability_text(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2106478861eb630c00746b136bbba1c3890cd71a",
+            "content": "sha256:90195ae279fea62dc0f22b321512e9845f326f824a69d4acd0deacf2e86a9ac2",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A loader refusal becomes the seat's own refusal instead of an uninstructed seat\n\nAnchor: `\"capsule-unavailable\"`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2106478861eb630c00746b136bbba1c3890cd71a",
+            "content": "sha256:90195ae279fea62dc0f22b321512e9845f326f824a69d4acd0deacf2e86a9ac2",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

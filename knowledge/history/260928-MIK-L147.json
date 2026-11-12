@@ -1,0 +1,127 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L147",
+  "rows": [
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5JXN7Z",
+      "items": [
+        "sha256:cb83ed43be4732d40555ae6fb00b48f3f96ccacb809ac82e218ce9de7d61fe3c"
+      ],
+      "reason": "This is one side of the same row-local swap, not a module addition or retirement. MIK-R147@v1 restores the existing ascending-order rule without changing lane membership; INV-RDQYV3/FAM-DBX1PN already own canonical refusal. No new obligation is introduced by this fragment.",
+      "subject": "hunk:sha256:cb83ed43be4732d40555ae6fb00b48f3f96ccacb809ac82e218ce9de7d61fe3c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-M5WDE9",
+      "items": [
+        "sha256:95c8dd72f0f8c64c89677e9cc6f56969fabf5952557f86ef5109aab4ec4603b4"
+      ],
+      "reason": "This is one side of the same row-local swap, not a module addition or retirement. MIK-R147@v1 restores the existing ascending-order rule without changing lane membership; INV-RDQYV3/FAM-DBX1PN already own canonical refusal. No new obligation is introduced by this fragment.",
+      "subject": "hunk:sha256:95c8dd72f0f8c64c89677e9cc6f56969fabf5952557f86ef5109aab4ec4603b4"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-GT2391",
+          "revision": 1
+        },
+        {
+          "id": "INV-P3ZYFW",
+          "revision": 1
+        },
+        {
+          "id": "INV-W6WXHZ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-MR621C",
+      "items": [],
+      "reason": "Examined guard, shared-support delegation and recursive scanner. Declaring an already-existing importer in exact artifact consumers changes accounting only; no protected-path behavior, member scope, guarantee or explicit route changes.",
+      "revision": 1,
+      "subject": "FAM-N1K4XP"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-6GVK07",
+          "revision": 1
+        },
+        {
+          "id": "INV-K0CS85",
+          "revision": 2
+        },
+        {
+          "id": "INV-RDQYV3",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-PE4E3A",
+      "items": [],
+      "reason": "Examined union merge, canonical refusal and mechanical rewrite together. Catalog order and supported membership are repaired while all three mechanisms, guarantees, scopes and explicit routes remain unchanged; no new family or member is justified.",
+      "revision": 1,
+      "subject": "FAM-DBX1PN"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-QNRTAZ",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "The two ordered consumer extents restore canonical order and exact source-derived membership. Artifact identities, owners, lifetimes, replacement contracts and scope are unchanged. Existing card already states sorted unique consumers and source-derived exact accounting, not execution; no prose change is needed under amended MIK-R147@v1 rules 2/2a/4.",
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "cbd8a667827a2e4277358439a10ab52dd4bd9a87",
+            "content": "sha256:39ca93a56c46b2b679a423d13ae8ece2604c0d2acb4631d4f34ca4d98654c70e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "9ca96b9d574b4102dd3f618143650c908242455b",
+            "content": "sha256:04b77e0816bfbe9cfe8a4616e3ca1b229fd90065587c30a5fe2dd50222f1969b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GRTJG0"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-SDH33N",
+      "items": [
+        "sha256:30dc73f299fe3b98e6cc894b507ca184fbcd1118b4d75873a918877a72497306"
+      ],
+      "reason": "The retired L48 incident account remains retired and historical. Its whole-file realization is touched by the narrow order/missing-consumer repairs, not by a new resurrection or a live two-consumer limit. Refresh this retained entry at the candidate without reviving the incident or changing its statement, scope or revision.",
+      "revision": 1,
+      "subject": "INV-MSCRAN"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-WZE5WS",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "The one-line swap restores the documented ascending order. Lane membership, collection refusal and selection-versus-execution boundary are unchanged; the existing card remains accurate under MIK-R147@v1 rules 1/4.",
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Z8YYNJ",
+      "items": [
+        "sha256:728691b63fa283337c377c66e12c79899363e13df41725225438d6eeb300ea30"
+      ],
+      "reason": "The route retains source-derived lane population, canonical loader refusal, candidate environment and settings isolation boundaries. These row-local catalog repairs change no route purpose, test behavior, artifact owner or admission mechanism; operative overview and dated historical accounts need no change under MIK-R147@v1 rule4.",
+      "subject": "onboarding:mcp/tests/overview"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

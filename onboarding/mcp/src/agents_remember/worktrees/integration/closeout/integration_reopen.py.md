@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/integration/closeout/integration_reopen.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/integration/closeout/integration_reopen.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T00:53 |
-| lastVerifiedCommitHash |  `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
-| lastVerifiedCommitDate |  2026-09-17T23:56:19+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Governing route overview](overview.md)
@@ -48,43 +38,28 @@ Accepted input, exact Git facts, and typed owner results stay distinct from disp
 
 None recorded for the ledger-retirement boundary.
 
-## Repo-Internal References
+## Evidence
+
+### Repo-Internal References
 
 The following current source boundaries establish the ledger-retirement behavior.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `completed_integration_reopen` evaluates the two actual output commits against their source branches. | `completed_integration_reopen` | mcp/src/agents_remember/worktrees/integration/closeout/integration_reopen.py:49-76 |
-| `_completed_memory_is_unlanded` tests changed memory content and ancestry of that same content commit. | `_completed_memory_is_unlanded` | mcp/src/agents_remember/worktrees/integration/closeout/integration_reopen.py:94-112 |
+- `completed_integration_reopen` evaluates the two actual output commits against their source branches. [1]
+- `_completed_memory_is_unlanded` tests changed memory content and ancestry of that same content commit. [2]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Preview distinguishes prospective code and memory reopen effects. (`preview_integration_reopen`) | `preview_integration_reopen` | mcp/src/agents_remember/worktrees/integration/closeout/integration_reopen.py:13-46 |
-| Completed output is evaluated per code and memory leg. (`completed_integration_reopen`) | `completed_integration_reopen` | mcp/src/agents_remember/worktrees/integration/closeout/integration_reopen.py:49-76 |
-| Memory reopening requires changed content and an unlanded memory-content commit. (`_completed_memory_is_unlanded`) | `_completed_memory_is_unlanded` | mcp/src/agents_remember/worktrees/integration/closeout/integration_reopen.py:94-112 |
+- Preview distinguishes prospective code and memory reopen effects. (`preview_integration_reopen`) [3]
+- Completed output is evaluated per code and memory leg. (`completed_integration_reopen`) [4]
+- Memory reopening requires changed content and an unlanded memory-content commit. (`_completed_memory_is_unlanded`) [5]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No additional repository is consulted; the admitted worktree contract supplies both repository
 and source-branch identities.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No additional cross-repository evidence applies. | — | — |
+No additional cross-repository evidence applies.
 
-## Docs References
+### Docs References
 
 No external Domain Documentation source is configured for this slice. The current behavior is repository-owned and is supported by the source references below.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured external source applies. | — | — |
-
-## Update History
-
-- 2026-09-15T00:53 UTC — LCA-L9 working-candidate curation: retired ledger Git authority in this file-specific boundary; preserved real Git and lifecycle safeguards and prior history. Source and diff reviewed, source-sha256=fded29f92acd5273cbe1236bcf3071649d3eb9d16056e573e5a4ad88028b798f. Existing verification commit/date remain unchanged until an actual source commit is available; no test or acceptance claim.
-
-
-- 2026-08-30T06:08+02:00 — MCAR-L03 A005: extracted completed-integration reopen policy from the
-  closeout coordinator, preserving exact per-leg ancestry behavior while removing its CRAP and
-  file-size pressure. Verification remains closeout-owned.
+No configured external source applies.

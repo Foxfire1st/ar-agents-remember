@@ -1,0 +1,325 @@
+{
+  "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+        "content": "sha256:2f263671c7d5b0d1a221c8a8f1d420249a377d4a8c0d78646d8f709579c0ebd1",
+        "locator": {
+          "kind": "symbol",
+          "name": "CheckoutBinding"
+        }
+      },
+      "id": "RLZ-7ECPA7",
+      "invariant": "INV-0AWC7Q",
+      "origin": {
+        "handoffEntry": "F10",
+        "leaf": "260928-MIK-L73"
+      },
+      "rationale": "The binding is a value here, so the fact a process is bound to a disposable coordination root is computed once and read by every surface that must state it.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+        "content": "sha256:e7791119b1e18159ebfbbbd83a14da6aa29442e78892e2f9d570688969689704",
+        "locator": {
+          "kind": "symbol",
+          "name": "McpRuntimeConfig"
+        }
+      },
+      "id": "RLZ-HGR6H7",
+      "invariant": "INV-R4760T",
+      "origin": {
+        "handoffEntry": "L188-B18",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "Runtime configuration no longer carries installed harness-skill-root authority.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+        "content": "sha256:e7791119b1e18159ebfbbbd83a14da6aa29442e78892e2f9d570688969689704",
+        "locator": {
+          "kind": "symbol",
+          "name": "McpRuntimeConfig"
+        }
+      },
+      "id": "RLZ-JKN1AR",
+      "invariant": "INV-9XEW06",
+      "origin": {
+        "handoffEntry": "PNT-R01@v1 §2",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Carries an optional typed authority rather than deriving one from host state.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+        "content": "sha256:1d9119bc64ab4dc5fd43c1b90c70440eaa0c51e7bba433af8ed35d886b413eb8",
+        "locator": {
+          "kind": "symbol",
+          "name": "_config_for_execution"
+        }
+      },
+      "id": "RLZ-WT4B4E",
+      "invariant": "INV-0AWC7Q",
+      "origin": {
+        "handoffEntry": "F10",
+        "leaf": "260928-MIK-L73"
+      },
+      "rationale": "This is where the binding is decided for a process: the loaded worktree, the disposable root and the configured root it did not use are all known here, so no caller has to guess.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+        "content": "sha256:e2d83560666924530b06c82fcd178952932211795b5d29970b35d162ce3a4e47",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-YTFME9",
+      "invariant": "INV-B7D1WM",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-15",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "Shared runtime configuration reads the migrated user file through the same location contract; missing-user tests isolate both runtime construction and calls.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "15": {
+      "note": "Anchor: Current authority model, with unused retirement key rather than execution policy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:a45acb44467f2575b539b96d6ada7fc9a9cfd4d0d326be8fd8dbda9dd8c8a9db",
+            "locator": {
+              "end": 183,
+              "kind": "line_range",
+              "start": 152
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Anchor: Current configuration mapping and validation boundaries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:df685e37ffe125af626e6dfe4db5630686de4afbe74843d0c8629c0c6c4bfff6",
+            "locator": {
+              "end": 342,
+              "kind": "line_range",
+              "start": 289
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Anchor: Per-use shared host settings read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:22147ea2d45a4d7a813a1cf75682f10ee1b5d76dd2df6bf230b1edd60ca5a232",
+            "locator": {
+              "end": 352,
+              "kind": "line_range",
+              "start": 345
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Anchor: The host block is resolved from the shared authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:22147ea2d45a4d7a813a1cf75682f10ee1b5d76dd2df6bf230b1edd60ca5a232",
+            "locator": {
+              "end": 352,
+              "kind": "line_range",
+              "start": 345
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "`load_authority_paseo_runtime` reads the authority file's `paseoRuntime` block from `configPath` on every use; the shared reader is retained, not a per-harness fallback.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5e98565595261000309d4af6931b1bd494a558b",
+            "content": "sha256:74e3852e55b91ab7fbf8dde243da165660d8d747d4452c86c2d4f237e8863ee0",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_authority_paseo_runtime"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/paseo_authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "Anchor: Retired direct-execution switch is notice-only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:dbe2c95419b864bfe4c56539ab248d5412e6c1e3a26702a51559cba6374ba4f8",
+            "locator": {
+              "end": 597,
+              "kind": "line_range",
+              "start": 583
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Legacy gateDelegation migration warnings are emitted once per authority-file-path/shadowed-state pair in the process, not at every configuration re-resolution. Provider degradation parsing belongs to kernel/primitives/provider_degradation_settings.py. This clarification introduces neither a restored provider/benchmark tool nor a new settings or delegation authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:e2d83560666924530b06c82fcd178952932211795b5d29970b35d162ce3a4e47",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "The per-use host block read from the named authority file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:793187d866d1722921e7d622acbe6bbc94d8f8cc9b17fa769e9143400b7cb0ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "paseo_runtime"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "The settings-file read that treats an absent authority file as no host.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:dbc0d0de7748c2d157c740655c45d6c401a08cacc9bc2a48ec3aca7086f36716",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_paseo_runtime_settings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Current dashboard boot settings are DashboardSettings with auto_start=False and DEFAULT_DASHBOARD_PORT, not ProviderScope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:eb10f07ce1aa1cde2f6245b200c58c9a90a4a871b1fbfe3f74cbdee7665852ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "DashboardSettings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Anchor: Retained provider-degradation settings parser.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0d06339f4b5b339d0e1d8721c1a92b05571c871",
+            "content": "sha256:ce43babfd03390d4ae2b411938d2a74bbe37e6dab4ba8f489a10266bf7574e93",
+            "locator": {
+              "end": 128,
+              "kind": "line_range",
+              "start": 58
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/provider_degradation_settings.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Anchor: Provider/degradation/configuration fields survive without retirement policy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:df685e37ffe125af626e6dfe4db5630686de4afbe74843d0c8629c0c6c4bfff6",
+            "locator": {
+              "end": 342,
+              "kind": "line_range",
+              "start": 289
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "DashboardSettings declares disabled-by-default auto_start and DEFAULT_DASHBOARD_PORT; this is dashboard configuration, not ProviderScope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:eb10f07ce1aa1cde2f6245b200c58c9a90a4a871b1fbfe3f74cbdee7665852ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "DashboardSettings"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:eb10f07ce1aa1cde2f6245b200c58c9a90a4a871b1fbfe3f74cbdee7665852ce",
+            "locator": {
+              "end": 115,
+              "kind": "line_range",
+              "start": 110
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

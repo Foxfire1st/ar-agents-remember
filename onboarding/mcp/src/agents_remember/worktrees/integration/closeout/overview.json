@@ -1,0 +1,377 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/closeout",
+  "references": {
+    "1": {
+      "note": "The closeout validator's gate over the authority's exact candidate.\n\nAnchor: `_require_knowledge_gate`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a61bb8710773ccee56c8016d87b57de1d750388c",
+            "content": "sha256:3ea7b2f02a294a5fea2dc010c849cac60fe37d3309a27bfc7b9cbda1dddef791",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Both coherence assessment projections delegate supplied per-record measurements to the binding owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "622cc21b42bb21eb6ddf65f5c76376a6b460ff4f",
+            "content": "sha256:c007186b63db88a848d5273978c43c4f60ee1fb4b4512905af899461eff35ad8",
+            "locator": {
+              "end": 380,
+              "kind": "line_range",
+              "start": 354
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The door accepts either its exact recorded tree or the bounded clean-sync relation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0940b70289d43e211b8e08dbeafc3769dc23b64",
+            "content": "sha256:86a20ff12327bbf2f7875dfe057efb888ad604a89225dc396dd6a0d01e677ac4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_review_provenance"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Door source facts use current Git and task authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e910ca6ba7d78e4070bf44e6e789bef50bc80ae8",
+            "content": "sha256:a3c55e31538cc171cdaeb4341a838fd8327bcfa456e8c84f46e8362e4f646fac",
+            "locator": {
+              "kind": "symbol",
+              "name": "_declare_generation"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/door_source.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Coherence observes exact candidates, validates current identities and dependencies, and shares per-record measurement projection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a61bb8710773ccee56c8016d87b57de1d750388c",
+            "content": "sha256:11766a27fc8fc9d2058751fa071256453d4bec1fb8f955f87f95b30a720fa205",
+            "locator": {
+              "end": 215,
+              "kind": "line_range",
+              "start": 152
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a61bb8710773ccee56c8016d87b57de1d750388c",
+            "content": "sha256:0d64f1ab5341d6a3d0e97f6ee334e82815a00911e751e19551b22a39feb10521",
+            "locator": {
+              "end": 352,
+              "kind": "line_range",
+              "start": 292
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a61bb8710773ccee56c8016d87b57de1d750388c",
+            "content": "sha256:639557666dd44e79d32a672d51aa5afbe5463f44e3cc5ab8c28e9fe58e873eef",
+            "locator": {
+              "end": 500,
+              "kind": "line_range",
+              "start": 404
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a61bb8710773ccee56c8016d87b57de1d750388c",
+            "content": "sha256:87bb890fce2ddf85045c57c02c1c2eb61490bfa737234035dbded7a5aecff462",
+            "locator": {
+              "end": 594,
+              "kind": "line_range",
+              "start": 567
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a61bb8710773ccee56c8016d87b57de1d750388c",
+            "content": "sha256:d24efd06d2fa14698f93cd72ece2b34dbd0d412adc32a3f897c3d132e2564873",
+            "locator": {
+              "end": 667,
+              "kind": "line_range",
+              "start": 607
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Publication derives its input statement from the declared publication members, names caller-supplied delivery identities, and accepts judgments and review assessments inline or from one judgments file whose SHA-256 the publish answer carries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b06809a50c0177ed9f11e258232f95ce0fe5679",
+            "content": "sha256:6056a8e954ae75eb1c188747da2865b05c86acc1d71b16e70b5c3d533fa37f84",
+            "locator": {
+              "kind": "symbol",
+              "name": "publication_input_statement"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e48e38066874b65d5c7dec91535af65a658fbe4",
+            "content": "sha256:62ff8ce4bdbd3f00c78efdacd84276c39aa645becc3eef914179028fe1628ab6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9150d6ea2188c64e23f747c261ce8ef28cdd1bf4",
+            "content": "sha256:86b5e459286f0d79d7c4ea38fbeef81f4177a0b2507baa810d44601575c74df7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_judgments_file.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Assessment evidence has a task-root destination and mandatory retained-byte read-back; immutable generation reads verify structured and projected content.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26d81a2aa363bcb074785fd947100dd377220676",
+            "content": "sha256:14bda1f40647061fe043fe5487e586cb90ea324e419f110ea449ef47513b27d0",
+            "locator": {
+              "end": 219,
+              "kind": "line_range",
+              "start": 128
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_assessment_evidence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a30702a05dc231f91eb11d5b9a8ad2ba2162b5f5",
+            "content": "sha256:17e77530d516e2e345e5fd3c2f4de2e5a5bc51bf9d0eba206e5a8319096588fd",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 29
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f9803f99ec17984b37829a2d4af77fd2a521764a",
+            "content": "sha256:df0e03ef66b1da9148ea7063847a2e3c40e3c518f0417c5e7b1c4acc5ca32a14",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_paths.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Preparation selection requires original certificates and retains command starts, outcomes and selected outputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0dc75488f84e9b970fce1a584c4600297291e84",
+            "content": "sha256:7ba7c5fca3aecea0293eacd8b8632ff8bf507c93d9a67cf7f4f1e3a9cf5a2947",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation_selection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f80165f2fce348dd60607343404287bd534b8d7f",
+            "content": "sha256:725b21ea24776facdac2d7f73a7f65e66a5aedf3188b86acb0affbbf4d63ee08",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/preparation_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f80165f2fce348dd60607343404287bd534b8d7f",
+            "content": "sha256:1a5b27d51034b41d654dd6b6ea4ae8df1337a6938ea43bc6186fa0d8efddcd95",
+            "locator": {
+              "end": 289,
+              "kind": "line_range",
+              "start": 270
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/preparation_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The curator checklist supplies scope, its worklist-backed `_OnboardingGateInputs` and response to the onboarding refresh gate; that gate dispatches converted history-file traces. It accepts no separate no-impact identities.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
+            "content": "sha256:9b6b7ee6b87713f63d4da3ef60a5236fd59612fa7f09a3942367eeee6b039bf8",
+            "locator": {
+              "end": 709,
+              "kind": "line_range",
+              "start": 701
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
+            "content": "sha256:84986dea920d27ff5e8cfc296e977cea5b92685c057771a8a7999d7e90ce4053",
+            "locator": {
+              "end": 958,
+              "kind": "line_range",
+              "start": 895
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Converted leaf closeout evaluates its exact candidate through the mandatory invariant gate and refuses an unbound gate; unconverted memory uses the central cutover refusal. No removed prepared-certification adapter is an alternate route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c8023bb3a59c12b7c1099777b123d40bf7deb6c",
+            "content": "sha256:a930db3f4dc85af046f9406ddbf73dc6403c686d0fe99ceadede5c82c73c30fa",
+            "locator": {
+              "end": 241,
+              "kind": "line_range",
+              "start": 191
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3bd023143e8a8eaa549af0bc726fdb101140b570",
+            "content": "sha256:03252c4f026fc4ca9eb71979cf74e05f79d49b371b09d2cf4a671102f0eb916b",
+            "locator": {
+              "end": 221,
+              "kind": "line_range",
+              "start": 195
+            },
+            "path": "mcp/src/agents_remember/worktrees/cutover_lock.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:3b9e6e573fa71d95f9e69ddc01590078df8a07595832f36a5ba2913b04d43a1a",
+            "locator": {
+              "end": 276,
+              "kind": "line_range",
+              "start": 226
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Exact accepted and recovered pair identities and source-branch reintegration predicates have shared owners.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d2b618b6d5c9460fee517673b509a51bbdd196bc",
+            "content": "sha256:88c82704203b63e8894a7be1f77982ccb853512cf9b36e3563716c8cac93d465",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 30
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/memory_candidate_pairing.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a9ddfcf4d2710d11362f8d847d2588846923ab80",
+            "content": "sha256:0c11fcff6195044f5e7a0daa9b55ddc584f959f77a33b19da0485d00d159931b",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/integration_reopen.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

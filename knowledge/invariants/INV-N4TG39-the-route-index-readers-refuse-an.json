@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Treating a file at the onboarding path as an empty directory would conceal invalid state; one regression checks the exact exception and message across all three route builders."
+  },
+  "applicability": "The explicit, missing-only and full-quality route-index readers at a selected onboarding path.",
+  "conditions": [
+    "The code root is admitted as a live directory before the onboarding path is surveyed; an existing non-directory onboarding path triggers the refusal, and an absent path yields a successful zero-route survey."
+  ],
+  "exclusions": [
+    "Converted drift errors use their own status response; this invariant describes the route-index exception boundary."
+  ],
+  "id": "INV-N4TG39",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "A002-focused.txt: 29 cases; A002-failing-before.txt captures the prior false refusal; same test checks three builders."
+      ],
+      "path": "L204-curator-handoff-draft.json"
+    },
+    "handoffEntry": "L204-non-directory-refusal",
+    "leaf": "260928-MIK-L204",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The route-index readers refuse an existing non-directory onboarding path with NotADirectoryError and a message identifying the non-directory; an absent onboarding path remains an empty collection.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -2,13 +2,7 @@
 
 | Field | Value |
 | --- | --- |
-| repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/application/task_docs` |
-| doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
-| governingOverview | `../overview.md` |
 
 ## Governing Overview
 
@@ -16,205 +10,142 @@
 
 ## Purpose
 
-The task-document authoring package (260815-DAG master full-gate repair): the operation-dispatched
-`task_doc_tool` application entry point and its sibling modules — `task_ref` (the typed task
-reference), `task_reopen` (leaf reopen), `task_doc_route_review` (candidate-bound route-review
-authority), `task_doc_publication` (task-first exact publication plus projection refresh),
-`task_doc_graph_titles` (zero-or-one graph-bearing batch authority),
-`task_doc_section_scaffolding` (atomic raw-section shape boundary),
-`task_execution_topology` (graph authoring/edits), `task_doc_steps` (the step plane: one exact
-addressing rule plus `set_step`/`add_step`/`remove_step`/`skip_step` and the `read_steps`
-projection), and `task_sprint_linkage`
-(sprint↔master attach/detach/linkage facts). The modules moved here from `application/` (flat) so
-the task-document authoring seam owns one package; `task_doc_steps` was added later
-(260831-LOCR-L33) when keeping the step plane inline took `task_doc_tools.py` to 1,243 lines against
-the armed 1,200-line hard limit.
+This package owns the application seam for task-document authoring: operation dispatch, candidate validation, publication, checklist edits, execution-graph authoring, sprint linkage, and master retirement. `task_ref` provides typed task references and `task_reopen` provides the leaf-reopen route. Shared concerns have separate owners so the dispatcher does not duplicate their rules.
+
+Packet requirement edits use alignment_sweep to report the master’s declared open siblings and their requirement identities as advice. task_doc_tools validates the candidate before deriving that advice, publishes task truth through its existing owner and adds the advice only to an ok result. The sweep edits no sibling packet and grants no release; response shaping carries its metadata separately.
 
 ## Hot Path Summary
+task_doc_field_homes centralizes newly reserved section/head-note remedies and validates explicit nonempty waitsFor writes against same-master membership, self-reference and cycles before publication. Legacy sections/notes remain editable and removable. task_doc_content_edits owns content operations; task_doc_tools composes the prepared candidate with existing proof and publication guards. Dependencies are information, not a new start/refusal gate.
 
-`task_unstarted_evidence.py` determines commit evidence from actual code/memory-content and integrated output cells. Retired ledger commit cells no longer count as commit evidence; an existing enclosure remains independent started evidence, and task/lifecycle checks still apply.
+task_doc authoring no longer exposes successful get/read_steps projections or step_payloads. The early operation-removed answer guides canonical JSON/rendered-file reading. Ordinary writes deliver bounded phrases, create retains renderedPath, changed reviewState stays visible, and dry answers carry wouldLose/diff with independently retained locations; rich identity/preview/masterSync remains whole-result custody and a validly addressed parent-sync failure is an answered refusal. Invalid caller master references are refused by the shared master_json_path_from_ref resolver with TaskDocError during candidate validation after retirement-proof comparison, before publication; a changed or Order-refreshed parent must also pass the in-place document guard. Linkage reporting writes its facts JSON and delivers counts/location; attach/detach retain per-document previews internally. Shared task_doc_phrases owns the actual mutable allowlist, excluding seriesContractPath/enclosures. Publication refreshes the own leaf plus declared requirement copies with rollback, without turning copies into task authority. Strict model facts come from models/task_doc.py; no historical pending-model statement certifies a live session.
 
-## Detailed Route Context
+`task_doc_tool` resolves the task address, dispatches special operations or prepares an ordinary candidate, validates that candidate, and publishes or previews it. Publication rechecks accepted source bytes, derives affected projection scopes, writes task truth, invalidates those scopes, and rebuilds projections independently. `task_unstarted_evidence.py` checks actual code/memory-content and integrated commit cells; an existing enclosure is independent started evidence, and task, locator, lifecycle-operation, seat, and report facts also participate.
 
-Task-document authoring is the source-of-truth publication plane. An otherwise-valid mutation is
-never subordinate to queue or per-contract atomic-series activation state. The exact transaction rechecks accepted source bytes, writes task
-truth and invalidates every affected waiting projection under the task-publication lock, then
-rebuilds each disposable projection independently from current closeout-door facts. The closed field-effect classifier excludes observation-only updates from invalidation;
-semantic/planning changes invalidate their old/new affected sprint union. A planning
-change therefore yields a clear invalidation/rebuild signal without freezing unrelated task-doc
-authoring, changing activation state, or claiming lifecycle evidence for an operation already
-underway. Per-contract activation and retained sync state are downstream worktree authorities that
-re-evaluate
-the changed plan at their next admission boundary.
+## Construction
 
-`task_doc` MCP calls dispatch through `task_doc_tool` to one operation (create/replace/edits/special
-ops); the special ops (sprint linkage + execution graph authoring) publish inside their own
-functions and return raw operation payloads merged with the standard identity via
-`_sprint_doc_identity`. Route review, topology enforcement, and master-row completion
-checks run before any publication; exact route-review admission receives the selected
-`ResolvedTaskDocument` and binds its semantic task-intent identity. Dry-run publication
-also resolves the affected scope union through the same validation owner; everything validates against the strict `TaskDocResponse` wire
-shape (the special-op fields declared in `models/task_doc.py`).
+### Dispatch And Candidate Validation
 
-Graph-bearing writers share `task_doc_graph_titles`: pure batch cardinality is checked early and a
-batch with more than one graph-bearing document refuses, while on-disk title reads remain inside the
-locked publisher callback. Create/replace share `task_doc_section_scaffolding`: raw `sections` must
-be a list of mappings before any missing canonical register scaffolds are appended.
+> **Retained historical source account — superseded by the current route account:**
+> The MCP payload adapter calls `task_doc_tool`. The dispatcher handles create, replace, field and checklist edits, review operations, and special operations. Sprint linkage and execution-graph authoring publish through their own functions; their operation payloads are merged with the standard document identity through `_sprint_doc_identity`. `read_steps` is a focused read-only checklist projection.
 
-Since 260913-LCA-L5 create/replace also share one fail-closed authoring guard:
-`_require_bindable_leaf_authoring` refuses a leaf whose derived master link nothing would ever bind
-(no series contract and no master document in the task root), while the ordinary planning order —
-master first, then its leaves, before any start — remains allowed by the explicit guarantee that the
-first start binds the fields.
+> **Retained historical source account — superseded by the current route account:**
+> Ordinary candidates pass retirement-proof preservation, disposition and route-review authority, unresolved-unit preservation, terminal-status checks, master completion, register shape, and execution-topology validation before publication. Route-review preparation binds the selected source path and contract context. The exact semantic admission predicate inside that owner remains a bounded verification uncertainty here. The existing strict `TaskDocResponse` wire-shape claim likewise remains pending confirmation of its response-model owner.
 
-## Conventions
+### Publication And Projection Scope
 
-- The package uses relative imports between its own modules (`from . import task_sprint_linkage`).
-- The strict task-document writer authorities in `code_quality/single_owner.py` name these files.
-- Shared contracts are explicit owners, not copied private helpers: graph cardinality/title context
-  lives in `task_doc_graph_titles.py`, raw-section scaffolding in
-  `task_doc_section_scaffolding.py`, and publication ordering in `task_doc_publication.py`.
-- The step plane is one such contract owner: `task_doc_tools.py` registers the step operations and
-  keeps thin `_apply_*` adapters, while `task_doc_steps.py` owns the addressing rule and the four
-  operations. A second addressing rule must not appear in the dispatcher.
+> **Retained historical source account — superseded by the current route account:**
+> `task_doc_publication.py` owns accepted JSON/Markdown source snapshots, exact source-conflict reporting, prepared-document publication, and preview. Dry-run preflight checks source currency and resolves the affected scope union through the same owners used by apply. Publication also refreshes task-document copies; a copy-refresh failure attempts restoration of the accepted source snapshots.
+
+`task_doc_queue_scope.py` uses the closed field-effect classification to skip changes that do not invalidate projections and derive the canonical old/new affected sprint union for those that do. Task truth is the authoring authority; queue state is a disposable scheduling projection. A planning change does not itself establish lifecycle evidence or change downstream activation state. Per-contract activation and retained sync state remain downstream authorities whose next-admission behavior is not independently established by this bounded read.
+
+The shared `publish_task_fact_mutation` composes validation, scope derivation, task publication and projection invalidation, then reports rebuild effects independently. In this task-document route it is called inside the explicit repository task-publication lock: `run_task_doc_call` covers source preparation and the central transaction covers validation, publication, copy refresh and rollback. The shared function alone is not the lock owner; its lack of a local lock is not evidence of a current task-document locking discrepancy. A projection rebuild failure is not itself permission to roll back already published task truth.
+
+### Graph Titles And Raw Sections
+
+`task_doc_graph_titles.py` rejects publication batches containing more than one graph-bearing document and builds the sole in-memory batch title context. Ordinary batches carry `(task_root, TaskDocument)` pairs, so each document retains its own destination; graph cardinality is checked over the documents in those pairs. The common publisher uses `write_task_doc_batch`, and `_prepared_task_doc_overrides` resolves each destination inside the declared repository task root, refusing an escape. Graph-title callbacks run through that publication route rather than establishing separate write authority.
+
+Create and replace share `task_doc_section_scaffolding.py`. It validates a supplied `sections` container as a list whose members are mappings before changing it, then appends missing canonical register sections when the payload is a sprint. Model and register validators retain semantic ownership; malformed raw containers are not coerced.
+
+### Leaf Construction
+
+`_build_doc` rejects the removed `light` kind. Without an explicit kind it derives `subTask` from a leaf contract and otherwise defaults to `master`. With a resolved contract it stamps the series path and, for a leaf contract, enclosure registration and applicable lifecycle identity.
+
+Current publication rechecks accepted JSON/Markdown source bytes and derives the candidate scope union through `validate_task_doc_transaction`. For a subTask without an explicit master field, that central guard resolves its folder master and requires the master kind and matching subtask number; a path-existence-only local guard is not publication authority. Other addressed master references remain candidate-validation responsibilities. `task_doc_tool` invokes `run_task_doc_call` before source preparation; nested publication is refused and the central transaction uses the same repository task-root lock through validation, publication, refresh and rollback. Keyed questions and flat-list edit types belong to `task_flat_list_edits`; the set-field allowlist belongs to `task_doc_phrases`.
+
+Historical pre-central-publication account, not a current route: `_require_bindable_leaf_authoring` checked only whether `task_root/task.json` existed. Its stated first-start/attach binding intent did not prove a valid master from those bytes. That helper is retired; its former limitation does not authorize current orphan planning or publication.
+
+### Checklist Operations
+
+`task_doc_tools.py` registers thin adapters; `task_doc_steps.py` owns checklist addressing and mutations. `parent` selects the namespace for an existing target, and zero or multiple matches refuse. `set_step` updates one existing unit without creating it. `add_step` creates one unit, requires an ID and title, and refuses an existing ID in that scope. `remove_step` deletes one existing unit with a nonblank reason and appends an audit decision. `skip_step` retains an unresolved unit, marks it done, and records its intentional-skip disposition and decision.
+
+A reasoned removal may delete a done unit and may operate on a Completed document. These are explicit exceptions preserved in the implementation. Removal means that the unit should never have existed; skipping means that a planned unit was deliberately not done. They remain distinct operations, and the dispatcher must not introduce a second addressing rule.
+
+### Declared Knowledge Effects
+
+`expectedKnowledgeEffects` is settable through `set_field`. The resulting whole document is model-validated before publication. The declaration belongs to a leaf, must be nonempty when present, and cannot repeat a subject/effect pair. Subject and requirement-reference forms, effect vocabulary, and strict entry shape are model concerns; `null` clears the declaration.
+
+The field is classified as normative intent and participates in task-intent projection. An absent declaration is omitted from the canonical projection, so clearing only this declaration restores the otherwise-identical undeclared intent. The declaration model checks shape without reading knowledge; an unknown subject's worklist handling is stated by the owner but was not independently inspected here. The existing architect/approved-worker authorization rule is procedural rather than a demonstrated per-field role gate.
+
+### Sprint Linkage And Retirement
+
+`task_sprint_linkage.py` dispatches five operations: attach, detach, retire, archive sprint, and linkage report. `archive_sprint` delegates to its sibling sprint-archive owner. `task_doc.retire_master` archives an individual master, whether or not a sprint commands it; `task_doc.archive_sprint` is the separate whole-sprint route.
+
+[task_master_retirement.py](task_master_retirement.py.md) owns both retirement paths. For a commanded master, it records the sprint candidate and archives the folder in one publication callback, restoring the folder and sprint source pair if an exception occurs before archival. For a master commanded by no sprint, it writes proof into the master's folder and moves that folder, restoring the folder and newly created proof state on failure. These restoration rules describe the retirement publisher; the task-document route's lock comes from its central transaction, not from inferring a lock in each callback.
+
+[task_retirement_shared.py](task_retirement_shared.py.md) supplies the request payload, nested-master refusal, and archive hook. The hook delegates review-artifact cleanup with both repository paths and reports caught exceptions as failures. A hook failure leaves the retirement retained and reports `retired-with-hook-failures`, `ok=false`, and a same-request retry for the hook. [task_retirement_authority.py](task_retirement_authority.py.md) prevents generic edits from changing complete retired rows, including proof, name, scope, and status.
+
+[task_sprint_context.py](task_sprint_context.py.md) holds request, sprint-reading, candidate-validation, transaction, and preview helpers; [task_sprint_candidates.py](task_sprint_candidates.py.md) holds detach construction and `SprintLinkageError`; [task_execution_graph_mutations.py](task_execution_graph_mutations.py.md) holds graph-authoring models and handlers, including the retirement edge-removal helper. Their detailed shared-helper predicates and the retirement sprint-edit caller remain bounded verification uncertainties.
+
+### Recovery And Refresh Checks
+
+Unstarted-task evidence is derived from canonical task and lifecycle facts rather than waiting-queue state. Missing, unreadable, and started evidence remain distinct; commit evidence uses the four actual output cells, while a readable enclosure independently establishes started evidence.
+
+The shared `validate_memory_refresh_attestations` composes sidecar and route-overview body checks, collecting either surface's error before refusing. A current memory-quality caller supplies separate evidence for the two surfaces. The original assertion that curator preparation and closeout each call it independently is retained as an integration claim awaiting confirmation of both caller paths; it is not evidence that validation ran for this proposal.
 
 ## Invariants And Boundaries
 
-- Only these modules may author/render task documents; the application layer is the only writer.
-- Since 260913-LCA-L5 authoring fails closed on a derived field it cannot bind: `_build_doc` refuses a
-  leaf document authored under a task root with **no master document**, naming `seriesContractPath`, the
-  missing `task.json` and the remedy. The planning case — a master document exists but the series
-  contract is not bootstrapped yet — stays allowed, and only because the leaf's first
-  `worktree_start`/`worktree_attach` is guaranteed to bind both derived fields; the guarantee is stated
-  in the helper rather than left implicit. A leaf is therefore never authored under any task root: that
-  earlier claim is now false.
-- Task truth owns authoring; the waiting queue is a disposable scheduling projection and cannot
-  freeze `task_doc` operations.
-- Queue invalidation cannot erase claimed/running/commit lifecycle evidence; that durable evidence
-  belongs outside the projection plane.
-- Publication admits at most one graph-bearing document. Preview and apply use the same owner; no
-  first-graph selector, catch-and-split retry, or silent title fallback is introduced.
-- Raw section scaffolding validates the entire container/member shape before mutation and preserves
-  typed errors; it does not coerce malformed input.
-- Nothing here touches memory repos or the coordination ledger directly.
+- Task-document publication and rendering authority must remain explicit and centralized. The package calls shared `tasks.store` writer APIs; the application seam is not itself the complete low-level writer implementation. The reviewed writer authority lives in `mcp/test_support/agents_remember_test_support/code_quality/single_owner.py`. The allowlist is enforcement source, not an acceptance result of this account.
+- Task truth owns authoring. Waiting projections must not freeze otherwise-valid task edits or erase durable claimed/running/commit lifecycle evidence. The exact lifecycle-preservation predicates were not inspected here.
+- The task-document caller and central transaction explicitly serialize preparation/publication under the repository lock. Accepted source CAS, task publication, copy refresh/rollback and disposable projection effects retain separate responsibilities; the low-level shared fact function is not an alternative lock owner.
+- A publication batch admits at most one graph-bearing document, with a shared cardinality owner. No split retry or silent title fallback is part of that owner's implementation.
+- Raw-section scaffolding validates the entire supplied container/member shape before mutation and preserves typed errors.
+- Leaf publication no longer relies on the retired path-existence-only helper. The central unbound-subTask guard reads the actual folder master and its row number; it is not a claim that every other binding predicate lives in that one guard.
+- Commanded-master completion uses `tasks/readiness.py::master_is_terminal`: abandonment is terminal without resolving remaining planning rows; Completed is terminal only when there are no completion blockers. The topology route still names every incomplete commanded master.
+- Generic task edits preserve complete retired rows. Retirement and intentional checklist removal retain their explicit audit requirements.
+- Declared knowledge effects are leaf-only normative task intent. Role authorization remains procedural; declaration-shape validation does not establish that a knowledge subject exists.
+- Ordinary declaration handling does not read knowledge. Retirement delegates cleanup with the memory-repository path, so the original package-wide claim of no memory-repository contact is too broad. Direct coordination-ledger access was not independently established or excluded by this bounded read.
 
-## Current Architecture After CLIVE And DAGQC L1
+## Lifecycle And Historical Context
 
-Task publication validates the complete accepted source set and current integration authority, then
-writes task truth plus projection invalidation atomically or reports the exact conflict. Rebuild is
-independent and derived from current task/door facts. DAGQC L1 centralizes graph-bearing batch
-cardinality/title context and raw-section pre-model validation so all authoring routes share one
-contract per concern.
+The prior card records that these modules moved from flat `application/` into this package, and that extracting the step plane reduced a dispatcher reported at 1,243 lines against an armed 1,200-line limit. Those are historical accounts, not current size or acceptance evidence; their historical authority was not inspected.
 
-### Reconciled Source Evidence
+The prior card also records developer authorization of reasoned removal from done units and Completed documents, architect/approved-worker authorship of knowledge-effect declarations with adversarial packet review, and the standing restriction that no real task document may carry the field before the L37 install because older installed runtimes reject unknown fields. The removal exceptions are visible in current source. The procedural rulings, install milestone, and current installed-runtime authority are not resolved here; no current lifecycle status or release acceptance is asserted.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Task-first transactional publication and independent projection refresh. | `publish_task_doc_set`; `publish_prepared_task_documents`; `publish_task_doc_transaction_and_refresh`; `preview_task_doc_projection_effects`; `preview_task_doc_transaction_projection_effects` | mcp/src/agents_remember/application/task_docs/task_doc_publication.py:81-85; mcp/src/agents_remember/application/task_docs/task_doc_publication.py:88-127; mcp/src/agents_remember/application/task_docs/task_doc_publication.py:130-145; mcp/src/agents_remember/application/task_docs/task_doc_publication.py:148-155; mcp/src/agents_remember/application/task_docs/task_doc_publication.py:158-173 |
-| Zero-or-one graph-bearing publication batch and in-memory title context. | `require_single_graph_document`; `build_publication_batch_graph_titles` | mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py:16-33; mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py:36-48 |
-| Atomic raw-section shape validation and missing-register scaffolding. | `scaffold_register_sections`; `_validated_section_list`; `_requires_register_scaffolding` | mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py:17-37; mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py:40-51; mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py:54-55 |
-| The extracted step plane owns one exact addressing rule and the four step operations. | `exact_step_target`; `set_step`; `add_step`; `remove_step`; `step_payloads` | mcp/src/agents_remember/application/task_docs/task_doc_steps.py:97-124; mcp/src/agents_remember/application/task_docs/task_doc_steps.py:153-165; mcp/src/agents_remember/application/task_docs/task_doc_steps.py:168-190; mcp/src/agents_remember/application/task_docs/task_doc_steps.py:193-223; mcp/src/agents_remember/application/task_docs/task_doc_steps.py:264-275 |
+The existing statement that finalizing a master never archives it remains an integration claim pending inspection of the finalization owner. No tests, validation commands, writes, or acceptance actions were executed for this proposal.
 
-## 260824-PDLS Final Task-Recovery Boundary
+## External grant display, separate authoring
 
-Unstarted-task evidence and recovery routes now expose typed task facts without deriving authority
-from queue state. Task mutations remain legal; affected closeout projections are invalidated and
-rebuilt from current task truth instead of freezing authoring or carrying stale rows forward.
+> **Retained historical source account — superseded by the current route account:**
+> Task get/preview may display readable external grants; publication reads a batch-local census, but grants are not authored TaskDocument fields. Branch review uses explicit canonical leaf opt-in and current grant with exact series binding. Enclosed leaf start/attach keeps its enclosure; granted role preparation does not create one.
 
-## CCR-L42 Refresh Validation Parity
+## Historical Citation Provenance
 
-The parity candidate composes the sidecar and governing route body/history checks in `worktrees/modules/onboarding.py::validate_memory_refresh_attestations`; curator memory preparation and closeout call that shared validator independently for both surfaces. This route's existing ownership and source behavior remain unchanged by the validation wiring.
+> **Retained historical source account — superseded by the current route account:** Task-first publication and projection refresh, with shared preview and source preflight; atomic-lock intent has the disclosed discrepancy. (original reference 1, retained provenance only)
+> **Retained historical source account — superseded by the current route account:** Zero-or-one graph-bearing publication batch and in-memory title context. (original reference 2, retained provenance only)
+> **Retained historical source account — superseded by the current route account:** Atomic raw-section shape validation and missing-register scaffolding. (original reference 3, retained provenance only)
+> **Retained historical source account — superseded by the current route account:** The step plane owns exact addressing, mutations, and the focused read projection. (original reference 4, retained provenance only)
+> **Retained historical source account — superseded by the current route account:** Execution evidence checks real code and memory output cells. (original reference 6, retained provenance only)
+> **Retained historical source account — superseded by the current route account:** Canonical task, locator, enclosure, operation, seat, and report facts determine unstarted evidence. (original reference 7, retained provenance only)
+> **Retained historical source account — superseded by the current route account:** The sprint retirement route publishes the sprint edit with the folder move and restores sources and folder on pre-archival failure. (original reference 8, retained provenance only)
+> **Retained historical source account — superseded by the current route account:** The lone-master route writes its proof into the master's folder and moves that folder. (original reference 9, retained provenance only)
+> **Retained historical source account — superseded by the current route account:** Caught archive-hook exceptions are reported failures. (original reference 10, retained provenance only)
+> **Retained historical source account — superseded by the current route account:** Generic task-document edits preserve complete retired rows. (original reference 11, retained provenance only)
+> **Retained historical source account — superseded by the current route account:** The shared fact publisher performs publication, then invalidation and independent rebuild without acquiring a lock in this function. (original reference 12, retained provenance only)
+> **Retained historical source account — superseded by the current route account:** Commanded-master completion requires abandonment or Completed without completion blockers. (original reference 14, retained provenance only)
+
+A newly created subTask with no supplied `intentReview` receives `pending`. The shared candidate guard prevents erasing an existing answer, permits its change only by the bound Architect or a developer without a seat binding, and refuses an open-review transition from planning or abandoned to `inProgress`. Replace preserves the answer when omitted. Master and sprint archive hooks also receive the task-derived explainer root: preview lists would-retire environments without retiring them, and partial or failed environment cleanup remains failed hook evidence after the task retirement.
+
+## Evidence
 
 
-## Commanded-Master Completion Reads Terminal State
 
-`task_execution_topology.py::require_commanded_masters_completed` no longer tests
-`status != "Completed" or completion_blockers(...)`; it asks
-`tasks/readiness.py::master_is_terminal` instead. That is the same judgement the task and worktree
-planes consume, so a commanded master is incomplete only when it is neither `Completed` nor
-`abandoned`. The route's refusal behavior is unchanged — it still names every incomplete master — but
-abandonment now counts as a terminal decision here as it does everywhere else, from one definition
-rather than a locally spelled-out set.
+- Source preparation and central publication use the repository lock, exclude nested publication and validate accepted bytes; the unbound-subTask guard reads its actual master and matching row number rather than only path existence.
 
-## 260831-LOCR-L33 Step Plane Extraction
 
-The step plane left `task_doc_tools.py` for the new sibling `task_doc_steps.py` so the dispatcher
-stayed under the armed 1,200-line hard limit (it had reached 1,243). The extraction is a size
-decision with a semantic payoff: the operations are now split by intent — `set_step` updates exactly
-one existing unit and never creates, `add_step` creates exactly one, `remove_step` deletes exactly
-one with a mandatory reason, and `skip_step` keeps and resolves one — all sharing a single addressing
-rule where `parent` selects the namespace and zero or multiple matches refuse. `read_steps` is the
-read-only focused checklist read. Two developer rulings are in force: a reasoned `remove_step` may
-remove a `done` unit and may operate on a `Completed` document, because the reason plus the appended
-decision are the audited substitute for the guard and gating on document status would have forced a
-full-document `replace`. `remove_step` ("this step should never have existed") and `skip_step`
-("this planned unit was deliberately not done") remain distinct and are not interchangeable.
 
-## Repo-Internal References
+- task_doc authoring no longer exposes successful get/read_steps projections or step_payloads. The early operation-removed answer guides canonical JSON/rendered-file reading. Ordinary writes deliver bounded phrases, create retains renderedPath, changed reviewState stays visible, and dry answers carry wouldLose/diff with independently retained locations; rich identity/preview/masterSync remains whole-result custody and a validly addressed parent-sync failure is an answered refusal. Invalid caller master references are refused by the shared master_json_path_from_ref resolver with TaskDocError during candidate validation after retirement-proof comparison, before publication; a changed or Order-refreshed parent must also pass the in-place document guard. Linkage reporting writes its facts JSON and delivers counts/location; attach/detach retain per-document previews internally. Shared task_doc_phrases owns the actual mutable allowlist, excluding seriesContractPath/enclosures. Publication refreshes the own leaf plus declared requirement copies with rollback, without turning copies into task authority. Strict model facts come from models/task_doc.py; no historical pending-model statement certifies a live session.
 
-The following current source owns the changed behavior; no external domain source is configured for this slice.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Execution evidence checks real code and memory output cells. | `_contract_fact` | mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py:247-297 |
-| None | `prove_task_unstarted` | mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py:112-183 |
 
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-18T17:04+02:00 — 260918-TSIP-L4 curator (uncommitted change set on `ar/260918-tsip-l4-ar`, base `0dd04d6a`): No route impact: `application/task_docs/task_doc_tools.py` changed one refusal message (`T43`); the application route's structure and ownership are unchanged.
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
 
-- 2026-09-17T08:15:00+00:00 — 260915-KS-L9 curator (memory-quality closure): migrated this route's reference tables from the superseded `| Finding | Citations | Source Path |` shape — unbackticked `L..` ranges beside markdown-library links — to the canonical `| Finding | Anchor | Source |` shape, replacing every range-and-link pair with a real anchor naming the construct the claim is about and a `path:start-end` source that holds it. No claim wording changed; the underlying assertions were re-read against the code worktree and still hold. Recorded here because a reference-table migration is a body update and needs its history entry.
-- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Documented unstarted-task evidence after removal of ledger commit fields. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
+- Task authoring defaults and preserves the intent-review answer; its candidate guard checks caller and stage. The existing archive hook carries the task-derived explainer root and retains cleanup failures.
 
-- 2026-09-14T07:05+02:00 — 260913-LCA-L5 route impact (curator, uncommitted change set on
-  `ar/260913-lca-l5-ar`, base `52875e7a`): recorded the fail-closed authoring guard on the route.
-  `_require_bindable_leaf_authoring` refuses a leaf document authored under a task root with no master
-  document — the case where the derived `seriesContractPath`/`enclosures[]` would have nothing that could
-  ever bind them — while the planning order (master document present, series contract not yet
-  bootstrapped) stays allowed by the explicit guarantee that the leaf's first start binds both fields.
-  Corrected the invariant that implied a leaf could be authored under any task root. Route documentation
-  only: verification metadata remains closeout-owned and no execution or acceptance claim is made.
-- 2026-09-13T14:24:00+02:00 — 260831-LOCR-L36 activation re-keying: corrected this route's
-  remaining source-pair/selector phrasing to per-contract activation — an otherwise-valid task
-  mutation is never subordinate to queue or per-contract activation state, and per-contract
-  activation plus retained sync state are the downstream worktree authorities that re-evaluate the
-  changed plan at their next admission boundary. The dated history entry below that names
-  "source-pair activation" is retained as superseded history, not as a current claim. Source
-  documentation only; verification metadata remains closeout-owned and no acceptance or test claim
-  is made.
-- 2026-09-13T00:40+02:00 — 260831-LOCR-L33 curator: recorded the new `task_doc_steps` sibling in the
-  route purpose and conventions (the step plane is a shared-contract owner, and the dispatcher must
-  not grow a second addressing rule), added the step-plane source-evidence row, and added this
-  section describing the extraction, the operations split by intent, and the two developer rulings
-  for a reasoned `remove_step`. Route ownership, publication, and queue semantics are unchanged.
-- 2026-09-11T23:05:00+00:00: Master abandonment curation: `require_commanded_masters_completed` now resolves commanded masters through `master_is_terminal` instead of a local `!= "Completed"` test, so an abandoned commanded master counts as terminal. Content change, not a range repoint.
-- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `preview_task_doc_projection_effects`, `preview_task_doc_transaction_projection_effects`, `publish_prepared_task_documents`, `publish_task_doc_set`, `publish_task_doc_transaction_and_refresh` repointed to mcp/src/agents_remember/application/task_docs/task_doc_publication.py:130-145, mcp/src/agents_remember/application/task_docs/task_doc_publication.py:148-155, mcp/src/agents_remember/application/task_docs/task_doc_publication.py:158-173, mcp/src/agents_remember/application/task_docs/task_doc_publication.py:81-85, mcp/src/agents_remember/application/task_docs/task_doc_publication.py:88-127. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
-- 2026-09-10T02:27:58+02:00 — CCR-L42 parity curation: No route impact: curator preparation and closeout now run the shared sidecar and route body/history validators independently; this route's ownership and source semantics remain unchanged. No acceptance claim is made.
+- Source preparation and central publication use the repository lock, exclude nested publication and validate accepted bytes; the unbound-subTask guard reads its actual master and matching row number rather than only path existence. Anchor: `run_task_doc_call` `publish_task_doc_transaction_and_refresh` `validate_task_doc_transaction` `task_doc_tool` [13]
+- task_doc authoring no longer exposes successful get/read_steps projections or step_payloads. The early operation-removed answer guides canonical JSON/rendered-file reading. Ordinary writes deliver bounded phrases, create retains renderedPath, changed reviewState stays visible, and dry answers carry wouldLose/diff with independently retained locations; rich identity/preview/masterSync remains whole-result custody and a validly addressed parent-sync failure is an answered refusal. Invalid caller master references are refused by the shared master_json_path_from_ref resolver with TaskDocError during candidate validation after retirement-proof comparison, before publication; a changed or Order-refreshed parent must also pass the in-place document guard. Linkage reporting writes its facts JSON and delivers counts/location; attach/detach retain per-document previews internally. Shared task_doc_phrases owns the actual mutable allowlist, excluding seriesContractPath/enclosures. Publication refreshes the own leaf plus declared requirement copies with rollback, without turning copies into task authority. Strict model facts come from models/task_doc.py; no historical pending-model statement certifies a live session. [15]
+- Task authoring defaults and preserves the intent-review answer; its candidate guard checks caller and stage. The existing archive hook carries the task-derived explainer root and retains cleanup failures. [18]
 
-- 2026-09-05T07:05+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Recorded field-classified invalidation, exact resolved task intent for route review, and dry-run scope preflight. Current route claims were checked against the frozen candidate; this stamp records source verification, not execution or certification.
+- The shared set-field allowlist includes the knowledge-effect declaration and belongs to the phrase owner. [5]
+- Task-document batches keep each root/document destination, check one graph-bearing document and refuse task-root escapes before the common batch publisher. [16]
+- Audited never-started discard retains source/evidence CAS and central preview/publication; reopen delegates the exact same contract identity to its owner. [17]
 
-- 2026-08-29T18:29+02:00 — Reconciled the graph-title citation coordinate after the runtime and
-  coherence refactor moved the cited symbol; task-publication behavior is unchanged.
-
-- 2026-08-26T08:30+02:00 — Rebounded the graph-title source range after the frozen structural
-  split; the task-first, always-unlocked authoring contract is unchanged.
-
-- 2026-08-26T02:55+02:00 — Direct IAS architecture refresh: made explicit that task authoring is
-  upstream of both queue projection and source-pair activation. Planning changes invalidate/rebuild
-  scheduling and are re-evaluated by later worktree admission; they never mutate in-flight journal
-  evidence. Verification remains frozen-candidate owned.
-
-- 2026-08-25T17:21+02:00 — Reconciled typed unstarted-task recovery with projection invalidation.
-  Verification remains closeout-owned.
-
-- 2026-08-24T13:43+02:00 — 260821-DAGQC-L1: made the task-first publication ownership current,
-  added the shared graph-cardinality/title and raw-section-scaffolding route owners, and removed the
-  stale queue-subordinate transitional account. Verification metadata remains pinned until
-  architect-owned closeout stamps the real code commit.
-
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: refreshed current route intent and source evidence for the accepted full L2 candidate; verification provenance and contract-scoped quality enforcement remain architect-closeout-owned.
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: created the `application/task_docs`
-  route — seven modules moved from `application/` (flat); `task_doc_tools` gained
-  `_sprint_doc_identity`. Verified at code commit e5cb139f.
+- Packet requirement edits use alignment_sweep to report the master’s declared open siblings and their requirement identities as advice. task_doc_tools validates the candidate before deriving that advice, publishes task truth through its existing owner and adds the advice only to an ok result. The sweep edits no sibling packet and grants no release; response shaping carries its metadata separately. [19]

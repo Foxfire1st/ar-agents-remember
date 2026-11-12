@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "spans_locations"
+    ],
+    "justification": "Predicate and ordering tests pin the marking and the newest-first order with revert-verified failure; the obligation spans the writer predicate, the shared ordering helper and both surfaces in four files."
+  },
+  "applicability": "Every decision log surface: the task-page preview and the whole-log reader page.",
+  "conditions": [
+    "Shared parsed-time descending order retains stable ties and places invalid stamps after valid stamps.",
+    "Product records count toward neither authored totals nor decision numbers; a records-only log remains reachable through the all-link.",
+    "The whole log expands authored text and rationale; records remain in their own counted end disclosure.",
+    "Exact legacy Finalize text and removed/skip-step prefixes still classify product records; authored collisions remain possible."
+  ],
+  "exclusions": [
+    "Storage order carries no invariant; neither surface invents an order.",
+    "The stored decision shape is unchanged by the marking."
+  ],
+  "id": "INV-NBCGCF",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "predicate tests + preview tests + whole-log unsorted test; pytest/vitest green"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L126-curator-handoff.json"
+    },
+    "handoffEntry": "MIK-R126@v1 rule 6",
+    "leaf": "260928-MIK-L126",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "Decision surfaces count and number authored decisions only: the preview shows the five newest by recorded time and its omitted-entry link names only the authored count; the whole log shows authored entries newest-first and retains product-written records unnumbered in a separate muted counted end disclosure. Product-record marking remains exact/prefix provenance classification, not enforced authorship separation.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Direct and alias/literal controls protect a derived population so a new support module cannot repeat the known raw-path overwrite unnoticed in the covered syntactic classes."
+  },
+  "applicability": "The recursive static settings-path scan of non-test Python support under mcp/tests, excluding the guard, and all Python support under mcp/test_support.",
+  "conditions": [
+    "The scan recognizes raw and import-aliased resolver calls, attribute resolver names, and literal marker rebuilds through division/join/joinpath.",
+    "Synthetic negative-control modules are parsed, never executed."
+  ],
+  "exclusions": [
+    "Arbitrary dynamic Python data-flow and every possible settings path spelling.",
+    "Test files under mcp/tests, which retain conftest isolation."
+  ],
+  "id": "INV-W6WXHZ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/reviewer/5e0b3a10-7a35-4c5e-9f11-135000000002/r4/candidate-attempt3.json; notes/reports/reviewer/5e0b3a10-7a35-4c5e-9f11-135000000002/r4/guard-tests-r4.log; retained R1/R2 route and actual probe evidence under explicit author rulings"
+      ],
+      "path": "knowledge-handoff.json"
+    },
+    "handoffEntry": "MIK-R135@v1 §4",
+    "leaf": "260928-MIK-L135",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The automatic support scanner recursively includes non-test modules and rejects raw/import-aliased resolver calls and literal settings marker rebuilds while guarded calls pass.",
+  "status": "proposed",
+  "supersedes": []
+}

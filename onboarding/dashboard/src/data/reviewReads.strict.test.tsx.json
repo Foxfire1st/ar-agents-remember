@@ -1,0 +1,41 @@
+{
+  "path": "dashboard/src/data/reviewReads.strict.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A page open starts one request per opening read, even when StrictMode replays the effect",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a1c0fc83f57b671e5c31f4bb935965a0ba7510f",
+            "content": "sha256:1ef402e50ae487e270bd5d9abc16eb1adc102d53fa5581fb386858a64855d643",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A request for a leaf that changed or unmounted is cancelled rather than left running",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a1c0fc83f57b671e5c31f4bb935965a0ba7510f",
+            "content": "sha256:799c6c6e6d3e19472d79a9b9a31e066d06d50dd1069ebd5f9078b314b5ee4335",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 33
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,40 @@
+{
+  "path": "scripts/agent_evals/fixtures.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0007257a01c3f6de37978407a9515ab2ed1946ef",
+        "content": "sha256:518cf8cf0e8545adbec9996d7686edb41e14f63a4bd278b72a22be4485830b19",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-2F1354",
+      "invariant": "INV-9KC11K",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-case-admission",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "It admits hash-bound case bundles and resets a fresh input copy for each trial.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0007257a01c3f6de37978407a9515ab2ed1946ef",
+            "content": "sha256:518cf8cf0e8545adbec9996d7686edb41e14f63a4bd278b72a22be4485830b19",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

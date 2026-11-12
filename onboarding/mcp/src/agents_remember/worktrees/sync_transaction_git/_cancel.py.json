@@ -1,0 +1,230 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_cancel.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b2ac502f4c8e261b04d7ea2c1079845d00914c99",
+        "content": "sha256:800b28ec3139105a1dc1fe605add9bf6c941b0e400d73449b92e85fca4835413",
+        "locator": {
+          "kind": "symbol",
+          "name": "assess_retained_tree"
+        }
+      },
+      "id": "RLZ-360CMM",
+      "invariant": "INV-JZRBBJ",
+      "origin": {
+        "handoffEntry": "MIK-R153 rule 4",
+        "leaf": "260928-MIK-L153"
+      },
+      "rationale": "Ownership of retained output is established by captured worktree/index fingerprints, or, with no active merge and a live stash, by the existing parked-path worktree proof plus independent index ownership check; absent or unreadable authority remains unproved and later owner bytes are not blessed.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "b2ac502f4c8e261b04d7ea2c1079845d00914c99",
+        "content": "sha256:d6ca6f6c8d1d1796163dd85e473697753ef40f66cd41bd2c6cbd8a3716dcbbd6",
+        "locator": {
+          "kind": "symbol",
+          "name": "_index_state"
+        }
+      },
+      "id": "RLZ-4D12QK",
+      "invariant": "INV-9FP5Z8",
+      "origin": {
+        "handoffEntry": "MIK-R162 rule 3 (staged bytes)",
+        "leaf": "260928-MIK-L163"
+      },
+      "rationale": "Reads the staged blob of a path (`:0:<path>`) as bytes; this is the read whose text pipe made the cancel of L109 name the picture.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "b2ac502f4c8e261b04d7ea2c1079845d00914c99",
+        "content": "sha256:96fed62b8bae623e57b18e65b23e035c2fce071f75ea857c8f2e42bb8407fca5",
+        "locator": {
+          "kind": "symbol",
+          "name": "_path_owned_by_stash"
+        }
+      },
+      "id": "RLZ-B8RFM2",
+      "invariant": "INV-D637WA",
+      "origin": {
+        "handoffEntry": "MIK-R162 rule 3",
+        "leaf": "260928-MIK-L163"
+      },
+      "rationale": "Takes a parked path as the transaction's own only when its worktree bytes are the parked bytes or the one content the reapply's merge gives.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "b2ac502f4c8e261b04d7ea2c1079845d00914c99",
+        "content": "sha256:fe396a63b3eb3b3ee2d967430d49a42b58a05b04ad1ffec307a326e300122d9e",
+        "locator": {
+          "kind": "symbol",
+          "name": "assess_stash_tree"
+        }
+      },
+      "id": "RLZ-J6KY49",
+      "invariant": "INV-D637WA",
+      "origin": {
+        "handoffEntry": "MIK-R162 rule 3",
+        "leaf": "260928-MIK-L163"
+      },
+      "rationale": "The cancel's judgement of a tree whose stash is kept: builds the same merge the proof builds and passes it to the ownership check of every parked path.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b2ac502f4c8e261b04d7ea2c1079845d00914c99",
+        "content": "sha256:4aead0d8a8becdc1f4b7944418bb834b1cee9cdd49ed09b9f215cc527c4a815d",
+        "locator": {
+          "kind": "symbol",
+          "name": "_index_later_paths"
+        }
+      },
+      "id": "RLZ-QCJ45K",
+      "invariant": "INV-9FP5Z8",
+      "origin": {
+        "handoffEntry": "MIK-R162 rule 3 (staged bytes)",
+        "leaf": "260928-MIK-L163"
+      },
+      "rationale": "Compares those staged bytes with the head's and the stash's to find work that is only staged; it is exact only as far as the read is.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b2ac502f4c8e261b04d7ea2c1079845d00914c99",
+        "content": "sha256:fe396a63b3eb3b3ee2d967430d49a42b58a05b04ad1ffec307a326e300122d9e",
+        "locator": {
+          "kind": "symbol",
+          "name": "assess_stash_tree"
+        }
+      },
+      "id": "RLZ-RW20FG",
+      "invariant": "INV-JZRBBJ",
+      "origin": {
+        "handoffEntry": "MIK-R153 rule 4",
+        "leaf": "260928-MIK-L153"
+      },
+      "rationale": "Ownership for carried or pre-sync heads: live-stash worktree comparison, independent index comparison, and parked-equality fallback for uncomputable entries.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "b2ac502f4c8e261b04d7ea2c1079845d00914c99",
+        "content": "sha256:800b28ec3139105a1dc1fe605add9bf6c941b0e400d73449b92e85fca4835413",
+        "locator": {
+          "kind": "symbol",
+          "name": "assess_retained_tree"
+        }
+      },
+      "id": "RLZ-VV96GH",
+      "invariant": "INV-D637WA",
+      "origin": {
+        "handoffEntry": "MIK-R162 rule 3",
+        "leaf": "260928-MIK-L163"
+      },
+      "rationale": "The same judgement for a tree with a retained conflict.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "assess_stash_tree: qualified source contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b2ac502f4c8e261b04d7ea2c1079845d00914c99",
+            "content": "sha256:fe396a63b3eb3b3ee2d967430d49a42b58a05b04ad1ffec307a326e300122d9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "assess_stash_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "assess_retained_tree: qualified source contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b2ac502f4c8e261b04d7ea2c1079845d00914c99",
+            "content": "sha256:800b28ec3139105a1dc1fe605add9bf6c941b0e400d73449b92e85fca4835413",
+            "locator": {
+              "kind": "symbol",
+              "name": "assess_retained_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "_index_later_paths: qualified source contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b2ac502f4c8e261b04d7ea2c1079845d00914c99",
+            "content": "sha256:4aead0d8a8becdc1f4b7944418bb834b1cee9cdd49ed09b9f215cc527c4a815d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_index_later_paths"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "save_unproven_state: qualified source contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b2ac502f4c8e261b04d7ea2c1079845d00914c99",
+            "content": "sha256:b7b96ba6ade3da19bcde3e0e460e5be1ac77d8dabda1ba183cdfc2cd4b21fc4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "save_unproven_state"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "read_saved_unproven_state: qualified source contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b2ac502f4c8e261b04d7ea2c1079845d00914c99",
+            "content": "sha256:41996d13c76228fa5a23317f980d3fd041657700ee8faf9162cd48350bf50fd8",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_saved_unproven_state"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "discard_saved_unproven: qualified source contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b2ac502f4c8e261b04d7ea2c1079845d00914c99",
+            "content": "sha256:c75b675041c802a66368a80d5b0f2cfcd3e281f6c57bb1e8d15b054ffabf26a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "discard_saved_unproven"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,42 @@
+{
+  "path": "dashboard/src/panels/review/triageMarker.cards.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The comparison, the card entries and the answer's state.\n\nAnchor: \"\\\"entries\\\": [\"; \"\\\"state\\\": \\\"trees\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a16848d6c4251714d7ed3be08b12743f25935cc0",
+            "content": "sha256:09602b54e5710fc2d0c8b2af110bb33135e7676989956700f1053cef4f4cebd6",
+            "locator": {
+              "end": 308,
+              "kind": "line_range",
+              "start": 14
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The receipt row for this body.\n\nAnchor: \"src/panels/review/triageMarker.cards.captured.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "71cc9625e061e903240d9ef379d3567b86b9bea4",
+            "content": "sha256:758ae486d345f665b5b53342d8ee92d7918ceea92f3ba0c2e0e72c44ab922e2f",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "dashboard/src/panels/review/triageMarker.capture-provenance.json"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

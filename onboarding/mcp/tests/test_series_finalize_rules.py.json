@@ -1,0 +1,145 @@
+{
+  "path": "mcp/tests/test_series_finalize_rules.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "dc4577a3f94d4af3411e041bba434c8a6e234ab8",
+        "content": "sha256:7f92fa4ae4c5921ff54eb0e10c719329bdfa8482df22c4d3b18845700ecd1234",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_finalize_refuses_an_abandoned_row_that_landed_and_names_the_row"
+        }
+      },
+      "facet": "The named case demonstrates this obligation on the current candidate.",
+      "id": "PRF-6MM5X5",
+      "invariant": "INV-E20AY2",
+      "origin": {
+        "handoffEntry": "L41-continuation-O5",
+        "leaf": "260928-MIK-L41"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Finalization refuses an abandoned row that landed and names the row, for masters of either nature.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc4577a3f94d4af3411e041bba434c8a6e234ab8",
+            "content": "sha256:5134b0e14d6eee7e4c67f4b326b84fff280a6b9856b4ce3e1337882dcc7eb51d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Canonical unreadable sibling is reported by file while native master finalization timestamps only the completed master and preserves master/sprint decisions; dry run preserves the world. Unbound title/missing member refusals remain separate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc4577a3f94d4af3411e041bba434c8a6e234ab8",
+            "content": "sha256:d79a8ecc71e28916f002d592fdcf45320d466564fc27be9b49c617464cc5a411",
+            "locator": {
+              "end": 162,
+              "kind": "line_range",
+              "start": 140
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "dc4577a3f94d4af3411e041bba434c8a6e234ab8",
+            "content": "sha256:5d4572678024576913e1706ab55c623d18dc4a86b712b00fd3be50439f02f34c",
+            "locator": {
+              "end": 237,
+              "kind": "line_range",
+              "start": 183
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "An unreadable proven canonical sibling is reported as a fact without changing its membership, row, node or bytes; an unbound title is a named unresolved identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc4577a3f94d4af3411e041bba434c8a6e234ab8",
+            "content": "sha256:5134b0e14d6eee7e4c67f4b326b84fff280a6b9856b4ce3e1337882dcc7eb51d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The finalization control supplies the external-memory leaf cells before testing retained landing truth.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc4577a3f94d4af3411e041bba434c8a6e234ab8",
+            "content": "sha256:6ed613a81d1f81ced9727b4749e5e286174ba8dbb0f632345568caa7bfb50fc1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf_rows"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Finalization assertion setup forces real master completion; dry-run preserves complete world, real call requires completedAt and unchanged master/sprint decisions with absent sprint completedAt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc4577a3f94d4af3411e041bba434c8a6e234ab8",
+            "content": "sha256:5134b0e14d6eee7e4c67f4b326b84fff280a6b9856b4ce3e1337882dcc7eb51d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Restoring readability is not authority for a no-master completion, and dry/real absent-document finalization preserves absence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc4577a3f94d4af3411e041bba434c8a6e234ab8",
+            "content": "sha256:7550130bf9c5422379c5a3a044a5af488cadc9ee67aad9dcdeb581eaf6984d4a",
+            "locator": {
+              "end": 313,
+              "kind": "line_range",
+              "start": 280
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "dc4577a3f94d4af3411e041bba434c8a6e234ab8",
+            "content": "sha256:ed0c575d987e15a204d40f5f091e2055a8967ec8e60bb38e5a806e8d7b2aa05e",
+            "locator": {
+              "end": 356,
+              "kind": "line_range",
+              "start": 346
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

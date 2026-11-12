@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/hunkMarkers.capture-provenance.json",
+  "realizes": [],
+  "references": {
+    "3": {
+      "note": "The current receipt preserves its explicit section names and declared capture custody; reading the metadata does not independently execute or validate any recorded run.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c13bb98cee2534959622e5cf924be4da955467f5",
+            "content": "sha256:434a99034424fea631e48869407298643640f46bede9b8110f8c23d7f12aa391",
+            "locator": {
+              "end": 1352,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

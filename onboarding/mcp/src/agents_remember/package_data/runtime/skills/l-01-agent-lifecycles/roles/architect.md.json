@@ -1,0 +1,165 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "de0e221dc51f2f0b067db007cb4c00b17ab3bd39",
+        "content": "sha256:64f53ef7349f7b99805e555662a6f4355c15a1c66bb9a57c44d45685f6aaf0b8",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-5WT1RY",
+      "invariant": "INV-NNQR91",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-19",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The mcp/src/agents_remember/package_data/runtime shipped copy propagates the skills/l-01-agent-lifecycles/roles/architect.md instructions to that installation surface; it is generated output and does not independently set role/task or permission authority.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "de0e221dc51f2f0b067db007cb4c00b17ab3bd39",
+        "content": "sha256:a0f25cd9907e94e0a691e762cc7c49aeca193218d79948e1dc5193df32ae1c3c",
+        "locator": {
+          "end": 66,
+          "kind": "line_range",
+          "start": 66
+        }
+      },
+      "id": "RLZ-PAAE4A",
+      "invariant": "INV-A6TJRJ",
+      "origin": {
+        "handoffEntry": "L84-CUR-07-architect",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The packaged Architect role is byte-equal.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The Architect starts an Investigator with role_start without a task reference, on a sprint, or on a sprint and master, and sends the scoped concern as its first role_message to the returned agent ID.\n\nAnchor: `role_start`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de0e221dc51f2f0b067db007cb4c00b17ab3bd39",
+            "content": "sha256:b5cf057e37250e46352c3b42334342e5058395b71aff14001475feab3c0dda8e",
+            "locator": {
+              "end": 152,
+              "kind": "line_range",
+              "start": 152
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The role file's frontmatter describes the Architect as the developer-facing owner for requirements, plans, delegation to role agents and semantic decisions.\n\nAnchor: `description`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de0e221dc51f2f0b067db007cb4c00b17ab3bd39",
+            "content": "sha256:4104d9271e630345b80d1841ec49ace38f4207770d99c58816ad7b113cdf933c",
+            "locator": {
+              "end": 3,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The canonical source owns this doctrine.\n\nAnchor: `# Architect`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de0e221dc51f2f0b067db007cb4c00b17ab3bd39",
+            "content": "sha256:4642e8ea8de713715fb38326664bdaf76cf0a44f38d3a41013c8c03980288394",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 6
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The Architect's own checks, measurements, tests, builds and sandbox trials inform rulings, requirements and the developer but never take the place of a leaf's build, review, curation or gate; it changes no leaf's code or memory, grades nothing it wrote and works on a copy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de0e221dc51f2f0b067db007cb4c00b17ab3bd39",
+            "content": "sha256:ad7ed19fc78c3586c669dfed0807bbfdd542021337451a44e705451c9cebe936",
+            "locator": {
+              "end": 208,
+              "kind": "line_range",
+              "start": 206
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The Architect may grant a beyond-settings round when the sealed list has shrunk and the open repair is concrete; a repeated unchanged repair or a requirement-meaning dispute gets a ruling and no round. After the handover it releases execution coordination to the Orchestrator or Manager.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de0e221dc51f2f0b067db007cb4c00b17ab3bd39",
+            "content": "sha256:5f14784fbed919ec54832c7287bbd07a2e7466343e6c44eeb26ffb74bfbc29bf",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 144
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "A gate or validator repair does not silently free the task under test; the serving-build and synchronization route is preserved, and only a correct-input refusal of a covered write admits the bounded correct-write recovery.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de0e221dc51f2f0b067db007cb4c00b17ab3bd39",
+            "content": "sha256:b4030c0d6c7648511cbec3ec172e0e38775c0690cb0e77da76432d58cfcd77ac",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 48
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Reviews, cold reads, re-checks, sweeps and Investigator reports advise the Architect. A factual correction may be applied; a finding that adds, narrows or overrides a rule beyond the developer’s words goes to the developer first, quoted beside those earlier words.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de0e221dc51f2f0b067db007cb4c00b17ab3bd39",
+            "content": "sha256:0f16ae738e30bc0020b9f0e05f3737b8435aaa300719837aa33eb4eaa4c265ac",
+            "locator": {
+              "end": 64,
+              "kind": "line_range",
+              "start": 64
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

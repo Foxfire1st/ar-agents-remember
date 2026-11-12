@@ -1,0 +1,663 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L39",
+  "rows": [
+    {
+      "because": [
+        {
+          "id": "MIK-R39",
+          "packet": "requirements/MIK-R39-v1-keyboard-traversal-keeps-the-walked-tree.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        },
+        "DEC-M4XH3J"
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "99e2e121ccfc989c53a4a2fe27313c0316c2009f",
+            "content": "sha256:fc108054ab40c4650126fa4d22350f0011a142134b4a6397080dc2873a6087a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "admittedFamilyContinuation"
+            },
+            "path": "dashboard/src/panels/review/familyWalkMerge.ts"
+          },
+          "before": {
+            "blob": "66aee9172b3a62f04e2556efc399e3c630baa11f",
+            "content": "sha256:fc108054ab40c4650126fa4d22350f0011a142134b4a6397080dc2873a6087a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "admittedFamilyContinuation"
+            },
+            "path": "dashboard/src/panels/review/familyWalkMerge.ts"
+          },
+          "id": "RLZ-MFB6RVT0"
+        },
+        {
+          "after": {
+            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
+            "content": "sha256:d6f53a08c3f009d6ec1fab9421c91864471014e12a0b71c5b30904463fafd8d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "startRead"
+            },
+            "path": "dashboard/src/panels/review/ReviewReadCycle.ts"
+          },
+          "before": {
+            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
+            "content": "sha256:d6f53a08c3f009d6ec1fab9421c91864471014e12a0b71c5b30904463fafd8d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "startRead"
+            },
+            "path": "dashboard/src/panels/review/ReviewReadCycle.ts"
+          },
+          "id": "RLZ-QN7JZAE1"
+        },
+        {
+          "after": {
+            "blob": "99e2e121ccfc989c53a4a2fe27313c0316c2009f",
+            "content": "sha256:b307042c8e1648edb15063963dbe1e398b3202fd87b88077d72bc68bc67b73e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "sameFamilyWalk"
+            },
+            "path": "dashboard/src/panels/review/familyWalkMerge.ts"
+          },
+          "before": {
+            "blob": "66aee9172b3a62f04e2556efc399e3c630baa11f",
+            "content": "sha256:b307042c8e1648edb15063963dbe1e398b3202fd87b88077d72bc68bc67b73e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "sameFamilyWalk"
+            },
+            "path": "dashboard/src/panels/review/familyWalkMerge.ts"
+          },
+          "id": "RLZ-QSAXX7C0"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "weaken",
+      "id": "ROW-1DK9JM",
+      "items": [],
+      "reason": "The statement said that earlier family context cannot be imported by subject changes, and one exclusion read \"Merging across subjects, tasks, history selections, generations or immutable-content conflicts\". Since MIK-R39 the family tree keeps families and member rows read for earlier subjects across selections of its rows, and `mergeSide` in walkedTree.ts merges two reads of one family side that two subjects' answers carry. The statement and the applicability are therefore restated for an answer: what the read cycle admits into the answer the reviewer reads is unchanged (`startRead`, `admittedFamilyContinuation` and `sameFamilyWalk` have the same code), the first exclusion says \"into an answer\", and a third exclusion names the walked tree as tagged presentation that writes into no answer. Weaker, because the rule no longer covers everything the reviewer shows of family context. The three entries keep their anchors and their rationales, which describe the admission into an answer. Read for this row: the record, its three entries, familyWalkMerge.ts, `startRead`, `continuedReview` and `familyContinuationRead` in ReviewReadCycle.ts, and walkedTree.ts.",
+      "revision": 4,
+      "subject": "INV-53F058MT"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1NMWQ4",
+      "items": [
+        "sha256:a6fce5c1d02dad0f5d04d96f7994ded2c36bbfc5167062e16c6e7efcf6d54fcf"
+      ],
+      "reason": "The third, optional parameter of `onSelect` in the type `ReviewNavigationState`. It is a type signature; what the options mean is the entry at `SelectionOptions`, and what a selection does with them is the entry at `subjectSelection`.",
+      "subject": "hunk:sha256:a6fce5c1d02dad0f5d04d96f7994ded2c36bbfc5167062e16c6e7efcf6d54fcf"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
+            "content": "sha256:a4cb15f991923645d5bd6bd9654729ebd68da71c047ec096d8112ba5087c5a36",
+            "locator": {
+              "kind": "symbol",
+              "name": "subjectSelection"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "before": {
+            "blob": "1a025b5589f8be0bc6a1f86a24c8e0c67ecc48dc",
+            "content": "sha256:a3b0ce3c907a1810a578b36a713cc9a3dde87c5d9ee8f7d2ee95634a1716ab39",
+            "locator": {
+              "kind": "symbol",
+              "name": "useSurface"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "id": "RLZ-9ZV5SCXK"
+        },
+        {
+          "after": {
+            "blob": "5ff876f9b2c2f34b58783e9658a88bb4d5cec25c",
+            "content": "sha256:04014334adf090e9bcee82ba6b884aa7c75f31af187639833fc8b68b78cb4561",
+            "locator": {
+              "kind": "symbol",
+              "name": "landFocus"
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
+          },
+          "before": {
+            "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+            "content": "sha256:cfa1459f3e099937884de39d60a0285484de4f079336e26147ddfa1b46b69a43",
+            "locator": {
+              "kind": "symbol",
+              "name": "useSelectionFocus"
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
+          },
+          "id": "RLZ-WZNMZVS9"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-1SEYAA",
+      "items": [
+        "sha256:c13ad09fc24096f2144691c69a08ab60daa8f7127a4cea094404b9818dc02ff4"
+      ],
+      "reason": "The statement, the applicability, the condition and the exclusion still hold: focus moves to the rail's target-state notice or the selected tree node, else to the reading-area column, only when the reader has not moved it since the selection. `landFocus` was split for OR-R033 and OR-R042: the reader-moved guard now stands in `selectionFocusAvailable`, the in-tree and 60rem test in `stackedTreeRead`, the answered reveal in `focusSelectedRead`, and a failed or refused read's reveal in `revealUnavailableRead`. Its entry RLZ-WZNMZVS9 is re-anchored and its rationale rewritten; `selectSubject` in `subjectSelection` is unchanged and its entry RLZ-9ZV5SCXK is named again. Read for this row: the record, both entries, `subjectSelection` in ReviewSurface.tsx, and `useSelectionFocus`, `landFocus`, `selectionFocusAvailable`, `stackedTreeRead`, `focusSelectedRead` and `selectionNode` in ReviewWorkspace.tsx.",
+      "revision": 2,
+      "subject": "INV-MCVSM81V"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2E022Q",
+      "items": [
+        "sha256:61d372809dbffa129cbcea23e160101a5f1ba6010a48532cccf1e01884bbf72e"
+      ],
+      "reason": "The line that passes `listLoaded` on to `CatalogueFamilies`. A pass-through of a prop carries no guarantee of its own.",
+      "subject": "hunk:sha256:61d372809dbffa129cbcea23e160101a5f1ba6010a48532cccf1e01884bbf72e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4VVVG6",
+      "items": [
+        "sha256:3c6026220edf7d000b32af02844686f655d0b8537ee59dc63d5d7ab76d53e678"
+      ],
+      "reason": "The import from `./FamilyTree` gained the type `WalkedTree`. An import line carries no guarantee.",
+      "subject": "hunk:sha256:3c6026220edf7d000b32af02844686f655d0b8537ee59dc63d5d7ab76d53e678"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5RFS7P",
+      "items": [
+        "sha256:9739a3ede0e877b60d8e4a76f5c9c277a3e3820cdb3488bfdc56785dc6ffb46c"
+      ],
+      "reason": "The type import of `SelectionOptions`. An import line carries no guarantee.",
+      "subject": "hunk:sha256:9739a3ede0e877b60d8e4a76f5c9c277a3e3820cdb3488bfdc56785dc6ffb46c"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5ff876f9b2c2f34b58783e9658a88bb4d5cec25c",
+            "content": "sha256:dc0d1524dc32c06694d958edf530a5b2c3369034fab33d722a6841ddd07dcb23",
+            "locator": {
+              "kind": "symbol",
+              "name": "chooseSubject"
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
+          },
+          "before": {
+            "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+            "content": "sha256:440393136cd4b181e85f8e8e8d566cd884682f114ff1e2b968f2d331e2ea937d",
+            "locator": {
+              "kind": "symbol",
+              "name": "chooseSubject"
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
+          },
+          "id": "RLZ-PEMTZ4PE"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-5RWG25",
+      "items": [
+        "sha256:a7c5f59413c151e1c89e2c19768d375494cbd55526df5ef56077e54a8934281b"
+      ],
+      "reason": "A family or a family member is still opened through the existing subject reader, a member with its canonical invariant identity, and the clicked family and revision stay the navigation context. `chooseSubject` now looks the clicked row up among the families the tree shows, which can include kept families, and passes the mark that the selection keeps the tree; the entry's rationale is rewritten to say so. Read for this row: the record, the entry and `chooseSubject` in ReviewWorkspace.tsx.",
+      "revision": 2,
+      "subject": "INV-YVVW1XCN"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6FR9H7",
+      "items": [
+        "sha256:a738267ff2524e863b26500ca55e6df26de7c47768c78d687d4f187f5b16bb27"
+      ],
+      "reason": "A one-line comment above `filterScope`. The function it describes is named by the invariant on in-tree selections; the comment itself carries no guarantee.",
+      "subject": "hunk:sha256:a738267ff2524e863b26500ca55e6df26de7c47768c78d687d4f187f5b16bb27"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6ZZ9B5",
+      "items": [
+        "sha256:c91a20ad5b83dd55ba3971eeea3154d3de214643819a8972903e946555b81db8"
+      ],
+      "reason": "The fields `treeIntent` and `beginSelection` and the wider type of `focusSelection` in the type `WorkspaceState`. They are type declarations; the state they type is held by `useWorkspaceState`, which the invariant on starting afresh names.",
+      "subject": "hunk:sha256:c91a20ad5b83dd55ba3971eeea3154d3de214643819a8972903e946555b81db8"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5ff876f9b2c2f34b58783e9658a88bb4d5cec25c",
+            "content": "sha256:1bba0e66f72a21b8fd9796a272ffbb1dea4948a9c8f69433bf70b5268c6a7bc9",
+            "locator": {
+              "kind": "symbol",
+              "name": "useSelectionFocus"
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-486BVX"
+        },
+        {
+          "after": {
+            "blob": "5ff876f9b2c2f34b58783e9658a88bb4d5cec25c",
+            "content": "sha256:04014334adf090e9bcee82ba6b884aa7c75f31af187639833fc8b68b78cb4561",
+            "locator": {
+              "kind": "symbol",
+              "name": "landFocus"
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-F87R0N"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-8NW9AB",
+      "items": [],
+      "reason": "The invariant's two realizations are re-anchored at the frozen candidate after the two corrections of 2026-10-06 changed the symbols they cite: `useSelectionFocus` now reads the reading status and calls `revealUnavailableRead` for a failed or refused read without spending the focus request, and `landFocus` delegates the answered in-tree reveal to `focusSelectedRead`. The earlier anchors named a blob that is in no tree of any ref. The rationale of RLZ-F87R0N is rewritten for the frozen `landFocus` and RLZ-486BVX's for the split effect. Read for this row: the record, both entries, and `useSelectionFocus`, `revealUnavailableRead`, `selectionFocusAvailable`, `stackedTreeRead`, `focusSelectedRead` and `landFocus` in ReviewWorkspace.tsx.",
+      "revision": 1,
+      "subject": "INV-T1ZHP5"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5ff876f9b2c2f34b58783e9658a88bb4d5cec25c",
+            "content": "sha256:f9c09b33a2a9fff2fd080a28069b545790e92e0e75d2c6fb2e1d5b4d0a4d75ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorkspaceBody"
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-32CDAY"
+        },
+        {
+          "after": {
+            "blob": "66cfe38ffa950ca558b3fb74d6ec1913e5f534b1",
+            "content": "sha256:9598b4139c4da57f9e1d01a7e6fa15ae637b1728bb7d6806ec10c7968c505ae6",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 100
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.walkStore.test.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-7ZPXMR"
+        },
+        {
+          "after": {
+            "blob": "66cfe38ffa950ca558b3fb74d6ec1913e5f534b1",
+            "content": "sha256:830e954bcdafe601ee4deae05a13be784bd861f460171ce7f6946a98e310403d",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 48
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.walkStore.test.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-XADZP7"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-CGSP36",
+      "items": [],
+      "reason": "The two entries of the R4 note 1 correction stand from the previous run and are named again; the invariant's earlier realization at `WorkspaceBody` (RLZ-32CDAY) is re-anchored at the frozen candidate, because its earlier anchor named a blob that is in no tree of any ref. The statement, applicability, conditions, exclusions and admission are unchanged. The reviewer's mutation set for R4-F1 is notes/reports/role-launch/260928-MIK-L39-reviewer-1bee67dc-8fec-49d7-8398-032c526f2806-evidence/mutations/summary.json; the record's origin calls it \"this report's evidence folder\". Read for this row: the record, the corrected case, and `WorkspaceBody` and `useWalkedSelection` in ReviewWorkspace.tsx.",
+      "revision": 1,
+      "subject": "INV-NSG0D4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-D4HNX9",
+      "items": [
+        "sha256:146c6f7990f6f89ed8ca11f2615776ec8c9abdb914180f01f765f1aa44f7d71c"
+      ],
+      "reason": "The import of `Fragment` from React, used for the keyed place of the tree in `CatalogueFamilies`. An import line carries no guarantee.",
+      "subject": "hunk:sha256:146c6f7990f6f89ed8ca11f2615776ec8c9abdb914180f01f765f1aa44f7d71c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DBDEV6",
+      "items": [
+        "sha256:dc0c372f363d022fb9fe0519c0643318e078a70c258f5d87be46d662e5e0019e"
+      ],
+      "reason": "The type import of `ReviewPageRequest`, used by `SelectionOptions`. An import line carries no guarantee.",
+      "subject": "hunk:sha256:dc0c372f363d022fb9fe0519c0643318e078a70c258f5d87be46d662e5e0019e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-F303QZ",
+      "items": [
+        "sha256:d01e037ae82146536c3b4edb2d727d9fe9c0c77411dce1cb6679330bd177fba3"
+      ],
+      "reason": "The React import gained `useCallback` and `useEffect`, used by `useRefreshReview`. An import line carries no guarantee.",
+      "subject": "hunk:sha256:d01e037ae82146536c3b4edb2d727d9fe9c0c77411dce1cb6679330bd177fba3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GJ223K",
+      "items": [
+        "sha256:94a8e4a2b6e289e19dce3074f136d752b8da714347c197737d3359c9b1f33f32"
+      ],
+      "reason": "The import of the walk module's names (`useWalkedTree`, `keptFamilies` and others). An import line carries no guarantee.",
+      "subject": "hunk:sha256:94a8e4a2b6e289e19dce3074f136d752b8da714347c197737d3359c9b1f33f32"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GXDN6A",
+      "items": [
+        "sha256:2b5b6a7e8801f5c6ea10eb996b03678dac95a20a0455af86dd8f989eed404fac"
+      ],
+      "reason": "The prop `listLoaded` of the `ReviewNavigation` component and its type. The component only passes it on; the behaviour is in `CatalogueFamilies`, which the invariant on starting afresh names.",
+      "subject": "hunk:sha256:2b5b6a7e8801f5c6ea10eb996b03678dac95a20a0455af86dd8f989eed404fac"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5ff876f9b2c2f34b58783e9658a88bb4d5cec25c",
+            "content": "sha256:797877edaa59090811c34dbf41cfe6ab0709837a6a4f8132cf243f0ed6c1d722",
+            "locator": {
+              "kind": "symbol",
+              "name": "useWorkspaceState"
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
+          },
+          "before": {
+            "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+            "content": "sha256:78b5f90184631da1d5c369344f75ae3d3548185b0d1b37b4a63dd4953f9c460a",
+            "locator": {
+              "kind": "symbol",
+              "name": "useWorkspaceState"
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
+          },
+          "id": "RLZ-6T67PT58"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-HB6SKC",
+      "items": [
+        "sha256:a8bbeae8586ebe6046ce44315394875738585923cb33f312b1ad9f1c9116cee7"
+      ],
+      "reason": "Diff layout, full-file disclosure, the opened path and the return of focus to the opener are as they were. `useWorkspaceState` gained the tree intent with `beginSelection` and the wider type of the focus request, which this invariant does not speak of; the entry's rationale holds as written. Read for this row: the record, the entry and `useWorkspaceState` in ReviewWorkspace.tsx.",
+      "revision": 2,
+      "subject": "INV-Z385RTQS"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "99e2e121ccfc989c53a4a2fe27313c0316c2009f",
+            "content": "sha256:131860f27487fed3d48326b81a7bf59cfb0e6721b7e57501b8e15ea71ea9cf80",
+            "locator": {
+              "kind": "symbol",
+              "name": "mergeFamilyContinuation"
+            },
+            "path": "dashboard/src/panels/review/familyWalkMerge.ts"
+          },
+          "before": {
+            "blob": "66aee9172b3a62f04e2556efc399e3c630baa11f",
+            "content": "sha256:131860f27487fed3d48326b81a7bf59cfb0e6721b7e57501b8e15ea71ea9cf80",
+            "locator": {
+              "kind": "symbol",
+              "name": "mergeFamilyContinuation"
+            },
+            "path": "dashboard/src/panels/review/familyWalkMerge.ts"
+          },
+          "id": "RLZ-95V4M24E"
+        },
+        {
+          "after": {
+            "blob": "99e2e121ccfc989c53a4a2fe27313c0316c2009f",
+            "content": "sha256:bd8ec16f3628047f94bedee252541a48096ef33d85216fa6b0987c86c838a786",
+            "locator": {
+              "kind": "symbol",
+              "name": "mergeFamilySide"
+            },
+            "path": "dashboard/src/panels/review/familyWalkMerge.ts"
+          },
+          "before": {
+            "blob": "66aee9172b3a62f04e2556efc399e3c630baa11f",
+            "content": "sha256:bd8ec16f3628047f94bedee252541a48096ef33d85216fa6b0987c86c838a786",
+            "locator": {
+              "kind": "symbol",
+              "name": "mergeFamilySide"
+            },
+            "path": "dashboard/src/panels/review/familyWalkMerge.ts"
+          },
+          "id": "RLZ-P11731P7"
+        },
+        {
+          "after": {
+            "blob": "99e2e121ccfc989c53a4a2fe27313c0316c2009f",
+            "content": "sha256:4a28ddd0e7ae1e3dbcfaded1bc342195082152ff9c719fe652da918f701ccf58",
+            "locator": {
+              "kind": "symbol",
+              "name": "mergeMember"
+            },
+            "path": "dashboard/src/panels/review/familyWalkMerge.ts"
+          },
+          "before": {
+            "blob": "66aee9172b3a62f04e2556efc399e3c630baa11f",
+            "content": "sha256:a399fc4dae37acd91f631ba146760727a8ec176b45c5aeb61c0b5bbdfe837539",
+            "locator": {
+              "kind": "symbol",
+              "name": "mergeMember"
+            },
+            "path": "dashboard/src/panels/review/familyWalkMerge.ts"
+          },
+          "id": "RLZ-VFBRX7HF"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-HBSK71",
+      "items": [
+        "sha256:c672c1d5eee950df7eb1e69ebc4614776ef5edb364fd24ec6e494aa1afcd59a6"
+      ],
+      "reason": "In `mergeMember` only the keyword `export` was added; its body and the code of the two other entries are byte for byte as they were. The walked tree calls `mergeMember` for two reads of one member within one comparison and takes the newer member when it refuses, so the rule of the roster walk is not changed by the second caller. Read for this row: the record, the three entries, familyWalkMerge.ts and `mergeSide` in walkedTree.ts.",
+      "revision": 3,
+      "subject": "INV-ZS9ZS878"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HZMVX8",
+      "items": [
+        "sha256:c90571141b938aaadbb5fa24da08905d4ad3b8ba3a2f9af4d4f742b03a7fbdea"
+      ],
+      "reason": "The type import of `ReviewFamilyContextEntry`. An import line carries no guarantee.",
+      "subject": "hunk:sha256:c90571141b938aaadbb5fa24da08905d4ad3b8ba3a2f9af4d4f742b03a7fbdea"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-J8C3PP",
+      "items": [
+        "sha256:4aa9d71a0879956c5fc45074284ccaff920d1a4164876133c08f6c9925c85f3d"
+      ],
+      "reason": "Three lines of the file's header comment that describe the walked tree. The behaviour they describe is recorded by the invariants on the walked tree at the functions that realize it.",
+      "subject": "hunk:sha256:4aa9d71a0879956c5fc45074284ccaff920d1a4164876133c08f6c9925c85f3d"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-K4JMSA",
+      "items": [
+        "sha256:5985718f26d63725c33e0585687f5cc65049bbd84a2f4b0c4e0661ec2ab4cdca"
+      ],
+      "reason": "A two-line comment above `selectedContext`. The function is named by the invariant on in-tree selections; the comment itself carries no guarantee.",
+      "subject": "hunk:sha256:5985718f26d63725c33e0585687f5cc65049bbd84a2f4b0c4e0661ec2ab4cdca"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NVJSE5",
+      "items": [
+        "sha256:4e9bbaedb77fd415778586599f17a2e739cd1cd1f89a7b7c9f028726b87b2f7f"
+      ],
+      "reason": "The removed line computed the filter's needle inside `FamilyTree`. The same computation now stands in the helper `filtered`; the filter matches as before, and nothing is guaranteed by where the line stands.",
+      "subject": "hunk:sha256:4e9bbaedb77fd415778586599f17a2e739cd1cd1f89a7b7c9f028726b87b2f7f"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-21SDZECS",
+          "revision": 2
+        },
+        {
+          "id": "INV-2E8MG43K",
+          "revision": 2
+        },
+        {
+          "id": "INV-49H32B3F",
+          "revision": 2
+        },
+        {
+          "id": "INV-4DVNECH3",
+          "revision": 3
+        },
+        {
+          "id": "INV-53F058MT",
+          "revision": 4
+        },
+        {
+          "id": "INV-555EHWM8",
+          "revision": 2
+        },
+        {
+          "id": "INV-8VQR13WX",
+          "revision": 1
+        },
+        {
+          "id": "INV-BR5MTSTY",
+          "revision": 2
+        },
+        {
+          "id": "INV-H8EM1VJR",
+          "revision": 2
+        },
+        {
+          "id": "INV-KKJYVB40",
+          "revision": 1
+        },
+        {
+          "id": "INV-MC654E0T",
+          "revision": 1
+        },
+        {
+          "id": "INV-MCVSM81V",
+          "revision": 2
+        },
+        {
+          "id": "INV-RMTHRQ0K",
+          "revision": 1
+        },
+        {
+          "id": "INV-RT13RESK",
+          "revision": 2
+        },
+        {
+          "id": "INV-VPX81HXV",
+          "revision": 2
+        },
+        {
+          "id": "INV-W5CTZJGD",
+          "revision": 2
+        },
+        {
+          "id": "INV-WQZ2WFCN",
+          "revision": 1
+        },
+        {
+          "id": "INV-XX178P3W",
+          "revision": 2
+        },
+        {
+          "id": "INV-YVVW1XCN",
+          "revision": 2
+        },
+        {
+          "id": "INV-Z385RTQS",
+          "revision": 2
+        },
+        {
+          "id": "INV-ZE4QPG25",
+          "revision": 2
+        },
+        {
+          "id": "INV-ZS9ZS878",
+          "revision": 3
+        },
+        {
+          "id": "INV-ZY0YMXMQ",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-TKR6X7",
+      "items": [
+        "sha256:96bab4c8c1e5ef3e16e1f8fb869acf4be622ec4aca8d24fbce23b69f8f021abf"
+      ],
+      "reason": "The guarantee still holds as written: within a bound comparison the selected intent, the recorded evidence and the family context stay together and the inspection state survives navigation. All 23 members were read again against this leaf's final candidate. INV-MCVSM81V has two entries named again, one of them re-anchored and its rationale rewritten for the OR-R033/OR-R042 split of the focus path; INV-NSG0D4 gains two entries for the R4 note 1 correction (its own row); INV-53F058MT is restated for an answer by its own row; the other members have no entry in code this leaf changed in a way that touches them. The record, its member list and its routes are as they were. The walked tree's own family is revised for the reveal by its own row.",
+      "subject": "FAM-R6R095RW"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-XRKZY1",
+      "items": [
+        "sha256:e4569e0edbde1d652ab1f3aea3bca08486eb539f526091b51a619d967285c424"
+      ],
+      "reason": "A one-line comment above `chooseSubject`. The function is named by the invariant on in-tree selections; the comment itself carries no guarantee.",
+      "subject": "hunk:sha256:e4569e0edbde1d652ab1f3aea3bca08486eb539f526091b51a619d967285c424"
+    },
+    {
+      "disposition": "changed",
+      "examined": [
+        {
+          "id": "INV-9ZKYWQ",
+          "revision": 1
+        },
+        {
+          "id": "INV-BMFR2T",
+          "revision": 1
+        },
+        {
+          "id": "INV-BS5PFE",
+          "revision": 1
+        },
+        {
+          "id": "INV-CK3PTB",
+          "revision": 1
+        },
+        {
+          "id": "INV-MWCCQM",
+          "revision": 1
+        },
+        {
+          "id": "INV-NSG0D4",
+          "revision": 1
+        },
+        {
+          "id": "INV-QZC5AZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-T1ZHP5",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-YKQB8F",
+      "items": [],
+      "reason": "The family's guarantee, members and routes are unchanged since the previous run; the row is named again because INV-QZC5AZ's record changed when its first exclusion was corrected to name INV-BMFR2T and its admission stopped attributing the 11,849-pixel measurement to the MIK-R33 acceptance run. Every member was examined again at its current revision. Read for this row: the record, all eight members, and the decision DEC-AYX6QE.",
+      "subject": "FAM-68H10P"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

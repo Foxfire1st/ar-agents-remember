@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "family_guarantee"
+    ],
+    "justification": "Spans dashboard launcher generations: feature parity through model/effort changes with visible defaults and provenance is what lets FAM-GDXSJG propagate behavior changes without silent launcher drift."
+  },
+  "applicability": "Every dashboard role launch through the single extracted launcher.",
+  "conditions": [
+    "Ordinary model/effort changes preserve the five existing operands including featureValues.",
+    "After step-up, base chips and speed controls are non-applied previews, not evidence of selected-host mode/features.",
+    "Observed model/source come from the receipt; unreported mode/features remain explicitly unknown."
+  ],
+  "exclusions": [
+    "Merging host-offered speed controls into permission policy.",
+    "A second launcher source of truth."
+  ],
+  "id": "INV-63Z0MN",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/role-launch/260928-MIK-L71-worker-d508f3cc-d109-host-readers/source-current-a1b7/source26-public-sync/generation15-five-pin-successor/expanded-evidence.md"
+      ],
+      "path": "l71-handoff-list.json"
+    },
+    "handoffEntry": "L71-CURRENT242-W-17",
+    "leaf": "260928-MIK-L71",
+    "task": "260928-MIK"
+  },
+  "revision": 3,
+  "schema": "ar-invariant/v1",
+  "statement": "The single extracted dashboard launcher preserves ordinary selected features through model/effort changes with visible default provenance. A stepped-up receipt instead labels base choices as non-applied previews and displays only reported step-up observations; speed remains separate from permission policy.",
+  "status": "proposed",
+  "supersedes": []
+}

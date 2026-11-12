@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/panels/review/changeSetOrder.test-utils.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Comparison-required cards, clones and explicit synthetic rows\n\nAnchor: \"export function cardsOf(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c779fb5bb49a72f035e5c8eff984dab0d3a7c59",
+            "content": "sha256:e5ab71d35d971920b8cb56f235a6a070cb90b81bd222d5ed0f8387ece9699bcd",
+            "locator": {
+              "end": 64,
+              "kind": "line_range",
+              "start": 39
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Recorded subject-fact ordering\n\nAnchor: \"const L104_ROWS: [string, string, ReviewOutlineInvariant['change'], string[], string][] = [\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c779fb5bb49a72f035e5c8eff984dab0d3a7c59",
+            "content": "sha256:f026d67f4dcc0520f3307ae03fbe0b8a1146ba71c1e118ccd6dc71bb66f938e3",
+            "locator": {
+              "end": 99,
+              "kind": "line_range",
+              "start": 65
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Explicit post-capture test overlays\n\nAnchor: \"export function withMemory(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c779fb5bb49a72f035e5c8eff984dab0d3a7c59",
+            "content": "sha256:07c8da76955ee03acaebba580c74f564ca9eec7ff7a94a0e2355bec676ccf9a6",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 101
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

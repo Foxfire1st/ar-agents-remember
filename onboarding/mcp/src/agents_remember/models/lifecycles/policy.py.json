@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/models/lifecycles/policy.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module defines `GatePolicyRuleSnapshot` as its public seam.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2acb055da3b7f5066553dba51fcc054fd14d3993",
+            "content": "sha256:3267f4df8dd11f64f510ddfe8f9d59b43095fd61798324e037ba10c335fb58fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "GatePolicyRuleSnapshot"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

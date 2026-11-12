@@ -1,15 +1,5 @@
 # dashboard/src/test/wireFixtureGuard.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/test/wireFixtureGuard.ts`         |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `09329a7ee598920c519b06305b73ba8e48d72c88`       |
-| lastVerifiedCommitDate | 2026-09-26T00:58:43+02:00|
-| governingOverview      | `../overview.md`                                 |
-
 ## Governing Overview
 
 [dashboard/src overview](../overview.md)
@@ -21,8 +11,8 @@ tree answering one question — *can a test assert against a payload the server 
 
 **Why a guard and not just `tsc`.** TypeScript already refuses an impossible field on a wire-typed
 object literal; `{ refusedPolarity: "amber" } satisfies EngineProcessEdge` does not compile. The leak is
-that a fixture can OPT OUT, and every opt-out is one token long. The header lists seven cit:(["as unknown as LifecycleProjection"], dashboard/src/test/wireFixtureGuard.ts:10-10):
-`as EngineProcessEdge`; `as unknown as LifecycleProjection`; `as never` / `as any`;
+that a fixture can OPT OUT, and every opt-out is one token long. The header lists seven cit:(["as unknown as TaskEntry"], dashboard/src/test/wireFixtureGuard.ts:10-10):
+`as EngineProcessEdge`; `as unknown as TaskEntry`; `as never` / `as any`;
 `// @ts-expect-error`; `const raw = {…}; use(raw)` (a literal loses FRESHNESS in a variable, and
 excess-property checking only applies to fresh literals); `Object.assign(base, {…})` (the result is an
 intersection, which is assignable); `use(JSON.parse(text))` (`any` assigns to anything). **The last
@@ -64,7 +54,7 @@ a virtual file that never imports them would leave the vocabulary empty and ever
 
 **Type resolution.** cit:([`mentionedByTypeNode`], dashboard/src/test/wireFixtureGuard.ts:289-335) walks a written type ANNOTATION, unaliasing
 imports and local `type X = …` indirection and descending into arrays, unions and type arguments — so
-`Partial<TaskDocNode>`, `LifecycleProjection[]`, `Record<string, Analytics>` and `typeof someWireValue`
+`Partial<TaskDocNode>`, `TaskEntry[]`, `Record<string, Analytics>` and `typeof someWireValue`
 all answer. Two deliberate behaviours: `as const` is skipped by name (it can only NARROW a literal), and
 a name the checker cannot bind returns cit:([`UNRESOLVED`], dashboard/src/test/wireFixtureGuard.ts:239-239) rather than `null` — "the guard did not
 understand this" must read as a failure, not a pass. cit:([`mentionedByType`], dashboard/src/test/wireFixtureGuard.ts:338-357) does the same for a
@@ -74,11 +64,7 @@ resolved contextual type, which has no syntax.
 remaining member through `wireObject` cit:([`wireObject`], dashboard/src/test/wireFixtureGuard.ts:397-410) (which unwraps a single-argument alias such as
 `Partial<TaskDocNode>` and bails on anything with an index signature), and **answers with EVERY member**.
 That is the point: TypeScript's excess-property check against a non-discriminated union only requires
-each property to exist in SOME member, so `SubTaskRow = TaskSubTaskRefNode | SeriesSubTaskNode` accepts a
-row bearing `linkedLifecycleId` (only the first declares it) AND `createdAt` (only the second does) — a
-blend of two `extra="forbid"` server models neither could send. **That pair is this leaf's own defect
-reproduced as a type**, and `types/projection.ts` carries the comment explaining the collapse that caused
-it. Conservative in the other direction: one member the guard cannot name abandons the whole slot rather
+each property to exist in SOME member, so the current `TaskEntry | TaskSummary` example admits `key` from the entry and `objective` from the summary even though neither extra-forbid member admits the combined shape. Each member must be checked separately; the earlier SubTaskRow collapse is historical provenance, not a retained wire type. Conservative in the other direction: one member the guard cannot name abandons the whole slot rather
 than measuring against half a union.
 
 **The five rules**, in cit:([`collectWireFixtureFindings`], dashboard/src/test/wireFixtureGuard.ts:484-587):
@@ -138,17 +124,17 @@ was reproduced against this tree; none is fixed.
 
 1. **Rule 4 reads four node kinds.** `Identifier`, `CallExpression`, `PropertyAccessExpression`, and
    (for the union case only) `ObjectLiteralExpression` — see cit:([`isCandidateForExcessCheck`], dashboard/src/test/wireFixtureGuard.ts:594-601).
-   `ElementAccessExpression` (`rows[0]`) escapes, and so do `AwaitExpression`, `NewExpression` and
+   `ElementAccessExpression` (`rows`) escapes, and so do `AwaitExpression`, `NewExpression` and
    `NonNullExpression` (`rows.at(0)!`). **This is the widest of the holes**, because array indexing and
-   `await` are the two most idiomatic fixture accessors in this suite: `const row = rows[0]` reaching a
+   `await` are the two most idiomatic fixture accessors in this suite: `const row = rows` reaching a
    wire slot is unread today, and so is `sink(await built())`.
 2. **A generic helper defeats rules 1 and 4 together.** `function make<T>(shape: object): T { return
    shape as T; }` names no wire type at the assertion (rule 1 sees a type PARAMETER, not vocabulary), and
-   `make<LifecycleProjection>({ … })` answers the wire type exactly, so rule 4 has no undeclared property
+   `make<TaskEntry>({ … })` answers the wire type exactly, so rule 4 has no undeclared property
    to weigh. One helper re-opens every evasion the five rules close.
 3. **A new UNMARKED mirror module is invisible.** The discovery mechanism is fail-closed in one direction
-   only: a mirror that LOSES its marker fails the test's seven-module assertion loudly, while one that
-   never carried a marker never appears — **and that assertion still passes**. Live instances today:
+   only: a mirror that LOSES its marker fails the test's discovered-module assertion loudly, while one that
+   never carried a marker never appears — **and that assertion can still pass**. Recorded client-module examples (not a current module census):
    `data/harnessCatalog.ts`, `data/submissionLifecycleClient.ts`, `data/changeset.ts`, `data/files.ts`,
    `data/notes.ts`. Each declares wire-shaped response types INLINE beside client-side option and handler
    types, so **fixtures for those routes are unguarded**. Both of the impossible fixtures this leaf
@@ -158,17 +144,19 @@ was reproduced against this tree; none is fixed.
    rather than wider. The real fix is to move those response types into a marker-carrying module — a
    refactor of app code, not of fixtures.
 4. **Type predicates and assertion functions narrow with no `as` anywhere.**
-   `function isPage(v: unknown): v is ConversationPage { return true; }` and
-   `function assertPage(v: unknown): asserts v is ConversationPage {}` both put an arbitrary value into a
+   `function isPage(v: unknown): v is TaskEntry { return true; }` and
+   `function assertPage(v: unknown): asserts v is TaskEntry {}` both put an arbitrary value into a
    wire slot carrying a wire type, with nothing syntactic to ban and nothing structural to compare.
 5. **A value, not a name.** Every rule here measures property NAMES. An override whose names are all
    correct and whose VALUE is `undefined` on a field the server always sends is invisible to all five —
-   `conversationPage({ capabilities: undefined })` asserts nothing, suppresses nothing and declares
+   `taskEntry({ stage: undefined })` asserts nothing, suppresses nothing and declares
    nothing undeclared. `exactOptionalPropertyTypes` is the general answer and is NOT set on this project
    (measured: 222 errors across 71 files); the builders carry the constraint themselves instead
    (`fixtures/overrides.ts`, proven by `fixtureOverrides.test.ts`).
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The sweep is written against the TypeScript compiler API, and three specific language behaviours are
 what the rules exist to compensate for: excess-property checking applies only to *fresh* object
@@ -176,67 +164,43 @@ literals, it is weakened against a non-discriminated union, and `any` is assigna
 
 External language references retained for reading only: [TypeScript Wiki — Using the Compiler API](https://github.com/microsoft/TypeScript/wiki/Using-the-Compiler-API), [TypeScript Handbook — Object Types / Excess Property Checks](https://www.typescriptlang.org/docs/handbook/2/objects.html#excess-property-checks), and [TypeScript Handbook — Everyday Types](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-assertions). These URLs are not repository-relative citation sources.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The header: seven one-token opt-outs, why three of them carry no assertion at all, what makes the sweep fail-closed, and the rule scopes. | "as unknown as LifecycleProjection" | dashboard/src/test/wireFixtureGuard.ts:10-10 |
-| `WHAT THIS DOES NOT COVER`, items 1-5. | "WHAT THIS DOES NOT COVER" | dashboard/src/test/wireFixtureGuard.ts:39-39 |
-| `MIRROR_MARKER`, `declaresItselfAMirror`, `isWireModule` — the discovered vocabulary. | `MIRROR_MARKER`; `declaresItselfAMirror`; `isWireModule` | dashboard/src/test/wireFixtureGuard.ts:108-108; dashboard/src/test/wireFixtureGuard.ts:110-112; dashboard/src/test/wireFixtureGuard.ts:114-116 |
-| `isFixtureSurface` — the surface rules 2-5 are strict on. | `isFixtureSurface` | dashboard/src/test/wireFixtureGuard.ts:123-132 |
-| `GUARD_COMPILER_OPTIONS` (strict, bundler, `resolveJsonModule`, and no `exactOptionalPropertyTypes`). | `GUARD_COMPILER_OPTIONS` | dashboard/src/test/wireFixtureGuard.ts:138-149 |
-| `buildProgramWithVirtualFiles`, including the `directoryExists` override without which a two-module planted case silently degrades to `any`. | `buildProgramWithVirtualFiles` | dashboard/src/test/wireFixtureGuard.ts:188-230 |
-| `mentionedByTypeNode` / `mentionedByType`, and `UNRESOLVED` as a finding rather than a skip. | `mentionedByTypeNode`; `mentionedByType`; `UNRESOLVED` | dashboard/src/test/wireFixtureGuard.ts:239-239; dashboard/src/test/wireFixtureGuard.ts:289-335; dashboard/src/test/wireFixtureGuard.ts:338-357 |
-| `wireSlotTarget` answering a union with every member, with the `SubTaskRow` worked example. | `wireSlotTarget`; `SubTaskRow` | dashboard/src/test/wireFixtureGuard.ts:366-366; dashboard/src/test/wireFixtureGuard.ts:376-394 |
-| `collectWireFixtureFindings` — the five rules, and the fresh-literal exception that keeps rule 4 from second-guessing `tsc`. | `collectWireFixtureFindings` | dashboard/src/test/wireFixtureGuard.ts:484-587 |
-| `isCandidateForExcessCheck` — the four node kinds, which is the exact shape of gap 1. | `isCandidateForExcessCheck` | dashboard/src/test/wireFixtureGuard.ts:594-601 |
-| `directiveLines` + `DIRECTIVE` — suppressions read as comment trivia, not raw lines. | `directiveLines`; `DIRECTIVE` | dashboard/src/test/wireFixtureGuard.ts:434-452; dashboard/src/test/wireFixtureGuard.ts:459-459 |
-| `excessPropertyVerdict` — undeclared properties, and the union blend no single member declares. | `excessPropertyVerdict` | dashboard/src/test/wireFixtureGuard.ts:609-658 |
-| `reconcileWithRegistry` — unregistered / spent / miscounted / unreasoned. | `reconcileWithRegistry` | dashboard/src/test/wireFixtureGuard.ts:673-693 |
-| The registry, planted bypasses and vacuity checks this module deliberately does not own. | `SANCTIONED_WIRE_SITES` | dashboard/src/test/wireFixtureGuard.test.ts:51-188 |
-| `SubTaskRow` and the two `extra="forbid"` models whose collapse the union rule reproduces. | `SubTaskRow` | dashboard/src/types/projection.ts:838-838 |
-| Gap 3, live: the first line is a "Same-origin client for …" header, not a `mirror of` marker, so nothing this module declares enters the vocabulary. | `ChangedFile` | dashboard/src/data/changeset.ts:20-26 |
-| Same, for the read-only files API client. | `RepoCatalogEntry` | dashboard/src/data/files.ts:22-26 |
-| Same, for the coordination-notes API client. | `NoteEntry` | dashboard/src/data/notes.ts:10-15 |
-| Gap 3 with a proven cost: `HarnessInfo` is declared inline (id/name/detected only) beside the client-side `HarnessCatalogErrorKind`/`HarnessCatalogRead`, with no marker — and fixtures adding a `control` field to that row lived unguarded until this leaf removed them. | `HarnessInfo` | dashboard/src/data/harnessCatalog.ts:5-9 |
-| The other proven cost: `WithdrawalResultWire` declares no `bridgeEpoch` (the sibling `SubmissionStatusBatchWire` does), and the fixture that gave it one was invisible to the guard. | `WithdrawalResultWire` | dashboard/src/data/submissionLifecycleClient.ts:44-50 |
-| Gap 5's answer: the call-site constraint the builders carry instead of the project-wide flag. | `Overrides` | dashboard/src/test/fixtures/overrides.ts:60-66 |
 
-## Cross-Repo References
+- The header: seven one-token opt-outs, why three of them carry no assertion at all, what makes the sweep fail-closed, and the rule scopes. [1]
+
+- `WHAT THIS DOES NOT COVER`, items 1-5. [2]
+- `MIRROR_MARKER`, `declaresItselfAMirror`, `isWireModule` — the discovered vocabulary. [3]
+
+- `isFixtureSurface` — the surface rules 2-5 are strict on. [4]
+
+- `GUARD_COMPILER_OPTIONS` (strict, bundler, `resolveJsonModule`, and no `exactOptionalPropertyTypes`). [5]
+- `buildProgramWithVirtualFiles`, including the `directoryExists` override without which a two-module planted case silently degrades to `any`. [6]
+- `mentionedByTypeNode` / `mentionedByType`, and `UNRESOLVED` as a finding rather than a skip. [7]
+- `wireSlotTarget` answering a union with every member, with the current `TaskEntry | TaskSummary` worked example. [8]
+- `collectWireFixtureFindings` — the five rules, and the fresh-literal exception that keeps rule 4 from second-guessing `tsc`. [9]
+- `isCandidateForExcessCheck` — the four node kinds, which is the exact shape of gap 1. [10]
+- `directiveLines` + `DIRECTIVE` — suppressions read as comment trivia, not raw lines. [11]
+- `excessPropertyVerdict` — undeclared properties, and the union blend no single member declares. [12]
+- `reconcileWithRegistry` — unregistered / spent / miscounted / unreasoned. [13]
+
+- The registry, planted bypasses and vacuity checks this module deliberately does not own. [14]
+
+
+- The current TaskEntry/TaskSummary pair illustrates why every union member is checked independently. [15]
+
+- Gap 3, live: the first line is a "Same-origin client for …" header, not a `mirror of` marker, so nothing this module declares enters the vocabulary. [16]
+- Same, for the read-only files API client. [17]
+
+- Same, for the coordination-notes API client: the types it declares are `FolderEntry`, `NotesFolder` and `NoteContent`, under the same "Same-origin client for …" header. [18]
+
+- Gap 5's answer: the call-site constraint the builders carry instead of the project-wide flag. [21]
+
+### Cross-Repo References
 
 No cross-repository boundary. The sweep runs entirely over `dashboard/` sources in this repository; the
 "wire" it polices is a Python↔TypeScript seam inside `agents-remember`, and the TypeScript compiler is a
 devDependency rather than a system boundary.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The scanned roots are all inside `dashboard/`; nothing outside this repository is read. | `SCANNED_ROOTS` | dashboard/src/test/wireFixtureGuard.ts:136-136 |
 
-## Update History
-- 2026-09-25T22:19:46+00:00: Generated citation repair: `ChangedFile` repointed to dashboard/src/data/changeset.ts:20-26. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 1
-  claim(s) whose anchor no longer sat in its cited range and normalised 1 further range(s) in this
-  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
-  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
-  back at its current position. Verification metadata remains closeout-owned.
-- 2026-09-05T06:24:16+00:00: Generated citation repair: `SubTaskRow` repointed to dashboard/src/types/projection.ts:815-815. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-08-20T10:45+02:00 — 260815-DAG-L12 curator: re-anchored citation range(s) to current source after the L12 line movement (cited files changed, card source unchanged); verification metadata unchanged.
-
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-
-- 2026-08-04T18:16+02:00 — 260731-EFA-L6 S18-B16 curator: corrected 1 citation range: `SubTaskRow` is declared at types/projection.ts L515 (was L505). All other rows and prose citations were already resolved. Scoped fixer + non-fixing recheck green under the frozen snapshot; verification metadata unchanged.
-
-- 2026-08-03T04:00:52+02:00 — 260731-EFA-L6 W3-B06 curator: curated 49 mechanical citation findings, including 9 legacy prose references and 20 repo-internal rows. The three external TypeScript URLs were retained as ordinary reading links outside citation tables; all repository rows now use exact anchors and plain repo-relative sources.
-
-- 2026-08-01T09:50+02:00 — 260731-EFA-L4 curator: created. Records the seven one-token opt-outs that
-  make `tsc` alone insufficient, the five rules and their scopes, the DISCOVERED (never listed) mirror
-  vocabulary, `wireSlotTarget`'s every-member union handling with the `SubTaskRow` case that reproduces
-  this leaf's own defect, the token-level suppression scan, and the counting bidirectional registry
-  reconciliation. Reproduces all five `WHAT THIS DOES NOT COVER` items in substance — rule 4's four node
-  kinds (and the `ElementAccessExpression` / `AwaitExpression` / `NewExpression` / `NonNullExpression`
-  blind spots), the generic helper that defeats rules 1 and 4 together, the invisible unmarked mirror
-  module with its five live instances and the two impossible fixtures that lived there, type predicates
-  and assertion functions, and the value-vs-name limit. Verification metadata pinned to the leaf base
-  `abc7cbcc74921cdcb57a61529445f61641e919e7` until closeout stamps the L4 code commit.
+- The scanned roots are all inside `dashboard/`; nothing outside this repository is read. [22]

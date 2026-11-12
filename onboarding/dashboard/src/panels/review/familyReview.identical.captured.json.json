@@ -1,0 +1,43 @@
+{
+  "path": "dashboard/src/panels/review/familyReview.identical.captured.json",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "15": {
+      "note": "This retained body selects the same recorded family revision on both sides with equal guarantee text: it is unchanged_revision, not a distinct-revision identical_text witness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5f774eeac36b02136698925c45278d6be2f9c854",
+            "content": "sha256:67b44d9b07f64d049a40e9c26c30b63c98611c03f35265fed7f11b9cf07906e0",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Distinct-revision equal wording is an explicitly synthetic component control, not this captured body or producer acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56baefd452e639894e635624c2a27340962ceb87",
+            "content": "sha256:4c6036518c7fa8ed2be1430548607fd71bbb2fd842a8038f4a397b572725475e",
+            "locator": {
+              "end": 92,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "dashboard/src/panels/review/FamilyGuarantees.retainedBranch.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

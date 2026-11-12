@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/role_capsules/statuses.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                            |
-| path                   | `mcp/src/agents_remember/models/role_capsules/statuses.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-21T22:40:00+02:00 |
-| lastVerifiedCommitHash | `a8d2431926d6b130012ca81ed2e85b14721c0615` |
-| lastVerifiedCommitDate | 2026-09-21T22:51:46+02:00|
-| governingOverview      | `../overview.md`                           |
-
 ## Governing Overview
 
 [models overview](../overview.md)
@@ -83,47 +73,27 @@ is a breaking change for every caller that branches on it.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external or domain documentation is configured for this memory root
 (`system/sources.md` has no entries), so no external documentation claim is made.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant documentation found after checking live sources. | n/a | n/a |
+No relevant documentation found after checking live sources.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The completeness and uniqueness guard over this vocabulary. | `test_every_documented_refusal_code_is_registered_exactly_once` | mcp/tests/test_role_capsule_admission.py:166-184 |
-| The typed refusal that carries a status, its detail, a remedy, and structured conflict rows. `CapsuleBindingError` was removed on the A3 candidate and must not be cited. | `CapsuleCompilationError`; `CapsuleManifestError`; `CapsuleSourceError` | mcp/src/agents_remember/errors.py:490-531; mcp/src/agents_remember/errors.py:534-535; mcp/src/agents_remember/errors.py:538-539 |
-| The equality-conflict case that stops compilation instead of choosing by accident. | `_require_one_identity`; `_supersessions` | mcp/src/agents_remember/models/role_capsules/resolution.py:221-261; mcp/src/agents_remember/models/role_capsules/resolution.py:262-284 |
-| The source-admission codes raised outside this tuple, in the application layer. | `_require_root`; `_read`; `_require_confined_relative` | mcp/src/agents_remember/application/role_capsules/sources.py:107-123; mcp/src/agents_remember/application/role_capsules/sources.py:124-159; mcp/src/agents_remember/application/role_capsules/sources.py:169-196 |
-| **`source-not-utf8`** and the revision/blank-content refusals, raised in the value layer rather than the application layer. | `CapsuleSource` | mcp/src/agents_remember/models/role_capsules/sources.py:49-118 |
-| The tool-policy refusal raised when a request falls outside the admitted snapshot. | `narrow_tool_requests` | mcp/src/agents_remember/models/role_capsules/tools.py:24-58 |
+- The completeness and uniqueness guard over this vocabulary. [1]
+- The typed refusal that carries a status, its detail, a remedy, and structured conflict rows. `CapsuleBindingError` was removed on the A3 candidate and must not be cited. [2]
+- The equality-conflict case that stops compilation instead of choosing by accident. [3]
+- The source-admission codes raised outside this tuple, in the application layer. [4]
+- **`source-not-utf8`** and the revision/blank-content refusals, raised in the value layer rather than the application layer. [5]
+- The tool-policy refusal raised when a request falls outside the admitted snapshot. [6]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No sibling-repository contract consumes these codes; they are internal to the AR capsule
 compiler.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
-
-## Update History
-- 2026-09-21T22:40+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **the two enforced citation rows were re-read and re-derived — the defect is inherited and pre-existing.** Both rows named `CapsuleManifestError` and `CapsuleSourceError` while citing `mcp/src/agents_remember/errors.py:464-507`, `:508-511` and `:512-513`; those lines hold unrelated `CodexAppServerError` subclasses, and the two capsule refusals moved in an **earlier landing**, not by this leaf. Read against the candidate, `CapsuleCompilationError` now occupies `490-531`, `CapsuleManifestError` `534-535` and `CapsuleSourceError` `538-539`; the rows were repointed to those extents and each anchor was verified to occur literally inside its range. No claim wording was changed — the claims were true and only the pointers were wrong. This is a citation-only repair; `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are deliberately **not** advanced, because nothing in this leaf is committed and the governed closeout owns the real stamp.
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-
-- 2026-09-17T13:05+02:00 — 260915-CAPS-L14 curator: **D7 wrong-form evidence table repaired (memory-layer shape defect).** This card's evidence tables used the legacy header `| Finding | Citations | Source Path |` with the delimiter `| --- | --- | --- |`. The memory-quality checker requires `| Finding | Anchor | Source |` with the identifier alone in **Anchor** and a plain `path:start-end` in **Source** — which is what every row in these tables already carried, so the repair is the header and delimiter only: **no row content, anchor, range, prose or verification stamp was changed.** Each table's width was widened in all three parts together (header, delimiter, rows) as the checker's own guidance requires.
-
-- 2026-09-16T09:38+02:00 — 260915-CAPS-L2 curator: corrected against the A3 candidate, and corrected **my own earlier error**. The created entry below said the outside-the-tuple codes belong to "reading a tree" and did not mention UTF-8; my curation report went further and stated that `source-not-utf8` **does not exist**, based on grepping only the application layer. That was wrong: the code is real and is raised in `models/role_capsules/sources.py` when a source's bytes do not decode, alongside the revision and blank-content refusals. Rewrote the paragraph to name `source-not-utf8` and to place the codes by *layer* (value-layer source admission vs application-layer tree admission) rather than calling them all "application boundary"; added an invariant blocking the nonexistence claim; and recorded the `duplicate-identity` two-homes caveat — the same spelling carries two meanings in two layers, so a branch on it must name the raising layer. Refreshed every range in this card. Verification metadata stays at the leaf base commit — the closeout stamps the real code commit.
-
-- 2026-09-16T08:56+02:00 — 260915-CAPS-L2 curator: created this card for the role-capsule refusal
-  vocabulary added by the deterministic capsule compiler leaf (`CAPS-R02@v1`). Records the
-  thirteen registered codes, the caller-input versus integrity split, the
-  `equal-authority-contradiction` stopped-conflict case, the `CAPSULE_STATUSES` registration
-  invariant, and the separate application-layer source-admission codes that are deliberately
-  outside the tuple. Verification metadata is left at the leaf base commit because the source is
-  uncommitted — the governed closeout stamps the real code commit.
+No meaningful cross-repo references found.

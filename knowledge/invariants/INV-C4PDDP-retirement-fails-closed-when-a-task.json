@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The case {'path': 'mcp/tests/test_master_retirement_refusals.py', 'symbol': 'test_a_task_document_with_a_malformed_list_field_refuses_and_is_named'} proves this obligation on the candidate."
+  },
+  "applicability": "Retirement's read of a direct task document whose orchestrates or subTasks field is malformed.",
+  "conditions": [
+    "The request is the retire operation's census or refusal path.",
+    "The file is reachable and readable as a JSON object."
+  ],
+  "exclusions": [
+    "A missing or unreadable file, which is refused by its name.",
+    "Task documents outside the repository's task root.",
+    "A task.json deeper inside a task folder, which is not read."
+  ],
+  "id": "INV-C4PDDP",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "focused.txt; negative-O2.txt"
+      ],
+      "path": "entries-list.json"
+    },
+    "handoffEntry": "L41-continuation-O2",
+    "leaf": "260928-MIK-L41",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "Retirement fails closed when a direct task document has a malformed orchestrates or subTasks list.",
+  "status": "proposed",
+  "supersedes": []
+}

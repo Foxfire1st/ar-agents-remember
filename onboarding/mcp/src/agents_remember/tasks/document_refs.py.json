@@ -1,0 +1,181 @@
+{
+  "path": "mcp/src/agents_remember/tasks/document_refs.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8e7a9eac75417f2c2bf003612d5c62cfc540661a",
+        "content": "sha256:76321fe013755208406f51b2919f00181be275ec94d76eb82bcd62488d3e9a84",
+        "locator": {
+          "kind": "symbol",
+          "name": "TaskDocumentTopology"
+        }
+      },
+      "id": "RLZ-AD8Q4P",
+      "invariant": "INV-P2NJA4",
+      "origin": {
+        "handoffEntry": "R83-DISCOVERY",
+        "leaf": "260928-MIK-L73"
+      },
+      "rationale": "The master-document census is the lookup whose recursive walk admitted historical copies as live masters; taking its documents from the walker is what closes that.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Task document topology is centralized in one typed resolver.\n\nAnchor: `TaskDocumentTopology`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e7a9eac75417f2c2bf003612d5c62cfc540661a",
+            "content": "sha256:6128cde80120b1453092e64570b36beec886f302204e049e82779bc2277c9489",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The shared atomic segment-node-kind refusal used by the final validator and the authoring draft check (L15-R8 F6 / L15-FIX-1).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e7a9eac75417f2c2bf003612d5c62cfc540661a",
+            "content": "sha256:5bce6b9ce41fe7631cf2be0eee58b5d851724ce7375516e4cbd22c12af20bd5e",
+            "locator": {
+              "kind": "symbol",
+              "name": "refuse_segment_nodes_on_atomic_masters"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Leaf placement builds its blocking set from terminal masters (`Completed` or `abandoned`) through the shared readiness judgement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e7a9eac75417f2c2bf003612d5c62cfc540661a",
+            "content": "sha256:7a3cd98085341a7f1d0a301fcd2964ae52220a312e940f27207ebb4f77146ad7",
+            "locator": {
+              "kind": "symbol",
+              "name": "execution_leaf_placement"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The current module exposes `TaskDocumentRefError`, `refuse_segment_nodes_on_atomic_masters`, `ResolvedTaskDocument` at this ownership boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e7a9eac75417f2c2bf003612d5c62cfc540661a",
+            "content": "sha256:642419e94cd714e906607e971fc0160b7367c3de3fab5ef8baaa629ae9ebce88",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocumentRefError"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e7a9eac75417f2c2bf003612d5c62cfc540661a",
+            "content": "sha256:5bce6b9ce41fe7631cf2be0eee58b5d851724ce7375516e4cbd22c12af20bd5e",
+            "locator": {
+              "kind": "symbol",
+              "name": "refuse_segment_nodes_on_atomic_masters"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e7a9eac75417f2c2bf003612d5c62cfc540661a",
+            "content": "sha256:e22c5d645704895490e6d5492552357382ce2922f8530d460dce1e5c5e6f4692",
+            "locator": {
+              "kind": "symbol",
+              "name": "ResolvedTaskDocument"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e7a9eac75417f2c2bf003612d5c62cfc540661a",
+            "content": "sha256:83e7a8ecbdfd3af4083b3f78cd1384fd731c424f5af32974fdaa99dca82a433b",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 40
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e7a9eac75417f2c2bf003612d5c62cfc540661a",
+            "content": "sha256:79c19cfd0d98ace831ea3fe271d253380d1ce64c29f540eb5acd6e73c08a887a",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 60
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e7a9eac75417f2c2bf003612d5c62cfc540661a",
+            "content": "sha256:07e0ed222f80cd3ef8b7a5185269f4a4efbd1708623316ddd712bd5da232821b",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 80
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "An alias that resolves to no master is refused with the shared missing-master message; one that resolves to several is refused with a duplicate-alias message.  Anchor: `TaskDocumentTopology._commanded_masters_exact`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e7a9eac75417f2c2bf003612d5c62cfc540661a",
+            "content": "sha256:b5e5be056ece9b84830d072460358ae5d5902ad179a968446d12a2991e37e364",
+            "locator": {
+              "end": 672,
+              "kind": "line_range",
+              "start": 612
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Shared sprint census reports commanding, recording and unreadable populations with caller-specific refusal policy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d30f455f8141827f2e8667465ad53fa062028dec",
+            "content": "sha256:d88698ceb66667a0e89dd5f164124c3e82b4531ff089147f14324c055c0fe49b",
+            "locator": {
+              "kind": "symbol",
+              "name": "sprint_census"
+            },
+            "path": "mcp/src/agents_remember/tasks/sprint_rows.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

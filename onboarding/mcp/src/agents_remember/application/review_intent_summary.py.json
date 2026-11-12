@@ -1,0 +1,180 @@
+{
+  "path": "mcp/src/agents_remember/application/review_intent_summary.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "381116756a49c43ba3161b123d2f65708d31334c",
+        "content": "sha256:07b010d39b737ca0f657594d827cc59ed1d6a3a42cd6d1c6e5fb0052acc6565f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_classify"
+        }
+      },
+      "id": "RLZ-A5SQ5633",
+      "invariant": "INV-WCEGX72X",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Classifies one identity from its before and after heads: a head only after counts +1, a head only before counts −1, and a successor whose compared content differs counts once on each side. A successor with identical content but different realizations or members is tallied attached-only outside +/−, while an unchanged head with unchanged attachments tallies nothing. When either side has no single head, the identity counts as unresolved only if the two sides' head sets differ, and otherwise tallies nothing.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "381116756a49c43ba3161b123d2f65708d31334c",
+        "content": "sha256:f6fae8068874ff76274d2cc2a0bc3c6d689ce10a0475c460a7390cc9d6b6ab0c",
+        "locator": {
+          "end": 407,
+          "kind": "line_range",
+          "start": 371
+        }
+      },
+      "id": "RLZ-CC2NVWCA",
+      "invariant": "INV-R93S8Y30",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Decides when one side has several heads or a populated identity with none. _classify increments unresolved only when the two sides' head sets differ; identical ambiguous head sets tally nothing and do not by themselves make the summary partial.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "381116756a49c43ba3161b123d2f65708d31334c",
+        "content": "sha256:07b010d39b737ca0f657594d827cc59ed1d6a3a42cd6d1c6e5fb0052acc6565f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_classify"
+        }
+      },
+      "id": "RLZ-K697ATH6",
+      "invariant": "INV-SVZY1FHR",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Counts a successor head once on each side whenever its compared content differs from the superseded head's, which includes a record-only successor with identical text but a changed record status. Only a successor with identical content whose attached realizations or members differ is diverted to attached_only.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "381116756a49c43ba3161b123d2f65708d31334c",
+        "content": "sha256:674871b6d55c8ca9bca48c6646bfb18bc2d4803efe437858e39857762981bb31",
+        "locator": {
+          "kind": "symbol",
+          "name": "summarize_review"
+        }
+      },
+      "id": "RLZ-KVP1FE",
+      "invariant": "INV-HAJ9SH",
+      "origin": {
+        "handoffEntry": "L89-W6-MCP-INV-HAJ9SH",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Calls the caller-supplied resolver inside one Git lookup memo, carries a resolution refusal into the typed unavailable result, observes the resolved dependencies, and records the actual trees.record.number with attribution/open-worklist counts. The ordinary public reader supplies its existing default resolver; a numbered caller can supply the recorded-comparison resolver.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "381116756a49c43ba3161b123d2f65708d31334c",
+        "content": "sha256:f1ca2059e256eb7c1449aa1e27de969c2918988c46fbc1d5bab614d0cce4e3a6",
+        "locator": {
+          "kind": "symbol",
+          "name": "_STATEMENT_FIELDS"
+        }
+      },
+      "id": "RLZ-PVFA3GK8",
+      "invariant": "INV-SVZY1FHR",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Lists the invariant fields that make up a revision's compared content: the four statement fields plus state_at_origin and acceptance_ref. Because the record-status fields are in this list, a status-only successor differs in content and is counted as a revision rather than as a relationship-only change.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "16": {
+      "note": "Ordinary and caller-selected resolution share one memoized summary and label the counted comparison.\n\nAnchor: \"def read_review_intent_summary(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "381116756a49c43ba3161b123d2f65708d31334c",
+            "content": "sha256:cb35971cc2b261543c2446dce31e214215baa50c1913d03b142df0ae02abc208",
+            "locator": {
+              "end": 180,
+              "kind": "line_range",
+              "start": 127
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Shared preflight/read failures retain typed unavailable and nonzero unresolved becomes partial.\n\nAnchor: \"def intent_summary_of(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "381116756a49c43ba3161b123d2f65708d31334c",
+            "content": "sha256:4952bc51a66691f49128ad39ef9b181b7a5147702173362b16eca45946208c54",
+            "locator": {
+              "end": 241,
+              "kind": "line_range",
+              "start": 183
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Compared content fields separate authored wording/status from provenance/display version.\n\nAnchor: \"# The invariant revision fields compared between two heads: the authored statement and its record\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "381116756a49c43ba3161b123d2f65708d31334c",
+            "content": "sha256:70b21e3337bae97dc5fd3495b88a3b375ecefd26a79db3812c71c14d345ad2d4",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 78
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Snapshot reads retain canonical membership and realization comparison identities.\n\nAnchor: \"def _read_side(database: Path, namespace: str) -> _SideIntent:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "381116756a49c43ba3161b123d2f65708d31334c",
+            "content": "sha256:b4ee51e545b6678437aa6dd1db685033f6b392540745a86484ddc39c2d5334c0",
+            "locator": {
+              "end": 268,
+              "kind": "line_range",
+              "start": 247
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "One tally distinguishes counted successor, relationship-only and unequal ambiguous heads.\n\nAnchor: \"def _tally(before: _KindSide, after: _KindSide) -> _Tally:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "381116756a49c43ba3161b123d2f65708d31334c",
+            "content": "sha256:b4f3d2d5b99c6d900b298ba8bd70d0ad5065f7c81728a8c1018277aedc44c715",
+            "locator": {
+              "end": 407,
+              "kind": "line_range",
+              "start": 364
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

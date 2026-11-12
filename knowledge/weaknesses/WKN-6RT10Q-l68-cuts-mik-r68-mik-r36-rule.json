@@ -1,0 +1,28 @@
+{
+  "anchor": {
+    "blob": "b20f555dd03b92dcc6704a9fb8c94ceb1e389cd1",
+    "content": "sha256:b819d5fac7981c071dd2b3da73a10415cdba849c4ebabe9f66f2f11e76fdcb8c",
+    "locator": {
+      "kind": "file"
+    },
+    "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+  },
+  "id": "WKN-6RT10Q",
+  "kind": "debt",
+  "origin": {
+    "handoff": {
+      "path": "rule9-ingest-list.json"
+    },
+    "handoffEntry": "mark-48",
+    "leaf": "260928-MIK-L118",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L118"
+  },
+  "state": "open",
+  "statement": "L68 cuts them (MIK-R68, MIK-R36 rule 9); a task that meets this rule lands with the size named and adds its file here; a task adding over 300 lines to such a file says why in its report. L117 lands with paseo_role_tools.py named (1,835 in its candidate). Not fixed here."
+}

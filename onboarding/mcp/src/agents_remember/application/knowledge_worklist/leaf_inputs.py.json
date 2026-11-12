@@ -1,0 +1,22 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf_inputs.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Defines immutable explicit code/memory operands shared by leaf capture and completion. These frozen dataclasses describe selected operands. Constructing them neither captures Git state nor grants authority; a held converted K_B and a memory base revision are distinct fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0856ebe0d011d42fa7fea2707c26da0e124945cc",
+            "content": "sha256:b8acb0781c1201abb28cf628e5dbe54c93accce1b88e84d13a26d6d2c15bdce0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

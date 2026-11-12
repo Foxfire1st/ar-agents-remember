@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The served row and the tree's selection owner are different components with different identity spellings; passing the raw key opens nothing, which is exactly the failure the case catches against the real Operations page. The terminal-leaf case adds the reveal the selection needs after cleanup."
+  },
+  "applicability": "The task link of an attention row and the surface that owns task selection.",
+  "conditions": [
+    "The row's served canonical task identity is adapted to the selection identity the tree's detail owner expects.",
+    "A terminal leaf whose enclosure was collected is reachable and selected out of the closed fold.",
+    "Plain click, and the tree's existing arrow keys, keep working."
+  ],
+  "exclusions": [
+    "Matching a row to a task by title or prose.",
+    "Inventing a task for a taskless seat.",
+    "A second task-selection authority beside the tree's own."
+  ],
+  "id": "INV-YNWH01",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/reviewer/267804e5-dd71-51e8-8f1d-d975effaaeaf/role-launch/round4/L190-fix-verification-R4.json#L190-R1-F08; Prior sealed closure retained; not reopened in fixed-list R4."
+      ],
+      "path": "ingest-runA.json"
+    },
+    "handoffEntry": "L190-R1-F08",
+    "leaf": "260928-MIK-L190",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Task navigation adapts served canonical task identity to the actual detail selection owner.",
+  "status": "proposed",
+  "supersedes": []
+}

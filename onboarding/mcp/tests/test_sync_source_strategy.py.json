@@ -1,0 +1,71 @@
+{
+  "path": "mcp/tests/test_sync_source_strategy.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The strategy is chosen once from the request or journal value, and any other value is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "273ecee726d717b28847c7aed528b79ed2a7313e",
+            "content": "sha256:2ccc434c35996a638d72bfc99f710f146ef953b246126d65ecd34804aaf4d65c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_choice_is_made_once_from_the_request_or_the_journal"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The contract line moves the pair to the pulled sources and its undo is refused without its own log entry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "273ecee726d717b28847c7aed528b79ed2a7313e",
+            "content": "sha256:daa7ee8392c0a902c8a7c9ba1716c711aed64a50e8c9982809880ee7a91c1b67",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_contract_line_moves_the_pair_to_the_pulled_sources"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The repository default keeps the pair, pins its ref, logs its sources and refuses a retargeted journal branch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "273ecee726d717b28847c7aed528b79ed2a7313e",
+            "content": "sha256:6c06f27ee0f0eea0b2d64cf7ba292ab21ad0a6bf0624551083f5828c679597ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_repository_default_keeps_the_pair_pins_and_logs_its_sources"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Inconsistent recovery refs are refused with what was found, the expected ref and the cancel route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "273ecee726d717b28847c7aed528b79ed2a7313e",
+            "content": "sha256:2618fa6449bae46871bb228bb63ebe59496dcde9c0cf89dcc4a561ab88b86ca4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_inconsistent_recovery_refs_name_what_was_found_and_the_way_out"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Avoids destroying title-prefix reach for standalone tasks or matching invisible internal master-child identifiers."
+  },
+  "applicability": "Typeahead on Operations task rows in the real ListBox.",
+  "conditions": [
+    "Numbered master-child labels match their displayed short-id then title.",
+    "Sprints, masters and standalone tasks retain title-prefix matching."
+  ],
+  "exclusions": [
+    "Matching the internal full master-child id instead of visible text.",
+    "Treating a standalone separate id cell as the typeahead label."
+  ],
+  "id": "INV-G71Q09",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/panels/lifecycle-list/hierarchy.test.tsx: \"finds a row by typing what it shows\" and \"still finds a task that stands alone by typing its title\"; fault runs typing-standalone and typing-visible-id (notes/reports/worker/8c3d5f2a-6e74-4b90-c2f1-144000000a01/role-launch/evidence-L144-A2/103-fault-runs-final.log); comparison page, difference \"Typing to find a row\". Repair of the Reviewer's finding L144-R1-02."
+      ],
+      "path": "curator-ingest-L144-v1.json"
+    },
+    "handoffEntry": "MIK-R144@v1 rule 5 / typing",
+    "leaf": "260928-MIK-L144",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Typing with the list in the keyboard's focus finds a row by the beginning of what the row shows: a task numbered in its master by its short id and then its title, and no longer by the whole id inside its master; a row whose text is its title alone (a sprint, a master, a task that stands alone) by that title, as before the rebuild.",
+  "status": "accepted",
+  "supersedes": []
+}

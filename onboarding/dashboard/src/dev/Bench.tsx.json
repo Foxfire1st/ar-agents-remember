@@ -1,0 +1,148 @@
+{
+  "path": "dashboard/src/dev/Bench.tsx",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The `happy-build`→`build-up` legacy-deep-link alias (05k).\n\nAnchor: \"?scenario=happy-build\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d5f2bb361853e599187ee262fe848316a9f46589",
+            "content": "sha256:6c5c0e43f53b6eee016e18c069359056845fc54ba71ba64fae6354c4b679f7cf",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 14
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The grouped scenario picker is a compact selector.\n\nAnchor: `htmlFor`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d5f2bb361853e599187ee262fe848316a9f46589",
+            "content": "sha256:d806ae5cd8aebbe43a2006d73326dfcb09be8e08b2d1ed2e601ea7fd6852a5a5",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 36
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The selected scenario mounts the real cockpit shell.\n\nAnchor: \"chats\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d5f2bb361853e599187ee262fe848316a9f46589",
+            "content": "sha256:2ce23d25b85d3375f499aef04165dccf7145d5bb54e219d90c21e44869a0e093",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 41
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The scenario model validates named engine-room scenarios before building frames.\n\nAnchor: \"scenario player: unknown engine-room scenario\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58403a8e3f376b93e6cea8747e0d8ecdb222dd8c",
+            "content": "sha256:412ca345ccf75bf9c0806bce695be8de808b79984251a7a54d202cf6101dd451",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 29
+            },
+            "path": "dashboard/src/dev/scenarios.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The real cockpit shell it renders (also the shell rendered against fixtures).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:57e2f656bc20222f62328519d9d1cb2e901ebceaae50dfbc50c5bceaa6af534f",
+            "locator": {
+              "kind": "symbol",
+              "name": "CockpitShell"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The gallery fixtures hydrated by the legacy `?state=` path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87693eb6b819166337bd70d0a819044301bb6ecf",
+            "content": "sha256:39d1da3a7062c888cbda487fa60e19107ca393e68fb55aa7c4e79ea5d8bea31e",
+            "locator": {
+              "end": 145,
+              "kind": "line_range",
+              "start": 145
+            },
+            "path": "dashboard/src/dev/fixtures.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Picker styles.\n\nAnchor: \"bench-overlay\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b74ed16fea917655aa1db99cf0fb0260bf794d01",
+            "content": "sha256:6e3c50f39ec662c303bcbc442cbfe5096f2f2d7618f8865f55e26fb6411afc87",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": "dashboard/src/dev/dev.css"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Player active-control styles.\n\nAnchor: \"player__controls button.is-on\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b74ed16fea917655aa1db99cf0fb0260bf794d01",
+            "content": "sha256:f8304a402df78e303864dab56f5c4a6280504ec042f403bfff97c72ead0de577",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 120
+            },
+            "path": "dashboard/src/dev/dev.css"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

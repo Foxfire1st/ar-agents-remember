@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A future test cleanup must not silently replace real public-answer coverage with lighter synthetic answers while retaining its provenance claim."
+  },
+  "applicability": "The four-tree reviewer real-captures boundary chosen in MIK-R57@v2 appendix83/151 and rule6.",
+  "conditions": [
+    "Retained mounted controls load the actual captured public-response JSON and its recorded request identity; changed fixtures must have their own truthful capture provenance."
+  ],
+  "exclusions": [
+    "The helper does not authenticate every historical capture hash, prove a native producer run, or prohibit explicitly declared synthetic unit tests elsewhere."
+  ],
+  "id": "INV-BM96VC",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/worker/48060148-87d0-4e1e-ad2e-6f1fa353092d/role-launch/freeze05-builder-curator-handoff.md#producer-50"
+      ],
+      "path": "freeze11-r57-eight-prescribed-by-design-boundaries-01.json"
+    },
+    "handoffEntry": "MIK-R57@v2 by-design real-captures",
+    "leaf": "260928-MIK-L57",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Captured actual public answers remain test data without synthetic trimming to meet a preferred fixture weight.",
+  "status": "proposed",
+  "supersedes": []
+}

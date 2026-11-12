@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Rail retention, message switching, counted loads and burst coalescing live in different files across shell, frame component, controller and chat panel; no member alone promises the one-loaded-chat lifetime, so the guarantee needs the joint reading."
+  },
+  "guarantee": "The shell keeps one DocumentChat and PaseoChatFrame across Operations task documents and the review page, hiding the retained frame without unloading or reparenting so draft and scroll survive. Operations retains first-show creation when no preload is requested; a review may preload the closed column with an agentless Paseo client. The review column defaults to the bound leaf's explainer or its placeholder, reads no ordinary document-chat binding while in explainer mode, and may steer that same frame to another task seat explicitly selected from its header menu. Opening or preloading the column creates no agent or model turn; an existing closed explainer may resume its process when shown. Ordinary document-chat mode retains its distinct known-no-agent/unknown-discovery presentation and launcher rules; an unbound review retains its own pending/missing presentation instead of borrowing the Projects Architect. Hidden wrappers stay out of keyboard and accessibility reach. Ready-channel message steering, qualified recovery, one-generation-per-document-load and unavailable nonloading burst coalescing remain unchanged.",
+  "id": "FAM-0W20JV",
+  "members": [
+    "INV-VMREN3",
+    "INV-YFAHQM",
+    "INV-GY49SV",
+    "INV-MN80QW",
+    "INV-Y7WR54",
+    "INV-8P06Y0"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "notes/reports/role-launch/260928-MIK-L122-curator-handoff.json"
+    },
+    "handoffEntry": "fam-sidebar-chat",
+    "leaf": "260928-MIK-L122",
+    "task": "260928-MIK"
+  },
+  "revision": 4,
+  "routes": [
+    "dashboard/src/cockpit"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "One loaded sidebar chat switches by message and hides without unloading"
+}

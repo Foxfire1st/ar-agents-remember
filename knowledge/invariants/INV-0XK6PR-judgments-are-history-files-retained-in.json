@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A future reviewer change must not introduce a second judgment store/retention job that can diverge from authoritative leaf histories."
+  },
+  "applicability": "The four-tree reviewer retained-history boundary chosen in MIK-R57@v2 appendix83/151 and rule6.",
+  "conditions": [
+    "Judgment is read from the selected after-memory Git tree, scoped to this leaf and all its attempt histories; unreadable history remains unavailable."
+  ],
+  "exclusions": [
+    "No independent assessment-retention service, repository garbage-collection guarantee, archival lifetime measurement or fresh execution."
+  ],
+  "id": "INV-0XK6PR",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/worker/48060148-87d0-4e1e-ad2e-6f1fa353092d/role-launch/freeze05-builder-curator-handoff.md#producer-45"
+      ],
+      "path": "freeze11-r57-eight-prescribed-by-design-boundaries-01.json"
+    },
+    "handoffEntry": "MIK-R57@v2 by-design retained-history",
+    "leaf": "260928-MIK-L57",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Judgments are history files retained in Git and need no second assessment-retention channel.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,68 @@
+{
+  "path": "mcp/tests/test_tool_answer_guard.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Shaping and failure preservation are asserted at the choke.\n\nAnchor: `ToolAnswerGuardTests`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aed0880f6d90d1882d8d98d46fb4b084b6869862",
+            "content": "sha256:8e77dde6f74dfa1855ef7cefd02ce4588f17f33a9f331519610f4f495f62481e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Final delivered measurements include bookkeeping.\n\nAnchor: `ToolAnswerFinalMeasureTests`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aed0880f6d90d1882d8d98d46fb4b084b6869862",
+            "content": "sha256:8e77dde6f74dfa1855ef7cefd02ce4588f17f33a9f331519610f4f495f62481e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Partial and concurrent writes preserve record boundaries and counted losses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aed0880f6d90d1882d8d98d46fb4b084b6869862",
+            "content": "sha256:b0d140c68a0a9e968e3524da869d1760741535a90fd3ae144d6f3f1a8386bf1a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolPartialWriteTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The shaped start row has the explicit six-hundred-character bound. The existing central choke guard and every other tool bound remain; this is a source-declared row constraint, not a new runtime size census.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aed0880f6d90d1882d8d98d46fb4b084b6869862",
+            "content": "sha256:8e77dde6f74dfa1855ef7cefd02ce4588f17f33a9f331519610f4f495f62481e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

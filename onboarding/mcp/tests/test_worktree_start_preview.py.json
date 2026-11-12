@@ -1,0 +1,548 @@
+{
+  "path": "mcp/tests/test_worktree_start_preview.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "6f1c1332855742f33a42427582b074c430695e4a",
+        "content": "sha256:78c1c690590688c72fca7c0405a4dccac2df6b27fbe1a96c59818b363a67c4cb",
+        "locator": {
+          "end": 764,
+          "kind": "line_range",
+          "start": 747
+        }
+      },
+      "facet": "A modified earlier log line violates the byte-prefix append requirement.",
+      "id": "PRF-0CJK8E",
+      "invariant": "INV-GAKDNC",
+      "origin": {
+        "handoffEntry": "MIK-R131@v1/R2/worker",
+        "leaf": "260928-MIK-L131"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6f1c1332855742f33a42427582b074c430695e4a",
+        "content": "sha256:90b9acc72cd7ad859a7b9ae161a4cd4310d596d56b1d91dfa2dd5a9f56bba985",
+        "locator": {
+          "end": 744,
+          "kind": "line_range",
+          "start": 738
+        }
+      },
+      "facet": "A differently named file beside the daily log is rejected, not hidden by excluding the logs subtree.",
+      "id": "PRF-2B15HE",
+      "invariant": "INV-GAKDNC",
+      "origin": {
+        "handoffEntry": "MIK-R131@v1/R2/worker",
+        "leaf": "260928-MIK-L131"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6f1c1332855742f33a42427582b074c430695e4a",
+        "content": "sha256:ebc3e5d8445732b38d109d03ffd984cb0a0711086022ba273727731986d3376e",
+        "locator": {
+          "end": 434,
+          "kind": "line_range",
+          "start": 384
+        }
+      },
+      "facet": "Actual apply re-resolves changed current source; an existing valid parent is read-only in preview.",
+      "id": "PRF-31JXQC",
+      "invariant": "INV-EX6T0F",
+      "origin": {
+        "handoffEntry": "MIK-R47@v1-preview-authority",
+        "leaf": "260928-MIK-L47"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6f1c1332855742f33a42427582b074c430695e4a",
+        "content": "sha256:f9b0ff1c796c84cacf9b2008984d93638cac24ca8d520264c2ebd1b1190f35a8",
+        "locator": {
+          "end": 300,
+          "kind": "line_range",
+          "start": 271
+        }
+      },
+      "facet": "Repeated admitted external-memory first-leaf previews carry the same owner-validated parent and bases, preserve startup/Git state except the separately checked daily call-log and completed-call river records, and publish no parent.",
+      "id": "PRF-3BA4YQ",
+      "invariant": "INV-EX6T0F",
+      "origin": {
+        "handoffEntry": "L111-external-preview-facet-correction",
+        "leaf": "260928-MIK-L111"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6f1c1332855742f33a42427582b074c430695e4a",
+        "content": "sha256:f19addd277973e293c9dac65d7f6c767bfe43ee25afa336577edee7220d58d74",
+        "locator": {
+          "end": 623,
+          "kind": "line_range",
+          "start": 562
+        }
+      },
+      "facet": "Canonical leaf/source/base/protected-ref invalidity preserves refusal and product-state equality.",
+      "id": "PRF-5Z9PGW",
+      "invariant": "INV-EX6T0F",
+      "origin": {
+        "handoffEntry": "MIK-R47@v1-preview-authority",
+        "leaf": "260928-MIK-L47"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6f1c1332855742f33a42427582b074c430695e4a",
+        "content": "sha256:538104ce3f245bf86b9cb9b29e2760c1a7c7f2424461ff552ae95903b3635c42",
+        "locator": {
+          "end": 559,
+          "kind": "line_range",
+          "start": 508
+        }
+      },
+      "facet": "Foreign/unreadable persisted artifacts retain explicit refusal and are never replaced by a valid plan.",
+      "id": "PRF-63NF6V",
+      "invariant": "INV-EX6T0F",
+      "origin": {
+        "handoffEntry": "MIK-R47@v1-preview-authority",
+        "leaf": "260928-MIK-L47"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6f1c1332855742f33a42427582b074c430695e4a",
+        "content": "sha256:535df0c89ab40847b8b965dc53958c357520da8a2f904e592cf1056e126d07b2",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_observer_event_mode_change_is_rejected"
+        }
+      },
+      "facet": "The admitted workspace-river append passes before chmod, while a subsequent kind/mode change is rejected by the caller-owned metadata guard.",
+      "id": "PRF-8RSTA9",
+      "invariant": "INV-GAKDNC",
+      "origin": {
+        "handoffEntry": "L168-CUR-INV-GAKDNC-current-proof-definition",
+        "leaf": "260928-MIK-L168"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6f1c1332855742f33a42427582b074c430695e4a",
+        "content": "sha256:b6077b2d15d6c04deaf7b966ebff69fa3ab4166b7e27a0dd92fe634ba8f8f45e",
+        "locator": {
+          "end": 833,
+          "kind": "line_range",
+          "start": 825
+        }
+      },
+      "facet": "A directory mtime touch without an admitted new direct child is rejected.",
+      "id": "PRF-98J11A",
+      "invariant": "INV-GAKDNC",
+      "origin": {
+        "handoffEntry": "MIK-R131@v1/R2/worker",
+        "leaf": "260928-MIK-L131"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6f1c1332855742f33a42427582b074c430695e4a",
+        "content": "sha256:1fed1e0cf07033e9e4a221c18793b98dfd1c994bddc03dfd8c3c3035392fe1d6",
+        "locator": {
+          "end": 505,
+          "kind": "line_range",
+          "start": 437
+        }
+      },
+      "facet": "Removing the exact plan handoff restores refusal; the preview value cannot authorize default/durable parent admission.",
+      "id": "PRF-AKPX5R",
+      "invariant": "INV-EX6T0F",
+      "origin": {
+        "handoffEntry": "MIK-R47@v1-preview-authority",
+        "leaf": "260928-MIK-L47"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6f1c1332855742f33a42427582b074c430695e4a",
+        "content": "sha256:3f5b70ea805ee76b57412f00adb4d44ffcbf38f8f1086ca0076791e24122092b",
+        "locator": {
+          "end": 822,
+          "kind": "line_range",
+          "start": 814
+        }
+      },
+      "facet": "An unrelated old-day detail folder is not admitted by daily-record-shaped spelling.",
+      "id": "PRF-GAABYY",
+      "invariant": "INV-GAKDNC",
+      "origin": {
+        "handoffEntry": "MIK-R131@v1/R2/worker",
+        "leaf": "260928-MIK-L131"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6f1c1332855742f33a42427582b074c430695e4a",
+        "content": "sha256:4b86d25b3cc452ff2f653026c226afad1c47956a77c15c70692b76c8e9b480a4",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_public_partial_bootstrap_preview_is_read_only_then_apply_recovers_same_journal"
+        }
+      },
+      "facet": "One real retained journal is previewed before/after the original helper creates its memory ref: repeated would-create/existing facts are truthful and actual apply recovers that same journal without manual authority.",
+      "id": "PRF-GC3WXC",
+      "invariant": "INV-THS1XT",
+      "origin": {
+        "handoffEntry": "L47-R1-F1",
+        "leaf": "260928-MIK-L47"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6f1c1332855742f33a42427582b074c430695e4a",
+        "content": "sha256:79fba9a76f372513eb4e950976d84ea8eacfe81e11ae3b51ad8d86e7e093381e",
+        "locator": {
+          "end": 775,
+          "kind": "line_range",
+          "start": 767
+        }
+      },
+      "facet": "A new detail file with no new line naming it is rejected.",
+      "id": "PRF-GRZNF5",
+      "invariant": "INV-GAKDNC",
+      "origin": {
+        "handoffEntry": "MIK-R131@v1/R2/worker",
+        "leaf": "260928-MIK-L131"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6f1c1332855742f33a42427582b074c430695e4a",
+        "content": "sha256:f9b0ff1c796c84cacf9b2008984d93638cac24ca8d520264c2ebd1b1190f35a8",
+        "locator": {
+          "end": 300,
+          "kind": "line_range",
+          "start": 271
+        }
+      },
+      "facet": "Repeated registered first-leaf previews preserve startup/Git state while each actual call is accounted for by checked log and completed-call river records.",
+      "id": "PRF-QACN4Z",
+      "invariant": "INV-GAKDNC",
+      "origin": {
+        "handoffEntry": "MIK-R131@v1/R2/worker",
+        "leaf": "260928-MIK-L131"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6f1c1332855742f33a42427582b074c430695e4a",
+        "content": "sha256:e7a4d7f610b39623e8bbff0e6798a9c380238137ac0f82291405a1a4ff7c742a",
+        "locator": {
+          "end": 811,
+          "kind": "line_range",
+          "start": 802
+        }
+      },
+      "facet": "An unrelated old-day line path is not admitted by daily-record-shaped spelling.",
+      "id": "PRF-WE5RQB",
+      "invariant": "INV-GAKDNC",
+      "origin": {
+        "handoffEntry": "MIK-R131@v1/R2/worker",
+        "leaf": "260928-MIK-L131"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6f1c1332855742f33a42427582b074c430695e4a",
+        "content": "sha256:d17ecd65dd2757031c9aae2a7fd06e29dcd96fb82d860ac02eb0ce02a77e5f5a",
+        "locator": {
+          "end": 799,
+          "kind": "line_range",
+          "start": 778
+        }
+      },
+      "facet": "A modified earlier workspace event violates the byte-prefix append requirement.",
+      "id": "PRF-ZC9KP2",
+      "invariant": "INV-GAKDNC",
+      "origin": {
+        "handoffEntry": "MIK-R131@v1/R2/worker",
+        "leaf": "260928-MIK-L131"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "6f1c1332855742f33a42427582b074c430695e4a",
+        "content": "sha256:95814df2fafeb85ccc3f5e55d01b6c9998562aaa589ff6cb319ccfd10dec740e",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-7SRT8V",
+      "invariant": "INV-T8672G",
+      "origin": {
+        "handoffEntry": "L198-F-mcp-tests-test_worktree_start_preview",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The preview test tree pins the interrupted-bootstrap retry that meets its own published outside scratch record.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "6f1c1332855742f33a42427582b074c430695e4a",
+        "content": "sha256:236fbaa96427c32c33506b1c05addb5558a9159f342a2b276d5cd839af265ac3",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_series_bootstrap_retry_accepts_the_contract_it_already_published"
+        }
+      },
+      "id": "RLZ-927ZMK",
+      "invariant": "INV-NNKNDP",
+      "origin": {
+        "handoffEntry": "L198-INV-C",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The new case that pins the retry's own bytes.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "6f1c1332855742f33a42427582b074c430695e4a",
+        "content": "sha256:958750e9b559631f06dbf7a647ec57e513014e9c08cf45c61dd9b1c5a948edba",
+        "locator": {
+          "end": 263,
+          "kind": "line_range",
+          "start": 45
+        }
+      },
+      "id": "RLZ-CNGGMS",
+      "invariant": "INV-GAKDNC",
+      "origin": {
+        "handoffEntry": "MIK-R131@v1/R2/worker",
+        "leaf": "260928-MIK-L131"
+      },
+      "rationale": "The real temporary registered-call fixture supplies inside-root transcript/event layout, whole-root metadata/content and repository observations, and separate total/completed call accounting.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "10": {
+      "note": "Partial-bootstrap preview and actual apply use the same journal.  Anchor: `test_public_partial_bootstrap_preview_is_read_only_then_apply_recovers_same_journal`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f1c1332855742f33a42427582b074c430695e4a",
+            "content": "sha256:4b86d25b3cc452ff2f653026c226afad1c47956a77c15c70692b76c8e9b480a4",
+            "locator": {
+              "end": 728,
+              "kind": "line_range",
+              "start": 661
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The observer exception preserves kind and mode before allowing an append.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f1c1332855742f33a42427582b074c430695e4a",
+            "content": "sha256:a86b1d3b4dcaf22dffa4ddc8ec4271b03e6e8bb2606eb4890fc57c6f51e00ef4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assert_observer_event_kept_kind_mode"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Negative cases reject writes and metadata changes beyond the checked record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f1c1332855742f33a42427582b074c430695e4a",
+            "content": "sha256:56275bf5b4609b89b6074d0cf83efa2a610055f8d37c99ac0f3204b3d991959f",
+            "locator": {
+              "end": 874,
+              "kind": "line_range",
+              "start": 738
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "Losing the handoff fails and preview cannot supply durable authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f1c1332855742f33a42427582b074c430695e4a",
+            "content": "sha256:1fed1e0cf07033e9e4a221c18793b98dfd1c994bddc03dfd8c3c3035392fe1d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_preview_handoff_is_failure_sensitive_and_cannot_supply_durable_authority"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "Persisted artifact errors never select a synthetic valid parent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f1c1332855742f33a42427582b074c430695e4a",
+            "content": "sha256:538104ce3f245bf86b9cb9b29e2760c1a7c7f2424461ff552ae95903b3635c42",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_foreign_or_unreadable_persisted_parent_after_preview_is_never_replaced"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Same journal/ref states and real apply/recovery remain truthful.  Anchor: `test_public_partial_bootstrap_preview_is_read_only_then_apply_recovers_same_journal`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f1c1332855742f33a42427582b074c430695e4a",
+            "content": "sha256:4b86d25b3cc452ff2f653026c226afad1c47956a77c15c70692b76c8e9b480a4",
+            "locator": {
+              "end": 728,
+              "kind": "line_range",
+              "start": 661
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "Actual apply re-resolves current source; fresh-session persisted-parent preview preserves startup/Git state and checks its call records.  Anchor: `test_public_apply_re_resolves_source_and_persisted_parent_preview_stays_read_only`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f1c1332855742f33a42427582b074c430695e4a",
+            "content": "sha256:ebc3e5d8445732b38d109d03ffd984cb0a0711086022ba273727731986d3376e",
+            "locator": {
+              "end": 434,
+              "kind": "line_range",
+              "start": 384
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "Wrong source/parent assertions refuse in preview and actual calls with corrected executable arguments and no parent publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f1c1332855742f33a42427582b074c430695e4a",
+            "content": "sha256:f19addd277973e293c9dac65d7f6c767bfe43ee25afa336577edee7220d58d74",
+            "locator": {
+              "end": 623,
+              "kind": "line_range",
+              "start": 562
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "Registered masterless preview and actual start fail closed while the existing state comparator admits their call records and keeps the parent unpublished.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f1c1332855742f33a42427582b074c430695e4a",
+            "content": "sha256:080663dfa3f4222320b0db8a233c42a2091aa8f6d1ae5227416ecb2a05278073",
+            "locator": {
+              "end": 334,
+              "kind": "line_range",
+              "start": 303
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "A successful second-leaf preview appends to the workspace river; unchanged kind/mode passes and deliberate mode change fails.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f1c1332855742f33a42427582b074c430695e4a",
+            "content": "sha256:535df0c89ab40847b8b965dc53958c357520da8a2f904e592cf1056e126d07b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_observer_event_mode_change_is_rejected"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Fixture world is always external-memory.  Anchor: `PreviewFixture`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f1c1332855742f33a42427582b074c430695e4a",
+            "content": "sha256:958750e9b559631f06dbf7a647ec57e513014e9c08cf45c61dd9b1c5a948edba",
+            "locator": {
+              "end": 263,
+              "kind": "line_range",
+              "start": 45
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "First-leaf preview repeats without startup publication while checking its call records, commanded or not.  Anchor: `test_registered_first_leaf_preview_is_repeatable_without_publication`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f1c1332855742f33a42427582b074c430695e4a",
+            "content": "sha256:f9b0ff1c796c84cacf9b2008984d93638cac24ca8d520264c2ebd1b1190f35a8",
+            "locator": {
+              "end": 300,
+              "kind": "line_range",
+              "start": 271
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Typed disabled-mode preview and actual requests preserve refusal identity and no parent publication while checking their daily line/detail and river records cumulatively.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f1c1332855742f33a42427582b074c430695e4a",
+            "content": "sha256:36e9ba2dd735e9c299b8956bc5d2846f5427a811ae0411d60ca250e68495c2bf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_disabled_start_is_refused_before_any_publication"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

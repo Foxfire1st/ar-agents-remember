@@ -1,0 +1,222 @@
+{
+  "path": "mcp/tests/test_lifecycle_finalize.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Native finalization case asserts status/time, unchanged leaf/master decisions including legacy product records, exact return fields and byte-stable retry; authored assertions, not an executed result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "89659796b2834dc723959513e9f107b2823ba7a0",
+            "content": "sha256:371acaf16b101ee3c2d68d5495202127b8016bef4c30cbd7e1a408916babe2dd",
+            "locator": {
+              "end": 222,
+              "kind": "line_range",
+              "start": 167
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "Already-Completed leaf and parent row are not migrated during a native finalization call. [10]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "89659796b2834dc723959513e9f107b2823ba7a0",
+            "content": "sha256:50b1824892c5d48a9f1dc0f866de7484dbe8a2c21b0e9563460ab5baa0f018a5",
+            "locator": {
+              "end": 236,
+              "kind": "line_range",
+              "start": 224
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Asserted master-without-row is also refused with the named repair route. [11]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "89659796b2834dc723959513e9f107b2823ba7a0",
+            "content": "sha256:deac699db6150bfc10fb0e4f9ad8e07e38782248dba7a4e99d70cffd80ad7e54",
+            "locator": {
+              "end": 447,
+              "kind": "line_range",
+              "start": 403
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The retained test name now encloses four fail-closed ownership cases and byte-preservation assertions. [10]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "89659796b2834dc723959513e9f107b2823ba7a0",
+            "content": "sha256:0ac90eb06a46b65aa0acc85be80bf8895811f89da4bf6162c5714e6323b85fb7",
+            "locator": {
+              "end": 401,
+              "kind": "line_range",
+              "start": 365
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Second document publish failure rolls back leaf and parent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "89659796b2834dc723959513e9f107b2823ba7a0",
+            "content": "sha256:baa3f6c49f2197d2139eb647af1d19328efe0325fbd703329706fc8445b49d2a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_second_document_publish_failure_rolls_back_leaf_and_parent"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The shared fixtures: the landed contract, the folder master and leaf pair, and the byte capture.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "89659796b2834dc723959513e9f107b2823ba7a0",
+            "content": "sha256:a61e48270381c493065e250457d4c794dd4a95bfb9479a1d82718f5de6651d75",
+            "locator": {
+              "end": 152,
+              "kind": "line_range",
+              "start": 42
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "89659796b2834dc723959513e9f107b2823ba7a0",
+            "content": "sha256:f302d3a2cc3e327aa483a2f6464816ef5f03af0bc36c6e227e2571661851bf71",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 33
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A named master the store would write elsewhere is refused before any write.\n\nAnchor: \"def test_a_named_master_the_store_would_write_elsewhere_is_refused(self) -> None:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "89659796b2834dc723959513e9f107b2823ba7a0",
+            "content": "sha256:469383673449302f340019d90581d48c397dbfc10603b89df6f94909f6d9d7bb",
+            "locator": {
+              "end": 303,
+              "kind": "line_range",
+              "start": 268
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The folder master's row completes under the demotion rule.\n\nAnchor: \"def test_the_listing_folder_master_row_completes_under_the_demotion_rule(self) -> None:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "89659796b2834dc723959513e9f107b2823ba7a0",
+            "content": "sha256:1bcb8829cbc1476ff8e62b713eee62a21fb5fc887333fb4d626f5f1b96689a60",
+            "locator": {
+              "end": 334,
+              "kind": "line_range",
+              "start": 314
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "A dry run reports the folder master's row and accepts its assertion.\n\nAnchor: \"def test_a_dry_run_reports_the_folder_master_row_and_accepts_its_assertion(self) -> None:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "89659796b2834dc723959513e9f107b2823ba7a0",
+            "content": "sha256:8713ba0ee2d987a2be1428552cfc0cf44214cf3a4f3e84e6246884a9a3214fa5",
+            "locator": {
+              "end": 363,
+              "kind": "line_range",
+              "start": 336
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Without a listing folder master the leaf finalizes standalone.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "89659796b2834dc723959513e9f107b2823ba7a0",
+            "content": "sha256:815ebb4c227c280a4e8ba1c69b6b0d68dccd325ced246f9f22bd219e2f02d87e",
+            "locator": {
+              "end": 390,
+              "kind": "line_range",
+              "start": 365
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "A folder master is refused exactly as a named master, before any write.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "89659796b2834dc723959513e9f107b2823ba7a0",
+            "content": "sha256:c89adf6ceff28e631774e511d4170becaf69f77a871fd46894cb3b8ac4cf3584",
+            "locator": {
+              "end": 436,
+              "kind": "line_range",
+              "start": 392
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "A leaf the store would write elsewhere is refused before any write.\n\nAnchor: \"def test_a_leaf_the_store_would_write_elsewhere_is_refused_before_any_write(self) -> None:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "89659796b2834dc723959513e9f107b2823ba7a0",
+            "content": "sha256:e2dacfd427e1c7850912255dd9c1ae867b2cfd60d529798b39d08116c9476e3d",
+            "locator": {
+              "end": 479,
+              "kind": "line_range",
+              "start": 449
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

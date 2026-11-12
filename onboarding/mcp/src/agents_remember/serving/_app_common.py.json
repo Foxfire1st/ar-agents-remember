@@ -1,0 +1,406 @@
+{
+  "path": "mcp/src/agents_remember/serving/_app_common.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
+        "content": "sha256:5cad09326ea48bcab9f5af8d1664d30a8f8771efee378a43321831f5b224c5d8",
+        "locator": {
+          "kind": "symbol",
+          "name": "ServingCollaborators"
+        }
+      },
+      "id": "RLZ-M5DREV",
+      "invariant": "INV-15M226",
+      "origin": {
+        "handoffEntry": "L183-moved-notice-lifetime",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Composition carries application-tier explainer ports, native host and master-contract resolver without a serving-to-cli/application import; absence is surfaced as a named unavailable route rather than partial composition.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
+        "content": "sha256:02f56e728141cdd8b2fab1348ef1f5706bc7fce3649e48be1db6789ef2f036fc",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-N1YKT8",
+      "invariant": "INV-BCXFH9",
+      "origin": {
+        "handoffEntry": "NEW-LIMIT-FROM-REPORT-ONLY",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "Qualified: a non-JSON value here does not stop the projection tick. These functions prepare HTTP and SSE bodies, so their JSON mode keeps a served JSONResponse or an SSE frame from failing on a datetime. The stable-delta decision and the persisted write are other modules' responsibilities, and no new before/after execution result is claimed.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "13": {
+      "note": "Anchor: Current tree-child shutdown hook on collaborator and runtime.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
+            "content": "sha256:8d6e77bb4fda4c5987361be9ddd701b2dedf303a912722dd2047b97d174e2491",
+            "locator": {
+              "end": 238,
+              "kind": "line_range",
+              "start": 237
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
+            "content": "sha256:7ac189ae7592dd608239e9552c1a0450c3e016715998955301efb46dd983edd7",
+            "locator": {
+              "end": 324,
+              "kind": "line_range",
+              "start": 324
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Anchor: Runtime without a terminal host or inbox registrar.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
+            "content": "sha256:79e0c9120ffaa63a460678e5da5ca8c47f9158950d38aa833eabae6f748ed612",
+            "locator": {
+              "end": 312,
+              "kind": "line_range",
+              "start": 283
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
+            "content": "sha256:1dc89d390cc38489a0c309f1cf403b221ba6dea43f1baa6c7f346804c5e94a02",
+            "locator": {
+              "end": 282,
+              "kind": "line_range",
+              "start": 262
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Anchor: Live-input defaults resolved together from replay ownership.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
+            "content": "sha256:a06e67fbffa96fd7f1399df0a3fc48ebf4fac70da33ce5046b280463fbc4a0c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "LiveProjectionInputs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Anchor: Projection memo keyed by published instance, not content revision.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
+            "content": "sha256:ae2b4c18cdda81c45f85995be669c79aa7a522faea00ca20a925d67e5076a012",
+            "locator": {
+              "end": 96,
+              "kind": "line_range",
+              "start": 62
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
+            "content": "sha256:d7f754c60bcc13d6d72dbc562e5057a849d5dd6b57b5ed26c6b6d0f65f4fedef",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 57
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "SSE snapshots copy the memo and inject the serve-time build tail; deltas stay bare.\n\nAnchor: `served_state_tail`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
+            "content": "sha256:7fa046b328c2a2b9d42cc99e06a227b6b1020c7a6dc2447e17c2538a55f19b56",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 126
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Serving lifespan teardown invokes a supplied review_trees_shutdown hook through the startup-owned worker helper before canceling and draining background tasks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
+            "content": "sha256:090ec4bc0649183f78cc1138cb4f8dc0866abc370e720fc3cde406e82498c19b",
+            "locator": {
+              "end": 600,
+              "kind": "line_range",
+              "start": 590
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
+            "content": "sha256:864e390c10f98eead1f7dc0962c0f5717b9f0258e66b99b4004b2e87425894bd",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 71
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Anchor: Distinct optional intent-summary port.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
+            "content": "sha256:cf794bb6735aa6d63c0f34e8e73eb5d431053cc73eb4a447a72da9e87b378986",
+            "locator": {
+              "end": 227,
+              "kind": "line_range",
+              "start": 220
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "Anchor: Path-reader capability separate from task review.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
+            "content": "sha256:2d14c228990d641ea4ff1b198e5e8aee848f5b34057ae51a1fe790f2949c8a10",
+            "locator": {
+              "end": 268,
+              "kind": "line_range",
+              "start": 263
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "Anchor: The retained runtime bundle shared by routes and loops.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
+            "content": "sha256:79e0c9120ffaa63a460678e5da5ca8c47f9158950d38aa833eabae6f748ed612",
+            "locator": {
+              "end": 312,
+              "kind": "line_range",
+              "start": 283
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
+            "content": "sha256:1dc89d390cc38489a0c309f1cf403b221ba6dea43f1baa6c7f346804c5e94a02",
+            "locator": {
+              "end": 282,
+              "kind": "line_range",
+              "start": 262
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "Snapshot-only volatile serving build tail.\n\nAnchor: `served_state_tail`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
+            "content": "sha256:f263dce88f19d45003f3f197cbb100d782e00676b9b18253938303799d8b0dea",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 135
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "Anchor: Source-content capability is not an empty-content fallback.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
+            "content": "sha256:00d56fd1962e4063a0115620cd24feb8f0addcda24a3acf071bc4a8c721ae562",
+            "locator": {
+              "end": 218,
+              "kind": "line_range",
+              "start": 210
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "ServingCollaborators and _ServingRuntime newly declare optional review_memory_root defaulting to None. ReviewMemoryRootPort is only a callable type alias. The projection stream route explicitly passes the runtime field to multiplex_review_memory. That helper skips root resolution for absent review identity, validates supplied selectors, resolves the port and reports missing adapter/root errors. The native worker enforces its own root-shape checks. These bodies do not prove the composition root's full leaf-admission policy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
+            "content": "sha256:53efba79150ecf4558c1097ce70c27b115b9241158cbd9d0ae523197825caf8b",
+            "locator": {
+              "end": 241,
+              "kind": "line_range",
+              "start": 240
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
+            "content": "sha256:6f9c5490a5fa34d1f26767a5cf38cf14dcd67753bad60fa486447665eb94e1e7",
+            "locator": {
+              "end": 322,
+              "kind": "line_range",
+              "start": 322
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f884d317176ef56edeba08afba6ebc87737fa1b5",
+            "content": "sha256:f92b92d77be9ed55e5392f8fe0651cff5d7e2dc1ec033cf0b70cdba03a989a9d",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 36
+            },
+            "path": "mcp/src/agents_remember/serving/review_memory_watch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c284363bcc9358c1351d82fe3b311d7fd74521f2",
+            "content": "sha256:d3f103b19255f233818c3b621f56db8a180963f76590386621a381f7ed2dcc3e",
+            "locator": {
+              "end": 436,
+              "kind": "line_range",
+              "start": 436
+            },
+            "path": "mcp/src/agents_remember/serving/_app_routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c284363bcc9358c1351d82fe3b311d7fd74521f2",
+            "content": "sha256:eff4a1b727f0fe8b2be2ff90d5c7d42932a0a45a16ee03046439e222c90630a8",
+            "locator": {
+              "end": 200,
+              "kind": "line_range",
+              "start": 200
+            },
+            "path": "mcp/src/agents_remember/serving/_app_routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f884d317176ef56edeba08afba6ebc87737fa1b5",
+            "content": "sha256:e637697d26d77a75359ec276ead71e673893f6d45a599226753a12b509c2b1c1",
+            "locator": {
+              "end": 217,
+              "kind": "line_range",
+              "start": 195
+            },
+            "path": "mcp/src/agents_remember/serving/review_memory_watch.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "Composition carries application-tier explainer ports, native host and master-contract resolver without a serving-to-cli/application import; absence is surfaced as a named unavailable route rather than partial composition.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
+            "content": "sha256:5cad09326ea48bcab9f5af8d1664d30a8f8771efee378a43321831f5b224c5d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "ServingCollaborators"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "SSE snapshots carry a supplied build-currentness reading in the served tail; deltas stay bare.\n\nAnchor: `build_currentness=build_currentness`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
+            "content": "sha256:ec265d3b656ba74ff2a80249d4da45d57ecd8039b73106f1ea793a916e311525",
+            "locator": {
+              "end": 144,
+              "kind": "line_range",
+              "start": 103
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

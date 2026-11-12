@@ -1,0 +1,84 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The packet explicitly replaces the finalizer decision append/time-source design with separate lifecycle proof and an optional completion fact so authored history and recency survive independently. The choice governs future authoring and consumers, not this leaf’s schedule."
+  },
+  "alternatives": [
+    {
+      "option": "Stop appending finalizer decisions, preserve existing arrays and landing proof, write completedAt for new completions, and read legacy finalizer-record time without rewriting old documents.",
+      "reason": "The packet explicitly replaces the finalizer decision append/time-source design with separate lifecycle proof and an optional completion fact so authored history and recency survive independently.",
+      "status": "chosen"
+    },
+    {
+      "option": "Continue appending Finalize task lifecycle. records to task/master decisions and use those entries as the only completion-time store.",
+      "reason": "The developer excludes product landing records from authored decisions, and the packet requires an independent completion-time field because the old record would otherwise be the only time source.",
+      "reconsider_when": "Only a developer-approved landing/decision schema change that deliberately treats landing events as authored decisions and supplies an approved completion-time model and migration boundary.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Authored decision numbers/counts are not polluted by new finalization events; retained legacy records remain separately disclosed.",
+    "Completion lists can sort by recency after finalizer decision writes cease.",
+    "Old records and timestamps are not deleted or backfilled; exact/prefix classification collisions remain a known existing boundary."
+  ],
+  "context": "Finalizer-generated lifecycle entries dominate the master’s decision log, and their recorded time is the old completion-time store; removing them without another time source would lose recency information.",
+  "decider": "Developer D240 and D248, recorded in MIK-R128@v1 rules13-14 and16.",
+  "id": "DEC-GSNN2Q",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-NBCGCF"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-MFZR5A"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-TRENNF"
+    },
+    {
+      "relation": "explains",
+      "target": {
+        "id": "MIK-R128",
+        "packet": "requirements/MIK-R128-v1-the-order-of-tasks-is-data-and-what-recurs-has-a-place.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    },
+    {
+      "alternative": 1,
+      "relation": "reconsider_on",
+      "target": {
+        "id": "MIK-R128",
+        "packet": "requirements/MIK-R128-v1-the-order-of-tasks-is-data-and-what-recurs-has-a-place.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "L162-source-ready-evidence.zip::checks/python-finalizer-final.log"
+      ],
+      "path": "L162-curation-wave-9-producer-knowledge.json"
+    },
+    "handoffEntry": "MIK-R128@v1 rule 14",
+    "leaf": "260928-MIK-L162",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

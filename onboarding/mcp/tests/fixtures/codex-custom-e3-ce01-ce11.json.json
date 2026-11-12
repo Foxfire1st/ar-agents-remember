@@ -1,0 +1,40 @@
+{
+  "path": "mcp/tests/fixtures/codex-custom-e3-ce01-ce11.json",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d90a222d27fbfb14cc7b6ca58be30bead79e03e6",
+        "content": "sha256:c82b207567ed3b28d1f7f39839ba6f04e75b751e333b02ca6786da673d716406",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-M396XY",
+      "invariant": "INV-R4JZ3F",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-codex-capture",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "These retained CE01/CE11 custom-tool records exercise code-mode nested call/result pairing.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d90a222d27fbfb14cc7b6ca58be30bead79e03e6",
+            "content": "sha256:c82b207567ed3b28d1f7f39839ba6f04e75b751e333b02ca6786da673d716406",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

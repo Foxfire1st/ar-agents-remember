@@ -1,0 +1,42 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "A tree drawn from the latest answer alone loses the rows of the family the reader came from at every step onto another family, so `k` cannot return and `j` at the last row says there is no later change although the reader passed some. The rule is realized in the walk module, the workspace, the surface and the tree component, and the mounted walk cases guard it."
+  },
+  "applicability": "The family tree of the mounted intent reviewer, within one task context, one history view and one comparison.",
+  "conditions": [
+    "In-tree callers explicitly request keepTree: compact outline family/member rows, traversal selection and a member opened in the main-page roster. A handler for kept-family pagination is not a rendered sidebar continuation control.",
+    "Same-revision family sides merge every returned member; distinct revisions keep their separate sides and recorded partiality.",
+    "The requested subject's pending, failed, refused or context-free state is stated in the main reading area, not above the tree.",
+    "Stored walk families are ordered by identity; rendered rows follow the shared change-set model in the active sort, All/Changed view and text query, with walked facts overlaid.",
+    "Retained context does not promise that every returned member stays visibly rendered; Changed preserves selected-member and selected/kept-family visibility subject to the text query."
+  ],
+  "exclusions": [
+    "Outside subject selection, review refresh and incompatible comparison reset the retained walk.",
+    "A title query can hide nonmatching families and rows; clearing it reveals the applicable outline again.",
+    "Leaving the reviewer, changing task/history context or reloading preserves no mounted walk.",
+    "No kept-count scope-line or sidebar context-details promise."
+  ],
+  "id": "INV-NSG0D4",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "requirements/MIK-R39-v1-keyboard-traversal-keeps-the-walked-tree.md rules 1 to 3 and 5 to 7, and Failure And Recovery Behavior; notes/reports/260928-MIK-L39-worker.md; notes/reports/260928-MIK-L39-review-R1.md, -R2.md and -R3.md",
+        "mutations F1-a, F1-b, F1-c in mutations/summary.json of this report's evidence folder"
+      ],
+      "path": "notes/reports/260928-MIK-L39-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R39@v1-in-tree-selection-adds-rows",
+    "leaf": "260928-MIK-L39",
+    "task": "260928-MIK"
+  },
+  "revision": 3,
+  "schema": "ar-invariant/v1",
+  "statement": "An explicit in-tree selection retains the already-read family and member context within the same comparison and adds the selected subject's delivered context. Non-current families remain kept with their last-read subject; pending, failed and refused reads do not erase that retained union.",
+  "status": "proposed",
+  "supersedes": []
+}

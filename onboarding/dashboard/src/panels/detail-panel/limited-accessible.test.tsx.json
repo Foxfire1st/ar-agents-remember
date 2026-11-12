@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/detail-panel/limited-accessible.test.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "4d0ea61306593bcc0bf7da239a3b96f1a90bef44",
+        "content": "sha256:2adab9651f869ead6a38afa7d162cc830b5829429cc15713e572850a8072eaf1",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-4D5K30",
+      "invariant": "INV-7GVWYD",
+      "origin": {
+        "handoffEntry": "INV-7GVWYD",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The accessibility claim is about the rendered word, and this case is the one that reads its accessible name.",
+      "role": "support"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

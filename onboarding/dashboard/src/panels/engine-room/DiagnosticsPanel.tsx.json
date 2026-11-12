@@ -1,0 +1,238 @@
+{
+  "path": "dashboard/src/panels/engine-room/DiagnosticsPanel.tsx",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`CommitRow` formats branch/commit + absent/dirty/behind flags behind a `factChip`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b655ff830c5a9c45e80be3c51bbd8390324add5b",
+            "content": "sha256:b0448c920f01a9e14300fb5c17751232ed4536dbf63c27667d28e819ae48f78b",
+            "locator": {
+              "kind": "symbol",
+              "name": "CommitRow"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "OptionalDiagRows renders summary, next action and optional memory source/worktree refs; DiagnosticActionRow maps nonempty actions to Affordance rather than a gate responder.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b655ff830c5a9c45e80be3c51bbd8390324add5b",
+            "content": "sha256:2c005740ed1d39c83898a61fd68d7df6a0b597b044ddc8399737791c396c2785",
+            "locator": {
+              "kind": "symbol",
+              "name": "OptionalDiagRows"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b655ff830c5a9c45e80be3c51bbd8390324add5b",
+            "content": "sha256:ccaa718c09af11cc7b3d63386664583d9bdf8d7b6175a239c5d752fbf9941cf1",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiagnosticActionRow"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`DiagnosticsPanel` derives `poweringDown`, builds `setupLine`, and renders the optional summary/next/commit facts, phase, health, code source and worktree, source lineage and Setup rows, phase lines, actions, missing facts and sources.\n\nAnchor: `DiagnosticsPanel`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b655ff830c5a9c45e80be3c51bbd8390324add5b",
+            "content": "sha256:22652f3741de39d196ea775a9a1e28a0293c39d038a2226fe15da83e40bddb00",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`poweringDown` flag (`cleanup-pending`/`abandoned`) drives the \"powering down\" setup line and the muted `◦` completed-phase glyph (5k F3)\n\nAnchor: \"const poweringDown = node.phase\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b655ff830c5a9c45e80be3c51bbd8390324add5b",
+            "content": "sha256:7e4580232e97d7ab6f51c34bb8e49e4737795607ed0a4ab2021f7e65682ef81e",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 43
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`EngineProcessNode` / `CommitRefNode` / `ProcessFactState` source shapes\n\nAnchor: `EngineProcessNode`, `CommitRefNode`, `ProcessFactState`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
+            "content": "sha256:8ad3ab8e99817b1e4b23b7b6259fc08e02b0810861d5f984fa3479bfc83258a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "EngineProcessNode"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
+            "content": "sha256:50f9ff4de6d7ea1b819ab16e492bc8eff46f9491168de6e4c82d8bce0c2c8ba9",
+            "locator": {
+              "kind": "symbol",
+              "name": "CommitRefNode"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
+            "content": "sha256:8e8886b140a2acdffb0c32730ebec13ecf0845f2cea0ec84dd2e2ae6bd1cb126",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProcessFactState"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
+            "content": "sha256:8ad3ab8e99817b1e4b23b7b6259fc08e02b0810861d5f984fa3479bfc83258a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "EngineProcessNode"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
+            "content": "sha256:50f9ff4de6d7ea1b819ab16e492bc8eff46f9491168de6e4c82d8bce0c2c8ba9",
+            "locator": {
+              "kind": "symbol",
+              "name": "CommitRefNode"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
+            "content": "sha256:8e8886b140a2acdffb0c32730ebec13ecf0845f2cea0ec84dd2e2ae6bd1cb126",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProcessFactState"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`Affordance` display-only action button (aria-disabled, no POST)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9fb22cc5f4b41d80db68b8648a6041886c13c80",
+            "content": "sha256:6fe14c2299ba2fab63251972715c6b52f48438fb251c2e676543aa3126dabdb8",
+            "locator": {
+              "kind": "symbol",
+              "name": "Affordance"
+            },
+            "path": "dashboard/src/grammar/Affordance.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "`fmtWait` formats `heartbeatAgeSeconds` into s/m/h/d\n\nAnchor: `fmtWait`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45703aad8672ac0bd3f53a1e3be16aef2ad16336",
+            "content": "sha256:f9a468be21f745ce68abb4692d7cff78eddbba96844874c4ee80194c83731e5e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/selectors.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "`factChip`, `diagPanel`, `diagRow`, `diagKey`, `diagValue`, `missingNotice`, `missingTitle`, `phaseLineList`, `actionRow`, `sectionLabel` recipes\n\nAnchor: `factChip` `diagPanel` `diagRow` `diagKey` `diagValue` `missingNotice` `missingTitle` `phaseLineList` `actionRow` `sectionLabel`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c89382b7530853796de958e287f52a05bf0222f3",
+            "content": "sha256:7bd4f9b0cae113785c3c0917c220a69c9e28557e99a893bc5854e72b037aac2d",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 39
+            },
+            "path": "dashboard/src/panels/EngineRoom.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "61fa5ab62915df0658c9617649fee1dec455a082",
+            "content": "sha256:19816d3b21ff89039bd343d7ef17ac19cf008f3b1cb007fd09f3443d77ea9f35",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/engine-room/layout.styles.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "DiagnosticsPanel renders phase/health, code refs, optional lineage, diagnostic actions, missing facts and source files; the removed setup and completed/failed-phase sections are absent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b655ff830c5a9c45e80be3c51bbd8390324add5b",
+            "content": "sha256:e1cdbdaf8407848910aa6566aabf918401673b88df39c60ff44782c3fa4e4737",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiagnosticsPanel"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

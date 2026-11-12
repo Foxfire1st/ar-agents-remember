@@ -1,0 +1,454 @@
+{
+  "path": "mcp/tests/test_review_delivered_comparison.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "1d3f873c597686628bed4fa60e1249550cfedcbc",
+        "content": "sha256:645bd3ec5faa5e5f472c2d9addf1e65d59702d3ec8cbbc3e262d16ac88f9a8a5",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_record_that_loses_its_number_to_another_pair_is_refused"
+        }
+      },
+      "facet": "A publication that finds its number already taken is a named refusal rather than an overwrite; the case stages the lost race without a winner record, so the occupied-by-another-pair detail rests on the publisher's own refusal.",
+      "id": "PRF-4AXKVE",
+      "invariant": "INV-Z2HVKA",
+      "origin": {
+        "handoffEntry": "L187-Z2",
+        "leaf": "260928-MIK-L187"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "1d3f873c597686628bed4fa60e1249550cfedcbc",
+        "content": "sha256:68aaac867b1b4f9aee3a27a70c6a33005e427bb403b23c2a8a9e73eff85a97c8",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_delivery_git_cannot_produce_is_named_and_never_replaced"
+        }
+      },
+      "facet": "A delivery whose commit the repository no longer holds is named with the failing endpoint and no other commit stands in for it.",
+      "id": "PRF-4D6YD9",
+      "invariant": "INV-8Q6DZTDB",
+      "origin": {
+        "handoffEntry": "L187-8Q6",
+        "leaf": "260928-MIK-L187"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "1d3f873c597686628bed4fa60e1249550cfedcbc",
+        "content": "sha256:a746e66330f0a4a88f7ba07ad0464c61f1514b16fdedd101798874a2be344f8f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_line_says_which_pair_was_delivered"
+        }
+      },
+      "facet": "The notice names the shown number and the delivered trees and states its statement for a delivered and a stale read; the silent matching case and the unavailable case belong to the page's own evidence, not to this test.",
+      "id": "PRF-81FGG7",
+      "invariant": "INV-NW4H6C",
+      "origin": {
+        "handoffEntry": "L187-NOTICE",
+        "leaf": "260928-MIK-L187"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "1d3f873c597686628bed4fa60e1249550cfedcbc",
+        "content": "sha256:f79f1df5052309a94518482ff3a868d7160f36d14657f9514936cb957bb223b7",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_required_conversion_that_fails_is_refused_not_read_as_an_empty_base"
+        }
+      },
+      "facet": "An unconverted base that cannot be converted is refused rather than indexed as an empty before side.",
+      "id": "PRF-989JJX",
+      "invariant": "INV-8Q6DZTDB",
+      "origin": {
+        "handoffEntry": "L187-8Q6",
+        "leaf": "260928-MIK-L187"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "1d3f873c597686628bed4fa60e1249550cfedcbc",
+        "content": "sha256:d393b9a7bbe7c453d6b78cc4ded434675a2da38b188153fc616629a4a0f7eac6",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_exact_delivered_record_older_than_the_last_record_is_reused"
+        }
+      },
+      "facet": "A record whose four trees are the delivered pair is reused at its own lower number rather than renumbered or duplicated.",
+      "id": "PRF-FNNKDT",
+      "invariant": "INV-HAJ9SH",
+      "origin": {
+        "handoffEntry": "L187-HAJ",
+        "leaf": "260928-MIK-L187"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "1d3f873c597686628bed4fa60e1249550cfedcbc",
+        "content": "sha256:2811d0b8fe3b91f118136bae07aa92bb0fccbaafb3a402c8f52804a8c97f3d15",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_closeout_without_its_memory_cell_refuses_and_publishes_nothing"
+        }
+      },
+      "facet": "A closeout with no memory content cell is refused by name and publishes no comparison record.",
+      "id": "PRF-N30H9P",
+      "invariant": "INV-8Q6DZTDB",
+      "origin": {
+        "handoffEntry": "L187-8Q6",
+        "leaf": "260928-MIK-L187"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "1d3f873c597686628bed4fa60e1249550cfedcbc",
+        "content": "sha256:f1dcbbcf373b481dff097b44050ae2671a43ed9c82b942595b10ce5751ba2a22",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_replayed_landing_is_the_delivered_code_candidate"
+        }
+      },
+      "facet": "The code candidate is the commit the successful landing produced, not the closeout's own code commit.",
+      "id": "PRF-NMVSPA",
+      "invariant": "INV-8Q6DZTDB",
+      "origin": {
+        "handoffEntry": "L187-8Q6",
+        "leaf": "260928-MIK-L187"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "1d3f873c597686628bed4fa60e1249550cfedcbc",
+        "content": "sha256:3934b52becb16f9316f66b29439505806cbea540ebadc448c18601b042dbd20b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_unconverted_delivery_opens_the_legacy_unavailable_review"
+        }
+      },
+      "facet": "A delivered memory with no converted knowledge opens the source-only legacy review with both knowledge sides legacy-unavailable.",
+      "id": "PRF-P1W9XA",
+      "invariant": "INV-8Q6DZTDB",
+      "origin": {
+        "handoffEntry": "L187-8Q6",
+        "leaf": "260928-MIK-L187"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "1d3f873c597686628bed4fa60e1249550cfedcbc",
+        "content": "sha256:b1e5e269d127d7a5c0de15864f5962463f7f873b455f5546b228e595c0ea11d6",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_matching_last_record_is_the_delivered_default_and_keeps_its_number"
+        }
+      },
+      "facet": "A leaf whose last record already holds the delivered pair keeps that record and its number as the default.",
+      "id": "PRF-Q6HMDG",
+      "invariant": "INV-HAJ9SH",
+      "origin": {
+        "handoffEntry": "L187-HAJ",
+        "leaf": "260928-MIK-L187"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "1d3f873c597686628bed4fa60e1249550cfedcbc",
+        "content": "sha256:bf1a20ed171f8e66c544c9fbb76138ec538dc51480cc57ff54f938f780ab7269",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_recorded_tree_id_is_not_a_delivered_commit"
+        }
+      },
+      "facet": "A tree id, a branch, HEAD and a short id in a commit cell are refusals; a genuine commit still resolves to its tree.",
+      "id": "PRF-RSZ7V4",
+      "invariant": "INV-8Q6DZTDB",
+      "origin": {
+        "handoffEntry": "L187-8Q6",
+        "leaf": "260928-MIK-L187"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "1d3f873c597686628bed4fa60e1249550cfedcbc",
+        "content": "sha256:981ba93a882a4d99feef68122f4856511849397c8962ff4de7bf683b0a578932",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_numbered_leaf_wide_read_records_no_comparison"
+        }
+      },
+      "facet": "A numbered leaf-wide read of a closed leaf records no comparison and refuses an unknown number by name.",
+      "id": "PRF-WRJV91",
+      "invariant": "INV-9NCBGQSY",
+      "origin": {
+        "handoffEntry": "L187-9NC",
+        "leaf": "260928-MIK-L187"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "1d3f873c597686628bed4fa60e1249550cfedcbc",
+        "content": "sha256:a9e25bbbd221b85f7579d4534d05f4f26ec200fa88a9d2ea4d1bb7d175689929",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_publishing_a_record_never_replaces_one_that_exists"
+        }
+      },
+      "facet": "A published record's bytes are never replaced by a later writer, and the first bytes stay the record.",
+      "id": "PRF-X1DAWD",
+      "invariant": "INV-Z2HVKA",
+      "origin": {
+        "handoffEntry": "L187-Z2",
+        "leaf": "260928-MIK-L187"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "1d3f873c597686628bed4fa60e1249550cfedcbc",
+        "content": "sha256:20edf994d5649c7a7776d275fae1fca021ea259f40963c71cd0918ef9a6b86fe",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_landed_leaf_opens_the_pair_it_delivered_and_keeps_its_earlier_record"
+        }
+      },
+      "facet": "A leaf whose last record compares the base with itself opens the four exact sides its enclosure records as delivered, and keeps its earlier record unchanged beside it.",
+      "id": "PRF-ZC3ET9",
+      "invariant": "INV-8Q6DZTDB",
+      "origin": {
+        "handoffEntry": "L187-8Q6",
+        "leaf": "260928-MIK-L187"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A leaf whose last record predates its delivery opens the four delivered sides and keeps the earlier record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d3f873c597686628bed4fa60e1249550cfedcbc",
+            "content": "sha256:20edf994d5649c7a7776d275fae1fca021ea259f40963c71cd0918ef9a6b86fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_landed_leaf_opens_the_pair_it_delivered_and_keeps_its_earlier_record"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "An unconverted delivery opens the legacy-unavailable review.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d3f873c597686628bed4fa60e1249550cfedcbc",
+            "content": "sha256:3934b52becb16f9316f66b29439505806cbea540ebadc448c18601b042dbd20b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unconverted_delivery_opens_the_legacy_unavailable_review"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "A required conversion that fails is refused, not read as an empty base.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d3f873c597686628bed4fa60e1249550cfedcbc",
+            "content": "sha256:f79f1df5052309a94518482ff3a868d7160f36d14657f9514936cb957bb223b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_required_conversion_that_fails_is_refused_not_read_as_an_empty_base"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "A numbered leaf-wide read records no comparison.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d3f873c597686628bed4fa60e1249550cfedcbc",
+            "content": "sha256:981ba93a882a4d99feef68122f4856511849397c8962ff4de7bf683b0a578932",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_numbered_leaf_wide_read_records_no_comparison"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "Publishing a record never replaces one that exists.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d3f873c597686628bed4fa60e1249550cfedcbc",
+            "content": "sha256:a9e25bbbd221b85f7579d4534d05f4f26ec200fa88a9d2ea4d1bb7d175689929",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_publishing_a_record_never_replaces_one_that_exists"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "An injected publication loss is refused: with `publish_comparison_record` forced to `False` the record is refused as `reviewer_busy` with `offending_input` `2` while the leaf's records remain `[1]`, so no staged pair occupies number 2 (`test_review_delivered_comparison.py:509-529`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d3f873c597686628bed4fa60e1249550cfedcbc",
+            "content": "sha256:645bd3ec5faa5e5f472c2d9addf1e65d59702d3ec8cbbc3e262d16ac88f9a8a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_record_that_loses_its_number_to_another_pair_is_refused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A replayed landing's commit is the code candidate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d3f873c597686628bed4fa60e1249550cfedcbc",
+            "content": "sha256:f1dcbbcf373b481dff097b44050ae2671a43ed9c82b942595b10ce5751ba2a22",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_replayed_landing_is_the_delivered_code_candidate"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "An exact delivered record older than the last record is reused at its own number.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d3f873c597686628bed4fa60e1249550cfedcbc",
+            "content": "sha256:d393b9a7bbe7c453d6b78cc4ded434675a2da38b188153fc616629a4a0f7eac6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_exact_delivered_record_older_than_the_last_record_is_reused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A matching last record is the delivered default and keeps its number.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d3f873c597686628bed4fa60e1249550cfedcbc",
+            "content": "sha256:b1e5e269d127d7a5c0de15864f5962463f7f873b455f5546b228e595c0ea11d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_matching_last_record_is_the_delivered_default_and_keeps_its_number"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "A delivery Git cannot produce is named and never replaced.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d3f873c597686628bed4fa60e1249550cfedcbc",
+            "content": "sha256:68aaac867b1b4f9aee3a27a70c6a33005e427bb403b23c2a8a9e73eff85a97c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_delivery_git_cannot_produce_is_named_and_never_replaced"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "A leaf that records no delivery keeps its recorded default.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d3f873c597686628bed4fa60e1249550cfedcbc",
+            "content": "sha256:44d6fb2601a8500a4e8cea5f5fa4a1fe762e3e8622a2b96301cc13b492cea12d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_leaf_that_records_no_delivery_keeps_its_recorded_default"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The line says which pair was delivered.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d3f873c597686628bed4fa60e1249550cfedcbc",
+            "content": "sha256:a746e66330f0a4a88f7ba07ad0464c61f1514b16fdedd101798874a2be344f8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_line_says_which_pair_was_delivered"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "A closeout without its memory cell refuses and publishes nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d3f873c597686628bed4fa60e1249550cfedcbc",
+            "content": "sha256:2811d0b8fe3b91f118136bae07aa92bb0fccbaafb3a402c8f52804a8c97f3d15",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_closeout_without_its_memory_cell_refuses_and_publishes_nothing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "A recorded tree id is not a delivered commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d3f873c597686628bed4fa60e1249550cfedcbc",
+            "content": "sha256:bf1a20ed171f8e66c544c9fbb76138ec538dc51480cc57ff54f938f780ab7269",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_recorded_tree_id_is_not_a_delivered_commit"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

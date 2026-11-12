@@ -1,0 +1,58 @@
+{
+  "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/README.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The tree is a hand-written stand-in for the installed packages, not copied source.\n\nAnchor: `@getpaseo`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a9e509e9eb72750e9dd73acd39e46905892093e",
+            "content": "sha256:f95bf22e98cce02c5bb22d9d1e73b4d63f2dd6f5747e3f2828e81ae60cda6a55",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The registry file carries the class imports and the factory table.\n\nAnchor: `PROVIDER_CLIENT_FACTORIES`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a9e509e9eb72750e9dd73acd39e46905892093e",
+            "content": "sha256:06865400344ed31911f768a3a3b2f235ce679c8ef64fe162bc846b13f3e8a9bc",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 7
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The manifest's provider definitions carry nested modes whose ids are not provider ids.\n\nAnchor: `AGENT_PROVIDER_DEFINITIONS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a9e509e9eb72750e9dd73acd39e46905892093e",
+            "content": "sha256:d2f16cccdf6356c3d5f3cf6941be5058951dda1ba47aab9868cf2cb10a1846f3",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 24
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

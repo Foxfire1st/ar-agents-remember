@@ -1,0 +1,204 @@
+{
+  "path": "mcp/src/agents_remember/certification/telemetry/store.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "One journal entry binds an event to its digest and its exact predecessor digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1826d8c6326ebf9e3d1c485e691e1f624af52663",
+            "content": "sha256:5f1d691f50539f51d8e68544763ed7fc89c811ab7f3f059e611ab322353f19d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "TelemetryJournalEntry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Append CAS-publishes the next revision and verifies the read-back bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1826d8c6326ebf9e3d1c485e691e1f624af52663",
+            "content": "sha256:07288ee1fab696591c577d34e681fb50d6b185eed06ef3c836b29372c6a868b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "append"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1826d8c6326ebf9e3d1c485e691e1f624af52663",
+            "content": "sha256:f95c91f004eaf55f7234580b55f2c9afeb8069c34f735692e4dd43b5035840b8",
+            "locator": {
+              "end": 127,
+              "kind": "line_range",
+              "start": 88
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Reads revalidate the revision chain and every digest; replay stays read-only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1826d8c6326ebf9e3d1c485e691e1f624af52663",
+            "content": "sha256:d361bcef65805f3e28987f9ad847d58c8833c0a06598d78aba98bc329859f854",
+            "locator": {
+              "kind": "symbol",
+              "name": "read"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1826d8c6326ebf9e3d1c485e691e1f624af52663",
+            "content": "sha256:0f508920fa8a55594679eaa3da1d52775c6c95e75ca9721df4f2ea7ffce0a625",
+            "locator": {
+              "kind": "symbol",
+              "name": "replay"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1826d8c6326ebf9e3d1c485e691e1f624af52663",
+            "content": "sha256:5b4ac99fd34032bfa4737c72d516d9b4ea4adab55e7765633db2955ab3c66634",
+            "locator": {
+              "kind": "symbol",
+              "name": "TelemetryReplay"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1826d8c6326ebf9e3d1c485e691e1f624af52663",
+            "content": "sha256:00fd0f5a961aa4761908458e300bb6e3f7205151a00918310ea569ece0f105ab",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 67
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Envelope roots and entry paths keep closeout and diagnostic journals apart and reject bad addresses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1826d8c6326ebf9e3d1c485e691e1f624af52663",
+            "content": "sha256:1ba4372c845cac94b4eeee9076728d8a9fbf87647536ad461fe376f09880bb64",
+            "locator": {
+              "kind": "symbol",
+              "name": "_envelope_root"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1826d8c6326ebf9e3d1c485e691e1f624af52663",
+            "content": "sha256:201e787745607eb6d9ac255d00dc17727c273d2bbf0cf26d3311ca15cad26fc1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_entry_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The store checks bounded capacity before accepting another object.\n\nAnchor: \"def _require_capacity\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1826d8c6326ebf9e3d1c485e691e1f624af52663",
+            "content": "sha256:14aae26a7da49e46483158fd9b5c50e453b094ada79b58fcca987445a1ecfcc9",
+            "locator": {
+              "end": 243,
+              "kind": "line_range",
+              "start": 222
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Stored object bytes use canonical serialization.\n\nAnchor: \"def _canonical_bytes\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1826d8c6326ebf9e3d1c485e691e1f624af52663",
+            "content": "sha256:b3b56f41ac01830d063a6e6b962c8f37d661c513b547e262474dd78626ecab0c",
+            "locator": {
+              "end": 264,
+              "kind": "line_range",
+              "start": 260
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The event and envelope vocabulary comes from the models layer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44254dc28868d306abe218a6362867bf90b1341d",
+            "content": "sha256:e39fb924b60f7c743241f523ee2e8281e6ee5448c825c414c7f1d8edb3c7522b",
+            "locator": {
+              "kind": "symbol",
+              "name": "TelemetryEvent"
+            },
+            "path": "mcp/src/agents_remember/certification/telemetry/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44254dc28868d306abe218a6362867bf90b1341d",
+            "content": "sha256:8dacd2f6cba4daaaceec4a86968b421e3520fbe5fb0c5aef95ab26b41c17abac",
+            "locator": {
+              "kind": "symbol",
+              "name": "TelemetryExecutionKind"
+            },
+            "path": "mcp/src/agents_remember/certification/telemetry/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44254dc28868d306abe218a6362867bf90b1341d",
+            "content": "sha256:a66a7168bbecc54a23dcc4547a38b43951860cd2ac1ebd4e08a6621594df9dc6",
+            "locator": {
+              "end": 851,
+              "kind": "line_range",
+              "start": 673
+            },
+            "path": "mcp/src/agents_remember/certification/telemetry/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

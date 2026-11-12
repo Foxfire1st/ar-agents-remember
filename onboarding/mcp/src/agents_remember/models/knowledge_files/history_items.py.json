@@ -1,0 +1,41 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge_files/history_items.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c375235504edece6feda2eb27c93c644b2561321",
+        "content": "sha256:04a003cf33f30b297d96ec6a5ec92d8830818ed8661dd0b08f1a35b4dc453d40",
+        "locator": {
+          "kind": "symbol",
+          "name": "invalid_history_items"
+        }
+      },
+      "id": "RLZ-9DJTG7",
+      "invariant": "INV-THFEVY",
+      "origin": {
+        "handoffEntry": "MIK-R54@v1 rule 11",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "This check validates item tokens at authoring/comparison-aware boundaries without rewriting closed stored history.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Checks newly authored history worklist IDs without normalizing their tokens. This is the new-input token boundary, not a parser that rewrites or invalidates stored historical labels. Yielding invalid tokens preserves their exact evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c375235504edece6feda2eb27c93c644b2561321",
+            "content": "sha256:331ba1ff2c398055c10643aba7c6f7067c45733515c49438334d57500c09dfac",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake",
+      "guarded_by_test"
+    ],
+    "justification": "Recording a hand-made memory commit from a closed flag alone would admit unanswered invariant work."
+  },
+  "applicability": "Recorded landing of a converted leaf pair, in dry run and apply.",
+  "conditions": [
+    "A named recorded memory base is present.",
+    "Code is the recorded closeout commit when the landed code descends from it, otherwise the landed code."
+  ],
+  "exclusions": [
+    "A missing memory base is refusal, not permission to use landed parents."
+  ],
+  "id": "INV-HAQRFD",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "role-reports/worker/7c2e9d14-6a1b-4f53-8e20-52a0c3d9b152/role-launch/260928-MIK-L52-worker-7c2e9d14-6a1b-4f53-8e20-52a0c3d9b152.md (SHA-256 ef7cff4d9b5140ebecdc1997c2df1fa8dc3ad81222e17dc63b2746cccab1bdf6); mcp/tests/test_record_landing.py"
+      ],
+      "path": "knowledge-wave.json"
+    },
+    "handoffEntry": "MIK-R52@v1 rule 2 recorded-leaf-landing",
+    "leaf": "260928-MIK-L52",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "record_landing re-judges the pair through rule 1 before recording anything, dry run included; missing memory base refuses by name.",
+  "status": "proposed",
+  "supersedes": []
+}

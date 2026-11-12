@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A count row that reads zero while its view failed would tell the reader the repository has no without-proof invariant or census; naming the failure prevents that."
+  },
+  "applicability": "The two root rows of the Knowledge tree, 'Invariants without proof' and 'Census'.",
+  "conditions": [
+    "Each count is read from its own view and shown with its row.",
+    "A count that cannot be read is named rather than shown as zero."
+  ],
+  "exclusions": [
+    "The document body and the Records branch."
+  ],
+  "id": "INV-3MD629",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "260928-MIK-L79-worker-88460df7-a6b5-42e9-b947-943345fd39b0.md; 260928-MIK-L79-worker-88460df7-a6b5-42e9-b947-943345fd39b0-evidence/r1-post-L51-repair-20261006/manifest.json"
+      ],
+      "path": "handoff.json"
+    },
+    "handoffEntry": "MIK-R79@v1 required behavior 4",
+    "leaf": "260928-MIK-L79",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Invariants without proof and Census are tree rows carrying their recorded counts.",
+  "status": "proposed",
+  "supersedes": []
+}

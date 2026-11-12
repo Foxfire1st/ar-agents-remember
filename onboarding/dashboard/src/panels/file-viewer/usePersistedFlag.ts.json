@@ -1,0 +1,93 @@
+{
+  "path": "dashboard/src/panels/file-viewer/usePersistedFlag.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7b1d2d480c871325b9ea74ec9e5e598ff63c3f12",
+        "content": "sha256:7fd64b757e3ab181420f46a2a2ce8ffcd542101b86c3d22c78d20e9f4e968c1d",
+        "locator": {
+          "kind": "symbol",
+          "name": "usePersistedNumber"
+        }
+      },
+      "id": "RLZ-T16F2W",
+      "invariant": "INV-ZTZSDN",
+      "origin": {
+        "handoffEntry": "RP18_WIDTH",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Reads the selected numeric key, uses its default for absent/non-finite data, and writes new class width values without touching sibling keys.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`FileViewer` persists its split/single toggle through this hook.\n\nAnchor: \"fileviewer.split\"; \"className={toggle({ on: split })} aria-pressed={split} onClick={() => setSplit(!split)}> {split ? \\\"▣ Split\\\" : \\\"▢ Single\\\"} </button>\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a34e748d74bbd03ce1ffd35fe6d4b719b434cd55",
+            "content": "sha256:8b8223bef67cbeeb2deb490495c6d66f27fad4019cd17b265db0d226a6b40a87",
+            "locator": {
+              "end": 213,
+              "kind": "line_range",
+              "start": 213
+            },
+            "path": "dashboard/src/panels/file-viewer/FileViewer.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a34e748d74bbd03ce1ffd35fe6d4b719b434cd55",
+            "content": "sha256:465ae7c5e5e0e5a52b791e1735fb7d467d9f60fe8abeeab7b74379e0dcd25566",
+            "locator": {
+              "end": 278,
+              "kind": "line_range",
+              "start": 276
+            },
+            "path": "dashboard/src/panels/file-viewer/FileViewer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`Cockpit` persists its left/right rail pixel widths via `usePersistedNumber`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:455feb20e68551d26878739be9cd8966b7b5a2d7bedf78e315765fa9574ae959",
+            "locator": {
+              "end": 206,
+              "kind": "line_range",
+              "start": 205
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The calm-cockpit `localStorage` flag pattern this mirrors.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:fa5ef98bacf05b79a0ad66cc689f8c33445480853643065bbf8a31b4b3bae3ee",
+            "locator": {
+              "end": 1022,
+              "kind": "line_range",
+              "start": 988
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

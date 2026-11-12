@@ -1,0 +1,59 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/coordination/architect/developer-decisions.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Ask without blocking agents, consolidate settled instructions, and send a design change only on the developer's word.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0a08375a58c72b9b203d4149a759e490c985704",
+            "content": "sha256:d0d0f1798b0dbd862bafac42ca637f7c1797f44d9cea2c27c30b1a4262ba9fab",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Instruction rulings name their exact target and hand delivery to the child-questions and measurement files.\n\nAnchor: `child-questions.md`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0a08375a58c72b9b203d4149a759e490c985704",
+            "content": "sha256:300de9561d5b2a66f985f468aeb0b63662d7200c2919268bd51a05d226842397",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 17
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The Architect role points here before relaying a developer decision.\n\nAnchor: `developer-decisions.md`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de0e221dc51f2f0b067db007cb4c00b17ab3bd39",
+            "content": "sha256:4085a0cb4b127ba88a53cef92e71065292279b81ba6168e77495eb300346fc2d",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 174
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

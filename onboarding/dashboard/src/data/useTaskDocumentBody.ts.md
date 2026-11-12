@@ -1,15 +1,5 @@
 # dashboard/src/data/useTaskDocumentBody.ts
 
-| Field                  | Value                                             |
-| ---------------------- | ------------------------------------------------- |
-| repository             | agents-remember                                   |
-| path                   | `dashboard/src/data/useTaskDocumentBody.ts`       |
-| doc_type               | `file-level-onboarding`                           |
-| lastUpdated | 2026-09-22T11:00:00+02:00 |
-| lastVerifiedCommitHash |                                                   `86639933d61528387ce106dbd4d7a334bd468671`|
-| lastVerifiedCommitDate |                                                   2026-09-24T18:51:31+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [data overview](overview.md)
@@ -17,22 +7,22 @@ frontend source overview governs this reader-state hook.
 
 ## Purpose
 
-Owns visible task-document body hydration, availability state, and revision-aware browser-session
-caching. It gives `DetailPanel` one authoritative state for rendering complete task content first and
-for delaying lower-priority reader requests until the body fetch has either succeeded or failed.
+Visible entry body hydration, availability and current-summary merge over store-owned bounded resources.
 
 ## Code Commentary
 
 ### Logic
 
-`taskDocumentBodyKey` combines `docPath` with `bodyRevision`. `useTaskDocumentBody(targetDoc)` requests
-only the currently displayed document through `fetchTaskDocument`, stores the successful body payload
-separately under the combined key, and merges that payload into the current summary at render time.
-The effect depends on the stable path/revision identity rather than the projected `TaskDocNode` object,
-so analytics projection replacement does not cancel or duplicate an unchanged request. The merge
-explicitly keeps summary arrays when the response omits them. The hook reports `loading`, `available`,
-or `unavailable`; `documentFor(doc)` substitutes a body only when that document's path and revision
-match.
+`useTaskDocumentBody(entry)` requests only an addressed authored entry using repository/path/bodyRevision. Store resources deduplicate pending reads and retain bodies across navigation; one hook-local settled record permits an oversized active body without retaining it in history. A different returned revision is unavailable for the initiating key and retained only under its actual revision. The body supplies
+long-form objective, nonGoals, acceptance, requirements, design, code, decisions, questions, references,
+sections. `mergeFixedProse` restores nonGoals and acceptance from the body with
+nullish summary fallback; empty strings remain supplied values. These fixed-prose fields, like the
+other long reader content, are merged before the revision gate; absent/null response fields retain
+the summary. Entry identity/stage/activity/counts remain authoritative; current summary step/review facts remain unchanged. For a matching body revision, marked truncated status/step text is restored
+only when the body carries a strictly longer string; steps must agree in count and ordered IDs. A matching
+review round can restore the full findings list or longer marked descriptions without replacing the
+summary's whole-round counts. The hook reports `loading`, `available`,
+or `unavailable`; the returned document merges the available body into the current summary.
 
 The failed-request state is recorded without an automatic retry loop. Leaving and reselecting the
 document, or receiving a new `bodyRevision`, gives the hook a new effect entry and permits another
@@ -49,75 +39,61 @@ components unmounted until body hydration reaches a terminal state.
 
 - The always-on task projection remains summary-only; this hook does not enlarge snapshot or stream
   payloads.
-- An unchanged `docPath + bodyRevision` fetches once per mounted hook cache; a revision change refetches.
+- An unchanged qualified repository/path reference plus bodyRevision reuses bounded history or the active settled result; a different repository, path or requested revision selects a different key. Returned bytes are retained only under their actual bodyRevision.
 - A failed key is terminal until selection or revision changes; analytics object replacement does not
   accidentally retry it.
 - Summary content remains renderable while loading and is the fallback when the full body is unavailable.
 - No retry timer or request fan-out is introduced here.
-- The endpoint returns a full fetch-time task node. Its present scalar fields (including status, steps,
-  title, and progress counters) can mask fresher summary values because `bodyRevision` hashes authored
-  body fields only; this pre-existing staleness window is not solved by the hook.
+- A cached body never replaces the current summary's head, step states, review round or aggregate counts.
+  Matching-revision hydration expands previews; an older body contributes long reader content only.
 - The hook does not decide which task document is visible and does not perform path confinement; those
   responsibilities stay with `DetailPanel` and the serving endpoint respectively.
 
 ### Todos
 
-- Reviewer note: consider a follow-up to widen `bodyRevision` or prune cached payload fields if the
-  product requires post-hydration progress/status freshness. This leaf preserves the existing
-  endpoint and revision contract.
-- The browser-session cache is revision-safe but unbounded; it has no eviction policy.
+- Body and preparation history are store-owned and bounded separately at 64 entries / 16 MiB; pending body reads are bounded too. One active oversized body is hook-local, not retained history.
 
-## Docs References
+
+## Current Behavior
+
+the body effect now owns an `AbortController` per addressed revision, passes its signal to `resources.load(...)` and aborts it on cleanup (`:179-202`). An `AbortError` is ignored, so a task switch cannot set `failed`; any other rejection still marks the key failed. This supersedes 'An effect cleanup ignores late results after the visible document changes': cleanup now ends the request, and the retained body on a return is the store's completed entry, not a late answer.
+
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured for this memory repo.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured external document defines this same-repository React state seam. | — | — |
+No configured external document defines this same-repository React state seam.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The hook keys requests and body-payload storage by path/revision, merges into the current summary, records terminal availability, and discards late results. | `useTaskDocumentBody` | dashboard/src/data/useTaskDocumentBody.ts:29-74 |
-| `DetailPanelImpl` resolves the displayed reader document and passes it through the body hook. | "function DetailPanelImpl({"; "export function useTaskDocumentBody(" | dashboard/src/data/useTaskDocumentBody.ts:29-74; dashboard/src/panels/detail-panel/DetailPanel.tsx:18-71 |
-| The enclosure change-set controls wait until the body reader is no longer loading. | "import { ChangeSetButton } from \"./changeSetBar\";"; "const { documentFor: fullTaskDoc" | dashboard/src/panels/detail-panel/lifecycleBody.tsx:19-19; dashboard/src/panels/detail-panel/state.ts:150-150 |
-| The task-document reader delays its notes until the body reader is no longer loading. | `TaskNotes` | dashboard/src/panels/TaskNotes.tsx:146-189 |
-| The transport adapter owns the same-origin endpoint and non-OK rejection. | `fetchTaskDocument` | dashboard/src/data/taskDocuments.ts:3-9 |
-| Component regressions hold the body request open, assert body-first ordering, cover full fields and fallback, and pin revision caching. | "DetailPanel doc-reader change-set bar (L4a)" | dashboard/src/panels/detail-panel/changeSetBar.test.tsx:14-14; dashboard/src/panels/detail-panel/changeSetBar.test.tsx:15-15 |
-| Cockpit composition regressions cover direct leaf, master, drilled, lifecycle-bound, analytics-churn, and pending A-to-B late-response selection paths. | "Operations click-to-detail body hydration" | dashboard/src/cockpit/Cockpit.test.tsx:335-441 |
 
-## Cross-Repo References
+
+
+
+- Current TaskPage passes bodyState into ReaderHead, whose change-set controls are unmounted while loading; the deleted lifecycleBody is not its caller. [3]
+
+
+
+
+- The transport adapter owns the same-origin endpoint and non-OK rejection. [5]
+
+
+
+- Source-defined taskBody.test.tsx component assertions hold the body request open, check body-first ordering, cover long fields and fallback, and pin revision caching. Source inspection only; no fresh execution. [6]
+
+
+
+
+- Fixed prose is merged by the production body hook; separate native-operand mounted DetailPanel cases start from summaries missing nonGoals/acceptance, stub transport, and declare assertions for restored fields, fixed-block order, legacy access and one body request. This is source inspection, not a new producer/test run or acceptance. [8]
+
+
+- Retained body identity combines the qualified repository/path reference with the body revision, not a path-only key. [9]
+
+### Cross-Repo References
 
 No meaningful cross-repo boundary exists; selection, hydration, serving, and task-document parsing all
 live in `agents-remember`.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Same-repository dashboard reader state only. | — | — |
-
-## Update History
-- 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **citation pass — the rows this leaf's own line movement displaced were re-anchored from each row's own finding message.** Every flagged range was repointed or widened to the lines that actually carry the anchor at this candidate, using the memory-quality checklist's own per-row message as the ground truth rather than adding a delta to an old number; the repair was applied row-scoped by the cited-range string, so duplicate rows were each corrected. No claim was re-worded to fit a stale pointer, no anchor or range was dropped to silence a finding, and the two legacy mechanical-projection bullets on rows this pass re-read were retired with this entry as their dated disposition, and no new projection bullet was written. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-
-- 2026-09-22T11:00:00+02:00 — 260921-ICR-L13 curator (candidate `ar/260921-icr-l13`, uncommitted; base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5`): **citation repair only, forced by this leaf's test insertion; no content impact on this module.** The `changeSetBar.test.tsx` suite gained one case above the suites this card's row names, so the `describe` anchor moved `:13` → `:14`; the row is re-derived onto the declaration line with wording unchanged. No verification stamp was advanced: the candidate is uncommitted and closeout owns the stamp.
-- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B22 curator: rebound the enclosure change-set
-  wait claim to `taskDocumentBodyState`/`changeSetBar` with fixer-generated ranges; exact
-  non-fixing check returns zero findings.
-
-- 2026-08-03T04:00:52+02:00 — 260731-EFA-L6 W3-B06 curator: curated 10 citation findings across the five repo-internal reference rows with exact symbols and test heading evidence. Max-reviewer subject-binding addendum split the pooled DetailPanel row into exact body-reader, change-set, and notes behavior rows.
-
-- 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
-  from the packed dashboard/src parent to the new nearest data authority overview. Source behavior
-  is unchanged by this memory-only governance move; verification hash/date remain pinned.
-
-- 2026-07-12T16:45+02:00 — Reopened 260712-TRH-L1 correction: body payloads are stored separately
-  and merged into the current summary, with stable path/revision effect identity. Documented terminal
-  failure semantics, late-response discard, cockpit composition coverage, and the pre-existing
-  fetch-time scalar staleness window. Verification metadata remains blank until closeout stamps the
-  code commit.
-
-- 2026-07-12T12:07+02:00 — Created for 260712-TRH-L1: extracted visible-document hydration from
-  `DetailPanel`, made body availability explicit, and documented the body-first request boundary plus
-  revision-aware cache behavior. Verification metadata remains blank until closeout stamps the code
-  commit.
+Same-repository dashboard reader state only.

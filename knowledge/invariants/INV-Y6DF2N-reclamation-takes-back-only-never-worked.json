@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Collecting an abandoned but worked grant would weaken the immutable post-start authority boundary."
+  },
+  "applicability": "Architect-owned per-task reclamation of abandoned grant records.",
+  "conditions": [
+    "The leaf is genuinely never worked despite its abandoned status label.",
+    "The relevant checkouts are determinably clean."
+  ],
+  "exclusions": [
+    "Started or Completed leaves, uncertain bindings, dirty or undeterminable checkouts are preserved.",
+    "Legacy unaddressed filename fallback is not a universal constant-I/O promise."
+  ],
+  "id": "INV-Y6DF2N",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_direct_execution_grants.py::test_reclaim_preserves_abandoned_leaf_with_seat_evidence, test_reclaim_preserves_abandoned_leaf_with_turn_report, test_reclaim_preserves_abandoned_leaf_with_unreadable_locator, test_reclaim_preserves_started_abandoned_leaf; R5 operation-proofs.json F09-started-census; worker journal R6 successor section; R5 verdict 88c054160ffdffef415a01cdf0f09161bb59aa68944469379856e72944c46755"
+      ],
+      "path": "knowledge-handoff.json"
+    },
+    "handoffEntry": "L94-CODE-F09",
+    "leaf": "260928-MIK-L94",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Reclamation takes back only never-worked abandoned grants with determinably clean checkouts, because startedness is read from the ordinary unstarted proof with status words masked away, preserving seat-, report- and locator-started leaves under rule 5.",
+  "status": "proposed",
+  "supersedes": []
+}

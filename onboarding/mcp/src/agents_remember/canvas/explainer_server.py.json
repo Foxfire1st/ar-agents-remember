@@ -1,0 +1,130 @@
+{
+  "path": "mcp/src/agents_remember/canvas/explainer_server.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0697b5c5c41f1c6837a50517c68412c4f22890fb",
+        "content": "sha256:b555b69912c215ee9ef6efd82c6c2be2d5e676f7793517e194a1ff0e0c5ba416",
+        "locator": {
+          "kind": "symbol",
+          "name": "render_and_publish"
+        }
+      },
+      "id": "RLZ-JRT8Z9",
+      "invariant": "INV-GWMA1V",
+      "origin": {
+        "handoffEntry": "L183-CUR-ATTACH-confined-authoring",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The retained authoring surface publishes only after prospective loading and readiness through the bound frame store.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "0697b5c5c41f1c6837a50517c68412c4f22890fb",
+        "content": "sha256:c9c1f05d5a7e1a5008bd0f0203a1d89a4da9b0b056869cf0f25d5bbb033a689f",
+        "locator": {
+          "kind": "symbol",
+          "name": "explainer_authoring"
+        }
+      },
+      "id": "RLZ-TYB54B",
+      "invariant": "INV-GWMA1V",
+      "origin": {
+        "handoffEntry": "L183-CUR-ATTACH-confined-authoring",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The current call constructs shared AuthoringTools over this environment drafts and current instructions grants, without a separate native presenter tool server.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "0697b5c5c41f1c6837a50517c68412c4f22890fb",
+        "content": "sha256:b555b69912c215ee9ef6efd82c6c2be2d5e676f7793517e194a1ff0e0c5ba416",
+        "locator": {
+          "kind": "symbol",
+          "name": "render_and_publish"
+        }
+      },
+      "id": "RLZ-WVQJNP",
+      "invariant": "INV-GWMA1V",
+      "origin": {
+        "handoffEntry": "L183-A-1",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The only reachable publish path: a model-free load and a readiness report decide whether the frame store is written.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "A block the bound comparison cannot fingerprint is refused and no partial grade is written\n\nAnchor: `def grade(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0697b5c5c41f1c6837a50517c68412c4f22890fb",
+            "content": "sha256:fbcd9e202928437d08908b92e776ac317dab15f88ed65afc7f68fe4380dcd16f",
+            "locator": {
+              "end": 227,
+              "kind": "line_range",
+              "start": 183
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A grade write takes the leaf's one lock and refuses as busy rather than writing beside a build\n\nAnchor: `def _leaf_lock(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0697b5c5c41f1c6837a50517c68412c4f22890fb",
+            "content": "sha256:a0b6554ba6f9db2e2b5c52cccc59d26d7df8873e4868535a057689751f2e1a84",
+            "locator": {
+              "end": 250,
+              "kind": "line_range",
+              "start": 230
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The binding and the claim are re-read under the lock before a judgment is written\n\nAnchor: `def _held(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0697b5c5c41f1c6837a50517c68412c4f22890fb",
+            "content": "sha256:044fa4d05e91887f3e29d7237c91e15595d94d28a161d67142e37fa8d48c9398",
+            "locator": {
+              "end": 275,
+              "kind": "line_range",
+              "start": 253
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Publication happens only after the draft loaded and the readiness check passed, and a refusal leaves the ready revision untouched\n\nAnchor: `def _render_and_publish(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0697b5c5c41f1c6837a50517c68412c4f22890fb",
+            "content": "sha256:139d1ff52a11f018f68f222da070fef30db98ebd76316a6aec4ec0042d82346f",
+            "locator": {
+              "end": 618,
+              "kind": "line_range",
+              "start": 508
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

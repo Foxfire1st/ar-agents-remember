@@ -1,14 +1,25 @@
 # mcp/src/agents_remember/mcp/tools/benchmark.py
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                               |
-| path                   | `mcp/src/agents_remember/mcp/tools/benchmark.py` |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-02T01:05+02:00|
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`                                        |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview      | `overview.md`                                    |
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- HEAD diff deletes the entire named source file.
+
+### Superseded inventory
+
+- Pre-repair card claim: Card describes current Codex benchmark payload builders and flat MCP signatures. This is superseded archival wording, not a current prescription.
+
+### Source and authority bounds
+
+- Source comparison: `mcp/src/agents_remember/mcp/tools/benchmark.py (absent; git diff HEAD -- this path: deleted file mode 100644)`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
 
 ## Governing Overview
 
@@ -47,15 +58,4 @@ happens in `mcp/registration/benchmarks.py`.
 - Transport-thin: benchmark orchestration lives in
   `application.benchmark_tools` and the `benchmarks` package.
 
-## Update History
-
-- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-07-31T15:31+02:00 — 260731-EFA-L2: both builders took `selection`/`preparation` (and run's
-  `run`) parameter objects; the `CODEX_BENCHMARK_SANDBOX` import moved to the controller, which now
-  owns the default on `CodexBenchmarkRun`. Verification metadata pinned until closeout stamps the L2
-  code commit.
-- 2026-05-31T12:50+02:00 — `codex_benchmark_run_payload`'s `codex_sandbox` default changed from the inline `"danger-full-access"` literal to the `CODEX_BENCHMARK_SANDBOX` constant imported from `benchmarks.runner`; noted the new constant source in Logic (1.0.0 review remediation).
-- 2026-05-29T18:35+02:00: Created from the `mcp/tools.py` domain split (commit `01f503d`).
+</details>

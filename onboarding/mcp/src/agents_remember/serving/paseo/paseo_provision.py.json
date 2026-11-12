@@ -1,0 +1,403 @@
+{
+  "path": "mcp/src/agents_remember/serving/paseo/paseo_provision.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e49d6c05caeb90e4ca8f0595ece7f39e277d944a",
+        "content": "sha256:1afbb20ec1baad5bf591d6896527533c145b6ff178feea6cf0c519db0393ac72",
+        "locator": {
+          "end": 167,
+          "kind": "line_range",
+          "start": 167
+        }
+      },
+      "id": "RLZ-110HY2",
+      "invariant": "INV-E4E4N1",
+      "origin": {
+        "handoffEntry": "L84-K3C-E4E4N1-14",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The install-path provisioning builds its PaseoCli with the process reader, so its commands that do not start the host run on this build's Node or, when that is absent, on the proven running host's Node (PaseoCli.call, paseo_command.py:104-109; communication_node, paseo_running_node.py:17-33).",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e49d6c05caeb90e4ca8f0595ece7f39e277d944a",
+        "content": "sha256:dac148a8a4de15c61140675bd8c2f29fd80eec919d3aa96b1a7065824bd852e0",
+        "locator": {
+          "end": 566,
+          "kind": "line_range",
+          "start": 566
+        }
+      },
+      "id": "RLZ-291SSQ",
+      "invariant": "INV-E4E4N1",
+      "origin": {
+        "handoffEntry": "L84-K3C-E4E4N1-11",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Provisioning records the harness homes a running daemon inherited and refuses a restart that would change them unless the change is accepted.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e49d6c05caeb90e4ca8f0595ece7f39e277d944a",
+        "content": "sha256:66b46904d526fad84a76699a82858c7b1e0b75d0b128ac6e7d1fb75327b3b4e0",
+        "locator": {
+          "kind": "symbol",
+          "name": "_ensure_plugin"
+        }
+      },
+      "id": "RLZ-2CRW9N",
+      "invariant": "INV-WK67MP",
+      "origin": {
+        "handoffEntry": "L84-K3H-WK67MP-02",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Takes the plugin remove/install/enable/reload decisions from the shared plugin_changes and reports each one, so the real call reports the plugin changes the preview lists.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e49d6c05caeb90e4ca8f0595ece7f39e277d944a",
+        "content": "sha256:9e159f5c9cc810b52c91a5b4012ae2a87586544aa10aee4ee81aacfa69076768",
+        "locator": {
+          "end": 180,
+          "kind": "line_range",
+          "start": 180
+        }
+      },
+      "id": "RLZ-2JY6Q8",
+      "invariant": "INV-E4E4N1",
+      "origin": {
+        "handoffEntry": "L84-K3C-E4E4N1-09",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Provisioning records the harness homes a running daemon inherited and refuses a restart that would change them unless the change is accepted.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e49d6c05caeb90e4ca8f0595ece7f39e277d944a",
+        "content": "sha256:aea3ec1737896b4b455444cff71e058b35306cdaed159bd4da04950dfc962897",
+        "locator": {
+          "kind": "symbol",
+          "name": "_report_unused_node"
+        }
+      },
+      "id": "RLZ-2VJ210",
+      "invariant": "INV-CB36W0",
+      "origin": {
+        "handoffEntry": "MIK-R107@v1 §4 transition current66",
+        "leaf": "260928-MIK-L107"
+      },
+      "rationale": "This report-only boundary accepts only an earlier sibling product Node folder and names it as unused by this host without deleting files.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "e49d6c05caeb90e4ca8f0595ece7f39e277d944a",
+        "content": "sha256:7f2f67e1d2be5dfc754f775d49b3df9131d9e4714e31930ed90fd494c77480c4",
+        "locator": {
+          "end": 188,
+          "kind": "line_range",
+          "start": 182
+        }
+      },
+      "id": "RLZ-3CQT14",
+      "invariant": "INV-E4E4N1",
+      "origin": {
+        "handoffEntry": "L84-K3C-E4E4N1-16",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Provisioning records the harness homes a running daemon inherited and refuses a restart that would change them unless the change is accepted.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e49d6c05caeb90e4ca8f0595ece7f39e277d944a",
+        "content": "sha256:ae6572820a18e60e150e4122e274f7e87d975ff56757ba1822bd9d723d331c74",
+        "locator": {
+          "end": 261,
+          "kind": "line_range",
+          "start": 261
+        }
+      },
+      "id": "RLZ-8B3TWT",
+      "invariant": "INV-E4E4N1",
+      "origin": {
+        "handoffEntry": "L84-K3C-E4E4N1-10",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Provisioning records the harness homes a running daemon inherited and refuses a restart that would change them unless the change is accepted.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e49d6c05caeb90e4ca8f0595ece7f39e277d944a",
+        "content": "sha256:84bb636b69bb94ab491234fdcb3365454156099ce13278eb2212d00df335e05f",
+        "locator": {
+          "end": 146,
+          "kind": "line_range",
+          "start": 126
+        }
+      },
+      "id": "RLZ-8MVHZV",
+      "invariant": "INV-E4E4N1",
+      "origin": {
+        "handoffEntry": "L84-K3C-E4E4N1-15",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Provisioning records the harness homes a running daemon inherited and refuses a restart that would change them unless the change is accepted.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e49d6c05caeb90e4ca8f0595ece7f39e277d944a",
+        "content": "sha256:a4a472a6f331db512f6aa80c707689776a97c4ded035a97dcff8a2fbc923aeb0",
+        "locator": {
+          "kind": "symbol",
+          "name": "_converge_daemon"
+        }
+      },
+      "id": "RLZ-AFXDAA",
+      "invariant": "INV-CB36W0",
+      "origin": {
+        "handoffEntry": "MIK-R107@v1 §4 transition current66",
+        "leaf": "260928-MIK-L107"
+      },
+      "rationale": "The transition owner defers install restarts, captures the observed earlier Node folder, and reports it only after explicit provision starts the replacement host.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "e49d6c05caeb90e4ca8f0595ece7f39e277d944a",
+        "content": "sha256:6de8b0fbe3c99c1766932c0754a9220cbb7b45249af85dbc8928af41988692c1",
+        "locator": {
+          "kind": "symbol",
+          "name": "_apply_provider_entries"
+        }
+      },
+      "id": "RLZ-B3EJP4",
+      "invariant": "INV-WK67MP",
+      "origin": {
+        "handoffEntry": "L84-K3H-WK67MP-01",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Records each provider-entry setting through the shared setting_change description and, when the daemon is running, the provider reload as its own config change, so the real call reports the same changes the preview lists (paseo_install_plan._settings_changes).",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e49d6c05caeb90e4ca8f0595ece7f39e277d944a",
+        "content": "sha256:edc5fe871fbca59061c1b6e054839f8dfaf7f4ab560b17f14b8a44700caf07ab",
+        "locator": {
+          "end": 150,
+          "kind": "line_range",
+          "start": 150
+        }
+      },
+      "id": "RLZ-FBECHA",
+      "invariant": "INV-E4E4N1",
+      "origin": {
+        "handoffEntry": "L84-K3C-E4E4N1-12",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Provisioning records the harness homes a running daemon inherited and refuses a restart that would change them unless the change is accepted.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e49d6c05caeb90e4ca8f0595ece7f39e277d944a",
+        "content": "sha256:5f1e09be16e7df4dfbb6a6ba6628ba5255f691700bf83415333691802194d657",
+        "locator": {
+          "kind": "symbol",
+          "name": "_apply_settings"
+        }
+      },
+      "id": "RLZ-KHJV6H",
+      "invariant": "INV-WK67MP",
+      "origin": {
+        "handoffEntry": "L84-K3H-WK67MP-03",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Records each daemon config setting through the shared setting_change description, so the real call reports the setting changes the preview lists.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e49d6c05caeb90e4ca8f0595ece7f39e277d944a",
+        "content": "sha256:5b6e83e984a2ad70853c0d1f76a3e6035d27fd42655d1d538ecd869790101431",
+        "locator": {
+          "kind": "symbol",
+          "name": "_sync_home_files"
+        }
+      },
+      "id": "RLZ-KJ2ZHT",
+      "invariant": "INV-WK67MP",
+      "origin": {
+        "handoffEntry": "L84-K3H-WK67MP-04",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Writes the embed and copies the plugin for each change home_changes describes and reports each change that was made, so the real call reports the home-file changes the preview lists.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e49d6c05caeb90e4ca8f0595ece7f39e277d944a",
+        "content": "sha256:a4a472a6f331db512f6aa80c707689776a97c4ded035a97dcff8a2fbc923aeb0",
+        "locator": {
+          "kind": "symbol",
+          "name": "_converge_daemon"
+        }
+      },
+      "id": "RLZ-R90C04",
+      "invariant": "INV-FM3V0M",
+      "origin": {
+        "handoffEntry": "MIK-R96@v1 §9 late restart",
+        "leaf": "260928-MIK-L96"
+      },
+      "rationale": "This convergence boundary separates live updates from transitions and retains the existing supervisor when installation encounters a late restart-required setting.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "e49d6c05caeb90e4ca8f0595ece7f39e277d944a",
+        "content": "sha256:eddcee7c07de43503979e1a96eac0e655f1c9142b73285633ec834cdc4d7173a",
+        "locator": {
+          "end": 223,
+          "kind": "line_range",
+          "start": 223
+        }
+      },
+      "id": "RLZ-VT8P1B",
+      "invariant": "INV-E4E4N1",
+      "origin": {
+        "handoffEntry": "L84-K3C-E4E4N1-13",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Provisioning records the harness homes a running daemon inherited and refuses a restart that would change them unless the change is accepted.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e49d6c05caeb90e4ca8f0595ece7f39e277d944a",
+        "content": "sha256:4641f4ac2d4df672657a026b7c323d399115323f74c8b77e60bb47cc9a5e777b",
+        "locator": {
+          "end": 272,
+          "kind": "line_range",
+          "start": 265
+        }
+      },
+      "id": "RLZ-XS9KQF",
+      "invariant": "INV-E4E4N1",
+      "origin": {
+        "handoffEntry": "L84-K3C-E4E4N1-08",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Provisioning records the harness homes a running daemon inherited and refuses a restart that would change them unless the change is accepted.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The converge pass and its install entry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e49d6c05caeb90e4ca8f0595ece7f39e277d944a",
+            "content": "sha256:8e14005bc1283aa5b51fa15e8c3d64d4cd929017115ed21f06a839c291c1fef3",
+            "locator": {
+              "kind": "symbol",
+              "name": "provision_for_install"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The no-stop admission read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6516602f16e02b7a9853f9b6f00d79a5625e8ae",
+            "content": "sha256:b3755c26c13c6f8ce7b58a66c46c3ed405eb8856f94c83384ecba50059be2098",
+            "locator": {
+              "kind": "symbol",
+              "name": "_check_install_restart"
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_run.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Only the prior sibling product Node is reported unused; files are retained.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e49d6c05caeb90e4ca8f0595ece7f39e277d944a",
+            "content": "sha256:aea3ec1737896b4b455444cff71e058b35306cdaed159bd4da04950dfc962897",
+            "locator": {
+              "kind": "symbol",
+              "name": "_report_unused_node"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The harness-home comparison runs before the stop of an owned host.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e49d6c05caeb90e4ca8f0595ece7f39e277d944a",
+            "content": "sha256:8c8b3ccba861fcd8d226801d02ac9cb914f78ff4acd9e4c150642b001b1396c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_preserve_homes_before_stop"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The explicit provision that accepts a harness-home change.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e49d6c05caeb90e4ca8f0595ece7f39e277d944a",
+            "content": "sha256:d19a77ee4c1768023dc053bcea1b9aaa75eee996ab897c34c78f4a97b2ff8c0d",
+            "locator": {
+              "kind": "symbol",
+              "name": "provision_with_home_change"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Home-file changes are recorded with the shared plan descriptions.\n\nAnchor: `home_changes`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e49d6c05caeb90e4ca8f0595ece7f39e277d944a",
+            "content": "sha256:5b6e83e984a2ad70853c0d1f76a3e6035d27fd42655d1d538ecd869790101431",
+            "locator": {
+              "end": 547,
+              "kind": "line_range",
+              "start": 539
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

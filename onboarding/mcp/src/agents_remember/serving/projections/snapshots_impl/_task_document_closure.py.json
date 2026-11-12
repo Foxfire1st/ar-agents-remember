@@ -1,0 +1,68 @@
+{
+  "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_document_closure.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "00854ae6aced8fa39aeb680f81836366daa826ff",
+        "content": "sha256:2c79e0280bf3463d41c1893990c25b1c81b2d715ca381785a6fddb7ad821f936",
+        "locator": {
+          "kind": "symbol",
+          "name": "doc_projection_closure"
+        }
+      },
+      "id": "RLZ-0QQ4J3",
+      "invariant": "INV-FKE909",
+      "origin": {
+        "handoffEntry": "L81-R1-F09",
+        "leaf": "260928-MIK-L81"
+      },
+      "rationale": "This closure identifies the necessary graph consumers rather than selecting unrelated corpus members.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Computes changed/folder-master/explicitly-listed-child/graph-consumer/file-join transitive closure from retained payloads. Avoiding under-approximation is standing intent, not an implemented general ambiguity detector: invalid/unresolved links are skipped. Caller full refresh is selected by incomplete wake paths, first use or pending retry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00854ae6aced8fa39aeb680f81836366daa826ff",
+            "content": "sha256:fcdca737c58313749c51e0a186b4c311df039a1988e9900deac4d7bcee048ebb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7441ab31d2dbb655e2be4d5a04571166c9ee1a2a",
+            "content": "sha256:6184881d3ef224de20764ed5dd58c33fc7e38d8bfa2363182a328f4739a17977",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Explicit same-folder and cross-folder listed children join the retained-payload fixpoint so sibling-derived Order display is recomputed; resolution normalizes listed paths to JSON and performs no filesystem read.\n\nAnchor: `_file_targets`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00854ae6aced8fa39aeb680f81836366daa826ff",
+            "content": "sha256:fcdca737c58313749c51e0a186b4c311df039a1988e9900deac4d7bcee048ebb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

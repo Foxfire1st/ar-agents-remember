@@ -1,0 +1,237 @@
+{
+  "path": "mcp/src/agents_remember/models/core.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "647d86ffb8367ac98aa0bfa8b2ba96048269cc9f",
+        "content": "sha256:45ffbe1b4a8d2c53e47faf3813a9e55327c9275517a33a1343634c7615b3d2f7",
+        "locator": {
+          "kind": "symbol",
+          "name": "OpenUserSettingsPayload"
+        }
+      },
+      "id": "RLZ-CY39J1",
+      "invariant": "INV-R4QNJW",
+      "origin": {
+        "handoffEntry": "MIK-R137@v1 rule 5",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "Declares the block's fields; the response model refuses a field it does not declare.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "647d86ffb8367ac98aa0bfa8b2ba96048269cc9f",
+        "content": "sha256:31e849517de49785a1ce5990a0438928a52a6743dc861cf44ce51d5aa119dbcb",
+        "locator": {
+          "end": 92,
+          "kind": "line_range",
+          "start": 92
+        }
+      },
+      "id": "RLZ-GKJ29T",
+      "invariant": "INV-PVW2XJ",
+      "origin": {
+        "handoffEntry": "L84-K3C-PVW2XJ-03",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "A running server registers its boot identity, and the runtime answer lists each live registered server with its build and process.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "647d86ffb8367ac98aa0bfa8b2ba96048269cc9f",
+        "content": "sha256:06a3e9b0b6efbc9b7b07ac83ead9c71c812c8d1bea91b3712d9ba11e05eea41c",
+        "locator": {
+          "end": 29,
+          "kind": "line_range",
+          "start": 16
+        }
+      },
+      "id": "RLZ-R4KH8R",
+      "invariant": "INV-PVW2XJ",
+      "origin": {
+        "handoffEntry": "L84-K3C-PVW2XJ-02",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "A running server registers its boot identity, and the runtime answer lists each live registered server with its build and process.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Core payload builders serialize these models.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "096416e28ba831c922b782c7d3994ab2b726e6cb",
+            "content": "sha256:2279b5117c8ec77d939c520d86a9db7b861b9dab74561c33a41cda7c4da8e453",
+            "locator": {
+              "kind": "symbol",
+              "name": "server_info_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "096416e28ba831c922b782c7d3994ab2b726e6cb",
+            "content": "sha256:3dac1809e31b19e52cf548b1fdddd896cc1c6351d1d6b748470cb4f51bd981ee",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "content": "sha256:10aa450f5caa463f1fe75eabf3cdf642c485bc41fe35884de37c4765dece2359",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Frozen implementation of AgentBindingPayload supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "647d86ffb8367ac98aa0bfa8b2ba96048269cc9f",
+            "content": "sha256:a6a3dc6a1fe961cae3f0047ee5735dcdddbcb9d94d288137268b1e4335540f16",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentBindingPayload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`ServerInfoResponse` declares the strict server-info answer, including unused keys, serving build, running servers and the optional agent binding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "647d86ffb8367ac98aa0bfa8b2ba96048269cc9f",
+            "content": "sha256:aeaf44b190df047b5532841ea959c6223e28860888b1795fd8b08a2892acb62c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ServerInfoResponse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Current source section contains excerpt `class ServerInfoResponse(ResponseModel):`; DTO/control ownership is not execution acceptance.\n\nAnchor: ServerInfoResponse",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "647d86ffb8367ac98aa0bfa8b2ba96048269cc9f",
+            "content": "sha256:343622eff86e1e1d78b873b5e9263fad2122c3a5f1d3a33f893c44342e4c0b6c",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 60
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Current source section contains excerpt `class ServingBuildPayload(BaseModel):`; DTO/control ownership is not execution acceptance.\n\nAnchor: ServingBuildPayload",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "647d86ffb8367ac98aa0bfa8b2ba96048269cc9f",
+            "content": "sha256:9b9d2bf08c051b4d8c9c8dec2286050649bb82493a92c20fd3aca1c2206a9746",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 30
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`server_info_payload` builds the server-info answer this module's DTO declares.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "096416e28ba831c922b782c7d3994ab2b726e6cb",
+            "content": "sha256:2279b5117c8ec77d939c520d86a9db7b861b9dab74561c33a41cda7c4da8e453",
+            "locator": {
+              "kind": "symbol",
+              "name": "server_info_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/core.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The strict server-info DTO without a harness skill root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "647d86ffb8367ac98aa0bfa8b2ba96048269cc9f",
+            "content": "sha256:aeaf44b190df047b5532841ea959c6223e28860888b1795fd8b08a2892acb62c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ServerInfoResponse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "One running server's boot identity and observed build currentness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "647d86ffb8367ac98aa0bfa8b2ba96048269cc9f",
+            "content": "sha256:efe79a5a96f0dbe54d30c3e9845a4684b6592bb9a5aa49e06319aeab55d3e89f",
+            "locator": {
+              "kind": "symbol",
+              "name": "RunningServerPayload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Server info carries the running-server inventory, empty by default.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "647d86ffb8367ac98aa0bfa8b2ba96048269cc9f",
+            "content": "sha256:31e849517de49785a1ce5990a0438928a52a6743dc861cf44ce51d5aa119dbcb",
+            "locator": {
+              "kind": "symbol",
+              "name": "runningServers"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

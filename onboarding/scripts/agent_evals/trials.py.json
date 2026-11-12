@@ -1,0 +1,24 @@
+{
+  "path": "scripts/agent_evals/trials.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9829c85469f6567f78c02cbdd5ded57935235641",
+            "content": "sha256:1e1bc5030ca29e120318c4ede051b8d275f15ca52b9afc75f9bd4252c66a4b61",
+            "locator": {
+              "end": 1177,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

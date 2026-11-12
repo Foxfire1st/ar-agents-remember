@@ -1,0 +1,470 @@
+{
+  "path": "mcp/tests/test_tool_event_river.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "925b7fad569c7683d28953807350f898db89936a",
+        "content": "sha256:1033db1d98a5d76b7eab55db81804024709f1f86f4ea90b24100e8e61b273ab8",
+        "locator": {
+          "end": 241,
+          "kind": "line_range",
+          "start": 227
+        }
+      },
+      "facet": "An unbound server writes a chat without a role with its harness.",
+      "id": "PRF-05YDKB",
+      "invariant": "INV-0MX54D",
+      "origin": {
+        "handoffEntry": "L114-W02",
+        "leaf": "260928-MIK-L114"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "925b7fad569c7683d28953807350f898db89936a",
+        "content": "sha256:2582f568ae1f8d805a070d4630b7a62c08adeb7f9093145a12f91877cdb6ec6c",
+        "locator": {
+          "end": 341,
+          "kind": "line_range",
+          "start": 323
+        }
+      },
+      "facet": "A failed write answers as written; the count rides the next event and clears after success.",
+      "id": "PRF-1YAY93",
+      "invariant": "INV-18B62F",
+      "origin": {
+        "handoffEntry": "L114-W01",
+        "leaf": "260928-MIK-L114"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "925b7fad569c7683d28953807350f898db89936a",
+        "content": "sha256:d862490e8556a303d5d5a2812d12b3f9aeea4a33d9592c4cf47d152659e42b5d",
+        "locator": {
+          "end": 667,
+          "kind": "line_range",
+          "start": 651
+        }
+      },
+      "facet": "Id-addressed messages carry the receipt role.",
+      "id": "PRF-32R7EH",
+      "invariant": "INV-N6DKKD",
+      "origin": {
+        "handoffEntry": "L114-W38",
+        "leaf": "260928-MIK-L114"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "925b7fad569c7683d28953807350f898db89936a",
+        "content": "sha256:640814848c4ab4f6f34fbbf221a1e0f6334699c5317fc56b6602f0eccf69e59b",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolEventRiverTests.test_one_function_serves_the_age_cut_and_the_size_cut"
+        }
+      },
+      "facet": "One function serves the age cut and the size cut.",
+      "id": "PRF-3R6N4T",
+      "invariant": "INV-PHS9T7",
+      "origin": {
+        "handoffEntry": "L114-W06",
+        "leaf": "260928-MIK-L114"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "925b7fad569c7683d28953807350f898db89936a",
+        "content": "sha256:d862490e8556a303d5d5a2812d12b3f9aeea4a33d9592c4cf47d152659e42b5d",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolEventRiverTests.test_id_addressed_message_records_the_receipt_role"
+        }
+      },
+      "facet": "Id-addressed messages record the receipt role.",
+      "id": "PRF-46TQCD",
+      "invariant": "INV-0ZW4BP",
+      "origin": {
+        "handoffEntry": "L114-W05",
+        "leaf": "260928-MIK-L114"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "925b7fad569c7683d28953807350f898db89936a",
+        "content": "sha256:b148eec9c7669bcfe73630bf5090f4fc554241d98b5a2893eb5947f12c96017a",
+        "locator": {
+          "end": 205,
+          "kind": "line_range",
+          "start": 190
+        }
+      },
+      "facet": "The caller snapshot is read once at start.",
+      "id": "PRF-5N48VF",
+      "invariant": "INV-0MX54D",
+      "origin": {
+        "handoffEntry": "L114-W02",
+        "leaf": "260928-MIK-L114"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "925b7fad569c7683d28953807350f898db89936a",
+        "content": "sha256:3b40582d35a60955e28b352d35426f7a880373c2913862ff8b6ef37764adc678",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolEventRiverTests.test_fresh_process_writes_its_first_call_through_startup"
+        }
+      },
+      "facet": "A fresh process writes its first call through startup.",
+      "id": "PRF-77Z14G",
+      "invariant": "INV-19YW49",
+      "origin": {
+        "handoffEntry": "L114-W04",
+        "leaf": "260928-MIK-L114"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "925b7fad569c7683d28953807350f898db89936a",
+        "content": "sha256:f6684a08ffb03c8742d05c5ad4cf5d2fbffcb3f53ea8aacd3abe75be4d9e145c",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolEventRiverTests.test_sibling_workspace_append_never_leaves_the_river_over_the_ceiling"
+        }
+      },
+      "facet": "Every sibling append obeys the same admission.",
+      "id": "PRF-89X6BQ",
+      "invariant": "INV-NJ51EA",
+      "origin": {
+        "handoffEntry": "L114-W37",
+        "leaf": "260928-MIK-L114"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "925b7fad569c7683d28953807350f898db89936a",
+        "content": "sha256:9bca301d684d2122e3c3d00b3f8f42ac7f3e37b66e8d111d4c48050178e8121a",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolEventRiverTests.test_crossing_append_cuts_oldest_rows_and_writes_the_row"
+        }
+      },
+      "facet": "A crossing append cuts oldest rows and writes the row under one lock.",
+      "id": "PRF-92MDGG",
+      "invariant": "INV-NJ51EA",
+      "origin": {
+        "handoffEntry": "L114-W37",
+        "leaf": "260928-MIK-L114"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "925b7fad569c7683d28953807350f898db89936a",
+        "content": "sha256:c9f336e830d4b873dacbb3becdac0178353e60a4cbbb98139150349062d1da11",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolEventRiverTests.test_every_append_lands_at_or_under_the_ceiling"
+        }
+      },
+      "facet": "Every append lands at or under the ceiling.",
+      "id": "PRF-9E0TA9",
+      "invariant": "INV-PHS9T7",
+      "origin": {
+        "handoffEntry": "L114-W06",
+        "leaf": "260928-MIK-L114"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "925b7fad569c7683d28953807350f898db89936a",
+        "content": "sha256:6e172fdfb6a2c73e163ae906867c4fa21da6de4f270979d98d9bc6795573b77b",
+        "locator": {
+          "end": 225,
+          "kind": "line_range",
+          "start": 207
+        }
+      },
+      "facet": "The bound task title is read once at snapshot.",
+      "id": "PRF-9MZC5P",
+      "invariant": "INV-0MX54D",
+      "origin": {
+        "handoffEntry": "L114-W02",
+        "leaf": "260928-MIK-L114"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "925b7fad569c7683d28953807350f898db89936a",
+        "content": "sha256:9594a9f4caa5126a7c5f3ebc3112f5be71d9d9e9b062f5a11505a385f899abfb",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolEventRiverTests.test_failed_removal_counts_and_leaves_the_file_ungrown"
+        }
+      },
+      "facet": "A failed removal counts and leaves the file ungrown.",
+      "id": "PRF-9T50E6",
+      "invariant": "INV-NJ51EA",
+      "origin": {
+        "handoffEntry": "L114-W37",
+        "leaf": "260928-MIK-L114"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "925b7fad569c7683d28953807350f898db89936a",
+        "content": "sha256:7ae9b0d0ea24a2ce3652ee70e7802ec39d3cb2fa5a20f59eebd945b5d66aeabd",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolEventRiverTests.test_role_start_and_role_message_name_the_started_or_addressed_role"
+        }
+      },
+      "facet": "Role tools name the started or addressed role.",
+      "id": "PRF-B5P9Q0",
+      "invariant": "INV-0ZW4BP",
+      "origin": {
+        "handoffEntry": "L114-W05",
+        "leaf": "260928-MIK-L114"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "925b7fad569c7683d28953807350f898db89936a",
+        "content": "sha256:bc8772c58903dd4cbba4043073e5d2b92ca5fcb1629119fbc4f7c798bc5f677c",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolEventRiverTests.test_bound_first_call_writes_one_workspace_event_with_caller_and_facts"
+        }
+      },
+      "facet": "One workspace tool.completed event retains the exact delivered-answer token count recorded on the log line, without a lifecycle/session identifier.",
+      "id": "PRF-EK44A9",
+      "invariant": "INV-WZR89C",
+      "origin": {
+        "handoffEntry": "L168-CUR-INV-WZR89C-current-proof-definition",
+        "leaf": "260928-MIK-L168"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "925b7fad569c7683d28953807350f898db89936a",
+        "content": "sha256:bc8772c58903dd4cbba4043073e5d2b92ca5fcb1629119fbc4f7c798bc5f677c",
+        "locator": {
+          "end": 188,
+          "kind": "line_range",
+          "start": 141
+        }
+      },
+      "facet": "A bound first call writes exactly one workspace event carrying caller and facts.",
+      "id": "PRF-EQ6GQ2",
+      "invariant": "INV-18B62F",
+      "origin": {
+        "handoffEntry": "L114-W01",
+        "leaf": "260928-MIK-L114"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "925b7fad569c7683d28953807350f898db89936a",
+        "content": "sha256:f7abfa7cd0f520295ff496c96bfba577a19478ae2ba99efaaa5fad590b621c8f",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolEventRiverTests.test_connected_stream_changes_no_file_and_names_the_last_feed"
+        }
+      },
+      "facet": "The ready marker names the last feed.",
+      "id": "PRF-F1R4TH",
+      "invariant": "INV-AJYRQ5",
+      "origin": {
+        "handoffEntry": "L114-W09",
+        "leaf": "260928-MIK-L114"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "925b7fad569c7683d28953807350f898db89936a",
+        "content": "sha256:9bca301d684d2122e3c3d00b3f8f42ac7f3e37b66e8d111d4c48050178e8121a",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolEventRiverTests.test_crossing_append_cuts_oldest_rows_and_writes_the_row"
+        }
+      },
+      "facet": "A crossing append cuts oldest rows and writes.",
+      "id": "PRF-F97PTF",
+      "invariant": "INV-PHS9T7",
+      "origin": {
+        "handoffEntry": "L114-W06",
+        "leaf": "260928-MIK-L114"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "925b7fad569c7683d28953807350f898db89936a",
+        "content": "sha256:f7abfa7cd0f520295ff496c96bfba577a19478ae2ba99efaaa5fad590b621c8f",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolEventRiverTests.test_connected_stream_changes_no_file_and_names_the_last_feed"
+        }
+      },
+      "facet": "A connected stream changes no file and names the last feed.",
+      "id": "PRF-FP4GAR",
+      "invariant": "INV-S11488",
+      "origin": {
+        "handoffEntry": "L114-W08",
+        "leaf": "260928-MIK-L114"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "925b7fad569c7683d28953807350f898db89936a",
+        "content": "sha256:f6684a08ffb03c8742d05c5ad4cf5d2fbffcb3f53ea8aacd3abe75be4d9e145c",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolEventRiverTests.test_sibling_workspace_append_never_leaves_the_river_over_the_ceiling"
+        }
+      },
+      "facet": "Sibling appends never leave the river over the ceiling.",
+      "id": "PRF-GRR2DQ",
+      "invariant": "INV-PHS9T7",
+      "origin": {
+        "handoffEntry": "L114-W06",
+        "leaf": "260928-MIK-L114"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "925b7fad569c7683d28953807350f898db89936a",
+        "content": "sha256:1034c181756b8a89a1d2d77d218093ab5672a27fba8d6a87832e47cc2de6fb4f",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolEventRiverTests.test_registered_startup_writes_a_bound_first_call"
+        }
+      },
+      "facet": "Startup installs the writer; the first call is bound.",
+      "id": "PRF-PWYQ6K",
+      "invariant": "INV-19YW49",
+      "origin": {
+        "handoffEntry": "L114-W04",
+        "leaf": "260928-MIK-L114"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "925b7fad569c7683d28953807350f898db89936a",
+        "content": "sha256:f7abfa7cd0f520295ff496c96bfba577a19478ae2ba99efaaa5fad590b621c8f",
+        "locator": {
+          "end": 539,
+          "kind": "line_range",
+          "start": 465
+        }
+      },
+      "facet": "The stream names the last feed without writing.",
+      "id": "PRF-R1721D",
+      "invariant": "INV-N6DKKD",
+      "origin": {
+        "handoffEntry": "L114-W38",
+        "leaf": "260928-MIK-L114"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "925b7fad569c7683d28953807350f898db89936a",
+        "content": "sha256:e0a6d350d25a5e0aa817044d618973969cdcba18a306fbac556304bc53b4163e",
+        "locator": {
+          "end": 273,
+          "kind": "line_range",
+          "start": 249
+        }
+      },
+      "facet": "No argument, answer or message text reaches an event.",
+      "id": "PRF-RCY2AA",
+      "invariant": "INV-18B62F",
+      "origin": {
+        "handoffEntry": "L114-W01",
+        "leaf": "260928-MIK-L114"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "925b7fad569c7683d28953807350f898db89936a",
+        "content": "sha256:8632d0d3002f548527c91187e5e7aaaf4eeed8c57b491209427027eb6cf92037",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolEventRiverTests.test_stream_with_missing_lock_creates_no_observer_file"
+        }
+      },
+      "facet": "A missing-lock stream creates no observer file.",
+      "id": "PRF-RGCW0X",
+      "invariant": "INV-S11488",
+      "origin": {
+        "handoffEntry": "L114-W08",
+        "leaf": "260928-MIK-L114"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "925b7fad569c7683d28953807350f898db89936a",
+        "content": "sha256:cd014c75fd15d4bb527c0738f5fb29ec003db0c068444e6db94d19924a41765e",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolEventRiverTests.test_unresolved_recipient_stays_literal_without_a_target_role"
+        }
+      },
+      "facet": "Unresolved recipients stay literal without a target role.",
+      "id": "PRF-RR8Y64",
+      "invariant": "INV-0ZW4BP",
+      "origin": {
+        "handoffEntry": "L114-W05",
+        "leaf": "260928-MIK-L114"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The river test class pins each feed behavior end to end.\n\nAnchor: `ToolEventRiverTests`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "925b7fad569c7683d28953807350f898db89936a",
+            "content": "sha256:52cf45e225c19a8d62ba3daecf871cec715443615f6ebb2d137300f9f99c199a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Bound first call writes one event with caller and facts.\n\nAnchor: `test_bound_first_call_writes_one_workspace_event_with_caller_and_facts`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "925b7fad569c7683d28953807350f898db89936a",
+            "content": "sha256:52cf45e225c19a8d62ba3daecf871cec715443615f6ebb2d137300f9f99c199a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Every append lands at or under the ceiling.\n\nAnchor: `test_every_append_lands_at_or_under_the_ceiling`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "925b7fad569c7683d28953807350f898db89936a",
+            "content": "sha256:52cf45e225c19a8d62ba3daecf871cec715443615f6ebb2d137300f9f99c199a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

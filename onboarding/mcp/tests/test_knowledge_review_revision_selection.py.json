@@ -1,0 +1,196 @@
+{
+  "path": "mcp/tests/test_knowledge_review_revision_selection.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "d375393178fa450325eb3ce7c15c93c6c7981c46",
+        "content": "sha256:465690aac889ee012d1863eb87d722bbf9c092794665199a26f5aa4c496c067a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_reviewed_leafs_own_change_names_the_reviewed_leaf"
+        }
+      },
+      "facet": "A changed row at revision2 in the reviewed leaf's own open history yields that leaf as the recorded after writer.",
+      "id": "PRF-3EG3ST",
+      "invariant": "INV-MRHE25",
+      "origin": {
+        "handoffEntry": "RP21_REVISION_WRITER",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d375393178fa450325eb3ce7c15c93c6c7981c46",
+        "content": "sha256:f0ef49bbbcd8a2f01dcc9feb94b289903d8cf410350e9184bfa9bf151953748f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_revision_no_history_row_claims_has_no_recorded_writer"
+        }
+      },
+      "facet": "A same-revision no_impact row from another leaf does not name a writer: the composed after state is not_recorded with no owners and detail naming revision2.",
+      "id": "PRF-A75MXD",
+      "invariant": "INV-MRHE25",
+      "origin": {
+        "handoffEntry": "RP21_REVISION_WRITER",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d375393178fa450325eb3ce7c15c93c6c7981c46",
+        "content": "sha256:cfea0958e530a865e7afa5a9419d7a1140590040878815b4f227e9f0c3e9f7c6",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_selection_carries_each_selected_revisions_display_version"
+        }
+      },
+      "facet": "A real text-backed single-revision comparison projects r1 as before_display_version and after_display_version beside the selected ids; this case does not prove distinct version values or an absent side.",
+      "id": "PRF-BERVRE",
+      "invariant": "INV-P1QKHK",
+      "origin": {
+        "handoffEntry": "RP15",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d375393178fa450325eb3ce7c15c93c6c7981c46",
+        "content": "sha256:44add4f6850f5bedde39016ff770cf6376d75ed6cc8815d233532621aeaac964",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_carried_revision_names_the_owner_whose_history_wrote_it"
+        }
+      },
+      "facet": "With invariant revision2 written by another leaf's closed changed row, composed selection names that leaf as the recorded after writer and the baseline revision1 introducing leaf as the introduced before writer.",
+      "id": "PRF-K0KAXD",
+      "invariant": "INV-MRHE25",
+      "origin": {
+        "handoffEntry": "RP21_REVISION_WRITER",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d375393178fa450325eb3ce7c15c93c6c7981c46",
+        "content": "sha256:956454ca586895aebb6f0f0f280c258cd99ba9adbd9ada8d5610b94088ca38c7",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_incomplete_after_index_leaves_the_writer_unavailable"
+        }
+      },
+      "facet": "An incomplete after index caused by a malformed record yields unavailable, no owners and an incomplete detail instead of asserting no writer.",
+      "id": "PRF-S0JBG6",
+      "invariant": "INV-MRHE25",
+      "origin": {
+        "handoffEntry": "RP21_REVISION_WRITER",
+        "leaf": "260928-MIK-L89"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "35": {
+      "note": "Text-backed snapshot pairs require one retained revision per side and use projected identities.\n\nAnchor: \"def _build_snapshot(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d375393178fa450325eb3ce7c15c93c6c7981c46",
+            "content": "sha256:4c1faf010f5065450946d246505342aa438779c8750c5bbd6e6abd803c91dd0e",
+            "locator": {
+              "end": 214,
+              "kind": "line_range",
+              "start": 101
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "36": {
+      "note": "One head pair and per-side r1 display versions are declared directly.\n\nAnchor: \"def test_a_single_retained_revision_pair_compares_head_to_head(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d375393178fa450325eb3ce7c15c93c6c7981c46",
+            "content": "sha256:adae89c721e538d4cbdb34f0eb235e720577dcbdfe98c2a6a655d9dcdd9eb53f",
+            "locator": {
+              "end": 287,
+              "kind": "line_range",
+              "start": 254
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "37": {
+      "note": "A known-empty after side remains a removal; real composition renders each selected operand.\n\nAnchor: \"def test_a_known_empty_after_side_stays_a_removal_with_the_before_head_recorded(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d375393178fa450325eb3ce7c15c93c6c7981c46",
+            "content": "sha256:6bb5b2336c782e74c4f9c4ff0b7f36211be30a4386a88245130f79aaadc8de8c",
+            "locator": {
+              "end": 418,
+              "kind": "line_range",
+              "start": 290
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "38": {
+      "note": "Converted writer fixtures resolve the actual task and compose from explicit history files.\n\nAnchor: \"def _changed_row(owner_revision: int, row_id: str = \"ROW-W11111\") -> dict[str, object]:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d375393178fa450325eb3ce7c15c93c6c7981c46",
+            "content": "sha256:c8616112cc8719f71fee12d0d1f144097eb4a60816d501371049aabf27a3db5d",
+            "locator": {
+              "end": 470,
+              "kind": "line_range",
+              "start": 431
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "39": {
+      "note": "Carried and own changed rows name their writer while introduction names origin.\n\nAnchor: \"def test_a_carried_revision_names_the_owner_whose_history_wrote_it(tmp_path: Path) -> None:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d375393178fa450325eb3ce7c15c93c6c7981c46",
+            "content": "sha256:c1ca20dc74444d55cb8538e6444015d1b0bc24f674c7c0bc907ba6ade33ab47d",
+            "locator": {
+              "end": 510,
+              "kind": "line_range",
+              "start": 473
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "40": {
+      "note": "A no-impact row is not a writer, and incomplete history coverage stays unavailable.\n\nAnchor: \"def test_a_revision_no_history_row_claims_has_no_recorded_writer(tmp_path: Path) -> None:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d375393178fa450325eb3ce7c15c93c6c7981c46",
+            "content": "sha256:b02f271642c77e2a0b010b43b47a8c4ed1e80db6eb6d96ffefd1a19e5a793c9c",
+            "locator": {
+              "end": 542,
+              "kind": "line_range",
+              "start": 513
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

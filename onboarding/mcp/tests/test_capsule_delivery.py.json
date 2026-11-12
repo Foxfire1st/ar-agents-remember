@@ -1,0 +1,167 @@
+{
+  "path": "mcp/tests/test_capsule_delivery.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "480aa683a03c91baa0fcbee34edce5f282be6c4f",
+        "content": "sha256:d2deae9bcc3f71017a834f27838064cce3ee6d943b8c179571d64bfa27d56683",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_launch_binds_each_inline_link_to_its_admitted_source_without_changing_compilation"
+        }
+      },
+      "facet": "Binds links from two source files in one stream to their own origins while the trusted stream and the semantic digest stay unchanged.",
+      "id": "PRF-5WRVCM",
+      "invariant": "INV-ZA67WW",
+      "origin": {
+        "handoffEntry": "MIK-R84@v5 part1 / L62 instruction provenance",
+        "leaf": "260928-MIK-L84"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "480aa683a03c91baa0fcbee34edce5f282be6c4f",
+        "content": "sha256:41e43bf79a66651df85ae92fa46885888ec868bd9faaac39e4aa14651230563a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_detail_links_bind_frozen_siblings_and_keep_replay_hashes"
+        }
+      },
+      "facet": "Shows that detail links resolve to the frozen sibling files and that replay hashes still match the frozen bytes.",
+      "id": "PRF-EA386B",
+      "invariant": "INV-7KDG7C",
+      "origin": {
+        "handoffEntry": "K3-7KDG7C-bound-details",
+        "leaf": "260928-MIK-L84"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The exact delivery field census admits separate empty-default detail references and instruction origins while task text has no instruction field; genuine compilation supplies admitted binding, instructions, digest and one origin per instruction unit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "480aa683a03c91baa0fcbee34edce5f282be6c4f",
+            "content": "sha256:ef98a45b22369c4798d5336536da6493f666cc3c82b8080ad9fc05bacccaa4be",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_task_and_skill_content_cannot_enter_the_instruction_slot"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "480aa683a03c91baa0fcbee34edce5f282be6c4f",
+            "content": "sha256:680b552294ec7a7b4cb11e469893137698fdf3cad3e8c2c27a1f220677ffc6c6",
+            "locator": {
+              "end": 202,
+              "kind": "line_range",
+              "start": 172
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Launch composition binds each relative link to its own instruction unit's source without changing the compiled delivery.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "480aa683a03c91baa0fcbee34edce5f282be6c4f",
+            "content": "sha256:d2deae9bcc3f71017a834f27838064cce3ee6d943b8c179571d64bfa27d56683",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_launch_binds_each_inline_link_to_its_admitted_source_without_changing_compilation"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Link binding rewrites inline, angle, image and reference-definition destinations and leaves external, absolute, detail-marker, code, fenced, indented and escaped text alone.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "480aa683a03c91baa0fcbee34edce5f282be6c4f",
+            "content": "sha256:d6cc5c3f7c8d86209c21686cc62d50b5e12dafed35393934f01a500fb736c2fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_launch_markdown_binding_preserves_non_destinations_and_code"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Linked instructions without complete covering origins are refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "480aa683a03c91baa0fcbee34edce5f282be6c4f",
+            "content": "sha256:f62b8cf7ce6fbd83ae43c00943117ec084cc1e7f2ac5c002b7c871f3bc566b89",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_launch_refuses_unbound_or_incomplete_origins"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The emitted-link scan skips only fenced examples.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "480aa683a03c91baa0fcbee34edce5f282be6c4f",
+            "content": "sha256:428e829ca95eab94e97e17a6bb1efa7bfe4e32e032bfd883ba2001a6372f8626",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_emitted_link_scan_excludes_only_fenced_examples"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Every link in every emitted role/operation launch file and its detail files resolves, over the manifest's whole role/operation population.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "480aa683a03c91baa0fcbee34edce5f282be6c4f",
+            "content": "sha256:41c3700560b698f74e9de6336d510f1ce670cc8694803c4c26256189bf5d9a8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_emitted_role_operation_link_resolves"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Detail links bind to frozen sibling details, revisions hash the emitted bytes, and replay validation refuses a modified emitted detail.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "480aa683a03c91baa0fcbee34edce5f282be6c4f",
+            "content": "sha256:41e43bf79a66651df85ae92fa46885888ec868bd9faaac39e4aa14651230563a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_detail_links_bind_frozen_siblings_and_keep_replay_hashes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

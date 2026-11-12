@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Guards the costly error this statement names: A source comment in the atomic-write module names this review, which the repository's coding guidelines keep out of source comments."
+  },
+  "applicability": "Source comments in the atomic-write module.",
+  "conditions": [
+    "A comment must not name a review or a leaf, per the repository's coding guidelines."
+  ],
+  "exclusions": [
+    "Explanatory comments that do not name reviews or leaves."
+  ],
+  "id": "INV-4FMP77",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L41-reviewer-acd0dccb-066d-41e9-ab45-b3d7e19e742f.ruled-delta-addendum.md section 5; notes/reports/role-launch/260928-MIK-L41-reviewer-acd0dccb-066d-41e9-ab45-b3d7e19e742f-ruled-delta-evidence/out/d3-snap-py313.txt"
+      ],
+      "path": "entries-list.json"
+    },
+    "handoffEntry": "L41-R8D-N1",
+    "leaf": "260928-MIK-L41",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A source comment in the atomic-write module names this review, which the repository's coding guidelines keep out of source comments.",
+  "status": "retired",
+  "supersedes": []
+}

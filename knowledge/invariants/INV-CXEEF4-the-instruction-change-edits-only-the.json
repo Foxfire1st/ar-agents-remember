@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The manifest structure and tool grants are asserted by the surface and tool-grant tests, and the preservation was proved by the complete before/after capsule comparison on fixed inputs rather than by any new runtime behavior."
+  },
+  "applicability": "The MIK-R72@v2 instruction change across the canonical lifecycle tree and its generated copies.",
+  "conditions": [
+    "Only the role, operation and router text named by the packet, the four manifest descriptions and the generated copies may differ."
+  ],
+  "exclusions": [
+    "Runtime tool permissions, which are unchanged for every role."
+  ],
+  "id": "INV-CXEEF4",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "requirements/MIK-R72-v2-the-architect-hands-coordination-to-one-agent.md SHA256 eb04f14b04f1a4ae5ff255d069300321674351e5d9b3474798fe13edc0d14c68; final independent reviewer verdict notes/reports/role-launch/260928-MIK-L72-reviewer-21dd4a07-9cd4-4afd-aba5-ec17a6b4b38a.md SHA256 ec0f8d07443044b6d71c024a314f6771136bb60ed31e7e70a654dc5e13301455; root adjudication notes/run3/L72-V2-ROUND2-ADJUDICATION.md; focused wording evidence 164 tests/244 subtests at candidate 598526ac"
+      ],
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "L72/MIK-R72@v2-protected-instruction-composition",
+    "leaf": "260928-MIK-L72",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The instruction change edits only the authorized lifecycle surfaces: the Worker, Reviewer, System Specialist and bootstrap composed role and operation text and every tool permission remain byte-identical, the Designer and Strategist role blocks remain byte-identical, and every other capsule difference is the skill-revision seal and the digests derived from it.",
+  "status": "retired",
+  "supersedes": []
+}

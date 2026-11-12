@@ -1,14 +1,49 @@
 # mcp/src/agents_remember/mcp/registration/memory.py
 
-| Field                  | Value                                                     |
-| ---------------------- | --------------------------------------------------------- |
-| repository             | agents-remember                                            |
-| path                   | `mcp/src/agents_remember/mcp/registration/memory.py`       |
-| doc_type               | `file-level-onboarding`                                    |
-| lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
-| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
-| governingOverview      | `overview.md`                                              |
+## Current operative account — MIK-R112
+
+Memory health, baseline and carryover declarations retain their models and request discriminators, but payloads and operation-only memory request types are resolved on the matching call.
+
+The baseline adapter forwards the explicitly selected `accept_drift` value to the application owner. That option bypasses only the actionable-drift check; it does not waive legacy-card or validator refusal. A stale code/test reference is still rejected by paired staged-tree validation. The flag is not publication authority.
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- drift_check is no longer a registered memory tool.
+- citation_migrate registration was deleted while citation_fix remains. Citation fix advertises
+  finite `documents` selection beside singleton `document`; scope validation owns exclusive,
+  empty and shared-bound refusals. Quality, citation and route descriptions advertise status and
+  corpus locations, not a new authority to change their scopes or checks.
+- Typed MQC sync/start/poll and baseline boundaries survive. Carryover keeps flat selection inputs: plan advertises equal-version converted pairs/records, official-code anchor observation and curator-authored history with no commit/report; apply requires `intent_note`, reanchors/indexes/validates the recovery worktree, restores bytes on refusal, skips edited targets and imports no history or commit. `memory_commit_message` and `CarryoverCommitMessages` are removed. `citation_fix` retains finite `documents`/singleton `document`, optional `contract_path` and `dry_run`; `expected_snapshot` and caller `exclude` are absent from its signature and scope construction.
+- `citation_fix` exposes optional `contract_path`; the short description names the ordinary leaf call and points to shipped tool-details for the full ordinary/pre-baseline admissions. The application guard still permits the configured converted root before its attributed baseline with no linked worktree. Route-index apply uses the same measured exception; other unscoped index calls remain read-only previews. Transport declarations do not bypass the application guard.
+
+- The public fixer signature makes `contract_path` optional; its short description gives leaf-call cues and points to `docs/tool-details.md`, but does not state the ordinary/pre-baseline admissions. Source caption: `citation_fix`
+- The index description names the pre-baseline admission an unscoped write needs and leaves the rest to the shipped tool-details; the read-only preview other unscoped calls get is the application guard's behaviour, not a qualification the description states. Source caption: `route_index_refresh`
+
+### Source and authority bounds
+
+- Source comparison: `mcp/src/agents_remember/mcp/registration/memory.py:19-35,38-132`.
+- Source comparison: `git diff HEAD -- mcp/src/agents_remember/mcp/registration/memory.py (drift_check/citation_migrate removed)`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Flat citation-preview declaration
+
+The retained `citation_fix` declaration adds flat `mode="sync"|"start"|"poll"` and optional `run_id` beside its repository, contract, document selection and `dry_run` arguments. Start is a preview only and polling repeats the admitted scope without document selectors. This flat interface is distinct from the memory-quality tool's discriminated `request` object. No background write mode is advertised or admitted.
+
+
+- The public declaration forwards mode, run ID and frozen selectors through one payload owner. [20]
+
+
+## Current source contract
+
+The memory-quality description names knowledgeWorklist state/path/digest/counts/unreadable inputs and knowledgeGate exact-tree verdict/finding counts in full leaf logs. It keeps validated curator_coherence separate and states that conversion, index building, formatting and worklist computation have no separate MCP tool. These descriptions do not change the admitted request or make the quality result semantic certification.
+
+- MQC docstring names knowledgeWorklist and knowledgeGate full-log fields and retains coherence boundary. [21]
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
 
 ## Governing Overview
 
@@ -22,23 +57,24 @@ already pass keywords. Registered tools are unchanged.
 
 ## Purpose
 
-`register_memory_tools(server, config)` declares the eight memory-root tools: `drift_check`,
-`memory_quality_check`, `route_index_refresh`, `memory_init`, `memory_baseline_status`,
+`register_memory_tools(server, config)` declares the eight memory-root tools: `memory_quality_check`,
+`citation_fix`, `route_index_refresh`, `memory_init`, `memory_baseline_status`,
 `memory_baseline_adopt`, `memory_carryover_plan`, `memory_carryover_apply`.
 
 ## Code Commentary
 
 ### Logic
 
-`memory_carryover_apply` publishes one `memory_commit_message`, packs it into
-`CarryoverCommitMessages`, and leaves approval intent separate. Its description names attributed
+`memory_carryover_apply` takes only approval intent and explicit review selections; the retired
+`memory_commit_message` and `CarryoverCommitMessages` are absent from its signature. Its description names attributed
 memory content and a ledger cache refresh; there is no ledger commit argument or ledger branch
 publication for callers to provide.
 
-The two read-only checks are named for what they measure: `drift_check` is the **task-start**
-worklist
-(classifies how far onboarding has drifted since it was last verified — a nonzero actionable count
-after code changes is expected, not a failure). A contract-scoped `memory_quality_check` is the
+The reference-anchor check and its repair are named for what they measure: `citation_fix` reports the anchors
+of onboarding cards and the validity of the tree — on converted memory how many anchors are current
+and how many are stale against the code, plus the knowledge validator's refusing findings. Whether an
+invariant is still current is answered by `knowledge_read` and `knowledge_integrity_check`, not here; a
+stale reference is reported and never blocks by itself, and nothing is repaired by this check. A contract-scoped `memory_quality_check` is the
 curator's full pre-closeout repair worklist and is repeated as the hard post-refresh closeout gate;
 `ok=false` means enforced findings exist, not that the tool failed. A full scoped call also replaces
 one operational checklist under the enclosure `reports/` directory and returns the zeroable
@@ -56,14 +92,19 @@ Three declarations pack:
 - `memory_baseline_adopt` — `source_branch` + `work_branch` become `MemoryBranches`.
 - `memory_carryover_plan` / `memory_carryover_apply` — the five refs the plan compares
   (`repo_id`, `source_memory`, `official_code_ref`, `source_code_ref`, `old_base`) plus
-  `replace_existing` become one `CarryoverSelection`, and apply's memory-content commit message becomes
-  `CarryoverCommitMessages`. The `intent_note` stays a separate argument: it is the approval, not
-  part of the selection.
+  `replace_existing` become one `CarryoverSelection`. The `intent_note` stays a separate argument: it is the approval, not
+  part of the selection, and apply takes no commit-message object.
 
 The mutating/approval-gated ones say so in their docstrings — `memory_baseline_adopt` commits attributed memory and refreshes the
 ledger cache and is gated on clean drift unless `accept_drift=true`;
 `memory_carryover_apply` may only run after the code has landed officially and after
 `memory_carryover_plan` has been reviewed.
+
+- **`citation_fix` on converted memory (L37 fix round P1b).** The registered tool's description now says that on
+  converted memory it authors the cards' citation rows into sidecar references and re-records moved anchors,
+  and that `document` then needs no `expected_snapshot` and scopes the run to that one card. The response still
+  carries the tree-wide `stale` reference list even for one document, so it can be very large; the CLI
+  (`memory-citations --fix --document`) returns the same JSON for a caller that needs to bound it.
 
 ### Conventions
 
@@ -73,50 +114,61 @@ Flat baseline/carryover arguments are packed into their application parameter ob
 
 - Carryover and baseline signatures stay flat and build their parameter objects in the body;
   memory quality deliberately publishes the one nested discriminated request object.
-- `drift_check` identifies update work; contract-scoped `memory_quality_check` must be repaired and
+- `memory_quality_check` identifies the repair work; contract-scoped `memory_quality_check` must be repaired and
   rerun by the curator before handoff, then repeated by closeout after real-commit metadata refresh.
 - Registration documents the checklist as the only write of a full scoped quality call: code and
   memory remain unchanged, and dirty-source/full-quality `ok` is not the curator's zeroable gate.
 - Memory-quality request modes are mutually exclusive and extra-forbid; no legacy `wait`/`run_id`
   overload or silent branch inference remains.
-- Quality execution lives in `application/memory_quality_controller.py`; other memory tools remain
+- Quality execution lives in `application/memory_quality/controller.py`; other memory tools remain
   in `application/memory_tools.py`. Registration chooses only the validated request variant.
 
 ### Todos
 
 No additional file-local TODO is established by this candidate review.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured in the resolved memory repository. The current
 contract is supported by the implementation and the authorized cache-retirement requirement.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured external domain source applies. | — | — |
+No configured external domain source applies.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Carryover registration declares one memory subject and describes the computed cache refresh. | `memory_carryover_apply` | mcp/src/agents_remember/mcp/registration/memory.py:212-242; mcp/src/agents_remember/mcp/registration/memory.py:261-292 |
-| The payload builders for the carryover plan and report-filing apply pair. | `memory_carryover_plan_payload` | mcp/src/agents_remember/mcp/tools/memory.py:232-243 |
-| The typed sync/start/poll payload builders. | `memory_quality_check_payload` | mcp/src/agents_remember/mcp/tools/memory.py:58-65 |
-| The `MemoryBranches` parameter object. | `MemoryBranches` | mcp/src/agents_remember/application/memory_tools.py:317-429; mcp/src/agents_remember/application/memory_tools.py:352-421 |
-| The `CarryoverSelection` parameter object. | `CarryoverSelection` | mcp/src/agents_remember/application/memory_tools.py:330-434; mcp/src/agents_remember/application/memory_tools.py:422-441 |
-| The `CarryoverCommitMessages` parameter object. | `CarryoverCommitMessages` | mcp/src/agents_remember/application/memory_tools.py:371-460; mcp/src/agents_remember/application/memory_tools.py:442-456 |
-| The payload builder for the carryover plan. | `memory_carryover_plan_payload` | mcp/src/agents_remember/mcp/tools/memory.py:232-243 |
-| The payload builder for the report-filing apply. | `memory_carryover_apply_payload` | mcp/src/agents_remember/mcp/tools/memory.py:225-246 |
-| The typed sync payload builder. | `memory_quality_check_payload` | mcp/src/agents_remember/mcp/tools/memory.py:58-65 |
-| The typed start payload builder. | `memory_quality_check_start_payload` | mcp/src/agents_remember/mcp/tools/memory.py:68-77 |
-| The typed poll payload builder. | `memory_quality_check_poll_payload` | mcp/src/agents_remember/mcp/tools/memory.py:80-89 |
-| The `citation_fix` registration and its caller-exclude parameter. | `citation_fix` | mcp/src/agents_remember/mcp/registration/memory.py:100-129 |
-| The scope object the excludes ride with. | `CitationOperationScope` | mcp/src/agents_remember/application/memory_tools.py:52-63 |
-| The one construction point that carries them into every citation operation. | `_citation_trees` | mcp/src/agents_remember/application/memory_tools.py:140-156 |
+
+
+
+
+- The `MemoryBranches` parameter object. [4]
+- The `CarryoverSelection` parameter object. [5]
+
+
+
+
+
+
+- The scope object the citation operations share: it carries one named document or a bounded list of them, and refuses both selectors, an empty list, or a list outside `citation_fix`. [12]
+- The one scope value the citation operations share: the application entry points default to `DEFAULT_CITATION_OPERATION_SCOPE`, and the registration constructs the named-document scope it passes in. [13]
+
+### Cross-Repo References
+
+No separate cross-repository implementation claim is made.
+
+No external implementation source applies.
 
 ## 260915-CAPS-L14 The Citation Surface Gains A Caller Exclude
 
-The registered `citation_fix` tool gained one optional parameter:
+**Retired, not current.** The caller `exclude` parameter described below is gone: `citation_fix`'s
+signature carries no `excludes`, `CitationOperationScope` no longer packs caller globs, and the
+`_citation_trees` construction point it fed was removed with the legacy citation router. What
+remains is the register every call still honours — the memory layer's
+`settings.json → onboarding.pathRules.exclude` and the code repository's `.gitignore`. The paragraphs
+below are the historical account of the retired parameter, kept as intent.
+
+Retired account: the registered `citation_fix` tool gained one optional parameter:
 
 ```
 exclude: list[str] | None = None
@@ -168,61 +220,66 @@ The registration advertises repository-only calls as official diagnostics and re
 polls to repeat the original contract path. It does not imply that repository id can select an
 acceptance pair.
 
-
-## Cross-Repo References
-
-No separate cross-repository implementation claim is made.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external implementation source applies. | — | — |
-
-## Update History
-- 2026-09-18T19:55:32+02:00 — 260915-KS-L23 residue clearance, seat B (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **cleared the one enforced `citation_anchor_absent_from_range` row in this document.** The parameter-object row cited `memory_tools.py:369-376`, which ends one line above `class CarryoverCommitMessages:` at `377`; the range was widened to `369-383` so it reaches the declaration and `DEFAULT_CARRYOVER_MESSAGES`. The claim, the anchor and the other range are unchanged. No claim was re-worded, no anchor or range was dropped to silence a row, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: `memory_carryover_plan_payload` repointed to mcp/src/agents_remember/mcp/tools/memory.py:232-243. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `memory_carryover_apply` repointed to mcp/src/agents_remember/mcp/registration/memory.py:261-292. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `memory_carryover_plan_payload` repointed to mcp/src/agents_remember/mcp/tools/memory.py:232-243. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-17T11:45+02:00 — 260915-CAPS-L14 curator: recorded the registered tool's new optional, keyword-only `exclude: list[str] | None` and what it does — caller-supplied, code-root-relative globs that narrow **one call's** acquisition on top of the register every call already honours (`onboarding.pathRules.exclude` plus the code repo's `.gitignore`), packed onto `CitationOperationScope.excludes` and carried through the shared `_citation_trees` construction point, with a meaningless pattern refused by name. Added the matching CLI note and the service-section above. **Flattened the Repo-Internal References table** from the legacy `| Finding | Citations | Source Path |` shape to the required `| Finding | Anchor | Source |` form: the rows carried `L212-L242`-style shorthand with a link instead of a plain `path:start-end`, and four of them cited parameter objects at stale line numbers, so every row was re-derived against the current source. Verification metadata is left at this leaf's synced base `0346da9c`; the candidate is deliberately uncommitted, so the governed closeout stamps the real code commit.
-
-- 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Aligned baseline/carryover registration descriptions and message packing with the derived-cache contract. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.
+- The drift description states the anchor measurement, the non-blocking stale rule, and the no-repair boundary. [14]
 
 
-- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=4345d17994bf47dcf3f795becd6e45481f2076058bb07d50090ad9ec2aa6101c; verification metadata remains unchanged because commit-owned realization is pending.
+</details>
 
 
-- 2026-08-29T21:46+02:00 — MCAR-L03: documented exact candidate polling and diagnostic-only
-  repository scope in the public tool description. Verification remains closeout-owned.
 
-- 2026-08-29T08:52+02:00 — Documented deterministic quality attestations and combined structured
-  coherence readiness. Verification remains closeout-owned.
 
-- 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: replaced flat wait/run-id branching with one strict discriminated request and typed adapter dispatch. Verification metadata remains pinned until architect-owned closeout.
 
-- 2026-08-20T21:30+02:00 — 260815-DAG-L15: `memory_quality_check` registration gained keyword-only
-  `wait`/`run_id` with start/poll dispatch (L15-R7); the synchronous path is unchanged. Verified at
-  code commit de3a0fd9.
 
-- 2026-08-15T23:38+02:00 — Reconciled this file's L4 role in task-derived integration authority and protected code/memory boundaries. Verification metadata remains closeout-owned.
+- Carryover registration declares a leaf-bound recovery application that reanchors, indexes and validates, requires intent_note, and carries no commit or imported history. Source caption: `memory_carryover_apply` [1]
 
-- 2026-08-15T09:10+02:00 — L3 content update: documented the paired structured curator
-  attestation on the public memory-quality tool; verification remains closeout-owned.
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
-- 2026-08-11T16:54+02:00 — Documented the single enclosure-local checklist side effect and the
-  curator-specific zeroable count/status while preserving code/memory read-only behavior.
-- 2026-08-11T14:40+02:00 — Clarified the contract-scoped quality tool as the curator's complete
-  pre-closeout worklist and regenerated shifted application-model citations; real-commit metadata
-  remains closeout-owned.
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the bare-`*` keyword-only signature remediation (PLR0917). Verification metadata stays pinned until closeout stamps the code commit.
-- 2026-08-04T16:40:00+02:00 — 260731-EFA-L6 S18-B12 curator correction (reviewer-BLOCK repair): expanded the payload-builder claim to cover both the carryover plan builder (163-174) and the report-filing apply builder (177-198); parameter objects and registration tests retained; the scoped fixer confirmed the final ranges with no writes.
-- 2026-08-03T02:57+02:00 — W3-B03 curator: curated 7 table citations for carryover payloads, branch selection, commit messages, and related tests; fixer-generated ranges verified.
+- The payload builders for the carryover plan and report-filing apply pair.  Anchor: `memory_carryover_plan_payload` [2]
 
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-07-31T15:31+02:00 — 260731-EFA-L2 curator: created with the package. The eight memory
-  declarations moved out of `server.py`; adopt and the carryover pair now pack their arguments into
-  `MemoryBranches` / `CarryoverSelection` / `CarryoverCommitMessages` in the body. Verification
-  metadata pinned to the pre-change commit until closeout stamps the L2 code commit.
+
+
+- The typed sync/start/poll payload builders.  Anchor: `memory_quality_check_payload` [3]
+
+
+
+- The payload builder for the carryover plan.  Anchor: `memory_carryover_plan_payload` [6]
+
+
+
+- The payload builder for the report-filing apply.  Anchor: `memory_carryover_apply_payload` [7]
+
+
+
+- The typed sync payload builder.  Anchor: `memory_quality_check_payload` [8]
+
+
+
+- The typed start payload builder.  Anchor: `memory_quality_check_start_payload` [9]
+
+
+
+- The typed poll payload builder.  Anchor: `memory_quality_check_poll_payload` [10]
+
+
+
+- The `citation_fix` registration with its one-card or bounded-card selectors, optional `contract_path` and `dry_run`; no caller exclude is declared. Source caption: `citation_fix` [11]
+
+
+
+- Baseline adoption forwards accept_drift without bypassing legacy-card or validator refusal; stale code/test references still fail exact paired staged-tree validation before any baseline is published. [15]
+
+
+
+- Registration exposes converted worktree-only carryover and finite citation selectors without retired commit-message, caller-exclude or expected-snapshot arguments. [18]
+
+
+
+Retained authoring-row wording:
+
+Finding: Memory health, baseline and carryover declarations retain their models and request discriminators, but payloads and operation-only memory request types are resolved on the matching call.  Anchor: `_register_memory_health_tools`
+
+Anchor:
+
+Source: mcp/src/agents_remember/mcp/registration/memory.py
+
+- Memory health, baseline and carryover declarations retain their models and request discriminators, but payloads and operation-only memory request types are resolved on the matching call.  Anchor: `_register_memory_health_tools` [19]

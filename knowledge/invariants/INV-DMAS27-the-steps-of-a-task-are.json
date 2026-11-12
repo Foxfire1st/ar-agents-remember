@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake",
+      "spans_locations"
+    ],
+    "justification": "Whole declared progress and one next-step mark prevent a visually bounded table from lying about the task; the state derivation and table live separately."
+  },
+  "applicability": "Task-tool responses and dashboard major-step summaries, compact marks and the complete Steps table with nested detail.",
+  "conditions": [
+    "Heading counts and compact marks contain one unit per major step; the full table retains nested rows.",
+    "A done major is never visually uncompleted by a nested unit.",
+    "An unfinished major with an inProgress or done child displays current before blocked/next fallback; nested rows never receive the page next mark."
+  ],
+  "exclusions": [
+    "Drawing nested notes, which is deferred separately.",
+    "Changing canonical task step state."
+  ],
+  "id": "INV-DMAS27",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/panels/detail-panel/page-look.test.tsx: 'draws mark, number, title and state per step, with the progress in the heading', 'marks the first step that is not done as the next one'"
+      ],
+      "path": "ingest-new-obligations.json"
+    },
+    "handoffEntry": "MIK-R127@v1 rule 10 (c)",
+    "leaf": "260928-MIK-L127",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "The task Steps table retains mark, number, title and state for all major and nested units, while heading counts and compact marks count only major steps. A done major remains done; begun or done children can make an unfinished major current, and the first unfinished major is next only after current/blocked precedence. Display state does not rewrite canonical task state or completion readiness.",
+  "status": "proposed",
+  "supersedes": []
+}

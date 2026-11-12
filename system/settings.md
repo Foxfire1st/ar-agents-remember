@@ -4,7 +4,7 @@ This is the committed memory settings file for the `agents-remember` shared memo
 
 ## Scope
 
-The sibling `settings.json` is the machine-readable source for onboarding storage, path eligibility, and cross-repo policy for this memory repo.
+The sibling `settings.json` is the machine-readable source for onboarding storage, path eligibility, cross-repo policy and the landing workflow for this memory repo.
 
 This memory repo is selected by the local coordinator at `C:\ew\ar-coordination`, but durable repo policy belongs here, not in the untracked coordinator settings.
 
@@ -29,6 +29,26 @@ operational helpers under `scripts/**`, and the authority-settings example
 under `examples/mcp/**`. These routes are eligible for onboarding in
 `settings.json` so drift detection sees the MCP server, application-layer,
 provider adapter, settings-template, and non-runtime script changes.
+
+Canonical skills under `skills/**` are eligible for onboarding. Their generated
+package copy under `mcp/src/agents_remember/package_data/runtime/skills/**` is
+excluded: its durable knowledge belongs to the canonical skill cards, not to a
+second set of cards for generated text. The unused root-level `runtime/**`
+include is absent because this code repository has no root `runtime/` tree.
+The existing benchmark and dashboard package-data exclusions remain in force.
+
+## Landing Workflow
+
+`landing.workflow` selects how a landing reaches this repository's master line: `local`, the default
+and what a missing key means, keeps the integration-then-push flow; `pull-request` publishes each
+landing as a merged pull request, pushes the integrated commit once to `land/<task slug>`, merges it
+with a merge commit and pulls the master. One value governs the code and memory pair, and nothing
+else selects the workflow. Any other value is refused by name where it is read.
+
+This repository is set to `pull-request`; the PR-gate rulesets are set by the approved publication
+run rather than assumed present before it. The steps and
+their exact forms are in `system/task-publication.md`, which is the one landing and publication file;
+`system/git-workflow.md` is retired into it.
 
 ## Cross-Repo Policy
 

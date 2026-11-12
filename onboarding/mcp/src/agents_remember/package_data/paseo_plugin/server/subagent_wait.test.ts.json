@@ -1,0 +1,40 @@
+{
+  "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/subagent_wait.test.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "101639061673ec6f576386b27b2010923ab87bfa",
+        "content": "sha256:fcb762e148d229ef91e9edad2c6f2cddddb7b8a4bd48c59dd11ac6e43f741171",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-CTP2DY",
+      "invariant": "INV-60H3WR",
+      "origin": {
+        "handoffEntry": "MIK-R60@v9.8",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "A Codex (non-ACP) seat's helper declaration is a declared wait.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The module declares eighteen test cases for the helper-wait contract; declarations and assertions do not establish an invocation or pass.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "101639061673ec6f576386b27b2010923ab87bfa",
+            "content": "sha256:fcb762e148d229ef91e9edad2c6f2cddddb7b8a4bd48c59dd11ac6e43f741171",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "MIK-R190 rules 6 to 8 put one reader, one atomic file and one judgement across the bridge, the serving tick and the task state, each covered by tests."
+  },
+  "applicability": "Every limit the product attributes to a role seat, on every send path except the presenter's.",
+  "conditions": [
+    "The host's usage report for that seat is the only source of a limit and of its reset.",
+    "One reader writes one file, and every other reader reads that file only; a report holds work solely on an exhausted account-wide window with a future reset.",
+    "An enabled extra usage or a positive credits balance releases the seat, and a read happens only at a new stamped turn end."
+  ],
+  "exclusions": [
+    "Chat text, error strings and model names produce no limit, and no API key or login store is read.",
+    "No usage figure is displayed beyond the limited word and its hover.",
+    "An agent with no report, or a full window without a future reset, is not limited."
+  ],
+  "id": "INV-BCXFH9",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "role-launch/L184-S4-freeze.md; role-launch/L184-S4-evidence-index.md"
+      ],
+      "path": "writer-draft-03.json"
+    },
+    "handoffEntry": "NEW-LIMIT-FROM-REPORT-ONLY",
+    "leaf": "260928-MIK-L184",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A limit comes from the host's usage report only: one reader, one file, one answer at a time, and no assumption that produces a limit.",
+  "status": "proposed",
+  "supersedes": []
+}

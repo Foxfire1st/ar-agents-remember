@@ -1,0 +1,42 @@
+{
+  "path": "mcp/src/agents_remember/package_data/paseo_plugin/index.server.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "6e18511522c13b788d0e816048572920e1b61bbe",
+        "content": "sha256:6f9debf8323aeec75a6945a00d84741e7f185424c71622eb7ebf376915fb71b1",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-4RGXR2",
+      "invariant": "INV-VDWN33",
+      "origin": {
+        "handoffEntry": "INV-VDWN33",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "This is the plugin's one handler for both calls, so the number crosses the boundary here.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The server entry reads the embed list at load and registers the existing embed RPC.\n\nAnchor: `23-26`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6e18511522c13b788d0e816048572920e1b61bbe",
+            "content": "sha256:35ecc2899a8c36630d942bdebe99144e8e526d74f6e49718f19a83d8009715dd",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 42
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

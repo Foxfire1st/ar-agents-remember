@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/worklistState.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Synthetic gate-owned worklist states check rendered answered ROW witness text, stale and undecided reasons, legacy-side explanation and comparison-bound per-file/worklist summaries. The helper case supplies witness='counted change' but asserts only the verdict-state result '1 open'; it does not assert rendering of that witness text. Client presentation never decides gate acceptance.\n\nAnchor: complete renderer and helper assertion phases",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "564412688e38ab54c14c334c6a4cfb84b67f3214",
+            "content": "sha256:86fdd739bd65b2844aba3ee68074fb2722f99317c0167b58db9f62441216646b",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

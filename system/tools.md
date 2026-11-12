@@ -5,10 +5,9 @@
 ## Code Discovery And Analysis
 
 - Onboarding
-- CGC
-- Grepai
+- Native search and direct source reads
 
-Note: `C-04-retrieval-strategy-router` documents the usage of these context retrieval tools.
+Note: `C-04-retrieval-strategy-router` governs retrieval here. Its CGC and GrepAI substrates are retired, and it prescribes native search and direct source reads.
 
 ---
 
@@ -113,6 +112,18 @@ developer-requested quality run remains lifecycle-owned; focused host results do
 
 ---
 
+### Generated-copy checks
+
+From the source repository root, with its registered development Python environment, run the current canonical generators in check mode:
+
+```text
+python scripts/sync-projection-types.py --check
+python scripts/sync-skills.py --check
+python scripts/sync-runtime.py --check
+```
+
+These check the retained projection, skill and runtime copies. Repair a mismatch through its canonical owner and regenerate; do not edit a generated carrier by hand or restore retired mirrors.
+
 ### Ruff
 
 Ruff handles Python linting, import sorting, and formatting. The active rules are defined in `pyproject.toml`.
@@ -183,6 +194,103 @@ coverage artifacts as diagnostics. A direct host result cannot replace that auth
 
 ---
 
+### Task Worktree Environments
+
+Every command a task runs on its candidate (a test, a lint, a type check, a
+script of its own) runs in an environment built in the task's own code
+worktree, with the candidate's source installed — never with the primary
+checkout's interpreter, whose installed product is the primary checkout's
+source.
+
+Build it with the one command, run from the code worktree root. Fresh intake:
+
+```text
+scripts/bootstrap-mcp-venv.sh
+```
+
+After a sync that changed the lock file (`mcp/uv.lock`), the same script with
+the explicit recreation flag (an existing environment is never overwritten
+implicitly):
+
+```text
+scripts/bootstrap-mcp-venv.sh --replace
+```
+
+Run it at intake, before the first command on the candidate, and again after
+such a sync. The script reuses the shared canonical Python runtime after
+verifying it (no write there when it is valid; rebuilt from verified source
+only when it is not) and writes the environment itself below the worktree
+only, at `mcp/.venv`. With `--replace` the previous environment is moved
+aside under a name carrying the worktree's directory name and the second
+(`agents-remember/venv-backups` under the cache home) and removed again after
+the successful recreation, so no backup of the run is left; a failed
+recreation keeps its candidate there for diagnosis under the same naming.
+That cache, like `uv`'s own package cache, is tool scratch, not the candidate.
+Rule 1 in short: a run touches nothing of the primary checkout and nothing of
+another worktree. The `uv` on PATH must be `AR_UV_VERSION` from
+`scripts/python-runtime-contract.env` or newer; the script compares decimal
+version parts, prints the used version/path, and installs no uv. Self-updating
+installs (for example snap) are supported. Missing, older, unreadable or
+failed version output is refused before environment creation or movement,
+without an interpreter fallback. The certified container keeps installing
+exactly the contract uv, and the exact Python runtime checks are unchanged.
+
+Run every command on the candidate with the worktree's own interpreter,
+`<code worktree>/mcp/.venv/bin/python`:
+
+```text
+mcp/.venv/bin/python -m pytest ...
+```
+
+The worktree environment installs the candidate editable, so its own `mcp/src`
+is on that interpreter's path without any `PYTHONPATH`. `mcp/test_support` is
+not installed — it is test-only support — so commands that use it keep
+`PYTHONPATH=mcp/test_support`, and only that.
+
+A script run outside pytest (a script of its own, a one-line probe) runs with
+the worktree's interpreter and shows which source it ran:
+
+```text
+<code worktree>/mcp/.venv/bin/python script.py
+```
+
+The script prints the file it actually imported (for example
+`agents_remember.__file__`), so its record shows the candidate ran, not the
+landed product. No `PYTHONPATH` is set for `mcp/src`: the worktree environment
+installs the candidate editable.
+
+Operating the product is not testing the candidate: the AR tools an agent
+calls and the product's command line for memory operations are the landed
+product. The candidate is run only in its own environment.
+
+Dashboard tasks only: a task that builds or tests the dashboard installs its
+modules in the worktree with `npm ci`, run in the worktree's `dashboard/`.
+Other tasks install nothing there.
+
+---
+
+### Test Catalogs
+
+The two test catalogs are `mcp/tests/test-evidence-lanes.toml` (the lane of every test file) and
+`mcp/tests/evidence-lifecycle.toml` (the governed test artifacts and their consumers). One module
+validates both and, with `--write`, rewrites both to canonical form. Run it from the source
+repository root with the worktree's own interpreter (`mcp/.venv/bin/python`, built as
+Task Worktree Environments above says) and with `mcp/test_support` on `PYTHONPATH`
+(`mcp/src` needs none: the worktree environment installs the candidate editable):
+
+```text
+PYTHONPATH=mcp/test_support mcp/.venv/bin/python -m agents_remember_test_support.testing.evidence_lifecycle --project-root .          # Validate both catalogs.
+PYTHONPATH=mcp/test_support mcp/.venv/bin/python -m agents_remember_test_support.testing.evidence_lifecycle --project-root . --write  # Rewrite both catalogs to canonical form.
+```
+
+- Run the validator after any change to a catalog and before a commit; the fast hook tier runs it
+  too, and it prints each finding or `evidence-lifecycle: PASS`.
+- Run the command with `--write` after adding a test file's line to its lane, after deleting or
+  moving a test file, after a merge or sync that touched a catalog, and whenever a finding names
+  the command.
+
+---
+
 ### CRAP-Calculator
 
 CRAP-Calculator combines Radon function-level cyclomatic complexity with Coverage.py JSON statement-and-branch coverage. It reports function-level CRAP scores and derives a per-file rollup from those function scores.
@@ -232,6 +340,7 @@ become production CRAP inputs.
 The host-side deterministic hook and PR check may run these from `dashboard/`:
 
 ```text
+npm run codegen      # panda codegen; create checkout-local generated styles before typecheck.
 npm run lint         # eslint .
 npm run typecheck    # tsc -b
 ```
@@ -313,12 +422,15 @@ the whole stack on one side, but that is untested/unsupported; do not build work
 
 ## Release And Changelog Convention
 
-Moved to [`git-workflow.md`](git-workflow.md): the `mcp-vX.Y.Z` tag scheme (→ PyPI publish), the four
-version-bump locations that must stay in sync, the `Release MCP X.Y.Z: …` commit subject, the
-PR-gated end-to-end release flow (land via PR, then tag the merged commit), and the GitHub Release
-format. This repo keeps release notes in **GitHub Releases**, not a `CHANGELOG.md`.
+Moved to [`task-publication.md`](task-publication.md#the-ordinary-development-landing-and-releases):
+the `mcp-vX.Y.Z` tag scheme (→ PyPI publish), the version-bump locations that must stay in sync, the
+`Release MCP X.Y.Z: …` commit subject, the PR-gated end-to-end release flow (land via PR, then tag
+the merged commit), and the GitHub Release format. This repo keeps release notes in **GitHub
+Releases**, not a `CHANGELOG.md`. `system/git-workflow.md` is retired; this is its surviving home.
 
 ## Testing Policy Reconciliation
 
 - 2026-09-06T21:35:26+00:00 — Reconciled testing guidance to IAS d3610903 source policy: bounded host development suites, diagnostic coverage/production CRAP 20, and master-end full-suite/review ownership. No new verification result is claimed.
 - 2026-09-18 — The collected-case-budget paragraph above was restated at the value the repository actually enforces and now names its home: root `pyproject.toml` `[tool.pytest.ini_options]`, `unit_case_budget = 2300` (`:244`) and `integration_case_budget = 400` (`:245`), measured rather than copied (`grep -n 'case_budget' pyproject.toml` in the `260915-KS-L23` code worktree, code HEAD `2dcacb27`, 2026-09-18T18:17+02:00). It previously read **1000 unit /150 integration** — a stale reading that the root `pyproject.toml` has not enforced since the line grew past it, and one that would have made a terminal reader report the whole accumulation as hundreds of cases over budget. The paragraph now says the pair moves and where the raise history lives; the growth doctrine it carries is unchanged and no rail was lowered. `system/git-workflow.md`'s matching sentence was corrected in the same pass.
+
+The current declared pair is 10000 unit and 2000 integration selected cases at root pyproject.toml:333-334. The 2026-10-26 integration raise from 1000 to 2000 adds headroom while preserving both over-budget refusal directions; it does not weaken a case or move cases between lanes. Its source comment records scenario-level measurements (18.56/20.15 s original, 19.70 s grouped, 27.47 s repaired v2, 38.20 s v3), not whole-suite runtime. The 2026-09-18 2300/400 measurements above remain historical.

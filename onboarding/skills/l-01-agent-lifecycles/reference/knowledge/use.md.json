@@ -1,0 +1,130 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/knowledge/use.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "cf08e8157e068057d468f3f2c751344fcd1838cc",
+        "content": "sha256:b6c59a6eae3d3bbe1c83e40fba8fc2c26f4827f108e5491203c53cec52f4839d",
+        "locator": {
+          "end": 29,
+          "kind": "line_range",
+          "start": 29
+        }
+      },
+      "id": "RLZ-HFFGHH",
+      "invariant": "INV-QGHZ02",
+      "origin": {
+        "handoffEntry": "R73-R3-R8",
+        "leaf": "260928-MIK-L73"
+      },
+      "rationale": "The knowledge-use detail an agent reads before a knowledge read defines both counts once: the unresolved-anchor count covers anchors not established against their exact recorded blob, and currentness counts describe the named invariant population, including related invariants selected by expansion.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Knowledge and code reads are used together, and stale memory is labelled.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf08e8157e068057d468f3f2c751344fcd1838cc",
+            "content": "sha256:352d299899ecd6421cbce47b0b8a6f11b6cd8a62dbb5eeb9101bdab79b31cec2",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Reads bind the selected memory and code pair, page to completion and open named records, siblings, proofs and code.\n\nAnchor: `continuation`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf08e8157e068057d468f3f2c751344fcd1838cc",
+            "content": "sha256:ef66b633bf750bece0f2dad580a1259471c071a93239f6c422a6ffd2c153d83d",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 11
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Recorded proofs are not passing runs, and gaps and counts are reported without claiming completeness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf08e8157e068057d468f3f2c751344fcd1838cc",
+            "content": "sha256:2c76c3eef6ae563704aac4b0345e7779468e83acfc1fb8c307cc59f0c521040a",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 27
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Setting facts come from their owning source.\n\nAnchor: `server_info`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf08e8157e068057d468f3f2c751344fcd1838cc",
+            "content": "sha256:e07994749484189f4f01e220b70b550bf96f66dcd9e8b259ac974c628a4447da",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 31
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Role sections apply attribution to diagnosis, investigation, editing, failing tests and review without filtering the diff.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf08e8157e068057d468f3f2c751344fcd1838cc",
+            "content": "sha256:d52fe755f52601f5e0b2b58ad4ad4d22a9aafb6b943c22d30aab13d43a6e8944",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 35
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The Reviewer role links the Reviewer section when inspecting changes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:6276f61bb90fb517f1f42e8583cbafca5bfd28dd34ebec8780dbc2d7baa594b9",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 70
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

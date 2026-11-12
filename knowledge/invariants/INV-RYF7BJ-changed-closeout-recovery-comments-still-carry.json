@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "Realized across 2 files that together perform the obligation."
+  },
+  "applicability": "Changed closeout and recovery documentation.",
+  "conditions": [
+    "The seven listed provenance spans are removed; the technical explanations and MIK-R09 citations remain."
+  ],
+  "exclusions": [
+    "Runtime behavior or policy; none changed."
+  ],
+  "id": "INV-RYF7BJ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.md; closeout_external.py:265,271,277,331,364; closeout_recovery.py:68-69"
+      ],
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "L26-CX-N03",
+    "leaf": "260928-MIK-L26",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Changed closeout/recovery comments still carry review provenance that the source-comment doctrine routes to history and reports.",
+  "status": "retired",
+  "supersedes": []
+}

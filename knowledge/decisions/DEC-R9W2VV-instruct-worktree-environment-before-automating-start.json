@@ -1,0 +1,66 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Instruction-only setup and automatic worktree-start setup were weighed; the measurement threshold governs when the deferred implementation may be reopened."
+  },
+  "alternatives": [
+    {
+      "option": "Document setup at intake and after lock-changing syncs in repository tool notes, with generic role pointers.",
+      "reason": "Use the existing mechanism with minimal product changes, then measure whether the instruction reaches every new task.",
+      "status": "chosen"
+    },
+    {
+      "option": "Build the environment as an automatic step of worktree_start now.",
+      "reason": "The requirement explicitly excludes automation until the instruction has been measured.",
+      "reconsider_when": "Fewer than ten of the first ten task starts after landing have a local environment before their first candidate command.",
+      "status": "deferred"
+    }
+  ],
+  "consequences": [
+    "The Manager records the next ten starts; failure returns to the Architect for an automation task.",
+    "Candidate commands do not fall back to the primary interpreter when setup fails."
+  ],
+  "context": "Candidate commands can import primary-checkout source on a borrowed environment, while the existing worktree-local bootstrap already provides the required mechanism.",
+  "decider": "Developer D209 as approved in MIK-R136@v1; measurement and exclusions in rules 8 and Scope.",
+  "id": "DEC-R9W2VV",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-2FS4D1"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-4AQ26N"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R136",
+        "packet": "requirements/MIK-R136-v1-a-task-worktree-has-its-own-environment.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "requirements/MIK-R136-v1-a-task-worktree-has-its-own-environment.md"
+      ],
+      "path": "writer-projection-final.json"
+    },
+    "handoffEntry": "curator-instruction-first-choice",
+    "leaf": "260928-MIK-L136",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

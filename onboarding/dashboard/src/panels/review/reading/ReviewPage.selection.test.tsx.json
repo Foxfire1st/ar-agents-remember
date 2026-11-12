@@ -1,0 +1,179 @@
+{
+  "path": "dashboard/src/panels/review/reading/ReviewPage.selection.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "fda1bd182d9dcd2d6547fdd2a153189624103456",
+        "content": "sha256:3fd27440114bcffb029374173e1f4cdcc5d2127ec4acd8222e12e516928c1a98",
+        "locator": {
+          "kind": "symbol",
+          "name": "names a change the reviewed task did not write with one chip that names its source"
+        }
+      },
+      "facet": "A mounted invariant selection with no owner judgment/meaning step and a supplied crossing-owner after writer shows one chip naming that exact source, with the supplied writer detail as its title.",
+      "id": "PRF-8293Z3",
+      "invariant": "INV-MRHE25",
+      "origin": {
+        "handoffEntry": "RP21_REVISION_WRITER",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fda1bd182d9dcd2d6547fdd2a153189624103456",
+        "content": "sha256:8ff7f3ea9b82a4bb7eba852a6dd28d3489eb603dec36a675a9d6949797cd1e3f",
+        "locator": {
+          "kind": "symbol",
+          "name": "toggles the tree with [ and the chat with ], never in a text field"
+        }
+      },
+      "facet": "In the actual review surface, [ in the filter leaves the tree open; [ on document.body closes it, ] invokes the supplied chat toggle, both controls have their sidebar names, and clicking the retained tree toggle reopens the tree. This proves the rendered shared-control binding and tree open-state transition; it does not measure released width, hidden-node focus or actual browser geometry.",
+      "id": "PRF-8V7B50",
+      "invariant": "INV-7QYXJP",
+      "origin": {
+        "handoffEntry": "RP16",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fda1bd182d9dcd2d6547fdd2a153189624103456",
+        "content": "sha256:33dc136cefc6dea624e9dc6872699d32d2825bb3577432cf8d94565dcdfb964f",
+        "locator": {
+          "kind": "symbol",
+          "name": "shows nothing for no family and keeps the provenance in the closed Technical details"
+        }
+      },
+      "facet": "With no family member rows and carried before r2/after r4, the selected invariant meta line reads revision 2 → 4; the Technical details fold stays closed and carries revision-id provenance.",
+      "id": "PRF-9V39EC",
+      "invariant": "INV-P1QKHK",
+      "origin": {
+        "handoffEntry": "RP15",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fda1bd182d9dcd2d6547fdd2a153189624103456",
+        "content": "sha256:bedcbb840e2d8feb0ec274d6bc0b74cf4b29871de79e0547bad2d14befe15e39",
+        "locator": {
+          "kind": "symbol",
+          "name": "opens unselected with one line when a hunk names a span its file does not hold"
+        }
+      },
+      "facet": "A forged hunk span with matching file/tree identity is rejected; the outside-selection line appears and the crumb contains no selected lane file.",
+      "id": "PRF-FXTYQT",
+      "invariant": "INV-WRKBDD",
+      "origin": {
+        "handoffEntry": "RP06",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fda1bd182d9dcd2d6547fdd2a153189624103456",
+        "content": "sha256:998f796402d5513d6c6a39f60afa718ef2e21c95d19aa15de5aab0f8a8fece92",
+        "locator": {
+          "kind": "symbol",
+          "name": "restores a hunk its file holds on reload"
+        }
+      },
+      "facet": "A genuine mapped hunk span restores the lane file crumb without an outside-selection warning.",
+      "id": "PRF-TTJVZR",
+      "invariant": "INV-WRKBDD",
+      "origin": {
+        "handoffEntry": "RP06",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fda1bd182d9dcd2d6547fdd2a153189624103456",
+        "content": "sha256:c77252e50d976761574dae536bca8e2123686fa82d968dbd00a31964ef038254",
+        "locator": {
+          "kind": "symbol",
+          "name": "opens unselected with one line when the selection names another comparison"
+        }
+      },
+      "facet": "A URL entry identity with another code candidate tree opens unselected and reports the shown comparison number.",
+      "id": "PRF-YK11VZ",
+      "invariant": "INV-WRKBDD",
+      "origin": {
+        "handoffEntry": "RP06",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fda1bd182d9dcd2d6547fdd2a153189624103456",
+        "content": "sha256:6782fad8a16c4b5e84a341d81b261e4a92a2d358f40c020260e55748d8320b63",
+        "locator": {
+          "kind": "symbol",
+          "name": "restores a block selection on reload"
+        }
+      },
+      "facet": "Reloading a comparison-bound entry URL selects a card containing that entry and shows no outside-selection warning.",
+      "id": "PRF-ZSKFYW",
+      "invariant": "INV-WRKBDD",
+      "origin": {
+        "handoffEntry": "RP06",
+        "leaf": "260928-MIK-L89"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "4": {
+      "note": "Subject-read/landing ownership, URL restore admission and reader-choice precedence.\n\nAnchor: \"describe('a selection', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fda1bd182d9dcd2d6547fdd2a153189624103456",
+            "content": "sha256:eff08595dfaf0ad3c40e548f1d9149c5ce298ed3eb8450a1ff782ceb920d2cac",
+            "locator": {
+              "end": 558,
+              "kind": "line_range",
+              "start": 74
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Keyboard routing and text IDs without synthesized raw state tokens.\n\nAnchor: \"describe('the keys', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fda1bd182d9dcd2d6547fdd2a153189624103456",
+            "content": "sha256:259f6bbec607278ad351a87b00183a02018bd28935a42d958aac326744c9b6be",
+            "locator": {
+              "end": 558,
+              "kind": "line_range",
+              "start": 307
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Selected content order, measure state, provenance placement and carried-writer chip.\n\nAnchor: \"// MIK-R89 v2 rules 1 and 6, amended 9dde2b09 (D396; mockup `selected`): the selected invariant reads\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fda1bd182d9dcd2d6547fdd2a153189624103456",
+            "content": "sha256:a3df08ab72604c97a69bc362c66aba28d2ad0e3ad86ece3034f509bae6d26d35",
+            "locator": {
+              "end": 558,
+              "kind": "line_range",
+              "start": 401
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

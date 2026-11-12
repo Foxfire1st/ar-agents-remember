@@ -1,0 +1,66 @@
+{
+  "condition": "CODE318f526d serving/direct_execution_grants.py:394-417 and application/direct_execution_grants.py:494-517 call _restore_removed_grant then re-raise the started-leaf refusal. Both helpers suppress FileExistsError and OSError from exclusive recreation. kernel/direct_execution_grants.py:272-290 can fail at directory/temp creation, write or exclusive link before republication. Alternatively another legitimate product giver can publish its own grant before restoration; the read/prove locks end before unlink/publication.",
+  "failure": "A post-removal start refusal on either grant route does not always restore the exact removed record or establish full serial consistency, contrary to INV-X16RQH@1. The governing promise is not narrowed and no CODE review is reopened.",
+  "id": "FLM-9AMM3X",
+  "links": [
+    {
+      "relation": "threatens",
+      "target": "INV-X16RQH"
+    },
+    {
+      "relation": "occurs_at",
+      "target": {
+        "blob": "3b2e61b1dfe9332f457c2c5f314203d0c01605b2",
+        "content": "sha256:26d04b2a38cdd166e0a325fa0b50a1ddf43dd82fc851cd2297e7eb5c45d39562",
+        "locator": {
+          "end": 417,
+          "kind": "line_range",
+          "start": 394
+        },
+        "path": "mcp/src/agents_remember/serving/direct_execution_grants.py"
+      }
+    },
+    {
+      "relation": "occurs_at",
+      "target": {
+        "blob": "8bce679174c74431e089a0291f70867a5aa614f7",
+        "content": "sha256:77da97b4b3163217f2a2114f812004a240d7ee7caa1b0496bb642e3a580998c2",
+        "locator": {
+          "end": 517,
+          "kind": "line_range",
+          "start": 494
+        },
+        "path": "mcp/src/agents_remember/application/direct_execution_grants.py"
+      }
+    },
+    {
+      "relation": "occurs_at",
+      "target": {
+        "blob": "cd80a35ddf162f3b0ef4f5521a0771cb5516b674",
+        "content": "sha256:87458a35e1375e8c5a11831fc1b8dbd65c8a3feacaf7c37f13de07ab4b302a4a",
+        "locator": {
+          "end": 290,
+          "kind": "line_range",
+          "start": 272
+        },
+        "path": "mcp/src/agents_remember/kernel/direct_execution_grants.py"
+      }
+    }
+  ],
+  "observable_effect": "An exclusive-recreation OSError can leave the removed grant absent while the ordinary started-leaf refusal propagates without restoration-failure evidence. FileExistsError instead preserves another giver's grant, avoiding clobbering legitimate content; it proves neither restoration of the exact removed record nor full serial consistency. Exclusive no-overwrite is not full transaction serialization, and this record grants no authority to overwrite that giver. Both are conditional source-supported branches, not executed failure incidents.",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Architect ruling notes/run3/L81-C01-C02-ARE-INHERITED-GAPS-RECORDED-AS-FAILURE-MODES-NO-CODE-REOPEN-RULING.json, SHA2567b3d93b2ef5be8a9e0b6b569493e4cc527b89665aa59ef56c9081ceae3ec27e3; no CODE reopen or invariant narrowing.",
+        "Curator code-concerns-A004.json SHA256b8baf5078cda98e03a3cf2c75b6ff76092ecd0eac2fb74ab29106d5106038ea1, Worker 260928-MIK-L81-A004-worker-code-intent-answer.md SHA25626a57881db492b68b3dcd8071704964c20b404fe75d6bb714e56dea6c4b9accb and Reviewer L81-A004-C01-C02-source-answer.md SHA25697ae9f2bd001a5ee85837a8a7e43cb9425f886d03e2f34a1068e76709dfae5e9 authenticate the CODE318f526d branches. Static source inspection, not an executed failure incident or fresh test verdict; conditional behavior confidence high."
+      ],
+      "path": "additional-handoff-A004.json"
+    },
+    "handoffEntry": "L81-A004-C02-inherited-grant-restoration-gap",
+    "leaf": "260928-MIK-L81",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-failure-mode/v1",
+  "status": "proposed"
+}

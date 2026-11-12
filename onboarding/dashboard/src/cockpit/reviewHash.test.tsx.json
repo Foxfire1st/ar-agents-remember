@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/cockpit/reviewHash.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A selection pushes one history entry and replaces only when the page restores itself, so back steps through choices the reviewer actually made",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b76ec18d1f34f5e6d98b79f47227b2344cd8fb03",
+            "content": "sha256:889b18a3de712d27c06b5da6a4cc7c46be52c565a9d1916b22311012c968f591",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 12
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,40 @@
+{
+  "path": "dashboard/src/panels/engine-room/engines.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The branch-node renderer with landing/pruned registers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "efb364dc374fa80ecd59103fe9f95d72b224e6ee",
+            "content": "sha256:e194f41623f1cc3a215c0f2f16e86ea0647034b09cf9fa2df064108f892beb8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "BranchNode"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "engines.tsx now exports BranchNode only, with ref-derived flags/materialisation, pruned style, full title/truncated bran — source ownership, not executed visual proof.\n\nAnchor: `function branchFlags(refNode: CommitRefNode): string {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "efb364dc374fa80ecd59103fe9f95d72b224e6ee",
+            "content": "sha256:0e0667d744dbb8ef27086a4c00432339ee0ec0aecaf7cdc9127d5d48438423fb",
+            "locator": {
+              "end": 115,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

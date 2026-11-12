@@ -1,0 +1,55 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_worklist/classification_context.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "One request owner holds the classifier, exact candidate, pairing and computed paths.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2cd431100b2a049cb57eba23f2933df888c5aaf7",
+            "content": "sha256:c9e89c6e88392ff7a1ce2f644d24979416d7146b10fa2ed7e60f1bb579f54c25",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorklistClassification"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Exit restores context and releases the run’s held references on success or failure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2cd431100b2a049cb57eba23f2933df888c5aaf7",
+            "content": "sha256:4c2bea9c1ace39283ddfec0c3201560b281e229bc6f87017657ece68149a3634",
+            "locator": {
+              "kind": "symbol",
+              "name": "classification_run"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Path facts distinguish gate placements from exact-blob reviewer attribution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2cd431100b2a049cb57eba23f2933df888c5aaf7",
+            "content": "sha256:b8ade746687e776264f9f3f29bb1c72b0a00978bb048f28c7a1e7de9e41b2b84",
+            "locator": {
+              "kind": "symbol",
+              "name": "PathClassification"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

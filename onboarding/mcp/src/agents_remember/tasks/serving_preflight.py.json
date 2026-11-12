@@ -1,0 +1,186 @@
+{
+  "path": "mcp/src/agents_remember/tasks/serving_preflight.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c6e11097e656d8498dbf5547fc69b3c6e2c2415b",
+        "content": "sha256:a828a1a48ab25657eb35d0865484ba389ad596c71b4e3863104e2b99fafbaf9e",
+        "locator": {
+          "kind": "symbol",
+          "name": "require_serving_topology_schema"
+        }
+      },
+      "id": "RLZ-AZ22GM",
+      "invariant": "INV-KZ2JWB",
+      "origin": {
+        "handoffEntry": "MIK-R97@v9 part F item 8",
+        "leaf": "260928-MIK-L97"
+      },
+      "rationale": "Its refusal tells the user to upgrade the served build and names no page.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "c6e11097e656d8498dbf5547fc69b3c6e2c2415b",
+        "content": "sha256:0930c0b07c079357a44b3da8dfcd71c60d8d3f95e1f4419731b10532376029f3",
+        "locator": {
+          "end": 6,
+          "kind": "line_range",
+          "start": 1
+        }
+      },
+      "id": "RLZ-QSSF1B",
+      "invariant": "INV-RARXRD",
+      "origin": {
+        "handoffEntry": "MIK-L36@v10 e3",
+        "leaf": "260928-MIK-L36"
+      },
+      "rationale": "The module docstring is what a maintainer reads before changing the preflight; naming a shipped candidate there would date the guidance to a version that no longer exists.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "2": {
+      "note": "The preflight gate is now the model self-probe alone: `require_serving_topology_schema` refuses when the running build's `TaskDocument.model_fields` lack the topology fields. The installed-distribution leg and its helpers `_installed_distribution`, `_is_editable_install`, `_below_floor`, and `TOPOLOGY_SERVING_VERSION_FLOOR` no longer exist in the tree — a task-plane edit never consults the installed distribution version.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6e11097e656d8498dbf5547fc69b3c6e2c2415b",
+            "content": "sha256:fac227a51a54c44e4733c2e7d0f21732f9e26ae459d49d9d00af124e8c25c15d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Wired before any write in graph authoring.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f4b96d14134c7f273b63b9edbcd7fd526cb4edc",
+            "content": "sha256:c1cb47083688bd094e270a8e868c48206d6f1b4bf0b9bdf43a6d1c223aa4aaab",
+            "locator": {
+              "kind": "symbol",
+              "name": "author_execution_graph"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_execution_topology.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Wired into ordinary topology-emitting edits.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f4b96d14134c7f273b63b9edbcd7fd526cb4edc",
+            "content": "sha256:babfe5f9134bfabe5055aa70139caad0b58e78abe7e12972a0c1a18eef1afcdb",
+            "locator": {
+              "kind": "symbol",
+              "name": "enforce_execution_topology_edit"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_execution_topology.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f4b96d14134c7f273b63b9edbcd7fd526cb4edc",
+            "content": "sha256:eaa96c502a1d79807c3490f0a45edd68e3a14de904f31a6ba9e0b9d3079d1d33",
+            "locator": {
+              "kind": "symbol",
+              "name": "_edit_emits_topology_schema"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_execution_topology.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Wired into sprint attach/detach through the linkage wrapper.\n\nAnchor: `_require_serving_topology_schema` `attach_master` `detach_master`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3eac2f250183dcad51cc9ef6846d7f4053faf7de",
+            "content": "sha256:3256aebe343be59dfaacad233edb618791ab8f162665152f9f77588e57a3c9e9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_sprint_context.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a0b5ad238d8c829320217d9994826ecc6c88a546",
+            "content": "sha256:dd847fac2054b56fec8c6aafd65ddde455cec04d2d3a8376a61d1425c527e52a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3eac2f250183dcad51cc9ef6846d7f4053faf7de",
+            "content": "sha256:0ef2f37134fef4448284a56592d961fa3b0a41359bce4c67f64d14ed1f0aafc6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_serving_topology_schema"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_sprint_context.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a0b5ad238d8c829320217d9994826ecc6c88a546",
+            "content": "sha256:393877c0e1e64555cf962130e7e0fb578829342498f1400a58e16c45c3739b0d",
+            "locator": {
+              "kind": "symbol",
+              "name": "attach_master"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a0b5ad238d8c829320217d9994826ecc6c88a546",
+            "content": "sha256:11f4304273aa5fe945df91e055c91fdd2cc2c7b9d77262802d2b9ff81bf05b56",
+            "locator": {
+              "kind": "symbol",
+              "name": "detach_master"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The retirement probe refuses when the running model has no `retirement` row field.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6e11097e656d8498dbf5547fc69b3c6e2c2415b",
+            "content": "sha256:82fd6bdc8ca3bc80cd92dc3a3b9769dcbf9c20bd5282766e4764b7105b23401e",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_serving_retirement_schema"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

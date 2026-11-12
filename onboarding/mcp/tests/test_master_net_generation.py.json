@@ -1,0 +1,159 @@
+{
+  "path": "mcp/tests/test_master_net_generation.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "36ceb1d30a00e7763b864061d9798f98f1f499ff",
+        "content": "sha256:5ea39bfe771cc4cfa3f32862e75c2a3950a75dd0fa8a51049a86a17f331a8837",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_master_net_is_served_again_from_its_endpoint_commits"
+        }
+      },
+      "facet": "A second read of the same master net adds no net diff and no sidecar decision, and both bodies are byte-identical.",
+      "id": "PRF-4C8VH4",
+      "invariant": "INV-ZNXX7H",
+      "origin": {
+        "handoffEntry": "L174-A12-master-net-attribution",
+        "leaf": "260928-MIK-L174"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "36ceb1d30a00e7763b864061d9798f98f1f499ff",
+        "content": "sha256:c1d5f13edb4b7801f534b198ccea6fe396361264cc17ce14d330daf23f4da5b7",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_master_nets_sidecar_flags_follow_the_onboarding_index"
+        }
+      },
+      "facet": "A rewritten onboarding route index moves the net's hasSidecar flag on the next read, so the flags are observed inputs rather than a frozen value.",
+      "id": "PRF-S3X30D",
+      "invariant": "INV-ZNXX7H",
+      "origin": {
+        "handoffEntry": "L174-A12-master-net-attribution",
+        "leaf": "260928-MIK-L174"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The evidence lane the module runs in.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36ceb1d30a00e7763b864061d9798f98f1f499ff",
+            "content": "sha256:0753257dc2b79f881f380b8681aa5ded3b4e356b794086776ece0c5b7a215bb4",
+            "locator": {
+              "kind": "symbol",
+              "name": "pytestmark"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The shared master-shaped world (series + two leaf contracts, real code/memory repos) and its builder.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36ceb1d30a00e7763b864061d9798f98f1f499ff",
+            "content": "sha256:6610fde6b6f5f5e66b29c98373ed90dd5658de16b3ed546c0752b0812678c478",
+            "locator": {
+              "kind": "symbol",
+              "name": "MasterFixture"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "36ceb1d30a00e7763b864061d9798f98f1f499ff",
+            "content": "sha256:da4755e888c8a60ec4f80217ad367562e7a2231c8a260f515d8aa953e8473c15",
+            "locator": {
+              "kind": "symbol",
+              "name": "master_fixture"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "36ceb1d30a00e7763b864061d9798f98f1f499ff",
+            "content": "sha256:f11d5e51f1ab9605ce8b8663ef3914c1f96782ec8089fecf63e91488e25e5a72",
+            "locator": {
+              "end": 245,
+              "kind": "line_range",
+              "start": 241
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The conforming add-then-remove case and the F1 diff-failure refusal case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36ceb1d30a00e7763b864061d9798f98f1f499ff",
+            "content": "sha256:2de796bf3226f012ae5d15a82940e8c11b88c163c9e563dfd6aca2252a8cb15e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_two_leaves_that_add_then_remove_a_file_net_to_exactly_zero"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "36ceb1d30a00e7763b864061d9798f98f1f499ff",
+            "content": "sha256:398c37fd83c45f70e118cb5189cab9138f7430313e39f00de2a13865ea403c7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_diff_failure_after_validation_is_refused_never_reported_as_zero"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The lane manifest registers mcp/tests/test_master_net_generation.py in unit-regression. Membership selects evidence and does not establish execution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5691b694e756469475d783c426d9781ef14c8633",
+            "content": "sha256:5411749dbd3b184fb122907bb2b8bcf744cb6f96b7f6b3bb3af87b6b3157ba5b",
+            "locator": {
+              "end": 309,
+              "kind": "line_range",
+              "start": 309
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The selection under test (endpoint binding, digest, currentness, refusal) and the thin entry that publishes it.\n\nAnchor: `select_master_net`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "content": "sha256:1444b2e010878f824abb27a9e29ef4d5fbd94c32bd3f1fd4216395a4873a9cbc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

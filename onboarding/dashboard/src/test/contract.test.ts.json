@@ -1,0 +1,433 @@
+{
+  "path": "dashboard/src/test/contract.test.ts",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a9f5518c01093d319450274b1110efb3863c2d4b",
+        "content": "sha256:dac3149d3496821ecf20600a66b60e17e2a979fef504f5ac4c4b968fb8f01a44",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-78S7A2",
+      "invariant": "INV-XZYGEB",
+      "origin": {
+        "handoffEntry": "INV-XZYGEB",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "A hand-maintained sample guard: it reaches the rows it samples, their assignability and the vocabulary they happen to cover. Exhaustive producer/client schema parity belongs to the code generator and its stale-output check, so this case is sample reach, not schema equality.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The lifecycle-operation phase registry lists no ledger publication phase; sample membership and coverage checks apply to it.\n\nAnchor: `projection.enclosures[].lifecycleOperation.phase`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9f5518c01093d319450274b1110efb3863c2d4b",
+            "content": "sha256:7b2e8561af60bd70bd330372facdb6992fdbc9c12ab324b7c2ecf41deedbb78e",
+            "locator": {
+              "end": 379,
+              "kind": "line_range",
+              "start": 357
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The retained inverted field pin is the single EngineProcessEdge.refusedPolarity case: an @ts-expect-error access must remain invalid while the example edge keeps state stale. The suite does not retain the former createdAt/linkedLifecycleId master/series pins; this is source-defined typecheck evidence, not a fresh typecheck or test run.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9f5518c01093d319450274b1110efb3863c2d4b",
+            "content": "sha256:d298a937273b3dad38489bd65d5b05ba363512ed26b8fbaaf91ba8c86e35b011",
+            "locator": {
+              "end": 672,
+              "kind": "line_range",
+              "start": 649
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The generated mirror's metric and analytics declarations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
+            "content": "sha256:c7cd986e0c3afd707786bcb06aa53e098b36857db0a07a118a047c40018ea2e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "Analytics"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
+            "content": "sha256:3392bfcc22276f192aed9fa84c970db0395da4b0b61a2f84855546c3b833b504",
+            "locator": {
+              "kind": "symbol",
+              "name": "Metrics"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The sanctioned narrowing the fixture enters through.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "390e10afba18e0b24c3be759f12f90011179665f",
+            "content": "sha256:12df43ff00e9127957d3b1b6424e4bd3dd39c9d43b08489a2906d08c6dee0cf7",
+            "locator": {
+              "kind": "symbol",
+              "name": "asServedProjection"
+            },
+            "path": "dashboard/src/test/servedProjection.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Persisted projection state is written by `write_projection` with omitted `None` values.\n\nAnchor: `write_projection`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
+            "content": "sha256:6f85a783f40f8df5c8afb659c5f7da8114cd5c3877c48f66578a5e8b5479dfb8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
+            "content": "sha256:4e230865600527cbd76449ad81e48c3805d260a223450cbbf622a20ae6f603b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_projection"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The other half of the claim: this file makes the MIRROR honest; the guard makes the FIXTURES honest.\n\nAnchor: `projection`; \"This file makes the FIXTURES honest\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a638463e5b64ab2206752784eae0cb1426ad8637",
+            "content": "sha256:19ce2bbc6b38863728b1d9d5c3634cf4065296a982b4988bc428c9980485d82c",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a638463e5b64ab2206752784eae0cb1426ad8637",
+            "content": "sha256:ea1acfc19fc5f9efabd2579b0931bb02b2f813054f37dd37262c8a1fb1b7ef5a",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "The Python source of truth is in-repo, and its docstring states the served contract is client-agnostic rather than owned by any external consumer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ada1520ab5545be71a00dae1420683fd0b82938",
+            "content": "sha256:55e210a8091ad416654531913b0655918344ee0eed84e84cbe4658faa8c2204a",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "The closed-vocabulary registry includes all four task-list disagreement kind values; its existing sample guard is not live record reconciliation.\n\nAnchor: `projection.tasks[].disagreements[].kind`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9f5518c01093d319450274b1110efb3863c2d4b",
+            "content": "sha256:4702e8f1c22c87b316bc5960140f33aee33c233d8de194bd0de9154f558e5c3c",
+            "locator": {
+              "end": 288,
+              "kind": "line_range",
+              "start": 283
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "The vocabulary registry binds the build currentness mode and state paths to their value sets.\n\nAnchor: `projection.buildCurrentness.mode`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9f5518c01093d319450274b1110efb3863c2d4b",
+            "content": "sha256:05ef17ff8d029a1d4388fe37db6cba4fd4a2ce7868995049962f4aa1de6c9643",
+            "locator": {
+              "end": 279,
+              "kind": "line_range",
+              "start": 278
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The contract test's inverted TypeScript pins are registered as an explicit fixture-guard allowance.\n\nAnchor: `SANCTIONED_WIRE_SITES`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a638463e5b64ab2206752784eae0cb1426ad8637",
+            "content": "sha256:8c574945484876085ce2c0a763e3e28e1c157d90bddede766c1192d225eb6e6d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a638463e5b64ab2206752784eae0cb1426ad8637",
+            "content": "sha256:5402c58fb9157f5c0f6f1cfe48c98da4fe05f9996a471b5d6577f8457181aae8",
+            "locator": {
+              "kind": "symbol",
+              "name": "SANCTIONED_WIRE_SITES"
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The header: three fixture-coverage seams, the double cast that disabled checking, and the boundary now closed by schema codegen.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9f5518c01093d319450274b1110efb3863c2d4b",
+            "content": "sha256:b36d2c9a19492b83b43e61ac317732f0235aae7ad1f654383d9d4a4c1120445b",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 26
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "`ServedOnlyPaths` + `mirrorMustDeclare` — the `mirror ⊇ served` direction, naming the path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9f5518c01093d319450274b1110efb3863c2d4b",
+            "content": "sha256:b11c19a7afaf928444a3387cf589035b202a9705875f862b421afb105b61137e",
+            "locator": {
+              "kind": "symbol",
+              "name": "mirrorMustDeclare"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a9f5518c01093d319450274b1110efb3863c2d4b",
+            "content": "sha256:367a6705c7e082772c2ab64762c11d6ba092925cf0e23758d83aeb34ff8b6b84",
+            "locator": {
+              "kind": "symbol",
+              "name": "ServedOnlyPaths"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "`MirrorOnlyPaths` + `KnownUnsampled` + `fixtureMustSample` + `allowlistMustStayEarned` — the oracle guarded, including why an empty array is worse than a missing field.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9f5518c01093d319450274b1110efb3863c2d4b",
+            "content": "sha256:067c7cb0057daca1daf72ef6d9f79f740202aa50b23b2731754db291185bd979",
+            "locator": {
+              "kind": "symbol",
+              "name": "allowlistMustStayEarned"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a9f5518c01093d319450274b1110efb3863c2d4b",
+            "content": "sha256:77239ba352a111c3c40f271e0f00cfbe46702e2215d52a4e2a61f8d1963fc990",
+            "locator": {
+              "kind": "symbol",
+              "name": "fixtureMustSample"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a9f5518c01093d319450274b1110efb3863c2d4b",
+            "content": "sha256:d095b290529584141a460e5399674c3c90273d68829c76680c4db755a4299fa8",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnownUnsampled"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "AbsorbingPaths derives every string-index-signature boundary and INDEX_SIGNATURE_SITES is an exhaustive, closed Record of that derived path set, with reasons for opaque nodes in the current native-entry shape. The current literal registry has 10 keys; this is an observed census, not a fixed schema-count contract. The source test requires at least one sampled value and a nonempty reason at every registered site. Verification-age histogram and gate/ask sites are absent; drift counts are present.\n\nAnchor: `reaches every node the mirror leaves unwalkable, and says why each one is opaque`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9f5518c01093d319450274b1110efb3863c2d4b",
+            "content": "sha256:4bce69eaa9645ba5566f4a0e67cba692db90a38e54177e3135ef2a6038858381",
+            "locator": {
+              "kind": "symbol",
+              "name": "AbsorbingPaths"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a9f5518c01093d319450274b1110efb3863c2d4b",
+            "content": "sha256:5f4c30debe3ba7585b95d5bf042cea2c32186e94e03e81eb6ebeb727b01bf45a",
+            "locator": {
+              "kind": "symbol",
+              "name": "INDEX_SIGNATURE_SITES"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a9f5518c01093d319450274b1110efb3863c2d4b",
+            "content": "sha256:02d4fb8493e000904244cba921ee08000e6fbcf9580c57dee8f961d386344ee2",
+            "locator": {
+              "end": 560,
+              "kind": "line_range",
+              "start": 550
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "`ClosedUnionPaths` + `VOCABULARIES` — every registered path bound to its value set, replacing hand-written checks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9f5518c01093d319450274b1110efb3863c2d4b",
+            "content": "sha256:d26ae637afa45924006bf866acfe3280d4982349eeb1b86b2097b5fdcd1183d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "VOCABULARIES"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a9f5518c01093d319450274b1110efb3863c2d4b",
+            "content": "sha256:9d3fcc8856b251a5ece4655841b3880d565cd7ec7f97e4f47f8aa5b4da14b799",
+            "locator": {
+              "end": 277,
+              "kind": "line_range",
+              "start": 246
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Sample vocabulary assertion: every registered path is reached and every carried value is declared by its vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9f5518c01093d319450274b1110efb3863c2d4b",
+            "content": "sha256:d26ae637afa45924006bf866acfe3280d4982349eeb1b86b2097b5fdcd1183d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "VOCABULARIES"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a9f5518c01093d319450274b1110efb3863c2d4b",
+            "content": "sha256:990940ed55ea9b857b23d30d0b037a09ab1d6d81bc3410767572ce1ed42685b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "UnsampledMirrorPaths"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a9f5518c01093d319450274b1110efb3863c2d4b",
+            "content": "sha256:9f40ef5c4b3b9762397b7362fd44cecab6a8e1a6673f1ee6a2614327eb092eb5",
+            "locator": {
+              "end": 574,
+              "kind": "line_range",
+              "start": 563
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

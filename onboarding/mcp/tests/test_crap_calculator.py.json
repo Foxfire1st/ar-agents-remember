@@ -1,0 +1,55 @@
+{
+  "path": "mcp/tests/test_crap_calculator.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Crap score formula uses coverage ratio.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f2c0026282eb52e4a5149118e61000667df0dc9c",
+            "content": "sha256:cb3bab11643f519f7902ae0a00a8dd2e9a4ef5efc229cc35f0072b94e42d9c82",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_crap_score_formula_uses_coverage_ratio"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Calculates function scores from radon and coverage json.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f2c0026282eb52e4a5149118e61000667df0dc9c",
+            "content": "sha256:1d313d7abccee4501a1207a089473959f3285a1138fcfbd79b98c327a8b0f0be",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_calculates_function_scores_from_radon_and_coverage_json"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A report without branch measurement is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f2c0026282eb52e4a5149118e61000667df0dc9c",
+            "content": "sha256:cb42ebe86cd4f02aa9b36d041ee90b20092af8f4462295f0811561ce2216955f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_report_without_branch_measurement_is_refused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

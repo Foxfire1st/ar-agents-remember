@@ -1,0 +1,59 @@
+{
+  "path": "dashboard/src/data/screenWakeLock.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Deferred sentinel tests cover acquisition coalescing and release.\n\nAnchor: \"acquires while visible and releases on stop\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "399260ade269069643de571c452b462f52bbfbcd",
+            "content": "sha256:dfe5ee675b47f6a0087a49fec32eca12766fa501429c8cceb477fe16c0c226ba",
+            "locator": {
+              "end": 116,
+              "kind": "line_range",
+              "start": 108
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The production owner holds one sentinel at a time.\n\nAnchor: \"export function startScreenWakeLock\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "505865bf7a78f9816dc2d5544162cf9c0e92c3b0",
+            "content": "sha256:d05028051981d2375d0e5ca8492c2362d04fc9c29f6792fcfefdc33be44bb058",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "dashboard/src/data/screenWakeLock.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "This is local browser-API test coverage.\n\nAnchor: \"reacquires after a UA-initiated release while still visible\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "399260ade269069643de571c452b462f52bbfbcd",
+            "content": "sha256:147ba47527dda306589c3a4a2b8b4386990adcfe4f44a7b8286751858abf8158",
+            "locator": {
+              "end": 126,
+              "kind": "line_range",
+              "start": 118
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

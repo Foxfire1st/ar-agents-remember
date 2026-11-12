@@ -2,112 +2,70 @@
 
 | Field | Value |
 | --- | --- |
-| repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/application/runtime/` |
-| doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-30T17:08:05+02:00 |
-| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` |
-| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
-| governingOverview | `../overview.md` |
 
 ## Governing Overview
 
-[application overview](../overview.md)
+[overview](../overview.md)
+
+## What This Area Is
+
+This package binds runtime configuration to the application's MCP startup and runtime-install operations. It supplies the application seam between transport registration and the lower services; provider, benchmark, worktree, memory and task operations remain in their own application modules.
 
 ## Hot Path Summary
 
-Use `startup.py` for trusted MCP process preparation, application collaborators, and the typed
-serving-build gateway used by MCP registration; use `install.py` for runtime-install delegation
-and `skills.py` for packaged skill deployment.
+Use `startup.py` for trusted MCP process preparation, application collaborators and the typed serving-build gateway. Use `install.py` for runtime-install composition; the skill-install entry point that used to live here is removed, because the tool server serves the canonical skills from its package copy.
 
-## What Belongs Here
+## How It Is Built
 
-Focused application entry points that bind runtime configuration to startup, runtime installation,
-or skill installation. Provider, benchmark, worktree, memory, and task operations remain in their
-own application modules.
+### Startup and measurement identity
 
-## Operating Model
+Startup declares MCP process ownership before authority settings are loaded. Application initialization installs the workspace tool-event writer only; it neither creates an ambient lifecycle collaborator nor migrates identity logs. The event writer captures this server's caller from its launch binding; an unreadable binding is treated as an unbound chat for event recording rather than preventing startup. Outside-scratch reconciliation and optional dashboard supervision are separate from collaborator initialization. Process preparation only declares ownership. After producing a tools/list answer, the server schedules the joint `start_after_discovery` owner with `loop.call_soon`; a first tool call reaches the same once-per-process latch for a client that never lists. The first attempt starts the sweep even without config, while dashboard autostart requires config/settings. The sweep's heavy worktree owner runs in a one-shot child with stdin disconnected from the MCP protocol; later lists or calls start neither piece again. Producing the answer is the scheduling boundary; this source order does not establish when protocol bytes reach the client.
 
-Startup declares process trust before configuration-backed authority is used, migrates the
-MCP-owned durable logs, installs ambient lifecycle state, exposes the cached serving-build as a
-strict wire payload to the higher-ranked MCP adapter, and optionally starts dashboard supervision.
-Installation modules remain thin translations into their service owners.
+`mcp_serving_build_payload()` exposes the process's cached boot identity to MCP registration. `measuring_build_stamp()` wraps that payload as `servingBuild`: version, boot time, source digest, Python executable, package root, commit and dirty state name the producer of a measurement. That producer can differ from the candidate being measured; a serving-build count must not be represented as execution by the candidate's code. The boot identity is resolved once, so requesting the stamp copies the payload rather than probing each time.
 
-## Local Invariants And Traps
+### Installation
 
-- Do not introduce a package-level mega-facade or import-time process mutation.
-- Keep live coordination ownership separate from the dashboard-owned notifier log.
-- MCP adapters do not import serving-domain owners directly; startup owns that application seam.
-- Runtime and skill install entry points accept typed config/options; they do not accept arbitrary
-  host roots that bypass resolved settings.
+Runtime installation delegates to the lower runtime service, then provisions or previews the configured host. The entry retains the earlier result, adds the host report as `host`, and conjoins the earlier and host `ok` values: a failed host step makes the combined result false without discarding the earlier steps. It then refreshes a running dashboard to the installed build, or on a dry run only plans that refresh, leaving an absent dashboard stopped; an observed dashboard's action is reported as `dashboard`, and a failed or lock-held refresh makes the result false. Last, it reports the running MCP and dashboard servers with their build currentness as `runningServers`.
 
-## File-Level Onboarding Map
+Skill installation has no entry point in this package: `skills.py` was removed with the skill-install surface, and no harness skill root is resolved or written anywhere in the install path.
+
+### File-Level Onboarding Map
 
 - [`__init__.py.md`](__init__.py.md) — side-effect-free package marker.
-- [`install.py.md`](install.py.md) — runtime installation application entry point.
-- [`skills.py.md`](skills.py.md) — skill installation application entry point.
-- [`startup.py.md`](startup.py.md) — MCP process trust, migration, ambient state, and supervision.
+- [`install.py.md`](install.py.md) — runtime installation, host-result composition, running-dashboard refresh and running-server report.
+- [`startup.py.md`](startup.py.md) — MCP trust declaration, launch-bound workspace event collaborator, measurement identity and optional supervision.
 
-## Child Overviews
+There are no child overviews. Begin with the operation's file card and follow its lower-service references; MCP payload and registration mechanics remain in their own routes.
 
-None.
+## Invariants And Boundaries
 
-## Repo-Internal References
+- Keep these entry points focused; do not introduce a package-wide mega-facade or import-time process mutation.
+- Keep live coordination ownership separate from the dashboard-owned agent notifier log.
+- MCP adapters reach serving-build identity through this application seam, not by importing serving-domain owners directly.
+- Installation accepts typed configuration/options, not arbitrary host roots that bypass resolved settings.
+- A source checkout's execution mode is an authority boundary, not a diagnostic convenience. Undeclared primary-checkout execution refuses; undeclared linked-checkout execution selects disposable leaf-local coordination rather than live authority. An ordinary measurement must use its admitted producer, not imitate a trusted daemon or pytest declaration to reach another root. Checkout isolation does not claim to sandbox arbitrary Python or shell filesystem access.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Startup owns MCP process declaration, collaborator installation, and the serving-build payload gateway. | `declare_mcp_process`; `initialize_mcp_application`; `mcp_serving_build_payload`; `prepare_mcp_process` | mcp/src/agents_remember/application/runtime/startup.py:22-27; mcp/src/agents_remember/application/runtime/startup.py:30-33; mcp/src/agents_remember/application/runtime/startup.py:54-56; mcp/src/agents_remember/application/runtime/startup.py:59-62 |
-| Runtime installation is a thin typed delegation. | `run_runtime_install` | mcp/src/agents_remember/application/runtime/install.py:15-19 |
-| Skill installation resolves the configured harness skill root and delegates the copy. | `skills_install_tool` | mcp/src/agents_remember/application/runtime/skills.py:13-30 |
+No Domain Documentation source is configured. No cross-repository implementation dependency governs this route.
 
-## Docs References
+## Evidence
 
-No Domain Documentation source is configured.
+- Preparation is declaration-only. list_tools produces its answer before scheduling start_after_discovery, and call_tool reaches the same latch as fallback. The sweep attempt consumes the latch even without config; dashboard autostart needs config/settings. The heavy sweep owner is imported only in a one-shot child with stdin=DEVNULL. Source order does not attest client receipt.
 
-## Cross-Repo References
+## Retirements
 
-No cross-repository implementation dependency governs this route.
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/mcp/server.py:93-127 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit dc03c64a91947cee470622c560c516854eec86b5. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
-## How To Use This Area
+- Startup owns MCP process declaration, collaborator installation, and the serving-build payload gateway. [1]
 
-Start from the operation-specific sidecar, then follow its service-layer references for mechanics.
-Keep MCP payload/registration concerns at their own routes.
+- Measurement identity names the cached serving producer, not the candidate being measured. [5]
 
-## 260915-KS-L23 The Route Now Says Which Build Measured
+- Undeclared source-checkout execution is isolated or refused, rather than admitted to live coordination by a diagnostic workaround. [6]
 
-`startup.py` gained the one function that makes every measurement in this master's tool surface
-attributable: **`measuring_build_stamp()`** (`startup.py:36`). It reports the build a caller is
-actually executing — `version`, `bootedAt`, `sourceDigest`, `pythonExecutable`, `packageRoot`,
-`commit` and `dirty` — and it exists because of **D-33**: the MCP tool surface executes a *fixed
-serving build*, not the candidate's own code, so a `memory_quality_check` or `citation_fix` count
-produced during a leaf could not be told apart from a count produced by the leaf's own tree. The
-stamp is now carried by the memory-quality and citation responses, which is what lets a reader name
-the ruler for any count instead of assuming it.
+- Runtime installation composes the lower service result with the public host step at the application entry. [2]
 
-The two rulers this route's own stamp distinguishes, measured 2026-09-18 by the leaf's curator:
+- The composition with the host part. [4]
 
-| Ruler | `packageRoot` | `commit` | `dirty` |
-| --- | --- | --- | --- |
-| serving build (the MCP tool surface) | the main checkout's `mcp/src/agents_remember` | `f0313143` | `False` |
-| worktree-bound (the candidate's own code) | `…/260915-ks-l23-ar/260915-ks-l23/mcp/src/agents_remember` | `c5a74a85` | `True`, `sourceDigest sha256:229170c6…` |
+- Startup installs only the workspace tool writer, snapshots its launch-bound caller once and falls back to an unbound chat when that binding cannot be read. [7]
 
-**One trap the same route carries, measured while taking that worktree-bound run.** An *undeclared*
-interpreter running from a linked worktree is classified by
-`kernel/primitives/checkout_coordination.py:checkout_cli_location` as checkout-CLI mode, so
-`load_config` swaps in the leaf's synthetic dev coordination root
-(`<worktree group>/provider-runtime/dev-ar-coordination`) and every configured-contract authority
-check then refuses with `ConfiguredContractAuthorityError(side="task", name="coordination-root")` —
-the contract lives in the real coordination root. A worktree-bound run must therefore declare
-itself first (`declare_test_process()`, the same call pytest's bootstrap makes); with that
-declaration the run resolves the real authority and writes nothing outside the enclosure's
-`reports/`.
-
-## Update History
-- 2026-09-18T17:30:57+00:00: Generated citation repair: `declare_mcp_process`; `initialize_mcp_application`; `mcp_serving_build_payload`; `prepare_mcp_process` repointed to mcp/src/agents_remember/application/runtime/startup.py:54-56; mcp/src/agents_remember/application/runtime/startup.py:22-27; mcp/src/agents_remember/application/runtime/startup.py:30-33; mcp/src/agents_remember/application/runtime/startup.py:59-62. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-18T19:14+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): **added the L23 section for `startup.py`'s `measuring_build_stamp()`** — the function item 26 adds so a count names the build that produced it (D-33), the two rulers it distinguishes side by side as measured, and the linked-worktree authority trap a worktree-bound run has to declare itself out of. The route's `## File-Level Onboarding Map` and every other claim are unchanged; the reference row for `startup.py`'s older surface is left to the citation engine. No verification stamp moves: `startup.py` is modified in the delivered working tree and closeout owns the stamp. **No route impact on any child's own contract** — the change is inside `startup.py`, whose sidecar carries it.
-
-- 2026-08-30T17:08:05+02:00 — ARSPAWN-L4 Dagger repair: recorded the typed application boundary
-  between MCP registration and serving-build ownership. Verification remains closeout-owned.
-
-- 2026-08-13T08:40+02:00 — Created for the L23 package move that groups runtime startup, runtime install, and skill install application operations without adding a new facade. Verification metadata remains closeout-owned.
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/mcp/server.py:93-127 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit dc03c64a91947cee470622c560c516854eec86b5. Retired means the anchor no longer stands, not that the cited subject was deleted [8]

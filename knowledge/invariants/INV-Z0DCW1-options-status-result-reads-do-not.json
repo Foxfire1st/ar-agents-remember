@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "family_guarantee"
+    ],
+    "justification": "Spans options/status/result reads and message delivery: reads never collect or delete folders, and delivery proceeds with collection failure reported separately — the non-mutating-read half of FAM-2BRZW7."
+  },
+  "applicability": "Every options, status or result read and every role-message delivery.",
+  "conditions": [
+    "The read path projects receipt state without touching the filesystem.",
+    "A delivery whose report collection fails still proceeds, with the failure returned separately."
+  ],
+  "exclusions": [
+    "Collection or deletion as a side effect of a read.",
+    "Blocking delivery on collection failure."
+  ],
+  "id": "INV-Z0DCW1",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/role-launch/260928-MIK-L71-worker-d508f3cc-d109-host-readers/source-current-a1b7/source26-public-sync/generation15-five-pin-successor/expanded-evidence.md"
+      ],
+      "path": "l71-handoff-list.json"
+    },
+    "handoffEntry": "L71-CURRENT242-W-11",
+    "leaf": "260928-MIK-L71",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Options/status/result reads do not collect or delete report folders. Delivery of a role message proceeds even if its report collection fails, with the collection failure returned separately.",
+  "status": "proposed",
+  "supersedes": []
+}

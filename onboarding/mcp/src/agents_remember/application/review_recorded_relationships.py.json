@@ -1,0 +1,99 @@
+{
+  "path": "mcp/src/agents_remember/application/review_recorded_relationships.py",
+  "realizes": [],
+  "references": {
+    "14": {
+      "note": "The module owns the union items and the per-snapshot identity index [14]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eff71e0efee061868a1de136b9196b90add9e999",
+            "content": "sha256:71c191eba1829189e31c94cfa4fec3130df35a9e20560b93be7aae715b47f0f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_snapshot_relationships"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "One snapshot as the traversal reads it [15]\n\nAnchor: \"class RecordedSnapshot:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eff71e0efee061868a1de136b9196b90add9e999",
+            "content": "sha256:67dd30f48c1ed2a3c8a543a2655a96a757420e879cade0ca022fdd4bc46a60a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecordedSnapshot"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eff71e0efee061868a1de136b9196b90add9e999",
+            "content": "sha256:c09a0de3a24babafcaf1e8ed4ab8989a0f6cb2312dab805f8d46771209fb1785",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 53
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Three relationship kinds with the identity each sits under [16]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eff71e0efee061868a1de136b9196b90add9e999",
+            "content": "sha256:8e4347aa37ddac9d748cbeb089cb6cebaed658daf4910b229fec9ad4110a13c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_RELATIONSHIP_KINDS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "One union item's payload for one side [17]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eff71e0efee061868a1de136b9196b90add9e999",
+            "content": "sha256:7b693f373842feb093fce6a7f376f260d54ab05c6700b61c44e7807f79dbd409",
+            "locator": {
+              "kind": "symbol",
+              "name": "side_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The comparison's own change statement, carried verbatim [18]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eff71e0efee061868a1de136b9196b90add9e999",
+            "content": "sha256:510346bde3071a0fc89249d1fa2ebafd0e5a858a2c510eef26e41b45874a6142",
+            "locator": {
+              "kind": "symbol",
+              "name": "recorded_change_state"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "The member boundaries together protect the end-to-end promise: a concern alone cannot constrain writes or remediation, and a slot guard alone cannot preserve request/report identity and primary-chat ownership."
+  },
+  "guarantee": "A caller-owned sprint/master Investigator selection admits only its authorized non-leaf scope, keeps the complete not-closed set within eight slots across both starts and completed-recipient new turns, and preserves each selected request UUID through bounded listing, exact reports, replay, Retry, Revive and dashboard remount without replacing the primary document coordinator.",
+  "id": "FAM-3NG1K9",
+  "members": [
+    "INV-68QN0P",
+    "INV-VZJRTM",
+    "INV-0EASG7",
+    "INV-A0240E",
+    "INV-BS7TH8"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "notes/reports/role-launch/260928-MIK-L98-curator-89a3f43e-2fd9-4e77-94ac-ff94bdf3b836.A02-curated-handoff.json"
+    },
+    "handoffEntry": "selected-investigator",
+    "leaf": "260928-MIK-L98",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp/src/agents_remember/cli",
+    "mcp/src/agents_remember/application",
+    "mcp/src/agents_remember/models",
+    "dashboard/src/cockpit"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Selected Investigator execution remains bounded and exactly addressable"
+}

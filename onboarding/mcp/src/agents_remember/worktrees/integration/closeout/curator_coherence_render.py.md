@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_render.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_render.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `99dc249bd507c20b09ece1169c2b1fa2af8e8c1b` |
-| lastVerifiedCommitDate | 2026-09-02T05:53:10+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [closeout integration overview](overview.md)
@@ -47,28 +37,24 @@ The renderer is one-way. Consumers regenerate and byte-compare this projection; 
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No configured external documentation applies.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The projection format is repository-owned. | — | — |
+The projection format is repository-owned.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Rendering is a deterministic one-way projection of the structured record. | `render_curator_coherence` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_render.py:8-63 |
-| The canonical task-intent identity line emitted after the topology fingerprint. | `TaskIntentIdentity` check + line insert | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_render.py:53-56 |
+- Rendering is a deterministic one-way projection of the structured record. [1]
+- The canonical task-intent identity line emitted after the topology fingerprint. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository reference applies.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The file introduces no external boundary. | — | — |
+The file introduces no external boundary.
 
 ## MCAR-L03 Human Pair Projection
 
@@ -81,16 +67,3 @@ never reparsed as authority.
 Per `requirements/CCR-R02-v2-normative-task-intent-identity.md`, coherence records bind the
 canonical intent identity; the human projection now shows it so reviewers can verify that evidence
 was accepted against the exact obligation bytes. Part of the landed L25 candidate `99dc249b`.
-
-## Update History
-
-- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 99dc249bd507 (CCR-R02@v2/L25):
-  the coherence renderer now emits the canonical `Task intent:` schema+digest line after the
-  topology fingerprint when the record carries a `TaskIntentIdentity`. Verified at code commit
-  99dc249bd507c20b09ece1169c2b1fa2af8e8c1b.
-
-- 2026-08-29T21:46+02:00 — MCAR-L03: rendered the complete structured pair for human scope
-  verification. Verification remains closeout-owned.
-
-- 2026-08-29T08:52+02:00 — Created for the digest-bound human projection of structured coherence.
-  Verification remains closeout-owned.

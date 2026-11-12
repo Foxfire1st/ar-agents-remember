@@ -1,26 +1,25 @@
 # mcp/src/agents_remember/memory/baseline.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/baseline.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T14:05:00+02:00 |
-| lastVerifiedCommitHash | `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b` |
-| lastVerifiedCommitDate | 2026-09-18T13:43:14+02:00|
-
 ## Governing Overview
 
-[Nearest governing overview](../../../overview.md)
-
-Working-candidate verification: source inspected at 2026-09-15T01:16 UTC against the uncommitted L9
-candidate. The commit fields identify the latest real commit touching this file; they do not
-identify or claim a future commit for these working changes.
+[overview](../../../overview.md)
 
 ## Purpose
 
-Inspects and adopts an existing external-memory onboarding baseline. Adoption creates an attributed
-memory-content commit; the consumer ledger is computed from Git and refreshed as a disposable cache.
+Inspects and adopts an existing external-memory onboarding baseline after conversion.
+Both status and adoption return `state: "legacy-format"` with the shared conversion
+message for an existing unconverted root, before drift measurement or adoption;
+adoption returns exit code 2 even in dry-run mode. With no attributed baseline,
+convert the root in place using `agents-remember knowledge-convert MEMORY_ROOT
+--code CODE_REPOSITORY`, then adopt. With an official line, first convert one new
+leaf and land it using the first-conversion command `agents-remember
+knowledge-convert MEMORY_ROOT --code CODE_REPOSITORY` (MIK-R46 rule 6). This refusal is independent of converted memory
+elsewhere, and cannot be bypassed by `accept_drift`. Adoption creates an attributed
+memory-content commit; the consumer ledger is computed from Git and refreshed as
+a disposable cache. On a converted tree the first baseline is validated before
+it is made: adoption stages content on a private index, validates the staged tree
+with no comparison bases paired with the attributed code commit, and records
+exactly that tree. The prepare/stage/validate interval uses a private index and attempts restoration of provably-owned ignore bytes on refusal or error. Restoration mutations can themselves fail; the required named-error and owned-state guarantees of INV-ZCRMS7 and INV-DZB7MC do not hold on that inherited branch. This is not a promise of rollback after publication starts.
 
 ## Code Commentary
 
@@ -28,8 +27,15 @@ memory-content commit; the consumer ledger is computed from Git and refreshed as
 
 `BaselineRequest`, `baseline_status`, and `baseline_adopt` are the service entry points. CLI parsing
 adapts into the request object, and `resolve_request_context` passes topology and coordination hints
-through the shared resolver. Drift discovery includes sidecar and inline onboarding and writes its
-report before the adoption decision.
+through the shared resolver. The legacy-format preflight returns before drift or report
+production. Otherwise drift measurement uses the shared summary, and adoption selects
+`write_report=not dry_run` before its remaining storage-format branch: its dry-run preview files neither
+the drift report nor observer snapshot and advertises no unfiled path. A mutating adoption keeps
+its report-producing default and files the report before the adoption decision. The registered
+baseline-status read accepts only the repository identifier and constructs a request with
+`report=None`, so it selects `write_report=False`. Its converted payload omits `drift_report` rather
+than advertising an unfiled path. An explicit internal or CLI report-path request is a producer;
+that arm is not exposed as an exception to the registered read.
 
 `ledger_status` reports the derived Git-history view or an unavailable-history diagnostic.
 `base_payload` reuses that observation to classify `already-adopted` when readable history supplies a
@@ -39,30 +45,60 @@ has no role in that decision.
 A resolvable HEAD whose ancestry cannot be read reports top-level `unavailable`. `baseline_adopt`
 returns that refusal before cache preparation, content staging, or ref mutation; accepting drift
 cannot override unreadable history. An unborn repository has no resolvable HEAD, so its unavailable
-initial walk does not by itself block bootstrap: it remains `ready` subject to the ordinary drift
-rules. Drift reporting still precedes the adoption decision.
+initial walk does not by itself block bootstrap on converted memory: it remains
+`ready` subject to the ordinary drift rules. The legacy-format preflight still
+refuses an existing unconverted directory before this history decision. Drift reporting precedes the adoption decision only for the mutating producer; dry-run
+measurement preserves the summary without filing report or snapshot.
 
 `has_adopted_baseline` remains the direct bootstrap guard inside `adopt_initial_baseline`. Actionable
-drift still blocks new adoption unless `accept_drift` is explicit.
+drift still blocks new adoption unless `accept_drift` is explicit; on converted memory the refusal
+message directs the operator to refresh onboarding with the `l-01-agent-lifecycles` Curator procedure
+or rerun with `--accept-drift`.
 
 `adopt_initial_baseline` requires real onboarding, docs, or system content and the checked-out
 repository-default memory branch. `_baseline_default_branch` proves that default from the branch
 `memory_init` recorded, **not from a fixed name**: the memory repository is founded on the code branch
-the developer chose, so the old `branch != "main"` refusal would have refused every repository whose
-memory is founded on anything else. It still supports the exact unborn branch memory initialization
+the developer chose, so a fixed-name comparison would refuse every repository whose memory is
+founded on anything else. It supports the exact unborn branch memory initialization
 created, and it refuses — with the recorded-value name in the message — when the repository records no
 `agents-remember.defaultBranch` value at all. It does not create, switch, or commit an integration ref.
 
 The code source-branch commit is resolved once. The fixed adoption subject is passed through
 `render_memory_content_message`, so the resulting memory commit carries that exact `Code-Commit`
-trailer. Cache preparation adds the ignore rule and removes the cached ledger from the index. Content
-staging excludes the shared memory-content policy rather than one inline name:
-`commit_if_dirty(..., exclude_paths=MEMORY_CONTENT_EXCLUDES)` carries `("memory.md", "bootstrap")` on
-the call that actually stages. That last half is load-bearing and is why the constant is imported
-rather than spelled here: `commit_if_dirty` re-stages the whole worktree, so an exclusion applied to a
-bare `git add` *before* it is inert and `bootstrap/` scaffolding lands in the baseline commit anyway —
-the defect this seam carried until this leaf fixed it. The returned bootstrap contains
-`memoryContentCommit` and best-effort `ledgerCache`, with no ledger-only commit.
+trailer. Content staging applies the shared `MEMORY_CONTENT_EXCLUDES` in `_stage_for_commit` on the private index and force-removes excluded entries from that staged tree. The exclusion rides the actual staging call: filtering an earlier unrelated `git add` is not enough. `_adopt_validated_converted_tree` publishes exactly the privately staged, validated tree; `commit_if_dirty` is not this file's adoption path.
+The returned bootstrap contains `memoryContentCommit` and best-effort `ledgerCache`, with no
+ledger-only commit.
+
+Drift is measured with the one shared summary: `run_drift` calls `run_drift_summary` and does not
+classify by itself, so the drift block of the baseline tools carries the converted rule-2 fields
+on a converted tree. An existing unconverted root is refused before that
+measurement with `state: "legacy-format"`; its drift block has `status: "error"`
+and the same refusal detail. Missing-root errors are not recast as legacy format. The memory layer imports nothing from the
+application layer; the optional converted comparison base stays with callers that own a contract.
+Before first adoption, the converted payload also reports `blocked-legacy-cards` with the listed
+cards when a metadata-key first cell names `doc_type`, `lastVerifiedCommitHash` or
+`lastVerifiedCommitDate`, or a card has `## Update History`. Prose mentions do not count.
+On converted memory, existing attributed adoption retains `already-adopted` precedence. The other blocking states remain
+`blocked-invalid` for validator violations, `blocked-drift` for actionable drift and `unavailable`
+for unreadable existing history. `accept_drift` bypasses only the actionable-drift check; it never clears
+legacy-card or validator refusals. A stale code/test reference still fails paired staged-tree validation
+as `R198.1-reference-anchor`: the initial unaccepted-drift path may answer `blocked-drift`, but accepting
+drift does not turn that stale pair into an adoptable tree. This is an adoption-only check, not a new ordinary-operation
+validator rule for repositories that already have a baseline.
+With filing disabled, `run_drift` returns the measured summary and `None`: it still refuses a failed
+measurement, but does not raise merely because a read requested no report. Measured fields and the
+adoption gate are preserved; absence of a report is an output distinction, not permission to skip
+converted validation.
+
+The converted adoption never writes the worktree's own index before validation passes.
+`_private_staging_index` holds a mtime-preserving copy of the worktree index for one interval (an
+absent index leaves the private index path nonexistent, which Git stages as an empty index; any other copy failure
+refuses loudly with no fallback). `_prepare_stage_validate` runs cache preparation, staging and
+validation against that copy; on an exception it calls `_restore_file` before re-raising, preserving concurrent edits and unreadable files. Once the bytes are proved ours, unlink/write/chmod failures can escape instead of the original validation error; chmod failure can leave the mode unrestored. A dry run or refusal returns prepared bytes when restoration succeeds, with the real index untouched. The restoration-failure branch is a recorded failure of the unchanged governing promise, not a narrower invariant. Only after validation passes does `_adopt_validated_converted_tree` publish: the commit
+object is built from the immutable validated tree (`commit-tree`), the branch ref moves to it only
+while it still points at the HEAD read on entry to `_publish_validated_tree` (expected-old
+`update-ref`), and the recorded tree is verified — so a hook or a concurrent index change cannot smuggle different bytes into the
+publication. The worktree's own index is then brought to the adopted state. Adoption requires bound validation and the repository hook on the exact staged tree before commit-tree or ref movement.
 
 ### Conventions
 
@@ -79,119 +115,90 @@ cache computation, while the shared Git module owns content staging.
 - Cache existence, content, or a missing cache path cannot authorize or block adoption.
 - A resolvable HEAD with unavailable ancestry cannot be adopted as a new baseline, even with drift accepted.
 - Attribution is stored in the real memory commit, not reconstructed from a hand-written pair.
-- Repeating adoption with readable attributed history returns `already-adopted` without another commit.
-- **`bootstrap/` is excluded from the baseline commit, not deleted from the worktree.** The exclusion
-  must ride the staging call; a bare `git add` before `commit_if_dirty` is inert.
+- Repeating adoption on converted memory with readable attributed history returns
+  `already-adopted` without another commit. An unconverted root is refused first,
+  even when attributed history exists.
+- **Memory-root-level `bootstrap/` is excluded from the baseline commit, not deleted from the worktree; `onboarding/bootstrap/` audit artifacts are retained unless removed before adoption.** The exclusion must ride `_stage_for_commit` on the private staging index and remain absent from the validated immutable tree.
+- **The worktree's own index is never written before validation passes.** Prepare, stage and tree
+  commands of the owned interval address the private copy; only the `.gitignore` file guard is kept,
+  and only while its bytes are provably ours.
+- **`accept_drift` never clears a validator violation.** It bypasses only the actionable-drift check;
+  a stale code/test reference still refuses paired staged-tree validation. A dry run reports
+  `would-adopt` only when that validation passes.
 
 ### Todos
 
 No new file-local follow-up is established by this documentation pass.
 
-## Docs References
+## Evidence
+
+Inherited numbered findings [9] retain their exact wording and full targets as historical custody where their candidate9 owner is retired or their account conflicts with the current route. They are not evidence that an absent legacy owner still executes. No guarantee is retired by this proposal; parent disposition remains required. The source-bound current account below is separate.
+
+
+- Private baseline staging applies the shared content exclusions and removes excluded entries before exact-tree validation/publication. [21]
+
+
+
+### Docs References
 
 No Domain Documentation source is configured for this repository. No external domain documents
 were available through the configured registry to consult; the current claims are grounded in the
 working source and package-local evidence below. The registry is discovery input, not a citation.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured external domain-documentation evidence. | n/a | n/a |
+No configured external domain-documentation evidence.
 
-## Repo-Internal References
+### Repo-Internal References
 
 These repository-relative targets were checked in the L13 code checkout. The cited ranges support
 the current working-candidate behavior; historical entries below retain their original scope.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Context, drift, and Git-history adoption decisions. | `resolve_request_context` | mcp/src/agents_remember/memory/baseline.py:71-82 |
-| Bootstrap branch proof and the one attributed content commit. | `_baseline_default_branch` | mcp/src/agents_remember/memory/baseline.py:133-169 |
-| Cache preparation and refresh are separate from Git commit publication. | `prepare_memory_cache`; `refresh_memory_cache` | mcp/src/agents_remember/kernel/memory_cache.py:44-62; mcp/src/agents_remember/kernel/memory_cache.py:65-91 |
-| Shared staging excludes derived paths from the content commit. | `stage_worktree_content` | mcp/src/agents_remember/worktrees/modules/git.py:191-197 |
-| The existing baseline case checks unborn readiness, one attributed commit, and unavailable-history refusal. | `test_baseline_attributes_its_memory_content_commit_to_the_code_source_branch`; `test_every_census_producer_reaches_the_shared_renderer` | mcp/tests/test_memory_attribution_producers.py:120-394 |
-| Context, drift and Git-history adoption decisions. | `BaselineRequest`; `resolve_baseline_context`; `base_payload`; `ledger_status`; `baseline_status`; `baseline_adopt` | mcp/src/agents_remember/memory/baseline.py:46-53; mcp/src/agents_remember/memory/baseline.py:93-122; mcp/src/agents_remember/memory/baseline.py:270-298; mcp/src/agents_remember/memory/baseline.py:258-268; mcp/src/agents_remember/memory/baseline.py:300-304; mcp/src/agents_remember/memory/baseline.py:306-345 |
-| Bootstrap branch proof from the branch `memory_init` recorded, and the one attributed content commit. | `_baseline_default_branch`; `adopt_initial_baseline` | mcp/src/agents_remember/memory/baseline.py:149-192; mcp/src/agents_remember/memory/baseline.py:195-250 |
-| The shared memory-content policy the content commit excludes, and the reason the exclusion belongs on the staging call. | `MEMORY_CONTENT_EXCLUDES` | mcp/src/agents_remember/models/memory_content_excludes.py:32-35 |
-| Shared staging, and the re-stage that makes a bare `git add` exclusion inert. | `stage_worktree_content`; `commit_if_dirty` | mcp/src/agents_remember/worktrees/modules/git.py:191-198; mcp/src/agents_remember/worktrees/modules/git.py:200-208 |
-| The branch-authority cases this leaf added: adoption follows the recorded branch, and `bootstrap/` never enters the baseline commit. | `test_baseline_adoption_follows_the_configured_branch`; `test_baseline_adoption_refuses_a_branch_the_memory_repository_does_not_record`; `test_the_first_baseline_never_commits_bootstrap_scaffolding` | mcp/tests/test_memory_branch_authority.py:230-261; mcp/tests/test_memory_branch_authority.py:263-283; mcp/tests/test_memory_branch_authority.py:469-493 |
-| The recorded-default authority this file now follows instead of a literal. | `memory_repository_default_branch` | mcp/src/agents_remember/worktrees/integration/integration_branch_repository.py:51-87 |
+- The existing baseline case checks unborn readiness, one attributed commit, and unavailable-history refusal. [5]
+- The shared memory-content policy the content commit excludes, and the reason the exclusion belongs on the staging call. [8]
 
-## Cross-Repo References
+- The recorded memory default-branch authority this file follows rather than a fixed branch name. [11]
+
+- The actionable-drift refusal names the `l-01-agent-lifecycles` Curator procedure and `--accept-drift`. [22]
+
+
+### Cross-Repo References
 
 Configured code and memory repositories or temporary fixture repositories are described through
 the package-local implementation above. No additional external or sibling-repository evidence
 source is configured for this file's claims.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No additional configured cross-repository evidence is claimed. | n/a | n/a |
-
-## Update History
-- 2026-09-18T14:05:00+02:00 — 260915-KS-L13 owning seat: re-read the `BaselineRequest` claim against the current module: the class is declared at :46 and the cited range :46-53 still holds it, so the wording and the range are unchanged; the construct changed structurally since 420669c4 and the claim still states it.
-
-- 2026-09-16T17:59+02:00 — 260915-CAPS-L13 curator: **body rebased on the branch-authority and
-  content-exclusion changes this leaf made** (`CAPS-R13@v1`, the absorbed `260820` runtime-correctness
-  scope). Two claims were wrong and are corrected rather than deleted: `_baseline_default_branch`
-  no longer "supports the exact unborn `main`" — it proves the branch `memory_init` recorded and names
-  that value in its own refusal — and the content commit no longer stages with an inline
-  `exclude_paths=("memory.md",)`. The card now records the real mechanism
-  (`exclude_paths=MEMORY_CONTENT_EXCLUDES`, `("memory.md", "bootstrap")`) riding the call that
-  actually stages, and why a bare `git add` exclusion is inert. Added two invariants (default branch
-  is data; `bootstrap/` excluded-not-deleted), rewrote the three reference tables into the required
-  `| Finding | Anchor | Source |` shape — which is what cleared this card's three
-  `citation_table_columns_wrong` findings — and re-derived every range against the working source.
-  Verification metadata is left at the leaf base commit because the source is uncommitted — the
-  governed closeout stamps the real code commit.
-
-- 2026-09-15T01:16+00:00 — Documented status classification from the already-derived observation, the existing-HEAD unavailable-history refusal before Git/content/cache mutation, and legitimate unborn readiness under the existing drift rules. Working candidate verified against the formatted source; real commit metadata and earlier history remain unchanged.
-
-- 2026-09-15T01:06+00:00 — Rebound source citation ranges after final shared-helper updates and formatting; current body contracts rechecked against the working candidate. No committed-source hash or execution claim was advanced.
+No additional configured cross-repository evidence is claimed.
 
 
-- 2026-09-15T00:51+00:00 — Replaced cache-existence and ledger-only publication contracts with attributed-history adoption, one content commit, and best-effort cache reporting; retained drift and bootstrap branch authority. Working candidate verified by source inspection; real last-touch commit metadata retained, with no future commit hash or certification claim.
-
-- 2026-09-13T23:52+02:00 — 260913-LCA-L4 curator (uncommitted change set on `ar/260913-lca-l4-ar`,
-  base `5bb124d4`): baseline adoption became one of the five memory-content producers, and it was the
-  one whose commit message is nobody's argument — its hard-coded adopt subject was the whole message, so
-  a fresh baseline's only memory commit carried no attribution and the projected ledger had no first
-  row. Recorded that the code source-branch commit is now resolved once (`:208`) and used twice — the
-  renderer call (`:210-216`) and `create_initial_ledger` (`:217-221`) — that the trailer is rendered by
-  `kernel.memory_attribution.render_memory_content_message` rather than by a route-local format, that the
-  `memory.md`-only ledger commit (`:224`) stays unattributed by rule, and the public end-to-end case that
-  proves both documented git readers see the trailer. Rebound the stale `memory_baseline_status_tool`
-  range (353-360 → 353-361). Verification metadata remains closeout-owned; no acceptance claim and no
-  verification stamp advanced.
-
-- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `load_ledger`, `write_ledger` repointed to mcp/src/agents_remember/kernel/memory_ledger.py:202-205, mcp/src/agents_remember/kernel/memory_ledger.py:216-238. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
 
 
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
+- Cache preparation and refresh are separate from Git commit publication. [3]
+- The branch-authority cases this leaf added: adoption follows the recorded branch, and `bootstrap/` never enters the baseline commit. [10]
+
+- Context, drift, and Git-history adoption decisions. [1]
+- Bootstrap branch proof and the one attributed content commit. [2]
+- Shared staging excludes derived paths from the content commit. [4]
+- Context, drift and Git-history adoption decisions. [6]
+- Bootstrap branch proof from the branch `memory_init` recorded, and the one attributed content commit. [7]
+- Shared staging, and the re-stage that makes a bare `git add` exclusion inert. [9]
+- Drift is measured with the one shared summary; the memory layer classifies nothing by itself. [12]
+- Converted status preserves attributed-adoption precedence and reports legacyCards/blocked-legacy-cards before validator or stale-reference refusals. [13]
 
 
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
+- First adoption refuses listed old-format cards before validator/stale checks; accept_drift cannot clear either legacy-card or validator refusals. [14]
 
 
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
 
 
-- 2026-08-15T23:38+02:00 — Reconciled this file's L4 role in task-derived integration authority and protected code/memory boundaries. Verification metadata remains closeout-owned.
+- The owned prepare/stage/validate interval uses a private index. Restoration is called before re-raising, but unlink/write/chmod errors can replace the named validation error and leave owned state unrestored, contrary to INV-ZCRMS7 and INV-DZB7MC. [15]
 
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
-- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B23 curator: regenerated the memory-tool ranges
-  via the scoped fixer; exact non-fixing check returns zero findings.
 
-- 2026-08-02T20:43+02:00 — W2-B08: anchored 2 baseline reference claims and repointed the MCP call-site reference from the removed `application/skill_tools.py` to `application/memory_tools.py`; ranges remain generated by the scoped fixer. Verification metadata stays pinned until closeout.
 
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2: call-site update for the resolver's new signature —
-  `resolve_request_context` now wraps `topology`/`coordination_root` in a `CoordinationHints`.
-  Behaviour unchanged. Verification metadata pinned until closeout stamps the L2 commit.
-- 2026-05-31T12:50+02:00 — Renamed the argparse adapter `resolve_context` to `resolve_baseline_context` in the source; noted the new name in Logic (behavior-preserving, thin delegate to `resolve_request_context(request_from_args(args))`) (1.0.0 review remediation).
-- 2026-05-29T18:35+02:00: Typed drift rows as `list[drift.DriftRow]`, normalized `topology` to `Literal['internal','external'] | None` at the argparse boundary, and added a ledger-path guard in `baseline_adopt`; behavior-preserving (commit `0549b28`).
-- 2026-05-24T02:47+02:00: Updated after drift imports moved under `memory_quality.integrity`.
-- 2026-05-24T00:35+02:00: Updated after adding request/service entry points for MCP controllers.
-- 2026-05-23T13:09+02:00: Copied into the MCP package and patched to package imports.
+
+- Dry runs and validation refusals discard the private index and attempt restoration of provably-owned ignore bytes; concurrent or unreadable contents are preserved. The inherited restore-mutation failure violates the unchanged owned-state/named-error promise. [16]
+
+
+- Publication records exactly the validated tree; a moved branch refuses instead of publishing past validation. [17]
+- Converted adoption stages, validates with no bases paired with the code commit, and commits exactly that tree. [18]
+- Registered status requests select unfiled measurement; an absent report pointer is omitted while measurement and explicit producer behavior remain intact. [19]
+- Adoption previews select suppression before measuring; mutating adoption preserves its report-producing mode. [20]

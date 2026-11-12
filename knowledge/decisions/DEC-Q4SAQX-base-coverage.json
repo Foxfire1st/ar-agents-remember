@@ -1,0 +1,54 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives"
+    ],
+    "justification": "The approved appendix names this continuing choice and explains why the contrary requested behavior is not adopted: The appendix explicitly fixes coverage at K_B so the leaf cannot change its answer domain by writing memory."
+  },
+  "alternatives": [
+    {
+      "option": "Read which obligation answers an item from K_B coverage.",
+      "reason": "The appendix explicitly fixes coverage at K_B so the leaf cannot change its answer domain by writing memory.",
+      "status": "chosen"
+    },
+    {
+      "option": "Let a leaf own K_C writes change which record must answer its already-derived obligation.",
+      "reason": "The appendix explicitly fixes coverage at K_B so the leaf cannot change its answer domain by writing memory.",
+      "reconsider_when": "Only if the owning approved requirement is explicitly revised to authorize this changed boundary; this prose is not a computed trigger.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Retain the chosen current design and the rejected alternative with its actual recorded reason; do not relabel it as a gap or later work.",
+    "No executed test, new implementation, changed inherited guarantee, relocation permission or independent acceptance follows from this decision."
+  ],
+  "context": "Continuing approved MIK-R55 appendix entry 56. | 56 | Curator load and noise | Built for copies and caches. By design: one item per unlinked hunk, because each hunk is a change that may carry an invariant (MIK-R10 rule 6); coverage is read at K_B, so that nothing the leaf writes changes which record answers its items | 2, 7 | Current normative amendments govern over historical illustrative wording. This records the existing choice, not a new feature or future-work gap.",
+  "decider": "Architect-approved MIK-R55 v1 corpus; Curator records its continuing choice under R54.13/R55.10.",
+  "id": "DEC-Q4SAQX",
+  "links": [
+    {
+      "relation": "explains",
+      "target": {
+        "id": "MIK-R55",
+        "packet": "requirements/MIK-R55-v1-worklist-and-gate-corrections.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "wave-83-complete-history.json"
+    },
+    "handoffEntry": "L54-by-design-base-coverage",
+    "leaf": "260928-MIK-L54",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

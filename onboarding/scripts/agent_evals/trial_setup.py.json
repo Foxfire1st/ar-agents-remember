@@ -1,0 +1,42 @@
+{
+  "path": "scripts/agent_evals/trial_setup.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2efbb441081879b9a24eeed0cb14f14617df1679",
+        "content": "sha256:5389883977d89cb6adf4df7e263c5aaa99ae385fc741fa8210d092628c184e69",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-CV86FV",
+      "invariant": "INV-A8FVPH",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-trial-isolation",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "It provisions the batch host and disposable trial fixture, records setup bindings and sweeps private credential remnants at lifecycle boundaries.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2efbb441081879b9a24eeed0cb14f14617df1679",
+            "content": "sha256:5389883977d89cb6adf4df7e263c5aaa99ae385fc741fa8210d092628c184e69",
+            "locator": {
+              "end": 733,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

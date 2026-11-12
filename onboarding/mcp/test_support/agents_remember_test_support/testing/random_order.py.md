@@ -1,15 +1,5 @@
 # mcp/test_support/agents_remember_test_support/testing/random_order.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/test_support/agents_remember_test_support/testing/random_order.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Python testing boundary](overview.md)
@@ -29,12 +19,8 @@ list, preserving reproducibility without mutating the process-global RNG.
 - The reported seed reproduces the exact order.
 - No process-global random state is changed.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Collection order uses a local seeded RNG. | `shuffle_items` | mcp/test_support/agents_remember_test_support/testing/random_order.py:9-10 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-08-24T21:23+02:00 — Moved from `mcp/tests/_random_order.py` into shared production testing.
+- Collection order uses a local seeded RNG. [1]

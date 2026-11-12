@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The workspace focus path and mounted narrow/wide selection cases carry the panel-local focus boundary in distinct source files. Keeping page scrolling separate from tree-row reveal prevents a selected row from moving the containing review page unexpectedly. Earlier OR-R033 geometry and origin evidence remain historical, not a fresh result."
+  },
+  "applicability": "Answered in-tree selections of the mounted intent reviewer while their focus request remains eligible.",
+  "conditions": [
+    "In-page family/member rows, block traversal and main-page member selections request keepTree.",
+    "The answered-selection focus path uses preventScroll and revealTreeRow; that helper adjusts only the nearest tree panel after measuring its visible bounds and overlaid controls.",
+    "The moved-focus guard runs before landing selection. A failed/refused answer uses landFailureFocus, which lands once and retains the request for Retry; it does not revive the removed stacked-layout reveal owner."
+  ],
+  "exclusions": [
+    "Outside selections have their own focus behavior.",
+    "Exact browser geometry and runtime acceptance are not inferred from mounted source assertions.",
+    "Refresh scroll-only requests and lane/file destinations keep their separate owners."
+  ],
+  "id": "INV-QZC5AZ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "browser/final-vs-pre.json (36 of 36 answered in-tree activations at 390 revealed; 62 of 62 steps at 1600 unchanged); mutations D1-a to D1-f"
+      ],
+      "path": "notes/reports/260928-MIK-L39-curator-v2-evidence/ingest-list.json"
+    },
+    "handoffEntry": "OR-R033-D1",
+    "leaf": "260928-MIK-L39",
+    "task": "260928-MIK"
+  },
+  "revision": 4,
+  "schema": "ar-invariant/v1",
+  "statement": "An eligible answered in-tree selection focuses its target-state notice or selected row without native scrolling and reveals a selected tree row through the tree panel's local scroll owner.",
+  "status": "proposed",
+  "supersedes": []
+}

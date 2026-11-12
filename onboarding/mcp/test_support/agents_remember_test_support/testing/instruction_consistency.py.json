@@ -1,0 +1,104 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/instruction_consistency.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "68668ad9039682eadfa94109a556dd5505b134ec",
+        "content": "sha256:867f0752d4ae2affe36ec51f3d801f5a0304da4f8c45c4256242d592f5c9a740",
+        "locator": {
+          "kind": "symbol",
+          "name": "UNDOCUMENTED_COMMANDS"
+        }
+      },
+      "id": "RLZ-3FRRQP",
+      "invariant": "INV-SJ6T7P",
+      "origin": {
+        "handoffEntry": "MIK-R97@v9 part F item 7 (the consistency check)",
+        "leaf": "260928-MIK-L97"
+      },
+      "rationale": "It is the named set of the nine command names for which the check demands no row and no mention.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "68668ad9039682eadfa94109a556dd5505b134ec",
+        "content": "sha256:5c0f8ecbb0cdbde47fcbbe6ed8dc1c9cec0d36502d9d70c94982fdb70c41f9a5",
+        "locator": {
+          "kind": "symbol",
+          "name": "assert_public_command_reference"
+        }
+      },
+      "id": "RLZ-MRXRMP",
+      "invariant": "INV-SJ6T7P",
+      "origin": {
+        "handoffEntry": "MIK-R97@v9 part F item 7 (the consistency check)",
+        "leaf": "260928-MIK-L97"
+      },
+      "rationale": "It requires the nine to be registered commands, requires one complete row in the agents' command table for every other public command, and fails on a row for one of the nine.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Commands, tools and operations come from the real parser, live registration and the dispatcher, without starting a server. (whole file)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68668ad9039682eadfa94109a556dd5505b134ec",
+            "content": "sha256:b584f0249510e82a01fede2a058bf475ee1a11b14f970424863d86f6d4fe8bb8",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The corpus is every text file in skills and docs plus the root README. (whole file)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68668ad9039682eadfa94109a556dd5505b134ec",
+            "content": "sha256:b584f0249510e82a01fede2a058bf475ee1a11b14f970424863d86f6d4fe8bb8",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Per-line findings cover retired terms, unregistered names, unknown operations and missing paths. (whole file)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68668ad9039682eadfa94109a556dd5505b134ec",
+            "content": "sha256:b584f0249510e82a01fede2a058bf475ee1a11b14f970424863d86f6d4fe8bb8",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The full check adds knowledge-name coverage; a migration command of an earlier installation needs no documentation row. (whole file)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68668ad9039682eadfa94109a556dd5505b134ec",
+            "content": "sha256:b584f0249510e82a01fede2a058bf475ee1a11b14f970424863d86f6d4fe8bb8",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

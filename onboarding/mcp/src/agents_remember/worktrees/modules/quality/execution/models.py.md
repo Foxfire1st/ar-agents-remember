@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/modules/quality/execution/models.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/modules/quality/execution/models.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T15:15:01+00:00 |
-| lastVerifiedCommitHash | `c69d5171187fa1957025e393270db9f5a864ab14` |
-| lastVerifiedCommitDate | 2026-09-06T16:32:29+02:00 |
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Governing route overview](overview.md)
@@ -43,27 +33,19 @@ The lifecycle journal owner supplies selected authority. This transport validate
 
 None recorded for this file's bounded responsibility.
 
-## Docs References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The resolved registry supplies no applicable external Domain Documentation source for this card. | — | — |
+### Docs References
 
-## Repo-Internal References
+The resolved registry supplies no applicable external Domain Documentation source for this card.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Retained transport serializes the complete original objects. | `RetainedGateExecution` | mcp/src/agents_remember/worktrees/modules/quality/execution/models.py:28-38 |
-| The execution contract recomputes canonical reuse and validates its exact prefix. | `CodeCertificationExecution` | mcp/src/agents_remember/worktrees/modules/quality/execution/models.py:42-100 |
-| Only code gates may launch through this transport. | `first_gate` | mcp/src/agents_remember/worktrees/modules/quality/execution/models.py:81-85 |
-| Validation reparses canonical objects and checks original green publication authority. | `validate` | mcp/src/agents_remember/worktrees/modules/quality/execution/models.py:51-78 |
+### Repo-Internal References
 
-## Cross-Repo References
+- Retained transport serializes the complete original objects. [1]
+- The execution contract recomputes canonical reuse and validates its exact prefix. [2]
+- Only code gates may launch through this transport. [3]
+- Validation reparses canonical objects and checks original green publication authority. [4]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No separately configured cross-repository source is used for this card. | — | — |
+### Cross-Repo References
 
-## Update History
-
-- 2026-09-06T15:15:01+00:00 — Created from the complete source at `c69d5171187fa1957025e393270db9f5a864ab14`. Documented the selected-original, terminal or transport responsibility and its actual neighboring owners. Source verification is not execution or acceptance evidence.
+No separately configured cross-repository source is used for this card.

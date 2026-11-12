@@ -1,0 +1,73 @@
+{
+  "path": "mcp/tests/test_role_handover_binding.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "a8d4a67d35b664148541468ac88e4d4b7e48bfd4",
+        "content": "sha256:36553ea2f6b5acc2ed882d02f71eb91baf557355edfe3f524305ca6669fc0d86",
+        "locator": {
+          "kind": "symbol",
+          "name": "LeafEnclosureSprintBindingTests.test_missing_leaf_enclosure_passes_selected_sprint_to_worktree_owner"
+        }
+      },
+      "facet": "Reuse of the existing enclosure names referenceRoot and a copy failure warning containing the missing leaf file, without calling worktree_start.",
+      "id": "PRF-QDPJ48",
+      "invariant": "INV-ZQKNTV",
+      "origin": {
+        "handoffEntry": "L183-agreed-revision-custody",
+        "leaf": "260928-MIK-L183"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Scoped compilation, taskless planning, repeats, enclosure binding, report isolation and folder/grant preparation are asserted here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a8d4a67d35b664148541468ac88e4d4b7e48bfd4",
+            "content": "sha256:354b52757fad79276e4088a2283e445bbb9e6c1b4dd171fff275a46a0f45c5bf",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Taskless Architect planning passes `role=architect` to the resolver and keeps the existing binding, no-invented-task and no-invented-repository assertions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a8d4a67d35b664148541468ac88e4d4b7e48bfd4",
+            "content": "sha256:7e7417f305e99bebbb282e4c928b98eba9c576375a946033e4ec6a46673e4f5b",
+            "locator": {
+              "end": 537,
+              "kind": "line_range",
+              "start": 399
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Reusing an enclosure reports its resolved `referenceRoot`; failure to copy an agreed-reference source is returned as a `referenceWarning` naming that leaf file, while the existing enclosure is still reused and no new start is called. The fixture deliberately has no leaf file, so the test checks a named warning rather than claiming a successful copy.\n\nAnchor: `test_missing_leaf_enclosure_passes_selected_sprint_to_worktree_owner`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a8d4a67d35b664148541468ac88e4d4b7e48bfd4",
+            "content": "sha256:354b52757fad79276e4088a2283e445bbb9e6c1b4dd171fff275a46a0f45c5bf",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

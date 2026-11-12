@@ -1,0 +1,39 @@
+{
+  "path": "mcp/src/agents_remember/certification/repository_profiles/environment_validation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`_validate_environments` implements the described validation step.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "762d4436e6a45a8917c12a61ca4a53c6271a3fc0",
+            "content": "sha256:59c73490941cabb4e7f41e869a1fe30619dfa6986e27eda1591d9f2f4e5f97a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_environments"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`_validate_selected_producer` implements the described validation step.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "762d4436e6a45a8917c12a61ca4a53c6271a3fc0",
+            "content": "sha256:cf661ee28a37a710a4a222effabf6575909a904df7ad9c79bc9a02ed1674488c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_selected_producer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,22 @@
+{
+  "path": "dashboard/src/cockpit/document-chat/knownChats.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The suite checks mounted retention, immediate known switching, both caps and visibility cleanup with explicit assertions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0bdd6e3b44dc6f9e0d2a7687529dfa98bf7aa707",
+            "content": "sha256:b16abc032fbe6533e67517d8a0da411f6f45919efb2a2db54af48893ac8c8fae",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

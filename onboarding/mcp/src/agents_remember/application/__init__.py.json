@@ -1,0 +1,39 @@
+{
+  "path": "mcp/src/agents_remember/application/__init__.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "2": {
+      "note": "Public payload builders import application entry points directly from their owning modules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a29daece8de46849bc5b8afc1f6e66a0b6a4f5c",
+            "content": "sha256:aa578b40dc13b92dd9bf5cc2590602caef0bb42b112d65332c57a8936d2fa36e",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/__init__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "096416e28ba831c922b782c7d3994ab2b726e6cb",
+            "content": "sha256:044759c5efc38b3fc03140fa337e5a130ab9efd17299c4705903faaf88b10bdf",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 7
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/core.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

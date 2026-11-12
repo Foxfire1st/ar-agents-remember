@@ -1,0 +1,158 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/families.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Families are authored joint guarantees; these functions only read the derived index.\n\nAnchor: `get_family` `get_family_revision`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fafa18088da97ad02199d8d81db836c10e274a58",
+            "content": "sha256:57f72baf8adc3f53f857c90088fe3142582d1c875cdce06320c91253b8665a11",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The family revision payload mapping and digest include the sorted predecessor set.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f503fa94c4c7bed4f52d64b967754439519f5b6a",
+            "content": "sha256:f987f04351f9a963408d04353decdced875c8d570d21bdeb16852ae8f8f75efc",
+            "locator": {
+              "kind": "symbol",
+              "name": "canonical_family_revision_payload"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/digest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f503fa94c4c7bed4f52d64b967754439519f5b6a",
+            "content": "sha256:50dd05ab638940b7a334858cebee588c309c288d58b283907bc2aafeb7e760eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "family_revision_payload_digest"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/digest.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The retained family revision value shapes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e0475c07db7f98c04497445589d9a2a30aa0089b",
+            "content": "sha256:f7dc8a9853d9b7f7760131731ccb7a767af8a95db9c8ad498153b9d7c9fc90f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyRevision"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/family.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e0475c07db7f98c04497445589d9a2a30aa0089b",
+            "content": "sha256:b2c614b201a1856dd15e5c62a3cd89d08c0d7ddd8e308ddba27b3666e923539f",
+            "locator": {
+              "kind": "symbol",
+              "name": "StoredFamilyRevision"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/family.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "- The two rules this module is shaped by, stated in its own docstring.\n\nAnchor: `get_family_revision`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fafa18088da97ad02199d8d81db836c10e274a58",
+            "content": "sha256:57f72baf8adc3f53f857c90088fe3142582d1c875cdce06320c91253b8665a11",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "- The read surface, including the seal-verifying revision read.\n\nAnchor: `get_family_revision`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fafa18088da97ad02199d8d81db836c10e274a58",
+            "content": "sha256:57f72baf8adc3f53f857c90088fe3142582d1c875cdce06320c91253b8665a11",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "- The payload a family revision's digest seals, including the sorted predecessor set.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f503fa94c4c7bed4f52d64b967754439519f5b6a",
+            "content": "sha256:f987f04351f9a963408d04353decdced875c8d570d21bdeb16852ae8f8f75efc",
+            "locator": {
+              "kind": "symbol",
+              "name": "canonical_family_revision_payload"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/digest.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "- The declared `family`, `family_revision` and `family_member` tables and their indexes.\n\nAnchor: `TABLE_DDL`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec5bf0677108161ea883091d9613a34d21a3697c",
+            "content": "sha256:9e10ce1d79604d8957a14bb7d9e140464ea4f5b91ed4cd87a5b76d911c6490a5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The retained family identity, exact revision and revision enumeration reads.\n\nAnchor: `get_family` `get_family_revision` `list_family_revision_ids`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fafa18088da97ad02199d8d81db836c10e274a58",
+            "content": "sha256:57f72baf8adc3f53f857c90088fe3142582d1c875cdce06320c91253b8665a11",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_review_lifecycle_watch.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Binding pending and mismatched receipts are not completion",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17b7576bd1deace21f29fad0f28b10d6d5081ea0",
+            "content": "sha256:2f9bd03430ad713bba0ae7ee9414ea126c729593622eb370385330709e3282d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_binding_pending_and_mismatched_receipts_are_not_completion"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

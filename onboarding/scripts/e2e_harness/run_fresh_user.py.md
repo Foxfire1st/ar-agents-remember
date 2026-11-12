@@ -1,15 +1,5 @@
 # scripts/e2e_harness/run_fresh_user.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `scripts/e2e_harness/run_fresh_user.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-17T10:50+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
-| governingOverview | `scripts/e2e_harness/overview.md` |
-
 ## Governing Overview
 
 [scripts/e2e_harness/overview.md](overview.md)
@@ -22,9 +12,7 @@ The entry point for the fresh-user acceptance: two clean-room fixtures, one tran
 python scripts/e2e_harness/run_fresh_user.py --reports <dir> [--work-root <dir>]
 ```
 
-The run root is a fresh temporary directory unless `--work-root` names one, so a successor can
-re-run this from the repository alone and read the same transcript shape. Nothing outside the run
-root is read or written.
+The run root is a fresh temporary directory unless `--work-root` names one. The acceptance fixtures use that root, while `--reports` independently selects the transcript destination `<reports>/fresh-user-acceptance/run.json`; the runner creates that destination and writes the report there. This runner does not establish an absolute no-I/O-outside-root guarantee.
 
 ## Code Commentary
 
@@ -44,26 +32,28 @@ behind.
 entry is silently ignored by the import machinery, which would otherwise find nothing here and
 report a missing module.
 
+`HARNESS_DIR` now names the scripts directory (`parent.parent` of this file). The runner imports `e2e_harness.fresh_user_scenario` and `e2e_harness.reporting` through that one qualified route. The Reviewer’s correction distinguishes this runner variable from the test’s `SCRIPTS_ROOT`.
+
 ### Why it runs on the host rather than in the Dagger graph
 
-The module states this deliberately: the packet carries a **clean environment** requirement, not a
-Dagger-graph requirement. The fixtures are created from nothing under the run root and no
-machine-local state is consulted, which is what the certification would have bought here. The
-pre-existing `run.py` entry point keeps its own Dagger admission for the ambient role-chat scenario
-and is not modified by this module.
+The module docstring states a clean-environment requirement and explains the host-versus-Dagger choice; that is a directive, not an independently established absence of machine-local reads. The current main composes the fresh-user scenario and writes the report to the separately supplied `--reports` destination. The earlier ambient `run.py` account is retained below as superseded card wording; that file is absent from this frozen tree.
 
 ### Conventions
 
 - Exit status is the run's verdict: non-zero when any invariant or checkpoint did not pass.
 - The summary is printed for a human reading a terminal; the **JSON transcript is the evidence**,
   and the printed figures are read from the same report object rather than recomputed.
+Retained earlier consumer caption:
+
 - This module is a **governed evidence artifact** with an `[[artifact]]` row in
   `mcp/tests/evidence-lifecycle.toml` and real consumers in `fresh_user_scenario.py` and
   `mcp/tests/test_fresh_user_harness.py`.
 
+Current catalog clause: the runner’s artifact row names `mcp/tests/test_fresh_user_harness.py` as its consumer; both the base row and the repaired current row have that one member. The scenario imports fixture and reporting; it is not named as a runner consumer in that row.
+
 ### Invariants And Boundaries
 
-- Nothing outside the run root is read or written.
+- Fixture work is rooted at `run_root`; transcript output goes to the independently supplied `--reports` destination. No absolute filesystem-containment result is asserted.
 - `--reports` is mandatory; the run root defaults to a temporary directory this run removes.
 - The entry point does not certify anything by itself: it writes the transcript the acceptance is
   read from.
@@ -72,28 +62,48 @@ and is not modified by this module.
 
 None.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The entry point that drives the acceptance and writes the transcript. | `main` | scripts/e2e_harness/run_fresh_user.py:47-82 |
-| `--reports` is required and `--work-root` is optional. | `arguments` | scripts/e2e_harness/run_fresh_user.py:35-44 |
-| The transcript lands under this directory name. | `REPORT_DIRECTORY` | scripts/e2e_harness/run_fresh_user.py:32-32 |
-| The acceptance the entry point drives. | `run_fresh_user_acceptance` | scripts/e2e_harness/fresh_user_scenario.py:1099-1183 |
-| The shared writer for the transcript file. | `write_json` | scripts/e2e_harness/reporting.py:70-72 |
-| The existing Dagger-admitted entry point this module deliberately does not modify. | `main` | scripts/e2e_harness/run.py:43-43 |
-| The case pinning the argument contract. | `test_the_entry_point_requires_reports_and_defaults_the_run_root` | mcp/tests/test_fresh_user_harness.py:224-235 |
 
-## Cross-Repo References
+Superseded card wording retained for custody (not certified as true of any source epoch or measured candidate):
+
+> The run root is a fresh temporary directory unless `--work-root` names one, so a successor can
+> re-run this from the repository alone and read the same transcript shape. Nothing outside the run
+> root is read or written.
+
+> - Nothing outside the run root is read or written.
+
+
+> The module states this deliberately: the packet carries a **clean environment** requirement, not a
+> Dagger-graph requirement. The fixtures are created from nothing under the run root and no
+> machine-local state is consulted, which is what the certification would have bought here. The
+> pre-existing `run.py` entry point keeps its own Dagger admission for the ambient role-chat scenario
+> and is not modified by this module.
+
+
+### Repo-Internal References
+
+- The entry point that drives the acceptance and writes the transcript.
+- `--reports` is required and `--work-root` is optional.
+- The transcript lands under this directory name.
+
+- The acceptance the entry point drives.
+
+- The shared writer for the transcript file.
+- The case pinning the argument contract.
+
+- The runner uses HARNESS_DIR for the scripts root and imports scenario/reporting through e2e_harness-qualified names. Its lifecycle row declares the harness test as its one consumer; the row equals its base registration.
+
+### Cross-Repo References
 
 No sibling-repository contract defines these values.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
+No meaningful cross-repo references found.
 
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `run_fresh_user_acceptance` repointed to scripts/e2e_harness/fresh_user_scenario.py:1099-1183. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-17T10:50+02:00 — 260915-CAPS-L14 curator: created this card for the entry point the leaf adds. Records the argument contract (`--reports` required, `--work-root` optional with a self-removing temporary default), the transcript path, that exit status is the verdict, that nothing outside the run root is read or written, and the module's own stated reason for running on the host rather than inside the Dagger graph. Notes it is a governed evidence artifact distinct from the pre-existing `run.py`, which it does not modify. Verification metadata is left at this leaf's synced base `0346da9c` with a recorded working candidate, because the candidate is deliberately uncommitted — the governed closeout stamps the real code commit and no hash or digest was invented here.
+- The runner uses HARNESS_DIR for the scripts root and imports scenario/reporting through e2e_harness-qualified names. Its lifecycle row declares the harness test as its one consumer; the row equals its base registration. [8]
+- The entry point that drives the acceptance and writes the transcript. [1]
+- `--reports` is required and `--work-root` is optional. [2]
+- The transcript lands under this directory name. [3]
+- [4]
+- The shared writer for the transcript file. [5]
+- The case pinning the argument contract. [7]

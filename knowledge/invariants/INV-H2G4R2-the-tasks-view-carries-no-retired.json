@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Realized in the spine, in the task-document panel that passes no provider state, and in the state module that no longer subscribes. The two dashboard tests assert that an enclosure with legacy provider records and one with none render the same spine, which is the case a reader would otherwise get wrong."
+  },
+  "applicability": "The Tasks view's worktree spine, for every enclosure it renders.",
+  "conditions": [
+    "An enclosure may have been recorded before the retirement and still carry provider records.",
+    "A checkout may be absent because it was cleaned up or because it never existed, and the lane cannot tell the two apart."
+  ],
+  "exclusions": [
+    "The branch fact, which is rendered from unchanged context and is not this change's claim.",
+    "Any read of provider or engine state."
+  ],
+  "id": "INV-H2G4R2",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_l192_root_instruction_parameter.py plus dashboard/src/panels/detail-panel/worktreeSpine.test.tsx (8 vitest tests, missing and present cases); the populated Tasks capture stays unproved (E1)."
+      ],
+      "path": "handoff-list.l192.json"
+    },
+    "handoffEntry": "L192-W-R199-01",
+    "leaf": "260928-MIK-L192",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The Tasks view carries no retired provider lane: the enclosure spine renders code, memory and worktree facts — the branch fact it also renders comes from unchanged context, docHead.tsx:438, not from this change — and it reports a missing checkout as missing rather than as a provider-derived or creation-history claim.",
+  "status": "proposed",
+  "supersedes": []
+}

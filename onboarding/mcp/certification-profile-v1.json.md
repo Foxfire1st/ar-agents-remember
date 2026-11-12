@@ -1,18 +1,8 @@
 # mcp/certification-profile-v1.json
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/certification-profile-v1.json` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T21:51:32+00:00 |
-| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff`|
-| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
-[Governing route overview](overview.md)
+[overview](overview.md)
 
 ## Purpose
 
@@ -22,19 +12,23 @@ Declares Agents Remember's repository-owned certification selections, Gates 1–
 
 ### Logic
 
+The generated-skills input declares only the packaged runtime skills tree and includes generated-copies.json beside the sync script and canonical skills source. The generated-runtime input declares the packaged benchmarks, providers and system trees with their canonical sources and scripts/sync-runtime.py; no generated-harness input is declared, while the generated-harness rail remains declared and runs scripts/sync-skills.py --check. These declarations are not certification or sync execution; the remaining rail/publication-artifact boundaries stay separate.
+
+The profile declares no provider-runtime integration rail. `rails` declares each rail's `identity.railId` with its gate, class, artifacts, evidence contract and execution adapter, and that rail is absent from the declaration and from the gate selections. The mechanical binding table under the build-tooling directory follows this declaration and is follow-through, not a second account of it — it carries no card of its own.
+
 `closeout-full` and `closeout-targeted` declare all four code gates. `local-targeted` declares Gate 4 not applicable. Each rail binds identity, prerequisites, observed evidence, required-on-pass artifacts, runtime and execution policy. Selector configuration and executor runtime digests are recomputed from their actual owners; the outer profile digest binds the canonical profile.
 
-The publication inventory is finite: 54 declared paths, including 32 stable `rail-evidence/` capture paths. Captures use `application/octet-stream` because an exact bounded byte tail may begin within a UTF-8 sequence. A rail's `requiredOnPass` artifact obligation remains distinct from an optional path's publication allowance. Exporting a result payload does not excuse absent evidence bytes.
+The publication inventory is finite: 45 declared paths, including 29 stable `rail-evidence/` capture paths. No ambient-role-chat or teardown-process-cleanliness rail or artifact is declared. Captures use `application/octet-stream` because an exact bounded byte tail may begin within a UTF-8 sequence. A rail's `requiredOnPass` artifact obligation remains distinct from an optional path's publication allowance. Exporting a result payload does not excuse absent evidence bytes.
 
-Dashboard browser execution writes the Playwright JSON result at the explicitly configured report path with both line and JSON reporters. Provider integration writes the actual pytest phase report to `provider-integration-result.json`. For an applicable ambient scenario, the teardown verifier checks the existing clean-room summary and both successful `L5-C10` checkpoint records before writing `teardown-proof.json`. For an admitted not-applicable scenario, it requires summary absence and writes a zero-start proof with the exact source-decision digest and empty replications. Dashboard coverage retains its existing Vitest producer location and receives the stable exported name `dashboard-coverage.json`.
+Dashboard browser execution writes its configured Playwright JSON result with line and JSON reporters, and dashboard coverage keeps the stable `dashboard-coverage.json` export. No ambient summary, replication records, source-selection artifact or `teardown-proof.json` is declared.
 
-The profile also declares a bounded dashboard dependency census and reconstruction proof for resumed Gates 2–4, generated-input source/output scopes, and exact source applicability for the ambient-role rail. Its source-selection report remains required even when that rail is not applicable; teardown treats the ambient-role prerequisite conditionally. These declarations do not narrow the unconditional dashboard suite or turn full Python ownership into a focused population.
+The profile retains bounded dashboard dependency reconstruction, generated-input scopes and the remaining full/targeted/local selections. It declares no ambient-role source applicability or conditional teardown prerequisites.
 
-The Dagger emission/export owners retain real files and exact output captures on a separate report branch. The profile declares those paths and their bounds; the host validates the full published snapshot and nested evidence before certificates can reference them. These concrete producers close the earlier three Gate-4 mapping gaps.
+The Dagger emission/export owners retain real files and exact output captures on a separate report branch. The profile declares those paths and their bounds; the host validates the full published snapshot and nested evidence before certificates can reference them.
 
 ### Conventions
 
-Treat the JSON as canonical profile data. Refresh profile, runtime and selector digests from their actual owners after semantic source changes. The reduced test population changed selector configuration and the profile identity. Coverage and production CRAP observations are diagnostic under current repository policy; profile digests are not metric pass claims. The current declaration binds profile digest `5096c06a017e237a6a3f3cb6b9e1c703e2304d44831716cbfaf898699f9bfb1d`, selector configuration digest `e6fe17146ba4ac8ee68c3d94fc076f1de4d69c61f05080e405d12a2eef3fdc72`, and runtime digest `1ea0d21043dcc358b6f18de7a0eddaf27418122f95412b479bb066ae0bec299a`.
+Treat the JSON as canonical profile data. Refresh profile, runtime and selector digests from their actual owners after semantic source changes. Coverage and production CRAP observations are diagnostic under current repository policy; profile digests are not metric pass claims. Each rail's `lockDigest` is the content digest over both lock files (`dashboard/package-lock.json` and `mcp/uv.lock` together), each rail's `toolchainDigest` is an opaque declared identity that changes when the toolchain changes, and the outer `profileDigest` binds the canonical profile. No product code derives or checks `lockDigest` or `toolchainDigest`; a lock or toolchain change updates those two by hand from their owners. `profileDigest` is different: the canonical profile owner derives it with `repository_profile_digest` and admission refuses a declared value that differs from the canonical content.
 
 ### Invariants And Boundaries
 
@@ -46,53 +40,43 @@ Treat the JSON as canonical profile data. Refresh profile, runtime and selector 
 
 ### Todos
 
-No remaining producer gap is recorded for the three L30 artifacts. The profile declaration does not itself prove runtime composition or final-memory acceptance. Those facts require their canonical execution evidence.
+The profile declaration does not itself prove runtime composition or final-memory acceptance. Those facts require their canonical execution evidence.
 
-## Docs References
+## Evidence
+
+
+
+- Generated inputs declare generated-projection-types, generated-runtime (packaged benchmarks, providers and system) and generated-skills (the packaged skills tree); no generated-harness input is declared. [7]
+
+- The retained generated-harness rail checks skills through scripts/sync-skills.py --check. [8]
+### Docs References
 
 No external Domain Documentation source is configured for this repository. This card records repository-owned behavior from the source references below; no external documentation claim is made.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| External domain documentation is not configured. | N/A | N/A |
+External domain documentation is not configured.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The exact source declarations below establish the current behavior; this inventory is not execution evidence.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Bounded dependency reconstruction environments | `environments` | mcp/certification-profile-v1.json:2-34 |
-| Pinned Dagger execution adapter and actual runtime digest | `executorAdapters` | mcp/certification-profile-v1.json:35-57 |
-| Current canonical profile digest | `profileDigest` | mcp/certification-profile-v1.json:182-182 |
-| 54 report paths including 32 rail-evidence captures | `publishedArtifacts` | mcp/certification-profile-v1.json:184-679 |
-| Full/targeted/local selections and explicit applicability | `selections` | mcp/certification-profile-v1.json:3117-3616 |
-| Current source-owned selector configuration digest | `selectors` | mcp/certification-profile-v1.json:3744-3744 |
+- Bounded dependency reconstruction environments [1]
 
-## Cross-Repo References
+
+- Pinned Dagger execution adapter and actual runtime digest. [2]
+
+
+- The declaration carries its own canonical profile digest. [3]
+
+
+- 45 report paths include 29 rail-evidence captures; ambient and teardown publications are removed. [4]
+
+
+- Full/targeted/local selections and explicit applicability. [5]
+
+- Current source-owned selector configuration digest [6]
+
+### Cross-Repo References
 
 No separate cross-repository protocol is established by this file. The configured cross-repository allowance is empty; no external source is relied upon here.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repository evidence is required for these file-local claims. | N/A | N/A |
-
-## Update History
-- 2026-09-08T14:39:58+00:00: Generated citation repair: `selectors` repointed to mcp/certification-profile-v1.json:3744-3744. No content impact: mechanical anchor-range projection bound to citation source snapshot 5911742cfcc7a53db92b36b80bac02ee49a67204b190c0311a81bcc2e388ad59; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-06T21:51:32+00:00 — Reconciled the retained IAS implementation and diagnostic testing policy with current source citations; prior verification provenance is retained and no new test or review result is claimed.
-
-- 2026-09-06T15:03:51+00:00 — Verified the curated profile card at actual commit c69d5171187fa1957025e393270db9f5a864ab14: exact profile/selector/runtime pins, 54 publications including 32 captures, conditional ambient/teardown behavior and active references. Preserved all earlier history; declarations remain distinct from executed certification evidence.
-
-- 2026-09-06T14:03:43+00:00 — L33 candidate curation: Reconciled the finite environment/source-selection publications, reconstruction and generated-input declarations, conditional ambient prerequisite, and actual canonical digest pins; repaired source ranges. Existing verification commit/date and all prior history are retained pending review against a real code commit.
-
-
-- 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
-
-- 2026-09-05T22:20+00:00 — L30 source review: reconciled the real browser/provider/teardown producers, finite byte-capture publications and exact owner-derived digest pins; retained local applicability and later lifecycle boundaries.
-
-- 2026-09-05T06:14:14+00:00 — Reconciled selector/runtime profile evolution and documented the unsatisfied required Gate-4 producer contracts without treating declarations as proof.
-
-- 2026-09-04T10:05+02:00 - 260831-CCR-L12 Gate-5 memory pass for cfd09381 (CCR-R12@v4): recorded the profile regeneration for the five-gate/authority cutover - `profileDigest` `34858daa...` and adapter `runtimeDigest` `4cf0e133...` moved with the changed Dagger module bytes, every rail now declares explicit `successExitCodes`/`skippedExitCodes` arrays, and digest anchor lines were re-pointed (2733/2793).
-
-- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for eb05a872780112640359232063168639d20fa87b (root bootstrap repair): created the card for the checked-in canonical certification profile and recorded the three regenerated digest authorities (`profileDigest`, selector `configurationDigest`, adapter `runtimeDigest`); no prior sidecar existed.
+No cross-repository evidence is required for these file-local claims.

@@ -1,0 +1,566 @@
+{
+  "path": "dashboard/src/panels/detail-panel/taskReader.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d25262c3e75cb900805602c122e9f8f6605ec733",
+        "content": "sha256:2a220e0e6edda594e1155d30d492453ebfc96534bc456854954d740f3c546318",
+        "locator": {
+          "end": 302,
+          "kind": "line_range",
+          "start": 248
+        }
+      },
+      "id": "RLZ-2W1DRN",
+      "invariant": "INV-7JFCAF",
+      "origin": {
+        "handoffEntry": "curator-bounded-summary-and-own-view",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "The complete group/content view retains a counted Back path.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d25262c3e75cb900805602c122e9f8f6605ec733",
+        "content": "sha256:a8b37de9c2de7faff2008ac9f81799549791c4611d90a75a450427b51c86d260",
+        "locator": {
+          "end": 169,
+          "kind": "line_range",
+          "start": 159
+        }
+      },
+      "id": "RLZ-42QH5Y",
+      "invariant": "INV-T3TNTX",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 rule 6",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This master-body extent places the fixed Acceptance block immediately after Design.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "d25262c3e75cb900805602c122e9f8f6605ec733",
+        "content": "sha256:fd61af6acfe3610a52521ea215160ebf3456072db47a82b18d06c1fd96e866cc",
+        "locator": {
+          "end": 130,
+          "kind": "line_range",
+          "start": 105
+        }
+      },
+      "id": "RLZ-4EETEC",
+      "invariant": "INV-PHG1PR",
+      "origin": {
+        "handoffEntry": "curator-realizations-INV-PHG1PR",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "Unified page puts head/direct grant/chrome before Objective and fixed form body.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "d25262c3e75cb900805602c122e9f8f6605ec733",
+        "content": "sha256:dad2bacbc309bc8ab455958696611f13997f7ad84148c986036a00053000ad0e",
+        "locator": {
+          "end": 78,
+          "kind": "line_range",
+          "start": 57
+        }
+      },
+      "id": "RLZ-4XE0XV",
+      "invariant": "INV-1XA7H3",
+      "origin": {
+        "handoffEntry": "F5-V02",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "The entry of the task page: mounts the page under the document's identity, so every piece of reader state is dropped with the document.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d25262c3e75cb900805602c122e9f8f6605ec733",
+        "content": "sha256:496349585ed2f96dcf699b64c6fd6823509e9dfeef2693002af31d0e63548657",
+        "locator": {
+          "end": 201,
+          "kind": "line_range",
+          "start": 122
+        }
+      },
+      "id": "RLZ-6XKJAP",
+      "invariant": "INV-T3TNTX",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 rule 6",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "Shared Objective/Non-goals precede fixed LeafBody Design/Acceptance.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "d25262c3e75cb900805602c122e9f8f6605ec733",
+        "content": "sha256:d5c5c20b5d07228370c6cb87170db303aadd58c62d6bad25bafb8f7839b349a4",
+        "locator": {
+          "kind": "symbol",
+          "name": "TaskPage"
+        }
+      },
+      "id": "RLZ-87SCAF",
+      "invariant": "INV-PHG1PR",
+      "origin": {
+        "handoffEntry": "curator-fixed-form-and-optional-blocks",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Producer-form dispatch fixes head, Objective, optional Non-goals and body.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d25262c3e75cb900805602c122e9f8f6605ec733",
+        "content": "sha256:baf123ba6ae4c54bb38ed2cde6c41700b90017f76cc67fc34093a5c418d7e33a",
+        "locator": {
+          "end": 125,
+          "kind": "line_range",
+          "start": 122
+        }
+      },
+      "id": "RLZ-BAJBAG",
+      "invariant": "INV-T3TNTX",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 rule 6",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This overview-header extent places Non-goals immediately after Objective for the supported master form.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "d25262c3e75cb900805602c122e9f8f6605ec733",
+        "content": "sha256:49d13250bb60e724187db4e34281606e3e65f5d4df83920d7935261734721436",
+        "locator": {
+          "end": 157,
+          "kind": "line_range",
+          "start": 137
+        }
+      },
+      "id": "RLZ-BM077Q",
+      "invariant": "INV-5PPM67",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 rule 3",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "OverviewBody reuses the same OrderBlock after Now with master form and passes shared native entries.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "d25262c3e75cb900805602c122e9f8f6605ec733",
+        "content": "sha256:dad2bacbc309bc8ab455958696611f13997f7ad84148c986036a00053000ad0e",
+        "locator": {
+          "end": 78,
+          "kind": "line_range",
+          "start": 57
+        }
+      },
+      "id": "RLZ-C204CG",
+      "invariant": "INV-1XA7H3",
+      "origin": {
+        "handoffEntry": "F5-V02",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "The shared TaskReader mounts the task page under the exact qualified entry key for master as well as leaf forms.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d25262c3e75cb900805602c122e9f8f6605ec733",
+        "content": "sha256:3fcb180697451d9eed64fe0956add55c7d7dca6f9c928fadb211dc417699eb63",
+        "locator": {
+          "kind": "symbol",
+          "name": "OverviewBody"
+        }
+      },
+      "id": "RLZ-CH8ER2",
+      "invariant": "INV-PHG1PR",
+      "origin": {
+        "handoffEntry": "curator-fixed-form-and-optional-blocks",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Shared master/sprint body has fixed slots and explicit sprint omissions.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d25262c3e75cb900805602c122e9f8f6605ec733",
+        "content": "sha256:49d13250bb60e724187db4e34281606e3e65f5d4df83920d7935261734721436",
+        "locator": {
+          "end": 157,
+          "kind": "line_range",
+          "start": 137
+        }
+      },
+      "id": "RLZ-DD6G8V",
+      "invariant": "INV-XJ42YM",
+      "origin": {
+        "handoffEntry": "L127-F5 sprint Order block",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "OverviewBody places the shared OrderBlock after Now and passes native entries, navigation and sprint/master form; it does not reconstruct a separate task status.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "d25262c3e75cb900805602c122e9f8f6605ec733",
+        "content": "sha256:7b00a7df3c1cf03584b370ed3e438a47001a8ee07920e9e96472e3e1e66d53be",
+        "locator": {
+          "end": 208,
+          "kind": "line_range",
+          "start": 174
+        }
+      },
+      "id": "RLZ-DGKE4D",
+      "invariant": "INV-S18MK6",
+      "origin": {
+        "handoffEntry": "curator-body-revision-hydration-currentness",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Ancillary form reads wait until not loading; unavailable releases them.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d25262c3e75cb900805602c122e9f8f6605ec733",
+        "content": "sha256:2a220e0e6edda594e1155d30d492453ebfc96534bc456854954d740f3c546318",
+        "locator": {
+          "end": 302,
+          "kind": "line_range",
+          "start": 248
+        }
+      },
+      "id": "RLZ-QPFF2D",
+      "invariant": "INV-7JFCAF",
+      "origin": {
+        "handoffEntry": "curator-bounded-summary-and-own-view",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Full task content views dispatch by explicit view kind and preserve Back.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d25262c3e75cb900805602c122e9f8f6605ec733",
+        "content": "sha256:3fcb180697451d9eed64fe0956add55c7d7dca6f9c928fadb211dc417699eb63",
+        "locator": {
+          "kind": "symbol",
+          "name": "OverviewBody"
+        }
+      },
+      "id": "RLZ-RX5RNR",
+      "invariant": "INV-PHG1PR",
+      "origin": {
+        "handoffEntry": "curator-fixed-form-and-optional-blocks",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Shared overview sprint branch fixes slots, not authored section order.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d25262c3e75cb900805602c122e9f8f6605ec733",
+        "content": "sha256:ed7a0c93167c5769eaf4affb204c6de5cea315a6a56695986addec3b39db6d58",
+        "locator": {
+          "end": 125,
+          "kind": "line_range",
+          "start": 105
+        }
+      },
+      "id": "RLZ-SKSCWV",
+      "invariant": "INV-PHG1PR",
+      "origin": {
+        "handoffEntry": "curator-fixed-form-and-optional-blocks",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Unified page top owns complete-head/chrome-before-Objective ordering.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d25262c3e75cb900805602c122e9f8f6605ec733",
+        "content": "sha256:82805ff8a3713ade6c30508c8f06281896b47515419deb4f756aec756a13228a",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-SMNSX9",
+      "invariant": "INV-XZYGEB",
+      "origin": {
+        "handoffEntry": "INV-XZYGEB",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "This reader is where the page's task entry arrives, so the limit fact it may show has to be passed here.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "d25262c3e75cb900805602c122e9f8f6605ec733",
+        "content": "sha256:dad2bacbc309bc8ab455958696611f13997f7ad84148c986036a00053000ad0e",
+        "locator": {
+          "end": 78,
+          "kind": "line_range",
+          "start": 57
+        }
+      },
+      "id": "RLZ-TKQSG2",
+      "invariant": "INV-1XA7H3",
+      "origin": {
+        "handoffEntry": "F5-V02",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "The shared TaskReader mounts the same keyed task page for sprint form, with one reset boundary per document.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d25262c3e75cb900805602c122e9f8f6605ec733",
+        "content": "sha256:e06dbdcf293ae47e7cf0a5e2ec572b740e1d4c9ca8ae1b272029a40c970b7d59",
+        "locator": {
+          "end": 322,
+          "kind": "line_range",
+          "start": 307
+        }
+      },
+      "id": "RLZ-VQJH7N",
+      "invariant": "INV-WNHAWD",
+      "origin": {
+        "handoffEntry": "L168-CUR-M1-21-A013-08",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "usePreparedReaderContent retains only pure register/further-section preparation under reader:taskBodyKey(reference,bodyRevision) after body availability; loading paths prepare directly and live handlers remain outside the retained value.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d25262c3e75cb900805602c122e9f8f6605ec733",
+        "content": "sha256:ed7a0c93167c5769eaf4affb204c6de5cea315a6a56695986addec3b39db6d58",
+        "locator": {
+          "end": 125,
+          "kind": "line_range",
+          "start": 105
+        }
+      },
+      "id": "RLZ-WPHR7X",
+      "invariant": "INV-PHG1PR",
+      "origin": {
+        "handoffEntry": "curator-realizations-INV-PHG1PR",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "The unified native TaskPage top orders complete document head, direct grant and current chrome before the sole Objective for model-derived forms; no retired series chrome is claimed.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "d25262c3e75cb900805602c122e9f8f6605ec733",
+        "content": "sha256:c7ecb1fea0bab515ff9199fcbd2223a00fb01ee0c8a502f2c1fdd2538adb1c97",
+        "locator": {
+          "end": 236,
+          "kind": "line_range",
+          "start": 213
+        }
+      },
+      "id": "RLZ-WRFPXT",
+      "invariant": "INV-GHZ8VQ",
+      "origin": {
+        "handoffEntry": "L127-F5 reports request",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "TaskPageRefsReports passes entry.reference.repository and entry.reference.path to useTaskPageNotes, deriving the directory from that same path. Reports are requested with the task-root-relative document path; no physical docPath fallback remains.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d25262c3e75cb900805602c122e9f8f6605ec733",
+        "content": "sha256:3fcb180697451d9eed64fe0956add55c7d7dca6f9c928fadb211dc417699eb63",
+        "locator": {
+          "kind": "symbol",
+          "name": "OverviewBody"
+        }
+      },
+      "id": "RLZ-Y0W92H",
+      "invariant": "INV-PHG1PR",
+      "origin": {
+        "handoffEntry": "curator-fixed-form-and-optional-blocks",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Master branch fixes Order and Design/Acceptance slots.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "10": {
+      "note": "Both overview forms compose Now before the scoped closeout queue and Order.\n\nAnchor: Overview composition",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d25262c3e75cb900805602c122e9f8f6605ec733",
+            "content": "sha256:29550d748345c9594886909274bef53624d4be34fa864039f20a900f7299b5fc",
+            "locator": {
+              "end": 150,
+              "kind": "line_range",
+              "start": 137
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "StepsBlock owns the full served step table and derives its header marks from those steps; taskReader supplies doc.steps and the served done/total counts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfa90f06e4586e011e00707422154dfc77cce5a0",
+            "content": "sha256:5733369f99dfb2a77bb688a4eed4f0fb25fd2e6437a68692057b5ccb7da82590",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 129
+            },
+            "path": "dashboard/src/panels/detail-panel/taskBlocks.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d25262c3e75cb900805602c122e9f8f6605ec733",
+            "content": "sha256:699e74cdadc822c77251af1b359c923d31cb14a6a5cae3e498725bd093eeac4f",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 191
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The relocated DecisionPreview keeps five newest authored decisions and an authored-only all-link to the records-retaining whole-log target.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9059b737b5ca32dc1181b0d4f8d6180ef3e28de",
+            "content": "sha256:32ab283daa0ee36e5993928a28412835196db8bb609b3ecf64ef3a04254ad545",
+            "locator": {
+              "end": 325,
+              "kind": "line_range",
+              "start": 280
+            },
+            "path": "dashboard/src/panels/detail-panel/skeletons.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d25262c3e75cb900805602c122e9f8f6605ec733",
+            "content": "sha256:142b95df43e29ac717fa1fbbe927f86aa2fd59addc78039791a0d5e50b4a5269",
+            "locator": {
+              "end": 305,
+              "kind": "line_range",
+              "start": 305
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The planning-task switch stays rendered while pending, disables its action and displays served giver words and adapter notice.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d25262c3e75cb900805602c122e9f8f6605ec733",
+            "content": "sha256:00860c2065654aad86d3187cba51a24f52550de5a26d304c4b2b58872bb8baa0",
+            "locator": {
+              "end": 114,
+              "kind": "line_range",
+              "start": 114
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8727e6986904131489c13104c706b28a118acb8a",
+            "content": "sha256:d64f365cefe7a023e10b154b9963bc92faf3980666dcc39df6fcf368207ec901",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "dashboard/src/panels/detail-panel/directGrant.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8727e6986904131489c13104c706b28a118acb8a",
+            "content": "sha256:cae4c26ac5c74e3fc873c7fc326efc564171e20986a44db4b865963e8f1a7361",
+            "locator": {
+              "end": 71,
+              "kind": "line_range",
+              "start": 64
+            },
+            "path": "dashboard/src/panels/detail-panel/directGrant.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8727e6986904131489c13104c706b28a118acb8a",
+            "content": "sha256:fb0c0af5160e84432658d148d9c438ae93bda9126762c6336a4909df69ce9c1f",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 125
+            },
+            "path": "dashboard/src/panels/detail-panel/directGrant.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Only a planning subTask receives the switch; other granted states receive bare words.\n\nAnchor: `TaskDirectGrant`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d25262c3e75cb900805602c122e9f8f6605ec733",
+            "content": "sha256:82805ff8a3713ade6c30508c8f06281896b47515419deb4f756aec756a13228a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "TaskPage identity is the canonical entry key; the surrounding clock runs for shown entries that carry an event time or a served limited status.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d25262c3e75cb900805602c122e9f8f6605ec733",
+            "content": "sha256:dad2bacbc309bc8ab455958696611f13997f7ad84148c986036a00053000ad0e",
+            "locator": {
+              "end": 78,
+              "kind": "line_range",
+              "start": 57
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

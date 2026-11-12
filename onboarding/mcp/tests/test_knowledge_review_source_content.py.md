@@ -1,15 +1,5 @@
 # mcp/tests/test_knowledge_review_source_content.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_knowledge_review_source_content.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-28T12:38:10+02:00 |
-| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` |
-| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
-| governingOverview | `mcp/tests/overview.md` |
-
 ## Governing Overview
 
 [mcp/tests route overview](overview.md)
@@ -25,21 +15,24 @@ route (`/api/review/intent/source-content`) wired through `register_review_route
 application owner — and nothing here injects a prebuilt expansion, a fake diff payload or a
 hand-assembled resolution.
 
-Two properties make the assertions evidence rather than restatement. **Every text is read back out of Git
-independently of the owner under test**, through a subprocess `git show <tree>:<path>` observation whose
-failure is an assertion failure and never an empty string. And **the route is exercised over an HTTP
-transport** (`TestClient` against the real route table), so a case that passes has proved the query
-contract, the refusal status and the served body together rather than an in-process call.
+Two properties make the assertions evidence rather than restatement. **Texts a case compares to a Git
+observation are read back out of Git independently of the owner under test**, through a subprocess
+`git show <tree>:<path>` observation whose failure is an assertion failure and never an empty string;
+assertions that compare instead with a literal, a constructed fixture string or the child's own
+`worktree.read_text()` are not independent Git readbacks, and the cases below say which is which. And
+**the route is exercised over an HTTP transport** (`TestClient` against the real route table), so a case
+that passes has proved the query contract, the refusal status and the served body together rather than an
+in-process call.
 
 ## Code Commentary
 
 ### Logic
 
 **The fixture is the sibling review suite's, extended rather than rebuilt.** `content_fixture`
-(`:169-174`) calls `build_endpoint_fixture(tmp_path / "content", datasets=False)` imported from
+calls `build_endpoint_fixture(tmp_path / "content", datasets=False)` imported from
 `test_knowledge_review_source_endpoints` — the R01 production-composition fixture — so these cases measure
 the *same* real enclosure, worktree and capture path the source-endpoint cases measure rather than a
-second, drifting one. `_materialize_unusual` (`:127-166`) then writes **real instances** of every content
+second, drifting one. `_materialize_unusual` then writes **real instances** of every content
 class the packet names into that worktree: a real binary blob (`BINARY_PATH`), a real symlink
 (`SYMLINK_PATH`), a real nested repository recorded as a gitlink (`SUBMODULE_PATH`), a mode-only change
 (`MODE_ONLY_PATH`), a file→symlink type change (`TYPE_CHANGE_PATH`), an oversized document
@@ -48,53 +41,56 @@ what Git actually reports, not a state a test can assert into existence, which i
 them on disk and commits through the shipped fixture helpers.
 
 **The independent observation is a subprocess Git, deliberately not the owner's own reader.**
-`_blob_text` (`:89-94`), `_object_id` (`:97-101`) and `_subprocess_git` (`:104-116`) run `git show` and
-`git rev-parse` with a pinned environment, return `None` on a non-zero exit, and hand back **undecoded
-bytes** so an observation of binary content is byte-exact as well. Every "the expansion carries the
-content of the two bound objects" assertion compares the served value against one of these, which is what
-makes it a measurement of the fixture rather than a restatement of the read.
+`_subprocess_git` runs Git with a pinned environment and returns undecoded stdout, or `None` on a
+non-zero exit. `_blob_text` observes `git show`, asserts availability and decodes UTF-8;
+`_object_id` observes `git rev-parse` and returns a stripped ASCII identity or `None`. The assertions that
+compare a served text with "the content of the two bound objects" use one of these observations where the
+case reads that object from Git; the added-file and oversized cases compare instead with the child's own
+`worktree.read_text()` and a constructed fixture string, so only the former measure the served bytes
+independently of the fixture's own files.
 
-**The routes are wired the way the composition root wires them.** `_served` (`:177-191`) builds a bare
+**The routes are wired the way the composition root wires them.** `_served` builds a bare
 `FastAPI` app and calls `register_review_routes` with the three real owners — `read_knowledge_review`,
-`list_knowledge_review_entries` and `read_review_source_content` — so `_listed_inventory` (`:194-207`) is
-the browser's own listing and `_expand` (`:210-227`) is the browser's own expansion, refusals included
+`list_comparison_review_entries` and `read_review_source_content` — so `_listed_inventory` is
+the browser's own listing and `_expand` is the browser's own expansion, refusals included
 (`_status` is attached to the body so a refusal's status and its code are asserted together).
-`_expansion` (`:230-239`) is the one place the *listed* generation is carried into the expansion, which is
+`_expansion` is the one place the *listed* generation is carried into the expansion, which is
 how the generation-bound cases name what the listing published rather than what the server would choose.
 
-**`_unchanged_paths` (`:247-266`) is the path-confinement falsifier.** It lists the recorded base tree's
+**`_unchanged_paths` is the path-confinement falsifier.** It lists the recorded base tree's
 paths that the listed change set does not contain, through the support module's own `_git`; each is a real
 file at the recorded base and in no change set, so a route that reads any addressable path serves them and
 only the packet's boundary forbids it.
 
 **The twenty cases, in the four groups the module's own section comments mark:**
 
+
 | Case | Property |
 | --- | --- |
-| `test_a_modified_file_opens_both_endpoints_own_bytes` (`:269-311`) | the modified path opens the base tree's bytes and the captured tree's, each read independently, and the two differ exactly as those objects do; the answer also names the objects it rests on |
-| `test_an_added_unmapped_file_opens_its_entire_candidate_text` (`:314-334`) | the packet's conforming example: an added file's whole candidate text, with a measured absence and its reason on the before side |
-| `test_a_deleted_file_opens_its_entire_base_text_beside_a_measured_absence` (`:337-355`) | the mirror image: the complete base text, an absent after side, and the proof that the file really is gone |
-| `test_a_tab_and_a_newline_in_a_name_is_the_address_its_content_opens_at` (`:358-381`) | the listed path is the address: a name with a tab and a newline opens its own object with no re-quoting and no substituted neighbour |
-| `test_a_binary_entry_states_its_kind_identity_and_size_with_no_text` (`:384-400`) | binary content is `binary`, carries its exact object and byte length, and never an empty document |
-| `test_a_symlink_entry_carries_the_link_target_and_never_a_document` (`:403-417`) | a symlink's content is its target, stated as such |
-| `test_a_submodule_entry_reports_the_recorded_pointer_and_no_file_bytes` (`:420-436`) | a gitlink is the commit it records, and no blob is invented for it |
-| `test_a_mode_only_change_shows_identical_bytes_and_names_the_mode` (`:439-454`) | the one change a content read must not present as an edit: identical bytes, one object id, the mode change stated |
-| `test_a_type_change_opens_each_side_by_its_own_kind` (`:457-470`) | a file that became a symlink reads as a document on one side and a target on the other |
-| `test_oversized_content_is_a_stated_bounded_expansion` (`:473-492`) | past the bound, a prefix that says it is one, with the exact size and the whole object still reachable by identity |
-| `test_the_expansion_stays_bound_when_the_branch_advances_after_the_listing` (`:495-557`) | the packet's "advance the branch between list and expansion" exercise: the *listed* bytes are served, the move is stated as `superseded`, and the control shows a re-listing carries the new generation |
-| `test_a_missing_object_is_unavailable_on_its_side_while_the_other_stays_inspectable` (`:560-596`) | one side's object is gone: that side is `unavailable`, the other stays readable, and the pair is admitted by a *measured* change set |
-| `test_a_pruned_base_blob_is_unavailable_on_its_side_while_the_candidate_side_is_served` (`:599-638`) | a real prune of one loose blob: both trees are whole, so the generation *is* measured, and the unreadable object is named rather than substituted |
-| `test_an_unmeasured_generation_still_confines_the_path_to_a_measured_change_set` (`:641-676`) | the verifier's finding: an unmeasured pair must not become an open file reader — both falsifying paths are refused by name |
-| `test_a_generation_that_names_a_commit_is_refused_rather_than_served` (`:679-722`) | only the object's own type separates a commit id from a tree id, and the control beside it shows the listed tree id still opens |
-| `test_a_path_outside_the_measured_change_set_is_refused_by_name` (`:725-749`) | an unchanged path no recorded realization links is refused by name; with no knowledge bound (`datasets=False`) only the inventory's entries are readable. The one other admitted population — unchanged context a recorded realization of the same comparison links — is measured in `test_knowledge_review_attributed_source_content.py` |
-| `test_a_baseline_that_is_not_the_recorded_base_is_refused` (`:752-770`) | the server reads this leaf's recorded base and substitutes no other generation |
-| `test_a_query_that_does_not_name_the_generation_is_refused_by_the_transport` (`:773-795`) | a missing tree id is a bad request naming the input it expected: the server never chooses the generation for a caller |
-| `test_an_unwired_process_refuses_the_route_by_name` (`:798-821`) | a process composed without the port answers 503 with "no review adapter is wired" rather than serving an empty file |
-| `test_the_listed_entry_and_its_expansion_describe_the_same_path` (`:824-842`) | the expansion echoes the listed generation, path, status and reference, so what was opened is what was listed |
+| `test_a_modified_file_opens_both_endpoints_own_bytes` | the modified path opens the base tree's bytes and the captured tree's, each read independently, and the two differ exactly as those objects do; the answer also names the objects it rests on |
+| `test_an_added_unmapped_file_opens_its_entire_candidate_text` | the packet's conforming example: an added file's whole candidate text, with a measured absence and its reason on the before side |
+| `test_a_deleted_file_opens_its_entire_base_text_beside_a_measured_absence` | the mirror image: the complete base text, an absent after side, and the proof that the file really is gone |
+| `test_a_tab_and_a_newline_in_a_name_is_the_address_its_content_opens_at` | the listed path is the address: a name with a tab and a newline opens its own object with no re-quoting and no substituted neighbour |
+| `test_a_binary_entry_states_its_kind_identity_and_size_with_no_text` | binary content is `binary`, carries its exact object and byte length, and never an empty document |
+| `test_a_symlink_entry_carries_the_link_target_and_never_a_document` | a symlink's content is its target, stated as such |
+| `test_a_submodule_entry_reports_the_recorded_pointer_and_no_file_bytes` | a gitlink is the commit it records, and no blob is invented for it |
+| `test_a_mode_only_change_shows_identical_bytes_and_names_the_mode` | the one change a content read must not present as an edit: identical bytes, one object id, the mode change stated |
+| `test_a_type_change_opens_each_side_by_its_own_kind` | a file that became a symlink reads as a document on one side and a target on the other |
+| `test_oversized_content_is_a_stated_bounded_expansion` | past the bound, a prefix that says it is one, with the exact size and the whole object still reachable by identity |
+| `test_the_expansion_stays_bound_when_the_branch_advances_after_the_listing` | the packet's "advance the branch between list and expansion" exercise: the *listed* bytes are served, the move is stated as `superseded`, and the control shows a re-listing carries the new generation |
+| `test_a_missing_object_is_unavailable_on_its_side_while_the_other_stays_inspectable` | one side's object is gone: that side is `unavailable`, the other stays readable, and the pair is admitted by a *measured* change set |
+| `test_a_pruned_base_blob_is_unavailable_on_its_side_while_the_candidate_side_is_served` | a real prune of one loose blob: both trees are whole, so the generation *is* measured, and the unreadable object is named rather than substituted |
+| `test_an_unmeasured_generation_still_confines_the_path_to_a_measured_change_set` | the verifier's finding: an unmeasured pair must not become an open file reader — both falsifying paths are refused by name |
+| `test_a_generation_that_names_a_commit_is_refused_rather_than_served` | only the object's own type separates a commit id from a tree id, and the control beside it shows the listed tree id still opens |
+| `test_a_path_outside_the_measured_change_set_is_refused_by_name` | an unchanged path no recorded realization links is refused by name; with no knowledge bound (`datasets=False`) only the inventory's entries are readable. The one other admitted population — unchanged context a recorded realization of the same comparison links — is measured in `test_knowledge_review_attributed_source_content.py` |
+| `test_a_baseline_that_is_not_the_recorded_base_is_refused` | the server reads this leaf's recorded base and substitutes no other generation |
+| `test_a_query_that_does_not_name_the_generation_is_refused_by_the_transport` | a missing tree id is a bad request naming the input it expected: the server never chooses the generation for a caller |
+| `test_an_unwired_process_refuses_the_route_by_name` | a process composed without the port answers 503 with "no review adapter is wired" rather than serving an empty file |
+| `test_the_listed_entry_and_its_expansion_describe_the_same_path` | the expansion echoes the listed generation, path, status and reference, so what was opened is what was listed |
 
 ### Conventions
 
-`pytestmark = pytest.mark.evidence_unit` (`:62`) is the module's lane marker, and the module's path is
+`pytestmark = pytest.mark.evidence_unit` is the module's lane marker, and the module's path is
 registered in `mcp/tests/test-evidence-lanes.toml`'s `unit-regression` lane at `:111`. It also appears as a
 **source-derived consumer** in the two `consumer_scope = "exact"` rows of `mcp/tests/evidence-lifecycle.toml`
 that its imports make it a consumer of (`diff_scope_test_support.py` at `:1412`, `read_scope_test_support.py`
@@ -102,7 +98,7 @@ at `:1445`) — so the catalog's consumer sets stay exact rather than approximat
 artifact and no contract of its own.
 
 Every case is deterministic: no case depends on wall-clock ordering, the Git observations pin `PATH`,
-`HOME` and `GIT_CONFIG_NOSYSTEM` (`:112`), and the only subprocess is that observation — the route is
+`HOME` and `GIT_CONFIG_NOSYSTEM`, and the only subprocess is that observation — the route is
 driven in-process through `TestClient`, so no case starts a server, reaches the network or touches a live
 coordination tree. Each case builds its own enclosure and worktree under `tmp_path`.
 
@@ -111,13 +107,13 @@ coordination tree. Each case builds its own enclosure and worktree under `tmp_pa
 - **Production composition only.** No case injects a preconstructed expansion, a fake diff payload or a
   hand-assembled resolution; every value the answer carries is produced by the shipped owner.
 - **The generation is the caller's, never the server's.** Both tree ids travel in the query and the
-  request parser refuses a blank one (`:773-795`), which is what keeps an opened entry bound to the
+  request parser refuses a blank one, which is what keeps an opened entry bound to the
   generation the reader was looking at.
 - **A missing object is a stated state, not an empty file.** `absent`, `unavailable`, `binary`,
   `symlink` and `submodule` are each distinguished from `present`, and no case accepts a substituted
   working-tree byte for a side that could not be read.
 - **The boundary is the measured change set, plus recorded-realization context.** With an unmeasurable
-  requested pair the leaf's own review still bounds the path, and the falsifiers prove it (`:641-676`);
+  requested pair the leaf's own review still bounds the path, and the falsifiers prove it;
   this fixture binds no knowledge, so the attributed-unchanged admission (260921-ICR-L43) never
   applies here and is measured by the sibling attributed module.
 - **Damage is injected into real artifacts** — a deleted loose object, an unheld tree id, a commit id in
@@ -129,63 +125,77 @@ coordination tree. Each case builds its own enclosure and worktree under `tmp_pa
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Every claim on this card is checkable in the module's own helpers, cases and docstring. Three details a
 reader should carry: the fixture is **shared with the R01 source-endpoint suite** rather than rebuilt, so
-these cases measure the same real enclosure and capture path; every text is asserted against an
-**independent subprocess `git show`**, never against the owner's own reader; and the route is driven over
-the real HTTP transport, so a passing case has proved the query contract and the served body together.
+these cases measure the same real enclosure and capture path; the texts a case compares to Git are
+asserted against an **independent subprocess `git show`**, never against the owner's own reader; and the
+route is driven over the real HTTP transport, so a passing case has proved the query contract and the
+served body together.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own statement of the requirement it is the production-composition evidence for, and of the load-bearing property behind each case. | "ICR-R03@v1"; "no silent fallback to a working tree" | mcp/tests/test_knowledge_review_source_content.py:1-27 |
-| The lane marker and the content-class constants, one path per class the packet names. | `pytestmark`; `BINARY_PATH`; `SYMLINK_PATH`; `SUBMODULE_PATH`; `MODE_ONLY_PATH`; `TYPE_CHANGE_PATH`; `OVERSIZED_PATH`; `ODD_NAME_PATH`; `OVERSIZED_LINES` | mcp/tests/test_knowledge_review_source_content.py:62-62; mcp/tests/test_knowledge_review_source_content.py:68-68; mcp/tests/test_knowledge_review_source_content.py:70-70; mcp/tests/test_knowledge_review_source_content.py:72-72; mcp/tests/test_knowledge_review_source_content.py:74-75; mcp/tests/test_knowledge_review_source_content.py:77-77; mcp/tests/test_knowledge_review_source_content.py:80-80; mcp/tests/test_knowledge_review_source_content.py:83-83 |
-| The independent Git observation: undecoded bytes, `None` on an error, and an isolated environment. | `_blob_text`; `_object_id`; `_subprocess_git` | mcp/tests/test_knowledge_review_source_content.py:89-94; mcp/tests/test_knowledge_review_source_content.py:97-101; mcp/tests/test_knowledge_review_source_content.py:104-116 |
-| **The content classes materialized for real: a blob, a symlink, a gitlink, a mode change, a type change, an oversized document and a name that is not a line.** | `UnusualContent`; `_materialize_unusual` | mcp/tests/test_knowledge_review_source_content.py:119-124; mcp/tests/test_knowledge_review_source_content.py:127-166 |
-| **The shared R01 production fixture these cases extend rather than duplicate.** | `content_fixture`; `build_endpoint_fixture`; `EndpointFixture` | mcp/tests/test_knowledge_review_source_content.py:169-174; mcp/tests/test_knowledge_review_source_endpoints.py:113-197; mcp/tests/test_knowledge_review_source_endpoints.py:207-239 |
-| **The routes wired as the composition root wires them, over the real application owners.** | `_served`; `register_review_routes`; `read_review_source_content` | mcp/tests/test_knowledge_review_source_content.py:177-191; mcp/src/agents_remember/serving/review.py:219-298; mcp/src/agents_remember/application/review_source_content.py:110-131 |
-| The listing read and the expansion read, with the status carried beside the body so a refusal is asserted as one. | `_listed_inventory`; `_expand`; `_expansion` | mcp/tests/test_knowledge_review_source_content.py:194-207; mcp/tests/test_knowledge_review_source_content.py:210-227; mcp/tests/test_knowledge_review_source_content.py:230-239 |
-| The falsifiers for path confinement: the recorded base's paths that no change set contains. | `_side`; `_unchanged_paths` | mcp/tests/test_knowledge_review_source_content.py:242-244; mcp/tests/test_knowledge_review_source_content.py:247-263 |
-| **The modified path opens both bound objects' own bytes, each against an independent observation.** | `test_a_modified_file_opens_both_endpoints_own_bytes` | mcp/tests/test_knowledge_review_source_content.py:269-311 |
-| The packet's conforming example, and deletion as its mirror image. | `test_an_added_unmapped_file_opens_its_entire_candidate_text`; `test_a_deleted_file_opens_its_entire_base_text_beside_a_measured_absence` | mcp/tests/test_knowledge_review_source_content.py:314-334; mcp/tests/test_knowledge_review_source_content.py:337-355 |
-| **The listed path is the address, however unusual the name.** | `ODD_NAME_PATH`; `test_a_tab_and_a_newline_in_a_name_is_the_address_its_content_opens_at` | mcp/tests/test_knowledge_review_source_content.py:80-80; mcp/tests/test_knowledge_review_source_content.py:358-381 |
-| **The non-textual kinds, each opened as what it is rather than as an empty document.** | `test_a_binary_entry_states_its_kind_identity_and_size_with_no_text`; `test_a_symlink_entry_carries_the_link_target_and_never_a_document`; `test_a_submodule_entry_reports_the_recorded_pointer_and_no_file_bytes` | mcp/tests/test_knowledge_review_source_content.py:384-400; mcp/tests/test_knowledge_review_source_content.py:403-417; mcp/tests/test_knowledge_review_source_content.py:420-436 |
-| The two changes a content read must not present as an edit: a mode-only change and a type change. | `test_a_mode_only_change_shows_identical_bytes_and_names_the_mode`; `test_a_type_change_opens_each_side_by_its_own_kind` | mcp/tests/test_knowledge_review_source_content.py:439-454; mcp/tests/test_knowledge_review_source_content.py:457-470 |
-| The bound itself, and the case that measures it. | `EXPANSION_TEXT_BYTES`; `test_oversized_content_is_a_stated_bounded_expansion` | mcp/src/agents_remember/application/review_source_content.py:75-75; mcp/tests/test_knowledge_review_source_content.py:473-489 |
-| **The generation binding: the listed bytes survive the branch moving, the move is stated, and the control re-lists.** | `test_the_expansion_stays_bound_when_the_branch_advances_after_the_listing` | mcp/tests/test_knowledge_review_source_content.py:495-557 |
-| **The two availability cases: an unheld tree, and a real prune of one loose blob.** | `test_a_missing_object_is_unavailable_on_its_side_while_the_other_stays_inspectable`; `test_a_pruned_base_blob_is_unavailable_on_its_side_while_the_candidate_side_is_served` | mcp/tests/test_knowledge_review_source_content.py:560-596; mcp/tests/test_knowledge_review_source_content.py:599-638 |
-| **The verifier's finding, and the object-type refusal with its control.** | `test_an_unmeasured_generation_still_confines_the_path_to_a_measured_change_set`; `test_a_generation_that_names_a_commit_is_refused_rather_than_served` | mcp/tests/test_knowledge_review_source_content.py:641-676; mcp/tests/test_knowledge_review_source_content.py:679-719 |
-| **The refusal family: an unconfined path, a substituted baseline, an incomplete query and an unwired process.** | `test_a_path_outside_the_measured_change_set_is_refused_by_name`; `test_a_baseline_that_is_not_the_recorded_base_is_refused`; `test_a_query_that_does_not_name_the_generation_is_refused_by_the_transport`; `test_an_unwired_process_refuses_the_route_by_name` | mcp/tests/test_knowledge_review_source_content.py:725-749; mcp/tests/test_knowledge_review_source_content.py:752-770; mcp/tests/test_knowledge_review_source_content.py:773-795; mcp/tests/test_knowledge_review_source_content.py:798-821 |
-| The closing identity case: what was opened is what was listed. | `SOURCE_CONTENT_REFERENCE`; `test_the_listed_entry_and_its_expansion_describe_the_same_path` | mcp/src/agents_remember/application/review_source_content.py:70-70; mcp/tests/test_knowledge_review_source_content.py:824-842 |
-| **The transport this module drives: the third route constant, the selector that carries the caller's generation, and the port the composition supplies.** | `KNOWLEDGE_REVIEW_SOURCE_CONTENT_ROUTE`; `SourceContentRef`; `source_content_request_from_query`; `ReviewSourceContentPort`; `api_review_intent_source_content` |mcp/src/agents_remember/serving/review.py:584-604; mcp/src/agents_remember/serving/review.py:199-216; mcp/src/agents_remember/serving/review.py:96-96; mcp/src/agents_remember/serving/review.py:110-110; mcp/src/agents_remember/serving/review.py:657-659|
-| The refusal code the route answers with, added to the review vocabulary in the same change. | "source_content_unresolved" | mcp/src/agents_remember/models/knowledge/review.py:159-160 |
-| **The lane row and the two consumer rows this module's registration produced, with the counts they do not move.** | "mcp/tests/test_knowledge_review_source_content.py" | mcp/tests/test-evidence-lanes.toml:128-128 |
+- The module's own statement of the requirement it is the production-composition evidence for, and of the load-bearing property behind each case. [1]
+- The lane marker and the content-class constants, one path per class the packet names. [2]
+- **The content classes materialized for real: a blob, a symlink, a gitlink, a mode change, a type change, an oversized document and a name that is not a line.** [4]
 
-## Cross-Repo References
+- **The shared R01 production fixture these cases extend rather than duplicate.** [5]
+
+
+- **The routes wired as the composition root wires them, over the real application owners.** 
+
+- The listing read and the expansion read, with the status carried beside the body so a refusal is asserted as one. [7]
+- The falsifiers for path confinement: the recorded base's paths that no change set contains. [8]
+- **The modified path opens both bound objects' own bytes, each against an independent observation.** [9]
+- The packet's conforming example, and deletion as its mirror image. [10]
+- **The listed path is the address, however unusual the name.** [11]
+- **The non-textual kinds, each opened as what it is rather than as an empty document.** [12]
+- The bound itself, and the case that measures it. [14]
+- **The generation binding: the listed bytes survive the branch moving, the move is stated, and the control re-lists.** [15]
+- **The two availability cases: an unheld tree, and a real prune of one loose blob.** [16]
+- **The verifier's finding, and the object-type refusal with its control.** [17]
+- **The refusal family: an unconfined path, a substituted baseline, an incomplete query and an unwired process.** [18]
+- The closing identity case: what was opened is what was listed. [19]
+- **The transport this module drives: the third route constant, the selector that carries the caller's generation, and the port the composition supplies.** [20]
+> Retained earlier citation wording: - **The lane row and the two consumer rows this module's registration produced, with the counts they do not move.**
+
+### Cross-Repo References
 
 No cross-repository behavior is measured in this file. It creates a local repository, an enclosure and a
 task-artifact root under `tmp_path` for each case.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
+No meaningful cross-repo references found.
 
-## Update History
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 3 citations into `mcp/tests/test-evidence-lanes.toml`, `mcp/tests/test_knowledge_review_source_endpoints.py` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T12:38:10+02:00 — 260921-ICR-L43 curator (uncommitted candidate tree `990a5c1a3afab15d04881475b2501ed98cddf908` over code base `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`): **the confinement case's stated property narrowed with the 2026-09-28 admission ruling** — it no longer means "no path outside the inventory is ever read" but "an unchanged path no recorded realization links is refused"; the test body is unchanged and its docstring now says so (L43-R1-F3). The case table, the Invariants bullet and the four rows below it were updated (+2 lines from the docstring); the lane row now cites `test-evidence-lanes.toml:125`, where the entry actually sits. No stamp advanced; closeout owns it.
-- 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.
-- 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **citation pass — the rows this leaf's own line movement displaced were re-anchored from each row's own finding message.** Every flagged range was repointed or widened to the lines that actually carry the anchor at this candidate, using the memory-quality checklist's own per-row message as the ground truth rather than adding a delta to an old number; the repair was applied row-scoped by the cited-range string, so duplicate rows were each corrected. No claim was re-worded to fit a stale pointer, no anchor or range was dropped to silence a finding, and the two legacy mechanical-projection bullets on rows this pass re-read were retired with this entry as their dated disposition, and no new projection bullet was written. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
-- 2026-09-24T07:54+02:00 — 260921-ICR-L28 curator (uncommitted change set on `ar/260921-icr-l28`, base `63b476297708f779de8ed5c0bf3555b9d1de70c2`): **citation re-anchoring and history only; no claim wording changed and no row deleted.** This leaf's change set moved the lines several of this card's rows cite — `mcp/src/agents_remember/application/knowledge_curator_ingest.py` grew 3587 → 3861 while `mcp/tests/test-evidence-lanes.toml` gained one `unit-regression` row and `mcp/tests/evidence-lifecycle.toml` gained two consumer rows, each shifting every row below it — so every affected range was re-derived against the candidate's own bytes rather than shifted by a remembered delta and re-anchored to the construct it names. Nothing in the body above was deleted to clear a finding, and no verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the real stamp.
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-21T22:40+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): created this one-to-one card for the module this leaf introduced as the **production-composition evidence for `ICR-R03@v1`**. It records what the twenty cases actually protect rather than restating their names: the two groups are the content of one listed entry (the conforming modification, addition and deletion; the unusual-but-addressable name; binary, symlink, submodule, mode-only and type-changed entries; the stated bound) and the generation the content is bound to (the listed bytes surviving a branch advance with the move stated beside a re-listing control; one unreadable side with the other still inspectable, twice — an unheld tree and a real prune of one loose blob; the verifier's finding that an *unmeasured* pair must not become an open file reader, with both falsifying paths exercised; and the refusal of a commit id in a tree-id field, with the listed tree served beside it), followed by the refusal family that keeps the route to the inventory's own population. It also records the two properties that make these assertions evidence rather than restatement — every text is compared against an **independent subprocess `git show`** whose failure is an assertion failure and never an empty string, and the routes are driven over the real HTTP transport so a passing case has proved the query contract, the refusal status and the served body together — and the shape that keeps the fixture honest: `content_fixture` extends the **R01 source-endpoint suite's** real enclosure and materializes each content class as a real filesystem object, because a class is a measurement of what Git reports rather than a state a test can assert into existence. **Citation accounting:** every anchor in the reference table was checked against the candidate by reading the cited range; the catalog rows are `mcp/tests/evidence-lifecycle.toml:1412` and `:1445` (the two `consumer_scope = "exact"` rows this leaf's two added paths sit on, after the +1 and +2 displacement those very rows caused for everything at or below them) and the lane row is `mcp/tests/test-evidence-lanes.toml:111`. **Stamp accounting:** the leaf's work is **uncommitted**, so `lastVerifiedCommitHash`/`lastVerifiedCommitDate` name the master line this reading was taken against (`d80a0513e928ef29a973527d09597c82c96fde87`, 2026-09-21T19:51:20+02:00) and not a commit containing these bytes; what was actually read is this leaf's uncommitted working tree, and closeout owns the real stamp.
+- The subprocess helper returns bytes or None; its wrappers respectively require and decode UTF-8 text, or decode an ASCII object identity with None preserved. [3]
+- Mode-only content keeps identical bytes and object identity; a type change opens the before regular file and after symlink by their respective kinds. [13]
+
+## Comparison-aware entry composition
+
+`_served` supplies `list_comparison_review_entries` through a four-argument callback and forwards its optional comparison number. The twenty content cases retain their existing live inventory and explicit before/after code-tree queries. This binding change does not add an assertion that a numbered entry catalogue selects a historical comparison; the generation/content/path/refusal assertions remain the cases described above.
+
+- The entry callback forwards the optional comparison number to the comparison-aware owner. [23]
+- The content request still names the listed before/after tree ids. [24]
+
+
+
+
+
+
+- The lane row and the two consumer rows this module's registration produced (diff-scope and read-scope shared support). [22]
+
+
+Anchor: `_served` `register_review_routes` `read_review_source_content` [6]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/review.py::register_review_routes - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:3339-3372 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit ad0c3a1296eae9863f6505d3fabc0c73e17bd166. Retired means the anchor no longer stands, not that the cited subject was deleted.

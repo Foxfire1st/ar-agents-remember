@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake",
+      "spans_locations"
+    ],
+    "justification": "The transport accepts canonical task-reference forms; handing it a physical projection path produces400 and silently removes reports from the page."
+  },
+  "applicability": "A task page listing its recorded role reports through the reports endpoint.",
+  "conditions": [
+    "The request names the document path inside the task root, not its projected physical file path.",
+    "Recorded-start listing stays bounded and read-only."
+  ],
+  "exclusions": [
+    "Choosing an arbitrary report file.",
+    "Changing report canonical-path confinement."
+  ],
+  "id": "INV-GHZ8VQ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/panels/detail-panel/page-look.test.tsx: 'asks for them by the path inside the task root when the document carries a file path' (fails with the repair taken out: notes/reports/worker/7b2c4e19-5d63-4a8f-b1e0-127000000a01/evidence-f5/checks/reports-test-without-fix.log); notes/reports/worker/7b2c4e19-5d63-4a8f-b1e0-127000000a01/evidence-f5/sandbox/reports-probe.json (the sandbox's server answers with the one recorded report)"
+      ],
+      "path": "ingest-new-obligations.json"
+    },
+    "handoffEntry": "L127-F5 reports request",
+    "leaf": "260928-MIK-L127",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The task page asks for a task's reports with the document's path inside the task root, because the server accepts the document only as that path or as /tasks/<repo>/<path> and answers 400 for the file path a projected document carries.",
+  "status": "proposed",
+  "supersedes": []
+}

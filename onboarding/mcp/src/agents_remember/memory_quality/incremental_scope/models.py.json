@@ -1,0 +1,125 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/incremental_scope/models.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`TaskObservationPair` carries the current contract described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f22a76f61185dfabc92343f5515dfdaf64f35e93",
+            "content": "sha256:7ac2e017b3f8a775fb65ffe106a8df608028d9667dfd88eca3b269fe32d99066",
+            "locator": {
+              "end": 115,
+              "kind": "line_range",
+              "start": 111
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Task intent and document ref types come from the R02 task-intent owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83c611ae1be32d2da37ec1e383dc09c96ae195b8",
+            "content": "sha256:4c0add1f4867b8581f781aba5f74eec5cebfcd0a9bd09061a5a456a5a405bccb",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskIntentState"
+            },
+            "path": "mcp/src/agents_remember/models/task_intent/__init__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "51df804526b093b0732b0df91f4d6c76d901809d",
+            "content": "sha256:1dad9d119c4085695e3c5652424a79c0e462c19f7bdb8a59f388ec3da74139cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocumentRef"
+            },
+            "path": "mcp/src/agents_remember/models/task_document_ref.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Pair identity roots are the canonical code/memory pair authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc66e6f6c1b8a6c8eb95a91ba4eca67a44262441",
+            "content": "sha256:7c4048ca018b3131c8a49a59b28eea3d4ff94ff7c0de017977badeb31170f8d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemoryCandidatePairIdentity"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/memory_candidate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "observe_scope_candidate emits the surviving exact candidate identity; removed snapshot owners and manifest compiler do not survive.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce323691633a26d9c39b9df9a25bbde2874be060",
+            "content": "sha256:e8d687e46e04c2d1cd6428696e41ad5790667b4693f7498bbe892a5d9211138f",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_scope_candidate"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/incremental_scope/candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f22a76f61185dfabc92343f5515dfdaf64f35e93",
+            "content": "sha256:2da9522a1dc7d7d1e2fbb42766b66b8b3893b9da742eff4fda933414475fcf1c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ScopeCandidateIdentity"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f22a76f61185dfabc92343f5515dfdaf64f35e93",
+            "content": "sha256:cda7b97b1d585485c6ec6933f3143486f94ac9d633a693a4ec1242ab37a7e499",
+            "locator": {
+              "kind": "symbol",
+              "name": "GitTreeDelta"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Git change status and path shape are validated by the current typed model.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f22a76f61185dfabc92343f5515dfdaf64f35e93",
+            "content": "sha256:2c4917962dace6d2bdc4a595be34d3bdd6548f9fee79fb5b81f987fe1ea6d825",
+            "locator": {
+              "kind": "symbol",
+              "name": "GitPathChange"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

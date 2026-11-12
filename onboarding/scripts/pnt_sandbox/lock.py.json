@@ -1,0 +1,59 @@
+{
+  "path": "scripts/pnt_sandbox/lock.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0d27d0567405ac517b5bd3343f475e97c13872ab",
+        "content": "sha256:10590306d3f9da9c6f40771dc01f8e75a5a3b87ee3947a7df71f2e7e995cf1f8",
+        "locator": {
+          "kind": "symbol",
+          "name": "HeldLock"
+        }
+      },
+      "id": "RLZ-A38QV6",
+      "invariant": "INV-V4EC10",
+      "origin": {
+        "handoffEntry": "F1 / F23 (one lock per sandbox)",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Publishes the command and child holder and exposes the inherited descriptor.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "0d27d0567405ac517b5bd3343f475e97c13872ab",
+        "content": "sha256:285ca829390d003fa0c55c9bc9d72810a85dae895953d02ae4cec5dfbe742291",
+        "locator": {
+          "kind": "symbol",
+          "name": "sandbox_lock"
+        }
+      },
+      "id": "RLZ-DNNSX6",
+      "invariant": "INV-V4EC10",
+      "origin": {
+        "handoffEntry": "F1 / F23 (one lock per sandbox)",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Holds the extant exclusive lock file across the admitted command.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The scoped current source carries the module/document behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d27d0567405ac517b5bd3343f475e97c13872ab",
+            "content": "sha256:0d983e2a61a5cd584d62ddeca202acf715304388381e8345ecc061e2c4a058b9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

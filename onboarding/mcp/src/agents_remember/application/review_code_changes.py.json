@@ -1,0 +1,55 @@
+{
+  "path": "mcp/src/agents_remember/application/review_code_changes.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Only the existing comparison record and side/index operands cross the child pipe.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd8bd90e6af383d07dbbf67962d4bfd1ba5271ca",
+            "content": "sha256:bbb546379fba9734b994c8ae2d1db025eacc64209ce448523655ac367e8cd75f",
+            "locator": {
+              "kind": "symbol",
+              "name": "tree_request"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The child reconstructs the admitted operands without resolving another candidate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd8bd90e6af383d07dbbf67962d4bfd1ba5271ca",
+            "content": "sha256:5f70bd85edc26ab307a8969a8d6b9bf35e7292523e747ad3ac99b868aa7e3bd1",
+            "locator": {
+              "kind": "symbol",
+              "name": "trees_from_request"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Whole-leaf facts reuse exact run classification and explicitly name unreadable sides.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd8bd90e6af383d07dbbf67962d4bfd1ba5271ca",
+            "content": "sha256:942eee266f2cc40baba99df735d4efa23464b0301f23d0aeeb22d82aabbafdd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "code_changes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

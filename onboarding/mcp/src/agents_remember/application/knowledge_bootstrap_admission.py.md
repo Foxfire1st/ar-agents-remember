@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/knowledge_bootstrap_admission.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/knowledge_bootstrap_admission.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-24T09:20+02:00 |
-| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
-| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
-| governingOverview | `mcp/src/agents_remember/application/overview.md` |
-
 ## Governing Overview
 
 [application route overview](overview.md)
@@ -38,13 +28,15 @@ That authority is the product's own setup authority:
 **Every way out is a named state, and none of them is a fallback.** A repository that is not declared,
 a memory layer that cannot be resolved, a coordination root that does not exist, a code root that is
 not a Git checkout, a memory root that is not the one the ordinary read route selects, an enclosure
-somehow in scope, an unreadable revision: each is a `BootstrapRefusal` (`:118-129`) carrying a stable
+somehow in scope, an unreadable revision: each is a `BootstrapRefusal` carrying a stable
 `code`, the fact that produced it and the `next_action` that re-observes it. There is deliberately no
 branch that borrows another repository's memory root, another branch's commit or another dataset's
 namespace — the packet's "no silent fallback to another repository, branch or dataset" is a property
 of the control flow rather than a promise in a docstring.
 
 ## Code Commentary
+
+The authority carries the settings identity and digest. Admission refuses an enclosure in scope, a different coordination root or code checkout, an unresolved memory context, and a branch/source identity that cannot be read. `bootstrap_scope` names the repository scope; the source revisions are measured Git facts. The former bootstrap staging-directory constant and helper were retired with the canonical database. No staging destination or resume ledger is created here.
 
 ### Logic
 
@@ -80,20 +72,9 @@ or a resumed run would mint a second set of identities for knowledge it already 
 joined with the entry's own id to form the allocation-journal key, so a repository's bootstrap and any
 leaf of that repository never alias each other.
 
-**Staging lives in one derived place** (`:165-172`, `:76-79`).
-`BOOTSTRAP_STAGING_DIRECTORY` is a constant rather than a caller argument, and
-`bootstrap_staging_root(context, repo_id)` derives the path from the resolved context's own
-`temp_root`, so the writer, the resume path and the cleanup owner name one directory by construction.
-
 **The branch is a hint, not an identity** (`:380-389`). `_current_branch` answers the checkout's own
 symbolic ref, or `""` for a detached HEAD; the operation then reads `HEAD` and, failing that, the
 admitted base commit, and reports which of the three it used.
-
-### Conventions
-
-The module imports the write-admission value, the published-dataset path owner, the coordination
-resolver, the shipped Git runner and the contract reader. It writes nothing, opens no database and
-computes no digest.
 
 ### Invariants And Boundaries
 
@@ -118,76 +99,47 @@ computes no digest.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Repo-Internal References
+
+- `admit_bootstrap_context` owns the current boundary described above. [28]
+- **The module's own statement of why the enclosure shape is wrong here and what the third option is.** [31]
+- **The ordered chain, where no step is skipped because a later one might have answered.** [37]
+- Why an absent coordination root is refused rather than created by Git. [38]
+
+- The memory initializer this module's authority document is shared with (since MIK-R24 it also writes `knowledge/layout.json` for a brand-new root, and never for an existing one). [50]
+- `bootstrap_scope` owns the current boundary described above. [29]
+- `_source_revisions` owns the current boundary described above. [30]
+
+### Docs References
 
 No configured Domain Documentation source applies; `BOOTSTRAP-HANDOVER.md` is the process authority
 this admission implements, and it is a task-tree document rather than a configured domain source.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external documentation is required for the taskless bootstrap admission. | — | — |
+No external documentation is required for the taskless bootstrap admission.
 
-## Repo-Internal References
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The module's own statement of why the enclosure shape is wrong here and what the third option is.** | "a second admission"; "derived from an authority that really exists"; "line 11" | mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:1-40 |
-| The published surface: the staging constant, the four values, the resolver and the two derivers. | `__all__` | mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:66-74 |
-| The one staging directory name, a constant so the cleanup owner and the writer name one place. | `BOOTSTRAP_STAGING_DIRECTORY` | mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:76-79 |
-| The retry-scope prefix that keeps a repository's bootstrap and a task's knowledge two operations. | `_SCOPE_PREFIX` | mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:81-85 |
-| **The authority a taskless bootstrap was admitted under, with the declared/resolved memory-root pair carried rather than collapsed.** | `BootstrapAuthority`; `authority_entry` | mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:88-109 |
-| The authority reference in one stable spelling, for a report or a progress record. | `source`; "repositories" | mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:111-115 |
-| **Why a repository could not be admitted, and the route that re-observes the condition.** | `BootstrapRefusal`; `next_action` | mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:118-129 |
-| One admitted bootstrap: the authority, the admission, the destination and the staging root. | `AdmittedKnowledgeBootstrap`; `destination_path` | mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:132-151 |
-| **The retry scope as a function of the repository alone, so a resume asks the same question.** | `bootstrap_scope` | mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:154-162 |
-| The staging root derived from the resolved context's own temp root. | `bootstrap_staging_root` | mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:165-172 |
-| **The ordered chain, where no step is skipped because a later one might have answered.** | `admit_bootstrap_context` | mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:175-214 |
-| Why an absent coordination root is refused rather than created by Git. | `_coordination_root_refusal`; "coordination_root_unavailable" | mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:217-234 |
-| Why a declared code root that is not a Git checkout cannot supply exact source inputs. | `_code_checkout_refusal`; "code_checkout_is_not_a_git_checkout" | mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:237-258 |
-| **The resolver called with no enclosure selector, and the refusal that keeps a guessed path out.** | `_resolved_context`; `EnclosureSelector`; "memory_layer_not_resolved" | mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:261-291 |
-| **The equality check between the declared and the resolved memory root, and the enclosure refusal.** | `_context_admission`; "memory_line_moved"; "enclosure_in_scope" | mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:294-348 |
-| **The write admission this context confers, with provenance naming the settings entry.** | `_admission`; `AdmissionProvenance` | mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:351-377 |
-| The branch as a hint about which line to read, never an identity input. | `_current_branch` | mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:380-389 |
-| **The two exact revisions read from the real checkouts, and the refusals when a checkout cannot answer.** | `_source_revisions`; "code_revision_unavailable"; "memory_revision_unavailable" | mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:392-423 |
-| The one commit id a checkout answers, or nothing. | `_revision` | mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:426-431 |
-| The value this module produces, and the two kinds it declares. | `KnowledgeWriteAdmission`; `BOOTSTRAP_ADMISSION_KIND` | mcp/src/agents_remember/application/knowledge_write_admission.py:79-131; mcp/src/agents_remember/application/knowledge_write_admission.py:59-60 |
-| **The destination owner resolved through the ordinary read route, so writer and reader cannot disagree.** | `published_dataset_path` | mcp/src/agents_remember/application/published_intent.py:200-217 |
-| The resolver and the selector type the empty selector is an instance of. | `resolve_coordination_context`; `CoordinationHints`; `EnclosureSelector` | mcp/src/agents_remember/kernel/coordination_context_resolver.py:134-134; mcp/src/agents_remember/kernel/coordination_context_resolver.py:30-30; mcp/src/agents_remember/kernel/coordination_context_resolver.py:36-36 |
-| The context whose `temp_root` the staging root is derived from, and the request the resolver takes. | `CoordinationContext`; `temp_root`; `CoordinationRequest` | mcp/src/agents_remember/kernel/coordination_context/models.py:189-199; mcp/src/agents_remember/kernel/coordination_context/models.py:159-159 |
-| **The settings document and repository entry that are the authority here.** | `McpRuntimeConfig`; `RepositoryScope`; `allowed_repo_ids` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:129-151; mcp/src/agents_remember/kernel/primitives/runtime_config.py:81-81 |
-| The shipped Git runner every revision read goes through. | `run_git` | mcp/src/agents_remember/kernel/git_command.py:150-150 |
-| The contract reader the resolver is given, which answers an empty selector with no contract. | `WorktreeContractReader` | mcp/src/agents_remember/worktrees/modules/contract_reader.py:27-27 |
-| The memory initializer this module's authority document is shared with. | `initialize_memory` | mcp/src/agents_remember/kernel/memory_init.py:195-195 |
-
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file: it resolves exactly one repository's own
 context and reads only that repository's two checkouts. The resolved settings' `crossRepo.allow` is
 empty, so nothing here names, reads or writes another repository.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
+No meaningful cross-repo references found.
 
-## Update History
-- 2026-09-24T10:20+02:00 — 260921-ICR-L29 curator, **fix-round bytes** (uncommitted change set on
-  `ar/260921-icr-l29-ar`, base `0d7910f9d646161c414ed6543453536a3c749d49`; gate `verify-l29-round2.md`,
-  first line `pass-with-findings`): **the two construction-proved guards are now named as such.** This
-  module is byte-identical to the round-1 candidate, so no sentence about its behaviour needed
-  correcting; what the round-1 verification established is a *coverage* fact that belongs on the card:
-  neither `enclosure_in_scope` nor `memory_line_moved` is exercised by a case, the second one measured by
-  mutating its condition and watching all nineteen cases still pass, and both were construction-proved
-  by the verifier. Recording that prevents a later reader from treating either as a reached refusal.
-  **No verification stamp was advanced** — the candidate is uncommitted and the governed closeout owns
-  the real code and memory commits.
-
-- 2026-09-24T09:20+02:00 — 260921-ICR-L29 curator (uncommitted change set on `ar/260921-icr-l29-ar`,
-  base `0d7910f9d646161c414ed6543453536a3c749d49`): created this one-to-one card for the module
-  `ICR-R29@v1` introduced as **the taskless admission**. The stamp basis is the leaf's base commit,
-  because the module is untracked there. What a reader must not lose is that this is authority rather
-  than a flag: the repository entry is read from the settings document, the memory layer from the
-  ordinary read route's own resolution with **no enclosure selector**, and both revisions from the real
-  checkouts — nothing on this path accepts "is this a bootstrap?" as input. The second is that every
-  failure is a named refusal with a re-observing route, so no branch falls back to another repository,
-  branch or dataset. No verification stamp beyond the leaf's base is advanced: the candidate is
-  uncommitted and the governed closeout owns the real commit.
+- The retry-scope prefix that keeps a repository's bootstrap and a task's knowledge two operations. [32]
+- **The authority a taskless bootstrap was admitted under, with the declared/resolved memory-root pair carried rather than collapsed.** [33]
+- The authority reference in one stable spelling, for a report or a progress record. [34]
+- **Why a repository could not be admitted, and the route that re-observes the condition.** [35]
+- **The retry scope as a function of the repository alone, so a resume asks the same question.** [36]
+- Why a declared code root that is not a Git checkout cannot supply exact source inputs. [39]
+- **The resolver called with no enclosure selector, and the refusal that keeps a guessed path out.** [40]
+- **The equality check between the declared and the resolved memory root, and the enclosure refusal.** [41]
+- **The write admission this context confers, with provenance naming the settings entry.** [42]
+- The branch as a hint about which line to read, never an identity input. [43]
+- **The two exact revisions read from the real checkouts, and the refusals when a checkout cannot answer.** [44]
+- The one commit id a checkout answers, or nothing. [45]
+- The resolver and the selector type the empty selector is an instance of. [46]
+- **The settings document and repository entry that are the authority here.** [47]
+- The shipped Git runner every revision read goes through. [48]
+- The contract reader the resolver is given, which answers an empty selector with no contract. [49]

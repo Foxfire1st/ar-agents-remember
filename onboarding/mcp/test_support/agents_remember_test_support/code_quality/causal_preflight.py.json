@@ -1,0 +1,93 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/code_quality/causal_preflight.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "No external domain source is required to establish this repository-owned implementation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b085b3643d83812e6e69105238977ba327fa0faf",
+            "content": "sha256:323743126a75bbc08b22a38fb283372d759c221d7936d119c51034032e332f47",
+            "locator": {
+              "kind": "symbol",
+              "name": "evaluate_preflights"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Owner outcomes and source-derived exact dependents form the causal report.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b085b3643d83812e6e69105238977ba327fa0faf",
+            "content": "sha256:323743126a75bbc08b22a38fb283372d759c221d7936d119c51034032e332f47",
+            "locator": {
+              "kind": "symbol",
+              "name": "evaluate_preflights"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b085b3643d83812e6e69105238977ba327fa0faf",
+            "content": "sha256:8e95b8953438d0f641f2b054b116888d9f4e4d43f84b3be4274ffb89f7900e75",
+            "locator": {
+              "kind": "symbol",
+              "name": "_blocked_consumers"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Candidate identity binds the complete Git working candidate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b085b3643d83812e6e69105238977ba327fa0faf",
+            "content": "sha256:17d7e7d3cc506451b745dbc016ee82068ea48e15322263115af81bfa2440ea46",
+            "locator": {
+              "kind": "symbol",
+              "name": "candidate_identity"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b085b3643d83812e6e69105238977ba327fa0faf",
+            "content": "sha256:42135fb1722269c4e334bce9a86cfeed78659c4a0e50d4a06aef40e2b8e45ef7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_candidate_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "No meaningful cross-repository reference applies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b085b3643d83812e6e69105238977ba327fa0faf",
+            "content": "sha256:a4e66f9c2c0443221fc017026bc32f2251b182a85d35d76bef93ceecc987cc1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "PREFLIGHTS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

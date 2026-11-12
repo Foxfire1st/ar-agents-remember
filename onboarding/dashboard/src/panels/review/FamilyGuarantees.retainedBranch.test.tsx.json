@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/panels/review/FamilyGuarantees.retainedBranch.test.tsx",
+  "realizes": [],
+  "references": {
+    "2": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it.each([false, true])('keeps distinct family revisions with equal wording distinct (tree=%s)', (tree) => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56baefd452e639894e635624c2a27340962ceb87",
+            "content": "sha256:c4bb6ede88faee45c9e3c6db04836f3a62ee84e102738675f56d14c864b68c29",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 56
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('retains the current raw same-revision control as unchanged revision, not identical-text', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56baefd452e639894e635624c2a27340962ceb87",
+            "content": "sha256:f41f21eb2afd3b25cad5d1fa583b4c95f0d078a745ac111e4134af0e2684cd61",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 81
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('draws a changed guarantee in a fit diff pane', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56baefd452e639894e635624c2a27340962ceb87",
+            "content": "sha256:5414210b3b5f23142cd48fdb0417ceaa68496b50d7ac7c5c1478f211935ca91b",
+            "locator": {
+              "end": 105,
+              "kind": "line_range",
+              "start": 96
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

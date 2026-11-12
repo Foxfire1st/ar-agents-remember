@@ -1,0 +1,74 @@
+{
+  "path": "mcp/tests/test_projection_path_directed.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "9acf6b697ae14a5b3fa54735986c09fb5aac06b6",
+        "content": "sha256:fd338e6248c66872065ca3e8e2ace308754b669ee17fa031358c604912918db6",
+        "locator": {
+          "kind": "symbol",
+          "name": "PathDirectedRefreshTests.test_documentary_rewrite_is_path_local_and_byte_equal"
+        }
+      },
+      "facet": "The exact controlled source case documentary rewrite is path local and byte equal; this is a focused executable facet, not installed-runtime or full performance acceptance.",
+      "id": "PRF-VM84J4",
+      "invariant": "INV-FKE909",
+      "origin": {
+        "handoffEntry": "L81-R1-F09",
+        "leaf": "260928-MIK-L81"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "2": {
+      "note": "Task edits match the full reference and reciprocal membership chooses one parent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9acf6b697ae14a5b3fa54735986c09fb5aac06b6",
+            "content": "sha256:ad50331b7076910543a295483ff35161c998b44e8eb423cc2e774b318dc42320",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_append_delete_and_cross_document_join"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Task-only atomic replacement/deletion read sets stay bounded at both sizes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9acf6b697ae14a5b3fa54735986c09fb5aac06b6",
+            "content": "sha256:78aa15f4d8b4c3547a4dac6c2e000b69de62a26c8b7f019760ae63a127d7d273",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_atomic_rewrites_and_deletes_at_both_sizes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Breaking a cycle updates master frontier and both dependency directions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9acf6b697ae14a5b3fa54735986c09fb5aac06b6",
+            "content": "sha256:167fd30df47985805e23fa3c6aea1184db0ddfa6a4776742aeb2655ca13f5455",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_ordered_sibling_edit_refreshes_master_and_both_dependency_lists"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

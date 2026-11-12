@@ -1,0 +1,207 @@
+{
+  "path": "mcp/tests/test_task_document_copies.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "ac827e208f3b182f5ad6059002502810f65a9c06",
+        "content": "sha256:315e5b68edc6457dfff3f31d6d7f4f5cafb8182dc63794f36e2c2bfdb7abe845",
+        "locator": {
+          "kind": "symbol",
+          "name": "TaskDocumentCopyMembershipTests.test_foreign_contract_is_not_a_snapshot_enclosure"
+        }
+      },
+      "facet": "A parsed foreign contract is absent from the snapshot mapping and present in its skipped set.",
+      "id": "PRF-3MDCF6",
+      "invariant": "INV-BWW1N1",
+      "origin": {
+        "handoffEntry": "L134-R2",
+        "leaf": "260928-MIK-L134"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ac827e208f3b182f5ad6059002502810f65a9c06",
+        "content": "sha256:71ac5c83dd1bfddfc1c50e9d05f1a0338138ce066ccd27406b555150ef495607",
+        "locator": {
+          "kind": "symbol",
+          "name": "TaskDocumentCopyMembershipTests.test_foreign_gone_group_is_still_named_in_refresh"
+        }
+      },
+      "facet": "A foreign contract remains named after its worktree group is removed.",
+      "id": "PRF-AYWGA5",
+      "invariant": "INV-BWW1N1",
+      "origin": {
+        "handoffEntry": "L134-R2",
+        "leaf": "260928-MIK-L134"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ac827e208f3b182f5ad6059002502810f65a9c06",
+        "content": "sha256:7e0b4d4b380e0a3e28309188b55b623713b5d2255cffd783bdede6bd4ee28dbc",
+        "locator": {
+          "kind": "symbol",
+          "name": "TaskDocumentCopyMembershipTests.test_dotdot_alias_escaping_repo_tasks_is_still_foreign"
+        }
+      },
+      "facet": "An inside-prefixed dotdot artifact resolving outside is foreign and absent from the snapshot mapping.",
+      "id": "PRF-HM9BBD",
+      "invariant": "INV-BWW1N1",
+      "origin": {
+        "handoffEntry": "L134-R2",
+        "leaf": "260928-MIK-L134"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ac827e208f3b182f5ad6059002502810f65a9c06",
+        "content": "sha256:83520b7e05764949cf70b994de2ade53aa408a3a0d979af9427faec9411054f3",
+        "locator": {
+          "kind": "symbol",
+          "name": "TaskDocumentCopyScopeTests.test_foreign_contract_in_own_enclosures_is_skipped_and_named"
+        }
+      },
+      "facet": "The warning names the foreign contract, own rendered bytes are current, and the foreign group receives no copy directory.",
+      "id": "PRF-KSGEGC",
+      "invariant": "INV-BWW1N1",
+      "origin": {
+        "handoffEntry": "L134-R2",
+        "leaf": "260928-MIK-L134"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ac827e208f3b182f5ad6059002502810f65a9c06",
+        "content": "sha256:898fd592ef91b6208261f81b776a1cc92dbb8791fab3ade846f2792fecd96b19",
+        "locator": {
+          "kind": "symbol",
+          "name": "TaskDocumentCopyScopeTests.test_refresh_loads_only_the_changed_tasks_contracts"
+        }
+      },
+      "facet": "With ten other task folders present, the full-load call set is exactly the two own contracts.",
+      "id": "PRF-N8B3DE",
+      "invariant": "INV-85JCY6",
+      "origin": {
+        "handoffEntry": "L134-R1",
+        "leaf": "260928-MIK-L134"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ac827e208f3b182f5ad6059002502810f65a9c06",
+        "content": "sha256:765add8b9fa6fdd6d38f7c9d8ea6daca56065feeaa3ce261f3133936b1c8fd03",
+        "locator": {
+          "kind": "symbol",
+          "name": "TaskDocumentCopyMembershipTests.test_sibling_leaf_contract_is_never_loaded"
+        }
+      },
+      "facet": "The full-load call list contains the own contract and excludes a readable same-folder sibling.",
+      "id": "PRF-X9PXV9",
+      "invariant": "INV-85JCY6",
+      "origin": {
+        "handoffEntry": "L134-R1",
+        "leaf": "260928-MIK-L134"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ac827e208f3b182f5ad6059002502810f65a9c06",
+        "content": "sha256:59e06a2130583601992858a69d131e0c10de697769ee7c2d8324fe5ddf6beedd",
+        "locator": {
+          "kind": "symbol",
+          "name": "TaskDocumentCopyMembershipTests.test_unreadable_file_beside_refreshed_own_is_named_not_raised"
+        }
+      },
+      "facet": "An unreadable contract beside a valid own enclosure is warned by path while the own copy equals canonical rendered bytes.",
+      "id": "PRF-XK9Z5B",
+      "invariant": "INV-VDT24F",
+      "origin": {
+        "handoffEntry": "L134-RULING-A",
+        "leaf": "260928-MIK-L134"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ac827e208f3b182f5ad6059002502810f65a9c06",
+        "content": "sha256:9f6f57bf9b122716a2042299903267971f5e0e3d82099f024b833f3a43ebc498",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-9RY83B",
+      "invariant": "INV-QZP9PM",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-14",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "Retained focused controls cover own-leaf-only copies, exact rendered bytes, replacement boundaries and cleanup rather than the withdrawn size/parts tool.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The module keeps preparation, publication and cleanup cases and adds scoped enumeration, physical membership and conditional unreadable-file controls.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ac827e208f3b182f5ad6059002502810f65a9c06",
+            "content": "sha256:cf2fb1cddf8bafc00224b2fffa3a1640db6c4b618312dc0d3d87bcebb296bc02",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_each_leaf_role_publishes_real_leaf_before_handover_compilation"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Own-leaf copy controls include real non-symlink requirement bytes and digest rows, missing rows with a handover warning, exclusion of reference, master and sprint baggage, publication adding a requirement, source drift then refresh, and requirement-copy cleanup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ac827e208f3b182f5ad6059002502810f65a9c06",
+            "content": "sha256:bf5f32aee8dd41547701463ec576a31f5c487e88026f8e314d38d183d3799707",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_requirement_files_are_copied_beside_the_leaf_and_nothing_else"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The launch handover case requires the canonical task-document task_doc-first and scoped correct-refusal recovery clauses. Removing each actual clause fails the same oracle, while rendered-copy readback and publication boundaries remain unchanged. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ac827e208f3b182f5ad6059002502810f65a9c06",
+            "content": "sha256:2d13a18bd7c8f0f4e9ffadd4c53a5a3d305b5082bc3877ae03ad595ddb544f58",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 57
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ac827e208f3b182f5ad6059002502810f65a9c06",
+            "content": "sha256:fb5fe7457d8162e03f93db553954c3fc290a94d2ffa57288fba465d1ed6a8229",
+            "locator": {
+              "end": 359,
+              "kind": "line_range",
+              "start": 329
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

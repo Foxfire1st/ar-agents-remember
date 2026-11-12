@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The repository and dashboard ignore owners keep the two local environment kinds out of candidate inventories, and the product enumeration case checks that exclusion without asserting a live lifecycle run."
+  },
+  "applicability": "Ignored mcp/.venv and dashboard/node_modules directories contained in task code worktrees and their Git-based lifecycle candidate inventories.",
+  "conditions": [
+    "The environment directories remain ignored and contained in the worktree.",
+    "Actual live sync, closeout and cleanup observations are recorded by their transaction owner; the accounting test proves enumeration, not a completed transaction."
+  ],
+  "exclusions": [
+    "User caches, the shared interpreter and failed rollback candidates outside the worktree.",
+    "The node_modules half of the accounting test is structural when no Node environment is installed.",
+    "No lifecycle execution or cleanup PASS is inferred from a test/citation alone."
+  ],
+  "id": "INV-RCFXFA",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_worktree_own_environment.py::test_candidate_accounting_excludes_worktree_environments, green on live venv; freeze A3 journal 260928-MIK-L136-A3"
+      ],
+      "path": "writer-projection-final.json"
+    },
+    "handoffEntry": "MIK-R136 rule 6",
+    "leaf": "260928-MIK-L136",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The ignored worktree environments stay out of sync, closeout and landing candidate accounting and are removed with the worktree at cleanup.",
+  "status": "proposed",
+  "supersedes": []
+}

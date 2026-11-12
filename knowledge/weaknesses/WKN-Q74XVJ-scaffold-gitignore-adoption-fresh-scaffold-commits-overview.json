@@ -1,0 +1,28 @@
+{
+  "anchor": {
+    "blob": "edbe78dba8b31dd02f1122a2b036fa205b2f3ca8",
+    "content": "sha256:185d194248978a2a7e31eb93e2c8ca3358efe0a3ff6c7c09a0663a663c243fe1",
+    "locator": {
+      "kind": "file"
+    },
+    "path": "mcp/src/agents_remember/kernel/memory_init.py"
+  },
+  "id": "WKN-Q74XVJ",
+  "kind": "debt",
+  "origin": {
+    "handoff": {
+      "path": "rule9-ingest-list.json"
+    },
+    "handoffEntry": "mark-19",
+    "leaf": "260928-MIK-L118",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L118"
+  },
+  "state": "open",
+  "statement": "The scaffold has no `.gitignore`, so the adoption of a fresh scaffold commits `overview.index.json`; the developer's own memory repository ignores `onboarding/**/overview.index.json` (commits `17bc5d512`, `e7a572db4`). A derived file is committed in every new project. `kernel/memory_init.py` is in the scope of MIK-R46 (L46), which waits for L45."
+}

@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The direct loop is realized independently in the worker, reviewer, curator and manager role texts and in the coordination operation; those multiple independent realizations support the statement."
+  },
+  "applicability": "Every leaf whose Worker, Reviewer and Curator are started for one canonical task document.",
+  "conditions": [
+    "A hand-over names the leaf, the exact object and the recipient's whole next stretch.",
+    "The Manager keeps starts, replacements, the gate, status, closeout, integration and landing order."
+  ],
+  "exclusions": [
+    "The repository-foundation and other taskless seats, whose own admission rules apply."
+  ],
+  "id": "INV-ZNJ14G",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Current successor r2/candidate-freeze.json, repair-report.md, commands.json and compiled capsule/constructor/81 retirement controls; predecessor inventory.md and actual live-witness/witness-supplement.md retained. Historical A1 evidence (not current disposition): Whole inventory table; wording checks; Expected Evidence6 live exchange NOT RUN.",
+        "L99-MR-007; the invariant's five independent realizations."
+      ],
+      "path": "notes/files/l99-curation-20261007/handoff.json"
+    },
+    "handoffEntry": "R99-1-direct-loop",
+    "leaf": "260928-MIK-L99",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The Worker, Reviewer and Curator hand exact freezes, findings, verdicts and memory changes directly between their leaf seats, while the Manager receives only its named occasions and retains gate, transaction and landing authority.",
+  "status": "proposed",
+  "supersedes": []
+}

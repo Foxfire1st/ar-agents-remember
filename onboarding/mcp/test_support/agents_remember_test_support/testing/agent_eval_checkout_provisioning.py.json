@@ -1,0 +1,55 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/agent_eval_checkout_provisioning.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The child probe substitutes only the selected host operation and executes the captured bootstrap unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f99af92925ce489b8f31431a0dcfdc2a0d72e695",
+            "content": "sha256:61869918e406007f14496261bd4d22d8e5e774c07a8ac72d5aa994920a0a98ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "_CHILD_CONFIG_PROBE"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Provisioning declares test mode, writes contract and locator in the project root and creates no checkout coordination root, with host start forbidden.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f99af92925ce489b8f31431a0dcfdc2a0d72e695",
+            "content": "sha256:46f55de7233c3eeb14ef1e4e855c49072670612223d977c47fdf3c8152c67748",
+            "locator": {
+              "kind": "symbol",
+              "name": "assert_native_leaf_checkout_provisioning"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The scratch CLI child is checked for its argv, cwd, environment and loaded settings for both checkout kinds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f99af92925ce489b8f31431a0dcfdc2a0d72e695",
+            "content": "sha256:2937bb78201e505fbb836886b58d9a5f5ea0f8f33c3a6af2e391da106470bf2c",
+            "locator": {
+              "kind": "symbol",
+              "name": "assert_scratch_cli_config_binding"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

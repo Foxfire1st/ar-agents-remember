@@ -1,0 +1,153 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/message-handover.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "1cb1b0d96c335765d43638350cb1524b3d2c72cc",
+        "content": "sha256:d2361c041520e47dc53252935b86b81d71b14a866988db84103429f55fab6f4a",
+        "locator": {
+          "end": 9,
+          "kind": "line_range",
+          "start": 7
+        }
+      },
+      "id": "RLZ-76BXNW",
+      "invariant": "INV-6R279E",
+      "origin": {
+        "handoffEntry": "L117-R07",
+        "leaf": "260928-MIK-L117"
+      },
+      "rationale": "The shared payload home states messages-as-files, body/attach and the settings limit; the Worker receives this content through its named Messages step pointer.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "1cb1b0d96c335765d43638350cb1524b3d2c72cc",
+        "content": "sha256:420507f18927dea45ce8f6498e093f5d5cf0489686259fab9537f94a97ac098c",
+        "locator": {
+          "end": 17,
+          "kind": "line_range",
+          "start": 15
+        }
+      },
+      "id": "RLZ-EPERZJ",
+      "invariant": "INV-9S49CW",
+      "origin": {
+        "handoffEntry": "K3-9S49CW-full-store-procedure",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The busy-delivery recovery the roles are pointed to: record the handover as pending, keep working independently, resend once before the turn ends, and report a second refusal.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "1cb1b0d96c335765d43638350cb1524b3d2c72cc",
+        "content": "sha256:d2361c041520e47dc53252935b86b81d71b14a866988db84103429f55fab6f4a",
+        "locator": {
+          "end": 9,
+          "kind": "line_range",
+          "start": 7
+        }
+      },
+      "id": "RLZ-P09WX0",
+      "invariant": "INV-6R279E",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-6R279E",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The payload sentence uses files for evidence and body/attach with the settings limit rather than a pinned numeric message cap.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "1cb1b0d96c335765d43638350cb1524b3d2c72cc",
+        "content": "sha256:481e7283663a7a146f604f5b327c809c40f7843f814cf1ac17571f621fb975a1",
+        "locator": {
+          "end": 34,
+          "kind": "line_range",
+          "start": 23
+        }
+      },
+      "id": "RLZ-SY7KPZ",
+      "invariant": "INV-D22ZTW",
+      "origin": {
+        "handoffEntry": "K3-D22ZTW-message-folder",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "States where messages are filed (narrowest shared task: leaf, else master or sprint), that a leaf workspace links that folder as `messages`, and where receipts live.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "A message says what is asked or handed over and names its files; the full text goes in `body` and the files in `attach`.\n\nAnchor: `attach`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cb1b0d96c335765d43638350cb1524b3d2c72cc",
+            "content": "sha256:ba9cc768a7b09584acd8a8106e1ed7d91c51a9930bd0302912a73df4fbaaf2f4",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A full-store refusal is recorded pending, resent once and, if refused again, reported through the role's route and left pending.\n\nAnchor: `recipient-busy`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cb1b0d96c335765d43638350cb1524b3d2c72cc",
+            "content": "sha256:cd33369bc0955170ea184e9e7afcb73f4d28b6b344ce7840b6898a97c03bb240",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 11
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Filing and receipt searches use their actual shared-task and transcript scopes.\n\nAnchor: `transcriptRoot`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cb1b0d96c335765d43638350cb1524b3d2c72cc",
+            "content": "sha256:1c4de79b9c0e6ee76c38abb7901ba1649cfabac4772201e7540125836435e754",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 21
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Held receipts and withdrawal of a superseded held message are governed by the shared authority file.\n\nAnchor: `withdraw_held_message_id`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "61e68c0819957758f07b59ca3c123836392cc749",
+            "content": "sha256:008a9d834646564a39bfc0b0f957c855878328eca3c3e4fb664c80e66df6e370",
+            "locator": {
+              "end": 108,
+              "kind": "line_range",
+              "start": 108
+            },
+            "path": "skills/l-01-agent-lifecycles/core/authority.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

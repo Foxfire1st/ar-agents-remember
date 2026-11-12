@@ -1,0 +1,316 @@
+{
+  "path": "dashboard/src/panels/sprint-graph/overview",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Wave grouping and segment/lump construction retain producer order; each box uses the qualified task entry for its task word and accessible name, independently of the dependency badge.\n\nAnchor: `SprintGraphView` `SprintGraphViewImpl` `GraphBox`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a995ff889391494f6d68d05f4de87e3777f7460",
+            "content": "sha256:6f5a5c01e4363b57960c454e49402ef105205a13722bb291b90115ddf378c1a3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/sprint-graph/SprintGraphView.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5a995ff889391494f6d68d05f4de87e3777f7460",
+            "content": "sha256:8a4a5f2dcba515362fe6b6a071e6e590dd15c409a05344b8ebbd531c82e4c8d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "SprintGraphView"
+            },
+            "path": "dashboard/src/panels/sprint-graph/SprintGraphView.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5a995ff889391494f6d68d05f4de87e3777f7460",
+            "content": "sha256:2aea0e002f184cbb474913641c7579dec80ee3661337bb3bac5e8b95b874f23a",
+            "locator": {
+              "kind": "symbol",
+              "name": "SprintGraphViewImpl"
+            },
+            "path": "dashboard/src/panels/sprint-graph/SprintGraphView.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5a995ff889391494f6d68d05f4de87e3777f7460",
+            "content": "sha256:4b97c0b23c1b36662a1d4659733b442bde44f328ce590a10b2386840b86b08b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "GraphBox"
+            },
+            "path": "dashboard/src/panels/sprint-graph/SprintGraphView.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Responsive grid and ellipsis declarations are unchanged contracts; the dependency recipe is ready/waiting/cycle only and the proposed graph dependency remains undeclared.\n\nAnchor: package declarations",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e9801e315eb3e0cb3f9d8873ee957b31c30c2b6",
+            "content": "sha256:a7c143c5403c829dcbcea7c2d72dba4c457a7fbb592b560a6fb03c100d53f3ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "waveGridStyles"
+            },
+            "path": "dashboard/src/panels/sprint-graph/styles.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4e9801e315eb3e0cb3f9d8873ee957b31c30c2b6",
+            "content": "sha256:55c93ed4200aed2449d4a61f4b2c6f28e845d0ccc3777d59cc903b605562ac92",
+            "locator": {
+              "kind": "symbol",
+              "name": "leafLineStyles"
+            },
+            "path": "dashboard/src/panels/sprint-graph/styles.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4e9801e315eb3e0cb3f9d8873ee957b31c30c2b6",
+            "content": "sha256:51f65c4b0a97ea2d4cdc1af1c8af6c491c8d5c322c06db636f7c2c5879452c1e",
+            "locator": {
+              "kind": "symbol",
+              "name": "dependency"
+            },
+            "path": "dashboard/src/panels/sprint-graph/styles.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e640511ffad3eb7e67c1de5b38581748a9214a53",
+            "content": "sha256:0054a47c92eb82771bb1e8ca0caaadd827b44eba6605b22e112f44eb4accb61a",
+            "locator": {
+              "end": 82,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/package.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The current overview reader retains its scoped CloseoutQueue independently of optional graph/Order content, including graphless sprint pages.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d25262c3e75cb900805602c122e9f8f6605ec733",
+            "content": "sha256:3fcb180697451d9eed64fe0956add55c7d7dca6f9c928fadb211dc417699eb63",
+            "locator": {
+              "kind": "symbol",
+              "name": "OverviewBody"
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Current shell/component sources define reachability, graphless queue access, canonical reset, entry-owned words/tones with live updates and qualified missing entries, plus responsive declarations; no Curator execution is claimed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a97a91b414fa03d0b57576be7f306eb7cca5ce6b",
+            "content": "sha256:a6edc3be17e49e07059c86941f931907a3cf4aaa4469a2b5873fc33248d427a3",
+            "locator": {
+              "end": 219,
+              "kind": "line_range",
+              "start": 53
+            },
+            "path": "dashboard/src/panels/sprint-graph/SprintGraphPage.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0073056ad9df27c87365b0f9004653d15172e706",
+            "content": "sha256:7a36164266770154ae790a060eab4591c668621ca2d9663496ac2cfa7fd817c2",
+            "locator": {
+              "end": 193,
+              "kind": "line_range",
+              "start": 105
+            },
+            "path": "dashboard/src/panels/sprint-graph/SprintGraphView.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The wire shape and current serving/observer builders supply graph nodes, waves, graph-frontier facts, leaf titles and predecessor reasons, not a second task-status authority.\n\nAnchor: graph wire declarations",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+            "content": "sha256:9dd7288f36643ae64d19e5f0a00db07d6ab0b4af1ff77174df63d806d3c827a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_execution_graph_fields"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "126c6bf624775635e3e6217632fd90455ba23e8f",
+            "content": "sha256:7c8bc39433a691155dea349646270e97fe137820c85d3f39adb55f0d06f142b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_node_view"
+            },
+            "path": "mcp/src/agents_remember/observer/projection_graph.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "126c6bf624775635e3e6217632fd90455ba23e8f",
+            "content": "sha256:7586b73f5666458f7d53ceb1d846c1138e0cd06a997d3527e1b32c0140218720",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_execution_graph_view"
+            },
+            "path": "mcp/src/agents_remember/observer/projection_graph.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
+            "content": "sha256:177fca6a059e1ee8b373f832a2725a9b97761ec3b03fa9bf5f72b9a8929f8619",
+            "locator": {
+              "end": 611,
+              "kind": "line_range",
+              "start": 577
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
+            "content": "sha256:30130bf59300f0b9bd54a089663da88bb8ef3c1a3f323e9b87903068f1c39041",
+            "locator": {
+              "end": 583,
+              "kind": "line_range",
+              "start": 549
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The document renderer retains the Mermaid diagram sibling and its nodes/dependencies/derived-wave lists.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17896bc0471a58bc6acce335012cc3be76d3b77d",
+            "content": "sha256:0df2ed738f173bbac2215763230cbab2036a71fc0fa02a330ff7ad358920024d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_execution_graph_lines"
+            },
+            "path": "mcp/src/agents_remember/tasks/render.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The deterministic dev surface applies its seeded task-entry/queue projection and opens the real DetailPanel; this is not a fresh screenshot or runtime result.\n\nAnchor: seed projection",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7dfc1906ff5bccdc7c4a2fd81c1b939871b6f63a",
+            "content": "sha256:bcd851f028b401c8ea56212eb9661271e128cf6859f0d9f9d2442dfb54471d84",
+            "locator": {
+              "kind": "symbol",
+              "name": "SprintGraphPage"
+            },
+            "path": "dashboard/src/dev/sprintGraphPage.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7dfc1906ff5bccdc7c4a2fd81c1b939871b6f63a",
+            "content": "sha256:04e67fcd34d4c63985fd5b17d3ef43f4824505669c03b2bf78a7aed2bde29e27",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "dashboard/src/dev/sprintGraphPage.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Only ready/waiting or an explicit cycle become dependency badges; absent qualified task entries have no fallback task word.\n\nAnchor: `readinessOf` `GraphBox`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a995ff889391494f6d68d05f4de87e3777f7460",
+            "content": "sha256:6f5a5c01e4363b57960c454e49402ef105205a13722bb291b90115ddf378c1a3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/sprint-graph/SprintGraphView.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5a995ff889391494f6d68d05f4de87e3777f7460",
+            "content": "sha256:94892f75555830d05e4356c451dee7069bcb4bbc404677b22baee6cf045cf1bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "readinessOf"
+            },
+            "path": "dashboard/src/panels/sprint-graph/SprintGraphView.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5a995ff889391494f6d68d05f4de87e3777f7460",
+            "content": "sha256:4b97c0b23c1b36662a1d4659733b442bde44f328ce590a10b2386840b86b08b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "GraphBox"
+            },
+            "path": "dashboard/src/panels/sprint-graph/SprintGraphView.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

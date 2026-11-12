@@ -1,0 +1,60 @@
+{
+  "path": "dashboard/src/cockpit/roleChatOptionsLoader.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "cea0b30a94130d7518eee42d7e4f5d529fd39685",
+        "content": "sha256:825544bae9ad8aec5923a063865748f724855143d149ed93ba72274dc1eff3d9",
+        "locator": {
+          "kind": "symbol",
+          "name": "readSavedCatalog"
+        }
+      },
+      "id": "RLZ-9TW834",
+      "invariant": "INV-RQ2ZB8",
+      "origin": {
+        "handoffEntry": "L202-A6b-shared-fresh-catalog",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Reads a saved-only preview for the current options scope while the fresh request remains pending; the preview does not decide Start.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "cea0b30a94130d7518eee42d7e4f5d529fd39685",
+        "content": "sha256:c2bcb2b508651ded09386fb4cd171d5bb2ae69f15669e1838a2a85c2b319654a",
+        "locator": {
+          "kind": "symbol",
+          "name": "runOptionsLoad"
+        }
+      },
+      "id": "RLZ-N8EDE3",
+      "invariant": "INV-C7AT8R",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 3",
+        "leaf": "260928-MIK-L75"
+      },
+      "rationale": "The extracted options load retains scoped refusal and connection reasons; automatic refresh does not silently clear sticky action failures, while explicit successful refresh may clear them.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "useRoleChatOptionsLoader is a current owner of the behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cea0b30a94130d7518eee42d7e4f5d529fd39685",
+            "content": "sha256:07d22be67ac2326704faf4bcc87985e28af331b5ef05ad704b41760014e0eb74",
+            "locator": {
+              "kind": "symbol",
+              "name": "useRoleChatOptionsLoader"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,38 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The obligation is spread over the module that owns the place, the publication and removal callers, the contract and manifest models and the role hand-over, and mcp/tests/test_outside_scratch_root.py pins each part with its own case."
+  },
+  "applicability": "Every allocation, recreation, removal, completed-retry decision and reconcile deletion.",
+  "conditions": [
+    "The managed parent is created private to the user and refused when it is a symlink, a non-directory, foreign-owned or of any other mode.",
+    "The marker must name the same path, generation, enclosure and digest before any bytes are removed.",
+    "A markerless tree inside the parent that the same generation is recreating is cleared by design."
+  ],
+  "exclusions": [
+    "A recorded root sitting outside the managed parent is reported and left in place."
+  ],
+  "id": "INV-TMKNRV",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_outside_scratch_root.py pins the behaviour with 34 cases on candidate tree f8f92ae2; the leaf's test lane records 5 failed and 6025 passed with no candidate-only failure (Worker A3 report).",
+        "The pytest harness isolates the outside scratch parent per process and removes only the roots this invocation created.",
+        "The changed lines of this file at candidate tree f8f92ae2 are this leaf's call into, record in, or test of the outside scratch mechanisms; mcp/tests/test_outside_scratch_root.py covers the behaviour.",
+        "The test support removes each published enclosure's outside scratch root when the run ends, reading it from the manifest or the contract."
+      ],
+      "path": "pass1.json"
+    },
+    "handoffEntry": "L198-INV-D",
+    "leaf": "260928-MIK-L198",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Allocation, removal and the completed-retry decision refuse a parent that is a symlink, a non-directory, foreign-owned or not mode 0700, refuse a root that is a symlink, that escapes the parent or that lies outside it, and delete nothing before the marker names the same path, generation, enclosure and digest the record carries.",
+  "status": "proposed",
+  "supersedes": []
+}

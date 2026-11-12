@@ -1,15 +1,5 @@
 # mcp/test_support/agents_remember_test_support/code_quality/crap_calculator.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/test_support/agents_remember_test_support/code_quality/crap_calculator.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-06T21:35:26+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489`|
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Quality support overview](overview.md)
@@ -114,39 +104,14 @@ percentage. Invalid input remains an error even though a high score is diagnosti
 - The user-facing helper name is `CRAP-Calculator`; the Python module remains import-safe as
   `crap_calculator`.
 
-## Repo-Internal References
+## Evidence
+
+### Repo-Internal References
 
 The source owners below establish these file-local behaviors; this read does not claim a test or certification pass.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Bounded coverage term and CRAP formula | `crap_score` | mcp/test_support/agents_remember_test_support/code_quality/crap_calculator.py:89-92 |
-| Coverage reader and branch-data requirement | `load_coverage_by_path` | mcp/test_support/agents_remember_test_support/code_quality/crap_calculator.py:102-121 |
-| Statement-plus-arc ratio and excluded-span behavior | `coverage_ratio_for_function` | mcp/test_support/agents_remember_test_support/code_quality/crap_calculator.py:270-280 |
-| Diagnostic review label, function and file summaries | `render_table` | mcp/test_support/agents_remember_test_support/code_quality/crap_calculator.py:350-376 |
-| Render scores without score-based failure | `main` | mcp/test_support/agents_remember_test_support/code_quality/crap_calculator.py:430-446 |
-
-## Update History
-
-- 2026-09-06T21:35:26+00:00 — Reconciled the d3610903 test-policy reduction against the current source, preserved integrity/ownership boundaries, and replaced stale forcing-suite citations with current owner evidence. Existing verification hash/date retained; source comparison is not final acceptance.
-- 2026-08-13T07:53+02:00 — 260731-EFA-L23 super-line reconciliation: re-reviewed this card and its Repo-Internal citation targets after absorbing the super-integration memory line. Retained claims remain supported by the current tree. Verification is pinned to real code HEAD `1580f92715ff93c988f9a15439ad9bec60ef4c5d`; the new-line memory mapping remains closeout-owned.
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-
-- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B23 curator: replaced the `n/a` rows with exact
-  anchors and fixer-generated ranges; exact non-fixing check returns zero findings.
-
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 final state. **Retired every claim that this reader
-  consumes statement coverage and that the threshold stays at 30.0 with a named follow-up
-  owner.** `load_coverage_by_path` now reads `executed_branches`/`missing_branches` and
-  refuses a report whose `meta.branch_coverage` is not true; the threshold is 20.0, chosen on
-  reach (`crap(4,0) = 20`) rather than on the failure count, with all 46 offenders cleared —
-  41 by behavioural tests, 5 by splitting — leaving a 0.17 margin. Also removed the reference
-  to the deleted `quality/complexity-baseline.txt`, and recorded that `diff_coverage.py`
-  reuses this coverage reader. Verification metadata is pinned to the leaf's reformat commit
-  until closeout stamps the code commit.
-
-- 2026-07-31T06:30+02:00 — 260731-EFA-L2 gate honesty (mid-leaf): recorded that Radon stays
-  CRAP's complexity engine even though its two wrapper steps are labelled reports.
-
-- 2026-05-24T06:30+02:00: Updated after the source quality wrapper started running CRAP-Calculator as part of the remembered suite.
-- 2026-05-24T06:05+02:00: Created CRAP-Calculator for function-level complexity plus coverage risk reporting.
+- Bounded coverage term and CRAP formula [1]
+- Coverage reader and branch-data requirement [2]
+- Statement-plus-arc ratio and excluded-span behavior [3]
+- Diagnostic review label, function and file summaries [4]
+- Render scores without score-based failure [5]

@@ -1,0 +1,33 @@
+{
+  "anchor": {
+    "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
+    "content": "sha256:8cc45eaf2fac5f180dbd904da6575fffab0eb238e11e03a70772c0a7bd318825",
+    "locator": {
+      "kind": "file"
+    },
+    "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+  },
+  "closed": {
+    "commit": "d8869a4b7206536a83d5e18bf5865a4d6dde08c4",
+    "reason": "The Worker role now reads worker-working-rules at evidence intake or freeze, and that delivered page requires complete test-tree collection on final bytes before freezing a product-code removal or rename. The missing Worker instruction is present; this closes the stated unbuilt-duty gap without claiming that focused tests themselves prove collection or that the historical incident did not occur.",
+    "task": "260928-MIK-L62"
+  },
+  "id": "WKN-H8X5EX",
+  "kind": "debt",
+  "origin": {
+    "handoff": {
+      "path": "rule9-ingest-list.json"
+    },
+    "handoffEntry": "mark-24",
+    "leaf": "260928-MIK-L118",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L118"
+  },
+  "state": "closed",
+  "statement": "A landing that removes or renames a module can leave test files that no longer load, and focused tests do not show it (L112 left two, 23 tests dark for hours; repaired by L138). In this master the Manager's rules page holds the check (a collection of the whole test tree). A place for it in the product, in the Worker's role text or in the landing route, is not built;"
+}

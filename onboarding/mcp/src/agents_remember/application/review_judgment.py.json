@@ -1,0 +1,55 @@
+{
+  "path": "mcp/src/agents_remember/application/review_judgment.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The same after-tree resolution supplies leaf judgment rows and proof currentness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7915489e9b1bfd326b7927fa39dbc7d55826e3c4",
+            "content": "sha256:3d2ba7c9bb099ac54f2a31d2f629488067e277170ffdc26590526c969bd0ecfa",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_judgment"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Raw and membership subjects include all attempts and distinguish rows/none/unavailable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7915489e9b1bfd326b7927fa39dbc7d55826e3c4",
+            "content": "sha256:72f0f88d124fbccd486141f3857bc80d7c0d99c366dce65bcbe2846705dc589e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_answer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The row carries authored reason/because, counts and attempt-file provenance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7915489e9b1bfd326b7927fa39dbc7d55826e3c4",
+            "content": "sha256:7c73d83d239682f34c99c8a7b5f30fc6d033c157dce12cfe4fbddf8fe3b101a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_row"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,194 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/graph.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The retained membership values name exact revision endpoints.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb43356c10b09e4f63622d8ce0004d9d68140bee",
+            "content": "sha256:b383cf6b448b245ef4cc4c4961c60024dd3f18c8232095b1efd81b908a1e7f88",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyMemberDraft"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eb43356c10b09e4f63622d8ce0004d9d68140bee",
+            "content": "sha256:76d9a22f63970aa95f306b6987c20391dcc1518416853e039d91d064b2afe326",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyMember"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The closed authored role vocabulary and the explicit not-classified member.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb43356c10b09e4f63622d8ce0004d9d68140bee",
+            "content": "sha256:04ce117f509879f455d40f1f713e5577467d3d7b176c100922cc2680c0911db4",
+            "locator": {
+              "kind": "symbol",
+              "name": "RealizationRole"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The membership draft and its stored, digest-carrying form.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb43356c10b09e4f63622d8ce0004d9d68140bee",
+            "content": "sha256:b383cf6b448b245ef4cc4c4961c60024dd3f18c8232095b1efd81b908a1e7f88",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyMemberDraft"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The retained authored role Literal has an explicit unclassified value.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb43356c10b09e4f63622d8ce0004d9d68140bee",
+            "content": "sha256:04ce117f509879f455d40f1f713e5577467d3d7b176c100922cc2680c0911db4",
+            "locator": {
+              "kind": "symbol",
+              "name": "RealizationRole"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eb43356c10b09e4f63622d8ce0004d9d68140bee",
+            "content": "sha256:d3b62bdeb910a01fc5c180dd90c8fb5154489a9e4b8e100708ef060621d373e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "UNCLASSIFIED_ROLE"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The membership draft and namespace/digest-carrying stored value.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb43356c10b09e4f63622d8ce0004d9d68140bee",
+            "content": "sha256:b383cf6b448b245ef4cc4c4961c60024dd3f18c8232095b1efd81b908a1e7f88",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyMemberDraft"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eb43356c10b09e4f63622d8ce0004d9d68140bee",
+            "content": "sha256:76d9a22f63970aa95f306b6987c20391dcc1518416853e039d91d064b2afe326",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyMember"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The retained membership read-result shape.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb43356c10b09e4f63622d8ce0004d9d68140bee",
+            "content": "sha256:7319b50b8bb02089db8f26ecc757b97810ea5d71b7f1fdef8437b49231c60be4",
+            "locator": {
+              "kind": "symbol",
+              "name": "InvariantFamilies"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Production membership functions read the exact pair or invariant-to-family rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f07a75805858d1fbe33d3cf8764f519623e075f2",
+            "content": "sha256:2467e2e45d46e15ee0daf750503729a63e3f5c9adcf625e3ad2416c4917f53fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "find_membership_by_pair"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/memberships.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f07a75805858d1fbe33d3cf8764f519623e075f2",
+            "content": "sha256:079cd24f66f0df288bf260e0a82471627b2a7967029960ada956a41fac02dbf5",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_families_for_invariant_revision"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/memberships.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The retained production member codec derives and validates its digest; claim codec is retired.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a64ad09c79633786d6408b2e814119580ad51e7",
+            "content": "sha256:b33ec55a76c3d3307e1192a3abc021318bd3792bdb5ad0ad85a8a2b11b15240f",
+            "locator": {
+              "kind": "symbol",
+              "name": "member_row_digest"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a64ad09c79633786d6408b2e814119580ad51e7",
+            "content": "sha256:d998b44957e9916e459c94891ae7bee687849d435aeda6934eda2a31448e6946",
+            "locator": {
+              "kind": "symbol",
+              "name": "decode_member_row"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

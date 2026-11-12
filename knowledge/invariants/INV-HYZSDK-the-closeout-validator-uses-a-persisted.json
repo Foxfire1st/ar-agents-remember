@@ -1,0 +1,30 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Historical: the clause was created on the three closeout-group tests, all of which this leaf deletes."
+  },
+  "applicability": "No longer applicable: the closeout validator this clause described is removed by 260928-MIK-L56.",
+  "conditions": [],
+  "exclusions": [
+    "Nothing here asserts what the closeout does today; that rule, and its lack of a proof, are recorded elsewhere."
+  ],
+  "id": "INV-HYZSDK",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "A legitimate complete run of an earlier candidate is refused by name (\"its code candidate tree is 'fb59baa4…', this candidate's is '1004c29c…'\") and a bound current run still closes the same row in all three consumers; a card added to a grouped member after the run is refused naming the group and the member."
+      ],
+      "path": "ingest-L175.json"
+    },
+    "handoffEntry": "R177-C4",
+    "leaf": "260928-MIK-L175",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "The closeout validator uses a persisted worklist run's identical-copy groups only when that run describes the candidate being certified. This sentence is retired at 260928-MIK-L56: the validator it describes is deleted.",
+  "status": "retired",
+  "supersedes": []
+}

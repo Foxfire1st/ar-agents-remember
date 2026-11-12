@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T00:53 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Governing route overview](overview.md)
@@ -48,41 +38,33 @@ L2 owns public recovery and revision behavior; L1 only establishes the evidence 
 
 `closeout_recovery_phase` returns `recovering-private-preparation` for a retained preparation with no claimed approval, irreversible boundary, mutation-recovery requirement, legacy migration or finalized contract proof. Claimed recovery uses `recovering-after-claim`, or `contract-finalization` while waiting. Preparation retains the current generation without manufacturing a consumed approval.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The current `closeout_generation_retained` boundary implements the preparation contract above. | `closeout_generation_retained` | mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py:93-108 |
-| The current `closeout_recovery_phase` boundary implements the preparation contract above. | `closeout_recovery_phase` | mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py:111-129 |
+- The current `closeout_generation_retained` boundary implements the preparation contract above. [1]
+- The current `closeout_recovery_phase` boundary implements the preparation contract above. [2]
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured for this slice. The current behavior is repository-owned and is supported by the source references below.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured external source applies. | — | — |
+No configured external source applies.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The following current source boundaries establish the ledger-retirement behavior.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `derive_closeout_recovery_commits` projects only code and memory-content commits from proven evidence. | `derive_closeout_recovery_commits` | mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py:27-48 |
-| `_has_exact_finalization_evidence` requires exact publication proof and the actual output cells for the memory mode. | `_has_exact_finalization_evidence` | mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py:144-158 |
+- `derive_closeout_recovery_commits` projects only code and memory-content commits from proven evidence. [3]
+- `_has_exact_finalization_evidence` requires exact publication proof and the actual output cells for the memory mode. [4]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Recovery commits are projected from proven mutations. (`derive_closeout_recovery_commits`) | `derive_closeout_recovery_commits` | mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py:27-48 |
-| Reported cells must match the projection. (`require_closeout_recovery_projection`) | `require_closeout_recovery_projection` | mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py:82-90 |
-| Retention requires mutation or exact finalization evidence. (`closeout_generation_retained`) | `closeout_generation_retained` | mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py:93-108 |
+- Recovery commits are projected from proven mutations. (`derive_closeout_recovery_commits`) [5]
+- Reported cells must match the projection. (`require_closeout_recovery_projection`) [6]
+- Retention requires mutation or exact finalization evidence. (`closeout_generation_retained`) [7]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository reference applies.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No additional cross-repository evidence applies. | — | — |
+No additional cross-repository evidence applies.
 
 ## 260821-CLIVE-L2 Current Contract
 
@@ -90,20 +72,4 @@ The current source seams include `derive_closeout_recovery_commits`, `require_cl
 
 ### Reconciled Source Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The current module exposes `derive_closeout_recovery_commits`, `require_closeout_recovery_projection`, `closeout_generation_retained` at this ownership boundary. | `derive_closeout_recovery_commits`; `closeout_generation_retained` | mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py:27-32; mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py:93-108 |
-
-## Update History
-
-- 2026-09-15T00:53 UTC — LCA-L9 working-candidate curation: retired ledger Git authority in this file-specific boundary; preserved real Git and lifecycle safeguards and prior history. Source and diff reviewed, source-sha256=0145b82dd7cd7c05273393d8dad907af98e48a61d4d4d8dedd7c2d8bb79e8dab. Existing verification commit/date remain unchanged until an actual source commit is available; no test or acceptance claim.
-
-
-- 2026-09-06T23:07:14+00:00 — History-format repair at the actual recorded repair time. The earlier reconciliation note recorded only a local calendar date; its time of day is unknown. Original note preserved verbatim: "- 2026-09-07 — Reconciled the preparation contract introduced by 245057 against surviving d361 source; retained prior history and verification pins."
-
-
-- 2026-08-25T08:16+02:00 — 260824-PDLS wave 004: moved this preserved sidecar with its behavior-preserving package split, repointed source evidence, and verified the emergency-landed source path at code commit `cb6623775a04cbdeb0509dc26f08a8268189c3f6`; this is onboarding provenance, not Dagger certification.
-
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
-
-- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: created from candidate tree `4241908c`; first commit verification remains closeout-owned.
+- The current module exposes `derive_closeout_recovery_commits`, `require_closeout_recovery_projection`, `closeout_generation_retained` at this ownership boundary. [8]

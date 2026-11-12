@@ -1,0 +1,176 @@
+{
+  "path": "scripts/e2e_harness/overview",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "15": {
+      "note": "The scenario records each checkpoint's expected value, actual value and pass/fail status without aborting the run; CheckpointRecorder.report includes all checkpoint and diagnostic records.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0bd7d5d79d2564f528e5d67762a9e6eec6c5dbda",
+            "content": "sha256:907a7c54268547768443caf4a951558264f1103a2f07645e48b2325959dab15c",
+            "locator": {
+              "end": 256,
+              "kind": "line_range",
+              "start": 231
+            },
+            "path": "scripts/e2e_harness/fresh_user_scenario.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b6d901c61e127ff9d281e7965feb949685271de2",
+            "content": "sha256:832ffe5fb2ac567d1306d0949a3da7e17f1d21fe611af6e912a1fee41bd0a9cf",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "scripts/e2e_harness/reporting.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Quality result projection extends terminal run facts with attempted/completed/skipped steps, exit codes and optional gate, selection and failure evidence, plus Codex and causal-failure report pointers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8832962819beec0b2b58f339a889576e2888a49d",
+            "content": "sha256:ff5957c0312b9324dbf4af7f2516fc96ee9ed23067ef02eaefa8ed2e963e8605",
+            "locator": {
+              "end": 178,
+              "kind": "line_range",
+              "start": 102
+            },
+            "path": ".dagger/src/agents_remember_quality/profile_results.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Fresh-user fixture construction owns disposable repository paths.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "32ff03db3253579891e606d2a180d606bd5cf547",
+            "content": "sha256:94bb5e83d16840c06ad5123ae62303323ecaf03f5628da78a7da1f7b3f5164cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_fresh_user_fixture"
+            },
+            "path": "scripts/e2e_harness/fresh_user_fixture.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The fresh-user flow distinguishes product calls, emulated bootstrap, persisted review outcome and partial closeout checks. Both fresh-user fixtures and their invariant report are assembled here. Retained fresh-user flow co-targets. Product-call record status and candidate authority checks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0bd7d5d79d2564f528e5d67762a9e6eec6c5dbda",
+            "content": "sha256:6fa184b11c49fad4d4d20a5ff4245413935839f726560f5e8908c0e6a76a6631",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "scripts/e2e_harness/fresh_user_scenario.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The fresh-user entry point writes a transcript and derives its exit code from invariants and checkpoints. The transcript directory constant.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57d707d85cd92b037c1dc86bfb3a310db97446eb",
+            "content": "sha256:440f3fd8fe4d19a66afa3ecddf13c0f91c9fb2f4726ac8c020ede725dd828257",
+            "locator": {
+              "kind": "symbol",
+              "name": "main"
+            },
+            "path": "scripts/e2e_harness/run_fresh_user.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "57d707d85cd92b037c1dc86bfb3a310db97446eb",
+            "content": "sha256:0ebd69c7f2f756c10cc61570742ea9630c3128a285fb0ed31d57ce800d4796e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "REPORT_DIRECTORY"
+            },
+            "path": "scripts/e2e_harness/run_fresh_user.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The test imports fixture, scenario and runner through e2e_harness-qualified identities from the scripts root and asserts the four governed paths exist; the four e2e lifecycle artifact rows register those harness modules. Reviewer R11, its authoritative identifier correction and its idempotence addendum supply the candidate-bound review evidence; this account claims no execution by its author.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0556945441335e93cd0b1783dba11d3b2eb279a7",
+            "content": "sha256:f5e44188b833ecd2f0bf2b4e6ecbdb61c26720d67c78fe6adebd5193a6c9e290",
+            "locator": {
+              "end": 4899,
+              "kind": "line_range",
+              "start": 4824
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0efc8cc4ef2107ae05cd51f89d2c8949693ddb09",
+            "content": "sha256:7e195c87e6a36e46ccedc444705cf265d35cce4d41df94a93fd32863638b8dd7",
+            "locator": {
+              "end": 197,
+              "kind": "line_range",
+              "start": 193
+            },
+            "path": "mcp/tests/test_fresh_user_harness.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0efc8cc4ef2107ae05cd51f89d2c8949693ddb09",
+            "content": "sha256:45e9fde04dd3507db32729bf74a83ad27f94aab7b7b7581077ce9cbe833cc19a",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 47
+            },
+            "path": "mcp/tests/test_fresh_user_harness.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0efc8cc4ef2107ae05cd51f89d2c8949693ddb09",
+            "content": "sha256:10f6dc6b8b0356fe26c4e37fdabeff4b41709ffc309afd81b0be89850e8d81c1",
+            "locator": {
+              "end": 210,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/test_fresh_user_harness.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

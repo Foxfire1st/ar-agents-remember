@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Automatic warmup intake after a real configured host process start. Losing this boundary would fabricate currentness, attribute another owner's work, hide an external change, or repeat an unsafe host/landing action rather than exposing the actual observation."
+  },
+  "applicability": "Automatic warmup intake after a real configured host process start.",
+  "conditions": [
+    "PID, kernel birth ticks and boot identity jointly identify the start.",
+    "Unavailable identity or transient intake failure retries without consuming the start."
+  ],
+  "exclusions": [
+    "A page load, daemon serverId alone or temporary host outage is not a new start."
+  ],
+  "id": "INV-7D1DKQ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_paseo_warmup_operations.py"
+      ],
+      "path": "curator-handoff-L81-A001-b1fd-03.json"
+    },
+    "handoffEntry": "L81-R1-F25",
+    "leaf": "260928-MIK-L81",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A host start is identified by process id, operating-system birth ticks and boot identity, and transient intake failures do not consume that start.",
+  "status": "proposed",
+  "supersedes": []
+}

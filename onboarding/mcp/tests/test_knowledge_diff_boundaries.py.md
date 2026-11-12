@@ -1,20 +1,14 @@
 # mcp/tests/test_knowledge_diff_boundaries.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_knowledge_diff_boundaries.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated            | 2026-09-22T09:15:00+02:00 |
-| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` |
-| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Test suite overview](overview.md)
 
 ## Purpose
+
+Pins the bounded comparison response, independent record/source changes and honest unavailable observations.
+
+The sizes and catalog line addresses in the following original account are historical observations, not measurements of the present source tip.
 
 **The comparison's integration population: fifteen cases over a real committed Git pair, a real
 curated candidate database and the real application seam**, marked `pytestmark = pytest.mark.integration`
@@ -27,23 +21,41 @@ code trees differ at, what a **real** write to the candidate does to a continuat
 
 ## Code Commentary
 
+
+The source declares fifteen test functions. They cover requested-tree expansion, visible unattributed gaps, side-specific realization evidence, display paging with whole-union totals, missing or changed snapshot/selector refusals, payload-field comparisons and separation of record changes from source observations. A read page is not reused as the comparison scope.
+
+Serialized response checks exclude strengthening/harmlessness verdicts, mounted UI state, approval and severity. Paired unavailable/available probe substitutions distinguish an unmade observation from a measured gap. Index-shaped fixtures use test-only RowStore/revision helpers; payload substitution isolates the comparison projection and is not evidence of canonical writer duplicate_identity admission.
+
+The continuation-mutation helper creates a new invariant with its single revision.
+A text record cannot hold a second retained revision of one identity. The new record
+moves the candidate snapshot bound by the cursor; the refusal remains
+`continuation_binding_mismatch` with no partial page. The before/after counters
+account for one new invariant and revision and require all other tables unchanged.
+
+The old InventoryFixture/build_inventory_fixture six-case inventory population was removed. No current inventory-walk coverage or production store authoring is attributed to it.
+
 ### Logic
 
 `request_for(fixture, …)` builds the typed request per case and `run_diff` drives
-`application.knowledge_diff.diff_knowledge_scope`, so the cases exercise the seam a caller uses. Three
-cases drive the **production Git probe** rather than a substituted one, which is why the module is in the
-integration lane.
+`application.knowledge_diff.diff_knowledge_scope`, so the cases exercise the seam a caller uses.
+`run_diff` (`:116`–`:129`) supplies no probe override, and the application selects
+`git_tree_difference_probe` by default. Source inspection identifies twelve test functions
+using that driver, ten with positive-page assertions; two additional functions substitute
+the probe explicitly and one compares selected scopes directly. This is default-route
+and assertion census, not a new reached-probe execution count. Real Git-pair fixtures
+and default production observation support the integration classification.
 
 **What each group of cases protects:**
 
+
 | Group | Nodes | The property |
 | --- | --- | --- |
-| the expansion and the visible gap | `:145`, `:185` | Both requested tree ids and both roots; the reproducing command carrying the two tree ids and no `HEAD`; the four changed paths classified exactly once across the attributed/unattributed lists; and the unattributed path listed, counted with its reason and surviving a display filter |
-| attributed source on the side that claims it | `:221` | A moved obligation's source is observed against **its own** side's tree — the candidate's new claim at `exact_recorded_blob`, the baseline's removed claim from the baseline |
-| paging and the display budget | `:257`, `:708` | A small budget pages the comparison without shrinking its totals, and a page of a selection is what the comparison **displays**, not what it **selected** — R07's byte-budget page is not reused as the comparison's scope |
-| refusal without substitution | `:303`, `:325`, `:408`, `:438` | A missing side refuses and substitutes no other snapshot; a real write to the candidate moves its logical digest and refuses the continuation with `continuation_binding_mismatch` and `detail` ending *"it binds another snapshot pair"*; a continuation presented against another selector refuses and returns **no page**; and a side naming another snapshot of its own file is refused by the per-side digest verification **before any page** |
-| the response's honesty | `:481`, `:510`, `:543` | Nine verdict words searched over the whole **serialized** response with a positive control; the two change statements as separate fields where neither implies the other; and the record comparison reporting exactly the payload field that changed |
-| the expansion's honesty | `:752`, `:774`, `:817` | No mounted UI and no approval the comparison cannot make; an unavailable observation reported as unavailable and **never** as a change set; and a probe that measured the trees being what makes a gap visible |
+| the expansion and the visible gap | `:152`, `:198` | Both requested tree ids and both roots; the reproducing command carrying the two tree ids and no `HEAD`; the three authored changed paths are a subset of attributed paths, the attributed/unattributed lists are disjoint, and the unattributed list is exactly the singleton gap; this node does not assert attributed-set equality or exclude extra attributed paths; and the unattributed path listed, counted with its reason and surviving a display filter |
+| attributed source on the side that claims it | `:234` | A moved obligation's source is observed against **its own** side's tree — the candidate's new claim at `exact_recorded_blob`, the baseline's removed claim from the baseline |
+| paging and the display budget | `:270`, `:738` | A small budget pages the comparison without shrinking its totals, and a page of a selection is what the comparison **displays**, not what it **selected** — R07's byte-budget page is not reused as the comparison's scope |
+| refusal without substitution | `:316`, `:338`, `:438`, `:468` | A missing side refuses and substitutes no other snapshot; a real write to the candidate moves its logical digest and refuses the continuation with `continuation_binding_mismatch` and `detail` ending *"it binds another snapshot pair"*; a continuation presented against another selector refuses and returns **no page**; and a side naming another snapshot of its own file is refused by the per-side digest verification **before any page** |
+| the response's honesty | `:511`, `:540`, `:573` | Nine verdict words searched over the whole **serialized** response with a positive control; the two change statements as separate fields where neither implies the other; and the record comparison reporting exactly the payload field that changed |
+| the expansion's honesty | `:782`, `:804`, `:863` | No mounted UI and no approval the comparison cannot make; an unavailable observation reported as unavailable and **never** as a change set; and a probe that measured the trees being what makes a gap visible |
 
 **The verdict-word case is the packet's *Forbidden Overreach* measured rather than asserted.** It searches
 the serialized response's **field names and values** for nine verdict words and includes a positive
@@ -55,24 +67,27 @@ already-built request so a case measures the *comparison's* answer to a mutated 
 different request; `selected_scopes`/`_rewording` build the two `SelectedScope`s and a reworded variant
 directly from the fixture, for the case that compares at the storage layer rather than through the seam.
 
-
-**This leaf added the real-Git half of the module: six cases over one fixture that builds a repository whose base commit and candidate tree carry every change class at once.** `InventoryFixture` and `build_inventory_fixture` write an edit, a deletion, an addition, a name containing a tab **and** a newline, a binary file, a moved symlink target, a mode-only change, a file→symlink type change and a submodule pointer change, and expose `.sides()` so a case hands the observation one pair rather than five hand-built ones. The cases assert the inventory against an **independent** `git diff --name-status -z` observation read through `mcp/tests/diff_scope_test_support.py::independent_changed_records` (a different Git question, so agreement is an observation about the two trees rather than a restatement of one implementation): population and per-path status equality; the tab/newline name surviving as the address it expands by, with the removed line-oriented command's output shown *not* to contain it; binary, symlink, submodule and mode-only entries each listed with their own kind and none dropped; a withheld tree reported `unavailable` with a reason and never as a measured empty set, with the identical-trees control reported `measured` with zero entries; and the non-UTF-8 boundary, where the observation stays available **and partial**, the path is carried by its byte form and the renderable remainder is still listed in full.
-
 ### Conventions
 
 - The module asserts against `DiffFixture`'s named identities through `item_for`/`items_of`, never against
   a stream position.
-- A real write used to stale a candidate goes through the **public store operations**
-  (`add_unrelated_revision`), so the digest that moves is a digest the package produced.
+
 - `run_diff` is re-declared here rather than imported from the scope module: the boundary module builds
   its own request per case, and the two modules are separate populations with separate lane rows.
 
 ### Invariants And Boundaries
 
 - **Integration by behaviour, not by preference.** The module creates two real Git repositories under
-  `tmp_path`, commits both trees, borrows one object store from the other, copies a closed database and
-  curates it through the store, and drives the production Git probe — so its lane membership is its
-  behaviour-preserving classification.
+  `tmp_path`, commits both trees and borrows one object store from the other. Its
+  candidate index is built independently by `build_read_scope_fixture` over a text tree
+  with the revised statement, retired claim omitted and successor claim added; it is not
+  a copy of a closed baseline database. The test-only `RowStore` mutation helpers change
+  that text tree and rebuild its index, then reopen the connection. Default production
+  probing observes the real Git pair; these fixture helpers are not the canonical writer
+  or its public admission plane.
+
+The sizes and catalog line addresses in the following original account are historical observations, not measurements of the present source tip.
+
 - **Nothing weakened.** No `skip`, `xfail`, `deselect`, per-file ignore or widened limit; fifteen cases,
   and the module is under the 1 200-line rail at 840.
 - **The large-pyright residue is pre-existing and outside this module.** `pyright` reports **16
@@ -80,6 +95,7 @@ directly from the fixture, for the case that compares at the storage layer rathe
   `build(**overrides: object)` helper — byte-identical across the leaf's own fix rounds and outside the
   seven-module pyright scope the leaf published. It is carried to `KS-R09`/`L9` to confirm or disposition,
   and it is **not** a finding of this module.
+
 - **Boundary.** This module measures the comparison through the seam and the production probe. It does not
   re-implement selection or display, and it asserts nothing about an outcome the seam cannot produce.
 
@@ -91,130 +107,109 @@ taxonomy reproduced on the frozen bytes** under the final verification round's o
 mutation applications, 126 scored node runs, 41 assertion kills, 1 exception death, 0 broken mutations,
 0 refusals), and the residue was four line numbers and three strings in report text.
 
-## Docs References
+## Evidence
+
+- A new invariant and its one revision move the snapshot; refusal leaves every other row counter unchanged. [51]
+
+
+### Docs References
+
+No Domain Documentation source is configured for this slice.
+
+### Repo-Internal References
+
+- `test_a_small_display_budget_pages_the_comparison_without_shrinking_its_totals` supplies the current fixture or assertion described above. [26]
+- `test_the_record_comparison_reports_exactly_the_payload_field_that_changed` supplies the current fixture or assertion described above. [27]
+- `test_a_page_of_a_selection_is_what_the_comparison_displays_not_what_it_selected` supplies the current fixture or assertion described above. [28]
+- `test_an_unavailable_observation_is_reported_as_unavailable_and_never_as_a_change_set` supplies the current fixture or assertion described above. [29]
+- `test_a_probe_that_measured_the_trees_is_what_makes_a_gap_visible` supplies the current fixture or assertion described above. [30]
+- Fixture construction imports test-only row constructors; it does not call the retired canonical writer. [31]
+
+
+
+- The test-only RowStore changes its text tree, rebuilds the index and reopens the read connection; candidate construction is independent, not a closed-database copy. [32]
+
+
+
+### Docs References
 
 No Domain Documentation entries are configured in this memory root. The statements below are grounded in
 repository source and package-local evidence only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The integration marker, the fixture, the request builder and the public-seam driver. | `pytestmark`; `fixture`; `request_for`; `run_diff` | mcp/tests/test_knowledge_diff_boundaries.py:62-66; mcp/tests/test_knowledge_diff_boundaries.py:68-73; mcp/tests/test_knowledge_diff_boundaries.py:76-106; mcp/tests/test_knowledge_diff_boundaries.py:109-122 |
-| The two readers that let a case name a record rather than a position. | `items_of`; `item_for` | mcp/tests/test_knowledge_diff_boundaries.py:125-139; mcp/tests/test_knowledge_diff_boundaries.py:143-153 |
-| **The expansion naming both requested trees and every path they differ at, with the reproducing command and no `HEAD`.** | "test_the_expansion_names_both_requested_trees_and_every_path_they_differ_at" | mcp/tests/test_knowledge_diff_boundaries.py:145-182 |
-| **The changed path no recorded realization attributes, listed as a visible gap that survives a filter.** | "test_a_changed_path_no_recorded_realization_attributes_is_listed_as_a_visible_gap" | mcp/tests/test_knowledge_diff_boundaries.py:185-218 |
-| The moved obligation's source observed on the side that claims it. | "test_the_attributed_source_of_a_moved_obligation_is_observed_on_the_side_that_claims_it" | mcp/tests/test_knowledge_diff_boundaries.py:221-251 |
-| **A small display budget paging the comparison without shrinking its totals.** | "test_a_small_display_budget_pages_the_comparison_without_shrinking_its_totals" | mcp/tests/test_knowledge_diff_boundaries.py:257-297 |
-| **A missing side refusing and substituting no other snapshot.** | "test_a_missing_side_refuses_and_substitutes_no_other_snapshot" | mcp/tests/test_knowledge_diff_boundaries.py:303-322 |
-| **The real candidate write that moves the logical digest and refuses the continuation, and the helper that makes the write through the public store.** | "test_a_candidate_that_changed_after_a_continuation_refuses_the_continuation"; `add_unrelated_revision` | mcp/tests/test_knowledge_diff_boundaries.py:325-363; mcp/tests/test_knowledge_diff_boundaries.py:366-405 |
-| **A continuation against another selector refusing and returning no page.** | "test_a_continuation_presented_against_another_selector_refuses_and_returns_no_page" | mcp/tests/test_knowledge_diff_boundaries.py:408-435 |
-| **A side naming another snapshot of its own file refused before any page — the node the review's `R22` form kills.** | "test_a_side_naming_another_snapshot_of_its_own_file_refuses_before_any_page" | mcp/tests/test_knowledge_diff_boundaries.py:438-475 |
-| **The forbidden-overreach case: nine verdict words searched over the serialized response, with a positive control.** | "test_no_field_of_a_comparison_can_carry_a_strengthening_or_harmlessness_verdict" | mcp/tests/test_knowledge_diff_boundaries.py:481-507 |
-| **The two change statements kept apart, and the record comparison reporting exactly the field that changed.** | "test_the_two_change_statements_are_separate_fields_and_neither_implies_the_other"; "test_the_record_comparison_reports_exactly_the_payload_field_that_changed" | mcp/tests/test_knowledge_diff_boundaries.py:510-540; mcp/tests/test_knowledge_diff_boundaries.py:543-597 |
-| The input-substitution and scope-rewording helpers the last group of cases uses. | `_substitute`; `_substituting`; `selected_scopes`; `_rewording` | mcp/tests/test_knowledge_diff_boundaries.py:616-634; mcp/tests/test_knowledge_diff_boundaries.py:637-684; mcp/tests/test_knowledge_diff_boundaries.py:687-705 |
-| **A page of a selection being what the comparison displays and not what it selected.** | "test_a_page_of_a_selection_is_what_the_comparison_displays_not_what_it_selected" | mcp/tests/test_knowledge_diff_boundaries.py:708-749 |
-| The two non-claims: no mounted UI and no approval, and an unavailable observation never reported as a change set — now with the partition asserted too (no total at all, empty third list, the undetermined limit declared and no counted omission). | "test_a_comparison_names_no_mounted_ui_and_no_approval_it_cannot_make"; "test_an_unavailable_observation_is_reported_as_unavailable_and_never_as_a_change_set" | mcp/tests/test_knowledge_diff_boundaries.py:769-788; mcp/tests/test_knowledge_diff_boundaries.py:791-847 |
-| **The probe that measured the trees being what makes a gap visible.** | "test_a_probe_that_measured_the_trees_is_what_makes_a_gap_visible" | mcp/tests/test_knowledge_diff_boundaries.py:850-912 |
-| The production probe these cases drive rather than substitute. | `git_tree_difference_probe` | mcp/src/agents_remember/application/knowledge_diff.py:162-196 |
-|The fixture these cases run on, and the governed contract it is registered under.|`build_diff_fixture`; `knowledge-diff-cases`| mcp/tests/diff_scope_test_support.py:189-233; mcp/tests/evidence-lifecycle.toml:1270-1426; mcp/tests/evidence-lifecycle.toml:1276-1276 |
-| **The integration-lane row this module occupies, and the read-scope artifact whose consumer list it joined.** | "integration = ["; "owner = \"knowledge-read-scope-cases\"" | mcp/tests/evidence-lifecycle.toml:1476-1476; mcp/tests/test-evidence-lanes.toml:243-243 |
-| **The integration-lane row this module occupies, and the read-scope artifact whose consumer list it joined.** | "integration = ["; "owner = \"knowledge-read-scope-cases\"" | mcp/tests/evidence-lifecycle.toml:1476-1476; mcp/tests/test-evidence-lanes.toml:243-243 |
-| The fixture these cases run on, and the governed contract it is registered under. | `build_diff_fixture`; `knowledge-diff-cases` | mcp/tests/diff_scope_test_support.py:189-233; mcp/tests/evidence-lifecycle.toml:1212-1426 |
-| **The integration-lane row this module occupies, and the read-scope artifact whose consumer list it joined.** | "integration = ["; "owner = \"knowledge-read-scope-cases\"" | mcp/tests/evidence-lifecycle.toml:1476-1476; mcp/tests/test-evidence-lanes.toml:243-243 |
-| **The integration-lane row this module occupies, and the read-scope artifact whose consumer list it joined.** | "integration = ["; "owner = \"knowledge-read-scope-cases\"" | mcp/tests/evidence-lifecycle.toml:1476-1476; mcp/tests/test-evidence-lanes.toml:243-243 |
+- The integration marker, the fixture, the request builder and the public-seam driver. [33]
 
-## Cross-Repo References
+
+- The two readers that let a case name a record rather than a position. [34]
+
+
+
+- Expansion asserts requested trees/roots and delimiter-safe command without HEAD; authored changed paths are an attributed subset, disjoint from the singleton unattributed gap, not an exact attributed-set census. [35]
+
+
+- **The changed path no recorded realization attributes, listed as a visible gap that survives a filter.** [36]
+- The moved obligation's source observed on the side that claims it. [37]
+- **A small display budget paging the comparison without shrinking its totals.** [38]
+- **A missing side refusing and substituting no other snapshot.** [39]
+
+
+- The continuation-mutation helper adds an invariant and one revision through test-only text mutation/index rebuild; the continuation then refuses the changed snapshot. No public canonical-store admission is claimed. [40]
+
+
+- **A continuation against another selector refusing and returning no page.** [41]
+- **A side naming another snapshot of its own file refused before any page — the node the review's `R22` form kills.** [42]
+- **The forbidden-overreach case: nine verdict words searched over the serialized response, with a positive control.** [43]
+
+- The two change statements kept apart, and the record comparison reporting exactly the field that changed. [44]
+
+
+- The input-substitution and scope-rewording helpers the last group of cases uses. [45]
+
+- **A page of a selection being what the comparison displays and not what it selected.** [46]
+
+- The two non-claims: no mounted UI and no approval, and an unavailable observation never reported as a change set — now with the partition asserted too (no total at all, empty third list, the undetermined limit declared and no counted omission). [47]
+
+- **The probe that measured the trees being what makes a gap visible.** [48]
+
+- run_diff omits a probe override, and the application defaults to git_tree_difference_probe; this source-described route is not a fresh execution count. [49]
+
+
+
+
+
+
+
+
+
+> Retained earlier citation wording: - The module is registered in the integration lane and the current support-artifact consumer lists; catalog declaration is not execution evidence.
+
+
+
+
+
+
+### Cross-Repo References
 
 The module commits two real temporary Git repositories and points one at the other's object store, all
 under `tmp_path`. No configured remote, protected branch or sibling repository is touched.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured cross-repository evidence is claimed. | — | — |
-| The fixture these cases run on, and the governed contract it is registered under. | `build_diff_fixture`; `knowledge-diff-cases` | mcp/tests/diff_scope_test_support.py:189-233; mcp/tests/evidence-lifecycle.toml:1212-1216; mcp/tests/evidence-lifecycle.toml:1276-1426 |
-| **The integration-lane row this module occupies, and the read-scope artifact whose consumer list it joined.** | "integration = ["; "owner = \"knowledge-read-scope-cases\"" | mcp/tests/evidence-lifecycle.toml:1476-1476; mcp/tests/test-evidence-lanes.toml:243-243 |
+No configured cross-repository evidence is claimed.
 
-## Update History
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 15 citations into `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`): No content impact: re-pointed 5 citations into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_read_anchor_memo.py` row at `:173`; each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 5 citations into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T18:18:00+02:00 — 260921-ICR-L47 curator (post-sync re-measure after the Architect's `worktree_sync` onto code `eda947325ccbe0791973953265278597e968a34a` / memory `6ccb9b615e383174c22f110a6492e6231a4e261f`; L47 candidate tree `5f22717e68041d6819e9671cee2ab30e4d3d3e13`): No content impact: citation ranges into files L44, L45 or L47 moved (`mcp/tests/diff_scope_test_support.py`, `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml`) were re-measured against the post-sync code; each re-pointed row held its anchors in its own measurement tree (`eda94732` or the pre-sync L47 candidate `72efa4bb`) and holds them after the line mapping, or names a literal that occurs exactly once in the post-sync file within five lines of its cited place. Claim wording unchanged. No stamp advanced.
-- 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
-- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T16:25:39+02:00 — 260921-ICR-L42 curator: No content impact: re-pointed this card's citations into `test-evidence-lanes.toml` after this leaf's line insertions (candidate tree `27409ea9f3320689c28c6a810c9a88afa288bbba` over code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`). Each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:233-233; mcp/tests/evidence-lifecycle.toml:1453-1453. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:233-233; mcp/tests/evidence-lifecycle.toml:1453-1453. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:233-233; mcp/tests/evidence-lifecycle.toml:1453-1453. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:233-233; mcp/tests/evidence-lifecycle.toml:1453-1453. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:233-233; mcp/tests/evidence-lifecycle.toml:1453-1453. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-22T09:15:00+02:00 — 260921-ICR-L4 curator (sync-merge resolution of the parked candidate against the landed line, merged base code `d21bc8a6` / memory `75bb4d65`): **additive union; deduped the identical integration-lane row both sides carried and re-pointed it at the merged manifests** (`test-evidence-lanes.toml:216`, `evidence-lifecycle.toml:1422` — landed siblings added rows above both). Header takes the landed stamp with this leaf's candidate row on the merged base. No verification stamp was advanced.
-- 2026-09-22T08:30:00+02:00 — 260921-ICR-L4 curator (uncommitted change set on `ar/260921-icr-l4`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **one case extended, one comment corrected (1170 → 1187 lines).** `test_an_unavailable_observation_is_reported_as_unavailable_and_never_as_a_change_set` now asserts the partition too — no total at all, empty third list, the undetermined limit declared, no counted omission — and the expansion-names case's comment states the corrected rule (measured changed set intersected with resolved mappings; unchanged mapped paths are context). Rows at and after the two hunks were re-derived against this candidate. **Stamp accounting:** old verification rows name the last real commit; this leaf's claims were re-read against the candidate and are stamp-class leftovers that only closeout can stamp.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:214-214; mcp/tests/evidence-lifecycle.toml:1421-1421. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:214-214; mcp/tests/evidence-lifecycle.toml:1421-1421. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:214-214; mcp/tests/evidence-lifecycle.toml:1421-1421. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:214-214; mcp/tests/evidence-lifecycle.toml:1421-1421. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:214-214; mcp/tests/evidence-lifecycle.toml:1421-1421. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:214-214; mcp/tests/evidence-lifecycle.toml:1421-1421. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T14:59:00+02:00 — 260921-ICR-L2 curator (uncommitted change set on `ar/260921-icr-l2`, base `702714fc05363cb28eacaf101ba8384475a6aa56`): **six new cases and one real-Git inventory fixture.** The module now measures the requirement's evidence: every change class in one real repository, filename identity through a tab and a newline, one entry per renderability kind, the `unavailable`-versus-measured-empty distinction with its control, a paths-only probe rendered partial, and the non-UTF-8 byte-form boundary. The card records the fixture's shape (`InventoryFixture`, `sides()`, the shared `independent_changed_records` observation) and what each case protects. **The module is now 1170 lines against a 900-line soft signal and a 1200-line hard rail — that is a master ruling, not an oversight:** the consolidation stays, the hard rail and the file-size gate are green, and the next leaf that adds cases there should extract first rather than push it toward the rail. Citation rows were re-derived against this candidate. **Stamp accounting:** the verification rows still name the last real commit whose bytes this card was verified against, because nothing in this leaf is committed; claims whose evidence this leaf's change moved were re-read against the candidate and are stamp-class leftovers that only closeout can stamp.
 
-- 2026-09-20T17:17:10+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:207-207; mcp/tests/evidence-lifecycle.toml:1410-1410. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:207-207; mcp/tests/evidence-lifecycle.toml:1410-1410. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:207-207; mcp/tests/evidence-lifecycle.toml:1410-1410. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:207-207; mcp/tests/evidence-lifecycle.toml:1410-1410. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:207-207; mcp/tests/evidence-lifecycle.toml:1410-1410. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:207-207; mcp/tests/evidence-lifecycle.toml:1410-1410. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T03:57:45+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:201-201; mcp/tests/evidence-lifecycle.toml:1412-1412. No content impact: mechanical anchor-range projection bound to citation source snapshot ef4a9932e0393a408ecd0f26b5bc2e0e1e335ad90b9e47a16092ffd6f3403af3; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T03:57:45+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:201-201; mcp/tests/evidence-lifecycle.toml:1412-1412. No content impact: mechanical anchor-range projection bound to citation source snapshot ef4a9932e0393a408ecd0f26b5bc2e0e1e335ad90b9e47a16092ffd6f3403af3; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T03:57:45+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:201-201; mcp/tests/evidence-lifecycle.toml:1412-1412. No content impact: mechanical anchor-range projection bound to citation source snapshot ef4a9932e0393a408ecd0f26b5bc2e0e1e335ad90b9e47a16092ffd6f3403af3; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T02:05:20+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:207-207; mcp/tests/evidence-lifecycle.toml:1408-1408. No content impact: mechanical anchor-range projection bound to citation source snapshot fe7fdbf3f561fa23007ac47565833928a7c74df1b4b028969d78a5b139bb65b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T02:05:20+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:207-207; mcp/tests/evidence-lifecycle.toml:1408-1408. No content impact: mechanical anchor-range projection bound to citation source snapshot fe7fdbf3f561fa23007ac47565833928a7c74df1b4b028969d78a5b139bb65b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T02:05:20+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:207-207; mcp/tests/evidence-lifecycle.toml:1408-1408. No content impact: mechanical anchor-range projection bound to citation source snapshot fe7fdbf3f561fa23007ac47565833928a7c74df1b4b028969d78a5b139bb65b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T00:16:01+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:201-201; mcp/tests/evidence-lifecycle.toml:1410-1410. No content impact: mechanical anchor-range projection bound to citation source snapshot b8fe5b3589f1357e836aaad1587e69ed38bbda0d58221eaa2150e96eb0561e93; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T00:16:01+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:201-201; mcp/tests/evidence-lifecycle.toml:1410-1410. No content impact: mechanical anchor-range projection bound to citation source snapshot b8fe5b3589f1357e836aaad1587e69ed38bbda0d58221eaa2150e96eb0561e93; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T00:16:01+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:201-201; mcp/tests/evidence-lifecycle.toml:1410-1410. No content impact: mechanical anchor-range projection bound to citation source snapshot b8fe5b3589f1357e836aaad1587e69ed38bbda0d58221eaa2150e96eb0561e93; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-19T22:28:52+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:201-201; mcp/tests/evidence-lifecycle.toml:1408-1408. No content impact: mechanical anchor-range projection bound to citation source snapshot 440311ed835ff15c77271ad85c2bef2103d2b46ebe061b96476b211b3d19cd24; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-19T22:28:52+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:201-201; mcp/tests/evidence-lifecycle.toml:1408-1408. No content impact: mechanical anchor-range projection bound to citation source snapshot 440311ed835ff15c77271ad85c2bef2103d2b46ebe061b96476b211b3d19cd24; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-19T22:28:52+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:201-201; mcp/tests/evidence-lifecycle.toml:1408-1408. No content impact: mechanical anchor-range projection bound to citation source snapshot 440311ed835ff15c77271ad85c2bef2103d2b46ebe061b96476b211b3d19cd24; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T20:45:09+02:00 — 260915-KS-L23 post-closeout clearance (change set on `ar/260915-ks-l23`, memory base `ce3028e9`, code `5e4eb651`): **cleared the 3 enforced `citation_anchor_absent_from_range` rows in this document.** The closeout's own code commit appended one `consumers` registration above every construct these cards cite, so each cited range ended exactly one line above the line that now carries the anchor row. Widened to the carrying line: `mcp/tests/evidence-lifecycle.toml:1404-1404` → `mcp/tests/evidence-lifecycle.toml:1404-1405` (rows 123, 125, 136). Every line the author cited stays inside its range; no claim, Anchor cell or other range was dropped or re-worded, and each named anchor now resolves inside the widened range.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:201-201; mcp/tests/evidence-lifecycle.toml:1404-1404. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:201-201; mcp/tests/evidence-lifecycle.toml:1404-1404. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:201-201; mcp/tests/evidence-lifecycle.toml:1404-1404. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T16:13:35+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:196-196; mcp/tests/evidence-lifecycle.toml:1400-1400. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T16:13:35+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:196-196; mcp/tests/evidence-lifecycle.toml:1400-1400. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T16:13:35+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:196-196; mcp/tests/evidence-lifecycle.toml:1400-1400. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T15:12:32+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:195-195; mcp/tests/evidence-lifecycle.toml:1399-1399. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T15:12:32+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:195-195; mcp/tests/evidence-lifecycle.toml:1399-1399. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T15:12:32+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:195-195; mcp/tests/evidence-lifecycle.toml:1399-1399. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T13:36:47+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:194-194; mcp/tests/evidence-lifecycle.toml:1395-1395. No content impact: mechanical anchor-range projection bound to citation source snapshot 468e47519c1a75ea8349538fbc4903207afc60f299e5295d1631f1f15f11a5ef; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T13:36:47+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:194-194; mcp/tests/evidence-lifecycle.toml:1395-1395. No content impact: mechanical anchor-range projection bound to citation source snapshot 468e47519c1a75ea8349538fbc4903207afc60f299e5295d1631f1f15f11a5ef; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T13:36:47+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:194-194; mcp/tests/evidence-lifecycle.toml:1395-1395. No content impact: mechanical anchor-range projection bound to citation source snapshot 468e47519c1a75ea8349538fbc4903207afc60f299e5295d1631f1f15f11a5ef; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T12:07:24+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:192-192; mcp/tests/evidence-lifecycle.toml:1395-1395. No content impact: mechanical anchor-range projection bound to citation source snapshot 5571c165ff8c0fb8964492349c8f2d6be0134e3c91863ce685e4c34bb24aa86b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T12:07:24+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:192-192; mcp/tests/evidence-lifecycle.toml:1395-1395. No content impact: mechanical anchor-range projection bound to citation source snapshot 5571c165ff8c0fb8964492349c8f2d6be0134e3c91863ce685e4c34bb24aa86b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T12:07:24+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:192-192; mcp/tests/evidence-lifecycle.toml:1395-1395. No content impact: mechanical anchor-range projection bound to citation source snapshot 5571c165ff8c0fb8964492349c8f2d6be0134e3c91863ce685e4c34bb24aa86b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:190-190; mcp/tests/evidence-lifecycle.toml:1394-1394. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:190-190; mcp/tests/evidence-lifecycle.toml:1394-1394. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:190-190; mcp/tests/evidence-lifecycle.toml:1394-1394. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:170-170; mcp/tests/evidence-lifecycle.toml:1302-1302. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:170-170; mcp/tests/evidence-lifecycle.toml:1302-1302. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:170-170; mcp/tests/evidence-lifecycle.toml:1302-1302. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T07:21:19+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:168-168; mcp/tests/evidence-lifecycle.toml:1299-1299. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
 
-- 2026-09-18T07:21:19+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:168-168; mcp/tests/evidence-lifecycle.toml:1299-1299. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
 
-- 2026-09-18T07:21:19+00:00: Generated citation repair: "integration = ["; "owner = \"knowledge-read-scope-cases\"" repointed to mcp/tests/test-evidence-lanes.toml:168-168; mcp/tests/evidence-lifecycle.toml:1299-1299. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
 
-- 2026-09-18T07:15:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 7 generated projection bullet(s) by hand while resolving the memory sync** — `integration = [`, `owner = \`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen until an agent had read what it points at. This leaf's own addition moved the ranges they project, so a bullet still naming the old extent is stale evidence; the resident claims' ranges were re-verified against the current source in this pass. Nothing in the body above was deleted to clear a finding.
 
-- 2026-09-18T04:40:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 1 generated projection bullet(s) by hand** — `integration = [`, `owner = \`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen; **this leaf's own addition moved the ranges they project**, so a bullet that still names the old extent is stale evidence; this document's claims were not otherwise re-read in this pass and its rows were left as they stand. Nothing in the body above was deleted to clear a finding.
 
-- 2026-09-18T04:35:00+00:00 — 260915-KS-L19 curator (uncommitted change set on `ar/260915-ks-l19`, base `e963a01c`): **retired 1 generated projection bullet(s) by hand, after re-reading each claim against the construct its range now covers.** A projected range is unverified evidence and keeps the claim reopened until an agent has read what it points at; each of these was read, and the resulting citation is the one recorded here rather than the range the tool wrote: `"integration = ["; "owner = \"knowledge-read-scope-cases\""` → `mcp/tests/test-evidence-lanes.toml:162-162; mcp/tests/evidence-lifecycle.toml:1285-1285`. No claim wording changed — the byte-unchanged claims these bullets were attached to are unchanged — and no verification stamp is advanced over prose that was not re-read.
+- The module is registered in the integration lane and the current support-artifact consumer lists; catalog declaration is not execution evidence.
 
-- 2026-09-18T04:05:00+00:00 — 260915-KS-L15 curator (uncommitted change set on `ar/260915-ks-l15`, base `837961d4`): re-read every claim in this card whose cited range the leaf's own source edits had moved. This leaf's insertion of `mcp/tests/test-evidence-lanes.toml` rows and a test module shifted the anchors below them, and the re-cited range of each claim was checked against the construct it is about rather than accepted from the mechanical projection. Ranges re-cited: `mcp/tests/evidence-lifecycle.toml:1285-1285; mcp/tests/test-evidence-lanes.toml:160-160` -> `mcp/tests/evidence-lifecycle.toml:1286-1286; mcp/tests/test-evidence-lanes.toml:161-161`. The generated projection bullets that recorded the same moves are retired here, so no mechanically rewritten range remains recorded as unverified evidence. Verification metadata remains closeout-owned; no acceptance or certification claim is made.
+- The module is registered in the integration lane and the current support-artifact consumer lists; catalog declaration is not execution evidence.
 
-- 2026-09-17T01:15:00+00:00 — 260915-KS-L8 curator (uncommitted change set on `ar/260915-ks-l08`, base `1ff1893f`): created this one-to-one card for the comparison's integration population (fifteen cases, integration lane row `:159`, 840 lines — under the 1 200-line rail). It records the six groups of properties the module owns and why each needs a real boundary: the two **real** Git trees and the production probe, the **real** candidate write that moves the logical digest and refuses the continuation, the paging arithmetic through the seam, the four refusal-without-substitution cases (one of which the review's `R22` form kills), and the response's honesty cases — including the forbidden-overreach node, which searches **nine verdict words over the serialized payload with a positive control** rather than over the model's declared attributes. It states the two properties that make the module's lane membership behaviour-preserving (real repositories and a real curated database under `tmp_path`; the production Git probe driven rather than substituted), that nothing was skipped, xfailed, deselected or widened, and that the **16 `reportArgumentType` pyright findings belong to the sibling scope module and not here** — pre-existing, byte-identical across the leaf's fix rounds, outside the published seven-module scope, and carried to `KS-R09`/`L9` to confirm or disposition. It closes by recording that the leaf's carried debt is report text rather than this module's cases: the final verification round reproduced every taxonomy verdict on the frozen bytes with its own instrument (39 applications, 126 scored node runs, 41 assertion kills, 1 exception death, 0 broken mutations, 0 refusals). Verification metadata: lastUpdated advanced, the reviewed candidate moved to `ar/260915-ks-l08`, and the commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.
+## Retirements
+
+- Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:353-353 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:801-801 - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1203-1203 - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2030-2030 - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2741-2741 - the bytes it recorded now occur 92 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2784-2784 - the bytes it recorded now occur 7 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:624-624 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1937-1937 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1981-1981 - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2336-2336 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+
+- The module is registered in the integration lane and the current support-artifact consumer lists; catalog declaration is not execution evidence. [50]

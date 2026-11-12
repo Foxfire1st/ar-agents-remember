@@ -1,0 +1,161 @@
+{
+  "path": "mcp/certification-profile-v1.json",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0c24e250bdad051ebbf801ab785d7bacd0ceb1f6",
+        "content": "sha256:a20fcaf7636e6afb989c47e68737063f9b672ab3dfbe339e46cdb1f024862be2",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-SM460F",
+      "invariant": "INV-BXWQRD",
+      "origin": {
+        "handoffEntry": "L192-W-R199-08",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The shipped rail list is where a rail exists or does not: `rails` declares each `identity.railId` with its gate, artifacts and execution adapter, and `provider-runtime-integration` is no longer among them. This is the readable declaration of the retirement, at a path the memory writer accepts.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Bounded dependency reconstruction environments\n\nAnchor: `environments`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c24e250bdad051ebbf801ab785d7bacd0ceb1f6",
+            "content": "sha256:f389111330d3fa39846d47f51320c1e391f55e5500dd96820287a9e1068ca267",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 2
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Pinned Dagger execution adapter and actual runtime digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c24e250bdad051ebbf801ab785d7bacd0ceb1f6",
+            "content": "sha256:2e266c65d9aeca93ca4feb785a367111684ee867e75a347b5a7390ee591b48ff",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 35
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The declaration carries its own canonical profile digest.\n\nAnchor: `profileDigest`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c24e250bdad051ebbf801ab785d7bacd0ceb1f6",
+            "content": "sha256:560f2ff8d6d25f60b1f1ba8e6c047ab3932126df87adeb7fd02422a4676502ee",
+            "locator": {
+              "end": 114,
+              "kind": "line_range",
+              "start": 114
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "45 report paths include 29 rail-evidence captures; ambient and teardown publications are removed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c24e250bdad051ebbf801ab785d7bacd0ceb1f6",
+            "content": "sha256:db184c36e3c8755a38fbe31e8e2112568c357833bfb47bc8041492df3f52b4f8",
+            "locator": {
+              "end": 530,
+              "kind": "line_range",
+              "start": 116
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Full/targeted/local selections and explicit applicability.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c24e250bdad051ebbf801ab785d7bacd0ceb1f6",
+            "content": "sha256:4218a7eb4a43e1687045cc2f07b4e748286c12fa8be5c5c76e4311fbd2cb8379",
+            "locator": {
+              "end": 3238,
+              "kind": "line_range",
+              "start": 2636
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Current source-owned selector configuration digest\n\nAnchor: `selectors`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c24e250bdad051ebbf801ab785d7bacd0ceb1f6",
+            "content": "sha256:5b61e07e69a2162de6bd707be5042305c9d54dba74d88ccc813669ef8997d25b",
+            "locator": {
+              "end": 3239,
+              "kind": "line_range",
+              "start": 3239
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Generated inputs declare generated-projection-types, generated-runtime (packaged benchmarks, providers and system) and generated-skills (the packaged skills tree); no generated-harness input is declared.\n\nAnchor: `generatedInputs`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c24e250bdad051ebbf801ab785d7bacd0ceb1f6",
+            "content": "sha256:3c23342dec13a6c93473e3fa058d931db7b9ced31b1f973517d0edc81254d6c6",
+            "locator": {
+              "end": 113,
+              "kind": "line_range",
+              "start": 58
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The retained generated-harness rail checks skills through scripts/sync-skills.py --check.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c24e250bdad051ebbf801ab785d7bacd0ceb1f6",
+            "content": "sha256:8ad62a1372fedc962f0c7131c3852cb8b8e8047c7c273c03730df3c4480a9c52",
+            "locator": {
+              "end": 1475,
+              "kind": "line_range",
+              "start": 1460
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

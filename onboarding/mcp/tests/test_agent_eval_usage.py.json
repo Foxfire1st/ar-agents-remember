@@ -1,0 +1,40 @@
+{
+  "path": "mcp/tests/test_agent_eval_usage.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9fbfe803e01ed46c480f29a9eaa6620e67d14a7e",
+        "content": "sha256:f2fc0551d92b1cca6f6f8732f4f2fb8a23ba6e89379239a5282adb40a683b285",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-RR790P",
+      "invariant": "INV-5SX38A",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-usage",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "This regression module checks this obligation through test_real_multiturn_session_uses_model_aggregate_and_keeps_final_call, test_missing_model_usage_never_substitutes_final_call, test_model_cost_mismatch_is_unknown_with_raw_counters_preserved, test_all_models_are_summed_with_explicit_float_precision_tolerance and its remaining test cases.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9fbfe803e01ed46c480f29a9eaa6620e67d14a7e",
+            "content": "sha256:f2fc0551d92b1cca6f6f8732f4f2fb8a23ba6e89379239a5282adb40a683b285",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

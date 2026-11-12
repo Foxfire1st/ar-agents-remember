@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/providers/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Package description\n\nAnchor: \"Provider lifecycle, health, and query services.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b61586c4e9e0ff3a4bf15b601708c13e4ec204b7",
+            "content": "sha256:7d00f029c160e5672bf51ff35a89a7912dddf3cfecd68791a620c4125be2d190",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

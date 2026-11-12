@@ -1,35 +1,30 @@
 # mcp/src/agents_remember/application/knowledge_view_render.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/knowledge_view_render.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T15:30+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
-| governingOverview | `mcp/src/agents_remember/application/overview.md` |
-
 ## Governing Overview
 
 [application route overview](overview.md)
 
 ## Purpose
 
-The five views rendered deterministically over the reader port, with their provenance classes: the
-module the whole leaf exists for, whose docstring states that "Everything before it settles vocabulary
-and everything after it transports bytes; here a view decides what it selects, how it orders it, and --
-the clause the packet calls the one this leaf exists to close -- **which of the two provenance classes
-every ordered value carries**." It does **not** open a database, hold a connection, or keep any state
-between calls: its only non-stdlib imports are two sibling model modules
-(`models/knowledge/classification.py` and `models/knowledge/view.py`) plus `collections.abc` and
-`dataclasses`, and it *deliberately does not have* a third provenance class, a default order, a
-fallback comparator, an actionable count, a clock read, or any way to emit a value whose classification
-it could not determine. It also has no validation of the stored determinations it reads: a decision
-facet's outcome is taken exactly as recorded, and an outcome that is not canonically spelled is not
-guessed at — the row is withheld and reported as an unresolved limitation instead.
+Candidate selection and ordering for the three knowledge views. Final row projections live in `knowledge_view_rows.py`; both halves share this module's candidates, ordering and classification. The review-matrix/curation-queue candidate supply is deleted with the views that read the retired envelope tables (MIK-R74 rule 1).
 
 ## Code Commentary
+
+### Logic
+
+Only declared ordering inputs are admitted. Candidates lacking an authored determination or registered mechanical rule are withheld with an unresolved limitation. Recorded identity supplies the stable tiebreak, never a guessed path, symbol or route ranking.
+
+`authored_decision` reads the text decision's own `decider`, `reason` and canonical `outcome`. A silent decider may use the record's author reference; a non-canonical decimal outcome never becomes a priority. The retired typed `DecisionPayload` model is not a production dependency.
+
+A single realization frontier supplies path-seeded source-context, invariant and family selections. No seed selects unrestricted content; a held path realized nowhere selects nothing rather than widening to all. Families and member locations follow recorded membership and retain the recorded role, path and locator.
+
+### Invariants And Boundaries
+
+Emitted candidates are classified authored or mechanical, never default-classed. The application seam admits the offset once and passes it to the row renderer; no second token parse or position-zero fallback exists. Retaining text decisions restores no canonical facet model or writer.
+
+### Todos
+
+None recorded.
 
 ### Logic
 
@@ -55,8 +50,7 @@ rows at all rather than a default order. There is no fallback comparator in this
 database order that survives it." Two checks guard the same property at different layers:
 `knowledge_views._admit` screens `request.ordering_input` against the imported `ORDERING_INPUTS` before
 any row exists, and `knowledge_views._render` catches the exception the renderer raises and converts it
-back into a typed `ViewRefusal`. `order_candidates` is exported in `__all__` and has exactly one caller
-in the shipped candidate, `_render` inside this same module.
+back into a typed `ViewRefusal`. `order_candidates` is exported in `__all__`
 
 **The withholding branch is one `None`, and two callers turn it into two different recorded things.**
 `_classified` has "the two branches are the whole closure": a candidate whose own content is a stored
@@ -91,9 +85,7 @@ ordering decision; the reader port beneath it caches the rows of a record kind f
 "so two views built over one reader cannot disagree about the rows of a kind merely because a write
 landed between them." Combined with the total order of the previous paragraph — a total order over
 identities, which the docstring says means "two runs at one snapshot cannot disagree" — the selection,
-the ordering and the row content are all functions of recorded values and registered constants. The
-shipped conformance check is the differential that renders every view twice at one snapshot and compares
-`payload.model_dump_json()`; nothing in this module records a run id, a duration or a timestamp.
+the ordering and the row content are all functions of recorded values and registered constants.
 
 **The authored side is an intake decision: an authored claim is a stored `decision` facet of an
 already-registered kind.** `DECISION_FACET_KIND` is `"decision"` — the facet kind of `KS-R11@v1`'s
@@ -145,32 +137,6 @@ both use `fact_kind="member"` (`FamilyRow` declares that closed set, and `"famil
 to its other member and to that member's implementation location is measurable through
 `subject.revision_id` plus `fact_kind` and not through an item id.
 
-**The public context is completed as one pair rather than half-supplied, and the pair is resolved from
-the repository the caller actually named.** `_source_resolution(request, workspace_root)` returns
-`(repository_root, code_tree_id)` and it never returns one without the other. A caller who named both
-gets both back untouched; a caller who named a root gets that root's own current tree from
-`_current_code_tree`; a caller who named **neither** gets the mount's workspace default -- but only when
-a tree can actually be resolved from it, because naming a root without a tree is exactly the
-`KnowledgeReadContext` refusal the mount's own default used to hand a minimal caller. `_current_code_tree`
-shells `git -C <root> rev-parse HEAD^{tree}` under `_GIT_TIMEOUT_SECONDS` and validates the answer against
-`_TREE_ID_PATTERN`, returning `None` -- never a guess -- when the root is not a repository, Git is absent,
-Git does not answer in time, or the answer is not a tree id; the context is then built with neither half,
-which the shipped resolver reports as "no source resolution was requested" rather than as a resolution
-that silently failed. So anchor resolution stays `not_requested` for a caller who names no repository,
-unless the mount's own workspace is itself the Git repository a tree can be read from.
-
-**The remaining three renderers, and the shared body every one of the five ends in.**
-`render_source_context` also collects the authored decisions of one invariant revision when the request
-names one, distinguishing `authored_responsibility` from `diagnostic_evidence` by `is_no_consequence`.
-`render_review_matrix` defaults to the six requirement/effect/preservation/
-question/evidence/observation kinds, preserves recorded references as `assessment_ids`, and attaches
-`_consequence(candidate)`. `render_curation_queue` emits machine work items and separately attributed
-curator dispositions in two shapes and, per its own docstring, "computes no actionable count" because a
-count of "actionable" work "would be the semantic conclusion this leaf is forbidden to generate." All
-five share one body: order, assert that every paged candidate has a class, build the row, and return
-`(rows, ordered.limitations, ordered.rule_ids, len(ordered.ordered))` — the fourth element being the
-selection's own size, so a page cannot report a scope smaller than the walk it is a page of.
-
 **The small helpers each name one fact, and the module is otherwise pure.** `_rules_used` returns the
 rule ids one ordering touched with the tiebreak always included; `_position` is "One ordered position
 carrying the class of the *input*, not of the row's content"; `_consequence` returns a
@@ -180,12 +146,7 @@ working types are frozen dataclasses rather than models — `Candidate` is "One 
 before ordering and before classification" and `OrderedSet` is "The outcome of one ordering pass: the
 ordered candidates and what could not be classified" — while every row that leaves the module is a
 shipped model (`SourceContextRow`, `InvariantRow`, `FamilyRow`, `ReviewMatrixRow`, `CurationQueueRow`)
-and the port it reads through is the shipped `KnowledgeViewReader`. `__all__` names thirteen public
-names — the facet-kind constant, the two outcome prefixes, `Candidate`, `OrderedSet`,
-`UnadmittedOrderingInput`, `authored_decision`, `order_candidates` and the five `render_*` functions —
-leaving the other module-level functions private: 41 module-level functions and five classes in total,
-with no class of its own beyond those five (`AuthoredDecision`, `Candidate`, `OrderedSet`,
-`UnadmittedOrderingInput` and `Page`). Seven of those private functions are the one seed frontier the
+and the port it reads through is the shipped `KnowledgeViewReader`.  Seven of those private functions are the one seed frontier the
 Path Seed section describes: `_seed_revisions` resolves the request's optional source path to the
 revisions realized there (`None` meaning "no restriction", an empty set meaning "realized nowhere", which
 is an answer and not a fallback to everything), `_seed_memo` / `_seeded_realizations` / `_seed_selects`
@@ -196,20 +157,8 @@ frontier to the family view's membership rows and to the locations those members
 attribute and its two cache keys are module constants (`_SEED_MEMO_ATTRIBUTE`, `_SEED_KEY`,
 `_SEED_FAMILY_KEY`) rather than literals, because two functions must agree on them exactly.
 
-**A location row now carries the place it was recorded at, and the renderer copies that place rather than deriving it.** `render_invariant` and `render_family` assign `candidate.role`, `candidate.path` and `candidate.locator` into the row they build, so a view that answers "where is this realized" reports a place and not only an authored rationale. The defect was a **dropped** answer rather than a missing one: `_member_locations` (`:769-799`), `_family_candidates` (`:678-725`) and `_invariant_candidates` (`:547-613`) already set all three fields on the candidate they hand over — **none of those three functions was touched** — and the projection copied none of them, so a family or invariant read returned the claim id, the invariant revision id and the statement while the location sat unused on the candidate beside it. Both views decode the one stored locator through the same `_LOCATOR_ADAPTER` (`:904`) the source-context view already used, so two views cannot disagree about one claim's place; nothing reads a filename out of a statement, because the row reports what the record says even when the rationale names no file — which is exactly the fixture that separates the two. `InvariantRow` is one model behind both row kinds, so the three fields appear on its `fact_kind="statement"` rows as explicit `null`s, the convention this surface already had for `SourceContextRow.anchor_state`, and only a realization row carries values.
-
 ### Conventions
 
-Every emitted shape derives from `KnowledgeModel` in the models layer, so `extra="forbid"` and
-`frozen=True` are what make an undeclared field impossible rather than merely discouraged; this module
-declares no model base of its own and constructs the shipped row and payload types instead. The two
-provenance classes are imported rather than spelled locally — `AUTHORED_CLASS`, `MECHANICAL_CLASS` and
-`CLASSIFICATION_CLASSES` come from `models/knowledge/classification.py`, where the class set is derived
-from its literal, and the module builds provenance through the shared constructors `authored_provenance`
-and `mechanical_provenance` rather than instantiating `Provenance` itself. The four admitted ordering
-inputs, the ordering vocabulary and the mechanical registry belong to that same module and are imported
-(`OrderingInput`, `ORDERING_INPUTS`, `REGISTERED_ROLE_ORDER`, `MECHANICAL_RULES`); the module re-declares
-none of them, and its `_ordering_keys` dispatches on the same four literal names the registry carries.
 Bounded lengths are not restated either: identities, statements, paths and conditions travel in models
 whose own fields already declare the bound. Three rule identities used to classify generated content are
 module constants — `DETECTION_RULE = ("ordering.trigger-rule", 1)`, `CONSEQUENCE_RULE =
@@ -225,11 +174,9 @@ neither `"family_member"` (the envelope kind the membership is *not* read as) no
 `FamilyRow`'s closed set, so stating the wrong one is a validation failure rather than a silently
 mis-typed row. The three seed-cache names are constants for the same reason the rule identities are: two
 functions must agree on the exact key, and a literal in each would be a second declaration of one fact.
-The curation queue's `DISPOSITION_VOCABULARY_VERSION` names the vocabulary it states on every machine item.
+
 `UnadmittedOrderingInput` is deliberately a `ValueError` and not a refusal model, because the caller has a
-programming defect rather than a data condition. `__all__` is the module's public surface: the thirteen
-names listed above, with the constants that could be mistaken for local spellings included so a reader
-finds the canonical owner.
+programming defect rather than a data condition.
 
 ### Invariants And Boundaries
 
@@ -281,13 +228,6 @@ finds the canonical owner.
   `subject.revision_id` plus `fact_kind`, not an item id, and a location reported as one of a family's
   members is a member fact about that family rather than the source-context view's
   `registered_realization`.
-- **The source-resolution pair is named as a pair or not at all.** `_source_resolution` never returns a
-  root without a tree or a tree without a root: a caller-named root is completed with that root's own
-  current tree, the mount's workspace default is named only when a tree can be resolved from it, and a
-  root Git cannot answer for is named as neither half. `_current_code_tree` returns `None` — never a
-  guess — for a root that is not a repository, an absent Git, a timeout, or an answer that is not a tree
-  id, so a minimal read reaches the context as "no source resolution was requested" instead of as a raw
-  `KnowledgeReadContext` validation error.
 - **The module holds no I/O and no durable state.** Its imports are `collections.abc`, `dataclasses`,
   `typing.cast` and two model modules; it opens no connection, reads no path, holds no module-level
   mutable value, and therefore cannot disagree with itself between two calls at one snapshot. The seed
@@ -297,35 +237,24 @@ finds the canonical owner.
 - **A row is emitted only after classification.** Every renderer asserts the class of each paged
   candidate before building its row, so a row that reaches a payload always carries exactly one of the
   two provenance classes.
-- **The seam re-derives the page offset from the continuation token, and the renderer's own next offset
-  is discarded.** `_render` computes `next_offset` and each renderer binds it to `_next` without using
-  it, while `knowledge_views._render` parses the token's last `:`-segment to recover the position — a
-  real coupling across the two modules that a reader of either alone would miss.
 - **The curation queue computes no actionable count and fills no per-row limitations.** No function here
   writes `CurationQueueRow.limitations`; unresolved rows are reported through the payload's
   `limitations` instead, and `design/retrieval-review-design.md:348` is cited in the renderer's docstring
   as the rule that keeps the review section report-only. That design file is not present in this code
   worktree, so the claim is anchored to the renderer's own docstring rather than to the design document.
-- **A row's location is copied from the candidate that already holds it, never re-derived.** `render_invariant`
-  and `render_family` assign `candidate.role`, `candidate.path` and `candidate.locator` straight into the row;
-  `_member_locations`, `_family_candidates` and `_invariant_candidates` were not changed by this leaf, because
-  each of them already set all three. Nothing here reads a path out of a statement, both views decode the
-  recorded locator through the same `_LOCATOR_ADAPTER`, and a row kind that has no location reports `null`
-  rather than a fabricated one — so the family, invariant and source-context views cannot disagree about one
-  claim's place, and none of them can invent one.
 - **The module adds no verification authority.** It reads recorded determinations as recorded, refuses to
   parse a non-canonical outcome into a priority, and never converts its own read into a statement about
   what the knowledge means.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Everything this card asserts is checkable inside the shipped candidate: the module's own docstring and
 constants, the two model modules it imports its vocabulary and provenance classes from, the reader port
@@ -334,55 +263,54 @@ differential in one test file and the ordering-and-admission cases in the other.
 renderer's docstring cites by path lives outside this code worktree, so it is quoted as the module's own
 statement rather than cited as a file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The docstring that states the four properties together and the CR20-6 intake decision behind the authored side. | `order_candidates`; `_classified` | mcp/src/agents_remember/application/knowledge_view_render.py:1-38 |
-| The differential that renders every view twice at one snapshot and compares the payload bytes. | "def test_every_view_renders_two_byte_identical_runs_at_one_snapshot(" | mcp/tests/test_knowledge_projection_vault_safety.py:281-281 |
-| The registered facet kind the authored claim is carried in, with the two canonical outcome prefixes and the three payload fields `authored_decision` reads. | `DECISION_FACET_KIND`; `PRIORITY_OUTCOME_PREFIX`; `NO_CONSEQUENCE_OUTCOME_PREFIX`; `DecisionPayload`; `outcome`; `decider` | mcp/src/agents_remember/application/knowledge_view_render.py:80-101; mcp/src/agents_remember/application/knowledge_view_render.py:99-101; mcp/src/agents_remember/models/knowledge/facet.py:91-103; mcp/src/agents_remember/application/knowledge_view_render.py:96-98; mcp/src/agents_remember/models/knowledge/facet.py:101-103 |
-| The two generated-content rules the module classifies under: a recorded trigger identity and a payload byte-equality consequence. | `DETECTION_RULE`; `CONSEQUENCE_RULE` | mcp/src/agents_remember/application/knowledge_view_render.py:105-106 |
-| The three generated-content rules the module classifies under: a recorded trigger identity, a payload byte-equality consequence, and the registered rule a membership-derived row names. | `DETECTION_RULE`; `CONSEQUENCE_RULE`; `REGISTERED_ROLE_RULE` | mcp/src/agents_remember/application/knowledge_view_render.py:105-107 |
-| One authored determination read from a stored facet — the canonical-spelling rule that decides whether it is a priority at all, and the reader that turns one facet row into it with the envelope actor used only when the payload is silent. | `AuthoredDecision`; `priority_position`; `is_no_consequence`; `no_consequence_detail`; `authored_decision` | mcp/src/agents_remember/application/knowledge_view_render.py:117-152; mcp/src/agents_remember/application/knowledge_view_render.py:156-166; mcp/src/agents_remember/application/knowledge_view_render.py:154-154; mcp/src/agents_remember/application/knowledge_view_render.py:155-178 |
-| The pre-classification working type and the ordering pass's outcome, both frozen dataclasses rather than models. | `Candidate`; `OrderedSet` | mcp/src/agents_remember/application/knowledge_view_render.py:183-208; mcp/src/agents_remember/application/knowledge_view_render.py:212-217 |
-| The declared key each admitted input produces (including the sentinel that orders an unprioritised row after every prioritised one and the rule that the priority is read from the candidate's own subject), and the exception that replaces a default order with its raise site and the two-member class closure the caller turns into a recorded limitation. | `_ordering_keys`; `_declared_priority`; `return (1,), mechanical_provenance("ordering.declared-tiebreak", 1)`; `UnadmittedOrderingInput`; `order_candidates`; `_classified` | mcp/src/agents_remember/application/knowledge_view_render.py:231-264; mcp/src/agents_remember/application/knowledge_view_render.py:220-228; mcp/src/agents_remember/application/knowledge_view_render.py:274-275; mcp/src/agents_remember/application/knowledge_view_render.py:278-313; mcp/src/agents_remember/application/knowledge_view_render.py:342-361 |
-| The total sort key ending in record identity and the registered rule ids an ordering touched. | `_sort_key`; `_rules_used` | mcp/src/agents_remember/application/knowledge_view_render.py:316-325; mcp/src/agents_remember/application/knowledge_view_render.py:328-339 |
-| The position that carries the class of the input, and the no-consequence statement built from either branch with its paging helper. | `_position`; `_consequence`; `_page` | mcp/src/agents_remember/application/knowledge_view_render.py:364-367; mcp/src/agents_remember/application/knowledge_view_render.py:370-386; mcp/src/agents_remember/application/knowledge_view_render.py:389-395 |
-| The attachment read that fetches a subject's own decisions, and the rule that only one declared position may order. | `_decisions_for`; `_priority_of` | mcp/src/agents_remember/application/knowledge_view_render.py:420-440; mcp/src/agents_remember/application/knowledge_view_render.py:443-450 |
-| The per-view selection functions and the five renderers they feed, each returning rows with the limitations, the rule ids and the selection's own size. | `_invariant_candidates`; `_family_candidates`; `_review_candidates`; `_curation_candidates`; `render_source_context`; `render_invariant`; `render_family` | mcp/src/agents_remember/application/knowledge_view_render.py:547-613; mcp/src/agents_remember/application/knowledge_view_render.py:678-725; mcp/src/agents_remember/application/knowledge_view_render.py:823-838; mcp/src/agents_remember/application/knowledge_view_render.py:864-887; mcp/src/agents_remember/application/knowledge_view_render.py:949-984; mcp/src/agents_remember/application/knowledge_view_render.py:987-1033; mcp/src/agents_remember/application/knowledge_view_render.py:1039-1083 |
-| The two projections that carry a row's recorded location into the response, the candidate builder each copies from rather than re-deriving, and the single decoder both share with the source-context view. | `render_invariant`; `render_family`; `_member_locations`; `_invariant_candidates`; `_LOCATOR_ADAPTER` | mcp/src/agents_remember/application/knowledge_view_render.py:987-1033; mcp/src/agents_remember/application/knowledge_view_render.py:1039-1083; mcp/src/agents_remember/application/knowledge_view_render.py:769-799; mcp/src/agents_remember/application/knowledge_view_render.py:547-613; mcp/src/agents_remember/application/knowledge_view_render.py:904-904 |
-| The renderer's own ordering-and-paging step with the token-tail offset recovery, and the two views that carry the classification fields and the queue shapes. | `_render`; `render_review_matrix`; `render_curation_queue` | mcp/src/agents_remember/application/knowledge_view_render.py:936-946; mcp/src/agents_remember/application/knowledge_view_render.py:1064-1120; mcp/src/agents_remember/application/knowledge_view_render.py:1129-1158; mcp/src/agents_remember/application/knowledge_view_render.py:1083-1083; mcp/src/agents_remember/application/knowledge_views.py:38-38; mcp/src/agents_remember/application/knowledge_views.py:273-273; mcp/src/agents_remember/application/knowledge_view_render.py:1150-1150 |
-| The queue row that separates a machine work item from an attributed curator disposition, with the disposition vocabulary version it states. | `_queue_row`; `DISPOSITION_VOCABULARY_VERSION` | mcp/src/agents_remember/application/knowledge_view_render.py:1161-1194; mcp/src/agents_remember/application/knowledge_view_render.py:1025-1025; mcp/src/agents_remember/application/knowledge_view_render.py:1172-1172; mcp/src/agents_remember/serving/conversation/control/queue_projection.py:85-85; mcp/tests/test_conversation_control_queue.py:243-243; mcp/src/agents_remember/application/knowledge_view_render.py:907-907 |
-| The four admitted ordering inputs and the closed two-member class set the module imports instead of re-declaring, the registry holding one ordering rule per admitted input, and the declared stable tiebreak every position must name. | `OrderingInput`; `ORDERING_INPUTS`; `AUTHORED_CLASS`; `MECHANICAL_CLASS`; `MECHANICAL_RULES`; `ORDERING_PROVENANCE_RULE`; `ordering_position` | mcp/src/agents_remember/models/knowledge/classification.py:80-86; mcp/src/agents_remember/models/knowledge/classification.py:73-76; mcp/src/agents_remember/models/knowledge/classification.py:168-265; mcp/src/agents_remember/models/knowledge/view.py:162-162; mcp/src/agents_remember/models/knowledge/view.py:650-665; mcp/src/agents_remember/models/knowledge/view.py:70-70; mcp/src/agents_remember/models/knowledge/view.py:633-647 |
-| The limitation record a withheld value becomes, the position shape, and the refusal of one subject at two positions. | `UnresolvedLimitation`; `OrderedPosition`; `require_distinct_row_subjects` | mcp/src/agents_remember/models/knowledge/view.py:587-599; mcp/src/agents_remember/models/knowledge/view.py:615-647; mcp/src/agents_remember/models/knowledge/view.py:722-746; mcp/src/agents_remember/application/knowledge_view_render.py:67-67; mcp/src/agents_remember/application/knowledge_view_render.py:363-363; mcp/src/agents_remember/application/knowledge_view_render.py:1019-1019; mcp/src/agents_remember/models/knowledge/view.py:785-809; mcp/src/agents_remember/models/knowledge/view.py:597-602; mcp/src/agents_remember/models/knowledge/view.py:607-612 |
-| The reader port the module reads through and the store-side reader that answers it, including the per-kind row cache. | `KnowledgeViewReader`; `StoreViewReader`; `open_view_reader` | mcp/src/agents_remember/models/knowledge/view.py:1041-1086; mcp/src/agents_remember/memory/knowledge/view_source.py:154-197; mcp/src/agents_remember/memory/knowledge/view_source.py:405-428; mcp/src/agents_remember/memory/knowledge/view_source.py:431-455 |
-| The seam that calls the renderers, screens the ordering input before any read, and accounts withheld rows as unresolved references. | `_admit`; `_render`; `_counts` | mcp/src/agents_remember/application/knowledge_views.py:115-148; mcp/src/agents_remember/application/knowledge_views.py:161-210; mcp/src/agents_remember/application/knowledge_views.py:227-254 |
-| The admission cases: one rule per admitted input, an unadmitted input refused rather than defaulted, and every position naming the declared tiebreak. | "def test_the_registry_admits_one_rule_per_ordering_input("; "def test_an_unadmitted_ordering_input_is_refused_rather_than_defaulted("; "def test_every_admitted_position_names_the_declared_tiebreak_rule(" | mcp/tests/test_knowledge_views_and_projection.py:222-228; mcp/tests/test_knowledge_views_and_projection.py:245-252; mcp/tests/test_knowledge_views_and_projection.py:255-263 |
 
-## Cross-Repo References
+- The docstring that states the four properties together and the CR20-6 intake decision behind the authored side. [1]
+
+
+- The text-decision reader consumes recorded fields and canonical outcome prefixes; the canonical facet payload type is retired. [3]
+
+
+- The two generated-content rules the module classifies under: a recorded trigger identity and a payload byte-equality consequence. [4]
+
+
+- The three generated-content rules the module classifies under: a recorded trigger identity, a payload byte-equality consequence, and the registered rule a membership-derived row names. [5]
+
+
+- One authored determination read from a stored facet — the canonical-spelling rule that decides whether it is a priority at all, and the reader that turns one facet row into it with the envelope actor used only when the payload is silent. [6]
+
+- The pre-classification working type and the ordering pass's outcome, both frozen dataclasses rather than models. [7]
+- The declared key each admitted input produces (including the sentinel that orders an unprioritised row after every prioritised one and the rule that the priority is read from the candidate's own subject), and the exception that replaces a default order with its raise site and the two-member class closure the caller turns into a recorded limitation. [8]
+- The total sort key ending in record identity and the registered rule ids an ordering touched. [9]
+- The position that carries the class of the input, and the no-consequence statement built from either branch with its paging helper. [10]
+- The attachment read that fetches a subject's own decisions, and the rule that only one declared position may order. [11]
+
+- The per-view selection functions a view is built from: invariant, source-context and family candidates, each ordered and classified by the module's one ordering pass. [12]
+
+
+- The two projections that carry a row's recorded location into the response, the candidate builder each copies from rather than re-deriving, and the single decoder both share with the source-context view. [13]
+
+
+- Ordering and paging use admitted selection positions: the renderer slices the ordered selection at its supplied offset, and the application reads that position from its own admitted continuation. An unreadable cursor refuses instead of recovering a token-tail offset or returning position zero. The output retains rows, classification limitations, counts and continuation. [14]
+
+- The four admitted ordering inputs and the closed two-member class set the module imports instead of re-declaring, the registry holding one ordering rule per admitted input, and the declared stable tiebreak every position must name. [16]
+
+- UnresolvedLimitation reports a withheld value without guessing its classification; OrderedPosition carries ordering input, provenance and the registered tiebreak, while require_distinct_row_subjects refuses one recorded subject at two positions. [17]
+
+
+- The reader port the module reads through and the store-side reader that answers it, including the per-kind row cache. [18]
+
+
+- The seam that calls the renderers, screens the ordering input before any read, and accounts withheld rows as unresolved references. [19]
+
+
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. A view renders over one reader port bound to one
 repository namespace, every subject it emits is a store-local record identity or revision identity, and
 no construct here reads a path prefix, a file extension or a repository location.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
+No meaningful cross-repo references found.
 
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-21T12:40+02:00 — 260915-KS-L44 curator (uncommitted CYCLE-03 change set on `ar/260915-ks-l44-ar`, code base `2a96eb88`, memory base `9df7f499`): **body update for the two projections this leaf completes, and the ranges the same edit moved.** `render_invariant` (`:987-1033`) and `render_family` (`:1039-1083`) now assign `candidate.role`, `candidate.path` and `candidate.locator` into the row they build, so the answer to "where is this realized" is a recorded place and not only an authored rationale. **The defect was a dropped answer, not a missing one**: `_member_locations` (`:769-799`), `_family_candidates` (`:678-725`) and `_invariant_candidates` (`:547-613`) already set all three fields on the candidate they hand over, and **none of those three functions was touched** — so nothing is re-derived here and no filename is read out of a statement. Both views decode the one stored locator through the same `_LOCATOR_ADAPTER` (`:904`) the source-context view already used, which is why the family, invariant and source-context views now agree on one claim's place instead of the family view being brought down to the others'. The Logic section gained the paragraph, the Invariants section the bullet, and the reference table the row for the two projections, the builders they copy from and the shared decoder. Citation repair in the same pass, all of it this leaf's own shift and none of it a re-reading of a claim: the selection/renderer row's `render_invariant` cell `987-1022` → `987-1033` and its `render_family` cell `1028-1061` → `1039-1083`, each now the function's own extent. No anchor, row or claim was dropped, and every other cell of this card was re-read and left standing because it still holds the construct it names. `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are retained as recorded — the candidate is uncommitted and the governed closeout owns the real stamp.
-- 2026-09-20T17:23:31+00:00: Generated citation repair: `DETECTION_RULE`; `CONSEQUENCE_RULE` repointed to mcp/src/agents_remember/application/knowledge_view_render.py:105-105; mcp/src/agents_remember/application/knowledge_view_render.py:106-106. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:23:31+00:00: Generated citation repair: `DETECTION_RULE`; `CONSEQUENCE_RULE`; `REGISTERED_ROLE_RULE` repointed to mcp/src/agents_remember/application/knowledge_view_render.py:105-105; mcp/src/agents_remember/application/knowledge_view_render.py:106-106; mcp/src/agents_remember/application/knowledge_view_render.py:107-107. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T05:44+02:00 — 260915-KS-L41 curator (uncommitted change set on `ar/260915-ks-l41-ar`, code base `756c47b3` at this leaf's cut and `f79f4db745ad00b908d6ce4871d0b4ab2320207c` after the L39 sync, memory base `da33325c` at the cut and `37d0787571bfbf92890049ee0614fa159012be39` after it): **body update for the one seed frontier this leaf completes, and the two row classes the report named on this card.** (a) The path seed is now computed once per reader and applied by every view that can be seeded. `_seed_memo` (`application/knowledge_view_render.py:472-486`) attaches the answer to the reader object under `_SEED_MEMO_ATTRIBUTE`; `_seeded_realizations` (`:489-495`) is the memoised front door; `_seed_selects` (`:498-501`) is the one predicate, written so that `None` selects everything and a set selects only its members; `_seeded_family_revisions` (`:504-525`) is the hop that is not a lookup, because **a family is not a file** and is selected through the `family_member` rows naming a revision the path realizes; `_selected_invariant_revisions` (`:528-544`) returns the same frontier as a set so `source_context` can apply it to both its registered realizations and the authored decisions attached to those revisions; and `_source_context_candidates` (`:616-654`) now calls `_seed_selects` at all, which is what stops the path seed from being ignored by that view. (b) `_family_members` (`:728-766`) reads `reader.family_member_rows()` — the port method answered from the dedicated `family_member` table — instead of the generic envelope read, and both membership-derived row shapes now carry `fact_kind="member"`, the closed set `FamilyRow` declares, rather than `"family_member"` / `"registered_realization"`. The Logic section gained three paragraphs (the shared frontier, the membership read and why it cannot be a kind lookup, and the source-resolution pair the read completes), the private-helper count was corrected from 34 functions and four classes to **41 functions and five classes**, the Conventions section now names the three seed-cache constants and the family view's own `fact_kind` vocabulary, and the Invariants list gained five entries. Twelve `citation_anchor_absent_from_range` cells and one reopened claim were re-read against the candidate rather than shifted: the three admission-case cells now cite the test declarations they name (`222-228`, `245-252`, `255-263`), and the per-view selection, renderer, queue-row, decisions and reader-port cells were repointed to the constructs each row actually names. No claim was re-worded to fit a stale pointer and no anchor or range was dropped. `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are retained as recorded — the candidate is uncommitted and the governed closeout owns the real stamp — the superseded `ar/260915-ks-l32-ar` candidate row is replaced by the recorded working candidate above, and no stamp was advanced or invented.
-- 2026-09-20T02:24+02:00 — 260915-KS-L32 curator, post-sync citation pass (uncommitted change set on `ar/260915-ks-l32-ar`, code base `7ca3ac48914a562bb90b5fe04d6c17b5a3f51d80`, memory base `4ffb8d8d3ff372847784fe8f7d2a13e57d9509a5`): re-measured this card after the master-line sync and the settled resolution pass, and it carries **no enforced finding**: the report's repairable set holds no row of this card, and the two stale-cell rows the previous pass cleared stay cleared against the merged tree (`_invariant_candidates` `465-531`, `_family_candidates` `580-621`, `render_source_context` `835-870`, `render_invariant` `873-908`, `render_family` `914-947`, `render_review_matrix` `950-1006`, `render_curation_queue` `1015-1045`, and `ORDERING_PROVENANCE_RULE` at `view.py:162`, `OrderedPosition` at `view.py:615-647`, `ordering_position` at `view.py:650-665`). The one change made here is bookkeeping: the recorded working candidate named the superseded `ar/260915-ks-l20` candidate at base `9f88a6de`, a base the merged candidate no longer stands on, and now names this leaf's candidate `ar/260915-ks-l32-ar` at base `7dcec036` — the same candidate every other row of this block was read against. The card's `lastVerifiedCommitHash`/`lastVerifiedCommitDate` pair is retained unchanged (the closeout's memory leg requires it present), no claim was re-worded, no anchor, row or citation was added, removed or dropped, and no stamp was advanced or invented.
-- 2026-09-20T02:12+02:00 — 260915-KS-L32 memory-side conflict resolution (uncommitted; this worktree, code base `7dcec036`, merged tree = L30's landed `7ca3ac48` plus this leaf's four modified paths): **resolved two reference-table hunks and the Update History block.** Every cell of both conflicted hunks cites `application/knowledge_view_render.py`, one of this leaf's four modified paths, so this leaf's ranges were kept; upstream's side was measured before this leaf's own additions and is stale by a different amount per construct (`_invariant_candidates`; `_family_candidates`; `render_source_context`; `render_invariant`; `render_family`; `render_review_matrix`; `ORDERING_PROVENANCE_RULE` and `Candidate`/`OrderedSet` were all cited at ranges that hold them only on this leaf's side). One cell was cited fresh: `knowledge_view_render.py:98-98` (a bare comment line holding nothing the row names, on both sides) → `96-98`, the comment block the three facet constants are read from. The rules row keeps this leaf's `REGISTERED_ROLE_RULE` anchor, its Finding and its `104-106` range, because that constant is this leaf's own addition. The admission-case row cites `mcp/tests/test_knowledge_views_and_projection.py`, modified by neither leaf, so upstream's `183-183; 206-206; 216-216` was kept after reading the three `def` lines in the code worktree. Update History is the union of both sides, newest first; no claim was re-worded, no anchor, row or citation dropped, and no verification stamp advanced.
-- 2026-09-20T01:39:03+02:00 — 260915-KS-L32 curator (uncommitted change set on `ar/260915-ks-l32-ar`, code base `7dcec036`, memory base `66b2ae8a`): **cleared the two enforced `citation_anchor_absent_from_range` rows this card carried, by repointing each stale cell onto the declaration that actually holds the construct the row names.** No Finding text, Anchor cell, row or citation was dropped, and no cell that already held its anchor was touched. (a) The renderer row (`_render`; `render_review_matrix`; `render_curation_queue`) cited five `knowledge_view_render.py` spans that this module's own growth had left behind: they now read `822-833` (`_render`, declared at `822`), `950-1006` (`render_review_matrix`, declared at `950`) and `1015-1045` (`render_curation_queue`, declared at `1015`), with `966-966` and `1031-1031` carrying the two `_render` calls those two renderers make; the two `knowledge_views.py` cells are left as written because `35-35` and `274-274` do hold `render_curation_queue`, in the import block and in the registry. (b) The ordering row (`OrderingInput`; `ORDERING_INPUTS`; `AUTHORED_CLASS`; `MECHANICAL_CLASS`; `MECHANICAL_RULES`; `ORDERING_PROVENANCE_RULE`; `ordering_position`) had four `models/knowledge/view.py` cells left over from a layout this module no longer has: `149-149` now reads `162-162`, the line that declares `ORDERING_PROVENANCE_RULE = ("ordering.declared-tiebreak", 1)`; `480-495` now reads `650-665`, the declaration extent of `ordering_position`, which reads that rule at `658`; `152-152` now reads `70-70`, the name's own export in `__all__`; and `640-655` now reads `633-647`, the `_require_the_declared_tiebreak` validator the row's own words describe as the declared stable tiebreak every position must name. The three `models/knowledge/classification.py` cells were verified against their constructs and are unchanged: `80-86` holds `OrderingInput` and `ORDERING_INPUTS`, `73-76` holds `AUTHORED_CLASS` and `MECHANICAL_CLASS`, and `168-265` holds `MECHANICAL_RULES`. Every substituted range was read in the code worktree before it was written and none was inferred by arithmetic. No claim was re-worded to fit a stale pointer, and no verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-20T01:23+02:00 — 260915-KS-L30 curator, final citation pass (uncommitted change set on `ar/260915-ks-l30-ar`, base `7dcec036094768c5f50e571fb45e59a27ae78efc`): **cleared the 8 enforced `citation_anchor_absent_from_range` rows this card carried by RANGE REPAIR.** Every flagged range was hand-read against this candidate and repointed to the declaration extent of the anchor it was written for: `DECISION_FACET_KIND` `:96-96` → `:99-99`, `NO_CONSEQUENCE_OUTCOME_PREFIX` `:97-97` → `:100-100` and `PRIORITY_OUTCOME_PREFIX` `:98-98` → `:101-101` (the three registered literals, each range still the one written for that constant); `CONSEQUENCE_RULE` `:102-102` → `:105-105` and `DETECTION_RULE` `:101-101` → `:104-104` (the two generated-content rules, each range still the one written for that rule); `_curation_candidates` `:603-626` → `:631-654` (now the whole selection function, `def` through `return tuple(candidates)`); `render_review_matrix` `:805-822` → `:831-887` (now the whole renderer, `def` through its closing `)`); and `def test_an_unadmitted_ordering_input_is_refused_rather_than_defaulted(` `mcp/tests/test_knowledge_views_and_projection.py:192-200` → `:206-206`, the declaration line its two sibling cases already cite. The pairing of each range to its anchor was fixed by the construct the range held at the revision its numbers were true at, so no citation changed which anchor it belongs to and none was dropped; the `facet.py:91-103` payload citation and every range not named above were left as they stand. Each named claim was re-read at the repointed construct and its wording retained: the two prefixes are still the canonical spellings read off the facet payload's `outcome`, the two rules are still the trigger-identity and payload-byte-equality classifications, `_curation_candidates` still returns the machine and curator row sets, and `render_review_matrix` is still the renderer the admission cases govern. No claim wording, anchor or other citation was added, removed or re-worded. **Stamp position:** unchanged — this pass advances no verification stamp and writes no commit hash; the source is uncommitted and closeout owns the stamp.
-- 2026-09-20T01:20+02:00 — 260918-TSIP-L11 closing seat (memory worktree `84152b9e`, code `79fa817f`): re-read and re-derived 1 claim row(s) on the merged tip. Every row was read against the construct it cites before its range was regenerated: the merged `mcp/tests/test-evidence-lanes.toml` was read at the line that carries each lane anchor, `pyproject.toml` was read at its declaration, and every renamed or consolidated case was re-anchored on the successor whose own docstring records the consolidation. No range was produced by adding a delta to an old number and the product's mechanical fixer was not run, so **no projection bullet is written and no claim is reopened on this edit's account**. Rows: `knowledge_view_render.py.md:237` (?, ?) — re-read the claim against the landed source: the construct moved and the cited range was widened to the line that actually carries it, per the checker's own remedy.
-- 2026-09-20T00:46:52+02:00 — 260915-KS-L32 curator (uncommitted change set on `ar/260915-ks-l32-ar`, code base `7dcec036`, memory base `66b2ae8a`): **body update for this leaf's four closed behaviours, and the citations this file's own edits moved.** The front door now has a path seed: `_seed_revisions` resolves `request.source_path` to the revisions realized there and `_family_members` / `_member_locations` carry the family view's members and those members' realization loci, classified under the new `REGISTERED_ROLE_RULE`; and both the invariant and the family view now apply **one frontier** to realizations, so an exact revision read no longer returns a location belonging to another invariant or another family's member. The commentary, the Conventions rule list (two constants became three), the private-helper count (31 to 34) and the Invariants list (two new entries: the shared realization frontier, and the seed's `None`/empty-set distinction) state that. Citation repair in the same pass: the facet-kind row moved from `91-93; 97-97; 96-96` to `80-101; 99-101` (the three constants are now 99, 100 and 101) with its `DecisionPayload` cell repointed to `facet.py:91-103` and its `outcome`/`decider` cell to `facet.py:101-103`, and the rules row widened from `96-97; 102-102; 101-101` to `104-106` to carry `DETECTION_RULE` (104), `CONSEQUENCE_RULE` (105) and the new `REGISTERED_ROLE_RULE` (106). The selection row's anchors were repointed from the pre-leaf ranges to `465-531`, `580-621`, `709-738`, `750-770`, `835-870`, `873-908` and `914-947`, and the admission-case row from `169-182; 192-200; 202-215` to `169-183; 192-205; 206-216` so each range carries the definition it names at `183`, `205` (the test body immediately preceding `206`) and `216`. No claim was re-worded to fit a stale pointer, no anchor or range was dropped to silence a row, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-20T00:31+02:00 — 260915-KS-L30 curator (uncommitted change set on `ar/260915-ks-l30-ar`, base `7dcec036094768c5f50e571fb45e59a27ae78efc`): **mechanical citation-range projection** against this leaf's candidate. The checklist reported 2 row(s) whose cited range no longer holds its anchor although the construct is present in the cited file; each range was widened to the lines that carry it — `def test_every_admitted_position_names_the_declared_tiebreak_rule(`; `def test_the_registry_admits_one_rule_per_ordering_input(`. No claim wording, anchor or citation was added, removed or re-worded, and no range was deleted: the new range is the checklist's own resolved extent for that anchor on this candidate. No verification stamp was advanced.
-- 2026-09-19T22:28:52+00:00: Generated citation repair: `Candidate`; `OrderedSet` repointed to mcp/src/agents_remember/application/knowledge_view_render.py:174-200; mcp/src/agents_remember/application/knowledge_view_render.py:203-209. No content impact: mechanical anchor-range projection bound to citation source snapshot 440311ed835ff15c77271ad85c2bef2103d2b46ebe061b96476b211b3d19cd24; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-19T22:28:52+00:00: Generated citation repair: `_position`; `_consequence`; `_page` repointed to mcp/src/agents_remember/application/knowledge_view_render.py:356-359; mcp/src/agents_remember/application/knowledge_view_render.py:362-378; mcp/src/agents_remember/application/knowledge_view_render.py:381-387. No content impact: mechanical anchor-range projection bound to citation source snapshot 440311ed835ff15c77271ad85c2bef2103d2b46ebe061b96476b211b3d19cd24; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-19T22:33+02:00 — 260918-TSIP-L11 curator (memory worktree `fd1a024e`, code `7879f5b2`): cleared the inherited citation debt on 5 claim(s) by RE-READING each claim against the merged tree and RE-DERIVING every cited range from the construct's real extent in the file the claim cites (`extents.anchor_extents`), never by adding a delta to an old number and never through the mechanical projection (no generated citation-repair bullet is written, so no claim is reopened by this edit). Claims re-read: `knowledge_view_render.py.md:222` (`DECISION_FACET_KIND`, `PRIORITY_OUTCOME_PREFIX`, `NO_CONSEQUENCE_OUTCOME_PREFIX`, `DecisionPayload`, `outcome`, `decider`); `knowledge_view_render.py.md:223` (`DETECTION_RULE`, `CONSEQUENCE_RULE`); `knowledge_view_render.py.md:230` (`_invariant_candidates`, `_family_candidates`, `_review_candidates`, `_curation_candidates`, `render_source_context`, `render_invariant`, `render_family`); `knowledge_view_render.py.md:231` (`_render`, `render_review_matrix`, `render_curation_queue`); `knowledge_view_render.py.md:237` ("def test_the_registry_admits_one_rule_per_ordering_input(", "def test_an_unadmitted_ordering_input_is_refused_rather_than_defaulted(", "def test_every_admitted_position_names_the_declared_tiebreak_rule(").
-- 2026-09-18T19:55:32+02:00 — 260915-KS-L23 residue clearance, seat B (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **cleared the two enforced `citation_anchor_absent_from_range` rows in this document** (one table row, two anchors). The admission-case row cited `169-176` for `def test_the_registry_admits_one_rule_per_ordering_input(`, defined at `182`, and `202-211` for `def test_every_admitted_position_names_the_declared_tiebreak_rule(`, defined at `215`. Both ranges were widened to the definition they name (`169-182`, `202-215`); the middle range and the claim are unchanged. No claim was re-worded, no anchor or range was dropped to silence a row, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: "def test_every_view_renders_two_byte_identical_runs_at_one_snapshot(" repointed to mcp/tests/test_knowledge_projection_vault_safety.py:281-281. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T15:30+02:00 — 260915-KS-L20 curator (uncommitted change set on `ar/260915-ks-l20`, base `9f88a6de`): created this one-to-one card for the five-view renderer and its provenance classes. It records the four properties the module enforces together (an admitted and named ordering input, a withheld rather than emitted unclassifiable value, the declared tiebreak as the only lexical order, and byte-identical runs at one snapshot), the `order_candidates` path with the `UnadmittedOrderingInput` it raises, the two-branch closure behind `_classified` and the `UnresolvedLimitation` its `None` becomes, and the CR20-6 intake decision that carries an authored claim as a stored `decision` facet with its two canonical outcome prefixes. It also records the deliberate absences: no third provenance class, no default order, no actionable count, no clock or environment read, and no I/O beyond the reader port. This card carries **no `lastVerifiedCommitHash`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. What was actually read is this leaf's uncommitted working tree, and closeout owns the stamp once the code commit exists.
+### Repo-Internal References
+
+- The registered facet kind the authored claim is carried in, with the two canonical outcome prefixes and the three payload fields `authored_decision` reads. [20]

@@ -1,0 +1,72 @@
+{
+  "path": "mcp/src/agents_remember/models/tools/tool_descriptions.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9875988923bdb6a043d745ece4855ace2a45f9ec",
+        "content": "sha256:02ff06687d66f14521a7dbb5daebd501729b4bd20593f10e8e1e2501dbf0b7ae",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-G92RK7",
+      "invariant": "INV-4HS3E5",
+      "origin": {
+        "handoffEntry": "L112-R7-DESCRIPTION-CONTRACT",
+        "leaf": "260928-MIK-L112"
+      },
+      "rationale": "This declaration module owns the ordinary 600-character tool-description ceiling, the 120-character published-schema description ceiling and the interim description-owner map. R113 removed dispatch_agent and its retained-description-length declaration; that historical conditional transition does not describe a current retained pin. Finalized tools still point to their openable longer explanation without an exception table.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The module declares ordinary description and argument-description ceilings of 600 and 120 characters.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9875988923bdb6a043d745ece4855ace2a45f9ec",
+            "content": "sha256:4fac5d65f93af6c8e35b6f75a4a3758d68c039ad0e96016385216bf2932a9ab0",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 23
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Historical incoming L109 declaration account: Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9875988923bdb6a043d745ece4855ace2a45f9ec",
+            "content": "sha256:02ff06687d66f14521a7dbb5daebd501729b4bd20593f10e8e1e2501dbf0b7ae",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Historical A7 interim ownership declaration contains retained reader/memory/task tools, not a dispatch_agent length exception.\n\nAnchor: `INTERIM_DESCRIPTION_OWNERS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9875988923bdb6a043d745ece4855ace2a45f9ec",
+            "content": "sha256:02ff06687d66f14521a7dbb5daebd501729b4bd20593f10e8e1e2501dbf0b7ae",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

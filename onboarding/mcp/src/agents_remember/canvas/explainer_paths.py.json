@@ -1,0 +1,129 @@
+{
+  "path": "mcp/src/agents_remember/canvas/explainer_paths.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "5a38a9b7a406790c2cb07311bc13ff61918f935a",
+        "content": "sha256:19a09a3583cced375829599447dbc755a880ec0417accd17135bd99bff7be0c9",
+        "locator": {
+          "kind": "symbol",
+          "name": "guard_explainer_path"
+        }
+      },
+      "id": "RLZ-8KE18T",
+      "invariant": "INV-GWMA1V",
+      "origin": {
+        "handoffEntry": "L183-A-1",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "This is the admission every environment writer calls before it writes; it holds a link rather than following it.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "5a38a9b7a406790c2cb07311bc13ff61918f935a",
+        "content": "sha256:19a09a3583cced375829599447dbc755a880ec0417accd17135bd99bff7be0c9",
+        "locator": {
+          "kind": "symbol",
+          "name": "guard_explainer_path"
+        }
+      },
+      "id": "RLZ-G1S0TD",
+      "invariant": "INV-8JY29Q",
+      "origin": {
+        "handoffEntry": "the-explainers-folder-is-confined",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The common path guard checks the inferred coordination authority and explicit root before state/environment writes or removals, holding symlinked ancestors and resolved escapes.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "A target and every ancestor below the coordination or task root are admitted, and a symlinked component is held rather than followed\n\nAnchor: `def guard_explainer_path(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a38a9b7a406790c2cb07311bc13ff61918f935a",
+            "content": "sha256:19a09a3583cced375829599447dbc755a880ec0417accd17135bd99bff7be0c9",
+            "locator": {
+              "end": 222,
+              "kind": "line_range",
+              "start": 206
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The leaf's workspace and its three writable folders are created only after the landing folder is admitted, and a symlinked workspace is refused\n\nAnchor: `def ensure_leaf_workspace(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a38a9b7a406790c2cb07311bc13ff61918f935a",
+            "content": "sha256:7089934867fe8db0c5011575c02ce80409b61596d692fa82ec005de4ed0f54c2",
+            "locator": {
+              "end": 421,
+              "kind": "line_range",
+              "start": 395
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Every caller of the leaf lock names one file on disk, with no doubled suffix\n\nAnchor: `def leaf_lock_resource(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a38a9b7a406790c2cb07311bc13ff61918f935a",
+            "content": "sha256:5a0d50e887435d9afdd950b9f3eac4aceefe6eb2bde24ed8fa1cd26c0f7b0e5f",
+            "locator": {
+              "end": 353,
+              "kind": "line_range",
+              "start": 338
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A receipt id is one path segment, so it cannot leave the leaf's receipt folder\n\nAnchor: `def receipt_id_segment(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a38a9b7a406790c2cb07311bc13ff61918f935a",
+            "content": "sha256:d0ed25f0f8ea609ccdaf8ad49c8687c1eef09696153e78317f10635bb5faa406",
+            "locator": {
+              "end": 376,
+              "kind": "line_range",
+              "start": 368
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "A repository the runtime does not name, or one with no checkout, is refused rather than resolved relative to the process\n\nAnchor: `def repository_path(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a38a9b7a406790c2cb07311bc13ff61918f935a",
+            "content": "sha256:a22b735307e407284520ba3e594ac5c437b2d867ad340a7e01549d914e295e4d",
+            "locator": {
+              "end": 192,
+              "kind": "line_range",
+              "start": 172
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

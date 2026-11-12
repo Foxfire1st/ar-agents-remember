@@ -1,0 +1,107 @@
+{
+  "path": "mcp/tests/test_cardless_knowledge_writer.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "2fa825e55347df3039d8bf40bd62fc49c8d8696d",
+        "content": "sha256:d0c2ad2aa7051e0320c14447ea4c06e59bead91a7ba4c01b77b7a32b4b1c9989",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_plan_and_commit_first_entries_without_markdown"
+        }
+      },
+      "facet": "The writer plans and commits a first realization sidecar without Markdown and adds a proof only when requested.",
+      "id": "PRF-NN3392",
+      "invariant": "INV-R1F96Z",
+      "origin": {
+        "handoffEntry": "MIK-R217@v1-empty-memory",
+        "leaf": "260928-MIK-L204"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The fresh fixture starts from a cardless memory worktree with a persisted worklist.\n\nAnchor: `fresh_repository`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fa825e55347df3039d8bf40bd62fc49c8d8696d",
+            "content": "sha256:6c4f69420699e373df3563e1d9d05d4203dfe1a5db1c4eb99f659d69ccf0f8f7",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 35
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Planning writes nothing; committing writes an entries-only realization sidecar without Markdown.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fa825e55347df3039d8bf40bd62fc49c8d8696d",
+            "content": "sha256:d0c2ad2aa7051e0320c14447ea4c06e59bead91a7ba4c01b77b7a32b4b1c9989",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_plan_and_commit_first_entries_without_markdown"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A requested proof adds a `proves` entry and no references.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fa825e55347df3039d8bf40bd62fc49c8d8696d",
+            "content": "sha256:d0c2ad2aa7051e0320c14447ea4c06e59bead91a7ba4c01b77b7a32b4b1c9989",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_plan_and_commit_first_entries_without_markdown"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A sidecar with references still needs its Markdown card.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fa825e55347df3039d8bf40bd62fc49c8d8696d",
+            "content": "sha256:dfa2e2e87c2d4ecf267bdfe48747366856c67d82668b01ef1c4fc93a56a49d79",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_references_still_require_the_markdown_card"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The cardless leaf still requires its persisted worklist.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fa825e55347df3039d8bf40bd62fc49c8d8696d",
+            "content": "sha256:75b88474ade804fd07cb84fa67f1c939f42e28ea6174ed9448b2a1e214577523",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_cardless_leaf_still_requires_its_persisted_worklist"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

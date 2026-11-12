@@ -1,0 +1,314 @@
+{
+  "path": "mcp/src/agents_remember/tasks/store.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
+        "content": "sha256:26f14716ec7356df142cc72f837f7380517426151aa6a6dededcc04065042010",
+        "locator": {
+          "kind": "symbol",
+          "name": "write_task_docs"
+        }
+      },
+      "id": "RLZ-33Y3K7DM",
+      "invariant": "INV-ZRTBZAS4",
+      "origin": {
+        "leaf": "260921-ICR-L30"
+      },
+      "rationale": "The projection writer is the construct that makes the Markdown derived rather than authored.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
+        "content": "sha256:26a692e49ee6edef385b416ac243b3300effa93e5320c2f1c59fe2de1b905b90",
+        "locator": {
+          "end": 254,
+          "kind": "line_range",
+          "start": 250
+        }
+      },
+      "id": "RLZ-67CQAR",
+      "invariant": "INV-3TFHGH",
+      "origin": {
+        "handoffEntry": "curator-extra-source-links-INV-3TFHGH",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "Supplies derive_master_order over indexed children with batch overrides to ordinary master Markdown rendering; sprint documents do not enter the master-specific path.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
+        "content": "sha256:dd81f4dfc6836a097145db08b8d47c8c9a77ae4bc2b77d3b41a49123ae1d99db",
+        "locator": {
+          "kind": "symbol",
+          "name": "read_task_doc"
+        }
+      },
+      "id": "RLZ-BKB2F1",
+      "invariant": "INV-5M9WY3",
+      "origin": {
+        "handoffEntry": "L40-actual-read-memo",
+        "leaf": "260928-MIK-L40"
+      },
+      "rationale": "Records the exact original bytes that the one canonical JSON parser consumes; universal newline handling and strict UTF-8 remain preserved.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
+        "content": "sha256:b4bced6b6c67e520da06b34819450a89a3daa2b0fd8ff8c59dbb05b476eb4a27",
+        "locator": {
+          "end": 232,
+          "kind": "line_range",
+          "start": 232
+        }
+      },
+      "id": "RLZ-VJAXHV",
+      "invariant": "INV-3TFHGH",
+      "origin": {
+        "handoffEntry": "curator-extra-source-links-INV-3TFHGH",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "Builds one batch-local map of candidate documents to JSON paths so derived master rendering sees supplied child candidates rather than only old disk documents.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The TaskDocument class is the JSON-primary schema the store serializes with aliases/exclude_none and reads through model_validate_json.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:6d683b80d214bd8ed682d805971fc4ef31e5bbd353bb39318d5e9333000d9e5f",
+            "locator": {
+              "end": 867,
+              "kind": "line_range",
+              "start": 669
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
+            "content": "sha256:dd81f4dfc6836a097145db08b8d47c8c9a77ae4bc2b77d3b41a49123ae1d99db",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 75
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
+            "content": "sha256:ae29df98d23f1d2a2570cde79786c736b6b729f49d2e612ff8b10280e73c8d6d",
+            "locator": {
+              "end": 242,
+              "kind": "line_range",
+              "start": 232
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Every prepared write renders Markdown from the candidate and supplied contexts; ordinary masters receive derived Order from explicit listed children and batch overrides.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17896bc0471a58bc6acce335012cc3be76d3b77d",
+            "content": "sha256:ddf7bdb26707cdc0cd8b0d97733fce2556f65c92be705efef62698ad0d9601ac",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 54
+            },
+            "path": "mcp/src/agents_remember/tasks/render.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "17896bc0471a58bc6acce335012cc3be76d3b77d",
+            "content": "sha256:5540d28ae163b36589ebcd66da327039ff347b2d608c5d0b33314c9eb8b8a46a",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 111
+            },
+            "path": "mcp/src/agents_remember/tasks/render.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
+            "content": "sha256:ddd0a442a1400c63c65a201696d93e527fb9e327c158dc0c891042ded85b4151",
+            "locator": {
+              "end": 255,
+              "kind": "line_range",
+              "start": 232
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Application publication batches the leaf and resolved parent when sync changed or waitsFor was explicitly supplied by create/replace/set_field; parent accepted source bytes are required.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
+            "content": "sha256:de85e8dd1d0b56d0f3b8094363451dc77f81530f3fe0488d43004c27899786f5",
+            "locator": {
+              "end": 539,
+              "kind": "line_range",
+              "start": 494
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Publishability gate refusing legacy review intent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
+            "content": "sha256:40eb1d5e4a70cd19695ae6ed12124d2b6c44bca8a44d3b2384324cf1384b9a65",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_publishable_task_document"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The shared identity rejection seam it calls.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83c611ae1be32d2da37ec1e383dc09c96ae195b8",
+            "content": "sha256:99150d0e1e62768d1909878cfcf66645767504ba298ae39270aee30938c7dd5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_task_intent_identity"
+            },
+            "path": "mcp/src/agents_remember/models/task_intent/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The current module exposes `TaskDocSourceSnapshot`, `TaskDocSourceReadError`, `doc_stem` at this ownership boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
+            "content": "sha256:598b8b132356383cbe0e3888140fd0962fd4bb9ac330950d41110bbb664f3922",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocSourceSnapshot"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
+            "content": "sha256:1111e6701d15ca4b5661e60a98b581d3cb4e35df96c050c0dcafd9a7047c1ba3",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocSourceReadError"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
+            "content": "sha256:9cc60d900e0fc4a0e0612ea1e9791e036dcd0221107502bf09a5d57393be13c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "doc_stem"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The canonical task parser records the original bytes it consumes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
+            "content": "sha256:dd81f4dfc6836a097145db08b8d47c8c9a77ae4bc2b77d3b41a49123ae1d99db",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_task_doc"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Markdown grant lookup caches one census per batch task key and reads anew for the next batch; prepared candidate overrides and explicit child Order reads are separate inputs/costs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
+            "content": "sha256:41d3cdcb96170d8852fd5a121f591b7ba698a88ffad8ce430a747955ba0670c4",
+            "locator": {
+              "end": 218,
+              "kind": "line_range",
+              "start": 193
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
+            "content": "sha256:4fb3b335a9567e7d2543561948c94aa61ee0e9dcc6adbb347f6a2b0b47261134",
+            "locator": {
+              "end": 257,
+              "kind": "line_range",
+              "start": 221
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cd80a35ddf162f3b0ef4f5521a0771cb5516b674",
+            "content": "sha256:b6f104c7da776633978bede296b738fcce541db855792b999aa0e6b151dbed26",
+            "locator": {
+              "end": 425,
+              "kind": "line_range",
+              "start": 385
+            },
+            "path": "mcp/src/agents_remember/kernel/direct_execution_grants.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

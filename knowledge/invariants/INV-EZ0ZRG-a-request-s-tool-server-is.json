@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Two cases prove the server's environment is the sandbox's and a request naming no sandbox starts nothing; a caller carrying the developer's settings would otherwise send the sandbox's setup to the live host."
+  },
+  "applicability": "Every tool-call request the sandbox's helper runs for a named sandbox.",
+  "conditions": [
+    "The request names an absolute sandbox directory.",
+    "The helper runs with the build's own interpreter and composes the server environment through the tooling's sandbox_environment."
+  ],
+  "exclusions": [
+    "The scrub removes the variables that select another runtime; the caller's PATH, HOME and harness logins remain in the server environment, as the tooling's environment rule states.",
+    "A sandbox owner who rewrites the sandbox's own files is outside this admission."
+  ],
+  "id": "INV-EZ0ZRG",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_pnt_sandbox.py::test_the_tool_server_receives_the_sandbox_environment and ::test_a_request_that_names_no_sandbox_is_refused; the rule-6 real run in role-reports/worker/904c604e-4a72-5a2a-bb61-b8ea9b31d9cf/role-launch/260928-MIK-L179-worker-904c604e-4a72-5a2a-bb61-b8ea9b31d9cf-A3.md §Rule 6"
+      ],
+      "path": "l179-handoff.json"
+    },
+    "handoffEntry": "MIK-R181@v2 §1",
+    "leaf": "260928-MIK-L179",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A request's tool server is started with the sandbox's own environment, never the caller's, and a request that names no sandbox is refused before anything starts.",
+  "status": "accepted",
+  "supersedes": []
+}

@@ -1,0 +1,174 @@
+{
+  "path": "dashboard/src/panels/detail-panel/model.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "3be95c5b972460e2635e7ad50f9c0682bddd23a0",
+        "content": "sha256:64342114a70015496fbff79458f7c8433479877aaa642f27144bca98ae92df59",
+        "locator": {
+          "end": 272,
+          "kind": "line_range",
+          "start": 251
+        }
+      },
+      "id": "RLZ-6GCZGM",
+      "invariant": "INV-M01WK7",
+      "origin": {
+        "handoffEntry": "MIK-R127@v1 rule 10 (a)",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Picks the one primary requirement of a document with its id and version, so the head and the Requirements block name the same line.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "3be95c5b972460e2635e7ad50f9c0682bddd23a0",
+        "content": "sha256:902f4948895e4fedf5ead4a5e6a1a01b57c115cb63c2b64e2e43c5369f729ab3",
+        "locator": {
+          "kind": "symbol",
+          "name": "orderDecisionsNewestFirst"
+        }
+      },
+      "id": "RLZ-7AK9A1",
+      "invariant": "INV-NBCGCF",
+      "origin": {
+        "handoffEntry": "MIK-R126@v1 rule 6",
+        "leaf": "260928-MIK-L126"
+      },
+      "rationale": "This shared helper orders decisions by parsed recorded time with a stable fallback, used by both the preview and the whole-log page.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "3be95c5b972460e2635e7ad50f9c0682bddd23a0",
+        "content": "sha256:c89be5656420ad59749572504b8c0778b970d4220b0da996b106d307b7c5917b",
+        "locator": {
+          "kind": "symbol",
+          "name": "reviewSummary"
+        }
+      },
+      "id": "RLZ-DTWWZV",
+      "invariant": "INV-Z8HF38",
+      "origin": {
+        "handoffEntry": "F5-V03",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "The one-line summary of a review; reads openFindings.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "3be95c5b972460e2635e7ad50f9c0682bddd23a0",
+        "content": "sha256:4f4a4be10e345042e48d4bb5e23d9b6844f4fb7ad0c3a0e6bcd3acc3ac30ae9b",
+        "locator": {
+          "kind": "symbol",
+          "name": "docForm"
+        }
+      },
+      "id": "RLZ-G6JP82",
+      "invariant": "INV-PHG1PR",
+      "origin": {
+        "handoffEntry": "curator-fixed-form-and-optional-blocks",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Returns server model-derived form; no client fallback classification.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "3be95c5b972460e2635e7ad50f9c0682bddd23a0",
+        "content": "sha256:6a7dc5a62252810328f533481c447488de83f12910607cc8b31d0978ef8f4f99",
+        "locator": {
+          "end": 326,
+          "kind": "line_range",
+          "start": 322
+        }
+      },
+      "id": "RLZ-KT4Z9R",
+      "invariant": "INV-DMAS27",
+      "origin": {
+        "handoffEntry": "MIK-R127@v1 rule 10 (c)",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Maps a nested status to done/current/blocked/pending, never the page-level next mark; it does not increment the major count or author task state.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "3be95c5b972460e2635e7ad50f9c0682bddd23a0",
+        "content": "sha256:d040fcb9ca18ef81dc73abeeb0af8d97c2ef5b0fef5ccd8bc87f302dc5bb47d3",
+        "locator": {
+          "end": 332,
+          "kind": "line_range",
+          "start": 306
+        }
+      },
+      "id": "RLZ-MAT6CH",
+      "invariant": "INV-DMAS27",
+      "origin": {
+        "handoffEntry": "curator-realizations-INV-DMAS27",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "These major-step display and mark extents create one mark per major and promote an unfinished major when any child is begun or done.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "3be95c5b972460e2635e7ad50f9c0682bddd23a0",
+        "content": "sha256:5b6c60e522cfe63faea8e6a4689dceb96e0eb7a44199ba51285bc3c7b736c665",
+        "locator": {
+          "end": 332,
+          "kind": "line_range",
+          "start": 329
+        }
+      },
+      "id": "RLZ-QTMXBW",
+      "invariant": "INV-DMAS27",
+      "origin": {
+        "handoffEntry": "MIK-R127@v1 rule 10 (c)",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Produces one compact state per major step, aligning heading marks with major-only producer counts while child activity can promote an unfinished parent. Nested rows remain separate.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "3be95c5b972460e2635e7ad50f9c0682bddd23a0",
+        "content": "sha256:5b7c2d53eeecbe87a72783e9595e23aaed908b96d578e253327a1d34d215199c",
+        "locator": {
+          "end": 222,
+          "kind": "line_range",
+          "start": 203
+        }
+      },
+      "id": "RLZ-VA5H6T",
+      "invariant": "INV-WQ8YGE",
+      "origin": {
+        "handoffEntry": "L168-CUR-M1-21-A013-20",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "docChain follows served parent keys with a seen-key guard and stops at a missing parent; there is no document/series/path-derived parent fallback.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "3": {
+      "note": "Decision ordering is parsed-time descending, stable for ties and invalid peers, with invalid timestamps after valid ones.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be95c5b972460e2635e7ad50f9c0682bddd23a0",
+            "content": "sha256:902f4948895e4fedf5ead4a5e6a1a01b57c115cb63c2b64e2e43c5369f729ab3",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

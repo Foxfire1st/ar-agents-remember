@@ -1,23 +1,31 @@
 # skills/l-01-agent-lifecycles/templates/manager-brief.md
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `skills/l-01-agent-lifecycles/templates/manager-brief.md` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-09T14:45+02:00|
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview | `skills/l-01-agent-lifecycles/overview.md` |
+## Current Canonical Contract
+
+The template supplies master-document values, not a separate rule authority. A Manager starts with role_start and sprint/master references; the call carries no pasted brief. Source-edge selection follows execution nature and supported sync, not a guessed checkout branch. Leaf seats start individually through role_start: Worker at build, Reviewer at freeze and Curator after code PASS. One owned primary revision is compiled separately from dependency/preservation requirements, and formal handoff attempts remain distinct from internal experimental reruns. Requested review keeps a sealed, monotonic finding set with settings-bound extra-round authority; the Reviewer records CODE while the Manager retains transaction decisions. Closeout-door and queue facts do not lock valid task edits or create permission to land. The source explicitly keeps complete curator memory quality as a standing operation whose result the Git transaction carries, not an opt-in full-test rule.
+
+Host archival retains reports at leaf finalization/cleanup/abandonment, excludes Manager/Orchestrator, and retire_child belongs only to the agent that started the child.
+
+## Sealed review and transaction ordering
+
+The compiled master brief preserves the monotonic sealed finding list across rounds within the settings limit and names recorded architect/developer approval beyond it. Values in the brief cannot create a routine transaction gate or alter role/operation authority; direct peer file packages and Manager transaction ordering remain separate.
+
+## Closeout
+
+The brief publishes no closeout door. After the handoff and a current-lineage proof, the leaf is closed out through its own procedure — `worktree_closeout_preview`, then the approval stop (explicit developer commit approval for standalone/final work, or the recorded delegated series authority), then `worktree_closeout_apply` with an explicit nonblank message per enabled leg and that authority as its intent note. That transaction owner proves admission itself (task intent, super → master → leaf lineage, the invariant/knowledge gate and the curator's coherence authority) and records recoverable per-leg journal evidence. No release by an Orchestrator is needed. An unfinished closeout is recovered as `operations/coordination.md` says: its generation is read from `worktree_status` (`lifecycleOperations`) and acted on through `worktree_operation_control` with that `expected_generation`. `closeout_queue` is only the sprint's disposable waiting-only projection (`status`, `rebuild`) and confers no authority.
+
+## Message/file transport
+
+This canonical template requires messages to be short wake-ups naming requested work or a handover and its files. Report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, not pasted into message text. Within a shared task, files stay with its record and a leaf workspace exposes the message-folder link. Text uses the effective settings limit without a pinned number. The canonical source and the packaged copy share this contract; transport does not change their existing write/start powers, peer destinations or independent acceptance authority.
 
 ## Governing Overview
 
-[lifecycle overview](../overview.md)
+[overview](../overview.md)
 
 ## Purpose
 
-This is the orchestrator-compiled, self-contained session start for a manager that owns one
-master. It transfers task topology, source-edge truth, targeted/scoped evidence, closeout scheduling, and
+This is the template the Orchestrator or Architect uses to prepare a Manager's master documents and
+start inputs for one master; the `role_start` call carries no brief, and the Manager's first message is compiled from the documents. It transfers task topology, source-edge truth, targeted/scoped evidence, closeout scheduling, and
 the exact approved requirement revisions the manager must dispatch and close.
 
 ## Code Commentary
@@ -33,8 +41,7 @@ review, curator handoff, and repository-defined transaction boundaries.
 The brief also requires the manager to compile the next review-handoff attempt identity without
 advancing it during dispatch or internal implementation/test/evidence reruns, validate the
 lightweight candidate-bound worker record and content-addressed expanded-evidence anchor, and
-dispatch that exact candidate to independent review. The reviewer proves any direct regression;
-the owning manager records bounded invalidation. The rebuildable master summary links authoritative
+dispatch that exact candidate to independent review. The rebuildable master summary links authoritative
 leaf journals, excludes separate protocol events from attempt counts, and never gates task,
 lifecycle, closeout, integration, or queue work.
 
@@ -42,13 +49,13 @@ A reviewer-rejected manifestation creates a successor at the next handoff; an un
 candidate does not reopen accepted work.
 
 The brief also keeps task authoring independent of disposable closeout projections: valid task
-mutations proceed, projection effects are reported, and affected door generations are re-proved
-rather than treating queue state as a task lock.
+mutations proceed, projection effects are reported,
+and queue state is never treated as a task lock.
 
 ### Conventions
 
-- The orchestrator fills every placeholder before dispatch.
-- Canonical task documents and plane-owned contracts carry branch and source identity.
+- The preparer (Orchestrator or Architect) fills every placeholder before the start.
+- Canonical task documents and contracts owned by the lifecycle tools carry branch and source identity.
 - Stable requirement IDs and versions are copied exactly; master prose never replaces packets.
 - Worker, reviewer, and curator seats remain distinct; the reviewer is also distinct from the seat
   that authored the plan, preventing plan-author self-adjudication.
@@ -67,57 +74,41 @@ rather than treating queue state as a task lock.
 
 None.
 
-
 ## CCR-R12@v5 Handoff Boundary
 
-This template records the exact targeted or scoped checks and their failed or not-run status as handoff evidence. Closeout and integration consume the prepared code, memory-content, and ledger transaction; full quality, full tests, full memory quality, certification, and review are explicit requests rather than automatic template gates.
+This template records the exact targeted or scoped checks and their failed or not-run status as handoff evidence. Closeout and integration consume the prepared code, memory-content, and ledger transaction and carry the complete memory-quality result that normal curation always runs; full code quality, full-suite tests, certification, and review are explicit requests rather than automatic template gates.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source governs this dispatch template.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The source edge and every requirement revision are compiled before worker dispatch. | "## The source edge (plane-owned, load-bearing)"; "## Dispatch defaults" | skills/l-01-agent-lifecycles/templates/manager-brief.md:32-42; skills/l-01-agent-lifecycles/templates/manager-brief.md:61-175 |
-| Master exit carries the full revision set and independent adjudications. | "## The exit" | skills/l-01-agent-lifecycles/templates/manager-brief.md:180-180 |
-| Attempt dispatch, bounded invalidation, and the non-gating master summary are explicit manager obligations. | "## Dispatch defaults" | skills/l-01-agent-lifecycles/templates/manager-brief.md:61-175 |
+- Master exit carries the full revision set and independent adjudications. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No sibling-repository contract is defined here; repository-specific executors are resolved from
 the target repository's system guidance.
 
-## 2026-08-27 Attempt Boundary Clarification
+## Start preparation
 
-Attempt publication is phase-sensitive: validate before append, and treat append plus the exact
-review handoff as one formal boundary. A malformed row that never reached review is preserved by a
-non-attempt correction/void record without consuming the next attempt ID; after handoff, only an
-independent reviewer rejection permits a successor.
+Each leaf stage starts through `role_start`, which prepares its admitted task environment, following `operations/coordination.md#start-leaf-stages-and-deliver-the-first-intake` for timing, intake and direct peer handovers. The brief binds execution nature and the current structural edge from canonical admission evidence, and a moved-source start follows the contract-addressed recovery in `operations/recovery.md#recover-after-synchronization`. The bundled runtime copy is byte-identical to this source template.
 
-## Update History
-- 2026-09-17T20:42:17+00:00: Generated citation repair: "## The exit" repointed to skills/l-01-agent-lifecycles/templates/manager-brief.md:180-180. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-10T07:41:10+00:00: Generated citation repair: "## The exit" repointed to skills/l-01-agent-lifecycles/templates/manager-brief.md:174-174. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
+## Canonical Source Ownership
 
-- 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
+The verified byte-equal package copy is derived output, not an independent role/task/permission authority.
 
-- 2026-08-28T11:51+02:00 — Required the reviewer seat to be distinct from both the builder and
-  plan author.
+- The Curator owner requires the complete curation operation; optional full-quality/test requests do not waive it. [7]
 
-- 2026-08-28T11:32+02:00 — No content impact: re-read the v25 role/topology clarification; this
-  card already describes one leaf-owned primary revision, adjacent contextual constraints, and
-  the source-specific worker/reviewer/manager/curator boundary.
+- Manager brief values bind execution nature and the canonical source edge without compiling branch names; each leaf's exact owned primary revision is compiled separately from adjacent dependency and preservation revisions before dispatch. [1]
 
-- 2026-08-27T22:15+02:00 — Distinguished pre-handoff non-attempt correction from post-handoff
-  reviewer rejection and successor lineage.
+- The Manager brief binds the leaf journal, next handoff attempt, carried findings and frozen candidate evidence, deferring candidate binding, immutable records and invalid-record handling to acceptance; the master attempt summary stays rebuildable and non-gating. [3]
 
-- 2026-08-27T21:53+02:00 — M40@v2/M44@v2: corrected attempt advancement to review handoff,
-  required lightweight content-addressed records, and excluded protocol events from summaries.
-- 2026-08-27T19:59+02:00 — M42 clarification: made candidate replacement an in-flight or
-  rejected-repair event rather than an implicit post-acceptance invalidation.
-- 2026-08-27T18:06+02:00 — M40-M45: documented immutable attempt dispatch, exact reviewer binding,
-  owner-recorded invalidation, closed failure routing, and the rebuildable non-gating summary.
-- 2026-08-27T14:52+02:00 — Created onboarding for the exact-version dispatch and per-requirement
-  acceptance/adjudication contract introduced by M38 and M39.
+- The Manager brief preserves sealed review IDs and settings-bound recorded extra-round approval, keeps closeout and integration with the authorized transaction owner, and requires reporting concrete failed/not-run checks. [4]
+
+- Template values defer to canonical role/operation/core owners; requested review preserves exact sealed IDs and recorded extra-round authority. The Reviewer records CODE, the Manager owns the transaction and the normal Curator pass supplies complete memory-quality evidence. [5]
+
+- Master input values require individual leaf role_start stages, one owned primary revision, sealed requested review and separate attempt lineage; the closeout apply proves admission including the Curator's coherence record, and the published pair names the Worker's targeted checks and the complete Curator result. [6]

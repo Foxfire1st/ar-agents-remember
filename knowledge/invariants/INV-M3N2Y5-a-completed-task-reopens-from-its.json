@@ -1,0 +1,43 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Without the collection a finished master with housekeeping left over is refused and the operator is sent to run `worktree_cleanup` by hand before a reopen that can do it through the same transaction; without the line rule a leaf that legitimately landed twice forces a hand-edit of a contract cell, which is the repair the product itself created. The two tests pin both paths end to end."
+  },
+  "applicability": "Reopening a completed atomic master, and the closeout chain proof that follows a leaf which landed, was reopened and landed again.",
+  "conditions": [
+    "The leaf's master and its branches exist, or the master's sprint records status inProgress.",
+    "The current leaf contract equals the reopened contract of an archive whose cleanup completed, and the archive and its receipt stay readable.",
+    "No code or memory worktree of the reopened contract exists: a started generation is live work, not a reset waiting to happen.",
+    "The review and memory-review round counts restart for the new delivery while earlier rounds and verdicts stay in the record.",
+    "The reopen-reset state is accepted only while the surviving contract is exactly the reopen's reset of the archived contract; any other contract still meets the archive refusal.",
+    "A missing master or a closed sprint is answered by naming it, not by a new refusal, and the landing-ancestry checks and fast-forward-only integration stay as they are.",
+    "A completed master with `cleanup: pending` reopens only when its closeout and its integration both record `completed`; the collection runs through the product's own cleanup transaction, the plan is built from the contract that collection left behind, and a dry run collects nothing.",
+    "The chain origin is the master's line, not one exact commit: the oldest landed leaf's base and the master's recorded base have to lie on one line in either direction, and an off-line position refuses `atomic-series-leaf-chain-invalid` naming `worktree_integrate` on the leaf or `worktree_sync` on the master, never an edit of a contract cell."
+  ],
+  "exclusions": [
+    "The sprint census (MIK-R209/L200).",
+    "Writing, moving or deleting archive bytes, receipts or landed commits: the reopen collects through the existing transaction."
+  ],
+  "id": "INV-M3N2Y5",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "The four reopen arms, the third terminal-archive state, the reopened status projection and the start's prepared-start branch all exist at the reviewed freeze; the seven cases of mcp/tests/test_task_reopen_cycle.py drive them through the public entry points.",
+        "Ruling 7dc3b6d2 defect (b): `cleanup: pending` on a completed closeout is housekeeping left undone, so `_collect_completed_uncleaned` runs `cleanup_result` (the transaction `worktree_cleanup` runs) and `_admitted_series_reopen` plans from the reloaded contract; a mid-flight master keeps its refusal. Defect (a): `_require_chain_origin` now proves the oldest landed leaf's position on the master's line through `_require_chain_origin_on_line`, refusing only an off-line base with the integrate/sync remedy. `_commanding_sprint_state` supplies the sprint status that distinguishes a moved line from an inactive sprint."
+      ],
+      "path": "L190-v2-step2commit"
+    },
+    "handoffEntry": "C2 reopen without limit",
+    "leaf": "260928-MIK-L190",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A completed task reopens from its master's state and completes again without limit: a leaf whose master and branches exist reopens from the master's current tip and a master reopens while its sprint is active, restored from the sprint's integration branch; a task already carrying the reopen tombstone answers `reopened` again with the same next step and writes nothing, while a live generation still meets the unchanged preflight refusal; the start after a reopen accepts the archived generation's reset contract, recreating the enclosure and naming `worktree_start` as the next step instead of refusing `terminal-archive-contract-mismatch`; a master's parent is its sprint, so `parent_task_name` is no longer an admission edge and the folder resolution uses the recorded value only when it names a folder other than the master's own; a master whose closeout and integration both completed but whose cleanup never ran reopens too, the reopen collecting the enclosure through the same cleanup transaction `worktree_cleanup` runs before it plans, while a master still in flight keeps its refusal; and the chain a master's closeout proves starts on the master's own line rather than at one exact commit, so a leaf that landed, was reopened and landed again is accepted at that later position in either direction, and only a position off the line refuses, naming `worktree_integrate` or `worktree_sync` rather than a contract-cell edit.",
+  "status": "proposed",
+  "supersedes": []
+}

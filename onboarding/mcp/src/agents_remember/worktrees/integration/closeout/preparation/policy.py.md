@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/integration/closeout/preparation/policy.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/policy.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T17:13:06+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489`|
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Owning overview](overview.md)
@@ -36,31 +26,21 @@ The documented types and paths do not themselves establish execution, certificat
 
 No source-local TODO is asserted here.
 
-## Docs References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation applies. | N/A | N/A |
+### Docs References
 
-## Repo-Internal References
+No configured domain documentation applies.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `PreparationPolicyError` owns the corresponding behavior described above. | `PreparationPolicyError` | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/policy.py:38-39` |
-| `GitPreparationPolicy` owns the corresponding behavior described above. | `GitPreparationPolicy` | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/policy.py:43-52` |
-| `_configuration_digest` owns the corresponding behavior described above. | `_configuration_digest` | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/policy.py:55-74` |
-| `_hook_observation` owns the corresponding behavior described above. | `_hook_observation` | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/policy.py:77-107` |
-| `_file_identity` owns the corresponding behavior described above. | `_file_identity` | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/policy.py:110-118` |
-| `observe_git_preparation_policy` owns the corresponding behavior described above. | `observe_git_preparation_policy` | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/policy.py:121-129` |
+### Repo-Internal References
 
-## Cross-Repo References
+- `PreparationPolicyError` owns the corresponding behavior described above. [1]
+- `GitPreparationPolicy` owns the corresponding behavior described above. [2]
+- `_configuration_digest` owns the corresponding behavior described above. [3]
+- `_hook_observation` owns the corresponding behavior described above. [4]
+- `_file_identity` owns the corresponding behavior described above. [5]
+- `observe_git_preparation_policy` owns the corresponding behavior described above. [6]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repository source is needed for this card. | N/A | N/A |
+### Cross-Repo References
 
-## Update History
-
-### 2026-09-06T17:13:06+00:00 — Initial L34 implementation card
-
-Created from the current source. Verification metadata is intentionally unset until a genuine commit-based verification occurs; no test or acceptance result is asserted.
+No cross-repository source is needed for this card.

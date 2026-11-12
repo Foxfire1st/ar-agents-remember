@@ -1,0 +1,40 @@
+{
+  "path": "dashboard/src/data/commands.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Command records contain identity and label only, including the two review traversal names.\n\nAnchor: `COMMANDS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c5df7a49b9f6b96fc174c4bd9dba50b1a5bfa0c",
+            "content": "sha256:f0ddca42098f7cdf191c3a8c342a2a34e337517769e95a5aa4834cce51d6480f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Source test rejects a chord whose commandId is not registered; not an executed result.\n\nAnchor: inclusive source span",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62e9326c5d2b6b96c01583dd46f3157b1969317e",
+            "content": "sha256:86cc4bdb8d6dc666f1f7abdf9888f1df703550048bd2f4346f63db7ab0ca5b97",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/data/commands.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_series_input_plan.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Master ref events join the same exact watch plan without changing the task reader's inputs",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a20a68a9c1ea9fb913689319e6c3f004e269a5ff",
+            "content": "sha256:40c7709ba87caa3ad31cce6360138d4a45bc2301655fef1ad9d5d0560981f9e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_loose_and_packed_events_name_only_their_canonical_master"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

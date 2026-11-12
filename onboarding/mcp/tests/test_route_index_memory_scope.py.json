@@ -1,0 +1,73 @@
+{
+  "path": "mcp/tests/test_route_index_memory_scope.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The scoped current source carries the module/document behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b2f0264cac874327e1175439d5f5a9e5b0defe19",
+            "content": "sha256:0fdfb3ca7bac22e354b62279b501e1a5c4131ea63348542b2fc8f874116d1aa9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Public subset/full requests preserve scope authority, actual builds, stale bytes and write errors. \\[2]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b2f0264cac874327e1175439d5f5a9e5b0defe19",
+            "content": "sha256:b9277f9bdd50e9a1ef2d4879223714b9bc1d8ca8e7eab393eab98d1deae56be3",
+            "locator": {
+              "end": 126,
+              "kind": "line_range",
+              "start": 56
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Explicit all-check subset and ordinary full requests keep distinct asynchronous run identities. [3]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b2f0264cac874327e1175439d5f5a9e5b0defe19",
+            "content": "sha256:29b367103b33e6a0ef49f6fc3f20ebc3a5374cf5a7fd63095e46bf72b29f7517",
+            "locator": {
+              "end": 152,
+              "kind": "line_range",
+              "start": 129
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Missing-only cache preparation preserves existing stale bytes and reports render failures. [4]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b2f0264cac874327e1175439d5f5a9e5b0defe19",
+            "content": "sha256:a04e38a3db33091da9350a3e313206357d52cff80cb8b7279c38c05b15eb9c91",
+            "locator": {
+              "end": 298,
+              "kind": "line_range",
+              "start": 251
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

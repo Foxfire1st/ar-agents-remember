@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Three skip exits exist: a non-injective pairing, a marker/reference mismatch on a renumbered side, and non-decodable Markdown on a renumbered side. Two witnesses are stored: the marker-incomplete fixture pins the whole legacy merge with its reason, while the collision fixture pins the helper-level injectivity guard only (_assign_numbers returns None) without exercising the whole merge. A future change that aligns an ambiguous card instead of skipping fails before it lands. The original two-exit claim is retained in origin.handoff.evidence below as dated Worker provenance."
+  },
+  "applicability": "Both-changed cards whose pairing is ambiguous or whose renumbered side has marker/reference mismatch.",
+  "conditions": [
+    "The skip reason is recorded for the crossing report.",
+    "The card then merges by the pre-R66 rules with no alignment."
+  ],
+  "exclusions": [
+    "Cards that align: pairing success plus marker eligibility on every renumbered side. A paired card that fails the later marker-eligibility check still skips, so pairing success alone is not sufficient."
+  ],
+  "id": "INV-ADT7XM",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Rationale: the only two exits that skip alignment are a non-injective pairing (which would give one number to two references) and a marker/reference count mismatch on a side that would be renumbered; both return the reason string, and _align_cards records it in skippedCards while the card merges exactly as today. The mismatch compares pre-remap numbers on each side, so it cannot misfire on the renumbering itself. Observed: rule-7 skip tests plus skippedCards assertions in the report-seam tests; the validator is untouched."
+      ],
+      "path": "notes/reports/l66-curation/curator-handoff-list.json"
+    },
+    "handoffEntry": "L66-W4-02",
+    "leaf": "260928-MIK-L66",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Rule 7 no-guess: duplicate-number pairing or marker/reference mismatch on a renumbered side merges the card without alignment exactly as today, with the reason recorded",
+  "status": "proposed",
+  "supersedes": []
+}

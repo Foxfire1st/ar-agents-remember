@@ -1,0 +1,110 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/closeout/task_intent_legacy_census.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Exact owning record-class enumeration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "42edda7935ce04f75d0967d7235f2a886bea4f55",
+            "content": "sha256:b5fd536b42db1a05aa02fa07f7dfd49bfb9ce93127d72359bc10238b5421940d",
+            "locator": {
+              "kind": "symbol",
+              "name": "LEGACY_INTENT_RECORD_CLASSES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The census model with bounded unreadable rows and zero-population proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "42edda7935ce04f75d0967d7235f2a886bea4f55",
+            "content": "sha256:d71413fbe70bd6b755b26eff6cbb10d1d163455fe0e167fe85aa79cd204fc37b",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskIntentLegacyCensus"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "42edda7935ce04f75d0967d7235f2a886bea4f55",
+            "content": "sha256:e914083f7d51ee0907692e859f947a49ead52c0c85e32a5420183f3fe1d52148",
+            "locator": {
+              "kind": "symbol",
+              "name": "remaining"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The four live-container scanners and the per-row intent classifier.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "42edda7935ce04f75d0967d7235f2a886bea4f55",
+            "content": "sha256:75099a7c11764d4e6d80529900d9f03215315579d47926fc6ea004901c9ba58f",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_intent_legacy_census"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "42edda7935ce04f75d0967d7235f2a886bea4f55",
+            "content": "sha256:94e60ab6eb949a10930f223331fc8ceab01a4f6e9939dcf2f5daba86661859c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_count_intent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The removal refusal until readable zero population.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "42edda7935ce04f75d0967d7235f2a886bea4f55",
+            "content": "sha256:3f1a8ae9d1bf2e4584d71e3fdffbc959482cf1371c46f07b7555201d06cbd9a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_task_intent_decoder_removal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The validator shared for current rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83c611ae1be32d2da37ec1e383dc09c96ae195b8",
+            "content": "sha256:bc56b3a6d16cf9b6df35621d6006d2dbd53b41003e7a249705032ab237385c0c",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskIntentIdentity"
+            },
+            "path": "mcp/src/agents_remember/models/task_intent/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

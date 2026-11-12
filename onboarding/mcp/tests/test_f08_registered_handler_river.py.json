@@ -1,0 +1,72 @@
+{
+  "path": "mcp/tests/test_f08_registered_handler_river.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "7482011323a9cd0b5d9d11481c1508e9944e7e67",
+        "content": "sha256:3af965a7c7790993733bde9f9ca9bf81bbde4f1275f30f9dd7afc1eff7394f09",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f08_bound_first_call_through_registered_handler"
+        }
+      },
+      "facet": "The registered-handler path carries caller and facts.",
+      "id": "PRF-9NMH1H",
+      "invariant": "INV-19YW49",
+      "origin": {
+        "handoffEntry": "L114-W04",
+        "leaf": "260928-MIK-L114"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A bound first call through the registered handler carries the caller and its facts.\n\nAnchor: `test_f08_bound_first_call_through_registered_handler`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7482011323a9cd0b5d9d11481c1508e9944e7e67",
+            "content": "sha256:91a1512b9992f6786821aabc6baa09ebfdead6627dc06381caba51b509aca8c3",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A fresh process writes its first call through startup.\n\nAnchor: `test_f08_fresh_process_first_call_through_registered_handler`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7482011323a9cd0b5d9d11481c1508e9944e7e67",
+            "content": "sha256:91a1512b9992f6786821aabc6baa09ebfdead6627dc06381caba51b509aca8c3",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The first-call protocol vehicle is registered server_info.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7482011323a9cd0b5d9d11481c1508e9944e7e67",
+            "content": "sha256:0f69719ddb53afcb9760221cddb54cad35c91bbf229c57a75221a2b1d3a56ffa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_call_server_info"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

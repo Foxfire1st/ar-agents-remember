@@ -1,0 +1,363 @@
+{
+  "path": "mcp/src/agents_remember/application/task_docs/task_doc_route_review.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+        "content": "sha256:83a554087c833ae3e138f92564eb9e53a7d5a47fa1838be2020f32f3edced74a",
+        "locator": {
+          "kind": "symbol",
+          "name": "_state_payload"
+        }
+      },
+      "id": "RLZ-9DNBPN",
+      "invariant": "INV-EA9XDB",
+      "origin": {
+        "handoffEntry": "L116-W3-record-only-binding",
+        "leaf": "260928-MIK-L116"
+      },
+      "rationale": "This adapter carries the plane-stamped tree into the generic state payload so the route sibling no longer records unbound.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+        "content": "sha256:6aba0097d56ada16731dab87617af5e7cf99708fdb95ec181d35e838eec7933d",
+        "locator": {
+          "kind": "symbol",
+          "name": "review_settings_limit"
+        }
+      },
+      "id": "RLZ-FGJ700",
+      "invariant": "INV-AF2DN3",
+      "origin": {
+        "handoffEntry": "L116-W3-settings-limit-answers",
+        "leaf": "260928-MIK-L116"
+      },
+      "rationale": "This reader resolves the in-force settings number per call and refuses the round when the file cannot be read.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+        "content": "sha256:053c06b33c063ad5db944d7b08e92717c8092fa45cc43a7fbcbafdd6b4bf20ea",
+        "locator": {
+          "kind": "symbol",
+          "name": "candidate_root_for_review"
+        }
+      },
+      "id": "RLZ-X47ZNW",
+      "invariant": "INV-EA9XDB",
+      "origin": {
+        "handoffEntry": "L116-W3-record-only-binding",
+        "leaf": "260928-MIK-L116"
+      },
+      "rationale": "The resolver selects the contract memory worktree or configured memory root for memory-kind records; code/default retains the existing leaf-code-worktree/repository-root rule.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Call-level knobs and the branch-addressed policy gate.\n\nAnchor: `TaskDocCall` `_enforce_branch_addressed_policy`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+            "content": "sha256:5b0b1da1b7bddbef985732db4362271d8eef6d8cd459c67301688f0e548ac47b",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocCall"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+            "content": "sha256:19aad386da9c48607155adfeb5de918b8135089ba67641f65b2f3c37e5a59f4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_enforce_branch_addressed_policy"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+            "content": "sha256:ec5cbf5520d96b9d79914936c7895b3acfaca595518db455a2c23b2ae7404438",
+            "locator": {
+              "end": 53,
+              "kind": "line_range",
+              "start": 44
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+            "content": "sha256:6c1cf0824b0ba3b76ab9168bfe39e9796d88e3e0c86b0411cd86930e2091839c",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Worker/Curator typed review census, record-only exclusion and unknown history.\n\nAnchor: L175–L240",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+            "content": "sha256:89c09fd0491880de2f7b715bffbe2d6b0605a6dea7400689519c43f40f7b119d",
+            "locator": {
+              "end": 240,
+              "kind": "line_range",
+              "start": 175
+            },
+            "path": "mcp/src/agents_remember/worktrees/review_history.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Reason admission, threshold and differing-harness/model inheritance boundary.\n\nAnchor: L23–L84",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f341c13a99f485178e73c4ff8bf4de16267ee662",
+            "content": "sha256:5a3727f4901933c44cd5f7edc8b16220285a82a9e080326edf482cbb126f0b2f",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "mcp/src/agents_remember/cli/role_step_up.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Record-only memory identity comes from memory authority, never the sibling code root.\n\nAnchor: L251–L296",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+            "content": "sha256:90f0dd1b3aad214ad2d499dda3753cc514d16cabd606ee0021a9a7c6e84ed456",
+            "locator": {
+              "end": 296,
+              "kind": "line_range",
+              "start": 251
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L155–L169",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+            "content": "sha256:7b13234f8b9b05929657a69a1f5438b3b935f2f9ce8a1f42048ddeac5711e5d5",
+            "locator": {
+              "end": 169,
+              "kind": "line_range",
+              "start": 155
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L251–L296",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+            "content": "sha256:90f0dd1b3aad214ad2d499dda3753cc514d16cabd606ee0021a9a7c6e84ed456",
+            "locator": {
+              "end": 296,
+              "kind": "line_range",
+              "start": 251
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L320–L378",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+            "content": "sha256:6ec8f6f2932d1d526240344cc4a3780cad32e644b7a047115abb62c8304a4e0b",
+            "locator": {
+              "end": 378,
+              "kind": "line_range",
+              "start": 320
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L461–L497",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+            "content": "sha256:fd496c2c78f8fbceeb940b6e0f4ea57864326819f6c295a34484e1a6cb5daf6f",
+            "locator": {
+              "end": 497,
+              "kind": "line_range",
+              "start": 461
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The binding form that records a review over the resolved candidate document and re-validates.\n\nAnchor: `_record_route_review_bound`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+            "content": "sha256:6c1cf0824b0ba3b76ab9168bfe39e9796d88e3e0c86b0411cd86930e2091839c",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The legacy positional recorder passing the resolved leaf document.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+            "content": "sha256:2c13594de1ce9714a2b21408eb4f1d0d3d9d08c1abc8382b0b0234296596edb3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record_route_review"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Exact-binding refusal with the L16-R9 recovery dialect.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+            "content": "sha256:fb124fced687eb7abeb40d511d845fc4d1b44e290bf302c1be359e2cfd9eb2a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_route_review_binding"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The route-review authority rule (create/replace cannot author or change evidence).\n\nAnchor: `_enforce_route_review_authority`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+            "content": "sha256:6c1cf0824b0ba3b76ab9168bfe39e9796d88e3e0c86b0411cd86930e2091839c",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The stamping owner it delegates to; now takes the resolved candidate document.\n\nAnchor: `build_route_review`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+            "content": "sha256:28f91e1f645dd0e8946a9e15c5b3dcd0fd513bc4342a259de6fcc55edc1a594f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/route_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The typed candidate ref derived from the selected path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+            "content": "sha256:cb4b111e923137661468aa784ee449c699836dcd393da4f0d3e0f36cdfa79340",
+            "locator": {
+              "kind": "symbol",
+              "name": "document_ref"
+            },
+            "path": "mcp/src/agents_remember/worktrees/route_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The facade that dispatches into this module. Anchor: `task_doc_tool`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
+            "content": "sha256:36946f9f594b3e343adf324da581e0d104f623f686bd83a9d2844ab5533ac0ba",
+            "locator": {
+              "end": 1186,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Branch review is canonical-leaf opt-in under the live grant, not a runtime setting.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+            "content": "sha256:8e3f1377893a1f8769dc4fc6fafa162b050297444eb241739c8e36a0155c1fb9",
+            "locator": {
+              "end": 343,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

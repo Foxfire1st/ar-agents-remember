@@ -1,0 +1,65 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives"
+    ],
+    "justification": "Signing every token was a real alternative with a real cost, and the rejection rests on a property of the selector rather than on convenience."
+  },
+  "alternatives": [
+    {
+      "option": "Carry the walk's binding in the token without a signature, and refuse a token that names what a fresh request could not read",
+      "reason": "A token that can only re-select what the caller was already allowed to select gives a signature nothing to protect.",
+      "status": "chosen"
+    },
+    {
+      "option": "Sign the token so a caller cannot alter it",
+      "reason": "A signature would protect integrity of a document whose only power is a re-selection the caller could make anyway.",
+      "reconsider_when": "a token could name a record or a tree the caller could not have selected in a fresh request, or a caller is shown to gain access by editing one.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Tokens stay short and readable; the selector refuses a seed the tree no longer holds (`selector_absent`) instead of trusting the token's contents."
+  ],
+  "context": "A continuation token carries what a walk is bound to. A caller could edit it, so the packet had to decide whether the token needs a signature or only needs to name nothing a fresh request could not have selected.",
+  "decider": "the developer, under D47, as MIK-R73@v1 rule 9 (inventory entry 151) states it",
+  "id": "DEC-YPSS5W",
+  "links": [
+    {
+      "relation": "explains",
+      "target": {
+        "id": "MIK-R73",
+        "packet": "requirements/MIK-R73-v1-agent-tool-surface-and-read-corrections.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "c9ee896d7f0fda0c9ef3bf516a3aafd8278d6076",
+        "content": "sha256:3ec9ad79579f46890c2c9804e63cb3d7244bd0a5accaa781a16fa7fa8c7a5880",
+        "locator": {
+          "kind": "symbol",
+          "name": "KnowledgeContinuation"
+        },
+        "path": "mcp/src/agents_remember/models/knowledge/continuation.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "handoff-draft-2.json"
+    },
+    "handoffEntry": "unsigned-continuation",
+    "leaf": "260928-MIK-L73",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

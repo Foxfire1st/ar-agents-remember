@@ -1,0 +1,155 @@
+{
+  "path": "mcp/src/agents_remember/application/review_artifact_receipts.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "cebcae34792c8ef9b715d51c12e1a4cd8f72fe48",
+        "content": "sha256:b69a8f6990b798ab804ea96b66c9f68920652487d4ba4a9843cd3a42ed1b66c3",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReceiptLedger"
+        }
+      },
+      "id": "RLZ-DWPKG4",
+      "invariant": "INV-YQPQ1M",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-02",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "This current shared cleanup/receipt/remainder owner retains evidence of the historical L82 arCaches correction. INV-YQPQ1M remains retired and superseded by INV-25AJSA; the current owner does not implement the retired negative defect statement.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "cebcae34792c8ef9b715d51c12e1a4cd8f72fe48",
+        "content": "sha256:61a6c417ae702179134d9d3c14282af89f3856b1b56003a8875a06adc0eb998b",
+        "locator": {
+          "end": 43,
+          "kind": "line_range",
+          "start": 43
+        }
+      },
+      "id": "RLZ-MA5CGT",
+      "invariant": "INV-25AJSA",
+      "origin": {
+        "handoffEntry": "L183-curator-test-facet-08",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Adding explainerArtifacts to shared deletion keys is actual receipt/replay/remainder behavior and must retain the shared every-deletion-class guarantee.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "cebcae34792c8ef9b715d51c12e1a4cd8f72fe48",
+        "content": "sha256:b69a8f6990b798ab804ea96b66c9f68920652487d4ba4a9843cd3a42ed1b66c3",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReceiptLedger"
+        }
+      },
+      "id": "RLZ-QMEDE8",
+      "invariant": "INV-25AJSA",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-02",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "The shared ledger plans each registered artifact key before deletion, preserves numbered attempts, attributes interrupted absence and accounts preview/final receipts for arCaches and explainerArtifacts alike. Its receipt paths remain task-confined; artifact-presence checks admit the separately bounded explainer root.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "4": {
+      "note": "The ledger records intended deletion before it happens and records the outcome afterward.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cebcae34792c8ef9b715d51c12e1a4cd8f72fe48",
+            "content": "sha256:1fd7bbd0e07f5b505390efb02883cafa33442386ae2136165ce4326db4f9b17b",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The first no-op records a receipt; an already-recorded unchanged repeat writes none.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cebcae34792c8ef9b715d51c12e1a4cd8f72fe48",
+            "content": "sha256:1fd7bbd0e07f5b505390efb02883cafa33442386ae2136165ce4326db4f9b17b",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Replacement preserves the prior receipt under that receipt's own number.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cebcae34792c8ef9b715d51c12e1a4cd8f72fe48",
+            "content": "sha256:1fd7bbd0e07f5b505390efb02883cafa33442386ae2136165ce4326db4f9b17b",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Recorded prior deletion or new absence is reported by the ledger.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cebcae34792c8ef9b715d51c12e1a4cd8f72fe48",
+            "content": "sha256:1fd7bbd0e07f5b505390efb02883cafa33442386ae2136165ce4326db4f9b17b",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The reclaimed frame revisions are a shared artifact class for every receipt consumer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cebcae34792c8ef9b715d51c12e1a4cd8f72fe48",
+            "content": "sha256:e6419d1439d236d2f73546299011f638ec8ced3b3e772d0bf67fb7bf1a1831a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ARTIFACT_KEYS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The current implementation adds explainerArtifacts to the shared deletion keys and retires environments before deletion receipt admission.\n\nAnchor: `ReceiptLedger`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cebcae34792c8ef9b715d51c12e1a4cd8f72fe48",
+            "content": "sha256:1fd7bbd0e07f5b505390efb02883cafa33442386ae2136165ce4326db4f9b17b",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

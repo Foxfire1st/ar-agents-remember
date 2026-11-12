@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Dashboard owner units executed through the shared accounting helpers. Losing this boundary would fabricate currentness, attribute another owner's work, hide an external change, or repeat an unsafe host/landing action rather than exposing the actual observation."
+  },
+  "applicability": "Dashboard owner units executed through the shared accounting helpers.",
+  "conditions": [
+    "Thread CPU is sampled around synchronous work on its executing thread.",
+    "Offloaded cancellation drains the actual worker before propagation."
+  ],
+  "exclusions": [
+    "Await time and unrelated event-loop work are not worker CPU."
+  ],
+  "id": "INV-0NSFFW",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_serving_owner_accounting.py"
+      ],
+      "path": "curator-handoff-L81-A001-b1fd-03.json"
+    },
+    "handoffEntry": "L81-R1-F01",
+    "leaf": "260928-MIK-L81",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "An offloaded owner records its executing worker thread once, while synchronous publication uses its own event-loop interval and cancellation drains the exact worker.",
+  "status": "proposed",
+  "supersedes": []
+}

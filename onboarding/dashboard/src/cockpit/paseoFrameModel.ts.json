@@ -1,0 +1,484 @@
+{
+  "path": "dashboard/src/cockpit/paseoFrameModel.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0b222683100abd582daa85755533e41d9728ce83",
+        "content": "sha256:c7fd8bc2835d2f17ef0cbaaa877cdc5ed5e25562155fc76e4ee0383921acd319",
+        "locator": {
+          "kind": "symbol",
+          "name": "showingMessage"
+        }
+      },
+      "id": "RLZ-05H447",
+      "invariant": "INV-ZF7G5B",
+      "origin": {
+        "handoffEntry": "TRAY07",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Requires an explicit null or nonempty agent ID so a missing showing field cannot masquerade as known absence.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "0b222683100abd582daa85755533e41d9728ce83",
+        "content": "sha256:f6f9ba174570c0797e45bdd256171ac64546fa92515932ea9840bbf7d21f8d69",
+        "locator": {
+          "kind": "symbol",
+          "name": "composerMessage"
+        }
+      },
+      "id": "RLZ-19V6Z1",
+      "invariant": "INV-S3NMAZ",
+      "origin": {
+        "handoffEntry": "TRAY05",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Accepts only finite composer coordinates with nonnegative height and positive frame height, and folds in the box's horizontal pair only when both values are finite with a positive width, so a rejected pair leaves the vertical report valid.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "0b222683100abd582daa85755533e41d9728ce83",
+        "content": "sha256:24c8cab64e535bdd9550bd443fac480dfcddae8bae2766711ff5e98e77a82189",
+        "locator": {
+          "kind": "symbol",
+          "name": "DASHBOARD_ABILITIES"
+        }
+      },
+      "id": "RLZ-8S90S7",
+      "invariant": "INV-4P2V3R",
+      "origin": {
+        "handoffEntry": "MIK-R140@v1 rule 4",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "What this dashboard tells a plug-in it can read; the plug-in sends the newer answers only to a dashboard that named them.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "0b222683100abd582daa85755533e41d9728ce83",
+        "content": "sha256:40dda96c0b649f667147bc27f83b992879940d576a4821ed348114e3f75659b8",
+        "locator": {
+          "end": 85,
+          "kind": "line_range",
+          "start": 84
+        }
+      },
+      "id": "RLZ-96RKPW",
+      "invariant": "INV-GE7PTW",
+      "origin": {
+        "handoffEntry": "TRAY03",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Names the pick capability shared by the negotiated frame and dashboard sides.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "0b222683100abd582daa85755533e41d9728ce83",
+        "content": "sha256:7a64ac88decc3c9e450cb482085016238268b19976923fa36443060f1c10b4a7",
+        "locator": {
+          "end": 318,
+          "kind": "line_range",
+          "start": 317
+        }
+      },
+      "id": "RLZ-AMH2C3",
+      "invariant": "INV-ZF7G5B",
+      "origin": {
+        "handoffEntry": "TRAY07",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Routes an explicit showing report through the nullable-agent parser.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "0b222683100abd582daa85755533e41d9728ce83",
+        "content": "sha256:c26319ea1a18417c3770f0e47f8e96aec89a363e760412dded033408ea1c8b0e",
+        "locator": {
+          "kind": "symbol",
+          "name": "agentTimeoutText"
+        }
+      },
+      "id": "RLZ-D21787",
+      "invariant": "INV-KSCJ1Q",
+      "origin": {
+        "handoffEntry": "MIK-R121-R2-P3",
+        "leaf": "260928-MIK-L121"
+      },
+      "rationale": "The timeout sentence lives with the other pane sentences; its fallback claim must match the loaded-identity guard or it asserts an action never taken.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "0b222683100abd582daa85755533e41d9728ce83",
+        "content": "sha256:6162ae3ea7ad8c3107ef2e6c6292faa1e68b9f31a653c5bed148fdcd25069316",
+        "locator": {
+          "kind": "symbol",
+          "name": "parseTrayMessage"
+        }
+      },
+      "id": "RLZ-FBA9S0",
+      "invariant": "INV-GE7PTW",
+      "origin": {
+        "handoffEntry": "TRAY03",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Dispatches only validated tray pick/notice/composer messages from the parser.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "0b222683100abd582daa85755533e41d9728ce83",
+        "content": "sha256:56b0b7e88e9c0d15728f0b0115958de4a185e7acdf50c912af2e7ce7587d3237",
+        "locator": {
+          "kind": "symbol",
+          "name": "pluginNoticeText"
+        }
+      },
+      "id": "RLZ-K8CWT3",
+      "invariant": "INV-QFDD1M",
+      "origin": {
+        "handoffEntry": "ruling 7193eaf8",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "Adds the clause about the waiting line for a plug-in that says nothing about itself or lacks the answer on display.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "0b222683100abd582daa85755533e41d9728ce83",
+        "content": "sha256:4bed65d88e6de9a56ca6f8b45a48045e938a4fdba648cc0bdce9f60494f80a97",
+        "locator": {
+          "kind": "symbol",
+          "name": "composerExtent"
+        }
+      },
+      "id": "RLZ-PD3N8H",
+      "invariant": "INV-71MV12",
+      "origin": {
+        "handoffEntry": "MIK-R197@v1 rule 2",
+        "leaf": "260928-MIK-L189"
+      },
+      "rationale": "composerExtent is the validator that admits the pair only when both values are finite numbers and the width is positive, and returns null otherwise so the vertical fields are kept.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "0b222683100abd582daa85755533e41d9728ce83",
+        "content": "sha256:5b96a13bb48b563e5093e6ddfa22de511dafcdcd4e32378a49061b59668f81a5",
+        "locator": {
+          "kind": "symbol",
+          "name": "pickMessage"
+        }
+      },
+      "id": "RLZ-PDYNAX",
+      "invariant": "INV-GE7PTW",
+      "origin": {
+        "handoffEntry": "TRAY03",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Admits only nonblank text and agent identity with a parseable recorded message time.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "0b222683100abd582daa85755533e41d9728ce83",
+        "content": "sha256:e7954b64c15fec99e263a00e0c5be08f987a06c34a5794598e2180bd6a0363e4",
+        "locator": {
+          "kind": "symbol",
+          "name": "requestWaitText"
+        }
+      },
+      "id": "RLZ-QSCMG6",
+      "invariant": "INV-EEX84Q",
+      "origin": {
+        "handoffEntry": "MIK-R140@v1 rule 2",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "The one line the pane shows while an answer is waited for, and its wording once the answer is late.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "0b222683100abd582daa85755533e41d9728ce83",
+        "content": "sha256:f6f9ba174570c0797e45bdd256171ac64546fa92515932ea9840bbf7d21f8d69",
+        "locator": {
+          "kind": "symbol",
+          "name": "composerMessage"
+        }
+      },
+      "id": "RLZ-RCFA1N",
+      "invariant": "INV-71MV12",
+      "origin": {
+        "handoffEntry": "MIK-R197@v1 rule 2",
+        "leaf": "260928-MIK-L189"
+      },
+      "rationale": "composerMessage parses an untrusted plug-in message into that union, keeping the vertical edge and folding in the pair only when the validator accepts it.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "0b222683100abd582daa85755533e41d9728ce83",
+        "content": "sha256:2e0366f5314a0a04ca074d1e65436fc19b01b8b707f615000571258645514312",
+        "locator": {
+          "end": 87,
+          "kind": "line_range",
+          "start": 86
+        }
+      },
+      "id": "RLZ-SEFC7X",
+      "invariant": "INV-ZF7G5B",
+      "origin": {
+        "handoffEntry": "TRAY07",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Names the showing capability so a reported native displayed chat can inform the default.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "0b222683100abd582daa85755533e41d9728ce83",
+        "content": "sha256:c1c90a49534d9aa915c04bbf13e89c4669174f9dd85d0239d1d239f56628d2fe",
+        "locator": {
+          "kind": "symbol",
+          "name": "PLUGIN_ABILITIES_USED"
+        }
+      },
+      "id": "RLZ-TX3R66",
+      "invariant": "INV-GE7PTW",
+      "origin": {
+        "handoffEntry": "TRAY03",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Keeps pick inside the qualified ability set used for embedded URL/control readiness.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "0b222683100abd582daa85755533e41d9728ce83",
+        "content": "sha256:56b0b7e88e9c0d15728f0b0115958de4a185e7acdf50c912af2e7ce7587d3237",
+        "locator": {
+          "kind": "symbol",
+          "name": "pluginNoticeText"
+        }
+      },
+      "id": "RLZ-YX01CJ",
+      "invariant": "INV-4P2V3R",
+      "origin": {
+        "handoffEntry": "MIK-R140@v1 rule 4",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "Builds the notice from the abilities the plug-in named, with the provisioning command the backend names.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "0b222683100abd582daa85755533e41d9728ce83",
+        "content": "sha256:2ee34efaa0f82e3aa50898bf8803895d8fcd697a552723d1aa63af921e4a691c",
+        "locator": {
+          "kind": "symbol",
+          "name": "PaseoComposerMessage"
+        }
+      },
+      "id": "RLZ-ZDCFK5",
+      "invariant": "INV-71MV12",
+      "origin": {
+        "handoffEntry": "MIK-R197@v1 rule 2",
+        "leaf": "260928-MIK-L189"
+      },
+      "rationale": "PaseoComposerMessage is the declared shape of what a plug-in may post, so the optional pair is stated once there and every consumer reads the same union.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Non-rejected native execution fields supply frame targets.\n\nAnchor: \"export function paseoAgentTarget(execution: unknown): PaseoAgentTarget \\| null {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b222683100abd582daa85755533e41d9728ce83",
+            "content": "sha256:669841be78c2a5ecf5421ab6ce6cb9b30eca4bfc4fbbbb7d7f97c6cd64be29a7",
+            "locator": {
+              "end": 136,
+              "kind": "line_range",
+              "start": 126
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The dashboard's advertised abilities include pick and showing.\n\nAnchor: \"export const DASHBOARD_ABILITIES = [\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b222683100abd582daa85755533e41d9728ce83",
+            "content": "sha256:24c8cab64e535bdd9550bd443fac480dfcddae8bae2766711ff5e98e77a82189",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 91
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The box's left and width are admitted only together, as finite numbers with a positive width.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b222683100abd582daa85755533e41d9728ce83",
+            "content": "sha256:4bed65d88e6de9a56ca6f8b45a48045e938a4fdba648cc0bdce9f60494f80a97",
+            "locator": {
+              "kind": "symbol",
+              "name": "composerExtent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Only supported source-tagged forms are normalized.\n\nAnchor: \"export function parsePluginMessage(data: unknown): PaseoPluginMessage \\| null {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b222683100abd582daa85755533e41d9728ce83",
+            "content": "sha256:8d2aec01684df053ee1abc0019cb6f73d88301a4337bf7f916e54d4f0c8199b4",
+            "locator": {
+              "end": 239,
+              "kind": "line_range",
+              "start": 220
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Explicit lack of open-agent differs from an absent capability list.\n\nAnchor: \"export function pluginOpensAgents(capabilities: PluginAbilities): boolean {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b222683100abd582daa85755533e41d9728ce83",
+            "content": "sha256:8ea7bd9b358ffd8a9887c51af0f31003c7776625a43cd650f717aadf8daaa107",
+            "locator": {
+              "end": 249,
+              "kind": "line_range",
+              "start": 247
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Plugin notices name missing abilities and provisioning.\n\nAnchor: \"export function pluginNoticeText(capabilities: PluginAbilities, command: string): string \\| null {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b222683100abd582daa85755533e41d9728ce83",
+            "content": "sha256:56b0b7e88e9c0d15728f0b0115958de4a185e7acdf50c912af2e7ce7587d3237",
+            "locator": {
+              "end": 265,
+              "kind": "line_range",
+              "start": 255
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Request text retains host/drawing/older wait distinctions and lateness.\n\nAnchor: \"export function requestWaitText(request: PaseoOpenRequest \\| null): string {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b222683100abd582daa85755533e41d9728ce83",
+            "content": "sha256:e7954b64c15fec99e263a00e0c5be08f987a06c34a5794598e2180bd6a0363e4",
+            "locator": {
+              "end": 307,
+              "kind": "line_range",
+              "start": 302
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Descriptor and route handling validate the serving origin and encode native identities.\n\nAnchor: \"function availableFrame(answer: Record<string, unknown>): PaseoFrameDescriptor {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b222683100abd582daa85755533e41d9728ce83",
+            "content": "sha256:9f7be3d850cb25222381d7d04f3abb345ec4f13122fc7b18bc066ca908f95a7c",
+            "locator": {
+              "end": 164,
+              "kind": "line_range",
+              "start": 148
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Pick text, optional message identity and required message time are validated together.\n\nAnchor: \"function pickMessage(message: Record<string, unknown>): PaseoTrayMessage \\| null {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b222683100abd582daa85755533e41d9728ce83",
+            "content": "sha256:5b96a13bb48b563e5093e6ddfa22de511dafcdcd4e32378a49061b59668f81a5",
+            "locator": {
+              "end": 355,
+              "kind": "line_range",
+              "start": 346
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Composer coordinates must be finite with valid heights.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b222683100abd582daa85755533e41d9728ce83",
+            "content": "sha256:f6f9ba174570c0797e45bdd256171ac64546fa92515932ea9840bbf7d21f8d69",
+            "locator": {
+              "kind": "symbol",
+              "name": "composerMessage"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Explicit null shown chat differs from an absent agent field.\n\nAnchor: \"function showingMessage(message: Record<string, unknown>): PaseoPluginMessage \\| null {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b222683100abd582daa85755533e41d9728ce83",
+            "content": "sha256:c7fd8bc2835d2f17ef0cbaaa877cdc5ed5e25562155fc76e4ee0383921acd319",
+            "locator": {
+              "end": 381,
+              "kind": "line_range",
+              "start": 379
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,287 @@
+{
+  "path": "mcp/tests/test_knowledge_reader.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "14": {
+      "note": "The explorer listing case that now expects the presence mark.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52c612f24f8a11ebd50a596cfdad580c051603b7",
+            "content": "sha256:a0f4bc1d383ae0a8f1e04025944cc3e4c1d8d07bab81485616fa4f19d5e79332",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The listing entry point the route uses.\n\nAnchor: `read_tree_listing`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be05f862f8abdce1e737a3b7888b6bf27b93274c",
+            "content": "sha256:adfabe1875671003c723cc24fd2c77503984f45db46aa4c77090f99e845e2f7c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_reader/tree_coverage.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "The module's own statement of the fixture's two converted commits.\n\nAnchor: `memory-repos/ar-demo`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52c612f24f8a11ebd50a596cfdad580c051603b7",
+            "content": "sha256:eb639788fafda9748453c1c89c3e71f78a2abd1e70452d10dc7f55306123c1c3",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "30": {
+      "note": "The converted tree, the second commit's changes and the world with an unconverted commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52c612f24f8a11ebd50a596cfdad580c051603b7",
+            "content": "sha256:aee64e7af5ba853679e1127e1974383b89e90d9e04d3227f9b78cc2324bc7aa5",
+            "locator": {
+              "kind": "symbol",
+              "name": "world"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "52c612f24f8a11ebd50a596cfdad580c051603b7",
+            "content": "sha256:402d1fb197aab9040c7cc3390a27cbadc6dc700225592369585ad2ef33d4d6f2",
+            "locator": {
+              "end": 524,
+              "kind": "line_range",
+              "start": 490
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "31": {
+      "note": "The read-only snapshot of both repositories.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52c612f24f8a11ebd50a596cfdad580c051603b7",
+            "content": "sha256:f0c22317f20c7b1de2cbcc8eaa7553d89335d0345effd93d1d5a14dd673efedc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_snapshot"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "32": {
+      "note": "The file and bounded directory views.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52c612f24f8a11ebd50a596cfdad580c051603b7",
+            "content": "sha256:f45cf783a9b0526374a9d3a1f8b2c99702471bea89d68a2bf7f37cafd5e73b8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_file_path_view_shows_prose_references_entries_families_and_linked_records"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "33": {
+      "note": "The subtree walk, the walk's code tree (F16, R3-1, R3-2), and another walk refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52c612f24f8a11ebd50a596cfdad580c051603b7",
+            "content": "sha256:ca786e08e8f89f95c23884338c758424ddb831e9b0dad129ae7fc9f663173cc6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_directorys_subtree_pages_through_the_shared_continuation"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "34": {
+      "note": "The whole answer, envelope included, within the bound (F17).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52c612f24f8a11ebd50a596cfdad580c051603b7",
+            "content": "sha256:ced0c4b06187c1937cb0daa461d3aa6bb88548171145791a8a30c18e0abae0ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "_walk"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "35": {
+      "note": "The test file, the explorer and the without-proof list.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52c612f24f8a11ebd50a596cfdad580c051603b7",
+            "content": "sha256:025e876db38634c33926f6390b633cae583bbae913329c60c05f23f3bb5d2a62",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_explorer_lists_code_and_onboarding_children_with_entry_counts"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "36": {
+      "note": "The invariant view, moves and re-anchors, and the timeline cache.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52c612f24f8a11ebd50a596cfdad580c051603b7",
+            "content": "sha256:826741795f9b0683381b217a11e2ce8097aa6a95c446f68e1194650e04fec8b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_invariant_truth_view_has_every_field_state_link_and_a_three_source_timeline"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "37": {
+      "note": "The family, decision, incident and facet, and census views.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52c612f24f8a11ebd50a596cfdad580c051603b7",
+            "content": "sha256:b16bf1ef7d162c95f1bb1259eefda7931c86c75fb51e44538c92e2bed19fdd41",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_family_truth_view_shows_guarantee_members_routes_and_every_location"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "38": {
+      "note": "Published selection reads uncommitted memory without writes and pins only clean state; live-leaf selection names excluded uncommitted code; partial-index and missing-code-tree notices remain covered. The hexadecimal-name selection test is absent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52c612f24f8a11ebd50a596cfdad580c051603b7",
+            "content": "sha256:3a33f23e636a1dc6724100475094f0c70c0b3f67543a6666600260c53cd3726a",
+            "locator": {
+              "end": 996,
+              "kind": "line_range",
+              "start": 973
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "52c612f24f8a11ebd50a596cfdad580c051603b7",
+            "content": "sha256:fba8f37d564116326c7b8ed79a0c0fba2659a0142f01e5d7b282117a4f26124d",
+            "locator": {
+              "end": 1008,
+              "kind": "line_range",
+              "start": 998
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "52c612f24f8a11ebd50a596cfdad580c051603b7",
+            "content": "sha256:7ba76dccb0277ce2e031287870cfc6441590966069bee5e4aee72542a979ea82",
+            "locator": {
+              "end": 1086,
+              "kind": "line_range",
+              "start": 1067
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "39": {
+      "note": "The route, and bad requests and bounded code notices.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52c612f24f8a11ebd50a596cfdad580c051603b7",
+            "content": "sha256:113eedcddca789aecec61858881ddfcf7f25b94b2cebf5495bd52b5a8c16b9c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_route_serves_every_view_and_the_reader_writes_nothing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "40": {
+      "note": "The lane row.  Anchor: `test_knowledge_reader`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5691b694e756469475d783c426d9781ef14c8633",
+            "content": "sha256:a76d28987255bc973fec0d29a9e3b41a0704330037508157d8de6058c414cd94",
+            "locator": {
+              "end": 247,
+              "kind": "line_range",
+              "start": 247
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "41": {
+      "note": "A history row's incoming link carries the record the row is about.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52c612f24f8a11ebd50a596cfdad580c051603b7",
+            "content": "sha256:66d7b2648aa9c2ea81204620774bff3ec6c02471107953ac8d58bfe7d9a327ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_decision_truth_view_shows_alternatives_and_derived_supersession"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

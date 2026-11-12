@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "New reviewer obligation from MIK-R86@v1 (packet a78d9ae3, Architect qualification 2026-10-08 11:18:45 UTC); implemented on the W03 successor tree 95f61633, whole-primary CODE PASS verdict 3663bf07. Evidence: test_review_change_kinds.py::test_the_outline_reads_only_indexes_and_preserves_catalogue_fields"
+  },
+  "applicability": "The catalogue answer of a Git-tree review comparison on converted memory.",
+  "conditions": [
+    "The comparison has two readable converted memory trees with derived indexes.",
+    "Outline rows come from the two indexes only: no blob, hunk, roster or subject read.",
+    "Change values are added/removed/changed/unchanged/unknown from the shared record-change facts; member order is the after side then before-only members."
+  ],
+  "exclusions": [
+    "A leaf whose memory is not converted (rule 11 governs).",
+    "Subject-review content, which the outline never carries.",
+    "Timing budgets, which D105 withdraws."
+  ],
+  "id": "INV-S44D2D",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_review_change_kinds.py::test_the_outline_reads_only_indexes_and_preserves_catalogue_fields"
+      ],
+      "path": "notes/reports/l86-curator-W03/handoff-phase1.json"
+    },
+    "handoffEntry": "MIK-R86@v1 rule 1",
+    "leaf": "260928-MIK-L86",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The catalogue appends an outline of both memory indexes with canonical record selectors, authored membership order and shared record-change facts.",
+  "status": "proposed",
+  "supersedes": []
+}

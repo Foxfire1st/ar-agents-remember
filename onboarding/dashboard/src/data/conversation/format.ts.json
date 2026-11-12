@@ -1,0 +1,42 @@
+{
+  "path": "dashboard/src/data/conversation/format.ts",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Source tests assert absent-duration glyph and fixed readable durations, not the removed chip/ID/freshness helpers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d5b840f9b84680a9b8dd27bb3f49f76ca119da6c",
+            "content": "sha256:af4e1fd2ac5f0933f2db84e472ee086aaffb55ffdc8ffd0bb6d52fc28611cfc0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/conversation/format.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "ServingBuildStamp uses humanizeDuration for uptime; it is the only production consumer and no notifier consumes it.\n\nAnchor: `humanizeDuration`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "55465c1b52382000bb2af1af534a8e31d6407719",
+            "content": "sha256:7104cc0d4932cfb4f726cd0dd44bba49d7217557f4fa0bf673620a9a4fba606e",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 43
+            },
+            "path": "dashboard/src/cockpit/serving-build-stamp/ServingBuildStamp.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

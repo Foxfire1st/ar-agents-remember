@@ -1,15 +1,5 @@
 # mcp/tests/test_benchmark_analysis.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/tests/test_benchmark_analysis.py`     |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T12:30+02:00                     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`                         |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
-| governingOverview      | `../overview.md`                              |
-
 ## Governing Overview
 
 [overview.md](../overview.md)
@@ -65,14 +55,9 @@ name.
 - The tests exercise metric extraction only; they do not cover run-root
   aggregation, grouping, or summary-markdown rendering in the same module.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `analyze_jsonl` and the per-event metric extraction under test live in the benchmark analysis module. | `analyze_jsonl` | mcp/src/agents_remember/benchmarks/runner_modules/analysis.py:96-100 |
-| The token-key set summed from `turn.completed.usage` is defined in benchmark runner constants. | `USAGE_TOKEN_KEYS` | mcp/src/agents_remember/benchmarks/runner_modules/constants.py:19-24 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-08-03T03:09:46+02:00 — W3-B04 curator: curated 1 table citation (1 total), supplying the exact anchor and path; the scoped fixer generated the final extent.
-- 2026-05-31T12:30+02:00 — Created during the 1.0.0 review remediation.
+- `analyze_jsonl` and the per-event metric extraction under test live in the benchmark analysis module. [1]
+- The token-key set summed from `turn.completed.usage` is defined in benchmark runner constants. [2]

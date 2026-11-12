@@ -1,0 +1,28 @@
+{
+  "anchor": {
+    "blob": "d3d9a6a89ff491b5dae7bc9fc2a999051aa2136a",
+    "content": "sha256:0b971661f1e091df188670d8b9d84350b385aa3495e42904069966cd4047cac5",
+    "locator": {
+      "kind": "file"
+    },
+    "path": "mcp/tests/test_sync_parked_candidate.py"
+  },
+  "id": "WKN-3EXFVD",
+  "kind": "debt",
+  "origin": {
+    "handoff": {
+      "path": "rule9-ingest-list.json"
+    },
+    "handoffEntry": "mark-72",
+    "leaf": "260928-MIK-L118",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L118"
+  },
+  "state": "open",
+  "statement": "Failed once on A014 under load average 6–7: missed the memory orphan window three times. Passed 3/3 isolated candidate repeats and the final whole ordinary lane. No landed-baseline run for this case; inherited origin is unproven. Outside the five-item D305–D309 reopen; recorded and left, no repair or new task. Evidence: L168 A014 Worker report56a183d8 and evidence SHA256SUMS961c8240."
+}

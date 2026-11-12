@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Unusable or model-obscured diagnostics can invite storing derived state, deleting literal text or mistaking a no-base new-record judgment for carried debt. These specific remedies prevent that costly repair mistake without weakening their checks."
+  },
+  "applicability": "Writer/validator decision-authoring diagnostics, Markdown reference-marker diagnostics, and CLI validation without a comparison base.",
+  "conditions": [
+    "Raw stored superseded status on a decision or its alternatives is detected before model enumeration obscures the derived-state remedy; keep the old decision active and name it from another decision's supersedes.",
+    "Malformed numeric markers or markers in Markdown without a sidecar offer literal escaped brackets, a fenced block or a code span; a genuinely unpaired valid marker retains its missing-reference diagnosis.",
+    "CLI validation with no comparison bases names that every authored record is judged as new in text and JSON notes."
+  ],
+  "exclusions": [
+    "These are the named diagnostic seams, not a promise that every refusal in every tool has one universal remedy.",
+    "Diagnostics do not authorize stored superseded fields, waive reference pairing or provide a comparison base, test result, commit admission or MEMORY acceptance."
+  ],
+  "id": "INV-DWPSRR",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/worker/0e651ec5-2eed-4b58-b19f-e2336d4978ca/repair-freeze-0a36ddc4/builder-report.md#mik-r54-rule-8",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/54_writer-and-validator-corrections-a4b3b3af8d-ar/role-reports/curator/1ad64580-9e4a-42ce-adc0-169869767dba/wave-61/mechanism-review.json",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/54_writer-and-validator-corrections-a4b3b3af8d-ar/role-reports/curator/1ad64580-9e4a-42ce-adc0-169869767dba/wave-75/proof-source-review.json"
+      ],
+      "path": "wave-60-complete-history.json"
+    },
+    "handoffEntry": "MIK-R54@v1 rule 8",
+    "leaf": "260928-MIK-L54",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Writer and validator refusals must name derived superseded status, usable literal-markup recovery, and the new-record judgment made without a comparison base.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,92 @@
+{
+  "path": "mcp/tests/test_writer_command_raise.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "35019a7ba7e5eb4405d25584678b7c1462a70ead",
+        "content": "sha256:2556c17716c801dd8c2a71d2a2458b46ce7dc400c0635919d57d8c70f691ac0c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_mounted_route_keeps_its_own_texts"
+        }
+      },
+      "facet": "The mounted route's own refusal texts are unchanged.",
+      "id": "PRF-K1F8VD",
+      "invariant": "INV-S5VHSM",
+      "origin": {
+        "handoffEntry": "the-commands-raise-refusal-names-the-mounted-write",
+        "leaf": "260928-MIK-L186"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "35019a7ba7e5eb4405d25584678b7c1462a70ead",
+        "content": "sha256:717df25876de05897222ef9b78784fb71c797ef06fdd67d2b9883ca750a90e13",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_parser_refuses_the_removed_config_option"
+        }
+      },
+      "facet": "The parser refuses the removed --config option, so no route reads it.",
+      "id": "PRF-TFHAXC",
+      "invariant": "INV-S5VHSM",
+      "origin": {
+        "handoffEntry": "the-commands-raise-refusal-names-the-mounted-write",
+        "leaf": "260928-MIK-L186"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "35019a7ba7e5eb4405d25584678b7c1462a70ead",
+        "content": "sha256:72b52398b4e24f7a270690014aa43855a67c0b5147c33fac4736e1654e02890d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_settings_for_another_coordination_root_keep_both_roots_and_the_file"
+        }
+      },
+      "facet": "The other-root refusal keeps both coordination roots and the settings file in one fixed clause.",
+      "id": "PRF-Z6ZHZN",
+      "invariant": "INV-S5VHSM",
+      "origin": {
+        "handoffEntry": "the-commands-raise-refusal-names-the-mounted-write",
+        "leaf": "260928-MIK-L186"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The checkout-guard cause yields its one fixed clause and a refusal naming the mounted route with absolute paths, `commit: true` and no `--config`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35019a7ba7e5eb4405d25584678b7c1462a70ead",
+            "content": "sha256:e48d6099cc298526966ea0801e651f53abb98c852f9c2897607f6f950e9f395b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_checkout_guard_refuses_settings_to_an_undeclared_primary_checkout"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "`knowledge-ingest --config` is refused by the parser",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35019a7ba7e5eb4405d25584678b7c1462a70ead",
+            "content": "sha256:717df25876de05897222ef9b78784fb71c797ef06fdd67d2b9883ca750a90e13",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_parser_refuses_the_removed_config_option"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,363 @@
+{
+  "path": "dashboard/src/panels/file-viewer/overview",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The marks gutter a pane hosts: portals, placement, the gutter per editor and `drawn`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "850d93cf5ed952e2e11779b72cf7a029bb4290bd",
+            "content": "sha256:a4c75b16aa8487c17d0eefa7b9e71fb9a2f89fdc6a37bea3b3ec1dee65594392",
+            "locator": {
+              "kind": "symbol",
+              "name": "useMarkedPane"
+            },
+            "path": "dashboard/src/panels/file-viewer/markGutter.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Fitted excerpts grow without an internal maximum-height scrolling box.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
+            "content": "sha256:f73551aaf0c5b4e81cbd03bce90454f01e1267efd9abb4b4657b0a2c163463b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "fitHost"
+            },
+            "path": "dashboard/src/panels/file-viewer/FilePane.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Only a fully specified tray file target installs the line-pick gutter.\n\nAnchor: `trayLineGutter`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
+            "content": "sha256:8fdd7019617e9e4568c04ba2d32f046f80fd2f22e3f7b6473d434c729488f717",
+            "locator": {
+              "kind": "symbol",
+              "name": "trayLines"
+            },
+            "path": "dashboard/src/panels/file-viewer/FilePane.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "DualPane passes the File Viewer repository and each file scope/path into the code pane.\n\nAnchor: `trayLines`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a8233f6878d1f710c5879a2464418c11ea9627e",
+            "content": "sha256:52b581da67557a288f9edc15ad96aa47398c9c8f68f993e75f041a3201d3f677",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodeSide"
+            },
+            "path": "dashboard/src/panels/file-viewer/DualPane.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2a8233f6878d1f710c5879a2464418c11ea9627e",
+            "content": "sha256:364d6dbe6d13e888384ff2cdfad1b9a8ae3a377cf3b927de45a92e13efe360fd",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 59
+            },
+            "path": "dashboard/src/panels/file-viewer/DualPane.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "File Viewer owns independent Explorer visibility and active repository tray context.\n\nAnchor: `useSidebar`; `usePublishPageRepository`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a34e748d74bbd03ce1ffd35fe6d4b719b434cd55",
+            "content": "sha256:a5d8b94996e2ed9fb1315e934161156b9c6bb34036eece4e3f8db57fbeba095c",
+            "locator": {
+              "end": 224,
+              "kind": "line_range",
+              "start": 207
+            },
+            "path": "dashboard/src/panels/file-viewer/FileViewer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The toolbar control remains outside the mounted hidden Explorer panel and handle.\n\nAnchor: `SidebarToggle`; `sidebarPanelProps`; `sidebarHandleProps`; `DualPane`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a34e748d74bbd03ce1ffd35fe6d4b719b434cd55",
+            "content": "sha256:adc11c80551bc38ef8a1216ce5a480e81c3a6d83ff1628e583e5d093d41f8149",
+            "locator": {
+              "end": 300,
+              "kind": "line_range",
+              "start": 269
+            },
+            "path": "dashboard/src/panels/file-viewer/FileViewer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The bounded, passive hold released by the reader's pointer, key or wheel.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "850d93cf5ed952e2e11779b72cf7a029bb4290bd",
+            "content": "sha256:64213601425704d8e499826d02012d9afae18e0c1dab113a7b49670984b4efd1",
+            "locator": {
+              "kind": "symbol",
+              "name": "holdRevealed"
+            },
+            "path": "dashboard/src/panels/file-viewer/markGutter.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The code pane's optional marks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
+            "content": "sha256:3fcdf8f870acaceb60f98e0b757a3cb5e2c03dbfdbc59c6ae16d8303c89a72f0",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 35
+            },
+            "path": "dashboard/src/panels/file-viewer/FilePane.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The excerpt gutter.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b961de3b6888c054c469b9d0c25747c41a0b8cc4",
+            "content": "sha256:0b4f1e982725f2acda23ff71ef826be806b6751c2f48b3f384ae29907a989a2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "numberedFrom"
+            },
+            "path": "dashboard/src/panels/file-viewer/lineNumbering.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The code pane's optional first line and content-sized host.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
+            "content": "sha256:f73551aaf0c5b4e81cbd03bce90454f01e1267efd9abb4b4657b0a2c163463b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "fitHost"
+            },
+            "path": "dashboard/src/panels/file-viewer/FilePane.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
+            "content": "sha256:f5ecba83b753dfb9318732d0817adf55b044dc333a1e8bd0919ee19f03ed21a6",
+            "locator": {
+              "end": 71,
+              "kind": "line_range",
+              "start": 71
+            },
+            "path": "dashboard/src/panels/file-viewer/FilePane.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
+            "content": "sha256:4381a6ac5fd2d1fed3c3059c96f97e25dc55475450953631d92a8d35b059cd90",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/file-viewer/FilePane.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The L1 read-only files API this view consumes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5192905782e8a6dadbc17d46fca11b4ec3254480",
+            "content": "sha256:da51ca697097554c9248eec35802c35d09b7b454412d3388dd88ff002b3cbef2",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_files_routes"
+            },
+            "path": "mcp/src/agents_remember/serving/files.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The same-origin client wrapping that API.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5114f5644a55359a177e60b5dbfa197f8a1f271a",
+            "content": "sha256:a879d0bcbaa95db21c2edddeca08097f838923b4b3e3511cb142f3e8ba739967",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetchRepos"
+            },
+            "path": "dashboard/src/data/files.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The shell registers and keeps the file view mounted.\n\nAnchor: `FileViewer`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:569306adb3dd290f840dcaeb5ddc42fb8bbced63e529270a4bc4f7df6cdc0292",
+            "locator": {
+              "end": 716,
+              "kind": "line_range",
+              "start": 711
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:52b08d60b309c3dda6a0349577b96c3ebe2f1390414d68edcb6e9dc0b7ee250a",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 77
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:3c93dc7f2fe3857b8a3f711ea54983fa385dbb79b676d1a3e1b127209dea89cc",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 80
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:872cd410448e56a9478c502e6001bff04706a81fcd559a8e2b426284aed25ff3",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 78
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:0b026a57754a1df551ff3f0ad05a198c53ec076fa6772025d7ff6bbe09ab3e36",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 81
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:702b2c2e1862fc60409c48f729e89dc75f68be9c596c3cff68d7d516447731e5",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 74
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The markdown renderer the sidecar pane reuses.\n\nAnchor: `Markdown`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a65bd4444779518a555e2e38d8ca30fa0df9f3a",
+            "content": "sha256:dbbcb27210f3e352d08d6ba242aaa61621f03500d95beccbb45dbe266bda2ae3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/grammar/Markdown.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1a65bd4444779518a555e2e38d8ca30fa0df9f3a",
+            "content": "sha256:eff54d0360b790954af018d92a06694c3a335b1849a5d2a028b89a7d2a0e225b",
+            "locator": {
+              "kind": "symbol",
+              "name": "Markdown"
+            },
+            "path": "dashboard/src/grammar/Markdown.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

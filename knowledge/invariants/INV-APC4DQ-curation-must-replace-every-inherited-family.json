@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Keep a family nonmembership judgment in its typed membership home without weakening the actual invariant or losing its recorded reason."
+  },
+  "applicability": "Finite L54 curation of inherited Family examination annotations, as reread at the supported MEMORY base and current candidate.",
+  "conditions": [
+    "All nine base annotations say no joint obligation and retain their exact Basis text in exactly one current no_family membership row per record.",
+    "Only the inherited annotation leaves conditions; all other semantic fields and substantive conditions remain unchanged.",
+    "A different family meaning requires an Architect decision."
+  ],
+  "exclusions": [
+    "This is task-plane curation, not a fabricated CODE realization, test proof or new family inference."
+  ],
+  "id": "INV-APC4DQ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/worker/0e651ec5-2eed-4b58-b19f-e2336d4978ca/repair-freeze-0a36ddc4/builder-report.md#mik-r54-rule-14"
+      ],
+      "path": "wave-77-complete-history.json"
+    },
+    "handoffEntry": "MIK-R54@v1 rule 14",
+    "leaf": "260928-MIK-L54",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Curation must replace every inherited Family examination condition with one current no_family membership judgment using its recorded basis and escalate any different meaning to the Architect.",
+  "status": "proposed",
+  "supersedes": []
+}

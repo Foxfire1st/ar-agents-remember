@@ -1,0 +1,22 @@
+{
+  "path": "mcp/src/agents_remember/cli/paseo_catalog_store.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The source implements the behavior and boundaries described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1685739736665c385870182bb26945b4a57565d3",
+            "content": "sha256:05c5d75e2d9cb426434aea3396f2ca5e99ab2df1a0e8b5f07a5c36949a9cca70",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

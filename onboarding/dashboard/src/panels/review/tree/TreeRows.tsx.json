@@ -1,0 +1,201 @@
+{
+  "path": "dashboard/src/panels/review/tree/TreeRows.tsx",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "5d516892761835da84aaf9297f4b76e3054a413f",
+        "content": "sha256:837836abaaa5bbb4942b81371bb429ecef11732c2689316d907bbe505e38d1bc",
+        "locator": {
+          "kind": "symbol",
+          "name": "LocationRow"
+        }
+      },
+      "id": "RLZ-0H13FM",
+      "invariant": "INV-NF89MD",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE05-judgment-order",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The location row renders the model’s chip and ungraded separator and exposes its stale/inference hover state while retaining the existing location selection and keyboard callbacks.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "5d516892761835da84aaf9297f4b76e3054a413f",
+        "content": "sha256:de3e2c6a6b311cb95d8ce38026888b60ae7abbe7e7577bfdca44dcc796de00bd",
+        "locator": {
+          "kind": "symbol",
+          "name": "SubjectRow"
+        }
+      },
+      "id": "RLZ-60GFP7",
+      "invariant": "INV-76C676",
+      "origin": {
+        "handoffEntry": "L43-C-recorded-effect-propagation",
+        "leaf": "260928-MIK-L43"
+      },
+      "rationale": "Uses the row own recorded effect labels in the accessible name and its displayed reason, except Memory currentness explicitly names currentness.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "5d516892761835da84aaf9297f4b76e3054a413f",
+        "content": "sha256:6d1da198c0589bbb8ae5f8f10625910a4ac5fefda3de1496cb232c86c7b648d5",
+        "locator": {
+          "kind": "symbol",
+          "name": "UngradedHeading"
+        }
+      },
+      "id": "RLZ-64V69R",
+      "invariant": "INV-NF89MD",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE05-judgment-order",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The first ungraded location’s model count becomes the visible Ungraded (n) separator, keeping the tree’s grouping consistent with the shared order.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "5d516892761835da84aaf9297f4b76e3054a413f",
+        "content": "sha256:5eadbc861e67d6f41beadc3766671016ea09612be1c67555076f5ba6297b7a24",
+        "locator": {
+          "kind": "symbol",
+          "name": "CountsReason"
+        }
+      },
+      "id": "RLZ-6SP7DC",
+      "invariant": "INV-9S9XT5",
+      "origin": {
+        "handoffEntry": "RP14",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The tree recognizes a signed count suffix, keeps both signs/numbers as text and applies the existing mint/alarm style owners; non-count reasons retain their original text.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "5d516892761835da84aaf9297f4b76e3054a413f",
+        "content": "sha256:de3e2c6a6b311cb95d8ce38026888b60ae7abbe7e7577bfdca44dcc796de00bd",
+        "locator": {
+          "kind": "symbol",
+          "name": "SubjectRow"
+        }
+      },
+      "id": "RLZ-D0892J",
+      "invariant": "INV-PKFP2R",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 rule 2",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "OutlineNode was replaced by the new family/subject/location/group row functions; add FamilyRow/LocationRow/GroupRows if the writer admits separate precise realizations.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "5d516892761835da84aaf9297f4b76e3054a413f",
+        "content": "sha256:62d5d7c87ac941e72f0ac6d0df9c59cc177ca7be873dd962b11080066d1fb4aa",
+        "locator": {
+          "kind": "symbol",
+          "name": "JudgmentChip"
+        }
+      },
+      "id": "RLZ-J4NJK2",
+      "invariant": "INV-NF89MD",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE05-judgment-order",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Displays the model’s active grade or graded state with stale/category/grade attributes and the inference hover reason.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "5d516892761835da84aaf9297f4b76e3054a413f",
+        "content": "sha256:de3e2c6a6b311cb95d8ce38026888b60ae7abbe7e7577bfdca44dcc796de00bd",
+        "locator": {
+          "kind": "symbol",
+          "name": "SubjectRow"
+        }
+      },
+      "id": "RLZ-K8M23Z",
+      "invariant": "INV-76C676",
+      "origin": {
+        "handoffEntry": "L43-C-recorded-effect-consumer-closures",
+        "leaf": "260928-MIK-L43"
+      },
+      "rationale": "Keeps the eligible recorded effect sequence in the compact row accessible name while the shared model owns its change/traversal facts.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Render accessible one-line family, invariant, changed-location and group rows.\n\nAnchor: \"export function FamilyRow({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d516892761835da84aaf9297f4b76e3054a413f",
+            "content": "sha256:f68743484863d361cb21f777e875d36b6dc75487ee8d645b812d8d84f47fc806",
+            "locator": {
+              "end": 121,
+              "kind": "line_range",
+              "start": 82
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Render accessible one-line family, invariant, changed-location and group rows.\n\nAnchor: \"export function SubjectRow({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d516892761835da84aaf9297f4b76e3054a413f",
+            "content": "sha256:0222bbb5b313b55e3b939ff612d9d52cc40d3e6cc2ff0de4f1dbb698d1892a94",
+            "locator": {
+              "end": 371,
+              "kind": "line_range",
+              "start": 139
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Render accessible one-line family, invariant, changed-location and group rows.\n\nAnchor: \"export function LocationRow({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d516892761835da84aaf9297f4b76e3054a413f",
+            "content": "sha256:1defb4732d6381a5f321a0ac54398fba817f315a99c6db27aa2a6e34a7d76fdc",
+            "locator": {
+              "end": 371,
+              "kind": "line_range",
+              "start": 260
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "LocationRow now inserts the model's Ungraded (n) heading before the first ungraded row and renders JudgmentChip before its location label. A chip names the active grade or graded state, carries stale/category/grade attributes and the full inference/reason hover text; stale chips use dashed amber styling. The location tooltip appends those reasons while the existing accessible location/role/reason label and selection callbacks remain intact.\n\nAnchor: `JudgmentChip`, `UngradedHeading`, `locationTooltip`, `LocationRow`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d516892761835da84aaf9297f4b76e3054a413f",
+            "content": "sha256:37c7af345a0de4a3b6b8b51a50644b9fb2d8cdc0e96d6fd3da88daee791c6f4c",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

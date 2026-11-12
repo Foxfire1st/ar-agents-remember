@@ -1,0 +1,167 @@
+{
+  "path": "mcp/src/agents_remember/cli/paseo_role_start.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+        "content": "sha256:3ac5d9853ec3a35ba0bfce2b34dd1067035a83f8254e5dc3ad97fdc96376d5bc",
+        "locator": {
+          "kind": "symbol",
+          "name": "_agent_override"
+        }
+      },
+      "id": "RLZ-05BFWE",
+      "invariant": "INV-7DMXZ3",
+      "origin": {
+        "handoffEntry": "L202-M1-mode-offers",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Refuses caller permission-bearing start arguments before agent or receipt creation.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+        "content": "sha256:8c6798222595110e92bd943b3a6ad6c0ce24806e449f0547669f55c0965ee01a",
+        "locator": {
+          "kind": "symbol",
+          "name": "start_leaf_set"
+        }
+      },
+      "id": "RLZ-7HPMFG",
+      "invariant": "INV-RTQCXN",
+      "origin": {
+        "handoffEntry": "L100-R100-set-start-and-held-seats",
+        "leaf": "260928-MIK-L100"
+      },
+      "rationale": "One call prepares and starts the leaf's three seats as a set with Reviewer and Curator held.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+        "content": "sha256:abd8d2ff3ba2ae76819edcfe569cc5228b1732f97797006da1b82761dfc2ee1e",
+        "locator": {
+          "kind": "symbol",
+          "name": "_with_second_copies"
+        }
+      },
+      "id": "RLZ-CJK95R",
+      "invariant": "INV-HFREW1",
+      "origin": {
+        "handoffEntry": "MIK-R132@v1 rule 5",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "Carries the same statement per seat into the answer of a set of three.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+        "content": "sha256:13d18faab6f1cfc943a5beb402c7b520278d3de7892245035abe9426ef87c470",
+        "locator": {
+          "kind": "symbol",
+          "name": "MAY_START"
+        }
+      },
+      "id": "RLZ-ERFERN",
+      "invariant": "INV-5TT40M",
+      "origin": {
+        "handoffEntry": "PNT-R06@v1 §4",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Defines exact caller-to-child role pairs.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+        "content": "sha256:13d18faab6f1cfc943a5beb402c7b520278d3de7892245035abe9426ef87c470",
+        "locator": {
+          "kind": "symbol",
+          "name": "MAY_START"
+        }
+      },
+      "id": "RLZ-RHVKF4",
+      "invariant": "INV-68QN0P",
+      "origin": {
+        "handoffEntry": "MIK-R98@v1 §7",
+        "leaf": "260928-MIK-L98"
+      },
+      "rationale": "The table grants only the specified callers.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+        "content": "sha256:c48df9a1f1aaafe92bbecd9163de74c180b08fd1081068db975efb22b063708d",
+        "locator": {
+          "kind": "symbol",
+          "name": "start_rule_violation"
+        }
+      },
+      "id": "RLZ-WQXQC4",
+      "invariant": "INV-5TT40M",
+      "origin": {
+        "handoffEntry": "PNT-R06@v1 §4",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Enforces caller binding and sprint/master containment before preparation.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+        "content": "sha256:df975f80addf619cf119a02cba4faf1530fea468e99ab8f61bf23e117625bf51",
+        "locator": {
+          "kind": "symbol",
+          "name": "_start_refusal"
+        }
+      },
+      "id": "RLZ-Z1BTW8",
+      "invariant": "INV-8J056T",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule7",
+        "leaf": "260928-MIK-L95"
+      },
+      "rationale": "It projects a preparation failure into launch-refused with the owner's status, detail and next action plus preparationStatus.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+        "content": "sha256:c48df9a1f1aaafe92bbecd9163de74c180b08fd1081068db975efb22b063708d",
+        "locator": {
+          "kind": "symbol",
+          "name": "start_rule_violation"
+        }
+      },
+      "id": "RLZ-ZQGPJB",
+      "invariant": "INV-68QN0P",
+      "origin": {
+        "handoffEntry": "MIK-R98@v1 §7",
+        "leaf": "260928-MIK-L98"
+      },
+      "rationale": "The existing caller containment rule owns scope enforcement.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source implements the behavior and boundaries described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+            "content": "sha256:676908ed2d0b6416fed42342e5ba6880223a0ac17b7bd3327818388c18a99a92",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,173 @@
+{
+  "path": "mcp/src/agents_remember/tasks/__init__.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The schema, renderer, and store owned by this package.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:7b79f7eb5968da95a337c3c1094fd9d9a00ddf3375040e75f776abadf5fda1a6",
+            "locator": {
+              "end": 688,
+              "kind": "line_range",
+              "start": 688
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "17896bc0471a58bc6acce335012cc3be76d3b77d",
+            "content": "sha256:1162f99dfdf356e50737bcc386fd34194c8de4104614e9a0460979890031b5f7",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 46
+            },
+            "path": "mcp/src/agents_remember/tasks/render.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
+            "content": "sha256:6e53dbcb18a140b75d4bfeb218f4873ea7447c100ca3d7c74d73a56455f452b5",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 129
+            },
+            "path": "mcp/src/agents_remember/tasks/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:35060cdf1a6f2cf8755ce8a6e9e698c5d3268f8e7c527e2f29104d38d458382f",
+            "locator": {
+              "end": 1041,
+              "kind": "line_range",
+              "start": 1041
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:997f5b0640ada7d6be05fa7783e6228bf8c52237d3264d29c6d7d61d5ef32bd8",
+            "locator": {
+              "end": 667,
+              "kind": "line_range",
+              "start": 667
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 124
+            },
+            "path": "mcp/src/agents_remember/tasks/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Current facade re-exports of the typed task-intent slot models.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21c91c2e2ed4f36f23962b9b10bac3bce3806ef1",
+            "content": "sha256:96e6b89fd9d1e8879d08f0ab6f0a537ce90a6756e10026c4479274dbe0ee721d",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 11
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "21c91c2e2ed4f36f23962b9b10bac3bce3806ef1",
+            "content": "sha256:b2f652b199f05d5d38c9e0e2e1bcc49e7dbd1a1f0fee6b4290e939c595c680d2",
+            "locator": {
+              "end": 128,
+              "kind": "line_range",
+              "start": 88
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The current module exposes the canonical task models, publication primitives, discard/audit types, and rollback-safe store operations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21c91c2e2ed4f36f23962b9b10bac3bce3806ef1",
+            "content": "sha256:d2622e51d0765e45b27e6115da1c776a7b64811687bbba6cad83212d1b74c980",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 17
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "21c91c2e2ed4f36f23962b9b10bac3bce3806ef1",
+            "content": "sha256:6d215ca34d652dd2376c7b5d4a12c6bdfa5ab067e67787fb62b88f69eae66ffb",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 76
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "21c91c2e2ed4f36f23962b9b10bac3bce3806ef1",
+            "content": "sha256:b2f652b199f05d5d38c9e0e2e1bcc49e7dbd1a1f0fee6b4290e939c595c680d2",
+            "locator": {
+              "end": 128,
+              "kind": "line_range",
+              "start": 88
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "21c91c2e2ed4f36f23962b9b10bac3bce3806ef1",
+            "content": "sha256:fafba0527c3953c4b6e0e5b5739ba83612f8053bcdc9466730193cd1d590b408",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 75
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

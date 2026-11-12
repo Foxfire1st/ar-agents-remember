@@ -1,0 +1,125 @@
+{
+  "path": "mcp/src/agents_remember/serving/review_trees.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ffb62b059733fa92509b8a34342b5a834fb8bb54",
+        "content": "sha256:719dd0d2d4f8f602df6a97d1c6aa0c268620aa0cf74a28ef6597e91086241597",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-5FK94J",
+      "invariant": "INV-YJZKYC",
+      "origin": {
+        "handoffEntry": "R3 Note 15",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The serving view renders the source-only identity.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "14": {
+      "note": "The request context that binds cancellation and arrival.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0e0b4b6e064eb8ae0c96bf4079901a625a992c5",
+            "content": "sha256:40e1151c6eb9b6b7f8b949c853c26544acccd47f3e8edb2eca2cebd61d31383d",
+            "locator": {
+              "kind": "symbol",
+              "name": "worklist_request"
+            },
+            "path": "mcp/src/agents_remember/kernel/reviewer_worklist_process.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "A tree read answers in under a second while the default executor is full.\n\nAnchor: `test_a_busy_default_executor_cannot_delay_a_tree_read`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e29e1b9902f5b27cd11779b2b92b5e3fb6c28560",
+            "content": "sha256:c93f8f457e10d852a32030fc63a946d52eabbec586a630c99c64dfd99b4ef413",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "A client disconnect and a shutdown each stop the child and its Git process through the real route.\n\nAnchor: `_route_stop`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e29e1b9902f5b27cd11779b2b92b5e3fb6c28560",
+            "content": "sha256:c93f8f457e10d852a32030fc63a946d52eabbec586a630c99c64dfd99b4ef413",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The deadline runs from the request's arrival, so work before the child spends it.\n\nAnchor: `test_the_requests_deadline_runs_from_its_arrival_and_the_child_gets_what_is_left`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e29e1b9902f5b27cd11779b2b92b5e3fb6c28560",
+            "content": "sha256:c93f8f457e10d852a32030fc63a946d52eabbec586a630c99c64dfd99b4ef413",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "The route serves the port and refuses when it is not wired.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a147aaa605089d27bacf86c342ebf9939d1ff33",
+            "content": "sha256:b0b9575dba191615bb0df1d6fe9fd6126a1998967ee4eea85cd780e34e28581c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_tree_view_route_serves_the_port_and_refuses_when_unwired"
+            },
+            "path": "mcp/tests/test_review_git_trees.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The route path, the bounds of a selection and the size of the route's thread pool.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ffb62b059733fa92509b8a34342b5a834fb8bb54",
+            "content": "sha256:a27dc3d844bb99bb456ec955405c7b46850ccc1509b9e0df63475facba6bd839",
+            "locator": {
+              "end": 64,
+              "kind": "line_range",
+              "start": 52
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,472 @@
+{
+  "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
+        "content": "sha256:3cb8970ac5a85a80b4746f2b244cb88d0674ac6c94f3a72cece6f281b03536d0",
+        "locator": {
+          "kind": "symbol",
+          "name": "installBridge"
+        }
+      },
+      "id": "RLZ-1P5780",
+      "invariant": "INV-XENPC7",
+      "origin": {
+        "handoffEntry": "PNT-R05@v3 §6 / directory snapshot boundaries",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Stops DOM selection observation together with hierarchy listeners, subscriptions and pills for the same bridge lifetime.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
+        "content": "sha256:3cb8970ac5a85a80b4746f2b244cb88d0674ac6c94f3a72cece6f281b03536d0",
+        "locator": {
+          "kind": "symbol",
+          "name": "installBridge"
+        }
+      },
+      "id": "RLZ-20XGHX",
+      "invariant": "INV-N3NNM1",
+      "origin": {
+        "handoffEntry": "architect, message of 2026-10-11 17:32",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "Its display check ends the wait with the answer load-failed when the application shows its failure pane on the asked agent's chat, for a dashboard that reads it.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
+        "content": "sha256:38a4834dc2dba60ca9b9146a51899241bc6de67efa6968a9f896939865129db7",
+        "locator": {
+          "kind": "symbol",
+          "name": "agentChatVisible"
+        }
+      },
+      "id": "RLZ-4EXMTZ",
+      "invariant": "INV-72Y8R3",
+      "origin": {
+        "handoffEntry": "MIK-R121-R4-P1",
+        "leaf": "260928-MIK-L121"
+      },
+      "rationale": "The R3 single-literal probe was false on every real web display; the prefix probe matches the live-measured web variant.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
+        "content": "sha256:2588180a98991eaeb9596655ec9be3b3c1c20562d9abbee5a85c3ec8bbe2ea40",
+        "locator": {
+          "kind": "symbol",
+          "name": "confirmDisplay"
+        }
+      },
+      "id": "RLZ-5XXHCD",
+      "invariant": "INV-72Y8R3",
+      "origin": {
+        "handoffEntry": "MIK-R121-R4-P1",
+        "leaf": "260928-MIK-L121"
+      },
+      "rationale": "confirmDisplay requires onAgentChat identity plus chatDrawn before shown; negotiated on-chat and load-failed are distinct lesser/different completion signals.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
+        "content": "sha256:3cb8970ac5a85a80b4746f2b244cb88d0674ac6c94f3a72cece6f281b03536d0",
+        "locator": {
+          "kind": "symbol",
+          "name": "installBridge"
+        }
+      },
+      "id": "RLZ-8EBCSC",
+      "invariant": "INV-CB2QY3",
+      "origin": {
+        "handoffEntry": "ruling 4be3d695 2a, read by ruling ee770e77",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "Its display check tells a dashboard that reads it once when the application is on the asked agent's chat, before the chat is drawn.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
+        "content": "sha256:3cb8970ac5a85a80b4746f2b244cb88d0674ac6c94f3a72cece6f281b03536d0",
+        "locator": {
+          "kind": "symbol",
+          "name": "installBridge"
+        }
+      },
+      "id": "RLZ-9G4ASB",
+      "invariant": "INV-STRQX4",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 9",
+        "leaf": "260928-MIK-L75"
+      },
+      "rationale": "The bridge retains current Parent source/relation/target guards while extending negotiated non-Parent open reports.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
+        "content": "sha256:ba1854d4ceef78061e734a7ada78d8db3368dd80140085656f7aaa2a9a3eceb7",
+        "locator": {
+          "end": 301,
+          "kind": "line_range",
+          "start": 300
+        }
+      },
+      "id": "RLZ-B533QM",
+      "invariant": "INV-0TCWT9",
+      "origin": {
+        "handoffEntry": "MIK-R123@v1:sentences-0.11.1",
+        "leaf": "260928-MIK-L123"
+      },
+      "rationale": "This exact comment extent names the selected Paseo 0.15.4 release and web-build identifier index-5b20acda…; it does not bind the separate re-read statements at 310-314, and supplies no recorded browser assertion.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
+        "content": "sha256:3cb8970ac5a85a80b4746f2b244cb88d0674ac6c94f3a72cece6f281b03536d0",
+        "locator": {
+          "end": 695,
+          "kind": "line_range",
+          "start": 156
+        }
+      },
+      "id": "RLZ-C3ZC91",
+      "invariant": "INV-7D9QDG",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule2",
+        "leaf": "260928-MIK-L95"
+      },
+      "rationale": "The bridge's open generation suppresses a superseded awaited open, acknowledgement or error so only the latest current open may navigate.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
+        "content": "sha256:08cd33668f4ccad39a12d4db29dc861c4c587a9fd356b4f28a153d0a0c3da485",
+        "locator": {
+          "kind": "symbol",
+          "name": "openAgent"
+        }
+      },
+      "id": "RLZ-EX1831",
+      "invariant": "INV-BTK24H",
+      "origin": {
+        "handoffEntry": "MIK-R121-R2-P1",
+        "leaf": "260928-MIK-L121"
+      },
+      "rationale": "openAgent is the one place the channel turns a request into navigation; per the supported contract it takes agentId only, and per pinned native source the app session resolves location.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
+        "content": "sha256:dc2febbb6af49e5234bfc30e74df9fc6cb40241d185d0f37c39eab80914bbafa",
+        "locator": {
+          "kind": "symbol",
+          "name": "noContradictingSelection"
+        }
+      },
+      "id": "RLZ-GFZT5P",
+      "invariant": "INV-72Y8R3",
+      "origin": {
+        "handoffEntry": "MIK-R121-R4-P1",
+        "leaf": "260928-MIK-L121"
+      },
+      "rationale": "Strip agreement blocks confirmation against a stale/contradicting visible selection; render lag keeps the wait open for the timer.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
+        "content": "sha256:3675faa5b02f7fffe24de8f89ffd0b72d0a388f953ce1288dd1c735677af2bb4",
+        "locator": {
+          "kind": "symbol",
+          "name": "isListedParent"
+        }
+      },
+      "id": "RLZ-GPRVR6",
+      "invariant": "INV-1PVR72",
+      "origin": {
+        "handoffEntry": "PNT-R05@v3 / paired embed trust and origin clipboard policy",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Checks the pair of dashboard origin and the actual page serving origin.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
+        "content": "sha256:3cb8970ac5a85a80b4746f2b244cb88d0674ac6c94f3a72cece6f281b03536d0",
+        "locator": {
+          "kind": "symbol",
+          "name": "installBridge"
+        }
+      },
+      "id": "RLZ-PG0AHJ",
+      "invariant": "INV-C71CTF",
+      "origin": {
+        "handoffEntry": "PNT-R05@v3 §6 / trusted visible selection",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Intersects retained DOM candidates with the current SDK agent map and recomputes on DOM or catalog changes before publishing selection.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
+        "content": "sha256:3cb8970ac5a85a80b4746f2b244cb88d0674ac6c94f3a72cece6f281b03536d0",
+        "locator": {
+          "kind": "symbol",
+          "name": "installBridge"
+        }
+      },
+      "id": "RLZ-TWYV9Y",
+      "invariant": "INV-4S93MX",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule1",
+        "leaf": "260928-MIK-L95"
+      },
+      "rationale": "The bridge accepts the trusted ar.page message and turns the document isolation on or off, so the policy has an enforcement place outside the sidebar module.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
+        "content": "sha256:3cb8970ac5a85a80b4746f2b244cb88d0674ac6c94f3a72cece6f281b03536d0",
+        "locator": {
+          "kind": "symbol",
+          "name": "installBridge"
+        }
+      },
+      "id": "RLZ-W98CK3",
+      "invariant": "INV-0286SX",
+      "origin": {
+        "handoffEntry": "PNT-R05@v3 §6 / current Parent context",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Rechecks live bridge lifetime, the visible source candidate and the current SDK parent edge after agent refresh before navigation or source-scoped failure.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
+        "content": "sha256:3f61656bb07a906a7620eb85454f8c4871076c905c10ab0f3ceceaf1a74fdb0a",
+        "locator": {
+          "kind": "symbol",
+          "name": "isParentMessage"
+        }
+      },
+      "id": "RLZ-WAVRV9",
+      "invariant": "INV-1PVR72",
+      "origin": {
+        "handoffEntry": "PNT-R05@v3 / paired embed trust and origin clipboard policy",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Requires both exact origin and the actual parent window for inbound dashboard commands.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
+        "content": "sha256:03ad0b7d322a9517452725becde2a0ffd7b5d6be0f2311c32d9e8ac550c05890",
+        "locator": {
+          "kind": "symbol",
+          "name": "PLUGIN_ABILITIES"
+        }
+      },
+      "id": "RLZ-WSQKSY",
+      "invariant": "INV-4P2V3R",
+      "origin": {
+        "handoffEntry": "MIK-R140@v1 rule 4",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "What the plug-in names in its ready report and in every pong.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
+        "content": "sha256:ae437f8aa369dad5a8af8556a7e70f368eb1ee11dd0fc84df0287864af9652d1",
+        "locator": {
+          "end": 31,
+          "kind": "line_range",
+          "start": 31
+        }
+      },
+      "id": "RLZ-YP5PVQ",
+      "invariant": "INV-0TCWT9",
+      "origin": {
+        "handoffEntry": "MIK-R123@v1:sentences-0.11.1",
+        "leaf": "260928-MIK-L123"
+      },
+      "rationale": "The navigation comment pins which server release resolveNavigateToAgent was confirmed on.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The embed list pairs both origins.\n\nAnchor: \"export function isListedParent(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
+            "content": "sha256:3675faa5b02f7fffe24de8f89ffd0b72d0a388f953ce1288dd1c735677af2bb4",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 131
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Inbound commands require that origin and the actual parent window.\n\nAnchor: \"export function isParentMessage(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
+            "content": "sha256:3f61656bb07a906a7620eb85454f8c4871076c905c10ab0f3ceceaf1a74fdb0a",
+            "locator": {
+              "end": 149,
+              "kind": "line_range",
+              "start": 143
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Open generations, SDK selection intersection, Parent checks, page mode and teardown share one bridge lifetime.\n\nAnchor: \"export function installBridge(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
+            "content": "sha256:3cb8970ac5a85a80b4746f2b244cb88d0674ac6c94f3a72cece6f281b03536d0",
+            "locator": {
+              "end": 695,
+              "kind": "line_range",
+              "start": 156
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Native screen identity precedes on-chat; visible conversation or the native failure pane settles the request.\n\nAnchor: \"const confirmDisplay = () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
+            "content": "sha256:2588180a98991eaeb9596655ec9be3b3c1c20562d9abbee5a85c3ec8bbe2ea40",
+            "locator": {
+              "end": 551,
+              "kind": "line_range",
+              "start": 530
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Selection assertions cover unloaded, unknown, hidden, removed and reconnected SDK/DOM IDs.\n\nAnchor: \"document.body.innerHTML = '<button data-testid=\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7b08eb07c65d6d5a2f28e34173ee6e003c53dfec",
+            "content": "sha256:eff7158b8daa84e87c948353c87e9f27a2133095b96ae0d9aab47d87f410f13c",
+            "locator": {
+              "end": 321,
+              "kind": "line_range",
+              "start": 292
+            },
+            "path": "dashboard/src/cockpit/paseoHierarchy.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Parent assertions cover deferred lookups, changed visible callers/relations and unavailable parents.\n\nAnchor: \"visibleChats([\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7b08eb07c65d6d5a2f28e34173ee6e003c53dfec",
+            "content": "sha256:890e7bb3fc1c80fb03108cec7db2e3c10d14fd115a4bbc51691de6ac00b39974",
+            "locator": {
+              "end": 233,
+              "kind": "line_range",
+              "start": 181
+            },
+            "path": "dashboard/src/cockpit/paseoHierarchy.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Tray control is negotiated within the trusted bridge lifetime.\n\nAnchor: \"export function installBridge(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
+            "content": "sha256:3cb8970ac5a85a80b4746f2b244cb88d0674ac6c94f3a72cece6f281b03536d0",
+            "locator": {
+              "end": 695,
+              "kind": "line_range",
+              "start": 156
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Pick provenance reads the focused agent consistently across native layouts and plural visible selections.\n\nAnchor: \"const visibleChatAgent = (): string \\| null => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
+            "content": "sha256:e5d6cc8e118f10b0d34fde8973aa85a7c25baaa598cc4acbd4ac3f21b0c62efb",
+            "locator": {
+              "end": 447,
+              "kind": "line_range",
+              "start": 441
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Shown-chat reporting is negotiated, nullable, change-only and coalesced across DOM batches.\n\nAnchor: \"const tellShowing = () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
+            "content": "sha256:8464eedf48c97b38b9e0bdccb1f461507055ead867f1cd2c707179aa52c1c587",
+            "locator": {
+              "end": 491,
+              "kind": "line_range",
+              "start": 485
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

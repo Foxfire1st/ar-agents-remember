@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/explainer_server_test_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A World built here mounts the server at the boundary the suites assert on, and its helpers keep returning what they read",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07c49b985290229c756c388d152d355d62159713",
+            "content": "sha256:7eb04e5d4e8023a47fc05479c8a071ecd7c6b0468537f00b167359c2b109f3e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_git"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

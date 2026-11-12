@@ -1,0 +1,270 @@
+{
+  "path": "dashboard/src/panels/review/familyWalkMerge.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "99e2e121ccfc989c53a4a2fe27313c0316c2009f",
+        "content": "sha256:131860f27487fed3d48326b81a7bf59cfb0e6721b7e57501b8e15ea71ea9cf80",
+        "locator": {
+          "kind": "symbol",
+          "name": "mergeFamilyContinuation"
+        }
+      },
+      "id": "RLZ-95V4M24E",
+      "invariant": "INV-ZS9ZS878",
+      "origin": {
+        "leaf": "260921-ICR-L48"
+      },
+      "rationale": "Applies the family merge to a whole payload: after admittedFamilyContinuation it requires each incoming family to match a displayed family's selection, merges both sides through mergeFamilySide, and refuses unless exactly one side continued from the cursor. It marks a family recorded only when every side's roster is complete with all members recorded.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "99e2e121ccfc989c53a4a2fe27313c0316c2009f",
+        "content": "sha256:fc108054ab40c4650126fa4d22350f0011a142134b4a6397080dc2873a6087a9",
+        "locator": {
+          "kind": "symbol",
+          "name": "admittedFamilyContinuation"
+        }
+      },
+      "id": "RLZ-MFB6RVT0",
+      "invariant": "INV-53F058MT",
+      "origin": {
+        "leaf": "260921-ICR-L48"
+      },
+      "rationale": "Admits a response as a continuation only when it is a continued family_members page resumed from the displayed cursor, carries no page refusal, is not stale, and keeps the same comparison, candidate, primary revision selection and number of family entries as the displayed payload. Any other answer is not merged.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "99e2e121ccfc989c53a4a2fe27313c0316c2009f",
+        "content": "sha256:bd8ec16f3628047f94bedee252541a48096ef33d85216fa6b0987c86c838a786",
+        "locator": {
+          "kind": "symbol",
+          "name": "mergeFamilySide"
+        }
+      },
+      "id": "RLZ-P11731P7",
+      "invariant": "INV-ZS9ZS878",
+      "origin": {
+        "leaf": "260921-ICR-L48"
+      },
+      "rationale": "Merges one family side along its walk: it requires sameFamilyWalk, returns the advanced side unchanged when the incoming page is not a continuation (another walk resent at page one), accepts an exact replay of the same page as a no-op, and otherwise merges members by member_id through mergeMember, refusing the whole side if any member conflicts.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "99e2e121ccfc989c53a4a2fe27313c0316c2009f",
+        "content": "sha256:b307042c8e1648edb15063963dbe1e398b3202fd87b88077d72bc68bc67b73e3",
+        "locator": {
+          "kind": "symbol",
+          "name": "sameFamilyWalk"
+        }
+      },
+      "id": "RLZ-QSAXX7C0",
+      "invariant": "INV-53F058MT",
+      "origin": {
+        "leaf": "260921-ICR-L48"
+      },
+      "rationale": "Checks that a continuation page walks the same family roster as the displayed one: the same family id, side, state and family revision id, the same guarantee payload digest, and the same page scope. A page from another family, side, revision or guarantee is not merged.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "99e2e121ccfc989c53a4a2fe27313c0316c2009f",
+        "content": "sha256:4a28ddd0e7ae1e3dbcfaded1bc342195082152ff9c719fe652da918f701ccf58",
+        "locator": {
+          "kind": "symbol",
+          "name": "mergeMember"
+        }
+      },
+      "id": "RLZ-VFBRX7HF",
+      "invariant": "INV-ZS9ZS878",
+      "origin": {
+        "leaf": "260921-ICR-L48"
+      },
+      "rationale": "Merges one member's sparse update: it refuses a different invariant revision or a changed recorded payload digest, unites sources keyed by claim_id and refuses a claim whose content differs, and keeps the already recorded member content, so a later sparse page cannot erase delivered content and replaying the same claims changes nothing.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "11": {
+      "note": "The module's own statement of the split: the read cycle decides when, this module owns what.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99e2e121ccfc989c53a4a2fe27313c0316c2009f",
+            "content": "sha256:31f2e1b64650021770455c3f851f865be87359e98fdb3694f6c5ea5abf8584a9",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Exact member merge, exported: same revision, unchanged recorded content and claims, nothing erased.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99e2e121ccfc989c53a4a2fe27313c0316c2009f",
+            "content": "sha256:4a28ddd0e7ae1e3dbcfaded1bc342195082152ff9c719fe652da918f701ccf58",
+            "locator": {
+              "kind": "symbol",
+              "name": "mergeMember"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Side merge only within the same walk.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99e2e121ccfc989c53a4a2fe27313c0316c2009f",
+            "content": "sha256:bd8ec16f3628047f94bedee252541a48096ef33d85216fa6b0987c86c838a786",
+            "locator": {
+              "kind": "symbol",
+              "name": "mergeFamilySide"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "99e2e121ccfc989c53a4a2fe27313c0316c2009f",
+            "content": "sha256:b307042c8e1648edb15063963dbe1e398b3202fd87b88077d72bc68bc67b73e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "sameFamilyWalk"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The admission conditions on the whole payload.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99e2e121ccfc989c53a4a2fe27313c0316c2009f",
+            "content": "sha256:fc108054ab40c4650126fa4d22350f0011a142134b4a6397080dc2873a6087a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "admittedFamilyContinuation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The exported merge, and its statement that it is presentation, not authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99e2e121ccfc989c53a4a2fe27313c0316c2009f",
+            "content": "sha256:131860f27487fed3d48326b81a7bf59cfb0e6721b7e57501b8e15ea71ea9cf80",
+            "locator": {
+              "kind": "symbol",
+              "name": "mergeFamilyContinuation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The walk keeps the change facts of every returned member.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99e2e121ccfc989c53a4a2fe27313c0316c2009f",
+            "content": "sha256:f71ccd4b56224d335186738a021af8c7ea6e8e85cb28bd8a8aa1200e10d7e95b",
+            "locator": {
+              "kind": "symbol",
+              "name": "walkedChangeKinds"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The union rule it applies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7942d716bf5726b8bef30b314b8f10af229b3a21",
+            "content": "sha256:ee64c2bf4972913abb3f3618ae1734e9cbb14259ba9782ab8f1828e33c324513",
+            "locator": {
+              "kind": "symbol",
+              "name": "mergeChangeKinds"
+            },
+            "path": "dashboard/src/panels/review/changeTriage.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The read cycle's caller: a `null` merge becomes a failed read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0366167bda00c0062a05f383aec92f821ffea4c0",
+            "content": "sha256:904fba4680b2632a1c07d36675ccd1ac88cd8287fbce8c3c8257cb60508ae176",
+            "locator": {
+              "kind": "symbol",
+              "name": "familyContinuationRead"
+            },
+            "path": "dashboard/src/panels/review/ReviewReadCycle.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The walked tree's caller of the member merge.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74f29568a6476be3bfdd727c3d8db942bc0cc105",
+            "content": "sha256:85a6e0153858338536f1bea0e76e9d50da338589ccf9100001c92b0b454a334a",
+            "locator": {
+              "kind": "symbol",
+              "name": "mergeSide"
+            },
+            "path": "dashboard/src/panels/review/walkedTree.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The mounted continuation case of a rejected continuation that keeps the coherent display.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82858aec1833a8863eae834a2a5fa65d0585dd3f",
+            "content": "sha256:364a235eda93f2966924ff4c46efaa6fdda0144833cf1a86c9d1e0318614d81d",
+            "locator": {
+              "end": 373,
+              "kind": "line_range",
+              "start": 305
+            },
+            "path": "dashboard/src/panels/review/ReviewReadCycle.family.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

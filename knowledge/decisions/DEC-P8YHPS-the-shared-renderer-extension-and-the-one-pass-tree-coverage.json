@@ -1,0 +1,67 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "OR-R009 released the tree's coverage and presence fields and the shared renderer's opt-in extension and removed the private copies; those constraints govern every later coverage and renderer change on this page. No claim of weighed design alternatives is made."
+  },
+  "alternatives": [
+    {
+      "option": "Release the bounded design: directory-only coverage, hasOverview and hasKnowledge on the existing tree route from one selected-memory settings read, one code subtree pathname pass and one memory pathname enumeration with linear immediate-child aggregation, and opt-in text-only markers and heading IDs on the shared Markdown renderer.",
+      "reason": "The ruling's own release states exactly these fields, these reads and this aggregation; it preserves onboarding and adds no records field.",
+      "status": "chosen"
+    },
+    {
+      "option": "Record the design rationale as onboarding prose and demote this decision record.",
+      "reason": "The memory review's sealed finding L79-MR1-21 found no durable evidence that the private-renderer or contents/hash routes were weighed as live design choices and offered prose demotion instead; OR-R009 is a durable Orchestrator ruling that still constrains every later coverage and renderer change, so the record is kept.",
+      "reconsider_when": "The ruling's constraints are superseded, or another record carries them.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The tree route gained directory-only coverage and presence fields; a failure is a named unavailable count, not a zero.",
+    "The shared renderer's new plugins are opt-in, so every other consumer renders as before.",
+    "The private renderer, code view and tree of the old page are removed."
+  ],
+  "context": "MIK-R79@v1 left two truth gaps to be read from the code before building: whether the route already carries a directory's coverage counts, and whether the shared Markdown renderer can draw `[n]` markers and resolve links between cards. Orchestrator ruling OR-R009 (2026-10-06T10:23:26, 'OR-R009 supplements OR-R008 and releases the bounded L79 backend/shared-renderer design') resolved both within the packet's promise.",
+  "decider": "Orchestrator 71d18fce-4cb8-4a37-8dff-563bf4962b96, ruling OR-R009 (2026-10-06), on MIK-R79@v1; the packet's architect approval does not transfer this design authority.",
+  "id": "DEC-P8YHPS",
+  "links": [
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R79",
+        "packet": "requirements/MIK-R79-v1-the-knowledge-page-is-a-full-page-that-reads-from-the-top.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-7AGFVH"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-4A68A2"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-X1ADJP"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "handoff.json"
+    },
+    "handoffEntry": "L79-r009-shared-renderer-and-coverage",
+    "leaf": "260928-MIK-L79",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

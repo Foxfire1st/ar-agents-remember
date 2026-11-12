@@ -1,0 +1,57 @@
+{
+  "path": "mcp/tests/test_converted_onboarding_baseline.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "8ceab3920c976eb5e944bb64dd1d78704749eb3d",
+        "content": "sha256:7c44f0dfb472e332c8a2feb00d14c2eb6a3bbfd074c74945d14edd59a7f0c56e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_stale_anchors_refuse_the_baseline_even_when_drift_is_accepted"
+        }
+      },
+      "facet": "A stale anchor refuses a first baseline even when drift is accepted.",
+      "id": "PRF-RRP00Y",
+      "invariant": "INV-033XSD",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §5-§7 publication-refuses-stale-anchor",
+        "leaf": "260928-MIK-L191"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "2": {
+      "note": "`accept_drift` never clears a validator violation\n\nAnchor: `test_accept_drift_never_clears_a_validator_violation`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ceab3920c976eb5e944bb64dd1d78704749eb3d",
+            "content": "sha256:f0e6e83e68a9f71df573d5016356ceaed1cb97cf0de450e90aac252748f5823f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A stale anchor refuses the baseline even when drift is accepted, and the repaired tree adopts with its code trailer",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ceab3920c976eb5e944bb64dd1d78704749eb3d",
+            "content": "sha256:7c44f0dfb472e332c8a2feb00d14c2eb6a3bbfd074c74945d14edd59a7f0c56e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_stale_anchors_refuse_the_baseline_even_when_drift_is_accepted"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

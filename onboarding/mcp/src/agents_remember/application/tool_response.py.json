@@ -1,0 +1,212 @@
+{
+  "path": "mcp/src/agents_remember/application/tool_response.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
+        "content": "sha256:d04084a5bcf1b121753a483b8921a788ca7e6f756975649856ea2ed0166483de",
+        "locator": {
+          "end": 133,
+          "kind": "line_range",
+          "start": 131
+        }
+      },
+      "id": "RLZ-7Q36YX",
+      "invariant": "INV-9SKGX1",
+      "origin": {
+        "handoffEntry": "L84-K3C-9SKGX1-02",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "When the tool call carries a stale installed-build reading, the answer's buildCurrentness field is set to that reading. Answers of a current, unknown or checkout-mode server carry no buildCurrentness: current_tool_build_currentness returns a reading only for mode installed and state stale (application/tool_build_currentness.py:16-21).",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
+        "content": "sha256:b27ca4ab4089993845d5de935955fe5056d01d567d12c9622b45c828bb0655a2",
+        "locator": {
+          "end": 381,
+          "kind": "line_range",
+          "start": 380
+        }
+      },
+      "id": "RLZ-H4QS36",
+      "invariant": "INV-9SKGX1",
+      "origin": {
+        "handoffEntry": "L84-K3C-9SKGX1-01",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "A stale-server refusal (code server-build-stale) skips the task_doc and landing projections: it is returned as its whole result with only the envelope count fields stripped, so the refusal text and its buildCurrentness reading reach the caller.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
+        "content": "sha256:99bc46c7921ea48b4c78521f65f7349e31b235dadd4edcab4e30d0fa0ba1b75b",
+        "locator": {
+          "end": 517,
+          "kind": "line_range",
+          "start": 394
+        }
+      },
+      "id": "RLZ-REZN43",
+      "invariant": "INV-1V9ARB",
+      "origin": {
+        "handoffEntry": "L110-C-status",
+        "leaf": "260928-MIK-L110"
+      },
+      "rationale": "`complete_tool_response` at C still validates and logs the whole payload while delivering and guarding the distinct status projection, with the whole result's digest and size recorded and the answer bound applied to the projection; the span matches C.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
+        "content": "sha256:03442d043942ae3d80abf2a310f23d02fa678e01381424e5c12d8a2059e12bc3",
+        "locator": {
+          "end": 310,
+          "kind": "line_range",
+          "start": 246
+        }
+      },
+      "id": "RLZ-Y18D7W",
+      "invariant": "INV-MDE1ZN",
+      "origin": {
+        "handoffEntry": "MIK-R108@v1 §4 logError-fixed",
+        "leaf": "260928-MIK-L108"
+      },
+      "rationale": "_write_delivered_line attaches the fixed failure sentence once, keeps the first error across retries, and re-guards the final mapping before the observer is told.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
+        "content": "sha256:03442d043942ae3d80abf2a310f23d02fa678e01381424e5c12d8a2059e12bc3",
+        "locator": {
+          "kind": "symbol",
+          "name": "_write_delivered_line"
+        }
+      },
+      "id": "RLZ-Y2WN79",
+      "invariant": "INV-QN78E9",
+      "origin": {
+        "handoffEntry": "MIK-R108@v1 §4 overflow-400",
+        "leaf": "260928-MIK-L108"
+      },
+      "rationale": "_write_delivered_line re-runs the guard after every late line failure and keeps the short-form ceiling once the answer is cut.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "2": {
+      "note": "Exact-contract enrichment preserves explicit recovery guidance, with guarded preview stops from the call argument.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
+            "content": "sha256:60e27a120bfb8dc9f33714fb08d00eefa653f16db19cf2acb29230f633cf6a6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_attach_contract_guidance"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The completion choke validates the whole, selects the answer, retains available caller diff reports, measures final delivery and emits one event through its existing owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
+            "content": "sha256:99bc46c7921ea48b4c78521f65f7349e31b235dadd4edcab4e30d0fa0ba1b75b",
+            "locator": {
+              "kind": "symbol",
+              "name": "complete_tool_response"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Whole-result validation/logging and explicit or default tool-specific projected-answer guarding remain distinct.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
+            "content": "sha256:bf895a7868d9b4e1a21a419b242360e1159533d5437b36380fbea589b819b6d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_select_shaped_answer"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
+            "content": "sha256:bcdb8318aaf387e424308817ffe27d5f44058df1066778997ca96d4e45d56a1d",
+            "locator": {
+              "end": 440,
+              "kind": "line_range",
+              "start": 425
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The enrichment sets `buildCurrentness` on the validated envelope only when the call carries a stale installed-build reading.\n\nAnchor: `current_tool_build_currentness`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
+            "content": "sha256:31d7d911b48f84f5f7e06c94f42e1c39f9b55cf8565323fb4fac3725db07ec7e",
+            "locator": {
+              "end": 133,
+              "kind": "line_range",
+              "start": 130
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "A `server-build-stale` refusal keeps its stripped whole result, without a tool projection or list cap.\n\nAnchor: `strip_envelope`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
+            "content": "sha256:b27ca4ab4089993845d5de935955fe5056d01d567d12c9622b45c828bb0655a2",
+            "locator": {
+              "end": 381,
+              "kind": "line_range",
+              "start": 380
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Whichever answer is shaped, the finalized `buildCurrentness` is copied onto it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
+            "content": "sha256:99bc46c7921ea48b4c78521f65f7349e31b235dadd4edcab4e30d0fa0ba1b75b",
+            "locator": {
+              "kind": "symbol",
+              "name": "complete_tool_response"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

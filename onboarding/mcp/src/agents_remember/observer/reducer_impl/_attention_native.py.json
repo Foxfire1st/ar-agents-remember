@@ -1,0 +1,95 @@
+{
+  "path": "mcp/src/agents_remember/observer/reducer_impl/_attention_native.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e2db8b0a0ff10909e397778d10d756bf5eb9eb64",
+        "content": "sha256:ccde3b25061b069a2429e931455f47c710766f7f0556b30f25fc45813e490b6b",
+        "locator": {
+          "kind": "symbol",
+          "name": "native_attention_items"
+        }
+      },
+      "id": "RLZ-6K8K8Z",
+      "invariant": "INV-QYB9GY",
+      "origin": {
+        "handoffEntry": "C1 occurrence identity",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "The one owner of every occurrence identity the queue publishes.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e2db8b0a0ff10909e397778d10d756bf5eb9eb64",
+        "content": "sha256:395b02619637690d11d0292942b9e8449f3ddb800379ab561f88bb80df1c8e12",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-EZRQ0Y",
+      "invariant": "INV-0DZX66",
+      "origin": {
+        "handoffEntry": "L190-R1-F04",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Native builders implement per-prompt/per-held occurrence, settled stall exclusions and stable terminal notice details.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e2db8b0a0ff10909e397778d10d756bf5eb9eb64",
+        "content": "sha256:ccde3b25061b069a2429e931455f47c710766f7f0556b30f25fc45813e490b6b",
+        "locator": {
+          "kind": "symbol",
+          "name": "native_attention_items"
+        }
+      },
+      "id": "RLZ-G9FDZT",
+      "invariant": "INV-R8BBQC",
+      "origin": {
+        "handoffEntry": "curator:MIK-R200@v1 rules 1, 7 and 8 — one queue, five native kinds, an actionable row",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "The five builders live here, one per kind, and they are what puts the native rows beside the operational ones.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e2db8b0a0ff10909e397778d10d756bf5eb9eb64",
+        "content": "sha256:395b02619637690d11d0292942b9e8449f3ddb800379ab561f88bb80df1c8e12",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-V2YF3Y",
+      "invariant": "INV-9V3W1R",
+      "origin": {
+        "handoffEntry": "L190-R1-F12",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Native builders implement per-prompt/per-held occurrence, settled stall exclusions and stable terminal notice details.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e2db8b0a0ff10909e397778d10d756bf5eb9eb64",
+        "content": "sha256:22e6ab97398213e9558009e6775d99beccf40068a681b881c02de715b6e2165c",
+        "locator": {
+          "kind": "symbol",
+          "name": "stall_occurrences"
+        }
+      },
+      "id": "RLZ-YT3DXC",
+      "invariant": "INV-QYB9GY",
+      "origin": {
+        "handoffEntry": "C1 occurrence identity",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Publishes the interval-bearing stall id for every started task that is idle now, from the same eligibility owner the row builder reads.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

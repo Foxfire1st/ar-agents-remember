@@ -1,0 +1,25 @@
+{
+  "path": "dashboard/src/panels/review/l43.trees.captured.json",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "2": {
+      "note": "The current retained JSON input supplies the literal identities, response states and populations summarized above; these are fixture facts, not live project knowledge or fresh execution evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "752d87d7cd0727cf645af246dcab65c33d1136bf",
+            "content": "sha256:b431e06d15052b48f39082d0c3c76b8145b4f813f54e9d73eb2b57962be4b650",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

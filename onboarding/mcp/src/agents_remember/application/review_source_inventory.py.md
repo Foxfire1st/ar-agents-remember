@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/review_source_inventory.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/review_source_inventory.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-22T19:40:00+02:00 |
-| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` |
-| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
-| governingOverview | `mcp/src/agents_remember/application/overview.md` |
-
 ## Governing Overview
 
 [application route overview](overview.md)
@@ -53,26 +43,49 @@ observation rather than two that could disagree.
 
 ## Code Commentary
 
+Source measurement combines raw metadata and numstat in one fixed NUL-safe Git command. Its shared diff tuple still pins prefixes, colour and external-driver behavior. Request-local tree observations retain exact tree/blob identity; they add no cross-request currentness shortcut.
+
+
+### The measurement
+
+- `tree_difference_observation(before, after)` delegates one combined raw/numstat observation to `_measure_tree_difference`, with request-local memoization when `memo_tree_observations` is open.
+- `_RAW_ARGS` aliases shared `TREE_DIFF_ARGS`: `diff`, `PARSED_DIFF_OPTIONS`, `--raw --numstat --no-abbrev -z --no-renames`. One command returns metadata/path and numstat records; renames remain deletion/addition and NUL delimiters preserve whole pathnames.
+- `_diff_records` parses both record kinds without assuming order. Invalid raw metadata/path/object-id data refuses the observation; malformed or incomplete numstat classification retains raw entries as partial with unknown numstat-derived content; mode-derived symlink/submodule kinds remain known. Empty output is a measured empty change set. The former separate `_NUMSTAT_ARGS`, `_raw_records` and `_content_classification` implementation is retired.
+- Each record becomes a `TreeChange` with a status (`added`, `deleted`, `modified`, `type_changed`, or
+  `unknown` for another letter), a content kind (`submodule` and `symlink` from the mode, `binary` or
+  `text` from the classification, else `unknown`), and the mode-change flag. Entries are sorted by path.
+- A path with a byte that is not valid UTF-8 (`is_text_path`) is kept apart in `unrepresentable` and
+  reported by its byte form (`byte_form`); the observation is then `partial`.
+- A side without a tree ID, a side without a root, a failed raw call and malformed raw output each give
+  `available=False` with the reason. No branch, working tree or `HEAD` is read in place of a tree.
+
+### The inventory and the pane
+
+- `review_inventory(before, after, probe=None, observed=None)` renders an observation as
+  `ReviewSourceInventory`: state `measured` or `unavailable`, one entry per path, the `partial` flag, a
+  detail sentence, the command and the two tree IDs. An observation that names paths without entries is
+  listed with status and content `unknown`.
+- `inventory_command` returns the text `git -C <root> diff --no-color --no-ext-diff --src-prefix=a/
+  --dst-prefix=b/ --raw -z --no-renames <before> <after>`, with a placeholder for a side that named no
+  tree. The text is built from the same `_RAW_ARGS` tuple the measurement passes to Git,
+  `PARSED_DIFF_OPTIONS` included.
+- `inventory_limitations` declares `limitation:source_inventory_unavailable` or
+  `limitation:source_inventory_partial`.
+- `source_pane` composes the inventory, the locations of the traversed relationships
+  (`source_locations`), the relationships themselves, the attribution's three path lists and six counts.
+  A count that was not measured carries its reason and no value (`_stated_or_absent`).
+- `attribution_limitations` declares `limitation:unknown_attribution_changed_paths` when the attribution
+  was not measured or has undetermined paths, in the second case with the counted omission.
+
 ### Logic
 
 **`tree_difference_observation` is the production `TreeDifferenceProbe`, and it answers with a
 status-bearing entry per path.** It compares two sides only when each named an exact tree **and** is
 resolvable in the root it named; anything else is reported as an observation this run could not make,
 never as an empty change set, and the two trees are addressed by object id and never by a branch, a
-working tree or `HEAD`. It runs `git diff --raw -z --no-renames` once for status and modes and
-`git diff --numstat -z --no-renames` once for whether content is text at all; a failure of the second
-run does not lose the path set — the entries stay, each stating that its content was not classified,
-and the observation is `partial`. `--no-renames` is deliberate and is the shipped comparison's own
-policy: a rename is a deletion of one path and an addition of another, and reporting a rename would
-attribute the candidate's *new* path to a baseline path no recorded anchor names.
+working tree or `HEAD`. `_measure_tree_difference` runs the shared combined raw/numstat command once. Invalid raw data refuses the observation; invalid or incomplete numstat records retain the raw path set with `partial` and unknown numstat-derived content, while mode-derived symlink/submodule kinds remain known. `--no-renames` still renders a rename as deletion/addition rather than assigning a new path to an unrelated baseline anchor.
 
-**`_raw_records` refuses the whole observation rather than skipping a record.** The `-z` form is a
-NUL-terminated alternation of one metadata field and one path, so it is read as exactly that: an odd
-token count, a metadata row that does not begin with `:`, a row that does not carry Git's five fields
-or an empty path each mean the output is not this interface's and the observation is `unavailable`.
-Paths are carried verbatim — split on NUL and never trimmed — because the name *is* the address the
-same file is expanded with. Two trees that agree print nothing at all, and that one case is read as a
-**measured empty** change set rather than as a malformed one.
+**`_diff_records` refuses invalid raw data rather than skipping a change.** It consumes each metadata token with its following path, validates modes and full object IDs through `_raw_record`, and parses interleaved numstat tokens by record kind. Invalid classification alone leaves the raw entries partial; empty output is measured empty. The former `_raw_records` symbol is historical, not the current parser.
 
 **The content classification consults the mode first, then the measurement.** A gitlink (`160000`) is
 a submodule pointer and a symlink (`120000`) is a link target; neither is text or binary in the sense
@@ -139,8 +152,7 @@ sides sit under and the movement it belongs to. The three private helpers that b
 vocabulary arrived; `_location` and its address helpers now live in
 `application/review_relationship_display.py`, and the change state is
 `application/review_recorded_relationships.py`'s `recorded_change_state`. Nothing is duplicated: the
-pane composes one implementation, and the local helpers that measured the source change set
-(`_RawRecord`, `_raw_records`, `_content_classification`, the limit helpers) are untouched.
+pane composes one implementation. The source-measurement helpers now use `_diff_records`/`_raw_record` and one combined command; the former raw-only parser and separate classification helper are retired.
 
 **The counts state their unit and their scope, or their reason.** `_remaining` gained the sixth row,
 `unknown_attribution_changed_paths`, so the confirmed-unregistered zero and the undetermined count
@@ -155,17 +167,7 @@ the measured zero the requirement forbids.
 
 ### Conventions
 
-`__all__` publishes the ten names the adapter consumes: `SOURCE_INVENTORY_REFERENCE`,
-`attribution_limitations`, `byte_form`, `inventory_command`, `inventory_limitations`, `is_text_path`,
-`review_inventory`, `source_pane`, `source_tree_side` and `tree_difference_observation`. `_RawRecord` and `TreeChange` are frozen
-dataclasses, not pydantic models: they are the observation's own value while it is being built, and
-only `ReviewSourceInventory` (in `models/knowledge/review.py`) is a wire shape. The module's detail
-strings are module-level constants rather than inline sentences (`_UNCOMPARABLE_DETAIL`,
-`_UNPARSED_DETAIL`, `_NO_ROOT_DETAIL`, `_UNCLASSIFIED_DETAIL`, `_UNSTATED_DETAIL`,
-`_UNLISTED_CONTENT_DETAIL`, `_UNREPRESENTABLE_DETAIL`), because two callers and three states have to
-state the same limit identically. `_count(count, noun)` is the one counted-noun phrase, so a stated
-limit reads as a measurement. There is no state: every function is pure apart from the two Git
-subprocesses, and nothing here writes a file.
+`__all__` publishes the eleven names the adapter consumes: `SOURCE_INVENTORY_REFERENCE`, `attribution_limitations`, `byte_form`, `inventory_command`, `inventory_limitations`, `is_text_path`, `memo_tree_observations`, `review_inventory`, `source_pane`, `source_tree_side` and `tree_difference_observation`. The observation values remain frozen dataclasses and wire construction remains model-owned. Request-local ContextVar state memoizes available observations by repository and resolved endpoint trees; nested scopes join and scope exit resets the table. Unavailable observations are not memoized. The module writes no file; the measurement uses one combined Git diff, with endpoint resolution where memo-key construction requires it.
 
 ### Invariants And Boundaries
 
@@ -197,77 +199,100 @@ subprocesses, and nothing here writes a file.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+
+- Historical _raw_records reference retained; the current mixed raw/numstat parser is _diff_records and validates metadata through _raw_record. [31]
+
+
+- Historical separate _content_classification reference retained; classification is now parsed with raw records inside _diff_records. [32]
+
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Every claim on this card is checkable in the shipped candidate: this module's own docstring and
 functions, the `TreePaths`/`TreeChange`/`TreeDifferenceProbe` vocabulary it fills in
 `memory/knowledge/diff_display.py`, the review models it builds, the adapter that calls it, and the
 cases that measure it against real repositories. Three details a reader should carry: the observation
 is **one** implementation now, shared with the comparison's expansion through
-`knowledge_diff.git_tree_difference_probe`; the two Git questions are `--raw -z` for status and modes
-and `--numstat -z` for renderability, each asked once per measurement; and a non-UTF-8 name is a
-*partial* result rather than a refusal, because the alternative discards a whole source review for one
-odd name.
+`knowledge_diff.git_tree_difference_probe`; raw metadata and numstat classification are asked in one combined NUL-safe measurement. A non-UTF-8 name remains a partial result with exact byte-form custody rather than losing the source inventory.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own statement of the three properties it exists for — measured from the pair, delimiter-safe, three separate facts with a failed measurement as a state — and of why the pane lives beside it. | `partial`; `available` | mcp/src/agents_remember/application/review_source_inventory.py:1-40 |
-| The published surface: the one reference constant, the probe, the inventory, the pane projection and the three limit helpers. | `__all__`; `SOURCE_INVENTORY_REFERENCE` | mcp/src/agents_remember/application/review_source_inventory.py:65-76; mcp/src/agents_remember/application/review_source_inventory.py:80-80 |
-| **The two Git questions, once each, with `--no-renames` and `-z` and the reason for both.** | `_RAW_ARGS`; `_NUMSTAT_ARGS` | mcp/src/agents_remember/application/review_source_inventory.py:87-87; mcp/src/agents_remember/application/review_source_inventory.py:88-88 |
-| The status vocabulary that names Git's letters and states `unknown` for a letter outside it, and the two modes that decide a path's kind before any byte is read. | `_STATUS_NAMES`; `_SUBMODULE_MODE`; `_SYMLINK_MODE` | mcp/src/agents_remember/application/review_source_inventory.py:92-97; mcp/src/agents_remember/application/review_source_inventory.py:102-102; mcp/src/agents_remember/application/review_source_inventory.py:103-103 |
-| The stated reasons an inventory carries: an uncomparable pair, an output that is not the declared format, a tree without its root, an unclassified content, an unstated status and an unrepresentable name. | `_UNCOMPARABLE_DETAIL`; `_UNPARSED_DETAIL`; `_NO_ROOT_DETAIL`; `_UNCLASSIFIED_DETAIL`; `_UNSTATED_DETAIL`; `_UNREPRESENTABLE_DETAIL` | mcp/src/agents_remember/application/review_source_inventory.py:126-130; mcp/src/agents_remember/application/review_source_inventory.py:131-134; mcp/src/agents_remember/application/review_source_inventory.py:138-141; mcp/src/agents_remember/application/review_source_inventory.py:107-110; mcp/src/agents_remember/application/review_source_inventory.py:111-114; mcp/src/agents_remember/application/review_source_inventory.py:119-123 |
-| The observation's own record: Git's two modes, the change letter, the raw path, and the two properties the mode answers (submodule, symlink) plus the one that separates "the bytes moved" from "only the permission word moved". | `_RawRecord` | mcp/src/agents_remember/application/review_source_inventory.py:144-165 |
-| **One bound endpoint as the observation's own side: an object id and the root it resolves in, travelling together or not at all.** | `source_tree_side`; `TreeSide` | mcp/src/agents_remember/application/review_source_inventory.py:168-176; mcp/src/agents_remember/memory/knowledge/tree_observation.py:32-42 |
-| **The declared limits: unavailable, partial, or neither — stated at the top level of the response because a limit a reader has to open a pane to find was not stated.** | `inventory_limitations` | mcp/src/agents_remember/application/review_source_inventory.py:179-191 |
-| **The measurement itself: the two object ids, the delimiter-safe read, the content classification, the partition into carried and uncarried changes, and the unavailable answers that are never empty change sets.** | `tree_difference_observation`; `_raw_records`; `_content_classification`; `_changes` | mcp/src/agents_remember/application/review_source_inventory.py:194-236; mcp/src/agents_remember/application/review_source_inventory.py:297-322; mcp/src/agents_remember/application/review_source_inventory.py:342-364; mcp/src/agents_remember/application/review_source_inventory.py:367-384 |
-| **The non-UTF-8 boundary: the predicate that observes a surrogate-escaped byte and the exact byte form that carries the name instead of re-encoding it.** | `is_text_path`; `byte_form` | mcp/src/agents_remember/application/review_source_inventory.py:239-249; mcp/src/agents_remember/application/review_source_inventory.py:252-261 |
-| **The kind of one entry, decided by mode first and measurement second, and the reason an `unknown` is unknown.** | `_content`; `_content_reason` | mcp/src/agents_remember/application/review_source_inventory.py:387-402; mcp/src/agents_remember/application/review_source_inventory.py:405-408 |
-| **The command that reproduces the inventory, naming the two requested objects and never a branch, a working tree or `HEAD`.** | `inventory_command`; `TREE_DIFF_COMMAND` | mcp/src/agents_remember/application/review_source_inventory.py:411-426; mcp/src/agents_remember/memory/knowledge/diff_display.py:113-113 |
-| **The review's own inventory value: the injectable probe seam, the already-made observation a caller hands in, the paths-without-statuses rendering, the measured/unavailable state, the count that is the list's own length, and the unrepresentable remainder.** | `review_inventory`; `_entries`; `_unrepresentable_path` | mcp/src/agents_remember/application/review_source_inventory.py:429-469; mcp/src/agents_remember/application/review_source_inventory.py:472-480; mcp/src/agents_remember/application/review_source_inventory.py:483-502 |
-| The sentence a measured inventory publishes about itself, including the one that separates a measured empty set from an unmeasured one. | `_measured_detail` | mcp/src/agents_remember/application/review_source_inventory.py:530-546 |
-| **Pane 2: the inventory first and unconditionally, then the measured partition it is read from, the address view the recorded-relationship traversal renders, the relationships themselves, the six remaining counts, expansion and the three bucket lists.** | `source_pane`; `_remaining` | mcp/src/agents_remember/application/review_source_inventory.py:560-613; mcp/src/agents_remember/application/review_source_inventory.py:630-685 |
-| **The scope of each count and the two partition facts in the comparison route's spelling.** | `_stated_or_absent`; `_outside_selection_total`; `_unregistered_reason`; `_undetermined_reason`; `attribution_limitations` | mcp/src/agents_remember/application/review_source_inventory.py:688-699; mcp/src/agents_remember/application/review_source_inventory.py:702-707; mcp/src/agents_remember/application/review_source_inventory.py:721-732; mcp/src/agents_remember/application/review_source_inventory.py:735-747; mcp/src/agents_remember/application/review_source_inventory.py:750-771 |
-| The selected source location, now rendered by the recorded relationship's own display owner from the movement side (this module no longer builds it): the recorded role kept `None` rather than guessed, the comparison's own change state carried, and the counterpart address named only when the other side records exactly one. | `_location`; `_baseline_only`; `_counterpart_path` | mcp/src/agents_remember/application/review_relationship_display.py:791-821; mcp/src/agents_remember/application/review_relationship_display.py:824-832; mcp/src/agents_remember/application/review_relationship_display.py:835-848 |
-| The comparison's own statement about one claim's source observation, carried verbatim by the recorded-relationship owner (the moved `_change_state`), and the union-item payload the recorded side is read from. | `recorded_change_state`; `side_payload`; `read_snapshot_relationships` | mcp/src/agents_remember/application/review_recorded_relationships.py:593-603; mcp/src/agents_remember/application/review_recorded_relationships.py:452-455; mcp/src/agents_remember/application/review_recorded_relationships.py:458-475 |
-| **The wire value this module builds, with the count checked against the list and the unrepresentable rule enforced at construction.** | `ReviewSourceInventory`; `ReviewChangedFile`; `ReviewUnrepresentablePath`; `ReviewSourcePane` | mcp/src/agents_remember/models/knowledge/review.py:802-832; mcp/src/agents_remember/models/knowledge/review.py:835-854; mcp/src/agents_remember/models/knowledge/review.py:857-918; mcp/src/agents_remember/models/knowledge/review.py:921-953; mcp/src/agents_remember/models/knowledge/review.py:102-102; mcp/src/agents_remember/models/knowledge/review.py:96-96 |
-| **The comparison's own expansion, which had been the second implementation of this question and is now a delegation to this module's observation.** | `git_tree_difference_probe`; `_expansion_detail` | mcp/src/agents_remember/application/knowledge_diff.py:166-181; mcp/src/agents_remember/memory/knowledge/diff_display.py:452-466 |
-| The adapter's composition: the observation made once and handed to both renderings, before any dataset is opened and before the selector branch, and its limits declared at the top level. | `compose_review`; `_limitations` | mcp/src/agents_remember/application/knowledge_review.py:334-574; mcp/src/agents_remember/application/knowledge_review.py:939-962 |
-| **The cases that measure this module against real repositories: population and per-path status against an independent Git observation, the tab/newline name, one entry per renderability kind, unavailable versus measured-empty with its control, the paths-only partial rendering, and the non-UTF-8 byte form.** | `InventoryFixture`; `build_inventory_fixture`; `test_the_inventory_lists_every_changed_path_of_the_bound_pair_with_gits_own_status`; `test_a_tab_and_a_newline_in_a_filename_survive_as_the_address_of_the_change`; `test_a_path_whose_content_cannot_be_rendered_is_still_listed_with_its_own_kind`; `test_a_measurement_that_could_not_be_made_is_unavailable_and_never_a_measured_empty_set`; `test_a_pathname_that_is_not_valid_text_is_carried_by_its_bytes_and_never_dropped` | mcp/tests/test_knowledge_diff_boundaries.py:915-933; mcp/tests/test_knowledge_diff_boundaries.py:936-980; mcp/tests/test_knowledge_diff_boundaries.py:988-1024; mcp/tests/test_knowledge_diff_boundaries.py:1027-1052; mcp/tests/test_knowledge_diff_boundaries.py:1055-1080; mcp/tests/test_knowledge_diff_boundaries.py:1083-1110; mcp/tests/test_knowledge_diff_boundaries.py:1135-1187 |
-| The independent, byte-safe Git observation both review suites compare against, deliberately a different Git question and deliberately read through the production runner. | `independent_changed_records` | mcp/tests/diff_scope_test_support.py:499-513 |
-| **The cases that measure the inventory through the real composition and the real route: no knowledge at all, an unusual name carried by the shipped capture, non-text and mode-changed paths, and a non-UTF-8 name that leaves the review openable and partial.** | `test_a_task_context_review_lists_the_complete_source_inventory_with_no_knowledge_at_all`; `test_the_production_inventory_keeps_an_unusual_filename_as_the_address_it_expands_by`; `test_the_production_inventory_lists_non_text_and_mode_changed_paths_it_cannot_render`; `test_a_non_utf8_pathname_leaves_the_review_openable_and_states_why_it_is_partial` | mcp/tests/test_knowledge_review_source_endpoints.py:829-905; mcp/tests/test_knowledge_review_source_endpoints.py:908-949; mcp/tests/test_knowledge_review_source_endpoints.py:952-979; mcp/tests/test_knowledge_review_source_endpoints.py:998-1055 |
-| The surface that renders the inventory in all three of its states, with the byte-form rows beside the named ones. | `SourceExplorer`; `inventoryEntry`; `byteNamedEntry` | dashboard/src/panels/review/SourceExplorer.tsx:224-302; dashboard/src/panels/review/SourceExplorer.tsx:58-116; dashboard/src/panels/review/SourceExplorer.tsx:118-130 |
-| The complete inventory remains navigable at its listed generation; source expansion is centralized and byte-form names stay explicitly unaddressable. | `inventoryEntry`; `byteNamedEntry`; `ExpressionCard` | dashboard/src/panels/review/SourceExplorer.tsx:58-116; dashboard/src/panels/review/SourceExplorer.tsx:118-130; dashboard/src/panels/review/ReviewExpressions.tsx:177-234 |
+- The selected source location, now rendered by the recorded relationship's own display owner from the movement side (this module no longer builds it): the recorded role kept `None` rather than guessed, the comparison's own change state carried, and the counterpart address named only when the other side records exactly one. [56]
+- The comparison's own statement about one claim's source observation, carried verbatim by the recorded-relationship owner (the moved `_change_state`), and the union-item payload the recorded side is read from. [57]
+- **The comparison's own expansion, which had been the second implementation of this question and is now a delegation to this module's observation.** [59]
+- The independent, byte-safe Git observation both review suites compare against, deliberately a different Git question and deliberately read through the production runner. [62]
 
-## Cross-Repo References
+
+
+
+
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. It reads one repository's Git objects through
 the shipped runner and carries no identity that ranges beyond the repository namespace the request
 names.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
+No meaningful cross-repo references found.
 
-## Update History
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 4 citations into `mcp/tests/test_knowledge_review_source_endpoints.py` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/src/agents_remember/application/knowledge_review.py`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
-- 2026-09-26T21:15:24+00:00: Generated citation repair: `test_a_task_context_review_lists_the_complete_source_inventory_with_no_knowledge_at_all`; `test_the_production_inventory_keeps_an_unusual_filename_as_the_address_it_expands_by`; `test_the_production_inventory_lists_non_text_and_mode_changed_paths_it_cannot_render`; `test_a_non_utf8_pathname_leaves_the_review_openable_and_states_why_it_is_partial` repointed to mcp/tests/test_knowledge_review_source_endpoints.py:842-918; mcp/tests/test_knowledge_review_source_endpoints.py:921-962; mcp/tests/test_knowledge_review_source_endpoints.py:965-992; mcp/tests/test_knowledge_review_source_endpoints.py:1011-1068. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.
-- 2026-09-24T00:43:00+02:00 — 260921-ICR-L24 curator (memory worktree only; no code changed; no commits; leaf base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta): **six enforced findings on two rows cleared and the reopened claim re-read against the construct that now holds it.** This leaf moved the complete source change explorer out of `dashboard/src/panels/review/ReviewSurface.tsx` into its own module, so the two rows this card carries into that surface were re-read: the old `Inventory` component is **gone**, its responsibilities are the exported `SourceExplorer` (the population sentence, the three inventory states and the reproduce line, mounted once) and the extracted `InventoryRows` (the named and byte-form lists), and the row's wording — "the surface that renders the inventory in all three of its states, with the byte-form rows beside the named ones" — still holds of `SourceExplorer`, so the claim's words are retained and the anchor was corrected to the construct the range actually holds. `inventoryEntry` and `byteNamedEntry` moved verbatim into the same module (`SourceExplorer.tsx:78-129`, `:137-149`) and both rows now cite those extents; `SourceContent`'s contributing citations (`ReviewSurface.tsx:8-8`, `:248-256`, `:352-352`) are kept verbatim. The reopened-claim finding clears with the same edit: all three anchors now resolve exactly once in a cited file and each declaration line falls inside a cited range. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted (base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta) and governed closeout owns the real stamp.
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`, confirmed from the enclosure contract): **the pane's recorded-association half moved to `ICR-R08@v1`'s owners, and this module composes it (804 → 771 lines).** `source_pane` gained the `relationships` parameter (defaulting to `()`) and now renders `locations` through the traversal module's `source_locations`, so the location shape has exactly one implementation and one import path; the pane also carries the whole relationship collection (`ReviewSourcePane.relationships`) for the display that needs a movement with no source address at all. The three private helpers this card used to cite — `_location`, `_realization_read_item` and `_change_state` — **moved out**: `_location` and the two new address helpers live in `application/review_relationship_display.py` (`:791-821`, `:824-832`, `:835-848`), the change state is `application/review_recorded_relationships.py`'s `recorded_change_state` (`:593-603`), and the payload the moved reader consumed is that module's `side_payload`/`read_snapshot_relationships`. The row naming the three was therefore **split per construct and repointed** — citing a declaration that no longer exists in this file would have been the false claim, not a stale range — and the pane row now names the relationships collection beside the address view. **Metadata removal:** this card's two candidate-reading metadata rows were removed under the developer's 2026-09-22 rule (they are not a real field), and the 2026-09-21 ICR-L2 entry's reference to that row was corrected in the same pass so the document no longer claims the row exists; nothing else in that entry changed. No verification stamp was advanced: the candidate is uncommitted and closeout owns the real stamp.
-- 2026-09-22T09:20:00+02:00 — 260921-ICR-L4 curator (gate repair pass on the merged line): **two enforced rows re-cited** (adapter composition `372-458`/`650-673`; R02 enclosure case to the merged `750-826`/`215-248`/`149-167`). Wording unchanged; no stamp advanced.
-- 2026-09-22T09:15:00+02:00 — 260921-ICR-L4 curator (sync-merge resolution of the parked candidate against the landed line, merged base code `d21bc8a6` / memory `75bb4d65`): **additive union with landed `260921-ICR-L14`/`260921-ICR-L3`.** Both sides' history kept newest-first; the pre-L4 row versions both sides carried were superseded by the current partition rows (same claims, re-derived — the module itself is untouched by landed siblings, still 804 lines). Header names the merged production line on the stamp and this leaf's candidate row. No verification stamp was advanced.
-- 2026-09-22T08:30:00+02:00 — 260921-ICR-L4 curator (uncommitted change set on `ar/260921-icr-l4`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **the pane renders the measured partition (523 → 804 lines).** `source_pane` takes the `SourceAttribution` partition and reads every attribution field and count from it rather than recomputing from displayed items or carrying the comparison's values verbatim; `review_inventory` gained the `observed` input so the inventory and the partition are two renderings of one measurement; `_remaining` gained the sixth row `unknown_attribution_changed_paths` with per-count scope reasons (`_outside_selection_total`, `_unregistered_reason`, `_undetermined_reason`); and `attribution_limitations` renders the partition's two facts in the comparison route's spelling, declaring the limitation with no counted omission when unmeasured. Every reference row was re-derived against this candidate. **Stamp accounting:** old verification rows name the last real commit; this leaf's claims were re-read against the candidate and are stamp-class leftovers that only closeout can stamp.
-- 2026-09-21T23:24+02:00 — 260921-ICR-L14 curator, **sync-merge resolution of the parked candidate against the landed ICR-L3 curation.** The two sides had curated this document independently and both sets of statements are kept: the landed `260921-ICR-L3` section, rows and history entries alongside this leaf's, tables unioned key by key (a row both sides carried keeps the ranges that hold its anchors in the merged code tree, the other side's range folded in where it is also true; rows only one side carried are kept in their own order), prose sections kept whole and Update History entries merged newest-first. The header states both facts: the production line is the master tip `a8d2431926d6b130012ca81ed2e85b14721c0615` (ICR-L3 landed) and this leaf's own code is still its uncommitted candidate. **Stamp accounting:** no verification stamp was invented; the stamp names the landed production line and the candidate rows name each uncommitted reading.
-- 2026-09-21T22:40+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **the three enforced findings on this card were re-read and cleared — the module itself did not change; the lines this card cites into other owners did.** (1) The wire-value row cited four ranges into `models/knowledge/review.py` that this leaf's one-line insertion pushed down by one; each range was re-derived from the construct's own extent rather than shifted — `ReviewSourceInventory` `551-612` → `552-613`, `ReviewChangedFile` `496-526` → `497-527`, `ReviewUnrepresentablePath` `529-548` → `530-549`, `ReviewSourcePane` `615-632` → `616-633` — and each anchor verified to occur literally inside its new range. (2) The reopened claim about the dashboard surface was re-read against the current construct and its **wording was retained**: `Inventory` still renders all three inventory states and the byte-form rows still sit beside the named ones. Its ranges were regenerated, because the surface's helpers moved and changed shape when this leaf added the entry-content path: `Inventory` `291-335`, `inventoryEntry` `214-260`, `byteNamedEntry` `270-282` (the old `238-264`/`207-223`/`224-237` held none of the three). (3) Because the claim was reopened by a real structural change, one row was **added** rather than folding the new behaviour into the old claim: the named entry is now also the way into its own content — it carries the two generation ids the surface is showing and an open control present exactly when both ids exist, rendering `SourceContent` beside itself, while the byte-form row states that no expansion request can name it. No existing claim wording was changed, and the two verification rows are deliberately **not** advanced: nothing in this leaf is committed and the governed closeout owns the real stamp.
-- 2026-09-21T16:10+02:00 — orchestrating session, pre-closeout metadata repair on `ar/260921-icr-l2`: the governed closeout refused the memory leg because this card for a module that exists only in this leaf's uncommitted candidate carried no verification stamp in its header metadata (`external-memory closeout requires onboarding verification metadata before memory commit`). The two fields were added naming the **production line this card was read against** — `c755cec6…`, the master line after this leaf's resolved syncs brought in the ICR-L5 and ICR-L19 landings, at that closeout's recorded time `2026-09-21T15:29:12+02:00` — and the candidate row was left as it was. This states what the reading was against, not that the module exists in that commit; the closeout's own metadata refresh re-stamps the card against the code commit this transaction creates. No range, claim or anchor was changed by this repair.
-- 2026-09-21T14:59:00+02:00 — 260921-ICR-L2 curator (uncommitted change set on `ar/260921-icr-l2`, base `702714fc05363cb28eacaf101ba8384475a6aa56`): created this one-to-one card for the module this leaf introduced as the review surface's one owner of the **source-change inventory** of a bound tree pair. The card records what the module is for rather than only where the code lives: the inventory is measured from the two bound tree ids and from nothing else, so knowledge availability cannot remove a source change from the list; the Git interface is NUL-delimited (`--raw -z`, `--numstat -z`) because a pathname containing a tab or a newline is an *address* and a line-oriented reader would hold a different string; status, mode and renderability are three separate facts, with binary, symlink, submodule, type-change and mode-only entries all listed; a failed measurement is `unavailable` with a stated reason and never a fabricated empty list; and a changed path whose name is not valid UTF-8 is carried by its **exact byte form** in `unrepresentable_paths` with the inventory marked measured **and** partial, so the two lists together are the whole measured population. It also records the seam the extraction closed: `knowledge_diff.git_tree_difference_probe` is now a one-line delegation to this module's `tree_difference_observation`, so the comparison's expansion and the review's inventory read one observation instead of two. **Stamp accounting:** this card carries **no `lastVerifiedCommitHash` and no `lastVerifiedCommitDate`** at creation, because every construct it cites exists only in this leaf's uncommitted candidate and no real commit contains the content a stamp would claim to have verified; the candidate this reading was taken against is named in the entry itself, and closeout owns the real stamp once the code commit exists. (The candidate-reading metadata row this entry used to point at was removed on 2026-09-22 under the developer's rule that it is not a real field; see this card's removal entry.)
+
+- The current comparison viewer renders named changed-file rows and explicit byte-form cannot-open rows in All changes; the backend inventory supplies wire data, not this UI. [66]
+
+
+- Comparison list/diff requests use the held comparison number; changed-file controls open only eligible listed files, while byte-form paths remain displayed cannot-open facts.
+
+- Comparison list/diff requests use the held comparison number; changed-file controls open only eligible listed files, while byte-form paths remain displayed cannot-open facts. [68]
+- Comparison list/diff requests use the held comparison number; changed-file controls open only eligible listed files, while byte-form paths remain displayed cannot-open facts. [69]
+
+- The module docstring: measured from the pair, delimiter-safe, three separate facts, failure as a state. [27]
+
+- The current shared tuple combines raw metadata and numstat in one NUL-safe command, with parsed-diff options, --no-abbrev and no renames. [28]
+
+
+- One combined Git observation, unavailable/partial answers, and available-only request-local memoization. [29]
+
+- A path that cannot be carried as text. [30]
+- The content kind of one record. [33]
+- The command text of an inventory. [34]
+- The inventory value for one pair. [35]
+- The pane: inventory, locations, relationships, attribution lists and counts. [36]
+- A count is a value or a reason, never both. [37]
+
+
+- The retained parsed-diff test checks PARSED_DIFF_OPTIONS in the current combined _RAW_ARGS and prefix/colour/driver options in code.BLOB_DIFF_ARGS. The former separate raw/numstat tuple account is historical. [38]
+
+
+- The review body is identical under a hostile Git configuration. [39]
+- The module's own statement of the three properties it exists for — measured from the pair, delimiter-safe, three separate facts with a failed measurement as a state — and of why the pane lives beside it. [40]
+- The published surface: the one reference constant, the probe, the inventory, the pane projection and the three limit helpers. [41]
+
+- One combined raw/numstat Git question with --no-abbrev, --no-renames and -z. [42]
+
+- The status vocabulary that names Git's letters and states `unknown` for a letter outside it, and the two modes that decide a path's kind before any byte is read. [43]
+- The stated reasons an inventory carries: an uncomparable pair, an output that is not the declared format, a tree without its root, an unclassified content, an unstated status and an unrepresentable name. [44]
+- The observation's own record: Git's two modes, the change letter, the raw path, and the two properties the mode answers (submodule, symlink) plus the one that separates "the bytes moved" from "only the permission word moved". [45]
+- **One bound endpoint as the observation's own side: an object id and the root it resolves in, travelling together or not at all.** [46]
+- **The declared limits: unavailable, partial, or neither — stated at the top level of the response because a limit a reader has to open a pane to find was not stated.** [47]
+- **The measurement itself: the two object ids, the delimiter-safe read, the content classification, the partition into carried and uncarried changes, and the unavailable answers that are never empty change sets.** [48]
+- **The non-UTF-8 boundary: the predicate that observes a surrogate-escaped byte and the exact byte form that carries the name instead of re-encoding it.** [49]
+- **The kind of one entry, decided by mode first and measurement second, and the reason an `unknown` is unknown.** [50]
+- **The command that reproduces the inventory, naming the two requested objects and never a branch, a working tree or `HEAD`.** [51]
+- **The review's own inventory value: the injectable probe seam, the already-made observation a caller hands in, the paths-without-statuses rendering, the measured/unavailable state, the count that is the list's own length, and the unrepresentable remainder.** [52]
+- The sentence a measured inventory publishes about itself, including the one that separates a measured empty set from an unmeasured one. [53]
+- **Pane 2: the inventory first and unconditionally, then the measured partition it is read from, the address view the recorded-relationship traversal renders, the relationships themselves, the six remaining counts, expansion and the three bucket lists.** [54]
+- **The scope of each count and the two partition facts in the comparison route's spelling.** [55]
+- **The wire value this module builds, with the count checked against the list and the unrepresentable rule enforced at construction.**  Anchor: `ReviewSourceInventory` [58]
+
+- The adapter's composition: the observation made once and handed to both renderings, before any dataset is opened and before the selector branch, and its limits declared at the top level. [60]
+
+- **The cases that measure this module against real repositories: population and per-path status against an independent Git observation, the tab/newline name, one entry per renderability kind, unavailable versus measured-empty with its control, the paths-only partial rendering, and the non-UTF-8 byte form.** [61]
+
+- **The cases that measure the inventory through the real composition and the real route: no knowledge at all, an unusual name carried by the shipped capture, non-text and mode-changed paths, and a non-UTF-8 name that leaves the review openable and partial.** [63]
+
+- Retired at the fifth freeze d59c3493: dashboard/src/panels/changeset/ChangeSetViewer.tsx:253-294 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c861abfeff33c9ef8f1ca066604c8f971b613361. Retired means the anchor no longer stands, not that the cited subject was deleted.

@@ -1,0 +1,139 @@
+{
+  "path": "scripts/e2e_harness/run_fresh_user.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The entry point that drives the acceptance and writes the transcript.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57d707d85cd92b037c1dc86bfb3a310db97446eb",
+            "content": "sha256:440f3fd8fe4d19a66afa3ecddf13c0f91c9fb2f4726ac8c020ede725dd828257",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 49
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`--reports` is required and `--work-root` is optional.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57d707d85cd92b037c1dc86bfb3a310db97446eb",
+            "content": "sha256:84758b2796f097305a3c3633c20586f6227bf3dbfcfd16f8e731b9c816136cb9",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 37
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The transcript lands under this directory name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57d707d85cd92b037c1dc86bfb3a310db97446eb",
+            "content": "sha256:0ebd69c7f2f756c10cc61570742ea9630c3128a285fb0ed31d57ce800d4796e8",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 34
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Anchor: `run_fresh_user_acceptance`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57d707d85cd92b037c1dc86bfb3a310db97446eb",
+            "content": "sha256:352e3a5162ce41991abc596e7c4a90cb4dfbf086c5832cd295ee254a541174aa",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The shared writer for the transcript file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6d901c61e127ff9d281e7965feb949685271de2",
+            "content": "sha256:a03907458cb7dfa1c229150e0d24fe1526d63754c6d57a55d874fae2d481beba",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 39
+            },
+            "path": "scripts/e2e_harness/reporting.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The case pinning the argument contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0efc8cc4ef2107ae05cd51f89d2c8949693ddb09",
+            "content": "sha256:fe0eba03697351152f8bd778b6f74cfb28519f87192e72c6146156535b3de661",
+            "locator": {
+              "end": 206,
+              "kind": "line_range",
+              "start": 199
+            },
+            "path": "mcp/tests/test_fresh_user_harness.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The runner uses HARNESS_DIR for the scripts root and imports scenario/reporting through e2e_harness-qualified names. Its lifecycle row declares the harness test as its one consumer; the row equals its base registration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57d707d85cd92b037c1dc86bfb3a310db97446eb",
+            "content": "sha256:3e5fa02f1359253aa0b154c049a573e5c2fadc7aa45202c8731398366c431ab1",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 23
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0556945441335e93cd0b1783dba11d3b2eb279a7",
+            "content": "sha256:0a831837e7cbd6e2210905fdabcafc9844ad2b1c3c4342393b46c81d3b624bc1",
+            "locator": {
+              "end": 4900,
+              "kind": "line_range",
+              "start": 4883
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

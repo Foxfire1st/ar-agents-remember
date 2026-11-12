@@ -1,15 +1,5 @@
 # codegraphcontext-0.4.10-cgcignore-runtime-root.patch
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/package_data/runtime/providers/patches/codegraphcontext/codegraphcontext-0.4.10-cgcignore-runtime-root.patch` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-24T18:10+02:00                     |
-| lastVerifiedCommitHash | `a8ee8440dfa920d1153a4bb4bb43cc77534c3c90` |
-| lastVerifiedCommitDate | 2026-05-25T15:22:52+02:00|
-| governingOverview      | `../../../../../../../overview.md`                              |
-
 ## Governing Overview
 
 [overview.md](../../../../../../../overview.md)
@@ -32,18 +22,8 @@ The patch is version-specific. Lifecycle tooling should apply it only after inst
 
 Managed CGC provider mode is not acceptable if indexing creates `.cgcignore`, `.codegraphcontext`, `CGC_REPORT.md`, database files, or logs in the source repo. This patch addresses the `.cgcignore` case for CGC v0.4.10.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The patch replaces CGC's direct repo-local `.cgcignore` default with a branch that prefers `explicit_cgcignore_path`. | `explicit_cgcignore_path`; "-    if local_cgcignore_path is None:"; "-        local_cgcignore_path = ignore_root /"; "Agents Remember patch"; "+        local_cgcignore_path = explicit_cgcignore_path"; "+        local_cgcignore_path = ignore_root /"; "+        ensure_default_cgcignore" | mcp/src/agents_remember/package_data/runtime/providers/patches/codegraphcontext/codegraphcontext-0.4.10-cgcignore-runtime-root.patch:4-5; mcp/src/agents_remember/package_data/runtime/providers/patches/codegraphcontext/codegraphcontext-0.4.10-cgcignore-runtime-root.patch:8-10; mcp/src/agents_remember/package_data/runtime/providers/patches/codegraphcontext/codegraphcontext-0.4.10-cgcignore-runtime-root.patch:12-13 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-08-04T13:15:12+02:00 — 260731-EFA-L6 S18-B02 curator: extended the patch-branch claim through the removed default, explicit-path branch, fallback, and ensure call, then regenerated the range with the scoped fixer.
-
-- 2026-05-25T19:16+02:00: Updated the provider helper reference after `context_providers.py` was replaced by `providers.context` and context modules.
-- 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
-- 2026-05-23T17:50+02:00: Updated references after provider helpers became MCP package modules and the old source shared route was removed.
-- 2026-05-23T05:32+02:00: Updated managed CGC runner-path commentary after provider instances moved under `providers/runners/codegraphcontext`.
-- 2026-05-20T19:11+02:00: Created onboarding for the CGC `.cgcignore` runtime-root patch asset.
+- The patch replaces CGC's direct repo-local `.cgcignore` default with a branch that prefers `explicit_cgcignore_path`. [1]

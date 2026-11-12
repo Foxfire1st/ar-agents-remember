@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/certification/repository_profiles/models.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/certification/repository_profiles/models.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff`|
-| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [Certification contract overview](../overview.md)
@@ -61,46 +51,28 @@ None recorded.
 
 Repository rails carry optional sourceApplicability and canonical conditionalPrerequisites. GeneratedCandidateInput binds a unique source/generated scope census to a declared Gate-1 check rail. EnvironmentReconstructionDefinition declares producer, consuming gates, dependency directories, artifact/proof paths, reconstruction command and bounded time/entry/byte limits; directories must be unique and non-overlapping. Profile normalization orders environments, generated inputs and conditional prerequisites before digesting. The plan retains optional CandidateSourceSelection. Dagger executor transport declares optional retainedReportsArgument; the removed diffBaseArgument is not part of this schema.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `RepositoryRailDefinition` carries the current contract described above. | "class RepositoryRailDefinition" | mcp/src/agents_remember/certification/repository_profiles/models.py:139-162 |
-| `GeneratedCandidateInput` carries the current contract described above. | "class GeneratedCandidateInput" | mcp/src/agents_remember/certification/repository_profiles/models.py:255-269 |
-| `EnvironmentReconstructionDefinition` carries the current contract described above. | "class EnvironmentReconstructionDefinition" | mcp/src/agents_remember/certification/repository_profiles/models.py:272-301 |
-| `_normalize_repository_profile` carries the current contract described above. | "def _normalize_repository_profile" | mcp/src/agents_remember/certification/repository_profiles/models.py:338-398 |
-| `RepositoryProfilePlan` carries the current contract described above. | "class RepositoryProfilePlan" | mcp/src/agents_remember/certification/repository_profiles/models.py:611-648 |
+- `RepositoryRailDefinition` carries the current contract described above. [1]
+- `GeneratedCandidateInput` carries the current contract described above. [2]
+- `EnvironmentReconstructionDefinition` carries the current contract described above. [3]
+- `_normalize_repository_profile` carries the current contract described above. [4]
+- `RepositoryProfilePlan` carries the current contract described above. [5]
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No configured Domain Documentation source applies; this is the repository-neutral R22 contract.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The selector authority pins v2 schema and declares external inputs. | `RepositorySelectorAuthority` | mcp/src/agents_remember/certification/repository_profiles/models.py:165-175 |
-| Canonical profile normalization determines the repository profile digest. | "def repository_profile_digest" | mcp/src/agents_remember/certification/repository_profiles/models.py:401-403 |
-| Selector normalization canonicalizes its declared collections. | "def _normalize_selector" | mcp/src/agents_remember/certification/repository_profiles/models.py:454-463 |
-| The canonical profile revalidates its content digest. | "class CanonicalRepositoryCertificationProfile" | mcp/src/agents_remember/certification/repository_profiles/models.py:504-516 |
-| A repository gate plan binds exact semantic inputs and execution declarations. | "class RepositoryGatePlan" | mcp/src/agents_remember/certification/repository_profiles/models.py:563-608 |
-| A repository profile plan binds its selected gates and content identity. | "class RepositoryProfilePlan" | mcp/src/agents_remember/certification/repository_profiles/models.py:611-648 |
-| Gate plan digests exclude only the aggregate profile digest for stable per-gate identity. | `repository_gate_plan_digest` | mcp/src/agents_remember/certification/repository_profiles/models.py:651-662 |
+- The selector authority pins v2 schema and declares external inputs. [6]
+- Canonical profile normalization determines the repository profile digest. [7]
+- Selector normalization canonicalizes its declared collections. [8]
+- The canonical profile revalidates its content digest. [9]
+- A repository gate plan binds exact semantic inputs and execution declarations. [10]
+- A repository profile plan binds its selected gates and content identity. [11]
+- Gate plan digests exclude only the aggregate profile digest for stable per-gate identity. [12]
 
-## Cross-Repo References
+### Cross-Repo References
 
 None; this is the repository-neutral profile schema authority.
-
-## Update History
-
-- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=c92d69d615553de1c1c79a204c525e443cdb6679d414020f299ebd56438e2810; verification metadata remains unchanged because commit-owned realization is pending.
-
-
-- 2026-09-07T01:15:32+02:00 — Timestamp-format repair of the earlier 2026-09-07 event (original exact time unrecorded): Reconciled current source-selection and ownership semantics against the retained verification baseline; prior pins and history remain unchanged.
-
-- 2026-09-06T22:41:21+00:00: Generated citation repair: `RepositorySelectorAuthority` repointed to mcp/src/agents_remember/certification/repository_profiles/models.py:165-175. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-06T22:41:21+00:00: Generated citation repair: `repository_gate_plan_digest` repointed to mcp/src/agents_remember/certification/repository_profiles/models.py:651-662. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for
-  db57101a9001ede8c681ff9de4eb0147d8b636bc (CCR-R19@v2/L19): created the card and recorded the
-  L19 changes — `RepositorySelectorAuthority.schemaVersion` pinned to
-  `repository-selector-result/v2` and the declared `externalInputs` tuple that now
-  participates in the normalized profile digest. Verification is pinned to the owning commit.

@@ -1,0 +1,225 @@
+{
+  "path": "mcp/src/agents_remember/models/memory_content_excludes.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The declared policy: the ledger cache, the bootstrap scaffolding, and their one tuple.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90848f80f5692b8abaeb3b2d3f7abe6b7344bed1",
+            "content": "sha256:8ff6e9eb479ef62ddcde698b4ad482be15a729f59264852043a28ccb51554930",
+            "locator": {
+              "kind": "symbol",
+              "name": "LEDGER_CACHE_RELATIVE_PATH"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "90848f80f5692b8abaeb3b2d3f7abe6b7344bed1",
+            "content": "sha256:18c491b1bea1160e38174763f6bd0fcb355f56544f80a207c725e0f136266f78",
+            "locator": {
+              "kind": "symbol",
+              "name": "BOOTSTRAP_SCAFFOLDING_RELATIVE_PATH"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "90848f80f5692b8abaeb3b2d3f7abe6b7344bed1",
+            "content": "sha256:713e1afb20cfa4c1cb6f5b2b3a9cac350984d950d549f2b1298434fcff637aa6",
+            "locator": {
+              "kind": "symbol",
+              "name": "MEMORY_CONTENT_EXCLUDES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The staging helpers turn names into exclusion pathspecs and remove derived entries from the index.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f53c952d51eb1b83c2d97993768dbc0809cc6ea",
+            "content": "sha256:4b9bcedb6108e8225ac5ccc2a955c68aff578f2359bacda49ad6651f732304fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_excluded_pathspec"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/capture_index.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+            "content": "sha256:f3289bb535ddc8dac5e1c007bfbee06aeb8a0fda33591b76a15080ad8550e442",
+            "locator": {
+              "kind": "symbol",
+              "name": "stage_worktree_content"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+            "content": "sha256:65403786714de8e84db7f5bd72a23427d9c3ccd54edda2f4efe9981559d9b9a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "commit_if_dirty"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Baseline adoption passes the shared exclusions on the private-index staging call.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bfbe2e81d84a8bfc86b538760f6510133897cc83",
+            "content": "sha256:90564862944969df9ce94f1879758f8292bfd1d26c38277e85cea02eeff7c139",
+            "locator": {
+              "kind": "symbol",
+              "name": "_stage_for_commit"
+            },
+            "path": "mcp/src/agents_remember/memory/baseline.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Carryover applies worktree content without staging, committing or consuming this exclusion tuple.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f2012e3d1b6cfcf742adc9b3bf25460b4073950",
+            "content": "sha256:995e469cb000e69d917212ec9c2ff7a67b96b37a66646ee8aa825c9a2188a674",
+            "locator": {
+              "kind": "symbol",
+              "name": "_apply_carryover_for_request"
+            },
+            "path": "mcp/src/agents_remember/memory/carryover.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "External closeout applies the shared exclusions to its dirty check and exact memory-tree capture.\n\nAnchor: `_exact_memory_tree`, `_commit_memory_content`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:8b005244c058f89a5173a0a1d8c6a01fcba28076d5dd37dc456d66ade779e9e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_exact_memory_tree"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:d74fc2b14e7948998b1aaaea59cb7cb4c2d67731eee72bafdab33e7f9381ff29",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commit_memory_content"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Since MIK-R09 the mandatory gate's exact-tree captures use it too (the closeout's `_exact_memory_tree`, direct landing's `_memory_content_tree`), so the tree the gate judges leaves out what the memory commit leaves out.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:8b005244c058f89a5173a0a1d8c6a01fcba28076d5dd37dc456d66ade779e9e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_exact_memory_tree"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ae56f6c72b4720e9cd1ae2abdd42551a79d4c1d4",
+            "content": "sha256:02b7b8473248163ebad747818ab63a8a92f103861c010144b196e2dd0163295f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_memory_content_tree"
+            },
+            "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Direct landing applies the shared exclusions when capturing its exact memory-content tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae56f6c72b4720e9cd1ae2abdd42551a79d4c1d4",
+            "content": "sha256:02b7b8473248163ebad747818ab63a8a92f103861c010144b196e2dd0163295f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_memory_content_tree"
+            },
+            "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Baseline adoption and commit_if_dirty regression cases exclude bootstrap scaffolding while leaving it on disk; they do not execute carryover or a full closeout.\n\nAnchor: `test_the_first_baseline_never_commits_bootstrap_scaffolding`, `test_no_memory_content_commit_stages_bootstrap_scaffolding`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9861c72ac24c02e19b7fd2360ac95be1a6d9e5c3",
+            "content": "sha256:50ac75f5f6b00a2b6b635be939bd7274439079f41bd54ad26039eb7049bfd939",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_first_baseline_never_commits_bootstrap_scaffolding"
+            },
+            "path": "mcp/tests/test_memory_branch_authority.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9861c72ac24c02e19b7fd2360ac95be1a6d9e5c3",
+            "content": "sha256:b3808b5b3e1331d4df5d2315a414c566be9e768b6f486ef2b8f28763ca74ca31",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_no_memory_content_commit_stages_bootstrap_scaffolding"
+            },
+            "path": "mcp/tests/test_memory_branch_authority.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

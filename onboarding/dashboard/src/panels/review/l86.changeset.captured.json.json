@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/panels/review/l86.changeset.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Comparison list with number and echoed trees\n\nAnchor: `comparison`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0172b0de48e056922f9b04daf4ab9c375c1aa5e7",
+            "content": "sha256:3530e6beac88382b7290de99947b13f12b0ac2828280d8e6acb4f2c122707f56",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Four measured tree ids\n\nAnchor: `trees`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0172b0de48e056922f9b04daf4ab9c375c1aa5e7",
+            "content": "sha256:3530e6beac88382b7290de99947b13f12b0ac2828280d8e6acb4f2c122707f56",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Per-file status with sidecar pairing\n\nAnchor: `hasSidecar`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0172b0de48e056922f9b04daf4ab9c375c1aa5e7",
+            "content": "sha256:3530e6beac88382b7290de99947b13f12b0ac2828280d8e6acb4f2c122707f56",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

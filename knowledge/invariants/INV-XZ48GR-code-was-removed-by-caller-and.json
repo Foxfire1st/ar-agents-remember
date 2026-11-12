@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Realized where the closures were made — the watcher action maps, the cgc process control and the lifecycle service — and the mistake it prevents is deleting a symbol a surviving stop path still reaches, which would break the safety and cleanup guarantees this same leaf must keep."
+  },
+  "applicability": "Every retired provider module, symbol, asset and setting key of this repository.",
+  "conditions": [
+    "A caller inventory exists for the exact candidate that removes the subject.",
+    "A surviving production root is traced before a closure is declared."
+  ],
+  "exclusions": [
+    "Deleting a module because its first scan says remove, while a retained stop or safety root still calls it.",
+    "A facade export, an import, or a generic action argument standing in for a production root."
+  ],
+  "id": "INV-XZ48GR",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_l192_provider_status_closure.py (6 cases: allowlist, both action maps, ValueError for start/status, retired helpers, image retained) and 260928-MIK-L192-repair-audit-provenance-handoff-v2.md (removal delta map). The module is one of the two repaired under the scoped pyright finding — two `cast(McpRuntimeConfig, …)` wrappers only — so its assertions are the ones that ran before and after that repair unchanged."
+      ],
+      "path": "handoff-list.l192.json"
+    },
+    "handoffEntry": "L192-W-R199-03",
+    "leaf": "260928-MIK-L192",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Code was removed by caller and not by module: every provider symbol, asset and key carries a recorded caller disposition, and the two closures finished only after their surviving production roots were shown to reach no start or status path (the watcher status/start branches, then the 15-function cgc start chain).",
+  "status": "proposed",
+  "supersedes": []
+}

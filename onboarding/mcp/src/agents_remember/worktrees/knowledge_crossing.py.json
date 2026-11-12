@@ -1,0 +1,300 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/knowledge_crossing.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
+        "content": "sha256:53ec00387e7306cd1e352c660296331a45c01a1cc25f1b8c2a409ada67d4277e",
+        "locator": {
+          "kind": "symbol",
+          "name": "unconverted_line_refusal"
+        }
+      },
+      "id": "RLZ-2CB6AP",
+      "invariant": "INV-JT28KJ",
+      "origin": {
+        "handoffEntry": "L37-cutover-lock",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "The leaf writer/quality choke refuses a legacy worktree with crossing guidance from a converted official source or first-conversion guidance otherwise.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
+        "content": "sha256:7cb5e728878c9f83736071027ced10ef6989208cf8f258cfc7e211ce330da909",
+        "locator": {
+          "end": 377,
+          "kind": "line_range",
+          "start": 319
+        }
+      },
+      "id": "RLZ-91VYMY",
+      "invariant": "INV-0J9FS1",
+      "origin": {
+        "handoffEntry": "L66-W4-07",
+        "leaf": "260928-MIK-L66"
+      },
+      "rationale": "The report writer persists the alignment counts; the emission predicate keeps every nonzero diagnostic population; the success projection carries the same summary view as resolution. Together they are the constructs the clause reports with.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "12": {
+      "note": "`merge_structure` implements the retained boundary described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
+            "content": "sha256:30a54f3769edbfbc38a046484f4aa1a130ac442b881f2c7dd545e792a053b3a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "merge_structure"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "`crossing_plan` implements the retained boundary described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
+            "content": "sha256:f7a0fc4572c73ecc54bb34f2dc3e20986303a06174cd1e1ede8615a339722fd2",
+            "locator": {
+              "kind": "symbol",
+              "name": "crossing_plan"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "`apply_crossing` implements the retained boundary described above.\n\nAnchor: `apply_crossing`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
+            "content": "sha256:0860cab26f7e5d70b2a1f337343d94382f3e23a8bc1411dfcd644d11cfd5b007",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The curator text forbids hand renumbering: the merge aligns numbers itself.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
+            "content": "sha256:d75a23a84851f8574389dd80ff2ebd6eb8de1736e498e6eff825d3b5cf830bca",
+            "locator": {
+              "kind": "symbol",
+              "name": "HOW_TO_RESOLVE"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The summary carries the alignment counts with zero defaults.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
+            "content": "sha256:aa2c2719d400a40951748e06dd979d480eee5fc30387595467df93f30768aa66",
+            "locator": {
+              "kind": "symbol",
+              "name": "crossing_summary"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "A crossing sync: one tree unconverted and one converted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
+            "content": "sha256:30a54f3769edbfbc38a046484f4aa1a130ac442b881f2c7dd545e792a053b3a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "merge_structure"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The plan through the bound port, refused without a paired code commit or a bound crossing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
+            "content": "sha256:f7a0fc4572c73ecc54bb34f2dc3e20986303a06174cd1e1ede8615a339722fd2",
+            "locator": {
+              "kind": "symbol",
+              "name": "crossing_plan"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The merge's knowledge and onboarding paths become the plan; conflicted paths are unmerged with three stages.\n\nAnchor: `apply_crossing`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
+            "content": "sha256:0860cab26f7e5d70b2a1f337343d94382f3e23a8bc1411dfcd644d11cfd5b007",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The shared legacy refusal names crossing sync for a converted official line and first conversion otherwise.\n\nAnchor: `unconverted_line_refusal`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
+            "content": "sha256:0860cab26f7e5d70b2a1f337343d94382f3e23a8bc1411dfcd644d11cfd5b007",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "A master-line crossing history file is closed in the merge commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
+            "content": "sha256:3302222db837b98bf5fef2034d41306d014a5ba2a0f0829d178b3ca479d7dab3",
+            "locator": {
+              "kind": "symbol",
+              "name": "close_crossing_history"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "The durable report and its bounded summary, with the how-to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
+            "content": "sha256:f3f0c7ee1f793ec67ce30436950163e72dd40e0a71753c28fe1c62ede4ff2921",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_crossing_report"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "Legacy refusal is unconditional; converted candidates retain their gate route.\n\nAnchor: `unconverted_line_refusal`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
+            "content": "sha256:0860cab26f7e5d70b2a1f337343d94382f3e23a8bc1411dfcd644d11cfd5b007",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "No branch or unresolved tip returns False; a resolved tip whose marker object is unreadable returns its named LayoutProbeError",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
+            "content": "sha256:8889988433959f51bbce82c0c730d0291f8d840ff3c978e4141ac0aa6e9b9744",
+            "locator": {
+              "kind": "symbol",
+              "name": "_official_line_converted"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "The managed sync crosses an unconverted leaf into a converted line.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fab936dda80543f94c1a840030ce192da6fa5616",
+            "content": "sha256:c47e053eeef9b1a79299c2fbaf4b07dbb2a073343d67ef58acba8ee517470239",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_managed_sync_crosses_an_unconverted_leaf_into_a_converted_line"
+            },
+            "path": "mcp/tests/test_knowledge_crossing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "26": {
+      "note": "Overlapping edits go to the curator with markers; a failed step changes nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fab936dda80543f94c1a840030ce192da6fa5616",
+            "content": "sha256:4e4830a84005983da07a3c5589b501f73475627a3565c79bb4c4e1725268f4fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_crossing_leaves_overlapping_edits_to_the_curator_and_a_failed_step_changes_nothing"
+            },
+            "path": "mcp/tests/test_knowledge_crossing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "27": {
+      "note": "The refusal fires on legacy leaf memory independent of converted memory elsewhere.\n\nAnchor: `test_an_unconverted_leaf_is_refused_with_the_conversion_step_on_any_line`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c1c7d17344cd9be8f9ea3dbac4d826343761c185",
+            "content": "sha256:28fd122ff2c33d1107d06aa386bb795f4dba57257da61e80f4c61dd118335d22",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_conversion_toolchain.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

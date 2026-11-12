@@ -1,0 +1,124 @@
+{
+  "path": "mcp/src/agents_remember/application/coordination_tools.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "2": {
+      "note": "Coordination context resolver owns the actual context construction.\n\nAnchor: \"_resolver.resolve_coordination_context\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f7bfd6b8f0856480bb81f6be86aeebcbf6fd25e",
+            "content": "sha256:65eded254886823405bb56e4121f233239cfafb11d2b9e524acc0e316772932d",
+            "locator": {
+              "end": 146,
+              "kind": "line_range",
+              "start": 131
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context_resolver.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`require_repo` and `require_within_coordination` (repo resolution and path confinement) now live in the shared `kernel/authority.py` module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d388f031da44e1f2092162e77e55cabbdfbf82ad",
+            "content": "sha256:b796960fc74a9b30db4aa3ef0b9739906ba9205382c96e9b73141c8260ddeeb4",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_within_coordination"
+            },
+            "path": "mcp/src/agents_remember/kernel/authority.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d388f031da44e1f2092162e77e55cabbdfbf82ad",
+            "content": "sha256:b977602b87edfa146bea5330d4c8a95b1b688fe8cbbe5cc367d2d2b844901c9e",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 27
+            },
+            "path": "mcp/src/agents_remember/kernel/authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`AuthorityError` is the authority-violation error type the guards raise.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f44c8d99dcf91688bcc70c6659a03fbf91c40a5e",
+            "content": "sha256:6b60d43c9ef5c7c9675d1b65bbc5b3b96af08cd1f6b69c9126f03b1a2022d010",
+            "locator": {
+              "kind": "symbol",
+              "name": "AuthorityError"
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f44c8d99dcf91688bcc70c6659a03fbf91c40a5e",
+            "content": "sha256:fb800266240f36af9f14de537ed4d581198f01f8f68c8fb12005119ee5900e72",
+            "locator": {
+              "end": 116,
+              "kind": "line_range",
+              "start": 110
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f44c8d99dcf91688bcc70c6659a03fbf91c40a5e",
+            "content": "sha256:be727b36063ef5c6ae8e727184befe925508ffd4cdb421132c5398415578b630",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`resolve_context_tool` is retained as an unregistered computation whose only caller is `scripts/pnt_sandbox/build_roots.py`; public orientation stays with `context_packet`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1b5b6819f2e8e4aa3cd02b9e26d6dc1b5e1d0614",
+            "content": "sha256:472e59581e2d31b9d9eecafe0dff6390563fbb71514a931da9ade35fed9fffba",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_context_tool"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d761896c386f18cb351957b2b8eb97f0a29e53e2",
+            "content": "sha256:206071c42de1aff30b9b7232be7a57b08118e5fa08026e6382edc496f618aca4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "scripts/pnt_sandbox/build_roots.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

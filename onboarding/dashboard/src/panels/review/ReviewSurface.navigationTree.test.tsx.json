@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/ReviewSurface.navigationTree.test.tsx",
+  "realizes": [],
+  "references": {
+    "5": {
+      "note": "Unselected opening, current offered viewer destinations and Worklist selection retention.\n\nAnchor: \"import { afterEach, beforeEach, expect, it, vi } from 'vitest';\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4badbc5b450c3684735f149ea466a2e8be4accf",
+            "content": "sha256:2575dec8c6ae2ca738d935416267b45c7c24aa4cfb2fe7a574d148b264516233",
+            "locator": {
+              "end": 132,
+              "kind": "line_range",
+              "start": 4
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

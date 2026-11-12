@@ -1,33 +1,53 @@
 # mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T08:01+02:00 |
-| lastVerifiedCommitHash | `7ca3ac48914a562bb90b5fe04d6c17b5a3f51d80`|
-| lastVerifiedCommitDate | 2026-09-20T02:00:33+02:00|
-| governingOverview | `../../../../../../../overview.md` |
+## Current supported-pair account — R100/R116 composition
+
+
+Manager starts Worker at build, Reviewer at freeze and Curator after code PASS; Worker cannot start its checker or accept/publish its own implementation. Its stage requires a final candidate meeting the requirement, the memory coding guidelines’ handover checks passing on a clean copy of its final bytes, and the report with Reviewer. Own failures are corrected on its own ground; blocked/unrun evidence remains explicit. A record-only repair stays on the same review round only with candidate unchanged; repeated cases demand property/construction reasoning rather than case chasing.
+
+
+## Message/file transport
+
+This packaged copy makes role messages short wake-ups naming requested work or a handover and its files. Complete report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, never pasted into message text. Within a shared task, message files remain with its record and a leaf workspace exposes the message-folder link. Wake text uses the effective settings limit, not a number pinned in this role/template.
+
 
 ## Governing Overview
 
 [MCP package overview](../../../../../../../overview.md)
 
+## Synced current-source qualification
+
+Name affected realization claims and relevant sibling realizations with knowledge_read on agents-remember-task, then open the named record files natively.
+
+
 ## Purpose
 
-This file is the packaged runtime artifact synchronized exactly from canonical
-`skills/l-01-agent-lifecycles/roles/worker.md`. It gives installed runtimes the same one-real-leaf
-builder lifecycle and owns no independent worker doctrine.
+The native Worker implements one selected leaf’s approved primary requirement and explicit preservation constraints in its paired code enclosure.
 
-The packaged role is now a **self-contained lifecycle in the corpus's readable order** — purpose and
-authority → required inputs → normal workflow → permitted writes and actions → stop and escalation
-cases → completion and handoff, then its machine-readable knob block. It declares its shared sources
-with `**Inherits:**` instead of restating them (`core/authority.md`, `core/invariants.md`,
-`core/lifecycle-frame.md`, `core/acceptance.md`, `operations/orientation.md`,
-`operations/implementation.md`, `operations/recovery.md`). The build procedure it used to carry inline
-now lives once in `operations/implementation.md`, and the targeted-check contract it owes its owner
-lives once in `operations/closeout.md` § The targeted-check contract.
+The Manager prepares this seat alongside its Reviewer and Curator. Preparing held siblings changes no Worker duty: freeze and hand over directly to Reviewer, then send the exact producer list to Curator after the ruled code disposition. The Worker starts no role and never starts its own checker.
+
+## Current Contract
+
+
+The Worker’s stage ends when the candidate meets the requirement, the handover checks named by the memory coding guidelines pass on a clean copy of its final bytes, and the report is with Reviewer. Each of these stages repairs faults in its own work or instrument and corrects invalid input through the same tool, reports the repair, and continues. It stops for an open permission prompt, a guard/tool refusal that survives correct input or names unowned state, a requirement-meaning question, or an effect outside its own worktree, scratch folder and task. An unfinished final turn names what it awaits and from whom; the existing role-specific stops and write boundaries remain.
+
+When all candidate findings are closed and only the Worker’s report/evidence/hash/anchor remains to repair, the same Reviewer records the repaired record on its last round without `begin_review` or a count increase. This requires the candidate to remain byte-for-byte unchanged; a changed or unproven candidate requires `begin_review`, and remaining finding IDs can only shrink.
+
+A Reviewer finding states the required property the candidate breaks; the showing case is proof, not the finding. If a repair leaves that finding open, the Worker states the property for every case and proves the construction or changes it, reporting which. A beyond-limit request carries that property-and-construction account.
+
+Read the selected requirement and leaf task only: open the exact rendered_path and json_path supplied by taskDocReadArgs with own file tools; these are file locations, not a tool-server read call. task_doc writes and does not read. Name relevant records through knowledge_read using supplied memoryRoot; both context_packet and read_ar_files use task_context with the canonical task reference and enclosure contract. Resolve missing facts from that canonical task and requirement without inferring a different task. Confirm paired code/read-only-memory/report bindings; do not load the whole task hierarchy or infer a different task.
+
+Before editing a source file, read its attributed records with `knowledge_read` on `agents-remember-task` (`view="source_context"`); build the worktree's environment and run candidate commands as `system/tools.md` says. For code changes, read `system/coding-guidelines.md` under `workspace.memoryRoot` in full, where it exists, before the first source edit, follow it for every line of source code, tests and product messages, and tell a code helper to do the same. Repair failures in the Worker’s own work or instrument and continue; keep a failed or unrun check visible only when it cannot be made to pass on the Worker’s own ground, explicitly saying so. When invariant/family context applies, inspect affected claims and relevant unchanged siblings; report out-of-scope manifestations rather than editing them.
+
+Keep one truthful canonical report with changed files, exact requirement/candidate evidence, checks and limitations. The Worker freezes its candidate and hands it directly to the leaf's Reviewer; after code PASS it sends its hand-off list to the Curator. The Manager receives no routine report notice; a dashboard-started Worker has no parent and uses its own final chat reply. Applicable producer Curator handoff data stays verbatim.
+
+## Conventions
+
+Canonical skills/l-01-agent-lifecycles/roles/worker.md owns the instruction. scripts/sync-skills.py regenerates this exact packaged copy, the sole generated skill target, which the tool server serves as MCP resources; no generated file defines a separate obligation.
+
+## Invariants And Boundaries
+
+Leave the candidate uncommitted. No independent self-review, semantic acceptance, memory/onboarding/task-state write, role start, closeout, merge or push. Restore the same task after compaction and do not duplicate uncertain work or invent a parent.
 
 ## Code Commentary
 
@@ -36,20 +56,6 @@ lives once in `operations/closeout.md` § The targeted-check contract.
 The synchronized worker is the builder with a **no-commit contract** at leaf altitude: it implements
 exactly the leaf plan inside the leaf's code worktree, runs its targeted checks, and writes the turn
 report — and it does not commit, land, close out, integrate, decide gates, or write onboarding.
-
-Its acceptance duty is now stated as one envelope per owned primary stable ID + version: `satisfied`,
-`blocked`, or `approved-change`, with delivery rationale and citations (code uses file path + symbol;
-non-code work uses the deliverable path + section/anchor), verification rationale that names the
-failure the evidence would catch, and the exact command and result. Attempt identity is a separate
-axis: the worker appends an immutable candidate-bound attempt record to the leaf's requirement attempt
-journal before review handoff, and internal test/evidence reruns are logged as experimental protocol
-events rather than minting attempts. A malformed row that was never handed off is voided without
-consuming an ID; a malformed handed-off row is rejected by the independent reviewer. All of this is
-authored once in `core/acceptance.md`, which the role now inherits rather than restating.
-
-A worker that never touches a mutating AR tool never instantiates a lifecycle; where it does mutate,
-it runs its own. Escalation is one rung up, and a red targeted check is reported rather than worked
-around.
 
 ### Conventions
 
@@ -63,30 +69,40 @@ around.
 ### Invariants And Boundaries
 
 - Installation cannot grant workers gates, closeout, integration, task-state, or memory authority.
+
 - Worker identity remains canonical leaf document plus role.
+
 - The worker never commits: it leaves the worktree dirty for the owning seat's transaction.
+
 - Durable turn report and terminal/finalizer truth remain the completion evidence — and terminal
   truth attests only that the turn ended, so the owner's validation is what accepts the handoff.
-- **This role file names no sibling role file.** The corpus forbids learning one's own obligations
-  from another seat's prose; the shipped check fails on any non-sanctioned reference.
+## Working folders and reports
+
+Agent-authored temporary files, experiments and working copies live only in the handover's real `workspace.scratchRoot`, outside code, memory and task folders; reports and evidence go in the handover's local report folder, which the product copies to canonical notes before removal.
+
+## Canonical repair-loop contract
+
+This generated carrier follows its canonical role; it adds no separate role or procedural authority. Worker repairs a sealed finding directly in its own task files. No plan, account, census, approval or Manager go-ahead precedes that repair. The supported whole commit check and the freeze remain required. The freeze gives each repaired finding its own ID, cause, files and line ranges, discriminating failing-before/passing-after test and result; unrelated changes are listed separately. After code PASS, the direct Curator handoff carries those same entries and changed paths.
+
+When the master line moves, Worker runs its supported leaf sync. If no path changed on both sides, Worker reruns focused tests once and tells Manager; Manager uses its closeout preview. No new freeze goes to Reviewer and no round begins. An overlapping path or a failing focused test instead needs the exact repair and one look by the same Reviewer. Native memory conflicts still go to Curator for content and Manager for capture, verification and staging before Worker continues the supported transaction.
+
+## Evidence
 
 
-## CCR-R12@v5 Transaction Boundary
+### Repo-Internal References
 
-This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full code quality, full tests, certification, and independent review are explicit operations only; curation is the exception — the curator always runs the complete memory-quality operation, and closeout and integration carry its completed result as a prerequisite rather than rerunning it. Requested reviews retain the sealed finding list and monotonic three-round limit.
-
-## Repo-Internal References
-
-| Finding | Anchor | Source |
+| Finding | Anchor | References |
 | --- | --- | --- |
-| The packaged worker declares its seat purpose, authority boundary, and no-commit contract. | "You build one leaf."; "the seat that owns this leaf commits at closeout" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md:8-8; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md:121-122 |
-| The role is a self-contained capsule — everything this seat does is on this page — and it declares no inherited shared sources. | "Everything this seat does is on this page" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md:8-9 |
-| The build procedure the worker follows has one home outside the role file. | `# Operation — Implementation`; `## Handoff / exit` | skills/l-01-agent-lifecycles/operations/implementation.md:1-1; skills/l-01-agent-lifecycles/operations/implementation.md:69-80 |
-| The targeted-check contract the worker owes its owner has one home outside the role file. | `## The targeted-check contract (what closeout consumes as evidence)` | skills/l-01-agent-lifecycles/operations/closeout.md:22-42 |
-| The role declares the readable order — Inputs, Process, Outputs — with no operator-knob block. | `## Inputs`; `## Process`; `## Outputs` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md:11-11; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md:36-36; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md:72-72 |
-| The canonical source owns this doctrine. | `# Worker` | skills/l-01-agent-lifecycles/roles/worker.md:1-14 |
-| A non-sanctioned sibling-role reference fails the shipped corpus check, which is why this role file names none. | `SANCTIONED_SIBLING_REFERENCES` | mcp/tests/test_role_instruction_corpus.py:114-116 |
-| MCP package data is copied from canonical skills and checked for drift. | `TARGETS`; `sync_target`; `check_targets` | scripts/sync-skills.py:43-47; scripts/sync-skills.py:136-157; scripts/sync-skills.py:179-203 |
+| Exact leaf intake, read-only memory, targeted evidence, single report and uncommitted role boundary. | lines 8-26 | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md:8-26 |
+
+
+- The packaged Worker leaves the candidate uncommitted and does not review or accept its own implementation, write memory onboarding, update task lifecycle or status, close out, commit, merge, push or publish. [1]
+
+
+- The Worker role file states the Worker's duties, and the supplied operation states the procedure. [2]
+
+- The canonical source owns this doctrine. [3]
+- MCP package data is copied from canonical skills and checked for drift. [4]
 
 ## R39 Generic Worker Checks
 
@@ -94,113 +110,26 @@ Workers copy repository-specific acceptance requirements from the resolved workf
 guidelines, and tools memory; they may not choose a familiar runner. Leaf closeout owns change-set
 acceptance, leaf integration does not rerun it, and full acceptance belongs to master integration.
 
-## 260815-DAG-L2 Leaf Quality Altitude
-
-Worker dispatch carries organizational or atomic execution nature and the corresponding source
-edge. Each leaf reports its targeted checks before handoff; closeout and integration consume that
-evidence as part of the authorized Git transaction without launching a full suite automatically.
-
-## M38 Worker Acceptance Projection
-
-The installed worker role carries the canonical one-block-per-stable-ID envelope: delivery and
-verification rationales, independently inspectable citations, exact result evidence, and the extra
-developer-ruling fields for blocked or approved-change status. It also makes Checks an explicit
-report section and uses deliverable paths plus stable anchors for non-code work. This copy owns no
-independent worker behavior.
-Intake refuses any packet that is not version-addressed, approved, ID/version-matched, and carrying
-its durable corpus-ruling citation.
-
-## M40/M43 Worker Attempt Projection
-
-The packaged worker appends an immutable exact-candidate attempt with predecessor findings,
-acceptance envelope, checks, and a closed failure class before handoff. Repairs append successors;
-they do not edit history or rewrite requirement semantics.
-
-## 2026-08-27 Attempt Boundary Clarification
-
-This packaged projection preserves the canonical phase boundary: validate before append; a
-malformed never-handed-off row receives a non-attempt correction/void without consuming an ID;
-a malformed handed-off attempt requires independent rejection before successor handoff.
-
-## Update History
-- 2026-09-20T00:56:08+02:00 — 260915-KS citation residue clearance (uncommitted change set on memory base `66b2ae8adebea11bc2300d2d51822f321a128657`): cleared the 1 enforced citation row this card carried (citation_anchor_absent_from_range): the no-commit claim's second range moved from `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md:114-115` to `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md:121-122`, the two lines that actually carry "the seat that owns this leaf commits at closeout" (the earlier range covered the read/search sub-agent bullet); the claim's wording, both anchors and its other range (`:8-8`, "You build one leaf.") are unchanged, and no verification stamp was advanced.
-- 2026-09-19T22:33+02:00 — 260918-TSIP-L11 curator (memory worktree `fd1a024e`, code `7879f5b2`): cleared the inherited citation debt on 1 claim(s) by RE-READING each claim against the merged tree and RE-DERIVING every cited range from the construct's real extent in the file the claim cites (`extents.anchor_extents`), never by adding a delta to an old number and never through the mechanical projection (no generated citation-repair bullet is written, so no claim is reopened by this edit). Claims re-read: `worker.md.md:82` ("You build one leaf.", "the seat that owns this leaf commits at closeout").
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-18T05:26:45+00:00: Generated citation repair: `SANCTIONED_SIBLING_REFERENCES` repointed to mcp/tests/test_role_instruction_corpus.py:114-116. No content impact: mechanical anchor-range projection bound to citation source snapshot 70078cc4ca208e40e9a66742bdc38893ecfb1757ca7d77a526e6ba2159339959; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `## 6 — Completion And Handoff`; `## Knobs, Tool Surface, And Dispatch Authority` repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md:146-175; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md:176-193. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: **complete curation inverts the doctrine this card recorded.** CAPS-R18@v1 removes the optional/narrow-curation sentences from the shipped instruction corpus and states the rule normatively — the full `memory_quality_check` operation runs as part of every leaf's curation at its contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every curator-actionable finding is repaired or escalated as blocked with its exact returned code, and closeout and integration **carry** the completed curation as a prerequisite while invoking nothing. Replaced the CCR-R12@v5 transaction-boundary boilerplate sentence, which still presented full memory quality as an explicit request, and updated the role's own curation sentences to the complete-handoff rule. Hand-repaired two citation findings this leaf's own source edit drifted (D14): the `## Knobs, Tool Surface, And Dispatch Authority` range to :176-193 and the `SANCTIONED_SIBLING_REFERENCES` range to the test module's current :110.
-- 2026-09-16T20:45+02:00 — owning-seat merge resolution (source-line convergence): the
-  `governingOverview` field and its link were restored to `../../../../../../../overview.md`.
-  The 2026-09-16T08:01 metadata repair above dropped one path level — this card sits one directory
-  below the skill's `SKILL.md` card, so the target it names (the MCP package overview,
-  `onboarding/mcp/overview.md`) needs seven levels up, not five. The five-level value resolved to
-  `onboarding/mcp/src/agents_remember/overview.md`, which does not exist, so the card pointed at a
-  missing file while its own text claimed the MCP package overview. No content claim changed; only
-  the path. Verification metadata is unchanged and stays closeout-owned.
-- 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **body updated for the corpus consolidation.** The
-  canonical worker role was rewritten (187 lines) into the corpus's readable order and now declares
-  its inherited sources with `**Inherits:**`. Updated Purpose (readable order plus inherited sources,
-  and where the build procedure and targeted-check contract now live), Logic (leaf altitude, the
-  no-commit boundary, the per-ID acceptance envelope with its citation classes, attempt-vs-protocol-event
-  separation, the two malformed-row outcomes, and lifecycle non-instantiation), Invariants (the
-  never-commits rule and the no-sibling-role-reference rule the shipped check enforces), and
-  Repo-Internal References (the two citations whose anchors no longer exist — `## What This Seat Is`
-  and `### 3 — Build` — replaced by current anchors, plus rows for `operations/implementation.md`,
-  `operations/closeout.md`, and `SANCTIONED_SIBLING_REFERENCES`). The preserved task-delta sections
-  below still describe rules in force; their live homes are `core/acceptance.md` (acceptance, attempts,
-  completion truth) and `operations/closeout.md` (the targeted-check contract). **Metadata repair:**
-  `governingOverview` pointed at `../../../../../../../overview.md` (the repository root overview) while
-  its link text said "MCP package overview"; corrected to `../../../../../overview.md`. Verification
-  metadata remains closeout-owned — the source is uncommitted, so no stamp was advanced and no commit
-  hash was invented.
-- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
-- 2026-09-09T12:22:46+00:00: Generated citation repair: "### 3 — Build" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md:73-73. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 synchronized manager-only worker dispatch,
-  explicit ambient takeover, and fixed structural-row ownership. Verification remains
-  closeout-owned.
-
-- 2026-08-28T11:51+02:00 — No content impact: synchronized the final independence and single-
-  authority wording; projection ownership and byte-identity rules remain unchanged.
-
-- 2026-08-28T11:32+02:00 — No content impact: synchronized projection payload changed with the
-  canonical one-primary requirement doctrine; projection ownership and byte-identity rules remain
-  unchanged.
-
-- 2026-08-27T22:15+02:00 — Synchronized the pre-handoff correction versus post-handoff rejection
-  contract from canonical lifecycle/task doctrine.
-
-- 2026-08-27T21:53+02:00 — Synchronized M40@v2 worker attempt/event boundaries.
-
-- 2026-08-27T18:06+02:00 — M40/M43: synchronized immutable worker attempt and failure-routing
-  doctrine from the canonical role.
-
-- 2026-08-27T14:04+02:00 — Tightened installed worker intake around approved version-addressed
-  packets and packet-local durable corpus rulings.
-- 2026-08-27T13:32+02:00 — M39@v1: worker intake and handoff bind every block to the exact stable
-  ID + version and canonical packet, refusing missing or mismatched revisions instead of repairing
-  requirement identity locally. Verification remains closeout-owned.
-
-- 2026-08-27T12:43+02:00 — M38: recorded the synchronized worker envelope and explicit Checks
-  contract. Verification metadata stays pinned until governed closeout stamps the PDLS commit.
+## Current Contract Evidence
 
 
-- 2026-08-15T04:32+02:00 — 260815-DAG-L2: synchronized execution-nature input and the exact
-  leaf-targeted/master-full quality boundary. Verification remains closeout-owned.
+- Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources.
 
-- 2026-08-14T11:25+02:00 — R39 curator: replaced repository-specific worker commands with the
-  resolved contract and fixed cadence. Verification remains closeout-owned.
 
-- 2026-08-13T14:32+02:00 — L23 final curator pass: synchronized Dagger-only leaf acceptance,
-  required explicit diff base, master-owned full mode, and diagnostic-only host execution.
-  Verification remains closeout-owned.
-- 2026-08-12T07:10+02:00 — 260731-EFA-L24 curator: synchronized the
-  canonical worker boundary: leaf checks remain targeted and master full gates
-  use host-managed RAM/swap by default.
+- Current synced source supports the qualified account; declarations, mirrors and fixture assertions are not executed acceptance.
 
-- 2026-08-11T14:25+02:00 — Replaced accumulated copy-specific/task-delta prose with the exact
-  synchronized worker-artifact contract and current source evidence.
-- 2026-08-09T13:59+02:00 — Synchronized fact-relay and idle-safety doctrine.
-- 2026-08-08T02:00+02:00 — Synchronized leaf/master quality altitude boundaries.
-- 2026-07-05T01:30+02:00 — Established the self-contained packaged worker lifecycle.
+
+- Worker intake opens exact rendered_path/json_path files and uses actual named-memory reader arguments without restoring task_doc reads.
+
+
+- The generated role carries its canonical repair-loop instructions without independent authority.
+
+- The Worker's stage ends when the candidate meets the requirement, the handover checks named in system/coding-guidelines.md pass on a clean copy of the final bytes, and the report is with the Reviewer. [5]
+
+- After three failed repairs of the same check or finding the Worker stops and tells the Manager; with every candidate finding closed, a remaining record-only finding is repaired on the record and checked by the same Reviewer without a new round; a finding still open after a repair needs the property written for every case and the construction shown or changed. [6]
+
+- This packaged Worker role is byte-identical to its canonical source and carries its actual stage and repair duties; that mirror identity establishes no executed check or acceptance. [7]
+
+- Worker intake opens the exact rendered_path and json_path handover locations with its own file tools; they are file locations, not tool-server read calls, and both context_packet and read_ar_files take the task_context with the canonical task reference and enclosure contract. [8]
+
+- Before repairing a sealed finding in its own files, the generated Worker role follows the shared Repair a sealed own-file finding procedure in the implementation operation. [9]

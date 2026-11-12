@@ -1,0 +1,93 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/tasks/document-authoring.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Reuse the owning work, explain the plan as prose, and use the templates, the collaboration method and the planning operation.\n\nAnchor: `collaboration-method.md`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e7138bf05823d41e85fe541b180f948f12e5c555",
+            "content": "sha256:6d8e5b142e9e9d51d3c66ab41a8b5a82011ca490f4580b44fe79d83a2f3b605d",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Task fields carry their own prose, with `freeform` sections for further narrative.\n\nAnchor: `sharedDecisions`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e7138bf05823d41e85fe541b180f948f12e5c555",
+            "content": "sha256:41627e5944fc9c3e3522fb2b867889e59e5af3b390665c7d2ed56d33e33de1d7",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 19
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Code work shows structure and skeletons first, with leaf and master example rules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e7138bf05823d41e85fe541b180f948f12e5c555",
+            "content": "sha256:4132b7efd2072455242ab7c0f13157531184d5fb61711927e0e12d739ac3426a",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 25
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Decisions are appended and superseded packets keep their version-addressed path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e7138bf05823d41e85fe541b180f948f12e5c555",
+            "content": "sha256:8e84d34e23d4892e09018a87e0cccc521216c965faf4c6a9ca5a5c5e3fb76719",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 33
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The Architect role points here before authoring a task document or requirement packet.\n\nAnchor: `document-authoring.md`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de0e221dc51f2f0b067db007cb4c00b17ab3bd39",
+            "content": "sha256:e5d17167d56a348e7924f7dea2e8694bb94504f6aa40e524f427a448133636ad",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 40
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

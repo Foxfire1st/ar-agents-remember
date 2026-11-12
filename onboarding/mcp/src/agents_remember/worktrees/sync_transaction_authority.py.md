@@ -1,18 +1,5 @@
 # mcp/src/agents_remember/worktrees/sync_transaction_authority.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/sync_transaction_authority.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T01:15+00:00 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
-| verificationStatus | working-candidate |
-| governingOverview | `overview.md` |
-
-The body describes the uncommitted LCA L9 working candidate. The commit fields identify the latest real commit touching this source file; they do not claim that the candidate is committed or accepted.
-
 ## Governing Overview
 
 [Nearest governing route overview](overview.md)
@@ -25,11 +12,15 @@ Own the side plans, pinned refs, contract identity, base transitions, and parked
 
 ### Logic
 
-`side_record` binds a code or memory side to its repository, source/work branches, pre-sync head, recorded base, deterministic base/pre-sync/source backup refs, and merge or fast-forward plan. Series sync uses temporary enclosure worktrees; leaves use their ordinary worktrees. `source_pair` resolves the named local source tips without consulting a ledger file or requiring a code-to-memory row.
+`side_record` binds a code or memory side to its repository, source/work branches, pre-sync head, recorded base, deterministic base/pre-sync/source backup refs, and merge or fast-forward plan. Series sync uses temporary enclosure worktrees; leaves use their ordinary worktrees. Source tips are resolved outside this file, by `resolve_sync_sources` (and its own-line form `source_pair`) in `sync_transaction_sources`, without consulting a ledger file or requiring a code-to-memory row. A repository-default sync passes its resolved default branch to `side_record`, which records it as the side's source branch.
 
-Pinned refs are created, checked, reconstructed, and deleted by exact object identity. Journal-to-contract validation binds paths, task identity, kind, repositories, branches, and allowed base transitions. Finalization permits only the recorded old or admitted new bases; cancellation retains the original-base requirement.
+Pinned refs are created, checked, reconstructed, and deleted by exact object identity. A repository-default sync pins one more ref per side, a `default-source` ref whose name carries the resolved branch; `complete_side_from_refs` rebuilds the side's source branch from that name and refuses inconsistent default-source refs. Journal-to-contract validation binds paths, task identity, kind, repositories, branches, and allowed base transitions; for a repository-default journal the recorded default stays the source, and the contract's own source line must be the one the sync was admitted beside. Finalization permits only the recorded old or admitted new bases (a repository-default sync keeps the pair, so both are the old base); cancellation retains the original-base requirement.
 
-The shared parked-WIP helpers restore the candidate before dropping its exact stash. Genuine reapply conflicts retain the stash and resolution state. Settling a manually resolved reapply checks content conflicts, discards only memory-side cache changes, and leaves the real candidate uncommitted for its owning closeout.
+The shared parked-WIP helpers prove restoration and retain the exact stash until the transaction is terminal. Genuine reapply conflicts retain the stash and resolution state. Settling a manually resolved reapply checks content conflicts, discards only memory-side cache changes, clears the journaled omission report and count, and leaves the real candidate uncommitted for its owning closeout.
+
+A side can already hold the exact reapply after an interrupted restore or an edit the carried head already holds. `_skip_apply_proven` requires a live recorded stash and a complete successful proof before `_mark_restored` changes the journal; it does not reapply twice. Failed inventory remains failed even if the diagnostic sample is empty. `_unproven_restore_error` names at most ten failed paths inline, the remainder count, retained stash, cancel action and do-not-edit instruction; full named failures are logged and inventory incompleteness is disclosed. Each readable non-default carried-head merge rule appears beside its failed path. The refusal reconstructs Git's command/exit/reason only from its first ten named failures: `reapply_merge_fault` must need the lazy native merge on that sample and capture a fault. If those named paths use equality/base/simple-content cases, the refusal has no native-reason note even if a later failed path needed failed native acquisition. The full failed-name log does not make this inline diagnostic exhaustive. Cancellation instead carries faults actually captured by its own ownership assessments; neither path permits a plain-file fallback. This module presents the shared Git owner's result; it does not compute a second expectation.
+
+A genuine conflict retains its stash and resolution phase. Fresh same-call reapply output is fingerprinted, while crash-window output earns capture only after exact scratch verification; an empty map preserves uncertainty rather than blessing owner edits. Stashes survive restore and manual settlement until terminal transaction publication. Cancellation proves the full stash inventory and restores stash^2 as the exact parked index before journaling restored, including retry and already-restored sides., so a crash after restoring one side cannot remove that side's only recoverable copy.
 
 ### Conventions
 
@@ -39,58 +30,36 @@ The base/pre-sync/source ref triple is recovery authority, not a third delivered
 
 - Journal identity cannot be rebound to another contract or repository.
 - All participating authority refs remain exact; partial ref triples are errors.
-- Missing memory attribution is informational and does not make source sync mid-cycle.
 - Cache-only conflict/index state is excluded from parked-content completion; real unresolved content remains a blocker.
 
 ### Todos
 
 No new file-local follow-up is identified by this source reconciliation.
 
-## Docs References
+## Evidence
 
-No domain-documentation source is configured for this slice. The behavior described here is established by current repository source and the authorized LCA L9 change, rather than an invented external reference.
+### Docs References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
+No external Domain Documentation entries are configured. Source and test assertions are distinguished from execution and acceptance evidence.
 
-## Repo-Internal References
+### Repo-Internal References
 
-These current source spans identify the implementation owners and the specific assertions supporting the file's behavior. A test definition is evidence of its assertions, not an execution or certification receipt.
+- Side planning and exact source-pair reads. [1]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Side planning and exact source-pair reads. | `side_record`; `source_pair` | mcp/src/agents_remember/worktrees/sync_transaction_authority.py:39-75; mcp/src/agents_remember/worktrees/sync_transaction_authority.py:110-118 |
-| Pinned ref authority and reconstruction require exact identities. | `pin_authority`; `require_pinned_authority` | mcp/src/agents_remember/worktrees/sync_transaction_authority.py:121-126; mcp/src/agents_remember/worktrees/sync_transaction_authority.py:129-143 |
-| Contract identity and base-transition constraints. | `require_record_contract`; `require_contract_bases_unchanged` | mcp/src/agents_remember/worktrees/sync_transaction_authority.py:206-220; mcp/src/agents_remember/worktrees/sync_transaction_authority.py:245-252 |
-| Parked-content restoration and settlement retain the exact stash until safe. | `restore_parked_wip`; `settle_resolved_parked_wip` | mcp/src/agents_remember/worktrees/sync_transaction_authority.py:316-356; mcp/src/agents_remember/worktrees/sync_transaction_authority.py:380-401 |
+- Pinned ref authority and reconstruction require exact identities. [2]
 
-## Cross-Repo References
+- Contract identity and base-transition constraints. [3]
 
-The operation and fixture boundaries described here are defined by same-repository contracts and Git helpers. No separate cross-repository document is used as evidence for this card.
+- Parked-content restoration and settlement retain the exact stash until safe. [4]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
+- Restoration accepts only complete proven reapply and retains live stash authority. [5]
 
-## Update History
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
+- Failed proof retains ten-inline/full-name-log, readable-rule, stash/cancel/no-edit boundaries; native command/exit/reason appears only when recomputing the named sample requires a native merge and captures a fault. [6]
 
-- 2026-09-15T01:15+00:00 — 260913-LCA-L9 working candidate: Removed official-pair ledger admission and connected parked-candidate settlement to memory-domain content conflict handling while retaining pinned-ref and contract/base proof. Current source and citation targets were checked; the metadata records the last real file commit, and candidate changes remain uncommitted.
 
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 2
-  claim(s) whose anchor no longer sat in its cited range and normalised 0 further range(s) in this
-  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
-  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
-  back at its current position. Verification metadata remains closeout-owned.
-- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `SyncOperationRecord`, `SyncSideRecord`, `sync_side_refs` repointed to mcp/src/agents_remember/worktrees/sync_transaction_state.py:159-161, mcp/src/agents_remember/worktrees/sync_transaction_state.py:41-67, mcp/src/agents_remember/worktrees/sync_transaction_state.py:70-87. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
+- Cancellation restores already-restored sides and supports pre-sync reapply retry. [7]
 
-- 2026-09-10T15:06+02:00 — Parked-candidate restore authority: recorded the four shared restore helpers, the conditional `wip` side projection, and the centralised resolution phase names; re-derived every cited range against the current working tree. Verification remains closeout-owned.
 
-- 2026-08-26T14:32+02:00 — Corrected official source-pair admission to use newest-first current
-  mapping authority while accepting retained same-code memory history. Verification remains
-  closeout-owned.
+### Cross-Repo References
 
-- 2026-08-26T08:20+02:00 — Final frozen reconciliation of source-pair, ledger, contract, and
-  pinned-ref admission authority.
-
-- 2026-08-26T02:55+02:00 — Drafted strict sync-authority onboarding; final source freeze and
-  verification remain open.
+No additional configured cross-repository contract is asserted.

@@ -1,0 +1,40 @@
+{
+  "path": "mcp/tests/fixtures/opaque-dispatch-real.json",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0bff9ce09b4d308578eae156949c6a8bc8ec4ca2",
+        "content": "sha256:ce1db7fabadf8c3290a4631ef87ed3a813c71a2926d997e2576e0c2338e4eb07",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-2HMKTR",
+      "invariant": "INV-027RMH",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-opaque-crosscheck",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "These real uninterpreted dispatches pin preserved text, output and source identity.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0bff9ce09b4d308578eae156949c6a8bc8ec4ca2",
+            "content": "sha256:ce1db7fabadf8c3290a4631ef87ed3a813c71a2926d997e2576e0c2338e4eb07",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

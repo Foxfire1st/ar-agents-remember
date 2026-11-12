@@ -1,0 +1,39 @@
+{
+  "path": "mcp/tests/test_causal_failure_localization.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Failed owner blocks only source proved exact nodes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f9c8e326ef42baea93a0e9636b0bed0477d44a4f",
+            "content": "sha256:29b90edf5cc382bf7c7c59b5a3b1514c1b97a352bfbf56ac062cc995434fd727",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_failed_owner_blocks_only_source_proved_exact_nodes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Observed runtime failures retain exact retry inputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f9c8e326ef42baea93a0e9636b0bed0477d44a4f",
+            "content": "sha256:1c3563e3239d05a1c7c9526169563362f524fa3204ad018cf3458d2828d5e8cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_observed_runtime_failures_retain_exact_retry_inputs"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

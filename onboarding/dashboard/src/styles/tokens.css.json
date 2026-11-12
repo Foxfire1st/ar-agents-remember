@@ -1,0 +1,56 @@
+{
+  "path": "dashboard/src/styles/tokens.css",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The Panda token mirror declares the podracer palette under `theme.extend.tokens.colors`, ported from the `:root` values in `styles/tokens.css`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90e8e5f30e2b11529dc15cae0f19b20a9cf4be1c",
+            "content": "sha256:e2c194906636fc2c6485462b545e839726dace1c3e909d739cb71b051f37a294",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/panda.config.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The current root token layer retains the palette, tier colors, font and glow strength but no well variable. [8]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3937980214959ecc1e7f07ca0e39bbdf9e91037",
+            "content": "sha256:f789e88ad0a2b82e39c972c5ac3a7c9c958cc45783c319effcf95aeb6bc1a774",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The current Panda colors block mirrors the retained root color palette without a well entry. [9]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90e8e5f30e2b11529dc15cae0f19b20a9cf4be1c",
+            "content": "sha256:409182a1b20a24d474de8dba5f846fc9f5491e4b8fd2f2ccfd095637c0c8b463",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 28
+            },
+            "path": "dashboard/panda.config.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

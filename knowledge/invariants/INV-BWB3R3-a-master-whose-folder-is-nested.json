@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Moving a nested master under the repository's flat 0_archive folder would invent an archive location that is defined only for root task folders and could collide with a root task of the same name."
+  },
+  "applicability": "A retire request for a master whose folder is nested inside another task's folder.",
+  "conditions": [
+    "The check runs before anything changes, in a dry run as well."
+  ],
+  "exclusions": [
+    "Root masters under tasks/<repository>/."
+  ],
+  "id": "INV-BWB3R3",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "requirements/MIK-R41-v3-abandoned-leaves-do-not-block-a-master.md; notes/reports/260928-MIK-L41-worker-R3.md; notes/reports/260928-MIK-L41-review-R4.md"
+      ],
+      "path": "notes/reports/260928-MIK-L41-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R41@v3-nested-master-refused",
+    "leaf": "260928-MIK-L41",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A master whose folder is nested inside another task's folder is refused by the retire operation before anything changes, in a dry run as well, with the master, the enclosing folder and the reason named.",
+  "status": "proposed",
+  "supersedes": []
+}

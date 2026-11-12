@@ -1,0 +1,145 @@
+{
+  "path": "dashboard/src/panels/review/wordDiff.test.ts",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "4e87d80fee2a5f2684a8e2b6dc49ef39de00e29e",
+        "content": "sha256:c2f58d9699e560e20a3769404025e814536a6fce1ad1423b003a1b0f7c9d15be",
+        "locator": {
+          "kind": "symbol",
+          "name": "pairs a gap with equal counts for a word diff, and never pairs unequal gaps"
+        }
+      },
+      "facet": "Within the alignment bound, equal remaining gaps produce the declared changed pair; unequal gaps remain ordered removed/added items and the inspected gap rows carry unpaired_gap. This is not the over-budget test and no runtime execution is claimed.",
+      "id": "PRF-20XDHV",
+      "invariant": "INV-8Y3BRE",
+      "origin": {
+        "handoffEntry": "CUR-L57-bounded-no-guessed-list-pairs",
+        "leaf": "260928-MIK-L57"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4e87d80fee2a5f2684a8e2b6dc49ef39de00e29e",
+        "content": "sha256:c83ba072d5546720e2ba953c206a7e80142b3a0383dd7db989fbdcec6baf2d32",
+        "locator": {
+          "kind": "symbol",
+          "name": "bounds list alignment without guessing pairs even for matching positions"
+        }
+      },
+      "facet": "For the two declared large list sizes, including one shared middle item, asserts only removed/added rows with cell_limit and exact ordered reconstruction of both item arrays; does not measure allocation/latency or cover every renderer.",
+      "id": "PRF-708EWC",
+      "invariant": "INV-8Y3BRE",
+      "origin": {
+        "handoffEntry": "CUR-L57-bounded-no-guessed-list-pairs",
+        "leaf": "260928-MIK-L57"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4e87d80fee2a5f2684a8e2b6dc49ef39de00e29e",
+        "content": "sha256:403b0b03eb5071a292575f15762cb4fbda53ed21f988f452b1a7f3561b8a6292",
+        "locator": {
+          "kind": "symbol",
+          "name": "decides by bytes: identical, whitespace only, or words"
+        }
+      },
+      "facet": "Checks identical/spacing-only results and requires words plus exact side reconstruction for punctuation splits/joins and must-not joins/splits. The title says bytes but the inspected API inputs/results are JavaScript strings; no fresh execution or raw-file-decoding claim.",
+      "id": "PRF-KTJ90R",
+      "invariant": "INV-76J49B",
+      "origin": {
+        "handoffEntry": "CUR-L57-word-token-boundary-classification",
+        "leaf": "260928-MIK-L57"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The real wording the cases start from.\n\nAnchor: \"gitTrees.invariant.captured.json\"; \"const STATEMENT =\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e87d80fee2a5f2684a8e2b6dc49ef39de00e29e",
+            "content": "sha256:3c0a8c066f205d0249bfaa9da9f669f27a9358164665470df6a982f30c29c90f",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Tokens keep every byte.\n\nAnchor: \"keeps every byte: words with their punctuation, and whitespace runs as they are\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e87d80fee2a5f2684a8e2b6dc49ef39de00e29e",
+            "content": "sha256:250fd6b64f7a22779140ef8391639268b0f880335f705c6a7726e116bf6a14f2",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 27
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The five changed-text declarations retain conforming marks, reconstruction, runs and whitespace marks. Byte decisions classify punctuation spacing and must-not joining/splitting as words and reconstruct both inputs exactly.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e87d80fee2a5f2684a8e2b6dc49ef39de00e29e",
+            "content": "sha256:22f1cf06f8b2c040c7e2849f91802c2ae82bb385fc0c4d6d52ce000bbfd1cf2f",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 46
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The named ratio, exactly 0.5 not above it, and the coarse bound.\n\nAnchor: \"is the named renderer constant 0.5, compared with changed words over the longer side\"; \"marks a middle too long to align as one removed and one added run, still exact\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e87d80fee2a5f2684a8e2b6dc49ef39de00e29e",
+            "content": "sha256:071e08861b61865e42ad066393f9aa035bc6b318715fd2d55a3cb8981f71bce9",
+            "locator": {
+              "end": 156,
+              "kind": "line_range",
+              "start": 122
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Five list-alignment declarations cover retained pairing/movement rules, unpaired_gap notes and over-budget 1500/3000-item populations preserved as removed/added rows tagged cell_limit.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e87d80fee2a5f2684a8e2b6dc49ef39de00e29e",
+            "content": "sha256:65e560220ac647e21ce8c3385b7ad9303e6c8603d68a8b9a5a24a372f90c072b",
+            "locator": {
+              "end": 241,
+              "kind": "line_range",
+              "start": 158
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

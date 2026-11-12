@@ -1,15 +1,5 @@
 # scripts/e2e_harness/fresh_user_fixture.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `scripts/e2e_harness/fresh_user_fixture.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-17T10:50+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
-| governingOverview | `scripts/e2e_harness/overview.md` |
-
 ## Governing Overview
 
 [scripts/e2e_harness/overview.md](overview.md)
@@ -21,7 +11,7 @@ repositories, from nothing, each carrying the shape the requirement packet names
 
 | Fixture | Shape |
 | --- | --- |
-| `spear-not-main` | the spear branch is `dev`, and the tree carries a source file **over the per-file cap** plus a vendored/generated tree the exclusion register excludes. This is the fixture that would have made the pre-ruling citation index refuse outright. |
+| `spear-not-main` | the spear branch is `dev`, and the tree carries a locally sized **large source file** (the historical over-cap fixture) plus a vendored/generated tree the exclusion register excludes. This is the fixture that would have made the pre-ruling citation index refuse outright. |
 | `plain-main` | an ordinary `main`-spear repository for the default path. |
 
 **These are not the developer's repositories.** The module's own `WHAT IS DELIBERATELY ABSENT`
@@ -45,9 +35,7 @@ start creates and the leaf cuts) and `memory_settings` (`system/settings.json`).
 default) nor the spear (the branch the memory repo is founded on), because the integration-branch
 authority refuses a sprint that claims either.
 
-`OVERSIZED_BYTES` is `4 * 1024 * 1024 + 1` — the shipped per-file cap **plus one** — so the
-over-cap fixture crosses the real bound rather than a number restated in the harness. `_sparse`
-truncates the file to that length without writing the bytes.
+`OVERSIZED_BYTES` is the local literal `4 * 1024 * 1024 + 1`, retained to construct a large historical acceptance fixture. It is not imported or derived from a live shipped citation-index cap. `_sparse` truncates the file to that exact length without writing the bytes.
 
 Two writers persist the state later steps read:
 
@@ -63,8 +51,7 @@ it is surfaced rather than swallowed.
 
 ### Conventions
 
-- Every value that must track a shipped bound is derived from that bound (`OVERSIZED_BYTES`), not
-  restated as a literal.
+- `OVERSIZED_BYTES` is the fixture’s retained local large-file size, not a current shipped bound. Its exact generated size is asserted separately from branch, exclusion-tree and run-root custody facts.
 - The fixture is `frozen`; a case that wants a variant builds another fixture rather than mutating
   one.
 - This module is a **governed evidence artifact**: `scripts/e2e_harness/**` is a permanent
@@ -75,39 +62,33 @@ it is surfaced rather than swallowed.
 ### Invariants And Boundaries
 
 - The fixture owns everything under its own run root and reads nothing outside it.
-- The over-cap fixture must genuinely cross `MAX_SOURCE_FILE_BYTES`; the plain fixture must stay
-  inside every cap. Both are asserted in `mcp/tests/test_fresh_user_harness.py`, so an edit here
-  cannot quietly stop producing the shape the scenario needs.
+- The historical large-file fixture must keep its exact `OVERSIZED_BYTES` size, vendored tree and distinct spear/sprint/default branches. The plain fixture has no vendor tree and uses the main spear. Candidate harness assertions retain these facts and run-root custody; they no longer compare either fixture with shipped per-file/aggregate citation-index caps.
 - The fixtures are disposable: the run root is a temporary directory unless the caller names one.
 
 ### Todos
 
 None.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The one construction point for a disposable fixture repository, memory root and authority settings. | `create_fresh_user_fixture` | scripts/e2e_harness/fresh_user_fixture.py:79-177 |
-| The frozen fixture value and the two branches the harness needs. | `FreshUserFixture`; `master_branch`; `memory_settings` | scripts/e2e_harness/fresh_user_fixture.py:39-62 |
-| The sprint branch is neither `main` nor the spear, because the authority refuses both. | `SPRINT_BRANCH` | scripts/e2e_harness/fresh_user_fixture.py:32-36 |
-| The oversized source is the shipped per-file cap plus one byte. | `OVERSIZED_BYTES` | scripts/e2e_harness/fresh_user_fixture.py:30-31 |
-| The truncating writer that materialises it without copying bytes. | `_sparse` | scripts/e2e_harness/fresh_user_fixture.py:73-76 |
-| A fixture Git failure is surfaced with its real stderr rather than swallowed. | `git` | scripts/e2e_harness/fresh_user_fixture.py:65-70 |
-| The exclusion review's rules are persisted under the key every register reader honours. | `write_exclusion_register` | scripts/e2e_harness/fresh_user_fixture.py:180-207 |
-| The `c-03` bootstrap content whose absence is `invariant-1`. | `write_thin_bootstrap` | scripts/e2e_harness/fresh_user_fixture.py:210-237 |
-| The per-file cap the fixture must cross. | `MAX_SOURCE_FILE_BYTES` | mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:23-23 |
-| The cases that pin the fixture's shape. | `test_the_over_cap_fixture_really_crosses_the_cap`; `test_the_plain_fixture_stays_inside_every_cap`; `test_the_fixture_owns_everything_under_its_own_run_root` | mcp/tests/test_fresh_user_harness.py:118-186 |
+### Repo-Internal References
 
-## Cross-Repo References
+- The one construction point for a disposable fixture repository, memory root and authority settings. [1]
+- The frozen fixture value and the two branches the harness needs. [2]
+- The sprint branch is neither `main` nor the spear, because the authority refuses both. [3]
+
+- OVERSIZED_BYTES is a local 4 * 1024 * 1024 + 1 literal for the historical large-file fixture, not a derived current shipped citation-index cap. [4]
+
+- The truncating writer that materialises it without copying bytes. [5]
+- A fixture Git failure is surfaced with its real stderr rather than swallowed. [6]
+- The exclusion review's rules are persisted under the key every register reader honours. [7]
+- The `c-03` bootstrap content whose absence is `invariant-1`. [8]
+
+- The retained fixture cases assert exact local large-file size, vendored-tree and branch topology, plain-fixture shape and run-root custody, not current shipped cap comparisons. [10]
+
+
+### Cross-Repo References
 
 No sibling-repository contract defines these values.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
-
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-
-- 2026-09-17T10:50+02:00 — 260915-CAPS-L14 curator: created this card for the harness module the leaf adds. Records the two fixtures and their shapes, that the oversized source is the shipped per-file cap **plus one**, why the sprint branch is neither `main` nor the spear, and — in its own section — the contract that matters most for a reader: **these are disposable repositories created from nothing under the run root, not the developer's repositories**, because nothing here reads the developer's real repositories or any machine-local state. Notes the module is a governed evidence artifact with a lifecycle row, a real consumer and an executable replacement node. Verification metadata is left at this leaf's synced base `0346da9c` with a recorded working candidate, because the candidate is deliberately uncommitted — the governed closeout stamps the real code commit and no hash or digest was invented here.
+No meaningful cross-repo references found.

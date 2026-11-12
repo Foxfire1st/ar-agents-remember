@@ -1,0 +1,79 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/coordination/shared/master-state.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "1e5daff9b06533a935f42ff9808c968c7b22d4c2",
+        "content": "sha256:0d7c24a180dc9b2dcd3a4ed271ee4a4fa6f0ce034982e071f1f3d7c2bae4d23f",
+        "locator": {
+          "end": 7,
+          "kind": "line_range",
+          "start": 7
+        }
+      },
+      "id": "RLZ-E9X56S",
+      "invariant": "INV-5KBX7C",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-5KBX7C",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The Manager updates owned master state while preserving product-mirrored stage ownership and avoiding a contradictory second status.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Master updates follow every start, handover and landing in the same turn and leave product-mirrored fields with their owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e5daff9b06533a935f42ff9808c968c7b22d4c2",
+            "content": "sha256:eab722bceff756ba4eab4142f9702ea0310a4d27386fa9e8bd580f73882e7c54",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A master is not reported complete while documentation made stale by its tasks remains.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e5daff9b06533a935f42ff9808c968c7b22d4c2",
+            "content": "sha256:40bb7f4187504fe187678aa2104e83e95709f0cc3b2589447273c39ba9573411",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 9
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The Manager role points to both sections before updating master state through completion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "content": "sha256:a23dfcc433a8febc52500efbacbd60d929c4f83767d64f4f568b71a6f419124b",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

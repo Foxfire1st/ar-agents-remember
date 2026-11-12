@@ -1,0 +1,77 @@
+{
+  "path": "mcp/src/agents_remember/mcp/registration/lazy.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8a44a33b7d21bf257d8af143ae86666f3177c995",
+        "content": "sha256:2fce46f1fe6c693f438b91d044e45eb2c851c216a12387361f332d4e9f3c46d4",
+        "locator": {
+          "kind": "symbol",
+          "name": "_Tools"
+        }
+      },
+      "id": "RLZ-HZ3RM2",
+      "invariant": "INV-990KQM",
+      "origin": {
+        "handoffEntry": "L183-deferred-discovery-implementation",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The registration adapter imports the payload package only when an attribute is requested; it first uses package exports, then searches package modules for a non-exported name, and raises if none carries it. Discovery itself requests no payload attribute.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The builder package is imported on first attribute access and no earlier\n\nAnchor: `def __getattr__(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a44a33b7d21bf257d8af143ae86666f3177c995",
+            "content": "sha256:fae5c474fc78a8b636bbfba48a55161d44ef4b8c5a9f7c62365ad692799e9ded",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A name the package does not carry is searched for in its own submodules, and the package's own error is re-raised when none has it\n\nAnchor: `for path in getattr(package, \"__path__\", [])`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a44a33b7d21bf257d8af143ae86666f3177c995",
+            "content": "sha256:5463372b88ae0961ee93174d1f7f6c6047792786d14e613ca7c38824f0ba5192",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 28
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "One lazy view is the module's whole surface\n\nAnchor: `tools = _Tools()`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a44a33b7d21bf257d8af143ae86666f3177c995",
+            "content": "sha256:4509826153a58a0a552042e01b7e953906267f658ce4ca9fd715b8aa9b82bd09",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 39
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

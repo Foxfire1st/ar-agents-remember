@@ -1,0 +1,55 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "The gate at the closeout, the commit built from the judged tree, the index copy that lets the judged-tree check see a rewrite made in the second the index was written, the frozen attempt files, the governing changed row and the honest preview each close one way in which a closeout could publish a leaf's memory unjudged or let its judgment be replaced; none of them gives the guarantee alone."
+  },
+  "guarantee": "A converted leaf's closeout and direct landing judge their prepared memory tree through the validator and invariant gate and publish only that admitted tree on the intended branch and observed parent. Before an ordinary closeout or direct landing writes a new commit, its repository pre-commit check admits the exact staged tree; failed, unrunnable, timed-out or tracked/index-mutating checks refuse. Absence of a hook is recorded, never a skip policy. Caller-message cleanup remains faithful apart from the required tree-bound Commit-Check-Pass trailer; surviving ordinary/direct routes permit no --no-verify bypass, and removed prepared-only publication supplies no live hook policy. The source index remains faithful, and moved inputs or unfinished native actions refuse. Unpublished refusals restore owned preparations and preserve concurrent content; expected-old take-back never overwrites a foreign commit. Partial publication whose take-back fails may leave a reachable commit while preparations restore, and a proof failure after successful publication return keeps the published preparation. Gate-input reuse and frozen history remain exact. Recorded leaf landing and integration rejudge their exact pairs through the shared leaf validator and recomputed worklist before recording or refs move; recorded-closeout parent freezing applies to that commit and its descendants. The current parent tip is an input, never a stored verdict.",
+  "id": "FAM-61DY2V",
+  "members": [
+    "INV-0T84PZ",
+    "INV-0XMNQZ",
+    "INV-2Q8RPR",
+    "INV-49E649",
+    "INV-656CYW",
+    "INV-89A5AN",
+    "INV-9ZBTVA",
+    "INV-ANKPPE",
+    "INV-BEYEV2",
+    "INV-D2HZQ8",
+    "INV-FYZQK0",
+    "INV-G0Y4VR",
+    "INV-GSEMMW",
+    "INV-HWAWFT",
+    "INV-KTMBMN",
+    "INV-MS9BMJ",
+    "INV-N5RBFK",
+    "INV-WV1YQE",
+    "INV-XN0FG8",
+    "INV-YZ45D7",
+    "INV-ZGFZXT",
+    "INV-HR2JKQ"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "r2-10-fix-round.json"
+    },
+    "handoffEntry": "FAM-GATED-PUBLICATION",
+    "leaf": "260928-MIK-L37",
+    "task": "260928-MIK"
+  },
+  "revision": 7,
+  "routes": [
+    "mcp/src/agents_remember/application",
+    "mcp/src/agents_remember/kernel",
+    "mcp/src/agents_remember/memory/knowledge_index",
+    "mcp/src/agents_remember/memory_quality/knowledge_validator",
+    "mcp/src/agents_remember/models/knowledge_files",
+    "mcp/src/agents_remember/worktrees",
+    "mcp/src/agents_remember/tasks"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Gated leaf publication"
+}

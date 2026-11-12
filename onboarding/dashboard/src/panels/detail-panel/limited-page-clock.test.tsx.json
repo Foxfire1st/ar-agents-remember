@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/detail-panel/limited-page-clock.test.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2d1491f2a804a303fc947a4e255b680aaef583d5",
+        "content": "sha256:31c69a92873d25d176d47bf6bccf3360c536f0ebf39c4e4afd47eefaab76e038",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-M1F1QN",
+      "invariant": "INV-XZYGEB",
+      "origin": {
+        "handoffEntry": "INV-XZYGEB",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The page's own clock is what the word reads, so its test is the one that can show both ends of that transition.",
+      "role": "support"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

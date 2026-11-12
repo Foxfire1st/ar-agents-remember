@@ -1,0 +1,62 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "An implemented authority-gated alternative was explicitly withdrawn because permission to launch cannot establish fleet retirement; future optimizations must preserve leftover-stack safety."
+  },
+  "alternatives": [
+    {
+      "option": "Retain original periodic sample/record/degradation/compact safety observation independent of launch authority and page interest.",
+      "reason": "Revocation, restart and malformed authority do not retire labelled leftovers; the existing sampling/stop/drain sequence must remain observable.",
+      "status": "chosen"
+    },
+    {
+      "option": "Suppress provider safety with an authority/activity gate or build a fleet-absence mechanism in this task.",
+      "reason": "The gate hides leftover stacks and decoding failure can skip safety; a new absence mechanism was explicitly outside the approved repair.",
+      "reconsider_when": "A separately authorized fleet-retirement/presence witness proves the observation can safely rest, including revocation, restart and unknown authority.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Retain periodic work and its actual completed-owner share rather than claiming zero dashboard work.",
+    "Do not change launch refusal, label discovery, degradation or Docker ownership."
+  ],
+  "context": "A proposed no-page reduction used empty/revoked launch authority as if it proved no labelled provider stack remained.",
+  "decider": "Architect ruling notes/run3/L166-R1-02-03-THE-PROVIDER-GATE-IS-WITHDRAWN-SAFETY-SAMPLING-STAYS-PERIODIC.json under the recorded developer bar and D266; Curator records, not reverses, that choice.",
+  "id": "DEC-ZS4FH6",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-5C5086"
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "fff797d50bb152439f7d2805314942ed27286b5b",
+        "content": "sha256:ad2bae9b4636ad639cb42c916442297460ce550fb8cae6845509efd7c5ff0e2e",
+        "locator": {
+          "kind": "symbol",
+          "name": "_metrics_loop"
+        },
+        "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/worker/d2665764-add6-4e1c-aa4f-3cfe1d657d22/role-launch/r1-runtime-2/rule-5-record.md"
+      ],
+      "path": "curator-handoff-corrected.json"
+    },
+    "handoffEntry": "L166 periodic provider safety after R1 withdrawal",
+    "leaf": "260928-MIK-L166",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

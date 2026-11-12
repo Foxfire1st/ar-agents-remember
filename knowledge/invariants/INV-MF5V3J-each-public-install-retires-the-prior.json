@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "A stale success receipt after a failed child makes a cut install look complete; the four parameter cases and removed-fix controls exercise the exact paths."
+  },
+  "applicability": "Every public sandbox install attempt and its receipt history.",
+  "conditions": [
+    "The prior current receipt is retired into history before the child runs.",
+    "Cut, timeout and malformed outcomes record the underlying error with real receipt and server-log paths instead of exposing an old success."
+  ],
+  "exclusions": [
+    "The product's own result envelope keeps its own obligation."
+  ],
+  "id": "INV-MF5V3J",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L96-reviewer-e0a83546-a27f-4486-bb70-c11b906053fb.evidence/fix-verification-round-4/focused.log: exact receipt-payload and four cut/timeout/malformed parameter cases pass, current receipt absent at both child admissions, old success retained in history, current failure/log/serverLog/receipt fields checked; failed-start adapter preserves original install error and points to host-install-server.log; Operations.runtime_install validates payload type and nonzero success-body contradictions."
+      ],
+      "path": "notes/reports/260928-MIK-L96-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "L96-D-9",
+    "leaf": "260928-MIK-L96",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Each public install retires the prior current receipt into history before its child runs and records fresh cut/timeout/malformed failures with underlying error and real receipt/server-log paths instead of exposing old success.",
+  "status": "proposed",
+  "supersedes": []
+}

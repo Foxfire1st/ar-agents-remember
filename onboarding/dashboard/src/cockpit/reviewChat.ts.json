@@ -1,0 +1,291 @@
+{
+  "path": "dashboard/src/cockpit/reviewChat.ts",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "1966b41dd85b7de3f0205cd0231ded65a7772c78",
+        "content": "sha256:0520d43ff4963f7922617b79ac8bf85098f853b26d063f532abde373a184e2ae",
+        "locator": {
+          "kind": "symbol",
+          "name": "useExplainerTargetOf"
+        }
+      },
+      "id": "RLZ-1JJNHR",
+      "invariant": "INV-6P47B6",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE01-default-column",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Carries the exact repository/master/leaf address and planned/comparison/history facts from the review target into the shared column.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "1966b41dd85b7de3f0205cd0231ded65a7772c78",
+        "content": "sha256:354c77247cb485e9da18f9de9ee9bea16fabf1737df23ce98e9be695ccbecb25",
+        "locator": {
+          "kind": "symbol",
+          "name": "REVIEW_CHAT_WIDTH_DEFAULTS"
+        }
+      },
+      "id": "RLZ-9G0AQE",
+      "invariant": "INV-ZTZSDN",
+      "origin": {
+        "handoffEntry": "RP18_WIDTH",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Defines500px wide and420px narrow chat defaults.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "1966b41dd85b7de3f0205cd0231ded65a7772c78",
+        "content": "sha256:9d4ad5bff98a4235fd157aa5d55cf6f60ae47582fee601bd5f66447863710587",
+        "locator": {
+          "kind": "symbol",
+          "name": "NARROW_CLASS"
+        }
+      },
+      "id": "RLZ-9MER1Y",
+      "invariant": "INV-ZTZSDN",
+      "origin": {
+        "handoffEntry": "RP18_WIDTH",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Selects the same at-or-below1600px class for the chat.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "1966b41dd85b7de3f0205cd0231ded65a7772c78",
+        "content": "sha256:2275c74c4682477110286b1e95cd47363277094adc9890c16ab91e74cc19b817",
+        "locator": {
+          "kind": "symbol",
+          "name": "useFirstRequestOpens"
+        }
+      },
+      "id": "RLZ-DEAPDQ",
+      "invariant": "INV-M71W78",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE02-first-request",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "A first-request signal opens this review column only when its full explainer address matches, and the callback starts no agent or build.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "1966b41dd85b7de3f0205cd0231ded65a7772c78",
+        "content": "sha256:6aea124849930cca341c23a7422d7310e2ad322780359e479c35aa2a514b1bb0",
+        "locator": {
+          "kind": "symbol",
+          "name": "explainerAddress"
+        }
+      },
+      "id": "RLZ-FPMF16",
+      "invariant": "INV-6P47B6",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE01-default-column",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The review gets an explainer only when repository, master and leaf all exist; this public address helper keeps incomplete review targets out of the leaf-explainer default.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "1966b41dd85b7de3f0205cd0231ded65a7772c78",
+        "content": "sha256:b574f7d08ff5e39ecc346bc75fd5b282a4c82b35de2c6f5d2d0364bbee670b7a",
+        "locator": {
+          "kind": "symbol",
+          "name": "useReviewChatWidth"
+        }
+      },
+      "id": "RLZ-G1X9Y5",
+      "invariant": "INV-7QYXJP",
+      "origin": {
+        "handoffEntry": "RP16",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Supplies the active review width and 14px/12px gutter to the grid-track calculation.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "1966b41dd85b7de3f0205cd0231ded65a7772c78",
+        "content": "sha256:b574f7d08ff5e39ecc346bc75fd5b282a4c82b35de2c6f5d2d0364bbee670b7a",
+        "locator": {
+          "kind": "symbol",
+          "name": "useReviewChatWidth"
+        }
+      },
+      "id": "RLZ-HKQ8CS",
+      "invariant": "INV-ZTZSDN",
+      "origin": {
+        "handoffEntry": "RP18_WIDTH",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Retains two independent numeric preferences and supplies the active width/setter and14px/12px gutter across chat grid/overlay placements.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "1966b41dd85b7de3f0205cd0231ded65a7772c78",
+        "content": "sha256:8956d2e3ad0b3248856043a744a65db12898d7350432e108462ebfbd80d2ad91",
+        "locator": {
+          "kind": "symbol",
+          "name": "REVIEW_CHAT_WIDTH_KEYS"
+        }
+      },
+      "id": "RLZ-KRHTX9",
+      "invariant": "INV-ZTZSDN",
+      "origin": {
+        "handoffEntry": "RP18_WIDTH",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Defines chat wide/narrow keys separately from tree and Operations numeric widths.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "1966b41dd85b7de3f0205cd0231ded65a7772c78",
+        "content": "sha256:f10e6ecbddb9fdc286aaad30e24ff9c7eaa3a6590c71b36392a81d91d214ce27",
+        "locator": {
+          "kind": "symbol",
+          "name": "useReviewChatPlacement"
+        }
+      },
+      "id": "RLZ-PB8DTK",
+      "invariant": "INV-ZTZSDN",
+      "origin": {
+        "handoffEntry": "RP18_WIDTH",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Classifies grid, below1440px overlay and40rem narrow placement without creating new width storage classes.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "1966b41dd85b7de3f0205cd0231ded65a7772c78",
+        "content": "sha256:b9aa6d6102257b4f8bca30b96163d6caa6563ec12a656f81ef705c8356fd07f4",
+        "locator": {
+          "kind": "symbol",
+          "name": "useReviewChatTask"
+        }
+      },
+      "id": "RLZ-XZPJ7N",
+      "invariant": "INV-6P47B6",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE01-default-column",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The shared task entry is matched by leaf id, repository and master folder before its planned stage is carried to the explainer column; pending or missing task identity retains its explicit unbound state.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "1966b41dd85b7de3f0205cd0231ded65a7772c78",
+        "content": "sha256:9788e2393c2d03d921ad8f365aef3a46a63caf555b51c92cc85247de19a2d7e6",
+        "locator": {
+          "kind": "symbol",
+          "name": "useReviewChat"
+        }
+      },
+      "id": "RLZ-YRCA7W",
+      "invariant": "INV-PHBM6X",
+      "origin": {
+        "handoffEntry": "RP17_STATE",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The review chat tracks the exact target object it was opened for in mounted state; a cold mount or different target is closed without reading or writing a stored open flag.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "1966b41dd85b7de3f0205cd0231ded65a7772c78",
+        "content": "sha256:f10e6ecbddb9fdc286aaad30e24ff9c7eaa3a6590c71b36392a81d91d214ce27",
+        "locator": {
+          "kind": "symbol",
+          "name": "useReviewChatPlacement"
+        }
+      },
+      "id": "RLZ-ZEBH53",
+      "invariant": "INV-7QYXJP",
+      "origin": {
+        "handoffEntry": "RP16",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Chooses grid, reading-column overlay or narrow screen placement from the existing width media queries.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Exact task matching and named pending/unknown states\n\nAnchor: \"export function reviewChatTask(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1966b41dd85b7de3f0205cd0231ded65a7772c78",
+            "content": "sha256:c71ee2f81a20ce20ef6d8b29a30797c6fed9f05e213a279a60ea3f659db2efeb",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 47
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Width classes, gutters and placement\n\nAnchor: \"function useReviewChatWidth() {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1966b41dd85b7de3f0205cd0231ded65a7772c78",
+            "content": "sha256:cfaf930509240aad47f2470913332de8b79e4f58159b2145132660c847d5f80c",
+            "locator": {
+              "end": 188,
+              "kind": "line_range",
+              "start": 171
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Tray coupling and target-scoped visibility\n\nAnchor: \"function useTrayOpensColumn(review: ChangeSetTarget \\| null, open: boolean, openColumn: () => void): void {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1966b41dd85b7de3f0205cd0231ded65a7772c78",
+            "content": "sha256:b2d1f9aa5f6b6e4adaa75dd57ca5af3d93d9df22caf5bde753954793c21183a6",
+            "locator": {
+              "end": 208,
+              "kind": "line_range",
+              "start": 170
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A review with repository, master and leaf supplies a memoized explainer address plus planned/live-or-recorded and comparison-number context; a review without all three keeps the document chat. The leaf's stage comes from the exact shared task entry. The matching first-request event opens the existing column but starts nothing, and task hydration/missing-task states still prevent accidental Projects Architect binding. The default review recipient is the explainer or its placeholder; the Worker is never selected by default.\n\nAnchor: `useReviewChatTask`, `useReviewChat`, `explainerAddress`, `useExplainerTargetOf`, `useFirstRequestOpens`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1966b41dd85b7de3f0205cd0231ded65a7772c78",
+            "content": "sha256:8e5f2fcedb05bf6c185589dc69d141ea796fba1166b00c429e7aa6e3df6bd921",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

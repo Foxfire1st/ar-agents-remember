@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Default and local short ceilings turn machine scheduling into a dashboard behavior verdict."
+  },
+  "applicability": "Dashboard Vitest test/hook limits and Testing Library async-query configuration.",
+  "conditions": [
+    "Test/hook guards are declared centrally; async-query waits use the common20second hang guard.",
+    "Test-local overrides do not replace that configuration."
+  ],
+  "exclusions": [
+    "No elapsed performance budget.",
+    "A marked deliberate expiry or controlled fake-clock boundary is a separate test stimulus."
+  ],
+  "id": "INV-48C3DS",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard source guard and focused component checks"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L87-curator-73a5c9f7-9924-4b1a-b1dd-cc1d4764c587.W02-writer-batch.json"
+    },
+    "handoffEntry": "MIK-R87@v1 8",
+    "leaf": "260928-MIK-L87",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Dashboard test and hook guards and async query waits are configured once, with no test-local timeout overrides.",
+  "status": "proposed",
+  "supersedes": []
+}

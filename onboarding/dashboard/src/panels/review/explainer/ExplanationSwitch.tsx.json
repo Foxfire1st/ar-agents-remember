@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/panels/review/explainer/ExplanationSwitch.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A build mark outranks the stale count, and retirement adds its own word to the label\n\nAnchor: `export function explanationMarks({`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c54ebdeece623741811faa01c79dd13973e09055",
+            "content": "sha256:09c131e12d319d231fc156a99bc276356001ee3ae00acfcbffbf3d61e8de0a80",
+            "locator": {
+              "end": 383,
+              "kind": "line_range",
+              "start": 137
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Both tabs report the shown view, and the explanation tab carries the stale, building and retired facts\n\nAnchor: `export function ExplanationSwitch(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c54ebdeece623741811faa01c79dd13973e09055",
+            "content": "sha256:0a10865c18734e714f3481a5468ee66e7fde7e6004e7dc1f088a43383211b128",
+            "locator": {
+              "end": 383,
+              "kind": "line_range",
+              "start": 333
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The label's three facts are optional props, so the plain control renders without a read\n\nAnchor: `export interface ExplanationSwitchProps {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c54ebdeece623741811faa01c79dd13973e09055",
+            "content": "sha256:6b455f8b8a102adad1d93762d0515c4823b44a7de6d4373b4ad62491dabddd3b",
+            "locator": {
+              "end": 383,
+              "kind": "line_range",
+              "start": 117
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

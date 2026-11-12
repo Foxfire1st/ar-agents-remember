@@ -1,0 +1,40 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_door_control.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Door intent is recorded on the journaled operation and its dependency declaration is rebound.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cef8b16c6812dfbb088ccd803a2247c3e2d36902",
+            "content": "sha256:e57dd8fdbf952fac8c600b78b5aa1f80bff97041b6a7a4efab73c310defb4f0f",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_door_intent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The operation dependency vocabulary this seam uses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:c9efe21b266054d3b5a6af34c0d29f74b0f45b69a887aca922a5451b4e198e71",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycle_operation_dependencies"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/operation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

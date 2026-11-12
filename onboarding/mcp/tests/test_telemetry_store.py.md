@@ -1,15 +1,5 @@
 # mcp/tests/test_telemetry_store.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_telemetry_store.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T21:45:53+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Tests overview](overview.md)
@@ -42,45 +32,31 @@ work. This source inspection does not claim a newly executed test or acceptance 
 
 No additional implementation scope is opened by this memory reconciliation.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The repository has no configured Domain Documentation source. These claims concern its own test
 fixtures and assertions, so the exact retained source is the direct evidence.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external domain claim is required. | N/A | N/A |
+No external domain claim is required.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Each current definition below can be inspected in the exact source file. Historical references
 to removed methods are superseded by this current inventory.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Append and read round trip preserves exact events | `test_append_and_read_round_trip_preserves_exact_events` | mcp/tests/test_telemetry_store.py:73-86 |
-| Append enforces monotonic event revision | `test_append_enforces_monotonic_event_revision` | mcp/tests/test_telemetry_store.py:89-96 |
-| Tampered journal entry is refused | `test_tampered_journal_entry_is_refused` | mcp/tests/test_telemetry_store.py:99-106 |
-| Read refuses journal gap | `test_read_refuses_journal_gap` | mcp/tests/test_telemetry_store.py:109-117 |
-| Read refuses broken predecessor chain | `test_read_refuses_broken_predecessor_chain` | mcp/tests/test_telemetry_store.py:120-137 |
-| Replay is read only instrumentation | `test_replay_is_read_only_instrumentation` | mcp/tests/test_telemetry_store.py:140-149 |
-| Append cas collision refuses different bytes at same revision | `test_append_cas_collision_refuses_different_bytes_at_same_revision` | mcp/tests/test_telemetry_store.py:152-168 |
-| Append enforces byte capacity limit | `test_append_enforces_byte_capacity_limit` | mcp/tests/test_telemetry_store.py:171-185 |
+- Append and read round trip preserves exact events [1]
+- Append enforces monotonic event revision [2]
+- Tampered journal entry is refused [3]
+- Read refuses journal gap [4]
+- Read refuses broken predecessor chain [5]
+- Replay is read only instrumentation [6]
+- Append cas collision refuses different bytes at same revision [7]
+- Append enforces byte capacity limit [8]
 
-## Cross-Repo References
+### Cross-Repo References
 
 This card establishes test behavior, not a separate cross-repository protocol or live installation.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external evidence is needed for these assertions. | N/A | N/A |
-
-## Update History
-
-- 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
-
-
-- 2026-09-04T12:30+02:00 - 260831-CCR-L16 Gate-5: created for the CCR-R16@v3 durable journal
-  store suite (leaf 260831-CCR-L16, certified commit
-  `2cd360d8f45ccdcf640dc9c5d14b941ac2f0f8eb`). Verification stamp advanced to the certified code
-  commit.
+No external evidence is needed for these assertions.

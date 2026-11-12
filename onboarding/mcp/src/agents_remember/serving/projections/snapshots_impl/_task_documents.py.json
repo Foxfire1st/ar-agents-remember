@@ -1,0 +1,894 @@
+{
+  "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+        "content": "sha256:0222df1f1b092513c035648b08416d325eb0991703fe014d3e7e4cbf99056ea2",
+        "locator": {
+          "end": 576,
+          "kind": "line_range",
+          "start": 481
+        }
+      },
+      "id": "RLZ-1VMSKE",
+      "invariant": "INV-7JFCAF",
+      "origin": {
+        "handoffEntry": "curator-bounded-summary-and-own-view",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Separates bounded summary fields/whole counts from complete body strings/collections.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+        "content": "sha256:9b6373ba9eeb22e690729f48e7140cac9740485c12a5a1116269682dfa1cf12f",
+        "locator": {
+          "end": 214,
+          "kind": "line_range",
+          "start": 181
+        }
+      },
+      "id": "RLZ-4JY123GA",
+      "invariant": "INV-4RERAJCC",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "The addressed graph helper reads named canonical masters and their explicit child task documents without a corpus enumeration; ordinary dependency joins keep their separate addressed inputs.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+        "content": "sha256:d9de27c7d82b40ea370dc0f4786fd373f0ce3165b7b1559931bb2225d996f07a",
+        "locator": {
+          "end": 112,
+          "kind": "line_range",
+          "start": 95
+        }
+      },
+      "id": "RLZ-80B2H2",
+      "invariant": "INV-WHBGH5",
+      "origin": {
+        "handoffEntry": "curator-extra-source-links-INV-WHBGH5",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "Projects validated task sources through one derived build_order_fields result for the addressed documents, without reconstructing dependency states in the client.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+        "content": "sha256:7a65f7775f2b252903788fcf406997ae115820add50778526ad4e32d18c74a6c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_task_doc_body_revision"
+        }
+      },
+      "id": "RLZ-9NE2GP",
+      "invariant": "INV-S18MK6",
+      "origin": {
+        "handoffEntry": "curator-body-revision-hydration-currentness",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Hashes the semantic display inputs so a changed header/step/review invalidates the cached body.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+        "content": "sha256:9b6373ba9eeb22e690729f48e7140cac9740485c12a5a1116269682dfa1cf12f",
+        "locator": {
+          "end": 214,
+          "kind": "line_range",
+          "start": 181
+        }
+      },
+      "id": "RLZ-D8Y5FWWB",
+      "invariant": "INV-1BRT5DX6",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Reads schema-valid graph-named master documents and their explicitly listed valid task documents for the bounded graph join; it is not a graph-master-only input.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+        "content": "sha256:12141bcb294203846818af3cdbfb562b8e983736b8b9ea90b87f531865ca92ea",
+        "locator": {
+          "end": 132,
+          "kind": "line_range",
+          "start": 103
+        }
+      },
+      "id": "RLZ-EMRFV4",
+      "invariant": "INV-WQ8YGE",
+      "origin": {
+        "handoffEntry": "L168-CUR-M2-21-N22",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "Preserves authored child order, normalized parent and the original master literal. task_entries owns documented-subTask master validation and absent-only fallback, while other listed kinds keep identity/cycle-guarded list placement; the source adapter neither repairs records nor adds kind rejection.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+        "content": "sha256:b7cabe376357a0c1eb26004ded85c3e3a154af5d8e76a65f53239dbc03aa8e72",
+        "locator": {
+          "kind": "symbol",
+          "name": "_completion_time"
+        }
+      },
+      "id": "RLZ-GNP1FR",
+      "invariant": "INV-TRENNF",
+      "origin": {
+        "handoffEntry": "L162-A02-completion-fallback-source",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "Derives the read-only served completion value for summary and body: explicit completedAt wins, otherwise the greatest valid parsed exact-finalization timestamp supplies its original string. Invalid legacy stamps are skipped and naive timestamps use UTC for comparison. This is no canonical rewrite, product_record predicate or new execution evidence.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+        "content": "sha256:869704b8d4d60d7c91edde3997921556a5a4aa49dbb0092981e5823ad4f31904",
+        "locator": {
+          "end": 132,
+          "kind": "line_range",
+          "start": 83
+        }
+      },
+      "id": "RLZ-HNN2VC",
+      "invariant": "INV-MGGEBY",
+      "origin": {
+        "handoffEntry": "L168-CUR-M2-21-N21",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "Full source acquisition uses project_task_sources once, carrying a summary plus qualified declared-child/parent facts into the canonical TaskEntry join. It is not the retired second served document/series collection.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+        "content": "sha256:743f5a4309c292bff25529b424208385ef192a9ad191e055dc6a7187a0aabea8",
+        "locator": {
+          "end": 178,
+          "kind": "line_range",
+          "start": 135
+        }
+      },
+      "id": "RLZ-MMSNGJN5",
+      "invariant": "INV-4RERAJCC",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "The body entry point opens the requested payload, joins graph-named sprint masters, and delegates ordinary-master/leaf dependency facts to the addressed owning-master/listed-task reader. Canonical corpus enumeration is avoided; external grant annotation retains separate addressed-store and legacy unaddressed census costs.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+        "content": "sha256:14be2da9745c9ab56baa57940376485eb4d7c53b90e20c56562ec9b63726b2b9",
+        "locator": {
+          "end": 125,
+          "kind": "line_range",
+          "start": 116
+        }
+      },
+      "id": "RLZ-P3YVEH",
+      "invariant": "INV-WHBGH5",
+      "origin": {
+        "handoffEntry": "curator-extra-source-links-INV-WHBGH5",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "Passes derived order_fields through the shared task-document projection options used for full and path-directed reads.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+        "content": "sha256:0390dda0c3bfb0155a500d4b37519d4fde282ff9accd221d6f8eb34bfbb9a0e2",
+        "locator": {
+          "kind": "symbol",
+          "name": "_task_review_state_node"
+        }
+      },
+      "id": "RLZ-YNSH8G",
+      "invariant": "INV-Z8HF38",
+      "origin": {
+        "handoffEntry": "F5-V03",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Counts the open findings before the summary's cut, so a finding beyond the first 25 is still counted.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+        "content": "sha256:8736bec245b6ea72df0993a4e8d8d9807eceaa704361970fd1f29dec4c1649d4",
+        "locator": {
+          "end": 379,
+          "kind": "line_range",
+          "start": 379
+        }
+      },
+      "id": "RLZ-YX3P68",
+      "invariant": "INV-WHBGH5",
+      "origin": {
+        "handoffEntry": "curator-extra-source-links-INV-WHBGH5",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "The shared projection options carry the single derived order_fields table into the task-document builder.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Canonicalized requirement text reader for typed packet refs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+            "content": "sha256:e181a2ed3a4c9bd7cb0edb661b24ddb2d255fd8bd5bfd81874c97faa82f73d87",
+            "locator": {
+              "end": 450,
+              "kind": "line_range",
+              "start": 447
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "No summary count cap remains, but the current population is canonical direct task-root JSON with the explicit raw task schema and a successful tolerant parse; canonical sources project each admitted document, not a second series population. Missing/bad-schema/failed parses are not a completeness promise. Retain the silent-eviction removal rationale.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+            "content": "sha256:4e5416578fa758b14053582a2bb9f8cad046d13a832af1d25c233151612a6985",
+            "locator": {
+              "end": 125,
+              "kind": "line_range",
+              "start": 83
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+            "content": "sha256:588cd8701f24de47e8d033cfc5927eac82dd8172faadd9f573c8e4a5a89103c1",
+            "locator": {
+              "end": 314,
+              "kind": "line_range",
+              "start": 256
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "`indexRows.resolveRowTarget` retains the “not authored as a task document yet” diagnostic when the summary is absent. Navigation is enabled by an entry reference, even before the summary is authored; a reference-less entry has no jump. There is no current `IndexLink` component.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "027ddd65987f25c0c7526306a2fe9d29c2f62dc8",
+            "content": "sha256:93cb9f3b0328eb4c90be0129ef564b880ad5991cca6b39555ded9bf01040ede1",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 7
+            },
+            "path": "dashboard/src/panels/detail-panel/indexRows.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f6b9976a037c6bb4eae1635751561d51b0f8121d",
+            "content": "sha256:d484296c7d57dc93dc17ecd5587244fcb643462e8570e8cb9dc913c24cdd8cf7",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 39
+            },
+            "path": "dashboard/src/panels/detail-panel/taskDocPanels.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The legacy-bare-node `ref` synthesis that leaves one loc path unprunable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:d2414fde98b5fac3676d9457812d28a6f36aa1735bd880339a492fb99d6c8b64",
+            "locator": {
+              "kind": "symbol",
+              "name": "_lift_legacy_ref"
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The closeout-queue reader skips a payload that fails model validation. Historical site counting and unchanged-source comparison belong to the retained task evidence, not this current-source reference.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7b32dd73eac8bdb5be126db5ff1fa9738f1e447",
+            "content": "sha256:537bf191e7ce1a541098f60a1d6e6d8abec11008aa72a6f51f941099d643ed8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_closeout_queues"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_closeout_queue.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Body reads the schema-admitted requested document, graph-named masters and their listed children, plus the addressed ordinary owner/listed-task Order closure, without enumerating the task corpus. Newly read owner/child dictionaries require the raw task schema before tolerant parsing. Grant-store census is a separate cost.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+            "content": "sha256:743f5a4309c292bff25529b424208385ef192a9ad191e055dc6a7187a0aabea8",
+            "locator": {
+              "end": 178,
+              "kind": "line_range",
+              "start": 135
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+            "content": "sha256:9b6373ba9eeb22e690729f48e7140cac9740485c12a5a1116269682dfa1cf12f",
+            "locator": {
+              "end": 214,
+              "kind": "line_range",
+              "start": 181
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "438d84c0d09d0074e5914af96d7e5babdb5a4eaf",
+            "content": "sha256:390c20d8eb1169ccdb88d5cbd8d3df0183783f9f2683e40f51c0bd452f73ee1e",
+            "locator": {
+              "end": 179,
+              "kind": "line_range",
+              "start": 137
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_order.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7c7f9860a40aaff1cb52f2b1c2c8b62be034bc3c",
+            "content": "sha256:d93b793204900feddee7f4d0bbc5de929546f7465ce2212c3bf6318266224d83",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_document_parse.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+            "content": "sha256:2f44635d5fd7e4a43ddfa147a7a43521f6e85200366eac6f263ffc7abefe672d",
+            "locator": {
+              "end": 619,
+              "kind": "line_range",
+              "start": 594
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The body read's master join table: none without a graph, otherwise graph-named masters and their declared children that carry the schema.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+            "content": "sha256:5a011f43726e428ce71803f955cc105c6ccce187a1302919c7a1fb155e0358c9",
+            "locator": {
+              "end": 220,
+              "kind": "line_range",
+              "start": 200
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The named-path probe that returns exactly the enumeration's subset for those tails, in the same order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebd43acfbc3ada61f3802752cbe36506c5dbecb6",
+            "content": "sha256:c6b237de108b6ea7d4c34958fb206df82f5a72a176c8ec5ef95073f71101534a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_canonical_task_json_candidates"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_common.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The extracted graph adapter joins named documents for titles/nature/authored child stage.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+            "content": "sha256:311b55f276a56227f1095090633f65d122998839e86e2a000d2381cc710fc830",
+            "locator": {
+              "end": 624,
+              "kind": "line_range",
+              "start": 584
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The HTTP handler that calls the body read: 503 before the first projection, 404 when the read returns `None`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c284363bcc9358c1351d82fe3b311d7fd74521f2",
+            "content": "sha256:185e3a48375bc5974a9dfaeffff14b387f9632b99a55cd42b637fc719977748c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_task_document_response"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_routes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Retained L42 regression account: byte identity against the corpus-wide join and same touched files at 4/40 unrelated tasks concerned the earlier graph-only closure. It remains historical execution evidence, not a result from this reconciliation. RF01 source updates the leaf-touch expectation to include its owner and adds owner/listed-child admission assertions; those compare dependency/graph fields, not complete serialized bodies for every possible Order population.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+            "content": "sha256:9b6373ba9eeb22e690729f48e7140cac9740485c12a5a1116269682dfa1cf12f",
+            "locator": {
+              "end": 214,
+              "kind": "line_range",
+              "start": 181
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "438d84c0d09d0074e5914af96d7e5babdb5a4eaf",
+            "content": "sha256:390c20d8eb1169ccdb88d5cbd8d3df0183783f9f2683e40f51c0bd452f73ee1e",
+            "locator": {
+              "end": 179,
+              "kind": "line_range",
+              "start": 137
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_order.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6524de15cb8e3481454eaa8e94d67a6e646fa201",
+            "content": "sha256:7b1b01031f75ed475f95660ee2d3108b4121dee0682704b9c159704f7fcbb770",
+            "locator": {
+              "end": 229,
+              "kind": "line_range",
+              "start": 189
+            },
+            "path": "mcp/tests/test_task_document_body_lookup.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6524de15cb8e3481454eaa8e94d67a6e646fa201",
+            "content": "sha256:02a30ac55631fdf4c2177f6686ce88d5262fb0d33eb288e734504308daa4720c",
+            "locator": {
+              "end": 314,
+              "kind": "line_range",
+              "start": 267
+            },
+            "path": "mcp/tests/test_task_document_body_lookup.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+            "content": "sha256:5ce03d5e857e5189ee64716f3703eae8aafbfab30efc8fa53df0f8ee768a677d",
+            "locator": {
+              "end": 197,
+              "kind": "line_range",
+              "start": 154
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "438d84c0d09d0074e5914af96d7e5babdb5a4eaf",
+            "content": "sha256:c001db207453a412253909b005914a7740033977baafa0a4ff9d71a6f63eafc8",
+            "locator": {
+              "end": 158,
+              "kind": "line_range",
+              "start": 124
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_order.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6524de15cb8e3481454eaa8e94d67a6e646fa201",
+            "content": "sha256:f0bd94fb7fda89c9f0abe70d9fbabf9b63c5616e3c0770660ce90339a686011c",
+            "locator": {
+              "end": 232,
+              "kind": "line_range",
+              "start": 193
+            },
+            "path": "mcp/tests/test_task_document_body_lookup.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6524de15cb8e3481454eaa8e94d67a6e646fa201",
+            "content": "sha256:a6a576ef3a3e81645abfd56f3cfa8bcf5a20a525f935ac7030179be3e30ef59e",
+            "locator": {
+              "end": 317,
+              "kind": "line_range",
+              "start": 272
+            },
+            "path": "mcp/tests/test_task_document_body_lookup.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Canonicalized open-question reader for typed acceptance obligations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+            "content": "sha256:d1714a1de071de85e622b114fba836aa05706b82892a1a410c55c16601e10742",
+            "locator": {
+              "end": 456,
+              "kind": "line_range",
+              "start": 453
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Shared task-source summaries and addressed bodies retain optional external grant annotations. Corpus enumeration and addressed body owner/listed-task reads have different costs; grant-store census is separate. Grant display nodes remain outside authored task JSON and its body revision, and do not themselves grant permission.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+            "content": "sha256:10f6e634cd65402363563645d28a364f927661e1d5b17807dde3ecb2c2aa34ba",
+            "locator": {
+              "end": 132,
+              "kind": "line_range",
+              "start": 78
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+            "content": "sha256:743f5a4309c292bff25529b424208385ef192a9ad191e055dc6a7187a0aabea8",
+            "locator": {
+              "end": 178,
+              "kind": "line_range",
+              "start": 135
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+            "content": "sha256:57e4c594c99ee59bab9fe4490c036a18d86dd6cf40aadf8975f5ed1212bacf70",
+            "locator": {
+              "end": 504,
+              "kind": "line_range",
+              "start": 488
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+            "content": "sha256:cb5bcc2799271176953a5b30c436596d8382db20f955e0a48b1cf8c5def43830",
+            "locator": {
+              "end": 575,
+              "kind": "line_range",
+              "start": 571
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+            "content": "sha256:a6022b18bdfd04de56e9332fc0ba4d5055a1b9ed7a0f6faf5736939d0e7c51b4",
+            "locator": {
+              "end": 656,
+              "kind": "line_range",
+              "start": 594
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cd80a35ddf162f3b0ef4f5521a0771cb5516b674",
+            "content": "sha256:b6f104c7da776633978bede296b738fcce541db855792b999aa0e6b151dbed26",
+            "locator": {
+              "end": 425,
+              "kind": "line_range",
+              "start": 385
+            },
+            "path": "mcp/src/agents_remember/kernel/direct_execution_grants.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The shared source builder carries both normalized parent identity and the original master literal into TaskDocumentSource, preserving absent-versus-unresolvable input.\n\nAnchor: Current source assertions",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+            "content": "sha256:344445d0ab83e2546d8cce1eb1abcce26c5bd8f13d089d016b179f8303763ac6",
+            "locator": {
+              "end": 132,
+              "kind": "line_range",
+              "start": 95
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Master validation in placement applies only to documented subTasks; other listed kinds retain list placement under existing identity/cycle guards, not a kind-rejection or own-master-validation rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "content": "sha256:48de0c9a5927d664ad57b424366a96de5cbe63165fa355809fa071a02ce44225",
+            "locator": {
+              "kind": "symbol",
+              "name": "_place_listed_child"
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "content": "sha256:ee9a7b94ba0aa56862d632811a4d0b128aa495307d53aec69f208cb1afadc314",
+            "locator": {
+              "end": 493,
+              "kind": "line_range",
+              "start": 417
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "content": "sha256:2e3d0f7b73581184814e67983f84f48e68f04f43994be827653c34fd18149436",
+            "locator": {
+              "end": 417,
+              "kind": "line_range",
+              "start": 339
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Body revision hashes typed intent values and raw fixed-prose/dependency/time slots; node construction also hashes derived Order graph/dependencies, while completion-time projection prefers stored time then the greatest valid exact-finalization timestamp.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+            "content": "sha256:7a65f7775f2b252903788fcf406997ae115820add50778526ad4e32d18c74a6c",
+            "locator": {
+              "end": 656,
+              "kind": "line_range",
+              "start": 622
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+            "content": "sha256:e0217997a9d7d2f98cbd98e3ea3642b86db41ad0e7d55ed063309552ad131c03",
+            "locator": {
+              "end": 499,
+              "kind": "line_range",
+              "start": 488
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+            "content": "sha256:b7cabe376357a0c1eb26004ded85c3e3a154af5d8e76a65f53239dbc03aa8e72",
+            "locator": {
+              "end": 591,
+              "kind": "line_range",
+              "start": 579
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The tolerant parser is definition-owned by _task_document_parse.projected_document: validate first, retry addressed unknown-field pruning, and return None for remaining non-unknown or exhausted failures. It is not raw-schema-presence admission.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c7f9860a40aaff1cb52f2b1c2c8b62be034bc3c",
+            "content": "sha256:d93b793204900feddee7f4d0bbc5de929546f7465ce2212c3bf6318266224d83",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_document_parse.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Deep-copy pruning of addressed keys is definition-owned by _task_document_parse._without_paths; augmented locations that cannot be walked are still not healed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c7f9860a40aaff1cb52f2b1c2c8b62be034bc3c",
+            "content": "sha256:c3db15b77883cc894d73bc17ca5ff0d08894f24d8afdbba0ef27efd91c27aff9",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 30
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_document_parse.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The four-pass retry bound and augmented-location limitation belong to the extracted parser. Retained L10 measurements motivate the bound; no new run or derived pass-count guarantee is claimed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c7f9860a40aaff1cb52f2b1c2c8b62be034bc3c",
+            "content": "sha256:8398ac544368cd9dc5b62d1c0713ba148aa81c3ba1e053bb4b900b985846c185",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 11
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_document_parse.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Authoring strictness is untouched: the strict base model, and the step-level `note` a newer build writes. Anchor: `Step.note`\n\nAnchor: `Step.note`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:0f8da6cf1800ebe9d9fddec24e4a2847ae52c5c26c23067dc0ffb8302d2e405c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Doc"
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:1f35917c2a19b29f3f3955f0c52b501e5891932257b5dcf30f54beef87e97471",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 129
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:33f48f246c2109e91baf88f5b616f534fe229ad8dc1d3e318be51af05935a3c7",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 133
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The durable-data writer takes an already-validated document, so it can write no unknown key.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
+            "content": "sha256:4ded8abcc33346b4533bd60af807e620fa626fafcbae2d0253cea00b609fcf6f",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_task_doc"
+            },
+            "path": "mcp/src/agents_remember/tasks/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

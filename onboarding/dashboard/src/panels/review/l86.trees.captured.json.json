@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/l86.trees.captured.json",
+  "realizes": [],
+  "references": {
+    "4": {
+      "note": "This retained comparison-5 fixture carries 673 stored worklist items, 155 answered and 518 open gate states, and 101 leaf-wide code facts. These are capture-epoch values, not this leaf’s current gate counts or fresh full-tree producer acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfaf3347e7d44f681292409632b176369ca43723",
+            "content": "sha256:40bee0a6f4ef3683af8369e0385c2d29d9c88644fd15cbe1e658f9c0e69f3799",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

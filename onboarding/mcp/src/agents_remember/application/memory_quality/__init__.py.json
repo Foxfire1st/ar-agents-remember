@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/application/memory_quality/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Package description\n\nAnchor: \"Application services for memory-quality runs.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef287a45a2e5c48ac8791fb6dbdd1f5302269f3a",
+            "content": "sha256:7a60d440e1661f7ebce0aad831f96157336aee5b9ce91e1d9de0414c209b43f3",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

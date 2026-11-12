@@ -1,0 +1,49 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The fixed ceiling made the developer setting ineffective and repeatedly required manual extra-round approval."
+  },
+  "alternatives": [
+    {
+      "option": "Read the positive user settings number at each review begin, with the documented fallback and cumulative approved extras.",
+      "reason": "The fixed ceiling made the developer setting ineffective and repeatedly required manual extra-round approval.",
+      "status": "chosen"
+    },
+    {
+      "option": "Retain the fixed hard review ceiling in code and role prose.",
+      "reason": "The fixed ceiling made the developer setting ineffective and repeatedly required manual extra-round approval.",
+      "reconsider_when": "The requirement owner deliberately replaces live configurable budgets with a different bounded authority.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Future review-budget, approval and role-text changes must preserve this selected authority and the separate code/memory counts without reset."
+  ],
+  "context": "A hard-coded review cap overruled an already parsed user setting and rejected larger valid budgets.",
+  "decider": "Developer D143 (agree to that), approved MIK-R116@v1 rules1-4.",
+  "id": "DEC-R1DV8P",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "route:mcp/src/agents_remember/worktrees"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_agentic_settings.py; role-reports/.../role-launch/evidence-attempt3/focused-pytest.log"
+      ],
+      "path": "handoff-independent-wave.json"
+    },
+    "handoffEntry": "L116-W3-settings-default",
+    "leaf": "260928-MIK-L116",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

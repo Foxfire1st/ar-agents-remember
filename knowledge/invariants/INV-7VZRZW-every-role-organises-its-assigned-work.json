@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The freedom and its bounds are stated in all ten role texts and the router and are guarded by the per-role wording tests, whose removal controls fail when a clause is deleted."
+  },
+  "applicability": "Every role of this product, inside the assignment its task gives it.",
+  "conditions": [
+    "What crosses the assignment boundary stays the seat's own act.",
+    "A harness sub-agent holds no AR seat, starts no role and has the same folder, permissions and assignment.",
+    "Nobody checks itself through a sub-agent."
+  ],
+  "exclusions": [
+    "The product's seat, review and landing boundaries, which the freedom does not move."
+  ],
+  "id": "INV-7VZRZW",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Current successor r2/candidate-freeze.json, repair-report.md, commands.json and compiled capsule/constructor/81 retirement controls; predecessor inventory.md and actual live-witness/witness-supplement.md retained. Historical A1 evidence (not current disposition): All-role wording test; ten retained before/after capsule pairs; knowledge_read base INV-208SQT/RLZ-DT71R6 needs Curator reconsideration under the approved rule14."
+      ],
+      "path": "notes/files/l99-curation-20261007/handoff.json"
+    },
+    "handoffEntry": "R99-14-harness-work",
+    "leaf": "260928-MIK-L99",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Every role organises its assigned work with its own harness and answers for checked and credited helper work, while boundary acts remain its own, helpers hold no AR seat or extra permissions, independent review remains external and Curator keeps one writer.",
+  "status": "proposed",
+  "supersedes": []
+}

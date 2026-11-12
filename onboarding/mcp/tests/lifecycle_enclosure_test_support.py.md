@@ -1,15 +1,5 @@
 # mcp/tests/lifecycle_enclosure_test_support.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/lifecycle_enclosure_test_support.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash |  `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e`|
-| lastVerifiedCommitDate |  2026-08-25T17:21:45+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Test suite overview](overview.md)
@@ -22,7 +12,7 @@ Provides small explicit builders for lifecycle-enclosure addressability forcing.
 
 ### Logic
 
-Builders produce exact locator, manifest, predecessor, and archive shapes while leaving scenario differences local.
+Builders produce exact locator, manifest, predecessor, and archive shapes while leaving scenario differences local. `terminalize_test_enclosure` archives an abandonment by default and, with `cleanup=True`, the `worktree_cleanup` operation a finished task leaves behind — the archive a reopen resets — while still driving the production archive/readback/receipt seam and cutting after deletion.
 
 ### Conventions
 
@@ -39,31 +29,39 @@ differences remain in the test so fixtures do not become a parallel implementati
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The configured Domain Documentation registry is empty. No external documentation claim is made.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external domain source is required for this repository-owned test contract. | `enclosure_contract` | mcp/tests/lifecycle_enclosure_test_support.py:1-100 |
 
-## Repo-Internal References
+> Retained earlier citation wording: - No external domain source is required for this repository-owned test contract. [1]
+
+
+### Repo-Internal References
 
 The test file is direct evidence for the production boundary named above.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The selected scenarios and assertions implement this test unit's forcing proof. | `enclosure_contract` | mcp/tests/lifecycle_enclosure_test_support.py:1-100 |
 
-## Cross-Repo References
+> Retained earlier citation wording: - The selected scenarios and assertions implement this test unit's forcing proof. [2]
+
+
+### Cross-Repo References
 
 No cross-repository source is allowed by the resolved settings.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repository reference applies. | `enclosure_contract` | mcp/tests/lifecycle_enclosure_test_support.py:1-100 |
 
-## Update History
+> Retained earlier citation wording: - No meaningful cross-repository reference applies. [3]
 
-- 2026-08-25T15:44+02:00 — Created during PDLS whole-system reconciliation after source and
-  requirement review. Verification remains closeout-owned.
+## 260928-MIK-L198 — a published test enclosure's root is this module's to remove
+
+`publish_test_enclosure` now remembers the outside scratch root each publication creates — from the manifest's published record, else from the contract's recorded root — and removes those roots when the run ends, so a test that deletes its fixture tree does not leave an empty root behind in the product parent. Publication itself is unchanged: the helper still delegates to `publish_new_lifecycle_operation_location`.
+
+- No external domain source is required for this repository-owned test contract.  Anchor: `enclosure_contract` [1]
+
+
+- The selected scenarios and assertions implement this test unit's forcing proof.  Anchor: `enclosure_contract` [2]
+
+
+- No meaningful cross-repository reference applies.  Anchor: `enclosure_contract` [3]

@@ -1,0 +1,1004 @@
+{
+  "path": "mcp/tests/test_workflow_chain_guidance.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The workflow statement: nine operations, with the two preview/apply pairs appearing twice on purpose.\n\nAnchor: `WORKFLOW_OPERATIONS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
+            "content": "sha256:73364a706f5dba74b5a307558c73a1602546e217514aae7b22e47750eb826617",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "One operation, what its own guidance supplied, and what came back.\n\nAnchor: `Hop`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
+            "content": "sha256:73364a706f5dba74b5a307558c73a1602546e217514aae7b22e47750eb826617",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "One response's own operational triple, and what calling it exactly as published produced.\n\nAnchor: `RecommendedCall`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
+            "content": "sha256:73364a706f5dba74b5a307558c73a1602546e217514aae7b22e47750eb826617",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The disposable world: real repositories, a real server, one session per call.\n\nAnchor: `WorkflowWorld`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
+            "content": "sha256:73364a706f5dba74b5a307558c73a1602546e217514aae7b22e47750eb826617",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "Invoking one registered tool exactly as a consumer does, with the raise itself as the arm.  Anchor: `call`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
+            "content": "sha256:bad3617490d465178a0e7b98e9408bd1968ab852e41b9c312f11946c6bd69907",
+            "locator": {
+              "end": 443,
+              "kind": "line_range",
+              "start": 431
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The single walk of the chain, the hops it produced, and the three arrangements.\n\nAnchor: `WorkflowChainObservation`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
+            "content": "sha256:73364a706f5dba74b5a307558c73a1602546e217514aae7b22e47750eb826617",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "What the guidance supplies for a hop, and the arguments it declares as required.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
+            "content": "sha256:3e14af6ab317b9a857fe564b85409b03f9d988045ceb7b627a34478389f0bb99",
+            "locator": {
+              "end": 227,
+              "kind": "line_range",
+              "start": 208
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "The addressed-sibling case first asserts that the sibling produced a landing hint, then checks every returned contract-path channel remains outside that sibling enclosure and any next tool is public.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
+            "content": "sha256:f5c06ceff0a5d25c525636cbb681dc31ea72e230fbe67b37b787cc039b18d33c",
+            "locator": {
+              "end": 204,
+              "kind": "line_range",
+              "start": 182
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Each operation's own state vocabulary, and the terminal cleanup cell.\n\nAnchor: `EXPECTED_STATES`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
+            "content": "sha256:73364a706f5dba74b5a307558c73a1602546e217514aae7b22e47750eb826617",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "The stale base driven through the tools, with `worktree_sync` required to answer `would-sync`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
+            "content": "sha256:d335673cf828593cfeb53b4695068887715c114cefab136e74da360d7e017c5d",
+            "locator": {
+              "end": 424,
+              "kind": "line_range",
+              "start": 395
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "Every hop's own triple called verbatim, so the channel a case does not call is not a channel it can see.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
+            "content": "sha256:36584383d924e267b1506f23a8f2b65c121558954035b6f27d2796463ff40b40",
+            "locator": {
+              "end": 279,
+              "kind": "line_range",
+              "start": 229
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "The second producer of the same recommendation, driven in the same world rather than cited.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
+            "content": "sha256:a42a2a4639eb7d5334053afb3223d1bb5f427c61177c6f8b2addb84e888ac214",
+            "locator": {
+              "end": 256,
+              "kind": "line_range",
+              "start": 229
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "The union of the walk's own as-given calls and every probe, asserted equal to the pin.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
+            "content": "sha256:3e14af6ab317b9a857fe564b85409b03f9d988045ceb7b627a34478389f0bb99",
+            "locator": {
+              "end": 227,
+              "kind": "line_range",
+              "start": 208
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "The order, asserted against what the run actually did rather than stated beside it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
+            "content": "sha256:9efe7bc5e587b6afb144ec5bd01a6790ef2513a8be38e580d74097399cb54823",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 92
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "A named forward move must be the next hop or a later remaining hop when interleaved; forward/hold lower bounds are asserted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
+            "content": "sha256:ead2983065a8b78459a890e0409bcfce8632a824e5f52a0dc66ae7798386e964",
+            "locator": {
+              "end": 158,
+              "kind": "line_range",
+              "start": 124
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "26": {
+      "note": "The separate own-task case checks each present address value against the own contract and requires checked >= observed hops; it does not require an address on each individual channel.\n\nAnchor: own-task-case assertions",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
+            "content": "sha256:3eff1de2f738fa20d2904568bcb975269cea1fae40a199c5ea19612f4b483923",
+            "locator": {
+              "end": 180,
+              "kind": "line_range",
+              "start": 162
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "27": {
+      "note": "Sibling fixtures must exist and the raw hint must be non-null before present address values are checked not to name the sibling; PUBLIC_TOOLS membership is conditional on top_next_tool.\n\nAnchor: sibling-case assertions",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
+            "content": "sha256:f5c06ceff0a5d25c525636cbb681dc31ea72e230fbe67b37b787cc039b18d33c",
+            "locator": {
+              "end": 204,
+              "kind": "line_range",
+              "start": 182
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "28": {
+      "note": "The derived population, asserted equal to the pin over both channels.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
+            "content": "sha256:3e14af6ab317b9a857fe564b85409b03f9d988045ceb7b627a34478389f0bb99",
+            "locator": {
+              "end": 227,
+              "kind": "line_range",
+              "start": 208
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "29": {
+      "note": "The population of the case above, so it cannot silently shrink — with its own boundary stated.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
+            "content": "sha256:36584383d924e267b1506f23a8f2b65c121558954035b6f27d2796463ff40b40",
+            "locator": {
+              "end": 279,
+              "kind": "line_range",
+              "start": 229
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Expected phase labels are literal test inputs; observed phase membership and endpoints come from product guidance over the walk’s contract.\n\nAnchor: `EXPECTED_PHASES`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
+            "content": "sha256:ff8aa0c088786de93413005a94af30adebafb79e9241a47132b3f6b3b7e26602",
+            "locator": {
+              "end": 122,
+              "kind": "line_range",
+              "start": 109
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
+            "content": "sha256:73364a706f5dba74b5a307558c73a1602546e217514aae7b22e47750eb826617",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "30": {
+      "note": "The classifier's control: an unusable recommendation must be seen as one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
+            "content": "sha256:604c714b8eb1b19fb2fdc00ac2bae3137165a28c28d32947d4626e8bf6ef7e18",
+            "locator": {
+              "end": 311,
+              "kind": "line_range",
+              "start": 281
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "31": {
+      "note": "The withhold is real, counted, and explained in both directions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
+            "content": "sha256:6c20aab7356881c81bfd36b6eb3aea4e61849b29d1e286ca5b5c42de29c0cc27",
+            "locator": {
+              "end": 349,
+              "kind": "line_range",
+              "start": 328
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "32": {
+      "note": "`T62`'s trigger: the snapshot present, every preview answering, preserved, then reclaimed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
+            "content": "sha256:f815a91b6a78f49c23e1ce5d0512d3ffc105ddd312cca852fdbd3e49a5bfce6e",
+            "locator": {
+              "end": 393,
+              "kind": "line_range",
+              "start": 353
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "33": {
+      "note": "The stale base driven, and the raiser pinned by set equality.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
+            "content": "sha256:d335673cf828593cfeb53b4695068887715c114cefab136e74da360d7e017c5d",
+            "locator": {
+              "end": 424,
+              "kind": "line_range",
+              "start": 395
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "34": {
+      "note": "Cleanup and closeout requirement declarations are asserted; the test docstring’s historical four-site account disagrees with current three-site guidance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
+            "content": "sha256:36e1d4abe81da191cd750a6d5af735bca00260cefb6ee4c85a224eaa719d0908",
+            "locator": {
+              "end": 499,
+              "kind": "line_range",
+              "start": 428
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "35": {
+      "note": "The lane manifest declares test_workflow_chain_guidance.py in unit-regression; membership selects evidence and establishes no invocation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5691b694e756469475d783c426d9781ef14c8633",
+            "content": "sha256:59e0e1653d5a589fe09a0646e0ece6d41f34bb59394ec582e7af93d79916c9f6",
+            "locator": {
+              "end": 626,
+              "kind": "line_range",
+              "start": 626
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "36": {
+      "note": "The operational triple's declared home, and the reason it is a channel of the response's own contract.  Anchor: `nextArgs`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:e78c9a3a5f40cbe4afaccc30894f1b7e29d5e43ec2f9b1a3329a675dc7df6639",
+            "locator": {
+              "end": 411,
+              "kind": "line_range",
+              "start": 405
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:850212135859df7ef2a304d5f3f9d63aefef33ff7824ecd1c284930d65f229cc",
+            "locator": {
+              "end": 397,
+              "kind": "line_range",
+              "start": 397
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "The overlay's model, which can declare what it leaves to the caller and the operational triple cannot.\n\nAnchor: `NextStep.nextRequiredArgs`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6e13076db126a04a1f38984bfb6dc23884bff6a",
+            "content": "sha256:66bc5c8f67ae02c70ed7e6faf1e639b8b56895993669751bc7b2854fd52537c6",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 60
+            },
+            "path": "mcp/src/agents_remember/models/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "The guard that withholds a hint which cannot name the response's own place.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
+            "content": "sha256:129afbc7db95453225dc24dc3d91b07668c255b319898fb911556658fe5c0777",
+            "locator": {
+              "kind": "symbol",
+              "name": "bound_next_step"
+            },
+            "path": "mcp/src/agents_remember/application/tool_response.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The callability pin, with the repair rule stated at the constant.\n\nAnchor: `GUIDANCE_STEPS_MISSING_REQUIRED_ARGS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
+            "content": "sha256:73364a706f5dba74b5a307558c73a1602546e217514aae7b22e47750eb826617",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "40": {
+      "note": "The producer that writes `approved_for_commit` and `closeout_status: completed` in one contract write.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+            "content": "sha256:27502a84ab1a28a5c8ace3d8b4facc50dedf942ad12f1cbdfef928ed528911a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_amended_closeout_contract"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "41": {
+      "note": "The snapshot path the preview's drift collection actually reads, derived from worktree and branch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d70d647b40f8b84669d1de3f0a9f357fa81e3327",
+            "content": "sha256:8232e9eb442c1a4f7fd24cc18ba36e924475e60ed78e7875784d38e33890aa9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "drift_snapshot_path"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/drift_snapshot.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "42": {
+      "note": "The real reclamation the preservation claim is measured against.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d70d647b40f8b84669d1de3f0a9f357fa81e3327",
+            "content": "sha256:1b0c3421cd46f50e7fa1265d4f027d6ddb96ab078b53a1c3546fa6bd5efc804b",
+            "locator": {
+              "kind": "symbol",
+              "name": "remove_drift_snapshot"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/drift_snapshot.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "43": {
+      "note": "SourceLineageRefusal carries status and payload internally; the workflow case asserts stale-lineage and remedy strings in rendered tool-error detail.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf98dd82609e9c8b69d49d0ebe65be3a2f119d25",
+            "content": "sha256:1146a93c5c3991416fa852daa2ed23102d2d73fea31e568a29898635d9bed7f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourceLineageRefusal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_lineage.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "44": {
+      "note": "The pre-integration worktree_status recommendation carries repo_id; this is the phase arm the workflow reaches.\n\nAnchor: `_pre_integration_phase`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
+            "content": "sha256:c5a2fd084e668cadc10135510d3635ab841914e4f4cfafe640271cfe0bf18e67",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
+            "content": "sha256:c8d5b3f1af5cfecddc5f379e3b0a88962b9e5b4cc585010519455d97b599c56b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_pre_integration_phase"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "45": {
+      "note": "The checkpoint worktree_status recommendation also carries repo_id; this arm is not reached by the workflow module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
+            "content": "sha256:ee4961644f5f75ee7af81745e3554bbfbc0eeb8e1029eadaf6de37787a13299f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_post_integration_phase"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "46": {
+      "note": "The closeout intent_note requirement is declared by _pre_integration_phase and asserted on a constructed declaring contract.\n\nAnchor: `_pre_integration_phase`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
+            "content": "sha256:c5a2fd084e668cadc10135510d3635ab841914e4f4cfafe640271cfe0bf18e67",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
+            "content": "sha256:c8d5b3f1af5cfecddc5f379e3b0a88962b9e5b4cc585010519455d97b599c56b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_pre_integration_phase"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "47": {
+      "note": "The declaration `A5c` shows is not asserted (`carryover-pending`).  Anchor: `required_args`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
+            "content": "sha256:ee4961644f5f75ee7af81745e3554bbfbc0eeb8e1029eadaf6de37787a13299f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_post_integration_phase"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "48": {
+      "note": "The `recommendedAction` residual (`T127`): the call at `:450`, the `tool=` argument at `:452`.  Anchor: `LifecycleRecommendedAction`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3817015634326a5b2bb6b5c6e57309a5f7fb4250",
+            "content": "sha256:7d7217bdb7fbb22366c2641172fb4802a66f724d0aff8418c990774f981cf7af",
+            "locator": {
+              "kind": "symbol",
+              "name": "_recommended_action"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "49": {
+      "note": "The `RecoveryRoute` producer (`T130`) that publishes an uncallable triple as `nextTool`/`nextArgs`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a5b76f8edef3f6348d35d03c421fa11f0458b9c",
+            "content": "sha256:cfd259820d6ded63c7bb14d34ab02729cfffce52bcaa6be90a7c71c3d2f2a224",
+            "locator": {
+              "kind": "symbol",
+              "name": "_projection_without_control"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The withhold pinned by tool and count, so repairing the producers is a visible edit.\n\nAnchor: `WITHHELD_GUIDANCE_HOPS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
+            "content": "sha256:73364a706f5dba74b5a307558c73a1602546e217514aae7b22e47750eb826617",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "50": {
+      "note": "The tuple shape `T130` rests on: the value is a tuple element, not a tool-shaped key.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a5b76f8edef3f6348d35d03c421fa11f0458b9c",
+            "content": "sha256:227aab9d916f3cbcf944ad694ce39625e496ba65d6c8045419947ec97bc2fe23",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecoveryRoute"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "51": {
+      "note": "Where the tuple becomes the operational triple a seat reads.\n\nAnchor: `TaskUnstartedEvidence.public_payload`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a5b76f8edef3f6348d35d03c421fa11f0458b9c",
+            "content": "sha256:446b71bb0a5b1934c3c32bd6629930a796e70171a39906021293ac7814a32f34",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 66
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "52": {
+      "note": "Both previews retain stop guidance and no executable nextArgs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
+            "content": "sha256:9bfdfd1c15548b6101c495b0e761f30f8c118e899b65f43029fc4f013edac368",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_both_previews_keep_their_argument_addressed_approval_stop"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "53": {
+      "note": "The sibling case requires a non-null raw hint, excludes the sibling only from present address values, and checks PUBLIC_TOOLS only when top_next_tool exists; it does not assert every channel names the own task.\n\nAnchor: sibling-case assertions",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
+            "content": "sha256:f5c06ceff0a5d25c525636cbb681dc31ea72e230fbe67b37b787cc039b18d33c",
+            "locator": {
+              "end": 204,
+              "kind": "line_range",
+              "start": 182
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "54": {
+      "note": "Closeout and would-integrate previews retain approval-stop summaries and no executable nextArgs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
+            "content": "sha256:9bfdfd1c15548b6101c495b0e761f30f8c118e899b65f43029fc4f013edac368",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_both_previews_keep_their_argument_addressed_approval_stop"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "55": {
+      "note": "Own/sibling checks apply to present truthy path channels, with conditional public-tool membership and observed-hop bounds.\n\nAnchor: \"checked\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
+            "content": "sha256:f2de37a0ada847c79104c827e9ad670cc32b7b08a1bc2c8a87f949670bd4305b",
+            "locator": {
+              "end": 204,
+              "kind": "line_range",
+              "start": 162
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "56": {
+      "note": "The first call exactly as given, then again with only what the model named as missing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1dd38993d64a5a76c92bb9db1782e407cb760c9c",
+            "content": "sha256:181df23669533574e6ab7a25e4268a3958495fee3e5df53429ef3c70304d3b5e",
+            "locator": {
+              "end": 677,
+              "kind": "line_range",
+              "start": 657
+            },
+            "path": "mcp/tests/workflow_chain_guidance_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "57": {
+      "note": "Execute one recommended step as given, then again with only the arguments it omitted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1dd38993d64a5a76c92bb9db1782e407cb760c9c",
+            "content": "sha256:e2436774778df01b2fab0c6d9f53e5d75cb80a13139771ece9f0b4cfa3050a05",
+            "locator": {
+              "end": 718,
+              "kind": "line_range",
+              "start": 657
+            },
+            "path": "mcp/tests/workflow_chain_guidance_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "58": {
+      "note": "The ordered walk, the sibling arrangement, the retry producer, the stale base, the probe.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1dd38993d64a5a76c92bb9db1782e407cb760c9c",
+            "content": "sha256:6b226bb6d04887c1bf0e91c498fa15b687d6149f7d1d64f88a55f141f1056b34",
+            "locator": {
+              "end": 800,
+              "kind": "line_range",
+              "start": 720
+            },
+            "path": "mcp/tests/workflow_chain_guidance_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1dd38993d64a5a76c92bb9db1782e407cb760c9c",
+            "content": "sha256:7787f3c4cf117817b7ae8cab7dfd63060c14888e58d6dbd849a902cf9be269a7",
+            "locator": {
+              "end": 846,
+              "kind": "line_range",
+              "start": 802
+            },
+            "path": "mcp/tests/workflow_chain_guidance_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1dd38993d64a5a76c92bb9db1782e407cb760c9c",
+            "content": "sha256:4de8d23cc2463d985a614115cf7232315ab97655813393439a49d4890875b7ac",
+            "locator": {
+              "end": 990,
+              "kind": "line_range",
+              "start": 919
+            },
+            "path": "mcp/tests/workflow_chain_guidance_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1dd38993d64a5a76c92bb9db1782e407cb760c9c",
+            "content": "sha256:b974715c4249450e61a5b8552c42abd8918fb18a31c0a8a6624a83746e6028ed",
+            "locator": {
+              "end": 883,
+              "kind": "line_range",
+              "start": 848
+            },
+            "path": "mcp/tests/workflow_chain_guidance_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1dd38993d64a5a76c92bb9db1782e407cb760c9c",
+            "content": "sha256:3e8a091e0d8cecab8d9b090c3548afc2aa986c33255195cca865e9284ccebe9f",
+            "locator": {
+              "end": 917,
+              "kind": "line_range",
+              "start": 901
+            },
+            "path": "mcp/tests/workflow_chain_guidance_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The raisers that escape as an exception instead of a typed refusal (`T34` on `T87`'s state).\n\nAnchor: `STALE_BASE_RAISERS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
+            "content": "sha256:73364a706f5dba74b5a307558c73a1602546e217514aae7b22e47750eb826617",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Values for arguments a recommendation leaves to the caller — values, never a population.\n\nAnchor: `FIXTURE_ARGS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
+            "content": "sha256:73364a706f5dba74b5a307558c73a1602546e217514aae7b22e47750eb826617",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The two refusal arms separated by model identity, never by wording.\n\nAnchor: `classify_call`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
+            "content": "sha256:73364a706f5dba74b5a307558c73a1602546e217514aae7b22e47750eb826617",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The fields a tool's own argument model named as required and absent.\n\nAnchor: `missing_required_args`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
+            "content": "sha256:73364a706f5dba74b5a307558c73a1602546e217514aae7b22e47750eb826617",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

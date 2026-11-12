@@ -1,0 +1,1101 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L72",
+  "rows": [
+    {
+      "disposition": "no_impact",
+      "id": "ROW-1EC603",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.hermes/skills/l-01-agent-lifecycles/roles/manager.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c94136e5086e75af19b1aeba50c80dbbf06f751f",
+            "content": "sha256:c0c3299611edd64232856ead8fe17d6906699709eb295065e377740e36eb895c",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "8f5c78c2dd6b93f10bcfd9d9f614a08614a83d44",
+            "content": "sha256:c0c3299611edd64232856ead8fe17d6906699709eb295065e377740e36eb895c",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-PFT43W"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-1FPRNK",
+      "items": [],
+      "reason": "The record still holds at the candidate; its realization anchors moved or changed with this leaf's instruction edits and are re-recorded at the corrected candidate without changing the record.",
+      "revision": 1,
+      "subject": "INV-K6Q2R4"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-2SBQK7",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.openclaw/workspace/skills/l-01-agent-lifecycles/composition-manifest.json"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-3JP0SA",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.agents/skills/l-01-agent-lifecycles/operations/planning.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-4388EZ",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.openclaw/workspace/skills/l-01-agent-lifecycles/roles/manager.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-4MDBSB",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.openclaw/workspace/skills/l-01-agent-lifecycles/operations/coordination.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-4QQFDP",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.github-vscode/skills/l-01-agent-lifecycles/operations/coordination.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-4SN5BT",
+      "items": [
+        "sha256:9ad94d770488dff2d11d82aaea41bac10b3d8d1d466953437f77fd93a60e9daa"
+      ],
+      "reason": "The tests route overview describes the suite composition and catalogs; this leaf added cases, comments and names inside existing modules without changing the route's composition, and the changed test cards carry their own reviews.",
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-4WXBTZ",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.github-vscode/skills/l-01-agent-lifecycles/roles/orchestrator.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-52XAMC",
+      "items": [
+        "sha256:2547ee668aff2ad0f7ef65885f65a33a7c74b834e4b1411bff1fab78f03ea292"
+      ],
+      "reason": "The route overview's contract is the package surface; this leaf changed three module files and one test-support module without changing the mcp route's purpose or coverage, and the changed files' cards carry their own reviews.",
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-5AZR4A",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.claude/skills/l-01-agent-lifecycles/roles/manager.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-5QF569",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.agents/skills/l-01-agent-lifecycles/roles/orchestrator.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-6T0KS6",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.codex/skills/l-01-agent-lifecycles/roles/architect.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "68429e14329e3bfb1069b23976f85f62127e7788",
+            "content": "sha256:7d46fe74bd30e9d8dea0f35c71b38ff1489d500369e03615c1b7545f9503d3d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_role_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "6908a69021093990301358443f807d6cf2e10e40",
+            "content": "sha256:7d46fe74bd30e9d8dea0f35c71b38ff1489d500369e03615c1b7545f9503d3d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_role_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-8N10TZ"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-79TF70",
+      "items": [],
+      "reason": "The record still holds at the candidate; its realization anchors moved or changed with this leaf's instruction edits and are re-recorded at the corrected candidate without changing the record.",
+      "revision": 1,
+      "subject": "INV-RQ2ZB8"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-79WWD1",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.agents/skills/l-01-agent-lifecycles/composition-manifest.json"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-7YF692",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.pi/skills/l-01-agent-lifecycles/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-8664BW",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.pi/skills/l-01-agent-lifecycles/operations/planning.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-8CCHGH",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.hermes/skills/l-01-agent-lifecycles/operations/coordination.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-8FQ729",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.hermes/skills/l-01-agent-lifecycles/roles/orchestrator.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-8VKNZ5",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.agents/skills/l-01-agent-lifecycles/roles/manager.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-9EXT72",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.claude/skills/l-01-agent-lifecycles/operations/planning.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-9HPJY2",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.codex/skills/l-01-agent-lifecycles/roles/manager.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-9RKM9Y",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.hermes/skills/l-01-agent-lifecycles/composition-manifest.json"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-9WXEW9",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.codex/skills/l-01-agent-lifecycles/operations/planning.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-AV6C7Z",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.agents/skills/l-01-agent-lifecycles/roles/architect.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "68429e14329e3bfb1069b23976f85f62127e7788",
+            "content": "sha256:a3d7a97f320d80d5444f516b79094467bf76db8e2b049ee68ae0dddb4ca54bb7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_verify_leaf_revival_scope"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "6908a69021093990301358443f807d6cf2e10e40",
+            "content": "sha256:a3d7a97f320d80d5444f516b79094467bf76db8e2b049ee68ae0dddb4ca54bb7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_verify_leaf_revival_scope"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-8V1V37"
+        },
+        {
+          "after": {
+            "blob": "68429e14329e3bfb1069b23976f85f62127e7788",
+            "content": "sha256:a22825664b51defd28eec8a582fb0e965eb88368f049472166db4e2d8324a82b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_recorded_leaf_scope"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "6908a69021093990301358443f807d6cf2e10e40",
+            "content": "sha256:a22825664b51defd28eec8a582fb0e965eb88368f049472166db4e2d8324a82b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_recorded_leaf_scope"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-JWS27D"
+        },
+        {
+          "after": {
+            "blob": "68429e14329e3bfb1069b23976f85f62127e7788",
+            "content": "sha256:7624490692ab58393fecf5cac0d904a303bdf7fbe49b9eba7fe6172bdfda5cc9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf_contract_path"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "6908a69021093990301358443f807d6cf2e10e40",
+            "content": "sha256:7624490692ab58393fecf5cac0d904a303bdf7fbe49b9eba7fe6172bdfda5cc9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf_contract_path"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-ZKGBXA"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-C9HMZ5",
+      "items": [],
+      "reason": "The record still holds at the candidate; its realization anchors moved or changed with this leaf's instruction edits and are re-recorded at the corrected candidate without changing the record.",
+      "revision": 1,
+      "subject": "INV-MFVW1K"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CEJQYJ",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.cursor/skills/l-01-agent-lifecycles/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CV4Q74",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.agents/skills/l-01-agent-lifecycles/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CZMC7T",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.openclaw/workspace/skills/l-01-agent-lifecycles/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-DAEW06",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.claude/skills/l-01-agent-lifecycles/operations/coordination.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ECXB5S",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.cursor/skills/l-01-agent-lifecycles/composition-manifest.json"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-EK1P2C",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.cursor/skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-EPGHXW",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.hermes/skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-EWQ84H",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.github-vscode/skills/l-01-agent-lifecycles/composition-manifest.json"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-F8S9PT",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.hermes/skills/l-01-agent-lifecycles/operations/planning.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-FDKBEK",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.codex/skills/l-01-agent-lifecycles/roles/orchestrator.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-FHNHFS",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.cursor/skills/l-01-agent-lifecycles/roles/manager.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-FV3HS6",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.hermes/skills/l-01-agent-lifecycles/roles/architect.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-G37K2T",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.pi/skills/l-01-agent-lifecycles/roles/orchestrator.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-G5S3YB",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.claude/skills/l-01-agent-lifecycles/roles/architect.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GD1N3T",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.github-vscode/skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-HQVX73",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.agents/skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-KAD34M",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.codex/skills/l-01-agent-lifecycles/SKILL.md"
+    },
+    {
+      "covers": [],
+      "disposition": "deleted",
+      "effect": "retire",
+      "id": "ROW-KGG0FM",
+      "items": [],
+      "reason": "L72-MR1-K1: the stored statement and scope described this leaf's one-time preservation/acceptance result rather than a lasting obligation, so the record is retired and its one realization and two proofs are removed. The protected-composition account stays in the onboarding cards and the task history; O1's proof overclaim is removed with the record.",
+      "revision": 1,
+      "subject": "INV-CXEEF4"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "3d328c32addf48d8925e1ab191d2521a55aa20ae",
+            "content": "sha256:d4a12d5c146197e4304e0b7d638b884b09f48878c611eddf27b3afd7a3702606",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "before": {
+            "blob": "9436575c717cd243830e065f9fc75cb5b6fbbdee",
+            "content": "sha256:d4a12d5c146197e4304e0b7d638b884b09f48878c611eddf27b3afd7a3702606",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "id": "RLZ-8ACRJS"
+        },
+        {
+          "after": {
+            "blob": "609aadf24387be095287e98658d6230ecadd6143",
+            "content": "sha256:bc2a4613a3c8d2ec7a185f64f396cf0de36ce51056c4303264c097ddb30e3042",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "before": {
+            "blob": "ba41d23fee4e284d324ace6d3df5ec06371d5095",
+            "content": "sha256:bc2a4613a3c8d2ec7a185f64f396cf0de36ce51056c4303264c097ddb30e3042",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "id": "RLZ-G7A9BM"
+        },
+        {
+          "after": {
+            "blob": "3d328c32addf48d8925e1ab191d2521a55aa20ae",
+            "content": "sha256:f184b155d9ef15df3ea506df8864ca5d9f62fb2f256c485415c047e030de9d72",
+            "locator": {
+              "end": 601,
+              "kind": "line_range",
+              "start": 593
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "before": {
+            "blob": "9436575c717cd243830e065f9fc75cb5b6fbbdee",
+            "content": "sha256:f184b155d9ef15df3ea506df8864ca5d9f62fb2f256c485415c047e030de9d72",
+            "locator": {
+              "end": 601,
+              "kind": "line_range",
+              "start": 593
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "id": "RLZ-NNHVHW"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-MB59BQ",
+      "items": [],
+      "reason": "The record still holds at the candidate; its realization anchors moved or changed with this leaf's instruction edits and are re-recorded at the corrected candidate without changing the record.",
+      "revision": 1,
+      "subject": "INV-VTGJJK"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-MYN0MV",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.github-vscode/skills/l-01-agent-lifecycles/roles/manager.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-N625DN",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.pi/skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-NS4N33",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.pi/skills/l-01-agent-lifecycles/roles/architect.md"
+    },
+    {
+      "disposition": "changed",
+      "examined": [
+        {
+          "id": "INV-8AMSGV",
+          "revision": 1
+        },
+        {
+          "id": "INV-A6GAKX",
+          "revision": 1
+        },
+        {
+          "id": "INV-NFV5VJ",
+          "revision": 1
+        },
+        {
+          "id": "INV-P2WRNQ",
+          "revision": 1
+        },
+        {
+          "id": "INV-PEVJ6G",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-P5GC8H",
+      "items": [],
+      "reason": "L72-MR1-K7 correction: the family's files do overlap FAM-KQQE74ZT's roles route, which this leaf examined unchanged and left untouched, so the earlier 'no existing family route reaches these files' reason is withdrawn. The family is kept because its five members jointly promise the one-coordinator handover across the role texts, the planning and coordination operations, the router, the four manifest descriptions and the two host handover values -- a guarantee none of the members holds alone.",
+      "subject": "FAM-PNH1QS"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c94136e5086e75af19b1aeba50c80dbbf06f751f",
+            "content": "sha256:afaf15faf5f3a820ec5c5139a854450bcd182c94c75c664dd7f3ec171b4deeb6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "8f5c78c2dd6b93f10bcfd9d9f614a08614a83d44",
+            "content": "sha256:533ce94ebbc070aa9b03a1ffc66147f0a1546eb658fe5bdeeda29f280f510f4a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-K569QYAK"
+        },
+        {
+          "after": {
+            "blob": "42cd9f6bc94408e2db0397759dbe09c5df2b254e",
+            "content": "sha256:c3e9aa6444ed04f0e57e765dcd1f9b41a75cf141f745cd4440d566119420c542",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+          },
+          "before": {
+            "blob": "42cd9f6bc94408e2db0397759dbe09c5df2b254e",
+            "content": "sha256:c3e9aa6444ed04f0e57e765dcd1f9b41a75cf141f745cd4440d566119420c542",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+          },
+          "id": "RLZ-RSTSK683"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-P6XVRX",
+      "items": [
+        "sha256:5a279c5db43aaea35c5e193331c5a28ad5b1491d66d5ec9cbf88a5a16ea8b06f"
+      ],
+      "reason": "The record still holds at the candidate; its realization anchors moved or changed with this leaf's instruction edits and are re-recorded at the corrected candidate without changing the record.",
+      "revision": 1,
+      "subject": "INV-0FBA8M52"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-PH06ET",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.openclaw/workspace/skills/l-01-agent-lifecycles/roles/architect.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Q2K6CA",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.pi/skills/l-01-agent-lifecycles/roles/manager.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Q5733P",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.openclaw/workspace/skills/l-01-agent-lifecycles/operations/planning.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-RC635H",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.cursor/skills/l-01-agent-lifecycles/roles/orchestrator.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-RGMF9J",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.claude/skills/l-01-agent-lifecycles/composition-manifest.json"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-RKH3FD",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.openclaw/workspace/skills/l-01-agent-lifecycles/roles/orchestrator.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-S0DDF6",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.hermes/skills/l-01-agent-lifecycles/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-S5HHN6",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.openclaw/workspace/skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-SBKT2B",
+      "items": [],
+      "reason": "The canonical operation file has no card: canonical skills are outside the configured onboarding card paths. The delegation rule it now carries is recorded by INV-A6GAKX on the coordination operation, the router and the role texts.",
+      "subject": "onboarding:skills/l-01-agent-lifecycles/operations/planning.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-SR2S41",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.pi/skills/l-01-agent-lifecycles/composition-manifest.json"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-T3G0GW",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.claude/skills/l-01-agent-lifecycles/roles/orchestrator.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-T5YDNR",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.agents/skills/l-01-agent-lifecycles/operations/coordination.md"
+    },
+    {
+      "disposition": "retired",
+      "examined": [
+        {
+          "id": "INV-208SQT",
+          "revision": 1
+        },
+        {
+          "id": "INV-CXEEF4",
+          "revision": 1
+        },
+        {
+          "id": "INV-K5SFG7",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-TD82FF",
+      "items": [],
+      "reason": "L72-MR1-K2/K7: the original joint-guarantee admission mixed the one-time preservation claim (now retired), the Curator read-fanout threshold and the retired-wording guard; removing the fan-out leaves the described guard properties unchanged, so no joint obligation is supported and the family is retired. The files do overlap FAM-KQQE74ZT's roles route, which this leaf examined unchanged; its standalone members keep their own truths.",
+      "subject": "FAM-YGXZTQ"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-TR7D5F",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.cursor/skills/l-01-agent-lifecycles/roles/architect.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-V10KR2",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.pi/skills/l-01-agent-lifecycles/operations/coordination.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-V3PCW0",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.github-vscode/skills/l-01-agent-lifecycles/roles/architect.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c94136e5086e75af19b1aeba50c80dbbf06f751f",
+            "content": "sha256:8a4088c709bac5874ee149bc729069dcb0054b423e9ff911acbfee36827759ac",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "8f5c78c2dd6b93f10bcfd9d9f614a08614a83d44",
+            "content": "sha256:8a4088c709bac5874ee149bc729069dcb0054b423e9ff911acbfee36827759ac",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-090539"
+        },
+        {
+          "after": {
+            "blob": "609aadf24387be095287e98658d6230ecadd6143",
+            "content": "sha256:ebeceafc3cd5734abb69e12126f6e87e91b186250179f61e612e2ac7f2834ef9",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "before": {
+            "blob": "ba41d23fee4e284d324ace6d3df5ec06371d5095",
+            "content": "sha256:ebeceafc3cd5734abb69e12126f6e87e91b186250179f61e612e2ac7f2834ef9",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "id": "RLZ-2J32HP"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-VACPFV",
+      "items": [],
+      "reason": "The record still holds at the candidate; its realization anchors moved or changed with this leaf's instruction edits and are re-recorded at the corrected candidate without changing the record.",
+      "revision": 1,
+      "subject": "INV-C8SVFY"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0FBA8M52",
+          "revision": 1
+        },
+        {
+          "id": "INV-4N43MNN2",
+          "revision": 1
+        },
+        {
+          "id": "INV-CKHJ0M7J",
+          "revision": 1
+        },
+        {
+          "id": "INV-E8655Z54",
+          "revision": 1
+        },
+        {
+          "id": "INV-H6A6JS63",
+          "revision": 1
+        },
+        {
+          "id": "INV-J7179RG5",
+          "revision": 1
+        },
+        {
+          "id": "INV-VVMNM9B6",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-VBRQXQ",
+      "items": [
+        "sha256:a7143692eb4a04ac6b9d1d11c9254f85c7ec26ce7d109b2cf7045d720e223d86"
+      ],
+      "reason": "Every member was read at the candidate; the guarantee and the route set are as recorded, and no changed obligation adds, removes or rewrites a member. The touched member INV-0FBA8M52 is re-anchored below.",
+      "subject": "FAM-KQQE74ZT"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "609aadf24387be095287e98658d6230ecadd6143",
+            "content": "sha256:9dfc4cb5cdd5f0df991472df890fff9e430830b783ea89c0548eef33e905c3b5",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 14
+            },
+            "path": "skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "before": {
+            "blob": "ba41d23fee4e284d324ace6d3df5ec06371d5095",
+            "content": "sha256:9dfc4cb5cdd5f0df991472df890fff9e430830b783ea89c0548eef33e905c3b5",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 14
+            },
+            "path": "skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "id": "RLZ-5F3K07"
+        },
+        {
+          "after": {
+            "blob": "3d328c32addf48d8925e1ab191d2521a55aa20ae",
+            "content": "sha256:dd3b85811eb26c0f87eed4157bfcbfa55993d7952ced12ee25058616ad833e9a",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 29
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "before": {
+            "blob": "9436575c717cd243830e065f9fc75cb5b6fbbdee",
+            "content": "sha256:dd3b85811eb26c0f87eed4157bfcbfa55993d7952ced12ee25058616ad833e9a",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 29
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "id": "RLZ-BMTHTE"
+        },
+        {
+          "after": {
+            "blob": "42e0257c993e01d712413564957c027560e34557",
+            "content": "sha256:cff008a580b31483b82250166a7d30f245042524986ab6a536f026323e0baaf1",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "2c39a5eda740f8e17cd0d53bef5f73ce3a492a0b",
+            "content": "sha256:cff008a580b31483b82250166a7d30f245042524986ab6a536f026323e0baaf1",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-Y56QGT"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-VDT324",
+      "items": [],
+      "reason": "The record still holds at the candidate; its realization anchors moved or changed with this leaf's instruction edits and are re-recorded at the corrected candidate without changing the record.",
+      "revision": 1,
+      "subject": "INV-CHNC1N"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-VNV6A3",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.codex/skills/l-01-agent-lifecycles/composition-manifest.json"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-VV7HRZ",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.cursor/skills/l-01-agent-lifecycles/operations/coordination.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a5eac45e7f495ea5269ffcec76251ec4b607427f",
+            "content": "sha256:fd97efca3521a234676e5b0bcdc806fbdd0827156b2fbdf22900b9a55b5410f8",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "before": {
+            "blob": "7818a6c0241184ffcec443c7e00f74944cad14ef",
+            "content": "sha256:fd97efca3521a234676e5b0bcdc806fbdd0827156b2fbdf22900b9a55b5410f8",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "id": "RLZ-P0ZH30"
+        },
+        {
+          "after": {
+            "blob": "c94136e5086e75af19b1aeba50c80dbbf06f751f",
+            "content": "sha256:4c64f5a7f6548edd625a84a5f909c182cbb8d2fd427559ff749e1cad451b4a96",
+            "locator": {
+              "end": 225,
+              "kind": "line_range",
+              "start": 223
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "8f5c78c2dd6b93f10bcfd9d9f614a08614a83d44",
+            "content": "sha256:4c64f5a7f6548edd625a84a5f909c182cbb8d2fd427559ff749e1cad451b4a96",
+            "locator": {
+              "end": 225,
+              "kind": "line_range",
+              "start": 223
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-V1AKR1"
+        },
+        {
+          "after": {
+            "blob": "609aadf24387be095287e98658d6230ecadd6143",
+            "content": "sha256:372b0095be3b7d9666f19b698f1d54b7f3fc95a937c444a882d9fc120b9e34e4",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 35
+            },
+            "path": "skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "before": {
+            "blob": "ba41d23fee4e284d324ace6d3df5ec06371d5095",
+            "content": "sha256:372b0095be3b7d9666f19b698f1d54b7f3fc95a937c444a882d9fc120b9e34e4",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 35
+            },
+            "path": "skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "id": "RLZ-X8MYE4"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-W0V4EB",
+      "items": [],
+      "reason": "The record still holds at the candidate; its realization anchors moved or changed with this leaf's instruction edits and are re-recorded at the corrected candidate without changing the record.",
+      "revision": 1,
+      "subject": "INV-4E130M"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c94136e5086e75af19b1aeba50c80dbbf06f751f",
+            "content": "sha256:4c64f5a7f6548edd625a84a5f909c182cbb8d2fd427559ff749e1cad451b4a96",
+            "locator": {
+              "end": 225,
+              "kind": "line_range",
+              "start": 223
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "8f5c78c2dd6b93f10bcfd9d9f614a08614a83d44",
+            "content": "sha256:4c64f5a7f6548edd625a84a5f909c182cbb8d2fd427559ff749e1cad451b4a96",
+            "locator": {
+              "end": 225,
+              "kind": "line_range",
+              "start": 223
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-PDP66S"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-WTQDV8",
+      "items": [],
+      "reason": "The record still holds at the candidate; its realization anchors moved or changed with this leaf's instruction edits and are re-recorded at the corrected candidate without changing the record.",
+      "revision": 1,
+      "subject": "INV-5TKYXM"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-X1KGGG",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.codex/skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-XQ3A4Z",
+      "items": [
+        "sha256:f2b8253a675ebf702891350ec73fa3f2444ecd7a16ac27688486752a3e497efa"
+      ],
+      "reason": "The card describes the routing metadata and launcher vocabulary; the four changed seat and purpose strings do not alter the manifest's selection contract, so the card still holds.",
+      "subject": "onboarding:mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/composition-manifest.json"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-XQGGKN",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.codex/skills/l-01-agent-lifecycles/operations/coordination.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-YQJZ5X",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.cursor/skills/l-01-agent-lifecycles/operations/planning.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Z5DSE3",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.github-vscode/skills/l-01-agent-lifecycles/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Z777QW",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.claude/skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Z838ZH",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.github-vscode/skills/l-01-agent-lifecycles/operations/planning.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ZN4T2K",
+      "items": [],
+      "reason": "Generated mirror of its canonical source: scripts/sync-skills.py regenerates the mirror byte-for-byte and the canonical card for the same file carries the reviewed change; the mirror is outside the configured onboarding card paths and has no card of its own.",
+      "subject": "onboarding:.claude/skills/l-01-agent-lifecycles/SKILL.md"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

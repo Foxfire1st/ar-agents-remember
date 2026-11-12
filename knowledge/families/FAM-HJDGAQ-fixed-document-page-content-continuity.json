@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "A correctly selected skeleton can show stale counts, a correct bounded preview can lose complete content, and a current hydrated body can still be rendered by the wrong form; the three members jointly preserve document content/identity continuity."
+  },
+  "guarantee": "The model-selected fixed document page remains a truthful view of the same selected document across bounded summaries, complete-content own views and body hydration: fixed nonempty composition, whole-population counts and current summary-owned facts jointly survive navigation and revision changes. None of form composition, bounds or hydration alone ensures that continuity.",
+  "id": "FAM-HJDGAQ",
+  "members": [
+    "INV-PHG1PR",
+    "INV-7JFCAF",
+    "INV-S18MK6"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "ingest-decisions-family.json"
+    },
+    "handoffEntry": "fixed-document-page-content-continuity",
+    "leaf": "260928-MIK-L127",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "dashboard/src/panels",
+    "dashboard/src/data",
+    "mcp/src/agents_remember/serving/projections/snapshots_impl"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Fixed document-page content continuity"
+}

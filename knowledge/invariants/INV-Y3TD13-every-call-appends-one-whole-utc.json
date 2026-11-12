@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "Whole-line append with counted stalls is proved by the named passing partial-write cases; single-file member of the family."
+  },
+  "applicability": "Every tool call through the production boundary.",
+  "conditions": [
+    "One whole line per admitted call on the UTC day, with the whole result filed beside it.",
+    "Stalled prefixes and concurrent fragments are counted on the next persisted line without interleaving.",
+    "Writes that cannot be admitted are dropped and counted: folder-budget conflict, oversize detail, unwritable location."
+  ],
+  "exclusions": [
+    "Processes without a coordination root (tests), which write no log and do not fail.",
+    "Reports for the caller to read, which are files of their own, not log lines.",
+    "Unadmitted writes (budget conflict, oversize detail, unwritable location), which are dropped and counted rather than persisted."
+  ],
+  "id": "INV-Y3TD13",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_tool_answer_table.py::ToolPartialWriteTests::test_concurrent_stall_is_counted_on_the_next_persisted_line + test_concurrent_writers_never_interleave_records + test_stalled_writer_leaves_concurrent_neighbor_parseable (passing in the R6 run)"
+      ],
+      "path": "handoff-2.json"
+    },
+    "handoffEntry": "MIK-R108@v1 §3 daily-line",
+    "leaf": "260928-MIK-L108",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Every admitted call appends one whole UTC-day line under whole-record exclusion and files its whole result beside it, with secrets omitted and long values shortened; a write that cannot be admitted — folder-budget conflict, oversize detail, unwritable location — is dropped and counted, never failing the call; a stalled prefix never joins the next record and concurrent fragments never interleave.",
+  "status": "proposed",
+  "supersedes": []
+}

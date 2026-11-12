@@ -1,0 +1,105 @@
+{
+  "path": "mcp/src/agents_remember/providers/cgc/setup.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The setup entry points return no CGC install or preparation work because their first selection check excludes the retired provider.\n\nAnchor: `install_enabled_provider`, `prepare_enabled_provider`, `provider_enabled`, `selected_provider_enabled`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fd9365841b45fdc84d43cc0460e9e1079bd2c3c",
+            "content": "sha256:0670e973f279db252da1db746bccd938f816b96d1ff638f33a1f6c88b67b7bb5",
+            "locator": {
+              "kind": "symbol",
+              "name": "install_enabled_provider"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8fd9365841b45fdc84d43cc0460e9e1079bd2c3c",
+            "content": "sha256:26f2630a7217ea7031152a7d4bf67522161e12cd2329b587e36b55c8ab1fa39d",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_enabled_provider"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80950be36296616946275f2d5e7cc7e752fd4185",
+            "content": "sha256:44435c7691ac61a8330bd6183744c49519d1b4d716fe52e6600eb03d0aa6cc79",
+            "locator": {
+              "kind": "symbol",
+              "name": "provider_enabled"
+            },
+            "path": "mcp/src/agents_remember/providers/setup_common.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80950be36296616946275f2d5e7cc7e752fd4185",
+            "content": "sha256:afad0cb5bf28ae43515811e7cc22fa4f3790ca6e5c8c7c2ab08002972d59e378",
+            "locator": {
+              "kind": "symbol",
+              "name": "selected_provider_enabled"
+            },
+            "path": "mcp/src/agents_remember/providers/setup_common.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "CGC seed orchestration lives in the seed module.\n\nAnchor: \"def cgc_seed_bundle\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b5990d104c1997d9e7a787055251def913e3e45",
+            "content": "sha256:24c652e51dd9c06f1db8295a739ca1bf463ebf8a496d90caeea98dbd1a89a683",
+            "locator": {
+              "end": 211,
+              "kind": "line_range",
+              "start": 211
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/seed.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The retained helper constructs a refresh request only behind its explicit fallback switch; that construction is separate from current provider availability.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fd9365841b45fdc84d43cc0460e9e1079bd2c3c",
+            "content": "sha256:b959b3588a13ef75d0acb5502a1d1b3d5f71256b72334da96c629f8fb76be2ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refresh_after_seed"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80950be36296616946275f2d5e7cc7e752fd4185",
+            "content": "sha256:9a2ad7dd6bc6091f4ed89d7eedfef456c37e13de2b4de7e86ab5e0f2fdf94ee3",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 81
+            },
+            "path": "mcp/src/agents_remember/providers/setup_common.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

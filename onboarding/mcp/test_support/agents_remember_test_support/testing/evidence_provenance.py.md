@@ -1,15 +1,5 @@
 # mcp/test_support/agents_remember_test_support/testing/evidence_provenance.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/test_support/agents_remember_test_support/testing/evidence_provenance.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Python test evidence infrastructure](overview.md)
@@ -43,21 +33,17 @@ artifact into acceptance evidence.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external domain documentation governs this repository-owned evidence schema.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Candidate and machine facts form one content-bound provenance payload. | `capture_provenance` | mcp/test_support/agents_remember_test_support/testing/evidence_provenance.py:23-43 |
-| The CLI refuses without Dagger admission before publication. | `main` | mcp/test_support/agents_remember_test_support/testing/evidence_provenance.py:46-58 |
+- Candidate and machine facts form one content-bound provenance payload. [1]
+- The CLI refuses without Dagger admission before publication. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository boundary applies.
-
-## Update History
-
-- 2026-08-28T04:37+02:00 — Created for shared candidate/machine provenance across Dagger evidence.

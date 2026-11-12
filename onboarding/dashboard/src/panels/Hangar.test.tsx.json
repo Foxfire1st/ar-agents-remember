@@ -1,0 +1,141 @@
+{
+  "path": "dashboard/src/panels/Hangar.test.tsx",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The component under test (filters rows through `hasLiveWorktree`).\n\nAnchor: actual current supporting source",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "680165d45ec58ec145ee32803409c4b439281a09",
+            "content": "sha256:e2d5222934784229526552e732ce0a056c563410b92f748bfd66bc2aaa3a0bb3",
+            "locator": {
+              "end": 122,
+              "kind": "line_range",
+              "start": 57
+            },
+            "path": "dashboard/src/panels/Hangar.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The shared existence-truth visibility selector.\n\nAnchor: `hasLiveWorktree`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45703aad8672ac0bd3f53a1e3be16aef2ad16336",
+            "content": "sha256:f9a468be21f745ce68abb4692d7cff78eddbba96844874c4ee80194c83731e5e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/selectors.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "45703aad8672ac0bd3f53a1e3be16aef2ad16336",
+            "content": "sha256:80b78b095e9be7afa61f1488a31a3fa5a225e37b9c7b49921030df3526df6afd",
+            "locator": {
+              "kind": "symbol",
+              "name": "hasLiveWorktree"
+            },
+            "path": "dashboard/src/data/selectors.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Hangar tests seed and reset the shared dashboard store: existence cases set enclosures directly, while the owning-task case applies a snapshot with native task entries and their bound worktrees. The store carries tasks keyed by entry.key and enclosures keyed by enclosure, applies snapshots through applySnapshotState and resets through emptyWorkspace; it has no lifecycles store.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f4687b5092789e0a1d4182e803092af73f123537",
+            "content": "sha256:c6f3f2966177305411eeff99d537a7f97c18ad607a2d33dc6ad239fc4d4ce1a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "DashboardState"
+            },
+            "path": "dashboard/src/data/store.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9d424691e3a6ac196a136276f1575955a48f0c53",
+            "content": "sha256:0d855548b4471462ef0d2e623ddf006a16b2cefc71458d487638a94787fbfd7e",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 33
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9d424691e3a6ac196a136276f1575955a48f0c53",
+            "content": "sha256:6a5c5fc567fc0d77e68556f584e0e96c7611b1a6afa3dcff35d9dc99ab3cb7cc",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 39
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9d424691e3a6ac196a136276f1575955a48f0c53",
+            "content": "sha256:48e69ecf66a75c7ab3774eefcb7a8d7482c696a56a44321c39f266b4c61666dd",
+            "locator": {
+              "end": 170,
+              "kind": "line_range",
+              "start": 157
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The `EnclosureNode` shape (incl. `codeWorktreeExists`/`memoryWorktreeExists`) the `enclosure(...)` factory fills.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
+            "content": "sha256:5e7617b273ad3b1f42e12a7e7ad04fdc602557ac4de78278b73514a2327c4656",
+            "locator": {
+              "kind": "symbol",
+              "name": "EnclosureNode"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The running-operation test copies `SERVED.enclosures[0].lifecycleOperation` and overrides currentCommand. Its assertions check that the full durable command appears inline and as the operation title; it does not author legalControls: [] or projectionEffects: [] in this fixture.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d424691e3a6ac196a136276f1575955a48f0c53",
+            "content": "sha256:7f34d3d974c97a3bb2b80b9f507ba3759e024906b751a1dd7252b4a7c4df9d06",
+            "locator": {
+              "end": 154,
+              "kind": "line_range",
+              "start": 138
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

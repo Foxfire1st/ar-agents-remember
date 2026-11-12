@@ -1,0 +1,55 @@
+{
+  "path": "mcp/src/agents_remember/observer/events.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The store serializes and reads these events.\n\nAnchor: `append` `read` `read_log`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44d27a65dd2c90b37ee5338cafbd1564796e6c80",
+            "content": "sha256:bc35ba1f447541caad2fc7353d2d428aa512bca66f5d4e586f1068835945e599",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/observer/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Ids come from the local ULID mint.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20698dea707fc36c65a7dbcaca8f04e5ae067b5e",
+            "content": "sha256:6fccc769ef95e64d5c53e3ec6afd3a1828fc5ac5b1385c032b2b52665415ce52",
+            "locator": {
+              "kind": "symbol",
+              "name": "new_ulid"
+            },
+            "path": "mcp/src/agents_remember/observer/ulid.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Persisted Event uses strict extras and the schema alias, not the tool-response registry or token envelope.\n\nAnchor: `Event`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b5f4a15e3c26371377e98403ffbb1c7888478853",
+            "content": "sha256:518bd25c4403f72a906def18c2fb03586944d8cf73cc0928f2e644ec98c2be22",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

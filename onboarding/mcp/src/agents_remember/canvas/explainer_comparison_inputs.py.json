@@ -1,0 +1,39 @@
+{
+  "path": "mcp/src/agents_remember/canvas/explainer_comparison_inputs.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "ComparisonWitness is the currentness witness carried beside the captured inputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8df570de19cbb4a7e067e56c11561c6c6cb00d66",
+            "content": "sha256:367e0633092b17a267a9072c4c34dfb91140109cc9f00c9edfc23ce9442527ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonWitness"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "PreparedPacket is the bound result readiness checks before an answer is served.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8df570de19cbb4a7e067e56c11561c6c6cb00d66",
+            "content": "sha256:99668cf2a1e3c489a6d9a643a5d8b3a86b8b87c5ddd3f1a6a29ac932831ed9d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "PreparedPacket"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

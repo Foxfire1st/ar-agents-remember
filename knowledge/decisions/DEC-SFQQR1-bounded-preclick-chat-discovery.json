@@ -1,0 +1,53 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Known selections steer with the click without multiplying host lookups by document. The reproduction showed a blank/blocked pane for the host request duration on every change."
+  },
+  "alternatives": [
+    {
+      "option": "Learn tree chats in one bounded batch from receipts and one live-agent listing, then correct at single-document read.",
+      "reason": "Known selections steer with the click without multiplying host lookups by document.",
+      "status": "chosen"
+    },
+    {
+      "option": "Learn each document chat only when it is clicked.",
+      "reason": "The reproduction showed a blank/blocked pane for the host request duration on every change.",
+      "reconsider_when": "When tree discovery cannot be bounded for the real tree, return to the architect before substituting another design.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Unknown never means no chat; polling belongs to visible pane/tab lifetime."
+  ],
+  "context": "A per-selection host read left the pane waiting on every click, even the first.",
+  "decider": "Architect 97e0320d on the developer requirements, accepted by the Manager in the L140 decision log",
+  "id": "DEC-SFQQR1",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "route:dashboard/src/cockpit/document-chat"
+    },
+    {
+      "relation": "constrains",
+      "target": "route:mcp/src/agents_remember/cli"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/cockpit/document-chat/knownChats.test.tsx › \"switches with the click to a chat the tree's one request already named, and takes the fresh answer after it\"; mcp/tests/test_role_document_chats.py; walk C2 of Attempt3 (the dashboard's requests logged)"
+      ],
+      "path": "producer-list.json"
+    },
+    "handoffEntry": "ruling 5dd9714f 2b",
+    "leaf": "260928-MIK-L140",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

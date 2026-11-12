@@ -1,0 +1,1413 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L115",
+  "rows": [
+    {
+      "disposition": "no_impact",
+      "id": "ROW-02VRQV",
+      "items": [
+        "sha256:3c7444bae028f1e1a15fad814f656b81b1a46c463d502d92427f72d6df5d5145"
+      ],
+      "reason": "Test utility updates for the removal contract; helper purpose unchanged.",
+      "subject": "onboarding:dashboard/src/panels/detail-panel/test-utils.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0EQJEG",
+      "items": [
+        "sha256:a225c83b53238c2a403c11ec46269cec7dedfc3775bf2716ba8d0ecfac9f8f6e"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/data/selectors.test.ts retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:a225c83b53238c2a403c11ec46269cec7dedfc3775bf2716ba8d0ecfac9f8f6e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0G30VM",
+      "items": [
+        "sha256:126d3b2f30c59b3747d8ae0df5c3d0c6740c699591902259be7dd462cb633459"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/cockpit/Cockpit.test.tsx retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:126d3b2f30c59b3747d8ae0df5c3d0c6740c699591902259be7dd462cb633459"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0GPKBS",
+      "items": [
+        "sha256:41b632b96e8defdf7c56d9b0ea764933b24e293cfbc2e04bc55e89761597d381"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/cockpit/Cockpit.memo.test.tsx retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:41b632b96e8defdf7c56d9b0ea764933b24e293cfbc2e04bc55e89761597d381"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0JTYAB",
+      "items": [
+        "sha256:3ea4b80ae0079a657d378d59ea1e8d58a0f9cd720fc32c291579e5a6f32ab5c5"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/types/projection.schema.json retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:3ea4b80ae0079a657d378d59ea1e8d58a0f9cd720fc32c291579e5a6f32ab5c5"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0PJHXN",
+      "items": [
+        "sha256:f09e459d77ab90671a61ef341ebc48fe769ec8d0bc9323e97c7cffa140c3b003"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/cockpit/Cockpit.memo.test.tsx retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:f09e459d77ab90671a61ef341ebc48fe769ec8d0bc9323e97c7cffa140c3b003"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0SQRSB",
+      "items": [
+        "sha256:7a94f4bcd833594236d62e1dc1d4a68b54a7389420da7db8d2430fe1c0b05c2d"
+      ],
+      "reason": "Deletion-only hunk in mcp/src/agents_remember/observer/reducer_impl/_metrics.py retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:7a94f4bcd833594236d62e1dc1d4a68b54a7389420da7db8d2430fe1c0b05c2d"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-0TXBQJ",
+      "items": [
+        "sha256:63a4bd82f52ba21861757389562bb02ef587f75e2a89d351ff6889b4851285e9"
+      ],
+      "reason": "Card never carried the removed fields (verified); mirror account still holds.",
+      "subject": "onboarding:dashboard/src/types/projection.ts"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-13K7MJ",
+      "items": [
+        "sha256:bfba24081830e9b4e8264188a831afca111fb1e80f9b5e682a53348025975776"
+      ],
+      "reason": "Source deleted with the summation helper; card and sidecar removed; the retired aggregate is documented nowhere else and nothing moved.",
+      "subject": "onboarding:mcp/src/agents_remember/observer/series_tokens.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-16D9H4",
+      "items": [
+        "sha256:dd32a2845aadf3fc3b29cb93db158749ecf520a9aafbb321462de233d4004785"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/types/projection.ts retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:dd32a2845aadf3fc3b29cb93db158749ecf520a9aafbb321462de233d4004785"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1DR6DX",
+      "items": [
+        "sha256:0d7d9dbb8caab2d78394eeaf353a0f21e28e6da1150890cb03fb7f54fbab723c"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/cockpit/Cockpit.test.tsx retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:0d7d9dbb8caab2d78394eeaf353a0f21e28e6da1150890cb03fb7f54fbab723c"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-1FT0MZ",
+      "items": [
+        "sha256:316967a20cd27c0a26595fef8421aacbe035f9b1851e4b1a4d871f0985e666d4"
+      ],
+      "reason": "Token-field samples removed; scenario structure and purpose unchanged.",
+      "subject": "onboarding:dashboard/src/dev/scenarios.ts"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-1GWZ73",
+      "items": [
+        "sha256:bace1d931af2fc6375a1b6086256f99c584b3b8d6dca7ff1c9d6afa2281ce7a7"
+      ],
+      "reason": "Mirror template minus token fields (METRICS_FACTORY); generator purpose unchanged.",
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/code_quality/projection_types.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1Q2EYG",
+      "items": [
+        "sha256:663f914a128dcc9812b3bb83fcbb7c45e1d7f9c77afefa7a97dd749cf4811fa4"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/types/projection.schema.json retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:663f914a128dcc9812b3bb83fcbb7c45e1d7f9c77afefa7a97dd749cf4811fa4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1TMWTV",
+      "items": [
+        "sha256:8ea1b83a6610ecd133a01dae3003758625fb778909abffce6be08701fae43904"
+      ],
+      "reason": "Deletion-only hunk in mcp/src/agents_remember/observer/reducer_impl/_metrics.py retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:8ea1b83a6610ecd133a01dae3003758625fb778909abffce6be08701fae43904"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1YR2P0",
+      "items": [
+        "sha256:4f6e38d1b68bfcefaf286ea8bf8007e1cea6a0ff482b3ecbb73d241d6efc361b"
+      ],
+      "reason": "Deletion-only hunk in mcp/src/agents_remember/observer/reducer.py retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:4f6e38d1b68bfcefaf286ea8bf8007e1cea6a0ff482b3ecbb73d241d6efc361b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-22FVE8",
+      "items": [
+        "sha256:626cbafcb28f1e133826f42a8d60db983a0a981c4d1b797bef693b093a43ce7b"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/panels/lifecycle-list/test-utils.tsx retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:626cbafcb28f1e133826f42a8d60db983a0a981c4d1b797bef693b093a43ce7b"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-22VTEX",
+      "items": [
+        "sha256:34cef0caf951b360a56967c3a87e94493f5fbd5ec0a865698a2ba45d6350a2c7"
+      ],
+      "reason": "Orphaned token style recipes removed; remaining recipe account intact.",
+      "subject": "onboarding:dashboard/src/panels/detail-panel/styles.ts"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-27CH08",
+      "items": [
+        "sha256:a62f22e90d1ce630cf04ccd5dfabf5f81942b79ca6de785dd80ae6e4391afdcf"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/panels/lifecycle-list/test-utils.tsx retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:a62f22e90d1ce630cf04ccd5dfabf5f81942b79ca6de785dd80ae6e4391afdcf"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2D5Q26",
+      "items": [
+        "sha256:cf509cc91bbf964e0d417e54f7b4a32ce2d7bcf2767704f9d2da7011836cec3b"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/panels/detail-panel/taskBody.test.tsx retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:cf509cc91bbf964e0d417e54f7b4a32ce2d7bcf2767704f9d2da7011836cec3b"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-2N9AQN",
+      "items": [
+        "sha256:015574f6c80d93e80de819e2023b5961d5d66eb52f679f3d3c17e43615d31a7b"
+      ],
+      "reason": "Route purpose and structure unchanged by the removal; the new regression module is covered by its own card.",
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2PQJ2S",
+      "items": [
+        "sha256:b0b3b8243a388bfc281c3c0ec93b3f8019607dcfe56e036dec5abc2b2e1c7084"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/panels/detail-panel/taskReader.tsx retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:b0b3b8243a388bfc281c3c0ec93b3f8019607dcfe56e036dec5abc2b2e1c7084"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-31F1FB",
+      "items": [
+        "sha256:f3b0c23688da62c21af143c9719015eafc2349b45e5f698fe4aa771b57d39d61"
+      ],
+      "reason": "Deletion-only hunk in mcp/src/agents_remember/observer/reducer_impl/_metrics.py retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:f3b0c23688da62c21af143c9719015eafc2349b45e5f698fe4aa771b57d39d61"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-33SQJ4",
+      "items": [
+        "sha256:1d4d68e0871ef15fb2c3d73d865dfbfe0c83f31bd1e82582acfb8db6cf16add5"
+      ],
+      "reason": "Absence assertion added (no token total on the master reader) with old-field snapshot test; suite purpose unchanged.",
+      "subject": "onboarding:dashboard/src/panels/detail-panel/masterSeries.test.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3A6MWW",
+      "items": [
+        "sha256:ca9e2379e3c7ccd079c8f34525f4ac363ad5eb7838f966f4658c269f8dc2544d"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/panels/detail-panel/masterSeries.test.tsx retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:ca9e2379e3c7ccd079c8f34525f4ac363ad5eb7838f966f4658c269f8dc2544d"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3M08KX",
+      "items": [
+        "sha256:5987047db2e7b2742f0c837ddedf1bf592e622a6bccf751f0b2f5def9662ea4f"
+      ],
+      "reason": "Deletion-only hunk in mcp/src/agents_remember/observer/reducer.py retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:5987047db2e7b2742f0c837ddedf1bf592e622a6bccf751f0b2f5def9662ea4f"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-4B7SSW",
+      "items": [
+        "sha256:675d3963ab3bc0d7c1296ba4f5691c32134da5a38e3b2552a0883d7f6c532bda"
+      ],
+      "reason": "Document-chat fixture; no usage-line content (withdrawn scope untouched); purpose unchanged.",
+      "subject": "onboarding:dashboard/src/test/fixtures/documentChat.ts"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-4G1SBE",
+      "items": [
+        "sha256:15812b51ed066d536386a2f72de404c12b6b5668e71be80791f0458b5310ac06"
+      ],
+      "reason": "Test-only update to the removal contract; purpose and coverage target unchanged.",
+      "subject": "onboarding:dashboard/src/topology/model.test.ts"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4RQS1Q",
+      "items": [
+        "sha256:688ffc4de6443fa2f4a4cb3430115408b9fe2d1f525fb4dd2d850d568a02c885"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/panels/detail-panel/taskDocPanels.tsx retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:688ffc4de6443fa2f4a4cb3430115408b9fe2d1f525fb4dd2d850d568a02c885"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4X1MBF",
+      "items": [
+        "sha256:eb82c9d7c822f1c3eeb440253ac3e6cfa795d640c14e7711a7d657ae697c0bd3"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/dev/fixtures.ts retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:eb82c9d7c822f1c3eeb440253ac3e6cfa795d640c14e7711a7d657ae697c0bd3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5CBJ6R",
+      "items": [
+        "sha256:42227791e546def36ea2b45c8b3fe203ebdd480e55f1391baa23b831c8a9b519"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/types/projection.schema.json retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:42227791e546def36ea2b45c8b3fe203ebdd480e55f1391baa23b831c8a9b519"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5KQJ5Q",
+      "items": [
+        "sha256:d19d957aefaaffad2a9909980739431bb42d7eaf2cfcad1e27823f1cb9c8ec4e"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/panels/detail-panel/styles.ts retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:d19d957aefaaffad2a9909980739431bb42d7eaf2cfcad1e27823f1cb9c8ec4e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5ZTJY5",
+      "items": [
+        "sha256:1be4ad8f9f298239741348356ba5a31b3c0d22b6da33311976c00196181cbbd3"
+      ],
+      "reason": "Cockpit display hunk of the reviewed removal (tracked 9d15b26f): the tok total segment is gone with no empty place left; the hunk carries no separate invariant - the durable absence is the new no-counter invariant.",
+      "subject": "hunk:sha256:1be4ad8f9f298239741348356ba5a31b3c0d22b6da33311976c00196181cbbd3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-62GDPR",
+      "items": [
+        "sha256:e115859f122d5e53ca7fca976ff799b41c31987822337eac48600354cd372bcd"
+      ],
+      "reason": "Deletion-only hunk in mcp/src/agents_remember/observer/reducer.py retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:e115859f122d5e53ca7fca976ff799b41c31987822337eac48600354cd372bcd"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-682F2P",
+      "items": [
+        "sha256:1df57c658ca0a754a15879931f62cc081aa3b4e14fb90306fd431cfae9e86bdb"
+      ],
+      "reason": "Deletion-only hunk in mcp/test_support/agents_remember_test_support/code_quality/projection_types.py retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:1df57c658ca0a754a15879931f62cc081aa3b4e14fb90306fd431cfae9e86bdb"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-6QK97G",
+      "items": [
+        "sha256:8f7d40bdb41d7e124e1d1e29f36eeb2b0638ee2d694219b6eb0201debfdfad17"
+      ],
+      "reason": "Route member TokenGauge.tsx deleted; member listing repaired.",
+      "subject": "onboarding:dashboard/src/grammar/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-70DT8C",
+      "items": [
+        "sha256:5a0a01d875bd0391856d93193837da066a44112c6a86f4c18a2091ba86ab6734"
+      ],
+      "reason": "Counter sample fields removed from the served snapshot sample; sample purpose unchanged.",
+      "subject": "onboarding:dashboard/src/fixtures/snapshot.json"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-70YCSH",
+      "items": [
+        "sha256:5794a47e0aa622b85bb5a1adf87ce102e55bd91de0ae234053abdc874f8a34d1"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/panels/detail-panel/taskReader.tsx retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:5794a47e0aa622b85bb5a1adf87ce102e55bd91de0ae234053abdc874f8a34d1"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-731ZGV",
+      "items": [
+        "sha256:db4156e39ec93a911c916cc46ae46a93618afcb193dfa09db92f2d683bd35d29"
+      ],
+      "reason": "Deletion-only hunk in mcp/src/agents_remember/observer/projection.py retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:db4156e39ec93a911c916cc46ae46a93618afcb193dfa09db92f2d683bd35d29"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-76C186",
+      "items": [
+        "sha256:06e177e14af0688df54d0865cf258f096d3f6c7e27c22578bf39576288782c49"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/types/projection.ts retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:06e177e14af0688df54d0865cf258f096d3f6c7e27c22578bf39576288782c49"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7AZJJ5",
+      "items": [
+        "sha256:121dc3f17498c63cd4778380c05d5b79d04a36a03a93f3e52d59222784569038"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/test/fixtures/wire.ts retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:121dc3f17498c63cd4778380c05d5b79d04a36a03a93f3e52d59222784569038"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-7BZAWC",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "Catalog rows recomposed (lanes-176 insertion after retired-consumer removal); catalog purpose unchanged.",
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7GPN8H",
+      "items": [
+        "sha256:e26dc8d61cc086f6599465b8e65f0cc59435e16e754e3fb68629d68e5fa7ad42"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/dev/fixtures.ts retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:e26dc8d61cc086f6599465b8e65f0cc59435e16e754e3fb68629d68e5fa7ad42"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7KQTE0",
+      "items": [
+        "sha256:c4e4340e77f9fa9d1f4967798bfde7f9ceed0e587d7bfb7cbb7adcdf1d896b6b"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/panels/detail-panel/lifecycleBody.tsx retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:c4e4340e77f9fa9d1f4967798bfde7f9ceed0e587d7bfb7cbb7adcdf1d896b6b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7N7CZK",
+      "items": [
+        "sha256:304115d7fa5503e4c3c768fbc9c3c54a21f8efd17eedf55c3954e530c74b4991"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/grammar/TokenGauge.tsx retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:304115d7fa5503e4c3c768fbc9c3c54a21f8efd17eedf55c3954e530c74b4991"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8R5RVZ",
+      "items": [
+        "sha256:b90d34cec095836cc7cfd599bf060f277ad62624cb4e6160494566fa8767bbc8"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/test/contract.test.ts retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:b90d34cec095836cc7cfd599bf060f277ad62624cb4e6160494566fa8767bbc8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-949RXM",
+      "items": [
+        "sha256:c6f92b8649135c729827c39dcd222e76e5e670825717cc23aba99dbc2188f9a1"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/panels/detail-panel/taskReader.tsx retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:c6f92b8649135c729827c39dcd222e76e5e670825717cc23aba99dbc2188f9a1"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-9D4B5D",
+      "items": [
+        "sha256:a9b4426d6b3fc8f26b58db111bab4865bfb5dfe936f26ec7bde8c2e746a35956"
+      ],
+      "reason": "Route purpose and structure unchanged by the removal; concrete obligations live in file sidecars and the new records.",
+      "subject": "onboarding:dashboard/src/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9FS6ZZ",
+      "items": [
+        "sha256:a3eee7241af1f30a8c655d8d25b2fac61f88b540b9b5b338a70e8595b62c67b1"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/dev/scenarios.ts retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:a3eee7241af1f30a8c655d8d25b2fac61f88b540b9b5b338a70e8595b62c67b1"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-9RKPQ2",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "Catalog rows recomposed (lifecycle-1174 insertion after retired-consumer removal); catalog purpose unchanged.",
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-9Z1QJF",
+      "items": [
+        "sha256:b59c07f46b227dd4c507e47039c401b1bf660088bc4b6fce80fe2955e71215c6"
+      ],
+      "reason": "Fixture modernization to existing typed taskDoc builders (exact bound proposal 535f7c3d, assertions unchanged); coverage target unchanged.",
+      "subject": "onboarding:dashboard/src/cockpit/RoleExecutionStatus.test.tsx"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-A60B5X",
+      "items": [
+        "sha256:f2c7d795c9f1407ee4a1599d73ad8cf602f93499d0b530d96d1ea168b2def4ef"
+      ],
+      "reason": "Test-only update to the removal contract; purpose and coverage target unchanged.",
+      "subject": "onboarding:dashboard/src/data/servedAges.test.ts"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-AF5R74",
+      "items": [
+        "sha256:43b00128e814d5caa9577ac28d5303d028a57d4fb4568d31352349dde33ab8af"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/topology/model.test.ts retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:43b00128e814d5caa9577ac28d5303d028a57d4fb4568d31352349dde33ab8af"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-AH2CZ3",
+      "items": [
+        "sha256:775254d978b67bf32eb3add763782bc7e140c4b3120d236438538bbb551618d1"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/panels/detail-panel/lifecycleBody.tsx retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:775254d978b67bf32eb3add763782bc7e140c4b3120d236438538bbb551618d1"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-B1TX3T",
+      "items": [
+        "sha256:b12864b8f66bf11c7c2a18c05fc541af3486a73f49b2f017a79a7de7385f951b"
+      ],
+      "reason": "Source deleted with the gauge; card and sidecar removed; the retired gauge behavior is documented nowhere else and nothing moved.",
+      "subject": "onboarding:dashboard/src/grammar/TokenGauge.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-B74M7Y",
+      "items": [
+        "sha256:89333133c70392309dcfe219faaffacb1cbc00f864c37ff0aca0c2f0ef53034e"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/panels/detail-panel/lifecycleBody.tsx retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:89333133c70392309dcfe219faaffacb1cbc00f864c37ff0aca0c2f0ef53034e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-B8540S",
+      "items": [
+        "sha256:dcbade52c95b2ae38b86fdeb4a03025e7cb335af73ccc799d519baa77efd3973"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/panels/detail-panel/lifecycleBody.tsx retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:dcbade52c95b2ae38b86fdeb4a03025e7cb335af73ccc799d519baa77efd3973"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BEWA5S",
+      "items": [
+        "sha256:5043d490d4fe8506b4535dbcc1b61cbb9bf415df287a0ac49c14e5d38d8af33f"
+      ],
+      "reason": "Deletion-only hunk in mcp/src/agents_remember/observer/reducer.py retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:5043d490d4fe8506b4535dbcc1b61cbb9bf415df287a0ac49c14e5d38d8af33f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BJJDM1",
+      "items": [
+        "sha256:2fd372eb3562a05cfe4ad037a44884fca19c871d01db7dec58b2e579858732b6"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/panels/detail-panel/lifecycleBody.tsx retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:2fd372eb3562a05cfe4ad037a44884fca19c871d01db7dec58b2e579858732b6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BKWTPF",
+      "items": [
+        "sha256:76c8d0ef5b19a00ffc2bbbef09c668167aa00612ac1f761dd3006333c875f0f1"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/panels/detail-panel/taskDocPanels.tsx retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:76c8d0ef5b19a00ffc2bbbef09c668167aa00612ac1f761dd3006333c875f0f1"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-C0RAKF",
+      "items": [
+        "sha256:a668882d1d9ab752f9510e8e29aaca85f956b24a7a66e55d544db6dfa1ff65ae"
+      ],
+      "reason": "Deletion-only hunk in mcp/src/agents_remember/observer/projection.py retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:a668882d1d9ab752f9510e8e29aaca85f956b24a7a66e55d544db6dfa1ff65ae"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-C4SHJT",
+      "items": [
+        "sha256:3db0205824c8c3880bb3a9ca6bd0baaf2174e38e1cc920ddefea99aa1d3eaea9"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/panels/detail-panel/lifecycleBody.tsx retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:3db0205824c8c3880bb3a9ca6bd0baaf2174e38e1cc920ddefea99aa1d3eaea9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CAMSD1",
+      "items": [
+        "sha256:ea2b209bf6db6acadd2e594ea797b3bb2951b25db24fd7f2b57ccaf7303c0797"
+      ],
+      "reason": "Deletion-only hunk in mcp/src/agents_remember/observer/__init__.py retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:ea2b209bf6db6acadd2e594ea797b3bb2951b25db24fd7f2b57ccaf7303c0797"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CCHD85",
+      "items": [
+        "sha256:5b6f8422f0aad0c5cb9f89ba7dae4f80660ff1003172da5309ac653425b3a1a9"
+      ],
+      "reason": "Route member series_tokens.py deleted and token-aggregation account rewritten counter-free.",
+      "subject": "onboarding:mcp/src/agents_remember/observer/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CHFXHA",
+      "items": [
+        "sha256:69cc21d02e5e65a929dd962d5778a7c9a6df319b0ec162969dfb29b46d6251ae"
+      ],
+      "reason": "Token-field samples removed; fixture structure and purpose unchanged.",
+      "subject": "onboarding:dashboard/src/dev/fixtures.ts"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CNXAHR",
+      "items": [
+        "sha256:37cf0dfb8281f48f9a012ceda71fda6433221b0592c2e24be259a43e5595c67f"
+      ],
+      "reason": "Route purpose and structure unchanged by the removal; concrete obligations live in file sidecars and the new records.",
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/code_quality/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CQ4AE9",
+      "items": [
+        "sha256:a11d4e713813a5f6c4a9f012e5e876eb25a9815ba037bed5fba45633fbac7d16"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/panels/detail-panel/taskDocPanels.tsx retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:a11d4e713813a5f6c4a9f012e5e876eb25a9815ba037bed5fba45633fbac7d16"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CS5GDR",
+      "items": [
+        "sha256:fe6409ea8cfea6ca89906b09d0da13e4f883897cd1e8a5e0a51f43351807369b"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/types/projection.ts retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:fe6409ea8cfea6ca89906b09d0da13e4f883897cd1e8a5e0a51f43351807369b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CXY080",
+      "items": [
+        "sha256:9e43638aecd32f9c6a93c68c10470a1c2eabcb4a63f88177f7dfa4aca4a63ca6"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/panels/detail-panel/test-utils.tsx retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:9e43638aecd32f9c6a93c68c10470a1c2eabcb4a63f88177f7dfa4aca4a63ca6"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-D19AHW",
+      "items": [
+        "sha256:991ac9f9d2cd5a9accd9378b6c62321f16052b40edaba765dc8549c366570bee"
+      ],
+      "reason": "Test-only update to the removal contract; purpose and coverage target unchanged.",
+      "subject": "onboarding:dashboard/src/panels/detail-panel/taskBody.test.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DKBY6R",
+      "items": [
+        "sha256:becb45de20ce74c8fefffd33bbdb0954fb8655b0863cbbe2e18b53ea137142cd"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/panels/detail-panel/styles.ts retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:becb45de20ce74c8fefffd33bbdb0954fb8655b0863cbbe2e18b53ea137142cd"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DZKZ1V",
+      "items": [
+        "sha256:b075838a001f654eae38cea8f41280f872746cccdb57a7d8e69cf76f8bde406f"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/panels/detail-panel/taskReader.tsx retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:b075838a001f654eae38cea8f41280f872746cccdb57a7d8e69cf76f8bde406f"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-E3VH16",
+      "items": [
+        "sha256:898860139d2ec6cc62ba873fbb16beafb2a15e3759f97d7d1eff07ed2baa8aad"
+      ],
+      "reason": "Route purpose and structure unchanged by the removal; concrete obligations live in file sidecars and the new records.",
+      "subject": "onboarding:dashboard/src/data/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-E44J0T",
+      "items": [
+        "sha256:3cbd6c1ff50aea50d404abd86b03aaa504aa814833c41168df695d72ab9261bf"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/panels/EngineRoom.test.tsx retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:3cbd6c1ff50aea50d404abd86b03aaa504aa814833c41168df695d72ab9261bf"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-F3R02T",
+      "items": [
+        "sha256:f83db01eb5049cfd7afa344862bbb57bcda4c98cf9864b8b6b9534de29c96217"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/types/projection.ts retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:f83db01eb5049cfd7afa344862bbb57bcda4c98cf9864b8b6b9534de29c96217"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-FFMTZV",
+      "items": [
+        "sha256:c54cdc2b22c728612a59a9ba1704d3d5b3216b8ed59dd52a731d9c9c121099ac"
+      ],
+      "reason": "Vendor Codex notification payload spelling retained deliberately; change is adjacent maintenance.",
+      "subject": "onboarding:mcp/tests/test_conversation_active_service.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FSKHVP",
+      "items": [
+        "sha256:daf2b3e4dd05a41e6fc9feb4847d5b553303e41c873b5e6cc0e0fcf1df060f97"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/test/contract.test.ts retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:daf2b3e4dd05a41e6fc9feb4847d5b553303e41c873b5e6cc0e0fcf1df060f97"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FXNG8D",
+      "items": [
+        "sha256:682fcdc01ce7379f59e694aa96b8ce44cbe4e75f7876e2ddc96c20906bed1e99"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/types/projection.ts retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:682fcdc01ce7379f59e694aa96b8ce44cbe4e75f7876e2ddc96c20906bed1e99"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GWEAPQ",
+      "items": [
+        "sha256:5f7251834d7fbf577f07f63999d77479f4a14314771ac0d11ac53e038a6b46ef"
+      ],
+      "reason": "Deletion-only hunk in mcp/src/agents_remember/observer/projection.py retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:5f7251834d7fbf577f07f63999d77479f4a14314771ac0d11ac53e038a6b46ef"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GXQW6V",
+      "items": [
+        "sha256:1df2d433173843276cab48d675f47172863fb478ee49c41c14c56204138777c3"
+      ],
+      "reason": "Deletion-only hunk in mcp/src/agents_remember/observer/reducer.py retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:1df2d433173843276cab48d675f47172863fb478ee49c41c14c56204138777c3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HFPM29",
+      "items": [
+        "sha256:d2e93735c429928c74805e89f8dc373c59d26d0ac600d81ed446b6e92d329c74"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/cockpit/Cockpit.test.tsx retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:d2e93735c429928c74805e89f8dc373c59d26d0ac600d81ed446b6e92d329c74"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-HMGVAJ",
+      "items": [
+        "sha256:624cc8a1661c44de34c2ba3aa0f66af5ae0e06ae569b775f3c13799815e3126e"
+      ],
+      "reason": "Test-only update to the removal contract; card carries no token-counter account (verified) and its cockpit-bar purpose is unchanged.",
+      "subject": "onboarding:dashboard/src/cockpit/Cockpit.test.tsx"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-JEWDTZ",
+      "items": [
+        "sha256:f9372188370fec9d9714fe77e744b32ae028ad635800d87bafa22415d0f30a03"
+      ],
+      "reason": "Test utility updates for the removal contract; helper purpose unchanged.",
+      "subject": "onboarding:dashboard/src/panels/lifecycle-list/test-utils.tsx"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-JGQH0K",
+      "items": [
+        "sha256:07e4b5e4fe57d78148942bf809c6e6d4005732b0f2ae43904e4869e98e92dcd7"
+      ],
+      "reason": "Test-only update to the removal contract; card carries no token-counter account (verified) and its cockpit-bar purpose is unchanged.",
+      "subject": "onboarding:dashboard/src/cockpit/Cockpit.memo.test.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JTP09K",
+      "items": [
+        "sha256:22adc505f143f18c3150e3a4100895c32959e55b9ac513c549da074a7770bb0f"
+      ],
+      "reason": "Deletion-only hunk in mcp/tests/test_terminal_observer_health.py retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:22adc505f143f18c3150e3a4100895c32959e55b9ac513c549da074a7770bb0f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JXPGJB",
+      "items": [
+        "sha256:7d9ee3547a27fd8b1cff11d383b05b17ab17006235781aa9587457480006d94e"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/cockpit/Cockpit.intentEntry.test.tsx retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:7d9ee3547a27fd8b1cff11d383b05b17ab17006235781aa9587457480006d94e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KD2JGX",
+      "items": [
+        "sha256:b3ea69cd2c940864d1fe14c11b7a3ab1e03bf20c54eb8c293efe699b733f677b"
+      ],
+      "reason": "Deletion-only hunk in mcp/src/agents_remember/observer/reducer.py retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:b3ea69cd2c940864d1fe14c11b7a3ab1e03bf20c54eb8c293efe699b733f677b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KG32K8",
+      "items": [
+        "sha256:a4439420ea2e5f99261e018dbdef1f1699752dba5bf84b457b86afc6240ae31e"
+      ],
+      "reason": "Cockpit display hunk of the reviewed removal (tracked 9d15b26f): the tok total segment is gone with no empty place left; the hunk carries no separate invariant - the durable absence is the new no-counter invariant.",
+      "subject": "hunk:sha256:a4439420ea2e5f99261e018dbdef1f1699752dba5bf84b457b86afc6240ae31e"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-M1Z8HW",
+      "items": [
+        "sha256:3c0083a0b57cf9dd51f4da38d1099d254e7f203f0461c44c6af46983c8f11fd0"
+      ],
+      "reason": "Test-only update to the removal contract; purpose and coverage target unchanged.",
+      "subject": "onboarding:dashboard/src/panels/EngineRoom.test.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-M4C48F",
+      "items": [
+        "sha256:1b7060454aef207165bcdf64c7f7d233f2d6d97fc896957860697a17c0f9a88c"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/test/contract.test.ts retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:1b7060454aef207165bcdf64c7f7d233f2d6d97fc896957860697a17c0f9a88c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-M9D0CA",
+      "items": [
+        "sha256:5c87d9c0f15657b54f0406fbf78a3ad40683a2e86e5b1ebd8a5e7ac572188d60"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/topology/model.test.ts retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:5c87d9c0f15657b54f0406fbf78a3ad40683a2e86e5b1ebd8a5e7ac572188d60"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-MC3W8G",
+      "items": [
+        "sha256:ce03d7df04dbba7a3d9dc6c743e78ddae3e6fad8ea6684f854612cd1c5d06a0c"
+      ],
+      "reason": "Test-only update to the removal contract; purpose and coverage target unchanged.",
+      "subject": "onboarding:dashboard/src/data/selectors.test.ts"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MZTMZF",
+      "items": [
+        "sha256:7ce9f157dbfacd5d24f88e2739948241e46d25906a005cfe83e647ee321caee0"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/cockpit/Cockpit.test.tsx retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:7ce9f157dbfacd5d24f88e2739948241e46d25906a005cfe83e647ee321caee0"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-N5Y7CF",
+      "items": [
+        "sha256:d6239ac472d9531e90c08bcaf9b4bc08533689c745d0cbfb00f256c851d78ff0"
+      ],
+      "reason": "Card edited to the removal contract: rollup account rewritten without the token series.",
+      "subject": "onboarding:mcp/src/agents_remember/observer/reducer_impl/_metrics.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-N6PFNZ",
+      "items": [
+        "sha256:80fc5257e9dda7a2c1b71d38fbdfdfa6d2a54608b68ec435b0656d4b33fb906c"
+      ],
+      "reason": "Test-only update to the removal contract; purpose and coverage target unchanged.",
+      "subject": "onboarding:dashboard/src/data/taskHierarchy.test.ts"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-NBRTBH",
+      "items": [
+        "sha256:529e8f4a9bd18f68763296e9475943424f2504b94da31f322e316420306c7025"
+      ],
+      "reason": "Card edited to the removal contract: fold, threading and invariant accounts rewritten counter-free.",
+      "subject": "onboarding:mcp/src/agents_remember/observer/reducer.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NNNS9M",
+      "items": [
+        "sha256:9f1989cce250018821d179a08706f530aab974a2452cac1351d2706efcb21584"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/panels/detail-panel/lifecycleBody.tsx retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:9f1989cce250018821d179a08706f530aab974a2452cac1351d2706efcb21584"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-P4GY0H",
+      "items": [
+        "sha256:d08973e3da5f6f350998ed1983550c88be8131c394e018353de560af5bad8585"
+      ],
+      "reason": "Stale totalTokens anchor repaired; builder/fixture account still holds.",
+      "subject": "onboarding:dashboard/src/test/fixtures/wire.ts"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-P8WMAD",
+      "items": [
+        "sha256:576501c829b4d84e7e6cf70d6def780dfff181bd45549fac20a119a6259c321e"
+      ],
+      "reason": "Removed aggregate call sites leave the panel-composition account intact (covered by taskReader/model cards).",
+      "subject": "onboarding:dashboard/src/panels/detail-panel/taskDocPanels.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PCFXM9",
+      "items": [
+        "sha256:b5b9b51707e0c191e44cfaae2aff5acc9512d153ed8facdf8d519c5a9144cc53"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/panels/detail-panel/lifecycleBody.tsx retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:b5b9b51707e0c191e44cfaae2aff5acc9512d153ed8facdf8d519c5a9144cc53"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-PKWYCD",
+      "items": [
+        "sha256:f567c958366de739c0c4958226ccff7a16eca9b72bffcd79e3a669d1dccccf2c"
+      ],
+      "reason": "Contract suite updated to the counter-free projection; contract purpose unchanged.",
+      "subject": "onboarding:dashboard/src/test/contract.test.ts"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PPH6Q2",
+      "items": [
+        "sha256:306af4cf8ec7d2536a74c7efde88124ba09a98118ac5b59a52eff0c6165f6ec6"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/panels/detail-panel/masterSeries.test.tsx retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:306af4cf8ec7d2536a74c7efde88124ba09a98118ac5b59a52eff0c6165f6ec6"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-PSK1SK",
+      "items": [
+        "sha256:103a553197ee38ff9417ab42d15e23e271db7e8f3f4a9982c1f1a6569478061f"
+      ],
+      "reason": "Event-token display tests preserved and green; purpose unchanged.",
+      "subject": "onboarding:dashboard/src/panels/EventRiver.test.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PSKG6N",
+      "items": [
+        "sha256:b7d0f94874d66ef69409db3c10bb6563b1bdd1d19da1546d2cab0c75dade1ef3"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/panels/detail-panel/model.ts retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:b7d0f94874d66ef69409db3c10bb6563b1bdd1d19da1546d2cab0c75dade1ef3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Q4V3D6",
+      "items": [
+        "sha256:c8d16dcd7005056d9951c40b6a9bbc8c9f54b028570a420694f07680c3179e9e"
+      ],
+      "reason": "Catalog-composition hunk inserting the owned module lifecycle row after the retired-consumer removal: a data row for the existing catalog machinery, carrying no separate invariant.",
+      "subject": "hunk:sha256:c8d16dcd7005056d9951c40b6a9bbc8c9f54b028570a420694f07680c3179e9e"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Q5DGZB",
+      "items": [
+        "sha256:700f57c930ecae368bb45639dc35847fc4075677aac06a193f940f3be37414c6"
+      ],
+      "reason": "Card never carried the removed fields (verified); schema account still holds.",
+      "subject": "onboarding:mcp/src/agents_remember/observer/projection.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Q6T24F",
+      "items": [
+        "sha256:76cd3772c58aaf9b105dcffa833d7e9765594c05a640c724a5d09a2040221c9b"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/dev/fixtures.ts retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:76cd3772c58aaf9b105dcffa833d7e9765594c05a640c724a5d09a2040221c9b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Q93HKM",
+      "items": [
+        "sha256:55c7e26615f20ebb2d74da934cbde14f79705fd6afad054f9b3bd31a10221251"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/panels/detail-panel/test-utils.tsx retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:55c7e26615f20ebb2d74da934cbde14f79705fd6afad054f9b3bd31a10221251"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-QA2R6M",
+      "items": [
+        "sha256:b00074b3b6b524e90971dafb2fef00f5a85c66abfe81b023eedd3e62b2641d84"
+      ],
+      "reason": "Builder updates for the removal contract (token-field inputs); served-coverage purpose unchanged.",
+      "subject": "onboarding:mcp/tests/test_serving.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QER38N",
+      "items": [
+        "sha256:ed9da16c7de54dda8e8003ed3a1d569d7efeb04d8da29cab322978803055c261"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/test/fixtures/wire.ts retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:ed9da16c7de54dda8e8003ed3a1d569d7efeb04d8da29cab322978803055c261"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QKZMF3",
+      "items": [
+        "sha256:f73089a86657ede1b14fd3bb7ca3f0a1aaa53ee3ff0343444e730f3848666b84"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/dev/fixtures.ts retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:f73089a86657ede1b14fd3bb7ca3f0a1aaa53ee3ff0343444e730f3848666b84"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-QMSTYQ",
+      "items": [
+        "sha256:95f413c0f9fb8a223125c7e21272cce38ae4e9d3a351abbdb2929c615b2e9317"
+      ],
+      "reason": "Card edited to the removal contract: token-summary account removed; header/body/change-set account still holds.",
+      "subject": "onboarding:dashboard/src/panels/detail-panel/taskReader.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QXWXFR",
+      "items": [
+        "sha256:b3e80c269c9283de72f1af0a37b3518f9f361dd704b83946e15e9950a69b3adb"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/types/projection.schema.json retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:b3e80c269c9283de72f1af0a37b3518f9f361dd704b83946e15e9950a69b3adb"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QZSAMP",
+      "items": [
+        "sha256:b28081c4f33c02b0080a1d71ff13ff08f6c99b5f3d93a3cf7cd4733415d03a50"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/panels/engine-room/buildEngineRoomModel.test.ts retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:b28081c4f33c02b0080a1d71ff13ff08f6c99b5f3d93a3cf7cd4733415d03a50"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-R6CJHW",
+      "items": [
+        "sha256:d1d21595bf1ebb06ba20380e717859a3d38426c8609e309625f809041ef5b6c5"
+      ],
+      "reason": "New regression module pinning the removal; card created with fixer-authored sidecar.",
+      "subject": "onboarding:mcp/tests/test_observer_no_computed_counter.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-R7TZZD",
+      "items": [
+        "sha256:105439733a351f17019d651901b70a76b9003fe5e3e65d990f5f5e0b4a74e0dc"
+      ],
+      "reason": "Deletion-only hunk in mcp/src/agents_remember/observer/reducer.py retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:105439733a351f17019d651901b70a76b9003fe5e3e65d990f5f5e0b4a74e0dc"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RB367Y",
+      "items": [
+        "sha256:559063160f5078a29bb94812f5ef9e4d5f8e49bb588303ad1991895334a313cc"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/dev/fixtures.ts retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:559063160f5078a29bb94812f5ef9e4d5f8e49bb588303ad1991895334a313cc"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RDJ4JM",
+      "items": [
+        "sha256:f11b110874f68d9b4228a86571c0d9c244a566e26dfa6095b2a6b540882e7ad5"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/cockpit/Cockpit.test.tsx retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:f11b110874f68d9b4228a86571c0d9c244a566e26dfa6095b2a6b540882e7ad5"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RHNF5M",
+      "items": [
+        "sha256:0830735d77ad6f01eee003be9827f95aa334dbd95a76778119feb1b12f9424d7"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/dev/scenarios.ts retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:0830735d77ad6f01eee003be9827f95aa334dbd95a76778119feb1b12f9424d7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RRF9EZ",
+      "items": [
+        "sha256:a8c3bc4cd59895fcc4843c8848101e337c637e3264f3032a3a1adc55fc503930"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/fixtures/snapshot.json retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:a8c3bc4cd59895fcc4843c8848101e337c637e3264f3032a3a1adc55fc503930"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RT0R1H",
+      "items": [
+        "sha256:2dc75099fa8dc8317d64f2de625780e7d3cc85031414dce79aeceb2c16f1b386"
+      ],
+      "reason": "Deletion-only hunk in mcp/src/agents_remember/observer/reducer_impl/_metrics.py retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:2dc75099fa8dc8317d64f2de625780e7d3cc85031414dce79aeceb2c16f1b386"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-S0T1WH",
+      "items": [
+        "sha256:e310fcc668ebfacefe0ee5b359b8525d69be5bd440447e08b44a9797bea820de"
+      ],
+      "reason": "Test-only update to the removal contract (token-fixture removal); purpose and coverage target unchanged. The old-field snapshot inertness scenario lives in masterSeries.test.tsx:500-525, not in this file.",
+      "subject": "onboarding:dashboard/src/data/store.test.ts"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-SB3XC4",
+      "items": [
+        "sha256:948b42ebb28e438ae944d4c91183222980b2155af12ba14dc67adebdf30e2004"
+      ],
+      "reason": "Route purpose and structure unchanged by the removal; the model-test update is covered by its own card.",
+      "subject": "onboarding:dashboard/src/panels/engine-room/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-SP83DF",
+      "items": [
+        "sha256:45f3ae2486a7eb4f77238d2b0cbf1f63735a89eadd82630b9e659b682a5cc64c"
+      ],
+      "reason": "Builder updates for the removal contract; health-coverage purpose unchanged.",
+      "subject": "onboarding:mcp/tests/test_terminal_observer_health.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-STXF96",
+      "items": [
+        "sha256:ddab6520e9e05a29d10d7098a300ebbff402e97daab70d0b074f5e7c0cacb580"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/panels/EventRiver.test.tsx retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:ddab6520e9e05a29d10d7098a300ebbff402e97daab70d0b074f5e7c0cacb580"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-T53JSR",
+      "items": [
+        "sha256:56591253d5efcf80a0880b6509a1fbe8ec22fad47e65752d0ccf88fcc7adeb34"
+      ],
+      "reason": "Card edited to the removal contract: TokenSample and token_series re-exports removed from the surface account.",
+      "subject": "onboarding:mcp/src/agents_remember/observer/__init__.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-T5VKM8",
+      "items": [
+        "sha256:581649b491f494950c32c9472dda7c3432bcf48074d92926e2615cf19d0d1a65"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/dev/fixtures.ts retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:581649b491f494950c32c9472dda7c3432bcf48074d92926e2615cf19d0d1a65"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-T62YJV",
+      "items": [
+        "sha256:cd73ddba5fb2fdd659831ac1b3c3a16626c36647d01e748a9b1a30bd3a2ec281"
+      ],
+      "reason": "Deletion-only hunk in mcp/src/agents_remember/observer/series_tokens.py retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:cd73ddba5fb2fdd659831ac1b3c3a16626c36647d01e748a9b1a30bd3a2ec281"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TZFHG9",
+      "items": [
+        "sha256:9d712d5be398e981ea919d1e10840b688220bbeeab6ff22e969876d17d183616"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/panels/engine-room/buildEngineRoomModel.test.ts retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:9d712d5be398e981ea919d1e10840b688220bbeeab6ff22e969876d17d183616"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-V7KSXD",
+      "items": [
+        "sha256:8d300babac14ebe05b785831618d769aecd1642f127e87a4f7b984abf5bd5a4c"
+      ],
+      "reason": "Test-only update to the removal contract; card carries no token-counter account (verified) and its cockpit-bar purpose is unchanged.",
+      "subject": "onboarding:dashboard/src/cockpit/Cockpit.intentEntry.test.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-V89X4E",
+      "items": [
+        "sha256:2a97f4acba43848fd3aeaae7c66985b0130041ab0162a196a275017671fd36be"
+      ],
+      "reason": "Deletion-only hunk in mcp/src/agents_remember/observer/__init__.py retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:2a97f4acba43848fd3aeaae7c66985b0130041ab0162a196a275017671fd36be"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-V8DJJ7",
+      "items": [
+        "sha256:48833aa9954547a393c71fc2a6da25002b0353001fe00d111cb145c0dcc64983"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/cockpit/Cockpit.intentEntry.test.tsx retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:48833aa9954547a393c71fc2a6da25002b0353001fe00d111cb145c0dcc64983"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-VC50R1",
+      "items": [
+        "sha256:e2a740bab007b6c9251468c80e34654b1a3cf144a95ca16de5c0850f3867b0b7"
+      ],
+      "reason": "Card edited to the removal contract: token-row ownership removed; resolution helpers, head, stepper, gate section and spine account still hold.",
+      "subject": "onboarding:dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-VXPCZQ",
+      "items": [
+        "sha256:f7a09683339817f6eb4dd1e5e46ed0f3503e176b08a5308dad721b4948f771a3"
+      ],
+      "reason": "Test-only update to the removal contract; purpose and coverage target unchanged.",
+      "subject": "onboarding:dashboard/src/panels/engine-room/buildEngineRoomModel.test.ts"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WGBYA7",
+      "items": [
+        "sha256:1af392b26072f2793d0b4369886c4e07ee92a51c7f066ba72e998daaec2e6057"
+      ],
+      "reason": "Catalog-composition hunk inserting the owned module lanes row after the retired-consumer removal: a data row for the existing catalog machinery, carrying no separate invariant.",
+      "subject": "hunk:sha256:1af392b26072f2793d0b4369886c4e07ee92a51c7f066ba72e998daaec2e6057"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WM8B59",
+      "items": [
+        "sha256:22d5c2b156332b43d3ebfecce62aa88284af7675a71d83c094870761a2c5b936"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/panels/EngineRoom.test.tsx retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:22d5c2b156332b43d3ebfecce62aa88284af7675a71d83c094870761a2c5b936"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WS6W9S",
+      "items": [
+        "sha256:48d46fe6783d8605729a1bb18431c7a5322d87742986e657b10635ff1b8959c4"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/data/selectors.test.ts retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:48d46fe6783d8605729a1bb18431c7a5322d87742986e657b10635ff1b8959c4"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-WVDGDV",
+      "items": [],
+      "reason": "Route purpose and structure unchanged by the removal; concrete obligations live in file sidecars and the new records.",
+      "subject": "onboarding:dashboard/src/engine-room/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-X316SF",
+      "items": [
+        "sha256:dce06cdee9217ab3b794dd86b89cc38fa4da55c85c6363dcafc5b9651f2e401c"
+      ],
+      "reason": "Deletion-only hunk in mcp/src/agents_remember/observer/projection.py retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:dce06cdee9217ab3b794dd86b89cc38fa4da55c85c6363dcafc5b9651f2e401c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-XCQK10",
+      "items": [
+        "sha256:967f16f352f6d3e1cf15fcdb66d472b9233b47df6fe1c935b722831d241bef56"
+      ],
+      "reason": "Deletion-only hunk in mcp/src/agents_remember/observer/__init__.py retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:967f16f352f6d3e1cf15fcdb66d472b9233b47df6fe1c935b722831d241bef56"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Y1T2RV",
+      "items": [
+        "sha256:244688b7897b8e140a8402d49f42a9fff461913f9e2a52e0e1eb4dbef934de5a"
+      ],
+      "reason": "Route purpose and structure unchanged by the removal; concrete obligations live in file sidecars and the new records.",
+      "subject": "onboarding:dashboard/src/panels/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Y2PKCZ",
+      "items": [
+        "sha256:c255cdd7112371a51ef81c28136e915969fd2ed9c4cca06245476cfe67e20077"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/panels/detail-panel/taskBody.test.tsx retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:c255cdd7112371a51ef81c28136e915969fd2ed9c4cca06245476cfe67e20077"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Y8X97K",
+      "items": [
+        "sha256:8944023b37174d0117c6b682c8970b54f0ec6d6c1a60ebbe4d71d7e8dcec08ae"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/panels/detail-panel/test-utils.tsx retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:8944023b37174d0117c6b682c8970b54f0ec6d6c1a60ebbe4d71d7e8dcec08ae"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-YMXDE0",
+      "items": [
+        "sha256:69acc0b7a0724bb986e6278c4eeefd4bb7cc2abc64bfc4678840c7ac375a78b9"
+      ],
+      "reason": "Card edited to the removal contract: series-token merge account removed; derivation-model purpose still holds.",
+      "subject": "onboarding:dashboard/src/panels/detail-panel/model.ts"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-YTN5A9",
+      "items": [
+        "sha256:662584bc41d38a42127cbd79d8eb656fec365d915c8c996746d6693315927b48"
+      ],
+      "reason": "Schema regenerated counter-free via the sync script; mirror purpose unchanged.",
+      "subject": "onboarding:dashboard/src/types/projection.schema.json"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Z433B7",
+      "items": [
+        "sha256:b2fad891b0ea14053c028988a830931272130dd28a2905f6170d0bffa7703d0a"
+      ],
+      "reason": "Card carries no token-counter account (verified); the cockpit top bar ends without any token total and everything else it shows is preserved.",
+      "subject": "onboarding:dashboard/src/cockpit/Cockpit.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Z5870M",
+      "items": [
+        "sha256:b31966049e90c0fc7e1f423f219d0f9187eb1c27e7da04bede89b3d5280d6028"
+      ],
+      "reason": "Deletion-only hunk in mcp/src/agents_remember/observer/projection.py retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:b31966049e90c0fc7e1f423f219d0f9187eb1c27e7da04bede89b3d5280d6028"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Z71C28",
+      "items": [
+        "sha256:a1dc93467e274c0c53060787e25bdf67bb5501156bca2eb87112bb2741423b24"
+      ],
+      "reason": "Deletion-only hunk in mcp/src/agents_remember/observer/__init__.py retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:a1dc93467e274c0c53060787e25bdf67bb5501156bca2eb87112bb2741423b24"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Z97V6C",
+      "items": [
+        "sha256:2f841ff9be7d6f8dd9378781039776f6e8e1d313af3c4c46a074f47ace1683b0"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/panels/lifecycle-list/test-utils.tsx retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:2f841ff9be7d6f8dd9378781039776f6e8e1d313af3c4c46a074f47ace1683b0"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZAEFX8",
+      "items": [
+        "sha256:f625d13bc2634a64048c70b2ac55ff66b3ed178ef2832c0cf3d40243c80688bd"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/data/taskHierarchy.test.ts retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:f625d13bc2634a64048c70b2ac55ff66b3ed178ef2832c0cf3d40243c80688bd"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZBS7SM",
+      "items": [
+        "sha256:63484203e49af5e2484417609fce4d7945e84ea9168a008ffbb316739d45efe9"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/panels/detail-panel/test-utils.tsx retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:63484203e49af5e2484417609fce4d7945e84ea9168a008ffbb316739d45efe9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZFTP3Y",
+      "items": [
+        "sha256:0029101f472bdabc56f264e2a17e9aa8c608422e3d577997cbe3b9c3b86caf69"
+      ],
+      "reason": "Deletion-only hunk in mcp/src/agents_remember/observer/reducer.py retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:0029101f472bdabc56f264e2a17e9aa8c608422e3d577997cbe3b9c3b86caf69"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a0569bc130f1ea52e6731d4460788c50542ae82a",
+            "content": "sha256:534b915b991a85e4c405f5bd4db899bb170cad187055f94dd0cdfdc43d85ac07",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "79454c7435576e197253d735c8be96301d8379fe",
+            "content": "sha256:d62ca4770c0037f9870bc32f62bc0684519705638a5566361346309dbd822b1a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GRTJG0"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-ZP1RA1",
+      "items": [
+        "sha256:18561b77747b24e0cac8cb68274811ad88fd159453b869a875cc0e4713a4754d"
+      ],
+      "reason": "Own-leaf effect preserved, no semantic change. RLZ-GRTJG0 (L48 whole-catalog resurrection entry) is carried with identical id/rationale/role/origin, anchor re-pointed to current catalog (blob a0569bc1, whole-file span, byte-verified). INV-MSCRAN stays retired at rev 1; this leaf revives nothing, alters no guarantee, authors no invariant.",
+      "revision": 1,
+      "subject": "INV-MSCRAN"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZVZSTF",
+      "items": [
+        "sha256:3c9120100c9151b22762009812632dccec0b16ce1f3780fb6eaab30ed791a6ae"
+      ],
+      "reason": "Deletion-only hunk in dashboard/src/dev/fixtures.ts retiring counter constructs within the reviewed removal diff (tracked 9d15b26f); a deletion carries no invariant.",
+      "subject": "hunk:sha256:3c9120100c9151b22762009812632dccec0b16ce1f3780fb6eaab30ed791a6ae"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

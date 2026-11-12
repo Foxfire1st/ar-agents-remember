@@ -1,0 +1,2149 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L80",
+  "rows": [
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "700f45663d148e00dd89e0e5560e7c22f3bdbf7f",
+            "content": "sha256:6a393a8f22e9cb16454c3203295903c40711c2c25c66c1dfe721ad659b42dc19",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "976f516057f9514524eb3ac922803c6632dd3ba1",
+            "content": "sha256:7ea09891f058e484df3663129e454a82aaa3cdf947a76db3843c6290773df3ac",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-JFZ5WP"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-04A5ZA",
+      "items": [
+        "sha256:688d9771dbcbd0880aea10865747d59b4c07e6f9aac686759de83dd68b274a9e"
+      ],
+      "reason": "The changed canonical Curator text adds only the four-line purpose/structure/boundary/terminal-citation instruction. Its surrounding producer-target, helper-permission, parent-question, peer-handover and no-code-repair clauses are byte-preserved; the shipped mirrors match the canonical sources exactly. The existing invariant keeps its full statement, scope, admission, revision and entry identities. The R80 instruction is an additional local prose obligation, not a change to this stored guarantee. The packet exclusion and direct Manager clarification prohibit a new record for that choice. Current body-end-sync qualification preserves governing meaning; same-ID source anchors and current family member revisions are renewed on the composed23cb164f/53429d24 pair. The present source adds native sibling preparation and product-held delivery without changing the R80 overview-order-only leaf effect. No new governing record is lifted from its producer packet. Current forced-second-sync qualification uses42201818/ec67a42f: incoming settings-owned review limits and recorded-approval revisions are preserved, not reverted. R80 only adds purpose/body/boundary/terminal-citation authoring obligations; this renewal preserves every existing record and entry meaning and creates none. Owner-admitted current ea40194f/27cacb07 renewal: existing governing meaning, identity, producer/origin and entry roles/rationales retained; source-only correspondence is postpass6-non-DT-renewal-source-witnesses.json. Renew the same history identity/current existing record revision. No new invariant, decision, family, proof, realization or producer-packet lift; no runtime/test or CODE acceptance claimed. DT field/catalog entries excluded under the separate ROW-1FWHD2 ruling. Historical prior-pair qualification above; Current 278b060c/152a65ab renewal preserves existing record/entry/history identities, invariant meaning, rationale, role and origin. R80 contributes the four-line overview-order instruction; independently landed report-only cut/add and evidence-custody duties are retained rather than reverted. Current source/selected-byte correspondence is postpass15-native-cover-source-correspondence.json. No new record or producer-packet lift, execution, CODE round, D140, semantic acceptance or Git publication is claimed.",
+      "revision": 1,
+      "subject": "INV-7VZRZW"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-06VBXQ",
+      "items": [
+        "sha256:590500939757cefd2bfd2186f6a910efa6a99cd230bccd46659e01e0fbd1e8a0"
+      ],
+      "reason": "The exact changed fixture overview bytes gain a fixed purpose heading and corresponding explanatory prose so the fixture remains conforming under the new guard. Surrounding converted records, anchors and test assertions are unchanged; no unrecorded invariant is introduced by the fixture text. The packet exclusion and current rule card govern the overview rule separately.",
+      "subject": "hunk:sha256:590500939757cefd2bfd2186f6a910efa6a99cd230bccd46659e01e0fbd1e8a0"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "16a71f6d77830e0f962c81ab013cbbf98166c0a7",
+            "content": "sha256:36619c9d8e1b0de03f22fa80021619e453a171348c64e63977d783531b929eb0",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_process_record.py"
+          },
+          "before": {
+            "blob": "16a71f6d77830e0f962c81ab013cbbf98166c0a7",
+            "content": "sha256:36619c9d8e1b0de03f22fa80021619e453a171348c64e63977d783531b929eb0",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_process_record.py"
+          },
+          "id": "RLZ-0PMK4H"
+        },
+        {
+          "after": {
+            "blob": "53e1143222b86e5440474c01f85daaff2896c07c",
+            "content": "sha256:bb4cc6a75b9dcdc539056a6084c3919bc210b3a8704fd8ddf34157cabd8654e1",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 7
+            },
+            "path": "dashboard/src/dev/FakePaseoHost.tsx"
+          },
+          "before": {
+            "blob": "53e1143222b86e5440474c01f85daaff2896c07c",
+            "content": "sha256:bb4cc6a75b9dcdc539056a6084c3919bc210b3a8704fd8ddf34157cabd8654e1",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 7
+            },
+            "path": "dashboard/src/dev/FakePaseoHost.tsx"
+          },
+          "id": "RLZ-4GYJ06"
+        },
+        {
+          "after": {
+            "blob": "61f51e32545075f0c3a400773e296c06920f7044",
+            "content": "sha256:ac52629fbaedd46ef0da6cb38dacde606e28cfad5c032b06dc4c2c8874f66d0c",
+            "locator": {
+              "end": 3,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/selection.ts"
+          },
+          "before": {
+            "blob": "61f51e32545075f0c3a400773e296c06920f7044",
+            "content": "sha256:ac52629fbaedd46ef0da6cb38dacde606e28cfad5c032b06dc4c2c8874f66d0c",
+            "locator": {
+              "end": 3,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/selection.ts"
+          },
+          "id": "RLZ-4K7D1K"
+        },
+        {
+          "after": {
+            "blob": "a24920fe771a07767950d1bb0ebd61abe0aa1f96",
+            "content": "sha256:5de1f247d1863d8bccc61be24e00d01530da95a636000ff36bd5ac3ae5b59b83",
+            "locator": {
+              "end": 2221,
+              "kind": "line_range",
+              "start": 2221
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "ee713b09761e2222afa968fa2c6aed70297243a4",
+            "content": "sha256:5de1f247d1863d8bccc61be24e00d01530da95a636000ff36bd5ac3ae5b59b83",
+            "locator": {
+              "end": 2210,
+              "kind": "line_range",
+              "start": 2210
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-A31DQW"
+        },
+        {
+          "after": {
+            "blob": "ff4987d93eae4d0753859460c919930528520f63",
+            "content": "sha256:e254a7d83e9d0c46f8ca2487305e131b228a772c4f0f4d238b0d70e7073b3641",
+            "locator": {
+              "end": 262,
+              "kind": "line_range",
+              "start": 261
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "before": {
+            "blob": "ff4987d93eae4d0753859460c919930528520f63",
+            "content": "sha256:e254a7d83e9d0c46f8ca2487305e131b228a772c4f0f4d238b0d70e7073b3641",
+            "locator": {
+              "end": 262,
+              "kind": "line_range",
+              "start": 261
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "id": "RLZ-B533QM"
+        },
+        {
+          "after": {
+            "blob": "53e1143222b86e5440474c01f85daaff2896c07c",
+            "content": "sha256:3baf427123d4616f83a628e7d51e5edcc6f3c08811f106eb2f578c9835988e1c",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 80
+            },
+            "path": "dashboard/src/dev/FakePaseoHost.tsx"
+          },
+          "before": {
+            "blob": "53e1143222b86e5440474c01f85daaff2896c07c",
+            "content": "sha256:3baf427123d4616f83a628e7d51e5edcc6f3c08811f106eb2f578c9835988e1c",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 80
+            },
+            "path": "dashboard/src/dev/FakePaseoHost.tsx"
+          },
+          "id": "RLZ-D48XR3"
+        },
+        {
+          "after": {
+            "blob": "f35554b84dfd9d05f9382dc8c85d29f138b43d9f",
+            "content": "sha256:ee3043d464cd7c79ebe0bfaa104da5f43c026a8cd18a88367ca3e8a7b843ed9a",
+            "locator": {
+              "end": 388,
+              "kind": "line_range",
+              "start": 388
+            },
+            "path": "dashboard/src/cockpit/paseoPluginClient.test.ts"
+          },
+          "before": {
+            "blob": "f35554b84dfd9d05f9382dc8c85d29f138b43d9f",
+            "content": "sha256:ee3043d464cd7c79ebe0bfaa104da5f43c026a8cd18a88367ca3e8a7b843ed9a",
+            "locator": {
+              "end": 388,
+              "kind": "line_range",
+              "start": 388
+            },
+            "path": "dashboard/src/cockpit/paseoPluginClient.test.ts"
+          },
+          "id": "RLZ-HT5WNG"
+        },
+        {
+          "after": {
+            "blob": "7a911176ca4d33e489181a9a449033e8159c3178",
+            "content": "sha256:cadfc8a26cf3200125a3bd1f6933210b113f3d22140941ac5f6f22f5d7e6bc2f",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 45
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/index.client.tsx"
+          },
+          "before": {
+            "blob": "7a911176ca4d33e489181a9a449033e8159c3178",
+            "content": "sha256:cadfc8a26cf3200125a3bd1f6933210b113f3d22140941ac5f6f22f5d7e6bc2f",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 45
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/index.client.tsx"
+          },
+          "id": "RLZ-KH1XR2"
+        },
+        {
+          "after": {
+            "blob": "ff4987d93eae4d0753859460c919930528520f63",
+            "content": "sha256:4d0b85612cbb056de0c4af30dbed5e100621c7e70deb255cbc9765d2958f6974",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "before": {
+            "blob": "ff4987d93eae4d0753859460c919930528520f63",
+            "content": "sha256:4d0b85612cbb056de0c4af30dbed5e100621c7e70deb255cbc9765d2958f6974",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "id": "RLZ-YP5PVQ"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-08PAJH",
+      "items": [],
+      "reason": "Owner-admitted renewal after completed231622b2/5224682e paired sync (L127 landing). Preserve existing governing meaning, same entry/history identities, invariant, origin, rationale and role; preserve incoming fields rather than restore old definitions. The seven assigned catalog entries retain literal registration/module or whole-artifact ownership; every carried witness was independently located in current composed sources. Source-only correspondence is postpass10-catalog-and-carried-cover-source-map.json. This native refresh renews existing anchors/history, creates no record/entry and drops/remints none. DT233-235 and all excluded producer entries remain untouched. No CODE test, D140 replay, execution attribution, semantic verdict or closeout is claimed. Historical prior-pair qualification above; Current 278b060c/152a65ab renewal preserves existing record/entry/history identities, invariant meaning, rationale, role and origin. R80 contributes the four-line overview-order instruction; independently landed report-only cut/add and evidence-custody duties are retained rather than reverted. Current source/selected-byte correspondence is postpass15-native-cover-source-correspondence.json. No new record or producer-packet lift, execution, CODE round, D140, semantic acceptance or Git publication is claimed. Current cc364a32/1325e51d pre-freeze renewal preserves existing meaning, IDs, rationale, role and origin. Five catalog witnesses are matched to their same enclosing artifacts; current source-only correspondence is /var/tmp/mik-run3/L80/renewal6/five-realizes-source-correspondence.json. The retired whole-catalog witness remains historical, not a revived live obligation. Existing history cover metadata follows incoming same-ID proof/source renewals; DT236–238 selected bytes are unchanged, without new retarget or rationale override. No new entry/record, execution, semantic/CODE acceptance, freeze/seal or Reviewer request.",
+      "revision": 1,
+      "subject": "INV-0TCWT9"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "797c78c090a39734d316d12fab86fd41820ab528",
+            "content": "sha256:baea8d9c29a19b55b3bd58cb8c81382965f4ad5f2d665e42839f2843ef3411f0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/closeout.md"
+          },
+          "before": {
+            "blob": "797c78c090a39734d316d12fab86fd41820ab528",
+            "content": "sha256:baea8d9c29a19b55b3bd58cb8c81382965f4ad5f2d665e42839f2843ef3411f0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/closeout.md"
+          },
+          "id": "RLZ-CQCTG9"
+        },
+        {
+          "after": {
+            "blob": "700f45663d148e00dd89e0e5560e7c22f3bdbf7f",
+            "content": "sha256:16982b1069215292a905dc7d1ebaccddab307de10f359aff1b57c1af343a81ca",
+            "locator": {
+              "end": 114,
+              "kind": "line_range",
+              "start": 114
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "0aa64abcceae8acc8d29755e7d85bd183f04cce8",
+            "content": "sha256:16982b1069215292a905dc7d1ebaccddab307de10f359aff1b57c1af343a81ca",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 109
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-HVJ3RJ"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-0AFZE7",
+      "items": [],
+      "reason": "Owner-admitted forced-second-sync22-ID renewal: preserve the existing invariant statement, scope, admission, revision and complete entry identities. Requalify this existing role/referral or catalog witness at its actual source duty, not the parked or incoming line number. Incoming stage/settings changes do not change the R80 overview-order leaf effect. Source correspondence and original fields remain in second-sync-history-source-map.json; no new governing record or producer-packet entry is lifted. Owner-admitted current ea40194f/27cacb07 renewal: existing governing meaning, identity, producer/origin and entry roles/rationales retained; source-only correspondence is postpass6-non-DT-renewal-source-witnesses.json. Renew the same history identity/current existing record revision. No new invariant, decision, family, proof, realization or producer-packet lift; no runtime/test or CODE acceptance claimed. DT field/catalog entries excluded under the separate ROW-1FWHD2 ruling.",
+      "revision": 1,
+      "subject": "INV-AKRZAN"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-0MP7EC",
+      "items": [
+        "sha256:ed3e954e7e93d161ea70ef1fa4c571c9e7e2762170685cce62a3d65647aded99"
+      ],
+      "reason": "Read the complete existing card and exact source delta. This change only replaces bare/structure-first overview fixture bytes with fixed purpose headings (and the existing citation line, where present, at the end); it changes no case assertion, fixture record/entry set, scope, gate dispatch, branch selection or conversion algorithm. The card already explains this module’s tested contract and does not promise the old bare-title fixture shape. The reviewed current body therefore requires no semantic edit. Reference currency is reported separately; this row asserts body impact, not a blanket currentness or test PASS.",
+      "subject": "onboarding:mcp/tests/test_memory_branch_authority.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "7c57c15d854d03401eefecf19558ba02a2152c57",
+            "content": "sha256:a46b4873a071d8f2db00ee8f89f0bfe310d51555495013ffa11d32e934134b2a",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "7c57c15d854d03401eefecf19558ba02a2152c57",
+            "content": "sha256:a46b4873a071d8f2db00ee8f89f0bfe310d51555495013ffa11d32e934134b2a",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-D682YJ"
+        },
+        {
+          "after": {
+            "blob": "700f45663d148e00dd89e0e5560e7c22f3bdbf7f",
+            "content": "sha256:4c0c4c01a89a7a026ec118d7fdd8ba3a00b35e8a5ee199391f24e20d679478e1",
+            "locator": {
+              "end": 238,
+              "kind": "line_range",
+              "start": 236
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "976f516057f9514524eb3ac922803c6632dd3ba1",
+            "content": "sha256:4c0c4c01a89a7a026ec118d7fdd8ba3a00b35e8a5ee199391f24e20d679478e1",
+            "locator": {
+              "end": 234,
+              "kind": "line_range",
+              "start": 232
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-DT71R6"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-1FWHD2",
+      "items": [],
+      "reason": "Manager recorded exact selected-byte relocation after the landed line inserted three lines: preserve the existing DT entry and proof identities, invariant, origin, rationale and role; the selected bytes at prior233-235 are identical at current236-238. Only this locator is relocated; PRF-D682YJ retained without override, no rationale override or188-202 semantic retarget. This renews the existing governing row, not an interpretation or record change. No execution, CODE round, D140, acceptance or Git publication is claimed. Source correspondence: postpass15-native-cover-source-correspondence.json; exact exception: postpass15-DT-recorded-exact-exception.json. Current cc364a32/1325e51d pre-freeze renewal preserves existing meaning, IDs, rationale, role and origin. Five catalog witnesses are matched to their same enclosing artifacts; current source-only correspondence is /var/tmp/mik-run3/L80/renewal6/five-realizes-source-correspondence.json. The retired whole-catalog witness remains historical, not a revived live obligation. Existing history cover metadata follows incoming same-ID proof/source renewals; DT236–238 selected bytes are unchanged, without new retarget or rationale override. No new entry/record, execution, semantic/CODE acceptance, freeze/seal or Reviewer request.",
+      "revision": 2,
+      "subject": "INV-208SQT"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "1b56203707c56a715059f113fa5c4121ffa2605b",
+            "content": "sha256:2c1fa5fc562c7174dcaa4c45db2c0e143648ee7d6dbe903ec304e5a00fbd5ec0",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolServerDefinitionTests.test_the_definition_starts_this_builds_tool_server_with_its_source_and_settings"
+            },
+            "path": "mcp/tests/test_paseo_agent_tools.py"
+          },
+          "before": {
+            "blob": "1b56203707c56a715059f113fa5c4121ffa2605b",
+            "content": "sha256:2c1fa5fc562c7174dcaa4c45db2c0e143648ee7d6dbe903ec304e5a00fbd5ec0",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolServerDefinitionTests.test_the_definition_starts_this_builds_tool_server_with_its_source_and_settings"
+            },
+            "path": "mcp/tests/test_paseo_agent_tools.py"
+          },
+          "id": "PRF-YZBBAC"
+        },
+        {
+          "after": {
+            "blob": "994c892314aaed072dbf28fd2c499a6806062ea3",
+            "content": "sha256:e35ce2689f34d16f39053aae28a4527933540cd074288e1195291b6f6c964aff",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolServerStartTests.test_the_definition_starts_this_builds_tool_server_which_reports_source_and_binding"
+            },
+            "path": "mcp/tests/test_paseo_tool_server_start.py"
+          },
+          "before": {
+            "blob": "994c892314aaed072dbf28fd2c499a6806062ea3",
+            "content": "sha256:e35ce2689f34d16f39053aae28a4527933540cd074288e1195291b6f6c964aff",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolServerStartTests.test_the_definition_starts_this_builds_tool_server_which_reports_source_and_binding"
+            },
+            "path": "mcp/tests/test_paseo_tool_server_start.py"
+          },
+          "id": "PRF-ZYFEAK"
+        },
+        {
+          "after": {
+            "blob": "700f45663d148e00dd89e0e5560e7c22f3bdbf7f",
+            "content": "sha256:2ee6531903d4dd13daac46450c9c16ce39fd0aed29161dbfef6377ee5e587f1c",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "0aa64abcceae8acc8d29755e7d85bd183f04cce8",
+            "content": "sha256:2ee6531903d4dd13daac46450c9c16ce39fd0aed29161dbfef6377ee5e587f1c",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-090539"
+        },
+        {
+          "after": {
+            "blob": "a8e2b869f7f277422f7b891f9c31efa0b3c45d4c",
+            "content": "sha256:ebeceafc3cd5734abb69e12126f6e87e91b186250179f61e612e2ac7f2834ef9",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "before": {
+            "blob": "a8e2b869f7f277422f7b891f9c31efa0b3c45d4c",
+            "content": "sha256:ebeceafc3cd5734abb69e12126f6e87e91b186250179f61e612e2ac7f2834ef9",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "id": "RLZ-2J32HP"
+        },
+        {
+          "after": {
+            "blob": "66b580e5158b30270e6f97efbfda840f38d784d7",
+            "content": "sha256:fb88b4cb11d7d27e66b17718d83c21144cbe42b604b12e4b12dde8eac6be3a9b",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
+          },
+          "before": {
+            "blob": "66b580e5158b30270e6f97efbfda840f38d784d7",
+            "content": "sha256:fb88b4cb11d7d27e66b17718d83c21144cbe42b604b12e4b12dde8eac6be3a9b",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
+          },
+          "id": "RLZ-BPMMTC"
+        },
+        {
+          "after": {
+            "blob": "5c1a5652c560c4ecb686dae2da334d5124d8e8cf",
+            "content": "sha256:2f68620654f40988d2f2ac08a2e593c6412eb58b0cc8e41ed387dfef9a0b7427",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "mcp/src/agents_remember/application/agent_binding.py"
+          },
+          "before": {
+            "blob": "5c1a5652c560c4ecb686dae2da334d5124d8e8cf",
+            "content": "sha256:2f68620654f40988d2f2ac08a2e593c6412eb58b0cc8e41ed387dfef9a0b7427",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "mcp/src/agents_remember/application/agent_binding.py"
+          },
+          "id": "RLZ-FP6B7T"
+        },
+        {
+          "after": {
+            "blob": "fcf59cc63bd67401f035bd26fe21e6018d385cb5",
+            "content": "sha256:bb5f95ed4aa40134659f1b481854cfdb2c08726f5de6f52d4bf1c4b03b5eb3dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "tool_server_definition"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "before": {
+            "blob": "fcf59cc63bd67401f035bd26fe21e6018d385cb5",
+            "content": "sha256:bb5f95ed4aa40134659f1b481854cfdb2c08726f5de6f52d4bf1c4b03b5eb3dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "tool_server_definition"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "id": "RLZ-K7Q360"
+        },
+        {
+          "after": {
+            "blob": "fcf59cc63bd67401f035bd26fe21e6018d385cb5",
+            "content": "sha256:c327cf439bbbe64126236f89ce74fe605de29465d19085f2f677cae5c31e7d5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_launch_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "before": {
+            "blob": "fcf59cc63bd67401f035bd26fe21e6018d385cb5",
+            "content": "sha256:c327cf439bbbe64126236f89ce74fe605de29465d19085f2f677cae5c31e7d5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_launch_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "id": "RLZ-MKRHDV"
+        },
+        {
+          "after": {
+            "blob": "1060ffa0e57f77e37902afeb00b2e97c2111208b",
+            "content": "sha256:99adb8a0e73183ed3ac0ae63626bf3066a1270a7ff970b92c90a694378907194",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 62
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "before": {
+            "blob": "1060ffa0e57f77e37902afeb00b2e97c2111208b",
+            "content": "sha256:99adb8a0e73183ed3ac0ae63626bf3066a1270a7ff970b92c90a694378907194",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 62
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "id": "RLZ-X79EQQ"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-26VEY4",
+      "items": [],
+      "reason": "Owner-admitted forced-second-sync22-ID renewal: preserve the existing invariant statement, scope, admission, revision and complete entry identities. Requalify this existing role/referral or catalog witness at its actual source duty, not the parked or incoming line number. Incoming stage/settings changes do not change the R80 overview-order leaf effect. Source correspondence and original fields remain in second-sync-history-source-map.json; no new governing record or producer-packet entry is lifted. Owner-admitted current ea40194f/27cacb07 renewal: existing governing meaning, identity, producer/origin and entry roles/rationales retained; source-only correspondence is postpass6-non-DT-renewal-source-witnesses.json. Renew the same history identity/current existing record revision. No new invariant, decision, family, proof, realization or producer-packet lift; no runtime/test or CODE acceptance claimed. DT field/catalog entries excluded under the separate ROW-1FWHD2 ruling.",
+      "revision": 1,
+      "subject": "INV-C8SVFY"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a24920fe771a07767950d1bb0ebd61abe0aa1f96",
+            "content": "sha256:cf634aa5d4c2f6548d70864e30416766ec5e9fbb8b759e515fe39928e83d4ca1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "ee713b09761e2222afa968fa2c6aed70297243a4",
+            "content": "sha256:4f2ee6fa1c91dcfa4e717367d7cc9621002ff8c75600ad4c25b3e17ae37c116c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GRTJG0"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-2PZKMD",
+      "items": [
+        "sha256:a0d39f3441e14365064aa80fc7830feb569d2b51f325adf4af552dfb47c3f88b"
+      ],
+      "reason": "Owner-admitted renewal after completed231622b2/5224682e paired sync (L127 landing). Preserve existing governing meaning, same entry/history identities, invariant, origin, rationale and role; preserve incoming fields rather than restore old definitions. The seven assigned catalog entries retain literal registration/module or whole-artifact ownership; every carried witness was independently located in current composed sources. Source-only correspondence is postpass10-catalog-and-carried-cover-source-map.json. This native refresh renews existing anchors/history, creates no record/entry and drops/remints none. DT233-235 and all excluded producer entries remain untouched. No CODE test, D140 replay, execution attribution, semantic verdict or closeout is claimed. Historical prior-pair qualification above; Current 278b060c/152a65ab renewal preserves existing record/entry/history identities, invariant meaning, rationale, role and origin. R80 contributes the four-line overview-order instruction; independently landed report-only cut/add and evidence-custody duties are retained rather than reverted. Current source/selected-byte correspondence is postpass15-native-cover-source-correspondence.json. No new record or producer-packet lift, execution, CODE round, D140, semantic acceptance or Git publication is claimed. The catalog remains solely the retired historical union-merge repair witness; live additions create no exact-two-lines obligation. Current cc364a32/1325e51d pre-freeze renewal preserves existing meaning, IDs, rationale, role and origin. Five catalog witnesses are matched to their same enclosing artifacts; current source-only correspondence is /var/tmp/mik-run3/L80/renewal6/five-realizes-source-correspondence.json. The retired whole-catalog witness remains historical, not a revived live obligation. Existing history cover metadata follows incoming same-ID proof/source renewals; DT236–238 selected bytes are unchanged, without new retarget or rationale override. No new entry/record, execution, semantic/CODE acceptance, freeze/seal or Reviewer request.",
+      "revision": 1,
+      "subject": "INV-MSCRAN"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-425SM6",
+      "items": [
+        "sha256:43967ef3ef3a7d03312700b57c6716cdd83c9d151268b6710438478816f5106f"
+      ],
+      "reason": "Read the complete existing card and exact source delta. This change only replaces bare/structure-first overview fixture bytes with fixed purpose headings (and the existing citation line, where present, at the end); it changes no case assertion, fixture record/entry set, scope, gate dispatch, branch selection or conversion algorithm. The card already explains this module’s tested contract and does not promise the old bare-title fixture shape. The reviewed current body therefore requires no semantic edit. Reference currency is reported separately; this row asserts body impact, not a blanket currentness or test PASS.",
+      "subject": "onboarding:mcp/tests/test_knowledge_bootstrap.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0FBA8M52",
+          "revision": 1
+        },
+        {
+          "id": "INV-CKHJ0M7J",
+          "revision": 2
+        },
+        {
+          "id": "INV-E8655Z54",
+          "revision": 2
+        },
+        {
+          "id": "INV-H6A6JS63",
+          "revision": 2
+        },
+        {
+          "id": "INV-J7179RG5",
+          "revision": 3
+        }
+      ],
+      "id": "ROW-4XYNNS",
+      "items": [
+        "sha256:8f111497684021c7684013ab162e628cc92d1ccc1dc597946457f4810c3189aa"
+      ],
+      "reason": "The full member roster preserves target-owned rationale/role precedence, validation and refusal boundaries. Overview-order prose adds no new writer schema or alternative target-rationale owner. Family guarantee, routes and membership are unchanged; all stored record bytes compared with the admitted base. Current body-end-sync qualification preserves governing meaning; same-ID source anchors and current family member revisions are renewed on the composed23cb164f/53429d24 pair. The present source adds native sibling preparation and product-held delivery without changing the R80 overview-order-only leaf effect. No new governing record is lifted from its producer packet. Current forced-second-sync qualification uses42201818/ec67a42f: incoming settings-owned review limits and recorded-approval revisions are preserved, not reverted. R80 only adds purpose/body/boundary/terminal-citation authoring obligations; this renewal preserves every existing record and entry meaning and creates none. The full stored member obligations and routes were re-examined on their new revisions; the settings-budget successors affect approved-round accounting, not this family’s guarantee, routes or member identities. Owner-admitted current ea40194f/27cacb07 renewal: existing governing meaning, identity, producer/origin and entry roles/rationales retained; source-only correspondence is postpass6-non-DT-renewal-source-witnesses.json. Renew the same history identity/current existing record revision. No new invariant, decision, family, proof, realization or producer-packet lift; no runtime/test or CODE acceptance claimed. DT field/catalog entries excluded under the separate ROW-1FWHD2 ruling. Historical prior-pair qualification above; Current 278b060c/152a65ab renewal preserves existing record/entry/history identities, invariant meaning, rationale, role and origin. R80 contributes the four-line overview-order instruction; independently landed report-only cut/add and evidence-custody duties are retained rather than reverted. Current source/selected-byte correspondence is postpass15-native-cover-source-correspondence.json. No new record or producer-packet lift, execution, CODE round, D140, semantic acceptance or Git publication is claimed.",
+      "revision": 4,
+      "subject": "FAM-KQQE74ZT"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-60SQ0J",
+      "items": [
+        "sha256:81cc402a026aa992fe36a78f9b649c558e68ed5c76d3759ed24c4279cfef4674"
+      ],
+      "reason": "This generated instruction copy is byte-identical to its canonical workflow/Curator source. The substantive overview-order instruction and validator choice are documented in the existing governing overview and canonical/packaged cards; this derived carrier changes neither an independent obligation nor permissions, peer handover, writer ownership or code acceptance. It requires no independent file-card or new invariant/decision/family record. Current forced-second-sync qualification uses42201818/ec67a42f: incoming settings-owned review limits and recorded-approval revisions are preserved, not reverted. R80 only adds purpose/body/boundary/terminal-citation authoring obligations; this renewal preserves every existing record and entry meaning and creates none.",
+      "subject": "onboarding:.codex/skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0ae2cf68f67e50343d8166d5cc9e46795a520dfd",
+            "content": "sha256:570db7757a23c5d440b7946e3978f8a8b8eadf27041308984611dafe470c2c37",
+            "locator": {
+              "kind": "symbol",
+              "name": "RefreshTests.test_a_launch_that_is_unresolved_or_rejected_has_no_agent_to_read"
+            },
+            "path": "mcp/tests/test_paseo_status.py"
+          },
+          "before": {
+            "blob": "0ae2cf68f67e50343d8166d5cc9e46795a520dfd",
+            "content": "sha256:570db7757a23c5d440b7946e3978f8a8b8eadf27041308984611dafe470c2c37",
+            "locator": {
+              "kind": "symbol",
+              "name": "RefreshTests.test_a_launch_that_is_unresolved_or_rejected_has_no_agent_to_read"
+            },
+            "path": "mcp/tests/test_paseo_status.py"
+          },
+          "id": "PRF-21JVYS"
+        },
+        {
+          "after": {
+            "blob": "0ae2cf68f67e50343d8166d5cc9e46795a520dfd",
+            "content": "sha256:7317bfcc777a532104416dab4e9f6aba648e4028e77ec3bd9616eaa9ece25cb8",
+            "locator": {
+              "kind": "symbol",
+              "name": "StatusTableTests.test_row_10_idle_after_a_finished_turn_is_completed_with_the_final_text"
+            },
+            "path": "mcp/tests/test_paseo_status.py"
+          },
+          "before": {
+            "blob": "0ae2cf68f67e50343d8166d5cc9e46795a520dfd",
+            "content": "sha256:7317bfcc777a532104416dab4e9f6aba648e4028e77ec3bd9616eaa9ece25cb8",
+            "locator": {
+              "kind": "symbol",
+              "name": "StatusTableTests.test_row_10_idle_after_a_finished_turn_is_completed_with_the_final_text"
+            },
+            "path": "mcp/tests/test_paseo_status.py"
+          },
+          "id": "PRF-5RH2HT"
+        },
+        {
+          "after": {
+            "blob": "2eaa2f828ba56892bad654fa5cf51b39dd84ccca",
+            "content": "sha256:5c15a1060d7db02ad50b4abcf1d25bfad79af84f205c9b577853cce254de643a",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgreementAcrossTheRoleSetTests.test_delivered_coordinator_capsules_check_candidate_evidence_before_acceptance"
+            },
+            "path": "mcp/tests/test_lifecycle_turn_truth_doctrine.py"
+          },
+          "before": {
+            "blob": "2eaa2f828ba56892bad654fa5cf51b39dd84ccca",
+            "content": "sha256:5c15a1060d7db02ad50b4abcf1d25bfad79af84f205c9b577853cce254de643a",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgreementAcrossTheRoleSetTests.test_delivered_coordinator_capsules_check_candidate_evidence_before_acceptance"
+            },
+            "path": "mcp/tests/test_lifecycle_turn_truth_doctrine.py"
+          },
+          "id": "PRF-T9EV7V"
+        },
+        {
+          "after": {
+            "blob": "7b5bf5007181fdce05598afcd23e40c4403ecd5d",
+            "content": "sha256:d50fdc1880e9960c3005b929057f234787a220d435edcf1b55b56d25735dce49",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refresh_execution"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_liveness.py"
+          },
+          "before": {
+            "blob": "7b5bf5007181fdce05598afcd23e40c4403ecd5d",
+            "content": "sha256:d50fdc1880e9960c3005b929057f234787a220d435edcf1b55b56d25735dce49",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refresh_execution"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_liveness.py"
+          },
+          "id": "RLZ-FETYV2"
+        },
+        {
+          "after": {
+            "blob": "032f0c6e3e7c4c02ef192ab7f7e36fb055c5f778",
+            "content": "sha256:42aa2b82c9c214f35819c819269d9114f87933e3f834cb423e42196d9ff3f2f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_public_execution"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "before": {
+            "blob": "032f0c6e3e7c4c02ef192ab7f7e36fb055c5f778",
+            "content": "sha256:42aa2b82c9c214f35819c819269d9114f87933e3f834cb423e42196d9ff3f2f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_public_execution"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "id": "RLZ-N8SXH0"
+        },
+        {
+          "after": {
+            "blob": "65a10dcac925975e4ae642d264a343857bdae9c4",
+            "content": "sha256:fd97efca3521a234676e5b0bcdc806fbdd0827156b2fbdf22900b9a55b5410f8",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "before": {
+            "blob": "65a10dcac925975e4ae642d264a343857bdae9c4",
+            "content": "sha256:fd97efca3521a234676e5b0bcdc806fbdd0827156b2fbdf22900b9a55b5410f8",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "id": "RLZ-P0ZH30"
+        },
+        {
+          "after": {
+            "blob": "a1dc9e35d66a26cd833e513038a46f0b420223fa",
+            "content": "sha256:8e4e06378e04e5ac0bc23c37488b0085ef9d782d39da67d25def824dd9f044a9",
+            "locator": {
+              "end": 176,
+              "kind": "line_range",
+              "start": 104
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_status.py"
+          },
+          "before": {
+            "blob": "a1dc9e35d66a26cd833e513038a46f0b420223fa",
+            "content": "sha256:8e4e06378e04e5ac0bc23c37488b0085ef9d782d39da67d25def824dd9f044a9",
+            "locator": {
+              "end": 176,
+              "kind": "line_range",
+              "start": 104
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_status.py"
+          },
+          "id": "RLZ-Q7ENH5"
+        },
+        {
+          "after": {
+            "blob": "700f45663d148e00dd89e0e5560e7c22f3bdbf7f",
+            "content": "sha256:51900cc8720c0bfed4bdfa12068c6bab7ad802039058e5be7d06d52ef3a125f6",
+            "locator": {
+              "end": 215,
+              "kind": "line_range",
+              "start": 213
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "976f516057f9514524eb3ac922803c6632dd3ba1",
+            "content": "sha256:51900cc8720c0bfed4bdfa12068c6bab7ad802039058e5be7d06d52ef3a125f6",
+            "locator": {
+              "end": 211,
+              "kind": "line_range",
+              "start": 209
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-V1AKR1"
+        },
+        {
+          "after": {
+            "blob": "9a1a94bce648addb46d0c0aeb66232634c3b06c9",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 33
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "before": {
+            "blob": "9a1a94bce648addb46d0c0aeb66232634c3b06c9",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 33
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "id": "RLZ-X136N6"
+        },
+        {
+          "after": {
+            "blob": "a8e2b869f7f277422f7b891f9c31efa0b3c45d4c",
+            "content": "sha256:372b0095be3b7d9666f19b698f1d54b7f3fc95a937c444a882d9fc120b9e34e4",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 35
+            },
+            "path": "skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "before": {
+            "blob": "a8e2b869f7f277422f7b891f9c31efa0b3c45d4c",
+            "content": "sha256:372b0095be3b7d9666f19b698f1d54b7f3fc95a937c444a882d9fc120b9e34e4",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 35
+            },
+            "path": "skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "id": "RLZ-X8MYE4"
+        },
+        {
+          "after": {
+            "blob": "89de0187db23dce8b3740bb06c1583dad46d62e1",
+            "content": "sha256:7654e32665a2cd703bf52c13f91bb959ea3e6471a500b1e2f990c7e0bc8561e3",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 7
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/recovery.md"
+          },
+          "before": {
+            "blob": "89de0187db23dce8b3740bb06c1583dad46d62e1",
+            "content": "sha256:7654e32665a2cd703bf52c13f91bb959ea3e6471a500b1e2f990c7e0bc8561e3",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 7
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/recovery.md"
+          },
+          "id": "RLZ-YTZ3Y1"
+        },
+        {
+          "after": {
+            "blob": "797c78c090a39734d316d12fab86fd41820ab528",
+            "content": "sha256:8fb316124faed8664023c9a15d6314fb939a959cbc4c3ba9670343b5e1f7e927",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 7
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/closeout.md"
+          },
+          "before": {
+            "blob": "797c78c090a39734d316d12fab86fd41820ab528",
+            "content": "sha256:8fb316124faed8664023c9a15d6314fb939a959cbc4c3ba9670343b5e1f7e927",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 7
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/closeout.md"
+          },
+          "id": "RLZ-ZHVQ2K"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-6G7E5H",
+      "items": [],
+      "reason": "Owner-admitted forced-second-sync22-ID renewal: preserve the existing invariant statement, scope, admission, revision and complete entry identities. Requalify this existing role/referral or catalog witness at its actual source duty, not the parked or incoming line number. Incoming stage/settings changes do not change the R80 overview-order leaf effect. Source correspondence and original fields remain in second-sync-history-source-map.json; no new governing record or producer-packet entry is lifted. Owner-admitted current ea40194f/27cacb07 renewal: existing governing meaning, identity, producer/origin and entry roles/rationales retained; source-only correspondence is postpass6-non-DT-renewal-source-witnesses.json. Renew the same history identity/current existing record revision. No new invariant, decision, family, proof, realization or producer-packet lift; no runtime/test or CODE acceptance claimed. DT field/catalog entries excluded under the separate ROW-1FWHD2 ruling. Current cc364a32/1325e51d pre-freeze renewal preserves existing meaning, IDs, rationale, role and origin. Five catalog witnesses are matched to their same enclosing artifacts; current source-only correspondence is /var/tmp/mik-run3/L80/renewal6/five-realizes-source-correspondence.json. The retired whole-catalog witness remains historical, not a revived live obligation. Existing history cover metadata follows incoming same-ID proof/source renewals; DT236–238 selected bytes are unchanged, without new retarget or rationale override. No new entry/record, execution, semantic/CODE acceptance, freeze/seal or Reviewer request.",
+      "revision": 3,
+      "subject": "INV-4E130M"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-7DXT1G",
+      "items": [
+        "sha256:3ff4d7f437d0435a7039d7fcd1f41f9c592b65be43cb05c553a4cdf8ee0b1bb4"
+      ],
+      "reason": "This generated instruction copy is byte-identical to its canonical workflow/Curator source. The substantive overview-order instruction and validator choice are documented in the existing governing overview and canonical/packaged cards; this derived carrier changes neither an independent obligation nor permissions, peer handover, writer ownership or code acceptance. It requires no independent file-card or new invariant/decision/family record. Current forced-second-sync qualification uses42201818/ec67a42f: incoming settings-owned review limits and recorded-approval revisions are preserved, not reverted. R80 only adds purpose/body/boundary/terminal-citation authoring obligations; this renewal preserves every existing record and entry meaning and creates none.",
+      "subject": "onboarding:.openclaw/workspace/skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7TX7CM",
+      "items": [
+        "sha256:91fd97a3ab788d3e7d76a2cb67dec3200dd10e2a18f3bb979b800caf86189a45"
+      ],
+      "reason": "The exact insertion registers the overview-order test in the existing unit-regression lane; this is local executable-test selection rather than a new stored invariant. The test behavior is explained in its new file card; the packet exclusion prohibits inventing a record for the catalog membership.",
+      "subject": "hunk:sha256:91fd97a3ab788d3e7d76a2cb67dec3200dd10e2a18f3bb979b800caf86189a45"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "700f45663d148e00dd89e0e5560e7c22f3bdbf7f",
+            "content": "sha256:6a393a8f22e9cb16454c3203295903c40711c2c25c66c1dfe721ad659b42dc19",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "976f516057f9514524eb3ac922803c6632dd3ba1",
+            "content": "sha256:7ea09891f058e484df3663129e454a82aaa3cdf947a76db3843c6290773df3ac",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-K569QYAK"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-7Y3WH0",
+      "items": [
+        "sha256:1bde0840de74071b65250b8b4c839e793a48aefd2ea97c3db103bda61356d28c"
+      ],
+      "reason": "The changed canonical Curator text adds only the four-line purpose/structure/boundary/terminal-citation instruction. Its surrounding producer-target, helper-permission, parent-question, peer-handover and no-code-repair clauses are byte-preserved; the shipped mirrors match the canonical sources exactly. The existing invariant keeps its full statement, scope, admission, revision and entry identities. The R80 instruction is an additional local prose obligation, not a change to this stored guarantee. The packet exclusion and direct Manager clarification prohibit a new record for that choice. Current body-end-sync qualification preserves governing meaning; same-ID source anchors and current family member revisions are renewed on the composed23cb164f/53429d24 pair. The present source adds native sibling preparation and product-held delivery without changing the R80 overview-order-only leaf effect. No new governing record is lifted from its producer packet. Current forced-second-sync qualification uses42201818/ec67a42f: incoming settings-owned review limits and recorded-approval revisions are preserved, not reverted. R80 only adds purpose/body/boundary/terminal-citation authoring obligations; this renewal preserves every existing record and entry meaning and creates none. Owner-admitted current ea40194f/27cacb07 renewal: existing governing meaning, identity, producer/origin and entry roles/rationales retained; source-only correspondence is postpass6-non-DT-renewal-source-witnesses.json. Renew the same history identity/current existing record revision. No new invariant, decision, family, proof, realization or producer-packet lift; no runtime/test or CODE acceptance claimed. DT field/catalog entries excluded under the separate ROW-1FWHD2 ruling. Historical prior-pair qualification above; Current 278b060c/152a65ab renewal preserves existing record/entry/history identities, invariant meaning, rationale, role and origin. R80 contributes the four-line overview-order instruction; independently landed report-only cut/add and evidence-custody duties are retained rather than reverted. Current source/selected-byte correspondence is postpass15-native-cover-source-correspondence.json. No new record or producer-packet lift, execution, CODE round, D140, semantic acceptance or Git publication is claimed.",
+      "revision": 1,
+      "subject": "INV-0FBA8M52"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "7c57c15d854d03401eefecf19558ba02a2152c57",
+            "content": "sha256:0aa27888040347c52cbc287b60220d7c8feea34797bf1d54d3fb94b16161b1db",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_leaf_roles_and_operations_deliver_their_own_positive_obligations"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "7c57c15d854d03401eefecf19558ba02a2152c57",
+            "content": "sha256:0aa27888040347c52cbc287b60220d7c8feea34797bf1d54d3fb94b16161b1db",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_leaf_roles_and_operations_deliver_their_own_positive_obligations"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-EA6YHQ"
+        },
+        {
+          "after": {
+            "blob": "1060ffa0e57f77e37902afeb00b2e97c2111208b",
+            "content": "sha256:71bd7eb7f9aea55163c813b0b4e6299f8e63d8bb45d0412e21a186f94a1725e6",
+            "locator": {
+              "end": 300,
+              "kind": "line_range",
+              "start": 300
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "before": {
+            "blob": "1060ffa0e57f77e37902afeb00b2e97c2111208b",
+            "content": "sha256:71bd7eb7f9aea55163c813b0b4e6299f8e63d8bb45d0412e21a186f94a1725e6",
+            "locator": {
+              "end": 300,
+              "kind": "line_range",
+              "start": 300
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "id": "RLZ-4YAPS7"
+        },
+        {
+          "after": {
+            "blob": "700f45663d148e00dd89e0e5560e7c22f3bdbf7f",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "976f516057f9514524eb3ac922803c6632dd3ba1",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-7B663Y"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-89JV84",
+      "items": [],
+      "reason": "Owner-admitted forced-second-sync22-ID renewal: preserve the existing invariant statement, scope, admission, revision and complete entry identities. Requalify this existing role/referral or catalog witness at its actual source duty, not the parked or incoming line number. Incoming stage/settings changes do not change the R80 overview-order leaf effect. Source correspondence and original fields remain in second-sync-history-source-map.json; no new governing record or producer-packet entry is lifted. Owner-admitted current ea40194f/27cacb07 renewal: existing governing meaning, identity, producer/origin and entry roles/rationales retained; source-only correspondence is postpass6-non-DT-renewal-source-witnesses.json. Renew the same history identity/current existing record revision. No new invariant, decision, family, proof, realization or producer-packet lift; no runtime/test or CODE acceptance claimed. DT field/catalog entries excluded under the separate ROW-1FWHD2 ruling. Current cc364a32/1325e51d pre-freeze renewal preserves existing meaning, IDs, rationale, role and origin. Five catalog witnesses are matched to their same enclosing artifacts; current source-only correspondence is /var/tmp/mik-run3/L80/renewal6/five-realizes-source-correspondence.json. The retired whole-catalog witness remains historical, not a revived live obligation. Existing history cover metadata follows incoming same-ID proof/source renewals; DT236–238 selected bytes are unchanged, without new retarget or rationale override. No new entry/record, execution, semantic/CODE acceptance, freeze/seal or Reviewer request.",
+      "revision": 2,
+      "subject": "INV-W24J6Q"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-63Z0MN",
+          "revision": 2
+        },
+        {
+          "id": "INV-DKN3CG",
+          "revision": 2
+        },
+        {
+          "id": "INV-NNQR91",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-9750QB",
+      "items": [
+        "sha256:d674e7a18b966c0f3c301eefc82efa55c3b050f751af5b660473927286a688ec"
+      ],
+      "reason": "The full member roster preserves launcher choices and settings-reader boundaries; canonical Curator and converted-card instructions are byte-equal across all retained shipped mirrors. This task adds overview wording, not a launcher/options behavior change or a replacement propagation lane. Family guarantee, routes and membership are unchanged; all stored record bytes compared with the admitted base. Current body-end-sync qualification preserves governing meaning; same-ID source anchors and current family member revisions are renewed on the composed23cb164f/53429d24 pair. The present source adds native sibling preparation and product-held delivery without changing the R80 overview-order-only leaf effect. No new governing record is lifted from its producer packet. Current forced-second-sync qualification uses42201818/ec67a42f: incoming settings-owned review limits and recorded-approval revisions are preserved, not reverted. R80 only adds purpose/body/boundary/terminal-citation authoring obligations; this renewal preserves every existing record and entry meaning and creates none. The full stored member obligations and routes were re-examined on their new revisions; the settings-budget successors affect approved-round accounting, not this family’s guarantee, routes or member identities. Owner-admitted current ea40194f/27cacb07 renewal: existing governing meaning, identity, producer/origin and entry roles/rationales retained; source-only correspondence is postpass6-non-DT-renewal-source-witnesses.json. Renew the same history identity/current existing record revision. No new invariant, decision, family, proof, realization or producer-packet lift; no runtime/test or CODE acceptance claimed. DT field/catalog entries excluded under the separate ROW-1FWHD2 ruling. Historical prior-pair qualification above; Current 278b060c/152a65ab renewal preserves existing record/entry/history identities, invariant meaning, rationale, role and origin. R80 contributes the four-line overview-order instruction; independently landed report-only cut/add and evidence-custody duties are retained rather than reverted. Current source/selected-byte correspondence is postpass15-native-cover-source-correspondence.json. No new record or producer-packet lift, execution, CODE round, D140, semantic acceptance or Git publication is claimed.",
+      "revision": 1,
+      "subject": "FAM-GDXSJG"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9GSQ8E",
+      "items": [
+        "sha256:89433725e81eeb1c8c3f890e999f0eba7c102c7172c944d4e991858d92324416"
+      ],
+      "reason": "The exact changed fixture overview bytes gain a fixed purpose heading and corresponding explanatory prose so the fixture remains conforming under the new guard. Surrounding converted records, anchors and test assertions are unchanged; no unrecorded invariant is introduced by the fixture text. The packet exclusion and current rule card govern the overview rule separately.",
+      "subject": "hunk:sha256:89433725e81eeb1c8c3f890e999f0eba7c102c7172c944d4e991858d92324416"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-9H7FNS",
+      "items": [
+        "sha256:e2ccf02d1d24ac266da3fa2ae6df9031bc0be6654a174cb2233614f8d49e7f56"
+      ],
+      "reason": "This generated instruction copy is byte-identical to its canonical workflow/Curator source. The substantive overview-order instruction and validator choice are documented in the existing governing overview and canonical/packaged cards; this derived carrier changes neither an independent obligation nor permissions, peer handover, writer ownership or code acceptance. It requires no independent file-card or new invariant/decision/family record. Current forced-second-sync qualification uses42201818/ec67a42f: incoming settings-owned review limits and recorded-approval revisions are preserved, not reverted. R80 only adds purpose/body/boundary/terminal-citation authoring obligations; this renewal preserves every existing record and entry meaning and creates none.",
+      "subject": "onboarding:.hermes/skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-9KC007",
+      "items": [
+        "sha256:6d2b1b8a5f8a6706712935d3b2d86d196494c6bcb274c62b0b9fa52955893285"
+      ],
+      "reason": "Read the complete existing card and exact source delta. This change only replaces bare/structure-first overview fixture bytes with fixed purpose headings (and the existing citation line, where present, at the end); it changes no case assertion, fixture record/entry set, scope, gate dispatch, branch selection or conversion algorithm. The card already explains this module’s tested contract and does not promise the old bare-title fixture shape. The reviewed current body therefore requires no semantic edit. Reference currency is reported separately; this row asserts body impact, not a blanket currentness or test PASS.",
+      "subject": "onboarding:mcp/tests/test_knowledge_closeout_gate.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-AFYAAD",
+      "items": [
+        "sha256:18c2a1a94b07bfcb9d246a5aae614ad818eb06db75de948272767d63c3234d0c"
+      ],
+      "reason": "Read the complete existing card and exact source delta. This change only replaces bare/structure-first overview fixture bytes with fixed purpose headings (and the existing citation line, where present, at the end); it changes no case assertion, fixture record/entry set, scope, gate dispatch, branch selection or conversion algorithm. The card already explains this module’s tested contract and does not promise the old bare-title fixture shape. The reviewed current body therefore requires no semantic edit. Reference currency is reported separately; this row asserts body impact, not a blanket currentness or test PASS.",
+      "subject": "onboarding:mcp/tests/knowledge_conversion_test_support.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CZ1QR1",
+      "items": [
+        "sha256:c7087e657fa1da07b17c1fd3d1a0da02081c91a9e4351345ea05edfe9fb8d0a4"
+      ],
+      "reason": "Read the complete existing card and exact source delta. This change only replaces bare/structure-first overview fixture bytes with fixed purpose headings (and the existing citation line, where present, at the end); it changes no case assertion, fixture record/entry set, scope, gate dispatch, branch selection or conversion algorithm. The card already explains this module’s tested contract and does not promise the old bare-title fixture shape. The reviewed current body therefore requires no semantic edit. Reference currency is reported separately; this row asserts body impact, not a blanket currentness or test PASS.",
+      "subject": "onboarding:mcp/tests/test_knowledge_worklist_leaf.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-D6BBJT",
+      "items": [
+        "sha256:035426e84dbc0676e24342234efb58321bb05ac3112d68f624106eeec06668d0"
+      ],
+      "reason": "Read the complete existing card and exact source delta. This change only replaces bare/structure-first overview fixture bytes with fixed purpose headings (and the existing citation line, where present, at the end); it changes no case assertion, fixture record/entry set, scope, gate dispatch, branch selection or conversion algorithm. The card already explains this module’s tested contract and does not promise the old bare-title fixture shape. The reviewed current body therefore requires no semantic edit. Reference currency is reported separately; this row asserts body impact, not a blanket currentness or test PASS.",
+      "subject": "onboarding:mcp/tests/test_review_git_trees.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-DMG9Z3",
+      "items": [
+        "sha256:1d8da8b08dbc359d492445bacf0a0b4a92ed3fe29f915f9f17b8358573148b49"
+      ],
+      "reason": "This generated instruction copy is byte-identical to its canonical workflow/Curator source. The substantive overview-order instruction and validator choice are documented in the existing governing overview and canonical/packaged cards; this derived carrier changes neither an independent obligation nor permissions, peer handover, writer ownership or code acceptance. It requires no independent file-card or new invariant/decision/family record. Current forced-second-sync qualification uses42201818/ec67a42f: incoming settings-owned review limits and recorded-approval revisions are preserved, not reverted. R80 only adds purpose/body/boundary/terminal-citation authoring obligations; this renewal preserves every existing record and entry meaning and creates none.",
+      "subject": "onboarding:.hermes/skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a24920fe771a07767950d1bb0ebd61abe0aa1f96",
+            "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+            "locator": {
+              "end": 1405,
+              "kind": "line_range",
+              "start": 1405
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "ee713b09761e2222afa968fa2c6aed70297243a4",
+            "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+            "locator": {
+              "end": 1395,
+              "kind": "line_range",
+              "start": 1395
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-1WK7P0"
+        },
+        {
+          "after": {
+            "blob": "4a257c7b3a05141567f1a049f87f3b1ce4d0bb5e",
+            "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+            "locator": {
+              "end": 417,
+              "kind": "line_range",
+              "start": 417
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "c926873470b77adb63c9cb686cf58cf37a1145f4",
+            "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+            "locator": {
+              "end": 416,
+              "kind": "line_range",
+              "start": 416
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-NJFH31"
+        },
+        {
+          "after": {
+            "blob": "a24920fe771a07767950d1bb0ebd61abe0aa1f96",
+            "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+            "locator": {
+              "end": 537,
+              "kind": "line_range",
+              "start": 537
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "ee713b09761e2222afa968fa2c6aed70297243a4",
+            "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+            "locator": {
+              "end": 537,
+              "kind": "line_range",
+              "start": 537
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-TB9TST"
+        },
+        {
+          "after": {
+            "blob": "a24920fe771a07767950d1bb0ebd61abe0aa1f96",
+            "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
+            "locator": {
+              "end": 1563,
+              "kind": "line_range",
+              "start": 1563
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "ee713b09761e2222afa968fa2c6aed70297243a4",
+            "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
+            "locator": {
+              "end": 1553,
+              "kind": "line_range",
+              "start": 1553
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-VQZWNZ"
+        },
+        {
+          "after": {
+            "blob": "4a257c7b3a05141567f1a049f87f3b1ce4d0bb5e",
+            "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
+            "locator": {
+              "end": 298,
+              "kind": "line_range",
+              "start": 298
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "c926873470b77adb63c9cb686cf58cf37a1145f4",
+            "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
+            "locator": {
+              "end": 297,
+              "kind": "line_range",
+              "start": 297
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-ZTDYFT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-E19R06",
+      "items": [],
+      "reason": "Owner-admitted renewal after completed231622b2/5224682e paired sync (L127 landing). Preserve existing governing meaning, same entry/history identities, invariant, origin, rationale and role; preserve incoming fields rather than restore old definitions. The seven assigned catalog entries retain literal registration/module or whole-artifact ownership; every carried witness was independently located in current composed sources. Source-only correspondence is postpass10-catalog-and-carried-cover-source-map.json. This native refresh renews existing anchors/history, creates no record/entry and drops/remints none. DT233-235 and all excluded producer entries remain untouched. No CODE test, D140 replay, execution attribution, semantic verdict or closeout is claimed. Historical prior-pair qualification above; Current 278b060c/152a65ab renewal preserves existing record/entry/history identities, invariant meaning, rationale, role and origin. R80 contributes the four-line overview-order instruction; independently landed report-only cut/add and evidence-custody duties are retained rather than reverted. Current source/selected-byte correspondence is postpass15-native-cover-source-correspondence.json. No new record or producer-packet lift, execution, CODE round, D140, semantic acceptance or Git publication is claimed. Current cc364a32/1325e51d pre-freeze renewal preserves existing meaning, IDs, rationale, role and origin. Five catalog witnesses are matched to their same enclosing artifacts; current source-only correspondence is /var/tmp/mik-run3/L80/renewal6/five-realizes-source-correspondence.json. The retired whole-catalog witness remains historical, not a revived live obligation. Existing history cover metadata follows incoming same-ID proof/source renewals; DT236–238 selected bytes are unchanged, without new retarget or rationale override. No new entry/record, execution, semantic/CODE acceptance, freeze/seal or Reviewer request.",
+      "revision": 1,
+      "subject": "INV-0H8WBQ"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ED62JN",
+      "items": [
+        "sha256:a9ccdc13a0de8c1ecff618bab65616631ba9cfeeff9ac2a231488e3bfe5b27c6"
+      ],
+      "reason": "This generated instruction copy is byte-identical to its canonical workflow/Curator source. The substantive overview-order instruction and validator choice are documented in the existing governing overview and canonical/packaged cards; this derived carrier changes neither an independent obligation nor permissions, peer handover, writer ownership or code acceptance. It requires no independent file-card or new invariant/decision/family record. Current forced-second-sync qualification uses42201818/ec67a42f: incoming settings-owned review limits and recorded-approval revisions are preserved, not reverted. R80 only adds purpose/body/boundary/terminal-citation authoring obligations; this renewal preserves every existing record and entry meaning and creates none.",
+      "subject": "onboarding:skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-EYEWJE",
+      "items": [
+        "sha256:914a6d3390413df4e2e7978b7b1f48bbfffd99f103f5c61c1be6c087f5085ea8"
+      ],
+      "reason": "This generated instruction copy is byte-identical to its canonical workflow/Curator source. The substantive overview-order instruction and validator choice are documented in the existing governing overview and canonical/packaged cards; this derived carrier changes neither an independent obligation nor permissions, peer handover, writer ownership or code acceptance. It requires no independent file-card or new invariant/decision/family record. Current forced-second-sync qualification uses42201818/ec67a42f: incoming settings-owned review limits and recorded-approval revisions are preserved, not reverted. R80 only adds purpose/body/boundary/terminal-citation authoring obligations; this renewal preserves every existing record and entry meaning and creates none.",
+      "subject": "onboarding:.codex/skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-F27RVJ",
+      "items": [
+        "sha256:299d0698b763b6e8f0ce46de636d70935f6fcf35ab64558b3595c81211157c77"
+      ],
+      "reason": "This generated instruction copy is byte-identical to its canonical workflow/Curator source. The substantive overview-order instruction and validator choice are documented in the existing governing overview and canonical/packaged cards; this derived carrier changes neither an independent obligation nor permissions, peer handover, writer ownership or code acceptance. It requires no independent file-card or new invariant/decision/family record. Current forced-second-sync qualification uses42201818/ec67a42f: incoming settings-owned review limits and recorded-approval revisions are preserved, not reverted. R80 only adds purpose/body/boundary/terminal-citation authoring obligations; this renewal preserves every existing record and entry meaning and creates none.",
+      "subject": "onboarding:.claude/skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "700f45663d148e00dd89e0e5560e7c22f3bdbf7f",
+            "content": "sha256:16a9d98f68567c8c72b592219f4041dc5f7c428778d4dd320b32ed003368a50f",
+            "locator": {
+              "end": 144,
+              "kind": "line_range",
+              "start": 144
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "0aa64abcceae8acc8d29755e7d85bd183f04cce8",
+            "content": "sha256:16a9d98f68567c8c72b592219f4041dc5f7c428778d4dd320b32ed003368a50f",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 139
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-AHYBRR"
+        },
+        {
+          "after": {
+            "blob": "1bee63798494dbe5fac95e34ec4ec62b2bae7455",
+            "content": "sha256:33a10453a61546fb7a2f9a5a249a6f39a027432e527b08f3da6eaa0e660df807",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+          },
+          "before": {
+            "blob": "1bee63798494dbe5fac95e34ec4ec62b2bae7455",
+            "content": "sha256:33a10453a61546fb7a2f9a5a249a6f39a027432e527b08f3da6eaa0e660df807",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+          },
+          "id": "RLZ-BPN91E"
+        },
+        {
+          "after": {
+            "blob": "1060ffa0e57f77e37902afeb00b2e97c2111208b",
+            "content": "sha256:d6d49af062890c27a501699f6c12c29d977eabf623df0857b62c8f5388480d88",
+            "locator": {
+              "end": 121,
+              "kind": "line_range",
+              "start": 121
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "before": {
+            "blob": "1060ffa0e57f77e37902afeb00b2e97c2111208b",
+            "content": "sha256:d6d49af062890c27a501699f6c12c29d977eabf623df0857b62c8f5388480d88",
+            "locator": {
+              "end": 121,
+              "kind": "line_range",
+              "start": 121
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "id": "RLZ-PAE912"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-FZ8GYG",
+      "items": [],
+      "reason": "Owner-admitted forced-second-sync22-ID renewal: preserve the existing invariant statement, scope, admission, revision and complete entry identities. Requalify this existing role/referral or catalog witness at its actual source duty, not the parked or incoming line number. Incoming stage/settings changes do not change the R80 overview-order leaf effect. Source correspondence and original fields remain in second-sync-history-source-map.json; no new governing record or producer-packet entry is lifted. Owner-admitted current ea40194f/27cacb07 renewal: existing governing meaning, identity, producer/origin and entry roles/rationales retained; source-only correspondence is postpass6-non-DT-renewal-source-witnesses.json. Renew the same history identity/current existing record revision. No new invariant, decision, family, proof, realization or producer-packet lift; no runtime/test or CODE acceptance claimed. DT field/catalog entries excluded under the separate ROW-1FWHD2 ruling.",
+      "revision": 1,
+      "subject": "INV-VN0A3Q"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-G3D9PK",
+      "items": [
+        "sha256:c8089778b899a1aa6a18db23f54c683137a1aae428e65b09dca6bd02bd9a2458"
+      ],
+      "reason": "Read the complete existing card and exact source delta. This change only replaces bare/structure-first overview fixture bytes with fixed purpose headings (and the existing citation line, where present, at the end); it changes no case assertion, fixture record/entry set, scope, gate dispatch, branch selection or conversion algorithm. The card already explains this module’s tested contract and does not promise the old bare-title fixture shape. The reviewed current body therefore requires no semantic edit. Reference currency is reported separately; this row asserts body impact, not a blanket currentness or test PASS.",
+      "subject": "onboarding:mcp/tests/knowledge_census_test_support.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-G7K9SY",
+      "items": [
+        "sha256:09b40ded5d33f35e4f530794440050dc1defca20db99c02169c7e090fee3d5fc"
+      ],
+      "reason": "This generated instruction copy is byte-identical to its canonical workflow/Curator source. The substantive overview-order instruction and validator choice are documented in the existing governing overview and canonical/packaged cards; this derived carrier changes neither an independent obligation nor permissions, peer handover, writer ownership or code acceptance. It requires no independent file-card or new invariant/decision/family record. Current forced-second-sync qualification uses42201818/ec67a42f: incoming settings-owned review limits and recorded-approval revisions are preserved, not reverted. R80 only adds purpose/body/boundary/terminal-citation authoring obligations; this renewal preserves every existing record and entry meaning and creates none.",
+      "subject": "onboarding:.pi/skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2eaa2f828ba56892bad654fa5cf51b39dd84ccca",
+            "content": "sha256:063c8695dc795bbad5e8779d073b6d4b23e0760cc8bbdf3eb751a799709cdc8b",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgreementAcrossTheRoleSetTests.test_the_declared_roster_equals_the_surfaces_that_speak_the_vocabulary"
+            },
+            "path": "mcp/tests/test_lifecycle_turn_truth_doctrine.py"
+          },
+          "before": {
+            "blob": "2eaa2f828ba56892bad654fa5cf51b39dd84ccca",
+            "content": "sha256:063c8695dc795bbad5e8779d073b6d4b23e0760cc8bbdf3eb751a799709cdc8b",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgreementAcrossTheRoleSetTests.test_the_declared_roster_equals_the_surfaces_that_speak_the_vocabulary"
+            },
+            "path": "mcp/tests/test_lifecycle_turn_truth_doctrine.py"
+          },
+          "id": "PRF-TX0CVG"
+        },
+        {
+          "after": {
+            "blob": "2eaa2f828ba56892bad654fa5cf51b39dd84ccca",
+            "content": "sha256:e0f1cb203b018a760be7900c53cfa9d1c7e7169373135b21239c125573a96df2",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgreementAcrossTheRoleSetTests.test_every_roster_surface_carries_the_mechanical_reading"
+            },
+            "path": "mcp/tests/test_lifecycle_turn_truth_doctrine.py"
+          },
+          "before": {
+            "blob": "2eaa2f828ba56892bad654fa5cf51b39dd84ccca",
+            "content": "sha256:e0f1cb203b018a760be7900c53cfa9d1c7e7169373135b21239c125573a96df2",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgreementAcrossTheRoleSetTests.test_every_roster_surface_carries_the_mechanical_reading"
+            },
+            "path": "mcp/tests/test_lifecycle_turn_truth_doctrine.py"
+          },
+          "id": "PRF-Z5EB64"
+        },
+        {
+          "after": {
+            "blob": "2eaa2f828ba56892bad654fa5cf51b39dd84ccca",
+            "content": "sha256:d96c96b0088567926259fd593539d571d25559437e2b511da9534b17ff84621d",
+            "locator": {
+              "kind": "symbol",
+              "name": "COMPLETION_TRUTH_ROSTER"
+            },
+            "path": "mcp/tests/test_lifecycle_turn_truth_doctrine.py"
+          },
+          "before": {
+            "blob": "2eaa2f828ba56892bad654fa5cf51b39dd84ccca",
+            "content": "sha256:d96c96b0088567926259fd593539d571d25559437e2b511da9534b17ff84621d",
+            "locator": {
+              "kind": "symbol",
+              "name": "COMPLETION_TRUTH_ROSTER"
+            },
+            "path": "mcp/tests/test_lifecycle_turn_truth_doctrine.py"
+          },
+          "id": "RLZ-4KH0W1"
+        },
+        {
+          "after": {
+            "blob": "1060ffa0e57f77e37902afeb00b2e97c2111208b",
+            "content": "sha256:eba122be4be1c258dc81b86a9d07a19de98fe05c582edec04769814a25d5b294",
+            "locator": {
+              "end": 268,
+              "kind": "line_range",
+              "start": 266
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "before": {
+            "blob": "1060ffa0e57f77e37902afeb00b2e97c2111208b",
+            "content": "sha256:eba122be4be1c258dc81b86a9d07a19de98fe05c582edec04769814a25d5b294",
+            "locator": {
+              "end": 268,
+              "kind": "line_range",
+              "start": 266
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "id": "RLZ-EEEG4W"
+        },
+        {
+          "after": {
+            "blob": "700f45663d148e00dd89e0e5560e7c22f3bdbf7f",
+            "content": "sha256:cfcc435b52af1f9d938d49ff10b13b54a461679ad65c95b96e0640ca40668de6",
+            "locator": {
+              "end": 244,
+              "kind": "line_range",
+              "start": 242
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "976f516057f9514524eb3ac922803c6632dd3ba1",
+            "content": "sha256:cfcc435b52af1f9d938d49ff10b13b54a461679ad65c95b96e0640ca40668de6",
+            "locator": {
+              "end": 240,
+              "kind": "line_range",
+              "start": 238
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-PDP66S"
+        },
+        {
+          "after": {
+            "blob": "a72f6e1f2676244434b6bd97910a9e1c7875aeb1",
+            "content": "sha256:5dd86b5521e960c9e9bc9d583ffe68e6f76a0c0b91618675c0d9cafde6536c6f",
+            "locator": {
+              "end": 201,
+              "kind": "line_range",
+              "start": 200
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "a72f6e1f2676244434b6bd97910a9e1c7875aeb1",
+            "content": "sha256:5dd86b5521e960c9e9bc9d583ffe68e6f76a0c0b91618675c0d9cafde6536c6f",
+            "locator": {
+              "end": 201,
+              "kind": "line_range",
+              "start": 200
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-QBXQTV"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-JARD7W",
+      "items": [],
+      "reason": "Owner-admitted forced-second-sync22-ID renewal: preserve the existing invariant statement, scope, admission, revision and complete entry identities. Requalify this existing role/referral or catalog witness at its actual source duty, not the parked or incoming line number. Incoming stage/settings changes do not change the R80 overview-order leaf effect. Source correspondence and original fields remain in second-sync-history-source-map.json; no new governing record or producer-packet entry is lifted. Owner-admitted current ea40194f/27cacb07 renewal: existing governing meaning, identity, producer/origin and entry roles/rationales retained; source-only correspondence is postpass6-non-DT-renewal-source-witnesses.json. Renew the same history identity/current existing record revision. No new invariant, decision, family, proof, realization or producer-packet lift; no runtime/test or CODE acceptance claimed. DT field/catalog entries excluded under the separate ROW-1FWHD2 ruling. Historical prior-pair qualification above; Current 278b060c/152a65ab renewal preserves existing record/entry/history identities, invariant meaning, rationale, role and origin. R80 contributes the four-line overview-order instruction; independently landed report-only cut/add and evidence-custody duties are retained rather than reverted. Current source/selected-byte correspondence is postpass15-native-cover-source-correspondence.json. No new record or producer-packet lift, execution, CODE round, D140, semantic acceptance or Git publication is claimed.",
+      "revision": 3,
+      "subject": "INV-5TKYXM"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "700f45663d148e00dd89e0e5560e7c22f3bdbf7f",
+            "content": "sha256:6a393a8f22e9cb16454c3203295903c40711c2c25c66c1dfe721ad659b42dc19",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "976f516057f9514524eb3ac922803c6632dd3ba1",
+            "content": "sha256:7ea09891f058e484df3663129e454a82aaa3cdf947a76db3843c6290773df3ac",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-VESCVY"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-KABD1Z",
+      "items": [
+        "sha256:589aa06e1024c23142010e553c78147b1f389912d922bffd8b8c42a4e18560be"
+      ],
+      "reason": "The changed canonical Curator text adds only the four-line purpose/structure/boundary/terminal-citation instruction. Its surrounding producer-target, helper-permission, parent-question, peer-handover and no-code-repair clauses are byte-preserved; the shipped mirrors match the canonical sources exactly. The existing invariant keeps its full statement, scope, admission, revision and entry identities. The R80 instruction is an additional local prose obligation, not a change to this stored guarantee. The packet exclusion and direct Manager clarification prohibit a new record for that choice. Current body-end-sync qualification preserves governing meaning; same-ID source anchors and current family member revisions are renewed on the composed23cb164f/53429d24 pair. The present source adds native sibling preparation and product-held delivery without changing the R80 overview-order-only leaf effect. No new governing record is lifted from its producer packet. Current forced-second-sync qualification uses42201818/ec67a42f: incoming settings-owned review limits and recorded-approval revisions are preserved, not reverted. R80 only adds purpose/body/boundary/terminal-citation authoring obligations; this renewal preserves every existing record and entry meaning and creates none. Owner-admitted current ea40194f/27cacb07 renewal: existing governing meaning, identity, producer/origin and entry roles/rationales retained; source-only correspondence is postpass6-non-DT-renewal-source-witnesses.json. Renew the same history identity/current existing record revision. No new invariant, decision, family, proof, realization or producer-packet lift; no runtime/test or CODE acceptance claimed. DT field/catalog entries excluded under the separate ROW-1FWHD2 ruling. Historical prior-pair qualification above; Current 278b060c/152a65ab renewal preserves existing record/entry/history identities, invariant meaning, rationale, role and origin. R80 contributes the four-line overview-order instruction; independently landed report-only cut/add and evidence-custody duties are retained rather than reverted. Current source/selected-byte correspondence is postpass15-native-cover-source-correspondence.json. No new record or producer-packet lift, execution, CODE round, D140, semantic acceptance or Git publication is claimed.",
+      "revision": 1,
+      "subject": "INV-ZNJ14G"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-KFPZ4Q",
+      "items": [
+        "sha256:9ce027163dc48a0e9ee0337578f6d35005203d8d075cff67c466096fcd78e0e9"
+      ],
+      "reason": "This generated instruction copy is byte-identical to its canonical workflow/Curator source. The substantive overview-order instruction and validator choice are documented in the existing governing overview and canonical/packaged cards; this derived carrier changes neither an independent obligation nor permissions, peer handover, writer ownership or code acceptance. It requires no independent file-card or new invariant/decision/family record. Current forced-second-sync qualification uses42201818/ec67a42f: incoming settings-owned review limits and recorded-approval revisions are preserved, not reverted. R80 only adds purpose/body/boundary/terminal-citation authoring obligations; this renewal preserves every existing record and entry meaning and creates none.",
+      "subject": "onboarding:.cursor/skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7FMDAS",
+          "revision": 2
+        },
+        {
+          "id": "INV-82ZTHK",
+          "revision": 2
+        },
+        {
+          "id": "INV-8AMSGV",
+          "revision": 3
+        },
+        {
+          "id": "INV-9S49CW",
+          "revision": 2
+        },
+        {
+          "id": "INV-HGSFJ8",
+          "revision": 3
+        }
+      ],
+      "id": "ROW-KK6WRX",
+      "items": [
+        "sha256:812944f6754bab4e6c9c2d6d1dfeea95d5c42c688a99d5898d556d880e836659"
+      ],
+      "reason": "The full member roster and current guarantees preserve conditional parent/developer question routing and quoted answer provenance. Only the Curator instruction adds overview order; no transport, parent fallback or question clause is changed. Family guarantee, routes and membership are unchanged; all stored record bytes compared with the admitted base. Current body-end-sync qualification preserves governing meaning; same-ID source anchors and current family member revisions are renewed on the composed23cb164f/53429d24 pair. The present source adds native sibling preparation and product-held delivery without changing the R80 overview-order-only leaf effect. No new governing record is lifted from its producer packet. Current forced-second-sync qualification uses42201818/ec67a42f: incoming settings-owned review limits and recorded-approval revisions are preserved, not reverted. R80 only adds purpose/body/boundary/terminal-citation authoring obligations; this renewal preserves every existing record and entry meaning and creates none. The full stored member obligations and routes were re-examined on their new revisions; the settings-budget successors affect approved-round accounting, not this family’s guarantee, routes or member identities. Owner-admitted current ea40194f/27cacb07 renewal: existing governing meaning, identity, producer/origin and entry roles/rationales retained; source-only correspondence is postpass6-non-DT-renewal-source-witnesses.json. Renew the same history identity/current existing record revision. No new invariant, decision, family, proof, realization or producer-packet lift; no runtime/test or CODE acceptance claimed. DT field/catalog entries excluded under the separate ROW-1FWHD2 ruling. Historical prior-pair qualification above; Current 278b060c/152a65ab renewal preserves existing record/entry/history identities, invariant meaning, rationale, role and origin. R80 contributes the four-line overview-order instruction; independently landed report-only cut/add and evidence-custody duties are retained rather than reverted. Current source/selected-byte correspondence is postpass15-native-cover-source-correspondence.json. No new record or producer-packet lift, execution, CODE round, D140, semantic acceptance or Git publication is claimed.",
+      "revision": 2,
+      "subject": "FAM-7AEA19"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-KTAKV5",
+      "items": [
+        "sha256:6e26017067ed2533b0c00a70dac9056dec4131e04d54e40d65ba6ffa730773d3"
+      ],
+      "reason": "Read the complete existing card and exact source delta. This change only replaces bare/structure-first overview fixture bytes with fixed purpose headings (and the existing citation line, where present, at the end); it changes no case assertion, fixture record/entry set, scope, gate dispatch, branch selection or conversion algorithm. The card already explains this module’s tested contract and does not promise the old bare-title fixture shape. The reviewed current body therefore requires no semantic edit. Reference currency is reported separately; this row asserts body impact, not a blanket currentness or test PASS.",
+      "subject": "onboarding:mcp/tests/knowledge_validator_test_support.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-KTT120",
+      "items": [
+        "sha256:2cb2f5b407d4233b6aea29884ed77970d8263f442ac55e17da9f1e0b20e62b27"
+      ],
+      "reason": "Read the complete existing card and exact source delta. This change only replaces bare/structure-first overview fixture bytes with fixed purpose headings (and the existing citation line, where present, at the end); it changes no case assertion, fixture record/entry set, scope, gate dispatch, branch selection or conversion algorithm. The card already explains this module’s tested contract and does not promise the old bare-title fixture shape. The reviewed current body therefore requires no semantic edit. Reference currency is reported separately; this row asserts body impact, not a blanket currentness or test PASS.",
+      "subject": "onboarding:mcp/tests/test_onboarding_trace_gate.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "de1fe753afb99a797f53060fdda446c5602d5be5",
+            "content": "sha256:9a6581dc4ea512b8600b701417a4a0a0c9f28c7745ea334f0be67f026d2dcce7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_baseline_adoption_follows_the_configured_branch"
+            },
+            "path": "mcp/tests/test_memory_branch_authority.py"
+          },
+          "before": {
+            "blob": "0e11591cec358a67825c52b305c68dcf074de793",
+            "content": "sha256:9ac3e3ceae2126bbbc623424c4ec0dba619f83c6607bbd9107f93e731c4b0111",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_baseline_adoption_follows_the_configured_branch"
+            },
+            "path": "mcp/tests/test_memory_branch_authority.py"
+          },
+          "id": "PRF-VAWCPZ"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-M42YMT",
+      "items": [
+        "sha256:f23e1e7b6ba054dfe775f1dc2edeb69d12ba2d7b63724b259516eb30d16803ce"
+      ],
+      "reason": "The sole changed line inside test_baseline_adoption_follows_the_configured_branch replaces its bare-title overview fixture with ROOT_OVERVIEW, whose purpose-first body allows the new order guard. The recorded-branch baseline-adoption assertions and existing proof facet remain unchanged. This renewal preserves the historical superseded record and its successor, including their full statement/scope and all existing proof identities; it does not endorse the superseded statement or turn the branch witness into an exception-path proof. Source test_memory_branch_authority.py:263-295 and complete leaf diff examined; original A6 CODE verdict carried by the A8 qualification. Current body-end-sync qualification preserves governing meaning; same-ID source anchors and current family member revisions are renewed on the composed23cb164f/53429d24 pair. The present source adds native sibling preparation and product-held delivery without changing the R80 overview-order-only leaf effect. No new governing record is lifted from its producer packet. Current forced-second-sync qualification uses42201818/ec67a42f: incoming settings-owned review limits and recorded-approval revisions are preserved, not reverted. R80 only adds purpose/body/boundary/terminal-citation authoring obligations; this renewal preserves every existing record and entry meaning and creates none.",
+      "revision": 1,
+      "subject": "INV-DZB7MC"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7E3JNX",
+          "revision": 1
+        },
+        {
+          "id": "INV-RKGNF8",
+          "revision": 1
+        },
+        {
+          "id": "INV-V7M37D",
+          "revision": 2
+        },
+        {
+          "id": "INV-W24J6Q",
+          "revision": 2
+        },
+        {
+          "id": "INV-W58B84",
+          "revision": 2
+        },
+        {
+          "id": "INV-ZNJ14G",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-MSF3PY",
+      "items": [
+        "sha256:6446948a335ffa0fb9fe3b082dfd37cbbe3f9373d758e0713822da06de9d3970"
+      ],
+      "reason": "The full member roster preserves peer-delivered freezes/findings, separate code and memory bookkeeping, supported sync ownership, code-concern routing and pending Manager-notice retry. Overview order adds no seat, transport, reset or landing authority. Family guarantee, routes and membership are unchanged; all stored record bytes compared with the admitted base. Current body-end-sync qualification preserves governing meaning; same-ID source anchors and current family member revisions are renewed on the composed23cb164f/53429d24 pair. The present source adds native sibling preparation and product-held delivery without changing the R80 overview-order-only leaf effect. No new governing record is lifted from its producer packet. Current forced-second-sync qualification uses42201818/ec67a42f: incoming settings-owned review limits and recorded-approval revisions are preserved, not reverted. R80 only adds purpose/body/boundary/terminal-citation authoring obligations; this renewal preserves every existing record and entry meaning and creates none. The full stored member obligations and routes were re-examined on their new revisions; the settings-budget successors affect approved-round accounting, not this family’s guarantee, routes or member identities. Owner-admitted current ea40194f/27cacb07 renewal: existing governing meaning, identity, producer/origin and entry roles/rationales retained; source-only correspondence is postpass6-non-DT-renewal-source-witnesses.json. Renew the same history identity/current existing record revision. No new invariant, decision, family, proof, realization or producer-packet lift; no runtime/test or CODE acceptance claimed. DT field/catalog entries excluded under the separate ROW-1FWHD2 ruling. Historical prior-pair qualification above; Current 278b060c/152a65ab renewal preserves existing record/entry/history identities, invariant meaning, rationale, role and origin. R80 contributes the four-line overview-order instruction; independently landed report-only cut/add and evidence-custody duties are retained rather than reverted. Current source/selected-byte correspondence is postpass15-native-cover-source-correspondence.json. No new record or producer-packet lift, execution, CODE round, D140, semantic acceptance or Git publication is claimed.",
+      "revision": 1,
+      "subject": "FAM-83BTBD"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "421ab2e145c1ec535bda1c76959cc44057dbe532",
+            "content": "sha256:a0b3451b4ef9542697dc389fdf39c67baa0301c3d80f2b7abaae362b8768ff60",
+            "locator": {
+              "kind": "symbol",
+              "name": "RegisteredTaskReaderContextProtocolTests.test_registered_readers_use_call_local_admitted_leaf_context"
+            },
+            "path": "mcp/tests/test_reader_task_context_protocol.py"
+          },
+          "before": {
+            "blob": "421ab2e145c1ec535bda1c76959cc44057dbe532",
+            "content": "sha256:a0b3451b4ef9542697dc389fdf39c67baa0301c3d80f2b7abaae362b8768ff60",
+            "locator": {
+              "kind": "symbol",
+              "name": "RegisteredTaskReaderContextProtocolTests.test_registered_readers_use_call_local_admitted_leaf_context"
+            },
+            "path": "mcp/tests/test_reader_task_context_protocol.py"
+          },
+          "id": "PRF-W1HHQB"
+        },
+        {
+          "after": {
+            "blob": "9a1a94bce648addb46d0c0aeb66232634c3b06c9",
+            "content": "sha256:3767076c4cfae0efae1f47f2b392acbcc14f0e6343a822e5137a2ea4dcfc8fc8",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "before": {
+            "blob": "9a1a94bce648addb46d0c0aeb66232634c3b06c9",
+            "content": "sha256:3767076c4cfae0efae1f47f2b392acbcc14f0e6343a822e5137a2ea4dcfc8fc8",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "id": "RLZ-19NZ18"
+        },
+        {
+          "after": {
+            "blob": "4284e722e205298b85722fab51f0e57ccb5f3122",
+            "content": "sha256:a5dc08bd317587a0ce6088e2234366da59c57de5ef248675425c721652fefc86",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_scoped_mcp_config_for_reader"
+            },
+            "path": "mcp/src/agents_remember/application/task_scoped_mcp.py"
+          },
+          "before": {
+            "blob": "4284e722e205298b85722fab51f0e57ccb5f3122",
+            "content": "sha256:a5dc08bd317587a0ce6088e2234366da59c57de5ef248675425c721652fefc86",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_scoped_mcp_config_for_reader"
+            },
+            "path": "mcp/src/agents_remember/application/task_scoped_mcp.py"
+          },
+          "id": "RLZ-3X9CJV"
+        },
+        {
+          "after": {
+            "blob": "66b580e5158b30270e6f97efbfda840f38d784d7",
+            "content": "sha256:0a4d3056d41cc4a650de3dd5cc0eb74545e21ff0ca47c4823f77c52c4ab69cda",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 7
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
+          },
+          "before": {
+            "blob": "66b580e5158b30270e6f97efbfda840f38d784d7",
+            "content": "sha256:0a4d3056d41cc4a650de3dd5cc0eb74545e21ff0ca47c4823f77c52c4ab69cda",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 7
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
+          },
+          "id": "RLZ-6CFA2A"
+        },
+        {
+          "after": {
+            "blob": "553860afad7a577b5e9110d7672d5cbee7a963e1",
+            "content": "sha256:e7a5ea01465390dbec4a371cdb3a2167964bcf420eabf337b8bb49cbba1c3511",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_ar_files_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/read_files.py"
+          },
+          "before": {
+            "blob": "553860afad7a577b5e9110d7672d5cbee7a963e1",
+            "content": "sha256:e7a5ea01465390dbec4a371cdb3a2167964bcf420eabf337b8bb49cbba1c3511",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_ar_files_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/read_files.py"
+          },
+          "id": "RLZ-BWZ6QQ"
+        },
+        {
+          "after": {
+            "blob": "a72f6e1f2676244434b6bd97910a9e1c7875aeb1",
+            "content": "sha256:92dcedcd2497d46774810fe5ab551db0448e9b4111eca2c52f1ab3b4edb6e0a1",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 14
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "a72f6e1f2676244434b6bd97910a9e1c7875aeb1",
+            "content": "sha256:92dcedcd2497d46774810fe5ab551db0448e9b4111eca2c52f1ab3b4edb6e0a1",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 14
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-PC6PG7"
+        },
+        {
+          "after": {
+            "blob": "700f45663d148e00dd89e0e5560e7c22f3bdbf7f",
+            "content": "sha256:600335da77cabad9fdb615ee1f3b745321cbf69f140554123c49cc7676aafef0",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "976f516057f9514524eb3ac922803c6632dd3ba1",
+            "content": "sha256:600335da77cabad9fdb615ee1f3b745321cbf69f140554123c49cc7676aafef0",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-PFT43W"
+        },
+        {
+          "after": {
+            "blob": "4284e722e205298b85722fab51f0e57ccb5f3122",
+            "content": "sha256:0a854a9697a0201e89c3d1e9fd7b73fde65bc8acdc1aa31cca7cd242f3b30263",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admit_task_scope"
+            },
+            "path": "mcp/src/agents_remember/application/task_scoped_mcp.py"
+          },
+          "before": {
+            "blob": "4284e722e205298b85722fab51f0e57ccb5f3122",
+            "content": "sha256:0a854a9697a0201e89c3d1e9fd7b73fde65bc8acdc1aa31cca7cd242f3b30263",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admit_task_scope"
+            },
+            "path": "mcp/src/agents_remember/application/task_scoped_mcp.py"
+          },
+          "id": "RLZ-VWBJY8"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-P75T78",
+      "items": [],
+      "reason": "Owner-admitted renewal after completed231622b2/5224682e paired sync (L127 landing). Preserve existing governing meaning, same entry/history identities, invariant, origin, rationale and role; preserve incoming fields rather than restore old definitions. The seven assigned catalog entries retain literal registration/module or whole-artifact ownership; every carried witness was independently located in current composed sources. Source-only correspondence is postpass10-catalog-and-carried-cover-source-map.json. This native refresh renews existing anchors/history, creates no record/entry and drops/remints none. DT233-235 and all excluded producer entries remain untouched. No CODE test, D140 replay, execution attribution, semantic verdict or closeout is claimed. Historical prior-pair qualification above; Current 278b060c/152a65ab renewal preserves existing record/entry/history identities, invariant meaning, rationale, role and origin. R80 contributes the four-line overview-order instruction; independently landed report-only cut/add and evidence-custody duties are retained rather than reverted. Current source/selected-byte correspondence is postpass15-native-cover-source-correspondence.json. No new record or producer-packet lift, execution, CODE round, D140, semantic acceptance or Git publication is claimed. Current cc364a32/1325e51d pre-freeze renewal preserves existing meaning, IDs, rationale, role and origin. Five catalog witnesses are matched to their same enclosing artifacts; current source-only correspondence is /var/tmp/mik-run3/L80/renewal6/five-realizes-source-correspondence.json. The retired whole-catalog witness remains historical, not a revived live obligation. Existing history cover metadata follows incoming same-ID proof/source renewals; DT236–238 selected bytes are unchanged, without new retarget or rationale override. No new entry/record, execution, semantic/CODE acceptance, freeze/seal or Reviewer request.",
+      "revision": 2,
+      "subject": "INV-K6Q2R4"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-P77WWK",
+      "items": [
+        "sha256:d524420b64ad21eba89dee865fdf7618db3fc224e907b3bbbb6fc9da86e8199d"
+      ],
+      "reason": "This generated instruction copy is byte-identical to its canonical workflow/Curator source. The substantive overview-order instruction and validator choice are documented in the existing governing overview and canonical/packaged cards; this derived carrier changes neither an independent obligation nor permissions, peer handover, writer ownership or code acceptance. It requires no independent file-card or new invariant/decision/family record. Current forced-second-sync qualification uses42201818/ec67a42f: incoming settings-owned review limits and recorded-approval revisions are preserved, not reverted. R80 only adds purpose/body/boundary/terminal-citation authoring obligations; this renewal preserves every existing record and entry meaning and creates none.",
+      "subject": "onboarding:.pi/skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Q8GNM6",
+      "items": [
+        "sha256:c7ffbf4ac19a81607557477da84606b720333429f163d0f6d65f602a7c5409e5"
+      ],
+      "reason": "This generated instruction copy is byte-identical to its canonical workflow/Curator source. The substantive overview-order instruction and validator choice are documented in the existing governing overview and canonical/packaged cards; this derived carrier changes neither an independent obligation nor permissions, peer handover, writer ownership or code acceptance. It requires no independent file-card or new invariant/decision/family record. Current forced-second-sync qualification uses42201818/ec67a42f: incoming settings-owned review limits and recorded-approval revisions are preserved, not reverted. R80 only adds purpose/body/boundary/terminal-citation authoring obligations; this renewal preserves every existing record and entry meaning and creates none.",
+      "subject": "onboarding:.agents/skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-QVNC61",
+      "items": [
+        "sha256:af2734283ff54bdf6f6d1c7ae6da27a49c9e9272140b575ba222156e1aa39ea4"
+      ],
+      "reason": "This generated instruction copy is byte-identical to its canonical workflow/Curator source. The substantive overview-order instruction and validator choice are documented in the existing governing overview and canonical/packaged cards; this derived carrier changes neither an independent obligation nor permissions, peer handover, writer ownership or code acceptance. It requires no independent file-card or new invariant/decision/family record. Current forced-second-sync qualification uses42201818/ec67a42f: incoming settings-owned review limits and recorded-approval revisions are preserved, not reverted. R80 only adds purpose/body/boundary/terminal-citation authoring obligations; this renewal preserves every existing record and entry meaning and creates none.",
+      "subject": "onboarding:.agents/skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-QZKC5J",
+      "items": [
+        "sha256:64df0bb4e8b52601a13ab8ee8d50d6a4c7039195d92062590312f72818cf620a"
+      ],
+      "reason": "This generated instruction copy is byte-identical to its canonical workflow/Curator source. The substantive overview-order instruction and validator choice are documented in the existing governing overview and canonical/packaged cards; this derived carrier changes neither an independent obligation nor permissions, peer handover, writer ownership or code acceptance. It requires no independent file-card or new invariant/decision/family record. Current forced-second-sync qualification uses42201818/ec67a42f: incoming settings-owned review limits and recorded-approval revisions are preserved, not reverted. R80 only adds purpose/body/boundary/terminal-citation authoring obligations; this renewal preserves every existing record and entry meaning and creates none.",
+      "subject": "onboarding:.github-vscode/skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "700f45663d148e00dd89e0e5560e7c22f3bdbf7f",
+            "content": "sha256:6a393a8f22e9cb16454c3203295903c40711c2c25c66c1dfe721ad659b42dc19",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "976f516057f9514524eb3ac922803c6632dd3ba1",
+            "content": "sha256:7ea09891f058e484df3663129e454a82aaa3cdf947a76db3843c6290773df3ac",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-D0XTAP"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-R08CCG",
+      "items": [
+        "sha256:e55d6a08ee2b0d6071b6f5af59beec129c2ca1662648410501fadf9519fca4f2"
+      ],
+      "reason": "The changed canonical Curator text adds only the four-line purpose/structure/boundary/terminal-citation instruction. Its surrounding producer-target, helper-permission, parent-question, peer-handover and no-code-repair clauses are byte-preserved; the shipped mirrors match the canonical sources exactly. The existing invariant keeps its full statement, scope, admission, revision and entry identities. The R80 instruction is an additional local prose obligation, not a change to this stored guarantee. The packet exclusion and direct Manager clarification prohibit a new record for that choice. Current body-end-sync qualification preserves governing meaning; same-ID source anchors and current family member revisions are renewed on the composed23cb164f/53429d24 pair. The present source adds native sibling preparation and product-held delivery without changing the R80 overview-order-only leaf effect. No new governing record is lifted from its producer packet. Current forced-second-sync qualification uses42201818/ec67a42f: incoming settings-owned review limits and recorded-approval revisions are preserved, not reverted. R80 only adds purpose/body/boundary/terminal-citation authoring obligations; this renewal preserves every existing record and entry meaning and creates none. Owner-admitted current ea40194f/27cacb07 renewal: existing governing meaning, identity, producer/origin and entry roles/rationales retained; source-only correspondence is postpass6-non-DT-renewal-source-witnesses.json. Renew the same history identity/current existing record revision. No new invariant, decision, family, proof, realization or producer-packet lift; no runtime/test or CODE acceptance claimed. DT field/catalog entries excluded under the separate ROW-1FWHD2 ruling. Historical prior-pair qualification above; Current 278b060c/152a65ab renewal preserves existing record/entry/history identities, invariant meaning, rationale, role and origin. R80 contributes the four-line overview-order instruction; independently landed report-only cut/add and evidence-custody duties are retained rather than reverted. Current source/selected-byte correspondence is postpass15-native-cover-source-correspondence.json. No new record or producer-packet lift, execution, CODE round, D140, semantic acceptance or Git publication is claimed.",
+      "revision": 1,
+      "subject": "INV-RKGNF8"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-RBRTBQ",
+      "items": [
+        "sha256:5d6ba837977a7925300d106ae033f0e4734f14ceca319bd3affc58151320d030"
+      ],
+      "reason": "This generated instruction copy is byte-identical to its canonical workflow/Curator source. The substantive overview-order instruction and validator choice are documented in the existing governing overview and canonical/packaged cards; this derived carrier changes neither an independent obligation nor permissions, peer handover, writer ownership or code acceptance. It requires no independent file-card or new invariant/decision/family record. Current forced-second-sync qualification uses42201818/ec67a42f: incoming settings-owned review limits and recorded-approval revisions are preserved, not reverted. R80 only adds purpose/body/boundary/terminal-citation authoring obligations; this renewal preserves every existing record and entry meaning and creates none.",
+      "subject": "onboarding:.openclaw/workspace/skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "700f45663d148e00dd89e0e5560e7c22f3bdbf7f",
+            "content": "sha256:6a393a8f22e9cb16454c3203295903c40711c2c25c66c1dfe721ad659b42dc19",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "976f516057f9514524eb3ac922803c6632dd3ba1",
+            "content": "sha256:7ea09891f058e484df3663129e454a82aaa3cdf947a76db3843c6290773df3ac",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-Q70RTA"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-RR9NHB",
+      "items": [
+        "sha256:56c9b566d381d93c40676c044a103c8e8d832fc15e864eb36ba152da4d654e37"
+      ],
+      "reason": "The changed canonical Curator text adds only the four-line purpose/structure/boundary/terminal-citation instruction. Its surrounding producer-target, helper-permission, parent-question, peer-handover and no-code-repair clauses are byte-preserved; the shipped mirrors match the canonical sources exactly. The existing invariant keeps its full statement, scope, admission, revision and entry identities. The R80 instruction is an additional local prose obligation, not a change to this stored guarantee. The packet exclusion and direct Manager clarification prohibit a new record for that choice. Current body-end-sync qualification preserves governing meaning; same-ID source anchors and current family member revisions are renewed on the composed23cb164f/53429d24 pair. The present source adds native sibling preparation and product-held delivery without changing the R80 overview-order-only leaf effect. No new governing record is lifted from its producer packet. Current forced-second-sync qualification uses42201818/ec67a42f: incoming settings-owned review limits and recorded-approval revisions are preserved, not reverted. R80 only adds purpose/body/boundary/terminal-citation authoring obligations; this renewal preserves every existing record and entry meaning and creates none. Owner-admitted current ea40194f/27cacb07 renewal: existing governing meaning, identity, producer/origin and entry roles/rationales retained; source-only correspondence is postpass6-non-DT-renewal-source-witnesses.json. Renew the same history identity/current existing record revision. No new invariant, decision, family, proof, realization or producer-packet lift; no runtime/test or CODE acceptance claimed. DT field/catalog entries excluded under the separate ROW-1FWHD2 ruling. Historical prior-pair qualification above; Current 278b060c/152a65ab renewal preserves existing record/entry/history identities, invariant meaning, rationale, role and origin. R80 contributes the four-line overview-order instruction; independently landed report-only cut/add and evidence-custody duties are retained rather than reverted. Current source/selected-byte correspondence is postpass15-native-cover-source-correspondence.json. No new record or producer-packet lift, execution, CODE round, D140, semantic acceptance or Git publication is claimed.",
+      "revision": 2,
+      "subject": "INV-9S49CW"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-T1A3VC",
+      "items": [
+        "sha256:6a4f7ca8192505c25ea1531e34eac39efa27173e782a368e838838d9c6618ad2"
+      ],
+      "reason": "Read the complete existing card and exact source delta. This change only replaces bare/structure-first overview fixture bytes with fixed purpose headings (and the existing citation line, where present, at the end); it changes no case assertion, fixture record/entry set, scope, gate dispatch, branch selection or conversion algorithm. The card already explains this module’s tested contract and does not promise the old bare-title fixture shape. The reviewed current body therefore requires no semantic edit. Reference currency is reported separately; this row asserts body impact, not a blanket currentness or test PASS.",
+      "subject": "onboarding:mcp/tests/test_knowledge_census_files.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "700f45663d148e00dd89e0e5560e7c22f3bdbf7f",
+            "content": "sha256:6a393a8f22e9cb16454c3203295903c40711c2c25c66c1dfe721ad659b42dc19",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "976f516057f9514524eb3ac922803c6632dd3ba1",
+            "content": "sha256:7ea09891f058e484df3663129e454a82aaa3cdf947a76db3843c6290773df3ac",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-EK6J3B"
+        },
+        {
+          "after": {
+            "blob": "700f45663d148e00dd89e0e5560e7c22f3bdbf7f",
+            "content": "sha256:6a393a8f22e9cb16454c3203295903c40711c2c25c66c1dfe721ad659b42dc19",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "976f516057f9514524eb3ac922803c6632dd3ba1",
+            "content": "sha256:7ea09891f058e484df3663129e454a82aaa3cdf947a76db3843c6290773df3ac",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-VXHQMN"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-T2Z69B",
+      "items": [
+        "sha256:5ba3da2d067f4e02a14145eb79d541c23a993cde78550a211919f763c0538e0c"
+      ],
+      "reason": "The changed canonical Curator text adds only the four-line purpose/structure/boundary/terminal-citation instruction. Its surrounding producer-target, helper-permission, parent-question, peer-handover and no-code-repair clauses are byte-preserved; the shipped mirrors match the canonical sources exactly. The existing invariant keeps its full statement, scope, admission, revision and entry identities. The R80 instruction is an additional local prose obligation, not a change to this stored guarantee. The packet exclusion and direct Manager clarification prohibit a new record for that choice. Current body-end-sync qualification preserves governing meaning; same-ID source anchors and current family member revisions are renewed on the composed23cb164f/53429d24 pair. The present source adds native sibling preparation and product-held delivery without changing the R80 overview-order-only leaf effect. No new governing record is lifted from its producer packet. Current forced-second-sync qualification uses42201818/ec67a42f: incoming settings-owned review limits and recorded-approval revisions are preserved, not reverted. R80 only adds purpose/body/boundary/terminal-citation authoring obligations; this renewal preserves every existing record and entry meaning and creates none. Owner-admitted current ea40194f/27cacb07 renewal: existing governing meaning, identity, producer/origin and entry roles/rationales retained; source-only correspondence is postpass6-non-DT-renewal-source-witnesses.json. Renew the same history identity/current existing record revision. No new invariant, decision, family, proof, realization or producer-packet lift; no runtime/test or CODE acceptance claimed. DT field/catalog entries excluded under the separate ROW-1FWHD2 ruling. Historical prior-pair qualification above; Current 278b060c/152a65ab renewal preserves existing record/entry/history identities, invariant meaning, rationale, role and origin. R80 contributes the four-line overview-order instruction; independently landed report-only cut/add and evidence-custody duties are retained rather than reverted. Current source/selected-byte correspondence is postpass15-native-cover-source-correspondence.json. No new record or producer-packet lift, execution, CODE round, D140, semantic acceptance or Git publication is claimed.",
+      "revision": 1,
+      "subject": "INV-NNQR91"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "de1fe753afb99a797f53060fdda446c5602d5be5",
+            "content": "sha256:9a6581dc4ea512b8600b701417a4a0a0c9f28c7745ea334f0be67f026d2dcce7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_baseline_adoption_follows_the_configured_branch"
+            },
+            "path": "mcp/tests/test_memory_branch_authority.py"
+          },
+          "before": {
+            "blob": "0e11591cec358a67825c52b305c68dcf074de793",
+            "content": "sha256:9ac3e3ceae2126bbbc623424c4ec0dba619f83c6607bbd9107f93e731c4b0111",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_baseline_adoption_follows_the_configured_branch"
+            },
+            "path": "mcp/tests/test_memory_branch_authority.py"
+          },
+          "id": "PRF-KV4Y5W"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-TSYAP2",
+      "items": [
+        "sha256:10765da70e5e7cc59b4cd75408a23cd825321a66261b41aa87d97454a67312cb"
+      ],
+      "reason": "The sole changed line inside test_baseline_adoption_follows_the_configured_branch replaces its bare-title overview fixture with ROOT_OVERVIEW, whose purpose-first body allows the new order guard. The recorded-branch baseline-adoption assertions and existing proof facet remain unchanged. This renewal preserves the historical superseded record and its successor, including their full statement/scope and all existing proof identities; it does not endorse the superseded statement or turn the branch witness into an exception-path proof. Source test_memory_branch_authority.py:263-295 and complete leaf diff examined; original A6 CODE verdict carried by the A8 qualification. Current body-end-sync qualification preserves governing meaning; same-ID source anchors and current family member revisions are renewed on the composed23cb164f/53429d24 pair. The present source adds native sibling preparation and product-held delivery without changing the R80 overview-order-only leaf effect. No new governing record is lifted from its producer packet. Current forced-second-sync qualification uses42201818/ec67a42f: incoming settings-owned review limits and recorded-approval revisions are preserved, not reverted. R80 only adds purpose/body/boundary/terminal-citation authoring obligations; this renewal preserves every existing record and entry meaning and creates none.",
+      "revision": 1,
+      "subject": "INV-ZCRMS7"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-WF930Q",
+      "items": [
+        "sha256:95a5e7bbb0f285c4ef42ab77860fb078e542f22d25f8fcc4ded5ac8bcde10b94"
+      ],
+      "reason": "This generated instruction copy is byte-identical to its canonical workflow/Curator source. The substantive overview-order instruction and validator choice are documented in the existing governing overview and canonical/packaged cards; this derived carrier changes neither an independent obligation nor permissions, peer handover, writer ownership or code acceptance. It requires no independent file-card or new invariant/decision/family record. Current forced-second-sync qualification uses42201818/ec67a42f: incoming settings-owned review limits and recorded-approval revisions are preserved, not reverted. R80 only adds purpose/body/boundary/terminal-citation authoring obligations; this renewal preserves every existing record and entry meaning and creates none.",
+      "subject": "onboarding:.claude/skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-208SQT",
+          "revision": 2
+        },
+        {
+          "id": "INV-CXEEF4",
+          "revision": 1
+        },
+        {
+          "id": "INV-K5SFG7",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-WVZFJQ",
+      "items": [
+        "sha256:cc4716721ee161a4adf658a428f8d585834393b57e60571f1dc7191bcef64c76"
+      ],
+      "reason": "The reached family is already retired in the admitted ec67a42f memory base and remains retired byte-for-byte; its protected-composition guarantee is historical, not renewed as a current byte-identical-corpus promise. The full stored member union was examined: retired INV-CXEEF4 stays retired; current INV-208SQT revision2 governs deduplicated Curator worklist ownership with harness freedom and no numeric fanout threshold; INV-K5SFG7 retains registered-retired-wording scope and excludes novel semantic vocabulary. R80 adds overview-order doctrine, neither revives this family nor changes a member record or runtime tool permission. The same-ID RLZ-DT71R6 source/rationale renewal reflects its already-stored current member meaning, and all writer/quality/coherence authority remains with the main Curator.",
+      "revision": 1,
+      "subject": "FAM-YGXZTQ"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Y6YB2J",
+      "items": [
+        "sha256:455a9adebd3bcb76a14905b16887e0a5ae780d0520e1e5c9ee04107cc5a54358"
+      ],
+      "reason": "This generated instruction copy is byte-identical to its canonical workflow/Curator source. The substantive overview-order instruction and validator choice are documented in the existing governing overview and canonical/packaged cards; this derived carrier changes neither an independent obligation nor permissions, peer handover, writer ownership or code acceptance. It requires no independent file-card or new invariant/decision/family record. Current forced-second-sync qualification uses42201818/ec67a42f: incoming settings-owned review limits and recorded-approval revisions are preserved, not reverted. R80 only adds purpose/body/boundary/terminal-citation authoring obligations; this renewal preserves every existing record and entry meaning and creates none.",
+      "subject": "onboarding:.github-vscode/skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-YP941E",
+      "items": [
+        "sha256:d4f0f77dd24499e77b41121655f409f325cc73ab231b48f7c13348cf940a26e3"
+      ],
+      "reason": "This generated instruction copy is byte-identical to its canonical workflow/Curator source. The substantive overview-order instruction and validator choice are documented in the existing governing overview and canonical/packaged cards; this derived carrier changes neither an independent obligation nor permissions, peer handover, writer ownership or code acceptance. It requires no independent file-card or new invariant/decision/family record. Current forced-second-sync qualification uses42201818/ec67a42f: incoming settings-owned review limits and recorded-approval revisions are preserved, not reverted. R80 only adds purpose/body/boundary/terminal-citation authoring obligations; this renewal preserves every existing record and entry meaning and creates none.",
+      "subject": "onboarding:.cursor/skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Z364A6",
+      "items": [
+        "sha256:ac3cafc060ec8b4bbe5f70ece1ad2d2f7025a137587b69413c9796547303265c"
+      ],
+      "reason": "Read the complete existing card and exact source delta. This change only replaces bare/structure-first overview fixture bytes with fixed purpose headings (and the existing citation line, where present, at the end); it changes no case assertion, fixture record/entry set, scope, gate dispatch, branch selection or conversion algorithm. The card already explains this module’s tested contract and does not promise the old bare-title fixture shape. The reviewed current body therefore requires no semantic edit. Reference currency is reported separately; this row asserts body impact, not a blanket currentness or test PASS.",
+      "subject": "onboarding:mcp/tests/knowledge_writer_test_support.py"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

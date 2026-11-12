@@ -1,0 +1,206 @@
+{
+  "path": "mcp/tests/test_reference_anchors_census.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "04133ff7e06104be55cca690b0d2da9b7cfdaa9c",
+        "content": "sha256:4dec830c399050053fd02aa8910687b3ceb6a34ec8fe795888287a1cd47b95ef",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_census_is_reproducible"
+        }
+      },
+      "facet": "Re-running the census over the same pair reproduces its answer.",
+      "id": "PRF-2J7RZW",
+      "invariant": "INV-BTF5NF",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §2 anchor-census",
+        "leaf": "260928-MIK-L191"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "04133ff7e06104be55cca690b0d2da9b7cfdaa9c",
+        "content": "sha256:041fdeb3cdcf417f809708456d696a784e01df8c63ac7ac26e1f55b0affca802",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_mechanical_repair_is_claimed_exactly_where_the_shipped_fixer_repairs"
+        }
+      },
+      "facet": "A mechanical repair is promised exactly where the shipped fixer performs one.",
+      "id": "PRF-3ZR5QA",
+      "invariant": "INV-BTF5NF",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §2 anchor-census",
+        "leaf": "260928-MIK-L191"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "04133ff7e06104be55cca690b0d2da9b7cfdaa9c",
+        "content": "sha256:2457dc1c11bb67cbf9ccfa15f360e4a7758d629f19e75c91b9640a4c81738266",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_sidecar_the_parser_refused_is_named_and_the_census_is_not_complete"
+        }
+      },
+      "facet": "A sidecar the parser refused makes the census incomplete and is named.",
+      "id": "PRF-JNWR1R",
+      "invariant": "INV-BTF5NF",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §2 anchor-census",
+        "leaf": "260928-MIK-L191"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "04133ff7e06104be55cca690b0d2da9b7cfdaa9c",
+        "content": "sha256:4006a5977b4e7bce90baf655e01f78335950c625436378bb59885a68767e56b0",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_unreadable_sidecar_is_named_and_prevents_a_pass"
+        }
+      },
+      "facet": "An unreadable sidecar is named and prevents a pass.",
+      "id": "PRF-P1VDYH",
+      "invariant": "INV-BTF5NF",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §2 anchor-census",
+        "leaf": "260928-MIK-L191"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "04133ff7e06104be55cca690b0d2da9b7cfdaa9c",
+        "content": "sha256:700afbcf1dddaf7efe070a44331f470e792cf40850819b519312b3336bc9dbe8",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_census_reconciles_its_targets_by_source_route"
+        }
+      },
+      "facet": "Every anchor is reconciled to its source route, so the population is counted once.",
+      "id": "PRF-PEKD82",
+      "invariant": "INV-BTF5NF",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §2 anchor-census",
+        "leaf": "260928-MIK-L191"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A current anchor is the only zero-debt state",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "04133ff7e06104be55cca690b0d2da9b7cfdaa9c",
+            "content": "sha256:1377153de772bf36087de9da6f57f458c6d5038f73a89fe82856c99b177c1031",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_current_anchor_is_the_only_zero_debt_state"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A stale blob whose recorded bytes hold is class (a)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "04133ff7e06104be55cca690b0d2da9b7cfdaa9c",
+            "content": "sha256:203b4266ea6b3f396b5280f115e4d8a080827b56a5aee86112c22ee948a03362",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_stale_blob_with_the_recorded_bytes_is_class_a"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A uniquely moved line range is class (b) and names where it is re-recorded",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "04133ff7e06104be55cca690b0d2da9b7cfdaa9c",
+            "content": "sha256:24dff0093645817179a80685bd1e32aaa0b1f9267bc5223a61eb9dd7b0d1dc0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_uniquely_moved_line_range_is_class_b"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A same-blob anchor with a wrong locator is judgment because the shipped fixer refuses it",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "04133ff7e06104be55cca690b0d2da9b7cfdaa9c",
+            "content": "sha256:7fa3b5507d3e48544fabb9b6e12e002e5bd3bdba357b1aac635aaf7ad305a1a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_same_blob_anchor_with_a_wrong_locator_is_judgment_because_the_fixer_refuses"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Mechanical repair is claimed exactly where the shipped fixer repairs, in both directions",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "04133ff7e06104be55cca690b0d2da9b7cfdaa9c",
+            "content": "sha256:041fdeb3cdcf417f809708456d696a784e01df8c63ac7ac26e1f55b0affca802",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_mechanical_repair_is_claimed_exactly_where_the_shipped_fixer_repairs"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "A readable sidecar the tree parser refused is named and the census is not reported complete",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "04133ff7e06104be55cca690b0d2da9b7cfdaa9c",
+            "content": "sha256:2457dc1c11bb67cbf9ccfa15f360e4a7758d629f19e75c91b9640a4c81738266",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_sidecar_the_parser_refused_is_named_and_the_census_is_not_complete"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "An accepted sidecar cannot alias a rejected one out of the accounting",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "04133ff7e06104be55cca690b0d2da9b7cfdaa9c",
+            "content": "sha256:e85f541d60c0b22582e957f4453efdee814fd5115c30458a622271ba815dce29",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_accepted_sidecar_cannot_alias_a_rejected_sidecar_out_of_the_accounting"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

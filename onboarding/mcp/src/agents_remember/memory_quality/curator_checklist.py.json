@@ -1,0 +1,217 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/curator_checklist.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The defaulted input and its rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16bc720d447857303959d9881c8624f6aab9b7fd",
+            "content": "sha256:5d341d40ac56e2a1f9868f4df55ac06a980ff74bc62cfd004a8ca7f3cc8c83a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "without_proof"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "16bc720d447857303959d9881c8624f6aab9b7fd",
+            "content": "sha256:0a28de839a68793db013b6144092b73f9b481b53ce7e64aef0649aca96b56909",
+            "locator": {
+              "kind": "symbol",
+              "name": "WithoutProof"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "R03 attestation dependency declaration source.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b06809a50c0177ed9f11e258232f95ce0fe5679",
+            "content": "sha256:4676069cc230f2d693f3d2151b6f44515a5fb8acf09f1c4c70fd9aa076319157",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_quality_attestation_dependencies"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The section renders only for a list, as information that moves no count.\n\nAnchor: \"Information, not a gate (MIK-R28 rule 5)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16bc720d447857303959d9881c8624f6aab9b7fd",
+            "content": "sha256:4b8539cd759156b4b275249cb1d061d3b7f534626781e779deef285c568ec406",
+            "locator": {
+              "kind": "symbol",
+              "name": "_render"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "16bc720d447857303959d9881c8624f6aab9b7fd",
+            "content": "sha256:9d64cf4ef6fbf61872da9ecbad420c5066f97ee0b024b83a5f3c78d5b6d106ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "_append_without_proof"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The proof-coverage count is informational in the summary; after normalizing that count and artifact paths, actionable count still stays zero.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0256098f652dc34be5986d7dcab77243a655f959",
+            "content": "sha256:cc162acf98173fc3468f60f2cdc618d85d01b5ecd4304bf633a08ad91e6766cd",
+            "locator": {
+              "end": 429,
+              "kind": "line_range",
+              "start": 399
+            },
+            "path": "mcp/tests/test_knowledge_proofs.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "16bc720d447857303959d9881c8624f6aab9b7fd",
+            "content": "sha256:734ad81fa453f91aea1bb5d29e5a9b15c50467f4159d12cbe8a22fcf429836b0",
+            "locator": {
+              "end": 227,
+              "kind": "line_range",
+              "start": 133
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The two defaulted worklist inputs and their comment, which since MIK-R09 names the gate's `knowledge-gate` findings.\n\nAnchor: \"hands each open item to\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16bc720d447857303959d9881c8624f6aab9b7fd",
+            "content": "sha256:73647c6be89bab95f610a9645de985a46cc0e1a37f13bd995f97f3104ffafc12",
+            "locator": {
+              "kind": "symbol",
+              "name": "knowledge_worklist"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "16bc720d447857303959d9881c8624f6aab9b7fd",
+            "content": "sha256:89f3f0eca8b92c18875ce78fd071bb13a539700e8fcb95183a327462c7c7d83f",
+            "locator": {
+              "kind": "symbol",
+              "name": "knowledge_worklist_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The section renders only for a worklist, after the \"without proof\" section.\n\nAnchor: `knowledge_worklist_lines`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16bc720d447857303959d9881c8624f6aab9b7fd",
+            "content": "sha256:4b8539cd759156b4b275249cb1d061d3b7f534626781e779deef285c568ec406",
+            "locator": {
+              "kind": "symbol",
+              "name": "_render"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The section's lines, whose item table since MIK-R06 also renders `family_route_condition` items, and since MIK-R09 `onboarding_trace` items, through the kind-to-renderer table; its lead sentence now says the gate counts open items.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e6ff6e8915c09ef1ac1bcce226bab3ba0f24556",
+            "content": "sha256:f6e7b04d886b2b70d6021b8a9446c1cb40f7058bb5c26bf923b9c3fb5d5b70e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "knowledge_worklist_lines"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "A leaf scope derives the report path from the contract's worktree group; only a full scoped check requests rows and writes the checklist, and since MIK-R28 it also hands the checklist the \"without proof\" list (`None` for an unconverted tree).  Anchor: `resolve_leaf_memory_scope` `_resolve_execution` `_execute_memory_quality` `_attach_curator_checklist`\n\nAnchor: `resolve_leaf_memory_scope`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26578a8454aee1ff1eb6ff15e36b1cb9f381f001",
+            "content": "sha256:fcb6171af4b6ce478f7e35c607afdb9bc26a2f753de4637bc5dfcb308c8b5c2e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/memory_scope.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Cleanup removes the reserved reports directory before it attempts to remove the enclosure.  Anchor: `_removed_directories`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+            "content": "sha256:25e998f3f16f213c9d25c733eca9fd492a0e7d89763ecd2663869b70fb163d43",
+            "locator": {
+              "end": 408,
+              "kind": "line_range",
+              "start": 352
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The checklist writer owns the enclosure report projection; deleted regression fixtures do not supply a current pass.\n\nAnchor: `write_curator_checklist`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16bc720d447857303959d9881c8624f6aab9b7fd",
+            "content": "sha256:3951da961cb844d8a05185f577ec46129fb6687d31bdf33036bc929fb39c8dbd",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

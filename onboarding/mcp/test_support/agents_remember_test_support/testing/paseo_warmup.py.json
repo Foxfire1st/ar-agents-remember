@@ -1,0 +1,22 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/paseo_warmup.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Provide fake host/runtime, controlled memory and drained-resume fixtures for the focused warmup suites. No helper reaches a native host or sends a message; operation-level native witnesses are separately attributed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e1251b4be399e095fd57fb15b26eba70d84eb4f",
+            "content": "sha256:8e6b9e4f15ffad73d2b5d56aa5bf2fcf96fcf4dd5673e3dc924caffafc86943c",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

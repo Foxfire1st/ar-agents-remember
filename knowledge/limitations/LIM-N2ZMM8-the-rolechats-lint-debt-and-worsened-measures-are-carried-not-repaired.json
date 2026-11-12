@@ -1,0 +1,27 @@
+{
+  "boundary": "On the frozen candidate the 15 inherited RoleChats.tsx findings split 5 max-lines-per-function / 7 complexity / 3 exhaustive-deps, and the measures got worse with the failure-recovery handling: RoleChatsPane 516 to 540 lines and 65 to 67 complexity, the options-read callback 86 to 91 lines and 20 to 21 complexity, and fetchExecutionResult 90 to 92 lines and 34 to 35 complexity. The packet excludes the restructuring (carry item 21, leaf L68) and requires the leaf to report the remaining findings and the worsened measures, which the worker's qualified lint record does.",
+  "id": "LIM-N2ZMM8",
+  "limited": "Clean lint measures and a clean lint exit for the touched RoleChats.tsx functions.",
+  "links": [
+    {
+      "relation": "bounds",
+      "target": "INV-C7AT8R"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "handoff.json"
+    },
+    "handoffEntry": "L75-rolechats-lint-carry",
+    "leaf": "260928-MIK-L75",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-limitation/v1",
+  "status": "proposed",
+  "unsupported": [
+    "No claim that RoleChats.tsx is lint-clean.",
+    "No claim that the worsened measures are unrelated to the failure-recovery behavior they carry, or that they are required beyond it.",
+    "No broad quality waiver: the identities and counts are recorded as L68's starting point."
+  ]
+}

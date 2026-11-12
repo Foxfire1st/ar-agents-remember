@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "The startup witness records spawn-to-response timing with load, command, dependency, source and cache facts, which prevents a timing from an overloaded host or from the wrong checkout interpreter being presented as a preserved contract."
+  },
+  "applicability": "The repository script scripts/measure-ar-server-start.py and its explicit scratch subprocess world. The proposed 5s/20CPU/load<=40 bound is a measured condition, not a host-independent runtime guarantee.",
+  "conditions": [
+    "The script executes its own ordinary or explainer subprocess world without calling a tool.",
+    "Timing records spawn-to-response, load, command, dependencies, source and cache facts."
+  ],
+  "exclusions": [
+    "Runtime refusals, installed acceptance, first-call runtime effects or any-load timing guarantees.",
+    "Reporting an over-load witness as representative, or adjacency of a venv as proof of executed source."
+  ],
+  "id": "INV-JQ1WC6",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "scratch/curator/b5e6f7a8-9c01-4d23-8e45-f6a7b8c9d012/helpers/backend/post-L194-source-equivalence.json; semantic-recommendations.json; MIK-R204@v1 rules2,7"
+      ],
+      "path": "L183-current-guarantees-and-proofs-W9"
+    },
+    "handoffEntry": "L183-startup-evidence-witnesses",
+    "leaf": "260928-MIK-L183",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "The startup witness keeps its actual execution source and limits: scripts/measure-ar-server-start.py measures spawn through initialize and the completed tools/list without a tool call and records load, source, dependency and cache facts; it does not substitute for runtime refusal tests or installed acceptance.",
+  "status": "proposed",
+  "supersedes": []
+}

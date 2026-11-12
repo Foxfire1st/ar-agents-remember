@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/panels/detail-panel/decisionPreview.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Five authored decisions omit the link; seven show five with all 7 decisions and forward the complete original array.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "05953d39db25ca3552c1ddedd138a5605ebe74e1",
+            "content": "sha256:198fed86158fd4aa4eec1ebd4a90a5ae2f5083f03ef0208d03f1dd922e7aee65",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 17
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Unsorted preview input selects newest authored decisions by recorded time, not the array tail; legacy finalizer-shaped input is fabricated.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "05953d39db25ca3552c1ddedd138a5605ebe74e1",
+            "content": "sha256:8fb8eb29c0803c50eda10f297aa387e1520792d09a9b32f7cd6bdb87a0ec8404",
+            "locator": {
+              "end": 133,
+              "kind": "line_range",
+              "start": 88
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Product records do not contribute to #2/#1 authored numbering or all 2/all 1 decision link counts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "05953d39db25ca3552c1ddedd138a5605ebe74e1",
+            "content": "sha256:1b3562201d61bbd4f06dfd6dcb49ea99b547ac63bcfc9dcb2b630e21f33de131",
+            "locator": {
+              "end": 85,
+              "kind": "line_range",
+              "start": 56
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

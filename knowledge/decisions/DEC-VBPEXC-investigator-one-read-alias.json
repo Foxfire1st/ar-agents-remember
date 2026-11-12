@@ -1,0 +1,62 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The explicit no-migration choice rejects rewriting stored runtime identity and constrains every later receipt, settings and report reader."
+  },
+  "alternatives": [
+    {
+      "option": "Canonicalize the single earlier system-specialist spelling on reads, emit the required notice, and produce new Investigator identities without migrating stored artifacts.",
+      "reason": "It keeps original request and agent evidence intact and uses one implementation.",
+      "status": "chosen"
+    },
+    {
+      "option": "Rewrite earlier stored role identities and addresses during the rename.",
+      "reason": "It would invalidate original request/report paths and make historical runtime identities appear newly authored.",
+      "reconsider_when": "A separately approved migration supplies explicit custody and exact replay/report preservation for every original identity.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The old Projects browser storage address stays unchanged.",
+    "Conflicting settings aliases refuse before layering rather than choosing a winner."
+  ],
+  "context": "The canonical role is renamed while recorded launch receipts, labels, reports and browser retry identities must remain reachable.",
+  "decider": "Approved MIK-R98@v1 rules10–11.",
+  "id": "DEC-VBPEXC",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-S2SR50"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R98",
+        "packet": "requirements/MIK-R98-v1-the-investigator.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Final settings/inbox/sprint-seat/capsule tests; test_investigator.py old bound lookup under both names, exact old report, refresh/revive/replay; document-chats API one-notice test; dashboard old stored retry"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L98-curator-89a3f43e-2fd9-4e77-94ac-ff94bdf3b836.A02-curated-handoff.json"
+    },
+    "handoffEntry": "MIK-R98@v1 §10",
+    "leaf": "260928-MIK-L98",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

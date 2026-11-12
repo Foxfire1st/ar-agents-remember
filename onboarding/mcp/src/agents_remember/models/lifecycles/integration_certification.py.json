@@ -1,0 +1,55 @@
+{
+  "path": "mcp/src/agents_remember/models/lifecycles/integration_certification.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`IntegrationCertificationSelection` owns the described value or transition boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b8be3fee8ee0b0f7bd7dc15b5d17d2d2ce9fcdf",
+            "content": "sha256:59338f0aae8af6ab60a3f1488c9e0d8d91c62777626c2652f032d47e0d906f0a",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntegrationCertificationSelection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`validate_integration_completion_identity` owns the described value or transition boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b8be3fee8ee0b0f7bd7dc15b5d17d2d2ce9fcdf",
+            "content": "sha256:bd3be8a47e92c218bd67577cb40fd706dad687c0849ee5896d9455bf4165935d",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_integration_completion_identity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`validate_integration_certification_transition` owns the described value or transition boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b8be3fee8ee0b0f7bd7dc15b5d17d2d2ce9fcdf",
+            "content": "sha256:c2620b6bd8fc31e7bc7d3b6fe5975ddfc66c84c6fabfe2921f50b7903be30bd5",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_integration_certification_transition"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

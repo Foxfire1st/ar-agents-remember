@@ -1,0 +1,106 @@
+{
+  "path": "mcp/src/agents_remember/application/task_docs/task_doc_response.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Applied results and previews share one response shape.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "178244910d63439a6cc1ef118387a4b5e5848dd9",
+            "content": "sha256:13cf1503c47f3a5a254b5828e790dc324ea501496f1ca074067947ba397bf68c",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 50
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "178244910d63439a6cc1ef118387a4b5e5848dd9",
+            "content": "sha256:e6dfccdd4c51180622c9c54021318fb0e73f9eaa70ec5af2fdb1274ec615ab5f",
+            "locator": {
+              "end": 103,
+              "kind": "line_range",
+              "start": 78
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Graph-title and master-sync helpers render supporting evidence; ordinary-master previews derive Order from explicit children and supplied candidate overrides.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "178244910d63439a6cc1ef118387a4b5e5848dd9",
+            "content": "sha256:6c3fb3a7b333032125808940022d85735b458e5e02662c4b276e3bb5158055f4",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 106
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "178244910d63439a6cc1ef118387a4b5e5848dd9",
+            "content": "sha256:5501d60c87ba959d8cf9e9c77895e2faeede8ed0336c328a68d3ab0af5c693ec",
+            "locator": {
+              "end": 166,
+              "kind": "line_range",
+              "start": 132
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "178244910d63439a6cc1ef118387a4b5e5848dd9",
+            "content": "sha256:44c13ba0b4782ea3a290f7efac9573dcb128e66a17ff012642049083e78a2440",
+            "locator": {
+              "end": 200,
+              "kind": "line_range",
+              "start": 169
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Preview Markdown is the candidate document rendered with an optional readable external leaf grant.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "178244910d63439a6cc1ef118387a4b5e5848dd9",
+            "content": "sha256:44b4711514edfd7d91cb64783edfce783e0b466c31ec017341efdf142004da01",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 114
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "178244910d63439a6cc1ef118387a4b5e5848dd9",
+            "content": "sha256:5501d60c87ba959d8cf9e9c77895e2faeede8ed0336c328a68d3ab0af5c693ec",
+            "locator": {
+              "end": 166,
+              "kind": "line_range",
+              "start": 132
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,93 @@
+{
+  "path": "mcp/tests/test_attention_native_wait_clock.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The seat's declared wait has its check due three minutes after its last event.\n\nAnchor: `checkDueAt`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4ba5a2a8181715d32abda6547f55584b9288511",
+            "content": "sha256:aaebedef8ecbdf2934cccbbcfd66deb6ce36548532372f6a0d65a27998e174c0",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 35
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "While the check is to come the task reads `waiting` and no stall clock is kept.\n\nAnchor: `stall_clocks`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4ba5a2a8181715d32abda6547f55584b9288511",
+            "content": "sha256:9168ff8cbcf91257f9dfb334493d9f8df1e42b2edd45cfcb14cf9a792c20665e",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 54
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "After the check has passed the task reads `paused` and the clock starts at the read instant.\n\nAnchor: `stall_clocks`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4ba5a2a8181715d32abda6547f55584b9288511",
+            "content": "sha256:73821c4d415d98a98d39a7de0c7d6af58af86feed34f1732dcca9402858b520f",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 57
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A declared wait counts only until its check time plus a 60-second grace.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "content": "sha256:e55a2941253845beea372cd8d62a5823048c1b41664d6f44907e1c9da3d1e5ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "WAIT_CHECK_GRACE"
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The stall watch treats a seat that works or waits as busy.\n\nAnchor: `agent_waits`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "edb4ac727ca2888b5c529ec054650c50cb51ef52",
+            "content": "sha256:746fd732f28acc16f40ec051a96b763ea2e1b910c14e023b745059c59a82a7df",
+            "locator": {
+              "end": 463,
+              "kind": "line_range",
+              "start": 461
+            },
+            "path": "mcp/src/agents_remember/serving/projections/native_attention.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

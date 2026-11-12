@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Negative controls expose loss of expected-old take-back, replacement narrowing and cleanup protection, which could otherwise overwrite concurrent commits or remove protected content while ordinary successful tests stay green."
+  },
+  "applicability": "Take-back and replacement controls under test.",
+  "conditions": [
+    "The expected-old value is wrong or the selection is terminal."
+  ],
+  "exclusions": [
+    "A clean success; no control fires."
+  ],
+  "id": "INV-J6PAD2",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.evidence/focused-tests-admitted.log; notes/run3/L26-current-evidence-20261007/N12-takeback-CAS-negative-current.log"
+      ],
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "R3 Note 12",
+    "leaf": "260928-MIK-L26",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Tests catch loss of expected-old take-back, replacement narrowing and cleanup validation.",
+  "status": "proposed",
+  "supersedes": []
+}

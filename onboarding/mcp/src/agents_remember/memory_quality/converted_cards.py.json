@@ -1,0 +1,73 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/converted_cards.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module docstring: where a converted card's kind and source live.\n\nAnchor: \"and source are its place in the tree, and its sidecar names the same source when the card has\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57b4d4627000d4e3084540ceb70be6c6728e23d5",
+            "content": "sha256:c7219e975ff6966e5a90fa733c758f941051abf3208d7255dc10ce22fc63c80b",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A card's kind and source in the legacy table's keys.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57b4d4627000d4e3084540ceb70be6c6728e23d5",
+            "content": "sha256:4f46a4b6208e6312f3e70cab4ffcb88e25248c7b818eff4b80c2b8930954efdb",
+            "locator": {
+              "kind": "symbol",
+              "name": "converted_card_metadata"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The path a sidecar of the card's kind declares, or none.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57b4d4627000d4e3084540ceb70be6c6728e23d5",
+            "content": "sha256:fcfb11848cb8889987c26653e9a4cb9b5c51e91b9c7e9a6f8d20bdfcd7ae1236",
+            "locator": {
+              "kind": "symbol",
+              "name": "declared_sidecar_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The census loads converted cards' metadata through this module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "919b68f2b22e3faaf05016ea3a6a49eaf9a3881a",
+            "content": "sha256:b14317a8629781d2f6c440f01982632ea4d32c23e9e78633a5f47e127daca0fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_load_converted_metadata"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/memory_census.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Reporting branch movement when the re-read tip is unchanged would conceal a real Git hook or lock refusal. Re-reading the intended ref distinguishes an actual concurrent tip change from a failed update at the admitted tip and preserves Git's diagnostic in the latter case."
+  },
+  "applicability": "A failed ref update during publication or take-back.",
+  "conditions": [
+    "The intended ref was re-read after the failure."
+  ],
+  "exclusions": [
+    "A rejection with no moved tip; Git's own text is kept."
+  ],
+  "id": "INV-0T84PZ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_git_command.py::PublishTreeCommitGuardTests::test_no_commit_hook_runs_and_a_refusing_ref_transaction_hook_is_reported; N11-hook-refusal-text.log"
+      ],
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "R3 note 11d",
+    "leaf": "260928-MIK-L26",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A failed ref update reports a moved branch only if its tip moved and otherwise preserves Git refusal text.",
+  "status": "proposed",
+  "supersedes": []
+}

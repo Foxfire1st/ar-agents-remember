@@ -1,34 +1,18 @@
 # mcp/src/agents_remember/application/review_comparison_reclamation.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/review_comparison_reclamation.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-27T05:30:43+00:00 |
-| lastVerifiedCommitHash | `a0b2c18d2b8d08ac1242a13f65bde900a190df7a` |
-| lastVerifiedCommitDate | 2026-09-27T07:57:14+02:00|
-| governingOverview | `mcp/src/agents_remember/application/overview.md` |
-
 ## Governing Overview
 
 [application route overview](overview.md)
 
 ## Purpose
 
-**The two operations that may delete a durable comparison generation's content, and therefore the
-bounded reclamation path every artifact created by a freeze points at.** `review_comparison_freeze`
-records a `deletion_owner` and a `cleanup_scope` on each pin and each retained snapshot; the two
-constants in this module *are* those owners, and the two functions are those operations.
+The two explicit deletion owners for historical comparison content. Earlier canonical freezes recorded each pin or snapshot's deletion owner and cleanup scope. Those freeze producers are retired; these operations still reclaim only the exact historical artifact its retained manifest identifies. No new canonical dataset is frozen here.
 
 The module exists because of the packet's own rule — *a new snapshot or pin that cannot name its bounded
 reclamation path is unbounded durable state* — and its whole design follows from two properties the
 reopen depends on:
 
-1. **The record comes first.** Each operation writes its unavailable-history record into the generation's
-   own directory **before** it deletes anything, so an interruption leaves the honest ordering (a record
-   for content that is still there) rather than the misleading one. The record is what lets a later
-   reopen answer *"this was deleted deliberately, here is why"* instead of reporting an unexplained loss.
+1. **Record ordering differs.** Code-pin release writes its deletion record before removing the ref and withdraws it if release refuses. Snapshot discard currently verifies and removes bytes before writing its record. The earlier record-first description was unimplemented; current source documentation states this removal-before-history boundary.
 2. **Only what the manifest named, inside the scope the manifest recorded.** A code release deletes
    exactly the ref the manifest recorded and refuses a ref that has moved; a snapshot discard deletes
    exactly the recorded `cleanup_scope` of each retained half. Neither touches the manifest — the
@@ -87,8 +71,7 @@ the ref-shaped failures because the same typed failure already owns them.
 
 ### Conventions
 
-`__all__` publishes the two owner constants and the two operations — exactly the surface a freeze needs
-to *name* its deletion owner and a caller needs to *perform* the deletion. `CodeObjectTarget` and
+`__all__` publishes the historical owner constants and the two explicit deletion operations. These names preserve old manifest ownership; they establish no current canonical freeze producer. `CodeObjectTarget` and
 `KnowledgeTarget` (`:67-68`) are `Literal` types spelled with the record's own literal vocabulary, so a
 release and a discard cannot come to name a target the record does not have. `_now()` (`:71-74`) is the
 module's one clock read, used only when the caller supplies no `recorded_at`; both operations accept one
@@ -96,8 +79,7 @@ so a caller can make a batch of deletions share a timestamp.
 
 ### Invariants And Boundaries
 
-- **The record precedes the deletion**, in both operations, so an interruption never leaves deleted
-  content with no explanation.
+- **Record-first applies to code release.** Snapshot discard removes verified bytes before recording the deletion; an interruption in that interval has no established record-first guarantee. Current source documentation explicitly names this window.
 - **A deletion record is withdrawn if the deletion it describes does not happen.** The code release
   unlinks its record when the retention owner refuses.
 - **A released ref must still name the recorded commit.** A moved ref is refused and the ref is left in
@@ -117,55 +99,59 @@ so a caller can make a batch of deletions share a timestamp.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Every claim on this card is checkable in the module's own docstring and functions, in the manifest fields
 it is bounded by, and in the cases that measure both deletions. Three details a reader should carry: the
-record is written **before** the deletion and withdrawn if the deletion refuses; the deleted digest is
+code-release record is written **before** ref deletion and withdrawn if release refuses, while snapshot bytes are removed before their history is written; the deleted digest is
 **measured**, not copied, and an already-absent snapshot converges as `None`; and the custody recorded at
 release is taken *before* the ref is removed, because it cannot be recovered afterwards.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own statement of the two properties the reopen depends on, and of what it deliberately does not decide. | `review_comparison_freeze` | mcp/src/agents_remember/application/review_comparison_reclamation.py:1-23 |
-| **The two canonical deletion owners the manifest names on everything a freeze creates.** | `CODE_OBJECT_DELETION_OWNER`; `SNAPSHOT_DELETION_OWNER`; `__all__` | mcp/src/agents_remember/application/review_comparison_reclamation.py:50-63 |
-| The deletion targets, spelled with the record's own literal vocabulary. | `CodeObjectTarget`; `KnowledgeTarget`; `_knowledge_target`; `_CODE_OBJECT_TARGET` | mcp/src/agents_remember/application/review_comparison_reclamation.py:67-68; mcp/src/agents_remember/application/review_comparison_reclamation.py:141-147 |
-| **The code release: no pin → refuse; moved ref → refuse before recording; custody measured before deletion; record written first and withdrawn if the release refuses.** | `release_comparison_code_object`; `_require_the_ref_names_the_record`; `_ref_exists` | mcp/src/agents_remember/application/review_comparison_reclamation.py:77-124; mcp/src/agents_remember/application/review_comparison_reclamation.py:150-171 |
-| **The custody names read back from the record rather than re-derived from a live contract, because the enclosure may be gone.** | `_custody_names` | mcp/src/agents_remember/application/review_comparison_reclamation.py:127-138 |
-| **The snapshot discard: one record per retained half, inside its own recorded cleanup scope, and the manifest left in place.** | `discard_comparison_snapshots` | mcp/src/agents_remember/application/review_comparison_reclamation.py:174-210 |
-| **The digest that is measured rather than copied, the mismatch that records nothing, and the already-absent snapshot that converges as `None`.** | `_measure_and_remove` | mcp/src/agents_remember/application/review_comparison_reclamation.py:213-241 |
-| The record the two operations write, and the manifest read that bounds them. | `ComparisonHistoryDeletion`; `write_history_deletion`; `read_manifest` | mcp/src/agents_remember/application/review_comparison_generation.py:501-518; mcp/src/agents_remember/application/review_comparison_generation.py:679-694; mcp/src/agents_remember/application/review_comparison_generation.py:615-649 |
-| The retention owner whose ref the code release deletes, and the two failure statuses it raises. | `release_retained_code_object`; `retained_object_readable`; `code_object_observation` | mcp/src/agents_remember/worktrees/modules/code_object_retention.py:270-316; mcp/src/agents_remember/worktrees/modules/code_object_retention.py:259-267; mcp/src/agents_remember/worktrees/modules/code_object_retention.py:243-256 |
-| **The two typed failures this module raises, with their stated reason for being raised rather than returned.** | `CodeObjectRetentionError`; `ComparisonReclamationError` | mcp/src/agents_remember/errors.py:180-204 |
-| **The case that measures the discard: a mismatch refused with both files in place and no record, then recorded digests equal to the frozen ones, then both halves reported `unavailable-history`, then the retry recording `None`.** | `test_discarding_snapshots_records_the_bytes_it_measured_and_refuses_a_mismatch` | mcp/tests/test_knowledge_review_comparison_generation.py:1062-1126 |
-| **The case that measures the release: an unavailable-history record, the custody measured before and after reclamation, and a reopen that reports the deletion rather than today's data.** | `test_an_explicit_release_records_unavailable_history_and_is_measured_not_assumed` | mcp/tests/test_knowledge_review_comparison_generation.py:485-552 |
-| **The case that refuses to delete a ref that moved.** | `test_a_retention_ref_that_moved_is_never_deleted` | mcp/tests/test_knowledge_review_comparison_generation.py:971-1018 |
-| The reopen that consumes these records: the per-channel states and the unavailable-history channel. | `reopen_comparison_generation`; `ComparisonSourceChannel`; `ComparisonKnowledgeChannel` | mcp/src/agents_remember/application/review_comparison_reopen.py:211-232; mcp/src/agents_remember/application/review_comparison_reopen.py:96-122; mcp/src/agents_remember/application/review_comparison_reopen.py:124-140 |
 
-## Cross-Repo References
+- The historical reclamation owner states its per-route ordering and bounded explicit policy boundary. [1]
+
+
+- The two historical deletion-owner names retained by the manifest. [2]
+
+- The deletion targets, spelled with the record's own literal vocabulary. [3]
+- **The code release: no pin → refuse; moved ref → refuse before recording; custody measured before deletion; record written first and withdrawn if the release refuses.** [4]
+- **The custody names read back from the record rather than re-derived from a live contract, because the enclosure may be gone.** [5]
+
+- Snapshot discard removes verified historical bytes before writing its per-half deletion record. [6]
+
+- **The digest that is measured rather than copied, the mismatch that records nothing, and the already-absent snapshot that converges as `None`.** [7]
+- The record the two operations write, and the manifest read that bounds them. [8]
+- The retention owner whose ref the code release deletes, and the two failure statuses it raises. [9]
+
+- The typed failures preserve ref and snapshot refusal facts without deletion authority. [10]
+
+
+
+- Snapshot discard checks exact bytes before removal and writes the measured deletion record afterwards. [11]
+
+
+
+- Code release records measured custody before ref release and withdraws its record on refusal. [12]
+
+
+- A moved retained ref is refused before release. [13]
+
+
+- Historical reopen keeps unavailable retained canonical knowledge separate from exact readable source and archival deletion facts. [14]
+
+
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. It runs Git against the repository the
 manifest names and unlinks files under the coordination task root.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-09-27T05:30:43+00:00 — Authored scoped citation maintenance for 3 L41 source-range projection(s) resolved by the frozen source index. Only changed-source ranges were adopted from the preview; unrelated ranges, generated history and verification stamps are preserved.
-
-- 2026-09-27T05:23:46+00:00 — Re-resolved 1 source-linked citation claim(s) against the extracted or shifted L41 owners. Each selected symbol uses its current declaration extent; other source references and prior generated history remain unchanged. Verification stamps remain closeout-owned.
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-21T23:24+02:00 — 260921-ICR-L14 curator, **sync-merge resolution of the parked candidate against the landed ICR-L3 curation.** The two sides had curated this document independently and both sets of statements are kept: the landed `260921-ICR-L3` section, rows and history entries alongside this leaf's, tables unioned key by key (a row both sides carried keeps the ranges that hold its anchors in the merged code tree, the other side's range folded in where it is also true; rows only one side carried are kept in their own order), prose sections kept whole and Update History entries merged newest-first. The header states both facts: the production line is the master tip `a8d2431926d6b130012ca81ed2e85b14721c0615` (ICR-L3 landed) and this leaf's own code is still its uncommitted candidate. **Stamp accounting:** no verification stamp was invented; the stamp names the landed production line and the candidate rows name each uncommitted reading.
-- 2026-09-21T22:40+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **one inherited citation defect repaired — it is not this leaf's own.** The row carrying the module's own statement of the two properties the reopen depends on cited `review_comparison_reclamation.py:1-23` with an Anchor cell reading `*(module docstring)*`, which is italic prose rather than an anchor: nothing in the row said what those lines were supposed to contain. The defect predates this leaf (the row was written by 260921-ICR-L11) and is repaired here only because this leaf's curation pass owns the gate finding. The Anchor cell now names the real identifier `review_comparison_freeze`, which occurs **literally inside the cited range** at line 3 — the module whose record-before-delete ordering this docstring contrasts itself with — so the claim is checkable. The Finding wording, the cited range and every other row are unchanged; `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are deliberately **not** advanced, because nothing in this leaf is committed and the governed closeout owns the real stamp.
-- 2026-09-21T19:40:00+02:00 — 260921-ICR-L11 curator (uncommitted change set on `ar/260921-icr-l11`, base `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75`): created this one-to-one card for the module this leaf introduced as the **two bounded reclamation paths ICR-R11@v1 requires** ("every new snapshot/pin names its deletion owner and bounded temporary-storage cleanup"). It records the properties a reader has to act on rather than the function list: the unavailable-history record is written **before** the deletion so an interruption leaves the honest ordering, and the code release *withdraws* its record if the retention owner then refuses, so no false record of a deletion that did not happen survives; the ref must still name the recorded commit and the snapshot must still hold the recorded bytes, so a moved ref is left in place and a mismatched snapshot is refused with nothing removed and nothing recorded; the deleted digest is **measured** rather than copied from the manifest, and an already-absent snapshot converges as `None` so a retry of an interrupted discard does not fail; and custody at release is measured *before* the ref disappears, because the record's reader cannot recover that distinction afterwards. Two stated boundaries: the manifest is never deleted (a reopen must be able to say the generation existed), and *when* a comparison may be reclaimed has **no owner in this leaf** — these are explicit acts nothing in the freeze or reopen path calls. **Stamp accounting:** `lastVerifiedCommitHash`/`lastVerifiedCommitDate` name the **production line this reading was against** — `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75`, this leaf's recorded base — because every construct cited here exists only in this leaf's uncommitted candidate; what was actually read is this leaf's uncommitted working tree, and closeout owns the real stamp once the code commit exists.
+No meaningful cross-repo references found.

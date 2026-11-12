@@ -1,0 +1,41 @@
+{
+  "path": "mcp/tests/test_serving_watcher_death.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "b314eff5f89bed23ed148dd3b297ce07414ccc91",
+        "content": "sha256:e57d09e8a0cb605d9445424e6ea0549f301fa71049290a9e7848eb0eb304b362",
+        "locator": {
+          "kind": "symbol",
+          "name": "RefresherDeathBesideLiveWatchTests.test_common_failure_matrix_keeps_down_since_and_default_thirty_second_retry"
+        }
+      },
+      "facet": "The exact controlled source case common failure matrix keeps down since and default thirty second retry; this is a focused executable facet, not installed-runtime or full performance acceptance.",
+      "id": "PRF-K1ZQXV",
+      "invariant": "INV-3XG15P",
+      "origin": {
+        "handoffEntry": "L81-R1-F10",
+        "leaf": "260928-MIK-L81"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The failure matrix asserts recovery onto a surviving late drift root, retained down-since and the default thirty-second retry in six fault arms.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b314eff5f89bed23ed148dd3b297ce07414ccc91",
+            "content": "sha256:17441b97c49e46f358e2175325dd92c679c7306f78097a83421b54dec796c48a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "Realized in mcp/src/agents_remember/package_data/paseo_plugin/index.client.tsx, where OpenTarget forwards agentId alone to navigation.openAgent, and in mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts, where openAgent turns the request into navigation without a workspace hop of its own."
+  },
+  "applicability": "Every navigation from an ar.open carrying an agentId, on document and Chats pages.",
+  "conditions": [
+    "The application's session holds the agent, so pinned resolveNavigateToAgent can resolve it."
+  ],
+  "exclusions": [
+    "Workspace-only opens, which set the workspace and clear the selection.",
+    "Unknown or archived agents, which stall or fail rather than navigate."
+  ],
+  "id": "INV-BTK24H",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "successor report 260928-MIK-L121-worker-R2-MIK-R121-v1.md; evidence dir 260928-MIK-L121-evidence-c20212dd/browser-r2-after.log, sandbox-witness-record-r2.md"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L121-curator-handoff-list.json"
+    },
+    "handoffEntry": "MIK-R121-R2-P1",
+    "leaf": "260928-MIK-L121",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Navigation carries the agent alone and the application resolves its workspace from its own session (pinned resolveNavigateToAgent); the R1 workspace-hop and mismatch-refusal are withdrawn as unsupported by the native contract, and the R1 fake-workspace-scoped failure is withdrawn as the developer's cause.",
+  "status": "proposed",
+  "supersedes": []
+}

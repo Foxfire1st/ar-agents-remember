@@ -1,0 +1,165 @@
+{
+  "path": "mcp/src/agents_remember/controlplane/enforcement.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The records + folded gate set this policy reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c5bfb1e292fbf123166776a484851f67ac6f142",
+            "content": "sha256:e5c0b9f39701e93fc902434314625b8e41e4f8627df07b304467256fe1dac109",
+            "locator": {
+              "kind": "symbol",
+              "name": "GateRecord"
+            },
+            "path": "mcp/src/agents_remember/controlplane/records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The delegation policy validator and attribution checks used by this resolver.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b96e941c6e9a776260822ea07d54e1a57981bfd",
+            "content": "sha256:7ad57d1ecb3c02ea6b6e9e635dd783a7f59b81c529eda6c6a955ab207f29a826",
+            "locator": {
+              "kind": "symbol",
+              "name": "approval_failure_reason"
+            },
+            "path": "mcp/src/agents_remember/controlplane/gate_policy.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b96e941c6e9a776260822ea07d54e1a57981bfd",
+            "content": "sha256:4111c12f8c90b78879da121650d384a7c0bb25da0badd4900035d1243b182fc2",
+            "locator": {
+              "kind": "symbol",
+              "name": "delegated_decision_failure_reason"
+            },
+            "path": "mcp/src/agents_remember/controlplane/gate_policy.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The mutating tool that enforces this policy: `_refuse_unsatisfied_closeout_gate` (deny-only, writes nothing) and `_claim_closeout_gate`, which spends the approval through `GateStore.claim_approval`. It no longer appends an `applied` snapshot itself.\n\nAnchor: `_refuse_unsatisfied_closeout_gate` `_claim_closeout_gate`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+            "content": "sha256:cac6d7e8019eddb54904ef1e72757b19130d797910982b2981291bbcfa1d4ebc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refuse_unsatisfied_closeout_gate"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+            "content": "sha256:a28310bac12091c1f5e8870ff34f8bcc442f82b6f21c1ef16ff82ee02341ddd1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_claim_closeout_gate"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+            "content": "sha256:0c44ff68863f622c632c6350ac0c94f91f5a7ee931690bc955210efe485fb972",
+            "locator": {
+              "end": 588,
+              "kind": "line_range",
+              "start": 565
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+            "content": "sha256:a11094f88726f11a7585137e1178fc6dcf269a675547ec964b8021ff835a467d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`GateStore.claim_approval` — the compare-and-swap that calls `evaluate_gate` and appends `applied` in one held lock.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bbb005d14f4c90cbe56e3aecbbd4e5ca9cf52cd5",
+            "content": "sha256:4d6b9a16d976b064cf3916a01fcfcb59edaeed4b2143e8d016fc2b49ee434277",
+            "locator": {
+              "kind": "symbol",
+              "name": "claim_approval"
+            },
+            "path": "mcp/src/agents_remember/controlplane/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bbb005d14f4c90cbe56e3aecbbd4e5ca9cf52cd5",
+            "content": "sha256:a38d2664e932102eec560d0b2da9ef67074e52f9001902b68ccd868345d9553e",
+            "locator": {
+              "end": 237,
+              "kind": "line_range",
+              "start": 193
+            },
+            "path": "mcp/src/agents_remember/controlplane/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bbb005d14f4c90cbe56e3aecbbd4e5ca9cf52cd5",
+            "content": "sha256:c0f20674e1759946a2826b30eb5b3cfb1a8b459d30ae01035400f7bc41b50deb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/controlplane/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`CONSUMED_APPROVAL_GATE_KINDS` — what keeps the `applied` snapshot this resolver's refusal depends on from being reclaimed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6406e9c672efe030b99804ddf6ef6d1485a64bdc",
+            "content": "sha256:c43409f84bf7bc84003c36ae0e676299be6a2244c72101edcdb80cfbc057dac0",
+            "locator": {
+              "kind": "symbol",
+              "name": "CONSUMED_APPROVAL_GATE_KINDS"
+            },
+            "path": "mcp/src/agents_remember/controlplane/interaction_retention.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

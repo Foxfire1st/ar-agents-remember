@@ -1,0 +1,386 @@
+{
+  "path": "mcp/src/agents_remember/memory/conversion/crossing_sync.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9a01cff9e8bb4544cac7f17e7d9c03c952f8eb9c",
+        "content": "sha256:930dde8e49031aed35627898bdc80525f96e22aca48e3661d9086b0527a819a8",
+        "locator": {
+          "end": 290,
+          "kind": "line_range",
+          "start": 228
+        }
+      },
+      "id": "RLZ-F3GNJK",
+      "invariant": "INV-B644A4",
+      "origin": {
+        "handoffEntry": "L66-W4-08",
+        "leaf": "260928-MIK-L66"
+      },
+      "rationale": "Both sync routes reach the shared merge through this function, so the rules hold once for both. It is the construct the clause shares the merge with.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "12": {
+      "note": "`_convert_sides` owns the current boundary described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a01cff9e8bb4544cac7f17e7d9c03c952f8eb9c",
+            "content": "sha256:216c7f7465c28039e32efe120c6ec4b1f82c03475d6e7611234941be82bcc311",
+            "locator": {
+              "kind": "symbol",
+              "name": "_convert_sides"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "`next_crossing_owner` owns the current boundary described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a01cff9e8bb4544cac7f17e7d9c03c952f8eb9c",
+            "content": "sha256:eb2a1cdba73fbe1610e64a146a96afede08ca4cc284f180795d950323fcf9e5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "next_crossing_owner"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The crossing result carries the alignment counts beside conflicts and cards.\n\nAnchor: `cross`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a01cff9e8bb4544cac7f17e7d9c03c952f8eb9c",
+            "content": "sha256:bd790652bb6b7faa32731fc6c57555aa064bce0f77dd95380f7896c80643b87d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "- A step failure names the step.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a01cff9e8bb4544cac7f17e7d9c03c952f8eb9c",
+            "content": "sha256:3f722526699d1b2d71565e28a0cf73adf9da717c80e85a742fd1b814ecb5aef4",
+            "locator": {
+              "kind": "symbol",
+              "name": "CrossingError"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "- The pinned version refuses all-unconverted inputs or version disagreement; all-converted inputs sharing one version remain eligible.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a01cff9e8bb4544cac7f17e7d9c03c952f8eb9c",
+            "content": "sha256:b1cb993e5fcc5b657f9c28e4994e3a062ba75ff4fac32ca7b7cd20ea84d97d0c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_pinned_version"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "- Step 1: the leaf's added no-impact markers become onboarding_trace rows, with full text in `markers` and sources bound to the own side's paired code commit; file and overview provenance have different source sets.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a01cff9e8bb4544cac7f17e7d9c03c952f8eb9c",
+            "content": "sha256:be07c284fbbebd4add2263367fe902fc810069eacd2987149d09751c46926069",
+            "locator": {
+              "end": 167,
+              "kind": "line_range",
+              "start": 133
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a01cff9e8bb4544cac7f17e7d9c03c952f8eb9c",
+            "content": "sha256:334dd52ad2a6acd5e321ec712bb76ce6214e3e8b3d4fda3a920e489f8eb80edc",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 116
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a01cff9e8bb4544cac7f17e7d9c03c952f8eb9c",
+            "content": "sha256:deef96fd7d8c8af1ef4e6ee595c005a0cdf41f2d10e2edffa2c6be992493b04f",
+            "locator": {
+              "end": 138,
+              "kind": "line_range",
+              "start": 133
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a01cff9e8bb4544cac7f17e7d9c03c952f8eb9c",
+            "content": "sha256:c3203ad2148af46d5575d28f3378750d1ccb6b61fea35949e92f36b83faabb72",
+            "locator": {
+              "end": 275,
+              "kind": "line_range",
+              "start": 268
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a01cff9e8bb4544cac7f17e7d9c03c952f8eb9c",
+            "content": "sha256:dea362a25c43d91d9776e6e71abdcab8d56d81e6df3eba9302bad21c18e63ffc",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 124
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "- Markers go into the leaf's history file; a subject with a row is reported, not dropped.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a01cff9e8bb4544cac7f17e7d9c03c952f8eb9c",
+            "content": "sha256:d372068980e5c96d4c0e96c3ff9c47f0a6258c22dd8335edd325f87a1a722812",
+            "locator": {
+              "kind": "symbol",
+              "name": "with_markers"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "- The master-line crossing history file's name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a01cff9e8bb4544cac7f17e7d9c03c952f8eb9c",
+            "content": "sha256:eb2a1cdba73fbe1610e64a146a96afede08ca4cc284f180795d950323fcf9e5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "next_crossing_owner"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "- Steps 1-4 and the report: paired-code blobs are read before marker conversion; unreadable paired code raises the named `markers` failure rather than dropping source provenance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a01cff9e8bb4544cac7f17e7d9c03c952f8eb9c",
+            "content": "sha256:ff3c3983f15eacf02f014ee806eedaada474d50d7c11dd10fbb72273d3af7531",
+            "locator": {
+              "end": 324,
+              "kind": "line_range",
+              "start": 255
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a01cff9e8bb4544cac7f17e7d9c03c952f8eb9c",
+            "content": "sha256:334dd52ad2a6acd5e321ec712bb76ce6214e3e8b3d4fda3a920e489f8eb80edc",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 116
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a01cff9e8bb4544cac7f17e7d9c03c952f8eb9c",
+            "content": "sha256:deef96fd7d8c8af1ef4e6ee595c005a0cdf41f2d10e2edffa2c6be992493b04f",
+            "locator": {
+              "end": 138,
+              "kind": "line_range",
+              "start": 133
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a01cff9e8bb4544cac7f17e7d9c03c952f8eb9c",
+            "content": "sha256:c3203ad2148af46d5575d28f3378750d1ccb6b61fea35949e92f36b83faabb72",
+            "locator": {
+              "end": 275,
+              "kind": "line_range",
+              "start": 268
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a01cff9e8bb4544cac7f17e7d9c03c952f8eb9c",
+            "content": "sha256:dea362a25c43d91d9776e6e71abdcab8d56d81e6df3eba9302bad21c18e63ffc",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 124
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "- Cards counted by side.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a01cff9e8bb4544cac7f17e7d9c03c952f8eb9c",
+            "content": "sha256:0cbf5676de63bf4123fe5fb45cf4cab77652d3ed904cc7d7e11a71b0bdc9bfeb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_card_counts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "- The markers move, each side converts, and the trees merge.\n\nAnchor: `test_a_crossing_moves_the_leaf_markers_converts_each_side_and_merges`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fab936dda80543f94c1a840030ce192da6fa5616",
+            "content": "sha256:07fed5861f231d52ff62bc856eb238e5c79c21b8ff11c0e05dc0edadc6689d40",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_crossing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "- Many long markers fit one valid row.\n\nAnchor: `test_many_long_markers_move_into_one_valid_history_row`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fab936dda80543f94c1a840030ce192da6fa5616",
+            "content": "sha256:07fed5861f231d52ff62bc856eb238e5c79c21b8ff11c0e05dc0edadc6689d40",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_crossing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "- A master-line record conflict opens a crossing history file, closed at commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fab936dda80543f94c1a840030ce192da6fa5616",
+            "content": "sha256:5f7ac04d3e3081631c06c2ab56043490a06a04dd8a5c037261ec3df453adc1b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_master_line_record_conflict_opens_a_crossing_history_file_closed_at_commit"
+            },
+            "path": "mcp/tests/test_knowledge_crossing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "Current source delta inspected statically: Require paired-code marker provenance, distinguish overview history from future changed sets, and name fail-closed markers-step errors.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a01cff9e8bb4544cac7f17e7d9c03c952f8eb9c",
+            "content": "sha256:334dd52ad2a6acd5e321ec712bb76ce6214e3e8b3d4fda3a920e489f8eb80edc",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 116
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a01cff9e8bb4544cac7f17e7d9c03c952f8eb9c",
+            "content": "sha256:deef96fd7d8c8af1ef4e6ee595c005a0cdf41f2d10e2edffa2c6be992493b04f",
+            "locator": {
+              "end": 138,
+              "kind": "line_range",
+              "start": 133
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a01cff9e8bb4544cac7f17e7d9c03c952f8eb9c",
+            "content": "sha256:c3203ad2148af46d5575d28f3378750d1ccb6b61fea35949e92f36b83faabb72",
+            "locator": {
+              "end": 275,
+              "kind": "line_range",
+              "start": 268
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a01cff9e8bb4544cac7f17e7d9c03c952f8eb9c",
+            "content": "sha256:dea362a25c43d91d9776e6e71abdcab8d56d81e6df3eba9302bad21c18e63ffc",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 124
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

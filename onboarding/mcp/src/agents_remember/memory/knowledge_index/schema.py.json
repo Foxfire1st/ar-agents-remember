@@ -1,0 +1,56 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge_index/schema.py",
+  "realizes": [],
+  "references": {
+    "5": {
+      "note": "The index format name a cached file must carry is v3",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf115f8935703beea2dfd4c3c075be4d6f0472d9",
+            "content": "sha256:5c6e8a09e11cbf4efa9a50fa99c65e54e027de8c855d4daa7c6dd314d2f466c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "INDEX_FORMAT"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The `ix_*` tables and their reverse-direction indexes",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf115f8935703beea2dfd4c3c075be4d6f0472d9",
+            "content": "sha256:acb97b2145bd5fd69f3482c8273cb6c27a3627f9df7739eccdad25dd37420c9d",
+            "locator": {
+              "kind": "symbol",
+              "name": "INDEX_DDL"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "History rows are keyed by file and ID\n\nAnchor: `ix_history_row`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf115f8935703beea2dfd4c3c075be4d6f0472d9",
+            "content": "sha256:01fa4fe982e23e1db8f4bde0fb785c58beedfb302297a1b64b2f0d1a7f250941",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 85
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

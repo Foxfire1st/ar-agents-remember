@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/family-member-statement/FamilyMemberStatement.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Direct synthetic FamilyMemberStatement control shows same-revision different text as word edits (must not/mustnot), never whitespace-only. Revision equality does not imply text equality.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85770ca5cc9d227722ba85172b95355dc3d3a93a",
+            "content": "sha256:3c6dc7a9e7dcf39db075dd44206b593b00efe7d9302904579977984e19922665",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

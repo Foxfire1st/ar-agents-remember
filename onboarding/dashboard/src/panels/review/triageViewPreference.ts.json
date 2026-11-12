@@ -1,0 +1,87 @@
+{
+  "path": "dashboard/src/panels/review/triageViewPreference.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Changed-first view vocabulary",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7f09a3accb0258e6f0a70c187684abca69cfbae",
+            "content": "sha256:ace121a9458207123f9aad57bd671ac510bc14d5dad28f048b7fdc441894b9ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "TreeView"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Storage key for the persisted view",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7f09a3accb0258e6f0a70c187684abca69cfbae",
+            "content": "sha256:4bc7e0894781a05b5036e8a234fdf03d8818332509a318b44fe291172f88dc2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "TREE_VIEW_KEY"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Defensive read defaulting to changed",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7f09a3accb0258e6f0a70c187684abca69cfbae",
+            "content": "sha256:d427fe717baf44ecac0664d40b37f18c6adbb7aa69db9e1af7929af6d60e514b",
+            "locator": {
+              "kind": "symbol",
+              "name": "readTreeView"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Persisted store tolerating denied storage",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7f09a3accb0258e6f0a70c187684abca69cfbae",
+            "content": "sha256:242f0923483157e4c27311f58c6fc6703ff3ebca3b8d93e948be5f561e2756a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "treeViewStore"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Component subscription to the view",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7f09a3accb0258e6f0a70c187684abca69cfbae",
+            "content": "sha256:d72f4d1c5b53f1f2cd2b025bcc54cf736efc9709ba36728e8493343b8e99bd3d",
+            "locator": {
+              "kind": "symbol",
+              "name": "useTreeView"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

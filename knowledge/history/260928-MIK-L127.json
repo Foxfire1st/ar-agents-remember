@@ -1,0 +1,2011 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L127",
+  "rows": [
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b0b00e2c19893632a2e3538aed7e2c3f84153a00",
+            "content": "sha256:55375a6da57c97936ec4121b4c9bfc395b354f9a775f90439fad6450907bedd6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_task_doc_node"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
+          },
+          "before": "absent",
+          "id": "RLZ-1VMSKE"
+        },
+        {
+          "after": {
+            "blob": "1d06daecf8740ea6de32c4565dc4d24506617c0d",
+            "content": "sha256:268aaa77dc1b552dbc9360dcac3865c38fef9366f2213c2e986ff926600f5d7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskReportRows"
+            },
+            "path": "dashboard/src/panels/TaskNotes.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-26N9GM"
+        },
+        {
+          "after": {
+            "blob": "e72ca56ab09dabd435ea4fd6192f947450d63549",
+            "content": "sha256:a236a9c44c8cc669018409ff80d94d7993b7aea741e91be64e0e4eb9627ad142",
+            "locator": {
+              "kind": "symbol",
+              "name": "MasterViewBody"
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-2W1DRN"
+        },
+        {
+          "after": {
+            "blob": "fff532d24f22e0482cef85179d0fefcd6a6a6cbb",
+            "content": "sha256:bd72c230a30dbb171c7c159f8d36587cba70d520af38c7d86673db4e858bad6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "RequirementsBlock"
+            },
+            "path": "dashboard/src/panels/detail-panel/skeletons.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-DTXWD7"
+        },
+        {
+          "after": {
+            "blob": "e72ca56ab09dabd435ea4fd6192f947450d63549",
+            "content": "sha256:eaa0661f64f2bfbdeec8501ec93dba750d999e371c26def7c96eb254828efdc1",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskViewBody"
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-QPFF2D"
+        },
+        {
+          "after": {
+            "blob": "1d06daecf8740ea6de32c4565dc4d24506617c0d",
+            "content": "sha256:44092296cea2440c514fed6c75569bba587801576fb40501b033b7203993778d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReferenceRows"
+            },
+            "path": "dashboard/src/panels/TaskNotes.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-VTYFGA"
+        },
+        {
+          "after": {
+            "blob": "fff532d24f22e0482cef85179d0fefcd6a6a6cbb",
+            "content": "sha256:85936f75108d3c88072f7f2090da2664b559c59df4b6e128100360aa43bc2fc1",
+            "locator": {
+              "kind": "symbol",
+              "name": "useDocView"
+            },
+            "path": "dashboard/src/panels/detail-panel/skeletons.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-WVCTJ6"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-00AEVP",
+      "items": [],
+      "reason": "Preserve the seven existing leaf-authored bounded-preview and complete-content witnesses. The producer module is AST-identical to the first freeze after formatting; useDocView now stabilizes Back with useCallback and keys Escape by the open boolean without changing the captured scroll owner. Currentness is renewed without a runtime or independent MEMORY acceptance claim. Owner decision 2026-10-12T05:56:34+02:00 admits native replacement IDs for reset-lost realizations. Preserve the same invariant meaning, original target roles/rationales and all surviving sibling identities; re-point covers to this producer entry’s live native realizations. Old-to-new identity map is reported separately; historical freezes remain untouched.",
+      "revision": 1,
+      "subject": "INV-7JFCAF"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-0DBQNA",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "The card expressly states that current canonical source memberships, not pinned prose totals, control the lane. The new skeleton-projection module joins unit-regression under the same loader/policy; no exhaustive prose list needs another entry.",
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0ZSNKM",
+      "items": [
+        "sha256:d1ed2a8c76e3244f78d3f028d303623c3cfeec8a93650b157a90de101a3c6b83"
+      ],
+      "reason": "The remaining type/import/signature/compatibility-list glue supports the explicitly realized fixed form, complete-view and hydration contracts. Retained no-master slice list, pool passing and view handlers do not introduce a second ordering or selection authority; deleted legacy composition is not a new invariant. Reviewed exact changed spans [[514, 0]] at source dashboard/src/panels/detail-panel/taskReader.tsx.",
+      "subject": "hunk:sha256:d1ed2a8c76e3244f78d3f028d303623c3cfeec8a93650b157a90de101a3c6b83"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1C6SSZ",
+      "items": [
+        "sha256:2a6ecf3b1ec7c8f80247496732f1a2fc386466106846afb1622c94574d478a5b"
+      ],
+      "reason": "The remaining type/import/formatting/selection-helper fragments support fixed model-derived document forms and existing identity selection without changing a second authority. The new form/identity contracts and series-only adapter have explicit realizations; this fragment is local glue, not another enduring invariant. Reviewed exact changed spans [[7, 2]] at source dashboard/src/panels/detail-panel/model.ts.",
+      "subject": "hunk:sha256:2a6ecf3b1ec7c8f80247496732f1a2fc386466106846afb1622c94574d478a5b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1NF2W7",
+      "items": [
+        "sha256:b2e7f9956030b6738243b68d7da216bcc106608fb4ac11c5e79fb57ec35fc046"
+      ],
+      "reason": "Quote-style normalization leaves the refusal-token mapping, closed disclosure and complete owner sentence unchanged. The existing brief-state contract remains; this lexical change authors no new obligation. Reviewed exact changed spans [[46, 1]] at source dashboard/src/panels/detail-panel/entryState.tsx.",
+      "subject": "hunk:sha256:b2e7f9956030b6738243b68d7da216bcc106608fb4ac11c5e79fb57ec35fc046"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1RF895",
+      "items": [
+        "sha256:3dcf0ac498977fc91a0a9f29e3b95150f76cb8f4faef1c55c0a368e66a050f80"
+      ],
+      "reason": "The remaining type/import/formatting/selection-helper fragments support fixed model-derived document forms and existing identity selection without changing a second authority. The new form/identity contracts and series-only adapter have explicit realizations; this fragment is local glue, not another enduring invariant. Reviewed exact changed spans [[118, 1]] at source dashboard/src/panels/detail-panel/model.ts.",
+      "subject": "hunk:sha256:3dcf0ac498977fc91a0a9f29e3b95150f76cb8f4faef1c55c0a368e66a050f80"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "035a8819910ff79d930445ffcf00c6c478a0bfea",
+            "content": "sha256:28cee1f43935c5f06b5e3ced24633dd7a7180ba54b0d02e514f0f03e187f0bfa",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewBlock"
+            },
+            "path": "dashboard/src/panels/detail-panel/taskBlocks.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-6W4RY6"
+        },
+        {
+          "after": {
+            "blob": "7a2d57a7d0c0a584ad58ad93fc87f64b49ea837e",
+            "content": "sha256:3a76eff7e606222874ff9e11f60d9e83ce1a40a217b4450ec5ecf45670cf2e22",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewWord"
+            },
+            "path": "dashboard/src/panels/detail-panel/task-groups.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-ASRZ5R"
+        },
+        {
+          "after": {
+            "blob": "aa135237a0d7f3dddd0ef503c5e11820b3769225",
+            "content": "sha256:a3a14e86982285d5cd6b1113e4a00ced3c20d3b2b97449cdf7f66666ce7783b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecordViews"
+            },
+            "path": "dashboard/src/panels/detail-panel/docViews.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-BBY38K"
+        },
+        {
+          "after": {
+            "blob": "c4e00cbb4f6be81d5574f9cc52c2222df8d6ec2a",
+            "content": "sha256:c89be5656420ad59749572504b8c0778b970d4220b0da996b106d307b7c5917b",
+            "locator": {
+              "kind": "symbol",
+              "name": "reviewSummary"
+            },
+            "path": "dashboard/src/panels/detail-panel/model.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-DTWWZV"
+        },
+        {
+          "after": {
+            "blob": "df5cdb15895a682c2a835aa5221de4677a3a19cd",
+            "content": "sha256:9b9ecd7507b3c0591253e8909a192475860e40271f60eb252e8c9337e50ff1fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskReviewStateNode"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "before": "absent",
+          "id": "RLZ-N23E8J"
+        },
+        {
+          "after": {
+            "blob": "b0b00e2c19893632a2e3538aed7e2c3f84153a00",
+            "content": "sha256:0390dda0c3bfb0155a500d4b37519d4fde282ff9accd221d6f8eb34bfbb9a0e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_task_review_state_node"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
+          },
+          "before": "absent",
+          "id": "RLZ-YNSH8G"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-1V2WAC",
+      "items": [],
+      "reason": "Preserve the complete existing whole-review-count witness population. The formatting-only producer delta is AST-identical to the first freeze: openFindings still counts the whole round before the 25-row summary window. This renews source witnesses, not Python execution or a transferred CODE/MEMORY grade. Owner decision 2026-10-12T05:56:34+02:00 admits native replacement IDs for reset-lost realizations. Preserve the same invariant meaning, original target roles/rationales and all surviving sibling identities; re-point covers to this producer entry’s live native realizations. Old-to-new identity map is reported separately; historical freezes remain untouched.",
+      "revision": 1,
+      "subject": "INV-Z8HF38"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-1WQZP1",
+      "items": [
+        "sha256:0339b6e7af663507dcde3a6d59828c4e5c95c027d03000ce591aba9c00b890db"
+      ],
+      "reason": "The complete card already describes the boot-time effects flag, import ordering and reduced-motion wrapper. Only the determinism comment changed, not their implementation; no operative prose needs revision.",
+      "subject": "onboarding:dashboard/src/main.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-220FC0",
+      "items": [
+        "sha256:da383da085bfda549cdf8d3283dd1c227a53f8ff902d2acad0a420337bcbb4e6"
+      ],
+      "reason": "The remaining type/import/formatting/selection-helper fragments support fixed model-derived document forms and existing identity selection without changing a second authority. The new form/identity contracts and series-only adapter have explicit realizations; this fragment is local glue, not another enduring invariant. Reviewed exact changed spans [[5, 1]] at source dashboard/src/panels/detail-panel/model.ts.",
+      "subject": "hunk:sha256:da383da085bfda549cdf8d3283dd1c227a53f8ff902d2acad0a420337bcbb4e6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2TM5BE",
+      "items": [
+        "sha256:f5ed255b7f8ebfd315914b700250d16caf9ceade83a74928dc57d703bab1e441"
+      ],
+      "reason": "Quotes and JSX wrapping change, but summary state, attribution population, count/refusal distinction and recorded/live navigation remain identical. Existing intent-count family and same-ID witnesses remain authoritative; no separate invariant is warranted. Reviewed exact changed spans [[80, 2]] at source dashboard/src/panels/detail-panel/intentReviewEntry.tsx.",
+      "subject": "hunk:sha256:f5ed255b7f8ebfd315914b700250d16caf9ceade83a74928dc57d703bab1e441"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2Z32DW",
+      "items": [
+        "sha256:06a36d3e140b24476c1faad160c30db77113fc05f1777dbe231bf5777f4a1f0e"
+      ],
+      "reason": "Quotes and JSX wrapping change, but summary state, attribution population, count/refusal distinction and recorded/live navigation remain identical. Existing intent-count family and same-ID witnesses remain authoritative; no separate invariant is warranted. Reviewed exact changed spans [[32, 1]] at source dashboard/src/panels/detail-panel/intentReviewEntry.tsx.",
+      "subject": "hunk:sha256:06a36d3e140b24476c1faad160c30db77113fc05f1777dbe231bf5777f4a1f0e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3591W0",
+      "items": [
+        "sha256:e1ab2f70eccb68e8a62ab96b6a9a9b987c5ee63f617c6a073cad3a43614b45c0"
+      ],
+      "reason": "The remaining type/import/formatting/selection-helper fragments support fixed model-derived document forms and existing identity selection without changing a second authority. The new form/identity contracts and series-only adapter have explicit realizations; this fragment is local glue, not another enduring invariant. Reviewed exact changed spans [[11, 2]] at source dashboard/src/panels/detail-panel/model.ts.",
+      "subject": "hunk:sha256:e1ab2f70eccb68e8a62ab96b6a9a9b987c5ee63f617c6a073cad3a43614b45c0"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-37V4G0",
+      "items": [
+        "sha256:3c7444bae028f1e1a15fad814f656b81b1a46c463d502d92427f72d6df5d5145"
+      ],
+      "reason": "Existing purpose/Logic already characterize shared typed fixture builders and stubs, and remain correct. stubCounters still accepts optional reviewSummary and falls through to counters for omitted summary; the new reports branch is a separate route, not a contradiction of that statement. Historical 260821 seriesNode alignment and L23 stubNotes paragraphs remain true. New helper/default inventory can be added if useful, but this delta does not require rewriting correct operative prose.",
+      "subject": "onboarding:dashboard/src/panels/detail-panel/test-utils.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3R3ZDY",
+      "items": [
+        "sha256:8461f07697f1f3e50022c7989388291e524549fe5828a2dca9143293997bf059"
+      ],
+      "reason": "The remaining helper/import/Notes-line/report-row changes implement local placement and presentation already explained by the complete TaskNotes card. Reference resolution, complete-report access and whole counts are realized by the recorded reference/report and bounded-view contracts; this fragment adds no separate invariant or write authority. Reviewed exact changed spans [[289, 5]] at source dashboard/src/panels/TaskNotes.tsx.",
+      "subject": "hunk:sha256:8461f07697f1f3e50022c7989388291e524549fe5828a2dca9143293997bf059"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3YFSPQ",
+      "items": [
+        "sha256:3478e0a333e2d20930cca01265b8e12fc1d4da094d9f58f119985974fdf2b906"
+      ],
+      "reason": "Quotes and JSX wrapping change, but summary state, attribution population, count/refusal distinction and recorded/live navigation remain identical. Existing intent-count family and same-ID witnesses remain authoritative; no separate invariant is warranted. Reviewed exact changed spans [[89, 1]] at source dashboard/src/panels/detail-panel/intentReviewEntry.tsx.",
+      "subject": "hunk:sha256:3478e0a333e2d20930cca01265b8e12fc1d4da094d9f58f119985974fdf2b906"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4DZ86F",
+      "items": [
+        "sha256:ed1e9b78c3d5073060aaa019cfa7ee1d3b7ddb8fcf24b8c60eab762a6f0c801b"
+      ],
+      "reason": "The remaining type/import/formatting/selection-helper fragments support fixed model-derived document forms and existing identity selection without changing a second authority. The new form/identity contracts and series-only adapter have explicit realizations; this fragment is local glue, not another enduring invariant. Reviewed exact changed spans [[62, 1]] at source dashboard/src/panels/detail-panel/model.ts.",
+      "subject": "hunk:sha256:ed1e9b78c3d5073060aaa019cfa7ee1d3b7ddb8fcf24b8c60eab762a6f0c801b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4E5NTX",
+      "items": [
+        "sha256:0124c2f96b366ae56d829c77873245bea2d59f82054e9929faf9c9208b59f558"
+      ],
+      "reason": "The remaining imports, constants/comments or helper docstring support the explicitly realized producer-summary/review-count/body-revision contracts. Counts and full fields are witnessed at their actual producer functions; this fragment adds no independent protocol or task-model authority. Reviewed exact changed spans [[17, 1]] at source mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py.",
+      "subject": "hunk:sha256:0124c2f96b366ae56d829c77873245bea2d59f82054e9929faf9c9208b59f558"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4F1XVH",
+      "items": [
+        "sha256:57a34a552e43aea366064ce83a249a22d99d31575713ace99eb6ac2986e8e37b"
+      ],
+      "reason": "The remaining type/import/signature/compatibility-list glue supports the explicitly realized fixed form, complete-view and hydration contracts. Retained no-master slice list, pool passing and view handlers do not introduce a second ordering or selection authority; deleted legacy composition is not a new invariant. Reviewed exact changed spans [[95, 1]] at source dashboard/src/panels/detail-panel/taskReader.tsx.",
+      "subject": "hunk:sha256:57a34a552e43aea366064ce83a249a22d99d31575713ace99eb6ac2986e8e37b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4NKP87",
+      "items": [
+        "sha256:9b389ae71ceb8157961328a86e8a7c4cdcefb11e63f1e6d49d8734f99957fe13"
+      ],
+      "reason": "The remaining type/import/signature/compatibility-list glue supports the explicitly realized fixed form, complete-view and hydration contracts. Retained no-master slice list, pool passing and view handlers do not introduce a second ordering or selection authority; deleted legacy composition is not a new invariant. Reviewed exact changed spans [[77, 0]] at source dashboard/src/panels/detail-panel/taskReader.tsx.",
+      "subject": "hunk:sha256:9b389ae71ceb8157961328a86e8a7c4cdcefb11e63f1e6d49d8734f99957fe13"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-51RD81",
+      "items": [
+        "sha256:136c8962d6a20a6773ee74e3d7030fc86c940e59e8f56ead34fad99db7e44e11"
+      ],
+      "reason": "The remaining type/import/signature/compatibility-list glue supports the explicitly realized fixed form, complete-view and hydration contracts. Retained no-master slice list, pool passing and view handlers do not introduce a second ordering or selection authority; deleted legacy composition is not a new invariant. Reviewed exact changed spans [[74, 3]] at source dashboard/src/panels/detail-panel/taskReader.tsx.",
+      "subject": "hunk:sha256:136c8962d6a20a6773ee74e3d7030fc86c940e59e8f56ead34fad99db7e44e11"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-52CEP8",
+      "items": [
+        "sha256:71a3a2ede55b5ac77c25c28c7b4ebaf360d2648986d448fa639725e30701aa1f"
+      ],
+      "reason": "The complete card correctly describes the same always-openable recorded/live target, summary counts, separate attribution and unavailable/partial disclosures. Only quote style/wrapping changes, not any clause.",
+      "subject": "onboarding:dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5AC2DW",
+      "items": [
+        "sha256:bb09d1da5bc497a5bc9629a8b6070856a30fe4ef440dc64cc07b740d33a33a51"
+      ],
+      "reason": "The remaining imports, constants/comments or helper docstring support the explicitly realized producer-summary/review-count/body-revision contracts. Counts and full fields are witnessed at their actual producer functions; this fragment adds no independent protocol or task-model authority. Reviewed exact changed spans [[34, 3]] at source mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py.",
+      "subject": "hunk:sha256:bb09d1da5bc497a5bc9629a8b6070856a30fe4ef440dc64cc07b740d33a33a51"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5DSC3Q",
+      "items": [
+        "sha256:6ee1f7d7070254d224073ccd145d36b7fc7c95f8e5a4362431709897c8948bd2"
+      ],
+      "reason": "The remaining helper/import/Notes-line/report-row changes implement local placement and presentation already explained by the complete TaskNotes card. Reference resolution, complete-report access and whole counts are realized by the recorded reference/report and bounded-view contracts; this fragment adds no separate invariant or write authority. Reviewed exact changed spans [[135, 1]] at source dashboard/src/panels/TaskNotes.tsx.",
+      "subject": "hunk:sha256:6ee1f7d7070254d224073ccd145d36b7fc7c95f8e5a4362431709897c8948bd2"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-61PN6N",
+      "items": [
+        "sha256:9d4f45db24a3f52372112a034b43db39c8c44ea8676442afc75b62a8d48b88e9"
+      ],
+      "reason": "The remaining imports, constants/comments or helper docstring support the explicitly realized producer-summary/review-count/body-revision contracts. Counts and full fields are witnessed at their actual producer functions; this fragment adds no independent protocol or task-model authority. Reviewed exact changed spans [[399, 8]] at source mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py.",
+      "subject": "hunk:sha256:9d4f45db24a3f52372112a034b43db39c8c44ea8676442afc75b62a8d48b88e9"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-687PPX",
+      "items": [
+        "sha256:f567c958366de739c0c4958226ccff7a16eca9b72bffcd79e3a669d1dccccf2c"
+      ],
+      "reason": "The existing card says every derived closed-union path must be registered and sampled; the added form row (source 329) extends that exact mechanism without changing its operation. Existing three-seam/sample-not-provenance/known-residue/vacuity boundaries remain true. Older vocabulary-addition sections are historical inventories, not contradictory exhaustive present-day lists.",
+      "subject": "onboarding:dashboard/src/test/contract.test.ts"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-69BW6D",
+      "items": [
+        "sha256:6dc466eba942be00e2f41adfdef0c8fe2c441575c8b8cf06857d645a47b8864a"
+      ],
+      "reason": "The remaining type/import/signature/compatibility-list glue supports the explicitly realized fixed form, complete-view and hydration contracts. Retained no-master slice list, pool passing and view handlers do not introduce a second ordering or selection authority; deleted legacy composition is not a new invariant. Reviewed exact changed spans [[794, 1]] at source dashboard/src/panels/detail-panel/taskReader.tsx.",
+      "subject": "hunk:sha256:6dc466eba942be00e2f41adfdef0c8fe2c441575c8b8cf06857d645a47b8864a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-69XY7D",
+      "items": [
+        "sha256:23e76b29674493aaa6b45d9db4b1ac82acc064eafd61b41589d138f9a05f99f3"
+      ],
+      "reason": "The remaining type/import/signature/compatibility-list glue supports the explicitly realized fixed form, complete-view and hydration contracts. Retained no-master slice list, pool passing and view handlers do not introduce a second ordering or selection authority; deleted legacy composition is not a new invariant. Reviewed exact changed spans [[24, 37]] at source dashboard/src/panels/detail-panel/taskReader.tsx.",
+      "subject": "hunk:sha256:23e76b29674493aaa6b45d9db4b1ac82acc064eafd61b41589d138f9a05f99f3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6Z0Q60",
+      "items": [
+        "sha256:53a15adbfc9739e67589934b901801e1d98c2ce3c9add48148ab4fbd833a925b"
+      ],
+      "reason": "The remaining type/import/signature/compatibility-list glue supports the explicitly realized fixed form, complete-view and hydration contracts. Retained no-master slice list, pool passing and view handlers do not introduce a second ordering or selection authority; deleted legacy composition is not a new invariant. Reviewed exact changed spans [[63, 5]] at source dashboard/src/panels/detail-panel/taskReader.tsx.",
+      "subject": "hunk:sha256:53a15adbfc9739e67589934b901801e1d98c2ce3c9add48148ab4fbd833a925b"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-79WR0W",
+      "items": [
+        "sha256:103a553197ee38ff9417ab42d15e23e271db7e8f3f4a9982c1f1a6569478061f"
+      ],
+      "reason": "The helper remains a typed minimal task node; the ev helper, virtualization setup, hydration/context gates and all river assertions are unchanged. New empty metadata does not alter the behavior described by the complete card.",
+      "subject": "onboarding:dashboard/src/panels/EventRiver.test.tsx"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-7ECBXV",
+      "items": [
+        "sha256:e6812e0e9af6e0a0a917921e80b530ab1eaf6b9a420c2c770b83fcea5b262ac2"
+      ],
+      "reason": "No changed non-formatting tokens. Current Notes-line/folder/resolve transport and kind-tagged reference click assertions are unchanged. Preserve the complete card, especially its explicit L126 supersession of retired list behavior.",
+      "subject": "onboarding:dashboard/src/panels/detail-panel/seriesNotes.test.tsx"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-7M8FBN",
+      "items": [
+        "sha256:6e2815cf590288ac6f00ab24eb90f7a1c3f06a245383d9e9c3a8942911e99e95"
+      ],
+      "reason": "No changed non-formatting tokens. The summary-versus-line-totals fixtures, request economy, brief state/disclosure fields, scoped invalidation and late-read dropping remain asserted exactly as the complete card describes. Preserve its superseded catalogue-era history and boundaries.",
+      "subject": "onboarding:dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7NR5E1",
+      "items": [
+        "sha256:108b01a7393c6d0bfb0da8c862a400e9d4c9f239db1b0032a1a6181fc0e06dfe"
+      ],
+      "reason": "The remaining type/import/signature/compatibility-list glue supports the explicitly realized fixed form, complete-view and hydration contracts. Retained no-master slice list, pool passing and view handlers do not introduce a second ordering or selection authority; deleted legacy composition is not a new invariant. Reviewed exact changed spans [[19, 0]] at source dashboard/src/panels/detail-panel/taskReader.tsx.",
+      "subject": "hunk:sha256:108b01a7393c6d0bfb0da8c862a400e9d4c9f239db1b0032a1a6181fc0e06dfe"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5af459b5f6dbd2584786398ad1c50fda3aa1ef71",
+            "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+            "locator": {
+              "end": 1389,
+              "kind": "line_range",
+              "start": 1389
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "cd716f3e34439809c93fd86ab3410639a5a0a98c",
+            "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+            "locator": {
+              "end": 1389,
+              "kind": "line_range",
+              "start": 1389
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-1WK7P0"
+        },
+        {
+          "after": {
+            "blob": "dd5b9a11804f0ddc25ae6cc727bbad6bd40f9720",
+            "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+            "locator": {
+              "end": 414,
+              "kind": "line_range",
+              "start": 414
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "75ae9541024fb1d4279b7a505551d0aa15df24af",
+            "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+            "locator": {
+              "end": 413,
+              "kind": "line_range",
+              "start": 413
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-NJFH31"
+        },
+        {
+          "after": {
+            "blob": "5af459b5f6dbd2584786398ad1c50fda3aa1ef71",
+            "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+            "locator": {
+              "end": 534,
+              "kind": "line_range",
+              "start": 534
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "cd716f3e34439809c93fd86ab3410639a5a0a98c",
+            "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+            "locator": {
+              "end": 534,
+              "kind": "line_range",
+              "start": 534
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-TB9TST"
+        },
+        {
+          "after": {
+            "blob": "5af459b5f6dbd2584786398ad1c50fda3aa1ef71",
+            "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
+            "locator": {
+              "end": 1547,
+              "kind": "line_range",
+              "start": 1547
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "cd716f3e34439809c93fd86ab3410639a5a0a98c",
+            "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
+            "locator": {
+              "end": 1547,
+              "kind": "line_range",
+              "start": 1547
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-VQZWNZ"
+        },
+        {
+          "after": {
+            "blob": "dd5b9a11804f0ddc25ae6cc727bbad6bd40f9720",
+            "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
+            "locator": {
+              "end": 296,
+              "kind": "line_range",
+              "start": 296
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "75ae9541024fb1d4279b7a505551d0aa15df24af",
+            "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
+            "locator": {
+              "end": 296,
+              "kind": "line_range",
+              "start": 296
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-ZTDYFT"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-8429FC",
+      "items": [],
+      "reason": "The same five archive/report registrations remain in their actual lifecycle and governed lane lists. Their same-ID line witnesses are renewed at the explicitly checked registrations; source-derived ownership remains the authority, not a static digest or a new execution claim.",
+      "revision": 1,
+      "subject": "INV-0H8WBQ"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-8AZY3T",
+      "items": [
+        "sha256:80bfd54d6304844c79d0157264cb22a12eb5eecb26081cf70130a7f25e8dce79"
+      ],
+      "reason": "No changed non-formatting tokens. Both viewed-leaf callback paths retain selected identities and qualified-key assertions. The existing purpose and assertion-preservation statement remain correct.",
+      "subject": "onboarding:dashboard/src/panels/detail-panel/viewedLeaf.test.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8BK3KK",
+      "items": [
+        "sha256:b376bca78665eb8ae39486a37b9f9cec42cf37b3b967214c92d5ca996c274cca"
+      ],
+      "reason": "The remaining type/import/signature/compatibility-list glue supports the explicitly realized fixed form, complete-view and hydration contracts. Retained no-master slice list, pool passing and view handlers do not introduce a second ordering or selection authority; deleted legacy composition is not a new invariant. Reviewed exact changed spans [[86, 0]] at source dashboard/src/panels/detail-panel/taskReader.tsx.",
+      "subject": "hunk:sha256:b376bca78665eb8ae39486a37b9f9cec42cf37b3b967214c92d5ca996c274cca"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-94EEPD",
+      "items": [
+        "sha256:025bf97d11843412c6725022d92dddf519c52dcae72519ac41e75c017cf3595d"
+      ],
+      "reason": "The remaining type/import/signature/compatibility-list glue supports the explicitly realized fixed form, complete-view and hydration contracts. Retained no-master slice list, pool passing and view handlers do not introduce a second ordering or selection authority; deleted legacy composition is not a new invariant. Reviewed exact changed spans [[9, 4]] at source dashboard/src/panels/detail-panel/taskReader.tsx.",
+      "subject": "hunk:sha256:025bf97d11843412c6725022d92dddf519c52dcae72519ac41e75c017cf3595d"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9P7AAX",
+      "items": [
+        "sha256:d6c3486c39059d595f924e84b197b30638a84114d4e3903f2fae357347f448d0"
+      ],
+      "reason": "The remaining helper/import/Notes-line/report-row changes implement local placement and presentation already explained by the complete TaskNotes card. Reference resolution, complete-report access and whole counts are realized by the recorded reference/report and bounded-view contracts; this fragment adds no separate invariant or write authority. Reviewed exact changed spans [[129, 1]] at source dashboard/src/panels/TaskNotes.tsx.",
+      "subject": "hunk:sha256:d6c3486c39059d595f924e84b197b30638a84114d4e3903f2fae357347f448d0"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "67ed611ecae6afb009c83e58fac07d3eafb62ade",
+            "content": "sha256:aae4ce295eec7cb19758ecfdc94fc2320e525a8c8143706d3e87f50d144f1e78",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_task_reports"
+            },
+            "path": "mcp/src/agents_remember/cli/role_report.py"
+          },
+          "before": "absent",
+          "id": "RLZ-1Z16AC"
+        },
+        {
+          "after": {
+            "blob": "a17b594530ab671e7682f7fab0c324c0d5d83ce8",
+            "content": "sha256:ba3f56645a09697bcf0d112725d75f122820c0911672c02103c4044c278814ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "listTaskReports"
+            },
+            "path": "dashboard/src/data/taskReports.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-PHS465"
+        },
+        {
+          "after": {
+            "blob": "e72ca56ab09dabd435ea4fd6192f947450d63549",
+            "content": "sha256:f2efbba262a4e728526f083640d0f63b6bc0181bceaaa9edfa66630ec117de94",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskPageRefsReports"
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-WRFPXT"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-A2EY0W",
+      "items": [],
+      "reason": "Owner decision 2026-10-12T05:56:34+02:00 admits native replacement IDs for reset-lost realizations. Preserve the same invariant meaning, original target roles/rationales and all surviving sibling identities; re-point covers to this producer entry’s live native realizations. Old-to-new identity map is reported separately; historical freezes remain untouched.",
+      "revision": 1,
+      "subject": "INV-GHZ8VQ"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ABHTTX",
+      "items": [
+        "sha256:32ae715b04e00557b5a14b9b63121c2e9774d6676bb816647321b81fa39906e6"
+      ],
+      "reason": "The remaining type/import/signature/compatibility-list glue supports the explicitly realized fixed form, complete-view and hydration contracts. Retained no-master slice list, pool passing and view handlers do not introduce a second ordering or selection authority; deleted legacy composition is not a new invariant. Reviewed exact changed spans [[88, 1]] at source dashboard/src/panels/detail-panel/taskReader.tsx.",
+      "subject": "hunk:sha256:32ae715b04e00557b5a14b9b63121c2e9774d6676bb816647321b81fa39906e6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-AP19ZJ",
+      "items": [
+        "sha256:8bbe3107b222dbe740ef84081fd47b20d66c696ad6c8f906c020a7284e1ddd4a"
+      ],
+      "reason": "The remaining helper/import/Notes-line/report-row changes implement local placement and presentation already explained by the complete TaskNotes card. Reference resolution, complete-report access and whole counts are realized by the recorded reference/report and bounded-view contracts; this fragment adds no separate invariant or write authority. Reviewed exact changed spans [[140, 5]] at source dashboard/src/panels/TaskNotes.tsx.",
+      "subject": "hunk:sha256:8bbe3107b222dbe740ef84081fd47b20d66c696ad6c8f906c020a7284e1ddd4a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-AY0GVA",
+      "items": [
+        "sha256:d02e5ac0880bce6e5fb2d17c62ccf8e65e17a45811293d5ea1f31ef51ac37798"
+      ],
+      "reason": "The remaining type/import/signature/compatibility-list glue supports the explicitly realized fixed form, complete-view and hydration contracts. Retained no-master slice list, pool passing and view handlers do not introduce a second ordering or selection authority; deleted legacy composition is not a new invariant. Reviewed exact changed spans [[717, 2]] at source dashboard/src/panels/detail-panel/taskReader.tsx.",
+      "subject": "hunk:sha256:d02e5ac0880bce6e5fb2d17c62ccf8e65e17a45811293d5ea1f31ef51ac37798"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "1d06daecf8740ea6de32c4565dc4d24506617c0d",
+            "content": "sha256:d60d750a89d77ac02d7426bd0146003ebc9b949f939a9914c705ae02294ded7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskNotes"
+            },
+            "path": "dashboard/src/panels/TaskNotes.tsx"
+          },
+          "before": {
+            "blob": "4fd13392ee64ff470abdcce77426d87eb9f9a55b",
+            "content": "sha256:19d59d8bb1924194adca2e83f7c75750415b180dea906466d8a9643fba277bfe",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskNotes"
+            },
+            "path": "dashboard/src/panels/TaskNotes.tsx"
+          },
+          "id": "RLZ-MM7B05"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-B28VSM",
+      "items": [
+        "sha256:152e25c26850749c924bf54b95ed22e7273e9cf5265b4120c887fa98384d2276"
+      ],
+      "reason": "TaskNotes still reads the one top-folder listing/count and opens the task-scoped notes root without inline tree/content. L127 adds rendering variants for the same one-line entry; it does not authorize recursive reads or change the stored guarantee.",
+      "revision": 1,
+      "subject": "INV-RKYCEP"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-B2ZXE1",
+      "items": [
+        "sha256:e2999b91b0ad0e9959c6a121f2fbe44e3c57f64868957676669004c3688b853f"
+      ],
+      "reason": "The remaining type/import/formatting/selection-helper fragments support fixed model-derived document forms and existing identity selection without changing a second authority. The new form/identity contracts and series-only adapter have explicit realizations; this fragment is local glue, not another enduring invariant. Reviewed exact changed spans [[75, 1]] at source dashboard/src/panels/detail-panel/model.ts.",
+      "subject": "hunk:sha256:e2999b91b0ad0e9959c6a121f2fbe44e3c57f64868957676669004c3688b853f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-B3DX1H",
+      "items": [
+        "sha256:410d59426432c165e8aabec2063eb08376c34542d7c52ccfd6288b6b91518f5f"
+      ],
+      "reason": "The remaining type/import/signature/compatibility-list glue supports the explicitly realized fixed form, complete-view and hydration contracts. Retained no-master slice list, pool passing and view handlers do not introduce a second ordering or selection authority; deleted legacy composition is not a new invariant. Reviewed exact changed spans [[69, 2]] at source dashboard/src/panels/detail-panel/taskReader.tsx.",
+      "subject": "hunk:sha256:410d59426432c165e8aabec2063eb08376c34542d7c52ccfd6288b6b91518f5f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-B41QQZ",
+      "items": [
+        "sha256:10f9f6c8549a48f6ef3a7e657938dd15b13f9a6e35c4ae847033ef6f55ca4c03"
+      ],
+      "reason": "Quote-style normalization leaves the refusal-token mapping, closed disclosure and complete owner sentence unchanged. The existing brief-state contract remains; this lexical change authors no new obligation. Reviewed exact changed spans [[10, 2]] at source dashboard/src/panels/detail-panel/entryState.tsx.",
+      "subject": "hunk:sha256:10f9f6c8549a48f6ef3a7e657938dd15b13f9a6e35c4ae847033ef6f55ca4c03"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BHQJ16",
+      "items": [
+        "sha256:12f0ed48841c835279d9207bd826c0a6ab69b15980082b121da8249fd4fc8ee1"
+      ],
+      "reason": "This changes only the determinism comment from CRT animation to every animation; the effects flag, style import order and pre-render behavior are unchanged. No runtime guarantee is added here. Reviewed exact changed spans [[12, 1]] at source dashboard/src/main.tsx.",
+      "subject": "hunk:sha256:12f0ed48841c835279d9207bd826c0a6ab69b15980082b121da8249fd4fc8ee1"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-BT58K4",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "The current source/card describes exact artifact consumer ownership and canonical registration, not an exhaustive per-leaf module list or a run. The added skeleton suite is another consumer of existing support artifacts, with no new artifact/contract; the scoped overview reconciliation retained landed catalogs plus leaf additions.",
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BYD4ZM",
+      "items": [
+        "sha256:03f3bab07923b3acfe2fd84c6856f6ea366dd36ff41bc04931a94f8080a36e18"
+      ],
+      "reason": "The remaining type/import/signature/compatibility-list glue supports the explicitly realized fixed form, complete-view and hydration contracts. Retained no-master slice list, pool passing and view handlers do not introduce a second ordering or selection authority; deleted legacy composition is not a new invariant. Reviewed exact changed spans [[71, 0]] at source dashboard/src/panels/detail-panel/taskReader.tsx.",
+      "subject": "hunk:sha256:03f3bab07923b3acfe2fd84c6856f6ea366dd36ff41bc04931a94f8080a36e18"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CFA2F0",
+      "items": [
+        "sha256:3636cb66952187caf4fd1725cda9c0b339003d126d470ae312278d940ed57473"
+      ],
+      "reason": "Quote-style normalization leaves the refusal-token mapping, closed disclosure and complete owner sentence unchanged. The existing brief-state contract remains; this lexical change authors no new obligation. Reviewed exact changed spans [[37, 8]] at source dashboard/src/panels/detail-panel/entryState.tsx.",
+      "subject": "hunk:sha256:3636cb66952187caf4fd1725cda9c0b339003d126d470ae312278d940ed57473"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CGVY4Y",
+      "items": [
+        "sha256:19ac52968f9c419c8c6bac2b67ae0b514d9797ad0bb5963b1719a246c21b58cd"
+      ],
+      "reason": "The remaining imports, constants/comments or helper docstring support the explicitly realized producer-summary/review-count/body-revision contracts. Counts and full fields are witnessed at their actual producer functions; this fragment adds no independent protocol or task-model authority. Reviewed exact changed spans [[427, 1]] at source mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py.",
+      "subject": "hunk:sha256:19ac52968f9c419c8c6bac2b67ae0b514d9797ad0bb5963b1719a246c21b58cd"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CJY7T5",
+      "items": [
+        "sha256:6da75258f813f29ede8da93fbaa2413f815c5e0eb958e4c68fc2c6bcab1a8057"
+      ],
+      "reason": "Retired reader-local Section/Bullets/discard-history/StepList implementations are replaced by shared fixed-block and grouped-index owners already represented by the current L127 obligations. The remaining comment records the shared resolveRowTarget owner. This is extraction/composition custody, not a claim of unchanged DOM or an independent new invariant. The source-only successor comparison is Owner-admitted; whole MEMORY acceptance remains independent and the ONE execution campaign remains spent.",
+      "subject": "hunk:sha256:6da75258f813f29ede8da93fbaa2413f815c5e0eb958e4c68fc2c6bcab1a8057"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CQM71Z",
+      "items": [
+        "sha256:2af3ae4d18598d2ac823fadbf9d93818b6bfe17c772e7bac873b1c8066dd769a"
+      ],
+      "reason": "The remaining imports, constants/comments or helper docstring support the explicitly realized producer-summary/review-count/body-revision contracts. Counts and full fields are witnessed at their actual producer functions; this fragment adds no independent protocol or task-model authority. Reviewed exact changed spans [[431, 4]] at source mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py.",
+      "subject": "hunk:sha256:2af3ae4d18598d2ac823fadbf9d93818b6bfe17c772e7bac873b1c8066dd769a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CS1M1P",
+      "items": [
+        "sha256:914f7f541dd58dfce84ff899bd81040e38352bc436e56e8c0b841d3e651df4c8"
+      ],
+      "reason": "The remaining helper/import/Notes-line/report-row changes implement local placement and presentation already explained by the complete TaskNotes card. Reference resolution, complete-report access and whole counts are realized by the recorded reference/report and bounded-view contracts; this fragment adds no separate invariant or write authority. Reviewed exact changed spans [[30, 2]] at source dashboard/src/panels/TaskNotes.tsx.",
+      "subject": "hunk:sha256:914f7f541dd58dfce84ff899bd81040e38352bc436e56e8c0b841d3e651df4c8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-D56W7S",
+      "items": [
+        "sha256:29024454e8ad078d4fa69cb47c67a6a1832e76cae91418d319380235fc323dc8"
+      ],
+      "reason": "Import movement wires the already-recorded task-root-relative reports request and the separated Notes/ref/report surfaces. Those guarantees belong to INV-GHZ8VQ and existing continuity records; the import hunk itself carries no additional invariant. The source-only successor comparison is Owner-admitted; whole MEMORY acceptance remains independent and the ONE execution campaign remains spent.",
+      "subject": "hunk:sha256:29024454e8ad078d4fa69cb47c67a6a1832e76cae91418d319380235fc323dc8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DAEBKH",
+      "items": [
+        "sha256:06d6891866f2b518fd2e18afb075332af69e0702e2c9a996edba4d6dfb6eb072"
+      ],
+      "reason": "The remaining helper/import/Notes-line/report-row changes implement local placement and presentation already explained by the complete TaskNotes card. Reference resolution, complete-report access and whole counts are realized by the recorded reference/report and bounded-view contracts; this fragment adds no separate invariant or write authority. Reviewed exact changed spans [[131, 2]] at source dashboard/src/panels/TaskNotes.tsx.",
+      "subject": "hunk:sha256:06d6891866f2b518fd2e18afb075332af69e0702e2c9a996edba4d6dfb6eb072"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DN1P8R",
+      "items": [
+        "sha256:d014124655fef91e1eb8fddf142aaf18243b2c7d0ab051a207668054d22f9dec"
+      ],
+      "reason": "Quotes and JSX wrapping change, but summary state, attribution population, count/refusal distinction and recorded/live navigation remain identical. Existing intent-count family and same-ID witnesses remain authoritative; no separate invariant is warranted. Reviewed exact changed spans [[106, 2]] at source dashboard/src/panels/detail-panel/intentReviewEntry.tsx.",
+      "subject": "hunk:sha256:d014124655fef91e1eb8fddf142aaf18243b2c7d0ab051a207668054d22f9dec"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-E1Y7YH",
+      "items": [
+        "sha256:40afbc1c68d313dd9425310274be3f970b798fb66672c6d6b758dda8ea4d6167"
+      ],
+      "reason": "The complete card correctly describes every briefProblem mapping, problemSentence optional field and external closed disclosure. Only quote style changes; preserve the same source-backed account.",
+      "subject": "onboarding:dashboard/src/panels/detail-panel/entryState.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EHFRZS",
+      "items": [
+        "sha256:44b9c37dd052b776892a05bce5245f57712d53824f21b8695784612c5157d674"
+      ],
+      "reason": "The remaining type/import/signature/compatibility-list glue supports the explicitly realized fixed form, complete-view and hydration contracts. Retained no-master slice list, pool passing and view handlers do not introduce a second ordering or selection authority; deleted legacy composition is not a new invariant. Reviewed exact changed spans [[21, 1]] at source dashboard/src/panels/detail-panel/taskReader.tsx.",
+      "subject": "hunk:sha256:44b9c37dd052b776892a05bce5245f57712d53824f21b8695784612c5157d674"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EJ4EET",
+      "items": [
+        "sha256:3162e94db695ec8de9baf8a865022f161123ea8af79cded49f47d9c7874f5e73"
+      ],
+      "reason": "The remaining helper/import/Notes-line/report-row changes implement local placement and presentation already explained by the complete TaskNotes card. Reference resolution, complete-report access and whole counts are realized by the recorded reference/report and bounded-view contracts; this fragment adds no separate invariant or write authority. Reviewed exact changed spans [[13, 1]] at source dashboard/src/panels/TaskNotes.tsx.",
+      "subject": "hunk:sha256:3162e94db695ec8de9baf8a865022f161123ea8af79cded49f47d9c7874f5e73"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FN7YDB",
+      "items": [
+        "sha256:8f8e4503da790f4db4fb1f646ad06c8939fe139166c927b756388ff675bcc763"
+      ],
+      "reason": "Quotes and JSX wrapping change, but summary state, attribution population, count/refusal distinction and recorded/live navigation remain identical. Existing intent-count family and same-ID witnesses remain authoritative; no separate invariant is warranted. Reviewed exact changed spans [[34, 5]] at source dashboard/src/panels/detail-panel/intentReviewEntry.tsx.",
+      "subject": "hunk:sha256:8f8e4503da790f4db4fb1f646ad06c8939fe139166c927b756388ff675bcc763"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-G0HBB2",
+      "items": [
+        "sha256:1b1b9296ba066ed7649591d01010ce151ab9911020b48db684323aa273a95c15"
+      ],
+      "reason": "The remaining type/import/signature/compatibility-list glue supports the explicitly realized fixed form, complete-view and hydration contracts. Retained no-master slice list, pool passing and view handlers do not introduce a second ordering or selection authority; deleted legacy composition is not a new invariant. Reviewed exact changed spans [[1, 7]] at source dashboard/src/panels/detail-panel/taskReader.tsx.",
+      "subject": "hunk:sha256:1b1b9296ba066ed7649591d01010ce151ab9911020b48db684323aa273a95c15"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-G54VXH",
+      "items": [
+        "sha256:afc6e07edb0a6677013f2946bf2e82ad3cd3955d7664c61cd650dbc4aa56fcb8"
+      ],
+      "reason": "The remaining helper/import/Notes-line/report-row changes implement local placement and presentation already explained by the complete TaskNotes card. Reference resolution, complete-report access and whole counts are realized by the recorded reference/report and bounded-view contracts; this fragment adds no separate invariant or write authority. Reviewed exact changed spans [[286, 2]] at source dashboard/src/panels/TaskNotes.tsx.",
+      "subject": "hunk:sha256:afc6e07edb0a6677013f2946bf2e82ad3cd3955d7664c61cd650dbc4aa56fcb8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-G9AVH6",
+      "items": [
+        "sha256:ae0dc75cebaeb7f10cc599bfcbd3b92ef8931f21fb2fc139532a95bf51b9c847"
+      ],
+      "reason": "Delete-only unused reader-local TaskCodeExampleNode/TaskDecisionNode type imports after block extraction. Their consumers have current module owners; no enduring contract is retired by removing these imports. The source-only successor comparison is Owner-admitted; whole MEMORY acceptance remains independent and the ONE execution campaign remains spent.",
+      "subject": "hunk:sha256:ae0dc75cebaeb7f10cc599bfcbd3b92ef8931f21fb2fc139532a95bf51b9c847"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GEXTW6",
+      "items": [
+        "sha256:96d4ec204195f5d08dfc829360589ab543ec17ebb088b403f02fa24f82040b4a"
+      ],
+      "reason": "The imports relocate block, own-view, grouped-row and graph ownership into the existing fixed-page modules, while preserving the landed grant adapter. Their contracts are already in L127 invariant/family records and DEC-T49E67. This is dependency wiring, not a fresh execution result or new standalone invariant. The source-only successor comparison is Owner-admitted; whole MEMORY acceptance remains independent and the ONE execution campaign remains spent.",
+      "subject": "hunk:sha256:96d4ec204195f5d08dfc829360589ab543ec17ebb088b403f02fa24f82040b4a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GRRJ6G",
+      "items": [
+        "sha256:7282571d49002ae82efe4ee5c65a895d980d99bd0afd5c114d452e5e0c509a62"
+      ],
+      "reason": "DirectGrantNode moves into the grouped type import and the discarded-row type moves out to its current owner. Grant-control placement is captured by the new native decision; this type-import hunk is not a new direct-execution authorization guarantee. The source-only successor comparison is Owner-admitted; whole MEMORY acceptance remains independent and the ONE execution campaign remains spent.",
+      "subject": "hunk:sha256:7282571d49002ae82efe4ee5c65a895d980d99bd0afd5c114d452e5e0c509a62"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GVMFSA",
+      "items": [
+        "sha256:72bc14e469d8792c37fd8d0814cf3096c6800f16fb7614d65be9ab8b87915766"
+      ],
+      "reason": "The only child-source delta supplies missing typed task display fields to an existing test fixture. Production takeover, folder/read/resolve, requirement/report artifacts, mounted-hidden state and DualPane ownership are unchanged; the full route account remains accurate.",
+      "subject": "onboarding:dashboard/src/panels/notes-reader/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GYKKHN",
+      "items": [
+        "sha256:4256b5042367663d1366b899de65735b153234201ad696a738629a40cbfa4f29"
+      ],
+      "reason": "The remaining type/import/signature/compatibility-list glue supports the explicitly realized fixed form, complete-view and hydration contracts. Retained no-master slice list, pool passing and view handlers do not introduce a second ordering or selection authority; deleted legacy composition is not a new invariant. Reviewed exact changed spans [[83, 0]] at source dashboard/src/panels/detail-panel/taskReader.tsx.",
+      "subject": "hunk:sha256:4256b5042367663d1366b899de65735b153234201ad696a738629a40cbfa4f29"
+    },
+    {
+      "disposition": "changed",
+      "effect": "introduce",
+      "examined": [
+        {
+          "id": "INV-7JFCAF",
+          "revision": 1
+        },
+        {
+          "id": "INV-PHG1PR",
+          "revision": 1
+        },
+        {
+          "id": "INV-S18MK6",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-H7TRJ9",
+      "items": [],
+      "reason": "Same explicit introduced continuity guarantee and three examined members. Witness-extension added ReferenceRows/TaskReportRows directly in panels/TaskNotes.tsx, so panels is now the deepest directory covering both that direct owner and the detail-panel owners; data and the projection implementation route remain separate nonempty homes. Correct the actual Coverage finding rather than leave two witnessed entries outside the family. Successor source-witness renewal preserves all three members and the same guarantee/routes; current source readback is separate from runtime acceptance.",
+      "revision": 1,
+      "subject": "FAM-HJDGAQ"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
+            "content": "sha256:abc706fc66c912bf079523425599965ecc4855f669690a4a31d28a309280dd04",
+            "locator": {
+              "kind": "symbol",
+              "name": "MainLayers"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "before": {
+            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
+            "content": "sha256:abc706fc66c912bf079523425599965ecc4855f669690a4a31d28a309280dd04",
+            "locator": {
+              "kind": "symbol",
+              "name": "MainLayers"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "id": "RLZ-4S029K"
+        },
+        {
+          "after": {
+            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
+            "content": "sha256:c23dd6b971f43b7988e7fc3e7f775c1292d6394236c1f6e028713d6a03a65c40",
+            "locator": {
+              "kind": "symbol",
+              "name": "VIEWS"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "before": {
+            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
+            "content": "sha256:c23dd6b971f43b7988e7fc3e7f775c1292d6394236c1f6e028713d6a03a65c40",
+            "locator": {
+              "kind": "symbol",
+              "name": "VIEWS"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "id": "RLZ-51Q8P8"
+        },
+        {
+          "after": {
+            "blob": "64897ff53d10ff8d52a5fabd8dcd7371fe395867",
+            "content": "sha256:f7f0862beddb91572ee481ff3f191ac74ec8f09317ffe6873391eee8c998e076",
+            "locator": {
+              "kind": "symbol",
+              "name": "CockpitShell"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "before": {
+            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
+            "content": "sha256:19ba28765718f373b4b70dd594224499bd1aeb2c6cf77d848967a7e4dc4ade1f",
+            "locator": {
+              "kind": "symbol",
+              "name": "CockpitShell"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "id": "RLZ-Z2FC1D"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-HBP0M7",
+      "items": [
+        "sha256:6dafb9bbc2f3ee47f6d3214b4a29f8bcb9fac5c6dccab0f0729f5a5d0f5a2f4c"
+      ],
+      "reason": "Removing the mounted CRT overlay changes appearance, not the four ordered tabs, Chats opening or lazy mounting boundaries. Preserve MainLayers, VIEWS and CockpitShell and their existing statement/scope.",
+      "revision": 1,
+      "subject": "INV-XB45X4"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5af459b5f6dbd2584786398ad1c50fda3aa1ef71",
+            "content": "sha256:5de1f247d1863d8bccc61be24e00d01530da95a636000ff36bd5ac3ae5b59b83",
+            "locator": {
+              "end": 2202,
+              "kind": "line_range",
+              "start": 2202
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "cd716f3e34439809c93fd86ab3410639a5a0a98c",
+            "content": "sha256:5de1f247d1863d8bccc61be24e00d01530da95a636000ff36bd5ac3ae5b59b83",
+            "locator": {
+              "end": 2201,
+              "kind": "line_range",
+              "start": 2201
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-A31DQW"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-HG03P9",
+      "items": [],
+      "reason": "The lifecycle artifact for paseo_runtime_test_support.py still states the pinned 0.11.1 stand-in, not a live daemon assertion. Renew that same-ID witness at the actual artifact block and preserve the existing release-evidence distinctions.",
+      "revision": 1,
+      "subject": "INV-0TCWT9"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e72ca56ab09dabd435ea4fd6192f947450d63549",
+            "content": "sha256:7f2b29039b5eb969df5f4cdea1bf659589096ce678be8ff62784684c7e8d8777",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskReader"
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-4XE0XV"
+        },
+        {
+          "after": {
+            "blob": "e72ca56ab09dabd435ea4fd6192f947450d63549",
+            "content": "sha256:6f86a46734ed1ee086caffff3fed8e72cc4896dbea53914f2efd7a101f100b58",
+            "locator": {
+              "kind": "symbol",
+              "name": "MasterOverview"
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-C204CG"
+        },
+        {
+          "after": {
+            "blob": "c4e00cbb4f6be81d5574f9cc52c2222df8d6ec2a",
+            "content": "sha256:a6e281fc366a73b40645259ceb48f01a70f69881db8bd4bc083b4b8bb3b8fda0",
+            "locator": {
+              "kind": "symbol",
+              "name": "docIdentity"
+            },
+            "path": "dashboard/src/panels/detail-panel/model.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-MY1HNA"
+        },
+        {
+          "after": {
+            "blob": "e72ca56ab09dabd435ea4fd6192f947450d63549",
+            "content": "sha256:8df664e2fe24761610c3c7dca8d0b22e89d0b3cc895f0cce8a67ff0132b0c97a",
+            "locator": {
+              "kind": "symbol",
+              "name": "SprintOverview"
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-TKQSG2"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-HQ04X1",
+      "items": [],
+      "reason": "Owner decision 2026-10-12T05:56:34+02:00 admits native replacement IDs for reset-lost realizations. Preserve the same invariant meaning, original target roles/rationales and all surviving sibling identities; re-point covers to this producer entry’s live native realizations. Old-to-new identity map is reported separately; historical freezes remain untouched.",
+      "revision": 1,
+      "subject": "INV-1XA7H3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HQH1N1",
+      "items": [
+        "sha256:d8c5568c71544b771308e7b89147dd03374a7a6aaae6f7e6f5315a182fd73d6b"
+      ],
+      "reason": "The remaining helper/import/Notes-line/report-row changes implement local placement and presentation already explained by the complete TaskNotes card. Reference resolution, complete-report access and whole counts are realized by the recorded reference/report and bounded-view contracts; this fragment adds no separate invariant or write authority. Reviewed exact changed spans [[146, 2]] at source dashboard/src/panels/TaskNotes.tsx.",
+      "subject": "hunk:sha256:d8c5568c71544b771308e7b89147dd03374a7a6aaae6f7e6f5315a182fd73d6b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JNDN2W",
+      "items": [
+        "sha256:2552b9247948a4f7764aaeeb0fc7a1bfc400024c7ccf6f6e63b4eafbd00787ff"
+      ],
+      "reason": "Quote-style normalization leaves the refusal-token mapping, closed disclosure and complete owner sentence unchanged. The existing brief-state contract remains; this lexical change authors no new obligation. Reviewed exact changed spans [[59, 1]] at source dashboard/src/panels/detail-panel/entryState.tsx.",
+      "subject": "hunk:sha256:2552b9247948a4f7764aaeeb0fc7a1bfc400024c7ccf6f6e63b4eafbd00787ff"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-K96TT6",
+      "items": [
+        "sha256:3d1762a0982ec554176b5f6f1e9741496baa1c0406970f89499318fd0bc323cb"
+      ],
+      "reason": "The SeriesNode type import supports the existing series-document fixed-form path; it has no standalone behavioral invariant beyond INV-PHG1PR and the reader composition account. The source-only successor comparison is Owner-admitted; whole MEMORY acceptance remains independent and the ONE execution campaign remains spent.",
+      "subject": "hunk:sha256:3d1762a0982ec554176b5f6f1e9741496baa1c0406970f89499318fd0bc323cb"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KKKQ9G",
+      "items": [
+        "sha256:34470e30be82282aa5c870a0afccff4cbd9814fa7f25062ef86df2acfd9317ae"
+      ],
+      "reason": "One current skeleton-projection test module is registered in unit-regression. Catalog membership is selection metadata, not execution evidence or a new product invariant; the existing catalog ownership contract still governs. Reviewed exact changed spans [[324, 1]] at source mcp/tests/test-evidence-lanes.toml.",
+      "subject": "hunk:sha256:34470e30be82282aa5c870a0afccff4cbd9814fa7f25062ef86df2acfd9317ae"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-M46Y59",
+      "items": [
+        "sha256:35017576d8f0efa3925b3f7d13c89447683becb787ea60b107cd121f6b0e2b58"
+      ],
+      "reason": "The entire change is typed seed completeness (source 518-521). Takeover/keep-alive, folder/paging/cache, whole-log, requirements and recorded-report cases and transports are unchanged. Preserve the detailed card, including its cast-free/satisfies seed and explicit L126 supersession clauses.",
+      "subject": "onboarding:dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "3193c0f13cb24de874f9484c7c305a58901d4079",
+            "content": "sha256:19533bb46ab6513b3480fc58739f99fba9345ed7c450e8bb72ed04dd0da3abc5",
+            "locator": {
+              "kind": "symbol",
+              "name": "OrderBlock"
+            },
+            "path": "dashboard/src/panels/detail-panel/orderGraph.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-4ZVZXW"
+        },
+        {
+          "after": {
+            "blob": "e72ca56ab09dabd435ea4fd6192f947450d63549",
+            "content": "sha256:144e2cf21263143010633b0c1560c1798a73aad91932d45cf3a102f6f1bd7b7e",
+            "locator": {
+              "kind": "symbol",
+              "name": "SprintViewBody"
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-DD6G8V"
+        },
+        {
+          "after": {
+            "blob": "3193c0f13cb24de874f9484c7c305a58901d4079",
+            "content": "sha256:28a76feb47ac1c69c6a6efa121e4139f3868af5c1f8963ccc010c004b87f0885",
+            "locator": {
+              "kind": "symbol",
+              "name": "orderRows"
+            },
+            "path": "dashboard/src/panels/detail-panel/orderGraph.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-DST0RZ"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-M8S06E",
+      "items": [],
+      "reason": "Owner decision 2026-10-12T05:56:34+02:00 admits native replacement IDs for reset-lost realizations. Preserve the same invariant meaning, original target roles/rationales and all surviving sibling identities; re-point covers to this producer entry’s live native realizations. Old-to-new identity map is reported separately; historical freezes remain untouched.",
+      "revision": 1,
+      "subject": "INV-XJ42YM"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MF0RQ6",
+      "items": [
+        "sha256:dfc917ab9ccd4002399c346ab644dfb19054adbc8ef7a95c7d2e1f9eb0b0d492"
+      ],
+      "reason": "The remaining helper/import/Notes-line/report-row changes implement local placement and presentation already explained by the complete TaskNotes card. Reference resolution, complete-report access and whole counts are realized by the recorded reference/report and bounded-view contracts; this fragment adds no separate invariant or write authority. Reviewed exact changed spans [[15, 2]] at source dashboard/src/panels/TaskNotes.tsx.",
+      "subject": "hunk:sha256:dfc917ab9ccd4002399c346ab644dfb19054adbc8ef7a95c7d2e1f9eb0b0d492"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NHCGY9",
+      "items": [
+        "sha256:c438e0bd8a57e219fb73f5ce1d4d0b04ff16d0bcba931d170be4cf10c3b5172c"
+      ],
+      "reason": "The remaining type/import/signature/compatibility-list glue supports the explicitly realized fixed form, complete-view and hydration contracts. Retained no-master slice list, pool passing and view handlers do not introduce a second ordering or selection authority; deleted legacy composition is not a new invariant. Reviewed exact changed spans [[764, 19]] at source dashboard/src/panels/detail-panel/taskReader.tsx.",
+      "subject": "hunk:sha256:c438e0bd8a57e219fb73f5ce1d4d0b04ff16d0bcba931d170be4cf10c3b5172c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NQ1DXA",
+      "items": [
+        "sha256:247657ee5b1f1b6871d4389831a1d65da485ca64ecf4069c14aa40e00dbef2bd"
+      ],
+      "reason": "The remaining type/import/signature/compatibility-list glue supports the explicitly realized fixed form, complete-view and hydration contracts. Retained no-master slice list, pool passing and view handlers do not introduce a second ordering or selection authority; deleted legacy composition is not a new invariant. Reviewed exact changed spans [[78, 0]] at source dashboard/src/panels/detail-panel/taskReader.tsx.",
+      "subject": "hunk:sha256:247657ee5b1f1b6871d4389831a1d65da485ca64ecf4069c14aa40e00dbef2bd"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5af459b5f6dbd2584786398ad1c50fda3aa1ef71",
+            "content": "sha256:9b12859d249a28fc9f3b86fd71709f75e09e99e0d3007de756d2d4d662e1b349",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "cd716f3e34439809c93fd86ab3410639a5a0a98c",
+            "content": "sha256:b1a229d90262d5f7e225426a1c6bd854d70693e1d49500114fc478465a1e452e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GRTJG0"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-NTWE5H",
+      "items": [],
+      "reason": "The historical union-resurrection observation stays retired. L127 adds only its new projection-test consumer row to the current catalog; renewing the existing file witness neither resurrects deleted DB-era rows nor promotes this incident to a new invariant. Successor renewal on ea40194f preserves that historical retirement and current catalog semantics; the current consumer population is not an execution claim.",
+      "revision": 1,
+      "subject": "INV-MSCRAN"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NVRKH9",
+      "items": [
+        "sha256:6734a76efd58af70a742e9882c91f2ccdbf7734f09ac93e5eacebb83f56609ea"
+      ],
+      "reason": "The remaining type/import/formatting/selection-helper fragments support fixed model-derived document forms and existing identity selection without changing a second authority. The new form/identity contracts and series-only adapter have explicit realizations; this fragment is local glue, not another enduring invariant. Reviewed exact changed spans [[34, 2]] at source dashboard/src/panels/detail-panel/model.ts.",
+      "subject": "hunk:sha256:6734a76efd58af70a742e9882c91f2ccdbf7734f09ac93e5eacebb83f56609ea"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-P14QQV",
+      "items": [
+        "sha256:af608d856e383c63bc866eff051b463ad8a090a78548820535b96614acc96750"
+      ],
+      "reason": "Only JSX/source line wrapping changed; unrecorded still means no recorded endpoint, never measured empty. The existing state/disclosure invariant and its renewed witness retain that guarantee; there is no independent change in this fragment. Reviewed exact changed spans [[259, 2]] at source dashboard/src/panels/detail-panel/changeSetBar.tsx.",
+      "subject": "hunk:sha256:af608d856e383c63bc866eff051b463ad8a090a78548820535b96614acc96750"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-P81GY1",
+      "items": [
+        "sha256:d7f1864bd23f3d4fe615eda1cdff9c940cc9765fc4e1ffde8ec8da74248b4c64"
+      ],
+      "reason": "The remaining type/import/formatting/selection-helper fragments support fixed model-derived document forms and existing identity selection without changing a second authority. The new form/identity contracts and series-only adapter have explicit realizations; this fragment is local glue, not another enduring invariant. Reviewed exact changed spans [[121, 1]] at source dashboard/src/panels/detail-panel/model.ts.",
+      "subject": "hunk:sha256:d7f1864bd23f3d4fe615eda1cdff9c940cc9765fc4e1ffde8ec8da74248b4c64"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PBVZDC",
+      "items": [
+        "sha256:46787b561aa4255f16cda10a83cbd9c5c526e74180ba4014673910971ab5e271"
+      ],
+      "reason": "The remaining type/import/formatting/selection-helper fragments support fixed model-derived document forms and existing identity selection without changing a second authority. The new form/identity contracts and series-only adapter have explicit realizations; this fragment is local glue, not another enduring invariant. Reviewed exact changed spans [[100, 1]] at source dashboard/src/panels/detail-panel/model.ts.",
+      "subject": "hunk:sha256:46787b561aa4255f16cda10a83cbd9c5c526e74180ba4014673910971ab5e271"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PM7AYJ",
+      "items": [
+        "sha256:0f1a5341f441fdc8469fdd87ae67f81e289d0f54b8bb31797eef64cf378f8c96"
+      ],
+      "reason": "Quotes and JSX wrapping change, but summary state, attribution population, count/refusal distinction and recorded/live navigation remain identical. Existing intent-count family and same-ID witnesses remain authoritative; no separate invariant is warranted. Reviewed exact changed spans [[109, 2]] at source dashboard/src/panels/detail-panel/intentReviewEntry.tsx.",
+      "subject": "hunk:sha256:0f1a5341f441fdc8469fdd87ae67f81e289d0f54b8bb31797eef64cf378f8c96"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Q1BVQS",
+      "items": [
+        "sha256:6244840537698e2a4ad19966cd5ee9f153e0cdc2d72659e8ed5fdb47af3ba493"
+      ],
+      "reason": "Only typed fixture completeness changes (source 39-42); lifecycle/task-label joins, dismiss targets, optimistic hiding and blocked-start assertions are unchanged. The complete existing card describes those same assertions.",
+      "subject": "onboarding:dashboard/src/panels/AttentionQueue.test.tsx"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e72ca56ab09dabd435ea4fd6192f947450d63549",
+            "content": "sha256:0b7cc0e464272b00c46f4dc596a25d451e4bd73822052d26d80d096df2ba45e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskReaderPage"
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-87SCAF"
+        },
+        {
+          "after": {
+            "blob": "e72ca56ab09dabd435ea4fd6192f947450d63549",
+            "content": "sha256:69facaaa12b4f8484816152076427a756302d4bcc5786190ed134135af848181",
+            "locator": {
+              "kind": "symbol",
+              "name": "MasterOverviewPage"
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-CH8ER2"
+        },
+        {
+          "after": {
+            "blob": "c4e00cbb4f6be81d5574f9cc52c2222df8d6ec2a",
+            "content": "sha256:559d90cd9c4941878dd24d916e1f233c5b38c1721bc2c2040f34b40a29f97ee0",
+            "locator": {
+              "kind": "symbol",
+              "name": "docForm"
+            },
+            "path": "dashboard/src/panels/detail-panel/model.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-G6JP82"
+        },
+        {
+          "after": {
+            "blob": "c4e00cbb4f6be81d5574f9cc52c2222df8d6ec2a",
+            "content": "sha256:1d071d65839be808fa1a1f35184ebc7895e1ba360bfa26d66ae0d57d2b2f7297",
+            "locator": {
+              "kind": "symbol",
+              "name": "seriesAsMasterDoc"
+            },
+            "path": "dashboard/src/panels/detail-panel/model.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-MZ21TT"
+        },
+        {
+          "after": {
+            "blob": "98b3a5ce52dcbefe1a88012783d0118d8842fca1",
+            "content": "sha256:46c2a777ab95f81e8dd34fa27c663d4b4c9f31dde348ba1840804c99cf9c52a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "MasterBranch"
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-QN19T1"
+        },
+        {
+          "after": {
+            "blob": "e72ca56ab09dabd435ea4fd6192f947450d63549",
+            "content": "sha256:b88a1deda62ce6974c048b066e27c40b145ba69573b8a5dbe862f46481a78c06",
+            "locator": {
+              "kind": "symbol",
+              "name": "SprintOverviewPage"
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-RX5RNR"
+        },
+        {
+          "after": {
+            "blob": "e72ca56ab09dabd435ea4fd6192f947450d63549",
+            "content": "sha256:b28c2ac52b3b78bc707a258d29bdb31a1ac93a83735e4e052aa0f3cf0581ee67",
+            "locator": {
+              "kind": "symbol",
+              "name": "OverviewTop"
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-SKSCWV"
+        },
+        {
+          "after": {
+            "blob": "e72ca56ab09dabd435ea4fd6192f947450d63549",
+            "content": "sha256:91aac48b29d99c74636870bd6952532ff4843407c8bf7ab6763f671b55a1c8fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "MasterPageBody"
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-Y0W92H"
+        },
+        {
+          "after": {
+            "blob": "98b3a5ce52dcbefe1a88012783d0118d8842fca1",
+            "content": "sha256:0672ae353f7bd0b1d003acd48c6def37c68ab93f7b229c601a1a6200775f5d92",
+            "locator": {
+              "kind": "symbol",
+              "name": "SeriesBranch"
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-ZVGY6H"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-Q4PXEZ",
+      "items": [],
+      "reason": "Owner decision 2026-10-12T05:56:34+02:00 admits native replacement IDs for reset-lost realizations. Preserve the same invariant meaning, original target roles/rationales and all surviving sibling identities; re-point covers to this producer entry’s live native realizations. Old-to-new identity map is reported separately; historical freezes remain untouched.",
+      "revision": 1,
+      "subject": "INV-PHG1PR"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Q6A3N8",
+      "items": [
+        "sha256:f008a6e8de6326e3f52c7f36b6ad0562dcdb32114f9dfac2b4dff87be3ebdf61"
+      ],
+      "reason": "The module purpose/import block now describes the already-authored fixed skeleton and objective-first head. React hooks preserve the incoming control; identity imports support existing selected-document state. Obligations remain in the existing L127 records and grant-port decision, not a new import-level invariant. The source-only successor comparison is Owner-admitted; whole MEMORY acceptance remains independent and the ONE execution campaign remains spent.",
+      "subject": "hunk:sha256:f008a6e8de6326e3f52c7f36b6ad0562dcdb32114f9dfac2b4dff87be3ebdf61"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Q6AMK2",
+      "items": [
+        "sha256:57e5f7fd3111e06bb40faf2d4e81d9e1d7652b140a255e21bab3408c704183e9"
+      ],
+      "reason": "Baseline/current lexical comparison after formatting normalization has no changed tokens. Counter refusal, generation pins, leaf attribution and live/recorded compact-review cases retain their fixtures and assertions. Preserve prose, including historical measured outcomes; none was re-executed here.",
+      "subject": "onboarding:dashboard/src/panels/detail-panel/changeSetBar.test.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QFH0RZ",
+      "items": [
+        "sha256:d7140f67b780893af6e1b860c2d5ae3cb466488489a34e9dc4643ff557e46cd6"
+      ],
+      "reason": "Quotes and JSX wrapping change, but summary state, attribution population, count/refusal distinction and recorded/live navigation remain identical. Existing intent-count family and same-ID witnesses remain authoritative; no separate invariant is warranted. Reviewed exact changed spans [[65, 6]] at source dashboard/src/panels/detail-panel/intentReviewEntry.tsx.",
+      "subject": "hunk:sha256:d7140f67b780893af6e1b860c2d5ae3cb466488489a34e9dc4643ff557e46cd6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QXV770",
+      "items": [
+        "sha256:58c329b263cbac0c84d8c8c898e011fb2fe00c83fcdd8ee63c457f6437131696"
+      ],
+      "reason": "Delete-only old inline row-order commentary accompanies the fixed reader extraction. Existing task-groups and slice-list accounts retain the received-master/creation-ordered-series distinction; deletion of this comment introduces no independent invariant. The source-only successor comparison is Owner-admitted; whole MEMORY acceptance remains independent and the ONE execution campaign remains spent.",
+      "subject": "hunk:sha256:58c329b263cbac0c84d8c8c898e011fb2fe00c83fcdd8ee63c457f6437131696"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "316629d0c8fb07af90b3b3526997da60f2a46898",
+            "content": "sha256:14e80730ab07d7d43dc99018799af181b630e96b07f7bc9ba74c1111b4c462a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeafEntries"
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "before": {
+            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
+            "content": "sha256:14e80730ab07d7d43dc99018799af181b630e96b07f7bc9ba74c1111b4c462a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeafEntries"
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "id": "RLZ-7N70C8T7"
+        },
+        {
+          "after": {
+            "blob": "78855920faa4d3b0902e62b1fe548015cb9bb2a0",
+            "content": "sha256:c4eeb2f3ed8b12d26a8d19faaca6f97968a8b673bc9bd021a00141f34312a0ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntentReviewEntry"
+            },
+            "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
+          },
+          "before": {
+            "blob": "9f16a4ea899010aae0203cfd8712a007026dabf6",
+            "content": "sha256:087f9600600b0b76e0eb0c421d8a83a2909722e81f9467a1d97d0ecba7029bf3",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntentReviewEntry"
+            },
+            "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
+          },
+          "id": "RLZ-DDY3VDR2"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-R47GGQ",
+      "items": [
+        "sha256:a9709f4d388e83117422fe6f69910a67229214ced21b01f9b77335a183a091ca"
+      ],
+      "reason": "The single Intent review control retains task-context comparison, changed-intent numbers, measured attribution and distinct unavailable/partial states. Formatting and the quiet/link-style presentation add no picker, refresh control or backend paragraph; retain both witnesses and the full existing statement.",
+      "revision": 3,
+      "subject": "INV-T0EWDB7H"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c4e00cbb4f6be81d5574f9cc52c2222df8d6ec2a",
+            "content": "sha256:902f4948895e4fedf5ead4a5e6a1a01b57c115cb63c2b64e2e43c5369f729ab3",
+            "locator": {
+              "kind": "symbol",
+              "name": "orderDecisionsNewestFirst"
+            },
+            "path": "dashboard/src/panels/detail-panel/model.ts"
+          },
+          "before": {
+            "blob": "0f296666b82f5bb9bb5fd92fda9a2080578cd566",
+            "content": "sha256:b500adade27093aeef1c49a094b3d928f2901b440ec4f1e610f01b3a4b9c32db",
+            "locator": {
+              "kind": "symbol",
+              "name": "orderDecisionsNewestFirst"
+            },
+            "path": "dashboard/src/panels/detail-panel/model.ts"
+          },
+          "id": "RLZ-7AK9A1"
+        },
+        {
+          "after": {
+            "blob": "fff532d24f22e0482cef85179d0fefcd6a6a6cbb",
+            "content": "sha256:9e5060df5ed7f24433425132325bf4cdf358d354da4db8e768c9c329966d26cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "DecisionPreview"
+            },
+            "path": "dashboard/src/panels/detail-panel/skeletons.tsx"
+          },
+          "before": {
+            "blob": "fef890e43c974cfc45372f5af782e92a1fb0a2d0",
+            "content": "sha256:579d4c1df744e05cc5dd0f3cb90ac1b9420cda0cf53aa9df637221df5a063f47",
+            "locator": {
+              "kind": "symbol",
+              "name": "DecisionPreview"
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "id": "RLZ-C2WSJF"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-S047YB",
+      "items": [],
+      "reason": "Newest-authored ordering/count semantics remain unchanged. The pure model helper stays; DecisionPreview moved from taskReader to skeletons and retains its exact contract. Preserve the existing realization IDs and requirement meaning, not the old component location. Supported 857c7e5f duplicate-copy settlement keeps one RLZ-C2WSJF at the actual DecisionPreview definition in skeletons; its taskReader re-export is not a second realization. Identity, inherited origin, authored rationale/role and sibling helper witness remain unchanged.",
+      "revision": 1,
+      "subject": "INV-NBCGCF"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-S5D92F",
+      "items": [
+        "sha256:1b3bf8af8e9514dbf8b82752c410366f3c65335765e66b7584145b1f31be31e6"
+      ],
+      "reason": "The complete route overview already states source-owned lane/catalog populations, independent projection/reader tests and membership-not-execution. Adding the skeleton module changes a declared population, not route purpose or test ownership; the assigned overview references were separately reconciled/read back.",
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b0b00e2c19893632a2e3538aed7e2c3f84153a00",
+            "content": "sha256:8e623359fb49981fca71c750727c98f987b2095e8157ea69adedf6b2a5362d65",
+            "locator": {
+              "kind": "symbol",
+              "name": "_task_doc_body_revision"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
+          },
+          "before": "absent",
+          "id": "RLZ-9NE2GP"
+        },
+        {
+          "after": {
+            "blob": "e72ca56ab09dabd435ea4fd6192f947450d63549",
+            "content": "sha256:2bd524db0bebdba85ca53bb4b8f6c7f4c1e5c9237bd9251a733193e7f683ba8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskBodyNotice"
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-CE8WSX"
+        },
+        {
+          "after": {
+            "blob": "e72ca56ab09dabd435ea4fd6192f947450d63549",
+            "content": "sha256:99b9442530e34de571971d8219d9d993f325bf3afa29fe9b5b43551ebf961da6",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskContent"
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-DGKE4D"
+        },
+        {
+          "after": {
+            "blob": "0023b5ebee87ba18db185d17163f865e3f3ea332",
+            "content": "sha256:95bc04aaaadf24db1bc94bac01115d5a9a6ff66c200d480fd21240752ef15128",
+            "locator": {
+              "kind": "symbol",
+              "name": "mergeTaskDocumentBody"
+            },
+            "path": "dashboard/src/data/useTaskDocumentBody.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-ZJ4AM6"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-SQ5KXC",
+      "items": [],
+      "reason": "Owner decision 2026-10-12T05:56:34+02:00 admits native replacement IDs for reset-lost realizations. Preserve the same invariant meaning, original target roles/rationales and all surviving sibling identities; re-point covers to this producer entry’s live native realizations. Old-to-new identity map is reported separately; historical freezes remain untouched.",
+      "revision": 1,
+      "subject": "INV-S18MK6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SYQY06",
+      "items": [
+        "sha256:59fafad129e6a376d8eb8409920511bcfbe5afd3c1aa7bf02b1a9ca8ec10393a"
+      ],
+      "reason": "The remaining type/import/formatting/selection-helper fragments support fixed model-derived document forms and existing identity selection without changing a second authority. The new form/identity contracts and series-only adapter have explicit realizations; this fragment is local glue, not another enduring invariant. Reviewed exact changed spans [[209, 29]] at source dashboard/src/panels/detail-panel/model.ts.",
+      "subject": "hunk:sha256:59fafad129e6a376d8eb8409920511bcfbe5afd3c1aa7bf02b1a9ca8ec10393a"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-115RDW8H",
+          "revision": 2
+        },
+        {
+          "id": "INV-74578B97",
+          "revision": 2
+        },
+        {
+          "id": "INV-8BYGSPZF",
+          "revision": 2
+        },
+        {
+          "id": "INV-8FWJM8RR",
+          "revision": 2
+        },
+        {
+          "id": "INV-EZ8QKFX6",
+          "revision": 2
+        },
+        {
+          "id": "INV-R93S8Y30",
+          "revision": 2
+        },
+        {
+          "id": "INV-SVZY1FHR",
+          "revision": 2
+        },
+        {
+          "id": "INV-T0EWDB7H",
+          "revision": 3
+        },
+        {
+          "id": "INV-TH4KXFTX",
+          "revision": 2
+        },
+        {
+          "id": "INV-WCEGX72X",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-T1FC3C",
+      "items": [
+        "sha256:6f06cbfa6fddaaa1ab48376a98b17ba3b77ef9eee55e7605b7effe52fde380f0"
+      ],
+      "reason": "Examined all ten members, the joint changed-intent/count/refusal/revalidation guarantee and its six routes. L127 preserves comparison ownership and whole measured changed-intent/attribution states; the two touched presentation members retain their meanings and existing same-ID witnesses were renewed. The other eight members and routes are unchanged. Fixed task-page forms do not replace this family with visual grouping, so no member, guarantee or route update is justified.",
+      "revision": 3,
+      "subject": "FAM-WEF4M4H1"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-T4BNFG",
+      "items": [
+        "sha256:d026d1b12de5bf11873499a4d7abcf6f6a50fc7464f72d51076983b8187c1ad3"
+      ],
+      "reason": "Quote-style normalization leaves the refusal-token mapping, closed disclosure and complete owner sentence unchanged. The existing brief-state contract remains; this lexical change authors no new obligation. Reviewed exact changed spans [[55, 2]] at source dashboard/src/panels/detail-panel/entryState.tsx.",
+      "subject": "hunk:sha256:d026d1b12de5bf11873499a4d7abcf6f6a50fc7464f72d51076983b8187c1ad3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-T9N825",
+      "items": [
+        "sha256:c70dcfc21993ed872da26e534db361429e39250480c4bb07963e644ca4c9d5ae"
+      ],
+      "reason": "The remaining type/import/formatting/selection-helper fragments support fixed model-derived document forms and existing identity selection without changing a second authority. The new form/identity contracts and series-only adapter have explicit realizations; this fragment is local glue, not another enduring invariant. Reviewed exact changed spans [[27, 6]] at source dashboard/src/panels/detail-panel/model.ts.",
+      "subject": "hunk:sha256:c70dcfc21993ed872da26e534db361429e39250480c4bb07963e644ca4c9d5ae"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TB5N4C",
+      "items": [
+        "sha256:f333f55399272fbc8fef0a7487685bcaf8f17f0e951191271cca81596f583838"
+      ],
+      "reason": "Quotes and JSX wrapping change, but summary state, attribution population, count/refusal distinction and recorded/live navigation remain identical. Existing intent-count family and same-ID witnesses remain authoritative; no separate invariant is warranted. Reviewed exact changed spans [[25, 5]] at source dashboard/src/panels/detail-panel/intentReviewEntry.tsx.",
+      "subject": "hunk:sha256:f333f55399272fbc8fef0a7487685bcaf8f17f0e951191271cca81596f583838"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-V1VNVD",
+      "items": [
+        "sha256:d99d2511a24da9fb33534ed05b21f99e607d3b5a4b23b45de7d3bea96c1db80c"
+      ],
+      "reason": "The remaining helper/import/Notes-line/report-row changes implement local placement and presentation already explained by the complete TaskNotes card. Reference resolution, complete-report access and whole counts are realized by the recorded reference/report and bounded-view contracts; this fragment adds no separate invariant or write authority. Reviewed exact changed spans [[21, 8]] at source dashboard/src/panels/TaskNotes.tsx.",
+      "subject": "hunk:sha256:d99d2511a24da9fb33534ed05b21f99e607d3b5a4b23b45de7d3bea96c1db80c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-V355RG",
+      "items": [
+        "sha256:1450487200430b7e934c12d8abb9ebe531e8fee69f3a7848d16aeb360972064a"
+      ],
+      "reason": "The remaining type/import/signature/compatibility-list glue supports the explicitly realized fixed form, complete-view and hydration contracts. Retained no-master slice list, pool passing and view handlers do not introduce a second ordering or selection authority; deleted legacy composition is not a new invariant. Reviewed exact changed spans [[853, 3]] at source dashboard/src/panels/detail-panel/taskReader.tsx.",
+      "subject": "hunk:sha256:1450487200430b7e934c12d8abb9ebe531e8fee69f3a7848d16aeb360972064a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WCD5GF",
+      "items": [
+        "sha256:fe10cab5d84b0a0a87e9e58517df848d70ab43e163807c387155b63993abc72f"
+      ],
+      "reason": "The remaining type/import/formatting/selection-helper fragments support fixed model-derived document forms and existing identity selection without changing a second authority. The new form/identity contracts and series-only adapter have explicit realizations; this fragment is local glue, not another enduring invariant. Reviewed exact changed spans [[146, 1], [181, 1]] at source dashboard/src/panels/detail-panel/model.ts.",
+      "subject": "hunk:sha256:fe10cab5d84b0a0a87e9e58517df848d70ab43e163807c387155b63993abc72f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WKAECZ",
+      "items": [
+        "sha256:da00458e5964484dc6f78e2585cf440d3b798ab942d0e9c673a764a61e4886b2"
+      ],
+      "reason": "The remaining helper/import/Notes-line/report-row changes implement local placement and presentation already explained by the complete TaskNotes card. Reference resolution, complete-report access and whole counts are realized by the recorded reference/report and bounded-view contracts; this fragment adds no separate invariant or write authority. Reviewed exact changed spans [[467, 11]] at source dashboard/src/panels/TaskNotes.tsx.",
+      "subject": "hunk:sha256:da00458e5964484dc6f78e2585cf440d3b798ab942d0e9c673a764a61e4886b2"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-WY0DRG",
+      "items": [
+        "sha256:4e637c9ed7417b8f1eab2e844854e38c04049d12cf396e0b5af2a9de2cff8d05"
+      ],
+      "reason": "No changed non-formatting tokens; all six DecisionPreview cases retain input order, authored/product distinction, five-item selection and callback payload. Preserve existing ordering/count prose; its historical mutation claims were not re-executed.",
+      "subject": "onboarding:dashboard/src/panels/detail-panel/decisionPreview.test.tsx"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-XN38TG",
+      "items": [
+        "sha256:9a0d799d30d44df3f53ae6accbdd9675f3f0317ff221f2256c19270a15e3366c"
+      ],
+      "reason": "The complete card already describes unrecorded/empty/refusal states, closed owner disclosures, liveness and summary ownership. The delta is JSX/text line wrapping only; actual rendered words and operations are unchanged.",
+      "subject": "onboarding:dashboard/src/panels/detail-panel/changeSetBar.tsx"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-XNA6P6",
+      "items": [
+        "sha256:f9372188370fec9d9714fe77e744b32ae028ad635800d87bafa22415d0f30a03"
+      ],
+      "reason": "Existing card describes typed builders, grouping seeds and shared cleanup, all of which remain accurate. No lifecycle-list assertions or cleanup logic changed. Historical seriesNode alignment prose remains historical, not a blanket assertion about this new delta. New form override consistency is separately flagged as a code concern, not used to rewrite correct prose.",
+      "subject": "onboarding:dashboard/src/panels/lifecycle-list/test-utils.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-XQ1KDD",
+      "items": [
+        "sha256:3a3fcdca04a0619b5757b5cafa4f4ce0d41ceffe6e23c143dd16483612dca5d1"
+      ],
+      "reason": "The remaining type/import/signature/compatibility-list glue supports the explicitly realized fixed form, complete-view and hydration contracts. Retained no-master slice list, pool passing and view handlers do not introduce a second ordering or selection authority; deleted legacy composition is not a new invariant. Reviewed exact changed spans [[704, 12]] at source dashboard/src/panels/detail-panel/taskReader.tsx.",
+      "subject": "hunk:sha256:3a3fcdca04a0619b5757b5cafa4f4ce0d41ceffe6e23c143dd16483612dca5d1"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-XW65B0",
+      "items": [
+        "sha256:134ead909a2d1fd7bb79f091d0f1ab1a6d33b8427f3a758ee66b9f0147ca8048"
+      ],
+      "reason": "The remaining type/import/formatting/selection-helper fragments support fixed model-derived document forms and existing identity selection without changing a second authority. The new form/identity contracts and series-only adapter have explicit realizations; this fragment is local glue, not another enduring invariant. Reviewed exact changed spans [[15, 1]] at source dashboard/src/panels/detail-panel/model.ts.",
+      "subject": "hunk:sha256:134ead909a2d1fd7bb79f091d0f1ab1a6d33b8427f3a758ee66b9f0147ca8048"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-XW84CT",
+      "items": [
+        "sha256:b42f834cc17f16a0bb50280b97ac0e03fa14110f25d01e65d47d26d73983dd56"
+      ],
+      "reason": "Both gate-request drawer and obsolete ask-only-box absence cases retain their exact selected IDs, interactions and assertions. Existing suite purpose and split-preservation statement remain true for this delta.",
+      "subject": "onboarding:dashboard/src/panels/detail-panel/gateRespond.test.tsx"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-XX594G",
+      "items": [
+        "sha256:845371c2d23ea28956da2a4e6f4a35566dcb820bc0e7bfda467bfa64578b5683"
+      ],
+      "reason": "No changed non-formatting tokens. Zero-edge, segmented waves/reason, data-frontier, exported grid responsive styles and leaf ch-growth checks remain unchanged. Existing component-forcing and jsdom style-boundary prose describes the same suite; this survey does not re-grade the changed production component.",
+      "subject": "onboarding:dashboard/src/panels/sprint-graph/SprintGraphView.test.tsx"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "cc94281379ec05363f5271bd286a082c5e8529ae",
+            "content": "sha256:f9bee20c58215c2a0bcb4de3f55e334d2587834852f74a1e57c9597a58c3f820",
+            "locator": {
+              "kind": "symbol",
+              "name": "EntryStateDetails"
+            },
+            "path": "dashboard/src/panels/detail-panel/entryState.tsx"
+          },
+          "before": {
+            "blob": "08b834804e69b920387becdd55cd9cb21a584689",
+            "content": "sha256:f9bee20c58215c2a0bcb4de3f55e334d2587834852f74a1e57c9597a58c3f820",
+            "locator": {
+              "kind": "symbol",
+              "name": "EntryStateDetails"
+            },
+            "path": "dashboard/src/panels/detail-panel/entryState.tsx"
+          },
+          "id": "RLZ-7T9XTN8G"
+        },
+        {
+          "after": {
+            "blob": "316629d0c8fb07af90b3b3526997da60f2a46898",
+            "content": "sha256:f709534c1e156d88c7c1b3e810cd1d44b90ecf1b34df0d9f7f3842e54e67095c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangeSetReadState"
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "before": {
+            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
+            "content": "sha256:b538defda103ff9349badef81ccce44b1f1b5010a275ef703559a6ed173b56ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangeSetReadState"
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "id": "RLZ-YNHTQMA1"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-XZRC95",
+      "items": [
+        "sha256:98230c3d1214501bd0bbb57f36512e95fbdacc3db9a1fedeea3665e6660fbea8"
+      ],
+      "reason": "Change-set and Intent review still show brief states with the owner details in their closed disclosure. Quiet/current-page presentation does not turn unavailable into zero or change the named codes. Preserve both existing witnesses and scope.",
+      "revision": 2,
+      "subject": "INV-TH4KXFTX"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YAFXW0",
+      "items": [
+        "sha256:a7b580f052a83be7614a2a94c8a3b2c62badd2e5c07928bf0926ed686fa201da"
+      ],
+      "reason": "Quotes and JSX wrapping change, but summary state, attribution population, count/refusal distinction and recorded/live navigation remain identical. Existing intent-count family and same-ID witnesses remain authoritative; no separate invariant is warranted. Reviewed exact changed spans [[128, 1]] at source dashboard/src/panels/detail-panel/intentReviewEntry.tsx.",
+      "subject": "hunk:sha256:a7b580f052a83be7614a2a94c8a3b2c62badd2e5c07928bf0926ed686fa201da"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YARA4Q",
+      "items": [
+        "sha256:912968038d1ea7eb6ef0f4aa285cacf6e413edb0ede5c544a73bfdb98488a67e"
+      ],
+      "reason": "The React import adds useEffectEvent for the explicitly documented reference-resolution keyed effect. The old joined-text key remains, including []/one-empty-text equivalence; this import has no independent invariant or durable task mutation authority.",
+      "subject": "hunk:sha256:912968038d1ea7eb6ef0f4aa285cacf6e413edb0ede5c544a73bfdb98488a67e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YGTPX0",
+      "items": [
+        "sha256:066650c019044516969a2d492366f1d6126caefa10081be517b9ab43ba592210"
+      ],
+      "reason": "Quote-style normalization leaves the refusal-token mapping, closed disclosure and complete owner sentence unchanged. The existing brief-state contract remains; this lexical change authors no new obligation. Reviewed exact changed spans [[8, 1]] at source dashboard/src/panels/detail-panel/entryState.tsx.",
+      "subject": "hunk:sha256:066650c019044516969a2d492366f1d6126caefa10081be517b9ab43ba592210"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YR4RWG",
+      "items": [
+        "sha256:92d4d8415f39615b2dcd909307634689f3f1207287426af7a367b31c33a0d772"
+      ],
+      "reason": "The remaining type/import/signature/compatibility-list glue supports the explicitly realized fixed form, complete-view and hydration contracts. Retained no-master slice list, pool passing and view handlers do not introduce a second ordering or selection authority; deleted legacy composition is not a new invariant. Reviewed exact changed spans [[14, 5]] at source dashboard/src/panels/detail-panel/taskReader.tsx.",
+      "subject": "hunk:sha256:92d4d8415f39615b2dcd909307634689f3f1207287426af7a367b31c33a0d772"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZB61YB",
+      "items": [
+        "sha256:46cfefac15d6b7117019cc1ad8ca68effa67f9dfe24d703971c9b324453a6a87"
+      ],
+      "reason": "Quotes and JSX wrapping change, but summary state, attribution population, count/refusal distinction and recorded/live navigation remain identical. Existing intent-count family and same-ID witnesses remain authoritative; no separate invariant is warranted. Reviewed exact changed spans [[113, 3]] at source dashboard/src/panels/detail-panel/intentReviewEntry.tsx.",
+      "subject": "hunk:sha256:46cfefac15d6b7117019cc1ad8ca68effa67f9dfe24d703971c9b324453a6a87"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZDNJGW",
+      "items": [
+        "sha256:35a78b1491a03f55fe1b5b2afb8e441cf329a609ac7ba55dc4a95fef8de35a85"
+      ],
+      "reason": "The remaining type/import/formatting/selection-helper fragments support fixed model-derived document forms and existing identity selection without changing a second authority. The new form/identity contracts and series-only adapter have explicit realizations; this fragment is local glue, not another enduring invariant. Reviewed exact changed spans [[19, 1]] at source dashboard/src/panels/detail-panel/model.ts.",
+      "subject": "hunk:sha256:35a78b1491a03f55fe1b5b2afb8e441cf329a609ac7ba55dc4a95fef8de35a85"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZXFF5D",
+      "items": [
+        "sha256:3f78e3c2f62dfe26c5773704fd8ab7d5d89525a3e3c25b65d0d6606d33741183"
+      ],
+      "reason": "The remaining type/import/signature/compatibility-list glue supports the explicitly realized fixed form, complete-view and hydration contracts. Retained no-master slice list, pool passing and view handlers do not introduce a second ordering or selection authority; deleted legacy composition is not a new invariant. Reviewed exact changed spans [[355, 2]] at source dashboard/src/panels/detail-panel/taskReader.tsx.",
+      "subject": "hunk:sha256:3f78e3c2f62dfe26c5773704fd8ab7d5d89525a3e3c25b65d0d6606d33741183"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZXRRMQ",
+      "items": [
+        "sha256:e23420ad0f25729deffdac340681e2ac6651016734b872af48c642fb6a3c5402"
+      ],
+      "reason": "Quotes and JSX wrapping change, but summary state, attribution population, count/refusal distinction and recorded/live navigation remain identical. Existing intent-count family and same-ID witnesses remain authoritative; no separate invariant is warranted. Reviewed exact changed spans [[43, 1], [121, 1]] at source dashboard/src/panels/detail-panel/intentReviewEntry.tsx.",
+      "subject": "hunk:sha256:e23420ad0f25729deffdac340681e2ac6651016734b872af48c642fb6a3c5402"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

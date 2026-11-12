@@ -1,0 +1,74 @@
+{
+  "path": "mcp/tests/test_reference_anchor_integration_owners.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "90e51c478ff0c421db31a15ad412a73082cbf6d6",
+        "content": "sha256:b3341f89e3481cc802d4670f7581ce7ef5543449f9cc316f936f07feb48b1bee",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_leaf_integration_rejudges_the_pair_despite_an_old_full_quality_receipt"
+        }
+      },
+      "facet": "Integration rejudges the pair, so an older receipt cannot publish stale anchors.",
+      "id": "PRF-0G7P48",
+      "invariant": "INV-033XSD",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §5-§7 publication-refuses-stale-anchor",
+        "leaf": "260928-MIK-L191"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Leaf integration rejudges the pair despite an old full-quality receipt, and lands after the anchor repair",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90e51c478ff0c421db31a15ad412a73082cbf6d6",
+            "content": "sha256:b3341f89e3481cc802d4670f7581ce7ef5543449f9cc316f936f07feb48b1bee",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_leaf_integration_rejudges_the_pair_despite_an_old_full_quality_receipt"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Early closeout recovery judges the immutable output through the exact gate, never the preflight",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90e51c478ff0c421db31a15ad412a73082cbf6d6",
+            "content": "sha256:cb81adfd4690d72d012b2dc0f6192cd17debf1b76d1e440a07570b4d574c0024",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_native_early_closeout_recovery_judges_the_immutable_output_without_preflight_shadowing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Checkpoint, final and recorded series publications refuse synced anchor debt and publish a real leaf repair",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90e51c478ff0c421db31a15ad412a73082cbf6d6",
+            "content": "sha256:0289281afcaa0840c3e24712273202305b0087783c6d7a6113941997488d9c69",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_series_publication_refuses_synced_anchor_debt_and_publishes_a_real_leaf_repair"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

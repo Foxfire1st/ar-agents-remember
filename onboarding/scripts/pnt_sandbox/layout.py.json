@@ -1,0 +1,161 @@
+{
+  "path": "scripts/pnt_sandbox/layout.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "39a341df3b1d84adea934601476aedc2e735a024",
+        "content": "sha256:6f67c8bcf89df24cd8fd93f346674fd5f696e20e4fa674621d6f188e7d54341a",
+        "locator": {
+          "kind": "symbol",
+          "name": "LIVE_PORTS"
+        }
+      },
+      "id": "RLZ-6P1VKT",
+      "invariant": "INV-RPMFGP",
+      "origin": {
+        "handoffEntry": "MIK-R181@v2 §2",
+        "leaf": "260928-MIK-L179"
+      },
+      "rationale": "One definition of the developer's live ports, read by both the command line and the helper, so a sandbox port and a live port cannot drift apart between the two.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "39a341df3b1d84adea934601476aedc2e735a024",
+        "content": "sha256:63f84551be572079dc98b5238db32333b22b90689b39b80f041bccf152daf7cd",
+        "locator": {
+          "kind": "symbol",
+          "name": "paseo_listen"
+        }
+      },
+      "id": "RLZ-EGXC70",
+      "invariant": "INV-RPMFGP",
+      "origin": {
+        "handoffEntry": "MIK-R181@v2 §2",
+        "leaf": "260928-MIK-L179"
+      },
+      "rationale": "The sandbox's listen address is the layout's loopback endpoint at its own port; the admission compares the resolved listen against this value.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "39a341df3b1d84adea934601476aedc2e735a024",
+        "content": "sha256:b2fce4bca2ccc431efcc30847dc8e67aabb71b6ce4b4fff42f7cf206cea1046e",
+        "locator": {
+          "kind": "symbol",
+          "name": "DASHBOARD_PORT"
+        }
+      },
+      "id": "RLZ-HHBARP",
+      "invariant": "INV-G0Z661",
+      "origin": {
+        "handoffEntry": "PNT-R11@v1 §2a / Ports (no fallback)",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Defines the canonical dashboard port used by launch and ownership checks.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "39a341df3b1d84adea934601476aedc2e735a024",
+        "content": "sha256:ff679d4c997c12dfdc59e38238121a4f0101f03179b49a017262b8a62ab294d3",
+        "locator": {
+          "kind": "symbol",
+          "name": "PASEO_PORT"
+        }
+      },
+      "id": "RLZ-JKTW8X",
+      "invariant": "INV-G0Z661",
+      "origin": {
+        "handoffEntry": "PNT-R11@v1 §2a / Ports (no fallback)",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Defines the canonical Paseo port used by generated settings and start.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "39a341df3b1d84adea934601476aedc2e735a024",
+        "content": "sha256:d284e2028af1e64bc2308e4e059b382a80559b21efd163aac2e0b7c25e6b1321",
+        "locator": {
+          "kind": "symbol",
+          "name": "paseo_home"
+        }
+      },
+      "id": "RLZ-Q95PS6",
+      "invariant": "INV-RPMFGP",
+      "origin": {
+        "handoffEntry": "MIK-R181@v2 §2",
+        "leaf": "260928-MIK-L179"
+      },
+      "rationale": "The sandbox's home is derived from its directory here; this is the independent source the admission compares against, and the reason a host named by a settings file cannot vouch for itself.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The scoped current source carries the module/document behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39a341df3b1d84adea934601476aedc2e735a024",
+            "content": "sha256:17ae6b579a3493196fad30d102ad1f42c6858a41430227166ee69a475b39511f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The reserved port defaults.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39a341df3b1d84adea934601476aedc2e735a024",
+            "content": "sha256:ff679d4c997c12dfdc59e38238121a4f0101f03179b49a017262b8a62ab294d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "PASEO_PORT"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The dashboard port default.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39a341df3b1d84adea934601476aedc2e735a024",
+            "content": "sha256:b2fce4bca2ccc431efcc30847dc8e67aabb71b6ce4b4fff42f7cf206cea1046e",
+            "locator": {
+              "kind": "symbol",
+              "name": "DASHBOARD_PORT"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The shared live-port constant is the single definition of the developer's ports that the CLI and the helper refuse.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39a341df3b1d84adea934601476aedc2e735a024",
+            "content": "sha256:6f67c8bcf89df24cd8fd93f346674fd5f696e20e4fa674621d6f188e7d54341a",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIVE_PORTS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

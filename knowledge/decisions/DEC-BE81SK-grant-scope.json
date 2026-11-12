@@ -1,0 +1,61 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The old forms were weighed and rejected; future grant, reader and publication changes must preserve the chosen product-owned boundary."
+  },
+  "alternatives": [
+    {
+      "option": "Canonical leaf plus readable grant and exact master series contract, with separate role artifact folders",
+      "reason": "It keeps product-derived roots without creating an enclosure or committing role artifacts.",
+      "status": "chosen"
+    },
+    {
+      "option": "Unconditional leaf enclosure or caller/environment roots",
+      "reason": "An enclosure contradicts direct execution; caller roots discard canonical admission.",
+      "reconsider_when": "Reconsider if the approved direct workspace/root-authority model changes.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "It keeps product-derived roots without creating an enclosure or committing role artifacts."
+  ],
+  "context": "A direct leaf has no enclosure but needs canonical reader/revival admission.",
+  "decider": "Developer D63/D74 and canonical Architect MIK-R94 scope/two-check rulings",
+  "id": "DEC-BE81SK",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-PH30YW"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R94",
+        "packet": "requirements/MIK-R94-v1-direct-execution-is-a-property-of-the-task.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "D63/D74, canonical 2026-10-07 Architect grant/scope rulings and two-check ruling71f673a42c10f96961a71579ff71412ee6df331bc551e432f86b13094618f8f0; alternatives are the actual old settings/task-flag/enclosure/door forms weighed by those authorities."
+      ],
+      "path": "knowledge-handoff.json"
+    },
+    "handoffEntry": "L94-CUR-decision-grant-scope",
+    "leaf": "260928-MIK-L94",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

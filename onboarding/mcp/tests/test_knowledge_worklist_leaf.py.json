@@ -1,0 +1,485 @@
+{
+  "path": "mcp/tests/test_knowledge_worklist_leaf.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "e159e3fdc8444fdd57cce28d9f770103e7ac3cb6",
+        "content": "sha256:5ad4d144fa287d52e3a44949b08eb51c86f6194fef6e3672ba5969fccf2f9c47",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_base_cache_store_survives_a_file_deleted_between_listing_and_stat"
+        }
+      },
+      "facet": "Source-defined regression check; not executed by Curator: Eviction tolerates the injected listing/stat disappearance and leaves the newly stored cache entry loadable.",
+      "id": "PRF-T79QCZ",
+      "invariant": "INV-6WXVEA",
+      "origin": {
+        "handoffEntry": "L54-curator-proof-MIK-R55-v1-rule-9-wave-76",
+        "leaf": "260928-MIK-L54"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e159e3fdc8444fdd57cce28d9f770103e7ac3cb6",
+        "content": "sha256:718a8c1bd9e678cb384ffcd30f84f852e9ad3ed5c590e0b62cc8e649fea417d8",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_memory_quality_controller_persists_the_worklist_and_renders_it_in_the_checklist"
+        }
+      },
+      "facet": "Source-defined regression check; not executed by Curator: The real controller composition in a stubbed external-readiness fixture retains proof count in both report modes, builds absent fresh-clone indexes, persists the worklist and labels review nongating; not live end-to-end acceptance.",
+      "id": "PRF-Y1F1CY",
+      "invariant": "INV-3PHJ0H",
+      "origin": {
+        "handoffEntry": "L54-curator-proof-MIK-R55-v1-rule-7-wave-76",
+        "leaf": "260928-MIK-L54"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e159e3fdc8444fdd57cce28d9f770103e7ac3cb6",
+        "content": "sha256:de92200ab1ef77d40740f40d55d8c4176fd03703c8dff3ea08a3b75281b90689",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_carrying_never_edits_another_owners_row_or_a_closed_history_file"
+        }
+      },
+      "id": "RLZ-YHCNV8",
+      "invariant": "INV-ZAFMH5",
+      "origin": {
+        "handoffEntry": "L48-W-F3-worklist-wording-adaptation",
+        "leaf": "260928-MIK-L48"
+      },
+      "rationale": "the single test node pinning the writer frozen-file wording that R48 rule 6 intentionally changes for hand-closed files",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "17": {
+      "note": "The module docstring: the fixture's repositories and task root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e159e3fdc8444fdd57cce28d9f770103e7ac3cb6",
+            "content": "sha256:bf96f8181cea1ece869f2921b57b402ee8d34458f1dac0650e67d08f57291323",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "Pairing by trailer, following a sync and persisting beside the contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e159e3fdc8444fdd57cce28d9f770103e7ac3cb6",
+            "content": "sha256:26d048924a5f466e265c649ec7e10c4cdecb4aedf219eddc3e47dc4bb510b081",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_leaf_pairs_k_b_by_trailer_follows_its_sync_and_persists_beside_its_contract"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "A base without a paired memory commit is incomplete.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e159e3fdc8444fdd57cce28d9f770103e7ac3cb6",
+            "content": "sha256:e443416bd568ce0600bd81d13d4c26056a9cfa83ed8bea722eff3af6f5592cc8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_base_no_memory_commit_pairs_with_is_incomplete_naming_the_pairing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "An unconverted base is compared as its conversion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e159e3fdc8444fdd57cce28d9f770103e7ac3cb6",
+            "content": "sha256:cbd1939ce9438a98ec3d33abda34e01b8a9eaaf4ae7db54346077b9112aac33b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unconverted_base_is_compared_as_its_conversion"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "Converted bases are cached.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e159e3fdc8444fdd57cce28d9f770103e7ac3cb6",
+            "content": "sha256:d18fd70894e0d97b5c2558ce098100f31b3fd328ae799b05ee7658604cbfad7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_converted_bases_are_cached_by_commit_version_and_code_commit"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "The recompute never raises.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e159e3fdc8444fdd57cce28d9f770103e7ac3cb6",
+            "content": "sha256:a0ed35805dbb7d23462f50b23ed19b8548656e86ab6bc977c4c81e898a3b032b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_recompute_never_raises_and_a_failure_never_fails_a_completed_sync"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "One batch for the changed blobs, answers from the cache, and no failure from the read-ahead.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e159e3fdc8444fdd57cce28d9f770103e7ac3cb6",
+            "content": "sha256:0ce0d8b09fe446eae103436346e55cb41b36e1e6300b7d5aa90f8b87faf24161",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_warming_reads_the_changed_blobs_in_one_batch_and_never_fails_the_run"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "The read-ahead under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44b9070e2ee796b4a12d3cfe31a734b1f363ce2d",
+            "content": "sha256:abafcdb467fd570de9c45647ea00c8748d46a43a39359b135720ca1eff1ffcfd",
+            "locator": {
+              "kind": "symbol",
+              "name": "warm"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/code.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "The tool case counts two onboarding items.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e159e3fdc8444fdd57cce28d9f770103e7ac3cb6",
+            "content": "sha256:631732cc4652b28279cb4a9d3dfcfefeae8c845e53b51d7d509f2544625fbe01",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_tool_returns_the_latest_worklist_and_the_checklist_shows_it"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "26": {
+      "note": "The cache case patches the conversion where it now lives.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e159e3fdc8444fdd57cce28d9f770103e7ac3cb6",
+            "content": "sha256:d18fd70894e0d97b5c2558ce098100f31b3fd328ae799b05ee7658604cbfad7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_converted_bases_are_cached_by_commit_version_and_code_commit"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "27": {
+      "note": "The leaf fixture: real repositories plus the task root and enclosure.\n\nAnchor: `converted_memory`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e159e3fdc8444fdd57cce28d9f770103e7ac3cb6",
+            "content": "sha256:bbcba9e57b03794900e6df5024bc17408af317e3896a1eff84d4042f64e3e44e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "28": {
+      "note": "The leaf's contract and task document.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e159e3fdc8444fdd57cce28d9f770103e7ac3cb6",
+            "content": "sha256:0e1d8485e897e8b22b166d411644a2fdfd746159caa43fc3bf9374e22b44af3c",
+            "locator": {
+              "kind": "symbol",
+              "name": "Leaf"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e159e3fdc8444fdd57cce28d9f770103e7ac3cb6",
+            "content": "sha256:937d94c896844458b5e41fd6790d1ffa4746413e2a958637b6598034ee6748ae",
+            "locator": {
+              "end": 238,
+              "kind": "line_range",
+              "start": 183
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "29": {
+      "note": "Pairing by trailer and persistence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e159e3fdc8444fdd57cce28d9f770103e7ac3cb6",
+            "content": "sha256:26d048924a5f466e265c649ec7e10c4cdecb4aedf219eddc3e47dc4bb510b081",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_leaf_pairs_k_b_by_trailer_follows_its_sync_and_persists_beside_its_contract"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "30": {
+      "note": "The task document's maintenance scope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e159e3fdc8444fdd57cce28d9f770103e7ac3cb6",
+            "content": "sha256:f502708a58ed54430b132b804c481f2306f4b588d8aa14c03de9a181e0b0900b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_task_documents_maintenance_scope_classifies_every_entry"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "31": {
+      "note": "The writer's carry.\n\nAnchor: `test_the_writer_carries_moved_blobs_and_the_rows_that_cover_them`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e159e3fdc8444fdd57cce28d9f770103e7ac3cb6",
+            "content": "sha256:bbcba9e57b03794900e6df5024bc17408af317e3896a1eff84d4042f64e3e44e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "32": {
+      "note": "The tool and the checklist section.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e159e3fdc8444fdd57cce28d9f770103e7ac3cb6",
+            "content": "sha256:631732cc4652b28279cb4a9d3dfcfefeae8c845e53b51d7d509f2544625fbe01",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_tool_returns_the_latest_worklist_and_the_checklist_shows_it"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "33": {
+      "note": "Other owners' rows and closed files are untouched.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e159e3fdc8444fdd57cce28d9f770103e7ac3cb6",
+            "content": "sha256:de92200ab1ef77d40740f40d55d8c4176fd03703c8dff3ea08a3b75281b90689",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_carrying_never_edits_another_owners_row_or_a_closed_history_file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "34": {
+      "note": "A writer-authored proof raises its invariant.\n\nAnchor: `test_a_proof_authored_through_the_writer_raises_its_invariant_when_its_test_changes`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e159e3fdc8444fdd57cce28d9f770103e7ac3cb6",
+            "content": "sha256:bbcba9e57b03794900e6df5024bc17408af317e3896a1eff84d4042f64e3e44e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "35": {
+      "note": "The bound sync port.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e159e3fdc8444fdd57cce28d9f770103e7ac3cb6",
+            "content": "sha256:288294c171cacc7cfd64e90e9efda89801b7578942f1b21a3af9edf119eedebc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_completed_sync_recomputes_through_the_bound_port"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "36": {
+      "note": "The controller-level run; since MIK-R09 its four open items count (4).\n\nAnchor: `test_the_memory_quality_controller_persists_the_worklist_and_renders_it_in_the_checklist`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e159e3fdc8444fdd57cce28d9f770103e7ac3cb6",
+            "content": "sha256:bbcba9e57b03794900e6df5024bc17408af317e3896a1eff84d4042f64e3e44e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "37": {
+      "note": "Never raises; never fails a completed sync.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e159e3fdc8444fdd57cce28d9f770103e7ac3cb6",
+            "content": "sha256:a0ed35805dbb7d23462f50b23ed19b8548656e86ab6bc977c4c81e898a3b032b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_recompute_never_raises_and_a_failure_never_fails_a_completed_sync"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "38": {
+      "note": "The `continue` replay.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e159e3fdc8444fdd57cce28d9f770103e7ac3cb6",
+            "content": "sha256:a4fc414282b6f160e216925263e21a8d7581649fe3bbc52910c20da74d521c43",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_continue_replay_of_a_completed_sync_recomputes_too"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "39": {
+      "note": "The converted-base cache.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e159e3fdc8444fdd57cce28d9f770103e7ac3cb6",
+            "content": "sha256:d18fd70894e0d97b5c2558ce098100f31b3fd328ae799b05ee7658604cbfad7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_converted_bases_are_cached_by_commit_version_and_code_commit"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "40": {
+      "note": "The current lifecycle catalog declares test_knowledge_worklist_leaf.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. This is the complete declared two-artifact set; it establishes no invocation or earlier occurrence/identity-recovery event.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0556945441335e93cd0b1783dba11d3b2eb279a7",
+            "content": "sha256:f3c97cea90d6874137c31a702bc9f64c898199a273c0aede415fdef641e6c6c7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "41": {
+      "note": "The controller source exercises a fresh shared clone, real index building, informational proof counts and distinct report modes; cache store tolerates listing/stat disappearance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e159e3fdc8444fdd57cce28d9f770103e7ac3cb6",
+            "content": "sha256:e8b4fb49b6f1eb248c2369e613455942d0206e4f5403ed7c102b44f757e069ea",
+            "locator": {
+              "end": 706,
+              "kind": "line_range",
+              "start": 590
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e159e3fdc8444fdd57cce28d9f770103e7ac3cb6",
+            "content": "sha256:5ad4d144fa287d52e3a44949b08eb51c86f6194fef6e3672ba5969fccf2f9c47",
+            "locator": {
+              "end": 814,
+              "kind": "line_range",
+              "start": 801
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

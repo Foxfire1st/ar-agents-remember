@@ -1,0 +1,162 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/writing/technical-english-profile.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "55fa09ca360f1a84a7c36f4dcf79b5d174cd4793",
+        "content": "sha256:e381e9b560fa509b0cfb55565e80991a857a68ec657ee42e22fe3f56df5fe788",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-GJ34Y7",
+      "invariant": "INV-RKQ450",
+      "origin": {
+        "handoffEntry": "MIK-R88@v1/guide",
+        "leaf": "260928-MIK-L88"
+      },
+      "rationale": "The entire canonical guide owns the shared writing and independent meaning-comparison method.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The profile selects ASD-STE100 principles without claiming compliance or a new standard.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "55fa09ca360f1a84a7c36f4dcf79b5d174cd4793",
+            "content": "sha256:9f606b8a773bbfbc39eaf138f70c4447e0d599c5ba363ea430c227b1d7705132",
+            "locator": {
+              "end": 3,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "One precise, testable promise per invariant, with precision over the word target and no automatic splitting.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "55fa09ca360f1a84a7c36f4dcf79b5d174cd4793",
+            "content": "sha256:e1b93cfe8865f4f0ca3ce421bc5920d31cc1d802d7876b846fc34cae63201087",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Project vocabulary comes from existing term records, and the four evidence states stay distinct.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "55fa09ca360f1a84a7c36f4dcf79b5d174cd4793",
+            "content": "sha256:75d8cfdb4bd8cf2ce8d1ec7ce2a7407c966f2b2d0f113900de2901964d620372",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Statement and scope fields stay connected, and structural fields keep their owners.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "55fa09ca360f1a84a7c36f4dcf79b5d174cd4793",
+            "content": "sha256:01a164907b93e90a7086a4128ffda0e9c01265ae04468f442448aa59c29595aa",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 37
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Independent facet and case comparison precedes `clarify`, and disputed drafts stay unaccepted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "55fa09ca360f1a84a7c36f4dcf79b5d174cd4793",
+            "content": "sha256:0930891fc5015dd500210c1dace4bdc1457c7479efeaf61d0d36742fcc5643a6",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 45
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The worked example illustrates the comparison and is not pilot evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "55fa09ca360f1a84a7c36f4dcf79b5d174cd4793",
+            "content": "sha256:e522196a1bd09c109f0698242212414f57d825696df373faeb9ba46f090bbaf1",
+            "locator": {
+              "end": 82,
+              "kind": "line_range",
+              "start": 57
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Scope of use, and no automatic semantic validator, language gate or bypass.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "55fa09ca360f1a84a7c36f4dcf79b5d174cd4793",
+            "content": "sha256:f6da75347be0a545d59d89fc3cf824f0c52989801e2abf7d17d4cedfb424455e",
+            "locator": {
+              "end": 92,
+              "kind": "line_range",
+              "start": 84
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The Curator role points here before drafting invariant statements, family guarantees or history reasons.\n\nAnchor: `technical-english-profile.md`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "content": "sha256:b2dd88e37cb0615e999c9062684cc8f36ea19a4ed34f10eb20068ceb64fd1bf9",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 77
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

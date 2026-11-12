@@ -1,0 +1,414 @@
+{
+  "path": "mcp/tests/test_role_capsule_admission.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The frozen vocabulary and its completeness guard the vocabulary group pins.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "270a88e12632238bb65b8077d7b7dcfbae2e589d",
+            "content": "sha256:ca87be70f1004fe8f0b93c44eca5442b2a733b7770811673bac424afbd4a167c",
+            "locator": {
+              "kind": "symbol",
+              "name": "CAPSULE_ROLES"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/vocabulary.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4e74de6d641b1a3997bee7dcafc5b4da6821b2c8",
+            "content": "sha256:7288b24c31b5717b8f06cb534d84acd27c7c2c0783a9072fa383594c9434a104",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/statuses.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The every-role digest source remains required while additional admitted shared core stays out of rendered instructions. Omission of that digest refuses by name. Delivered-prose comparison removes only closed typed composition metadata and retains the complete remaining prose; the revision still addresses whole source bytes. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f79613843e1dcaa558f0dc6741884f96154e0be3",
+            "content": "sha256:56e612c71850ff03cbc127c9e8bce0aae2f0f0cb736e4c553e2533f3fb4c673d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_admitted_core_source_is_inert_for_a_role_capsule"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f79613843e1dcaa558f0dc6741884f96154e0be3",
+            "content": "sha256:85c8affa0fa16dc5410cf61e0d5a5b28a893bdaa0855107e7934fdfa4d2dbefe",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 10
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f79613843e1dcaa558f0dc6741884f96154e0be3",
+            "content": "sha256:53214d0d98912dcabcfdba6316e953958823b16468d670404d6421bbd8c6f3dd",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 40
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The manifest parser the shipped-manifest group exercises against the real file.\n\nAnchor: `parse_composition_manifest` `_require_one_path_serves_one_identity` `_require_operation_applicability_agrees` `_require_role_skills_are_declared`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd8a486213211e6be0e506486402269997de9b68",
+            "content": "sha256:9e72f69c7d30b140570b8095c2756eefda32d61086f0928b95fbd99ff46d676f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/manifest.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The admission boundary the admission group refuses through.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b2145bba70163c198afb85dbe914657fc8c6b9f",
+            "content": "sha256:915fd89222d1328505df921b788cb9559a7190b597c8b7549b071d961fa0e4f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "admit_capsule_sources"
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/sources.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5b2145bba70163c198afb85dbe914657fc8c6b9f",
+            "content": "sha256:54ae6eb9a2320bd63746c338442c15491cf9fd0857b1e15171bd357124fe8448",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_confined_relative"
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/sources.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The both-directions plan validation, including the skill-root gate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d2ac87a3213c5859af2fc85728ebd0d3c7cf6d57",
+            "content": "sha256:cbc02076178ee4d24950f063c800c5076a7082d8fdc80267179e9536bc0a6af5",
+            "locator": {
+              "kind": "symbol",
+              "name": "admit_source_set"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/source_set.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d2ac87a3213c5859af2fc85728ebd0d3c7cf6d57",
+            "content": "sha256:4ef35ad244d8331b5e5329ca4e43ac3969dee3fc505426a2d2a9e87df459dd8a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_declared_skills_present"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/source_set.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The carried skill channel** these cases pin, and the helper that names a skill identity.\n\nAnchor: \"The canonical identity of a skill reference: origin plus skill name.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11345e10ceb2c3818e6f7ad4790607a78658f59b",
+            "content": "sha256:818f46d27fa1b66ce97dd9f70db626a5c63f7bbc33a2e0ebbfe3596add2abb25",
+            "locator": {
+              "kind": "symbol",
+              "name": "skills_declared_identity"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/sources.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8673a0cc0f664527b38318f5c02481ab5826e739",
+            "content": "sha256:f01dd531368a0f81cc5dddac18e5ced531455bba62bcff32bed1e8f1fc64642d",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleSkillReference"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/types.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "compile_admitted_capsule returns a CapsuleCompilationOutcome for admission or compilation refusals, with a manifest in both shapes and exactly one of result/error. Empty admitted instruction text raises the typed source-empty error; errors from reading the shared block or compiling are caught and returned as refusal outcomes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9ebc25e9f72b32db990eb7c7582f967d6fbd021",
+            "content": "sha256:d83e2d57f2e37404de9d44a0dd51cfb781229885bb74bc9f34618a97fcef8b59",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 93
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a9ebc25e9f72b32db990eb7c7582f967d6fbd021",
+            "content": "sha256:3582dec10d76cdc696f982f5c45c9c7cbe2a72abc7c9986c7c0633ec40c6983c",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 46
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "11345e10ceb2c3818e6f7ad4790607a78658f59b",
+            "content": "sha256:f035bdc45e86272efdf268f2a710776736469e148078b6ecb0e11fdebda9c9ec",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 74
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/sources.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Admission tests read the shipped lifecycle manifest and form role/operation requests and bindings. The separate manifest-edge module checks lookup, malformed selections and composing roots; the audience module compiles declared role/operation pairs and checks addressed operation content against pinned seals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16114bb86792e4394123e4b98c42efd8d3cb2831",
+            "content": "sha256:913099a13bb26ed68637a9fa89084b6dbfa0251efc4a0a69f288bb5e47ccc150",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_real_operation_audiences_preserve_pinned_common_and_only_addressed_paragraphs"
+            },
+            "path": "mcp/tests/test_role_capsule_audiences.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f79613843e1dcaa558f0dc6741884f96154e0be3",
+            "content": "sha256:084895cf0afb35b867a32c4f4e9c51ac0bbd00ea7b0b22e53448f3ecfb7de72e",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 93
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f79613843e1dcaa558f0dc6741884f96154e0be3",
+            "content": "sha256:eee2175815e171e9391aa812b83b2f25b284344741a6ab333d09da74b8b9cb4f",
+            "locator": {
+              "end": 434,
+              "kind": "line_range",
+              "start": 389
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f940e8d1e675766f55200b1acef88dc447d5e8fb",
+            "content": "sha256:880ffd52d0f2cf6093efe6e5f093589d3e3edfa8b37b6fa09509de74588f29ad",
+            "locator": {
+              "end": 322,
+              "kind": "line_range",
+              "start": 295
+            },
+            "path": "mcp/tests/test_role_capsule_manifest_edges.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f940e8d1e675766f55200b1acef88dc447d5e8fb",
+            "content": "sha256:2903f67634deb6c52789ecc472d248c663169e0dc78005bc070f78bcd17e9967",
+            "locator": {
+              "end": 517,
+              "kind": "line_range",
+              "start": 360
+            },
+            "path": "mcp/tests/test_role_capsule_manifest_edges.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The sibling module that owns the compiler's own property cases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8bc5d1c3383f3f822d3274d9a8ce6be8b86c5ba",
+            "content": "sha256:473474c07b91cebc974210786d8cc7b9818bcc0a13b81d9a7507d283c83df510",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_identical_input_compiles_to_identical_ordered_content_and_digest"
+            },
+            "path": "mcp/tests/test_role_capsule_compiler.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The shipped request includes role-addressed declared details in its admitted skill sources. The no-frontmatter check independently reconstructs delivered prose after removing a closed leading frontmatter block and typed composition-metadata lines, while retaining the complete source revision; deletion, relocation, leaked metadata and wrong-revision controls must fail. Six edge concerns are defined in the distinct manifest-edge module: lookup, specialization shape/blank identity, absent override winner, invalid root, missing selected manifest and composing roots.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f79613843e1dcaa558f0dc6741884f96154e0be3",
+            "content": "sha256:39b60c3cd4fc9b45e4ff4943dc8625013cba7ab32197d102b16b579a50d2cfea",
+            "locator": {
+              "end": 417,
+              "kind": "line_range",
+              "start": 393
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f79613843e1dcaa558f0dc6741884f96154e0be3",
+            "content": "sha256:2497cc506e136a3e9b043d52d827f8fb607e17ab3750e39239f07e9d930c6db3",
+            "locator": {
+              "end": 848,
+              "kind": "line_range",
+              "start": 780
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f940e8d1e675766f55200b1acef88dc447d5e8fb",
+            "content": "sha256:880ffd52d0f2cf6093efe6e5f093589d3e3edfa8b37b6fa09509de74588f29ad",
+            "locator": {
+              "end": 322,
+              "kind": "line_range",
+              "start": 295
+            },
+            "path": "mcp/tests/test_role_capsule_manifest_edges.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f940e8d1e675766f55200b1acef88dc447d5e8fb",
+            "content": "sha256:bf01b4cfe9a9ddff0257e9be358654f654a4d12a74732e1238bf18e5694a751e",
+            "locator": {
+              "end": 384,
+              "kind": "line_range",
+              "start": 360
+            },
+            "path": "mcp/tests/test_role_capsule_manifest_edges.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f940e8d1e675766f55200b1acef88dc447d5e8fb",
+            "content": "sha256:eb7345d4fc079e261dd4ccdcb3ed61ae3cfe65bc41d803f477c155d7ea148a7b",
+            "locator": {
+              "end": 425,
+              "kind": "line_range",
+              "start": 387
+            },
+            "path": "mcp/tests/test_role_capsule_manifest_edges.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f940e8d1e675766f55200b1acef88dc447d5e8fb",
+            "content": "sha256:a5bd4a6fd2dcc6ff5a853f1d1b99e516dd8a5370050380bdaead27722c897a0c",
+            "locator": {
+              "end": 436,
+              "kind": "line_range",
+              "start": 428
+            },
+            "path": "mcp/tests/test_role_capsule_manifest_edges.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f940e8d1e675766f55200b1acef88dc447d5e8fb",
+            "content": "sha256:d30a4ab35d65243f4831bef69681de90577243916998e9dc48e4e03bfd01ce5b",
+            "locator": {
+              "end": 466,
+              "kind": "line_range",
+              "start": 439
+            },
+            "path": "mcp/tests/test_role_capsule_manifest_edges.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f940e8d1e675766f55200b1acef88dc447d5e8fb",
+            "content": "sha256:43e607fc7ca33f080a794c760c1014fa2cbfed04c0ecea65b79028012ac92a46",
+            "locator": {
+              "end": 517,
+              "kind": "line_range",
+              "start": 469
+            },
+            "path": "mcp/tests/test_role_capsule_manifest_edges.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

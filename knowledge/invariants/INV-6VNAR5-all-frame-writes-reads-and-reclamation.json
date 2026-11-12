@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "A symlinked intermediate path would let a store act read or delete outside the admitted task area."
+  },
+  "applicability": "Every frame store act on a task-confined frame area.",
+  "conditions": [
+    "The path resolves through one or more intermediate components under the task."
+  ],
+  "exclusions": [
+    "Another task's area or an admitted working folder."
+  ],
+  "id": "INV-6VNAR5",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "A4-checks/probes.json: intermediate-manifest-read-before-guard; focused F11 sibling/dry-run cases"
+      ],
+      "path": "l102-curator-list.json"
+    },
+    "handoffEntry": "L102-F11",
+    "leaf": "260928-MIK-L102",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "All frame writes, reads and reclamation must remain physically inside the admitted task/frame scope even when an intermediate frame path is a symlink.",
+  "status": "proposed",
+  "supersedes": []
+}

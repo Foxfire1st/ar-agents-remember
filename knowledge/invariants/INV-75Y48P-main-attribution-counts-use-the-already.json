@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Durable repair-verification obligation from R1 findings fixed on W02 and sealed in R2 (verdict b8956ffd, eleven-dispositions 42a8ec7a); ReviewSurface.sealedPageRepair.test.tsx F05; browser/report.md held actual request167/2 with one read"
+  },
+  "applicability": "Main attribution counts for the two lane destinations.",
+  "conditions": [
+    "Counts use the already held lane destination file lists.",
+    "Pending or unavailable states are preserved, never derived from inventory buckets."
+  ],
+  "exclusions": [
+    "Bucket-derived counts."
+  ],
+  "id": "INV-75Y48P",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "ReviewSurface.sealedPageRepair.test.tsx F05; browser/report.md held actual request167/2 with one read"
+      ],
+      "path": "notes/reports/l86-curator-W03/handoff-phase1.json"
+    },
+    "handoffEntry": "L86-CODE-R1-F05",
+    "leaf": "260928-MIK-L86",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Main attribution counts use the already held lane destination file lists and preserve pending or unavailable state instead of deriving different counts from inventory buckets.",
+  "status": "proposed",
+  "supersedes": []
+}

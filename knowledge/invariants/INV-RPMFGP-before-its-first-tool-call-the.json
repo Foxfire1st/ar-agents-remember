@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Four cases prove a resolved host, a recorded host and a live port are refused before any call; the incident was a helper run that reached the developer's live host because nothing compared the layout pair with the build's resolution."
+  },
+  "applicability": "Every request the helper admits before its first tool call.",
+  "conditions": [
+    "The request names the sandbox; a hostPort it states must be a sandbox port other than the live ports, and an omitted one defaults to 6820.",
+    "The build resolves its Paseo home and listen address under the server's environment."
+  ],
+  "exclusions": [
+    "A fresh build's unconfigured phase is admitted by its own clause.",
+    "A caller that rewrites the sandbox's own settings and names a matching non-live port can still point that sandbox at another loopback daemon; that needs write access to the sandbox and is not the live host."
+  ],
+  "id": "INV-RPMFGP",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_pnt_sandbox.py::test_a_resolved_host_outside_the_sandbox_is_refused_before_any_call, ::test_a_sandbox_whose_settings_select_another_host_is_refused, ::test_a_request_port_that_is_not_a_sandbox_port_is_refused; the two real refusals in the freeze report §Rule 6"
+      ],
+      "path": "l179-handoff.json"
+    },
+    "handoffEntry": "MIK-R181@v2 §2",
+    "leaf": "260928-MIK-L179",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Before its first tool call the helper establishes the Paseo home and listen address the server would address and refuses, naming both, unless they are the sandbox layout's own — comparing against the layout, never against the sandbox's settings file.",
+  "status": "accepted",
+  "supersedes": []
+}

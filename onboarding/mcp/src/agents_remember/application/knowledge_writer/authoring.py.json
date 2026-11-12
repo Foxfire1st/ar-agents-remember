@@ -1,0 +1,732 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_writer/authoring.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "26e24ad345fcd041e170c653e207a2e7837f40c3",
+        "content": "sha256:4eab549c53312b7b079fc4578037f1da236dfa3714448183c95b8d394b1eaa6b",
+        "locator": {
+          "kind": "symbol",
+          "name": "Authoring"
+        }
+      },
+      "id": "RLZ-87J2WX",
+      "invariant": "INV-VWRJR7",
+      "origin": {
+        "handoffEntry": "L118-W3",
+        "leaf": "260928-MIK-L118"
+      },
+      "rationale": "The weakness and dependent writes live here: the record is built from the producer's fields, the anchor and every link value are resolved against the admitted code snapshot, and the confirmation records the task, role and commit of the write.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "26e24ad345fcd041e170c653e207a2e7837f40c3",
+        "content": "sha256:a4c41d3c98ce6a56172c053956a57f3597e2120040c6efbda688f3669e299cf0",
+        "locator": {
+          "kind": "symbol",
+          "name": "_write_proof"
+        }
+      },
+      "id": "RLZ-VV6ANV",
+      "invariant": "INV-B37MWR",
+      "origin": {
+        "handoffEntry": "MIK-R194@v1 rules 1, 5",
+        "leaf": "260928-MIK-L186"
+      },
+      "rationale": "The proof is resolved and stored here, so this is where a range becomes a line_range anchor and where the evidence pairs with the case's own title.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Both forms become proofs once faceted; an absent test and a bare test file are reported.\n\nAnchor: `test_both_forms_become_proofs_once_faceted_and_unresolvable_evidence_is_reported`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0256098f652dc34be5986d7dcab77243a655f959",
+            "content": "sha256:ebb05908d076c74907bac8a22bfb3c2902b74eb2329c114409ae4e9ab1aba461",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_proofs.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The writer's planned rows and every refusal.\n\nAnchor: `test_the_writer_writes_planned_rows_and_refuses_what_they_cannot_name`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "108235abe04cbe9d3271f3ba202cca2b7e43bab9",
+            "content": "sha256:4f1588452352498062ecf77e5ebc010a470552fc6638e32791882bf0a76cb122",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_planned_knowledge_effects.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "A moved row relocates the entry; before and after name the old and new paths; a rerun is byte-identical. Anchor: `test_a_moved_row_whose_after_names_another_path_relocates_the_entry`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e02efe56a42a670bb818ea1f56af7d09c48e5f3",
+            "content": "sha256:fbc845ca4136164eb34326e37e70dbd2f85612fd718321f3d76bc113c85e1515",
+            "locator": {
+              "end": 1144,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/test_knowledge_writer.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The retired-attach guard, called before the record is placed.\n\nAnchor: \"if self._attaches_to_retired(entry, invariant_id, document):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26e24ad345fcd041e170c653e207a2e7837f40c3",
+            "content": "sha256:fee521803ddef20678e3aeaac0e262945fb2c78b482eacbeca598716fae9403f",
+            "locator": {
+              "end": 362,
+              "kind": "line_range",
+              "start": 362
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The refusal names the invariant and the alternatives.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26e24ad345fcd041e170c653e207a2e7837f40c3",
+            "content": "sha256:07c0a6f52da4aec57d535f03e3d11f53164cb8942f4fa90a4a3cffd6e9ed6d40",
+            "locator": {
+              "kind": "symbol",
+              "name": "_attaches_to_retired"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "No sidecar until the facet is authored; a blank facet is refused and writes nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0256098f652dc34be5986d7dcab77243a655f959",
+            "content": "sha256:c95af7a1bbc79d3a8a1eae9131731e4171e3f7349832637befc86e6fcf0bcc78",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_proof_waits_for_the_curator_facet_and_is_offered_the_statement_as_a_draft"
+            },
+            "path": "mcp/tests/test_knowledge_proofs.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "The writer's refusals: absent and retired invariants, a blank reason, covers, another disposition.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4db279a6707405d8691a10946c71c433d9c71823",
+            "content": "sha256:e1f0bc73ca0cf2a24b29abe88e25baa3226cd7235b151762c7c5994ca1683a29",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_writer_refuses_what_the_packet_refuses"
+            },
+            "path": "mcp/tests/test_unexplained_change_disposition.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "The port, the queued questions and the worklist's items.\n\nAnchor: \"questions: OpenQuestions\"; \"raised: list\"; \"reconsiderations: Mapping\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26e24ad345fcd041e170c653e207a2e7837f40c3",
+            "content": "sha256:edd926493d0834ce5adb30157679d0e72aec3cc0fcaf72709e5456f61c5ef908",
+            "locator": {
+              "end": 179,
+              "kind": "line_range",
+              "start": 174
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "The refusals of a wrong subject or an extra field.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1176f3ca1d7d895f188bac1a18b73621a5897e93",
+            "content": "sha256:3879c9dc6c6e7ec429fe38296c8f446a091e114846feedfe154fca532119efb6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_still_rejected_answers_the_candidate_and_the_stored_predicate_agrees"
+            },
+            "path": "mcp/tests/test_reconsideration_surfacing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "28": {
+      "note": "A `raise` refused without a task owner, on a check refusal and on an append refusal writes nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1176f3ca1d7d895f188bac1a18b73621a5897e93",
+            "content": "sha256:350d2957762385ebe74fef43f68bcf4a9773658bef4946ef9ca505b8cec89c68",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_raise_sets_the_status_and_appends_the_question_or_is_refused"
+            },
+            "path": "mcp/tests/test_reconsideration_surfacing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "30": {
+      "note": "The operation: entries, records, rows, then unstored foreign evidence refuses.\n\nAnchor: `run`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26e24ad345fcd041e170c653e207a2e7837f40c3",
+            "content": "sha256:0084803e8ccf36d468f6d1d5fa2a1582f18cefcc207891e2c8fd3819a87644a0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "ID assignment and rerun reuse.\n\nAnchor: `_assign_ids`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26e24ad345fcd041e170c653e207a2e7837f40c3",
+            "content": "sha256:0084803e8ccf36d468f6d1d5fa2a1582f18cefcc207891e2c8fd3819a87644a0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "Origin: own records gain evidence, another owner's origin is kept exactly.\n\nAnchor: `_origin`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26e24ad345fcd041e170c653e207a2e7837f40c3",
+            "content": "sha256:0084803e8ccf36d468f6d1d5fa2a1582f18cefcc207891e2c8fd3819a87644a0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "Revision once per leaf against the base.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26e24ad345fcd041e170c653e207a2e7837f40c3",
+            "content": "sha256:82eb6e68a7d23678c22c1c9d04f73b0dea3b1a423372980d365572d6fee6c236",
+            "locator": {
+              "kind": "symbol",
+              "name": "_place_record"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "Records of any kind, with defaults and resolved links.\n\nAnchor: `_write_record`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26e24ad345fcd041e170c653e207a2e7837f40c3",
+            "content": "sha256:0084803e8ccf36d468f6d1d5fa2a1582f18cefcc207891e2c8fd3819a87644a0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "Realization and proof entries upserted in the sidecar.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26e24ad345fcd041e170c653e207a2e7837f40c3",
+            "content": "sha256:f716245a6fd1349f069b43c806505951201ce697ba6e608804ed0c0685e12ab3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_upsert_entry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "A rerun removes only this owner's unnamed entries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26e24ad345fcd041e170c653e207a2e7837f40c3",
+            "content": "sha256:53926f4e827946ff962bfa59a403c211b9e15765120e3732b82d57cbcd9fa2ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "_remove_unnamed_entries"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "What became of a test the evidence names, and a test file named without a test is `unresolvable`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26e24ad345fcd041e170c653e207a2e7837f40c3",
+            "content": "sha256:76ff7413200b246c8762c46a4263e8ca643682274e3fdd6f032432bad3c4e827",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cited_test"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "26e24ad345fcd041e170c653e207a2e7837f40c3",
+            "content": "sha256:968c5ce0c6cf092abc05a27f2557b747559de91268a50d2ba8160112325a11a7",
+            "locator": {
+              "end": 561,
+              "kind": "line_range",
+              "start": 535
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "26e24ad345fcd041e170c653e207a2e7837f40c3",
+            "content": "sha256:0084803e8ccf36d468f6d1d5fa2a1582f18cefcc207891e2c8fd3819a87644a0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "41": {
+      "note": "The conforming example: decision, realization and proof, validated. Anchor: `test_a_decision_a_realization_and_a_tested_evidence_produce_validated_files`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e02efe56a42a670bb818ea1f56af7d09c48e5f3",
+            "content": "sha256:fbc845ca4136164eb34326e37e70dbd2f85612fd718321f3d76bc113c85e1515",
+            "locator": {
+              "end": 1144,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/test_knowledge_writer.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "42": {
+      "note": "Rerun idempotence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e02efe56a42a670bb818ea1f56af7d09c48e5f3",
+            "content": "sha256:3a9d6a609a1e3eeb2e279c87d61f4ebcd2bbd6600eb0be404a287788ef5ba97a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_rerun_of_the_same_list_writes_the_same_files_with_the_same_ids"
+            },
+            "path": "mcp/tests/test_knowledge_writer.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "43": {
+      "note": "Revision increments once; foreign evidence goes to this leaf's row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e02efe56a42a670bb818ea1f56af7d09c48e5f3",
+            "content": "sha256:3b523eaeeb4be4815040d0d69bdb3f8f3a1bd22fded4df9de4a2574b908ff11c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_meaning_change_increments_the_revision_once_against_the_base"
+            },
+            "path": "mcp/tests/test_knowledge_writer.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "44": {
+      "note": "The record's revision after this operation: an unmerged record at the higher side's plus one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26e24ad345fcd041e170c653e207a2e7837f40c3",
+            "content": "sha256:070caafa05f32c7929b17938986cf96b2317d410d469068981009f39ad5306a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_revision"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "46": {
+      "note": "A record both sides changed is resolved at one more than the higher side.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fab936dda80543f94c1a840030ce192da6fa5616",
+            "content": "sha256:2d5a2622dbbef6146c60cda6f9e170aee71c3676175792825f24c3964eb33697",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_record_both_sides_changed_is_resolved_at_one_more_than_the_higher_side"
+            },
+            "path": "mcp/tests/test_knowledge_crossing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "A moved marker row satisfies its item and survives a rewrite through the writer.\n\nAnchor: `test_a_moved_marker_row_satisfies_its_item_and_survives_a_rewrite`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7af13aa07c1543371cdd9dbf1bb97c2299b1447d",
+            "content": "sha256:006050f548e527e4b63776577bda4bc91d61ddb3c0fe28708754169dcb8a4a71",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_onboarding_trace_gate.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "50": {
+      "note": "The writer fills row items from the worklist after the unchanged case moved to governing-row tests.\n\nAnchor: `test_the_writer_fills_a_rows_items_from_the_leafs_worklist`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "edad7b9d825ab3a241a0917f1627d688e34954f3",
+            "content": "sha256:e791cf309e2f6ef9f2d1f7830a3cf0973f031617f8d7b50e028f35d6453d5381",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_reopen_governing_rows.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "51": {
+      "note": "A cover revises a realization entry's rationale in place.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e02efe56a42a670bb818ea1f56af7d09c48e5f3",
+            "content": "sha256:1712a1257f62c997aec217ec04a8dda4094703d092abc8e1cecb1330d4581348",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_cover_revises_a_realization_entrys_rationale_in_place"
+            },
+            "path": "mcp/tests/test_knowledge_writer.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "52": {
+      "note": "Row mechanics record the invariant's or family's own revision.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26e24ad345fcd041e170c653e207a2e7837f40c3",
+            "content": "sha256:0084803e8ccf36d468f6d1d5fa2a1582f18cefcc207891e2c8fd3819a87644a0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "53": {
+      "note": "Current source delta inspected statically: Refresh inherited-row facts and stale no_impact-only, dispatch and permanent-report captions while retaining origin, revision, relocation and attempt mechanics.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26e24ad345fcd041e170c653e207a2e7837f40c3",
+            "content": "sha256:6e722756638b56a34885e3fbe24d3c68b4e4973174047c137b111a5570fc342d",
+            "locator": {
+              "end": 188,
+              "kind": "line_range",
+              "start": 184
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "26e24ad345fcd041e170c653e207a2e7837f40c3",
+            "content": "sha256:3040085f9900e3c91b05a835afae7056e3350310bf601251aed804a8c1bda8ac",
+            "locator": {
+              "end": 192,
+              "kind": "line_range",
+              "start": 189
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "979669ccbd307af1ad584ba86815c1d1100f9896",
+            "content": "sha256:fcdab3d118135e6affc8fc2928e02152ac9ffd84f16c1cb2d278bf368ee2ddd2",
+            "locator": {
+              "end": 411,
+              "kind": "line_range",
+              "start": 408
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "979669ccbd307af1ad584ba86815c1d1100f9896",
+            "content": "sha256:ac826aad197bd8c30e21c747b9b91cb941662eb2851a3012aac8ec7bfb7fd737",
+            "locator": {
+              "end": 412,
+              "kind": "line_range",
+              "start": 412
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "979669ccbd307af1ad584ba86815c1d1100f9896",
+            "content": "sha256:f304cfb8993dc26152957766d985a128c5fe71eb367b3039d6de996ba6aa7e9d",
+            "locator": {
+              "end": 509,
+              "kind": "line_range",
+              "start": 506
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "979669ccbd307af1ad584ba86815c1d1100f9896",
+            "content": "sha256:301101d6e241cc5442f4cf8613a7bbea68c8a54a96db6e5e2ee83ae1bf89523d",
+            "locator": {
+              "end": 267,
+              "kind": "line_range",
+              "start": 261
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "979669ccbd307af1ad584ba86815c1d1100f9896",
+            "content": "sha256:1fe9a871942bf023371cd910843be102113e8bc75638f1a980ec68e6cd969518",
+            "locator": {
+              "end": 270,
+              "kind": "line_range",
+              "start": 268
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "55": {
+      "note": "Origin/evidence and decision alternatives delegate to their explicit owners. [55]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26e24ad345fcd041e170c653e207a2e7837f40c3",
+            "content": "sha256:f4a2c39596c4fd9719c0cc0fc8295b81b9e1343ade289004b20c9f67d1d640a9",
+            "locator": {
+              "end": 304,
+              "kind": "line_range",
+              "start": 297
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "57": {
+      "note": "A proof is written from its symbol or from the lines of one running case that no name reaches, and the titles it pairs with are reported as its outcome.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26e24ad345fcd041e170c653e207a2e7837f40c3",
+            "content": "sha256:a4c41d3c98ce6a56172c053956a57f3597e2120040c6efbda688f3669e299cf0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_proof"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "58": {
+      "note": "A range proof's locator and pairing titles are resolved by this one helper, which refuses a range that is no such case.\n\nAnchor: `_proof_locator`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26e24ad345fcd041e170c653e207a2e7837f40c3",
+            "content": "sha256:0084803e8ccf36d468f6d1d5fa2a1582f18cefcc207891e2c8fd3819a87644a0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "59": {
+      "note": "The authoring class inherits the re-point row authoring, so a `still_rejected` row's `repoint` is judged where the row is written.\n\nAnchor: `Authoring`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26e24ad345fcd041e170c653e207a2e7837f40c3",
+            "content": "sha256:0084803e8ccf36d468f6d1d5fa2a1582f18cefcc207891e2c8fd3819a87644a0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The task owner's answer about a decision, injected into the writer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26e24ad345fcd041e170c653e207a2e7837f40c3",
+            "content": "sha256:298b0c2b84e265e2f9e1e1fbe602c5578ef7453d6e8109d3bbb60f4ddb604d3e",
+            "locator": {
+              "kind": "symbol",
+              "name": "DecisionResolver"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "60": {
+      "note": "Handle assignment and refresh restoration precede ordered entry processing, records and rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26e24ad345fcd041e170c653e207a2e7837f40c3",
+            "content": "sha256:38ca3be541cb75c6f2d59bee3553cd37ccf9b3155570310fbc6c3c2b284d6760",
+            "locator": {
+              "end": 213,
+              "kind": "line_range",
+              "start": 197
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "61": {
+      "note": "Decision updates remap links before anchored link resolution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26e24ad345fcd041e170c653e207a2e7837f40c3",
+            "content": "sha256:3ab56441d4990b3ed0d2eb0b64bce808b3ce2edc95615c6c8a0bc8e697e1d9e0",
+            "locator": {
+              "end": 449,
+              "kind": "line_range",
+              "start": 435
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The resolver field; `None` has no task owner.\n\nAnchor: \"decisions: DecisionResolver\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26e24ad345fcd041e170c653e207a2e7837f40c3",
+            "content": "sha256:d50e77207a0cdeab22c56b029ac732cf46ed57f4e1fa7a9cc30a8063abef356f",
+            "locator": {
+              "end": 173,
+              "kind": "line_range",
+              "start": 173
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

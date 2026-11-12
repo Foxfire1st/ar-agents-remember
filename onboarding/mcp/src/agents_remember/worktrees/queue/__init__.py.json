@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/queue/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The package marker docstring.\n\nAnchor: \"Closeout-queue modules for task-derived sprint scheduling.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5737b29daea0834ae80bf6872c824290421e4bf2",
+            "content": "sha256:1c01d1e9566cf40895f61917264fd13e11f4067a4dd93d447001a3bee131ef4b",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

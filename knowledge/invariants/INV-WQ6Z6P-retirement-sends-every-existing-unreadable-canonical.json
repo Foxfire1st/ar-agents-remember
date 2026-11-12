@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Guards the costly error this statement names: Retirement sends every existing unreadable canonical proof entry to its required reader and refuses by that path before preview or publication, preserving the proof object and live"
+  },
+  "applicability": "Retirement reading an existing master-retirement.json directory or dangling link.",
+  "conditions": [
+    "Every existing unreadable canonical proof entry goes to its required reader and refuses by that path before preview or publication, preserving the object."
+  ],
+  "exclusions": [
+    "A genuinely absent proof, which is no record."
+  ],
+  "id": "INV-WQ6Z6P",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Independent directory, dangling-link and malformed-file cases pass both dry/real refusal and object/state preservation assertions; negative-CW03 restores optional is_file discovery and fails directory/dangling cases, with its malformed-file control still passing."
+      ],
+      "path": "entries-list.json"
+    },
+    "handoffEntry": "260928-MIK-L41-CW03",
+    "leaf": "260928-MIK-L41",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Retirement sends every existing unreadable canonical proof entry to its required reader and refuses by that path before preview or publication, preserving the proof object and live master rather than replacing a reason or archiving it.",
+  "status": "proposed",
+  "supersedes": []
+}

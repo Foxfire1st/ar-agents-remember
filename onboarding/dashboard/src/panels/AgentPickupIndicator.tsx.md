@@ -1,14 +1,14 @@
 # dashboard/src/panels/AgentPickupIndicator.tsx
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/panels/AgentPickupIndicator.tsx`  |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-12T17:50 |
-| lastVerifiedCommitHash | `300664e63f2dbb5f0701d37bbc17ff5358960c77`|
-| lastVerifiedCommitDate | 2026-07-12T18:11:57+02:00|
-| governingOverview      | `overview.md`                                    |
+## Retired source — not a current contract
+
+The standalone marker was removed, but its inbox action was not: LifecycleList PickupDismiss now carries the independently named chat dismissal beside the priority word, including when a gate dominates. Session delivery remains the shared feed. See [current row presentation](lifecycle-list/LifecycleList.tsx.md) and [signal suite](lifecycle-list/signals.test.tsx.md).
+
+The original explanation and numbered evidence below are retained as historical provenance only; they authorize no current import or renderer.
+
+<details>
+<summary>Historical removed-source account</summary>
+
 
 ## Purpose
 
@@ -33,7 +33,4 @@ agent pickup.
 - Dismiss means developer-cleared warning, not agent pickup.
 - Inbox acknowledgment is independent from live hosted-chat `turnState`; an idle chat may sit beside a pending or overdue inbox row.
 
-## Update History
-
-- 2026-07-12T17:50 — 260712-TRH-L6: replaced the false generation spinner with static inbox delivery/acknowledgment wording and recorded the independent chat-activity axis. Reviewer F3 notes that queued/no-hosted-session rows are technically undelivered rather than unacknowledged; this remains a follow-up wording residual.
-- 2026-06-25T13:10+02:00 — Created for task 23/24 waiting-for-agent/check-chat task-row feedback.
+</details>

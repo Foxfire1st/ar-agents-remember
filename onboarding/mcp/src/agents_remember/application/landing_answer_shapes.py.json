@@ -1,0 +1,280 @@
+{
+  "path": "mcp/src/agents_remember/application/landing_answer_shapes.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "6409c3b172fd81910a4386fa06cac88e5ba2580e",
+        "content": "sha256:ca91c86191d4109203694cb52e0a200e334b59b9002fc57c978edfc7233d472b",
+        "locator": {
+          "kind": "symbol",
+          "name": "project_landing_answer"
+        }
+      },
+      "id": "RLZ-3Q48EF",
+      "invariant": "INV-DC238B",
+      "origin": {
+        "handoffEntry": "MIK-R111@v1 / 260928-MIK-L111-A06 / worker-A06",
+        "leaf": "260928-MIK-L111"
+      },
+      "rationale": "This function shapes every landing-chain answer into state, blockers, next step and log location, so the packet rule 1 contract lives here.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "6409c3b172fd81910a4386fa06cac88e5ba2580e",
+        "content": "sha256:adbf21460b3d31b55e7dfcab9c582f2a36d85d04acac712a8bf01c2bb68e8c1a",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-4MH0RZ",
+      "invariant": "INV-0GPNBS",
+      "origin": {
+        "handoffEntry": "L188-B02",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "Public tool response projection must preserve the admitted role-start continuation fields.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "6409c3b172fd81910a4386fa06cac88e5ba2580e",
+        "content": "sha256:6cb39684403b31b9ebd77618ae1f9cacb4b62daebfec13cc043b74fad204a44a",
+        "locator": {
+          "kind": "symbol",
+          "name": "LANDING_KEPT_KEYS"
+        }
+      },
+      "id": "RLZ-9YA8HJ",
+      "invariant": "INV-RNX24H",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.2",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Keeps the omissions block in the bounded worktree_sync answer (it was dropped before L60).",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "6409c3b172fd81910a4386fa06cac88e5ba2580e",
+        "content": "sha256:adbf21460b3d31b55e7dfcab9c582f2a36d85d04acac712a8bf01c2bb68e8c1a",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-AZR741",
+      "invariant": "INV-5H5VR2",
+      "origin": {
+        "handoffEntry": "L185-attach-inv-5h5vr2",
+        "leaf": "260928-MIK-L185"
+      },
+      "rationale": "The role-start success shape defines the fields an answer may carry, so the complete hand-over's path field is declared here and every answer that carries it is built from this shape.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "6409c3b172fd81910a4386fa06cac88e5ba2580e",
+        "content": "sha256:a7c7dce2e7f1889ec03211fca275ead24d98e28898bf7631070920d51b9ea0ca",
+        "locator": {
+          "kind": "symbol",
+          "name": "project_task_doc_answer"
+        }
+      },
+      "id": "RLZ-CTF3D5",
+      "invariant": "INV-DC238B",
+      "origin": {
+        "handoffEntry": "MIK-R111@v1 / 260928-MIK-L111-A06 / worker-A06",
+        "leaf": "260928-MIK-L111"
+      },
+      "rationale": "This function shapes every task_doc write answer and dry run, so the writes-don't-read contract of packet rule 2 lives here.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "6409c3b172fd81910a4386fa06cac88e5ba2580e",
+        "content": "sha256:b25c16c7bc27c73169c837588029ceb3db014eb77358974ce7fa09959e2b6cf1",
+        "locator": {
+          "kind": "symbol",
+          "name": "project_role_message_answer"
+        }
+      },
+      "id": "RLZ-DJE35K",
+      "invariant": "INV-DC238B",
+      "origin": {
+        "handoffEntry": "MIK-R111@v1 / 260928-MIK-L111-A06 / worker-A06",
+        "leaf": "260928-MIK-L111"
+      },
+      "rationale": "This function shapes every role-message answer with its warning and waited-reply handling, so the packet rule 5 contract lives here.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "6409c3b172fd81910a4386fa06cac88e5ba2580e",
+        "content": "sha256:6cb39684403b31b9ebd77618ae1f9cacb4b62daebfec13cc043b74fad204a44a",
+        "locator": {
+          "kind": "symbol",
+          "name": "LANDING_KEPT_KEYS"
+        }
+      },
+      "id": "RLZ-R3CA82",
+      "invariant": "INV-STH8F0",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.1",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Keeps syncSource and sources in the bounded worktree_sync answer.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "6409c3b172fd81910a4386fa06cac88e5ba2580e",
+        "content": "sha256:b25c16c7bc27c73169c837588029ceb3db014eb77358974ce7fa09959e2b6cf1",
+        "locator": {
+          "kind": "symbol",
+          "name": "project_role_message_answer"
+        }
+      },
+      "id": "RLZ-SJSWXC",
+      "invariant": "INV-YAWRJ4",
+      "origin": {
+        "handoffEntry": "L111-CODE-F01.13 / worker-A06",
+        "leaf": "260928-MIK-L111"
+      },
+      "rationale": "This projection shapes every role-message answer and keeps the warning the host behavior requires, so the line shape is decided here.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Landing tools select their declared answer fields and preserve producer refusals without altering the transaction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6409c3b172fd81910a4386fa06cac88e5ba2580e",
+            "content": "sha256:ca91c86191d4109203694cb52e0a200e334b59b9002fc57c978edfc7233d472b",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_landing_answer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A successful start retains the new agent and handover, while failures keep their shape.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6409c3b172fd81910a4386fa06cac88e5ba2580e",
+            "content": "sha256:17a7d71678f73331b855d34651afd5b6d482dcd202ef6c383205ab26fc74adc2",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_role_start_answer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Role-addressed and waited messages retain only the conditional information their caller needs, including cancellation warnings and reply beginnings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6409c3b172fd81910a4386fa06cac88e5ba2580e",
+            "content": "sha256:b25c16c7bc27c73169c837588029ceb3db014eb77358974ce7fa09959e2b6cf1",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_role_message_answer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Writes, dry runs, create, review changes and master-sync failures have distinct task-document projections.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6409c3b172fd81910a4386fa06cac88e5ba2580e",
+            "content": "sha256:a7c7dce2e7f1889ec03211fca275ead24d98e28898bf7631070920d51b9ea0ca",
+            "locator": {
+              "end": 708,
+              "kind": "line_range",
+              "start": 669
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Ordinary refusals keep producer code and reason without error; raised answers keep error; diagnostic blocks remain in the whole log.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6409c3b172fd81910a4386fa06cac88e5ba2580e",
+            "content": "sha256:adbf21460b3d31b55e7dfcab9c582f2a36d85d04acac712a8bf01c2bb68e8c1a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6409c3b172fd81910a4386fa06cac88e5ba2580e",
+            "content": "sha256:f50cd1b8182c714ece66f448915c04eab8fe732a0f17f132368d375ca0775c22",
+            "locator": {
+              "end": 708,
+              "kind": "line_range",
+              "start": 650
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The kept-field set of a successful role start, which now carries the continuation beside the identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6409c3b172fd81910a4386fa06cac88e5ba2580e",
+            "content": "sha256:e0f726d565cfcc5f3dfc7ca17342df9b1391c9a717213b510316e8ddb133a276",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ROLE_START_SUCCESS_KEPT"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Both task-doc dry and successful ordinary answer projections retain supplied alignmentSweep.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6409c3b172fd81910a4386fa06cac88e5ba2580e",
+            "content": "sha256:af65f01a2a727014f508cfe632e2e46c0361cb214b5549b453579369b9f58421",
+            "locator": {
+              "end": 705,
+              "kind": "line_range",
+              "start": 650
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

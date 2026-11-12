@@ -1,0 +1,61 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/integration_branch_types.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Surface and target records carry exact side, kind, repository, branch, and owner identity.\n\nAnchor: `IntegrationSurface`, `IntegrationTarget`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "84b8c3ac79ee63cf38185a25ce7ae6a6a3ffffd4",
+            "content": "sha256:e4fc21ccf07f8d53a29463a565a218aac109a1a4c5c860ffbc158a652dc92bee",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntegrationSurface"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "84b8c3ac79ee63cf38185a25ce7ae6a6a3ffffd4",
+            "content": "sha256:130c1b6fca9a173c1ef1ae47c3afc827e9227f2917c3c240dd3dac0066cc1643",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntegrationTarget"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Workbench and checkout requests carry the task and repository facts required by the resolver.\n\nAnchor: `ProposedWorkBranches`, `RepositoryCheckoutRequest`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "84b8c3ac79ee63cf38185a25ce7ae6a6a3ffffd4",
+            "content": "sha256:1aea7327c001694007e6a192e6265db0d329a8ac0e419f476c5799b52db92347",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProposedWorkBranches"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "84b8c3ac79ee63cf38185a25ce7ae6a6a3ffffd4",
+            "content": "sha256:c35b9f9cba686a03eccb7eba1060be7e6d703c9e53e651de8113981fc8cc7d8b",
+            "locator": {
+              "kind": "symbol",
+              "name": "RepositoryCheckoutRequest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

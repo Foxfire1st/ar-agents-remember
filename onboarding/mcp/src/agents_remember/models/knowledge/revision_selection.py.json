@@ -1,0 +1,150 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/revision_selection.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9f27f4c12c4031cc291e393cd73c4fa5c22b506d",
+        "content": "sha256:27264d6af048561e960f825daa1b69d6114c9cd422b99d6649a30a01cf60f180",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewRevisionSelection"
+        }
+      },
+      "id": "RLZ-56S6N4",
+      "invariant": "INV-P1QKHK",
+      "origin": {
+        "handoffEntry": "RP15",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Carries the two optional display-version fields independently of the selected revision identities.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "9f27f4c12c4031cc291e393cd73c4fa5c22b506d",
+        "content": "sha256:4b3a294f1a60fa6077f8b2af09857e35a35660d300e24cf6c3a5b2e6864e0fc3",
+        "locator": {
+          "end": 73,
+          "kind": "line_range",
+          "start": 70
+        }
+      },
+      "id": "RLZ-DVEK2E",
+      "invariant": "INV-MRHE25",
+      "origin": {
+        "handoffEntry": "RP21_REVISION_WRITER",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Carries before_writer and after_writer independently and leaves them optional where no side or no attribution read exists.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "9f27f4c12c4031cc291e393cd73c4fa5c22b506d",
+        "content": "sha256:e94bb00461088798cdfdab88c9d2b17f20c5ea8dc277a2b4828ec0169e3cca0b",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewRevisionWriter"
+        }
+      },
+      "id": "RLZ-JBRA2Q",
+      "invariant": "INV-MRHE25",
+      "origin": {
+        "handoffEntry": "RP21_REVISION_WRITER",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Carries recorded/introduced/not_recorded/unavailable with explanatory detail and requires owners exactly for the two states that name a writer.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "11": {
+      "note": "Writer states and owner-presence validation keep recorded/introduced distinct from missing/unavailable evidence.\n\nAnchor: \"class ReviewRevisionWriter(KnowledgeModel):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f27f4c12c4031cc291e393cd73c4fa5c22b506d",
+            "content": "sha256:63ae37da425c02aa698d2856a6160fcfb1a016c209745de0db4afd339e8a8f85",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 25
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The selection includes per-side display versions and optional writer fields.\n\nAnchor: \"class ReviewRevisionSelection(KnowledgeModel):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f27f4c12c4031cc291e393cd73c4fa5c22b506d",
+            "content": "sha256:e2f47e34fedc97127a111557ad3a6ac1f92193c4514423205be90c17f8482226",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 54
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Pair/head/retained validators constrain supplied membership and state, not provenance.\n\nAnchor: \"def _require_the_state_to_match_the_pair(self) -> ReviewRevisionSelection:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f27f4c12c4031cc291e393cd73c4fa5c22b506d",
+            "content": "sha256:9e84c87a92e2e485bd571baff0973acd196d23b25256e6bc702f56a5be5f1e37",
+            "locator": {
+              "end": 108,
+              "kind": "line_range",
+              "start": 75
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The producer forwards each selected record’s display version without changing selection policy.\n\nAnchor: \"def select_subject_revisions(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50e72f0f05fdeecfd3211de1ac01c7f4098230e9",
+            "content": "sha256:ddc186e79fa30557756920a1e33f181944dd1f534edf540aafcd1385b3ce9ffa",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 35
+            },
+            "path": "mcp/src/agents_remember/application/review_revision_comparison.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The pane’s guard is one-directional: selection implies subject_selected.\n\nAnchor: \"def _require_the_selection_state_to_state_itself(self) -> ReviewKnowledgePane:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
+            "content": "sha256:253b97f3e842da38a667c67abd4d93a506a19b785e7740f29d8d0445889a8c70",
+            "locator": {
+              "end": 516,
+              "kind": "line_range",
+              "start": 490
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,45 +1,85 @@
 # operations/curation.md
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                            |
-| path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-27T04:58:33+00:00 |
-| lastVerifiedCommitHash | `eda947325ccbe0791973953265278597e968a34a` |
-| lastVerifiedCommitDate | 2026-09-28T18:11:05+02:00|
-| governingOverview      | `../../../../../../../overview.md` |
+## Current supported-pair account — R100/R116 composition
+
+MEMORY review stays separately sealed/counted and never opens or resets CODE review. Beyond the settings limit the architect or developer authorizes the pass and Manager records it. Curator owns corrected input/body/coherence work; transaction steps and external effects stay with their owners. The installed-build quality/coherence outcome and direct Reviewer handover remain separate from independent acceptance.
+
+
+## Message/file transport
+
+This packaged copy makes role messages short wake-ups naming requested work or a handover and its files. Complete report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, never pasted into message text. Within a shared task, message files remain with its record and a leaf workspace exposes the message-folder link. Wake text uses the effective settings limit, not a number pinned in this role/template.
+
+- Messages wake; complete payloads and evidence travel as files.
+
 
 ## Governing Overview
 
 [MCP package overview](../../../../../../../overview.md)
 
+## Current naming and source qualification
+
+Name immutable baseline/candidate records with scoped knowledge_read, open the named files natively, and read the full knowledge_diff report before semantic changes. Family readback follows the same name-then-open route.
+
+## Current source contract evidence
+
+
 ## Purpose
 
-Packaged runtime copy of the canonical skills/l-01-agent-lifecycles/operations/curation.md. It is synchronized by the existing skill propagation owner and introduces no independent doctrine.
+Reconcile current intent, ruled change intent and implemented reality, maintain affected onboarding, and author justified knowledge through the existing admitted writer.
 
-Carries the curation operation: reconcile the current and approved intent with implementation, author justified records through the existing writer, maintain affected onboarding, and retain the actual comparison and handoff evidence.
+## Current Contract
+
+MEMORY review keeps separate sealed reports, finding IDs and its own pass count, opening no CODE round or resetting its verdict/baseline. Its budget is the same settings limit as CODE; a further pass needs the Architect’s or developer’s words recorded by the Manager.
+
+On an AR-launched Paseo capsule, `documents[0].taskDocReadArgs` supplies exact rendered_path and json_path file locations, opened with the harness's own file tools. task_doc writes and does not read. AR calls use agents-remember-task and the actual reader schemas: knowledge_read takes memoryRoot; context_packet and read_ar_files both take the exact supplied leaf task_context with the canonical task reference and enclosure contract. Read immutable baseline/candidate knowledge before semantic changes, contain outputs in the selected memory root and read admitted records back.
+
+On converted memory, normally admitted `knowledge-ingest --contract … --list … --authorization-ref … --commit --json` writes files with `entries`, `records` and `history`, including worklist/onboarding judgments and governing decisions; it publishes no dataset and has no `--baseline`, `--publish` or `--publish-to` option. Capsule-specific missing writer/command admission is reported as records not written; it admits no other runtime or internal writer.
+
+Normal curation requires the complete contract-scoped memory-quality operation, repair or exact blocked escalation of every curator-actionable finding, and reruns until the raw quality checklist is ready. Missing/stale coherence is cleared by the existing prepare → publish → validate authority. Scoped checks cannot stand for that full operation.
+
+Before converted-memory closeout, an independent seat that authored none of the leaf's cards or records fact-checks every changed card, sidecar and record statement against final code, every history row's disposition, effect and reason against the diff, and important omissions. Blocking findings are repaired with another full-quality run. This second reader is a lifecycle duty, not a check mechanically run by closeout. It preserves separate MEMORY/CODE reports and budgets and the one admitted producer/writer.
+
+An explicitly report-only admission supplies only its requested report/upstream message and claims none of this normal pass complete.
+
+Author semantic scope and each target’s rationale. Examine a family’s own guarantee, exact memberships and unchanged siblings; retain them explicitly only when a successor is justified. Declare inspected external sources and read each measured plane’s own state. Use the existing comparison producer with the admitted source-bound package and carry its actual immutable generation or refusal, including unchanged-knowledge work.
+
+
+## Foundation carrier and writer admission
+
+Repository foundation is regular task work: the user-started Architect opens the real foundation task as a registered leaf under a master, and the Curator seat starts on that task document with its actual enclosure contract. Bootstrap reads and reports the foundation state and names the Architect as the next step; no instructed session substitutes for task admission. Foundation authoring uses the contract-scoped leaf writer, and the developer's commit word is the whole of the write act. No invented task document or enclosure manufactures either admission.
+
+- Bound curation intake reads supplied canonical files; knowledge_read uses memoryRoot, and context_packet and read_ar_files both use the leaf task_context. Foundation authoring is regular task work inside the task the user-started Architect opens; the Curator seat is started on that task document with its actual enclosure contract, and no instructed session substitutes for task admission. \[6] Anchor: Foundation carrier and admission
+
+## Conventions
+
+Canonical skills/l-01-agent-lifecycles/operations/curation.md owns the instruction. scripts/sync-skills.py regenerates this exact packaged copy, the sole generated skill target, which the tool server serves as MCP resources; no generated file defines a separate obligation.
+
+## Invariants And Boundaries
+
+Do not edit source/task-status/lifecycle/Git state, invent a dataset destination or source stamp, fabricate family membership, or route a refusal through another installation. Native clarification uses the actual parent/task role via bound messaging; developer questions go to the parent when one exists, and only a parentless session uses its own chat.
+
+## The Same Authoring Fields, Mirrored (MIK-R48)
+
+This generated copy carries the same family-coverage authoring fields as the
+canonical curation operation. The copy holds no contract of its own; the canonical
+surface with its card and the governing history rows carries it.
+
+- The mirror carries the same authoring fields as the canonical operation. [1]
 
 ## Code Commentary
 
+Before converted-memory closeout, a seat that authored none of the leaf cards or records independently checks every changed statement against final code, each history disposition/effect/reason against the diff and important omissions. Blocking findings are repaired with a full curation-operation rerun. This is a lifecycle duty, not a new closeout predicate or helper self-check; neither raw quality nor coherence substitutes for the second reader.
+
+
+- The curation contract keeps the Curator's memory reconciliation distinct from Worker, Reviewer and Manager ownership; the Manager owns the Git transaction. [6]
+
+
 ### Logic
 
-The canonical curation carrier states that normal comparison recording collects actual R14 records and retains exact immutable curator artifacts. Historical review reads those pins. Explicit recovery requires a named retained parent plus its original curator record digest; old judgments and old generations are preserved, and current source/pointers are never substitutes. This packaged copy remains generated from the canonical skill.
-
-The family step now requires an explicit unchanged sibling set on a justified successor declaration. Each `declares.retain_memberships` reference names a stored membership read from the exact predecessor family and includes the curator’s basis. Old invariant revisions and memberships remain unchanged; no predecessor roster or allocation journal is copied implicitly.
-
-Read the report’s `retainedFromMemberId` references, family/source states and published exact roster. Those are distinct from the guarantee’s semantic judgment and from tests. The operation retains the existing complete memory-quality loop, typed blockers and review-record-comparison producer, including its explicit unchanged-knowledge route when no knowledge change is authored.
-
-Taskless repository-foundation work uses the existing bootstrap admission; leaf work uses the exact enclosure. Neither the operation nor a generated copy creates a second writer, publication destination or lifecycle authority.
-
-Since leaf `260921-ICR-L45`, workflow step 3 states that every hand-off target carries its own authored
-`rationale` and optional `role` as the hand-off template states, that the writer never generates a
-rationale, and that an unexplained target refuses its entry (`realization_rationale_absent`).
+The hand-off template states that every hand-off target carries its own authored `rationale` and optional
+`role`, that the writer never generates a rationale, and that an unexplained target refuses its entry
+(`realization_rationale_absent`); a Curator receiving a target without one authors it from the evidence.
 This package copy is generated from the canonical root file by `scripts/sync-skills.py`.
-
-### Conventions
-
-Canonical skills own instructions. Generated copies are synchronized artifacts; curate the matching sidecar against its own source path. One output list preserves the producer’s nine fields and fills only curator-owned decisions.
 
 ### Invariants And Boundaries
 
@@ -52,58 +92,49 @@ Canonical skills own instructions. Generated copies are synchronized artifacts; 
 
 No additional work is asserted by this card. Actual project publication and semantic acceptance remain separately evidenced outcomes.
 
-## Docs References
+## Evidence
+
+
+### Repo-Internal References
+
+- Bound Paseo intake reads the rendered task and canonical JSON with the agent's own file tools, the knowledge writer keeps its ownership inside the selected memory root, and curation binds to the starting serving build. [8]
+
+- Normal workflow reconciles meaning, states invariant scope and grouping guarantees, and runs full quality and independent fact-check before bounded repair. [9]
+
+- Authority gates and failure handling keep source and transaction ownership, tool scope and coherence with their owners; the memory candidate goes directly to the Reviewer and harness permission decisions are not bypassed. [10]
+
+
+- An independent nonauthor fact-checks every changed curated statement and history-row judgment before converted-memory closeout, and blocking findings are repaired before closeout. [5]
+
+
+### Docs References
 
 No configured Domain Documentation source applies to this repository-owned contract.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The operative contract is defined by the repository sources cited below. | — | — |
+The operative contract is defined by the repository sources cited below.
 
-## Repo-Internal References
+### Repo-Internal References
 
 These references name the current owners and the behavior they establish.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Curation sequence including explicit retained-sibling authoring. | `## Normal workflow` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md:54-136 |
-| Workflow step 3 requires an authored rationale on every hand-off target (generated copy). | "Every target in it carries its own" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md:71-75 |
 
-## Cross-Repo References
+### Cross-Repo References
 
 No sibling repository defines this file's contract.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repository implementation dependency. | — | — |
+No meaningful cross-repository implementation dependency.
 
-## Update History
-- 2026-09-28T17:18:24+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): body update — the generated copy's workflow step 3 now requires an authored rationale on every target (regenerated by `sync-skills.py`). No stamp advanced.
+## Current Contract Evidence
 
-- 2026-09-27T04:58:33+00:00 — Updated the packaged carrier account for normal assessment capture and explicit retained-history recovery. Verification hashes/dates remain closeout-owned.
 
-- 2026-09-26T23:48:33Z — L39: reconciled exact sibling-retention input, immutable endpoint behavior and reporting against the frozen source. Preserved prior history and existing verification metadata; actual source commit stamping remains closeout-owned.
+- Memory review keeps its own sealed reports, finding identifiers and pass count under the same ordinary limit as code review; a pass beyond the settings limit needs the Architect's or developer's instruction, which the Manager records. [3]
 
-- 2026-09-26T19:49:05Z — The generated curation procedure records the task comparison after reconciliation. Changed knowledge first uses ordinary ingest/publication; code-only work explicitly requests --unchanged-knowledge. It preserves the producer generation identity or exact refusal without inventing knowledge to obtain a review.
-- 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **body update — the comparison table's carrier row changes with the policy.** The carrier row now names a taskless curator session (the developer's 2026-09-24 ruling) as the foundation entry's author and the bootstrap seat as its read-and-report half, where it previously said a taskless curator seat does not exist; the L27 note is retained as true at its own bytes and a second dated note states the policy at these bytes. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
-- 2026-09-24T12:44:00+02:00 — 260921-ICR-L27 curator (uncommitted change set on `ar/260921-icr-l27-ar`, code base `06ed70cfcde7e3860ee5b53435727e7512e4335c`): **body update: the repository-foundation entry section.** The new section with its six-row comparison table, the carrier row that states a taskless curator seat does not exist, the writer row with `enclosure_in_scope`, the opening sentence about the second bounded entry, the authority gate naming both writers, and the exit paragraph that carries the bootstrap report's facts and the areas a partial run did not reach. **Citation accounting:** the rows this card carries were re-read against this candidate — including the `## Handoff / exit` heading, whose live line was re-derived rather than carried forward — so no range was produced by adding a delta to an old number. No verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the real stamp.
-- 2026-09-24T07:54+02:00 — 260921-ICR-L28 curator (uncommitted change set on `ar/260921-icr-l28`, base `63b476297708f779de8ed5c0bf3555b9d1de70c2`): **body update: the packaged copy carries the canonical operation's new step.** The pass now examines family coverage and authors it as part of the same list — a deliberate `no_family` outcome with its basis, an unexamined obligation left without either key so the report names it unexamined, nothing grouped by directory/route/label/shared anchor, and a member change prompting a fresh look at the affected guarantee — and declares every inspected external source so the run retains it in a bounded manifest rather than as a repository path with a Git blob. Written in `skills/l-01-agent-lifecycles/operations/curation.md` and propagated by `scripts/sync-skills.py`. **Citation accounting:** the ranges this card carries into the files this leaf's change set moved were re-derived against the candidate's own bytes rather than shifted by a remembered delta. No claim and no row was dropped, and no verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the real stamp.
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
 
-- 2026-09-21T18:09+02:00 — 260921-ICR-L20 curator (uncommitted change set on `ar/260921-icr-l20`, production line `71a4433e686b3380af97a0836bb82bab2c8f2aad`): **body update for the authoring step this leaf added to the operation block, in the canonical source and therefore in this generated copy.** `skills/l-01-agent-lifecycles/operations/curation.md` is 161 lines where it measured 144 in this card's last reading; `## Normal workflow` gained a third numbered step (the real ingest invocation, `--baseline`, `--publish --commit --json`, and "consume the report, not the exit status"), `## Required inputs` gained the repository's published dataset, `## Authority gates` gained the paragraph keeping the batch and publication with their existing owners, `## Failure handling` gained the rule that a partial or refused hand-off stays partial and visible, and `## Handoff / exit` gained the published dataset identity. **Citation accounting:** the `## Handoff / exit` row this card already carried was re-derived `:121-128` → `:151-151` from the heading's own post-edit line rather than shifted, the new rows were read from the block's own lines, and `# Operation` `:1-1` — the one row that was already correct — was re-verified rather than assumed. This card documents the **generated packaged copy**: the canonical source is the root `skills/` tree, `scripts/sync-skills.py` produces the copy (the leaf ran it and its `--check`, both clean), and no harness skill root was installed. No verification stamp was advanced — the candidate is uncommitted and the governed closeout owns the real commits.
-- 2026-09-17T14:15+02:00 — 260915-CAPS-L19 curator: **Field-name warrant corrected — `ready-for-closeout` read as *never* a value of the combined `checklistStatus`.** That absolute sentence was written by 260915-CAPS-L10's curator as the warrant for this card's `D35` correction, and `CAPS-R19` (`260915-CAPS-L19`) measures it **literally false** (`application/memory_quality/controller.py:685-687` leaves the combined field at its incoming `ready-for-closeout` value on the success path, with `closeoutReady=true`). The card now states the three-path model instead: the raw `qualityChecklistStatus` is the repair loop's gate; the combined `checklistStatus` is rewritten to `coherence-required` **only when the coherence record is then missing or stale**; and `closeoutReady` becomes true only once that validation passes. Corrected under `CAPS-R19`'s revision note (2026-09-17T13:55), which is the authority for this change. The field-name correction itself stands and attribution is complementary — `260915-CAPS-L10` corrected the onboarding cards, `CAPS-R19` corrected the shipped sources (the five loop-gate carriers, their nine generated copies, the guard registry's docstring) and brought `docs/reference/mcp-tools.md` into the loop-gate census and the guard's `LOOP_GATE_DOCUMENTS`. The earlier entries below are left exactly as written: they record what L10 did, and this entry is the correction of their warrant. No verification stamp advanced — the candidate is uncommitted and the governed closeout owns the real commits.
-- 2026-09-17T13:45+02:00 — 260915-CAPS-L10 curator: **corrected a landed defect (`D35`) in the Logic section.** The complete-curation sentence named `checklistStatus=ready-for-closeout` as the loop's termination condition; `ready-for-closeout` is never a value of the combined field. It now names the **raw** `qualityChecklistStatus` as the loop's gate and the **combined** `checklistStatus=coherence-required` as the point at which the `curator_coherence` authority is published, matching `application/memory_quality/controller.py:664,671,678,687`. The 2026-09-17T12:28+02:00 entry below is left as written: it records what CAPS-L18 did, and this entry is the correction of that wording. No verification stamp advanced — the candidate is uncommitted and the governed closeout owns the real commits.
-- 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: **complete curation inverts the doctrine this card recorded.** CAPS-R18@v1 removes the optional/narrow-curation sentences from the shipped instruction corpus and states the rule normatively — the full `memory_quality_check` operation runs as part of every leaf's curation at its contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every curator-actionable finding is repaired or escalated as blocked with its exact returned code, and closeout and integration **carry** the completed curation as a prerequisite while invoking nothing. Added the changed `## Normal workflow` step 5 and `## Authority gates` rule to Logic: the complete curation check set, its `curatorActionableCount=0` / `checklistStatus=ready-for-closeout` termination condition, and the coherence authority published when the checklist requires it.
-- 2026-09-16T22:19+02:00 — **No content impact:** 260915-CAPS-L16 curator. The canonical source gained
-  one pronoun — the curator's exit says terminal/finalizer evidence attests only that **this** turn
-  ended — and this card's Logic describes the curator/manager job split and the three fed inputs, not
-  the completion-truth wording, so nothing in the body asserts the sentence that moved. Reviewed
-  against the change set and deliberately left as written rather than reworded to match a one-word
-  diff. **Repaired in the same pass (D16):** this card's `governingOverview` field and link pointed five
-  levels up, at `onboarding/mcp/src/agents_remember/overview.md`, which does not exist — the card's own
-  link text says "MCP package overview", which from `operations/` is **seven** levels up. Both now
-  resolve to `onboarding/mcp/overview.md`. Verification metadata moves to this leaf's synced base
-  `8997e184`; the candidate is deliberately uncommitted, so the governed closeout stamps the real code
-  commit and no hash or fingerprint was invented here.
+- Before ingest, each hand-off target requires an authored rationale, directly or through an applicable entry-level default; the writer refuses unexplained targets on every run, before any file is written. [2]
 
-- 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: created this card for `skills/l-01-agent-lifecycles/operations/curation.md` — a file added by the role-instruction corpus consolidation. The canonical source is an operation-scoped procedure block extracted from interleaved role prose (curation).; the packaged copy is produced by `scripts/sync-skills.py` and is not hand-edited. Verification metadata is left at the leaf base commit because the source is uncommitted — the governed closeout stamps the real code commit, and no hash or fingerprint was invented here.
+
+- Bound curation intake reads supplied canonical files; knowledge_read uses memoryRoot, and context_packet and read_ar_files both use the leaf task_context.
+
+- Curation requires the complete memory-quality operation, repair or blocked escalation of every Curator-actionable finding, and the independent fact-check before handover. [4]
+
+- Bound curation intake gives `knowledge_read` the workspace memory root and gives `context_packet` and `read_ar_files` the exact supplied leaf `task_context`. [7]

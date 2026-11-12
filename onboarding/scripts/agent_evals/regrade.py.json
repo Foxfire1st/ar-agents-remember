@@ -1,0 +1,42 @@
+{
+  "path": "scripts/agent_evals/regrade.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "273c4776efbcbe1b91e4327a0b097e4419fab1ee",
+        "content": "sha256:60471aae154d98ffc432e28c3bcf3af56f49d84fe9bf4624b6620f357485f3b3",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-Q734GS",
+      "invariant": "INV-8QTDZG",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-regrade",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "It separates free census/dry-run from paid execution, verifies frozen inputs and keys judged results on disk package identity and judge model.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.\n\nAnchor: Current declared source extent",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "273c4776efbcbe1b91e4327a0b097e4419fab1ee",
+            "content": "sha256:60471aae154d98ffc432e28c3bcf3af56f49d84fe9bf4624b6620f357485f3b3",
+            "locator": {
+              "end": 1193,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

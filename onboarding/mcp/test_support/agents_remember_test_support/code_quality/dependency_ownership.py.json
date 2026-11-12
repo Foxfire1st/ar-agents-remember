@@ -1,0 +1,119 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "82360cec3b9a90193f4e9d7dbdf68cf5340dabb6",
+        "content": "sha256:e86f85f2632f9f79f0760f656fe0cb21900cd24f5cc4deb71fe589aae5b47b97",
+        "locator": {
+          "kind": "symbol",
+          "name": "REPOSITORY_TEST_INPUT_CONSUMERS"
+        }
+      },
+      "id": "RLZ-JEMM0K",
+      "invariant": "INV-YYFPVG",
+      "origin": {
+        "handoffEntry": "MIK-R206 item 6",
+        "leaf": "260928-MIK-L197"
+      },
+      "rationale": "This table is the one place a repository-declared consumer set is stated, and the ownership graph refuses the declaration when it differs from the observed set, so the four consumer paths belong here and nowhere else.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "2": {
+      "note": "Transitive importer closure",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82360cec3b9a90193f4e9d7dbdf68cf5340dabb6",
+            "content": "sha256:09c4ee4362647b98e1faa647e0adb1f25f18f7cc5edde728b02cc856a3607716",
+            "locator": {
+              "kind": "symbol",
+              "name": "transitive_importers"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Digest binds declarations and classification authority",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82360cec3b9a90193f4e9d7dbdf68cf5340dabb6",
+            "content": "sha256:4980187d983779be294e87db53a9dd3d4f2ce6459a32b2d9b541b7b52912740e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ownership_configuration_digest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "An invalid lifecycle catalog is caught as the shared catalog reader's error, not as a bare TOML error, and becomes an unresolved selection reason.\n\nAnchor: `changed_catalog_consumers`; `EvidenceLifecycleError`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82360cec3b9a90193f4e9d7dbdf68cf5340dabb6",
+            "content": "sha256:8e4896bb264f5ef916243664350414fcfbb7b1c1d6071458a78e49b7e45fc4d4",
+            "locator": {
+              "end": 306,
+              "kind": "line_range",
+              "start": 303
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Observed and declared ownership, exact-empty distinction and refusals",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82360cec3b9a90193f4e9d7dbdf68cf5340dabb6",
+            "content": "sha256:20fad3c44b7d355b4ca354acac3801d7580599e9c82c345e9678a0fa1431ab94",
+            "locator": {
+              "kind": "symbol",
+              "name": "DependencyOwnershipGraph"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The layering declaration names all four consumers",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82360cec3b9a90193f4e9d7dbdf68cf5340dabb6",
+            "content": "sha256:e86f85f2632f9f79f0760f656fe0cb21900cd24f5cc4deb71fe589aae5b47b97",
+            "locator": {
+              "kind": "symbol",
+              "name": "REPOSITORY_TEST_INPUT_CONSUMERS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "82360cec3b9a90193f4e9d7dbdf68cf5340dabb6",
+            "content": "sha256:9bacf89cab7c109542268500df6c0281d35a377ecc8306d2e92b25a19cb3fd0e",
+            "locator": {
+              "end": 144,
+              "kind": "line_range",
+              "start": 59
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

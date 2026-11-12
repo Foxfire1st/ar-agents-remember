@@ -1,0 +1,254 @@
+{
+  "path": "mcp/tests/test_l84_link_integrity.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "72bf3496e7d35963cccfe3b4b4cb77560b5d6d0f",
+        "content": "sha256:a17680692db206f52706e490c1367e799f08cc691b9542575369df697e584b6a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_link_mutations_fail_and_the_gfm_anchor_passes"
+        }
+      },
+      "facet": "Broken-anchor, broken-path, fenced-heading, angle-bracket, skill:// and leaving-the-tree mutations each fail the scan.",
+      "id": "PRF-4CQ7SJ",
+      "invariant": "INV-W6HBYY",
+      "origin": {
+        "handoffEntry": "MIK-R84@v13 behaviour 2 / l-01 reference layout",
+        "leaf": "260928-MIK-L84"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "72bf3496e7d35963cccfe3b4b4cb77560b5d6d0f",
+        "content": "sha256:86732d011cde84f3ab6eb044d061bd6e8626cda727ec082975df23728e6a1daf",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_acceptance_does_not_point_at_its_own_approval_definition"
+        }
+      },
+      "facet": "Fails when the acceptance core source links the every-role approval definition it projects.",
+      "id": "PRF-BFFZZ8",
+      "invariant": "INV-0V8R02",
+      "origin": {
+        "handoffEntry": "L84-P5-12",
+        "leaf": "260928-MIK-L84"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "72bf3496e7d35963cccfe3b4b4cb77560b5d6d0f",
+        "content": "sha256:48284341f1300d902b8269fc9049eccaeb6254c41e394fc7da6b45ab99c13680",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_every_delivered_link_and_anchor_resolves"
+        }
+      },
+      "facet": "Scans every l-01 link, anchor and skill:// address in source and package and requires none unresolved.",
+      "id": "PRF-KCX7F0",
+      "invariant": "INV-W6HBYY",
+      "origin": {
+        "handoffEntry": "MIK-R84@v13 behaviour 2 / l-01 reference layout",
+        "leaf": "260928-MIK-L84"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "72bf3496e7d35963cccfe3b4b4cb77560b5d6d0f",
+        "content": "sha256:86732d011cde84f3ab6eb044d061bd6e8626cda727ec082975df23728e6a1daf",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_acceptance_does_not_point_at_its_own_approval_definition"
+        }
+      },
+      "id": "RLZ-2JJPZW",
+      "invariant": "INV-0V8R02",
+      "origin": {
+        "handoffEntry": "L84-P5-12",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "This test fails if core/acceptance.md links every-role.md#requirements-and-limits, the AC2.1 self-link round 2 found.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "72bf3496e7d35963cccfe3b4b4cb77560b5d6d0f",
+        "content": "sha256:c2cbe5f378568fee014103294af3683c78308d81abf6a3fac63989a933f2bf84",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-ZR8D0K",
+      "invariant": "INV-W6HBYY",
+      "origin": {
+        "handoffEntry": "MIK-R84@v13 behaviour 2 / l-01 reference layout",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "This test reads every l-01 link and anchor in source and package and fails on any that does not resolve, so a moved file without followed links is caught.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Link targets resolve as detail, served skill URI or relative paths, and other schemes are refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "72bf3496e7d35963cccfe3b4b4cb77560b5d6d0f",
+            "content": "sha256:19f94d44afd1a3ca0be2def473aed540110bdf48224871327fcc8f49d02884cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "Re-pointing the retired handoff section link at `curator-handoff-list.md` fails as a missing anchor.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "72bf3496e7d35963cccfe3b4b4cb77560b5d6d0f",
+            "content": "sha256:c2cbe5f378568fee014103294af3683c78308d81abf6a3fac63989a933f2bf84",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A target must stay inside the delivered skills tree, exist, and hold the anchor.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "72bf3496e7d35963cccfe3b4b4cb77560b5d6d0f",
+            "content": "sha256:e531e34b32255c5388ce35bf784e6459673c5676ef4b539e540129f4e6ffd576",
+            "locator": {
+              "kind": "symbol",
+              "name": "_check"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Every delivered link and anchor resolves in the source and the package.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "72bf3496e7d35963cccfe3b4b4cb77560b5d6d0f",
+            "content": "sha256:48284341f1300d902b8269fc9049eccaeb6254c41e394fc7da6b45ab99c13680",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_delivered_link_and_anchor_resolves"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The GitHub anchor keeps one hyphen per space.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "72bf3496e7d35963cccfe3b4b4cb77560b5d6d0f",
+            "content": "sha256:b5619c8ecdb996d021ed9b14420fc06b3a17e242ac840a2feb3a471deb7d3709",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_gfm_anchor_keeps_one_hyphen_per_space"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The planted link mutants are enumerated by kind.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "72bf3496e7d35963cccfe3b4b4cb77560b5d6d0f",
+            "content": "sha256:c86283bddda42de48a51f43a4bee979144cac5c4fc9526af36d85167002d5871",
+            "locator": {
+              "kind": "symbol",
+              "name": "MUTANTS"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Every mutant fails, the GitHub-form anchor passes, and package skill URIs resolve in the package.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "72bf3496e7d35963cccfe3b4b4cb77560b5d6d0f",
+            "content": "sha256:a17680692db206f52706e490c1367e799f08cc691b9542575369df697e584b6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_link_mutations_fail_and_the_gfm_anchor_passes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The acceptance file does not point at its own approval definition.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "72bf3496e7d35963cccfe3b4b4cb77560b5d6d0f",
+            "content": "sha256:86732d011cde84f3ab6eb044d061bd6e8626cda727ec082975df23728e6a1daf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_acceptance_does_not_point_at_its_own_approval_definition"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Every fragment link in one skill is checked for its file and section.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "72bf3496e7d35963cccfe3b4b4cb77560b5d6d0f",
+            "content": "sha256:95c85267bd7fef4e366fa2c41cafffef5ad689ee529fdda54b274ba09480b2a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_fragment_problems"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Every skill's section links resolve in the source and the package.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "72bf3496e7d35963cccfe3b4b4cb77560b5d6d0f",
+            "content": "sha256:c2cbe5f378568fee014103294af3683c78308d81abf6a3fac63989a933f2bf84",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,75 @@
+{
+  "path": "mcp/tests/test_review_route_refusals.py",
+  "realizes": [],
+  "references": {
+    "18": {
+      "note": "Bare-app helpers and source-declared unwired/selector refusal cases exercise the actual registrar.\n\nAnchor: \"def runtime_config() -> McpRuntimeConfig:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fa5b765807aa5122f24269de9f3d28bc92c31a4",
+            "content": "sha256:6e21570d14540102021cd653bfac5b3d9e4a627a9ffd8eb1607bb671e0421aa7",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 46
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "The review route preserves actionable exception bodies and whole typed refusals.\n\nAnchor: \"def test_a_refused_authority_carries_the_action_that_clears_it() -> None:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fa5b765807aa5122f24269de9f3d28bc92c31a4",
+            "content": "sha256:720527da0a0e8d35874d05a34a6f72ccacba38ce05be56da8e790a5574c0dd36",
+            "locator": {
+              "end": 172,
+              "kind": "line_range",
+              "start": 115
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "Five parametrized catalogue refusals retain their own status family and empty entries.\n\nAnchor: \"def test_the_entry_route_maps_each_refusal_code_onto_its_own_status(code: str, status: int) -> None:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fa5b765807aa5122f24269de9f3d28bc92c31a4",
+            "content": "sha256:dd8feb9a17f11e910e27dac30d86f997e7c12a2f8ebfdf21be41b176db1e2452",
+            "locator": {
+              "end": 206,
+              "kind": "line_range",
+              "start": 175
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "Negative comparison admission runs no port; positive3 forwards unchanged.\n\nAnchor: \"def test_the_entry_route_refuses_a_negative_comparison_number_by_name() -> None:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fa5b765807aa5122f24269de9f3d28bc92c31a4",
+            "content": "sha256:229faa9148716f3bacabe2a4e1cc5890adc3b5bf2651950ba1705ee384bb2f2b",
+            "locator": {
+              "end": 231,
+              "kind": "line_range",
+              "start": 209
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

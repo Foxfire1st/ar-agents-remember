@@ -1,0 +1,82 @@
+{
+  "path": "mcp/src/agents_remember/canvas/canvas-prospective-load.mjs",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "67f8b73c7c956edb2e18c92195e786684ec8777b",
+        "content": "sha256:7e4d589221ed230128e199fcf17807340b453e4d7f473e3c32f426e5aeeef9b6",
+        "locator": {
+          "end": 248,
+          "kind": "line_range",
+          "start": 210
+        }
+      },
+      "id": "RLZ-713HTD",
+      "invariant": "INV-40VGBY",
+      "origin": {
+        "handoffEntry": "L183-curator-test-facet-02",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The mutation watcher accumulates both reference classes independently through the post-load window, so dynamically inserted claim ids cannot silently become basis references.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "67f8b73c7c956edb2e18c92195e786684ec8777b",
+        "content": "sha256:c8defcc4e5bc2874591abcf998d20afbb46e8c60f3d64f4f9610561b4f745f93",
+        "locator": {
+          "end": 361,
+          "kind": "line_range",
+          "start": 316
+        }
+      },
+      "id": "RLZ-QQ4TZ4",
+      "invariant": "INV-40VGBY",
+      "origin": {
+        "handoffEntry": "L183-curator-test-facet-02",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The returned browser-load report carries the separate inventories, bounded observation and detected faults; Python admission rechecks rather than trusting loaded as a verdict.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "67f8b73c7c956edb2e18c92195e786684ec8777b",
+        "content": "sha256:4856cafdbe73ebb1342c888b1e7bb6d731f83adfb70ae9e43aaa5c384581c65a",
+        "locator": {
+          "end": 185,
+          "kind": "line_range",
+          "start": 152
+        }
+      },
+      "id": "RLZ-TV9FAW",
+      "invariant": "INV-40VGBY",
+      "origin": {
+        "handoffEntry": "L183-curator-test-facet-02",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The model-free DOM observation separates basis references from claim ids and reports empty attributes as unresolved. Each inventory is bounded; the trusted Python caller resolves it against the exact packet.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The prospective Chromium observation keeps basis references and claim ids separate through bounded post-load mutations; Python resolves both against the immutable packet. Load, isolation and paint observations establish no explanation correctness or arbitrary later-script behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67f8b73c7c956edb2e18c92195e786684ec8777b",
+            "content": "sha256:c8defcc4e5bc2874591abcf998d20afbb46e8c60f3d64f4f9610561b4f745f93",
+            "locator": {
+              "end": 361,
+              "kind": "line_range",
+              "start": 316
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

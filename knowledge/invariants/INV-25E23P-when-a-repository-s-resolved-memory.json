@@ -1,0 +1,38 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A claim that outruns the AR start advertises work no seat began, and a close before the pushes reports a delivery the remote does not hold; the conditional sentence binds both acts to the AR events they depend on and leaves the absent-file case publishing nothing."
+  },
+  "applicability": "A leaf's published issue, from the Manager's claim before the AR start to the close after the landing and both authorized branch pushes.",
+  "conditions": [
+    "The resolved memory layer carries `system/task-publication.md` at its root."
+  ],
+  "exclusions": [
+    "A resolved memory without that file: nothing is published.",
+    "The board `Status` and the refusal cases: the sentence routes those to the instruction file, while the claim before the start and the close after the landing and both pushes are stated in the role sentence itself.",
+    "Any authority the role text does not already hold: an issue write never decides an AR stage, requirement, review, landing or acceptance."
+  ],
+  "id": "INV-25E23P",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Compiled-capsule presence for manager/orientation, review, curation, coordination, authorized-closeout and recovery in evidence/capsule-measurements.json; part of the same 14-suite focused run (169 passed, 792 subtests passed).",
+        "decisions_L194 in skills/l-01-agent-lifecycles/capsule-budgets.json at A4 (manager/coordination 3,684 of 3,700); the six manager capsule rows re-measured in the same decision.",
+        "decisions_L194 in skills/l-01-agent-lifecycles/capsule-budgets.json at A6: twelve rows, manager/coordination 3,684 of 3,700, authority naming b2508984 as governing and the 18-to-36 replacement."
+      ],
+      "path": "l194-curator-handoff.json"
+    },
+    "handoffEntry": "MIK-R202@v1 §1 manager-start-and-landing-pointer",
+    "leaf": "260928-MIK-L194",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "When the resolved memory layer holds `system/task-publication.md`, the Manager follows it: claiming a leaf assigns its issue and sets In progress before the start; after the landing and both pushes, close the issue. Without that file, publish nothing.",
+  "status": "proposed",
+  "supersedes": [
+    "INV-K50JTR"
+  ]
+}

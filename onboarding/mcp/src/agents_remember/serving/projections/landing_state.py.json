@@ -1,0 +1,321 @@
+{
+  "path": "mcp/src/agents_remember/serving/projections/landing_state.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f78cd0b0ccc7bef3d26f33529137c09da56e2e03",
+        "content": "sha256:d3f943ee23f297e5ca6dcd1903e12a652025340f85c79f8800c20e969a7a5d8d",
+        "locator": {
+          "kind": "symbol",
+          "name": "LandingStateRefresher._observe_contract"
+        }
+      },
+      "id": "RLZ-26ZG1Z",
+      "invariant": "INV-BMZ47D",
+      "origin": {
+        "handoffEntry": "MIK-R165@v1 §3",
+        "leaf": "260928-MIK-L166"
+      },
+      "rationale": "Rechecks interest at actual semaphore admission before entering owned remote observation.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f78cd0b0ccc7bef3d26f33529137c09da56e2e03",
+        "content": "sha256:c428a94bdf02b347c9e6a1796e3347bb81a76582829ccc5c51e59a811d09550f",
+        "locator": {
+          "kind": "symbol",
+          "name": "LandingStateRefresher._maybe_freeze"
+        }
+      },
+      "id": "RLZ-6JJFZY",
+      "invariant": "INV-D0551J",
+      "origin": {
+        "handoffEntry": "L40-historical-landing-probes",
+        "leaf": "260928-MIK-L40"
+      },
+      "rationale": "After its successful atomic final replacement the writer invalidates that exact path's parsed-final cache, so an equal mtime cannot keep old contract-predating facts after the sole finishing attempt.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "f78cd0b0ccc7bef3d26f33529137c09da56e2e03",
+        "content": "sha256:9eae21981338f9167dc06ee9a66786fa8d80ac48aa8252d110ca23b97a9b612b",
+        "locator": {
+          "kind": "symbol",
+          "name": "LandingStateRefresher.refresh_once"
+        }
+      },
+      "id": "RLZ-AMDN7R",
+      "invariant": "INV-D0551J",
+      "origin": {
+        "handoffEntry": "L40-historical-landing-probes",
+        "leaf": "260928-MIK-L40"
+      },
+      "rationale": "Drops completed keys from the live observation set after the finishing attempt, preventing later history retries.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f78cd0b0ccc7bef3d26f33529137c09da56e2e03",
+        "content": "sha256:7d5859b65fbddda5728e6f598061588206bd82f046b7309321ff9fe9cebb6078",
+        "locator": {
+          "kind": "symbol",
+          "name": "LandingStateRefresher._needs_live_probe"
+        }
+      },
+      "id": "RLZ-BYHXFB",
+      "invariant": "INV-D0551J",
+      "origin": {
+        "handoffEntry": "L40-historical-landing-probes",
+        "leaf": "260928-MIK-L40"
+      },
+      "rationale": "Admits live landing arcs and a completed arc without a valid final that this process has not yet attempted, including startup; excludes abandoned arcs. The caller independently limits terminal admissions to four per sweep.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f78cd0b0ccc7bef3d26f33529137c09da56e2e03",
+        "content": "sha256:9bf31d98d68cbf9ec21f5e80095c3ba132b98fa56f4ba2d89a37bb8c81d53b4e",
+        "locator": {
+          "kind": "symbol",
+          "name": "_final_matches_contract"
+        }
+      },
+      "id": "RLZ-D8NSCT",
+      "invariant": "INV-TMY6DW",
+      "origin": {
+        "handoffEntry": "L81-R1-F16",
+        "leaf": "260928-MIK-L81"
+      },
+      "rationale": "This validator checks participant and branch-label/factState compatibility with the current code/memory contract when reading persisted final rows. _maybe_freeze writes nonempty all-observed rows first; complete reducer/participant validation occurs on read, not before the freeze write.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f78cd0b0ccc7bef3d26f33529137c09da56e2e03",
+        "content": "sha256:9eae21981338f9167dc06ee9a66786fa8d80ac48aa8252d110ca23b97a9b612b",
+        "locator": {
+          "kind": "symbol",
+          "name": "LandingStateRefresher.refresh_once"
+        }
+      },
+      "id": "RLZ-DKE751",
+      "invariant": "INV-BY8XBH",
+      "origin": {
+        "handoffEntry": "MIK-R165@v1 §4",
+        "leaf": "260928-MIK-L166"
+      },
+      "rationale": "Applies the due schedule only to serving-bound calls and advances it only after an actual observation is published.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f78cd0b0ccc7bef3d26f33529137c09da56e2e03",
+        "content": "sha256:889b4fe6ddc74090edb55df8abb07a590d724ac6b1427f04e106c88e301af1c2",
+        "locator": {
+          "kind": "symbol",
+          "name": "LandingStateRefresher.current"
+        }
+      },
+      "id": "RLZ-DYM2N8",
+      "invariant": "INV-D0551J",
+      "origin": {
+        "handoffEntry": "L40-historical-landing-probes",
+        "leaf": "260928-MIK-L40"
+      },
+      "rationale": "Serves valid persisted finals and labels absent terminal facts as no final observation recorded rather than pending repair.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f78cd0b0ccc7bef3d26f33529137c09da56e2e03",
+        "content": "sha256:9eae21981338f9167dc06ee9a66786fa8d80ac48aa8252d110ca23b97a9b612b",
+        "locator": {
+          "kind": "symbol",
+          "name": "LandingStateRefresher.refresh_once"
+        }
+      },
+      "id": "RLZ-V5S9BY",
+      "invariant": "INV-BMZ47D",
+      "origin": {
+        "handoffEntry": "MIK-R165@v1 §3",
+        "leaf": "260928-MIK-L166"
+      },
+      "rationale": "Rejects absent page interest before discovery and after the awaited discovery, without publishing or spending a finishing attempt.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f78cd0b0ccc7bef3d26f33529137c09da56e2e03",
+        "content": "sha256:48df91965f6febf70079e7e87aefca1080c3a2777948aa85d5683a0d8856ce0e",
+        "locator": {
+          "kind": "symbol",
+          "name": "LandingStateRefresher._landing_contracts"
+        }
+      },
+      "id": "RLZ-Z6XCC8",
+      "invariant": "INV-D0551J",
+      "origin": {
+        "handoffEntry": "L81-R1-F15",
+        "leaf": "260928-MIK-L81"
+      },
+      "rationale": "A completed landing with no valid final gets one attempt per completed arc per process, including at startup, and terminal admissions are capped at four per sweep; success freezes, failure stays missing, loss of a final does not repeat history probes, and reopening resets that arc.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Projector owns the landing refresher's startup and cancellation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "46ddab7108c481e5f7516f270db8ed27e640c225",
+            "content": "sha256:c52d2078d26138a4597480b9927d42db90c5b019174b217c604124fbfca9813f",
+            "locator": {
+              "kind": "symbol",
+              "name": "run"
+            },
+            "path": "mcp/src/agents_remember/serving/projector.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Landing facts are merged into projected status.  Anchor: \"def _safe_status_payload(  # pragma: no cover\"; \"def refresh_engine_process_landing(  # pragma: no cover\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d18eca6aa7f7a47d12546c8e5b12a68370fb69c",
+            "content": "sha256:c0b41bf724fa325f718540072e6ed531f3abac3c4bbe31b6379d54edb0cb30f9",
+            "locator": {
+              "end": 152,
+              "kind": "line_range",
+              "start": 152
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1d18eca6aa7f7a47d12546c8e5b12a68370fb69c",
+            "content": "sha256:29fa95bf808f375c1e18708778b778e0975980a79ce154ac11d6079674ef7373",
+            "locator": {
+              "end": 198,
+              "kind": "line_range",
+              "start": 198
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Exact completed arcs with no valid final are eligible once, including startup, under bounded admissions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f78cd0b0ccc7bef3d26f33529137c09da56e2e03",
+            "content": "sha256:4bc0cfcc0c5639928057e89ff661dc693a8528a2130aa6f773eb2034a8ea7590",
+            "locator": {
+              "end": 373,
+              "kind": "line_range",
+              "start": 353
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A terminal finishing attempt remains consumed after success, failure and subsequent final loss until reopen.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f78cd0b0ccc7bef3d26f33529137c09da56e2e03",
+            "content": "sha256:16153579d3b813003348d3e755c33bdaa0239102b2a2907bd7c5760fa633cc5d",
+            "locator": {
+              "end": 272,
+              "kind": "line_range",
+              "start": 250
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Final facts are served only after complete matching reducer/participant validation, otherwise as honest missing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f78cd0b0ccc7bef3d26f33529137c09da56e2e03",
+            "content": "sha256:8a0d599737888d59bf57d9e097931365fcfc01ff03e3c29c77b76e96d0d57808",
+            "locator": {
+              "end": 211,
+              "kind": "line_range",
+              "start": 194
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Successful final replacement invalidates the old parsed cache before fresh facts are served, including equal filesystem timestamps.  Anchor: `LandingStateRefresher._maybe_freeze`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f78cd0b0ccc7bef3d26f33529137c09da56e2e03",
+            "content": "sha256:4f5228ce64c2d936881969172163f345a1fc4d7173c61516d8b3dcb70884bbb5",
+            "locator": {
+              "end": 425,
+              "kind": "line_range",
+              "start": 375
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Bound interest gates discovery, due selection, publication-driven schedule advance and probe admission; unbound callers retain explicit refresh behavior.\n\nAnchor: `LandingStateRefresher.refresh_once`; `LandingStateRefresher._observe_contract`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f78cd0b0ccc7bef3d26f33529137c09da56e2e03",
+            "content": "sha256:a86f6f348996f8ae207c89e91e5a1eaf0fe0bbf88cf61814b64e77b9121452a6",
+            "locator": {
+              "end": 339,
+              "kind": "line_range",
+              "start": 261
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Current-identity retention and semantic-answer age determine transient due times.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09b582a0f8143eba360527769647f80fd552ab2c",
+            "content": "sha256:1074b49a6e7ede4e0756db60b961d8c2600d9694d3704f7e44be0322e8e001c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "LandingProbeSchedule"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/landing_cadence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

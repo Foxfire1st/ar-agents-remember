@@ -1,0 +1,40 @@
+{
+  "path": "mcp/tests/test_agent_eval_opaque_dispatch.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "331bcace1a3dd87091b123177513814e26e16bfb",
+        "content": "sha256:b406bfc0e4e831decf499457db434e3826ce12b61f48818f048811f4690ba7e2",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-KS8NR3",
+      "invariant": "INV-027RMH",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-opaque-crosscheck",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "This regression module checks this obligation through test_real_codex_unsupported_shape_is_full_opaque_action, test_common_factory_preserves_all_actual_pairs_and_is_idempotent, test_common_factory_material_gaps_remain_capture_absent, test_known_e3_shapes_remain_exactly_normalized_and_failures_preserved and its remaining test cases.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "331bcace1a3dd87091b123177513814e26e16bfb",
+            "content": "sha256:b406bfc0e4e831decf499457db434e3826ce12b61f48818f048811f4690ba7e2",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

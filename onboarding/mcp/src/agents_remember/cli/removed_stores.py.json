@@ -1,0 +1,78 @@
+{
+  "path": "mcp/src/agents_remember/cli/removed_stores.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b6bca2b32ba30446787d79c6ababe4bbe68795aa",
+        "content": "sha256:5124505eba50d95fab2ed6a8177eba3cd49f88dd42746430bb44760396f6f980",
+        "locator": {
+          "kind": "symbol",
+          "name": "run"
+        }
+      },
+      "id": "RLZ-5AZ8QZ",
+      "invariant": "INV-7XBR6C",
+      "origin": {
+        "handoffEntry": "MIK-R113@v1 rule 5",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "The one place that removes such data, on the user's command: lists on a dry run, removes otherwise, names what it could not read or remove, goes on with the rest and ends 1 when anything stayed.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b6bca2b32ba30446787d79c6ababe4bbe68795aa",
+        "content": "sha256:53d2638b897f7aeb49028d4492a9a5718fc70aaceadfc655491a152944d68949",
+        "locator": {
+          "end": 47,
+          "kind": "line_range",
+          "start": 45
+        }
+      },
+      "id": "RLZ-JZ4QE0",
+      "invariant": "INV-B3FPFJ",
+      "origin": {
+        "handoffEntry": "L84-CUR-01",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "This --config help now says that an omitted --config reads the user settings file under XDG_CONFIG_HOME or ~/.config, whatever the current directory, as discover_config() does; at A010 it claimed working- or current-directory discovery.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Explicit removed-store cleanup: implementation/assertion boundary described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6bca2b32ba30446787d79c6ababe4bbe68795aa",
+            "content": "sha256:c3d7596802c4e719523a1daf1802322dab878cbb96602e9d509b0012fce748fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_contained_target"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The native removed-store owner inventories the known retired parts, including separately admitted terminal lock residues.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "919a71b491ed753daa97927f49bcf27947690f71",
+            "content": "sha256:30df359dcfb250d017428959e8ac344766868db94af85d56522a271b5bba720a",
+            "locator": {
+              "kind": "symbol",
+              "name": "removed_part_stores"
+            },
+            "path": "mcp/src/agents_remember/install/removed_stores.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

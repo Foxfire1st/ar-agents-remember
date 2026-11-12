@@ -1,0 +1,244 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/series_merge_admission.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c1fd1422c3c66140847529fbabe1c2f0c2f380e9",
+        "content": "sha256:c45d08541822829df3854e488e60e9655f5080211e4ce86a0100bec539341221",
+        "locator": {
+          "kind": "symbol",
+          "name": "_landing_source_positions"
+        }
+      },
+      "id": "RLZ-2975H4",
+      "invariant": "INV-0GV8PA",
+      "origin": {
+        "handoffEntry": "L60-chain-default-sync-positions",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Adds codeSourceCommit and memorySourceCommit to the official positions.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "c1fd1422c3c66140847529fbabe1c2f0c2f380e9",
+        "content": "sha256:8d235b17c2a547da047b40605439e923547a7316e2e2252bd68bc27a0bad731a",
+        "locator": {
+          "kind": "symbol",
+          "name": "_positions_inside_the_step"
+        }
+      },
+      "id": "RLZ-470XZ5",
+      "invariant": "INV-0GV8PA",
+      "origin": {
+        "handoffEntry": "L60-chain-default-sync-positions",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Counts a position only when the step's end reaches it and its start does not.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c1fd1422c3c66140847529fbabe1c2f0c2f380e9",
+        "content": "sha256:820d1a4a117feeb9aeb35042e6d03589d26e9d2390e6abe5c3d64dbe44b5053c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_publication_merge_admits"
+        }
+      },
+      "id": "RLZ-9GHHSZ",
+      "invariant": "INV-QDVJK4",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.4",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Admits a spine step whose end is such a merge, starting at H or at H's recorded base.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c1fd1422c3c66140847529fbabe1c2f0c2f380e9",
+        "content": "sha256:893a15caf74c8e14259ae76259c76d9611fad0259eb2b745aaf3cde121186150",
+        "locator": {
+          "kind": "symbol",
+          "name": "_sync_entry_pairs"
+        }
+      },
+      "id": "RLZ-FCMAKC",
+      "invariant": "INV-0GV8PA",
+      "origin": {
+        "handoffEntry": "L60-chain-default-sync-positions",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Names the pairs one sync-log entry records: from, to and the default source.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "c1fd1422c3c66140847529fbabe1c2f0c2f380e9",
+        "content": "sha256:2a716e31a2ea3f762db1ac27bb48fa17db1e7aa6b99e449836fdc3d0e3dacadf",
+        "locator": {
+          "kind": "symbol",
+          "name": "_require_admitted_merges"
+        }
+      },
+      "id": "RLZ-JTW7E1",
+      "invariant": "INV-QDVJK4",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.4",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Does not count a shape-admitted merge as a foreign merge on the line.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c1fd1422c3c66140847529fbabe1c2f0c2f380e9",
+        "content": "sha256:e2ae2889c0197430d3e553b425e27d87601682bd772af055d021a6e9cdf0c7a3",
+        "locator": {
+          "kind": "symbol",
+          "name": "_published_landing"
+        }
+      },
+      "id": "RLZ-Z63RWF",
+      "invariant": "INV-QDVJK4",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.4",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Recognises the merge's shape and returns the published landing H, from facts the chain already holds.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Merge admission collects heads, leaf ranges, authority ranges, positions and the workflow.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c1fd1422c3c66140847529fbabe1c2f0c2f380e9",
+            "content": "sha256:436d9e228418b317e88d4eae1e50dff4a0a5b1e59bba63538c0b13f4ef7222c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_merge_admission"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Recorded bases and a default sync's source tips are official positions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c1fd1422c3c66140847529fbabe1c2f0c2f380e9",
+            "content": "sha256:c45d08541822829df3854e488e60e9655f5080211e4ce86a0100bec539341221",
+            "locator": {
+              "kind": "symbol",
+              "name": "_landing_source_positions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A step adds only recorded positions or history a position inside the step reaches.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c1fd1422c3c66140847529fbabe1c2f0c2f380e9",
+            "content": "sha256:c594bbfaf8e1bf47119844ca9d5e4b68fa8eeb98e2196aa4a271db97ef28e4db",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_admitted_step"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Inside means reached by the step's end and not by its start.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c1fd1422c3c66140847529fbabe1c2f0c2f380e9",
+            "content": "sha256:8d235b17c2a547da047b40605439e923547a7316e2e2252bd68bc27a0bad731a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_positions_inside_the_step"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A pull-request merge is recognised by its two parents and its tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c1fd1422c3c66140847529fbabe1c2f0c2f380e9",
+            "content": "sha256:e2ae2889c0197430d3e553b425e27d87601682bd772af055d021a6e9cdf0c7a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_published_landing"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Every merge in the step needs an admission; foreign merges are named.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c1fd1422c3c66140847529fbabe1c2f0c2f380e9",
+            "content": "sha256:2a716e31a2ea3f762db1ac27bb48fa17db1e7aa6b99e449836fdc3d0e3dacadf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_admitted_merges"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "A failed Git read refuses naming the side.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c1fd1422c3c66140847529fbabe1c2f0c2f380e9",
+            "content": "sha256:4f63e633d75e176adcb78d8b1dd40cbac935e991382fa7dae5ba995b46a3f594",
+            "locator": {
+              "kind": "symbol",
+              "name": "_proof_read"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "A sync entry names its from, to and source pairs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c1fd1422c3c66140847529fbabe1c2f0c2f380e9",
+            "content": "sha256:893a15caf74c8e14259ae76259c76d9611fad0259eb2b745aaf3cde121186150",
+            "locator": {
+              "kind": "symbol",
+              "name": "_sync_entry_pairs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

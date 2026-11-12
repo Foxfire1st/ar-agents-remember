@@ -1,0 +1,67 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/cadence_runner.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Only scheduled, provider-bump, and migration triggers can execute.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a9cad7d986c1c01cde9b4fd3e110cc2b7605a88",
+            "content": "sha256:a10c84a6b1caa00a80144f92deb8ab501bf124895360b0956f79b95480803f1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_cadence_evidence"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The Dagger public route remains explicitly non-accepting.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "111d8758e5ed4bfec7bdc56c84cce997e7294e50",
+            "content": "sha256:df60f6fdac7a723a31e8e75b2077d0ae992f5b21585dfa1ec99aff2fb0882b85",
+            "locator": {
+              "end": 539,
+              "kind": "line_range",
+              "start": 471
+            },
+            "path": ".dagger/src/agents_remember_quality/main.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "111d8758e5ed4bfec7bdc56c84cce997e7294e50",
+            "content": "sha256:b4a72efc959acef8e5f546c3abbea341a5b82739473f8c0264acc32af8e57a20",
+            "locator": {
+              "end": 539,
+              "kind": "line_range",
+              "start": 470
+            },
+            "path": ".dagger/src/agents_remember_quality/main.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "111d8758e5ed4bfec7bdc56c84cce997e7294e50",
+            "content": "sha256:b4a72efc959acef8e5f546c3abbea341a5b82739473f8c0264acc32af8e57a20",
+            "locator": {
+              "kind": "symbol",
+              "name": "cadence_evidence"
+            },
+            "path": ".dagger/src/agents_remember_quality/main.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

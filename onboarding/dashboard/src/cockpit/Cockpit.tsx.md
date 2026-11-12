@@ -1,538 +1,130 @@
 # dashboard/src/cockpit/Cockpit.tsx
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/cockpit/Cockpit.tsx`              |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-09-28T17:11:24+02:00 |
-| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
-| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
-| governingOverview      | `../overview.md`                                |
-
 ## Governing Overview
 
-[dashboard/src overview](../overview.md)
-
-## 260731-EFA-L8 Change
-
-The frontend-rail split re-wired this file's imports to the new kebab-case
-component folders (`detail-panel/`, `lifecycle-list/`, `sessions-view/`) and the
-engine-room styles barrel, and the lint remediation touched memoization and hook
-dependencies. View-map behavior is unchanged: `SessionsView` stays mounted and its
-display toggles (`display: view === "chats" ? "flex" : "none"`).
+[overview](../overview.md)
 
 ## Purpose
 
-The production cockpit shell owns persistent chrome, route/takeover selection, live projection
-wiring, and keep-alive full-page layers. FEUI-L8 exposes Operations, Engine Room, Files, and exactly
-one Chats destination; Operations is initial, the former Sessions item is retired, and the canonical
-Chats layer is the persistently mounted session cockpit. The shell owns the one catalog poll plus
-eager/cross-tab reconciler, threads selected lifecycle/leaf/task context into `SessionsView` and
-`RailChat`, and moves highlight focus/view only after accepted delivery names an exact live session.
-Within the full-page cockpit, `ChatContextBar` owns launch and attach/move controls.
-
-RailChat remains the contextual right-rail surface beside Operations; Notes/Change-Set takeovers and
-the other existing routes retain their established ownership. The dev lifecycle-design canvas stays
-outside production navigation.
-
-
-## 260921-ICR-L33 The Change-Set Takeover Re-Targets Itself
-
-`ChangeSetTakeover` gained one prop and the shell supplies it: `onOpenChangeSet`, wired to the same
-`actions.openChangeSet` the shell already owns. It is passed through to `ChangeSetViewer` as
-`onOpenLeaf`, which composes a leaf target (`{ repo, master, leaf, mode }`) from a row of the master
-net's `by leaf (N)` rail. **The point is reachability without a second screen:** a landed leaf is
-offered from the master's own net listing, its committed change-set opens in the takeover the reader is
-already in, and the back link still clears the takeover as before. Nothing else in the dispatch chain
-changed — `target.review` still routes to `ReviewSurface` and the change-set viewer is still never
-mounted for a review, so a leaf opened this way is an ordinary change-set target with `master` as its
-qualifier.
-
-## 260831-CCR-L23 Requirement-Artifact Takeover Kind
-
-The L17 Notes takeover was widened into a generic task-artifact reader takeover:
-the notes-only `NotesReaderTarget` shape became the discriminated
-`TaskArtifactReaderTarget` (`dashboard/src/data/taskArtifacts.ts`) with a
-`kind` member, and that shared target type is now imported from the data module
-rather than from the notes reader. `NotesTakeover` spreads the whole target onto
-`NotesReaderViewer` (`{...target}`) and keys the view marker on the kind:
-`data-view` is `notes-reader` for a notes target and
-`requirements-reader` for a requirements target. The shell, the shared takeover
-flag, hidden-not-unmounted retention, and the `onOpenNotes` wiring are
-unchanged.
-
-## 260915-KS-L22 Intent-Review Takeover Kind
-
-The change-set takeover now carries a second kind. `ChangeSetTarget` gained an optional
-`review: { selectorKind, selectorId }` member, and `ChangeSetTakeover` reads it: `data-view` is
-`intent-review` when the target carries a review and `changeset` when it does not, and the review
-variant mounts `ReviewSurface` (`dashboard/src/panels/review/ReviewSurface`) in place of
-`ChangeSetViewer`, passing `repo`, `master`, `leaf`, the two selector fields and `onBack`. The review
-surface therefore sits beside `NotesTakeover` and the requirements variant of the task-artifact
-reader as one more takeover the shell dispatches on the target's own shape, and nothing in the
-shell's routing, rails or change-set plumbing changed with it: the target chooses the pane.
+Production dashboard chrome, retained product layers and the review page's shared chat rail. The product bar remains Chats, Operations, Knowledge and File Viewer; the Tray button sits beside that group. Other retained views have no bar entry and can be mounted by an injected view; static imports alone do not establish production bundle exclusion.
 
 ## Code Commentary
 
-### FEUI-L9R Reviewed Candidate Delta
+`Cockpit` connects shared state/events and ready hydration. `CockpitShell` owns presentation, wake-lock lifetime, the revalidation provider and page dispatch. It also holds
+the bell's agent request (`agentChat`) and the one handler that names an exact seat and switches to the chats
+view, so no panel below it has to write the observed-chat channel. A knowledge-reader URL selects Knowledge. A valid review URL selects Operations and places the review reading column beside the same right chat rail. Ordinary change-set and notes readers retain takeover dispatch; review targets do not pass through `ChangeSetTakeover`. Base review navigation carries repository/master/leaf and recorded-history state. The mounted reviewer separately reads and writes its selection and comparison in the hash using replaceState, without replacing that base target. [72] [97]
 
-`ServingBuildStamp` now compares the executing bundle fingerprint with
-`servingBuild.dashboardBuild`. It exposes unknown, matching, or mismatching diagnostic evidence;
-only a definite mismatch renders the explicit `reload client` button. Reload remains operator-owned
-because a stateful terminal tab may contain drafts or interaction. An older server without the
-optional fingerprint remains neutral rather than falsely stale.
+Operations, File Viewer, Knowledge and Role chats retain their layers. Entering the review hides the ordinary main layers and Operations task tree; it renders `ReviewMain` in a stable slot immediately before the existing right rail. Leaving review restores the ordinary main layers. Operations exposes independent left/right sidebar toggles outside the memoized detail panel. Hidden child owners receive active predicates separately from component retention. [88] [89]
 
-### Logic
+The right rail has one unkeyed chat wrapper for Operations and review. Operations retains the River/Chat switch and conditionally mounts Event River. Review supplies its task, open state and width to that same rail, uses chat only, and forwards closed-column preload. The shared DocumentChat remains in its wrapper across that transition; the rail gains neither a new frame wrapper nor a key. Component retention and active predicates remain separate from native iframe generations and view-switch timing. [92] [93]
 
-Since L15 the cockpit top bar renders the muted servingBuild stamp (commit short-hash + boot time from the state payload) — the ghost-process lesson made visible: a stale dashboard server is identifiable at a glance. **260707-HFX2-L2 (R5)** adds a second top-bar indicator right beside it: `AgentNotifierHeartbeatBadge` (renamed from `SupervisorHeartbeatBadge` in 260713-TES-L1) reads `s.agentNotifierHeartbeat` from the store (the store accepts the legacy `supervisorHeartbeat` wire key as a fallback during the rename window) and renders nothing when `lastTickAt` is `null` (the agent-notifier has never ticked in this workspace — `dashboard.autoStart` is opt-in, so "no row yet" is not itself an alarm); once a tick exists, it shows `"agent-notifier ok/stale <age>"` with a `title` tooltip naming the exact `lastTickAt`/`staleCutoffSeconds`. **260718-CHATS-L5P (R5/A4/B9):** the age is now HUMANIZED via `humanizeDuration(ageSeconds*1000)` (`6 d 2 h`, never the raw `9512.1m`), and a long-stale agent-notifier degrades to a QUIET-distinct amber `caution({sev:"warn"})` — NOT the pulsing cried-wolf red it used past the cutoff before (six-day staleness is expected for an idle workspace, not a fault to alarm on); a fresh heartbeat stays the muted `dim` class. **260707-HFX2-L8 (R6)** extends the same badge with `inbox redeliverable/pending` and latest sweep duration, so a growing operator-inbox storm is visible beside the heartbeat before staleness fires. This is issue #15's "the watcher must be code AND watched" made visible in the SAME top bar that already carries `servingBuild` — "the last turtle is the developer's glance."
+Wide Operations columns use saved widths and give a hidden sidebar's width to the document. The review grid has its reading track plus the open in-grid chat width, or a zero-width chat track and the review gutter when closed or overlaid. At at-most40rem the railed body is one column. Extracted shell styles still own narrow vertical scrolling and wrapped chrome. Only the ordinary change-set takeover consumes the fixed takeover body here. [65] [98]
 
-`Cockpit` wires the two SSE streams (`connectState`, `connectEvents`) then renders
-`CockpitShell` (split out so the dev gallery renders the same surface against fixtures).
-**260715-FEUI-L2 (S1/S2)** makes `Cockpit` the standing owner of the shared session feed: the
-`/api/events` EventSource now feeds TWO consumers on ONE connection — the Event River
-(`pushEvent`, unchanged, still receives backlog lines) and the seat-event reconciler
-(`data/seatEvents.applySeatEventLine`), whose application is routed through
-`createGatedSeatEventApplier()` — a PER-CONNECTION backlog gate: `ready` opens it,
-the EventSource `error` (`connectEvents`' new `onInterrupt`) re-closes it, so a reconnect's
-pre-`ready` backlog replay (incl. the undecodable-cursor full-window replay) can never regress
-live rows (L2 review finding 2). A third effect starts the refcounted 2500 ms catalog poll driver
-(`data/catalogPoll.startCatalogPollDriver`) unconditionally, so the session feed stays alive with
-ANY view — or none — in front. `CockpitShell` is the sole production owner of both the driver and
-the eager/cross-tab reconciler; `SessionsView` consumes the resulting shared store without starting
-a second timer. `CockpitShell`
-holds `view` + `selectedId` state and derives `fullBleed = view === "files" || view === "engine" ||
-view === "topology" || view === "chats"`. Both the **File Viewer** (slice L2) and **Chats** views are
-full-bleed AND kept mounted as persistent CSS-hidden layers in `CockpitShell` (a `filesLayer` / `chatsLayer`
-div toggled by `display`), not routed through `ViewBody`, so switching tabs never unmounts them: the File
-Viewer's repo/scope selection, open file, and expanded tree state survive a switch, as does the live xterm
-terminal + WebSocket.
-Task 29 wires the raw Event River readiness signal through this shell: `connectEvents` receives
-`markEventsHydrated` as its `ready` callback, so the right rail can show "Syncing event history." until
-the backend has emitted the retained backlog and the explicit ready marker.
-The body is the `bodyGrid` cva: the railed 3-column shell when `!fullBleed`, a single full-width column
-when `fullBleed`. The two `<aside>` rails (`rail--left` = attention queue + lifecycle list;
-`rail--right` = event river) render only when `!fullBleed`, so a machine-map view unmounts them for a
-clean expand; they fade back in via a `motion.aside` gated by `useShouldAnimate()` (instant under
-`data-effects=off` / reduced-motion, keeping snapshots stable). `ViewBody` switches the centre by
-`view`; the mode bar is the `<ModeBar>` primitive. `open(id)` selects a node AND jumps to Operations.
-**Operations-integration L4** adds a `changeSet` TAKEOVER: `CockpitShell` holds a `changeSet:
-ChangeSetTarget | null` state; when set, a full-bleed `<ChangeSetViewer>` shows (its back link clears it,
-restoring the rails), and `open(id)` plus a mode-bar switch (`changeView`) also clear it — the takeover is
-transient (a task-scoped screen), not a standing view. `onOpenChangeSet` is threaded through `ViewBody`
-into `DetailPanel`. **L4a** changes the takeover from *replacing* the railed body to **overlaying** it:
-the railed body is now kept mounted but `display:none`/`aria-hidden` while the takeover shows (the same
-hidden-not-unmounted pattern as the File Viewer + Chats layers), so the `DetailPanel`'s drill state (which
-leaf you were reading) survives — the viewer's back link returns you to exactly where you opened it from
-(a drilled leaf), instead of `DetailPanel` remounting fresh at the master overview.
-`TopBar` shows the master-caution (`⚠ N waiting`, severity-keyed from `selectQueue`). **260718-CHATS-L5P
-(RV-4/R4):** the waiting chip renders ONLY when `queue.length > 0` — a reassurance zero wearing an alarm
-glyph is a lie, so an empty queue shows nothing (absence = clear); a real alarm is still never hidden in
-a full-bleed view. **Top-bar humanization + honesty (V15/V6/R7):** `ServingBuildStamp`'s `up` label is a
-HUMANIZED uptime (`humanizeDuration(Date.now() - bootedAt)`, one time format in the bar; the absolute
-start stamp stays in the tooltip — was a second 12h clock, V15); the brand `title` + each fact-chip
-(`dim`, `caution`, `connBadge`) are `whiteSpace:nowrap` and the `statusRow` is `flex-wrap:wrap` so the
-bar wraps BETWEEN chips, never mid-phrase (`1 running · 0/blocked`, V6); and the lifecycle counts are
-explicitly scope-labeled `tasks N running · N blocked · N tok` with a tooltip naming them
-lifecycle/task-scoped (a different authority from the Chats rail's chat-seat states — R7, no backend
-change). **260731-EFA-L4** gives that same `dim` span a `data-testid="task-metrics"` and appends one
-CONDITIONAL segment to it: `· {metrics.awaitingDeveloperCount} awaiting you`, rendered only while
-`metrics.awaitingDeveloperCount > 0`. Server-side `reducer.py::_metrics` stopped hand-writing one
-`sum(1 for lc in ...)` line per bucket and now expands `STATE_COUNT_FIELDS` (derived from the live-state
-vocabulary), so `awaiting-developer` has a bucket at last; before that a lifecycle which had stopped and
-handed the turn back was inside `lifecycleCount` and `totalTokens` and inside **none** of the numbers on
-this bar. At zero the span emits the byte-identical `tasks N running · N blocked · N tok` it always did —
-running/blocked are the workspace's standing rhythm and read fine at zero, while a permanent
-`0 awaiting you` would be the same reassurance-zero lie the `⚠ N waiting` chip refuses to tell. The
-client mirror of the reducer rollup is `metricsFor(lifecycles)` in `types/projection.ts`, and `Metrics`
-now `extends LifecycleStateCounts` (one required `…Count` field mapped from each `ActiveState`), so a
-fixture or test seed states its lifecycles instead of re-listing buckets beside them — the hand-kept
-copies are where this gap kept reappearing. **5g G6** adds an `EffectsToggle` to the `TopBar`
-(`effects-toggle`): a ✦ Effects / ❄ Calm button that flips `html[data-effects]` (which `useShouldAnimate`
-reads live, so the engine-room backdrop + all gated motion respond at once) and persists the choice to the
-`calm-cockpit` localStorage flag `main.tsx` reads on the next load. **Slice 6f** mounts the
-`HighlightComposer` once in `CockpitShell` (after the mode bar): a cockpit text selection raises it to
-send a context package to a chat session, and its `onSent` flips to the Chats view so the operator sees
-the injection land. **L8** narrows that flow when the target is obvious: `CockpitShell` now passes the
-current `selectedLifecycleId`, the lifted `viewedLeafKey`, and `leafChatActive={!fullBleed && railView ===
-"chat"}` into `HighlightComposer`; only that composer decides whether to bypass the generic target picker
-and draft-paste into the existing leaf chat. The shell still does not submit chat text or build the
-context package. **Slice 6g** threads `open` into `DetailPanel` as `onOpenLifecycle`, so a
-cross-master `→` row or a parent `↑` breadcrumb in the task reader switches the selected lifecycle
-through the same `open(id)` path.
-**Historical, superseded FEUI-L1 seam.** FEUI-L1 briefly registered a separate `"sessions"` route
-and mounted `SessionsView` there. FEUI-L8 retired that route and the legacy `Chats` component. The
-landed shell now has only the product-facing `"chats"` destination and mounts one
-`<SessionsView active={view === "chats"} ... />` inside `chatsLayer`; `display` and `aria-hidden`
-hide it without unmounting. The internal `[data-view="sessions"]`/`sessions-*` markers remain the
-WebTUI and keyboard implementation scope, not a second product route. `SessionsView` renders
-`ChatContextBar`, which owns its launch and attach/move controls.
-**Task 17** keeps `selectedId` as the shared Operations selection key, but normalizes raw ids from
-older surfaces through `lifecycleSelectionKey(id)` so the list/detail path can use typed keys
-(`taskdoc:` / `series:` / `lifecycle:`). `selectedLifecycleId` is derived through
-`lifecycleIdForSelection`, so `SessionsView` and `HighlightComposer` still attach to the lifecycle behind a
-selected runtime row or task-document row. That is the attach seam: hosted chats created while a
-lifecycle-backed task document is selected inherit the lifecycle tag, and highlighted context targets
-can be filtered to that lifecycle's hosted chat.
-**Slice L5** adds the leaf-keyed rail chat. `CockpitShell` holds a `railView: "river" | "chat"` state
-and renders an inline `RailToggle` (a two-segment `role="radiogroup"` mirroring `EffectsToggle`'s cva
-look) above the rail content, replacing the hard `<EventRiver/>` in `rail--right` with a switch between
-`<EventRiver/>` and `<RailChat leafKey={viewedLeafKey} selectedLifecycleId={…}/>`. **L5 fix 1** changes
-the leaf-key source: instead of `leafKeyForSelection(selectedId, …)` (which keyed off the top-level
-selection = the master), the shell holds a `viewedLeafKey` state set from `DetailPanel`'s new `onViewLeaf`
-callback — threaded down through `ViewBody` (`setViewedLeafKey`) — so it is the leaf the panel is
-**actually showing** (a drilled sub-task / a directly-opened leaf doc; `undefined` for a master/series
-overview), its durable qualified id (`repo/master/leaf-id`, not the enclosure). The state is **lifted to
-the shell** so it survives a `DetailPanel` unmount (a full-bleed view switch) and reaches both the rail
-and the full-page session cockpit. `taskDocuments` is read from `analytics?.taskDocuments` (memoized
-through a stable `EMPTY_TASK_DOCS`) and, with `viewedLeafKey` as `selectedLeafKey`, passed into
-`SessionsView`; its `ChatContextBar` uses that context for attach/move and leaf labels. The rail chat
-and the full-page cockpit surface the **same**
-session because both consume the shared catalog-backed `data/sessions` store. Their transport owners
-remain separate: `RailChat` registers raw connections while `PtySurface` owns the full-page PTY.
-(`leafKeyForSelection` in
-`data/taskIdentity.ts` is now superseded/unused.) **L6** also reads `analytics?.engineProcesses` through a
-stable `EMPTY_ENGINE_PROCESSES` fallback and passes it into `<RailChat>` beside `taskDocuments`. The shell
-does not build or deliver the context package itself; it only supplies the process projection so the rail can
-include worktree-group/code-worktree/memory-worktree facts at the leaf bind point.
+The shell publishes the shown page and repository for tray provenance and filing scope: Review names its repository, Operations names the viewed document's repository, and File Viewer leaves repository publication to its own owner. The Tray button is outside the four-view tab group, and the page-wide tray layer is outside the railed body.
+
+TopBar consumes served counts and ordered queue state. Its task-count line comes from `topBarCountsLine` in `topBarCounts.ts`: it adds a `waiting` count only when a task waits, and drops the works, waiting and paused words while host activity is unknown, naming that unavailability once; the attention chip (`⚠ N waiting`) draws only when the queue is nonempty. It renders the serving-build stamp owned by `serving-build-stamp/ServingBuildStamp.tsx`; a serving build mismatch is a diagnostic tooltip there. EffectsToggle updates local effects state/storage; shared animation and boot state remain separate owners. Task selection and the Engine Room stable-empty process fallback remain separate projections. [69] [70] [71] [94]
+
+## Evidence
+
+### Docs References
+
+No configured domain documentation; source owners support this current account.
+
+### Repo-Internal References
+
+- The product bar and its order are one list. [32]
 
 
-**One comment, and it records a shape the dispatch already supported.** The `ChangeSetTakeover` component's review branch gained a comment stating that a review target may carry a subject's selector **or none at all** — the task-context entry opens the review on the task, and `ReviewSurface` asks the server for exactly what it was handed. The dispatch itself was not changed: it already forwarded an optional selector, which is why the task-context target reaches the surface without a code change here. Nothing else in the cockpit moved, and the two lines are the whole of this file's diff.
 
-**The shell provides the entry's re-validation context (`260921-ICR-L47`, ruling 2026-09-28T16:27:28+02:00
-on L47-R1-F2).** `CockpitShell` wraps its tree in
-`<IntentEntryRevalidation shown={state.view === "operations" && !state.takeover}>`. The Operations
-`DetailPanel` is never unmounted (only hidden during view switches and takeovers), so remounting could not
-re-read the entry; instead the generation increments when `shown` turns true — a view switch back to
-Operations or any takeover closing (the reviewer, a change set, notes) — and the entry's summary re-reads
-once. This is 3 lines of wiring (1156 → 1159, already in the 900–1200 soft band; the diff is mostly
-re-indentation); review R2 judged it wiring, not feature logic (O-R2-2).
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The provider around the shell, shown only for Operations with no takeover. | `IntentEntryRevalidation`; "state.view === \"operations\" && !state.takeover" | dashboard/src/cockpit/Cockpit.tsx:887-943 |
+- The layer wrapper that hides without unmounting. [37]
+- The mode-bar primitive that renders the product entries. [38]
 
-### Conventions
 
-Panda `css`/`cva`/`cx`. The marker classes (`cockpit--shell`/`shell__body`/`rail`/`viewport`) are kept
-via `cx` for tests/structure; `shell__body` carries `data-fullbleed` for the rails-hide assertion. The
-`crt-overlay` div is the global effects class (`index.css`). `useShouldAnimate` is imported from
-`panels/engine-room/` (the shared honest-motion gate).
 
-### Invariants And Boundaries
 
-Server authority is read-only; selection state is local + lifted. The one browser mutation is the
-operator's explicit reload on a proven bundle mismatch. The shell pins to `100vh` + `overflow:hidden` so the
-rails/viewport scroll internally and the bars stay fixed. The master-caution lives in the always-visible
-top bar; full-bleed only hides the rails, never the alarm summary (§4.1). The `EffectsToggle` is the only
-writer of `html[data-effects]` from the UI (vs the `?effects=off` URL param / `calm-cockpit` flag
-`main.tsx` applies at boot); default is effects-on.
-**The left rail is why `grammar/Dot.tsx` cannot lean on colour alone (260731-EFA-L4).** `AttentionQueue`
-and `LifecycleList` are SIBLINGS inside the one always-visible `rail--left` aside, so a developer reads
-the severity grammar and the lifecycle-state grammar in a single glance. They are different facts about
-different objects — the reducer builds no attention row for an `awaiting-developer` lifecycle — so an
-amber dot in the queue says nothing about an amber dot in the list, and the two must stay distinguishable
-by glyph rather than by hue. `Cockpit.test.tsx` pins this by rendering the whole shell (not the two panels
-in isolation, because their being siblings in one view is the claim) and asserting the two dots' markup
-differs.
-`selectedId` is no longer assumed to be a raw lifecycle id. Any consumer that needs lifecycle context
-must derive it through the task-identity helper.
-`AgentNotifierHeartbeatBadge` (260707-HFX2-L2, renamed in 260713-TES-L1) renders `null` for a never-ticked heartbeat rather than a
-false "stale" alarm — the same "absence is not evidence of a problem" posture `servingBuild` already
-follows for a pre-L15 server.
 
-### Todos
 
-No task-independent technical debt was identified during FEUI-L9R review.
+- `EffectsToggle` (✦ Effects / ❄ Calm) — flips `data-effects` + persists `calm-cockpit`. [69]
+- The boot-time effects flag it persists to. [70]
+- The honest-motion gate the rail transition + the toggle drive. [71]
+- Cockpit wires connectState and one connectEvents raw Event River consumer, plus the ready hydration marker; no seat-event reconciler. [72]
 
-### 2026-07-24 Curator Delta
+- The reader's hash parser. [75]
 
-The shell now keeps rails and Engine Room mounted across view changes, passing visibility as a prop and
-memoizing persistent layers so a tab switch does not reconcile unchanged subtrees. It starts the
-shell-level screen wake lock once on mount and the helper releases it while the tab is hidden
-cit:(["} from \"react\";", "import { startScreenWakeLock } from "], dashboard/src/cockpit/Cockpit.tsx:20-20; dashboard/src/cockpit/Cockpit.tsx:9-9). It marks a dirty serving checkout
-with a compact `*` label and exposes a real client/serving bundle mismatch through the stamp tooltip
-rather than a redundant reload control.
 
-## Docs References
 
-The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
-are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
-the reviewed task evidence for any current behavioral claim.
+- The reviewed UI contract owner `ViewLayer`. [90]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found for this file. | — | — |
+- Stored cockpit regression source covering retained product views; it is source evidence, not a fresh test, browser or performance result. [91]
 
-## Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The body grid bleed variant switches between three railed columns and a single full-width column. | "const bodyGrid = cva({" | dashboard/src/cockpit/Cockpit.tsx:207-223 |
-| Files, Engine Room, Topology, and Chats request the full-bleed layout. | "const fullBleed =" | dashboard/src/cockpit/Cockpit.tsx:447-451 |
-| Rail fade properties are selected by the animation permission. | "const railEnter = animate ? RAIL_ENTER : RAIL_ENTER_STILL;" | dashboard/src/cockpit/Cockpit.tsx:455-455 |
-| The visible registry has exactly one Chats destination and no Sessions route; Engine Room, Topology, and Chats are full-bleed. | `CockpitView`, `VIEWS` | dashboard/src/cockpit/Cockpit.tsx:66-73; dashboard/src/cockpit/Cockpit.tsx:75-83 |
-| The `chatsLayer` keep-alive class used by the Chats layer. | `chatsLayer` | dashboard/src/cockpit/Cockpit.tsx:328-334 |
-| The canonical Chats session cockpit the shell mounts once; `SessionsViewImpl` composes `ChatContextBar` and `SessionRail`, and reaches `PtySurface` through `ChatsStageBody`, not directly. | `SessionsViewImpl` | dashboard/src/panels/session-cockpit/sessions-view/SessionsView.tsx:15-18 |
-| `EffectsToggle` (✦ Effects / ❄ Calm) — flips `data-effects` + persists `calm-cockpit`. | `EffectsToggle` | dashboard/src/cockpit/Cockpit.tsx:1129-1156 |
-| The boot-time effects flag it persists to. | "calm-cockpit" | dashboard/src/main.tsx:15-15 |
-| The honest-motion gate the rail transition + the toggle drive. | `shouldAnimate` | dashboard/src/panels/engine-room/useShouldAnimate.ts:12-16 |
-| The SSE stream wiring: `connectState`, then one `connectEvents` connection with two consumers (river + `createGatedSeatEventApplier`), then `startCatalogPollDriver`. | `Cockpit` | dashboard/src/cockpit/Cockpit.tsx:365-389 |
-| The seat-event application + per-connection backlog gate this shell holds (`applySeatEventLine`, `createGatedSeatEventApplier`). | `applySeatEventLine`, `createGatedSeatEventApplier` | dashboard/src/data/seatEvents.ts:95-104; dashboard/src/data/seatEvents.ts:107-116; dashboard/src/data/seatEvents.ts:125-142 |
-| The refcounted catalog poll driver started unconditionally here (`startCatalogPollDriver`). | `startCatalogPollDriver` | dashboard/src/data/catalogPoll.ts:179-192 |
-| Typed task/lifecycle selection helpers used by `open` and `selectedLifecycleId` (`leafKeyForSelection` is now superseded — the leaf key comes from `DetailPanel.onViewLeaf`). | `parseTaskSelection`, `lifecycleIdForSelection`, `qualifiedLeafKey` | dashboard/src/data/taskIdentity.ts:23-46; dashboard/src/data/taskIdentity.ts:48-59; dashboard/src/data/taskIdentity.ts:65-71 |
-| The detail panel that reports the displayed leaf up via `onViewLeaf` (feeding `viewedLeafKey`). | `viewedLeafKey` | dashboard/src/panels/detail-panel/state.ts:160-160 |
-| The single-instance right-rail leaf chat the `RailToggle` swaps in for the Event River; `RailChatImpl` takes `engineProcesses` here for leaf-context worktree facts. | `RailChatImpl` | dashboard/src/panels/RailChat.tsx:469-537 |
-| The mounted Chats session view receives the selected leaf key from the cockpit. | "selectedLeafKey={viewedLeafKey}" | dashboard/src/cockpit/Cockpit.tsx:813-813 |
-| The full-page duty bar owns launch and server-first attach/move controls (`ChatContextBar`, `ChatSessionActions`). | `ChatContextBar`, `ChatSessionActions` | dashboard/src/panels/session-cockpit/ChatContextBar.tsx:79-122; dashboard/src/panels/session-cockpit/ChatContextBar.tsx:173-245 |
-| The highlight composer that filters targets by `selectedLifecycleId` and, for L8, receives `viewedLeafKey` + `leafChatActive` so obvious leaf selections can draft-paste into the adjacent rail chat. | `HighlightComposerImpl` | dashboard/src/panels/HighlightComposer.tsx:715-787 |
-| The frontend `Analytics` projection includes the `engineProcesses` process-map collection. | `engineProcesses` | dashboard/src/types/projection.ts:96-96 |
-| The cockpit passes the process-map prop into `RailChat`. | "engineProcesses={engineProcesses}" | dashboard/src/cockpit/Cockpit.tsx:720-720 |
-| Metrics extends the mapped active-state counts and adds total lifecycle/token and histogram fields. | "export interface Metrics extends LifecycleStateCounts {" | dashboard/src/types/projection.ts:460-460 |
-| Every ActiveState maps to a required count field. | "export type LifecycleStateCounts =" | dashboard/src/types/projection.ts:441-441 |
-| The count-field name is derived from the camel-cased state vocabulary. | "export type StateCountField<S extends ActiveState>" | dashboard/src/types/projection.ts:439-439 |
-| metricsFor builds the client rollup from lifecycles and spreads the derived state counts. | "export function metricsFor(" | dashboard/src/types/projection.ts:466-466 |
-| The server rollup this bar's `awaitingDeveloperCount` comes from: `_metrics` expands `STATE_COUNT_FIELDS` rather than one `sum(...)` line per bucket. | "def _metrics(" | mcp/src/agents_remember/observer/reducer_impl/_metrics.py:27-60 |
-| `AgentNotifierHeartbeatBadge` reads `useDashboard((s) => s.agentNotifierHeartbeat)`, the store field this top-bar heartbeat/backlog indicator renders. | `AgentNotifierHeartbeatBadge` | dashboard/src/cockpit/Cockpit.tsx:999-1026 |
-| The `AgentNotifierHeartbeat` type this badge's props shape mirrors. | `AgentNotifierHeartbeat` | dashboard/src/types/projection.ts:54-62 |
 
-## Historical FEUI-L8 Reviewed Candidate Delta
+- The header's count line uses shared labels for served taskCounts, adds a waiting count only while a task waits, omits works, waiting and paused words when host observation is unknown, and reports host activity unavailable once rather than drawing an unknown-count bucket. [94]
 
-The shell now exposes `operations | engine | files | chats`; the former Sessions destination and legacy Chats layer are gone. It owns both catalog poll and eager/cross-tab reconciliation for its lifetime, keeps one persistent `SessionsView` as Chats, and moves highlight route/focus only after accepted delivery to an exact live id.
 
-This section records the FEUI-L8 review point. That candidate subsequently landed in code authority
-`31f58834f86c0d98e26b0896e099a2403a8729ee`, which this card now verifies.
 
-## Cross-Repo References
 
-This card maps a repository-local agents-remember source. Import and task-boundary review found no
-cross-repository implementation source that governs its behavior.
+### Cross-Repo References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
+No separate cross-repository implementation claim.
 
-## Update History
-- 2026-09-28T17:11:24+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): **body update — the shell provides the Intent review re-validation context (`ICR-R24@v3`; L47-R1-F2 ruling).** New Logic paragraph and row. Displaced rows were re-pointed from the base-to-candidate line mapping. No stamp advanced.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: `EffectsToggle` repointed to dashboard/src/cockpit/Cockpit.tsx:1129-1156. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "selectedLeafKey={viewedLeafKey}" repointed to dashboard/src/cockpit/Cockpit.tsx:812-812. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "engineProcesses={engineProcesses}" repointed to dashboard/src/cockpit/Cockpit.tsx:719-719. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: `AgentNotifierHeartbeatBadge` repointed to dashboard/src/cockpit/Cockpit.tsx:999-1026. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-24T23:30:00+02:00 — 260921-ICR-L33 curator (candidate `ar/260921-icr-l33-ar`, uncommitted; code base `86639933d61528387ce106dbd4d7a334bd468671` plus the working-tree delta; adversarial round 2 `verify-l33.md` = `pass`): **body update — the takeover re-targets itself for a leaf opened from the master's net (R33.3).** The section above records the new `onOpenChangeSet`/`onOpenLeaf` thread, that the same takeover is re-targeted rather than a second screen opened, and that the review dispatch is untouched. **Citation accounting:** the rows this leaf's line movement displaced were re-derived against the candidate with the gate's own resolver. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted and the governed closeout owns the real stamp.
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "selectedLeafKey={viewedLeafKey}" repointed to dashboard/src/cockpit/Cockpit.tsx:803-803. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "engineProcesses={engineProcesses}" repointed to dashboard/src/cockpit/Cockpit.tsx:710-710. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T14:59:00+02:00 — 260921-ICR-L2 curator (uncommitted change set on `ar/260921-icr-l2`, base `702714fc05363cb28eacaf101ba8384475a6aa56`): **a comment only, recorded as such rather than skipped.** The takeover's review branch now states that a review target may carry a subject selector or none, because the task-context entry arrives there with `review: {}`; the dispatch needed no change, which is the fact the comment preserves. One citation row was re-derived against this candidate. **Stamp accounting:** the verification rows still name the last real commit whose bytes this card was verified against, because nothing in this leaf is committed; claims whose evidence this leaf's change moved were re-read against the candidate and are stamp-class leftovers that only closeout can stamp.
 
-- 2026-09-18T16:13:35+00:00: Generated citation repair: "const railEnter = animate ? RAIL_ENTER : RAIL_ENTER_STILL;" repointed to dashboard/src/cockpit/Cockpit.tsx:454-454. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T16:13:35+00:00: Generated citation repair: "selectedLeafKey={viewedLeafKey}" repointed to dashboard/src/cockpit/Cockpit.tsx:801-801. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T16:13:35+00:00: Generated citation repair: "engineProcesses={engineProcesses}" repointed to dashboard/src/cockpit/Cockpit.tsx:708-708. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
+- The shell defaults to Chats; a valid review hash selects Operations and a valid knowledge-reader hash selects Knowledge. Persistent product layers remain mounted independently of takeover selection.
 
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 4
-  claim(s) whose anchor no longer sat in its cited range and normalised 12 further range(s) in this
-  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
-  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
-  back at its current position. Verification metadata remains closeout-owned.
-- 2026-09-05T06:38:58+00:00 — CCR L31 dashboard citation curation: re-read the scoped claims against frozen source `ea35964985f30080488270e71ac81657ac40682b`, split pooled evidence and corrected current source boundaries. Historical claims retain their recorded provenance. This is scoped claim review; existing whole-file verification metadata is unchanged.
-- 2026-09-05T06:24:16+00:00: Generated citation repair: "selectedLeafKey={viewedLeafKey}" repointed to dashboard/src/cockpit/Cockpit.tsx:786-786. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-05T06:24:16+00:00: Generated citation repair: "engineProcesses={engineProcesses}" repointed to dashboard/src/cockpit/Cockpit.tsx:693-693. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
 
-- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 memory pass: recorded the notes-takeover widening — `NotesReaderTarget` became the shared discriminated `TaskArtifactReaderTarget` (kind notes/requirements), the import moved to `data/taskArtifacts`, and `NotesTakeover` now spreads the target and keys `data-view` on the kind.
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
+- Knowledge is a full-bleed, hidden-not-unmounted layer. [34]
 
-- 2026-08-11T19:58+02:00 — Aligned the current dashboard card for `Cockpit.tsx` with its task-document, seat-state, and lifecycle interaction boundaries.
-- 2026-08-08T21:20+02:00 — 260713-TES-L1 curator: recorded the `AgentNotifierHeartbeatBadge`
-  rename, the `agent-notifier ok/stale` wording and `data-testid="agent-notifier-heartbeat"`, and
-  the store's legacy-wire fallback. Verification metadata pinned until closeout stamps the
-  260713-TES-L1 commit.
 
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the re-wired imports to the kebab-case split folders and the lint remediation. Verification metadata stays pinned until closeout stamps the code commit.
-- 2026-08-04T08:45:26+02:00 — 260731-EFA-L6 S18-B07 curator correction: rebound the keep-alive, Analytics, and RailChat claims to their frozen implementation/type bodies; same-reviewer delta pending.
+- Full-bleed is derived for the product and retained machine-map views.
 
-- 2026-08-02T20:47+02:00 — 260731-EFA-L6 W2-B01 curator: anchored 15 citation rows and rewrote 2 prose citations; scoped citation fixing regenerated the source ranges.
 
-- 2026-08-01T10:30+02:00 — 260731-EFA-L4 curator (citation pass): `types/projection.ts` adopted the
-  server's state partition (`LIVE_STATES` + `TERMINAL_STATES` composed into `LIFECYCLE_STATES`), moving
-  every anchor below it. Re-anchored the three rows citing that file, each on its proving symbol:
-  `Analytics` L626-L641 → L663-L678 (`engineProcesses` at L677); the metrics rollup L167-L220 → L206-L257
-  (`StateCountField` L206, `LifecycleStateCounts` L214, `Metrics extends LifecycleStateCounts` L240,
-  `metricsFor` L250); and `SupervisorHeartbeat` L664-L672 → L701-L709. The body's rollup claims still
-  hold: `ActiveState` is now `LIVE_STATES` itself rather than a subtraction, but `Metrics` still carries
-  one required `…Count` per `ActiveState`.
+- A page outside the bar mounts only through an injected view. [36]
 
-- 2026-08-01T09:05+02:00 — 260731-EFA-L4 curator: corrected the top-bar counts claim, which still said
-  the span renders only `tasks N running · N blocked · N tok`. It now carries
-  `data-testid="task-metrics"` and appends `· {metrics.awaitingDeveloperCount} awaiting you` while that
-  count is `> 0` only (cit:([`TopBar`], dashboard/src/cockpit/Cockpit.tsx:1000-1048)); recorded that `Metrics extends LifecycleStateCounts` and
-  that `metricsFor()` is the client mirror seeds now call, and that server-side `_metrics` expands
-  `STATE_COUNT_FIELDS` instead of three hand-written `sum(...)` lines. Added the left-rail invariant the
-  new in-file comment states (`AttentionQueue` + `LifecycleList` are siblings in `rail--left`, so the
-  amber in each grammar must differ by glyph; the reducer builds no attention row for
-  `awaiting-developer`). Citation repairs, each re-anchored on its proving symbol: `bodyGrid`/`fullBleed`/
-  `railEnter` L194-L252 → L204-L220; L437-L442; L493; L548-L554; view registry L59-L76; L379-L386 →
-  L63-L80 (`CockpitView`/`VIEWS`, incl. the `chats` entry the old range cut off); L437-L442; `chatsLayer`
-  L317-L323; L528-L541 → L318-L328; L612-L621; the Chats-layer prop pass L544-L558 → L617-L628 (the old
-  range landed on `motion.aside`); SSE wiring L328-L354 → L360-L389 (`connectState`/`connectEvents`/
-  `createGatedSeatEventApplier`/`startCatalogPollDriver`); `startCatalogPollDriver` L60-L77 → L101-L122;
-  `applySeatEventLine` L106-L130 → L95-L130; `RailChat` `engineProcesses` L479-L485 → L245-L257; L312;
-  `Analytics.engineProcesses` L395-L408 → L626-L641; and the two previously uncited rows
-  (`store.supervisorHeartbeat`, `SupervisorHeartbeat`) given real ranges. Also narrowed the
-  `SessionsView.tsx` row: it composes `ChatContextBar` + `SessionRail` (cit:([`SessionsViewImpl`], dashboard/src/panels/session-cockpit/sessions-view/SessionsView.tsx:15-18)) and reaches
-  `PtySurface` through `ChatsStageBody`, not directly — the file no longer names `PtySurface` at all.
 
-- 2026-07-24T13:17:50Z — Documented persistent-layer memoization, wake-lock ownership, and serving
-  identity honesty. Verification hash/date remain pinned to the pre-commit source stamp.
+- The Knowledge reader the retained layer mounts. [39]
 
-- 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded the top-bar polish — `SupervisorHeartbeatBadge`
-  age humanized (`humanizeDuration`) and stale degraded to quiet `caution({sev:"warn"})` amber (no longer
-  pulsing red, R5/A4/B9); the `⚠ N waiting` chip renders only when `> 0` (RV-4/R4); `ServingBuildStamp`
-  `up` is a humanized uptime with the absolute stamp in the tooltip (V15); brand/fact-chips `nowrap` +
-  `statusRow` `flex-wrap:wrap` (V6); lifecycle counts scope-labeled `tasks …` with an authority tooltip
-  (R7, no backend change). Shell layout/keep-alive/selection unchanged. Verification pinned to the leaf
-  base (`352d5cd`) until closeout stamps the candidate commit.
-- 2026-07-18T16:02+02:00 — FEUI MX-FIX-3: made FEUI-L1's separate Sessions route explicitly
-  historical, named the landed single `SessionsView` mount behind Chats, and assigned full-page
-  launch/attach ownership to `ChatContextBar`; the shell alone owns catalog polling and
-  reconciliation. Also separated the shared session store from the distinct RailChat/PtySurface
-  transport owners and labeled the former uncommitted-candidate note as historical. Verified against
-  code commit `31f58834f86c0d98e26b0896e099a2403a8729ee`.
 
-- 2026-07-18T12:43+02:00 — FEUI-L9R: recorded the running-bundle comparison and explicit reload
-  boundary; verification metadata remains pinned pending candidate closeout.
+- The revalidation provider is shown only for ordinary Operations outside takeover and review.
 
-- 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
-  source/test/task evidence; no Domain Documentation source is configured.
+- RailedBody applies saved Operations sidebar widths or the review's reading/chat tracks; its narrow path uses one column. [65]
+- Files, Engine Room, Topology, Knowledge, and Chats request the full-bleed layout. [66]
 
-- 2026-07-17T02:30+02:00 — 260715-FEUI-L2 (S1/S2, incl. review finding 2): `Cockpit` now owns the
-  shared session feed — the `/api/events` EventSource carries the Event River AND the seat-event
-  reconciler (one connection, two consumers), with seat application behind the per-connection
-  backlog gate (`ready` opens, `error`/interrupt re-closes; replayed history never touches live
-  rows), and starts the refcounted 2500 ms catalog poll driver unconditionally so the feed lives
-  with any view — or none — in front. Verification metadata pinned to the leaf base until
-  closeout stamps the L2 code commit.
-- 2026-07-17T00:25+02:00 — 260715-FEUI-L1 (view shell, R1): registered the full-bleed **Sessions**
-  view — `View` gained `"sessions"`, `VIEWS` a last `Sessions` tab, `fullBleed` includes it, and
-  the view is kept mounted as the fourth persistent hidden layer (`sessionsLayer = chatsLayer`,
-  display/aria-hidden toggle, never unmounted) so the future xterm buffers/WebSockets survive view
-  switches; `active={view === "sessions"}` gates the view's window-level keyboard layer. Only
-  registration seams touched. Verification metadata pinned to the task base until closeout stamps
-  the L1 code commit.
-- 2026-07-08T23:59+02:00 — 260707-HFX2-L8 (dead-seat storm observability, R6):
-  `SupervisorHeartbeatBadge` now includes the latest redeliverable/pending inbox backlog counts and
-  last sweep duration next to the heartbeat age, with the tooltip carrying the same forward signal.
-  Verification metadata pinned until closeout stamps the 260707-HFX2-L8 commit.
-- 2026-07-08T18:45+02:00 — 260707-HFX2-L2 (supervisor sweep, R5): added `SupervisorHeartbeatBadge`
-  to the `TopBar`, rendered between the `@ hh:mm:ss` stamp and `ServingBuildStamp` — reads
-  `s.supervisorHeartbeat`, renders nothing for a never-ticked heartbeat (`lastTickAt === null`), else
-  `"supervisor ok/stale <age>m"` styled `caution({sev:"alarm"})` past the cutoff or `dim` otherwise,
-  with a tooltip naming the exact tick time and cutoff. Verification metadata pinned until closeout
-  stamps the 260707-HFX2-L2 commit.
-- 2026-07-07T14:00+02:00 — agent-orchestration L17: the shell gained a second full-bleed **takeover**, the
-  **Notes Reader** — `notes`/`notesOpen` state + `openNotes`/`openChangeSet` handlers, a shared `takeover`
-  flag that hides the railed body for either screen, and `onOpenNotes` wired into `DetailPanel`. Unlike the
-  Change-Set takeover the reader is retained mounted-hidden after Back (selection survives back/forward, the
-  File Viewer pattern). Verification metadata pinned until closeout stamps the L17 commit.
-- 2026-07-07T10:50+02:00 — L15: servingBuild stamp in the top bar (build_info via /api/state). Verification metadata pinned until closeout stamps the L15 commit.
+- Rail fade properties are selected by the animation permission.
 
-- 2026-07-07T05:24+02:00 — 260703-L15 S3 (stale-server visibility): the top bar gained the muted
-  `ServingBuildStamp` (`data-testid="serving-build"`, rendered between the `@ hh:mm:ss` stamp and
-  the conn badge) — commit short-hash (or `v<version>` off-checkout) + "up <boot time>", read from
-  the store's snapshot-fed `servingBuild`; renders nothing when the wire carries no stamp (a
-  pre-L15 server), never fakes. Note: with the L15 change gate, the top bar's `@ hh:mm:ss`
-  (`generatedAt`) is the stamp of the last APPLIED content, frozen while idle by design.
-  Verification metadata pinned until closeout stamps the L15 commit.
-- 2026-07-02T16:18+02:00 — L8: `CockpitShell` now threads `viewedLeafKey` and active right-rail chat
-  state into `HighlightComposer` beside `selectedLifecycleId`, so highlighted text from the displayed leaf
-  can be routed to the adjacent leaf chat draft while global/off-leaf selections keep the generic
-  Add-to-chat fallback. Verification metadata pinned until closeout stamps the L8 commit.
-- 2026-07-01T01:19+02:00 — L6: threaded `analytics.engineProcesses` through `CockpitShell` to the
-  right-rail `RailChat` using a stable empty fallback. Cockpit still owns only selection/view state; packet
-  construction and delivery stay inside `RailChat` at start-on-leaf or successful free-chat attach time.
-  Verification metadata pinned until closeout stamps the L6 commit.
-- 2026-06-30T00:00:00+02:00 — L5 follow-up: the rail/Chats leaf key now comes from the **displayed** leaf, not the
-  top-level selection. Replaced `leafKeyForSelection(selectedId, …)` with a `viewedLeafKey` state set from
-  `DetailPanel`'s new `onViewLeaf` callback (threaded through `ViewBody` as `setViewedLeafKey` and lifted to
-  the shell so it survives a `DetailPanel` unmount); it feeds both `<RailChat leafKey>` and the Chats page's
-  `selectedLeafKey`. `leafKeyForSelection` is now superseded/unused. Verification metadata pinned until
-  closeout stamps the L5 commit.
-- 2026-06-30T00:00:00+02:00 — L5 (Sidebar chat): `CockpitShell` gained a `railView: "river" | "chat"` state + an inline
-  `RailToggle` (a `role="radiogroup"` two-segment control mirroring `EffectsToggle`) that replaces the
-  hard `<EventRiver/>` in `rail--right` with a switch between the Event River and a single-instance
-  `<RailChat>`. Derives `selectedLeafKey` from the **open task doc** via `leafKeyForSelection` (the
-  durable `repo/master/leaf-id`, not the enclosure) and reads `taskDocuments` from analytics, passing both
-  (plus `selectedLifecycleId`) into `<Chats>` and `selectedLeafKey` into `<RailChat>`. New collaborator:
-  `panels/RailChat.tsx`. Verification metadata pinned until closeout stamps the L5 commit.
-- 2026-06-29T23:00+02:00 — L4a: the change-set takeover now **overlays** the railed body instead of
-  replacing it — the body div is kept mounted but `display:none`/`aria-hidden` while `changeSet` is set
-  (the File Viewer / Chats hidden-not-unmounted pattern), so `DetailPanel`'s drill state survives and the
-  viewer's back link returns to the leaf it was opened from rather than resetting to the master overview.
-  Verification metadata pinned until closeout stamps the L4a commit.
-- 2026-06-29T16:40+02:00 — Operations Integration L4 (Change-Set Viewer): `CockpitShell` gained a `changeSet` TAKEOVER state — when set it renders `<ChangeSetViewer>` full-bleed in place of the railed Operations body, and the screen's back link / a mode-bar switch (`changeView`) / `open()` all clear it; `onOpenChangeSet` is threaded through `ViewBody` into `DetailPanel`. New collaborator: `panels/changeset/ChangeSetViewer`. Verification metadata pinned to the task base until closeout stamps the L4 code commit.
-- 2026-06-29T09:06+02:00 — Operations Integration L2 (File Viewer): registered a full-bleed **File Viewer**
-  view — `View` gained `"files"`, `VIEWS` a `{ id: "files", label: "File Viewer" }` tab between Operations
-  and Engine Room, and `fullBleed` now includes `files`. The File Viewer is **kept mounted** as a persistent
-  CSS-hidden `filesLayer` in `CockpitShell` (the Chats pattern), not routed through `ViewBody`, so a tab
-  switch preserves its repo/scope/open-file/tree state instead of resetting it. New collaborator:
-  `panels/file-viewer/FileViewer`. Verification metadata pinned to the task base until closeout stamps the
-  L2 code commit.
-- 2026-06-28T07:32+02:00 — Task 29 S7 follow-up: removed the Lifecycle Flow tab from the visible
-  cockpit view registry and routed `/api/events` readiness through `markEventsHydrated`, so the Event
-  River waits for retained backlog hydration before showing empty-state copy. Verification metadata
-  pinned until closeout stamps the task-29 code commit.
-- 2026-06-27T18:43+02:00 — Task 26: registered the **Lifecycle Flow** view — `View` gained `"flow"`,
-  `VIEWS` a `{ id: "flow", label: "Lifecycle Flow" }` tab (second, after Operations), `ViewBody` a
-  `case "flow" → <FlowTab />`, and `fullBleed` now includes `flow` (rails hidden, like the machine-map
-  views). Adds the `FlowTab` panel (`panels/FlowTab.tsx`) as a new collaborator. Verification metadata
-  pinned until closeout stamps the task-26 code commit.
-- 2026-06-24T16:33+02:00 — Task 17 typed Operations selection: `open(id)` now preserves typed
-  task/series/lifecycle selection keys and wraps legacy raw lifecycle ids; `selectedLifecycleId` is
-  derived through `lifecycleIdForSelection` so chats still bind to lifecycle-backed task docs.
-  Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-23T13:45+02:00 — Task 11: derives `selectedLifecycleId` from `selectedId` + the lifecycle map
-  and passes it to `<Chats>` and `HighlightComposer`, enabling hosted chat lifecycle tagging and
-  lifecycle-filtered context delivery. Verification metadata pinned until closeout stamps the task-11
-  code commit.
-- 2026-06-21T02:44+02:00 — Slice 6g: `ViewBody` now passes `onOpenLifecycle={open}` into `DetailPanel`, wiring the task reader's cross-master `→` rows and parent `↑` breadcrumb to switch the selected lifecycle. Verification metadata pinned until closeout stamps the 6g code commit.
-- 2026-06-19T15:59 — Task 6 slice 6f-1: `CockpitShell` now mounts the `HighlightComposer` (cockpit-wide selection → context-package composer); `onSent` flips to the Chats view. Verification metadata pinned until closeout stamps the 6f-1 code commit.
-- 2026-06-19T14:05 — Task 6 slice 6e-4: stopped routing `chats` through `ViewBody` — `<Chats />` is now rendered once as a persistent layer in `CockpitShell`, shown when `view === "chats"` and otherwise `display:none` (`aria-hidden`). Keeping it mounted means the live xterm instance + its WebSocket survive a view switch instead of being re-created empty. Verification metadata pinned until closeout stamps the 6e-4 code commit.
-- 2026-06-18T16:50 — Task 6 slice 6e-1: registered the full-bleed **Chats** view — `View` gained `"chats"`, `VIEWS` a `Chats` tab, `ViewBody` a `case "chats" → <Chats />`, and `fullBleed` now includes `chats` (rails hidden, like the machine-map views). Verification metadata pinned until closeout stamps the 6e-1 code commit.
-- 2026-06-17T22:45 — slice 5g G6: added the `EffectsToggle` (`effects-toggle`) to the `TopBar` — a
-  ✦ Effects / ❄ Calm button that flips `html[data-effects]` live (so the engine-room backdrop + all gated
-  motion respond at once) and persists `calm-cockpit` for the next boot. Default effects-on. Verification
-  metadata pinned until closeout stamps the code commit.
-- 2026-06-16T02:30 — slice 5f S1: machine-map views (Engine Room / Topology) go full-bleed — the
-  `body` became a `bodyGrid` `bleed` cva, the two rails render only when `!fullBleed` (gated
-  `motion.aside` fade-in via `useShouldAnimate`), and `shell__body` carries `data-fullbleed`. The
-  top-bar master-caution stays visible. Verification metadata pinned until closeout stamps the S1 commit.
-- 2026-06-15T17:00 — Created for slice 5d: shell layout + status/caution migrated to co-located Panda
-  css/cva; the mode bar became the React Aria `ModeBar`. Verification metadata pinned until closeout
-  stamps the 5d code commit.
-2026-09-18T18:10+02:00 — 260915-KS-L22 curator (uncommitted change set on `ar/260915-ks-l22`, base `2dcacb27`): **added the intent-review takeover kind.** `ChangeSetTakeover` now keys `data-view` on
-`target.review` (`intent-review` / `changeset`) and mounts the new `ReviewSurface` instead of
-`ChangeSetViewer` whenever the target carries the review variant, so one takeover function
-dispatches two kinds without the shell's routing, rails or change-set plumbing moving. The import
-of `ReviewSurface` is the only other change to this file. The new section above states the fact and
-its boundary — the target chooses the pane; the shell does not decide which surface a review gets.
-No reference row was re-cited in this pass: the card's own ranges into this source are left as they
-stand and belong to the citation-reprojection engine. The body was changed substantively and this
-entry is the history record, not a metadata-only refresh. The metadata block above names this
-leaf's uncommitted candidate as what was read, and `lastVerifiedCommitHash` / `lastVerifiedCommitDate`
-are left exactly as the last real verification set them because no commit contains this candidate.
-## 260921-ICR-L12 The Takeover Hands The Record To The Review Surface
 
-`260921-ICR-L12` (`ICR-R12@v1`) adds one prop at the takeover: when the change-set target's review
-carries `historical`, `ChangeSetTakeover` mounts `ReviewSurface` with `history="recorded"`, and
-otherwise with `undefined` — the live candidate, which is what every ordinary entry asks for. The
-target's own comment records why the record travels this way: a closed leaf's entry carries it, so the
-surface asks for that leaf's recorded comparison rather than for a live candidate there is none of.
+- The `chatsLayer` keep-alive class used by the Chats layer. [68]
 
-Nothing else in the takeover changed: the review target's subject still travels as it did, the
-`onBack` contract is the same, and the cockpit adds no resolution of its own — the browser names a
-record and the server owns which comparison that record is.
+- A `#knowledge?…` reader URL selects the Knowledge view as the shell's initial view. [73]
+- The frontend `Analytics` projection includes the `engineProcesses` process-map collection. [79]
 
-## Update History
-- 2026-09-23T04:30:48+02:00 — 260921-ICR-L12 curator (candidate `ar/260921-icr-l12`, uncommitted; production line at this leaf's base `870701b43039cd205a8c98e418382729510c3de3`, confirmed from the enclosure contract): **the takeover hands the record to the review surface (ICR-R12@v1).** `ChangeSetTakeover` passes
-`history="recorded"` when the target's review carries `historical`, and nothing otherwise; no
-resolution is added on the client. **Citation accounting:** the rows this leaf's change moved were
-re-derived against the candidate. **Stamp accounting:** no verification stamp was advanced — the
-candidate is uncommitted and the governed closeout owns the real stamp.
+- The reviewed UI contract owner `MainLayers`. [88]
+
+- MainLayers mounts the persistent RoleChatsPane with tasks and the visible/non-takeover active predicate, forwarding agentChat as openChat. RailedBody passes shell agentChat to MainLayers and openAgentChat to LeftRail; LeftRail forwards that handler to LifecycleList. Native host transport remains separately owned. [89]
+
+- The right rail keeps one unkeyed chat wrapper across Operations and review; Operations' River still mounts conditionally. [92]
+
+- The hidden chat side stays mounted but out of reach behind display:none and aria-hidden. Anchor: "export function RightRail(props: RightRailProps) {" [93]
+
+- Native task selection and memoization are separate from the Engine Room stable-empty fallback.
+
+
+- The shell starts the screen wake lock once on mount; the wake-lock helper follows document visibility and releases its held sentinel on stop. [96]
+
+
+- Base review navigation names repo/master/leaf and recorded history. Separate reviewer hash helpers persist selection/comparison through replaceState without changing that target or adding browser-history entries. [97]
+
+
+- At at-most40rem the shell admits vertical overflow and single-column railed content. The ordinary change-set takeover uses the fixed takeover body; review is rendered in the railed body. [98]
+
+- Review is explicitly excluded from takeover. [99]
+- Independent Operations sidebar toggles outside DetailPanel. [100]
+- Review column shares the right rail and DocumentChat wrapper. [101]
+- Operations/sidebar and review/chat column sizing. [102]
+- Shown page/repository provenance values. [103]
+
+- Tray button outside the view group and layer outside railed body.
+
+- The top bar renders the serving-build stamp from its own module. [106]
+
+- The shared RightRail forwards the review leaf's explainer target into the same DocumentChat wrapper. Operations still uses its ordinary document chat; its active leaf document also mounts ViewedLeafExplainerControl, which can read and retire an existing explainer without visiting Review. The Operations active predicate is shared with DetailPanel, and switching pages adds neither a frame wrapper nor a frame key. [105]

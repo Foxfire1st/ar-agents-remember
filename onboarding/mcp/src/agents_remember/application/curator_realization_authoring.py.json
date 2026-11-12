@@ -1,0 +1,371 @@
+{
+  "path": "mcp/src/agents_remember/application/curator_realization_authoring.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "befd12b921e3b8573570475a960e0a1992be5913",
+        "content": "sha256:b2bd098c5dafb7a1d998c1ba8881064cf9811703559d976539eee51927decb9e",
+        "locator": {
+          "kind": "symbol",
+          "name": "_authority_route_problem"
+        }
+      },
+      "id": "RLZ-6HBW7626",
+      "invariant": "INV-E8655Z54",
+      "origin": {
+        "leaf": "260921-ICR-L45"
+      },
+      "rationale": "Recognises the same word, and a non-string value, in the entry's authority block and reports it as an entry-level problem.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "befd12b921e3b8573570475a960e0a1992be5913",
+        "content": "sha256:2359fb8b3985149c2d6b7b4a47e5686a3860c7daedf6204c6fcf4347c18ccbc4",
+        "locator": {
+          "kind": "symbol",
+          "name": "realization_refusal"
+        }
+      },
+      "id": "RLZ-C4KJBVRZ",
+      "invariant": "INV-J7179RG5",
+      "origin": {
+        "leaf": "260921-ICR-L45"
+      },
+      "rationale": "The shared realization_refusal validator names malformed rationale/role/length defects and offending targets before authoring. It supplies entry-local diagnostics; its caller owns whole-converted-operation refusal, so the helper alone does not establish sibling commits.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "befd12b921e3b8573570475a960e0a1992be5913",
+        "content": "sha256:2359fb8b3985149c2d6b7b4a47e5686a3860c7daedf6204c6fcf4347c18ccbc4",
+        "locator": {
+          "kind": "symbol",
+          "name": "realization_refusal"
+        }
+      },
+      "id": "RLZ-GX6ZQZ1F",
+      "invariant": "INV-H6A6JS63",
+      "origin": {
+        "leaf": "260921-ICR-L45"
+      },
+      "rationale": "Asks the absent-rationale check over every target and composes the realization_rationale_absent refusal naming the entry and each unexplained target.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "befd12b921e3b8573570475a960e0a1992be5913",
+        "content": "sha256:368ee13d8adad9b2085d23765ba04b72f401014d224b07d6f00976e37f4734af",
+        "locator": {
+          "kind": "symbol",
+          "name": "EntryRealization.for_target"
+        }
+      },
+      "id": "RLZ-K7PC4SVX",
+      "invariant": "INV-CKHJ0M7J",
+      "origin": {
+        "leaf": "260921-ICR-L45"
+      },
+      "rationale": "Resolves one target's role and rationale from its own keys first, then the entry default.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "befd12b921e3b8573570475a960e0a1992be5913",
+        "content": "sha256:dfab6891c14d8fbf67c94746a3159982a5224827901af30fe66960fc79af37d9",
+        "locator": {
+          "kind": "symbol",
+          "name": "_absent_route"
+        }
+      },
+      "id": "RLZ-PM09BFJR",
+      "invariant": "INV-E8655Z54",
+      "origin": {
+        "leaf": "260921-ICR-L45"
+      },
+      "rationale": "Recognises the placeholder word on a target so the entry is refused before the writer would read it as a route path.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "**The module's own statement: per target first, checked at admission, no route spelled by a placeholder, and what it does not cover.**\n\nAnchor: \"Per target first, then the entry's explicit default.\"; \"What this does not cover.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "befd12b921e3b8573570475a960e0a1992be5913",
+            "content": "sha256:774a6bda528e8142a67a8562fd0000838a383fe4d1f412bb71b175607a8fd9d2",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The five refusal codes and the producer-facing keys.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "befd12b921e3b8573570475a960e0a1992be5913",
+            "content": "sha256:42f6a771f63f969afe694170365dcf17655ca450d6a9bdd7ef2c1bd856b66712",
+            "locator": {
+              "kind": "symbol",
+              "name": "CODE_RATIONALE_ABSENT"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "befd12b921e3b8573570475a960e0a1992be5913",
+            "content": "sha256:1b7bd42e279b55df8a828c472aa723d3d26fe2aab9f0e360034835a6d56ad397",
+            "locator": {
+              "kind": "symbol",
+              "name": "CODE_ROUTE_ABSENT_LITERAL"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "befd12b921e3b8573570475a960e0a1992be5913",
+            "content": "sha256:3d9a752e2857c2518cd9edddd8eaf66a2c8e79bd544b4849bee1dc8c71a82995",
+            "locator": {
+              "kind": "symbol",
+              "name": "ENTRY_RATIONALE_KEY"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "befd12b921e3b8573570475a960e0a1992be5913",
+            "content": "sha256:d2f6d9678af420b8793094de2a4a82d86c8f4937976b94dc0a21cf9252a157df",
+            "locator": {
+              "kind": "symbol",
+              "name": "TARGET_RATIONALE_KEY"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Values are trimmed text or nothing; a non-string is never rendered, and an unknown role is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "befd12b921e3b8573570475a960e0a1992be5913",
+            "content": "sha256:d7d5169db983a350d2a7a640bae0764455d6ae432c9761392d441e74ccb41a89",
+            "locator": {
+              "kind": "symbol",
+              "name": "_stated"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "befd12b921e3b8573570475a960e0a1992be5913",
+            "content": "sha256:bfc774b1103f77f24f762f4ced9cfe9638fac09bd348333f5f16143ea0700c5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_vocabulary_role"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "befd12b921e3b8573570475a960e0a1992be5913",
+            "content": "sha256:bdc24aaf00f7a1dde75c6ddd8fed60ca9ef396c966aa25bf05db93dd4fdea235",
+            "locator": {
+              "kind": "symbol",
+              "name": "_field_problem"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The placeholder word `absent` is matched in any case once trimmed, at a target and at `authority.governing_route`, where a non-string route is also refused.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "befd12b921e3b8573570475a960e0a1992be5913",
+            "content": "sha256:709b18e5347be325ab75e2082c4bb477cb16f7e19da30fc3c144eaf8e18b1cd4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_names_absent_route"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "befd12b921e3b8573570475a960e0a1992be5913",
+            "content": "sha256:b2bd098c5dafb7a1d998c1ba8881064cf9811703559d976539eee51927decb9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_authority_route_problem"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**Resolution: target first, then the entry default, halves independent; only target-stated keys enter the digest.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "befd12b921e3b8573570475a960e0a1992be5913",
+            "content": "sha256:fa9bc1eec6c185a62524511625b1fd471604fd103c84a939f27203ea13aea331",
+            "locator": {
+              "kind": "symbol",
+              "name": "TargetRealization"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "befd12b921e3b8573570475a960e0a1992be5913",
+            "content": "sha256:5149ddf521458300efcfb77695e2d638aeb8491702db8eecd9dba2e396bd4f52",
+            "locator": {
+              "kind": "symbol",
+              "name": "EntryRealization"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "befd12b921e3b8573570475a960e0a1992be5913",
+            "content": "sha256:368ee13d8adad9b2085d23765ba04b72f401014d224b07d6f00976e37f4734af",
+            "locator": {
+              "kind": "symbol",
+              "name": "for_target"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The ordered target checks and the refusal that names every failing target.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "befd12b921e3b8573570475a960e0a1992be5913",
+            "content": "sha256:6ccd08808a534fd94a4faf53b92430404d60dacda57090ec2802f6826e52c57b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_TARGET_CHECKS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "befd12b921e3b8573570475a960e0a1992be5913",
+            "content": "sha256:2359fb8b3985149c2d6b7b4a47e5686a3860c7daedf6204c6fcf4347c18ccbc4",
+            "locator": {
+              "kind": "symbol",
+              "name": "realization_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "befd12b921e3b8573570475a960e0a1992be5913",
+            "content": "sha256:6c5ef23ec1a55d807028755b1437ea752d6a535a41c5ae7cc875bbf8d0ad44de",
+            "locator": {
+              "kind": "symbol",
+              "name": "_describe"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The shipped role vocabulary and the unassessed-edge member, and the stored prose limit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb43356c10b09e4f63622d8ce0004d9d68140bee",
+            "content": "sha256:04ce117f509879f455d40f1f713e5577467d3d7b176c100922cc2680c0911db4",
+            "locator": {
+              "kind": "symbol",
+              "name": "RealizationRole"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/graph.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eb43356c10b09e4f63622d8ce0004d9d68140bee",
+            "content": "sha256:d3b62bdeb910a01fc5c180dd90c8fb5154489a9e4b8e100708ef060621d373e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "UNCLASSIFIED_ROLE"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/graph.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:2a98361d8a179d85a9ffb5448c0bda56c6c851b999dbc4e20fc845fce696b036",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROSE_MAX_LENGTH"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Converted target parsing collects the pure guard's named problems and the writer refuses the whole handoff before its physical write step. Anchor: `_targets` `write_knowledge`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+            "content": "sha256:9c45635d9680b053825219744ed2cb085e0ed39efc6205935a3c7256457167aa",
+            "locator": {
+              "end": 909,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/handoff.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
+            "content": "sha256:169cd09ef917795325317f364b432751267cf3d46f674364b6e170a89b401570",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,101 @@
+# mcp/src/agents_remember/application/knowledge_gate/memo.py
+
+## Governing Overview
+
+[Nearest governing overview](../overview.md)
+
+## Purpose
+
+The bounded in-process memo of the invariant gate's verdicts. `evaluate_leaf_gate` asks it before it
+computes and offers every computed verdict to it. A verdict is kept under a key of exact identities and
+together with every row the evaluation recorded outside the Git trees, and it is served again only while
+all of those rows still hold. The worktree layer's gate port (`KnowledgeGate.leaf_refusal` in
+`adapter.py`) and the memory-quality controller both call `evaluate_leaf_gate`, so they share these
+verdicts.
+
+## Code Commentary
+
+### The key
+
+`memo_key(contract, candidate, parent_memory_tip, leaf_memory_head)` returns a `GateMemoKey`, or `None`
+when an input cannot be identified; the gate then computes without the memo. The key holds:
+
+- the candidate's code tree and memory tree;
+- the contract's path and the SHA-256 of its bytes;
+- the parent line's memory tip and the leaf's own memory `HEAD`;
+- the SHA-256 of the leaf's task document, found through the strict lookup `strict_leaf_doc` (an empty
+  digest input when the leaf has no document);
+- the build stamp (`measuring_build_stamp`) as sorted JSON.
+
+An unreadable contract, a leaf document that cannot be established, or a build stamp that cannot be
+produced gives no key. Contract bytes and a found task document are read through `_read_bytes`, which
+records the exact bytes' digest on success, `ABSENT` for `FileNotFoundError`, or an unreadable
+observation naming another `OSError` type before re-raising it. These key-building reads are visible
+to an enclosing recorder even when no key is returned.
+
+### Serving and keeping
+
+- `remembered(key)` returns the kept verdict only when it is at most `MAX_AGE_SECONDS` old and
+  `_Kept.still_read_the_same()` holds. That check is `changed_observations` over the kept rows: every
+  recorded path resolution and existence probe is repeated first, and recorded files are hashed again
+  only when all of those still give the recorded answer. A requirement packet whose locator resolves to
+  another file at the time of the check is therefore a miss even when the other file has the same bytes,
+  and the bytes behind the other target are not read for the check. A manifest that appeared or vanished, a newly approved
+  version and edited settings are misses as well. Only after the age and unchanged-input checks
+  succeed does `remembered` replay the kept observations into the current recorder and return the verdict.
+- `remember(key, result, reads)` keeps a verdict only when `result.memoisable` is true and the rows hold
+  no failed observation (`has_failed_observation`: a conflict, or an unreadable row). A verdict behind
+  which an input could not be read, or was read at two identities, is returned to the caller and computed
+  again at the next evaluation. A refused verdict over complete inputs is kept like a pass.
+
+### Bounds
+
+`GATE_MEMO` is a `BoundedMemo` of `CAPACITY` 16 verdicts, least recently used first out, and
+`MAX_AGE_SECONDS` is 900.
+
+### Dependency observations when constructing and reusing a key
+
+Key identity and read provenance are complementary. `_read_bytes` returns the same bytes used for the
+contract and task-document hashes while also recording their observed identity; a failed read is recorded
+before normal key refusal handles it. A missing task document found as `None` still uses the existing
+empty-byte digest input rather than reading an invented document path.
+
+Serving a kept verdict replays its stored read set only after the verdict is young enough and its
+observations still match. Missing, expired or changed entries return no verdict before that replay.
+Keeping a new verdict still requires both `result.memoisable` and a read set without a failed observation;
+replay does not turn incomplete or conflicting inputs into cacheable results.
+
+
+## Evidence
+
+### Repo-Internal References
+
+- The module docstring: what the key names, the inputs outside the trees, the bounds, what is never kept.
+- The two bounds.
+- The key's fields. [12]
+- A kept verdict is current when no recorded observation changed. 
+
+- The key from contract bytes, the strict task lookup and the build stamp. [14]
+
+
+- A kept verdict is served only when young enough and unchanged. [15]
+
+- Only a memoisable verdict without a failed observation is kept. 
+
+- The gate asks the memo, records its reads and offers the verdict. [17]
+
+- A warm pass becomes the refusal when the packet locator is retargeted to a file with the same bytes. [18]
+- The gate's verdict follows the packet in both directions, and a repeated evaluation gives the same verdict. [19]
+- A verdict behind an unreadable contract read keeps its answer and occupies no memo slot. [20]
+
+- Every file read is in the read set and a conflicting read is never kept. [21]
+
+- The same trees against another parent tip are another key and another evaluation. [22]
+
+- The worktree layer's gate port calls the gate. [23]
+
+
+- Contract and found task-document reads record their digest or read failure while constructing the exact memo key. [24]
+- A valid memo hit replays its kept observations; memo admission still excludes failed observations.
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/knowledge_gate/memo.py:1-36 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c052b2593b85d9baf425cc1d5c46f384b13fc9ea; mcp/src/agents_remember/application/knowledge_gate/memo.py:66-67 - the region it cited is not in the file at the candidate and no re-point was possible; mcp/src/agents_remember/application/knowledge_gate/memo.py:148-167 - the region it cited is not in the file at the candidate and no re-point was possible; mcp/src/agents_remember/application/knowledge_gate/memo.py::_Kept - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/application/knowledge_gate/memo.py::remember - the bytes it recorded now occur 11 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

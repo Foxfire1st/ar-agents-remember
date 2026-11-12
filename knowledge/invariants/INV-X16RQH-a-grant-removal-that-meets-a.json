@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A start-interleaved revoke must not erase the grant that a started leaf depends on."
+  },
+  "applicability": "The architect and developer grant-revoke writers when start evidence interleaves with removal.",
+  "conditions": [
+    "The exact grant exists and the ordinary unstarted proof changes before the removal completes."
+  ],
+  "exclusions": [
+    "Arbitrary external shell writes are outside product-interface authority."
+  ],
+  "id": "INV-X16RQH",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_direct_execution_grants.py::test_revoke_restores_grant_when_start_interleaves_before_removal, test_revoke_after_start_is_refused; worker journal R4 section; R5 verdict 88c054160ffdffef415a01cdf0f09161bb59aa68944469379856e72944c46755"
+      ],
+      "path": "knowledge-handoff.json"
+    },
+    "handoffEntry": "L94-CODE-F08",
+    "leaf": "260928-MIK-L94",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A grant removal that meets a started leaf restores the exact removed record and refuses on both the architect and developer routes, so concurrent give/revoke outcomes stay serial-consistent.",
+  "status": "proposed",
+  "supersedes": []
+}

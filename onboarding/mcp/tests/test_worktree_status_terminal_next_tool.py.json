@@ -1,0 +1,111 @@
+{
+  "path": "mcp/tests/test_worktree_status_terminal_next_tool.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Anchor: Accepted archive cleanup/abandon args bind actual callable signature.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c1cd105c2cb5cc58c6c288dbfe714e8b756483d",
+            "content": "sha256:81cb9feb51163093908d34d1c456013ec5804aa794f3b9c8fd5708fa43adf45f",
+            "locator": {
+              "end": 225,
+              "kind": "line_range",
+              "start": 198
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Anchor: Declared next-move model keys.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c1cd105c2cb5cc58c6c288dbfe714e8b756483d",
+            "content": "sha256:3c4c8354b5df8c0a4517596ad4df67271c196f23eff5ab32ea1032d77b6c7de9",
+            "locator": {
+              "end": 234,
+              "kind": "line_range",
+              "start": 228
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Anchor: Tested public roster members/absence and not_a_tool refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c1cd105c2cb5cc58c6c288dbfe714e8b756483d",
+            "content": "sha256:65ab14a3955048bc8c2485e1992cd01e4408f7af43094f0213bb0a355d15717b",
+            "locator": {
+              "end": 250,
+              "kind": "line_range",
+              "start": 237
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
+            "content": "sha256:9589d91c36d15391c80bcaa19173b5a51d24b37a9b32fdda64ec1784ec8d51b5",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Anchor: Current enclosure archive-required result producer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "679738f5c67a232503aaba3bd574cfe307d33620",
+            "content": "sha256:82bd75e61cab5ed4053e17c48428a418a317411caea5f88538830609b97e91d4",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 61
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/terminal_enclosure_archive.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16d78e38cc8ac2f8fe9aeec56ac35b664c5e8988",
+            "content": "sha256:f9c6fe6cc18a0be6c7b1c1d6d07d9c34fb92caec9d7ecef8bdaadf7257355af3",
+            "locator": {
+              "end": 501,
+              "kind": "line_range",
+              "start": 459
+            },
+            "path": "mcp/src/agents_remember/application/worktree_status.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

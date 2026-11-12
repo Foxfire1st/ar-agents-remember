@@ -1,0 +1,95 @@
+{
+  "path": "dashboard/src/tray/trayPersistence.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8270f48cba9c79f297197fa00c7547231929df13",
+        "content": "sha256:aa3d91a2a11100d4bf2b24977b90457e07955802a839f6088003331ab40439fd",
+        "locator": {
+          "kind": "symbol",
+          "name": "writeKeptTray"
+        }
+      },
+      "id": "RLZ-CH81NM",
+      "invariant": "INV-A595E3",
+      "origin": {
+        "handoffEntry": "TRAY06",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Writes the kept part and answers the storage's refusal.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "8270f48cba9c79f297197fa00c7547231929df13",
+        "content": "sha256:9338ea1a1900565e686c801fc9f9e045ba246b393d71cc279bc4c20f90f679f6",
+        "locator": {
+          "kind": "symbol",
+          "name": "readKeptTray"
+        }
+      },
+      "id": "RLZ-MKZC85",
+      "invariant": "INV-A595E3",
+      "origin": {
+        "handoffEntry": "TRAY06",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Reads the kept tray from localStorage, dropping unreadable picks.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Persists reloadable tray metadata in browser-origin storage.\n\nAnchor: \"export const TRAY_KEY = 'ar.tray.v1';\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8270f48cba9c79f297197fa00c7547231929df13",
+            "content": "sha256:e0ec74cc0333cab1f276b6092dd5d2a6a9b18d4a97bad0f796ce79eef3dfb871",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 9
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Persists reloadable tray metadata in browser-origin storage.\n\nAnchor: \"export const EMPTY_TRAY: KeptTray = { picks: [], text: '', targets: [], targetsChosen: false, defaultDecided: false };\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8270f48cba9c79f297197fa00c7547231929df13",
+            "content": "sha256:bd1cbdfeed1037f5de8b45552d8c072a19e4c636715ad6e3002baeb9f06681f0",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 19
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Persists reloadable tray metadata in browser-origin storage.\n\nAnchor: \"export function readKeptTray(storage: Pick<Storage, 'getItem'> \\| undefined): KeptTray {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8270f48cba9c79f297197fa00c7547231929df13",
+            "content": "sha256:9338ea1a1900565e686c801fc9f9e045ba246b393d71cc279bc4c20f90f679f6",
+            "locator": {
+              "end": 82,
+              "kind": "line_range",
+              "start": 70
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

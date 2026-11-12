@@ -1,0 +1,89 @@
+{
+  "path": "mcp/src/agents_remember/application/review_record_changes.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "RecordChanges caches records by side and record ID, problem lists by side and kind, and membership sets by side and family. Found records return live/retired state before parse-problem handling. For absent records, only same-kind problem basenames beginning with record_id plus '-' or '.' yield unknown; the bounded diagnostic includes at most three matching paths.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7861a16c59057dcfbcdc25f304f32e54d65c1fa",
+            "content": "sha256:6094592bf9fcafe2473a491055be49a06d8ad6e64e3e4e846cd2fc97c0e73e69",
+            "locator": {
+              "end": 190,
+              "kind": "line_range",
+              "start": 93
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Family change comes from guarantee text and liveness",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7861a16c59057dcfbcdc25f304f32e54d65c1fa",
+            "content": "sha256:6ac79db15f1629827643ada7e41d9ba74958b1fa5d5f20db7d42439419a319df",
+            "locator": {
+              "kind": "symbol",
+              "name": "guarantee"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Invariant change comes from revision, then authored wording",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7861a16c59057dcfbcdc25f304f32e54d65c1fa",
+            "content": "sha256:73cd2857614c7ca5912fcd4e525cfdf5fa82df4fbfb7981e967e2aaba4f2b071",
+            "locator": {
+              "kind": "symbol",
+              "name": "intent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "membership reads each side's family through record, returns unknown when that read is unknown, caches the live family's members or an empty set, and establishes joined/left only when the invariant's listing differs between sides.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7861a16c59057dcfbcdc25f304f32e54d65c1fa",
+            "content": "sha256:a678699e3ef581b2cd93033153b3c306e9ce7d0a5282814aab5e0d96cb079c7c",
+            "locator": {
+              "end": 190,
+              "kind": "line_range",
+              "start": 171
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "One-sided records settle as added, removed or retired",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7861a16c59057dcfbcdc25f304f32e54d65c1fa",
+            "content": "sha256:bbad9f4079f0a0dbe70f7a3193b16140794b776e20dc4eff78235ff7ab8e618a",
+            "locator": {
+              "kind": "symbol",
+              "name": "presence"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

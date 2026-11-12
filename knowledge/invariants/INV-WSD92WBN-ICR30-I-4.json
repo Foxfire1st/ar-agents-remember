@@ -1,0 +1,31 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Undeclared checkout code must not read authority settings or mutate live coordination state; confinement prevents unpublished code from altering the operator's real workflow."
+  },
+  "applicability": "Every curator entry ingested from the orchestrator's hand-off list.",
+  "conditions": [
+    "Disposition source: this run's measurement of the boundary's own pinned limit"
+  ],
+  "exclusions": [],
+  "id": "INV-WSD92WBN",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Hand-off kind: clause.",
+        "Producer's disposition: partial.",
+        "Evidence: Measured by this run at 71a17079: the installed editable console script answers 'undeclared Agents Remember execution from the primary checkout is refused', and the repository's own pin in mcp/tests/test_checkout_coordination_isolation.py records that any mode declaration lifts the refusal (260918-TSIP-L3, T30)."
+      ]
+    },
+    "leaf": "260921-ICR-L30",
+    "legacyId": "92651e5e-fe92-41ab-a46c-ccde94c36d10",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "An undeclared process whose Agents Remember package was loaded from a linked Git checkout reads and writes coordination state only inside a disposable root under that checkout's own enclosure, and undeclared execution from the primary checkout is refused before any authority settings document is read.",
+  "status": "proposed",
+  "supersedes": []
+}

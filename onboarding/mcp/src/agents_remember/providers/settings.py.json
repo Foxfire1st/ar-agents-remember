@@ -1,0 +1,212 @@
+{
+  "path": "mcp/src/agents_remember/providers/settings.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d2b3ea0cd51a15c2ec8828868eb9c03a98b0991b",
+        "content": "sha256:f6168041f8e5da0282ed667d15c73b5e30b7dd62b78bc0376a71df22cafcf815",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-CPFVTM",
+      "invariant": "INV-BPW763",
+      "origin": {
+        "handoffEntry": "L192-W-R199-04",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "Generated lifecycle settings still emit no provider block, which is the never-enabled suppression this rule keeps.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "MCP config derives allowed repositories/providers and provider runtime roots from trusted settings.\n\nAnchor: `McpRuntimeConfig` `allowed_repo_ids` `allowed_provider_ids`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:e2d83560666924530b06c82fcd178952932211795b5d29970b35d162ce3a4e47",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Runtime install passes lifecycle_settings_from_config() to the provider watcher rebind; enabled provider keys drive no dependency installation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d2b3ea0cd51a15c2ec8828868eb9c03a98b0991b",
+            "content": "sha256:ed908d4b26865a91717a59fb120b1ce44121b9f55e8aa502f7a3623e5584ba55",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycle_settings_from_config"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "content": "sha256:d319f6613db38bb7e3cf9ddc7118345e05b6220e5ce2893aa81abe17c5fc7af8",
+            "locator": {
+              "end": 858,
+              "kind": "line_range",
+              "start": 848
+            },
+            "path": "mcp/src/agents_remember/install/runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "GrepAI lifecycle settings define Docker mode, shared network, runner image/container, Postgres backend, and Ollama embedder backend.\n\nAnchor: `_grepai_settings`, `_grepai_runtime`, `_grepai_backend`, `_grepai_embedder`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "618703550dec261067f2f3d5f5476f309b3776ad",
+            "content": "sha256:bf9a0858346d3aaea1bda15ce86af8085cfb4aea44b39a5b00d8b3049286f1d1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "618703550dec261067f2f3d5f5476f309b3776ad",
+            "content": "sha256:bf9a0858346d3aaea1bda15ce86af8085cfb4aea44b39a5b00d8b3049286f1d1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "618703550dec261067f2f3d5f5476f309b3776ad",
+            "content": "sha256:bf9a0858346d3aaea1bda15ce86af8085cfb4aea44b39a5b00d8b3049286f1d1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "618703550dec261067f2f3d5f5476f309b3776ad",
+            "content": "sha256:bf9a0858346d3aaea1bda15ce86af8085cfb4aea44b39a5b00d8b3049286f1d1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "618703550dec261067f2f3d5f5476f309b3776ad",
+            "content": "sha256:bf9a0858346d3aaea1bda15ce86af8085cfb4aea44b39a5b00d8b3049286f1d1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "618703550dec261067f2f3d5f5476f309b3776ad",
+            "content": "sha256:bf9a0858346d3aaea1bda15ce86af8085cfb4aea44b39a5b00d8b3049286f1d1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "618703550dec261067f2f3d5f5476f309b3776ad",
+            "content": "sha256:bf9a0858346d3aaea1bda15ce86af8085cfb4aea44b39a5b00d8b3049286f1d1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "618703550dec261067f2f3d5f5476f309b3776ad",
+            "content": "sha256:bf9a0858346d3aaea1bda15ce86af8085cfb4aea44b39a5b00d8b3049286f1d1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/core.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "CodeGraphContext lifecycle settings define Docker runner image/build/lock/container settings and FalkorDB backend settings.\n\nAnchor: `_cgc_settings`, `_cgc_root_settings`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91b69741c5d4a276e499b064ebc31e3b3860833a",
+            "content": "sha256:f98ef8f92926a385985c240d18ceeffb3eba177bad72dfb993ae704b10f9ae37",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/context/core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "91b69741c5d4a276e499b064ebc31e3b3860833a",
+            "content": "sha256:f98ef8f92926a385985c240d18ceeffb3eba177bad72dfb993ae704b10f9ae37",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/context/core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "91b69741c5d4a276e499b064ebc31e3b3860833a",
+            "content": "sha256:f98ef8f92926a385985c240d18ceeffb3eba177bad72dfb993ae704b10f9ae37",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/context/core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "91b69741c5d4a276e499b064ebc31e3b3860833a",
+            "content": "sha256:f98ef8f92926a385985c240d18ceeffb3eba177bad72dfb993ae704b10f9ae37",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/context/core.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

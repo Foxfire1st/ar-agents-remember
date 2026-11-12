@@ -1,0 +1,87 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_gate/adapter.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The port implementation: recompute over the exact trees, decide, validate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6230c3e5be5c089ead09c2ad0f4823e17d7002ca",
+            "content": "sha256:22147f0f4120bd845beffdf25314be66e2e2a0f4000fbcee91725f22b40cb9c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeGate"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The leaf refusal over the candidate trees.\n\nAnchor: `KnowledgeGate.leaf_refusal`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6230c3e5be5c089ead09c2ad0f4823e17d7002ca",
+            "content": "sha256:8dfac2fbdb13213ef9b0822fd2752a82b4c9591184903e0d1ac36200a8de5931",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 25
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The direct and landing answers.\n\nAnchor: `KnowledgeGate.direct_verdict`; `KnowledgeGate.landing_refusal`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6230c3e5be5c089ead09c2ad0f4823e17d7002ca",
+            "content": "sha256:f10d37ba4e7f6db150572373878db5fad883cad21227a845cec0bbe1b0de1aa1",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 42
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6230c3e5be5c089ead09c2ad0f4823e17d7002ca",
+            "content": "sha256:52a47b90aced3ef39cfe72ce87955c6e18d48b31aed192a55763f4917dcfe796",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 71
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The default composition binds it.\n\nAnchor: \"knowledge_gate=KnowledgeGate(),\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9cfe5fc779f3234e5cf2d83eee7be9897b4668cb",
+            "content": "sha256:cffde9c4f56f6f69b5b9ce77b7806d7cc9ad2993c7eff13aca5ba3f8d30de17d",
+            "locator": {
+              "end": 227,
+              "kind": "line_range",
+              "start": 227
+            },
+            "path": "mcp/src/agents_remember/application/worktree_services.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

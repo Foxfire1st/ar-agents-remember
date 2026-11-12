@@ -1,0 +1,505 @@
+{
+  "path": "mcp/tests/test_memory_citation_agreement.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
+        "content": "sha256:16f67edf8d86b275b569df141b8afda9b81f1dc22ca0e4164441e37d95de5067",
+        "locator": {
+          "kind": "symbol",
+          "name": "BudgetAgreementTests.test_the_declaration_is_the_ceiling_this_module_screens"
+        }
+      },
+      "facet": "Asserts that the root declares 10000 unit and 2000 integration cases and both screen stubs use those declared numbers.",
+      "id": "PRF-B4E9Q1",
+      "invariant": "INV-3NAQA6",
+      "origin": {
+        "handoffEntry": "L202-A6b-current-budget-agreement-proof-INV-3NAQA6",
+        "leaf": "260928-MIK-L202"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
+        "content": "sha256:16f67edf8d86b275b569df141b8afda9b81f1dc22ca0e4164441e37d95de5067",
+        "locator": {
+          "kind": "symbol",
+          "name": "BudgetAgreementTests.test_the_declaration_is_the_ceiling_this_module_screens"
+        }
+      },
+      "facet": "Asserts that the root declares 10000 unit and 2000 integration cases and both screen stubs use those declared numbers.",
+      "id": "PRF-GMYDWJ",
+      "invariant": "INV-Z3DDAX",
+      "origin": {
+        "handoffEntry": "L202-A6b-current-budget-agreement-proof-INV-Z3DDAX",
+        "leaf": "260928-MIK-L202"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
+        "content": "sha256:16f67edf8d86b275b569df141b8afda9b81f1dc22ca0e4164441e37d95de5067",
+        "locator": {
+          "kind": "symbol",
+          "name": "BudgetAgreementTests.test_the_declaration_is_the_ceiling_this_module_screens"
+        }
+      },
+      "facet": "Asserts that the root declares 10000 unit and 2000 integration cases and both screen stubs use those declared numbers.",
+      "id": "PRF-H98D4T",
+      "invariant": "INV-Q2VTFP",
+      "origin": {
+        "handoffEntry": "L202-A6b-current-budget-agreement-proof-INV-Q2VTFP",
+        "leaf": "260928-MIK-L202"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
+        "content": "sha256:ba01326e937035c189a22431df5ed7cee1d450b8c945c8272388c5d3432e08eb",
+        "locator": {
+          "end": 525,
+          "kind": "line_range",
+          "start": 520
+        }
+      },
+      "id": "RLZ-Z3MFC9",
+      "invariant": "INV-Z3DDAX",
+      "origin": {
+        "handoffEntry": "MIK-R146@v1 rule 3 — citation agreement pin",
+        "leaf": "260928-MIK-L146"
+      },
+      "rationale": "This pin is the in-repo citation of the budget; it must name the new value or the screen reds the raised tree.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The product citation-mutation guard refuses the official memory repository.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:752848b4867967cdcbbc2e0bbbead222c7bf0b552f0d9e8fe80885e9c83e785d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refuse_official_memory"
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Both cells and the quote path preserve escaped/plain anchor agreement; the row case derives text from live cell spans. The separately retained budget-test range covers the declared-pair sentence, constant, marker-registration and older-budget-site assertions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
+            "content": "sha256:3617512dc4dbf5e374d2d4f85eb0bd8a3f5161198c0d05af200570fad0c322d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "EscapedPipeAnchorTests"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
+            "content": "sha256:c41e658333ae89a90802bf5288466134a2fcaaa253ca98677f381f47fc822b23",
+            "locator": {
+              "end": 580,
+              "kind": "line_range",
+              "start": 487
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
+            "content": "sha256:1b9b738b24cf0496f275dc7d7d5ea813102d3947babc240c6a8bcb39ca8ba86b",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "Every stale site the sweep found, with the pair it states and the ceiling it was written against.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
+            "content": "sha256:8516d8246ab1dadcf6ff36523e1c1ba2cf8b65e93200bcd38446146a32716cc3",
+            "locator": {
+              "kind": "symbol",
+              "name": "NON_HISTORY_SITES"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The subset a repair moves, counted separately from the worklist the next curation inherits.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
+            "content": "sha256:a0533a837d54118edf922687e6e7ca47840ddf9fbc25b7c011bccf335d031a97",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIVE_SITE_COUNT"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "The shipped superseded-pair constant is 53; the live case compares it with the tree-derived worklist. Historical L12 measured 55, and the source header attributes 55-to-53 to L13 rather than to L59.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
+            "content": "sha256:38457f31d232216202dda762edd2bca504e80669fae89451ac0bb01a514f42d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "NON_HISTORY_SUPERSEDED_SITES"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The derived rule itself, so the pin can fail when the derivation stops seeing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
+            "content": "sha256:15d4233fbaa6673622b926d00801d66bd8d186f9287968d830398d25fe324a83",
+            "locator": {
+              "kind": "symbol",
+              "name": "superseded_pair_sites"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "The five hermetic arms that prove the derivation fires: counted outside history, dated inside it, not hidden by a qualified heading, the comma-grouped spelling, and the declared pair excluded.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
+            "content": "sha256:8268a3728b3438a2db841b6e52f147bebd92c10a15e0f1f4ceb66f466669f5ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "SupersededPairDerivationTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "The live arm: the worklist count on the named tree equals the derived count.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
+            "content": "sha256:c7a67a9dbde4f4dfa0b4336a498387fda043bb5c339047cf6a085308f0235304",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_superseded_pair_population_is_derived_from_the_tree"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "The qualified-heading census: a NAMED population pinned at one entry, the merged sibling line's deliberate dated heading.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
+            "content": "sha256:a78aa356aa1b6e848a8fab628eba29e0eaf4ca558a190c8cba9f5971585dafb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "QualifiedHistoryHeadingTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "The census constant: the pinned tuple the live arm compares against, and what each entry means.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
+            "content": "sha256:020733557db49eaf2146498b58cf5dbc3fa193376bc62de1560864f2a21a8462",
+            "locator": {
+              "kind": "symbol",
+              "name": "QUALIFIED_HEADINGS"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "The live arm that reds when the pinned population moves in either direction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
+            "content": "sha256:dbda2f220e377f998116842a262bca1b9f61013ccebfdb659253c5bd2c3670db",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_named_tree_carries_exactly_the_pinned_ones"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "The two section-boundary bounds of the worklist rule, each with its direction, measured on planted documents.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
+            "content": "sha256:58a253311ac54442743deebc123ab854f562d8be817078b39f5da2288878ccf5",
+            "locator": {
+              "kind": "symbol",
+              "name": "history_section_flags"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "The budget screen dynamically reads declaration line positions, pins 10,000/2,000 and matching stubs, and bounds the live overview sentence check.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
+            "content": "sha256:63c3c5016aecc944e95d363c1df89339ade77d1ff7039be25f58d59d762b9c39",
+            "locator": {
+              "end": 526,
+              "kind": "line_range",
+              "start": 470
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "The repaired sentence held by a case now that its stale entry is gone, so a repair is not a gap.  Anchor: `test_the_repaired_site_states_the_declared_pair`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
+            "content": "sha256:f86cee960573dd4d6139238255e7aef54f395c291e4d1c7d6eb56e182156f360",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_repaired_site_states_the_declared_pair"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
+            "content": "sha256:1b9b738b24cf0496f275dc7d7d5ea813102d3947babc240c6a8bcb39ca8ba86b",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "26": {
+      "note": "Both figures asserted separately at every pinned site, so a site that has moved on is red.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
+            "content": "sha256:2cfed67e438bd555fa57eb65dda393663da83bf05c174fdbdd7930b42ccfb421",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_live_sites_still_state_the_figures_they_are_pinned_to"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "27": {
+      "note": "The two figure classes counted separately: a live claim is not a dated record, and the worklist is larger than the set a repair moves.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
+            "content": "sha256:a0acded7c248b8bb33a24fefd950d13361836bd9d3e9fbf0b0376dac14aa142f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_two_figure_classes_are_counted_separately"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "28": {
+      "note": "The module's own mutation boundary, read from its own AST (`T114`'s bound).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
+            "content": "sha256:f397c4c27b07fbaf3b964d004d1a10010170c05f8aafee394f2b76a979b7c11f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_this_module_shells_out_to_nothing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "29": {
+      "note": "The module's own unit-regression lane row; catalog membership selects evidence and does not establish execution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5691b694e756469475d783c426d9781ef14c8633",
+            "content": "sha256:f077da38793d14168158a19a2d41f7fbcff188affdbc98de0e9dccf33bef430a",
+            "locator": {
+              "end": 319,
+              "kind": "line_range",
+              "start": 319
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The live tree, named by the run and skipped when no run names one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
+            "content": "sha256:60c98500e3dc6df435e3cfbef588afe0cea1e92065aa658dc88cf66c762d5a1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "live_onboarding_root"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "33": {
+      "note": "The current declaration assertion pins 10,000 unit/2,000 integration and checks the matching stub mirrors.  Anchor: `unit_case_budget`\n\nAnchor: `test_the_declaration_is_the_ceiling_this_module_screens`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "content": "sha256:d54efa326c1d4128e0c15e19ae1c2e3f9fb44b9af2c0cfbcfa5bca0306be0494",
+            "locator": {
+              "end": 335,
+              "kind": "line_range",
+              "start": 321
+            },
+            "path": "pyproject.toml"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
+            "content": "sha256:1b9b738b24cf0496f275dc7d7d5ea813102d3947babc240c6a8bcb39ca8ba86b",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "34": {
+      "note": "The declaration assertion and stub screen use 10,000 unit and 2,000 integration cases; the overview citation range is derived from the actual declaration lines.  Anchor: `unit_case_budget`\n\nAnchor: `unit_case_budget`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
+            "content": "sha256:f86cee960573dd4d6139238255e7aef54f395c291e4d1c7d6eb56e182156f360",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_repaired_site_states_the_declared_pair"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
+            "content": "sha256:16f67edf8d86b275b569df141b8afda9b81f1dc22ca0e4164441e37d95de5067",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_declaration_is_the_ceiling_this_module_screens"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "content": "sha256:a45f05c153d1b724bd7bfe5527b5534499d94b58cd5742e0a22db07b37cb65f7",
+            "locator": {
+              "end": 335,
+              "kind": "line_range",
+              "start": 334
+            },
+            "path": "pyproject.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The escape resolved where cell text becomes anchor text, which is where the `T57` blind spot was.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c6014f3a546afa2040c69e91e6541a134fc2212",
+            "content": "sha256:c1c350a52f7affeef62dc4e9fc77a18fd3cd2eec7c506b3822f51a69f8af67fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "unescaped"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/cells.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

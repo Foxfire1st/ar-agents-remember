@@ -1,45 +1,46 @@
 # dashboard/src/panels/TaskNotes.tsx
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/panels/TaskNotes.tsx`             |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-09-04T01:06+02:00 |
-| lastVerifiedCommitHash | `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7` |
-| lastVerifiedCommitDate | 2026-09-28T20:30:48+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [overview.md](overview.md)
 
 ## Purpose
 
-`TaskNotes.tsx` is the compact **coordination-notes ENTRY SURFACE** inside the task reader (L9 friction
-F-M, reshaped by L17). It lists the selected master's `tasks/<repo>/<master>/notes/**` tree — `reports/`
-subfolders included — and resolves task-doc reference strings that name an existing notes file into openable
-links. Both surfaces now **open the L17 Notes Reader** (`panels/notes-reader/NotesReaderViewer.tsx`) via the
-`onOpenNotes` callback rather than expanding an inline pane. Rendered by `DetailPanel`'s `TaskReader` (with
-the doc's references) and `MasterOverview` (list only); both thread `onOpenNotes` from `CockpitShell`.
+`TaskNotes.tsx` is the compact **notes ENTRY surface** inside the task reader (L9 friction
+F-M, reshaped by L17, re-scoped by 260928-MIK-L126). A task page lists **no notes tree**.
+Where the master has a notes folder, the page shows one `Notes` line naming the top-folder
+entry count with a link opening the reader at the notes root; no total over the tree is
+computed for a page. Beside the link, a task's page shows its references (each a link where
+it names an existing note) and the reports of the role agents the product started for this
+task — newest first, at most twenty, with a link to their folder in the explorer where there
+are more. The page of a master shows its own references and the link. `DetailPanel`’s `TaskReader` composes these surfaces through `OverviewBody` for master/sprint forms and through the separate `TaskPageRefsReports` and `TaskPageNotesLine` islands for task forms. Both routes receive `onOpenNotes` through the retained `TaskDocumentPanel`; there is no separate `MasterOverview` reader.
 
 ## Code Commentary
 
 ### Logic
 
-`TaskNotes({repo, master, references, onOpenNotes})` fetches `listNotes(repo, master)` on mount /
-identity change (the `let live` cancellation idiom). An unreachable API — or a series whose notes folder is
-missing (the server answers an empty list) — renders **no notes surface at all** and leaves every reference
-plain text: the failure handler deliberately does not touch state.
+The read-only hooks separate three bounded requests: useResolvedNotes makes one content-keyed
+reference resolution. Its key remains `references.join('\0')`, not JSON serialization:
+`[]` and one empty reference share that key. `useEffectEvent` supplies the list current when the
+keyed effect runs, without adding array identity as a request trigger. useTaskReports lists recorded starts for a task-root-relative document path;
+useNotesFolderTotal reads the root folder count, never walks descendants. Each drops late answers
+on identity change. useTaskNotesData preserves the joint wrapper; the task page uses two disjoint
+islands so references/reports can precede Further notes while the one Notes line stays last, without
+duplicating requests. An unavailable report list is stated, not converted into an empty result.
 
-- **References** (`references.length > 0`): each item runs through `resolveNoteReference(reference,
-  notePaths)`; a hit renders the whole reference string as a link-styled `<button>` (`note-ref-<n>`) that
-  calls `onOpenNotes({repo, master, path})`; a miss renders the usual `<Markdown inline>` bullet.
-- **Series notes** (`notes.length > 0`): one row-button per note (`note-open-<n>`, path + byte size) that
-  calls `onOpenNotes({repo, master, path})`; the server's `truncated` flag renders a muted "beyond the
-  list cap" hint so the list never silently lies.
-- `onOpenNotes` is **optional** — a context without the takeover (e.g. the master-overview list in a test)
-  still renders the surface; the rows are then inert.
+- **Notes line:** only the actual root-folder total, with the notes-root artifact target; no tree
+  rows, note content or whole-tree count is fetched for the page.
+- **References:** one References and reports heading on a task. The first eight rows have an
+  all-link when needed; whole views reuse the same resolved affordance. A whole Markdown link draws
+  its label as the link and its destination beside it. Reserved requirement addresses resolve through
+  the requirement-link provider; ordinary note links require the server's resolution. Unresolved
+  values remain plain/inline text, never an invented internal target.
+- **Reports:** product-recorded starts, newest first and capped at twenty by their API, with available
+  role/request targets and a folder link for the complete list. A report not yet written is disabled;
+  an unreadable record is distinct from no reports.
+- The optional onOpenNotes callback carries the shared kind-tagged artifact target. Without a
+  takeover callback the surface remains visible but opens nothing. Requirement navigation retains
+  its own provider rather than being tied to the notes-folder result.
 
 **Retired (L17):** the bespoke inline `NoteReader` (its own `noteBox`/`noteHead`/sticky-close chrome and the
 markdown/text/binary rendering) was removed. Reading a note now happens in the full Notes Reader view, whose
@@ -53,61 +54,73 @@ a requirement address (`requirementAddressFromReference`); a hit resolves
 against the provider's registered requirement listing and renders as a
 `requirement-ref-<n>` button that opens a `kind: "requirements"` artifact
 target through the link context, while non-requirement references keep the existing
-notes resolution (`note-ref-<n>`). Series-note rows and note references now tag
-their `onOpenNotes` payload with an explicit `kind: "notes"`. Both the
+notes resolution (`note-ref-<n>`). Note references and requirement references tag
+their `onOpenNotes` payload with an explicit `kind` (`"notes"` / `"requirements"`).
+(The L9 series-note rows that once carried note payloads are retired with the list
+endpoint.) Both the
 notes and requirement listings are read-only view state; opening stays delegated to
 `onOpenNotes`.
 
 ### Conventions
 
-Panda `css` local styles mirroring `DetailPanel`'s section/heading/row idioms; testids follow the house
-position pattern (`note-open-1`, `note-ref-1`).
+Shared pageParts/pageStyles block and row primitives, rather than a second private notes-heading/list style; testids follow the house
+position pattern (`notes-root-count`, `notes-root-link`, `note-ref-1`, `task-reports-empty`, `task-reports-failed`, `task-reports-explorer-link`). No `note-open-*` testid exists in the carried source.
 
 ### Invariants And Boundaries
 
-No mutation surface of any kind: the component only GETs the listing and holds it as view state. Links are
-only ever created from the server's own listing (`resolveNoteReference` against fetched paths), so a link can
-never point outside the series' notes tree — and opening is delegated to `onOpenNotes`, never a local
-write.
+No mutation surface: the page makes one root-folder read, one reference-resolution request and,
+for a task, one recorded-report list request, holding them as view state. Links are
+only ever created from the server's own answers (resolved references, recorded report rows).
+Resolved note references remain notes-tree targets; reserved requirement links use their separate
+provider and recorded-report targets retain their role/request identity. Opening is delegated to
+`onOpenNotes`, never a local
+write. No request grows with the tree: one root-folder read, one bounded reference request,
+one bounded reports request.
 
-## Cross-Repo References
+## Evidence
+
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| A same-origin view over the local notes API; nothing crosses repositories. | — | — |
+A same-origin view over the local notes API; nothing crosses repositories.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The data client + the pure reference resolver. | `listNotes`, `resolveNoteReference` | dashboard/src/data/notes.ts:32-33; dashboard/src/data/notes.ts:52-65 |
-| The surface passes a shared discriminated artifact target: notes carry a path, while requirements also carry the selected document. | "export type TaskArtifactReaderTarget =" | dashboard/src/data/taskArtifacts.ts:1-14 |
-| TaskNotes imports the shared target under its existing local NotesReaderTarget name. | "import type { TaskArtifactReaderTarget as NotesReaderTarget }" | dashboard/src/panels/TaskNotes.tsx:17-17 |
-| The shared markdown renderer (inline reference rendering). | `Markdown` | dashboard/src/grammar/Markdown.tsx:98-121 |
-| The task reader + master overview that mount this component and thread `onOpenNotes`. | `MasterOverview`, `TaskReader` | dashboard/src/panels/detail-panel/taskReader.tsx:167-242; dashboard/src/panels/detail-panel/taskReader.tsx:614-648 |
-| The serving endpoints behind the client. | `register_notes_routes` | mcp/src/agents_remember/serving/notes.py:279-288 |
-| The component test suite. | "TaskNotes entry surface" | dashboard/src/panels/TaskNotes.test.tsx:38-76 |
 
-## Update History
+- The data client with the folder and reference resolvers. [1]
 
-- 2026-09-28T17:09:38+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed the `register_notes_routes` range to its candidate extent (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`, re-validated after the L44/L45/L47 sync). It was already off by three lines at base and moved again with L55's rewrite of the listing walk. The routes themselves are unchanged. No stamp was advanced.
-- 2026-09-05T06:38:58+00:00 — CCR L31 dashboard citation curation: re-read the scoped claims against frozen source `ea35964985f30080488270e71ac81657ac40682b`, split pooled evidence and corrected current source boundaries. Historical claims retain their recorded provenance. This is scoped claim review; existing whole-file verification metadata is unchanged.
 
-- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 memory pass: recorded the requirement-reference routing in `ReferenceList` (`requirement-ref-<n>` buttons over the requirement listing; notes resolution only for non-requirement refs) and the explicit `kind: "notes"` payload tag on note opens.
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
+- The surface passes a shared discriminated artifact target. [2]
 
-- 2026-08-02T20:45:43+02:00 — L6 W2-B02 curator: anchored 5 repository-internal references for the notes client, renderer, mounting surfaces, serving routes, and component tests; final scoped result 0 (checker-clean).
 
-- 2026-07-07T14:00+02:00 — agent-orchestration L17: TaskNotes became the compact ENTRY SURFACE only. The
-  inline `NoteReader` pane was RETIRED; the list rows and resolved references now call the new `onOpenNotes`
-  callback to open the L17 Notes Reader takeover (with the whole notes tree in its rail). The note-content
-  rendering tests (markdown/text/binary/truncation) moved to `notes-reader/NotesReaderViewer.test.tsx`;
-  `TaskNotes.test.tsx` now asserts the entry callbacks. Verification metadata pinned until closeout stamps
-  the L17 commit.
-- 2026-07-06T02:10+02:00 — Created for agent-orchestration L9 (friction F-M): the
-  series-notes list + on-demand note reader (markdown formatted, text preformatted,
-  binary placeholder, truncation banner) and the reference-link resolution over the
-  fetched listing; unreachable API degrades to no surface with references staying plain
-  text. Verification metadata pinned until closeout stamps the L9 commit.
+- The task reader’s overview and task-specific notes/reference/report islands thread the shared `onOpenNotes` artifact callback. [5]
+
+
+- The folder, resolve and read endpoints behind the client. [6]
+
+
+
+- The component test suite. [7]
+
+
+
+- TaskNotes imports the shared target under its existing local NotesReaderTarget name. [3]
+
+
+- The shared markdown renderer (inline reference rendering). [4]
+
+
+
+
+- The page shows one Notes line with the root count and no tree. [8]
+
+
+
+
+- References resolve through one request; reports read newest-first capped at twenty. [9]
+
+
+- Reference resolution keeps the old joined-text key and reads the current list through useEffectEvent, without treating array identity as another trigger. \ 
+
+

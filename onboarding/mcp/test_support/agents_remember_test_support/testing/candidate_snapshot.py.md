@@ -1,15 +1,5 @@
 # mcp/test_support/agents_remember_test_support/testing/candidate_snapshot.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/test_support/agents_remember_test_support/testing/candidate_snapshot.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Python test evidence infrastructure](overview.md)
@@ -39,21 +29,17 @@ The digest is a working-candidate identity, not a substitute commit.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external contract applies.
 
-## Repo-Internal References
+### Repo-Internal References
 
 `evidence_provenance.py` embeds this payload in cadence, retry, and measurement evidence;
 `route_measurement.py` proves it is unchanged across all measured runs.
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository boundary applies.
-
-## Update History
-
-- 2026-08-28T04:37+02:00 — Added exact staged candidate-tree identity and removed the retired
-  direct-evidence consumer.
-- 2026-08-27T11:08+02:00 — Created for complete-candidate route binding.

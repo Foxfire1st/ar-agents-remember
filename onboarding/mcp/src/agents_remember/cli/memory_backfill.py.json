@@ -1,0 +1,93 @@
+{
+  "path": "mcp/src/agents_remember/cli/memory_backfill.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Flags, request resolution, and mode/directory refusal define the adapter scope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23e8dfa1e789f0bbc4f371a9609330b29d7260c0",
+            "content": "sha256:bd1d927600faa3f1447d852ed9f6448a9ef629d7f5f6210bb5b7cd866a956b2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "add_arguments"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "23e8dfa1e789f0bbc4f371a9609330b29d7260c0",
+            "content": "sha256:bf57351ded10bb75454e9a7b3c771b76acb8da42ec4d2dc3e5d7ace73d4279c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_request_from"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "23e8dfa1e789f0bbc4f371a9609330b29d7260c0",
+            "content": "sha256:182863900fc906d4e5424cce9782be96f016f8575142f95c589efaca25ef7fe6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refusal_for"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Planning and apply status/output remain separate.\n\nAnchor: `run` `_apply`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23e8dfa1e789f0bbc4f371a9609330b29d7260c0",
+            "content": "sha256:3c9c9b769986e4f3b322288066bc56fbc9fb73a4ff9d3647f17d40e5f3c55abf",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The kernel owns loss-aware planning and the explicit apply transaction.\n\nAnchor: `MemoryBackfillPlan` `plan_memory_backfill` `apply_memory_backfill`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a34c0c59625ee920577abd445e3ad0bd757bf05c",
+            "content": "sha256:6033e57616f2365ada5e59d962dd501f7c092a231be413f3ca4c63460c7bce99",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_backfill.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Actual branch-name invocation and retry behavior are tested through the CLI.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "835b99f0f2dc2032b80a8019a38d89f192dd32a9",
+            "content": "sha256:177b8e65f038c71703902e0fcc089fcddecca73ef5a022a001531cec7270b42e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_cli_applies_a_branch_name_tip_and_survives_its_own_retry"
+            },
+            "path": "mcp/tests/test_memory_backfill.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

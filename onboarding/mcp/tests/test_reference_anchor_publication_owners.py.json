@@ -1,0 +1,90 @@
+{
+  "path": "mcp/tests/test_reference_anchor_publication_owners.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "3d81d088bb23f3bda3e7b3a4a77c1f01823a2700",
+        "content": "sha256:e84b6265c097603631b3bb9685974ab1f26b7d85462c7c9b9e18a9e32eb0d7fe",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_ordinary_merge_names_the_anchor_debt_two_valid_sides_create"
+        }
+      },
+      "facet": "An ordinary merge names the anchor debt its two valid sides create.",
+      "id": "PRF-1DFNFD",
+      "invariant": "INV-033XSD",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §5-§7 publication-refuses-stale-anchor",
+        "leaf": "260928-MIK-L191"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A memory fast-forward names the anchor debt of the pair it adopts",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d81d088bb23f3bda3e7b3a4a77c1f01823a2700",
+            "content": "sha256:cba36bdf556a5de48f11670742a438782868c87380e5b97c8d89e11c05a4be38",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_memory_fast_forward_names_the_anchor_debt_of_the_pair_it_adopts"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "An ordinary merge names the debt two individually current sides create",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d81d088bb23f3bda3e7b3a4a77c1f01823a2700",
+            "content": "sha256:e84b6265c097603631b3bb9685974ab1f26b7d85462c7c9b9e18a9e32eb0d7fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_ordinary_merge_names_the_anchor_debt_two_valid_sides_create"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A recorded leaf landing refuses the stale pair, does not waive it for answered rows, and records the repaired one",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d81d088bb23f3bda3e7b3a4a77c1f01823a2700",
+            "content": "sha256:0a9191233331cd57e42f6b8071d500f60ff095681060d4b11a65213b61e89978",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_recorded_leaf_landing_refuses_the_stale_pair_and_records_the_repaired_one"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The merge that named the debt then refuses the publication and publishes the repaired pair",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d81d088bb23f3bda3e7b3a4a77c1f01823a2700",
+            "content": "sha256:386d86ecb11de6be735e49b76c0939b01c931715d2361c6c0261c173e78d36d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_merge_that_named_the_debt_then_refuses_and_publishes_the_repaired_pair"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

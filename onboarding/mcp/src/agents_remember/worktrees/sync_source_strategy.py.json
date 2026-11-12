@@ -1,0 +1,194 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/sync_source_strategy.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "78c1f25812bddb3c31d88aedd8bc198f9827d50a",
+        "content": "sha256:a6854442965f24663798016d5a8950f95029fc1a4c695eb6b1591f9bff111a3f",
+        "locator": {
+          "kind": "symbol",
+          "name": "source_strategy"
+        }
+      },
+      "id": "RLZ-JGECGV",
+      "invariant": "INV-STH8F0",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.1",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Chooses the source strategy once from the request or the journal; the default strategy keeps the base pair unchanged, so finalize does not move the contract's base.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "78c1f25812bddb3c31d88aedd8bc198f9827d50a",
+        "content": "sha256:a1607953e56df41b7730514dd664c0d216f9517534667b769420688938e95ad7",
+        "locator": {
+          "kind": "symbol",
+          "name": "SyncSourceStrategy"
+        }
+      },
+      "id": "RLZ-PDQP9G",
+      "invariant": "INV-J7BZWN",
+      "origin": {
+        "handoffEntry": "L60-F3-retry-hints-carry-sync-source",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "request_args is the one place a source choice becomes worktree_sync arguments.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "78c1f25812bddb3c31d88aedd8bc198f9827d50a",
+        "content": "sha256:cecbd74b13957927cda31b535614f5f636ad02acb862cc33c4475cf090596781",
+        "locator": {
+          "kind": "symbol",
+          "name": "sync_log_entry"
+        }
+      },
+      "id": "RLZ-WJH1AW",
+      "invariant": "INV-STH8F0",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.1",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Builds the one sync-log entry a default-source sync appends, with syncSource and the per-side source branch and commit.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "78c1f25812bddb3c31d88aedd8bc198f9827d50a",
+        "content": "sha256:dbafdeeb4773d95bc2f9b608bf1c3c51890a1b5f112de7af0ab4eb778fcbb219",
+        "locator": {
+          "kind": "symbol",
+          "name": "RepositoryDefaultSource"
+        }
+      },
+      "id": "RLZ-ZGN18N",
+      "invariant": "INV-STH8F0",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.1",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "The default-source strategy: its moved_default is the only live default-branch read after admission, used on continue to refuse a moved default with sync-source-moved.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "A request or journal value selects one strategy; any other value raises.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78c1f25812bddb3c31d88aedd8bc198f9827d50a",
+            "content": "sha256:a6854442965f24663798016d5a8950f95029fc1a4c695eb6b1591f9bff111a3f",
+            "locator": {
+              "kind": "symbol",
+              "name": "source_strategy"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The seam names every question the transaction asks of the source choice.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78c1f25812bddb3c31d88aedd8bc198f9827d50a",
+            "content": "sha256:a1607953e56df41b7730514dd664c0d216f9517534667b769420688938e95ad7",
+            "locator": {
+              "kind": "symbol",
+              "name": "SyncSourceStrategy"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The own line moves the base pair to the sources and undoes only a proven finalization.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78c1f25812bddb3c31d88aedd8bc198f9827d50a",
+            "content": "sha256:c08a13cb41f59ebe695cdd2ee465339f801eed60eca5230fe9ff74d99e20d34b",
+            "locator": {
+              "kind": "symbol",
+              "name": "ContractLineSource"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The default strategy keeps the pair, pins its branch and adds source keys to the log.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78c1f25812bddb3c31d88aedd8bc198f9827d50a",
+            "content": "sha256:dbafdeeb4773d95bc2f9b608bf1c3c51890a1b5f112de7af0ab4eb778fcbb219",
+            "locator": {
+              "kind": "symbol",
+              "name": "RepositoryDefaultSource"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "On continue a changed or unreadable default returns a refusal naming cancel.\n\nAnchor: `moved_default`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78c1f25812bddb3c31d88aedd8bc198f9827d50a",
+            "content": "sha256:cc77b1f284c123756f938e79db51015e44ddc321b03a7c2c56e27aacb2b0926b",
+            "locator": {
+              "end": 305,
+              "kind": "line_range",
+              "start": 281
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "A retargeted contract refuses beside the recorded default.\n\nAnchor: `journal_source_branch`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78c1f25812bddb3c31d88aedd8bc198f9827d50a",
+            "content": "sha256:2661d11b8015cf2929ce483f98c5a86c9c6102ba457108b6554a6a1a01c60068",
+            "locator": {
+              "end": 326,
+              "kind": "line_range",
+              "start": 308
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The finalized entry carries bases, plans, produced heads and the strategy's keys.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78c1f25812bddb3c31d88aedd8bc198f9827d50a",
+            "content": "sha256:cecbd74b13957927cda31b535614f5f636ad02acb862cc33c4475cf090596781",
+            "locator": {
+              "kind": "symbol",
+              "name": "sync_log_entry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

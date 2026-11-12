@@ -1,31 +1,18 @@
 # mcp/src/agents_remember/models/knowledge/read_anchor.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/knowledge/read_anchor.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-28T16:42:25+02:00 |
-| lastVerifiedCommitHash | `9b2f775f1ab0fca5f82b4f661785dd8216d4a8b3` |
-| lastVerifiedCommitDate | 2026-09-28T17:43:09+02:00|
-| governingOverview | `mcp/src/agents_remember/models/overview.md` |
-
 ## Governing Overview
-
 [models route overview](../overview.md)
 
 ## Purpose
-
 **The observation one recorded source anchor earns against a requested code tree, as a value
 vocabulary.** It declares the closed set of seven resolution states an observation can reach
-(`AnchorResolutionState`, mirrored as the runtime tuple `ANCHOR_RESOLUTIONS`) and the observation value
+(`AnchorResolutionState`, declared as a literal type) and the observation value
 `AnchorResolution`, including the structured line ranges an exact recorded blob supports. It is the anchor
 half of the read vocabulary: `models/knowledge/read.py` imports and re-exports every name here, so callers
 keep importing from `read.py`. The resolver that produces the value is
 `memory/knowledge/read_anchors.py`; this module holds no resolution, no Git call and no SQL.
 
 ## Code Commentary
-
 ### Logic
 
 **The recorded identity stays on the observation whatever the outcome.** `AnchorResolution` carries the
@@ -69,40 +56,32 @@ the resolution.
 
 None recorded.
 
-## Docs References
+## Evidence
+### Repo-Internal References
+
+- `AnchorResolution` implements the retained boundary described above. [9]
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Cross-Repo References
+
+No cross-repository behavior is implemented in this file.
+
+No meaningful cross-repo references found.
 
 The module is small and self-describing; the rows below name the declarations and the two places that
 give them meaning — the re-export that keeps existing imports working and the resolver that fills the
 ranges.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The published surface of the anchor-observation vocabulary. | `__all__` | mcp/src/agents_remember/models/knowledge/read_anchor.py:25-25 |
-| **The owner's seven resolution states, as a type and as a runtime tuple.** | `AnchorResolutionState`; `ANCHOR_RESOLUTIONS` | mcp/src/agents_remember/models/knowledge/read_anchor.py:27-45 |
-| **One recorded anchor observed against the requested snapshot, carrying its recorded identity whatever the outcome and its structured locator.** | `AnchorResolution` | mcp/src/agents_remember/models/knowledge/read_anchor.py:48-78 |
-| **The structured region: the recorded line range or every defining extent, only on an exact recorded blob; none for a file locator.** | `resolved_ranges` | mcp/src/agents_remember/models/knowledge/read_anchor.py:64-69 |
-| **The validator refusing ranges beside any resolution other than the exact recorded blob.** | `_require_ranges_only_on_the_recorded_bytes` | mcp/src/agents_remember/models/knowledge/read_anchor.py:71-78 |
-| The re-export that keeps every existing `read.py` import of these names working. | `AnchorResolution` | mcp/src/agents_remember/models/knowledge/read.py:47-51 |
-| The read item field that carries the observation onto every realization-claim item. | `anchor` | mcp/src/agents_remember/models/knowledge/read.py:329-367 |
-| The resolver that fills `resolved_ranges` for symbol and line-range locators on the exact recorded blob. | `_observed_line_range`; `_observed_symbol` | mcp/src/agents_remember/memory/knowledge/read_anchors.py:203-214; mcp/src/agents_remember/memory/knowledge/read_anchors.py:227-300; mcp/src/agents_remember/memory/knowledge/read_anchors.py:303-351 |
-
-## Cross-Repo References
-
-No cross-repository behavior is implemented in this file.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-09-28T16:42:25+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): created this one-to-one card for the anchor-observation vocabulary, extracted verbatim from `models/knowledge/read.py` (which re-exports every name) and extended with the additive structured `resolved_ranges` field and its one validator. The module is untracked at the base commit, so `lastVerifiedCommitHash` names the leaf base and the verified basis is the working-tree delta on top of it; the closeout records the real commit.
+- The published surface of the anchor-observation vocabulary. [17]
+- **One recorded anchor observed against the requested snapshot, carrying its recorded identity whatever the outcome and its structured locator.** [18]
+- **The structured region: the recorded line range or every defining extent, only on an exact recorded blob; none for a file locator.** [19]
+- **The validator refusing ranges beside any resolution other than the exact recorded blob.** [20]
+- The re-export that keeps every existing `read.py` import of these names working. [21]
+- The read item field that carries the observation onto every realization-claim item. [22]
+- The resolver that fills `resolved_ranges` for symbol and line-range locators on the exact recorded blob. [23]

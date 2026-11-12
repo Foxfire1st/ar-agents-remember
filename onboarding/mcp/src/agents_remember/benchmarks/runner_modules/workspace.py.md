@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/benchmarks/runner_modules/workspace.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/benchmarks/runner_modules/workspace.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-07T00:25+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
-| governingOverview      | `overview.md`                              |
-
 ## Governing Overview
 
 [runner_modules overview](overview.md)
@@ -22,9 +12,9 @@ Benchmark workspace and repository preparation orchestration.
 
 ### 260731-EFA-L2 Preparation And Workspace Objects
 
-`prepare_case(preparation, case, *, provider_ids=())` takes a `BenchmarkPreparation` in place of
-`benchmarks_root` plus the five preparation keywords (`dry_run`, `skill_exposure_mode`,
-`force_clone`, `provider_timeout`, `allowed_provider_ids`). The containment R1 filter still runs
+At this migration, `prepare_case(preparation, case, *, provider_ids=())` took a `BenchmarkPreparation` in place of
+`benchmarks_root` plus the five then-present preparation keywords (`dry_run`, `skill_exposure_mode`,
+`force_clone`, `provider_timeout`, `allowed_provider_ids`). The current object has the root plus four preparation keywords: `dry_run`, `force_clone`, `provider_timeout` and `allowed_provider_ids`; `skill_exposure_mode` is retired. The containment R1 filter still runs
 first — `filter_benchmark_provider_ids(case.case_id, provider_ids, preparation.allowed_provider_ids)`
 — so the authority set reaches it through the preparation object rather than a loose keyword.
 
@@ -32,12 +22,13 @@ Once the roots are laid down, `prepare_case` builds one **`BenchmarkWorkspace`**
 root, coordination root, source repo root, memory repo, filtered provider ids) and hands that whole
 object to `write_benchmark_mcp_registration(workspace, *, provider_timeout, dry_run)` and
 `prepare_configured_providers(workspace, *, dry_run, provider_timeout)`. That is the point: the
-registration written to disk and the providers launched against it are now guaranteed to describe
-the same materialized workspace.
+registration written to disk and the retained setup call receive the same materialized workspace.
+That shared input does not guarantee a provider launch: the current lifecycle-settings generator
+emits a disabled, empty provider map.
 
 ### Logic
 
-`workspace.py` derives source-only and with-memory workspace paths, prepares Git checkouts, renders benchmark AGENTS files, syncs runtime assets, writes MCP registration, prepares memory repos, and invokes configured provider setup. `prepare_case` calls `prepare_configured_providers` with no seed source: each benchmark stack indexes its own pinned fixture from scratch (hermetic-cold) rather than warm-starting from the live workspace.
+`workspace.py` derives source-only and with-memory workspace paths, prepares Git checkouts, renders benchmark AGENTS files, syncs runtime assets, writes MCP registration, prepares memory repos, and invokes configured provider setup. `prepare_case` calls `prepare_configured_providers` with no seed source. The retained call receives the shared generator's disabled, empty lifecycle settings, so it no longer establishes that each benchmark builds an index from its pinned fixture. The no-seeding boundary still prevents using the live workspace as a seed source.
 
 `filter_benchmark_provider_ids(case_id, provider_ids, allowed_provider_ids)`
 (containment R1, 260707-HFX-L1) enforces that the case manifest is not launch
@@ -61,41 +52,29 @@ direct-script run.
 - Benchmark provider setup is hermetic: `prepare_case` never passes a seed-source coordination root, so a benchmark run cannot start or clone the live workspace provider backends. Seeding from the live workspace previously cascaded a full re-embed across main and every worktree (task 260619).
 - The case manifest is not launch authority (containment R1): provider ids outside the caller's `allowed_provider_ids` are dropped — and reported — before any registration or launch; `None` is fail-closed as well (review B4), and only the explicit `AR_BENCHMARK_ALLOW_UNFILTERED_PROVIDERS=1` env escape arms an unfiltered direct-script run.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured for this memory repo.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The public benchmark facade re-exports this module's public functions and classes for compatibility. | `prepare_repo` | mcp/src/agents_remember/benchmarks/runner.py:28-33 |
-| The route-local overview summarizes how this module fits into the benchmark runner split. | `# mcp/src/agents_remember/benchmarks/runner_modules Overview` | onboarding/mcp/src/agents_remember/benchmarks/runner_modules/overview.md:1-137 |
 
-## Cross-Repo References
+- The shared BenchmarkWorkspace is passed to registration and retained setup after authority filtering. Setup receives lifecycle_settings_from_config through benchmark_lifecycle_settings; that generator returns disabled empty provider settings, so the call establishes neither a provider launch nor a from-scratch benchmark index-build promise. No live-workspace seed source is wired. [5]
+
+
+- The public benchmark facade re-exports this module's public functions and classes for compatibility. [1]
+The [route overview](overview.md) describes the benchmark runner split; it is a discovery companion rather than a repository source target.
+
+### Cross-Repo References
 
 No configured sibling repository is required for this module.
 
-## Update History
+## Preparation writes no skill exposure
 
-- 2026-09-07T00:25+02:00 — Removed the obsolete deleted-test coverage claim; production behavior and original verification history remain unchanged.
+`prepare_case` syncs the runtime assets and no longer calls `sync_workspace_skill_exposure`, and no preparation object carries a skill-exposure mode: the workspace's harness reads the skills the tool server serves from its package copy, through the benchmark-local MCP registration this workspace writes.
 
-- 2026-08-02T16:45:41+02:00 — 260731-EFA-L6 curator W1-B10: repaired 6 citation findings (3 rows); scoped recheck clean.
+- The case preparation that lays down assets and no skill exposure. [3]
 
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
-  `prepare_case` was re-signed onto `BenchmarkPreparation`, and it now builds a
-  `BenchmarkWorkspace` that both `write_benchmark_mcp_registration` and
-  `prepare_configured_providers` consume. The materialized workspace and the written registration
-  are unchanged. Verification metadata pinned until closeout stamps the L2 commit.
-- 2026-07-07T17:40+02:00 — 260707-HFX-L1 review fix B4: `filter_benchmark_provider_ids`'s
-  `None` semantics flipped from unfiltered to FAIL-CLOSED (loud skip naming the escape hatch);
-  the new `UNFILTERED_PROVIDERS_ENV` constant (`AR_BENCHMARK_ALLOW_UNFILTERED_PROVIDERS=1`) is
-  the explicit developer act that restores an unfiltered direct-script run. Verification
-  metadata pinned until closeout stamps the HFX-L1 commit.
-- 2026-07-07T16:30+02:00 — 260707-HFX-L1 (provider containment R1): added
-  `filter_benchmark_provider_ids` (manifest is not launch authority; skipped ids reported
-  loudly; None = unfiltered direct script use) and `prepare_case` now filters before any
-  workspace registration or provider launch. Verification metadata pinned until closeout stamps
-  the HFX-L1 commit.
-- 2026-06-19T13:42: Benchmark provider setup is now hermetic — `prepare_case` passes no seed source, so each benchmark stack indexes its own pinned fixture from scratch and never starts/clones the live workspace provider backends (task 260619: that cross-stack disturbance had cascaded a full re-embed across main + every worktree).
-- 2026-05-26T02:26+02:00: Created when `benchmarks/runner.py` was split into focused implementation modules.
+- Current source account and its stated boundaries. [4]

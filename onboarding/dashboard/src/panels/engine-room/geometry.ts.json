@@ -1,0 +1,175 @@
+{
+  "path": "dashboard/src/panels/engine-room/geometry.ts",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The scene-wide coordinate constants and conduit-path builder consumed by the layers.\n\nAnchor: `COL_MAIN_CX` `conduitPathD`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
+            "content": "sha256:90c16dfc396d21ee0a085a71634a4c56c6d84875cd5a754a95bece8cc000f5c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "COL_MAIN_CX"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
+            "content": "sha256:7a834696248f231ee436448e606794ecb8f0eead0d0427e85d8e4c7ecb3ae79c",
+            "locator": {
+              "kind": "symbol",
+              "name": "conduitPathD"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The runtime/state vocabulary narrowing shared by gauges and conduits.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
+            "content": "sha256:281c97ffe839783da21ba1cf64f67a1a8459c60abc261e1956f63b0a96c61068",
+            "locator": {
+              "kind": "symbol",
+              "name": "conduitState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The materialisation/block derivations this module feeds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
+            "content": "sha256:96ae224a660d306e828d63dac5c820748e724ec62b58b9affa6c2b6db358a4e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "branchEnter"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
+            "content": "sha256:8c9d4ce0c0ed0a0879f1a5ee0ea038662470e23436de1e416d11af48e3650200",
+            "locator": {
+              "kind": "symbol",
+              "name": "isBlocked"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "ConduitState and conduitState retain the conduit vocabulary and normalize unknown values.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
+            "content": "sha256:42462cc41d617c96101b8927acfef5c5ad931679309bd07892b209376b1a96be",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConduitState"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
+            "content": "sha256:281c97ffe839783da21ba1cf64f67a1a8459c60abc261e1956f63b0a96c61068",
+            "locator": {
+              "kind": "symbol",
+              "name": "conduitState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Branch/coupler coordinates and intake/sync/integration geometry remain; conduitPathD returns a straight known lane or null.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
+            "content": "sha256:30c4aff267012828ad14c98781311a3a19c0bd648efa9bd84c76a0974b3fb920",
+            "locator": {
+              "kind": "symbol",
+              "name": "POS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
+            "content": "sha256:9402042e8294712388b3e805cec8240dc98c8bcb9c8a730a9af5d133902f9c72",
+            "locator": {
+              "kind": "symbol",
+              "name": "EDGE_GEOM"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
+            "content": "sha256:7a834696248f231ee436448e606794ecb8f0eead0d0427e85d8e4c7ecb3ae79c",
+            "locator": {
+              "kind": "symbol",
+              "name": "conduitPathD"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Landing flow state remains derived from the observed landing references.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
+            "content": "sha256:624b15c552f8f2d746a943ec233f384d716916c6945c35e2e3af528b30d6dd7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "landingFlowState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Refused polarity is derived only for failed or stale integration/integration-mem lanes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
+            "content": "sha256:7a4dda1e37c1500d1e8f572c5fd5f02aac6a8037f6a885e76727b27bb8690d53",
+            "locator": {
+              "kind": "symbol",
+              "name": "refusedPolarityOf"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

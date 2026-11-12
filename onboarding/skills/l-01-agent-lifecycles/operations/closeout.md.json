@@ -1,0 +1,80 @@
+{
+  "path": "skills/l-01-agent-lifecycles/operations/closeout.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "253d497ec656e8545831660fc2a7f893b5a59e89",
+        "content": "sha256:c2f5de0efb06134f6edc9ba655863667b983906e7024a9231cdf99fba3c464e5",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-CQCTG9",
+      "invariant": "INV-AKRZAN",
+      "origin": {
+        "handoffEntry": "MIK-R101@v1 rule 4",
+        "leaf": "260928-MIK-L101"
+      },
+      "rationale": "operations/closeout.md keeps the kept closeout points in meaning, rewritten to the writing guideline: authorized owner and the developer's explicit commit approval for a flat run (5-9), bound inputs and visible failures (11-19), the gates at each publication step (21-29), repair through the gate owner (31-35), and no claim before the owner's result is read back (37-39). The paragraphs are no longer byte-identical to the earlier wording.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "253d497ec656e8545831660fc2a7f893b5a59e89",
+        "content": "sha256:608f59fac9c8c5caa15572ad67a8487bb3940fcac553f7f901ebeff55fbd193f",
+        "locator": {
+          "end": 7,
+          "kind": "line_range",
+          "start": 7
+        }
+      },
+      "id": "RLZ-DHZW33",
+      "invariant": "INV-P2WRNQ",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-direct-closeout-exception",
+        "leaf": "260928-MIK-L72"
+      },
+      "rationale": "The closeout operation names the owning Architect as the actor of a flat run's paired closeout, with neither Manager nor Orchestrator, only with the developer's explicit commit approval for that closeout or with series authority the developer delegated and recorded in the task document.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "253d497ec656e8545831660fc2a7f893b5a59e89",
+        "content": "sha256:73b7f36fd43f9e106eb89e649e52a254cbbcc612580ea64653c3d2628f14479d",
+        "locator": {
+          "end": 39,
+          "kind": "line_range",
+          "start": 39
+        }
+      },
+      "id": "RLZ-ZHVQ2K",
+      "invariant": "INV-4E130M",
+      "origin": {
+        "handoffEntry": "Preservation (flags and acceptance)",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Closeout reserves memory/code/publication judgments despite lifecycle result.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The authored source owns this contract; the distribution copy is not a separate authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "253d497ec656e8545831660fc2a7f893b5a59e89",
+            "content": "sha256:c2f5de0efb06134f6edc9ba655863667b983906e7024a9231cdf99fba3c464e5",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

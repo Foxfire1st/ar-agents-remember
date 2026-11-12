@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/task_projection/revision.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                            |
-| path                   | `mcp/src/agents_remember/application/task_projection/revision.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-16T10:30+02:00 |
-| lastVerifiedCommitHash | `b00a4ac2daeec7411529d5a5593a3c007fcbf320` |
-| lastVerifiedCommitDate | 2026-09-16T10:52:30+02:00|
-| governingOverview      | `../overview.md`                           |
-
 ## Governing Overview
 
 [application overview](../overview.md)
@@ -53,41 +43,27 @@ there, or a change to that plane's facts will not move the revision.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external or domain documentation is configured for this memory root
 (`system/sources.md` has no entries), so no external documentation claim is made.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant documentation found after checking the configured sources. | N/A | N/A |
+No relevant documentation found after checking the configured sources.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The identity function, the plane enumeration, and the shared digest primitive it must keep using.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| One content-addressed identity over the selection plus every projected fact. | `projection_revision` | mcp/src/agents_remember/application/task_projection/revision.py:22-47 |
-| The seven fact planes identity must cover — a new plane belongs here. | `_planes` | mcp/src/agents_remember/application/task_projection/revision.py:50-63 |
-| The shared digest primitive the compiler also uses, so both sides agree on one algorithm. | `compute_content_digest` | mcp/src/agents_remember/models/role_capsules/types.py:81-84 |
-| The compiler-facing content digest, which is the rendered bytes rather than the selection. | `CapsuleTaskContext` | mcp/src/agents_remember/models/role_capsules/types.py:319-330 |
-| The revision is assigned before rendering, so the document carries its own identity. | `_Builder` | mcp/src/agents_remember/application/task_projection/projection.py:90-515 |
+- One content-addressed identity over the selection plus every projected fact. [1]
+- The seven fact planes identity must cover — a new plane belongs here. [2]
+- The shared digest primitive the compiler also uses, so both sides agree on one algorithm. [3]
+- The compiler-facing content digest, which is the rendered bytes rather than the selection. [4]
+- The revision is assigned before rendering, so the document carries its own identity. [5]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No sibling-repository contract consumes this identity.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | N/A | N/A |
-
-## Update History
-
-- 2026-09-16T10:30+02:00 — 260915-CAPS-L3 curator: created this card for the projection-identity
-  module added by the scoped-task-context leaf (`CAPS-R03@v1`). This module did not exist until
-  `CAPS-L3-EV11`: `projection.py` crossed the 600-line refactor-pressure band while being edited, so
-  the identity computation was extracted here. Records the selection-plus-facts derivation, why it is
-  deliberately not a digest of the rendered bytes, and the `_planes` enumeration a new plane must
-  join. Verification metadata is left at the leaf base commit because the source is uncommitted —
-  the governed closeout stamps the real code commit.
+No meaningful cross-repo references found.

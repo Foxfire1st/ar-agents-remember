@@ -1,0 +1,25 @@
+{
+  "path": "mcp/src/agents_remember/models/providers.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Provider status projection builds these models before returning MCP payloads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70fe9d0307f25c7b326ed501f72e43a98d56bbe6",
+            "content": "sha256:88480e4f37225ec608700e748f757c3fc12db4425665426b5f8fb53136147c61",
+            "locator": {
+              "kind": "symbol",
+              "name": "provider_summary_packet"
+            },
+            "path": "mcp/src/agents_remember/providers/status.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

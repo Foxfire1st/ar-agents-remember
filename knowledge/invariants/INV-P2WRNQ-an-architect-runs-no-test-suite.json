@@ -1,0 +1,39 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Two files carry the rule (the Architect role text and the closeout operation), and two wording cases prove it: one pins the freedom, its custody limit and the kept landing-step sentence at the role text, the other proves the kept closeout sentence is present and not registered as retired wording."
+  },
+  "applicability": "Every Architect run, task-bound or taskless.",
+  "conditions": [
+    "The Architect works on a copy: nothing of his runs in a candidate's worktree.",
+    "Reading code and sources for a check is not loading another task's documents or another role's instructions, and the read-only rules of roles/architect.md line 42 and of operations/orientation.md stay as they are.",
+    "A check or investigation he does not do himself goes, under delegation, to the coordinating Manager or Orchestrator; under developer-chosen direct coordination a leaf's check goes to its Worker or Reviewer and a check of no leaf to an Investigator.",
+    "The paired-closeout exception applies only when the developer chose direct coordination, neither a Manager nor an Orchestrator exists, and the existing delegated c-09/c-12 authority permits it."
+  ],
+  "exclusions": [
+    "The paired-closeout exception does not apply to a coordinated run, where the Manager or Orchestrator owns closeout.",
+    "No other step of a landing, and no substitution of his own check for a leaf's build, review, curation or gate."
+  ],
+  "id": "INV-P2WRNQ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "requirements/MIK-R72-v2-the-architect-hands-coordination-to-one-agent.md SHA256 eb04f14b04f1a4ae5ff255d069300321674351e5d9b3474798fe13edc0d14c68; final independent reviewer verdict notes/reports/role-launch/260928-MIK-L72-reviewer-21dd4a07-9cd4-4afd-aba5-ec17a6b4b38a.md SHA256 ec0f8d07443044b6d71c024a314f6771136bb60ed31e7e70a654dc5e13301455; root adjudication notes/run3/L72-V2-ROUND2-ADJUDICATION.md; focused wording evidence 164 tests/244 subtests at candidate 598526ac",
+        "L72-MR1-K5: the no-execution rule is universal in the statement, so the scope now holds it for every Architect run and bounds only the paired-closeout exception to the developer-chosen direct-coordination case.",
+        "L72-MR1-K5 R2 final: the stored exclusion 'Every coordinated run, where the Manager or Orchestrator owns closeout.' re-narrowed the whole record; it now names what the paired-closeout exception does not reach."
+      ],
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "L72/MIK-R72@v2-direct-closeout-exception",
+    "leaf": "260928-MIK-L72",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "The Architect may check, measure, run tests and builds, read product, host and harness sources and try things in a sandbox on a copy, but this never substitutes for a leaf's build, review, curation or gate, permits no leaf code or memory edit or self-grading, changes no read-only limit, and adds no landing step beyond the retained paired-closeout exception.",
+  "status": "proposed",
+  "supersedes": []
+}

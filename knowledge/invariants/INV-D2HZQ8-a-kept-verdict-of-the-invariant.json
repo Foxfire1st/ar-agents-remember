@@ -1,0 +1,38 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "A kept pass that outlives a retargeted packet link lets a closeout commit memory although a fresh evaluation raises an open reconsideration item; rechecking the recorded selections before the bytes makes the kept verdict follow the link."
+  },
+  "applicability": "The in-process memo of evaluate_leaf_gate, whose verdicts the worktree layer's gate port and the memory-quality controller share.",
+  "conditions": [
+    "The evaluation runs inside a recording block; the requirement owner records the resolution of the task root and of the packet locator as selection rows and the packet's bytes under the caller's locator.",
+    "Selection rows are rechecked first, and files are hashed again only when every selection still gives its recorded answer.",
+    "A verdict whose rows hold a conflicting or unreadable observation is not kept at all."
+  ],
+  "exclusions": [
+    "The memo's key (exact trees, contract bytes, parent tip, leaf memory HEAD, task document, build), its capacity and its age limit.",
+    "Inputs inside the Git trees, which the key binds.",
+    "A verdict older than the age limit, which is computed again whatever its rows say."
+  ],
+  "id": "INV-D2HZQ8",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "requirements/MIK-R42-v2-isolated-reviewer-worklist-computation.md rule 14; notes/reports/260928-MIK-L42-worker-R3.md; notes/reports/260928-MIK-L42-review-R4.md"
+      ],
+      "path": "notes/reports/260928-MIK-L42-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R42@v2-gate-verdict-follows-selections",
+    "leaf": "260928-MIK-L42",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A kept verdict of the invariant gate is served again only while every path resolution and existence probe its evaluation recorded still gives the recorded answer and every recorded file still has the recorded bytes. A requirement packet whose locator resolves to another file is therefore a miss also when that file holds identical bytes, and the next evaluation gives the verdict a fresh evaluation gives.",
+  "status": "proposed",
+  "supersedes": []
+}

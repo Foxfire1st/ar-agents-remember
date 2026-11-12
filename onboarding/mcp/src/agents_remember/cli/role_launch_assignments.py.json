@@ -1,0 +1,74 @@
+{
+  "path": "mcp/src/agents_remember/cli/role_launch_assignments.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c736b4a31260e1409574816589285dbd2b2f8978",
+        "content": "sha256:eb1a421a565a4b7f523a98d6139052d3df63ffb3ff5043fefa00b57c4d6fdb78",
+        "locator": {
+          "kind": "symbol",
+          "name": "bootstrap_assignment"
+        }
+      },
+      "id": "RLZ-XM9GX7",
+      "invariant": "INV-GWA6VR",
+      "origin": {
+        "handoffEntry": "MIK-R60@v7.1-2",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "The Bootstrap handover line names the AR tools it asks for (runtime_install, memory_init, memory_baseline_status, memory_baseline_adopt, user_settings_init).",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The bootstrap sentence that invents no identity and creates no task, worktree or role.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c736b4a31260e1409574816589285dbd2b2f8978",
+            "content": "sha256:eb1a421a565a4b7f523a98d6139052d3df63ffb3ff5043fefa00b57c4d6fdb78",
+            "locator": {
+              "kind": "symbol",
+              "name": "bootstrap_assignment"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The investigator sentence, whose concern comes from the parent that started the seat.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c736b4a31260e1409574816589285dbd2b2f8978",
+            "content": "sha256:75ba190437616aa7d2eecb3d6aba358373c329d21a8f53cd7b262e48ee11dd1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "investigator_assignment"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The project-scoped architect sentence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c736b4a31260e1409574816589285dbd2b2f8978",
+            "content": "sha256:7cb21d1589e7633bca1c43eabeda0794a63b6d007887e5e09bd016ca1bee6944",
+            "locator": {
+              "kind": "symbol",
+              "name": "architect_assignment"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

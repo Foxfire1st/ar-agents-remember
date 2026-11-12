@@ -1,0 +1,274 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8e48e38066874b65d5c7dec91535af65a658fbe4",
+        "content": "sha256:a55a599b1c92a8e4c1ec967be5a2291299e44c18285855b7c3cc6bf5b984a9b9",
+        "locator": {
+          "kind": "symbol",
+          "name": "curator_coherence_action"
+        }
+      },
+      "id": "RLZ-EYX021",
+      "invariant": "INV-PFVBQM",
+      "origin": {
+        "handoffEntry": "MIK-R52@v1 rule 10 closed-out-answer",
+        "leaf": "260928-MIK-L52"
+      },
+      "rationale": "The publication action answering closed-out/absent.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "8e48e38066874b65d5c7dec91535af65a658fbe4",
+        "content": "sha256:5bcbb09ccb83a79ce41f7a2752e5bba4939171a01b6881d87df7910ce303c215",
+        "locator": {
+          "kind": "symbol",
+          "name": "_publish"
+        }
+      },
+      "id": "RLZ-FGW904R4",
+      "invariant": "INV-VXA7SZ0Z",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Writes the new content-addressed generation files first, rechecks the source observation and recorded judgments, and runs load_curator_coherence_generation on the new record digest before atomically replacing the canonical authority pointer. A generation that fails that integrity read raises before the pointer is written, so the prior authority stays in place.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "8e48e38066874b65d5c7dec91535af65a658fbe4",
+        "content": "sha256:5bcbb09ccb83a79ce41f7a2752e5bba4939171a01b6881d87df7910ce303c215",
+        "locator": {
+          "kind": "symbol",
+          "name": "_publish"
+        }
+      },
+      "id": "RLZ-K6TKTC",
+      "invariant": "INV-701KQ9",
+      "origin": {
+        "handoffEntry": "L110-C-coherence-transport",
+        "leaf": "260928-MIK-L110"
+      },
+      "rationale": "Rejects explicitly supplied inline collections with the file and retains all expectation/integrity/CAS checks.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "8e48e38066874b65d5c7dec91535af65a658fbe4",
+        "content": "sha256:7d7fe17df0eb2eba57e4a0d4e6835c0a273a3ad49e5ebdd1037d9c813d0e188e",
+        "locator": {
+          "kind": "symbol",
+          "name": "_write_candidate_set"
+        }
+      },
+      "id": "RLZ-QQNJDJ",
+      "invariant": "INV-701KQ9",
+      "origin": {
+        "handoffEntry": "L110-C-coherence-transport",
+        "leaf": "260928-MIK-L110"
+      },
+      "rationale": "Files the exact observed set and its reading projection with a digest.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The public action dispatcher keeps one tool surface.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e48e38066874b65d5c7dec91535af65a658fbe4",
+            "content": "sha256:a55a599b1c92a8e4c1ec967be5a2291299e44c18285855b7c3cc6bf5b984a9b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "curator_coherence_action"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Optional file-sourced judgments retain exact-set, evidence and CAS validation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e48e38066874b65d5c7dec91535af65a658fbe4",
+            "content": "sha256:5bcbb09ccb83a79ce41f7a2752e5bba4939171a01b6881d87df7910ce303c215",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Completed closeout answers recorded identities without a live-tree comparison.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e48e38066874b65d5c7dec91535af65a658fbe4",
+            "content": "sha256:907c9a72eead32c5afb8ccebe709138da4fae5e9b771d0f0e3c9387daaf50098",
+            "locator": {
+              "kind": "symbol",
+              "name": "_closed_out_answer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The prepare test checks the complete publication member list and caller-supplied identities; a second test adds a declaration member and checks that both messages follow it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a2954294417e6bb9b24a36f5d824b64093280317",
+            "content": "sha256:2bc3efb4a1677042c81f688d43f9ac75459977634218fbaa16462cc8ae37ef89",
+            "locator": {
+              "end": 246,
+              "kind": "line_range",
+              "start": 210
+            },
+            "path": "mcp/tests/test_curator_coherence_publication_discoverability.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The prepare response composes its summary from the request model's publication declaration, so it states every publication input.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e48e38066874b65d5c7dec91535af65a658fbe4",
+            "content": "sha256:23536224bcc5dc1d36955a44793da1c70344126e5a7f714f428ad67d6f3f2690",
+            "locator": {
+              "kind": "symbol",
+              "name": "_prepare"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The statement `prepare` carries, defined on the request-model route rather than here.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b06809a50c0177ed9f11e258232f95ce0fe5679",
+            "content": "sha256:6056a8e954ae75eb1c188747da2865b05c86acc1d71b16e70b5c3d533fa37f84",
+            "locator": {
+              "kind": "symbol",
+              "name": "publication_input_statement"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Publication rechecks contract, predecessor, candidates, attestation, topology, and evidence before selecting authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e48e38066874b65d5c7dec91535af65a658fbe4",
+            "content": "sha256:5bcbb09ccb83a79ce41f7a2752e5bba4939171a01b6881d87df7910ce303c215",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Immutable generation installation is directory-atomic and collision-safe.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e48e38066874b65d5c7dec91535af65a658fbe4",
+            "content": "sha256:8cced7d9a25816cd211a9a19fc4dc6cc0d006be0276453187b76fd0c67b761e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish_generation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Attempt snapshots point at immutable generation artifacts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e48e38066874b65d5c7dec91535af65a658fbe4",
+            "content": "sha256:6414afc5363deb35495a27d83c83936c9edecca9178214807f13ba0e904bc69c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish_snapshot"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "R03 record construction binds the declared dependency set.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e48e38066874b65d5c7dec91535af65a658fbe4",
+            "content": "sha256:0766441c3e12b7a252bb998c70fa9331a757930b64f1865fb119090a09bb523b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Full generation integrity is proved before canonical authority replacement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e48e38066874b65d5c7dec91535af65a658fbe4",
+            "content": "sha256:5bcbb09ccb83a79ce41f7a2752e5bba4939171a01b6881d87df7910ce303c215",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Preparation files the exact candidate set and reading rendering.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e48e38066874b65d5c7dec91535af65a658fbe4",
+            "content": "sha256:7d7fe17df0eb2eba57e4a0d4e6835c0a273a3ad49e5ebdd1037d9c813d0e188e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_candidate_set"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

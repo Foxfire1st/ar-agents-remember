@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/kernel/memory_init.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/kernel/memory_init.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-16T02:51+02:00|
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview      | `../../../overview.md`                     |
-
 ## Governing Overview
 
 [overview.md](../../../overview.md)
@@ -23,7 +13,7 @@ by the `memory_init` MCP tool.
 
 ### Logic
 
-`initialize_memory` (mcp/src/agents_remember/kernel/memory_init.py:195-282) resolves the repo through
+`initialize_memory` (mcp/src/agents_remember/kernel/memory_init.py:216-317) resolves the repo through
 `McpRuntimeConfig`, plans or creates the external memory root, establishes its Git authority, then
 creates the standard `system/`, `onboarding/`, and `docs/` folders and seed system files.
 
@@ -32,37 +22,60 @@ git runner with `run_git(memory_root, ["init"])`, replacing the local
 `subprocess.run(["git", "init"], cwd=memory_root, ...)` this file used to spawn
 itself. The outcome is still reported as data — `ran`, `returncode`, `stdout`,
 `stderr` — and a non-zero `returncode` makes `initialize_memory()` return
-`ok: False` (mcp/src/agents_remember/kernel/memory_init.py:255-266) rather than raise.
+`ok: False` (mcp/src/agents_remember/kernel/memory_init.py:289-300) rather than raise.
 
 **The branch is now chosen, not assumed.** The current path initializes a new external-memory
 repository with `git init -b <initial_branch>` and records the exact local authority
 `agents-remember.defaultBranch=<initial_branch>` (`DEFAULT_BRANCH_CONFIG_KEY`,
 mcp/src/agents_remember/kernel/memory_init.py:13-13). `_resolved_initial_branch`
-(mcp/src/agents_remember/kernel/memory_init.py:49-59) answers in two ways: an explicit
+(mcp/src/agents_remember/kernel/memory_init.py:70-80) answers in two ways: an explicit
 `initial_branch` argument, normalized by `_normalize_initial_branch`
-(mcp/src/agents_remember/kernel/memory_init.py:16-30) — which accepts a `refs/heads/`-prefixed spelling
+(mcp/src/agents_remember/kernel/memory_init.py:37-51) — which accepts a `refs/heads/`-prefixed spelling
 and refuses anything that is not one plain local branch name — or, when omitted, the **code
 repository's currently checked-out branch** read by `_code_repository_branch`
-(mcp/src/agents_remember/kernel/memory_init.py:33-46), which answers `None` for a detached checkout, a
+(mcp/src/agents_remember/kernel/memory_init.py:54-67), which answers `None` for a detached checkout, a
 missing path, or a path that is not a Git checkout. When neither source answers, the call **refuses
 rather than inventing `main`**, with a message naming both ways to supply the branch
-(mcp/src/agents_remember/kernel/memory_init.py:141-154). The payload always carries both
+(mcp/src/agents_remember/kernel/memory_init.py:169-179). The payload always carries both
 `initialBranch` and `initialBranchSource` (`explicit`, `code-repository-current-branch`, or
 `unresolved`). An existing committed repository is a no-op. An existing unborn repository is
 repairable when symbolic `HEAD` is on the expected branch or can be repointed to it and no local
 branch exists, through `_repair_unborn_memory_repository`
-(mcp/src/agents_remember/kernel/memory_init.py:103-137); any other unborn state, or a repository that
+(mcp/src/agents_remember/kernel/memory_init.py:124-158); any other unborn state, or a repository that
 already carries refs, refuses with `_existing_unborn_refusal` naming the expected
-`refs/heads/<branch>` (mcp/src/agents_remember/kernel/memory_init.py:89-100) instead of guessing.
+`refs/heads/<branch>` (mcp/src/agents_remember/kernel/memory_init.py:110-121) instead of guessing.
 Results expose `repairAttempted` when that bounded retry path is entered.
 
 A missing coordination root is refused before any Git work
-(mcp/src/agents_remember/kernel/memory_init.py:219-231): Git would happily create the missing parents,
+(mcp/src/agents_remember/kernel/memory_init.py:246-252): Git would happily create the missing parents,
 so an absent coordination root would silently produce a memory repository under a path nothing else in
-the product reads. The refusal names `runtime_install` and the `c-13-install-and-onboard` skill.
+the product reads. The refusal names `runtime_install` and the guide `docs/getting-started.md`.
+
+**A new memory repository is created in the text format (MIK-R24 rule 9).** Beside the seed files,
+`initialize_memory` writes the layout marker `knowledge/layout.json`, whose bytes are
+`LAYOUT_MARKER_TEXT`, the canonical formatting of `{"schema": "ar-memory-layout/v2", "conversion": "1"}`
+(mcp/src/agents_remember/kernel/memory_init.py:19-21). The spelling lives here because the kernel ranks
+below the models, and a test pins it to the formatter's output. The marker is written **only for a brand-new
+root**, and the payload's `layoutMarker` says which case applied:
+
+- `present`: the marker already exists and is left alone;
+- `unconverted-existing-memory`: the root already holds `knowledge.sqlite` or any onboarding `*.md`
+  (`_holds_legacy_memory`, mcp/src/agents_remember/kernel/memory_init.py:24-34). Writing the marker beside
+  legacy cards would make the old format be read as the new one, so such a root converts through the
+  conversion command or a crossing sync, never by being marked. Its result
+  includes `nextStep`, which names the command `agents-remember knowledge-convert MEMORY_ROOT --code
+  CODE_REPOSITORY` and MIK-R46 rule 6;
+- `existing-repository-unchanged`: the root already has `.git`. An existing repository is repaired, never
+  re-founded;
+- `created`: a fresh root; the `knowledge/` directory and the marker join the planned scaffold
+  (mcp/src/agents_remember/kernel/memory_init.py:268-280).
+
+Since L37 (the L24 nit) the early return when Git initialization fails carries `layoutMarker` too: `not-created`
+when this run would have created the marker (nothing was written), and the case's own value otherwise.
 
 ### Invariants And Boundaries
 
+- **Only a new root is ever marked.** An existing repository, or a root holding legacy cards or a database, is never given `knowledge/layout.json` by this initializer.
 - The memory root comes from the trusted MCP config, not a tool argument.
 - Unknown repo ids are rejected before filesystem work starts.
 - `dry_run` defaults to `False` (act-by-default): a plain call creates the
@@ -92,54 +105,26 @@ the product reads. The refusal names `runtime_install` and the `c-13-install-and
   `subprocess.TimeoutExpired` propagates out of `initialize_memory()`: this
   module catches nothing, so the tool call fails loudly rather than hanging.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `memory_init` is wired through the Phase 04 application entry point. | `memory_init` | mcp/src/agents_remember/mcp/registration/memory.py:182-204 |
-| MCP config defines repository memory roots. | `McpRuntimeConfig` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:113-137 |
-| The branch resolution this file performs: explicit argument, code-repository branch, or a refusal. | `_normalize_initial_branch`; `_code_repository_branch`; `_resolved_initial_branch`; `_git_init_result` | mcp/src/agents_remember/kernel/memory_init.py:16-30; mcp/src/agents_remember/kernel/memory_init.py:33-46; mcp/src/agents_remember/kernel/memory_init.py:49-59; mcp/src/agents_remember/kernel/memory_init.py:140-192 |
-| The bounded unborn-repository repair path and its refusal. | `_repair_unborn_memory_repository`; `_existing_unborn_refusal` | mcp/src/agents_remember/kernel/memory_init.py:103-137; mcp/src/agents_remember/kernel/memory_init.py:89-100 |
-| The recorded authority's consumers: first-baseline adoption and branch mutation. | `_baseline_default_branch`; `memory_repository_default_branch` | mcp/src/agents_remember/memory/baseline.py:149-192; mcp/src/agents_remember/worktrees/integration/integration_branch_repository.py:51-87 |
-| The branches case set that holds this behavior end to end. | `test_memory_init_mints_and_records_the_named_initial_branch`; `test_memory_init_inherits_the_code_repositorys_current_branch_by_default`; `test_memory_init_refuses_rather_than_inventing_a_branch_when_it_has_no_answer`; `test_the_unborn_repair_path_accepts_the_configured_branch_instead_of_main` | mcp/tests/test_memory_branch_authority.py:109-125; mcp/tests/test_memory_branch_authority.py:127-144; mcp/tests/test_memory_branch_authority.py:146-164; mcp/tests/test_memory_branch_authority.py:166-185 |
-| The one git runner this module's `git init` goes through: `git_environment` scrubs `GIT_REPOSITORY_SELECTOR_ENV` (L56-L72), `GIT_LOCAL_TIMEOUT_SECONDS = 300` is the default bound (L93-L93), and `run_git` applies both (L150-L215). | `run_git`; `git_environment`; `GIT_LOCAL_TIMEOUT_SECONDS` | mcp/src/agents_remember/kernel/git_command.py:150-215; mcp/src/agents_remember/kernel/git_command.py:141-149; mcp/src/agents_remember/kernel/git_command.py:93-93 |
+### Repo-Internal References
 
-## Update History
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `memory_init` repointed to mcp/src/agents_remember/mcp/registration/memory.py:182-204. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
 
-- 2026-09-16T17:59+02:00 — 260915-CAPS-L13 curator: **body rebased on the initial-branch parameter
-  this leaf added** (`CAPS-R13@v1`, the absorbed UNO-L2 runtime-correctness scope). The card's central
-  claim was stale and said the opposite of the code: it described `git init -b main` with a recorded
-  `agents-remember.defaultBranch=main`, and an unborn repair path "only when symbolic `HEAD` is
-  exactly `refs/heads/main`". It now records the real behaviour — a branch chosen from the explicit
-  argument or the code repository's checked-out branch, normalized by `_normalize_initial_branch`,
-  recorded verbatim, with a refusal that names both ways to supply it when neither source answers, and
-  a repair path that accepts the configured branch. Added the recorded-authority invariant and its two
-  consumers, the coordination-root refusal, the payload's `initialBranchSource` values, and the new
-  anchors with re-derived ranges (the stale `initialize_memory` 59-109 citation is replaced by the
-  function's real 195-282 range). Verification metadata is left at the leaf base commit because the
-  source is uncommitted — the governed closeout stamps the real code commit.
-- 2026-08-16T02:51+02:00 — L4 integration-branch authority: documented exact external-memory
-  default-branch initialization, idempotent unborn-main repair, fail-closed mismatches, and the
-  pre-scaffold authority ordering that preserves unrelated repository contents on refusal.
+- A new memory repository is created with the layout marker; an existing or legacy root is never marked. [2]
 
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
+- The marker case: only a new root is created in the text format. [3]
 
-- 2026-08-02T16:45:41+02:00 — 260731-EFA-L6 curator W1-B10: repaired 5 citation findings; scoped recheck clean.
 
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-07-31T20:53+02:00 — 260731-EFA-L3 curator: body updated. The card described "an optional Git
-  repository initialization" without saying how it was spawned, which is now the load-bearing fact:
-  `_git_init_result` was one of the six drifted private git spawns and its
-  `subprocess.run(["git", "init"], cwd=memory_root, ...)` — no `env=`, no `timeout` — was replaced
-  by `run_git(memory_root, ["init"])`. Documented the two consequences as invariants: the
-  selectors are stripped, so an inherited `GIT_DIR` can no longer make `git init` build the
-  repository elsewhere and still return 0; and the call is bounded at the runner's 300s default
-  where it was previously unbounded, with `TimeoutExpired` propagating because this module catches
-  nothing. Added the `git_command.py` repo-internal reference, anchored at L24-L33
-  (`GIT_REPOSITORY_SELECTOR_ENV`), L53-L55 (the timeout classes), and L67-L96 (`run_git`). No
-  citation repairs were needed: this card carried no line ranges before today.
+- MCP config defines repository memory roots. [4]
 
-- 2026-05-29T18:35+02:00: Extracted `_create_missing_dirs`, `_create_missing_files`, and `_git_init_result` from `initialize_memory` to reduce complexity; behavior-preserving (commit `e3dab63`).
-- 2026-05-23T13:09+02:00: Created for MCP-owned memory initialization.
+- The branch resolution this file performs: explicit argument, code-repository branch, or a refusal. [5]
+- The bounded unborn-repository repair path and its refusal. [6]
+- The recorded authority's consumers: first-baseline adoption and branch mutation. [7]
+- The branches case set that holds this behavior end to end. [8]
+
+- The one git runner this module's `git init` goes through: `git_environment` strips `GIT_REPOSITORY_SELECTOR_ENV`, `GIT_LOCAL_TIMEOUT_SECONDS = 300` is the default bound, and `run_git` applies both. [9]
+
+
+- The failed-Git early return reports the marker as not created. [10]
+
+- `memory_init` is wired through the Phase 04 application entry point. [1]

@@ -1,123 +1,213 @@
 # mcp/src/agents_remember/mcp/registration/knowledge.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/mcp/registration/knowledge.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-21T18:09+02:00 |
-| lastVerifiedCommitHash | `86639933d61528387ce106dbd4d7a334bd468671` |
-| lastVerifiedCommitDate | 2026-09-24T18:51:31+02:00|
-| governingOverview | `mcp/src/agents_remember/mcp/registration/overview.md` |
-
 ## Governing Overview
 
 [mcp/registration route overview](overview.md)
 
+## Current operative account — MIK-R109
+
+`register_knowledge_tools(server, config)` registers read, diff, integrity and write in that order: `_register_knowledge_write` mounts `knowledge_write`, the writer's own route — the same function the CLI write commands run — beside the reader. The mounted read's description names both public writer commands, `agents-remember knowledge-ingest` and `agents-remember knowledge-bootstrap`, inside the unchanged 600-character description bound. Read rows are text ID, record kind, computed state and memory-file location; those of the tree and record views carry no record prose, while the two marks views hold what MIK-R118 rule 6 and MIK-R124 rule 7 name — a weakness row its one-sentence statement and measurement, a dependent row the document and the links that moved. Read admits six views: `source_context`, `invariant`, `family`, `record`, `weakness` and `dependent`, with `recordId` taking any record's text ID (`INV-…`, `WKN-…`, `DPD-…`) and the mark filters `sourcePath`, `weaknessKind`, `includeClosed`, `staleOnly` and `standsOn` forwarded unread. Paging and the internal family-complete selection remain, while mounted `read_ar_files` no longer supplies a matching inline manifest or continuation. `_worktree_relative_locations` compares the requested root with configured memory checkouts: non-configured roots use memoryRoot-relative row files, configured/no-config roots use absolute files; the payload includes commit/dirtiness provenance. Both read and diff registrars now receive config: read uses workspace/cache/location mode; diff uses coordination_root for the full comparison report. `knowledge_diff` answers compared trees, change counts, bounded decision record names/count and report location, not patches. The rich comparison remains available to the dashboard reviewer. Integrity remains the converted-tree validator and persisted leaf-worklist read; change/project remain unregistered. Handler argument forwarding and record/anchor semantics remain with their domain owners; the registration's location-mode helper is real local policy, not a new dataset selector.
+
+## Current source contract evidence
+
+- The current candidate source supports the operative account — the four registrations and the mounted read's description naming both public writer commands — while the historical sections grant no current tool or execution acceptance.
+
+## Historical original card — all remaining original prose and evidence are non-operative
+
+The complete original account below, including Purpose, Commentary, invariants, dated notes and evidence captions, is retained only for custody. It grants no current callable tool, inline-text result, session deduplication, database read or execution acceptance.
+
 ## Purpose
 
-The knowledge operation family module: the one `register_knowledge_tools(server, config)` that declares its family against the server it is handed and delegates every operation to the payload builders in `agents_remember.mcp.tools.knowledge`. It is "**appended** to `TOOL_REGISTRARS`, never inserted: FastMCP publishes tools in registration order, so every existing name keeps the position it was advertised at." It declares the five operation families "spelled as ``Doc13:181-187`` spells them" — `knowledge_read`, `knowledge_change`, `knowledge_diff`, `knowledge_integrity_check` and `knowledge_project`. **It deliberately performs no domain reasoning and mounts nothing for the reviewer**: "``KS-R22@v1`` owns the Intent Reviewer, the cockpit route and the browser client. What this module publishes is the interface L22 mounts -- the five operations, the review-matrix view and the typed models behind them -- and it adds no panel, no route and no client." It also holds no state, validates nothing itself and opens no dataset; the runtime configuration supplies it exactly one thing — "the workspace root a read falls back to when the caller names no repository of its own", handed over as the **default repository** rather than as half of a source-resolution pair — while "Everything else a handler needs -- the dataset path, the namespace and the destination -- is caller-supplied, because the substrate decides nothing about which dataset or which vault is meant."
+The knowledge operation family module: the one `register_knowledge_tools(server, config)` that declares its family against the server it is handed and delegates every operation to the payload builders in `agents_remember.mcp.tools.knowledge`. It is "**appended** to `TOOL_REGISTRARS`, never inserted: FastMCP publishes tools in registration order, so every existing name keeps the position it was advertised at." **It declares four operations: `knowledge_read`, `knowledge_diff`, `knowledge_integrity_check` and `knowledge_write`,** through `_register_knowledge_read`, `_register_knowledge_diff`, `_register_knowledge_integrity_check` and `_register_knowledge_write`. **`knowledge_change` and `knowledge_project` are no longer registered**: `knowledge_write` is the write plane's mounted route and runs the same file writer as the CLI, and no projection renderer is registered. It deliberately performs no domain reasoning, holds no state, validates nothing itself and opens no dataset; the runtime configuration supplies it the workspace root a read falls back to when the caller names no repository, and the coordination root.
+
+**Historical (retired by MIK-R26).** The earlier five-operation description below — including the registrars for `knowledge_change` and `knowledge_project` and their dataset-selection routes — is retained as the record of the removed registrations; the current module's four registrars are those named above.
 
 ## Code Commentary
 
+Knowledge read/write/diff/integrity handlers resolve the existing request classes and payload builders through the lazy tools adapter at call time. No second writer or schema is introduced.
+
 ### Logic
 
-**One entry point, five private registrar functions, called in declared order.** `register_knowledge_tools(server, config)` is the family's whole public surface, and its body is the five calls `_register_knowledge_read(server, config)`, `_register_knowledge_change(server)`, `_register_knowledge_diff(server)`, `_register_knowledge_integrity_check(server)` and `_register_knowledge_project(server)` — read, then change, then diff, then integrity, then projection. Only the read registrar takes the config, because only the read operation resolves recorded source anchors against the workspace root; the other four take the server alone, which is the call shape making that boundary visible. The package docstring's rule that a family module's `_register_*` calls are never reordered applies here with the same force as `TOOL_REGISTRARS` itself.
+**One entry point, four private registrar functions, called in declared order.** `register_knowledge_tools(server, config)` is the family's whole public surface, and its body is the four calls `_register_knowledge_read(server, config)`, `_register_knowledge_diff(server)`, `_register_knowledge_integrity_check(server)` and `_register_knowledge_write(server, config)` — read, then diff, then integrity, then write. The read and write registrars take the config, because each resolves recorded source anchors and memory trees through it; the diff and integrity registrars take the server alone, which is the call shape making that boundary visible. The package docstring's rule that a family module's `_register_*` calls are never reordered applies here with the same force as `TOOL_REGISTRARS` itself.
 
-**Each handler validates its wire request, delegates, and returns the typed shape the response model declares.** Every `@server.tool()` body is one construction of a request value object from the flat keyword arguments followed by one call into `mcp/tools/knowledge.py`: `knowledge_read` builds a `ReadToolRequest`, `knowledge_change` a `ChangeToolRequest`, `knowledge_diff` a `DiffToolRequest`, and `knowledge_project` a `ProjectToolRequest`. `knowledge_integrity_check` is the one handler whose builder takes keyword arguments directly. No handler computes a classification, infers an effect label, authors a draft or judges a rationale — the module docstring says the surface "performs no domain reasoning", and the code shape is what makes that true rather than aspirational.
+**Each handler validates its wire request, delegates, and returns the typed shape the response model declares.** Every `@server.tool()` body is one construction of a request value object from the flat keyword arguments followed by one call into `mcp/tools/knowledge.py`: `knowledge_read` builds a `ReadToolRequest`, `knowledge_diff` a `DiffToolRequest`. `knowledge_integrity_check` builds an `IntegrityCheckRequest` too, since MIK-R08 (before that it was the one handler whose builder took keyword arguments directly). No handler computes a classification, infers an effect label, authors a draft or judges a rationale — the module docstring says the surface "performs no domain reasoning", and the code shape is what makes that true rather than aspirational.
 
-**The published docstrings are the operations' own contracts, and each states what it does not do.** `knowledge_read`'s docstring names the five views and states that a value that cannot be classified "is reported as an unresolved limitation rather than returned with an empty class"; its signature also carries `sourcePath`, the optional path-only seed a caller who knows just a file can present, which travels into `ReadToolRequest.source_path` and is why the five views' own front door is reachable through the published schema rather than only through a discovered revision id. `knowledge_change`'s states that "the content is never drafted and its rationale is never judged" and that the operation "adds no gate, no approval and no new authority", and since `260921-ICR-L20` it also names the write plane's ordinary route: the run commits a whole curator hand-off list through the admitted batch **and, on the curator's ordinary route, publishes that candidate to the repository's one declared published dataset location and reads the published identity back**. Since `260921-ICR-L32` it names **both** shipped CLI entry points that reach that one writer — `agents-remember knowledge-ingest` for a leaf enclosure's ordinary route and `agents-remember knowledge-bootstrap` for a repository with no enclosure in scope — which is that leaf's correction of the singular framing `ICR-R20@v1` landed when only one of them existed. The sentence was completed rather than deleted, because a model that cannot tell where the write plane is reachable will guess. `knowledge_diff`'s states that semantic effect labels "are included only when supplied by an identified agent or assessment, never inferred from the diff". `knowledge_integrity_check`'s states that "`compatible` is absent by design, not omitted by accident, and an unresolved assessment stays unresolved", and adds that "the scope selects the recorded run; `runId` or `inputDigest` selects one exact run among several in that scope, and the response names the selected run and its input identities so the conditions cannot be read as belonging to a run they were not measured over." `knowledge_project`'s states that authored explanations "are never invented or reassessed", that Markdown and JSON are sibling views and a JSON projection is not a portable export, and that an externally edited file "is reported and preserved unless the caller authorizes an overwrite for that exact path" — the surface-level spelling of the behaviour the builders and the writer enforce.
+**The published docstrings are the operations' own contracts.** `knowledge_read` names the three views, attributed records, unresolved limitations and the optional `sourcePath` seed forwarded into `ReadToolRequest.source_path`. `knowledge_diff` returns the knowledge files' Git diff with grouped patches and no inferred semantic effect label. `knowledge_integrity_check` returns the converted-tree validator's counts and bounded violations, plus a leaf's persisted change-to-knowledge worklist when `contractPath` is named. The old recorded-run selectors `runId`/`inputDigest`, dataset pair and `compatible` response field do not survive on this registered surface (MIK-R26).
 
-**The runtime configuration supplies exactly one value into this family, and it is handed over as a
-default REPOSITORY rather than as half of a resolution pair.** `_register_knowledge_read(server,
-config)` passes `repository_root=repositoryRoot` — the caller's own value, untouched, with no
-substituted default — and `workspace_root=str(config.workspace_root)` as a **separate** argument to
-`knowledge_read_payload`. The pair `(repository_root, code_tree_id)` is therefore completed inside the
-builder and not here: this module cannot hand over a root without a tree, which is exactly the shape the
-`KnowledgeReadContext` model refuses ("source resolution needs both repository_root and code_tree_id;
-supplying one without the other is an incomplete resolution request"). The old spelling defaulted the
-root to `str(config.workspace_root)` and left `code_tree_id` as the caller supplied it, so a minimal
-schema-conformant call reached the context constructor as a half-pair and raised a raw validation error
-out of the mounted tool instead of returning a view. `_register_knowledge_change`,
-`_register_knowledge_diff`, `_register_knowledge_integrity_check` and `_register_knowledge_project`
-receive no config at all, which is the structural statement that nothing else in this family is
-configured.
+**Only the read registrar consumes runtime configuration.** It forwards the caller's `repositoryRoot` unchanged and supplies `workspace_root` separately as the default repository, alongside `coordination_root` for the derived-index cache. The builder completes a source-resolution pair or names neither half; this registrar does not substitute a root without a code tree. The caller names the converted memory tree with `memoryRoot`, never `databasePath` or a caller-selected index namespace. Diff and integrity take the server alone. The removed `knowledge_change` and `knowledge_project` registrations remain historical only; their authoring route is the CLI file writer, not a refusing mounted tool.
 
-**The five operations are the interface another leaf mounts, and the reviewer surface is not here.** The review-matrix view is reachable through `knowledge_read`'s `view` argument — the module docstring's phrasing is that what this module publishes is "the five operations, the review-matrix view and the typed models behind them" — and the typed response models behind them are the strict `ToolResponse` subclasses in `models/tools/knowledge_responses.py`, registered by name in `models/tools/tool_registry.py`. The Intent Reviewer, its cockpit route and its browser client belong to `KS-R22@v1`; this module declares no FastMCP resource, no route, no panel and no client, and its only MCP effect is the five `@server.tool()` registrations.
+**The three operations are the interface another leaf mounts, and the reviewer surface is not here.** The Intent Reviewer, its cockpit route and its browser client belong to `KS-R22@v1`; this module declares no FastMCP resource, no route, no panel and no client, and its only MCP effect is the three `@server.tool()` registrations.
 
-**The registration order is part of the advertised contract, and this family is appended at the tail.** `registration/__init__.py` imports `register_knowledge_tools` and places it as the last entry of `TOOL_REGISTRARS`, after `register_capsule_and_skill_tools`, making it the fourteenth registrar; `models/tools/public_roster.py` gained the five names at its own tail, in the same read-change-diff-integrity-projection order, and `models/tools/tool_registry.py` gained the five response-model rows in the same order. The three surfaces must agree, so the family's position in the tuple, the roster's tail order and the registry's tail order are one decision recorded in three places rather than three independent choices.
+**The registration order is part of the advertised contract, and this family is appended at the tail.** The roster tail order and the registry tail order record the same decision as the handler order rather than independent choices.
 
 ### Conventions
 
-The family module follows the package door's contract exactly: one `register_*_tools(server, config)` public function, one private `_register_*` per operation, and every `@server.tool()` definition inside a private registrar — the shape `registration/__init__.py`'s docstring declares for every family module. Requests are assembled by importing the request value objects from the builders module rather than by re-declaring their fields here, so the wire argument names are spelled once in `mcp/tools/knowledge.py` and this module only maps them onto the value objects. Copies of another leaf's vocabulary are imports: `McpRuntimeConfig` comes from `kernel/primitives/runtime_config.py` and `FastMCP` from the SDK, and nothing here restates a view name list, a change-kind tuple, a refusal code or a format tuple. The five published docstrings are the contract carriers — each names what its operation returns and what it refuses to produce — and no module-level constant, `__all__` or helper exists beyond the six functions, so the file's whole surface is the family declaration itself.
+The family module follows the package door's contract exactly: one `register_*_tools(server, config)` public function, one private `_register_*` per operation, and every `@server.tool()` definition inside a private registrar — the shape `registration/__init__.py`'s docstring declares for every family module. Requests are assembled by importing the request value objects from the builders module rather than by re-declaring their fields here, so the wire argument names are spelled once in `mcp/tools/knowledge.py` and this module only maps them onto the value objects. The three published docstrings are the contract carriers — each names what its operation returns and what it refuses to produce — and no module-level constant, `__all__` or helper exists beyond the four functions, so the file's whole surface is the family declaration itself.
 
 ### Invariants And Boundaries
 
-- **The family is appended, never inserted.** `register_knowledge_tools` is the last entry of `TOOL_REGISTRARS` (the fourteenth), so no existing tool's advertised registration position moved when this family was mounted.
-- **The registration order is read, change, diff, integrity, projection.** Both the five `_register_*` calls in the entry point and the five `@server.tool()` definitions appear in that order, matching the roster tail and the registry tail.
+- **The family is appended, never inserted.** `register_knowledge_tools` is the last entry of `TOOL_REGISTRARS`, so no existing tool's advertised registration position moved when this family was mounted.
+- **The registration order is read, diff, integrity.** The three `_register_*` calls in the entry point appear in that order, matching the roster tail and the registry tail.
 - **The surface performs no domain reasoning.** Every handler validates its wire request, delegates to a payload builder and returns; no classification, effect label, draft, rationale judgement or compatibility verdict is produced here.
-- **The runtime configuration supplies exactly one value.** Only the read registrar consumes `config`, and
-  only to hand the workspace root over as the read builder's `workspace_root=` default repository; every
-  other handler takes the server alone.
+- **The runtime configuration supplies two values, and neither selects a dataset.** The read registrar hands
+  the workspace root over as the read builder's `workspace_root=` default repository and the coordination root over as `coordination_root=`, the cache location for a
+  converted memory tree's derived index. The diff and integrity registrars take the server alone.
 - **A source-resolution pair never leaves this module half-named.** `repositoryRoot` is forwarded exactly
   as the caller supplied it — `None` stays `None` — and the workspace default travels beside it as a
   separate argument, so the read builder is the one place that decides whether a rooted pair can be
   named at all. A context carrying a root without a tree is refused by its own model, so defaulting the
   root here would turn a minimal read into a raised validation error rather than a view.
-- **The integrity check publishes the exact-input selector, and the handler passes it straight through.**
-  `runId` and `inputDigest` are two optional keyword-only wire arguments forwarded unchanged to
-  `knowledge_integrity_check_payload`; the registrar neither validates nor defaults them, and the
-  response's five run fields are the builder's answer rather than anything assembled here.
+- **The integrity inputs identify trees and comparison bases, not a recorded run.** `memoryRoot`, `codeRoot`, `baseCommits` and `contractPath` are forwarded into `IntegrityCheckRequest`; the list of bases becomes a tuple when supplied.
+- **A leaf contract adds its latest persisted worklist (MIK-R08 rule 7).** The response reports state, digest, counts, items and the persisted path. Alternatively the caller names the memory tree and paired code checkout directly. Input-combination refusals belong to the builder, not this registrar.
 - **Nothing for the reviewer is mounted.** No resource, route, panel or client is declared; the reviewer surface belongs to `KS-R22@v1`, and what this module publishes is the interface that leaf mounts.
 - **No state, no validation and no I/O.** The module holds no module-level mutable value, opens no dataset and reads no file; every operation's work happens inside the builder it calls.
-- **The default dataset, namespace and destination are always caller-supplied.** No handler falls back to a configured dataset path, repository id or destination root — only the anchor-resolution root has a configured fallback.
+- **The memory tree is caller-supplied and the index namespace is server-supplied.** No registered tool accepts a database path or authoring destination; the anchor-resolution repository has a workspace fallback, and the coordination root holds only the derived-index cache.
 - **The read signature's seed is passed through, never interpreted.** `sourcePath` is one optional wire argument forwarded as `source_path` into `ReadToolRequest`; the registrar neither validates it nor defaults it, so what a seed means — and the `PathSeed` rule that decides whether it is a usable one — stays in the models layer where the write path already spells it.
 
-## Docs References
+## 260928-MIK-L05 The Read Docstring Names The Route-Chain Rows And The Family Seed
+
+`knowledge_read`'s published docstring now continues the leaf-read sentence (MIK-R05): after the advertised
+families come one compact `chain_family` row per family routed at the path's directory or an ancestor, with
+`payload.routeChain` stating the chain (`no_governing_family` when none). It also names the family seed:
+`source_context` with a family ID in `familyRevisionId` and no `sourcePath` returns that family's full content
+(ruling Q1, 2026-09-30 03:32:18). No argument changed: the family seed reuses the existing `familyRevisionId`
+argument, and the registrar still forwards it without interpreting it.
+
+
+
+
+## 260928-MIK-L01 The Read Docstring Names The Family-Complete Leaf Read
+
+`knowledge_read`'s published docstring now states that, on a converted tree, `source_context` with
+`sourcePath` is the family-complete leaf read (MIK-R01): the path's own invariants, then each containing
+family's header (guarantee, routes, members) and its remaining members with their entries, then the
+advertised families -- the same selection and `manifestDigest` `read_ar_files` returns (rule 6). It also says
+the `invariant` view names the invariant's families in `families` (rule 7). No argument changed: the leaf read
+takes `sourcePath` and `continuation`, and a non-default `orderingInput` on a fresh leaf read is refused by
+the tree read (ruling Q7, 2026-09-29 23:21:57).
+
+
+
+
+## 260928-MIK-L08 The Integrity Check Takes A Leaf's Contract
+
+
+- The integrity handler names a leaf contract or an explicit memory/code tree with comparison bases, forwards one IntegrityCheckRequest, and returns the validator report and persisted leaf worklist; no database pair or recorded-run selector survives.
+
+
+
+- The builder that decides the accepted combinations.
+
+
+
+## 260928-MIK-L03 The Read Docstring Names `currentness`
+
+`knowledge_read`'s published docstring gained one sentence: for a converted memory tree, `currentness` gives
+each returned invariant's state (stale, unverifiable, unrealized, current) at the code tree named by
+`codeTreeId`; without it they are unverifiable. Since MIK-R02 the sentence says the walk's code tree: the
+one named by `codeTreeId`, or the continuation's on a resumed page. The input schema is unchanged. The registrar still passes
+the caller's `repositoryRoot` untouched and the workspace root separately, which is what lets
+`requested_code_tree` treat a `repositoryRoot` alone as no request (architect ruling 2, 2026-09-29T18:42:37).
+
+
+
+
+
+- Only a named tree ID (or the continuation's) is the walk's code tree; `HEAD` is never used.
+
+
+
+## 260928-MIK-L02 The Read Docstring Names The Page, The Threshold And The Continuation
+
+`knowledge_read`'s published docstring now states, for a converted memory tree (`memoryRoot` is its
+root), that every response is a page within one token threshold (`page`, and `threshold` on a refusal),
+that `continuation` accepts the token any page minted, including the published-intent block of
+`read_ar_files` (pass it with its `continuationView` as `view` and no other subject; the token binds its
+ordering and code tree; `repositoryRoot` relocates the code repository), and that `currentness` is taken at
+the walk's code tree: the one named by `codeTreeId`, or the continuation's on a resumed page.
+
+- **`orderingInput` now defaults to `None`** (published default `null`), and the docstring says it defaults
+  to `stable_ordering`. The effective behaviour is unchanged; "not supplied" is what lets a resumed walk keep
+  its own ordering, and an empty string is still refused `unadmitted_ordering_input` (architect rulings Q5 of
+  2026-09-29 19:56:40 and F1 of 20:40:40).
+- The registrar still passes `workspace_root` separately, and the converted-tree read uses it as the object
+  store when the caller names no `repositoryRoot` (ruling F4, 20:40:40).
+
+
+
+
+- The ordering argument that is `None` unless the caller names one.
+
+
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The family module's own statement of its scope — appended rather than inserted, the five operation families in the design's spelling, no domain reasoning and nothing mounted for the reviewer — together with the one entry point whose five `_register_*` calls are made in the declared read, change, diff, integrity, projection order. | `register_knowledge_tools`; `TOOL_REGISTRARS` | mcp/src/agents_remember/mcp/registration/knowledge.py:1-23; mcp/src/agents_remember/mcp/registration/knowledge.py:44-61 |
-| The statement that the runtime configuration supplies exactly one thing to this family — the workspace root a read falls back to as a **default repository**, never half of a resolution pair — and the configuration type whose `workspace_root` is that value. | `workspace_root`; `McpRuntimeConfig` | mcp/src/agents_remember/mcp/registration/knowledge.py:45-55; mcp/src/agents_remember/kernel/primitives/runtime_config.py:128-135 |
-| The five registered handlers: the read registrar that forwards the caller's own root and the configured workspace root as two separate arguments, and the four registrars that take the server alone because nothing else in this family is configured. | `_register_knowledge_read`; `_register_knowledge_change`; `_register_knowledge_diff`; `_register_knowledge_integrity_check`; `_register_knowledge_project` | mcp/src/agents_remember/mcp/registration/knowledge.py:64-103; mcp/src/agents_remember/mcp/registration/knowledge.py:106-135; mcp/src/agents_remember/mcp/registration/knowledge.py:138-160; mcp/src/agents_remember/mcp/registration/knowledge.py:163-188; mcp/src/agents_remember/mcp/registration/knowledge.py:191-221 |
-| The published read contract: the five views, the attributed records, the rule that an unclassifiable value is an unresolved limitation rather than an empty class, and the optional `sourcePath` seed the signature carries into `ReadToolRequest.source_path`. | `knowledge_read`; `sourcePath`; `source_path` | mcp/src/agents_remember/mcp/registration/knowledge.py:67-103; mcp/src/agents_remember/mcp/registration/knowledge.py:77-77; mcp/src/agents_remember/mcp/registration/knowledge.py:98-98 |
-| The family entry point as the package door's contract requires it: one `register_*_tools(server, config)` public function for this family, delegating to the payload builders. | `register_knowledge_tools` | mcp/src/agents_remember/mcp/registration/knowledge.py:44-61 |
-| The record registrar, whose docstring states that the content is never drafted, the rationale never judged, and no gate, approval or new authority added — and, since `260921-ICR-L20`, names the write plane's ordinary route and its read-back. | `_register_knowledge_change`; `knowledge_change`; "publishes that candidate to the repository's one declared published dataset location" | mcp/src/agents_remember/mcp/registration/knowledge.py:106-135 |
-| The comparison registrar, whose docstring states that semantic effect labels are included only when an identified source supplied them. | `_register_knowledge_diff`; `knowledge_diff` | mcp/src/agents_remember/mcp/registration/knowledge.py:138-160 |
-| The report registrar, whose docstring records that `compatible` is absent by design rather than by accident, that an unresolved assessment stays unresolved, and that `runId`/`inputDigest` select one exact run among several in the selected scope. | `_register_knowledge_integrity_check`; `knowledge_integrity_check`; `runId`; `inputDigest`; "absent by design, not" | mcp/src/agents_remember/mcp/registration/knowledge.py:163-188 |
-| The projection registrar, whose docstring records sibling Markdown and JSON views, the non-export JSON projection, and the externally edited file that is preserved unless its exact path is authorized. | `_register_knowledge_project`; `knowledge_project` | mcp/src/agents_remember/mcp/registration/knowledge.py:191-221 |
-| The request value objects and payload builders this module delegates to, imported rather than re-declared here. | `knowledge_read_payload`; `ReadToolRequest` | mcp/src/agents_remember/mcp/registration/knowledge.py:31-41 |
-| The registry the family is appended to, where the import and the fourteenth tuple entry are the family's whole integration, and the live-registration test that compares the resulting order against the advertised roster. | `TOOL_REGISTRARS`; `register_knowledge_tools`; `test_live_registration_matches_the_public_inventory_in_order` | mcp/src/agents_remember/mcp/registration/__init__.py:27-27; mcp/src/agents_remember/mcp/registration/__init__.py:38-53; mcp/tests/test_tools.py:235-245 |
-| The five advertised names this registrar publishes, appended at the roster tail in the same order the handlers are registered in. | `knowledge_read`; `knowledge_integrity_check` | mcp/src/agents_remember/models/tools/public_roster.py:91-96 |
-| The five response-model rows that validate these operations' payloads, added at the registry's own tail. | `knowledge_read`; `knowledge_project` | mcp/src/agents_remember/models/tools/tool_registry.py:248-252 |
-| The strict response types behind the five operations, including the read payload travelling as the view payload's own JSON and `compatible` typed `None`. | `KnowledgeReadResponse`; `KnowledgeIntegrityCheckResponse`; `compatible: None = None` | mcp/src/agents_remember/models/tools/knowledge_responses.py:35-52; mcp/src/agents_remember/models/tools/knowledge_responses.py:85-115 |
-| The review-matrix view this module makes reachable through the read operation's view argument, defined where the view payloads live rather than here. | `ReviewMatrixView` | mcp/src/agents_remember/models/knowledge/view.py:796-800; mcp/src/agents_remember/application/knowledge_views.py:58-58; mcp/src/agents_remember/application/knowledge_views.py:281-281; mcp/src/agents_remember/models/knowledge/view.py:956-956; mcp/src/agents_remember/models/knowledge/view.py:956-960 |
-| The test that pins the advertised roster to the response-model registry, so the five names and their models cannot drift apart. | `test_every_public_tool_has_a_schema_generating_response_model` | mcp/tests/test_models.py:46-61 |
-| The test that pins the advertised roster to the response-model registry, so the five names and their models cannot drift apart. | `test_every_public_tool_has_a_schema_generating_response_model`; "def test_every_public_tool_has_a_schema_generating_response_model(" | mcp/tests/test_models.py:47-61 |
 
-## Cross-Repo References
 
-No cross-repository behavior is implemented in this file. It declares one tool family against the MCP server instance it is handed, and every operation it publishes addresses a caller-supplied dataset, namespace or destination through payload builders that live in this repository.
+- The family module's own statement of its scope — appended rather than inserted, the three operations in the design's spelling, no domain reasoning and nothing mounted for the reviewer — together with the one entry point whose four `_register_*` calls are made in the read, diff, integrity, write order. [9]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
 
-## Update History
-- 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **body update — the registrar's docstring now names both shipped entry points.** The published-contract paragraph records that `knowledge_change` names one writer reached by **both** CLI entry points since `260921-ICR-L32`, that the singular form was true when `ICR-R20@v1` landed it, and that the sentence was completed rather than shortened. The citation rows this leaf's own edit moved were re-derived from their own finding messages rather than by a remembered delta, and the legacy mechanical-projection bullets on this card were retired with that re-reading as their disposition. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-21T18:09+02:00 — 260921-ICR-L20 curator (uncommitted change set on `ar/260921-icr-l20`, production line `71a4433e686b3380af97a0836bb82bab2c8f2aad`): **the mounted refusal now names the ordinary publication as well as the writer, which is the whole of this leaf's change to this module.** `knowledge_change`'s published docstring said the write plane's reachable entry point is the `agents-remember knowledge-ingest` subcommand that "commits a whole curator hand-off list through the admitted batch"; since `ICR-R20@v1` it also states that, **on the curator's ordinary route, that run publishes the candidate to the repository's one declared published dataset location and reads the published identity back**. The refusal itself is unchanged — every record kind is still refused with `registration_absent` and nothing is written — and the change is five lines of docstring inside `_register_knowledge_change`. **Citation accounting:** the file is 220 → **221** lines, so every range this card carries into it that begins at or after the insertion was re-derived rather than shifted: the five-handler row `:106-134; :137-159; :162-187; :190-220` → `:106-135; :138-160; :163-188; :191-221`, and the record, comparison, report and projection rows with them. `register_knowledge_tools` `:44-61` and the read registrar `:64-103` are above the insertion and were re-verified rather than assumed. **Stamp accounting:** the recorded working candidate names this leaf's candidate on production line `71a4433e686b3380af97a0836bb82bab2c8f2aad`, which is the line this reading was performed against; the `lastVerifiedCommitHash`/`lastVerifiedCommitDate` pair is retained exactly as recorded and no stamp was advanced, because no commit contains the body as it now stands. No commit was made.
-- 2026-09-20T05:34+02:00 — 260915-KS-L41 curator (uncommitted change set on `ar/260915-ks-l41-ar`, code base `756c47b3` at this leaf's cut and `f79f4db745ad00b908d6ce4871d0b4ab2320207c` after the L39 sync, memory base `da33325c` at the cut and `37d0787571bfbf92890049ee0614fa159012be39` after it): **body update for the two mount-side changes this leaf makes.** (a) The workspace root is no longer pushed onto a caller who named no repository. `_register_knowledge_read` (`mcp/registration/knowledge.py:64-103`) now forwards `repository_root=repositoryRoot` exactly as the caller supplied it and hands `workspace_root=str(config.workspace_root)` over as a **separate** argument, so the read builder is the one place that decides whether a rooted pair can be named at all; the old spelling defaulted the root and left `code_tree_id` as supplied, which is the half-pair `KnowledgeReadContext` refuses, so a minimal schema-conformant call raised a raw validation error instead of returning a view. The Purpose quotation, the configuration paragraph and a new invariant state that, and the handler table, read-contract, entry-point, record, comparison and projection rows were re-read against this candidate rather than shifted. (b) `knowledge_integrity_check` (`:162-187`) publishes two new keyword-only wire arguments, `runId` and `inputDigest`, forwarded unchanged to the payload builder, and its published docstring now states that the scope selects the recorded run while those two bind one exact run among several in it; the report row and a new invariant say so. `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are retained as recorded — the candidate is uncommitted and the governed closeout owns the real stamp — the superseded `ar/260915-ks-l30-ar` candidate row is replaced by the recorded working candidate above, and no stamp was advanced or invented.
-- 2026-09-20T02:12+02:00 — 260915-KS-L32 memory-side conflict resolution (uncommitted; this worktree, code base `7dcec036`, merged tree = L30's landed `7ca3ac48` plus this leaf's four modified paths): **resolved the roster-pinning row and the Update History block.** The row cites `mcp/tests/test_models.py`, modified by neither leaf, so upstream's range `47-61` — the surviving case's own declaration span, read at its `def` line in the code worktree — was kept, and both sides' anchor renames to that same surviving case were kept (`test_every_public_tool_has_a_schema_generating_response_model` and the quoted `def …(` line); the dead `test_every_public_tool_has_a_response_model` both sides replaced stays replaced. Update History is the union of both sides, newest first. No claim was re-worded, no anchor, row or citation dropped, and no verification stamp advanced.
-- 2026-09-20T01:28+02:00 — 260915-KS-L30 curator (uncommitted change set on `ar/260915-ks-l30-ar`, base `7dcec036094768c5f50e571fb45e59a27ae78efc`): **cleared the last two citation rows of this card — one dead anchor and the reopened claim that names it (one row).** The roster-pinning row named `test_every_public_tool_has_a_response_model`, which exists nowhere in the tree; the surviving construct states the consolidation in its own docstring — `test_every_public_tool_has_a_schema_generating_response_model` (mcp/tests/test_models.py:47) reads "One subject, two halves: the registry is total, and every model it names is usable. These were two cases and are one: both iterate the same registry over the same set, and neither can be true while the other is false." The Anchor cell now names that case, and its range is the declaration's own span `47-61`, replacing the stale `16-18`. The Finding text is unchanged and no citation was dropped. Re-read against the candidate, the claim's wording **holds as written**: the case still pins the advertised roster to the response-model registry (`set(PUBLIC_TOOLS) == set(PUBLIC_TOOL_RESPONSE_MODELS)`), so exactly the drift the row describes is still prevented. **Stamp accounting:** the stale `lastVerifiedCommitHash`/`lastVerifiedCommitDate` rows (and the L20-era recorded working candidate beside them) were replaced by ONE recorded working candidate naming this candidate, because no commit contains the body as it now stands and no stamp was measured on it.
-- 2026-09-20T00:46:52+02:00 — 260915-KS-L32 curator (uncommitted change set on `ar/260915-ks-l32-ar`, code base `7dcec036`, memory base `66b2ae8a`): **body update for the read signature's new seed, and the citation this leaf's edit moved.** `knowledge_read` now publishes `sourcePath`, forwarded as `ReadToolRequest.source_path`, so a path-only seed reaches path → invariant → family through the published schema; the published-contract paragraph and a new invariant state that this registrar passes the seed through and never interprets it, leaving the `PathSeed` rule where the write path already spells it. The published-read-contract row's source moved from `63-82` to `64-87` (the signature gained one optional keyword) with the seed's own argument and forwarding cells added at `74-74` and `94-94`. Separately, and **not** caused by this leaf: the roster-pinning row still named `test_every_public_tool_has_a_response_model`, which no longer exists anywhere in the tree — the case was merged at `7dcec036` (260915-KS-L29) with `test_every_public_tool_response_model_generates_json_schema` into `test_every_public_tool_has_a_schema_generating_response_model`, whose docstring records the consolidation and which still asserts `set(PUBLIC_TOOLS) == set(PUBLIC_TOOL_RESPONSE_MODELS)` over every registered model's schema. The claim's protection is intact and its wording is kept; only the anchor, now the merged case's quoted `def` line, and its range `46-61` were repointed. The five registrar rows and the published-read-contract row were repointed by the same `+8` shift this document's own change caused: the handler table from `60-98; 101-123; 126-148; 151-168; 171-201` to `60-101; 103-132; 134-157; 159-176; 179-209`, the read contract from `64-87` to `64-101`, the record registrar from `101-123` to `103-132`, the comparison registrar from `126-148` to `134-157`, the report registrar from `151-168` to `159-176` (so `"absent by design, not"`, carried at 169-171, is inside it) and the projection registrar from `171-201` to `179-209`. No claim was re-worded to fit a stale pointer, no anchor or range was dropped to silence a row, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-19T22:40+02:00 — 260918-TSIP-L11 curator (memory worktree `fd1a024e`, code `7879f5b2`): **re-read each claim below against the construct its range now covers, corrected the wording where the construct had moved, re-derived every range from the construct's real extent in the file the claim cites, and only then left the card's stamp to closeout.** No `Generated citation repair` bullet is written: these are curator edits, not a mechanical projection. `knowledge.py.md:79` — re-read: the test was consolidated into `test_every_public_tool_has_a_schema_generating_response_model`, whose docstring says 'One subject, two halves: the registry is total, and every model it names is usable. These were two cases and are one'. That is exactly the claim's subject, so the wording is retained and only the name and range are re-derived.
-- 2026-09-18T15:30+02:00 — 260915-KS-L20 curator (uncommitted change set on `ar/260915-ks-l20`, base `9f88a6de`): created this one-to-one card for the knowledge operation family module. It records that `register_knowledge_tools(server, config)` is appended to `TOOL_REGISTRARS` as the fourteenth entry and never inserted, because FastMCP publishes in registration order and every existing name keeps its advertised position; that the five operation families are spelled as the design spells them and registered read, change, diff, integrity, projection; that the surface performs no domain reasoning and each handler validates, delegates and returns; and that the runtime configuration supplies exactly one thing — the workspace root a read resolves recorded source anchors against. The reviewer surface is stated as a deliberate absence: what this module publishes is the interface another leaf mounts (five operations, the review-matrix view and the typed models behind them), and it adds no panel, no route and no client. This card carries **no `lastVerifiedCommitHash`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. What was actually read is this leaf's uncommitted working tree, and closeout owns the stamp once the code commit exists.
+
+
+- The statement of what the runtime configuration supplies to this family — the workspace root a read falls back to as a **default repository**, never half of a resolution pair, and the coordination root under which a converted memory tree's derived index is cached — and the configuration type whose `workspace_root` is the first value. [10]
+
+
+
+
+- The four registered handlers: the read registrar that forwards the caller's own root and the configured workspace root as two separate arguments plus the configured coordination root, the write and diff registrars that take the configuration beside the server, and the integrity registrar that takes the server alone. [11]
+
+
+
+
+- The published read contract: the named views with their filters, rows that name ID, kind, state and location and never text, and the optional `sourcePath` seed the signature carries into `ReadToolRequest.source_path`. [12]
+
+
+
+
+- The family entry point as the package door's contract requires it: one `register_*_tools(server, config)` public function for this family, delegating to the payload builders. [13]
+
+
+
+
+- The comparison registrar and handler return the knowledge files' Git diff, grouped by record and source path, without inferring a semantic effect label. [14]
+
+
+
+- The integrity registrar and handler report validator counts and violations and add a leaf's latest worklist when contractPath is named; runId, inputDigest and compatible are not fields of the current registered contract. [15]
+
+
+
+- The request value objects and payload builders this module delegates to, imported rather than re-declared here. [16]
+
+
+
+
+- The registry the family is appended to, where the import and the tail tuple entry are the family's whole integration, and the live-registration test that compares the resulting order against the advertised roster. [17]
+
+
+
+- The three advertised names this registrar publishes, appended at the roster tail in the same order the handlers are registered in. [18]
+
+
+- The three response-model rows that validate these operations' payloads, added at the registry's own tail. [19]
+
+
+
+- The strict response classes preserve the read view's payload, the diff's file changes and the validator's report/worklist as distinct responsibilities; the current integrity response has no compatible field. [20]
+
+
+
+### Cross-Repo References
+
+No cross-repository behavior is implemented in this file. It declares one tool family against the MCP server instance it is handed; every operation addresses a caller-supplied memory tree through this repository's payload builders, with no mounted authoring destination.
+
+No meaningful cross-repo references found.
+
+- Knowledge read/write/diff/integrity handlers resolve the existing request classes and payload builders through the lazy tools adapter at call time. No second writer or schema is introduced. [22]

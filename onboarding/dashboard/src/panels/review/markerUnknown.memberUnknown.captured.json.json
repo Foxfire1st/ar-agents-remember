@@ -1,0 +1,25 @@
+{
+  "path": "dashboard/src/panels/review/markerUnknown.memberUnknown.captured.json",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "5": {
+      "note": "This retained fixture has an unreadable after-family scope, a partial/unavailable family context and unavailable judgment history while selected invariant source remains readable. Its failed family read is not a measured zero and does not supply a missing member row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0fc8b02560687db018baef2f7f15547f059f059",
+            "content": "sha256:148d449793c715a723d088e9568c34e29d352603d3b1ab0f099f31a67d657263",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

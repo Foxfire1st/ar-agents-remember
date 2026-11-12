@@ -1,0 +1,23 @@
+{
+  "path": "dashboard/src/cockpit/roleChatScopes.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "useRoleChatScopes is a current owner of the behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "542e4d9c62657dc3ce02f6e9361b0ff0a053cab6",
+            "content": "sha256:dced414c7a01bd974e244f2103164520f91d54745569bb6992f1613a816ae0d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "useRoleChatScopes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

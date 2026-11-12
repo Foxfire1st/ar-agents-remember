@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Verifying reached artifact before replay prevents altered file or report link substituting another first assignment."
+  },
+  "applicability": "Unresolved saved launch with receipt and artifact reference.",
+  "conditions": [
+    "Every refusal is decided before either file is written, so a refused retry leaves both as they were."
+  ],
+  "exclusions": [
+    "A new compilation or request is not an answer to this saved unresolved launch.",
+    "Successor and step-up starts compile a new hand-over and write new files."
+  ],
+  "id": "INV-87JRHY",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "HandoverArtifactOnTheRouteTests::test_a_retry_over_a_changed_or_lost_artifact_says_and_does_what_gets_it_through; HandoverArtifactOnTheRouteTests::test_the_handover_artifact_is_written_once_and_a_repeat_reuses_or_refuses_it; l5-verify3/evidence/05-f14-leaf-route.txt, 06-f14-taskless-route.txt, 17-worker1-retry-compare.txt; l5-run/evidence/r2/05-retry-texts-through-the-route.txt"
+      ],
+      "path": "notes/curation/261005-MIK-PNT-curator-handoff.json"
+    },
+    "handoffEntry": "PNT-R04@v1 §5 (retry) / A10 / F14",
+    "leaf": "260928-MIK-L90",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "A saved first message is sent only after both of its files were checked: files that hold the saved text are left untouched, a lost file is written again from the receipt's own text alone (read-only, and only at the place its reference's own path leads to), and a changed file, a saved text that does not match its reference, a saved message that does not name the recorded complete hand-over, or a path that no longer leads to the recorded file refuses the retry with a refusal that says what to put right, with receipt and files untouched. A receipt that records no complete hand-over is restored by the text file's rules alone.",
+  "status": "proposed",
+  "supersedes": []
+}

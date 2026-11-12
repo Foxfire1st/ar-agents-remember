@@ -1,0 +1,81 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Computing in the dashboard's interpreter was built and measured before it was rejected, and every later change to the leaf-wide view has to keep the computation out of the serving interpreter and without a fallback into it."
+  },
+  "alternatives": [
+    {
+      "option": "Compute the leaf-wide worklist in a child process that the dashboard starts with its own interpreter and package, and hand it the trees the comparison already captured.",
+      "reason": "The developer chose the process split (D42: the heavy leaf-wide worklist runs in its own process). The child's Python work does not hold the dashboard's interpreter lock, and the prototype met the click limits with identical answers.",
+      "status": "chosen"
+    },
+    {
+      "option": "Keep computing the worklist in the dashboard's interpreter, as the first candidate of leaf L40 did.",
+      "reason": "It missed both click limits during the first computation, 1.89 to 1.94 s against 1.6 s and 2.08 to 2.42 s against 2.0 s, because the computation and the subject reads share one interpreter lock.",
+      "reconsider_when": "The worklist computation does not hold the interpreter lock against subject reads any more, for example on an interpreter without a global lock, and subject reads meet their limits while a first computation runs in the dashboard's process.",
+      "status": "rejected"
+    },
+    {
+      "option": "Fall back to computing the worklist in the dashboard's interpreter when the child cannot be started or its import fails.",
+      "reason": "The requirement names it as non-conforming: a failed start is an explicit launch error, the computation is never retried in process and never switched to another source, and no failure produces a successful answer.",
+      "reconsider_when": "A ruling asks that a leaf-wide view is still answered when the child cannot start, and waives the click limits for that case.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "A miss of the view memo starts a child; a hit starts none.",
+    "A miss whose newly started child cannot use, or differs from, the dashboard's selected boot build refuses with the request to restart the dashboard; a warm hit returns before that check, and a reinstall of identical build bytes need not mismatch.",
+    "A failure of the child is a refusal on the route's failure channel and is never stored."
+  ],
+  "context": "The first computation of a leaf-wide view parsed both knowledge trees in the dashboard's interpreter, where it shares the interpreter lock with subject reads. On the first candidate of leaf L40 a click during that computation took 1.89 to 1.94 s on a leaf with one or two changed files against a limit of 1.6 s, and 2.08 to 2.42 s on a leaf of L37's size against 2.0 s. A child-process prototype answered in 0.62 to 0.75 s with byte-identical bodies.",
+  "decider": "developer (260928-MIK DEVELOPER-DIRECTION D42: \"option 2 also. lets try to get a good performance\"; kept for run 2 by ruling 3 of notes/ARCHITECT-RUN-2.md under D47)",
+  "id": "DEC-RV56BS",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-19P897"
+    },
+    {
+      "relation": "explains",
+      "target": {
+        "blob": "a555e9a9abeaf5f9e28273ddd2ac14cec79ec9f9",
+        "content": "sha256:1ad06e7f20e4fbdc84b6fe8e84ce1f2b7beba27e1901f6a6e7e5271933be7746",
+        "locator": {
+          "kind": "symbol",
+          "name": "_launch"
+        },
+        "path": "mcp/src/agents_remember/kernel/reviewer_worklist_process.py"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "id": "MIK-R42",
+        "packet": "requirements/MIK-R42-v2-isolated-reviewer-worklist-computation.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v2"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "DEVELOPER-DIRECTION D42 (2026-10-02) and D47 (2026-10-04); requirements/MIK-R42-v2-isolated-reviewer-worklist-computation.md Problem and rules 1, 2 and 4"
+      ],
+      "path": "notes/reports/260928-MIK-L42-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "RULING-D42-process-split",
+    "leaf": "260928-MIK-L42",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

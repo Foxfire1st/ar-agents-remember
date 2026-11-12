@@ -1,14 +1,26 @@
 # mcp/src/agents_remember/mcp/registration/lifecycle.py
 
-| Field                  | Value                                                        |
-| ---------------------- | ------------------------------------------------------------ |
-| repository             | agents-remember                                               |
-| path                   | `mcp/src/agents_remember/mcp/registration/lifecycle.py`       |
-| doc_type               | `file-level-onboarding`                                       |
-| lastUpdated            | 2026-07-31T15:31+02:00                                        |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                    |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
-| governingOverview      | `overview.md`                                                 |
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- Assigned source is deleted and its registrar is removed.
+
+### Superseded inventory
+
+- Pre-repair card claim: Card says register_lifecycle_tools declares six public lifecycle signals. This is superseded archival wording, not a current prescription.
+
+### Source and authority bounds
+
+- Source comparison: `mcp/src/agents_remember/mcp/registration/lifecycle.py:absent (git diff HEAD: deleted file)`.
+- Source comparison: `mcp/src/agents_remember/mcp/registration/__init__.py:33 (TOOL_REGISTRARS:)`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
 
 ## Governing Overview
 
@@ -51,17 +63,8 @@ question is resolved. `lifecycle_end(outcome)` takes `completed` (the human decl
   ambient-state behaviour lives in `mcp/tools/lifecycle.py` and the observer ambient.
 - No lifecycle id is ever exposed to the model on this surface.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
+### Repo-Internal References
 
-## Update History
-- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-04T13:00:51+02:00 — 260731-EFA-L6 S18-B11 curator: reconciled the frozen-source ledger, split ambient lifecycle and response-tail ownership, and supplied scoped fixer input for generated ranges. Verification metadata unchanged.
-
-- 2026-07-31T15:31+02:00 — 260731-EFA-L2 curator: created with the package. The six lifecycle
-  declarations moved out of `server.py`; the registrar takes `_config` unused, by design, to keep the
-  uniform registrar signature. Verification metadata pinned to the pre-change commit until closeout
-  stamps the L2 code commit.
+</details>

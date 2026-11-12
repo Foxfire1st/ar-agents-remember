@@ -1,0 +1,340 @@
+{
+  "path": "mcp/src/agents_remember/models/tools/tool_answer.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+        "content": "sha256:cc62b700fb11a48a3b0b1adf6196bf409d6ac82aded0d52d74a25a436b7840fc",
+        "locator": {
+          "kind": "symbol",
+          "name": "truncate_lists"
+        }
+      },
+      "id": "RLZ-4TBAXX",
+      "invariant": "INV-B7J1PZ",
+      "origin": {
+        "handoffEntry": "MIK-R108@v1 §2 envelope",
+        "leaf": "260928-MIK-L108"
+      },
+      "rationale": "truncate_lists applies the common twenty-entry cap recursively through retained list items as well as mappings.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+        "content": "sha256:08eff577329ef1b462a5cca5cccfc934ef341470b6f6da717523d618ae3571fc",
+        "locator": {
+          "kind": "symbol",
+          "name": "strip_envelope"
+        }
+      },
+      "id": "RLZ-8AR50R",
+      "invariant": "INV-B7J1PZ",
+      "origin": {
+        "handoffEntry": "MIK-R108@v1 §2 envelope",
+        "leaf": "260928-MIK-L108"
+      },
+      "rationale": "strip_envelope removes exactly the envelope fields on all paths through the choke.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+        "content": "sha256:28f0991ce10bdda3b9e5662782fac693640e4fd9d9be5448dcdc27c6aeb9cb13",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-ASGW6W",
+      "invariant": "INV-Q7KYQH",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §8 reference-note-revision",
+        "leaf": "260928-MIK-L191"
+      },
+      "rationale": "Lets the answer state the refusal in the shared tool-answer shape instead of a private error string.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+        "content": "sha256:dba96b8c08af914511729e5126b08cd46a0f5a6b454fceb6d5edc330361a2f0e",
+        "locator": {
+          "kind": "symbol",
+          "name": "short_form"
+        }
+      },
+      "id": "RLZ-DS4GQG",
+      "invariant": "INV-QN78E9",
+      "origin": {
+        "handoffEntry": "MIK-R108@v1 §4 overflow-400",
+        "leaf": "260928-MIK-L108"
+      },
+      "rationale": "short_form builds the measured 400-token short form the guard delivers for every over-bound answer.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+        "content": "sha256:0c62c6e66b6c2221581f305c6b13a1ad415712f4221e4a0f70bca68bbd907758",
+        "locator": {
+          "kind": "symbol",
+          "name": "is_valid_tool_code"
+        }
+      },
+      "id": "RLZ-PZRP42",
+      "invariant": "INV-GWG9HD",
+      "origin": {
+        "handoffEntry": "MIK-R108@v1 §4 code-120",
+        "leaf": "260928-MIK-L108"
+      },
+      "rationale": "is_valid_tool_code owns code validity for answers and rows alike, so one predicate rejects over-long or non-identifier codes everywhere.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+        "content": "sha256:b8d99303481809c049f573d0bee3c0f80dbe790543257fbc06276db6d40cbc14",
+        "locator": {
+          "kind": "symbol",
+          "name": "_fit_location"
+        }
+      },
+      "id": "RLZ-SQVNSG",
+      "invariant": "INV-SYBT3F",
+      "origin": {
+        "handoffEntry": "MIK-R108@v1 §4 location-omitted",
+        "leaf": "260928-MIK-L108"
+      },
+      "rationale": "_fit_location decides the location sentence for the measured short form, so omission is composed with the whole it locates.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+        "content": "sha256:8061f6fe7812b5ab10b00cd8e4e8b8bfb476711f345649512273cc4291852368",
+        "locator": {
+          "kind": "symbol",
+          "name": "_fit_error"
+        }
+      },
+      "id": "RLZ-SVSZ9P",
+      "invariant": "INV-0VAC47",
+      "origin": {
+        "handoffEntry": "MIK-R108@v1 §4 error-cut",
+        "leaf": "260928-MIK-L108"
+      },
+      "rationale": "`_fit_error` owns the error trimming wherever a short form is built: it cuts a string error to TOOL_ANSWER_ERROR_MAX_CHARS (600) characters and marks `errorCut`, and when the measured form is still above TOOL_ANSWER_OVERFLOW_MAX_TOKENS (400) it shrinks the error from its end by binary search until the form fits.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+        "content": "sha256:d27c374ab2475cbc6f9c16cd6eead51a38511940a00549bef8cee6d5497d260c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_fixed_short_part"
+        }
+      },
+      "id": "RLZ-ZQJY2P",
+      "invariant": "INV-CQSY2Z",
+      "origin": {
+        "handoffEntry": "MIK-R108@v1 §4 fixed-250",
+        "leaf": "260928-MIK-L108"
+      },
+      "rationale": "_fixed_short_part owns the fixed overflow sentences, so the 250 fixed reserve is measured in one place for every short form.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The choke strips the four envelope fields from every answer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+            "content": "sha256:08eff577329ef1b462a5cca5cccfc934ef341470b6f6da717523d618ae3571fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "strip_envelope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "explainer_control is attributed to L183 in the retained interim answer vocabulary; its source comment says it stands interim until its leaf lands. Existing tool limits are unchanged. Anchor: `INTERIM_TOOL_LEAF`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+            "content": "sha256:33e4ed2d3861fd039a9f96d63057667271d5c333e3cbda21457c31bf87a263fe",
+            "locator": {
+              "end": 225,
+              "kind": "line_range",
+              "start": 195
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The fixed short part carries `ok`, a checked `code` and any build-currentness reading.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+            "content": "sha256:d27c374ab2475cbc6f9c16cd6eead51a38511940a00549bef8cee6d5497d260c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_fixed_short_part"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The installation answer projection includes the running-server inventory and dashboard part.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+            "content": "sha256:e29ca367e9f77af9b742ae560442ad52bde0f61efabe5d356100de61fb732e59",
+            "locator": {
+              "kind": "symbol",
+              "name": "RUNTIME_INSTALL_ANSWER_FIELDS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Framework keys admit the build-currentness reading on every answer row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+            "content": "sha256:3756404cc1c750dc62cdf95e2ca410745bd547204ac8e0a4a0bd01c362ac0239",
+            "locator": {
+              "kind": "symbol",
+              "name": "FRAMEWORK_ANSWER_KEYS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The twenty-entry cap recurses through retained list items and mappings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+            "content": "sha256:cc62b700fb11a48a3b0b1adf6196bf409d6ac82aded0d52d74a25a436b7840fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "truncate_lists"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The measured short form fits 400 with fixed part, location, cut error and short scalars.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+            "content": "sha256:dba96b8c08af914511729e5126b08cd46a0f5a6b454fceb6d5edc330361a2f0e",
+            "locator": {
+              "kind": "symbol",
+              "name": "short_form"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A tool resolves operation/tool exceptions, shaped bounds, explicit interim ownership and final rows before the fallback ceiling.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+            "content": "sha256:2e99ebc88b34119361b6f1e751e9d985b9048cc76430a5c331272b689bb45d44",
+            "locator": {
+              "kind": "symbol",
+              "name": "bound_for"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Interim ownership is an explicit tool-to-leaf map; `direct_execution_grant` has no entry and takes its shaped 150-token bound.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+            "content": "sha256:33e4ed2d3861fd039a9f96d63057667271d5c333e3cbda21457c31bf87a263fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "INTERIM_TOOL_LEAF"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "SHAPED_TOOL_BOUNDS carries the final task/landing/role delivery bounds; direct_execution_grant has the shaped 150-token bound and no raw interim-map entry. Final assembled table rows and the raw declaration map are distinct: some shaped tools retain L111 entries in INTERIM_TOOL_LEAF, and interim_leaf_for checks that map first. Bound selection separately uses operation/tool exceptions, shaped bounds, explicit interim ownership, final rows and fallback. Ordinary content targets exclude locations; the whole delivered guard and detail-file byte budget remain separate. No source comment or final table row is a lifecycle landing verdict. runtime_install is the sole retained L112 final bound; dispatch_agent is absent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+            "content": "sha256:073375c21901f5c3efc5913b9f4c23941b7904ce8c52cad35aba88ac01eda632",
+            "locator": {
+              "kind": "symbol",
+              "name": "SHAPED_TOOL_BOUNDS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+            "content": "sha256:468fd1fbdb3ea15ffcb8cbdf5a6e0fc636dde3828211d1c92416d70a2096a8db",
+            "locator": {
+              "kind": "symbol",
+              "name": "L112_FINAL_BOUNDS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The shaped-bound table, which carries the settings answer's ceiling.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+            "content": "sha256:073375c21901f5c3efc5913b9f4c23941b7904ce8c52cad35aba88ac01eda632",
+            "locator": {
+              "kind": "symbol",
+              "name": "SHAPED_TOOL_BOUNDS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,31 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "family_guarantee"
+    ],
+    "justification": "The evidence reader verifies confined recorded bytes, and the publisher verifies the immutable generation before replacing authority; together they keep corrupt evidence from replacing a reproducible prior generation."
+  },
+  "applicability": "Retained Curator-coherence generation evidence integrity and pre-canonical validation of newly published Curator generations; not historical assessment-channel consumption by the Reviewer.",
+  "conditions": [
+    "Assessment evidence-bytes edges name the assessment’s own recorded destination directory, resolve within the task root, and are checked against the actual recorded digests.",
+    "The publisher writes the immutable generation and rechecks the source observation and recorded judgments before loading that exact generation’s integrity record.",
+    "The canonical authority replacement occurs only after that integrity read has returned successfully."
+  ],
+  "exclusions": [
+    "Restoring the deleted comparison-bound historical assessment reader or availability/currentness channels to the current Reviewer.",
+    "Reconstructing evidence destinations from authored citation spelling or rewriting original recorded judgments.",
+    "Inferring that a corrupt historical assessment channel is still isolated and supplied through the removed channel-composition pipeline."
+  ],
+  "id": "INV-VXA7SZ0Z",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "92a7243f-2b12-4696-991c-dfbd88e0ad88",
+    "task": "260921-ICR"
+  },
+  "revision": 3,
+  "schema": "ar-invariant/v1",
+  "statement": "Curator generation assessment evidence is validated at the publisher-recorded, task-confined destination, including admitted aliases, against the recorded digest instead of reconstructing a destination from citation spelling. The newly published immutable generation must pass its integrity read before canonical authority is replaced; rejection before that replacement preserves the prior authority.",
+  "status": "proposed",
+  "supersedes": []
+}

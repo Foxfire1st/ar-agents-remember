@@ -1,0 +1,132 @@
+{
+  "path": "mcp/tests/test_review_block_state_values_through_real_tools.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Sync records current when the carried line leaves both trees.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2039f4b6a5144c87ffb2c0862a2f7dea1ae42120",
+            "content": "sha256:c9f1ecaf392562179e757dc842d21100896249eed72192a67193cdeba61087e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_sync_records_current_when_the_carried_line_leaves_both_trees"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A closeout receipt reads moved when the code changes after review.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2039f4b6a5144c87ffb2c0862a2f7dea1ae42120",
+            "content": "sha256:fb94d6ed9519cd5f68a252fb3889ec3af56b920ae57ea5d63118678f9db94f7c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_closeout_receipt_is_moved_when_code_changes_after_review"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "An integration receipt is bound when both trees match.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2039f4b6a5144c87ffb2c0862a2f7dea1ae42120",
+            "content": "sha256:8bbdea19933e2c3b0d4cf592cc9563dd050ca7cd9214292afa35cffa7db2ccaf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_integration_receipt_is_bound_when_both_trees_match"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A memory capture fault records unmeasured.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2039f4b6a5144c87ffb2c0862a2f7dea1ae42120",
+            "content": "sha256:2c5059c18c1a1af60b5727eeab9fb15aa8daa21d36892cd78016fc2f3ff6ab68",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_sync_records_unmeasured_when_the_memory_capture_faults"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Removed-mode behaviour is a named refusal, not a memory-free comparison.\n\nAnchor: `test_start_refuses_disabled_where_knowledge_exists`, `test_admission_refuses_a_legacy_contract_with_the_way_out`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6cb58ec1f5c1b629874d4ceb251f1ef2180572f3",
+            "content": "sha256:2cb1848710412d65dcc21211ba4ff91f01f43fdf352d6cd15b05205933c0e3c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_start_refuses_disabled_where_knowledge_exists"
+            },
+            "path": "mcp/tests/test_memory_opt_out_refused_start.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4449dec123dfc5349be48d948319f6a437f8f256",
+            "content": "sha256:ee27a81caa5fe83ee015d46f3c33732d926eb06b769d2064b371a97be66456a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_admission_refuses_a_legacy_contract_with_the_way_out"
+            },
+            "path": "mcp/tests/test_memory_opt_out_refused_routes.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "A differing-byte carry retains the refusal block's original not-measured and non-covering assertions.\n\nAnchor: `_closed_reviewed_leaf` `test_integration_receipt_is_bound_when_both_trees_match` `test_integration_receipt_is_moved_when_code_changes_after_review`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2039f4b6a5144c87ffb2c0862a2f7dea1ae42120",
+            "content": "sha256:e6e8f2cec91f9ef7645f5e974e24cb4800349fd7906b754447240fb8ed5af904",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The real owner history is closed and a fresh production comparison taken before closeout, with the original receipt assertions intact.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2039f4b6a5144c87ffb2c0862a2f7dea1ae42120",
+            "content": "sha256:2f05c6acf789e0194b1c43f2a047c4885039cde4f377475a438b6aeab2f7e0f9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_closed_reviewed_leaf"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

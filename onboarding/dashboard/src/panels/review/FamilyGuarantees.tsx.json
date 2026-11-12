@@ -1,0 +1,60 @@
+{
+  "path": "dashboard/src/panels/review/FamilyGuarantees.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0f9d5162c03303344b3de1d89bcc1b8f7498c0d1",
+        "content": "sha256:c22a107c42b96e1ac97bc1dd2c054b52f36e955fb72d6d5ca6d36eeaeb9338e3",
+        "locator": {
+          "kind": "symbol",
+          "name": "ChangedGuarantee"
+        }
+      },
+      "id": "RLZ-88B7C0",
+      "invariant": "INV-811GC5",
+      "origin": {
+        "handoffEntry": "RP09",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The changed family guarantee passes fit to DiffPane so the guarantee adds no independent content scroller.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "4": {
+      "note": "FamilyGuarantees.tsx current behavior at this source owner.\n\nAnchor: \"export function GuaranteeComparisonBlock({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f9d5162c03303344b3de1d89bcc1b8f7498c0d1",
+            "content": "sha256:6f28beab90f1b8c782ab247acd34b1872b85398eccfbeccda3e3a50b6c1a116e",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 33
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "FamilyGuarantees.tsx current behavior at this source owner.\n\nAnchor: \"import type { ReviewFamilyContextEntry, ReviewFamilyGuarantee } from '../../data/review';\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f9d5162c03303344b3de1d89bcc1b8f7498c0d1",
+            "content": "sha256:4e45f67f20749d0ca3ebb377ca4578f3597f5b9ea45250e743cde871c32c608f",
+            "locator": {
+              "end": 122,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,145 @@
+{
+  "path": "mcp/src/agents_remember/certification/final_codex/certificate.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The certificate binds the exact green Gate-1..3 predecessor identities as direct predecessors.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17b6c8b1d3155bf808f40cc6406b115102c9d2e8",
+            "content": "sha256:7b64d04e5e8672ec9eaf53cf2d9f59fa9aecabf88d965c5c3f5bdee30224e468",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalCodexCertificateEnvelope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The run manifest supplies the two-fresh aggregate and both repetition results the certificate binds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c3900d7fd21a106ab803e718ed34bfc71c69722b",
+            "content": "sha256:334bd4eea79e574c0b7518be5dca7a66c4d30015eb1ec58db437c06c6c918b1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalCodexRunManifest"
+            },
+            "path": "mcp/src/agents_remember/certification/final_codex/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c3900d7fd21a106ab803e718ed34bfc71c69722b",
+            "content": "sha256:4ea8d59a0ce2c37986d2b70bb7f60748a4c3fe67175b4f0ee3c8d45b08c12730",
+            "locator": {
+              "kind": "symbol",
+              "name": "aggregate"
+            },
+            "path": "mcp/src/agents_remember/certification/final_codex/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Predecessor identities use the R21 gate-certificate identity model.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e93c2d3419610ef954016745933be9fb43f2a1a",
+            "content": "sha256:13e15cb90796adde3d5b9c39cf6271a588cadef7cc00a88475e6b4d793a8bacd",
+            "locator": {
+              "kind": "symbol",
+              "name": "GateCertificateIdentity"
+            },
+            "path": "mcp/src/agents_remember/certification/certificate_models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The frozen plan record supplies candidate, profile, scenario, and plan identities.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c3900d7fd21a106ab803e718ed34bfc71c69722b",
+            "content": "sha256:ac872726d97388f8489c3b019c4e361fee7c40c888ecbda85186958257a8d9ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalCodexPlanRecord"
+            },
+            "path": "mcp/src/agents_remember/certification/final_codex/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c3900d7fd21a106ab803e718ed34bfc71c69722b",
+            "content": "sha256:251516d3bca00dcbb71a8e1fd67c032451f5fd23b81bd9e713f45c1fea77abc8",
+            "locator": {
+              "end": 199,
+              "kind": "line_range",
+              "start": 173
+            },
+            "path": "mcp/src/agents_remember/certification/final_codex/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The runtime-authority binding is the copied R12 snapshot digest plus inspected runner/store identities.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c3900d7fd21a106ab803e718ed34bfc71c69722b",
+            "content": "sha256:a5eabd7f3265918eb799a3b9c4f74827fad232e05ea9968f5f466d51c4cbd984",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalCodexRuntimeAuthorityBinding"
+            },
+            "path": "mcp/src/agents_remember/certification/final_codex/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c3900d7fd21a106ab803e718ed34bfc71c69722b",
+            "content": "sha256:61fd66f74a6b71a3c233b43b396c36a7d119cda25ff76d21eb64c8f86823099f",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 116
+            },
+            "path": "mcp/src/agents_remember/certification/final_codex/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The lane is repository-neutral and consumes the frozen R12 host snapshot through the trusted launcher only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17b6c8b1d3155bf808f40cc6406b115102c9d2e8",
+            "content": "sha256:96e3928c9d7cf29ce7c88439966d6b4ea394a47cc6f392d90e6f6989ded918b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "runtimeAuthority"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

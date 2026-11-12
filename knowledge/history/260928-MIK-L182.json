@@ -1,0 +1,1194 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L182",
+  "rows": [
+    {
+      "disposition": "updated",
+      "id": "ROW-0ZK683",
+      "items": [
+        "sha256:92e4da8dccddc3e499190211ef9cc224048bcc4f3b05f498e92197cabee064d0"
+      ],
+      "reason": "The route overview's architect paragraph said the Architect runs no tests, builds or failure investigations in his own chat. It now says the Architect neither writes onboarding nor lets its own checks stand in for a leaf's build, review, curation or gate, that he may check, measure, run and read on a copy for his own rulings, and that only a check or investigation he does not do himself goes under delegation to the coordinators and their owning roles. The repaired sentence keeps the own-check permission distinct from the delegated case, which the earlier wording narrowed, and keeps the direct-coordination closeout boundary.",
+      "sources": [
+        {
+          "blob": "cc7e59bf17a8a0035c77438223ac6d0faace923d",
+          "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-1KG958",
+      "items": [
+        "sha256:67b81c1742d56577827cb4b5584d57545e93c47399a3d29f4ad15162f7909e7e"
+      ],
+      "reason": "The route overview names the package-data copies as synchronization outputs; this change refreshed them by the generator and alters no route contract it states.",
+      "sources": [
+        {
+          "blob": "99f935ff71a66b4e0ab93ef5bf2bb1dbc5798a74",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/capsule-budgets.json"
+        },
+        {
+          "blob": "cc7e59bf17a8a0035c77438223ac6d0faace923d",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R184",
+          "packet": "requirements/MIK-R184-v1-the-architect-checks-and-tries-things-himself.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
+            "content": "sha256:bded51c6252aef1e28b26c9df757f4208f54d73f670c5aca2f7d9e1361971140",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": "absent",
+          "id": "PRF-5448EZ"
+        },
+        {
+          "after": {
+            "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
+            "content": "sha256:28aac27c230d76a939bdc2c1e3dee09453f6a7cb32fee0323483570048cf9c17",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_direct_closeout_keeps_the_architect_and_its_existing_gates"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "e8af992c881afbbc0f6fdbe7bd9130c43b7b66b2",
+            "content": "sha256:28aac27c230d76a939bdc2c1e3dee09453f6a7cb32fee0323483570048cf9c17",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_direct_closeout_keeps_the_architect_and_its_existing_gates"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-H64HF6"
+        },
+        {
+          "after": {
+            "blob": "cc7e59bf17a8a0035c77438223ac6d0faace923d",
+            "content": "sha256:04f85c885112f262597c83158ab41e4fde68690d0a3ab55b439757ab78c7aa24",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 54
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "55753bd253d2eccdfe03bc6ea646b17576c4bc66",
+            "content": "sha256:46f1ba247426a51bdbc0582688ec4bf236587c6044e4bf69131f40088de7167e",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 54
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-1GCP9C"
+        },
+        {
+          "after": {
+            "blob": "cc7e59bf17a8a0035c77438223ac6d0faace923d",
+            "content": "sha256:64b014bf72a3ddf76a265ac494a328b3a6dd7cefdbc2e4057605d5664f140527",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "55753bd253d2eccdfe03bc6ea646b17576c4bc66",
+            "content": "sha256:64b014bf72a3ddf76a265ac494a328b3a6dd7cefdbc2e4057605d5664f140527",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-418WGG"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-1WB0HA",
+      "items": [
+        "sha256:1c821a7d5ed8aec96fbd1a777f853b0e482a8c2f9b76373df3dc2c6f51af6661"
+      ],
+      "reason": "The prohibition of any test suite, build, failure investigation or landing step in the Architect's own chat is replaced by a bounded freedom: he may check, measure, run, read and try things on a copy, that work never substitutes for a leaf's build, review, curation or gate, and his only landing step stays the paired-closeout exception with the added statement that a check before a landing is not a step of it. The two realizations and the closeout proof are re-anchored on the final bytes; RLZ-1GCP9C at roles/architect.md:54 states the new rule, and the kept closeout sentence it preserves is still proved by PRF-H64HF6. Evidence (MIK-R184@v1/A1/CODE-R1): A1-route-doctrine.md; A1-route-budgets.md; A1-route-regressions.md; focused-tests.txt (64 passed,642 subtests); wording-control.txt; a1-inspection.json; A1-onboarding-context.md identifies pending memory work",
+      "revision": 2,
+      "subject": "INV-P2WRNQ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-2ZJ62N",
+      "items": [
+        "sha256:df126ae31c1a803742ae22eb8517057637026ca8336a31da46c070cc20699771"
+      ],
+      "reason": "The card's \"Current Investigator contract impact\" section said the Architect runs no suite, build or failure investigation in his own chat; it now states the bounded freedom, the copy-only rule, the non-substitution limit and the kept landing-step sentence.",
+      "sources": [
+        {
+          "blob": "cc7e59bf17a8a0035c77438223ac6d0faace923d",
+          "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/architect.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "99f935ff71a66b4e0ab93ef5bf2bb1dbc5798a74",
+            "content": "sha256:a4d12af2d33f4b46a6cee4eb8730ce37648284358a8902e36bf4a5a408d65622",
+            "locator": {
+              "end": 692,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets.json"
+          },
+          "before": {
+            "blob": "8a27b23b4a89567fcca94c191cc8d3a025f13225",
+            "content": "sha256:2c7ed0e16182be8ae1203d862337589bf57fe7dcdccf3f4e74c1cfdaadcbaece",
+            "locator": {
+              "end": 692,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets.json"
+          },
+          "id": "RLZ-9FX5WR"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-4QY1WJ",
+      "items": [
+        "sha256:1fc93cd7818f529a467581979852853811dca6a5acc08cd0f0a852498064409a"
+      ],
+      "reason": "The 38-cell registry still records current sizes with capped eleven-tenths budgets; six Architect entries are re-measured inside the ceiling.",
+      "revision": 3,
+      "subject": "INV-Y6GVZ7"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
+            "content": "sha256:bded51c6252aef1e28b26c9df757f4208f54d73f670c5aca2f7d9e1361971140",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "e8af992c881afbbc0f6fdbe7bd9130c43b7b66b2",
+            "content": "sha256:387c80e74659af1317de6f1cd8c82f4b2c4c1bb0cb59c37ae633463cceb04222",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-RFP8Q1"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-5SJ5HZ",
+      "items": [
+        "sha256:db7015a03b2a8816ab934b0c7ccf8e3dafdbf240217bf4613ea753e2145ea6d6"
+      ],
+      "reason": "The answer-first duty and the role-agent sender line are unchanged; the proof is re-anchored on the re-pinned wording case.",
+      "revision": 1,
+      "subject": "INV-PEVJ6G"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5aef03c98d1fde7eff2fa3041e1dea5c111b1b6f",
+            "content": "sha256:1913e4a6ccfbe9ac7920b4e702e7489846ef1a79643486d5cebd14a4bcd75316",
+            "locator": {
+              "kind": "symbol",
+              "name": "RETIRED_CURATION_STATEMENTS"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py"
+          },
+          "before": {
+            "blob": "75e19d2f61349598c34a72a40a658ad25fe60adb",
+            "content": "sha256:61d118edebbd6c51973dee05211b23e32ad85649f909d676022be0fb8a813846",
+            "locator": {
+              "kind": "symbol",
+              "name": "RETIRED_CURATION_STATEMENTS"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py"
+          },
+          "id": "RLZ-886S55"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-5YPR0R",
+      "items": [
+        "sha256:20a0a33c328feece5e0a4e4a07eeb2d9443954e8cbcc9dc46cc5ca43e117431f"
+      ],
+      "reason": "The register still holds only sentences that shipped, each with its carrier, probe and reason; the new row for the replaced Architect prohibition follows exactly that shape.",
+      "revision": 1,
+      "subject": "INV-K5SFG7"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
+            "content": "sha256:1b654b5e1a131a4ca5470c7ef22680187aac0df72de5c59246e2af26abba6b33",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_every_role_organises_its_harness_work_with_seat_boundaries"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "e8af992c881afbbc0f6fdbe7bd9130c43b7b66b2",
+            "content": "sha256:1b654b5e1a131a4ca5470c7ef22680187aac0df72de5c59246e2af26abba6b33",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_every_role_organises_its_harness_work_with_seat_boundaries"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-BV411J"
+        },
+        {
+          "after": {
+            "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
+            "content": "sha256:3a4fcfcf386028407291d5f0c448789a2d80ca16bbde2e6fdb930a126ad61926",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_removing_each_affirmative_clause_is_detected_on_its_surface"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "e8af992c881afbbc0f6fdbe7bd9130c43b7b66b2",
+            "content": "sha256:3a4fcfcf386028407291d5f0c448789a2d80ca16bbde2e6fdb930a126ad61926",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_removing_each_affirmative_clause_is_detected_on_its_surface"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-CJT4MT"
+        },
+        {
+          "after": {
+            "blob": "cc7e59bf17a8a0035c77438223ac6d0faace923d",
+            "content": "sha256:680b220cf8d9071c9ead8d889ada63fe807e1d2d3ed3ac562bf81e097bb7dfcb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "55753bd253d2eccdfe03bc6ea646b17576c4bc66",
+            "content": "sha256:cf4e5d6b85fa8f16e296d7a72da4bb4db79a5061a4be35fcc6fb976f8baca462",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-ZXH055"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-61C4Q5",
+      "items": [
+        "sha256:82aa96eca0c0d12c59b7ebaadb5b15fcdb1cdebc3222dedcae300ff1eecbfe1f"
+      ],
+      "reason": "Every role still organizes its own work with its own harness, and the Architect's freedom is his own assignment autonomy, not a helper's AR seat.",
+      "revision": 1,
+      "subject": "INV-7VZRZW"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
+            "content": "sha256:bded51c6252aef1e28b26c9df757f4208f54d73f670c5aca2f7d9e1361971140",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "e8af992c881afbbc0f6fdbe7bd9130c43b7b66b2",
+            "content": "sha256:387c80e74659af1317de6f1cd8c82f4b2c4c1bb0cb59c37ae633463cceb04222",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-4FX9HW"
+        },
+        {
+          "after": {
+            "blob": "cc7e59bf17a8a0035c77438223ac6d0faace923d",
+            "content": "sha256:1a037eb21173fb839661b344bf5886756e560da5642dc4347b03911c6587ed3c",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 38
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "55753bd253d2eccdfe03bc6ea646b17576c4bc66",
+            "content": "sha256:1a037eb21173fb839661b344bf5886756e560da5642dc4347b03911c6587ed3c",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 38
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-2T4Z9R"
+        },
+        {
+          "after": {
+            "blob": "cc7e59bf17a8a0035c77438223ac6d0faace923d",
+            "content": "sha256:b86ed0ec194e278b441cef1148daa0cf7592bd50a2542659a5f085efe326d984",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "55753bd253d2eccdfe03bc6ea646b17576c4bc66",
+            "content": "sha256:b86ed0ec194e278b441cef1148daa0cf7592bd50a2542659a5f085efe326d984",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-8W0HVX"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-69GMP9",
+      "items": [
+        "sha256:6e35ed48858fa65f57cbf86cbb9e09f01315982fc91eaa3eaedc17bc1972cb76"
+      ],
+      "reason": "The second-master transition and the answer relay are unchanged; only their anchors move with the edited paragraph.",
+      "revision": 2,
+      "subject": "INV-683GA3"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
+            "content": "sha256:bded51c6252aef1e28b26c9df757f4208f54d73f670c5aca2f7d9e1361971140",
+            "locator": {
+              "end": 303,
+              "kind": "line_range",
+              "start": 233
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "e8af992c881afbbc0f6fdbe7bd9130c43b7b66b2",
+            "content": "sha256:387c80e74659af1317de6f1cd8c82f4b2c4c1bb0cb59c37ae633463cceb04222",
+            "locator": {
+              "end": 303,
+              "kind": "line_range",
+              "start": 233
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-0DCHVF"
+        },
+        {
+          "after": {
+            "blob": "cc7e59bf17a8a0035c77438223ac6d0faace923d",
+            "content": "sha256:4b2c97839463054b2f5307414e25c52bc948a6e1929f9f1a2b90ef7baf9d2a19",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "55753bd253d2eccdfe03bc6ea646b17576c4bc66",
+            "content": "sha256:4b2c97839463054b2f5307414e25c52bc948a6e1929f9f1a2b90ef7baf9d2a19",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-Y1FRYJ"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-8MPAG2",
+      "items": [
+        "sha256:18a6f208ad8c4bd6188c02f64b1e3319ebf401c41edecd601be388dc412f9613"
+      ],
+      "reason": "The coordinator's decision authority, rulings record and four developer-needed categories are unchanged; the Architect's own checks neither move nor widen them.",
+      "revision": 1,
+      "subject": "INV-NFV5VJ"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "cc7e59bf17a8a0035c77438223ac6d0faace923d",
+            "content": "sha256:680b220cf8d9071c9ead8d889ada63fe807e1d2d3ed3ac562bf81e097bb7dfcb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "55753bd253d2eccdfe03bc6ea646b17576c4bc66",
+            "content": "sha256:cf4e5d6b85fa8f16e296d7a72da4bb4db79a5061a4be35fcc6fb976f8baca462",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-SZMT6X"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-C2ET91",
+      "items": [
+        "sha256:79303d7bdec036f783c279ebf10e9c2ca71f9c29c908218a4516e15bd33702ed"
+      ],
+      "reason": "Each coordinating role still answers within its own authority and relays other questions unchanged; the role-text anchor is re-measured, the statement is unchanged.",
+      "revision": 2,
+      "subject": "INV-7FMDAS"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7FMDAS",
+          "revision": 2
+        },
+        {
+          "id": "INV-82ZTHK",
+          "revision": 3
+        },
+        {
+          "id": "INV-8AMSGV",
+          "revision": 3
+        },
+        {
+          "id": "INV-9S49CW",
+          "revision": 2
+        },
+        {
+          "id": "INV-HGSFJ8",
+          "revision": 3
+        }
+      ],
+      "id": "ROW-CQMXAS",
+      "items": [
+        "sha256:72f41bcda8c196340439e3469f8927928bbad1201454fefb346421ef7a7a816c"
+      ],
+      "reason": "The developer-question chain keeps its actual-parent routing, own-authority recommendations, named permission waits and quoted answers. Two members are re-anchored only because the role text, the wording test and the retired register moved around them: INV-7FMDAS and INV-HGSFJ8. The guarantee and the member list are unchanged.",
+      "revision": 2,
+      "subject": "FAM-7AEA19"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-63Z0MN",
+          "revision": 3
+        },
+        {
+          "id": "INV-DKN3CG",
+          "revision": 2
+        },
+        {
+          "id": "INV-NNQR91",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-CVH2ZQ",
+      "items": [
+        "sha256:a24123db7e504090b1a3f11f3b81e219b3b2a952808703cb4b4105e568795bef"
+      ],
+      "reason": "The family promises that a role-text change reaches every shipped skill mirror through the public generator with the mirrors derived rather than hand-edited. This leaf is an instance of that promise: the canonical roles/architect.md changed and all nine copies were refreshed by scripts/sync-skills.py, whose --check exits 0. The guarantee, members and routes are unchanged.",
+      "revision": 3,
+      "subject": "FAM-GDXSJG"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
+            "content": "sha256:bded51c6252aef1e28b26c9df757f4208f54d73f670c5aca2f7d9e1361971140",
+            "locator": {
+              "end": 303,
+              "kind": "line_range",
+              "start": 233
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "e8af992c881afbbc0f6fdbe7bd9130c43b7b66b2",
+            "content": "sha256:387c80e74659af1317de6f1cd8c82f4b2c4c1bb0cb59c37ae633463cceb04222",
+            "locator": {
+              "end": 303,
+              "kind": "line_range",
+              "start": 233
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-EP4JYF"
+        },
+        {
+          "after": {
+            "blob": "cc7e59bf17a8a0035c77438223ac6d0faace923d",
+            "content": "sha256:680b220cf8d9071c9ead8d889ada63fe807e1d2d3ed3ac562bf81e097bb7dfcb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "55753bd253d2eccdfe03bc6ea646b17576c4bc66",
+            "content": "sha256:cf4e5d6b85fa8f16e296d7a72da4bb4db79a5061a4be35fcc6fb976f8baca462",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-JK07JX"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-DE4ZPF",
+      "items": [
+        "sha256:54d6f03e9ab5111295872e19f34b5ab47f54a508921be63f6b63196c62e7c75c"
+      ],
+      "reason": "Non-leaf checks still go to Investigator under the actual wider permissions; the reworded delegation sentence keeps that assignment verbatim.",
+      "revision": 1,
+      "subject": "INV-NC6F6V"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-FK6580",
+      "items": [
+        "sha256:fc60ac0fcf692a215ecb093121f3b807827060e11601243b121f071b3ab5ec2b"
+      ],
+      "reason": "The route overview describes the test populations and their limits; one re-pinned clause list and one new card section change no statement it makes.",
+      "sources": [
+        {
+          "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
+          "path": "mcp/tests/test_role_instruction_wording.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-G6GQ62",
+      "items": [
+        "sha256:a17b713b39f8f1315a2943360d9811202a2327390ae8eb8959a967645c849246"
+      ],
+      "reason": "The card describes the registry's shape, matching and sweep rules; one more row with its own carrier, probe and reason changes none of them.",
+      "sources": [
+        {
+          "blob": "5aef03c98d1fde7eff2fa3041e1dea5c111b1b6f",
+          "path": "mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
+            "content": "sha256:2784247703adc1e43cba86b6ac1f4f9a4319aaf49d06b318f6c2465ae04c16ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_manifest_descriptions_follow_the_coordination_default"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "e8af992c881afbbc0f6fdbe7bd9130c43b7b66b2",
+            "content": "sha256:2784247703adc1e43cba86b6ac1f4f9a4319aaf49d06b318f6c2465ae04c16ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_manifest_descriptions_follow_the_coordination_default"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-0E0V75"
+        },
+        {
+          "after": {
+            "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
+            "content": "sha256:bded51c6252aef1e28b26c9df757f4208f54d73f670c5aca2f7d9e1361971140",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "e8af992c881afbbc0f6fdbe7bd9130c43b7b66b2",
+            "content": "sha256:387c80e74659af1317de6f1cd8c82f4b2c4c1bb0cb59c37ae633463cceb04222",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-0YJ58R"
+        },
+        {
+          "after": {
+            "blob": "cc7e59bf17a8a0035c77438223ac6d0faace923d",
+            "content": "sha256:beb680d06c4adf9d4d1fa54719c8035f522b3291e395fe1ceded3bba42016d85",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "55753bd253d2eccdfe03bc6ea646b17576c4bc66",
+            "content": "sha256:beb680d06c4adf9d4d1fa54719c8035f522b3291e395fe1ceded3bba42016d85",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-SV2W4A"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-G9027W",
+      "items": [
+        "sha256:6472ad2a5a9968c31e250a8083be6562408b74877707bf908f26c117ed27ef17"
+      ],
+      "reason": "The one-coordinator default and the developer's two exceptions are unchanged; the Architect gaining his own checks grants no second coordinator and no different handover.",
+      "revision": 1,
+      "subject": "INV-A6GAKX"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GJD9KT",
+      "items": [
+        "sha256:360b104fda35e60e6fd81384693e9f6cb87e01d2095d0088efa220c277390b52"
+      ],
+      "reason": "The route overview states what the skill tree owns and how copies are generated; the canonical text changed and the copies followed, which is what it already says.",
+      "sources": [
+        {
+          "blob": "99f935ff71a66b4e0ab93ef5bf2bb1dbc5798a74",
+          "path": "skills/l-01-agent-lifecycles/capsule-budgets.json"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5aef03c98d1fde7eff2fa3041e1dea5c111b1b6f",
+            "content": "sha256:1913e4a6ccfbe9ac7920b4e702e7489846ef1a79643486d5cebd14a4bcd75316",
+            "locator": {
+              "kind": "symbol",
+              "name": "RETIRED_CURATION_STATEMENTS"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py"
+          },
+          "before": {
+            "blob": "75e19d2f61349598c34a72a40a658ad25fe60adb",
+            "content": "sha256:61d118edebbd6c51973dee05211b23e32ad85649f909d676022be0fb8a813846",
+            "locator": {
+              "kind": "symbol",
+              "name": "RETIRED_CURATION_STATEMENTS"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py"
+          },
+          "id": "RLZ-HE14MT"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-JF8PYR",
+      "items": [
+        "sha256:fc50f1377e38bd746b035fb6682e944631db5c709c8c401e855c6e39329d1910"
+      ],
+      "reason": "Round limits and ambiguous-intent routing are unchanged; the retired-wording census gains one row under its own rule, which the statement already requires.",
+      "revision": 3,
+      "subject": "INV-HGSFJ8"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-KCWPFA",
+      "items": [
+        "sha256:f5ba0a751da18ee43e0e5f19429705571ac9c15964c741124526f7c04a79ec73"
+      ],
+      "reason": "The card's measured-instruction account now names decisions_L182 and the six re-measured Architect entries with their sizes and budgets.",
+      "sources": [
+        {
+          "blob": "99f935ff71a66b4e0ab93ef5bf2bb1dbc5798a74",
+          "path": "skills/l-01-agent-lifecycles/capsule-budgets.json"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/capsule-budgets.json"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
+            "content": "sha256:4b198cf4afbc62422b01831badf05d3c18e915c9bfc1ce1755d3a36e58759c8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_retired_investigator_wording_is_detected_when_reinserted"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "e8af992c881afbbc0f6fdbe7bd9130c43b7b66b2",
+            "content": "sha256:4b198cf4afbc62422b01831badf05d3c18e915c9bfc1ce1755d3a36e58759c8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_retired_investigator_wording_is_detected_when_reinserted"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-3CQKFM"
+        },
+        {
+          "after": {
+            "blob": "5aef03c98d1fde7eff2fa3041e1dea5c111b1b6f",
+            "content": "sha256:1913e4a6ccfbe9ac7920b4e702e7489846ef1a79643486d5cebd14a4bcd75316",
+            "locator": {
+              "kind": "symbol",
+              "name": "RETIRED_CURATION_STATEMENTS"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py"
+          },
+          "before": {
+            "blob": "75e19d2f61349598c34a72a40a658ad25fe60adb",
+            "content": "sha256:61d118edebbd6c51973dee05211b23e32ad85649f909d676022be0fb8a813846",
+            "locator": {
+              "kind": "symbol",
+              "name": "RETIRED_CURATION_STATEMENTS"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py"
+          },
+          "id": "RLZ-CBJ82Y"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-NKEYCK",
+      "items": [
+        "sha256:ebaa20494ae9c186646dfaebeb76458c953a6ddbc6da21157d884813418ee141"
+      ],
+      "reason": "The Investigator display-name and replaced-clause probes are unchanged; their anchors move with the retired register.",
+      "revision": 1,
+      "subject": "INV-MGQKGC"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-208SQT",
+          "revision": 2
+        },
+        {
+          "id": "INV-CXEEF4",
+          "revision": 1
+        },
+        {
+          "id": "INV-K5SFG7",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-Q9D2N8",
+      "items": [
+        "sha256:cc4716721ee161a4adf658a428f8d585834393b57e60571f1dc7191bcef64c76"
+      ],
+      "reason": "The family is already retired. Its members INV-208SQT and INV-K5SFG7 are re-anchored because the pinned wording case and the retired register changed; the guarded-surface rules they state still hold, one more retired row obeys the register's own rule, and no member acquires a new obligation.",
+      "revision": 1,
+      "subject": "FAM-YGXZTQ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-S3M6XM",
+      "items": [],
+      "reason": "The packaged-copy card repeated the old prohibition; it now carries the same bounded freedom and keeps its statement that the mirror adds no independent instruction.",
+      "sources": [
+        {
+          "blob": "cc7e59bf17a8a0035c77438223ac6d0faace923d",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-TGHDJF",
+      "items": [
+        "sha256:bbab247b76fdb2bfc7afa5cea35de063816b6333da1aadf2cd245075ed135be6"
+      ],
+      "reason": "The root overview carries no statement about the Architect's own execution or about capsule sizes; the eight harness copy pairs are declared equal and refreshed by the generator.",
+      "sources": [
+        {
+          "blob": "99f935ff71a66b4e0ab93ef5bf2bb1dbc5798a74",
+          "path": ".agents/skills/l-01-agent-lifecycles/capsule-budgets.json"
+        },
+        {
+          "blob": "cc7e59bf17a8a0035c77438223ac6d0faace923d",
+          "path": ".agents/skills/l-01-agent-lifecycles/roles/architect.md"
+        },
+        {
+          "blob": "99f935ff71a66b4e0ab93ef5bf2bb1dbc5798a74",
+          "path": ".claude/skills/l-01-agent-lifecycles/capsule-budgets.json"
+        },
+        {
+          "blob": "cc7e59bf17a8a0035c77438223ac6d0faace923d",
+          "path": ".claude/skills/l-01-agent-lifecycles/roles/architect.md"
+        },
+        {
+          "blob": "99f935ff71a66b4e0ab93ef5bf2bb1dbc5798a74",
+          "path": ".codex/skills/l-01-agent-lifecycles/capsule-budgets.json"
+        },
+        {
+          "blob": "cc7e59bf17a8a0035c77438223ac6d0faace923d",
+          "path": ".codex/skills/l-01-agent-lifecycles/roles/architect.md"
+        },
+        {
+          "blob": "99f935ff71a66b4e0ab93ef5bf2bb1dbc5798a74",
+          "path": ".cursor/skills/l-01-agent-lifecycles/capsule-budgets.json"
+        },
+        {
+          "blob": "cc7e59bf17a8a0035c77438223ac6d0faace923d",
+          "path": ".cursor/skills/l-01-agent-lifecycles/roles/architect.md"
+        },
+        {
+          "blob": "99f935ff71a66b4e0ab93ef5bf2bb1dbc5798a74",
+          "path": ".github-vscode/skills/l-01-agent-lifecycles/capsule-budgets.json"
+        },
+        {
+          "blob": "cc7e59bf17a8a0035c77438223ac6d0faace923d",
+          "path": ".github-vscode/skills/l-01-agent-lifecycles/roles/architect.md"
+        },
+        {
+          "blob": "99f935ff71a66b4e0ab93ef5bf2bb1dbc5798a74",
+          "path": ".hermes/skills/l-01-agent-lifecycles/capsule-budgets.json"
+        },
+        {
+          "blob": "cc7e59bf17a8a0035c77438223ac6d0faace923d",
+          "path": ".hermes/skills/l-01-agent-lifecycles/roles/architect.md"
+        },
+        {
+          "blob": "99f935ff71a66b4e0ab93ef5bf2bb1dbc5798a74",
+          "path": ".openclaw/workspace/skills/l-01-agent-lifecycles/capsule-budgets.json"
+        },
+        {
+          "blob": "cc7e59bf17a8a0035c77438223ac6d0faace923d",
+          "path": ".openclaw/workspace/skills/l-01-agent-lifecycles/roles/architect.md"
+        },
+        {
+          "blob": "99f935ff71a66b4e0ab93ef5bf2bb1dbc5798a74",
+          "path": ".pi/skills/l-01-agent-lifecycles/capsule-budgets.json"
+        },
+        {
+          "blob": "cc7e59bf17a8a0035c77438223ac6d0faace923d",
+          "path": ".pi/skills/l-01-agent-lifecycles/roles/architect.md"
+        }
+      ],
+      "subject": "onboarding:overview"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R184",
+          "packet": "requirements/MIK-R184-v1-the-architect-checks-and-tries-things-himself.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-V8MRBQ",
+      "items": [
+        "sha256:f7783123cca60e23152faa89a7cd1c8da160ac10d45bf67457d44ea1edab32ef"
+      ],
+      "reason": "The decision's first consequence said every check and investigation still goes to a role agent, which MIK-R184@v1 makes untrue. The consequence now states that the Architect's own checks never stand in for a leaf's seats while his one execution step remains the flat paired closeout; its chosen alternative, its rejected alternatives, its links and the closeout operation it relies on are unchanged, so the decision still governs the flat-run actor.",
+      "revision": 2,
+      "subject": "DEC-3H9TV4"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-WCR8EP",
+      "items": [
+        "sha256:4f4b82de4b8faecaeb1d232e0405070af0c54b6b49ce7e7bcb6965478d3fa300"
+      ],
+      "reason": "The route overview names the retired-sentence registry and the affirmative wording tables; adding one registered sentence under the registry's own rule leaves its account true.",
+      "sources": [
+        {
+          "blob": "5aef03c98d1fde7eff2fa3041e1dea5c111b1b6f",
+          "path": "mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-XNC69Z",
+      "items": [
+        "sha256:0a16d3d0844ff28e5dd57b9c90629781f0a84ad7d0e7b3bc7b5889391807cc8f"
+      ],
+      "reason": "The card now records that the pinned Architect paragraph carries the new freedom and the kept landing-step sentence, with the replaced prohibition in the retired register.",
+      "sources": [
+        {
+          "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
+          "path": "mcp/tests/test_role_instruction_wording.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_instruction_wording.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
+            "content": "sha256:bded51c6252aef1e28b26c9df757f4208f54d73f670c5aca2f7d9e1361971140",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "e8af992c881afbbc0f6fdbe7bd9130c43b7b66b2",
+            "content": "sha256:387c80e74659af1317de6f1cd8c82f4b2c4c1bb0cb59c37ae633463cceb04222",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-0TFF0B"
+        },
+        {
+          "after": {
+            "blob": "cc7e59bf17a8a0035c77438223ac6d0faace923d",
+            "content": "sha256:8954e24288f5e81d675e3ce856592924eb75933b4cc3ca2626896200d59d9581",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "55753bd253d2eccdfe03bc6ea646b17576c4bc66",
+            "content": "sha256:8954e24288f5e81d675e3ce856592924eb75933b4cc3ca2626896200d59d9581",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-QVQ9HA"
+        },
+        {
+          "after": {
+            "blob": "cc7e59bf17a8a0035c77438223ac6d0faace923d",
+            "content": "sha256:5a219c38640b4709e7f81f0e82ff9a1ba5547048ae641b89cf5f293a052a9efd",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 44
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "55753bd253d2eccdfe03bc6ea646b17576c4bc66",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 45
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-XSMK0N"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-YG4EHW",
+      "items": [
+        "sha256:ee67e5370efb38e5bf7f6229407ee42d7c2ead5c3328f097da8dea78f5a4f900"
+      ],
+      "reason": "Under delegation the Manager still owns the leaf loop; the role-text anchors are re-measured on the new bytes and the obligation is unchanged.",
+      "revision": 4,
+      "subject": "INV-5KBX7C"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-8AMSGV",
+          "revision": 3
+        },
+        {
+          "id": "INV-A6GAKX",
+          "revision": 1
+        },
+        {
+          "id": "INV-NFV5VJ",
+          "revision": 1
+        },
+        {
+          "id": "INV-P2WRNQ",
+          "revision": 2
+        },
+        {
+          "id": "INV-PEVJ6G",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-ZEM22H",
+      "items": [
+        "sha256:de4505ed61a858eea8c80859289644bc8a0af7dda9c1b1074817d9575bbb0d6c"
+      ],
+      "reason": "The family promises the one-coordinator default, the four developer-needed categories and the retained narrow paired-closeout exception. Its member INV-P2WRNQ now states the Architect's own checking freedom, which changes none of those promises: a coordinator still owns non-developer work, and the Architect's only execution step is still the paired closeout. The guarantee, its five members and its routes are examined and unchanged.",
+      "revision": 2,
+      "subject": "FAM-PNH1QS"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "cc7e59bf17a8a0035c77438223ac6d0faace923d",
+            "content": "sha256:680b220cf8d9071c9ead8d889ada63fe807e1d2d3ed3ac562bf81e097bb7dfcb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "55753bd253d2eccdfe03bc6ea646b17576c4bc66",
+            "content": "sha256:cf4e5d6b85fa8f16e296d7a72da4bb4db79a5061a4be35fcc6fb976f8baca462",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-59K606"
+        },
+        {
+          "after": {
+            "blob": "cc7e59bf17a8a0035c77438223ac6d0faace923d",
+            "content": "sha256:680b220cf8d9071c9ead8d889ada63fe807e1d2d3ed3ac562bf81e097bb7dfcb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "55753bd253d2eccdfe03bc6ea646b17576c4bc66",
+            "content": "sha256:cf4e5d6b85fa8f16e296d7a72da4bb4db79a5061a4be35fcc6fb976f8baca462",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-5WT1RY"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-ZJ935C",
+      "items": [
+        "sha256:ff912c81ccacd6cfe8a97525071f17b7fc689c3be31d7a72bb32a243961a353f"
+      ],
+      "reason": "Canonical text is still propagated to every shipped mirror by the public generator, which this change used for all nine copies.",
+      "revision": 1,
+      "subject": "INV-NNQR91"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e47d9cf5d6a195675f519998e9f72e779f585c36",
+            "content": "sha256:bded51c6252aef1e28b26c9df757f4208f54d73f670c5aca2f7d9e1361971140",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "e8af992c881afbbc0f6fdbe7bd9130c43b7b66b2",
+            "content": "sha256:387c80e74659af1317de6f1cd8c82f4b2c4c1bb0cb59c37ae633463cceb04222",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-D682YJ"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-ZQ5DZV",
+      "items": [
+        "sha256:56036ba2da7b1c5f0d89227ec0317e9755b17f99f863cabf81a611cddea6a0d2"
+      ],
+      "reason": "The Curator's worklist duty is unchanged; its proof is re-anchored because the pinned wording case grew the Architect paragraph.",
+      "revision": 2,
+      "subject": "INV-208SQT"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

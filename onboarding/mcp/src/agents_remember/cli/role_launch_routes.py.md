@@ -1,0 +1,127 @@
+# mcp/src/agents_remember/cli/role_launch_routes.py
+
+## Governing Overview
+
+[Route overview](../../../overview.md)
+
+## Purpose
+
+Registers role launcher options/dispatch/result/frame APIs and serializes preparation/retry/revive.
+
+## Code Commentary
+
+At successful receipt ownership before native execution, _record_manager_start writes the Architect address; _architect_behind verifies Orchestrator.parentAgentId by its Architect launch receipt. Failure to persist the address is caught rather than losing the seat.
+
+### Current Contract
+
+Launch preparation/receipt records retain their rich internal identity and task-copy metadata. Missing requirement sources are reported as missingCopies in handover/index/receipt and a warning; they do not fail a start solely for that absence. Later canonical task publication refreshes copies when sources become available. Ordinary delivered role_start success is the compact id/handover projection, not every internal receipt field.
+
+_start_execution delegates to role_start_execution.start_execution, which reconciles a matching receipt before recompiling and rejects reused request identity or another starter through the retained route seams. _launch_prepared_role_session writes artifact and complete starting receipt before saved runtime call. Leaf Revive checks recorded/current task scope before any bridge operation. Register these APIs through the serving injection before static mount; no removed-host route alias is installed. The module also registers the one read-only report route beside them (`role_report.register_role_report_route`, MIK-R75 rule 4a). Both hand-over files are published before the start is sent, and a launch that cannot publish them sends nothing. Their publication settles the request's own locator before the first write: a repeat reuses it, and a name that would lead to another report folder refuses the start before either file exists.
+
+## Leaf-set preparation and replacement
+
+`dispatch_leaf_set` serializes one set using the existing dispatch lock. `seat_request_id` derives each seat UUID from the set request and role, so a repeated set completes missing seats without a fourth agent or waking an already held seat. Each seat retains ordinary role settings and preparation. Failure of one seat is returned on that seat and leaves the others standing.
+
+The prepared start writes each held seat’s handover and `heldOpeningPrompt` before creation while omitting the creation prompt. Worker opens at once; optional Reviewer work is appended to its opening. A successor’s handover names the prior report paths. Same-request replay, exclusive receipt publication, source-scope checks and leaf-closing archival debt remain with their existing owners.
+
+## Receipt fields carried for choices, documents and predecessors
+
+> **Retained historical source account — superseded by the current contract:**
+> The prepared receipt and start answer carry launch-choice metadata, instruction composition, task-document files and predecessor reports. `_reserve_message_binding_projection` recovers the archived receipt for the selection and records its request, workspace and report as `predecessorReports`; `_launch_prepared_role_session` stores choices, instruction composition, task-document files and predecessor reports on the receipt.
+
+## Grant-backed leaf preparation and revival
+
+Dashboard leaf Revive uses the shared grant-aware scope verifier before native bridge revival. It compares the saved canonical leaf and contract against the current pair: readable direct grant plus master series contract, or ordinary leaf enclosure. Stored direct-looking context is not permission. Receipt UUID/reconciliation, capacity, launch-before-runtime and report ownership remain with their existing owners.
+
+## Current Contract — Scoped Launch And Settings Changes
+
+_start_execution is now a wrapper around role_start_execution.start_execution, retaining route seams for callers/tests. The extracted owner reconciles exact same requests before fresh compilation; ordinary dispatch locks, reused-ID and other-starter guards retain their authority.
+
+_reserve_message_binding_projection passes the prepared step-up marker to occupancy reconciliation and binds step-up.from to the actual predecessor receipt’s applied/session choices before storing predecessor reports. No new seat/store is introduced.
+
+_launch_prepared_role_session delegates successor prompt assembly to role_step_up_runtime. The prompt retains previous report paths and names frozen takeover bytes. The starting receipt keeps selected stepUp, requestedStepUp and stepUpArtifact, and bindingDigest includes the takeover reference before the saved host call.
+
+Missing-copy warnings are composed with step-up warnings rather than dropping either. Held-opening prompt retention, exclusive receipt-before-native publication, partial leaf-set reconciliation, scoped revive and closing/archive semantics remain unchanged.
+
+## Current catalog questions
+
+The options and dispatch endpoints share a `launcher_catalog_question` context for the current operation. Options ask the full catalog; a new dispatch asks metadata and its selected-model features. `GET /api/role-launch/saved-catalog` reads the durable snapshot without querying Paseo or deciding a start.
+
+## Evidence
+
+- The existing route delegates preparation/reconciliation to the new owner. [16]
+
+- Occupancy receives the step-up marker and actual predecessor facts. [17]
+
+- Frozen takeover and requested reason are recorded before the host call. [18]
+
+
+- Missing-copy and step-up warnings coexist in the launch request rules. [19]
+
+
+
+
+- Interrupts between receipt and call and checks retry retains one agent identity. [6]
+
+
+- Races publication and checks one persisted winner; competing request cannot issue another launch. [8]
+
+- Checks path, bytes, digest, read-only mode, exact reuse and conflicting-content refusal. [9]
+- Checks size limit and refuses links without changing their target. [10]
+- Changed/missing saved scope refuses with both pairs, no bridge/write/enclosure creation. [11]
+
+
+## MIK-R95 Progress And Document Reads
+
+The route registration adds the one-request progress read (`/api/role-launch/progress/{request_id}`) and the document-chat record read (`register_document_chat_route`), and the dispatch endpoint claims the progress notice at the beginning and reclaims it in its finally path. The dispatch answer carries the enclosure preparation (`created`/`found`/`not-applicable`).
+
+The registration also mounts `POST /api/role-launch/document-chats/tree` through `register_document_chat_tree_route`, beside the selected-document read and report route. The tree owner supplies bounded receipt-derived pre-click discovery and one live-ID census; dispatch, retry, revive, progress reclamation and launch authority retain their existing owners.
+
+## Investigator scope and request identity
+
+Investigator dispatch uses the existing selection admission lock; options expose per-request executions and omitted display rows for selected tasks. Result, retry and revive carry the exact saved UUID and canonical references through existing route owners. The one earlier spelling emits the shared notice; original receipt and report addresses remain readable without migration.
+
+
+
+
+## Refreshed current evidence
+
+- The launch observer checks complete receipt, stable UUID and stored call before runtime launch. [5]
+
+- Changes task/capsule/prompt inputs and verifies repeat returns or replays saved receipt without new preparation. [7]
+
+
+
+## Current contract evidence
+
+- Frozen implementation of register_role_launch_routes supporting the stated file behavior. [1]
+
+- Frozen implementation of _start_execution supporting the stated file behavior. [2]
+
+- Frozen implementation of _launch_prepared_role_session supporting the stated file behavior. [3]
+
+
+- Frozen implementation of _revive_execution supporting the stated file behavior. [4]
+
+- The current source implements this file’s stated Investigator boundary.
+
+- Leaf revival compares current grant-sensitive canonical task/contract scope before bridge use.
+
+- The registration also mounts `POST /api/role-launch/document-chats/tree` through `register_document_chat_tree_route`, beside the selected-document read and report route. The tree owner supplies bounded receipt-derived pre-click discovery and one live-ID census; dispatch, retry, revive, progress reclamation and launch authority retain their existing owners. [14]
+
+
+- Launch preparation/receipt records retain their rich internal identity and task-copy metadata. Missing requirement sources are reported as missingCopies in handover/index/receipt and a warning; they do not fail a start solely for that absence. Later canonical task publication refreshes copies when sources become available. Ordinary delivered role_start success is the compact id/handover projection, not every internal receipt field. [15]
+
+
+## Admission and first-run preparation under the dispatch lock
+
+The dispatch endpoint takes the lock first and decides inside it: `role_launch_admission.admit` refuses an invalid parentless selection and a request id another execution or another selection's binding already owns, then `prepare_first_run_for` runs the three cold stages only for a request that has neither. A queued same-request call therefore sees the binding or receipt its predecessor published rather than a pre-lock decision. The route no longer re-checks the parentless table before the lock and no longer requires a configured runtime before admission — a genuinely cold root has none, and the stage establishes it. The caller harness is bound after preparation, and a refusal that arrives after preparation is re-raised with the completed stages and retained host state carried in its detail. The starting receipt's `preparation` block carries `firstRun` when this call prepared one. The missing-copy warning and the bridge status mapping moved to `cli.role_launch_request_rules`.
+
+- The dispatch endpoint that admits, prepares, binds and refuses in one locked order. [20]
+
+- Cold preparation runs under the dispatch lock, and a later refusal keeps the preparation it made. [21]
+
+
+- At successful receipt ownership before native execution, _record_manager_start writes the Architect address; _architect_behind verifies Orchestrator.parentAgentId by its Architect launch receipt. Failure to persist the address is caught rather than losing the seat. [22]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/role_launch_routes.py:1-640 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit b40efb87cc614ff1751c296da2c47e6f85b195f4; mcp/src/agents_remember/cli/role_launch_routes.py:1-906 - the region it cited is not in the file at the candidate and no re-point was possible. Retired means the anchor no longer stands, not that the cited subject was deleted.

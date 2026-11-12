@@ -1,466 +1,56 @@
 # mcp/src/agents_remember/cli/dashboard.py
 
-| Field                  | Value                                        |
-| ---------------------- | -------------------------------------------- |
-| repository             | agents-remember                              |
-| path                   | `mcp/src/agents_remember/cli/dashboard.py`   |
-| doc_type               | `file-level-onboarding`                      |
-| lastUpdated | 2026-09-28T17:13:48+02:00 |
-| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
-| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
-| governingOverview      | `../../../../overview.md`                     |
-
 ## Governing Overview
 
-[overview.md](../../../../overview.md)
+[overview](../../../overview.md)
 
 ## Purpose
 
-`cli/dashboard.py` is the `agents-remember dashboard` subcommand adapter: it parses the serving
-flags and launches the FastAPI app under uvicorn. It mirrors the MCP server's `--config` contract
-so the dashboard resolves the identical coordination context — and since 260703 L1 the flag is
-**optional**: an omitted `--config` is discovered by `cli/discovery.py`'s upward walk, so the
-command runs flag-free from anywhere under the workspace. It wires sim replay via
-`--sim` / `--sim-speed` (4b), offers dev hot-reload via `--reload` (task 26), and since 260703 L2
-fronts the daemon supervisor: `--daemon` / `--status` / `--stop` dispatch to `serving/daemon.py`
-so the dashboard can outlive the terminal that started it.
+Run dashboard supervision or live/reload/sim serving and bind configuration-scoped application readers, native role-launch and developer-tray routes.
 
 ## Code Commentary
 
-`add_arguments(parser)` registers `--config` (default `None`; its help documents the discovery
-fallback), `--host` (default `127.0.0.1`), `--port` (260703 L2: default `None` — resolved after
-config load as `args.port or config.dashboard.port`, so the settings key governs and an explicit
-flag wins), `--interval` (default `1.0s`; **re-documented by 260712-PTS-L3 as the fast-path
-projection cadence floor** — change-driven re-projections are never spaced closer than this, a
-continuously-busy world still projects once per interval, and it stays the fixed tick cadence
-under `--sim` or when the change watcher is unavailable; also the `/api/events` raw-tail poll
-cadence), `--heartbeat` (**260712-PTS-L3**, default `None` ⇒ the serving
-`DEFAULT_HEARTBEAT_SECONDS` = 15s: the idle re-projection cadence — with no detected input change
-the projection still refreshes at this cadence, the staleness bound for `/api/state` and for
-time-derived fields such as `ageSeconds`/`staleSeconds` and stale/overdue flips), `--reload` (a
-`store_true` dev hot-reload flag, live
-state only), the 4b sim flags `--sim` (a fixture dir with `logs/observer/...`, default `None`)
-and `--sim-speed` (default `"1"`; a multiplier or `"paused"`), a mutually exclusive daemon
-control group `--daemon` / `--status` / `--stop` (260703 L2), and `--no-access-log` (serve
-without per-request access logs; the daemon child uses it to keep its log bounded — both
-foreground `uvicorn.run` call sites pass `access_log=not args.no_access_log`).
+The composition root wires PaseoExplainerHost, application ports and the master contract locator into serving. _master_contract uses the declared master series contract or existing canonical folder contract; no other line is borrowed.
 
-`run(args)` opens with `declare_process_role("dashboard")` (260731-EFA-L5, L148 — the first
-statement in the function, before any settings work), then calls `_resolve_settings(args)`
-(260731-EFA-L2), which resolves
-`config_path = args.config or discover_config()` — an explicit flag always wins — and loads it,
-printing the message and returning `None` for **either** `ConfigDiscoveryError` or `ConfigError`;
-`run` turns that `None` into exit `1`. It then resolves the effective `port`, routes any
-daemon control flag to `_run_daemon_command(args, config, port)` — `--status` prints the probed
-state (exit 0 running / 1 not), `--stop` prints the stop outcome, `--daemon` runs
-`serving_daemon.ensure(config, serving_daemon.DaemonEndpoint(host=args.host, port=port),
-cadence=ProjectionCadence(interval=args.interval, heartbeat=args.heartbeat))` and
-exits 0 only for `adopted`/`started`/`restarted` (heartbeat, like interval, reaches the child only
-when ensure spawns/restarts — an adopted daemon keeps its cadences); all three reject
-`--sim`/`--reload` combos — then dispatches in priority order:
+serving_collaborators is the rank boundary: complete review, numbered entry catalogue, source content, summary, tree and knowledge reader are injected application callables. It creates one app-local ReviewerWorklistProcesses, supplies tree reads and its shutdown, and wraps recorded intent/catalogue/tree questions in RecordedReviewAnswers. The application owners define their payloads; retained all-owner-record and knowledge-diff docstrings do not restore retired channels.
 
-- **reload** (`--reload` set): delegated to `_run_reload_server(args, config_path, port)`
-  (260731-EFA-L2). It rejects `--sim` (`error: --reload is not supported with --sim`,
-  return `1`). Otherwise it sets `AR_DASHBOARD_DEV_CONFIG` (the resolved absolute settings path —
-  discovered or explicit) and `AR_DASHBOARD_DEV_INTERVAL` env vars — plus (260712-PTS-L3)
-  `AR_DASHBOARD_DEV_HEARTBEAT` only when `--heartbeat` was explicit — then calls
-  `uvicorn.run("agents_remember.cli.dashboard:_dev_app", factory=True, reload=True,
-  reload_dirs=[<package source dir>], host=..., port=...)` and returns `0`.
-- **sim or live**: both are built by `_build_app(args, config) -> _DashboardApp | None`
-  (260731-EFA-L2) — "the app to serve: live state, or a replayed fixture; `None` when the fixture
-  is unusable". With `--sim` it runs
-  `build_sim(config, Path(args.sim), speed=parse_sim_speed(args.sim_speed))` (printing and
-  returning `None` on `SimError` — bad speed or empty fixture), then
-  `create_app(sim.config, cadence=ProjectionCadence(interval=args.interval),
-  replay=ProjectionReplay(now=sim.clock.now, before_tick=sim.feeder.feed))` — no `heartbeat` and no
-  watcher, so replay stays time-driven on the fixed `--interval`. Without `--sim` it is
-  `create_app(config, cadence=ProjectionCadence(interval=args.interval, heartbeat=args.heartbeat))`
-  (260712-PTS-L3 — live serving gets change-driven + heartbeat pacing). `run` then serves
-  `built.app` with `uvicorn.run(...)`.
+review_entries_port now takes optional number and calls list_comparison_review_entries with that exact selector through the reuse owner. api_routes registers native role launch, then developer chat/tray seat/send/sent-pick routes, supplying the same admitted leaf-memory resolver for review references. This is composition, not a second developer-delivery implementation.
 
-**`_DashboardApp(app, sim)`** (a `NamedTuple`) is why the sim survives the server: it carries the
-`SimSetup` alongside the app rather than dropping it at build time, **because the sim owns the
-throwaway coordination root the server is reading** — releasing it would reclaim the directory
-under a running server. `run` keeps `built` referenced for the whole `uvicorn.run` call and, in a
-`finally`, calls `built.sim.temp_dir.cleanup()` when there is a sim. Closing it there is what ends
-the root's life: dropping the reference instead would leave the directory to
-`TemporaryDirectory`'s finaliser, which is a ResourceWarning, not a cleanup.
+_review_memory_root requires valid simple repo/master/leaf names, an external leaf under the matching coordination/task enclosure and an existing canonical non-symlink memory directory below its group, distinct from code/group roots and outside provider-runtime. It performs no Git capture/index read and rejection is None. This admission does not authenticate every descendant or authorize a mutation.
 
-`_dev_app()` is the zero-arg import-string app **factory** for the reload path: uvicorn's reloader
-re-imports the app per worker restart, so it needs a factory, not a pre-built app object. Passing
-an object does **not** silently disable reload — uvicorn refuses to start and exits `1` (pinned
-citation in the `--reload` invariant below). The factory re-reads the resolved config from
-`AR_DASHBOARD_DEV_CONFIG` (`load_config(...)`), the interval from `AR_DASHBOARD_DEV_INTERVAL`
-(default `1.0`), and (260712-PTS-L3) the optional heartbeat from `AR_DASHBOARD_DEV_HEARTBEAT`
-(absent/empty ⇒ `heartbeat=None`, the serving default) — the env vars the parent `run` set — and
-returns `create_app(config, cadence=ProjectionCadence(interval=..., heartbeat=...))`. It is
-live-state only; it never builds a sim. `reload_dirs` watches only the
-package source dir (`Path(agents_remember.__file__).parent`) so unrelated trees don't churn the
-reloader. `os`, `uvicorn`, `create_app`, and the sim helpers are imported at module top (the
-established CLI convention); `import agents_remember` is local to the reload branch.
+run declares the process dashboard role, loads explicit settings or trusted discovery, binds archive-aware worktree services and chooses daemon/status/stop, reload or foreground serving. Config/discovery failures print and return1. Process roles are declared at entry points, including the spawned _dev_app factory, not create_app; they do not replace unconditional durable-log locking.
 
-### 260731-EFA-L5: the durable-store process role (the whole change here)
+Foreground and reload Uvicorn calls now request h11_max_incomplete_event_size=64*1024 as well as the existing3-second graceful window. The finite request-head allowance supports the up-to500-invariant card query named in the source rationale. This is explicit configuration, not a fresh network/runtime/version measurement or a whole-process shutdown guarantee.
 
-This file's entire L5 change is seven lines — the `declare_process_role` import (L20) and a
-five-line comment plus the call as the first statement of `run` (L143-L148; `def run` is L142). No
-flag, no dispatch order, no exit code and no serving call moved.
+Reload carries config/interval/explicit heartbeat through AR_DASHBOARD_DEV_* and uses an import-string factory; reload+sim is refused. Live apps receive interval/heartbeat. Sim uses interval plus ProjectionReplay, retains SimSetup for the server lifetime and cleans its temporary root in finally. Shared composition is not byte-equivalence proof.
 
-`controlplane/durable_store.py` names two concurrent writers of the six control-plane JSONL logs,
-`"mcp"` and `"dashboard"`; the declaration is what lets code shared by both processes — most
-importantly `mcp/tools/gates.py::gate_decide_payload`, which `serving/app.py` calls **directly** —
-ask which one it is in. It sits at the top of `run` rather than inside `create_app` for the same
-reason the MCP server's sits in `main` rather than `create_server`: `create_app` is a factory the
-test suite calls in-process, `durable_store._declared` is a module-level dict with no reset, and a
-declaration made in the factory would stamp `"dashboard"` onto the interpreter and every later test
-in it.
+Daemon/status/stop reject sim/reload; `_run_daemon_command` hands them to `cli/dashboard_daemon.run_daemon_command` with this module's host observe and host start. Status identifies the dashboard by the process that answers on its port, prints its build currentness and best-effort diagnostics without changing exit policy and observes host: dashboard-down or identity-unknown1, otherwise host-ready0 or host-down3. Stop targets dashboard only and returns1 when the dashboard's identity is unknown. Ensure delegates dashboard supervision and installed-host readiness without installing/upgrading a host. Foreground/reload starts host readiness on a daemon thread unless parent-owned; sim does not.
 
-**Which serving processes this actually reaches, measured rather than assumed:**
+Parser defaults remain loopback host, config-driven port, interval1.0 and optional heartbeat, with sim/speed, no-access-log and mutually exclusive control flags. Loopback is a default, not authentication. Native role routes and archive services do not themselves accept/commit/finalize a task.
 
-| Path | Serves in | Declares `"dashboard"` |
-| --- | --- | --- |
-| foreground live / `--sim` | this process (`uvicorn.run(built.app, ...)`) | yes |
-| `--daemon` | a child `sys.executable -m agents_remember.cli dashboard ...` (`serving/daemon.py` L201-L214), which re-enters `run` | yes |
-| `--reload` | a **spawned** uvicorn worker, not this process | **no** |
 
-The `--reload` row is a real gap, and it is worth stating precisely rather than rounding off.
-`uvicorn.run(..., reload=True)` keeps only the reload supervisor in the process that called it and
-serves from a child built by `multiprocessing.get_context("spawn")` (uvicorn 0.49.0,
-`uvicorn/_subprocess.py` L18 + `uvicorn/supervisors/basereload.py` L84-L85). A spawn-context child
-does not inherit the parent's module globals — measured directly: a parent that mutates a module
-dict before `Process.start()` and a child that reports the same dict give `{'role': 'dashboard'}`
-and `{}`. So under `agents-remember dashboard --reload`, the process that serves HTTP, decides
-gates and writes these logs has declared no role at all, and `StoreOwnership.is_compaction_owner()`
-answers `True` for every log (`role is None`). A dev-reload dashboard therefore *does* run the gate
-reclaim pass that a normal dashboard skips.
-
-That is an ownership-advisory gap, not a durability one, and the difference is the point of the
-contract: the reclaim still holds the log's `flock` across its read **and** its rewrite like every
-other writer, so no record is lost either way. What it falsifies is the contract's stated reason for
-letting an undeclared process count as owner — "a CLI or test run is nobody's competitor"
-(`durable_store.StoreOwnership.is_compaction_owner`) — because a `--reload` dashboard can be running
-against the same coordination root as a live MCP server. Closing it means declaring the role inside
-`_dev_app()` as well; nothing else about this file would change.
-
-## 260921-ICR-L47 The Fourth Reviewer Port: The Changed-Intent Summary
-
-`serving_collaborators` binds a **fourth** reviewer callable, `review_intent_summary_port(repository_id,
-master, leaf_id)`, which returns `read_review_intent_summary(config, repository_id, master, leaf_id)` and
-is placed on the collaborator record as `review_intent_summary`. It is imported at function scope with the
-same deferred-composition idiom as its siblings. Its docstring states the reason it is its own port: it
-answers a fourth question — how many statements each side of the comparison alone holds — from the **same
-resolution** as the other two task-context ports, so the numbers beside the task entry describe the review
-it opens, and it reads no subject catalogue to produce them (`ICR-R24@v3`).
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The deferred import and the fourth port bound on the collaborator record. | `read_review_intent_summary`; `review_intent_summary_port`; "review_intent_summary=review_intent_summary_port" | mcp/src/agents_remember/cli/dashboard.py:67-145 |
-
-## 260921-ICR-L3 The Third Reviewer Port, And Who Chooses The Generation
-
-`serving_collaborators` now binds **three** application-tier reviewer callables, and the third one is
-what lets a browser open the entry a reader clicked:
-
-```python
-def review_source_content_port(request):
-    return read_review_source_content(config, request)
-```
-
-It is imported at function scope with the same deferred-composition idiom as its siblings —
-`from agents_remember.application.review_source_content import (  # noqa: PLC0415 - composition
-read_review_source_content,)` — and placed on the collaborator record as `review_source_content`.
-
-The docstring states the division of labour this port exists to make explicit, and it is the reason the
-closed-over value is not a config lookup: **the request carries the generation the browser is looking
-at, rather than the server choosing one.** The application owner re-resolves the leaf only to *measure*
-whether that generation is still the candidate's; it then reads those two objects and nothing else — no
-working tree, no `HEAD`. So an entry opened after the branch moved still shows the **listed**
-generation's bytes and says the leaf has moved past them, instead of silently substituting whatever the
-branch holds now. Supplying the port is also what decides the route's behaviour: a process that omits it
-refuses that route **by name**, because "this process cannot read the entry" and "this entry has no
-content" are different facts and only one of them is true.
-
-This is the third instance of one shape of decision on this record: production wires every reviewer port
-in this one config-bound composition root, and each port's absence refuses its own route rather than
-serving an empty surface.
-
-## 260915-KS-L45 Both Reviewer Ports Wired From One Composition Root
-
-**The count in this section is superseded: the root now binds three reviewer callables since
-260921-ICR-L3** (see the section above). The wiring site, the function-scope import idiom and the
-refuse-by-name reason it records are still exactly right, so the entry is retained rather than
-rewritten.
-
-`serving_collaborators` now binds **two** application-tier reviewer callables, and the second one is
-what makes a task view able to ask the question the first one needs an answer to:
-
-```python
-def review_entries_port(repository_id, master, leaf_id):
-    return list_knowledge_review_entries(config, repository_id, master, leaf_id)
-```
-
-It imports `list_knowledge_review_entries` beside `read_knowledge_review` and `review_records_for`
-from `agents_remember.application.knowledge_review` at function scope, and places both on the
-collaborator record as `knowledge_review` and `knowledge_review_entries`. The two ports are one
-composition and one resolution: the entry call takes the **task context alone**, because a subject is
-exactly what it is being asked for, and the task view calls it *before* any subject exists. The
-docstring states the property this buys: resolving the entry list "through the identical operation
-the review route uses … is what keeps the entry a caller is offered and the review it then opens on
-one candidate". Supplying a port is also what decides its route's behaviour — the serving layer
-refuses each route **by name** when its field is absent, because an empty pane (or an empty entry
-list, which would read as "nothing is reviewable here") and an unreachable adapter are different
-facts.
-
-## 260921-ICR-L14 The Review Port Supplies The Complete Record Collection
-
-`serving_collaborators`'s `review_port` is unchanged in *shape* — it still calls
-`read_knowledge_review(config, request, review_records_for(config, request))` — and what changed is what
-that loader is: `review_records_for` is now
-[`application/review_evidence_records.py`](../application/review_evidence_records.py.md)'s complete
-resolver, so the production port supplies the **detector signals, the verification observations, the
-authored effects, the evidence claims and the published assessments**, each with the availability fact
-its owner's answer earned, instead of the assessment collection alone. The port's own docstring states
-it for a reader of this file: every collection is read "from the owner's own operation for the candidate
-this request resolves to", a collection an owner answers for and holds none is a measured zero, expected
-content that could not be read is `unavailable` with that owner's provenance, and a dependency-currentness
-measurement is reported `not_measured` rather than omitted — so "the bundle never presents an empty tuple
-where three different facts are possible, and one unreadable authority does not withdraw the collections
-that were readable."
-
-**This is the composition the packet's conformance is measured through.** The verification evidence for
-`ICR-R14@v1` drives `serving_collaborators(config).knowledge_review` — the same port `create_app` places
-on the collaborator record — rather than the loader directly, which is why a port that kept supplying
-only assessments would fail the cases even with a correct resolver behind it. **No behaviour moved in
-this module**: the call site, the function-scope import, the placement on the collaborator record and the
-refuse-by-name rule for an absent port are all as they were; only the docstring and the reach of the
-loader changed.
-
-## 260915-KS-L22 Reviewer-Adapter Composition Root
-
-This section is retained for the wiring it recorded, and its last sentence about the loader's reach is
-**superseded** by the ICR-L14 section above: `review_port` no longer reads "the assessment collection …
-from the curator authority's own publication" alone — it hands over every owner-produced collection.
-The wiring site, the function-scope import and the one-configuration-per-app reason it recorded are
-unchanged.
-
-This section records the L22 increment, which wired the first of those two ports. The section above
-supersedes its count and adds the entry half; the wiring site, the function-scope import and the
-refuse-by-name reason it recorded are unchanged. It reads: `serving_collaborators` binds a second
-application-tier callable beside the capsule compiler, importing `read_knowledge_review` and
-`review_records_for` at function scope, defining the local `review_port` and placing it on the
-collaborator record as `knowledge_review` — so every `create_app` call in this module, live, reload,
-sim and daemon alike, resolves the reviewer adapter through the one function that already knows which
-configuration the app serves. The adapter is composed with its published records: `review_port` calls
-`read_knowledge_review(config, request, review_records_for(config, request))`, reading the assessment
-collection from the curator authority's own publication for the candidate the request resolves to. A
-candidate with no published assessment supplies an empty collection, which the surface displays as
-`unassessed` rather than inventing an assessment — the honest state, and the one a reviewer needs to
-see.
+The composition root binds the projector's host-activity refresher, `host_activity_reconcile`, to the real bridge read `bridge_call(runtime, "host-activity-snapshot", {})`; this is the one place that crossing is made.
 
 ## Invariants And Boundaries
 
-- **Localhost-only by default** (`--host 127.0.0.1`); the help text warns against exposing it.
-- Resolves config through the same `load_config` the MCP server uses — no bespoke path handling.
-- **Discovery only fills an omitted flag** — `args.config or discover_config()`; an explicit
-  `--config` is never second-guessed, and discovery failures exit `1` with the both-patterns
-  error rather than guessing.
-- **Foreground behavior is unchanged by the daemon feature** — no control flag means the same
-  serve-in-this-terminal flow as before (the `--reload` dev loop included); daemon logic lives in
-  `serving/daemon.py`, this file only dispatches.
-- **Sim never mutates the fixture** — `build_sim` runs against a throwaway temp root; the
-  frontend cannot tell sim from live.
-- **`--reload` is live-state only** — it is mutually exclusive with `--sim` (rejected with exit
-  `1`), and it must hand uvicorn the `_dev_app` import-string factory (`factory=True`), never a
-  built app object. Handing uvicorn a built object does **not** make hot-reload silently no-op —
-  uvicorn **refuses to start, loudly**. Pinned: **uvicorn 0.49.0**, `uvicorn/main.py` lines
-  **604-607** — `if (config.reload or config.workers > 1) and not isinstance(app, str):` logs the
-  `uvicorn.error` warning `"You must pass the application as an import string to enable 'reload' or
-  'workers'."` and calls `sys.exit(1)`. Measured: `uvicorn.run(<built app object>, reload=True)`
-  under the repo `.venv` printed that warning and exited with code **1**, before binding the port.
-  So a `factory=True` regression is a hard startup failure, not a silently degraded dev loop.
+Configuration identity, admitted watch/reference roots, read availability, delivery and semantic approval remain distinct. Recorded questions may be reused only through their owner rules and exact inputs; working-view reads stay fresh.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The umbrella dispatcher that registers this subcommand. | `build_parser` | mcp/src/agents_remember/cli/__main__.py:16-28 |
-| The trusted-settings discovery the optional `--config` falls back to. | `discover_config` | mcp/src/agents_remember/cli/discovery.py:36-50 |
-| The daemon supervisor behind `--daemon`/`--status`/`--stop` (heartbeat plumbed on spawn/restart only). | `ensure` | mcp/src/agents_remember/serving/daemon.py:264-290 |
-| The serving layer defines the idle heartbeat default and implements change-or-heartbeat scheduling in `ChangePacer`. | `DEFAULT_HEARTBEAT_SECONDS`; `ChangePacer` | mcp/src/agents_remember/serving/change_watcher.py:109-109; mcp/src/agents_remember/serving/change_watcher.py:283-376 |
-| This CLI defines `--interval`/`--heartbeat` and threads their cadence through reload parent/worker, live-app, and daemon paths; sim deliberately carries interval only. (The `add_arguments` named here is this module's, not the identically named function in the CLI module `cli/knowledge_ingest.py`.) | `add_arguments`; `_dev_app`; `_run_reload_server`; `_build_app`; `_run_daemon_command` | mcp/src/agents_remember/cli/dashboard.py:163-237; mcp/src/agents_remember/cli/dashboard.py:130-160; mcp/src/agents_remember/cli/dashboard.py:290-311; mcp/src/agents_remember/cli/dashboard.py:325-349; mcp/src/agents_remember/cli/dashboard.py:352-379 |
-| Discovery unit tests (hits, precedence, template skip, miss error). | "class DiscoverConfigTests(unittest.TestCase):" | mcp/tests/test_cli_discovery.py:42-89 |
-| The app factory it serves (and the `now`/`before_tick` seams it passes). | `create_app` | mcp/src/agents_remember/serving/app.py:255-323 |
-| The sim builder / clock / feeder / speed parser it wires. | `build_sim`; `parse_sim_speed` | mcp/src/agents_remember/serving/sim.py:51-61; mcp/src/agents_remember/serving/sim.py:137-148 |
-| The `--config` → `McpRuntimeConfig` contract it mirrors. | `McpRuntimeConfig` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:113-137 |
-| The durable-store contract whose process role `run` declares — what the role decides, and what the unconditional per-log lock decides instead. | `declare_process_role` | mcp/src/agents_remember/controlplane/durable_store.py:76-84 |
-| The MCP server's mirror of the same declaration, in `main` rather than `create_server`. | `main` | mcp/src/agents_remember/mcp/server.py:77-99 |
+- The finite64KiB incomplete-header allowance is an explicit serving constant. [65]
+- The root admits only the matching canonical external live-leaf memory directory. [66]
 
-## 260718-CHATS-L5I Current Delta
+- Numbered catalogue questions and developer-tray routes use configuration-scoped owners.
 
-Dashboard shutdown now uses a bounded three-second Uvicorn graceful window. This explicitly terminates intentionally endless SSE responses so lifespan cleanup can cancel projector, landing, and supervisor tasks instead of leaving a process alive after SIGTERM.
+- Reload workers declare their own role and bind archive-aware services. [68]
 
-This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+- Foreground serving passes the finite header limit and cleans sim state. [69]
 
-## 260821-CLIVE Task-Execution Registration Wiring
+- Reload passes the same header/shutdown settings through its factory path. [70]
 
-The production dashboard supplies the task-plane registrars for both terminal-catalog rows and
-operator-inbox reports when it constructs serving collaborators. Those registrars durably record
-worker/reviewer/curator first evidence before the serving retention loops may reclaim their source
-rows. This is the production dependency-injection boundary; omitted test seams remain fail-closed
-for task-bound deletion rather than using a compatibility reader.
+- Live/sim composition and daemon supervision retain separate ownership and outcomes. [71]
 
+- The composition root wires PaseoExplainerHost, application ports and the master contract locator into serving. _master_contract uses the declared master series contract or existing canonical folder contract; no other line is borrowed. [72]
 
-## 260915-CAPS-L15 Capsule-Compiler Composition Root
-
-`serving_collaborators(config)` builds the collaborator record **bound to the configuration this
-dashboard serves**, and every `create_app` call in this module goes through it — the reload factory,
-the live app and the sim app alike. Its first job is the capsule compiler: `compile_launch_capsule`
-is an `application`-rank callable and `serving` may not import it, so this composition root — the one
-place that already knows which configuration the app serves — binds it with `partial(...)`. A partial
-rather than a zero-arg factory is the point: the port hands the serving gate a callable that already
-carries the config, so the serving rank never sees a `McpRuntimeConfig` it has no business resolving.
-
-The rule this section exists to state: **a dashboard process can never serve a role-configured launch
-with no compiler behind it.** `EXECUTION_REGISTRATION_COLLABORATORS` remains the config-free base
-record; `serving_collaborators` is a `dataclasses.replace` over it, so a future collaborator added to
-the base is not silently dropped by this composition.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The composition root and the config-bound compiler it binds. | `serving_collaborators`; `compile_launch_capsule` | mcp/src/agents_remember/cli/dashboard.py:67-127; mcp/src/agents_remember/application/role_capsules/launch.py:273-295 |
-| Every `create_app` call in this module resolves its collaborators through that root. | `_dev_app`; `_build_app` | mcp/src/agents_remember/cli/dashboard.py:130-160; mcp/src/agents_remember/cli/dashboard.py:325-349; mcp/src/agents_remember/cli/dashboard.py:67-127 |
-| The port the bound callable satisfies, and the record it is placed on. | `LaunchCapsuleResolver`; `ServingCollaborators` | mcp/src/agents_remember/serving/launch_capsule.py:162-163; mcp/src/agents_remember/serving/_app_common.py:440-499 |
-| **The third reviewer port this root binds: the deferred import and the closure that closes over the config, so every app resolves one listed entry's content through this composition root.** | `review_source_content_port`; `read_review_source_content`; `review_source_content` | mcp/src/agents_remember/cli/dashboard.py:112-122; mcp/src/agents_remember/cli/dashboard.py:84-86; mcp/src/agents_remember/serving/_app_common.py:482-490 |
-
-## Update History
-- 2026-09-28T17:13:48+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): **body update — the composition root wires a fourth reviewer port, the changed-intent summary (`ICR-R24@v3`).** New section with the port, its import and its reason. Displaced rows were re-pointed from the base-to-candidate line mapping. No stamp advanced.
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-21T23:24+02:00 — 260921-ICR-L14 curator, **sync-merge resolution of the parked candidate against the landed ICR-L3 curation.** The two sides had curated this document independently and both sets of statements are kept: the landed `260921-ICR-L3` section, rows and history entries alongside this leaf's, tables unioned key by key (a row both sides carried keeps the ranges that hold its anchors in the merged code tree, the other side's range folded in where it is also true; rows only one side carried are kept in their own order), prose sections kept whole and Update History entries merged newest-first. The header states both facts: the production line is the master tip `a8d2431926d6b130012ca81ed2e85b14721c0615` (ICR-L3 landed) and this leaf's own code is still its uncommitted candidate. **Stamp accounting:** no verification stamp was invented; the stamp names the landed production line and the candidate rows name each uncommitted reading.
-
-- 2026-09-21T22:40+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **the composition root gained the third reviewer port, and the section that counted two was superseded in place.** `serving_collaborators` now imports `read_review_source_content` from `agents_remember.application.review_source_content` with the same deferred `# noqa: PLC0415 - composition` idiom as its siblings, defines `review_source_content_port(request)` closing over `config`, and places it on the replaced record as `review_source_content`. The new section records the division of labour the docstring states — **the request carries the generation the browser is looking at rather than the server choosing one**, and the application owner re-resolves the leaf only to *measure* whether that generation is still the candidate's, then reads those two objects and nothing else (no working tree, no `HEAD`), so an entry opened after the branch moved still shows the listed generation's bytes and says the leaf has moved past it — plus the refuse-by-name half: "this process cannot read the entry" and "this entry has no content" are different facts. The L45 section's "binds **two** application-tier reviewer callables" is flagged as superseded while its wiring site and reason are kept. **Citation accounting:** this leaf's +16-line insertion shifted every construct below line ~78 by 16, so every row into this file was re-read against the candidate and re-derived rather than shifted: `add_arguments` `147-171` → `163-237`; `_dev_app` `114-144` → `130-160`; `_run_reload_server` `237-258` → `290-311`; `_build_app` `261-282`/`309-333` → `325-349`; `_run_daemon_command` `285-312`/`336-363` → `352-379`; `serving_collaborators` `67-83` → `67-127`; `ServingCollaborators` in `_app_common.py` `430-462` → `440-499`; `create_app` in `serving/app.py` `226-285` → `255-323`. Two backticked spans in the cadence row that are **not anchors** — the file path and the sibling CLI path used to disambiguate `add_arguments` — were moved out of the Anchor cell into the Finding's plain prose, because no cited range can literally hold a path; one row was added for the new port. No claim wording was changed except the L45 count, which was **false** at this candidate. No verification stamp was advanced, because no commit contains this body. **Stamp accounting:** the two verification rows now name the **production line this card was read against** — `d80a0513…`, the master line at this leaf's base, committed `2026-09-21T19:51:20+02:00` — rather than the older commit they carried before, because this card's body was read against that line and this leaf's uncommitted change set on top of it; they do not claim that a commit contains this leaf's bytes, and the governed closeout owns the real stamp once the code commit exists.
-| The composition root and the config-bound compiler it binds. | `serving_collaborators`; `compile_launch_capsule` | mcp/src/agents_remember/cli/dashboard.py:67-83; mcp/src/agents_remember/application/role_capsules/launch.py:273-295 |
-| Every `create_app` call in this module resolves its collaborators through that root. | `_dev_app`; `_build_app` | mcp/src/agents_remember/cli/dashboard.py:117-157; mcp/src/agents_remember/cli/dashboard.py:322-346; mcp/src/agents_remember/cli/dashboard.py:67-114 |
-| The port the bound callable satisfies, and the record it is placed on. | `LaunchCapsuleResolver`; `ServingCollaborators` | mcp/src/agents_remember/serving/launch_capsule.py:162-163; mcp/src/agents_remember/serving/_app_common.py:430-462 |
-| **The review port and the loader it hands the surface, which is the composition the R14 evidence is measured through.** | `review_port`; `review_records_for`; `serving_collaborators` | mcp/src/agents_remember/cli/dashboard.py:67-101; mcp/src/agents_remember/application/review_evidence_records.py:174-192 |
-| **The cases that drive this port and prove every available collection arrives with its own channel state.** | `test_the_production_composition_supplies_every_owner_produced_record_class`; `review_through_port` | mcp/tests/test_knowledge_review_evidence_channels.py:552-605; mcp/tests/test_knowledge_review_evidence_channels.py:170-183 |
-
-## Update History
-
-- 2026-09-21T22:00:00+02:00 — 260921-ICR-L14 curator (uncommitted change set on `ar/260921-icr-l14`, production line `d80a0513e928ef29a973527d09597c82c96fde87`): **the port's loader became the complete record resolver, so the card's statement that it reads "the assessment collection" was corrected.** `review_port`'s body is unchanged — it still calls `read_knowledge_review(config, request, review_records_for(config, request))` — but `review_records_for` is now `application/review_evidence_records.py`'s resolver, so the production port supplies the detector signals, verification observations, authored effects, evidence claims and published assessments, each with the availability fact its owner's answer earned, and reports an unmeasured currentness rather than an empty collection. A new section records the change and states why it matters to *this* file: the `ICR-R14@v1` evidence is measured through `serving_collaborators(...).knowledge_review`, so a port that kept supplying assessments alone would fail the cases even with a correct resolver behind it. The L22 section's closing sentence about the loader's reach is marked **superseded** in place rather than deleted, which is this card's own convention for a later increment that changes an earlier section's reach (L45 did the same to L22's count). Two rows were added for the port with its loader and for the cases that drive them. **Stamp accounting:** `lastVerifiedCommitHash`/`lastVerifiedCommitDate` now name the **production line this reading was against** — `d80a0513e928ef29a973527d09597c82c96fde87`, the master line's current tip and this leaf's base — replacing the previous pair rather than leaving a stamp no reading in this pass measured; the candidate is uncommitted, so no commit contains the content a stamp would claim to have verified, and the governed closeout's own metadata refresh re-stamps the card against the code commit its transaction creates.
-
-- 2026-09-20T13:43:00+02:00 — 260915-KS-L45 curator (uncommitted change set on `ar/260915-ks-l45-ar`, base `fb719f89`): **the composition root now supplies both reviewer ports.** `serving_collaborators` imports `list_knowledge_review_entries` beside `read_knowledge_review`/`review_records_for` and defines `review_entries_port(repository_id, master, leaf_id)`, placing it on the collaborator record as `knowledge_review_entries` beside `knowledge_review`. The card records why the entry port takes the task context alone — a subject is what it is being asked for, and the task view calls it before any subject exists — and the property the shared resolution buys: the entry a caller is offered and the review it then opens resolve through the identical operation, so they cannot name different candidates. The L22 section it supersedes is retained with its count corrected in place. No reference row was touched by hand; ranges into this source were re-derived by the mechanical projection. No verification stamp was advanced, because no commit contains this body.
-- 2026-09-17T10:35+02:00 — 260915-CAPS-L15 curator: **this file became the composition root for the
-  capsule compiler.** Added `serving_collaborators(config)`, a `dataclasses.replace` over the
-  config-free base record that binds the `application`-rank `compile_launch_capsule` into the serving
-  port, and pointed every `create_app` call in the module at it — so no dashboard process can serve a
-  role-configured launch with no compiler behind it. Added a current-intent section, three reference
-  rows and the reason the bound callable is a `partial`. Verification metadata moves to this leaf's base
-  `15fa0e2c`; the candidate is deliberately uncommitted, so the governed closeout stamps the real code
-  commit and no hash or fingerprint was invented here.
-
-- 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review
-- 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
-- 2026-09-07T00:42+02:00 — Removed remaining obsolete suite-proof citations; current production invariants and historical records remain preserved.
-
-- 2026-09-06T22:41:21+00:00: Generated citation repair: `DiscoverConfigTests` repointed to mcp/tests/test_cli_discovery.py:42-89. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
-
-
-
-- 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: documented production registration of terminal and inbox execution evidence. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-04T03:26:26+02:00 — 260731-EFA-L6 S18-SR3-B06 curator: generated and source-inspected the cadence-owner range (1 repair, 0 normalisations, 0 declines); the locked immediate recheck was clean with frozen zero source/tokenize/parse/build telemetry.
-- 2026-08-04T03:03:23+02:00 — 260731-EFA-L6 S18-SR3-B06 worker: replaced the
-  underbound declaration/call fragments with the five complete CLI owners that define and consume
-  cadence across reload parent/worker, live, sim, and daemon paths. The changed binding is a
-  provisional `:1-1` input for the fresh Luna curator; no citation mechanics ran.
-- 2026-08-04T02:20:03+02:00 — 260731-EFA-L6 S18-B06 curator delta: repaired the scoped citations against the frozen source snapshot; generated ranges were inspected and the managed index remained warm/frozen with zero source reads, tokenization, parsing, and build.
-
-- 2026-08-04T01:24:49+02:00 — 260731-EFA-L6 S18-SR2-B06 worker: source-first separated
-  `ChangePacer`/heartbeat-default ownership from this CLI's flag definitions and cadence wiring.
-  Preserved both generated serving ranges and added one honest `:1-1` CLI binding covering reload,
-  live, daemon, and the deliberate sim exception; no citation mechanics ran.
-- 2026-08-04T00:28:23+02:00 — 260731-EFA-L6 S18-B06 curator: repaired the scoped dashboard CLI citation claims; final exact frozen-snapshot check is clean.
-- 2026-08-02T16:55+02:00 — 260731-EFA-L6 W1-B08 curator: repaired 12 citation claims and preserved verification metadata.
-
-- 2026-08-01T13:20+02:00 — 260731-EFA-L5 curator: this file's change is **small, and is recorded as
-  small** — seven lines, one import and `declare_process_role("dashboard")` as the first
-  statement of `run` cit:([`run`], mcp/src/agents_remember/cli/dashboard.py:161-196). Nothing else in the file moved. Recorded the placement rule (entry
-  point, never `create_app`, because the factory is called in-process by tests and `_declared` has
-  no reset) and, more usefully, **which serving processes the declaration actually reaches**:
-  foreground live/sim yes; the `--daemon` child yes, because `serving/daemon.py` L201-L214 spawns
-  `sys.executable -m agents_remember.cli dashboard ...` and that re-enters `run`; `--reload` **no**.
-  The reload gap was verified, not inferred from the flag: uvicorn 0.49.0 serves the reload worker
-  from a `multiprocessing.get_context("spawn")` child (`uvicorn/_subprocess.py` L18,
-  `uvicorn/supervisors/basereload.py` L84-L85), and a spawn child does not inherit parent module
-  globals — measured with a two-line harness (parent `{'role': 'dashboard'}`, child `{}`). Stated
-  the consequence at its true weight: the dev-reload dashboard counts as compaction owner of every
-  log and so runs the gate reclaim pass a normal dashboard skips, which is an ownership-advisory
-  gap and **not** a durability one, because the reclaim holds the log's lock across read and rewrite
-  regardless. Verification metadata pinned until closeout stamps the L5 code commit.
-- 2026-07-31T22:05+02:00 — 260731-EFA-L4 curator: the previous claim that handing uvicorn a built
-  app object instead of the `_dev_app` import-string factory makes hot-reload "silently no-op" was
-  **false**. It appeared twice in this sidecar (the `_dev_app` commentary and the `--reload`
-  invariant) and once as a source comment. uvicorn does not silently no-op — it refuses to start.
-  Verified against **uvicorn 0.49.0**: `uvicorn/main.py:604-607` guards
-  `if (config.reload or config.workers > 1) and not isinstance(app, str):`, logs the `uvicorn.error`
-  warning "You must pass the application as an import string to enable 'reload' or 'workers'." and
-  calls `sys.exit(1)`. Measured by running `uvicorn.run(<built app object>, host=..., port=...,
-  reload=True)` under the repo `.venv`: the warning printed and the process exited with code **1**
-  before binding the port. Both prose sites now carry that version-pinned citation, and the same
-  false belief was corrected in the source comment at
-  `mcp/src/agents_remember/cli/dashboard.py:27-33` (comment text only — no code, no argument and no
-  `factory=True` change; the code was already correct, only its stated reason was wrong).
-  Verification metadata unchanged.
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `C901`/`PLR0912`/`PLR0915` armed with no
-  exemptions): `run` was split into `_resolve_settings` (discover + load, one refusal path for
-  `ConfigDiscoveryError` and `ConfigError`), `_run_reload_server` and `_build_app` (returning the
-  new `_DashboardApp(app, sim)` NamedTuple, or `None` for an unusable fixture). The serving calls
-  were re-signed onto the serving layer's new parameter objects — `create_app(config,
-  cadence=ProjectionCadence(...), replay=ProjectionReplay(...))` and
-  `serving_daemon.ensure(config, DaemonEndpoint(host, port), cadence=ProjectionCadence(...))`.
-  `run` now also closes the sim's temp root explicitly in a `finally` instead of leaving it to the
-  `TemporaryDirectory` finaliser. No flag, dispatch order or exit code changed. Verification
-  metadata pinned until closeout stamps the L2 commit.
-- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
-
-- 2026-07-12T20:24+02:00 — 260712-PTS-L3: added `--heartbeat` (default `None` ⇒ serving default
-  15s — the idle re-projection cadence and the `/api/state`/time-derived-field staleness bound)
-  and re-documented `--interval` as the fast-path projection cadence floor (unchanged fixed
-  cadence under `--sim`/watcher-unavailable). Live `run` and `_dev_app` (via the new
-  `AR_DASHBOARD_DEV_HEARTBEAT` env) pass heartbeat to `create_app`; the sim branch deliberately
-  does not; `--daemon` forwards it to `serving_daemon.ensure` (reaches the child on spawn/restart
-  only). Verification metadata pinned until closeout stamps the PTS-L3 commit.
-- 2026-07-03T11:45+02:00 — 260703 L2: daemon mode — the mutually exclusive `--daemon`/`--status`/
-  `--stop` group dispatches to `serving/daemon.py` after config resolution, `--port` defaults from
-  the `dashboard.port` settings key (explicit flag wins), `--interval` is forwarded to the daemon
-  child, and `--no-access-log` reaches both foreground `uvicorn.run` sites. Foreground behavior
-  unchanged. Verification metadata pinned until closeout stamps the code commit.
-- 2026-07-03T09:55+02:00 — 260703 L1: `--config` became optional — `run` resolves
-  `args.config or discover_config()` (explicit flag wins; `ConfigDiscoveryError` → exit 1) and the
-  reload env handoff uses the resolved path. Discovery semantics live in `cli/discovery.py`.
-  Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-27T18:43+02:00 — Task 26: added dev hot-reload `--reload` (`store_true`, live-state
-  only, rejects `--sim`). Documented the `_dev_app()` zero-arg import-string factory and the
-  `AR_DASHBOARD_DEV_CONFIG` / `AR_DASHBOARD_DEV_INTERVAL` env handoff, plus the `run` reload branch
-  (`uvicorn.run(..., factory=True, reload=True, reload_dirs=[package src])`).
-- 2026-06-14T11:30+02:00 — Updated for slice 04 commit 4b: added the `--sim` / `--sim-speed`
-  flags and the sim `run` branch (`build_sim` → `create_app` with the replay clock + feeder; the
-  sim setup is held for the server lifetime; `SimError` → exit 1). Verification metadata pinned
-  until closeout stamps the 4b code commit.
-- 2026-06-14T11:30+02:00 — Created for slice 04 commit 4a: the `dashboard` subcommand adapter
-  (config → create_app → uvicorn). Verification metadata pinned until closeout stamps the 4a code
-  commit.
-2026-09-18T18:10+02:00 — 260915-KS-L22 curator (uncommitted change set on `ar/260915-ks-l22`, base `2dcacb27`): **bound the application-tier reviewer adapter into the one composition root.**
-`serving_collaborators` now imports `read_knowledge_review` / `review_records_for` and passes
-`knowledge_review=review_port` into the replaced collaborator record, so the live, reload, sim and
-daemon apps all reach the reviewer through the same config-bound callable that already carries the
-capsule compiler. The adapter is composed with its published records —
-`read_knowledge_review(config, request, review_records_for(config, request))` — and a candidate with
-no published assessment yields an empty collection the surface shows as `unassessed` rather than a
-fabricated one. The new section above records that, and records the consequence the serving layer
-states for itself: an absent port is a named refusal, not an empty surface. No reference row was
-touched; the card's ranges into this source belong to the citation-reprojection engine. The metadata
-block above names this leaf's uncommitted candidate as what was read, and the two verification stamps
-are left exactly as the last real verification set them because no commit holds this candidate. The
-body was changed substantively and this entry is the history record, not a metadata-only refresh.
+- The daemon, status and stop commands delegate to the dashboard daemon adapter with this module's host observe and host start. [73]
+- The host-activity refresher is bound to the real bridge read in the composition root. [74]

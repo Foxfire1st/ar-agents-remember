@@ -1,0 +1,362 @@
+{
+  "path": "mcp/tests/test_lifecycle_turn_truth_doctrine.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "9d03ef2c9b4fe73d56a70d6fc6f1477107721b82",
+        "content": "sha256:1178e0b1561493ea654429bf5ae1598e5180502fd4fe5819b32dd23deb1b86ae",
+        "locator": {
+          "kind": "symbol",
+          "name": "DetectorTeethTests.test_owner_bound_approval_doctrine_is_not_a_contradiction"
+        }
+      },
+      "facet": "Adds Markdown-table rows: a turn-end-only row reads clean, and table rows or sentences that let a completed turn accept the handoff are caught as terminal-outcome-semantic-acceptance.",
+      "id": "PRF-HWCV7G",
+      "invariant": "INV-5TKYXM",
+      "origin": {
+        "handoffEntry": "K3-5TKYXM-table-acceptance-cases",
+        "leaf": "260928-MIK-L84"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "9d03ef2c9b4fe73d56a70d6fc6f1477107721b82",
+        "content": "sha256:49537733076e4480be289762a0b20d170c4f363a56477b8baa410892b233def0",
+        "locator": {
+          "kind": "symbol",
+          "name": "SilenceIsNotContradictionTests.test_stating_and_denying_is_contradicted_not_stated"
+        }
+      },
+      "facet": "Adds a rewritten turn-end-only sentence to the state-then-deny cases, which must read as contradicted.",
+      "id": "PRF-M037DA",
+      "invariant": "INV-5TKYXM",
+      "origin": {
+        "handoffEntry": "K3-5TKYXM-stated-clause-cases",
+        "leaf": "260928-MIK-L84"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "9d03ef2c9b4fe73d56a70d6fc6f1477107721b82",
+        "content": "sha256:ff4260a5c50e68b49b982d4e54e12357e67c2e132fb72918fdc9997728fabf20",
+        "locator": {
+          "kind": "symbol",
+          "name": "SilenceIsNotContradictionTests.test_a_stated_clause_is_stated"
+        }
+      },
+      "facet": "Adds the rewritten turn-end-only sentences as cases the classifier must read as stating the boundary.",
+      "id": "PRF-MZ7HNX",
+      "invariant": "INV-5TKYXM",
+      "origin": {
+        "handoffEntry": "K3-5TKYXM-stated-clause-cases",
+        "leaf": "260928-MIK-L84"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "9d03ef2c9b4fe73d56a70d6fc6f1477107721b82",
+        "content": "sha256:7bc2ba3197ef6a4994f23c6570f2f1b152d10166661a59d92562744ea86b244e",
+        "locator": {
+          "kind": "symbol",
+          "name": "AgreementAcrossTheRoleSetTests.test_delivered_coordinator_capsules_check_candidate_evidence_before_acceptance"
+        }
+      },
+      "facet": "Composes delivered architect/manager/orchestrator capsule text, requires current diff/evidence inspection and owner acceptance clauses, and detects removal of manager inspection; this proves instruction delivery rather than runtime no-mutation.",
+      "id": "PRF-T9EV7V",
+      "invariant": "INV-4E130M",
+      "origin": {
+        "handoffEntry": "Preservation (flags and acceptance)",
+        "leaf": "260928-MIK-L90"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "9d03ef2c9b4fe73d56a70d6fc6f1477107721b82",
+        "content": "sha256:063c8695dc795bbad5e8779d073b6d4b23e0760cc8bbdf3eb751a799709cdc8b",
+        "locator": {
+          "kind": "symbol",
+          "name": "AgreementAcrossTheRoleSetTests.test_the_declared_roster_equals_the_surfaces_that_speak_the_vocabulary"
+        }
+      },
+      "facet": "Requires the declared roster to equal the canonical surfaces that use the completion vocabulary, in both directions.",
+      "id": "PRF-TX0CVG",
+      "invariant": "INV-5TKYXM",
+      "origin": {
+        "handoffEntry": "MIK-R70@v1 rule 4",
+        "leaf": "260928-MIK-L70"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "9d03ef2c9b4fe73d56a70d6fc6f1477107721b82",
+        "content": "sha256:e0f1cb203b018a760be7900c53cfa9d1c7e7169373135b21239c125573a96df2",
+        "locator": {
+          "kind": "symbol",
+          "name": "AgreementAcrossTheRoleSetTests.test_every_roster_surface_carries_the_mechanical_reading"
+        }
+      },
+      "facet": "Requires every surface on the roster to state the first half of the mechanical reading: that the terminal outcome only ends the turn.",
+      "id": "PRF-Z5EB64",
+      "invariant": "INV-5TKYXM",
+      "origin": {
+        "handoffEntry": "MIK-R70@v1 rule 4",
+        "leaf": "260928-MIK-L70"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9d03ef2c9b4fe73d56a70d6fc6f1477107721b82",
+        "content": "sha256:713c3336b373b459cb06d8f9c20744b6ca3daf92b19e3d1cb12f2da67b694a51",
+        "locator": {
+          "end": 720,
+          "kind": "line_range",
+          "start": 669
+        }
+      },
+      "id": "RLZ-1PRTFZ",
+      "invariant": "INV-ZNJ14G",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-ZNJ14G",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "Route-specific Worker and implementation source checks preserve Manager start notice, direct Reviewer delivery and exact-object handover content.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "9d03ef2c9b4fe73d56a70d6fc6f1477107721b82",
+        "content": "sha256:3d88ff7a50d1b51a4fe8f1032ceec8d0c43c76db6bd87bff19c58c7a43847ba2",
+        "locator": {
+          "kind": "symbol",
+          "name": "COMPLETION_TRUTH_ROSTER"
+        }
+      },
+      "id": "RLZ-4KH0W1",
+      "invariant": "INV-5TKYXM",
+      "origin": {
+        "handoffEntry": "MIK-R70@v1 rule 4",
+        "leaf": "260928-MIK-L70"
+      },
+      "rationale": "The tuple declares expected vocabulary speakers; the independent corpus census detects both undeclared speakers and declared surfaces that became silent. The raw Curator role is not a speaker, while the curation operation retains its owed terminal-only reading. The roster does not exempt unlisted files from the whole-corpus contradiction sweep.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "9d03ef2c9b4fe73d56a70d6fc6f1477107721b82",
+        "content": "sha256:eff9000261e0e44f8cbb63ee87b502382495a36a9de601fa5ceb4287f08b90b7",
+        "locator": {
+          "kind": "symbol",
+          "name": "_assert_owed"
+        }
+      },
+      "id": "RLZ-C6DX8W",
+      "invariant": "INV-5TKYXM",
+      "origin": {
+        "handoffEntry": "K3-5TKYXM-template-referral-proof",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The owed-clause check used by every surface test: for a template that now refers to core/acceptance.md instead of restating the turn-end boundary, it checks that the relative link resolves to the shipped acceptance file and that the acceptance file states the owed clauses, then that the surface states its own owed clauses and contradicts none.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "9d03ef2c9b4fe73d56a70d6fc6f1477107721b82",
+        "content": "sha256:8553c53e1da3960d4320adf19fcb1fa209fc3f5957f6ba5d99a1b49c1151269a",
+        "locator": {
+          "end": 738,
+          "kind": "line_range",
+          "start": 723
+        }
+      },
+      "id": "RLZ-TM9N6T",
+      "invariant": "INV-ZNJ14G",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-ZNJ14G",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The route helper checks each Worker/operation handover clause and removes each clause in a mutant to ensure direct-route omissions fail.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The shared acceptance home distinguishes mechanical turn-end truth from artifact validity, requires the structurally current owner to validate before advancing state, and keeps recipient checks for direct peer handovers separate from Manager gate acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "501b96a5acb3bdfadafb7523aac5e9561ea9fbca",
+            "content": "sha256:d2dd4dcc07156d56f62c61c675c345791a6988024dfbc99514f14034c89277c6",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 7
+            },
+            "path": "skills/l-01-agent-lifecycles/core/acceptance.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The declared roster and vocabulary must equal the actual canonical speakers in both directions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d03ef2c9b4fe73d56a70d6fc6f1477107721b82",
+            "content": "sha256:063c8695dc795bbad5e8779d073b6d4b23e0760cc8bbdf3eb751a799709cdc8b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_declared_roster_equals_the_surfaces_that_speak_the_vocabulary"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "OWED_STATEMENTS declares each named surface's required boundary clauses; the master-handover-packet and turn-report templates owe referral clauses to `core/acceptance.md`. RELAY_REFERENCE_SURFACES names the turn-report template, checked as a referral to the acceptance owner; it is separate from the completion-truth roster and the mechanical-only reading vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d03ef2c9b4fe73d56a70d6fc6f1477107721b82",
+            "content": "sha256:3c470419ee3a2821d24d0030d593942d83aacd5609323c0cc3fc4ea5e266a664",
+            "locator": {
+              "kind": "symbol",
+              "name": "OWED_STATEMENTS"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9d03ef2c9b4fe73d56a70d6fc6f1477107721b82",
+            "content": "sha256:9529e12fc4601882f633c85b70cb424f417758e6c31932b4ca1965df0e546d1e",
+            "locator": {
+              "end": 482,
+              "kind": "line_range",
+              "start": 120
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The detector scans promise views for the declared RETIRED_CLAIMS and classifies each text as stated, absent or contradicted. Contradictions take priority over a matching mechanical-only phrase, and an in-place denial does not count as a positive statement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d03ef2c9b4fe73d56a70d6fc6f1477107721b82",
+            "content": "sha256:31727a13a63633cb54db7b99d6f94f35466f5fef9525453282a9d4ed7be8ce89",
+            "locator": {
+              "end": 452,
+              "kind": "line_range",
+              "start": 369
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9d03ef2c9b4fe73d56a70d6fc6f1477107721b82",
+            "content": "sha256:f1749f701752accbc042e1e783409ab7b99cac27c56412d0b606e8afc89494df",
+            "locator": {
+              "end": 554,
+              "kind": "line_range",
+              "start": 489
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9d03ef2c9b4fe73d56a70d6fc6f1477107721b82",
+            "content": "sha256:dd53cf2d0734cc2f21cb42e07c7c269b29f5ba49fc16f563539d536d2573b39e",
+            "locator": {
+              "end": 206,
+              "kind": "line_range",
+              "start": 166
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The silence controls distinguish stated, absent and contradicted readings, including compact and expanded turn-end wording, split acceptance claims and in-place denial. Detector controls retain per-claim samples and whole-tree census; the declared-limit case pins the detector's proximity-based misreading of another agent's acceptance inside its window.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d03ef2c9b4fe73d56a70d6fc6f1477107721b82",
+            "content": "sha256:da2740bddda0f357b17156921296ee4fcd95d5f0457fc9361aef5c66d111fd25",
+            "locator": {
+              "kind": "symbol",
+              "name": "SilenceIsNotContradictionTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The projection-side sibling that re-asserts the boundary clauses against the canonical doctrine tree and its one declared packaged copy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf530824b0aee7e9b74abed2891f2e7c1ee0aff4",
+            "content": "sha256:713db2fc9a66c6019298bca81e6a4cb4edfc4fc287002d1dfc5cd7b2893bb53a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_declared_copy_carries_the_corrected_boundary_clauses"
+            },
+            "path": "mcp/tests/test_sync_scripts.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The relay detector requires an attributed relay action rather than mere co-occurrence of sweep, open and packet words; active and passive artifact-inspection examples still fail. Worker handoff checks bind the Manager stage-start notice and the direct frozen-object Reviewer handover to their real sections in the Worker role, the implementation operation and the every-role core, with per-clause deletion controls. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d03ef2c9b4fe73d56a70d6fc6f1477107721b82",
+            "content": "sha256:d7a9af76297cafb27a49e8e96a65f8eb12f8f888f8a1fae438ee25e57b490bc3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_worker_hands_its_frozen_report_directly_to_the_reviewer"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9d03ef2c9b4fe73d56a70d6fc6f1477107721b82",
+            "content": "sha256:1b20316afe45f6920e167f54a81a5af3e589fd2dc74c57b551aa8b2f68acb90f",
+            "locator": {
+              "end": 385,
+              "kind": "line_range",
+              "start": 372
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9d03ef2c9b4fe73d56a70d6fc6f1477107721b82",
+            "content": "sha256:a59f9ae087ffc29c59fef2194da15fa1a7bd55ab573e1061355766328dfa86c7",
+            "locator": {
+              "end": 1080,
+              "kind": "line_range",
+              "start": 1064
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,147 @@
+{
+  "path": "dashboard/src/panels/review/ReviewNavigation.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b87c6e5d5e3a7ab5cc242cc08bb5346a018eeb4d",
+        "content": "sha256:68997ff7d2cf0414b3c209e1f50fa32b2716ce3a54d5f5064231efaa6ff66f27",
+        "locator": {
+          "kind": "symbol",
+          "name": "SelectionOptions"
+        }
+      },
+      "id": "RLZ-25K6A1",
+      "invariant": "INV-9ZKYWQ",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-other-selections-start-afresh",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "The low-level navigation SelectionOptions describes keepTree, while the admitted page selection wrapper supplies an explicit value: in-page defaults true and current outside callers pass false. The interface comment alone does not establish the page default.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "b87c6e5d5e3a7ab5cc242cc08bb5346a018eeb4d",
+        "content": "sha256:3906301b7f13ce15f738c837523b611ce753910996b28ac4f41b76ea6bd85a51",
+        "locator": {
+          "end": 111,
+          "kind": "line_range",
+          "start": 59
+        }
+      },
+      "id": "RLZ-CCAZC6N3",
+      "invariant": "INV-115RDW8H",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Starts the catalogue for the addressed comparison but chooses only the target-named or reader-selected subject; a catalogue answer never chooses a subject.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "b87c6e5d5e3a7ab5cc242cc08bb5346a018eeb4d",
+        "content": "sha256:6049d62ac59090a2802737684c68740b10088e8afb867f789df48d2bef706334",
+        "locator": {
+          "kind": "symbol",
+          "name": "useReviewNavigation"
+        }
+      },
+      "id": "RLZ-S720CR",
+      "invariant": "INV-115RDW8H",
+      "origin": {
+        "handoffEntry": "L177-INV-115RDW8H",
+        "leaf": "260928-MIK-L177"
+      },
+      "rationale": "Starts the catalogue for the addressed comparison but chooses only the target-named or reader-selected subject; a catalogue answer never chooses a subject.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "b87c6e5d5e3a7ab5cc242cc08bb5346a018eeb4d",
+        "content": "sha256:6049d62ac59090a2802737684c68740b10088e8afb867f789df48d2bef706334",
+        "locator": {
+          "kind": "symbol",
+          "name": "useReviewNavigation"
+        }
+      },
+      "id": "RLZ-TT5XGFN4",
+      "invariant": "INV-2E8MG43K",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Reads the recorded-subject catalogue through useReviewCatalogue when the reviewer is mounted, keyed on this comparison and its snapshot generation, and returns that whole catalogue with the chosen subject and onSelect, so every subject the catalogue records is selectable inside the review.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "37": {
+      "note": "ReviewNavigation.tsx current behavior at this source owner.\n\nAnchor: \"export function initialSubject(target: {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b87c6e5d5e3a7ab5cc242cc08bb5346a018eeb4d",
+            "content": "sha256:cf73c19481f2d21e96b89f995f48e152510c048328940b3e377e38605bf2d80b",
+            "locator": {
+              "end": 150,
+              "kind": "line_range",
+              "start": 136
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "ReviewNavigation.tsx current behavior at this source owner.\n\nAnchor: \"export function useReviewNavigation(target: {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b87c6e5d5e3a7ab5cc242cc08bb5346a018eeb4d",
+            "content": "sha256:1042e1365ea0d4e3e6b3cd49cb0d1300dae78f94e5fa82705e261c751df99d15",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 61
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "39": {
+      "note": "ReviewNavigation.tsx current behavior at this source owner.\n\nAnchor: \"export function useObservedComparison(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b87c6e5d5e3a7ab5cc242cc08bb5346a018eeb4d",
+            "content": "sha256:053a1179c87186403f843ef806d7dd502ee2b6a5c1d428fb33163e019e0cf484",
+            "locator": {
+              "end": 133,
+              "kind": "line_range",
+              "start": 118
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "40": {
+      "note": "ReviewNavigation.tsx current behavior at this source owner.\n\nAnchor: \"export function outlineUnavailableReason(catalogue: ReviewNavigationState['catalogue']): string \\| undefined {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b87c6e5d5e3a7ab5cc242cc08bb5346a018eeb4d",
+            "content": "sha256:e75af8715c4b15d118ed8299c7767842cb3b3ac5dbc6692310cb4930c4257ca8",
+            "locator": {
+              "end": 64,
+              "kind": "line_range",
+              "start": 49
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

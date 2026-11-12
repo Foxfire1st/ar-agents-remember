@@ -1,0 +1,55 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/git_changes.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "NUL status parsing and rename/copy destinations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7811241b103c8c1b3f9f931a62c42f51a8bc3742",
+            "content": "sha256:4167badbb64b6607043bf3f1e4d3527c61a80d797e41298cb5d75cef9ba57d9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_name_status_letters"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "NUL numstat pairing and binary unknown counts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7811241b103c8c1b3f9f931a62c42f51a8bc3742",
+            "content": "sha256:2226ca309dec30451a7ed367bace8a1f5fa1043f6836814f5a678bd2be30de9a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_numstat_rows"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Exact ranges, deletions and working untracked additions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7811241b103c8c1b3f9f931a62c42f51a8bc3742",
+            "content": "sha256:868cceba358df705e894864d6ecc17a750a328ae788c89cc4fb803b32930a54f",
+            "locator": {
+              "kind": "symbol",
+              "name": "changed_files_with_counts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

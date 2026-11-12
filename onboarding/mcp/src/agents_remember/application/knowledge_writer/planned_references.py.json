@@ -1,0 +1,41 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_writer/planned_references.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "bb735fcf50022acfbd2a8e74259b896ac08a5df9",
+        "content": "sha256:075c01f25e46b98eb7a7f28bf7cf492d23da09c47b6ed48a261f4d6e9a730f94",
+        "locator": {
+          "kind": "symbol",
+          "name": "unresolved_planned_ref"
+        }
+      },
+      "id": "RLZ-T51S19",
+      "invariant": "INV-DP689F",
+      "origin": {
+        "handoffEntry": "L54-curator-MIK-R54-v1-rule-10-actual-guards",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "A deferred planned requirement must resolve at its task owner before this row can publish.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Checks planned-effect references at their owning requirement, task-decision and stored-record boundaries before publication. The helper consumes a parsed PlannedEffectRow; it does not choose a disposition, allocate requirement authority or replace model validation. Missing task ownership is not treated as a resolved dropped-row decision.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb735fcf50022acfbd2a8e74259b896ac08a5df9",
+            "content": "sha256:8c0ef72b11e1df732bb61448b1c141fa621e5d3b2387e9ee19c1469a0162348e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

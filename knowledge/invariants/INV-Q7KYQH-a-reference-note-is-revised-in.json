@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "One owner performs the revision and the mounted tool and CLI are the same owner, and ten named assertion units prove the in-place guarantee, its refusals and its dry run."
+  },
+  "applicability": "A single-note repair of a converted memory card's sidecar reference, through the curator tool or its command-line verb.",
+  "conditions": [
+    "The reference's identity is the sidecar path and its references key.",
+    "The guarantee is checked by re-reading the written file rather than by trusting the write.",
+    "The repairing leaf is recorded as the revision's author."
+  ],
+  "exclusions": [
+    "Re-authoring a citation table, which re-resolves targets, is not this route.",
+    "Adding or removing a reference is refused; the revision replaces a note.",
+    "A card outside the admitted memory tree is not an operand."
+  ],
+  "id": "INV-Q7KYQH",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_reference_note_revision.py (leaf candidate, read by this seat; no run)"
+      ],
+      "path": "l191-main"
+    },
+    "handoffEntry": "MIK-R198@v2 §8 reference-note-revision",
+    "leaf": "260928-MIK-L191",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A reference note is revised in place: one reference's note is replaced while every target, anchor and other reference of the card stays byte-identical and no reference is minted, and the write is refused for a missing key, a stale input, an empty note or an operand outside the admitted memory tree.",
+  "status": "proposed",
+  "supersedes": []
+}

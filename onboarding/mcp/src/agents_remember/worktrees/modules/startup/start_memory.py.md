@@ -1,83 +1,27 @@
 # mcp/src/agents_remember/worktrees/modules/startup/start_memory.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/modules/startup/start_memory.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T01:15+00:00 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
-| verificationStatus | working-candidate |
-| governingOverview | `../overview.md` |
-
-The body describes the uncommitted LCA L9 working candidate. The commit fields identify the latest real commit touching this source file; they do not claim that the candidate is committed or accepted.
-
 ## Governing Overview
 
 [Nearest governing route overview](../overview.md)
 
 ## Purpose
 
-Own external-memory admission and preparation during worktree start.
+Owns external-memory admission and preparation, and truthful named-ref facts, during worktree start.
 
 ## Code Commentary
 
-### Logic
+`prepare_memory_for_start` settles external memory only. There is no disabled branch: `_memory_source_state` asserts the contract carries a memory repository and, when it is missing, returns `_missing_memory_repo_state`. That state refuses the removed `disabled-memory` recovery answer by name with the opt-out refusal (`_disabled_memory_choice`: the mode, the reason, and the action — never honored, no longer offered as a choice); any other missing repository blocks with the single `initialize-memory-repo` choice. A start without a memory repository fails before anything is created.
 
-`prepare_memory_for_start` settles internal, disabled, or external memory, requires the exact configured memory source branch, and creates or reuses the memory worktree. Its `lastVerifiedCodeCommit` and `lastMemoryContentCommit` response data come from `derive_memory_ledger` at the recorded memory base. An unattributed history produces empty informational values; a missing, stale, or malformed cached `memory.md` is not an admission condition.
+Otherwise the owner requires the exact task-derived protected source ref and creates no source branch: only an explicit dry run carrying an admitted unpublished, non-symlink parent may report the exact source ref `would-create`, and only when that named ref is actually absent. The planned base commit remains the owner's validated readable input; no fallback or guessed source is selected. `_memory_format_for_start` adds `memoryFormat: converted` or `legacy-format` with the first-conversion procedure. Start remains admitted on legacy memory; an absent official ref or unanswered marker probe omits the fact rather than guessing it. Ledger response metadata comes from `derive_memory_ledger` at that recorded base and remains informational; an unattributed history produces empty informational values, and a missing, stale, or malformed cached `memory.md` is not an admission condition.
 
-Mtime reuse skips `.git`, non-files, missing source files, and known divergent paths. Missing source files are counted. A computable source/worktree diff leaves changed paths fresh for indexing; an uncomputable diff is explicitly reported. Dry-run does not create a worktree or synchronize mtimes.
+The existing worktree/mTime preparation keeps its dry-run boundary: no worktree creation or mTime synchronization on dry runs. Mtime reuse skips `.git`, non-files, missing source files, and known divergent paths; files whose content diverges keep fresh checkout mtimes so the watcher re-embeds exactly the delta.
 
-### Conventions
-
-Named branch and repository facts establish the memory source. The existing disabled-memory choice remains explicit; this module does not create a substitute protected source branch.
-
-### Invariants And Boundaries
-
-- The memory repository and exact source branch must exist for an external-memory start.
-- Cache rows never select the code base or establish compatibility.
-- Derived metadata reports only committed attribution; it does not invent a mapping for the selected code base.
-- Worktree creation and mtime handling retain their existing dry-run boundary.
-
-### Todos
-
-No new file-local follow-up is identified by this source reconciliation.
-
-## Docs References
-
-No domain-documentation source is configured for this slice. The behavior described here is established by current repository source and the authorized LCA L9 change, rather than an invented external reference.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-
-## Repo-Internal References
-
-These current source spans identify the implementation owners and the specific assertions supporting the file's behavior. A test definition is evidence of its assertions, not an execution or certification receipt.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Source state, named-branch admission, and informational Git-derived metadata. | `_memory_source_state`; `memory_branch_state` | mcp/src/agents_remember/worktrees/modules/startup/start_memory.py:19-32; mcp/src/agents_remember/worktrees/modules/startup/start_memory.py:48-48 |
-| Mtime reuse and divergence handling preserve the current indexing behavior. | `_sync_worktree_memory_mtimes`; `_memory_divergence_paths` | mcp/src/agents_remember/worktrees/modules/startup/start_memory.py:72-111; mcp/src/agents_remember/worktrees/modules/startup/start_memory.py:74-113 |
-| Missing external repository and explicit disabled-memory outcomes. | `_disabled_memory_choice`; `_missing_memory_repo_state` | mcp/src/agents_remember/worktrees/modules/startup/start_memory.py:136-144 |
-| The informational ledger is reconstructed from commit attribution without a cache read. | `derive_memory_ledger`; "without consulting a cached file or a ledger commit" | mcp/src/agents_remember/kernel/memory_cache.py:22-41 |
-
-## Cross-Repo References
-
-The operation and fixture boundaries described here are defined by same-repository contracts and Git helpers. No separate cross-repository document is used as evidence for this card.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-
-## Update History
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-
-- 2026-09-15T01:15+00:00 — 260913-LCA-L9 working candidate: Removed the cached-file read and exact-row admission gate; retained repository/source validation, derived informational metadata, worktree creation, and mtime behavior. Current source and citation targets were checked; the metadata records the last real file commit, and candidate changes remain uncommitted.
-
-- 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.
+## Evidence
 
 
-- 2026-09-06T22:00:40+00:00 — Preserved concrete mtime reuse boundaries from the retired test card against current source; previous verification pins remain unchanged.
+- External-only preparation, exact source ref, no fallback [12]
+- One remaining recovery choice [15]
 
-
-- 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: created the strict source-mirroring card from current code. Verification hash/date remain blank for architect-owned final stamping.
+- Missing repository routes to the blocked state [13]
+- Removed answer refused by name, never honored [14]
+- Protected source ref required, never created [16]

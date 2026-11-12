@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/memory/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Package description\n\nAnchor: \"Memory lifecycle helpers for Agents Remember.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f4897f5d93b111e8c0a7df019522c4a6bdfd936",
+            "content": "sha256:08ef7d21ae5a0391f7bb9631ba101fa82b81a1ac423f3072197fcbca3e8eb9fe",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

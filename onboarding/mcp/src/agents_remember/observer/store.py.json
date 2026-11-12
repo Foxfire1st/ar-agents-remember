@@ -1,0 +1,129 @@
+{
+  "path": "mcp/src/agents_remember/observer/store.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "44d27a65dd2c90b37ee5338cafbd1564796e6c80",
+        "content": "sha256:eaa397ca2502ada8e0ddc0503cca873d55f6564cd5900f01ae9a096d711c8972",
+        "locator": {
+          "kind": "symbol",
+          "name": "workspace_river_lock"
+        }
+      },
+      "id": "RLZ-1852X2",
+      "invariant": "INV-W977KH",
+      "origin": {
+        "handoffEntry": "L114-W07",
+        "leaf": "260928-MIK-L114"
+      },
+      "rationale": "workspace_river_lock is the cross-process exclusive lock that keeps a writer from appending into a file another process is replacing, and bounds the wait so a stuck lock is a counted loss rather than a hung call.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "44d27a65dd2c90b37ee5338cafbd1564796e6c80",
+        "content": "sha256:b21739c63223a27b2a7cb70528aa785ecec37fe55ce96834808eaa463a5d4ca0",
+        "locator": {
+          "end": 95,
+          "kind": "line_range",
+          "start": 61
+        }
+      },
+      "id": "RLZ-6TWJSK",
+      "invariant": "INV-N6DKKD",
+      "origin": {
+        "handoffEntry": "L114-W38",
+        "leaf": "260928-MIK-L114"
+      },
+      "rationale": "The read-side lock opens the existing lockfile read-only and never creates one, keeping the browser stream write-free.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "44d27a65dd2c90b37ee5338cafbd1564796e6c80",
+        "content": "sha256:56e6379d37cd0fbaf62b745381a04b2f797cf7af8b396d2e93c5bdb4932b5d8c",
+        "locator": {
+          "kind": "symbol",
+          "name": "EventStore.append"
+        }
+      },
+      "id": "RLZ-C8EBGZ",
+      "invariant": "INV-NJ51EA",
+      "origin": {
+        "handoffEntry": "L114-W37",
+        "leaf": "260928-MIK-L114"
+      },
+      "rationale": "All EventStore appends share river admission; no lifecycle namespace.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "EventStore serializes and validates the shared Event envelope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b5f4a15e3c26371377e98403ffbb1c7888478853",
+            "content": "sha256:bf1c889ad3d2ed153a0777aff4a42198118bdd11bb158fd8a134d739afae6244",
+            "locator": {
+              "kind": "symbol",
+              "name": "Event"
+            },
+            "path": "mcp/src/agents_remember/observer/events.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Every append uses bounded workspace admission; tolerant reads admit valid records only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44d27a65dd2c90b37ee5338cafbd1564796e6c80",
+            "content": "sha256:b54dd4dde4a0dffb6e89ba453123cfdcd054b3db298b6d656d98936f6c5b2417",
+            "locator": {
+              "kind": "symbol",
+              "name": "EventStore"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The read helper reports whether an existing shared lock was actually acquired; it does not perform a lockless read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44d27a65dd2c90b37ee5338cafbd1564796e6c80",
+            "content": "sha256:b21739c63223a27b2a7cb70528aa785ecec37fe55ce96834808eaa463a5d4ca0",
+            "locator": {
+              "kind": "symbol",
+              "name": "workspace_river_read"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Serving, not the helper, owns the guarded missing-lock base/file window and the confirmed-hold fallback.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91d04c0b9f1ef75ed3894240899e238bde789901",
+            "content": "sha256:007af41a1ada26ba42ef2e0a39ce2b7366f01f0a018b64c81b0cd1609be680f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_source_lines"
+            },
+            "path": "mcp/src/agents_remember/serving/events.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

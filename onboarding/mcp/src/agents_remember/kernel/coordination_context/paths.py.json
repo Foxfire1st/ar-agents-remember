@@ -1,0 +1,200 @@
+{
+  "path": "mcp/src/agents_remember/kernel/coordination_context/paths.py",
+  "realizes": [],
+  "references": {
+    "10": {
+      "note": "An absent memory root, a retargeted root link and an equal-bytes retarget each recompute a kept view.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+            "content": "sha256:5d5279ced163a25302240b8fd1de7e6e59fe3f10cde77dc404ca43505d463bcb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_root_selections"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "A higher-priority settings file that appears is a change of the recorded set.\n\nAnchor: `_settings_selection`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+            "content": "sha256:267caaf15e6e218966814d04fd2285fd1db099ea6dd45ebe90412f84ac14b800",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "An installed coordination root needs `system`, `memory-repos` and `tasks`; the script walk uses the same check",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52f7e65b6acd94ad5885aa51286fef97cef7c4af",
+            "content": "sha256:8d26dd2da0afc8e63a46ee6718c33ea511fc37930c871922eccf59f81d47cdc7",
+            "locator": {
+              "kind": "symbol",
+              "name": "agents_repo_from_script"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "A coordination-root settings file maps to the user's settings file",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52f7e65b6acd94ad5885aa51286fef97cef7c4af",
+            "content": "sha256:bc0e1e22a0df275fe79c5c0151d3cbb85a7f0f846e010d432b45ffc47a28d4b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "path_settings_path_for"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The coordination root from a hint, the installed root or the sibling default.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52f7e65b6acd94ad5885aa51286fef97cef7c4af",
+            "content": "sha256:f4a6ac6575b40d71c3506dc509a09c34a8b03dcc72c075c531f9dff1d2c9c1f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_coordination_root_hint"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The external memory root is a recorded resolution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52f7e65b6acd94ad5885aa51286fef97cef7c4af",
+            "content": "sha256:7e2b1c8b3bd411e2a1c6ab1347851e345769b8f1aaedfe6a439d6abd65fcd6c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "external_memory_root"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The settings file priority, with each probe recorded.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52f7e65b6acd94ad5885aa51286fef97cef7c4af",
+            "content": "sha256:645284fe51bd370f6a7d80e184fc9ca89ea251ba10a40b4f76a6a72c6e6d3d06",
+            "locator": {
+              "kind": "symbol",
+              "name": "settings_path_for_roots"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The two admitted settings locations and the refusal of the removed layout.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52f7e65b6acd94ad5885aa51286fef97cef7c4af",
+            "content": "sha256:97ad5ea24fedd4f300d2b70f2eabef7e1817cbf94c353dae72a29212b3884feb",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_roots_from_settings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The memory worktree shape, matched segment by segment.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52f7e65b6acd94ad5885aa51286fef97cef7c4af",
+            "content": "sha256:8aba5a03c1d88142bbd5a0853d9e4812c668e55510a45cd8e7ac9a0c4fb499e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_worktree_enclosure"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The settings path of an onboarding root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52f7e65b6acd94ad5885aa51286fef97cef7c4af",
+            "content": "sha256:c7c0026f4522141ef3a124151a30e606d2ecc3b929d2d55e4d4f80b06bd91df9",
+            "locator": {
+              "kind": "symbol",
+              "name": "infer_settings_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The supported onboarding roots and the refusal that names both shapes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52f7e65b6acd94ad5885aa51286fef97cef7c4af",
+            "content": "sha256:592e72ebf9c585e4c03e2dbe1cac6cb4e2c90d0db9d22ee6a796e997a211f6ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "infer_topology_from_onboarding_root"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The one-to-one card path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52f7e65b6acd94ad5885aa51286fef97cef7c4af",
+            "content": "sha256:8f09e6eb513ec1e3b96652de09519b0d96ef811cbc36202bf17ca56fc631bb35",
+            "locator": {
+              "kind": "symbol",
+              "name": "mirror_onboarding_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

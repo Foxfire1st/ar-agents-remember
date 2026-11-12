@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/l86.classification.captured.json",
+  "realizes": [],
+  "references": {
+    "3": {
+      "note": "The current retained JSON input supplies the literal identities, response states and populations summarized above; these are fixture facts, not live project knowledge or fresh execution evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c4cc9ecc5c3fb065d1cecb00051e448499fa7fd",
+            "content": "sha256:fbd6f083bb5752092a79f48680ab3ea02cac8e04993ba931bfd2583ca25a9630",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

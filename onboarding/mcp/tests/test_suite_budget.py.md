@@ -1,15 +1,5 @@
 # mcp/tests/test_suite_budget.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_suite_budget.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T21:35:26+00:00 |
-| lastVerifiedCommitHash | `4346e6979a9bb628bd07bd83957917e1b157f32b`|
-| lastVerifiedCommitDate | 2026-09-20T15:23:19+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Tests overview](overview.md)
@@ -22,7 +12,7 @@ Proves selected-case budget admission without recursive pytest collection.
 
 ### Logic
 
-Four cases, and they now split the two things the old version of this module ran together. `test_selected_case_budgets` is the parametrized one: it feeds the actual collection-finish hook a **synthetic** selected item population — 1000 unit/250 integration passes, 1001 unit or 251 integration raises the refusal requiring an explicit tradeoff — so those two numbers are the *test's inputs*, deliberately not the repository's rails, and the marker-shaped item double classifies each already-collected item. Three further cases pin the rail itself: `test_the_effective_budgets_are_the_repository_rails` asserts that the running configuration's `inifile` **is** the repository-root `pyproject.toml` and that the two ini values equal the root file's own declarations, reading the enforced configuration rather than either file's text; `test_the_option_declarations_state_no_budget_of_their_own` walks `conftest.py`'s AST and refuses a `default=` on either `addini` declaration, so the dead number cannot come back; and `test_an_absent_rail_refuses_by_name_instead_of_running_unbounded` states that an absent rail resolves to `0` and is refused by the `budget < 1` guard rather than read as "no ceiling". This is boundary arithmetic and refusal evidence, not a second inventory scan or a real nested pytest session.
+The parametrized `test_selected_case_budgets` drives the actual collection-finish hook with synthetic selected item populations: the declared 10,000 unit/2,000 integration pair passes, one unit case or one integration case above its own rail raises the explicit-tradeoff refusal. `STUB_UNIT`/`STUB_INTEGRATION` deliberately duplicate the declared pair, and `test_the_stub_matches_the_declared_pair` ties both constants to the root configuration so a stale mirror cannot keep proving an obsolete ceiling. The marker-shaped item double classifies already-collected items; no recursive pytest collection is spawned. The other checks pin the effective repository-root inifile and both runtime ini values, prohibit a `default=` on either ini declaration, and require an absent rail to resolve to 0 and refuse by name rather than run unbounded. These are enforcement boundaries, not an inventory scan or an execution-time measurement.
 
 ### Conventions
 
@@ -31,7 +21,7 @@ boundary when changing policy rather than adding duplicate metric or collection 
 
 ### Invariants And Boundaries
 
-There is **no per-declaration default budget to state.** `mcp/tests/conftest.py` registers the two ini names with `addini` and carries no `default=`; the enforced pair lives once, in the repository-root `pyproject.toml` under `[tool.pytest.ini_options]`, and was **2300 unit / 400 integration** when this was written — read it there, it moves. The 1000/250 figures inside the parametrized case are that case's own inputs. Coverage is diagnostic; production
+There is **no per-declaration default budget to state.** `mcp/tests/conftest.py` registers the two ini names with `addini` and carries no `default=`; the enforced pair lives once, in the repository-root `pyproject.toml` under `[tool.pytest.ini_options]`, and was **2300 unit / 400 integration** when this was written — read it there, it moves. The stub now follows the declared 10,000/2,000 pair; the 2300/400 figure above is only the dated reading, not a current input. The boundary proof and its tie to the declaration are separate checks. Coverage is diagnostic; production
 CRAP 20 triggers review without failing delivery. Full suites and whole-candidate review occur at
 master completion. A green unit result is not a certification certificate.
 
@@ -39,47 +29,36 @@ master completion. A green unit result is not a certification certificate.
 
 Verification metadata remains closeout-owned; this card records source inspection only.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured; this behavior is repository-owned.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external domain claim is needed. | N/A | N/A |
+No external domain claim is needed.
 
-## Repo-Internal References
+### Repo-Internal References
+
 
 The exact functions below establish the tested boundary and its test doubles.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Proves selected-case budget admission without recursive pytest collection, over a synthetic population. | `test_selected_case_budgets` | mcp/tests/test_suite_budget.py:23-41 |
-| Proves the enforced inifile and the running configuration's values are the root `pyproject.toml`'s own declarations. | `test_the_effective_budgets_are_the_repository_rails` | mcp/tests/test_suite_budget.py:73-90 |
-| Refuses a `default=` on either budget declaration, so a dead number cannot return to the tree. | `test_the_option_declarations_state_no_budget_of_their_own` | mcp/tests/test_suite_budget.py:107-136 |
-| States that an absent rail resolves to `0` and is refused by name instead of running unbounded. | `test_an_absent_rail_refuses_by_name_instead_of_running_unbounded` | mcp/tests/test_suite_budget.py:139-154 |
+- Proves selected-case budget admission without recursive pytest collection, over a synthetic population. [1]
+- Proves the enforced inifile and the running configuration's values are the root `pyproject.toml`'s own declarations. [2]
 
-## Cross-Repo References
+
+
+
+- Refuses a default on either budget declaration, so a dead number cannot return to the tree.  Anchor: `test_the_option_declarations_state_no_budget_of_their_own` [3]
+
+
+- States that an absent rail resolves to `0` and is refused by name instead of running unbounded. [4]
+
+### Cross-Repo References
 
 No cross-repository protocol is exercised by these unit cases.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external boundary is claimed. | N/A | N/A |
+No external boundary is claimed.
 
-## Update History
-- 2026-09-20T02:05:20+00:00: Generated citation repair: `test_the_effective_budgets_are_the_repository_rails` repointed to mcp/tests/test_suite_budget.py:73-90. No content impact: mechanical anchor-range projection bound to citation source snapshot fe7fdbf3f561fa23007ac47565833928a7c74df1b4b028969d78a5b139bb65b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T02:05:20+00:00: Generated citation repair: `test_the_option_declarations_state_no_budget_of_their_own` repointed to mcp/tests/test_suite_budget.py:107-136. No content impact: mechanical anchor-range projection bound to citation source snapshot fe7fdbf3f561fa23007ac47565833928a7c74df1b4b028969d78a5b139bb65b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T02:05:20+00:00: Generated citation repair: `test_an_absent_rail_refuses_by_name_instead_of_running_unbounded` repointed to mcp/tests/test_suite_budget.py:139-154. No content impact: mechanical anchor-range projection bound to citation source snapshot fe7fdbf3f561fa23007ac47565833928a7c74df1b4b028969d78a5b139bb65b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-19T22:28:52+00:00: Generated citation repair: `test_the_effective_budgets_are_the_repository_rails` repointed to mcp/tests/test_suite_budget.py:42-59. No content impact: mechanical anchor-range projection bound to citation source snapshot 440311ed835ff15c77271ad85c2bef2103d2b46ebe061b96476b211b3d19cd24; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-19T22:28:52+00:00: Generated citation repair: `test_the_option_declarations_state_no_budget_of_their_own` repointed to mcp/tests/test_suite_budget.py:62-91. No content impact: mechanical anchor-range projection bound to citation source snapshot 440311ed835ff15c77271ad85c2bef2103d2b46ebe061b96476b211b3d19cd24; claim bytes unchanged; generated by ccr-r10@v1.
 
-- 2026-09-18T18:55+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): **this card described a module that no longer exists, and both halves of its budget sentence were wrong.** `260915-KS-L23`'s item 12 (worker W1) removed the two never-effective `default=1100/300` declarations from `mcp/tests/conftest.py` and added **three cases** to this module (+71 lines): the module now has **four** cases, not one parametrized three-row case — `test_the_effective_budgets_are_the_repository_rails` (asserts the running configuration's `inifile` is the repository-root `pyproject.toml` and that its ini values equal that file's declarations), `test_the_option_declarations_state_no_budget_of_their_own` (AST over `conftest.py`, refusing a `default=` on either `addini`) and `test_an_absent_rail_refuses_by_name_instead_of_running_unbounded` (an absent rail resolves to `0` and is refused by the `budget < 1` guard). The `### Logic` section now says that, and says plainly that `test_selected_case_budgets`' 1000/250 are **the case's own synthetic inputs** rather than the repository's rails. The `### Invariants And Boundaries` sentence read "Default budgets are 1000 unit and 250 integration … this module pins the same numbers `pyproject.toml` declares" — wrong on both halves (there are no per-declaration defaults, and the declared pair is **2300 / 400** in the repository root) — and is replaced by the no-default rule plus the pair's real home and the fact that it moves. The reference table gained the three new cases with their measured extents (`:43-60`, `:63-88`, `:91-106`) and the parametrized case's range was re-derived from `:19-35` to `:23-41`. Content was read against the delivered but **uncommitted** working tree, so **the verification stamp is not advanced**: no commit carries these bytes and closeout stamps the real code commit.
-- 2026-09-13T19:02+02:00 — 260831-LOCR-L37 curator: recorded this leaf's case-budget change —
-  `integration_case_budget` 200 -> 250 and therefore the third parametrization's refusal boundary
-  201 -> 251, developer-authorized so dropped coverage could be written back. `pyproject.toml` owns
-  the tradeoff statement; this module is the pin that the declared numbers are the enforced ones.
-  Verification metadata remains closeout-owned; no acceptance claim.
 
-- 2026-09-12T00:52:39+02:00 — 260831-LOCR-L29 curator: recorded this leaf's case-budget change — `integration_case_budget` 150 → 200 with the measured tradeoff in `pyproject.toml` (integration 150 cases + 31 subtests in 31.8 s; unit 795 + 145 in 56.0 s). The budget file is the only place that numeric contract lives, so the card's prose is unchanged and the citation was repointed to the current extent. Verification metadata remains closeout-owned.
-
-- 2026-09-06T21:35:26+00:00 — Documented the actual d3610903 unit behavior and test-double limits without claiming an unrun verification pass.
+- The current root declaration is 10000 unit and 2000 integration; the synthetic stub and both guard-relative boundary cases follow it. [5]

@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/canvas_host_test_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The support builds its published revisions through the real publication path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "40dd72bb09e711130d7017a3e47d8d66c8a1c8d1",
+            "content": "sha256:be4caf15127e693b88d4aa0978dd328add79e073103c18dec444bf8ebe06215a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

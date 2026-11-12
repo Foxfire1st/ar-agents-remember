@@ -1,0 +1,499 @@
+{
+  "path": "mcp/tests/test_role_instruction_wording.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "721de1fab4f546e1fb56f1f38142765772a3ba78",
+        "content": "sha256:4b198cf4afbc62422b01831badf05d3c18e915c9bfc1ce1755d3a36e58759c8c",
+        "locator": {
+          "kind": "symbol",
+          "name": "InstructionFileWordingTests.test_retired_investigator_wording_is_detected_when_reinserted"
+        }
+      },
+      "facet": "Every declared obsolete Investigator clause is detected when restored to its own source carrier.",
+      "id": "PRF-3CQKFM",
+      "invariant": "INV-MGQKGC",
+      "origin": {
+        "handoffEntry": "MIK-R98@v1 §12",
+        "leaf": "260928-MIK-L98"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "721de1fab4f546e1fb56f1f38142765772a3ba78",
+        "content": "sha256:fd0f0cd6c898d38e4fce6951d789d0b9daca524ddf1481a732d595527badbf8e",
+        "locator": {
+          "kind": "symbol",
+          "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
+        }
+      },
+      "facet": "The wording check requires a report before provider/system state change and an explicit authorized order from the developer or actual named parent; it grants no retired provider operation.",
+      "id": "PRF-6YJJ90",
+      "invariant": "INV-MM63KX",
+      "origin": {
+        "handoffEntry": "L112-current-proof-INV-MM63KX",
+        "leaf": "260928-MIK-L112"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "721de1fab4f546e1fb56f1f38142765772a3ba78",
+        "content": "sha256:274ce8ef931c7d14a8253190b0a287b975ede8ccb31d977a87154f10aa7f2266",
+        "locator": {
+          "kind": "symbol",
+          "name": "InstructionFileWordingTests.test_every_role_organises_its_harness_work_with_seat_boundaries"
+        }
+      },
+      "facet": "The canonical-source wording guard checks every listed role's autonomy/boundary clauses, absence of the retired fixed fan-out wording, Worker no-role-start and exactly one Curator writer; it is not delivered-capsule execution evidence.",
+      "id": "PRF-BV411J",
+      "invariant": "INV-7VZRZW",
+      "origin": {
+        "handoffEntry": "L112-semantic-replacement-PRF-SB6671",
+        "leaf": "260928-MIK-L112"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "721de1fab4f546e1fb56f1f38142765772a3ba78",
+        "content": "sha256:723a5dc6ca79feb36850e6576218d7da572544a06b7652b47f9e9cae1b7272d2",
+        "locator": {
+          "kind": "symbol",
+          "name": "InstructionFileWordingTests.test_removing_each_affirmative_clause_is_detected_on_its_surface"
+        }
+      },
+      "facet": "Removes each affirmative clause from every declared surface and requires the guard to detect the loss.",
+      "id": "PRF-CJT4MT",
+      "invariant": "INV-7VZRZW",
+      "origin": {
+        "handoffEntry": "R99-14-harness-work",
+        "leaf": "260928-MIK-L99"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "721de1fab4f546e1fb56f1f38142765772a3ba78",
+        "content": "sha256:597d36c6d56948a3fc368f9e6f1220b886b9bae310bda2bac1a4485365b7a8fc",
+        "locator": {
+          "kind": "symbol",
+          "name": "InstructionFileWordingTests.test_the_capsules_send_a_return_and_never_point_at_the_agent_chat"
+        }
+      },
+      "facet": "The Worker, Reviewer, Curator and Manager stage capsules carry the sending clause, their orientation capsules and the hand-over carry the reply rule, the acceptance home carries the artifact clause, and any remaining chat-as-answer or chat-as-report coupling in those capsules fails the case.",
+      "id": "PRF-CN33QG",
+      "invariant": "INV-QZW2X2",
+      "origin": {
+        "handoffEntry": "L172-INV-C",
+        "leaf": "260928-MIK-L172"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "721de1fab4f546e1fb56f1f38142765772a3ba78",
+        "content": "sha256:7d62713e2925b032145b1422f140b529ba59fef6ed9510341bd8e2e8119bcd26",
+        "locator": {
+          "kind": "symbol",
+          "name": "InstructionFileWordingTests.test_leaf_roles_and_operations_deliver_their_own_positive_obligations"
+        }
+      },
+      "facet": "Requires the leaf-role and operation texts to deliver their own affirmative obligations, including the Curator's upward recovery clauses.",
+      "id": "PRF-EA6YHQ",
+      "invariant": "INV-W24J6Q",
+      "origin": {
+        "handoffEntry": "R99-curator-notice-recovery",
+        "leaf": "260928-MIK-L99"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "721de1fab4f546e1fb56f1f38142765772a3ba78",
+        "content": "sha256:07db58677dcdeecd3935f1f54f3c5c4d09f71fdfeb07e2ade7d7af74760a5b6c",
+        "locator": {
+          "kind": "symbol",
+          "name": "InstructionFileWordingTests.test_direct_closeout_keeps_the_architect_and_its_existing_gates"
+        }
+      },
+      "facet": "The kept Architect closeout sentence, its developer-exception wording and the unchanged closeout operation's actor are all present, and the sentence is not in the retired register.",
+      "id": "PRF-H64HF6",
+      "invariant": "INV-P2WRNQ",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-direct-closeout-exception",
+        "leaf": "260928-MIK-L72"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "721de1fab4f546e1fb56f1f38142765772a3ba78",
+        "content": "sha256:fd0f0cd6c898d38e4fce6951d789d0b9daca524ddf1481a732d595527badbf8e",
+        "locator": {
+          "kind": "symbol",
+          "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
+        }
+      },
+      "facet": "The source-wording check requires scratch/repository-sandbox checks, one named report, the report-is-written/path-notice substring and report-before-authorized-remediation. It does not assert the report destination’s concrete agent ID or role/task address and executes neither native successor delivery nor remediation. Initial concern and remediation authorization retain actual-parent provenance separately.",
+      "id": "PRF-K30NGN",
+      "invariant": "INV-YT1AD8",
+      "origin": {
+        "handoffEntry": "CUR-L117-investigator-report-facet",
+        "leaf": "260928-MIK-L117"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "721de1fab4f546e1fb56f1f38142765772a3ba78",
+        "content": "sha256:fd0f0cd6c898d38e4fce6951d789d0b9daca524ddf1481a732d595527badbf8e",
+        "locator": {
+          "kind": "symbol",
+          "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
+        }
+      },
+      "facet": "The wording check requires one scoped concern of any kind and the canonical Investigator source/identity; it is an instruction-contract check, not a runtime permission proof.",
+      "id": "PRF-NEMYKT",
+      "invariant": "INV-WAY665",
+      "origin": {
+        "handoffEntry": "L112-current-proof-INV-WAY665",
+        "leaf": "260928-MIK-L112"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "721de1fab4f546e1fb56f1f38142765772a3ba78",
+        "content": "sha256:7d62713e2925b032145b1422f140b529ba59fef6ed9510341bd8e2e8119bcd26",
+        "locator": {
+          "kind": "symbol",
+          "name": "InstructionFileWordingTests.test_leaf_roles_and_operations_deliver_their_own_positive_obligations"
+        }
+      },
+      "facet": "Requires each leaf role and operation source, including the review operation's extra-round and Manager-acceptance sentences, to carry its pinned clauses.",
+      "id": "PRF-R4HW9B",
+      "invariant": "INV-S9H78W",
+      "origin": {
+        "handoffEntry": "L84-P5-19 / L84-P5-18 pair 6",
+        "leaf": "260928-MIK-L84"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "721de1fab4f546e1fb56f1f38142765772a3ba78",
+        "content": "sha256:7d62713e2925b032145b1422f140b529ba59fef6ed9510341bd8e2e8119bcd26",
+        "locator": {
+          "kind": "symbol",
+          "name": "InstructionFileWordingTests.test_leaf_roles_and_operations_deliver_their_own_positive_obligations"
+        }
+      },
+      "facet": "The shipped positive leaf duties include Worker’s Manager notice before direct freeze handover to a started Reviewer; the case checks resolved source wording, not host execution.",
+      "id": "PRF-RAAASE",
+      "invariant": "INV-MTRR08",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-replacement-proof-PRF-9VM66C",
+        "leaf": "260928-MIK-L62"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "721de1fab4f546e1fb56f1f38142765772a3ba78",
+        "content": "sha256:fd0f0cd6c898d38e4fce6951d789d0b9daca524ddf1481a732d595527badbf8e",
+        "locator": {
+          "kind": "symbol",
+          "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
+        }
+      },
+      "facet": "The wording check pins no code/enclosure/Git/memory/task mutation, declined orders for code or memory changes, and no role start. It checks instructions, not runtime enforcement.",
+      "id": "PRF-RF6C6D",
+      "invariant": "INV-H0WCGX",
+      "origin": {
+        "handoffEntry": "L112-current-proof-INV-H0WCGX",
+        "leaf": "260928-MIK-L112"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "721de1fab4f546e1fb56f1f38142765772a3ba78",
+        "content": "sha256:fd0f0cd6c898d38e4fce6951d789d0b9daca524ddf1481a732d595527badbf8e",
+        "locator": {
+          "kind": "symbol",
+          "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
+        }
+      },
+      "facet": "The wording check pins concern delivery in the actual parent first message, asking that parent once for missing scope, and developer-request intake without a parent.",
+      "id": "PRF-RKBZZC",
+      "invariant": "INV-A8E0YE",
+      "origin": {
+        "handoffEntry": "L112-current-proof-INV-A8E0YE",
+        "leaf": "260928-MIK-L112"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "721de1fab4f546e1fb56f1f38142765772a3ba78",
+        "content": "sha256:fd0f0cd6c898d38e4fce6951d789d0b9daca524ddf1481a732d595527badbf8e",
+        "locator": {
+          "kind": "symbol",
+          "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
+        }
+      },
+      "facet": "The wording check asserts exactly the seven retained Investigator requests in canonical order and pins the role no-mutation boundaries; fourteen legacy provider/search requests are not the current assertion.",
+      "id": "PRF-SQW3RM",
+      "invariant": "INV-YNHABM",
+      "origin": {
+        "handoffEntry": "L112-current-proof-INV-YNHABM",
+        "leaf": "260928-MIK-L112"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Instruction cases assert Investigator scope/report/mutation boundaries, current coordination, positive leaf-seat obligations, the task-tool-server vocabulary and compiled return/await channels. Their assertions distinguish a stored file from an explicit handover and establish no fresh test run.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "721de1fab4f546e1fb56f1f38142765772a3ba78",
+            "content": "sha256:fd0f0cd6c898d38e4fce6951d789d0b9daca524ddf1481a732d595527badbf8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_investigator_scope_report_and_authority_are_explicit"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The Architect's flat-mode closeout gates and its kept clause stay pinned.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "721de1fab4f546e1fb56f1f38142765772a3ba78",
+            "content": "sha256:07db58677dcdeecd3935f1f54f3c5c4d09f71fdfeb07e2ade7d7af74760a5b6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_direct_closeout_keeps_the_architect_and_its_existing_gates"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The census pins the router, the eight launcher role files and their nine operations in delivered order.\n\nAnchor: `InstructionFileWordingTests.test_the_surfaces_are_the_router_seven_roles_and_their_eight_operations`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "721de1fab4f546e1fb56f1f38142765772a3ba78",
+            "content": "sha256:55093994ed36b5cdba470e68ec76b9905f2fd0e34ffc06daecdd2486bd38b4c5",
+            "locator": {
+              "end": 653,
+              "kind": "line_range",
+              "start": 629
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The protected Manager clause separates automatic stage publication and master-row mirroring at start/finalize/abandon from task_doc set_status for an explicit correction or organizational-master completion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36d804a3c22f393f9af02706048f73c6db76e1a8",
+            "content": "sha256:72da68e7f9ab8ce621744a91634b6de07a415d20c3103c15042f6129fdc4e13e",
+            "locator": {
+              "end": 286,
+              "kind": "line_range",
+              "start": 281
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/coordination_wording.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Named-section deletion and relocation controls cover construction-cost escalation, continuation, exact freeze/check identity and design-guideline duties. Coordination assertions preserve staged Manager seat creation, empty-seat recovery and scoped manual repair; message duties are checked at their actual shared delivery step. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "721de1fab4f546e1fb56f1f38142765772a3ba78",
+            "content": "sha256:5454cdd103137889868d17c90a38374fe6ddf44313a394e5c2f4c072457ddf1c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_inherited_construction_cost_and_continuation_keep_their_bounds"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The Investigator wording case checks scoped concern intake, report and remediation authority, and the canonical investigator role; no system-specialist role file, manifest entry or router mention remains.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "721de1fab4f546e1fb56f1f38142765772a3ba78",
+            "content": "sha256:fd0f0cd6c898d38e4fce6951d789d0b9daca524ddf1481a732d595527badbf8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_investigator_scope_report_and_authority_are_explicit"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Compiled parented handovers distinguish fixed starter identity from ordinary return role/task addresses; leaf returns name the current Manager.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1624f1c805d7b11098ab741352f0f4bd8f5ec09c",
+            "content": "sha256:bfd543f8f89f301f5c3eab6e35f8bba6a78a2237bbedc36f5b3ecdf48a3d3901",
+            "locator": {
+              "end": 286,
+              "kind": "line_range",
+              "start": 236
+            },
+            "path": "mcp/tests/test_role_instruction_wording_handover.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1624f1c805d7b11098ab741352f0f4bd8f5ec09c",
+            "content": "sha256:3efde9b8c1fc990a5c0eb061c7c8c49e42667b72632334189d15e3803e8ee7c1",
+            "locator": {
+              "end": 344,
+              "kind": "line_range",
+              "start": 288
+            },
+            "path": "mcp/tests/test_role_instruction_wording_handover.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Current instruction cases require staged individual Manager starts: Worker at build, Reviewer at freeze and Curator after code PASS. Handover tests keep actual-parent developer questions distinct from ordinary role/task returns and pin held-message ordering and permission boundaries. The tool-description census still covers role_start_set beside role_start and role_message; those source-text checks prove no live recipient or host consumption.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36d804a3c22f393f9af02706048f73c6db76e1a8",
+            "content": "sha256:54447e41fee0ce4ee13b795280e8542917d58b90d1e5d6cf8abc94253d45e793",
+            "locator": {
+              "end": 371,
+              "kind": "line_range",
+              "start": 364
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/coordination_wording.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1624f1c805d7b11098ab741352f0f4bd8f5ec09c",
+            "content": "sha256:45ba33f96964dcb2bbf4814d441e2e358c3a8ee06ecfe9d9c1e541bf5f52c343",
+            "locator": {
+              "end": 344,
+              "kind": "line_range",
+              "start": 236
+            },
+            "path": "mcp/tests/test_role_instruction_wording_handover.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1624f1c805d7b11098ab741352f0f4bd8f5ec09c",
+            "content": "sha256:270915da46fee44871d1df39eb7b6d2d9951007d3cf144fef6c9e63f1c3db892",
+            "locator": {
+              "end": 508,
+              "kind": "line_range",
+              "start": 405
+            },
+            "path": "mcp/tests/test_role_instruction_wording_handover.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1624f1c805d7b11098ab741352f0f4bd8f5ec09c",
+            "content": "sha256:94c5f37416ddc8bef7ae9621e505d7848443b7ee3842afcc7c89f34036542b52",
+            "locator": {
+              "end": 648,
+              "kind": "line_range",
+              "start": 547
+            },
+            "path": "mcp/tests/test_role_instruction_wording_handover.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The current source declares positive instruction-clause deletion controls and task-tool-server/host naming assertions; source presence supplies no executed test result or acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "721de1fab4f546e1fb56f1f38142765772a3ba78",
+            "content": "sha256:7d62713e2925b032145b1422f140b529ba59fef6ed9510341bd8e2e8119bcd26",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_leaf_roles_and_operations_deliver_their_own_positive_obligations"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The module checks the manifest-derived router/role/operation surface set, forbidden-host and package-copy equality, named task-server usage, parent/developer routing and compiled role returns, together with current coordination wording.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "721de1fab4f546e1fb56f1f38142765772a3ba78",
+            "content": "sha256:55093994ed36b5cdba470e68ec76b9905f2fd0e34ffc06daecdd2486bd38b4c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_surfaces_are_the_router_seven_roles_and_their_eight_operations"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The wording support resolves each facet through its actual addressed role, stage or declared detail and generates nonvacuous deletion controls; the delivered handoff detail must state the Git comparison of the leaf's code trees and the knowledge files in both memory trees. Current Curator tests keep foundation intake, producer checks, correct-write refusal steps and the selected-runtime writer admission; the Curator role requires admitted records to be read back.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38252affdb2287f40598285c1f05ac4d5184df84",
+            "content": "sha256:c0abbcc1547f1e9e6c1acce70d8a655a0c67f8603b33772685b32ebddd55e131",
+            "locator": {
+              "kind": "symbol",
+              "name": "assert_git_comparison_scope"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/capsule_wording.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The conditional sync and visible direct-repair clauses are pinned at their delivered audiences.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "721de1fab4f546e1fb56f1f38142765772a3ba78",
+            "content": "sha256:8347a6c60d751912a5fb9926753902972a36bd473e3516b1bec6097b92c1ba86",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_clean_sync_keeps_the_review_and_a_repair_stays_visible"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

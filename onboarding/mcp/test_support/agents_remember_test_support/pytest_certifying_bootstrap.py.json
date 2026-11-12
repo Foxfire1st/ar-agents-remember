@@ -1,0 +1,55 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/pytest_certifying_bootstrap.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "No external domain source is required to establish this repository-owned implementation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "185c93e4054759978ad66881f4a7a01cfb1b69ac",
+            "content": "sha256:a3d94317c78847d36712952c1bacf5ff2f3d245449ac4008aebf3d574964f9e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_bind_worktree_services_for_session"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The module's concrete API, control flow, and validation boundary are implemented here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "185c93e4054759978ad66881f4a7a01cfb1b69ac",
+            "content": "sha256:a3d94317c78847d36712952c1bacf5ff2f3d245449ac4008aebf3d574964f9e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_bind_worktree_services_for_session"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "No meaningful cross-repository reference applies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "185c93e4054759978ad66881f4a7a01cfb1b69ac",
+            "content": "sha256:a3d94317c78847d36712952c1bacf5ff2f3d245449ac4008aebf3d574964f9e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_bind_worktree_services_for_session"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

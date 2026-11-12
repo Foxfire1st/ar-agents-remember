@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The default is realized in the Architect, Manager and Orchestrator role texts, the coordination operation, the router and four manifest descriptions, and the wording tests pin the current sentences that state it."
+  },
+  "applicability": "A native Architect that has work to delegate, on a supplied canonical task or on an explicitly selected taskless Projects launch after the developer selects it.",
+  "conditions": [
+    "The launch supplies a supported role and canonical task references when task-bound.",
+    "A taskless Architect asks only for the missing outcome or registered repository before delegating.",
+    "The developer has not chosen the direct-coordination exception."
+  ],
+  "exclusions": [
+    "The developer-chosen direct coordination and the single-master Orchestrator, which are the two named exceptions.",
+    "Dashboard starts of other roles, which keep their own launch and need no parent; that role independence is unrelated to the Architect's delegation duty."
+  ],
+  "id": "INV-A6GAKX",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "requirements/MIK-R72-v2-the-architect-hands-coordination-to-one-agent.md SHA256 eb04f14b04f1a4ae5ff255d069300321674351e5d9b3474798fe13edc0d14c68; final independent reviewer verdict notes/reports/role-launch/260928-MIK-L72-reviewer-21dd4a07-9cd4-4afd-aba5-ec17a6b4b38a.md SHA256 ec0f8d07443044b6d71c024a314f6771136bb60ed31e7e70a654dc5e13301455; root adjudication notes/run3/L72-V2-ROUND2-ADJUDICATION.md; focused wording evidence 164 tests/244 subtests at candidate 598526ac",
+        "L72-MR1-K5: the statement is general over every delegating Architect, so the scope now covers a taskless/dashboard-selected Architect while keeping the two developer choices and unrelated dashboard-role independence."
+      ],
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "L72/MIK-R72@v2-one-coordinating-agent",
+    "leaf": "260928-MIK-L72",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "An architect that delegates hands coordination to exactly one agent, one Manager on the master for work inside one master or one Orchestrator on the sprint when two or more masters are worked on at the same time (the Orchestrator starting one Manager for each master), and the developer's two named choices, direct Architect coordination and an Orchestrator above a single master, are the only exceptions.",
+  "status": "proposed",
+  "supersedes": []
+}

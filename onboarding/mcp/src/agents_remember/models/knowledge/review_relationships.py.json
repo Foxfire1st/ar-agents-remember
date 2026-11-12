@@ -1,0 +1,237 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/review_relationships.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own statement of the four rules its shape enforces: both sides, the carried identity, no blank state, and the rename as an inference.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "052766edeb931fb7a3ab142ec97de73583b76cdf",
+            "content": "sha256:7cf29daa7f50cdde84fe7b9ab893f7307ed6b67352cee43aa097ae9358a2cd95",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewRelationshipMovement"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "052766edeb931fb7a3ab142ec97de73583b76cdf",
+            "content": "sha256:f930b21842cbd28b95226ccfaa6980e69829fbe0710ea1eb550b22c6edf8db5d",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "052766edeb931fb7a3ab142ec97de73583b76cdf",
+            "content": "sha256:319d9f8a3fe71f650293d56516821b43d0be1ee15df18a981dff4d28d9afa1fe",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The application module that builds the movements, and the display module that renders them.\n\nAnchor: `relationship_movements` `paired_movement` `single_sided_movement`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8810b5f2e85378847113d9ea6246a4fb96def91f",
+            "content": "sha256:31b4506c1ef62e6c77c68efb52f668b00415b0725a84ff746be8e9adbd222cae",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/review_relationship_movement.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0d9ce891dc115c70c6c14385dfb732ca0aab63cf",
+            "content": "sha256:05266b32621366098959dab03caa9003059e519b7ed6f15aa2ff02413b697d82",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/review_relationship_display.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The review vocabulary that re-exports these names and gains the two new fields on the pane row.\n\nAnchor: `ReviewSourceLocation` `ReviewSourcePane` `__all__`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
+            "content": "sha256:1da4715cc524823e0d5a161c96f379727d4cc35e17e708025eafff04590b510c",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
+            "content": "sha256:006cecd1a072e2de62a498f44e3ea8ea406cafb3cc467c4c31d2d72137e647f3",
+            "locator": {
+              "end": 101,
+              "kind": "line_range",
+              "start": 57
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
+            "content": "sha256:4d0b65fa6dad1cd50ffccbef6a9438db99bd5d650c265f6820bac0cf5e6bf315",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The production movement cases retain withdrawn realizations and distinguish each declared route from an unread route side; a moved realization is displayed as a retraction and an addition, not one movement.\n\nAnchor: `test_a_moved_realization_displays_both_recorded_paths_under_one_invariant_identity` `test_a_withdrawn_realization_stays_visible_with_its_deleted_file_and_its_identity` `test_each_declared_route_is_one_relationship_and_an_unread_side_is_never_ungoverned`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b2988f6b2880854b942ad85dea6de14ff88eb7c9",
+            "content": "sha256:d48782df1cc07dc9fa8556307192ab80fe5651cdc798afaab7fd5d94fd22b31e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_review_relationship_movement.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The published vocabulary.\n\nAnchor: `__all__`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "052766edeb931fb7a3ab142ec97de73583b76cdf",
+            "content": "sha256:319d9f8a3fe71f650293d56516821b43d0be1ee15df18a981dff4d28d9afa1fe",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The four relationship kinds, the two side names, the six side states, the seven transitions and the six gap codes.\n\nAnchor: `ReviewRelationshipKind` `ReviewRelationshipSideName` `ReviewRelationshipState` `ReviewRelationshipTransition` `AuthoredLineageKind` `ReviewRelationshipGapCode`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "052766edeb931fb7a3ab142ec97de73583b76cdf",
+            "content": "sha256:319d9f8a3fe71f650293d56516821b43d0be1ee15df18a981dff4d28d9afa1fe",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The two recorded relations a pairing may name, and the single-member rename basis.\n\nAnchor: `ReviewPairingBasis` `RENAME_INFERENCE_KIND` `RenameInferenceState`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "052766edeb931fb7a3ab142ec97de73583b76cdf",
+            "content": "sha256:319d9f8a3fe71f650293d56516821b43d0be1ee15df18a981dff4d28d9afa1fe",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The unresolved fact as a value: its side, its field, its code and its sentence.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "052766edeb931fb7a3ab142ec97de73583b76cdf",
+            "content": "sha256:dbb303f7154392ff1ba8e3c3282cb88136c0bf2900c10461e7cf3ba0af409717",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewRelationshipGap"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**One snapshot's recorded side, with the validator that refuses a recorded side carrying no relationship identity.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "052766edeb931fb7a3ab142ec97de73583b76cdf",
+            "content": "sha256:4f50da618aef51d589ff04c2eae034e7bf3ba3e6f1a7fb4a9d723ec933e24886",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewRelationshipSide"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The labelled rename inference, with the validator that ties a pairing to its state and refuses a similarity word on an unmeasured inference.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "052766edeb931fb7a3ab142ec97de73583b76cdf",
+            "content": "sha256:8a864f156df43acd9270602ce6be262d82924624e6901680572bf65457fe95d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewRenameInference"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The movement's four validators: the transition must match its sides, a gap must name a displayed side, a pairing must state its basis, and an absent identity must state itself.**\n\nAnchor: `ReviewRelationshipMovement`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "052766edeb931fb7a3ab142ec97de73583b76cdf",
+            "content": "sha256:319d9f8a3fe71f650293d56516821b43d0be1ee15df18a981dff4d28d9afa1fe",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,836 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L40",
+  "rows": [
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
+            "content": "sha256:d6f53a08c3f009d6ec1fab9421c91864471014e12a0b71c5b30904463fafd8d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "startRead"
+            },
+            "path": "dashboard/src/panels/review/ReviewReadCycle.ts"
+          },
+          "before": {
+            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+            "content": "sha256:83520200e76b402be99abcba0a8d1b028caefa0e1809cbacafdd49efdb6d9452",
+            "locator": {
+              "kind": "symbol",
+              "name": "startRead"
+            },
+            "path": "dashboard/src/panels/review/ReviewReadCycle.ts"
+          },
+          "id": "RLZ-QN7JZAE1"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-02FRF6",
+      "items": [
+        "sha256:045f98b5ac4ee8ad7ac726d914e45d488b917069a25af6b9409c7ad882f7e267"
+      ],
+      "reason": "The new branch returns before familyContinuationRead/admit for superseded whole-task responses. Exact selected-subject family-walk admission and no earlier context import remain unchanged.",
+      "revision": 3,
+      "subject": "INV-53F058MT"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
+            "content": "sha256:d6f53a08c3f009d6ec1fab9421c91864471014e12a0b71c5b30904463fafd8d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "startRead"
+            },
+            "path": "dashboard/src/panels/review/ReviewReadCycle.ts"
+          },
+          "before": {
+            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+            "content": "sha256:83520200e76b402be99abcba0a8d1b028caefa0e1809cbacafdd49efdb6d9452",
+            "locator": {
+              "kind": "symbol",
+              "name": "startRead"
+            },
+            "path": "dashboard/src/panels/review/ReviewReadCycle.ts"
+          },
+          "id": "RLZ-C76HGC03"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-0QV5N6",
+      "items": [
+        "sha256:c065470109e5c2b2f6db8df7a0c2fbbf8ebf945f5d54875d8540f58c0ebf9e6b"
+      ],
+      "reason": "The unshown branch never calls setAnswer/admit for the current question and therefore preserves requested-subject-only failure/refusal display and the mounted admitted frame.",
+      "revision": 1,
+      "subject": "INV-WQZ2WFCN"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-49E649",
+          "revision": 1
+        },
+        {
+          "id": "INV-656CYW",
+          "revision": 2
+        },
+        {
+          "id": "INV-HWAWFT",
+          "revision": 1
+        },
+        {
+          "id": "INV-MS9BMJ",
+          "revision": 1
+        },
+        {
+          "id": "INV-WV1YQE",
+          "revision": 1
+        },
+        {
+          "id": "INV-XN0FG8",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-1X5CFC",
+      "items": [
+        "sha256:ae48adb8de362fda84ad270e825ac609201849b0df2ec0df77f09e9044979234"
+      ],
+      "reason": "All six exact member statements/scopes were examined. Shared capture gains copied-index applicability in INV-656CYW without weakening judged-tree, validator/gate, frozen-history, changed-row or honest-preview guarantees; guarantee/routes/roster remain unchanged.",
+      "subject": "FAM-61DY2V"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-21SDZECS",
+          "revision": 2
+        },
+        {
+          "id": "INV-2E8MG43K",
+          "revision": 2
+        },
+        {
+          "id": "INV-49H32B3F",
+          "revision": 2
+        },
+        {
+          "id": "INV-4DVNECH3",
+          "revision": 3
+        },
+        {
+          "id": "INV-53F058MT",
+          "revision": 3
+        },
+        {
+          "id": "INV-555EHWM8",
+          "revision": 2
+        },
+        {
+          "id": "INV-8VQR13WX",
+          "revision": 1
+        },
+        {
+          "id": "INV-BR5MTSTY",
+          "revision": 2
+        },
+        {
+          "id": "INV-H8EM1VJR",
+          "revision": 2
+        },
+        {
+          "id": "INV-KKJYVB40",
+          "revision": 1
+        },
+        {
+          "id": "INV-MC654E0T",
+          "revision": 1
+        },
+        {
+          "id": "INV-MCVSM81V",
+          "revision": 2
+        },
+        {
+          "id": "INV-RMTHRQ0K",
+          "revision": 1
+        },
+        {
+          "id": "INV-RT13RESK",
+          "revision": 2
+        },
+        {
+          "id": "INV-VPX81HXV",
+          "revision": 2
+        },
+        {
+          "id": "INV-W5CTZJGD",
+          "revision": 2
+        },
+        {
+          "id": "INV-WQZ2WFCN",
+          "revision": 1
+        },
+        {
+          "id": "INV-XX178P3W",
+          "revision": 2
+        },
+        {
+          "id": "INV-YVVW1XCN",
+          "revision": 2
+        },
+        {
+          "id": "INV-Z385RTQS",
+          "revision": 2
+        },
+        {
+          "id": "INV-ZE4QPG25",
+          "revision": 2
+        },
+        {
+          "id": "INV-ZS9ZS878",
+          "revision": 3
+        },
+        {
+          "id": "INV-ZY0YMXMQ",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-3481G2",
+      "items": [
+        "sha256:d728a64796bb8d67d382cc374ef8600fde04c51b8546455545b7d7d525a2ef51"
+      ],
+      "reason": "All 23 exact member statements/scopes were examined. INV-W5CTZJGD narrows its old superseded-cache ban only for admitted compatible whole-task reuse; selected intent, full inventory, recorded evidence/family context, mounted inspection state and all other siblings preserve this existing guarantee.",
+      "subject": "FAM-R6R095RW"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3BDYEK",
+      "items": [
+        "sha256:bbe919ad08058c14761512ecfee1873877a974938a9fdb815d96a29427b5a9f7"
+      ],
+      "reason": "The import wires the existing generic recorded_reads context into the already attributed computation/parent-admission owners for INV-5M9WY3. The import itself records no input and decides no return/cache eligibility.",
+      "subject": "hunk:sha256:bbe919ad08058c14761512ecfee1873877a974938a9fdb815d96a29427b5a9f7"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "be18a11c17428887debf698d158f209fef4b1ef8",
+            "content": "sha256:1bd66e6e8cd213641e26490dec58f08d8b657c5ea074a8879dce92d8e40c3fef",
+            "locator": {
+              "kind": "symbol",
+              "name": "_listed_changes"
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_knowledge.py"
+          },
+          "before": "absent",
+          "id": "RLZ-646SPE"
+        },
+        {
+          "after": {
+            "blob": "be18a11c17428887debf698d158f209fef4b1ef8",
+            "content": "sha256:1a7b83b1b277da4dc2a0726815efebb30b59ed14939d84e23f14bdf8384c5a52",
+            "locator": {
+              "kind": "symbol",
+              "name": "_quoted_git_path"
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_knowledge.py"
+          },
+          "before": "absent",
+          "id": "RLZ-H028XD"
+        },
+        {
+          "after": {
+            "blob": "be18a11c17428887debf698d158f209fef4b1ef8",
+            "content": "sha256:251682e00048ea1933419d2aa8f4afb644fec374898474412a95126355e775dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_documents"
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_knowledge.py"
+          },
+          "before": "absent",
+          "id": "RLZ-WW3W2C"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-4A3CK8",
+      "items": [],
+      "reason": "The statement, semantic scope, admission and revision are unchanged. The actual current-MQ hunks are implemented by these additional support/propagation constructs of the existing obligation; the writer adds only their exact source realization anchors.",
+      "revision": 1,
+      "subject": "INV-7MH0BR"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5HZ9AM",
+      "items": [
+        "sha256:adbed415aaec338852dbbc23eaad511ea6b42d5963cf93c4284c0d5436e939c9"
+      ],
+      "reason": "CandidateTrees is imported as the existing worklist input carrier. The actual supplied-tree/no-extra-capture obligation is realized at _worklist_view; this import performs no capture or policy decision.",
+      "subject": "hunk:sha256:adbed415aaec338852dbbc23eaad511ea6b42d5963cf93c4284c0d5436e939c9"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "810d8283edc10ef4ae8c785a55fb36315c3f7565",
+            "content": "sha256:83c9e4eae5d603aed19b97cb13d05db83b659dcd396a527a18f2fcccfdc90f28",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_history_rows_are_found_by_the_row_subject_an_item_names"
+            },
+            "path": "mcp/tests/test_review_git_trees.py"
+          },
+          "before": {
+            "blob": "6c5ec61724dfad3055fe54b23d8e8afbef34d1b8",
+            "content": "sha256:a46765aa3911e4d3754acec5ba4c818728ea7bd1b533e15c438407be7fd5ddc0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_history_rows_are_found_by_the_row_subject_an_item_names"
+            },
+            "path": "mcp/tests/test_review_git_trees.py"
+          },
+          "id": "PRF-Z7R50C"
+        },
+        {
+          "after": {
+            "blob": "be18a11c17428887debf698d158f209fef4b1ef8",
+            "content": "sha256:084c889820ac13c41ce829ca9da28cc8fd479201ebea643531cd56cf76ae4d5a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_governing"
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_knowledge.py"
+          },
+          "before": {
+            "blob": "3648f9ae146549e536af2ac76a9375adbcbef668",
+            "content": "sha256:084c889820ac13c41ce829ca9da28cc8fd479201ebea643531cd56cf76ae4d5a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_governing"
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_knowledge.py"
+          },
+          "id": "RLZ-S35ND0"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-6DZQF5",
+      "items": [
+        "sha256:2fbb623d3ae31f17d64e3ab95fcc24c007cb7ef8aba870def5f223df48911ac5"
+      ],
+      "reason": "The production _governing latest-attempt ownership is byte-identical; the proof now clears the live leaf memo between scratch comparison mutations so it still observes the same current fixture history. No attempt-file, freeze or latest-row rule changes.",
+      "revision": 1,
+      "subject": "INV-MS9BMJ"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7J8AD9",
+      "items": [
+        "sha256:63af7c20196da76b6be19f51c96e29422acff6449d4eb1cdc69dc13a0dc77048"
+      ],
+      "reason": "The zero-object regex is a local raw-Git representation helper: _held_object converts Git's all-zero absent endpoint to None while the attributed raw-listing owner preserves exact blob/path identity. This constant creates no independently authored absence policy.",
+      "subject": "hunk:sha256:63af7c20196da76b6be19f51c96e29422acff6449d4eb1cdc69dc13a0dc77048"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-7V18JD",
+      "items": [
+        "sha256:bb7814d6f445b7fcc5e5d616fdec6dfb93c79623aa0c910514840d3640b48f34"
+      ],
+      "reason": "The package route still owns the same CLI/application/kernel/serving/worktree layers. L40 refines their existing capture and read/pacing owners; the focused child cards/overviews carry those contracts without introducing another package boundary or artifact mode.",
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "be18a11c17428887debf698d158f209fef4b1ef8",
+            "content": "sha256:02dfe153942e654aa2f6b848f761c107775111b85852007e21f869342fbbd15b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_view"
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_knowledge.py"
+          },
+          "before": "absent",
+          "id": "RLZ-ZXPVGB"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-8FXM4R",
+      "items": [],
+      "reason": "The statement, semantic scope, admission and revision are unchanged. The actual current-MQ hunks are implemented by these additional support/propagation constructs of the existing obligation; the writer adds only their exact source realization anchors.",
+      "revision": 1,
+      "subject": "INV-5M9WY3"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R40",
+          "packet": "requirements/MIK-R40-v2-reviewer-read-latency-on-git-trees.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
+            "content": "sha256:d6f53a08c3f009d6ec1fab9421c91864471014e12a0b71c5b30904463fafd8d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "startRead"
+            },
+            "path": "dashboard/src/panels/review/ReviewReadCycle.ts"
+          },
+          "before": {
+            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+            "content": "sha256:83520200e76b402be99abcba0a8d1b028caefa0e1809cbacafdd49efdb6d9452",
+            "locator": {
+              "kind": "symbol",
+              "name": "startRead"
+            },
+            "path": "dashboard/src/panels/review/ReviewReadCycle.ts"
+          },
+          "id": "RLZ-CN4X22BX"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "weaken",
+      "id": "ROW-914DZN",
+      "items": [
+        "sha256:672190d969c8149d0e6da708821ac9b595433274953c4aa105785ba399c113ed"
+      ],
+      "reason": "The former blanket superseded-cache prohibition is deliberately narrowed for the approved unshown whole-task answer reuse. Display and selected-subject sequencing stay strict; a different generation, refresh, continuation, refusal or failure cannot use this exception.",
+      "revision": 2,
+      "subject": "INV-W5CTZJGD"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BTHSGE",
+      "items": [
+        "sha256:359a351d97914e55f87aef4643761ad3fef3b0a65cdf41b966d434a58515e58a"
+      ],
+      "reason": "These imports reuse the existing guarded Git runner, exact blob readers and typed preparation error for INV-7MH0BR's attributed batch/patch/document owners. They introduce no Git subprocess owner, exception policy or independently authored guarantee.",
+      "subject": "hunk:sha256:359a351d97914e55f87aef4643761ad3fef3b0a65cdf41b966d434a58515e58a"
+    },
+    {
+      "disposition": "changed",
+      "examined": [
+        {
+          "id": "INV-2172NS",
+          "revision": 1
+        },
+        {
+          "id": "INV-5M9WY3",
+          "revision": 1
+        },
+        {
+          "id": "INV-61Y147",
+          "revision": 1
+        },
+        {
+          "id": "INV-656CYW",
+          "revision": 2
+        },
+        {
+          "id": "INV-7MH0BR",
+          "revision": 1
+        },
+        {
+          "id": "INV-EKE1RV",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-C54RJ0",
+      "items": [],
+      "reason": "New jointly justified guarantee over the exact authored members; every member scope and exclusion was examined, and routes cover actual realization locations without automatically grouping by path.",
+      "subject": "FAM-4ZNEN9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-C5PR73",
+      "items": [
+        "sha256:25b52486d8818e647deb4dec80fbe91ba21b7c7111e1e2bac20866f8ad6a7d92"
+      ],
+      "reason": "The existing record-only entry still resolves its own same request and forwards the result to review_records_of; its signature and owner bundle behavior are preserved. One complete dashboard resolution is already attributed at read_complete_knowledge_review/review_records_of, so this forwarding change adds no separate obligation.",
+      "subject": "hunk:sha256:25b52486d8818e647deb4dec80fbe91ba21b7c7111e1e2bac20866f8ad6a7d92"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-F1N80C",
+      "items": [
+        "sha256:2503bf0ecd1f86e04e94ac34bd661f77e6d6c9325b639e27b87b668ba39e65ca"
+      ],
+      "reason": "The gc import supplies the existing worklist-only pause/restore helper; it neither changes candidate identity nor promises concurrency performance. Its local lifetime controls and test are already documented on the card.",
+      "subject": "hunk:sha256:2503bf0ecd1f86e04e94ac34bd661f77e6d6c9325b639e27b87b668ba39e65ca"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-G9N3T0",
+      "items": [
+        "sha256:603d51387244e1702e117dd5bd55de1a3014e1458f9acf6ff15a7f6cc64b18b4"
+      ],
+      "reason": "The threading import supplies the lock coordinating local collector-pause holders. It adds no separate worklist, scheduling, source-currentness or published memory obligation.",
+      "subject": "hunk:sha256:603d51387244e1702e117dd5bd55de1a3014e1458f9acf6ff15a7f6cc64b18b4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-H0F6MT",
+      "items": [
+        "sha256:2970945002d540b02fe4da2c0518fa6ebb84dbb571987c4456a83d68fe4ee806"
+      ],
+      "reason": "These six lines are the module comment documenting the already revised INV-W5CTZJGD whole-task reuse exception and INV-MC654E0T generation/bounds contract. They perform no read, cache admission or pane write; the actual startRead/cache realizations already carry those obligations.",
+      "subject": "hunk:sha256:2970945002d540b02fe4da2c0518fa6ebb84dbb571987c4456a83d68fe4ee806"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
+            "content": "sha256:e16b33af163ce3d8ea2b59b2e1c12273675780444629fba0199d0b0541a29802",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tree_from_head"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "before": "absent",
+          "id": "RLZ-98370Y"
+        },
+        {
+          "after": {
+            "blob": "ab3559038b58df6ae276c7bb4c8718ee3f222358",
+            "content": "sha256:8c357bd749a5ff5e48b879374a25213bb7e06baff5e880fad1a0e306c2c9b94a",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_git_with_index"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "before": "absent",
+          "id": "RLZ-ZSYXFY"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-HENZQ1",
+      "items": [],
+      "reason": "The statement, semantic scope, admission and revision are unchanged. The actual current-MQ hunks are implemented by these additional support/propagation constructs of the existing obligation; the writer adds only their exact source realization anchors.",
+      "revision": 1,
+      "subject": "INV-EKE1RV"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JDMNGT",
+      "items": [
+        "sha256:7c0aac0bcf0fe987032a0f3da3a35f51502513fa5299717ef0f4cc86a1ff0b3f"
+      ],
+      "reason": "These imports connect LeafViewParts/key/moved-input/remember APIs to their already attributed parent memo and return-admission owner (INV-5M9WY3). Importing the APIs adds no second computation or independently enforceable rule.",
+      "subject": "hunk:sha256:7c0aac0bcf0fe987032a0f3da3a35f51502513fa5299717ef0f4cc86a1ff0b3f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JRMBZ2",
+      "items": [
+        "sha256:a36dbab07705c26f4865d10983df13f3e071aba83a04ac0aced11dc9eaf57ed2"
+      ],
+      "reason": "_IndexCopyUnusable is a private control-flow marker selecting the already owned full private capture after an unusable copy/nonzero step. The public capture obligation and full branch are attributed; this exception class adds no independent domain failure contract.",
+      "subject": "hunk:sha256:a36dbab07705c26f4865d10983df13f3e071aba83a04ac0aced11dc9eaf57ed2"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
+            "content": "sha256:d6f53a08c3f009d6ec1fab9421c91864471014e12a0b71c5b30904463fafd8d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "startRead"
+            },
+            "path": "dashboard/src/panels/review/ReviewReadCycle.ts"
+          },
+          "before": {
+            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+            "content": "sha256:83520200e76b402be99abcba0a8d1b028caefa0e1809cbacafdd49efdb6d9452",
+            "locator": {
+              "kind": "symbol",
+              "name": "startRead"
+            },
+            "path": "dashboard/src/panels/review/ReviewReadCycle.ts"
+          },
+          "id": "RLZ-CGJHJ7AQ"
+        },
+        {
+          "after": {
+            "blob": "1189f81c3077aee796f75d1d1cdc491ba9369dc0",
+            "content": "sha256:6ec2f353b3919af83d0df587c843cceff7ab8cf5c4b33272c60be6f4f497ad9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewReadCache"
+            },
+            "path": "dashboard/src/panels/review/ReviewReadCache.ts"
+          },
+          "before": {
+            "blob": "1cbb97244cdbeaa601ca0fc47445ad9828bef3f3",
+            "content": "sha256:80fa789e9ed0f0485d84ae13c3c95f7ebb77d4f53aed847098394632276a28b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewReadCache"
+            },
+            "path": "dashboard/src/panels/review/ReviewReadCache.ts"
+          },
+          "id": "RLZ-QAKHFKHZ"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-MA5K2P",
+      "items": [
+        "sha256:5b69f766225a1262a83f2816706476d7c1451df31aa1554e8adca54847a7d977"
+      ],
+      "reason": "Whole-task unshown reuse uses the same bounded mounted-surface store and exact generation rule; no failure/refusal/page/refresh answer is kept and an incompatible generation still clears both stores. The new entry does not weaken generation-scoped reuse.",
+      "revision": 1,
+      "subject": "INV-MC654E0T"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MRRFZ8",
+      "items": [
+        "sha256:4a489e2b205c4973a93f9f30a496c98be0065f3980e34217bf4f29f560b0a982"
+      ],
+      "reason": "This module-docstring addition describes held-tree supply, batched diff, bounded memo and a local collector optimization already documented on the card. It executes none of those controls and does not establish first-view concurrency or another invariant.",
+      "subject": "hunk:sha256:4a489e2b205c4973a93f9f30a496c98be0065f3980e34217bf4f29f560b0a982"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PKH4FG",
+      "items": [
+        "sha256:0d67ecd80c21209f56123adb94d1677e29bd4b3a4beca33fe82a10a3b0352ed8"
+      ],
+      "reason": "contextmanager is the standard-library decorator used by the local worklist-only collector pause. The import adds no domain rule; pause/restoration stays a local computation boundary documented and tested on the card.",
+      "subject": "hunk:sha256:0d67ecd80c21209f56123adb94d1677e29bd4b3a4beca33fe82a10a3b0352ed8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Q3BXJ2",
+      "items": [
+        "sha256:ae7ca4ae04edc4515861858861b6982396ebf8becdfefcd1828486ddfe4242f2"
+      ],
+      "reason": "The import reuses copy_git_index and the existing guarded/private-index runners. The copied-index consumer, index-time obligation and private-index support are already attributed; importing them neither captures nor mutates state itself.",
+      "subject": "hunk:sha256:ae7ca4ae04edc4515861858861b6982396ebf8becdfefcd1828486ddfe4242f2"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QY99B7",
+      "items": [
+        "sha256:540c60a658a06f6adf35e86fc5964f56012460a6bdd11af32731077e0e2f61d3"
+      ],
+      "reason": "This __all__ entry exposes the supplied-resolution collector already realized by INV-61Y147. Export visibility changes no candidate, channel availability, collection interpretation or independent semantic obligation.",
+      "subject": "hunk:sha256:540c60a658a06f6adf35e86fc5964f56012460a6bdd11af32731077e0e2f61d3"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R40",
+          "packet": "requirements/MIK-R40-v2-reviewer-read-latency-on-git-trees.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "94729363bfc469047ff18fa929954280c3e57a43",
+            "content": "sha256:3007d8585749684673308283898e1f6eaf462f5e65c7fae88c8cb098dc6a8c22",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_rewrite_in_the_second_of_the_index_write_is_never_answered_from_the_old_content"
+            },
+            "path": "mcp/tests/test_knowledge_index.py"
+          },
+          "before": {
+            "blob": "94729363bfc469047ff18fa929954280c3e57a43",
+            "content": "sha256:3007d8585749684673308283898e1f6eaf462f5e65c7fae88c8cb098dc6a8c22",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_rewrite_in_the_second_of_the_index_write_is_never_answered_from_the_old_content"
+            },
+            "path": "mcp/tests/test_knowledge_index.py"
+          },
+          "id": "PRF-8EEFJD"
+        },
+        {
+          "after": {
+            "blob": "1470aa6a4ec9354f45a8ff4cb898e30fbb80adee",
+            "content": "sha256:4ece35e8e2817118efa21d94b5c6b12840ca24690bc43b71252762f29635cb8a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_index_copy_keeps_the_time_git_reads_from_the_index_file"
+            },
+            "path": "mcp/tests/test_worktree_candidate_capture.py"
+          },
+          "before": "absent",
+          "id": "PRF-N39F79"
+        },
+        {
+          "after": {
+            "blob": "1470aa6a4ec9354f45a8ff4cb898e30fbb80adee",
+            "content": "sha256:0dcdbf810def91fb01aad3b7c2e929c8748b9a6a806999c5d2b59278f74fad0f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_same_size_rewrite_in_the_second_of_the_index_write_changes_the_tree"
+            },
+            "path": "mcp/tests/test_worktree_candidate_capture.py"
+          },
+          "before": "absent",
+          "id": "PRF-P60NFQ"
+        },
+        {
+          "after": {
+            "blob": "a897777c854a4170c0e27151bf6954c22a736ce4",
+            "content": "sha256:65095f3c51eddfe5fe68ea6ccb93890f5a4eaadef69a18aee42137e861fcbe91",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_file_rewritten_while_the_gate_runs_is_never_committed_unjudged"
+            },
+            "path": "mcp/tests/test_knowledge_reopen.py"
+          },
+          "before": {
+            "blob": "a897777c854a4170c0e27151bf6954c22a736ce4",
+            "content": "sha256:65095f3c51eddfe5fe68ea6ccb93890f5a4eaadef69a18aee42137e861fcbe91",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_file_rewritten_while_the_gate_runs_is_never_committed_unjudged"
+            },
+            "path": "mcp/tests/test_knowledge_reopen.py"
+          },
+          "id": "PRF-PYPX5S"
+        },
+        {
+          "after": {
+            "blob": "ab3559038b58df6ae276c7bb4c8718ee3f222358",
+            "content": "sha256:a6f31e7ed323bd8751898287365ed85d5e186e252dd9bc4359d3da9e6717ed06",
+            "locator": {
+              "kind": "symbol",
+              "name": "copy_git_index"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "before": {
+            "blob": "e2460e25ed6a4eafdc81bdb1d7b12d3d0c99c0eb",
+            "content": "sha256:a6f31e7ed323bd8751898287365ed85d5e186e252dd9bc4359d3da9e6717ed06",
+            "locator": {
+              "kind": "symbol",
+              "name": "copy_git_index"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "id": "RLZ-3X5YSV"
+        },
+        {
+          "after": {
+            "blob": "582da28616300feeac710c95524d20442709d1f4",
+            "content": "sha256:20b2795930041037f1d804ab7c6bfe0117212b3ac15d5a4268e060e8be4d6bab",
+            "locator": {
+              "kind": "symbol",
+              "name": "_capture"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/tree.py"
+          },
+          "before": {
+            "blob": "582da28616300feeac710c95524d20442709d1f4",
+            "content": "sha256:20b2795930041037f1d804ab7c6bfe0117212b3ac15d5a4268e060e8be4d6bab",
+            "locator": {
+              "kind": "symbol",
+              "name": "_capture"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/tree.py"
+          },
+          "id": "RLZ-5VBRRY"
+        },
+        {
+          "after": {
+            "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
+            "content": "sha256:faaea09aee66799c4b7d0b93c7e2fcc0a7b2bd329f3e0474e8290e489ec10395",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tree_from_index_copy"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "before": "absent",
+          "id": "RLZ-BW7QK2"
+        },
+        {
+          "after": {
+            "blob": "3763def788002f26aa599a49000b816d3842d0ad",
+            "content": "sha256:72072c64df8d50b2d711548d99a0fa1deee17afe12f260b49b1cdf78589bfa1f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ephemeral_git_mutation_snapshot"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/mutation_evidence.py"
+          },
+          "before": {
+            "blob": "3763def788002f26aa599a49000b816d3842d0ad",
+            "content": "sha256:72072c64df8d50b2d711548d99a0fa1deee17afe12f260b49b1cdf78589bfa1f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ephemeral_git_mutation_snapshot"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/mutation_evidence.py"
+          },
+          "id": "RLZ-WZ3W15"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-T7ZBWM",
+      "items": [],
+      "reason": "The invariant already applies to every copied-index capture; remove its now-false exclusion naming worktree_candidate_tree as a HEAD-seeded full-hash implementation and add the actual shared copied-index realization/proofs. Existing index-time, exact-tree and no-real-index-mutation obligations stay intact. Evidence (L40-index-copy-shared-capture): requirements/MIK-R40-v2-reviewer-read-latency-on-git-trees.md rule 1; existing INV-656CYW exclusion contradicted by approved shared capture implementation; exact post-B1 source notes/reports/260928-MIK-L40-worker-R2-evidence/final-2026-10-03/candidate-reader-post-b1.json sha256:ff7a5201d4ed37a6d2e109d9a8d3b9374adbd5f44009b7e7f686274ed218b6b2; independent R1/R2 plus notes/reports/260928-MIK-L40-review-R3.md (SHA-256 c9a9ea931c18de68182a0f1f12d57cc7e72d29358ed463328ce3d11ca3c988fd); phase-specific performance evidence remains pending",
+      "revision": 2,
+      "subject": "INV-656CYW"
+    },
+    {
+      "disposition": "changed",
+      "examined": [
+        {
+          "id": "INV-AD1MRN",
+          "revision": 1
+        },
+        {
+          "id": "INV-D0551J",
+          "revision": 1
+        },
+        {
+          "id": "INV-GP90VQ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-WDV3AW",
+      "items": [],
+      "reason": "New jointly justified guarantee over the exact authored members; every member scope and exclusion was examined, and routes cover actual realization locations without automatically grouping by path.",
+      "subject": "FAM-CAG581"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-XJC88X",
+      "items": [
+        "sha256:4e60c15a1159aed82e3bf34a57aa912c97a98de5d53cf72963fb10d99f9b0c9b"
+      ],
+      "reason": "ABSENT, bytes_identity and record_read are imported from the existing generic observation owner. Actual canonical byte/absence/unreadability recording is already realized by read_task_doc for INV-5M9WY3; the import creates no parallel loader or new rule.",
+      "subject": "hunk:sha256:4e60c15a1159aed82e3bf34a57aa912c97a98de5d53cf72963fb10d99f9b0c9b"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

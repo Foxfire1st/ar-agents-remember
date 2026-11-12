@@ -1,0 +1,38 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "A later apply must not overwrite a target statement or import another leaf history as if it were the recovery leaf own answers. Transitive closure, conflicts and no-history payload/public-apply assertions prove this boundary, distinct from general committed-pair attribution."
+  },
+  "applicability": "Transitive source-record dependency carryover and the no-source-history-import boundary.",
+  "conditions": [
+    "Selected sidecars name realizes/proves invariants and record-reference IDs; record members/supersedes/nonroute links are traversed transitively.",
+    "Only absent or exact same-path resumable record members may be carried; differing held records require the curator writer.",
+    "Source history rows are reading aids only and never payloads."
+  ],
+  "exclusions": [
+    "No source history row becomes the recovery leaf governing row.",
+    "Record Markdown companions travel when present in the source; the current record schema allows a JSON-only record.",
+    "Partial/unconverted indexes do not establish record absence; conflicts refuse carrying the candidate even after explicit review selection.",
+    "Clean existing record differences are never overwritten; this is stricter than document replace_existing policy."
+  ],
+  "id": "INV-5XX92M",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/worker/07e36231-0b63-422c-b9dc-59ca0e3d6b24/role-launch/L56-generation3-code-freeze.md",
+        "Frozen generation3 source inspection; no new execution or acceptance."
+      ],
+      "path": "generation3-new-source-proved-invariants.json"
+    },
+    "handoffEntry": "MIK-R56@v1 PartB §9",
+    "leaf": "260928-MIK-L56",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Missing transitive records travel with the selected documents, differing records are never overwritten, and source history is only a reading aid.",
+  "status": "proposed",
+  "supersedes": []
+}

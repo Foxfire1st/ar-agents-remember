@@ -1,0 +1,347 @@
+{
+  "path": "dashboard/src/panels/review/changeSetOrder.ts",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "672ce8fd4dd62a7f6c9945096f467600b5c4543a",
+        "content": "sha256:3ec21d6a94ff78c524cacf8d3f686a4a2e7dd59122588f30ab7c523b455b59a7",
+        "locator": {
+          "end": 359,
+          "kind": "line_range",
+          "start": 348
+        }
+      },
+      "id": "RLZ-0MQ8SG",
+      "invariant": "INV-NF89MD",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE05-judgment-order",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The hint adapter preserves deterministic hints and labels a judgment key as highest grade first, then Priority, presenting the same scale/tie order the model applies.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "672ce8fd4dd62a7f6c9945096f467600b5c4543a",
+        "content": "sha256:40c9dca188a582da774930ed207572d63839870f2ea6c6d7f1bdf87a81c18d70",
+        "locator": {
+          "kind": "symbol",
+          "name": "sortKey"
+        }
+      },
+      "id": "RLZ-41Z1D8",
+      "invariant": "INV-S81G6W",
+      "origin": {
+        "handoffEntry": "RP05",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It takes the maximum entry value and then the exact Priority key.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "672ce8fd4dd62a7f6c9945096f467600b5c4543a",
+        "content": "sha256:2aa094f748e30d58874f24ed4838937786d803275a3a6a23a9025b3655739bfb",
+        "locator": {
+          "kind": "symbol",
+          "name": "drawnRegions"
+        }
+      },
+      "id": "RLZ-44K9BR",
+      "invariant": "INV-G869AQ",
+      "origin": {
+        "handoffEntry": "RP02",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It assigns one lead drawing and preserves all member keys and entries in that lead card.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "672ce8fd4dd62a7f6c9945096f467600b5c4543a",
+        "content": "sha256:163389213563e6416fa0101fb1c6a67c6b55bf462c46d5a162fad20606c1fdae",
+        "locator": {
+          "kind": "symbol",
+          "name": "subjectNode"
+        }
+      },
+      "id": "RLZ-708ZQZ",
+      "invariant": "INV-NF89MD",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE05-judgment-order",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "This shared subject builder applies grade matching/order to drawn changed locations, enriches unchanged/not-comparable locations and exposes the Ungraded group once to both tree and reading consumers.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "672ce8fd4dd62a7f6c9945096f467600b5c4543a",
+        "content": "sha256:bbec8a7d845413a2caa9d5dad6b274e805faedff4fe1afdeafdfab28459d4596",
+        "locator": {
+          "kind": "symbol",
+          "name": "priorityKey"
+        }
+      },
+      "id": "RLZ-9HMVKH",
+      "invariant": "INV-ZEB6H9",
+      "origin": {
+        "handoffEntry": "RP01",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It gives the explicit effect/change/count/span prefix and leaves the final stable text-id tie to orderedDrafts.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "672ce8fd4dd62a7f6c9945096f467600b5c4543a",
+        "content": "sha256:8a1ddd4bc08ed0261a49c3827221096def159120447708f5e68471523ae266ed",
+        "locator": {
+          "kind": "symbol",
+          "name": "computeLocationJudgment"
+        }
+      },
+      "id": "RLZ-A5K4BS",
+      "invariant": "INV-NF89MD",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE05-judgment-order",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Attaches supplied block grades, carried reasons and stale flags and builds presenter-inference hover text with the active category first.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "672ce8fd4dd62a7f6c9945096f467600b5c4543a",
+        "content": "sha256:a262d7e7020bedc4be5583fdc144091d4ebd3c10035d29cb0db4cc527202cf38",
+        "locator": {
+          "kind": "symbol",
+          "name": "orderGradeEntries"
+        }
+      },
+      "id": "RLZ-AWR5A7",
+      "invariant": "INV-NF89MD",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE05-judgment-order",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The hover list puts the active category first, orders same-category grades by its declared scale and retains equal-key source order, preserving carried and stale reasons for presentation.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "672ce8fd4dd62a7f6c9945096f467600b5c4543a",
+        "content": "sha256:7423e937326bc418f02415487a676a45597722db7a2b73fa3d2fa38f75a70071",
+        "locator": {
+          "kind": "symbol",
+          "name": "lineCounts"
+        }
+      },
+      "id": "RLZ-C9G875",
+      "invariant": "INV-9S9XT5",
+      "origin": {
+        "handoffEntry": "RP14",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It computes the true excerpt diff or the explicit named-side range fallback.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "672ce8fd4dd62a7f6c9945096f467600b5c4543a",
+        "content": "sha256:bf28135277f5cc71415b29b062e55945b552ab0530fc6fc648317bae1e6d1db5",
+        "locator": {
+          "kind": "symbol",
+          "name": "attachJudgmentsAndOrder"
+        }
+      },
+      "id": "RLZ-G7E73Q",
+      "invariant": "INV-NF89MD",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE05-judgment-order",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Ranks drawn changed blocks by category scale with Priority ties and places ungraded blocks last under the count heading.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "672ce8fd4dd62a7f6c9945096f467600b5c4543a",
+        "content": "sha256:98a7f9811ecc421f18de1496448a99da38c10843db1190e91c417f745ea323c9",
+        "locator": {
+          "kind": "symbol",
+          "name": "compareLocations"
+        }
+      },
+      "id": "RLZ-KFKAHA",
+      "invariant": "INV-ZEB6H9",
+      "origin": {
+        "handoffEntry": "RP01",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It independently fixes the role/span/path/id order inside every subject.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "672ce8fd4dd62a7f6c9945096f467600b5c4543a",
+        "content": "sha256:cf4a7e6db6039ccea56ca9ba5036c63a7ce0df8a5867b05ac92d80bdc2321617",
+        "locator": {
+          "kind": "symbol",
+          "name": "changeSetModel"
+        }
+      },
+      "id": "RLZ-M3DSTA",
+      "invariant": "INV-ZEB6H9",
+      "origin": {
+        "handoffEntry": "RP01",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It builds the groups, first-occurrence subjects and block order that both projections consume.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "672ce8fd4dd62a7f6c9945096f467600b5c4543a",
+        "content": "sha256:130f7841eb25790031ad199a90fc8a97e3931364a2f4d7c20b39bd6cce89bb59",
+        "locator": {
+          "kind": "symbol",
+          "name": "sortOptions"
+        }
+      },
+      "id": "RLZ-NJJP0Q",
+      "invariant": "INV-S81G6W",
+      "origin": {
+        "handoffEntry": "RP05",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It marks all numeric sorts unavailable with the result-level memory reason.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "672ce8fd4dd62a7f6c9945096f467600b5c4543a",
+        "content": "sha256:eee389a197f9417acf962617ad7f2976c6cbfa4c00005be706a1760d468b87d1",
+        "locator": {
+          "kind": "symbol",
+          "name": "subjectCurrentness"
+        }
+      },
+      "id": "RLZ-QTVMWK",
+      "invariant": "INV-S63HCG",
+      "origin": {
+        "handoffEntry": "RP03",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It takes the least current of the leaf-wide state and recorded-entry state.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "672ce8fd4dd62a7f6c9945096f467600b5c4543a",
+        "content": "sha256:5479bd93d51939ffe71a04cdeec7edb3b2146f00fbafa0401607f0cc0e435282",
+        "locator": {
+          "kind": "symbol",
+          "name": "entryCurrentness"
+        }
+      },
+      "id": "RLZ-SZ5YSV",
+      "invariant": "INV-S63HCG",
+      "origin": {
+        "handoffEntry": "RP03",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It ignores unrecorded sides and keeps the least current recorded side.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "672ce8fd4dd62a7f6c9945096f467600b5c4543a",
+        "content": "sha256:cf4a7e6db6039ccea56ca9ba5036c63a7ce0df8a5867b05ac92d80bdc2321617",
+        "locator": {
+          "kind": "symbol",
+          "name": "changeSetModel"
+        }
+      },
+      "id": "RLZ-XXW6ZB",
+      "invariant": "INV-27SPEH",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 rule 5",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "The shared change-set model applies Changed/All while retaining selected and walked family context; ReviewTree renders the model and persisted switch.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "672ce8fd4dd62a7f6c9945096f467600b5c4543a",
+        "content": "sha256:40c9dca188a582da774930ed207572d63839870f2ea6c6d7f1bdf87a81c18d70",
+        "locator": {
+          "kind": "symbol",
+          "name": "sortKey"
+        }
+      },
+      "id": "RLZ-YD1G13",
+      "invariant": "INV-S63HCG",
+      "origin": {
+        "handoffEntry": "RP03",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It prefixes Priority with only the shown subject rank for currentness sorting.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Exact locations, shared-region drawing and deterministic ranking\n\nAnchor: \"function locationNode(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "672ce8fd4dd62a7f6c9945096f467600b5c4543a",
+            "content": "sha256:7bd7d6b932d783bc09abccd74d3adda9e8dacfd4e7313076cf64048cd4b9f650",
+            "locator": {
+              "end": 855,
+              "kind": "line_range",
+              "start": 111
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "One model/view/order for both consumers\n\nAnchor: \"export function changeSetModel(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "672ce8fd4dd62a7f6c9945096f467600b5c4543a",
+            "content": "sha256:ac86d898c7593aa3db700a2e0e04efe2cbeb1d582bfa0b7b4c28720e20c8e2ef",
+            "locator": {
+              "end": 548,
+              "kind": "line_range",
+              "start": 520
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The pure model now consumes published explainer categories and grades as inputs. A judgment sort orders each subject's drawn changed blocks by the category's declared scale with the pre-existing Priority order breaking ties, places ungraded blocks last under Ungraded (n), and preserves follower/shared-entry identity. Chips carry explicit presenter-inference hover text with the active category first; carried grades retain all reasons and stale flags. Deterministic sorts remain available, while category sorts are enabled only when their category data exists. The model still authors no judgment: it only renders supplied judgments.\n\nAnchor: `computeLocationJudgment`, `attachJudgmentsAndOrder`, `subjectNode`, `sortOptions`, `changeSetModel`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "672ce8fd4dd62a7f6c9945096f467600b5c4543a",
+            "content": "sha256:ccc5bc49224275cd4f0941a8432de768d551b0f1407c4caba9a74dbd2b3b22a7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

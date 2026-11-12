@@ -1,0 +1,41 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_link_targets.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a3d1a4d8f96d65c2bf11589bb3fbd27db85d3909",
+        "content": "sha256:21bc62b3342ce61e0298731e2ed246aad0c6cb9f4e235ddeb333d7872cc307c5",
+        "locator": {
+          "kind": "symbol",
+          "name": "check_link_target_paths"
+        }
+      },
+      "id": "RLZ-XCGETK",
+      "invariant": "INV-THFEVY",
+      "origin": {
+        "handoffEntry": "MIK-R54@v1 rule 11",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "This validator compares link targets with the paired code tree and preserves carried merge reporting.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Registers paired-code existence validation for record anchor and route links. No paired code means no path check here. Carried sync reporting is not a publication exemption: merge_requires_carried and the caller’s leaf-publication policy retain their own authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3d1a4d8f96d65c2bf11589bb3fbd27db85d3909",
+            "content": "sha256:b79a99d9fa8ddaba565df61d3e976b7f7e2102e5fe73276f346f66cc2fefe963",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

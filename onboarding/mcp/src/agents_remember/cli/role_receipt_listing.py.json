@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/cli/role_receipt_listing.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The source owns the documented investigation, identity or request boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b04cc7dbc6af76259fb196d06cf6b290eb638ee7",
+            "content": "sha256:aef088a2556515780e1464055c067e3f9d54361c36ebaa49316ae30ebeb84d11",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

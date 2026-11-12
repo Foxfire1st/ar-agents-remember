@@ -1,0 +1,78 @@
+{
+  "path": "dashboard/src/panels/review/ReviewSurface.entryEconomy.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "5a595bf65846499570155b94f63c55171d88ecce",
+        "content": "sha256:a18c9f8c842ea297db68dba967d6372a884cbf82f736ccffb3b851ad92b719dd",
+        "locator": {
+          "kind": "symbol",
+          "name": "reads the catalogue once on entry, opens on the task context, then asks the review only for the subject chosen"
+        }
+      },
+      "facet": "Opening the review page with no subject issues exactly one task-context intent read before the held catalogue is released. Its late answer fills family rows without selecting a subject or reading another review. An unrelated analytics publication keeps one catalogue read; each explicit family selection asks only that family review, and a new-snapshot refresh rereads the catalogue once.",
+      "id": "PRF-VKF71G",
+      "invariant": "INV-115RDW8H",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-REQUEST-PROOF-115RDW8H-CATALOGUE-ONCE",
+        "leaf": "260928-MIK-L89"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "5a595bf65846499570155b94f63c55171d88ecce",
+        "content": "sha256:2f4f5b9aee039f23f66c1bd4de1daa2c26e625afe68cdf552dbfc3ee5f989c9d",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-8RJ7C2",
+      "invariant": "INV-TJE3KM",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 W03 source-currentness native resolution",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "Historical attachment of the already-retired L86/R87 carriage record; source callback adaptation is not a new execution or current native acceptance claim.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "11": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('reads the catalogue once on entry, opens on the task context, then asks the review only for the subject chosen', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a595bf65846499570155b94f63c55171d88ecce",
+            "content": "sha256:a86951c6b7e357c8f82f5a92ba0be69b322a99c3459c7400da0ade82d4daab86",
+            "locator": {
+              "end": 176,
+              "kind": "line_range",
+              "start": 89
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('reads the task-context review at once and keeps All changes reachable when the catalogue never answers', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a595bf65846499570155b94f63c55171d88ecce",
+            "content": "sha256:6270d84c569317be83ef591defea5998a517eae727866b4515ee52613fff6923",
+            "locator": {
+              "end": 176,
+              "kind": "line_range",
+              "start": 151
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

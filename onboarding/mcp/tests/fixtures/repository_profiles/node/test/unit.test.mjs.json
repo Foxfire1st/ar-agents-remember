@@ -1,0 +1,37 @@
+{
+  "path": "mcp/tests/fixtures/repository_profiles/node/test/unit.test.mjs",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Fixture unit test selected by the suite rail.\n\nAnchor: `test(\"adds two values\")`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eca07c9b60e91f2774631456dd14ad5fcf7d6534",
+            "content": "sha256:3a67ae93f2866944b0df035ce30266ddae54cfdc11729cf8520d4f73f65551a4",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "dd03f264352c8162205220f146185a14d6ee1892",
+            "content": "sha256:31df11eca8b19145520e16009539c1a42079d4337c36ccdc7252ea884c96c6d1",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/fixtures/repository_profiles/node/scripts/run-suite.mjs"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

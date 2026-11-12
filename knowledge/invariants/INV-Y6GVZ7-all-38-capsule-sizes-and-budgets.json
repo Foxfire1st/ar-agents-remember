@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The budget test checks every fresh compiled capsule, declared detail and the digest against the current record and the frozen registries; without it an overgrown capsule or a silently edited registry would break instruction composition unnoticed."
+  },
+  "applicability": "Every compiled role, operation and launcher capsule cell, every manifest-declared step detail and the shared every-role digest, as recorded in skills/l-01-agent-lifecycles/capsule-budgets-current.json.",
+  "conditions": [
+    "Capsule ceilings are the record's per-role values; a declared detail's ceiling is 2,500 words; the digest's ceiling equals the digest map's maximumWords.",
+    "Each recorded size equals the compiled size, and each limit is at least that size and at most its ceiling.",
+    "The guard binds capsule-budgets.json, capsule-budgets-d694.json, their checkers and the digest map by SHA-256 and refuses any change to them."
+  ],
+  "exclusions": [
+    "The separate handover projection 3300-token obligation, whose record remains JKD5DE.",
+    "The frozen historical registries' cells and budget formula as current guarantees.",
+    "A budget pass as proof that meaning, audience, claims or acceptance are correct."
+  ],
+  "id": "INV-Y6GVZ7",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "capsule-sizes.json (era 62748, a1b7 109616, master 107226, final 93905); sync-check 9/9; F07 memo for launcher/orientation +57 and architect/recovery +17"
+      ],
+      "path": "notes/reports/260928-MIK-L101-curator-handoff-list.json"
+    },
+    "handoffEntry": "MIK-R101@v1 rule 6",
+    "leaf": "260928-MIK-L101",
+    "task": "260928-MIK"
+  },
+  "revision": 5,
+  "schema": "ar-invariant/v1",
+  "statement": "The current capsule budget record, capsule-budgets-current.json, holds every compiled capsule cell, every manifest-declared step detail and the shared every-role digest with its measured size, a limit no lower than that size, and a ceiling (per role for capsules, 2,500 words per declared detail, the digest map's maximum for the digest); the guard refuses a stale size, a size over its limit, a size or limit over its ceiling, a missing or orphan key, or any change to the frozen historical registries capsule-budgets.json and capsule-budgets-d694.json.",
+  "status": "proposed",
+  "supersedes": []
+}

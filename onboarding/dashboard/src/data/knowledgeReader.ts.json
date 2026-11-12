@@ -1,0 +1,143 @@
+{
+  "path": "dashboard/src/data/knowledgeReader.ts",
+  "realizes": [],
+  "references": {
+    "15": {
+      "note": "The optional knowledge-presence and coverage fields of a tree row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ec5f222a6d97528f9484c56a1ff060446b461ff",
+            "content": "sha256:c7c3d28b442b6b5ca17aad3033694ea831c537fb259aa319e63ec29a2e8adfff",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The shareable address, read and written.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ec5f222a6d97528f9484c56a1ff060446b461ff",
+            "content": "sha256:c7c3d28b442b6b5ca17aad3033694ea831c537fb259aa319e63ec29a2e8adfff",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "readerGet returns a parsed body with string state regardless of HTTP status. Fetch failures propagate; malformed JSON becomes null, and a body without string state causes ReaderTransportError.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ec5f222a6d97528f9484c56a1ff060446b461ff",
+            "content": "sha256:401af838b2b066012b5e87e515034b4ab0dbfc47e5e7cd4c083f380638672d2f",
+            "locator": {
+              "end": 456,
+              "kind": "line_range",
+              "start": 439
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The address a code citation opens.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ec5f222a6d97528f9484c56a1ff060446b461ff",
+            "content": "sha256:c7c3d28b442b6b5ca17aad3033694ea831c537fb259aa319e63ec29a2e8adfff",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The tree that renders the optional fields without claiming an unknown.\n\nAnchor: `KnowledgeTree`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "13d16ed646c66456c46a044d8f55fae75ceb3ca3",
+            "content": "sha256:18b76f62cd63b8e28d425c57a04f3ae86c37c25bc9552187150f795ba4708dc3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/knowledge-reader/KnowledgeTree.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "FileRead adds optional boolean truncated and numeric fullSize; PathViewAnswer adds optional numeric deeperEntries. These declarations specify DTO shape without enforcing runtime population, size units or rendering.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ec5f222a6d97528f9484c56a1ff060446b461ff",
+            "content": "sha256:69c3c357a386aa5ee764cb35398ab2db5dbc7fb7b02d4f43912b5be1df227faa",
+            "locator": {
+              "end": 101,
+              "kind": "line_range",
+              "start": 94
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8ec5f222a6d97528f9484c56a1ff060446b461ff",
+            "content": "sha256:990f50a5e5e0bf3a2fe9d078a948f708a81e80f35d7e815108cda0af374e2cff",
+            "locator": {
+              "end": 198,
+              "kind": "line_range",
+              "start": 183
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "TimelineEvent adds optional nullable numeric attempt. Timeline retains required sources and events while adding optional string state, code and detail, optional nullable continuation, and optional page containing numeric start, rowsOnPage and total.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ec5f222a6d97528f9484c56a1ff060446b461ff",
+            "content": "sha256:b6bb828019c00d1ea4864486d203acc067a5e9d750667d10bd18bb3d9a081a5f",
+            "locator": {
+              "end": 274,
+              "kind": "line_range",
+              "start": 254
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8ec5f222a6d97528f9484c56a1ff060446b461ff",
+            "content": "sha256:8625317510b255eee0bc72770f7a47d0d4601b422d28ff934f3050be7e2797e3",
+            "locator": {
+              "end": 284,
+              "kind": "line_range",
+              "start": 276
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,28 @@
+{
+  "anchor": {
+    "blob": "8e48e38066874b65d5c7dec91535af65a658fbe4",
+    "content": "sha256:62ff8ce4bdbd3f00c78efdacd84276c39aa645becc3eef914179028fe1628ab6",
+    "locator": {
+      "kind": "file"
+    },
+    "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
+  },
+  "id": "WKN-HSBTYW",
+  "kind": "debt",
+  "origin": {
+    "handoff": {
+      "path": "rule9-ingest-list.json"
+    },
+    "handoffEntry": "mark-13",
+    "leaf": "260928-MIK-L118",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L118"
+  },
+  "state": "open",
+  "statement": "The caller's role of a coherence publish is compared by exact case with `curator`. A Curator that writes `Curator` is taken for the sprint's architect: the refusal `curator-coherence-caller-refused` then says that the sprint's document is expected and names `developer-decision`. Met by L74's Curator with 154 judgments ready. Cure to weigh: compare without case or refuse an unknown role by name."
+}

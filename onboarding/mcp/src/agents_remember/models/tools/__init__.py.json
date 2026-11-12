@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/models/tools/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The package docstring names registered tool request and response models as its scope.\n\nAnchor: \"Registered tool request and response models.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "980cc60152d90e9b8bd5c51230a7ccf9daaa1a75",
+            "content": "sha256:0ce0de8006d791c5140d8abb92a74ebd80bb8cffbfdca761bb889c3055995844",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

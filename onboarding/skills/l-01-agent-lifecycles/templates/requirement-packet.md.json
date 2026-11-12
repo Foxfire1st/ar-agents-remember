@@ -1,0 +1,93 @@
+{
+  "path": "skills/l-01-agent-lifecycles/templates/requirement-packet.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Authors read the prose-field rules before authoring and the planning operation before seeking approval.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0703cbf578f34255c7ca8de57b5cb4ce4419e222",
+            "content": "sha256:0991f52aeb84c541edc0814bdd85de3532607c4d08da254014610163a24b5e8a",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The packet header records stable ID, version, freeze state, approval and supersession.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0703cbf578f34255c7ca8de57b5cb4ce4419e222",
+            "content": "sha256:93d01fdae0a2d421c3e8481c189f8d42279878f67f35d166aa6bd211121c6110",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 9
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The normative requirement is an independently falsifiable promise.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0703cbf578f34255c7ca8de57b5cb4ce4419e222",
+            "content": "sha256:fe308e282e58063976feba777a0fc12e1741c7a586c6f9159c7274551006ff85",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 19
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Planned Structure gives placement and skeleton before code; Examples give conforming, violating and boundary cases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0703cbf578f34255c7ca8de57b5cb4ce4419e222",
+            "content": "sha256:8d6435be6d8d64589c056773d61923d91db5938bebddd2da67640c77a92a8573",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 51
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The Architect reads this template before writing a requirement packet.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de0e221dc51f2f0b067db007cb4c00b17ab3bd39",
+            "content": "sha256:4da85f1c7890e1b861ce08bc8842bc4dbe050a5a03822edde1ceb1a3d2f2aba3",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 42
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

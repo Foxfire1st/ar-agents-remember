@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Realized across the abandon, terminal-validation, cleanup, contract-startup and branch-authority modules, which together tear down both legs and rebuild external. The fresh-case H proof (origin evidence) is the operation-level terminal-abandon/restart evidence; the refusal-battery tests guard only the refusal facets they name. _terminal_mutation_authority admits properly-owned live-leaf and terminal-authorized contracts to the mutation that writes terminal state (live leaves pass the ordinary-worktree check; terminal-task authorization governs series), refusing protected refs."
+  },
+  "applicability": "A live disabled leaf with both legs, abandoned and restarted at the same address.",
+  "conditions": [
+    "Dirty-worktree and unmerged-commit preflight pass or force is given.",
+    "The restart names no mode."
+  ],
+  "exclusions": [
+    "Disabled masters, which need the new-master way out, not an in-place restart.",
+    "Abandon's own dirty/unmerged refusals, which are unchanged."
+  ],
+  "id": "INV-39FYQE",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "R14 corrected instrument abandon-repair-proof.py SHA9106383269e27374f4452dc45bc55e1b17012ce0d1823bcf664cb57680c4eac4 and raw stdout SHA12927f44feb4bfd18c9b2af19256a2ebc0db025c2882aed835d9338f63c300ba independently inspected whole:17 actual JSON records, reported EXIT0, summary scenario-complete, empty stderr. Metadata reports launcher PID3192059 and 2026-10-10T16:28:27Z–16:28:33Z; raw script run-meta separately records PID3192293, Python3.14.8, candidate cwd and candidate-rooted mcp/src:mcp/tests:mcp/test_support PYTHONPATH plus script/world argv. H starts as a genuine fresh live disabled leaf with both legs and production-faithful parent_task_name, attach0; dry would-abandon/refs_same/bytes_same true; real state abandoned and both legs gone. The instrument parses persisted load_contract(path).cleanup==abandoned and requires it before restart. Same-address no-mode restart returns0/state started and parses its actual external-mode successor. Both worlds have explicit successful prune/removal receipts. I dirty-memory preview has blocker memory/dirty, both legs present and refs unchanged; real force succeeds. Unforced real dirty/unmerged and transient partial-repeat runtime are absent and static-only, not relabelled as executed. Five-file R5-to-R6 delta carries memory legs through abandon preflight/authority/teardown, adds narrowly conditioned terminal tombstone parent admission at two sites and uses actual repository topology in side authority. External/cleanup branches and genuinely new-leaf refusal remain structurally preserved; private mode keyword has exactly one explicit caller. Existing blocker-before-real-mutation and benign already-absent primitives provide unchanged ordering/retry mechanics. No mode conversion or new acceptance criterion. Complete current98 bodies/modes/HEAD/diff/status/U0,15 bound inputs,12 raw CODE+MEM controls and2 raw indices match before/end; all30 prior R5 sealed artifacts match. Worker expressly withdraws the incorrect auxiliary full manifest hash: actual manifest is be89782d6a60f6267fd9aedf1b31f6134b317912ef5824f9ee4531b0e4ed43b4; evidence JSON instead carries a different void full hash. Auxiliary meta records22 is stale, actual/report/producer17 governs. No packet bytes are rewritten; these errors and direct clarification are preserved. Persisted executable path/full runner argv/env/origin and proof-time raw before/after custody are absent; only saved run-meta and Worker claim supply that provenance. Independent current exact-candidate custody and the operation-specific terminal/restart assertions support the scoped result; no whole-suite, certificate or past-time attestation is minted. R11 270/external55/mounted62/typecheck0/outside116+90/lifecyclePASS84, converted F nine-refusal battery, C real converted pair-JUDGED closeout refusal, dated BEFORE84/AFTER155/all20gone reasons retain their exact earlier scopes; untouched paths and unchanged applicable external branches are reused, not called a new final98 full campaign. Original G stays negative/preserved; r14d restart exception and r14e successor mismatch streams are retained as stopped history, never reconstructed as final91063832. No Reviewer product execution or scratch creation.",
+        "Curator-owned F01 attribution repair: complete original producer input is notes/reports/role-launch/260928-MIK-L50-reviewer-bc8a682c-745f-42b2-a47d-8d978449ac08-code-r6.curator-handoff.json (SHA-256 3ad6cd419e6a447b8cbe8371201b317965fffd5110fc6cd9b052bd8047705f72), entry L50-CODE-R1-F04, with every original producer field unchanged. Named original plus separate curator resolution: notes/reports/role-launch/260928-MIK-L50-curator-8f6ac14e-c1c0-43fe-b347-6b8ed2158727.evidence/named-producer-inputs.json. Existing origin.handoff.path notes/reports/260928-MIK-L50-curator-handoff-list.json is the historical CURATOR-OWNED WRITER PROJECTION, not the original producer input; expanded L50-CUR-EXP items belong to the Curator. F04 projection represents seven of nine targets: both original proof.stdout targets remain in original input and are not code realizations. Four other retained findings match all nine producer fields. F05 and requirement adjudication remain task-local in the complete seven-entry original; no waiver or lost evidence."
+      ],
+      "path": "notes/reports/260928-MIK-L50-curator-handoff-list.json"
+    },
+    "handoffEntry": "L50-CODE-R1-F04",
+    "leaf": "260928-MIK-L50",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The original F04 way-out gap is fixed: a fresh live disabled leaf with a carried memory leg is really abandoned to terminal state with both legs gone, then restarted without a mode as external; earlier converted-battery, pair-gate, mounted/count and scoped proof credits stay preserved.",
+  "status": "proposed",
+  "supersedes": []
+}

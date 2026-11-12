@@ -1,0 +1,450 @@
+{
+  "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "40c7ba7f8ba356ee8d7abe94a7b0c1785c0de21b",
+        "content": "sha256:576e9d51377d25993beaa73cbb22b6e1d2f4ecfb3d7c8cf27eed15a770948fe6",
+        "locator": {
+          "end": 818,
+          "kind": "line_range",
+          "start": 817
+        }
+      },
+      "id": "RLZ-0T0KXT",
+      "invariant": "INV-63Z0MN",
+      "origin": {
+        "handoffEntry": "L202-A6b-attach-098678",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Shows the speed label from the selected model’s actual offered tier rows, preserving the configured spelling when unmatched.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "40c7ba7f8ba356ee8d7abe94a7b0c1785c0de21b",
+        "content": "sha256:41ee0c38173647b37aa3ccb1316bc7221f48a54d76c1b289b62655c904785513",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleLauncher"
+        }
+      },
+      "id": "RLZ-2RCSQR",
+      "invariant": "INV-6SGHBB",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 1",
+        "leaf": "260928-MIK-L75"
+      },
+      "rationale": "The launcher's own grid is where the strip is composed: it held the state line, the capability summary, the reply block and the report path under the controls, and it is the element whose content rule 1 constrains.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "40c7ba7f8ba356ee8d7abe94a7b0c1785c0de21b",
+        "content": "sha256:41ee0c38173647b37aa3ccb1316bc7221f48a54d76c1b289b62655c904785513",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleLauncher"
+        }
+      },
+      "id": "RLZ-6DAG9Q",
+      "invariant": "INV-A0240E",
+      "origin": {
+        "handoffEntry": "L98-CODE1-F02 / Worker repair L98-A02",
+        "leaf": "260928-MIK-L98"
+      },
+      "rationale": "The existing launcher permits concurrent task-bound Investigator starts without changing the Projects single-occupant binding or adding controls.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "40c7ba7f8ba356ee8d7abe94a7b0c1785c0de21b",
+        "content": "sha256:b86f86bed78f99f0d2aea43d8777da52b524be369474c1858449c6e583be1c7f",
+        "locator": {
+          "end": 1105,
+          "kind": "line_range",
+          "start": 1091
+        }
+      },
+      "id": "RLZ-9FTBAR",
+      "invariant": "INV-WQ8YGE",
+      "origin": {
+        "handoffEntry": "L168-CUR-M2-21-N24",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "launcherDocuments resolves selected sprint/master by exact references, then obtains descendants through the served-child helpers. It composes canonical options without a document/series parent join.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "40c7ba7f8ba356ee8d7abe94a7b0c1785c0de21b",
+        "content": "sha256:ae01e6a809cd47819b696aee450d63c9dec59f9e0be5b9c54b718c11e5fdabdb",
+        "locator": {
+          "kind": "symbol",
+          "name": "boundCanStart"
+        }
+      },
+      "id": "RLZ-CSKAPQ",
+      "invariant": "INV-5MP23G",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule4",
+        "leaf": "260928-MIK-L95"
+      },
+      "rationale": "This predicate decides startability for a bound row from the bound role, the live occupant and the canStart answer, so a duplicate start is not offered.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "40c7ba7f8ba356ee8d7abe94a7b0c1785c0de21b",
+        "content": "sha256:74a4a0bf6399224b7bd7195c7c8a3e0eb5bab58f0faf288f23d851395bf5f88b",
+        "locator": {
+          "end": 568,
+          "kind": "line_range",
+          "start": 566
+        }
+      },
+      "id": "RLZ-GVWM81",
+      "invariant": "INV-RQ2ZB8",
+      "origin": {
+        "handoffEntry": "L202-A6b-attach-bcff60",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Names an unanswered model inventory as configured and unchecked rather than reporting a known empty list.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "40c7ba7f8ba356ee8d7abe94a7b0c1785c0de21b",
+        "content": "sha256:41ee0c38173647b37aa3ccb1316bc7221f48a54d76c1b289b62655c904785513",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleLauncher"
+        }
+      },
+      "id": "RLZ-MKCYCH",
+      "invariant": "INV-WEZ24E",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 7",
+        "leaf": "260928-MIK-L75"
+      },
+      "rationale": "The launcher's row no longer begins with the Hide/Show-navigation button; its first control is the role selector.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "40c7ba7f8ba356ee8d7abe94a7b0c1785c0de21b",
+        "content": "sha256:41ee0c38173647b37aa3ccb1316bc7221f48a54d76c1b289b62655c904785513",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleLauncher"
+        }
+      },
+      "id": "RLZ-MKJATY",
+      "invariant": "INV-5MP23G",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule4",
+        "leaf": "260928-MIK-L95"
+      },
+      "rationale": "The shared row hides already-bound references and retains singleton/Projects duplicate-start gating, while selected sprint/master Investigators keep their backend-admitted per-request exception and exact recovery identity.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "40c7ba7f8ba356ee8d7abe94a7b0c1785c0de21b",
+        "content": "sha256:3ce7369a5577704e0156be3fde1ae43e6b2aa2c9eafabc52ca7ec8f99b6e715b",
+        "locator": {
+          "end": 693,
+          "kind": "line_range",
+          "start": 587
+        }
+      },
+      "id": "RLZ-N85X2R",
+      "invariant": "INV-63Z0MN",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-17",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The landed extracted owner passes the existing fifth featureValues operand on both model and effort changes and keeps the agentOverride agentId guard.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "40c7ba7f8ba356ee8d7abe94a7b0c1785c0de21b",
+        "content": "sha256:41ee0c38173647b37aa3ccb1316bc7221f48a54d76c1b289b62655c904785513",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleLauncher"
+        }
+      },
+      "id": "RLZ-RKR5QW",
+      "invariant": "INV-3DKC7T",
+      "origin": {
+        "handoffEntry": "MIK-R133@v1 / L133-CODE-R3",
+        "leaf": "260928-MIK-L133"
+      },
+      "rationale": "Producer: the passed freeze delivers the requirement through this renderer plus RoleLaunchFeatures, the shared grammar seam (viewTabLook/ModeBar), and the row/R71 tests.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "40c7ba7f8ba356ee8d7abe94a7b0c1785c0de21b",
+        "content": "sha256:696f8896048836abf48e1da40fed093d12aa0f2a229d7252984f71bf22bfab13",
+        "locator": {
+          "end": 1063,
+          "kind": "line_range",
+          "start": 976
+        }
+      },
+      "id": "RLZ-TNTSC0",
+      "invariant": "INV-43CXH6",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 2",
+        "leaf": "260928-MIK-L75"
+      },
+      "rationale": "The launcher grid carries whole controls, including StepUpControl and compact StepUpStatus, and a separate failure line. It disables the failure component’s duplicate status fallback. No reply or execution-detail prose enters the strip, so reply length does not govern its height.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "40c7ba7f8ba356ee8d7abe94a7b0c1785c0de21b",
+        "content": "sha256:41ee0c38173647b37aa3ccb1316bc7221f48a54d76c1b289b62655c904785513",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleLauncher"
+        }
+      },
+      "id": "RLZ-W3VMNM",
+      "invariant": "INV-MXTMP8",
+      "origin": {
+        "handoffEntry": "L133-R1-F01",
+        "leaf": "260928-MIK-L133"
+      },
+      "rationale": "Producer: this renderer owns the selected-value hovers repaired here (SHA-256 df6d027e0799297fce1b09ab6e07f3ad9568deea1c66c9f6a977d240643c7220 in the passed freeze).",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The final Start guard joins backend startability, preparation and bound-seat occupancy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "40c7ba7f8ba356ee8d7abe94a7b0c1785c0de21b",
+            "content": "sha256:b1bb4a25b25a077f144005d93d9649d2ab97891acec17f0926c6b522308d3ce3",
+            "locator": {
+              "end": 842,
+              "kind": "line_range",
+              "start": 832
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Worker/Curator typed review census, record-only exclusion and unknown history.\n\nAnchor: Current source; preserved L88 property 8",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+            "content": "sha256:89c09fd0491880de2f7b715bffbe2d6b0605a6dea7400689519c43f40f7b119d",
+            "locator": {
+              "end": 240,
+              "kind": "line_range",
+              "start": 175
+            },
+            "path": "mcp/src/agents_remember/worktrees/review_history.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Reason admission, threshold and differing-harness/model inheritance boundary.\n\nAnchor: Current source; preserved L88 property 9",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f341c13a99f485178e73c4ff8bf4de16267ee662",
+            "content": "sha256:5a3727f4901933c44cd5f7edc8b16220285a82a9e080326edf482cbb126f0b2f",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "mcp/src/agents_remember/cli/role_step_up.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Bound mode omits the reference fields the selection already determines.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "40c7ba7f8ba356ee8d7abe94a7b0c1785c0de21b",
+            "content": "sha256:6e12c73e518e0dad2a470a82303f8f9f7e83170c8fbf27b24a3acdcc76b3dd43",
+            "locator": {
+              "kind": "symbol",
+              "name": "referenceFields"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Preparation is carried by the Start label rather than an extra ordinary status line.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "40c7ba7f8ba356ee8d7abe94a7b0c1785c0de21b",
+            "content": "sha256:8b6e5f5f4a4cc02e4f7d96f245b49676c3521fc8e31461166314907a0e6f041a",
+            "locator": {
+              "end": 186,
+              "kind": "line_range",
+              "start": 184
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "40c7ba7f8ba356ee8d7abe94a7b0c1785c0de21b",
+            "content": "sha256:e6d5ccc8b69c02c2baa25b2e5923c3e44b90539dfc1eed2f2993db9403ca70c4",
+            "locator": {
+              "end": 1115,
+              "kind": "line_range",
+              "start": 1108
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "40c7ba7f8ba356ee8d7abe94a7b0c1785c0de21b",
+            "content": "sha256:696f8896048836abf48e1da40fed093d12aa0f2a229d7252984f71bf22bfab13",
+            "locator": {
+              "end": 1063,
+              "kind": "line_range",
+              "start": 976
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8434598e9ac8d189927a8bed217cf6eee18dca61",
+            "content": "sha256:ce16c59c2649fa33167f2c81c8025461773340bcc70fe36bb3537dc38cee50af",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 7
+            },
+            "path": "dashboard/src/cockpit/RoleExecutionStatus.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "49001f5ff9548e3c0b4a3ba3b69a05fb6fc8646f",
+            "content": "sha256:8b3204f9cfaa0b96877dbe0e13f93cbf23ac7aa0b4568643a0820c8145c0e554",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "dashboard/src/cockpit/role-launcher/StepUpControl.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Readiness retains ordinary singleton gating and the request-scoped exception.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9587f2f625e895a2933a3474ec4cfab7f630fdc0",
+            "content": "sha256:c3f86277f2b02bab72698fea8e0d2f9287e2ca96e40c5bb99bffa9dcdcd88e2c",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolveLaunchReadiness"
+            },
+            "path": "dashboard/src/cockpit/role-launcher/roleLauncherReadiness.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The visual grid keeps whole-control wrapping.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "40c7ba7f8ba356ee8d7abe94a7b0c1785c0de21b",
+            "content": "sha256:1b82c274556b2944144ea73674c31503477db1b7786ae43f615e1ee735c9f4c4",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 45
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The complete selected document label and identity survive truncation in hover; an empty or unmatched document selector instead names only its purpose.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "40c7ba7f8ba356ee8d7abe94a7b0c1785c0de21b",
+            "content": "sha256:05331be8d9ead03bbfb923615d590e1096e6b46362fd4eddc413b73934d8d931",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 160
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: Current source; preserved L88 property 10",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "40c7ba7f8ba356ee8d7abe94a7b0c1785c0de21b",
+            "content": "sha256:0ed142ed6c75866f1322e2dec119ef8f604322b6c36fc8a028ba077dd679a38d",
+            "locator": {
+              "end": 802,
+              "kind": "line_range",
+              "start": 723
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: Current source; preserved L88 property 11",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "40c7ba7f8ba356ee8d7abe94a7b0c1785c0de21b",
+            "content": "sha256:4db9be4875f23f837d8a33716eec436ad511a2faad14073aaa6e03ffac1b0e5d",
+            "locator": {
+              "end": 1062,
+              "kind": "line_range",
+              "start": 933
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

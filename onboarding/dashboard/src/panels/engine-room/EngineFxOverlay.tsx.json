@@ -1,0 +1,94 @@
+{
+  "path": "dashboard/src/panels/engine-room/EngineFxOverlay.tsx",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Timeline selectors and choreography.\n\nAnchor: `useEngineTimeline` `buildFx`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "745dcb2438f071de87e63481375c2c3790c15d3b",
+            "content": "sha256:82c690fd7471b9257e5261727d2d052ab81ac1eb4725670708637e6bedfc22f6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/engine-room/useEngineTimeline.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Visual isolation regressions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c81634e51615e483399292e3462c23681ff3f39",
+            "content": "sha256:35808bb5b8bf713bc5c4fb94b68b0781f50226043fe85b83001b092fd8d007b9",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 73
+            },
+            "path": "dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "EngineFxOverlayProps now contains attention and surgeXs only; sparse sibling SVG renders SurgeLines and AttentionGroup.  — source ownership, not executed visual proof.\n\nAnchor: `type EngineFxOverlayProps = {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df68c2254ed8f38e966883668dcf5caea64390d7",
+            "content": "sha256:e460d74b819d6e593b50a4761ea6d894b0ed8eadd3bd5917d22cd1629cc40169",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 10
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "EngineFxOverlayProps now contains attention and surgeXs only; sparse sibling SVG renders SurgeLines and AttentionGroup.  — source ownership, not executed visual proof.\n\nAnchor: `function AttentionGroup() {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df68c2254ed8f38e966883668dcf5caea64390d7",
+            "content": "sha256:b8724ffb43760168db57fa8deed72ab051b37dae691396ae060e36aaa9d88696",
+            "locator": {
+              "end": 93,
+              "kind": "line_range",
+              "start": 48
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "EngineFxOverlayProps now contains attention and surgeXs only; sparse sibling SVG renders SurgeLines and AttentionGroup.  — source ownership, not executed visual proof.\n\nAnchor: `export function FxOverlay({`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "053b605eb77ad20fed2c08ede3c3caabf4fc3cf6",
+            "content": "sha256:5660a844685d16a7fcb82d0bc89bb5f6cc1e64cda592fe4e844c558948fa0f5e",
+            "locator": {
+              "end": 553,
+              "kind": "line_range",
+              "start": 525
+            },
+            "path": "dashboard/src/panels/engine-room/sceneLayers.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

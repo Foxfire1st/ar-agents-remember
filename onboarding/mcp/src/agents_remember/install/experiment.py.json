@@ -1,0 +1,167 @@
+{
+  "path": "mcp/src/agents_remember/install/experiment.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Anchor: Per-run selection and unknown-id refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf9ac72bbb7c8c5de47dafe426cd1ab91b20c7bd",
+            "content": "sha256:fef33e4345b05251c341beb1cb33fe681ccdc2e9e1ef7eb99c15d8b7cdf293e1",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 103
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The experiment payload reports the withheld targets and an empty rollback list.\n\nAnchor: `withheldStartupTargets`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "content": "sha256:22ef1aef188c52d0e92ee8363abd3de03d7873af12b8c1a024d22409cb7d56d2",
+            "locator": {
+              "end": 165,
+              "kind": "line_range",
+              "start": 157
+            },
+            "path": "mcp/src/agents_remember/install/runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Anchor: Explicit unselected install value.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf9ac72bbb7c8c5de47dafe426cd1ab91b20c7bd",
+            "content": "sha256:dc678045d999a5624ced840f4cec1d1a4095fb40dd7771c65513f5b01b28f645",
+            "locator": {
+              "end": 154,
+              "kind": "line_range",
+              "start": 146
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Anchor: Selected-but-unavailable remains refused, never a legacy fallback.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf9ac72bbb7c8c5de47dafe426cd1ab91b20c7bd",
+            "content": "sha256:db926e2a40e32261a659be470c47bcea9b40a3d61094944add71389351b9cb56",
+            "locator": {
+              "end": 195,
+              "kind": "line_range",
+              "start": 168
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The three coordinator startup files every accepted install removes; the withheld name is the same tuple, kept for the experiment report.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf9ac72bbb7c8c5de47dafe426cd1ab91b20c7bd",
+            "content": "sha256:529b3ce2b9cb43505ac990eeef6b525dbcc6f5560e292d4cd00d8f5b9f3edb83",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 62
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Anchor: Only the canonical corpus-anchor capability is now probed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf9ac72bbb7c8c5de47dafe426cd1ab91b20c7bd",
+            "content": "sha256:03d773b1d912ac84c71ff59f0abf35296785fcc72dbcc1c989640f4389c4f92c",
+            "locator": {
+              "end": 293,
+              "kind": "line_range",
+              "start": 270
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bf9ac72bbb7c8c5de47dafe426cd1ab91b20c7bd",
+            "content": "sha256:5a143d8f89544935fdf561b3be13a3f357b5a08c1f46d2bccff8fe4747f3cddf",
+            "locator": {
+              "end": 248,
+              "kind": "line_range",
+              "start": 219
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Anchor: Actual retained run-record fields and their resolved inputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf9ac72bbb7c8c5de47dafe426cd1ab91b20c7bd",
+            "content": "sha256:701d26055947fd274117242ee2791ea2a3d31b3cbb1b16706f523f3f5e775912",
+            "locator": {
+              "end": 324,
+              "kind": "line_range",
+              "start": 297
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bf9ac72bbb7c8c5de47dafe426cd1ab91b20c7bd",
+            "content": "sha256:ecb250ca21215332e73955262359f3a407373d5fb9287b0f3cde4f45fcaea31f",
+            "locator": {
+              "end": 358,
+              "kind": "line_range",
+              "start": 339
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The startup targets reported as withheld are the retired targets removed by every accepted install.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf9ac72bbb7c8c5de47dafe426cd1ab91b20c7bd",
+            "content": "sha256:739a0ac4361ec6e48e3fc8118c047a11d1ac4e439c88a285300f2e9393ca9704",
+            "locator": {
+              "kind": "symbol",
+              "name": "WITHHELD_STARTUP_TARGETS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,79 @@
+{
+  "path": "mcp/src/agents_remember/observer/reducer.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Anchor: Current output projection shape.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ada1520ab5545be71a00dae1420683fd0b82938",
+            "content": "sha256:9d00407991a5ac2ae6112d754bf7c6f06f544820a425de0cb7b78edc726abb74",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorkspaceProjection"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The facade composes metrics and the narrowed analytical bundle, including closeout queue input, without verification-age rollups. Current counts are task-entry-owned; lifecycle-only counting describes the predecessor, not the current native task fold.\n\nAnchor: `_metrics` `build_analytics` `AnalyticalInputs` `project_workspace`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc7a6d1a7b42e9f22d3b82ddcee7e044cd9d7cb5",
+            "content": "sha256:bde726e93efe7ef8244710df716b85856e4098d733522c36dcd6c57f033a528e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_metrics.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cfd5ccff277b5ad7e7da2e2437b7617b01f6b241",
+            "content": "sha256:50326ead1fca9c4f0127c6ff9373dc2069a48e0393d6289ffdef2f759b3be6bb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a95148ac75c865e5846b8994fe331ba5fb2ad1f7",
+            "content": "sha256:745f945dea2a5715f3848e7a291758922064b105dbdc20631dd97d7a2cec4a22",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The current WorkspaceProjection constructor publishes native tasks/counts, unbound enclosures, active groups, queues, host metric and analytics, with no providers collection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a95148ac75c865e5846b8994fe331ba5fb2ad1f7",
+            "content": "sha256:d1094a5895149be1a116f21757304ea967aa8be75e881d87b502e31f7297faa2",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 83
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

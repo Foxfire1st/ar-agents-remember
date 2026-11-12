@@ -1,0 +1,236 @@
+{
+  "path": "dashboard/src/data/useTaskDocumentBody.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "32d5a242931e0559a4a804ea9fae880f88f25d94",
+        "content": "sha256:170ebf5d1f22ba019d9bf4f65ca0e9e901936296940ee831e8c494823bcf4369",
+        "locator": {
+          "end": 202,
+          "kind": "line_range",
+          "start": 179
+        }
+      },
+      "id": "RLZ-5X2J6F",
+      "invariant": "INV-WNHAWD",
+      "origin": {
+        "handoffEntry": "L168-CUR-M2-21-N16",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "The hook's body effect ends its own request on cleanup; a completed body remains the store's retained value. The store's pending waiter accounting is RLZ-P5YGCN/RLZ-XTZBXS in taskDocuments.ts.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "32d5a242931e0559a4a804ea9fae880f88f25d94",
+        "content": "sha256:d91070d217afcc5da3fe47df7ca4b1a044a7cb0eebb4a52d6ca6561941f85a62",
+        "locator": {
+          "end": 206,
+          "kind": "line_range",
+          "start": 164
+        }
+      },
+      "id": "RLZ-E66Q6G",
+      "invariant": "INV-WNHAWD",
+      "origin": {
+        "handoffEntry": "L168-CUR-M1-21-A013-07",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "The body effect aborts its own request on cleanup; a completed body is still retained under the returned revision.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "32d5a242931e0559a4a804ea9fae880f88f25d94",
+        "content": "sha256:a33de359713a3247adbc79c964c0c42d8819027bf099f6dea6eec058c00b92df",
+        "locator": {
+          "end": 235,
+          "kind": "line_range",
+          "start": 214
+        }
+      },
+      "id": "RLZ-ZG9MJ3",
+      "invariant": "INV-WNHAWD",
+      "origin": {
+        "handoffEntry": "L168-CUR-M2-21-N17",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "bodyKeyFor requires exact qualified reference plus summary.bodyRevision; mergeAvailableBody delegates current-summary-preserving merge, while resolveBodyState reports absent/loading/unavailable/available without a second task-state producer.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "32d5a242931e0559a4a804ea9fae880f88f25d94",
+        "content": "sha256:3b346c9d88940e4d80dfc7ea4d38d332d234f7ee9abb6a7ddbedb69d7b8cf38b",
+        "locator": {
+          "end": 153,
+          "kind": "line_range",
+          "start": 14
+        }
+      },
+      "id": "RLZ-ZJ4AM6",
+      "invariant": "INV-S18MK6",
+      "origin": {
+        "handoffEntry": "curator-body-revision-hydration-currentness",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Merges whole content while preserving current summary-owned facts.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "3": {
+      "note": "Current TaskPage passes bodyState into ReaderHead, whose change-set controls are unmounted while loading; the deleted lifecycleBody is not its caller.\n\nAnchor: TaskPage and ReaderHead (inclusive ranges)\n\nRetired at the fifth freeze d59c3493: dashboard/src/panels/detail-panel/skeletons.tsx:715-732 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 231622b2c7e272e7ca182ec28d3da61ca1749e0f. Retired means the anchor no longer stands, not that the cited subject was deleted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d25262c3e75cb900805602c122e9f8f6605ec733",
+            "content": "sha256:d5c5c20b5d07228370c6cb87170db303aadd58c62d6bad25bafb8f7839b349a4",
+            "locator": {
+              "end": 135,
+              "kind": "line_range",
+              "start": 85
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The transport adapter owns the same-origin endpoint and non-OK rejection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91a45a737a391b17be5e44f0de88da7af08dc61c",
+            "content": "sha256:a211d8016b8b0ae7e772f674d236e0f06cfc80b0685cb330e12328ad2dd1e271",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "dashboard/src/data/taskDocuments.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Source-defined taskBody.test.tsx component assertions hold the body request open, check body-first ordering, cover long fields and fallback, and pin revision caching. Source inspection only; no fresh execution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "771c4aa9ca9066f422f5ee6445d94ade8dcbe3f8",
+            "content": "sha256:b2d9166a6343b2ad3f6100275081ac4a2e5d92792adf920f53fe434a5b29dfcb",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "dashboard/src/panels/detail-panel/taskBody.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "771c4aa9ca9066f422f5ee6445d94ade8dcbe3f8",
+            "content": "sha256:77fa69229c7265ac2de0918ec7a779eddfb3bec8259cd5a11649e245d51c76ce",
+            "locator": {
+              "end": 226,
+              "kind": "line_range",
+              "start": 142
+            },
+            "path": "dashboard/src/panels/detail-panel/taskBody.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "771c4aa9ca9066f422f5ee6445d94ade8dcbe3f8",
+            "content": "sha256:99e4fc54c4c625afcdf1c735239fc22bfee3cecc4df6244f7343fdf175b1d274",
+            "locator": {
+              "end": 252,
+              "kind": "line_range",
+              "start": 228
+            },
+            "path": "dashboard/src/panels/detail-panel/taskBody.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "771c4aa9ca9066f422f5ee6445d94ade8dcbe3f8",
+            "content": "sha256:72391a6655116a16f339ece9bf847380aaddb292e9b742541ab6d99cd77f0e3b",
+            "locator": {
+              "end": 307,
+              "kind": "line_range",
+              "start": 254
+            },
+            "path": "dashboard/src/panels/detail-panel/taskBody.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Fixed prose is merged by the production body hook; separate native-operand mounted DetailPanel cases start from summaries missing nonGoals/acceptance, stub transport, and declare assertions for restored fields, fixed-block order, legacy access and one body request. This is source inspection, not a new producer/test run or acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "32d5a242931e0559a4a804ea9fae880f88f25d94",
+            "content": "sha256:fcf1a002d850bc31761132e3dc616647e761adbf72dd3ce4d1e064597a2de1c7",
+            "locator": {
+              "end": 103,
+              "kind": "line_range",
+              "start": 95
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "32d5a242931e0559a4a804ea9fae880f88f25d94",
+            "content": "sha256:3f6163d06a9c165754e114d90693d9f792f9a6397d551d0763c2ee0a08ed8bf9",
+            "locator": {
+              "end": 132,
+              "kind": "line_range",
+              "start": 105
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e572437ae5aff4a17360754c466c756d3c48407b",
+            "content": "sha256:6ea4478f55b73b8b5d1ad95c78839805d43900245163081da06dc06587631d62",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 85
+            },
+            "path": "dashboard/src/panels/detail-panel/body-hydration.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Retained body identity combines the qualified repository/path reference with the body revision, not a path-only key.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91a45a737a391b17be5e44f0de88da7af08dc61c",
+            "content": "sha256:5179e3e01a7bf30378f0ce9801d22a53a54b752227a6d879964c5debc3d128d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "taskBodyKey"
+            },
+            "path": "dashboard/src/data/taskDocuments.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/review_pair_preflight.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/review_pair_preflight.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-28T16:55:21+02:00 |
-| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
-| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
-| governingOverview | `mcp/src/agents_remember/application/overview.md` |
-
 ## Governing Overview
 
 [application route overview](overview.md)
@@ -55,32 +45,30 @@ Every refusal is a typed `ReviewRefusal` from the existing owners — this modul
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this module.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found. | — | — |
+No relevant domain documentation was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The four refusals in their fixed order. | `pair_preflight_refusal`; `closed_leaf_dataset_refusal`; `unreadable_half_refusal`; `candidate_receipt_refusal` | mcp/src/agents_remember/application/review_pair_preflight.py:34-42 |
-| The live pair's absent-half refusal, naming the half and the file. | `absent_pair_refusal`; "candidate_dataset_absent" | mcp/src/agents_remember/application/review_pair_preflight.py:45-71 |
-| The catalogue caller: one call, refused before any subject is listed. | `list_knowledge_review_entries`; `pair_preflight_refusal` | mcp/src/agents_remember/application/knowledge_review.py:256-317 |
-| The summary caller: the same call before either side is read. | `intent_summary_of`; `pair_preflight_refusal` | mcp/src/agents_remember/application/review_intent_summary.py:137-167 |
-| The absent-half probe it builds on. | `missing_dataset_half` | mcp/src/agents_remember/application/review_candidate_resolution.py:330-348 |
 
-## Cross-Repo References
+- The pair's refusals in their fixed order: an unavailable knowledge selection, the closed leaf's dataset, an absent half, an unreadable half, and the candidate receipt. [1]
+
+
+- The live pair's absent-half refusal, naming the half and the file. [2]
+
+
+- The catalogue caller: one call, refused before any subject is listed. [3]
+
+- The summary caller: the same call before either side is read. [4]
+- The absent-half probe it builds on. [5]
+
+### Cross-Repo References
 
 No cross-repository behavior.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-09-28T16:55:21+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): created this card for the pair preflight extracted from `knowledge_review.list_knowledge_review_entries` (`ICR-R24@v3`). The catalogue's refusal order is preserved exactly; the changed-intent summary now shares it. The verification pair names the code base; closeout owns the real stamp.
+No meaningful cross-repo references found.

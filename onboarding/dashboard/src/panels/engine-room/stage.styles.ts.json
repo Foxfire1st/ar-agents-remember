@@ -1,0 +1,61 @@
+{
+  "path": "dashboard/src/panels/engine-room/stage.styles.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The static scene, node, canopy, lane-flag and warp-coupler recipes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5705ba6821a3de4af9781d63732e0300475af6a6",
+            "content": "sha256:bc8f5d68c1d5a6961435fe4e2ae24b5f6f5c9becdd426e3efcc8cd6b2a30df78",
+            "locator": {
+              "kind": "symbol",
+              "name": "sceneSvg"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5705ba6821a3de4af9781d63732e0300475af6a6",
+            "content": "sha256:bfa051c06960387994b20a585a56f610a8cc03318edd5f1ea6eac285a7051132",
+            "locator": {
+              "kind": "symbol",
+              "name": "laneFlag"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5705ba6821a3de4af9781d63732e0300475af6a6",
+            "content": "sha256:9b05f3d9d5b144a12e47bbd81bbcf94a8bf78ec51a6f245c89bb402609119493",
+            "locator": {
+              "kind": "symbol",
+              "name": "warpCouplerBar"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The pruned-node recipe retains the dormant/desaturated stale-base register.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5705ba6821a3de4af9781d63732e0300475af6a6",
+            "content": "sha256:3ca2cef9006a54cae295646d84d7df587366593a13c9b703147d1d789a8be257",
+            "locator": {
+              "kind": "symbol",
+              "name": "prunedNode"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

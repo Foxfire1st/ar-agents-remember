@@ -1,0 +1,85 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The instruction admitted keeping the sidebar behind a setting and keeping the button, and the migration had a real fork (guess the stored state or open once); the choice fixes what navigation the product may draw."
+  },
+  "alternatives": [
+    {
+      "option": "Remove the dashboard's sidebar and its button, stop the plugin's load-time collapse, and open a stored-closed host list once per browser through the host's own toggle, after which the host's stored state decides.",
+      "reason": "The host's list has the same navigation content and the developer finds it sufficient; the one opening repairs the 'closed' state earlier builds stored without guessing whether a user or the plugin closed it.",
+      "status": "chosen"
+    },
+    {
+      "option": "Keep the sidebar but remove the plugin's load-time collapse so the host may focus it later.",
+      "reason": "A setting or a hidden second navigation still duplicates the host's list and keeps the removed code alive; the packet's non-conforming example names 'the dashboard's sidebar stays in the code behind a setting'.",
+      "reconsider_when": "A later requirement needs a dashboard-side list on a page where the host's own list is unreachable.",
+      "status": "rejected"
+    },
+    {
+      "option": "Remove the sidebar but keep the Show/Hide button wired to something else.",
+      "reason": "A button without its navigation is a dead control; the non-conforming example names 'or the button stays and does nothing'. The button goes with the sidebar.",
+      "reconsider_when": "A later requirement gives the button a real navigation target.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The dashboard draws no element labelled 'AR chat navigation' and no Show/Hide button (rule 7).",
+    "The host's own list is the navigation on the Chats page, with its own remembered open/closed state after the one opening (rule 8).",
+    "The sidebar-only parsing and hover-spin code goes; the Parent button, its failure display and the plugin's snapshot bridge stay (rule 9); no parallel route to a chat is built (rule 10)."
+  ],
+  "context": "The dashboard drew a sidebar of its own beside the chat and closed the host's own workspace list at every frame load. The developer said the host's list already shows every leaf neatly under its master and every agent as a tab, so 'the sidebar and the show navigation button is not needed in my opinion'; asked whether a link from another page to a certain agent's chat should be kept, 'every individual agent is clearly reachable'.",
+  "decider": "Developer direction D71 (2026-10-06), read and applied by the run's architect on MIK-R75@v1; implemented by the retained worker and accepted by the current reviewer's code/evidence pass.",
+  "id": "DEC-9NSH0C",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-WEZ24E"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-7QV5CQ"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-STRQX4"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-QS9SRX"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-P42RRV"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R75",
+        "packet": "requirements/MIK-R75-v1-the-launcher-strip-does-not-repeat-the-chat.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L75-reviewer-e90aa7a7-6651-4eb6-ab32-c6bfb33a38ac-evidence/changed-file-coverage.json; notes/reports/role-launch/260928-MIK-L75-reviewer-e90aa7a7-6651-4eb6-ab32-c6bfb33a38ac-evidence/ui-focused.log; notes/reports/role-launch/260928-MIK-L75-worker-0999d37f-1b2a-4c21-a2d8-9a47fece23fd-evidence/d86-final-20261007/browser.json"
+      ],
+      "path": "handoff.json"
+    },
+    "handoffEntry": "MIK-R75@v1 current rule 7",
+    "leaf": "260928-MIK-L75",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

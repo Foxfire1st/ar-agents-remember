@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The bound spans the scheduler class and its work/run path, and the lifetime populations plus the copied-context reclamation cases prove the admission and reclamation facets."
+  },
+  "applicability": "The change-set route family's read scheduler.",
+  "conditions": [
+    "The admission cap covers running plus pending physical jobs; a request over the cap gets an explicit 503.",
+    "A queued abandoned job is removed from the queue and releases its slot at once.",
+    "A running abandoned job releases its slot only when its worker ends; copied request contexts are released."
+  ],
+  "exclusions": [
+    "Other route families, a completed read, and a non-abandoned queued job."
+  ],
+  "id": "INV-NPEQB1",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "verdict-r4-a9.md; mcp/tests/test_changeset_cancellation.py::test_the_family_bounds_admits_and_reclaims_at_over_capacity"
+      ],
+      "path": "notes/reports/curator/03a91764-2ced-5673-861b-6d0d34d331bf/curator-handoff-L174-A9.json"
+    },
+    "handoffEntry": "L174-R1-03",
+    "leaf": "260928-MIK-L174",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The change-set work scheduler bounds admitted pending work as well as worker threads and reclaims abandoned jobs.",
+  "status": "proposed",
+  "supersedes": []
+}

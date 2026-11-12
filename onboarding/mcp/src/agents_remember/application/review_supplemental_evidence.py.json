@@ -1,0 +1,183 @@
+{
+  "path": "mcp/src/agents_remember/application/review_supplemental_evidence.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d1fad00ceed9cc357314ce0ac91368ea6dd5e0e8",
+        "content": "sha256:355e3f2cb523441546cbfe8a0005b48b4b7bfcf27132b0c711b926eba3977905",
+        "locator": {
+          "kind": "symbol",
+          "name": "_reread_leaf_document"
+        }
+      },
+      "id": "RLZ-4EDVMN",
+      "invariant": "INV-D3JV0V",
+      "origin": {
+        "handoffEntry": "L183-curator-test-facet-09",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Exact own-document admission and producer-leaf reread retain canonical source identity; manifest-version staleness prevents old immutable packet bytes being silently reported as current.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d1fad00ceed9cc357314ce0ac91368ea6dd5e0e8",
+        "content": "sha256:82f2bdcfffb2580e2e8c4a801f45c15032957faf7e8ddbbd073f871784d3a772",
+        "locator": {
+          "kind": "symbol",
+          "name": "admit_supplemental"
+        }
+      },
+      "id": "RLZ-6B6F41",
+      "invariant": "INV-D3JV0V",
+      "origin": {
+        "handoffEntry": "L102-F06",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "Prior closure preserved; no reopening/new lens. The sole prior residual, stat-then-unlimited-read, is repaired with the real stream.read(MAX_SUPPLEMENTAL_BYTES+1) admission. An over-cap source refuses with its measured sentinel byte count and no digest; the small positive reads exactly five bytes. Existing source/path/symlink repairs and immutable earlier-receipt behavior remain accepted. The old read_bytes interception is no longer the live seam; it is not misreported as an executed growing-file test.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d1fad00ceed9cc357314ce0ac91368ea6dd5e0e8",
+        "content": "sha256:b3b26bb72153ec5dadd5af32fa05bdb9b88d2c1210f07bbfda7b09316c53370f",
+        "locator": {
+          "kind": "symbol",
+          "name": "capture_supplemental"
+        }
+      },
+      "id": "RLZ-9C7T1J",
+      "invariant": "INV-D3JV0V",
+      "origin": {
+        "handoffEntry": "L183-curator-test-facet-09",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Exact own-document admission and producer-leaf reread retain canonical source identity; manifest-version staleness prevents old immutable packet bytes being silently reported as current.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d1fad00ceed9cc357314ce0ac91368ea6dd5e0e8",
+        "content": "sha256:a3ca82e7dfef88df32c527fd49f5fc6cd6b5349728c871fca54050ef634a493b",
+        "locator": {
+          "end": 45,
+          "kind": "line_range",
+          "start": 43
+        }
+      },
+      "id": "RLZ-BGQQXF",
+      "invariant": "INV-D3JV0V",
+      "origin": {
+        "handoffEntry": "L183-curator-test-facet-09",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "This named source-root marker admits only the leaf task document identity used by admitted_source_root/_is_leaf_document. It is not permission for the whole task root or another leaf document, preserving canonical-source identity for supplemental receipts.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d1fad00ceed9cc357314ce0ac91368ea6dd5e0e8",
+        "content": "sha256:5254e9043b79a380d1ae1e8193e94ac994d93ca17f93b52341ce8dc09fcc680b",
+        "locator": {
+          "kind": "symbol",
+          "name": "packet_version_stale"
+        }
+      },
+      "id": "RLZ-QSWC6M",
+      "invariant": "INV-D3JV0V",
+      "origin": {
+        "handoffEntry": "L183-curator-test-facet-09",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Exact own-document admission and producer-leaf reread retain canonical source identity; manifest-version staleness prevents old immutable packet bytes being silently reported as current.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d1fad00ceed9cc357314ce0ac91368ea6dd5e0e8",
+        "content": "sha256:8dcb7c5b7fc3ec63b7fa142b40f8a786bc6f33f9926e960644c2a8ab5cbe7f5c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_is_leaf_document"
+        }
+      },
+      "id": "RLZ-TM6WCZ",
+      "invariant": "INV-D3JV0V",
+      "origin": {
+        "handoffEntry": "L183-curator-test-facet-09",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Exact own-document admission and producer-leaf reread retain canonical source identity; manifest-version staleness prevents old immutable packet bytes being silently reported as current.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d1fad00ceed9cc357314ce0ac91368ea6dd5e0e8",
+        "content": "sha256:f929300b5c68b1565a8f9c65d424ecdf09fc5de94fd3cfb3d0b31a909b8defe5",
+        "locator": {
+          "kind": "symbol",
+          "name": "reread_supplemental"
+        }
+      },
+      "id": "RLZ-V2Y92Y",
+      "invariant": "INV-D3JV0V",
+      "origin": {
+        "handoffEntry": "L102-F06",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "Prior closure preserved; no reopening/new lens. The sole prior residual, stat-then-unlimited-read, is repaired with the real stream.read(MAX_SUPPLEMENTAL_BYTES+1) admission. An over-cap source refuses with its measured sentinel byte count and no digest; the small positive reads exactly five bytes. Existing source/path/symlink repairs and immutable earlier-receipt behavior remain accepted. The old read_bytes interception is no longer the live seam; it is not misreported as an executed growing-file test.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "2": {
+      "note": "A capture binds the bytes examined and states that it is supplemental.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1fad00ceed9cc357314ce0ac91368ea6dd5e0e8",
+            "content": "sha256:b3b26bb72153ec5dadd5af32fa05bdb9b88d2c1210f07bbfda7b09316c53370f",
+            "locator": {
+              "kind": "symbol",
+              "name": "capture_supplemental"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A later read answers a successor receipt and never rewrites the earlier one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1fad00ceed9cc357314ce0ac91368ea6dd5e0e8",
+            "content": "sha256:f929300b5c68b1565a8f9c65d424ecdf09fc5de94fd3cfb3d0b31a909b8defe5",
+            "locator": {
+              "kind": "symbol",
+              "name": "reread_supplemental"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The current implementation adds leaf-bound document reread and manifest-version staleness; the earlier successor-receipt identity account remains valid.\n\nAnchor: `admit_supplemental`, `_is_leaf_document`, `_reread_leaf_document`, `_stem_matches_leaf`, `packet_version_stale`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1fad00ceed9cc357314ce0ac91368ea6dd5e0e8",
+            "content": "sha256:6a932072b28987f180edb21e207b86d5a9989464e03ac229457ac1b0a2b3828d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/panels/review/ChangeBadges.tsx",
+  "realizes": [],
+  "references": {
+    "23": {
+      "note": "ChangeBadges.tsx current behavior at this source owner.\n\nAnchor: \"export function useMemberChange(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58b9ff0db23af4be37b0571352c3c0ed7e918b6c",
+            "content": "sha256:fa82ee2d35397cc1e474011a6e6a59cfd635955d127d0d640b6999a730a1982f",
+            "locator": {
+              "end": 156,
+              "kind": "line_range",
+              "start": 141
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "ChangeBadges.tsx current behavior at this source owner.\n\nAnchor: \"function membershipLine(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58b9ff0db23af4be37b0571352c3c0ed7e918b6c",
+            "content": "sha256:52fa4c13df70033a8174b4f39a3d3d63246603392fe68d2604273c0ed9e7d4cd",
+            "locator": {
+              "end": 251,
+              "kind": "line_range",
+              "start": 174
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "ChangeBadges.tsx current behavior at this source owner.\n\nAnchor: \"export function GuaranteeChangeBadge({ kinds }: { kinds: ReviewFamilyChanges \\| undefined }) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58b9ff0db23af4be37b0571352c3c0ed7e918b6c",
+            "content": "sha256:112037146e6cf9c7c4c73af813f95c4deeb565a2105540a8adbe8119e6467384",
+            "locator": {
+              "end": 324,
+              "kind": "line_range",
+              "start": 253
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Without the parent-first remedy a sender refused only because a recipient was archived or busy would be told to ask the developer in its own chat, which silently breaks the single top-chat chain the change exists to create; the remedy text is the only guidance a refused sender gets."
+  },
+  "applicability": "The nextAction remedy text of a role_message refusal that still leaves the message transportable.",
+  "conditions": [
+    "Archived recipients with a live successor direct resend to that successor; a changed scope offers restart with role_start for the current scope or the parent channel. Actual cannot-resume and repeated-undelivered failures name the parent through role_message before parentless own-chat advice.",
+    "The refusal reason, its code and the delivery algorithm are unchanged.",
+    "An unfinished start, pending permission or unwritable running turn can produce held rather than host-accepted delivery; the permission guard still forbids sending into the prompt."
+  ],
+  "exclusions": [
+    "No-runtime and host-unreachable refusals, whose own-chat advice stays.",
+    "Transport behavior, refusal codes and any change to which tool calls a harness asks about."
+  ],
+  "id": "INV-82ZTHK",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Focused test_paseo_role_tools.py and test_paseo_role_messages.py; exact production diff; no runtime algorithm or refusal changes"
+      ],
+      "path": "notes/files/l93-curation-20261008/handoff.json"
+    },
+    "handoffEntry": "MIK-R93@v1 rule12",
+    "leaf": "260928-MIK-L93",
+    "task": "260928-MIK"
+  },
+  "revision": 3,
+  "schema": "ar-invariant/v1",
+  "statement": "Role-message remedies that retain transport name the parent before the parentless own chat, while no-runtime and host-unreachable remedies retain their own-chat advice.",
+  "status": "proposed",
+  "supersedes": []
+}

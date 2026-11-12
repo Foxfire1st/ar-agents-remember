@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_review_checkout_witness.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The bound witness survives owned checkouts without source edits",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1846d249ab48f40f6fbe40fb7ac23586201a4126",
+            "content": "sha256:be1a22be527c18433c888013399e6e13c496affea434d21e109810f0dfa9c934",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_bound_witness_survives_owned_checkouts_without_source_edits"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

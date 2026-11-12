@@ -1,118 +1,98 @@
 # mcp/tests/test_capsule_experiment_install.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/tests/test_capsule_experiment_install.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-17T10:20:31+00:00|
-| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` |
-| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
-| governingOverview      | `overview.md`                              |
-
 ## Governing Overview
 
-[tests route overview](overview.md)
+[overview](overview.md)
 
 ## Purpose
 
-The forcing suite for the experimental installation and instruction cutover (260915-CAPS-L9): **19
-cases** that drive the real installer against scratch coordination roots and read the resulting
-tree, the returned run record and the compiled capsule text. It is the proof surface for behaviour 2
-(the per-run recorded selection with no silent switch), behaviour 3 (the cutover and its
-deduplication screens) and behaviour 5 (the run record and the way back).
-
-This module is **new in 260915-CAPS-L9** and is **uncommitted on `ar/260915-caps-l9-ar`**; it is not
-one of the six lane-manifest `D9` modules (its row is registered and the loader names the same six as
-at the clean base), and its two consumer rows in `mcp/tests/evidence-lifecycle.toml` are the measured
-catalog delta this leaf contributes.
+Runs the experimental installation and instruction cutover end to end: neither an unselected nor a selected run
+leaves the retired startup files (`AGENTS.md`, `tasks/AGENTS.md`, `system/AGENTS.md`) in the coordination root,
+an earlier installation's copies are removed in both modes, and a selected run cuts over to the capsule path. The
+selection is per run and never persisted. A selected run with no usable capsule path refuses and writes nothing.
 
 ## Code Commentary
 
-### What each case class is protecting
+### Logic
 
-- **The cutover pair and its positive control.** `…an_unselected_run_installs_the_legacy_startup_chain`
-  and `…a_selected_run_cuts_over_to_the_capsule_path` are two real installs in two scratch roots; the
-  disabled run is the control for the opted-in one, and `…a_selected_run_removes_an_earlier_legacy_installation`
-  proves the removal half rather than only the withholding half.
-- **The way back is executable.** `…running_the_installer_again_without_the_selection_restores_the_legacy_chain`
-  runs the documented undo as a run, not as prose.
-- **The selection surface.** `…the_selection_resolves_from_the_request_then_the_run_environment` and
-  `…the_registered_tool_takes_the_selection_as_this_run_s_own_input` drive the registered payload
-  builder and assert `selectionSource == "request"` for a request-supplied selection and `legacy`
-  with no record for an unselected one; `…an_unknown_experiment_is_refused_by_name` pins the refusal
-  vocabulary.
-- **Fail-closed refusals write nothing.** `…a_selected_run_with_an_unavailable_capsule_path_refuses_and_writes_nothing`
-  and `…a_pin_mismatch_refuses_the_install_and_names_the_capability` assert both the named capability
-  and the absence of a created coordination root.
-- **The deduplication and delivery screens.** `…the_legacy_fingerprint_is_present_when_disabled_and_absent_when_opted_in`
-  counts the four coordinator `AGENTS.md` targets **on disk**; `…the_canonical_corpus_reaches_an_opted_in_run_once_through_the_capsule`
-  reads the trusted instruction text the production compile route produces; and
-  `…the_installed_root_carries_the_canonical_corpus_only_as_authored_source` reads the **installed**
-  coordination root instead of compiling a second time, which is the screen that says what the
-  installed `skills/` copy actually is.
-- **The record and the rollback plan.** `…the_run_record_carries_the_packet_shape_and_the_independent_versions`
-  compares the record against the pinned `package.json` rather than against the product's own output,
-  and `…the_rollback_plan_names_the_installed_artifacts_and_the_restore_command` pins the rendered
-  undo rows.
-- **The no-persistence guard, which is the case `S2`'s strengthened text names.**
-  `…the_selection_is_recorded_per_run_and_never_persisted` **content-digests every regular file under
-  the coordination root** before and after the selected run and inspects every file that appeared or
-  changed; the root-scoped reading demands that every hit be a **byte-identical authored asset**,
-  with a control that the scan found something at all. It replaced a first revision whose guard was
-  `rglob("*.json")` and therefore blind to a `.toml`, a `.txt` or an extension-less switch — the
-  baseline review's `L9-1`, whose four seeded channels (`S12` `.json`, `S12b` `.toml`, `S12c` `.txt`,
-  `S12d` extension-less) plus the deselected-install seed `S12e` the case now catches.
-- **The install stays inside its destination.** `…a_selected_install_writes_nothing_into_the_install_source_tree`
-  and `…the_installed_application_keeps_its_machine_local_trees_out_of_the_mirror` (which asserts the
-  installed `node_modules` is a real directory and not a symlink).
+`create_install_source()` builds one install source tree from this repository's canonical assets,
+`dispatcherless_deps()` keeps the provider stack out, and `run_install()` runs the real installer through the
+entry point the run selects. `plant_retired_startup_files()` writes the three retired startup files carrying
+`LEGACY_FINGERPRINT` as an earlier installation would have left them, and `assert_no_retired_startup_files()`
+requires all three absent, symlinks included. `CORPUS_FINGERPRINT`/`CORPUS_FINGERPRINT_SOURCE` and
+`RETIRED_CORE_FINGERPRINT` are real corpus text, so a zero count means absence rather than drift;
+`fingerprint_count()`, `snapshot_regular_files()` and `files_containing()` measure the effective material.
+
+- **Two modes.** `test_an_unselected_run_leaves_no_retired_startup_files` (with and without an earlier
+  installation), `test_a_selected_run_cuts_over_to_the_capsule_path` and
+  `test_a_selected_run_removes_an_earlier_legacy_installation` cover each mode and the removal;
+  `test_running_the_installer_again_without_selection_keeps_retired_files_absent` shows no global switch is
+  left on, and `test_an_unselected_preview_reports_retirement_without_removing_files` reports the removals on a
+  dry run without touching a file.
+- **Selection.** `test_an_unknown_experiment_is_refused_by_name`,
+  `test_the_selection_resolves_from_the_request_then_the_run_environment` and
+  `test_the_registered_tool_takes_the_selection_as_this_run_s_own_input` keep the selection an input of this
+  run, and `test_the_selection_is_recorded_per_run_and_never_persisted` digests every regular file under the
+  coordination root before and after.
+- **Fail closed.** `test_a_selected_run_with_an_unavailable_capsule_path_refuses_and_writes_nothing` refuses
+  instead of falling back.
+- **One corpus copy.** `test_both_install_modes_remove_the_legacy_fingerprint` and
+  `test_the_canonical_corpus_reaches_an_opted_in_run_once_through_the_capsule` count over the real effective
+  material: the legacy fingerprint is gone from both modes and no corpus text lands in the coordination root,
+  and `test_the_installed_root_carries_the_canonical_corpus_only_as_authored_source` asserts that the installed
+  coordination root has no `skills/` tree and that startup targets remain withheld. The corpus is
+  package-served rather than copied under the coordination root.
+- **Record and dry run.** `test_the_run_record_carries_the_packet_shape_and_the_independent_version` and
+  `test_a_dry_run_reports_the_cutover_and_writes_nothing` cover the record and the dry run in both modes.
+- **Source tree.** `test_a_selected_install_writes_nothing_into_the_install_source_tree` keeps caches, manifests
+  and generated state out of the tracked tree, and `test_an_actual_install_reports_no_startup_rollback` finds an
+  empty startup rollback in the selected run's payload.
+- **Earlier installs.** `test_an_install_over_an_earlier_experimental_installation_fails_on_none_of_its_stores`
+  keeps what an earlier build left and fails on none of it.
+- **Benchmark sync.** `test_benchmark_asset_sync_retires_the_same_startup_files` shows the benchmark runner's
+  runtime-asset sync removes the same three files, writing nothing on its dry run.
+- **Module statement.** `test_the_module_states_that_an_unselected_install_still_retires_startup_files` requires the
+  `install/experiment.py` docstring to say that an unselected (`legacy`) run keeps the old startup chain's install
+  path while the cutover still retires the `AGENTS.md` copies, and not to call `legacy` the existing installation
+  left unchanged.
+
+### Conventions
+
+Facts are read from the retained logged install result and from digests of the tree, not from the installer's
+returned summary alone.
 
 ### Invariants And Boundaries
 
-- The suite drives the **real** installer entry points against scratch roots; it does not assert on
-  the live coordination root.
-- Every case that claims a count names the producer of each side; no case presents two different
-  producers' numbers as one measurement.
-- Seed coverage lives in `notes/reports/caps-l9-mutation-probe.py` (24 caught, 0 vacuous), not in
-  this module.
-- Failures are never smoothed: the `L9-1` vacuity is recorded as the reason the guard is
-  root-scoped rather than as a silent edit.
+- The selection belongs to one run; nothing under the coordination root records it afterwards.
+- A selected run never falls back to the legacy chain.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The no-persistence guard digests every regular file under the coordination root before and after the selected run. | `test_the_selection_is_recorded_per_run_and_never_persisted` | mcp/tests/test_capsule_experiment_install.py:449-515 |
-| The installed root's corpus is measured as authored source rather than compiled a second time. | `test_the_installed_root_carries_the_canonical_corpus_only_as_authored_source` | mcp/tests/test_capsule_experiment_install.py:548-578 |
-| The registered tool takes the selection as this run's own input and the record names the input that won. | `test_the_registered_tool_takes_the_selection_as_this_run_s_own_input` | mcp/tests/test_capsule_experiment_install.py:543-584 |
-| The installed application keeps machine-local trees out of the mirror and its `node_modules` is a real directory, not a symlink. | `test_the_installed_application_keeps_its_machine_local_trees_out_of_the_mirror` | mcp/tests/test_capsule_experiment_install.py:645-675 |
-| The rollback plan renders the installed artifacts and the restore command. | `test_the_rollback_plan_names_the_installed_artifacts_and_the_restore_command` | mcp/tests/test_capsule_experiment_install.py:678-704 |
-| The two consumer rows this leaf adds to the catalog's consumer proof. | `test_capsule_experiment_install` | mcp/tests/evidence-lifecycle.toml:693-693 |
-| The two consumer rows this leaf adds to the catalog's consumer proof. | `test_capsule_experiment_install` | mcp/tests/evidence-lifecycle.toml:693-693 |
 
-## Update History
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 2 citations into `mcp/tests/evidence-lifecycle.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: `test_capsule_experiment_install` repointed to mcp/tests/evidence-lifecycle.toml:691-691. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: `test_capsule_experiment_install` repointed to mcp/tests/evidence-lifecycle.toml:691-691. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: `test_capsule_experiment_install` repointed to mcp/tests/evidence-lifecycle.toml:689-689. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: `test_capsule_experiment_install` repointed to mcp/tests/evidence-lifecycle.toml:689-689. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T02:05:20+00:00: Generated citation repair: `test_capsule_experiment_install` repointed to mcp/tests/evidence-lifecycle.toml:688-688. No content impact: mechanical anchor-range projection bound to citation source snapshot fe7fdbf3f561fa23007ac47565833928a7c74df1b4b028969d78a5b139bb65b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T02:05:20+00:00: Generated citation repair: `test_capsule_experiment_install` repointed to mcp/tests/evidence-lifecycle.toml:688-688. No content impact: mechanical anchor-range projection bound to citation source snapshot fe7fdbf3f561fa23007ac47565833928a7c74df1b4b028969d78a5b139bb65b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-19T22:28:52+00:00: Generated citation repair: `test_capsule_experiment_install` repointed to mcp/tests/evidence-lifecycle.toml:680-680. No content impact: mechanical anchor-range projection bound to citation source snapshot 440311ed835ff15c77271ad85c2bef2103d2b46ebe061b96476b211b3d19cd24; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: `test_capsule_experiment_install` repointed to mcp/tests/evidence-lifecycle.toml:700-700. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T15:12:32+00:00: Generated citation repair: `test_capsule_experiment_install` repointed to mcp/tests/evidence-lifecycle.toml:699-699. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T13:36:47+00:00: Generated citation repair: `test_capsule_experiment_install` repointed to mcp/tests/test-evidence-lanes.toml:22-22. No content impact: mechanical anchor-range projection bound to citation source snapshot 468e47519c1a75ea8349538fbc4903207afc60f299e5295d1631f1f15f11a5ef; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: `test_capsule_experiment_install` repointed to mcp/tests/evidence-lifecycle.toml:695-695. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: `test_capsule_experiment_install` repointed to mcp/tests/test-evidence-lanes.toml:21-21. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-18T05:26:45+00:00: Generated citation repair: `test_the_installed_root_carries_the_canonical_corpus_only_as_authored_source` repointed to mcp/tests/test_capsule_experiment_install.py:548-578. No content impact: mechanical anchor-range projection bound to citation source snapshot 70078cc4ca208e40e9a66742bdc38893ecfb1757ca7d77a526e6ba2159339959; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T05:26:45+00:00: Generated citation repair: `test_the_installed_application_keeps_its_machine_local_trees_out_of_the_mirror` repointed to mcp/tests/test_capsule_experiment_install.py:645-675. No content impact: mechanical anchor-range projection bound to citation source snapshot 70078cc4ca208e40e9a66742bdc38893ecfb1757ca7d77a526e6ba2159339959; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T05:26:45+00:00: Generated citation repair: `test_the_rollback_plan_names_the_installed_artifacts_and_the_restore_command` repointed to mcp/tests/test_capsule_experiment_install.py:678-704. No content impact: mechanical anchor-range projection bound to citation source snapshot 70078cc4ca208e40e9a66742bdc38893ecfb1757ca7d77a526e6ba2159339959; claim bytes unchanged; generated by ccr-r10@v1.
+- The no-persistence guard digests every regular file under the coordination root before and after the selected run. [1]
 
-- 2026-09-17T10:20:31+00:00 — 260915-CAPS-L9 curator: **created.** The candidate adds the module
-  (666 lines, 19 cases, untracked). The card records what each case class protects — including the
-  root-scoped no-persistence guard that replaced the vacuous `.json`-only first revision, the
-  three separately-labelled deduplication/delivery screens, and the real-directory assertion on the
-  installed `node_modules` — and the lane/catalog rows the module contributes. Verification metadata
-  names the leaf base commit because the candidate is **uncommitted**; the real stamp is
-  closeout-owned.
+- A selected install leaves no coordination-root skill tree or received startup targets; the corpus remains package-served. [2]
+
+
+- The registered tool takes the selection as this run's own input and the record names the input that won. [3]
+
+
+- Private machine settings pre-exist both installations and retain their bytes. [8]
+
+- Selected-run facts are asserted from the retained logged whole result. [9]
+
+
+- The module drives the real installer end to end and reads its results back from the files it wrote: removal of the retired startup files in both modes, the capsule cutover and the per-run selection record, with the install source tree left byte-identical. [4]
+
+
+- An actual selected install reports an empty startup rollback and leaves no retired startup file. [5]
+
+- The retired startup files are planted with the legacy fingerprint and must all be absent afterwards. [10]
+- An unselected run removes planted startup files. [11]
+- Its preview reports the planted startup files without removing any. [12]
+- The module docstring must say that an unselected (`legacy`) run keeps the old startup chain's install path while the cutover still retires the `AGENTS.md` copies. [13]
+- The benchmark asset sync retires the same startup files. [14]
+
+- The current lifecycle catalog declares test_capsule_experiment_install.py among the exact consumers of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. These current declarations establish no invocation or addition event. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_capsule_experiment_install.py` as an exact consumer. [6]
+
+- The current lifecycle catalog declares test_capsule_experiment_install.py among the exact consumers of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. These current declarations establish no invocation or addition event. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_capsule_experiment_install.py` as an exact consumer. [7]

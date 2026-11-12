@@ -1,0 +1,45 @@
+{
+  "path": "dashboard/src/panels/engine-room/backdrop.styles.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The backdrop layer recipes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2705414b33e8e26414012f581eb336013b6fd384",
+            "content": "sha256:60776b23a7722db08d7d4341a9871fd91262808e3e0356447c1c1be7226d7482",
+            "locator": {
+              "kind": "symbol",
+              "name": "backdrop"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2705414b33e8e26414012f581eb336013b6fd384",
+            "content": "sha256:ce7688a548d65b31cdb43aba75ecf56b615024a727045d06cbb009e1ec1952f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "backdropVideo"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2705414b33e8e26414012f581eb336013b6fd384",
+            "content": "sha256:ea87885eb5b1205b0634089ff416009cdcf9493533a09a8d67ad88e119f4fd40",
+            "locator": {
+              "kind": "symbol",
+              "name": "stageContent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

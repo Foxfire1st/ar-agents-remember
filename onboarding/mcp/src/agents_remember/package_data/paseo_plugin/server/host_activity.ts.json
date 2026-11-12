@@ -1,0 +1,239 @@
+{
+  "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/host_activity.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d0d5b6248ee918bdbc17b535ea6d18c060f2aae6",
+        "content": "sha256:dc63de2522f1ac561f541ae7c2d3be17c4948cba8d8092507906642aec6141e0",
+        "locator": {
+          "kind": "symbol",
+          "name": "HOST_ACTIVITY_HOOKS"
+        }
+      },
+      "id": "RLZ-3QQ1Y5",
+      "invariant": "INV-2SNZPZ",
+      "origin": {
+        "handoffEntry": "MIK-R60@v6.5",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "The 0.15 hook names the host-activity publisher listens on.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "d0d5b6248ee918bdbc17b535ea6d18c060f2aae6",
+        "content": "sha256:a1a632794615dab7dff780d1278e0ffcd823c377afb2232d71a93767a82764b6",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-4VTSTZ",
+      "invariant": "INV-XERGJ0",
+      "origin": {
+        "handoffEntry": "L190-R1-F03",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "The host publisher names native requested/resolved prompt IDs, serializes at most 32 per agent and marks over-cap identity sets incomplete instead of presenting omission as a native answer.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d0d5b6248ee918bdbc17b535ea6d18c060f2aae6",
+        "content": "sha256:3096a7635d2c8e877b340a43d698b57006f6639c98f6881baea46d8b12f43fb4",
+        "locator": {
+          "end": 190,
+          "kind": "line_range",
+          "start": 190
+        }
+      },
+      "id": "RLZ-62NJVX",
+      "invariant": "INV-3WWG5K",
+      "origin": {
+        "handoffEntry": "MIK-R60@v9.7",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Publishes the open wait per agent without touching state or eventAt.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "d0d5b6248ee918bdbc17b535ea6d18c060f2aae6",
+        "content": "sha256:a1a632794615dab7dff780d1278e0ffcd823c377afb2232d71a93767a82764b6",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-CE6HQ3",
+      "invariant": "INV-2ANNY5",
+      "origin": {
+        "handoffEntry": "NEW-RUNNING-SUBAGENT-IS-WORK",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The publication is written here, so both the completeness rule and the subagent facts are realized here.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d0d5b6248ee918bdbc17b535ea6d18c060f2aae6",
+        "content": "sha256:2d6717f0724a29d94dedcfb9283e86124022f276f50527744b35f4314cfd88b3",
+        "locator": {
+          "kind": "symbol",
+          "name": "HostActivityPublisher"
+        }
+      },
+      "id": "RLZ-FQ42W2",
+      "invariant": "INV-X0KED3",
+      "origin": {
+        "handoffEntry": "L168-W-R167-02",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "The installed publisher folds native transitions into one replaceable host-owned activity snapshot.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "d0d5b6248ee918bdbc17b535ea6d18c060f2aae6",
+        "content": "sha256:a1a632794615dab7dff780d1278e0ffcd823c377afb2232d71a93767a82764b6",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-FZ0D1M",
+      "invariant": "INV-VDWN33",
+      "origin": {
+        "handoffEntry": "INV-VDWN33",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The publication is written here, so both the completeness rule and the subagent facts are realized here.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d0d5b6248ee918bdbc17b535ea6d18c060f2aae6",
+        "content": "sha256:af09b043612cbf3744dc93871622238a9d03fc2fd52ae06ca4ec1a94e94536c4",
+        "locator": {
+          "kind": "symbol",
+          "name": "registerHostActivityEvents"
+        }
+      },
+      "id": "RLZ-TY3FZ2",
+      "invariant": "INV-2SNZPZ",
+      "origin": {
+        "handoffEntry": "MIK-R60@v6.5",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Registers each hook with server.addHook.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Host event transitions and exact registered-agent admission.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0d5b6248ee918bdbc17b535ea6d18c060f2aae6",
+            "content": "sha256:46f09631fe83ff27c8e641f6c2645b7a37306d573906f43f7fc7ba94b315b495",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 101
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Full paginated reconciliation and event-wins ordering.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0d5b6248ee918bdbc17b535ea6d18c060f2aae6",
+            "content": "sha256:4312a771f3345a7d9dad094e444c67a2d42f08991e6ddc1ee7e649eade0ec5c4",
+            "locator": {
+              "end": 337,
+              "kind": "line_range",
+              "start": 291
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Bound population, published timestamps and snapshot provenance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0d5b6248ee918bdbc17b535ea6d18c060f2aae6",
+            "content": "sha256:e2c43e0d39c5ad7cbbb554f536c7124bee0ad338d0cc1ecca2208920e1150846",
+            "locator": {
+              "end": 232,
+              "kind": "line_range",
+              "start": 204
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "One replacement file and independent activity handlers.\n\nAnchor: `createHostActivityPublisher`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0d5b6248ee918bdbc17b535ea6d18c060f2aae6",
+            "content": "sha256:a1a632794615dab7dff780d1278e0ffcd823c377afb2232d71a93767a82764b6",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Per-agent overflow keeps first-32 sorted serialization but denies whole-publication completeness; omission is not native-resolution evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0d5b6248ee918bdbc17b535ea6d18c060f2aae6",
+            "content": "sha256:7429bf7c971a89a711bef8875b08d591a0179eccda5ad68d0c0152648b93aba5",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 37
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0d5b6248ee918bdbc17b535ea6d18c060f2aae6",
+            "content": "sha256:12106014b1a9c8e85f5c88e609b9551f018668acbe6fea993a1d2a8fc4f4facd",
+            "locator": {
+              "end": 477,
+              "kind": "line_range",
+              "start": 472
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0d5b6248ee918bdbc17b535ea6d18c060f2aae6",
+            "content": "sha256:69a3b1116db63d6bb56133f6cf5ead1d860af823c1d18ae6fdc2458ca4d55c9b",
+            "locator": {
+              "end": 530,
+              "kind": "line_range",
+              "start": 491
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

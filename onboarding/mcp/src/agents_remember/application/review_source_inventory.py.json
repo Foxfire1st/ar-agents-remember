@@ -1,0 +1,718 @@
+{
+  "path": "mcp/src/agents_remember/application/review_source_inventory.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d6843e1bf6a3ef5ef5b553a0ce18ee32f62ead1a",
+        "content": "sha256:309eedecc668fb7e1277931a49c4137fd4a9d405f14bbd54118f42043f43d1cf",
+        "locator": {
+          "kind": "symbol",
+          "name": "_RAW_ARGS"
+        }
+      },
+      "id": "RLZ-MH4VYE",
+      "invariant": "INV-HVGENX",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-parsed-diffs-ignore-user-config",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "The raw question of the source change inventory carries the options.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "27": {
+      "note": "The module docstring: measured from the pair, delimiter-safe, three separate facts, failure as a state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6843e1bf6a3ef5ef5b553a0ce18ee32f62ead1a",
+            "content": "sha256:6c025661d9b83201f79c2ad8f32ef548d81dba20fc8204f0c96f2c60b3ac9bea",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "The current shared tuple combines raw metadata and numstat in one NUL-safe command, with parsed-diff options, --no-abbrev and no renames.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6843e1bf6a3ef5ef5b553a0ce18ee32f62ead1a",
+            "content": "sha256:567b5b2dc9dc02214743dc6ac9556bf82171e7d979ed3e824177aa0eaf431ce9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "05c7eaf6ee4c7b235150ac95488362a2aeb57388",
+            "content": "sha256:8a075d12154e9e5ac38da78ad131774e44a99b201faab603f31dc898c5f73047",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/diff_display.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "One combined Git observation, unavailable/partial answers, and available-only request-local memoization.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6843e1bf6a3ef5ef5b553a0ce18ee32f62ead1a",
+            "content": "sha256:567b5b2dc9dc02214743dc6ac9556bf82171e7d979ed3e824177aa0eaf431ce9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "A path that cannot be carried as text.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6843e1bf6a3ef5ef5b553a0ce18ee32f62ead1a",
+            "content": "sha256:c49874f93f278f02503f968365c68a63812a4843f529cf8d504ee46360c7ee3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_text_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "Historical _raw_records reference retained; the current mixed raw/numstat parser is _diff_records and validates metadata through _raw_record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6843e1bf6a3ef5ef5b553a0ce18ee32f62ead1a",
+            "content": "sha256:567b5b2dc9dc02214743dc6ac9556bf82171e7d979ed3e824177aa0eaf431ce9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "Historical separate _content_classification reference retained; classification is now parsed with raw records inside _diff_records.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6843e1bf6a3ef5ef5b553a0ce18ee32f62ead1a",
+            "content": "sha256:567b5b2dc9dc02214743dc6ac9556bf82171e7d979ed3e824177aa0eaf431ce9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "The content kind of one record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6843e1bf6a3ef5ef5b553a0ce18ee32f62ead1a",
+            "content": "sha256:4b8685c4af0af27545e08ac3475aeb7d695740490c4835c4c2eedf6ac62ba156",
+            "locator": {
+              "kind": "symbol",
+              "name": "_content"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "The command text of an inventory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6843e1bf6a3ef5ef5b553a0ce18ee32f62ead1a",
+            "content": "sha256:dfeca8a497933e62a9d17afa766055d417ed41f3b604284cd99f785467ddcc45",
+            "locator": {
+              "kind": "symbol",
+              "name": "inventory_command"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "The inventory value for one pair.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6843e1bf6a3ef5ef5b553a0ce18ee32f62ead1a",
+            "content": "sha256:e5bcd197569c6305486b21d1a7c8f6b62152d6ca18733ecd2fe51ecdf9083b14",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_inventory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "The pane: inventory, locations, relationships, attribution lists and counts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6843e1bf6a3ef5ef5b553a0ce18ee32f62ead1a",
+            "content": "sha256:3a35142890c33e753154817847fd5d5c62b932f490645573c8777ac756b4e99f",
+            "locator": {
+              "kind": "symbol",
+              "name": "source_pane"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "A count is a value or a reason, never both.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6843e1bf6a3ef5ef5b553a0ce18ee32f62ead1a",
+            "content": "sha256:b0320decc48a5fe7ef04f6461a16637e5c629f83ae63be5df64054834cc8e4a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_stated_or_absent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "The retained parsed-diff test checks PARSED_DIFF_OPTIONS in the current combined _RAW_ARGS and prefix/colour/driver options in code.BLOB_DIFF_ARGS. The former separate raw/numstat tuple account is historical.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e29e1b9902f5b27cd11779b2b92b5e3fb6c28560",
+            "content": "sha256:c93f8f457e10d852a32030fc63a946d52eabbec586a630c99c64dfd99b4ef413",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d6843e1bf6a3ef5ef5b553a0ce18ee32f62ead1a",
+            "content": "sha256:567b5b2dc9dc02214743dc6ac9556bf82171e7d979ed3e824177aa0eaf431ce9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "05c7eaf6ee4c7b235150ac95488362a2aeb57388",
+            "content": "sha256:8a075d12154e9e5ac38da78ad131774e44a99b201faab603f31dc898c5f73047",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/diff_display.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "39": {
+      "note": "The review body is identical under a hostile Git configuration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e29e1b9902f5b27cd11779b2b92b5e3fb6c28560",
+            "content": "sha256:08db73be2e9e8e5bef50cfd8de5ef65754d258fb290cb2af54edfd6fc215cc48",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_reviewers_diff_reads_do_not_depend_on_the_users_git_configuration"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "40": {
+      "note": "The module's own statement of the three properties it exists for — measured from the pair, delimiter-safe, three separate facts with a failed measurement as a state — and of why the pane lives beside it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6843e1bf6a3ef5ef5b553a0ce18ee32f62ead1a",
+            "content": "sha256:3a35142890c33e753154817847fd5d5c62b932f490645573c8777ac756b4e99f",
+            "locator": {
+              "kind": "symbol",
+              "name": "source_pane"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "41": {
+      "note": "The published surface: the one reference constant, the probe, the inventory, the pane projection and the three limit helpers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6843e1bf6a3ef5ef5b553a0ce18ee32f62ead1a",
+            "content": "sha256:826de73a465cf81137c3697d3f6fb69d6fe773103b958f88bfb46b106ed4a3f9",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "42": {
+      "note": "One combined raw/numstat Git question with --no-abbrev, --no-renames and -z.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6843e1bf6a3ef5ef5b553a0ce18ee32f62ead1a",
+            "content": "sha256:567b5b2dc9dc02214743dc6ac9556bf82171e7d979ed3e824177aa0eaf431ce9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "05c7eaf6ee4c7b235150ac95488362a2aeb57388",
+            "content": "sha256:8a075d12154e9e5ac38da78ad131774e44a99b201faab603f31dc898c5f73047",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/diff_display.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "43": {
+      "note": "The status vocabulary that names Git's letters and states `unknown` for a letter outside it, and the two modes that decide a path's kind before any byte is read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6843e1bf6a3ef5ef5b553a0ce18ee32f62ead1a",
+            "content": "sha256:6ddc7ba9f0d6bf59d5938cedc2c0f6415bee514149c2ddbcc48d946a7bb2dcf1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_STATUS_NAMES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "44": {
+      "note": "The stated reasons an inventory carries: an uncomparable pair, an output that is not the declared format, a tree without its root, an unclassified content, an unstated status and an unrepresentable name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6843e1bf6a3ef5ef5b553a0ce18ee32f62ead1a",
+            "content": "sha256:76d0205faeed0f5cc74599ef69d61d9df572c20a628005a94e00b249972576a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_UNCOMPARABLE_DETAIL"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "45": {
+      "note": "The observation's own record: Git's two modes, the change letter, the raw path, and the two properties the mode answers (submodule, symlink) plus the one that separates \"the bytes moved\" from \"only the permission word moved\".",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6843e1bf6a3ef5ef5b553a0ce18ee32f62ead1a",
+            "content": "sha256:486af111a380156beb55a17224a51ead1fdd854c52f2d18e7acb82becd248922",
+            "locator": {
+              "kind": "symbol",
+              "name": "_RawRecord"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "46": {
+      "note": "**One bound endpoint as the observation's own side: an object id and the root it resolves in, travelling together or not at all.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6843e1bf6a3ef5ef5b553a0ce18ee32f62ead1a",
+            "content": "sha256:660943b0c519a43f2230401da098b234638bae93577d58cc25567582a8370745",
+            "locator": {
+              "kind": "symbol",
+              "name": "source_tree_side"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "47": {
+      "note": "**The declared limits: unavailable, partial, or neither — stated at the top level of the response because a limit a reader has to open a pane to find was not stated.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6843e1bf6a3ef5ef5b553a0ce18ee32f62ead1a",
+            "content": "sha256:da18442f8d770c5e82df635ee0f8f979610102b297bb04e265bde3b14979e62e",
+            "locator": {
+              "kind": "symbol",
+              "name": "inventory_limitations"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "48": {
+      "note": "**The measurement itself: the two object ids, the delimiter-safe read, the content classification, the partition into carried and uncarried changes, and the unavailable answers that are never empty change sets.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6843e1bf6a3ef5ef5b553a0ce18ee32f62ead1a",
+            "content": "sha256:0fcd19471e7ac347817421bd98af956f8bf5fda2bb0168b0740edce08eb412bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "tree_difference_observation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "49": {
+      "note": "**The non-UTF-8 boundary: the predicate that observes a surrogate-escaped byte and the exact byte form that carries the name instead of re-encoding it.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6843e1bf6a3ef5ef5b553a0ce18ee32f62ead1a",
+            "content": "sha256:c49874f93f278f02503f968365c68a63812a4843f529cf8d504ee46360c7ee3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_text_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "50": {
+      "note": "**The kind of one entry, decided by mode first and measurement second, and the reason an `unknown` is unknown.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6843e1bf6a3ef5ef5b553a0ce18ee32f62ead1a",
+            "content": "sha256:4b8685c4af0af27545e08ac3475aeb7d695740490c4835c4c2eedf6ac62ba156",
+            "locator": {
+              "kind": "symbol",
+              "name": "_content"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "51": {
+      "note": "**The command that reproduces the inventory, naming the two requested objects and never a branch, a working tree or `HEAD`.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6843e1bf6a3ef5ef5b553a0ce18ee32f62ead1a",
+            "content": "sha256:dfeca8a497933e62a9d17afa766055d417ed41f3b604284cd99f785467ddcc45",
+            "locator": {
+              "kind": "symbol",
+              "name": "inventory_command"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "52": {
+      "note": "**The review's own inventory value: the injectable probe seam, the already-made observation a caller hands in, the paths-without-statuses rendering, the measured/unavailable state, the count that is the list's own length, and the unrepresentable remainder.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6843e1bf6a3ef5ef5b553a0ce18ee32f62ead1a",
+            "content": "sha256:e5bcd197569c6305486b21d1a7c8f6b62152d6ca18733ecd2fe51ecdf9083b14",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_inventory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "53": {
+      "note": "The sentence a measured inventory publishes about itself, including the one that separates a measured empty set from an unmeasured one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6843e1bf6a3ef5ef5b553a0ce18ee32f62ead1a",
+            "content": "sha256:af024e3941986029ddc42e40f071a0b8ea156dc0c74ae5365953b77d410bdb24",
+            "locator": {
+              "kind": "symbol",
+              "name": "_measured_detail"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "54": {
+      "note": "**Pane 2: the inventory first and unconditionally, then the measured partition it is read from, the address view the recorded-relationship traversal renders, the relationships themselves, the six remaining counts, expansion and the three bucket lists.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6843e1bf6a3ef5ef5b553a0ce18ee32f62ead1a",
+            "content": "sha256:3a35142890c33e753154817847fd5d5c62b932f490645573c8777ac756b4e99f",
+            "locator": {
+              "kind": "symbol",
+              "name": "source_pane"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "55": {
+      "note": "**The scope of each count and the two partition facts in the comparison route's spelling.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6843e1bf6a3ef5ef5b553a0ce18ee32f62ead1a",
+            "content": "sha256:b0320decc48a5fe7ef04f6461a16637e5c629f83ae63be5df64054834cc8e4a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_stated_or_absent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "56": {
+      "note": "The selected source location, now rendered by the recorded relationship's own display owner from the movement side (this module no longer builds it): the recorded role kept `None` rather than guessed, the comparison's own change state carried, and the counterpart address named only when the other side records exactly one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d9ce891dc115c70c6c14385dfb732ca0aab63cf",
+            "content": "sha256:230d2c3bea6e49ded6cf05c3d8e4009255fd428b9ddfb7b24347ccea5f7410f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_location"
+            },
+            "path": "mcp/src/agents_remember/application/review_relationship_display.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "57": {
+      "note": "The comparison's own statement about one claim's source observation, carried verbatim by the recorded-relationship owner (the moved `_change_state`), and the union-item payload the recorded side is read from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eff71e0efee061868a1de136b9196b90add9e999",
+            "content": "sha256:510346bde3071a0fc89249d1fa2ebafd0e5a858a2c510eef26e41b45874a6142",
+            "locator": {
+              "kind": "symbol",
+              "name": "recorded_change_state"
+            },
+            "path": "mcp/src/agents_remember/application/review_recorded_relationships.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "58": {
+      "note": "**The wire value this module builds, with the count checked against the list and the unrepresentable rule enforced at construction.**  Anchor: `ReviewSourceInventory`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6843e1bf6a3ef5ef5b553a0ce18ee32f62ead1a",
+            "content": "sha256:f616027bf060a7d8767109cef98805aa1a6770ee904bf60eadfb6e03c31f72e2",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 65
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "59": {
+      "note": "**The comparison's own expansion, which had been the second implementation of this question and is now a delegation to this module's observation.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99634b1100e73ac23db59be56a0f4536774322e5",
+            "content": "sha256:75cc4fbd0593f56af28ddcc9b8b65c1b4de6c05e2440466710bdefdcda3336e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "git_tree_difference_probe"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_diff.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "60": {
+      "note": "The adapter's composition: the observation made once and handed to both renderings, before any dataset is opened and before the selector branch, and its limits declared at the top level.\n\nAnchor: `compose_review`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
+            "content": "sha256:bc9aed0908cabfef3b176f1734ea114458607fab1f9bf612787eace2cfa4d0c0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "61": {
+      "note": "**The cases that measure this module against real repositories: population and per-path status against an independent Git observation, the tab/newline name, one entry per renderability kind, unavailable versus measured-empty with its control, the paths-only partial rendering, and the non-UTF-8 byte form.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f717500d3b859f633528b98e41bca9f020cf3d7",
+            "content": "sha256:bb1793b7509d7c7883a849fdfff403e643336c53a1f417f71d96227b82b99c72",
+            "locator": {
+              "kind": "symbol",
+              "name": "InventoryFixture"
+            },
+            "path": "mcp/tests/test_review_source_inventory_boundaries.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "62": {
+      "note": "The independent, byte-safe Git observation both review suites compare against, deliberately a different Git question and deliberately read through the production runner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f71d2f06be49d435153b9c1758713da504a05c2e",
+            "content": "sha256:061866315310050b29472dd283530f910051ba1434bc9de325377aa09af49bff",
+            "locator": {
+              "kind": "symbol",
+              "name": "independent_changed_records"
+            },
+            "path": "mcp/tests/diff_scope_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "63": {
+      "note": "**The cases that measure the inventory through the real composition and the real route: no knowledge at all, an unusual name carried by the shipped capture, non-text and mode-changed paths, and a non-UTF-8 name that leaves the review openable and partial.**\n\nAnchor: `test_a_task_context_review_lists_the_complete_source_inventory_with_no_knowledge_at_all`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "003b509b7309b3cd122be4091f29d71b1335eb1a",
+            "content": "sha256:91c1b85a30cbccf442e19689900ba8562dfe13602e76ff33b891c159b3c82ba1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "66": {
+      "note": "The current comparison viewer renders named changed-file rows and explicit byte-form cannot-open rows in All changes; the backend inventory supplies wire data, not this UI.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f573a5c5c9d295de071c004326eb932c2d61dd8d",
+            "content": "sha256:efc0292005a5152b8ad840c06eb567691b6b60bb4e1eeb25cbc719653528349c",
+            "locator": {
+              "end": 360,
+              "kind": "line_range",
+              "start": 299
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "68": {
+      "note": "Comparison list/diff requests use the held comparison number; changed-file controls open only eligible listed files, while byte-form paths remain displayed cannot-open facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f573a5c5c9d295de071c004326eb932c2d61dd8d",
+            "content": "sha256:865c82754f467bf036bfe18c67ddd34244574fa9d71fa1ab5da362bad0b03bd0",
+            "locator": {
+              "end": 324,
+              "kind": "line_range",
+              "start": 309
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "69": {
+      "note": "Comparison list/diff requests use the held comparison number; changed-file controls open only eligible listed files, while byte-form paths remain displayed cannot-open facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f573a5c5c9d295de071c004326eb932c2d61dd8d",
+            "content": "sha256:88dd072192c5403c9ddc1b3a98a1fdd4aa799f6ba13af7b94c5df1e2c289bdc7",
+            "locator": {
+              "end": 725,
+              "kind": "line_range",
+              "start": 688
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

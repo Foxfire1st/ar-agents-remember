@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Call-local canonical admission prevents one reader operation contaminating another with wrong code or memory roots."
+  },
+  "applicability": "Per-call task-scoped context_packet/read_ar_files admission.",
+  "conditions": [
+    "The product resolves and admits the canonical task and contract pair."
+  ],
+  "exclusions": [
+    "Binding does not prohibit another valid admitted leaf context.",
+    "Absent task_context uses configured repository roots."
+  ],
+  "id": "INV-K6Q2R4",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "l5-review/evidence/11-direct-tool-server-calls.txt, 12-worker-turn3-reads.txt; l5-run/evidence/leaf-06-turn2-task-scoped-read.txt"
+      ],
+      "path": "notes/curation/261005-MIK-PNT-curator-handoff.json"
+    },
+    "handoffEntry": "PNT-R04@v1 §4 / F10",
+    "leaf": "260928-MIK-L90",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "context_packet and read_ar_files admit per-call canonical task scope without caller-selected roots: an enclosed leaf uses its exact canonical enclosure; a granted direct leaf uses its canonical leaf and current readable grant with the exact master series contract. A launch binding is not a second read scope, and absent task_context keeps configured repository roots.",
+  "status": "proposed",
+  "supersedes": []
+}

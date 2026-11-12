@@ -1,0 +1,65 @@
+{
+  "path": "dashboard/src/panels/file-viewer/DualPane.test.tsx",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The component under test — the `empty` backdrop branch, the partnerless-overview branch, and `SidecarSide`.\n\nAnchor: `DualPane` `SidecarSide`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a8233f6878d1f710c5879a2464418c11ea9627e",
+            "content": "sha256:36e3128196752e9703f3acf1ea2f7c8f051c50523594dc0e8cf635f32dc51433",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/file-viewer/DualPane.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2a8233f6878d1f710c5879a2464418c11ea9627e",
+            "content": "sha256:28cde7507ab57730f6e85edfcd20e3e1ccddb24b052dee0a19f226c2325eb3e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "DualPane"
+            },
+            "path": "dashboard/src/panels/file-viewer/DualPane.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2a8233f6878d1f710c5879a2464418c11ea9627e",
+            "content": "sha256:0a4378dfa6f17c4f993624c6c3292c92bce80f6f47b898acb3a58459b0496712",
+            "locator": {
+              "kind": "symbol",
+              "name": "SidecarSide"
+            },
+            "path": "dashboard/src/panels/file-viewer/DualPane.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The effects-gated boomerang backdrop whose `video` `src`/`opacity` are asserted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c3afff4327a285950ac79ef737319425475e8a7",
+            "content": "sha256:1fdb99f22b57f7bf665c0b14bd93b1c6eda2fe294352e1fce9d7f0dd9705e608",
+            "locator": {
+              "kind": "symbol",
+              "name": "EmptyStateBackdrop"
+            },
+            "path": "dashboard/src/panels/EmptyStateBackdrop.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

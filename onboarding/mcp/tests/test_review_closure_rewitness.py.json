@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_review_closure_rewitness.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A held proof whose object Git freshened reads that body and never traverses",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ed814b6f23e7fd363ffe3febfc1468d7e162305e",
+            "content": "sha256:ebc0db5bf7d1f61059473484a01ef97bb5446596e77a5e0287457df7eac1d248",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_held_proof_whose_object_git_freshened_reads_that_body_and_never_traverses"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

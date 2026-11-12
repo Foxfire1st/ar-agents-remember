@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "The guard, the static reader, the teardown restoration and the copy cleanup together promise a retirement no one of them enforces alone."
+  },
+  "guarantee": "The repository's retirement guard and static source check expose canonical-database access in their declared test/source scopes, and test teardown restores the guard when a test removes it. The reviewed copy-cleanup owner removes only eligible copies and preserves tracked or symlinked companions. Together these protect the database retirement's executable paths and cleanup boundary; they do not certify unrun tests, derived-index deletion, or elimination of every workspace copy.",
+  "id": "FAM-SDS92V",
+  "members": [
+    "INV-54J62R",
+    "INV-MFQW2H",
+    "INV-GBH3RH",
+    "INV-C5TQ6Z",
+    "INV-CKY44N",
+    "INV-C3TYB0"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "handoff-stage5.json"
+    },
+    "handoffEntry": "fam-retirement",
+    "leaf": "260928-MIK-L26",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp/test_support/agents_remember_test_support/testing",
+    "mcp/src/agents_remember/application",
+    "mcp/tests"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "No production canonical knowledge database"
+}

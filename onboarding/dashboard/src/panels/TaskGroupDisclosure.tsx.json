@@ -1,0 +1,110 @@
+{
+  "path": "dashboard/src/panels/TaskGroupDisclosure.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8dbda171e779d2a6b6f014aad28c5be7fe7d554c",
+        "content": "sha256:43f4e1e74e8457cedb2c5c7e204a683af61c920c59ea31a57b435fa708176db3",
+        "locator": {
+          "kind": "symbol",
+          "name": "disclosure"
+        }
+      },
+      "id": "RLZ-AZVP92",
+      "invariant": "INV-ME6CA1",
+      "origin": {
+        "handoffEntry": "L168-C-A016-extra-carriers-INV-ME6CA1",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "The CSS supports the existing rendered disclosure button by widening pointer ownership without moving its glyph; TaskGroupDisclosure itself owns the action and row-event isolation.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "8dbda171e779d2a6b6f014aad28c5be7fe7d554c",
+        "content": "sha256:6373db1c5b6720fed6fb52d8191711bd5dad50e6eebeedf538d81708e6fd15d5",
+        "locator": {
+          "kind": "symbol",
+          "name": "TaskGroupDisclosure"
+        }
+      },
+      "id": "RLZ-XKHWVG",
+      "invariant": "INV-ME6CA1",
+      "origin": {
+        "handoffEntry": "MIK-R144@v1 rule 3b / order and fold",
+        "leaf": "260928-MIK-L144"
+      },
+      "rationale": "The disclosure button reflects actual collapsed state, isolates row-selection events and invokes its caller action even for a chosen-document hold; the list owns transient hold release.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "RowCaret mounts the disclosure only for a non-flat parent, passing actual collapsed state and a callback that delegates the held-state decision to the list.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e90aae0d64e762edaf39473dd73648709dc17544",
+            "content": "sha256:6ad12d9f12fac82ad25151d18436b5813abe4b8f7f35030c5796585e716154b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "RowCaret"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The parent list mounts `TaskGroupDisclosure` for the descendant-bearing row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e90aae0d64e762edaf39473dd73648709dc17544",
+            "content": "sha256:5f511b9dc808020d9b6c65cd8741c728321eb6f5d73caf4e95ed8bf21cfba947",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Focused tests verify native button semantics, accessible names, aria-expanded state, and selection isolation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7468b6db9b5e13351473326b66604a80f6c3d12",
+            "content": "sha256:b52ef29168630226661788607929d9bba36bfe24528e8bb57e2cf9a2f4474eae",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/hierarchy.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The native button always invokes the isolated disclosure callback; its transparent hit area extends beyond the unchanged glyph cell.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8dbda171e779d2a6b6f014aad28c5be7fe7d554c",
+            "content": "sha256:7ade65543c41b1215bab2cdcf4d317f6f28b3594658b755f231f66d52bbc5f64",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 4
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

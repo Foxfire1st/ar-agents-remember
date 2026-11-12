@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/reading/ReadingColumn.crumb.test.tsx",
+  "realizes": [],
+  "references": {
+    "4": {
+      "note": "Subject, block and lane-file clicks produce exact breadcrumb text and one bold subject/lane part.\n\nAnchor: \"const crumb = () => screen.getByTestId('review-crumb');\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ccda42374064e0fd23c063f4114dd287c25d58d",
+            "content": "sha256:128885a21de2253e49585cd6b1acf75e7ec9dc4fdbb27f3599f452f244f2a17e",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 33
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

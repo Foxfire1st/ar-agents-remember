@@ -1,0 +1,58 @@
+{
+  "path": "mcp/tests/pnt_sandbox_test_support.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7cc125a6d4a5093a51132f2af0c4d291306e884a",
+        "content": "sha256:c50e6ad9d6abafbca82e122a75cd53f3b0208eaa22e9750a946846e2e2c9eef5",
+        "locator": {
+          "kind": "symbol",
+          "name": "FakeOperations.runtime_install"
+        }
+      },
+      "id": "RLZ-0J7XT6",
+      "invariant": "INV-VCAREW",
+      "origin": {
+        "handoffEntry": "L96-D-5",
+        "leaf": "260928-MIK-L96"
+      },
+      "rationale": "This fake records that the sandbox command invoked the public runtime_install seam, invokes the injected callback, and returns a fake report or controlled supervisor for the test to observe. Its contribution is route discrimination and test observation support; package admission, inherited lock-descriptor passing and sandbox XDG-root construction belong to the separate production owners.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The sandbox fixture, its real child processes, port claims and recorded fake operations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7cc125a6d4a5093a51132f2af0c4d291306e884a",
+            "content": "sha256:f6344511c87fef0874115ad7f007edb5055b6d10fe178359083ab33b3e6887aa",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "`SandboxCase` hides named harness configuration markers at ancestors outside its owned fixture through a scoped existence view, while the fixture's own paths and all others use the real filesystem.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7cc125a6d4a5093a51132f2af0c4d291306e884a",
+            "content": "sha256:e65b6f731da025f18afc094136033157d3eaa151472dc80f0428106e4f4e1b85",
+            "locator": {
+              "end": 500,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

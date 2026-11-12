@@ -1,0 +1,41 @@
+{
+  "path": "dashboard/src/panels/review/SubjectReview.test.tsx",
+  "realizes": [],
+  "references": {
+    "8": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('compares an authored successor through the family member route using both authoritative revision IDs and statements', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "94ea373bb15a554a5d34afa4c72d180a772d0c85",
+            "content": "sha256:616e92ba5d4c660c27cb00f5f20218531c96796cddddc9eb05ba70315c6b9ce0",
+            "locator": {
+              "end": 177,
+              "kind": "line_range",
+              "start": 103
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('keeps confirmed no-family intent and judgment in pane order', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "94ea373bb15a554a5d34afa4c72d180a772d0c85",
+            "content": "sha256:e4cec0b6aaad57e88613fc40ace5cffd6b6cf0443348e727e5adba4e7f80b74b",
+            "locator": {
+              "end": 177,
+              "kind": "line_range",
+              "start": 158
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

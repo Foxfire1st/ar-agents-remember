@@ -1,0 +1,156 @@
+{
+  "path": "dashboard/src/panels/file-viewer/FilePane.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
+        "content": "sha256:f73551aaf0c5b4e81cbd03bce90454f01e1267efd9abb4b4657b0a2c163463b5",
+        "locator": {
+          "kind": "symbol",
+          "name": "fitHost"
+        }
+      },
+      "id": "RLZ-CBV3EY",
+      "invariant": "INV-811GC5",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-RP09-fitted-pane-scroll-owner",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Fitted review excerpts remove the former 32rem editor cap and override CodeMirror scroller overflow to visible; they grow into the review reading scroll owner rather than creating an inner scrollbox. Ordinary non-fit File Viewer panes retain the separate host style.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
+        "content": "sha256:b4f0fa722858614070b5ee9b0052b829b6b4e5f1b4265c214c5c69cc468bb1a3",
+        "locator": {
+          "kind": "symbol",
+          "name": "FilePane"
+        }
+      },
+      "id": "RLZ-FD40K6",
+      "invariant": "INV-P362H1",
+      "origin": {
+        "handoffEntry": "MIK-R79@v1 required behavior 9",
+        "leaf": "260928-MIK-L79"
+      },
+      "rationale": "FilePane owns the rendering or source-selection boundary that implements this obligation: Wide citations open in the existing code pane without moving prose; multiple targets are listed first and narrow code navigation retains Back.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
+        "content": "sha256:b4f0fa722858614070b5ee9b0052b829b6b4e5f1b4265c214c5c69cc468bb1a3",
+        "locator": {
+          "kind": "symbol",
+          "name": "FilePane"
+        }
+      },
+      "id": "RLZ-HNS98Y",
+      "invariant": "INV-X1ADJP",
+      "origin": {
+        "handoffEntry": "MIK-R79@v1 required behavior 15",
+        "leaf": "260928-MIK-L79"
+      },
+      "rationale": "FilePane owns the rendering or source-selection boundary that implements this obligation: Knowledge has one shared tree, Markdown renderer and code primitive instead of its former private renderers.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "12": {
+      "note": "The pane marks the cited lines and scrolls the first into view.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
+            "content": "sha256:4381a6ac5fd2d1fed3c3059c96f97e25dc55475450953631d92a8d35b059cd90",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The Knowledge reader's code view passes the resolved cited range here.\n\nAnchor: `CodeView`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a158f3f7810149facd26a0a18eaa8ca7c98cbbf",
+            "content": "sha256:64359838b86f76f52089a57778b9d4a5af9930c78909d0722aea2259955bcecd",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/knowledge-reader/ReaderCode.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The optional range joins the editor's dependencies and rebuilds the view.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
+            "content": "sha256:4381a6ac5fd2d1fed3c3059c96f97e25dc55475450953631d92a8d35b059cd90",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The dual pane that mounts the same primitive on the code side.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a8233f6878d1f710c5879a2464418c11ea9627e",
+            "content": "sha256:36e3128196752e9703f3acf1ea2f7c8f051c50523594dc0e8cf635f32dc51433",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/file-viewer/DualPane.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The File Viewer-only optional tray target enables the line gutter; other panes omit it.\n\nAnchor: \"const ref = useRef<HTMLDivElement>(null);\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
+            "content": "sha256:795309e553621c67d86ba5a648da67add70ad9c787934d2e2e027d144411f1f6",
+            "locator": {
+              "end": 105,
+              "kind": "line_range",
+              "start": 35
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Fitted review source grows into the reading column without an inner scroller.\n\nAnchor: `fitHost`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
+            "content": "sha256:4381a6ac5fd2d1fed3c3059c96f97e25dc55475450953631d92a8d35b059cd90",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

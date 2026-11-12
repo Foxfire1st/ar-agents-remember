@@ -1,0 +1,149 @@
+{
+  "path": "mcp/src/agents_remember/models/tools/explainer_control.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a35d20a8417e3e0e20bb3a271c5b090175a2e7d5",
+        "content": "sha256:1426fd448e9b47e2626bbbbf2ee440232119c069332d06015b8a1afcde7a966b",
+        "locator": {
+          "kind": "symbol",
+          "name": "ExplainerControlResponse"
+        }
+      },
+      "id": "RLZ-C1GGRH",
+      "invariant": "INV-E2XQHS",
+      "origin": {
+        "handoffEntry": "L183-CUR-ET02-master-architect-authority",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The strict answer preserves the master-Architect ownership record, called action, reached state and accepted/refused Architect identity together, while keeping per-action seat and claim records as their own fields. Shape validation is not evidence of actual caller authority or successful transfer.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "An admitted answer must name one of the three admitted actions\n\nAnchor: `def _validate_admitted_action(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a35d20a8417e3e0e20bb3a271c5b090175a2e7d5",
+            "content": "sha256:1115c2cd43206f4007c37abe6a2c83c19deb1c3b3b07d8985a3f77b8d1db6d07",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 62
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "One answer carries the state, the seat record and the architect id together\n\nAnchor: `class ExplainerControlResponse(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a35d20a8417e3e0e20bb3a271c5b090175a2e7d5",
+            "content": "sha256:156a069d1e54677eba74664be5bf93738c84cc46f9da77177f73ae7589354144",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 42
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A refusal may name an action the surface does not admit\n\nAnchor: `VALID_EXPLAINER_CONTROL_ACTIONS = (\"update\", \"retire\", \"claim\")`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a35d20a8417e3e0e20bb3a271c5b090175a2e7d5",
+            "content": "sha256:557d8fa5a6dba5ff8d18f77410cd6d70fb78fa59e25044bc54efe8ed1714e99f",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 19
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "What a claim did with held reports is its own bounded record\n\nAnchor: `class ExplainerControlClaim(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a35d20a8417e3e0e20bb3a271c5b090175a2e7d5",
+            "content": "sha256:a570e39b0047a424aa4e3081fce8e8af253339683464232a26e81d02e9a5714a",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 30
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The seat record is the id, the act and when it was written\n\nAnchor: `class ExplainerControlRecord(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a35d20a8417e3e0e20bb3a271c5b090175a2e7d5",
+            "content": "sha256:d81923f120198710f6a81f4391756716ce9e225b6f1e91220093af19d8d837e2",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "ExplainerControlRecord is master-to-Architect authority; the claim list has a 200-entry bound while integer claim counts have only nonnegative constraints.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a35d20a8417e3e0e20bb3a271c5b090175a2e7d5",
+            "content": "sha256:1426fd448e9b47e2626bbbbf2ee440232119c069332d06015b8a1afcde7a966b",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExplainerControlResponse"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a35d20a8417e3e0e20bb3a271c5b090175a2e7d5",
+            "content": "sha256:a570e39b0047a424aa4e3081fce8e8af253339683464232a26e81d02e9a5714a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExplainerControlClaim"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a35d20a8417e3e0e20bb3a271c5b090175a2e7d5",
+            "content": "sha256:d81923f120198710f6a81f4391756716ce9e225b6f1e91220093af19d8d837e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExplainerControlRecord"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

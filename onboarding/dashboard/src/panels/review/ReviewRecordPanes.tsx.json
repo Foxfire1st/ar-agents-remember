@@ -1,0 +1,77 @@
+{
+  "path": "dashboard/src/panels/review/ReviewRecordPanes.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "49343b438babb334380943fd5a5b14179143b0fe",
+        "content": "sha256:c9eb0d4a01f9a8fb6d480d81cfff589f1ac1aa2f03cc1dcbc478d85e7c203d70",
+        "locator": {
+          "kind": "symbol",
+          "name": "fieldValue"
+        }
+      },
+      "id": "RLZ-1HWMND",
+      "invariant": "INV-6P3WZF",
+      "origin": {
+        "handoffEntry": "MIK-L154 knowledge one-sided statements",
+        "leaf": "260928-MIK-L154"
+      },
+      "rationale": "fieldValue preserves the distinct meanings of an unrecorded field and a recorded empty value in visible record facts.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "19": {
+      "note": "ReviewRecordPanes.tsx current behavior at this source owner.\n\nAnchor: \"function RecordFacts({ payload }: { payload: ReviewPayload }) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49343b438babb334380943fd5a5b14179143b0fe",
+            "content": "sha256:dafbaf06a2c7ba15d05763341e800fb9e91cd34e5e7c3c63ae18a8aea2b1f435",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 33
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "ReviewRecordPanes.tsx current behavior at this source owner.\n\nAnchor: \"export function ReviewMainFacts({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49343b438babb334380943fd5a5b14179143b0fe",
+            "content": "sha256:bf52f9b33195b63616b5006e27abe35de4a20302846e38daceeaaaabc23c02e6",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 61
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "ReviewRecordPanes.tsx current behavior at this source owner.\n\nAnchor: \"export function ReviewRecordIdentities({ payload }: { payload: ReviewPayload }) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49343b438babb334380943fd5a5b14179143b0fe",
+            "content": "sha256:0b40f91f58544b9818561162437d7c81e26d74766cba6f476e150e1b6aa89b1a",
+            "locator": {
+              "end": 132,
+              "kind": "line_range",
+              "start": 117
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

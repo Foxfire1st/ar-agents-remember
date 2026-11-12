@@ -1,0 +1,859 @@
+{
+  "path": "skills/l-01-agent-lifecycles/roles/manager.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+        "content": "sha256:8ea320eb9e29edadcaba8239b4d85f768383be7da8d6f1d8308777e8698f9386",
+        "locator": {
+          "end": 72,
+          "kind": "line_range",
+          "start": 66
+        }
+      },
+      "id": "RLZ-09EQRE",
+      "invariant": "INV-NFV5VJ",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-rules3-4-decisions",
+        "leaf": "260928-MIK-L72"
+      },
+      "rationale": "This passage lists what the Manager decides itself (leaf order, agent starts and replacements, operational problems, ordinary readings within the intended promise, landing checks, and delegated closeout and integration) and settles a matter an earlier ruling covers instead of sending it upward.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+        "content": "sha256:467bcf23afce8f34cd2d973855a638951417860401fe5f6548616b2c5e30d6ed",
+        "locator": {
+          "end": 60,
+          "kind": "line_range",
+          "start": 60
+        }
+      },
+      "id": "RLZ-1TSX74",
+      "invariant": "INV-25E23P",
+      "origin": {
+        "handoffEntry": "MIK-R202@v1 §1 manager-start-and-landing-pointer",
+        "leaf": "260928-MIK-L194"
+      },
+      "rationale": "The Manager's publication sentence routes publication to the resolved memory layer's system/task-publication.md and states its moments: claiming a leaf assigns its issue and sets In progress before the start, the issue closes after the landing and both pushes, and nothing is published without that file.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+        "content": "sha256:874a2947ebc58481582c0cb1f00dc08901b017156fc95bb5d90df975ba0786e7",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-5KGCEP",
+      "invariant": "INV-GWA6VR",
+      "origin": {
+        "handoffEntry": "MIK-R60@v7.1-2",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Always-on role text whose tool-involving pointers now name their tool.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+        "content": "sha256:2c7cdd88fb7c52f4ab5f7825189150b872533a3462398f6d5aa42a9468450ed8",
+        "locator": {
+          "end": 154,
+          "kind": "line_range",
+          "start": 152
+        }
+      },
+      "id": "RLZ-64DTJW",
+      "invariant": "INV-5M79ZP",
+      "origin": {
+        "handoffEntry": "MIK-R101@v1 rule 2",
+        "leaf": "260928-MIK-L101"
+      },
+      "rationale": "The 'Deliver the result' section collects everything the Manager owes in one place: the durable handover with task references, agent identifiers, report paths, findings and checks, and the report naming the rulings record, requirement-change list, status file and recipient record. It points to the master handover template for the exact shape.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+        "content": "sha256:467bcf23afce8f34cd2d973855a638951417860401fe5f6548616b2c5e30d6ed",
+        "locator": {
+          "end": 60,
+          "kind": "line_range",
+          "start": 60
+        }
+      },
+      "id": "RLZ-753KBD",
+      "invariant": "INV-25E23P",
+      "origin": {
+        "handoffEntry": "L84-CUR-07",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Restored verbatim from base 81180617a manager.md:36; it is the Manager's one pointer to system/task-publication.md.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+        "content": "sha256:e390df674904af0436c39359f03797165e5514e702f324136997b27a16afce8e",
+        "locator": {
+          "end": 58,
+          "kind": "line_range",
+          "start": 50
+        }
+      },
+      "id": "RLZ-7ZK6TT",
+      "invariant": "INV-ZNJ14G",
+      "origin": {
+        "handoffEntry": "R99-1-direct-loop",
+        "leaf": "260928-MIK-L99"
+      },
+      "rationale": "Keeps gate/transactions/landing and correction; tools publish ordinary stages.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+        "content": "sha256:e08a4bb2825ae4718395e117020810f0d95615bc1686e8fda1ff2682d3fb5827",
+        "locator": {
+          "end": 26,
+          "kind": "line_range",
+          "start": 8
+        }
+      },
+      "id": "RLZ-85MKD0",
+      "invariant": "INV-A6GAKX",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-one-coordinating-agent",
+        "leaf": "260928-MIK-L72"
+      },
+      "rationale": "The Manager role owns one selected master and points to the common Coordination operation for starts; that common home owns the Architect delegation/default exceptions.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+        "content": "sha256:691243106c250cba7a8be65057e3a0c896a7c9e4416896e8cf9ea8ab00df89e1",
+        "locator": {
+          "end": 113,
+          "kind": "line_range",
+          "start": 70
+        }
+      },
+      "id": "RLZ-8G32JJ",
+      "invariant": "INV-NC6F6V",
+      "origin": {
+        "handoffEntry": "MIK-R98@v1 §9",
+        "leaf": "260928-MIK-L98"
+      },
+      "rationale": "The Manager assigns a check that belongs to no leaf to an Investigator on its own sprint and master and never selects a leaf. A dashboard-started Manager invents no Architect identifier. A start beyond its permissions is reported to its parent or instructed recipient, or in its own chat without one, and is never made by the Manager itself.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+        "content": "sha256:4c95a07fe1d192bd36ee4c64e7691ed4d5a6d0c2ca0862348378e795e7f233a5",
+        "locator": {
+          "end": 119,
+          "kind": "line_range",
+          "start": 107
+        }
+      },
+      "id": "RLZ-HSZ8FM",
+      "invariant": "INV-9S49CW",
+      "origin": {
+        "handoffEntry": "MIK-R93@v1 rules1,2,2a,5,6,7",
+        "leaf": "260928-MIK-L93"
+      },
+      "rationale": "The Manager states its own question route here: send to the instructed reporting recipient, else the parent, else the developer in its own chat. It records undeliverable matters and continues independent work, and points to the child-questions detail for relay and attribution and to the coordination operation for permission notices.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+        "content": "sha256:3cfe10d2d187b9d27b9f252026131e5625a0e1e21354a0d5630ba0756a206cdc",
+        "locator": {
+          "end": 93,
+          "kind": "line_range",
+          "start": 93
+        }
+      },
+      "id": "RLZ-JY5TEM",
+      "invariant": "INV-NFV5VJ",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-rules3-4-decisions",
+        "leaf": "260928-MIK-L72"
+      },
+      "rationale": "The paragraph places the rulings record, requirement-change list and status file under the master's notes for the Architect to read.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+        "content": "sha256:17697ee779f6ec947cd466c13efb6920f3d699e91811ad41de37fac9e06be6ea",
+        "locator": {
+          "end": 107,
+          "kind": "line_range",
+          "start": 99
+        }
+      },
+      "id": "RLZ-M2NFTB",
+      "invariant": "INV-NFV5VJ",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-rules3-4-decisions",
+        "leaf": "260928-MIK-L72"
+      },
+      "rationale": "The paragraph bounds the upward messages to the five developer-needed categories and the once-only final report.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+        "content": "sha256:b77c58711527228737f64010e66afeec55a3a0b65ffd34524ca0a9dacc5aee49",
+        "locator": {
+          "end": 16,
+          "kind": "line_range",
+          "start": 16
+        }
+      },
+      "id": "RLZ-MA5C8F",
+      "invariant": "INV-NNQR91",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-19",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "Canonical Manager inputs keep the exact sprint, master, packet, candidate and report references, read only the needed documents, first read the rendered task-document files, and before changing a canonical task document follow the orientation edit rules; the package copy propagates this source.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+        "content": "sha256:d29f6eb7698c215edaa2159678b4436c1b79bc02c0a506911e995709649fcdc0",
+        "locator": {
+          "end": 146,
+          "kind": "line_range",
+          "start": 144
+        }
+      },
+      "id": "RLZ-QJ4VJR",
+      "invariant": "INV-7VZRZW",
+      "origin": {
+        "handoffEntry": "R99-14-harness-work",
+        "leaf": "260928-MIK-L99"
+      },
+      "rationale": "manager receives the same assignment autonomy and responsibility bounds in its own composed role text.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+        "content": "sha256:a9b70e431e3186c69fc60bde8756476a1d1525a47267893aae939ec068ecd796",
+        "locator": {
+          "end": 111,
+          "kind": "line_range",
+          "start": 111
+        }
+      },
+      "id": "RLZ-S372ZT",
+      "invariant": "INV-683GA3",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-second-master-transition-and-answer-relay",
+        "leaf": "260928-MIK-L72"
+      },
+      "rationale": "The paragraph makes the Manager record the instructed reporting recipient and route developer-needed matters there without a native reparenting.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+        "content": "sha256:f7c88ca6b3aaf646aba867fab69ed6c5036dd4e5c3c1c140c6b2635f47d1ebcd",
+        "locator": {
+          "end": 119,
+          "kind": "line_range",
+          "start": 117
+        }
+      },
+      "id": "RLZ-V9GWTW",
+      "invariant": "INV-7FMDAS",
+      "origin": {
+        "handoffEntry": "MIK-R93@v1 rules3,4,5,8,9",
+        "leaf": "260928-MIK-L93"
+      },
+      "rationale": "The Manager role delivers its full parent-question/quoted-answer procedure through the directly named child-questions detail and retains the own-answer boundary and permission-notice pointer here; it is not a duplicated full-procedure home.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+        "content": "sha256:874a2947ebc58481582c0cb1f00dc08901b017156fc95bb5d90df975ba0786e7",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-VT0A1C",
+      "invariant": "INV-QZW2X2",
+      "origin": {
+        "handoffEntry": "L172-INV-C",
+        "leaf": "260928-MIK-L172"
+      },
+      "rationale": "The Manager's unfinished final turn sends what it awaits to its parent with role_message.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+        "content": "sha256:d29f6eb7698c215edaa2159678b4436c1b79bc02c0a506911e995709649fcdc0",
+        "locator": {
+          "end": 146,
+          "kind": "line_range",
+          "start": 144
+        }
+      },
+      "id": "RLZ-VZATXJ",
+      "invariant": "INV-JAACMT",
+      "origin": {
+        "handoffEntry": "L62-CUR-6414-continuation",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "All-role helper ownership/authority and independent review remain.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+        "content": "sha256:6f17fc68facf1fdd20605843b11269ac6c0e4112a019fb80a9ccb49ce83c99e1",
+        "locator": {
+          "end": 134,
+          "kind": "line_range",
+          "start": 121
+        }
+      },
+      "id": "RLZ-WDW9QT",
+      "invariant": "INV-CV3MW4",
+      "origin": {
+        "handoffEntry": "L116-W3-wording-oracle",
+        "leaf": "260928-MIK-L116"
+      },
+      "rationale": "The Manager's stage contract is the 'Correct your own work and respect stops' section: the whole-stage handover, own-slip repair, the four stops and the last-line rule.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "One Manager coordinates one canonical master, reads complete changed-file evidence and both verdicts, and retains closeout, integration, acceptance and landing order without editing Curator-owned memory or substituting a finished turn for acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "content": "sha256:6184b78a3a6201cc8204d3080d3e169528e06f23a1a6141bb2d6f7297c39928b",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "content": "sha256:d0b821bea307e3d4f014b58185412fad3dc935d0e8d89b85ed9b6b37af4515c1",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 52
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "content": "sha256:d0f284c8ad851a477d3647591ed38b9b15e7fe37fe3139dbda08baf43a2178af",
+            "locator": {
+              "end": 136,
+              "kind": "line_range",
+              "start": 136
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Start, finalize and abandon publish task stage and mirror it into the master row; explicit status correction and organizational-master completion use task_doc set_status. The Manager also writes the master parts changed by each start and landing in that turn.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "content": "sha256:a24f755e11a82ef6d761c57256837868637f7e78a729919a467e01ed265caf03",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 58
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1e5daff9b06533a935f42ff9808c968c7b22d4c2",
+            "content": "sha256:0d7c24a180dc9b2dcd3a4ed271ee4a4fa6f0ce034982e071f1f3d7c2bae4d23f",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 7
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/coordination/shared/master-state.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The Manager sets no step for another agent; a Worker repairs its own sealed finding directly, and clean sync versus overlap/failing focused tests follows the separately stated review rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "content": "sha256:227a32a2b3234b17a9c2f611f070feefb2087834107eda787407c984c748306a",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 44
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "content": "sha256:58152b7ccfd3c05c6942971c29385db94e9e571187580ecbd8593f167d20276f",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 48
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "70f9c9b7b971a88ca122d8d482d8c7b89fa3a414",
+            "content": "sha256:ba70d383c6acf40f0082644249a1f1ef9696c59b2248cad0b15dc8427d837dee",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 82
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The Manager sets no step for another agent; coordination, gate and publication powers stay with their owners.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "content": "sha256:3200fe8e50fa6553d569dd069dc2ca87c05e746b93c91ceb40675e097a4d79d8",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 44
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Manager gives no prior go-ahead for a Worker repairing its own sealed finding; after a clean sync focused tests run once and closeout preview decides, while overlaps or failures require the exact repair and one Reviewer look. Before escalating, Manager applies a prior ruling of the same kind and names it in its record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "content": "sha256:227a32a2b3234b17a9c2f611f070feefb2087834107eda787407c984c748306a",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 44
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "70f9c9b7b971a88ca122d8d482d8c7b89fa3a414",
+            "content": "sha256:ba70d383c6acf40f0082644249a1f1ef9696c59b2248cad0b15dc8427d837dee",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 82
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "content": "sha256:72dcb66761bb366695daf82488b144be4911337d394d599a1441e4bf3add3ea9",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 72
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "When the resolved memory layer holds the publication file, the Manager follows it: claiming a leaf assigns its issue and sets In progress before the start, and the issue is closed after the landing and both pushes; without that file nothing is published.\n\nAnchor: `system/task-publication.md`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "content": "sha256:467bcf23afce8f34cd2d973855a638951417860401fe5f6548616b2c5e30d6ed",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 60
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The Manager starts Worker alone at build, Reviewer at Worker freeze and Curator after code PASS using individual role_start calls under its canonical master. It keeps the returned IDs, report and handover paths with each assignment and reconciles an uncertain start with its original request ID.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50f942047109e8b83e0f6f81b66509d0431bf296",
+            "content": "sha256:457a0873b95525c26702398458f3d36d47d9670c5619775b7c319669cfd07cff",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 36
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "50f942047109e8b83e0f6f81b66509d0431bf296",
+            "content": "sha256:4540232d8d88f10e7a0847798c51b1984ffd734f1823dc407b3ff7920e6724b2",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 31
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59ba88ee7d6793b44fd000ef34192c69a31f9f5b",
+            "content": "sha256:da327dfdfad9358260e4e210352c609caee3c84b1a17489f5c100360dc839fec",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 27
+            },
+            "path": "skills/l-01-agent-lifecycles/core/every-role.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "content": "sha256:bc0b5f4010f802e06bd9a85c9dbeff55242a43d695c604b20c7df4c24e6ee794",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 26
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Normal leaf starts are individual stages: Worker at build, Reviewer at freeze and Curator after code PASS. Peer candidate, producer-list and memory handovers remain direct; Curator receives candidate-bound inputs and the Manager reads both verdicts and owns gate and transaction decisions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50f942047109e8b83e0f6f81b66509d0431bf296",
+            "content": "sha256:457a0873b95525c26702398458f3d36d47d9670c5619775b7c319669cfd07cff",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 36
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "50f942047109e8b83e0f6f81b66509d0431bf296",
+            "content": "sha256:cfd288b1cb6e4fe15d8a6b730b65c5a73813e0ea8add4ad344a9d21773473048",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 49
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "content": "sha256:7bd813bffa1278fd0ca3497a0a6355a5c65c0f551e765ace8907fdc0f954911f",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "content": "sha256:d0b821bea307e3d4f014b58185412fad3dc935d0e8d89b85ed9b6b37af4515c1",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 52
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The Manager's report names its rulings, requirement-change and status records, developer-decision and final report-path messages, exact handover evidence and pending questions; its boundary keeps task truth and paired Git publication with their existing owners.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "content": "sha256:5e69712fc810435274e37871fdbc9d929dbd95c58e750b0f833d3129a14b7864",
+            "locator": {
+              "end": 156,
+              "kind": "line_range",
+              "start": 154
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "content": "sha256:d0f284c8ad851a477d3647591ed38b9b15e7fe37fe3139dbda08baf43a2178af",
+            "locator": {
+              "end": 136,
+              "kind": "line_range",
+              "start": 136
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Manager sends developer-needed matters to the recorded parent or instructed reporting recipient, retains ordinary operational rulings, records undelivered matters and continues independent work; the final report-path return uses the parent role with task references.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "content": "sha256:f2e620a4b728e30588d7454175d5b09ff245e5d94ed08e3eba33a8d2d5f29769",
+            "locator": {
+              "end": 99,
+              "kind": "line_range",
+              "start": 99
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "content": "sha256:3f65e494204d0fd7d865d16616e77bad1265c965f6409586951c393b1e06990a",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 107
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "content": "sha256:ed51911646e3690672e506a9d4a0d11d78ce1bb84f631fcde6db07995405ae0e",
+            "locator": {
+              "end": 115,
+              "kind": "line_range",
+              "start": 115
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Each leaf has one primary requirement revision; adjacent revisions remain constraints. The Manager inspects the complete changed-file diff and both verdicts, preserves stable requirement/finding IDs and distinguishes implementation, review, curation and publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "content": "sha256:cd69595e086eced8d5dc5f88915a59c371779b2b19d57619c9dd8880b2c1cf2f",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 18
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "content": "sha256:d0b821bea307e3d4f014b58185412fad3dc935d0e8d89b85ed9b6b37af4515c1",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 52
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The Manager may start an Investigator under its own sprint/master for a check belonging to no leaf, sends the scoped concern first to its returned ID, and keeps ordinary requirement interpretation and operational decisions within the intended promise.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "content": "sha256:be78eb8e209956630db522fbb6e96c8f2983d147f068cb93861610641510c5e2",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 70
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "content": "sha256:937a8514506196ed341caeb9e259da49107d02ff0b2ea16742cfed2853c83c8e",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 66
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The Manager records approval for a round beyond the settings limit, sends developer-reserved changes upward, and owns stage boundaries and repair of its own mistaken records or addresses; covered correct writes use the named recovery route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "content": "sha256:47295de3ae5954bfe1f7c4e1f8cb4e66d80a67abca08bcff13535548a8fc89fa",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 72
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "content": "sha256:e0d9b141903ba7a9e7874110f3fbb56b86d42bccc38038a5aee52e2275685342",
+            "locator": {
+              "end": 127,
+              "kind": "line_range",
+              "start": 123
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Manager starts Worker, Reviewer and Curator individually at build, freeze and code PASS; ordinary peer handovers stay direct. It owns whole-stage transaction boundaries, repairs its own recording/address/input faults and requests beyond-settings rounds through its assigned reporting route with the Worker's property-and-construction account.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50f942047109e8b83e0f6f81b66509d0431bf296",
+            "content": "sha256:b9315590192de64a04f8877ea83b8e08cd48f344098f5dab274037535101c2d5",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 36
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "50f942047109e8b83e0f6f81b66509d0431bf296",
+            "content": "sha256:cfd288b1cb6e4fe15d8a6b730b65c5a73813e0ea8add4ad344a9d21773473048",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 49
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "content": "sha256:455f8bcbbd3f9120fc0f9a9d7035d3d25db1cb294c73f84eed41346a9d1f0a72",
+            "locator": {
+              "end": 125,
+              "kind": "line_range",
+              "start": 123
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "content": "sha256:1168f9ea78c4048e09ea1f765ae4753ae46cb4aefec138b6332eb8c84902e805",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 74
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

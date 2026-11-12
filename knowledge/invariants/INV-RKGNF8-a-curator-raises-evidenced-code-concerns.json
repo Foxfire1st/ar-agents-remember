@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The concern and its answer are stated across the curator and reviewer roles and the curation operation, and the disagreement route to the Manager is stated with them."
+  },
+  "applicability": "Every Curator pass whose reading finds that the code does not deliver the requirement or differs from the Worker's report.",
+  "conditions": [
+    "The finding goes to both the Reviewer and the Worker, including after the code review has passed.",
+    "The Reviewer answers by taking the finding into its findings or explaining why it does not hold."
+  ],
+  "exclusions": [
+    "Code repair, which stays the Worker's, and the gate, which stays the Manager's.",
+    "Knowledge claiming behaviour the code does not have, which the Curator writes for no case."
+  ],
+  "id": "INV-RKGNF8",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Current successor r2/candidate-freeze.json, repair-report.md, commands.json and compiled capsule/constructor/81 retirement controls; predecessor inventory.md and actual live-witness/witness-supplement.md retained. Historical A1 evidence (not current disposition): Approved packet D95 point; corresponding role/operation/brief/verdict text; affected-final-pass.log passed."
+      ],
+      "path": "notes/files/l99-curation-20261007/handoff.json"
+    },
+    "handoffEntry": "R99-D95-curator-code-concerns",
+    "leaf": "260928-MIK-L99",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A Curator raises evidenced code concerns directly to Reviewer and Worker even after code PASS, writes no knowledge for absent behaviour and repairs no code, while Reviewer answers or reopens that point without silently resetting the sealed baseline and records disagreement for Manager authority.",
+  "status": "proposed",
+  "supersedes": []
+}

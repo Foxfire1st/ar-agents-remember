@@ -1,0 +1,164 @@
+{
+  "path": "mcp/src/agents_remember/mcp/tools/read_files.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "51b276452da0ab3a2641006c43d8d668f4b9eae1",
+        "content": "sha256:c7655e0400019bf4eed28ab2247d04ba6fe6d4707d672bcb3e4d8e36138b8450",
+        "locator": {
+          "kind": "symbol",
+          "name": "read_ar_files_payload"
+        }
+      },
+      "id": "RLZ-BWZ6QQ",
+      "invariant": "INV-K6Q2R4",
+      "origin": {
+        "handoffEntry": "PNT-R04@v1 §4 / F10",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Forwards the call-local admitted config to the read_ar_files naming builder so existence, governing-card locations and states are computed from the selected checkout without carrying source or onboarding text.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "51b276452da0ab3a2641006c43d8d668f4b9eae1",
+        "content": "sha256:c7655e0400019bf4eed28ab2247d04ba6fe6d4707d672bcb3e4d8e36138b8450",
+        "locator": {
+          "kind": "symbol",
+          "name": "read_ar_files_payload"
+        }
+      },
+      "id": "RLZ-WQW74G",
+      "invariant": "INV-VSR6TF",
+      "origin": {
+        "handoffEntry": "MIK-R109@v1 §1 read-files-boundary",
+        "leaf": "260928-MIK-L109"
+      },
+      "rationale": "This is the read_ar_files handler that enforces the clause boundary: omission-only removed parameters, the 20-path bound, and refusal before any read.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The application entry point that does the actual resolution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "235bbb664d2f527abfdfa47f8cbbcb96c8714650",
+            "content": "sha256:13aef717a76a0b04deda44628d0f376574a6688d50f5279af8119a75234a7eda",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_ar_files_tool"
+            },
+            "path": "mcp/src/agents_remember/application/read_files.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "235bbb664d2f527abfdfa47f8cbbcb96c8714650",
+            "content": "sha256:ccfb04dd79543eabb345c2fa4041a7b53cad7e2a7155d43c251637dddbc2df86",
+            "locator": {
+              "end": 133,
+              "kind": "line_range",
+              "start": 77
+            },
+            "path": "mcp/src/agents_remember/application/read_files.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "235bbb664d2f527abfdfa47f8cbbcb96c8714650",
+            "content": "sha256:6eccfc7bad90429057021cc74333df2047d6908f67136c2d9faf1624ddae3a75",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/read_files.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The shared choke point every tool's payload passes through: an adapter that hands the tool's whole result, and its compact answer when one is projected, to the application's response completion, where the response is validated and the answer's token count stamped.\n\nAnchor: `_tool_payload`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bbd96445dae6e10e1c4052722fab1b614aafedfe",
+            "content": "sha256:e65598ad08d511a5ffa26a3099d273596eea7844d5c2a00685c2ccb183271c43",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The strict response model `read_ar_files` validates against.\n\nAnchor: `ReadArFilesResponse`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef10b35504e856788e45bc5b3988c4bab198da2f",
+            "content": "sha256:c6d5370cb33984aa7c8997c56fe3af7e65b2ada4e24f4414e62fb0636600b25b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/read_files.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Frozen implementation of read_ar_files_payload supporting the stated file behavior.\n\nAnchor: `read_ar_files_payload`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51b276452da0ab3a2641006c43d8d668f4b9eae1",
+            "content": "sha256:a4d551b212d541a2081c10c0ac75510824aec6cff5e1d0c5b7da1ebe7adc1641",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Alternating/concurrent registered base and leaf calls preserve their source/memory roots; wrong repository, canonical contract and malformed pairs refuse.\n\nAnchor: `test_registered_readers_use_call_local_admitted_leaf_context`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc497e2837c489670650776c799b50df249c049f",
+            "content": "sha256:3d9f3de88b6f6e1fd6dcf3a8b699c0bbe77859c13612343566455ddc53eb2788",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_reader_task_context_protocol.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51b276452da0ab3a2641006c43d8d668f4b9eae1",
+            "content": "sha256:a4d551b212d541a2081c10c0ac75510824aec6cff5e1d0c5b7da1ebe7adc1641",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

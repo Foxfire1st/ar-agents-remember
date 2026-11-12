@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/l43.capture-provenance.json",
+  "realizes": [],
+  "references": {
+    "2": {
+      "note": "The current receipt preserves its explicit section names and declared capture custody; reading the metadata does not independently execute or validate any recorded run.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4dae720575390761b4f4c0db84d1165fbe8d38b",
+            "content": "sha256:aab0fa527563433177ac162d49732ce572b2b92bbd43e7cccc0c11e54bdaa011",
+            "locator": {
+              "end": 208,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}
