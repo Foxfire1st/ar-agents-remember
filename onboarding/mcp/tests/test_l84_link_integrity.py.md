@@ -15,8 +15,8 @@ Proves that every link, anchor and `skill://` URI in the delivered `l-01-agent-l
 - Both trees scan with no problem.
 - Each planted mutant adds a problem over the source baseline: a broken same-file, relative or detail anchor or path, broken angle-bracket targets, a template placeholder outside its template, a collapsed-hyphen anchor, a heading inside a code fence, an unserved `skill://` origin, a missing `skill://` target or anchor, and a link leaving the skills tree. A correct double-hyphen anchor passes, and removing a packaged file breaks the package's own `skill://` link to it.
 - The acceptance core file does not link back to its own approval definition in `core/every-role.md`.
-- `_fragment_problems` checks every link with a `#` fragment in one skill through the same `_check`. In both the source and the package tree, no skill that holds a `SKILL.md`, including `c-13-install-and-onboard`, `c-14-knowledge-bootstrap` and `l-01-agent-lifecycles`, has a broken section link.
-- Pointing the `c-14-knowledge-bootstrap` `admission-of-new-records` link or the `c-13-install-and-onboard` `history-rows` link back from `templates/curator-handoff-ingestion.md` to `templates/curator-handoff-list.md` is reported as a missing anchor.
+- `_fragment_problems` checks every link with a `#` fragment in one skill through the same `_check`. In both the source and the package tree, every skill that holds a `SKILL.md` has no broken section link; the delivered tree's only skill is `l-01-agent-lifecycles`.
+- A broken same-file anchor is among the planted mutants the test requires to fail; `test_every_fragment_link_in_every_skill_resolves` asserts every skill root with a `SKILL.md` (including `l-01-agent-lifecycles`) has only resolving section links.
 
 ## Evidence
 

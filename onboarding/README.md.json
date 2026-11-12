@@ -1,0 +1,26 @@
+{
+  "path": "README.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b6e2cd8ce95d8c8afedbeb624882c221c31c3a8c",
+        "content": "sha256:0cf2550b4a5377e2999c71c5d4e9bfb2c39845ff477354d9c64320bbf6a9ea40",
+        "locator": {
+          "end": 220,
+          "kind": "line_range",
+          "start": 216
+        }
+      },
+      "id": "RLZ-5R1WWT",
+      "invariant": "INV-MG3HK1",
+      "origin": {
+        "handoffEntry": "MIK-L36@v10 e2",
+        "leaf": "260928-MIK-L36"
+      },
+      "rationale": "This is the only public sentence that names the repository's current package version; a reader takes the installable version from it.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

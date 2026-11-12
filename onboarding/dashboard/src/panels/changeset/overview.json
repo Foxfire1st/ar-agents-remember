@@ -4,6 +4,160 @@
   "realizes": [],
   "references": {
     "1": {
+      "note": "The L3 read-only change-set API this screen consumes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "content": "sha256:4c1ee7ea52690bf26e08d81dae077c82c25e2b12b98eac954503f2824feda89e",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_changeset"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "content": "sha256:8806057e1f4126c574302654a3671bcc196c4b79905ae08946128c0e758d9b13",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 104
+            },
+            "path": "mcp/src/agents_remember/serving/changeset.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The two extracted view builders, each with its marks gutter.\n\nAnchor: `splitView` `inlineView`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
+            "content": "sha256:09f6564ee645059d8278ba07ff08790fb6ccf152a71fd8fb1b4d7ff1fadea023",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/changeset/DiffPane.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
+            "content": "sha256:95bbf5594d45ccadc1950df5823abe984257e70ca4e16b9fa7daf998486cd330",
+            "locator": {
+              "kind": "symbol",
+              "name": "splitView"
+            },
+            "path": "dashboard/src/panels/changeset/DiffPane.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
+            "content": "sha256:4521265281717798c3c1bd0ffb97d3c6ec0547122dc8c551b76af2b7349ebe24",
+            "locator": {
+              "kind": "symbol",
+              "name": "inlineView"
+            },
+            "path": "dashboard/src/panels/changeset/DiffPane.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The optional first lines and the content-sized host.\n\nAnchor: `DiffPane` `fitHost`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
+            "content": "sha256:09f6564ee645059d8278ba07ff08790fb6ccf152a71fd8fb1b4d7ff1fadea023",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/changeset/DiffPane.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
+            "content": "sha256:2d6a34ecfb274dc8ef1cd0faee5668fdb037cf3e5b3426d76f74797e40bfb94e",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiffPane"
+            },
+            "path": "dashboard/src/panels/changeset/DiffPane.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
+            "content": "sha256:7ec3ff6e32895e04f7809d9becea7c0193adcc73c867ccfb106b4966deac3eab",
+            "locator": {
+              "kind": "symbol",
+              "name": "fitHost"
+            },
+            "path": "dashboard/src/panels/changeset/DiffPane.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The card that passes them.\n\nAnchor: `ChangedExcerpt`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+            "content": "sha256:2c770a9ba73686f8a8fbfc07cec28f365bcbfa3e28b53aee67d01f15e5df2d23",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ExpressionCards.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+            "content": "sha256:5dfbf6c619285d9a59309e872adbb815a3e6e2b306d8aa212ef96019ed3a3045",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangedExcerpt"
+            },
+            "path": "dashboard/src/panels/review/ExpressionCards.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The master request now asks for the per-leaf breakdown; presence of `leaves` is the discriminant.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f573a5c5c9d295de071c004326eb932c2d61dd8d",
+            "content": "sha256:e656c01c927e10b2e799d307c0a76ad7e1213190e5bb94ca7744fe0cbadddbc8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "52": {
       "note": "The optional marks and the marked pane.\n\nAnchor: \"marks?: PaneMarks;\"; \"const { portals, placement, gutterFor, drawn } = useMarkedPane(marks);\"",
       "targets": [
         {
@@ -21,7 +175,78 @@
         }
       ]
     },
-    "10": {
+    "53": {
+      "note": "The named refusal and the named measured-empty pane, i.e. the two states that are not a missing selection.\n\nAnchor: `ChangeSetRefusal` `ChangeSetMainPane`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f573a5c5c9d295de071c004326eb932c2d61dd8d",
+            "content": "sha256:e656c01c927e10b2e799d307c0a76ad7e1213190e5bb94ca7744fe0cbadddbc8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f573a5c5c9d295de071c004326eb932c2d61dd8d",
+            "content": "sha256:cf43fee00e16b78d7ea5f392865ee87d6e0cd886d93c65ac825449aa77144cc2",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangeSetRefusal"
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f573a5c5c9d295de071c004326eb932c2d61dd8d",
+            "content": "sha256:c11005854198bb34a597f4a8554884b7a70ab19b0ed7aa7e5324dd998a9d47f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangeSetMainPane"
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "54": {
+      "note": "The cockpit re-target that keeps the opened leaf inside this route's takeover.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:c6d8679bc2ab3dfcca99e099a16580215951cfd6bf0ab93b32263f14e9d81f76",
+            "locator": {
+              "end": 433,
+              "kind": "line_range",
+              "start": 413
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:fb95306a3be56b74a5a04d459fe7fa4ff6345e0b08807374cb7eef7ca62215ed",
+            "locator": {
+              "end": 863,
+              "kind": "line_range",
+              "start": 857
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "55": {
       "note": "The same-origin client wrapping that API.",
       "targets": [
         {
@@ -75,7 +300,7 @@
         }
       ]
     },
-    "11": {
+    "56": {
       "note": "The shell that hosts the takeover + restores the rails.",
       "targets": [
         {
@@ -92,7 +317,7 @@
         }
       ]
     },
-    "12": {
+    "57": {
       "note": "The detail panel button + counters that open this screen.\n\nAnchor: `ChangeSetButton`",
       "targets": [
         {
@@ -108,7 +333,7 @@
         }
       ]
     },
-    "13": {
+    "58": {
       "note": "The reused read-only CodeMirror pane + theme + lang map.\n\nAnchor: `FilePane`",
       "targets": [
         {
@@ -136,7 +361,7 @@
         }
       ]
     },
-    "14": {
+    "59": {
       "note": "The markdown renderer the sidecar column + rendered-markdown toggle reuse.\n\nAnchor: `Markdown`",
       "targets": [
         {
@@ -164,24 +389,48 @@
         }
       ]
     },
-    "15": {
-      "note": "The siege-tank empty-state backdrop shown until a file is picked.",
+    "6": {
+      "note": "The rendered rail and its per-leaf counters, and the click that opens one leaf's own range.",
       "targets": [
         {
           "anchor": {
-            "blob": "9c3afff4327a285950ac79ef737319425475e8a7",
-            "content": "sha256:1fdb99f22b57f7bf665c0b14bd93b1c6eda2fe294352e1fce9d7f0dd9705e608",
+            "blob": "f573a5c5c9d295de071c004326eb932c2d61dd8d",
+            "content": "sha256:d0d69d2bd4ad7e19443d8c39e35a3e01e08cf8d037e8ec1ad55150ab28dbe8b0",
             "locator": {
               "kind": "symbol",
-              "name": "EmptyStateBackdrop"
+              "name": "LeafBreakdown"
             },
-            "path": "dashboard/src/panels/EmptyStateBackdrop.tsx"
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f573a5c5c9d295de071c004326eb932c2d61dd8d",
+            "content": "sha256:5611ac33e542ac5c58b051e77b25e9569281fbf36974e50e1f170e858dafaeeb",
+            "locator": {
+              "end": 528,
+              "kind": "line_range",
+              "start": 522
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f573a5c5c9d295de071c004326eb932c2d61dd8d",
+            "content": "sha256:e656c01c927e10b2e799d307c0a76ad7e1213190e5bb94ca7744fe0cbadddbc8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
           },
           "kind": "code"
         }
       ]
     },
-    "16": {
+    "60": {
       "note": "The target variant this route's type gained.\n\nAnchor: `ChangeSetTarget`",
       "targets": [
         {
@@ -209,7 +458,7 @@
         }
       ]
     },
-    "17": {
+    "61": {
       "note": "The declaration's own statement that no change-set request comes from a review, and that an empty object on the field is the task-context entry rather than a missing selector.\n\nAnchor: \"never mounted for one, so no change-set\"",
       "targets": [
         {
@@ -227,7 +476,7 @@
         }
       ]
     },
-    "18": {
+    "62": {
       "note": "**The reviewer entry: offered for every leaf beside the working/committed actions (the recorded comparison for a closed leaf, `ICR-R12`).**\n\nAnchor: \"Intent review\"",
       "targets": [
         {
@@ -245,7 +494,7 @@
         }
       ]
     },
-    "19": {
+    "63": {
       "note": "**The identity the entry carries instead of a filesystem path: the task context only — `review: {}` for every leaf, live or closed, so a landed leaf opens the review on the pair it delivered rather than its own numbered record.**",
       "targets": [
         {
@@ -263,47 +512,7 @@
         }
       ]
     },
-    "2": {
-      "note": "The two extracted view builders, each with its marks gutter.\n\nAnchor: `splitView` `inlineView`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
-            "content": "sha256:09f6564ee645059d8278ba07ff08790fb6ccf152a71fd8fb1b4d7ff1fadea023",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "dashboard/src/panels/changeset/DiffPane.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
-            "content": "sha256:95bbf5594d45ccadc1950df5823abe984257e70ca4e16b9fa7daf998486cd330",
-            "locator": {
-              "kind": "symbol",
-              "name": "splitView"
-            },
-            "path": "dashboard/src/panels/changeset/DiffPane.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
-            "content": "sha256:4521265281717798c3c1bd0ffb97d3c6ec0547122dc8c551b76af2b7349ebe24",
-            "locator": {
-              "kind": "symbol",
-              "name": "inlineView"
-            },
-            "path": "dashboard/src/panels/changeset/DiffPane.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "20": {
+    "64": {
       "note": "**The read that supplies the subject now belongs to the reviewer, taking the comparison's task context and nothing else.**\n\nAnchor: `useReviewCatalogue` `intentReviewEntries`",
       "targets": [
         {
@@ -354,7 +563,7 @@
         }
       ]
     },
-    "21": {
+    "65": {
       "note": "**The entry’s code-or-memory worktree existence flags select the working control and live-versus-recorded review context.**",
       "targets": [
         {
@@ -372,7 +581,7 @@
         }
       ]
     },
-    "22": {
+    "66": {
       "note": "**The generation the open series view is bound to, and the caption that renders it.**\n\nAnchor: `boundSeriesGeneration` `SeriesGenerationTag`",
       "targets": [
         {
@@ -388,7 +597,7 @@
         }
       ]
     },
-    "24": {
+    "67": {
       "note": "**The target type whose review field may carry no selector, with presence as the marker and an empty object as the task context.**\n\nAnchor: `ChangeSetTarget`",
       "targets": [
         {
@@ -416,7 +625,7 @@
         }
       ]
     },
-    "25": {
+    "68": {
       "note": "The detail-panel entry that hands the viewer this leaf's targets: the committed change set and the Intent review entry, whose target carries the task context and no subject.\n\nAnchor: `useReviewCatalogue` `DocChangeSetBar`",
       "targets": [
         {
@@ -443,7 +652,7 @@
         }
       ]
     },
-    "26": {
+    "69": {
       "note": "The surface that receives it and asks for the task's own review.\n\nAnchor: `ReviewTarget` `ReviewSurface`",
       "targets": [
         {
@@ -483,7 +692,24 @@
         }
       ]
     },
-    "28": {
+    "7": {
+      "note": "The siege-tank empty-state backdrop shown until a file is picked.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c3afff4327a285950ac79ef737319425475e8a7",
+            "content": "sha256:1fdb99f22b57f7bf665c0b14bd93b1c6eda2fe294352e1fce9d7f0dd9705e608",
+            "locator": {
+              "kind": "symbol",
+              "name": "EmptyStateBackdrop"
+            },
+            "path": "dashboard/src/panels/EmptyStateBackdrop.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "70": {
       "note": "One file's diff reads on the comparison's trees",
       "targets": [
         {
@@ -500,7 +726,7 @@
         }
       ]
     },
-    "29": {
+    "71": {
       "note": "Lane filters apply over the held lane facts",
       "targets": [
         {
@@ -517,47 +743,7 @@
         }
       ]
     },
-    "3": {
-      "note": "The optional first lines and the content-sized host.\n\nAnchor: `DiffPane` `fitHost`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
-            "content": "sha256:09f6564ee645059d8278ba07ff08790fb6ccf152a71fd8fb1b4d7ff1fadea023",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "dashboard/src/panels/changeset/DiffPane.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
-            "content": "sha256:2d6a34ecfb274dc8ef1cd0faee5668fdb037cf3e5b3426d76f74797e40bfb94e",
-            "locator": {
-              "kind": "symbol",
-              "name": "DiffPane"
-            },
-            "path": "dashboard/src/panels/changeset/DiffPane.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
-            "content": "sha256:7ec3ff6e32895e04f7809d9becea7c0193adcc73c867ccfb106b4966deac3eab",
-            "locator": {
-              "kind": "symbol",
-              "name": "fitHost"
-            },
-            "path": "dashboard/src/panels/changeset/DiffPane.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "30": {
+    "72": {
       "note": "Persisted flags use component state and localStorage.\n\nAnchor: `usePersistedFlag`",
       "targets": [
         {
@@ -573,7 +759,7 @@
         }
       ]
     },
-    "31": {
+    "73": {
       "note": "Shared numbering, theme and language construction.\n\nAnchor: `numberedFrom`; `codeTheme`; `langExtension`",
       "targets": [
         {
@@ -611,7 +797,7 @@
         }
       ]
     },
-    "32": {
+    "74": {
       "note": "No-mark gutters, collapsed-run expansion and marked-pane construction.",
       "targets": [
         {
@@ -629,7 +815,7 @@
         }
       ]
     },
-    "33": {
+    "75": {
       "note": "Diff highlight styling, fitting and effect teardown.",
       "targets": [
         {
@@ -660,7 +846,7 @@
         }
       ]
     },
-    "34": {
+    "76": {
       "note": "Current expression excerpts pass marks, file origins and the page collapse setting to a content-sized DiffPane; fitted mark updates reconfigure existing gutters, and card Full file is retired.",
       "targets": [
         {
@@ -714,7 +900,7 @@
         }
       ]
     },
-    "35": {
+    "77": {
       "note": "The net and leaf summaries are computed separately, over different ranges; leaf working reads require a live worktree, and committed lists publish unrecorded state.",
       "targets": [
         {
@@ -730,7 +916,7 @@
         }
       ]
     },
-    "36": {
+    "78": {
       "note": "Recorded leaf endpoints use closeout cells or their recorded integrated equivalents.",
       "targets": [
         {
@@ -748,7 +934,7 @@
         }
       ]
     },
-    "37": {
+    "79": {
       "note": "Master generation digest, selection and currentness use declared or pinned endpoint pairs.",
       "targets": [
         {
@@ -766,7 +952,7 @@
         }
       ]
     },
-    "38": {
+    "80": {
       "note": "The counters control distinguishes loading, unrecorded, unmeasured, empty and failure and discloses the reason.",
       "targets": [
         {
@@ -784,35 +970,7 @@
         }
       ]
     },
-    "4": {
-      "note": "The card that passes them.\n\nAnchor: `ChangedExcerpt`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
-            "content": "sha256:2c770a9ba73686f8a8fbfc07cec28f365bcbfa3e28b53aee67d01f15e5df2d23",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "dashboard/src/panels/review/ExpressionCards.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
-            "content": "sha256:5dfbf6c619285d9a59309e872adbb815a3e6e2b306d8aa212ef96019ed3a3045",
-            "locator": {
-              "kind": "symbol",
-              "name": "ChangedExcerpt"
-            },
-            "path": "dashboard/src/panels/review/ExpressionCards.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "40": {
+    "81": {
       "note": "Leaf entry construction gates working reads, not Intent Review.",
       "targets": [
         {
@@ -830,7 +988,7 @@
         }
       ]
     },
-    "41": {
+    "82": {
       "note": "Review dispatch, back, mode switches and node opens clear or replace the cockpit takeover.",
       "targets": [
         {
@@ -886,7 +1044,7 @@
         }
       ]
     },
-    "42": {
+    "83": {
       "note": "The reviewer catalogue remains task-bound; navigation threads recorded history and current generation.",
       "targets": [
         {
@@ -930,7 +1088,7 @@
         }
       ]
     },
-    "44": {
+    "84": {
       "note": "Recorded comparison ranges retain exact code/memory operands and named unavailable-tree states.",
       "targets": [
         {
@@ -948,7 +1106,7 @@
         }
       ]
     },
-    "45": {
+    "85": {
       "note": "Target-addressed list loads share the current request/cache owner, and an available cached answer can be restored at selection.\n\nAnchor: `peekChangeSet` `loadChangeSet` `useChangesetLoad`",
       "targets": [
         {
@@ -999,7 +1157,7 @@
         }
       ]
     },
-    "47": {
+    "86": {
       "note": "A list problem and selected-file problem have distinct display owners rather than silently leaving a stale successful pane.\n\nAnchor: `ChangeSetWorkspace` `ChangeSetMainPane`",
       "targets": [
         {
@@ -1039,7 +1197,7 @@
         }
       ]
     },
-    "48": {
+    "87": {
       "note": "The existing viewer composes delegated filters and one badge map from held facts; same-generation comparison context can accept late matching worklist/lane data without reopening another comparison.",
       "targets": [
         {
@@ -1066,7 +1224,7 @@
         }
       ]
     },
-    "49": {
+    "88": {
       "note": "The partner predicate excludes slash-suffixed overview/entities and .index bases, but root onboarding/overview.md strips to bare overview and can produce an affordance. Target existence/read success is not established; this predicate already exists at both actual BASE operands.",
       "targets": [
         {
@@ -1095,23 +1253,7 @@
         }
       ]
     },
-    "5": {
-      "note": "The master request now asks for the per-leaf breakdown; presence of `leaves` is the discriminant.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f573a5c5c9d295de071c004326eb932c2d61dd8d",
-            "content": "sha256:e656c01c927e10b2e799d307c0a76ad7e1213190e5bb94ca7744fe0cbadddbc8",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "50": {
+    "89": {
       "note": "The changed-file rail remains mounted and shares one visibility state across wide and narrow workspace orientation.\n\nAnchor: `sidebarPanelProps`; `sidebarHandleProps`",
       "targets": [
         {
@@ -1128,7 +1270,7 @@
         }
       ]
     },
-    "51": {
+    "90": {
       "note": "The header toggle owns changeset-left visibility outside the changed-file rail.\n\nAnchor: `useSidebar`; `SidebarToggle`\n\nRetired at the fifth freeze d59c3493: dashboard/src/panels/changeset/ChangeSetViewer.tsx:1008-1036 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 23cb164fa24dcbc4a98a56fa1324e1fb42c1bf41. Retired means the anchor no longer stands, not that the cited subject was deleted.",
       "targets": [
         {
@@ -1140,135 +1282,6 @@
               "name": "railOpen"
             },
             "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "The rendered rail and its per-leaf counters, and the click that opens one leaf's own range.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f573a5c5c9d295de071c004326eb932c2d61dd8d",
-            "content": "sha256:d0d69d2bd4ad7e19443d8c39e35a3e01e08cf8d037e8ec1ad55150ab28dbe8b0",
-            "locator": {
-              "kind": "symbol",
-              "name": "LeafBreakdown"
-            },
-            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f573a5c5c9d295de071c004326eb932c2d61dd8d",
-            "content": "sha256:5611ac33e542ac5c58b051e77b25e9569281fbf36974e50e1f170e858dafaeeb",
-            "locator": {
-              "end": 528,
-              "kind": "line_range",
-              "start": 522
-            },
-            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f573a5c5c9d295de071c004326eb932c2d61dd8d",
-            "content": "sha256:e656c01c927e10b2e799d307c0a76ad7e1213190e5bb94ca7744fe0cbadddbc8",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "The named refusal and the named measured-empty pane, i.e. the two states that are not a missing selection.\n\nAnchor: `ChangeSetRefusal` `ChangeSetMainPane`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f573a5c5c9d295de071c004326eb932c2d61dd8d",
-            "content": "sha256:e656c01c927e10b2e799d307c0a76ad7e1213190e5bb94ca7744fe0cbadddbc8",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f573a5c5c9d295de071c004326eb932c2d61dd8d",
-            "content": "sha256:cf43fee00e16b78d7ea5f392865ee87d6e0cd886d93c65ac825449aa77144cc2",
-            "locator": {
-              "kind": "symbol",
-              "name": "ChangeSetRefusal"
-            },
-            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f573a5c5c9d295de071c004326eb932c2d61dd8d",
-            "content": "sha256:c11005854198bb34a597f4a8554884b7a70ab19b0ed7aa7e5324dd998a9d47f1",
-            "locator": {
-              "kind": "symbol",
-              "name": "ChangeSetMainPane"
-            },
-            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "The cockpit re-target that keeps the opened leaf inside this route's takeover.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
-            "content": "sha256:c6d8679bc2ab3dfcca99e099a16580215951cfd6bf0ab93b32263f14e9d81f76",
-            "locator": {
-              "end": 433,
-              "kind": "line_range",
-              "start": 413
-            },
-            "path": "dashboard/src/cockpit/Cockpit.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
-            "content": "sha256:fb95306a3be56b74a5a04d459fe7fa4ff6345e0b08807374cb7eef7ca62215ed",
-            "locator": {
-              "end": 863,
-              "kind": "line_range",
-              "start": 857
-            },
-            "path": "dashboard/src/cockpit/Cockpit.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "The L3 read-only change-set API this screen consumes.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
-            "content": "sha256:4c1ee7ea52690bf26e08d81dae077c82c25e2b12b98eac954503f2824feda89e",
-            "locator": {
-              "kind": "symbol",
-              "name": "task_changeset"
-            },
-            "path": "mcp/src/agents_remember/serving/changeset.py"
           },
           "kind": "code"
         }

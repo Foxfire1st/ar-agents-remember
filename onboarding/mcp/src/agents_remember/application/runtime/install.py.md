@@ -52,8 +52,7 @@ currentness (`server_inventory`); that read removes the record files of dead pro
   attempts the required leftover-watcher stop and reports unused provider keys.
 - Default `dry_run` is false — the tool applies by default (act-by-default
   contract). Pass `dry_run=true` to inspect the planned reconcile before
-  mutation; the packaged install skill (`c-13-install-and-onboard`) applies by default and
-  previews only when the developer asks or local workflow policy requires it.
+  mutation.
 
 ## Evidence
 

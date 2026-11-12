@@ -88,11 +88,11 @@
         {
           "anchor": {
             "blob": "6b5c163ab7290f3ff778e1a69a54324e7da1d022",
-            "content": "sha256:cf18e1b4612890662ae0cedcde62fdb7fd5948c9539a62b2526c69a1ea1f46c5",
+            "content": "sha256:e4170303a7d55afacdbfe0fedf0f22c113a531a40de8fb126bd0c940f23fbd9e",
             "locator": {
-              "end": 249,
+              "end": 240,
               "kind": "line_range",
-              "start": 229
+              "start": 220
             },
             "path": "mcp/src/agents_remember/serving/scope.py"
           },

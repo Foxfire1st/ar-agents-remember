@@ -25,9 +25,9 @@ the fourth is checked as behaviour in `test_mik_r196_l188_preparation_order.py`.
   `test_every_qualification_rail_runs_a_script_the_repository_holds` walks each rail's `execution.command` in
   `mcp/certification-profile-v1.json`, keeps the arguments shaped like `scripts/...py`, and fails naming the rail
   and the missing script. A rail naming a deleted script cannot run and must not be certified.
-- **Setup assigns no onboarding.** `test_the_setup_skills_assign_no_onboarding` reads the canonical
-  `skills/c-13-install-and-onboard/SKILL.md` and its packaged copy: both say "Setup authors no onboarding", neither
-  says "Scaffold onboarding", and both keep the citation fixer out of setup (MIK-R196 rules 4–5).
+- **Setup assigns no onboarding.** `test_the_setup_skills_assign_no_onboarding` reads `docs/getting-started.md`:
+  it says "Setup authors no onboarding or knowledge and runs no citation fixer", does not say "Scaffold onboarding",
+  and keeps the citation fixer out of setup (MIK-R196 rules 4–5).
 - **Benchmark preparation (real clones).**
   `test_benchmark_preparation_discovers_package_skills_without_installing_copies` builds a local origin repository with
   one commit, copies the benchmark templates, and prepares the same case twice. Both prepared trees
@@ -36,7 +36,7 @@ the fourth is checked as behaviour in `test_mik_r196_l188_preparation_order.py`.
   `.codex` is left in the source-only tree, and no `skills` tree is installed anywhere. The written `.codex/config.toml` registers
   `agents_remember_benchmark` with `-m agents_remember.mcp --config <settings>`, the settings resolve the fixture
   repository and the memory coordination root with no providers, and the registered server serves
-  `skill://index.json` and the packaged `c-13-install-and-onboard/SKILL.md` and
+  `skill://index.json` and the packaged `l-01-agent-lifecycles/SKILL.md` and
   `l-01-agent-lifecycles/roles/worker.md` byte-identical out of `package_data`.
 
 ### Conventions

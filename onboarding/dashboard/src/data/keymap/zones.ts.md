@@ -20,4 +20,4 @@ zoneForTarget follows the nearest data-kbzone marker and recognizes only review/
 
 - The current source suite asserts chrome/review fallback and printable suppression, not PTY passthrough or slash rules. [4]
 
-- Review is explicitly recognized and unknown/removed markers fall back to chrome. [5]
+- Review is explicitly recognized and unknown/removed markers fall back to chrome. [6]

@@ -40,5 +40,5 @@ All events route to `workspace/events.jsonl`; no per-lifecycle logs or heartbeat
 
 - EventStore serializes and validates the shared Event envelope. [1]
 - Every append uses bounded workspace admission; tolerant reads admit valid records only. [2]
-- The read helper reports whether an existing shared lock was actually acquired; it does not perform a lockless read. [3]
-- Serving, not the helper, owns the guarded missing-lock base/file window and the confirmed-hold fallback. [4]
+- The read helper reports whether an existing shared lock was actually acquired; it does not perform a lockless read. [5]
+- Serving, not the helper, owns the guarded missing-lock base/file window and the confirmed-hold fallback. [6]

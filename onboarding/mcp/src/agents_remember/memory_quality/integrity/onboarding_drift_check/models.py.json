@@ -144,7 +144,7 @@
         }
       ]
     },
-    "5": {
+    "4": {
       "note": "The packet carries the converted measurement fields alongside the legacy ones.",
       "targets": [
         {

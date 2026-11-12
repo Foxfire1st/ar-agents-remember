@@ -6,13 +6,13 @@
 
 ## Purpose
 
-Served-build preflight for execution-topology schema writes (260815-DAG-L15-R4). The 3.0.0rc7
-failure class (ar-coordination l9-issues.md:9-19) wrote `executionNature`/`executionGraph` into the
+Served-build preflight for execution-topology schema writes (260815-DAG-L15-R4). The 3.0.0
+release-candidate failure class (ar-coordination l9-issues.md:9-19) wrote `executionNature`/`executionGraph` into the
 persistent task tree while the served build's `TaskDocument` model predated the fields and used
 `extra="forbid"`, forcing a snapshot restore. Graph authoring/migration operations therefore verify
 the serving runtime understands the topology schema **before** writing, refusing with upgrade
-guidance otherwise. Fail-closed: an unverifiable serving build refuses rather than risking the rc7
-restore class.
+guidance otherwise. Fail-closed: an unverifiable serving build refuses rather than risking that
+release-candidate restore class.
 
 ## Code Commentary
 
@@ -95,6 +95,7 @@ No meaningful cross-repo references found.
 ## 260821-DAGQC-L2 Explicit Serving-Build Failure Boundary
 
 The preflight no longer depends on callers remembering every lower-level metadata failure class.
-Each observable operation has one explicit translation seam, while semantic policy—model probe,
-editable/source-tree handling, release floor, and dev/post/local treatment—remains unchanged. This
+Each observable operation has one explicit translation seam. The 260821-DAGQC-L2 account's
+editable/source-tree handling and release floor are historical: the installed-distribution leg
+they described is gone (see Logic), so installation shape no longer reaches this decision. This
 makes the public check total for expected environment failures without hiding programmer defects.

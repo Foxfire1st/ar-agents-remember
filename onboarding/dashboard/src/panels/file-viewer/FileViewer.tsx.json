@@ -57,6 +57,23 @@
         }
       ]
     },
+    "10": {
+      "note": "The Explorer remains mounted when hidden; its external toggle and code target stay in the page.\n\nAnchor: \"{/* MIK-R89 v2 rule 8: the explorer's shared toggle, first on the line above it. */}\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a34e748d74bbd03ce1ffd35fe6d4b719b434cd55",
+            "content": "sha256:c7fdc3daf8d97fab823f97fe21b9bd8df2c8e50c9e0a94b680decac306da941a",
+            "locator": {
+              "end": 300,
+              "kind": "line_range",
+              "start": 270
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The one tree explorer rendered twice (code + onboarding sides).",
       "targets": [
@@ -228,7 +245,7 @@
         }
       ]
     },
-    "7": {
+    "9": {
       "note": "The page owns files-left visibility and publishes only its active repository for tray context.\n\nAnchor: \"const [repo, setRepo] = useState<string>(\"\");\"",
       "targets": [
         {
@@ -239,23 +256,6 @@
               "end": 225,
               "kind": "line_range",
               "start": 209
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "The Explorer remains mounted when hidden; its external toggle and code target stay in the page.\n\nAnchor: \"{/* MIK-R89 v2 rule 8: the explorer's shared toggle, first on the line above it. */}\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a34e748d74bbd03ce1ffd35fe6d4b719b434cd55",
-            "content": "sha256:c7fdc3daf8d97fab823f97fe21b9bd8df2c8e50c9e0a94b680decac306da941a",
-            "locator": {
-              "end": 300,
-              "kind": "line_range",
-              "start": 270
             }
           },
           "kind": "code"

@@ -33,7 +33,7 @@
         }
       ]
     },
-    "5": {
+    "6": {
       "note": "Review is explicitly recognized and unknown/removed markers fall back to chrome.\n\nAnchor: `dashboard/src/data/keymap/zones.ts`",
       "targets": [
         {

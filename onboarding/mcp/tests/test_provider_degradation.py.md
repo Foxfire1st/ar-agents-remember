@@ -67,7 +67,7 @@ No relevant documentation found after checking; the protocol is repo-internal do
 
 - The settings dataclass this suite constructs directly to tune thresholds per test. [2]
 - The metrics store/schema rows the classifier tests construct as fixtures. [3]
-- The three current evaluator cases pin one-shot injected failsafe/event/state persistence, stop-failure durability, and degraded/healthy event ordering, with no terminal catalog/inbox/delivery assertions. [6]
+- The three current evaluator cases pin one-shot injected failsafe/event/state persistence, stop-failure durability, and degraded/healthy event ordering, with no terminal catalog/inbox/delivery assertions. [8]
 
 ### Cross-Repo References
 
@@ -75,7 +75,7 @@ No meaningful cross-repo references found.
 
 Test-only, repository-local fixtures and imports.
 
-- The current evaluator requires a supplied ProviderStopper and does not import an agent tool; the retained evaluator fixtures inject that boundary, so the former MCP-tool test route is historical. [7]
+- The current evaluator requires a supplied ProviderStopper and does not import an agent tool; the retained evaluator fixtures inject that boundary, so the former MCP-tool test route is historical. [9]
 
 ## Historical optional F3 suggestion
 

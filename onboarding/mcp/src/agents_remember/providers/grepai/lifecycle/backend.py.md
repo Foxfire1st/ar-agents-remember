@@ -56,7 +56,7 @@ only when Docker labels do not show the expected Compose project.
 
 ### Repo-Internal References
 
-- grepai_backend_status still returns internal container-state, network/data/port and readiness diagnostics, and grepai_backend_start_context retains its settings/layout record. The advertised PUBLIC_TOOLS literal has no provider-status tool; these backend helpers do not restore an MCP provider-status surface. [4]
+- grepai_backend_status still returns internal container-state, network/data/port and readiness diagnostics, and grepai_backend_start_context retains its settings/layout record. The advertised PUBLIC_TOOLS literal has no provider-status tool; these backend helpers do not restore an MCP provider-status surface. [5]
 
 - Backend settings and Docker network name are derived in GrepAI core. [1]
 - Tests require the Postgres wait helper to run both "test: [\"CMD-SHELL\", \"pg_isready -U grepai -d grepai\"]" and a database query. [2]

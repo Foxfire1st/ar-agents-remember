@@ -145,7 +145,7 @@ The recurring projection path uses projected status plus the latest landing snap
 
 
 | The pure fold consumes the threaded `engine_process_facts` / `engine_start_progress` inputs. | `project_workspace` | mcp/src/agents_remember/observer/reducer.py:128-181 |
-| The atomic-write design requirement and serving placement are specified in §2.5 and §5. | `### 2.5 The observer and its projections`; `## 5. Placement and Packaging` | docs/design/observable-lifecycle.md:241-251; docs/design/observable-lifecycle.md:323-338 |
+| The store replaces each projection file atomically through a sibling temporary file and `os.replace`. | `_write_json` | mcp/src/agents_remember/serving/projections/projection_store.py:265-272 |
 
 The current input-state refresh contract is recorded in reference [12]; no separate provider refresher runs before that read.
 | `ProjectionInputState.read` owns the delegated domain refreshes and returns the complete input bundle. | "def read("; "return ProjectionInputs" | mcp/src/agents_remember/serving/projections/projection_inputs.py:214-264 |
