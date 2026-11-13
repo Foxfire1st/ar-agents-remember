@@ -16,7 +16,7 @@ the `mcp` package.
 
 Defines `SERVER_NAME = "agents-remember"` (cit:([`SERVER_NAME`], mcp/src/agents_remember/kernel/primitives/version.py:11-11)).
 `_resolve_server_version` reads the installed `agents-remember-mcp` distribution metadata and
-returns the committed `3.0.0` identity only when that metadata is unavailable in a source
+returns the committed `3.0.1` identity only when that metadata is unavailable in a source
 checkout. `SERVER_VERSION` is computed through that function seam, which keeps reload-based
 fallback tests deterministic and gives every upper layer one kernel-owned value.
 
@@ -41,6 +41,8 @@ No configured domain documentation was available.
 
 - Package metadata and source-checkout fallback are selected through the explicit resolver. [1]
 - Installed metadata is authoritative; only missing package metadata selects the explicit source-checkout release identity. [2]
+
+
 
 ### Cross-Repo References
 

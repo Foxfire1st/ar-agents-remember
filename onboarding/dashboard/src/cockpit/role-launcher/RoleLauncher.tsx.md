@@ -20,6 +20,8 @@ The Chats pane and document rail share this extracted owner. Bound callers hide 
 
 The same shared `roleLauncherGrid` composes the launcher. Its action row adds one configured Step up control and shared receipt-derived StepUpStatus beside Start/Retry/Revive/Result/Refresh. Step up is disabled for incomplete selection, unavailable options, busy/loading state or an offered retry. Ordinary Start still uses its existing readiness/occupancy guard. A truthy current execution stepUp switches mode/instruction/features and service tier to explicitly non-applied Base previews; applied mode/features remain unreported. The failure component receives showStepUp=false to avoid duplicate status. Existing whole-control wrapping is retained; no unconditional single-visual-line promise follows from these additions.
 
+The document fields admit a master that no sprint commands. The Sprint field's empty choice reads “No sprint”; the Master field shows for every master-naming role once its content is served and lists the masters the served tree places outside every sprint while no sprint is chosen; the Task field then follows the chosen master. A manager, worker, reviewer or curator start is complete without a sprint, while the Orchestrator still requires its sprint before Start.
+
 
 This account is bound to the candidate source, not a claim of a running serving build or a fresh execution/acceptance verdict. Existing historical accounts remain historical.
 

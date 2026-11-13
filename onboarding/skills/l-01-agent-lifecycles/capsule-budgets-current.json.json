@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "214707ebce4f6867647ac01bef003737d3ad5390",
-        "content": "sha256:f0cd683eba89fceef7e269a1c7fbf3ead041e2e66d4976e59eee70c9e9ad378e",
+        "blob": "e496c4d0e37835d51064bfc7ed14a72f51037e92",
+        "content": "sha256:a6f37ebae00993fee337bb78b66cbb1c7f0c50b5d9442a9fc103e05c592b0fa3",
         "locator": {
           "kind": "file"
         }
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "214707ebce4f6867647ac01bef003737d3ad5390",
+        "blob": "e496c4d0e37835d51064bfc7ed14a72f51037e92",
         "content": "sha256:23beaae89775b40e9aad457c8561cce841137dfff33f837339a979e0e6ab64eb",
         "locator": {
           "end": 5028,
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "214707ebce4f6867647ac01bef003737d3ad5390",
+        "blob": "e496c4d0e37835d51064bfc7ed14a72f51037e92",
         "content": "sha256:aa9e2252078c7f858168e56239c002afbcfc5f07929a5948ec63321fb6e9cd53",
         "locator": {
           "end": 15,
@@ -58,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "214707ebce4f6867647ac01bef003737d3ad5390",
+        "blob": "e496c4d0e37835d51064bfc7ed14a72f51037e92",
         "content": "sha256:16e33f8515db8e2fe4fb605e540d2659e1109c4593e16b00a7cdc679cc19db3d",
         "locator": {
           "end": 5101,
@@ -74,6 +74,25 @@
       },
       "rationale": "Renewal record for the grown digest and recovery detail (D656).",
       "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "e496c4d0e37835d51064bfc7ed14a72f51037e92",
+        "content": "sha256:a6fb08fda1acb957b6116bd37811a1fe41a01611c0631edbf786d6889a27a55c",
+        "locator": {
+          "end": 1,
+          "kind": "line_range",
+          "start": 1
+        }
+      },
+      "id": "RLZ-RHRQZQ",
+      "invariant": "INV-4HZG3V",
+      "origin": {
+        "handoffEntry": "RSM-R01-A9",
+        "leaf": "261112-RSM-L1"
+      },
+      "rationale": "The eight capsule sizes and five source identities the shortened role texts moved; no ceiling entry moved.",
+      "role": "primary-authority"
     }
   ],
   "references": {
@@ -82,8 +101,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "214707ebce4f6867647ac01bef003737d3ad5390",
-            "content": "sha256:f0cd683eba89fceef7e269a1c7fbf3ead041e2e66d4976e59eee70c9e9ad378e",
+            "blob": "e496c4d0e37835d51064bfc7ed14a72f51037e92",
+            "content": "sha256:a6f37ebae00993fee337bb78b66cbb1c7f0c50b5d9442a9fc103e05c592b0fa3",
             "locator": {
               "kind": "file"
             }
@@ -97,8 +116,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "214707ebce4f6867647ac01bef003737d3ad5390",
-            "content": "sha256:f0cd683eba89fceef7e269a1c7fbf3ead041e2e66d4976e59eee70c9e9ad378e",
+            "blob": "e496c4d0e37835d51064bfc7ed14a72f51037e92",
+            "content": "sha256:a6f37ebae00993fee337bb78b66cbb1c7f0c50b5d9442a9fc103e05c592b0fa3",
             "locator": {
               "kind": "file"
             }
@@ -112,8 +131,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "214707ebce4f6867647ac01bef003737d3ad5390",
-            "content": "sha256:f0cd683eba89fceef7e269a1c7fbf3ead041e2e66d4976e59eee70c9e9ad378e",
+            "blob": "e496c4d0e37835d51064bfc7ed14a72f51037e92",
+            "content": "sha256:a6f37ebae00993fee337bb78b66cbb1c7f0c50b5d9442a9fc103e05c592b0fa3",
             "locator": {
               "kind": "file"
             }
@@ -127,7 +146,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "214707ebce4f6867647ac01bef003737d3ad5390",
+            "blob": "e496c4d0e37835d51064bfc7ed14a72f51037e92",
             "content": "sha256:0182ac1d6688241bfe9ccfc2cdcacf4e1cdd183ad89fd9219578032fa7214ba2",
             "locator": {
               "end": 6371,
@@ -144,7 +163,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c8318c7529a92a28e65eb4163a582e66d3bb3d62",
+            "blob": "1e978ee04dff9734b4dff64133d62261ae76e6b2",
             "content": "sha256:c5db175a68c58fd0264dc35bea94d6a1bcf9ee7d37c4ad78247a36d6f565009a",
             "locator": {
               "kind": "symbol",
@@ -161,7 +180,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c8318c7529a92a28e65eb4163a582e66d3bb3d62",
+            "blob": "1e978ee04dff9734b4dff64133d62261ae76e6b2",
             "content": "sha256:f8c97087b082cc61ff1dbc6f179a6ea20db12d8ff9422c20b48bb78de0686c1e",
             "locator": {
               "end": 135,

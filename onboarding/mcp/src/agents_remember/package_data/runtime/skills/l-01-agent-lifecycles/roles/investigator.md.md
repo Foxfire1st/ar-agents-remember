@@ -32,4 +32,6 @@ Agent-authored temporary files, experiments and working copies live only in the 
 
 - The Investigator starts without a task reference, on a sprint, or on a sprint and master, never on a leaf; its concern arrives in its parent's first role_message, or from the developer's request when it has no parent, and a missing concern or scope is asked for, never invented. [1]
 
+
+
 - The Investigator reports what is and what is not, with evidence for each. It states no requirement, ruling or duty of its own; a needed change is an open question for the parent, not a fix to apply. [2]

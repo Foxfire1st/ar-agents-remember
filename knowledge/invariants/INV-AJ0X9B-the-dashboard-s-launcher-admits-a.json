@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The mounted suite exercises the no-sprint choice, the standalone master list, the leaf task without a sprint, the Orchestrator refusal, and the document bindings; the sandbox walk started a manager from the dashboard with sprintDocumentRef null."
+  },
+  "applicability": "The dashboard's role launcher and document chat at a live served task tree.",
+  "conditions": [
+    "The master is served with no sprint parent.",
+    "The role is one the launcher admits for a master."
+  ],
+  "exclusions": [
+    "The Orchestrator, which still requires its sprint.",
+    "The backend start admission, which RSM-R01-A1 states."
+  ],
+  "id": "INV-AJ0X9B",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/cockpit/role-launcher/RoleLauncher.standalone.test.tsx (5 cases: the no-sprint choice and standalone list, a sprint's own master and task, a leaf task without a sprint, the Orchestrator's required sprint, the bindings and the true refusal); dashboard/src/cockpit/document-chat/DocumentChat.test.tsx::binds a master that no sprint commands and its task without a sprint; sandbox walk 7: a manager started from the sandbox dashboard's launcher on sandbox-app/sbx-w7 with sprintDocumentRef null (role execution e138bec6-7577-420f-afe9-cfa4e2104e9f), picture role-launch/261112-RSM-L1-launcher-standalone-master-clip.png, dashboard build 1854761aea3d34836bd9c9d85e1db21be1c9f9586fa9c718088524c8c19aac6a, host 0.15.4"
+      ],
+      "path": "261112-RSM-L1-final-curation-1.json"
+    },
+    "handoffEntry": "RSM-R01-A11",
+    "leaf": "261112-RSM-L1",
+    "task": "261112-RSM"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The dashboard's launcher admits a master that no sprint commands: the Sprint field's empty choice is \"No sprint\", the Master field then lists the masters that no sprint commands, and a standalone master and its tasks bind without a sprint.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -14,9 +14,11 @@ delivery, progress, evidence, lifecycle, and prose state.
 
 ### Logic
 
-`SemanticTopologyV2` binds exact sprint, master, and leaf refs; the uniquely matching structural
+`SemanticTopologyV2` binds exact master and leaf refs and the sprint ref only when a sprint commands the master; the uniquely matching structural
 parent row; the effective master execution nature; and either an atomic-sequential placement or one
-DAG node plus its incident relevant edges. Projection validates the field-effect taxonomy and
+DAG node plus its incident relevant edges. A null sprint is the standalone-master case: no authored
+graph is read and the atomic placement is projected, while every sprint case keeps its canonical
+value. Projection validates the field-effect taxonomy and
 canonical composite leaf binding, then reads the candidate slice from the shared graph index.
 Canonical JSON bytes produce the fingerprint. Typed `SemanticTopologyError` statuses preserve
 missing, ambiguous, malformed, unsupported-version, and graph-index refusals.
@@ -48,6 +50,8 @@ No external source is needed for this repository-owned semantic identity.
 
 - Strict frozen models define the complete v2 identity and its two placement modes. [1]
 - Projection and fingerprint share one canonical structural value and exact work report. [2]
+
+
 - Version, taxonomy, composite binding, execution nature, and placement all fail closed. [3]
 
 ### Cross-Repo References

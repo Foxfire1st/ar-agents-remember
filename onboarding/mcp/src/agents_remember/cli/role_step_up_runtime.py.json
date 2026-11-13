@@ -63,27 +63,16 @@
       ]
     },
     "12": {
-      "note": "The runtime reuses the owner's shared taskless set — `architect`, `investigator` and `bootstrap` — for receipt identity; effective-master presence is not that identity.\n\nAnchor: `TASKLESS_ROLES` `_receipt_path`",
+      "note": "The runtime reuses the owner's shared taskless set — `architect`, `investigator` and `bootstrap` — for receipt identity; effective-master presence is not that identity.\n\nAnchor: `TASKLESS_ROLES`",
       "targets": [
         {
           "anchor": {
-            "blob": "caa8c6e923b4efaeb1c61856c613d10771f7a6c3",
-            "content": "sha256:f7b28dd7554d05981e89e904bb1db6628663c831c79ffc5af1491a7ee2840c22",
+            "blob": "0ecf03c089d77b1c2a2ffbbad28a4f481ea9d94f",
+            "content": "sha256:56683c1aa5bb913b11fee0df2370cf35ac88b588b92f7f90940331d8060ef349",
             "locator": {
               "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/role_launch_context.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0b4c32636d1b3142af6daf7fb0560284f0500da8",
-            "content": "sha256:c829806d1d238b76f9b34c98b359333571d0f634e4b063272d32fdaff384ca5c",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
           },
           "kind": "code"
         }

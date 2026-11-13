@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8b5dd8407a1e01b76ab315b92c7aeeb413a10f42",
-        "content": "sha256:6bc070f01f5f9c0d0fa085b70cb6a43b44a052736efdf3ab5818ededb926a46d",
+        "blob": "fd1c4e86ce70758801d060d2f117f1658c832987",
+        "content": "sha256:a9b578b375fbf2995fc67645ddf61aa2d3c3f9a2f491a2282d60103840e202cc",
         "locator": {
           "kind": "symbol",
           "name": "investigator_start_capacity"
@@ -21,8 +21,26 @@
     },
     {
       "anchor": {
-        "blob": "8b5dd8407a1e01b76ab315b92c7aeeb413a10f42",
-        "content": "sha256:1b9fd4ad7f64137ab23878f43afe69bfb1709b17333b5df343faa14cdaec8fbf",
+        "blob": "fd1c4e86ce70758801d060d2f117f1658c832987",
+        "content": "sha256:6667f6fb868f37a95302952e364e6055ef53a866cd8385e0e015d298db00d1c0",
+        "locator": {
+          "kind": "symbol",
+          "name": "investigator_has_document"
+        }
+      },
+      "id": "RLZ-4KDJ9R",
+      "invariant": "INV-8PGMJB",
+      "origin": {
+        "handoffEntry": "RSM-R01-A6",
+        "leaf": "261112-RSM-L1"
+      },
+      "rationale": "Every investigator store directory, listing and capacity check asks this predicate, and the recipient and delivery routes ask it too, so a master-only investigator is listed, addressed and given its receipts.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "fd1c4e86ce70758801d060d2f117f1658c832987",
+        "content": "sha256:6c0dd49f23f32cce8a810ca00f590fd761de09a58f845ab62ec53b6bde7006ea",
         "locator": {
           "kind": "symbol",
           "name": "investigator_listing"
@@ -39,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "8b5dd8407a1e01b76ab315b92c7aeeb413a10f42",
-        "content": "sha256:6bc070f01f5f9c0d0fa085b70cb6a43b44a052736efdf3ab5818ededb926a46d",
+        "blob": "fd1c4e86ce70758801d060d2f117f1658c832987",
+        "content": "sha256:a9b578b375fbf2995fc67645ddf61aa2d3c3f9a2f491a2282d60103840e202cc",
         "locator": {
           "kind": "symbol",
           "name": "investigator_start_capacity"
@@ -57,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "8b5dd8407a1e01b76ab315b92c7aeeb413a10f42",
+        "blob": "fd1c4e86ce70758801d060d2f117f1658c832987",
         "content": "sha256:9ac6e9dfa929d32cfd1f5d77e74966c62ca87f5bf9619967d9e0982f32de9ac6",
         "locator": {
           "kind": "symbol",
@@ -75,8 +93,8 @@
     },
     {
       "anchor": {
-        "blob": "8b5dd8407a1e01b76ab315b92c7aeeb413a10f42",
-        "content": "sha256:6bc070f01f5f9c0d0fa085b70cb6a43b44a052736efdf3ab5818ededb926a46d",
+        "blob": "fd1c4e86ce70758801d060d2f117f1658c832987",
+        "content": "sha256:a9b578b375fbf2995fc67645ddf61aa2d3c3f9a2f491a2282d60103840e202cc",
         "locator": {
           "kind": "symbol",
           "name": "investigator_start_capacity"
@@ -93,7 +111,25 @@
     },
     {
       "anchor": {
-        "blob": "8b5dd8407a1e01b76ab315b92c7aeeb413a10f42",
+        "blob": "fd1c4e86ce70758801d060d2f117f1658c832987",
+        "content": "sha256:14fb0fb2537a97e26633bd5e5ec565522f3e4893522c5d3c9568d23520f43dc1",
+        "locator": {
+          "kind": "symbol",
+          "name": "_earlier_singletons"
+        }
+      },
+      "id": "RLZ-SR25T4",
+      "invariant": "INV-8PGMJB",
+      "origin": {
+        "handoffEntry": "RSM-R01-A6",
+        "leaf": "261112-RSM-L1"
+      },
+      "rationale": "The earlier-singleton receipt path follows the document predicate, so a master-only Investigator keeps its receipts under the master.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "fd1c4e86ce70758801d060d2f117f1658c832987",
         "content": "sha256:ff7ec0ce35a88f162fab2557aec10c0208c932e853ddd2709a2880c6a1f08cf3",
         "locator": {
           "kind": "symbol",

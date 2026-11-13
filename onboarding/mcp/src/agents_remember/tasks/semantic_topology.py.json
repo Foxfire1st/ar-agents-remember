@@ -1,39 +1,71 @@
 {
   "path": "mcp/src/agents_remember/tasks/semantic_topology.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "72bfe507621276d94a76c571957fbf994573862e",
+        "content": "sha256:70dc6a646b87660108cb31cb5c1e6174a1304233ecec491846dff67d92545654",
+        "locator": {
+          "kind": "symbol",
+          "name": "SemanticTopologyV2"
+        }
+      },
+      "id": "RLZ-CYWB44",
+      "invariant": "INV-8V44VE",
+      "origin": {
+        "handoffEntry": "RSM-R01-A8",
+        "leaf": "261112-RSM-L1"
+      },
+      "rationale": "The projection model admits a null sprint, which is the standalone-master case the coherence route reads.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "72bfe507621276d94a76c571957fbf994573862e",
+        "content": "sha256:d392859eadf0060fb985121c5d81c443a62cccc3cc03761a7d865129b254e146",
+        "locator": {
+          "kind": "symbol",
+          "name": "semantic_topology_projection_with_work"
+        }
+      },
+      "id": "RLZ-TKDX94",
+      "invariant": "INV-8V44VE",
+      "origin": {
+        "handoffEntry": "RSM-R01-A8",
+        "leaf": "261112-RSM-L1"
+      },
+      "rationale": "The sprint-less case is decided once here; a null sprint leaves every sprint case's canonical value unchanged.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "72bfe507621276d94a76c571957fbf994573862e",
+        "content": "sha256:f0b2baf28db38decb88d4763fa6ae2039656ed7182fe4575672c8653fb1e44f4",
+        "locator": {
+          "kind": "symbol",
+          "name": "_validate_document_taxonomy"
+        }
+      },
+      "id": "RLZ-YAPY3A",
+      "invariant": "INV-8V44VE",
+      "origin": {
+        "handoffEntry": "RSM-R01-A8",
+        "leaf": "261112-RSM-L1"
+      },
+      "rationale": "The taxonomy check validates the sprint only when one exists, so a standalone master is not refused for a missing document.",
+      "role": "unclassified"
+    }
+  ],
   "references": {
     "1": {
-      "note": "Strict frozen models define the complete v2 identity and its two placement modes.",
+      "note": "Strict frozen models define the complete v2 identity and its two placement modes.\n\nAnchor: `SemanticTopologyV2`",
       "targets": [
         {
           "anchor": {
-            "blob": "21574a76ae9c0d26491e4973a94966cbc4636fce",
-            "content": "sha256:af01c4a96d73609242b5697982d2944cc1c492163b9fb22aafb55c4e453e85cd",
+            "blob": "72bfe507621276d94a76c571957fbf994573862e",
+            "content": "sha256:db7bdb05a8691f2749330345202d37aee209a71fea02a5aac4ddd2dd4e9b0337",
             "locator": {
-              "kind": "symbol",
-              "name": "SemanticTopologyV2"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "21574a76ae9c0d26491e4973a94966cbc4636fce",
-            "content": "sha256:c39ca12481588c36ec830acda12832dcf0830254a8fa3469e778c0e5f0647b7c",
-            "locator": {
-              "kind": "symbol",
-              "name": "SemanticTopologyDagPlacement"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "21574a76ae9c0d26491e4973a94966cbc4636fce",
-            "content": "sha256:cfa32ad848bbe854392a0fca0eaa1b5653e4194527df50d0622010d07b26d7d4",
-            "locator": {
-              "kind": "symbol",
-              "name": "SemanticTopologyAtomicPlacement"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -41,26 +73,14 @@
       ]
     },
     "2": {
-      "note": "Projection and fingerprint share one canonical structural value and exact work report.",
+      "note": "Projection and fingerprint share one canonical structural value and exact work report.\n\nAnchor: `semantic_topology_projection_with_work`",
       "targets": [
         {
           "anchor": {
-            "blob": "21574a76ae9c0d26491e4973a94966cbc4636fce",
-            "content": "sha256:5e1ace78eb4c81f55b17211498b67908c04c1e748f513854d151b87f61e3f116",
+            "blob": "72bfe507621276d94a76c571957fbf994573862e",
+            "content": "sha256:db7bdb05a8691f2749330345202d37aee209a71fea02a5aac4ddd2dd4e9b0337",
             "locator": {
-              "kind": "symbol",
-              "name": "semantic_topology_projection_with_work"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "21574a76ae9c0d26491e4973a94966cbc4636fce",
-            "content": "sha256:3671f77172346aaf328cc83e71ae1d2b8947b892cdf1049deec30b6ac1147d31",
-            "locator": {
-              "kind": "symbol",
-              "name": "semantic_topology_fingerprint_with_work"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -72,7 +92,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "21574a76ae9c0d26491e4973a94966cbc4636fce",
+            "blob": "72bfe507621276d94a76c571957fbf994573862e",
             "content": "sha256:1245e1dc04d880cd8273ffb6e9446415bbe2d9e862d4209d2868bf754b88eb5a",
             "locator": {
               "kind": "symbol",
@@ -83,7 +103,7 @@
         },
         {
           "anchor": {
-            "blob": "21574a76ae9c0d26491e4973a94966cbc4636fce",
+            "blob": "72bfe507621276d94a76c571957fbf994573862e",
             "content": "sha256:d5ea525ebb03c2339ad32fd8c685a098bffc4f7dfb84c835c75d150b073f346a",
             "locator": {
               "kind": "symbol",
@@ -94,7 +114,7 @@
         },
         {
           "anchor": {
-            "blob": "21574a76ae9c0d26491e4973a94966cbc4636fce",
+            "blob": "72bfe507621276d94a76c571957fbf994573862e",
             "content": "sha256:baf960cca5839e1246e75b66151b6d3aec780fc6f4d934b14e76d64f82d3213c",
             "locator": {
               "kind": "symbol",

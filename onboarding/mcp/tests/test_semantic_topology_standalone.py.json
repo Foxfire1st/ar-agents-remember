@@ -1,0 +1,56 @@
+{
+  "path": "mcp/tests/test_semantic_topology_standalone.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "6ab8cb683e44fb6ec215891193e43c4d9b8d97cd",
+        "content": "sha256:c7c3ba5dff81915c8903e54d5e1d34ae87bbcdc08eb0f1fa9e12d616f1283e49",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_standalone_master_fingerprint_is_stable_and_differs_from_its_sprint_case"
+        }
+      },
+      "facet": "The standalone fingerprint is stable and differs from the sprint case.",
+      "id": "PRF-VPJNN9",
+      "invariant": "INV-8V44VE",
+      "origin": {
+        "handoffEntry": "RSM-R01-A8",
+        "leaf": "261112-RSM-L1"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A standalone master's fingerprint is stable across runs and differs from the same documents' sprint case.\n\nAnchor: `test_a_standalone_master_fingerprint_is_stable_and_differs_from_its_sprint_case`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1565558ccc756d7b2efd3e656ac93138d1e8f528",
+            "content": "sha256:3aa672ea952a0dd69550f4cd1e0fa9d1edc8a80b5e9055cf10f04a4b65e4158f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The sprint case's fingerprint is pinned unchanged with and without an authored graph.\n\nAnchor: `test_the_sprint_cases_fingerprint_is_unchanged`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1565558ccc756d7b2efd3e656ac93138d1e8f528",
+            "content": "sha256:3aa672ea952a0dd69550f4cd1e0fa9d1edc8a80b5e9055cf10f04a4b65e4158f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

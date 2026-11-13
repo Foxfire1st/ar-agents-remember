@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
-    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
-    "role": "worker",
-    "statement": "This task brought the page in line with the product: its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate, the false ones were corrected, and the page was read whole; 77 rows of the inventory of changes are told here.",
-    "task": "260928-MIK-L97",
+    "codeTree": "8b5044cb35d74cbcfe60b1c71c6b40add295550a",
+    "commit": "bb2d0b3725aa01485e820692b17e130fb65b1669",
+    "role": "curator",
+    "statement": "The tool reference names the master own task when no sprint commands it, the Investigator master-alone selection, and the refusal of a sprint for such a master; it holds.",
+    "task": "261112-RSM-L1",
     "uncommitted": true
   },
   "document": "docs/reference/mcp-tools.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L204",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -30,7 +30,6 @@
         },
         "path": "mcp/src/agents_remember/application/memory_scope.py"
       },
-      "heading": "Leaf memory scope",
       "kind": "anchor"
     },
     {
@@ -134,7 +133,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
     },
     {
-      "blob": "caa8c6e923b4efaeb1c61856c613d10771f7a6c3",
+      "blob": "0ecf03c089d77b1c2a2ffbbad28a4f481ea9d94f",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/role_launch_context.py"
     },

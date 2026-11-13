@@ -64,8 +64,10 @@ Named-section deletion and relocation controls cover construction-cost escalatio
 ## Evidence
 
 - Instruction cases assert Investigator scope/report/mutation boundaries, current coordination, positive leaf-seat obligations, the task-tool-server vocabulary and compiled return/await channels. Their assertions distinguish a stored file from an explicit handover and establish no fresh test run. [1]
-
 - The Investigator wording case checks scoped concern intake, report and remediation authority, and the canonical investigator role; no system-specialist role file, manifest entry or router mention remains. [2]
+
+
+
 
 - Compiled parented handovers distinguish fixed starter identity from ordinary return role/task addresses; leaf returns name the current Manager. [3]
 

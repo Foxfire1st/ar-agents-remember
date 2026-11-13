@@ -14,7 +14,7 @@ prepare_role_handover accepts optional step_up reason, selects defaults from cur
 
 _role_defaults delegates settings projection to role_launch_defaults while retaining the host role read. _compile_handover delegates to compose_launch_instructions, freezing admitted D301/R125 detail bytes beside the report and binding concrete pointers before existing user append/<overwrite> semantics.
 
-Canonical task JSON/rendered copy metadata, missingCopies disclosure, report/scratch custody, exact parent and leafSeats peer routing, taskless scope and grant-aware revival remain separate existing contracts. A source-bound handover is not code/memory acceptance or live-host proof.
+Canonical task JSON/rendered copy metadata, missingCopies disclosure, report/scratch custody, exact parent and leafSeats peer routing, taskless scope and grant-aware revival remain separate existing contracts. A leaf of a master that no sprint commands gets leafSeats peer arguments and a manager return address without a `sprint_document_ref`: the master and leaf are the whole selection then, and a `sprint_document_ref` appears only when the selection has a sprint. A source-bound handover is not code/memory acceptance or live-host proof.
 
 ## Current operative account — MIK-R112
 
@@ -91,7 +91,7 @@ The launch preparer consumes resolved task identity and canonical files without 
 
 ## 260928-MIK-L99 — a leaf's agents hand over to each other
 
-`_compile_handover` appends exactly one value for a leaf Worker, Reviewer or Curator: `leafSeats` with the three seat roles and, for each other seat, the exact `role_message` arguments containing the canonical sprint, master and leaf references and no sibling agent id. Every other role's handover keeps its values byte for byte under identical compiled inputs; the declarative addition is the leaf's only production runtime change, while the derived capsule and skill-revision digests change with the source revision, so the preservation claim is same-input, not cross-revision.
+`_compile_handover` appends exactly one value for a leaf Worker, Reviewer or Curator: `leafSeats` with the three seat roles and, for each other seat, the exact `role_message` arguments containing the canonical master and leaf references, with the sprint reference only when the selection has one, and no sibling agent id. Every other role's handover keeps its values byte for byte under identical compiled inputs; the declarative addition is the leaf's only production runtime change, while the derived capsule and skill-revision digests change with the source revision, so the preservation claim is same-input, not cross-revision.
 
 ## 260928-MIK-R93 — parent-presence handover values
 
@@ -175,7 +175,10 @@ Source: mcp/src/agents_remember/cli/role_launch_preparation.py:1-963
 
 - Defaults extraction preserves host-role lookup. [12]
 
+- The preparer carries bound canonical/read-copy metadata, composes source-bound instructions and preserves parent/peer routing. Source inspection establishes these implementation boundaries, not live-host execution or acceptance. [10]
 - Detail-bound composition enters the existing handover and message binding. [13]
+
+
 
 - Concrete frozen detail pointers retain existing user-note composition. [14]
 
@@ -195,5 +198,3 @@ Source: mcp/src/agents_remember/cli/role_launch_preparation.py:1-963
 - An Investigator's assignment comes from `investigator_assignment` with the actual starting parent: a parented start takes its concern from the parent's first message, a parentless start asks the developer. [8]
 
 - Leaf revival compares current grant-sensitive canonical task/contract scope before bridge use. [9]
-
-- The preparer carries bound canonical/read-copy metadata, composes source-bound instructions and preserves parent/peer routing. Source inspection establishes these implementation boundaries, not live-host execution or acceptance. [10]

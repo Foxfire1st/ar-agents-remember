@@ -95,6 +95,8 @@ This packaged copy derives from the canonical roles/architect.md. The Architect 
 
 - The Architect starts an Investigator with role_start without a task reference, on a sprint, or on a sprint and master, and sends the scoped concern as its first role_message to the returned agent ID. [1]
 
+
+
 - The Architect's own checks, measurements, tests, builds and sandbox trials inform rulings, requirements and the developer but never take the place of a leaf's build, review, curation or gate; it changes no leaf's code or memory, grades nothing it wrote and works on a copy. [4]
 
 - The Architect may grant a beyond-settings round when the sealed list has shrunk and the open repair is concrete; a repeated unchanged repair or a requirement-meaning dispute gets a ruling and no round. After the handover it releases execution coordination to the Orchestrator or Manager. [5]

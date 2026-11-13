@@ -1,0 +1,26 @@
+{
+  "path": "docs/dashboard.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ed698e49274003e0090b129075814165af4cdf9c",
+        "content": "sha256:564f24fc08af9e74e81c8add3c7f5e77f051b9db0d41080531a01b5620bd247d",
+        "locator": {
+          "end": 124,
+          "kind": "line_range",
+          "start": 122
+        }
+      },
+      "id": "RLZ-9NWQP5",
+      "invariant": "INV-Q1GFQS",
+      "origin": {
+        "handoffEntry": "RSM-R01-A10",
+        "leaf": "261112-RSM-L1"
+      },
+      "rationale": "The Sprint and Master control rows no longer require a sprint for a standalone master.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

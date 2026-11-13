@@ -73,6 +73,8 @@ helpers.
 
 - Intent identity and topology fingerprint come from R02/R01 owners. [3]
 
+
+
 - Candidate observation owns exact code/memory identity and typed refusal; deleted tests provide no current execution proof. [4]
 
 

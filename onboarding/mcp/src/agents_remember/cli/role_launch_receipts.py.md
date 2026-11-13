@@ -81,6 +81,8 @@ Selected-task Investigator receipts are per request rather than singleton select
 - Changes task/capsule/prompt inputs and verifies repeat returns or replays saved receipt without new preparation. [7]
 
 - Through leaf/taskless routes checks restoration/refusal, exact advice and unchanged receipt/foreign link target. [9]
+
+
 Past-epoch account (retained wording): - Pins delivered worker doctrine: freeze the candidate and hand it directly to the leaf's Reviewer; the Manager receives no routine report notice. A dashboard-started Worker has no parent, and a finished turn is not AR acceptance.
 
 Custody: the preceding sentence is detached from live reference 12; its original target blob(s) were `74a051a27a76bfa2d21ab404b581911d5e391701`. The current clause below is separately bound.

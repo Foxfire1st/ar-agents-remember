@@ -188,7 +188,11 @@ later reader does not have to reconstruct it from a report.
 
 - Production complexity scoring loads Radon and refuses when its development dependency is unavailable. [7]
 - The MCP console entry point resolves through `agents_remember.mcp.__main__`. [8]
+
 - MCP server payloads report `SERVER_VERSION`, resolved by the kernel helper from installed package metadata with the source-checkout release fallback. [9]
+- The package data includes `canvas/*.md` and `canvas/*.mjs` beside the generated package-data copy, because `canvas/presenter_inputs.py` resolves the capability text module-relatively in an installed build; the capsule-text test fails on drift between the two copies. [18]
+
+
 
 
 
@@ -207,6 +211,5 @@ later reader does not have to reconstruct it from a report.
 
 - Package metadata directly bounds the interpreter line and declares its Python classifier. [17]
 
-- The package data includes `canvas/*.md` and `canvas/*.mjs` beside the generated package-data copy, because `canvas/presenter_inputs.py` resolves the capability text module-relatively in an installed build; the capsule-text test fails on drift between the two copies. [18]
 
 - Root pytest configuration selects four workers by default. The retained historical comments record an earlier four-worker runtime and the earlier population-growth boundary. [2]

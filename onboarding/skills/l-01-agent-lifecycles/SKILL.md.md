@@ -10,7 +10,7 @@ This canonical router reference describes how a native role capsule is selected 
 
 ## Logic
 
-The native launcher supports eight roles: Architect, Investigator, Orchestrator, Manager, Worker, Reviewer, Curator and Bootstrap. Missing, unsupported, inapplicable or conflicting role/operation/task bindings are reported rather than inferred. Projects is an execution location, not a repository identity. A manually selected taskless Architect asks only for missing outcome or registered repository details. An Investigator accepts a scoped concern of any kind from its actual parent's first message and asks that parent for missing concern/report scope; without a parent it uses the developer's request and own chat. Investigator may be selected at Projects, on a sprint, or on a sprint and master, never on a leaf. No synthetic repository, sprint, master, task or parent is created.
+The native launcher supports eight roles: Architect, Investigator, Orchestrator, Manager, Worker, Reviewer, Curator and Bootstrap. Missing, unsupported, inapplicable or conflicting role/operation/task bindings are reported rather than inferred. Projects is an execution location, not a repository identity. A manually selected taskless Architect asks only for missing outcome or registered repository details. An Investigator accepts a scoped concern of any kind from its actual parent's first message and asks that parent for missing concern/report scope; without a parent it uses the developer's request and own chat. Investigator may be selected at Projects, on a sprint, on a master that no sprint commands, or on a sprint and master, never on a leaf. No synthetic repository, sprint, master, task or parent is created.
 
 Paseo hosts the role agents, keeps their sessions and shows their chats. AR tools come from the launching build’s bound `agents-remember-task` server; native role agents start/reach one another with `role_start` and `role_message`, retaining actual returned identities. A reply in the same turn reaches a sender only when that sender waits on its own call; otherwise the answer goes with `role_message`. With a parent named in `host.parent` a developer question goes to that parent, and only a parentless or unreachable-parent agent asks in its own chat; dashboard-started roles need no parent. An Architect first delegates coordination to one Manager for one master, or to one Orchestrator on the sprint when two or more masters are worked on at the same time; direct coordination is the developer’s exception, who may also ask for an Orchestrator above a single master.
 
@@ -108,6 +108,8 @@ The following requirement and attempt references retain their source-epoch evide
 ## Current intake and developer-question evidence
 
 - Investigator takes a scoped concern from the actual parent's first message, or the developer without a parent; its selected scope creates no fake task identity. Developer decisions go to the actual parent when one is named. [17]
+
+
 
 ## Canonical Source Ownership
 

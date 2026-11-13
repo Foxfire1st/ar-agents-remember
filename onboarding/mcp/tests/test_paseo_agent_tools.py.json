@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "cfd95f0c56ed965a4f09d45ba05ac7b22d817eca",
+        "blob": "8a72d684bce67b530a7c70ee8df3d67280ac7cb3",
         "content": "sha256:88ecec4dd65503f1c54ee16384abb8df0c3e80d639a9ae19e9850df2f58b6448",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,24 @@
     },
     {
       "anchor": {
-        "blob": "cfd95f0c56ed965a4f09d45ba05ac7b22d817eca",
+        "blob": "8a72d684bce67b530a7c70ee8df3d67280ac7cb3",
+        "content": "sha256:ee40f1e9e6c721898c621eadc7a225c73962f4cde850991be1dfc18fceb2ef24",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolServerDefinitionTests.test_the_tool_server_reads_the_binding_it_was_started_with_and_reports_it"
+        }
+      },
+      "facet": "The tool server reads back the sprint-less binding shape and refuses an incomplete sprint-bound one.",
+      "id": "PRF-2SPPYD",
+      "invariant": "INV-HVXZ6N",
+      "origin": {
+        "handoffEntry": "RSM-R01-A3",
+        "leaf": "261112-RSM-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8a72d684bce67b530a7c70ee8df3d67280ac7cb3",
         "content": "sha256:23595632f944f972f803cac8a0b233adbedccf20fc77876268d515f439688f48",
         "locator": {
           "kind": "symbol",
@@ -37,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "cfd95f0c56ed965a4f09d45ba05ac7b22d817eca",
+        "blob": "8a72d684bce67b530a7c70ee8df3d67280ac7cb3",
         "content": "sha256:16da99a2af12298407c726759b957cf42f04291b8ad24273f5d2d7afbd2fe395",
         "locator": {
           "kind": "symbol",
@@ -54,8 +71,8 @@
     },
     {
       "anchor": {
-        "blob": "cfd95f0c56ed965a4f09d45ba05ac7b22d817eca",
-        "content": "sha256:bb5b7002484217f2322d40f302be3f8202c07d44941cf97df9e5e8e859815209",
+        "blob": "8a72d684bce67b530a7c70ee8df3d67280ac7cb3",
+        "content": "sha256:ee40f1e9e6c721898c621eadc7a225c73962f4cde850991be1dfc18fceb2ef24",
         "locator": {
           "kind": "symbol",
           "name": "ToolServerDefinitionTests.test_the_tool_server_reads_the_binding_it_was_started_with_and_reports_it"
@@ -71,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "cfd95f0c56ed965a4f09d45ba05ac7b22d817eca",
+        "blob": "8a72d684bce67b530a7c70ee8df3d67280ac7cb3",
         "content": "sha256:7f9fa0052b9d97cf4b34df0a748c3f79106c43f384a04fceded525fdaab0156e",
         "locator": {
           "kind": "symbol",
@@ -88,7 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "cfd95f0c56ed965a4f09d45ba05ac7b22d817eca",
+        "blob": "8a72d684bce67b530a7c70ee8df3d67280ac7cb3",
         "content": "sha256:37dda973b7b4e6c5b0ddbc93c4e6a2c266e023a21ce47129ce72265d1703027c",
         "locator": {
           "kind": "symbol",
@@ -105,8 +122,8 @@
     },
     {
       "anchor": {
-        "blob": "cfd95f0c56ed965a4f09d45ba05ac7b22d817eca",
-        "content": "sha256:bb5b7002484217f2322d40f302be3f8202c07d44941cf97df9e5e8e859815209",
+        "blob": "8a72d684bce67b530a7c70ee8df3d67280ac7cb3",
+        "content": "sha256:ee40f1e9e6c721898c621eadc7a225c73962f4cde850991be1dfc18fceb2ef24",
         "locator": {
           "kind": "symbol",
           "name": "ToolServerDefinitionTests.test_the_tool_server_reads_the_binding_it_was_started_with_and_reports_it"
@@ -122,7 +139,7 @@
     },
     {
       "anchor": {
-        "blob": "cfd95f0c56ed965a4f09d45ba05ac7b22d817eca",
+        "blob": "8a72d684bce67b530a7c70ee8df3d67280ac7cb3",
         "content": "sha256:3be784b682d17a0d01ae3b40071d847264f7777c4d62ec48665cca2020d9af22",
         "locator": {
           "kind": "symbol",
@@ -139,7 +156,7 @@
     },
     {
       "anchor": {
-        "blob": "cfd95f0c56ed965a4f09d45ba05ac7b22d817eca",
+        "blob": "8a72d684bce67b530a7c70ee8df3d67280ac7cb3",
         "content": "sha256:eae3214eedf76e8bb23d7ccbb37fa1fef206208bedc2fcc98334aaefde57ae24",
         "locator": {
           "kind": "symbol",
@@ -156,7 +173,7 @@
     },
     {
       "anchor": {
-        "blob": "cfd95f0c56ed965a4f09d45ba05ac7b22d817eca",
+        "blob": "8a72d684bce67b530a7c70ee8df3d67280ac7cb3",
         "content": "sha256:4d7130535ff980d18da82c4067e784dec069f6ad80dd10cd17018f06ea87c2c5",
         "locator": {
           "kind": "symbol",
@@ -173,7 +190,7 @@
     },
     {
       "anchor": {
-        "blob": "cfd95f0c56ed965a4f09d45ba05ac7b22d817eca",
+        "blob": "8a72d684bce67b530a7c70ee8df3d67280ac7cb3",
         "content": "sha256:2c1fa5fc562c7174dcaa4c45db2c0e143648ee7d6dbe903ec304e5a00fbd5ec0",
         "locator": {
           "kind": "symbol",
@@ -196,8 +213,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cfd95f0c56ed965a4f09d45ba05ac7b22d817eca",
-            "content": "sha256:158b5878d2ee04232811674710852c27b9fa3839efcad02c8aad806fc5e33e32",
+            "blob": "8a72d684bce67b530a7c70ee8df3d67280ac7cb3",
+            "content": "sha256:4f35ff68d93d5a2d91dec4249dcb214f8bdfdcd2086cb038be46eed7ddbe9b5a",
             "locator": {
               "kind": "file"
             }
@@ -211,8 +228,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cfd95f0c56ed965a4f09d45ba05ac7b22d817eca",
-            "content": "sha256:158b5878d2ee04232811674710852c27b9fa3839efcad02c8aad806fc5e33e32",
+            "blob": "8a72d684bce67b530a7c70ee8df3d67280ac7cb3",
+            "content": "sha256:4f35ff68d93d5a2d91dec4249dcb214f8bdfdcd2086cb038be46eed7ddbe9b5a",
             "locator": {
               "kind": "file"
             }
@@ -226,8 +243,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cfd95f0c56ed965a4f09d45ba05ac7b22d817eca",
-            "content": "sha256:158b5878d2ee04232811674710852c27b9fa3839efcad02c8aad806fc5e33e32",
+            "blob": "8a72d684bce67b530a7c70ee8df3d67280ac7cb3",
+            "content": "sha256:4f35ff68d93d5a2d91dec4249dcb214f8bdfdcd2086cb038be46eed7ddbe9b5a",
             "locator": {
               "kind": "file"
             }

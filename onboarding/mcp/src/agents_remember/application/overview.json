@@ -6317,12 +6317,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "caa8c6e923b4efaeb1c61856c613d10771f7a6c3",
-            "content": "sha256:b390c458d2a65bbbe11f6e2937f9130a4b30dd35273e6394c991fb98ba7ee31a",
+            "blob": "0ecf03c089d77b1c2a2ffbbad28a4f481ea9d94f",
+            "content": "sha256:56683c1aa5bb913b11fee0df2370cf35ac88b588b92f7f90940331d8060ef349",
             "locator": {
-              "end": 111,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/role_launch_context.py"
           },
@@ -7073,15 +7071,14 @@
       ]
     },
     "456": {
-      "note": "**Retained historical source account — superseded by the current route account:** Investigator refuses a leaf and validates the canonical hierarchy.",
+      "note": "**Retained historical source account — superseded by the current route account:** Investigator refuses a leaf and validates the canonical hierarchy.\n\nAnchor: `resolve_role_launch_context`",
       "targets": [
         {
           "anchor": {
-            "blob": "caa8c6e923b4efaeb1c61856c613d10771f7a6c3",
-            "content": "sha256:882487e587eee14441347202eb83cf92538943de0b597836077fb57762c095d1",
+            "blob": "0ecf03c089d77b1c2a2ffbbad28a4f481ea9d94f",
+            "content": "sha256:56683c1aa5bb913b11fee0df2370cf35ac88b588b92f7f90940331d8060ef349",
             "locator": {
-              "kind": "symbol",
-              "name": "resolve_role_launch_context"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/role_launch_context.py"
           },
@@ -7094,7 +7091,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "160e313efbefa3c044cc286261c123d7a9bad3ea",
+            "blob": "f7ddf469d09ffa892e43eaf4777567df0e78dbfc",
             "content": "sha256:b2f0cb7b94e3dafa7d280e836159aeccd592b57d7d7ded1274769761662edf7d",
             "locator": {
               "kind": "symbol",
@@ -7767,7 +7764,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+            "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
             "content": "sha256:7e87864407ba990037b6b009e45c52085bdd3767d360afd4516af3be93421340",
             "locator": {
               "kind": "symbol",

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
-    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
-    "role": "worker",
-    "statement": "This task brought the page in line with the product: its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate, the false ones were corrected, and the page was read whole; 2 rows of the inventory of changes are told here.",
-    "task": "260928-MIK-L97",
+    "codeTree": "8b5044cb35d74cbcfe60b1c71c6b40add295550a",
+    "commit": "bb2d0b3725aa01485e820692b17e130fb65b1669",
+    "role": "curator",
+    "statement": "The capsule page's statements about the held mark on the launcher and message filing under the master or sprint still hold; it does not describe the launcher's Sprint field, and the new no-sprint choice leaves its claims accurate.",
+    "task": "261112-RSM-L1",
     "uncommitted": true
   },
   "document": "docs/reference/role-capsules.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
+      "blob": "9170e361d8a55ae8a86bc80960710197d49fedcd",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/SKILL.md"
     },
@@ -56,7 +56,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
     },
     {
-      "blob": "40c7ba7f8ba356ee8d7abe94a7b0c1785c0de21b",
+      "blob": "9fd26bd6eb9545691e0a4f73ae8b16fa1585a78d",
       "kind": "file",
       "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
     },
@@ -71,7 +71,7 @@
       "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
     },
     {
-      "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+      "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
     },

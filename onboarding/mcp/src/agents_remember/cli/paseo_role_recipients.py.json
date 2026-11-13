@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "55811f6d0fea6bc48121bd9e8a7666bfb4f45799",
+        "blob": "16f25d8cc69c9a34dc60a7a3013d67bd3620308d",
         "content": "sha256:b0bf53728de4411d8749e98977b4e10f4c738ce7008aaa357f16a50f9d6b6b5d",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "55811f6d0fea6bc48121bd9e8a7666bfb4f45799",
+        "blob": "16f25d8cc69c9a34dc60a7a3013d67bd3620308d",
         "content": "sha256:30415cc3de8770663243189a3306756bc53585d7818bdad9f3c9701f4a705a19",
         "locator": {
           "kind": "symbol",
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "55811f6d0fea6bc48121bd9e8a7666bfb4f45799",
-        "content": "sha256:ebb6c431f90a05ffa67359a64ffdd97c8963216bb355f2a4a77eef6f9f3faf10",
+        "blob": "16f25d8cc69c9a34dc60a7a3013d67bd3620308d",
+        "content": "sha256:9cd22d3c00022098be833639a251d8330d80fb5056bb39cbc80a94ac8356974e",
         "locator": {
           "kind": "file"
         }
@@ -56,7 +56,7 @@
     },
     {
       "anchor": {
-        "blob": "55811f6d0fea6bc48121bd9e8a7666bfb4f45799",
+        "blob": "16f25d8cc69c9a34dc60a7a3013d67bd3620308d",
         "content": "sha256:ebc1a4ad94a8accb33e831864452ec335ea91e81251b9bee90dff501552948a5",
         "locator": {
           "kind": "symbol",
@@ -74,7 +74,25 @@
     },
     {
       "anchor": {
-        "blob": "55811f6d0fea6bc48121bd9e8a7666bfb4f45799",
+        "blob": "16f25d8cc69c9a34dc60a7a3013d67bd3620308d",
+        "content": "sha256:be6da47b0d113d53282861f60b1f4ffc4f6cb342652c347a3744ff10933c8461",
+        "locator": {
+          "kind": "symbol",
+          "name": "_selection_receipts"
+        }
+      },
+      "id": "RLZ-QP6QZW",
+      "invariant": "INV-8PGMJB",
+      "origin": {
+        "handoffEntry": "RSM-R01-A6",
+        "leaf": "261112-RSM-L1"
+      },
+      "rationale": "Recipient lookup asks the document predicate before reading investigator receipts, so a master-only Investigator is reachable by message.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "16f25d8cc69c9a34dc60a7a3013d67bd3620308d",
         "content": "sha256:263fc31278fc9bea43e7e85be88f6e272b56f0b509dcbebb5ed747fc7c1df019",
         "locator": {
           "kind": "symbol",
@@ -97,8 +115,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "55811f6d0fea6bc48121bd9e8a7666bfb4f45799",
-            "content": "sha256:ebb6c431f90a05ffa67359a64ffdd97c8963216bb355f2a4a77eef6f9f3faf10",
+            "blob": "16f25d8cc69c9a34dc60a7a3013d67bd3620308d",
+            "content": "sha256:9cd22d3c00022098be833639a251d8330d80fb5056bb39cbc80a94ac8356974e",
             "locator": {
               "kind": "file"
             }
