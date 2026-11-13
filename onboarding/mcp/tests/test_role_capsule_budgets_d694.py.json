@@ -1,5 +1,24 @@
 {
   "path": "mcp/tests/test_role_capsule_budgets_d694.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "ff5a9b92d660ba07998c6a2cdc7de2fb773ff57e",
+        "content": "sha256:71d5595ca0891f99cb6e0083d9c4e699f1a05e4791dcae2b40ea98c40795ee78",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_d695_binds_the_actual_current_population"
+        }
+      },
+      "facet": "The current population and record identity are bound.",
+      "id": "PRF-GFQEM0",
+      "invariant": "INV-4HZG3V",
+      "origin": {
+        "handoffEntry": "RSM-R01-A9",
+        "leaf": "261112-RSM-L1"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -55,7 +74,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c8318c7529a92a28e65eb4163a582e66d3bb3d62",
+            "blob": "1e978ee04dff9734b4dff64133d62261ae76e6b2",
             "content": "sha256:8c2becfadaf1ba12345a93ed610585038b103dbd7f59b6d85aabde9d687a7b9c",
             "locator": {
               "kind": "symbol",

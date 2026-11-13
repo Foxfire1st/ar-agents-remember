@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The case compiles a standalone-master leaf return address with no sprint reference while keeping the master and leaf references."
+  },
+  "applicability": "A compiled handover for a leaf role.",
+  "conditions": [
+    "The selection names a master; a sprint reference appears only when the selection has one."
+  ],
+  "exclusions": [
+    "A non-leaf role handover, whose references are unchanged."
+  ],
+  "id": "INV-3XH6Q0",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_role_launch_routes.py::StandaloneMasterSelectionTests::test_a_leaf_return_address_names_the_standalone_master_alone"
+      ],
+      "path": "261112-RSM-L1-curator-knowledge-handoff.json"
+    },
+    "handoffEntry": "RSM-R01-A7",
+    "leaf": "261112-RSM-L1",
+    "task": "261112-RSM"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A compiled handover names a sprint reference only when the selection has a sprint.",
+  "status": "proposed",
+  "supersedes": []
+}

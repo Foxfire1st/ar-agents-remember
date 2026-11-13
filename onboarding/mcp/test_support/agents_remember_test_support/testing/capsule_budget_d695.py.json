@@ -1,13 +1,32 @@
 {
   "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "1e978ee04dff9734b4dff64133d62261ae76e6b2",
+        "content": "sha256:9756adc1df8cbbc34fc8bd23b89ef490a9e42d171534ae4538b5f4824fed8e1f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_RECORD_FINGERPRINT"
+        }
+      },
+      "id": "RLZ-NZH4BP",
+      "invariant": "INV-4HZG3V",
+      "origin": {
+        "handoffEntry": "RSM-R01-A9",
+        "leaf": "261112-RSM-L1"
+      },
+      "rationale": "The pinned record fingerprint, renewed on the new bytes.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "The linked ordinary template population is fixed.",
       "targets": [
         {
           "anchor": {
-            "blob": "c8318c7529a92a28e65eb4163a582e66d3bb3d62",
+            "blob": "1e978ee04dff9734b4dff64133d62261ae76e6b2",
             "content": "sha256:6cebb71cd3065652505fbce30e4669edcd164d26802a41c439184820d1aff51b",
             "locator": {
               "kind": "symbol",
@@ -23,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c8318c7529a92a28e65eb4163a582e66d3bb3d62",
+            "blob": "1e978ee04dff9734b4dff64133d62261ae76e6b2",
             "content": "sha256:29180fb0c77d56afe0f14bada0fec6a704795999ef8c7e83abab320d65792184",
             "locator": {
               "kind": "symbol",
@@ -39,7 +58,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c8318c7529a92a28e65eb4163a582e66d3bb3d62",
+            "blob": "1e978ee04dff9734b4dff64133d62261ae76e6b2",
             "content": "sha256:c5db175a68c58fd0264dc35bea94d6a1bcf9ee7d37c4ad78247a36d6f565009a",
             "locator": {
               "kind": "symbol",
@@ -55,7 +74,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c8318c7529a92a28e65eb4163a582e66d3bb3d62",
+            "blob": "1e978ee04dff9734b4dff64133d62261ae76e6b2",
             "content": "sha256:8c2becfadaf1ba12345a93ed610585038b103dbd7f59b6d85aabde9d687a7b9c",
             "locator": {
               "kind": "symbol",

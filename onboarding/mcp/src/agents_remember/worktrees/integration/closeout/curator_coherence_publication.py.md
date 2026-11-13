@@ -48,7 +48,7 @@ of exactly its inputs cit:([`_record`], mcp/src/agents_remember/worktrees/integr
 
 ### Conventions
 
-Only the exact leaf curator or owning sprint architect may publish. Content-addressed generations
+Only the exact leaf curator, the owning sprint architect, or — for a task of a master that no sprint commands — a caller at that master may publish. Content-addressed generations
 are immutable; a byte collision is a developer-decision failure rather than overwrite permission.
 Dependency declarations are built with the shared evidence-dependency encoding, exactly as the
 currentness validator re-derives them.
@@ -200,7 +200,8 @@ The resolved caller is what the record and the assessments carry: `_publish` pas
 `f"{caller.role}@{caller.task_document_ref.key}"` built from the **resolved** ref (`:452`) rather than
 the caller's spelling. A successful bare-name publication therefore carries the canonical identity in
 the record and in an assessment's author alike, and `publish` still admits exactly the leaf curator or
-the owning sprint architect.
+the owning sprint architect, or for a standalone master a caller at that master; the shipped refusal
+sentence keeps its sprint wording.
 
 ## KS-R23@v1 The Bound Attestation Survives The Enclosure It Is Bound In
 

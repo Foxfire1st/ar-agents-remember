@@ -624,12 +624,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
-            "content": "sha256:4b8246ace2aa560f9236e94a8e46946592b210116ce1063cee54307cd2bc02ba",
+            "blob": "9170e361d8a55ae8a86bc80960710197d49fedcd",
+            "content": "sha256:702b67efa7c5f61f541dc44373b76a74b320d1ffb4a8b251354bb58625a494eb",
             "locator": {
-              "end": 16,
-              "kind": "line_range",
-              "start": 8
+              "kind": "file"
             },
             "path": "skills/l-01-agent-lifecycles/SKILL.md"
           },
@@ -660,7 +658,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "blob": "926e006da6810baf314464553204030191db3ad7",
             "content": "sha256:d0b821bea307e3d4f014b58185412fad3dc935d0e8d89b85ed9b6b37af4515c1",
             "locator": {
               "end": 52,
@@ -785,12 +783,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
-            "content": "sha256:b28b0cf655211e61848a596ca8753ef769e7f6c510b76a5fa042f8a4f492a975",
+            "blob": "9170e361d8a55ae8a86bc80960710197d49fedcd",
+            "content": "sha256:702b67efa7c5f61f541dc44373b76a74b320d1ffb4a8b251354bb58625a494eb",
             "locator": {
-              "end": 35,
-              "kind": "line_range",
-              "start": 12
+              "kind": "file"
             },
             "path": "skills/l-01-agent-lifecycles/SKILL.md"
           },
@@ -875,12 +871,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "23bfca4e88babb87f154a00a7d88d117d67c4614",
-            "content": "sha256:4741fb489e8d66cd1966d0d22011f7d9f26f3e2f68c8337b65461b61b9bf5fc6",
+            "blob": "a8c098e9bfe5ff05bc1568cabde93d167e9ad35c",
+            "content": "sha256:a9568fd887bbc7b34443e94f060623a43689a42abbde634c18c7157f8cabea9a",
             "locator": {
-              "end": 18,
-              "kind": "line_range",
-              "start": 10
+              "kind": "file"
             },
             "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
           },
@@ -911,7 +905,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
+            "blob": "9170e361d8a55ae8a86bc80960710197d49fedcd",
             "content": "sha256:51faace386d6ef11d98fda499b703d41f8bb6187ffab236fc30058351cf6f56d",
             "locator": {
               "end": 12,
@@ -1308,7 +1302,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "blob": "926e006da6810baf314464553204030191db3ad7",
             "content": "sha256:a24f755e11a82ef6d761c57256837868637f7e78a729919a467e01ed265caf03",
             "locator": {
               "end": 58,
@@ -1488,7 +1482,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "blob": "926e006da6810baf314464553204030191db3ad7",
             "content": "sha256:227a32a2b3234b17a9c2f611f070feefb2087834107eda787407c984c748306a",
             "locator": {
               "end": 44,
@@ -1630,7 +1624,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "blob": "926e006da6810baf314464553204030191db3ad7",
             "content": "sha256:72dcb66761bb366695daf82488b144be4911337d394d599a1441e4bf3add3ea9",
             "locator": {
               "end": 72,

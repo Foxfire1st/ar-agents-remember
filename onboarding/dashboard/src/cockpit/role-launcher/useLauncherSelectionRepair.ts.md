@@ -10,7 +10,7 @@ Repair seeded document references against served task entries.
 
 ## Code Commentary
 
-Pure functions validate seeded sprint, master and task references against served TaskEntry options and reset the first invalid document tier. The remaining document effect runs when task entries arrive; valid selections remain quiescent and callbacks stay live. Catalog-based agent/model/effort override pruning was removed by R214, so unavailable choices are left intact for the launcher validation boundary.
+Pure functions validate seeded sprint, master and task references against served TaskEntry options and reset the first invalid document tier. The master tier is checked against `masterOptionsFor`, so a seeded standalone master is kept while its document is served and no sprint is chosen. The remaining document effect runs when task entries arrive; valid selections remain quiescent and callbacks stay live. Catalog-based agent/model/effort override pruning was removed by R214, so unavailable choices are left intact for the launcher validation boundary.
 
 ## Boundaries
 

@@ -239,12 +239,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cfd95f0c56ed965a4f09d45ba05ac7b22d817eca",
+            "blob": "8a72d684bce67b530a7c70ee8df3d67280ac7cb3",
             "content": "sha256:d03732758a233130c3a47ba56d498526a801430de6944fd6336095b90f602b9d",
             "locator": {
-              "end": 746,
+              "end": 759,
               "kind": "line_range",
-              "start": 717
+              "start": 730
             },
             "path": "mcp/tests/test_paseo_agent_tools.py"
           },
@@ -544,12 +544,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cfd95f0c56ed965a4f09d45ba05ac7b22d817eca",
+            "blob": "8a72d684bce67b530a7c70ee8df3d67280ac7cb3",
             "content": "sha256:496454fa627fd47b499198b97f45a3fce80d6c89834ef07eb493b741803a9c63",
             "locator": {
-              "end": 665,
+              "end": 678,
               "kind": "line_range",
-              "start": 572
+              "start": 585
             },
             "path": "mcp/tests/test_paseo_agent_tools.py"
           },

@@ -74,7 +74,7 @@
         },
         {
           "anchor": {
-            "blob": "b5d120de09128b72ce518321cc008426a1384f97",
+            "blob": "d7ad5c983788aa9d12a9cde613f56cfc8d0c0ca2",
             "content": "sha256:fcfae41502276adb71063ef1c9db97aaa78fe0649f7f7e9186cb665035d3a4a1",
             "locator": {
               "end": 135,
@@ -310,7 +310,7 @@
         },
         {
           "anchor": {
-            "blob": "a61bb8710773ccee56c8016d87b57de1d750388c",
+            "blob": "cef570950ae728a43c03bd0c262b3c5b46749ec2",
             "content": "sha256:7e096998b9aa6648eb1863bb59a9729779e15d19c63b1f8fb70db7ee4e18686f",
             "locator": {
               "end": 346,
@@ -323,7 +323,7 @@
         },
         {
           "anchor": {
-            "blob": "a61bb8710773ccee56c8016d87b57de1d750388c",
+            "blob": "cef570950ae728a43c03bd0c262b3c5b46749ec2",
             "content": "sha256:07570f44cdca5c621a00386f4add3a1f40941941e40d47002b103931e5d17420",
             "locator": {
               "end": 504,

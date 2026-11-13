@@ -37,29 +37,16 @@
       ]
     },
     "3": {
-      "note": "Intent identity and topology fingerprint come from R02/R01 owners.\n\nAnchor: `task_intent_identity`, `candidate_task_topology_fingerprint`",
+      "note": "Intent identity and topology fingerprint come from R02/R01 owners.\n\nAnchor: `task_intent_identity`",
       "targets": [
         {
           "anchor": {
             "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
-            "content": "sha256:b479503be445e8b1660ea875d81d5a69432d8c51acd8192bcf92e97b87a3e9e0",
+            "content": "sha256:9dd05c561299097e2391331336cbf06a3036cc935f4a44f59b73bcb3897ed15f",
             "locator": {
-              "kind": "symbol",
-              "name": "task_intent_identity"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/tasks/task_intent.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b5d120de09128b72ce518321cc008426a1384f97",
-            "content": "sha256:220d7b351db5d74399574ecd578e8d627b44d2df9ebfc58e2feed21a029a15e5",
-            "locator": {
-              "kind": "symbol",
-              "name": "candidate_task_topology_fingerprint"
-            },
-            "path": "mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py"
           },
           "kind": "code"
         }

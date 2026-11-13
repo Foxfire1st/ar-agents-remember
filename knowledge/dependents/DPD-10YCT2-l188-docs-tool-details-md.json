@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "883cd99bf39d98ad9a295289db97c05e2f89e73a",
-    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
+    "codeTree": "8b5044cb35d74cbcfe60b1c71c6b40add295550a",
+    "commit": "bb2d0b3725aa01485e820692b17e130fb65b1669",
     "role": "curator",
-    "statement": "The page is re-read at A005: the removed-stores entry at docs/tool-details.md:149-152 is gone, the link to install/removed_stores.py is gone from the record, and the remaining statements stand.",
-    "task": "260928-MIK-L97",
+    "statement": "The topology digest and the caller sentence now allow a null sprint and name the master when none commands it; both hold at the candidate.",
+    "task": "261112-RSM-L1",
     "uncommitted": true
   },
   "document": "docs/tool-details.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 6,
+  "revision": 7,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -64,7 +64,6 @@
         },
         "path": "mcp/src/agents_remember/memory_quality/source_files.py"
       },
-      "heading": "memory_quality_check",
       "kind": "anchor"
     },
     {
@@ -77,7 +76,6 @@
         },
         "path": "mcp/src/agents_remember/memory_quality/converted_check.py"
       },
-      "heading": "memory_quality_check",
       "kind": "anchor"
     },
     {
@@ -150,7 +148,7 @@
       "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
     },
     {
-      "blob": "8e48e38066874b65d5c7dec91535af65a658fbe4",
+      "blob": "164232e680624f745b170382de28421b099658c7",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
     },

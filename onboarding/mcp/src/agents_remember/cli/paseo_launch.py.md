@@ -69,7 +69,10 @@ is archived and refused when the response returns. Ordinary launches without a m
 
 - Checks interpreter, -P module invocation, source, selected settings and single canonical server definition. [6]
 - Starts generated stdio server and checks serving build package root and binding from selected source. [7]
+
 - Checks emitted binding and explicitly empty absent references and seat identities before round-trip. [8]
+
+
 
 ## MIK-R95 Preparation Outcome And Phase
 

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
-    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
-    "role": "worker",
-    "statement": "The page is new in this task; its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate and the page was read whole; 22 rows of the inventory of changes are told here.",
-    "task": "260928-MIK-L97",
+    "codeTree": "15eece2f9931c0edd4589e0e544c46db6b6e4317",
+    "commit": "bb2d0b3725aa01485e820692b17e130fb65b1669",
+    "role": "curator",
+    "statement": "The host page still describes Paseo, its version pin, the Node it downloads and its status lines; the binding shape the change widened does not appear in its statements.",
+    "task": "261112-RSM-L1",
     "uncommitted": true
   },
   "document": "docs/host.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -126,7 +126,7 @@
       "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_log.ts"
     },
     {
-      "blob": "160e313efbefa3c044cc286261c123d7a9bad3ea",
+      "blob": "f7ddf469d09ffa892e43eaf4777567df0e78dbfc",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/agent_binding.py"
     },

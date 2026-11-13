@@ -1,13 +1,32 @@
 {
   "path": "mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d7ad5c983788aa9d12a9cde613f56cfc8d0c0ca2",
+        "content": "sha256:533959af3393a39fdfff26d8480461f063f21a2d01fa2c82fcb40d4dbd84498b",
+        "locator": {
+          "kind": "symbol",
+          "name": "candidate_task_topology_fingerprint"
+        }
+      },
+      "id": "RLZ-G59DZQ",
+      "invariant": "INV-8V44VE",
+      "origin": {
+        "handoffEntry": "RSM-R01-A8",
+        "leaf": "261112-RSM-L1"
+      },
+      "rationale": "The queue fingerprint accepts a null sprint so a standalone master member projects without a sprint identity.",
+      "role": "unclassified"
+    }
+  ],
   "references": {
     "1": {
       "note": "No external domain source is required to establish this repository-owned implementation.",
       "targets": [
         {
           "anchor": {
-            "blob": "b5d120de09128b72ce518321cc008426a1384f97",
+            "blob": "d7ad5c983788aa9d12a9cde613f56cfc8d0c0ca2",
             "content": "sha256:99076b495cce766407e2ba5dfdcab03e4738f5f46b54ccb15bb012d0d5a4fa1a",
             "locator": {
               "kind": "symbol",
@@ -23,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b5d120de09128b72ce518321cc008426a1384f97",
+            "blob": "d7ad5c983788aa9d12a9cde613f56cfc8d0c0ca2",
             "content": "sha256:ed98592eab6d52f45f6a8914e9d39d6f5bcf59f6bfa287f9a6cb768b786e57b2",
             "locator": {
               "kind": "symbol",
@@ -34,7 +53,7 @@
         },
         {
           "anchor": {
-            "blob": "b5d120de09128b72ce518321cc008426a1384f97",
+            "blob": "d7ad5c983788aa9d12a9cde613f56cfc8d0c0ca2",
             "content": "sha256:d75456bc22a60530954e2cf4c28fe192adea6d7b17afc5ec8dfdc603efb86cb1",
             "locator": {
               "end": 72,
@@ -51,7 +70,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b5d120de09128b72ce518321cc008426a1384f97",
+            "blob": "d7ad5c983788aa9d12a9cde613f56cfc8d0c0ca2",
             "content": "sha256:ed98592eab6d52f45f6a8914e9d39d6f5bcf59f6bfa287f9a6cb768b786e57b2",
             "locator": {
               "kind": "symbol",
@@ -62,7 +81,7 @@
         },
         {
           "anchor": {
-            "blob": "b5d120de09128b72ce518321cc008426a1384f97",
+            "blob": "d7ad5c983788aa9d12a9cde613f56cfc8d0c0ca2",
             "content": "sha256:c0a427467b4f40d76e6c1335f8d55d6191af580dab40e4bbd0b41a86d176bf10",
             "locator": {
               "kind": "symbol",
@@ -73,7 +92,7 @@
         },
         {
           "anchor": {
-            "blob": "b5d120de09128b72ce518321cc008426a1384f97",
+            "blob": "d7ad5c983788aa9d12a9cde613f56cfc8d0c0ca2",
             "content": "sha256:afb231e3cf15238898bdb86a89ea63a0d960a8ddec30c2a1434f60858b56aca1",
             "locator": {
               "end": 72,
@@ -85,7 +104,7 @@
         },
         {
           "anchor": {
-            "blob": "b5d120de09128b72ce518321cc008426a1384f97",
+            "blob": "d7ad5c983788aa9d12a9cde613f56cfc8d0c0ca2",
             "content": "sha256:47350079ff8b3793c44cff1b88b8b41c1f72e6f3414e16b3ef2bbbe5a7eec9e4",
             "locator": {
               "end": 107,
@@ -98,26 +117,14 @@
       ]
     },
     "4": {
-      "note": "Queue adapters delegate v2 projection/fingerprinting and preserve typed domain refusals.",
+      "note": "Queue adapters delegate v2 projection/fingerprinting and preserve typed domain refusals.\n\nAnchor: `candidate_task_topology_fingerprint`",
       "targets": [
         {
           "anchor": {
-            "blob": "b5d120de09128b72ce518321cc008426a1384f97",
-            "content": "sha256:220d7b351db5d74399574ecd578e8d627b44d2df9ebfc58e2feed21a029a15e5",
+            "blob": "d7ad5c983788aa9d12a9cde613f56cfc8d0c0ca2",
+            "content": "sha256:392e3cd5556997ed7c9b8c06c27c9dfbcb0d7e5e66de959e239b8a71417dcd55",
             "locator": {
-              "kind": "symbol",
-              "name": "candidate_task_topology_fingerprint"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b5d120de09128b72ce518321cc008426a1384f97",
-            "content": "sha256:6f8f2e487b5aa80ff3eafdb9a4683d4b8500c23596ae9715b21de7c8c4ad023e",
-            "locator": {
-              "kind": "symbol",
-              "name": "semantic_topology_projection"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -129,7 +136,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b5d120de09128b72ce518321cc008426a1384f97",
+            "blob": "d7ad5c983788aa9d12a9cde613f56cfc8d0c0ca2",
             "content": "sha256:8e82f2702e46856ca38667c73cee74f06cbc3b30c65d931e2ca783a852020678",
             "locator": {
               "kind": "symbol",
@@ -140,7 +147,7 @@
         },
         {
           "anchor": {
-            "blob": "b5d120de09128b72ce518321cc008426a1384f97",
+            "blob": "d7ad5c983788aa9d12a9cde613f56cfc8d0c0ca2",
             "content": "sha256:3ca2c7373f8dda18b2b0f74601a5277faaa7cf4f34e0257f7e1bd05f440431bc",
             "locator": {
               "end": 45,
@@ -157,7 +164,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b5d120de09128b72ce518321cc008426a1384f97",
+            "blob": "d7ad5c983788aa9d12a9cde613f56cfc8d0c0ca2",
             "content": "sha256:99076b495cce766407e2ba5dfdcab03e4738f5f46b54ccb15bb012d0d5a4fa1a",
             "locator": {
               "kind": "symbol",

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3c1fc9b507b9358e632a0fbcb31c6f9c66435151",
-        "content": "sha256:a38fc109b713a348f9e3d3efd6074cbe05615e596ad2f9eeee92fb8f221d11d1",
+        "blob": "fcabfa19119ee63ac45bc39e2236bdbac49bbf6e",
+        "content": "sha256:81d01fb8f0ae7cda4e48a40903cb26bb110fee032a482d35480f06119a8a56b8",
         "locator": {
           "end": 70,
           "kind": "line_range",
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "3c1fc9b507b9358e632a0fbcb31c6f9c66435151",
+        "blob": "fcabfa19119ee63ac45bc39e2236bdbac49bbf6e",
         "content": "sha256:91ffcc405a79913305b9728bf87212deee37fdcc510518e88564bb16b5807c74",
         "locator": {
-          "end": 124,
+          "end": 134,
           "kind": "line_range",
-          "start": 96
+          "start": 106
         }
       },
       "id": "RLZ-6FBZ98",
@@ -41,12 +41,48 @@
     },
     {
       "anchor": {
-        "blob": "3c1fc9b507b9358e632a0fbcb31c6f9c66435151",
+        "blob": "fcabfa19119ee63ac45bc39e2236bdbac49bbf6e",
+        "content": "sha256:e8fdc85eb8730846401e3b7004a9860018b58b1114ca01c9a8dad95f8c019189",
+        "locator": {
+          "kind": "symbol",
+          "name": "documentBindings"
+        }
+      },
+      "id": "RLZ-HPZBZM",
+      "invariant": "INV-AJ0X9B",
+      "origin": {
+        "handoffEntry": "RSM-R01-A11",
+        "leaf": "261112-RSM-L1"
+      },
+      "rationale": "Binds a document's \"Launch role\" for a master outside every sprint and for its tasks, without a sprint reference.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "fcabfa19119ee63ac45bc39e2236bdbac49bbf6e",
+        "content": "sha256:e0c994bd9da9b72684f383bc719be7d418322845a73931e296b92797c0a21bec",
+        "locator": {
+          "kind": "symbol",
+          "name": "bindingInTree"
+        }
+      },
+      "id": "RLZ-PC1JJE",
+      "invariant": "INV-AJ0X9B",
+      "origin": {
+        "handoffEntry": "RSM-R01-A11",
+        "leaf": "261112-RSM-L1"
+      },
+      "rationale": "The refusal now names only a document whose master the tree does not hold, and no longer says a master needs a sprint.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "fcabfa19119ee63ac45bc39e2236bdbac49bbf6e",
         "content": "sha256:ab2288547637cff7c16f06c50ad98766ce6071dc8a2491bc8b9274266ed1644a",
         "locator": {
-          "end": 94,
+          "end": 104,
           "kind": "line_range",
-          "start": 89
+          "start": 99
         }
       },
       "id": "RLZ-S0YF0Z",
@@ -60,12 +96,12 @@
     },
     {
       "anchor": {
-        "blob": "3c1fc9b507b9358e632a0fbcb31c6f9c66435151",
+        "blob": "fcabfa19119ee63ac45bc39e2236bdbac49bbf6e",
         "content": "sha256:91ffcc405a79913305b9728bf87212deee37fdcc510518e88564bb16b5807c74",
         "locator": {
-          "end": 124,
+          "end": 134,
           "kind": "line_range",
-          "start": 96
+          "start": 106
         }
       },
       "id": "RLZ-XM7PZS",
@@ -79,8 +115,8 @@
     },
     {
       "anchor": {
-        "blob": "3c1fc9b507b9358e632a0fbcb31c6f9c66435151",
-        "content": "sha256:a0f34fb6fbfa3fb538e89a3cf4571cacb8d2ef693fb87b11e08b9c5ddd1bb905",
+        "blob": "fcabfa19119ee63ac45bc39e2236bdbac49bbf6e",
+        "content": "sha256:c2d93b682963465105173d5eae1992bf3c7ec664b04a4d8c2ffaba44a02e31c5",
         "locator": {
           "end": 50,
           "kind": "line_range",
@@ -103,8 +139,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3c1fc9b507b9358e632a0fbcb31c6f9c66435151",
-            "content": "sha256:f55b1b96983cba0beaf581cf205c0d7939dad6ae3be5d6831bfcf7e97ccd1f7f",
+            "blob": "fcabfa19119ee63ac45bc39e2236bdbac49bbf6e",
+            "content": "sha256:f41824edab774bc6e40ed59f7943c8330ac474258b256b6f437a6d692b938eda",
             "locator": {
               "kind": "file"
             }
@@ -118,7 +154,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3c1fc9b507b9358e632a0fbcb31c6f9c66435151",
+            "blob": "fcabfa19119ee63ac45bc39e2236bdbac49bbf6e",
             "content": "sha256:736b6b5e31b96af17f379e99bd08b70658f855cdaf412d2262caca9d18d5e0d0",
             "locator": {
               "kind": "symbol",
@@ -134,12 +170,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3c1fc9b507b9358e632a0fbcb31c6f9c66435151",
-            "content": "sha256:f7f539b6ce1ec00406beb94c6fc672ebea0d794fe4781c94c531f1956d041f19",
+            "blob": "fcabfa19119ee63ac45bc39e2236bdbac49bbf6e",
+            "content": "sha256:f41824edab774bc6e40ed59f7943c8330ac474258b256b6f437a6d692b938eda",
             "locator": {
-              "end": 85,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -151,12 +185,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3c1fc9b507b9358e632a0fbcb31c6f9c66435151",
-            "content": "sha256:d65700f54336cfbf10c4105ab686160d9701e8b561b5d0a1a69439ba8498e65b",
+            "blob": "fcabfa19119ee63ac45bc39e2236bdbac49bbf6e",
+            "content": "sha256:f41824edab774bc6e40ed59f7943c8330ac474258b256b6f437a6d692b938eda",
             "locator": {
-              "end": 87,
-              "kind": "line_range",
-              "start": 74
+              "kind": "file"
             }
           },
           "kind": "code"

@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "157040fb47da3ae3e5beeb74c9d6eecf89fd9036",
-            "content": "sha256:226e5816de93b4b32ee03700c72113ea17579a46bedb9c755b7bfc8c9b74e5ac",
+            "blob": "6124c93eeb42a155aa7065bfa1408d6400319c69",
+            "content": "sha256:ba5a0f0a2dca1922b369f5d79a250aebc232bdb88f33b523c090f150f51bcb2b",
             "locator": {
               "kind": "file"
             }
@@ -22,7 +22,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "157040fb47da3ae3e5beeb74c9d6eecf89fd9036",
+            "blob": "6124c93eeb42a155aa7065bfa1408d6400319c69",
             "content": "sha256:a88451883c11d0f73b0dbf50009758677ad534538385522f18aa643d126ca16a",
             "locator": {
               "kind": "symbol",
@@ -33,7 +33,7 @@
         },
         {
           "anchor": {
-            "blob": "157040fb47da3ae3e5beeb74c9d6eecf89fd9036",
+            "blob": "6124c93eeb42a155aa7065bfa1408d6400319c69",
             "content": "sha256:5cb3e9725bb5c3c04b7c7e213e7a44ddcaabd094b0b2b653108271d5d5f852f8",
             "locator": {
               "end": 90,
@@ -45,8 +45,8 @@
         },
         {
           "anchor": {
-            "blob": "157040fb47da3ae3e5beeb74c9d6eecf89fd9036",
-            "content": "sha256:226e5816de93b4b32ee03700c72113ea17579a46bedb9c755b7bfc8c9b74e5ac",
+            "blob": "6124c93eeb42a155aa7065bfa1408d6400319c69",
+            "content": "sha256:ba5a0f0a2dca1922b369f5d79a250aebc232bdb88f33b523c090f150f51bcb2b",
             "locator": {
               "kind": "file"
             }
@@ -60,12 +60,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "157040fb47da3ae3e5beeb74c9d6eecf89fd9036",
-            "content": "sha256:92bb93c162e2c61c3b4ebf988dbd24ca4e0ffbf0e3c40a88ec4245599de04a98",
+            "blob": "6124c93eeb42a155aa7065bfa1408d6400319c69",
+            "content": "sha256:ba5a0f0a2dca1922b369f5d79a250aebc232bdb88f33b523c090f150f51bcb2b",
             "locator": {
-              "end": 367,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             }
           },
           "kind": "test"

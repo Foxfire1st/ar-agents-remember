@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
-    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
-    "role": "worker",
-    "statement": "This task brought the page in line with the product: its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate, the false ones were corrected, and the page was read whole; 2 rows of the inventory of changes are told here.",
-    "task": "260928-MIK-L97",
+    "codeTree": "8b5044cb35d74cbcfe60b1c71c6b40add295550a",
+    "commit": "bb2d0b3725aa01485e820692b17e130fb65b1669",
+    "role": "curator",
+    "statement": "The getting-started 'Start your first task' steps still hold: the launcher's first row starts the Architect with the other selectors as they are, and no step requires a sprint for a start. The page does not describe the launcher's Sprint field, so the new \"No sprint\" choice leaves it true.",
+    "task": "261112-RSM-L1",
     "uncommitted": true
   },
   "document": "docs/getting-started.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "3f30237a53623bb13be7bf1d5d8dc8413ba64f6c",
+      "blob": "675b2b192c83d602eba7a7ee622f6f33098c26cd",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -116,7 +116,7 @@
       "path": "mcp/src/agents_remember/kernel/primitives/fresh_host.py"
     },
     {
-      "blob": "40c7ba7f8ba356ee8d7abe94a7b0c1785c0de21b",
+      "blob": "9fd26bd6eb9545691e0a4f73ae8b16fa1585a78d",
       "kind": "file",
       "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
     },

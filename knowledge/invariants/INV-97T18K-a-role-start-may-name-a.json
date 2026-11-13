@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The resolver admits a manager on a master with no sprint and refuses a sprint supplied for such a master; the case exercises the admission branch itself."
+  },
+  "applicability": "A parentless role start that names a master.",
+  "conditions": [
+    "The named document is a non-sprint master.",
+    "No sprint commands the master."
+  ],
+  "exclusions": [
+    "A master commanded by a sprint, which requires that exact sprint.",
+    "A start that names no document."
+  ],
+  "id": "INV-97T18K",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_role_launch_routes.py::StandaloneMasterSelectionTests::test_a_manager_resolves_a_standalone_master_with_no_sprint"
+      ],
+      "path": "261112-RSM-L1-curator-knowledge-handoff.json"
+    },
+    "handoffEntry": "RSM-R01-A1",
+    "leaf": "261112-RSM-L1",
+    "task": "261112-RSM"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A role start may name a master that no sprint commands, and then names no sprint for it.",
+  "status": "proposed",
+  "supersedes": []
+}

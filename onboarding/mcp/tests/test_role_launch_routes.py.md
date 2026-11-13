@@ -29,6 +29,9 @@ dispatch, and the identity a taskless execution keeps across a revive.
 - **Taskless identity.** `TasklessExecutionIdentityTests` keeps a taskless request address exact and a
   bound revive unchanged, replays a same request while a second intent gets its own receipt and report,
   and confines the one-time history-id migration to matching taskless ids.
+- **Standalone selections.** `StandaloneMasterSelectionTests` admits a manager, a leaf crew and an
+  Investigator on a master that no sprint commands, keeps a commanded master's exact-sprint requirement,
+  and refuses a sprint supplied for a standalone master.
 
 ### Conventions
 

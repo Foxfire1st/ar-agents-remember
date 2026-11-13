@@ -26,7 +26,7 @@ Task application authoring is distinct from observation: removed get/read_steps 
 
 Landing cut/add observations are report-only; use the measurement owner and canonical Curator/Reviewer duties for independent memory judgment.
 
-A role launch resolves canonical sprint/master/leaf selections through task topology. Actor, role, request and task references travel in the launched server binding. Native folder names and display titles do not create task authority. `task_scoped_mcp` derives a call-local configuration from the exact canonical leaf and its admitted enclosure, retaining the original repository authority while replacing its scoped workspace/code/memory roots. A reader without task context retains configured Projects roots; a task-scoped reader cannot supply alternative roots. Investigator admits Projects or the declared sprint/master chain and refuses leaf selection.
+A role launch resolves canonical sprint/master/leaf selections through task topology. An Orchestrator is sprint-bound. A Manager names a master, and its sprint when a sprint commands that master. A Worker, Reviewer or Curator names a master and a task, with the sprint when one commands the master. A master that no sprint commands is named alone, and a sprint named for it is refused. Actor, role, request and task references travel in the launched server binding. Native folder names and display titles do not create task authority. `task_scoped_mcp` derives a call-local configuration from the exact canonical leaf and its admitted enclosure, retaining the original repository authority while replacing its scoped workspace/code/memory roots. A reader without task context retains configured Projects roots; a task-scoped reader cannot supply alternative roots. Investigator admits Projects, a sprint, a master that no sprint commands, or a sprint and master, and refuses leaf selection.
 
 `read_files.py` composes the registered `read_ar_files` naming route: source existence, governing card location or no card, record-state counts and actionable IDs/kinds/states/card headings. The answer lists governing overview locations once per call and carries no source/card/overview bodies, `published_intent`, session-delivery state or continuation. An unconverted tree is named as `memoryState="unconverted"` and supplies no card; source existence is independent of whether a governing card can be named.
 Source existence is checked before card lookup, so a source-absent row cannot acquire a card or record counts through this route. `read_files_format` remains an internal format owner, not the retired body-serving response contract.
@@ -915,7 +915,11 @@ The `memory_quality` application package shares its bounded run registry between
 - A killed dashboard takes the child and its Git process with it. [404] [443]
 - The parent side: one request to the process owner, the reply's rows replayed, an error raised. [411]
 - The limits: two children, eight computations, sixty seconds, and the child's own deadline. [413]
+
 - This source owns the route’s Investigator selection or execution boundary. [414]
+- **Retained historical source account — superseded by the current route account:** Investigator refuses a leaf and validates the canonical hierarchy. [456]
+
+
 - The route association, with the existence question asked before the route question. [416]
 - Historical account — the Eve carrier this line described was removed before this leaf's base; the current application tree holds no Eve owner, and native role launch composes generic capsules. [429]
 - **The comparison's expansion seam is a delegation, so this route has one implementation of "what did these two trees change".** [433]
@@ -928,7 +932,6 @@ The `memory_quality` application package shares its bounded run registry between
 - Skipped links carry successors with a null trigger. [453]
 - **Retained historical source account — superseded by the current route account:** The port it satisfies. [261]
 - **Retained historical source account — superseded by the current route account:** The findings over one recomputed worklist. [364]
-- **Retained historical source account — superseded by the current route account:** Investigator refuses a leaf and validates the canonical hierarchy. [456]
 - **Retained historical source account — superseded by the current route account:** Exclusion records do not establish bridge-host suppression. [457]
 - **Retained historical source account — superseded by the current route account:** Write admission now records repository-bootstrap only; the database enclosure adapter retired. [458]
 - **Retained historical source account — superseded by the current route account:** Legacy onboarding returns a named legacy knowledge block; converted references use sidecars. [459]

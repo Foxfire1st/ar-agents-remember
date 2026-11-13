@@ -192,6 +192,8 @@ No meaningful cross-repo references found.
 - The lane row and the two consumer rows this module's registration produced (diff-scope and read-scope shared support). [22]
 
 
+
+
 Anchor: `_served` `register_review_routes` `read_review_source_content` [6]
 
 - Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/review.py::register_review_routes - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

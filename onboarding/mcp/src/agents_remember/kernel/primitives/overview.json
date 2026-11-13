@@ -169,7 +169,7 @@
       ]
     },
     "14": {
-      "note": "Remaining opt-in memory-cap planning, provider-degradation settings parsing, report retention/redaction and package/source version resolution keep their primitive owners; removed inbox backoff supplies no current scheduler.\n\nAnchor: whole current source; whole current source; whole current source; whole current source",
+      "note": "Remaining opt-in memory-cap planning, provider-degradation settings parsing, report retention/redaction and package/source version resolution keep their primitive owners; removed inbox backoff supplies no current scheduler.",
       "targets": [
         {
           "anchor": {
@@ -179,39 +179,6 @@
               "kind": "file"
             },
             "path": "mcp/src/agents_remember/kernel/primitives/memory_cap.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f0d06339f4b5b339d0e1d8721c1a92b05571c871",
-            "content": "sha256:f83cf50f2ead77d7527b6ce79d9a48f72185c6adc140038550016b9838771b94",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/kernel/primitives/provider_degradation_settings.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "96d40632f177b320536d7d5714aa414da5585df1",
-            "content": "sha256:c12d83e46b9e8a36f475aefdc2dda5d059ca7a1a9db7c82c418f442163967d90",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/kernel/primitives/tool_reports.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ba8f919dc79e3daf6a51228201842447d6b49654",
-            "content": "sha256:c73624355fe66664cca7a19bf59c07f02cdd6d01fb66c12ab5005967e0a3c6e5",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/kernel/primitives/version.py"
           },
           "kind": "code"
         }

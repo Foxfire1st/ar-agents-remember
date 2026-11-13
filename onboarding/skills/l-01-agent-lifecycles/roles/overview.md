@@ -74,7 +74,7 @@ Repository-foundation curation is regular task work: after setup reports memory 
 
 Bootstrap retains the read-and-report foundation responsibility and setup-surface boundaries; it does not author onboarding or knowledge. Its report preserves resolved state, actual steps, decisions, failures and absent capabilities. It never turns a working installation's later maintenance request into setup authority or rewrites/migrates an existing artifact around a refusal. Bootstrap is admitted by the eight-role launcher for its taskless setup procedure.
 
-Investigator handles one scoped concern of any kind at Projects, sprint or sprint/master scope; a leaf may be named in the concern but is never its selected start scope. The parent's first message supplies the concern, or a parentless launch uses the developer request. It distinguishes observations from root-cause hypotheses, writes a report before any explicitly authorized provider/system remediation, and respects active prohibitions on starts. Checks belong in scratch or an admitted repository sandbox. Code, memory, task, lifecycle and Git changes remain with their owners; a separate order does not grant Worker/Curator authority. The historical `system-specialist` spelling remains a canonicalized input alias. The selected Investigator capacity owner declares eight open IDs; taskless and selected-task identity must not be conflated with primary coordinator ownership.
+Investigator handles one scoped concern of any kind at Projects, sprint, standalone-master or sprint/master scope; a leaf may be named in the concern but is never its selected start scope. The parent's first message supplies the concern, or a parentless launch uses the developer request. It distinguishes observations from root-cause hypotheses, writes a report before any explicitly authorized provider/system remediation, and respects active prohibitions on starts. Checks belong in scratch or an admitted repository sandbox. Code, memory, task, lifecycle and Git changes remain with their owners; a separate order does not grant Worker/Curator authority. The historical `system-specialist` spelling remains a canonicalized input alias. The selected Investigator capacity owner declares eight open IDs; taskless and selected-task identity must not be conflated with primary coordinator ownership.
 
 The canonical roles share file-carried message evidence and replacement-transparent role/task ordinary report returns; actual-parent-ID questions and quoted-answer provenance remain separate. Bootstrap remains free-agent setup/report-only — it creates no task, starts no role and writes no onboarding or knowledge — Investigator remains bounded read/report, and leaf peer handovers remain direct. A carrier change or a host-authored silent-turn wake gives no role a new write/start/acceptance power.
 
@@ -166,6 +166,9 @@ Manager receives the clean-sync focused-test result for its own preview; no clea
 - Bound and preserved normal Curator duties. [24]
 
 - Taskless real concern and report-first remediation. [25]
+- Current native Curator launch resolves and validates the canonical master and leaf, with the sprint when one commands the master; the removed generic task-binding module supplies no current taskless Curator admission, and the foundation task the Architect opens is an ordinary leaf on that chain. [41]
+
+
 
 - The Curator keeps the admitted writer for normal records, sidecar entries and history, and never edits the derived index. A covered correct-input write refusal uses only its declared same-tool/input-class recovery, with owner notice, manual provenance and working checks. [26]
 
@@ -222,7 +225,6 @@ Manager receives the clean-sync focused-test result for its own preview; no clea
 
 - Families are authored as records items and external documents as card references; the file writer does not read the entry keys family and external_sources. [38]
 
-- Current native Curator launch resolves and validates the canonical sprint/master/leaf chain; the removed generic task-binding module supplies no current taskless Curator admission, and the foundation task the Architect opens is an ordinary leaf on that chain. [41]
 - Native enclosure preparation reads contract-scoped status and refuses unsuccessful preparation; this alone does not prove the historical whole-path lineage claim. [43]
 - Graph absence declares no dependencies and resolves the atomic shape without serializing masters.  Anchor: `resolve_scheduling_mode`, `effective_execution_nature` [44]
 

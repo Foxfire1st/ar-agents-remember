@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
         "content": "sha256:c80dfdf8d84f1ec625798c15cf8ff02716fb4a6dcba5473eb4a59d2274b388c4",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
         "content": "sha256:ec4b80ce7bcb474c798c09e757a0654f93f8379c7b643fe202a09974d16b101f",
         "locator": {
           "kind": "symbol",
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
         "content": "sha256:559899bfc9a5b3289a35d1b3ea2c61fffe54c733156ff48bcb9bf24f89b2644c",
         "locator": {
           "kind": "symbol",
@@ -58,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
-        "content": "sha256:aa421563dc3a37ca0c8ebdcef4d60e6d887996c4c6e621f358e47466ef1a9bf4",
+        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
+        "content": "sha256:f72fa6142476526701388ac9b1347e39da25751aeae2c4f450518dd750d177fa",
         "locator": {
           "kind": "symbol",
           "name": "_recorded_parent"
@@ -76,7 +76,7 @@
     },
     {
       "anchor": {
-        "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
         "content": "sha256:7d04281a96e03b141611709a8b855a47b2c90cbfd6fd649203388e94022c9ec7",
         "locator": {
           "kind": "symbol",
@@ -94,7 +94,25 @@
     },
     {
       "anchor": {
-        "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
+        "content": "sha256:f72fa6142476526701388ac9b1347e39da25751aeae2c4f450518dd750d177fa",
+        "locator": {
+          "kind": "symbol",
+          "name": "_recorded_parent"
+        }
+      },
+      "id": "RLZ-D4P8T2",
+      "invariant": "INV-4R4PF0",
+      "origin": {
+        "handoffEntry": "RSM-R01-A5",
+        "leaf": "261112-RSM-L1"
+      },
+      "rationale": "The recorded parent names the folder a leaf seat's workspace and reports live under; with no sprint it must be the master's folder, and a stale series-contract parent equal to that folder is ignored.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
         "content": "sha256:559899bfc9a5b3289a35d1b3ea2c61fffe54c733156ff48bcb9bf24f89b2644c",
         "locator": {
           "kind": "symbol",
@@ -112,7 +130,7 @@
     },
     {
       "anchor": {
-        "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
         "content": "sha256:cb430d253a9c2b63fcc122062f3be8cd0ca6fade4f825ee4dc4c97f3af2b9795",
         "locator": {
           "kind": "symbol",
@@ -130,7 +148,7 @@
     },
     {
       "anchor": {
-        "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
         "content": "sha256:b33be824ef668ce76c604903f9e01959a1f62d28f83b5409fecff7cfb8d903a1",
         "locator": {
           "kind": "symbol",
@@ -148,8 +166,8 @@
     },
     {
       "anchor": {
-        "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
-        "content": "sha256:59a0ae37fbd1ebbfcf8b0c8c8d764ad69ef34c82485e69b3222444d5b6a13ab8",
+        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
+        "content": "sha256:4fe15b2ee88843880e03ea04135e37d40fc91f3a56c707b9375fa00b9e4fdb5b",
         "locator": {
           "kind": "symbol",
           "name": "_resolve_workspace"
@@ -166,8 +184,8 @@
     },
     {
       "anchor": {
-        "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
-        "content": "sha256:7295634d8aadfadf52f471006886953c6d40e55e2e0075f74e348bf2cb15c64c",
+        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
+        "content": "sha256:6fb9a6c4a040e1c4ce4fe114e890d8df382db93758791f65d13b28ca134b1a02",
         "locator": {
           "kind": "file"
         }
@@ -183,7 +201,7 @@
     },
     {
       "anchor": {
-        "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
         "content": "sha256:559899bfc9a5b3289a35d1b3ea2c61fffe54c733156ff48bcb9bf24f89b2644c",
         "locator": {
           "kind": "symbol",
@@ -201,7 +219,7 @@
     },
     {
       "anchor": {
-        "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
         "content": "sha256:559899bfc9a5b3289a35d1b3ea2c61fffe54c733156ff48bcb9bf24f89b2644c",
         "locator": {
           "kind": "symbol",
@@ -219,7 +237,7 @@
     },
     {
       "anchor": {
-        "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
         "content": "sha256:1d362164da7db151e71462781701fa326cc8dc10a271661bb475223d16689e94",
         "locator": {
           "kind": "symbol",
@@ -237,8 +255,8 @@
     },
     {
       "anchor": {
-        "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
-        "content": "sha256:59a0ae37fbd1ebbfcf8b0c8c8d764ad69ef34c82485e69b3222444d5b6a13ab8",
+        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
+        "content": "sha256:4fe15b2ee88843880e03ea04135e37d40fc91f3a56c707b9375fa00b9e4fdb5b",
         "locator": {
           "kind": "symbol",
           "name": "_resolve_workspace"
@@ -255,8 +273,8 @@
     },
     {
       "anchor": {
-        "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
-        "content": "sha256:59a0ae37fbd1ebbfcf8b0c8c8d764ad69ef34c82485e69b3222444d5b6a13ab8",
+        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
+        "content": "sha256:4fe15b2ee88843880e03ea04135e37d40fc91f3a56c707b9375fa00b9e4fdb5b",
         "locator": {
           "kind": "symbol",
           "name": "_resolve_workspace"
@@ -273,7 +291,7 @@
     },
     {
       "anchor": {
-        "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
         "content": "sha256:a23cf9cfa008bf8a2ee317fb605d5039754507de4e00f40c91703884303d46c6",
         "locator": {
           "kind": "symbol",
@@ -291,7 +309,7 @@
     },
     {
       "anchor": {
-        "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
         "content": "sha256:26cbb4abc68e5d67daed1998e00b4db205be18fc3eefa6d190344b501db21ec8",
         "locator": {
           "kind": "symbol",
@@ -310,16 +328,14 @@
   ],
   "references": {
     "1": {
-      "note": "The recorded master contract supplies the parent hint unless it names the master itself, where the commanding sprint supplies it; an absent contract falls back to the sprint to bootstrap.  Anchor: `_recorded_parent`",
+      "note": "The recorded master contract supplies the parent hint unless it names the master itself, where the commanding sprint — or the master's own folder when no sprint commands it — supplies it; an absent contract falls back to the sprint, or to the master when it stands alone, to bootstrap.  Anchor: `_recorded_parent`\n\nAnchor: `_recorded_parent`",
       "targets": [
         {
           "anchor": {
-            "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
-            "content": "sha256:41be59045eeb838479424985ab4ea8d53378396f8249a02685963a1c7fcd7195",
+            "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
+            "content": "sha256:6fb9a6c4a040e1c4ce4fe114e890d8df382db93758791f65d13b28ca134b1a02",
             "locator": {
-              "end": 52,
-              "kind": "line_range",
-              "start": 35
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -331,7 +347,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+            "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
             "content": "sha256:1d362164da7db151e71462781701fa326cc8dc10a271661bb475223d16689e94",
             "locator": {
               "kind": "symbol",
@@ -347,7 +363,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+            "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
             "content": "sha256:a23cf9cfa008bf8a2ee317fb605d5039754507de4e00f40c91703884303d46c6",
             "locator": {
               "kind": "symbol",
@@ -363,12 +379,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+            "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
             "content": "sha256:c813bc0f9c0a255097094d1cf57b2b16a0762ea40490fbdd35f35cd3453af780",
             "locator": {
-              "end": 253,
+              "end": 256,
               "kind": "line_range",
-              "start": 202
+              "start": 205
             }
           },
           "kind": "code"
@@ -380,12 +396,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+            "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
             "content": "sha256:bd6e9e56e6b9708a3185142544b43168686ca030c6c2f7928afb2d0d95d15f81",
             "locator": {
-              "end": 385,
+              "end": 388,
               "kind": "line_range",
-              "start": 307
+              "start": 310
             }
           },
           "kind": "code"
@@ -397,7 +413,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+            "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
             "content": "sha256:c80dfdf8d84f1ec625798c15cf8ff02716fb4a6dcba5473eb4a59d2274b388c4",
             "locator": {
               "kind": "symbol",
@@ -413,12 +429,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+            "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
             "content": "sha256:89a718153e30da7fa3470ac7e81627bb7842889c24466829a48fd84bbc17f879",
             "locator": {
-              "end": 253,
+              "end": 256,
               "kind": "line_range",
-              "start": 105
+              "start": 108
             }
           },
           "kind": "code"
@@ -430,36 +446,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+            "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
             "content": "sha256:b33be824ef668ce76c604903f9e01959a1f62d28f83b5409fecff7cfb8d903a1",
             "locator": {
-              "end": 244,
+              "end": 247,
               "kind": "line_range",
-              "start": 228
+              "start": 231
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+            "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
             "content": "sha256:7d04281a96e03b141611709a8b855a47b2c90cbfd6fd649203388e94022c9ec7",
             "locator": {
-              "end": 285,
+              "end": 288,
               "kind": "line_range",
-              "start": 247
+              "start": 250
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+            "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
             "content": "sha256:559899bfc9a5b3289a35d1b3ea2c61fffe54c733156ff48bcb9bf24f89b2644c",
             "locator": {
-              "end": 453,
+              "end": 456,
               "kind": "line_range",
-              "start": 386
+              "start": 389
             }
           },
           "kind": "code"

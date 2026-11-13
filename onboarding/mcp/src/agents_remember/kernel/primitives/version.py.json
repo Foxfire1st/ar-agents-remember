@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ba8f919dc79e3daf6a51228201842447d6b49654",
-        "content": "sha256:e5d2c589169f0e48d7f5c4c033a2b33255af40069685ea1a124d29996cfec01f",
+        "blob": "f09a93db862fd8a11919d23a28baa1b968ffb5e7",
+        "content": "sha256:1a7e644a79e3469eee386e2e821678cf32a0cc7aed2ce614059390486555e8bb",
         "locator": {
           "kind": "symbol",
           "name": "_resolve_server_version"
@@ -22,15 +22,14 @@
   ],
   "references": {
     "1": {
-      "note": "Package metadata and source-checkout fallback are selected through the explicit resolver.",
+      "note": "Package metadata and source-checkout fallback are selected through the explicit resolver.\n\nAnchor: `_resolve_server_version`",
       "targets": [
         {
           "anchor": {
-            "blob": "ba8f919dc79e3daf6a51228201842447d6b49654",
-            "content": "sha256:e5d2c589169f0e48d7f5c4c033a2b33255af40069685ea1a124d29996cfec01f",
+            "blob": "f09a93db862fd8a11919d23a28baa1b968ffb5e7",
+            "content": "sha256:bf03c0454865282377d56e126f2382c83864e683cc3f44eae2c8638f35f07cfd",
             "locator": {
-              "kind": "symbol",
-              "name": "_resolve_server_version"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -38,15 +37,14 @@
       ]
     },
     "2": {
-      "note": "Installed metadata is authoritative; only missing package metadata selects the explicit source-checkout release identity.",
+      "note": "Installed metadata is authoritative; only missing package metadata selects the explicit source-checkout release identity.\n\nAnchor: `_resolve_server_version`",
       "targets": [
         {
           "anchor": {
-            "blob": "ba8f919dc79e3daf6a51228201842447d6b49654",
-            "content": "sha256:e5d2c589169f0e48d7f5c4c033a2b33255af40069685ea1a124d29996cfec01f",
+            "blob": "f09a93db862fd8a11919d23a28baa1b968ffb5e7",
+            "content": "sha256:bf03c0454865282377d56e126f2382c83864e683cc3f44eae2c8638f35f07cfd",
             "locator": {
-              "kind": "symbol",
-              "name": "_resolve_server_version"
+              "kind": "file"
             }
           },
           "kind": "code"

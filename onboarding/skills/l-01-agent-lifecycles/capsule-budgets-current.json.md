@@ -20,6 +20,8 @@ The record has schema `ar-role-capsule-budget-current/v1`. `current_limits` and 
 - The decision block binds the historical registry, the predecessor layer and the digest map by SHA-256. [1]
 - Current limits for 34 capsules, the step details and the digest. [2]
 - Current measurements, including the ordinary linked templates. [3]
+
+
 - Role, step and digest ceilings. [4]
 - The detail population must equal the manifest's declared step details, and linked templates must be ordinary manifest entries. [5]
 - The predecessor layer and the historical registry are bound by hash. [6]

@@ -1,0 +1,93 @@
+{
+  "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.standalone.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "4efa21ba70e88c36e0e93ed074d44bc252eee7ce",
+        "content": "sha256:a006ee888c6b2854e9b69762f6794dcae20683c3857487e91068934ab1edf040",
+        "locator": {
+          "kind": "symbol",
+          "name": "the launcher on a master that no sprint commands > lists a sprint-commanded master only under its own sprint, and its task under it"
+        }
+      },
+      "facet": "lists a sprint-commanded master only under its own sprint, and its task under it",
+      "id": "PRF-5EKA37",
+      "invariant": "INV-AJ0X9B",
+      "origin": {
+        "handoffEntry": "RSM-R01-A11",
+        "leaf": "261112-RSM-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4efa21ba70e88c36e0e93ed074d44bc252eee7ce",
+        "content": "sha256:a31290529bbff449c7cff63a9784d1a7f57e1f2ffecf6619554629cc2c5db4dc",
+        "locator": {
+          "kind": "symbol",
+          "name": "the launcher on a master that no sprint commands > keeps \"No sprint\" as a real choice and lists those masters without a sprint"
+        }
+      },
+      "facet": "keeps \"No sprint\" as a real choice and lists those masters without a sprint",
+      "id": "PRF-73WSA5",
+      "invariant": "INV-AJ0X9B",
+      "origin": {
+        "handoffEntry": "RSM-R01-A11",
+        "leaf": "261112-RSM-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4efa21ba70e88c36e0e93ed074d44bc252eee7ce",
+        "content": "sha256:dcbe97817a61eeeac4123dcbf07a6c07852b9e9265da548b1bb207bb4d4d359b",
+        "locator": {
+          "kind": "symbol",
+          "name": "the launcher on a master that no sprint commands > binds a standalone master and its task to the same roles and refuses only a document with no start"
+        }
+      },
+      "facet": "binds a standalone master and its task to the same roles and refuses only a document with no start",
+      "id": "PRF-CHS55Y",
+      "invariant": "INV-AJ0X9B",
+      "origin": {
+        "handoffEntry": "RSM-R01-A11",
+        "leaf": "261112-RSM-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4efa21ba70e88c36e0e93ed074d44bc252eee7ce",
+        "content": "sha256:90155ca43b616eadce730381e67d64cc696ccf1860ff0f455f778d3507bb3fab",
+        "locator": {
+          "kind": "symbol",
+          "name": "the launcher on a master that no sprint commands > still requires its sprint from the Orchestrator"
+        }
+      },
+      "facet": "still requires its sprint from the Orchestrator",
+      "id": "PRF-HSXYFR",
+      "invariant": "INV-AJ0X9B",
+      "origin": {
+        "handoffEntry": "RSM-R01-A11",
+        "leaf": "261112-RSM-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4efa21ba70e88c36e0e93ed074d44bc252eee7ce",
+        "content": "sha256:0feb8abb6210ee02fe1809fbec64b1b8970ef871e5b4fd4d5b90a715541279d4",
+        "locator": {
+          "kind": "symbol",
+          "name": "the launcher on a master that no sprint commands > gives a leaf role its task on a standalone master with no sprint in the selection"
+        }
+      },
+      "facet": "gives a leaf role its task on a standalone master with no sprint in the selection",
+      "id": "PRF-RW5HJ9",
+      "invariant": "INV-AJ0X9B",
+      "origin": {
+        "handoffEntry": "RSM-R01-A11",
+        "leaf": "261112-RSM-L1"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}
