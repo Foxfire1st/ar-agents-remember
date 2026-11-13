@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e2330f724a16f373b40e3b6a4105337473746e70",
+        "blob": "392da2790215a14029683debf1ea5da601663cd9",
         "content": "sha256:9449d1e3cfb4239ccd59d4f5f4c49d52c69ce506966d317f86386dcebb70e75a",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "e2330f724a16f373b40e3b6a4105337473746e70",
+        "blob": "392da2790215a14029683debf1ea5da601663cd9",
         "content": "sha256:8f95989bc65f408648f072a4f66cbc81db33f312e0b242e0a25c01f65a8aea13",
         "locator": {
           "kind": "symbol",
@@ -44,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e2330f724a16f373b40e3b6a4105337473746e70",
+            "blob": "392da2790215a14029683debf1ea5da601663cd9",
             "content": "sha256:b92b0a7d7140882a140a94a8abff064b5b846afea9efa12bbf95bd47ad50fff5",
             "locator": {
               "kind": "symbol",
@@ -60,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e2330f724a16f373b40e3b6a4105337473746e70",
+            "blob": "392da2790215a14029683debf1ea5da601663cd9",
             "content": "sha256:7b412bfbb4a275615c6968f0f407809b483fd60859fab49111be548bc58ca782",
             "locator": {
               "kind": "symbol",
@@ -72,11 +72,11 @@
       ]
     },
     "3": {
-      "note": "Send is refused with nothing to send",
+      "note": "Send is always available, and an empty request names the end-to-end review or, on a planning task, the requirement and planned effects.",
       "targets": [
         {
           "anchor": {
-            "blob": "e2330f724a16f373b40e3b6a4105337473746e70",
+            "blob": "392da2790215a14029683debf1ea5da601663cd9",
             "content": "sha256:526d7332432f4e32e459910f04bdf4a607a428ee01f079712bfe41bfd3792450",
             "locator": {
               "kind": "symbol",
@@ -92,7 +92,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e2330f724a16f373b40e3b6a4105337473746e70",
+            "blob": "392da2790215a14029683debf1ea5da601663cd9",
             "content": "sha256:a3bf11c014b3d64479e08d7757c45937a29c9cffa68f5cdaaf041c5137d1d329",
             "locator": {
               "kind": "symbol",
@@ -108,7 +108,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e2330f724a16f373b40e3b6a4105337473746e70",
+            "blob": "392da2790215a14029683debf1ea5da601663cd9",
             "content": "sha256:171e31cb59045b876b6ee125003240ed484128f3f1c3f1c17aa539808516a573",
             "locator": {
               "kind": "symbol",
@@ -124,11 +124,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e2330f724a16f373b40e3b6a4105337473746e70",
+            "blob": "392da2790215a14029683debf1ea5da601663cd9",
             "content": "sha256:9449d1e3cfb4239ccd59d4f5f4c49d52c69ce506966d317f86386dcebb70e75a",
             "locator": {
               "kind": "symbol",
               "name": "agentMenu"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "A planned task's empty request line names its requirement and planned effects.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "392da2790215a14029683debf1ea5da601663cd9",
+            "content": "sha256:bd58703fb4df853a613b4b7468fe6c1f968d85c3d83c9ba2b26c443a094c274d",
+            "locator": {
+              "kind": "symbol",
+              "name": "PLANNED_LINE"
             }
           },
           "kind": "code"

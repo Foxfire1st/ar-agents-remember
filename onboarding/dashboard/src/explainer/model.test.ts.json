@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "5ab0c5699b2340734afa5053f6a4cf2dff7d0c3b",
+        "blob": "7d50cff26f1786af2d726df12a2433320b231469",
         "content": "sha256:b1cf773b643b1c0ac56d24552bbccde57965ec3f751fd4199fbe73aa1d5cadf4",
         "locator": {
           "kind": "symbol",
@@ -22,12 +22,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The placeholder is selected while no seat exists, never the Worker\n\nAnchor: `selects the placeholder while no seat exists, never the Worker`",
+      "note": "The placeholder is selected while no seat exists, never the Worker.\n\nAnchor: `selects the placeholder while no seat exists`",
       "targets": [
         {
           "anchor": {
-            "blob": "5ab0c5699b2340734afa5053f6a4cf2dff7d0c3b",
-            "content": "sha256:76ed80521268c0fbafb24b58c926b6a507008f6a6589aab2039be2d9a4374ea1",
+            "blob": "7d50cff26f1786af2d726df12a2433320b231469",
+            "content": "sha256:be0fb2f804f62be1878decc8fc1f534c0fdd600c999ff1a3a1b4276ef7ba7f55",
             "locator": {
               "end": 71,
               "kind": "line_range",
@@ -39,12 +39,12 @@
       ]
     },
     "3": {
-      "note": "Only a failed build names the failed step and its reason\n\nAnchor: `names the failed step and its reason, and no other build has one`",
+      "note": "Only a failed build names the failed step and its reason.\n\nAnchor: `names the failed step and its reason`",
       "targets": [
         {
           "anchor": {
-            "blob": "5ab0c5699b2340734afa5053f6a4cf2dff7d0c3b",
-            "content": "sha256:65b8a9cc547362e58866c9be06a19142fd9c6ea2ce6a89036bfe430a0e683f9b",
+            "blob": "7d50cff26f1786af2d726df12a2433320b231469",
+            "content": "sha256:4d50633f76d5b33a28379acfdf5b2d91fe18b0e522a2493d251fdee3c01cc88e",
             "locator": {
               "end": 217,
               "kind": "line_range",
@@ -56,16 +56,33 @@
       ]
     },
     "4": {
-      "note": "The menu filters by exact repository, master and task path\n\nAnchor: `filters by exact repository, master and task path, excluding foreign seats with the same short id`",
+      "note": "The menu filters by exact repository, master and task path.\n\nAnchor: `filters by exact repository, master and task path`",
       "targets": [
         {
           "anchor": {
-            "blob": "5ab0c5699b2340734afa5053f6a4cf2dff7d0c3b",
-            "content": "sha256:b1cf773b643b1c0ac56d24552bbccde57965ec3f751fd4199fbe73aa1d5cadf4",
+            "blob": "7d50cff26f1786af2d726df12a2433320b231469",
+            "content": "sha256:ee9434c91a4f7af97281878fe4c84b101a0fdbf29aca0b8fb74ebe8db45403b0",
             "locator": {
               "end": 313,
               "kind": "line_range",
               "start": 297
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "An empty request on a planning task names the requirement and planned effects; the same input elsewhere names the end-to-end review.\n\nAnchor: `sends an empty request on a planned task as its requirement and planned effects`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d50cff26f1786af2d726df12a2433320b231469",
+            "content": "sha256:723f9976c75c8771576186a80e48036de113396d11c4ec47121b6d031acc18fb",
+            "locator": {
+              "end": 163,
+              "kind": "line_range",
+              "start": 157
             }
           },
           "kind": "test"

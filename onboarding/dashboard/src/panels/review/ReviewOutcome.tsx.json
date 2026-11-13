@@ -131,46 +131,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
-            "content": "sha256:ba77287e15f39970a8964523103e46e7263d4d0479b7f377a370d3485757ac0a",
+            "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
+            "content": "sha256:c400a05a19041a428108f0bfcbe26a04e138b98b0f6bf13e22ed5fe868aa4990",
             "locator": {
               "kind": "file"
-            },
-            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
-            "content": "sha256:051725227fe4220602c84f0c8d3f3256077664ced2285c6ff8bbf329759e3f80",
-            "locator": {
-              "kind": "symbol",
-              "name": "useSurface"
-            },
-            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
-            "content": "sha256:f67515e95319c7f49f57b718d00865aab325c83a6dfd4fc21799b4efb04d439a",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewSurface"
-            },
-            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
-            "content": "sha256:a4bfba333df278c94115c450a4e5f448cd733666f83696b2e21e3f11659b69dd",
-            "locator": {
-              "kind": "symbol",
-              "name": "readingStatusOf"
             },
             "path": "dashboard/src/panels/review/ReviewSurface.tsx"
           },

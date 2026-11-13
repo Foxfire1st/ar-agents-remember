@@ -185,7 +185,6 @@ Anchor: `useReviewCatalogue` `intentReviewEntries`
 
 - The detail-panel entry that hands the viewer this leaf's targets: the committed change set and the Intent review entry, whose target carries the task context and no subject. [68]
 
-- The surface that receives it and asks for the task's own review. [69]
 
 - One file's diff reads on the comparison's trees [70]
 
@@ -239,3 +238,5 @@ Anchor: `peekChangeSet` `loadChangeSet` `useChangesetLoad` [85]
 Retired at the fifth freeze d59c3493: dashboard/src/panels/changeset/ChangeSetViewer.tsx:222-222 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted. [5]
 
 Retired at the fifth freeze d59c3493: dashboard/src/panels/changeset/ChangeSetViewer.tsx:222-222 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted [5]
+
+- The surface that receives it and asks for the task's own review. [69]

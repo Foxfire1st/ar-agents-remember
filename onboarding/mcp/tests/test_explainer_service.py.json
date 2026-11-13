@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e0a0c9c967717b5d7f8c9da875b4ab41d1aa7de",
+            "blob": "3d8a63a9c248b00f688dd75d13cfdfa68fee73b6",
             "content": "sha256:534b38dce0eda16be859529462f482c27a9ee72bb4bf1c77003f731b366d4868",
             "locator": {
               "kind": "symbol",
@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e0a0c9c967717b5d7f8c9da875b4ab41d1aa7de",
+            "blob": "3d8a63a9c248b00f688dd75d13cfdfa68fee73b6",
             "content": "sha256:7ae92c3f8330f24ff5b0e4f1b61640e4504ef08fac1160c3d49bc4f0c303748e",
             "locator": {
               "kind": "symbol",
@@ -39,7 +39,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e0a0c9c967717b5d7f8c9da875b4ab41d1aa7de",
+            "blob": "3d8a63a9c248b00f688dd75d13cfdfa68fee73b6",
             "content": "sha256:0fc2029ab8f4dc0f850c9f21165f0426151b74aacebfb429c9ea8758be800378",
             "locator": {
               "kind": "symbol",
@@ -55,11 +55,43 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e0a0c9c967717b5d7f8c9da875b4ab41d1aa7de",
+            "blob": "3d8a63a9c248b00f688dd75d13cfdfa68fee73b6",
             "content": "sha256:9dfd56a35106cd22a1c0ce077468d43ad80d6125251b219d4ef1ceea24277290",
             "locator": {
               "kind": "symbol",
               "name": "test_a_comparison_that_moves_during_the_build_wins_over_the_packet"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "A planned send writes the requirement and declared effects into the folder.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d8a63a9c248b00f688dd75d13cfdfa68fee73b6",
+            "content": "sha256:e6b82455ea498e6a732aa0a07add78fdf1f3f573afb0c4258af91f7e4196f560",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_planned_send_puts_the_requirement_and_planned_effects_in_the_folder"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "An empty planned send asks for the requirement and planned effects.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d8a63a9c248b00f688dd75d13cfdfa68fee73b6",
+            "content": "sha256:3951986e04e0e4a03a6e8b73fb82dcf1211af4fa869d02caa5cad24f1a0084ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_empty_send_on_a_planned_leaf_asks_for_the_requirement_and_planned_effects"
             }
           },
           "kind": "test"

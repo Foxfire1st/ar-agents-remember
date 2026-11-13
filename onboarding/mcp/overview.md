@@ -994,7 +994,6 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 - Additional host-checked explainer-binding source is distinct from ordinary role launch-record listing and adds none for taskless scope. [387]
 - Explainer seats are excluded from automatic warmup; showing or writing the chat owns their resume instead of host restart. [388]
 - The current literal ordinary roster has 44 names, including mounted `knowledge_write`, `user_settings_init`, `citation_note_revision` and `explainer_control`; preceding roster counts remain historical source epochs. Existing task/public-delivery and no-acceptance qualifications stand. [316]
-Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/paseo_explainer_host.py:345-447 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5f8398b32760677c370e3145add73cfa8388357b. Retired means the anchor no longer stands, not that the cited subject was deleted [383]
 - The owner resolves each requirement endpoint; unresolved is reported. [270]
 - The owner resolves each requirement endpoint; unresolved is reported. [40]
 - Knowledge ingest is the contract-scoped converted file writer; unconverted memory is refused with conversion guidance, not a callable prior-task database publication route. [198]
@@ -1041,3 +1040,5 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/paseo_launch.p
 - **Retained historical source account — superseded by the current route account:** Certifying publication and accepting consumers. [151]
 - The runtime synchronizer declares three targets (benchmarks, providers, system) without docs; retained packaged tool details do not add a fourth generator target. Target: scripts/sync-runtime.py. [401]
 - The runtime synchronizer declares three targets (benchmarks, providers, system) without docs; retained packaged tool details do not add a fourth generator target. Target: mcp/src/agents_remember/package_data/runtime/docs/tool-details.md. [402]
+
+- Settings-selected launch requests same-build bound task server, preapproved surface and capsule system prompt without initial prompt; this is source wiring, not fresh native suppression acceptance. [383]

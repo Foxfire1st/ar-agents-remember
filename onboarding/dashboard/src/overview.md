@@ -489,23 +489,19 @@ Anchor: `useReviewCatalogue` `DocChangeSetBar`
 
 - Current tray owners for the review page account. [80]
 
-- Current lane owners for the review page account. [81]
 
 - Current navigation owners for the review page account. [82]
 
 - Current selection owners for the review page account. [83]
 
-- Current watch owners for the review page account. [84]
 
 - Current cache owners for the review page account. [85]
 
 - Current wash owners for the review page account. [86]
 
-- Current composition owners for the review page account. [87]
 
 - Current model owners for the review page account. [88]
 
-- Current details owners for the review page account. [89]
 
 - Presence of ChangeSetTarget.review selects the Operations review page, including the empty task-context target. [18]
 
@@ -545,8 +541,13 @@ Anchor: `ReviewSourceInventory` `intentReview` [28]
 
 - The four-entry product bar and retained product layers remain distinct from injected views; review URL state can override ordinary opening view. [44]
 
-Anchor: `startRead` `memoryWatchActions` `useSurface` [51]
 
 - Shell navigation, persistent layers and shared drivers. [6]
 
 - Responsive shell style and the actual narrow railed/takeover consumers are separate from reviewer-local scroll ownership. [74]
+
+- Question/read identity and memory-input epoch prevent superseded responses from display or inappropriate unshown reuse; live-watch notification is separately wired by the surface. [51]
+- Current lane owners for the review page account. [81]
+- Current watch owners for the review page account. [84]
+- Current composition owners for the review page account. [87]
+- Current details owners for the review page account. [89]

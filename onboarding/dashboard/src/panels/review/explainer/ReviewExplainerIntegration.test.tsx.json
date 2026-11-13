@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "3a41b22ca4a770d8b1e31a2bf52fbf0f5e83a4a7",
+        "blob": "e26fbc57f6b7b50499aa72a7120c3967b22a1b7a",
         "content": "sha256:73e1032dfd4af170e6ccfb2d4bfcbed9b30196d588fd4346b6b8d605b355f380",
         "locator": {
           "kind": "symbol",
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "3a41b22ca4a770d8b1e31a2bf52fbf0f5e83a4a7",
-        "content": "sha256:b2f7d37fc7da43b9b6ad9f64a45c09fceb72ae394f308732bfb8a92901305e21",
+        "blob": "e26fbc57f6b7b50499aa72a7120c3967b22a1b7a",
+        "content": "sha256:84adf3538c80ba032dcabbcb3ba7ac74651a5e3957a7b467cafcd18286875bc6",
         "locator": {
           "kind": "symbol",
           "name": "mounts PlannedReview when the leaf is in planning mode (/planned)"
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "3a41b22ca4a770d8b1e31a2bf52fbf0f5e83a4a7",
+        "blob": "e26fbc57f6b7b50499aa72a7120c3967b22a1b7a",
         "content": "sha256:73e1032dfd4af170e6ccfb2d4bfcbed9b30196d588fd4346b6b8d605b355f380",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "3a41b22ca4a770d8b1e31a2bf52fbf0f5e83a4a7",
+        "blob": "e26fbc57f6b7b50499aa72a7120c3967b22a1b7a",
         "content": "sha256:0fe795319efc1d8c6be7f1f561ebfdc24f3b945b75a08b696d085920d363baa5",
         "locator": {
           "kind": "symbol",
@@ -77,12 +77,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3a41b22ca4a770d8b1e31a2bf52fbf0f5e83a4a7",
-            "content": "sha256:3c25f8e3579a0a3fbfa45d3d2abfa6eca8bc93400754f042d5c74435506fde24",
+            "blob": "e26fbc57f6b7b50499aa72a7120c3967b22a1b7a",
+            "content": "sha256:73e1032dfd4af170e6ccfb2d4bfcbed9b30196d588fd4346b6b8d605b355f380",
             "locator": {
-              "end": 912,
+              "end": 425,
               "kind": "line_range",
-              "start": 95
+              "start": 184
             }
           },
           "kind": "test"
@@ -90,16 +90,33 @@
       ]
     },
     "2": {
-      "note": "A planning-mode leaf mounts the planned page\n\nAnchor: `mounts PlannedReview when the leaf is in planning mode (/planned)`",
+      "note": "A planning-mode leaf mounts the planned page.\n\nAnchor: `mounts PlannedReview when the leaf is in planning mode (/planned)`",
       "targets": [
         {
           "anchor": {
-            "blob": "3a41b22ca4a770d8b1e31a2bf52fbf0f5e83a4a7",
-            "content": "sha256:64b92cbe73e88d19ef68e94298ad74fee4d0a3d6b9b9c78cd39e1b9d9eff1a98",
+            "blob": "e26fbc57f6b7b50499aa72a7120c3967b22a1b7a",
+            "content": "sha256:a4aa2360338b67dd3127bacf6f454e17ab58208afe6a4083a0c9dad8f1c1ff72",
             "locator": {
-              "end": 912,
+              "end": 467,
               "kind": "line_range",
-              "start": 338
+              "start": 427
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A planning leaf whose review read is refused for having no worktree mounts the planned page, its truth texts and the planned form.\n\nAnchor: `shows the planned view for a planning leaf whose review read is refused (no worktree)`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e26fbc57f6b7b50499aa72a7120c3967b22a1b7a",
+            "content": "sha256:611d429aaacf85985c1fc1439a2f0a056391b825ba5db8da878cebd0fdf53577",
+            "locator": {
+              "end": 572,
+              "kind": "line_range",
+              "start": 468
             }
           },
           "kind": "test"

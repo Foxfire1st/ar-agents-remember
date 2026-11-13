@@ -34,7 +34,7 @@ The frame may ask to open something; the host decides what that is. `resolve_evi
 
 The standalone presenter native launch is retired. A bare `Presenter` now selects `UnconfiguredPresenterRunner` and refuses `no-confined-harness`; an explicitly supplied confined runner can still use the retained attempt implementation. The normal explainer uses its bound task server and the shared `AuthoringTools` implementation, with no standalone presenter server.
 
-The leaf’s environment lives outside worktrees, memory repositories and task folders. Build, Update, grades and Retire use its one leaf lock; the build writes snapshots, instructions and packet before binding last, then sends after releasing the lock. Update rebinds without waking a turn and refuses while in turn or retired. Retire waits for the lock and durably records the process tree, archive, process cleanup and workspace removal, preserving an unfinished receipt for retry. Retained pages and grades stay with the task.
+The leaf’s environment lives outside worktrees, memory repositories and task folders. Build, Update, grades and Retire use its one leaf lock; the build writes snapshots, instructions, the packet and, for a planned binding, the plan’s requirement and declared effects under `planned/`, before binding last, then sends after releasing the lock. Update rebinds without waking a turn and refuses while in turn or retired. Retire waits for the lock and durably records the process tree, archive, process cleanup and workspace removal, preserving an unfinished receipt for retry. Retained pages and grades stay with the task.
 
 ## Readiness And The Prospective Load
 

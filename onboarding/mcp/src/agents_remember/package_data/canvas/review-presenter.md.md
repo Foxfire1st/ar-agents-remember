@@ -10,7 +10,7 @@ The shipped explainer instructions, identical to the canonical canvas copy and b
 
 ## Code Commentary
 
-- The explainer receives read-only bound snapshots, one packet prepared at build and every Update, and its own working folder. It reads only through its tool server and publishes from drafts through the confined product writer.
+- The explainer receives read-only bound snapshots, one packet prepared at build and every Update, its own working folder, and for a planned binding the plan's requirement and declared effects under `planned/`. It reads only through its tool server and publishes from drafts through the confined product writer.
 - The instructions distinguish recorded and planned bindings, require claim-marked static parts, and keep grades and interpretation apart from recorded verdicts or accepted knowledge.
 - Update rebinds the environment without a turn; only an explicit regeneration request asks for a revised page. A report to the architect copies the delivered developer message by its message id.
 - It carries the kit map: which tool suits which explanation, with search keywords rather than addresses.

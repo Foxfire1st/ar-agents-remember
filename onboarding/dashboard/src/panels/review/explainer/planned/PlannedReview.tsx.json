@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c405fcbf7f7f9b127c063ddb83adc6439e49044a",
-        "content": "sha256:4156ef4af26ac3a2c0e354a409192b624030186d359236282b28009977ae62c8",
+        "blob": "a5aa285e7d36ec75942370fc62427bb63682a233",
+        "content": "sha256:3fff515b9ca3370c055fa77dc9cab2ebdb5132d597351547d9485f1a288dec68",
         "locator": {
           "kind": "symbol",
           "name": "PlannedReview"
@@ -26,12 +26,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c405fcbf7f7f9b127c063ddb83adc6439e49044a",
-            "content": "sha256:4156ef4af26ac3a2c0e354a409192b624030186d359236282b28009977ae62c8",
+            "blob": "a5aa285e7d36ec75942370fc62427bb63682a233",
+            "content": "sha256:e1ab506721d8dd2701e857270ddc8a7299d12925a3dc752b8acabd0220a0535d",
             "locator": {
-              "end": 146,
+              "end": 161,
               "kind": "line_range",
-              "start": 103
+              "start": 114
             }
           },
           "kind": "code"
@@ -43,12 +43,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c405fcbf7f7f9b127c063ddb83adc6439e49044a",
+            "blob": "a5aa285e7d36ec75942370fc62427bb63682a233",
             "content": "sha256:7cfad691290e72920f1c0df57cbfb59126299d89777b6db48ced4a50b4721854",
             "locator": {
-              "end": 264,
+              "end": 278,
               "kind": "line_range",
-              "start": 194
+              "start": 208
             }
           },
           "kind": "code"
@@ -60,12 +60,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c405fcbf7f7f9b127c063ddb83adc6439e49044a",
+            "blob": "a5aa285e7d36ec75942370fc62427bb63682a233",
             "content": "sha256:55f68a4d018c9e37c5d352b82f7bfd08c97660db35ea293b8c74118447378ce4",
             "locator": {
-              "end": 191,
+              "end": 205,
               "kind": "line_range",
-              "start": 148
+              "start": 162
             }
           },
           "kind": "code"
@@ -77,12 +77,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c405fcbf7f7f9b127c063ddb83adc6439e49044a",
+            "blob": "a5aa285e7d36ec75942370fc62427bb63682a233",
             "content": "sha256:decb30ea6f11a052d95481789415451aa6531607b60a43d134526417feed568b",
             "locator": {
-              "end": 312,
+              "end": 326,
               "kind": "line_range",
-              "start": 266
+              "start": 280
             }
           },
           "kind": "code"
@@ -94,12 +94,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c405fcbf7f7f9b127c063ddb83adc6439e49044a",
+            "blob": "a5aa285e7d36ec75942370fc62427bb63682a233",
             "content": "sha256:231fd7b6944875c3b737774c96d869a590862a0d734ec546a5b283e6f59c6855",
             "locator": {
-              "end": 375,
+              "end": 389,
               "kind": "line_range",
-              "start": 366
+              "start": 380
             }
           },
           "kind": "code"
@@ -111,12 +111,57 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c405fcbf7f7f9b127c063ddb83adc6439e49044a",
+            "blob": "a5aa285e7d36ec75942370fc62427bb63682a233",
             "content": "sha256:6edbd2c998553781319c213abe455d661677aacc5d69429a45b9d2e2eb9d9ae9",
             "locator": {
-              "end": 402,
+              "end": 416,
               "kind": "line_range",
-              "start": 378
+              "start": 392
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "A packet's body is rendered as Markdown and stays inert.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a5aa285e7d36ec75942370fc62427bb63682a233",
+            "content": "sha256:c1d152da9faef3cf26db0a80cf713b5664e6d18f123076c69537e3158de9be60",
+            "locator": {
+              "kind": "symbol",
+              "name": "packetBody"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a5aa285e7d36ec75942370fc62427bb63682a233",
+            "content": "sha256:e8df9fbaa53c495ffbbcc2b4bfbf2d1bac81a7bca3a1b5403fc0c52873f00c75",
+            "locator": {
+              "end": 356,
+              "kind": "line_range",
+              "start": 352
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The truth line stands above the product's top line.\n\nAnchor: `PLANNED_TRUTH_LINE`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a5aa285e7d36ec75942370fc62427bb63682a233",
+            "content": "sha256:6613b287c93695ec6d2f5d1454b9f8836c096e3a211a96e399519fe02eceff43",
+            "locator": {
+              "end": 128,
+              "kind": "line_range",
+              "start": 123
             }
           },
           "kind": "code"

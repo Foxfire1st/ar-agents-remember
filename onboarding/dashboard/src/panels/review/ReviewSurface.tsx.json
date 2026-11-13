@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+        "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
         "content": "sha256:ad98b7647e42bb648a80b72bc86025e854f3dc6eb98e67849a1b637bc60503d9",
         "locator": {
           "kind": "symbol",
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
-        "content": "sha256:f67515e95319c7f49f57b718d00865aab325c83a6dfd4fc21799b4efb04d439a",
+        "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
+        "content": "sha256:4d6aa797d5b4df0f354109f681145557824b9251a29ca509f7719f18c8b467f6",
         "locator": {
           "kind": "symbol",
           "name": "ReviewSurface"
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+        "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
         "content": "sha256:7733ea65e22e75ffb19f57d6c863015dc78e7eb0353fe6a4074ae381bf47b578",
         "locator": {
           "kind": "symbol",
@@ -58,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
-        "content": "sha256:55de8bebe53eb169c6cd9e187be7bee22f81ef70b4183fd6ae1d73f1151dbf12",
+        "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
+        "content": "sha256:d1323c11337e6dcb983eda04d9356b9291f969c461c518e87bd0777c4bd302a5",
         "locator": {
           "kind": "symbol",
           "name": "PageReading"
@@ -76,7 +76,7 @@
     },
     {
       "anchor": {
-        "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+        "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
         "content": "sha256:418abe1a171e30c9b35e0d5c3248e28e627b45faaf6a04b3d8e9ce57b9054a81",
         "locator": {
           "kind": "symbol",
@@ -94,7 +94,7 @@
     },
     {
       "anchor": {
-        "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+        "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
         "content": "sha256:2bea560c5f336151a88c4c7f72860d44ec8070841375b4f546fdeee71624801b",
         "locator": {
           "kind": "symbol",
@@ -112,7 +112,7 @@
     },
     {
       "anchor": {
-        "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+        "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
         "content": "sha256:2bea560c5f336151a88c4c7f72860d44ec8070841375b4f546fdeee71624801b",
         "locator": {
           "kind": "symbol",
@@ -130,7 +130,7 @@
     },
     {
       "anchor": {
-        "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+        "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
         "content": "sha256:418abe1a171e30c9b35e0d5c3248e28e627b45faaf6a04b3d8e9ce57b9054a81",
         "locator": {
           "kind": "symbol",
@@ -148,7 +148,7 @@
     },
     {
       "anchor": {
-        "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+        "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
         "content": "sha256:b044c4be1f644c40fe7beb9a83620ba9fbec17a54e853b13ebebb0606e05faa0",
         "locator": {
           "kind": "symbol",
@@ -166,8 +166,8 @@
     },
     {
       "anchor": {
-        "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
-        "content": "sha256:f67515e95319c7f49f57b718d00865aab325c83a6dfd4fc21799b4efb04d439a",
+        "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
+        "content": "sha256:4d6aa797d5b4df0f354109f681145557824b9251a29ca509f7719f18c8b467f6",
         "locator": {
           "kind": "symbol",
           "name": "ReviewSurface"
@@ -184,7 +184,7 @@
     },
     {
       "anchor": {
-        "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+        "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
         "content": "sha256:051725227fe4220602c84f0c8d3f3256077664ced2285c6ff8bbf329759e3f80",
         "locator": {
           "kind": "symbol",
@@ -202,7 +202,7 @@
     },
     {
       "anchor": {
-        "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+        "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
         "content": "sha256:418abe1a171e30c9b35e0d5c3248e28e627b45faaf6a04b3d8e9ce57b9054a81",
         "locator": {
           "kind": "symbol",
@@ -220,8 +220,8 @@
     },
     {
       "anchor": {
-        "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
-        "content": "sha256:6ac07adfd3995b2b7c70e7456a3eb861c52e7be1bdfa6a38da4368826b39c588",
+        "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
+        "content": "sha256:c1fe8655a033bde1e39ba3c543609cc3247a0734e8a4c0619170ed88609f2921",
         "locator": {
           "kind": "symbol",
           "name": "useSurfaceExplainer"
@@ -238,8 +238,8 @@
     },
     {
       "anchor": {
-        "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
-        "content": "sha256:6ac07adfd3995b2b7c70e7456a3eb861c52e7be1bdfa6a38da4368826b39c588",
+        "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
+        "content": "sha256:c1fe8655a033bde1e39ba3c543609cc3247a0734e8a4c0619170ed88609f2921",
         "locator": {
           "kind": "symbol",
           "name": "useSurfaceExplainer"
@@ -256,8 +256,8 @@
     },
     {
       "anchor": {
-        "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
-        "content": "sha256:f67515e95319c7f49f57b718d00865aab325c83a6dfd4fc21799b4efb04d439a",
+        "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
+        "content": "sha256:4d6aa797d5b4df0f354109f681145557824b9251a29ca509f7719f18c8b467f6",
         "locator": {
           "kind": "symbol",
           "name": "ReviewSurface"
@@ -274,7 +274,7 @@
     },
     {
       "anchor": {
-        "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+        "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
         "content": "sha256:a4bfba333df278c94115c450a4e5f448cd733666f83696b2e21e3f11659b69dd",
         "locator": {
           "kind": "symbol",
@@ -296,12 +296,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+            "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
             "content": "sha256:a03796fed7ff96ce5fad19273f4fe10a4bd0b0f8d821651454a11befe47cb890",
             "locator": {
-              "end": 691,
+              "end": 695,
               "kind": "line_range",
-              "start": 636
+              "start": 640
             }
           },
           "kind": "code"
@@ -313,8 +313,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
-            "content": "sha256:ba77287e15f39970a8964523103e46e7263d4d0479b7f377a370d3485757ac0a",
+            "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
+            "content": "sha256:c400a05a19041a428108f0bfcbe26a04e138b98b0f6bf13e22ed5fe868aa4990",
             "locator": {
               "kind": "file"
             }
@@ -328,12 +328,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+            "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
             "content": "sha256:6d678de25c5ac8e818b0584a10aa69240890697367d8495099c1a0644807e0d7",
             "locator": {
-              "end": 695,
+              "end": 699,
               "kind": "line_range",
-              "start": 680
+              "start": 684
             }
           },
           "kind": "code"
@@ -345,12 +345,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+            "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
             "content": "sha256:4e4832a7713f442038bc453d1e239a1022169ccf7f9cf999074fcb1cde5903ad",
             "locator": {
-              "end": 556,
+              "end": 560,
               "kind": "line_range",
-              "start": 541
+              "start": 545
             }
           },
           "kind": "code"
@@ -362,12 +362,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+            "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
             "content": "sha256:fbc715e7787a7e4f98053e004c4fb877ec99fbe3be0903c8458946057567df3c",
             "locator": {
-              "end": 419,
+              "end": 423,
               "kind": "line_range",
-              "start": 404
+              "start": 408
             }
           },
           "kind": "code"
@@ -379,12 +379,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+            "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
             "content": "sha256:6b121f7487a904aeac53ec1fb387e673792fccb580695519dfbf6d016455f918",
             "locator": {
-              "end": 293,
+              "end": 297,
               "kind": "line_range",
-              "start": 278
+              "start": 282
             }
           },
           "kind": "code"
@@ -396,7 +396,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+            "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
             "content": "sha256:051725227fe4220602c84f0c8d3f3256077664ced2285c6ff8bbf329759e3f80",
             "locator": {
               "kind": "symbol",
@@ -412,10 +412,55 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
-            "content": "sha256:ba77287e15f39970a8964523103e46e7263d4d0479b7f377a370d3485757ac0a",
+            "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
+            "content": "sha256:c400a05a19041a428108f0bfcbe26a04e138b98b0f6bf13e22ed5fe868aa4990",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "74": {
+      "note": "A planning leaf's planned read opens without the ordinary review read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
+            "content": "sha256:7294af2cad4c61ea4d487d21dbd82d2b1648b44bd344b148ea84344d6ef7419d",
+            "locator": {
+              "kind": "symbol",
+              "name": "isPlannedReadEnabled"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
+            "content": "sha256:fb60b68d0592fd2fedd8a04d477459ec97ab610d7ac6c1fe1e2403df5f38b6f0",
+            "locator": {
+              "end": 820,
+              "kind": "line_range",
+              "start": 771
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "75": {
+      "note": "The centre says nothing is built yet while the task is in planning.\n\nAnchor: \"planned · nothing built yet\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
+            "content": "sha256:3bdabfce46ebc79f4550f7da402a51560b1cb8981ab1c5c454e91a8f20355506",
+            "locator": {
+              "end": 1000,
+              "kind": "line_range",
+              "start": 986
             }
           },
           "kind": "code"

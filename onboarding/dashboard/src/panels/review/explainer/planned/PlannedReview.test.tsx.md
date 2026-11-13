@@ -14,6 +14,7 @@ Measures the planned page: its product-owned top line and sorts, its rows, its s
 - The reader is measured against a full payload, a refused answer and a record of another mode; only a planned page is accepted.
 - A payload that names its own judgment sort is required to be answered by the product's three deterministic sorts.
 - The rendering case requires packet script text to stay inert, a resolved path to report its address, an unresolved one to stay text, and tree and reading rows to agree under each sort.
+- The rule-5 case gives a packet a table, a heading and a list, and requires the page to draw a table, a heading and two list items from the packet's Markdown.
 
 ## Evidence
 
@@ -21,3 +22,5 @@ Measures the planned page: its product-owned top line and sorts, its rows, its s
 - One host answer reads as a planned page, and a refusal or another mode reads as nothing [2]
 - The product's three sorts win over any sort a payload names [3]
 - Packet bodies stay inert, resolved scope paths open, unresolved ones stay text, and tree and reading rows agree [4]
+
+- A packet's Markdown arrives as a table, a heading and list items (rule 5). [5]

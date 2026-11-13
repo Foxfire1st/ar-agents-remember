@@ -657,34 +657,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
-            "content": "sha256:ba77287e15f39970a8964523103e46e7263d4d0479b7f377a370d3485757ac0a",
+            "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
+            "content": "sha256:c400a05a19041a428108f0bfcbe26a04e138b98b0f6bf13e22ed5fe868aa4990",
             "locator": {
               "kind": "file"
-            },
-            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
-            "content": "sha256:adca9206f69580ac76715414d13bcff3f68a4002df6cdd9dcc7abbc99826d1aa",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewTarget"
-            },
-            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
-            "content": "sha256:f67515e95319c7f49f57b718d00865aab325c83a6dfd4fc21799b4efb04d439a",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewSurface"
             },
             "path": "dashboard/src/panels/review/ReviewSurface.tsx"
           },
@@ -1062,12 +1038,12 @@
         },
         {
           "anchor": {
-            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+            "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
             "content": "sha256:a03796fed7ff96ce5fad19273f4fe10a4bd0b0f8d821651454a11befe47cb890",
             "locator": {
-              "end": 691,
+              "end": 695,
               "kind": "line_range",
-              "start": 636
+              "start": 640
             },
             "path": "dashboard/src/panels/review/ReviewSurface.tsx"
           },
@@ -1075,12 +1051,12 @@
         },
         {
           "anchor": {
-            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+            "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
             "content": "sha256:3ef3de389f7b19645c6803a4881207eee30b7fc0487b7255c9dee63335398da3",
             "locator": {
-              "end": 553,
+              "end": 557,
               "kind": "line_range",
-              "start": 508
+              "start": 512
             },
             "path": "dashboard/src/panels/review/ReviewSurface.tsx"
           },

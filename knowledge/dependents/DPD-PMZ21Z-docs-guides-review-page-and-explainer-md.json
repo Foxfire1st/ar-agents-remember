@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
-    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
-    "role": "worker",
-    "statement": "The page is new in this task; its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate and the page was read whole; 52 rows of the inventory of changes are told here.",
-    "task": "260928-MIK-L97",
+    "codeTree": "1f22b9a2feaf65a4f30a2cce85483c21fecba3b7",
+    "commit": "724ad9fb8188dfe6f6f9f9c972c160c0b6e80d90",
+    "role": "curator",
+    "statement": "The guide's statements about the planned view, the explainer's request and the rendered packet were re-read at the W5 candidate; the only code delta since W4 is the capability-text test pin (1,090 words under the 1,100 budget), which changes no statement the guide makes. The links re-resolve at W5.",
+    "task": "261112-BUG-L2",
     "uncommitted": true
   },
   "document": "docs/guides/review-page-and-explainer.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -36,7 +36,7 @@
       "path": "dashboard/src/cockpit/reviewChat.ts"
     },
     {
-      "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+      "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
       "kind": "file",
       "path": "dashboard/src/panels/review/ReviewSurface.tsx"
     },
@@ -91,12 +91,12 @@
       "path": "dashboard/src/panels/review/explainer/explainerModel.ts"
     },
     {
-      "blob": "c405fcbf7f7f9b127c063ddb83adc6439e49044a",
+      "blob": "a5aa285e7d36ec75942370fc62427bb63682a233",
       "kind": "file",
       "path": "dashboard/src/panels/review/explainer/planned/PlannedReview.tsx"
     },
     {
-      "blob": "e2330f724a16f373b40e3b6a4105337473746e70",
+      "blob": "392da2790215a14029683debf1ea5da601663cd9",
       "kind": "file",
       "path": "dashboard/src/explainer/model.ts"
     },
@@ -106,7 +106,7 @@
       "path": "dashboard/src/explainer/ExplainerColumnPanels.tsx"
     },
     {
-      "blob": "bd0ddae2d3c48c4a32032a444960546953687854",
+      "blob": "4f4e31a01188b7ab72b746eeaf82d2988cf39614",
       "kind": "file",
       "path": "dashboard/src/explainer/FirstRequestForm.tsx"
     },
@@ -131,7 +131,7 @@
       "path": "mcp/src/agents_remember/tasks/document.py"
     },
     {
-      "blob": "806ea7cf701ae370faec61958c6bf638b1b6f096",
+      "blob": "d5aadeff6355ae9126e8ff2286938c9a03ebe6d8",
       "kind": "file",
       "path": "mcp/src/agents_remember/canvas/review-presenter.md"
     },
@@ -166,7 +166,7 @@
       "path": "dashboard/src/panels/review/reading/SubjectSection.tsx"
     },
     {
-      "blob": "7bce135c0162daeefcec8350c30bc6c36d8aab7c",
+      "blob": "cf77370234ae2b7b5d0f501b3b575a4a0de353cb",
       "kind": "file",
       "path": "dashboard/src/panels/review/reading/pageParts.tsx"
     },
@@ -231,7 +231,7 @@
       "path": "mcp/src/agents_remember/canvas/explainer_access.py"
     },
     {
-      "blob": "80a4160ab85549d0b9ef773aec16c9609a661974",
+      "blob": "f1a614c3853985134f11c860f66383388eb5da04",
       "kind": "file",
       "path": "mcp/src/agents_remember/canvas/explainer_service.py"
     },
@@ -241,7 +241,7 @@
       "path": "mcp/src/agents_remember/canvas/explainer_server.py"
     },
     {
-      "blob": "3bb09b53aebe54085b08d6bb7aef53938f740dc4",
+      "blob": "eec120cd1a7e7328bead03713ee66a2b7fc3b442",
       "kind": "file",
       "path": "mcp/src/agents_remember/canvas/explainer_workspace.py"
     },
