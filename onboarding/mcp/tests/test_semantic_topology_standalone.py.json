@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "6ab8cb683e44fb6ec215891193e43c4d9b8d97cd",
-        "content": "sha256:c7c3ba5dff81915c8903e54d5e1d34ae87bbcdc08eb0f1fa9e12d616f1283e49",
+        "blob": "1565558ccc756d7b2efd3e656ac93138d1e8f528",
+        "content": "sha256:6b2fa269f80e81b62c952eb8ac8e01e4067403669ef60b61d6d8469b0cfdb761",
         "locator": {
           "kind": "symbol",
           "name": "test_a_standalone_master_fingerprint_is_stable_and_differs_from_its_sprint_case"

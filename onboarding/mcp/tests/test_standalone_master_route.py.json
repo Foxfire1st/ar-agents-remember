@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "1b9a5e6ec9e881ac3ab58dacbcfa2409377cb690",
-        "content": "sha256:59cf9b6a8465552014617eda516fd1b8f56418c6957696253cdeeb880c069a15",
+        "blob": "86d27cd4466e0a4f52fd90fc8bc9b8d5bf7032f7",
+        "content": "sha256:679d8e6e9a1a13c8bd5de8c61180d3ab243b077bcfd30f2bf5df7a76fda289fa",
         "locator": {
           "kind": "symbol",
           "name": "test_status_prepare_publish_and_validate_a_standalone_masters_task"

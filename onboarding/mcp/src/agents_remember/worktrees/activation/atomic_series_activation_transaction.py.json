@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a6b1a5c76b1754c4a6fa5636a490044404c89dc2",
-        "content": "sha256:9a3b9b6f278605ae183032780b1f4aec320fa6178388afd08320d7a09006bd3b",
+        "blob": "80877588e0a3d187d2937065266942c9c8c15a2e",
+        "content": "sha256:16b21c9de9fdde48820d2058649ab371a83e711f9443d3c5587bbdc21f97abbf",
         "locator": {
           "kind": "symbol",
           "name": "_legacy_series_memory_refusal"
