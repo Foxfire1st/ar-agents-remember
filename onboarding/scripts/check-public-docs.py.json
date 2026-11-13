@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
+        "blob": "45e103c89186e5754beafb60aad736d6aef70bdb",
         "content": "sha256:b91662a14291c27402e25045c96b983727a5cc3e1a732e88e57da0edb5a331b5",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,25 @@
     },
     {
       "anchor": {
-        "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
+        "blob": "45e103c89186e5754beafb60aad736d6aef70bdb",
+        "content": "sha256:1f6674f36be61327d8c0cf7e021a49cbc6be44cd1d9f50f9e3d1a8bb2cd79796",
+        "locator": {
+          "kind": "symbol",
+          "name": "reach_findings"
+        }
+      },
+      "id": "RLZ-0JDWCC",
+      "invariant": "INV-6TJFDH",
+      "origin": {
+        "handoffEntry": "BUG-R06@v4 rule 11",
+        "leaf": "261112-BUG-L6"
+      },
+      "rationale": "It walks the relative links from the documentation's index, skips the files that front_page_files names, and reports every other file under docs/ that the walk does not reach and every page that lies behind more than one index page.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "45e103c89186e5754beafb60aad736d6aef70bdb",
         "content": "sha256:2ceb0336efbfec8551519864c40769587ef35a83d0a50949e857c2f18c1a95fa",
         "locator": {
           "kind": "symbol",
@@ -39,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
+        "blob": "45e103c89186e5754beafb60aad736d6aef70bdb",
         "content": "sha256:8ac9162d107cd7e14e112a21611896cb61d384b574f8c7d48bd34757b1931777",
         "locator": {
           "kind": "symbol",
@@ -57,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
+        "blob": "45e103c89186e5754beafb60aad736d6aef70bdb",
         "content": "sha256:2578eb4cd7a24fcc17a8446043bbcd58c15f991711d3862d2e3f444c177293ee",
         "locator": {
           "kind": "symbol",
@@ -75,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
+        "blob": "45e103c89186e5754beafb60aad736d6aef70bdb",
         "content": "sha256:d08fbd433f5fd775497b4cd225e7287aa96936a3ce201537b7001c810b23c5a3",
         "locator": {
           "kind": "symbol",
@@ -93,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
+        "blob": "45e103c89186e5754beafb60aad736d6aef70bdb",
         "content": "sha256:ec4df98b742b939c9cb74f1c6ef506e5e6fb8a48f4638b9a434ec0d088248482",
         "locator": {
           "kind": "symbol",
@@ -111,7 +129,7 @@
     },
     {
       "anchor": {
-        "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
+        "blob": "45e103c89186e5754beafb60aad736d6aef70bdb",
         "content": "sha256:90589d4cf81cfbe25d5212e2b20ef0e5144a440403c7e0407672a0adbcd5fe0b",
         "locator": {
           "kind": "symbol",
@@ -129,25 +147,7 @@
     },
     {
       "anchor": {
-        "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
-        "content": "sha256:01f457efa624cc06ef99d35e42864ab9071d320aa23a6399e4304ac9d20881e8",
-        "locator": {
-          "kind": "symbol",
-          "name": "reach_findings"
-        }
-      },
-      "id": "RLZ-B7HCHY",
-      "invariant": "INV-6TJFDH",
-      "origin": {
-        "handoffEntry": "MIK-R97@v1 rule 7 (reach)",
-        "leaf": "260928-MIK-L97"
-      },
-      "rationale": "It walks the relative links from the index and names each file under docs/ that no link reaches, and each page that lies behind more than one index page.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
+        "blob": "45e103c89186e5754beafb60aad736d6aef70bdb",
         "content": "sha256:de33cfef3e5d00f1a4987b063117d5d4c5aaaa66653639a32d0098d9b1c9936c",
         "locator": {
           "kind": "symbol",
@@ -165,7 +165,7 @@
     },
     {
       "anchor": {
-        "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
+        "blob": "45e103c89186e5754beafb60aad736d6aef70bdb",
         "content": "sha256:76d2d5cc480c327417c40f4625b1267322d93ab2eb00a54c914e794b69833e27",
         "locator": {
           "kind": "symbol",
@@ -183,7 +183,7 @@
     },
     {
       "anchor": {
-        "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
+        "blob": "45e103c89186e5754beafb60aad736d6aef70bdb",
         "content": "sha256:4c1b1680b227a40b08488e38faf56925aac47ee27bb4a290223d40a7ed508956",
         "locator": {
           "kind": "symbol",
@@ -201,7 +201,25 @@
     },
     {
       "anchor": {
-        "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
+        "blob": "45e103c89186e5754beafb60aad736d6aef70bdb",
+        "content": "sha256:d47d05290ba4989e905db591e3ca2262573795130cda8f38dcf60c165301df5d",
+        "locator": {
+          "kind": "symbol",
+          "name": "front_page_files"
+        }
+      },
+      "id": "RLZ-M6JX2Z",
+      "invariant": "INV-6TJFDH",
+      "origin": {
+        "handoffEntry": "BUG-R06@v4 rule 11",
+        "leaf": "261112-BUG-L6"
+      },
+      "rationale": "It collects the files under docs/ that the front page shows or links by a relative path and leaves out every page, so only a file that is no page can be reached this way.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "45e103c89186e5754beafb60aad736d6aef70bdb",
         "content": "sha256:759e297869c9e26d4ba9099ea64125e3e1cfccee80edc0b956c2cf56b3eefb90",
         "locator": {
           "kind": "symbol",
@@ -219,7 +237,7 @@
     },
     {
       "anchor": {
-        "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
+        "blob": "45e103c89186e5754beafb60aad736d6aef70bdb",
         "content": "sha256:194a0c470baf26603fa29575690d73efd50f9c90324b7389fff666f85d9f3940",
         "locator": {
           "kind": "symbol",
@@ -237,7 +255,7 @@
     },
     {
       "anchor": {
-        "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
+        "blob": "45e103c89186e5754beafb60aad736d6aef70bdb",
         "content": "sha256:d0163cb31922731836e8238628c1f031966a06527bac3e75a3a48fb531ff9bcd",
         "locator": {
           "kind": "symbol",
@@ -255,7 +273,7 @@
     },
     {
       "anchor": {
-        "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
+        "blob": "45e103c89186e5754beafb60aad736d6aef70bdb",
         "content": "sha256:71dc19c736ceed15c4df162b1fdd7861fd2edf8c8a1c8e0850a53f8fb211bb8c",
         "locator": {
           "kind": "symbol",
@@ -273,7 +291,7 @@
     },
     {
       "anchor": {
-        "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
+        "blob": "45e103c89186e5754beafb60aad736d6aef70bdb",
         "content": "sha256:ea736372d47ce8afe47f00a1507be453fa2ddc95aab0982f39b029ac7a9eeee3",
         "locator": {
           "kind": "symbol",
@@ -292,14 +310,30 @@
   ],
   "references": {
     "1": {
-      "note": "The module docstring names the public documents, the nine finding kinds and the marker form.\n\nAnchor: \"Check the public documents against the repository tree, offline\"",
+      "note": "The module docstring names the public documents, the nine finding kinds, the product-shown names and the marker form.",
       "targets": [
         {
           "anchor": {
-            "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
-            "content": "sha256:cd05472174c94063e391218c0fd8318f04240fe897f316c3f19e5e4dcfef1c53",
+            "blob": "45e103c89186e5754beafb60aad736d6aef70bdb",
+            "content": "sha256:046148f5bc64d3ad7efc8a02467639b30dc180d0eac56d8293cf7feb84735892",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The front page's relative links and pictures under docs/ are collected here, and pages are left out so that only a file that is no page is reached this way.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45e103c89186e5754beafb60aad736d6aef70bdb",
+            "content": "sha256:d47d05290ba4989e905db591e3ca2262573795130cda8f38dcf60c165301df5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "front_page_files"
             }
           },
           "kind": "code"
@@ -311,8 +345,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
-            "content": "sha256:cd05472174c94063e391218c0fd8318f04240fe897f316c3f19e5e4dcfef1c53",
+            "blob": "45e103c89186e5754beafb60aad736d6aef70bdb",
+            "content": "sha256:046148f5bc64d3ad7efc8a02467639b30dc180d0eac56d8293cf7feb84735892",
             "locator": {
               "kind": "file"
             }
@@ -322,15 +356,14 @@
       ]
     },
     "3": {
-      "note": "Link findings name a broken path or a missing anchor.",
+      "note": "Link findings name a broken path or a missing anchor.\n\nAnchor: `_one_link`",
       "targets": [
         {
           "anchor": {
-            "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
-            "content": "sha256:2ceb0336efbfec8551519864c40769587ef35a83d0a50949e857c2f18c1a95fa",
+            "blob": "45e103c89186e5754beafb60aad736d6aef70bdb",
+            "content": "sha256:046148f5bc64d3ad7efc8a02467639b30dc180d0eac56d8293cf7feb84735892",
             "locator": {
-              "kind": "symbol",
-              "name": "_one_link"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -338,15 +371,14 @@
       ]
     },
     "4": {
-      "note": "Path findings skip ignored paths and the instruction consistency test's paths.",
+      "note": "Path findings skip ignored paths and the instruction consistency test's paths.\n\nAnchor: `path_findings`",
       "targets": [
         {
           "anchor": {
-            "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
-            "content": "sha256:71dc19c736ceed15c4df162b1fdd7861fd2edf8c8a1c8e0850a53f8fb211bb8c",
+            "blob": "45e103c89186e5754beafb60aad736d6aef70bdb",
+            "content": "sha256:046148f5bc64d3ad7efc8a02467639b30dc180d0eac56d8293cf7feb84735892",
             "locator": {
-              "kind": "symbol",
-              "name": "path_findings"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -354,12 +386,12 @@
       ]
     },
     "5": {
-      "note": "Reach findings require a link from the docs index through one index page.",
+      "note": "Reach findings walk the links from the documentation index, skip the non-page files that the front page shows, and report every other unreached file and every page behind more than one index page.",
       "targets": [
         {
           "anchor": {
-            "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
-            "content": "sha256:01f457efa624cc06ef99d35e42864ab9071d320aa23a6399e4304ac9d20881e8",
+            "blob": "45e103c89186e5754beafb60aad736d6aef70bdb",
+            "content": "sha256:1f6674f36be61327d8c0cf7e021a49cbc6be44cd1d9f50f9e3d1a8bb2cd79796",
             "locator": {
               "kind": "symbol",
               "name": "reach_findings"
@@ -370,15 +402,14 @@
       ]
     },
     "6": {
-      "note": "Install-step findings compare the install steps of each entry point with the getting-started page.",
+      "note": "Install-step findings compare the install steps of each entry point with the getting-started page.\n\nAnchor: `step_findings`",
       "targets": [
         {
           "anchor": {
-            "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
-            "content": "sha256:ec4df98b742b939c9cb74f1c6ef506e5e6fb8a48f4638b9a434ec0d088248482",
+            "blob": "45e103c89186e5754beafb60aad736d6aef70bdb",
+            "content": "sha256:046148f5bc64d3ad7efc8a02467639b30dc180d0eac56d8293cf7feb84735892",
             "locator": {
-              "kind": "symbol",
-              "name": "step_findings"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -386,12 +417,12 @@
       ]
     },
     "7": {
-      "note": "Identifiers of tasks, leaves, packets and directions are findings on every page.",
+      "note": "Identifiers of tasks, leaves, packets and directions, and product-shown rule and sandbox names, are findings on every page.",
       "targets": [
         {
           "anchor": {
-            "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
-            "content": "sha256:cd05472174c94063e391218c0fd8318f04240fe897f316c3f19e5e4dcfef1c53",
+            "blob": "45e103c89186e5754beafb60aad736d6aef70bdb",
+            "content": "sha256:046148f5bc64d3ad7efc8a02467639b30dc180d0eac56d8293cf7feb84735892",
             "locator": {
               "kind": "file"
             }
@@ -401,15 +432,14 @@
       ]
     },
     "8": {
-      "note": "Markers allow their next line or fenced block and are themselves findings when malformed.",
+      "note": "Markers allow their next line or fenced block and are themselves findings when malformed.\n\nAnchor: `apply_markers`",
       "targets": [
         {
           "anchor": {
-            "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
-            "content": "sha256:8ac9162d107cd7e14e112a21611896cb61d384b574f8c7d48bd34757b1931777",
+            "blob": "45e103c89186e5754beafb60aad736d6aef70bdb",
+            "content": "sha256:046148f5bc64d3ad7efc8a02467639b30dc180d0eac56d8293cf7feb84735892",
             "locator": {
-              "kind": "symbol",
-              "name": "apply_markers"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -417,15 +447,14 @@
       ]
     },
     "9": {
-      "note": "The check returns the findings and the command prints them and fails.",
+      "note": "The check returns the findings and the command prints them and fails.\n\nAnchor: `check`",
       "targets": [
         {
           "anchor": {
-            "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
-            "content": "sha256:8e28fab7c81a9fab4edd9bb682b5237c195e7973fc4b955168c68f44c828eb2a",
+            "blob": "45e103c89186e5754beafb60aad736d6aef70bdb",
+            "content": "sha256:046148f5bc64d3ad7efc8a02467639b30dc180d0eac56d8293cf7feb84735892",
             "locator": {
-              "kind": "symbol",
-              "name": "check"
+              "kind": "file"
             }
           },
           "kind": "code"

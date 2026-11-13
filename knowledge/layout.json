@@ -130,7 +130,8 @@
       "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
     ],
     "file:dashboard/src/panels/detail-panel/taskReader.tsx": [
-      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json",
+      "knowledge/dependents/DPD-CZBR1Q-readme-md.json"
     ],
     "file:dashboard/src/panels/eventSummary.ts": [
       "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
@@ -139,7 +140,8 @@
       "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
     ],
     "file:dashboard/src/panels/knowledge-reader/PathViews.tsx": [
-      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json",
+      "knowledge/dependents/DPD-CZBR1Q-readme-md.json"
     ],
     "file:dashboard/src/panels/lifecycle-list/LifecycleList.tsx": [
       "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
@@ -204,6 +206,7 @@
     ],
     "file:dashboard/src/panels/review/tree/ReviewTree.tsx": [
       "knowledge/dependents/DPD-3P9XTZ-roadmap-md.json",
+      "knowledge/dependents/DPD-CZBR1Q-readme-md.json",
       "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
     ],
     "file:dashboard/src/panels/review/tree/SortMenu.tsx": [
@@ -234,7 +237,6 @@
       "knowledge/dependents/DPD-Q4APMS-mcp-readme-md.json"
     ],
     "file:docs/tool-details.md": [
-      "knowledge/dependents/DPD-CZBR1Q-readme-md.json",
       "knowledge/dependents/DPD-NGC2F6-l188-mcp-src-agents_remember-package_data-runtime-docs-tool-details-md.json"
     ],
     "file:examples/mcp/server.example.json": [

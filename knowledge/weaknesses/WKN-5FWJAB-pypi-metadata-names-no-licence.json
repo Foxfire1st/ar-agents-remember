@@ -1,0 +1,30 @@
+{
+  "anchor": {
+    "blob": "675b2b192c83d602eba7a7ee622f6f33098c26cd",
+    "content": "sha256:f3cb5db2ff74f83954348ade0d5d490b6ecdc48057b12f68452c02693a4ac462",
+    "locator": {
+      "end": 19,
+      "kind": "line_range",
+      "start": 5
+    },
+    "path": "mcp/pyproject.toml"
+  },
+  "id": "WKN-5FWJAB",
+  "kind": "fault",
+  "origin": {
+    "handoff": {
+      "path": "261112-BUG-L6-curator-handoff"
+    },
+    "handoffEntry": "weakness-pypi-licence",
+    "leaf": "261112-BUG-L6",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "261112-BUG-L6"
+  },
+  "state": "open",
+  "statement": "The table [project] of mcp/pyproject.toml names no licence, so the page of the package on PyPI shows none although the repository's licence is MIT."
+}

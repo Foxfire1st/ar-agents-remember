@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "15eece2f9931c0edd4589e0e544c46db6b6e4317",
-    "commit": "bb2d0b3725aa01485e820692b17e130fb65b1669",
-    "role": "curator",
-    "statement": "The documentation index still names the same pages and claims no version or role-start rule; nothing on it became untrue when the version moved to 3.0.1 and the sprint reference became conditional.",
-    "task": "261112-RSM-L1",
+    "codeTree": "84bdb6b94b3897df9233e3b3209ff6382c012a2d",
+    "commit": "724ad9fb8188dfe6f6f9f9c972c160c0b6e80d90",
+    "role": "worker",
+    "statement": "The index gained one line that links the explainer video under docs/assets/, and no other line changed.",
+    "task": "261112-BUG-L6",
     "uncommitted": true
   },
   "document": "docs/README.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
