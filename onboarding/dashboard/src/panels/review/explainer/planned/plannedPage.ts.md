@@ -6,7 +6,7 @@
 
 ## Purpose
 
-The planned page's payload shape and its pure decisions: which sorts exist, what one row's second line says, how a scope path is captioned, and what counts as a planned page at all.
+The planned page's payload shape and its pure decisions: which sorts exist, what one row's second line says, how a scope path is captioned, the truth line above the top line, and what counts as a planned page at all.
 
 ## Code Commentary
 
@@ -16,6 +16,7 @@ The planned page's payload shape and its pure decisions: which sorts exist, what
 - Sorting is stable on its key alone, so equal subjects or effects keep the task document's declaration order.
 - A scope path is resolved only when the code tip answered it and the path exists there; anything else is captioned as not at the code tip.
 - A page's model turns and agent starts are fixed at zero, so no payload can claim activity the page never performs.
+- `PLANNED_TRUTH_LINE` states that a planning task has nothing built yet and that the explainer reads its requirement and planned effects.
 
 ## Evidence
 
@@ -24,3 +25,5 @@ The planned page's payload shape and its pure decisions: which sorts exist, what
 - A row's second line is the current statement, the hand-off label, or a measured absence [3]
 - A scope path is shown as an address at the code tip or as plain text [4]
 - Exactly three deterministic sorts exist, and a judgment order is not among them [5]
+
+- The truth line names the planning state and what the explainer reads. [6]

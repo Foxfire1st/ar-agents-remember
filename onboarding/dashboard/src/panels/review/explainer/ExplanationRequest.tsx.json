@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6f1da0a038a8e8dad438f85a6d17254b3447c00d",
+            "blob": "c4ee7a59b2bb1ab7c2e510797667f97f3db7e0db",
             "content": "sha256:11dba97e50b5ab88a2c9c0bf53452558a9c60fafd0999b8415dc3803df963c81",
             "locator": {
               "kind": "symbol",
@@ -23,12 +23,29 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6f1da0a038a8e8dad438f85a6d17254b3447c00d",
+            "blob": "c4ee7a59b2bb1ab7c2e510797667f97f3db7e0db",
             "content": "sha256:216ffda50c7e2373a4271606a1910a429231e86726fd6c290a859824e70ba610",
             "locator": {
               "end": 48,
               "kind": "line_range",
               "start": 48
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A planned binding's form asks the explainer to read the plan, and its empty line names the planned request.\n\nAnchor: \"Ask the explainer to read this plan\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4ee7a59b2bb1ab7c2e510797667f97f3db7e0db",
+            "content": "sha256:a42d14c33c82c6f0f5f916f74fe3b543625a8b9e004b44fcf6146fc367188498",
+            "locator": {
+              "end": 600,
+              "kind": "line_range",
+              "start": 571
             }
           },
           "kind": "code"

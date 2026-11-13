@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3bb09b53aebe54085b08d6bb7aef53938f740dc4",
-        "content": "sha256:cbed035c98312d6dcc19e751a874759649832a504b0fc7fa3611b76c1b506f74",
+        "blob": "eec120cd1a7e7328bead03713ee66a2b7fc3b442",
+        "content": "sha256:eeaf885739fc090909da529a44511b3d35d16cdbb648d02998ee811ac0ff59f1",
         "locator": {
           "kind": "symbol",
           "name": "build_environment"
@@ -26,12 +26,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3bb09b53aebe54085b08d6bb7aef53938f740dc4",
-            "content": "sha256:cbed035c98312d6dcc19e751a874759649832a504b0fc7fa3611b76c1b506f74",
+            "blob": "eec120cd1a7e7328bead03713ee66a2b7fc3b442",
+            "content": "sha256:4acb672ff41342a7f27f7a388b1dbfaa9f6e78a4710e955fafebc860b73b08e5",
             "locator": {
-              "end": 444,
+              "end": 469,
               "kind": "line_range",
-              "start": 416
+              "start": 439
             }
           },
           "kind": "code"
@@ -43,12 +43,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3bb09b53aebe54085b08d6bb7aef53938f740dc4",
+            "blob": "eec120cd1a7e7328bead03713ee66a2b7fc3b442",
             "content": "sha256:7c05be08abe3d0b602d20eb2b617ec5bfd2801973dcd26112baca0be5f6edf0a",
             "locator": {
-              "end": 486,
+              "end": 509,
               "kind": "line_range",
-              "start": 447
+              "start": 470
             }
           },
           "kind": "code"
@@ -60,12 +60,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3bb09b53aebe54085b08d6bb7aef53938f740dc4",
+            "blob": "eec120cd1a7e7328bead03713ee66a2b7fc3b442",
             "content": "sha256:b196680dd4b1d60e94ad39d32df6748662cd0c6a9bc1ba2192a37535121c573c",
             "locator": {
-              "end": 714,
+              "end": 737,
               "kind": "line_range",
-              "start": 690
+              "start": 713
             }
           },
           "kind": "code"
@@ -77,12 +77,28 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3bb09b53aebe54085b08d6bb7aef53938f740dc4",
+            "blob": "eec120cd1a7e7328bead03713ee66a2b7fc3b442",
             "content": "sha256:1b5cd04aafffc95bbf2206bc82fb00f8c2402a1a6e2a391e35b463200a36e38d",
             "locator": {
-              "end": 797,
+              "end": 820,
               "kind": "line_range",
-              "start": 738
+              "start": 761
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "A planned binding's folder receives the plan as text before the binding, and a recorded binding copies none.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eec120cd1a7e7328bead03713ee66a2b7fc3b442",
+            "content": "sha256:16a5660afdca652265cc49df99f43563d9431aef98f63068000d6d49ec53bceb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_copy_planned_documents"
             }
           },
           "kind": "code"

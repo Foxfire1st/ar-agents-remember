@@ -342,7 +342,6 @@ Retired at the fifth freeze d59c3493: dashboard/src/panels/review/ReviewReadCycl
 - **The client's ninth argument and the one query string it is assembled into, with the empty/undefined spellings collapsed once.** 
 - **The one spelling of the query parameter the server admits, named once so a call site cannot silently stop carrying the identity.** [20]
 
-- The surface calls the shared read cycle, checks its retained target key, and supplies the resulting generation to refresh. [21]
 
 - **The generation claim that consumes `carried`: it renders nothing unless the read that carried the identity has answered.** [22]
 
@@ -369,3 +368,5 @@ Anchor: `memoryWatchActions` `startRead` [28]
 ## Retirements
 
 - Retired at the fifth freeze d59c3493: dashboard/src/panels/review/ReviewReadCycle.ts:458-474 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 972b44cc07b307929535fe7974d6a30d53c9c4f1. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+- The surface calls the shared read cycle, checks its retained target key, and supplies the resulting generation to refresh. [21]

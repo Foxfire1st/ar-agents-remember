@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "2e931f7dfbaf47158e3ea2e73553362acc1fd7dc",
+        "blob": "6a264a7815ca477430cd2f645e7bd3d6d32c1b47",
         "content": "sha256:2e15b8f55c507067f64f642af7289f87abb7d8700191abd792d1260c832f237f",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "2e931f7dfbaf47158e3ea2e73553362acc1fd7dc",
+        "blob": "6a264a7815ca477430cd2f645e7bd3d6d32c1b47",
         "content": "sha256:68369dec65ae9cb448c88af45bbf552f857efd9897f871048403534d54fea1ce",
         "locator": {
           "kind": "symbol",
@@ -43,12 +43,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e931f7dfbaf47158e3ea2e73553362acc1fd7dc",
+            "blob": "6a264a7815ca477430cd2f645e7bd3d6d32c1b47",
             "content": "sha256:2e15b8f55c507067f64f642af7289f87abb7d8700191abd792d1260c832f237f",
             "locator": {
-              "end": 262,
+              "end": 289,
               "kind": "line_range",
-              "start": 252
+              "start": 279
             }
           },
           "kind": "test"
@@ -60,12 +60,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e931f7dfbaf47158e3ea2e73553362acc1fd7dc",
+            "blob": "6a264a7815ca477430cd2f645e7bd3d6d32c1b47",
             "content": "sha256:c6a235d368eed7113374c0739127df67139840fd93a1218d144072a5a590b645",
             "locator": {
-              "end": 273,
+              "end": 300,
               "kind": "line_range",
-              "start": 264
+              "start": 291
             }
           },
           "kind": "test"
@@ -77,12 +77,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e931f7dfbaf47158e3ea2e73553362acc1fd7dc",
+            "blob": "6a264a7815ca477430cd2f645e7bd3d6d32c1b47",
             "content": "sha256:baf9d60985dbb0a1aca6b9e81655bfcdab37e017a3a28f2a8888388ca8a79f79",
             "locator": {
-              "end": 282,
+              "end": 309,
               "kind": "line_range",
-              "start": 275
+              "start": 302
             }
           },
           "kind": "test"
@@ -94,12 +94,29 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e931f7dfbaf47158e3ea2e73553362acc1fd7dc",
+            "blob": "6a264a7815ca477430cd2f645e7bd3d6d32c1b47",
             "content": "sha256:68369dec65ae9cb448c88af45bbf552f857efd9897f871048403534d54fea1ce",
             "locator": {
-              "end": 369,
+              "end": 396,
               "kind": "line_range",
-              "start": 294
+              "start": 321
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "A packet's Markdown arrives as a table, a heading and list items (rule 5).\n\nAnchor: `renders a packet's Markdown: its table arrives as a table (BUG-R02 v3 rule 5)`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a264a7815ca477430cd2f645e7bd3d6d32c1b47",
+            "content": "sha256:25b3027c28812c890124c7f94f6aabd80be1bfe13a6fd49abeb4b4c73aeec515",
+            "locator": {
+              "end": 217,
+              "kind": "line_range",
+              "start": 192
             }
           },
           "kind": "test"
