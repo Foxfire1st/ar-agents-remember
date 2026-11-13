@@ -1,0 +1,412 @@
+{
+  "closed": true,
+  "leaf": "261112-BUG-L6",
+  "rows": [
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9d82aeb2975b30c48f184816fd7566ac7152c43b",
+            "content": "sha256:2ccff027a2df3ffdd46d901a4ceb484595aba7f71c54e7dfc62b5824410b7b39",
+            "locator": {
+              "end": 194,
+              "kind": "line_range",
+              "start": 192
+            },
+            "path": "README.md"
+          },
+          "before": {
+            "blob": "baa068ea15e062f1c85019e2c5eaad84f01e0b96",
+            "content": "sha256:76c35f591615dfc28a9728e6995a0bced846144bc10152c333cd1deb622c0694",
+            "locator": {
+              "end": 220,
+              "kind": "line_range",
+              "start": 216
+            },
+            "path": "README.md"
+          },
+          "id": "RLZ-5R1WWT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-2WHEYS",
+      "items": [
+        "sha256:b22a4f099588cfbb069d6df10c4d87e907efed3bde880e4be839baff74c19f61"
+      ],
+      "reason": "The README is written new and its Status section now stands at lines 192-194 with the same sentence naming 3.0.1; the realization is re-anchored there, and no meaning changed.",
+      "revision": 2,
+      "subject": "INV-MG3HK1"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-3MKQRK",
+      "items": [
+        "sha256:5a393c3d3845e8196065b2666197283073af2b55c638c25e0d8e6de0cd991adc"
+      ],
+      "reason": "The README is written new: the dependent keeps nine of its ten links, drops docs/tool-details.md because no sentence of the new file rests on that page, and adds the three dashboard files that its new product pictures show; the record is confirmed at this leaf's tip.",
+      "revision": 4,
+      "subject": "DPD-CZBR1Q"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-4KDTYC",
+      "items": [
+        "sha256:bb69b83adadbac71a9e3a1421c9ed9526d8449e0165689366bd5c6f906d020cf"
+      ],
+      "reason": "CONTRIBUTING.md changes two rows: the folder table names docs/assets/ and the unreached row states the reach rule as scripts/check-public-docs.py now has it; its stands_on list is re-confirmed at this leaf's tip.",
+      "revision": 4,
+      "subject": "DPD-78737N"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-9JGTF3",
+      "items": [
+        "sha256:93d6a24039077ced141eb6adc5b1671cff404281e10cce47af58f963f65021eb"
+      ],
+      "reason": "The README's picture of the Knowledge page; it is a binary picture that no card describes.",
+      "sources": [
+        {
+          "blob": "8c550810ef5666cceb801d90792a9e501d34f82b",
+          "path": "docs/assets/readme-knowledge-page.png"
+        }
+      ],
+      "subject": "onboarding:docs/assets/readme-knowledge-page.png"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-A0DNJ6",
+      "items": [
+        "sha256:de1fd0d51a1cc5a2237927325f450fb2d81e0fc5444612918373377483faf268"
+      ],
+      "reason": "The README's picture of the task page; it is a binary picture that no card describes.",
+      "sources": [
+        {
+          "blob": "95e665858f0c4a87a72aac0b21711029b15b7071",
+          "path": "docs/assets/readme-task-page.png"
+        }
+      ],
+      "subject": "onboarding:docs/assets/readme-task-page.png"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-D6XW3P",
+      "items": [
+        "sha256:9dd05ce56c940c3062e8f828fc90dc452bc72208cf7da4f38f782f0f778c44d1"
+      ],
+      "reason": "The route overview describes the test population, its lanes and its support boundaries; the three added front-page cases change no route, ownership or composition statement it makes.",
+      "sources": [
+        {
+          "blob": "76b3acf9716f785383347dba3484e373a22e8ff1",
+          "path": "mcp/tests/test_public_docs_check.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-DJA8T5",
+      "items": [
+        "sha256:e72de7fa837e49f4e9767f9efb8e070b945b82659b2311069cc0ad4e7678c241"
+      ],
+      "reason": "The README's picture of the intent review; it is a binary picture that no card describes.",
+      "sources": [
+        {
+          "blob": "64e326bac012fa29474f5cc15947b1e44e97945d",
+          "path": "docs/assets/readme-intent-review.png"
+        }
+      ],
+      "subject": "onboarding:docs/assets/readme-intent-review.png"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-DKYFXK",
+      "items": [
+        "sha256:c006fa34c51ca00ad4ddea196e8904205475943786de71b47cf7958a123dc830"
+      ],
+      "reason": "reach_findings now skips the non-page files that front_page_files collects; the card states the new reach rule and carries a reference for front_page_files.",
+      "sources": [
+        {
+          "blob": "45e103c89186e5754beafb60aad736d6aef70bdb",
+          "path": "scripts/check-public-docs.py"
+        }
+      ],
+      "subject": "onboarding:scripts/check-public-docs.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-DQR24Y",
+      "items": [
+        "sha256:edb8923bda3b48e57687f5c10b28a794ef8f7f03c2ba9769f9a0fb40cea8f160"
+      ],
+      "reason": "The moved explainer video is reached by the documentation index and linked by the README; no card describes it.",
+      "sources": [
+        {
+          "blob": "8d0ee14cfe3ea604bf6201813aec40faf89a64ca",
+          "path": "docs/assets/agents-remember-explainer.mp4"
+        }
+      ],
+      "subject": "onboarding:docs/assets/agents-remember-explainer.mp4"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-FG3QTQ",
+      "items": [
+        "sha256:96dc1f4a6553e84947234bda2f07132aa15726b77d24741b8563641b1105cf53"
+      ],
+      "reason": "The video moved to docs/assets/ with its bytes unchanged; no card described the old path, and the README links the site's copy.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "assets/agents-remember-explainer.mp4"
+        }
+      ],
+      "subject": "onboarding:assets/agents-remember-explainer.mp4"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "76b3acf9716f785383347dba3484e373a22e8ff1",
+            "content": "sha256:1ee5313523f09c495824df2efb2b0cf64a67b538daf322f4d98745e40ee75247",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_page_that_only_the_front_page_links_is_named"
+            },
+            "path": "mcp/tests/test_public_docs_check.py"
+          },
+          "before": "absent",
+          "id": "PRF-0HMV1E"
+        },
+        {
+          "after": {
+            "blob": "76b3acf9716f785383347dba3484e373a22e8ff1",
+            "content": "sha256:c1dfb66168f5529b56a26cac7a50b6c84eb10021d445bf11fd0f0a3a98630508",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_picture_that_the_front_page_shows_is_reached"
+            },
+            "path": "mcp/tests/test_public_docs_check.py"
+          },
+          "before": "absent",
+          "id": "PRF-B6GQQY"
+        },
+        {
+          "after": {
+            "blob": "76b3acf9716f785383347dba3484e373a22e8ff1",
+            "content": "sha256:409261df2ca31d4d460eed79d159f63c1b570a3a3620de95aac8ecb24518ce84",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_picture_that_no_document_shows_is_named"
+            },
+            "path": "mcp/tests/test_public_docs_check.py"
+          },
+          "before": "absent",
+          "id": "PRF-J9CND8"
+        },
+        {
+          "after": {
+            "blob": "45e103c89186e5754beafb60aad736d6aef70bdb",
+            "content": "sha256:1f6674f36be61327d8c0cf7e021a49cbc6be44cd1d9f50f9e3d1a8bb2cd79796",
+            "locator": {
+              "kind": "symbol",
+              "name": "reach_findings"
+            },
+            "path": "scripts/check-public-docs.py"
+          },
+          "before": "absent",
+          "id": "RLZ-0JDWCC"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
+            "content": "sha256:01f457efa624cc06ef99d35e42864ab9071d320aa23a6399e4304ac9d20881e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "reach_findings"
+            },
+            "path": "scripts/check-public-docs.py"
+          },
+          "id": "RLZ-B7HCHY"
+        },
+        {
+          "after": {
+            "blob": "45e103c89186e5754beafb60aad736d6aef70bdb",
+            "content": "sha256:d47d05290ba4989e905db591e3ca2262573795130cda8f38dcf60c165301df5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "front_page_files"
+            },
+            "path": "scripts/check-public-docs.py"
+          },
+          "before": "absent",
+          "id": "RLZ-M6JX2Z"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "weaken",
+      "id": "ROW-KFY2H8",
+      "items": [
+        "sha256:eac000acba58617681582c22bb7683a9637cfce6cd01a52093959d85cb96317d"
+      ],
+      "reason": "Rule 11 of BUG-R06@v4 lets a file under docs/ that is no page be reached by a relative link from the front page README.md; the statement, applicability and conditions now say so, reach_findings keeps every page subject to the documentation index, and the new front_page_files realization collects exactly those non-page files.",
+      "revision": 2,
+      "subject": "INV-6TJFDH"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-NZMZHE",
+      "items": [
+        "sha256:b6f3253ec39adc6aa8ae7766502c8bdb697f1b02a040601abd9dd2e5cd764611"
+      ],
+      "reason": "The new banner is the README's title picture; it is a binary picture that no card describes.",
+      "sources": [
+        {
+          "blob": "bbe09f2626f4572f7c2d25638b5b8fee26ceb029",
+          "path": "docs/assets/agents-remember-banner.png"
+        }
+      ],
+      "subject": "onboarding:docs/assets/agents-remember-banner.png"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-P2DNWA",
+      "items": [
+        "sha256:96d1a88a5107855073628b2c35dc122ce313e1f1b3b471216b2c97b041075dc6"
+      ],
+      "reason": "The repository overview describes the product, its packages and its lifecycle; the redesigned front page and the assets move change no statement it makes.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "assets/agents-remember-explainer.mp4"
+        },
+        {
+          "blob": "absent",
+          "path": "assets/agents-remember-welcome.png"
+        },
+        {
+          "blob": "bbe09f2626f4572f7c2d25638b5b8fee26ceb029",
+          "path": "docs/assets/agents-remember-banner.png"
+        },
+        {
+          "blob": "75159722a0dd6f8e4d6b94b79a4e2e65b59f510e",
+          "path": "docs/assets/agents-remember-explainer-still.jpg"
+        },
+        {
+          "blob": "8d0ee14cfe3ea604bf6201813aec40faf89a64ca",
+          "path": "docs/assets/agents-remember-explainer.mp4"
+        },
+        {
+          "blob": "64e326bac012fa29474f5cc15947b1e44e97945d",
+          "path": "docs/assets/readme-intent-review.png"
+        },
+        {
+          "blob": "8c550810ef5666cceb801d90792a9e501d34f82b",
+          "path": "docs/assets/readme-knowledge-page.png"
+        },
+        {
+          "blob": "95e665858f0c4a87a72aac0b21711029b15b7071",
+          "path": "docs/assets/readme-task-page.png"
+        },
+        {
+          "blob": "45e103c89186e5754beafb60aad736d6aef70bdb",
+          "path": "scripts/check-public-docs.py"
+        }
+      ],
+      "subject": "onboarding:overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-PYXFDB",
+      "items": [
+        "sha256:1334aaccfe84d2cdaf2eab9a9ab910a71945b175ca739ec74ad2e300f9e1e9c2"
+      ],
+      "reason": "The still picture of the explainer video is shown and linked by the README; it is a binary picture that no card describes.",
+      "sources": [
+        {
+          "blob": "75159722a0dd6f8e4d6b94b79a4e2e65b59f510e",
+          "path": "docs/assets/agents-remember-explainer-still.jpg"
+        }
+      ],
+      "subject": "onboarding:docs/assets/agents-remember-explainer-still.jpg"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QX568R",
+      "items": [
+        "sha256:cfda9fff2a415a10ae3bb05cca0079783c7d82eb02d57ae989694502393c688e"
+      ],
+      "reason": "The module docstring's unreached paragraph now states the front-page rule in words; the enforcing obligation is INV-6TJFDH, realized in front_page_files and reach_findings.",
+      "subject": "hunk:sha256:cfda9fff2a415a10ae3bb05cca0079783c7d82eb02d57ae989694502393c688e"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-RNAWAQ",
+      "items": [],
+      "reason": "The new front page is written; the card now describes the head, the body, the install steps, the status sentence and the front-page reach rule, and its sidecar references are authored at this candidate.",
+      "sources": [
+        {
+          "blob": "9d82aeb2975b30c48f184816fd7566ac7152c43b",
+          "path": "README.md"
+        }
+      ],
+      "subject": "onboarding:README.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VR31J5",
+      "items": [
+        "sha256:9a7c0caca0f9743aa809e3a6a974e1d824bad50e5d8dc31678f6ee9b55bf972b"
+      ],
+      "reason": "The added FRONT_PAGE literal only names the file whose links the reach rule reads; the obligation is carried by INV-6TJFDH through front_page_files and reach_findings.",
+      "subject": "hunk:sha256:9a7c0caca0f9743aa809e3a6a974e1d824bad50e5d8dc31678f6ee9b55bf972b"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-WW3BSW",
+      "items": [
+        "sha256:14ea1ed42971a7a360d29eec93452f4cfbf47a02d7488d8c73d543622d23029d",
+        "sha256:5cd764636c7437d24a7dfc449e2f365986dbc3a6f5486a6fa2257b1e7dfb07df",
+        "sha256:79d7629d304a5ecb199c208fa9255cb213f34c58ef7810cd4de8620767164ee0",
+        "sha256:b33b0d87bc256ed531e9a6463daab55b7e3c128443772aea12aff902e8e09702"
+      ],
+      "reason": "The test file gains the three front-page cases; the card lists them and carries a reference for them.",
+      "sources": [
+        {
+          "blob": "76b3acf9716f785383347dba3484e373a22e8ff1",
+          "path": "mcp/tests/test_public_docs_check.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_public_docs_check.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Z1HYAA",
+      "items": [
+        "sha256:5dd20f03b2a17cdb3763627bad9beb63918f9c38986c7f6d41c12e43ab1558a4"
+      ],
+      "reason": "The old banner leaves the tree; the new picture docs/assets/agents-remember-banner.png is the page's title, and no card described either file.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "assets/agents-remember-welcome.png"
+        }
+      ],
+      "subject": "onboarding:assets/agents-remember-welcome.png"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-ZPCDG2",
+      "items": [
+        "sha256:acc423ac4ea413a82452ff9a170a341bea6484feeaf1d813cd6c9be73d7d6a69"
+      ],
+      "reason": "docs/README.md gains one line that links the explainer video under docs/assets/ and changes no other line; the record is confirmed at this leaf's tip.",
+      "revision": 3,
+      "subject": "DPD-06057Y"
+    }
+  ],
+  "schema": "ar-history/v1"
+}
