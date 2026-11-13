@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+        "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
         "content": "sha256:98fbd77b7672b4cca22fe605161433c316af3e43afe3fc9d0b5a2144001621dd",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+        "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
         "content": "sha256:4970820acf2a339998c58d56cfc7183b9ced6c386736e55939cf86311636cb90",
         "locator": {
           "kind": "symbol",
@@ -40,8 +40,8 @@
     },
     {
       "anchor": {
-        "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
-        "content": "sha256:1a6920158daeb820f8807df7f4c7d958b033f6823ee0f933068eca39484a036a",
+        "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+        "content": "sha256:6eed23ad423ed5702f143a24fff1b097ac49aba8d51aa8fb6ffaa48812812edb",
         "locator": {
           "kind": "symbol",
           "name": "_compile_handover"
@@ -58,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
-        "content": "sha256:f68c6e26dd460031cd38b5c7dd871ca7b4140261b4a3f481b0523c13c3248098",
+        "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+        "content": "sha256:d978199794e7d4da26ff9f5485d80bc07bebf8ca36115cb94b84d03f7587add1",
         "locator": {
           "kind": "symbol",
           "name": "_return_address"
@@ -76,8 +76,26 @@
     },
     {
       "anchor": {
-        "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
-        "content": "sha256:1a6920158daeb820f8807df7f4c7d958b033f6823ee0f933068eca39484a036a",
+        "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+        "content": "sha256:6eed23ad423ed5702f143a24fff1b097ac49aba8d51aa8fb6ffaa48812812edb",
+        "locator": {
+          "kind": "symbol",
+          "name": "_compile_handover"
+        }
+      },
+      "id": "RLZ-45D08P",
+      "invariant": "INV-3XH6Q0",
+      "origin": {
+        "handoffEntry": "RSM-R01-A7",
+        "leaf": "261112-RSM-L1"
+      },
+      "rationale": "The handover is the artifact every started role reads; this function writes its address and per-seat message arguments, and a sprint key must not appear for a master that has none.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+        "content": "sha256:6eed23ad423ed5702f143a24fff1b097ac49aba8d51aa8fb6ffaa48812812edb",
         "locator": {
           "kind": "symbol",
           "name": "_compile_handover"
@@ -94,7 +112,7 @@
     },
     {
       "anchor": {
-        "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+        "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
         "content": "sha256:8aeb4c9c5feaf03555182b2ce173b50d4b63d042afdcedddcfccbd9cfb055bda",
         "locator": {
           "kind": "symbol",
@@ -112,7 +130,7 @@
     },
     {
       "anchor": {
-        "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+        "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
         "content": "sha256:3767742eb1562b12475352ffa77c55c949963aa02e68c37efbdb7ef62757e084",
         "locator": {
           "end": 362,
@@ -131,7 +149,7 @@
     },
     {
       "anchor": {
-        "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+        "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
         "content": "sha256:4970820acf2a339998c58d56cfc7183b9ced6c386736e55939cf86311636cb90",
         "locator": {
           "kind": "symbol",
@@ -149,7 +167,7 @@
     },
     {
       "anchor": {
-        "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+        "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
         "content": "sha256:9410e1c9479a7f918a8df62ee08bd267c31f1f65bcc56f4551c3816fde8d0174",
         "locator": {
           "kind": "symbol",
@@ -167,7 +185,7 @@
     },
     {
       "anchor": {
-        "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+        "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
         "content": "sha256:ae9169abae6738fc9a561547d75cdeb72f64e1473ecaf76aed6a1ac03b18a254",
         "locator": {
           "kind": "symbol",
@@ -185,7 +203,25 @@
     },
     {
       "anchor": {
-        "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+        "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+        "content": "sha256:d978199794e7d4da26ff9f5485d80bc07bebf8ca36115cb94b84d03f7587add1",
+        "locator": {
+          "kind": "symbol",
+          "name": "_return_address"
+        }
+      },
+      "id": "RLZ-CDC7AE",
+      "invariant": "INV-3XH6Q0",
+      "origin": {
+        "handoffEntry": "RSM-R01-A7",
+        "leaf": "261112-RSM-L1"
+      },
+      "rationale": "The return address names the task references a child answers to; omitting the sprint there keeps a standalone master's manager address exact.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
         "content": "sha256:4970820acf2a339998c58d56cfc7183b9ced6c386736e55939cf86311636cb90",
         "locator": {
           "kind": "symbol",
@@ -203,7 +239,7 @@
     },
     {
       "anchor": {
-        "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+        "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
         "content": "sha256:ad12b44aa8d3cf322c080cbac6c1ca03847216bf2dc5936bb9d47489caaf37e6",
         "locator": {
           "kind": "symbol",
@@ -221,7 +257,7 @@
     },
     {
       "anchor": {
-        "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+        "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
         "content": "sha256:d6bee5d8e2ab2748115514e0f60af6b4be865d324bd52a5754df3646272561e7",
         "locator": {
           "kind": "symbol",
@@ -239,7 +275,7 @@
     },
     {
       "anchor": {
-        "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+        "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
         "content": "sha256:5e5430e36b61196467b614c0fd413bde32b78ef6de480fea36c5113b711a5667",
         "locator": {
           "kind": "symbol",
@@ -257,7 +293,7 @@
     },
     {
       "anchor": {
-        "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+        "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
         "content": "sha256:a22825664b51defd28eec8a582fb0e965eb88368f049472166db4e2d8324a82b",
         "locator": {
           "kind": "symbol",
@@ -275,8 +311,8 @@
     },
     {
       "anchor": {
-        "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
-        "content": "sha256:1a6920158daeb820f8807df7f4c7d958b033f6823ee0f933068eca39484a036a",
+        "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+        "content": "sha256:6eed23ad423ed5702f143a24fff1b097ac49aba8d51aa8fb6ffaa48812812edb",
         "locator": {
           "kind": "symbol",
           "name": "_compile_handover"
@@ -293,8 +329,8 @@
     },
     {
       "anchor": {
-        "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
-        "content": "sha256:ed8429d508b341aa9ec30cb82b499d7f7340869713e16a745d9a2dd0c88637f6",
+        "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+        "content": "sha256:ca9880cbd12bd1e65dcde9fd1499cf5dc673bbdccf4b20bdd76b17c5b5f521db",
         "locator": {
           "kind": "file"
         }
@@ -310,8 +346,8 @@
     },
     {
       "anchor": {
-        "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
-        "content": "sha256:1a6920158daeb820f8807df7f4c7d958b033f6823ee0f933068eca39484a036a",
+        "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+        "content": "sha256:6eed23ad423ed5702f143a24fff1b097ac49aba8d51aa8fb6ffaa48812812edb",
         "locator": {
           "kind": "symbol",
           "name": "_compile_handover"
@@ -328,7 +364,7 @@
     },
     {
       "anchor": {
-        "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+        "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
         "content": "sha256:7239e89abf19a0e115b20e40550cab8f02158f841b9f839ba1434cfb9191030a",
         "locator": {
           "kind": "symbol",
@@ -346,7 +382,7 @@
     },
     {
       "anchor": {
-        "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+        "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
         "content": "sha256:9410e1c9479a7f918a8df62ee08bd267c31f1f65bcc56f4551c3816fde8d0174",
         "locator": {
           "kind": "symbol",
@@ -369,7 +405,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+            "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
             "content": "sha256:4970820acf2a339998c58d56cfc7183b9ced6c386736e55939cf86311636cb90",
             "locator": {
               "kind": "symbol",
@@ -381,15 +417,14 @@
       ]
     },
     "10": {
-      "note": "The preparer carries bound canonical/read-copy metadata, composes source-bound instructions and preserves parent/peer routing. Source inspection establishes these implementation boundaries, not live-host execution or acceptance.",
+      "note": "The preparer carries bound canonical/read-copy metadata, composes source-bound instructions and preserves parent/peer routing. Source inspection establishes these implementation boundaries, not live-host execution or acceptance.\n\nAnchor: `_compile_handover`",
       "targets": [
         {
           "anchor": {
-            "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
-            "content": "sha256:1a6920158daeb820f8807df7f4c7d958b033f6823ee0f933068eca39484a036a",
+            "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+            "content": "sha256:ca9880cbd12bd1e65dcde9fd1499cf5dc673bbdccf4b20bdd76b17c5b5f521db",
             "locator": {
-              "kind": "symbol",
-              "name": "_compile_handover"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -401,7 +436,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+            "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
             "content": "sha256:4970820acf2a339998c58d56cfc7183b9ced6c386736e55939cf86311636cb90",
             "locator": {
               "kind": "symbol",
@@ -417,7 +452,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+            "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
             "content": "sha256:d6bee5d8e2ab2748115514e0f60af6b4be865d324bd52a5754df3646272561e7",
             "locator": {
               "kind": "symbol",
@@ -429,15 +464,14 @@
       ]
     },
     "13": {
-      "note": "Detail-bound composition enters the existing handover and message binding.",
+      "note": "Detail-bound composition enters the existing handover and message binding.\n\nAnchor: `_compile_handover`",
       "targets": [
         {
           "anchor": {
-            "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
-            "content": "sha256:1a6920158daeb820f8807df7f4c7d958b033f6823ee0f933068eca39484a036a",
+            "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+            "content": "sha256:ca9880cbd12bd1e65dcde9fd1499cf5dc673bbdccf4b20bdd76b17c5b5f521db",
             "locator": {
-              "kind": "symbol",
-              "name": "_compile_handover"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -467,7 +501,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+            "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
             "content": "sha256:c0ad5b8761a4da6a95ad5469b1e425605ac63fdf93b6f1d8a86f30d0a5412c53",
             "locator": {
               "kind": "symbol",
@@ -483,7 +517,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+            "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
             "content": "sha256:5e5430e36b61196467b614c0fd413bde32b78ef6de480fea36c5113b711a5667",
             "locator": {
               "kind": "symbol",
@@ -499,7 +533,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+            "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
             "content": "sha256:98fbd77b7672b4cca22fe605161433c316af3e43afe3fc9d0b5a2144001621dd",
             "locator": {
               "kind": "symbol",
@@ -515,7 +549,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+            "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
             "content": "sha256:327c2ecef707377b3d1753bab2d319f8df963473f4c308575a916c6f9c33c75b",
             "locator": {
               "kind": "symbol",
@@ -531,12 +565,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+            "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
             "content": "sha256:8349e16a09c44ce4b7b9136ec3e1b8f44c1150b019f241a4b0ab8c22db0c6cb3",
             "locator": {
-              "end": 272,
+              "end": 275,
               "kind": "line_range",
-              "start": 220
+              "start": 223
             },
             "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
           },
@@ -549,7 +583,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+            "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
             "content": "sha256:7239e89abf19a0e115b20e40550cab8f02158f841b9f839ba1434cfb9191030a",
             "locator": {
               "kind": "symbol",
@@ -560,7 +594,7 @@
         },
         {
           "anchor": {
-            "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+            "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
             "content": "sha256:fc63e6bf96780c8d60f22ab7f3189afb2231b725c74b61ca8ce0e05d5592b65e",
             "locator": {
               "end": 768,
@@ -629,12 +663,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+            "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
             "content": "sha256:3c96cf01a54136f94f456533307ae5eac3b4f1cf7a29741c60c47628d4c97c9f",
             "locator": {
-              "end": 1081,
+              "end": 1090,
               "kind": "line_range",
-              "start": 1080
+              "start": 1089
             }
           },
           "kind": "code"
@@ -646,7 +680,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+            "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
             "content": "sha256:9410e1c9479a7f918a8df62ee08bd267c31f1f65bcc56f4551c3816fde8d0174",
             "locator": {
               "kind": "symbol",

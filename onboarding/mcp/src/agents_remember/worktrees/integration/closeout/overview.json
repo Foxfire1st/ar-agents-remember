@@ -6,8 +6,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a61bb8710773ccee56c8016d87b57de1d750388c",
-            "content": "sha256:3ea7b2f02a294a5fea2dc010c849cac60fe37d3309a27bfc7b9cbda1dddef791",
+            "blob": "cef570950ae728a43c03bd0c262b3c5b46749ec2",
+            "content": "sha256:87283a3273ab313176c037537787d8c001038dea14fe3030a19e6c2654ad86c1",
             "locator": {
               "kind": "file"
             },
@@ -74,64 +74,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a61bb8710773ccee56c8016d87b57de1d750388c",
-            "content": "sha256:11766a27fc8fc9d2058751fa071256453d4bec1fb8f955f87f95b30a720fa205",
+            "blob": "cef570950ae728a43c03bd0c262b3c5b46749ec2",
+            "content": "sha256:87283a3273ab313176c037537787d8c001038dea14fe3030a19e6c2654ad86c1",
             "locator": {
-              "end": 215,
-              "kind": "line_range",
-              "start": 152
-            },
-            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a61bb8710773ccee56c8016d87b57de1d750388c",
-            "content": "sha256:0d64f1ab5341d6a3d0e97f6ee334e82815a00911e751e19551b22a39feb10521",
-            "locator": {
-              "end": 352,
-              "kind": "line_range",
-              "start": 292
-            },
-            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a61bb8710773ccee56c8016d87b57de1d750388c",
-            "content": "sha256:639557666dd44e79d32a672d51aa5afbe5463f44e3cc5ab8c28e9fe58e873eef",
-            "locator": {
-              "end": 500,
-              "kind": "line_range",
-              "start": 404
-            },
-            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a61bb8710773ccee56c8016d87b57de1d750388c",
-            "content": "sha256:87bb890fce2ddf85045c57c02c1c2eb61490bfa737234035dbded7a5aecff462",
-            "locator": {
-              "end": 594,
-              "kind": "line_range",
-              "start": 567
-            },
-            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a61bb8710773ccee56c8016d87b57de1d750388c",
-            "content": "sha256:d24efd06d2fa14698f93cd72ece2b34dbd0d412adc32a3f897c3d132e2564873",
-            "locator": {
-              "end": 667,
-              "kind": "line_range",
-              "start": 607
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py"
           },
@@ -140,39 +86,16 @@
       ]
     },
     "4": {
-      "note": "Publication derives its input statement from the declared publication members, names caller-supplied delivery identities, and accepts judgments and review assessments inline or from one judgments file whose SHA-256 the publish answer carries.",
+      "note": "Publication derives its input statement from the declared publication members, names caller-supplied delivery identities, and accepts judgments and review assessments inline or from one judgments file whose SHA-256 the publish answer carries.\n\nAnchor: `publication_input_statement`",
       "targets": [
         {
           "anchor": {
             "blob": "9b06809a50c0177ed9f11e258232f95ce0fe5679",
-            "content": "sha256:6056a8e954ae75eb1c188747da2865b05c86acc1d71b16e70b5c3d533fa37f84",
+            "content": "sha256:592dce1bd14a167e17e0e1db1f1737b3f1931ee45f62a2268cd8a1aa6618e93e",
             "locator": {
-              "kind": "symbol",
-              "name": "publication_input_statement"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8e48e38066874b65d5c7dec91535af65a658fbe4",
-            "content": "sha256:62ff8ce4bdbd3f00c78efdacd84276c39aa645becc3eef914179028fe1628ab6",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "9150d6ea2188c64e23f747c261ce8ef28cdd1bf4",
-            "content": "sha256:86b5e459286f0d79d7c4ea38fbeef81f4177a0b2507baa810d44601575c74df7",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_judgments_file.py"
           },
           "kind": "code"
         }

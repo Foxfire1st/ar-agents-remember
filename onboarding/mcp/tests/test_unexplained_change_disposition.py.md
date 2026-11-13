@@ -151,6 +151,8 @@ No cross-repo boundary is crossed by this file.
 
 - The catalog consumer row: the reconsideration shared-support artifact lists this module among its consumers. [14]
 
+
+
 ## Retirements
 
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:1920-1920 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

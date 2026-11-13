@@ -31,6 +31,8 @@ Cleanup attempts process/group termination and waits up to the configured reap i
 - The runtime reuses the owner's shared taskless set — `architect`, `investigator` and `bootstrap` — for receipt identity; effective-master presence is not that identity. [12]
 
 
+
+
 - Unconfirmed task metadata cannot assert an applied predecessor. [2]
 - Actual receipt choices supply the from record. [3]
 - The handover names immutable takeover bytes and retains predecessor report paths. [4]

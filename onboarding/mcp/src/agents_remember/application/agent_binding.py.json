@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "160e313efbefa3c044cc286261c123d7a9bad3ea",
-        "content": "sha256:0ffe147ee4cc8f99fe799092689c7e8560a8ca8071e5cdfda9295a171a835467",
+        "blob": "f7ddf469d09ffa892e43eaf4777567df0e78dbfc",
+        "content": "sha256:016a8aa15c222a06cecf763ab87af72b0dcc23eb0c5129df7c5197bf03d74278",
         "locator": {
           "kind": "symbol",
           "name": "read_agent_binding"
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "160e313efbefa3c044cc286261c123d7a9bad3ea",
+        "blob": "f7ddf469d09ffa892e43eaf4777567df0e78dbfc",
         "content": "sha256:29015d79ee8a9916681d50d3c1f121579b0317ef28362118154a41fa685f9a1a",
         "locator": {
           "kind": "symbol",
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "160e313efbefa3c044cc286261c123d7a9bad3ea",
+        "blob": "f7ddf469d09ffa892e43eaf4777567df0e78dbfc",
         "content": "sha256:b2f0cb7b94e3dafa7d280e836159aeccd592b57d7d7ded1274769761662edf7d",
         "locator": {
           "kind": "symbol",
@@ -58,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "160e313efbefa3c044cc286261c123d7a9bad3ea",
+        "blob": "f7ddf469d09ffa892e43eaf4777567df0e78dbfc",
         "content": "sha256:b2f0cb7b94e3dafa7d280e836159aeccd592b57d7d7ded1274769761662edf7d",
         "locator": {
           "kind": "symbol",
@@ -76,7 +76,7 @@
     },
     {
       "anchor": {
-        "blob": "160e313efbefa3c044cc286261c123d7a9bad3ea",
+        "blob": "f7ddf469d09ffa892e43eaf4777567df0e78dbfc",
         "content": "sha256:57e34134e1be8ad2eb46c4f4ebdb934b09aae2470ce58a89b1f6fc87313e7c6e",
         "locator": {
           "kind": "symbol",
@@ -94,7 +94,25 @@
     },
     {
       "anchor": {
-        "blob": "160e313efbefa3c044cc286261c123d7a9bad3ea",
+        "blob": "f7ddf469d09ffa892e43eaf4777567df0e78dbfc",
+        "content": "sha256:016a8aa15c222a06cecf763ab87af72b0dcc23eb0c5129df7c5197bf03d74278",
+        "locator": {
+          "kind": "symbol",
+          "name": "read_agent_binding"
+        }
+      },
+      "id": "RLZ-8BZM13",
+      "invariant": "INV-HVXZ6N",
+      "origin": {
+        "handoffEntry": "RSM-R01-A3",
+        "leaf": "261112-RSM-L1"
+      },
+      "rationale": "read_agent_binding is the one reader of the launch environment; it accepts the sprint-less shape for every role that names a master and keeps the investigator's four shapes, so a standalone master keeps role_message, role_start_set and worktree_status usable.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f7ddf469d09ffa892e43eaf4777567df0e78dbfc",
         "content": "sha256:45d918b8c4e4e6c11e09f3958839d73706654d5a1294807896295b6bcb9908ea",
         "locator": {
           "kind": "symbol",
@@ -112,7 +130,25 @@
     },
     {
       "anchor": {
-        "blob": "160e313efbefa3c044cc286261c123d7a9bad3ea",
+        "blob": "f7ddf469d09ffa892e43eaf4777567df0e78dbfc",
+        "content": "sha256:9f8fb583c044e495f2698d10bbfba87a40c0b8d7e4ea1531a1d2939e4d913ecc",
+        "locator": {
+          "kind": "symbol",
+          "name": "_shapes_of"
+        }
+      },
+      "id": "RLZ-CWQXYZ",
+      "invariant": "INV-HVXZ6N",
+      "origin": {
+        "handoffEntry": "RSM-R01-A3",
+        "leaf": "261112-RSM-L1"
+      },
+      "rationale": "This function derives the accepted reference shapes per role, including the sprint-less shape for a role that names a standalone master.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "f7ddf469d09ffa892e43eaf4777567df0e78dbfc",
         "content": "sha256:2f68620654f40988d2f2ac08a2e593c6412eb58b0cc8e41ed387dfef9a0b7427",
         "locator": {
           "end": 27,
@@ -131,7 +167,7 @@
     },
     {
       "anchor": {
-        "blob": "160e313efbefa3c044cc286261c123d7a9bad3ea",
+        "blob": "f7ddf469d09ffa892e43eaf4777567df0e78dbfc",
         "content": "sha256:2a2912773cfd4b9eb5fbadd8e0836fc52dee1202575ddbbe481e892cd6307c37",
         "locator": {
           "kind": "symbol",
@@ -149,7 +185,7 @@
     },
     {
       "anchor": {
-        "blob": "160e313efbefa3c044cc286261c123d7a9bad3ea",
+        "blob": "f7ddf469d09ffa892e43eaf4777567df0e78dbfc",
         "content": "sha256:25d7d72d389656ac3ca84833d8d9b9fe1c6bcf919fe08a5a9d4f802e8bb4fe6a",
         "locator": {
           "kind": "symbol",
@@ -167,7 +203,7 @@
     },
     {
       "anchor": {
-        "blob": "160e313efbefa3c044cc286261c123d7a9bad3ea",
+        "blob": "f7ddf469d09ffa892e43eaf4777567df0e78dbfc",
         "content": "sha256:71d7644a12655185608bc55caac9e257c278f5239db81accb0dbd8be5db0f7a9",
         "locator": {
           "kind": "symbol",
@@ -185,7 +221,7 @@
     },
     {
       "anchor": {
-        "blob": "160e313efbefa3c044cc286261c123d7a9bad3ea",
+        "blob": "f7ddf469d09ffa892e43eaf4777567df0e78dbfc",
         "content": "sha256:ae2629fcdf194228a1d43674dad6fdaf86f01e50173dab00bc7707235ab30347",
         "locator": {
           "kind": "symbol",
@@ -203,8 +239,8 @@
     },
     {
       "anchor": {
-        "blob": "160e313efbefa3c044cc286261c123d7a9bad3ea",
-        "content": "sha256:0ffe147ee4cc8f99fe799092689c7e8560a8ca8071e5cdfda9295a171a835467",
+        "blob": "f7ddf469d09ffa892e43eaf4777567df0e78dbfc",
+        "content": "sha256:016a8aa15c222a06cecf763ab87af72b0dcc23eb0c5129df7c5197bf03d74278",
         "locator": {
           "kind": "symbol",
           "name": "read_agent_binding"
@@ -226,7 +262,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "160e313efbefa3c044cc286261c123d7a9bad3ea",
+            "blob": "f7ddf469d09ffa892e43eaf4777567df0e78dbfc",
             "content": "sha256:ae2629fcdf194228a1d43674dad6fdaf86f01e50173dab00bc7707235ab30347",
             "locator": {
               "kind": "symbol",
@@ -242,8 +278,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "160e313efbefa3c044cc286261c123d7a9bad3ea",
-            "content": "sha256:ce5c2370dbde758a943b217869031a4bac903f0458cd471f3328f20bb2882240",
+            "blob": "f7ddf469d09ffa892e43eaf4777567df0e78dbfc",
+            "content": "sha256:1dcb1d6357a7692aa94e2077eb8fc9a97be7121c4b6dc517a5a551214ae7cb81",
             "locator": {
               "kind": "file"
             }
@@ -257,7 +293,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cfd95f0c56ed965a4f09d45ba05ac7b22d817eca",
+            "blob": "8a72d684bce67b530a7c70ee8df3d67280ac7cb3",
             "content": "sha256:22bc349351bd8af2100aeac13fc4c7778bbc399dba5194344c66299f8b6c8f59",
             "locator": {
               "end": 201,
@@ -270,7 +306,7 @@
         },
         {
           "anchor": {
-            "blob": "cfd95f0c56ed965a4f09d45ba05ac7b22d817eca",
+            "blob": "8a72d684bce67b530a7c70ee8df3d67280ac7cb3",
             "content": "sha256:2c1fa5fc562c7174dcaa4c45db2c0e143648ee7d6dbe903ec304e5a00fbd5ec0",
             "locator": {
               "end": 202,
@@ -283,7 +319,7 @@
         },
         {
           "anchor": {
-            "blob": "cfd95f0c56ed965a4f09d45ba05ac7b22d817eca",
+            "blob": "8a72d684bce67b530a7c70ee8df3d67280ac7cb3",
             "content": "sha256:2d438796aceb5e76ff5fad176adea4f38eac4e80cd423f215e2fc9fa0092eb2f",
             "locator": {
               "end": 193,
@@ -319,38 +355,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cfd95f0c56ed965a4f09d45ba05ac7b22d817eca",
-            "content": "sha256:21d4030e6f17e2c62614149dc77d5c509cdbfcdfa5a4bbe557bfc9aa5c599ed7",
+            "blob": "8a72d684bce67b530a7c70ee8df3d67280ac7cb3",
+            "content": "sha256:4f35ff68d93d5a2d91dec4249dcb214f8bdfdcd2086cb038be46eed7ddbe9b5a",
             "locator": {
-              "end": 329,
-              "kind": "line_range",
-              "start": 203
-            },
-            "path": "mcp/tests/test_paseo_agent_tools.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "cfd95f0c56ed965a4f09d45ba05ac7b22d817eca",
-            "content": "sha256:bb5b7002484217f2322d40f302be3f8202c07d44941cf97df9e5e8e859815209",
-            "locator": {
-              "end": 330,
-              "kind": "line_range",
-              "start": 204
-            },
-            "path": "mcp/tests/test_paseo_agent_tools.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "cfd95f0c56ed965a4f09d45ba05ac7b22d817eca",
-            "content": "sha256:123da210d41deed51137ca3d85b74c7aad3778866ab3d80d83e573f81e2a0498",
-            "locator": {
-              "end": 321,
-              "kind": "line_range",
-              "start": 195
+              "kind": "file"
             },
             "path": "mcp/tests/test_paseo_agent_tools.py"
           },
@@ -359,15 +367,14 @@
       ]
     },
     "6": {
-      "note": "The current source implements this file’s stated Investigator boundary.",
+      "note": "The current source implements this file’s stated Investigator boundary.\n\nAnchor: `read_agent_binding`",
       "targets": [
         {
           "anchor": {
-            "blob": "160e313efbefa3c044cc286261c123d7a9bad3ea",
-            "content": "sha256:0ffe147ee4cc8f99fe799092689c7e8560a8ca8071e5cdfda9295a171a835467",
+            "blob": "f7ddf469d09ffa892e43eaf4777567df0e78dbfc",
+            "content": "sha256:1dcb1d6357a7692aa94e2077eb8fc9a97be7121c4b6dc517a5a551214ae7cb81",
             "locator": {
-              "kind": "symbol",
-              "name": "read_agent_binding"
+              "kind": "file"
             }
           },
           "kind": "code"

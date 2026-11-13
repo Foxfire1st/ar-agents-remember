@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "883cd99bf39d98ad9a295289db97c05e2f89e73a",
-    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
+    "codeTree": "8b5044cb35d74cbcfe60b1c71c6b40add295550a",
+    "commit": "bb2d0b3725aa01485e820692b17e130fb65b1669",
     "role": "curator",
-    "statement": "The page is re-read at A005: the Census clause at docs/dashboard.md:613-615 is removed and the view description stands; the rest of the page is unchanged from A004 and its dependent statements stand.",
-    "task": "260928-MIK-L97",
+    "statement": "The launcher table now names “No sprint” and the standalone masters and the right-rail refusal names only a document whose master the tree does not hold; both hold at the candidate.",
+    "task": "261112-RSM-L1",
     "uncommitted": true
   },
   "document": "docs/dashboard.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -26,7 +26,7 @@
       "path": "dashboard/src/cockpit/Cockpit.tsx"
     },
     {
-      "blob": "40c7ba7f8ba356ee8d7abe94a7b0c1785c0de21b",
+      "blob": "9fd26bd6eb9545691e0a4f73ae8b16fa1585a78d",
       "kind": "file",
       "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
     },
@@ -36,7 +36,7 @@
       "path": "dashboard/src/cockpit/role-launcher/roleLauncherReadiness.ts"
     },
     {
-      "blob": "d40f60e246eaa870ff228d5f4a6582788c2104ee",
+      "blob": "462daf2928baf29511da7b2f41acf6eae18c8805",
       "kind": "file",
       "path": "dashboard/src/cockpit/roleLaunchModel.ts"
     },
@@ -46,7 +46,7 @@
       "path": "dashboard/src/cockpit/paseoFrameModel.ts"
     },
     {
-      "blob": "3c1fc9b507b9358e632a0fbcb31c6f9c66435151",
+      "blob": "fcabfa19119ee63ac45bc39e2236bdbac49bbf6e",
       "kind": "file",
       "path": "dashboard/src/cockpit/document-chat/model.ts"
     },
@@ -210,7 +210,7 @@
       "path": "mcp/src/agents_remember/observer/tool_events.py"
     },
     {
-      "blob": "b5d120de09128b72ce518321cc008426a1384f97",
+      "blob": "d7ad5c983788aa9d12a9cde613f56cfc8d0c0ca2",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py"
     },

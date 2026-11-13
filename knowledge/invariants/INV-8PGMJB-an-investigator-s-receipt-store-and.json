@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The standalone-master case and the receipt predicate together show a master-only investigator is listed and given a receipt under the master."
+  },
+  "applicability": "An Investigator selection that names a sprint or a master.",
+  "conditions": [
+    "The selection carries at least one document reference."
+  ],
+  "exclusions": [
+    "A taskless Investigator, which keeps the existing listing and ownership behavior."
+  ],
+  "id": "INV-8PGMJB",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_role_launch_routes.py::StandaloneMasterSelectionTests::test_an_investigator_resolves_a_standalone_master; the sandbox walk's master-only investigator receipt is filed under the master's notes (investigator/sessions/<requestId>.json)"
+      ],
+      "path": "261112-RSM-L1-curator-knowledge-handoff.json"
+    },
+    "handoffEntry": "RSM-R01-A6",
+    "leaf": "261112-RSM-L1",
+    "task": "261112-RSM"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "An investigator's receipt store and recipient lookup follow the presence of a document, not of a sprint.",
+  "status": "proposed",
+  "supersedes": []
+}

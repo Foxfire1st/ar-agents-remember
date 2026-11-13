@@ -1,5 +1,109 @@
 {
   "path": "mcp/tests/test_role_launch_routes.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "85f5ff51b4d4d720d5cd27164237494c77aea5b0",
+        "content": "sha256:1911844f02a36e3381d79d55b11396a775826d85e5843b9331a99f3741ec4ae0",
+        "locator": {
+          "kind": "symbol",
+          "name": "StandaloneMasterSelectionTests.test_a_standalone_masters_leaf_records_the_master_as_its_outer_task"
+        }
+      },
+      "facet": "The leaf records the standalone master as its outer task.",
+      "id": "PRF-5VHTJN",
+      "invariant": "INV-4R4PF0",
+      "origin": {
+        "handoffEntry": "RSM-R01-A5",
+        "leaf": "261112-RSM-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "85f5ff51b4d4d720d5cd27164237494c77aea5b0",
+        "content": "sha256:0b021e7da41ace1c736b0cb73cfec469754f62cf0a3f613e75c166f1874f19bb",
+        "locator": {
+          "kind": "symbol",
+          "name": "StandaloneMasterSelectionTests.test_a_manager_resolves_a_standalone_master_with_no_sprint"
+        }
+      },
+      "facet": "A manager resolves a master that no sprint commands and names no sprint.",
+      "id": "PRF-7086RE",
+      "invariant": "INV-97T18K",
+      "origin": {
+        "handoffEntry": "RSM-R01-A1",
+        "leaf": "261112-RSM-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "85f5ff51b4d4d720d5cd27164237494c77aea5b0",
+        "content": "sha256:375dbb4be44bd89559127b936311b0a3afcd51d6947c1eeee2d524cef8bb81c4",
+        "locator": {
+          "kind": "symbol",
+          "name": "StandaloneMasterSelectionTests.test_a_leaf_return_address_names_the_standalone_master_alone"
+        }
+      },
+      "facet": "The compiled return address names the standalone master without a sprint.",
+      "id": "PRF-NXH2VE",
+      "invariant": "INV-3XH6Q0",
+      "origin": {
+        "handoffEntry": "RSM-R01-A7",
+        "leaf": "261112-RSM-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "85f5ff51b4d4d720d5cd27164237494c77aea5b0",
+        "content": "sha256:4315aae4a095813c7d635d1e2b2bd13a773af4a2844fa3f49d000840f9699892",
+        "locator": {
+          "kind": "symbol",
+          "name": "StandaloneMasterSelectionTests.test_an_investigator_resolves_a_standalone_master"
+        }
+      },
+      "facet": "An investigator resolves a master that no sprint commands.",
+      "id": "PRF-T17EXM",
+      "invariant": "INV-ZYWR60",
+      "origin": {
+        "handoffEntry": "RSM-R01-A4",
+        "leaf": "261112-RSM-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "85f5ff51b4d4d720d5cd27164237494c77aea5b0",
+        "content": "sha256:4315aae4a095813c7d635d1e2b2bd13a773af4a2844fa3f49d000840f9699892",
+        "locator": {
+          "kind": "symbol",
+          "name": "StandaloneMasterSelectionTests.test_an_investigator_resolves_a_standalone_master"
+        }
+      },
+      "facet": "The master-only investigator selection is admitted, which is the predicate the receipt store follows.",
+      "id": "PRF-V78VJJ",
+      "invariant": "INV-8PGMJB",
+      "origin": {
+        "handoffEntry": "RSM-R01-A6",
+        "leaf": "261112-RSM-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "85f5ff51b4d4d720d5cd27164237494c77aea5b0",
+        "content": "sha256:f0b678ec6715bebca7c3fba3505e55ac6ff89be14fd46a444a19d2a72651e2e9",
+        "locator": {
+          "kind": "symbol",
+          "name": "StandaloneMasterSelectionTests.test_a_commanded_master_still_requires_its_sprint"
+        }
+      },
+      "facet": "A commanded master still requires its exact sprint.",
+      "id": "PRF-WNYRJM",
+      "invariant": "INV-HYEKF9",
+      "origin": {
+        "handoffEntry": "RSM-R01-A2",
+        "leaf": "261112-RSM-L1"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -7,7 +111,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4fa0abfddd2cc263752f0d4ce25563995e117ce7",
+            "blob": "85f5ff51b4d4d720d5cd27164237494c77aea5b0",
             "content": "sha256:7a9ab1a969e5825cd62bfe61224067b56a062c72c26c3325a2f9f24755b7d181",
             "locator": {
               "kind": "symbol",

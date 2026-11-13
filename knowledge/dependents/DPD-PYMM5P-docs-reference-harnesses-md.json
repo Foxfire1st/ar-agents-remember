@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
-    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
-    "role": "worker",
-    "statement": "This task brought the page in line with the product: its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate, the false ones were corrected, and the page was read whole; 2 rows of the inventory of changes are told here.",
-    "task": "260928-MIK-L97",
+    "codeTree": "8b5044cb35d74cbcfe60b1c71c6b40add295550a",
+    "commit": "bb2d0b3725aa01485e820692b17e130fb65b1669",
+    "role": "curator",
+    "statement": "The harness page's statements about the launcher's catalog and override selectors, the \"Step up\" button, and the held-start mark still hold at the final tree; the page does not say a start needs a sprint, and the launcher's new no-sprint choice leaves its field descriptions accurate.",
+    "task": "261112-RSM-L1",
     "uncommitted": true
   },
   "document": "docs/reference/harnesses.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -96,7 +96,7 @@
       "path": "mcp/src/agents_remember/cli/role_launch_request_rules.py"
     },
     {
-      "blob": "40c7ba7f8ba356ee8d7abe94a7b0c1785c0de21b",
+      "blob": "9fd26bd6eb9545691e0a4f73ae8b16fa1585a78d",
       "kind": "file",
       "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
     }

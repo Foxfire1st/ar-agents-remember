@@ -34,6 +34,23 @@
         "handoffEntry": "L84-K2-Y6GVZ7-current-budget-proof",
         "leaf": "260928-MIK-L84"
       }
+    },
+    {
+      "anchor": {
+        "blob": "6bbaa8006b5418ef6bb2712754d9027a173cccde",
+        "content": "sha256:0374a910975c2810c57c2f2ff2d05016edc4be9b67651c5817f676c4b1cfc935",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_no_capsule_exceeds_its_recorded_budget"
+        }
+      },
+      "facet": "No capsule exceeds its recorded budget after the record renewal.",
+      "id": "PRF-NVWQQR",
+      "invariant": "INV-4HZG3V",
+      "origin": {
+        "handoffEntry": "RSM-R01-A9",
+        "leaf": "261112-RSM-L1"
+      }
     }
   ],
   "realizes": [],
@@ -115,7 +132,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c8318c7529a92a28e65eb4163a582e66d3bb3d62",
+            "blob": "1e978ee04dff9734b4dff64133d62261ae76e6b2",
             "content": "sha256:8c2becfadaf1ba12345a93ed610585038b103dbd7f59b6d85aabde9d687a7b9c",
             "locator": {
               "kind": "symbol",
@@ -148,7 +165,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "214707ebce4f6867647ac01bef003737d3ad5390",
+            "blob": "e496c4d0e37835d51064bfc7ed14a72f51037e92",
             "content": "sha256:0182ac1d6688241bfe9ccfc2cdcacf4e1cdd183ad89fd9219578032fa7214ba2",
             "locator": {
               "end": 6371,

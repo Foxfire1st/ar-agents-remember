@@ -1,0 +1,39 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "The eight clauses together promise the whole: a sprint-less selection is admitted, carried into the binding, recorded on the leaf, kept bounded for the Investigator, compiled into the handover and accepted by the coherence route. No single clause states that a role can be started and can work on a master without a sprint."
+  },
+  "guarantee": "A parentless role start may name a master that no sprint commands: the selection accepts no sprint, every role keeps the reference shape it is admitted for, a leaf role of that master records the master as its outer task, the Investigator keeps its bounded document-bound scope, the compiled handover carries the sprint reference only when the selection has one, and the task's curator coherence publishes and validates against the master without an authored graph, while a master a sprint commands starts exactly as before.",
+  "id": "FAM-MEH3SB",
+  "members": [
+    "INV-97T18K",
+    "INV-HYEKF9",
+    "INV-HVXZ6N",
+    "INV-ZYWR60",
+    "INV-4R4PF0",
+    "INV-8PGMJB",
+    "INV-3XH6Q0",
+    "INV-8V44VE"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "261112-RSM-L1-curator-knowledge-handoff.json"
+    },
+    "handoffEntry": "FAM-standalone-start",
+    "leaf": "261112-RSM-L1",
+    "task": "261112-RSM"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp/src/agents_remember/application",
+    "mcp/src/agents_remember/cli",
+    "mcp/src/agents_remember/tasks",
+    "mcp/src/agents_remember/worktrees/integration/closeout",
+    "mcp/src/agents_remember/worktrees/queue"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "A role can be started and can work on a master that no sprint commands"
+}

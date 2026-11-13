@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A reader who follows the old launcher table or caller sentence would expect a sprint where none is needed and would misread who may publish a standalone-master task; the pages guard that plausible misreading."
+  },
+  "applicability": "The documentation of the launcher document fields and of the coherence publication caller.",
+  "conditions": [
+    "The pages describe the launcher as served and the caller the publisher accepts."
+  ],
+  "exclusions": [
+    "Captured historical pages and release notes.",
+    "The launcher behavior itself, which RSM-R01-A11 states."
+  ],
+  "id": "INV-Q1GFQS",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/src/agents_remember/package_data/runtime/docs/tool-details.md (synced); scripts/sync-runtime.py --check ok"
+      ],
+      "path": "261112-RSM-L1-final-curation-1.json"
+    },
+    "handoffEntry": "RSM-R01-A10",
+    "leaf": "261112-RSM-L1",
+    "task": "261112-RSM"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The launcher and caller documentation admit a master that no sprint commands.",
+  "status": "proposed",
+  "supersedes": []
+}

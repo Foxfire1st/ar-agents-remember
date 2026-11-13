@@ -69,15 +69,14 @@
       ]
     },
     "3": {
-      "note": "Production resolves the exact leaf, master, and sprint and rejects missing topology.",
+      "note": "Production resolves the exact leaf, master, and sprint and rejects missing topology.\n\nAnchor: `_task_context`",
       "targets": [
         {
           "anchor": {
-            "blob": "a61bb8710773ccee56c8016d87b57de1d750388c",
-            "content": "sha256:87bb890fce2ddf85045c57c02c1c2eb61490bfa737234035dbded7a5aecff462",
+            "blob": "cef570950ae728a43c03bd0c262b3c5b46749ec2",
+            "content": "sha256:87283a3273ab313176c037537787d8c001038dea14fe3030a19e6c2654ad86c1",
             "locator": {
-              "kind": "symbol",
-              "name": "_task_context"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py"
           },
@@ -90,7 +89,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8e48e38066874b65d5c7dec91535af65a658fbe4",
+            "blob": "164232e680624f745b170382de28421b099658c7",
             "content": "sha256:4bb80fed631c26664cf39811c8d7e403685bb7035d6e739047e2ca9941fd6c63",
             "locator": {
               "end": 449,

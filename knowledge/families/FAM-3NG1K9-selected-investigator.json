@@ -5,7 +5,7 @@
     ],
     "justification": "The member boundaries together protect the end-to-end promise: a concern alone cannot constrain writes or remediation, and a slot guard alone cannot preserve request/report identity and primary-chat ownership."
   },
-  "guarantee": "A caller-owned sprint/master Investigator selection admits only its authorized non-leaf scope, keeps the complete not-closed set within eight slots across both starts and completed-recipient new turns, and preserves each selected request UUID through bounded listing, exact reports, replay, Retry, Revive and dashboard remount without replacing the primary document coordinator.",
+  "guarantee": "A caller-owned sprint/master or standalone-master Investigator selection admits only its authorized non-leaf scope, keeps the complete not-closed set within eight slots across both starts and completed-recipient new turns, and preserves each selected request UUID through bounded listing, exact reports, replay, Retry, Revive and dashboard remount without replacing the primary document coordinator.",
   "id": "FAM-3NG1K9",
   "members": [
     "INV-68QN0P",
@@ -22,7 +22,7 @@
     "leaf": "260928-MIK-L98",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "routes": [
     "mcp/src/agents_remember/cli",
     "mcp/src/agents_remember/application",

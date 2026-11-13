@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The record and its pinned fingerprint live in two files: the JSON record carries the measurements and the test-support module pins its identity, so both must move together."
+  },
+  "applicability": "The capsule-budget record after a role-text change.",
+  "conditions": [
+    "Only measured sizes and source identities change."
+  ],
+  "exclusions": [
+    "Any change to a ceiling or limit, which the developer alone sets."
+  ],
+  "id": "INV-4HZG3V",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_role_capsule_budgets.py; mcp/tests/test_role_capsule_budgets_d694.py (53 passed)"
+      ],
+      "path": "261112-RSM-L1-curator-knowledge-handoff.json"
+    },
+    "handoffEntry": "RSM-R01-A9",
+    "leaf": "261112-RSM-L1",
+    "task": "261112-RSM"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The capsule-budget record is renewed in measured and identity fields only, with no ceiling and no limit raised.",
+  "status": "proposed",
+  "supersedes": []
+}

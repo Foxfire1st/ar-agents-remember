@@ -5,7 +5,7 @@
     ],
     "justification": "The attributed source owners must agree on the same selection, receipt and identity contract; a single location cannot preserve the obligation across its public producer and consumers."
   },
-  "applicability": "Per-request Investigator execution on a selected sprint or master.",
+  "applicability": "Per-request Investigator execution on a selected sprint or on a master that no sprint commands.",
   "conditions": [
     "The complete not-closed set owns the eight-slot budget and role-address ambiguity.",
     "The newest-fifty display reports omitted rows independently of that complete set.",
@@ -13,6 +13,7 @@
   ],
   "exclusions": [
     "Projects request storage and its existing single-occupant bound-row policy.",
+    "A taskless Investigator keeps the Projects request store.",
     "A completed host turn does not imply AR acceptance."
   ],
   "id": "INV-VZJRTM",
@@ -27,9 +28,9 @@
     "leaf": "260928-MIK-L98",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Selected Investigator requests and reports belong to the task; eight not-closed slots and full open-set ambiguity are independent of the newest-fifty display, while exact request reads and retry remain resolvable.",
+  "statement": "Selected Investigator requests and reports belong to the document the selection names — the sprint, or the master that no sprint commands; eight not-closed slots and full open-set ambiguity are independent of the newest-fifty display, while exact request reads and retry remain resolvable.",
   "status": "proposed",
   "supersedes": []
 }

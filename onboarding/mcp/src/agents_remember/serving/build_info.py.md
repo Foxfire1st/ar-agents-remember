@@ -167,6 +167,8 @@ No relevant external or domain documentation was found for this repository-local
 
 - `SERVER_VERSION` supplies the wheel version in the daemon restart identity through the kernel resolver, which uses installed package metadata with a source-checkout literal fallback (kernel-owned since L9). [3]
 
+
+
 - The cockpit compares and renders the serving/client identity. [4]
 
 - The fingerprint sidecar this module reads is generated at release time beside the generated bundle, and is written only after a build that carries the same value. [5]

@@ -1,0 +1,4001 @@
+{
+  "closed": true,
+  "leaf": "261112-RSM-L1",
+  "rows": [
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-63Z0MN",
+          "revision": 3
+        },
+        {
+          "id": "INV-NNQR91",
+          "revision": 3
+        }
+      ],
+      "id": "ROW-0B22G7",
+      "items": [
+        "sha256:3099a4d2a7a8bac2fbc7eb643f656c3f31e6bc113252753afa5ddd4300f7e9a2"
+      ],
+      "reason": "All members were examined at the candidate; the source moves are re-anchors and the family guarantee is unchanged.",
+      "revision": 8,
+      "subject": "FAM-GDXSJG"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-10GYJR",
+      "items": [
+        "sha256:17f57cbe8d1f50d4a3249f2243dc5864ab6577b581b1c1c16faed25f76cfb9b8"
+      ],
+      "reason": "The `_request_kwargs` helper was used at the two calls in 8b5044cb and returned `{\"contract_path\": contract.contract_path.as_posix()}`; the repair wrote that argument out at both calls and then removed the helper. The route behavior and assertions are unchanged, and the sidecar references were re-anchored.",
+      "sources": [
+        {
+          "blob": "86d27cd4466e0a4f52fd90fc8bc9b8d5bf7032f7",
+          "path": "mcp/tests/test_standalone_master_route.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_standalone_master_route.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-177W89",
+      "items": [
+        "sha256:22f19f6cadd9b0475a3c6448a926796019ecd80e85a90b890b9d16408b915d59"
+      ],
+      "reason": "The confirmation statement now names what was read in this document against the version and standalone-master change; the document still stands and its links are re-read at the candidate.",
+      "revision": 2,
+      "subject": "DPD-GHEXS9"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-1B7VBV",
+      "items": [
+        "sha256:0ed5281bac9aebac242ee903c4841a801a52fd43ce39f39d5cde1ed9790cec19"
+      ],
+      "reason": "The confirmation statement now names what was read in this document against the version and standalone-master change; the document still stands and its links are re-read at the candidate.",
+      "revision": 7,
+      "subject": "DPD-633P3W"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "8a72d684bce67b530a7c70ee8df3d67280ac7cb3",
+            "content": "sha256:ee40f1e9e6c721898c621eadc7a225c73962f4cde850991be1dfc18fceb2ef24",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolServerDefinitionTests.test_the_tool_server_reads_the_binding_it_was_started_with_and_reports_it"
+            },
+            "path": "mcp/tests/test_paseo_agent_tools.py"
+          },
+          "before": {
+            "blob": "cfd95f0c56ed965a4f09d45ba05ac7b22d817eca",
+            "content": "sha256:bb5b7002484217f2322d40f302be3f8202c07d44941cf97df9e5e8e859815209",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolServerDefinitionTests.test_the_tool_server_reads_the_binding_it_was_started_with_and_reports_it"
+            },
+            "path": "mcp/tests/test_paseo_agent_tools.py"
+          },
+          "id": "PRF-EJTNTW"
+        },
+        {
+          "after": {
+            "blob": "f7ddf469d09ffa892e43eaf4777567df0e78dbfc",
+            "content": "sha256:016a8aa15c222a06cecf763ab87af72b0dcc23eb0c5129df7c5197bf03d74278",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_agent_binding"
+            },
+            "path": "mcp/src/agents_remember/application/agent_binding.py"
+          },
+          "before": {
+            "blob": "160e313efbefa3c044cc286261c123d7a9bad3ea",
+            "content": "sha256:0ffe147ee4cc8f99fe799092689c7e8560a8ca8071e5cdfda9295a171a835467",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_agent_binding"
+            },
+            "path": "mcp/src/agents_remember/application/agent_binding.py"
+          },
+          "id": "RLZ-WDJVB2"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-1WWB6H",
+      "items": [
+        "sha256:4ce2e471ab0673d1d5c50862c67ecac20dd8d7652b360bd44ec4bca5a4203fd7"
+      ],
+      "reason": "Every covered realization was read at the extended candidate; the source move is the launcher or document re-anchor, and the invariant states the same obligation with the same entry set.",
+      "revision": 2,
+      "subject": "INV-RG14R7"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-2R6VSS",
+      "items": [
+        "sha256:16b843e98d833a8cb18bb5073b4c5faf0dcc9d485669579ffcda9c5850b23159"
+      ],
+      "reason": "The card was brought to current truth at the candidate: it now states the standalone-master launch case and no longer claims a sprint is always named. Its sources are bound at the candidate tree.",
+      "sources": [
+        {
+          "blob": "926e006da6810baf314464553204030191db3ad7",
+          "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/manager.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+            "content": "sha256:ca9880cbd12bd1e65dcde9fd1499cf5dc673bbdccf4b20bdd76b17c5b5f521db",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+            "content": "sha256:ed8429d508b341aa9ec30cb82b499d7f7340869713e16a745d9a2dd0c88637f6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-T0T191"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-2S6PG0",
+      "items": [
+        "sha256:568388c0b9fbbf2b3b7ae44394c0b7eb9d4a220e0fbd947b8e6fb8fb49782a2a"
+      ],
+      "reason": "Every covered realization was read at the extended candidate; the source move is the launcher or document re-anchor, and the invariant states the same obligation with the same entry set.",
+      "revision": 2,
+      "subject": "INV-X9GE8J"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "baa068ea15e062f1c85019e2c5eaad84f01e0b96",
+            "content": "sha256:76c35f591615dfc28a9728e6995a0bced846144bc10152c333cd1deb622c0694",
+            "locator": {
+              "end": 220,
+              "kind": "line_range",
+              "start": 216
+            },
+            "path": "README.md"
+          },
+          "before": {
+            "blob": "b6e2cd8ce95d8c8afedbeb624882c221c31c3a8c",
+            "content": "sha256:0cf2550b4a5377e2999c71c5d4e9bfb2c39845ff477354d9c64320bbf6a9ea40",
+            "locator": {
+              "end": 220,
+              "kind": "line_range",
+              "start": 216
+            },
+            "path": "README.md"
+          },
+          "id": "RLZ-5R1WWT"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-2SV9AS",
+      "items": [
+        "sha256:dbcb4f9733fbe73caa51c40e6d78def1081e9aee89fbfeb968e3a08619b874fa"
+      ],
+      "reason": "This leaf changed the record in the first curation pass (the standalone-master statement and scope); the row at the current revision carries the same meaning change and covers the re-anchored realizations.",
+      "revision": 2,
+      "subject": "INV-MG3HK1"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-3F3F7M",
+      "items": [
+        "sha256:8162e0f46b66ba40d8dbd699dd38e058fd1159eda4fd5d45675e54ed69046bfb",
+        "sha256:a7de6da45478b054a28ca0f2cba30aeb21c3eab4520189a209e58af40145db2a"
+      ],
+      "reason": "The dependent was re-read at the extended candidate after the launcher and document repair; the document stands and the confirmation names this task and the candidate tree.",
+      "revision": 4,
+      "subject": "DPD-X6G7K3"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-208SQT",
+          "revision": 2
+        },
+        {
+          "id": "INV-CXEEF4",
+          "revision": 1
+        },
+        {
+          "id": "INV-K5SFG7",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-46G72D",
+      "items": [
+        "sha256:6202309a59ac838368f9ad46cc588b147ca3d55c3fdb06ed41ea36ba205ca8ad"
+      ],
+      "reason": "All members were examined at the candidate; the source moves are re-anchors and the family guarantee is unchanged.",
+      "revision": 1,
+      "subject": "FAM-YGXZTQ"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-49W01E",
+      "items": [
+        "sha256:75479656384470375774becf260581889a9461bff0a3d5cfef7c56d0bd81637a"
+      ],
+      "reason": "dashboard/src/cockpit/roleLaunchModel.ts line 399: `launchSelectionComplete` requires a sprint only for the Orchestrator; the rule is stated by RSM-R01-A11 and its target anchors.",
+      "subject": "hunk:sha256:75479656384470375774becf260581889a9461bff0a3d5cfef7c56d0bd81637a"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4JCC95",
+      "items": [
+        "sha256:1699e678bf9d367581054dc8eb1276c6b055cb20e8b53b0606921222b8826a1e"
+      ],
+      "reason": "The card was brought to current truth at the candidate: it now states the standalone-master launch case and no longer claims a sprint is always named. Its sources are bound at the candidate tree.",
+      "sources": [
+        {
+          "blob": "9170e361d8a55ae8a86bc80960710197d49fedcd",
+          "path": "skills/l-01-agent-lifecycles/SKILL.md"
+        },
+        {
+          "blob": "e496c4d0e37835d51064bfc7ed14a72f51037e92",
+          "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        },
+        {
+          "blob": "e3f14fd6204940ace8a22d216c6ba13e5a8cd8f7",
+          "path": "skills/l-01-agent-lifecycles/templates/manager-brief.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/overview"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-4K9WJB",
+      "items": [
+        "sha256:bfac2048e9560814588ff082415a465346cedc2a9dd1bd5f5b86fea499011107"
+      ],
+      "reason": "The confirmation statement now names what was read in this document against the version and standalone-master change; the document still stands and its links are re-read at the candidate.",
+      "revision": 2,
+      "subject": "DPD-327MNX"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-8AMSGV",
+          "revision": 4
+        },
+        {
+          "id": "INV-A6GAKX",
+          "revision": 1
+        },
+        {
+          "id": "INV-NFV5VJ",
+          "revision": 2
+        },
+        {
+          "id": "INV-P2WRNQ",
+          "revision": 2
+        },
+        {
+          "id": "INV-PEVJ6G",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-4NPF9A",
+      "items": [
+        "sha256:9f140bac85e06dd0dfc42d1daa19f80542a24ffd2ef9fc7f6ea9a034c42423e6"
+      ],
+      "reason": "All members were examined at the candidate; the source moves are re-anchors and the family guarantee is unchanged.",
+      "revision": 3,
+      "subject": "FAM-PNH1QS"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "7229064a725f1a8ac0d60bacadfa0fa0fa00a205",
+            "content": "sha256:1a49a42a50dd81c8fbc410c1fd1d37b0bc8d03e3001cfc018af884f8b03ff709",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_curator_instruction_wording.py"
+          },
+          "before": {
+            "blob": "2e93d8f10bc735da4775908e8a6a7274e3f2fa9e",
+            "content": "sha256:4e8836e6629aac4f9d8b4422d7d025fc4968e05f71838806c1fa4726c187b0a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_curator_instruction_wording.py"
+          },
+          "id": "PRF-0TFF0B"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-4ZS15X",
+      "items": [
+        "sha256:ee8a7ce7b4b9bfd8f523eb38aec2ab780e9c05f99b747fe2b85c9f7a99031a46"
+      ],
+      "reason": "Every covered realization was read at the extended candidate; the source move is the launcher or document re-anchor, and the invariant states the same obligation with the same entry set.",
+      "revision": 4,
+      "subject": "INV-5KBX7C"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5757D1",
+      "items": [
+        "sha256:8ab62ab7d74d2c91940e84b5162cf9dc767790d0cb093024fa82750086958d20"
+      ],
+      "reason": "The card was brought to current truth at the candidate: it now states the standalone-master launch case and no longer claims a sprint is always named. Its sources are bound at the candidate tree.",
+      "sources": [
+        {
+          "blob": "cef570950ae728a43c03bd0c262b3c5b46749ec2",
+          "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "926e006da6810baf314464553204030191db3ad7",
+            "content": "sha256:6f6b42d2d6623436255e515ef153053e58a2b93e7cb586f7d23c8586629209e9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "before": {
+            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "content": "sha256:874a2947ebc58481582c0cb1f00dc08901b017156fc95bb5d90df975ba0786e7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "id": "RLZ-5KGCEP"
+        },
+        {
+          "after": {
+            "blob": "2409436603223ce18654fb5e05f92a29a102b30f",
+            "content": "sha256:f5e83f13d0e4c3c07041b58d2d7c98a926d2a2d9ba3001cca4147c40eabcb3d6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "de0e221dc51f2f0b067db007cb4c00b17ab3bd39",
+            "content": "sha256:64f53ef7349f7b99805e555662a6f4355c15a1c66bb9a57c44d45685f6aaf0b8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-FKZS6D"
+        },
+        {
+          "after": {
+            "blob": "a8c098e9bfe5ff05bc1568cabde93d167e9ad35c",
+            "content": "sha256:a9568fd887bbc7b34443e94f060623a43689a42abbde634c18c7157f8cabea9a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "before": {
+            "blob": "23bfca4e88babb87f154a00a7d88d117d67c4614",
+            "content": "sha256:4a0dfeab70995c88c469397b1f859e6244c27cbf55e00ccb7cb3047b3ca31b73",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "id": "RLZ-XG7F62"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-5DBPP5",
+      "items": [
+        "sha256:c4c879ea522f36e496c0e0ddf578fe5fa5efeecac4a08e06aca7ae5d1c0ee9b1"
+      ],
+      "reason": "Every covered realization was read at the extended candidate; the source move is the launcher or document re-anchor, and the invariant states the same obligation with the same entry set.",
+      "revision": 1,
+      "subject": "INV-GWA6VR"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-5MYSS4",
+      "items": [
+        "sha256:655044f4acc91a6c72b3c439c1851c0c48b8e8d4e9cb77737d0d565f95122602"
+      ],
+      "reason": "The weakness still stands where it stood; the anchor file moved with the launcher/document repair and this task did not change the cause.",
+      "revision": 1,
+      "subject": "WKN-14H000"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-5NV42T",
+      "items": [
+        "sha256:3ca0efb60cd81e2c45382395bb278a120f4436b56b0ac98680983f90c28badfb"
+      ],
+      "reason": "The confirmation statement now names what was read in this document against the version and standalone-master change; the document still stands and its links are re-read at the candidate.",
+      "revision": 2,
+      "subject": "DPD-K2QMWQ"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-5P04DE",
+      "items": [
+        "sha256:3df52a0319b7f88142b7ac766a6ca83e2d154bc7d16449377879d803036504ef",
+        "sha256:96b21bef7c3f515ac07b33e017589df29e93af57f64366ead2adde1684da008e",
+        "sha256:bbd96d1ef3f0eebcc04d2543e131fb34dbb311327400b033e2cd7bdc245bb43e"
+      ],
+      "reason": "The source moved, but the card at mcp/test_support/agents_remember_test_support/testing/coordination_wording.py states the same contract at the candidate; no claim in it depends on the sprint-only rule that changed.",
+      "sources": [
+        {
+          "blob": "f956c47f3316d287e701571e4806df8ed0d4b460",
+          "path": "mcp/test_support/agents_remember_test_support/testing/coordination_wording.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/coordination_wording.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-6NYD2D",
+      "items": [
+        "sha256:49b2ee5c03f3ce3492f719e1fced5bd812e963304f5eddb1cf53c3e360eba0c4"
+      ],
+      "reason": "The confirmation statement now names what was read in this document against the version and standalone-master change; the document still stands and its links are re-read at the candidate.",
+      "revision": 2,
+      "subject": "DPD-86HJGF"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-71K52J",
+      "items": [
+        "sha256:5fa0d30c231d7a0ddf9e8ddd78c6adb88d001475d5ffc80109ba08ff6b42c329"
+      ],
+      "reason": "The card was brought to the standalone-master truth at the extended candidate: the “No sprint” choice, the standalone master list, the binding without a sprint and the launcher test are now stated.",
+      "sources": [
+        {
+          "blob": "6124c93eeb42a155aa7065bfa1408d6400319c69",
+          "path": "dashboard/src/cockpit/RoleLauncher.row.test.tsx"
+        },
+        {
+          "blob": "899182b3a2a0f1e12063e5ca78b4d3b5a745dd53",
+          "path": "dashboard/src/cockpit/document-chat/DocumentChat.test.tsx"
+        },
+        {
+          "blob": "fcabfa19119ee63ac45bc39e2236bdbac49bbf6e",
+          "path": "dashboard/src/cockpit/document-chat/model.ts"
+        },
+        {
+          "blob": "4efa21ba70e88c36e0e93ed074d44bc252eee7ce",
+          "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.standalone.test.tsx"
+        },
+        {
+          "blob": "9fd26bd6eb9545691e0a4f73ae8b16fa1585a78d",
+          "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+        },
+        {
+          "blob": "0a431e2f25b6e46700f6528bffcaa3e76d02b25f",
+          "path": "dashboard/src/cockpit/role-launcher/useLauncherSelectionRepair.ts"
+        },
+        {
+          "blob": "462daf2928baf29511da7b2f41acf6eae18c8805",
+          "path": "dashboard/src/cockpit/roleLaunchModel.ts"
+        },
+        {
+          "blob": "594dbeac7af2b34da61d7477aa1e5d3ee162fbf6",
+          "path": "dashboard/src/test/fixtures/documentChat.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-75G6PM",
+      "items": [
+        "sha256:e2fd6554c7848563004e6e367823881ffa129bca98bcb1f793cd69c1fbbfd7a1"
+      ],
+      "reason": "The source moved, but the card at mcp/src/agents_remember/kernel/primitives/overview states the same contract at the candidate; no claim in it depends on the sprint-only rule that changed.",
+      "sources": [
+        {
+          "blob": "f09a93db862fd8a11919d23a28baa1b968ffb5e7",
+          "path": "mcp/src/agents_remember/kernel/primitives/version.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/kernel/primitives/overview"
+    },
+    {
+      "considered": [],
+      "disposition": "no_family",
+      "id": "ROW-7CKSTZ",
+      "items": [],
+      "reason": "The capsule-budget measurement stands alone: it records the effect of the role-text change and shares no joint guarantee with the launch, handover or coherence clauses, which form their own family.",
+      "revision": 1,
+      "subject": "membership:INV-4HZG3V"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-7XYGCV",
+      "items": [
+        "sha256:5d8b98d3853310d2e3fcecfb4d8d8be72dd1971f9d8054c2c9d9d56d0d232a1e"
+      ],
+      "reason": "The confirmation statement now names what was read in this document against the version and standalone-master change; the document still stands and its links are re-read at the candidate.",
+      "revision": 2,
+      "subject": "DPD-2B7PTY"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+            "content": "sha256:6eed23ad423ed5702f143a24fff1b097ac49aba8d51aa8fb6ffaa48812812edb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+            "content": "sha256:1a6920158daeb820f8807df7f4c7d958b033f6823ee0f933068eca39484a036a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-KABSJ7"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-84YE9Z",
+      "items": [
+        "sha256:d520e7c33fac332a4a25fd45c840edf7bc9b55b72f27dcd05258393263fc6024"
+      ],
+      "reason": "Every covered realization was read at the extended candidate; the source move is the launcher or document re-anchor, and the invariant states the same obligation with the same entry set.",
+      "revision": 1,
+      "subject": "INV-QZP9PM"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "fd1c4e86ce70758801d060d2f117f1658c832987",
+            "content": "sha256:6c0dd49f23f32cce8a810ca00f590fd761de09a58f845ab62ec53b6bde7006ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "investigator_listing"
+            },
+            "path": "mcp/src/agents_remember/cli/investigator_receipts.py"
+          },
+          "before": {
+            "blob": "8b5dd8407a1e01b76ab315b92c7aeeb413a10f42",
+            "content": "sha256:1b9fd4ad7f64137ab23878f43afe69bfb1709b17333b5df343faa14cdaec8fbf",
+            "locator": {
+              "kind": "symbol",
+              "name": "investigator_listing"
+            },
+            "path": "mcp/src/agents_remember/cli/investigator_receipts.py"
+          },
+          "id": "RLZ-DTK2HP"
+        },
+        {
+          "after": {
+            "blob": "fd1c4e86ce70758801d060d2f117f1658c832987",
+            "content": "sha256:a9b578b375fbf2995fc67645ddf61aa2d3c3f9a2f491a2282d60103840e202cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "investigator_start_capacity"
+            },
+            "path": "mcp/src/agents_remember/cli/investigator_receipts.py"
+          },
+          "before": {
+            "blob": "8b5dd8407a1e01b76ab315b92c7aeeb413a10f42",
+            "content": "sha256:6bc070f01f5f9c0d0fa085b70cb6a43b44a052736efdf3ab5818ededb926a46d",
+            "locator": {
+              "kind": "symbol",
+              "name": "investigator_start_capacity"
+            },
+            "path": "mcp/src/agents_remember/cli/investigator_receipts.py"
+          },
+          "id": "RLZ-NX9MV4"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-88DM5P",
+      "items": [
+        "sha256:ebaea5413521aafc1ba672c02d5a5751477d17521e72e2b35ad1007596027e3b"
+      ],
+      "reason": "This leaf changed the record in the first curation pass (the standalone-master statement and scope); the row at the current revision carries the same meaning change and covers the re-anchored realizations.",
+      "revision": 2,
+      "subject": "INV-VZJRTM"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-8C8831",
+      "items": [
+        "sha256:73a65520c3aab409d9bc2fd5cdf822d61edcdcf3af27f217b963cbf8dabe4166"
+      ],
+      "reason": "The card was brought to current truth at the candidate: it now states the standalone-master launch case and no longer claims a sprint is always named. Its sources are bound at the candidate tree.",
+      "sources": [
+        {
+          "blob": "f7ddf469d09ffa892e43eaf4777567df0e78dbfc",
+          "path": "mcp/src/agents_remember/application/agent_binding.py"
+        },
+        {
+          "blob": "0ecf03c089d77b1c2a2ffbbad28a4f481ea9d94f",
+          "path": "mcp/src/agents_remember/application/role_launch_context.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8DQSQM",
+      "items": [
+        "sha256:03c3ac513989b5b4135be358d75e8a22ae9ce50897759569324bb562a4dfcbb0"
+      ],
+      "reason": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx line 272: the Sprint field keeps its empty “No sprint” label while the field is offered; the standalone selection it enables is stated by RSM-R01-A11 and its target anchors.",
+      "subject": "hunk:sha256:03c3ac513989b5b4135be358d75e8a22ae9ce50897759569324bb562a4dfcbb0"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a8c098e9bfe5ff05bc1568cabde93d167e9ad35c",
+            "content": "sha256:a9568fd887bbc7b34443e94f060623a43689a42abbde634c18c7157f8cabea9a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "before": {
+            "blob": "23bfca4e88babb87f154a00a7d88d117d67c4614",
+            "content": "sha256:4a0dfeab70995c88c469397b1f859e6244c27cbf55e00ccb7cb3047b3ca31b73",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "id": "RLZ-DX43S4"
+        },
+        {
+          "after": {
+            "blob": "9170e361d8a55ae8a86bc80960710197d49fedcd",
+            "content": "sha256:702b67efa7c5f61f541dc44373b76a74b320d1ffb4a8b251354bb58625a494eb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "before": {
+            "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
+            "content": "sha256:b5b828ca3f1723854efcf693215244c88075189d5581b7ea2c8de1e47a71d5da",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "id": "RLZ-TEGHWX"
+        },
+        {
+          "after": {
+            "blob": "2409436603223ce18654fb5e05f92a29a102b30f",
+            "content": "sha256:f5e83f13d0e4c3c07041b58d2d7c98a926d2a2d9ba3001cca4147c40eabcb3d6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "de0e221dc51f2f0b067db007cb4c00b17ab3bd39",
+            "content": "sha256:64f53ef7349f7b99805e555662a6f4355c15a1c66bb9a57c44d45685f6aaf0b8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-ZXH055"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-8KVQ11",
+      "items": [
+        "sha256:eefca8d4947474542a134e5a560407fec3b5b7ea61111223494645d8d99cc64c"
+      ],
+      "reason": "Every covered realization was read at the extended candidate; the source move is the launcher or document re-anchor, and the invariant states the same obligation with the same entry set.",
+      "revision": 1,
+      "subject": "INV-7VZRZW"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-8S2816",
+      "items": [
+        "sha256:df126ae31c1a803742ae22eb8517057637026ca8336a31da46c070cc20699771"
+      ],
+      "reason": "The source moved, but the card at skills/l-01-agent-lifecycles/roles/architect.md states the same contract at the candidate; no claim in it depends on the sprint-only rule that changed.",
+      "sources": [
+        {
+          "blob": "2409436603223ce18654fb5e05f92a29a102b30f",
+          "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/architect.md"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-8VGE31",
+      "items": [
+        "sha256:94720e2f0a7cce8dabcf5855e38f292b58dd2b3e3de31df5d56007a4e5e2412d"
+      ],
+      "reason": "The confirmation statement now names what was read in this document against the version and standalone-master change; the document still stands and its links are re-read at the candidate.",
+      "revision": 2,
+      "subject": "DPD-GNFCSM"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-904SAQ",
+      "items": [
+        "sha256:8718c7f59368698e00fb314690998bffef4dae25ca16bcd6bf29f7442ffb5562"
+      ],
+      "reason": "The dependent was re-read at the extended candidate after the launcher and document repair; the document stands and the confirmation names this task and the candidate tree.",
+      "revision": 7,
+      "subject": "DPD-NGC2F6"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "16f25d8cc69c9a34dc60a7a3013d67bd3620308d",
+            "content": "sha256:9cd22d3c00022098be833639a251d8330d80fb5056bb39cbc80a94ac8356974e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_recipients.py"
+          },
+          "before": {
+            "blob": "55811f6d0fea6bc48121bd9e8a7666bfb4f45799",
+            "content": "sha256:ebb6c431f90a05ffa67359a64ffdd97c8963216bb355f2a4a77eef6f9f3faf10",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_recipients.py"
+          },
+          "id": "RLZ-HJ854G"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-98W9W3",
+      "items": [
+        "sha256:bc532614d2805784a80c0f18d2d577da3915ec64f2a4cc73c310e09260463326"
+      ],
+      "reason": "Every covered realization was read at the extended candidate; the source move is the launcher or document re-anchor, and the invariant states the same obligation with the same entry set.",
+      "revision": 2,
+      "subject": "INV-R9S24S"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7SARPM",
+          "revision": 1
+        },
+        {
+          "id": "INV-7XBR6C",
+          "revision": 2
+        },
+        {
+          "id": "INV-85VB61",
+          "revision": 1
+        },
+        {
+          "id": "INV-8PK7FQ",
+          "revision": 1
+        },
+        {
+          "id": "INV-CQCPAD",
+          "revision": 3
+        },
+        {
+          "id": "INV-MM4B51",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-9TXNJ4",
+      "items": [
+        "sha256:5fbca3d384a7c89e567bc48952f20a8bf4a0e8551dae043a6e3f2c4d221e64e4"
+      ],
+      "reason": "All members were examined at the candidate; the source moves are re-anchors and the family guarantee is unchanged.",
+      "revision": 4,
+      "subject": "FAM-CR0HHJ"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-9W8H4G",
+      "items": [
+        "sha256:b576a3598053cbf143f50c415c163d71f86e4b842e2da819441836cc6e2f8260"
+      ],
+      "reason": "The confirmation statement now names what was read in this document against the version and standalone-master change; the document still stands and its links are re-read at the candidate.",
+      "revision": 3,
+      "subject": "DPD-78737N"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-A2ZMM1",
+      "items": [
+        "sha256:63c44ae1bbe77f32c52a1dc3511736f883a27c90a2b0a9702b2ebf95fdf44a7f"
+      ],
+      "reason": "The card was brought to current truth at the candidate: it now states the standalone-master launch case and no longer claims a sprint is always named. Its sources are bound at the candidate tree.",
+      "sources": [
+        {
+          "blob": "e3f14fd6204940ace8a22d216c6ba13e5a8cd8f7",
+          "path": "skills/l-01-agent-lifecycles/templates/manager-brief.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/templates/manager-brief.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "7229064a725f1a8ac0d60bacadfa0fa0fa00a205",
+            "content": "sha256:1a49a42a50dd81c8fbc410c1fd1d37b0bc8d03e3001cfc018af884f8b03ff709",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_curator_instruction_wording.py"
+          },
+          "before": {
+            "blob": "2e93d8f10bc735da4775908e8a6a7274e3f2fa9e",
+            "content": "sha256:4e8836e6629aac4f9d8b4422d7d025fc4968e05f71838806c1fa4726c187b0a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_curator_instruction_wording.py"
+          },
+          "id": "PRF-EP4JYF"
+        },
+        {
+          "after": {
+            "blob": "926e006da6810baf314464553204030191db3ad7",
+            "content": "sha256:a2526305fcf06a004341bc96f70afdd7e11893b2e33f4b6c5c8f0278cde15511",
+            "locator": {
+              "end": 113,
+              "kind": "line_range",
+              "start": 70
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "before": {
+            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "content": "sha256:691243106c250cba7a8be65057e3a0c896a7c9e4416896e8cf9ea8ab00df89e1",
+            "locator": {
+              "end": 113,
+              "kind": "line_range",
+              "start": 70
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "id": "RLZ-8G32JJ"
+        },
+        {
+          "after": {
+            "blob": "2409436603223ce18654fb5e05f92a29a102b30f",
+            "content": "sha256:f5e83f13d0e4c3c07041b58d2d7c98a926d2a2d9ba3001cca4147c40eabcb3d6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "de0e221dc51f2f0b067db007cb4c00b17ab3bd39",
+            "content": "sha256:64f53ef7349f7b99805e555662a6f4355c15a1c66bb9a57c44d45685f6aaf0b8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-JK07JX"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-A3SNQV",
+      "items": [
+        "sha256:5ccffd15b30e69b541f61c1857f15d1b3c1349a142cc75a6c47d769b6834b9db"
+      ],
+      "reason": "Every covered realization was read at the extended candidate; the source move is the launcher or document re-anchor, and the invariant states the same obligation with the same entry set.",
+      "revision": 1,
+      "subject": "INV-NC6F6V"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-A7JGA9",
+      "items": [
+        "sha256:cf83a825c45e98dc853d03ee58508b1a69ae6f14531f554412915def6ab62d9a"
+      ],
+      "reason": "These lines are the comment and data rows of the parentless-selection table. The admission rule they describe is stated by INV-97T18K and INV-ZYWR60, whose realization is the table itself, so this hunk adds no separate invariant of its own.",
+      "subject": "hunk:sha256:cf83a825c45e98dc853d03ee58508b1a69ae6f14531f554412915def6ab62d9a"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-A7W30B",
+      "items": [
+        "sha256:600565d775d52f2b64ea24f955d695c08fea3b15217a9b221f905128243d755d"
+      ],
+      "reason": "The card was brought to current truth at the candidate: it now states the standalone-master launch case and no longer claims a sprint is always named. Its sources are bound at the candidate tree.",
+      "sources": [
+        {
+          "blob": "a8c098e9bfe5ff05bc1568cabde93d167e9ad35c",
+          "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/investigator.md"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-AQA904",
+      "items": [
+        "sha256:b3dd15ca0ad713575a74ec76c8da4d504e6a9edd2b8dd437081e4900651d3c79"
+      ],
+      "reason": "The confirmation statement now names what was read in this document against the version and standalone-master change; the document still stands and its links are re-read at the candidate.",
+      "revision": 2,
+      "subject": "DPD-XAARS1"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "8ccb6ec3defc00890ee738426960eda546511f77",
+            "content": "sha256:ec2c59d9717d9c1a8ee7ebc5791216fa8a7706d4c2beae58379e5c3aed63a27f",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "721de1fab4f546e1fb56f1f38142765772a3ba78",
+            "content": "sha256:fd0f0cd6c898d38e4fce6951d789d0b9daca524ddf1481a732d595527badbf8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-RF6C6D"
+        },
+        {
+          "after": {
+            "blob": "a8c098e9bfe5ff05bc1568cabde93d167e9ad35c",
+            "content": "sha256:a9568fd887bbc7b34443e94f060623a43689a42abbde634c18c7157f8cabea9a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "before": {
+            "blob": "23bfca4e88babb87f154a00a7d88d117d67c4614",
+            "content": "sha256:4a0dfeab70995c88c469397b1f859e6244c27cbf55e00ccb7cb3047b3ca31b73",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "id": "RLZ-9BPGSN"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-ARFG1T",
+      "items": [
+        "sha256:aa890685f0cafe550379f8a6dbb5b700db4ce34231da02420231646c321454a8"
+      ],
+      "reason": "Every covered realization was read at the extended candidate; the source move is the launcher or document re-anchor, and the invariant states the same obligation with the same entry set.",
+      "revision": 1,
+      "subject": "INV-H0WCGX"
+    },
+    {
+      "disposition": "still_rejected",
+      "id": "ROW-AXCBRZ",
+      "items": [
+        "sha256:7ce948fdeb523c64fd34c0b7b0c6c14a0729649520a20116fa49a6243c9379bd"
+      ],
+      "reason": "The alternative would remove the Architect-as-coordinator default. The changed sentence assigns an Investigator check to the master and, if commanded, its sprint; it changes no delegation default, so exactly one Orchestrator still stands above two or more masters.",
+      "subject": "reconsider:DEC-JCDMW3#1"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "8ccb6ec3defc00890ee738426960eda546511f77",
+            "content": "sha256:ec2c59d9717d9c1a8ee7ebc5791216fa8a7706d4c2beae58379e5c3aed63a27f",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "721de1fab4f546e1fb56f1f38142765772a3ba78",
+            "content": "sha256:fd0f0cd6c898d38e4fce6951d789d0b9daca524ddf1481a732d595527badbf8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-NEMYKT"
+        },
+        {
+          "after": {
+            "blob": "a8c098e9bfe5ff05bc1568cabde93d167e9ad35c",
+            "content": "sha256:a9568fd887bbc7b34443e94f060623a43689a42abbde634c18c7157f8cabea9a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "before": {
+            "blob": "23bfca4e88babb87f154a00a7d88d117d67c4614",
+            "content": "sha256:4a0dfeab70995c88c469397b1f859e6244c27cbf55e00ccb7cb3047b3ca31b73",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "id": "RLZ-1YB3RJ"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-AYE4PX",
+      "items": [
+        "sha256:6e258430edf367f74e5fa5f210c4cda3ef542c4a65927b051836b736b70fc1d1"
+      ],
+      "reason": "Every covered realization was read at the extended candidate; the source move is the launcher or document re-anchor, and the invariant states the same obligation with the same entry set.",
+      "revision": 1,
+      "subject": "INV-WAY665"
+    },
+    {
+      "considered": [
+        "FAM-MEH3SB"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-B0Z0D4",
+      "items": [
+        "sha256:5687a37f06aac09817f195485b1b4bd5688a6f5dde886bc9ee594ef847b55268"
+      ],
+      "reason": "The documentation clause stands alone: it documents the start rule the family guarantees and adds no enforcement point of its own.",
+      "revision": 1,
+      "subject": "membership:INV-Q1GFQS"
+    },
+    {
+      "considered": [
+        "FAM-MEH3SB"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-BY7H6K",
+      "items": [],
+      "reason": "The launcher clause states the dashboard's admission of a standalone master; the family's guarantee names the start rule's enforcement points, and the launcher is a UI consumer of that rule rather than a ninth enforcement point.",
+      "revision": 1,
+      "subject": "membership:INV-AJ0X9B"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "7229064a725f1a8ac0d60bacadfa0fa0fa00a205",
+            "content": "sha256:1a49a42a50dd81c8fbc410c1fd1d37b0bc8d03e3001cfc018af884f8b03ff709",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_curator_instruction_wording.py"
+          },
+          "before": {
+            "blob": "2e93d8f10bc735da4775908e8a6a7274e3f2fa9e",
+            "content": "sha256:4e8836e6629aac4f9d8b4422d7d025fc4968e05f71838806c1fa4726c187b0a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_curator_instruction_wording.py"
+          },
+          "id": "PRF-0YJ58R"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-C5F45G",
+      "items": [
+        "sha256:9d17a3136e771ef41c539bcf3759f03eeddeeb44d17894ccc0f08ff775db512f"
+      ],
+      "reason": "Every covered realization was read at the extended candidate; the source move is the launcher or document re-anchor, and the invariant states the same obligation with the same entry set.",
+      "revision": 1,
+      "subject": "INV-A6GAKX"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-CGDPFM",
+      "items": [],
+      "reason": "The reconsideration re-pointed the rejected alternative at the manager text that now names the master and its sprint; the decision itself keeps the same meaning.",
+      "revision": 10,
+      "subject": "DEC-JCDMW3"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CJ3SVX",
+      "items": [
+        "sha256:88feb184effff82b663efe4a99d6b83001338ef4fe4a3aa2495031e93e408a9f"
+      ],
+      "reason": "The source moved, but the card at mcp/tests/test_curator_instruction_wording.py states the same contract at the candidate; no claim in it depends on the sprint-only rule that changed.",
+      "sources": [
+        {
+          "blob": "7229064a725f1a8ac0d60bacadfa0fa0fa00a205",
+          "path": "mcp/tests/test_curator_instruction_wording.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_curator_instruction_wording.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-D6W2PZ",
+      "items": [
+        "sha256:5a1972381a0a429d4804e05f0aa770fc68bba51c73a38b00fe01a2b1295094f1"
+      ],
+      "reason": "The confirmation statement now names what was read in this document against the version and standalone-master change; the document still stands and its links are re-read at the candidate.",
+      "revision": 2,
+      "subject": "DPD-W34WCW"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-D8FP1C",
+      "items": [
+        "sha256:1054ff850ac2aa43b35f4083d36ab8f97ab30041a537168d05b22b779518651e"
+      ],
+      "reason": "The card was brought to current truth at the candidate: it now states the standalone-master launch case and no longer claims a sprint is always named. Its sources are bound at the candidate tree.",
+      "sources": [
+        {
+          "blob": "164232e680624f745b170382de28421b099658c7",
+          "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-DJNQCG",
+      "items": [
+        "sha256:4ed29c805fbf90bbebd9e045dbf54ae220affd723ceb36563cca8a89455d7d29"
+      ],
+      "reason": "The card was brought to current truth at the candidate: it now states the standalone-master launch case and no longer claims a sprint is always named. Its sources are bound at the candidate tree.",
+      "sources": [
+        {
+          "blob": "cef570950ae728a43c03bd0c262b3c5b46749ec2",
+          "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py"
+        },
+        {
+          "blob": "164232e680624f745b170382de28421b099658c7",
+          "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/closeout/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-DKEYNA",
+      "items": [
+        "sha256:96c9a03dc1d0f6e22793ae3897ce601092a23e9c66fbfa0cb04009e115eb801b"
+      ],
+      "reason": "The weakness still stands where it stood; the anchor file moved with the launcher/document repair and this task did not change the cause.",
+      "revision": 1,
+      "subject": "WKN-K3PPJY"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-DNDFZQ",
+      "items": [
+        "sha256:8492c7c502791aa3b64207ecfd60596c621a4d3fd4cb9e430e7d9f46719407e6"
+      ],
+      "reason": "The card was brought to current truth at the candidate: it now states the standalone-master launch case and no longer claims a sprint is always named. Its sources are bound at the candidate tree.",
+      "sources": [
+        {
+          "blob": "675b2b192c83d602eba7a7ee622f6f33098c26cd",
+          "path": "mcp/pyproject.toml"
+        },
+        {
+          "blob": "fd1c4e86ce70758801d060d2f117f1658c832987",
+          "path": "mcp/src/agents_remember/cli/investigator_receipts.py"
+        },
+        {
+          "blob": "16f25d8cc69c9a34dc60a7a3013d67bd3620308d",
+          "path": "mcp/src/agents_remember/cli/paseo_role_recipients.py"
+        },
+        {
+          "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+          "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+        },
+        {
+          "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
+          "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+        },
+        {
+          "blob": "2c0b61b226e0060d919162713125cffa9f681a45",
+          "path": "mcp/src/agents_remember/cli/role_message_delivery.py"
+        },
+        {
+          "blob": "9170e361d8a55ae8a86bc80960710197d49fedcd",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md"
+        },
+        {
+          "blob": "e496c4d0e37835d51064bfc7ed14a72f51037e92",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        },
+        {
+          "blob": "2409436603223ce18654fb5e05f92a29a102b30f",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md"
+        },
+        {
+          "blob": "a8c098e9bfe5ff05bc1568cabde93d167e9ad35c",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/investigator.md"
+        },
+        {
+          "blob": "926e006da6810baf314464553204030191db3ad7",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md"
+        },
+        {
+          "blob": "e3f14fd6204940ace8a22d216c6ba13e5a8cd8f7",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/manager-brief.md"
+        },
+        {
+          "blob": "969f0f5107c14b1509cdd055c0a668d69b70e72b",
+          "path": "mcp/uv.lock"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-E0BAJE",
+      "items": [
+        "sha256:d8b81c37da970e8b2ee630aac427976a5ed22ce732d1d682315aab90b33713a1"
+      ],
+      "reason": "Read whole at the final tree after the launcher repair: the document does not describe the Sprint field and no statement requires a sprint for a start; the confirmation names what was read against the launcher change.",
+      "revision": 2,
+      "subject": "DPD-QFGFS0"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-1Q4W04",
+          "revision": 1
+        },
+        {
+          "id": "INV-QZP9PM",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-E19GVX",
+      "items": [
+        "sha256:f73fe831d168e5d5fb032f061ede1763c0976c73bed31e02fbc40bad0dfda51d"
+      ],
+      "reason": "All members were examined at the candidate; the source moves are re-anchors and the family guarantee is unchanged.",
+      "revision": 2,
+      "subject": "FAM-XX4TGY"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-E50177",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "The source moved, but the card at mcp/tests/test-evidence-lanes.toml states the same contract at the candidate; no claim in it depends on the sprint-only rule that changed.",
+      "sources": [
+        {
+          "blob": "c5329d6566f5482380dd6d536b28a182142711dc",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-EMWTT1",
+      "items": [
+        "sha256:57b2b84f3c326a3957ef9387ac12aa7247e54a53edfb5faeec4945f73d2de021"
+      ],
+      "reason": "The confirmation statement now names what was read in this document against the version and standalone-master change; the document still stands and its links are re-read at the candidate.",
+      "revision": 2,
+      "subject": "DPD-XV7QBE"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "8a72d684bce67b530a7c70ee8df3d67280ac7cb3",
+            "content": "sha256:ee40f1e9e6c721898c621eadc7a225c73962f4cde850991be1dfc18fceb2ef24",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolServerDefinitionTests.test_the_tool_server_reads_the_binding_it_was_started_with_and_reports_it"
+            },
+            "path": "mcp/tests/test_paseo_agent_tools.py"
+          },
+          "before": {
+            "blob": "cfd95f0c56ed965a4f09d45ba05ac7b22d817eca",
+            "content": "sha256:bb5b7002484217f2322d40f302be3f8202c07d44941cf97df9e5e8e859815209",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolServerDefinitionTests.test_the_tool_server_reads_the_binding_it_was_started_with_and_reports_it"
+            },
+            "path": "mcp/tests/test_paseo_agent_tools.py"
+          },
+          "id": "PRF-G94EQS"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-EQEFHH",
+      "items": [
+        "sha256:e113646f10ee73fc51326ba6cf706930c9389e0cd7007b5642c9beef278776b2"
+      ],
+      "reason": "Every covered realization was read at the extended candidate; the source move is the launcher or document re-anchor, and the invariant states the same obligation with the same entry set.",
+      "revision": 1,
+      "subject": "INV-W71C4N"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "8ccb6ec3defc00890ee738426960eda546511f77",
+            "content": "sha256:ec2c59d9717d9c1a8ee7ebc5791216fa8a7706d4c2beae58379e5c3aed63a27f",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "721de1fab4f546e1fb56f1f38142765772a3ba78",
+            "content": "sha256:fd0f0cd6c898d38e4fce6951d789d0b9daca524ddf1481a732d595527badbf8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-K30NGN"
+        },
+        {
+          "after": {
+            "blob": "a8c098e9bfe5ff05bc1568cabde93d167e9ad35c",
+            "content": "sha256:a9568fd887bbc7b34443e94f060623a43689a42abbde634c18c7157f8cabea9a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "before": {
+            "blob": "23bfca4e88babb87f154a00a7d88d117d67c4614",
+            "content": "sha256:4a0dfeab70995c88c469397b1f859e6244c27cbf55e00ccb7cb3047b3ca31b73",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "id": "RLZ-6FJEPD"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-ER71YZ",
+      "items": [
+        "sha256:6020cc606de0f0b7f8ddedec7c91eca32c8f4331323c1b30a0836d9311395fa4"
+      ],
+      "reason": "Every covered realization was read at the extended candidate; the source move is the launcher or document re-anchor, and the invariant states the same obligation with the same entry set.",
+      "revision": 2,
+      "subject": "INV-YT1AD8"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ES10SA",
+      "items": [
+        "sha256:43e7e3c76a04990debe239b2cf7ce22e301b167f364c90240245582518ce9e19"
+      ],
+      "reason": "The card was brought to the standalone-master truth at the extended candidate: the “No sprint” choice, the standalone master list, the binding without a sprint and the launcher test are now stated.",
+      "sources": [
+        {
+          "blob": "fcabfa19119ee63ac45bc39e2236bdbac49bbf6e",
+          "path": "dashboard/src/cockpit/document-chat/model.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/document-chat/model.ts"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "7229064a725f1a8ac0d60bacadfa0fa0fa00a205",
+            "content": "sha256:1a49a42a50dd81c8fbc410c1fd1d37b0bc8d03e3001cfc018af884f8b03ff709",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_curator_instruction_wording.py"
+          },
+          "before": {
+            "blob": "2e93d8f10bc735da4775908e8a6a7274e3f2fa9e",
+            "content": "sha256:4e8836e6629aac4f9d8b4422d7d025fc4968e05f71838806c1fa4726c187b0a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_curator_instruction_wording.py"
+          },
+          "id": "PRF-4FX9HW"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-EVFRNS",
+      "items": [
+        "sha256:43d58cd32f67753a515566c61a95fca367aa9eb0971c8fbfb391f56bb9c5c0e3"
+      ],
+      "reason": "Every covered realization was read at the extended candidate; the source move is the launcher or document re-anchor, and the invariant states the same obligation with the same entry set.",
+      "revision": 2,
+      "subject": "INV-683GA3"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-EW4ZQ2",
+      "items": [
+        "sha256:7d9c005fc3fb12cb43c8d8670f04bfe08f211ef5676e3a03a08db5ec476dbc15"
+      ],
+      "reason": "The source moved, but the card at mcp/test_support/agents_remember_test_support/testing/overview states the same contract at the candidate; no claim in it depends on the sprint-only rule that changed.",
+      "sources": [
+        {
+          "blob": "1e978ee04dff9734b4dff64133d62261ae76e6b2",
+          "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
+        },
+        {
+          "blob": "f956c47f3316d287e701571e4806df8ed0d4b460",
+          "path": "mcp/test_support/agents_remember_test_support/testing/coordination_wording.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c5329d6566f5482380dd6d536b28a182142711dc",
+            "content": "sha256:1fc23c2238ba5178a540ee367b9f7f1ec431764a8669cb50f2673e9019d7923c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "5691b694e756469475d783c426d9781ef14c8633",
+            "content": "sha256:4dd4f065652c07eb2cd7b78619ae9fed320efbd7c4c5fc074d3d6b2c87dbc551",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BNMQ79"
+        },
+        {
+          "after": {
+            "blob": "a963d7f4459c6a28a0200331eed5157ee15d375c",
+            "content": "sha256:d78486724596577bd83336e4d9373c8da9f40d561b4a2e6e5bbb5c129f5523ac",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "0556945441335e93cd0b1783dba11d3b2eb279a7",
+            "content": "sha256:f3c97cea90d6874137c31a702bc9f64c898199a273c0aede415fdef641e6c6c7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GEMVNE"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-EX93P7",
+      "items": [
+        "sha256:88862fb178ca76ced4e75e4deff5b7c0e29730831db021d2e1b7ff9ea898a85c"
+      ],
+      "reason": "Every covered realization was read at the extended candidate; the source move is the launcher or document re-anchor, and the invariant states the same obligation with the same entry set.",
+      "revision": 6,
+      "subject": "INV-1ZKP4R"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-EYVBQ5",
+      "items": [
+        "sha256:051e0da915057f31d77426a387a91a562e3f5b77b8629af9cedabbf7811a47d1",
+        "sha256:d8c1fe97353d99bb9969055e433238eab5c85379e6a38235ccc8f132afcb785e"
+      ],
+      "reason": "The card was brought to current truth at the candidate: it now states the standalone-master launch case and no longer claims a sprint is always named. Its sources are bound at the candidate tree.",
+      "sources": [
+        {
+          "blob": "8a72d684bce67b530a7c70ee8df3d67280ac7cb3",
+          "path": "mcp/tests/test_paseo_agent_tools.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_paseo_agent_tools.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "fd1c4e86ce70758801d060d2f117f1658c832987",
+            "content": "sha256:a9b578b375fbf2995fc67645ddf61aa2d3c3f9a2f491a2282d60103840e202cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "investigator_start_capacity"
+            },
+            "path": "mcp/src/agents_remember/cli/investigator_receipts.py"
+          },
+          "before": {
+            "blob": "8b5dd8407a1e01b76ab315b92c7aeeb413a10f42",
+            "content": "sha256:6bc070f01f5f9c0d0fa085b70cb6a43b44a052736efdf3ab5818ededb926a46d",
+            "locator": {
+              "kind": "symbol",
+              "name": "investigator_start_capacity"
+            },
+            "path": "mcp/src/agents_remember/cli/investigator_receipts.py"
+          },
+          "id": "RLZ-MGRZPQ"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "strengthen",
+      "id": "ROW-F1Z2P4",
+      "items": [
+        "sha256:edbcfcd3c89c35fb95bbb5ed0bfd897dacbb12a4c45133154bdb0175e263faa5"
+      ],
+      "reason": "This leaf changed the record in the first curation pass (the standalone-master statement and scope); the row at the current revision carries the same meaning change and covers the re-anchored realizations.",
+      "revision": 2,
+      "subject": "INV-BS7TH8"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a8c098e9bfe5ff05bc1568cabde93d167e9ad35c",
+            "content": "sha256:4ec70abb65d7002ace55dfb97c23cd1a028ba6c91d48d1ffa2c97ddd1a34fa07",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "before": {
+            "blob": "23bfca4e88babb87f154a00a7d88d117d67c4614",
+            "content": "sha256:bf272d89f8f6a68cc68860f8e55bc2747c1c9a5f9cfacde5a07c9bda38099860",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "id": "RLZ-4CP22X"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-F9GPDA",
+      "items": [
+        "sha256:543b274876eff26c64205955bce57074ef1d94c8cb421d9f60c40b174b171bec"
+      ],
+      "reason": "Every covered realization was read at the extended candidate; the source move is the launcher or document re-anchor, and the invariant states the same obligation with the same entry set.",
+      "revision": 1,
+      "subject": "INV-EXP68S"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-FA0H0D",
+      "items": [
+        "sha256:a615319e148e34ae755cd7da4e4fee0225620b89df32c98776e6f7210a93bbd9"
+      ],
+      "reason": "The confirmation statement now names what was read in this document against the version and standalone-master change; the document still stands and its links are re-read at the candidate.",
+      "revision": 3,
+      "subject": "DPD-ZT8YY7"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "fcabfa19119ee63ac45bc39e2236bdbac49bbf6e",
+            "content": "sha256:81d01fb8f0ae7cda4e48a40903cb26bb110fee032a482d35480f06119a8a56b8",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 53
+            },
+            "path": "dashboard/src/cockpit/document-chat/model.ts"
+          },
+          "before": {
+            "blob": "3c1fc9b507b9358e632a0fbcb31c6f9c66435151",
+            "content": "sha256:a38fc109b713a348f9e3d3efd6074cbe05615e596ad2f9eeee92fb8f221d11d1",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 53
+            },
+            "path": "dashboard/src/cockpit/document-chat/model.ts"
+          },
+          "id": "RLZ-17TQDT"
+        },
+        {
+          "after": {
+            "blob": "9fd26bd6eb9545691e0a4f73ae8b16fa1585a78d",
+            "content": "sha256:0fadfa1f4862c3c75262c2d832e79106e2fcae83c1923d4039c2935a795d51a7",
+            "locator": {
+              "end": 1105,
+              "kind": "line_range",
+              "start": 1091
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+          },
+          "before": {
+            "blob": "40c7ba7f8ba356ee8d7abe94a7b0c1785c0de21b",
+            "content": "sha256:b86f86bed78f99f0d2aea43d8777da52b524be369474c1858449c6e583be1c7f",
+            "locator": {
+              "end": 1105,
+              "kind": "line_range",
+              "start": 1091
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+          },
+          "id": "RLZ-9FTBAR"
+        },
+        {
+          "after": {
+            "blob": "462daf2928baf29511da7b2f41acf6eae18c8805",
+            "content": "sha256:53bc62c6f94ce720ce27f9c66b971190b40201fa9d5ba41d315ec861799b83df",
+            "locator": {
+              "end": 234,
+              "kind": "line_range",
+              "start": 211
+            },
+            "path": "dashboard/src/cockpit/roleLaunchModel.ts"
+          },
+          "before": {
+            "blob": "d40f60e246eaa870ff228d5f4a6582788c2104ee",
+            "content": "sha256:31f778f0f5a88a1e7b0bdd8ba417cd6318ca9fa59c747038b52659593aa55fb3",
+            "locator": {
+              "end": 234,
+              "kind": "line_range",
+              "start": 211
+            },
+            "path": "dashboard/src/cockpit/roleLaunchModel.ts"
+          },
+          "id": "RLZ-QQW438"
+        },
+        {
+          "after": {
+            "blob": "fcabfa19119ee63ac45bc39e2236bdbac49bbf6e",
+            "content": "sha256:c2d93b682963465105173d5eae1992bf3c7ec664b04a4d8c2ffaba44a02e31c5",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "dashboard/src/cockpit/document-chat/model.ts"
+          },
+          "before": {
+            "blob": "3c1fc9b507b9358e632a0fbcb31c6f9c66435151",
+            "content": "sha256:a0f34fb6fbfa3fb538e89a3cf4571cacb8d2ef693fb87b11e08b9c5ddd1bb905",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "dashboard/src/cockpit/document-chat/model.ts"
+          },
+          "id": "RLZ-Y2SRXJ"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-FBB453",
+      "items": [
+        "sha256:59dd1edd42d1752edd2fba259941c9e0b21113309b67e9dc32bdb7b4ba58868e"
+      ],
+      "reason": "Every covered realization was read at the extended candidate; the source move is the launcher or document re-anchor, and the invariant states the same obligation with the same entry set.",
+      "revision": 2,
+      "subject": "INV-WQ8YGE"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "7229064a725f1a8ac0d60bacadfa0fa0fa00a205",
+            "content": "sha256:1a49a42a50dd81c8fbc410c1fd1d37b0bc8d03e3001cfc018af884f8b03ff709",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_curator_instruction_wording.py"
+          },
+          "before": {
+            "blob": "2e93d8f10bc735da4775908e8a6a7274e3f2fa9e",
+            "content": "sha256:4e8836e6629aac4f9d8b4422d7d025fc4968e05f71838806c1fa4726c187b0a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_curator_instruction_wording.py"
+          },
+          "id": "PRF-5448EZ"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-FMSH6Q",
+      "items": [
+        "sha256:5ffb9e4bcc98973de6bd0192bd59f63b09debf1fe14c619598cb69126f37d67d"
+      ],
+      "reason": "Every covered realization was read at the extended candidate; the source move is the launcher or document re-anchor, and the invariant states the same obligation with the same entry set.",
+      "revision": 2,
+      "subject": "INV-P2WRNQ"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "8ccb6ec3defc00890ee738426960eda546511f77",
+            "content": "sha256:ec2c59d9717d9c1a8ee7ebc5791216fa8a7706d4c2beae58379e5c3aed63a27f",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "721de1fab4f546e1fb56f1f38142765772a3ba78",
+            "content": "sha256:fd0f0cd6c898d38e4fce6951d789d0b9daca524ddf1481a732d595527badbf8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-SQW3RM"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-FPP1ET",
+      "items": [
+        "sha256:fe07799d81bdb992f2f8242f93cda83022ad49838162b9c1fac01aa5f9dbc995"
+      ],
+      "reason": "Every covered realization was read at the extended candidate; the source move is the launcher or document re-anchor, and the invariant states the same obligation with the same entry set.",
+      "revision": 2,
+      "subject": "INV-YNHABM"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-FQ3829",
+      "items": [],
+      "reason": "Read whole at the final tree after the launcher repair: the document does not describe the Sprint field and no statement requires a sprint for a start; the confirmation names what was read against the launcher change.",
+      "revision": 2,
+      "subject": "DPD-PYMM5P"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FYEEE4",
+      "items": [
+        "sha256:07cf96e3efb1ad2537d024317d7fd7f73c2a5093b28768f1bff51cfde1641cb4",
+        "sha256:203830fbd8766572dbc242d8957982a7aee63221059c1abb6f48b66fd26377f6",
+        "sha256:42f418d737838a0db9b16247fe4427fb629e0c7d23e442fdbe23fad0441bd221",
+        "sha256:b2a205a48ab3d3a23d72d17a77b3a103526cfdf30801b22d4b726e81e19e85c8",
+        "sha256:bc35ee28687ebf8c4a1af3827a0f83af8210a0bb1d3b2911e2cbda7ef75d3f1d",
+        "sha256:d818e00f758422c588e4ca393458bd7838f1829b6e5bcd3464b5ac5e05c1e1bb"
+      ],
+      "reason": "The card was brought to current truth at the candidate: it now states the standalone-master launch case and no longer claims a sprint is always named. Its sources are bound at the candidate tree.",
+      "sources": [
+        {
+          "blob": "72bfe507621276d94a76c571957fbf994573862e",
+          "path": "mcp/src/agents_remember/tasks/semantic_topology.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/tasks/semantic_topology.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-G5Z727",
+      "items": [
+        "sha256:d0b78a00238c3a903e41855be17c99b7bd89afbc208e1433482e5fcb4f0fd2fa"
+      ],
+      "reason": "The source moved, but the card at mcp/src/agents_remember/worktrees/queue/overview states the same contract at the candidate; no claim in it depends on the sprint-only rule that changed.",
+      "sources": [
+        {
+          "blob": "d7ad5c983788aa9d12a9cde613f56cfc8d0c0ca2",
+          "path": "mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/queue/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e3f14fd6204940ace8a22d216c6ba13e5a8cd8f7",
+            "content": "sha256:5488060f32244e500220deb21c609e5b3308e05211e99c3ce9c954b2ae1560a3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/manager-brief.md"
+          },
+          "before": {
+            "blob": "245fbf8583cbdb59e25b6726121c89e03dd7247e",
+            "content": "sha256:9be5158644ddcfc26a417aad8c6e8baf4535f03de6ac93a666bb61bdd3c30af5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/manager-brief.md"
+          },
+          "id": "RLZ-VP8NQM"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-G6VR2C",
+      "items": [
+        "sha256:8b4647c92f13ba84c76bb4f12ff9cf7406fd2ab523cb4793ea2eebeaf0bcd0ad"
+      ],
+      "reason": "Every covered realization was read at the extended candidate; the source move is the launcher or document re-anchor, and the invariant states the same obligation with the same entry set.",
+      "revision": 3,
+      "subject": "INV-WHEFVS"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-GCZ3BD",
+      "items": [
+        "sha256:00fb55e323990d84592d9391afa055db7738902707aaead947bcba750f4ab8d2"
+      ],
+      "reason": "The confirmation statement now names what was read in this document against the version and standalone-master change; the document still stands and its links are re-read at the candidate.",
+      "revision": 2,
+      "subject": "DPD-0K35N0"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-GEP0AB",
+      "items": [
+        "sha256:24c8ded9fe1a9c8b403b1e63f614bb7477a2c6468145f82430319f4c31b30349",
+        "sha256:369812ff9d81bf9edf197c18c2b8673047e1a6bffaa4f90e89663f44dac585e6",
+        "sha256:40f2610e540a0e246cbfe56b45fc9a752e709e85d3e1fd3adc88598ca889f5d5",
+        "sha256:64d7265323ccfcb3af7edabd9a5fb96bc90983516dbb7b10192eea484b121e06",
+        "sha256:666a0f881cfc4adc1e85d95d322142587e18228ec7bdf41f1e975576dba68520",
+        "sha256:6ed2874467e048f059f243d34965d06c940da77df87ae9ac695a0bbbe3d47197",
+        "sha256:b7e7bc66cb623a2720b8544556ef075a855ddf9bca07a29bdb891616508bcf62"
+      ],
+      "reason": "The case list still holds; the file imports two names earlier, wraps one assertion and annotates the standalone helper with the role type, with no behavior change. The sidecar references were re-anchored to the new blobs.",
+      "sources": [
+        {
+          "blob": "85f5ff51b4d4d720d5cd27164237494c77aea5b0",
+          "path": "mcp/tests/test_role_launch_routes.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_launch_routes.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-GM5C50",
+      "items": [
+        "sha256:46916ac71cc58289637dd85b01dcbfb70bffc7f75a63a01bb0c666f1ff01e458",
+        "sha256:675d3963ab3bc0d7c1296ba4f5691c32134da5a38e3b2552a0883d7f6c532bda",
+        "sha256:846834af84fe2988b4171b69ed2b54d6dc0a19f7a32897f9f919491768ff674d"
+      ],
+      "reason": "The card was brought to the standalone-master truth at the extended candidate: the “No sprint” choice, the standalone master list, the binding without a sprint and the launcher test are now stated.",
+      "sources": [
+        {
+          "blob": "594dbeac7af2b34da61d7477aa1e5d3ee162fbf6",
+          "path": "dashboard/src/test/fixtures/documentChat.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/test/fixtures/documentChat.ts"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-GM7RYH",
+      "items": [
+        "sha256:41d57aad3b158e72719cd6d6a79e6f0c3105460698216e1684299350f3635eeb"
+      ],
+      "reason": "The confirmation statement now names what was read in this document against the version and standalone-master change; the document still stands and its links are re-read at the candidate.",
+      "revision": 2,
+      "subject": "DPD-3E9E2R"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GPBJ7K",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "The source moved, but the card at mcp/tests/evidence-lifecycle.toml states the same contract at the candidate; no claim in it depends on the sprint-only rule that changed.",
+      "sources": [
+        {
+          "blob": "a963d7f4459c6a28a0200331eed5157ee15d375c",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-H8Y0ZY",
+      "items": [
+        "sha256:8a4f5570669b21cdf3ebb24740eabf06cb41b6ffbf4b8bc2ceb85baac05afb80"
+      ],
+      "reason": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx import line: `masterOptionsFor` and `sprintRequiredForLaunch` replace the sprint-only helpers; the behavior they implement is stated by RSM-R01-A11 and its target anchors.",
+      "subject": "hunk:sha256:8a4f5570669b21cdf3ebb24740eabf06cb41b6ffbf4b8bc2ceb85baac05afb80"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HFKPH2",
+      "items": [
+        "sha256:c9d6e33c3ba8ac182190456352f2beb361e109f8966ac8dbdce0f5b480adc205"
+      ],
+      "reason": "The card was brought to the standalone-master truth at the extended candidate: the “No sprint” choice, the standalone master list, the binding without a sprint and the launcher test are now stated.",
+      "sources": [
+        {
+          "blob": "9fd26bd6eb9545691e0a4f73ae8b16fa1585a78d",
+          "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-HJ6V3W",
+      "items": [
+        "sha256:ecf4fd29a80192fd47d0b98ef7fbed166b4b308a3e53d7a2a9acba3b1d0335a0"
+      ],
+      "reason": "The confirmation statement now names what was read in this document against the version and standalone-master change; the document still stands and its links are re-read at the candidate.",
+      "revision": 2,
+      "subject": "DPD-FR0VZP"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-HP3VNA",
+      "items": [
+        "sha256:f8021fe85dd093f981782a7109522399ca5ccbcf15e652c27b5cc4c40b68eefe"
+      ],
+      "reason": "The confirmation statement now names what was read in this document against the version and standalone-master change; the document still stands and its links are re-read at the candidate.",
+      "revision": 2,
+      "subject": "DPD-8PE0G9"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "7229064a725f1a8ac0d60bacadfa0fa0fa00a205",
+            "content": "sha256:1a49a42a50dd81c8fbc410c1fd1d37b0bc8d03e3001cfc018af884f8b03ff709",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_curator_instruction_wording.py"
+          },
+          "before": {
+            "blob": "2e93d8f10bc735da4775908e8a6a7274e3f2fa9e",
+            "content": "sha256:4e8836e6629aac4f9d8b4422d7d025fc4968e05f71838806c1fa4726c187b0a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_curator_instruction_wording.py"
+          },
+          "id": "PRF-0DCHVF"
+        },
+        {
+          "after": {
+            "blob": "926e006da6810baf314464553204030191db3ad7",
+            "content": "sha256:9fa77236ec9290ac2508b2ab2a51b645860c7ac5c0eca87b68fa4c789b960649",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 66
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "before": {
+            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "content": "sha256:8ea320eb9e29edadcaba8239b4d85f768383be7da8d6f1d8308777e8698f9386",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 66
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "id": "RLZ-09EQRE"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-HT373D",
+      "items": [
+        "sha256:43346ef06789eaa5dd785929a58f91bf6a9f9e22c8f14083333725fad7dd0553"
+      ],
+      "reason": "Every covered realization was read at the extended candidate; the source move is the launcher or document re-anchor, and the invariant states the same obligation with the same entry set.",
+      "revision": 2,
+      "subject": "INV-NFV5VJ"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-HW9PJP",
+      "items": [
+        "sha256:6609687bad8b300a1e514f0d0e06f29945cfe212081aedcf7791a65f2a4e943b"
+      ],
+      "reason": "The confirmation statement now names what was read in this document against the version and standalone-master change; the document still stands and its links are re-read at the candidate.",
+      "revision": 3,
+      "subject": "DPD-Q4APMS"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
+            "content": "sha256:4fe15b2ee88843880e03ea04135e37d40fc91f3a56c707b9375fa00b9e4fdb5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_workspace"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+          },
+          "before": {
+            "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+            "content": "sha256:59a0ae37fbd1ebbfcf8b0c8c8d764ad69ef34c82485e69b3222444d5b6a13ab8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_workspace"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+          },
+          "id": "RLZ-MXEMAQ"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-J3290Y",
+      "items": [
+        "sha256:3ddf7775b6496d5d6d22015619371ef36d113f1f35a1589399a062cdce412629"
+      ],
+      "reason": "Every covered realization was read at the extended candidate; the source move is the launcher or document re-anchor, and the invariant states the same obligation with the same entry set.",
+      "revision": 1,
+      "subject": "INV-HM7Z8C"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-8PJF2P",
+          "revision": 1
+        },
+        {
+          "id": "INV-HM7Z8C",
+          "revision": 1
+        },
+        {
+          "id": "INV-NQKEQS",
+          "revision": 1
+        },
+        {
+          "id": "INV-X16RQH",
+          "revision": 1
+        },
+        {
+          "id": "INV-Y6DF2N",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZVQ6Z5",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-JCFDSF",
+      "items": [
+        "sha256:bd8e6f13a6c3f0a3b15c58a34000903429c815e4450a1a9e3339ce3d4597f024"
+      ],
+      "reason": "All members were examined at the candidate; the source moves are re-anchors and the family guarantee is unchanged.",
+      "revision": 1,
+      "subject": "FAM-GJYFFP"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-JFFAKG",
+      "items": [
+        "sha256:b12bed6e1587b4f6a172f612ae43093b481127fb50c7431e0b32c5d7365bbb89"
+      ],
+      "reason": "The card was brought to current truth at the candidate: it now states the standalone-master launch case and no longer claims a sprint is always named. Its sources are bound at the candidate tree.",
+      "sources": [
+        {
+          "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
+          "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_launch_workspace.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9170e361d8a55ae8a86bc80960710197d49fedcd",
+            "content": "sha256:df7ec6569be9063d9293bcbc5140aa18a2d6d30af747e77cb37107ce477570ae",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 14
+            },
+            "path": "skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "before": {
+            "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
+            "content": "sha256:a6ca6e023d6e9d0625d458a8810349cac7a6ada8436e2de635f993be78a16a5d",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 14
+            },
+            "path": "skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "id": "RLZ-5F3K07"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-JR2WQ7",
+      "items": [
+        "sha256:91c8c9ba10018f313ab6f7da4878c23a2c0003ff3ccda4ac472ce4a6d2e29d9f"
+      ],
+      "reason": "Every covered realization was read at the extended candidate; the source move is the launcher or document re-anchor, and the invariant states the same obligation with the same entry set.",
+      "revision": 2,
+      "subject": "INV-CHNC1N"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-JRFG6V",
+      "items": [
+        "sha256:123562e5a5363962f367894dddda742a1ff24ecca61ca6850211aaf7432f6a76"
+      ],
+      "reason": "Read whole at the final tree after the launcher repair: the document does not describe the Sprint field and no statement requires a sprint for a start; the confirmation names what was read against the launcher change.",
+      "revision": 2,
+      "subject": "DPD-MQCJK4"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-JS8ASK",
+      "items": [
+        "sha256:43d515e400d97be88b5b6fbef7a9558a5ef9cafbc2247914030e30307f923146"
+      ],
+      "reason": "The card was brought to current truth at the candidate: it now states the standalone-master launch case and no longer claims a sprint is always named. Its sources are bound at the candidate tree.",
+      "sources": [
+        {
+          "blob": "f7ddf469d09ffa892e43eaf4777567df0e78dbfc",
+          "path": "mcp/src/agents_remember/application/agent_binding.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/agent_binding.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-JSP1Z6",
+      "items": [
+        "sha256:c7e17ea30b1f55f28b7dc902522c72f4d23d1c72db46bbc11e316d7c2f37fac1"
+      ],
+      "reason": "The card was brought to current truth at the candidate: it now states the standalone-master launch case and no longer claims a sprint is always named. Its sources are bound at the candidate tree.",
+      "sources": [
+        {
+          "blob": "9170e361d8a55ae8a86bc80960710197d49fedcd",
+          "path": "skills/l-01-agent-lifecycles/SKILL.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-JWRD0T",
+      "items": [
+        "sha256:a61f39d3374a5ade0766523b6a58daf222aee8b8a7a2eb922802b09dacdcfc6d"
+      ],
+      "reason": "The weakness still stands where it stood; the anchor file moved with the launcher/document repair and this task did not change the cause.",
+      "revision": 1,
+      "subject": "WKN-HSBTYW"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JXEQ5K",
+      "items": [
+        "sha256:b6f3835241146d7d4da6f599bdf7a162995f391be3f6684ce9d239ee2dfeb2c5"
+      ],
+      "reason": "The one added line imports the shared document predicate. The behavior it enables is stated by INV-8PGMJB and realized by the receipt selection in this module, so the import carries no invariant of its own.",
+      "subject": "hunk:sha256:b6f3835241146d7d4da6f599bdf7a162995f391be3f6684ce9d239ee2dfeb2c5"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-K32JEX",
+      "items": [
+        "sha256:44e1484f9abbf11718b5212cf4df685518e2c382bf9cd8719522b3dc5487c3cc"
+      ],
+      "reason": "The dependent was re-read at the extended candidate after the launcher and document repair; the document stands and the confirmation names this task and the candidate tree.",
+      "revision": 7,
+      "subject": "DPD-10YCT2"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c5329d6566f5482380dd6d536b28a182142711dc",
+            "content": "sha256:1fc23c2238ba5178a540ee367b9f7f1ec431764a8669cb50f2673e9019d7923c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "5691b694e756469475d783c426d9781ef14c8633",
+            "content": "sha256:4dd4f065652c07eb2cd7b78619ae9fed320efbd7c4c5fc074d3d6b2c87dbc551",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BJ41EY"
+        },
+        {
+          "after": {
+            "blob": "a963d7f4459c6a28a0200331eed5157ee15d375c",
+            "content": "sha256:d78486724596577bd83336e4d9373c8da9f40d561b4a2e6e5bbb5c129f5523ac",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "0556945441335e93cd0b1783dba11d3b2eb279a7",
+            "content": "sha256:f3c97cea90d6874137c31a702bc9f64c898199a273c0aede415fdef641e6c6c7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-H44S0N"
+        },
+        {
+          "after": {
+            "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
+            "content": "sha256:6fb9a6c4a040e1c4ce4fe114e890d8df382db93758791f65d13b28ca134b1a02",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+          },
+          "before": {
+            "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+            "content": "sha256:7295634d8aadfadf52f471006886953c6d40e55e2e0075f74e348bf2cb15c64c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+          },
+          "id": "RLZ-Q81VYV"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-KJMHPJ",
+      "items": [
+        "sha256:9a36bb7a2dc3962826bb45908a891b46b50daa5ff16eb6ea8fdd6194fb2fb46e"
+      ],
+      "reason": "Every covered realization was read at the extended candidate; the source move is the launcher or document re-anchor, and the invariant states the same obligation with the same entry set.",
+      "revision": 1,
+      "subject": "INV-T8672G"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-MDJ0H3",
+      "items": [
+        "sha256:0a16d3d0844ff28e5dd57b9c90629781f0a84ad7d0e7b3bc7b5889391807cc8f"
+      ],
+      "reason": "The source moved, but the card at mcp/tests/test_role_instruction_wording.py states the same contract at the candidate; no claim in it depends on the sprint-only rule that changed.",
+      "sources": [
+        {
+          "blob": "8ccb6ec3defc00890ee738426960eda546511f77",
+          "path": "mcp/tests/test_role_instruction_wording.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_instruction_wording.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-MF467R",
+      "items": [
+        "sha256:0b129e60d08d2cb3a1ffa65b286097dfabe0845103dd7a1ca1266498c6d3d180",
+        "sha256:77fb956a8bd5f4164147b0588788b597ea62a3ab1722b5a08cb837096fef09d0"
+      ],
+      "reason": "The dependent was re-read at the extended candidate after the launcher and document repair; the document stands and the confirmation names this task and the candidate tree.",
+      "revision": 2,
+      "subject": "DPD-B540GW"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
+            "content": "sha256:f72fa6142476526701388ac9b1347e39da25751aeae2c4f450518dd750d177fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_recorded_parent"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+          },
+          "before": {
+            "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+            "content": "sha256:aa421563dc3a37ca0c8ebdcef4d60e6d887996c4c6e621f358e47466ef1a9bf4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_recorded_parent"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+          },
+          "id": "RLZ-934BED"
+        },
+        {
+          "after": {
+            "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
+            "content": "sha256:4fe15b2ee88843880e03ea04135e37d40fc91f3a56c707b9375fa00b9e4fdb5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_workspace"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+          },
+          "before": {
+            "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+            "content": "sha256:59a0ae37fbd1ebbfcf8b0c8c8d764ad69ef34c82485e69b3222444d5b6a13ab8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_workspace"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+          },
+          "id": "RLZ-Y79026"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "strengthen",
+      "id": "ROW-MFP2DF",
+      "items": [
+        "sha256:5cc5c72eded077f896f97fcf85095f81f6a18a0cd1514ec282c88d1a17bb977b"
+      ],
+      "reason": "This leaf changed the record in the first curation pass (the standalone-master statement and scope); the row at the current revision carries the same meaning change and covers the re-anchored realizations.",
+      "revision": 3,
+      "subject": "INV-5ATS9T"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MFRQ49",
+      "items": [
+        "sha256:2a0321f177a2d1a4c26bcf6416080f6ffd74e2d3abd6b77376d32f57b0ef0d51"
+      ],
+      "reason": "dashboard/src/cockpit/document-chat/model.ts import line: the new `masterOptionsFor` and `sprintRequiredForLaunch` names are imported from the shared launcher model; the bindings they serve are stated by RSM-R01-A11 and its target anchors.",
+      "subject": "hunk:sha256:2a0321f177a2d1a4c26bcf6416080f6ffd74e2d3abd6b77376d32f57b0ef0d51"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-N6JBKT",
+      "items": [
+        "sha256:2491daba3876a20e064d3538006cc1a244a62021dac3eb934f41785bee9d74d4"
+      ],
+      "reason": "Two type-guard lines (`assert graph is not None`) precede `_semantic_index`; the fingerprint cases and their pinned values are unchanged, and the sidecar references were re-anchored.",
+      "sources": [
+        {
+          "blob": "1565558ccc756d7b2efd3e656ac93138d1e8f528",
+          "path": "mcp/tests/test_semantic_topology_standalone.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_semantic_topology_standalone.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-NPB6KN",
+      "items": [
+        "sha256:eaa84475644f8464896e95438ebbb086dc909d79ac5613d76ae4928804efc301"
+      ],
+      "reason": "The source moved, but the card at skills/l-01-agent-lifecycles/capsule-budgets-current.json states the same contract at the candidate; no claim in it depends on the sprint-only rule that changed.",
+      "sources": [
+        {
+          "blob": "e496c4d0e37835d51064bfc7ed14a72f51037e92",
+          "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-NQ8H58",
+      "items": [
+        "sha256:3fbe51b5eb3918fd13a622263d846f035f6b39249c6d7ca0b96d3e97d73f07ea",
+        "sha256:d242ce20b170b25bc2792e53d8511df35f55615a10b9f010ce033778e5252f36"
+      ],
+      "reason": "The card was brought to the standalone-master truth at the extended candidate: the “No sprint” choice, the standalone master list, the binding without a sprint and the launcher test are now stated.",
+      "sources": [
+        {
+          "blob": "6124c93eeb42a155aa7065bfa1408d6400319c69",
+          "path": "dashboard/src/cockpit/RoleLauncher.row.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/RoleLauncher.row.test.tsx"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "examined": [
+        {
+          "id": "INV-7E3JNX",
+          "revision": 1
+        },
+        {
+          "id": "INV-RKGNF8",
+          "revision": 1
+        },
+        {
+          "id": "INV-V7M37D",
+          "revision": 4
+        },
+        {
+          "id": "INV-W24J6Q",
+          "revision": 2
+        },
+        {
+          "id": "INV-W58B84",
+          "revision": 3
+        },
+        {
+          "id": "INV-ZNJ14G",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-NRJRJZ",
+      "items": [
+        "sha256:3de2fb383c2c63731faf1d5c5d8c9dfeab2c9b8f1bc719bbc69f3139a568face"
+      ],
+      "reason": "The leaf handover member carries the sprint reference only when the selection has one; every member was read at the candidate.",
+      "revision": 2,
+      "subject": "FAM-83BTBD"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9170e361d8a55ae8a86bc80960710197d49fedcd",
+            "content": "sha256:702b67efa7c5f61f541dc44373b76a74b320d1ffb4a8b251354bb58625a494eb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "before": {
+            "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
+            "content": "sha256:b5b828ca3f1723854efcf693215244c88075189d5581b7ea2c8de1e47a71d5da",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "id": "RLZ-T1GXX9"
+        },
+        {
+          "after": {
+            "blob": "e3f14fd6204940ace8a22d216c6ba13e5a8cd8f7",
+            "content": "sha256:5488060f32244e500220deb21c609e5b3308e05211e99c3ce9c954b2ae1560a3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/manager-brief.md"
+          },
+          "before": {
+            "blob": "245fbf8583cbdb59e25b6726121c89e03dd7247e",
+            "content": "sha256:9be5158644ddcfc26a417aad8c6e8baf4535f03de6ac93a666bb61bdd3c30af5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/manager-brief.md"
+          },
+          "id": "RLZ-WR7C61"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-NRMK8K",
+      "items": [
+        "sha256:b1d95765c81344cb647f23045579dcf3edebb713998b2979721ec3d53b51f133"
+      ],
+      "reason": "Every covered realization was read at the extended candidate; the source move is the launcher or document re-anchor, and the invariant states the same obligation with the same entry set.",
+      "revision": 5,
+      "subject": "INV-HGSFJ8"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+            "content": "sha256:6eed23ad423ed5702f143a24fff1b097ac49aba8d51aa8fb6ffaa48812812edb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+            "content": "sha256:1a6920158daeb820f8807df7f4c7d958b033f6823ee0f933068eca39484a036a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-TRMKTB"
+        },
+        {
+          "after": {
+            "blob": "9170e361d8a55ae8a86bc80960710197d49fedcd",
+            "content": "sha256:702b67efa7c5f61f541dc44373b76a74b320d1ffb4a8b251354bb58625a494eb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "before": {
+            "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
+            "content": "sha256:b5b828ca3f1723854efcf693215244c88075189d5581b7ea2c8de1e47a71d5da",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "id": "RLZ-V80KC5"
+        },
+        {
+          "after": {
+            "blob": "926e006da6810baf314464553204030191db3ad7",
+            "content": "sha256:6f6b42d2d6623436255e515ef153053e58a2b93e7cb586f7d23c8586629209e9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "before": {
+            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "content": "sha256:874a2947ebc58481582c0cb1f00dc08901b017156fc95bb5d90df975ba0786e7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "id": "RLZ-VT0A1C"
+        },
+        {
+          "after": {
+            "blob": "a8c098e9bfe5ff05bc1568cabde93d167e9ad35c",
+            "content": "sha256:a9568fd887bbc7b34443e94f060623a43689a42abbde634c18c7157f8cabea9a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "before": {
+            "blob": "23bfca4e88babb87f154a00a7d88d117d67c4614",
+            "content": "sha256:4a0dfeab70995c88c469397b1f859e6244c27cbf55e00ccb7cb3047b3ca31b73",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "id": "RLZ-Z9Z18P"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-NX5EEK",
+      "items": [
+        "sha256:30210e2d0fc4d001d8e5e03bf2a8f66b7daab965b26ccb5a1e6f87b6cf115e75"
+      ],
+      "reason": "Every covered realization was read at the extended candidate; the source move is the launcher or document re-anchor, and the invariant states the same obligation with the same entry set.",
+      "revision": 2,
+      "subject": "INV-QZW2X2"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-P9ZKD1",
+      "items": [
+        "sha256:b037e62d4a75ba33350adc80019815c62116948aaccdb5a8a94709273169a4f3"
+      ],
+      "reason": "The source moved, but the card at mcp/pyproject.toml states the same contract at the candidate; no claim in it depends on the sprint-only rule that changed.",
+      "sources": [
+        {
+          "blob": "675b2b192c83d602eba7a7ee622f6f33098c26cd",
+          "path": "mcp/pyproject.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/pyproject.toml"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2409436603223ce18654fb5e05f92a29a102b30f",
+            "content": "sha256:f5e83f13d0e4c3c07041b58d2d7c98a926d2a2d9ba3001cca4147c40eabcb3d6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "de0e221dc51f2f0b067db007cb4c00b17ab3bd39",
+            "content": "sha256:64f53ef7349f7b99805e555662a6f4355c15a1c66bb9a57c44d45685f6aaf0b8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-SZMT6X"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-PAPKN5",
+      "items": [
+        "sha256:fa9052e9781f5737be46a74186f52e8d8a9c5854ddc900817dd71a840418cf22"
+      ],
+      "reason": "Every covered realization was read at the extended candidate; the source move is the launcher or document re-anchor, and the invariant states the same obligation with the same entry set.",
+      "revision": 2,
+      "subject": "INV-7FMDAS"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "7229064a725f1a8ac0d60bacadfa0fa0fa00a205",
+            "content": "sha256:1a49a42a50dd81c8fbc410c1fd1d37b0bc8d03e3001cfc018af884f8b03ff709",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_curator_instruction_wording.py"
+          },
+          "before": {
+            "blob": "2e93d8f10bc735da4775908e8a6a7274e3f2fa9e",
+            "content": "sha256:4e8836e6629aac4f9d8b4422d7d025fc4968e05f71838806c1fa4726c187b0a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_curator_instruction_wording.py"
+          },
+          "id": "PRF-RFP8Q1"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-PEX7D4",
+      "items": [
+        "sha256:d201112380b23ebd9117c8d881fa435acc0f7640f9f34e4caba2901a8e7892ed"
+      ],
+      "reason": "Every covered realization was read at the extended candidate; the source move is the launcher or document re-anchor, and the invariant states the same obligation with the same entry set.",
+      "revision": 2,
+      "subject": "INV-PEVJ6G"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-PPJ1N5",
+      "items": [
+        "sha256:2d22d13aed87328dfcfaf6ae8587a5feed1a93de12e066f3806de439879ac2c7",
+        "sha256:86a25dcea84d1b1a14bab984ee3782acffa7433f90592261d7977a6a08dd155a",
+        "sha256:d241a16d0901be2d931b84d63e1a9afbd1280c58e5894a13a50dcc6c828da1d0",
+        "sha256:e17c28b069cf56d25d6997e636ac61bb5dc714534ba1cc8d05e3f6781c58f19b"
+      ],
+      "reason": "The card was brought to current truth at the candidate: it now states the standalone-master launch case and no longer claims a sprint is always named. Its sources are bound at the candidate tree.",
+      "sources": [
+        {
+          "blob": "841d52ef5c315e34b668b69e69ba64186ca21855",
+          "path": "mcp/tests/test_paseo_role_tools_start.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_paseo_role_tools_start.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Q3F91E",
+      "items": [
+        "sha256:0dab0be0fc74a895c9d8c2857852b5db11da7d4b3a9487b8b7545e9c4dfccb97"
+      ],
+      "reason": "The card was brought to current truth at the candidate: it now states the standalone-master launch case and no longer claims a sprint is always named. Its sources are bound at the candidate tree.",
+      "sources": [
+        {
+          "blob": "fd1c4e86ce70758801d060d2f117f1658c832987",
+          "path": "mcp/src/agents_remember/cli/investigator_receipts.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/investigator_receipts.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f7ddf469d09ffa892e43eaf4777567df0e78dbfc",
+            "content": "sha256:016a8aa15c222a06cecf763ab87af72b0dcc23eb0c5129df7c5197bf03d74278",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_agent_binding"
+            },
+            "path": "mcp/src/agents_remember/application/agent_binding.py"
+          },
+          "before": {
+            "blob": "160e313efbefa3c044cc286261c123d7a9bad3ea",
+            "content": "sha256:0ffe147ee4cc8f99fe799092689c7e8560a8ca8071e5cdfda9295a171a835467",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_agent_binding"
+            },
+            "path": "mcp/src/agents_remember/application/agent_binding.py"
+          },
+          "id": "RLZ-0Y5QDC"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-Q7JRV6",
+      "items": [
+        "sha256:07cd16be3f47adf3d2ebe38c16a1bccc4f33dfcf6662a43c1f6d8d9df647c2fa"
+      ],
+      "reason": "Every covered realization was read at the extended candidate; the source move is the launcher or document re-anchor, and the invariant states the same obligation with the same entry set.",
+      "revision": 2,
+      "subject": "INV-S2SR50"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "969f0f5107c14b1509cdd055c0a668d69b70e72b",
+            "content": "sha256:7fcd52c59bd0e1297038b2249a008798d18e441e3b12f3dc2fdfedc2e9989c99",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "mcp/uv.lock"
+          },
+          "before": {
+            "blob": "c63f85e4d9aa4a0076032816190f431cc18b1ffa",
+            "content": "sha256:4f6b0dce4cda1bc753aca254e31f460a0bf2b57af78466ad612da56154af5194",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "mcp/uv.lock"
+          },
+          "id": "RLZ-7M3P2R"
+        },
+        {
+          "after": {
+            "blob": "675b2b192c83d602eba7a7ee622f6f33098c26cd",
+            "content": "sha256:abebe6fa8e28401a2c1fc045c15849801f75107416a9bb542dd54cb47cb3b6d6",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 6
+            },
+            "path": "mcp/pyproject.toml"
+          },
+          "before": {
+            "blob": "f2ecc90c812371f1e0ea27f3a18dbe6ae5b60535",
+            "content": "sha256:bdbeda11d0a593dc6101786ff4e0731e3715622b4bfee63cb83fa5ea981d5fd7",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 6
+            },
+            "path": "mcp/pyproject.toml"
+          },
+          "id": "RLZ-A4TZZ0"
+        },
+        {
+          "after": {
+            "blob": "f09a93db862fd8a11919d23a28baa1b968ffb5e7",
+            "content": "sha256:1a7e644a79e3469eee386e2e821678cf32a0cc7aed2ce614059390486555e8bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_server_version"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/version.py"
+          },
+          "before": {
+            "blob": "ba8f919dc79e3daf6a51228201842447d6b49654",
+            "content": "sha256:e5d2c589169f0e48d7f5c4c033a2b33255af40069685ea1a124d29996cfec01f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_server_version"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/version.py"
+          },
+          "id": "RLZ-YGKGJR"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-QE73AD",
+      "items": [
+        "sha256:ba9367eea622bb92858f2e805df42afdeacbfe9ef51cabe122c2c5780ef5df28"
+      ],
+      "reason": "This leaf changed the record in the first curation pass (the standalone-master statement and scope); the row at the current revision carries the same meaning change and covers the re-anchored realizations.",
+      "revision": 2,
+      "subject": "INV-BQFZCR"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-QMFTX6",
+      "items": [
+        "sha256:64235a5b9812ebe17bb2fc034c23be49234938faa43ecf55431e8eb8af8c2971"
+      ],
+      "reason": "The tests route overview still describes the route’s cards; the three changed test files are type/lint-only edits to existing cases, so no overview text changes.",
+      "sources": [
+        {
+          "blob": "a963d7f4459c6a28a0200331eed5157ee15d375c",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "c5329d6566f5482380dd6d536b28a182142711dc",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "7229064a725f1a8ac0d60bacadfa0fa0fa00a205",
+          "path": "mcp/tests/test_curator_instruction_wording.py"
+        },
+        {
+          "blob": "8a72d684bce67b530a7c70ee8df3d67280ac7cb3",
+          "path": "mcp/tests/test_paseo_agent_tools.py"
+        },
+        {
+          "blob": "841d52ef5c315e34b668b69e69ba64186ca21855",
+          "path": "mcp/tests/test_paseo_role_tools_start.py"
+        },
+        {
+          "blob": "8ccb6ec3defc00890ee738426960eda546511f77",
+          "path": "mcp/tests/test_role_instruction_wording.py"
+        },
+        {
+          "blob": "85f5ff51b4d4d720d5cd27164237494c77aea5b0",
+          "path": "mcp/tests/test_role_launch_routes.py"
+        },
+        {
+          "blob": "1565558ccc756d7b2efd3e656ac93138d1e8f528",
+          "path": "mcp/tests/test_semantic_topology_standalone.py"
+        },
+        {
+          "blob": "86d27cd4466e0a4f52fd90fc8bc9b8d5bf7032f7",
+          "path": "mcp/tests/test_standalone_master_route.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-MGGEBY",
+          "revision": 2
+        },
+        {
+          "id": "INV-VDWN33",
+          "revision": 3
+        },
+        {
+          "id": "INV-WQ8YGE",
+          "revision": 2
+        },
+        {
+          "id": "INV-X0KED3",
+          "revision": 2
+        },
+        {
+          "id": "INV-XZYGEB",
+          "revision": 3
+        },
+        {
+          "id": "INV-YK0D2W",
+          "revision": 1
+        },
+        {
+          "id": "INV-Z0BXKJ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-QQA16V",
+      "items": [
+        "sha256:ed408ba419c754021b222e0ad5de5396568804dd848068d700bc9f507139afd2"
+      ],
+      "reason": "All members were examined at the candidate; the source moves are re-anchors and the family guarantee is unchanged.",
+      "revision": 4,
+      "subject": "FAM-14NZRC"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
+            "content": "sha256:4fe15b2ee88843880e03ea04135e37d40fc91f3a56c707b9375fa00b9e4fdb5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_workspace"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+          },
+          "before": {
+            "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+            "content": "sha256:59a0ae37fbd1ebbfcf8b0c8c8d764ad69ef34c82485e69b3222444d5b6a13ab8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_workspace"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+          },
+          "id": "RLZ-YA9KV0"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-R713FR",
+      "items": [
+        "sha256:3d7c292d65336957db7a42069d5359daa4f749bf1f37ae85fa7240722dc90bf8"
+      ],
+      "reason": "Every covered realization was read at the extended candidate; the source move is the launcher or document re-anchor, and the invariant states the same obligation with the same entry set.",
+      "revision": 1,
+      "subject": "INV-PH30YW"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-A8E0YE",
+          "revision": 1
+        },
+        {
+          "id": "INV-H0WCGX",
+          "revision": 1
+        },
+        {
+          "id": "INV-MM63KX",
+          "revision": 1
+        },
+        {
+          "id": "INV-WAY665",
+          "revision": 1
+        },
+        {
+          "id": "INV-YNHABM",
+          "revision": 2
+        },
+        {
+          "id": "INV-YT1AD8",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-RGCHBQ",
+      "items": [
+        "sha256:fd158951d4dd5c873a55db2a8c2e187d4d16330f1e3f9c8789485e6f37f3ab41"
+      ],
+      "reason": "All members were examined at the candidate; the source moves are re-anchors and the family guarantee is unchanged.",
+      "revision": 3,
+      "subject": "FAM-TYQYTP"
+    },
+    {
+      "disposition": "changed",
+      "effect": "strengthen",
+      "examined": [
+        {
+          "id": "INV-0EASG7",
+          "revision": 2
+        },
+        {
+          "id": "INV-68QN0P",
+          "revision": 1
+        },
+        {
+          "id": "INV-A0240E",
+          "revision": 1
+        },
+        {
+          "id": "INV-BS7TH8",
+          "revision": 2
+        },
+        {
+          "id": "INV-VZJRTM",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-RJSKM0",
+      "items": [
+        "sha256:d6d936bfcbb370a6270357d233a560603f2b60627c5e0a66177d0263e9aded5a"
+      ],
+      "reason": "The guarantee already names the standalone-master Investigator selection; every member was read at the candidate.",
+      "revision": 2,
+      "subject": "FAM-3NG1K9"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-RJXYRY",
+      "items": [
+        "sha256:f3d854b4a574460229aec215914b8db71474566c28be9557bf26dcefbf8e2160"
+      ],
+      "reason": "The card was brought to the standalone-master truth at the extended candidate: the “No sprint” choice, the standalone master list, the binding without a sprint and the launcher test are now stated.",
+      "sources": [
+        {
+          "blob": "462daf2928baf29511da7b2f41acf6eae18c8805",
+          "path": "dashboard/src/cockpit/roleLaunchModel.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/roleLaunchModel.ts"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-RKE52W",
+      "items": [
+        "sha256:21973a5e941ea517dcce1d1bd1a3c32d0d1f05f924a1ef6ef839e7266ee0e1b9"
+      ],
+      "reason": "The confirmation statement now names what was read in this document against the version and standalone-master change; the document still stands and its links are re-read at the candidate.",
+      "revision": 2,
+      "subject": "DPD-ZMQ523"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-RM3V0Z",
+      "items": [
+        "sha256:6a3c7f59c918dd054cdecdaef063c7211c38c0ee1c56e54762b4fdbdc8af9afd"
+      ],
+      "reason": "The dependent was re-read at the extended candidate after the launcher and document repair; the document stands and the confirmation names this task and the candidate tree.",
+      "revision": 2,
+      "subject": "DPD-23C91T"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-S5ZQVN",
+      "items": [
+        "sha256:2b705f714b835681c28e946448855d7f84c20400527eb97bf9aa34e7dbb90f20",
+        "sha256:e8318c6958d373b18b567b10df2a5484d22b82437323672d381a8c5c54269248"
+      ],
+      "reason": "The dependent was re-read at the extended candidate after the launcher and document repair; the document stands and the confirmation names this task and the candidate tree.",
+      "revision": 3,
+      "subject": "DPD-CZBR1Q"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+            "content": "sha256:6eed23ad423ed5702f143a24fff1b097ac49aba8d51aa8fb6ffaa48812812edb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+            "content": "sha256:1a6920158daeb820f8807df7f4c7d958b033f6823ee0f933068eca39484a036a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-5DAQEC"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-SDC4B5",
+      "items": [
+        "sha256:0bb26691746e70b0ba4cf45338274e8207d9d4f1f4cbd948e64680c789463f56"
+      ],
+      "reason": "This leaf changed the record in the first curation pass (the standalone-master statement and scope); the row at the current revision carries the same meaning change and covers the re-anchored realizations.",
+      "revision": 3,
+      "subject": "INV-W58B84"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a8c098e9bfe5ff05bc1568cabde93d167e9ad35c",
+            "content": "sha256:a9568fd887bbc7b34443e94f060623a43689a42abbde634c18c7157f8cabea9a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "before": {
+            "blob": "23bfca4e88babb87f154a00a7d88d117d67c4614",
+            "content": "sha256:4a0dfeab70995c88c469397b1f859e6244c27cbf55e00ccb7cb3047b3ca31b73",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "id": "RLZ-4JERMG"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-SX4F3E",
+      "items": [
+        "sha256:583a3d396521ac23071d2b5eab20abcbe506a7bce1b09fd8033ec42a03d24299"
+      ],
+      "reason": "Every covered realization was read at the extended candidate; the source move is the launcher or document re-anchor, and the invariant states the same obligation with the same entry set.",
+      "revision": 2,
+      "subject": "INV-9S49CW"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7FMDAS",
+          "revision": 2
+        },
+        {
+          "id": "INV-82ZTHK",
+          "revision": 3
+        },
+        {
+          "id": "INV-8AMSGV",
+          "revision": 4
+        },
+        {
+          "id": "INV-9S49CW",
+          "revision": 2
+        },
+        {
+          "id": "INV-HGSFJ8",
+          "revision": 5
+        }
+      ],
+      "id": "ROW-TNTBRM",
+      "items": [
+        "sha256:c8b425f5f869451cbb842e3de90cdab10519284406597a32c61639ce25e9c76b"
+      ],
+      "reason": "All members were examined at the candidate; the source moves are re-anchors and the family guarantee is unchanged.",
+      "revision": 2,
+      "subject": "FAM-7AEA19"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0ecf03c089d77b1c2a2ffbbad28a4f481ea9d94f",
+            "content": "sha256:c34329895afbe23e7aac751cb15de83764427ecd6345def0b2a93525405134dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "parentless_selection_violation"
+            },
+            "path": "mcp/src/agents_remember/application/role_launch_context.py"
+          },
+          "before": {
+            "blob": "caa8c6e923b4efaeb1c61856c613d10771f7a6c3",
+            "content": "sha256:90e3a72810766cd437a1e7bc9b1ea2453424d104200f67ccd506b9a601dd2fd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "parentless_selection_violation"
+            },
+            "path": "mcp/src/agents_remember/application/role_launch_context.py"
+          },
+          "id": "RLZ-BM98W7"
+        },
+        {
+          "after": {
+            "blob": "0ecf03c089d77b1c2a2ffbbad28a4f481ea9d94f",
+            "content": "sha256:294d5f3faf7b742320b11e5c82ae343c6e700b1b5cb025c7911a78b21e1af83b",
+            "locator": {
+              "kind": "symbol",
+              "name": "PARENTLESS_START_SELECTIONS"
+            },
+            "path": "mcp/src/agents_remember/application/role_launch_context.py"
+          },
+          "before": {
+            "blob": "caa8c6e923b4efaeb1c61856c613d10771f7a6c3",
+            "content": "sha256:c6c898aebabc94e1cc1919521f4b327bf5b9050807de02c2c1a458cbec63c8aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "PARENTLESS_START_SELECTIONS"
+            },
+            "path": "mcp/src/agents_remember/application/role_launch_context.py"
+          },
+          "id": "RLZ-RS4WTS"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-TWTEK7",
+      "items": [
+        "sha256:67920798f679dc942792bfc1f15d84036fcff5c85380e695fde02f06f5bf467d"
+      ],
+      "reason": "Every covered realization was read at the extended candidate; the source move is the launcher or document re-anchor, and the invariant states the same obligation with the same entry set.",
+      "revision": 1,
+      "subject": "INV-85VB61"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "8ccb6ec3defc00890ee738426960eda546511f77",
+            "content": "sha256:ec2c59d9717d9c1a8ee7ebc5791216fa8a7706d4c2beae58379e5c3aed63a27f",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "721de1fab4f546e1fb56f1f38142765772a3ba78",
+            "content": "sha256:fd0f0cd6c898d38e4fce6951d789d0b9daca524ddf1481a732d595527badbf8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-6YJJ90"
+        },
+        {
+          "after": {
+            "blob": "a8c098e9bfe5ff05bc1568cabde93d167e9ad35c",
+            "content": "sha256:a9568fd887bbc7b34443e94f060623a43689a42abbde634c18c7157f8cabea9a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "before": {
+            "blob": "23bfca4e88babb87f154a00a7d88d117d67c4614",
+            "content": "sha256:4a0dfeab70995c88c469397b1f859e6244c27cbf55e00ccb7cb3047b3ca31b73",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "id": "RLZ-RMJW06"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-V1H84Z",
+      "items": [
+        "sha256:3731ebc456b3c9e9521ca6b3e7d0a61d3f17526b5a291530d44904295e56b174"
+      ],
+      "reason": "Every covered realization was read at the extended candidate; the source move is the launcher or document re-anchor, and the invariant states the same obligation with the same entry set.",
+      "revision": 1,
+      "subject": "INV-MM63KX"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "7229064a725f1a8ac0d60bacadfa0fa0fa00a205",
+            "content": "sha256:1a49a42a50dd81c8fbc410c1fd1d37b0bc8d03e3001cfc018af884f8b03ff709",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_curator_instruction_wording.py"
+          },
+          "before": {
+            "blob": "2e93d8f10bc735da4775908e8a6a7274e3f2fa9e",
+            "content": "sha256:4e8836e6629aac4f9d8b4422d7d025fc4968e05f71838806c1fa4726c187b0a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_curator_instruction_wording.py"
+          },
+          "id": "PRF-PC91ZT"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-V2PAQG",
+      "items": [
+        "sha256:b2cdb780d1ca11a16cc325e85fd4fab09b5e3fd8840446e8fa0e19202a460dd4"
+      ],
+      "reason": "Every covered realization was read at the extended candidate; the source move is the launcher or document re-anchor, and the invariant states the same obligation with the same entry set.",
+      "revision": 4,
+      "subject": "INV-945YZ4"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-VBGC3K",
+      "items": [
+        "sha256:0af712be2e30cf9d7ffaafaa5479f7b0d09e442f651da340488d980485bf7ae8",
+        "sha256:16c43159ec2fe5968f6ef848a4f2ac82a9c9793ced0167bbe99a6a8798ce0bdd",
+        "sha256:4a312ca42b655120bfe4480f745d58ae7c2bef416d24dc3881ba68dcf2b6f07d"
+      ],
+      "reason": "The card was brought to the standalone-master truth at the extended candidate: the “No sprint” choice, the standalone master list, the binding without a sprint and the launcher test are now stated.",
+      "sources": [
+        {
+          "blob": "0a431e2f25b6e46700f6528bffcaa3e76d02b25f",
+          "path": "dashboard/src/cockpit/role-launcher/useLauncherSelectionRepair.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/role-launcher/useLauncherSelectionRepair.ts"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-VM29Z3",
+      "items": [
+        "sha256:4530d5f667ca1dbaefdf6e295b02f20a984b8ccf0a18ba860d2d4bf215648f49",
+        "sha256:9580a861ade323d4f6e1889f2ccf76722dd8149ce78e824f7fc080983f9c32a9"
+      ],
+      "reason": "The source moved, but the card at mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py states the same contract at the candidate; no claim in it depends on the sprint-only rule that changed.",
+      "sources": [
+        {
+          "blob": "d7ad5c983788aa9d12a9cde613f56cfc8d0c0ca2",
+          "path": "mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-VRBC4Z",
+      "items": [
+        "sha256:57af81eea904ccd6fbea40f0ac1f651e4b63c61696c2e7ba364c4466344d7e21"
+      ],
+      "reason": "The card was brought to the standalone-master truth at the extended candidate: the “No sprint” choice, the standalone master list, the binding without a sprint and the launcher test are now stated.",
+      "sources": [
+        {
+          "blob": "4efa21ba70e88c36e0e93ed074d44bc252eee7ce",
+          "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.standalone.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/role-launcher/RoleLauncher.standalone.test.tsx"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-VV0Z01",
+      "items": [
+        "sha256:e00cac9e93a3d4476192c6f7fc0b5cd5141b69af6cff5243c864c18792a25551"
+      ],
+      "reason": "The card was brought to current truth at the candidate: it now states the standalone-master launch case and no longer claims a sprint is always named. Its sources are bound at the candidate tree.",
+      "sources": [
+        {
+          "blob": "0ecf03c089d77b1c2a2ffbbad28a4f481ea9d94f",
+          "path": "mcp/src/agents_remember/application/role_launch_context.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/role_launch_context.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+            "content": "sha256:6eed23ad423ed5702f143a24fff1b097ac49aba8d51aa8fb6ffaa48812812edb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+            "content": "sha256:1a6920158daeb820f8807df7f4c7d958b033f6823ee0f933068eca39484a036a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-2E88NK"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-WHGNJC",
+      "items": [
+        "sha256:69673ebc8b2c3173681ca319422526e990d87f4a3ac82a2f52ff870a417fa6c1"
+      ],
+      "reason": "Every covered realization was read at the extended candidate; the source move is the launcher or document re-anchor, and the invariant states the same obligation with the same entry set.",
+      "revision": 4,
+      "subject": "INV-8AMSGV"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-WRGDSR",
+      "items": [
+        "sha256:780545b5bb02aac68a6c511d1b9812c1a58de3839de19322485c30fa464ef198"
+      ],
+      "reason": "The card was brought to current truth at the candidate: it now states the standalone-master launch case and no longer claims a sprint is always named. Its sources are bound at the candidate tree.",
+      "sources": [
+        {
+          "blob": "f09a93db862fd8a11919d23a28baa1b968ffb5e7",
+          "path": "mcp/src/agents_remember/kernel/primitives/version.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/kernel/primitives/version.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c5329d6566f5482380dd6d536b28a182142711dc",
+            "content": "sha256:1fc23c2238ba5178a540ee367b9f7f1ec431764a8669cb50f2673e9019d7923c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "5691b694e756469475d783c426d9781ef14c8633",
+            "content": "sha256:4dd4f065652c07eb2cd7b78619ae9fed320efbd7c4c5fc074d3d6b2c87dbc551",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-XQXYDT"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-WVH7HV",
+      "items": [
+        "sha256:2654e02a5ebc4d9df2e8802cde14d6856bdfd2cb8b1657cd7e725ba307ebed79"
+      ],
+      "reason": "Every covered realization was read at the extended candidate; the source move is the launcher or document re-anchor, and the invariant states the same obligation with the same entry set.",
+      "revision": 1,
+      "subject": "INV-BXWQRD"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "fd1c4e86ce70758801d060d2f117f1658c832987",
+            "content": "sha256:a9b578b375fbf2995fc67645ddf61aa2d3c3f9a2f491a2282d60103840e202cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "investigator_start_capacity"
+            },
+            "path": "mcp/src/agents_remember/cli/investigator_receipts.py"
+          },
+          "before": {
+            "blob": "8b5dd8407a1e01b76ab315b92c7aeeb413a10f42",
+            "content": "sha256:6bc070f01f5f9c0d0fa085b70cb6a43b44a052736efdf3ab5818ededb926a46d",
+            "locator": {
+              "kind": "symbol",
+              "name": "investigator_start_capacity"
+            },
+            "path": "mcp/src/agents_remember/cli/investigator_receipts.py"
+          },
+          "id": "RLZ-2BFTK4"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "strengthen",
+      "id": "ROW-WYYZKB",
+      "items": [
+        "sha256:479ffe1a7b2e69504a2c23ce1ca7eca8c41d8944b90dc847b9c42902b4b874ee"
+      ],
+      "reason": "This leaf changed the record in the first curation pass (the standalone-master statement and scope); the row at the current revision carries the same meaning change and covers the re-anchored realizations.",
+      "revision": 2,
+      "subject": "INV-0EASG7"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e496c4d0e37835d51064bfc7ed14a72f51037e92",
+            "content": "sha256:a6f37ebae00993fee337bb78b66cbb1c7f0c50b5d9442a9fc103e05c592b0fa3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "214707ebce4f6867647ac01bef003737d3ad5390",
+            "content": "sha256:f0cd683eba89fceef7e269a1c7fbf3ead041e2e66d4976e59eee70c9e9ad378e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-9FX5WR"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-XGFANY",
+      "items": [
+        "sha256:85b95abccbfef02356cbab24341aac49ec61d79fd8a7e5d5c3c819d8d4a953cd"
+      ],
+      "reason": "Every covered realization was read at the extended candidate; the source move is the launcher or document re-anchor, and the invariant states the same obligation with the same entry set.",
+      "revision": 5,
+      "subject": "INV-Y6GVZ7"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-XJGWAM",
+      "items": [
+        "sha256:7c7b8b5639b09d1fea4df3fdf1afd98454d587cab157bc0b3f9570f3a888d8de",
+        "sha256:b7d82d4f4c87b8af20a388b2b73736d6684b7755a1ec97888a3c3f1acd94c753"
+      ],
+      "reason": "The source moved, but the card at mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py states the same contract at the candidate; no claim in it depends on the sprint-only rule that changed.",
+      "sources": [
+        {
+          "blob": "1e978ee04dff9734b4dff64133d62261ae76e6b2",
+          "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-XJX953",
+      "items": [
+        "sha256:4097b4a71abe9ffb14e4c25578be57fc7047cd4c41664a92595dc0e1770b72f4"
+      ],
+      "reason": "The card was brought to current truth at the candidate: it now states the standalone-master launch case and no longer claims a sprint is always named. Its sources are bound at the candidate tree.",
+      "sources": [
+        {
+          "blob": "72bfe507621276d94a76c571957fbf994573862e",
+          "path": "mcp/src/agents_remember/tasks/semantic_topology.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/tasks/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-XKNA4J",
+      "items": [
+        "sha256:87d7b9efb7a7d77a9486724667b2615b657861614f5dce23be3063de25eabc53"
+      ],
+      "reason": "The card was brought to current truth at the candidate: it now states the standalone-master launch case and no longer claims a sprint is always named. Its sources are bound at the candidate tree.",
+      "sources": [
+        {
+          "blob": "2409436603223ce18654fb5e05f92a29a102b30f",
+          "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+        },
+        {
+          "blob": "a8c098e9bfe5ff05bc1568cabde93d167e9ad35c",
+          "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+        },
+        {
+          "blob": "926e006da6810baf314464553204030191db3ad7",
+          "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-XQKAF8",
+      "items": [
+        "sha256:22b53f8fadd6ee71e89d88cee91208bbc582398906c16f60a63976909ffacee1"
+      ],
+      "reason": "The weakness still stands where it stood; the anchor file moved with the launcher/document repair and this task did not change the cause.",
+      "revision": 1,
+      "subject": "WKN-91A1E8"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-XS9AHJ",
+      "items": [
+        "sha256:6981db016ced4f251d36a23822fac97aa506987a1cad168c9358966708aa7ac5"
+      ],
+      "reason": "The confirmation statement now names what was read in this document against the version and standalone-master change; the document still stands and its links are re-read at the candidate.",
+      "revision": 2,
+      "subject": "DPD-71WYH4"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0ecf03c089d77b1c2a2ffbbad28a4f481ea9d94f",
+            "content": "sha256:4fd7946ddff242f3daa40e06c7f53e6ba274e3d9a52a920fb562ba332a02cf6b",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 77
+            },
+            "path": "mcp/src/agents_remember/application/role_launch_context.py"
+          },
+          "before": {
+            "blob": "caa8c6e923b4efaeb1c61856c613d10771f7a6c3",
+            "content": "sha256:a5a369b4f36497af151dfba14dd2bdb80bee688683ab36da6f3d2361ef16dafb",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 77
+            },
+            "path": "mcp/src/agents_remember/application/role_launch_context.py"
+          },
+          "id": "RLZ-RA6D0D"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-Y35XQ2",
+      "items": [
+        "sha256:4be4a776259f65ba10be2859ca38a0e6ad844a1813e0ee1befd0c3f3ce1b6e77"
+      ],
+      "reason": "Every covered realization was read at the extended candidate; the source move is the launcher or document re-anchor, and the invariant states the same obligation with the same entry set.",
+      "revision": 1,
+      "subject": "INV-68QN0P"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-Y4RTNK",
+      "items": [
+        "sha256:688536fa756589c1d2bc2355270d75e16360d91d63066f673c61e3e580b43599"
+      ],
+      "reason": "The confirmation statement now names what was read in this document against the version and standalone-master change; the document still stands and its links are re-read at the candidate.",
+      "revision": 2,
+      "subject": "DPD-ZQB4YZ"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+            "content": "sha256:d978199794e7d4da26ff9f5485d80bc07bebf8ca36115cb94b84d03f7587add1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_return_address"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+            "content": "sha256:f68c6e26dd460031cd38b5c7dd871ca7b4140261b4a3f481b0523c13c3248098",
+            "locator": {
+              "kind": "symbol",
+              "name": "_return_address"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-2ZC9R8"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-Y64M1R",
+      "items": [
+        "sha256:0c6b59b5d01ee1f6ebb729098f87b15c7b60b2a9bffa21b1c1e9f0bcf66b7ddf"
+      ],
+      "reason": "Every covered realization was read at the extended candidate; the source move is the launcher or document re-anchor, and the invariant states the same obligation with the same entry set.",
+      "revision": 1,
+      "subject": "INV-V5KJ19"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Y67A4V",
+      "items": [
+        "sha256:10286a3d7a075943c4f6742c37c2909c01e796a9a437d00efac62227ce66e7f3"
+      ],
+      "reason": "The card was brought to current truth at the candidate: it now states the standalone-master launch case and no longer claims a sprint is always named. Its sources are bound at the candidate tree.",
+      "sources": [
+        {
+          "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+          "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_launch_preparation.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YBXQ1T",
+      "items": [
+        "sha256:c445bf2f92aa4bcc4b03ad7e96a031bda8dd489fcf67f1d80c8360208a935244"
+      ],
+      "reason": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx line 280: the Master field is shown for a master-naming role once its content is served, with no sprint requirement; the rule is stated by RSM-R01-A11 and its target anchors.",
+      "subject": "hunk:sha256:c445bf2f92aa4bcc4b03ad7e96a031bda8dd489fcf67f1d80c8360208a935244"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-YD4X1H",
+      "items": [
+        "sha256:303e8def883c7e720430e5eea93be497b0cd48f130874621fda42e27eab7dabb"
+      ],
+      "reason": "The source moved, but the card at mcp/src/agents_remember/cli/role_message_delivery.py states the same contract at the candidate; no claim in it depends on the sprint-only rule that changed.",
+      "sources": [
+        {
+          "blob": "2c0b61b226e0060d919162713125cffa9f681a45",
+          "path": "mcp/src/agents_remember/cli/role_message_delivery.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_message_delivery.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-YHTN52",
+      "items": [
+        "sha256:abff3575e30d92da3651896348e43f2ce4c8c8f55ec627aee83a1ede1b1134df"
+      ],
+      "reason": "The confirmation statement now names what was read in this document against the version and standalone-master change; the document still stands and its links are re-read at the candidate.",
+      "revision": 2,
+      "subject": "DPD-06057Y"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-YQ4RXX",
+      "items": [
+        "sha256:94ce51584c64c766b3d6eee50404d08e138765b308ae00a4888b2edbd295beec"
+      ],
+      "reason": "The card was brought to current truth at the candidate: it now states the standalone-master launch case and no longer claims a sprint is always named. Its sources are bound at the candidate tree.",
+      "sources": [
+        {
+          "blob": "16f25d8cc69c9a34dc60a7a3013d67bd3620308d",
+          "path": "mcp/src/agents_remember/cli/paseo_role_recipients.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/paseo_role_recipients.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a963d7f4459c6a28a0200331eed5157ee15d375c",
+            "content": "sha256:d78486724596577bd83336e4d9373c8da9f40d561b4a2e6e5bbb5c129f5523ac",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "0556945441335e93cd0b1783dba11d3b2eb279a7",
+            "content": "sha256:f3c97cea90d6874137c31a702bc9f64c898199a273c0aede415fdef641e6c6c7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-8RHQED"
+        },
+        {
+          "after": {
+            "blob": "c5329d6566f5482380dd6d536b28a182142711dc",
+            "content": "sha256:1fc23c2238ba5178a540ee367b9f7f1ec431764a8669cb50f2673e9019d7923c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "5691b694e756469475d783c426d9781ef14c8633",
+            "content": "sha256:4dd4f065652c07eb2cd7b78619ae9fed320efbd7c4c5fc074d3d6b2c87dbc551",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-MC12B0"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-ZJERK2",
+      "items": [
+        "sha256:70101ce0147aa480ef7869e446828fdd0c95b0f6b9b3dca945b20738d5db30aa"
+      ],
+      "reason": "Every covered realization was read at the extended candidate; the source move is the launcher or document re-anchor, and the invariant states the same obligation with the same entry set.",
+      "revision": 2,
+      "subject": "INV-H1BCMX"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2409436603223ce18654fb5e05f92a29a102b30f",
+            "content": "sha256:f5e83f13d0e4c3c07041b58d2d7c98a926d2a2d9ba3001cca4147c40eabcb3d6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "de0e221dc51f2f0b067db007cb4c00b17ab3bd39",
+            "content": "sha256:64f53ef7349f7b99805e555662a6f4355c15a1c66bb9a57c44d45685f6aaf0b8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-59K606"
+        },
+        {
+          "after": {
+            "blob": "2409436603223ce18654fb5e05f92a29a102b30f",
+            "content": "sha256:f5e83f13d0e4c3c07041b58d2d7c98a926d2a2d9ba3001cca4147c40eabcb3d6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "de0e221dc51f2f0b067db007cb4c00b17ab3bd39",
+            "content": "sha256:64f53ef7349f7b99805e555662a6f4355c15a1c66bb9a57c44d45685f6aaf0b8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-5WT1RY"
+        },
+        {
+          "after": {
+            "blob": "926e006da6810baf314464553204030191db3ad7",
+            "content": "sha256:6f6b42d2d6623436255e515ef153053e58a2b93e7cb586f7d23c8586629209e9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "before": {
+            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "content": "sha256:874a2947ebc58481582c0cb1f00dc08901b017156fc95bb5d90df975ba0786e7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "id": "RLZ-EQZH1P"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-ZMGYJA",
+      "items": [
+        "sha256:2a4d83bd15f98aa65bc7833c115802b776dbe21b23f6d0df54cab699e570b6b4"
+      ],
+      "reason": "Every covered realization was read at the extended candidate; the source move is the launcher or document re-anchor, and the invariant states the same obligation with the same entry set.",
+      "revision": 3,
+      "subject": "INV-NNQR91"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ZNG69D",
+      "items": [
+        "sha256:01354817cf59c64f6da90a9ecb8e846369a5d0e8bd64093aab8171d07e2915f0",
+        "sha256:0e3cced1e88d2381afd57c8091790a464d226c4e698265d9739ccb6e03a87481",
+        "sha256:49c1a7597dd032fc5d0259ab6cd5c1072b854ddc3a0a00e19c5a50b582934b91",
+        "sha256:8164e81bd8295549caf6f5bec1f1c63ce57f7ec90d576e9fd74d51ba51364118",
+        "sha256:cc26ab8885eeef929b83a535c7d64c79fd23e2a973b8e193d0f4bc79292096d5"
+      ],
+      "reason": "The card was brought to the standalone-master truth at the extended candidate: the “No sprint” choice, the standalone master list, the binding without a sprint and the launcher test are now stated.",
+      "sources": [
+        {
+          "blob": "899182b3a2a0f1e12063e5ca78b4d3b5a745dd53",
+          "path": "dashboard/src/cockpit/document-chat/DocumentChat.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/document-chat/DocumentChat.test.tsx"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "8ccb6ec3defc00890ee738426960eda546511f77",
+            "content": "sha256:ec2c59d9717d9c1a8ee7ebc5791216fa8a7706d4c2beae58379e5c3aed63a27f",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "721de1fab4f546e1fb56f1f38142765772a3ba78",
+            "content": "sha256:fd0f0cd6c898d38e4fce6951d789d0b9daca524ddf1481a732d595527badbf8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-RKBZZC"
+        },
+        {
+          "after": {
+            "blob": "a8c098e9bfe5ff05bc1568cabde93d167e9ad35c",
+            "content": "sha256:a9568fd887bbc7b34443e94f060623a43689a42abbde634c18c7157f8cabea9a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "before": {
+            "blob": "23bfca4e88babb87f154a00a7d88d117d67c4614",
+            "content": "sha256:4a0dfeab70995c88c469397b1f859e6244c27cbf55e00ccb7cb3047b3ca31b73",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "id": "RLZ-0NTWBB"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-ZPV8GR",
+      "items": [
+        "sha256:3210aea2fdfb23ed4abc7992d5dc2c4ac4140609532e0b293583183057b9833e"
+      ],
+      "reason": "Every covered realization was read at the extended candidate; the source move is the launcher or document re-anchor, and the invariant states the same obligation with the same entry set.",
+      "revision": 1,
+      "subject": "INV-A8E0YE"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "7229064a725f1a8ac0d60bacadfa0fa0fa00a205",
+            "content": "sha256:1a49a42a50dd81c8fbc410c1fd1d37b0bc8d03e3001cfc018af884f8b03ff709",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_curator_instruction_wording.py"
+          },
+          "before": {
+            "blob": "2e93d8f10bc735da4775908e8a6a7274e3f2fa9e",
+            "content": "sha256:4e8836e6629aac4f9d8b4422d7d025fc4968e05f71838806c1fa4726c187b0a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_curator_instruction_wording.py"
+          },
+          "id": "PRF-D682YJ"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-ZW6RAT",
+      "items": [
+        "sha256:4cc531369b756ced16aeed1d07fd5a5a7558d0af5fd185657f232ba673238f2c"
+      ],
+      "reason": "Every covered realization was read at the extended candidate; the source move is the launcher or document re-anchor, and the invariant states the same obligation with the same entry set.",
+      "revision": 2,
+      "subject": "INV-208SQT"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

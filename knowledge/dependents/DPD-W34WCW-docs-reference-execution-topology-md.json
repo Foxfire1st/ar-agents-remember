@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
-    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
-    "role": "worker",
-    "statement": "The page is new in this task; its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate and the page was read whole; 1 rows of the inventory of changes are told here.",
-    "task": "260928-MIK-L97",
+    "codeTree": "15eece2f9931c0edd4589e0e544c46db6b6e4317",
+    "commit": "bb2d0b3725aa01485e820692b17e130fb65b1669",
+    "role": "curator",
+    "statement": "The execution-topology page already states that a master no sprint commands runs as an atomic master; the projection-members change keeps a null sprint in that projection, and no statement became untrue.",
+    "task": "261112-RSM-L1",
     "uncommitted": true
   },
   "document": "docs/reference/execution-topology.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "20f58808c1d618e11ba44426f4a9998be9753891",
+      "blob": "c6e11097e656d8498dbf5547fc69b3c6e2c2415b",
       "kind": "file",
       "path": "mcp/src/agents_remember/tasks/serving_preflight.py"
     },
@@ -101,7 +101,7 @@
       "path": "mcp/src/agents_remember/kernel/memory_init.py"
     },
     {
-      "blob": "b5d120de09128b72ce518321cc008426a1384f97",
+      "blob": "d7ad5c983788aa9d12a9cde613f56cfc8d0c0ca2",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py"
     }

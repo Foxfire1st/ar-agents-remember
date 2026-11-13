@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
-    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
-    "role": "worker",
-    "statement": "This task brought the page in line with the product: its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate, the false ones were corrected, and the page was read whole.",
-    "task": "260928-MIK-L97",
+    "codeTree": "15eece2f9931c0edd4589e0e544c46db6b6e4317",
+    "commit": "bb2d0b3725aa01485e820692b17e130fb65b1669",
+    "role": "curator",
+    "statement": "The llms summary still defines the same roles, task and sprint model; it states no version and no role-start sprint rule.",
+    "task": "261112-RSM-L1",
     "uncommitted": true
   },
   "document": "docs/llms.txt",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 6,
+  "revision": 7,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -33,7 +33,7 @@
       "kind": "anchor"
     },
     {
-      "blob": "3f30237a53623bb13be7bf1d5d8dc8413ba64f6c",
+      "blob": "675b2b192c83d602eba7a7ee622f6f33098c26cd",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },

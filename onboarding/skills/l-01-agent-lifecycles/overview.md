@@ -8,7 +8,7 @@ The native launcher exposes Architect, Investigator, Orchestrator, Manager, Work
 
 The first message also delivers the shared every-role digest beside the rendered capsule. The manifest declares it separately, and compilation returns its text apart from render_instructions(); the admitted digest revision contributes to semantic identity. This separate delivery does not prepend the larger retained core doctrine to the role/operation instruction stream.
 
-Paseo hosts agents and supplies host delivery. AR persists held role messages and its serving-lifetime loop attempts later delivery without a sender/model turn; while the loop is unavailable, messages remain held. The bound `agents-remember-task` server owns canonical AR task, requirement, knowledge, curation and paired-Git operations. Role and operation text names the tool and this server where it points at an Agents Remember tool action, for example `task_doc`, `role_message` and `knowledge_read` on `agents-remember-task`. Projects is an execution workspace, not a registered repository. Manual taskless Architect and Investigator launches use the supplied outcome/repository or scoped concern without manufacturing a sprint, master or leaf. Investigator is report-first for a concern of any kind, may be selected at sprint or sprint/master scope, and is never selected on a leaf.
+Paseo hosts agents and supplies host delivery. AR persists held role messages and its serving-lifetime loop attempts later delivery without a sender/model turn; while the loop is unavailable, messages remain held. The bound `agents-remember-task` server owns canonical AR task, requirement, knowledge, curation and paired-Git operations. Role and operation text names the tool and this server where it points at an Agents Remember tool action, for example `task_doc`, `role_message` and `knowledge_read` on `agents-remember-task`. Projects is an execution workspace, not a registered repository. Manual taskless Architect and Investigator launches use the supplied outcome/repository or scoped concern without manufacturing a sprint, master or leaf. Investigator is report-first for a concern of any kind, may be selected at sprint, standalone-master or sprint/master scope, and is never selected on a leaf.
 
 ## Hot Path Summary
 
@@ -176,6 +176,10 @@ Before escalating, Manager reads its own rulings and the Architect rulings for t
 - The Curator report carries writer-report state, written record and entry identifiers and paths, history rows, refusal reasons and explicit family coverage. [39]
 
 - Shared role-capsule routing doctrine is canonical here, with `composition-manifest.json` as the routing metadata authority. [42]
+- Current supplied role/operation, Projects scope, bound tools and execution/semantic separation. [52]
+- This source owns the route’s Investigator selection or execution boundary. [57]
+
+
 
 - The Curator reconciles one leaf's intent and implementation, writes and checks its affected memory, and hands over the structured coherence record. [45]
 
@@ -191,7 +195,6 @@ Before escalating, Manager reads its own rulings and the Architect rulings for t
 
 - A missing tool or unadmitted capability is reported with what remains unwritten; a correct-input refusal of a covered write follows its recovery ladder. [56]
 
-- This source owns the route’s Investigator selection or execution boundary. [57]
 
 - The review budget is settings-owned: `orchestration.loops.defaults.maxRounds` is read when a round begins, and the `task_doc` review state carries the task's limit and approved extra rounds. [58]
 
@@ -292,7 +295,6 @@ Before escalating, Manager reads its own rulings and the Architect rulings for t
 
 - The history-row sections: items, the rationale cover, the governing row of a changed invariant, and a family's one governing row. [51]
 
-- Current supplied role/operation, Projects scope, bound tools and execution/semantic separation. [52]
 
 - The decision-lifting duty: turn each developer ruling and requirement-packet choice that still constrains code into a decision record; task-only choices remain in the task. [5]
 
