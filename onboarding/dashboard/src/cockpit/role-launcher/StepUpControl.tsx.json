@@ -43,12 +43,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d40f60e246eaa870ff228d5f4a6582788c2104ee",
-            "content": "sha256:6a359647fdb5a46a6831eb7f88dd5277938cca9b6db9bd0c01591b7b6367ba99",
+            "blob": "462daf2928baf29511da7b2f41acf6eae18c8805",
+            "content": "sha256:264ce58590be97e6f6bf241fea1ab0b23c36c4f6346745a8e117f0bcc53f0d3a",
             "locator": {
-              "end": 312,
-              "kind": "line_range",
-              "start": 274
+              "kind": "file"
             },
             "path": "dashboard/src/cockpit/roleLaunchModel.ts"
           },

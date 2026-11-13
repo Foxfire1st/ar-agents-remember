@@ -535,7 +535,6 @@ Preserved historical account (unnumbered): Retained earlier attribution, with it
 
 
 - The current lane catalog declares test populations; no invocation or pass is implied. [839]
-
 - The current lane catalog retains host-module and other declared populations; lists select evidence and do not establish execution. [840]
 - Native reapply remains declared in unit-regression; membership is selection only and the list remains canonically ordered. [847]
 - Existing unit-regression lane declares test_task_document_order.py once; membership is selection, not execution. [849]
@@ -543,7 +542,6 @@ Preserved historical account (unnumbered): Retained earlier attribution, with it
 - The current lane catalog declares test populations; no invocation or pass is implied. [858]
 - The current lane catalog retains host-module and other declared populations; lists select evidence and do not establish execution. [859]
 - The seven lane identities remain declared; this is membership, not execution. [863]
-
 - The current lane catalog declares seven lanes and 772 distinct module paths: 637 unit-regression, 3 public-contract, 110 integration and 22 architecture-fitness; provider-conformance, stress-durability and migration are empty. These current registrations establish no invocation or passing result. [864]
 - The current catalog declares 772 distinct modules: 637 unit-regression, 3 public-contract, 110 integration and 22 architecture-fitness; the other three lanes are empty. These declarations establish no invocation or passing result. [867]
 - The current catalog selects `test_landing_workflow_setting.py` and `test_publication_merge_admission.py`, the existing explainer suites, and `test_dashboard_autostart_after_discovery.py`. Membership names the selected population and supplies no invocation or passing result. The after-discovery suite's header describes the amendment from the earlier first-call hook. Its source asserts scheduling after the discovery answer and a no-list first-call fallback through one latch. [868]

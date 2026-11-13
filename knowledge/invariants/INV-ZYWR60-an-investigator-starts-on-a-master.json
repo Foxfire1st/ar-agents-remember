@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The case starts an investigator on a standalone master and proves a leaf selection still refuses."
+  },
+  "applicability": "An Investigator start.",
+  "conditions": [
+    "The selection names no leaf document."
+  ],
+  "exclusions": [
+    "A leaf selection, refused before any document is resolved."
+  ],
+  "id": "INV-ZYWR60",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_role_launch_routes.py::StandaloneMasterSelectionTests::test_an_investigator_resolves_a_standalone_master"
+      ],
+      "path": "261112-RSM-L1-curator-knowledge-handoff.json"
+    },
+    "handoffEntry": "RSM-R01-A4",
+    "leaf": "261112-RSM-L1",
+    "task": "261112-RSM"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "An investigator starts on a master that no sprint commands and never on a leaf.",
+  "status": "proposed",
+  "supersedes": []
+}

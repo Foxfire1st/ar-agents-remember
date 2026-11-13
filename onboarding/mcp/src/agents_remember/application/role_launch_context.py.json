@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "caa8c6e923b4efaeb1c61856c613d10771f7a6c3",
-        "content": "sha256:90e3a72810766cd437a1e7bc9b1ea2453424d104200f67ccd506b9a601dd2fd3",
+        "blob": "0ecf03c089d77b1c2a2ffbbad28a4f481ea9d94f",
+        "content": "sha256:c34329895afbe23e7aac751cb15de83764427ecd6345def0b2a93525405134dd",
         "locator": {
           "kind": "symbol",
           "name": "parentless_selection_violation"
@@ -22,8 +22,62 @@
     },
     {
       "anchor": {
-        "blob": "caa8c6e923b4efaeb1c61856c613d10771f7a6c3",
-        "content": "sha256:a5a369b4f36497af151dfba14dd2bdb80bee688683ab36da6f3d2361ef16dafb",
+        "blob": "0ecf03c089d77b1c2a2ffbbad28a4f481ea9d94f",
+        "content": "sha256:c34329895afbe23e7aac751cb15de83764427ecd6345def0b2a93525405134dd",
+        "locator": {
+          "kind": "symbol",
+          "name": "parentless_selection_violation"
+        }
+      },
+      "id": "RLZ-HY5SQ6",
+      "invariant": "INV-ZYWR60",
+      "origin": {
+        "handoffEntry": "RSM-R01-A4",
+        "leaf": "261112-RSM-L1"
+      },
+      "rationale": "This table is the single authority for which selection each parentless role admits; it admits a master, alone or with its sprint, for the investigator and refuses a leaf before any document is resolved.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "0ecf03c089d77b1c2a2ffbbad28a4f481ea9d94f",
+        "content": "sha256:0bfbc33b0d2652ba40e6f7449099c8b17d168b6b0d9ed1070c4aa06661253cb0",
+        "locator": {
+          "kind": "symbol",
+          "name": "resolve_role_launch_context"
+        }
+      },
+      "id": "RLZ-N1F3G3",
+      "invariant": "INV-HYEKF9",
+      "origin": {
+        "handoffEntry": "RSM-R01-A2",
+        "leaf": "261112-RSM-L1"
+      },
+      "rationale": "The same branch requires the sprint the topology names as the master's parent, and refuses a different one, so a commanded master cannot be bound to another sprint.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "0ecf03c089d77b1c2a2ffbbad28a4f481ea9d94f",
+        "content": "sha256:0bfbc33b0d2652ba40e6f7449099c8b17d168b6b0d9ed1070c4aa06661253cb0",
+        "locator": {
+          "kind": "symbol",
+          "name": "resolve_role_launch_context"
+        }
+      },
+      "id": "RLZ-P8DJMH",
+      "invariant": "INV-97T18K",
+      "origin": {
+        "handoffEntry": "RSM-R01-A1",
+        "leaf": "261112-RSM-L1"
+      },
+      "rationale": "This function reads the selected master's commanding sprint from the task topology; when no sprint commands the master it refuses a supplied sprint, so this branch is where a standalone master's start is admitted.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "0ecf03c089d77b1c2a2ffbbad28a4f481ea9d94f",
+        "content": "sha256:4fd7946ddff242f3daa40e06c7f53e6ba274e3d9a52a920fb562ba332a02cf6b",
         "locator": {
           "end": 110,
           "kind": "line_range",
@@ -36,13 +90,13 @@
         "handoffEntry": "MIK-R98@v1 §7",
         "leaf": "260928-MIK-L98"
       },
-      "rationale": "The entry says the launch resolver admits only the three valid investigator selections; `resolve_role_launch_context` at C calls `parentless_selection_violation` before resolving anything (102-109), and that function refuses a leaf-carrying investigator while requiring at least one of sprint/master (62-74).",
+      "rationale": "Admits no document, a sprint, a master that no sprint commands, or both; a leaf selection is refused.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "caa8c6e923b4efaeb1c61856c613d10771f7a6c3",
-        "content": "sha256:c6c898aebabc94e1cc1919521f4b327bf5b9050807de02c2c1a458cbec63c8aa",
+        "blob": "0ecf03c089d77b1c2a2ffbbad28a4f481ea9d94f",
+        "content": "sha256:294d5f3faf7b742320b11e5c82ae343c6e700b1b5cb025c7911a78b21e1af83b",
         "locator": {
           "kind": "symbol",
           "name": "PARENTLESS_START_SELECTIONS"
@@ -59,7 +113,25 @@
     },
     {
       "anchor": {
-        "blob": "caa8c6e923b4efaeb1c61856c613d10771f7a6c3",
+        "blob": "0ecf03c089d77b1c2a2ffbbad28a4f481ea9d94f",
+        "content": "sha256:294d5f3faf7b742320b11e5c82ae343c6e700b1b5cb025c7911a78b21e1af83b",
+        "locator": {
+          "kind": "symbol",
+          "name": "PARENTLESS_START_SELECTIONS"
+        }
+      },
+      "id": "RLZ-TQZ75H",
+      "invariant": "INV-ZYWR60",
+      "origin": {
+        "handoffEntry": "RSM-R01-A4",
+        "leaf": "261112-RSM-L1"
+      },
+      "rationale": "The investigator row admits a master without a sprint and still forbids a leaf, so this table is where the standalone Investigator scope is declared.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "0ecf03c089d77b1c2a2ffbbad28a4f481ea9d94f",
         "content": "sha256:2fac881f7633ac595c45e44b08bff1612b59def1a86b9ab06430cb092a2b2ca3",
         "locator": {
           "end": 9,
@@ -75,6 +147,24 @@
       },
       "rationale": "The launch context re-exports the canonical role membership definitions from models.role_identity, retaining existing import identity without a duplicate definition.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "0ecf03c089d77b1c2a2ffbbad28a4f481ea9d94f",
+        "content": "sha256:294d5f3faf7b742320b11e5c82ae343c6e700b1b5cb025c7911a78b21e1af83b",
+        "locator": {
+          "kind": "symbol",
+          "name": "PARENTLESS_START_SELECTIONS"
+        }
+      },
+      "id": "RLZ-YQG0EN",
+      "invariant": "INV-97T18K",
+      "origin": {
+        "handoffEntry": "RSM-R01-A1",
+        "leaf": "261112-RSM-L1"
+      },
+      "rationale": "The table declares which selections a parentless start accepts; its sprint entries are optional and its master rows are the shape a standalone master uses.",
+      "role": "unclassified"
     }
   ],
   "references": {
@@ -83,8 +173,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "caa8c6e923b4efaeb1c61856c613d10771f7a6c3",
-            "content": "sha256:f7b28dd7554d05981e89e904bb1db6628663c831c79ffc5af1491a7ee2840c22",
+            "blob": "0ecf03c089d77b1c2a2ffbbad28a4f481ea9d94f",
+            "content": "sha256:56683c1aa5bb913b11fee0df2370cf35ac88b588b92f7f90940331d8060ef349",
             "locator": {
               "kind": "file"
             }
@@ -98,7 +188,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "caa8c6e923b4efaeb1c61856c613d10771f7a6c3",
+            "blob": "0ecf03c089d77b1c2a2ffbbad28a4f481ea9d94f",
             "content": "sha256:93a92158010a3d3456a0d0e2a039ff970cd9500d585c8f66b54bb19ae5036545",
             "locator": {
               "kind": "symbol",
@@ -114,12 +204,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "caa8c6e923b4efaeb1c61856c613d10771f7a6c3",
-            "content": "sha256:b390c458d2a65bbbe11f6e2937f9130a4b30dd35273e6394c991fb98ba7ee31a",
+            "blob": "0ecf03c089d77b1c2a2ffbbad28a4f481ea9d94f",
+            "content": "sha256:56683c1aa5bb913b11fee0df2370cf35ac88b588b92f7f90940331d8060ef349",
             "locator": {
-              "end": 111,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -161,15 +249,14 @@
       ]
     },
     "6": {
-      "note": "The parentless row that admits no document reference for the free agent.",
+      "note": "The parentless row that admits no document reference for the free agent.\n\nAnchor: `PARENTLESS_START_SELECTIONS`",
       "targets": [
         {
           "anchor": {
-            "blob": "caa8c6e923b4efaeb1c61856c613d10771f7a6c3",
-            "content": "sha256:c6c898aebabc94e1cc1919521f4b327bf5b9050807de02c2c1a458cbec63c8aa",
+            "blob": "0ecf03c089d77b1c2a2ffbbad28a4f481ea9d94f",
+            "content": "sha256:56683c1aa5bb913b11fee0df2370cf35ac88b588b92f7f90940331d8060ef349",
             "locator": {
-              "kind": "symbol",
-              "name": "PARENTLESS_START_SELECTIONS"
+              "kind": "file"
             }
           },
           "kind": "code"

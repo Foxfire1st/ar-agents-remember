@@ -8,7 +8,7 @@
   },
   "applicability": "Every Worker, Reviewer or Curator handover the launch constructor compiles for a canonical leaf.",
   "conditions": [
-    "The value names all three seat roles and both other-seat role_message arguments with canonical sprint, master and leaf references.",
+    "The value names all three seat roles and both other-seat role_message arguments with canonical master and leaf references, and the sprint reference when the selection has one.",
     "No sibling agent id is listed, because the occupant can change."
   ],
   "exclusions": [
@@ -28,9 +28,9 @@
     "leaf": "260928-MIK-L99",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "Only a leaf Worker, Reviewer or Curator handover gains leafSeats with all three seat roles and exact sibling role-message arguments containing canonical sprint, master and leaf references without sibling agent IDs.",
+  "statement": "Only a leaf Worker, Reviewer or Curator handover gains leafSeats with all three seat roles and exact sibling role-message arguments containing canonical master and leaf references, and the sprint reference when the selection has one, without sibling agent IDs.",
   "status": "proposed",
   "supersedes": []
 }

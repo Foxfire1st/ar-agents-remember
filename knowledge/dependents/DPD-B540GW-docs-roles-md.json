@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
-    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
-    "role": "worker",
-    "statement": "The page is new in this task; its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate and the page was read whole; 29 rows of the inventory of changes are told here.",
-    "task": "260928-MIK-L97",
+    "codeTree": "8b5044cb35d74cbcfe60b1c71c6b40add295550a",
+    "commit": "bb2d0b3725aa01485e820692b17e130fb65b1669",
+    "role": "curator",
+    "statement": "The roles page states that a master no sprint commands is a master in its own right, names no sprint, and refuses a supplied one; it holds at the candidate.",
+    "task": "261112-RSM-L1",
     "uncommitted": true
   },
   "document": "docs/roles.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/src/agents_remember/models/role_identity.py"
     },
     {
-      "blob": "caa8c6e923b4efaeb1c61856c613d10771f7a6c3",
+      "blob": "0ecf03c089d77b1c2a2ffbbad28a4f481ea9d94f",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/role_launch_context.py"
     },
@@ -56,12 +56,12 @@
       "path": "mcp/src/agents_remember/cli/role_retire.py"
     },
     {
-      "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+      "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
     },
     {
-      "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+      "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
     },
@@ -106,7 +106,7 @@
       "path": "mcp/src/agents_remember/observer/reducer_impl/_attention_native.py"
     },
     {
-      "blob": "de0e221dc51f2f0b067db007cb4c00b17ab3bd39",
+      "blob": "2409436603223ce18654fb5e05f92a29a102b30f",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/architect.md"
     },
@@ -121,12 +121,12 @@
       "path": "skills/l-01-agent-lifecycles/roles/curator.md"
     },
     {
-      "blob": "23bfca4e88babb87f154a00a7d88d117d67c4614",
+      "blob": "a8c098e9bfe5ff05bc1568cabde93d167e9ad35c",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
     },
     {
-      "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+      "blob": "926e006da6810baf314464553204030191db3ad7",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/manager.md"
     },

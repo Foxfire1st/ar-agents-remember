@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The standalone route case publishes and validates coherence and reaches closeout readiness; the fingerprint case keeps every sprint case unchanged."
+  },
+  "applicability": "A task of a master that no sprint commands.",
+  "conditions": [
+    "The master's null sprint gives its projection no authored graph, and the projection is placed as an atomic-sequential master.",
+    "The task is its direct child."
+  ],
+  "exclusions": [
+    "A task of a sprint-commanded master, whose topology carries the sprint and authored graph.",
+    "The closeout door and closeout_queue, which remain unrepaired under M7 and still refuse a sprint-less master."
+  ],
+  "id": "INV-8V44VE",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_standalone_master_route.py; mcp/tests/test_semantic_topology_standalone.py; mcp/tests/test_role_launch_routes.py::StandaloneMasterSelectionTests::test_the_set_selections_admit_a_leaf_of_a_standalone_master; expanded evidence §2.8 (curator_coherence published on the post-repair server, memory_quality_check closeoutReady true, closeout apply + integrate landed 29a8f26 and 28bcec8 on ar/sbx-m7; the closeout door and queue were never called)"
+      ],
+      "path": "261112-RSM-L1-curator-knowledge-handoff.json"
+    },
+    "handoffEntry": "RSM-R01-A8",
+    "leaf": "261112-RSM-L1",
+    "task": "261112-RSM"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "curator_coherence publishes and validates for a task of a master that no sprint commands, and memory_quality_check reaches closeout-ready for it.",
+  "status": "proposed",
+  "supersedes": []
+}

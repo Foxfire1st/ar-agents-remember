@@ -48,7 +48,7 @@ Coherence authority is validated before closeout. Once closeout completed, retai
 - Current coherence binds the exact candidate pair, task document, code and memory trees, semantic intent, attestation and source-candidate set. Missing or stale intent and mismatching dependencies refuse current use and direct republication.
 - Current converted onboarding traces require the applicable source-bound card and governing-route judgments over the same candidate. The former sidecar/governing-route refresh composer is removed; curator preparation must satisfy the surviving converted trace gate rather than treating either surface alone as sufficient.
 - Malformed canonical authority remains subject to exact prepared predecessor identity. Immutable generation collisions and incomplete generations refuse; durable integrity does not substitute for current readiness.
-- Graph-backed consumers use the bound graph-context sprint for their observation rather than mixing its topology with an independently resolved sprint.
+- Graph-backed consumers use the bound graph-context sprint for their observation rather than mixing its topology with an independently resolved sprint. A task of a master that no sprint commands carries a null sprint in its projection, reads no authored graph, and publishes coherence against that master's own documents.
 - External-memory closeout obtains its accepted pair from current coherence and re-proves apply/recovery pair identity against the exact contract, rather than substituting repository identity.
 
 After its identity and evidence checks, the live coherence validator calls the knowledge gate over the observed code and memory candidate trees. A refusal becomes `curator-coherence-knowledge-gate-refused`, with `memory_quality_check` as the next action. Converted memory without a bound gate refuses. The gate passes the parent memory tip to its registered leaf validator. Ordinary legacy-format candidate/official input is independently refused with central conversion guidance by `curator_coherence._require_knowledge_gate`; unreadable Git/object probes remain named gate errors, never inferred unconverted state. Converted candidates keep the exact existing worklist and validator judgment. The removed prepared closeout path is no alternate converted-memory refusal route; ordinary closeout judges and closes the exact converted memory output through its current owners.
@@ -94,11 +94,13 @@ The closeout door first allows the recorded candidate tree itself. For a differe
 
 
 - The closeout validator's gate over the authority's exact candidate. [1]
+- Coherence observes exact candidates, validates current identities and dependencies, and shares per-record measurement projection. [3]
+- Publication derives its input statement from the declared publication members, names caller-supplied delivery identities, and accepts judgments and review assessments inline or from one judgments file whose SHA-256 the publish answer carries. [4]
+
+
 
 - Door source facts use current Git and task authority. [2]
-- Coherence observes exact candidates, validates current identities and dependencies, and shares per-record measurement projection. [3]
 
-- Publication derives its input statement from the declared publication members, names caller-supplied delivery identities, and accepts judgments and review assessments inline or from one judgments file whose SHA-256 the publish answer carries. [4]
 
 - Assessment evidence has a task-root destination and mandatory retained-byte read-back; immutable generation reads verify structured and projected content. [5]
 

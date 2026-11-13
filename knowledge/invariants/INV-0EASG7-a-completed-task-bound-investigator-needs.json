@@ -5,14 +5,14 @@
     ],
     "justification": "The attributed source owners must agree on the same selection, receipt and identity contract; a single location cannot preserve the obligation across its public producer and consumers."
   },
-  "applicability": "A new message turn addressed to a completed task-bound Investigator.",
+  "applicability": "A new message turn addressed to a completed Investigator selected on a sprint or a standalone master.",
   "conditions": [
     "Selection admission precedes native send or closed-session resume.",
     "Running state is persisted under the same selection lock before admission releases."
   ],
   "exclusions": [
     "Steering an already open request and exact-request replay reuse their existing slot.",
-    "Projects messages retain their existing behavior."
+    "Projects messages and a taskless Investigator retain their existing behavior."
   ],
   "id": "INV-0EASG7",
   "origin": {
@@ -26,9 +26,9 @@
     "leaf": "260928-MIK-L98",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "A completed task-bound Investigator needs a free selection slot before a new message turn is delivered or its closed session is resumed; steering an already open request and exact-request replay reuse their slot.",
+  "statement": "A completed document-bound Investigator — one selected on a sprint or on a master that no sprint commands — needs a free selection slot before a new message turn is delivered or its closed session is resumed; steering an already open request and exact-request replay reuse their slot.",
   "status": "proposed",
   "supersedes": []
 }

@@ -278,6 +278,8 @@ None.
 
 - Remaining opt-in memory-cap planning, provider-degradation settings parsing, report retention/redaction and package/source version resolution keep their primitive owners; removed inbox backoff supplies no current scheduler. [14]
 
+
+
 [15] mcp/src/agents_remember/kernel/primitives/paseo_host_contract.py — lines 1-12; mcp/src/agents_remember/kernel/primitives/paseo_node_paths.py — lines 1-71; mcp/src/agents_remember/kernel/primitives/user_settings_location.py — lines 1-46
 
 - Packaged host pins, Linux x86_64 Node selection and the user-settings location supply shared host primitives. [15]

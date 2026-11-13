@@ -10,6 +10,6 @@ Consumer-authored native TaskEntry fixtures forming one sprint → master → le
 
 ## Code Commentary
 
-chatSprint, chatMaster and chatLeaf carry exact references, entry keys and served-shaped parent/children/counts. The binding follows that explicit tree, without an orchestrates/series projection join. The fixture values demonstrate expected consumer shape, not producer execution.
+chatSprint, chatMaster and chatLeaf carry exact references, entry keys and served-shaped parent/children/counts; chatStandaloneMaster and chatStandaloneLeaf add a master outside every sprint and its task, with no sprint parent. The binding follows that explicit tree, without an orchestrates/series projection join. The fixture values demonstrate expected consumer shape, not producer execution.
 
 ## Evidence

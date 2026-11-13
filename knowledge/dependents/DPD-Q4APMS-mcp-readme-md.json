@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "dbdeb04197e5773b81709fd4a31a61049f93384e",
-    "commit": "a7c6d8996797c2378e658ee459f9b95f7c77c0fc",
+    "codeTree": "15eece2f9931c0edd4589e0e544c46db6b6e4317",
+    "commit": "bb2d0b3725aa01485e820692b17e130fb65b1669",
     "role": "curator",
-    "statement": "I confirmed the record's content against the changed mcp/README.md and the code it stands on at the L36 freeze tree in this session; the page carries no version number, its statements were checked, and every link resolves at that tree.",
-    "task": "260928-MIK-L36",
+    "statement": "The package README still describes the two commands and points at the tool reference; the reference now states the standalone-master case and the README claims no sprint requirement.",
+    "task": "261112-RSM-L1",
     "uncommitted": true
   },
   "document": "mcp/README.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "f2ecc90c812371f1e0ea27f3a18dbe6ae5b60535",
+      "blob": "675b2b192c83d602eba7a7ee622f6f33098c26cd",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -56,7 +56,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/explainer_surface.py"
     },
     {
-      "blob": "85eb7672719de2b0547c2462475c52a01da22953",
+      "blob": "bfb7befeabe0c05b8c9529ff26cbcebfc450a591",
       "kind": "file",
       "path": "docs/reference/mcp-tools.md"
     }

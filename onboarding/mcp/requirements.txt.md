@@ -30,6 +30,8 @@ The projection fills index rows and production readers open those files read-onl
 
 
 
+
+
 - Derived-index projection and read-only connections use APSW. [5]
 
 

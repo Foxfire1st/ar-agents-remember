@@ -104,6 +104,9 @@ This packaged copy derives from the canonical roles/manager.md. The Manager reta
 - Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources.
 
 - The Manager assigns a check or investigation that belongs to no leaf to an Investigator on its own sprint and master, never a leaf, and sends the scoped concern as its first role_message to the returned agent identifier. [1]
+- The Manager decides paired closeout and integration within its delegated authority and, for a round beyond the settings limit, requests approval through its reporting route and records the approval. [7]
+
+
 
 - The packaged Manager coordinates one selected master and does not own the portfolio; when another agent starts it, it reports to that agent's role with its task references. [2]
 
@@ -111,7 +114,6 @@ This packaged copy derives from the canonical roles/manager.md. The Manager reta
 
 - The Manager calls role_start once per stage: Worker first at build, Reviewer at the freeze, and Curator when curation begins after code review passes. [4]
 
-- The Manager decides paired closeout and integration within its delegated authority and, for a round beyond the settings limit, requests approval through its reporting route and records the approval. [7]
 
 - The Manager hands over a whole stage with its exactness at agent starts, sync to the master's line, closeout, integration and task completion, and repairs its own mistaken records, wrong agent addresses, misread reports and faulty-input refusals through the same tool. [8]
 

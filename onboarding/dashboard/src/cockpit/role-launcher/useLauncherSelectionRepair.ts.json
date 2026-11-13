@@ -1,13 +1,32 @@
 {
   "path": "dashboard/src/cockpit/role-launcher/useLauncherSelectionRepair.ts",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0a431e2f25b6e46700f6528bffcaa3e76d02b25f",
+        "content": "sha256:759a3d5b5dda521b7fdf90303acd6f860aeed3a9542f067601c18afc3c2d7cc5",
+        "locator": {
+          "kind": "symbol",
+          "name": "repairedSeededSelection"
+        }
+      },
+      "id": "RLZ-MZPAAQ",
+      "invariant": "INV-AJ0X9B",
+      "origin": {
+        "handoffEntry": "RSM-R01-A11",
+        "leaf": "261112-RSM-L1"
+      },
+      "rationale": "Prunes only against the same live catalog, so a seeded standalone master is kept while its document is served.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "repairedSeededSelection is a current owner of the behavior described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "3443840e5d8030c7d294c2aad5c9aa39dbda5e57",
+            "blob": "0a431e2f25b6e46700f6528bffcaa3e76d02b25f",
             "content": "sha256:759a3d5b5dda521b7fdf90303acd6f860aeed3a9542f067601c18afc3c2d7cc5",
             "locator": {
               "end": 92,
@@ -24,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3443840e5d8030c7d294c2aad5c9aa39dbda5e57",
+            "blob": "0a431e2f25b6e46700f6528bffcaa3e76d02b25f",
             "content": "sha256:898999d205bc14c4ce1e481d3018308a822a850c02518047d11daa1b53371c95",
             "locator": {
               "end": 91,
@@ -41,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3443840e5d8030c7d294c2aad5c9aa39dbda5e57",
+            "blob": "0a431e2f25b6e46700f6528bffcaa3e76d02b25f",
             "content": "sha256:cac816d299f657ea1595050f4462717d33cac234ad3cc53b6a7f7ad6129e6f52",
             "locator": {
               "end": 115,
@@ -58,7 +77,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3443840e5d8030c7d294c2aad5c9aa39dbda5e57",
+            "blob": "0a431e2f25b6e46700f6528bffcaa3e76d02b25f",
             "content": "sha256:12212a6a3df2f8339da76c9df0e7f244e409291f59ad6327438be8c508162b09",
             "locator": {
               "end": 114,

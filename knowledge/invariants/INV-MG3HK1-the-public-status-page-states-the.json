@@ -24,9 +24,9 @@
     "leaf": "260928-MIK-L36",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The public Status page states the repository's package version as 3.0.0, and no public page calls this build a release candidate or one that awaits a release.",
+  "statement": "The public Status page states the repository's package version as 3.0.1, and no public page calls this build a release candidate or one that awaits a release.",
   "status": "proposed",
   "supersedes": []
 }

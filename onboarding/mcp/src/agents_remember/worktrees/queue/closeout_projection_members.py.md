@@ -67,7 +67,10 @@ The source file is the direct evidence for this unit; its governing overview rec
 
 - Member construction consumes an exact precomputed topology fingerprint and the typed bound graph context. [2]
 - Candidate-local activation waits are combined with door admission before optional DAG waits. [3]
+
 - Queue adapters delegate v2 projection/fingerprinting and preserve typed domain refusals. [4]
+
+
 - Door intent absence/staleness become explicit member blockers. [5]
 
 ### Cross-Repo References

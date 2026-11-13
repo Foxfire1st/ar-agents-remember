@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The case resolves a commanded master with its sprint and refuses a missing or foreign sprint before a seat is created."
+  },
+  "applicability": "A parentless role start that names a master commanded by a sprint.",
+  "conditions": [
+    "The supplied sprint is the master commanding sprint."
+  ],
+  "exclusions": [
+    "A standalone master, which accepts no sprint."
+  ],
+  "id": "INV-HYEKF9",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_role_launch_routes.py::StandaloneMasterSelectionTests::test_a_commanded_master_still_requires_its_sprint"
+      ],
+      "path": "261112-RSM-L1-curator-knowledge-handoff.json"
+    },
+    "handoffEntry": "RSM-R01-A2",
+    "leaf": "261112-RSM-L1",
+    "task": "261112-RSM"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A master that a sprint commands is started only with that exact sprint named.",
+  "status": "proposed",
+  "supersedes": []
+}

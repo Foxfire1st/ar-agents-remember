@@ -5,7 +5,7 @@
     ],
     "justification": "The attributed source owners must agree on the same selection, receipt and identity contract; a single location cannot preserve the obligation across its public producer and consumers."
   },
-  "applicability": "End-to-end selected sprint/master Investigator execution after completion and UI restoration.",
+  "applicability": "End-to-end selected sprint/master or standalone-master Investigator execution after completion and UI restoration.",
   "conditions": [
     "A completed recipient acquires a slot before a new native turn.",
     "The dashboard preserves its exact UUID through result, recovery and remount."
@@ -25,9 +25,9 @@
     "leaf": "260928-MIK-L98",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Completed task-bound Investigator message turns acquire an available selection slot before delivery or resume, and selected-sprint/master consumers preserve the exact Investigator request ID through Result/report, Retry, Revive and remount.",
+  "statement": "Completed document-bound Investigator message turns, on a sprint or a standalone master, acquire an available selection slot before delivery or resume, and selected-sprint/master consumers preserve the exact Investigator request ID through Result/report, Retry, Revive and remount.",
   "status": "proposed",
   "supersedes": []
 }

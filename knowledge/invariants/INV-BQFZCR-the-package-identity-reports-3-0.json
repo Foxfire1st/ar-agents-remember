@@ -5,7 +5,7 @@
     ],
     "justification": "The same version appears in three carriers: project metadata, the lock entry and the kernel fallback; a mismatch would make a build, a lock and a source checkout report different identities, and the obligation spans those locations."
   },
-  "applicability": "The package identity carriers at this repository's 3.0.0 release.",
+  "applicability": "The package identity carriers at this repository's 3.0.1 release.",
   "conditions": [
     "The project metadata, the package's own lock entry and the source-checkout fallback answer with the same version."
   ],
@@ -24,9 +24,9 @@
     "leaf": "260928-MIK-L36",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The package identity reports 3.0.0 in every place that carries it: the project metadata, the package's own lock entry, and the source-checkout fallback that answers when no installed distribution exists.",
+  "statement": "The package identity reports 3.0.1 in every place that carries it: the project metadata, the package's own lock entry, and the source-checkout fallback that answers when no installed distribution exists.",
   "status": "proposed",
   "supersedes": []
 }

@@ -15,5 +15,4 @@ Keys are paths relative to `skills/l-01-agent-lifecycles` (role files, operation
 ## Evidence
 
 - The single registry maps each lifecycle-skill file to the clauses it must carry. [1]
-
 - The module holds data only: it imports nothing and reads no file. [2]

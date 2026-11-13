@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The case records the standalone master folder as the leaf outer task and the workspace resolves under it."
+  },
+  "applicability": "A leaf role of a master that no sprint commands.",
+  "conditions": [
+    "The master folder is the leaf workspace outer folder."
+  ],
+  "exclusions": [
+    "A master commanded by a sprint, whose folder names the parent."
+  ],
+  "id": "INV-4R4PF0",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_role_launch_routes.py::StandaloneMasterSelectionTests::test_a_standalone_masters_leaf_records_the_master_as_its_outer_task"
+      ],
+      "path": "261112-RSM-L1-curator-knowledge-handoff.json"
+    },
+    "handoffEntry": "RSM-R01-A5",
+    "leaf": "261112-RSM-L1",
+    "task": "261112-RSM"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A leaf of a master that no sprint commands records the master's own folder as its workspace parent.",
+  "status": "proposed",
+  "supersedes": []
+}

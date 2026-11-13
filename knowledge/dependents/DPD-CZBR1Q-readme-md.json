@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "dbdeb04197e5773b81709fd4a31a61049f93384e",
-    "commit": "a7c6d8996797c2378e658ee459f9b95f7c77c0fc",
+    "codeTree": "8b5044cb35d74cbcfe60b1c71c6b40add295550a",
+    "commit": "bb2d0b3725aa01485e820692b17e130fb65b1669",
     "role": "curator",
-    "statement": "I confirmed the record's content against the changed README.md and the code it stands on at the L36 freeze tree in this session; the page's version sentence and every linked file were checked, and every link resolves at that tree.",
-    "task": "260928-MIK-L36",
+    "statement": "The README still describes installation and the package identity; its linked tool-details page now states the standalone rule, and no sentence of the README claims otherwise.",
+    "task": "261112-RSM-L1",
     "uncommitted": true
   },
   "document": "README.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "f2ecc90c812371f1e0ea27f3a18dbe6ae5b60535",
+      "blob": "675b2b192c83d602eba7a7ee622f6f33098c26cd",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -61,7 +61,7 @@
       "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
     },
     {
-      "blob": "026b25cfc0f0c7c01ed4aeebd60f00747b7b7c52",
+      "blob": "102d8ad36390d59fc0e1a5ecfb1cac0467b657b4",
       "kind": "file",
       "path": "docs/tool-details.md"
     },

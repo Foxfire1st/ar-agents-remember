@@ -150,7 +150,9 @@ The review budget is the settings number `orchestration.loops.defaults.maxRounds
 
 - Each leaf has one primary requirement revision; adjacent revisions remain constraints. The Manager inspects the complete changed-file diff and both verdicts, preserves stable requirement/finding IDs and distinguishes implementation, review, curation and publication. [6]
 
-- The Manager may start an Investigator under its own sprint/master for a check belonging to no leaf, sends the scoped concern first to its returned ID, and keeps ordinary requirement interpretation and operational decisions within the intended promise. [7]
+- The Manager may start an Investigator under its own master, naming its sprint when one commands it, for a check belonging to no leaf, sends the scoped concern first to its returned ID, and keeps ordinary requirement interpretation and operational decisions within the intended promise. [7]
+
+
 
 - The Manager records approval for a round beyond the settings limit, sends developer-reserved changes upward, and owns stage boundaries and repair of its own mistaken records or addresses; covered correct writes use the named recovery route. [8]
 

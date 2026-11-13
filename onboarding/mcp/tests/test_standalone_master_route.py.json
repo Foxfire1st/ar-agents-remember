@@ -1,0 +1,73 @@
+{
+  "path": "mcp/tests/test_standalone_master_route.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "86d27cd4466e0a4f52fd90fc8bc9b8d5bf7032f7",
+        "content": "sha256:97d11ddb6136a1ee0e92bb303b9a2c1f84e0c4ac1357ffe7bcf240676e2c13bf",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_quality_readiness_join_reaches_closeout_ready"
+        }
+      },
+      "facet": "The readiness join reaches closeout-ready and current coherence.",
+      "id": "PRF-NBQZKY",
+      "invariant": "INV-8V44VE",
+      "origin": {
+        "handoffEntry": "RSM-R01-A8",
+        "leaf": "261112-RSM-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "1b9a5e6ec9e881ac3ab58dacbcfa2409377cb690",
+        "content": "sha256:59cf9b6a8465552014617eda516fd1b8f56418c6957696253cdeeb880c069a15",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_status_prepare_publish_and_validate_a_standalone_masters_task"
+        }
+      },
+      "facet": "Status, prepare, publish and validate act on a standalone master task and validate current.",
+      "id": "PRF-WAG1KM",
+      "invariant": "INV-8V44VE",
+      "origin": {
+        "handoffEntry": "RSM-R01-A8",
+        "leaf": "261112-RSM-L1"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Status, prepare, publish and validate act on a standalone master's task and validate current.\n\nAnchor: `test_status_prepare_publish_and_validate_a_standalone_masters_task`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86d27cd4466e0a4f52fd90fc8bc9b8d5bf7032f7",
+            "content": "sha256:4feb77faed4945ebcbb7f16cd0ca75da7e6a362513d5d296da5cb656a304f1ca",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The memory-quality readiness join reaches closeout-ready and current coherence for a standalone master's task.\n\nAnchor: `test_the_quality_readiness_join_reaches_closeout_ready`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86d27cd4466e0a4f52fd90fc8bc9b8d5bf7032f7",
+            "content": "sha256:4feb77faed4945ebcbb7f16cd0ca75da7e6a362513d5d296da5cb656a304f1ca",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

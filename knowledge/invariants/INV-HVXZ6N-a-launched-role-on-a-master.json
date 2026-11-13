@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The tool-server case round-trips the sprint-less shape for a manager, worker, reviewer and curator and a master-only investigator, and refuses a sprint-bound role without its sprint."
+  },
+  "applicability": "A launched role whose selection names a master.",
+  "conditions": [
+    "The binding carries the references the selection actually has."
+  ],
+  "exclusions": [
+    "A start that names no document.",
+    "A sprint-bound role such as the orchestrator, whose one shape stays sprint-only."
+  ],
+  "id": "INV-HVXZ6N",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_paseo_agent_tools.py::ToolServerDefinitionTests::test_the_tool_server_reads_the_binding_it_was_started_with_and_reports_it"
+      ],
+      "path": "261112-RSM-L1-curator-knowledge-handoff.json"
+    },
+    "handoffEntry": "RSM-R01-A3",
+    "leaf": "261112-RSM-L1",
+    "task": "261112-RSM"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A launched role on a master that no sprint commands carries a binding without a sprint reference, and the tool server accepts it.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -168,6 +168,24 @@
     {
       "anchor": {
         "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
+        "content": "sha256:0c161eccbe0bd6e26018eb3d037bf32dc5e85f85f1361db82da57796944e207e",
+        "locator": {
+          "kind": "symbol",
+          "name": "_attach_coherence_readiness"
+        }
+      },
+      "id": "RLZ-YJFKH2",
+      "invariant": "INV-8V44VE",
+      "origin": {
+        "handoffEntry": "RSM-R01-A8",
+        "leaf": "261112-RSM-L1"
+      },
+      "rationale": "The readiness join reaches closeoutReady true for such a task.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
         "content": "sha256:6cbf3603f2dbf42832db738f03ef8b11d1f0ae98198b3a761afc4c3c02811ed9",
         "locator": {
           "kind": "symbol",

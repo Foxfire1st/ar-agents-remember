@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f2ecc90c812371f1e0ea27f3a18dbe6ae5b60535",
-        "content": "sha256:bdbeda11d0a593dc6101786ff4e0731e3715622b4bfee63cb83fa5ea981d5fd7",
+        "blob": "675b2b192c83d602eba7a7ee622f6f33098c26cd",
+        "content": "sha256:abebe6fa8e28401a2c1fc045c15849801f75107416a9bb542dd54cb47cb3b6d6",
         "locator": {
           "end": 7,
           "kind": "line_range",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "f2ecc90c812371f1e0ea27f3a18dbe6ae5b60535",
+        "blob": "675b2b192c83d602eba7a7ee622f6f33098c26cd",
         "content": "sha256:80c99862448ab92d6ee65fde88d7667d360c1d35eedfa1e7fe46ebea3024294a",
         "locator": {
           "end": 16,
@@ -291,7 +291,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2ecc90c812371f1e0ea27f3a18dbe6ae5b60535",
+            "blob": "675b2b192c83d602eba7a7ee622f6f33098c26cd",
             "content": "sha256:67390565a8665a2378ea8acf015a4c3ac444ae57f5394d6f15e32a44bf786726",
             "locator": {
               "end": 19,
@@ -304,12 +304,12 @@
       ]
     },
     "18": {
-      "note": "The package data includes `canvas/*.md` and `canvas/*.mjs` beside the generated package-data copy, because `canvas/presenter_inputs.py` resolves the capability text module-relatively in an installed build; the capsule-text test fails on drift between the two copies. [18]",
+      "note": "The package data includes `canvas/*.md` and `canvas/*.mjs` beside the generated package-data copy, because `canvas/presenter_inputs.py` resolves the capability text module-relatively in an installed build; the capsule-text test fails on drift between the two copies.",
       "targets": [
         {
           "anchor": {
-            "blob": "f2ecc90c812371f1e0ea27f3a18dbe6ae5b60535",
-            "content": "sha256:da4b32bb99eeb73505aa82ec468b1ac54456badf36e7c9db9aafc345a0ae3569",
+            "blob": "675b2b192c83d602eba7a7ee622f6f33098c26cd",
+            "content": "sha256:3564c7e0b235172a3931133926a661cdbb9e62a9abfc72ee5adf0460d9560c30",
             "locator": {
               "kind": "file"
             }
@@ -367,7 +367,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2ecc90c812371f1e0ea27f3a18dbe6ae5b60535",
+            "blob": "675b2b192c83d602eba7a7ee622f6f33098c26cd",
             "content": "sha256:e6b563e4acbcd80bd201904b19939ce2f5ff3a1958b8d7af3c1296e2e7249a98",
             "locator": {
               "end": 23,
@@ -379,7 +379,7 @@
         },
         {
           "anchor": {
-            "blob": "f2ecc90c812371f1e0ea27f3a18dbe6ae5b60535",
+            "blob": "675b2b192c83d602eba7a7ee622f6f33098c26cd",
             "content": "sha256:9c5ba653b34073b7260267abaceaece0ed46baa9e23deed1dff116c6916189c2",
             "locator": {
               "end": 30,
@@ -396,7 +396,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2ecc90c812371f1e0ea27f3a18dbe6ae5b60535",
+            "blob": "675b2b192c83d602eba7a7ee622f6f33098c26cd",
             "content": "sha256:896fdd7b511626d78b5cabb93db1be4c16a9e801b46276eef3d039c681d2cdbb",
             "locator": {
               "end": 26,
@@ -431,7 +431,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c63f85e4d9aa4a0076032816190f431cc18b1ffa",
+            "blob": "969f0f5107c14b1509cdd055c0a668d69b70e72b",
             "content": "sha256:6dc0cecbeac8ccc41e1a05a96799d5652d7940b5d02dc7f4ca1f476d278107e1",
             "locator": {
               "end": 43,
@@ -444,7 +444,7 @@
         },
         {
           "anchor": {
-            "blob": "c63f85e4d9aa4a0076032816190f431cc18b1ffa",
+            "blob": "969f0f5107c14b1509cdd055c0a668d69b70e72b",
             "content": "sha256:580b200c0d480ad867ae427f11fe588174b8408f3b0487eb5068933f04f651b0",
             "locator": {
               "end": 111,
@@ -493,15 +493,14 @@
       ]
     },
     "9": {
-      "note": "MCP server payloads report `SERVER_VERSION`, resolved by the kernel helper from installed package metadata with the source-checkout release fallback.",
+      "note": "MCP server payloads report `SERVER_VERSION`, resolved by the kernel helper from installed package metadata with the source-checkout release fallback.\n\nAnchor: `_resolve_server_version`",
       "targets": [
         {
           "anchor": {
-            "blob": "ba8f919dc79e3daf6a51228201842447d6b49654",
-            "content": "sha256:e5d2c589169f0e48d7f5c4c033a2b33255af40069685ea1a124d29996cfec01f",
+            "blob": "f09a93db862fd8a11919d23a28baa1b968ffb5e7",
+            "content": "sha256:bf03c0454865282377d56e126f2382c83864e683cc3f44eae2c8638f35f07cfd",
             "locator": {
-              "kind": "symbol",
-              "name": "_resolve_server_version"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/kernel/primitives/version.py"
           },

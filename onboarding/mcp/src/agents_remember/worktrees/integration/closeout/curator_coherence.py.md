@@ -28,7 +28,9 @@ derive semantic decisions. `current_curator_coherence_predecessor` digests even 
 prepared CAS repair cannot deadlock on a damaged pointer.
 
 Candidate topology observation now supplies the already resolved authored graph to `graph_context`
-and returns the sprint containing that context's sole bound immutable graph. Coherence therefore
+and returns the sprint containing that context's sole bound immutable graph when a sprint commands
+the master; for a task of a standalone master it binds the master's own context and reads no authored
+graph. Coherence therefore
 hashes the same admitted graph generation as queue projection and the closeout door; a second mutable
 resolution cannot be mixed into the frozen task-topology identity.
 
@@ -93,7 +95,11 @@ No configured Domain Documentation source applies.
 - Loading validates the sole manifest, generation bytes, generated projection, and evidence. [2]
 - All admission paths share one currentness validator. [3]
 - Exact current judgments project into separate content and route no-impact sets. [4]
+
 - Candidate task context binds the authored graph once and returns the bound sprint generation. [5]
+- The closeout validator's gate over the exact candidate, refusing with every finding (MIK-R09). [9]
+
+
 - Explicit evidence namespaces prevent implicit-root fallback. [6]
 - R03 currentness re-requires the record's declared dependencies and the attestation's pair/tree binding. [7]
 
@@ -101,7 +107,6 @@ The following declarations carry the changed boundary.
 
 - A named retained generation is read without asserting live readiness. [8]
 
-- The closeout validator's gate over the exact candidate, refusing with every finding (MIK-R09). [9]
 
 
 - The closeout validator refuses until the gate passes and never runs ungated. [10]

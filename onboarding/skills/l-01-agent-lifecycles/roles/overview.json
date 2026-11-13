@@ -26,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "blob": "926e006da6810baf314464553204030191db3ad7",
             "content": "sha256:6184b78a3a6201cc8204d3080d3e169528e06f23a1a6141bb2d6f7297c39928b",
             "locator": {
               "end": 8,
@@ -39,7 +39,7 @@
         },
         {
           "anchor": {
-            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "blob": "926e006da6810baf314464553204030191db3ad7",
             "content": "sha256:bc0b5f4010f802e06bd9a85c9dbeff55242a43d695c604b20c7df4c24e6ee794",
             "locator": {
               "end": 26,
@@ -52,7 +52,7 @@
         },
         {
           "anchor": {
-            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "blob": "926e006da6810baf314464553204030191db3ad7",
             "content": "sha256:d0b821bea307e3d4f014b58185412fad3dc935d0e8d89b85ed9b6b37af4515c1",
             "locator": {
               "end": 52,
@@ -242,7 +242,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "de0e221dc51f2f0b067db007cb4c00b17ab3bd39",
+            "blob": "2409436603223ce18654fb5e05f92a29a102b30f",
             "content": "sha256:abc4c8156c501146eafe38c2a33f08bcb0519935c335c6cb3e306419ff819e63",
             "locator": {
               "end": 8,
@@ -255,7 +255,7 @@
         },
         {
           "anchor": {
-            "blob": "de0e221dc51f2f0b067db007cb4c00b17ab3bd39",
+            "blob": "2409436603223ce18654fb5e05f92a29a102b30f",
             "content": "sha256:12bc87aebfa288099e708f4152b8e5423235a7a8d5a15582b35cbf9d1a385207",
             "locator": {
               "end": 86,
@@ -291,7 +291,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "blob": "926e006da6810baf314464553204030191db3ad7",
             "content": "sha256:6184b78a3a6201cc8204d3080d3e169528e06f23a1a6141bb2d6f7297c39928b",
             "locator": {
               "end": 8,
@@ -304,7 +304,7 @@
         },
         {
           "anchor": {
-            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "blob": "926e006da6810baf314464553204030191db3ad7",
             "content": "sha256:7f37d65dd1afb6a4c72370caccac84e609e51e6a4aafdbc86aaf04ddc0c2ffa4",
             "locator": {
               "end": 20,
@@ -485,38 +485,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "23bfca4e88babb87f154a00a7d88d117d67c4614",
-            "content": "sha256:5c703aac4b6da4b39d78a23ccffd3a61a5b6f4eb28e692d9a8e8cc27d9702dbf",
+            "blob": "a8c098e9bfe5ff05bc1568cabde93d167e9ad35c",
+            "content": "sha256:a9568fd887bbc7b34443e94f060623a43689a42abbde634c18c7157f8cabea9a",
             "locator": {
-              "end": 12,
-              "kind": "line_range",
-              "start": 12
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "23bfca4e88babb87f154a00a7d88d117d67c4614",
-            "content": "sha256:2c45bdb1ead3c0dfe6dcbd9682f6b7430f209d9ee5b1af5c582282570d656cb5",
-            "locator": {
-              "end": 18,
-              "kind": "line_range",
-              "start": 18
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "23bfca4e88babb87f154a00a7d88d117d67c4614",
-            "content": "sha256:0380bdb91140397ebfc4a76c527e4993dfe71ee9dc97c1dd8e5c4352207c74f6",
-            "locator": {
-              "end": 42,
-              "kind": "line_range",
-              "start": 42
+              "kind": "file"
             },
             "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
           },
@@ -560,7 +532,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "23bfca4e88babb87f154a00a7d88d117d67c4614",
+            "blob": "a8c098e9bfe5ff05bc1568cabde93d167e9ad35c",
             "content": "sha256:5fb4ed48b19a4ea3c3875fe7de1be0d91f15639ab46cb27b408cd04ba0922d6f",
             "locator": {
               "end": 22,
@@ -573,7 +545,7 @@
         },
         {
           "anchor": {
-            "blob": "23bfca4e88babb87f154a00a7d88d117d67c4614",
+            "blob": "a8c098e9bfe5ff05bc1568cabde93d167e9ad35c",
             "content": "sha256:4bbd248bb97184ebb98f9c0849c6eea6981a72a9311742e477922727c87f8d90",
             "locator": {
               "end": 84,
@@ -591,7 +563,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "blob": "926e006da6810baf314464553204030191db3ad7",
             "content": "sha256:fe1ea05af79e8abdde43ebda8ee51b97c42bd9b456d3bf03406ead03cb61e378",
             "locator": {
               "end": 136,
@@ -733,7 +705,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "de0e221dc51f2f0b067db007cb4c00b17ab3bd39",
+            "blob": "2409436603223ce18654fb5e05f92a29a102b30f",
             "content": "sha256:ac120bb11619e3b43663010e5b1925471525ce7c6a0bf24038db1fbe0e26fc39",
             "locator": {
               "end": 88,
@@ -1065,15 +1037,14 @@
       ]
     },
     "41": {
-      "note": "Current native Curator launch resolves and validates the canonical sprint/master/leaf chain; the removed generic task-binding module supplies no current taskless Curator admission, and the foundation task the Architect opens is an ordinary leaf on that chain.",
+      "note": "Current native Curator launch resolves and validates the canonical master and leaf, with the sprint when one commands the master; the removed generic task-binding module supplies no current taskless Curator admission, and the foundation task the Architect opens is an ordinary leaf on that chain.\n\nAnchor: `resolve_role_launch_context`",
       "targets": [
         {
           "anchor": {
-            "blob": "caa8c6e923b4efaeb1c61856c613d10771f7a6c3",
-            "content": "sha256:882487e587eee14441347202eb83cf92538943de0b597836077fb57762c095d1",
+            "blob": "0ecf03c089d77b1c2a2ffbbad28a4f481ea9d94f",
+            "content": "sha256:56683c1aa5bb913b11fee0df2370cf35ac88b588b92f7f90940331d8060ef349",
             "locator": {
-              "kind": "symbol",
-              "name": "resolve_role_launch_context"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/role_launch_context.py"
           },
@@ -1102,12 +1073,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+            "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
             "content": "sha256:cdd818424ecfec233254773adfc27895b6a7e7097c0734cc844b2954936a4f5c",
             "locator": {
-              "end": 366,
+              "end": 369,
               "kind": "line_range",
-              "start": 307
+              "start": 310
             },
             "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
           },
@@ -1275,7 +1246,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "blob": "926e006da6810baf314464553204030191db3ad7",
             "content": "sha256:a24f755e11a82ef6d761c57256837868637f7e78a729919a467e01ed265caf03",
             "locator": {
               "end": 58,
@@ -1497,7 +1468,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "blob": "926e006da6810baf314464553204030191db3ad7",
             "content": "sha256:227a32a2b3234b17a9c2f611f070feefb2087834107eda787407c984c748306a",
             "locator": {
               "end": 44,
@@ -1510,7 +1481,7 @@
         },
         {
           "anchor": {
-            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "blob": "926e006da6810baf314464553204030191db3ad7",
             "content": "sha256:72dcb66761bb366695daf82488b144be4911337d394d599a1441e4bf3add3ea9",
             "locator": {
               "end": 72,
@@ -1528,7 +1499,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "de0e221dc51f2f0b067db007cb4c00b17ab3bd39",
+            "blob": "2409436603223ce18654fb5e05f92a29a102b30f",
             "content": "sha256:4645d96250a3ca6931b97ec902012c1b7c19881f126b7a3f1bf3c99e206deabe",
             "locator": {
               "end": 18,

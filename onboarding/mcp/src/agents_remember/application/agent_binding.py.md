@@ -3,6 +3,7 @@
 ## Current operative account — MIK-R112
 
 - The binding validates minted UUIDs and each role class's task references, and emits seven binding variables.
+- A role that names a master accepts two reference shapes: the sprint with that master when a sprint commands it, and the master alone when it stands on its own. An investigator may name none, a sprint, a standalone master, or a sprint and master; a sprint-bound role such as the orchestrator keeps its one shape.
 - This file owns the per-launch host exclusion record and provider-option construction. Claude alone receives the exact `mcp__agents-remember` disallowed-tools rule, merged with existing host deny rules; Codex, Hermes/ACP, Pi and unknown providers receive no verified exclusion. No user or folder configuration is rewritten.
 - Unknown harnesses have no verified exclusion; no user/folder configuration rewrite is authorized.
 
@@ -35,7 +36,12 @@ AgentBinding.environment emits all seven binding variables and clears hosted-sea
 
 - Checks interpreter, -P module invocation, source, selected settings and single canonical server definition. [3]
 - Starts generated stdio server and checks serving build package root and binding from selected source. [4]
+
+- Frozen implementation of read_agent_binding supporting the stated file behavior. [2]
 - Checks emitted binding and explicitly empty absent references and seat identities before round-trip. [5]
+- The current source implements this file’s stated Investigator boundary. [6]
+
+
 
 ## Investigator scope and request identity
 
@@ -43,14 +49,12 @@ The earlier system-specialist spelling is normalized to Investigator on reads wh
 
 
 
-- The current source implements this file’s stated Investigator boundary. [6]
 
 
 
 ## Refreshed current evidence
 
 
-- Frozen implementation of read_agent_binding supporting the stated file behavior. [2]
 
 
 </details>
