@@ -108,7 +108,7 @@
       ]
     },
     "10": {
-      "note": "Re-pointing the retired handoff section link at `curator-handoff-list.md` fails as a missing anchor.",
+      "note": "Re-pointing a relative section link at a missing section fails as a missing anchor.",
       "targets": [
         {
           "anchor": {

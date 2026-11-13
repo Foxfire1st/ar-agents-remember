@@ -29,4 +29,4 @@ Proves that every link, anchor and `skill://` URI in the delivered `l-01-agent-l
 - The acceptance file does not point at its own approval definition. [7]
 - Every fragment link in one skill is checked for its file and section. [8]
 - Every skill's section links resolve in the source and the package. [9]
-- Re-pointing the c-13 or c-14 handoff section link at `curator-handoff-list.md` fails as a missing anchor. [10]
+- Re-pointing a relative section link at a missing section fails as a missing anchor. [10]
