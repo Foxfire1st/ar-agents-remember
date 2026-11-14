@@ -64,5 +64,4 @@ No cross-repository contract is established by this file.
 - Archive fallback requires the active task directory to be absent; an existing empty active directory wins and remains unresolved. [27]
 
 
-
 - The lane row that gives this module its classification and keeps it collectable under a named lane.  Anchor: `test_knowledge_requirement_reference_contract` [26]

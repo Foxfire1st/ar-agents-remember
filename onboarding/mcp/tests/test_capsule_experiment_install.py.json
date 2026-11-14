@@ -169,25 +169,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a963d7f4459c6a28a0200331eed5157ee15d375c",
-            "content": "sha256:47b49a980e21ca82d698c1909f7cac222aa0d7893e037c8a24dc51a4aaaec938",
+            "blob": "b8ba51e395bf787def585acaa1fdebea8559f65d",
+            "content": "sha256:9d6819d96f8bbd938c1f6d81c794761df1c45b8865842ba26231167146fd8742",
             "locator": {
-              "end": 165,
-              "kind": "line_range",
-              "start": 65
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "a963d7f4459c6a28a0200331eed5157ee15d375c",
-            "content": "sha256:6b9c567fdf1e708aa69e315d5077883bf0eee69bf33602d1b95c2ca16a0d25b4",
-            "locator": {
-              "end": 2490,
-              "kind": "line_range",
-              "start": 2390
+              "kind": "file"
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -200,25 +185,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a963d7f4459c6a28a0200331eed5157ee15d375c",
-            "content": "sha256:47b49a980e21ca82d698c1909f7cac222aa0d7893e037c8a24dc51a4aaaec938",
+            "blob": "b8ba51e395bf787def585acaa1fdebea8559f65d",
+            "content": "sha256:9d6819d96f8bbd938c1f6d81c794761df1c45b8865842ba26231167146fd8742",
             "locator": {
-              "end": 165,
-              "kind": "line_range",
-              "start": 65
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "a963d7f4459c6a28a0200331eed5157ee15d375c",
-            "content": "sha256:6b9c567fdf1e708aa69e315d5077883bf0eee69bf33602d1b95c2ca16a0d25b4",
-            "locator": {
-              "end": 2490,
-              "kind": "line_range",
-              "start": 2390
+              "kind": "file"
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

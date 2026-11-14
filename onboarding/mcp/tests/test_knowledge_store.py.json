@@ -202,16 +202,14 @@
       ]
     },
     "19": {
-      "note": "The lane registration that makes the repository's manifest load (this module's row inside the lane, after the `KS-R03` insertions).  Anchor: `test_knowledge_store`",
+      "note": "The lane registration that makes the repository's manifest load (this module's row inside the lane, after the `KS-R03` insertions).  Anchor: `test_knowledge_store`\n\nAnchor: `test_knowledge_store`",
       "targets": [
         {
           "anchor": {
-            "blob": "c5329d6566f5482380dd6d536b28a182142711dc",
-            "content": "sha256:ab4c000ebb434e9339018678bac61a62e5a6bd96d610521ef2e3883e622b137f",
+            "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
+            "content": "sha256:536665e5e5cb55daa96514c12b8fd5198e20554a394b810d3ec7df91043e7ab8",
             "locator": {
-              "end": 269,
-              "kind": "line_range",
-              "start": 269
+              "kind": "file"
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -250,12 +248,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a963d7f4459c6a28a0200331eed5157ee15d375c",
-            "content": "sha256:e431cc066a9871801abbd8c2909f65c8592b2fd601232848a3e257f99b27ddcc",
+            "blob": "b8ba51e395bf787def585acaa1fdebea8559f65d",
+            "content": "sha256:9d6819d96f8bbd938c1f6d81c794761df1c45b8865842ba26231167146fd8742",
             "locator": {
-              "end": 4930,
-              "kind": "line_range",
-              "start": 4926
+              "kind": "file"
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

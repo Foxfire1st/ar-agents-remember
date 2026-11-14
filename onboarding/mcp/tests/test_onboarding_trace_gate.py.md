@@ -152,5 +152,4 @@ No cross-repo boundary is crossed by this file.
 - Current source delta inspected statically: Repair current-row/counting doctrine, moved-marker caption and worklist/blob inputs; keep historical rulings explicitly superseded. [20]
 
 
-
 - The unit-lane registration. Source caption: "mcp/tests/test_onboarding_trace_gate.py" [18]

@@ -646,7 +646,6 @@ Custody: the preceding sentence is detached from live reference 103; its origina
 - The current umbrella parser registers converted knowledge authoring and the read-only handoff-check command, and it registers no review-record-comparison command. Anchor: build_parser and _register_knowledge_commands.
 
 
-- The current umbrella parser registers converted knowledge authoring and the read-only handoff-check command, and it registers no review-record-comparison command. Anchor: build_parser and _register_knowledge_commands. [103]
 - **Retained historical source account — superseded by the current route account:** Baseline adoption commits memory content and returns a cache observation. Source caption: `adopt_initial_baseline` `memory_content_commit` [158]
 - The current task registration surface mounts task_reopen through _register_task_reopen_tools and delegates the call to its payload owner. [285]
 
@@ -719,7 +718,6 @@ Custody: the preceding sentence is detached from live reference 103; its origina
 
 - **Retained historical source account — superseded by the current route account:** The package template copy's proof guidance. [68]
 
-- **Retained historical source account — superseded by the current route account:** The umbrella registers the conversion command. [69]
 - **Retained historical source account — superseded by the current route account:** The command converts, validates before writing, and commits nothing. [70]
 - **Retained historical source account — superseded by the current route account:** The pinned conversion-format version. [71]
 - **Retained historical source account — superseded by the current route account:** A raw three-way line merge that writes nothing. [72]
@@ -943,7 +941,6 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:1
 
 - The packaged Worker role text delegates candidate setup to repository tool notes and records the interpreter each run used. [286]
 
-- The previously named comparison-record CLI producer is retired; the current umbrella parser registers converted file authoring and no review-record-comparison command. [379]
 - Knowledge ingest is the contract-scoped converted file writer; unconverted memory is refused with conversion guidance, not a callable prior-task database publication route. [380]
 
 - `PUBLIC_TOOLS` is one literal tuple of 44 public names, including the native role, retirement and knowledge operations and excluding `dispatch_agent`. The landing-answer helper keeps cut and added counts and bounds inline rows; the Curator's curation operation requires an independent statement-by-statement fact-check before closeout. [288]
@@ -1031,14 +1028,18 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/paseo_launch.p
 - Each running server registers a live-process record that installation and status read back. [400]
 
 - **Retained historical source account — superseded by the current route account:** The lock every memory route asks. [225]
-- **Retained historical source account — superseded by the current route account:** The subcommand registration. [80]
-- **Retained historical source account — superseded by the current route account:** The subcommand registration. [83]
-- **Retained historical source account — superseded by the current route account:** The subcommand registration. [86]
-- **Retained historical source account — superseded by the current route account:** The subcommand registration. [90]
-- **Retained historical source account — superseded by the current route account:** The subcommand registration. [95]
 - **Retained historical source account — superseded by the current route account:** Development commands, budgets, diagnostic metrics and isolation. [150]
 - **Retained historical source account — superseded by the current route account:** Certifying publication and accepting consumers. [151]
 - The runtime synchronizer declares three targets (benchmarks, providers, system) without docs; retained packaged tool details do not add a fourth generator target. Target: scripts/sync-runtime.py. [401]
 - The runtime synchronizer declares three targets (benchmarks, providers, system) without docs; retained packaged tool details do not add a fourth generator target. Target: mcp/src/agents_remember/package_data/runtime/docs/tool-details.md. [402]
 
+
+- The current umbrella parser registers converted knowledge authoring and the read-only handoff-check command, and it registers no review-record-comparison command. Anchor: build_parser and _register_knowledge_commands. [103]
+- The previously named comparison-record CLI producer is retired; the current umbrella parser registers converted file authoring and no review-record-comparison command. [379]
+- **Retained historical source account — superseded by the current route account:** The umbrella registers the conversion command. [69]
+- **Retained historical source account — superseded by the current route account:** The subcommand registration. [80]
+- **Retained historical source account — superseded by the current route account:** The subcommand registration. [83]
+- **Retained historical source account — superseded by the current route account:** The subcommand registration. [86]
+- **Retained historical source account — superseded by the current route account:** The subcommand registration. [90]
+- **Retained historical source account — superseded by the current route account:** The subcommand registration. [95]
 - Settings-selected launch requests same-build bound task server, preapproved surface and capsule system prompt without initial prompt; this is source wiring, not fresh native suppression acceptance. [383]

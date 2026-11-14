@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
-    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
-    "role": "worker",
-    "statement": "This task brought the page in line with the product: its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate, the false ones were corrected, and the page was read whole; 1 rows of the inventory of changes are told here.",
-    "task": "260928-MIK-L97",
+    "codeTree": "c82e91894677bcfd06042e23a6016cf1f5317c11",
+    "commit": "ed91a4c8436a72d1fe895f0ee464340889e6aff3",
+    "role": "curator",
+    "statement": "The design page now says the product owns the module and its Chromium, that the load fetches both at the first explanation into the product's folder, and that a user's AR_PLAYWRIGHT or an instrumented load is left alone; its other statements about the host, the load and the panel stand.",
+    "task": "261112-BUG-L1",
     "uncommitted": true
   },
   "document": "docs/design/canvas-host.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -61,7 +61,7 @@
       "path": "mcp/src/agents_remember/canvas/presenter_host.py"
     },
     {
-      "blob": "b4dd69ffa2141b0e24ed49d9d835e75c341c5b8d",
+      "blob": "988e305d334ffbe7e14443a3a37847fb0e3e6cb9",
       "kind": "file",
       "path": "mcp/src/agents_remember/canvas/presenter_tools.py"
     },
@@ -91,12 +91,12 @@
       "path": "mcp/src/agents_remember/cli/role_instructions.py"
     },
     {
-      "blob": "53ffe2a0331299a366356ca0b1b3e0dc6317c750",
+      "blob": "d6e90d156860c962fff038b03cb9b5271791b2a3",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_explainer_host.py"
     },
     {
-      "blob": "31e67c873dfef47cf8000cdc33df3d9f2474ee07",
+      "blob": "7807e8add8a202e433046e4195e5431ac17a9d3f",
       "kind": "file",
       "path": "dashboard/src/panels/review/explainer/ExplanationView.tsx"
     },
@@ -121,7 +121,7 @@
       "path": "mcp/src/agents_remember/serving/explainer_routes.py"
     },
     {
-      "blob": "806ea7cf701ae370faec61958c6bf638b1b6f096",
+      "blob": "d5aadeff6355ae9126e8ff2286938c9a03ebe6d8",
       "kind": "file",
       "path": "mcp/src/agents_remember/canvas/review-presenter.md"
     },

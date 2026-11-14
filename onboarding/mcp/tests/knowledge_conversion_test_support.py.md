@@ -89,7 +89,4 @@ No meaningful cross-repo references found: the fixtures are `tmp_path` Git repos
 No cross-repo boundary is crossed by this file.
 
 
-
-
-
 - Its catalog row. [6]

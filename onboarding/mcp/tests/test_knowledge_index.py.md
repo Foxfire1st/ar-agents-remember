@@ -69,5 +69,4 @@ No meaningful cross-repo references found: every case builds its own repository 
 No cross-repo boundary is crossed by this file.
 
 
-
 - The lane row.  Anchor: "mcp/tests/test_knowledge_index.py" [8]

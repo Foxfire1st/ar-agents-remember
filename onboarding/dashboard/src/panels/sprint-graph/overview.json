@@ -56,52 +56,55 @@
       ]
     },
     "2": {
-      "note": "Responsive grid and ellipsis declarations are unchanged contracts; the dependency recipe is ready/waiting/cycle only and the proposed graph dependency remains undeclared.\n\nAnchor: package declarations",
+      "note": "The wave grid declares three columns and a single column at widths of 720px or less. Box titles and leaf lines use ellipsis. The dependency style recipe declares ready, waiting and cycle states. The dashboard manifest declares no @xyflow/react dependency.",
       "targets": [
         {
           "anchor": {
             "blob": "4e9801e315eb3e0cb3f9d8873ee957b31c30c2b6",
-            "content": "sha256:a7c143c5403c829dcbcea7c2d72dba4c457a7fbb592b560a6fb03c100d53f3ca",
+            "content": "sha256:93eae204ce5db4e5154a7b94dc696b2d4c30e6bd9f4e40c7afe63400ee2d16eb",
             "locator": {
-              "kind": "symbol",
-              "name": "waveGridStyles"
-            },
-            "path": "dashboard/src/panels/sprint-graph/styles.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4e9801e315eb3e0cb3f9d8873ee957b31c30c2b6",
-            "content": "sha256:55c93ed4200aed2449d4a61f4b2c6f28e845d0ccc3777d59cc903b605562ac92",
-            "locator": {
-              "kind": "symbol",
-              "name": "leafLineStyles"
-            },
-            "path": "dashboard/src/panels/sprint-graph/styles.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4e9801e315eb3e0cb3f9d8873ee957b31c30c2b6",
-            "content": "sha256:51f65c4b0a97ea2d4cdc1af1c8af6c491c8d5c322c06db636f7c2c5879452c1e",
-            "locator": {
-              "kind": "symbol",
-              "name": "dependency"
-            },
-            "path": "dashboard/src/panels/sprint-graph/styles.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e640511ffad3eb7e67c1de5b38581748a9214a53",
-            "content": "sha256:0054a47c92eb82771bb1e8ca0caaadd827b44eba6605b22e112f44eb4accb61a",
-            "locator": {
-              "end": 82,
+              "end": 12,
               "kind": "line_range",
-              "start": 1
+              "start": 3
+            },
+            "path": "dashboard/src/panels/sprint-graph/styles.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4e9801e315eb3e0cb3f9d8873ee957b31c30c2b6",
+            "content": "sha256:139f88066ebe875deefb420342041c05328f43e4c0b6474461369b430c48379f",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 35
+            },
+            "path": "dashboard/src/panels/sprint-graph/styles.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4e9801e315eb3e0cb3f9d8873ee957b31c30c2b6",
+            "content": "sha256:10dc453efabeb528f4a8d9925479396a059fdcd48d2f5da1cb632b0b88bb01c7",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 72
+            },
+            "path": "dashboard/src/panels/sprint-graph/styles.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "97c7a860a50e63671a27f4429a701be2ce4a0f79",
+            "content": "sha256:53018252c8ad7760ccf5362dc328c055a965c1aa5130d990b86e57464bb2f5ef",
+            "locator": {
+              "end": 78,
+              "kind": "line_range",
+              "start": 23
             },
             "path": "dashboard/package.json"
           },

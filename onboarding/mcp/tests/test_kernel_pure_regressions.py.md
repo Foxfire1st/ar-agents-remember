@@ -44,5 +44,4 @@ The Candidate A retirement and replacement measurement are described in
 No cross-repository boundary applies.
 
 
-
 - The explicit unit lane owns the module.  Anchor: "mcp/tests/test_kernel_pure_regressions.py" [2]

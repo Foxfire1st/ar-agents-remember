@@ -146,7 +146,4 @@ No cross-repository behavior is implemented in this file.
 No meaningful cross-repo references found.
 
 
-
-
-
 - The read boundary module occupies the integration lane row; registration is not execution evidence. [10]

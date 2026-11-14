@@ -1,5 +1,58 @@
 {
   "path": "mcp/tests/test_explainer_server.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "e585a2670330f742a7b93e821f3ac5a3e66de363",
+        "content": "sha256:54fa7668cfa8a348d68c47fef1d5db04aa48a4eb647f7cd6605474d6fd02e487",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_page_carries_the_sentence_before_the_first_fetch"
+        }
+      },
+      "facet": "The state payload carries the sentence before the first fetch.",
+      "id": "PRF-ERW615",
+      "invariant": "INV-YMJFC9",
+      "origin": {
+        "handoffEntry": "L1-B03",
+        "leaf": "261112-BUG-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e585a2670330f742a7b93e821f3ac5a3e66de363",
+        "content": "sha256:c0c258f7000b42019992cd156b064e6cceca04aa1782762c863228f0c57ddb44",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_page_reads_the_last_render_that_ended_for_a_missing_browser"
+        }
+      },
+      "facet": "The state payload carries the last render's failure for a missing browser.",
+      "id": "PRF-GDCVQM",
+      "invariant": "INV-YMJFC9",
+      "origin": {
+        "handoffEntry": "L1-B03",
+        "leaf": "261112-BUG-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e585a2670330f742a7b93e821f3ac5a3e66de363",
+        "content": "sha256:54a16201963d0da6991b4cd6471c6ac47f80c1cb69b9fb751b6836387dcbaf0b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_serving_path_answers_announce_on_a_browserless_installation"
+        }
+      },
+      "facet": "The wired serving path answers the announce state instead of raising.",
+      "id": "PRF-KD4TVM",
+      "invariant": "INV-PDRZGD",
+      "origin": {
+        "handoffEntry": "L1-B02",
+        "leaf": "261112-BUG-L1"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "4": {
@@ -7,11 +60,90 @@
       "targets": [
         {
           "anchor": {
-            "blob": "435ac68921584d71beb1c59ff10aa674aa688740",
-            "content": "sha256:fb588219ff038d78a7d500cedd5c680b8b19c9b756fa13f6d78a263e98054369",
+            "blob": "e585a2670330f742a7b93e821f3ac5a3e66de363",
+            "content": "sha256:2171bac24699f46c4fad3659364b2b3833a01c8b77d90bad0cebc5226bbb3e41",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The render tool description asks the seat to say the announcement before fetching and names no shell command.\n\nAnchor: `test_the_render_tool_tells_the_explainer_to_say_the_fetch_is_coming`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e585a2670330f742a7b93e821f3ac5a3e66de363",
+            "content": "sha256:2171bac24699f46c4fad3659364b2b3833a01c8b77d90bad0cebc5226bbb3e41",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The serving path answers announce on a browserless installation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e585a2670330f742a7b93e821f3ac5a3e66de363",
+            "content": "sha256:54a16201963d0da6991b4cd6471c6ac47f80c1cb69b9fb751b6836387dcbaf0b",
             "locator": {
               "kind": "symbol",
-              "name": "test_a_grade_at_a_binding_the_environment_left_is_refused"
+              "name": "test_the_serving_path_answers_announce_on_a_browserless_installation"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The page reads the last render that ended for a missing browser.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e585a2670330f742a7b93e821f3ac5a3e66de363",
+            "content": "sha256:c0c258f7000b42019992cd156b064e6cceca04aa1782762c863228f0c57ddb44",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_page_reads_the_last_render_that_ended_for_a_missing_browser"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The page carries the sentence before the first fetch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e585a2670330f742a7b93e821f3ac5a3e66de363",
+            "content": "sha256:54fa7668cfa8a348d68c47fef1d5db04aa48a4eb647f7cd6605474d6fd02e487",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_page_carries_the_sentence_before_the_first_fetch"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The render case checks report and picture paths, full on-disk errors and a bounded reply, publication part map and coverage, revision copies, resumed successor publication and moved-binding refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e585a2670330f742a7b93e821f3ac5a3e66de363",
+            "content": "sha256:bee639988696071e84fb477e861599eac5c7119bef55aa1ea59e99397cbb8b18",
+            "locator": {
+              "end": 886,
+              "kind": "line_range",
+              "start": 723
             }
           },
           "kind": "test"

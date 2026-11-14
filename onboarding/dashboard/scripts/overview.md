@@ -51,4 +51,6 @@ The memory layer's `system/sources.md` has no configured Domain Documentation en
 - The changed-line scorer is importable for diagnostic callers. It counts changed lines within recorded statement ranges, excludes the specified test/dev/types paths, normalizes dashboard keys, and ignores files without coverage entries. Its direct CLI guards admission first, resolves the base in the Python environment-candidate order, uses a 256 MiB Git buffer, reads coverage, and reports uncovered lines without a percentage floor. [3]
 - The executable-statement contract suite proves both CLI refusal and pure accounting, including multi-line statement ranges, absent coverage entries, exclusions, and dashboard key normalization. [4]
 
-- Vitest collects the route's script tests. The build chain runs the bundle checker, which fails above the default 32 MB raw-byte budget (or `AR_DASHBOARD_BUNDLE_BUDGET_BYTES`), and a successful coverage run writes `dashboard-suite-result.json` with the pass fact, the coverage path and rounded coverage totals. [5]
+- Vitest collects `scripts/**/*.test.mjs` alongside source unit tests; the Playwright e2e specs are outside this collection. [5]
+
+- The build command runs the emitted-byte budget checker after compilation. A successful coverage command runs the result writer, which records passed:true, a coverage path and optional rounded totals. [6]

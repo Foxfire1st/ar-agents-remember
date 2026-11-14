@@ -98,5 +98,4 @@ No cross-repo boundary is crossed by this file.
 - Equal-blob definition and changed-blob proof observations retain filename eligibility in either priming order. [9]
 
 
-
 - Its lane row.  Anchor: "mcp/tests/test_knowledge_conversion.py" [7]

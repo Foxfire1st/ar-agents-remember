@@ -7,10 +7,10 @@
 ## Purpose
 
 `cli/__main__.py` is the umbrella `agents-remember` console entrypoint: a single front door
-that dispatches subcommands. It registers **nineteen** of them — `dashboard`, `memory-citations`,
+that dispatches subcommands. It registers **twenty** of them — `dashboard`, `memory-citations`,
 `memory-backfill`, `handoff-check`, `knowledge-ingest`, `knowledge-bootstrap`, `knowledge-format`,
 `knowledge-convert`, `knowledge-validate`, `knowledge-index`, `knowledge-worklist`, `knowledge-routes`,
-`knowledge-census`, `knowledge-copies`, `tool-log-stats` (MIK-R108 rule 8), `paseo`, `upgrade-user-settings`, `providers-remove` and `removed-stores` — and
+`knowledge-census`, `knowledge-copies`, `explainer-browser`, `tool-log-stats` (MIK-R108 rule 8), `paseo`, `upgrade-user-settings`, `providers-remove` and `removed-stores` — and
 further CLI adapters slot in as subparsers. Backed by the
 `agents-remember = agents_remember.cli.__main__:main` console script.
 
@@ -32,6 +32,7 @@ each subparser through its adapter's own `add_arguments`, setting `func=<adapter
 `knowledge_routes.add_arguments`/`knowledge_routes.run`,
 `knowledge_census.add_arguments`/`knowledge_census.run`,
 `knowledge_copies.add_arguments`/`knowledge_copies.run`,
+`explainer_browser.add_arguments`/`explainer_browser.run`,
 `paseo_runtime.add_arguments`/`paseo_runtime.run` and
 `tool_log_stats.add_arguments`/`tool_log_stats.run`. For public commands, `main(argv=None)`
 parses and dispatches to `args.func(args)`, returning its int exit code. Before that public parser,
@@ -84,6 +85,11 @@ and 2 when none applies (both memory sides unconverted, which is every productio
 The memory-maintenance and migration adapters are reached only from here, so the umbrella is
 the one place a new CLI surface becomes reachable. Their flags, exit statuses and refusals
 belong to the adapters; this module contributes only the subparser registration.
+
+`explainer-browser` is registered in the knowledge-command section although it is a runtime
+surface: it reports, or fetches, the Playwright module and Chromium the explainer publishes with
+(`cli.explainer_browser`). It starts no product process of its own and changes no installation state
+beyond that product-owned browser folder.
 
 The MCP server keeps its own separate `agents-remember-mcp` console script — harness MCP
 configs launch the server by that exact name, so it is never folded into this umbrella.
@@ -167,6 +173,11 @@ Source: mcp/src/agents_remember/cli/__main__.py
 - The current umbrella additionally registers providers-remove as an explicit operator command; it does not restore any provider setup or MCP provider tool. [19]
 
 
-- Frozen implementation of build_parser supporting the stated file behavior. [16]
 
+
+
+- The umbrella registers the explainer's browser command beside the knowledge commands. [21]
+
+
+- Frozen implementation of build_parser supporting the stated file behavior. [16]
 - The current runtime-command registry still registers upgrade-user-settings with its existing adapter; this leaf adds handoff-check separately in the knowledge-command registry. [18]

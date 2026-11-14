@@ -1,0 +1,1306 @@
+{
+  "closed": true,
+  "leaf": "261112-BUG-L1",
+  "rows": [
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0P0EFD",
+      "items": [
+        "sha256:1162ac30912d2fbf88706b8cf13fe9bbee5d1c4777403dbafa9c1cc914fac527"
+      ],
+      "reason": "This view hunk draws the last render's own words in the empty block: the failure, the missing part and the command. That obligation is authored as the kept-failure rule (INV-YMJFC9); the block's markup adds no independent rule.",
+      "subject": "hunk:sha256:1162ac30912d2fbf88706b8cf13fe9bbee5d1c4777403dbafa9c1cc914fac527"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-1FMN53",
+      "items": [],
+      "reason": "The role-table insertion was withdrawn before W4. The lifecycle overview and command-table source remain unchanged from the assigned base; this row records withdrawal of that attempt, not a delivered role-table addition.",
+      "sources": [
+        {
+          "blob": "e785b2097ef29c0a26417b23bca9afac2ad2627e",
+          "path": "skills/l-01-agent-lifecycles/reference/knowledge/commands.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/overview"
+    },
+    {
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-29N4GC",
+      "items": [
+        "sha256:2b22489d6b84d119b2643453dbabb0fa89b7e65c103c4a6e02fa9d6ea6e4d0d1"
+      ],
+      "reason": "The weakness is closed: the product now fetches Playwright and its Chromium at the first explanation and the Explanation tab says the sentence and any failure, so an installation from the wheel no longer renders unavailable with no word on the page.",
+      "revision": 2,
+      "subject": "WKN-04HWB8"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-2KZ8EK",
+      "items": [
+        "sha256:14334be514cdd29feeb34fbc541a7e78bd08a6d7c8ff0daca27f9446ee4a1491"
+      ],
+      "reason": "The card names the exact lockfile equality test and separates its pin-drift proof from the retained Ubuntu platform measurement.",
+      "sources": [
+        {
+          "blob": "cb566d4b24cc125bc9c119e22e2805d0c081d6f0",
+          "path": "mcp/tests/test_explainer_browser.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_explainer_browser.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-3YW25W",
+      "items": [
+        "sha256:4bf75981309c53582b07db7ef93adc14555916780fdb501849dc091b3898255a",
+        "sha256:6694d0f8c2e9f20d89c3f6f0b6dc917f58d7bd75157ba0bd923f8f3388baf264",
+        "sha256:81cea01f22d0399cb99c856928544da5355840f9583ebac4f0ea0eb9a94aa31f",
+        "sha256:a79e91cc6802878926072f68ab8e4eecfe7dcbead673856ce46ea99d852e198b",
+        "sha256:d672a353438946343f29935665b7e495c0ec9be0f38d659dfbefe3942e8607ae",
+        "sha256:e3c7d8dae43a01d518fa8eebfad103a67451f513cfe903e2be97f684fa3a5313"
+      ],
+      "reason": "The card describes current mounted render/grade and browser cases; removed snapshot/Git/report-delivery tests and their old anchor stories are withdrawn, with current render-publication evidence retained.",
+      "sources": [
+        {
+          "blob": "e585a2670330f742a7b93e821f3ac5a3e66de363",
+          "path": "mcp/tests/test_explainer_server.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_explainer_server.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-3YWWVT",
+      "items": [],
+      "reason": "README and its L6-owned dependent are unchanged from the assigned base. The earlier README browser-fetch edit was withdrawn; this row credits no README or dependent change to L1.",
+      "revision": 4,
+      "subject": "DPD-CZBR1Q"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4M9655",
+      "items": [
+        "sha256:3e4ab46637e4bc1b2e9224d9c78d46941e64648715aa90821b5088c0a95761dd"
+      ],
+      "reason": "This comment states why the env name has one spelling. The obligation is INV-J3FBTV; the comment adds no rule.",
+      "subject": "hunk:sha256:3e4ab46637e4bc1b2e9224d9c78d46941e64648715aa90821b5088c0a95761dd"
+    },
+    {
+      "considered": [],
+      "disposition": "no_family",
+      "id": "ROW-4R00MD",
+      "items": [
+        "sha256:79596d77bd1dba198b167c131107c119ee81faf805d839af6959eef629ebfe44"
+      ],
+      "reason": "This clause entered as its own invariant: its guarantee stands alone (the fetch, the announcement, the failure's words, the child process, the pin, a user's module), so it joins no family in this leaf.",
+      "revision": 1,
+      "subject": "membership:INV-RWH9W9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4V8MTY",
+      "items": [
+        "sha256:c096ad3adaadd5eab639306123502218e3863078b449a16ff734aaaf4dc911c4"
+      ],
+      "reason": "These three lines add explainer-browser to the exempt set and say where it is told; the obligation itself is authored as INV-SJ6T7P, so the lines add no independent rule.",
+      "subject": "hunk:sha256:c096ad3adaadd5eab639306123502218e3863078b449a16ff734aaaf4dc911c4"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5SJT9Y",
+      "items": [
+        "sha256:6605fd2bbeb082282a960aa56fda0d0c2fad5be9e8d2a7d37a0c6eda99055f56",
+        "sha256:7f6e0f952c97062b31a864f8c3a0e49080960d9ac6fdefc1dbd4c3cf06caa3b4",
+        "sha256:b9b8768cbef43ba2e167bcdbc5d925054e0690bced26e97809f8075edc1582f1",
+        "sha256:bf0a1d90cf622895330e3811b8f04b406e8a02e724e236b4207940a613a746ae",
+        "sha256:d6cfb018105d1f7b58f504fa3861c5e82e313b84d394efe4273fd8556d601e85"
+      ],
+      "reason": "The card states the lenient reading of lastRender and browserNotice and the default command.",
+      "sources": [
+        {
+          "blob": "6999197d9e93d7080861dcf228988a9100c46e50",
+          "path": "dashboard/src/panels/review/explainer/explainerApi.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/review/explainer/explainerApi.ts"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6XR1FQ",
+      "items": [
+        "sha256:3998cad8433d48505762bdcefac4f3b24023c09d4ac5c683a936e7a3558a2300"
+      ],
+      "reason": "This import brings the announcement sentence and the missing-part probe. The obligations are INV-PDRZGD (announce before fetch) and INV-YMJFC9; the import adds no rule of its own.",
+      "subject": "hunk:sha256:3998cad8433d48505762bdcefac4f3b24023c09d4ac5c683a936e7a3558a2300"
+    },
+    {
+      "considered": [],
+      "disposition": "no_family",
+      "id": "ROW-7500VD",
+      "items": [
+        "sha256:4bcb3f984278d2fd9a649e079b6dca5fe8850fd18241bacb9d642b3d8cb61bf7"
+      ],
+      "reason": "This clause entered as its own invariant: its guarantee stands alone (the fetch, the announcement, the failure's words, the child process, the pin, a user's module), so it joins no family in this leaf.",
+      "revision": 1,
+      "subject": "membership:INV-T0Y3RS"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "4a52f1812409904220d810a98e25e5c99c820300",
+            "content": "sha256:919fdb2735b6c12ad78f562b593ad583b9382dead04232c0d07d93ac37b43717",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_knowledge_commands"
+            },
+            "path": "mcp/src/agents_remember/cli/__main__.py"
+          },
+          "before": {
+            "blob": "6f3a69cae0b8febac949097f08a925389a945baa",
+            "content": "sha256:f1362cc62d54a66211c8d86725e090bf05e1e435104b586d9a6b0b1132120c8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_knowledge_commands"
+            },
+            "path": "mcp/src/agents_remember/cli/__main__.py"
+          },
+          "id": "RLZ-S262PC"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-7CQNPF",
+      "items": [
+        "sha256:d8d63109396f544c589c9963a266c3b28a6301171b93f34f64dc879172fa414b"
+      ],
+      "reason": "The knowledge-command registrar gained the explainer-browser subparser, so its realization is re-anchored; the registration obligation is unchanged.",
+      "revision": 1,
+      "subject": "INV-KZ2JWB"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-81XHCT",
+      "items": [],
+      "reason": "This row names a withdrawn interim hunk, absent from final W4. Neither role-table copy changes in W4; it records no delivered table-row addition and satisfies no current item.",
+      "subject": "hunk:sha256:038f4da7423f9a124c457c71742409c35cc6e9e01a66626b68c59d4292294f89"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "988e305d334ffbe7e14443a3a37847fb0e3e6cb9",
+            "content": "sha256:22161ee0c2165865b934959d9098763aa9708590e98910cb0b1b0d40ebb12037",
+            "locator": {
+              "kind": "symbol",
+              "name": "AuthoringTools"
+            },
+            "path": "mcp/src/agents_remember/canvas/presenter_tools.py"
+          },
+          "before": {
+            "blob": "b4dd69ffa2141b0e24ed49d9d835e75c341c5b8d",
+            "content": "sha256:8548552e374058641d1e8f4b3cb00ef8d2f4eb50ab1cf15e29f61bf0f195e4d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "AuthoringTools"
+            },
+            "path": "mcp/src/agents_remember/canvas/presenter_tools.py"
+          },
+          "id": "RLZ-NRXTRA"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-8GPR4R",
+      "items": [
+        "sha256:5e4e531c714edc9542c72d9e35775b07e9ead987002d404ccbf9236886e50a31"
+      ],
+      "reason": "The authoring implementation's anchor moved with the announce gate and the state folder added to the render path; the invariant's own obligation is unchanged, so only the realization is re-anchored.",
+      "revision": 2,
+      "subject": "INV-GWMA1V"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-8JFERJ",
+      "items": [
+        "sha256:5f35cee6e262dcccc571319e26b31fa0fa2e0c8aa87026786c18f59999da11a6"
+      ],
+      "reason": "The load's own timeout is unchanged and its interaction passes still take about the same share of it; the anchor still stands where it stood.",
+      "revision": 2,
+      "subject": "WKN-0FX9KZ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9ACX6Q",
+      "items": [
+        "sha256:53ca8d673ca983baeabbe6c5bc294b5d8650d50d45418f5e1774a1fe1e6ec0a5"
+      ],
+      "reason": "The host adapter has no confinement refusal or report sender; the card states provider-specific preapproval and AR_PLAYWRIGHT/fetched/checkout precedence. The old extra-argument refusal account is retired.",
+      "sources": [
+        {
+          "blob": "d6e90d156860c962fff038b03cb9b5271791b2a3",
+          "path": "mcp/src/agents_remember/cli/paseo_explainer_host.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/paseo_explainer_host.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9JZ19Q",
+      "items": [
+        "sha256:c971fd7231cf781d7beb906418e118c4bbf6bfc5152ff1690b0d30033ebd530d",
+        "sha256:d460d655caa0c8756d602b5f62f26490aadefe78fafa7770a3269ba18bcbdd06",
+        "sha256:fab009841415a17d3727dfedb525376e076b81c9794648dfa0692022df217f0f"
+      ],
+      "reason": "The card states the autouse fixture that declares the browser present.",
+      "sources": [
+        {
+          "blob": "be1e0df498a2370c8fe77b2e906a175817896d2e",
+          "path": "mcp/tests/test_explainer_authored_claims.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_explainer_authored_claims.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-9QJ8M2",
+      "items": [
+        "sha256:347736e7e507e7fb81a66df0ed506939a420e9ee88ced2b8f8192032f5b026c7"
+      ],
+      "reason": "The grade tool's description and its refusal are unchanged by this leaf; the anchor still stands where it stood.",
+      "revision": 2,
+      "subject": "WKN-F0RC06"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-AJSN01",
+      "items": [
+        "sha256:416b76e1afea24a4eadb98e12b4536c23dea7b80c070266874e36d163e2a7bc2"
+      ],
+      "reason": "The card states the browser readiness before a run folder and the browser record in the result.",
+      "sources": [
+        {
+          "blob": "af706a40fa249d69356fdd58e36be475c59f5a58",
+          "path": "mcp/src/agents_remember/canvas/prospective.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/canvas/prospective.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-AQGF6Q",
+      "items": [
+        "sha256:324d7c51cca8434aa3e854aee8c63c0131646f32042376dd5c57829dcaa5f9f0"
+      ],
+      "reason": "The repository overview describes the product, its packages and its lifecycle; this leaf's change sits inside the explainer area it already routes, and no sentence of it is made false.",
+      "sources": [
+        {
+          "blob": "fa908d330a80c9cd284e72a004cca3079eeffbfa",
+          "path": "dashboard/package-lock.json"
+        },
+        {
+          "blob": "97c7a860a50e63671a27f4429a701be2ce4a0f79",
+          "path": "dashboard/package.json"
+        }
+      ],
+      "subject": "onboarding:overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-AWQ7WK",
+      "items": [
+        "sha256:2914545c430ea05b735aeeed45c2d68cd23c462db732e0b133dbcc1399466172"
+      ],
+      "reason": "The current tests grant Claude server_info plus four tools, omit Codex toolPolicy, and permit launch with extra arguments and unreadable daemon configuration; the old confined-policy/refusal tests are retired.",
+      "sources": [
+        {
+          "blob": "46a66f2e995584dc5753e574eb451379fd643573",
+          "path": "mcp/tests/test_explainer_host.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_explainer_host.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "af706a40fa249d69356fdd58e36be475c59f5a58",
+            "content": "sha256:9ac4b3136a9fcffa906316c9a0efed30f5aa918ea51cc147fcf81d65d4127252",
+            "locator": {
+              "kind": "symbol",
+              "name": "BrowserProspectiveLoad"
+            },
+            "path": "mcp/src/agents_remember/canvas/prospective.py"
+          },
+          "before": {
+            "blob": "47c71360442fea62f8e6f6d24aac1759509c72a4",
+            "content": "sha256:ca782686326e109250bc7aaa53e5177cd15552fb6b4b7b2f6500cc1053b030d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "BrowserProspectiveLoad"
+            },
+            "path": "mcp/src/agents_remember/canvas/prospective.py"
+          },
+          "id": "RLZ-J5AMT2"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-BQ00PR",
+      "items": [
+        "sha256:6decb11362dec548ddb1e7c4cb9213c8e60c0f355c54363c6b74fee6ad99d88d"
+      ],
+      "reason": "BrowserProspectiveLoad gained the browser readiness before it stages a run; the invariant's requirement of a real model-free load is unchanged, so its realization is re-anchored and the new precondition is recorded by the browser invariants.",
+      "revision": 2,
+      "subject": "INV-40VGBY"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-BYRAWH",
+      "items": [
+        "sha256:30c19ae83fe682dea76d11939fb7c092b28b1f9cce9f372644e9abd9d6475a0e"
+      ],
+      "reason": "The design page now states that the product owns the Playwright module and its Chromium, that the load fetches both at the first explanation and that a user's module or an instrumented load is left alone; the record is confirmed at this leaf's tip.",
+      "revision": 2,
+      "subject": "DPD-7YCJ2B"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-C9P3MC",
+      "items": [
+        "sha256:cf7f3ee8827d4a55e77630639c25af4ef39d4f8a0dbb5a5a009e62d900df14c4"
+      ],
+      "reason": "These lines return the announce answer unchanged when it names no run. The obligation is INV-PDRZGD; the branch adds no rule.",
+      "subject": "hunk:sha256:cf7f3ee8827d4a55e77630639c25af4ef39d4f8a0dbb5a5a009e62d900df14c4"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-CBP0ZR",
+      "items": [
+        "sha256:23e4cfc2f20c495c678f5deaa4f2aca62db4710e189b250307909f035c4417b3"
+      ],
+      "reason": "The card is new with the command: report or fetch, one JSON document and its exit status.",
+      "sources": [
+        {
+          "blob": "0d91d5d53527ae0d509c0ab880b87323474a745a",
+          "path": "mcp/src/agents_remember/cli/explainer_browser.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/explainer_browser.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CGH5N4",
+      "items": [],
+      "reason": "The earlier command-table insertion and its card edit were withdrawn before W4. Both source and card equal the assigned base; the operator command is described in the install page and guide.",
+      "sources": [
+        {
+          "blob": "e785b2097ef29c0a26417b23bca9afac2ad2627e",
+          "path": "skills/l-01-agent-lifecycles/reference/knowledge/commands.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/reference/knowledge/commands.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-CHMA4G",
+      "items": [
+        "sha256:fba4de2b0889f71e6f3d68befce776e675893af2a9815525d021c50add340dad"
+      ],
+      "reason": "The route overview's hot path now names the Explanation tab's browser line and its block.",
+      "sources": [
+        {
+          "blob": "16fc5800bd9e5ab44665ca3e55e2548e8277d8cc",
+          "path": "dashboard/src/panels/review/explainer/ExplanationEmptyBrowser.test.tsx"
+        },
+        {
+          "blob": "7807e8add8a202e433046e4195e5431ac17a9d3f",
+          "path": "dashboard/src/panels/review/explainer/ExplanationView.tsx"
+        },
+        {
+          "blob": "6999197d9e93d7080861dcf228988a9100c46e50",
+          "path": "dashboard/src/panels/review/explainer/explainerApi.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/review/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "4a52f1812409904220d810a98e25e5c99c820300",
+            "content": "sha256:dd3cbee6c156893b2b6399dd9034645f4b0bff80665fe0c0166160306114f43d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/__main__.py"
+          },
+          "before": {
+            "blob": "6f3a69cae0b8febac949097f08a925389a945baa",
+            "content": "sha256:c3265ddb8c210f72aa1356bda0f44001e43cd5f72960b694cb536b1b264119cc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/__main__.py"
+          },
+          "id": "RLZ-57VSEG"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-CNBNJR",
+      "items": [
+        "sha256:0eb623fdcf0b73a9e6134eabd784fbea63660a003c15f681ba65965028fabfc0"
+      ],
+      "reason": "The umbrella's file gained the explainer-browser subparser, so the upgrade command's file-level realization is re-anchored; the upgrade obligation is unchanged.",
+      "revision": 2,
+      "subject": "INV-3HQNH1"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-CS7M3N",
+      "items": [
+        "sha256:5dc10ca12c0416238945bd6b7f2d2a2222eb9a0764d487b16b44c96f34a89d8b"
+      ],
+      "reason": "The card describes current FrameMeta/frame composition and separates pending announcement placement from no-page failure placement; removed moved/stale-list/legend/claim-list composition accounts are withdrawn.",
+      "sources": [
+        {
+          "blob": "7807e8add8a202e433046e4195e5431ac17a9d3f",
+          "path": "dashboard/src/panels/review/explainer/ExplanationView.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/review/explainer/ExplanationView.tsx"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-D3Y3TK",
+      "items": [
+        "sha256:c4ef76d85c2caf0a71b185b71eb388f8f2c1e430f743d9cd6456c58260fc8bea"
+      ],
+      "reason": "The overview names the state answer's lastRender and browserNotice.",
+      "sources": [
+        {
+          "blob": "10f569c1318379f138031430a2b49a34d97d815f",
+          "path": "mcp/src/agents_remember/serving/explainer.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/overview"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-D983WQ",
+      "items": [
+        "sha256:f8c36a5105f582e8689e67eb841aa7caa0466aacd8519edee698ee28e9f7bdf9"
+      ],
+      "reason": "The tool descriptions changed in wording, so the file-level anchor is re-anchored; the planning identifiers the weakness counts are still present.",
+      "revision": 2,
+      "subject": "WKN-X2GA36"
+    },
+    {
+      "considered": [],
+      "disposition": "no_family",
+      "id": "ROW-ENG54M",
+      "items": [
+        "sha256:7db3f49923ab18b420f57ef377c4a4245b2e03c43a6374bf1062f167e116f647"
+      ],
+      "reason": "This clause entered as its own invariant: its guarantee stands alone (the fetch, the announcement, the failure's words, the child process, the pin, a user's module), so it joins no family in this leaf.",
+      "revision": 1,
+      "subject": "membership:INV-4FR86X"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "7807e8add8a202e433046e4195e5431ac17a9d3f",
+            "content": "sha256:fdb9f2e2f6f03fd8e5c9f3e2e8a3654476d56f248e895074a5cac77130e9d2ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExplanationView"
+            },
+            "path": "dashboard/src/panels/review/explainer/ExplanationView.tsx"
+          },
+          "before": {
+            "blob": "31e67c873dfef47cf8000cdc33df3d9f2474ee07",
+            "content": "sha256:bc5bfb15293cf5e70c3f16f248e17855e848f611edc57a603f0c88321368e044",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExplanationView"
+            },
+            "path": "dashboard/src/panels/review/explainer/ExplanationView.tsx"
+          },
+          "id": "RLZ-M55PCW"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-FHY8H6",
+      "items": [
+        "sha256:1e0b9aec8fb29de2ce64ff35183ae83b5d4caa1632bea7e4cea51a1d544125b3"
+      ],
+      "reason": "Each saved frame receives its own caption, binding, staleness props and FrameMeta; the realization rationale no longer describes removed separately composed elements.",
+      "revision": 1,
+      "subject": "INV-YY035T"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-GKAZ4J",
+      "items": [
+        "sha256:460da8d29b374483daac9c546bc2d56754bae844ad846c4446b42927a8de5cb7"
+      ],
+      "reason": "The card now says explainer-browser is held outside the role instruction table and is told on the install page and the guide.",
+      "sources": [
+        {
+          "blob": "2a8dca4869b123f45980be91a7bca300df737594",
+          "path": "mcp/test_support/agents_remember_test_support/testing/instruction_consistency.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/instruction_consistency.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b8ba51e395bf787def585acaa1fdebea8559f65d",
+            "content": "sha256:9d6819d96f8bbd938c1f6d81c794761df1c45b8865842ba26231167146fd8742",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "a963d7f4459c6a28a0200331eed5157ee15d375c",
+            "content": "sha256:d78486724596577bd83336e4d9373c8da9f40d561b4a2e6e5bbb5c129f5523ac",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-8RHQED"
+        },
+        {
+          "after": {
+            "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
+            "content": "sha256:536665e5e5cb55daa96514c12b8fd5198e20554a394b810d3ec7df91043e7ab8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "c5329d6566f5482380dd6d536b28a182142711dc",
+            "content": "sha256:1fc23c2238ba5178a540ee367b9f7f1ec431764a8669cb50f2673e9019d7923c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-MC12B0"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-H1VFNH",
+      "items": [
+        "sha256:3a4a7580df33940ed659566e90a24bfb03cd923282810daae7c66152edce98e3"
+      ],
+      "reason": "Both evidence catalogs gained the browser test module as a consumer, so their file-level realizations are re-anchored; the obligation is unchanged.",
+      "revision": 2,
+      "subject": "INV-H1BCMX"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JB1AKP",
+      "items": [
+        "sha256:828dd6cc7b52cc599042c464e02b0ac7a086188e8510210f52ff8c5b0c62c2c4"
+      ],
+      "reason": "These lines pass the load's browser record into the answer. The obligation is INV-RWH9W9; the pass-through adds no rule.",
+      "subject": "hunk:sha256:828dd6cc7b52cc599042c464e02b0ac7a086188e8510210f52ff8c5b0c62c2c4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JFBMGS",
+      "items": [
+        "sha256:88c44dc21e5afb66f1a1da2fa013165d8053693238df408ee18549f9f4250d50"
+      ],
+      "reason": "This import brings the failure type the empty block reads. The type alone adds no rule; the obligation it serves is INV-YMJFC9.",
+      "subject": "hunk:sha256:88c44dc21e5afb66f1a1da2fa013165d8053693238df408ee18549f9f4250d50"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
+            "content": "sha256:536665e5e5cb55daa96514c12b8fd5198e20554a394b810d3ec7df91043e7ab8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "c5329d6566f5482380dd6d536b28a182142711dc",
+            "content": "sha256:1fc23c2238ba5178a540ee367b9f7f1ec431764a8669cb50f2673e9019d7923c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-XQXYDT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-JHRCPT",
+      "items": [
+        "sha256:bfc79d246bcc9a162d7f49d8d540165b3a0410dcea053f0dd280077eb324e617"
+      ],
+      "reason": "The lane catalog gained the browser test module in unit-regression, so its file-level realization is re-anchored; the lane obligation is unchanged.",
+      "revision": 1,
+      "subject": "INV-BXWQRD"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-K9SJKJ",
+      "items": [
+        "sha256:bbbf5ddfd634c6ccacafc531f599916d02f78244cb18a31fa44dd59ba08eb3bb"
+      ],
+      "reason": "These constants name the workspace state folder and its two files. They are the storage half of the announce and kept-failure obligations (INV-PDRZGD, INV-YMJFC9), not a new rule.",
+      "subject": "hunk:sha256:bbbf5ddfd634c6ccacafc531f599916d02f78244cb18a31fa44dd59ba08eb3bb"
+    },
+    {
+      "disposition": "changed",
+      "effect": "introduce",
+      "id": "ROW-KC78JN",
+      "items": [
+        "sha256:7d998639bf5b0873ca2095aa06cfe4da5ebce36dd2080cc0b36438e854a9929f",
+        "sha256:e3172fd8b796fb4dd844f7279512d46907537c787bbc0809399a138da9565043"
+      ],
+      "reason": "The guide's dependent is confirmed again at this candidate: L2's planned-view paragraph and L1's browser section both stand in the document, so only the confirmation's tree moved and the record now stands at revision 3.",
+      "revision": 3,
+      "subject": "DPD-PMZ21Z"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KFY982",
+      "items": [
+        "sha256:863e8f4ad8cf1129d45f940bf55829c6422b5ac952d249507356991a64e01338"
+      ],
+      "reason": "This helper hunk composes the one line the panel says over an earlier page. The wording rule is authored in INV-YMJFC9; the local helper and its branch add no independent rule.",
+      "subject": "hunk:sha256:863e8f4ad8cf1129d45f940bf55829c6422b5ac952d249507356991a64e01338"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-N1CHTM",
+      "items": [
+        "sha256:417f82ba9f927857e70203b6945adab263ac41ebb1b7c18f214c859a4e19bbe5"
+      ],
+      "reason": "The card states the announce answer passed through and the browser record on a publishing answer.",
+      "sources": [
+        {
+          "blob": "f79b28fc4c7cf5d9206befb180e5c3f05ec7f07b",
+          "path": "mcp/src/agents_remember/mcp/registration/explainer_tools.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/registration/explainer_tools.py"
+    },
+    {
+      "considered": [],
+      "disposition": "no_family",
+      "id": "ROW-NQAKDH",
+      "items": [
+        "sha256:1acbcd8c0ff3b955232b141f29181b9e47f9a5ff2f47921d99387697ff905156"
+      ],
+      "reason": "This clause entered as its own invariant: its guarantee stands alone (the fetch, the announcement, the failure's words, the child process, the pin, a user's module), so it joins no family in this leaf.",
+      "revision": 1,
+      "subject": "membership:INV-PDRZGD"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2a8dca4869b123f45980be91a7bca300df737594",
+            "content": "sha256:9e4f97fe530cdad584898ac3f3b5b1adc0ab91870a285bf624284c3de405aedc",
+            "locator": {
+              "kind": "symbol",
+              "name": "UNDOCUMENTED_COMMANDS"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/instruction_consistency.py"
+          },
+          "before": {
+            "blob": "68668ad9039682eadfa94109a556dd5505b134ec",
+            "content": "sha256:867f0752d4ae2affe36ec51f3d801f5a0304da4f8c45c4256242d592f5c9a740",
+            "locator": {
+              "kind": "symbol",
+              "name": "UNDOCUMENTED_COMMANDS"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/instruction_consistency.py"
+          },
+          "id": "RLZ-3FRRQP"
+        },
+        {
+          "after": {
+            "blob": "2a8dca4869b123f45980be91a7bca300df737594",
+            "content": "sha256:5c0f8ecbb0cdbde47fcbbe6ed8dc1c9cec0d36502d9d70c94982fdb70c41f9a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "assert_public_command_reference"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/instruction_consistency.py"
+          },
+          "before": {
+            "blob": "68668ad9039682eadfa94109a556dd5505b134ec",
+            "content": "sha256:5c0f8ecbb0cdbde47fcbbe6ed8dc1c9cec0d36502d9d70c94982fdb70c41f9a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "assert_public_command_reference"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/instruction_consistency.py"
+          },
+          "id": "RLZ-MRXRMP"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "strengthen",
+      "id": "ROW-NRT7EB",
+      "items": [
+        "sha256:d31917d0f305aba69594284c16e7634624c91f4b18e070f5bf6530b4361d14cc"
+      ],
+      "reason": "W4 extends the exempt set from nine to ten and describes explainer-browser on the install page and guide; this successor re-records the existing invariant through the admitted writer. Earlier manual revision provenance is retained in the repair report. Evidence (CUR-RM1-SJ6T7P): Successor re-recording of the existing invariant through the installed knowledge_write writer after L1-MEM-12; predecessor manual revision is not claimed as an admitted authoring write. Worker W4 and current instruction_consistency.py establish the ten-command set.",
+      "revision": 2,
+      "subject": "INV-SJ6T7P"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-PA9TZG",
+      "items": [
+        "sha256:4dccc66a5d7767345cc9f6504884c9a42912d6be884466249f671e57557ee990"
+      ],
+      "reason": "The route overview needed no change: the fact belongs to the one card that describes the check, and the overview's statements still hold.",
+      "sources": [
+        {
+          "blob": "2a8dca4869b123f45980be91a7bca300df737594",
+          "path": "mcp/test_support/agents_remember_test_support/testing/instruction_consistency.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-PNWYCB",
+      "items": [
+        "sha256:94323f8c43d072970ad9d2cd541f990b2c943e88d8666bd27539b4e13751ea5f"
+      ],
+      "reason": "The card is new: the manifest and the Playwright 1.65.0 pin the product's fetch shares.",
+      "sources": [
+        {
+          "blob": "97c7a860a50e63671a27f4429a701be2ce4a0f79",
+          "path": "dashboard/package.json"
+        }
+      ],
+      "subject": "onboarding:dashboard/package.json"
+    },
+    {
+      "considered": [],
+      "disposition": "no_family",
+      "id": "ROW-PX6VTE",
+      "items": [
+        "sha256:ce60b2dce90eca0da8a92ccc638b86f2448394ecf38d239c8d9e774a55f06e4a"
+      ],
+      "reason": "This clause entered as its own invariant: its guarantee stands alone (the fetch, the announcement, the failure's words, the child process, the pin, a user's module), so it joins no family in this leaf.",
+      "revision": 1,
+      "subject": "membership:INV-YMJFC9"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Q33GVV",
+      "items": [
+        "sha256:8814d5a99b1af8c5aaf5b0f30d96aacc3659b2de1dd975cb20685cddebf12455"
+      ],
+      "reason": "The card states the two state fields read from the leaf workspace.",
+      "sources": [
+        {
+          "blob": "10f569c1318379f138031430a2b49a34d97d815f",
+          "path": "mcp/src/agents_remember/serving/explainer.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/explainer.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Q89DK0",
+      "items": [
+        "sha256:f0d4b76f68752576b6a4c3f18749545f84410b1255aef47684add4ae4e3f1110"
+      ],
+      "reason": "The overview names the render answer's announce and browser record.",
+      "sources": [
+        {
+          "blob": "f79b28fc4c7cf5d9206befb180e5c3f05ec7f07b",
+          "path": "mcp/src/agents_remember/mcp/registration/explainer_tools.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/registration/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QMGHSV",
+      "items": [
+        "sha256:39807a3c4f9df4e90074cf2d0fcd175b82dae396d0c1b8f794c2fa00ddba390a"
+      ],
+      "reason": "This import brings the module's env name and its fetched-module lookup. The obligation is INV-J3FBTV (a user's AR_PLAYWRIGHT is used as given); the import adds no rule.",
+      "subject": "hunk:sha256:39807a3c4f9df4e90074cf2d0fcd175b82dae396d0c1b8f794c2fa00ddba390a"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-QPG655",
+      "items": [
+        "sha256:cee4f4f87c3cf3c971307987dbf42fe4e94b5d54175869ab63989aff6914633e"
+      ],
+      "reason": "The card is new with the module: the product-owned folder, the bounded fetch, the version pin and the named refusal.",
+      "sources": [
+        {
+          "blob": "eb15c8f953dacb85aa2b7a13e76144c934012484",
+          "path": "mcp/src/agents_remember/canvas/explainer_browser.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/canvas/explainer_browser.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-R1VN2R",
+      "items": [
+        "sha256:c383538849d98a3d3ff8d01d050c253aed7baf9e2bbb32754cd3f3c076742af5"
+      ],
+      "reason": "This import brings the readiness, environment and Node helpers from the browser module. The obligations are INV-RWH9W9 and INV-T0Y3RS; the import adds no rule.",
+      "subject": "hunk:sha256:c383538849d98a3d3ff8d01d050c253aed7baf9e2bbb32754cd3f3c076742af5"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-R7E9TF",
+      "items": [
+        "sha256:64798a9448f7c0c6f5c15680ac5f42cbadd46bc9a891b81a5fa8b512278ad28d"
+      ],
+      "reason": "The current constructor and digest-checked reads replace obsolete documentation-surface claims; the removed DOCUMENTATION_HOSTS anchor story is withdrawn from current prose.",
+      "sources": [
+        {
+          "blob": "988e305d334ffbe7e14443a3a37847fb0e3e6cb9",
+          "path": "mcp/src/agents_remember/canvas/presenter_tools.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/canvas/presenter_tools.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-S1HCCE",
+      "items": [
+        "sha256:8353baad06a1f9e9c54b54abe5db3721d6d93cf3d84ed046b31ceaf7681d3426"
+      ],
+      "reason": "The card counts twenty subcommands and names explainer-browser with its adapter.",
+      "sources": [
+        {
+          "blob": "4a52f1812409904220d810a98e25e5c99c820300",
+          "path": "mcp/src/agents_remember/cli/__main__.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/__main__.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-3HQNH1",
+          "revision": 2
+        },
+        {
+          "id": "INV-B7D1WM",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-S52FSN",
+      "items": [
+        "sha256:e6aa07414ca7ec7fd358142a446d7303969f49cbf4de86701a515bbbedd25e91"
+      ],
+      "reason": "The umbrella's file gained one subparser registration and the family's single-user-settings guarantee is untouched; both members were examined at their current revisions and neither route nor guarantee changed.",
+      "revision": 2,
+      "subject": "FAM-6M4B49"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-S5XEXE",
+      "items": [
+        "sha256:dc8b6d5b5f246de72f23c2ffcb8dffbef5f7da52a7a8dd87fc17b08cb7dd392f"
+      ],
+      "reason": "This import brings the browser command the view names. The obligation is INV-YMJFC9; the import adds no rule.",
+      "subject": "hunk:sha256:dc8b6d5b5f246de72f23c2ffcb8dffbef5f7da52a7a8dd87fc17b08cb7dd392f"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-S73SXW",
+      "items": [
+        "sha256:838895c8e2df320b29da8f8db27a6100458ae91399fb95ee48acd9427e57f681"
+      ],
+      "reason": "The base and candidate retain the same nonblank prose, with reference-table blocks reordered and anchors refreshed. This rendering does not add an explainer-browser command paragraph; the previous history reason claiming that addition is withdrawn.",
+      "sources": [
+        {
+          "blob": "4a52f1812409904220d810a98e25e5c99c820300",
+          "path": "mcp/src/agents_remember/cli/__main__.py"
+        },
+        {
+          "blob": "0d91d5d53527ae0d509c0ab880b87323474a745a",
+          "path": "mcp/src/agents_remember/cli/explainer_browser.py"
+        },
+        {
+          "blob": "d6e90d156860c962fff038b03cb9b5271791b2a3",
+          "path": "mcp/src/agents_remember/cli/paseo_explainer_host.py"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-T5NQK2",
+      "items": [
+        "sha256:772d3b6f0c5d084c84be326b1b707bd1a545faee93b8e9f5bb64283e202a39c2"
+      ],
+      "reason": "The feature page now names the product's own fetch; the record is confirmed at this leaf's tip.",
+      "revision": 7,
+      "subject": "DPD-EG5TYT"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
+            "content": "sha256:536665e5e5cb55daa96514c12b8fd5198e20554a394b810d3ec7df91043e7ab8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "c5329d6566f5482380dd6d536b28a182142711dc",
+            "content": "sha256:1fc23c2238ba5178a540ee367b9f7f1ec431764a8669cb50f2673e9019d7923c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BNMQ79"
+        },
+        {
+          "after": {
+            "blob": "b8ba51e395bf787def585acaa1fdebea8559f65d",
+            "content": "sha256:9d6819d96f8bbd938c1f6d81c794761df1c45b8865842ba26231167146fd8742",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "a963d7f4459c6a28a0200331eed5157ee15d375c",
+            "content": "sha256:d78486724596577bd83336e4d9373c8da9f40d561b4a2e6e5bbb5c129f5523ac",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GEMVNE"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-T9JMQH",
+      "items": [
+        "sha256:0afd53d06930cc026d609a71072b6d4521a119faa2324aea7754a12a77343623"
+      ],
+      "reason": "The two evidence catalogs gained the browser test module as a consumer, so their file-level realizations are re-anchored; the catalog obligations are unchanged.",
+      "revision": 6,
+      "subject": "INV-1ZKP4R"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TD0Q31",
+      "items": [
+        "sha256:cfdcb44da8b2f79183c14d18157eeb6c194eda5f0cf957bcd34d3c54c034ac2c"
+      ],
+      "reason": "This docstring tells the calling seat to say the one sentence before the fetch. The obligation is INV-PDRZGD; the prose adds no rule.",
+      "subject": "hunk:sha256:cfdcb44da8b2f79183c14d18157eeb6c194eda5f0cf957bcd34d3c54c034ac2c"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-TEFAEC",
+      "items": [
+        "sha256:ef0b97fd39d51d0064e88ca76c23d1aeb0a51a13b7556afb23f76f7bb38fb824"
+      ],
+      "reason": "The install page gains the section that names the Explanation tab, the sentence, the command and macOS as not measured; the record is confirmed at this leaf's tip.",
+      "revision": 3,
+      "subject": "DPD-XV7QBE"
+    },
+    {
+      "considered": [],
+      "disposition": "no_family",
+      "id": "ROW-TSXFCQ",
+      "items": [
+        "sha256:79dd6dd29347d708c461dd4a0dfb940425e5808faca7a9f515d87b2e5e097cb0"
+      ],
+      "reason": "This clause entered as its own invariant: its guarantee stands alone (the fetch, the announcement, the failure's words, the child process, the pin, a user's module), so it joins no family in this leaf.",
+      "revision": 1,
+      "subject": "membership:INV-J3FBTV"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-TXZ7EN",
+      "items": [
+        "sha256:a46c6544e1e6194d26149e11b30cfa80596ec7e124babb6261142a33c06f6e37"
+      ],
+      "reason": "The tests overview names the browser suite and the cases added to the prospective, host and server suites. The remaining L1-MEM-07 current-count correction changes five overview body claims and five paired reference notes (1498, 1529, 1530, 1647, 1808) from 772 to the frozen catalog's 775 distinct test modules: 640 unit, 3 public, 110 integration and 22 architecture. Historical L97 count captions remain unchanged; this correction claims no insertion, displacement, execution or acceptance.",
+      "sources": [
+        {
+          "blob": "b8ba51e395bf787def585acaa1fdebea8559f65d",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "83e87162a4af9cc8fc6ac3271beedc8b30e6e8e2",
+          "path": "mcp/tests/test_canvas_prospective.py"
+        },
+        {
+          "blob": "be1e0df498a2370c8fe77b2e906a175817896d2e",
+          "path": "mcp/tests/test_explainer_authored_claims.py"
+        },
+        {
+          "blob": "cb566d4b24cc125bc9c119e22e2805d0c081d6f0",
+          "path": "mcp/tests/test_explainer_browser.py"
+        },
+        {
+          "blob": "46a66f2e995584dc5753e574eb451379fd643573",
+          "path": "mcp/tests/test_explainer_host.py"
+        },
+        {
+          "blob": "e585a2670330f742a7b93e821f3ac5a3e66de363",
+          "path": "mcp/tests/test_explainer_server.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "considered": [],
+      "disposition": "no_family",
+      "id": "ROW-TYR7RE",
+      "items": [
+        "sha256:0edf6f1db117281991b42f8ab5f378cc0bf88197779fe9bfcf89c0fc7f5075bb"
+      ],
+      "reason": "The operator command’s documentation placement is a single obligation; the examined host, UI and testing families do not jointly require this table exclusion and these two pages.",
+      "revision": 1,
+      "subject": "membership:INV-Q3GMWZ"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-V7RSAV",
+      "items": [
+        "sha256:0480424b7b457413835520d0703dc07939a5cba41314afef236f96eb86ef11f3"
+      ],
+      "reason": "This result field carries the browser record the load returns. The obligation is INV-RWH9W9 (the product's own fetch); the extra field adds no independent rule.",
+      "subject": "hunk:sha256:0480424b7b457413835520d0703dc07939a5cba41314afef236f96eb86ef11f3"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-VXPQ2N",
+      "items": [
+        "sha256:05b010062339102ee48443e8e308904c3a9c5b788f1a54771e910e8bd5e3ab7e",
+        "sha256:29944f579994afc461eb8aeded9698bdbb299f63dc6f98e2875794e4fd5c3eab",
+        "sha256:324281bea1d847eb0b6747523c8cc2a81403405d2b76b8648beea94b9421368c",
+        "sha256:6ac8134bea3c501b55b4e71f4325874f3ccd446bb976062463fe6804d94f1b68",
+        "sha256:7ce4bae355d4569e814c0e83730997d0aad4ff1431533bb4c0eed44f57dc6472",
+        "sha256:8d01bc60f01fad7630dd5f96660c002e75a408a5126ef81eb1a892c4932efd57",
+        "sha256:9141b3e8d4b8653bf3a8a7084ad308517fb379a018b7b5b83033e8904ffa0b61",
+        "sha256:bbddc90b640549690c71195b034d2884981b2119b6cb3c8764874d9a4033e76a",
+        "sha256:e2b2dd1e4991ea8dda05ed45389e66b7bef2e7f952b624c327acc7a501049628"
+      ],
+      "reason": "The card is new: the resolved Playwright pair the checkout installs.",
+      "sources": [
+        {
+          "blob": "fa908d330a80c9cd284e72a004cca3079eeffbfa",
+          "path": "dashboard/package-lock.json"
+        }
+      ],
+      "subject": "onboarding:dashboard/package-lock.json"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-X71907",
+      "items": [
+        "sha256:9013b42472257658cdbda2bf2a022653e07f1aafac1bd250746f45cf3764a224"
+      ],
+      "reason": "The card states the actual display assertions and fixtures; it withdraws unasserted detail/dedup, literal line-layout and published-page claims.",
+      "sources": [
+        {
+          "blob": "16fc5800bd9e5ab44665ca3e55e2548e8277d8cc",
+          "path": "dashboard/src/panels/review/explainer/ExplanationEmptyBrowser.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/review/explainer/ExplanationEmptyBrowser.test.tsx"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-X88P63",
+      "items": [
+        "sha256:a8d83242c8942ab278d520a0c71c67a7b64ca05aaa0bebcf31b2b522dbe2c8b9"
+      ],
+      "reason": "The host adapter's file changed around the launch environment, so the file-level anchor is re-anchored; the weakness about the user's own tool server still stands as written.",
+      "revision": 2,
+      "subject": "WKN-THTYAX"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-XD3AE4",
+      "items": [
+        "sha256:0b098b11e8339b9a93a6befc67b1213d12f9544a2e378ef74520c858be98113e",
+        "sha256:4d7ee2603d7bf4b42aaa8884baeba509fb1ed26f762122699218b1bdfde8dc7b",
+        "sha256:60da625eff546abd4b6f24006c3ae857087fbcdb1d86395ac2f3602bf58a3ed3",
+        "sha256:f6292c38746cc9761b53ef8ffd950b5c88d61c48069f6315d69bb5a808c0c0dd"
+      ],
+      "reason": "The card states the browser cases the suite gained.",
+      "sources": [
+        {
+          "blob": "83e87162a4af9cc8fc6ac3271beedc8b30e6e8e2",
+          "path": "mcp/tests/test_canvas_prospective.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_canvas_prospective.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-XQ4XXQ",
+      "items": [
+        "sha256:55931c7b37f3f81e9c2ec9b70522c7da4c685a488b319601c16ab4888167d28e"
+      ],
+      "reason": "This replacement carries the browser record through the consistency pass. It is plumbing for INV-RWH9W9, not a rule.",
+      "subject": "hunk:sha256:55931c7b37f3f81e9c2ec9b70522c7da4c685a488b319601c16ab4888167d28e"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-YF37JV",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "The card records the browser suite in unit-regression.",
+      "sources": [
+        {
+          "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-Z81WWA",
+      "items": [
+        "sha256:529418bdfb04e2f7e2876777ce218aa9dd3ee0022994e15ebc6dc5758c29b13e"
+      ],
+      "reason": "The umbrella's file gained the explainer-browser subparser, so the file-level anchor is re-anchored; the legacy commands the weakness names are still registered and still undescribed.",
+      "revision": 2,
+      "subject": "WKN-G1TBN8"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ZBDPH6",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "The card records the browser suite’s membership in the settings-guard and portable Node-lockfile artifact consumer lists, corrects first-seen table-kind ordering, and withdraws retired fixture-support prose.",
+      "sources": [
+        {
+          "blob": "b8ba51e395bf787def585acaa1fdebea8559f65d",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
+            "content": "sha256:536665e5e5cb55daa96514c12b8fd5198e20554a394b810d3ec7df91043e7ab8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "c5329d6566f5482380dd6d536b28a182142711dc",
+            "content": "sha256:1fc23c2238ba5178a540ee367b9f7f1ec431764a8669cb50f2673e9019d7923c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BJ41EY"
+        },
+        {
+          "after": {
+            "blob": "b8ba51e395bf787def585acaa1fdebea8559f65d",
+            "content": "sha256:9d6819d96f8bbd938c1f6d81c794761df1c45b8865842ba26231167146fd8742",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "a963d7f4459c6a28a0200331eed5157ee15d375c",
+            "content": "sha256:d78486724596577bd83336e4d9373c8da9f40d561b4a2e6e5bbb5c129f5523ac",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-H44S0N"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-ZM6MCW",
+      "items": [
+        "sha256:13715ff61c168ee4cb9694400ef80caaf2f70181efee657690706fdf2f29daf0"
+      ],
+      "reason": "Both evidence catalogs gained the browser test module as a consumer, so their file-level realizations are re-anchored; the obligation is unchanged.",
+      "revision": 1,
+      "subject": "INV-T8672G"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ZPN3NQ",
+      "items": [
+        "sha256:f1d525746fc4ab18e3a93a3b30941e682acfabb46b2aa691af40606ef421e94d"
+      ],
+      "reason": "The readiness and prospective-load section now states the browser readiness, the product-owned folder and the paths left alone.",
+      "sources": [
+        {
+          "blob": "eb15c8f953dacb85aa2b7a13e76144c934012484",
+          "path": "mcp/src/agents_remember/canvas/explainer_browser.py"
+        },
+        {
+          "blob": "988e305d334ffbe7e14443a3a37847fb0e3e6cb9",
+          "path": "mcp/src/agents_remember/canvas/presenter_tools.py"
+        },
+        {
+          "blob": "af706a40fa249d69356fdd58e36be475c59f5a58",
+          "path": "mcp/src/agents_remember/canvas/prospective.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/canvas/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZX3ENQ",
+      "items": [
+        "sha256:4f52218c20fcd0de71c250ada15d7c301b5835a1affa6320578c4e9f981d1322"
+      ],
+      "reason": "These lines add lastRender and browserNotice to the serving state. The obligations are INV-YMJFC9 (a failed fetch is said) and INV-PDRZGD (the sentence before the fetch); the view fields add no independent rule.",
+      "subject": "hunk:sha256:4f52218c20fcd0de71c250ada15d7c301b5835a1affa6320578c4e9f981d1322"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

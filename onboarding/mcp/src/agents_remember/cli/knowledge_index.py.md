@@ -55,7 +55,6 @@ The adapter reuses the index package; it adds only argument handling and printin
 
 - The build or reuse, the JSON report and the exit status by state. [3]
 
-- Registration in the umbrella. [4]
 - The command reports the index and exits by state. [5]
 
 ### Cross-Repo References
@@ -63,3 +62,6 @@ The adapter reuses the index package; it adds only argument handling and printin
 No meaningful cross-repo references found: the command reads the memory tree it is given.
 
 No cross-repo boundary is crossed by this file.
+
+
+- Registration in the umbrella. [4]

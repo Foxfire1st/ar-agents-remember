@@ -3,7 +3,41 @@
   "proves": [
     {
       "anchor": {
-        "blob": "3bd69987ec4c3971fffcb1e3b30c6b27e05ebeb4",
+        "blob": "83e87162a4af9cc8fc6ac3271beedc8b30e6e8e2",
+        "content": "sha256:bbdfe56f962bb8997951a7cccc5eb260d8f4833504b2c27572a12551f977dfc9",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_announced_browser_no_longer_blocks_the_next_render"
+        }
+      },
+      "facet": "After an initial announcement, making browser_missing return no missing parts allows the next render through the substituted loader; the answer is loaded with run renders/run-001.",
+      "id": "PRF-3BW04D",
+      "invariant": "INV-PDRZGD",
+      "origin": {
+        "handoffEntry": "L1-B02",
+        "leaf": "261112-BUG-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "83e87162a4af9cc8fc6ac3271beedc8b30e6e8e2",
+        "content": "sha256:0be7b23414bbc5ace622b7737cab16017611936055e83d64aaa6c5c30efd57e8",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_load_runs_on_the_product_node_with_the_products_browser_folder"
+        }
+      },
+      "facet": "A product load runs on the product's Node with the product's browser folder.",
+      "id": "PRF-9EMJRX",
+      "invariant": "INV-RWH9W9",
+      "origin": {
+        "handoffEntry": "L1-B01",
+        "leaf": "261112-BUG-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "83e87162a4af9cc8fc6ac3271beedc8b30e6e8e2",
         "content": "sha256:20f3137d0d352e7a5783b3c3257b8ca17d6a6c87402f2b74b8bed4c72be137e5",
         "locator": {
           "kind": "symbol",
@@ -20,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "3bd69987ec4c3971fffcb1e3b30c6b27e05ebeb4",
+        "blob": "83e87162a4af9cc8fc6ac3271beedc8b30e6e8e2",
         "content": "sha256:d1ee7778749bc2c0666df2a4481a511fe5812338d85b3d99e4419e6ac7100ac6",
         "locator": {
           "kind": "symbol",
@@ -37,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "3bd69987ec4c3971fffcb1e3b30c6b27e05ebeb4",
+        "blob": "83e87162a4af9cc8fc6ac3271beedc8b30e6e8e2",
         "content": "sha256:af8d8fc0d46a26f60f83a8b54c9bb14f4735427f9fa31820d6c65b6d0fa77aa9",
         "locator": {
           "kind": "symbol",
@@ -51,6 +85,40 @@
         "handoffEntry": "L183-curator-test-facet-02",
         "leaf": "260928-MIK-L183"
       }
+    },
+    {
+      "anchor": {
+        "blob": "83e87162a4af9cc8fc6ac3271beedc8b30e6e8e2",
+        "content": "sha256:f8ac360afdad1b55994afc835b34006fa8d23af25e0a16c3fb813d5bce002c5f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_load_whose_browser_cannot_be_made_ready_is_unavailable_and_loads_nothing"
+        }
+      },
+      "facet": "A load whose browser cannot be made ready is unavailable and stages no run.",
+      "id": "PRF-TD7JMC",
+      "invariant": "INV-RWH9W9",
+      "origin": {
+        "handoffEntry": "L1-B01",
+        "leaf": "261112-BUG-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "83e87162a4af9cc8fc6ac3271beedc8b30e6e8e2",
+        "content": "sha256:ff50a0f24d0677837fe4226f9154bd662bbf04b4e18406cab75d825357bd405f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_first_render_with_a_missing_browser_announces_and_fetches_nothing"
+        }
+      },
+      "facet": "The first render on a browserless installation announces and fetches nothing.",
+      "id": "PRF-WS3VY8",
+      "invariant": "INV-PDRZGD",
+      "origin": {
+        "handoffEntry": "L1-B02",
+        "leaf": "261112-BUG-L1"
+      }
     }
   ],
   "realizes": [],
@@ -60,11 +128,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3bd69987ec4c3971fffcb1e3b30c6b27e05ebeb4",
-            "content": "sha256:20f3137d0d352e7a5783b3c3257b8ca17d6a6c87402f2b74b8bed4c72be137e5",
+            "blob": "83e87162a4af9cc8fc6ac3271beedc8b30e6e8e2",
+            "content": "sha256:886d23c3c095cb8361be83e8e5993a1d584dff7d7afc666ee79879048b6c3361",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_failed_load_refuses_publication_and_keeps_the_last_ready_revision"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -76,11 +143,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3bd69987ec4c3971fffcb1e3b30c6b27e05ebeb4",
-            "content": "sha256:d1ee7778749bc2c0666df2a4481a511fe5812338d85b3d99e4419e6ac7100ac6",
+            "blob": "83e87162a4af9cc8fc6ac3271beedc8b30e6e8e2",
+            "content": "sha256:886d23c3c095cb8361be83e8e5993a1d584dff7d7afc666ee79879048b6c3361",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_static_check_never_stands_in_for_a_load"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -92,10 +158,86 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3bd69987ec4c3971fffcb1e3b30c6b27e05ebeb4",
-            "content": "sha256:c81db213fc8e53610d9ebb434c7f1ac507c5c500c44dce007d946e46021487e3",
+            "blob": "83e87162a4af9cc8fc6ac3271beedc8b30e6e8e2",
+            "content": "sha256:886d23c3c095cb8361be83e8e5993a1d584dff7d7afc666ee79879048b6c3361",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A load that names its own Node fetches no browser and runs on the product Node otherwise.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83e87162a4af9cc8fc6ac3271beedc8b30e6e8e2",
+            "content": "sha256:0be7b23414bbc5ace622b7737cab16017611936055e83d64aaa6c5c30efd57e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_load_runs_on_the_product_node_with_the_products_browser_folder"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "83e87162a4af9cc8fc6ac3271beedc8b30e6e8e2",
+            "content": "sha256:269ba315ce0fb01e860807def4784696faa59effe756407e2a0c0a207bf54f64",
+            "locator": {
+              "end": 705,
+              "kind": "line_range",
+              "start": 641
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "A load whose browser cannot be made ready is unavailable and stages no run.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83e87162a4af9cc8fc6ac3271beedc8b30e6e8e2",
+            "content": "sha256:f8ac360afdad1b55994afc835b34006fa8d23af25e0a16c3fb813d5bce002c5f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_load_whose_browser_cannot_be_made_ready_is_unavailable_and_loads_nothing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "A render answer carries the browser the page was loaded with.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83e87162a4af9cc8fc6ac3271beedc8b30e6e8e2",
+            "content": "sha256:86e210ba9d099ab73961e5e069f4c18092c14e8ea75bfe28ae46c44bc60b461f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_render_answer_carries_the_browser_the_page_was_loaded_with"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "A first render with a missing browser announces and fetches nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83e87162a4af9cc8fc6ac3271beedc8b30e6e8e2",
+            "content": "sha256:ff50a0f24d0677837fe4226f9154bd662bbf04b4e18406cab75d825357bd405f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_first_render_with_a_missing_browser_announces_and_fetches_nothing"
             }
           },
           "kind": "test"

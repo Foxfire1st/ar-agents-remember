@@ -328,4 +328,5 @@ trap rather than a green light.
 
 - Both cells and the quote path preserve escaped/plain anchor agreement; the row case derives text from live cell spans. The separately retained budget-test range covers the declared-pair sentence, constant, marker-registration and older-budget-site assertions. [10]
 
+
 - The module's own unit-regression lane row; catalog membership selects evidence and does not establish execution. [29]

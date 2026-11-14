@@ -203,15 +203,5 @@ now has **ten** cases, not seven, and its lane row is
 `mcp/tests/test-evidence-lanes.toml:220` (it read `:177` when this card was written).
 
 
-
-
-
-
-
-
-
-
 - The integration lane declares test_terminal_blocker_reasons.py; membership is not execution evidence. [23]
-
-
 - The lane manifest declares test_terminal_blocker_reasons.py in integration. Membership selects evidence and establishes no invocation. [25]

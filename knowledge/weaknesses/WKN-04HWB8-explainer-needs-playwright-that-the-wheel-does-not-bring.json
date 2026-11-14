@@ -1,12 +1,17 @@
 {
   "anchor": {
-    "blob": "53ffe2a0331299a366356ca0b1b3e0dc6317c750",
-    "content": "sha256:9804b5413c76e17fcce6ac14a4351cb6fef6b8fcb578161c9b08bb0970cae73a",
+    "blob": "d6e90d156860c962fff038b03cb9b5271791b2a3",
+    "content": "sha256:78a3d24fe6ad4db095798cdc8250395fd7d0737a5be3a9b798be5a235e13ff9f",
     "locator": {
       "kind": "symbol",
       "name": "browser_module"
     },
     "path": "mcp/src/agents_remember/cli/paseo_explainer_host.py"
+  },
+  "closed": {
+    "commit": "c82e91894677bcfd06042e23a6016cf1f5317c11",
+    "reason": "The product fetches Playwright and its Chromium at the first explanation and the Explanation tab says the sentence and any failure.",
+    "task": "261112-BUG-L1"
   },
   "id": "WKN-04HWB8",
   "kind": "debt",
@@ -18,12 +23,12 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-weakness/v1",
   "seen": {
     "role": "worker",
     "task": "260928-MIK-L97"
   },
-  "state": "open",
-  "statement": "The explainer publishes a page only with the Playwright module and its browser, which an installation from the wheel does not bring; without them render answers unavailable and the review page shows no word about it."
+  "state": "closed",
+  "statement": "The explainer published a page only with the Playwright module and its browser, which an installation from the wheel did not bring; without them render answered unavailable and the review page showed no word about it. Closed by 261112-BUG-L1: the product fetches both at the first explanation, the Explanation tab says the sentence and any failure, and a seat is handed the module the fetch placed."
 }

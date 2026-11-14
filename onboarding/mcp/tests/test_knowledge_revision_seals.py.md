@@ -106,12 +106,5 @@ No cross-repository behavior is implemented in this file.
 No meaningful cross-repo references found.
 
 
-
-
-
-
-
-- The unit-regression lane row this module is registered by.  Anchor: "mcp/tests/test_knowledge_revision_seals.py" [9]
-
-
 - The knowledge identity-branching fixture artifact names contract:knowledge-identity-branching-fixture as its replacement and test_knowledge_revision_seals.py as an exact consumer. These declarations do not establish execution. [10]
+- The unit-regression lane row this module is registered by.  Anchor: "mcp/tests/test_knowledge_revision_seals.py" [9]

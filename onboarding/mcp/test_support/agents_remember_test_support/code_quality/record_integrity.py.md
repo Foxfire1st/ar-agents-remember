@@ -188,5 +188,4 @@ path and **skips with the reason named** when they are absent.
 No cross-repository evidence is required for these file-local claims.
 
 
-
 - The lane this module's contract suite is registered in, so the fail-closed manifest admits it. Source caption: "mcp/tests/test_record_integrity.py" [26]

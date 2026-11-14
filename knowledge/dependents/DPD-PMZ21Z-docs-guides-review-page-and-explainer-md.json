@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "1f22b9a2feaf65a4f30a2cce85483c21fecba3b7",
-    "commit": "724ad9fb8188dfe6f6f9f9c972c160c0b6e80d90",
+    "codeTree": "c82e91894677bcfd06042e23a6016cf1f5317c11",
+    "commit": "ed91a4c8436a72d1fe895f0ee464340889e6aff3",
     "role": "curator",
-    "statement": "The guide's statements about the planned view, the explainer's request and the rendered packet were re-read at the W5 candidate; the only code delta since W4 is the capability-text test pin (1,090 words under the 1,100 budget), which changes no statement the guide makes. The links re-resolve at W5.",
-    "task": "261112-BUG-L2",
+    "statement": "The guide now carries both lands: its planned-view paragraph, where a task that has not started shows its planned reference files under the top line \"planned · no changes\", landed by 261112-BUG-L2, and the browser section of 261112-BUG-L1 — the product's own fetch into <data>/agents-remember/explainer-browser at the first explanation, the one-line notice on the Explanation tab, the two shapes of a failed fetch, agents-remember explainer-browser --fetch, a user's AR_PLAYWRIGHT used as given, and the checkout's Playwright 1.65.0 with the Ubuntu 26.04 result and macOS named as not measured.",
+    "task": "261112-BUG-L1",
     "uncommitted": true
   },
   "document": "docs/guides/review-page-and-explainer.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -136,7 +136,7 @@
       "path": "mcp/src/agents_remember/canvas/review-presenter.md"
     },
     {
-      "blob": "53ffe2a0331299a366356ca0b1b3e0dc6317c750",
+      "blob": "d6e90d156860c962fff038b03cb9b5271791b2a3",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_explainer_host.py"
     },

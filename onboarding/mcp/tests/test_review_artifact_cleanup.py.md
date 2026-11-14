@@ -95,5 +95,4 @@ No cross-repo boundary is crossed by this file.
 - The planned receipt classes include `explainerArtifacts`. An interrupted deletion of the archived task's external explainer workspace and generation counter is retried as attributed `alreadyAbsent` entries of that class, with `interrupted=true`; the test reads the actual deleted fixture paths and retry receipt. [11]
 
 
-
 - The lane row. Source caption: "mcp/tests/test_review_artifact_cleanup.py" [8]

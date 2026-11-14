@@ -71,16 +71,14 @@
       ]
     },
     "25": {
-      "note": "The lane row this module was appended to, in the lane list — appended rather than inserted mid-list.  Anchor: `test_evidence_catalog_gate_boundaries`",
+      "note": "The lane row this module was appended to, in the lane list — appended rather than inserted mid-list.  Anchor: `test_evidence_catalog_gate_boundaries`\n\nAnchor: `test_evidence_catalog_gate_boundaries`",
       "targets": [
         {
           "anchor": {
-            "blob": "c5329d6566f5482380dd6d536b28a182142711dc",
-            "content": "sha256:1d0174394ac949359d686292321739390d691490cf94038d9e8f95e831d8624a",
+            "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
+            "content": "sha256:536665e5e5cb55daa96514c12b8fd5198e20554a394b810d3ec7df91043e7ab8",
             "locator": {
-              "end": 152,
-              "kind": "line_range",
-              "start": 152
+              "kind": "file"
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -93,8 +91,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a963d7f4459c6a28a0200331eed5157ee15d375c",
-            "content": "sha256:d78486724596577bd83336e4d9373c8da9f40d561b4a2e6e5bbb5c129f5523ac",
+            "blob": "b8ba51e395bf787def585acaa1fdebea8559f65d",
+            "content": "sha256:9d6819d96f8bbd938c1f6d81c794761df1c45b8865842ba26231167146fd8742",
             "locator": {
               "kind": "file"
             },
@@ -105,16 +103,14 @@
       ]
     },
     "27": {
-      "note": "The lane row this module holds in the sorted `unit-regression` list.  Anchor: \"mcp/tests/test_evidence_catalog_gate_boundaries.py\"",
+      "note": "The lane row this module holds in the sorted `unit-regression` list.  Anchor: \"mcp/tests/test_evidence_catalog_gate_boundaries.py\"\n\nAnchor: \"mcp/tests/test_evidence_catalog_gate_boundaries.py\"",
       "targets": [
         {
           "anchor": {
-            "blob": "c5329d6566f5482380dd6d536b28a182142711dc",
-            "content": "sha256:1d0174394ac949359d686292321739390d691490cf94038d9e8f95e831d8624a",
+            "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
+            "content": "sha256:536665e5e5cb55daa96514c12b8fd5198e20554a394b810d3ec7df91043e7ab8",
             "locator": {
-              "end": 152,
-              "kind": "line_range",
-              "start": 152
+              "kind": "file"
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

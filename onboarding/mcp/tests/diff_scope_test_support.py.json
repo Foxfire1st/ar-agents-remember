@@ -228,16 +228,14 @@
       ]
     },
     "66": {
-      "note": "**The contract this module's artifact row is registered under.**  Anchor: `knowledge-diff-cases`",
+      "note": "**The contract this module's artifact row is registered under.**  Anchor: `knowledge-diff-cases`\n\nAnchor: `knowledge-diff-cases`",
       "targets": [
         {
           "anchor": {
-            "blob": "a963d7f4459c6a28a0200331eed5157ee15d375c",
-            "content": "sha256:929342408eab986b85e474007d33b0398ae3cda343cf39c7a584d5cf1ebf0936",
+            "blob": "b8ba51e395bf787def585acaa1fdebea8559f65d",
+            "content": "sha256:9d6819d96f8bbd938c1f6d81c794761df1c45b8865842ba26231167146fd8742",
             "locator": {
-              "end": 4919,
-              "kind": "line_range",
-              "start": 4917
+              "kind": "file"
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

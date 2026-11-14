@@ -132,7 +132,4 @@ No cross-repo boundary is crossed by this file.
 - Current source delta inspected statically: Align renamed-but-unchanged test identifiers with four-item reopening and R53 source-bound predicates; replace stale population figures with actual static source counts, preserving the narrow closeout mutation-seam limit. [13]
 
 
-
 - The lane row. [10]
-
-

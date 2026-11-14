@@ -1,0 +1,30 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The consistency check excludes explainer-browser from the role command table while the install page and guide describe it. Adding its role-table row was measured to exceed the capsule budget in Worker W4."
+  },
+  "applicability": "The explainer-browser command, the two pages that describe it, and its exclusion from the role command table.",
+  "conditions": [
+    "explainer-browser is a registered public command included in UNDOCUMENTED_COMMANDS."
+  ],
+  "exclusions": [
+    "Other public commands outside UNDOCUMENTED_COMMANDS require a complete row in the role command table."
+  ],
+  "id": "INV-Q3GMWZ",
+  "origin": {
+    "handoff": {
+      "path": "261112-BUG-L1-curator-handoff"
+    },
+    "handoffEntry": "L1-B07",
+    "leaf": "261112-BUG-L1",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The explainer-browser command is told where a person meets it — the install page and the guide — and deliberately has no row in the role instructions' command table, because no role has a step that runs it and that table is a budgeted step detail.",
+  "status": "proposed",
+  "supersedes": []
+}

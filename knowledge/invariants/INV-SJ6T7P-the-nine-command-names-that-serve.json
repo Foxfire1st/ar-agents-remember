@@ -3,12 +3,12 @@
     "criteria": [
       "prevents_costly_mistake"
     ],
-    "justification": "A row for one of the nine in the agents' command table would present that command to every role that reads the table, so the check refuses the row. Refusing a mention would be the opposite mistake: it would fail the three guide lines that tell knowledge-convert to the user of a memory repository cloned before memory_init, so the check requires no mention and refuses none."
+    "justification": "A row for one of the ten in the agents' command table would present that command to every role that reads the table, so the check refuses the row. Refusing a mention would be the opposite mistake: it would fail the three guide lines that tell knowledge-convert to the user of a memory repository cloned before memory_init, so the check requires no mention and refuses none."
   },
-  "applicability": "The nine command names of the set UNDOCUMENTED_COMMANDS, in the instruction consistency check and the CLI parser.",
+  "applicability": "The ten command names of the set UNDOCUMENTED_COMMANDS, in the instruction consistency check and the CLI parser.",
   "conditions": [
     "The names are registered commands.",
-    "The check refuses no mention of them: three lines of two guide pages name knowledge-convert.",
+    "The check refuses no mention of them: two guide pages name knowledge-convert in three lines, and the install page and the guide name explainer-browser.",
     "The check requires no documentation row and no mention for them.",
     "The check refuses a row for one of them in the agents' command table."
   ],
@@ -27,9 +27,9 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The nine command names of the set UNDOCUMENTED_COMMANDS are registered commands outside the agents' command table: the consistency check requires no row and no mention for them and refuses a row for one of them in that table. One of them, knowledge-convert, is told in three lines of two guide pages, for a memory repository that was cloned before memory_init.",
+  "statement": "The ten command names of the set UNDOCUMENTED_COMMANDS are registered commands outside the agents' command table: the consistency check requires no row and no mention for them and refuses a row for one of them in that table. knowledge-convert is told in three lines of two guide pages, for a memory repository that was cloned before memory_init; explainer-browser is told on the install page and in the guide, because a person at the installation runs it and no role has a step for it.",
   "status": "proposed",
   "supersedes": []
 }

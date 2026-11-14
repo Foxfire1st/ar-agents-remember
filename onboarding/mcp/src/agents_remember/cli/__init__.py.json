@@ -21,12 +21,12 @@
       ]
     },
     "2": {
-      "note": "The umbrella entrypoint dispatches subcommands for this package. Anchor: `main`",
+      "note": "The umbrella entrypoint dispatches subcommands for this package. Anchor: `main`\n\nAnchor: `main`",
       "targets": [
         {
           "anchor": {
-            "blob": "6f3a69cae0b8febac949097f08a925389a945baa",
-            "content": "sha256:c3265ddb8c210f72aa1356bda0f44001e43cd5f72960b694cb536b1b264119cc",
+            "blob": "4a52f1812409904220d810a98e25e5c99c820300",
+            "content": "sha256:dd3cbee6c156893b2b6399dd9034645f4b0bff80665fe0c0166160306114f43d",
             "locator": {
               "kind": "file"
             },

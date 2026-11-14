@@ -16,6 +16,13 @@ An authored claim map is admitted and carried into the published revision rather
 
 The obligation above is the whole of what this file must keep true; the route account says what the surrounding surface promises.
 
+- An autouse fixture declares the browser present for every case in this file, because these cases exercise the authored claims and their publication; the first fetch and its announcement have their own suites.
+
 ## Evidence
+
+
+
+- The suite starts from an installation whose browser is present. [2]
+
 
 - An authored claim map is admitted and carried into the published revision rather than rewriting the evidence the page was generated from, and readiness checks it against that input. [1]

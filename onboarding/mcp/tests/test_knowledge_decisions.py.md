@@ -104,5 +104,4 @@ No cross-repo boundary is crossed by this file.
 - Reordering preserves option-text identity for reconsideration links, with an independently misbound-index control; the assertions filter R14. [14]
 
 
-
 - The lane row.  Anchor: "mcp/tests/test_knowledge_decisions.py" [12]

@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f88418b0fe3d703cced3ee78de75be177fce2af",
+            "blob": "6999197d9e93d7080861dcf228988a9100c46e50",
             "content": "sha256:9e148b77602a2a99d63cf67a9c9b59e30bce0fba53aa906f22af376fd43e098d",
             "locator": {
-              "end": 347,
+              "end": 368,
               "kind": "line_range",
-              "start": 330
+              "start": 351
             }
           },
           "kind": "code"
@@ -24,12 +24,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f88418b0fe3d703cced3ee78de75be177fce2af",
-            "content": "sha256:9cf5f1feb45833c54f7d3c84880e17f19bde7a55835d752339b293f604a76503",
+            "blob": "6999197d9e93d7080861dcf228988a9100c46e50",
+            "content": "sha256:4b51eee548663d4b7c0e7962648b7320025f887eb5047f0f0bd45da057c9ca4c",
             "locator": {
-              "end": 1179,
-              "kind": "line_range",
-              "start": 795
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -41,12 +39,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f88418b0fe3d703cced3ee78de75be177fce2af",
+            "blob": "6999197d9e93d7080861dcf228988a9100c46e50",
             "content": "sha256:4d3006dddf1634e6cd2c768545093d17c82a46a0aee7cf8ab36a3b866724ce79",
             "locator": {
-              "end": 1179,
+              "end": 1236,
               "kind": "line_range",
-              "start": 866
+              "start": 923
             }
           },
           "kind": "code"
@@ -58,12 +56,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f88418b0fe3d703cced3ee78de75be177fce2af",
+            "blob": "6999197d9e93d7080861dcf228988a9100c46e50",
             "content": "sha256:43c367b514ed40ba2d5623b5593df7bd5ce4e74312281f6bba46b1de26aad0f5",
             "locator": {
-              "end": 962,
+              "end": 1019,
               "kind": "line_range",
-              "start": 953
+              "start": 1010
             }
           },
           "kind": "code"
@@ -75,12 +73,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f88418b0fe3d703cced3ee78de75be177fce2af",
+            "blob": "6999197d9e93d7080861dcf228988a9100c46e50",
             "content": "sha256:ab7d96ea39ea830ab17402fcde00b8d7e3f620e10e54a08338c8a645f6f2c4c8",
             "locator": {
-              "end": 1146,
+              "end": 1203,
               "kind": "line_range",
-              "start": 1117
+              "start": 1174
             }
           },
           "kind": "code"
@@ -92,12 +90,72 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f88418b0fe3d703cced3ee78de75be177fce2af",
+            "blob": "6999197d9e93d7080861dcf228988a9100c46e50",
             "content": "sha256:63eeefb2805e43aa24ce9560ff34266b572024c487d79fcbe83538eaa07a82e4",
             "locator": {
-              "end": 1174,
+              "end": 1231,
               "kind": "line_range",
-              "start": 1151
+              "start": 1208
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The sentence before the first fetch is parsed from the state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6999197d9e93d7080861dcf228988a9100c46e50",
+            "content": "sha256:0468bb95899d07187da02662a5c20b2a75bb9ab9a23e67072da7ed6be1c06854",
+            "locator": {
+              "kind": "symbol",
+              "name": "readBrowserNotice"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The last render's failure is parsed from the state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6999197d9e93d7080861dcf228988a9100c46e50",
+            "content": "sha256:cf85eec27173d9a1d1b456e8f89e13e66f117b25841307055099b781e5f0c659",
+            "locator": {
+              "kind": "symbol",
+              "name": "readLastRender"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The state's answer carries both records.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6999197d9e93d7080861dcf228988a9100c46e50",
+            "content": "sha256:44ffe716d8eb224f4790b1e6f89b5444f319e62baf5e2972bc5a379abd0f283b",
+            "locator": {
+              "kind": "symbol",
+              "name": "readBrowserAnswers"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6999197d9e93d7080861dcf228988a9100c46e50",
+            "content": "sha256:4f26c52eeabe93550756d4889ccb9be3c13453f77b46506190d49e4b09c2b917",
+            "locator": {
+              "end": 865,
+              "kind": "line_range",
+              "start": 865
             }
           },
           "kind": "code"

@@ -98,5 +98,4 @@ No cross-repo boundary is crossed by this file.
 - Route-chain walks keep public outcomes and obtain complete domain-unit rows and continuations.
 
 
-
 - The lane row.  Anchor: "mcp/tests/test_knowledge_route_chain.py" [12]

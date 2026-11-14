@@ -1,5 +1,24 @@
 {
   "path": "mcp/tests/test_paseo_single_path.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "3fbc466472ad969f11c207a3a8a45ca5d36009ba",
+        "content": "sha256:1722d22b7eb7a4230a1f1caa8a2bbd3670687b1fd0913477826a363fd35a1464",
+        "locator": {
+          "kind": "symbol",
+          "name": "SinglePathTests.test_only_the_bridge_and_the_runtime_commands_reach_paseo"
+        }
+      },
+      "facet": "The tree scan finds Paseo only in the bridge and the runtime commands, so the browser fetch adds no second path to it.",
+      "id": "PRF-E486A6",
+      "invariant": "INV-T0Y3RS",
+      "origin": {
+        "handoffEntry": "L1-B04",
+        "leaf": "261112-BUG-L1"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {

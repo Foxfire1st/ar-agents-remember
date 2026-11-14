@@ -64,7 +64,6 @@ The adapter reuses the route logic; it adds only argument handling and printing.
 
 - Reading, rendering, unknown families and the exit status. [4]
 
-- The subcommand is registered. [5]
 
 - The command offers the suggestion and writes nothing. [6]
 
@@ -74,3 +73,6 @@ The adapter reuses the route logic; it adds only argument handling and printing.
 No meaningful cross-repo references found: the command reads one memory working tree and one code checkout, both named by the caller.
 
 No cross-repo boundary is crossed by this file.
+
+
+- The subcommand is registered. [5]

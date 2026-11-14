@@ -418,5 +418,4 @@ because the rows name modules that only exist once L8 and L9 have landed.
 - The operational triple's declared home, and the reason it is a channel of the response's own contract.  Anchor: `nextArgs` [36]
 
 
-
 - The lane manifest declares test_workflow_chain_guidance.py in unit-regression; membership selects evidence and establishes no invocation. [35]
