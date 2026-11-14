@@ -1,0 +1,211 @@
+{
+  "path": "mcp/src/agents_remember/canvas/explainer_browser.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "eb15c8f953dacb85aa2b7a13e76144c934012484",
+        "content": "sha256:3a5f86705e1c150d5e01f1954d43d82c4f5e24102cb336eb501443758c442ed6",
+        "locator": {
+          "kind": "symbol",
+          "name": "BROWSER_NOTICE"
+        }
+      },
+      "id": "RLZ-94K77X",
+      "invariant": "INV-PDRZGD",
+      "origin": {
+        "handoffEntry": "L1-B02",
+        "leaf": "261112-BUG-L1"
+      },
+      "rationale": "the sentence the page draws, kept in one place beside the folder it names",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "eb15c8f953dacb85aa2b7a13e76144c934012484",
+        "content": "sha256:9475a4654574104d3c9dd1c00970a25ef120a7575736f616e76af52c67c97cf5",
+        "locator": {
+          "kind": "symbol",
+          "name": "run_bounded"
+        }
+      },
+      "id": "RLZ-9HKR40",
+      "invariant": "INV-T0Y3RS",
+      "origin": {
+        "handoffEntry": "L1-B04",
+        "leaf": "261112-BUG-L1"
+      },
+      "rationale": "the one bounded child, with the kernel's environment rule and Playwright's names for that child alone",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "eb15c8f953dacb85aa2b7a13e76144c934012484",
+        "content": "sha256:23afc4198ab9c4c91be9cb0cb51f084c072bfde09d08a731d332feb33914d482",
+        "locator": {
+          "kind": "symbol",
+          "name": "ensure"
+        }
+      },
+      "id": "RLZ-RDEBZZ",
+      "invariant": "INV-RWH9W9",
+      "origin": {
+        "handoffEntry": "L1-B01",
+        "leaf": "261112-BUG-L1"
+      },
+      "rationale": "the one place that decides the fetch, its folder and its atomic placement",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "eb15c8f953dacb85aa2b7a13e76144c934012484",
+        "content": "sha256:8ba37e124a9dda0b7ff3b5c8d5c2452400b850ae740c925dfd1da6a0cf566f18",
+        "locator": {
+          "kind": "symbol",
+          "name": "browser_missing"
+        }
+      },
+      "id": "RLZ-RQ8HA2",
+      "invariant": "INV-J3FBTV",
+      "origin": {
+        "handoffEntry": "L1-B06",
+        "leaf": "261112-BUG-L1"
+      },
+      "rationale": "the named module is consulted before the product's folder, so a refusal can be answered without a fetch",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "eb15c8f953dacb85aa2b7a13e76144c934012484",
+        "content": "sha256:c9918bbb2b4f371ee2e295df581f362b6e18a4ab351f4047d7b8918cc7aca4d2",
+        "locator": {
+          "kind": "symbol",
+          "name": "PLAYWRIGHT_VERSION"
+        }
+      },
+      "id": "RLZ-ZE347S",
+      "invariant": "INV-4FR86X",
+      "origin": {
+        "handoffEntry": "L1-B05",
+        "leaf": "261112-BUG-L1"
+      },
+      "rationale": "the version the fetch pins and the checkout pins, so both name one pair",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The module and its browser live in one product-owned folder under the user's data home.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb15c8f953dacb85aa2b7a13e76144c934012484",
+            "content": "sha256:5956f23e99efca1890ad3b186aa9e92e191e3e8519023928769f40fbdca25aa2",
+            "locator": {
+              "kind": "symbol",
+              "name": "home"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A first fetch installs the pinned module and its Chromium into staging and moves the folder in whole, under one lock.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb15c8f953dacb85aa2b7a13e76144c934012484",
+            "content": "sha256:f881223e0f8a1a84c0b07ed3f0aa3593b1f704806b3415814f38fd3509820628",
+            "locator": {
+              "kind": "symbol",
+              "name": "_place"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The fetch runs the product's own Node and npm and refuses by name when that Node is not installed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb15c8f953dacb85aa2b7a13e76144c934012484",
+            "content": "sha256:ba6b620e1e0b2180592798c5e5d3108ef36dbef6dc0b747277ea3dae73565a50",
+            "locator": {
+              "kind": "symbol",
+              "name": "_product_runtime"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A failed fetch refuses with what is missing and the command that gets it.\n\nAnchor: \"agents-remember explainer-browser --fetch\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb15c8f953dacb85aa2b7a13e76144c934012484",
+            "content": "sha256:27aa487d106d2285d823c65e7b55d18bfcaa7b1e06cb48a1dbdcddae599f0e85",
+            "locator": {
+              "end": 459,
+              "kind": "line_range",
+              "start": 450
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A module named in AR_PLAYWRIGHT is used as given, and an absent one refuses before any fetch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb15c8f953dacb85aa2b7a13e76144c934012484",
+            "content": "sha256:8ba37e124a9dda0b7ff3b5c8d5c2452400b850ae740c925dfd1da6a0cf566f18",
+            "locator": {
+              "kind": "symbol",
+              "name": "browser_missing"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "One Playwright version is the pin the checkout lock and the fetch share.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb15c8f953dacb85aa2b7a13e76144c934012484",
+            "content": "sha256:c9918bbb2b4f371ee2e295df581f362b6e18a4ab351f4047d7b8918cc7aca4d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "PLAYWRIGHT_VERSION"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The fetch's child runs bounded in the canvas tier, and a missing or timed-out child is an answer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb15c8f953dacb85aa2b7a13e76144c934012484",
+            "content": "sha256:9475a4654574104d3c9dd1c00970a25ef120a7575736f616e76af52c67c97cf5",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_bounded"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

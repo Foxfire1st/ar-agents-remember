@@ -1,0 +1,26 @@
+{
+  "path": "docs/guides/review-page-and-explainer.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a514693893bd5c67d3c3ea3e2c73d8b64d4a16b9",
+        "content": "sha256:239d8736693b0d677a23a006f7ec1fbcd590ca8b81c2195abc450e7b13ea9a4b",
+        "locator": {
+          "end": 528,
+          "kind": "line_range",
+          "start": 520
+        }
+      },
+      "id": "RLZ-A0P8QT",
+      "invariant": "INV-Q3GMWZ",
+      "origin": {
+        "handoffEntry": "L1-B07",
+        "leaf": "261112-BUG-L1"
+      },
+      "rationale": "The guide shows --fetch and says the no-flag command reports what is present, what is missing and where.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

@@ -134,7 +134,6 @@ No meaningful cross-repo references found.
 
 
 
-- The lane registration. Source caption: `test_review_family_member_sources` [34]
 
 
 - The shared-fixture consumer registration.
@@ -147,4 +146,5 @@ No meaningful cross-repo references found.
 Current source: The current lifecycle catalog declares test_review_family_member_sources.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/anchor_fixture_models.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_rows_test_support.py, mcp/tests/read_scope_test_support.py. This is the complete declared five-artifact set; it establishes no invocation or earlier occurrence/identity-recovery event.
 
 
+- The lane registration. Source caption: `test_review_family_member_sources` [34]
 - The current lifecycle catalog declares test_review_family_member_sources.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/anchor_fixture_models.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_rows_test_support.py, mcp/tests/read_scope_test_support.py. This is the complete declared five-artifact set; it establishes no invocation or earlier occurrence/identity-recovery event. [35]

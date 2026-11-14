@@ -92,7 +92,4 @@ No meaningful cross-repo references found.
 > Retained earlier citation wording: - The lane registration.  Anchor: "mcp/tests/test_read_anchor_memo.py"
 
 
-
-
-
 - The lane registration.  Anchor: "mcp/tests/test_read_anchor_memo.py" [9]

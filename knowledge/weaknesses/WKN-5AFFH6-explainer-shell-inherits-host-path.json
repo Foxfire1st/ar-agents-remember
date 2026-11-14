@@ -1,0 +1,36 @@
+{
+  "anchor": {
+    "blob": "d6e90d156860c962fff038b03cb9b5271791b2a3",
+    "content": "sha256:c7a6dde00df7e3e295aa2c9cb7679c67d075358b17f44fee6333c2cc42969260",
+    "locator": {
+      "kind": "symbol",
+      "name": "_launch_env"
+    },
+    "path": "mcp/src/agents_remember/cli/paseo_explainer_host.py"
+  },
+  "id": "WKN-5AFFH6",
+  "kind": "fault",
+  "measurement": {
+    "commit": "45acbc7b08da94028dcd373183bcb12e8c6a5eaf",
+    "date": "2026-11-13",
+    "how": "the walk's seat resolved agents-remember to a developer wheel (3.0.0rc8) outside its own installation until the provider's env PATH named its own venv bin first",
+    "number": 1,
+    "unit": "seat"
+  },
+  "origin": {
+    "handoff": {
+      "path": "261112-BUG-L1-curator-handoff"
+    },
+    "handoffEntry": "L1-B08-inherited-path",
+    "leaf": "261112-BUG-L1",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "261112_bug-fixes-and-issue-tracking/01_package-installation-shows-the-explainers-pages.json"
+  },
+  "state": "open",
+  "statement": "The explainer seat inherits the host process's PATH, so its shell may resolve agents-remember, node or npm to another installation than the one that started it."
+}

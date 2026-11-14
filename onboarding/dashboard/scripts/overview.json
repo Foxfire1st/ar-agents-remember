@@ -180,27 +180,32 @@
       ]
     },
     "5": {
-      "note": "Vitest collects the route's script tests. The build chain runs the bundle checker, which fails above the default 32 MB raw-byte budget (or `AR_DASHBOARD_BUNDLE_BUDGET_BYTES`), and a successful coverage run writes `dashboard-suite-result.json` with the pass fact, the coverage path and rounded coverage totals.",
+      "note": "Vitest collects `scripts/**/*.test.mjs` alongside source unit tests; the Playwright e2e specs are outside this collection.",
       "targets": [
         {
           "anchor": {
             "blob": "3e11c5781a563030ed73ad70c65b5c1e87a440b6",
-            "content": "sha256:fdb83473d75d8fc70dd87e307f7de7895edf7ea0bdeaef4967c00ef2fe3fa4ea",
+            "content": "sha256:1589566b403687c6a77d09981a6116dbbddbedc6c9a496dab156fbb63dd2fe4c",
             "locator": {
-              "end": 53,
+              "end": 54,
               "kind": "line_range",
-              "start": 53
+              "start": 51
             },
             "path": "dashboard/vitest.config.ts"
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "6": {
+      "note": "The build command runs the emitted-byte budget checker after compilation. A successful coverage command runs the result writer, which records passed:true, a coverage path and optional rounded totals.",
+      "targets": [
         {
           "anchor": {
-            "blob": "e640511ffad3eb7e67c1de5b38581748a9214a53",
-            "content": "sha256:99faebf32a5ae25404b4ad8052eda09db4dd65543263cde07bacfd46392f6015",
+            "blob": "97c7a860a50e63671a27f4429a701be2ce4a0f79",
+            "content": "sha256:ea9143466f86ed6a6c5dead877c79686ee3b39eea9290c2e2dd610ddd63d3e4b",
             "locator": {
-              "end": 24,
+              "end": 21,
               "kind": "line_range",
               "start": 6
             },

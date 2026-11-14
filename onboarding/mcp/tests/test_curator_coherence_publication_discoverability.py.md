@@ -140,5 +140,4 @@ repository's own model and publication route over a stubbed observation.
 No meaningful cross-repo references found.
 
 
-
 - The lane row this module was appended to.  Anchor: "mcp/tests/test_curator_coherence_publication_discoverability.py" [16]

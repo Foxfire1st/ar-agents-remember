@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "15eece2f9931c0edd4589e0e544c46db6b6e4317",
-    "commit": "bb2d0b3725aa01485e820692b17e130fb65b1669",
+    "codeTree": "c82e91894677bcfd06042e23a6016cf1f5317c11",
+    "commit": "ed91a4c8436a72d1fe895f0ee464340889e6aff3",
     "role": "curator",
-    "statement": "The install index still names the same five steps and harness pages; it states no version and no sprint requirement.",
-    "task": "261112-RSM-L1",
+    "statement": "The install page gains one section naming the Explanation tab as the surface where the browser's fetch and a failed fetch are said, the command that does the same fetch, and macOS as not measured for this path.",
+    "task": "261112-BUG-L1",
     "uncommitted": true
   },
   "document": "docs/install/README.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {

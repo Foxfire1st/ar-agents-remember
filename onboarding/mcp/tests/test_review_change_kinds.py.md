@@ -99,7 +99,4 @@ The index-only outline case now includes `comparison` in the exact serialized fi
 - The index-only outline preserves exact catalogue fields including comparison. [13]
 
 
-
-
-
 - Its lane row.  Anchor: "mcp/tests/test_review_change_kinds.py" [7]

@@ -411,12 +411,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c5329d6566f5482380dd6d536b28a182142711dc",
-            "content": "sha256:06a67c632b602d07cfac5d4d9d68bc41b1ccc49755c8de3da23a46a236adaa70",
+            "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
+            "content": "sha256:536665e5e5cb55daa96514c12b8fd5198e20554a394b810d3ec7df91043e7ab8",
             "locator": {
-              "end": 750,
-              "kind": "line_range",
-              "start": 750
+              "kind": "file"
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -481,12 +479,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c5329d6566f5482380dd6d536b28a182142711dc",
-            "content": "sha256:06a67c632b602d07cfac5d4d9d68bc41b1ccc49755c8de3da23a46a236adaa70",
+            "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
+            "content": "sha256:536665e5e5cb55daa96514c12b8fd5198e20554a394b810d3ec7df91043e7ab8",
             "locator": {
-              "end": 750,
-              "kind": "line_range",
-              "start": 750
+              "kind": "file"
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

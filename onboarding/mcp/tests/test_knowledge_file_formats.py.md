@@ -76,5 +76,4 @@ No meaningful cross-repo references found.
 No cross-repo boundary is exercised.
 
 
-
 - Lane registration.  Anchor: "mcp/tests/test_knowledge_file_formats.py" [6]

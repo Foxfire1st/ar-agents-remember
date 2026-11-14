@@ -74,8 +74,21 @@
   ],
   "references": {
     "1": {
-      "note": "the hand-over through the host's provider options, and the record an ordinary start keeps when the host map is unread. The native presenter launch and its duplicate confinement cases are removed; `test_explainer_host.py` owns the confined-seat refusal cases. Settings-role launch resolution is exercised through the catalog owner.\n\nAnchor: `test_the_presenter_launch_states_no_extra_arguments`",
+      "note": "Settings-role launch resolution is exercised through the catalog owner; the explainer-host tests permit launch despite host extra arguments and an unreadable daemon configuration.",
       "targets": [
+        {
+          "anchor": {
+            "blob": "46a66f2e995584dc5753e574eb451379fd643573",
+            "content": "sha256:5589a062a0131069d27a1db2b7237611c1b4fb83ea41289d1ab023986803ff38",
+            "locator": {
+              "end": 343,
+              "kind": "line_range",
+              "start": 309
+            },
+            "path": "mcp/tests/test_explainer_host.py"
+          },
+          "kind": "test"
+        },
         {
           "anchor": {
             "blob": "e3acb29eee3115294460b0119f3581fb1c571758",

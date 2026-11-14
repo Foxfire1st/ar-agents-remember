@@ -157,16 +157,14 @@
       ]
     },
     "16": {
-      "note": "The lane row.  Anchor: \"mcp/tests/test_knowledge_currentness.py\"",
+      "note": "The lane row.  Anchor: \"mcp/tests/test_knowledge_currentness.py\"\n\nAnchor: \"mcp/tests/test_knowledge_currentness.py\"",
       "targets": [
         {
           "anchor": {
-            "blob": "c5329d6566f5482380dd6d536b28a182142711dc",
-            "content": "sha256:ea533393f6ab58b54c02b6526a92b2a9d597d162f1fd77dbfe7a1fbceab5cbb8",
+            "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
+            "content": "sha256:536665e5e5cb55daa96514c12b8fd5198e20554a394b810d3ec7df91043e7ab8",
             "locator": {
-              "end": 221,
-              "kind": "line_range",
-              "start": 221
+              "kind": "file"
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

@@ -120,7 +120,4 @@ No cross-repository behavior is implemented or measured in this file.
 No meaningful cross-repo references found.
 
 
-
-
-
 - The lane manifest registers mcp/tests/test_terminal_preview_expectation.py in unit-regression. Membership selects evidence and does not establish execution. [13]

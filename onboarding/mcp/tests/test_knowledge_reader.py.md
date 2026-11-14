@@ -126,5 +126,4 @@ No cross-repo boundary is crossed by this file.
 - Published selection reads uncommitted memory without writes and pins only clean state; live-leaf selection names excluded uncommitted code; partial-index and missing-code-tree notices remain covered. The hexadecimal-name selection test is absent. [38]
 
 
-
 - The lane row.  Anchor: `test_knowledge_reader` [40]

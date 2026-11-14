@@ -121,6 +121,8 @@ No meaningful cross-repository reference applies to this repository-owned struct
 
 
 
-- The lane this module is registered in. Source caption: "mcp/tests/test_pause_is_not_publication.py" [8]
 
 - The route this guard exists to keep the stop away from. Anchor: `worktree_checkpoint_landing` [6]
+
+
+- The lane this module is registered in. Source caption: "mcp/tests/test_pause_is_not_publication.py" [8]

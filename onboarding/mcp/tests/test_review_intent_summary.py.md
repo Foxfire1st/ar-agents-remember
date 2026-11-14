@@ -98,7 +98,4 @@ The route fixture's summary callback accepts the optional comparison-number argu
 - The comparison-shaped callback retains counted/unavailable 200 and unwired 503 assertions. [25]
 
 
-
-
-
 - The lane registration. Source caption: `test_review_intent_summary` [23]

@@ -163,7 +163,6 @@ Current source: The literal PUBLIC_TOOLS source tuple contains 44 names. The con
 
 
 
-- The lane manifest registers mcp/tests/test_tool_response_conformance.py in architecture-fitness. Membership selects evidence and does not establish execution. [20]
 
 - The fixtures' models are the registry's own objects. Anchor: `test_the_models_these_fixtures_validate_are_the_registered_ones` [3]
 - Every registered model is strict or declared flexible, and the split is derived twice — from the declared base class and from each model's own `extra` config — so the two derivations must agree by name. Anchor: `test_every_registered_model_is_strict_or_declared_flexible` [4]
@@ -174,3 +173,6 @@ Current source: The literal PUBLIC_TOOLS source tuple contains 44 names. The con
 - The literal PUBLIC_TOOLS source tuple contains 44 names. The conformance test source pins ROSTER_SIZE = 44, TOOL_MODULE_COUNT = 14 and TOOL_HANDLER_COUNT = 46 and derives strict/flexible model sets from base classes and extra configuration. These are literal declarations and test assertions, not a fresh module/handler collection or execution result. [22]
 
 - Registered TaskDocResponse validation distinguishes available rows carrying requirements (including an empty list) from unavailable rows without them. Empty sibling populations are valid; unknown or missing states, incompatible requirements and extra fields fail. The description oracle requires the literal Kind: subTask or master. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [23]
+
+
+- The lane manifest registers mcp/tests/test_tool_response_conformance.py in architecture-fitness. Membership selects evidence and does not establish execution. [20]

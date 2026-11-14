@@ -52,6 +52,8 @@ Current source: The current test asserts TaskDocResponse declares neither contra
 
 
 
-- The lane manifest registers mcp/tests/test_next_step_address_binding.py in unit-regression. Membership selects evidence and does not establish execution. [12]
 
 - The current test asserts TaskDocResponse declares neither contractPath nor enclosurePath and bound_next_step returns None for a foreign-address hint on that response. Its docstring records the earlier L10 rename separately; these source assertions establish no new execution or historical repair event. [11]
+
+
+- The lane manifest registers mcp/tests/test_next_step_address_binding.py in unit-regression. Membership selects evidence and does not establish execution. [12]

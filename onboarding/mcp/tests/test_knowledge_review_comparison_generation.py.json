@@ -36,29 +36,14 @@
       ]
     },
     "27": {
-      "note": "The lane row this module was registered under, inside the array whose own key declares the classification.  Anchor: `test_knowledge_review_comparison_generation`",
+      "note": "The lane row this module was registered under, inside the array whose own key declares the classification.  Anchor: `test_knowledge_review_comparison_generation`\n\nAnchor: `test_knowledge_review_comparison_generation`",
       "targets": [
         {
           "anchor": {
-            "blob": "c5329d6566f5482380dd6d536b28a182142711dc",
-            "content": "sha256:06825f71b027f3b49cb717ee9df6a258f90b94a43b1594a0cefab0ef51ea5b50",
+            "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
+            "content": "sha256:536665e5e5cb55daa96514c12b8fd5198e20554a394b810d3ec7df91043e7ab8",
             "locator": {
-              "end": 5,
-              "kind": "line_range",
-              "start": 5
-            },
-            "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "c5329d6566f5482380dd6d536b28a182142711dc",
-            "content": "sha256:8b2f74e3b128e63ee59f6931d5d72751705a6ffc61e56d7ff1719aa7f74df984",
-            "locator": {
-              "end": 255,
-              "kind": "line_range",
-              "start": 255
+              "kind": "file"
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

@@ -55,7 +55,6 @@ Scenario reset uses the canonical dashboard-store reset rather than a second res
 - Wave grouping and segment/lump construction retain producer order; each box uses the qualified task entry for its task word and accessible name, independently of the dependency badge. [1]
 
 
-- Responsive grid and ellipsis declarations are unchanged contracts; the dependency recipe is ready/waiting/cycle only and the proposed graph dependency remains undeclared. [2]
 
 
 - Current shell/component sources define reachability, graphless queue access, canonical reset, entry-owned words/tones with live updates and qualified missing entries, plus responsive declarations; no Curator execution is claimed. [4]
@@ -70,3 +69,5 @@ Scenario reset uses the canonical dashboard-store reset rather than a second res
 
 
 - Only ready/waiting or an explicit cycle become dependency badges; absent qualified task entries have no fallback task word. [8]
+
+- The wave grid declares three columns and a single column at widths of 720px or less. Box titles and leaf lines use ellipsis. The dependency style recipe declares ready, waiting and cycle states. The dashboard manifest declares no @xyflow/react dependency. [2]

@@ -1,7 +1,7 @@
 {
   "anchor": {
-    "blob": "6c13d6defc09364b2088c4232b31b6f3d492a66b",
-    "content": "sha256:ede406c1afd1ea24a6de64a6a82a175cb0151adee666953453a48e08b020feb0",
+    "blob": "f79b28fc4c7cf5d9206befb180e5c3f05ec7f07b",
+    "content": "sha256:e0afe49eb54ec248df67c0a4de8a51944b35bee8b6665e11d3cb3e15444910c2",
     "locator": {
       "kind": "file"
     },
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-weakness/v1",
   "seen": {
     "role": "worker",

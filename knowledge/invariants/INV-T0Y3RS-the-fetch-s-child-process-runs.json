@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The single-path test scans the tree and proves that only the bridge and the runtime commands name Paseo, so a runner of the fetch's own is what keeps that true."
+  },
+  "applicability": "The child processes the browser fetch runs.",
+  "conditions": [
+    "The fetch runs in the canvas tier, not through the serving host adapter."
+  ],
+  "exclusions": [
+    "The host adapter's own bridge calls, which keep Paseo's command names."
+  ],
+  "id": "INV-T0Y3RS",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_paseo_single_path.py — 4 passed, 146 subtests; serving/paseo/paseo_command.py identical to the base commit"
+      ],
+      "path": "261112-BUG-L1-curator-handoff"
+    },
+    "handoffEntry": "L1-B04",
+    "leaf": "261112-BUG-L1",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The fetch's child process runs in the canvas tier through a runner of its own, so Paseo's command names stay in the host adapter and the browser module imports nothing from the serving Paseo package.",
+  "status": "proposed",
+  "supersedes": []
+}

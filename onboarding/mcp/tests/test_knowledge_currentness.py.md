@@ -113,5 +113,4 @@ No meaningful cross-repo references found: every case works in its own temporary
 No cross-repo boundary is crossed by this file.
 
 
-
 - The lane row.  Anchor: "mcp/tests/test_knowledge_currentness.py" [16]

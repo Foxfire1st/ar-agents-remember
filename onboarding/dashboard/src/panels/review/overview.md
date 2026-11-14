@@ -12,7 +12,7 @@ What governs the look is the memory layer's design text, not this card: [`system
 
 ## Hot Path Summary
 
-Start at ReviewSurface for the question-bound read cycle, retained comparison frame and cache. reading/useReviewPage composes the shared model, selection, walk and scroll owners. changeSetOrder builds the pure model; tree/ReviewTree renders its compact navigation and reading/ReadingColumn renders its content. The shell supplies the leaf’s retained explainer column outside this route, defaulting to its placeholder while no seat exists. A landed leaf's review opens the comparison its enclosure records as delivered; the page keeps that default apart from the highest recorded number and states once when the comparison on screen is not that pair.
+Start at ReviewSurface for the question-bound read cycle, retained comparison frame and cache. reading/useReviewPage composes the shared model, selection, walk and scroll owners. changeSetOrder builds the pure model; tree/ReviewTree renders its compact navigation and reading/ReadingColumn renders its content. The shell supplies the leaf’s retained explainer column outside this route, defaulting to its placeholder while no seat exists. A landed leaf's review opens the comparison its enclosure records as delivered; the page keeps that default apart from the highest recorded number and states once when the comparison on screen is not that pair. The Explanation tab's own first line, and its "No explanation yet" block when no page exists, say the explainer's browser sentence while a first fetch is pending and the last failed fetch's words once it failed — both read from the state, with no new control.
 
 ## Construction And Ownership
 

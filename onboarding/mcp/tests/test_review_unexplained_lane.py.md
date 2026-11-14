@@ -118,7 +118,4 @@ No cross-repo boundary is crossed by this file.
 > Retained earlier citation wording: - The module's lane row.  Anchor: "mcp/tests/test_review_unexplained_lane.py"
 
 
-
-
-
 - The module's lane row.  Anchor: "mcp/tests/test_review_unexplained_lane.py" [15]

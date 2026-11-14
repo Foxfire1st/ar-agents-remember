@@ -73,5 +73,4 @@ No cross-repo boundary is crossed by this file.
 - Public diff outcomes name their whole report; integrity outcomes remain distinct from marked domain-unit details.
 
 
-
 - The lane row.  Anchor: `test_knowledge_index_surfaces` [13]

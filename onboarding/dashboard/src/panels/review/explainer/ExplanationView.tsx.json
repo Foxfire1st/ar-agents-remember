@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "31e67c873dfef47cf8000cdc33df3d9f2474ee07",
+        "blob": "7807e8add8a202e433046e4195e5431ac17a9d3f",
+        "content": "sha256:1e5f73c5034a5b0d7053883c192a7aaf4d5f0daae2f2c688a80c9f5cd01748a9",
+        "locator": {
+          "kind": "symbol",
+          "name": "failureLine"
+        }
+      },
+      "id": "RLZ-AV92V5",
+      "invariant": "INV-YMJFC9",
+      "origin": {
+        "handoffEntry": "L1-B03",
+        "leaf": "261112-BUG-L1"
+      },
+      "rationale": "the words the user reads, drawn from the state rather than a new control",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "7807e8add8a202e433046e4195e5431ac17a9d3f",
         "content": "sha256:61accd8d6201ca0a20a37dbb1cf4f60f3f138de62dc0858a0027dd9a7b680e23",
         "locator": {
           "kind": "symbol",
@@ -21,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "31e67c873dfef47cf8000cdc33df3d9f2474ee07",
-        "content": "sha256:bc5bfb15293cf5e70c3f16f248e17855e848f611edc57a603f0c88321368e044",
+        "blob": "7807e8add8a202e433046e4195e5431ac17a9d3f",
+        "content": "sha256:fdb9f2e2f6f03fd8e5c9f3e2e8a3654476d56f248e895074a5cac77130e9d2ad",
         "locator": {
           "kind": "symbol",
           "name": "ExplanationView"
@@ -34,22 +52,57 @@
         "handoffEntry": "L183-CUR-FE04-saved-reading",
         "leaf": "260928-MIK-L183"
       },
-      "rationale": "Chooses the absent, building, failed, saved and compare bodies and gives each saved side its own standfirst, basis legend and revision frame.",
+      "rationale": "Chooses the reading, unavailable, no-revision, saved and compare bodies; each saved frame receives its revision’s caption, binding, staleness props and FrameMeta.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "7807e8add8a202e433046e4195e5431ac17a9d3f",
+        "content": "sha256:73d1d31983b5fb974c3cfd2e5b1362f66dedc7907d22a9ecd6b19a146c4dafc9",
+        "locator": {
+          "kind": "symbol",
+          "name": "statusLine"
+        }
+      },
+      "id": "RLZ-VC7Y44",
+      "invariant": "INV-YMJFC9",
+      "origin": {
+        "handoffEntry": "L1-B03",
+        "leaf": "261112-BUG-L1"
+      },
+      "rationale": "the same words over an earlier page, so the earlier page is not presented as the answer",
       "role": "presentation"
     }
   ],
   "references": {
     "1": {
-      "note": "The phase chooses between the reading sentence, the named problem, the empty state, the build placeholder and the saved page\n\nAnchor: `function ExplanationBody(`",
+      "note": "The body chooses the initial reading sentence, unreadable card, body without a revision, or retained-revision body.",
       "targets": [
         {
           "anchor": {
-            "blob": "31e67c873dfef47cf8000cdc33df3d9f2474ee07",
-            "content": "sha256:bef8cce278c84fa610ff4efbdb9b834d35e6c5a127d3baf6a5c5fa2503dbf680",
+            "blob": "7807e8add8a202e433046e4195e5431ac17a9d3f",
+            "content": "sha256:a14520e0d595714cf0f30f9b66b6e02d18130afc6fd49c91d58f9eab1ab0bd26",
             "locator": {
-              "end": 692,
+              "end": 464,
               "kind": "line_range",
-              "start": 418
+              "start": 390
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "With no page, the empty block names what is missing and the command.\n\nAnchor: `\"explanation-empty-browser\"`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7807e8add8a202e433046e4195e5431ac17a9d3f",
+            "content": "sha256:eb1209e854e5a23f0fd45d010d8c7cf4b359fbd9eb1498659123098600eecc34",
+            "locator": {
+              "end": 501,
+              "kind": "line_range",
+              "start": 494
             }
           },
           "kind": "code"
@@ -61,12 +114,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "31e67c873dfef47cf8000cdc33df3d9f2474ee07",
-            "content": "sha256:f283575d068add7f2426b21cb471b3e3186f85a58af7c547360776c2e592dd6f",
+            "blob": "7807e8add8a202e433046e4195e5431ac17a9d3f",
+            "content": "sha256:3cbe26ed92e343c3bcd40d8809e23e6218977f745d3d44cbfdbb2c4f465b2c49",
             "locator": {
-              "end": 459,
-              "kind": "line_range",
-              "start": 446
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -78,12 +129,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "31e67c873dfef47cf8000cdc33df3d9f2474ee07",
+            "blob": "7807e8add8a202e433046e4195e5431ac17a9d3f",
             "content": "sha256:d82ca0d0a3201b03d86e7d4ceeb5afa0caaa8def07bc9b1fd7576ad89f0c2848",
             "locator": {
-              "end": 444,
+              "end": 477,
               "kind": "line_range",
-              "start": 433
+              "start": 466
             }
           },
           "kind": "code"
@@ -91,16 +142,15 @@
       ]
     },
     "4": {
-      "note": "The single saved page composes standfirst, legend, one frame, the retired line and the claims\n\nAnchor: `function SingleSavedPage(`",
+      "note": "The single saved page renders one revision frame with FrameMeta, followed by the retirement notice.",
       "targets": [
         {
           "anchor": {
-            "blob": "31e67c873dfef47cf8000cdc33df3d9f2474ee07",
-            "content": "sha256:4e45be94b48674a8e97c05bd60e1d695dce5c2dcbe8d5d3460ad75a416e54369",
+            "blob": "7807e8add8a202e433046e4195e5431ac17a9d3f",
+            "content": "sha256:01fc0bec198f9c3d1424bf993eddf5601e54e49dc777e33e8ec51340c27c5963",
             "locator": {
-              "end": 692,
-              "kind": "line_range",
-              "start": 546
+              "kind": "symbol",
+              "name": "SingleSavedPage"
             }
           },
           "kind": "code"
@@ -112,12 +162,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "31e67c873dfef47cf8000cdc33df3d9f2474ee07",
+            "blob": "7807e8add8a202e433046e4195e5431ac17a9d3f",
             "content": "sha256:9ad51e43a12e4609efcc3d2e57513d25a440c31b0b12ad130c2014be89266e99",
             "locator": {
-              "end": 209,
+              "end": 210,
               "kind": "line_range",
-              "start": 173
+              "start": 174
             }
           },
           "kind": "code"
@@ -129,12 +179,61 @@
       "targets": [
         {
           "anchor": {
-            "blob": "31e67c873dfef47cf8000cdc33df3d9f2474ee07",
+            "blob": "7807e8add8a202e433046e4195e5431ac17a9d3f",
             "content": "sha256:61accd8d6201ca0a20a37dbb1cf4f60f3f138de62dc0858a0027dd9a7b680e23",
             "locator": {
-              "end": 692,
+              "end": 744,
               "kind": "line_range",
-              "start": 658
+              "start": 710
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The panel draws one line for the browser sentence, read from the state.\n\nAnchor: `\"explanation-browser-notice\"`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7807e8add8a202e433046e4195e5431ac17a9d3f",
+            "content": "sha256:8dad43da72a1edf7299fb7218f6f598aa7473856a47ae47bae3a0e4ab6a3b2bf",
+            "locator": {
+              "end": 336,
+              "kind": "line_range",
+              "start": 332
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The failure line names the page below an earlier revision rather than the answer to this request.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7807e8add8a202e433046e4195e5431ac17a9d3f",
+            "content": "sha256:1e5f73c5034a5b0d7053883c192a7aaf4d5f0daae2f2c688a80c9f5cd01748a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "failureLine"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "A last-render failure is omitted from the top-level line without a shown revision; absent a failure, the pending browser announcement can appear with or without a page.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7807e8add8a202e433046e4195e5431ac17a9d3f",
+            "content": "sha256:73d1d31983b5fb974c3cfd2e5b1362f66dedc7907d22a9ecd6b19a146c4dafc9",
+            "locator": {
+              "kind": "symbol",
+              "name": "statusLine"
             }
           },
           "kind": "code"

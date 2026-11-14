@@ -224,7 +224,9 @@ No repository or external-system boundary is proved by this module.
 
 
 
-- The lane row that keeps this module in the default selection. Source caption: "mcp/tests/test_tool_refusal_conformance.py" [16]
 
 - The one `T34` tool the sweep still repairs — `memory_baseline_adopt` — re-exported by the sweep module beside the pin it left. Anchor: `T34_REPAIRED_TOOLS` [13]
 - The sweep whose benign half this module completes, and the world both share. Anchor: `EntryPointWorld` [14]
+
+
+- The lane row that keeps this module in the default selection. Source caption: "mcp/tests/test_tool_refusal_conformance.py" [16]

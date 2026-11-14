@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
-    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
-    "role": "worker",
-    "statement": "This task brought the page in line with the product: its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate, the false ones were corrected, and the page was read whole; 7 rows of the inventory of changes are told here.",
-    "task": "260928-MIK-L97",
+    "codeTree": "c82e91894677bcfd06042e23a6016cf1f5317c11",
+    "commit": "ed91a4c8436a72d1fe895f0ee464340889e6aff3",
+    "role": "curator",
+    "statement": "The feature page now says the explainer's browser is fetched by the product at the first explanation; its link to the guide's browser section and the rest of the page stand.",
+    "task": "261112-BUG-L1",
     "uncommitted": true
   },
   "document": "docs/features.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 6,
+  "revision": 7,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {

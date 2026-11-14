@@ -115,57 +115,18 @@
       ]
     },
     "9": {
-      "note": "The test imports fixture, scenario and runner through e2e_harness-qualified identities from the scripts root and asserts the four governed paths exist; the four e2e lifecycle artifact rows register those harness modules. Reviewer R11, its authoritative identifier correction and its idempotence addendum supply the candidate-bound review evidence; this account claims no execution by its author.",
+      "note": "The lifecycle catalog registers fresh_user_fixture.py, fresh_user_scenario.py, reporting.py and run_fresh_user.py as permanent shared-support artifacts owned by fresh-user-acceptance. Their consumer scope is exact-source. These declarations establish registration, not test invocation or acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "a963d7f4459c6a28a0200331eed5157ee15d375c",
+            "blob": "b8ba51e395bf787def585acaa1fdebea8559f65d",
             "content": "sha256:f5e44188b833ecd2f0bf2b4e6ecbdb61c26720d67c78fe6adebd5193a6c9e290",
             "locator": {
-              "end": 4904,
+              "end": 4906,
               "kind": "line_range",
-              "start": 4829
+              "start": 4831
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "0efc8cc4ef2107ae05cd51f89d2c8949693ddb09",
-            "content": "sha256:7e195c87e6a36e46ccedc444705cf265d35cce4d41df94a93fd32863638b8dd7",
-            "locator": {
-              "end": 197,
-              "kind": "line_range",
-              "start": 193
-            },
-            "path": "mcp/tests/test_fresh_user_harness.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "0efc8cc4ef2107ae05cd51f89d2c8949693ddb09",
-            "content": "sha256:45e9fde04dd3507db32729bf74a83ad27f94aab7b7b7581077ce9cbe833cc19a",
-            "locator": {
-              "end": 86,
-              "kind": "line_range",
-              "start": 47
-            },
-            "path": "mcp/tests/test_fresh_user_harness.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "0efc8cc4ef2107ae05cd51f89d2c8949693ddb09",
-            "content": "sha256:10f6dc6b8b0356fe26c4e37fdabeff4b41709ffc309afd81b0be89850e8d81c1",
-            "locator": {
-              "end": 210,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "mcp/tests/test_fresh_user_harness.py"
           },
           "kind": "test"
         }

@@ -75,12 +75,12 @@
       ]
     },
     "103": {
-      "note": "The current umbrella parser registers converted knowledge authoring and the read-only handoff-check command, and it registers no review-record-comparison command. Anchor: build_parser and _register_knowledge_commands.",
+      "note": "The current umbrella parser registers converted knowledge authoring and the read-only handoff-check command, and it registers no review-record-comparison command.\n\nAnchor: build_parser and _register_knowledge_commands.",
       "targets": [
         {
           "anchor": {
-            "blob": "6f3a69cae0b8febac949097f08a925389a945baa",
-            "content": "sha256:c3265ddb8c210f72aa1356bda0f44001e43cd5f72960b694cb536b1b264119cc",
+            "blob": "4a52f1812409904220d810a98e25e5c99c820300",
+            "content": "sha256:dd3cbee6c156893b2b6399dd9034645f4b0bff80665fe0c0166160306114f43d",
             "locator": {
               "kind": "file"
             },
@@ -4739,11 +4739,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6f3a69cae0b8febac949097f08a925389a945baa",
-            "content": "sha256:9e558da01a53d54790fceb28322c6df46062d4f9cf64f8714e2a3b0a017d7184",
+            "blob": "4a52f1812409904220d810a98e25e5c99c820300",
+            "content": "sha256:dd3cbee6c156893b2b6399dd9034645f4b0bff80665fe0c0166160306114f43d",
             "locator": {
-              "kind": "symbol",
-              "name": "build_parser"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/cli/__main__.py"
           },
@@ -5788,12 +5787,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6f3a69cae0b8febac949097f08a925389a945baa",
-            "content": "sha256:bb18696d259d64016fee4989761364cc24939165e8776f2a56fa25407b61992b",
+            "blob": "4a52f1812409904220d810a98e25e5c99c820300",
+            "content": "sha256:dd3cbee6c156893b2b6399dd9034645f4b0bff80665fe0c0166160306114f43d",
             "locator": {
-              "end": 107,
-              "kind": "line_range",
-              "start": 102
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/cli/__main__.py"
           },
@@ -5937,8 +5934,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6f3a69cae0b8febac949097f08a925389a945baa",
-            "content": "sha256:c3265ddb8c210f72aa1356bda0f44001e43cd5f72960b694cb536b1b264119cc",
+            "blob": "4a52f1812409904220d810a98e25e5c99c820300",
+            "content": "sha256:dd3cbee6c156893b2b6399dd9034645f4b0bff80665fe0c0166160306114f43d",
             "locator": {
               "kind": "file"
             },
@@ -5987,8 +5984,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6f3a69cae0b8febac949097f08a925389a945baa",
-            "content": "sha256:c3265ddb8c210f72aa1356bda0f44001e43cd5f72960b694cb536b1b264119cc",
+            "blob": "4a52f1812409904220d810a98e25e5c99c820300",
+            "content": "sha256:dd3cbee6c156893b2b6399dd9034645f4b0bff80665fe0c0166160306114f43d",
             "locator": {
               "kind": "file"
             },
@@ -6035,8 +6032,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6f3a69cae0b8febac949097f08a925389a945baa",
-            "content": "sha256:c3265ddb8c210f72aa1356bda0f44001e43cd5f72960b694cb536b1b264119cc",
+            "blob": "4a52f1812409904220d810a98e25e5c99c820300",
+            "content": "sha256:dd3cbee6c156893b2b6399dd9034645f4b0bff80665fe0c0166160306114f43d",
             "locator": {
               "kind": "file"
             },
@@ -6099,8 +6096,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6f3a69cae0b8febac949097f08a925389a945baa",
-            "content": "sha256:c3265ddb8c210f72aa1356bda0f44001e43cd5f72960b694cb536b1b264119cc",
+            "blob": "4a52f1812409904220d810a98e25e5c99c820300",
+            "content": "sha256:dd3cbee6c156893b2b6399dd9034645f4b0bff80665fe0c0166160306114f43d",
             "locator": {
               "kind": "file"
             },
@@ -6182,8 +6179,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6f3a69cae0b8febac949097f08a925389a945baa",
-            "content": "sha256:c3265ddb8c210f72aa1356bda0f44001e43cd5f72960b694cb536b1b264119cc",
+            "blob": "4a52f1812409904220d810a98e25e5c99c820300",
+            "content": "sha256:dd3cbee6c156893b2b6399dd9034645f4b0bff80665fe0c0166160306114f43d",
             "locator": {
               "kind": "file"
             },

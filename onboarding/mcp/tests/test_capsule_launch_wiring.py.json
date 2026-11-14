@@ -87,16 +87,14 @@
       ]
     },
     "15": {
-      "note": "The lane row D9's fail-closed loader requires for every new test module.  Anchor: \"mcp/tests/test_capsule_launch_wiring.py\"",
+      "note": "The lane row D9's fail-closed loader requires for every new test module.  Anchor: \"mcp/tests/test_capsule_launch_wiring.py\"\n\nAnchor: \"mcp/tests/test_capsule_launch_wiring.py\"",
       "targets": [
         {
           "anchor": {
-            "blob": "c5329d6566f5482380dd6d536b28a182142711dc",
-            "content": "sha256:4695b329b96163bd351824a2c951c1ce73612c7451dc3dc8f142ecb33d112c19",
+            "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
+            "content": "sha256:536665e5e5cb55daa96514c12b8fd5198e20554a394b810d3ec7df91043e7ab8",
             "locator": {
-              "end": 84,
-              "kind": "line_range",
-              "start": 84
+              "kind": "file"
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -173,38 +171,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a963d7f4459c6a28a0200331eed5157ee15d375c",
-            "content": "sha256:8fd51e671406bdc04ea2c8a36fd76d9421cb267a3b39b7c294791cf76416e7bb",
+            "blob": "b8ba51e395bf787def585acaa1fdebea8559f65d",
+            "content": "sha256:9d6819d96f8bbd938c1f6d81c794761df1c45b8865842ba26231167146fd8742",
             "locator": {
-              "end": 166,
-              "kind": "line_range",
-              "start": 65
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "a963d7f4459c6a28a0200331eed5157ee15d375c",
-            "content": "sha256:0e7e698f864429471bf9fb8a7872c1db9aa391a81606be6ae62492fad8db737e",
-            "locator": {
-              "end": 1150,
-              "kind": "line_range",
-              "start": 1125
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "a963d7f4459c6a28a0200331eed5157ee15d375c",
-            "content": "sha256:63a41bbdf1e5ef857bd6a176c8e21f01fd7543cf1913a36e4f7e06c76239d666",
-            "locator": {
-              "end": 2491,
-              "kind": "line_range",
-              "start": 2390
+              "kind": "file"
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

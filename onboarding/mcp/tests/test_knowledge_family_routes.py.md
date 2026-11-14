@@ -100,5 +100,4 @@ No cross-repo boundary is crossed by this file.
 - Nested-route refusal, one state computation per fixture family/validation and explicit routes-command difference output are source assertions. [11]
 
 
-
 - The lane registration.  Anchor: "mcp/tests/test_knowledge_family_routes.py" [9]

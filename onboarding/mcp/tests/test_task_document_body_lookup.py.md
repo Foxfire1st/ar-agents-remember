@@ -128,8 +128,10 @@ No meaningful cross-repo references found.
 
 
 
-- The lane registration. Source caption: "mcp/tests/test_task_document_body_lookup.py" [10]
 
 - The bounded enumeration and the named-path probe under test. [9]
 
 - Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/projections/snapshots_impl/_common.py::_iter_task_json - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+
+- The lane registration. Source caption: "mcp/tests/test_task_document_body_lookup.py" [10]

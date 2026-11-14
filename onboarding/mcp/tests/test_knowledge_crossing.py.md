@@ -162,5 +162,4 @@ No cross-repo boundary is crossed by this file.
 - The real managed route rather than the pure plan: the fixture's sync crosses an unconverted leaf into a converted line, lands `synced`, and persists the worklist recomputed at its new base pair. [23]
 
 
-
 - Its lane row.  Anchor: "mcp/tests/test_knowledge_crossing.py" [11]

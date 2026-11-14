@@ -705,7 +705,6 @@ Past-epoch source custody: `skills/l-01-agent-lifecycles/capsule-budgets.json`, 
 - Retained reference account (no fresh execution or acceptance inferred): The cutover lock refuses an unconverted memory line and names the crossing sync. [74]
 - Retained reference account (no fresh execution or acceptance inferred): An external-memory start requires the memory repository and its source branch and creates the worktree. [93]
 
-- build_parser requires a subcommand, registers dashboard, and delegates memory, knowledge and runtime/settings command registration to three helpers. main parses the public command arguments and calls the selected handler; its internal leaf-enclosure entry is handled before that public parser. [139]
 
 - The Investigator examines one scoped concern and writes a report, distinguishes observed facts from hypotheses, and names the owning Worker or Curator for needed code or memory changes. It edits no code checkout, memory or task document and starts no role; a separate order grants no Worker or Curator authority. [146]
 
@@ -992,3 +991,6 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 - The runtime layout reference states that no part of the product starts, indexes or queries a search provider. [282]
 - Current budget guidance agrees with the root declaration. Target: pyproject.toml. [368]
 - Current budget guidance agrees with the root declaration. Target: CONTRIBUTING.md. [369]
+
+
+- build_parser requires a subcommand, registers dashboard, and delegates memory, knowledge and runtime/settings command registration to three helpers. main parses the public command arguments and calls the selected handler; its internal leaf-enclosure entry is handled before that public parser. [139]

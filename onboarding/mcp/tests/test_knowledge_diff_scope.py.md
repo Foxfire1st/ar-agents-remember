@@ -151,14 +151,5 @@ No configured cross-repository evidence is claimed.
 > Retained earlier citation wording: - **The unit-lane row this module occupies, and the governed support artifact it consumes.**
 
 
-
-
-
-
-
-
-
-
-
 - **The unit-lane row this module occupies, and the governed support artifact it consumes.**  Anchor: "evidence_node = \"mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\"" [15]
 - **The unit-lane row this module occupies, and the governed support artifact it consumes.**  Anchor: "evidence_node = \"mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\"" [16]

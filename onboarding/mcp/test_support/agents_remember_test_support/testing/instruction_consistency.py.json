@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "68668ad9039682eadfa94109a556dd5505b134ec",
-        "content": "sha256:867f0752d4ae2affe36ec51f3d801f5a0304da4f8c45c4256242d592f5c9a740",
+        "blob": "2a8dca4869b123f45980be91a7bca300df737594",
+        "content": "sha256:9e4f97fe530cdad584898ac3f3b5b1adc0ab91870a285bf624284c3de405aedc",
         "locator": {
           "kind": "symbol",
           "name": "UNDOCUMENTED_COMMANDS"
@@ -16,12 +16,12 @@
         "handoffEntry": "MIK-R97@v9 part F item 7 (the consistency check)",
         "leaf": "260928-MIK-L97"
       },
-      "rationale": "It is the named set of the nine command names for which the check demands no row and no mention.",
+      "rationale": "It names the ten command names for which the consistency check requires no table row or documentation mention.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "68668ad9039682eadfa94109a556dd5505b134ec",
+        "blob": "2a8dca4869b123f45980be91a7bca300df737594",
         "content": "sha256:5c0f8ecbb0cdbde47fcbbe6ed8dc1c9cec0d36502d9d70c94982fdb70c41f9a5",
         "locator": {
           "kind": "symbol",
@@ -34,8 +34,26 @@
         "handoffEntry": "MIK-R97@v9 part F item 7 (the consistency check)",
         "leaf": "260928-MIK-L97"
       },
-      "rationale": "It requires the nine to be registered commands, requires one complete row in the agents' command table for every other public command, and fails on a row for one of the nine.",
+      "rationale": "It requires the ten names to be registered, requires a complete command-table row for every other public command, and refuses a row for any of these ten.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2a8dca4869b123f45980be91a7bca300df737594",
+        "content": "sha256:9e4f97fe530cdad584898ac3f3b5b1adc0ab91870a285bf624284c3de405aedc",
+        "locator": {
+          "kind": "symbol",
+          "name": "UNDOCUMENTED_COMMANDS"
+        }
+      },
+      "id": "RLZ-YNAVT0",
+      "invariant": "INV-Q3GMWZ",
+      "origin": {
+        "handoffEntry": "L1-B07",
+        "leaf": "261112-BUG-L1"
+      },
+      "rationale": "the set and its note are what keep the command out of the budgeted table while the check still refuses a row for it",
+      "role": "primary-authority"
     }
   ],
   "references": {
@@ -44,8 +62,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "68668ad9039682eadfa94109a556dd5505b134ec",
-            "content": "sha256:b584f0249510e82a01fede2a058bf475ee1a11b14f970424863d86f6d4fe8bb8",
+            "blob": "2a8dca4869b123f45980be91a7bca300df737594",
+            "content": "sha256:eb8b63348ebe195bdf414ae242662afac3f408a987511dd93d2bc0db966281bf",
             "locator": {
               "kind": "file"
             }
@@ -59,8 +77,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "68668ad9039682eadfa94109a556dd5505b134ec",
-            "content": "sha256:b584f0249510e82a01fede2a058bf475ee1a11b14f970424863d86f6d4fe8bb8",
+            "blob": "2a8dca4869b123f45980be91a7bca300df737594",
+            "content": "sha256:eb8b63348ebe195bdf414ae242662afac3f408a987511dd93d2bc0db966281bf",
             "locator": {
               "kind": "file"
             }
@@ -74,8 +92,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "68668ad9039682eadfa94109a556dd5505b134ec",
-            "content": "sha256:b584f0249510e82a01fede2a058bf475ee1a11b14f970424863d86f6d4fe8bb8",
+            "blob": "2a8dca4869b123f45980be91a7bca300df737594",
+            "content": "sha256:eb8b63348ebe195bdf414ae242662afac3f408a987511dd93d2bc0db966281bf",
             "locator": {
               "kind": "file"
             }
@@ -89,8 +107,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "68668ad9039682eadfa94109a556dd5505b134ec",
-            "content": "sha256:b584f0249510e82a01fede2a058bf475ee1a11b14f970424863d86f6d4fe8bb8",
+            "blob": "2a8dca4869b123f45980be91a7bca300df737594",
+            "content": "sha256:eb8b63348ebe195bdf414ae242662afac3f408a987511dd93d2bc0db966281bf",
             "locator": {
               "kind": "file"
             }

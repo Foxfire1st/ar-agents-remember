@@ -105,5 +105,4 @@ No cross-repo boundary is crossed by this file.
 - Current source delta inspected statically: Replace carried-route PASS with refusal, qualify historical debt reporting and rename its caption; preserve reroute and retired boundaries. [14]
 
 
-
 - The lane registration.  Anchor: "mcp/tests/test_family_route_conditions.py" [13]
